@@ -28,6 +28,6 @@ st.fileHealth=h;
 sv(H,st);
 // Output summary
 const sm=process.env.GITHUB_STEP_SUMMARY;
-if(sm){let md='## Pipeline Health\n\n';md+='| File | Status | Age |\n|------|--------|-----|\n';for(const[f,v]of Object.entries(h)){md+=`| ${f} | ${v.ok?'OK':'MISSING'} | ${v.ok?v.ageH+'h':'-'} |\n`}if(alerts.length){md+='\n### Alerts\n';for(const a of alerts)md+=`- **${a.type}**: ${a.msg}\n`}else{md+='\n*No alerts — all healthy*\n'}fs.appendFileSync(sm,md)}
+if(sm){let md='## Pipeline Health\n\n';md+='| File | Status | Age |\n|------|--------|-----|\n';for(const[f,v]of Object.entries(h)){md+=`| ${f} | ${v.ok?'OK':'MISSING'} | ${v.ok?v.ageH+'h':'-'} |\n`}if(alerts.length){md+='\n### Alerts\n';for(const a of alerts)md+=`- **${a.type}**: ${a.msg}\n`}else{md+='\n*No alerts  all healthy*\n'}fs.appendFileSync(sm,md)}
 console.log(`Health check: ${Object.keys(h).length} files, ${stale.length} stale, ${missing.length} missing, ${alerts.length} alerts`);
 for(const a of alerts)console.log(`::warning::${a.msg}`);

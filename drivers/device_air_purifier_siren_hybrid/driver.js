@@ -41,9 +41,9 @@ class TuyaSirenDriver extends ZigBeeDriver {
    * v5.5.569: Register flow card run listeners
    */
   _registerFlowCards() {
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     // CONDITION: Siren is/is not sounding
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     try {
       const sirenCondition =
 
@@ -57,14 +57,14 @@ class TuyaSirenDriver extends ZigBeeDriver {
         this.log(`[FLOW] Condition siren_is_sounding: ${isOn}`);
         return isOn === true;
       });
-      this.log('[FLOW] ✅ Registered: siren_is_sounding');
+      this.log('[FLOW]  Registered: siren_is_sounding');
     } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register siren_is_sounding: ${err.message}`);
+      this.log(`[FLOW]  Could not register siren_is_sounding: ${err.message}`);
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     // ACTION: Turn on siren
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     try {
       const turnOnAction =
 
@@ -84,18 +84,18 @@ class TuyaSirenDriver extends ZigBeeDriver {
           }
           return true;
         } catch (err) {
-          this.log(`[FLOW] ⚠️ Turn on failed: ${err.message}`);
+          this.log(`[FLOW]  Turn on failed: ${err.message}`);
           return true;
         }
       });
-      this.log('[FLOW] ✅ Registered: siren_turn_on');
+      this.log('[FLOW]  Registered: siren_turn_on');
     } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register siren_turn_on: ${err.message}`);
+      this.log(`[FLOW]  Could not register siren_turn_on: ${err.message}`);
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     // ACTION: Turn off siren
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     try {
       const turnOffAction =
 
@@ -115,18 +115,18 @@ class TuyaSirenDriver extends ZigBeeDriver {
           }
           return true;
         } catch (err) {
-          this.log(`[FLOW] ⚠️ Turn off failed: ${err.message}`);
+          this.log(`[FLOW]  Turn off failed: ${err.message}`);
           return true;
         }
       });
-      this.log('[FLOW] ✅ Registered: siren_turn_off');
+      this.log('[FLOW]  Registered: siren_turn_off');
     } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register siren_turn_off: ${err.message}`);
+      this.log(`[FLOW]  Could not register siren_turn_off: ${err.message}`);
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     // ACTION: Set volume
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     try {
       const setVolumeAction =
 
@@ -148,18 +148,18 @@ class TuyaSirenDriver extends ZigBeeDriver {
           }
           return true;
         } catch (err) {
-          this.log(`[FLOW] ⚠️ Set volume failed: ${err.message}`);
+          this.log(`[FLOW]  Set volume failed: ${err.message}`);
           return true;
         }
       });
-      this.log('[FLOW] ✅ Registered: siren_set_volume');
+      this.log('[FLOW]  Registered: siren_set_volume');
     } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register siren_set_volume: ${err.message}`);
+      this.log(`[FLOW]  Could not register siren_set_volume: ${err.message}`);
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     // ACTION: Set duration
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     try {
       const setDurationAction =
 
@@ -179,18 +179,18 @@ class TuyaSirenDriver extends ZigBeeDriver {
           }
           return true;
         } catch (err) {
-          this.log(`[FLOW] ⚠️ Set duration failed: ${err.message}`);
+          this.log(`[FLOW]  Set duration failed: ${err.message}`);
           return true;
         }
       });
-      this.log('[FLOW] ✅ Registered: siren_set_duration');
+      this.log('[FLOW]  Registered: siren_set_duration');
     } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register siren_set_duration: ${err.message}`);
+      this.log(`[FLOW]  Could not register siren_set_duration: ${err.message}`);
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     // ACTION: Set melody
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     try {
       const setMelodyAction =
 
@@ -207,13 +207,13 @@ class TuyaSirenDriver extends ZigBeeDriver {
           }
           return true;
         } catch (err) {
-          this.log(`[FLOW] ⚠️ Set melody failed: ${err.message}`);
+          this.log(`[FLOW]  Set melody failed: ${err.message}`);
           return true;
         }
       });
-      this.log('[FLOW] ✅ Registered: siren_set_melody');
+      this.log('[FLOW]  Registered: siren_set_melody');
     } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register siren_set_melody: ${err.message}`);
+      this.log(`[FLOW]  Could not register siren_set_melody: ${err.message}`);
     }
 
     this.log('[FLOW]  All siren flow cards registered');

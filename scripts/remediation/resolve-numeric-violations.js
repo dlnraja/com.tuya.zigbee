@@ -15,14 +15,14 @@ const AUDIT_FILE = path.join(ROOT, 'docs/reports/ZERO_DEFECT_AUDIT.json');
 const ZIGBEE_CONSTANTS_PATH = 'lib/constants/ZigbeeConstants.js';
 
 if (!fs.existsSync(AUDIT_FILE)) {
-  console.error('❌ Audit file not found. Run zero-defect-architect-audit.js first.');
+  console.error(' Audit file not found. Run zero-defect-architect-audit.js first.');
   process.exit(1);
 }
 
 const audit = JSON.parse(fs.readFileSync(AUDIT_FILE, 'utf8'));
 const violations = audit.numericConstantViolations || [];
 
-console.log(`🚀 Starting remediation of ${violations.length} violations...`);
+console.log(` Starting remediation of ${violations.length} violations...`);
 
 const filesToProcess = new Set();
 violations.forEach(v => {
@@ -81,8 +81,8 @@ filesToProcess.forEach(relPath => {
   if (content !== original) {
     fs.writeFileSync(fullPath, content);
     fixedCount++;
-    console.log(`✅ Fixed: ${relPath}`);
+    console.log(` Fixed: ${relPath}`);
   }
 });
 
-console.log(`\n🎉 Remediation complete! Fixed ${fixedCount} files.`);
+console.log(`\n Remediation complete! Fixed ${fixedCount} files.`);

@@ -17,7 +17,7 @@ function walk(dir) {
         // Fix the typo (it's actually getConditionCard, not getDeviceConditionCard)
         content = content.replace(/this\.homey\.flow\.getDeviceConditionCard/g, 'this.homey.flow.getConditionCard');
         fs.writeFileSync(fullPath, content);
-        console.log(`✅ Fixed getDeviceConditionCard typo in ${fullPath}`);
+        console.log(` Fixed getDeviceConditionCard typo in ${fullPath}`);
         fixedCount++;
       }
     }
@@ -25,4 +25,4 @@ function walk(dir) {
 }
 
 walk(searchDir);
-console.log(`\n✅ Fixed getDeviceConditionCard typo in ${fixedCount} files`);
+console.log(`\n Fixed getDeviceConditionCard typo in ${fixedCount} files`);

@@ -5,7 +5,7 @@ labels: ["device-request", "enhancement"]
 assignees: []
 ---
 
-## 📱 Basic Information
+##  Basic Information
 
 **Brand & Model**: 
 **Purchase Link**: 
@@ -14,7 +14,7 @@ assignees: []
 
 ---
 
-## 🔍 Zigbee Fingerprint (MANDATORY)
+##  Zigbee Fingerprint (MANDATORY)
 
 Please provide this information from Homey Developer Tools:
 
@@ -25,7 +25,7 @@ Please provide this information from Homey Developer Tools:
 
 ### How to Get Fingerprint:
 1. Pair device with Homey
-2. Go to Developer Tools → Devices → [Your Device]
+2. Go to Developer Tools  Devices  [Your Device]
 3. Click "Advanced" tab
 4. Screenshot OR copy the information above
 
@@ -36,7 +36,7 @@ Paste fingerprint here
 
 ---
 
-## 📊 TS0601 Data Points (if applicable)
+##  TS0601 Data Points (if applicable)
 
 If your device uses model `TS0601`, please provide DP mappings:
 
@@ -48,7 +48,7 @@ If your device uses model `TS0601`, please provide DP mappings:
 
 ---
 
-## 🔗 References
+##  References
 
 **Zigbee2MQTT**: (link if exists)  
 **Home Assistant/ZHA**: (link if exists)  
@@ -56,7 +56,7 @@ If your device uses model `TS0601`, please provide DP mappings:
 
 ---
 
-## ✨ Expected Capabilities
+##  Expected Capabilities
 
 What features should work? Check all that apply:
 
@@ -72,6 +72,6 @@ What features should work? Check all that apply:
 
 ---
 
-## 📝 Additional Notes
+##  Additional Notes
 
 Any other relevant information (e.g., specific modes, known issues, etc.)

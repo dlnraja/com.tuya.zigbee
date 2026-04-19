@@ -6,7 +6,7 @@
 
 A high-performance, unified, local-first engine for Tuya Zigbee and WiFi devices on Homey Pro. Supporting over **22,400+ device variants** through autonomous behavioral analysis and adaptive protocol translation.
 
-## 🚀 Key Features
+##  Key Features
 
 - **Unified Hybrid Driver**: One driver handles thousands of device variations across ZCL and Tuya DP protocols.
 - **Resilient Identity Engine**: Case-insensitive manufacturer and product ID resolution for absolute pairing reliability.
@@ -15,13 +15,13 @@ A high-performance, unified, local-first engine for Tuya Zigbee and WiFi devices
 - **Green Power Support**: Minimalist integration for ultra-low power Zigbee switches.
 - **Zero-Conf WiFi Bridge**: Local-first control for Tuya WiFi devices.
 
-## 🛠️ Installation
+##  Installation
 
 1. Install the [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) for the latest stability fixes.
 2. Pair your device using the "Search for my device" option.
 3. If your device is not recognized, please provide a diagnostic report on the [Homey Forum Thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).
 
-## 🛡️ Architectural Standard
+##  Architectural Standard
 
 This project adheres to the **"Zero-Defect Architectural Shield"**:
 - **Rule 21**: Interoperable flow cards via capability filtering.

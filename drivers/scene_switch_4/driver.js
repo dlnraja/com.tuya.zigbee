@@ -60,7 +60,7 @@ class SceneSwitch4Driver extends ZigBeeDriver {
             }
             return true;
           });
-          this.log(`[FLOW] ✅ ${triggerId}`);
+          this.log(`[FLOW]  ${triggerId}`);
         }
       } catch (e) {
         // Card may not exist
@@ -79,7 +79,7 @@ class SceneSwitch4Driver extends ZigBeeDriver {
               if (!args.device) return false;
               return true;
             });
-            this.log(`[FLOW] ✅ ${buttonTriggerId}`);
+            this.log(`[FLOW]  ${buttonTriggerId}`);
           }
         } catch (e) {
           // Card may not exist
@@ -92,7 +92,7 @@ class SceneSwitch4Driver extends ZigBeeDriver {
 
       if (batteryCard) {
         batteryCard.registerRunListener(async (args, state) => true);
-        this.log('[FLOW] ✅ scene_switch_4_battery_changed');
+        this.log('[FLOW]  scene_switch_4_battery_changed');
       }
     } catch (e) {
       // Card may not exist

@@ -3,12 +3,12 @@
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      GAS SENSOR - v5.5.130 ENRICHED (Zigbee2MQTT features)                  ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Source: https://www.zigbee2mqtt.io/devices/TS0601_gas_sensor_2.html        ║
- * ║  Features: gas, gas_value, self_test, silence, alarm_ringtone, alarm_time   ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       GAS SENSOR - v5.5.130 ENRICHED (Zigbee2MQTT features)                  
+ * 
+ *   Source: https://www.zigbee2mqtt.io/devices/TS0601_gas_sensor_2.html        
+ *   Features: gas, gas_value, self_test, silence, alarm_ringtone, alarm_time   
+ * 
  */
 class GasSensorDevice extends UnifiedSensorBase {
 
@@ -23,23 +23,23 @@ class GasSensorDevice extends UnifiedSensorBase {
    */
   get dpMappings() {
     return {
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // GAS ALARM & MEASUREMENT
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       1: { capability: 'alarm_gas', transform: (v) => v === 1 || v === true || v === 'alarm' },
       2: { capability: 'measure_gas', divisor: 1 }, // Gas value (LEL)
       3: { capability: 'alarm_co', transform: (v) => v === 1 || v === true },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // BATTERY & STATUS
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       4: { capability: 'measure_battery', divisor: 1 },
       9: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === 'fault' },
       14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolète
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // v5.5.130: CONTROL FEATURES from Zigbee2MQTT
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // Preheat indicator (device warming up)
       10: { capability: null, internal: 'preheat' },
       // Fault alarm status
@@ -85,7 +85,7 @@ class GasSensorDevice extends UnifiedSensorBase {
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
     this.log('[GAS] v5.5.292 - DPs: 1,2,3,4,9-11,13,14,16 | ZCL: IAS,PWR,EF00');
-    this.log('[GAS] ✅ Ready');
+    this.log('[GAS]  Ready');
     // v5.5.292: Flow triggers now handled by UnifiedSensorBase._triggerCustomFlowsIfNeeded()
   }
 
@@ -93,7 +93,7 @@ class GasSensorDevice extends UnifiedSensorBase {
     try {
       const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
       if (tuya?.datapoint) await tuya.datapoint({ dp: 13, value: true, type: 'bool' });
-      this.log('[GAS] 🔇 Alarm silenced');
+      this.log('[GAS]  Alarm silenced');
     } catch (e) { this.log('[GAS] Silence failed:', e.message); }
   }
 

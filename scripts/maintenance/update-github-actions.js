@@ -30,7 +30,7 @@ function updateWorkflows() {
 
         if (content !== original) {
             fs.writeFileSync(filePath, content);
-            console.log(`✅ Updated ${file}`);
+            console.log(` Updated ${file}`);
             updatedCount++;
         }
     });

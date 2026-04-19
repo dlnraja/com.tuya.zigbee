@@ -4,7 +4,7 @@ const fs=require('fs'),path=require('path');
 const {loadFingerprints,findDriver,extractMfrFromText}=require('./load-fingerprints');
 const{fetchWithRetry}=require('./retry-helper');
 
-// Seed topics (READ-ONLY scanning — this script never posts, only gathers intel)
+// Seed topics (READ-ONLY scanning  this script never posts, only gathers intel)
 const SEED_TOPICS=[
   140352,  // dlnraja: [APP][Pro] Universal TUYA Zigbee Device App - test
   26439,   // JohanBendz: [APP][Pro] Tuya Zigbee App
@@ -28,7 +28,7 @@ const SUMMARY=process.env.GITHUB_STEP_SUMMARY||(process.platform==='win32'?'NUL'
 const LAST_FILE=process.env.LAST_POST_FILE||'/tmp/last_forum_post.txt';
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const START_TIME=Date.now();
-const MAX_RUNTIME_MS=20*60*1000; // 20 min max — exit gracefully before workflow timeout
+const MAX_RUNTIME_MS=20*60*1000; // 20 min max  exit gracefully before workflow timeout
 function timeLeft(){return MAX_RUNTIME_MS-(Date.now()-START_TIME);}
 
 async function get(url){
@@ -51,7 +51,7 @@ async function discoverTopics(){
     }catch(e){console.warn('Search "'+term+'" failed:',e.message);}
   }
   console.log('Discovered '+found.size+' unique topics ('+SEED_TOPICS.length+' seed + '+(found.size-SEED_TOPICS.length)+' from search)');
-  if(found.size<=SEED_TOPICS.length)console.warn('Discovery added 0 new topics — using seed topics only');
+  if(found.size<=SEED_TOPICS.length)console.warn('Discovery added 0 new topics  using seed topics only');
   return[...found];
 }
 

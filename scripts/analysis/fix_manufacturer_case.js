@@ -33,7 +33,7 @@ class ManufacturerCaseFixer {
   }
 
   async fixAllDrivers() {
-    console.log('🔧 FORUM IMAGES FIX: Starting manufacturer case sensitivity corrections...');
+    console.log(' FORUM IMAGES FIX: Starting manufacturer case sensitivity corrections...');
 
     const drivers = fs.readdirSync(DRIVERS_PATH);
 
@@ -64,7 +64,7 @@ class ManufacturerCaseFixer {
         if (matches > 0) {
           fixed = fixed.replace(from, to);
           corrections += matches;
-          console.log(`  ✓ ${driverName}: Fixed ${matches}x ${from.source} -> ${to}`);
+          console.log(`   ${driverName}: Fixed ${matches}x ${from.source} -> ${to}`);
         }
       });
 
@@ -76,24 +76,24 @@ class ManufacturerCaseFixer {
       this.results.filesProcessed++;
 
     } catch (error) {
-      console.log(`❌ Error fixing ${driverName}: ${error.message}`);
+      console.log(` Error fixing ${driverName}: ${error.message}`);
       this.results.errors++;
     }
   }
 
   generateReport() {
-    console.log('\n📊 MANUFACTURER CASE SENSITIVITY FIX REPORT');
+    console.log('\n MANUFACTURER CASE SENSITIVITY FIX REPORT');
     console.log('='.repeat(50));
     console.log(`Files processed: ${this.results.filesProcessed}`);
     console.log(`Corrections applied: ${this.results.correctionsApplied}`);
     console.log(`Errors: ${this.results.errors}`);
 
     if (this.results.correctionsApplied > 0) {
-      console.log('\n✅ Case sensitivity issues fixed!');
-      console.log('📋 All manufacturerNames now use proper UPPERCASE format');
-      console.log('🚀 Ready for validation and deployment');
+      console.log('\n Case sensitivity issues fixed!');
+      console.log(' All manufacturerNames now use proper UPPERCASE format');
+      console.log(' Ready for validation and deployment');
     } else {
-      console.log('\n✅ No case sensitivity issues found');
+      console.log('\n No case sensitivity issues found');
     }
   }
 }

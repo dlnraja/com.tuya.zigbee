@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║  AUTONOMOUS INTEL HARVESTER v1.0.0 (Thinking Reimplementation Engine inspired)              ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Going beyond ManufacturerNames. Harvesting "Smart Ideas & Methods"          ║
- * ║  from the entire fork ecosystem (ascending & descending).                     ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *   AUTONOMOUS INTEL HARVESTER v1.0.0 (Thinking Reimplementation Engine inspired)              
+ * 
+ *   Going beyond ManufacturerNames. Harvesting "Smart Ideas & Methods"          
+ *   from the entire fork ecosystem (ascending & descending).                     
+ * 
  */
 'use strict';
 
@@ -39,13 +39,13 @@ function gh(cmd) {
 }
 
 async function main() {
-  console.log('🧠 Starting Autonomous Intel Harvester (Autonomous Engine Reimplementation Mode)...');
+  console.log(' Starting Autonomous Intel Harvester (Autonomous Engine Reimplementation Mode)...');
 
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   if (!fs.existsSync(path.dirname(REPORT_FILE))) fs.mkdirSync(path.dirname(REPORT_FILE), { recursive: true });
 
   // 1. Get all forks + Upstream branches
-  console.log('  → Identifying all ecosystem sources (Ascending & Descending)...');
+  console.log('   Identifying all ecosystem sources (Ascending & Descending)...');
   const forksRaw = gh(`api repos/${UPSTREAM}/forks --per-page 100`);
   const forks = JSON.parse(forksRaw || '[]');
   
@@ -69,7 +69,7 @@ async function main() {
     .slice(0, 20);
 
   for (const source of activeSources) {
-    console.log(`  → Analyzing source: ${source.full_name}`);
+    console.log(`   Analyzing source: ${source.full_name}`);
     harvest.forksAnalyzed++;
 
     // Get all branches for this source
@@ -79,7 +79,7 @@ async function main() {
     for (const br of branches) {
       const branchName = br.name;
       harvest.branchesScanned++;
-      console.log(`    ↳ Scanning branch: ${branchName}`);
+      console.log(`     Scanning branch: ${branchName}`);
 
       // A. Check for new files in lib/ on this branch
       const libFilesRaw = gh(`api repos/${source.full_name}/contents/lib?ref=${branchName}`);
@@ -138,7 +138,7 @@ async function main() {
   }
 
   // 3. New section: Community Diagnostic Harvesting (Rule 10)
-  console.log('  → Harvesting community diagnostic data...');
+  console.log('   Harvesting community diagnostic data...');
   const COMMUNITY_DIAGS = [
     path.join(ROOT, 'diagnostics', 'summary.json'),
     path.join(ROOT, 'diagnostics', 'diag_forum.json')
@@ -172,31 +172,31 @@ async function main() {
   });
 
   // 4. Generate Intellectual Enrichment Report
-  console.log('  → Generating Intellectual Enrichment Report...');
+  console.log('   Generating Intellectual Enrichment Report...');
   let md = `# Intellectual Enrichment Report (Thinking Reimplementation Engine)\n`;
   md += `*Generated: ${harvest.timestamp} | Forks Analyzed: ${harvest.forksAnalyzed}*\n\n`;
 
-  md += `## 🏗️ Structural Innovations (New Files)\n`;
+  md += `##  Structural Innovations (New Files)\n`;
   if (harvest.structuralInnovations.length === 0) md += `_No new biological structures found._\n`;
   for (const si of harvest.structuralInnovations) {
     md += `- **${si.file}** in \`${si.source}\` [View Source](${si.url})\n`;
   }
 
-  md += `\n## ⚡ Smart Methods & Logic Extensions\n`;
+  md += `\n##  Smart Methods & Logic Extensions\n`;
   if (harvest.newMethods.length === 0) md += `_No new cognitive pathways detected._\n`;
   for (const nm of harvest.newMethods) {
     md += `### ${nm.file} (${nm.source})\n`;
     md += `Found methods: ${nm.methods.map(m => `\`${m}\``).join(', ')}\n\n`;
   }
 
-  md += `\n## 💎 Community Gems (Unmatched Fingerprints & Inferred Categories)\n`;
+  md += `\n##  Community Gems (Unmatched Fingerprints & Inferred Categories)\n`;
   const communityGems = harvest.hiddenGems.filter(g => g.source === 'community_diag');
   if (communityGems.length === 0) md += `_No new community patterns extracted._\n`;
   for (const gem of communityGems) {
     md += `- **${gem.fp}** (Category: \`${gem.inferredCategory}\`) - ${gem.context}\n`;
   }
 
-  md += `\n## 🔍 Hidden Gems (Advanced Tuya Patterns from Forks)\n`;
+  md += `\n##  Hidden Gems (Advanced Tuya Patterns from Forks)\n`;
   const forkGems = harvest.hiddenGems.filter(g => g.source !== 'community_diag');
   if (forkGems.length === 0) md += `_No rare elements extracted._\n`;
   const uniqueGems = [...new Set(forkGems.map(g => g.keyword))];
@@ -208,10 +208,10 @@ async function main() {
   fs.writeFileSync(REPORT_FILE, md);
   fs.writeFileSync(path.join(DATA_DIR, 'latest-harvest.json'), JSON.stringify(harvest, null, 2));
 
-  console.log(`✅ Intelligence Harvest complete! Report: ${REPORT_FILE}`);
+  console.log(` Intelligence Harvest complete! Report: ${REPORT_FILE}`);
 }
 
 main().catch(e => {
-  console.error('❌ Harvester Failed:', e);
+  console.error(' Harvester Failed:', e);
   process.exit(1);
 });

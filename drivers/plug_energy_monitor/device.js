@@ -8,19 +8,19 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      ENERGY MONITOR PLUG - v5.5.255 INTELLIGENT ENERGY MANAGEMENT           ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  - Auto-detects energy meter type per manufacturerName                       ║
- * ║  - Supports ZCL (TS011F) and Tuya DP (TS0601) protocols                     ║
- * ║  - Dynamic divisors for power/voltage/current/energy                         ║
- * ║  - Intelligent hybrid mode for mixed protocol devices                        ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       ENERGY MONITOR PLUG - v5.5.255 INTELLIGENT ENERGY MANAGEMENT           
+ * 
+ *   - Auto-detects energy meter type per manufacturerName                       
+ *   - Supports ZCL (TS011F) and Tuya DP (TS0601) protocols                     
+ *   - Dynamic divisors for power/voltage/current/energy                         
+ *   - Intelligent hybrid mode for mixed protocol devices                        
+ * 
  */
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // ENERGY DEVICE CONFIGURATION DATABASE
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 const ENERGY_DEVICE_CONFIGS = {
   // Type A: Standard Tuya DP Energy (TS0601) - DP 17/18/19/20
@@ -315,12 +315,12 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
     const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     const config = this._getEnergyConfig();
 
-    this.log('[ENERGY] ═══════════════════════════════════════════════════════');
+    this.log('[ENERGY] ');
     this.log('[ENERGY] v5.5.255 INTELLIGENT ENERGY MANAGEMENT');
     this.log(`[ENERGY] ManufacturerName: ${mfr}`);
     this.log(`[ENERGY] Config: ${config.configName || 'TUYA_DP_STANDARD (default)'}`);
     this.log(`[ENERGY] Protocol: ${config.protocol || 'hybrid'}`);
-    this.log('[ENERGY] ═══════════════════════════════════════════════════════');
+    this.log('[ENERGY] ');
 
     // Initialize base class
     await super.onNodeInit({ zclNode });
@@ -337,7 +337,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();
 
-    this.log('[ENERGY] ✅ Energy monitor plug ready (v5.13.1 + Bidirectional Buttons)');
+    this.log('[ENERGY]  Energy monitor plug ready (v5.13.1 + Bidirectional Buttons)');
   }
 
   /**
@@ -397,13 +397,13 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
             .catch(e => this.log('[ENERGY] Current reporting:', e.message));
         }
 
-        this.log('[ENERGY] ✅ ZCL Electrical Measurement configured');
+        this.log('[ENERGY]  ZCL Electrical Measurement configured');
       }
     } catch (e) {
-      this.log(`[ENERGY] ⚠️ Electrical cluster error: ${e.message}`);
+      this.log(`[ENERGY]  Electrical cluster error: ${e.message}`);
     }
 
-    // Metering Cluster (0x0702) — event + poll fallback
+    // Metering Cluster (0x0702)  event + poll fallback
     try {
       const mc = ep1.clusters?.metering || ep1.clusters?.seMetering;
       const baseEDiv = zclAttrs.energy?.divisor || 100;
@@ -420,7 +420,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
             this.setCapabilityValue('meter_power', parseFloat(e)).catch(() => {});
           });
         }
-        // v5.11.26: Poll metering — many TS011F don't auto-report energy
+        // v5.11.26: Poll metering  many TS011F don't auto-report energy
         if (mc.readAttributes) {
           this._meterPoll = this.homey.setInterval(async () => {
             try {
@@ -437,10 +437,10 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
           await mc.configureReporting({ currentSummDelivered: { minInterval: 60, maxInterval: 3600, minChange: 1 } })
             .catch(e => this.log('[ENERGY] Metering reporting:', e.message));
         }
-        this.log('[ENERGY] ✅ ZCL Metering configured (poll=120s)');
+        this.log('[ENERGY]  ZCL Metering configured (poll=120s)');
       }
     } catch (e) {
-      this.log(`[ENERGY] ⚠️ Metering cluster error: ${e.message}`);
+      this.log(`[ENERGY]  Metering cluster error: ${e.message}`);
     }
   }
 

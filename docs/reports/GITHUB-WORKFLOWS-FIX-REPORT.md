@@ -1,53 +1,53 @@
-# 🔧 RAPPORT CORRECTIONS GITHUB WORKFLOWS
+#  RAPPORT CORRECTIONS GITHUB WORKFLOWS
 
 **Généré**: 2025-12-21T23:30:01.796Z
 **Fichiers traités**: 7
 
-## 📊 RÉSUMÉ DES CORRECTIONS
+##  RÉSUMÉ DES CORRECTIONS
 
 **TOTAL CORRECTIONS APPLIQUÉES**: 19
 
-## 🔧 auto-monitor-devices.yml
+##  auto-monitor-devices.yml
 
-- ✅ Job auto-monitor: Sécurisé usage github.event
-- ✅ Job auto-monitor: Sécurisé usage github.event
-- ✅ Schedule: 0 * * * * → 0 */2 * * * (minimum 2h)
-- ✅ Job update-dashboard: Ajouté timeout 30min
+-  Job auto-monitor: Sécurisé usage github.event
+-  Job auto-monitor: Sécurisé usage github.event
+-  Schedule: 0 * * * *  0 */2 * * * (minimum 2h)
+-  Job update-dashboard: Ajouté timeout 30min
 
-## 🔧 homey-ci-cd.yml
+##  homey-ci-cd.yml
 
-- ✅ Réduit permissions à read-only
-- ✅ Job validate: Ajouté timeout 30min
-- ✅ Job version: Ajouté timeout 30min
-- ✅ Job publish: Ajouté timeout 30min
-- ✅ Job release: Ajouté timeout 30min
+-  Réduit permissions à read-only
+-  Job validate: Ajouté timeout 30min
+-  Job version: Ajouté timeout 30min
+-  Job publish: Ajouté timeout 30min
+-  Job release: Ajouté timeout 30min
 
-## 🔧 homey-publish.yml
+##  homey-publish.yml
 
-- ✅ Job validate: Ajouté timeout 20min
-- ✅ Job publish: Ajouté timeout 20min
-- ✅ Job release: Ajouté timeout 20min
+-  Job validate: Ajouté timeout 20min
+-  Job publish: Ajouté timeout 20min
+-  Job release: Ajouté timeout 20min
 
-## 🔧 homey-validate.yml
+##  homey-validate.yml
 
-- ✅ Job validate: Ajouté timeout 15min
+-  Job validate: Ajouté timeout 15min
 
-## 🔧 homey-version.yml
+##  homey-version.yml
 
-- ✅ Limité permissions write aux opérations essentielles
-- ✅ Job update-version: Ajouté timeout 30min
+-  Limité permissions write aux opérations essentielles
+-  Job update-version: Ajouté timeout 30min
 
-## 🔧 intelligent-weekly-automation.yml
+##  intelligent-weekly-automation.yml
 
-- ✅ Job important-components: Ajouté validation secrets IA
-- ✅ Job weekly-intelligent-orchestration: Ajouté validation secrets IA
-- ✅ Amélioré conditions critical-components
+-  Job important-components: Ajouté validation secrets IA
+-  Job weekly-intelligent-orchestration: Ajouté validation secrets IA
+-  Amélioré conditions critical-components
 
-## 🔧 monthly-enrichment.yml
+##  monthly-enrichment.yml
 
-- ✅ Réduit permissions à read-only
+-  Réduit permissions à read-only
 
-## 🚀 ÉTAPES SUIVANTES
+##  ÉTAPES SUIVANTES
 
 ### 1. Validation
 ```bash
@@ -59,7 +59,7 @@ node scripts/validation/validate-github-workflows.js
 ```bash
 # Commiter les corrections
 git add .github/workflows/
-git commit -m "🔧 Fix: Correction automatique workflows GitHub Actions (19 fixes)"
+git commit -m " Fix: Correction automatique workflows GitHub Actions (19 fixes)"
 git push origin master
 ```
 

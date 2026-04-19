@@ -16,7 +16,7 @@
       "user": "dlnraja",
       "date": "2026-02-18T13:20:18Z",
       "fps": [],
-      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps:
+      "excerpt": "Hi! \n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork)  **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps:
     }
   ],
   "aiAnalysis": "```json\n{\n  \"manufacturerName\": \"_TZ3040_wqmtjsyk\",\n  \"productId\": \"PIR1-ZB\",\n  \"deviceType\": \"enddevice\",\n  \"DPs\": {\n    \"modelId\": \"TS0202\",\n    \"ieeeAddress\": \"a4:c1:38:f6:a0:97:07:12\",\n    \"networkAddress\": 57883\n  },\n  \"capabilities\": {\n    \"alternatePANCoordinator\": false,\n    \"deviceType\": false,\n    \"powerSourceMains\": false,\n    \"receiveWhenIdle\": false,\n    \"security\": false,\n    \"allocateAddress\": true\n  },\n  \"errors\": [],\n  \"deviceDescription\": \"Motion detection, with hold setting\",\n  \"deviceImage\": \"https://m.media-amazon.com/images/I/41f81KM1GBL._SL1500_.jpg\"\n}\n```",

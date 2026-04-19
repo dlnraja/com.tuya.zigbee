@@ -83,7 +83,7 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    this.log('[TRV-ZIGBEE] 🔥 Initializing comprehensive TRV driver...');
+    this.log('[TRV-ZIGBEE]  Initializing comprehensive TRV driver...');
 
     // TRV-specific DP mappings
     this.dpMappings = {
@@ -128,7 +128,7 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
       this.registerCapabilityListener('child_lock', this.onChildLockChange.bind(this));
     }
 
-    this.log('[TRV-ZIGBEE] ✅ Comprehensive TRV initialized');
+    this.log('[TRV-ZIGBEE]  Comprehensive TRV initialized');
   }
 
   async onTargetTemperatureChange(value) {

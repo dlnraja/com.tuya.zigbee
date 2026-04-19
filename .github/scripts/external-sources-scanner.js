@@ -68,7 +68,7 @@ async function scanZ2MConverters(){
         const dps=extractDPs(ctx);
         const caps=extractCaps(ctx);
         const snippet=getSnippet(src,fp,300,600);
-        // Pair each fp with each modelID — same mfr can have different DPs per productId
+        // Pair each fp with each modelID  same mfr can have different DPs per productId
         for(const pid of(models.length?models:['?']))devices.push({fp,pid,source:'z2m-converter',dps,caps,snippet});
       }
     }
@@ -119,7 +119,7 @@ async function scanZHAQuirks(){
     const dps=extractDPs(ctx);const pids=extractPID(ctx);
     devices.push({fp,pid:pids[0]||null,source:'zha-quirk',dps});
   }console.log('  Main tuya init:',found.length,'FPs')}
-  // Also scan individual quirk files — extract DPs, clusters, code
+  // Also scan individual quirk files  extract DPs, clusters, code
   const tree=await fetchJSON(GH+'/repos/zigpy/zha-device-handlers/git/trees/dev?recursive=1',hdrs(TOKEN));
   if(tree?.tree){
     const tuyaFiles=tree.tree.filter(f=>(f.path.startsWith('zhaquirks/tuya/')||f.path.startsWith('zhaquirks/sonoff/'))&&f.path.endsWith('.py')).slice(0,50);
@@ -328,7 +328,7 @@ function scanLocalDrivers(){
         hasEF00=/CLUSTERS.TUYA_EF00|CLUSTERS.TUYA_EF00|EF00|TuyaSpecific/i.test(src);
         hasDPMappings=/dpMappings|dp_mappings|dataPoints/i.test(src);
       }
-      // Emit one entry per mfr×pid pair — same mfr with different pids = different device!
+      // Emit one entry per mfr×pid pair  same mfr with different pids = different device!
       for(const fp of mfrs)for(const pid of(pids.length?pids:['?']))results.push({fp,pid,source:'local',driver:d,caps,dps,hasEF00,hasDPMappings});
     }catch{}
   }
@@ -385,7 +385,7 @@ async function main(){
   // Bug search for top unsupported
   const bugs=await searchBugs(unsupported.slice(0,10).map(d=>d.fp));
 
-  // Smart AI: implementation plans with DP→capability + quirks + variants
+  // Smart AI: implementation plans with DPcapability + quirks + variants
   console.log('\n== AI Implementation Analysis (Cascaded Context) ==');
   const withDPs=uniqueFPs.filter(d=>d.dps.length>0);
   const gapDevs=supported.filter(d=>{const ext=d.dps.filter(n=>!d.localDPs.includes(n));return ext.length>0}).slice(0,10);
@@ -399,7 +399,7 @@ async function main(){
     gaps:gapDevs.map(d=>({fp:d.fp,pid:d.pid,drv:d.localDriver,missDPs:d.dps.filter(n=>!d.localDPs.includes(n)),missCaps:d.caps.filter(c=>!c.startsWith('cat')).slice(0,5)})),
     src:{z2m:z2mConv.length,zha:zhaQuirks.length,blak:blakadder.length,dec:deconz.length,hub:hubitat.length,st:smartthings.length,ha:haForum.length,loc:local.length}};
   
-  const aiPrompt=`Tuya Zigbee expert. For each new device: suggest driver, DP→capability map, quirks. For gaps: missing DPs to add. Markdown table. Max 500 words. IMPORTANT: Cascade intel.${previousPlan}`;
+  const aiPrompt=`Tuya Zigbee expert. For each new device: suggest driver, DPcapability map, quirks. For gaps: missing DPs to add. Markdown table. Max 500 words. IMPORTANT: Cascade intel.${previousPlan}`;
   const ai=await callAI(JSON.stringify(aiInput),aiPrompt,{maxTokens:1500});
 
   // Save full device functionality
@@ -425,7 +425,7 @@ async function main(){
     md+='| Z2M Issues/PRs | '+z2mIssues.length+' | '+z2mIssues.filter(d=>d.dps?.length).length+' |\n';
     md+='| ZHA Quirks | '+zhaQuirks.length+' | '+zhaQuirks.filter(d=>d.dps?.length).length+' |\n';
     md+='| ZHA Issues | '+zhaIssues.length+' | '+zhaIssues.filter(d=>d.dps?.length).length+' |\n';
-    md+='| Blakadder | '+blakadder.length+' | — |\n| deCONZ | '+deconz.length+' | — |\n';
+    md+='| Blakadder | '+blakadder.length+' |  |\n| deCONZ | '+deconz.length+' |  |\n';
     md+='| Hubitat | '+hubitat.length+' | '+hubitat.filter(d=>d.dps?.length).length+' |\n';
     md+='| SmartThings | '+smartthings.length+' | '+smartthings.filter(d=>d.dps?.length).length+' |\n';
     md+='| HOMEd | '+homed.length+' | '+homed.filter(d=>d.dps?.length).length+' |\n';

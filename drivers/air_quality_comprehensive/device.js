@@ -50,7 +50,7 @@ class AirQualityComprehensiveDevice extends UnifiedSensorBase {
 
     // Prevents false low-battery alerts (e.g. _TZE200_8ygsuhe1 Smart Airbox is USB-powered)
     if (this.mainsPowered && this.hasCapability('measure_battery')) {
-      this.log('[AIR-QUALITY] 🔌 Mains-powered: removing measure_battery');
+      this.log('[AIR-QUALITY]  Mains-powered: removing measure_battery');
       await this.removeCapability('measure_battery').catch(() => {});
     }
 
@@ -58,11 +58,11 @@ class AirQualityComprehensiveDevice extends UnifiedSensorBase {
     for (const cap of ['measure_voc', 'measure_formaldehyde']) {
       if (!this.hasCapability(cap)) {
         await this.addCapability(cap).catch(() => {});
-        this.log(`[AIR-QUALITY] ➕ Added ${cap} capability`);
+        this.log(`[AIR-QUALITY]  Added ${cap} capability`);
       }
     }
 
-    this.log('[AIR-QUALITY] ✅ Ready');
+    this.log('[AIR-QUALITY]  Ready');
   }
 
 

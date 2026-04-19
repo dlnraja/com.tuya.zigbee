@@ -1,6 +1,6 @@
 # GitHub Secrets Reference
 
-> **✅ SECURITY**: Athom OAuth creds purged from git history (Mar 2026, git-filter-repo).
+> ** SECURITY**: Athom OAuth creds purged from git history (Mar 2026, git-filter-repo).
 > Login screenshots also purged. Credentials must be rotated in Athom Developer Portal.
 
 ## Configured Secrets
@@ -17,11 +17,11 @@
 | GITHUB_TOKEN | GitHub (auto) | Current repo only. Cannot access other repos (#46566) |
 | GOOGLE_API_KEY | Google Gemini | AI analysis, vision (images), code gen, translation, long context |
 | OPENAI_API_KEY | OpenAI | GPT-4o fallback, embeddings, PR review |
-| GMAIL_CLIENT_ID | Gmail OAuth | **LEGACY** — removed v5.12.6, use IMAP instead |
-| GMAIL_CLIENT_SECRET | Gmail OAuth | **LEGACY** — removed v5.12.6, use IMAP instead |
-| GMAIL_REFRESH_TOKEN | Gmail OAuth | **LEGACY** — removed v5.12.6, use IMAP instead |
-| GMAIL_EMAIL | Gmail IMAP | **REQUIRED** — Gmail address for IMAP (permanent, never expires) |
-| GMAIL_APP_PASSWORD | Gmail IMAP | **REQUIRED** — App Password for IMAP (permanent, never expires) |
+| GMAIL_CLIENT_ID | Gmail OAuth | **LEGACY**  removed v5.12.6, use IMAP instead |
+| GMAIL_CLIENT_SECRET | Gmail OAuth | **LEGACY**  removed v5.12.6, use IMAP instead |
+| GMAIL_REFRESH_TOKEN | Gmail OAuth | **LEGACY**  removed v5.12.6, use IMAP instead |
+| GMAIL_EMAIL | Gmail IMAP | **REQUIRED**  Gmail address for IMAP (permanent, never expires) |
+| GMAIL_APP_PASSWORD | Gmail IMAP | **REQUIRED**  App Password for IMAP (permanent, never expires) |
 | ATHOM_CLIENT_ID | Athom OAuth | OAuth client ID for headless promotion (from Athom Developer Tools SPA) |
 | ATHOM_CLIENT_SECRET | Athom OAuth | OAuth client secret for headless promotion (from Athom Developer Tools SPA) |
 
@@ -89,14 +89,14 @@ Used by: homey-device-diagnostics.js (NEW)
 > The secrets GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, and GMAIL_REFRESH_TOKEN can be deleted from GitHub.
 > The keepalive workflow now runs weekly IMAP health checks instead of OAuth token refresh.
 
-## Gmail IMAP (v5.12.6 — sole method)
+## Gmail IMAP (v5.12.6  sole method)
 
 IMAP with App Password is the **only** email method. OAuth has been completely removed.
 
 ### Setup (30 seconds, one-time)
 1. Go to https://myaccount.google.com/apppasswords
-2. Select app: **Mail**, device: **Other** → name it `Tuya Diagnostics`
-3. Click **Generate** → copy the 16-character password
+2. Select app: **Mail**, device: **Other**  name it `Tuya Diagnostics`
+3. Click **Generate**  copy the 16-character password
 4. Add GitHub secrets:
    ```
    gh secret set GMAIL_EMAIL        # your Gmail address
@@ -105,10 +105,10 @@ IMAP with App Password is the **only** email method. OAuth has been completely r
 
 ### How it works
 - `fetch-gmail-diagnostics.js` uses IMAP first (permanent, no expiry)
-- No OAuth dependency — permanent, no token expiry
+- No OAuth dependency  permanent, no token expiry
 - IMAP reads emails via `imap.gmail.com:993` with App Password
-- Same pipeline: sanitize → parse → cross-ref → AI analyze → issues
-- **No keepalive needed** — App Password is permanent
+- Same pipeline: sanitize  parse  cross-ref  AI analyze  issues
+- **No keepalive needed**  App Password is permanent
 - IMAP health check runs weekly (Monday 08:00 UTC)
 
 ### Prerequisites
@@ -118,16 +118,16 @@ IMAP with App Password is the **only** email method. OAuth has been completely r
 ## Forum Auth (Session SSO)
 
 Forum uses HOMEY_EMAIL + HOMEY_PASSWORD for Athom SSO login (no API key needed).
-All forum scripts authenticate via `forum-auth.js` → `getForumAuth()` → session cookies + CSRF.
+All forum scripts authenticate via `forum-auth.js`  `getForumAuth()`  session cookies + CSRF.
 
 
 ## Priority Setup Order
 
-1. HOMEY_PAT — publishing
-2. HOMEY_PAT_API — real device diagnostics
-3. GOOGLE_API_KEY — AI analysis (most workflows)
-4. HOMEY_EMAIL + HOMEY_PASSWORD — forum
-5. GH_PAT — cross-repo (scopes: repo, read:org)
-6. Gmail secrets — diagnostic pipeline
-7. OPENAI_API_KEY — GPT fallback
+1. HOMEY_PAT  publishing
+2. HOMEY_PAT_API  real device diagnostics
+3. GOOGLE_API_KEY  AI analysis (most workflows)
+4. HOMEY_EMAIL + HOMEY_PASSWORD  forum
+5. GH_PAT  cross-repo (scopes: repo, read:org)
+6. Gmail secrets  diagnostic pipeline
+7. OPENAI_API_KEY  GPT fallback
 8. Remaining AI keys (optional, any one adds redundancy)

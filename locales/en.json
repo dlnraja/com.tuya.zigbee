@@ -23,7 +23,7 @@
       "title": "CO"
     },
     "alarm_co2": {
-      "title": "CO₂"
+      "title": "CO"
     },
     "alarm_tamper": {
       "title": "Tamper"
@@ -63,7 +63,7 @@
       "units": "mbar"
     },
     "measure_co2": {
-      "title": "CO₂",
+      "title": "CO",
       "units": "ppm"
     },
     "measure_pm25": {

@@ -1,12 +1,12 @@
-# 🚀 SETUP GITHUB ACTIONS - Instructions Complètes
+#  SETUP GITHUB ACTIONS - Instructions Complètes
 
-## 🎯 OBJECTIF
+##  OBJECTIF
 
 Publier automatiquement l'app sur le **Homey App Store** via **GitHub Actions**, SANS utiliser le CLI localement.
 
 ---
 
-## ⚡ ÉTAPE 1: Obtenir le Token Homey
+##  ÉTAPE 1: Obtenir le Token Homey
 
 ### **Sur votre ordinateur local:**
 
@@ -23,11 +23,11 @@ homey settings token get
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTk4Yzg2YzY1NzQzNjAwM2E5ZTc1YjgiLCJpYXQiOjE2OTg1MDQzMjF9.xYzABC123...
 ```
 
-**⚠️ IMPORTANT:** Gardez ce token secret! Ne le partagez jamais publiquement.
+** IMPORTANT:** Gardez ce token secret! Ne le partagez jamais publiquement.
 
 ---
 
-## ⚡ ÉTAPE 2: Ajouter le Token dans GitHub
+##  ÉTAPE 2: Ajouter le Token dans GitHub
 
 ### **1. Aller sur votre repository GitHub:**
 
@@ -35,11 +35,11 @@ https://github.com/dlnraja/com.tuya.zigbee
 
 ### **2. Aller dans Settings:**
 
-Repository → **Settings** (en haut à droite)
+Repository  **Settings** (en haut à droite)
 
 ### **3. Aller dans Secrets:**
 
-Settings → **Secrets and variables** → **Actions**
+Settings  **Secrets and variables**  **Actions**
 
 ### **4. Créer un nouveau secret:**
 
@@ -48,13 +48,13 @@ Settings → **Secrets and variables** → **Actions**
 - **Value:** Coller votre token complet (copié à l'étape 1)
 - Cliquer sur **Add secret**
 
-### **✅ Vérification:**
+### ** Vérification:**
 
 Vous devriez voir un secret nommé `HOMEY_TOKEN` dans la liste.
 
 ---
 
-## ⚡ ÉTAPE 3: Pousser le Code sur GitHub
+##  ÉTAPE 3: Pousser le Code sur GitHub
 
 ```bash
 cd "c:\Users\HP\Desktop\homey app\tuya_repair"
@@ -68,7 +68,7 @@ git push origin master
 
 ---
 
-## ⚡ ÉTAPE 4: Déclencher la Publication
+##  ÉTAPE 4: Déclencher la Publication
 
 ### **MÉTHODE A: Automatique via Tag (RECOMMANDÉ)**
 
@@ -76,7 +76,7 @@ git push origin master
 # Le tag v4.9.294 existe déjà, donc on peut:
 
 # Option 1: Créer un nouveau tag avec version suivante
-# (Incrémenter app.json version avant: 4.9.294 → 4.9.295)
+# (Incrémenter app.json version avant: 4.9.294  4.9.295)
 git tag -a v4.9.295 -m "Release v4.9.295"
 git push origin v4.9.295
 
@@ -84,7 +84,7 @@ git push origin v4.9.295
 git push origin v4.9.294 --force
 ```
 
-**Le workflow `homey-publish.yml` se déclenche automatiquement!** 🎉
+**Le workflow `homey-publish.yml` se déclenche automatiquement!** 
 
 ---
 
@@ -96,11 +96,11 @@ git push origin v4.9.294 --force
 4. Sélectionner branch: **master**
 5. Cliquer sur **Run workflow** (bouton vert)
 
-**Le workflow se lance immédiatement!** 🎉
+**Le workflow se lance immédiatement!** 
 
 ---
 
-## 📊 ÉTAPE 5: Surveiller le Déploiement
+##  ÉTAPE 5: Surveiller le Déploiement
 
 ### **Voir les logs en direct:**
 
@@ -112,49 +112,49 @@ git push origin v4.9.294 --force
 ### **Steps exécutés:**
 
 ```
-✅ Checkout code
-✅ Setup Node.js 20
-✅ Install dependencies (npm + homey CLI)
-✅ Get version from tag
-✅ Validate app structure
-✅ Build Homey app
-✅ Validate with Homey CLI (publish level)
-✅ Generate build report
-🚀 Publish to Homey App Store  ← LA MAGIE!
-✅ Create GitHub Release
-✅ Post success comment
-📊 Monitor deployment status
+ Checkout code
+ Setup Node.js 20
+ Install dependencies (npm + homey CLI)
+ Get version from tag
+ Validate app structure
+ Build Homey app
+ Validate with Homey CLI (publish level)
+ Generate build report
+ Publish to Homey App Store   LA MAGIE!
+ Create GitHub Release
+ Post success comment
+ Monitor deployment status
 ```
 
 ---
 
-## ✅ ÉTAPE 6: Vérifier la Publication
+##  ÉTAPE 6: Vérifier la Publication
 
 ### **Dans les logs GitHub Actions:**
 
 Si vous voyez:
 ```
-✅ Published successfully to Homey App Store!
+ Published successfully to Homey App Store!
 Version 4.9.294 is now available
 ```
 
-**C'EST BON!** 🎉
+**C'EST BON!** 
 
 ### **Sur le Homey App Store:**
 
 - Attendre **15-30 minutes**
-- Aller dans l'app Homey → **Settings** → **Apps**
+- Aller dans l'app Homey  **Settings**  **Apps**
 - Chercher **Universal Tuya Zigbee**
 - Une mise à jour devrait être disponible!
 
 ---
 
-## 🚨 DÉPANNAGE
+##  DÉPANNAGE
 
 ### **Erreur: HOMEY_TOKEN not set**
 
 ```
-❌ ERROR: HOMEY_TOKEN secret not set!
+ ERROR: HOMEY_TOKEN secret not set!
 ```
 
 **Solution:**
@@ -167,7 +167,7 @@ Version 4.9.294 is now available
 ### **Erreur: Validation failed**
 
 ```
-❌ Validation failed at level publish
+ Validation failed at level publish
 ```
 
 **Solution:**
@@ -181,7 +181,7 @@ Version 4.9.294 is now available
 ### **Erreur: Token expired**
 
 ```
-❌ Authentication failed: Token expired
+ Authentication failed: Token expired
 ```
 
 **Solution:**
@@ -191,7 +191,7 @@ Version 4.9.294 is now available
 
 ---
 
-## 📦 WORKFLOWS DISPONIBLES
+##  WORKFLOWS DISPONIBLES
 
 ### **1. `homey-publish.yml` - Publication sur App Store**
 
@@ -221,20 +221,20 @@ Version 4.9.294 is now available
 
 ---
 
-## 🎉 RÉSULTAT FINAL
+##  RÉSULTAT FINAL
 
 Après configuration complète:
 
-1. ✅ **Token Homey** configuré dans GitHub Secrets
-2. ✅ **Workflows** actifs sur GitHub Actions
-3. ✅ **Publication automatique** sur tag de version
-4. ✅ **Monitoring quotidien** de la santé de l'app
-5. ✅ **GitHub Releases** créées automatiquement
-6. ✅ **Plus besoin de CLI local** pour publier!
+1.  **Token Homey** configuré dans GitHub Secrets
+2.  **Workflows** actifs sur GitHub Actions
+3.  **Publication automatique** sur tag de version
+4.  **Monitoring quotidien** de la santé de l'app
+5.  **GitHub Releases** créées automatiquement
+6.  **Plus besoin de CLI local** pour publier!
 
 ---
 
-## 🚀 PUBLIER v4.9.294 MAINTENANT
+##  PUBLIER v4.9.294 MAINTENANT
 
 ```bash
 cd "c:\Users\HP\Desktop\homey app\tuya_repair"
@@ -250,11 +250,11 @@ Puis:
 1. Aller sur https://github.com/dlnraja/com.tuya.zigbee/actions
 2. Voir le workflow `Homey App Store Publisher` se lancer
 3. Attendre ~5-10 minutes
-4. ✅ **Version 4.9.294 publiée sur Homey App Store!**
+4.  **Version 4.9.294 publiée sur Homey App Store!**
 
 ---
 
-## 📞 SUPPORT
+##  SUPPORT
 
 En cas de problème:
 
@@ -263,4 +263,4 @@ En cas de problème:
 3. Tester localement: `homey app validate --level publish`
 4. Voir le fichier `.github/HOMEY_DEPLOYMENT.md` pour plus de détails
 
-**Tout est automatique maintenant! Plus besoin de CLI local! 🎉**
+**Tout est automatique maintenant! Plus besoin de CLI local! **

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Extract JohanBendz fingerprints with FULL device details
- * v5.12.1: Enhanced — extracts ALL fields from driver.compose.json:
+ * v5.12.1: Enhanced  extracts ALL fields from driver.compose.json:
  *   - manufacturerName (all of them, not just one)
  *   - productId (from zigbee config)
  *   - deviceType / class
@@ -52,7 +52,7 @@ module.exports = () => {
     } catch(e) {}
   });
   
-  console.log(`  ✅ Johan: ${fps.length} fingerprints with full device data`);
+  console.log(`   Johan: ${fps.length} fingerprints with full device data`);
   
   return {
     count: fps.length, 

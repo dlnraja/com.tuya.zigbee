@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * 🔠 CASE INTEGRITY NORMALIZER v1.0
+ *  CASE INTEGRITY NORMALIZER v1.0
  * Enforces "Case-Less" architectural standards across all driver manifests.
  * Normalizes manufacturerName and productId to UPPERCASE (Zigbee standard).
  * Removes case-insensitive duplicates.
@@ -44,7 +44,7 @@ function auditDriver(driverId) {
                 if (JSON.stringify(compose.zigbee.manufacturerName) !== original) {
                     changed = true;
                     violationsFound++;
-                    console.log(`⚠️  [CASE] ${driverId}: Inconsistent manufacturerName casing or duplicates.`);
+                    console.log(`  [CASE] ${driverId}: Inconsistent manufacturerName casing or duplicates.`);
                 }
             }
             if (compose.zigbee.productId) {
@@ -53,40 +53,40 @@ function auditDriver(driverId) {
                 if (JSON.stringify(compose.zigbee.productId) !== original) {
                     changed = true;
                     violationsFound++;
-                    console.log(`⚠️  [CASE] ${driverId}: Inconsistent productId casing or duplicates.`);
+                    console.log(`  [CASE] ${driverId}: Inconsistent productId casing or duplicates.`);
                 }
             }
         }
 
         if (changed && AUTO_FIX) {
             fs.writeFileSync(composePath, JSON.stringify(compose, null, 2) + '\n');
-            console.log(`✅ [FIXED] ${driverId}: Normalized case.`);
+            console.log(` [FIXED] ${driverId}: Normalized case.`);
             filesFixed++;
         }
     } catch (e) {
-        console.error(`❌ [ERROR] ${driverId}: Failed to parse/audit: ${e.message}`);
+        console.error(` [ERROR] ${driverId}: Failed to parse/audit: ${e.message}`);
     }
 }
 
-console.log('🚀 Starting Case Integrity Normalization Audit...');
+console.log(' Starting Case Integrity Normalization Audit...');
 
 const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory());
 
 drivers.forEach(auditDriver);
 
-console.log('\n--- 🏁 Case Integrity Summary ---');
+console.log('\n---  Case Integrity Summary ---');
 console.log(`- Drivers Checked: ${driversChecked}`);
 console.log(`- Violations Found: ${violationsFound}`);
 
 if (violationsFound > 0) {
     if (AUTO_FIX) {
-        console.log(`🛠️ Normalized ${filesFixed} files.`);
+        console.log(` Normalized ${filesFixed} files.`);
         process.exit(0);
     } else {
-        console.error('🛑 Violations found. Run with --fix to normalize.');
+        console.error(' Violations found. Run with --fix to normalize.');
         process.exit(1);
     }
 } else {
-    console.log('✅ All manifests compliant with Case-Less standards.');
+    console.log(' All manifests compliant with Case-Less standards.');
     process.exit(0);
 }

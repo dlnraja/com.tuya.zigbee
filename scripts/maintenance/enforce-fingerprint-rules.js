@@ -40,7 +40,7 @@ function enforceRules() {
       const oldMfrsCount = mfrs.length;
       mfrs = mfrs.filter(m => !m.includes('*'));
       if (mfrs.length < oldMfrsCount) {
-        console.log(`[${driver}] ❌ Removed wildcard from manufacturerName`);
+        console.log(`[${driver}]  Removed wildcard from manufacturerName`);
         wildcardCount += (oldMfrsCount - mfrs.length);
         changed = true;
       }
@@ -48,7 +48,7 @@ function enforceRules() {
       const oldPidsCount = pids.length;
       pids = pids.filter(p => !p.includes('*'));
       if (pids.length < oldPidsCount) {
-        console.log(`[${driver}] ❌ Removed wildcard from productId`);
+        console.log(`[${driver}]  Removed wildcard from productId`);
         wildcardCount += (oldPidsCount - pids.length);
         changed = true;
       }
@@ -84,7 +84,7 @@ function enforceRules() {
     }
   }
 
-  console.log(`\n✅ Enforcement summary:`);
+  console.log(`\n Enforcement summary:`);
   console.log(` - Drivers modified: ${modifiedCount}`);
   console.log(` - Wildcards removed: ${wildcardCount}`);
   console.log(` - Lowercase variants injected: ${caseCount}\n`);

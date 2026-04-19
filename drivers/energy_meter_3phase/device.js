@@ -42,7 +42,7 @@ class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[ENERGY-3PH] ✅ Ready');
+    this.log('[ENERGY-3PH]  Ready');
   }
 
 

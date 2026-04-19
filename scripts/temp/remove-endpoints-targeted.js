@@ -23,13 +23,13 @@ for (const driver of pureTuyaDPDrivers) {
         if (d.zigbee && d.zigbee.endpoints) {
             delete d.zigbee.endpoints;
             fs.writeFileSync(file, JSON.stringify(d, null, 2) + '\n');
-            console.log('  ✓ ' + driver);
+            console.log('   ' + driver);
             modified++;
         }
     } catch(e) {
-        console.error('  ✗ ' + driver + ': ' + e.message);
+        console.error('   ' + driver + ': ' + e.message);
     }
 }
 
-console.log('\n✅ Modified ' + modified + ' drivers');
-console.log('✅ Multi-gang ZCL drivers (switch_2gang, etc.) PRESERVED');
+console.log('\n Modified ' + modified + ' drivers');
+console.log(' Multi-gang ZCL drivers (switch_2gang, etc.) PRESERVED');

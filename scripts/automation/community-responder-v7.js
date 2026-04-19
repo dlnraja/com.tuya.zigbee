@@ -2,12 +2,12 @@
 'use strict';
 
 /**
- * ╔══════════════════════════════════════════════════════════════╗
- * ║      GHOSTWRITER - COMMUNITY RESPONDER v7.0                  ║
- * ╠══════════════════════════════════════════════════════════════╣
- * ║  Generates professional, architect-level responses for the   ║
- * ║  Homey Forum and GitHub Issues based on v7 doctrines.        ║
- * ╚══════════════════════════════════════════════════════════════╝
+ * 
+ *       GHOSTWRITER - COMMUNITY RESPONDER v7.0                  
+ * 
+ *   Generates professional, architect-level responses for the   
+ *   Homey Forum and GitHub Issues based on v7 doctrines.        
+ * 
  */
 
 const fs = require('fs');
@@ -26,9 +26,9 @@ function generateResponse(type, data) {
     let template = '';
     
     if (type === 'issue') {
-        template = `👋 Hello @${user || 'contributor'},
+        template = ` Hello @${user || 'contributor'},
  
-🛡️ **Architect Review [v7.4.4]**
+ **Architect Review [v7.4.4]**
 Thank you for reporting this regarding the **${deviceName || 'Tuya device'}**. This item has been logged into our triage pipeline.
  
 **Technical Status**: ${status.toUpperCase()}
@@ -37,12 +37,12 @@ Thank you for reporting this regarding the **${deviceName || 'Tuya device'}**. T
 - **Stability Fix**: This version includes the global remediation for SDK 3 flow card crashes.
 - We are currently verifying the DP mappings against our industrial schema.
  
-${status === 'fixed' ? '✅ **Resolution**: This has been solved in the latest v7.4.4 build. Please update through the Homey App Store (Test channel).' : 'Stay tuned for the next autonomous maintenance pulse.'}
+${status === 'fixed' ? ' **Resolution**: This has been solved in the latest v7.4.4 build. Please update through the Homey App Store (Test channel).' : 'Stay tuned for the next autonomous maintenance pulse.'}
  
-*— dlnraja Tuya Maintenance Bot*`;
+* dlnraja Tuya Maintenance Bot*`;
     } 
     else if (type === 'forum_new_device') {
-        template = `🚀 **New Device Support Integration: ${deviceName || 'Tuya Device'}**
+        template = ` **New Device Support Integration: ${deviceName || 'Tuya Device'}**
  
 We are pleased to announce that the **${deviceName}** is now officially supported in **Universal Tuya Unified Engine v7.4.4**.
  

@@ -8,17 +8,17 @@ const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      3-GANG DIMMER - v5.5.829 (Tuya DP-based)                               ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  MOES 3-Gang Dimmer - _TZE204_1v1dxkck / TS0601                              ║
- * ║  Uses Tuya cluster CLUSTERS.TUYA_EF00 for control                                        ║
- * ║                                                                              ║
- * ║  DP Mapping (from Z2M/forum research):                                       ║
- * ║  - DP1: Switch 1 (bool)      - DP2: Dimmer 1 (0-1000)                        ║
- * ║  - DP7: Switch 2 (bool)      - DP8: Dimmer 2 (0-1000)                        ║
- * ║  - DP15: Switch 3 (bool)     - DP16: Dimmer 3 (0-1000)                       ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       3-GANG DIMMER - v5.5.829 (Tuya DP-based)                               
+ * 
+ *   MOES 3-Gang Dimmer - _TZE204_1v1dxkck / TS0601                              
+ *   Uses Tuya cluster CLUSTERS.TUYA_EF00 for control                                        
+ *                                                                               
+ *   DP Mapping (from Z2M/forum research):                                       
+ *   - DP1: Switch 1 (bool)      - DP2: Dimmer 1 (0-1000)                        
+ *   - DP7: Switch 2 (bool)      - DP8: Dimmer 2 (0-1000)                        
+ *   - DP15: Switch 3 (bool)     - DP16: Dimmer 3 (0-1000)                       
+ * 
  */
 class Dimmer3GangDevice extends ZigBeeDevice {
 
@@ -42,9 +42,9 @@ class Dimmer3GangDevice extends ZigBeeDevice {
   }
 
   async onNodeInit({ zclNode }) {
-    this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║         3-GANG DIMMER v5.5.829 (Tuya DP)                     ║');
-    this.log('╚══════════════════════════════════════════════════════════════╝');
+    this.log('');
+    this.log('         3-GANG DIMMER v5.5.829 (Tuya DP)                     ');
+    this.log('');
 
     this.zclNode = zclNode;
 
@@ -54,14 +54,14 @@ class Dimmer3GangDevice extends ZigBeeDevice {
     // Register capability listeners
     await this._registerCapabilityListeners();
 
-    this.log('[DIMMER-3G] ✅ 3-Gang Dimmer Ready');
+    this.log('[DIMMER-3G]  3-Gang Dimmer Ready');
   }
 
   async _setupTuyaCluster(zclNode) {
     try {
       const endpoint = zclNode.endpoints[1];
       if (!endpoint) {
-        this.log('[DIMMER-3G] ⚠️ No endpoint 1 found');
+        this.log('[DIMMER-3G]  No endpoint 1 found');
         return;
       }
 
@@ -74,7 +74,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
         tuyaCluster.on('response', this._handleTuyaResponse.bind(this));
         tuyaCluster.on('reporting', this._handleTuyaResponse.bind(this));
         tuyaCluster.on('datapoint', this._handleTuyaResponse.bind(this));
-        this.log('[DIMMER-3G] ✅ Tuya cluster listener registered');
+        this.log('[DIMMER-3G]  Tuya cluster listener registered');
       }
     } catch (err) {
       this.error('[DIMMER-3G] Error setting up Tuya cluster:', err.message);

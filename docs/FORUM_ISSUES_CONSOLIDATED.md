@@ -1,4 +1,4 @@
-# 📋 Forum Issues Consolidated - Master Reference
+#  Forum Issues Consolidated - Master Reference
 
 **Version**: 5.11.13
 **Last Updated**: 2026-02-17
@@ -6,7 +6,7 @@
 
 ---
 
-## 📊 Executive Summary
+##  Executive Summary
 
 | Category | Total | Fixed | Investigating | Pending |
 |----------|-------|-------|---------------|---------|
@@ -22,10 +22,10 @@
 
 ---
 
-## 🚨 CRITICAL ISSUES (Require Immediate Action)
+##  CRITICAL ISSUES (Require Immediate Action)
 
 ### Issue #1: Smart Button No Flow Response
-- **Status**: ⚠️ INVESTIGATING
+- **Status**:  INVESTIGATING
 - **User**: Cam (#1160)
 - **Device**: 1-Button Wireless Controller
 - **Diagnostic**: `4d7b45a5-082f-4f1e-a787-a439eac5257a`
@@ -37,20 +37,20 @@
 - **Fix Applied**: v5.5.778 - Removed maintenanceAction, added getable: true
 
 ### Issue #2: Presence Radar Motion Alarm Stuck
-- **Status**: ⚠️ HIGH PRIORITY
+- **Status**:  HIGH PRIORITY
 - **Device**: `_TZE284_iadro9bf` / TS0601
 - **Diagnostic**: `d8820bc1-7646-411b-8158-2132ea45a1ac`
 - **Symptoms**:
   - Motion alarm ALWAYS YES
   - Updates every 20 seconds
-  - Illuminance jumps: 30 → 1000 lux
+  - Illuminance jumps: 30  1000 lux
 - **Fix Strategy**:
   1. Enable `invertPresence: true`
   2. Enhance throttle for stuck pattern detection
   3. Add fallback to distance-based inference
 
 ### Issue #3: HOBEIAN ZG-102Z CIE Enrollment Failure
-- **Status**: ⚠️ HIGH PRIORITY
+- **Status**:  HIGH PRIORITY
 - **Device**: HOBEIAN / ZG-102Z
 - **User**: Lasse_K
 - **Problem**: `iasCIEAddress: 00:00:00:00:00:00:00:00` (not enrolled)
@@ -61,7 +61,7 @@
 
 ---
 
-## ✅ FIXED ISSUES
+##  FIXED ISSUES
 
 ### Presence Sensors
 | ID | Device | ManufacturerName | Version Fixed |
@@ -132,21 +132,21 @@
 
 ---
 
-## ⚠️ FINGERPRINT COLLISIONS
+##  FINGERPRINT COLLISIONS
 
 ### Collision #1: `_TZ3000_wkai4ga5`
 - **Affected Drivers**: 8+ drivers
 - **Correct Driver**: `button_wireless_4`
-- **Status**: ✅ RESOLVED in v5.5.419
+- **Status**:  RESOLVED in v5.5.419
 - **Resolution**: Added to button_wireless_4 with proper handling
 
 ### Collision #2: `_TZ3000_5tqxpine`
 - **Affected Drivers**: scene_switch_4, button_wireless_4
-- **Status**: ✅ RESOLVED - Both drivers handle correctly
+- **Status**:  RESOLVED - Both drivers handle correctly
 
 ---
 
-## 📝 DESIGN LIMITATIONS (Not Bugs)
+##  DESIGN LIMITATIONS (Not Bugs)
 
 ### Motion Sensor Lux Updates
 - **Issue**: Lux only updates when motion triggered
@@ -162,18 +162,18 @@
 
 ---
 
-## 🔄 REGRESSIONS (Fixed)
+##  REGRESSIONS (Fixed)
 
 | Version | Commit | Issue | Status |
 |---------|--------|-------|--------|
-| 5.5.752 | 68b908001f | SOS Button DP13 broken | ✅ Fixed |
-| 5.5.751 | 7be02f9aff | ZG-204ZV Temp/Humidity | ✅ Fixed |
-| 5.5.750 | bb504e4e1c | HybridSwitchBase crash | ✅ Fixed |
-| 5.5.718 | eeaaefe479 | TS0726 4-gang bindings | ✅ Fixed |
+| 5.5.752 | 68b908001f | SOS Button DP13 broken |  Fixed |
+| 5.5.751 | 7be02f9aff | ZG-204ZV Temp/Humidity |  Fixed |
+| 5.5.750 | bb504e4e1c | HybridSwitchBase crash |  Fixed |
+| 5.5.718 | eeaaefe479 | TS0726 4-gang bindings |  Fixed |
 
 ---
 
-## 🎯 ACTION ITEMS
+##  ACTION ITEMS
 
 ### Immediate
 - [x] Fix `_TZE284_iadro9bf` motion alarm stuck issue (v5.5.903 - stuck pattern detection)
@@ -194,7 +194,7 @@
 
 ---
 
-## 📁 Related Files
+##  Related Files
 
 - `@/docs/data/DEVICE_INTERVIEWS.json` - Complete interview database
 - `@/docs/FORUM_ISSUES_ANALYSIS.md` - Original analysis
@@ -204,12 +204,12 @@
 
 ---
 
-## 📈 Metrics
+##  Metrics
 
 ### Coverage Improvements
 - Presence sensors: +5.5%
 - Climate sensors: +0.09% (large base)
-- Power meters: +300% (1 → 4)
+- Power meters: +300% (1  4)
 - Contact sensors: +2.2%
 
 ### Flow Triggers Fixed
@@ -221,7 +221,7 @@
 
 ## Forum p70-72 (2026-02-17)
 
-- Cam: Button 1-gang OK v5.9.14 ✅
+- Cam: Button 1-gang OK v5.9.14 
 - Hartmut: TS0726 4-gang virtual=all toggle. Diag:945448b9
 - Lasse_K: Contact no react v5.9.2-6. Regression from v5.8.43
 - Tividor: TS0044 single OK, double/long NOT. Diag:4a3b2feb

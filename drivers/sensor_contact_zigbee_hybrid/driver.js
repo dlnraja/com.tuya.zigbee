@@ -39,29 +39,31 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Door/window is/is not open
     try {
-      (() => { try { return
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('contact_sensor_is_open');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
-      this.log('[FLOW] ✅ contact_sensor_is_open');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW]  Registered: contact_sensor_is_open');
+      }
+    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }
 
     // CONDITION: Battery above threshold
     try {
-      (() => { try { return
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('contact_sensor_battery_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.threshold || 20);
         });
-      this.log('[FLOW] ✅ contact_sensor_battery_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW]  Registered: contact_sensor_battery_above');
+      }
 
     this.log('[FLOW]  Contact sensor flow cards registered');
   }
 }
+    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }
 
 module.exports = LonsonhoContactSensorDriver;

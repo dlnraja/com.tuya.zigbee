@@ -233,57 +233,57 @@ async function addManufacturerIds(driverPath, ids) {
 }
 
 async function applyAllFixes() {
-  console.log('═══════════════════════════════════════════════════════════════');
+  console.log('');
   console.log('APPLYING FORUM ZIGBEE FIXES');
-  console.log('═══════════════════════════════════════════════════════════════\n');
+  console.log('\n');
 
   const driversDir = path.join(__dirname, '../drivers');
   const results = { success: 0, skipped: 0, errors: 0 };
   const details = [];
 
-  console.log('1️⃣ FIXING DECIMAL SETTINGS (power compensation)...\n');
+  console.log('1 FIXING DECIMAL SETTINGS (power compensation)...\n');
   for (const driverName of FIXES.decimalSettings.drivers) {
     const driverPath = path.join(driversDir, driverName);
     try {
       const result = await fixDecimalSettings(driverPath, FIXES.decimalSettings);
       if (result.success) {
-        console.log(`✅ ${driverName}: ${result.changes.join(', ')}`);
+        console.log(` ${driverName}: ${result.changes.join(', ')}`);
         results.success++;
         details.push({ driver: driverName, fix: 'decimalSettings', ...result });
       } else {
         results.skipped++;
       }
     } catch (err) {
-      console.error(`❌ ${driverName}: ${err.message}`);
+      console.error(` ${driverName}: ${err.message}`);
       results.errors++;
     }
   }
 
-  console.log('\n2️⃣ ADDING TEMPERATURE OFFSET ACTION...\n');
+  console.log('\n2 ADDING TEMPERATURE OFFSET ACTION...\n');
   for (const driverName of FIXES.temperatureOffsetAction.drivers) {
     const driverPath = path.join(driversDir, driverName);
     try {
       const result = await addFlowAction(driverPath, FIXES.temperatureOffsetAction);
       if (result.success) {
-        console.log(`✅ ${driverName}: ${result.changes.join(', ')}`);
+        console.log(` ${driverName}: ${result.changes.join(', ')}`);
         results.success++;
         details.push({ driver: driverName, fix: 'temperatureOffsetAction', ...result });
       } else {
         results.skipped++;
       }
     } catch (err) {
-      console.error(`❌ ${driverName}: ${err.message}`);
+      console.error(` ${driverName}: ${err.message}`);
       results.errors++;
     }
   }
 
-  console.log('\n3️⃣ ADDING AVATTO ZDMS16-2 DIMMER SUPPORT...\n');
+  console.log('\n3 ADDING AVATTO ZDMS16-2 DIMMER SUPPORT...\n');
   {
     const driverPath = path.join(driversDir, FIXES.avattoZDMS162.driver);
     try {
       const result = await addManufacturerIds(driverPath, FIXES.avattoZDMS162.manufacturerIds);
       if (result.success) {
-        console.log(`✅ ${FIXES.avattoZDMS162.driver}: Added ${result.changes.length} IDs`);
+        console.log(` ${FIXES.avattoZDMS162.driver}: Added ${result.changes.length} IDs`);
         result.changes.forEach(id => console.log(`   - ${id}`));
         results.success++;
         details.push({ driver: FIXES.avattoZDMS162.driver, fix: 'avattoZDMS162', ...result });
@@ -291,52 +291,52 @@ async function applyAllFixes() {
         results.skipped++;
       }
     } catch (err) {
-      console.error(`❌ ${FIXES.avattoZDMS162.driver}: ${err.message}`);
+      console.error(` ${FIXES.avattoZDMS162.driver}: ${err.message}`);
       results.errors++;
     }
   }
 
-  console.log('\n4️⃣ ADDING LIDL SILVERCREST ENERGY FIX...\n');
+  console.log('\n4 ADDING LIDL SILVERCREST ENERGY FIX...\n');
   {
     const driverPath = path.join(driversDir, FIXES.lidlSilvercrestEnergyFix.driver);
     try {
       const result = await addManufacturerIds(driverPath, FIXES.lidlSilvercrestEnergyFix.manufacturerIds);
       if (result.success) {
-        console.log(`✅ ${FIXES.lidlSilvercrestEnergyFix.driver}: Added ${result.changes.length} IDs`);
+        console.log(` ${FIXES.lidlSilvercrestEnergyFix.driver}: Added ${result.changes.length} IDs`);
         results.success++;
       }
     } catch (err) {
-      console.error(`❌ Error: ${err.message}`);
+      console.error(` Error: ${err.message}`);
       results.errors++;
     }
   }
 
-  console.log('\n5️⃣ ADDING SONOFF TRVZB THERMOSTAT IDs...\n');
+  console.log('\n5 ADDING SONOFF TRVZB THERMOSTAT IDs...\n');
   {
     const driverPath = path.join(driversDir, FIXES.sonoffTRVZB.driver);
     try {
       const result = await addManufacturerIds(driverPath, FIXES.sonoffTRVZB.manufacturerIds);
       if (result.success) {
-        console.log(`✅ ${FIXES.sonoffTRVZB.driver}: Added ${result.changes.length} IDs`);
+        console.log(` ${FIXES.sonoffTRVZB.driver}: Added ${result.changes.length} IDs`);
         result.changes.forEach(id => console.log(`   - ${id}`));
         results.success++;
       } else {
-        console.log(`⏭️ ${FIXES.sonoffTRVZB.driver}: ${result.reason}`);
+        console.log(` ${FIXES.sonoffTRVZB.driver}: ${result.reason}`);
         results.skipped++;
       }
     } catch (err) {
-      console.error(`❌ ${FIXES.sonoffTRVZB.driver}: ${err.message}`);
+      console.error(` ${FIXES.sonoffTRVZB.driver}: ${err.message}`);
       results.errors++;
     }
   }
 
-  console.log('\n═══════════════════════════════════════════════════════════════');
+  console.log('\n');
   console.log('SUMMARY');
-  console.log('═══════════════════════════════════════════════════════════════\n');
+  console.log('\n');
 
-  console.log(`✅ Successful fixes: ${results.success}`);
-  console.log(`⏭️ Skipped (already done): ${results.skipped}`);
-  console.log(`❌ Errors: ${results.errors}`);
+  console.log(` Successful fixes: ${results.success}`);
+  console.log(` Skipped (already done): ${results.skipped}`);
+  console.log(` Errors: ${results.errors}`);
 
   const reportPath = path.join(__dirname, '../ZIGBEE_FORUM_FIXES_REPORT.json');
   await writeJSON(reportPath, {
@@ -344,7 +344,7 @@ async function applyAllFixes() {
     results,
     details
   });
-  console.log(`\n📄 Report: ${reportPath}`);
+  console.log(`\n Report: ${reportPath}`);
 
   return results;
 }
@@ -352,11 +352,11 @@ async function applyAllFixes() {
 if (require.main === module) {
   applyAllFixes()
     .then((results) => {
-      console.log(`\n✅ ZIGBEE FORUM FIXES COMPLETE (${results.success} applied)`);
+      console.log(`\n ZIGBEE FORUM FIXES COMPLETE (${results.success} applied)`);
       process.exit(0);
     })
     .catch((err) => {
-      console.error('\n❌ ERROR:', err);
+      console.error('\n ERROR:', err);
       process.exit(1);
     });
 }

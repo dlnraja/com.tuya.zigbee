@@ -76,12 +76,12 @@ for (const file of filesToFix) {
        content = before + '\n    ' + toMove.trim() + '\n' + after;
        
        fs.writeFileSync(fullPath, content);
-       console.log(`✅ Fixed order in ${file}`);
+       console.log(` Fixed order in ${file}`);
        fixedCount++;
     } else {
-       console.log(`⚠️ Could not automatically fix ${file} (needs manual review)`);
+       console.log(` Could not automatically fix ${file} (needs manual review)`);
     }
   }
 }
 
-console.log(`\n✅ Fixed order in ${fixedCount} files`);
+console.log(`\n Fixed order in ${fixedCount} files`);

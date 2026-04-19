@@ -1,6 +1,6 @@
 # Development Rules - Universal Tuya Zigbee
 
-## 🚨 CRITICAL RULES
+##  CRITICAL RULES
 
 ### 1. Publication Rule
 **NEVER use `npx homey app publish` locally.**  
@@ -10,12 +10,12 @@ The workflow `.github/workflows/publish.yml` handles publication automatically.
 ### 2. ManufacturerName Duplication Rule
 **ManufacturerNames CAN be in multiple drivers** - this is NORMAL and EXPECTED!
 
-#### ✅ VALID: Same manufacturerName in multiple drivers
+####  VALID: Same manufacturerName in multiple drivers
 ```
-_TZ3000_abcdefgh + TS0001 → switch_1gang
-_TZ3000_abcdefgh + TS0002 → switch_2gang
-_TZ3000_abcdefgh + TS0003 → switch_3gang
-_TZ3000_abcdefgh + TS0012 → dimmer_2gang
+_TZ3000_abcdefgh + TS0001  switch_1gang
+_TZ3000_abcdefgh + TS0002  switch_2gang
+_TZ3000_abcdefgh + TS0003  switch_3gang
+_TZ3000_abcdefgh + TS0012  dimmer_2gang
 ```
 The same manufacturer makes multiple device variants with different productIds.
 
@@ -24,7 +24,7 @@ Homey matches BOTH values together. A device is matched when:
 - Its `manufacturerName` is in the driver's list AND
 - Its `productId` is in the driver's list
 
-#### ❌ TRUE conflicts to avoid
+####  TRUE conflicts to avoid
 Only remove a fingerprint if it causes WRONG driver matching:
 - Same manufacturerName + same productId in two incompatible drivers
 - Example: `_TZ3000_xyz` + `TS0002` in both `switch_2gang` AND `dimmer_2gang`
@@ -62,7 +62,7 @@ Modern Tuya devices (TZE284 series) require precise timing responses:
 
 ---
 
-## 📋 Flow Card Rules
+##  Flow Card Rules
 
 ### Flow Card ID Matching
 - Flow card IDs in `driver.js` MUST exactly match IDs in `driver.flow.compose.json`.
@@ -71,17 +71,17 @@ Modern Tuya devices (TZE284 series) require precise timing responses:
 
 ### Flow Card Registration Pattern
 ```javascript
-// ✅ CORRECT: SDK 3 compliant with explicit ID
+//  CORRECT: SDK 3 compliant with explicit ID
 const flowId = 'my_driver_trigger_name';
 this._triggerCard = this.homey.flow.getTriggerCard(flowId);
 
-// ❌ INCORRECT: Missing ID and non-existent getter
+//  INCORRECT: Missing ID and non-existent getter
 this._triggerCard = this.homey.flow.getDeviceTriggerCard(); 
 ```
 
 ---
 
-## 🔧 Device Support Rules
+##  Device Support Rules
 
 ### Adding New Manufacturer IDs
 1. Search Zigbee2MQTT, ZHA, Blakadder for existing IDs
@@ -116,7 +116,7 @@ For battery devices, bindings must be in `driver.compose.json`:
 
 ---
 
-## 🌐 Sources for Device Research
+##  Sources for Device Research
 
 ### Primary Sources
 1. **Zigbee2MQTT**: https://www.zigbee2mqtt.io/supported-devices/
@@ -130,7 +130,7 @@ For battery devices, bindings must be in `driver.compose.json`:
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ### Key Directories
 - `drivers/` - All device drivers (organized by FUNCTION, not brand)
@@ -141,12 +141,12 @@ For battery devices, bindings must be in `driver.compose.json`:
 
 ### Naming Convention
 Drivers are named by **function**, not brand:
-- ✅ `switch_2gang`, `climate_sensor`, `presence_sensor_radar`
-- ❌ `tuya_switch`, `moes_thermostat`
+-  `switch_2gang`, `climate_sensor`, `presence_sensor_radar`
+-  `tuya_switch`, `moes_thermostat`
 
 ---
 
-## 🔄 Git Workflow
+##  Git Workflow
 
 ### Commit Messages
 Format: `v{version}: {description}`
@@ -162,7 +162,7 @@ GitHub Actions auto-syncs README on push (skip with `[skip ci]` in commit messag
 
 ---
 
-## 🐛 Common Issues & Solutions
+##  Common Issues & Solutions
 
 ### "Invalid Flow Card ID"
 **Cause**: Flow card not in `app.json`

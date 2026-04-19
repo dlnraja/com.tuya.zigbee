@@ -1,1 +1,1 @@
-# 🚀 Universal Tuya Zigbee Device<div align="center">![Tuya Zigbee](https://img.shields.io/badge/Tuya-Zigbee-blue?style=for-the-badge&logo=zigbee)![Homey SDK3](https:
+#  Universal Tuya Zigbee Device<div align="center">![Tuya Zigbee](https://img.shields.io/badge/Tuya-Zigbee-blue?style=for-the-badge&logo=zigbee)![Homey SDK3](https:

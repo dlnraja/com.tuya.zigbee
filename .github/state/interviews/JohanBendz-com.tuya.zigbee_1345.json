@@ -18,7 +18,7 @@
       "fps": [
         "_TZE284_xnbkhhdr"
       ],
-      "excerpt": "Hi! 👋\n\n**Good news!** The AVATTO thermostat _TZE284_xnbkhhdr TS0601 is already supported in the **dlnraja fork** (com.dlnraja.tuya.zigbee).\n\n## To use it:\n1. Install **Universal Tuya Zigbee** by dlnraja from the Homey App Store\n2. Pair your thermostat - it should be detected by the **thermostat_tuya_dp** or **climate_sensor** driver\n\nThe dlnraja fork has extensive TS0601 thermostat support with automatic DP mapping detection.\n\nIf you encounter any issues after pairing, please send a diagnostic report and I'll help configure the correct DP mappings for your specific model."
+      "excerpt": "Hi! \n\n**Good news!** The AVATTO thermostat _TZE284_xnbkhhdr TS0601 is already supported in the **dlnraja fork** (com.dlnraja.tuya.zigbee).\n\n## To use it:\n1. Install **Universal Tuya Zigbee** by dlnraja from the Homey App Store\n2. Pair your thermostat - it should be detected by the **thermostat_tuya_dp** or **climate_sensor** driver\n\nThe dlnraja fork has extensive TS0601 thermostat support with automatic DP mapping detection.\n\nIf you encounter any issues after pairing, please send a diagnostic report and I'll help configure the correct DP mappings for your specific model."
     },
     {
       "user": "dlnraja",
@@ -26,7 +26,7 @@
       "fps": [
         "_TZE284_xnbkhhdr"
       ],
-      "excerpt": "## ✅ TRV Support in dlnraja Fork v5.5.991\n\nThe **AVATTO WT198** (_TZE284_xnbkhhdr / TS0601) should work with the \radiator_valve driver.\n\n### Supported Features:\n- Target temperature control\n- Current temperature reading\n- Thermostat modes (off/heat/auto)\n- Valve position\n- Battery alarm\n\n### DP Mappings (TZE284 TRVs):\n- DP2/DP4 = Target temperature (÷10)\n- DP3/DP5 = Current temperature (÷10)\n- DP35 = Battery alarm\n\n### To verify:\n1. Install **Universal Tuya Zigbee** app\n2. Pair device\n3. Share diagnostic report if issues\n\n🔗 [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/)"
+      "excerpt": "##  TRV Support in dlnraja Fork v5.5.991\n\nThe **AVATTO WT198** (_TZE284_xnbkhhdr / TS0601) should work with the \radiator_valve driver.\n\n### Supported Features:\n- Target temperature control\n- Current temperature reading\n- Thermostat modes (off/heat/auto)\n- Valve position\n- Battery alarm\n\n### DP Mappings (TZE284 TRVs):\n- DP2/DP4 = Target temperature (÷10)\n- DP3/DP5 = Current temperature (÷10)\n- DP35 = Battery alarm\n\n### To verify:\n1. Install **Universal Tuya Zigbee** app\n2. Pair device\n3. Share diagnostic report if issues\n\n [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/)"
     },
     {
       "user": "Nono-3ric",
@@ -66,13 +66,13 @@
       "fps": [
         "_TZE284_xnbkhhdr"
       ],
-      "excerpt": "Hi,\n\nThe AVATTO WT198 thermostat _TZE284_xnbkhhdr / TS0601 is already supported in the **Universal Tuya Zigbee** app (by dlnraja) on the Homey App Store.\n\nIt is in the **thermostat_tuya_dp** driver with full Tuya DP protocol support for:\n- Target temperature (DP2)\n- Current temperature (DP3)\n- System mode (DP1/DP4)\n- Battery level\n\n**To use:**\n1. Install **Universal Tuya Zigbee** from the Homey App Store\n2. Remove device if paired as unknown\n3. Re-pair — select **Thermostat (Tuya DP)**\n\nBest regards"
+      "excerpt": "Hi,\n\nThe AVATTO WT198 thermostat _TZE284_xnbkhhdr / TS0601 is already supported in the **Universal Tuya Zigbee** app (by dlnraja) on the Homey App Store.\n\nIt is in the **thermostat_tuya_dp** driver with full Tuya DP protocol support for:\n- Target temperature (DP2)\n- Current temperature (DP3)\n- System mode (DP1/DP4)\n- Battery level\n\n**To use:**\n1. Install **Universal Tuya Zigbee** from the Homey App Store\n2. Remove device if paired as unknown\n3. Re-pair  select **Thermostat (Tuya DP)**\n\nBest regards"
     },
     {
       "user": "dlnraja",
       "date": "2026-02-18T13:02:49Z",
       "fps": [],
-      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps:
+      "excerpt": "Hi! \n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork)  **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps:
     },
     {
       "user": "dlnraja",

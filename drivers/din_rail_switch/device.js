@@ -8,12 +8,12 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      DIN RAIL SWITCH - v5.6.0 + Bidirectional Buttons                       ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Smart circuit breaker / DIN rail switch with energy monitoring             ║
- * ║  v5.6.0: Added bidirectional physical/virtual button support                ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       DIN RAIL SWITCH - v5.6.0 + Bidirectional Buttons                       
+ * 
+ *   Smart circuit breaker / DIN rail switch with energy monitoring             
+ *   v5.6.0: Added bidirectional physical/virtual button support                
+ * 
  */
 class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeDevice)) {
 

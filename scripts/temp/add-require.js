@@ -18,7 +18,7 @@ if (!content.includes('PowerSourceIntelligence')) {
   }
   
   fs.writeFileSync(file, newLines.join('\n'));
-  console.log('✅ Added PowerSourceIntelligence require to HybridSensorBase.js');
+  console.log(' Added PowerSourceIntelligence require to HybridSensorBase.js');
 } else {
   console.log('Already contains PowerSourceIntelligence');
 }

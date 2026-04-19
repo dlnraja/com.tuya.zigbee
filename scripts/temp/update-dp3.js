@@ -16,8 +16,8 @@ const replaceBlock = "\n" +
 "        115: { capability: null, setting: 'soil_fertility_warning_v1', min: 0, max: 5000 },\n";
 
 const startMarker = "102: { capability: 'measure_luminance', divisor: 1 },";
-const endMarker = "// ═══════════════════════════════════════════════════════════════════\r\n        
-let endMarker2 = "// ═══════════════════════════════════════════════════════════════════\n        
+const endMarker = "// \r\n        
+let endMarker2 = "// \n        
 
 const startIndex = txt.indexOf(startMarker);
 let endIndex = txt.indexOf(endMarker);

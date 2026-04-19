@@ -35,9 +35,9 @@ for (const driver of driversNeedingEndpoints) {
     delete data.zigbee.bindings;
     
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-    console.log(`✅ Fixed ${driver}`);
+    console.log(` Fixed ${driver}`);
     fixed++;
   }
 }
 
-console.log(`\n✅ Fixed ${fixed} drivers with missing endpoints`);
+console.log(`\n Fixed ${fixed} drivers with missing endpoints`);

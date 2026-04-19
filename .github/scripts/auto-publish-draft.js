@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * auto-publish-draft.js — Promotes latest draft build to "test" channel.
+ * auto-publish-draft.js  Promotes latest draft build to "test" channel.
  *
  * Auth: PAT -> AthomCloudAPI delegation token (audience: 'apps')
  * API:  apps-api.athom.com/api/v1 (from homey-api SDK spec)
@@ -52,7 +52,7 @@ async function getDelegationToken() {
   return null;
 }
 
-// v5.11.27: List builds — try multiple API base URLs
+// v5.11.27: List builds  try multiple API base URLs
 async function getBuilds(token) {
   const h = { 'Authorization': 'Bearer ' + token, 'Accept': 'application/json' };
   const paths = ['/app/' + APP + '/build', '/app/' + APP + '/builds', '/app/' + APP];
@@ -75,7 +75,7 @@ async function getBuilds(token) {
   return null;
 }
 
-// v5.11.27: Promote — try multiple endpoints
+// v5.11.27: Promote  try multiple endpoints
 async function promoteBuild(token, buildId, apiBase) {
   const h = { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' };
   const endpoints = [
@@ -86,7 +86,7 @@ async function promoteBuild(token, buildId, apiBase) {
   for (const ep of endpoints) {
     log('  Trying: ' + (ep.method || 'POST') + ' ' + ep.url);
     const r = await apiFetch(ep.url, ep.method || 'POST', h, ep.body);
-    if (r.ok) { log('  ✓ Promoted build ' + buildId + ' to test'); return true; }
+    if (r.ok) { log('   Promoted build ' + buildId + ' to test'); return true; }
     log('  ' + r.status + ': ' + JSON.stringify(r.data).slice(0, 200));
   }
   return false;
@@ -150,9 +150,9 @@ async function main() {
   const toPromote = verDrafts.length > 0 ? verDrafts : drafts;
 
   if (!toPromote.length) {
-    // v5.11.80: Retry — Athom may still be processing the draft
+    // v5.11.80: Retry  Athom may still be processing the draft
     for (let retry = 1; retry <= 3; retry++) {
-      log('\nNo draft builds yet. Retry ' + retry + '/3 — waiting 60s for Athom...');
+      log('\nNo draft builds yet. Retry ' + retry + '/3  waiting 60s for Athom...');
       await new Promise(r => setTimeout(r, 60000));
       const r2 = await getBuilds(token);
       if (r2) {

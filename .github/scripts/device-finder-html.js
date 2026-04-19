@@ -42,8 +42,8 @@ function page(D,t,v,R){return`<!DOCTYPE html>
 .footer{text-align:center;padding:2rem;color:var(--muted);font-size:.875rem}
 .footer a{color:var(--accent);text-decoration:none}
 </style></head><body>
-<div class="hero"><h1>🔍 Device Finder</h1>
-<p>Universal Tuya Zigbee v${v} — Find your device instantly</p>
+<div class="hero"><h1> Device Finder</h1>
+<p>Universal Tuya Zigbee v${v}  Find your device instantly</p>
 <div class="stats">
 <div class="stat"><b>${D.length}</b>Drivers</div>
 <div class="stat"><b>${t.toLocaleString()}</b>Fingerprints</div>
@@ -75,9 +75,9 @@ return '<div class="card" data-d="'+d.id+'" data-c="'+d.class+'" data-s="'+[d.id
 +'<div class="fps">'+fps+pids+'</div>'
 +'<div>'+caps+'</div>'
 +'<div class="actions">'
-+'<button class="btn btn-info" onclick="toggleDetail(this)">ℹ Details</button>'
-+'<a class="btn btn-bug" href="'+bugUrl+'" target="_blank">🐛 Report Bug</a>'
-+'<a class="btn btn-info" href="'+R+'/tree/master/drivers/'+d.id+'" target="_blank">📁 Source</a>'
++'<button class="btn btn-info" onclick="toggleDetail(this)"> Details</button>'
++'<a class="btn btn-bug" href="'+bugUrl+'" target="_blank"> Report Bug</a>'
++'<a class="btn btn-info" href="'+R+'/tree/master/drivers/'+d.id+'" target="_blank"> Source</a>'
 +'</div>'
 +'<div class="detail">'
 +'<b>All Fingerprints:</b><br>'+d.mfrs.map(m=>'<code>'+m+'</code>').join(', ')
@@ -85,9 +85,9 @@ return '<div class="card" data-d="'+d.id+'" data-c="'+d.class+'" data-s="'+[d.id
 +'<br><b>Capabilities:</b> '+d.caps.join(', ')
 +'<br><b>Protocol:</b> '+d.proto
 +'<br><b>Driver ID:</b> <code>'+d.id+'</code>'
-+'<br><br><a class="btn btn-info" href="https://www.zigbee2mqtt.io/search.html?q='+encodeURIComponent(d.mfrs[0]||d.name)+'" target="_blank" rel="noopener">📡 Z2M</a> '
-+'<a class="btn btn-info" href="https://zigbee.blakadder.com/'+encodeURIComponent((d.pids[0]||'').replace(/[^a-zA-Z0-9]/g,''))+'.html" target="_blank" rel="noopener">📋 Blakadder</a> '
-+'<a class="btn btn-info" href="https://www.aliexpress.com/w/wholesale-tuya+zigbee+'+encodeURIComponent(d.name.replace(/[_()]/g,' '))+'.html" target="_blank" rel="noopener">🛒 AliExpress</a>'
++'<br><br><a class="btn btn-info" href="https://www.zigbee2mqtt.io/search.html?q='+encodeURIComponent(d.mfrs[0]||d.name)+'" target="_blank" rel="noopener"> Z2M</a> '
++'<a class="btn btn-info" href="https://zigbee.blakadder.com/'+encodeURIComponent((d.pids[0]||'').replace(/[^a-zA-Z0-9]/g,''))+'.html" target="_blank" rel="noopener"> Blakadder</a> '
++'<a class="btn btn-info" href="https://www.aliexpress.com/w/wholesale-tuya+zigbee+'+encodeURIComponent(d.name.replace(/[_()]/g,' '))+'.html" target="_blank" rel="noopener"> AliExpress</a>'
 +'</div></div>';
 }
 function js(){return`
@@ -116,7 +116,7 @@ const matchSearch=!q||c.dataset.s.includes(q);
 c.style.display=matchClass&&matchSearch?'':'none';
 });
 }
-window.toggleDetail=function(btn){btn.closest('.card').querySelector('.detail').classList.toggle('open');btn.textContent=btn.textContent.includes('Details')?'▲ Hide':'ℹ Details';};
+window.toggleDetail=function(btn){btn.closest('.card').querySelector('.detail').classList.toggle('open');btn.textContent=btn.textContent.includes('Details')?' Hide':' Details';};
 // URL hash search support
 if(location.hash){const h=decodeURIComponent(location.hash.slice(1));if(h){search.value=h;filterCards();}}
 search.addEventListener('input',()=>{history.replaceState(null,'','#'+encodeURIComponent(search.value));});

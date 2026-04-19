@@ -2,14 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.581: CRITICAL FIX - Flow card run listeners were missing
- */
 class WirelessSwitchDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -19,72 +12,71 @@ class WirelessSwitchDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('WirelessSwitchDriver v5.5.581 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    // CONDITION: Is on
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('switch_wireless_onoff_true'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wireless_onoff_false'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wireless_button_pressed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wireless_single_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wireless_double_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wireless_long_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('switch_wireless_battery_low'); } catch (e) {}
+
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_wireless_is_on'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('switch_wireless_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ Registered: switch_wireless_is_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition switch_wireless_is_on: ${err.message}`); }
 
-    // ACTION: Turn on
+    // ACTIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_wireless_turn_on'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('switch_wireless_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
-          await args.device.setCapabilityValue('onoff', true).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: switch_wireless_turn_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action switch_wireless_turn_on: ${err.message}`); }
 
-    // ACTION: Turn off
     try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_wireless_turn_off'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('switch_wireless_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
-          await args.device.setCapabilityValue('onoff', false).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: switch_wireless_turn_off');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action switch_wireless_turn_off: ${err.message}`); }
 
-    // ACTION: Toggle
     try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_wireless_toggle'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('switch_wireless_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device._setGangOnOff(1, !current).catch(() => {});
-          await args.device.setCapabilityValue('onoff', !current).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: switch_wireless_toggle');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action switch_wireless_toggle: ${err.message}`); }
 
-    this.log('[FLOW]  Wireless switch flow cards registered');
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

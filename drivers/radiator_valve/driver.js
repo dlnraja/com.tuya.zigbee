@@ -2,14 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.572: CRITICAL FIX - Flow card run listeners were missing
- */
 class RadiatorValveDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -19,47 +12,33 @@ class RadiatorValveDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
-    this.log('RadiatorValveDriver v5.5.572 initialized');
+    this.log('RadiatorValveDriver initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    const actions = [
-      'radiator_valve_set_target_temperature',
-      'radiator_valve_set_temperature'
-    ];
+    const P = 'radiator_valve';
+    const actions = ['set_target_temperature', 'set_temperature'];
 
-    for (const cardId of actions) {
+    actions.forEach(act => {
       try {
-        const card = this.homey.flow.getActionCard(cardId);
+        const id = `${P}_${act}`;
+        const card = this.homey.flow.getActionCard(id);
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) return false;
-            const capability = cardId.includes('target') ? 'target_temperature' : 'target_temperature'; // Both map to target for TRVs
-            await args.device.triggerCapabilityListener(capability, args.temperature || args.target_temperature || args.value);
+            const val = args.temperature || args.target_temperature || args.value;
+            await args.device.triggerCapabilityListener('target_temperature', val);
             return true;
           });
-          this.log(`[FLOW] ✅ Registered action: ${cardId}`);
+          this.log(`[FLOW] Registered: ${id}`);
         }
-      } catch (err) {
-        this.log(`[FLOW] ⚠️ Could not register action ${cardId}: ${err.message}`);
-      }
-    }
-
-    this.log('[FLOW] Radiator valve flow cards registered');
+      } catch (err) { this.error(`Action ${act} failed:`, err.message); }
+    });
   }
 }
 

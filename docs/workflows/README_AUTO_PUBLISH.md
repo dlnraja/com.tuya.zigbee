@@ -1,29 +1,29 @@
-# 🚀 Publication Automatique - Configuration
+#  Publication Automatique - Configuration
 
-## ✅ Workflow Actif: `auto-publish-on-push.yml`
+##  Workflow Actif: `auto-publish-on-push.yml`
 
-### 📋 Comment Ça Marche
+###  Comment Ça Marche
 
 **À CHAQUE PUSH sur `master`:**
 
-1. ✅ **Détection automatique des changements**
+1.  **Détection automatique des changements**
    - Vérifie si du CODE a changé (lib/, drivers/, app.js, app.json, etc.)
    - Ignore les changements de documentation uniquement
 
-2. ✅ **Si CODE modifié:**
+2.  **Si CODE modifié:**
    - Valide l'app (`homey app validate --level publish`)
    - Publie automatiquement sur Homey App Store
    - Crée un tag Git (v4.9.299)
    - Disponible en 15-30 minutes
 
-3. ⏭️ **Si SEULEMENT docs modifiées:**
+3.  **Si SEULEMENT docs modifiées:**
    - Skip la publication
    - Message: "Only documentation changed"
    - Pas de build inutile
 
 ---
 
-## 📁 Fichiers Ignorés (Publication Skippée)
+##  Fichiers Ignorés (Publication Skippée)
 
 ### Documentation:
 - `**.md` (tous les Markdown)
@@ -49,38 +49,38 @@
 
 ---
 
-## 📦 Fichiers Déclenchant la Publication
+##  Fichiers Déclenchant la Publication
 
 ### Code Critique:
-- ✅ `lib/**` (toute la logique)
-- ✅ `drivers/**` (tous les drivers)
-- ✅ `app.js` (bootstrap)
-- ✅ `app.json` (manifest)
-- ✅ `locales/**` (traductions)
-- ✅ `assets/images/**` (icônes devices)
-- ✅ `.homeycompose/**` (composition)
+-  `lib/**` (toute la logique)
+-  `drivers/**` (tous les drivers)
+-  `app.js` (bootstrap)
+-  `app.json` (manifest)
+-  `locales/**` (traductions)
+-  `assets/images/**` (icônes devices)
+-  `.homeycompose/**` (composition)
 
-**Si un de ces fichiers change → PUBLICATION AUTOMATIQUE**
+**Si un de ces fichiers change  PUBLICATION AUTOMATIQUE**
 
 ---
 
-## 🔧 Workflows Disponibles
+##  Workflows Disponibles
 
 | Workflow | Trigger | Status | Usage |
 |----------|---------|--------|-------|
-| **auto-publish-on-push.yml** | Push master | ✅ **ACTIF** | Publication auto |
-| validate.yml | Push/PR | ✅ Actif | Validation seule |
-| auto-organize.yml | Push master | ✅ Actif | Nettoyage repo |
-| auto-fix.yml | Push master | ✅ Actif | Fix automatiques |
-| version-bump.yml | Manual | ✅ Actif | Incrémente version |
-| publish.yml | Release/Manual | ❌ **DISABLED** | Ancien système |
-| homey-publish.yml | Tags v* | ❌ Disabled | Ancien système |
+| **auto-publish-on-push.yml** | Push master |  **ACTIF** | Publication auto |
+| validate.yml | Push/PR |  Actif | Validation seule |
+| auto-organize.yml | Push master |  Actif | Nettoyage repo |
+| auto-fix.yml | Push master |  Actif | Fix automatiques |
+| version-bump.yml | Manual |  Actif | Incrémente version |
+| publish.yml | Release/Manual |  **DISABLED** | Ancien système |
+| homey-publish.yml | Tags v* |  Disabled | Ancien système |
 
 ---
 
-## 📊 Exemples
+##  Exemples
 
-### ✅ CAS 1: Modification de Code
+###  CAS 1: Modification de Code
 ```bash
 # Modifications
 git add lib/devices/BaseHybridDevice.js
@@ -89,14 +89,14 @@ git commit -m "fix: cluster registration"
 git push origin master
 
 # Résultat
-→ ✅ Code changed detected
-→ ✅ Validate app
-→ ✅ Publish to Homey App Store
-→ ✅ Create tag v4.9.299
-→ 🎉 Available in 15-30 min
+  Code changed detected
+  Validate app
+  Publish to Homey App Store
+  Create tag v4.9.299
+  Available in 15-30 min
 ```
 
-### ⏭️ CAS 2: Modification Documentation Seule
+###  CAS 2: Modification Documentation Seule
 ```bash
 # Modifications
 git add README.md
@@ -105,12 +105,12 @@ git commit -m "docs: update README"
 git push origin master
 
 # Résultat
-→ ⏭️ Only docs changed
-→ ⏭️ Skip publish
-→ ✅ No unnecessary build
+  Only docs changed
+  Skip publish
+  No unnecessary build
 ```
 
-### ✅ CAS 3: Code + Docs
+###  CAS 3: Code + Docs
 ```bash
 # Modifications
 git add lib/clusterUtils.js
@@ -119,18 +119,18 @@ git commit -m "feat: add safe cluster utils + update docs"
 git push origin master
 
 # Résultat
-→ ✅ Code changed detected (lib/)
-→ ✅ Publish to Homey App Store
-→ 🎉 Available in 15-30 min
+  Code changed detected (lib/)
+  Publish to Homey App Store
+  Available in 15-30 min
 ```
 
 ---
 
-## 🔐 Configuration Requise
+##  Configuration Requise
 
 ### Secret GitHub: `HOMEY_PAT`
 
-**Déjà configuré** ✅
+**Déjà configuré** 
 
 Pour vérifier:
 1. https://github.com/dlnraja/com.tuya.zigbee/settings/secrets/actions
@@ -143,7 +143,7 @@ Pour vérifier:
 
 ---
 
-## 📝 Logs & Monitoring
+##  Logs & Monitoring
 
 ### Voir les Runs:
 ```bash
@@ -162,7 +162,7 @@ gh run watch <RUN_ID>
 
 ---
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Problème: Publication ne se déclenche pas
 
@@ -181,38 +181,38 @@ gh run list --limit 5
 ### Problème: Erreur "HOMEY_PAT not set"
 
 **Solution:**
-1. Aller sur GitHub → Settings → Secrets → Actions
+1. Aller sur GitHub  Settings  Secrets  Actions
 2. Ajouter `HOMEY_PAT` avec votre token Homey
 3. Re-run le workflow
 
 ### Problème: Tag déjà existe
 
-**Normal** ✅ Le workflow skip le tag s'il existe déjà.
+**Normal**  Le workflow skip le tag s'il existe déjà.
 
 ---
 
-## 🎯 Avantages du Nouveau Système
+##  Avantages du Nouveau Système
 
 | Feature | Ancien | Nouveau |
 |---------|--------|---------|
-| **Trigger** | Manual/Tag | ✅ **Auto sur push** |
-| **Détection code** | ❌ Non | ✅ **Oui** |
-| **Skip docs** | ❌ Non | ✅ **Oui** |
-| **Validation** | ❌ Manual | ✅ **Auto** |
-| **Tagging** | ❌ Manual | ✅ **Auto** |
-| **Feedback** | ❌ Limité | ✅ **Complet** |
+| **Trigger** | Manual/Tag |  **Auto sur push** |
+| **Détection code** |  Non |  **Oui** |
+| **Skip docs** |  Non |  **Oui** |
+| **Validation** |  Manual |  **Auto** |
+| **Tagging** |  Manual |  **Auto** |
+| **Feedback** |  Limité |  **Complet** |
 
 ---
 
-## 📅 Changelog
+##  Changelog
 
 ### v2.0 (2025-11-06)
-- ✅ Publication automatique sur chaque push
-- ✅ Détection intelligente code vs docs
-- ✅ Skip automatique si docs seules
-- ✅ Tagging automatique
-- ✅ Validation avant publish
-- ❌ Désactivation ancien système (tags)
+-  Publication automatique sur chaque push
+-  Détection intelligente code vs docs
+-  Skip automatique si docs seules
+-  Tagging automatique
+-  Validation avant publish
+-  Désactivation ancien système (tags)
 
 ### v1.0 (précédent)
 - Manual workflow dispatch
@@ -221,13 +221,13 @@ gh run list --limit 5
 
 ---
 
-## 🚀 Migration Complète
+##  Migration Complète
 
 **Ancien système désactivé:**
-- ❌ `.github/workflows/publish.yml.disabled`
-- ❌ `.github/workflows/homey-publish.yml.disabled`
+-  `.github/workflows/publish.yml.disabled`
+-  `.github/workflows/homey-publish.yml.disabled`
 
 **Nouveau système actif:**
-- ✅ `.github/workflows/auto-publish-on-push.yml`
+-  `.github/workflows/auto-publish-on-push.yml`
 
-**Aucune action manuelle requise** - tout est automatique maintenant ! 🎉
+**Aucune action manuelle requise** - tout est automatique maintenant ! 

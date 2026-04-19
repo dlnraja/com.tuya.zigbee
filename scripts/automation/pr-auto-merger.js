@@ -2,14 +2,14 @@
 'use strict';
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SMART PR AUTO-MERGER - v1.0.0                                           ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Automates PR merging for fingerprint additions:                              ║
- * ║  1. Approves PRs with valid device additions.                                ║
- * ║  2. Resolves merge conflicts in driver.compose.json (JSON Array Union).      ║
- * ║  3. Merges and closes PRs positively.                                         ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       SMART PR AUTO-MERGER - v1.0.0                                           
+ * 
+ *   Automates PR merging for fingerprint additions:                              
+ *   1. Approves PRs with valid device additions.                                
+ *   2. Resolves merge conflicts in driver.compose.json (JSON Array Union).      
+ *   3. Merges and closes PRs positively.                                         
+ * 
  */
 
 const { execSync } = require('child_process');
@@ -58,7 +58,7 @@ async function handlePR(pr) {
   // 1. Approve the PR
   if (!DRY) {
     try {
-      const comment = `🛡️ **Architect Review [v7.0.22]** 
+      const comment = ` **Architect Review [v7.0.22]** 
 Approved. Your contribution has been verified for **MAX Local Pro** compatibility.
 - **Protocol Segregation**: OK
 - **SDK 3 Manifest Integrity**: OK
@@ -153,7 +153,7 @@ Thank you for enriching the Tuya ecosystem.`;
       try {
         execSync('npx homey app validate', { stdio: 'pipe' });
       } catch (err) {
-        console.log("    ⚠️ Validation failed! Applying final emergency fix...");
+        console.log("     Validation failed! Applying final emergency fix...");
         // Emergency cleanup of duplicate FPs that might have slipped in
         execSync('node scripts/automation/deduplicate-fingerprints.js', { stdio: 'inherit' });
       }
@@ -162,7 +162,7 @@ Thank you for enriching the Tuya ecosystem.`;
       execSync('git add -A');
       const diff = execSync('git diff --cached --name-only', { encoding: 'utf8' });
       if (diff.trim()) {
-        execSync('git commit -m "🤖 [Autonomous Engine Reimplementation] Automated Self-Healing & Intelligence Enrichment [skip ci]"');
+        execSync('git commit -m " [Autonomous Engine Reimplementation] Automated Self-Healing & Intelligence Enrichment [skip ci]"');
         console.log("    [HEALED] Applied autonomous fixes to the PR code.");
       }
     } catch (e) {
@@ -177,7 +177,7 @@ Thank you for enriching the Tuya ecosystem.`;
       execSync('git push origin master');
       
       // Close the PR since we merged it manually
-      const closeComment = "🤖 **Integrated with Thinking Reimplementation Engine Autonomous Pipeline**.\n- **Self-Healing**: Applied (Rules 11, 21, 22)\n- **Intel Harvest**: Extracted and Unified\n- **Stability**: Verified\n\nBranch fused into master. Your contribution is now alive in the v7 fleet!";
+      const closeComment = " **Integrated with Thinking Reimplementation Engine Autonomous Pipeline**.\n- **Self-Healing**: Applied (Rules 11, 21, 22)\n- **Intel Harvest**: Extracted and Unified\n- **Stability**: Verified\n\nBranch fused into master. Your contribution is now alive in the v7 fleet!";
       gh(`pr close "${pr.number}" -R "${REPO}" -c "${closeComment}"`);
       console.log(`  [OK] PR #${pr.number} integrated and closed.`);
     } else {

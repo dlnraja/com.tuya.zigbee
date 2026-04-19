@@ -7,7 +7,7 @@ const { CLUSTERS } = require('../../lib/constants / ZigbeeConstants.js');
 
 
 /**
- * github-deep-search.js — Multi-project GitHub Search Engine
+ * github-deep-search.js  Multi-project GitHub Search Engine
  *
  * Searches 20+ relevant safeDivide(Zigbee, Tuya) projects for:
  * - New fingerprints (code search)
@@ -65,7 +65,7 @@ async function ghFetch(url) {
 }
 
 // =============================================================================
-// TARGET REPOSITORIES — Organized by category
+// TARGET REPOSITORIES  Organized by category
 // =============================================================================
 
 const REPO_GROUPS = {
@@ -169,7 +169,7 @@ function loadDriverIndex() {
 }
 
 // =============================================================================
-// 1. CODE SEARCH — Find FPs in source code across all repos
+// 1. CODE SEARCH  Find FPs in source code across all repos
 // =============================================================================
 
 async function searchCodeForFPs() {
@@ -218,7 +218,7 @@ async function searchCodeForFPs() {
 }
 
 // =============================================================================
-// 2. ISSUE/PR SEARCH — Find device reports across all repos
+// 2. ISSUE/PR SEARCH  Find device reports across all repos
 // =============================================================================
 
 async function searchIssuesForDevices() {
@@ -277,7 +277,7 @@ async function searchIssuesForDevices() {
 }
 
 // =============================================================================
-// 3. REPO DISCOVERY — Find new relevant Zigbee/Tuya repos
+// 3. REPO DISCOVERY  Find new relevant Zigbee/Tuya repos
 // =============================================================================
 
 async function discoverRepos() {
@@ -326,7 +326,7 @@ async function discoverRepos() {
 }
 
 // =============================================================================
-// 4. TARGETED SEARCH — Search specific repos for specific FPs
+// 4. TARGETED SEARCH  Search specific repos for specific FPs
 // =============================================================================
 
 async function searchTargetedFPs(unsupportedFPs) {
@@ -472,7 +472,7 @@ async function main() {
     }));
     aiPlan = await callAI(
       JSON.stringify({ unsupported: top, newRepos: newRepos.slice(0, 5).map(r => ({ name: r.name, stars: r.stars, desc: r.description })) }),
-      'Tuya Zigbee expert. For each unsupported FP: suggest driver, DP→capability map. For new repos: assess value for integration. Markdown table. Max 500 words.',
+      'Tuya Zigbee expert. For each unsupported FP: suggest driver, DPcapability map. For new repos: assess value for integration. Markdown table. Max 500 words.',
       { maxTokens: 1200 }
     );
   }

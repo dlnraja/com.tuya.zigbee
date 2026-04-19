@@ -1,35 +1,35 @@
 #!/usr/bin/env node
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║  MASTER SELF-HEAL ENGINE v1.0                                              ║
- * ║  Orchestrates ALL discovered fixes across the Universal Tuya Zigbee App     ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Run:  node scripts/maintenance/master-self-heal.js                        ║
- * ║  CI:   Integrated into daily-everything.yml Step 6a-ter                     ║
- * ║  Env:  DRY_RUN=true for preview mode                                       ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *   MASTER SELF-HEAL ENGINE v1.0                                              
+ *   Orchestrates ALL discovered fixes across the Universal Tuya Zigbee App     
+ * 
+ *   Run:  node scripts/maintenance/master-self-heal.js                        
+ *   CI:   Integrated into daily-everything.yml Step 6a-ter                     
+ *   Env:  DRY_RUN=true for preview mode                                       
+ * 
  *
  * RULES ENCODED (from all sessions):
- *  1. sdk3-phantom-methods   — Replace getDeviceConditionCard/getDeviceActionCard
- *  2. fingerprint-case       — Lowercase ALL fingerprints in driver.compose.json
- *  3. probe-dedup-static     — Remove measure_temperature.probe from pure-ZCL drivers
- *  4. flow-card-try-catch    — Wrap bare getDeviceTriggerCard in try-catch
- *  5. energy-batteries       — Add energy.batteries if measure_battery is declared
- *  6. multigang-flow-routing — Replace raw ZCL onOff.setOn() with triggerCapabilityListener
- *  7. dp-variant-doc         — Flag DP mappings missing variant comments
- *  8. case-insensitive-matching — Ensure all manufacturer comparisons use .toLowerCase()
- *  9. duplicate-fingerprints    — Flag ambiguity in driver pairing
- *  10. punycode-deprecation    — Replace node-internal with userland
- *  11. hybrid-flow-id-prefixing — Fix collisions in driver.flow.compose.json
- *  12. capability-init-sanity   — Ensure _registerCapabilityListeners and initPhysicalButtonDetection are called
- *  13. naked-flow-cards       — Flag Flow card calls missing ID argument
- *  14. logic-case-audit       — Flag suspected case-sensitive comparisons
- *  15. this-prefix-safety     — Replace global SDK method calls with 'this.' (ReferenceError prevention)
- *  16. defensive-get-device   — Inject defensive getDeviceById override in drivers
- *  29. safe-flow-lookup       — Wrap getDeviceTriggerCard in try-catch
- *  30. wifi-qr-stability      — Enforce larger QR codes and regional schema in WiFi drivers
- *  31. branding-cleanup       — Purge legacy "Hybrid"/"Nexus" branding for "Unified Engine"
- *  40. fingerprint-hardening  — Enforce strict manufacturer+model mapping for TS004F
+ *  1. sdk3-phantom-methods    Replace getDeviceConditionCard/getDeviceActionCard
+ *  2. fingerprint-case        Lowercase ALL fingerprints in driver.compose.json
+ *  3. probe-dedup-static      Remove measure_temperature.probe from pure-ZCL drivers
+ *  4. flow-card-try-catch     Wrap bare getDeviceTriggerCard in try-catch
+ *  5. energy-batteries        Add energy.batteries if measure_battery is declared
+ *  6. multigang-flow-routing  Replace raw ZCL onOff.setOn() with triggerCapabilityListener
+ *  7. dp-variant-doc          Flag DP mappings missing variant comments
+ *  8. case-insensitive-matching  Ensure all manufacturer comparisons use .toLowerCase()
+ *  9. duplicate-fingerprints     Flag ambiguity in driver pairing
+ *  10. punycode-deprecation     Replace node-internal with userland
+ *  11. hybrid-flow-id-prefixing  Fix collisions in driver.flow.compose.json
+ *  12. capability-init-sanity    Ensure _registerCapabilityListeners and initPhysicalButtonDetection are called
+ *  13. naked-flow-cards        Flag Flow card calls missing ID argument
+ *  14. logic-case-audit        Flag suspected case-sensitive comparisons
+ *  15. this-prefix-safety      Replace global SDK method calls with 'this.' (ReferenceError prevention)
+ *  16. defensive-get-device    Inject defensive getDeviceById override in drivers
+ *  29. safe-flow-lookup        Wrap getDeviceTriggerCard in try-catch
+ *  30. wifi-qr-stability       Enforce larger QR codes and regional schema in WiFi drivers
+ *  31. branding-cleanup        Purge legacy "Hybrid"/"Nexus" branding for "Unified Engine"
+ *  40. fingerprint-hardening   Enforce strict manufacturer+model mapping for TS004F
  */
 'use strict';
 
@@ -52,7 +52,7 @@ const report = {
 };
 
 function log(msg) { console.log(msg); }
-function warn(msg) { console.warn(`  ⚠️  ${msg}`); }
+function warn(msg) { console.warn(`    ${msg}`); }
 
 function addFix(ruleId, file, detail) {
   if (!report.rules[ruleId]) report.rules[ruleId] = { count: 0, files: [] };
@@ -61,9 +61,9 @@ function addFix(ruleId, file, detail) {
   report.totalFixes++;
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // FILE UTILITIES
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function findFiles(dir, ext, results = []) {
   if (!fs.existsSync(dir)) return results;
@@ -88,14 +88,14 @@ function safeWrite(file, content) {
   return true;
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 1: SDK3 PHANTOM METHODS
-// getDeviceConditionCard → getConditionCard
-// getDeviceActionCard → getActionCard
-// ═══════════════════════════════════════════════════════════════════════════════
+// getDeviceConditionCard  getConditionCard
+// getDeviceActionCard  getActionCard
+// 
 
 function rule_phantomMethods() {
-  log('\n📋 Rule 1: SDK3 Phantom Methods');
+  log('\n Rule 1: SDK3 Phantom Methods');
   const jsFiles = [...findFiles(DRIVERS_DIR, '.js'), ...findFiles(LIB_DIR, '.js')];
   let fixes = 0;
 
@@ -113,20 +113,20 @@ function rule_phantomMethods() {
       safeWrite(file, code);
       fixes++;
       addFix('sdk3-flow-cards-standard', file, 'Normalized to SDK 3 get*Card methods');
-      log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
+      log(`   Fixed: ${path.relative(ROOT, file)}`);
     }
   }
 
-  log(`  → ${fixes} files fixed`);
+  log(`   ${fixes} files fixed`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 2: FINGERPRINT CASE NORMALIZATION
 // All fingerprints in driver.compose.json must be lowercase
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function rule_fingerprintCase() {
-  log('\n📋 Rule 2: Fingerprint Case Normalization');
+  log('\n Rule 2: Fingerprint Case Normalization');
   const composeFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.compose.json'));
   let fixes = 0;
 
@@ -154,24 +154,24 @@ function rule_fingerprintCase() {
         safeWrite(file, JSON.stringify(compose, null, 2) + '\n');
         fixes++;
         addFix('fingerprint-case', file, `Lowercased ${uppercaseCount} fingerprints`);
-        log(`  ✅ Fixed: ${path.relative(ROOT, file)} (${uppercaseCount} fingerprints)`);
+        log(`   Fixed: ${path.relative(ROOT, file)} (${uppercaseCount} fingerprints)`);
       }
     } catch (e) {
       report.errors.push({ rule: 'fingerprint-case', file, error: e.message });
     }
   }
 
-  log(`  → ${fixes} files fixed`);
+  log(`   ${fixes} files fixed`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 3: PROBE DEDUP FOR PURE-ZCL DRIVERS
 // Remove measure_temperature.probe from pure-ZCL drivers (no DP38 possible)
 // Keep for DP-capable drivers (may have legitimate internal + external probe)
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function rule_probeDedup() {
-  log('\n📋 Rule 3: Probe Dedup for Pure-ZCL Drivers');
+  log('\n Rule 3: Probe Dedup for Pure-ZCL Drivers');
   const composeFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.compose.json'));
   let fixes = 0;
 
@@ -191,26 +191,26 @@ function rule_probeDedup() {
         safeWrite(file, JSON.stringify(compose, null, 2) + '\n');
         fixes++;
         addFix('probe-dedup-static', file, 'Removed static probe from pure-ZCL driver');
-        log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
+        log(`   Fixed: ${path.relative(ROOT, file)}`);
       } else if (hasPureZCL && hasDP) {
-        // Hybrid driver with both ZCL and DP fingerprints — keep probe, it's variant-dependent
-        if (VERBOSE) log(`  ℹ️  Hybrid driver: ${path.relative(ROOT, file)} — keeping probe (variant-aware)`);
+        // Hybrid driver with both ZCL and DP fingerprints  keep probe, it's variant-dependent
+        if (VERBOSE) log(`    Hybrid driver: ${path.relative(ROOT, file)}  keeping probe (variant-aware)`);
       }
     } catch (e) {
       report.errors.push({ rule: 'probe-dedup-static', file, error: e.message });
     }
   }
 
-  log(`  → ${fixes} files fixed`);
+  log(`   ${fixes} files fixed`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 4: FLOW CARD TRY-CATCH SAFETY
 // Wrap bare getDeviceTriggerCard calls in try-catch blocks
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function rule_flowCardTryCatch() {
-  log('\n📋 Rule 4: Flow Card Try-Catch Safety');
+  log('\n Rule 4: Flow Card Try-Catch Safety');
   const jsFiles = [...findFiles(DRIVERS_DIR, '.js'), ...findFiles(LIB_DIR, '.js')];
   let warnings = 0;
 
@@ -227,22 +227,22 @@ function rule_flowCardTryCatch() {
         if (!inTry) {
           warnings++;
           addFix('flow-card-try-catch', file, `Line ${i + 1}: getDeviceTriggerCard without try-catch`);
-          if (VERBOSE) warn(`${path.relative(ROOT, file)}:${i + 1} — bare getDeviceTriggerCard`);
+          if (VERBOSE) warn(`${path.relative(ROOT, file)}:${i + 1}  bare getDeviceTriggerCard`);
         }
       }
     }
   }
 
-  log(`  → ${warnings} warnings (manual fix recommended)`);
+  log(`   ${warnings} warnings (manual fix recommended)`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 5: ENERGY.BATTERIES ENFORCEMENT
 // If driver declares measure_battery, it MUST have energy.batteries array
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function rule_energyBatteries() {
-  log('\n📋 Rule 5: Energy Batteries Enforcement (SDK3 Publish Compliance)');
+  log('\n Rule 5: Energy Batteries Enforcement (SDK3 Publish Compliance)');
   const composeFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.compose.json'));
   let fixes = 0;
 
@@ -264,7 +264,7 @@ function rule_energyBatteries() {
           safeWrite(file, JSON.stringify(compose, null, 2) + '\n');
           fixes++;
           addFix('energy-batteries', file, 'Added energy.batteries array for SDK3 compliance');
-          log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
+          log(`   Fixed: ${path.relative(ROOT, file)}`);
         }
       }
     } catch (e) {
@@ -272,17 +272,17 @@ function rule_energyBatteries() {
     }
   }
 
-  log(`  → ${fixes} files fixed`);
+  log(`   ${fixes} files fixed`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 6: MULTI-GANG FLOW ACTION ROUTING
 // Detect raw ZCL onOff.setOn() in flow action handlers
 // Should use triggerCapabilityListener('onoff.gangX', true/false) instead
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function rule_multigangFlowRouting() {
-  log('\n📋 Rule 6: Multi-Gang Flow Action Routing');
+  log('\n Rule 6: Multi-Gang Flow Action Routing');
   const jsFiles = findFiles(DRIVERS_DIR, '.js');
   let warnings = 0;
 
@@ -296,21 +296,21 @@ function rule_multigangFlowRouting() {
     const matches = code.match(rawZclPattern);
     if (matches && matches.length > 0) {
       warnings++;
-      addFix('multigang-flow-routing', file, `${matches.length} raw ZCL calls in flow handlers — should use triggerCapabilityListener`);
-      log(`  ⚠️  ${path.relative(ROOT, file)}: ${matches.length} raw ZCL calls in flow actions`);
+      addFix('multigang-flow-routing', file, `${matches.length} raw ZCL calls in flow handlers  should use triggerCapabilityListener`);
+      log(`    ${path.relative(ROOT, file)}: ${matches.length} raw ZCL calls in flow actions`);
     }
   }
 
-  log(`  → ${warnings} warnings (manual fix recommended)`);
+  log(`   ${warnings} warnings (manual fix recommended)`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 7: DP VARIANT DOCUMENTATION
 // Flag DP mappings that serve multiple TZE prefixes without variant comments
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function rule_dpVariantDocs() {
-  log('\n📋 Rule 7: DP Variant Documentation');
+  log('\n Rule 7: DP Variant Documentation');
   const jsFiles = findFiles(DRIVERS_DIR, '.js').filter(f => f.endsWith('device.js'));
   let warnings = 0;
 
@@ -331,17 +331,17 @@ function rule_dpVariantDocs() {
     }
   }
 
-  log(`  → ${warnings} drivers need variant documentation`);
+  log(`   ${warnings} drivers need variant documentation`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 8: CASE-INSENSITIVE MANUFACTURER MATCHING
 // Ensure all manufacturer comparisons use .toLowerCase()
 // Prevents case mismatches between device reports and our fingerprints
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function rule_caseInsensitiveMatching() {
-  log('\n📋 Rule 8: Case-Insensitive Manufacturing Matching');
+  log('\n Rule 8: Case-Insensitive Manufacturing Matching');
   const jsFiles = [...findFiles(DRIVERS_DIR, '.js'), ...findFiles(LIB_DIR, '.js')];
   let warnings = 0;
 
@@ -360,18 +360,18 @@ function rule_caseInsensitiveMatching() {
     }
   }
 
-  log(`  → ${warnings} case-sensitive comparisons found`);
+  log(`   ${warnings} case-sensitive comparisons found`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 9: DUPLICATE FINGERPRINTS ACROSS DRIVERS
-// Same fingerprint in multiple driver.compose.json → pairing ambiguity
-// ═══════════════════════════════════════════════════════════════════════════════
+// Same fingerprint in multiple driver.compose.json  pairing ambiguity
+// 
 
 function rule_duplicateFingerprints() {
-  log('\n📋 Rule 9: Duplicate Fingerprints Across Drivers');
+  log('\n Rule 9: Duplicate Fingerprints Across Drivers');
   const composeFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.compose.json'));
-  const fpMap = {}; // fingerprint → [driver1, driver2, ...]
+  const fpMap = {}; // fingerprint  [driver1, driver2, ...]
   let dupeCount = 0;
 
   for (const file of composeFiles) {
@@ -396,22 +396,22 @@ function rule_duplicateFingerprints() {
       dupeCount++;
       addFix('duplicate-fingerprints', DRIVERS_DIR, `${fp} found in: ${drivers.join(', ')}`);
       if (VERBOSE || dupeCount <= 5) {
-        log(`  ⚠️  ${fp} → ${drivers.join(', ')}`);
+        log(`    ${fp}  ${drivers.join(', ')}`);
       }
     }
   }
 
   if (dupeCount > 5) log(`  ... and ${dupeCount - 5} more`);
-  log(`  → ${dupeCount} duplicate fingerprints found`);
+  log(`   ${dupeCount} duplicate fingerprints found`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 10: PUNYCODE DEPRECATION
 // Replace require('punycode') with userland alternative
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function rule_punycodeDeprecation() {
-  log('\n📋 Rule 10: Punycode Deprecation Check');
+  log('\n Rule 10: Punycode Deprecation Check');
   const jsFiles = [...findFiles(DRIVERS_DIR, '.js'), ...findFiles(LIB_DIR, '.js')];
   let fixes = 0;
 
@@ -426,20 +426,20 @@ function rule_punycodeDeprecation() {
       safeWrite(file, code);
       fixes++;
       addFix('punycode-deprecation', file, 'Replaced internal punycode with userland punycode/');
-      log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
+      log(`   Fixed: ${path.relative(ROOT, file)}`);
     }
   }
 
-  log(`  → ${fixes} files fixed`);
+  log(`   ${fixes} files fixed`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 11: DRIVER FLOW ID PREFIXING
 // Ensure all flow cards in driver.flow.compose.json start with {driverId}_
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function rule_flowIdPrefixing() {
-  log('\n📋 Rule 11: Driver Flow ID Prefixing');
+  log('\n Rule 11: Driver Flow ID Prefixing');
   const flowFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.flow.compose.json'));
   let fixes = 0;
 
@@ -471,24 +471,24 @@ function rule_flowIdPrefixing() {
         safeWrite(file, JSON.stringify(flow, null, 2) + '\n');
         fixes++;
         addFix('hybrid-flow-id-prefixing', file, `Prefixed flow cards with ${prefix}`);
-        log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
+        log(`   Fixed: ${path.relative(ROOT, file)}`);
       }
     } catch (e) {
       report.errors.push({ rule: 'hybrid-flow-id-prefixing', file, error: e.message });
     }
   }
 
-  log(`  → ${fixes} files fixed`);
+  log(`   ${fixes} files fixed`);
 }
 
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 12: CAPABILITY REGISTRATION SANITY
 // Ensure _registerCapabilityListeners() and initPhysicalButtonDetection() are called
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function rule_capabilityInitSanity() {
-  log('\n📋 Rule 12: Capability Registration Sanity');
+  log('\n Rule 12: Capability Registration Sanity');
   const jsFiles = findFiles(DRIVERS_DIR, '.js').filter(f => f.endsWith('device.js'));
   let fixes = 0;
 
@@ -519,23 +519,23 @@ function rule_capabilityInitSanity() {
         safeWrite(file, code);
         fixes++;
         addFix('capability-init-sanity', file, 'Injected missing capability listener registration');
-        log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
+        log(`   Fixed: ${path.relative(ROOT, file)}`);
       }
     } catch (e) {
       report.errors.push({ rule: 'capability-init-sanity', file, error: e.message });
     }
   }
 
-  log(`  → ${fixes} files fixed`);
+  log(`   ${fixes} files fixed`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 13: FINGERPRINT WILDCARD CLEANUP (NO-AI)
 // Remove '*' from manufacturerName/productId (SDK v3 crashes on them)
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function rule_fingerprintWildcardCleanup() {
-  log('\n📋 Rule 13: Fingerprint Wildcard Cleanup');
+  log('\n Rule 13: Fingerprint Wildcard Cleanup');
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory());
   let fixes = 0;
 
@@ -567,14 +567,14 @@ function rule_fingerprintWildcardCleanup() {
         safeWrite(composeFile, JSON.stringify(compose, null, 2) + '\n');
         fixes++;
         addFix('fingerprint-wildcard-cleanup', composeFile, 'Removed SDK3-incompatible wildcard (*) from fingerprints');
-        log(`  ✅ Fixed: ${path.relative(ROOT, composeFile)}`);
+        log(`   Fixed: ${path.relative(ROOT, composeFile)}`);
       }
     } catch (e) {
       report.errors.push({ rule: 'fingerprint-wildcard-cleanup', file: composeFile, error: e.message });
     }
   }
 
-  log(`  → ${fixes} files fixed`);
+  log(`   ${fixes} files fixed`);
 }
 
 /**
@@ -582,7 +582,7 @@ function rule_fingerprintWildcardCleanup() {
  * These are ALWAYS invalid in SDK 3 but common after automated refactoring.
  */
 function rule_nakedFlowCards() {
-  log('\n🔍 Rule 13: Detecting naked Flow card calls (missing ID)...');
+  log('\n Rule 13: Detecting naked Flow card calls (missing ID)...');
   const files = findFiles(ROOT, '.js');
   let issues = 0;
 
@@ -595,13 +595,13 @@ function rule_nakedFlowCards() {
       if (matches) {
         issues += matches.length;
         addFix('naked-flow-cards', file, `Found ${matches.length} naked flow card call(s) missing ID argument`);
-        log(`  ⚠️  Naked call in: ${path.relative(ROOT, file)}`);
+        log(`    Naked call in: ${path.relative(ROOT, file)}`);
       }
     } catch (e) {
       report.errors.push({ rule: 'naked-flow-cards', file, error: e.message });
     }
   });
-  log(`  → ${issues} issues found (Manual fix required)`);
+  log(`   ${issues} issues found (Manual fix required)`);
 }
 
 /**
@@ -609,7 +609,7 @@ function rule_nakedFlowCards() {
  * Detect usage of comparison logic that doesn't respect case on manufacturerName.
  */
 function rule_logicCaseAudit() {
-  log('\n🔍 Rule 14: Case-insensitive logic audit (manufacturerName comparisons)...');
+  log('\n Rule 14: Case-insensitive logic audit (manufacturerName comparisons)...');
   const files = findFiles(ROOT, '.js');
   let warnings = 0;
 
@@ -633,21 +633,21 @@ function rule_logicCaseAudit() {
         if (regex.test(content)) {
           warnings++;
           addFix('logic-case-audit', file, `Suspected case-sensitive comparison of manufacturerName`);
-          log(`  ⚠️  Bad comparison in: ${path.relative(ROOT, file)}`);
+          log(`    Bad comparison in: ${path.relative(ROOT, file)}`);
         }
       });
     } catch (e) { /* ignore */ }
   });
-  log(`  → ${warnings} suspect code blocks found`);
+  log(`   ${warnings} suspect code blocks found`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 15: THIS-PREFIX SAFETY
 // Replace global SDK method calls (addCapability, setCapabilityValue, etc.) with this.
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function rule_thisPrefixSafety() {
-  log('\n📋 Rule 15: This-Prefix Safety (ReferenceError prevention)');
+  log('\n Rule 15: This-Prefix Safety (ReferenceError prevention)');
   const jsFiles = [...findFiles(DRIVERS_DIR, '.js'), ...findFiles(LIB_DIR, '.js')];
   let fixes = 0;
 
@@ -698,16 +698,16 @@ function rule_thisPrefixSafety() {
       if (VERBOSE) log(`    [FIX] Added 'this.' prefix in ${path.relative(ROOT, file)}`);
     }
   }
-  log(`  → ${fixes} files fixed`);
+  log(`   ${fixes} files fixed`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 16: DEFENSIVE GETDEVICEBYID OVERRIDE
 // Inject a try-catch wrapper for getDeviceById into all driver classes
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function rule_defensiveGetDeviceById() {
-  log('\n📋 Rule 16: Defensive getDeviceById override');
+  log('\n Rule 16: Defensive getDeviceById override');
   const driverFiles = findFiles(DRIVERS_DIR, 'driver.js');
   let fixes = 0;
 
@@ -744,16 +744,16 @@ function rule_defensiveGetDeviceById() {
       if (VERBOSE) log(`    [FIX] Injected getDeviceById in ${path.relative(ROOT, file)}`);
     }
   }
-  log(`  → ${fixes} files fixed`);
+  log(`   ${fixes} files fixed`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 17: SAFE FLOW LOOKUP
 // Wrap Flow card lookups in try-catch to prevent crashes when cards are missing
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 function rule_safeFlowLookup() {
-  log('\n📋 Rule 17: Safe Flow Lookup (try-catch wrapper)');
+  log('\n Rule 17: Safe Flow Lookup (try-catch wrapper)');
   const jsFiles = [...findFiles(DRIVERS_DIR, '.js'), ...findFiles(LIB_DIR, '.js')];
   let fixes = 0;
 
@@ -792,17 +792,17 @@ function rule_safeFlowLookup() {
       addFix('safe-flow-lookup', file, 'Wrapped Flow card lookups in try-catch.');
     }
   }
-  log(`  → ${fixes} files fixed`);
+  log(`   ${fixes} files fixed`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RULE 31: BRANDING & NOMENCLATURE CLEANUP
 // Purge "Hybrid" branding to reflect the unified, auto-adaptive engine.
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
 
 function rule_brandingCleanup() {
-  log('\n📋 Rule 31: Architectural Rebranding (Unified Engine)');
+  log('\n Rule 31: Architectural Rebranding (Unified Engine)');
   
   // 1. Rename files in lib/devices
   const LIB_DEVICES = path.join(LIB_DIR, 'devices');
@@ -814,7 +814,7 @@ function rule_brandingCleanup() {
         const newPath = path.join(LIB_DEVICES, f.replace('Hybrid', 'Unified'));
         if (!fs.existsSync(newPath)) {
           fs.renameSync(oldPath, newPath);
-          log(`  📂 Renamed lib file: ${f} -> ${path.basename(newPath)}`);
+          log(`   Renamed lib file: ${f} -> ${path.basename(newPath)}`);
           addFix('branding-cleanup', 'lib', `Renamed ${f} to ${path.basename(newPath)}`);
         } else {
           try { fs.unlinkSync(oldPath); } catch (e) {} // Dedupe if both exist
@@ -826,7 +826,7 @@ function rule_brandingCleanup() {
         const newPath = path.join(LIB_DEVICES, f.replace('Hybrid', 'Unified'));
          if (!fs.existsSync(newPath)) {
           fs.renameSync(oldPath, newPath);
-          log(`  📂 Renamed core file: ${f} -> ${path.basename(newPath)}`);
+          log(`   Renamed core file: ${f} -> ${path.basename(newPath)}`);
         } else {
            try { fs.unlinkSync(oldPath); } catch (e) {}
         }
@@ -914,11 +914,11 @@ function rule_brandingCleanup() {
     }
   }
 
-  log(`  → ${fixes} files updated for Unified Engine Branding`);
+  log(`   ${fixes} files updated for Unified Engine Branding`);
 }
 
 function rule_multiGangCapOptions() {
-  log('\n📋 Rule 18: Multi-Gang Capability Options (SDK3 Publish Compliance)');
+  log('\n Rule 18: Multi-Gang Capability Options (SDK3 Publish Compliance)');
   const composeFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.compose.json'));
   let fixes = 0;
 
@@ -962,18 +962,18 @@ function rule_multiGangCapOptions() {
         safeWrite(file, JSON.stringify(compose, null, 2) + '\n');
         fixes++;
         addFix('multigang-cap-options', file, 'Added missing capabilitiesOptions for sub-capabilities');
-        log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
+        log(`   Fixed: ${path.relative(ROOT, file)}`);
       }
     } catch (e) {
       report.errors.push({ rule: 'multigang-cap-options', file, error: e.message });
     }
   }
 
-  log(`  → ${fixes} files fixed`);
+  log(`   ${fixes} files fixed`);
 }
 
 function rule_physicalButtonDetection() {
-  log('\n📋 Rule 19: Physical Button Detection Initialization');
+  log('\n Rule 19: Physical Button Detection Initialization');
   const jsFiles = findFiles(DRIVERS_DIR, '.js').filter(f => f.endsWith('device.js'));
   let fixes = 0;
 
@@ -995,19 +995,19 @@ function rule_physicalButtonDetection() {
         safeWrite(file, code);
         fixes++;
         addFix('physical-button-init', file, 'Injected missing initPhysicalButtonDetection() call');
-        log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
+        log(`   Fixed: ${path.relative(ROOT, file)}`);
       }
     } catch (e) {
       report.errors.push({ rule: 'physical-button-init', file, error: e.message });
     }
   }
 
-  log(`  → ${fixes} files fixed`);
+  log(`   ${fixes} files fixed`);
 }
 
 /** Rule 20: Propagate Premium Pairing UI to all WiFi drivers (v7.0.16) */
 function rule_wifiQrStability() {
-  log('\n📋 Rule 20: WiFi Premium Pairing UI Propagation');
+  log('\n Rule 20: WiFi Premium Pairing UI Propagation');
   const driversDir = path.join(ROOT, 'drivers');
   if (!fs.existsSync(driversDir)) return;
   const drivers = fs.readdirSync(driversDir);
@@ -1030,7 +1030,7 @@ function rule_wifiQrStability() {
       }
     } catch (e) {}
   }
-  log(`  → ${fixes} WiFi drivers updated with premium template`);
+  log(`   ${fixes} WiFi drivers updated with premium template`);
 }
 
 function rule_wifiCloudSyncConfig() {}
@@ -1038,11 +1038,11 @@ function rule_flowIdCleanup() {}
 function rule_discoveryStrategies() {}
 
 async function main() {
-  log('╔══════════════════════════════════════════════════════════════════════════════╗');
-  log('║  MASTER SELF-HEAL ENGINE v1.2 — Unified Tuya Engine                      ║');
-  log('║  Automated architectural stabilization & nomenclature enforcement         ║');
-  log(`║  Mode: ${DRY ? 'DRY RUN (preview)' : 'LIVE (applying fixes)'}${' '.repeat(54 - (DRY ? 21 : 22))}║`);
-  log('╚══════════════════════════════════════════════════════════════════════════════╝');
+  log('');
+  log('  MASTER SELF-HEAL ENGINE v1.2  Unified Tuya Engine                      ');
+  log('  Automated architectural stabilization & nomenclature enforcement         ');
+  log(`  Mode: ${DRY ? 'DRY RUN (preview)' : 'LIVE (applying fixes)'}${' '.repeat(54 - (DRY ? 21 : 22))}`);
+  log('');
 
   rule_phantomMethods();
   rule_probeDedup();
@@ -1066,11 +1066,11 @@ async function main() {
   rule_physicalButtonDetection();
   rule_wifiQrStability();
 
-   log('\n✅ Master Self-Heal Complete');
+   log('\n Master Self-Heal Complete');
 
-  // ═══════════════════════════════════════════════════════════════════════════════
+  // 
   // FINAL REPORTING & EXIT
-  // ═══════════════════════════════════════════════════════════════════════════════
+  // 
 
   const autoFixed = [
     'sdk3-flow-cards-standard',
@@ -1101,7 +1101,7 @@ async function main() {
     const r = report.rules[ruleId];
     if (r) {
       totalAutoFixes += r.count;
-      log(`  ✅ ${ruleId}: ${r.count} fixes applied`);
+      log(`   ${ruleId}: ${r.count} fixes applied`);
     }
   }
 
@@ -1109,7 +1109,7 @@ async function main() {
     const r = report.rules[ruleId];
     if (r) {
       totalWarnings += r.count;
-      log(`  ⚠️  ${ruleId}: ${r.count} issues found`);
+      log(`    ${ruleId}: ${r.count} issues found`);
     }
   }
 
@@ -1117,14 +1117,14 @@ async function main() {
   log(`  Total auto-fixes: ${totalAutoFixes}`);
   log(`  Total warnings:   ${totalWarnings}`);
   log(`  Errors:           ${report.errors.length}`);
-  log('═══════════════════════════════════════════════════════════════════════');
+  log('');
 
   // Write report
   const reportDir = path.join(ROOT, '.github', 'state');
   if (!fs.existsSync(reportDir)) fs.mkdirSync(reportDir, { recursive: true });
   const reportPath = path.join(reportDir, 'self-heal-report.json');
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-  log(`\n📄 Report saved: ${path.relative(ROOT, reportPath)}`);
+  log(`\n Report saved: ${path.relative(ROOT, reportPath)}`);
 
   // Exit code based on auto-fixes vs errors
   if (report.errors.length > 0) {

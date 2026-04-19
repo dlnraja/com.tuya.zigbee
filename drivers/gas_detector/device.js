@@ -34,7 +34,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
         capability: null,
         internal: 'gas_value',
         transform: (v) => {
-          device.log(`[GAS] 📊 Gas concentration: ${v} LEL%`);
+          device.log(`[GAS]  Gas concentration: ${v} LEL%`);
           // Store for diagnostics, trigger alarm if high
           device._gasValue = v;
           if (v > 10) { // High gas level threshold
@@ -48,7 +48,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
         capability: null,
         internal: 'alarm_time',
         transform: (v) => {
-          device.log(`[GAS] ⏱️ Alarm time: ${v}s`);
+          device.log(`[GAS]  Alarm time: ${v}s`);
           return v;
         }
       },
@@ -57,7 +57,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
         capability: null,
         internal: 'self_test',
         transform: (v) => {
-          device.log(`[GAS] 🔬 Self-test: ${v ? 'active' : 'inactive'}`);
+          device.log(`[GAS]  Self-test: ${v ? 'active' : 'inactive'}`);
           return v === 1 || v === true;
         }
       },
@@ -68,7 +68,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
         transform: (v) => {
           const results = ['checking', 'success', 'failure', 'others'];
           const result = results[v] || 'unknown';
-          device.log(`[GAS] 🔬 Self-test result: ${result}`);
+          device.log(`[GAS]  Self-test result: ${result}`);
           return result;
         }
       },
@@ -78,7 +78,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
         internal: 'preheat',
         transform: (v) => {
           const preheating = v === 1 || v === true;
-          device.log(`[GAS] 🔥 Preheat: ${preheating ? 'warming up' : 'ready'}`);
+          device.log(`[GAS]  Preheat: ${preheating ? 'warming up' : 'ready'}`);
           return preheating;
         }
       },
@@ -87,7 +87,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
         capability: null,
         internal: 'silence',
         transform: (v) => {
-          device.log(`[GAS] 🔇 Silence: ${v ? 'muted' : 'unmuted'}`);
+          device.log(`[GAS]  Silence: ${v ? 'muted' : 'unmuted'}`);
           return v === 1 || v === true;
         }
       },
@@ -98,7 +98,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
         transform: (v) => {
           const melodies = ['melody_1', 'melody_2', 'melody_3', 'melody_4', 'melody_5'];
           const melody = melodies[v] || 'melody_1';
-          device.log(`[GAS] 🎵 Ringtone: ${melody}`);
+          device.log(`[GAS]  Ringtone: ${melody}`);
           return melody;
         }
       }
@@ -123,7 +123,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this._registerCapabilityListeners(); // rule-12a injectedthis.log('[GAS-DETECTOR] v5.5.932 ✅ Ready');
+    this._registerCapabilityListeners(); // rule-12a injectedthis.log('[GAS-DETECTOR] v5.5.932  Ready');
     this.log('[GAS-DETECTOR] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
   }
 

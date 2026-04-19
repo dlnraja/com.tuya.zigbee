@@ -108,7 +108,7 @@ function healHybrids() {
     fs.writeFileSync(flowPath, JSON.stringify(flowData, null, 2) + '\n');
   }
 
-  console.log('\n✅ Hybrid healing complete!');
+  console.log('\n Hybrid healing complete!');
 }
 
 healHybrids();

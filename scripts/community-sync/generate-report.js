@@ -6,10 +6,10 @@
 const fs = require('fs'), path = require('path');
 const reportPath = path.join(__dirname, '../../data/community-sync/report.json');
 
-if (!fs.existsSync(reportPath)) { console.log('❌ No report'); process.exit(0); }
+if (!fs.existsSync(reportPath)) { console.log(' No report'); process.exit(0); }
 
 const r = JSON.parse(fs.readFileSync(reportPath));
-console.log('## 🌐 Community Sync Report\n');
+console.log('##  Community Sync Report\n');
 console.log(`**Date:** ${r.ts}`);
 console.log(`**Current fingerprints in app:** ${r.currentCount}\n`);
 
@@ -17,17 +17,17 @@ console.log(`**Current fingerprints in app:** ${r.currentCount}\n`);
 if (r.src.johan) {
   console.log('### JohanBendz Fork');
   if (r.src.johan.error) {
-    console.log(`❌ ${r.src.johan.error}`);
+    console.log(` ${r.src.johan.error}`);
   } else {
-    console.log(`✅ ${r.src.johan.count} fingerprints (enriched: ${r.src.johan.enriched || false})`);
+    console.log(` ${r.src.johan.count} fingerprints (enriched: ${r.src.johan.enriched || false})`);
   }
 }
 if (r.src.z2m) {
   console.log('\n### Zigbee2MQTT');
   if (r.src.z2m.error) {
-    console.log(`❌ ${r.src.z2m.error}`);
+    console.log(` ${r.src.z2m.error}`);
   } else {
-    console.log(`✅ ${r.src.z2m.count} fingerprints (enriched: ${r.src.z2m.enriched || false})`);
+    console.log(` ${r.src.z2m.count} fingerprints (enriched: ${r.src.z2m.enriched || false})`);
   }
 }
 if (r.src.gh) {
@@ -38,7 +38,7 @@ if (r.src.gh) {
 }
 
 // === Enriched stats ===
-console.log('\n### 📊 Enrichment Stats');
+console.log('\n###  Enrichment Stats');
 console.log(`- Total enriched FPs: ${r.enrichedCount || 0}`);
 console.log(`- New FPs found: ${r.newCount || 0}`);
 
@@ -57,7 +57,7 @@ if (newFps.length > 0) {
   console.log(`- Battery devices: ${withBat}/${newFps.length}`);
   
   // === Top new fingerprints table ===
-  console.log('\n### 🆕 New Fingerprints (Top 30)\n');
+  console.log('\n###  New Fingerprints (Top 30)\n');
   console.log('| Manufacturer | Product ID | Type | Source | Vendor | Capabilities |');
   console.log('|---|---|---|---|---|---|');
   for (const f of newFps.slice(0, 30)) {

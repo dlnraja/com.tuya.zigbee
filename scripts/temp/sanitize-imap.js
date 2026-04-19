@@ -54,7 +54,7 @@ function aggressiveSanitize(text) {
   content = content.replace(oldSenders, newSenders);
   
   fs.writeFileSync(file, content);
-  console.log('✅ Injected aggressive sanitization into gmail-imap-reader.js');
+  console.log(' Injected aggressive sanitization into gmail-imap-reader.js');
 } else {
   console.log('Sanitization already injected in gmail-imap-reader.js');
 }

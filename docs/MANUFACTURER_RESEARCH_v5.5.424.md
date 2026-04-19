@@ -23,7 +23,7 @@
 | **ProductId** | TS0601 |
 | **Device Type** | Thermostatic Radiator Valve (TRV) |
 | **Brand** | Foluu TV05, Moes |
-| **Correct Driver** | `radiator_valve` ✅ |
+| **Correct Driver** | `radiator_valve`  |
 | **Sources** | ZHA ts0601_trv.py, Z2M discussions |
 | **Status** | CORRECT MAPPING |
 
@@ -33,7 +33,7 @@
 | **ProductId** | TS0601 |
 | **Device Type** | Ultrasonic Water Tank Level Monitor |
 | **Brand** | EPTTECH TLC2206-ZB |
-| **Correct Driver** | `water_tank_monitor` ✅ |
+| **Correct Driver** | `water_tank_monitor`  |
 | **Sources** | Z2M #21015, ZHA #3397, Hubitat |
 | **DPs** | 1=liquid_state, 2=liquid_depth, 22=liquid_level_percent |
 | **Status** | CORRECT MAPPING |
@@ -47,7 +47,7 @@
 | **Correct Driver** | `radiator_valve` (NOT climate_sensor!) |
 | **Sources** | Z2M #19462, ZHA |
 | **DPs** | 1=mode, 2=setpoint, 3=local_temp, 4=boost, 13=battery |
-| **Status** | ⚠️ NEEDS VERIFICATION - may need to move to radiator_valve |
+| **Status** |  NEEDS VERIFICATION - may need to move to radiator_valve |
 
 ### 4. _TZE200_ac0fhfiq / _TZE204_ac0fhfiq
 | Attribute | Value |
@@ -55,7 +55,7 @@
 | **ProductId** | TS0601 |
 | **Device Type** | 3-Phase Energy Meter (Clamp) |
 | **Brand** | Zemismart, Generic |
-| **Correct Driver** | `plug_energy_monitor` ✅ |
+| **Correct Driver** | `plug_energy_monitor`  |
 | **Sources** | Z2M TS0601_3_phase_clamp_meter, ZHA #2757 |
 | **Status** | CORRECT MAPPING |
 
@@ -65,7 +65,7 @@
 | **ProductId** | TS0601 |
 | **Device Type** | Curtain Motor |
 | **Brand** | Zemismart, Generic |
-| **Correct Driver** | `curtain_motor` ✅ |
+| **Correct Driver** | `curtain_motor`  |
 | **Sources** | Z2M #17518, ZHA #2753 |
 | **Status** | CORRECT MAPPING |
 
@@ -75,7 +75,7 @@
 | **ProductId** | TS0505B / TS0504B |
 | **Device Type** | RGB/RGBW LED Controller/Bulb |
 | **Brand** | Generic Tuya |
-| **Correct Driver** | `bulb_rgb` ✅ |
+| **Correct Driver** | `bulb_rgb`  |
 | **Sources** | Blakadder, Hubitat, SmartThings |
 | **Status** | CORRECT MAPPING |
 
@@ -85,7 +85,7 @@
 | **ProductId** | TS110E / TS110F |
 | **Device Type** | Dimmer Module (1-gang, no neutral) |
 | **Brand** | Lonsonho, Girier, Moes |
-| **Correct Driver** | `dimmer_wall_1gang` ✅ |
+| **Correct Driver** | `dimmer_wall_1gang`  |
 | **Sources** | Hubitat kkossev driver, Z2M |
 | **Status** | CORRECT MAPPING |
 
@@ -95,9 +95,9 @@
 | **ProductId** | TS011F |
 | **Device Type** | Smart Plug with Energy Monitoring |
 | **Brand** | Generic Tuya |
-| **Correct Driver** | `plug_energy_monitor` ✅ (FIXED) |
+| **Correct Driver** | `plug_energy_monitor`  (FIXED) |
 | **Sources** | Z2M #8020 |
-| **Status** | ✅ FIXED - Was incorrectly in switch_1gang |
+| **Status** |  FIXED - Was incorrectly in switch_1gang |
 
 ### 9. _TZ3000_nhhklsxw
 | Attribute | Value |
@@ -107,7 +107,7 @@
 | **Brand** | Generic Tuya |
 | **Correct Driver** | `plug_energy_monitor` or `plug_smart` |
 | **Sources** | SmartThings Edge driver |
-| **Status** | ⚠️ REMOVED from switch_1gang - needs verification |
+| **Status** |  REMOVED from switch_1gang - needs verification |
 
 ### 10. _TZ3000_hhiodez3
 | Attribute | Value |
@@ -115,7 +115,7 @@
 | **ProductId** | TS011F |
 | **Device Type** | Smart Plug with Energy Monitoring |
 | **Brand** | Mercator Ikuü |
-| **Correct Driver** | `plug_energy_monitor` ✅ |
+| **Correct Driver** | `plug_energy_monitor`  |
 | **Sources** | Z2M, Home Assistant |
 | **Status** | CORRECT MAPPING |
 
@@ -127,19 +127,19 @@
 | **Brand** | Moes |
 | **Correct Driver** | `radiator_valve` (NOT climate_sensor!) |
 | **Sources** | Z2M #25034, ZHA #2433 |
-| **Status** | ⚠️ NEEDS MOVE - Currently in climate_sensor, should be in radiator_valve |
+| **Status** |  NEEDS MOVE - Currently in climate_sensor, should be in radiator_valve |
 
 ---
 
 ## Corrections Applied
 
 ### Fixed Errors:
-1. **_TZ3000_jvzvulen**: Moved from `switch_1gang` → `plug_energy_monitor`
+1. **_TZ3000_jvzvulen**: Moved from `switch_1gang`  `plug_energy_monitor`
 2. **_TZ3000_nhhklsxw**: Removed from `switch_1gang` (needs proper driver)
 
 ### Pending Corrections:
-1. **_TZE200_pcdmj88b**: May need to move from `climate_sensor` → `radiator_valve`
-2. **_TZE204_ye5jkfsb**: May need to move from `climate_sensor` → `radiator_valve`
+1. **_TZE200_pcdmj88b**: May need to move from `climate_sensor`  `radiator_valve`
+2. **_TZE204_ye5jkfsb**: May need to move from `climate_sensor`  `radiator_valve`
 
 ---
 

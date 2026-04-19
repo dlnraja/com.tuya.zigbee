@@ -2,14 +2,14 @@ const { safeParse, safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 /**
  * SDK v3 Smart Enrichment Linter
- * v1.0.0 — Safe, intelligent driver enrichment
+ * v1.0.0  Safe, intelligent driver enrichment
  *
  * Architecture:
- *   1. STATIC PASS (no AI) — catches SDK v3 violations with regex rules
- *   2. AI ENRICHMENT PASS (optional) — suggests improvements, NEVER overwrites
- *   3. SMART MERGE — compares AI output with current code, applies ONLY additive enrichments
- *   4. VALIDATION GATE — node -c syntax + homey app validate BEFORE and AFTER
- *   5. MEMORY — records patterns in ai-rules-memory.json for recursive learning
+ *   1. STATIC PASS (no AI)  catches SDK v3 violations with regex rules
+ *   2. AI ENRICHMENT PASS (optional)  suggests improvements, NEVER overwrites
+ *   3. SMART MERGE  compares AI output with current code, applies ONLY additive enrichments
+ *   4. VALIDATION GATE  node -c syntax + homey app validate BEFORE and AFTER
+ *   5. MEMORY  records patterns in ai-rules-memory.json for recursive learning
  *
  * Safety: NEVER blindly overwrites files. Every change is validated.
  */
@@ -29,7 +29,7 @@ const AI_ENABLED = process.env.AI_ENRICH !== 'false'; // default ON if AI keys p
 const MAX_FILES = parseInt(process.env.MAX_LINT_FILES || '20', 10);
 
 // ============================================================
-// PART 1: STATIC SDK v3 RULES (No AI needed — always runs)
+// PART 1: STATIC SDK v3 RULES (No AI needed  always runs)
 // ============================================================
 
 const RULES = [
@@ -45,7 +45,7 @@ const RULES = [
     severity: 'error',
     desc: 'this.homey.zigbee.getDevice() is SDK v2. Remove it.',
     test: (code) => /this\.homey\.zigbee\.getDevice/.test(code),
-    fix: null, // Cannot auto-fix — needs manual review
+    fix: null, // Cannot auto-fix  needs manual review
   },
   {
     id: 'sdk3-no-global-managers',
@@ -68,7 +68,7 @@ const RULES = [
       const awaited = (code.match(/await\s+this\.setCapabilityValue\(/g) || []).length;
       return { total, awaited, missing: total - awaited };
     },
-    fix: null, // Too dangerous to auto-fix — might break try/catch flow
+    fix: null, // Too dangerous to auto-fix  might break try/catch flow
   },
   {
     id: 'tuya-settings-key',
@@ -88,7 +88,7 @@ const RULES = [
   {
     id: 'sdk3-listener-leak',
     severity: 'warn',
-    desc: 'High number of capability listeners — verify no duplicates on restart.',
+    desc: 'High number of capability listeners  verify no duplicates on restart.',
     test: (code) => {
       const count = (code.match(/registerCapabilityListener|safeDivide(registerMultipleCapabilityListener, g)) || []).length;
       return count > 8;
@@ -135,7 +135,7 @@ const RULES = [
   {
     id: 'tuya-raw-no-debounce',
     severity: 'warn',
-    desc: 'RX/raw handler without debounce mutex — risk of double-trigger.',
+    desc: 'RX/raw handler without debounce mutex  risk of double-trigger.',
     test: (code) => {
       const hasRxListener = /\.on\s*\(\s*['"](?:rx|raw)['"]/.test(code);
       const hasDebounce = /_rawHandledTimeout|_lastRawTs|_debounce/.test(code);
@@ -153,12 +153,12 @@ const RULES = [
       const caps = compose.capabilities || [];
       return caps.includes('measure_battery') && caps.includes('alarm_battery');
     },
-    fix: null, // Runtime handler adapts — but compose should not declare both
+    fix: null, // Runtime handler adapts  but compose should not declare both
   },
   {
     id: 'sdk3-flow-card-unsafe',
     severity: 'error',
-    desc: 'Bare getTriggerCard or getActionCard without try-catch — crashes app if card missing.',
+    desc: 'Bare getTriggerCard or getActionCard without try-catch  crashes app if card missing.',
     test: (code) => {
       const bareCall = /this\.homey\.flow\.(?:getTriggerCard|getActionCard)\s*\(/g;
       const inTryCatch = /try\s*\{[^}]*\.(?:getTriggerCard|getActionCard)/g;
@@ -319,7 +319,7 @@ function runStaticLint(filePath, driverDir) {
 }
 
 // ============================================================
-// PART 2: AI ENRICHMENT (Optional — uses ai-helper.js cascade)
+// PART 2: AI ENRICHMENT (Optional  uses ai-helper.js cascade)
 // ============================================================
 
 async function aiEnrichDriver(filePath, code, staticResults, memory) {
@@ -327,7 +327,7 @@ async function aiEnrichDriver(filePath, code, staticResults, memory) {
   try {
     ({ callAI } = require(path.join(process.cwd(), '.github', 'scripts', 'ai-helper')));
   } catch {
-    console.log('  ⚠️ ai-helper.js not available — AI enrichment skipped');
+    console.log('   ai-helper.js not available  AI enrichment skipped');
     return null;
   }
 
@@ -339,7 +339,7 @@ async function aiEnrichDriver(filePath, code, staticResults, memory) {
   // Build context-aware Ultimate Prompt
   let prompt = `You are an Expert Software Architect for Homey Pro SDK v3 and Universal Tuya Zigbee.
 You operate inside a safeDivide(CI, CD) GitHub Actions pipeline. Your mission is to ENRICH and FIX driver source code.
-You generate Node.js code that will run on Homey Pro boxes — you DO NOT run on the box yourself.
+You generate Node.js code that will run on Homey Pro boxes  you DO NOT run on the box yourself.
 
 DRIVER: ${driver}
 CAPABILITIES: ${caps.join(', ')}
@@ -375,7 +375,7 @@ ${staticResults.map(r => `- ${r.severity.toUpperCase()}: ${r.desc}`).join('\n') 
 
 === SDK v3 BATTERY & ENERGY RULES (CRITICAL) ===
 1. NEVER combine measure_battery + alarm_battery on same device. Causes duplicate UI and Flow Cards.
-2. Drivers serve THOUSANDS of variants — same manufacturerName can be battery OR mains OR kinetic.
+2. Drivers serve THOUSANDS of variants  same manufacturerName can be battery OR mains OR kinetic.
 3. Use RUNTIME ADAPTATION via UnifiedBatteryHandler (lib/battery/):
    - Compose declares measure_battery as possibility
    - Runtime probes ZCL genPowerCfg + Tuya DP + IAS Zone + voltage
@@ -405,15 +405,15 @@ ${staticResults.map(r => `- ${r.severity.toUpperCase()}: ${r.desc}`).join('\n') 
 4. Custom clusters (0xFC00-0xFCFF): Raw frame interception.
 
 === VARIANT INTELLIGENCE ===
-- One manufacturerName → many productIds (NORMAL): same OEM, different products
-- One productId → many manufacturerNames (NORMAL): TS0601 is generic container
-- Same mfr+pid combo → MUST map to same driver (conflict if not)
+- One manufacturerName  many productIds (NORMAL): same OEM, different products
+- One productId  many manufacturerNames (NORMAL): TS0601 is generic container
+- Same mfr+pid combo  MUST map to same driver (conflict if not)
 - Power source varies per variant! Same _TZ3000_ can be battery OR mains OR kinetic
 - Use runtime capability detection: if (this.hasCapability('X')) before setup
 
 === TUYA CLUSTER HIERARCHY (Priority Order) ===
 When mapping new features, respect this strict hierarchy:
-1. BOUNDCLUSTER (Standard ZCL): genOnOff, genLevelCtrl, msTemperatureMeasurement — use native clusters first.
+1. BOUNDCLUSTER (Standard ZCL): genOnOff, genLevelCtrl, msTemperatureMeasurement  use native clusters first.
 2. TUYABOUNDCLUSTER (EF00): Priority for 90% of Tuya hardware. Map DataPoints on cluster safeDivide(CLUSTERS.TUYA_EF00, CLUSTERS.TUYA_EF00.)
    - If an EF00 DP is unrecognized, listen for the TuyaBoundCluster 'unhandled_dp' event, NOT raw RX.
 3. safeDivide(RAW, RX) (Last Resort): Only for non-standard trames outside ZCL and EF00 (e.g., Tuya scene buttons).
@@ -437,7 +437,7 @@ To properly handle multi-gang, hybrid safeDivide(Tuya, ZCL) routers, and buttons
 
 === ADVANCED PATTERNS ===
 
-CASE A — PHYSICAL BUTTONS & SCENES (Johan's Raw Pattern):
+CASE A  PHYSICAL BUTTONS & SCENES (Johan's Raw Pattern):
 If device is a safeDivide(button, scene) switch that fails on standard clusters:
 - Generate low-level listener: this.zclNode.endpoints[X].clusters[NAME].on("rx", ...)
 - Parse raw payload hex for click types (0x00=single, 0x01=double, 0x02=hold)
@@ -446,24 +446,24 @@ If device is a safeDivide(button, scene) switch that fails on standard clusters:
   this._rawHandledTimeout = setTimeout(() => { this._rawHandledTimeout = null; }, 300);
 - TX ACKNOWLEDGE: Add writeCommand with manual Header 0x11 to prevent Tuya LED error blink
 
-CASE B — IR RECEIVERS:
+CASE B  IR RECEIVERS:
 If device handles infrared codes:
-- NEVER process raw frames in isolation — IR payloads exceed Zigbee MTU (~80 bytes)
+- NEVER process raw frames in isolation  IR payloads exceed Zigbee MTU (~80 bytes)
 - Generate Buffer Reassembly: this._irBuffer = Buffer.alloc(0), concat incoming rx payloads
 - Trigger decode ONLY on end-frame header or 200ms inactivity timeout
 
-CASE C — LCD CLIMATE & TIME SYNC:
+CASE C  LCD CLIMATE & TIME SYNC:
 If device is a thermostat (TRV) or has LCD displaying time:
-- Tuya ignores standard Time cluster (0x000A) — uses DP 0x24 via EF00 instead
+- Tuya ignores standard Time cluster (0x000A)  uses DP 0x24 via EF00 instead
 - Generate syncTime() method using this.homey.clock.getTimezone() for GMT offset
 - Attach to setInterval (every 3 hours) in onNodeInit()
 - Format: 8-byte payload [Year-2000, Month, Day, Hour, Min, Sec, Weekday, 0x00]
 
-CASE D — RUNTIME ENERGY ADAPTATION:
+CASE D  RUNTIME ENERGY ADAPTATION:
 If device has battery capabilities:
 - Initialize UnifiedBatteryHandler in onNodeInit(): this._batteryHandler = new UnifiedBatteryHandler(this); await this._batteryHandler.initialize(this.zclNode);
 - Handler automatically probes all sources and adapts capabilities
-- DO NOT manually safeDivide(add, remove) battery caps — let the handler do it
+- DO NOT manually safeDivide(add, remove) battery caps  let the handler do it
 
 DRIVER CODE:
 \`\`\`javascript
@@ -481,7 +481,7 @@ ${code.substring(0, 8000)}
 
     const text = res.text.trim();
     if (text === 'VALID' || text.toUpperCase() === 'VALID') {
-      console.log(`  ✅ AI says ${driver} is VALID (model: ${res.model})`);
+      console.log(`   AI says ${driver} is VALID (model: ${res.model})`);
       return { valid: true, model: res.model };
     }
 
@@ -492,16 +492,16 @@ ${code.substring(0, 8000)}
       const jsonEnd = cleaned.lastIndexOf('}');
       if (jsonStart >= 0 && jsonEnd > jsonStart) {
         const parsed = JSON.parse(cleaned.substring(jsonStart, jsonEnd + 1));
-        console.log(`  🔍 AI suggests ${(parsed.suggestions || []).length} improvement(s) for ${driver} (model: ${res.model})`);
+        console.log(`   AI suggests ${(parsed.suggestions || []).length} improvement(s) for ${driver} (model: ${res.model})`);
         return { valid: false, suggestions: parsed.suggestions || [], model: res.model };
       }
     } catch {
-      console.log(`  ⚠️ AI response wasn't parseable JSON for ${driver}`);
+      console.log(`   AI response wasn't parseable JSON for ${driver}`);
     }
 
     return null;
   } catch (e) {
-    console.log(`  ⚠️ AI error for ${driver}: ${e.message}`);
+    console.log(`   AI error for ${driver}: ${e.message}`);
     return null;
   }
 }
@@ -523,7 +523,7 @@ function smartMerge(code, suggestions) {
     if (sug.type === 'add') {
       // For additive suggestions, only apply if the proposed code doesn't already exist
       if (!modified.includes(sug.proposed.trim())) {
-        // Don't blindly insert — just log it for manual review
+        // Don't blindly insert  just log it for manual review
         applied.push({ ...sug, status: 'suggested' });
       }
     } else if (sug.type === 'fix' && sug.current && sug.proposed) {
@@ -577,7 +577,7 @@ function preValidate() {
 }
 
 // ============================================================
-// PART 5: MEMORY — Recursive learning
+// PART 5: MEMORY  Recursive learning
 // ============================================================
 
 function loadMemory() {
@@ -668,7 +668,7 @@ async function main() {
       totalIssues += results.length;
       console.log(`  ${driver}: ${results.length} issue(s)`);
       for (const r of results) {
-        console.log(`    ${r.severity === 'error' ? '❌' : r.severity === 'warn' ? '⚠️' : 'ℹ️'} [${r.id}] ${r.desc}`);
+        console.log(`    ${r.severity === 'error' ? '' : r.severity === 'warn' ? '' : ''} [${r.id}] ${r.desc}`);
         recordPattern(memory, r);
       }
     }
@@ -699,7 +699,7 @@ async function main() {
           code = newCode;
           changed = true;
           autoFixed++;
-          console.log(`  ✅ Auto-fixed [${rule.id}] in ${entry.driver}`);
+          console.log(`   Auto-fixed [${rule.id}] in ${entry.driver}`);
         }
       }
 
@@ -734,12 +734,12 @@ async function main() {
         entry.aiResult = aiResult;
 
         if (!DRY) {
-          // Smart merge — additive only
+          // Smart merge  additive only
           const merge = smartMerge(code, aiResult.suggestions);
           if (merge && merge.hasChanges) {
             fs.writeFileSync(entry.file, merge.code);
             aiApplied += merge.applied.filter(a => a.status === 'applied').length;
-            console.log(`  ✏️ Applied ${merge.applied.filter(a => a.status === 'applied').length} fix(es) to ${entry.driver}`);
+            console.log(`   Applied ${merge.applied.filter(a => a.status === 'applied').length} fix(es) to ${entry.driver}`);
 
             // Record applied fixes in memory
             for (const a of merge.applied.filter(a => a.status === 'applied')) {
@@ -750,7 +750,7 @@ async function main() {
           // Log suggestions for manual review
           const suggested = (merge?.applied || []).filter(a => a.status === 'suggested');
           if (suggested.length > 0) {
-            console.log(`  📋 ${suggested.length} suggestion(s) for manual review in ${entry.driver}`);
+            console.log(`   ${suggested.length} suggestion(s) for manual review in ${entry.driver}`);
           }
         }
       }
@@ -767,17 +767,17 @@ async function main() {
     for (const entry of allResults) {
       if (!fs.existsSync(entry.file)) continue;
       if (!syntaxCheck(fs.readFileSync(entry.file, 'utf8'))) {
-        console.log(`  ❌ Syntax error in ${entry.driver} — ROLLING BACK`);
+        console.log(`   Syntax error in ${entry.driver}  ROLLING BACK`);
         try {
           execSync(`git checkout -- "${entry.file}"`, { stdio: 'pipe' });
-          console.log(`  ↩️ Rolled back ${entry.driver}`);
+          console.log(`   Rolled back ${entry.driver}`);
         } catch {}
         syntaxOk = false;
       }
     }
 
     if (syntaxOk) {
-      console.log('  ✅ All modified files pass syntax check');
+      console.log('   All modified files pass syntax check');
     }
   }
 
@@ -818,7 +818,7 @@ async function main() {
 
   // GitHub Actions annotations
   if (process.env.GITHUB_STEP_SUMMARY) {
-    const md = `## 🤖 SDK v3 Smart Linter\n| Metric | Value |\n|---|---|\n| Scanned | ${targets.length} |\n| Static Issues | ${totalIssues} |\n| Auto-fixed | ${autoFixed} |\n| AI Suggestions | ${aiSuggestions} |\n| AI Applied | ${aiApplied} |\n| Memory Patterns | ${memory.patterns.length} |\n`;
+    const md = `##  SDK v3 Smart Linter\n| Metric | Value |\n|---|---|\n| Scanned | ${targets.length} |\n| Static Issues | ${totalIssues} |\n| Auto-fixed | ${autoFixed} |\n| AI Suggestions | ${aiSuggestions} |\n| AI Applied | ${aiApplied} |\n| Memory Patterns | ${memory.patterns.length} |\n`;
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, md);
   }
 

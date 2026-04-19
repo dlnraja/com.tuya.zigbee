@@ -1,7 +1,7 @@
 const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
-// v5.12.0: Immediate forum cleanup — delete hidden/spam posts, edit bot signatures
+// v5.12.0: Immediate forum cleanup  delete hidden/spam posts, edit bot signatures
 const fs=require('fs');
 const path = require('path');
 
@@ -19,10 +19,10 @@ const { fetchWithRetry, processBatch, sleep } = require('./retry-helper');
 
 // ===== POSTS TO DELETE =====
 const TO_DELETE = [
-  // T26439: HIDDEN by community (flagged as spam!) — URGENT
-  { id: 714597, num: '26439#5403', reason: 'HIDDEN — community flagged as spam' },
-  { id: 714602, num: '26439#5404', reason: 'HIDDEN — community flagged as spam' },
-  { id: 714604, num: '26439#5405', reason: 'HIDDEN — community flagged as spam (NEW)' },
+  // T26439: HIDDEN by community (flagged as spam!)  URGENT
+  { id: 714597, num: '26439#5403', reason: 'HIDDEN  community flagged as spam' },
+  { id: 714602, num: '26439#5404', reason: 'HIDDEN  community flagged as spam' },
+  { id: 714604, num: '26439#5405', reason: 'HIDDEN  community flagged as spam (NEW)' },
 
   // T140352: Raw FP dumps (nightly processor spam)
   { id: 650921, num: '140352#74', reason: 'Raw FP dump' },
@@ -80,7 +80,7 @@ const TO_DELETE = [
 const TO_EDIT = [
   // T140352 #1488: Remove bot signature
   { id: 714499, num: '140352#1488', reason: 'Remove bot signature + merge FPs',
-    newRaw: 'So _TZ3000_itb0omhv goes under switch_1gang, _TZ3000_u3nv1jwk is switch_4gang, and _TZE200_crq3r3la/_TZE200_gkfbdvyx / _TZE204_clrdrnya are all thermostat_radiator — all in v5.11.25 already. Just remove and re-pair, pick the right type when it asks.' },
+    newRaw: 'So _TZ3000_itb0omhv goes under switch_1gang, _TZ3000_u3nv1jwk is switch_4gang, and _TZE200_crq3r3la/_TZE200_gkfbdvyx / _TZE204_clrdrnya are all thermostat_radiator  all in v5.11.25 already. Just remove and re-pair, pick the right type when it asks.' },
   // T140352 #1516: Remove "my bot" mention
   { id: 714659, num: '140352#1516', reason: 'Remove bot mention',
     newRaw: 'Sorry about the duplicate replies earlier, had a script glitch. I\'ll take a look at your device.' },
@@ -101,11 +101,11 @@ const TO_EDIT = [
   { id: 716435, num: '140352#1569', reason: 'Remove diagnostics/stats',
     newRaw: 'Dropped **v5.11.50** on the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) just now.\n\nAdded a new remote dimmer driver.' },
   { id: 716567, num: '140352#1572', reason: 'Remove Gmail/PII/forum state',
-    newRaw: 'Just pushed **v5.11.65** to the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/).\n\nFixed _TZE200_pay2byax — moved to contact_sensor driver where it belongs.' },
+    newRaw: 'Just pushed **v5.11.65** to the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/).\n\nFixed _TZE200_pay2byax  moved to contact_sensor driver where it belongs.' },
   { id: 716818, num: '140352#1581', reason: 'Remove stat counts',
     newRaw: 'Just pushed **v5.11.86** to the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/).\n\nRewrote garage door driver to fix some issues (#128, #137).' },
 
-  // T140352: Infra-leaking version posts → rewrite as clean human updates
+  // T140352: Infra-leaking version posts  rewrite as clean human updates
   { id: 716594, num: '140352#1574', reason: 'Remove IMAP/Gmail/stats',
     newRaw: '**v5.11.67** is up on the [test channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/). Some internal fixes in this one.' },
   { id: 716630, num: '140352#1576', reason: 'Remove IMAP/OOM/stats',
@@ -182,9 +182,9 @@ async function main() {
   console.log(`Hardcoded: Delete ${TO_DELETE.length} | Edit ${TO_EDIT.length}`);
 
   authRef.auth = await getForumAuth();
-  if (!authRef.auth) { console.error('❌ No forum auth'); process.exit(1); }
+  if (!authRef.auth) { console.error(' No forum auth'); process.exit(1); }
   if (authRef.auth.type !== 'apikey') authRef.auth = await refreshCsrf(authRef.auth);
-  console.log('✅ Auth:', authRef.auth.type);
+  console.log(' Auth:', authRef.auth.type);
 
   // Phase 0: Dynamic scan for hidden/flagged posts
   console.log('\n--- Phase 0: SCAN for hidden posts ---');
@@ -198,16 +198,16 @@ async function main() {
   console.log('\n--- Phase 1: EDIT ---');
   const editResult = await processBatch(TO_EDIT, async (p) => {
     console.log(`EDIT ${p.num} (id=${p.id}): ${p.reason}`);
-    if (await editPost(p.id, p.newRaw)) { console.log('  ✓ Edited'); return 'ok'; }
-    console.log('  ✗ Edit failed'); return 'ok'; // don't retry edits that return non-ok
+    if (await editPost(p.id, p.newRaw)) { console.log('   Edited'); return 'ok'; }
+    console.log('   Edit failed'); return 'ok'; // don't retry edits that return non-ok
   }, { spacing: 3000, label: 'edit', maxRetries: 2 });
 
   // Phase 2: Delete posts (35s spacing for Discourse DELETE limit ~2/min)
   console.log('\n--- Phase 2: DELETE ---');
   const delResult = await processBatch(TO_DELETE, async (p) => {
     console.log(`DEL ${p.num} (id=${p.id}): ${p.reason}`);
-    if (await deletePost(p.id)) { console.log('  ✓ Deleted'); return 'ok'; }
-    console.log('  ✗ Delete failed'); return 'ok';
+    if (await deletePost(p.id)) { console.log('   Deleted'); return 'ok'; }
+    console.log('   Delete failed'); return 'ok';
   }, { spacing: 60000, label: 'delete', maxRetries: 2, rateLimitPause: 180000 });
 
   console.log('\n=== Done ===');

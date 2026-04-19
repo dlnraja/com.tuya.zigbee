@@ -47,10 +47,10 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
       };
       scenes.on('recall', handleScene);
       scenes.on('recallScene', handleScene);
-      this.log('[KNOB] ✅ Scenes cluster listeners (double/long press)');
+      this.log('[KNOB]  Scenes cluster listeners (double/long press)');
     }
 
-    // OnOff cluster — fallback single press (skip if Scenes already fired)
+    // OnOff cluster  fallback single press (skip if Scenes already fired)
     const onOff = ep1.clusters?.onOff || ep1.clusters?.[6];
     if (onOff?.on) {
       const handlePress = () => this._triggerKnobPress('single');
@@ -104,7 +104,7 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
       });
     }
 
-    this.log('[KNOB] ✅ Ready (single/double/long)');
+    this.log('[KNOB]  Ready (single/double/long)');
   }
 
   _triggerKnobPress(pressType) {
@@ -113,7 +113,7 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
     this._lastPressTime = now;
     this._lastPressType = pressType;
     this.setCapabilityValue('button', true).catch(() => {});
-    this.log(`[KNOB] 🔘 ${pressType.toUpperCase()} press`);
+    this.log(`[KNOB]  ${pressType.toUpperCase()} press`);
     const mainTrigger =
       this._getFlowCard('smart_knob_pressed')?.trigger(this, {}, {}).catch(this.error || console.error)
     if (mainTrigger) mainTrigger.trigger(this, { press_type: pressType }, {}).catch(() => {});

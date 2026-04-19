@@ -53,7 +53,7 @@ function loadAllSignatures() {
 }
 
 function audit() {
-  console.log('=== 🛡️ Zigbee Signature Collision Audit ===\n');
+  console.log('===  Zigbee Signature Collision Audit ===\n');
   const signatures = loadAllSignatures();
   const index = {};
   const collisions = [];
@@ -100,7 +100,7 @@ function audit() {
   }
 
   if (collisions.length > 0) {
-    console.error(`❌ Found ${collisions.length} Signature Collisions!\n`);
+    console.error(` Found ${collisions.length} Signature Collisions!\n`);
     for (const c of collisions) {
        console.error(`[COLLISION] Signature: Mfr=${c.mfr}, PID=${c.pid}, DeviceID=${c.devId || 'Any'}`);
        console.error(`            Claimed by: ${c.drivers.join(' AND ')}`);
@@ -108,7 +108,7 @@ function audit() {
   }
 
   if (architecturalIssues.length > 0) {
-    console.warn(`\n⚠️  Found ${architecturalIssues.length} Architectural Suggestions:\n`);
+    console.warn(`\n  Found ${architecturalIssues.length} Architectural Suggestions:\n`);
     for (const issue of architecturalIssues) console.warn(issue);
   }
 

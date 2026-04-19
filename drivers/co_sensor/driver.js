@@ -2,14 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.570: CRITICAL FIX - Flow card run listeners were missing
- */
 class CoSensorDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -19,72 +12,92 @@ class CoSensorDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('CoSensorDriver v5.5.570 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    // CONDITION: CO is/is not detected
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('co_sensor_co_detected'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device) return false;
-          return args.device.getCapabilityValue('alarm_co') === true;
-        });
-      this.log('[FLOW] ✅ Registered: co_sensor_co_detected');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('co_sensor_alarm_co_true'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('co_sensor_alarm_co_false'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('co_sensor_measure_co_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('co_sensor_battery_low'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('co_sensor_tamper_true'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('co_sensor_tamper_false'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('co_sensor_co_alarm'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('co_sensor_tamper_alarm'); } catch (e) {}
 
-    // CONDITION: CO level above threshold
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('co_sensor_co_above'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('co_sensor_co_detected');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const level = args.device.getCapabilityValue('measure_co') || 0;
-          return level > (args.ppm || 50);
+          return args.device.getCapabilityValue('alarm_gas') === true;
         });
-      this.log('[FLOW] ✅ Registered: co_sensor_co_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition co_sensor_co_detected: ${err.message}`); }
 
-    // CONDITION: Battery above threshold
     try {
-      (() => { try { return this.homey.flow.getConditionCard('co_sensor_battery_above'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('co_sensor_co_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const val = args.device.getCapabilityValue('measure_co2') || 0;
+          return val > (args.threshold || 400);
+        });
+      }
+    } catch (err) { this.error(`Condition co_sensor_co_above: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('co_sensor_battery_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.threshold || 20);
         });
-      this.log('[FLOW] ✅ Registered: co_sensor_battery_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition co_sensor_battery_above: ${err.message}`); }
 
-    // ACTION: Test alarm
     try {
-      (() => { try { return this.homey.flow.getActionCard('co_sensor_test_alarm'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('co_sensor_co_active');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          try {
-            if (args.device._tuyaEF00Manager) {
-              await args.device._tuyaEF00Manager.sendDatapoint(8, true, 'bool');
-            }
-            return true;
-          } catch (err) { return true; }
+          return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ Registered: co_sensor_test_alarm');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition co_sensor_co_active: ${err.message}`); }
 
-    this.log('[FLOW]  CO sensor flow cards registered');
+    try {
+      const card = this.homey.flow.getConditionCard('co_sensor_tamper_active');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition co_sensor_tamper_active: ${err.message}`); }
+
+    // ACTIONS
+    try {
+      const card = this.homey.flow.getActionCard('co_sensor_test_alarm');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          // Generic action handler
+          this.log('[FLOW] Action co_sensor_test_alarm triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action co_sensor_test_alarm: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

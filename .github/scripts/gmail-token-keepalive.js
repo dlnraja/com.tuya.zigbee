@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// v5.12.6: IMAP health checker — OAuth removed entirely
+// v5.12.6: IMAP health checker  OAuth removed entirely
 const fs=require('fs'),path=require('path');
 const SD=path.join(__dirname,'..','state');
 const HF=path.join(SD,'gmail-token-health.json');
@@ -36,7 +36,7 @@ async function main(){
     process.exit(1);
   }
 
-  console.log('IMAP health check — connecting as',e);
+  console.log('IMAP health check  connecting as',e);
   try{
     const emails=await imap.readViaIMAP({maxResults:5});
     if(emails&&emails.length>=0){
@@ -52,7 +52,7 @@ async function main(){
       delete health.refreshTokenExpiresH;delete health.refreshTokenExpiresAt;
       console.log('IMAP health: OK (no token expiry, permanent)');
     } else {
-      throw new Error('IMAP returned null — connection failed');
+      throw new Error('IMAP returned null  connection failed');
     }
   }catch(err){
     console.error('IMAP FAILED:',err.message);

@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🌐 ENRICHISSEMENT DEPUIS RAPPORTS COMMUNAUTÉ\n');
+console.log(' ENRICHISSEMENT DEPUIS RAPPORTS COMMUNAUTÉ\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -16,9 +16,9 @@ let stats = {
   backupsCreated: 0
 };
 
-// ══════════════════════════════════════════════════════════════════════════════
+// 
 // DONNÉES FORUM + GITHUB (Janvier 2026)
-// ══════════════════════════════════════════════════════════════════════════════
+// 
 
 const COMMUNITY_REPORTS = {
   // Forum #886 - DÉJÀ TRAITÉ (flow triggers fix)
@@ -137,7 +137,7 @@ function enrichDriver(driverName, newIds) {
   const composeFile = path.join(DRIVERS_DIR, driverName, 'driver.compose.json');
 
   if (!fs.existsSync(composeFile)) {
-    console.log(`   ⚠️  ${driverName}: driver non trouvé - nouveau driver nécessaire`);
+    console.log(`     ${driverName}: driver non trouvé - nouveau driver nécessaire`);
     stats.newDriversNeeded++;
     return false;
   }
@@ -146,7 +146,7 @@ function enrichDriver(driverName, newIds) {
     const content = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
 
     if (!content.zigbee || !content.zigbee.manufacturerName) {
-      console.log(`   ⚠️  ${driverName}: pas de manufacturerName dans zigbee config`);
+      console.log(`     ${driverName}: pas de manufacturerName dans zigbee config`);
       return false;
     }
 
@@ -157,7 +157,7 @@ function enrichDriver(driverName, newIds) {
     const idsToAdd = newIds.filter(id => !currentIdsUpper.has(id.toUpperCase()));
 
     if (idsToAdd.length === 0) {
-      console.log(`   ✓ ${driverName}: tous les IDs déjà présents`);
+      console.log(`    ${driverName}: tous les IDs déjà présents`);
       return false;
     }
 
@@ -176,13 +176,13 @@ function enrichDriver(driverName, newIds) {
     stats.driversEnriched++;
     stats.idsAdded += idsToAdd.length;
 
-    console.log(`   ✅ ${driverName}: +${idsToAdd.length} IDs (${currentIds.length} → ${content.zigbee.manufacturerName.length})`);
+    console.log(`    ${driverName}: +${idsToAdd.length} IDs (${currentIds.length}  ${content.zigbee.manufacturerName.length})`);
     console.log(`      Ajoutés: ${normalizedNew.join(', ')}`);
 
     return true;
 
   } catch (e) {
-    console.error(`   ❌ ${driverName}:`, e.message);
+    console.error(`    ${driverName}:`, e.message);
     return false;
   }
 }
@@ -231,13 +231,13 @@ function verifyFlowTriggers(driverName) {
 }
 
 // EXÉCUTION
-console.log('📂 Enrichissement drivers depuis rapports communauté...\n');
+console.log(' Enrichissement drivers depuis rapports communauté...\n');
 
 Object.entries(ENRICHMENT_IDS).forEach(([driverName, ids]) => {
   enrichDriver(driverName, ids);
 });
 
-console.log('\n\n🔍 Vérification flow triggers registration...\n');
+console.log('\n\n Vérification flow triggers registration...\n');
 
 const DRIVERS_WITH_FLOWS = [
   'presence_sensor_radar',
@@ -255,14 +255,14 @@ DRIVERS_WITH_FLOWS.forEach(driverName => {
   const result = verifyFlowTriggers(driverName);
   if (!result.ok) {
     flowIssues.push({ driver: driverName, ...result });
-    console.log(`   ⚠️  ${driverName}: ${result.reason} (${result.triggers} triggers, ${result.conditions} conditions)`);
+    console.log(`     ${driverName}: ${result.reason} (${result.triggers} triggers, ${result.conditions} conditions)`);
   } else {
-    console.log(`   ✅ ${driverName}: ${result.reason}`);
+    console.log(`    ${driverName}: ${result.reason}`);
   }
 });
 
 // RAPPORT
-console.log('\n\n📊 RAPPORT ENRICHISSEMENT:\n');
+console.log('\n\n RAPPORT ENRICHISSEMENT:\n');
 console.log(`   Drivers enrichis: ${stats.driversEnriched}`);
 console.log(`   Manufacturer IDs ajoutés: ${stats.idsAdded}`);
 console.log(`   Nouveaux drivers nécessaires: ${stats.newDriversNeeded}`);
@@ -270,26 +270,26 @@ console.log(`   Backups créés: ${stats.backupsCreated}`);
 console.log(`   Flow triggers issues: ${flowIssues.length}\n`);
 
 if (stats.newDriversNeeded > 0) {
-  console.log('⚠️  NOUVEAUX DRIVERS NÉCESSAIRES:');
+  console.log('  NOUVEAUX DRIVERS NÉCESSAIRES:');
   console.log('   - energy_meter (PJ-1203A) - ajouter à power_meter');
   console.log('   - Autres devices forum à analyser\n');
 }
 
 if (flowIssues.length > 0) {
-  console.log('⚠️  FLOW TRIGGERS À CORRIGER:');
+  console.log('  FLOW TRIGGERS À CORRIGER:');
   flowIssues.forEach(issue => {
     console.log(`   - ${issue.driver}: Ajouter registration dans driver.js`);
   });
   console.log();
 }
 
-console.log('🎯 SOURCES:');
+console.log(' SOURCES:');
 console.log('   - Forum Homey Community (Pages 42-46, Jan 2026)');
 console.log('   - GitHub dlnraja/com.tuya.zigbee (issues/PRs)');
 console.log('   - Zigbee2MQTT device database');
 console.log('   - User reports (#886 presence sensor fix appliqué)\n');
 
-console.log('✅ ENRICHISSEMENT TERMINÉ\n');
+console.log(' ENRICHISSEMENT TERMINÉ\n');
 
 // Sauvegarder rapport
 const reportFile = path.join(ROOT, 'COMMUNITY_ENRICHMENT_REPORT.json');
@@ -301,6 +301,6 @@ fs.writeFileSync(reportFile, JSON.stringify({
   enrichmentIds: ENRICHMENT_IDS
 }, null, 2), 'utf8');
 
-console.log(`📄 Rapport sauvegardé: ${reportFile}\n`);
+console.log(` Rapport sauvegardé: ${reportFile}\n`);
 
 process.exit(flowIssues.length > 0 ? 1 : 0);

@@ -2,12 +2,12 @@
 'use strict';
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      MANIFEST CASELESS PROCESSOR - v1.1.0                                    ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Ensures Tuya fingerprints are present in BOTH Uppercase and Lowercase       ║
- * ║  in driver manifests, bypassing Homey's case-sensitive matching.             ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       MANIFEST CASELESS PROCESSOR - v1.1.0                                    
+ * 
+ *   Ensures Tuya fingerprints are present in BOTH Uppercase and Lowercase       
+ *   in driver manifests, bypassing Homey's case-sensitive matching.             
+ * 
  */
 
 const fs = require('fs');

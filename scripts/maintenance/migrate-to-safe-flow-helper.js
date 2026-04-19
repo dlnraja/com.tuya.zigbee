@@ -71,7 +71,7 @@ const allDrivers = walk(DDIR);
 let count = 0;
 allDrivers.forEach(f => {
   if (processFile(f)) {
-    console.log(`✅ Fully Hardened: ${path.relative(process.cwd(), f)}`);
+    console.log(` Fully Hardened: ${path.relative(process.cwd(), f)}`);
     count++;
   }
 });

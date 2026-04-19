@@ -43,9 +43,9 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
         if (card) {
           card.registerRunListener(handler);
-          this.log(`[FLOW] ✅ ${id}`);
+          this.log(`[FLOW]  ${id}`);
         }
-      } catch (e) { this.log(`[FLOW] ⚠️ Failed to register ${id}: ${e.message}`); }
+      } catch (e) { this.log(`[FLOW]  Failed to register ${id}: ${e.message}`); }
     };
 
     // CONDITION: Plug is on/off

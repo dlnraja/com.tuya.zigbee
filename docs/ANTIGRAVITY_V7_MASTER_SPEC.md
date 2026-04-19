@@ -1,11 +1,11 @@
-# 🚀 PROTOCOLE "ANTIGRAVITY" : MASTER SPECIFICATION v7.0
+#  PROTOCOLE "ANTIGRAVITY" : MASTER SPECIFICATION v7.0
 
 **Contexte pour l'Agent IA (Gemini) :**
 Tu es assigné au projet `tuya_repair` (Homey SDK 3). Ton objectif est de transformer une application Tuya instable en une architecture hybride (Zigbee + WiFi) de niveau industriel, baptisée **MAX Local Pro v7.0**. Tu dois implémenter le "Local-Direct First", le pont "Shadow-Pulsar", et automatiser la CI/CD.
 
 ---
 
-## 🛠️ PHASE 1 : Usine DevOps & CI/CD (L'Anti-Corruption Layer)
+##  PHASE 1 : Usine DevOps & CI/CD (L'Anti-Corruption Layer)
 L'IA doit maintenir le projet de façon autonome via des scripts de génération et de validation.
 
 *   **1. Auto-Ganger (`scripts/automation/generate-subdevices.js`)** :
@@ -20,7 +20,7 @@ L'IA doit maintenir le projet de façon autonome via des scripts de génération
 
 ---
 
-## 📻 PHASE 2 : Le Noyau Zigbee & Multi-Gang (Runtime)
+##  PHASE 2 : Le Noyau Zigbee & Multi-Gang (Runtime)
 Refactorisation du traitement des données pour gérer les capteurs exotiques et les sous-appareils.
 
 *   **1. Multi-Gang Router (`lib/mixins/MultiGangMixin.js`)** :
@@ -33,7 +33,7 @@ Refactorisation du traitement des données pour gérer les capteurs exotiques et
 
 ---
 
-## 📡 PHASE 3 : Le Moteur WiFi "Local-Direct"
+##  PHASE 3 : Le Moteur WiFi "Local-Direct"
 Communication LAN instantanée (AES-128) avec Cloud en amorçage uniquement.
 
 *   **1. Pairing Sandbox (`drivers/.../pair/configure.html`)** :
@@ -46,13 +46,13 @@ Communication LAN instantanée (AES-128) avec Cloud en amorçage uniquement.
 
 ---
 
-## 🌌 PHASE 4 : Le Pont "Shadow-Pulsar" (Hybridation)
+##  PHASE 4 : Le Pont "Shadow-Pulsar" (Hybridation)
 Synchronisation unidirectionnelle (Zigbee -> Homey -> Cloud) sécurisée.
 
 *   **1. Singleton Throttler (`lib/tuya-local/TuyaShadowPulsar.js`)** :
     *   **Logique** : Leaky Bucket (1 requête / 2 sec). Déduplication et priorisation des actions critiques (On/Off).
 
-### 🪞 Shadow-Pulsar : Le Pont de Verre (Mirroring)
+###  Shadow-Pulsar : Le Pont de Verre (Mirroring)
 Le Shadow-Pulsar permet la synchronisation optionnelle vers le Cloud Tuya (Smart Life).
 - **Doctrine de Sécurité (v7.0.22)** :
     - **Opt-In Double** : Activé via réglages App (Global) + `tuya_shadow_id` (Device).
@@ -67,7 +67,7 @@ Le Shadow-Pulsar permet la synchronisation optionnelle vers le Cloud Tuya (Smart
 
 ---
 
-### 🛡️ MANDATS GOUVERNANCE (ANTIGRAVITY RULES) :
+###  MANDATS GOUVERNANCE (ANTIGRAVITY RULES) :
 1.  **Code Complet** : Pas de placeholders. Tout parser binaire doit être implémenté.
 2.  **SDK 3 Only** : Utilisation exclusive de `this.homey.*`. Pas de résidus SDK 2.
 3.  **Local-First** : Priorité absolue TCP/Zigbee. Le Cloud est un miroir, pas un canal de commande principal.

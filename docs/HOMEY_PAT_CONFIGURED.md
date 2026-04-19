@@ -1,4 +1,4 @@
-# ✅ HOMEY_PAT Configuré
+#  HOMEY_PAT Configuré
 
 **Date:** 2025-10-08 18:57  
 **Status:** Secret configuré avec succès
@@ -8,19 +8,19 @@
 Le secret `HOMEY_PAT` est maintenant disponible pour les workflows GitHub Actions.
 
 **Workflows qui peuvent publier:**
-- publish-auto.yml ✅
-- manual-publish.yml ✅
+- publish-auto.yml 
+- manual-publish.yml 
 
 ## Test de Publication
 
 Ce commit déclenche un workflow de test pour valider la configuration complète.
 
 **Attendu:**
-1. ✅ Validation SDK3
-2. ✅ Génération changelog
-3. ✅ Update version
-4. ✅ **Publication Homey App Store** (maintenant possible!)
-5. ✅ GitHub Release
+1.  Validation SDK3
+2.  Génération changelog
+3.  Update version
+4.  **Publication Homey App Store** (maintenant possible!)
+5.  GitHub Release
 
 ## Monitoring
 
@@ -29,4 +29,4 @@ Ce commit déclenche un workflow de test pour valider la configuration complète
 
 ---
 
-**🎉 PREMIÈRE PUBLICATION AUTOMATIQUE VIA GITHUB ACTIONS!**
+** PREMIÈRE PUBLICATION AUTOMATIQUE VIA GITHUB ACTIONS!**

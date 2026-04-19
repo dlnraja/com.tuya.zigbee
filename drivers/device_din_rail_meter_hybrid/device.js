@@ -80,7 +80,7 @@ class HVACDehumidifierDevice extends UnifiedThermostatBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    await super.onNodeInit({ zclNode });this.log('[DEHUMIDIFIER] ✅ Ready');
+    await super.onNodeInit({ zclNode });this.log('[DEHUMIDIFIER]  Ready');
   }
 
 

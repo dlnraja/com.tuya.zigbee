@@ -92,13 +92,13 @@ const dpList = Object.entries(dpDB).map(([dp, data]) => ({
 console.log('Top 40 DPs by usage:\n');
 dpList.slice(0, 40).forEach(d => {
     console.log('DP' + d.dp + ' (' + d.count + ' drivers)');
-    if (d.caps.length > 0) console.log('  → ' + d.caps.join(', '));
-    if (d.divs.length > 1) console.log('  ⚠ Multiple divisors: ' + d.divs.join(', '));
-    if (d.hasTransform > 0) console.log('  🔧 ' + d.hasTransform + ' have transform()');
+    if (d.caps.length > 0) console.log('   ' + d.caps.join(', '));
+    if (d.divs.length > 1) console.log('   Multiple divisors: ' + d.divs.join(', '));
+    if (d.hasTransform > 0) console.log('   ' + d.hasTransform + ' have transform()');
 });
 
 // Variants analysis
-console.log('\n\n📊 VARIANT PATTERNS:\n');
+console.log('\n\n VARIANT PATTERNS:\n');
 const variants = {};
 for (const [driver, dps] of Object.entries(driverDPs)) {
     for (const [dp, config] of Object.entries(dps)) {
@@ -118,9 +118,9 @@ const multiVariant = Object.entries(variants)
 multiVariant.forEach(([dp, mappings]) => {
     console.log('DP' + dp + ' has ' + Object.keys(mappings).length + ' variants:');
     Object.entries(mappings).forEach(([cap, drivers]) => {
-        console.log('  → ' + cap + ' (' + drivers.length + ' drivers)');
+        console.log('   ' + cap + ' (' + drivers.length + ' drivers)');
     });
 });
 
 fs.writeFileSync('dp-full-analysis.json', JSON.stringify({ dpDB, driverDPs, variants }, null, 2));
-console.log('\n✅ Saved to dp-full-analysis.json');
+console.log('\n Saved to dp-full-analysis.json');

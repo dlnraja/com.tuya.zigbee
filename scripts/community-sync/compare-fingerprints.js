@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Compare fingerprints — returns current app fingerprints as enriched map
+ * Compare fingerprints  returns current app fingerprints as enriched map
  * v5.12.1: Returns FULL device data (productId, class, caps, battery, etc.)
  */
 const fs = require('fs'), path = require('path');

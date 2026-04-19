@@ -31,7 +31,7 @@ function fixDuplicateFlowIds() {
     }
   }
 
-  console.log(`✅ Flow IDs check complete. Fixed ${duplicatesFixed} duplicate(s).`);
+  console.log(` Flow IDs check complete. Fixed ${duplicatesFixed} duplicate(s).`);
   process.exit(0);
 }
 

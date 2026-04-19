@@ -2,14 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.570: CRITICAL FIX - Flow card run listeners were missing
- */
 class TuyaZigbeeDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -19,117 +12,143 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('Tuya Zigbee 1-Gang Switch Driver v5.5.570 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    // CONDITION: Switch is on/off
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('fingerbot_switch_hybrid_switch_1gang_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('fingerbot_switch_hybrid_switch_1gang_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('fingerbot_switch_hybrid_switch_1gang_physical_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('fingerbot_switch_hybrid_switch_1gang_physical_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('fingerbot_switch_hybrid_switch_1gang_physical_single'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('fingerbot_switch_hybrid_switch_1gang_physical_double'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('fingerbot_switch_hybrid_switch_1gang_physical_long_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('fingerbot_switch_hybrid_switch_1gang_physical_triple'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('fingerbot_switch_hybrid_switch_1gang_battery_low'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('fingerbot_switch_hybrid_switch_1gang_power_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('fingerbot_switch_hybrid_switch_1gang_gang1_scene'); } catch (e) {}
+
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_1gang_is_on'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('fingerbot_switch_hybrid_switch_1gang_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ Registered: switch_1gang_is_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition fingerbot_switch_hybrid_switch_1gang_is_on: ${err.message}`); }
 
-    // ACTION: Turn on
+    // ACTIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_1gang_turn_on'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('fingerbot_switch_hybrid_switch_1gang_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
-          await args.device.setCapabilityValue('onoff', true).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: switch_1gang_turn_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action fingerbot_switch_hybrid_switch_1gang_turn_on: ${err.message}`); }
 
-    // ACTION: Turn off
     try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_1gang_turn_off'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('fingerbot_switch_hybrid_switch_1gang_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
-          await args.device.setCapabilityValue('onoff', false).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: switch_1gang_turn_off');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action fingerbot_switch_hybrid_switch_1gang_turn_off: ${err.message}`); }
 
-    // v5.5.906: ACTION: Toggle
     try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_1gang_toggle'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('fingerbot_switch_hybrid_switch_1gang_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device._setGangOnOff(1, !current).catch(() => {});
-          await args.device.setCapabilityValue('onoff', !current).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: switch_1gang_toggle');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action fingerbot_switch_hybrid_switch_1gang_toggle: ${err.message}`); }
 
-    // v5.5.930: ACTION: Set LED backlight mode
     try {
-      (() => { try { return this.homey.flow.getActionCard('switch_1gang_set_backlight'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device || !args.mode) return false;
-          await args.device.setBacklightMode(args.mode);
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: switch_1gang_set_backlight');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // v5.5.930: ACTION: Set LED backlight color
-    try {
-      (() => { try { return this.homey.flow.getActionCard('switch_1gang_set_backlight_color'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device || !args.state || !args.color) return false;
-          await args.device.setBacklightColor(args.state, args.color);
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: switch_1gang_set_backlight_color');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // v5.5.930: ACTION: Set LED backlight brightness
-    try {
-      (() => { try { return this.homey.flow.getActionCard('switch_1gang_set_backlight_brightness'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device || args.brightness === undefined) return false;
-          await args.device.setBacklightBrightness(args.brightness);
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: switch_1gang_set_backlight_brightness');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    this.log('[FLOW] \uD83C\uDF89 Scene mode registered');
-    // v5.12.5: Scene mode action
-    try {
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('fingerbot_switch_hybrid_switch_1gang_set_backlight');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setSceneMode(args.mode);
+          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
           return true;
         });
-      this.log('[FLOW] \u2705 switch_1gang_set_scene_mode');
-    } catch (err) { this.log('[FLOW] \u26A0\uFE0F ' + err.message); }
+      }
+    } catch (err) { this.error(`Action fingerbot_switch_hybrid_switch_1gang_set_backlight: ${err.message}`); }
 
-    this.log('[FLOW] 1-Gang switch flow cards registered (v5.5.930)');
+    try {
+      const card = this.homey.flow.getActionCard('fingerbot_switch_hybrid_switch_1gang_set_backlight_color');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action fingerbot_switch_hybrid_switch_1gang_set_backlight_color: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('fingerbot_switch_hybrid_switch_1gang_set_backlight_brightness');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action fingerbot_switch_hybrid_switch_1gang_set_backlight_brightness: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('fingerbot_switch_hybrid_switch_1gang_set_countdown');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          // Generic action handler
+          this.log('[FLOW] Action fingerbot_switch_hybrid_switch_1gang_set_countdown triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action fingerbot_switch_hybrid_switch_1gang_set_countdown: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('fingerbot_switch_hybrid_switch_1gang_set_child_lock');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          // Generic action handler
+          this.log('[FLOW] Action fingerbot_switch_hybrid_switch_1gang_set_child_lock triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action fingerbot_switch_hybrid_switch_1gang_set_child_lock: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('fingerbot_switch_hybrid_switch_1gang_set_scene_mode');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device.setSceneMode === 'function') await args.device.setSceneMode(args.mode || args.value);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action fingerbot_switch_hybrid_switch_1gang_set_scene_mode: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

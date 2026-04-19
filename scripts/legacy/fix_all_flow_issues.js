@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔧 CORRECTION AUTOMATIQUE - TOUS LES BUGS FLOW CARDS\n');
+console.log(' CORRECTION AUTOMATIQUE - TOUS LES BUGS FLOW CARDS\n');
 
 const ROOT = path.join(__dirname, '..', '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -231,18 +231,18 @@ function generateTriggerDefinition(triggerId) {
   };
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // EXÉCUTION
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
-console.log('📊 Issues à corriger:\n');
+console.log(' Issues à corriger:\n');
 console.log(`   Missing registrations: ${auditReport.issues.missingRegistration.length}`);
 console.log(`   Triggered but not defined: ${auditReport.issues.triggeredButNotDefined.length}`);
 console.log(`   Missing runListeners: ${auditReport.issues.missingRunListener.length}\n`);
 
-console.log('═══════════════════════════════════════════════════════════════════════════════');
+console.log('');
 console.log('PHASE 1: CORRECTION MISSING REGISTRATIONS');
-console.log('═══════════════════════════════════════════════════════════════════════════════\n');
+console.log('\n');
 
 // Grouper par driver
 const driverGroups = {};
@@ -256,25 +256,25 @@ auditReport.issues.missingRegistration.forEach(issue => {
 Object.keys(driverGroups).forEach(driver => {
   const count = fixMissingRegistrations(driver);
   if (count > 0) {
-    console.log(`   ✅ ${driver}: ${count} registrations ajoutées`);
+    console.log(`    ${driver}: ${count} registrations ajoutées`);
     stats.driversFixed++;
   }
 });
 
-console.log('\n═══════════════════════════════════════════════════════════════════════════════');
+console.log('\n');
 console.log('PHASE 2: CORRECTION TRIGGERED BUT NOT DEFINED');
-console.log('═══════════════════════════════════════════════════════════════════════════════\n');
+console.log('\n');
 
 auditReport.issues.triggeredButNotDefined.forEach(issue => {
   const fixed = fixTriggeredButNotDefined(issue.driver, issue.id);
   if (fixed) {
-    console.log(`   ✅ ${issue.driver}: trigger '${issue.id}' ajouté`);
+    console.log(`    ${issue.driver}: trigger '${issue.id}' ajouté`);
   }
 });
 
-console.log('\n═══════════════════════════════════════════════════════════════════════════════');
+console.log('\n');
 console.log('STATISTIQUES CORRECTIONS');
-console.log('═══════════════════════════════════════════════════════════════════════════════\n');
+console.log('\n');
 
 console.log(`   Drivers corrigés: ${stats.driversFixed}`);
 console.log(`   Registrations ajoutées: ${stats.registrationsAdded}`);
@@ -282,9 +282,9 @@ console.log(`   RunListeners ajoutés: ${stats.runListenersAdded}`);
 console.log(`   Flow cards ajoutées: ${stats.flowCardsAdded}`);
 console.log(`   Backups créés: ${stats.backupsCreated}\n`);
 
-console.log('✅ CORRECTIONS TERMINÉES\n');
+console.log(' CORRECTIONS TERMINÉES\n');
 
-console.log('🔄 Re-lancer audit pour vérifier:\n');
+console.log(' Re-lancer audit pour vérifier:\n');
 console.log('   node scripts/audit_all_flow_cards.js\n');
 
 process.exit(0);

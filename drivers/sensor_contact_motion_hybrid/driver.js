@@ -34,18 +34,18 @@ class MotionSensorDriver extends ZigBeeDriver {
     this.log('MotionSensorDriver v5.5.564 initializing...');
 
     try {
-      // ═══════════════════════════════════════════════════════════════
+      // 
       // TRIGGER CARDS - All triggers from driver.flow.compose.json
-      // ═══════════════════════════════════════════════════════════════
+      // 
 
 
 
 
 
 
-      // ═══════════════════════════════════════════════════════════════
+      // 
       // CONDITION CARDS - with device validation
-      // ═══════════════════════════════════════════════════════════════
+      // 
 
       this.motionActiveCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
@@ -62,7 +62,7 @@ class MotionSensorDriver extends ZigBeeDriver {
         return args.device.getCapabilityValue('alarm_motion') === true;
       });
 
-      this.log('MotionSensorDriver v5.5.564 ✅ All flow cards registered');
+      this.log('MotionSensorDriver v5.5.564  All flow cards registered');
     } catch (err) {
       this.error('MotionSensorDriver flow card registration failed:', err.message);
     }

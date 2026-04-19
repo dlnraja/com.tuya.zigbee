@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔧 CORRECTION FINALE - 15 MANUFACTURER IDs DUPLIQUÉS\n');
+console.log(' CORRECTION FINALE - 15 MANUFACTURER IDs DUPLIQUÉS\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -101,7 +101,7 @@ function removeManufacturerId(driverName, manufacturerId) {
   const composeFile = path.join(DRIVERS_DIR, driverName, 'driver.compose.json');
 
   if (!fs.existsSync(composeFile)) {
-    console.log(`   ⚠️  ${driverName}/driver.compose.json non trouvé`);
+    console.log(`     ${driverName}/driver.compose.json non trouvé`);
     return false;
   }
 
@@ -133,20 +133,20 @@ function removeManufacturerId(driverName, manufacturerId) {
     stats.filesModified++;
     stats.idsRemoved++;
 
-    console.log(`   ✅ ${driverName}: supprimé ${manufacturerId}`);
+    console.log(`    ${driverName}: supprimé ${manufacturerId}`);
     return true;
 
   } catch (e) {
-    console.error(`   ❌ Erreur ${driverName}:`, e.message);
+    console.error(`    Erreur ${driverName}:`, e.message);
     return false;
   }
 }
 
 // EXÉCUTION
-console.log('🎯 Application des corrections...\n');
+console.log(' Application des corrections...\n');
 
 Object.entries(FIXES).forEach(([manufacturerId, config]) => {
-  console.log(`\n📦 ${manufacturerId}`);
+  console.log(`\n ${manufacturerId}`);
   console.log(`   Raison: ${config.reason}`);
   console.log(`   Garder: ${config.keep}`);
   console.log(`   Supprimer de: ${config.remove.join(', ')}`);
@@ -157,22 +157,22 @@ Object.entries(FIXES).forEach(([manufacturerId, config]) => {
 });
 
 // Product IDs à examiner
-console.log('\n\n⚠️  PRODUCT IDs À EXAMINER MANUELLEMENT:\n');
+console.log('\n\n  PRODUCT IDs À EXAMINER MANUELLEMENT:\n');
 console.log('   TS0207: rain_sensor vs water_leak_sensor');
-console.log('      → Vérifier si même device ou variants');
+console.log('       Vérifier si même device ou variants');
 console.log('   TS0013: switch_1gang vs switch_3gang');
-console.log('      → Probablement légitime (différentes configurations)');
+console.log('       Probablement légitime (différentes configurations)');
 console.log('   TS0014: switch_1gang vs switch_4gang');
-console.log('      → Probablement légitime (différentes configurations)\n');
+console.log('       Probablement légitime (différentes configurations)\n');
 
-console.log('\n📊 RAPPORT CORRECTIONS:\n');
+console.log('\n RAPPORT CORRECTIONS:\n');
 console.log(`   Fichiers modifiés: ${stats.filesModified}`);
 console.log(`   IDs supprimés: ${stats.idsRemoved}`);
 console.log(`   Backups créés: ${stats.backups}\n`);
 
 if (stats.filesModified > 0) {
-  console.log('✅ CORRECTIONS APPLIQUÉES\n');
-  console.log('🎯 PROCHAINES ÉTAPES:');
+  console.log(' CORRECTIONS APPLIQUÉES\n');
+  console.log(' PROCHAINES ÉTAPES:');
   console.log('   1. Relancer audit: node scripts/audit_complete_advanced.js');
   console.log('   2. Valider: homey app validate --level publish');
   console.log('   3. Build: homey app build\n');

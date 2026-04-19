@@ -1,15 +1,15 @@
-# 🌐 ANALYSE FORUMS HOMEY - BEST PRACTICES & AMÉLIORATIONS
+#  ANALYSE FORUMS HOMEY - BEST PRACTICES & AMÉLIORATIONS
 
 **Sources analysées:** Tuya Smart Life, Tuya Cloud, Device Capabilities, IKEA Tradfri, Aqara/Xiaomi, Sonoff, Ecodim, Robb
 
-## 📊 PATTERNS IDENTIFIÉS
+##  PATTERNS IDENTIFIÉS
 
 ### 1. **TUYA SMART LIFE - SCALING FACTORS**
 **Source:** https://community.homey.app/t/app-tuya-smart-life-smart-living/146735/150
 
 **Problème:**
 - Energy monitoring values incorrects (voltage, current, power)
-- Valeurs Homey ≠ Valeurs Tuya app
+- Valeurs Homey  Valeurs Tuya app
 
 **Solution:**
 ```javascript
@@ -80,9 +80,9 @@ _parseVoltage(value, scaleFactor = 1) {
 ```
 
 **Best Practice:**
-✅ Device argument auto-filters capabilities
-✅ Single device selection per card
-✅ Clear, concise trigger names
+ Device argument auto-filters capabilities
+ Single device selection per card
+ Clear, concise trigger names
 
 ---
 
@@ -96,8 +96,8 @@ _parseVoltage(value, scaleFactor = 1) {
 
 **Use Case:**
 ```
-Motion sensor → Deactivate when light manually turned off via remote
-              → Reactivate when light turned on via remote
+Motion sensor  Deactivate when light manually turned off via remote
+               Reactivate when light turned on via remote
 ```
 
 **Application à notre app:**
@@ -270,10 +270,10 @@ async onCapabilityDim(value, opts) {
 - Abandoned project
 
 **Lesson:**
-❌ Ne PAS abandonner maintenance
-✅ Updates réguliers (monthly minimum)
-✅ Community engagement
-✅ Changelog transparent
+ Ne PAS abandonner maintenance
+ Updates réguliers (monthly minimum)
+ Community engagement
+ Changelog transparent
 
 ---
 
@@ -315,7 +315,7 @@ async onCapabilityDim(value, opts) {
 
 ---
 
-## 🎯 AMÉLIORATIONS APPLICABLES À NOTRE APP
+##  AMÉLIORATIONS APPLICABLES À NOTRE APP
 
 ### **PRIORITÉ HAUTE (Immediate)**
 
@@ -347,7 +347,7 @@ async onCapabilityDim(value, opts) {
         "label": { "en": "Current scaling" },
         "value": "0.001",
         "values": [
-          { "id": "0.001", "label": { "en": "÷1000 (mA→A)" } },
+          { "id": "0.001", "label": { "en": "÷1000 (mAA)" } },
           { "id": "0.01", "label": { "en": "÷100" } },
           { "id": "0.1", "label": { "en": "÷10" } },
           { "id": "1", "label": { "en": "×1" } }
@@ -521,14 +521,14 @@ Inspiration from Device Capabilities app
 
 ---
 
-## 📝 ACTIONS REQUISES
+##  ACTIONS REQUISES
 
 ### Immediate (Today):
-1. ✅ Add energy monitoring scaling factors
-2. ✅ Add climate sensor offset settings
-3. ✅ Add contact sensor reverse logic
-4. ✅ Add curtain maintenance actions
-5. ✅ Add dimmer speed settings
+1.  Add energy monitoring scaling factors
+2.  Add climate sensor offset settings
+3.  Add contact sensor reverse logic
+4.  Add curtain maintenance actions
+5.  Add dimmer speed settings
 
 ### Short-term (This week):
 6. Manual control detection triggers
@@ -541,7 +541,7 @@ Inspiration from Device Capabilities app
 
 ---
 
-## 🔧 SCRIPTS À CRÉER
+##  SCRIPTS À CRÉER
 
 1. `scripts/add_scaling_settings.js` - Energy monitoring calibration
 2. `scripts/add_offset_settings.js` - Climate sensor offsets

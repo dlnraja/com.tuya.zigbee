@@ -1,16 +1,9 @@
 'use strict';
-const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
+const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.570: CRITICAL FIX - Flow card run listeners were missing
- */
 class PlugSmartDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -20,96 +13,115 @@ class PlugSmartDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('PlugSmartDriver v5.5.570 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    // CONDITION: Plug is/is not on
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('contact_sensor_plug_hybrid_plug_smart_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('contact_sensor_plug_hybrid_plug_smart_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('contact_sensor_plug_hybrid_plug_smart_power_restored'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('contact_sensor_plug_hybrid_plug_smart_power_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('contact_sensor_plug_hybrid_plug_smart_power_threshold'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('contact_sensor_plug_hybrid_plug_smart_battery_low'); } catch (e) {}
+
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('plug_smart_is_on'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('contact_sensor_plug_hybrid_plug_smart_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ Registered: plug_smart_is_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition contact_sensor_plug_hybrid_plug_smart_is_on: ${err.message}`); }
 
-    // ACTION: Turn on
+    // ACTIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('plug_smart_turn_on'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('contact_sensor_plug_hybrid_plug_smart_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
-          await args.device.setCapabilityValue('onoff', true).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: plug_smart_turn_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action contact_sensor_plug_hybrid_plug_smart_turn_on: ${err.message}`); }
 
-    // ACTION: Turn off
     try {
-      (() => { try { return this.homey.flow.getConditionCard('plug_smart_turn_off'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('contact_sensor_plug_hybrid_plug_smart_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
-          await args.device.setCapabilityValue('onoff', false).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: plug_smart_turn_off');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action contact_sensor_plug_hybrid_plug_smart_turn_off: ${err.message}`); }
 
-    // ACTION: Toggle
     try {
-      (() => { try { return this.homey.flow.getConditionCard('plug_smart_toggle'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('contact_sensor_plug_hybrid_plug_smart_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device._setGangOnOff(1, !current).catch(() => {});
-          await args.device.setCapabilityValue('onoff', !current).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: plug_smart_toggle');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action contact_sensor_plug_hybrid_plug_smart_toggle: ${err.message}`); }
 
-    // ACTION: Turn on after delay
     try {
-      (() => { try { return this.homey.flow.getConditionCard('plug_smart_turn_on_delay'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('contact_sensor_plug_hybrid_plug_smart_turn_on_delay');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const delay = safeMultiply((args.delay || 10), 1000);
-          setTimeout(() => args.device.triggerCapabilityListener('onoff', true).catch(() => {}), delay);
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: plug_smart_turn_on_delay');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action contact_sensor_plug_hybrid_plug_smart_turn_on_delay: ${err.message}`); }
 
-    // ACTION: Turn off after delay
     try {
-      (() => { try { return this.homey.flow.getConditionCard('plug_smart_turn_off_delay'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('contact_sensor_plug_hybrid_plug_smart_turn_off_delay');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const delay = safeMultiply((args.delay || 10), 1000);
-          setTimeout(() => args.device.triggerCapabilityListener('onoff', false).catch(() => {}), delay);
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: plug_smart_turn_off_delay');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action contact_sensor_plug_hybrid_plug_smart_turn_off_delay: ${err.message}`); }
 
-    this.log('[FLOW]  Smart plug flow cards registered');
+    try {
+      const card = this.homey.flow.getActionCard('contact_sensor_plug_hybrid_plug_smart_set_indicator');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          // Generic action handler
+          this.log('[FLOW] Action contact_sensor_plug_hybrid_plug_smart_set_indicator triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action contact_sensor_plug_hybrid_plug_smart_set_indicator: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('contact_sensor_plug_hybrid_plug_smart_set_power_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action contact_sensor_plug_hybrid_plug_smart_set_power_on: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

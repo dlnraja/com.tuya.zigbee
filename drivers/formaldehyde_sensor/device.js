@@ -56,7 +56,7 @@ class FormaldehydeSensorDevice extends UnifiedSensorBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this._registerCapabilityListeners(); // rule-12a injectedthis.log('[FORMALDEHYDE] ✅ Formaldehyde sensor ready');
+    this._registerCapabilityListeners(); // rule-12a injectedthis.log('[FORMALDEHYDE]  Formaldehyde sensor ready');
   }
 
 

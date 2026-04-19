@@ -1,4 +1,4 @@
-# MASTER REFERENCE — Universal Tuya Zigbee
+# MASTER REFERENCE  Universal Tuya Zigbee
 **v5.11.154** | **2026-04-03** | com.dlnraja.tuya.zigbee
 **v5.11.153** | **2026-04-03** | com.dlnraja.tuya.zigbee
 
@@ -39,7 +39,7 @@ Classic Outlook .ost at AppData/Local/Microsoft/Outlook/ (binary, not readable).
 | 12 | _TZE200_3towulqd | TS0601 | ZCL-only dup |
 | 13 | _TZE200_3towulqd | TS0601 | ZCL-only PIR (new 2026-02-09) |
 
-## 4. GITHUB ISSUES (dlnraja — 12 open, 2026-02-09)
+## 4. GITHUB ISSUES (dlnraja  12 open, 2026-02-09)
 
 | # | User | Device | Status |
 |---|------|--------|--------|
@@ -68,8 +68,8 @@ Classic Outlook .ost at AppData/Local/Microsoft/Outlook/ (binary, not readable).
 | JJ10 | Radar ghost tiles | FIXED | 5.8.86 |
 | Karsten_H | Climate temp overwrite | FIXED | 5.8.29 |
 | FinnKje | Radar false motion | FIXED | 5.8.29 |
-| Cam | TS0041 _TZ3000_5bpeda8u | NEEDS DIAG | — |
-| Freddyboy | TS0044 _TZ3000_zgyzgdua | NEEDS DIAG | — |
+| Cam | TS0041 _TZ3000_5bpeda8u | NEEDS DIAG |  |
+| Freddyboy | TS0044 _TZ3000_zgyzgdua | NEEDS DIAG |  |
 | Tbao | TS130F _TZ3000_bs93npae | FIXED | 5.8.52 |
 | Ronny_M | HOBEIAN btn+radar | FIXED | 5.5.926 |
 | blutch32 | Contact+Power meter | FIXED | 5.8.28 |
@@ -78,36 +78,36 @@ Classic Outlook .ost at AppData/Local/Microsoft/Outlook/ (binary, not readable).
 
 ## 6. v5.8.88 FIXES
 
-- **GH#122**: HybridCoverBase missing tuyaEF00Manager → direct cluster fallback
+- **GH#122**: HybridCoverBase missing tuyaEF00Manager  direct cluster fallback
 - **IAS**: noIasMotion override + enrollment + ZCL-only noTemp/noHum
 - **HOBEIAN**: Added to water_leak + contact fingerprints
 
-## 7. PENDING ACTIONS (updated v5.11.25 — forum scan to #1482)
+## 7. PENDING ACTIONS (updated v5.11.25  forum scan to #1482)
 
 - Cam TS0041: NEEDS DIAG (update v5.11.25 + re-pair + diag)
 - Freddyboy TS0044: NEEDS DIAG (update v5.11.25 + re-pair + diag)
-- Lasse_K ZG-102Z contact: **PERSISTENT** — still Unknown Zigbee on v5.11.21 (#1463,#1468,#1472,#1476), needs fresh interview
-- FrankP IR remote: **NEW BUG** — learning button turns off immediately (diag b6635c8c) #1471
-- Peter_Kawa soil sensor: **ENHANCEMENT** — change measure_humidity.soil → measure_moisture (standard cap) #1473
-- 7Hills `_TZE200_vvmbj46n` TS0601: **NEW** — full interview + diag 822fcb89 posted #1482
+- Lasse_K ZG-102Z contact: **PERSISTENT**  still Unknown Zigbee on v5.11.21 (#1463,#1468,#1472,#1476), needs fresh interview
+- FrankP IR remote: **NEW BUG**  learning button turns off immediately (diag b6635c8c) #1471
+- Peter_Kawa soil sensor: **ENHANCEMENT**  change measure_humidity.soil  measure_moisture (standard cap) #1473
+- 7Hills `_TZE200_vvmbj46n` TS0601: **NEW**  full interview + diag 822fcb89 posted #1482
 - Ricardo_Lenior: NEEDS FINGERPRINT (diag only)
-- Piotr 2-gang `_TZ3000_cauq1okq`: DEVICE FIRMWARE issue (Z2M #14750 confirms dual toggle — unfixable)
-- GH#136/#133: 17+13 new community fingerprints — need device interviews (not in Z2M yet)
-- GH#135: _TZE200_xlppj4f5 moved to valve_irrigation v5.11.25 — FIXED
-- GH#137: _TZ3210_w0qqde0g voltage divisor — FIXED v5.11.25
-- GH#128: _TZE204_nklqjk62 garage door — FP already exists
-- ManuelKugler _TZE284_aao3yzhs soil: 100% moisture bug — **FIXED** (confirmed #1469)
-- Slawek_Pe _TZ3210_xzhnra8x: voltage/power 10x low — **FIXED v5.11.25**
-- Forum #1479 Jocke_Wallen: _TZ3000_u3nv1jwk TS0044 — FP exists, likely sleepy-device first-press
-- SkiMattie #1475: button can't pair — likely hardware issue
+- Piotr 2-gang `_TZ3000_cauq1okq`: DEVICE FIRMWARE issue (Z2M #14750 confirms dual toggle  unfixable)
+- GH#136/#133: 17+13 new community fingerprints  need device interviews (not in Z2M yet)
+- GH#135: _TZE200_xlppj4f5 moved to valve_irrigation v5.11.25  FIXED
+- GH#137: _TZ3210_w0qqde0g voltage divisor  FIXED v5.11.25
+- GH#128: _TZE204_nklqjk62 garage door  FP already exists
+- ManuelKugler _TZE284_aao3yzhs soil: 100% moisture bug  **FIXED** (confirmed #1469)
+- Slawek_Pe _TZ3210_xzhnra8x: voltage/power 10x low  **FIXED v5.11.25**
+- Forum #1479 Jocke_Wallen: _TZ3000_u3nv1jwk TS0044  FP exists, likely sleepy-device first-press
+- SkiMattie #1475: button can't pair  likely hardware issue
 
-## 8. VERSION HISTORY (v5.9.9 → v5.9.23)
+## 8. VERSION HISTORY (v5.9.9  v5.9.23)
 
 - **v5.9.9**: F1-F5 forum fixes + 15-file case-insensitive audit
-- **v5.9.20**: Multi-press fix all button drivers (Tividor #1408) — OnOffBoundCluster bind
+- **v5.9.20**: Multi-press fix all button drivers (Tividor #1408)  OnOffBoundCluster bind
 - **v5.9.21**: NEW water_valve_garden driver (TS0049 ZCL onOff)
 - **v5.9.22**: Button 0-index safety guard (TuyaPressTypeMap) + soil sensor enrichment
-- **v5.9.23**: BSEED GROUP TOGGLE FIX — group isolation + broadcast filter for switch_2gang/3gang/4gang (Z2M #27167, ZHA #2443, Hartmut_Dunker diag 945448b9)
+- **v5.9.23**: BSEED GROUP TOGGLE FIX  group isolation + broadcast filter for switch_2gang/3gang/4gang (Z2M #27167, ZHA #2443, Hartmut_Dunker diag 945448b9)
 
 ## 9. CROSS-REF RESULTS (2026-02-09)
 
@@ -117,38 +117,38 @@ Classic Outlook .ost at AppData/Local/Microsoft/Outlook/ (binary, not readable).
 - Email: Outlook cloud-only, user must paste
 - Stale docs updated: PROJECT_STATUS, GITHUB_ISSUES_PR, FORUM_ISSUES
 
-## 10. SESSION 2026-02-09b — DEEP TREATMENT
+## 10. SESSION 2026-02-09b  DEEP TREATMENT
 
 ### dlnraja GitHub (12 open, 0 replied)
 - ALL 10 unique fingerprints verified in correct drivers
 - 2 FIXED (GH#127 v5.8.87, GH#122 v5.8.88)
 - 8 PRESENT/SUPPORTED (need update+re-pair)
-- 1 AUTO (GH#123 — 46 fps all present)
+- 1 AUTO (GH#123  46 fps all present)
 - 1 MERGED (GH#120 packetninja)
 - Full draft replies in GITHUB_RESPONSES_FULL.md
 - **BUG FOUND**: GH#121 _TZ3000_an5rjiwd was in wrong driver
   (button_wireless_4/TS0044 instead of button_wireless_1/TS0041)
-  → FIXED: moved fingerprint to correct driver
+   FIXED: moved fingerprint to correct driver
 
 ### JohanBendz cross-ref (8 issues checked)
-- JB#1345: _TZE284_xnbkhhdr → **BUG: was in BOTH thermostat_tuya_dp AND radiator_valve (collision!)**
-  → FIXED v5.8.88: Removed from radiator_valve. Z2M confirms same DPs as _TZE200_viy9ihs7.
-  → Avatto WT198 is wall thermostat, NOT TRV. Battery sleepy device.
-- JB#1344: _TZ3000_bgsigers → climate_sensor
-- JB#1343: _TZE200_rhgsbacq → presence_sensor_radar
-- JB#1339: _TZ3000_blhvsaqf → switch_1gang
-- JB#1338: _TZ3000_qkixdnon → switch_3gang
-- JB#1337: _TZ3000_l9brjwau → switch_2gang
-- JB#1336: _TZE284_aa03yzhs → soil_sensor
-- JB#1331: _TZ3290_ot6ewjvmejq5ekhl → ir_blaster
+- JB#1345: _TZE284_xnbkhhdr  **BUG: was in BOTH thermostat_tuya_dp AND radiator_valve (collision!)**
+   FIXED v5.8.88: Removed from radiator_valve. Z2M confirms same DPs as _TZE200_viy9ihs7.
+   Avatto WT198 is wall thermostat, NOT TRV. Battery sleepy device.
+- JB#1344: _TZ3000_bgsigers  climate_sensor
+- JB#1343: _TZE200_rhgsbacq  presence_sensor_radar
+- JB#1339: _TZ3000_blhvsaqf  switch_1gang
+- JB#1338: _TZ3000_qkixdnon  switch_3gang
+- JB#1337: _TZ3000_l9brjwau  switch_2gang
+- JB#1336: _TZE284_aa03yzhs  soil_sensor
+- JB#1331: _TZ3290_ot6ewjvmejq5ekhl  ir_blaster
 - ALL 8 devices FOUND in dlnraja fork
 
 ### Gemini Verification: All claims already fixed or hallucinated
 ### Fix: _TZE284_xnbkhhdr removed from radiator_valve (collision with thermostat_tuya_dp)
 
 ### Forum p68-70 Scan (session 2)
-- Lasse_K: water IAS→v5.8.88, contact double-invert→v5.8.85
-- blutch32: TS0203 double-invert→v5.8.85
+- Lasse_K: water IASv5.8.88, contact double-invertv5.8.85
+- blutch32: TS0203 double-invertv5.8.85
 - Freddyboy+Cam: PERSISTENT button bugs, need diag v5.8.88
 - Ricardo_Lenior: presence wrong caps, NEEDS fingerprint
 - FinnKje/Karsten/Patrick/Hartmut/DutchDuke: ALL FIXED

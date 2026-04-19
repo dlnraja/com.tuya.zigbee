@@ -26,14 +26,14 @@ const GENERICITY_RANK = {
 };
 
 if (!fs.existsSync(AUDIT_FILE)) {
-  console.error('❌ Audit file not found.');
+  console.error(' Audit file not found.');
   process.exit(1);
 }
 
 const audit = JSON.parse(fs.readFileSync(AUDIT_FILE, 'utf8'));
 const collisions = audit.collisions || [];
 
-console.log(`🚀 Resolving ${collisions.length} manifest collisions...`);
+console.log(` Resolving ${collisions.length} manifest collisions...`);
 
 collisions.forEach(collision => {
   const [targetManu, targetModel] = collision.id.split('|');
@@ -51,7 +51,7 @@ collisions.forEach(collision => {
     }
   });
 
-  console.log(`📍 Collision ${collision.id}: Keeping in '${bestDriver}'`);
+  console.log(` Collision ${collision.id}: Keeping in '${bestDriver}'`);
 
   // Remove from other drivers
   drivers.forEach(d => {
@@ -98,7 +98,7 @@ collisions.forEach(collision => {
                   // Collision confirmed in this file.
                   // Removing is tricky because removing manufacturerName 'X' might break Model 'Y' in same driver.
                   // We should ideally convert to array of objects if not already.
-                  console.log(`   ⚠️ Removing ${collision.id} from ${d}... (Note: shared arrays may affect other fingerprints)`);
+                  console.log(`    Removing ${collision.id} from ${d}... (Note: shared arrays may affect other fingerprints)`);
                   
                   // For now, if it's a generic driver, we'll try to be safe.
                   // If we remove 'TS004F' from productId list, it won't match anymore for any manufacturer in this driver.
@@ -117,10 +117,10 @@ collisions.forEach(collision => {
       
       if (changed) {
         fs.writeFileSync(composePath, JSON.stringify(compose, null, 2));
-        console.log(`   ✅ Cleaned up ${d}`);
+        console.log(`    Cleaned up ${d}`);
       }
     }
   });
 });
 
-console.log('🎉 Manifest collision resolution complete.');
+console.log(' Manifest collision resolution complete.');

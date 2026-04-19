@@ -26,21 +26,21 @@ async function auditImages() {
                 const metadata = await sharp(imgPath).metadata();
                 const size = `${metadata.width}x${metadata.height}`;
                 
-                let status = "✅ OK";
-                if (imgName === 'small.png' && (metadata.width !== 75 || metadata.height !== 75)) status = "❌ WRONG SIZE (75x75 required)";
-                if (imgName === 'large.png' && (metadata.width !== 500 || metadata.height !== 500)) status = "❌ WRONG SIZE (500x500 required)";
+                let status = " OK";
+                if (imgName === 'small.png' && (metadata.width !== 75 || metadata.height !== 75)) status = " WRONG SIZE (75x75 required)";
+                if (imgName === 'large.png' && (metadata.width !== 500 || metadata.height !== 500)) status = " WRONG SIZE (500x500 required)";
                 // xlarge is usually 1000x1000 but less strict
 
                 report += `| ${driver} | ${imgName} | ${size} | ${status} |\n`;
             } catch (e) {
-                report += `| ${driver} | ${imgName} | ERROR | ❌ CORRUPT OR MISSING |\n`;
+                report += `| ${driver} | ${imgName} | ERROR |  CORRUPT OR MISSING |\n`;
             }
         }
     }
   }
 
   fs.writeFileSync('IMAGE_AUDIT_REPORT.md', report);
-  console.log('✅ Audit complete. Saved to IMAGE_AUDIT_REPORT.md');
+  console.log(' Audit complete. Saved to IMAGE_AUDIT_REPORT.md');
 }
 
 auditImages();

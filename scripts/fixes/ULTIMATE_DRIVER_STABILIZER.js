@@ -7,7 +7,7 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..', '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
-console.log('🚀 [ULTIMATE-STABILIZER-V3] Universal Engine Reimplementation Deep Remediation...');
+console.log(' [ULTIMATE-STABILIZER-V3] Universal Engine Reimplementation Deep Remediation...');
 
 function getFiles(dir, suffix) {
   let results = [];
@@ -104,8 +104,8 @@ jsFiles.forEach(file => {
   if (content !== original) {
     fs.writeFileSync(file, content);
     fixedCount++;
-    console.log(`✅ Stabilized [${isDevice?'DEV':'DRI'}]: ${path.relative(ROOT, file)}`);
+    console.log(` Stabilized [${isDevice?'DEV':'DRI'}]: ${path.relative(ROOT, file)}`);
   }
 });
 
-console.log(`\n📊 Results: Stabilized ${fixedCount}/${jsFiles.length} files.`);
+console.log(`\n Results: Stabilized ${fixedCount}/${jsFiles.length} files.`);

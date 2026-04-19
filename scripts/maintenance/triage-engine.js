@@ -26,7 +26,7 @@ const ROOT = process.cwd();
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 async function main() {
-  console.log('=== 🕵️ Universal Triage Engine (v2.0.0) ===');
+  console.log('===  Universal Triage Engine (v2.0.0) ===');
   
   const results = {
     injections: 0,
@@ -104,7 +104,7 @@ async function main() {
     // Categorize driver to apply protocol-specific rules
     const isZigbee = !!manifest.zigbee;
     const isWiFi = driverId.startsWith('wifi_');
-    const protocolPrefix = isZigbee ? '🐝 [Zigbee]' : (isWiFi ? '📶 [WiFi]' : '❓ [Other]');
+    const protocolPrefix = isZigbee ? ' [Zigbee]' : (isWiFi ? ' [WiFi]' : ' [Other]');
 
     console.log(`Triage ${protocolPrefix} ${driverId}...`);
 
@@ -147,7 +147,7 @@ async function main() {
 }
 
 /**
- * 💉 Injects a fingerprint into a driver's manifest
+ *  Injects a fingerprint into a driver's manifest
  */
 async function injectFingerprint(driverId, mfr, pid) {
   const composePath = path.join(DRIVERS_DIR, driverId, 'driver.compose.json');
@@ -170,7 +170,7 @@ async function injectFingerprint(driverId, mfr, pid) {
         compose.zigbee.productId.push(pid);
       }
       fs.writeFileSync(composePath, JSON.stringify(compose, null, 2) + '\n');
-      console.log(`  💉 Injected FP ${mfr} into ${driverId}`);
+      console.log(`   Injected FP ${mfr} into ${driverId}`);
       return true;
     }
   } catch (e) {

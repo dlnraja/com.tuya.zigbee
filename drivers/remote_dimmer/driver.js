@@ -3,10 +3,6 @@
 const { Driver } = require('homey');
 
 class RemoteDimmerDriver extends Driver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -20,49 +16,23 @@ class RemoteDimmerDriver extends Driver {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('Remote Control Dimmer driver initialized');
+    this._registerFlowCards();
+  }
 
-    // Trigger: ON button pressed
+  _registerFlowCards() {
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('remote_dimmer_button_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('remote_dimmer_button_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('remote_dimmer_button_toggle'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('remote_dimmer_brightness_up'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('remote_dimmer_brightness_down'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('remote_dimmer_brightness_stop'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('remote_dimmer_brightness_set'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('remote_dimmer_scene'); } catch (e) {}
 
-      .registerRunListener(async () => true);
-
-    // Trigger: OFF button pressed
-
-      .registerRunListener(async () => true);
-
-    // Trigger: Toggle button pressed
-
-      .registerRunListener(async () => true);
-
-    // Trigger: Brightness up
-
-      .registerRunListener(async () => true);
-
-    // Trigger: Brightness down
-
-      .registerRunListener(async () => true);
-
-    // Trigger: Brightness stop
-
-      .registerRunListener(async () => true);
-
-    // Trigger: Brightness set
-
-      .registerRunListener(async () => true);
-
-    // Trigger: Scene recalled
-
-      .registerRunListener(async () => true);
-  
-  
-  
-  
-  
-  
-  
+    this.log('[FLOW] All flow cards registered');
   }
 }
 
 module.exports = RemoteDimmerDriver;
-

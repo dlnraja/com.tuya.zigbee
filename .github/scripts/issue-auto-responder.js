@@ -57,7 +57,7 @@ module.exports = async ({ github, context }) => {
     const isClimate = /climate|temperature|humidity|temp|hum|pressure|calibration|offset|wrong\s+reading|not\s+accurate/i.test(text);
     
     if (!allMfrs.length && !pids.length) {
-        console.log('No fingerprints found — skipping');
+        console.log('No fingerprints found  skipping');
         return;
     }
 
@@ -72,7 +72,7 @@ module.exports = async ({ github, context }) => {
         const prevFPs = (existingBot.body.match(/`(_T[^`]+)`/g) || []).map(m => m.replace(/`/g, ''));
         const currentFPs = [...allMfrs];
         if (currentFPs.every(f => prevFPs.includes(f)) && !text.includes('!!FORCE_RESCAN!!')) {
-            console.log('No new FPs since last bot comment — skipping');
+            console.log('No new FPs since last bot comment  skipping');
             return;
         }
     }
@@ -90,13 +90,13 @@ module.exports = async ({ github, context }) => {
     if (found.length) {
         const lines = found.map(m => {
             const drivers = driverMap.get(m) || ['unknown'];
-            return `- \`${m}\` → **${drivers.join('**, **')}**`;
+            return `- \`${m}\`  **${drivers.join('**, **')}**`;
         }).join('\n');
-        msg += `### ✅ Driver Status\nAlready supported in v${version}:\n\n${lines}\n\n`;
+        msg += `###  Driver Status\nAlready supported in v${version}:\n\n${lines}\n\n`;
     }
 
     if (missing.length) {
-        msg += `### 🚧 Driver Enrichment\nNot supported yet: \`${missing.join('\`, \`')}\`\n`;
+        msg += `###  Driver Enrichment\nNot supported yet: \`${missing.join('\`, \`')}\`\n`;
         msg += `I've added these to the internal research queue for the next release. If you can share a [Developer Tools interview](${DEV}), especially the **External State** and **Endpoints** tabs, that helps me map the data points correctly.\n\n`;
     }
 
@@ -105,7 +105,7 @@ module.exports = async ({ github, context }) => {
     }
 
     if (allSupported) {
-        msg += `🚀 **Testing:** Install the [test version](${APP}), **remove and re-pair** the device. If it still shows as unknown, send me a diagnostic report ID.\n\n`;
+        msg += ` **Testing:** Install the [test version](${APP}), **remove and re-pair** the device. If it still shows as unknown, send me a diagnostic report ID.\n\n`;
     }
 
     if (isWiFi) {

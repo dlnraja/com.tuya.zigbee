@@ -38,16 +38,16 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
       this._sosFlowCard = (() => { try { return this.homey.flow.getTriggerCard('button_emergency_sos_pressed'); } catch(e) { return null; } })();
       if (this._sosFlowCard) {
         this._sosFlowCard.registerRunListener(async (args, state) => {
-          this.log('[FLOW] 🎯 RunListener called - returning true');
+          this.log('[FLOW]  RunListener called - returning true');
           return true; // Always allow trigger
         
   });
-        this.log('[FLOW] ✅ button_emergency_sos_pressed card registered with runListener');
+        this.log('[FLOW]  button_emergency_sos_pressed card registered with runListener');
       } else {
-        this.log('[FLOW] ⚠️ button_emergency_sos_pressed card not found - check driver.flow.compose.json');
+        this.log('[FLOW]  button_emergency_sos_pressed card not found - check driver.flow.compose.json');
       }
     } catch (e) {
-      this.log('[FLOW] ❌ Flow card registration error:', e.message);
+      this.log('[FLOW]  Flow card registration error:', e.message);
     }
   }
 
@@ -56,20 +56,20 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
    * Now properly triggers the flow card
    */
   async triggerSOS(device, tokens = {}, state = {}) {
-    this.log('[FLOW] 🆘 triggerSOS called for', device.getName());
+    this.log('[FLOW]  triggerSOS called for', device.getName());
     
     // Set capability first
     await device.setCapabilityValue('alarm_generic', true).catch(e =>
-      this.log('[FLOW] ❌ alarm_generic set error:', e.message)
+      this.log('[FLOW]  alarm_generic set error:', e.message)
     );
     
     // v5.5.826: Trigger flow card explicitly
     if (this._sosFlowCard) {
       try {
         await this._sosFlowCard.trigger(device, tokens, state);
-        this.log('[FLOW] ✅ button_emergency_sos_pressed triggered!');
+        this.log('[FLOW]  button_emergency_sos_pressed triggered!');
       } catch (e) {
-        this.log('[FLOW] ❌ Flow trigger error:', e.message);
+        this.log('[FLOW]  Flow trigger error:', e.message);
       }
     } else {
       // Fallback: try to get card again
@@ -77,10 +77,10 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
         const card = (() => { try { return this.homey.flow.getTriggerCard('button_emergency_sos_pressed'); } catch(e) { return null; } })();
         if (card) {
           await card.trigger(device, tokens, state);
-          this.log('[FLOW] ✅ button_emergency_sos_pressed triggered (fallback)!');
+          this.log('[FLOW]  button_emergency_sos_pressed triggered (fallback)!');
         }
       } catch (e) {
-        this.log('[FLOW] ❌ Fallback trigger error:', e.message);
+        this.log('[FLOW]  Fallback trigger error:', e.message);
       }
     }
   }

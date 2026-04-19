@@ -31,7 +31,7 @@ Based on recent diagnostic logs and cross-referencing with GitHub issues/forum p
 if (!docContent.includes('Auto-Triage & Diagnostic Enhancements')) {
   docContent += '\n' + newSection;
   fs.writeFileSync(docFile, docContent);
-  console.log('✅ Updated V6_COMPREHENSIVE_UPDATE.md with automation enhancements');
+  console.log(' Updated V6_COMPREHENSIVE_UPDATE.md with automation enhancements');
 } else {
   console.log('Documentation already updated.');
 }

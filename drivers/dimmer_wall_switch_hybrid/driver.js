@@ -2,14 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.570: CRITICAL FIX - Flow card run listeners were missing
- */
 class TuyaZigbeeDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -19,148 +12,211 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('Tuya Zigbee 2-Gang Switch Driver v5.5.570 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_gang1_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_gang1_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_gang2_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_gang2_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_physical_gang1_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_physical_gang1_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_physical_gang2_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_physical_gang2_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_power_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_gang1_scene'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_gang2_scene'); } catch (e) {}
+
     // CONDITIONS
-    ['gang1', 'gang2'].forEach((gang, idx) => {
-      try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_2gang_turn_on_all'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-            if (!args.device) return false;
-            const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            return args.device.getCapabilityValue(cap) === true;
-          });
-        this.log(`[FLOW] ✅ switch_2gang_${gang}_is_on`);
-      } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-    });
+    try {
+      const card = this.homey.flow.getConditionCard('dimmer_wall_switch_hybrid_switch_2gang_gang1_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition dimmer_wall_switch_hybrid_switch_2gang_gang1_is_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('dimmer_wall_switch_hybrid_switch_2gang_gang2_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition dimmer_wall_switch_hybrid_switch_2gang_gang2_is_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('dimmer_wall_switch_hybrid_switch_2gang_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition dimmer_wall_switch_hybrid_switch_2gang_is_on: ${err.message}`); }
 
     // ACTIONS
-    ['gang1', 'gang2'].forEach((gang, idx) => {
-      try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_2gang_turn_on_${gang}'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-            if (!args.device) return false;
-            const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            try { await args.device.triggerCapabilityListener(cap, true); } catch(e) {}
-            return true;
-          });
-        this.log(`[FLOW] ✅ Registered: ${id}`);
-      } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-      try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_2gang_turn_off_${gang}'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-            if (!args.device) return false;
-            const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            try { await args.device.triggerCapabilityListener(cap, false); } catch(e) {}
-            return true;
-          });
-        this.log(`[FLOW] ✅ Registered: ${id}`);
-      } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-      // v5.5.906: Toggle actions
-      try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_2gang_toggle_${gang}'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-            if (!args.device) return false;
-            const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            const current = args.device.getCapabilityValue(cap);
-            await args.device.setCapabilityValue(cap, !current);
-            return true;
-          });
-        this.log(`[FLOW] ✅ Registered: ${id}`);
-      } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-    });
-
-    // v5.5.906: All-gangs actions
     try {
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_on_gang1');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
-          await args.device.setCapabilityValue('onoff', true).catch(() => {});
-          if (args.device.hasCapability('onoff.gang2')) {
-            await args.device.triggerCapabilityListener('onoff.gang2', true);
-          }
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: switch_2gang_turn_on_all');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_on_gang1: ${err.message}`); }
 
     try {
-      (() => { try { return this.homey.flow.getConditionCard('switch_2gang_turn_off_all'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_off_gang1');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
-          await args.device.setCapabilityValue('onoff', false).catch(() => {});
-          if (args.device.hasCapability('onoff.gang2')) {
-            await args.device.triggerCapabilityListener('onoff.gang2', false);
-          }
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: switch_2gang_turn_off_all');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // v5.5.930: LED backlight flow cards
-    try {
-      (() => { try { return this.homey.flow.getActionCard('switch_2gang_set_backlight'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device || !args.mode) return false;
-          await args.device.setBacklightMode(args.mode);
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: switch_2gang_set_backlight');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_off_gang1: ${err.message}`); }
 
     try {
-      (() => { try { return this.homey.flow.getActionCard('switch_2gang_set_backlight_color'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device || !args.state || !args.color) return false;
-          await args.device.setBacklightColor(args.state, args.color);
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: switch_2gang_set_backlight_color');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    try {
-      (() => { try { return this.homey.flow.getActionCard('switch_2gang_set_backlight_brightness'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
-          if (!args.device || args.brightness === undefined) return false;
-          await args.device.setBacklightBrightness(args.brightness);
-          return true;
-        });
-      this.log('[FLOW] ✅ Registered: switch_2gang_set_backlight_brightness');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    this.log('[FLOW] Scene mode setup');
-    // v5.12.5: Scene mode action
-    try {
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_on_gang2');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setSceneMode(args.mode);
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
-      this.log('[FLOW] \u2705 switch_2gang_set_scene_mode');
-    } catch (err) { this.log('[FLOW] \u26A0\uFE0F ' + err.message); }
+      }
+    } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_on_gang2: ${err.message}`); }
 
-    this.log('[FLOW] 2-Gang switch flow cards registered (v5.5.930)');
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_off_gang2');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_off_gang2: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_toggle_gang1');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_toggle_gang1: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_toggle_gang2');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_toggle_gang2: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_on_all');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const caps = Object.keys(args.device.getCapabilities()).filter(c => c.startsWith('onoff'));
+          for (const cap of caps) { await args.device.triggerCapabilityListener(cap, true).catch(() => {}); }
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_on_all: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_off_all');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const caps = Object.keys(args.device.getCapabilities()).filter(c => c.startsWith('onoff'));
+          for (const cap of caps) { await args.device.triggerCapabilityListener(cap, false).catch(() => {}); }
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_off_all: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_set_backlight');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_set_backlight: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_off: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_toggle: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_set_scene_mode');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device.setSceneMode === 'function') await args.device.setSceneMode(args.mode || args.value);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_set_scene_mode: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

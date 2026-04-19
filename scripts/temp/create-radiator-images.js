@@ -25,7 +25,7 @@ for (const targetDriver of targetDrivers) {
         fs.copyFileSync(sourcePath, targetPath);
       }
     }
-    console.log(`✅ Copied images from ${sourceDriver} to ${targetDriver}`);
+    console.log(` Copied images from ${sourceDriver} to ${targetDriver}`);
   } else {
     // Create minimal 1x1 PNG placeholder
     const placeholder = Buffer.from([
@@ -44,8 +44,8 @@ for (const targetDriver of targetDrivers) {
       fs.writeFileSync(path.join(targetImagesDir, filename), placeholder);
     });
     
-    console.log(`✅ Created placeholder images for ${targetDriver}`);
+    console.log(` Created placeholder images for ${targetDriver}`);
   }
 }
 
-console.log('✅ All radiator driver images ready');
+console.log(' All radiator driver images ready');

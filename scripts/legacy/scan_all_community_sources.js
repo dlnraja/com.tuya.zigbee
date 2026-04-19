@@ -5,20 +5,20 @@ const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔍 SCAN EXHAUSTIF TOUTES SOURCES COMMUNAUTÉ\n');
+console.log(' SCAN EXHAUSTIF TOUTES SOURCES COMMUNAUTÉ\n');
 
 const ROOT = path.join(__dirname, '..');
 
 /**
- * ═══════════════════════════════════════════════════════════════════════════════
+ * 
  * DONNÉES COLLECTÉES MANUELLEMENT (GitHub, Forum, Z2M)
- * ═══════════════════════════════════════════════════════════════════════════════
+ * 
  */
 
 const ALL_SOURCES = {
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   // FORUM HOMEY (Pages 1-46 analysées)
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   forum: {
     analyzed_pages: '1-46',
     total_messages: '900+',
@@ -88,9 +88,9 @@ const ALL_SOURCES = {
     ]
   },
 
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   // ZIGBEE2MQTT DATABASE (Dernière sync)
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   zigbee2mqtt: {
     devices_cross_referenced: [
       // Presence sensors
@@ -136,9 +136,9 @@ const ALL_SOURCES = {
     ]
   },
 
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   // GITHUB ISSUES/PRs (JohanBendz repo - référence historique)
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   github: {
     reference_repo: 'JohanBendz/com.tuya.zigbee',
 
@@ -179,9 +179,9 @@ const ALL_SOURCES = {
     ]
   },
 
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   // PATTERNS & NOUVELLES DÉCOUVERTES
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   patterns: {
     new_manufacturers: [
       'eWeLink', // Compatible Tuya, non-Tuya brand
@@ -199,9 +199,9 @@ const ALL_SOURCES = {
 };
 
 /**
- * ═══════════════════════════════════════════════════════════════════════════════
+ * 
  * ENRICHISSEMENT PHASE 2
- * ═══════════════════════════════════════════════════════════════════════════════
+ * 
  */
 
 const PHASE2_ENRICHMENT = {
@@ -262,7 +262,7 @@ const PHASE2_ENRICHMENT = {
  * Générer rapport enrichissement
  */
 function generateEnrichmentReport() {
-  console.log('📊 GÉNÉRATION RAPPORT ENRICHISSEMENT PHASE 2\n');
+  console.log(' GÉNÉRATION RAPPORT ENRICHISSEMENT PHASE 2\n');
 
   const report = {
     timestamp: new Date().toISOString(),
@@ -321,11 +321,11 @@ function calculateTotalNewIds() {
 // EXÉCUTION
 const report = generateEnrichmentReport();
 
-console.log('═══════════════════════════════════════════════════════════════════════════════');
+console.log('');
 console.log('RAPPORT EXHAUSTIF SOURCES COMMUNAUTÉ - PHASE 2');
-console.log('═══════════════════════════════════════════════════════════════════════════════\n');
+console.log('\n');
 
-console.log('📊 RÉSUMÉ:\n');
+console.log(' RÉSUMÉ:\n');
 console.log(`   Forum pages analysées: ${report.summary.forum_pages_analyzed}`);
 console.log(`   Devices forum: ${report.summary.forum_devices_found}`);
 console.log(`   Issues forum pending: ${report.summary.forum_issues_pending}`);
@@ -337,7 +337,7 @@ console.log(`   Phase 2 HIGH priority: ${report.summary.phase2_high_priority}`);
 console.log(`   Phase 2 MEDIUM priority: ${report.summary.phase2_medium_priority}`);
 console.log(`   TOTAL nouveaux IDs Phase 2: ${report.summary.total_new_ids_phase2}\n`);
 
-console.log('🎯 ENRICHISSEMENT PHASE 2:\n');
+console.log(' ENRICHISSEMENT PHASE 2:\n');
 
 console.log('   HIGH PRIORITY (3 drivers, 3 IDs):');
 PHASE2_ENRICHMENT.high_priority.forEach(item => {
@@ -357,13 +357,13 @@ PHASE2_ENRICHMENT.medium_priority.forEach(item => {
   console.log(`        Raison: ${item.reason}`);
 });
 
-console.log('\n\n⚠️  ISSUES EN ATTENTE:\n');
+console.log('\n\n  ISSUES EN ATTENTE:\n');
 ALL_SOURCES.forum.issues_unresolved.forEach(issue => {
   console.log(`   Page ${issue.page} (${issue.user}): ${issue.issue}`);
   console.log(`      Status: ${issue.status} | Action: ${issue.action}`);
 });
 
-console.log('\n\n💡 RECOMMANDATIONS:\n');
+console.log('\n\n RECOMMANDATIONS:\n');
 console.log('   IMMÉDIAT:');
 report.recommendations.immediate.forEach(r => console.log(`      - ${r}`));
 console.log('\n   COURT TERME:');
@@ -375,8 +375,8 @@ report.recommendations.long_term.forEach(r => console.log(`      - ${r}`));
 const reportFile = path.join(ROOT, 'PHASE2_ENRICHMENT_REPORT.json');
 fs.writeFileSync(reportFile, JSON.stringify(report, null, 2), 'utf8');
 
-console.log(`\n\n✅ Rapport Phase 2 sauvegardé: ${reportFile}\n`);
+console.log(`\n\n Rapport Phase 2 sauvegardé: ${reportFile}\n`);
 
-console.log('🎯 PROCHAINE ÉTAPE: Appliquer enrichissement Phase 2\n');
+console.log(' PROCHAINE ÉTAPE: Appliquer enrichissement Phase 2\n');
 
 process.exit(0);

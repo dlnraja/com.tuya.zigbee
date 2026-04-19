@@ -8,7 +8,7 @@
       "_TZE200",
       "TS0601"
     ],
-    "autoResponse": "This appears to be a soil sensor pairing issue. Known solutions:\n\n**For _TZE284 variants with DP109/DP112 (fertility):**\n1. Ensure app is updated to v5.11.136+\n2. Remove restrictive endpoints (fixed in latest version)\n3. Try pairing in \"Add Device\" → \"Tuya Zigbee\" → \"Soil Sensor\"\n\n**If pairing still fails:**\n- Reset sensor: Hold button 5+ seconds until LED blinks rapidly\n- Place sensor within 2m of Homey during pairing\n- Check battery level (replace if <20%)\n\n**Diagnostics needed:**\nPlease provide:\n- Full diagnostic report (Settings → Advanced → Report issue)\n- Screenshot of pairing error\n- Sensor battery level",
+    "autoResponse": "This appears to be a soil sensor pairing issue. Known solutions:\n\n**For _TZE284 variants with DP109/DP112 (fertility):**\n1. Ensure app is updated to v5.11.136+\n2. Remove restrictive endpoints (fixed in latest version)\n3. Try pairing in \"Add Device\"  \"Tuya Zigbee\"  \"Soil Sensor\"\n\n**If pairing still fails:**\n- Reset sensor: Hold button 5+ seconds until LED blinks rapidly\n- Place sensor within 2m of Homey during pairing\n- Check battery level (replace if <20%)\n\n**Diagnostics needed:**\nPlease provide:\n- Full diagnostic report (Settings  Advanced  Report issue)\n- Screenshot of pairing error\n- Sensor battery level",
     "relatedDrivers": [
       "soil_sensor"
     ],

@@ -1,6 +1,6 @@
-# Universal Tuya Zigbee — v{{VERSION}}
+# Universal Tuya Zigbee  v{{VERSION}}
 
-> **The largest Tuya Zigbee app for Homey Pro** — {{DRIVERS}} drivers, {{FINGERPRINTS}}+ fingerprints, {{FLOW_CARDS}} flow cards.
+> **The largest Tuya Zigbee app for Homey Pro**  {{DRIVERS}} drivers, {{FINGERPRINTS}}+ fingerprints, {{FLOW_CARDS}} flow cards.
 > 100% local. No cloud. No internet needed. Updated {{DATE}}.
 
 ---
@@ -12,7 +12,7 @@
 | :green_circle: **Stable** | **[:inbox_tray: Install from App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/)** |
 | :orange_circle: **Test** | [:test_tube: Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
 
-> :bulb: The test channel gets updates first — new fingerprints and fixes land there before stable.
+> :bulb: The test channel gets updates first  new fingerprints and fixes land there before stable.
 
 ---
 
@@ -24,7 +24,7 @@ Search by manufacturer name (`_TZ3000_...`) or model ID (`TS0001`, `TS0601`...).
 
 ---
 
-## :sparkles: What's New — v{{VERSION}}
+## :sparkles: What's New  v{{VERSION}}
 
 {{CHANGELOG_LATEST}}
 
@@ -40,7 +40,7 @@ Search by manufacturer name (`_TZ3000_...`) or model ID (`TS0001`, `TS0601`...).
 
 | Category | Examples |
 |---|---|
-| :electric_plug: **Switches** | 1–6 gang, dimmers, DIN rail |
+| :electric_plug: **Switches** | 16 gang, dimmers, DIN rail |
 | :bulb: **Lights** | LED strips, bulbs, dimmers |
 | :satellite: **Sensors** | Motion, contact, temp, humidity, smoke, water, air quality |
 | :thermometer: **Climate** | Thermostats, TRVs, heaters |
@@ -56,12 +56,12 @@ Search by manufacturer name (`_TZ3000_...`) or model ID (`TS0001`, `TS0601`...).
 
 ## :gear: Key Features
 
-- **100% local** — no cloud, no internet
-- **Unified protocol** — Tuya DP + ZCL auto-detect
-- **Physical button detection** — wall press triggers
-- **Energy monitoring** — W, V, A, kWh
-- **Smart battery** — CR2032/AA/Li-ion curves
-- **{{FLOW_CARDS}} flow cards** — EN/FR/NL/DE
+- **100% local**  no cloud, no internet
+- **Unified protocol**  Tuya DP + ZCL auto-detect
+- **Physical button detection**  wall press triggers
+- **Energy monitoring**  W, V, A, kWh
+- **Smart battery**  CR2032/AA/Li-ion curves
+- **{{FLOW_CARDS}} flow cards**  EN/FR/NL/DE
 
 ---
 
@@ -101,4 +101,4 @@ If this app is useful to you, consider buying me a coffee:
 | **Revolut** | [revolut.me/dylanoul](https://revolut.me/dylanoul) |
 
 ---
-*Built by [Dylan](https://github.com/dlnraja) — based on the original work of [JohanBendz](https:
+*Built by [Dylan](https://github.com/dlnraja)  based on the original work of [JohanBendz](https:

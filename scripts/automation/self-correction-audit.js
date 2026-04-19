@@ -9,7 +9,7 @@ const ROOT = path.join(__dirname, '../..');
 const STATE_DIR = path.join(ROOT, '.github/state');
 
 async function main() {
-  console.log('=== 🤖 AI Self-Correction Audit (v1.0) ===');
+  console.log('===  AI Self-Correction Audit (v1.0) ===');
   const auditReport = {
     timestamp: new Date().toISOString(),
     syntaxOk: false,
@@ -24,10 +24,10 @@ async function main() {
     console.log('Checking app syntax...');
     execSync('npx homey app validate', { cwd: ROOT, stdio: 'pipe' });
     auditReport.syntaxOk = true;
-    console.log('  ✅ Syntax: OK');
+    console.log('   Syntax: OK');
   } catch (e) {
     auditReport.errors.push(`Homey Validation Failed: ${e.message}`);
-    console.log('  ❌ Syntax: Failed');
+    console.log('   Syntax: Failed');
   }
 
   // 2. BVB Coherence Check (Static Regex Audit)
@@ -44,10 +44,10 @@ async function main() {
     
     if (Object.values(checks).every(v => v)) {
       auditReport.bvbCoherenceOk = true;
-      console.log('  ✅ BVB Coherence: OK');
+      console.log('   BVB Coherence: OK');
     } else {
       auditReport.warnings.push(`BVB Logic compromised. Missing: ${Object.entries(checks).filter(([k,v]) => !v).map(([k]) => k).join(', ')}`);
-      console.log('  ⚠️ BVB Coherence: Warning');
+      console.log('   BVB Coherence: Warning');
     }
   } catch (e) {
     auditReport.errors.push(`BVB Audit Error: ${e.message}`);
@@ -137,25 +137,25 @@ async function main() {
       auditReport.warnings.push(`Rule 28 Violation: ManufacturerVariationManager might be missing Composite Identity (productId) logic.`);
     }
 
-    console.log('  ✅ Thinking Reimplementation Engine Compliance: Completed with audits.');
+    console.log('   Thinking Reimplementation Engine Compliance: Completed with audits.');
   } catch (e) {
     auditReport.errors.push(`Autonomous Engine Reimplementation Audit Error: ${e.message}`);
   }
 
   // 4. Summarize to GitHub Summary
   const SUMMARY = process.env.GITHUB_STEP_SUMMARY || (process.platform === 'win32' ? 'NUL' : '/dev/null');
-  let md = '### ⚙️ Self-Correction Audit Result\n';
+  let md = '###  Self-Correction Audit Result\n';
   md += `| Check | Status |\n|--------|--------|\n`;
-  md += `| Syntax | ${auditReport.syntaxOk ? '✅' : '❌'} |\n`;
-  md += `| BVB Coherence | ${auditReport.bvbCoherenceOk ? '✅' : '⚠️'} |\n`;
-  md += `| Performance/Regressions | ${auditReport.noDegradation ? '✅' : '⚠️'} |\n\n`;
+  md += `| Syntax | ${auditReport.syntaxOk ? '' : ''} |\n`;
+  md += `| BVB Coherence | ${auditReport.bvbCoherenceOk ? '' : ''} |\n`;
+  md += `| Performance/Regressions | ${auditReport.noDegradation ? '' : ''} |\n\n`;
 
   if (auditReport.errors.length) {
-    md += '#### 🔴 Errors\n';
+    md += '####  Errors\n';
     for (const e of auditReport.errors) md += `- ${e}\n`;
   }
   if (auditReport.warnings.length) {
-    md += '#### 🟡 Warnings\n';
+    md += '####  Warnings\n';
     for (const w of auditReport.warnings) md += `- ${w}\n`;
   }
 

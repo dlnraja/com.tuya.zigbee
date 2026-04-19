@@ -35,7 +35,7 @@
 **Topic 140352 #21** (@Nicolas)
 - MISSED: Post contains `development` (supported in diy_custom_zigbee) but reply doesn't mention it
 - MISSED: Post contains `generic` (supported in bulb_rgbw) but reply doesn't mention it
-- LEAK: Reply contains banned internal term "ai" — will be stripped
+- LEAK: Reply contains banned internal term "ai"  will be stripped
 - **Correction needed**: Reply should mention supported device
 
 **Topic 140352 #23** (@Dijker)
@@ -43,7 +43,7 @@
 - **Correction needed**: Reply should mention supported device
 
 **Topic 140352 #36** (@dlnraja)
-- LEAK: Reply contains banned internal term "ai" — will be stripped
+- LEAK: Reply contains banned internal term "ai"  will be stripped
 
 **Topic 140352 #65** (@Cam)
 - MISSED: Post contains `dlnraja` (supported in generic_diy) but reply doesn't mention it
@@ -63,8 +63,8 @@
 - **Correction needed**: Reply should mention supported device
 
 **Topic 140352 #86** (@)
-- LEAK: Reply contains banned internal term "automation" — will be stripped
-- LEAK: Reply contains banned internal term "ai" — will be stripped
+- LEAK: Reply contains banned internal term "automation"  will be stripped
+- LEAK: Reply contains banned internal term "ai"  will be stripped
 
 **Topic 140352 #88** (@F3006)
 - MISSED: Post contains `dlnraja` (supported in generic_diy) but reply doesn't mention it
@@ -75,7 +75,7 @@
 - **Correction needed**: Reply should mention supported device
 
 **Topic 140352 #110** (@)
-- LEAK: Reply contains banned internal term "automation" — will be stripped
+- LEAK: Reply contains banned internal term "automation"  will be stripped
 
 **Topic 140352 #115** (@dlnraja)
 - MISSED: Post contains `test` (supported in diy_custom_zigbee) but reply doesn't mention it
@@ -166,7 +166,7 @@
 - WRONG: Reply says "not found" but `TS0203` IS supported in: contact_sensor, generic_tuya, presence_sensor_radar, universal_fallback
 - WRONG: Reply says "not found" but `TS0601` IS supported in: air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ceiling_fan, climate_sensor, co_sensor, contact_sensor, curtain_motor, curtain_motor_tilt, dimmer_3gang, dimmer_dual_channel, dimmer_wall_1gang, din_rail_meter, din_rail_switch, door_controller, doorbell, energy_meter_3phase, fan_controller, fingerprint_lock, floor_heating_thermostat, formaldehyde_sensor, garage_door, garage_door_opener, gas_detector, gas_sensor, generic_tuya, humidifier, hvac_air_conditioner, hvac_controller, hvac_dehumidifier, ir_blaster, lcdtemphumidsensor, light_sensor_outdoor, lock_smart, motion_sensor, motion_sensor_2, motion_sensor_radar_mmwave, pet_feeder, pet_feeder_zigbee, plug_energy_monitor, plug_smart, pool_pump, power_clamp_meter, power_meter, presence_sensor_ceiling, presence_sensor_radar, radiator_controller, radiator_valve, radiator_valve_zigbee, rain_sensor, scene_switch_4, shutter_roller_controller, siren, sirentemphumidsensor, smart_breaker, smart_heater, smart_heater_controller, smart_lcd_thermostat, smart_rcbo, smart_scene_panel, smoke_detector_advanced, soil_sensor, switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_dimmer_1gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang, thermostat_4ch, thermostat_tuya_dp, universal_fallback, usb_outlet_advanced, valve_irrigation, valve_single, vibration_sensor, water_leak_sensor, water_tank_monitor, water_valve_smart, weather_station_outdoor
 - WRONG: Reply says "not found" but `generic` IS supported in: bulb_rgbw
-- LEAK: Reply contains banned internal term "automation" — will be stripped
+- LEAK: Reply contains banned internal term "automation"  will be stripped
 
 **Topic 140352 #164** (@xcaosx)
 - MISSED: Post contains `dlnraja` (supported in generic_diy) but reply doesn't mention it
@@ -316,9 +316,9 @@
 - **Correction needed**: Reply should mention supported device
 
 **Topic 140352 #295** (@)
-- LEAK: Reply contains banned internal term "automation" — will be stripped
-- LEAK: Reply contains banned internal term "github actions" — will be stripped
-- LEAK: Reply contains banned internal term "workflow" — will be stripped
+- LEAK: Reply contains banned internal term "automation"  will be stripped
+- LEAK: Reply contains banned internal term "github actions"  will be stripped
+- LEAK: Reply contains banned internal term "workflow"  will be stripped
 
 **Topic 140352 #299** (@Peter_van_Werkhoven)
 - MISSED: Post contains `HOBEIAN` (supported in presence_sensor_radar) but reply doesn't mention it
@@ -340,7 +340,7 @@
 - **Correction needed**: Reply should mention supported device
 
 **Topic 140352 #308** (@Peter_van_Werkhoven)
-- LEAK: Reply contains banned internal term "github action" — will be stripped
+- LEAK: Reply contains banned internal term "github action"  will be stripped
 
 **Topic 140352 #320** (@DutchDuke)
 - MISSED: Post contains `_TZE284_oitavov2` (supported in soil_sensor) but reply doesn't mention it
@@ -397,11 +397,11 @@
 - WRONG: Reply says "not found" but `ZG-204Z` IS supported in: motion_sensor
 - WRONG: Reply says "not found" but `ZG-204ZL` IS supported in: presence_sensor_radar
 - WRONG: Reply says "not found" but `TEST` IS supported in: diy_custom_zigbee
-- LEAK: Reply contains banned internal term "automation" — will be stripped
-- LEAK: Reply contains banned internal term "github actions" — will be stripped
+- LEAK: Reply contains banned internal term "automation"  will be stripped
+- LEAK: Reply contains banned internal term "github actions"  will be stripped
 
 **Topic 140352 #345** (@Peter_van_Werkhoven)
-- LEAK: Reply contains banned internal term "github actions" — will be stripped
+- LEAK: Reply contains banned internal term "github actions"  will be stripped
 - **Correction needed**: Reply should mention supported device
 
 **Topic 140352 #351** (@Karsten_Hille)
@@ -420,9 +420,9 @@
 - WRONG: Reply says "not found" but `tuya` IS supported in: generic_tuya, universal_fallback
 
 **Topic 140352 #367** (@Peter_van_Werkhoven)
-- LEAK: Reply contains banned internal term "pipeline" — will be stripped
-- LEAK: Reply contains banned internal term "workflow" — will be stripped
-- LEAK: Reply contains banned internal term "github actions" — will be stripped
+- LEAK: Reply contains banned internal term "pipeline"  will be stripped
+- LEAK: Reply contains banned internal term "workflow"  will be stripped
+- LEAK: Reply contains banned internal term "github actions"  will be stripped
 
 **Topic 140352 #369** (@DutchDuke)
 - MISSED: Post contains `_TZE284_oitavov2` (supported in soil_sensor) but reply doesn't mention it
@@ -432,7 +432,7 @@
 - **Correction needed**: Reply should mention supported device
 
 **Topic 140352 #371** (@Peter_van_Werkhoven)
-- LEAK: Reply contains banned internal term "github action" — will be stripped
+- LEAK: Reply contains banned internal term "github action"  will be stripped
 
 **Topic 140352 #384** (@ugrbnk)
 - MISSED: Post contains `_TZE204_yojqa8xn` (supported in gas_sensor) but reply doesn't mention it
@@ -490,7 +490,7 @@
 - WRONG: Reply says "not found" but `TS0601` IS supported in: air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ceiling_fan, climate_sensor, co_sensor, contact_sensor, curtain_motor, curtain_motor_tilt, dimmer_3gang, dimmer_dual_channel, dimmer_wall_1gang, din_rail_meter, din_rail_switch, door_controller, doorbell, energy_meter_3phase, fan_controller, fingerprint_lock, floor_heating_thermostat, formaldehyde_sensor, garage_door, garage_door_opener, gas_detector, gas_sensor, generic_tuya, humidifier, hvac_air_conditioner, hvac_controller, hvac_dehumidifier, ir_blaster, lcdtemphumidsensor, light_sensor_outdoor, lock_smart, motion_sensor, motion_sensor_2, motion_sensor_radar_mmwave, pet_feeder, pet_feeder_zigbee, plug_energy_monitor, plug_smart, pool_pump, power_clamp_meter, power_meter, presence_sensor_ceiling, presence_sensor_radar, radiator_controller, radiator_valve, radiator_valve_zigbee, rain_sensor, scene_switch_4, shutter_roller_controller, siren, sirentemphumidsensor, smart_breaker, smart_heater, smart_heater_controller, smart_lcd_thermostat, smart_rcbo, smart_scene_panel, smoke_detector_advanced, soil_sensor, switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_dimmer_1gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang, thermostat_4ch, thermostat_tuya_dp, universal_fallback, usb_outlet_advanced, valve_irrigation, valve_single, vibration_sensor, water_leak_sensor, water_tank_monitor, water_valve_smart, weather_station_outdoor
 
 **Topic 140352 #425** (@Ian_Gibbo)
-- LEAK: Reply contains banned internal term "automation" — will be stripped
+- LEAK: Reply contains banned internal term "automation"  will be stripped
 
 **Topic 140352 #440** (@Ian_Gibbo)
 - MISSED: Post contains `TS0044` (supported in button_wireless_4,handheld_remote_4_buttons,universal_fallback,wall_remote_4_gang,wall_remote_4_gang_3) but reply doesn't mention it
@@ -516,7 +516,7 @@
 - **Correction needed**: Reply should mention supported device
 
 **Topic 140352 #471** (@Peter_van_Werkhoven)
-- LEAK: Reply contains banned internal term "github actions" — will be stripped
+- LEAK: Reply contains banned internal term "github actions"  will be stripped
 
 **Topic 140352 #475** (@ugrbnk)
 - MISSED: Post contains `test` (supported in diy_custom_zigbee) but reply doesn't mention it
@@ -526,7 +526,7 @@
 **Topic 140352 #482** (@Cam)
 - MISSED: Post contains `vision` (supported in generic_tuya) but reply doesn't mention it
 - MISSED: Post contains `generic` (supported in bulb_rgbw) but reply doesn't mention it
-- LEAK: Reply contains banned internal term "automation" — will be stripped
+- LEAK: Reply contains banned internal term "automation"  will be stripped
 - **Correction needed**: Reply should mention supported device
 
 **Topic 140352 #503** (@Peter_van_Werkhoven)

@@ -5,11 +5,11 @@
  * RULES (source: apps-sdk-v3.developer.homey.app):
  * 1. NEVER use both measure_battery AND alarm_battery on same device
  * 2. Mains-powered devices should have NEITHER
- * 3. WiFi drivers have their own auth/implementation — don't touch
+ * 3. WiFi drivers have their own auth/implementation  don't touch
  * 4. Kinetic/mechanical self-powered devices have NO battery
- * 5. Power source varies per variant — check compose, not driver name
+ * 5. Power source varies per variant  check compose, not driver name
  * 
- * This script is IDEMPOTENT — running multiple times = same result.
+ * This script is IDEMPOTENT  running multiple times = same result.
  */
 'use strict';
 const fs = require('fs');
@@ -29,13 +29,13 @@ for (const d of fs.readdirSync(DDIR)) {
 
   // === CHECK 1: measure_battery + alarm_battery conflict ===
   if (caps.includes('measure_battery') && caps.includes('alarm_battery')) {
-    // Remove alarm_battery (measure_battery has priority — it's more informative)
+    // Remove alarm_battery (measure_battery has priority  it's more informative)
     const idx = caps.indexOf('alarm_battery');
     caps.splice(idx, 1);
     compose.capabilities = caps;
     modified = true;
     conflicts++;
-    console.log(`⚡ ${d}: removed alarm_battery (conflicts with measure_battery)`);
+    console.log(` ${d}: removed alarm_battery (conflicts with measure_battery)`);
   }
 
   // === CHECK 2: Mains-powered check (from device.js) ===
@@ -52,7 +52,7 @@ for (const d of fs.readdirSync(DDIR)) {
           caps.splice(idx, 1);
           modified = true;
           mainsFix++;
-          console.log(`🔌 ${d}: removed ${batCap} (mainsPowered=true)`);
+          console.log(` ${d}: removed ${batCap} (mainsPowered=true)`);
         }
       }
       compose.capabilities = caps;
@@ -63,10 +63,10 @@ for (const d of fs.readdirSync(DDIR)) {
   const isWifi = compose.connectivity?.includes('cloud') || 
                  compose.connectivity?.includes('local') && !compose.connectivity?.includes('zigbee');
   if (isWifi && !compose.zigbee) {
-    // Pure WiFi/cloud driver — battery handling is driver-specific
-    // Don't auto-inject/remove — just warn
+    // Pure WiFi/cloud driver  battery handling is driver-specific
+    // Don't auto-inject/remove  just warn
     if (caps.includes('alarm_battery') && caps.includes('measure_battery')) {
-      console.log(`📡 ${d}: WiFi driver with battery conflict (needs manual review)`);
+      console.log(` ${d}: WiFi driver with battery conflict (needs manual review)`);
     }
   }
 

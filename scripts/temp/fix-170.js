@@ -20,5 +20,5 @@ if (content.includes('_TZ3000_v4l4b0lp')) {
 } else {
   content = content.replace(oldArray, newArray);
   fs.writeFileSync(file, content);
-  console.log('✅ Added _TZ3000_v4l4b0lp to ZCL_ONLY_MANUFACTURERS_3G');
+  console.log(' Added _TZ3000_v4l4b0lp to ZCL_ONLY_MANUFACTURERS_3G');
 }

@@ -9,6 +9,6 @@ if (fs.existsSync(file2)) {
   if (content2.includes('gh issue close')) {
     content2 = content2.replace(/gh issue close[^\n]+/g, "// Auto-close disabled");
     fs.writeFileSync(file2, content2);
-    console.log('✅ Removed auto-close from handle-issue-comments');
+    console.log(' Removed auto-close from handle-issue-comments');
   }
 }

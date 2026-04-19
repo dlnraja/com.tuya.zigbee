@@ -2,7 +2,7 @@
 
 > **188+ drivers** · **4,700+ fingerprints** · SDK3 · Updated 2026-03-25
 
-Local-first Zigbee control for **all** your Tuya devices on Homey Pro — no cloud, no internet needed.
+Local-first Zigbee control for **all** your Tuya devices on Homey Pro  no cloud, no internet needed.
 
 ---
 
@@ -24,7 +24,7 @@ homey app install
 ```
 </details>
 
-> :bulb: The test channel gets updates first — new fingerprints and fixes land there before stable.
+> :bulb: The test channel gets updates first  new fingerprints and fixes land there before stable.
 
 ---
 
@@ -42,7 +42,7 @@ v5.11.29: Removed one-shot fix-post-now script and workflow to streamline the de
 
 **v5.11.26**: Fixed forum duplication issues and improved AI ensemble routing for better task classification.
 
-**v5.11.25**: v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite — device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.
+**v5.11.25**: v5.11.25: Fixed voltage divisor in driver #137  readings were off by a factor of 10 on some plug variants., Dashboard fallback rewrite  device tiles now update properly when the primary state channel drops., 17 new fingerprints from community contributions (138 drivers, 5182+ total FPs)., Internal cleanup across several workflow scripts.
 
 </details>
 
@@ -52,7 +52,7 @@ v5.11.29: Removed one-shot fix-post-now script and workflow to streamline the de
 
 | Category | Examples |
 |---|---|
-| :electric_plug: **Switches** | 1–6 gang, dimmers, fan switches |
+| :electric_plug: **Switches** | 16 gang, dimmers, fan switches |
 | :bulb: **Lights** | LED strips, bulbs, dimmers |
 | :satellite: **Sensors** | Motion, contact, temp, humidity, smoke, water, air quality, soil |
 | :thermometer: **Climate** | Thermostats, TRVs, heaters |
@@ -64,20 +64,20 @@ v5.11.29: Removed one-shot fix-post-now script and workflow to streamline the de
 | :robot_face: **Presence** | Radar / mmWave sensors |
 | :desktop_computer: **IR Blasters** | Infrared controllers |
 
-:mag: [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by manufacturer name or model ID
+:mag: [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)  search by manufacturer name or model ID
 
 ---
 
 ## :gear: Key Features
 
-- :house: **100% local** — no cloud needed
-- :repeat: **Unified protocol** — Tuya DP + ZCL
-- :detective: **Auto-detection** — sets up capabilities automatically
-- :joystick: **Physical button detection** — flow triggers on wall press
-- :zap: **Energy monitoring** — power, voltage, current
-- :battery: **Smart battery** — voltage-based fallback
+- :house: **100% local**  no cloud needed
+- :repeat: **Unified protocol**  Tuya DP + ZCL
+- :detective: **Auto-detection**  sets up capabilities automatically
+- :joystick: **Physical button detection**  flow triggers on wall press
+- :zap: **Energy monitoring**  power, voltage, current
+- :battery: **Smart battery**  voltage-based fallback
 - :lock: **Child lock & power-on behavior**
-- :performing_arts: **1,810+ flow cards** — EN/FR/NL/DE
+- :performing_arts: **1,810+ flow cards**  EN/FR/NL/DE
 
 ---
 
@@ -100,7 +100,7 @@ v5.11.29: Removed one-shot fix-post-now script and workflow to streamline the de
 
 ## :handshake: Contribute
 
-Fork → branch → add fingerprints → `homey app install` → PR
+Fork  branch  add fingerprints  `homey app install`  PR
 [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 
 ---
@@ -124,4 +124,4 @@ Fork → branch → add fingerprints → `homey app install` → PR
 | **Revolut** | [revolut.me/dylanoul](https://revolut.me/dylanoul) |
 
 ---
-*Built by [Dylan](https://github.com/dlnraja) — based on the original work of [JohanBendz](https:
+*Built by [Dylan](https://github.com/dlnraja)  based on the original work of [JohanBendz](https:

@@ -1,6 +1,6 @@
 # Response to Lalla80111 - Issue #114 (Smart Button)
 
-## 🔧 Fix Applied in v5.6.1
+##  Fix Applied in v5.6.1
 
 Hi @Lalla80111,
 
@@ -19,8 +19,8 @@ But the driver only had:
 ### The Fix
 
 I've added the **exact mixed-case format** that your devices report:
-- ✅ `_TZ3000_b4awzgct` added to `button_wireless_1` driver
-- ✅ `_TZ3000_fllyghyj` added to `climate_sensor` driver
+-  `_TZ3000_b4awzgct` added to `button_wireless_1` driver
+-  `_TZ3000_fllyghyj` added to `climate_sensor` driver
 
 ### Next Steps
 
@@ -36,7 +36,7 @@ The TS0041 button should work with these flow triggers:
 - **Button long-pressed**
 
 If flows still don't work after re-pairing:
-1. Check the device logs in **Homey Developer Tools** → **Devices** → your button → **Logs**
+1. Check the device logs in **Homey Developer Tools**  **Devices**  your button  **Logs**
 2. Press the button and look for `[BUTTON1-ONOFF]` or `[BUTTON1-SCENE]` log entries
 3. Share the logs here if you see issues
 
@@ -46,11 +46,11 @@ Your TS0041 button uses:
 - Endpoint 1: Power Configuration (battery), OnOff, Basic, Custom cluster 57344
 - The driver listens for `onOff` attribute changes and commands to detect button presses
 
-Thank you for helping improve the app! 🙏
+Thank you for helping improve the app! 
 
 ---
 
-## 🇫🇷 Réponse en Français
+##  Réponse en Français
 
 Bonjour @Lalla80111,
 
@@ -69,8 +69,8 @@ Mais le driver n'avait que :
 ### Le Correctif
 
 J'ai ajouté le **format mixte exact** que vos appareils rapportent :
-- ✅ `_TZ3000_b4awzgct` ajouté au driver `button_wireless_1`
-- ✅ `_TZ3000_fllyghyj` ajouté au driver `climate_sensor`
+-  `_TZ3000_b4awzgct` ajouté au driver `button_wireless_1`
+-  `_TZ3000_fllyghyj` ajouté au driver `climate_sensor`
 
 ### Prochaines Étapes
 
@@ -86,8 +86,8 @@ Le bouton TS0041 devrait fonctionner avec ces déclencheurs de flow :
 - **Bouton pressé longtemps**
 
 Si les flows ne fonctionnent toujours pas après le réappairage :
-1. Vérifiez les logs de l'appareil dans **Homey Developer Tools** → **Devices** → votre bouton → **Logs**
+1. Vérifiez les logs de l'appareil dans **Homey Developer Tools**  **Devices**  votre bouton  **Logs**
 2. Appuyez sur le bouton et cherchez les entrées `[BUTTON1-ONOFF]` ou `[BUTTON1-SCENE]`
 3. Partagez les logs ici si vous voyez des problèmes
 
-Merci d'aider à améliorer l'app ! 🙏
+Merci d'aider à améliorer l'app ! 

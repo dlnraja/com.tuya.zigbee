@@ -8,7 +8,7 @@
 
 const { safeParse, safeDivide } = require('../../lib/utils/tuyaUtils.js');
 
-console.log('🧪 Starting TZE284 Simulation Test...');
+console.log(' Starting TZE284 Simulation Test...');
 
 const testCases = [
   { dp: 3, val: 45, desc: 'Soil Moisture %' },
@@ -37,12 +37,12 @@ testCases.forEach(tc => {
     console.log(`  Result: ${parsed} (Type: ${typeof parsed})`);
     
     if (isNaN(parsed) && parsed !== null) {
-      console.error('  ❌ FAILED: Result is NaN!');
+      console.error('   FAILED: Result is NaN!');
     } else {
-      console.log('  ✅ PASSED');
+      console.log('   PASSED');
     }
   } catch (e) {
-    console.error(`  ❌ CRASHED: ${e.message}`);
+    console.error(`   CRASHED: ${e.message}`);
   }
 });
 

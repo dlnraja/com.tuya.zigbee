@@ -13,7 +13,7 @@ function cleanManifests(dir) {
         } else if (file === 'driver.compose.json') {
             let content = fs.readFileSync(fullPath, 'utf8');
             if (content.includes('<<<<<<<')) {
-                console.log(`🧹 Cleaning ${fullPath}...`);
+                console.log(` Cleaning ${fullPath}...`);
                 // Simple regex to take the 'theirs' part (last block)
                 const theirsMatch = content.match(/=======([\s\S]*?)>>>>>>>/);
                 if (theirsMatch) {
@@ -31,7 +31,7 @@ function cleanManifests(dir) {
                    content = content.replace(/\|\|\|\|\|\|\|[\s\S]*?\n/g, "");
 
                    fs.writeFileSync(fullPath, content);
-                   console.log(`✅ ${file} fixed.`);
+                   console.log(` ${file} fixed.`);
                 }
             }
         }

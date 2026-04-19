@@ -30,7 +30,7 @@ const IMPROVEMENTS = {
           hint: { en: 'Adjust if current readings are incorrect', nl: 'Aanpassen indien stroom niet klopt' },
           value: '0.001',
           values: [
-            { id: '0.001', label: { en: '÷1000 (mA→A)', nl: '÷1000 (mA→A)' } },
+            { id: '0.001', label: { en: '÷1000 (mAA)', nl: '÷1000 (mAA)' } },
             { id: '0.01', label: { en: '÷100', nl: '÷100' } },
             { id: '0.1', label: { en: '÷10', nl: '÷10' } },
             { id: '1', label: { en: '×1', nl: '×1' } }
@@ -302,7 +302,7 @@ async function applyDimmerSpeed(driverPath, driverName) {
 }
 
 async function applyImprovements() {
-  console.log('🔧 APPLYING FORUM IMPROVEMENTS\n');
+  console.log(' APPLYING FORUM IMPROVEMENTS\n');
 
   const stats = {
     energyScaling: { added: 0, skipped: 0 },
@@ -363,24 +363,24 @@ async function applyImprovements() {
         if (result.added) {
           stats[improvement].added++;
           details[improvement].push({ driver: driverName, ...result });
-          console.log(`✅ ${improvement}: ${driverName}`);
+          console.log(` ${improvement}: ${driverName}`);
         } else if (result.skipped) {
           stats[improvement].skipped++;
         }
       } catch (err) {
-        console.error(`❌ ${improvement}: ${driverName} - ${err.message}`);
+        console.error(` ${improvement}: ${driverName} - ${err.message}`);
       }
     }
   }
 
-  console.log('\n═══════════════════════════════════════════════════════════════');
+  console.log('\n');
   console.log('STATISTICS');
-  console.log('═══════════════════════════════════════════════════════════════\n');
+  console.log('\n');
 
   for (const [improvement, stat] of Object.entries(stats)) {
     console.log(`${improvement}:`);
-    console.log(`  ✅ Added: ${stat.added}`);
-    console.log(`  ⏭️  Skipped: ${stat.skipped}`);
+    console.log(`   Added: ${stat.added}`);
+    console.log(`    Skipped: ${stat.skipped}`);
     console.log();
   }
 
@@ -389,7 +389,7 @@ async function applyImprovements() {
 
   const reportPath = path.join(__dirname, '../FORUM_IMPROVEMENTS_REPORT.json');
   await writeJSON(reportPath, { stats, details, timestamp: new Date().toISOString() });
-  console.log(`\n📄 Report saved: ${reportPath}`);
+  console.log(`\n Report saved: ${reportPath}`);
 
   return stats;
 }
@@ -397,11 +397,11 @@ async function applyImprovements() {
 if (require.main === module) {
   applyImprovements()
     .then(() => {
-      console.log('\n✅ FORUM IMPROVEMENTS APPLIED');
+      console.log('\n FORUM IMPROVEMENTS APPLIED');
       process.exit(0);
     })
     .catch((err) => {
-      console.error('\n❌ ERROR:', err);
+      console.error('\n ERROR:', err);
       process.exit(1);
     });
 }

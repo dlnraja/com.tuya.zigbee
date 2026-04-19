@@ -40,33 +40,33 @@ Response: [Seq:2 bytes][UTC:4 bytes][Local:4 bytes] = 10 bytes
 | Command ID | 0x24 (36) - mcuSyncTime |
 | Direction | Bidirectional |
 
-### Request (Device → Host)
+### Request (Device  Host)
 
 When the device needs time synchronization, it sends:
 
 ```
-┌─────────────────┬──────────────────────────────┐
-│ Byte(s)         │ Description                  │
-├─────────────────┼──────────────────────────────┤
-│ 0-1             │ Sequence Number (uint16 BE)  │
-│ [optional 2+]   │ Additional payload (rare)    │
-└─────────────────┴──────────────────────────────┘
+
+ Byte(s)          Description                  
+
+ 0-1              Sequence Number (uint16 BE)  
+ [optional 2+]    Additional payload (rare)    
+
 ```
 
 The 2-byte sequence number is critical - it must be echoed back!
 
-### Response (Host → Device)
+### Response (Host  Device)
 
 The host must respond with:
 
 ```
-┌─────────────────┬──────────────────────────────┐
-│ Byte(s)         │ Description                  │
-├─────────────────┼──────────────────────────────┤
-│ 0-1             │ Sequence Number (uint16 BE)  │
-│ 2-5             │ UTC Timestamp (uint32 BE)    │
-│ 6-9             │ Local Timestamp (uint32 BE)  │
-└─────────────────┴──────────────────────────────┘
+
+ Byte(s)          Description                  
+
+ 0-1              Sequence Number (uint16 BE)  
+ 2-5              UTC Timestamp (uint32 BE)    
+ 6-9              Local Timestamp (uint32 BE)  
+
 Total: 10 bytes
 ```
 
@@ -208,14 +208,14 @@ In device settings, enable "ZCL Time Cluster Debug Mode" to see all time sync at
 ### Expected Log Output
 
 ```
-[TIME-SYNC] 📥 EXPLICIT TIME REQUEST (cmd 0x24), seq=0x000b
-[TIME-SYNC] 📤 RESPONDING TO DEVICE REQUEST...
+[TIME-SYNC]  EXPLICIT TIME REQUEST (cmd 0x24), seq=0x000b
+[TIME-SYNC]  RESPONDING TO DEVICE REQUEST...
 [TIME-SYNC]    Sequence: 0x000b
 [TIME-SYNC]    UTC: 2025-02-01T14:30:00.000Z
 [TIME-SYNC]    Local: 2/1/2025, 3:30:00 PM
 [TIME-SYNC]    Timezone: GMT+1
 [TIME-SYNC]    Payload10 (with seq): 000b678abcd0678ad450
-[TIME-SYNC] ✅ Response sent via TuyaEF00Manager
+[TIME-SYNC]  Response sent via TuyaEF00Manager
 ```
 
 ### Common Issues

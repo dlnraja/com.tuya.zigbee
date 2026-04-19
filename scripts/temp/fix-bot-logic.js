@@ -19,7 +19,7 @@ for (const file of filesToUpdate) {
   content = content.replace(/await execSync\(`gh issue close \${issue\.number} -R \${REPO} -r completed`\);/g, "// Auto-close disabled: We wait for 100% user confirmation before closing.");
   
   // Update templates to ask for confirmation instead of asserting it's fixed
-  content = content.replace(/All fingerprints are already supported — install the test version/g, "These fingerprints are mapped in the test version. Please install it, remove your device, and re-pair. Let us know if it works 100% for you!");
+  content = content.replace(/All fingerprints are already supported  install the test version/g, "These fingerprints are mapped in the test version. Please install it, remove your device, and re-pair. Let us know if it works 100% for you!");
   
   // Specific to triage-run.js closing logic
   if (file.includes('triage-run.js')) {

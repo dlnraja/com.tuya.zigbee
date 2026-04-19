@@ -19,14 +19,14 @@ const AUDIT_FILE = path.join(ROOT, 'docs/reports/ZERO_DEFECT_AUDIT.json');
 const UTILS_PATH = 'lib/utils/tuyaUtils.js';
 
 if (!fs.existsSync(AUDIT_FILE)) {
-  console.error('❌ Audit file not found. Run zero-defect-architect-audit.js first.');
+  console.error(' Audit file not found. Run zero-defect-architect-audit.js first.');
   process.exit(1);
 }
 
 const audit = JSON.parse(fs.readFileSync(AUDIT_FILE, 'utf8'));
 const warnings = audit.naNSafetyCheck || [];
 
-console.log(`🚀 Starting Final Precision Hardening for ${warnings.length} risks...`);
+console.log(` Starting Final Precision Hardening for ${warnings.length} risks...`);
 
 const targets = {}; // filePath -> [lineNumbers]
 warnings.forEach(w => {
@@ -168,8 +168,8 @@ for (const [relPath, lineNums] of Object.entries(targets)) {
     fs.writeFileSync(absPath, content);
     filesFixed++;
     totalChanges += fileChanges;
-    console.log(`✅ Hardened: ${relPath} (${fileChanges} changes)`);
+    console.log(` Hardened: ${relPath} (${fileChanges} changes)`);
   }
 }
 
-console.log(`\n🎉 Precision Hardening Complete: ${filesFixed} files, ${totalChanges} changes.`);
+console.log(`\n Precision Hardening Complete: ${filesFixed} files, ${totalChanges} changes.`);

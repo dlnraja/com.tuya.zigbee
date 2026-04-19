@@ -2,12 +2,12 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RULE 21 COMPLIANCE LINTER v1.0.0 (Thinking Reimplementation Engine)                    ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Ensures multi-gang Flow cards use capability filters instead of driver_ids.  ║
- * ║  Prevents "unlinked" flow cards when new variants (hybrid/prefixed) are added. ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       RULE 21 COMPLIANCE LINTER v1.0.0 (Thinking Reimplementation Engine)                    
+ * 
+ *   Ensures multi-gang Flow cards use capability filters instead of driver_ids.  
+ *   Prevents "unlinked" flow cards when new variants (hybrid/prefixed) are added. 
+ * 
  */
 
 const ROOT = process.cwd();
@@ -38,10 +38,10 @@ const MAPPING = {
 };
 
 async function main() {
-  console.log('🛡️ Starting Rule 21 Compliance Audit...');
+  console.log(' Starting Rule 21 Compliance Audit...');
   
   if (!fs.existsSync(APP_JSON_PATH)) {
-    console.error('❌ app.json not found!');
+    console.error(' app.json not found!');
     process.exit(1);
   }
 
@@ -55,13 +55,13 @@ async function main() {
         if (card.filter) {
           FORBIDDEN_FILTERS.forEach(forbidden => {
             if (card.filter.includes(forbidden)) {
-              console.log(`⚠️ Violation in ${section} card [${card.id}]: Found forbidden filter "${forbidden}"`);
+              console.log(` Violation in ${section} card [${card.id}]: Found forbidden filter "${forbidden}"`);
               violations++;
               
               const driverId = forbidden.split('=')[1];
               if (MAPPING[driverId]) {
                 card.filter = card.filter.replace(forbidden, MAPPING[driverId]);
-                console.log(`  ✅ Auto-fixed: Replaced with "${MAPPING[driverId]}"`);
+                console.log(`   Auto-fixed: Replaced with "${MAPPING[driverId]}"`);
                 fixed++;
               }
             }
@@ -71,8 +71,8 @@ async function main() {
     }
   });
 
-  // 🛡️ Rule 28: Composite Identity Integrity (v7.0.25)
-  console.log('🛡️ Checking Rule 28 (Composite Identity Mapping)...');
+  //  Rule 28: Composite Identity Integrity (v7.0.25)
+  console.log(' Checking Rule 28 (Composite Identity Mapping)...');
   try {
     const VariationManager = require('../../lib/ManufacturerVariationManager');
     const driversDir = path.join(ROOT, 'drivers');
@@ -89,28 +89,28 @@ async function main() {
         if (mfr.startsWith('_TZE') || mfr.startsWith('_TZ3')) {
           const config = VariationManager.getManufacturerConfig(mfr, pid, d);
           if (config.protocol === 'mixed' && !VariationManager.needsSpecialConfig(mfr, pid, d)) {
-            // console.log(`  ℹ️  Note: ${mfr} uses generic mixed config in ${d}`);
+            // console.log(`    Note: ${mfr} uses generic mixed config in ${d}`);
           }
         }
       });
     });
-    console.log('  ✅ Composite integrity check passed.');
+    console.log('   Composite integrity check passed.');
   } catch (err) {
-    console.warn('  ⚠️ Rule 28 check skipped: VariationManager not accessible or failed:', err.message);
+    console.warn('   Rule 28 check skipped: VariationManager not accessible or failed:', err.message);
   }
 
   if (fixed > 0) {
     fs.writeFileSync(APP_JSON_PATH, JSON.stringify(appJson, null, 2));
-    console.log(`\n🎉 Audit complete. Corrected ${fixed} violations of Rule 21.`);
+    console.log(`\n Audit complete. Corrected ${fixed} violations of Rule 21.`);
   } else if (violations === 0) {
-    console.log('\n✅ 100% Compliance. No Rule 21 violations found.');
+    console.log('\n 100% Compliance. No Rule 21 violations found.');
   } else {
-    console.log(`\n❌ Audit complete. Found ${violations} violations, but could not auto-fix all.`);
+    console.log(`\n Audit complete. Found ${violations} violations, but could not auto-fix all.`);
     process.exit(1);
   }
 }
 
 main().catch(err => {
-  console.error('❌ Linter crashed:', err);
+  console.error(' Linter crashed:', err);
   process.exit(1);
 });

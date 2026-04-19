@@ -21,7 +21,7 @@ class LEDStripAdvancedDevice extends UnifiedLightBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[LED-ADV] ✅ Ready');
+    this.log('[LED-ADV]  Ready');
   }
 
 

@@ -52,7 +52,7 @@ Any other information that might help (device quirks, special modes, pairing iss
 
 ---
 
-### ⚡ Quick Tips
+###  Quick Tips
 - **Photos**: Make sure the label is clearly visible
 - **Logs**: Enable logs in Homey app settings before pairing
 - **Reset**: Most devices require 3-5 seconds press to reset (LED blinks)

@@ -40,7 +40,7 @@ for (let i = 0; i < lines.length; i++) {
 
 content = lines.join('\n');
 fs.writeFileSync(file, content);
-console.log(`✅ Commented out ${removed} duplicate keys`);
+console.log(` Commented out ${removed} duplicate keys`);
 
 // Fix TuyaDPDatabase.js duplicate
 const dbFile = 'lib/tuya/TuyaDPDatabase.js';
@@ -56,7 +56,7 @@ for (let i = 0; i < dbLines.length; i++) {
   }
 }
 fs.writeFileSync(dbFile, dbLines.join('\n'));
-console.log('✅ Fixed TuyaDPDatabase.js duplicate');
+console.log(' Fixed TuyaDPDatabase.js duplicate');
 
 // Fix TuyaEF00Manager.js duplicate
 const efFile = 'lib/tuya/TuyaEF00Manager.js';
@@ -72,4 +72,4 @@ for (let i = 0; i < efLines.length; i++) {
   }
 }
 fs.writeFileSync(efFile, efLines.join('\n'));
-console.log('✅ Fixed TuyaEF00Manager.js duplicate');
+console.log(' Fixed TuyaEF00Manager.js duplicate');

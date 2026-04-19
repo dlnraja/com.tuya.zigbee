@@ -8,33 +8,33 @@ const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHel
 const { equalsCI, startsWithCI } = require('../../lib/utils/CaseInsensitiveMatcher.js');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      WATER LEAK SENSOR - v5.5.803 FORUM #1166 LASSE_K FIX                   ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Sources:                                                                    ║
- * ║  - Zigbee2MQTT: TS0207_water_leak_detector, TS0601_water_sensor             ║
- * ║  - GitHub Issues: #28181 (HOBEIAN INVALID_EP), #24759 (upgcbody)            ║
- * ║  - ZHA, Hubitat community reports                                           ║
- * ║                                                                              ║
- * ║  DEVICE TYPES:                                                               ║
- * ║  1. TS0207 (IAS Zone 1280): _TZ3000_*, HOBEIAN, SONOFF SNZB-05P             ║
- * ║  2. TS0601 (Tuya DP 61184): _TZE200_qq9mpfhw, _TZE204_qq9mpfhw              ║
- * ║                                                                              ║
- * ║  KNOWN ISSUES FIXED:                                                         ║
- * ║  - Lasse_K #978: Some sensors use IAS alarm2 instead of alarm1              ║
- * ║  - Lasse_K #1166: Water sensor installs but no alarm (v5.5.803 fix)         ║
- * ║  - HOBEIAN #28181: INVALID_EP binding error (sleepy device timing)          ║
- * ║  - _TZ3000_85czd6fy: Tamper support added                                   ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       WATER LEAK SENSOR - v5.5.803 FORUM #1166 LASSE_K FIX                   
+ * 
+ *   Sources:                                                                    
+ *   - Zigbee2MQTT: TS0207_water_leak_detector, TS0601_water_sensor             
+ *   - GitHub Issues: #28181 (HOBEIAN INVALID_EP), #24759 (upgcbody)            
+ *   - ZHA, Hubitat community reports                                           
+ *                                                                               
+ *   DEVICE TYPES:                                                               
+ *   1. TS0207 (IAS Zone 1280): _TZ3000_*, HOBEIAN, SONOFF SNZB-05P             
+ *   2. TS0601 (Tuya DP 61184): _TZE200_qq9mpfhw, _TZE204_qq9mpfhw              
+ *                                                                               
+ *   KNOWN ISSUES FIXED:                                                         
+ *   - Lasse_K #978: Some sensors use IAS alarm2 instead of alarm1              
+ *   - Lasse_K #1166: Water sensor installs but no alarm (v5.5.803 fix)         
+ *   - HOBEIAN #28181: INVALID_EP binding error (sleepy device timing)          
+ *   - _TZ3000_85czd6fy: Tamper support added                                   
+ * 
  */
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // v5.5.550: MANUFACTURER-SPECIFIC PROFILES (from Zigbee2MQTT research)
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 const WATER_SENSOR_PROFILES = {
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   // TS0601 TUYA DP DEVICES (cluster 61184)
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   '_TZE200_qq9mpfhw': {
     type: 'tuya_dp', productId: 'TS0601',
     dpMappings: { 1: 'alarm_water', 4: 'measure_battery' },
@@ -51,9 +51,9 @@ const WATER_SENSOR_PROFILES = {
     notes: 'Legacy Tuya water sensor'
   },
 
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   // TS0207 IAS ZONE DEVICES (cluster 1280)
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   '_TZ3000_k4ej3ww2': {
     type: 'ias_zone', productId: 'TS0207', brand: 'HOBEIAN',
     model: 'ZG-222Z/ZG-222ZA',
@@ -117,9 +117,9 @@ const WATER_SENSOR_PROFILES = {
     notes: 'Standard water leak'
   },
 
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   // SONOFF DEVICES
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   'SONOFF': {
     type: 'ias_zone', productId: 'SNZB-05P',
     iasAlarmBit: 'alarm1',
@@ -135,9 +135,9 @@ const WATER_SENSOR_PROFILES = {
     notes: 'eWeLink/SONOFF water leak sensor'
   },
 
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   // HOBEIAN DEVICES
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   'HOBEIAN': {
     type: 'ias_zone', productId: 'ZG-222Z',
     iasAlarmBit: 'both',
@@ -146,9 +146,9 @@ const WATER_SENSOR_PROFILES = {
     notes: 'HOBEIAN branded - may need re-pair'
   },
 
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   // DEFAULT FALLBACK
-  // ─────────────────────────────────────────────────────────────────────────────
+  // 
   'default': {
     type: 'hybrid', // Try both IAS Zone and Tuya DP
     iasAlarmBit: 'both', // v5.5.549 fix: check both bits
@@ -209,31 +209,31 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
    */
   get dpMappings() {
     return {
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // WATER LEAK DETECTION (multiple DP variants)
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       1: { capability: 'alarm_water', transform: (v) => v === 1 || v === true || v === 'alarm' },
       101: { capability: 'alarm_water', transform: (v) => v === 1 || v === true },
       // Some _TZE204 devices use DP19 for water leak
       19: { capability: 'alarm_water', transform: (v) => v === 1 || v === true },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // BATTERY (various DPs used by different manufacturers)
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       4: { capability: 'measure_battery', divisor: 1 },
       14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
       15: { capability: 'measure_battery', divisor: 1 },
       // Some devices report battery on DP3
       3: { capability: 'measure_battery', divisor: 1 },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // TAMPER DETECTION
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       5: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === true },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // ADDITIONAL FEATURES
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       2: { capability: 'measure_temperature', divisor: 10 },
       6: { capability: null, internal: 'battery_voltage' },
       9: { capability: null, setting: 'sensitivity' },
@@ -255,27 +255,27 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       const iasManager = new IASZoneManager(this);
       await iasManager.enrollIASZone();
     } catch (e) {
-      this.log(`[WATER] ⚠️ IAS enrollment error (non-critical): ${e.message}`);
+      this.log(`[WATER]  IAS enrollment error (non-critical): ${e.message}`);
     }
 
     // Log device-specific info
     const profile = this._deviceProfile;
     this.log('');
-    this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║          WATER LEAK SENSOR v5.5.550                          ║');
-    this.log('╠══════════════════════════════════════════════════════════════╣');
-    this.log(`║ Manufacturer: ${profile.mfr || 'unknown'}`);
-    this.log(`║ Profile Type: ${profile.type || 'hybrid'}`);
-    this.log(`║ Matched By:   ${profile.matchedBy || 'default'}`);
-    this.log(`║ IAS Alarm:    ${profile.iasAlarmBit || 'both'}`);
-    this.log(`║ Has Tamper:   ${profile.hasTamper ? 'YES' : 'NO'}`);
+    this.log('');
+    this.log('          WATER LEAK SENSOR v5.5.550                          ');
+    this.log('');
+    this.log(` Manufacturer: ${profile.mfr || 'unknown'}`);
+    this.log(` Profile Type: ${profile.type || 'hybrid'}`);
+    this.log(` Matched By:   ${profile.matchedBy || 'default'}`);
+    this.log(` IAS Alarm:    ${profile.iasAlarmBit || 'both'}`);
+    this.log(` Has Tamper:   ${profile.hasTamper ? 'YES' : 'NO'}`);
     if (profile.knownIssues) {
-      this.log(`║ Known Issues: ${profile.knownIssues.join(', ')}`);
+      this.log(` Known Issues: ${profile.knownIssues.join(', ')}`);
     }
     if (profile.notes) {
-      this.log(`║ Notes:        ${profile.notes}`);
+      this.log(` Notes:        ${profile.notes}`);
     }
-    this.log('╚══════════════════════════════════════════════════════════════╝');
+    this.log('');
     this.log('');
 
     // v5.5.803: FORUM #1166 FIX - Initialize IAS Alarm Fallback for ALL water leak sensors
@@ -284,7 +284,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       useTuyaMirror: true
     });
     await this._iasFallback.init().catch(e => {
-      this.log(`[WATER] ⚠️ IAS Fallback init failed: ${e.message}`);
+      this.log(`[WATER]  IAS Fallback init failed: ${e.message}`);
     });
     
     // v5.5.918: FORUM FIX - Delayed secondary read
@@ -292,14 +292,14 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       try {
         await this._forceInitialAlarmRead(zclNode);
       } catch (e) {
-        this.log(`[WATER] ⚠️ Secondary read failed: ${e.message}`);
+        this.log(`[WATER]  Secondary read failed: ${e.message}`);
       }
     }, 5000);
 
     // v5.5.803: Force initial alarm state read
     await this._forceInitialAlarmRead(zclNode);
 
-    this.log(`[WATER] ✅ Water leak sensor ready (invert: ${this._invertAlarm})`);
+    this.log(`[WATER]  Water leak sensor ready (invert: ${this._invertAlarm})`);
   }
 
   async _forceInitialAlarmRead(zclNode) {
@@ -320,7 +320,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
             }
           }
         } catch (e) {
-          this.log(`[WATER] ⚠️ Initial IAS read failed: ${e.message}`);
+          this.log(`[WATER]  Initial IAS read failed: ${e.message}`);
         }
       }
 
@@ -331,11 +331,11 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
             await tuyaCluster.dataQuery({}).catch(() => {});
           }
         } catch (e) {
-          this.log(`[WATER] ⚠️ Tuya DP query failed: ${e.message}`);
+          this.log(`[WATER]  Tuya DP query failed: ${e.message}`);
         }
       }
     } catch (e) {
-      this.log(`[WATER] ⚠️ Force initial read error: ${e.message}`);
+      this.log(`[WATER]  Force initial read error: ${e.message}`);
     }
   }
 

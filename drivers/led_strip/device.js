@@ -29,7 +29,7 @@ class LEDStripDevice extends UnifiedLightBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[LED] ✅ LED strip ready');
+    this.log('[LED]  LED strip ready');
   }
 
 

@@ -155,7 +155,7 @@ class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
       }
     } catch (err) { this.log('set_switch_mode card:', err.message); }
 
-    this.log(`✅ ${P}: Flow cards registered`);
+    this.log(` ${P}: Flow cards registered`);
   }
 }
 

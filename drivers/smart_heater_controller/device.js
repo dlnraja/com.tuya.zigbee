@@ -93,7 +93,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    this.log('[HEATER] 🔥 Initializing smart heater controller...');
+    this.log('[HEATER]  Initializing smart heater controller...');
 
     // Initialize settings with defaults
     this._temperatureCalibration = this.getSetting('temperature_calibration') || 0;
@@ -102,7 +102,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
     this._powerLimit = this.getSetting('power_limit') || 2000;
     this._childLock = this.getSetting('child_lock') || false;
 
-    this.log(`[HEATER] ⚙️ Configuration: Calibration=${this._temperatureCalibration}°C, Hysteresis=${this._heatingHysteresis}°C, Overheat=${this._overheatProtection}°C`);
+    this.log(`[HEATER]  Configuration: Calibration=${this._temperatureCalibration}°C, Hysteresis=${this._heatingHysteresis}°C, Overheat=${this._overheatProtection}°C`);
 
     // Call parent initialization
     await super.onNodeInit({ zclNode });
@@ -113,7 +113,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
     // Setup thermostat mode mapping
     this.setupThermostatModes();
 
-    this.log('[HEATER] ✅ Smart heater controller initialized successfully');
+    this.log('[HEATER]  Smart heater controller initialized successfully');
   }
 
   /**
@@ -143,30 +143,30 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   registerSettings() {
     this.registerSetting('temperature_calibration', (newValue) => {
       this._temperatureCalibration = newValue;
-      this.log(`[HEATER] ⚙️ Temperature calibration updated: ${newValue}°C`);
+      this.log(`[HEATER]  Temperature calibration updated: ${newValue}°C`);
       // Send calibration to device
       this._sendCalibration(newValue);
     });
 
     this.registerSetting('heating_hysteresis', (newValue) => {
       this._heatingHysteresis = newValue;
-      this.log(`[HEATER] ⚙️ Heating hysteresis updated: ${newValue}°C`);
+      this.log(`[HEATER]  Heating hysteresis updated: ${newValue}°C`);
     });
 
     this.registerSetting('overheat_protection', (newValue) => {
       this._overheatProtection = newValue;
-      this.log(`[HEATER] ⚙️ Overheat protection updated: ${newValue}°C`);
+      this.log(`[HEATER]  Overheat protection updated: ${newValue}°C`);
       this._sendOverheatProtection(newValue);
     });
 
     this.registerSetting('power_limit', (newValue) => {
       this._powerLimit = newValue;
-      this.log(`[HEATER] ⚙️ Power limit updated: ${newValue}W`);
+      this.log(`[HEATER]  Power limit updated: ${newValue}W`);
     });
 
     this.registerSetting('child_lock', (newValue) => {
       this._childLock = newValue;
-      this.log(`[HEATER] ⚙️ Child lock ${newValue ? 'ENABLED' : 'DISABLED'}`);
+      this.log(`[HEATER]  Child lock ${newValue ? 'ENABLED' : 'DISABLED'}`);
       this._sendChildLock(newValue);
     });
   }
@@ -175,7 +175,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
    * Handle Tuya datapoints specific to heater control
    */
   async _handleDP(dp, value) {
-    this.log(`[HEATER] 📡 Received DP ${dp}: ${value}`);
+    this.log(`[HEATER]  Received DP ${dp}: ${value}`);
 
     switch (dp) {
     case 1: //Power on/off
@@ -211,7 +211,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       break;
 
     case 103: // Temperature calibration response
-      this.log(`[HEATER] 🌡️ Temperature calibration confirmed: ${value}°C`);
+      this.log(`[HEATER]  Temperature calibration confirmed: ${value}°C`);
       break;
 
     default:
@@ -227,7 +227,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   async _handlePowerState(powerOn) {
     const isOn = Boolean(powerOn);
     await this.setCapabilityValue('onoff', isOn);
-    this.log(`[HEATER] 🔥 Power: ${isOn ? 'ON' : 'OFF'}`);
+    this.log(`[HEATER]  Power: ${isOn ? 'ON' : 'OFF'}`);
 
     // Update thermostat mode if turned off
     if (!isOn) {
@@ -243,9 +243,9 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       // Apply calibration
       const calibratedTemp = temperature + this._temperatureCalibration;
       await this.setCapabilityValue('target_temperature', parseFloat(calibratedTemp));
-      this.log(`[HEATER] 🎯 Target temperature: ${temperature}°C (calibrated: ${calibratedTemp}°C)`);
+      this.log(`[HEATER]  Target temperature: ${temperature}°C (calibrated: ${calibratedTemp}°C)`);
     } else {
-      this.log(`[HEATER] ⚠️ Invalid target temperature: ${temperature}`);
+      this.log(`[HEATER]  Invalid target temperature: ${temperature}`);
     }
   }
 
@@ -257,11 +257,11 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       // Apply calibration
       const calibratedTemp = temperature + this._temperatureCalibration;
       await this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp));
-      this.log(`[HEATER] 🌡️ Current temperature: ${temperature}°C (calibrated: ${calibratedTemp}°C)`);
+      this.log(`[HEATER]  Current temperature: ${temperature}°C (calibrated: ${calibratedTemp}°C)`);
 
       // Check overheat protection
       if (temperature >= this._overheatProtection) {
-        this.log(`[HEATER] 🚨 OVERHEAT DETECTED: ${temperature}°C >= ${this._overheatProtection}°C`);
+        this.log(`[HEATER]  OVERHEAT DETECTED: ${temperature}°C >= ${this._overheatProtection}°C`);
         await this.setCapabilityValue('alarm_generic', true);
         // Trigger emergency shutdown
         await this._emergencyShutdown();
@@ -269,7 +269,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
         await this.setCapabilityValue('alarm_generic', false);
       }
     } else {
-      this.log(`[HEATER] ⚠️ Invalid temperature reading: ${temperature}`);
+      this.log(`[HEATER]  Invalid temperature reading: ${temperature}`);
     }
   }
 
@@ -279,7 +279,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   async _handleThermostatMode(modeValue) {
     const modeName = this._thermostatModeNames[modeValue] || 'manual';
     await this.setCapabilityValue('thermostat_mode', modeName);
-    this.log(`[HEATER] 🎛️ Thermostat mode: ${modeName} (${modeValue})`);
+    this.log(`[HEATER]  Thermostat mode: ${modeName} (${modeValue})`);
   }
 
   /**
@@ -288,15 +288,15 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   async _handlePowerConsumption(power) {
     if (typeof power === 'number' && power >= 0 && power <= 5000) {
       await this.setCapabilityValue('measure_power', parseFloat(power));
-      this.log(`[HEATER] ⚡ Power consumption: ${power}W`);
+      this.log(`[HEATER]  Power consumption: ${power}W`);
 
       // Check power limit
       if (power > this._powerLimit) {
-        this.log(`[HEATER] 🚨 POWER LIMIT EXCEEDED: ${power}W > ${this._powerLimit}W`);
+        this.log(`[HEATER]  POWER LIMIT EXCEEDED: ${power}W > ${this._powerLimit}W`);
         await this.setCapabilityValue('alarm_generic', true);
       }
     } else {
-      this.log(`[HEATER] ⚠️ Invalid power reading: ${power}`);
+      this.log(`[HEATER]  Invalid power reading: ${power}`);
     }
   }
 
@@ -308,7 +308,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       // Convert to kWh if needed
       const energyKwh = energy > 1000 ? safeParse(energy, 1000) : energy;
       await this.setCapabilityValue('meter_power', parseFloat(energyKwh));
-      this.log(`[HEATER] 📊 Energy consumed: ${energyKwh} kWh`);
+      this.log(`[HEATER]  Energy consumed: ${energyKwh} kWh`);
     }
   }
 
@@ -318,7 +318,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   async _handleChildLockStatus(locked) {
     const isLocked = Boolean(locked);
     this._childLock = isLocked;
-    this.log(`[HEATER] 🔒 Child lock: ${isLocked ? 'LOCKED' : 'UNLOCKED'}`);
+    this.log(`[HEATER]  Child lock: ${isLocked ? 'LOCKED' : 'UNLOCKED'}`);
   }
 
   /**
@@ -327,7 +327,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   async _handleOverheatProtection(triggered) {
     const isTriggered = Boolean(triggered);
     await this.setCapabilityValue('alarm_generic', isTriggered);
-    this.log(`[HEATER] 🚨 Overheat protection: ${isTriggered ? 'TRIGGERED' : 'NORMAL'}`);
+    this.log(`[HEATER]  Overheat protection: ${isTriggered ? 'TRIGGERED' : 'NORMAL'}`);
 
     if (isTriggered) {
       // Force shutdown
@@ -345,7 +345,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
    * Emergency shutdown procedure
    */
   async _emergencyShutdown() {
-    this.log('[HEATER] 🚨 EMERGENCY SHUTDOWN ACTIVATED');
+    this.log('[HEATER]  EMERGENCY SHUTDOWN ACTIVATED');
 
     try {
       // Turn off heater immediately
@@ -359,9 +359,9 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
         data: Buffer.from([0]) // false
       });
 
-      this.log('[HEATER] ✅ Emergency shutdown completed');
+      this.log('[HEATER]  Emergency shutdown completed');
     } catch (err) {
-      this.error('[HEATER] ❌ Emergency shutdown failed:', err);
+      this.error('[HEATER]  Emergency shutdown failed:', err);
     }
   }
 
@@ -427,7 +427,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   }
 
   onDeleted() {
-    this.log('[HEATER] 🔥 Smart heater controller device deleted');
+    this.log('[HEATER]  Smart heater controller device deleted');
   }
 
   /**

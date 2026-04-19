@@ -85,4 +85,4 @@ analysis.filter(a => a.category === 'HYBRID/UNKNOWN').forEach(a => {
 
 // Save to file for further processing
 fs.writeFileSync('ts0601-analysis.json', JSON.stringify(analysis, null, 2));
-console.log('\n✅ Saved full analysis to ts0601-analysis.json');
+console.log('\n Saved full analysis to ts0601-analysis.json');

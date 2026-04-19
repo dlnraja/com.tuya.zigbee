@@ -47,18 +47,18 @@ class AirQualityComprehensiveDevice extends UnifiedSensorBase {
 
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected    
-    if (this.mainsPowered && this.hasCapability('measure_battery')) {this.log('[AIR-QUALITY] 🔌 Mains-powered: removed measure_battery');
+    if (this.mainsPowered && this.hasCapability('measure_battery')) {this.log('[AIR-QUALITY]  Mains-powered: removed measure_battery');
     }
 
     // v5.11.15: Ensure VOC and HCHO capabilities are added for devices that report them
     for (const cap of ['measure_voc', 'measure_formaldehyde']) {
       if (!this.hasCapability(cap)) {
         await this.addCapability(cap).catch(() => {});
-        this.log(`[AIR-QUALITY] ➕ Added ${cap} capability`);
+        this.log(`[AIR-QUALITY]  Added ${cap} capability`);
       }
     }
 
-    this.log('[AIR-QUALITY] ✅ Ready');
+    this.log('[AIR-QUALITY]  Ready');
   }
 
 

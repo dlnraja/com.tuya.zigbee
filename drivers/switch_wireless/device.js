@@ -25,7 +25,7 @@ class SwitchWirelessDevice extends UnifiedSwitchBase {
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
     this._lastWirelessPress = 0;
-    this.log('[WIRELESS-SWITCH] ✅ Ready (v5.12.12)');
+    this.log('[WIRELESS-SWITCH]  Ready (v5.12.12)');
   }
 
   get dpMappings() {

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// v5.13.0: Enhanced email reader — full MIME decode, pseudo extraction, RFC2047
+// v5.13.0: Enhanced email reader  full MIME decode, pseudo extraction, RFC2047
 let ImapFlow; try { ImapFlow = require('imapflow').ImapFlow } catch {}
 const MBS = ['INBOX', '[Gmail]/All Mail', '[Gmail]/Tous les messages'];
 
@@ -108,7 +108,7 @@ function parseMIME(rawSource) {
     } else if (pCT.includes('text/html') && !result.textHtml) {
       result.textHtml = decoded;
     } else if (pCT.includes('multipart')) {
-      // Nested multipart — recurse with a fake source
+      // Nested multipart  recurse with a fake source
       const nested = parseMIME(part.substring(0, pHeaderEnd) + '\n\n' + pBody);
       if (!result.textPlain && nested.textPlain) result.textPlain = nested.textPlain;
       if (!result.textHtml && nested.textHtml) result.textHtml = nested.textHtml;

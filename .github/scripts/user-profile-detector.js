@@ -54,16 +54,16 @@ function getResponseHints(det){
   const h={tone:'friendly',includeSteps:true,technicalDetail:false,mentionRepair:true,askDiag:true};
   if(det.profile===PROFILE.DEV){h.tone='peer';h.includeSteps=false;h.technicalDetail=true;h.askDiag=false}
   else if(det.profile===PROFILE.POWER){h.tone='concise';h.technicalDetail=false}
-  if(det.isReturning&&det.pending){h.contextNote='Returning user with pending: '+det.pending.status+' — '+det.pending.note}
-  if(det.isReturning&&det.known){h.contextNote='Known user ('+det.known.status+'). Last fix: v'+det.known.latestFix?.ver+' — '+det.known.latestFix?.fix}
+  if(det.isReturning&&det.pending){h.contextNote='Returning user with pending: '+det.pending.status+'  '+det.pending.note}
+  if(det.isReturning&&det.known){h.contextNote='Known user ('+det.known.status+'). Last fix: v'+det.known.latestFix?.ver+'  '+det.known.latestFix?.fix}
   return h;
 }
 function buildPromptContext(det){
   let ctx='';
   ctx+='User profile: '+det.profile+(det.isReturning?' (RETURNING USER)':'')+'\n';
-  if(det.profile===PROFILE.DEV)ctx+='This user is technical — talk peer-to-peer, skip basic steps, mention clusters/DPs if relevant.\n';
-  else if(det.profile===PROFILE.POWER)ctx+='This user knows Homey well — be concise, skip obvious steps, focus on the fix.\n';
-  else ctx+='This user may be non-technical — explain clearly with simple steps, be encouraging.\n';
+  if(det.profile===PROFILE.DEV)ctx+='This user is technical  talk peer-to-peer, skip basic steps, mention clusters/DPs if relevant.\n';
+  else if(det.profile===PROFILE.POWER)ctx+='This user knows Homey well  be concise, skip obvious steps, focus on the fix.\n';
+  else ctx+='This user may be non-technical  explain clearly with simple steps, be encouraging.\n';
   if(det.known)ctx+='KNOWN USER: '+det.known.name+' ('+det.known.status+'). Devices: '+det.known.devices+'. Last fix: v'+(det.known.latestFix?.ver||'?')+'\n';
   if(det.pending)ctx+='PENDING ISSUE: '+det.pending.device+' ('+det.pending.status+'): '+det.pending.note+'\n';
   return ctx;

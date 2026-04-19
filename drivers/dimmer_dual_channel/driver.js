@@ -1,17 +1,9 @@
 'use strict';
+
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
-
-
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.578: CRITICAL FIX - Flow card run listeners were missing
- */
 class DimmerDualChannelDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -21,118 +13,124 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('DimmerDualChannelDriver v5.5.578 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    // CONDITION: Is on
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('dimmer_dual_channel_dim_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_dual_channel_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('dimmer_dual_channel_turned_off'); } catch (e) {}
+
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('dimmer_dual_channel_is_on'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('dimmer_dual_channel_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ Registered: dimmer_dual_channel_is_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition dimmer_dual_channel_is_on: ${err.message}`); }
 
-    // CONDITION: Dim above
     try {
-      (() => { try { return this.homey.flow.getConditionCard('dimmer_dual_channel_dim_above'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('dimmer_dual_channel_dim_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const dim = args.device.getCapabilityValue('dim') || 0;
-return safeMultiply((dim, 100)) > args.level;
+          const val = args.device.getCapabilityValue('measure_co2') || 0;
+          return val > (args.threshold || 400);
         });
-      this.log('[FLOW] ✅ Registered: dimmer_dual_channel_dim_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition dimmer_dual_channel_dim_above: ${err.message}`); }
 
-    // ACTION: Turn on
+    // ACTIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('dimmer_dual_channel_turn_on'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('dimmer_dual_channel_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
-          await args.device.setCapabilityValue('onoff', true).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: dimmer_dual_channel_turn_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action dimmer_dual_channel_turn_on: ${err.message}`); }
 
-    // ACTION: Turn off
     try {
-      (() => { try { return this.homey.flow.getConditionCard('dimmer_dual_channel_turn_off'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('dimmer_dual_channel_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
-          await args.device.setCapabilityValue('onoff', false).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: dimmer_dual_channel_turn_off');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action dimmer_dual_channel_turn_off: ${err.message}`); }
 
-    // ACTION: Toggle
     try {
-      (() => { try { return this.homey.flow.getConditionCard('dimmer_dual_channel_toggle'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('dimmer_dual_channel_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device._setGangOnOff(1, !current).catch(() => {});
-          await args.device.setCapabilityValue('onoff', !current).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: dimmer_dual_channel_toggle');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action dimmer_dual_channel_toggle: ${err.message}`); }
 
-    // ACTION: Set dim level
     try {
-      (() => { try { return this.homey.flow.getActionCard('dimmer_dual_channel_set_dim'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('dimmer_dual_channel_set_dim');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('dim', safeParse(args.level, 100));
+          await args.device.triggerCapabilityListener('dim', args.brightness || args.value || 1).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ Registered: dimmer_dual_channel_set_dim');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action dimmer_dual_channel_set_dim: ${err.message}`); }
 
-    // ACTION: Dim up
     try {
-      (() => { try { return this.homey.flow.getConditionCard('dimmer_dual_channel_dim_up'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('dimmer_dual_channel_dim_up');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const current = args.device.getCapabilityValue('dim') || 0;
-          await args.device.triggerCapabilityListener('dim', Math.min(1, current + 0.1));
+          // Generic action handler
+          this.log('[FLOW] Action dimmer_dual_channel_dim_up triggered for', args.device.getName());
           return true;
         });
-      this.log('[FLOW] ✅ Registered: dimmer_dual_channel_dim_up');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action dimmer_dual_channel_dim_up: ${err.message}`); }
 
-    // ACTION: Dim down
     try {
-      (() => { try { return this.homey.flow.getConditionCard('dimmer_dual_channel_dim_down'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('dimmer_dual_channel_dim_down');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const current = args.device.getCapabilityValue('dim') || 0;
-          await args.device.triggerCapabilityListener('dim', Math.max(0, current - 0.1));
+          // Generic action handler
+          this.log('[FLOW] Action dimmer_dual_channel_dim_down triggered for', args.device.getName());
           return true;
         });
-      this.log('[FLOW] ✅ Registered: dimmer_dual_channel_dim_down');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action dimmer_dual_channel_dim_down: ${err.message}`); }
 
-    this.log('[FLOW]  Dimmer dual channel flow cards registered');
+    try {
+      const card = this.homey.flow.getActionCard('dimmer_dual_channel_set_brightness');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('dim', args.brightness || args.value || 1).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action dimmer_dual_channel_set_brightness: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

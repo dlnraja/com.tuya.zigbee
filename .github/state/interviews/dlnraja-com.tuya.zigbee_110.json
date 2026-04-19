@@ -16,7 +16,7 @@
       "user": "github-actions[bot]",
       "date": "2026-01-21T20:17:01Z",
       "fps": [],
-      "excerpt": "Hi @Pollepa! 👋\n\n**Please provide:**\n- manufacturerName: `zb_manufacturer_name`\n- productId: `zb_product_id`\n- Diagnostics Report\n\nGet these from [Developer Tools](https://tools.developer.homey.app)\n\n*Auto-response - maintainer will review soon.*"
+      "excerpt": "Hi @Pollepa! \n\n**Please provide:**\n- manufacturerName: `zb_manufacturer_name`\n- productId: `zb_product_id`\n- Diagnostics Report\n\nGet these from [Developer Tools](https://tools.developer.homey.app)\n\n*Auto-response - maintainer will review soon.*"
     },
     {
       "user": "Ernst02507",
@@ -32,7 +32,7 @@
       "fps": [
         "_TZ3210_w0qqde0g"
       ],
-      "excerpt": "Hi @Ernst02507 @Pollepa,\n\nI understand the issue persists. Let me clarify:\n\n### Current Status (v5.5.991)\nThe **_TZ3210_w0qqde0g** is now in the ZCL_ELECTRICAL config.\n\n### Important Steps:\n1. Make sure you have **v5.5.991** (latest)\n2. **Completely remove** the device from Homey\n3. Wait 30 seconds\n4. **Re-pair** the device\n\n### If still not working:\nPlease share a **new diagnostic report** after re-pairing:\n- Go to device → Settings → Advanced → Generate Diagnostic Report\n- Share the JSON here\n\nThe energy readings require proper cluster binding which happens during pairing. Simply updating the app without re-pairing won't activate the new configuration.\n\nLet me know the results!"
+      "excerpt": "Hi @Ernst02507 @Pollepa,\n\nI understand the issue persists. Let me clarify:\n\n### Current Status (v5.5.991)\nThe **_TZ3210_w0qqde0g** is now in the ZCL_ELECTRICAL config.\n\n### Important Steps:\n1. Make sure you have **v5.5.991** (latest)\n2. **Completely remove** the device from Homey\n3. Wait 30 seconds\n4. **Re-pair** the device\n\n### If still not working:\nPlease share a **new diagnostic report** after re-pairing:\n- Go to device  Settings  Advanced  Generate Diagnostic Report\n- Share the JSON here\n\nThe energy readings require proper cluster binding which happens during pairing. Simply updating the app without re-pairing won't activate the new configuration.\n\nLet me know the results!"
     },
     {
       "user": "Ernst02507",

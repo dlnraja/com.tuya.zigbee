@@ -13,7 +13,7 @@ class WallCurtainSwitchDevice extends UnifiedCoverBase {
   async onNodeInit({ zclNode }) {
     this.log('[WALL_CURTAIN_SWITCH] init');
 
-    // v5.13.1: CRITICAL FIX — must call super to initialize protocol detection,
+    // v5.13.1: CRITICAL FIX  must call super to initialize protocol detection,
     // Tuya DP, capability migration, and ZCL fallbacks from UnifiedCoverBase
     await super.onNodeInit({ zclNode }).catch(e =>
       this.log('[WALL_CURTAIN_SWITCH] super.onNodeInit warn:', e.message)

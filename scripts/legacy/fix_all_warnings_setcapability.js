@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔧 CORRECTION AUTOMATIQUE - TOUS LES WARNINGS setCapabilityValue\n');
+console.log(' CORRECTION AUTOMATIQUE - TOUS LES WARNINGS setCapabilityValue\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -124,11 +124,11 @@ function fixSetCapabilityValue(filePath) {
       stats.filesModified++;
 
       const relativePath = path.relative(ROOT, filePath);
-      console.log(`   ✅ ${relativePath}`);
+      console.log(`    ${relativePath}`);
     }
 
   } catch (e) {
-    console.error(`   ❌ Erreur ${path.relative(ROOT, filePath)}:`, e.message);
+    console.error(`    Erreur ${path.relative(ROOT, filePath)}:`, e.message);
   }
 }
 
@@ -155,28 +155,28 @@ function scanDirectory(dir) {
 }
 
 // EXÉCUTION
-console.log('🔍 Scanning drivers/...\n');
+console.log(' Scanning drivers/...\n');
 scanDirectory(DRIVERS_DIR);
 
-console.log('\n🔍 Scanning lib/...\n');
+console.log('\n Scanning lib/...\n');
 scanDirectory(LIB_DIR);
 
 // RAPPORT FINAL
-console.log('\n\n📊 RAPPORT CORRECTIONS:\n');
+console.log('\n\n RAPPORT CORRECTIONS:\n');
 console.log(`   Fichiers scannés: ${stats.filesScanned}`);
 console.log(`   Fichiers modifiés: ${stats.filesModified}`);
 console.log(`   Lignes corrigées: ${stats.linesFixed}`);
 console.log(`   Backups créés: ${stats.backupsCreated}\n`);
 
 if (stats.filesModified > 0) {
-  console.log('✅ CORRECTIONS APPLIQUÉES\n');
-  console.log('🎯 PROCHAINES ÉTAPES:');
+  console.log(' CORRECTIONS APPLIQUÉES\n');
+  console.log(' PROCHAINES ÉTAPES:');
   console.log('   1. Relancer audit: node scripts/audit_complete_advanced.js');
   console.log('   2. Vérifier warnings restants');
   console.log('   3. Valider: homey app validate --level publish');
   console.log('   4. Build: homey app build\n');
 } else {
-  console.log('✅ AUCUNE CORRECTION NÉCESSAIRE\n');
+  console.log(' AUCUNE CORRECTION NÉCESSAIRE\n');
 }
 
 process.exit(0);

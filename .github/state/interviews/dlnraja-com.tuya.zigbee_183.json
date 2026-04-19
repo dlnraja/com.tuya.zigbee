@@ -18,7 +18,7 @@
       "fps": [
         "_TZ3000_tsgqxdb4"
       ],
-      "excerpt": "<!-- tuya-triage-bot -->\nFingerprint(s) found in v5.11.154:\n\n- `_TZ3000_tsgqxdb4` → **climate_sensor**\n- `TS0201` → **unknown**\n- `TS0601` → **unknown**\n\nInstall the [test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/), **remove the device, and re-pair** so it picks up the correct driver.\n\n**If the device still shows as unknown or doesn't work**, please share a diagnostic report ID and a [Developer Tools interview](https:
+      "excerpt": "<!-- tuya-triage-bot -->\nFingerprint(s) found in v5.11.154:\n\n- `_TZ3000_tsgqxdb4`  **climate_sensor**\n- `TS0201`  **unknown**\n- `TS0601`  **unknown**\n\nInstall the [test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/), **remove the device, and re-pair** so it picks up the correct driver.\n\n**If the device still shows as unknown or doesn't work**, please share a diagnostic report ID and a [Developer Tools interview](https:
     }
   ],
   "aiAnalysis": "```json\n{\n  \"manufacturerName\": \"_TZ3000_tsgqxdb4\",\n  \"productId\": \"TS0201\",\n  \"DPs\": [],\n  \"capabilities\": {\n    \"measure_temperature\": {\n      \"type\": \"number\",\n      \"value\": null\n    },\n    \"measure_humidity\": {\n      \"type\": \"number\",\n      \"value\": null\n    },\n    \"measure_battery\": {\n      \"type\": \"number\",\n      \"value\": null\n    }\n  },\n  \"errors\": [\n    \"No values from Temp Humidity or battery\"\n  ],\n  \"deviceType\": \"Temperature/Humidity Sensor\",\n  \"powerSource\": \"AC Powered (mains)\"\n}\n```",

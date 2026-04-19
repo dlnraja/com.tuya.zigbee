@@ -1,4 +1,4 @@
-# 📊 ANALYSE EXHAUSTIVE FORUM - PROBLÈMES IDENTIFIÉS
+#  ANALYSE EXHAUSTIVE FORUM - PROBLÈMES IDENTIFIÉS
 
 **Date**: 2026-01-13  
 **Source**: Pages 46-48 + activité dlnraja  
@@ -6,14 +6,14 @@
 
 ---
 
-## 🚨 PROBLÈMES CRITIQUES (9 identifiés)
+##  PROBLÈMES CRITIQUES (9 identifiés)
 
 ### 1. **BSEED 4-Gang Switch TS0726** 
 - **ManufacturerID**: `_TZ3002_pzao9ls1`
 - **ProductID**: `TS0726`
 - **Problème**: "Could not get device by id" error
 - **Power Source**: Incorrect (battery au lieu de mains)
-- **Status Driver**: ✅ DÉJÀ PRÉSENT dans switch_4gang
+- **Status Driver**:  DÉJÀ PRÉSENT dans switch_4gang
 - **Action**: Fix flow card registration + power source detection
 - **Interview**: Disponible (4 endpoints, clusters 0xE000/0xE001)
 
@@ -22,7 +22,7 @@
 - **ProductID**: `ZG-101ZL`
 - **Problème**: Détecté comme "Unknown Zigbee Device"
 - **Cause**: Clusters mismatch - utilise 0xE001 au lieu de 0xE000
-- **Status Driver**: ✅ DÉJÀ PRÉSENT dans button_wireless_1
+- **Status Driver**:  DÉJÀ PRÉSENT dans button_wireless_1
 - **Action**: Ajouter support cluster 57345 (0xE001) + onOff attribute listener
 - **Interview**: Complète avec nouveaux clusters
 
@@ -32,7 +32,7 @@
 - **Problème**: Nouvelle demande utilisateur Lasse_K
 - **Type**: waterSensor (IAS Zone)
 - **Clusters**: [0, 3, 1280, 1]
-- **Status**: ✅ DÉJÀ PRÉSENT dans water_leak_sensor
+- **Status**:  DÉJÀ PRÉSENT dans water_leak_sensor
 - **Action**: Vérifier manufacturerName case (HOBEIAN vs _TZ...)
 - **Interview**: Complète disponible
 
@@ -78,27 +78,27 @@
 
 ---
 
-## 📝 DEMANDES NOUVELLES DEVICES
+##  DEMANDES NOUVELLES DEVICES
 
 ### Water Leak Detector (Lasse_K)
-- **Status**: ✅ Device déjà supporté
+- **Status**:  Device déjà supporté
 - **Action**: Guider utilisateur vers driver correct
 
 ### 3-Button Remote (Daniel_van_Mourik)
-- **Status**: ⚠️ À AJOUTER
+- **Status**:  À AJOUTER
 - **Priority**: HIGH
 - **Info**: Screenshots disponibles
 
 ---
 
-## 🔧 CORRECTIONS À IMPLÉMENTER
+##  CORRECTIONS À IMPLÉMENTER
 
 ### Priority HIGH
-1. ✅ Fix BSEED TS0726 flow card registration
-2. ✅ Fix HOBEIAN ZG-101ZL cluster 0xE001 detection
-3. ✅ Fix mmWave sensor classification (climate → presence)
-4. ✅ Fix door sensor alarm inversion logic
-5. ⚠️ Fix power source detection (mains vs battery)
+1.  Fix BSEED TS0726 flow card registration
+2.  Fix HOBEIAN ZG-101ZL cluster 0xE001 detection
+3.  Fix mmWave sensor classification (climate  presence)
+4.  Fix door sensor alarm inversion logic
+5.  Fix power source detection (mains vs battery)
 
 ### Priority MEDIUM
 6. Debug button auto-trigger timing
@@ -110,7 +110,7 @@
 
 ---
 
-## 📊 STATISTIQUES
+##  STATISTIQUES
 
 - **Pages analysées**: 46-48
 - **Problèmes identifiés**: 9
@@ -121,7 +121,7 @@
 
 ---
 
-## 🔗 LIENS FORUM RÉFÉRENCÉS
+##  LIENS FORUM RÉFÉRENCÉS
 
 1. https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/955
 2. https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352?page=48
@@ -132,14 +132,14 @@
 
 ---
 
-## 🆕 NOUVEAUX DEVICES IDENTIFIÉS (Pages 40-42)
+##  NOUVEAUX DEVICES IDENTIFIÉS (Pages 40-42)
 
 ### eWeLink Temperature & Humidity Sensor
 - **ManufacturerID**: `eWeLink`
 - **ProductID**: `CK-TLSR8656-SS5-01(7014)`
 - **Clusters**: [0, 1, 3, 4, 32, 1026, 1029, 64529]
 - **Features**: Temperature, Humidity, Battery, Poll Control
-- **Status**: ⚠️ À AJOUTER au driver climate_sensor
+- **Status**:  À AJOUTER au driver climate_sensor
 - **Interview**: Complète disponible
 
 ### HOBEIAN ZG-102Z Contact Sensor
@@ -147,14 +147,14 @@
 - **ProductID**: `ZG-102Z`
 - **Clusters**: [0, 3, 1280, 61184, 1] - IAS Zone + Tuya DP
 - **Features**: Contact, Battery, Tamper
-- **Status**: ⚠️ À AJOUTER au driver contact_sensor
+- **Status**:  À AJOUTER au driver contact_sensor
 - **Interview**: Complète disponible
 
 ### RGB Bulb TS0505B
 - **ManufacturerID**: `_TZ3210_s8lvbbuc`
 - **ProductID**: `TS0505B`
 - **Features**: RGB+CCT, mains-powered
-- **Status**: ✅ Probablement déjà supporté
+- **Status**:  Probablement déjà supporté
 
 ### 4-Scene Button Switches
 - **ManufacturerID**: `_TZ3000_wkai4ga5`, `_TZ3000_5tqxpine`
@@ -164,7 +164,7 @@
 
 ---
 
-## 📋 DEMANDES SUPPLÉMENTAIRES
+##  DEMANDES SUPPLÉMENTAIRES
 
 ### Zigbee IR Blaster
 - **Utilisateur**: FrankP
@@ -182,7 +182,7 @@
 
 ---
 
-## 📊 STATISTIQUES FINALES
+##  STATISTIQUES FINALES
 
 - **Pages analysées**: 40-48 (9 pages)
 - **Problèmes critiques**: 9
@@ -194,9 +194,9 @@
 
 ---
 
-## ✅ ACTIONS COMPLÉTÉES
+##  ACTIONS COMPLÉTÉES
 
-1. ✅ GitHub Actions workflows corrigés (permissions + YAML)
-2. ✅ Forum analysé exhaustivement (pages 40-48)
-3. ✅ Problèmes documentés avec interviews complètes
-4. ✅ FORUM_ISSUES_ANALYSIS.md créé
+1.  GitHub Actions workflows corrigés (permissions + YAML)
+2.  Forum analysé exhaustivement (pages 40-48)
+3.  Problèmes documentés avec interviews complètes
+4.  FORUM_ISSUES_ANALYSIS.md créé

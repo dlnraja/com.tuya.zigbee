@@ -4,12 +4,12 @@ const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SIREN / ALARM - v5.5.130 ENRICHED (Zigbee2MQTT features)               ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Source: https://www.zigbee2mqtt.io/devices/TS0216.html                     ║
- * ║  Features: alarm, volume, duration, melody, strobe                           ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       SIREN / ALARM - v5.5.130 ENRICHED (Zigbee2MQTT features)               
+ * 
+ *   Source: https://www.zigbee2mqtt.io/devices/TS0216.html                     
+ *   Features: alarm, volume, duration, melody, strobe                           
+ * 
  */
 class SirenDevice extends UnifiedPlugBase {
 
@@ -22,15 +22,15 @@ class SirenDevice extends UnifiedPlugBase {
    */
   get dpMappings() {
     return {
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // ALARM CONTROL
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       13: { capability: 'onoff', transform: (v) => v === 1 || v === true },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // v5.5.130: VOLUME & SOUND from Zigbee2MQTT
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // Volume (0=low, 1=medium, 2=high or 0-100)
       5: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (safeParse(v, 100))) },
       // Duration (60-3600 seconds)
@@ -40,24 +40,24 @@ class SirenDevice extends UnifiedPlugBase {
       // Alarm type (sound, light, sound+light, normal)
       16: { capability: null, setting: 'alarm_type', writable: true },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // BATTERY
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolète
       15: { capability: 'measure_battery', divisor: 1 },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // ENVIRONMENTAL (some sirens have T/H sensors)
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       104: { capability: 'onoff', transform: (v) => !!v },
       116: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (safeParse(v, 100))) },
       103: { capability: null, setting: 'duration', writable: true },
       101: { capability: 'measure_temperature', divisor: 10 },
       102: { capability: 'measure_humidity', divisor: 1 },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // v5.5.130: ADDITIONAL FEATURES
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // Strobe light control
       6: { capability: null, setting: 'strobe' },
       // Tamper alarm
@@ -104,14 +104,14 @@ class SirenDevice extends UnifiedPlugBase {
     }
 
     // Flow cards registered in driver.js (NOT here to avoid double-registration)
-    this.log('[SIREN] ✅ Ready');
+    this.log('[SIREN]  Ready');
   }
 
   async _setupIasWD(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
     try {
       this._iasWd = ep1?.clusters?.ssIasWd || ep1?.clusters?.iasWd;
-      if (this._iasWd) this.log('[SIREN] ✅ IAS WD cluster available');
+      if (this._iasWd) this.log('[SIREN]  IAS WD cluster available');
     } catch (e) { /* ignore */ }
   }
 
@@ -119,7 +119,7 @@ class SirenDevice extends UnifiedPlugBase {
    * Override parent _setOnOff to add IAS WD support
    */
   async _setOnOff(value) {
-    this.log(`[SIREN] 🔔 Alarm: ${value ? 'ON' : 'OFF'}`);
+    this.log(`[SIREN]  Alarm: ${value ? 'ON' : 'OFF'}`);
 
     // v5.11.27: TS0601=DP13, NEO=DP104, TS0216=DP1
     try { await this._sendTuyaDP(13, !!value, 'bool'); } catch (e) {}
@@ -150,7 +150,7 @@ class SirenDevice extends UnifiedPlugBase {
     if (tuya?.datapoint) {
       await tuya.datapoint({ dp, value, type });
     } else {
-      this.log(`[SIREN] ⚠️ No Tuya DP transport for DP${dp}`);
+      this.log(`[SIREN]  No Tuya DP transport for DP${dp}`);
     }
   }
 

@@ -20,7 +20,7 @@
     "Motion alarm ALWAYS YES",
     "Updates every 20 seconds even with no movement",
     "Human presence works correctly",
-    "Illuminance jumps: 30 lux → 1000-1100 lux"
+    "Illuminance jumps: 30 lux  1000-1100 lux"
   ],
   "rootCause": "ZCL occupancy/IAS handlers not using invertPresence config",
   "fix": {

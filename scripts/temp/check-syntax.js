@@ -27,4 +27,4 @@ function walk(dir) {
 }
 
 // walk(searchDir);
-console.log(`\n✅ Script setup ready`);
+console.log(`\n Script setup ready`);

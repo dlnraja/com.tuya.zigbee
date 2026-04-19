@@ -39,41 +39,44 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is present
     try {
-      (() => { try { return
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('presence_sensor_radar_is_present');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
-      this.log('[FLOW] ✅ presence_sensor_radar_is_present');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW]  Registered: presence_sensor_radar_is_present');
+      }
+    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }
 
     // CONDITION: Illuminance above
     try {
-      (() => { try { return
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('presence_sensor_radar_illuminance_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const lux = args.device.getCapabilityValue('measure_luminance') || 0;
           return lux > (args.lux || 100);
         });
-      this.log('[FLOW] ✅ presence_sensor_radar_illuminance_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW]  Registered: presence_sensor_radar_illuminance_above');
+      }
+    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }
 
     // CONDITION: Distance within
     try {
-      (() => { try { return
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('presence_sensor_radar_distance_within');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const distance = args.device.getCapabilityValue('measure_luminance.distance') || 0;
           return distance <= (args.distance || 300);
         });
-      this.log('[FLOW] ✅ presence_sensor_radar_distance_within');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW]  Registered: presence_sensor_radar_distance_within');
+      }
 
     this.log('[FLOW] Presence sensor radar flow cards registered');
   }
 }
+    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }
 
 module.exports = PresenceSensorRadarDriver;

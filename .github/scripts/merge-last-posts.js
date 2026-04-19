@@ -54,7 +54,7 @@ const cleaned=raws.map(r=>dedupSections(r.replace(/\n*As always,?\s*remove and r
 const combined=dedupSections(cleaned.join('\n\n---\n\n'));
 console.log('After dedup:',combined.length,'chars (was',raws.reduce((a,r)=>a+r.length,0)+')');
 // Humanize with AI
-const prompt='You\'re Dylan, solo dev of Universal Tuya Zigbee on Homey. Rewrite this into ONE short forum post. Sound like a real person typing between coding sessions — casual, short sentences, no corporate tone. ABSOLUTELY NO: "Hi @user," greetings, bullet lists with arrows, ## headers, numbered steps, "Happy to help", "Feel free to", "As always,", "Please provide". Just talk naturally. Max 300 words. End naturally, no signature.';
+const prompt='You\'re Dylan, solo dev of Universal Tuya Zigbee on Homey. Rewrite this into ONE short forum post. Sound like a real person typing between coding sessions  casual, short sentences, no corporate tone. ABSOLUTELY NO: "Hi @user," greetings, bullet lists with arrows, ## headers, numbered steps, "Happy to help", "Feel free to", "As always,", "Please provide". Just talk naturally. Max 300 words. End naturally, no signature.';
 const ai=await callAI(combined,prompt,{maxTokens:2048,complexity:'medium'});
 const final=sanitize(ai?ai.text:combined);
 console.log('Merged content:',final.length,'chars (model:',ai?.model||'none',')');

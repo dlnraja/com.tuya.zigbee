@@ -11,4 +11,4 @@ content.energy = {
 };
 
 fs.writeFileSync(file, JSON.stringify(content, null, 2));
-console.log('✅ Fixed radiator_valve_zigbee: Added energy.batteries');
+console.log(' Fixed radiator_valve_zigbee: Added energy.batteries');

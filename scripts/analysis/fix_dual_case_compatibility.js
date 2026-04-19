@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
- * 🚨 EMERGENCY FIX v5.5.297: Dual Case manufacturerName Compatibility
+ *  EMERGENCY FIX v5.5.297: Dual Case manufacturerName Compatibility
  *
  * PROBLÈME CRITIQUE DÉTECTÉ POST #747:
- * - v5.5.296 a converti tous _tze204_ → _TZE204_ (UPPERCASE)
+ * - v5.5.296 a converti tous _tze204_  _TZE204_ (UPPERCASE)
  * - Mais devices réels reportent manufacturerName en LOWERCASE
  * - Résultat: Device matching CASSÉ, devices non reconnus
  *
@@ -39,7 +39,7 @@ class DualCaseCompatibilityFixer {
   }
 
   async fixAllDrivers() {
-    console.log('🚨 EMERGENCY DUAL CASE COMPATIBILITY FIX v5.5.297');
+    console.log(' EMERGENCY DUAL CASE COMPATIBILITY FIX v5.5.297');
     console.log('='.repeat(60));
     console.log('Problem: v5.5.296 UPPERCASE corrections broke device matching');
     console.log('Solution: Add lowercase versions for backward compatibility');
@@ -86,7 +86,7 @@ class DualCaseCompatibilityFixer {
             // Vérifier si lowercase version n'existe pas déjà
             if (!originalNames.includes(lowercaseName)) {
               namesToAdd.add(lowercaseName);
-              console.log(`  🔄 ${driverName}: Adding dual case ${manufacturerName} → ${lowercaseName}`);
+              console.log(`   ${driverName}: Adding dual case ${manufacturerName}  ${lowercaseName}`);
               addedCount++;
             }
           }
@@ -109,19 +109,19 @@ class DualCaseCompatibilityFixer {
           additions: addedCount
         });
 
-        console.log(`  ✅ ${driverName}: ${addedCount} lowercase versions added`);
+        console.log(`   ${driverName}: ${addedCount} lowercase versions added`);
       }
 
       this.results.filesProcessed++;
 
     } catch (error) {
-      console.log(`❌ Error fixing ${driverName}: ${error.message}`);
+      console.log(` Error fixing ${driverName}: ${error.message}`);
       this.results.errors++;
     }
   }
 
   generateReport() {
-    console.log('\n📊 DUAL CASE COMPATIBILITY FIX REPORT v5.5.297');
+    console.log('\n DUAL CASE COMPATIBILITY FIX REPORT v5.5.297');
     console.log('='.repeat(60));
     console.log(`Files processed: ${this.results.filesProcessed}`);
     console.log(`Lowercase versions added: ${this.results.additionsApplied}`);
@@ -129,20 +129,20 @@ class DualCaseCompatibilityFixer {
     console.log(`Errors: ${this.results.errors}`);
 
     if (this.results.affectedDrivers.length > 0) {
-      console.log('\n📋 AFFECTED DRIVERS:');
+      console.log('\n AFFECTED DRIVERS:');
       this.results.affectedDrivers.forEach(driver => {
-        console.log(`  • ${driver.name}: +${driver.additions} lowercase versions`);
+        console.log(`   ${driver.name}: +${driver.additions} lowercase versions`);
       });
     }
 
     if (this.results.additionsApplied > 0) {
-      console.log('\n✅ DUAL CASE COMPATIBILITY RESTORED!');
-      console.log('📡 Device matching now works for both:');
-      console.log('   • Real devices reporting lowercase (_tze204_)');
-      console.log('   • Standard conformity uppercase (_TZE204_)');
-      console.log('🚀 Ready for emergency v5.5.297 deployment');
+      console.log('\n DUAL CASE COMPATIBILITY RESTORED!');
+      console.log(' Device matching now works for both:');
+      console.log('    Real devices reporting lowercase (_tze204_)');
+      console.log('    Standard conformity uppercase (_TZE204_)');
+      console.log(' Ready for emergency v5.5.297 deployment');
     } else {
-      console.log('\n✅ No dual case additions needed');
+      console.log('\n No dual case additions needed');
     }
   }
 }

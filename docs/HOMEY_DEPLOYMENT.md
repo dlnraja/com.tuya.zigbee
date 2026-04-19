@@ -1,6 +1,6 @@
-# 🚀 Homey App Store - Déploiement Automatique via GitHub Actions
+#  Homey App Store - Déploiement Automatique via GitHub Actions
 
-## 📋 Configuration Requise
+##  Configuration Requise
 
 ### 1. **Obtenir votre Token Homey**
 
@@ -19,7 +19,7 @@ Vous obtiendrez un token qui ressemble à : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ
 ### 2. **Ajouter le Token comme Secret GitHub**
 
 1. Aller dans votre repository GitHub : `https://github.com/dlnraja/com.tuya.zigbee`
-2. Cliquer sur **Settings** → **Secrets and variables** → **Actions**
+2. Cliquer sur **Settings**  **Secrets and variables**  **Actions**
 3. Cliquer sur **New repository secret**
 4. Nom du secret : `HOMEY_TOKEN`
 5. Valeur : Coller votre token Homey
@@ -27,14 +27,14 @@ Vous obtiendrez un token qui ressemble à : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ
 
 ---
 
-## 🎯 Utilisation
+##  Utilisation
 
 ### **Méthode 1: Déclenchement Automatique (RECOMMANDÉ)**
 
 Le workflow se déclenche **automatiquement** quand vous créez un tag de version :
 
 ```bash
-# Incrementer version dans app.json (ex: 4.9.294 → 4.9.295)
+# Incrementer version dans app.json (ex: 4.9.294  4.9.295)
 # Commiter les changements
 git add -A
 git commit -m "release: v4.9.295 - Description des changements"
@@ -46,7 +46,7 @@ git tag -a v4.9.295 -m "Release v4.9.295"
 git push origin master --tags
 ```
 
-**Le workflow GitHub Actions se lance automatiquement et publie sur le Homey App Store !** 🎉
+**Le workflow GitHub Actions se lance automatiquement et publie sur le Homey App Store !** 
 
 ---
 
@@ -62,43 +62,43 @@ Si vous voulez publier sans créer de tag :
 
 ---
 
-## 📊 Workflow Steps
+##  Workflow Steps
 
 Le workflow GitHub Actions exécute automatiquement :
 
-1. ✅ **Checkout code** - Récupère le code
-2. ✅ **Setup Node.js 20** - Configure l'environnement
-3. ✅ **Install dependencies** - Installe npm + Homey CLI
-4. ✅ **Validate structure** - Vérifie app.json, drivers/, lib/
-5. ✅ **Build app** - `homey app build`
-6. ✅ **Validate** - `homey app validate --level publish`
-7. ✅ **Publish** - `homey app publish` (publie sur App Store!)
-8. ✅ **Create GitHub Release** - Crée une release avec build artifacts
-9. ✅ **Monitor** - Surveille le statut du déploiement
+1.  **Checkout code** - Récupère le code
+2.  **Setup Node.js 20** - Configure l'environnement
+3.  **Install dependencies** - Installe npm + Homey CLI
+4.  **Validate structure** - Vérifie app.json, drivers/, lib/
+5.  **Build app** - `homey app build`
+6.  **Validate** - `homey app validate --level publish`
+7.  **Publish** - `homey app publish` (publie sur App Store!)
+8.  **Create GitHub Release** - Crée une release avec build artifacts
+9.  **Monitor** - Surveille le statut du déploiement
 
 ---
 
-## 🔍 Monitoring
+##  Monitoring
 
 ### **Voir les logs en temps réel:**
 
-1. Aller sur GitHub → **Actions** tab
+1. Aller sur GitHub  **Actions** tab
 2. Cliquer sur le workflow en cours d'exécution
 3. Voir les logs détaillés de chaque step
 
 ### **Statut du déploiement:**
 
-- ✅ **Success** → App publiée sur Homey App Store (disponible dans 15-30 min)
-- ❌ **Failed** → Voir les logs pour corriger l'erreur
+-  **Success**  App publiée sur Homey App Store (disponible dans 15-30 min)
+-  **Failed**  Voir les logs pour corriger l'erreur
 
 ---
 
-## ⚠️ Erreurs Communes
+##  Erreurs Communes
 
 ### **1. HOMEY_TOKEN not set**
 
 ```
-❌ ERROR: HOMEY_TOKEN secret not set!
+ ERROR: HOMEY_TOKEN secret not set!
 ```
 
 **Solution:** Ajouter le secret `HOMEY_TOKEN` dans GitHub Settings (voir étape 2)
@@ -108,7 +108,7 @@ Le workflow GitHub Actions exécute automatiquement :
 ### **2. Validation Failed**
 
 ```
-❌ Validation failed: Invalid app.json
+ Validation failed: Invalid app.json
 ```
 
 **Solution:** 
@@ -121,7 +121,7 @@ Le workflow GitHub Actions exécute automatiquement :
 ### **3. Version Conflict**
 
 ```
-❌ Version 4.9.294 already exists
+ Version 4.9.294 already exists
 ```
 
 **Solution:**
@@ -130,7 +130,7 @@ Le workflow GitHub Actions exécute automatiquement :
 
 ---
 
-## 📦 Build Artifacts
+##  Build Artifacts
 
 Le workflow crée automatiquement :
 
@@ -140,19 +140,19 @@ Le workflow crée automatiquement :
 
 ---
 
-## 🎉 Résultat Final
+##  Résultat Final
 
 Après un workflow réussi :
 
-1. ✅ App publiée sur **Homey App Store**
-2. ✅ Disponible pour **tous les utilisateurs** dans 15-30 minutes
-3. ✅ **GitHub Release** créée avec artifacts
-4. ✅ **Changelog** visible sur GitHub
-5. ✅ **Build report** généré automatiquement
+1.  App publiée sur **Homey App Store**
+2.  Disponible pour **tous les utilisateurs** dans 15-30 minutes
+3.  **GitHub Release** créée avec artifacts
+4.  **Changelog** visible sur GitHub
+5.  **Build report** généré automatiquement
 
 ---
 
-## 🔄 Workflow Automatique Complet
+##  Workflow Automatique Complet
 
 ```bash
 # LOCAL
@@ -162,19 +162,19 @@ git tag -a v4.9.295 -m "Release v4.9.295"
 git push origin master --tags
 
 # GITHUB ACTIONS (automatique)
-# → Checkout
-# → Build
-# → Validate
-# → Publish to Homey App Store ✅
-# → Create GitHub Release
+#  Checkout
+#  Build
+#  Validate
+#  Publish to Homey App Store 
+#  Create GitHub Release
 
 # HOMEY APP STORE (15-30 min)
-# → Version 4.9.295 disponible pour tous ! 🎊
+#  Version 4.9.295 disponible pour tous ! 
 ```
 
 ---
 
-## 📞 Support
+##  Support
 
 En cas de problème :
 
@@ -185,7 +185,7 @@ En cas de problème :
 
 ---
 
-## 🚀 Déploiement Immédiat
+##  Déploiement Immédiat
 
 Pour publier la version actuelle **v4.9.294** MAINTENANT :
 
@@ -196,6 +196,6 @@ cd "c:\Users\HP\Desktop\homey app\tuya_repair"
 git push origin master --tags --force
 ```
 
-Puis aller sur GitHub → Actions → **Run workflow** manuellement.
+Puis aller sur GitHub  Actions  **Run workflow** manuellement.
 
-**L'app sera publiée automatiquement sur le Homey App Store ! 🎉**
+**L'app sera publiée automatiquement sur le Homey App Store ! **

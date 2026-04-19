@@ -38,8 +38,8 @@ const VALUE_RANGES = {
 class UniversalFallbackDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('[UNIVERSAL] ═══════════════════════════════════════════════════');
-    this.log('[UNIVERSAL] 🔧 Universal Fallback Device v5.8.6 (Z2M Enhanced)');
+    this.log('[UNIVERSAL] ');
+    this.log('[UNIVERSAL]  Universal Fallback Device v5.8.6 (Z2M Enhanced)');
     
     const mfr = this.getSetting('zb_manufacturer_name') || 'Unknown';
     const model = this.getSetting('zb_model_id') || this.getSetting('zb_modelId') || 'Unknown';
@@ -55,8 +55,8 @@ class UniversalFallbackDevice extends ZigBeeDevice {
     this._z2mConfig = DeviceFingerprintDB.getFingerprint(mfr);
     this._z2mDpMap = DeviceFingerprintDB.getDPMapping(mfr);
     if (this._z2mConfig) {
-      this.log('[UNIVERSAL] 📚 Z2M Config found: ' + (this._z2mConfig.type || 'unknown'));
-      this.log('[UNIVERSAL] 📚 DP mappings: ' + Object.keys(this._z2mDpMap).length);
+      this.log('[UNIVERSAL]  Z2M Config found: ' + (this._z2mConfig.type || 'unknown'));
+      this.log('[UNIVERSAL]  DP mappings: ' + Object.keys(this._z2mDpMap).length);
     }
 
     await this._detectCapabilities(zclNode);
@@ -65,8 +65,8 @@ class UniversalFallbackDevice extends ZigBeeDevice {
     await this._setupZCLListeners(zclNode);
     await this._setupTimeSync(zclNode);
     
-    this.log('[UNIVERSAL] ✅ Ready - Caps: ' + this._detectedCaps.join(', '));
-    this.log('[UNIVERSAL] ═══════════════════════════════════════════════════');
+    this.log('[UNIVERSAL]  Ready - Caps: ' + this._detectedCaps.join(', '));
+    this.log('[UNIVERSAL] ');
   }
 
   async _detectCapabilities(zclNode) {
@@ -80,7 +80,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
       this.log('[Z2M] Added caps from config: ' + this._z2mConfig.capabilities.join(', '));
     }
     
-    this.log('[UNIVERSAL] 🔍 Detecting from clusters...');
+    this.log('[UNIVERSAL]  Detecting from clusters...');
     const clusters = [];
     
     for (const [epId, ep] of Object.entries(zclNode.endpoints || {})) {
@@ -101,7 +101,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
             try {
               await this.addCapability(cap);
               this._detectedCaps.push(cap);
-              this.log('[UNIVERSAL] ✅ +' + cap);
+              this.log('[UNIVERSAL]  +' + cap);
             } catch (e) { /* ignore */ }
           }
         }
@@ -117,7 +117,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
    * Source: athombv.github.io/node-homey-zigbeedriver/ZigBeeDevice.html#registerCapability
    */
   async _registerSDK3Capabilities(zclNode) {
-    this.log('[SDK3] 📋 Registering capabilities via SDK3 pattern...');
+    this.log('[SDK3]  Registering capabilities via SDK3 pattern...');
     
     const ep1 = zclNode?.endpoints?.[1];
     if (!ep1) return;
@@ -126,40 +126,40 @@ class UniversalFallbackDevice extends ZigBeeDevice {
     if (this.hasCapability('onoff') && ep1.clusters?.onOff) {
       try {
         this.registerCapability('onoff', CLUSTER.ON_OFF);
-        this.log('[SDK3] ✅ Registered onoff → ON_OFF cluster');
-      } catch (e) { this.log('[SDK3] ⚠️ onoff:', e.message); }
+        this.log('[SDK3]  Registered onoff  ON_OFF cluster');
+      } catch (e) { this.log('[SDK3]  onoff:', e.message); }
     }
 
     // Level Control cluster (8) for dim
     if (this.hasCapability('dim') && ep1.clusters?.levelControl) {
       try {
         this.registerCapability('dim', CLUSTER.LEVEL_CONTROL);
-        this.log('[SDK3] ✅ Registered dim → LEVEL_CONTROL cluster');
-      } catch (e) { this.log('[SDK3] ⚠️ dim:', e.message); }
+        this.log('[SDK3]  Registered dim  LEVEL_CONTROL cluster');
+      } catch (e) { this.log('[SDK3]  dim:', e.message); }
     }
 
     // Temperature Measurement cluster (1026)
     if (this.hasCapability('measure_temperature') && ep1.clusters?.temperatureMeasurement) {
       try {
         this.registerCapability('measure_temperature', CLUSTER.TEMPERATURE_MEASUREMENT);
-        this.log('[SDK3] ✅ Registered measure_temperature → TEMPERATURE_MEASUREMENT');
-      } catch (e) { this.log('[SDK3] ⚠️ measure_temperature:', e.message); }
+        this.log('[SDK3]  Registered measure_temperature  TEMPERATURE_MEASUREMENT');
+      } catch (e) { this.log('[SDK3]  measure_temperature:', e.message); }
     }
 
     // Relative Humidity cluster (1029)
     if (this.hasCapability('measure_humidity') && ep1.clusters?.relativeHumidity) {
       try {
         this.registerCapability('measure_humidity', CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT);
-        this.log('[SDK3] ✅ Registered measure_humidity → RELATIVE_HUMIDITY_MEASUREMENT');
-      } catch (e) { this.log('[SDK3] ⚠️ measure_humidity:', e.message); }
+        this.log('[SDK3]  Registered measure_humidity  RELATIVE_HUMIDITY_MEASUREMENT');
+      } catch (e) { this.log('[SDK3]  measure_humidity:', e.message); }
     }
 
     // Illuminance Measurement cluster (1024)
     if (this.hasCapability('measure_luminance') && ep1.clusters?.illuminanceMeasurement) {
       try {
         this.registerCapability('measure_luminance', CLUSTER.ILLUMINANCE_MEASUREMENT);
-        this.log('[SDK3] ✅ Registered measure_luminance → ILLUMINANCE_MEASUREMENT');
-      } catch (e) { this.log('[SDK3] ⚠️ measure_luminance:', e.message); }
+        this.log('[SDK3]  Registered measure_luminance  ILLUMINANCE_MEASUREMENT');
+      } catch (e) { this.log('[SDK3]  measure_luminance:', e.message); }
     }
 
     // Power Configuration cluster (1) for battery
@@ -171,27 +171,27 @@ class UniversalFallbackDevice extends ZigBeeDevice {
           reportParser: value => Math.round(safeParse(value, 2)),
           getOpts: { getOnStart: true, getOnOnline: true }
         });
-        this.log('[SDK3] ✅ Registered measure_battery → POWER_CONFIGURATION');
-      } catch (e) { this.log('[SDK3] ⚠️ measure_battery:', e.message); }
+        this.log('[SDK3]  Registered measure_battery  POWER_CONFIGURATION');
+      } catch (e) { this.log('[SDK3]  measure_battery:', e.message); }
     }
 
     // Electrical Measurement cluster (2820) for power
     if (this.hasCapability('measure_power') && ep1.clusters?.electricalMeasurement) {
       try {
         this.registerCapability('measure_power', CLUSTER.ELECTRICAL_MEASUREMENT);
-        this.log('[SDK3] ✅ Registered measure_power → ELECTRICAL_MEASUREMENT');
-      } catch (e) { this.log('[SDK3] ⚠️ measure_power:', e.message); }
+        this.log('[SDK3]  Registered measure_power  ELECTRICAL_MEASUREMENT');
+      } catch (e) { this.log('[SDK3]  measure_power:', e.message); }
     }
 
     // Window Covering cluster (258)
     if (this.hasCapability('windowcoverings_set') && ep1.clusters?.windowCovering) {
       try {
         this.registerCapability('windowcoverings_set', CLUSTER.WINDOW_COVERING);
-        this.log('[SDK3] ✅ Registered windowcoverings_set → WINDOW_COVERING');
-      } catch (e) { this.log('[SDK3] ⚠️ windowcoverings_set:', e.message); }
+        this.log('[SDK3]  Registered windowcoverings_set  WINDOW_COVERING');
+      } catch (e) { this.log('[SDK3]  windowcoverings_set:', e.message); }
     }
 
-    this.log('[SDK3] 📋 SDK3 capability registration complete');
+    this.log('[SDK3]  SDK3 capability registration complete');
   }
 
   async _setupTuyaDP(zclNode) {
@@ -204,7 +204,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
       return;
     }
 
-    this.log('[UNIVERSAL] 🔧 Tuya DP listener active');
+    this.log('[UNIVERSAL]  Tuya DP listener active');
     this.tuyaCluster = tuyaCluster;
 
     // Listen for DP reports
@@ -232,7 +232,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
   _handleDP(dp, value, dataType) {
     const enableLog = this.getSetting('enable_dp_logging') !== false;
     if (enableLog) {
-      this.log('[UNIVERSAL] 📥 DP' + dp + ' = ' + JSON.stringify(value) + ' (type: ' + dataType + ')');
+      this.log('[UNIVERSAL]  DP' + dp + ' = ' + JSON.stringify(value) + ' (type: ' + dataType + ')');
     }
 
     // Track for settings
@@ -256,7 +256,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
         convertedValue = DeviceFingerprintDB.convertDPValue(this._manufacturerName, dp, value);
       }
       
-      this.log('[Z2M-DP] DP' + dp + ' → ' + capability + ' = ' + convertedValue);
+      this.log('[Z2M-DP] DP' + dp + '  ' + capability + ' = ' + convertedValue);
       this._setCapSafe(capability, convertedValue);
       return;
     }

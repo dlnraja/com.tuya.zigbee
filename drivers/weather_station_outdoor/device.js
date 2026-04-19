@@ -51,7 +51,7 @@ class WeatherStationOutdoorDevice extends UnifiedSensorBase {
 
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
-    this.log('[WEATHER] ✅ Weather Station Outdoor v5.8.31 Ready');
+    this.log('[WEATHER]  Weather Station Outdoor v5.8.31 Ready');
   }
 
   /**

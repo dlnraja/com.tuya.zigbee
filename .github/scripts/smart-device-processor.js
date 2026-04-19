@@ -33,11 +33,11 @@ async function main(){
     if(s.driver&&s.pid&&s.method==='productId'){
       if(!DRY){addFpToDriver(s.driver,dev.fp,null,meta);added++}
       report.added.push({fp:dev.fp,driver:s.driver,pid:s.pid,method:s.method});
-      console.log('  +',dev.fp,'→',s.driver,'('+s.method+')');
+      console.log('  +',dev.fp,'',s.driver,'('+s.method+')');
     }
   }
   console.log('Phase 1 (productId match):',report.added.length,'added');
-  // Phase 1.5: Research engine — Blakadder/Z2M/CompScan deep lookup (saves AI budget)
+  // Phase 1.5: Research engine  Blakadder/Z2M/CompScan deep lookup (saves AI budget)
   report.researched=[];
   let eng=null;try{eng=require('./fp-research-engine')}catch{}
   if(eng){
@@ -51,7 +51,7 @@ async function main(){
         if(r.driver&&r.confidence>=60&&meta.has(r.driver)){
           if(!DRY){addFpToDriver(r.driver,dev.fp,r.pid||null,meta);added++}
           report.researched.push({fp:dev.fp,driver:r.driver,pid:r.pid,confidence:r.confidence,method:r.method,vendor:r.vendor});
-          console.log('  +',dev.fp,'→',r.driver,'('+r.method+':'+r.confidence+'%)');
+          console.log('  +',dev.fp,'',r.driver,'('+r.method+':'+r.confidence+'%)');
         }
       }catch(e){console.log('  [RESEARCH-ERR]',dev.fp,e.message)}
     }
@@ -73,7 +73,7 @@ async function main(){
     
     let analyses=null;
     if(!res || res.text === "AI_OFFLINE_OR_LIMIT_REACHED") {
-       console.log('  ⚠️ AI Shield active or failed. Using Heuristic Safe-Mapping.');
+       console.log('   AI Shield active or failed. Using Heuristic Safe-Mapping.');
        analyses = batch.map(d => {
           const t = ((d.interviewHint||'') + ' ' + d.fp).toLowerCase();
           let drv = 'generic_tuya';
@@ -100,7 +100,7 @@ async function main(){
       const pid=ai.productId||[...dev.pids][0]||null;
       if(!DRY){addFpToDriver(driver,dev.fp,pid,meta);added++}
       report.aiAnalyzed.push({fp:dev.fp,driver,pid,type:ai.deviceType,caps:ai.capabilities,dps:ai.dpMappings,quirks:ai.quirks,confidence:ai.confidence});
-      console.log('  +',dev.fp,'→',driver,'(AI:'+ai.confidence+'%)',ai.deviceType);
+      console.log('  +',dev.fp,'',driver,'(AI:'+ai.confidence+'%)',ai.deviceType);
     }
   }
   console.log('\n== Results ==');
@@ -116,7 +116,7 @@ async function main(){
     md+='| Sources collected | '+allDevs.size+' |\n| New unsupported | '+newDevs.size+' |\n';
     md+='| Added (productId) | '+report.added.length+' |\n| Added (research) | '+report.researched.length+' |\n| Added (AI) | '+report.aiAnalyzed.length+' |\n';
     md+='| AI calls | '+aiUsed+'/'+MAX_AI+' |\n';
-    if(report.aiAnalyzed.length){md+='\n### AI Implementations\n';for(const a of report.aiAnalyzed.slice(0,15))md+='- `'+a.fp+'` → **'+a.driver+'** ('+a.type+', '+a.confidence+'%)\n'}
+    if(report.aiAnalyzed.length){md+='\n### AI Implementations\n';for(const a of report.aiAnalyzed.slice(0,15))md+='- `'+a.fp+'`  **'+a.driver+'** ('+a.type+', '+a.confidence+'%)\n'}
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,md);
   }
 }

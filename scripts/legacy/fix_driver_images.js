@@ -1,18 +1,18 @@
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║          DRIVER IMAGES FIXER - Universal Tuya Zigbee                        ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  v1.0.0 - Janvier 2026                                                       ║
- * ║  Corrige automatiquement les images des drivers selon Homey SDK Guidelines  ║
- * ║                                                                              ║
- * ║  Spécifications Homey:                                                       ║
- * ║  - Small: 75x75 px                                                           ║
- * ║  - Large: 500x500 px                                                         ║
- * ║  - XLarge: 1000x1000 px                                                      ║
- * ║  - Format: PNG, fond blanc                                                   ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *           DRIVER IMAGES FIXER - Universal Tuya Zigbee                        
+ * 
+ *   v1.0.0 - Janvier 2026                                                       
+ *   Corrige automatiquement les images des drivers selon Homey SDK Guidelines  
+ *                                                                               
+ *   Spécifications Homey:                                                       
+ *   - Small: 75x75 px                                                           
+ *   - Large: 500x500 px                                                         
+ *   - XLarge: 1000x1000 px                                                      
+ *   - Format: PNG, fond blanc                                                   
+ * 
  */
 
 const fs = require('fs');
@@ -174,7 +174,7 @@ let stats = {
 function ensureBackupDir() {
   if (!fs.existsSync(BACKUP_PATH)) {
     fs.mkdirSync(BACKUP_PATH, { recursive: true });
-    console.log(`📁 Dossier backup créé: ${BACKUP_PATH}`);
+    console.log(` Dossier backup créé: ${BACKUP_PATH}`);
   }
 }
 
@@ -198,7 +198,7 @@ function backupExistingImages(driverId) {
         fs.copyFileSync(src, dest);
       }
     });
-    console.log(`  💾 Backup: ${driverId}`);
+    console.log(`   Backup: ${driverId}`);
   }
 }
 
@@ -210,7 +210,7 @@ function copyImagesFromDriver(sourceDriverId, destDriverId) {
   const destPath = path.join(DRIVERS_PATH, destDriverId, 'assets', 'images');
 
   if (!fs.existsSync(sourcePath)) {
-    console.log(`  ⚠️ Source non trouvée: ${sourceDriverId}`);
+    console.log(`   Source non trouvée: ${sourceDriverId}`);
     return false;
   }
 
@@ -234,7 +234,7 @@ function copyImagesFromDriver(sourceDriverId, destDriverId) {
   });
 
   if (copied > 0) {
-    console.log(`  ✅ Copié ${copied} images de ${sourceDriverId} → ${destDriverId}`);
+    console.log(`   Copié ${copied} images de ${sourceDriverId}  ${destDriverId}`);
     stats.copied++;
     return true;
   }
@@ -293,11 +293,11 @@ function generatePlaceholderImage(driverId, config) {
       fs.writeFileSync(path.join(destPath, name), buffer);
     });
 
-    console.log(`  🎨 Généré images pour ${driverId}`);
+    console.log(`   Généré images pour ${driverId}`);
     stats.generated++;
     return true;
   } catch (err) {
-    console.log(`  ⚠️ Canvas non disponible, utilisation fallback pour ${driverId}`);
+    console.log(`   Canvas non disponible, utilisation fallback pour ${driverId}`);
     return false;
   }
 }
@@ -307,14 +307,14 @@ function generatePlaceholderImage(driverId, config) {
  */
 function getIconText(iconType) {
   const icons = {
-    'humidity': '💧',
+    'humidity': '',
     'tuya': 'T',
-    'pet': '🐾',
-    'dehumidifier': '💨',
-    'trv': '🌡',
-    'doorbell': '🔔',
-    'fan': '🌀',
-    'default': '◯'
+    'pet': '',
+    'dehumidifier': '',
+    'trv': '',
+    'doorbell': '',
+    'fan': '',
+    'default': ''
   };
   return icons[iconType] || icons['default'];
 }
@@ -334,7 +334,7 @@ function hasValidImages(driverId) {
  * Corrige les images d'un driver
  */
 async function fixDriverImages(driverId, config) {
-  console.log(`\n🔧 Traitement: ${driverId}`);
+  console.log(`\n Traitement: ${driverId}`);
   console.log(`   Description: ${config.description}`);
 
   // Backup d'abord
@@ -361,7 +361,7 @@ async function fixDriverImages(driverId, config) {
     stats.fixed++;
   } else {
     stats.errors++;
-    console.log(`  ❌ Échec pour ${driverId}`);
+    console.log(`   Échec pour ${driverId}`);
   }
 
   return success;
@@ -371,9 +371,9 @@ async function fixDriverImages(driverId, config) {
  * Vérifie la cohérence de toutes les images
  */
 function checkImageConsistency() {
-  console.log('\n' + '═'.repeat(60));
-  console.log('📊 VÉRIFICATION COHÉRENCE IMAGES');
-  console.log('═'.repeat(60));
+  console.log('\n' + ''.repeat(60));
+  console.log(' VÉRIFICATION COHÉRENCE IMAGES');
+  console.log(''.repeat(60));
 
   const drivers = fs.readdirSync(DRIVERS_PATH).filter(d => {
     const driverPath = path.join(DRIVERS_PATH, d);
@@ -398,13 +398,13 @@ function checkImageConsistency() {
     }
   });
 
-  console.log(`\n📁 Total drivers: ${drivers.length}`);
-  console.log(`❌ Manquant small.png: ${missingSmall.length}`);
-  console.log(`❌ Manquant large.png: ${missingLarge.length}`);
-  console.log(`❌ Manquant xlarge.png: ${missingXlarge.length}`);
+  console.log(`\n Total drivers: ${drivers.length}`);
+  console.log(` Manquant small.png: ${missingSmall.length}`);
+  console.log(` Manquant large.png: ${missingLarge.length}`);
+  console.log(` Manquant xlarge.png: ${missingXlarge.length}`);
 
   if (missingSmall.length > 0) {
-    console.log(`\n⚠️ Drivers sans small.png:`);
+    console.log(`\n Drivers sans small.png:`);
     missingSmall.forEach(d => console.log(`   - ${d}`));
   }
 
@@ -420,10 +420,10 @@ function checkImageConsistency() {
  * Fonction principale
  */
 async function main() {
-  console.log('╔══════════════════════════════════════════════════════════════════╗');
-  console.log('║         DRIVER IMAGES FIXER - Universal Tuya Zigbee             ║');
-  console.log('║                      v1.0.0 - Janvier 2026                       ║');
-  console.log('╚══════════════════════════════════════════════════════════════════╝');
+  console.log('');
+  console.log('         DRIVER IMAGES FIXER - Universal Tuya Zigbee             ');
+  console.log('                      v1.0.0 - Janvier 2026                       ');
+  console.log('');
   console.log('');
 
   // Créer dossier backup
@@ -433,7 +433,7 @@ async function main() {
   const driversToFix = Object.keys(IMAGE_FIXES);
   stats.total = driversToFix.length;
 
-  console.log(`📋 ${stats.total} drivers à corriger\n`);
+  console.log(` ${stats.total} drivers à corriger\n`);
 
   // Corriger chaque driver
   for (const driverId of driversToFix) {
@@ -442,7 +442,7 @@ async function main() {
     // Vérifier si le driver existe
     const driverPath = path.join(DRIVERS_PATH, driverId);
     if (!fs.existsSync(driverPath)) {
-      console.log(`\n⚠️ Driver non trouvé: ${driverId}`);
+      console.log(`\n Driver non trouvé: ${driverId}`);
       stats.skipped++;
       continue;
     }
@@ -454,18 +454,18 @@ async function main() {
   const consistency = checkImageConsistency();
 
   // Résumé
-  console.log('\n' + '═'.repeat(60));
-  console.log('📊 RÉSUMÉ FINAL');
-  console.log('═'.repeat(60));
-  console.log(`✅ Corrigés: ${stats.fixed}`);
-  console.log(`📋 Copiés: ${stats.copied}`);
-  console.log(`🎨 Générés: ${stats.generated}`);
-  console.log(`⏭️ Ignorés: ${stats.skipped}`);
-  console.log(`❌ Erreurs: ${stats.errors}`);
-  console.log('═'.repeat(60));
+  console.log('\n' + ''.repeat(60));
+  console.log(' RÉSUMÉ FINAL');
+  console.log(''.repeat(60));
+  console.log(` Corrigés: ${stats.fixed}`);
+  console.log(` Copiés: ${stats.copied}`);
+  console.log(` Générés: ${stats.generated}`);
+  console.log(` Ignorés: ${stats.skipped}`);
+  console.log(` Erreurs: ${stats.errors}`);
+  console.log(''.repeat(60));
 
   if (stats.fixed > 0) {
-    console.log('\n✅ Images corrigées avec succès!');
+    console.log('\n Images corrigées avec succès!');
     console.log('   Exécutez: npx homey app build');
   }
 }

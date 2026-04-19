@@ -1,6 +1,6 @@
-# 📦 Homey App Publishing Guide
+#  Homey App Publishing Guide
 
-## 🎯 Publication Process
+##  Publication Process
 
 ### Automatic Build (via GitHub Actions)
 
@@ -12,11 +12,11 @@
 
 ### Manual Promotion to Live
 
-**⚠️ IMPORTANT:** Builds are published to **Test** channel by default. You must manually promote them to **Live**.
+** IMPORTANT:** Builds are published to **Test** channel by default. You must manually promote them to **Live**.
 
 ---
 
-## 🚀 How to Promote Builds to Live
+##  How to Promote Builds to Live
 
 ### Step 1: Access Homey Developer Dashboard
 
@@ -26,9 +26,9 @@ https://developer.homey.app/apps/com.dlnraja.tuya.zigbee
 
 In the **Builds** section, you'll see:
 ```
-Build #603 - v4.9.311 - Test ⚠️
-Build #602 - v4.9.313 - Draft ⚠️
-Build #601 - v4.9.312 - Draft ⚠️
+Build #603 - v4.9.311 - Test 
+Build #602 - v4.9.313 - Draft 
+Build #601 - v4.9.312 - Draft 
 ```
 
 ### Step 3: Promote to Live
@@ -38,30 +38,30 @@ For each build you want to publish:
 1. **Click on the build number** (e.g., #603)
 2. **Click "Promote to Live"** button
 3. **Confirm** the promotion
-4. Build status changes: `Test` → `Live` ✅
+4. Build status changes: `Test`  `Live` 
 
 ### Step 4: Verify
 
 After promotion:
-- Status shows **Live** ✅
+- Status shows **Live** 
 - Build is available to all users
 - Automatic updates roll out within 15-30 minutes
 
 ---
 
-## 📊 Build Status Explained
+##  Build Status Explained
 
 | Status | Meaning | Action Required |
 |--------|---------|-----------------|
 | **Draft** | Build created but not published | Promote to Test or Live |
 | **Test** | Available to test users only | Promote to Live for all users |
-| **Live** | Available to all users ✅ | None - published! |
+| **Live** | Available to all users  | None - published! |
 | **Deprecated** | Old version, superseded | None |
 | **Failed** | Build error | Check logs, fix, rebuild |
 
 ---
 
-## 🔄 Current Versions to Promote
+##  Current Versions to Promote
 
 Based on latest builds, promote these to Live:
 
@@ -78,7 +78,7 @@ Based on latest builds, promote these to Live:
 
 ---
 
-## 🛠️ Troubleshooting
+##  Troubleshooting
 
 ### Build Not Appearing?
 
@@ -88,8 +88,8 @@ Based on latest builds, promote these to Live:
 https://github.com/dlnraja/com.tuya.zigbee/actions
 
 Look for:
-- ✅ "Homey App Store Publisher" (success)
-- ❌ Failed? Check error logs
+-  "Homey App Store Publisher" (success)
+-  Failed? Check error logs
 
 ### Build Failed?
 
@@ -105,7 +105,7 @@ Common issues:
 
 3. **HOMEY_PAT expired**
    - Generate new token at https://developer.homey.app/tokens
-   - Update GitHub secret: Settings → Secrets → HOMEY_PAT
+   - Update GitHub secret: Settings  Secrets  HOMEY_PAT
 
 ### Can't Promote to Live?
 
@@ -117,7 +117,7 @@ Common issues:
 
 ---
 
-## 📝 Quick Promotion Steps
+##  Quick Promotion Steps
 
 ### Via Dashboard (Recommended)
 
@@ -126,7 +126,7 @@ Common issues:
 2. Click on build number (e.g., #603)
 3. Click "Promote to Live"
 4. Confirm
-5. ✅ Done!
+5.  Done!
 ```
 
 ### Batch Promotion Strategy
@@ -139,7 +139,7 @@ If you have multiple versions:
 - Faster for users
 
 **Option B: Promote All in Order**
-- Promote 311 → 312 → 313 → 314 → 315
+- Promote 311  312  313  314  315
 - Sequential changelog visible
 - More thorough
 
@@ -147,11 +147,11 @@ If you have multiple versions:
 
 ---
 
-## 🎯 After Promotion
+##  After Promotion
 
 ### Verify Live Status
 
-1. Check build status shows **Live** ✅
+1. Check build status shows **Live** 
 2. Version appears in Homey App Store
 3. Users receive update notification
 
@@ -172,7 +172,7 @@ If issues after promotion:
 
 ---
 
-## 📧 Notification Settings
+##  Notification Settings
 
 To receive notifications when:
 - Builds complete
@@ -182,13 +182,13 @@ To receive notifications when:
 Go to: https://developer.homey.app/settings/notifications
 
 Enable:
-- ✅ Build completion
-- ✅ Crash reports
-- ✅ User feedback
+-  Build completion
+-  Crash reports
+-  User feedback
 
 ---
 
-## 🚀 Best Practices
+##  Best Practices
 
 ### Before Promoting to Live
 
@@ -219,19 +219,19 @@ Enable:
 
 ---
 
-## 📊 Current Status (Nov 8, 2025)
+##  Current Status (Nov 8, 2025)
 
 ```
 Published Builds:
-├─ #603: v4.9.311 - Test (12 installs)
-├─ #602: v4.9.313 - Draft
-├─ #601: v4.9.312 - Draft
-├─ #600: v4.9.308 - Test (10 installs)
-└─ #599: v4.9.307 - Test (1 install)
+ #603: v4.9.311 - Test (12 installs)
+ #602: v4.9.313 - Draft
+ #601: v4.9.312 - Draft
+ #600: v4.9.308 - Test (10 installs)
+ #599: v4.9.307 - Test (1 install)
 
 Pending:
-├─ v4.9.314 (build may still be processing)
-└─ v4.9.315 (build may still be processing)
+ v4.9.314 (build may still be processing)
+ v4.9.315 (build may still be processing)
 
 Action Required:
 1. Wait for builds #604 (v4.9.314) and #605 (v4.9.315) to complete
@@ -241,7 +241,7 @@ Action Required:
 
 ---
 
-## 🔗 Useful Links
+##  Useful Links
 
 - **Developer Dashboard:** https://developer.homey.app/apps/com.dlnraja.tuya.zigbee
 - **GitHub Actions:** https://github.com/dlnraja/com.tuya.zigbee/actions
@@ -250,7 +250,7 @@ Action Required:
 
 ---
 
-## 💡 Pro Tips
+##  Pro Tips
 
 1. **Test channel is your friend** - Always test before promoting
 2. **Keep one Live version** - Avoid multiple Live versions

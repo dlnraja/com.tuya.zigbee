@@ -30,7 +30,7 @@ From Z2M/ZHA/Hubitat research:
 
 ## Implementation Status
 
-### ✅ Already Implemented
+###  Already Implemented
 
 1. **Universal Scene Mode Switch** (\`ButtonDevice.js:217\`)
    - Automatic 0x8004 attribute write on pairing
@@ -45,7 +45,7 @@ From Z2M/ZHA/Hubitat research:
    - Triggers \`{driver}_gang{N}_scene\` when sceneMode enabled
    - Tokens: \`{ action: 'on'|'off', gang: 1-4 }\`
 
-### 🔧 Enhancements Needed
+###  Enhancements Needed
 
 1. **Listen for Manual Mode Changes**
    - Detect when user switches modes via physical button hold
@@ -68,11 +68,11 @@ From Z2M/ZHA/Hubitat research:
 
 ## Testing Scenarios
 
-1. ✅ TS004F pairs → scene mode activated → single/double/long press work
-2. ✅ TS0044 (non-F) → scene mode skipped → works as normal scene switch
-3. ✅ E000 cluster device → scene mode skipped → multi-press via E000 cluster
-4. ⚠️ Manual mode toggle → app should detect and update settings
-5. ⚠️ Scene mode write fails → user should be notified with clear instructions
+1.  TS004F pairs  scene mode activated  single/double/long press work
+2.  TS0044 (non-F)  scene mode skipped  works as normal scene switch
+3.  E000 cluster device  scene mode skipped  multi-press via E000 cluster
+4.  Manual mode toggle  app should detect and update settings
+5.  Scene mode write fails  user should be notified with clear instructions
 
 ## Next Steps
 
@@ -83,4 +83,4 @@ From Z2M/ZHA/Hubitat research:
 `;
 
 fs.writeFileSync('docs/SCENE_MODE_RESEARCH.md', doc);
-console.log('✅ Created docs/SCENE_MODE_RESEARCH.md');
+console.log(' Created docs/SCENE_MODE_RESEARCH.md');

@@ -149,4 +149,4 @@ module.exports = { DP_VARIANT_PATTERNS, detectDPUsage };
 `;
 
 fs.writeFileSync('.github/scripts/adaptive-dp-detector.js', enhancedVariantManager);
-console.log('✅ Created adaptive DP detection system');
+console.log(' Created adaptive DP detection system');

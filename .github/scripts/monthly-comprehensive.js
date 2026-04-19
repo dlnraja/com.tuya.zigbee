@@ -356,7 +356,7 @@ async function main(){
     console.log('AI Summary (',aiSummary.model,'):',aiSummary.text.length,'chars');
     report.aiSummary=aiSummary.text;
 
-    // Forum posting DISABLED — was a duplicate poster alongside post-forum-update.js and forum-updater.js
+    // Forum posting DISABLED  was a duplicate poster alongside post-forum-update.js and forum-updater.js
     // AI summary is saved to report for reference only
     console.log('[DISABLED] Forum post skipped (anti-spam). Summary saved to report.');
   }

@@ -13,4 +13,4 @@ CRITICAL RULES:
 
 content = content.replace(oldPrompt, newPrompt);
 fs.writeFileSync(file, content);
-console.log('✅ Enhanced copilot-analyzer.js system prompt for empathy and deep analysis');
+console.log(' Enhanced copilot-analyzer.js system prompt for empathy and deep analysis');

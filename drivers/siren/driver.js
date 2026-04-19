@@ -2,15 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.569: CRITICAL FIX - Flow card run listeners were missing
- * Same issue as smoke_detector_advanced - cards defined but not registered
- */
 class TuyaSirenDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -20,209 +12,123 @@ class TuyaSirenDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('TuyaSirenDriver v5.11.28 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
-  /**
-   * v5.5.569: Register flow card run listeners
-   */
   _registerFlowCards() {
-    // ═══════════════════════════════════════════════════════════════════════
-    // CONDITION: Siren is/is not sounding
-    // ═══════════════════════════════════════════════════════════════════════
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('siren_alarm_triggered'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('siren_alarm_stopped'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('siren_battery_low'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('siren_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('siren_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('siren_motion_detected'); } catch (e) {}
+
+    // CONDITIONS
     try {
-      const sirenCondition = this.homey.flow.getConditionCard('siren_is_sounding');
+      const card = this.homey.flow.getConditionCard('siren_is_sounding');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('alarm_generic') === true || args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition siren_is_sounding: ${err.message}`); }
 
-      if (sirenCondition) {
-        sirenCondition.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Condition: Device not available');
-          return false;
-        }
-        const isOn = device.getCapabilityValue('onoff') || device.getCapabilityValue('alarm_generic');
-        this.log(`[FLOW] Condition siren_is_sounding: ${isOn}`);
-        return isOn === true;
-      });
-      this.log('[FLOW] ✅ Registered: siren_is_sounding');
-    } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register siren_is_sounding: ${err.message}`);
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════
-    // ACTION: Turn on siren
-    // ═══════════════════════════════════════════════════════════════════════
     try {
-      const turnOnAction = this.homey.flow.getActionCard('siren_turn_on');
+      const card = this.homey.flow.getConditionCard('siren_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition siren_is_on: ${err.message}`); }
 
-      if (turnOnAction) {
-        turnOnAction.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Action: Device not available');
-          return false;
-        }
-        this.log('[FLOW] Action: Turning siren ON');
-        try {
-          if (device.hasCapability('onoff')) {
-            await device.setCapabilityValue('onoff', true);
-          }
-          if (device.hasCapability('alarm_generic')) {
-            await device.setCapabilityValue('alarm_generic', true);
-          }
-          return true;
-        } catch (err) {
-          this.log(`[FLOW] ⚠️ Turn on failed: ${err.message}`);
-          return true;
-        }
-      });
-      this.log('[FLOW] ✅ Registered: siren_turn_on');
-    } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register siren_turn_on: ${err.message}`);
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════
-    // ACTION: Turn off siren
-    // ═══════════════════════════════════════════════════════════════════════
     try {
-      const turnOffAction = this.homey.flow.getActionCard('siren_turn_off');
+      const card = this.homey.flow.getConditionCard('siren_motion_active');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition siren_motion_active: ${err.message}`); }
 
-      if (turnOffAction) {
-        turnOffAction.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Action: Device not available');
-          return false;
-        }
-        this.log('[FLOW] Action: Turning siren OFF');
-        try {
-          if (device.hasCapability('onoff')) {
-            await device.setCapabilityValue('onoff', false);
-          }
-          if (device.hasCapability('alarm_generic')) {
-            await device.setCapabilityValue('alarm_generic', false);
-          }
-          return true;
-        } catch (err) {
-          this.log(`[FLOW] ⚠️ Turn off failed: ${err.message}`);
-          return true;
-        }
-      });
-      this.log('[FLOW] ✅ Registered: siren_turn_off');
-    } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register siren_turn_off: ${err.message}`);
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════
-    // ACTION: Set volume
-    // ═══════════════════════════════════════════════════════════════════════
+    // ACTIONS
     try {
-      const setVolumeAction = this.homey.flow.getActionCard('siren_set_volume');
-
-      if (setVolumeAction) {
-        setVolumeAction.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Action: Device not available');
-          return false;
-        }
-        const volume = args.volume || 'medium';
-        this.log(`[FLOW] Action: Set volume to ${volume}`);
-        try {
-          const volumeMap = { low: 0, medium: 1, high: 2 };
-          const val = volumeMap[volume] ?? 1;
-          // Send to standard DP5 + NEO DP116
-          if (device._sendTuyaDP) {
-            try { await device._sendTuyaDP(5, val, 'enum'); } catch (e) {}
-            try { await device._sendTuyaDP(116, val, 'enum'); } catch (e) {}
-          }
+      const card = this.homey.flow.getActionCard('siren_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
-        } catch (err) {
-          this.log(`[FLOW] ⚠️ Set volume failed: ${err.message}`);
-          return true;
-        }
-      });
-      this.log('[FLOW] ✅ Registered: siren_set_volume');
-    } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register siren_set_volume: ${err.message}`);
-    }
+        });
+      }
+    } catch (err) { this.error(`Action siren_turn_on: ${err.message}`); }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // ACTION: Set duration
-    // ═══════════════════════════════════════════════════════════════════════
     try {
-      const setDurationAction = this.homey.flow.getActionCard('siren_set_duration');
-
-      if (setDurationAction) {
-        setDurationAction.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) {
-          this.log('[FLOW] Action: Device not available');
-          return false;
-        }
-        const duration = args.duration || 30;
-        this.log(`[FLOW] Action: Set duration to ${duration}s`);
-        try {
-          // Send to standard DP7 + NEO DP103
-          if (device._sendTuyaDP) {
-            try { await device._sendTuyaDP(7, duration, 'value'); } catch (e) {}
-            try { await device._sendTuyaDP(103, duration, 'value'); } catch (e) {}
-          }
+      const card = this.homey.flow.getActionCard('siren_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
-        } catch (err) {
-          this.log(`[FLOW] ⚠️ Set duration failed: ${err.message}`);
-          return true;
-        }
-      });
-      this.log('[FLOW] ✅ Registered: siren_set_duration');
-    } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register siren_set_duration: ${err.message}`);
-    }
+        });
+      }
+    } catch (err) { this.error(`Action siren_turn_off: ${err.message}`); }
 
-    // ═══════════════════════════════════════════════════════════════════════
-    // ACTION: Set melody
-    // ═══════════════════════════════════════════════════════════════════════
     try {
-      const setMelodyAction = this.homey.flow.getActionCard('siren_set_melody');
-
-      if (setMelodyAction) {
-        setMelodyAction.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) return false;
-        const melody = parseInt(args.melody, 10) || 0;
-        this.log(`[FLOW] Action: Set melody to ${melody}`);
-        try {
-          // Send to standard DP21 + NEO DP102
-          if (device._sendTuyaDP) {
-            try { await device._sendTuyaDP(21, melody, 'enum'); } catch (e) {}
-            try { await device._sendTuyaDP(102, melody, 'enum'); } catch (e) {}
-          }
+      const card = this.homey.flow.getActionCard('siren_set_volume');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device._sendTuyaDP === 'function') { await args.device._sendTuyaDP(5, args.volume || 1, 'enum').catch(() => {}); }
           return true;
-        } catch (err) {
-          this.log(`[FLOW] ⚠️ Set melody failed: ${err.message}`);
-          return true;
-        }
-      });
-      this.log('[FLOW] ✅ Registered: siren_set_melody');
-    } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register siren_set_melody: ${err.message}`);
-    }
+        });
+      }
+    } catch (err) { this.error(`Action siren_set_volume: ${err.message}`); }
 
-    this.log('[FLOW]  All siren flow cards registered');
+    try {
+      const card = this.homey.flow.getActionCard('siren_set_duration');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device._sendTuyaDP === 'function') { await args.device._sendTuyaDP(7, args.duration || 30, 'value').catch(() => {}); }
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action siren_set_duration: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('siren_set_melody');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device._sendTuyaDP === 'function') { await args.device._sendTuyaDP(21, parseInt(args.melody, 10) || 0, 'enum').catch(() => {}); }
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action siren_set_melody: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('siren_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action siren_toggle: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

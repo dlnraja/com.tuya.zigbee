@@ -35,7 +35,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
     this._flowCardsRegistered = true;
 
     this.log('SmartSmokeDetectorAdvancedDriver v5.5.568 initialized');
-    this.log('🔥 FIX: Flow card run listeners registered (Jolink forum report)');
+    this.log(' FIX: Flow card run listeners registered (Jolink forum report)');
 
     // Register flow card run listeners
     this._registerFlowCards();
@@ -53,9 +53,9 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
    * Jolink forum: "flow cards give an error" - cards were defined but not registered
    */
   _registerFlowCards() {
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     // CONDITION: Smoke is/is not detected
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     try {
       const smokeDetectedCondition =
 
@@ -69,14 +69,14 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
         this.log(`[FLOW] Condition smoke_detected: ${smokeDetected}`);
         return smokeDetected === true;
       });
-      this.log('[FLOW] ✅ Registered: smoke_detector_advanced_smoke_detected');
+      this.log('[FLOW]  Registered: smoke_detector_advanced_smoke_detected');
     } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register smoke_detected condition: ${err.message}`);
+      this.log(`[FLOW]  Could not register smoke_detected condition: ${err.message}`);
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     // CONDITION: Battery is/is not above threshold
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     try {
       const batteryAboveCondition =
 
@@ -92,14 +92,14 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
         this.log(`[FLOW] Condition battery_above: ${battery}% > ${threshold}% = ${isAbove}`);
         return isAbove;
       });
-      this.log('[FLOW] ✅ Registered: smoke_detector_advanced_battery_above');
+      this.log('[FLOW]  Registered: smoke_detector_advanced_battery_above');
     } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register battery_above condition: ${err.message}`);
+      this.log(`[FLOW]  Could not register battery_above condition: ${err.message}`);
     }
 
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     // ACTION: Test the alarm
-    // ═══════════════════════════════════════════════════════════════════════
+    // 
     try {
       const testAlarmAction =
 
@@ -117,20 +117,20 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
           if (device._tuyaEF00Manager) {
             // DP8 = self_test on many smoke detectors
             await device._tuyaEF00Manager.sendDatapoint(8, true, 'bool');
-            this.log('[FLOW] ✅ Self-test command sent via Tuya DP8');
+            this.log('[FLOW]  Self-test command sent via Tuya DP8');
             return true;
           } else {
-            this.log('[FLOW] ⚠️ Tuya manager not available - device may not support remote test');
+            this.log('[FLOW]  Tuya manager not available - device may not support remote test');
             return true; // Return true to not break the flow
           }
         } catch (err) {
-          this.log(`[FLOW] ⚠️ Self-test failed: ${err.message}`);
+          this.log(`[FLOW]  Self-test failed: ${err.message}`);
           return true; // Return true to not break the flow
         }
       });
-      this.log('[FLOW] ✅ Registered: smoke_detector_advanced_test_alarm');
+      this.log('[FLOW]  Registered: smoke_detector_advanced_test_alarm');
     } catch (err) {
-      this.log(`[FLOW] ⚠️ Could not register test_alarm action: ${err.message}`);
+      this.log(`[FLOW]  Could not register test_alarm action: ${err.message}`);
     }
 
     this.log('[FLOW]  All smoke detector flow cards registered');
@@ -141,17 +141,17 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
    * Martijn's _TZE284_rccxox8p TS0601 supported but pairing fails
    */
   async onPairListDevices({ zclNode }) {
-    this.log('[PAIR] 🔥 Smart Smoke Detector Advanced pairing started...');
+    this.log('[PAIR]  Smart Smoke Detector Advanced pairing started...');
     
     try {
       // Get device info
       const { manufacturerName, productId } = zclNode;
-      this.log(`[PAIR] 📋 Device: ${manufacturerName} ${productId}`);
+      this.log(`[PAIR]  Device: ${manufacturerName} ${productId}`);
       
       // Check if this is the problematic TZE284 device
       const isTZE284 = CI.containsCI((manufacturerName || ''), '_tze284_');
       if (isTZE284) {
-        this.log('[PAIR] 🚨 TZE284 device detected - applying enhanced pairing logic');
+        this.log('[PAIR]  TZE284 device detected - applying enhanced pairing logic');
       }
 
       // Standard device info
@@ -164,11 +164,11 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
         }
       };
 
-      this.log(`[PAIR] ✅ Device ready for pairing: ${device.name}`);
+      this.log(`[PAIR]  Device ready for pairing: ${device.name}`);
       return [device];
 
     } catch (error) {
-      this.error(`[PAIR] ❌ Pairing failed: ${error.message}`);
+      this.error(`[PAIR]  Pairing failed: ${error.message}`);
       // Return device anyway to prevent "Unknown Zigbee Device"
       return [{
         name: `Smoke Detector (${zclNode?.manufacturerName || 'Recovery'})`,

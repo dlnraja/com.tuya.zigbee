@@ -111,7 +111,7 @@ const allFiles = walk(DDIR).concat(walk(LIBDIR));
 let count = 0;
 allFiles.forEach(f => {
   if (processFile(f)) {
-    console.log(`✅ Fixed: ${path.relative(process.cwd(), f)}`);
+    console.log(` Fixed: ${path.relative(process.cwd(), f)}`);
     count++;
   }
 });

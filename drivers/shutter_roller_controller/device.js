@@ -20,7 +20,7 @@ class ShutterRollerDevice extends UnifiedCoverBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[SHUTTER] ✅ Ready');
+    this.log('[SHUTTER]  Ready');
   }
 
 

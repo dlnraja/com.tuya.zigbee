@@ -12,23 +12,23 @@ try { Cluster.addCluster(ZosungIRTransmitCluster); } catch (e) {}
 try { Cluster.addCluster(ZosungIRControlCluster); } catch (e) {}
 
 /**
- * Zigbee IR Remote — Moes UFO-R11, Aubess ZXZIR-02, WMUN ZS05 (TS1201)
+ * Zigbee IR Remote  Moes UFO-R11, Aubess ZXZIR-02, WMUN ZS05 (TS1201)
  *
  * Full Zosung IR protocol implementation:
  * - Cluster 0xED00 (zosungIRTransmit): chunked IR code transfer
  * - Cluster 0xE004 (zosungIRControl): learn mode + send trigger
  *
  * Send flow (from Z2M):
- *   1. Host → Device: startTransmit (cmd 0x00) with seq, length, cmd=2
- *   2. Device → Host: startTransmitAck (cmd 0x01) — echo back
- *   3. Device → Host: codeDataRequest (cmd 0x02) — ask for chunk at position
- *   4. Host → Device: codeDataResponse (cmd 0x03) — send chunk + CRC
+ *   1. Host  Device: startTransmit (cmd 0x00) with seq, length, cmd=2
+ *   2. Device  Host: startTransmitAck (cmd 0x01)  echo back
+ *   3. Device  Host: codeDataRequest (cmd 0x02)  ask for chunk at position
+ *   4. Host  Device: codeDataResponse (cmd 0x03)  send chunk + CRC
  *   5. Repeat 3-4 until all data sent
- *   6. Host → Device: doneSending (cmd 0x04)
- *   7. Device → Host: doneReceiving (cmd 0x05)
+ *   6. Host  Device: doneSending (cmd 0x04)
+ *   7. Device  Host: doneReceiving (cmd 0x05)
  *
  * Learn flow:
- *   1. Host → Device: IRLearn (0xE004 cmd 0x00) with {"study":0}
+ *   1. Host  Device: IRLearn (0xE004 cmd 0x00) with {"study":0}
  *   2. Device sends IR data back via same chunked protocol (startTransmit with cmd=1)
  *   3. Host receives chunks, reassembles full IR code
  */
@@ -53,7 +53,7 @@ class IRRemoteDevice extends ZigBeeDevice {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    // v5.13.3: IR remotes are USB-powered, remove battery capthis.log('[IR] Init Zigbee IR Remote — Zosung protocol');
+    // v5.13.3: IR remotes are USB-powered, remove battery capthis.log('[IR] Init Zigbee IR Remote  Zosung protocol');
     this._seq = 0;
     this._pendingSend = null;   // { msg: string, seq: number, resolve, reject }
     this._learnBuffer = null;   // { seq: number, length: number, chunks: Map, resolve }
@@ -70,13 +70,13 @@ class IRRemoteDevice extends ZigBeeDevice {
     this._zclNode = zclNode;
     const ep = zclNode.endpoints[1];
 
-    // Bind IR Transmit BoundCluster (0xED00) — receive protocol messages
+    // Bind IR Transmit BoundCluster (0xED00)  receive protocol messages
     try {
       ep.bind('zosungIRTransmit', new ZosungIRTransmitBoundCluster({ device: this }));
       this.log('[IR] 0xED00 BoundCluster bound');
     } catch (e) { this.log('[IR] 0xED00 bind fallback:', e.message); }
 
-    // Bind IR Control BoundCluster (0xE004) — receive learn results
+    // Bind IR Control BoundCluster (0xE004)  receive learn results
     try {
       ep.bind('zosungIRControl', new ZosungIRControlBoundCluster({ device: this }));
       this.log('[IR] 0xE004 BoundCluster bound');
@@ -111,14 +111,14 @@ class IRRemoteDevice extends ZigBeeDevice {
     if (this.hasCapability('ir_send_code'))
       this.registerCapabilityListener('ir_send_code', (v) => this.sendIRCode(v));
 
-    this.log('[IR] Ready — full Zosung protocol');
+    this.log('[IR] Ready  full Zosung protocol');
   }
 
   _nextSeq() { return this._seq = (this._seq + 1) % 0x10000; }
 
-  // ═══════════════════════════════════════════════════════════════════════
-  // SEND IR CODE — Full chunked protocol
-  // ═══════════════════════════════════════════════════════════════════════
+  // 
+  // SEND IR CODE  Full chunked protocol
+  // 
 
   async sendIRCode(code) {
     if (!code) return;
@@ -171,7 +171,7 @@ class IRRemoteDevice extends ZigBeeDevice {
     this.log('[IR-TX] Raw startTransmit sent, seq:', seq);
   }
 
-  // Device echoes back — acknowledged
+  // Device echoes back  acknowledged
   _onStartTransmitAck(data) {
     this.log('[IR-TX] startTransmitAck received, seq:', data?.seq);
   }
@@ -204,16 +204,16 @@ class IRRemoteDevice extends ZigBeeDevice {
 
   // Device confirms all data received
   _onDoneReceiving(data) {
-    this.log('[IR-TX] doneReceiving — IR code sent successfully!');
+    this.log('[IR-TX] doneReceiving  IR code sent successfully!');
     if (this._pendingSend) {
       this._pendingSend.resolve(true);
       this._pendingSend = null;
     }
   }
 
-  // ═══════════════════════════════════════════════════════════════════════
-  // LEARN IR CODE — Receive chunked data from device
-  // ═══════════════════════════════════════════════════════════════════════
+  // 
+  // LEARN IR CODE  Receive chunked data from device
+  // 
 
   async startLearn() {
     this.log('[IR-RX] Start learning...');
@@ -239,7 +239,7 @@ class IRRemoteDevice extends ZigBeeDevice {
         ep.sendFrame(0xE004, 0x00, Buffer.from(JSON.stringify({ study: 0 })))
           .catch(e => this.error('[IR-RX] IRLearn raw err:', e.message));
       }
-      this.log('[IR-RX] Learn command sent — point remote at device');
+      this.log('[IR-RX] Learn command sent  point remote at device');
     });
   }
 
@@ -329,9 +329,9 @@ class IRRemoteDevice extends ZigBeeDevice {
     this.log('[IR-RX] Learn status:', data);
   }
 
-  // ═══════════════════════════════════════════════════════════════════════
+  // 
   // RAW FRAME FALLBACK (for devices where BoundCluster doesn't bind)
-  // ═══════════════════════════════════════════════════════════════════════
+  // 
 
   async _handleRawFrame(cid, frame, meta) {
     const cmd = frame?.cmdId ?? meta?.cmdId ?? frame?.[0];

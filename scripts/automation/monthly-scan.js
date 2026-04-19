@@ -208,7 +208,7 @@ function generateReport() {
   const now = new Date();
   const monthYear = now.toISOString().slice(0, 7);
   
-  console.log('🔍 Scanning existing drivers...');
+  console.log(' Scanning existing drivers...');
   const { drivers, collisions, totalMfrs } = scanExistingDrivers();
   
   let report = `# Monthly Tuya Zigbee Report - ${monthYear}\n\n`;
@@ -216,20 +216,20 @@ function generateReport() {
   
   // Summary
   const legacyGangs = Object.entries(drivers).filter(([_, d]) => d.caps.some(c => c.includes('_') || c.includes('gang'))).length;
-  report += `## 📊 Architectural Health [v7.0.22]\n\n`;
+  report += `##  Architectural Health [v7.0.22]\n\n`;
   report += `| Metric | Value | Status |\n`;
   report += `|--------|-------|--------|\n`;
-  report += `| Total Drivers | ${Object.keys(drivers).length} | ✅ |\n`;
-  report += `| Manufacturer IDs | ${totalMfrs} | ✅ |\n`;
-  report += `| Collisions | ${collisions.length} | ${collisions.length > 0 ? '⚠️' : '✅'} |\n`;
-  report += `| v7 Architectural Debt | ${legacyGangs} legacy drivers | 🛠️ |\n`;
-  report += `| PR Auto-Merger | Active | 🛡️ |\n`;
-  report += `| Community Responder | Template Ready | 🤖 |\n`;
+  report += `| Total Drivers | ${Object.keys(drivers).length} |  |\n`;
+  report += `| Manufacturer IDs | ${totalMfrs} |  |\n`;
+  report += `| Collisions | ${collisions.length} | ${collisions.length > 0 ? '' : ''} |\n`;
+  report += `| v7 Architectural Debt | ${legacyGangs} legacy drivers |  |\n`;
+  report += `| PR Auto-Merger | Active |  |\n`;
+  report += `| Community Responder | Template Ready |  |\n`;
   report += `\n`;
   
   // Collisions
   if (collisions.length > 0) {
-    report += `## ⚠️ Collisions Detected\n\n`;
+    report += `##  Collisions Detected\n\n`;
     report += `| ID | Drivers |\n`;
     report += `|----|--------|\n`;
     collisions.slice(0, 20).forEach(c => {
@@ -242,7 +242,7 @@ function generateReport() {
   }
   
   // Action items
-  report += `## 📋 Action Items\n\n`;
+  report += `##  Action Items\n\n`;
   report += `- [ ] Review collision report\n`;
   report += `- [ ] Check forum for new device requests\n`;
   report += `- [ ] Analyze pending PRs from forks\n`;
@@ -255,13 +255,13 @@ function generateReport() {
   
   // Write report
   fs.writeFileSync(REPORT_PATH, report);
-  console.log(`✅ Report generated: ${REPORT_PATH}`);
+  console.log(` Report generated: ${REPORT_PATH}`);
   
   return { drivers, collisions };
 }
 
 // Run
-console.log('🚀 Monthly Automation Pipeline Starting...\n');
+console.log(' Monthly Automation Pipeline Starting...\n');
 const result = generateReport();
-console.log(`\n📊 Found ${Object.keys(result.drivers).length} drivers`);
-console.log(`⚠️ ${result.collisions.length} collisions detected`);
+console.log(`\n Found ${Object.keys(result.drivers).length} drivers`);
+console.log(` ${result.collisions.length} collisions detected`);

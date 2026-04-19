@@ -6,21 +6,21 @@ After initial setup (to get local keys), devices communicate directly over LAN.
 
 ## Architecture
 ```
-SmartLife App ──scan QR──> TuyaSmartLifeAuth ──> local_key + device list
-  OR                         │
-IoT Platform ──apiKey───> TuyaSmartLifeAuth ──> local_key + device list
-  OR                         │
-Manual entry ─────────────────────────────────> device_id + local_key + IP
-                             │
+SmartLife App scan QR> TuyaSmartLifeAuth > local_key + device list
+  OR                         
+IoT Platform apiKey> TuyaSmartLifeAuth > local_key + device list
+  OR                         
+Manual entry > device_id + local_key + IP
+                             
                     TuyaDeviceDiscovery (UDP 6666/6667)
-                             │
-                    ┌────────┴────────┐
-                    │  Matched Devices │ (cloud keys + LAN IPs)
-                    └────────┬────────┘
-                             │
+                             
+                    
+                      Matched Devices  (cloud keys + LAN IPs)
+                    
+                             
                     TuyaLocalDevice (tuyapi)
                     Protocol 3.1 / 3.3 / 3.4 / 3.5
-                             │
+                             
                     Direct LAN TCP control
 ```
 

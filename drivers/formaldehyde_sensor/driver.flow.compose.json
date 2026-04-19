@@ -11,8 +11,8 @@
           "name": "formaldehyde",
           "type": "number",
           "title": {
-            "en": "Formaldehyde (μg/m³)",
-            "fr": "Formaldéhyde (μg/m³)"
+            "en": "Formaldehyde (g/m³)",
+            "fr": "Formaldéhyde (g/m³)"
           },
           "example": 25
         }
@@ -111,8 +111,8 @@
         "fr": "Formaldéhyde supérieur à"
       },
       "titleFormatted": {
-        "en": "Formaldehyde is above [[level]] μg/m³",
-        "fr": "Formaldéhyde supérieur à [[level]] μg/m³"
+        "en": "Formaldehyde is above [[level]] g/m³",
+        "fr": "Formaldéhyde supérieur à [[level]] g/m³"
       },
       "args": [
         {

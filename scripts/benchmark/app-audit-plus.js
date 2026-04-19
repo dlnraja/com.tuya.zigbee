@@ -18,7 +18,7 @@ function formatBytes(bytes, decimals = 2) {
 }
 
 async function runAudit() {
-    console.log('## 📊 Deep Architectural Audit & Benchmark\n');
+    console.log('##  Deep Architectural Audit & Benchmark\n');
     
     const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory());
     
@@ -101,19 +101,19 @@ async function runAudit() {
     console.log(`| Unsafe Flow Card Retrievals | ${stats.unsafeFlows} |`);
     
     if (stats.heavyDrivers.length > 0) {
-        console.log('\n### ⚠️ Heavy Drivers (>20KB device.js)');
+        console.log('\n###  Heavy Drivers (>20KB device.js)');
         stats.heavyDrivers.sort((a,b) => b.size - a.size).slice(0, 5).forEach(d => {
             console.log(`- **${d.name}**: ${formatBytes(d.size)}`);
         });
     }
 
     if (stats.unsafeFiles && stats.unsafeFiles.length > 0) {
-        console.log('\n### 🚨 Unsafe Flow Card Retrievals (needs _getFlowCard)');
+        console.log('\n###  Unsafe Flow Card Retrievals (needs _getFlowCard)');
         stats.unsafeFiles.forEach(f => console.log(`- ${f}`));
     }
 
     // Performance recommendations
-    console.log('\n### 💡 Optimization Recommendations');
+    console.log('\n###  Optimization Recommendations');
     if (stats.unoptimizedImages > 0) console.log('- Run `node scripts/maintenance/fix-large-images.js` to compress assets.');
     if (stats.unsafeFlows > 0) console.log('- Migrate remaining drivers to `this._getFlowCard()` pattern for SDK 3 stability.');
     if (stats.deprecatedUsages > 0) console.log('- Replace `getDevice*Card` with `get*Card` immediately.');

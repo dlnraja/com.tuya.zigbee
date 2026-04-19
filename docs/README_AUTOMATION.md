@@ -1,13 +1,13 @@
-# 🤖 SYSTÈME D'AUTOMATISATION COMPLÈTE
+#  SYSTÈME D'AUTOMATISATION COMPLÈTE
 
 ## Workflows Actifs
 
-### 1️⃣ Auto Process GitHub Issues
+### 1 Auto Process GitHub Issues
 **Fichier**: `workflows/auto-process-github-issues.yml`
 
 **Déclenchement**:
 - Automatique: Nouvelle issue avec label "New Device"
-- Manuel: Actions → "Auto Process GitHub Issues" → Run workflow
+- Manuel: Actions  "Auto Process GitHub Issues"  Run workflow
 
 **Actions**:
 1. Extrait manufacturer + model de l'issue
@@ -18,11 +18,11 @@
 6. Poste réponse complète sur issue
 7. Ajoute labels appropriés
 
-**Exemple**: Issue #1267 (HOBEIAN ZG-204ZL) → Driver enrichi en 30s
+**Exemple**: Issue #1267 (HOBEIAN ZG-204ZL)  Driver enrichi en 30s
 
 ---
 
-### 2️⃣ Auto Respond to PRs
+### 2 Auto Respond to PRs
 **Fichier**: `workflows/auto-respond-to-prs.yml`
 
 **Déclenchement**:
@@ -38,12 +38,12 @@
 
 ---
 
-### 3️⃣ Scheduled Issues Scan
+### 3 Scheduled Issues Scan
 **Fichier**: `workflows/scheduled-issues-scan.yml`
 
 **Déclenchement**:
 - Automatique: Tous les jours 9h UTC
-- Manuel: Actions → "Scheduled Issues Scan" → Run workflow
+- Manuel: Actions  "Scheduled Issues Scan"  Run workflow
 
 **Actions**:
 1. Scan toutes issues ouvertes "New Device"
@@ -55,7 +55,7 @@
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Activation Workflows
 
@@ -66,9 +66,9 @@ git commit -m "Add automated workflows"
 git push origin main
 
 # 2. Vérifier permissions GitHub
-# Settings → Actions → General → Workflow permissions
-# ✅ Read and write permissions
-# ✅ Allow GitHub Actions to create and approve pull requests
+# Settings  Actions  General  Workflow permissions
+#  Read and write permissions
+#  Allow GitHub Actions to create and approve pull requests
 ```
 
 ### Créer Labels Requis
@@ -93,28 +93,28 @@ Aller sur: `https://github.com/YOUR_REPO/labels`
 
 ---
 
-## 📊 Monitoring
+##  Monitoring
 
 ### GitHub Actions
 
 **Dashboard**: `https://github.com/YOUR_REPO/actions`
 
 **Voir**:
-- ✅ Workflows réussis
-- ❌ Workflows échoués
-- ⏱️ Temps exécution
-- 📝 Logs détaillés
+-  Workflows réussis
+-  Workflows échoués
+-  Temps exécution
+-  Logs détaillés
 
 ### Notifications
 
 **Email automatique** si:
-- ❌ Workflow échoue
-- ⚠️ Rate limit atteint
-- 🔒 Permission insuffisante
+-  Workflow échoue
+-  Rate limit atteint
+-  Permission insuffisante
 
 ---
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 ### Workflow ne démarre pas
 
@@ -143,7 +143,7 @@ GitHub Actions: 1000 min/mois (free tier)
 
 ---
 
-## 📈 Statistiques Attendues
+##  Statistiques Attendues
 
 **Par mois**:
 - ~60-150 issues device requests
@@ -158,7 +158,7 @@ GitHub Actions: 1000 min/mois (free tier)
 
 ---
 
-## ✅ Best Practices
+##  Best Practices
 
 ### Pour Issues
 
@@ -183,7 +183,7 @@ GitHub Actions: 1000 min/mois (free tier)
 
 ---
 
-## 🔄 Évolution
+##  Évolution
 
 ### Améliorations Futures
 
@@ -204,7 +204,7 @@ GitHub Actions: 1000 min/mois (free tier)
 
 ---
 
-## 📞 Support
+##  Support
 
 **Issues workflows**:
 - Créer issue avec label "workflow"
@@ -218,6 +218,6 @@ GitHub Actions: 1000 min/mois (free tier)
 ---
 
 **Version**: 1.0.0  
-**Status**: ✅ Production Ready  
+**Status**:  Production Ready  
 **Maintenance**: Automated  
 **Cost**: $0 (GitHub Actions free tier)

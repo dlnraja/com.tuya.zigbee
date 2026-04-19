@@ -33,7 +33,7 @@ function normalizeFingerprints(filePath) {
 
     if (changed) {
       fs.writeFileSync(filePath, JSON.stringify(content, null, 2));
-      console.log(`✅ Normalized: ${filePath}`);
+      console.log(` Normalized: ${filePath}`);
     }
   } catch (e) {
     // console.error(`Error processing ${filePath}: ${e.message}`);

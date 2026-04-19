@@ -11,9 +11,9 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * Supports: TS011F, TS0115, TS0601 USB outlets with power monitoring
  * Features: Multiple sockets, USB ports, LED control, button detection, power measurement
  *
- * ═══════════════════════════════════════════════════════════════════════════
+ * 
  * KNOWN ISSUES & MODEL VARIATIONS (v5.4.7 Documentation)
- * ═══════════════════════════════════════════════════════════════════════════
+ * 
  *
  * 1. POWER MEASUREMENT DIVISORS:
  *    - Most models: safeParse(Power, 10), safeParse(Current, 1000), safeParse(Voltage, 10), safeParse(Energy, 100)
@@ -44,7 +44,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  *    - The device shows "batteries: OTHER" but is actually AC-powered
  *    - This is due to auto-detection fallback and does not affect functionality
  *
- * ═══════════════════════════════════════════════════════════════════════════
+ * 
  */
 class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
@@ -58,16 +58,16 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
    */
   get dpMappings() {
     return {
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // SOCKET/RELAY CONTROL
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       2: { capability: 'onoff.socket2', transform: (v) => v === 1 || v === true },
       7: { capability: 'onoff', transform: (v) => v === 1 || v === true }, // Alt DP for some models
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // USB PORTS CONTROL - Multiple possible DPs depending on model
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       9: { capability: 'onoff.usb1', transform: (v) => v === 1 || v === true },
       10: { capability: 'onoff.usb2', transform: (v) => v === 1 || v === true },
       // v5.5.35: Additional USB DPs found in some models
@@ -76,15 +76,15 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       11: { capability: 'onoff.usb1', transform: (v) => v === 1 || v === true }, // Alt USB1 DP
       12: { capability: 'onoff.usb2', transform: (v) => v === 1 || v === true }, // Alt USB2 DP
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // LED INDICATOR CONTROL
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       13: { capability: 'onoff.led', transform: (v) => v === 1 || v === true },
       101: { capability: 'onoff.led', transform: (v) => v === 1 || v === true }, // Alt DP
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // POWER MEASUREMENT (Z2M: value in 0.1W or 0.01W depending on model)
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       16: { capability: 'measure_power', divisor: 10 },      // Power W (value/10)
       17: { capability: 'measure_current', divisor: 1000 },  // Current A (value/1000)
       18: { capability: 'measure_voltage', divisor: 10 },    // Voltage V (value/10)
@@ -95,9 +95,9 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       105: { capability: 'measure_current', divisor: 1000 }, // Alt current DP
       106: { capability: 'measure_voltage', divisor: 10 },   // Alt voltage DP
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // BUTTON PRESS DETECTION - v5.5.19: Uses flow trigger instead of capability
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       102: { capability: null, flowTrigger: 'button_pressed' },
       103: { capability: null, flowTrigger: 'button_pressed' },
       121: { capability: null, flowTrigger: 'button_pressed' },
@@ -153,7 +153,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();
 
-    this.log('[USB-ADV] ✅ Ready - Full power monitoring enabled (v5.13.1 + Bidirectional Buttons)');
+    this.log('[USB-ADV]  Ready - Full power monitoring enabled (v5.13.1 + Bidirectional Buttons)');
   }
 
   /**
@@ -213,7 +213,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       if (this.safeTuyaDataQuery) {
         // All relevant control DPs
         const controlDPs = [1, 2, 3, 4, 7, 9, 10, 11, 12, 13, 101];
-        this.log('[USB-ADV] 📤 Requesting initial states...');
+        this.log('[USB-ADV]  Requesting initial states...');
         await this.safeTuyaDataQuery(controlDPs, {
           logPrefix: '[USB-INIT]',
           delayBetweenQueries: 50
@@ -252,7 +252,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
     // LED control
     if (this.hasCapability('onoff.led')) {
       this.registerCapabilityListener('onoff.led', async (value) => {
-        this.log('[USB-ADV] LED →', value);
+        this.log('[USB-ADV] LED ', value);
         await this._sendDP(13, value);
       });
     }
@@ -260,7 +260,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
     // Socket 2 control - v5.5.54: Try both Tuya DP AND ZCL
     if (this.hasCapability('onoff.socket2')) {
       this.registerCapabilityListener('onoff.socket2', async (value) => {
-        this.log('[USB-ADV] Socket 2 →', value);
+        this.log('[USB-ADV] Socket 2 ', value);
         await this._sendDP(2, value);
         // v5.5.54: Also try ZCL endpoint 2 for non-Tuya devices
         if (this._ep2?.clusters?.onOff) {
@@ -275,7 +275,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
     // USB 1 control - v5.5.54: Try both Tuya DP AND ZCL
     if (this.hasCapability('onoff.usb1')) {
       this.registerCapabilityListener('onoff.usb1', async (value) => {
-        this.log('[USB-ADV] USB 1 →', value);
+        this.log('[USB-ADV] USB 1 ', value);
         // v5.5.35: Try common USB1 DPs
         await this._sendDP(9, value);   // Primary
         await this._sendDP(3, value);   // Alt
@@ -293,7 +293,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
     // USB 2 control - try multiple DPs
     if (this.hasCapability('onoff.usb2')) {
       this.registerCapabilityListener('onoff.usb2', async (value) => {
-        this.log('[USB-ADV] USB 2 →', value);
+        this.log('[USB-ADV] USB 2 ', value);
         // v5.5.35: Try common USB2 DPs
         await this._sendDP(10, value);  // Primary
         await this._sendDP(4, value);   // Alt

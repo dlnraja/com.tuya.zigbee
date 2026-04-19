@@ -1,5 +1,5 @@
 ---
-name: 🆕 Device Request
+name:  Device Request
 about: Request support for a new Tuya Zigbee device
 title: '[DEVICE] '
 labels: enhancement, device-request
@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-## 📸 Device Information
+##  Device Information
 
 **Device Photos** (front + back with labels visible):
 - [ ] Attached photos
@@ -21,7 +21,7 @@ assignees: ''
 
 ---
 
-## 🔍 Current Status
+##  Current Status
 
 Select one:
 - [ ] Device is **not recognized** by Homey (doesn't show in pairing)
@@ -36,9 +36,9 @@ Example: "Motion detection works but battery always shows 0%"
 
 ---
 
-## 📡 Zigbee Fingerprint
+##  Zigbee Fingerprint
 
-**From Homey Developer Tools** → Zigbee → Devices → [Your Device]:
+**From Homey Developer Tools**  Zigbee  Devices  [Your Device]:
 
 ```json
 {
@@ -58,7 +58,7 @@ Example: "Motion detection works but battery always shows 0%"
 
 ---
 
-## 🔗 External References
+##  External References
 
 **Help us map this device faster!**
 
@@ -73,7 +73,7 @@ Example: "Motion detection works but battery always shows 0%"
 
 ---
 
-## 🔢 DataPoints (TS0601 devices only)
+##  DataPoints (TS0601 devices only)
 
 If your device is **TS0601**, we need DataPoint information:
 
@@ -89,27 +89,27 @@ DP 3 = temperature
 
 ---
 
-## 🌡️ Sensor Capability Gaps (if device pairs but readings are missing)
+##  Sensor Capability Gaps (if device pairs but readings are missing)
 
 If your sensor pairs but is **missing a reading** (e.g., fertilizer, EC, VOC, formaldehyde):
-- **Diagnostic report ID**: (Settings → Homey → Send diagnostic report)
-- **App logs**: (Settings → Apps → Universal Tuya Zigbee → View Log)
-  - Look for lines like `[SOIL] DP105 received` — these show unknown data points
+- **Diagnostic report ID**: (Settings  Homey  Send diagnostic report)
+- **App logs**: (Settings  Apps  Universal Tuya Zigbee  View Log)
+  - Look for lines like `[SOIL] DP105 received`  these show unknown data points
 - **Which readings are missing**: 
 - **Which readings work**: 
 
 ---
 
-## 📋 Additional Context
+##  Additional Context
 
-- **Diagnostic Code** (if device paired): Homey App → Device → Settings → Diagnostics
+- **Diagnostic Code** (if device paired): Homey App  Device  Settings  Diagnostics
 - **Error Messages**: (if any shown during pairing)
 - **Similar Devices**: (other models that work similarly)
 - **Expected Behavior**: (what should work)
 
 ---
 
-## ✅ Checklist (before submitting)
+##  Checklist (before submitting)
 
 - [ ] Model ID provided (e.g., TS0202)
 - [ ] Manufacturer ID provided (e.g., _TZ3000_xyz)

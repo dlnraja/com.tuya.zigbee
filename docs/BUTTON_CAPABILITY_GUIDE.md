@@ -20,7 +20,7 @@ Physical wireless buttons (TS0041, TS0215A, scene switches, etc.) are **event-on
 
 ### How to Use Wireless Buttons
 
-#### ✅ Correct Usage: Flow Triggers
+####  Correct Usage: Flow Triggers
 
 1. **Create a Flow**
 2. **WHEN card**: Select your button device
@@ -37,7 +37,7 @@ WHEN: Living Room Button pressed
 THEN: Toggle Living Room Lights
 ```
 
-#### ❌ Incorrect Expectation: Clickable Widget
+####  Incorrect Expectation: Clickable Widget
 
 You cannot click the button in the Homey app to trigger actions. The physical button must be pressed.
 
@@ -106,11 +106,11 @@ All button drivers provide these flow triggers:
 ### "No response through flows"
 
 **Checklist:**
-1. ✅ Is the flow trigger card configured correctly?
-2. ✅ Did you select the correct button device in the WHEN card?
-3. ✅ Is the button physically pressed (not clicked in app)?
-4. ✅ Check flow execution logs in Homey app
-5. ✅ Try re-pairing the device (bindings set during pairing)
+1.  Is the flow trigger card configured correctly?
+2.  Did you select the correct button device in the WHEN card?
+3.  Is the button physically pressed (not clicked in app)?
+4.  Check flow execution logs in Homey app
+5.  Try re-pairing the device (bindings set during pairing)
 
 **Common issues:**
 - Wrong device selected in flow
@@ -124,7 +124,7 @@ All button drivers provide these flow triggers:
 
 If you need a virtual button widget:
 1. Use a **Virtual Device** from the Homey Virtual Devices app
-2. Create flows linking physical button → virtual button
+2. Create flows linking physical button  virtual button
 3. The virtual button will have a clickable widget
 
 ### "Battery not updating"

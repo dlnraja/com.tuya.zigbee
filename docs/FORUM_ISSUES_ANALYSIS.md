@@ -7,27 +7,27 @@
 
 ---
 
-## 🚨 CRITICAL ISSUES
+##  CRITICAL ISSUES
 
 ### 1. **Smart Buttons - No Flow Response** (Cam - #1160)
 **Device**: 1-Button Wireless Controller
 **Version**: 5.5.759
 **Diagnostic**: 4d7b45a5-082f-4f1e-a787-a439eac5257a
-**Status**: ⚠️ INVESTIGATING
+**Status**:  INVESTIGATING
 
 **Symptoms**:
-- ✅ Pairs correctly as 1-Buttons Wireless controller
-- ✅ No ghost triggers every hour (previous bug fixed)
-- ❌ No GUI button in device settings
-- ❌ No response through flows
-- ❌ No battery readout
+-  Pairs correctly as 1-Buttons Wireless controller
+-  No ghost triggers every hour (previous bug fixed)
+-  No GUI button in device settings
+-  No response through flows
+-  No battery readout
 
 **Code Analysis**:
-- ✅ `button.1` capability defined in driver.compose.json
-- ✅ `measure_battery` capability defined
-- ✅ Flow triggers present in driver.flow.compose.json
-- ✅ Battery reporting code in device.js
-- ⚠️ "No GUI button" suggests capability not visible in Homey UI
+-  `button.1` capability defined in driver.compose.json
+-  `measure_battery` capability defined
+-  Flow triggers present in driver.flow.compose.json
+-  Battery reporting code in device.js
+-  "No GUI button" suggests capability not visible in Homey UI
 
 **Hypothesis**:
 - Button capability with `maintenanceAction: true` makes it hidden in main UI
@@ -45,7 +45,7 @@
 
 ### 2. **Contact Sensor - No Response** (Lasse_K - Page 42)
 **Device**: Contact/Door sensor
-**Status**: ⚠️ NEEDS USER DIAGNOSTIC
+**Status**:  NEEDS USER DIAGNOSTIC
 
 **Symptoms**:
 - Device completely unresponsive
@@ -53,11 +53,11 @@
 - Was working before recent update
 
 **Code Analysis**:
-- ✅ Contact sensor driver has extensive v5.5.344 fixes for IAS Zone keep-alive
-- ✅ Debouncing implemented (500ms-3000ms depending on problematic sensor detection)
-- ✅ Invert contact setting available for inverted sensors
-- ✅ HybridSensorBase handles IAS Zone + Tuya DP + ZCL listeners
-- ⚠️ No IAS Zone listener code visible in contact_sensor/device.js
+-  Contact sensor driver has extensive v5.5.344 fixes for IAS Zone keep-alive
+-  Debouncing implemented (500ms-3000ms depending on problematic sensor detection)
+-  Invert contact setting available for inverted sensors
+-  HybridSensorBase handles IAS Zone + Tuya DP + ZCL listeners
+-  No IAS Zone listener code visible in contact_sensor/device.js
 
 **Hypothesis**:
 - User may have inverted sensor (needs invert_contact setting)
@@ -75,7 +75,7 @@
 
 ### 3. **Scene Switches - No Button Selection** (Eftychis_Georgilas - Page 42)
 **Diagnostic**: 7fc451ca-ed9a-4997-a070-979118b8e6c2
-**Status**: ⚠️ INVESTIGATING
+**Status**:  INVESTIGATING
 
 **Symptoms**:
 - Switches moved to scene driver
@@ -84,9 +84,9 @@
 - Motion sensor has same issue
 
 **Code Analysis**:
-- ✅ Scene switches have `button.1` capability (same as wireless buttons)
-- ✅ `maintenanceAction: true` makes button hidden in main UI
-- ⚠️ Same design as button_wireless_1 - button is event-only, not visible widget
+-  Scene switches have `button.1` capability (same as wireless buttons)
+-  `maintenanceAction: true` makes button hidden in main UI
+-  Same design as button_wireless_1 - button is event-only, not visible widget
 
 **Hypothesis**:
 - Same as button_wireless_1 issue - user expects visible button widget
@@ -101,12 +101,12 @@
 
 ---
 
-## ⚠️ DEVICE-SPECIFIC ISSUES
+##  DEVICE-SPECIFIC ISSUES
 
 ### 4. **_TZE284_iadro9bf - Motion Alarm Stuck** (Page 39)
 **Device**: Presence radar sensor (router)
 **Diagnostic**: d8820bc1-7646-411b-8158-2132ea45a1ac
-**Status**: ⚠️ HIGH PRIORITY
+**Status**:  HIGH PRIORITY
 
 **Interview Data**:
 ```json
@@ -122,18 +122,18 @@
 - Motion alarm ALWAYS YES
 - Updates every 20 seconds even with no movement
 - Human presence works correctly
-- Illuminance jumps: 30 lux → 1000-1100 lux (with same lighting)
+- Illuminance jumps: 30 lux  1000-1100 lux (with same lighting)
 
 **Root Cause Analysis**:
-- ✅ Device config exists: `TZE284_IADRO9BF` with extensive fixes
-- ✅ `_throttleMotionSpam()` blocks duplicate motion updates (60s throttle)
-- ✅ Lux smoothing implemented (120s window, oscillation lock)
-- ⚠️ Config has `invertPresence: false` - may need to be `true`
-- ⚠️ Motion spam throttle only blocks SAME values, not constant YES
+-  Device config exists: `TZE284_IADRO9BF` with extensive fixes
+-  `_throttleMotionSpam()` blocks duplicate motion updates (60s throttle)
+-  Lux smoothing implemented (120s window, oscillation lock)
+-  Config has `invertPresence: false` - may need to be `true`
+-  Motion spam throttle only blocks SAME values, not constant YES
 
 **Issue**: User reports "motion alarm ALWAYS YES every 20s"
 - Current throttle blocks repeated values within 60s
-- But if device alternates YES→NO→YES rapidly, throttle won't catch it
+- But if device alternates YESNOYES rapidly, throttle won't catch it
 - Or if firmware genuinely reports YES constantly (stuck state)
 
 **Fix Strategy**:
@@ -146,7 +146,7 @@
 
 ### 5. **_TZE204_gkfbdvyx - Similar Radar Issue** (Page 39)
 **Device**: Presence radar sensor (router)
-**Status**: ⚠️ HIGH PRIORITY
+**Status**:  HIGH PRIORITY
 
 **Interview Data**:
 ```json
@@ -166,7 +166,7 @@
 
 ### 6. **eWeLink CK-TLSR8656-SS5-01(7014) - Not Pairing** (Page 42)
 **Device**: Temperature & Humidity Sensor
-**Status**: ✅ FIXED
+**Status**:  FIXED
 
 **Interview Data**:
 ```json
@@ -190,7 +190,7 @@
 **Analysis**:
 - Pure ZCL device (no Tuya cluster 61184)
 - Should pair to climate_sensor driver
-- ✅ Added "eWeLink" to climate_sensor manufacturerName list
+-  Added "eWeLink" to climate_sensor manufacturerName list
 
 **Fix Applied**:
 - Added "eWeLink" manufacturer name to `@/c:/Users/HP/Desktop/homey app/tuya_repair/drivers/climate_sensor/driver.compose.json:2480-2481`
@@ -201,7 +201,7 @@
 ### 7. **_TZ3000_wkai4ga5 / _TZ3000_5tqxpine - Fingerprint Collision** (Eftychis - Page 41)
 **Devices**: 4-button scene switches
 **Diagnostic**: 63cacdf6-10d0-4873-8fd8-7b75affd4786
-**Status**: ⚠️ FINGERPRINT COLLISION
+**Status**:  FINGERPRINT COLLISION
 
 **Symptoms**:
 - Buttons don't respond with physical press
@@ -211,11 +211,11 @@
 - Battery not showing on _TZ3000_5tqxpine
 
 **Code Analysis**:
-- ⚠️ `_TZ3000_wkai4ga5` is in 8+ drivers (COLLISION!):
+-  `_TZ3000_wkai4ga5` is in 8+ drivers (COLLISION!):
   - water_leak_sensor, switch_3gang, switch_2gang, switch_4gang, switch_1gang
   - scene_switch_4, motion_sensor, contact_sensor, climate_sensor
   - button_wireless_4 (CORRECT ONE)
-- ⚠️ `_TZ3000_5tqxpine` is in scene_switch_4 AND button_wireless_4
+-  `_TZ3000_5tqxpine` is in scene_switch_4 AND button_wireless_4
 - Device matches wrong driver during pairing
 
 **Root Cause**: Manufacturer ID in too many drivers causes unpredictable pairing
@@ -229,7 +229,7 @@
 
 ### 8. **HOBEIAN ZG-102Z - IAS Zone CIE Enrollment** (Lasse_K - Page 40)
 **Device**: Contact sensor
-**Status**: ⚠️ CIE ENROLLMENT FAILURE
+**Status**:  CIE ENROLLMENT FAILURE
 
 **Interview Data**:
 ```json
@@ -248,10 +248,10 @@
 - This explains why Lasse_K sees "no indication" from the sensor
 
 **Code Analysis**:
-- ✅ HybridSensorBase has CIE enrollment code (v5.5.646)
-- ✅ Handles zoneEnrollRequest and attempts CIE write
-- ⚠️ CIE write may be failing silently
-- ⚠️ May need explicit enrollment trigger on wake
+-  HybridSensorBase has CIE enrollment code (v5.5.646)
+-  Handles zoneEnrollRequest and attempts CIE write
+-  CIE write may be failing silently
+-  May need explicit enrollment trigger on wake
 
 **Fix Strategy**:
 1. Force CIE address write on device init (even if device shows enrolled)
@@ -262,7 +262,7 @@
 ---
 
 ### 9. **Motion Sensor - Lux Only Updates on Motion** (Eftychis - Page 41)
-**Status**: ⚠️ DESIGN LIMITATION
+**Status**:  DESIGN LIMITATION
 
 **Symptom**: Lux level only updates when motion is triggered, not continuously
 
@@ -276,7 +276,7 @@
 
 ---
 
-## 📋 RECENT REGRESSIONS (Git Analysis)
+##  RECENT REGRESSIONS (Git Analysis)
 
 ### Commits Since 2025-01-15:
 
@@ -298,38 +298,38 @@
 
 ---
 
-## 🔍 CROSS-REFERENCE ACTIONS
+##  CROSS-REFERENCE ACTIONS
 
 ### Zigbee2MQTT Research Needed:
-1. ✅ _TZE284_iadro9bf - Motion alarm DP mapping
-2. ✅ _TZE204_gkfbdvyx - Presence radar configuration
-3. ✅ eWeLink sensors - Device definition
-4. ✅ Button flow card patterns
-5. ✅ Contact sensor IAS Zone handling
+1.  _TZE284_iadro9bf - Motion alarm DP mapping
+2.  _TZE204_gkfbdvyx - Presence radar configuration
+3.  eWeLink sensors - Device definition
+4.  Button flow card patterns
+5.  Contact sensor IAS Zone handling
 
 ### ZHA Research Needed:
-1. ✅ eWeLink quirks
-2. ✅ Presence radar motion detection logic
+1.  eWeLink quirks
+2.  Presence radar motion detection logic
 
 ### Git History Analysis:
-1. ✅ Recent button driver changes
-2. ✅ Contact sensor modifications
-3. ✅ Scene switch driver updates
-4. ✅ Presence radar DP mappings changes
+1.  Recent button driver changes
+2.  Contact sensor modifications
+3.  Scene switch driver updates
+4.  Presence radar DP mappings changes
 
 ---
 
 ## ACTION PLAN
 
 ### Priority 1 - Critical Fixes:
-- [x] Fix smart button flow triggers (Cam) → Fixed v5.9.14
-- [x] Fix contact sensor response (Lasse_K) → Fixed v5.8.85
-- [x] Fix scene switch button selection → Documented as design
+- [x] Fix smart button flow triggers (Cam)  Fixed v5.9.14
+- [x] Fix contact sensor response (Lasse_K)  Fixed v5.8.85
+- [x] Fix scene switch button selection  Documented as design
 
 ### Priority 2 - Device-Specific:
-- [x] Fix _TZE284_iadro9bf motion alarm stuck → Throttle+lux smoothing
-- [x] Add eWeLink CK-TLSR8656-SS5-01(7014) → Added to climate_sensor
-- [x] Verify _TZE204_gkfbdvyx fixes → Working per user report
+- [x] Fix _TZE284_iadro9bf motion alarm stuck  Throttle+lux smoothing
+- [x] Add eWeLink CK-TLSR8656-SS5-01(7014)  Added to climate_sensor
+- [x] Verify _TZE204_gkfbdvyx fixes  Working per user report
 
 ### Priority 3 - Research & Prevention:
 - [ ] Review all recent regressions
@@ -338,7 +338,7 @@
 
 ---
 
-## 📝 NOTES
+##  NOTES
 
 **Pattern Detected**: Multiple issues appeared after v5.5.750-759 releases
 **Hypothesis**: Rapid updates may have introduced regressions in core base classes
@@ -346,8 +346,8 @@
 
 ## Forum p68-70 Scan (2026-02-09)
 RESOLVED: DutchDuke soil v5.8.87, Lasse_K water/contact v5.8.85+88, blutch32 v5.8.85, Hartmut v5.8.87, FinnKje v5.8.40, Karsten v5.8.38, Patrick v5.8.11, Tbao v5.8.41, FrankP IR in code.
-PERSISTENT: Freddyboy TS0044 + Cam TS0041 — need diag on v5.8.88.
-NEEDS INFO: Ricardo_Lenior presence wrong caps — needs fingerprint.
+PERSISTENT: Freddyboy TS0044 + Cam TS0041  need diag on v5.8.88.
+NEEDS INFO: Ricardo_Lenior presence wrong caps  needs fingerprint.
 
 ## Forum p70-72 Scan (2026-02-17)
 RESOLVED: Cam button OK v5.9.14. Tividor TS0044 single OK.
@@ -355,10 +355,10 @@ PERSISTENT: Hartmut TS0726 4-gang virtual=all. Lasse_K contact regression v5.9.x
 NEW: Tividor double/long press NOT working. Piotr TS0002 _TZ3000_cauq1okq 2-gang=1. lemon TS0203 _TZ3000_okohwwap+Zbeacon=generic. JJ10 presence distance=humidity + WiFi settings blank (diag:32709eaf, log spam fixed v5.11.13) [FIXED v7.2.12 added to SensorConfigs]. H_van_Barneveld WiFi liquid level request [FIXED v7.2.12 added flow cards].
 
 ## GitHub Issues (2026-02-17)
-GH#124: _TZ3000_fllyghyj+b4awzgct case — ALREADY FIXED.
-GH#126: _TZ3000_zutizvyk TS0203 — ALREADY in contact_sensor (v5.9.4).
-GH#127: _TZE204_e5m9c5hl radar — FIXED v5.8.97.
-JohanBendz PRs: #1346 time sync LCD, #1333 siren, #1332 HOBEIAN — all already integrated.
+GH#124: _TZ3000_fllyghyj+b4awzgct case  ALREADY FIXED.
+GH#126: _TZ3000_zutizvyk TS0203  ALREADY in contact_sensor (v5.9.4).
+GH#127: _TZE204_e5m9c5hl radar  FIXED v5.8.97.
+JohanBendz PRs: #1346 time sync LCD, #1333 siren, #1332 HOBEIAN  all already integrated.
 
 
 ## Nightly Forum Scan (2026-02-20 v5.11.17)

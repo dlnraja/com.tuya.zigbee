@@ -35,7 +35,7 @@ function loadDB() {
 }
 
 function processHardening() {
-  console.log('🚀 Hardening Driver Identification Couples...');
+  console.log(' Hardening Driver Identification Couples...');
   const db = loadDB();
   
   // 1. Map DB to drivers
@@ -111,11 +111,11 @@ function processHardening() {
       config.zigbee.productId = [...new Set(config.zigbee.productId)].sort();
       
       fs.writeFileSync(cf, JSON.stringify(config, null, 2) + '\n');
-      console.log(`✅ Hardened Identification: ${d}`);
+      console.log(` Hardened Identification: ${d}`);
     }
   }
 
-  console.log('✨ Identification hardening complete.');
+  console.log(' Identification hardening complete.');
 }
 
 processHardening();

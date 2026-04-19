@@ -143,7 +143,7 @@ async function main(){
   console.log('Suggestions: '+report.splitSuggestions.length);
   for(const s of report.splitSuggestions.slice(0,10)){console.log('  '+s.pid+': '+JSON.stringify(Object.keys(s.splitBy)));}
 
-  console.log('\n--- 🛡️ Mfr + PID Pairing Check (Safety v6.3) ---');
+  console.log('\n---  Mfr + PID Pairing Check (Safety v6.3) ---');
   report.pairingAudit = [];
   for(const [d,info] of drivers){
     const hasTuyaMCU = info.mfrs.some(m => m.startsWith('_TZE'));

@@ -9,15 +9,15 @@
     "en": "v7.4.3: Added Insoma 2-Way Irrigation Valve (_TZE284_fhvpaltk) support. Unified versioning align: direct progression from v7.2.x to v7.4.x for all users on test channel. Fixing flow card crashes across 114 drivers."
   },
   "7.4.1": {
-    "en": "v7.4.1: Unified Engine Production Release — Global stabilization of 124 drivers fixing SDK 3 flow card crashes. Hardened physical button logic for Moes IP55 (_TZ3000_ja5osu5g), added support for TZE284 air quality sensors, and unified architecture for Zero-Defect fleet management."
+    "en": "v7.4.1: Unified Engine Production Release  Global stabilization of 124 drivers fixing SDK 3 flow card crashes. Hardened physical button logic for Moes IP55 (_TZ3000_ja5osu5g), added support for TZE284 air quality sensors, and unified architecture for Zero-Defect fleet management."
   },
   "7.2.14": {
-    "en": "v7.2.14: Universal Engine stabilization — Repaired 289 drivers, fixed SOS button and Radiator Controller crashes, resolved ASI bugs in flow registration. Added support for Shenzen New Green Energy temp/hum sensors (_TZE284_8se38w3c)."
+    "en": "v7.2.14: Universal Engine stabilization  Repaired 289 drivers, fixed SOS button and Radiator Controller crashes, resolved ASI bugs in flow registration. Added support for Shenzen New Green Energy temp/hum sensors (_TZE284_8se38w3c)."
   },
   "7.2.10": {
-    "en": "v7.2.10: Intermediate stabilization build — Improved fingerprint matching and SDK 3 compatibility for sensors."
+    "en": "v7.2.10: Intermediate stabilization build  Improved fingerprint matching and SDK 3 compatibility for sensors."
   },
   "7.2.9": {
-    "en": "v7.2.9: Universal Engine Reimplementation — Stabilized radar presence, added smart humidity auto-correction, and hardened CI/CD."
+    "en": "v7.2.9: Universal Engine Reimplementation  Stabilized radar presence, added smart humidity auto-correction, and hardened CI/CD."
   }
 }

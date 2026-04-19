@@ -5,7 +5,7 @@ const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔍 VÉRIFICATION CONFLITS ACTUELS (sans restauration)\n');
+console.log(' VÉRIFICATION CONFLITS ACTUELS (sans restauration)\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -86,7 +86,7 @@ function verifyConflicts(allDrivers) {
 }
 
 // EXÉCUTION
-console.log('📂 Scanning drivers actuels...\n');
+console.log(' Scanning drivers actuels...\n');
 
 const drivers = fs.readdirSync(DRIVERS_DIR);
 const allDrivers = [];
@@ -107,18 +107,18 @@ console.log(`   Drivers analysés: ${allDrivers.length}\n`);
 
 const verification = verifyConflicts(allDrivers);
 
-console.log('📊 RÉSUMÉ:\n');
+console.log(' RÉSUMÉ:\n');
 console.log(`   Total paires (manufacturerName, productId): ${verification.totalPairs}`);
 console.log(`   Paires légitimes: ${verification.legitimatePairs} (${(verification.legitimatePairs/verification.totalPairs * 100).toFixed(1)}%)`);
 console.log(`   Conflits réels: ${verification.conflictPairs}\n`);
 
 if (verification.conflicts.length === 0) {
-  console.log('✅ ✅ ✅ AUCUN CONFLIT RÉEL!\n');
-  console.log('🎉 Tous les partages de manufacturerName sont LÉGITIMES');
+  console.log('   AUCUN CONFLIT RÉEL!\n');
+  console.log(' Tous les partages de manufacturerName sont LÉGITIMES');
   console.log('   (productIds différents pour chaque driver)\n');
   process.exit(0);
 } else {
-  console.log('🔴 CONFLITS RÉELS DÉTECTÉS:\n');
+  console.log(' CONFLITS RÉELS DÉTECTÉS:\n');
 
   verification.conflicts
     .sort((a, b) => b.count - a.count)

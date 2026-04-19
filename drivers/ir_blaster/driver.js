@@ -94,9 +94,9 @@ class IrBlasterDriver extends ZigBeeDriver {
 
         return true;
       });
-      this.log('✅ ir_blaster_learn_code registered');
+      this.log(' ir_blaster_learn_code registered');
     } catch (err) {
-      this.log('⚠️ ir_blaster_learn_code not available:', err.message);
+      this.log(' ir_blaster_learn_code not available:', err.message);
     }
 
     // Enhanced send IR code action
@@ -120,9 +120,9 @@ class IrBlasterDriver extends ZigBeeDriver {
 
         return true;
       });
-      this.log('✅ ir_blaster_send_code registered');
+      this.log(' ir_blaster_send_code registered');
     } catch (err) {
-      this.log('⚠️ ir_blaster_send_code not available:', err.message);
+      this.log(' ir_blaster_send_code not available:', err.message);
     }
 
     // v5.5.362: Send by category action with proper error handling
@@ -147,9 +147,9 @@ class IrBlasterDriver extends ZigBeeDriver {
         await device.sendIRCode(codes[code_name]);
         return true;
       });
-      this.log('✅ ir_blaster_send_by_category registered');
+      this.log(' ir_blaster_send_by_category registered');
     } catch (err) {
-      this.log('⚠️ ir_blaster_send_by_category not available:', err.message);
+      this.log(' ir_blaster_send_by_category not available:', err.message);
     }
 
     // v5.5.606: AC command action (SmartIR compatible)
@@ -163,9 +163,9 @@ class IrBlasterDriver extends ZigBeeDriver {
         const { mode, temperature, fan_speed } = args;
         return await device.sendACCommand(mode, temperature, fan_speed);
       });
-      this.log('✅ ir_blaster_send_ac_command registered');
+      this.log(' ir_blaster_send_ac_command registered');
     } catch (err) {
-      this.log('⚠️ ir_blaster_send_ac_command not available:', err.message);
+      this.log(' ir_blaster_send_ac_command not available:', err.message);
     }
 
     // v5.12: Send by brand (IRDB)
@@ -190,8 +190,8 @@ class IrBlasterDriver extends ZigBeeDriver {
           IRCodeLibrary.getCategories(a.brand?.name || '').filter(c => c.toLowerCase().includes(q.toLowerCase())).map(c => ({ name: c })));
         card.registerArgumentAutocompleteListener('function_name', async (q, a) =>
           IRCodeLibrary.getFunctions(a.brand?.name || '', a.device_type?.name || '').filter(f => f.toLowerCase().includes(q.toLowerCase())).slice(0, 30).map(f => ({ name: f })));
-        this.log('✅ ir_blaster_send_by_brand registered');
-      } catch (e) { this.log('⚠️ ir_blaster_send_by_brand:', e.message); }
+        this.log(' ir_blaster_send_by_brand registered');
+      } catch (e) { this.log(' ir_blaster_send_by_brand:', e.message); }
     }
 
     // v5.12: Send Learned Command (autocomplete)
@@ -214,8 +214,8 @@ class IrBlasterDriver extends ZigBeeDriver {
           .filter(n => n.toLowerCase().includes(q.toLowerCase()))
           .map(n => ({ name: n }));
       });
-      this.log('✅ ir_blaster_send_learned registered');
-    } catch (e) { this.log('⚠️ ir_blaster_send_learned:', e.message); }
+      this.log(' ir_blaster_send_learned registered');
+    } catch (e) { this.log(' ir_blaster_send_learned:', e.message); }
 
     // v5.12: Delete Stored IR Code (autocomplete)
     try {
@@ -235,8 +235,8 @@ class IrBlasterDriver extends ZigBeeDriver {
           .filter(n => n.toLowerCase().includes(q.toLowerCase()))
           .map(n => ({ name: n }));
       });
-      this.log('✅ ir_blaster_delete_code registered');
-    } catch (e) { this.log('⚠️ ir_blaster_delete_code:', e.message); }
+      this.log(' ir_blaster_delete_code registered');
+    } catch (e) { this.log(' ir_blaster_delete_code:', e.message); }
 
     // v5.12: Send Raw IR Code (Pronto Hex / Base64)
     try {
@@ -251,8 +251,8 @@ class IrBlasterDriver extends ZigBeeDriver {
         });
         return true;
       });
-      this.log('✅ ir_blaster_send_raw registered');
-    } catch (e) { this.log('⚠️ ir_blaster_send_raw:', e.message); }
+      this.log(' ir_blaster_send_raw registered');
+    } catch (e) { this.log(' ir_blaster_send_raw:', e.message); }
 
     // v5.12: TV/Media virtual buttons - each sends a learned code by function name
     const tvButtons = [
@@ -275,9 +275,9 @@ class IrBlasterDriver extends ZigBeeDriver {
           await d.sendIRCode(code);
           return true;
         });
-        this.log(`✅ ir_blaster_${btn} registered`);
+        this.log(` ir_blaster_${btn} registered`);
       } catch (e) {
-        this.log(`⚠️ ir_blaster_${btn}:`, e.message);
+        this.log(` ir_blaster_${btn}:`, e.message);
       }
     }
 
@@ -291,33 +291,33 @@ class IrBlasterDriver extends ZigBeeDriver {
     // Learning started trigger
     try {
 
-      this.log('✅ ir_blaster_learning_started trigger registered');
+      this.log(' ir_blaster_learning_started trigger registered');
     } catch (err) {
-      this.log('⚠️ ir_blaster_learning_started not available:', err.message);
+      this.log(' ir_blaster_learning_started not available:', err.message);
     }
 
     // Learning state changed trigger
     try {
 
-      this.log('✅ ir_blaster_learning_state_changed trigger registered');
+      this.log(' ir_blaster_learning_state_changed trigger registered');
     } catch (err) {
-      this.log('⚠️ ir_blaster_learning_state_changed not available:', err.message);
+      this.log(' ir_blaster_learning_state_changed not available:', err.message);
     }
 
     // Code learned trigger (legacy compatibility)
     try {
 
-      this.log('✅ ir_blaster_code_learned trigger registered');
+      this.log(' ir_blaster_code_learned trigger registered');
     } catch (err) {
-      this.log('⚠️ ir_blaster_code_learned not available:', err.message);
+      this.log(' ir_blaster_code_learned not available:', err.message);
     }
 
     // Code analyzed trigger
     try {
 
-      this.log('✅ ir_blaster_code_analyzed trigger registered');
+      this.log(' ir_blaster_code_analyzed trigger registered');
     } catch (err) {
-      this.log('⚠️ ir_blaster_code_analyzed not available:', err.message);
+      this.log(' ir_blaster_code_analyzed not available:', err.message);
     }
 
     this.log('Trigger registration complete');
@@ -341,9 +341,9 @@ class IrBlasterDriver extends ZigBeeDriver {
         this.log(`IR learning active check: ${isLearning}`);
         return isLearning;
       });
-      this.log('✅ ir_blaster_learning_active condition registered');
+      this.log(' ir_blaster_learning_active condition registered');
     } catch (err) {
-      this.log('⚠️ ir_blaster_learning_active not available:', err.message);
+      this.log(' ir_blaster_learning_active not available:', err.message);
     }
 
     // IR code exists condition
@@ -361,9 +361,9 @@ class IrBlasterDriver extends ZigBeeDriver {
         this.log(`IR code "${code_name}" exists: ${exists}`);
         return exists;
       });
-      this.log('✅ ir_blaster_code_exists condition registered');
+      this.log(' ir_blaster_code_exists condition registered');
     } catch (err) {
-      this.log('⚠️ ir_blaster_code_exists not available:', err.message);
+      this.log(' ir_blaster_code_exists not available:', err.message);
     }
 
     // IR protocol detected condition
@@ -387,9 +387,9 @@ class IrBlasterDriver extends ZigBeeDriver {
         this.log(`Protocol "${protocol}" detected for "${code_name}": ${matches}`);
         return matches;
       });
-      this.log('✅ ir_blaster_protocol_detected condition registered');
+      this.log(' ir_blaster_protocol_detected condition registered');
     } catch (err) {
-      this.log('⚠️ ir_blaster_protocol_detected not available:', err.message);
+      this.log(' ir_blaster_protocol_detected not available:', err.message);
     }
 
     this.log('Condition registration complete');

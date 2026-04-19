@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// DELETE all dlnraja posts on OTHER threads — v3: try DELETE, fall back to blank
+// DELETE all dlnraja posts on OTHER threads  v3: try DELETE, fall back to blank
 const fs=require('fs'),path=require('path');
 const envFile=path.join(__dirname,'..','..', '.env');
 if(fs.existsSync(envFile)){for(const l of fs.readFileSync(envFile,'utf8').split('\n')){const m=l.match(/^\s*([A-Z_]+)\s*=\s*(.+)\s*$/);if(m&&m[2]&&!m[2].startsWith('#'))process.env[m[1]]=m[2];}}
@@ -60,7 +60,7 @@ async function main(){
         const rd=await fetch(`${FORUM}/posts/${p.id}`,{method:'DELETE',headers:hdr(auth,false)});
         if(rd.ok){console.log('    DELETED');deleted++;batch++;continue;}
         if(rd.status===429){console.log('    429 pause 5min');await sleep(300000);batch=0;continue;}
-        // DELETE failed (not mod?) — blank instead
+        // DELETE failed (not mod?)  blank instead
         console.log('    DELETE failed ('+rd.status+'), blanking...');
         await sleep(3000);
         const rb=await fetch(`${FORUM}/posts/${p.id}`,{method:'PUT',headers:hdr(auth,true),body:JSON.stringify({post:{raw:'_(message removed)_'}})});

@@ -1,7 +1,7 @@
 'use strict';
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-// v5.12.4 — Robust rate-limit handling for Discourse + GitHub APIs
+// v5.12.4  Robust rate-limit handling for Discourse + GitHub APIs
 // Features: throttled queue, exponential backoff, CSRF auto-refresh,
 // Discourse DELETE spacing, GitHub X-RateLimit header parsing
 
@@ -91,9 +91,9 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
       // === 403: BAD CSRF or permission denied ===
       if (r.status === 403) {
         const body = await r.text().catch(() => '');
-        // Discourse BAD CSRF — refresh and retry
+        // Discourse BAD CSRF  refresh and retry
         if (body.includes('BAD CSRF') && csrfRefresh && authRef && i < retries) {
-          console.log('  [' + (label || 'retry') + '] BAD CSRF — refreshing token...');
+          console.log('  [' + (label || 'retry') + '] BAD CSRF  refreshing token...');
           authRef.auth = await csrfRefresh(authRef.auth);
           // Update headers with new CSRF
           if (opts.headers && authRef.auth.csrf) {

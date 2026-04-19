@@ -9,8 +9,8 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
  * Device: _TZ3000_h1ipgkwn / TS0002 (XMSJ 2-port USB power switch)
  * Also: TS0207 USB repeaters (_TZ3000_m0vaazab, etc.)
  *
- * - Gang 1 = USB Port 1 (endpoint 1) → onoff
- * - Gang 2 = USB Port 2 (endpoint 2) → onoff.usb2
+ * - Gang 1 = USB Port 1 (endpoint 1)  onoff
+ * - Gang 2 = USB Port 2 (endpoint 2)  onoff.usb2
  * - Energy monitoring on endpoint 1 (metering 0x0702 + electricalMeasurement 0x0B04)
  * - Power-on behavior via moesStartUpOnOff attribute
  */
@@ -73,7 +73,7 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
       this.error('[USB_DONGLE] _configureEnergyReporting failed:', err.message);
     }
 
-    this.log('[USB_DONGLE] ✅ Device ready');
+    this.log('[USB_DONGLE]  Device ready');
   }
 
   /**
@@ -88,15 +88,15 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
 
     const onOffCluster = ep.clusters.onOff;
 
-    // Reporting ZCL → capability
+    // Reporting ZCL  capability
     onOffCluster.on('attr.onOff', value => {
       this.log('[USB_DONGLE]', capabilityId, 'attr.onOff =', value);
       this.setCapabilityValue(capabilityId, !!value).catch(this.error);
     });
 
-    // Capability → ZCL command
+    // Capability  ZCL command
     this.registerCapabilityListener(capabilityId, async value => {
-      this.log('[USB_DONGLE] Set', capabilityId, '→', value);
+      this.log('[USB_DONGLE] Set', capabilityId, '', value);
       if (value) {
         await onOffCluster.setOn();
       } else {
@@ -126,7 +126,7 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
         const val = newSettings.power_on_behavior;
         const map = { off: 0, on: 1, toggle: 3, previous: 2 };
         const numVal = map[val] ?? 2;
-        this.log('[USB_DONGLE] Setting power_on_behavior →', val, '(', numVal, ')');
+        this.log('[USB_DONGLE] Setting power_on_behavior ', val, '(', numVal, ')');
         if (ep1?.clusters?.onOff) {
           await ep1.clusters.onOff.writeAttributes({ moesStartUpOnOff: numVal });
         }
@@ -136,7 +136,7 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
         const val = newSettings.indicator_mode;
         const map = { off: 0, on_off: 1, inverted: 2 };
         const numVal = map[val] ?? 1;
-        this.log('[USB_DONGLE] Setting indicator_mode →', val, '(', numVal, ')');
+        this.log('[USB_DONGLE] Setting indicator_mode ', val, '(', numVal, ')');
         if (ep1?.clusters?.onOff) {
           await ep1.clusters.onOff.writeAttributes({ tuyaBacklightSwitch: numVal });
         }

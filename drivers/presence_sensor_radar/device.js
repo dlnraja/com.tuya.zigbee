@@ -123,19 +123,14 @@ function getSensorConfig(manufacturerName, modelId = null) {
 
   // Try exact match first (case-insensitive)
   // v5.7.41: FIX - Device reports _TZ3000_8BXRZYXZ but config has _TZ3000_8bxrzyxz
-  const mfrKey = (manufacturerName || '').toLowerCase();
-  if (MANUFACTURER_CONFIG_MAP[mfrKey]) {
-    return MANUFACTURER_CONFIG_MAP[mfrKey];
-  }
+  const config = MANUFACTURER_CONFIG_MAP[CI.normalize(manufacturerName)];
+  if (config) return config;
 
   // v5.5.286: Pattern matching for TZE284_iadro9bf variants
   // Ronny report: manufacturerName can be empty or slightly different
   if (manufacturerName) {
-    
-
-    // Match TZE284/TZE204 iadro9bf variants (presence inversion needed)
-    if (mfrLower.includes('iadro9bf') || mfrLower.includes('qasjif9e') ||
-      mfrLower.includes('ztqnh5cg') || mfrLower.includes('sbyx0lm6')) {
+    const knownVariants = ['iadro9bf', 'qasjif9e', 'ztqnh5cg', 'sbyx0lm6'];
+    if (knownVariants.some(variant => CI.containsCI(manufacturerName, variant))) {
       console.log(`[RADAR] 🔍 Pattern match: ${manufacturerName} → TZE284_IADRO9BF config`);
       return { ...SENSOR_CONFIGS.TZE284_IADRO9BF, configName: 'TZE284_IADRO9BF' };
     }

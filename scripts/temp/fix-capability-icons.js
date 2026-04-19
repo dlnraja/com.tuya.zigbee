@@ -22,9 +22,9 @@ for (const capFile of capabilities) {
     if (content.icon) {
       delete content.icon;
       fs.writeFileSync(filePath, JSON.stringify(content, null, 2));
-      console.log(`✅ Removed icon reference from ${capFile}`);
+      console.log(` Removed icon reference from ${capFile}`);
     }
   }
 }
 
-console.log('✅ Fixed all capability icon references');
+console.log(' Fixed all capability icon references');

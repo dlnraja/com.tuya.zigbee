@@ -25,8 +25,8 @@ const attrs = await zclNode.endpoints[1].clusters.basic.readAttributes([
 
 ### Device Settings (CORRECT keys)
 ```javascript
-device.getSetting('zb_manufacturer_name');  // ✅ Correct
-device.getSetting('zb_model_id');           // ✅ Correct
+device.getSetting('zb_manufacturer_name');  //  Correct
+device.getSetting('zb_model_id');           //  Correct
 // NOT: zb_manufacturerName or zb_modelId (wrong!)
 ```
 

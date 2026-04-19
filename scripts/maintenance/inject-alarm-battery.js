@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Inject alarm_battery capability — SDK v3 COMPLIANT version.
+ * Inject alarm_battery capability  SDK v3 COMPLIANT version.
  * 
  * SDK v3 RULE: NEVER use BOTH measure_battery AND alarm_battery on same device.
  * - measure_battery = device reports precise 0-100% level
@@ -53,7 +53,7 @@ for (const d of fs.readdirSync(DDIR)) {
   caps.push('alarm_battery');
   compose.capabilities = caps;
   fs.writeFileSync(composeFile, JSON.stringify(compose, null, 2) + '\n');
-  console.log(`✅ ${d}: added alarm_battery (no measure_battery conflict)`);
+  console.log(` ${d}: added alarm_battery (no measure_battery conflict)`);
   fixed++;
 }
 

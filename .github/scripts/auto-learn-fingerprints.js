@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// v5.11.27: Auto-Learn Fingerprints — scans all driver.compose.json to discover
+// v5.11.27: Auto-Learn Fingerprints  scans all driver.compose.json to discover
 // non-Tuya manufacturers and non-TS productIds, then updates load-fingerprints.js
 // Eliminates hardcoded NON_TUYA_KNOWN / NON_TS_PIDS lists going stale
 const fs=require('fs'),path=require('path');

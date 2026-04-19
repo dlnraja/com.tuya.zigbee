@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * ci-health-check.js — Final sanity check BEFORE publish.
+ * ci-health-check.js  Final sanity check BEFORE publish.
  * Catches common SDK3 regressions and manifest collisions.
  */
 'use strict';
@@ -11,7 +11,7 @@ const ROOT = process.cwd();
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 function checkFlowCards() {
-    console.log('🔍 Checking Flow Cards for SDK3 compliance...');
+    console.log(' Checking Flow Cards for SDK3 compliance...');
     const jsFiles = [];
     function walk(dir) {
         fs.readdirSync(dir).forEach(f => {
@@ -29,7 +29,7 @@ function checkFlowCards() {
         const content = fs.readFileSync(f, 'utf8');
         for (const re of deprecated) {
             if (re.test(content)) {
-                console.error(`❌ [${path.relative(ROOT, f)}] Found deprecated SDK2 flow getter: ${re}`);
+                console.error(` [${path.relative(ROOT, f)}] Found deprecated SDK2 flow getter: ${re}`);
                 errors++;
             }
         }
@@ -38,7 +38,7 @@ function checkFlowCards() {
 }
 
 function checkManifests() {
-    console.log('🔍 Checking Driver Manifests for duplicate fingerprints...');
+    console.log(' Checking Driver Manifests for duplicate fingerprints...');
     const manifests = fs.readdirSync(DRIVERS_DIR)
         .map(d => path.join(DRIVERS_DIR, d, 'driver.compose.json'))
         .filter(f => fs.existsSync(f));
@@ -54,7 +54,7 @@ function checkManifests() {
                 // We check for duplicates within the SAME driver (already handled by deduplicator)
                 // But specifically check for CASE COLLISIONS that might have been missed
                 if (mfrs.filter(x => x.toLowerCase() === m.toLowerCase()).length > 2) {
-                    console.warn(`⚠️ [${path.relative(ROOT, f)}] Triple-case entry for ${m}`);
+                    console.warn(` [${path.relative(ROOT, f)}] Triple-case entry for ${m}`);
                 }
             }
         } catch (e) {}
@@ -70,7 +70,7 @@ async function main() {
         console.error('Core Sanity Check FAILED. Fix deprecated SDK2 calls first.');
         process.exit(1);
     }
-    console.log('✅ CI Sanity Check PASSED.');
+    console.log(' CI Sanity Check PASSED.');
 }
 
 main();

@@ -12,4 +12,4 @@ const data = JSON.parse(content);
 delete data.zigbee.endpoints;
 
 fs.writeFileSync(file, JSON.stringify(data, null, 2));
-console.log('✅ Removed strict endpoints definition from soil_sensor driver to fix pairing issues (Issue #178)');
+console.log(' Removed strict endpoints definition from soil_sensor driver to fix pairing issues (Issue #178)');

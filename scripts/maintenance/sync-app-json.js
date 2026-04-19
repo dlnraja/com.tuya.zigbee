@@ -22,7 +22,7 @@ const ROOT_DIR = path.join(__dirname, '..', '..');
 const APP_JSON_PATH = path.join(ROOT_DIR, 'app.json');
 const DRIVERS_DIR = path.join(ROOT_DIR, 'drivers');
 
-console.log('🔄 SYNC APP.JSON WITH DRIVER.COMPOSE.JSON FILES\n');
+console.log(' SYNC APP.JSON WITH DRIVER.COMPOSE.JSON FILES\n');
 
 // Read app.json
 const app = JSON.parse(fs.readFileSync(APP_JSON_PATH, 'utf8'));
@@ -111,9 +111,9 @@ console.log(`Total removed (stale): ${totalRemoved}`);
 console.log(`Total added (missing): ${totalAdded}`);
 
 if (totalRemoved > 0 || totalAdded > 0) {
-  console.log('\n✅ app.json has been updated!');
+  console.log('\n app.json has been updated!');
   process.exit(0);
 } else {
-  console.log('\n✅ app.json already in sync - no changes needed');
+  console.log('\n app.json already in sync - no changes needed');
   process.exit(0);
 }

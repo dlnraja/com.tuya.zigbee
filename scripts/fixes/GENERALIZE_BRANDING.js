@@ -30,7 +30,7 @@ function processFile(filePath) {
 
   if (content !== original) {
     fs.writeFileSync(filePath, content);
-    console.log(`✅ Refactored branding in: ${path.relative(ROOT, filePath)}`);
+    console.log(` Refactored branding in: ${path.relative(ROOT, filePath)}`);
     return true;
   }
   return false;
@@ -53,6 +53,6 @@ function walk(dir) {
   }
 }
 
-console.log('🚀 Starting Global Branding Generalization...');
+console.log(' Starting Global Branding Generalization...');
 walk(ROOT);
-console.log('✨ Branding generalization complete.');
+console.log(' Branding generalization complete.');

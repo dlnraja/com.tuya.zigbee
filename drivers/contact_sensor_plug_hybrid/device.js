@@ -7,14 +7,14 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SMART PLUG - v5.6.0 + Virtual/Physical Buttons (packetninja pattern)   ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  UnifiedPlugBase handles: onoff listener, Tuya DP, ZCL On/Off                ║
- * ║  This class ONLY: dpMappings + ZCL energy monitoring listeners              ║
- * ║  DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00                          ║
- * ║  v5.6.0: Added bidirectional physical/virtual button support                ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       SMART PLUG - v5.6.0 + Virtual/Physical Buttons (packetninja pattern)   
+ * 
+ *   UnifiedPlugBase handles: onoff listener, Tuya DP, ZCL On/Off                
+ *   This class ONLY: dpMappings + ZCL energy monitoring listeners              
+ *   DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00                          
+ *   v5.6.0: Added bidirectional physical/virtual button support                
+ * 
  */
 class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
@@ -46,14 +46,14 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     // Let the base value from caller be the raw value, and we apply the scale directly if possible!
     // But then default must match. Let's just multiply the base divided value by however it differs from 1.
     
-    if (capability === 'measure_power'safeMultiply() return value, powerScale);
-    if (capability === 'meter_power'safeMultiply() return value, energyScale);
+    if (capability === 'measure_power') return safeMultiply(value, powerScale);
+    if (capability === 'meter_power') return safeMultiply(value, energyScale);
     
     const voltageScale = parseFloat(this.getSetting('voltage_scale')) || 0.1;
-    if (capability === 'measure_voltage'safeMultiply() return value, (safeParse)(voltageScale, 0.1)); 
+    if (capability === 'measure_voltage') return safeMultiply(value, (safeParse)(voltageScale, 0.1)); 
     
     const currentScale = parseFloat(this.getSetting('current_scale')) || 0.001;
-    if (capability === 'measure_current'safeMultiply() return value, (safeParse)(currentScale, 0.001));
+    if (capability === 'measure_current') return safeMultiply(value, (safeParse)(currentScale, 0.001));
 
     return value;
   }
@@ -116,7 +116,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     await this.initVirtualButtons();
     this._setupPhysicalButtonFlowDetection();
 
-    this.log('[PLUG] ✅ Ready with bidirectional button support');
+    this.log('[PLUG]  Ready with bidirectional button support');
   }
 
   /**
@@ -170,7 +170,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
           const scaled = this._applyScale(safeParse(v, 1000), 'measure_current');
           this.setCapabilityValue('measure_current', parseFloat(scaled)).catch(() => { });
         });
-        this.log('[PLUG] ✅ ZCL Electrical Measurement configured (with scale support)');
+        this.log('[PLUG]  ZCL Electrical Measurement configured (with scale support)');
       }
     } catch (e) { /* ignore */ }
 
@@ -182,7 +182,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
           const scaled = this._applyScale(safeParse(v, 1000), 'meter_power');
           this.setCapabilityValue('meter_power', parseFloat(scaled)).catch(() => { });
         });
-        this.log('[PLUG] ✅ ZCL Metering configured (with scale support)');
+        this.log('[PLUG]  ZCL Metering configured (with scale support)');
       }
     } catch (e) { /* ignore */ }
   }

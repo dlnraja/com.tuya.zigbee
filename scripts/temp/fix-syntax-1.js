@@ -12,7 +12,7 @@ for (let i = 89; i < 100; i++) {
 }
 
 // Let's fix it by replacing the problematic lines
-let newContent = content.replace(/this\.log\('\[FLOW\] 🎉\s*/g, "this.log('[FLOW] 🎉 ");
+let newContent = content.replace(/this\.log\('\[FLOW\] \s*/g, "this.log('[FLOW]  ");
 
 if (newContent !== content) {
   // It's likely a multiline string issue, let's fix it manually

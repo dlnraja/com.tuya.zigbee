@@ -29,7 +29,7 @@ function fixComposeFiles(dir) {
         
         if (changed) {
           fs.writeFileSync(fullPath, JSON.stringify(content, null, 2));
-          console.log(`✅ Fixed IDs in ${fullPath}`);
+          console.log(` Fixed IDs in ${fullPath}`);
         }
       } catch (e) {
         console.error(`Error processing ${fullPath}: ${e.message}`);
@@ -38,6 +38,6 @@ function fixComposeFiles(dir) {
   }
 }
 
-console.log('🚀 Starting system-wide Flow ID namespacing...');
+console.log(' Starting system-wide Flow ID namespacing...');
 fixComposeFiles(driversDir);
-console.log('🏁 Namespacing complete.');
+console.log(' Namespacing complete.');

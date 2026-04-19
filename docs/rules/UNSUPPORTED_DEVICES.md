@@ -4,7 +4,7 @@ This document lists devices that are NOT compatible with Universal Tuya Zigbee a
 
 ---
 
-## 🚫 NOT SUPPORTED - Proprietary Zigbee
+##  NOT SUPPORTED - Proprietary Zigbee
 
 ### APsystems Solar Microinverters (ECU-C/ECU-R)
 **Manufacturer**: APsystems
@@ -29,7 +29,7 @@ This document lists devices that are NOT compatible with Universal Tuya Zigbee a
 
 ---
 
-## ⚠️ PARTIALLY SUPPORTED
+##  PARTIALLY SUPPORTED
 
 ### EV Chargers (Wallbox/EVSE)
 **Status**: No Tuya Zigbee EV chargers found in research
@@ -46,7 +46,7 @@ This document lists devices that are NOT compatible with Universal Tuya Zigbee a
 
 ---
 
-## ✅ ALTERNATIVES FOR SOLAR MONITORING
+##  ALTERNATIVES FOR SOLAR MONITORING
 
 ### Tuya-Compatible Energy Meters
 For solar production monitoring, use bidirectional energy meters:
@@ -64,7 +64,7 @@ For solar production monitoring, use bidirectional energy meters:
 
 ---
 
-## 🔍 Research Sources
+##  Research Sources
 
 ### For Device Compatibility
 1. Check Zigbee2MQTT first: https://www.zigbee2mqtt.io/supported-devices/

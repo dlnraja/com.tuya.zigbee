@@ -8,7 +8,7 @@ let content = fs.readFileSync(deviceFile, 'utf8');
 const enhancement = `  async onNodeInit({ zclNode }) {
     try {
       if (this.isZclOnlyDevice) {
-        this.log('[SWITCH-2G] 🔵 ZCL-ONLY MODE (BSEED)');
+        this.log('[SWITCH-2G]  ZCL-ONLY MODE (BSEED)');
         await this._initZclOnlyMode(zclNode);
         return;
       }
@@ -17,7 +17,7 @@ const enhancement = `  async onNodeInit({ zclNode }) {
       try {
         await super.onNodeInit({ zclNode });
       } catch (superErr) {
-        this.error('[SWITCH-2G] ⚠️ Super init error (non-fatal):', superErr.message);
+        this.error('[SWITCH-2G]  Super init error (non-fatal):', superErr.message);
         // Continue with basic setup even if super fails
         this.zclNode = zclNode;
       }
@@ -42,9 +42,9 @@ const enhancement = `  async onNodeInit({ zclNode }) {
         this.log('[SWITCH-2G] Virtual buttons warning:', e.message);
       });
 
-      this.log('[SWITCH-2G] ✅ v6.0 - Initialized with error recovery');
+      this.log('[SWITCH-2G]  v6.0 - Initialized with error recovery');
     } catch (err) {
-      this.error('[SWITCH-2G] ❌ CRITICAL INIT ERROR:', err.message);
+      this.error('[SWITCH-2G]  CRITICAL INIT ERROR:', err.message);
       this.error('[SWITCH-2G] Stack:', err.stack);
       // Don't throw - allow device to partially work
       this.setUnavailable('Driver initialization incomplete - try removing and re-pairing').catch(() => {});
@@ -54,4 +54,4 @@ const enhancement = `  async onNodeInit({ zclNode }) {
 content = content.replace(/async onNodeInit\(\{ zclNode \}\) \{[^}]+\n(?:[^}]+\n)*  \}/m, enhancement);
 
 fs.writeFileSync(deviceFile, content);
-console.log('✅ Enhanced switch_2gang with error recovery');
+console.log(' Enhanced switch_2gang with error recovery');

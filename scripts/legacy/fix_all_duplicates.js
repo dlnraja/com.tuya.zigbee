@@ -45,4 +45,4 @@ processCards(appJson.flow.actions, 'actions');
 
 // Write back with proper formatting
 fs.writeFileSync('app.json', JSON.stringify(appJson, null, 2));
-console.log('\n✅ Done!');
+console.log('\n Done!');

@@ -1,7 +1,7 @@
 # ANALYSE GITHUB JOHAN BENDZ + ISSUES + FORUMS (v5.5.358)
 *Généré le 5 janvier 2026 - 02:00 UTC+1*
 
-## 📊 STATISTIQUES PROJET JOHAN BENDZ
+##  STATISTIQUES PROJET JOHAN BENDZ
 
 **Repository:** https://github.com/JohanBendz/com.tuya.zigbee
 - **Stars:** 81 | **Forks:** 154 | **Watchers:** 9
@@ -11,7 +11,7 @@
 
 ---
 
-## 🔥 PRs RÉCEMMENT MERGED (CRITIQUES)
+##  PRs RÉCEMMENT MERGED (CRITIQUES)
 
 ### 1. **PR #983 - Rain Sensor Support**
 **Auteur:** roelofoomen
@@ -19,7 +19,7 @@
 **Type:** Rain sensor
 **Impact:** Extension gamme sensors environnementaux
 
-### 2. **PR #948 - Smoke Detector TS0205 + Thermostat Improvements** ⭐
+### 2. **PR #948 - Smoke Detector TS0205 + Thermostat Improvements** 
 **Auteur:** mhaid
 **Devices:** TS0205 (smoke detector) + TS0601 (thermostat)
 **Améliorations:**
@@ -29,9 +29,9 @@
 - **Commits:** 041bf8c, 76a6365, bffc654
 
 **RELEVANCE POUR NOUS:**
-- ✅ DÉJÀ IMPLÉMENTÉ dans notre smoke_detector_advanced driver
-- ✅ IASZone enrollment déjà géré (lib/IASZoneEnroller.js)
-- ⚠️ À vérifier: child lock thermostat dans nos drivers
+-  DÉJÀ IMPLÉMENTÉ dans notre smoke_detector_advanced driver
+-  IASZone enrollment déjà géré (lib/IASZoneEnroller.js)
+-  À vérifier: child lock thermostat dans nos drivers
 
 ### 3. **PR #931 + #930 - Smart Knob Switch (TS004F / _TZ3000_abrsvsou)**
 **Auteur:** slicke
@@ -68,19 +68,19 @@
 **Device:** TS0205
 **Pattern:** Même pattern IASZone que #948
 
-### 8. **PR #653 - 24GHz Ceiling Radar** ⭐⭐⭐
+### 8. **PR #653 - 24GHz Ceiling Radar** 
 **Auteur:** jepke
 **Type:** Presence sensor radar 24GHz
 **Note:** Code device.js non visible (erreur GitHub)
 
 **RELEVANCE:**
-- ✅ Similaire à nos radars 5GHz
-- ✅ Déjà supporté dans presence_sensor_radar
-- ⚠️ Vérifier si productId différent nécessite driver séparé
+-  Similaire à nos radars 5GHz
+-  Déjà supporté dans presence_sensor_radar
+-  Vérifier si productId différent nécessite driver séparé
 
 ---
 
-## 🆕 ISSUES OPEN RÉCENTS (DEVICE REQUESTS)
+##  ISSUES OPEN RÉCENTS (DEVICE REQUESTS)
 
 ### Issue #1331 - UFO-R11 (Moes)
 **Status:** Open
@@ -97,7 +97,7 @@
 **Type:** Button controller
 **Auteur:** Jesse22homey
 
-**⚠️ CRITIQUE:** Notre diagnostic report #2 mentionne _TZ3000_zgyzgdua 4-button Moes!
+** CRITIQUE:** Notre diagnostic report #2 mentionne _TZ3000_zgyzgdua 4-button Moes!
 - Log v5.5.357 montre flows SUCCESS
 - Device FONCTIONNE correctement
 - User teste avec succès
@@ -109,12 +109,12 @@
 
 **NOTE:** Déjà listé dans forum Homey position 3 comme supporté!
 
-### Issue #1322 - WenzhiIoT 24GHz mmWave Sensor ⭐⭐⭐
+### Issue #1322 - WenzhiIoT 24GHz mmWave Sensor 
 **Device:** _TZE204_gkfbdvyx / TS0601
 **Type:** 24GHz mmWave motion sensor
 **Auteur:** aanon4
 
-**🔥 CRITIQUE - NOTRE DIAGNOSTIC #1:**
+** CRITIQUE - NOTRE DIAGNOSTIC #1:**
 ```
 User Message: "Still no Aktion detected"
 App Version: v5.5.355 (ANCIEN)
@@ -122,15 +122,15 @@ Device: ef630401-7476-441c-96be-13cda53def8a
 Driver: button_wireless
 
 LOG CRITIQUE:
-[AUTONOMOUS] Adapting: button_wireless → contact_sensor
-[AUTONOMOUS] ✅ Added capability: alarm_contact
-[AUTONOMOUS] ✅ Adaptation complete in 25177ms
+[AUTONOMOUS] Adapting: button_wireless  contact_sensor
+[AUTONOMOUS]  Added capability: alarm_contact
+[AUTONOMOUS]  Adaptation complete in 25177ms
 ```
 
 **PROBLÈME IDENTIFIÉ:**
-- v5.5.355 avait bug button→contact_sensor conversion
-- ✅ CORRIGÉ en v5.5.356 (safeguards ajoutés)
-- ✅ RE-CONFIRMÉ v5.5.357
+- v5.5.355 avait bug buttoncontact_sensor conversion
+-  CORRIGÉ en v5.5.356 (safeguards ajoutés)
+-  RE-CONFIRMÉ v5.5.357
 - User devrait mettre à jour vers v5.5.357+
 
 ### Issue #1321 - Tuya PIR _TZE200_ghynnvos
@@ -143,7 +143,7 @@ LOG CRITIQUE:
 
 ---
 
-## 💬 FORUM HOMEY COMMUNITY - POST #844 (4x4_Pete)
+##  FORUM HOMEY COMMUNITY - POST #844 (4x4_Pete)
 
 **URL:** https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/844
 
@@ -154,10 +154,10 @@ LOG CRITIQUE:
 > "The battery spam is gone but now it unfortunately does also no longer detect motion and is not showing any data at all."
 
 **OBSERVATIONS:**
-1. ✅ Battery spam corrigé (bon signe)
-2. ❌ Motion detection ne fonctionne plus
-3. ✅ Nouvelle propriété "Distance" affichée (bon)
-4. ❌ Propriétés température/humidity affichées mais non supportées par device
+1.  Battery spam corrigé (bon signe)
+2.  Motion detection ne fonctionne plus
+3.  Nouvelle propriété "Distance" affichée (bon)
+4.  Propriétés température/humidity affichées mais non supportées par device
 
 **PROPERTIES HOME ASSISTANT:**
 - `static_detection_distance` (SETTING pas measurement)
@@ -171,13 +171,13 @@ LOG CRITIQUE:
 
 ---
 
-## 📋 RÉSUMÉ DIAGNOSTIC REPORTS
+##  RÉSUMÉ DIAGNOSTIC REPORTS
 
 ### DIAGNOSTIC #1 - v5.5.355 (4 janvier 15:50)
 **User:** Anonyme
 **Message:** "Still no Aktion detected"
 **Device:** button_wireless
-**Problème:** Conversion button→contact_sensor incorrecte
+**Problème:** Conversion buttoncontact_sensor incorrecte
 
 **ERREURS:**
 ```
@@ -185,21 +185,21 @@ Error: Invalid Flow Card ID: ir_send_by_category (3x occurrences)
 ```
 
 **RÉSOLUTION:**
-- ✅ v5.5.356 corrigé button protection
-- ✅ v5.5.357 ir_send_by_category désactivé
-- ✅ v5.5.358 ir_set_protocol + ir_analyze_code désactivés
+-  v5.5.356 corrigé button protection
+-  v5.5.357 ir_send_by_category désactivé
+-  v5.5.358 ir_set_protocol + ir_analyze_code désactivés
 
 ### DIAGNOSTIC #2 - v5.5.357 (4 janvier 23:36)
 **User:** Anonyme
 **Message:** "Tests 4 bouton Moes"
 **Device:** 4-Boutons Contrôleur Sans Fil (_TZ3000_zgyzgdua?)
 
-**STATUS:** ✅ FONCTIONNE PARFAITEMENT
+**STATUS:**  FONCTIONNE PARFAITEMENT
 ```
-[FLOW-TRIGGER] ✅ button_pressed SUCCESS
-[FLOW-TRIGGER] ✅ button_wireless_4_button_4gang_button_pressed SUCCESS
-[FLOW-TRIGGER] ✅ button_wireless_4_button_4gang_button_4_pressed SUCCESS
-[BUTTON4-BATTERY] ✅ Battery report: 100%
+[FLOW-TRIGGER]  button_pressed SUCCESS
+[FLOW-TRIGGER]  button_wireless_4_button_4gang_button_pressed SUCCESS
+[FLOW-TRIGGER]  button_wireless_4_button_4gang_button_4_pressed SUCCESS
+[BUTTON4-BATTERY]  Battery report: 100%
 ```
 
 **ERREURS (mineures):**
@@ -207,11 +207,11 @@ Error: Invalid Flow Card ID: ir_send_by_category (3x occurrences)
 Error: Invalid Flow Card ID: ir_set_protocol
 ```
 
-**RÉSOLUTION:** ✅ v5.5.358
+**RÉSOLUTION:**  v5.5.358
 
 ---
 
-## 🎯 ACTIONS RECOMMANDÉES
+##  ACTIONS RECOMMANDÉES
 
 ### PRIORITÉ HAUTE
 
@@ -247,7 +247,7 @@ Error: Invalid Flow Card ID: ir_set_protocol
 
 ---
 
-## 📊 DEVICES SUPPORTÉS - FORUM LISTE (Extraits)
+##  DEVICES SUPPORTÉS - FORUM LISTE (Extraits)
 
 ### Capteurs Radar (TS0601)
 - _TZE200_ztc6ggyl, _TZE201_ztc6ggyl, _TZE202_ztc6ggyl
@@ -273,7 +273,7 @@ Error: Invalid Flow Card ID: ir_set_protocol
 - _TZ3000_w0qqde0g (Neo)
 - _TZ3000_ynmowqk2 (Silvercrest)
 - _TZ3000_b28wrpvx (BSEED)
-- _TZ3000_4ux0ondb (BSEED) ← Issue #1326
+- _TZ3000_4ux0ondb (BSEED)  Issue #1326
 - _TZ3000_uwkja6z1 (Nous outdoor)
 
 ### Wall Switches (1-4 Gang)
@@ -287,7 +287,7 @@ Error: Invalid Flow Card ID: ir_set_protocol
 
 ---
 
-## 🔍 INSIGHTS TECHNIQUES
+##  INSIGHTS TECHNIQUES
 
 ### Pattern 1: IASZone Enrollment (Smoke/SOS/Contact)
 **Source:** PR #948, #882
@@ -296,7 +296,7 @@ Error: Invalid Flow Card ID: ir_set_protocol
 - Battery reporting via powerConfiguration
 - Alarmes via IASZone status changes
 
-**Notre implémentation:** ✅ lib/IASZoneEnroller.js
+**Notre implémentation:**  lib/IASZoneEnroller.js
 
 ### Pattern 2: Multi-Driver ManufacturerName
 **Source:** PR #920
@@ -304,7 +304,7 @@ Error: Invalid Flow Card ID: ir_set_protocol
 - Différenciation via productId OU clusters
 - Exemple: _TZE200_a8sdabtg (climate + humidity + temp)
 
-**Notre approche:** ✅ Validé correct
+**Notre approche:**  Validé correct
 
 ### Pattern 3: TZE200 vs TZE204 Incompatibilité
 **Source:** PR #927
@@ -322,21 +322,21 @@ Error: Invalid Flow Card ID: ir_set_protocol
 
 ---
 
-## 📝 CONCLUSIONS
+##  CONCLUSIONS
 
-### ✅ VALIDATIONS
+###  VALIDATIONS
 1. Notre architecture TuyaSpecificCluster SUPÉRIEURE à JohanBendz
 2. IASZone enrollment correctement implémenté
 3. Multi-driver manufacturerName pattern confirmé correct
 4. Flow cards fixes v5.5.356-358 alignés avec besoins community
 
-### ⚠️ POINTS D'ATTENTION
+###  POINTS D'ATTENTION
 1. ZG-204ZM motion detection (forum #844)
 2. Throttle radar possiblement trop agressif
 3. Capabilities fantômes (temp/hum non supportés)
 4. User diagnostics montrent versions anciennes (besoin communication)
 
-### 🚀 OPPORTUNITÉS
+###  OPPORTUNITÉS
 1. Soil humidity sensor (ZG-303Z) - driver dédié?
 2. Child lock thermostat - feature manquante?
 3. Smart Knob rotation events - nouveaux flow cards?
@@ -344,7 +344,7 @@ Error: Invalid Flow Card ID: ir_set_protocol
 
 ---
 
-## 📬 RÉPONSES FORUM À PRÉPARER
+##  RÉPONSES FORUM À PRÉPARER
 
 ### Réponse Diagnostic #1
 ```
@@ -353,7 +353,7 @@ Hi,
 Thank you for the diagnostic report. I can see you're running v5.5.355 which had a known issue with button_wireless devices incorrectly adapting to contact_sensor.
 
 This has been fixed in:
-- v5.5.356: Added safeguards preventing button→sensor conversion
+- v5.5.356: Added safeguards preventing buttonsensor conversion
 - v5.5.357: Additional validations
 - v5.5.358: IR Blaster flow card fixes (latest)
 
@@ -368,9 +368,9 @@ Dylan
 Hi,
 
 Great news! Your 4-button Moes controller (_TZ3000_zgyzgdua) is working perfectly as shown in your logs:
-- All button presses detected ✅
-- Flow cards triggering correctly ✅
-- Battery reporting at 100% ✅
+- All button presses detected 
+- Flow cards triggering correctly 
+- Battery reporting at 100% 
 
 The IR Blaster flow card errors have been fixed in v5.5.358 (just released).
 
@@ -390,7 +390,7 @@ Thanks for the detailed report on the ZG-204ZM. I can see a few issues:
 
 3. **Distance property:** Great that it's showing! This is the static_detection_distance from Z2M.
 
-I'll investigate and push a fix soon. Can you share your device interview data? (Developer Tools → Zigbee → Interview → Copy)
+I'll investigate and push a fix soon. Can you share your device interview data? (Developer Tools  Zigbee  Interview  Copy)
 
 Best,
 Dylan

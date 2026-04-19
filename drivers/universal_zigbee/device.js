@@ -3,7 +3,7 @@ const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
 const UniversalZigbeeDevice = require('../../lib/UniversalZigbeeDevice');
-const { getModelId, getManufacturer } = require('../../lib/helpers / DeviceDataHelper');
+const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHelper');
 
 /**
  * UniversalZigbeeDevice - The ultimate fallback driver for ANY Zigbee device.
@@ -13,7 +13,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
 
   async onNodeInit() {
     this.log('-------------------------------------------------------');
-    this.log(`🚀 [UNIVERSAL DRIVER] UNLEASHING INTELLIGENCE ON: ${this.getName()}`);
+    this.log(` [UNIVERSAL DRIVER] UNLEASHING INTELLIGENCE ON: ${this.getName()}`);
     this.log(`   Model: ${getModelId(this)} | Manufacturer: ${getManufacturer(this)}`);
     this.log('-------------------------------------------------------');
 
@@ -23,7 +23,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     // 2. Specific Cluster Listeners (Native ZCL Fallbacks)
     this._setupNativeZclListeners();
 
-    this.log('✅ [UNIVERSAL DRIVER] Device online and managed');
+    this.log(' [UNIVERSAL DRIVER] Device online and managed');
   }
 
   /**
@@ -65,7 +65,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     this.registerCapability('measure_luminance', 'msIlluminanceMeasurement', {
       get: 'measuredValue',
       report: 'measuredValue',
-      reportParser: v => Math.pow(10, (v -safeParse(1), 10000))
+      reportParser: v => Math.pow(10, (safeParse(v, 1) - 1) / 10000)
     }).catch(() => {});
 
     // F. Occupancy (0x0406) -> alarm_motion

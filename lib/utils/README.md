@@ -5,11 +5,11 @@
 This directory contains utility functions for comprehensive data collection, energy KPI tracking, and safe driver management in the Universal Tuya Zigbee app.
 
 **Inspired by:**
-- ✅ Homey SDK3 Documentation
-- ✅ athombv official apps (IKEA Tradfri, etc.)
-- ✅ JohanBendz community apps (Philips Hue Zigbee)
-- ✅ Tuya & Zigbee specifications
-- ✅ User feedback & diagnostics
+-  Homey SDK3 Documentation
+-  athombv official apps (IKEA Tradfri, etc.)
+-  JohanBendz community apps (Philips Hue Zigbee)
+-  Tuya & Zigbee specifications
+-  User feedback & diagnostics
 
 ---
 
@@ -32,8 +32,8 @@ await clearUserPreferredDriver(deviceId);
 ```
 
 **Behavior:**
-- User selects driver during pairing → **STORED**
-- Smart-Adapt detects mismatch → **BLOCKED**
+- User selects driver during pairing  **STORED**
+- Smart-Adapt detects mismatch  **BLOCKED**
 - User preference = **HIGHEST PRIORITY** (locks driver)
 
 ---
@@ -53,21 +53,21 @@ const decision = await ensureDriverAssignment(
 ```
 
 **6 Safety Checks:**
-1. ✅ User preference (BLOCK if exists)
-2. ✅ Recommended quality (BLOCK if unknown)
-3. ✅ Tuya DP heuristics (BLOCK if current better)
-4. ✅ Cluster evidence (BLOCK if insufficient)
-5. ✅ Confidence threshold (BLOCK if <70%)
-6. ✅ Power source mismatch (WARN)
+1.  User preference (BLOCK if exists)
+2.  Recommended quality (BLOCK if unknown)
+3.  Tuya DP heuristics (BLOCK if current better)
+4.  Cluster evidence (BLOCK if insufficient)
+5.  Confidence threshold (BLOCK if <70%)
+6.  Power source mismatch (WARN)
 
 **Decision Tree:**
 ```
-User pref exists? → BLOCK
-Recommended unknown? → BLOCK
-Tuya DP + current Tuya-aware? → BLOCK
-Insufficient clusters? → BLOCK
-Low confidence? → BLOCK
-All checks pass? → ALLOW
+User pref exists?  BLOCK
+Recommended unknown?  BLOCK
+Tuya DP + current Tuya-aware?  BLOCK
+Insufficient clusters?  BLOCK
+Low confidence?  BLOCK
+All checks pass?  ALLOW
 ```
 
 ---
@@ -86,10 +86,10 @@ const energyData = await readEnergy(device, zclNode);
 ```
 
 **4 Fallback Methods:**
-1. ✅ `genPowerCfg.batteryVoltage` (standard)
-2. ✅ `genPowerCfg.batteryPercentageRemaining` (alternative)
-3. ✅ Tuya DP detection (warns if cluster 0xEF00 hidden)
-4. ✅ Stored value fallback (last known value)
+1.  `genPowerCfg.batteryVoltage` (standard)
+2.  `genPowerCfg.batteryPercentageRemaining` (alternative)
+3.  Tuya DP detection (warns if cluster 0xEF00 hidden)
+4.  Stored value fallback (last known value)
 
 **Voltage Curve (CR2032):**
 - 3.0V = 100%
@@ -218,12 +218,12 @@ stopPeriodicPolling(interval);
 ```
 
 **Report Listeners:**
-- 🔋 **Battery:** `batteryPercentageRemaining`, `batteryVoltage`
-- ⚡ **Power:** `activePower`, `rmsvoltage`, `rmscurrent`
-- 🌡️ **Temperature:** `measuredValue`
-- 💧 **Humidity:** `measuredValue`
-- 💡 **OnOff:** `onOff`
-- 🎚️ **Level:** `currentLevel`
+-  **Battery:** `batteryPercentageRemaining`, `batteryVoltage`
+-  **Power:** `activePower`, `rmsvoltage`, `rmscurrent`
+-  **Temperature:** `measuredValue`
+-  **Humidity:** `measuredValue`
+-  **OnOff:** `onOff`
+-  **Level:** `currentLevel`
 
 **Data Flow:**
 ```
@@ -265,60 +265,60 @@ const kpi = await getDeviceKpi(deviceId);
 ## Complete Flow
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    DEVICE INITIALIZATION                     │
-└─────────────────────────────────────────────────────────────┘
-                             │
-                             ↓
-┌─────────────────────────────────────────────────────────────┐
-│ Step 1-6: Driver adaptation, safety checks, capabilities   │
-└─────────────────────────────────────────────────────────────┘
-                             │
-                             ↓
-┌─────────────────────────────────────────────────────────────┐
-│ Step 7: Safe driver assignment (user pref priority)        │
-└─────────────────────────────────────────────────────────────┘
-                             │
-                             ↓
-┌─────────────────────────────────────────────────────────────┐
-│ Step 8: DATA COLLECTION & KPI                              │
-│                                                             │
-│  ┌─────────────────────────────────────┐                   │
-│  │ Configure Attribute Reporting       │                   │
-│  │  - Battery: 1h-24h                  │                   │
-│  │  - Power: 10s-5min                  │                   │
-│  │  - Climate: 1min-1h                 │                   │
-│  └─────────────────────────────────────┘                   │
-│                   │                                         │
-│                   ↓                                         │
-│  ┌─────────────────────────────────────┐                   │
-│  │ Register Report Listeners           │                   │
-│  │  - Battery reports → capability     │                   │
-│  │  - Power reports → capability + KPI │                   │
-│  │  - Climate reports → capability     │                   │
-│  └─────────────────────────────────────┘                   │
-│                   │                                         │
-│                   ↓                                         │
-│  ┌─────────────────────────────────────┐                   │
-│  │ Start Periodic Polling (5min)       │                   │
-│  │  - Fallback when reports fail       │                   │
-│  │  - Read battery/energy manually     │                   │
-│  │  - Push to KPI                      │                   │
-│  └─────────────────────────────────────┘                   │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-                             │
-                             ↓
+
+                    DEVICE INITIALIZATION                     
+
+                             
+                             
+
+ Step 1-6: Driver adaptation, safety checks, capabilities   
+
+                             
+                             
+
+ Step 7: Safe driver assignment (user pref priority)        
+
+                             
+                             
+
+ Step 8: DATA COLLECTION & KPI                              
+                                                             
+                     
+   Configure Attribute Reporting                          
+    - Battery: 1h-24h                                     
+    - Power: 10s-5min                                     
+    - Climate: 1min-1h                                    
+                     
+                                                            
+                                                            
+                     
+   Register Report Listeners                              
+    - Battery reports  capability                        
+    - Power reports  capability + KPI                    
+    - Climate reports  capability                        
+                     
+                                                            
+                                                            
+                     
+   Start Periodic Polling (5min)                          
+    - Fallback when reports fail                          
+    - Read battery/energy manually                        
+    - Push to KPI                                         
+                     
+                                                             
+
+                             
+                             
                       Device Running
-                             │
-                             ↓
-    ┌─────────────────────────────────────────┐
-    │  Continuous Data Collection             │
-    │                                         │
-    │  Reports → Listeners → Capabilities     │
-    │  Polling → Read → Capabilities + KPI    │
-    │  KPI → Rolling Window (12 samples)      │
-    └─────────────────────────────────────────┘
+                             
+                             
+    
+      Continuous Data Collection             
+                                             
+      Reports  Listeners  Capabilities     
+      Polling  Read  Capabilities + KPI    
+      KPI  Rolling Window (12 samples)      
+    
 ```
 
 ---
@@ -328,38 +328,38 @@ const kpi = await getDeviceKpi(deviceId);
 ### Step 8: Data Collection Setup
 
 ```
-📡 [SMART ADAPT] Configuring data collection & KPI...
-🔧 [CLUSTER-CONFIG] Auto-configuring attribute reporting...
+ [SMART ADAPT] Configuring data collection & KPI...
+ [CLUSTER-CONFIG] Auto-configuring attribute reporting...
    [CLUSTER-CONFIG] Configuring battery reporting...
    minInterval: 3600s (60min)
    maxInterval: 86400s (24h)
    minChange: 5%
-   [CLUSTER-CONFIG] ✅ Battery percentage reporting configured
-   [CLUSTER-CONFIG] ✅ Battery voltage reporting configured
+   [CLUSTER-CONFIG]  Battery percentage reporting configured
+   [CLUSTER-CONFIG]  Battery voltage reporting configured
    
    [CLUSTER-CONFIG] Configuring power reporting...
-   [CLUSTER-CONFIG] ✅ Active power reporting configured
-   [CLUSTER-CONFIG] ✅ RMS voltage reporting configured
-   [CLUSTER-CONFIG] ✅ RMS current reporting configured
+   [CLUSTER-CONFIG]  Active power reporting configured
+   [CLUSTER-CONFIG]  RMS voltage reporting configured
+   [CLUSTER-CONFIG]  RMS current reporting configured
    
-✅ [CLUSTER-CONFIG] Configuration complete: { battery: true, power: true, climate: false, onoff: true, level: false }
+ [CLUSTER-CONFIG] Configuration complete: { battery: true, power: true, climate: false, onoff: true, level: false }
 
-📡 [DATA-COLLECTOR] Registering attribute report listeners...
+ [DATA-COLLECTOR] Registering attribute report listeners...
    [DATA-COLLECTOR] Registering battery listeners...
    [DATA-COLLECTOR] Registering power listeners...
    [DATA-COLLECTOR] Registering OnOff listener...
-✅ [DATA-COLLECTOR] Listeners registered
+ [DATA-COLLECTOR] Listeners registered
 
-🔄 [DATA-COLLECTOR] Starting periodic polling (5min interval)...
-   [DATA-COLLECTOR] 📊 Polling data...
+ [DATA-COLLECTOR] Starting periodic polling (5min interval)...
+   [DATA-COLLECTOR]  Polling data...
    [BATTERY-READER] Trying genPowerCfg cluster...
-   ✅ Battery read: 85% (2.8V) [genPowerCfg.batteryVoltage]
+    Battery read: 85% (2.8V) [genPowerCfg.batteryVoltage]
    [ENERGY-READER] Trying haElectricalMeasurement...
-   ✅ Energy read: 12W, 230V, 0.05A [haElectricalMeasurement]
+    Energy read: 12W, 230V, 0.05A [haElectricalMeasurement]
    [ENERGY-KPI] Sample pushed for device123: {"ts":1699420800000,"power":12,"voltage":230,"current":0.05}
-✅ [DATA-COLLECTOR] Polling started
+ [DATA-COLLECTOR] Polling started
 
-📊 [ENERGY-KPI] Current KPI: {
+ [ENERGY-KPI] Current KPI: {
   "avgPower": 11.8,
   "maxPower": 15.2,
   "minPower": 8.5,
@@ -375,10 +375,10 @@ const kpi = await getDeviceKpi(deviceId);
 ### Attribute Report Received
 
 ```
-[DATA-COLLECTOR] 🔋 Battery report: 83%
-[DATA-COLLECTOR] ⚡ Power report: 13.2W
-[DATA-COLLECTOR] ⚡ Voltage report: 231V
-[DATA-COLLECTOR] ⚡ Current report: 0.057A
+[DATA-COLLECTOR]  Battery report: 83%
+[DATA-COLLECTOR]  Power report: 13.2W
+[DATA-COLLECTOR]  Voltage report: 231V
+[DATA-COLLECTOR]  Current report: 0.057A
 [ENERGY-KPI] Sample pushed for device123: {"ts":1699420860000,"power":13.2,"voltage":231,"current":0.057}
 ```
 
@@ -432,25 +432,25 @@ async onDeleted() {
 
 ### For Users
 
-- ✅ **Reliable data:** 4 fallback methods + periodic polling
-- ✅ **Battery info:** Works even when standard methods fail
-- ✅ **Energy monitoring:** Power, voltage, current tracked
-- ✅ **Historical KPI:** See trends over time
-- ✅ **User choice respected:** Driver locked when manually selected
+-  **Reliable data:** 4 fallback methods + periodic polling
+-  **Battery info:** Works even when standard methods fail
+-  **Energy monitoring:** Power, voltage, current tracked
+-  **Historical KPI:** See trends over time
+-  **User choice respected:** Driver locked when manually selected
 
 ### For Debugging
 
-- ✅ **Detailed logs:** See exactly what's working/failing
-- ✅ **KPI data:** Diagnose power/voltage issues
-- ✅ **Reporting status:** Know if reports are configured
-- ✅ **Fallback transparency:** See which method provided data
+-  **Detailed logs:** See exactly what's working/failing
+-  **KPI data:** Diagnose power/voltage issues
+-  **Reporting status:** Know if reports are configured
+-  **Fallback transparency:** See which method provided data
 
 ### For Development
 
-- ✅ **Modular design:** Each utility is independent
-- ✅ **SDK3 compliant:** Based on official docs
-- ✅ **Community-inspired:** Best practices from popular apps
-- ✅ **Extensible:** Easy to add new data sources
+-  **Modular design:** Each utility is independent
+-  **SDK3 compliant:** Based on official docs
+-  **Community-inspired:** Best practices from popular apps
+-  **Extensible:** Easy to add new data sources
 
 ---
 

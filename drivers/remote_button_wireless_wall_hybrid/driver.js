@@ -66,10 +66,10 @@ class Button1GangDriver extends ZigBeeDriver {
               }
               return true;
             });
-            this.log(`[FLOW] ✅ ${triggerId}`);
+            this.log(`[FLOW]  ${triggerId}`);
           }
         } catch (e) {
-          this.log(`[FLOW] ⚠️ ${triggerId} not found`);
+          this.log(`[FLOW]  ${triggerId} not found`);
         }
       }
 
@@ -92,10 +92,10 @@ class Button1GangDriver extends ZigBeeDriver {
               }
               return true;
             });
-            this.log(`[FLOW] ✅ ${triggerId}`);
+            this.log(`[FLOW]  ${triggerId}`);
           }
         } catch (e) {
-          this.log(`[FLOW] ⚠️ ${triggerId} not found`);
+          this.log(`[FLOW]  ${triggerId} not found`);
         }
       }
 

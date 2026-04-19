@@ -40,83 +40,89 @@ class PlugSmartDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Plug is/is not on
     try {
-      (() => { try { return
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('plug_smart_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ plug_smart_is_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW]  Registered: plug_smart_is_on');
+      }
+    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }
 
     // ACTION: Turn on
     try {
-      (() => { try { return
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('plug_smart_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ plug_smart_turn_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW]  Registered: plug_smart_turn_on');
+      }
+    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }
 
     // ACTION: Turn off
     try {
-      (() => { try { return
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('plug_smart_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ plug_smart_turn_off');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW]  Registered: plug_smart_turn_off');
+      }
+    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }
 
     // ACTION: Toggle
     try {
-      (() => { try { return
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('plug_smart_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
           await args.device._setGangOnOff(1, !current).catch(() => {});
           await args.device.setCapabilityValue('onoff', !current).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ plug_smart_toggle');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW]  Registered: plug_smart_toggle');
+      }
+    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }
 
     // ACTION: Turn on after delay
     try {
-      (() => { try { return
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('plug_smart_turn_on_delay');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const delay = safeMultiply((args.delay || 10), 1000);
           setTimeout(() => args.device.triggerCapabilityListener('onoff', true).catch(() => {}), delay);
           return true;
         });
-      this.log('[FLOW] ✅ plug_smart_turn_on_delay');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW]  Registered: plug_smart_turn_on_delay');
+      }
+    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }
 
     // ACTION: Turn off after delay
     try {
-      (() => { try { return
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('plug_smart_turn_off_delay');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const delay = safeMultiply((args.delay || 10), 1000);
           setTimeout(() => args.device.triggerCapabilityListener('onoff', false).catch(() => {}), delay);
           return true;
         });
-      this.log('[FLOW] ✅ plug_smart_turn_off_delay');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        this.log('[FLOW]  Registered: plug_smart_turn_off_delay');
+      }
 
     this.log('[FLOW]  Smart plug flow cards registered');
   }
 }
+    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }
 
 module.exports = PlugSmartDriver;

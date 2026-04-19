@@ -69,11 +69,11 @@ const parseDevices = (src) => {
 
 module.exports = async () => {
   try {
-    console.log('  📡 Fetching Z2M tuya.ts...');
+    console.log('   Fetching Z2M tuya.ts...');
     const src = await fetchUrl(TUYA_TS_URL);
     const devices = parseDevices(src);
     
-    // Dedupe by manufacturerName+productId (NOT just mfr — same mfr can have different PIDs)
+    // Dedupe by manufacturerName+productId (NOT just mfr  same mfr can have different PIDs)
     const unique = {};
     for (const d of devices) {
       const key = `${d.mfr}||${d.productId || 'unknown'}`;
@@ -83,7 +83,7 @@ module.exports = async () => {
     }
     
     const result = Object.values(unique);
-    console.log(`  ✅ Found ${result.length} unique fingerprints (mfr+pid pairs) with details`);
+    console.log(`   Found ${result.length} unique fingerprints (mfr+pid pairs) with details`);
     
     // Return with enriched data
     return {

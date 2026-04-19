@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 /**
- * 🕵️ SUPERIOR ARCHITECTURAL AUDIT (v1.0.0)
+ *  SUPERIOR ARCHITECTURAL AUDIT (v1.0.0)
  * 
  * Performs deep structural analysis of the Homey App manifest
  * to ensure maximum SDK 3 compliance and performance.
@@ -16,7 +16,7 @@ const projectRoot = path.join(__dirname, '../..');
 const driversPath = path.join(projectRoot, 'drivers');
 
 async function runAudit() {
-  console.log('🚀 Starting Superior Architectural Audit...');
+  console.log(' Starting Superior Architectural Audit...');
   
   const auditResults = {
     fingerprintConflicts: [],
@@ -67,9 +67,9 @@ async function runAudit() {
 
   // Report
   console.log('--- AUDIT REPORT ---');
-  console.log(`✅ Total Drivers Scanned: ${driverFolders.length}`);
-  console.log(`❌ Fingerprint Conflicts: ${auditResults.fingerprintConflicts.length}`);
-  console.log(`⚠️ Manifest Violations: ${auditResults.manifestViolations.length}`);
+  console.log(` Total Drivers Scanned: ${driverFolders.length}`);
+  console.log(` Fingerprint Conflicts: ${auditResults.fingerprintConflicts.length}`);
+  console.log(` Manifest Violations: ${auditResults.manifestViolations.length}`);
   
   if (auditResults.fingerprintConflicts.length > 0) {
     console.log('Conflict Details:', JSON.stringify(auditResults.fingerprintConflicts, null, 2));

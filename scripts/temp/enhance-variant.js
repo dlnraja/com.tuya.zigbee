@@ -31,4 +31,4 @@ const DP_CAP_MAP = {
 content = content.replace(/const DP_CAP_MAP = \{[^}]+\};/s, newMapping);
 
 fs.writeFileSync(variantFile, content);
-console.log('✅ Enhanced UniversalVariantManager with adaptive DP mappings');
+console.log(' Enhanced UniversalVariantManager with adaptive DP mappings');

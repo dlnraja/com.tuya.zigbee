@@ -26,10 +26,10 @@ const COLLISIONS_TO_FIX = [
 ];
 
 function resolveCollisions() {
-  console.log('🚀 Starting Intelligent Collision Resolver v7.2.1...');
+  console.log(' Starting Intelligent Collision Resolver v7.2.1...');
   
   COLLISIONS_TO_FIX.forEach(rule => {
-    console.log(`\n🔍 Processing Rule: ${rule.fp}`);
+    console.log(`\n Processing Rule: ${rule.fp}`);
     
     // Get winner product IDs for comparison if strict mode enabled
     let winnerProductIds = [];
@@ -70,10 +70,10 @@ function resolveCollisions() {
                 
                 if (compose.zigbee.manufacturerName.length !== originalCount) {
                     changed = true;
-                    console.log(`  ✅ Removed ${rule.fp} from ${loser} (Overlapping/Global Collision)`);
+                    console.log(`   Removed ${rule.fp} from ${loser} (Overlapping/Global Collision)`);
                 }
              } else {
-                console.log(`  🛡️ Preserved ${rule.fp} in ${loser} (Different productIds detected)`);
+                console.log(`   Preserved ${rule.fp} in ${loser} (Different productIds detected)`);
              }
           }
         }
@@ -82,12 +82,12 @@ function resolveCollisions() {
           fs.writeFileSync(composeFile, JSON.stringify(compose, null, 2) + '\n');
         }
       } catch (e) {
-        console.error(`  ❌ Error processing ${loser}: ${e.message}`);
+        console.error(`   Error processing ${loser}: ${e.message}`);
       }
     });
   });
   
-  console.log('\n✨ Collision Resolution Complete!');
+  console.log('\n Collision Resolution Complete!');
 }
 
 resolveCollisions();

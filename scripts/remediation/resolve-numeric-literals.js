@@ -19,14 +19,14 @@ const TARGETS = [
 ];
 
 if (!fs.existsSync(AUDIT_FILE)) {
-  console.error('❌ Audit file not found.');
+  console.error(' Audit file not found.');
   process.exit(1);
 }
 
 const audit = JSON.parse(fs.readFileSync(AUDIT_FILE, 'utf8'));
 const violations = audit.numericConstantViolations || [];
 
-console.log(`🚀 Resolving ${violations.length} numeric literal violations...`);
+console.log(` Resolving ${violations.length} numeric literal violations...`);
 
 const filesToProcess = new Set();
 violations.forEach(v => {
@@ -104,9 +104,9 @@ filesToProcess.forEach(relPath => {
     }
 
     fs.writeFileSync(absPath, content);
-    console.log(`✅ Fixed: ${relPath}`);
+    console.log(` Fixed: ${relPath}`);
     totalFixes++;
   }
 });
 
-console.log(`🎉 Ported ${totalFixes} files to ZigbeeConstants.`);
+console.log(` Ported ${totalFixes} files to ZigbeeConstants.`);

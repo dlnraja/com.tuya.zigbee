@@ -15,7 +15,7 @@ const BUILD_DIR = path.join(ROOT, '.homeybuild', 'drivers');
 
 // Only run if .homeybuild exists (after build)
 if (!fs.existsSync(BUILD_DIR)) {
-  console.log('⏭️  .homeybuild not found, skipping image fix');
+  console.log('  .homeybuild not found, skipping image fix');
   process.exit(0);
 }
 
@@ -50,4 +50,4 @@ for (const driver of drivers) {
   }
 }
 
-console.log(`✅ Copied ${copied} large.png files to .homeybuild`);
+console.log(` Copied ${copied} large.png files to .homeybuild`);

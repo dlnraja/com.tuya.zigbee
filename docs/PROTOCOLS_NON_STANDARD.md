@@ -1,4 +1,4 @@
-# 🧬 Non-Standard Protocols & Tuya MCU Deep Dive
+#  Non-Standard Protocols & Tuya MCU Deep Dive
 *Version: Thinking Reimplementation Engine Enhanced*
 
 ## 1. Tuya Zigbee-to-MCU (RX/TX)

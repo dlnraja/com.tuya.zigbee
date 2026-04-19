@@ -28,7 +28,7 @@ if (!content.includes('copilot-analyzer')) {
   content = content.replace(commentTarget, commentReplacement);
   
   fs.writeFileSync(file, content);
-  console.log('✅ Integrated Copilot analysis into intelligent-bug-detector.js');
+  console.log(' Integrated Copilot analysis into intelligent-bug-detector.js');
 } else {
   console.log('Copilot already integrated');
 }

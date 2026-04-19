@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 /**
- * v5.11.29: Interview & Diagnostic Recovery — collects device interviews, crash logs,
+ * v5.11.29: Interview & Diagnostic Recovery  collects device interviews, crash logs,
  * diagnostic reports from ALL sources: GitHub issues, forum posts (direct API), Gmail, PMs.
  * Consolidates into .github/state/interviews/ + docs/data/interviews/ (project resources).
  * Also detects hidden/flagged posts and cross-references expectations-ref.json.
@@ -141,7 +141,7 @@ async function scanForumDiagnostics(){
       }
     }catch(e){console.log('Cached forum scan err:',e.message)}
   }
-  if(hidden)console.log('  ⚠ Found '+hidden+' hidden posts across topics');
+  if(hidden)console.log('   Found '+hidden+' hidden posts across topics');
   return found;
 }
 

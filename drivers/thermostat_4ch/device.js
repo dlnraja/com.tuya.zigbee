@@ -59,7 +59,7 @@ class Thermostat4ChDevice extends UnifiedThermostatBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[THERMOSTAT-4CH] ✅ Ready');
+    this.log('[THERMOSTAT-4CH]  Ready');
   }
 
 

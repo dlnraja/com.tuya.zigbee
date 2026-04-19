@@ -79,7 +79,7 @@ function buildForumPost(ver,cl,stats,url){
   const items=parseChangelog(cl);
   const fmt=n=>typeof n==='number'?n.toLocaleString('en-US'):n;
   // Vary the opening to avoid repetitive bot-like posts
-  const openers=['Just pushed **v'+ver+'** to the [test channel]('+url+').','**v'+ver+'** is up on [test]('+url+').','New build out — **v'+ver+'** on [test]('+url+').','Dropped **v'+ver+'** on the [test channel]('+url+') just now.'];
+  const openers=['Just pushed **v'+ver+'** to the [test channel]('+url+').','**v'+ver+'** is up on [test]('+url+').','New build out  **v'+ver+'** on [test]('+url+').','Dropped **v'+ver+'** on the [test channel]('+url+') just now.'];
   const opener=openers[Math.floor(Math.random()*openers.length)];
   let body=opener+'\n\n';
   if(items.length>1){body+=items.join(', ')+'.\n\n'}
@@ -118,7 +118,7 @@ async function main(){
   try{
     if(auth.type==='session')await refreshCsrf(auth);
     const lastOwn=await getLastOwnPost(TID);
-    // v5.12.1: Content-level version dedup — skip if existing post already mentions this version
+    // v5.12.1: Content-level version dedup  skip if existing post already mentions this version
     if(lastOwn&&lastOwn.raw&&lastOwn.raw.includes('v'+ver)){console.log('Post already contains v'+ver+', skipping');fs.appendFileSync(SUM,'Forum: skipped (v'+ver+' Mapped in post)\n');state.lastVersion=ver;saveState(state);return}
     if(lastOwn){
       if(!lastOwn.raw.includes('<!-- bot-update -->') && !lastOwn.raw.includes('<!-- bot-')) {
@@ -131,7 +131,7 @@ async function main(){
         
         // v5.13.5: GHOSTWRITER ORGANIC MERGE
         // Ask AI to weave the new update into the existing post naturally
-        console.log('  🤖 Ghostwriter: organic merge...');
+        console.log('   Ghostwriter: organic merge...');
         const contentToHumanize = `CURRENT POST CONTENT:\n${lastOwn.raw.replace(/<!-- bot-update -->/g, '')}\n\nNEW RELEASE UPDATE:\n${raw}`;
         const humanizePrompt = `You ARE dlnraja, the solo developer. You are updating your latest forum post to announce v${ver}.
 1. INTEGRATION: Rewrite the entire post to weave the NEW RELEASE UPDATE into the CURRENT CONTENT organically. Mention the "Unified Engine" v7.4.4 milestone, which resolves long-standing SDK 3 flow card crashes across 114 drivers and optimizes fingerprints for 172 devices.
@@ -146,12 +146,12 @@ Return ONLY the final post text.`;
           const hRes = await callAI(contentToHumanize, humanizePrompt, { maxTokens: 4000, complexity: 'high' });
           if (hRes && hRes.text && hRes.text !== 'AI_OFFLINE_OR_LIMIT_REACHED') {
             m.content = sanitize(hRes.text) + '\n<!-- bot-update -->';
-            console.log('  ✅ Ghostwriter successful (merged, model: ' + hRes.model + ')');
+            console.log('   Ghostwriter successful (merged, model: ' + hRes.model + ')');
           } else {
-            console.log('  ⚠️ Ghostwriter failed or offline, using smartMerge default.');
+            console.log('   Ghostwriter failed or offline, using smartMerge default.');
           }
         } catch(e) {
-          console.log('  ⚠️ Ghostwriter error:', e.message);
+          console.log('   Ghostwriter error:', e.message);
         }
 
         await editPost(lastOwn.id,m.content,auth);
@@ -160,7 +160,7 @@ Return ONLY the final post text.`;
     }else{
       // Fresh reply also gets humanized
       let freshRaw = raw;
-      console.log('  🤖 Ghostwriter: fresh reply...');
+      console.log('   Ghostwriter: fresh reply...');
       const freshPrompt = `You ARE dlnraja, developer of the app. Write a short, casual forum reply to announce v${ver}.
 Talk like a human dev. No corporate greeting. No bullet lists. No "Key features".
 Mention the version and the specific changes: ${cl}.
@@ -170,7 +170,7 @@ Return ONLY the text.`;
         const hRes = await callAI(raw, freshPrompt, { maxTokens: 2000 });
         if (hRes && hRes.text && hRes.text !== 'AI_OFFLINE_OR_LIMIT_REACHED') {
           freshRaw = sanitize(hRes.text) + '\n<!-- bot-update -->';
-          console.log('  ✅ Ghostwriter successful (new reply)');
+          console.log('   Ghostwriter successful (new reply)');
         }
       } catch(e) {}
 

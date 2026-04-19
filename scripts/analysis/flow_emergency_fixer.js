@@ -24,7 +24,7 @@ class FlowEmergencyFixer {
    * Fixe d'urgence tous les doublons critiques
    */
   async fixAllDuplicates() {
-    console.log('🚨 EMERGENCY FLOW DUPLICATE FIXER STARTING...');
+    console.log(' EMERGENCY FLOW DUPLICATE FIXER STARTING...');
 
     // Identifier les drivers multi-gang problématiques
     const multiGangDrivers = [
@@ -43,7 +43,7 @@ class FlowEmergencyFixer {
         await this.fixMultiGangDriver(driverName);
         this.fixResults.processed++;
       } catch (error) {
-        console.log(`❌ Error fixing ${driverName}: ${error.message}`);
+        console.log(` Error fixing ${driverName}: ${error.message}`);
         this.fixResults.errors++;
       }
     }
@@ -60,7 +60,7 @@ class FlowEmergencyFixer {
 
     if (!fs.existsSync(flowPath)) return;
 
-    console.log(`🔧 Fixing ${driverName}...`);
+    console.log(` Fixing ${driverName}...`);
 
     const flows = JSON.parse(fs.readFileSync(flowPath, 'utf8'));
 
@@ -74,7 +74,7 @@ class FlowEmergencyFixer {
     if (JSON.stringify(flows) !== JSON.stringify(fixedFlows)) {
       fs.writeFileSync(flowPath, JSON.stringify(fixedFlows, null, 2));
       this.fixResults.fixed++;
-      console.log(`✅ Fixed duplicates in ${driverName}`);
+      console.log(` Fixed duplicates in ${driverName}`);
     }
   }
 
@@ -300,20 +300,20 @@ class FlowEmergencyFixer {
    * Génère le rapport de correction
    */
   generateFixReport() {
-    console.log('\n📊 EMERGENCY FIX RESULTS:');
-    console.log('═'.repeat(50));
+    console.log('\n EMERGENCY FIX RESULTS:');
+    console.log(''.repeat(50));
     console.log(`Drivers processed: ${this.fixResults.processed}`);
     console.log(`Drivers fixed: ${this.fixResults.fixed}`);
     console.log(`IDs restored: ${this.fixResults.restoredIds}`);
     console.log(`Errors: ${this.fixResults.errors}`);
 
     if (this.fixResults.errors === 0) {
-      console.log('\n✅ ALL DUPLICATE ISSUES FIXED!');
+      console.log('\n ALL DUPLICATE ISSUES FIXED!');
       console.log('- Multi-gang switches now have unique IDs per gang');
       console.log('- Backward compatibility preserved with _fallback metadata');
       console.log('- Ready for Homey validation');
     } else {
-      console.log('\n⚠️ Some issues remain, manual review required');
+      console.log('\n Some issues remain, manual review required');
     }
   }
 }

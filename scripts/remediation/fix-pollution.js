@@ -25,7 +25,7 @@ function walk(dir, callback) {
   }
 }
 
-console.log('🧹 Starting improved pollution cleanup (strings & comments)...');
+console.log(' Starting improved pollution cleanup (strings & comments)...');
 
 let totalFiles = 0;
 let totalCorrections = 0;
@@ -78,4 +78,4 @@ walk(ROOT, (absPath) => {
   }
 });
 
-console.log(`\n🎉 Cleanup complete: ${totalFiles} files fixed, ${totalCorrections} lines restored.`);
+console.log(`\n Cleanup complete: ${totalFiles} files fixed, ${totalCorrections} lines restored.`);

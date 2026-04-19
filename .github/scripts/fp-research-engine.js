@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 /**
- * FP Research Engine v1.0 — Codified intelligence for Tuya fingerprint research.
+ * FP Research Engine v1.0  Codified intelligence for Tuya fingerprint research.
  * Methodology: PID map, Z2M deep search, Blakadder lookup, false positive detection,
  * comprehensive scan correlation, prefix classification, multi-source confidence scoring.
  */
@@ -297,7 +297,7 @@ async function researchFP(fp,opts={}){
     else if(idx.pIdx.has(result.pid)){result.driver=idx.pIdx.get(result.pid)[0];result.method='pid-index';result.pidMatch=true}
   }
 
-  // 5b. Z2M raw context classification (resolves generic_tuya → specific driver)
+  // 5b. Z2M raw context classification (resolves generic_tuya  specific driver)
   if(!result.driver||result.driver==='generic_tuya'){
     const z2mCtx=await classifyByZ2MContext(fp);
     if(z2mCtx&&z2mCtx.driver){

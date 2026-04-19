@@ -1,11 +1,11 @@
-# 📦 FICHIERS OBSOLÈTES - v4.0.6
+#  FICHIERS OBSOLÈTES - v4.0.6
 
 **Date de déplacement:** 21 Octobre 2025  
 **Raison:** Simplification IASZoneEnroller (regression fix)
 
 ---
 
-## ❌ Fichiers Déplacés Ici
+##  Fichiers Déplacés Ici
 
 ### 1. `wait-ready.js`
 - **Raison:** Over-engineering
@@ -19,7 +19,7 @@
 
 ---
 
-## 🔄 Historique
+##  Historique
 
 Ces fichiers ont été créés dans v3.1.18 pour gérer des "edge cases" mais ont introduit plus de problèmes qu'ils n'en ont résolu:
 
@@ -31,7 +31,7 @@ Ces fichiers ont été créés dans v3.1.18 pour gérer des "edge cases" mais on
 
 ---
 
-## 📚 Référence
+##  Référence
 
 Voir documentation complète:
 - `docs/fixes/REGRESSION_FIX_v4.0.6_COMPLETE.md`

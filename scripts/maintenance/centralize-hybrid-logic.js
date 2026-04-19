@@ -24,7 +24,7 @@ drivers.forEach(driver => {
     const regex = /class IntelligentPresenceInference \{[\s\S]*?\n\}/;
     if (regex.test(content)) {
       content = content.replace(regex, `const IntelligentPresenceInference = require('${HELPERS.IntelligentPresenceInference}');`);
-      console.log(`[REFACTOR] ✅ Centralized IntelligentPresenceInference in ${driver}`);
+      console.log(`[REFACTOR]  Centralized IntelligentPresenceInference in ${driver}`);
       changed = true;
     }
   }
@@ -34,7 +34,7 @@ drivers.forEach(driver => {
     const regex = /class IntelligentDPAutoDiscovery \{[\s\S]*?\n\}/;
     if (regex.test(content)) {
       content = content.replace(regex, `const IntelligentDPAutoDiscovery = require('${HELPERS.IntelligentDPAutoDiscovery}');`);
-      console.log(`[REFACTOR] ✅ Centralized IntelligentDPAutoDiscovery in ${driver}`);
+      console.log(`[REFACTOR]  Centralized IntelligentDPAutoDiscovery in ${driver}`);
       changed = true;
     }
   }
@@ -44,7 +44,7 @@ drivers.forEach(driver => {
     const regex = /const SENSOR_CONFIGS = \{[\s\S]*?\n\};/;
     if (regex.test(content)) {
       content = content.replace(regex, `const SENSOR_CONFIGS = require('${HELPERS.SENSOR_CONFIGS}');`);
-      console.log(`[REFACTOR] ✅ Centralized SENSOR_CONFIGS in ${driver}`);
+      console.log(`[REFACTOR]  Centralized SENSOR_CONFIGS in ${driver}`);
       changed = true;
     }
   }
@@ -60,4 +60,4 @@ drivers.forEach(driver => {
   }
 });
 
-console.log('[REFACTOR] 🏁 Fleet-wide refactor complete.');
+console.log('[REFACTOR]  Fleet-wide refactor complete.');

@@ -2,10 +2,10 @@
 'use strict';
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║  AUTONOMOUS COMMUNITY INGESTOR v1.0                                        ║
- * ║  Ingests 2,140+ fingerprints from community-intel.json                      ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *   AUTONOMOUS COMMUNITY INGESTOR v1.0                                        
+ *   Ingests 2,140+ fingerprints from community-intel.json                      
+ * 
  */
 
 const fs = require('fs');
@@ -75,7 +75,7 @@ async function injectFingerprint(driverId, mfr, pid) {
 
 async function main() {
   if (!fs.existsSync(INTEL_FILE)) {
-    console.error('❌ community-intel.json not found!');
+    console.error(' community-intel.json not found!');
     process.exit(1);
   }
 
@@ -112,7 +112,7 @@ async function main() {
     }
   }
 
-  console.log(`✅ Ingested ${count} new fingerprints into manifests.`);
+  console.log(` Ingested ${count} new fingerprints into manifests.`);
 }
 
 main().catch(console.error);

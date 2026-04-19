@@ -10,13 +10,13 @@
     "_TZ3000_gwkzibhs"
   ],
   "bodyLength": 9787,
-  "excerpt": "## 📸 Device Information\n\n**Device Photos** (front + back with labels visible):\n- [X] Attached photos\nhttps://ae01.alicdn.com/kf/Sae464c04a36744cd8f0c912084831f60Q.jpg\nhttps:
+  "excerpt": "##  Device Information\n\n**Device Photos** (front + back with labels visible):\n- [X] Attached photos\nhttps://ae01.alicdn.com/kf/Sae464c04a36744cd8f0c912084831f60Q.jpg\nhttps:
   "diagComments": [
     {
       "user": "github-actions[bot]",
       "date": "2026-01-23T16:29:33Z",
       "fps": [],
-      "excerpt": "Hi @Ernst02507! 👋\n\n**Please provide:**\n- manufacturerName: `zb_manufacturer_name`\n- productId: `zb_product_id`\n- Diagnostics Report\n\nGet these from [Developer Tools](https://tools.developer.homey.app)\n\n*Auto-response - maintainer will review soon.*"
+      "excerpt": "Hi @Ernst02507! \n\n**Please provide:**\n- manufacturerName: `zb_manufacturer_name`\n- productId: `zb_product_id`\n- Diagnostics Report\n\nGet these from [Developer Tools](https://tools.developer.homey.app)\n\n*Auto-response - maintainer will review soon.*"
     },
     {
       "user": "Ernst02507",
@@ -64,7 +64,7 @@
       "fps": [
         "_TZ3000_gwkzibhs"
       ],
-      "excerpt": "Hi @Ernst02507,\n\nSorry for the delayed response! Your Smart Knob _TZ3000_gwkzibhs / TS004F is in the **smart_knob_rotary** driver.\n\nRegarding the flow not triggering when pressing the button: the TS004F needs to be in **command mode** (not dimmer mode) for button press flows to work. Several fixes have been made since:\n- **v5.8.93**: Fixed E000 cluster handling for button devices\n- **v5.9.0**: Fixed SyntaxError crash affecting multiple drivers\n- **v5.8.99**: Fixed battery read crash on button press\n\n**Please try:**\n1. Update to v5.9.1 (latest)\n2. Remove and re-pair the device — select **Smart Knob (Rotary)**\n3. In device settings, check if there is a **Button Mode** setting and set it to 'Command' or 'Event'\n4. Create a new flow with the trigger 'Button pressed'\n\nIf flows still don't trigger, please send a diagnostic report (Homey > Devices > Settings > Send Diagnostic Report) so we can see the exact cluster data.\n\nBest regards"
+      "excerpt": "Hi @Ernst02507,\n\nSorry for the delayed response! Your Smart Knob _TZ3000_gwkzibhs / TS004F is in the **smart_knob_rotary** driver.\n\nRegarding the flow not triggering when pressing the button: the TS004F needs to be in **command mode** (not dimmer mode) for button press flows to work. Several fixes have been made since:\n- **v5.8.93**: Fixed E000 cluster handling for button devices\n- **v5.9.0**: Fixed SyntaxError crash affecting multiple drivers\n- **v5.8.99**: Fixed battery read crash on button press\n\n**Please try:**\n1. Update to v5.9.1 (latest)\n2. Remove and re-pair the device  select **Smart Knob (Rotary)**\n3. In device settings, check if there is a **Button Mode** setting and set it to 'Command' or 'Event'\n4. Create a new flow with the trigger 'Button pressed'\n\nIf flows still don't trigger, please send a diagnostic report (Homey > Devices > Settings > Send Diagnostic Report) so we can see the exact cluster data.\n\nBest regards"
     },
     {
       "user": "Ernst02507",

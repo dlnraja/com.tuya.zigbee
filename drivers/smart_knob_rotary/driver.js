@@ -1,69 +1,62 @@
 'use strict';
-const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
+const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const Homey = require('homey');
 
-class SmartKnobRotaryDriver extends Homey.Driver {
+class SmartKnobRotaryDriver extends Homey {
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
 
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('Smart Knob Rotary driver initialized');
-
-    // Register flow cards
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    const driverId = 'smart_knob_rotary';
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_left'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_right'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('smart_knob_rotary_pressed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('smart_knob_rotary_single_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('smart_knob_rotary_double_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('smart_knob_rotary_long_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('smart_knob_rotary_battery_low'); } catch (e) {}
 
-    // Rotate left trigger
-    this._getFlowCard(`${driverId}_rotate_left`, 'trigger')
-      .registerRunListener(async (args, state) => true);
+    // CONDITIONS
+    try {
+      const card = this.homey.flow.getConditionCard('smart_knob_rotary_brightness_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const val = args.device.getCapabilityValue('measure_co2') || 0;
+          return val > (args.threshold || 400);
+        });
+      }
+    } catch (err) { this.error(`Condition smart_knob_rotary_brightness_above: ${err.message}`); }
 
-    // Rotate right trigger
-    this._getFlowCard(`${driverId}_rotate_right`, 'trigger')
-      .registerRunListener(async (args, state) => true);
+    // ACTIONS
+    try {
+      const card = this.homey.flow.getActionCard('smart_knob_rotary_set_brightness');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('dim', args.brightness || args.value || 1).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action smart_knob_rotary_set_brightness: ${err.message}`); }
 
-    // Button pressed trigger
-    this._getFlowCard(`${driverId}_pressed`, 'trigger')
-      .registerRunListener(async (args, state) => true);
-
-    // Single press trigger
-    this._getFlowCard(`${driverId}_single_press`, 'trigger')
-      .registerRunListener(async (args, state) => true);
-
-    // Double press trigger
-    this._getFlowCard(`${driverId}_double_press`, 'trigger')
-      .registerRunListener(async (args, state) => true);
-
-    // Long press trigger
-    this._getFlowCard(`${driverId}_long_press`, 'trigger')
-      .registerRunListener(async (args, state) => true);
-
-    // Brightness condition
-    this._getFlowCard(`${driverId}_brightness_above`, 'condition')
-      .registerRunListener(async (args, state) => {
-        const device = args.device;
-        if (device && device.hasCapability('dim')) {
-          const brightness = await device.getCapabilityValue('dim');
-return safeMultiply((brightness, 100)) > args.level;
-        }
-        return false;
-      });
-
-    this.log('Flow cards registered');
+    this.log('[FLOW] All flow cards registered');
   }
-
 }
 
 module.exports = SmartKnobRotaryDriver;

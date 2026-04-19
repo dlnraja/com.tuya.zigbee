@@ -20,7 +20,7 @@ for (const driver of drivers) {
       try {
         await super.onNodeInit({ zclNode });
       } catch (superErr) {
-        this.error('[SWITCH-${gangNum}G] ⚠️ Super init error (non-fatal):', superErr.message);
+        this.error('[SWITCH-${gangNum}G]  Super init error (non-fatal):', superErr.message);
         this.zclNode = zclNode;
       }
 
@@ -37,9 +37,9 @@ for (const driver of drivers) {
         this.log('[SWITCH-${gangNum}G] Setup warning:', setupErr.message);
       }
 
-      this.log('[SWITCH-${gangNum}G] ✅ v6.0 - Initialized with error recovery');
+      this.log('[SWITCH-${gangNum}G]  v6.0 - Initialized with error recovery');
     } catch (err) {
-      this.error('[SWITCH-${gangNum}G] ❌ CRITICAL INIT ERROR:', err.message);
+      this.error('[SWITCH-${gangNum}G]  CRITICAL INIT ERROR:', err.message);
       this.error('[SWITCH-${gangNum}G] Stack:', err.stack);
       this.setUnavailable('Driver initialization incomplete - try removing and re-pairing').catch(() => {});
     }
@@ -48,5 +48,5 @@ for (const driver of drivers) {
   }
   
   fs.writeFileSync(file, content);
-  console.log(`✅ Enhanced ${driver} with error recovery`);
+  console.log(` Enhanced ${driver} with error recovery`);
 }

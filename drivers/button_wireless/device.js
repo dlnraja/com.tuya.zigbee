@@ -35,14 +35,14 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    this.log('[BUTTON-WIRELESS] 🔘 v5.5.796 Initializing (Cam forum fix)...');
+    this.log('[BUTTON-WIRELESS]  v5.5.796 Initializing (Cam forum fix)...');
 
     // Detect button count for this device
     this.buttonCount = await this._detectButtonCount(zclNode);
     
     // v5.5.796: FORUM FIX - Ensure at least 1 button (Cam: no GUI issue)
     if (!this.buttonCount || this.buttonCount < 1) {
-      this.log('[BUTTON-WIRELESS] ⚠️ Detection returned 0, defaulting to 1 button');
+      this.log('[BUTTON-WIRELESS]  Detection returned 0, defaulting to 1 button');
       this.buttonCount = 1;
     }
     this.log(`[BUTTON-WIRELESS] Detected ${this.buttonCount} button(s)`);
@@ -53,7 +53,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
     // v5.5.796: Force battery read on init (Cam: no battery issue)
     await this._forceInitialBatteryRead(zclNode);
 
-    this.log('[BUTTON-WIRELESS] ✅ Ready - supports single/double/long press');
+    this.log('[BUTTON-WIRELESS]  Ready - supports single/double/long press');
   }
 
   /**
@@ -66,7 +66,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
       const powerCluster = ep?.clusters?.powerConfiguration || ep?.clusters?.genPowerCfg || ep?.clusters?.[1];
       
       if (powerCluster?.readAttributes) {
-        this.log('[BUTTON-WIRELESS] 🔋 Forcing initial battery read...');
+        this.log('[BUTTON-WIRELESS]  Forcing initial battery read...');
         const attrs = await Promise.race([
           powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']),
           new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 2000))
@@ -74,14 +74,14 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
         
         if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
           const battery = Math.round(safeParse(attrs.batteryPercentageRemaining, 2));
-          this.log(`[BUTTON-WIRELESS] 🔋 Battery: ${battery}%`);
+          this.log(`[BUTTON-WIRELESS]  Battery: ${battery}%`);
           if (this.hasCapability('measure_battery')) {
             await this._safeSetCapability('measure_battery', battery).catch(() => {});
           }
         }
       }
     } catch (e) {
-      this.log(`[BUTTON-WIRELESS] ⚠️ Initial battery read failed: ${e.message}`);
+      this.log(`[BUTTON-WIRELESS]  Initial battery read failed: ${e.message}`);
     }
   }
 

@@ -33,14 +33,14 @@ class Switch5GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     
     this._registerCapabilityListeners(); // rule-12a injected
     if (this.isZclOnlyDevice) {
-      this.log('[SWITCH-5G] 🔵 ZCL-ONLY MODE');
+      this.log('[SWITCH-5G]  ZCL-ONLY MODE');
       this.zclNode = zclNode; // v5.13.2: CRITICAL - set for base class use
       await this._initZclOnlyMode(zclNode);
       return;
     }
     await this.initPhysicalButtonDetection?.(zclNode);
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-5G] v5.5.922 ✅ Ready');
+    this.log('[SWITCH-5G] v5.5.922  Ready');
   }
 
   /**
@@ -97,7 +97,7 @@ class Switch5GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
               const card =
       this._getFlowCard(flowId)?.trigger(this, {}, {}).catch(this.error || console.error)
               if (card) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
-              this.log(`[SWITCH-5G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+              this.log(`[SWITCH-5G]  Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             } catch (e) { }
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
@@ -106,14 +106,14 @@ class Switch5GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
               const card =
       this._getFlowCard(sceneId)?.trigger(this, {}, {}).catch(this.error || console.error)
               if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-              this.log(`[SWITCH-5G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
+              this.log(`[SWITCH-5G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
             } catch (e) { }
           }
         }
       });
     }
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-5G] ✅ ZCL-only mode ready (packetninja v990)');
+    this.log('[SWITCH-5G]  ZCL-only mode ready (packetninja v990)');
   }
 
   onDeleted() {

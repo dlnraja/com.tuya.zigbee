@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// v5.12.6: IMAP-only mode — OAuth removed entirely
+// v5.12.6: IMAP-only mode  OAuth removed entirely
 const fs=require('fs'),path=require('path');
 const{fetchWithRetry}=require('./retry-helper');
 let eng=null;try{eng=require('./fp-research-engine')}catch{}
@@ -220,7 +220,7 @@ async function aiAnalyze(diag,subj,type,xref,bodyExcerpt){
   }catch{return null}
 }
 
-// Dedup — check for existing open issue with similar title before creating
+// Dedup  check for existing open issue with similar title before creating
 let _openIssuesCache=null;
 async function getOpenIssues(tk){
   if(_openIssuesCache)return _openIssuesCache;
@@ -281,12 +281,12 @@ async function researchAndImplement(allNewFPs,idx){
 }
 
 async function main(){
-  // v5.12.6: IMAP-only — no OAuth, no token expiry, permanent
+  // v5.12.6: IMAP-only  no OAuth, no token expiry, permanent
   const e=process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL;
   const p=process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD;
   if(!e||!p){console.error('IMAP credentials missing. Set GMAIL_EMAIL + GMAIL_APP_PASSWORD (see SECRETS.md)');process.exit(1)}
   if(!imap){console.error('gmail-imap-reader not available. npm install imapflow');process.exit(1)}
-  console.log('IMAP-only mode — connecting as',e);
+  console.log('IMAP-only mode  connecting as',e);
   const emails=await imap.readViaIMAP();
   if(!emails||!emails.length){console.log('No emails retrieved via IMAP');process.exit(0)}
   console.log('IMAP OK:',emails.length,'emails');

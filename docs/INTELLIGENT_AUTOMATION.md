@@ -1,4 +1,4 @@
-# 🤖 Intelligent Automation Systems - v6.0
+#  Intelligent Automation Systems - v6.0
 
 ## Overview
 
@@ -6,7 +6,7 @@ Comprehensive AI-powered automation for issue triage, bug detection, and adaptiv
 
 ---
 
-## 🎯 1. Intelligent Bug Pattern Detection
+##  1. Intelligent Bug Pattern Detection
 
 **File:** `.github/scripts/intelligent-bug-detector.js`
 
@@ -61,7 +61,7 @@ if (result.shouldRespond) {
 
 ---
 
-## 🔄 2. Adaptive DP Detection System
+##  2. Adaptive DP Detection System
 
 **File:** `.github/scripts/adaptive-dp-detector.js`
 
@@ -104,7 +104,7 @@ Based on analysis of 40 most common DPs across 139 drivers:
 const { detectDPUsage } = require('./adaptive-dp-detector.js');
 
 const usage = detectDPUsage(dp, value, dataType, manufacturerName, driverType);
-console.log(`DP${dp} → ${usage.capability} (divisor: ${usage.divisor})`);
+console.log(`DP${dp}  ${usage.capability} (divisor: ${usage.divisor})`);
 ```
 
 **Detection factors:**
@@ -115,7 +115,7 @@ console.log(`DP${dp} → ${usage.capability} (divisor: ${usage.divisor})`);
 
 ---
 
-## 📊 3. DP Learning System
+##  3. DP Learning System
 
 **File:** `.github/scripts/dp-learning-system.js`
 
@@ -152,7 +152,7 @@ Auto-learns DP patterns from diagnostic reports and user feedback.
 
 ---
 
-## 💬 4. Intelligent Comment Handler
+##  4. Intelligent Comment Handler
 
 **File:** `.github/scripts/handle-issue-comments.js`
 
@@ -189,7 +189,7 @@ jobs:
 
 ---
 
-## 🔧 5. Auto-Respond Integration
+##  5. Auto-Respond Integration
 
 **File:** `.github/scripts/auto-respond-intelligent.js`
 
@@ -197,11 +197,11 @@ jobs:
 
 1. **processIssue(context)**
    - Analyzes new/reopened issues
-   - Posts intelligent response if confidence ≥ 50%
+   - Posts intelligent response if confidence  50%
    - Adds labels: `auto-responded`, `awaiting-verification`
 
 2. **processPullRequest(context)**
-   - Detects bug fix PRs (confidence ≥ 60%)
+   - Detects bug fix PRs (confidence  60%)
    - Comments with related bug pattern context
    - Thanks contributor
 
@@ -213,7 +213,7 @@ jobs:
 
 ---
 
-## 📋 6. Workflow: Intelligent Auto-Respond
+##  6. Workflow: Intelligent Auto-Respond
 
 **File:** `.github/workflows/intelligent-auto-respond.yml`
 
@@ -232,7 +232,7 @@ jobs:
 
 ---
 
-## 🎯 Usage Examples
+##  Usage Examples
 
 ### Example 1: User Reports Soil Sensor Issue
 
@@ -269,7 +269,7 @@ jobs:
 
 ---
 
-## 🚀 Deployment Checklist
+##  Deployment Checklist
 
 - [x] Bug pattern database created
 - [x] Intelligent detection integrated into triage scripts
@@ -281,7 +281,7 @@ jobs:
 
 ---
 
-## 📊 Metrics & Monitoring
+##  Metrics & Monitoring
 
 ### Success Metrics
 - **Auto-response accuracy**: Target 90%+
@@ -296,7 +296,7 @@ jobs:
 
 ---
 
-## 🔄 Continuous Improvement
+##  Continuous Improvement
 
 1. **Monthly Review**
    - Analyze false positives

@@ -5,13 +5,13 @@ const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      1-GANG DIMMER - v5.5.412 + Virtual Buttons                             ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  UnifiedLightBase handles: onoff, dim listeners and ZCL setup                ║
- * ║  v5.5.412: Added virtual toggle/dim up/dim down buttons                     ║
- * ║  DPs: 1-5,7,9,14,101,102 | ZCL: 6,8,EF00                                   ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       1-GANG DIMMER - v5.5.412 + Virtual Buttons                             
+ * 
+ *   UnifiedLightBase handles: onoff, dim listeners and ZCL setup                
+ *   v5.5.412: Added virtual toggle/dim up/dim down buttons                     
+ *   DPs: 1-5,7,9,14,101,102 | ZCL: 6,8,EF00                                   
+ * 
  */
 class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
 
@@ -59,7 +59,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
     await super.onNodeInit({ zclNode });
     // v5.5.412: Initialize virtual buttons
     await this.initVirtualButtons();
-    this.log('[DIMMER-1G] v5.8.97 ✅ Ready + physical detection');
+    this.log('[DIMMER-1G] v5.8.97  Ready + physical detection');
   }
 
   _markAppCommand() {

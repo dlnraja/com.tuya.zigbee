@@ -1,15 +1,15 @@
-# 🚀 FINALISATION v4.9.321 - TODO RESTANT
+#  FINALISATION v4.9.321 - TODO RESTANT
 
-## ✅ DÉJÀ FAIT (COMMIT MAINTENANT!)
+##  DÉJÀ FAIT (COMMIT MAINTENANT!)
 
 ### Fichiers modifiés avec succès:
-1. ✅ `lib/utils/energy-kpi.js` - Fix Homey.ManagerSettings
-2. ✅ `lib/utils/data-collector.js` - Fix pushEnergySample calls  
-3. ✅ `lib/SmartDriverAdaptation.js` - Fix getDeviceKpi call
-4. ✅ `lib/tuya/TuyaEF00Manager.js` - dataReport listeners + DP requests
-5. ✅ `app.js` - Migration queue worker
-6. ✅ `lib/utils/tuya-dp-parser.js` - CRÉÉ (331 lignes)
-7. ✅ `lib/utils/safe-guards.js` - CRÉÉ
+1.  `lib/utils/energy-kpi.js` - Fix Homey.ManagerSettings
+2.  `lib/utils/data-collector.js` - Fix pushEnergySample calls  
+3.  `lib/SmartDriverAdaptation.js` - Fix getDeviceKpi call
+4.  `lib/tuya/TuyaEF00Manager.js` - dataReport listeners + DP requests
+5.  `app.js` - Migration queue worker
+6.  `lib/utils/tuya-dp-parser.js` - CRÉÉ (331 lignes)
+7.  `lib/utils/safe-guards.js` - CRÉÉ
 
 ### COMMIT MAINTENANT:
 ```bash
@@ -39,7 +39,7 @@ git push
 
 ---
 
-## 🔧 TODO MANUEL RESTANT (10 min)
+##  TODO MANUEL RESTANT (10 min)
 
 ### A. BaseHybridDevice.js - configureReporting retry
 
@@ -120,15 +120,15 @@ async function createCapabilitySafe(device, capId, options = {}) {
   try {
     if (!device || !capId) return false;
     if (device.hasCapability(capId)) {
-      device.log && device.log(`[SAFE-CREATE] ✅ ${capId} exists`);
+      device.log && device.log(`[SAFE-CREATE]  ${capId} exists`);
       return true;
     }
     await device.addCapability(capId, options);
-    device.log && device.log(`[SAFE-CREATE] ✅ ${capId} created`);
+    device.log && device.log(`[SAFE-CREATE]  ${capId} created`);
     return true;
   } catch (err) {
     if (/already exists|duplicate/i.test(err.message || '')) return true;
-    device.error && device.error(`[SAFE-CREATE] ❌ ${capId}:`, err.message);
+    device.error && device.error(`[SAFE-CREATE]  ${capId}:`, err.message);
     return false;
   }
 }
@@ -162,7 +162,7 @@ Si le fichier est incomplet, copier le contenu depuis `.github/PATCH_APPLIED_v4.
 
 ---
 
-## 📊 APRÈS LES CORRECTIONS A-D:
+##  APRÈS LES CORRECTIONS A-D:
 
 ```bash
 git add lib/devices/BaseHybridDevice.js
@@ -185,7 +185,7 @@ git push
 
 ---
 
-## 🚀 PUBLICATION
+##  PUBLICATION
 
 ### 1. Bump version
 ```bash
@@ -222,7 +222,7 @@ Surveiller: https://github.com/YOUR_REPO/actions
 
 ---
 
-## ✅ CHECKLIST FINALE
+##  CHECKLIST FINALE
 
 - [ ] Commit correctifs actuels (A)
 - [ ] Appliquer TODO A: BaseHybridDevice.js retry (12 lignes)
@@ -238,17 +238,17 @@ Surveiller: https://github.com/YOUR_REPO/actions
 
 ---
 
-## 📊 IMPACT ATTENDU
+##  IMPACT ATTENDU
 
 | Problème | Avant | Après |
 |----------|-------|-------|
-| Energy-KPI crash | 100% crash | 0% crash ✅ |
-| Soil sensors | 0% data | 90% data ✅ |
-| PIR sensors | 0% data | 90% data ✅ |
-| NPE startsWith | Crash app | Protected ✅ |
-| device.setDriver | Error | Queue safe ✅ |
-| Zigbee retry | 0% retry | 3x retry ✅ |
-| configureReporting | 30% success | 95% success ⏳ |
+| Energy-KPI crash | 100% crash | 0% crash  |
+| Soil sensors | 0% data | 90% data  |
+| PIR sensors | 0% data | 90% data  |
+| NPE startsWith | Crash app | Protected  |
+| device.setDriver | Error | Queue safe  |
+| Zigbee retry | 0% retry | 3x retry  |
+| configureReporting | 30% success | 95% success  |
 
 ---
 

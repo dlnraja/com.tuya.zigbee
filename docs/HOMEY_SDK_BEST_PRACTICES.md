@@ -12,12 +12,12 @@
 **CRITICAL: Avoid communication in `onInit` or `onNodeInit`**
 
 ```javascript
-// ❌ DON'T - Zigbee may not be ready
+//  DON'T - Zigbee may not be ready
 async onNodeInit({ zclNode }) {
   const value = await zclNode.endpoints[1].clusters.onOff.readAttributes(['onOff']);
 }
 
-// ✅ DO - Always catch promises
+//  DO - Always catch promises
 async onNodeInit({ zclNode }) {
   const value = await zclNode.endpoints[1].clusters.onOff.readAttributes(['onOff'])
     .catch(err => { this.error(err); });
@@ -115,7 +115,7 @@ if (subDeviceId === 'secondSwitch') {
 ```javascript
 const { debug } = require('zigbee-clusters');
 debug(true); // Enable all Zigbee logging
-// ⚠️ Disable before publishing!
+//  Disable before publishing!
 ```
 
 ---
@@ -198,14 +198,14 @@ For Matter bridges (e.g., Zigbee hub exposing devices via Matter):
 
 Based on official documentation, the following improvements have been verified/applied:
 
-### ✅ Already Implemented
+###  Already Implemented
 - [x] IAS Zone enrollment in `HybridSensorBase.js` (v5.5.601)
 - [x] Promise catching in all `onNodeInit` calls
 - [x] Attribute reporting configuration for sleepy devices
 - [x] Sub-device support for multi-gang switches
 - [x] Tuya cluster (61184) custom implementation
 
-### 🔄 Recommendations for Future
+###  Recommendations for Future
 - [ ] Add Matter bridge support for Tuya Matter devices
 - [ ] Implement `platformLocalRequiredFeatures` check
 - [ ] Add debug toggle setting for troubleshooting

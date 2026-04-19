@@ -1,13 +1,13 @@
-# 🤖 GITHUB ACTIONS WORKFLOWS
+#  GITHUB ACTIONS WORKFLOWS
 
 **Version**: v4.9.260  
 **Automation Level**: 100% Autonomous
 
 ---
 
-## 📋 WORKFLOWS DISPONIBLES
+##  WORKFLOWS DISPONIBLES
 
-### 1. ⚙️ Auto Enrichment
+### 1.  Auto Enrichment
 
 **File**: `auto-enrichment.yml`
 
@@ -31,7 +31,7 @@ gh workflow run auto-enrichment.yml
 
 ---
 
-### 2. 🎯 Auto PR & Issue Handler
+### 2.  Auto PR & Issue Handler
 
 **File**: `auto-pr-handler.yml`
 
@@ -45,19 +45,19 @@ gh workflow run auto-enrichment.yml
 **Features**:
 
 #### For PRs:
-- ✅ Auto-detect device support PRs
-- ✅ Welcome message
-- ✅ Automatic validation
-- ✅ Auto-merge if valid
-- ✅ Error guidance if invalid
-- ✅ Thank you message after merge
-- ✅ Stale PR management
+-  Auto-detect device support PRs
+-  Welcome message
+-  Automatic validation
+-  Auto-merge if valid
+-  Error guidance if invalid
+-  Thank you message after merge
+-  Stale PR management
 
 #### For Issues:
-- ✅ Auto-detect issue type
-- ✅ Template responses
-- ✅ Auto-labeling
-- ✅ Auto-close after 14 days inactivity
+-  Auto-detect issue type
+-  Template responses
+-  Auto-labeling
+-  Auto-close after 14 days inactivity
 
 **Manual Trigger**:
 ```bash
@@ -66,7 +66,7 @@ gh workflow run auto-pr-handler.yml
 
 ---
 
-### 3. 💬 Forum Auto Responder
+### 3.  Forum Auto Responder
 
 **File**: `forum-auto-responder.yml`
 
@@ -75,9 +75,9 @@ gh workflow run auto-pr-handler.yml
 **Purpose**: Réponses automatiques aux questions communes
 
 **Patterns Detected**:
-1. "device not working" → Troubleshooting guide
-2. "how to add device" → Contributing guide
-3. "battery not updating" → Battery reporting guide
+1. "device not working"  Troubleshooting guide
+2. "how to add device"  Contributing guide
+3. "battery not updating"  Battery reporting guide
 
 **Manual Trigger**:
 ```bash
@@ -86,7 +86,7 @@ gh workflow run forum-auto-responder.yml
 
 ---
 
-## 🔧 SCRIPTS UTILISÉS
+##  SCRIPTS UTILISÉS
 
 ### Enrichment Scripts
 
@@ -114,7 +114,7 @@ Located in `scripts/enrichment/`:
 
 ---
 
-## 📊 MONITORING
+##  MONITORING
 
 ### Check Workflow Status
 
@@ -144,7 +144,7 @@ gh run download <run-id>
 
 ---
 
-## 🎯 PERMISSIONS REQUISES
+##  PERMISSIONS REQUISES
 
 Workflows need these permissions:
 
@@ -158,12 +158,12 @@ permissions:
 
 ---
 
-## 🚀 ACTIVATION
+##  ACTIVATION
 
 ### Step 1: Enable Actions
 
 1. Go to Repository Settings
-2. Actions → General
+2. Actions  General
 3. Allow all actions
 4. Save
 
@@ -189,52 +189,52 @@ gh run view <run-id> --log
 
 ---
 
-## 📈 EXPECTED RESULTS
+##  EXPECTED RESULTS
 
 ### Weekly Enrichment
 
 ```
-🔍 Scraping sources...
+ Scraping sources...
    Zigbee2MQTT: 12 new devices
    ZHA: 8 new devices
    Community PRs: 2 devices
 
-✅ Applied enrichments
+ Applied enrichments
    13 manufacturer IDs added
    3 drivers updated
 
-✅ Validation: PASSED
+ Validation: PASSED
 
-🎯 PR Created: #456
-   ✅ Auto-merged successfully
+ PR Created: #456
+    Auto-merged successfully
 ```
 
 ### PR Handling
 
 ```
 New PR opened: "Add support for XYZ device"
-   ✅ Auto-detected as device support
-   ✅ Welcome message posted
-   ✅ Validation running...
-   ✅ Validation PASSED
-   ✅ Auto-merged
-   ✅ Thank you message sent
-   ✅ Contributor added to CONTRIBUTORS.md
+    Auto-detected as device support
+    Welcome message posted
+    Validation running...
+    Validation PASSED
+    Auto-merged
+    Thank you message sent
+    Contributor added to CONTRIBUTORS.md
 ```
 
 ### Issue Management
 
 ```
 New Issue: "Device not working"
-   ✅ Detected type: device-support
-   ✅ Auto-response with troubleshooting
-   ✅ Labels: device-support, needs-info
-   ✅ Waiting for user feedback (14 days)
+    Detected type: device-support
+    Auto-response with troubleshooting
+    Labels: device-support, needs-info
+    Waiting for user feedback (14 days)
 ```
 
 ---
 
-## 🔄 WORKFLOW FREQUENCY
+##  WORKFLOW FREQUENCY
 
 ```
 Daily:         PR/Issue handling (continuous)
@@ -245,7 +245,7 @@ Weekly:        Device enrichment (Monday 02:00 UTC)
 
 ---
 
-## 💡 BEST PRACTICES
+##  BEST PRACTICES
 
 ### For Contributors
 
@@ -263,7 +263,7 @@ Weekly:        Device enrichment (Monday 02:00 UTC)
 
 ---
 
-## 🐛 TROUBLESHOOTING
+##  TROUBLESHOOTING
 
 ### Workflow Failed
 
@@ -294,7 +294,7 @@ gh workflow run <workflow-name>
 
 ---
 
-## 📞 DOCUMENTATION
+##  DOCUMENTATION
 
 **Complete Guide**: `docs/AUTOMATION_COMPLETE.md`
 
@@ -304,26 +304,26 @@ gh workflow run <workflow-name>
 
 ---
 
-## 🎉 BENEFITS
+##  BENEFITS
 
 ### Automation Achieves:
 
-- ✅ **80%+ PRs** handled automatically
-- ✅ **70%+ Issues** auto-responded
-- ✅ **10-20 devices** added weekly
-- ✅ **24/7 support** via automation
-- ✅ **Zero manual** enrichment
-- ✅ **Instant** contributor feedback
+-  **80%+ PRs** handled automatically
+-  **70%+ Issues** auto-responded
+-  **10-20 devices** added weekly
+-  **24/7 support** via automation
+-  **Zero manual** enrichment
+-  **Instant** contributor feedback
 
 ### Time Saved:
 
-- **PR review**: 5 min → 30 sec
-- **Issue triage**: 10 min → Instant
-- **Enrichment**: 2h → Automatic
-- **Total**: ~10h/week → ~1h/week
+- **PR review**: 5 min  30 sec
+- **Issue triage**: 10 min  Instant
+- **Enrichment**: 2h  Automatic
+- **Total**: ~10h/week  ~1h/week
 
 ---
 
 **Last Updated**: 2 Novembre 2025  
-**Status**: ✅ PRODUCTION READY  
+**Status**:  PRODUCTION READY  
 **Maintainer**: Dylan Rajasekaram

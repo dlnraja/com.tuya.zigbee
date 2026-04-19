@@ -68,14 +68,14 @@ const readme = `# Universal Tuya Zigbee App for Homey
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https:
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https:
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **${dirs.length} drivers** and **${fmt(totalFp)}+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices  no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **${dirs.length} drivers** and **${fmt(totalFp)}+ device fingerprints**.
 
 **Key features:**
-- **Local-only** — everything runs on your Homey, nothing goes to the cloud
-- **Unified mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
-- **Smart battery** — voltage-based fallback when devices don't report percentage
-- **${fmt(flowTotal)}+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
-- **SDK3** — built on the latest Homey platform
+- **Local-only**  everything runs on your Homey, nothing goes to the cloud
+- **Unified mode**  auto-detects whether a device speaks Tuya DP or standard ZCL
+- **Smart battery**  voltage-based fallback when devices don't report percentage
+- **${fmt(flowTotal)}+ flow cards**  triggers, conditions & actions in EN, FR, NL, DE
+- **SDK3**  built on the latest Homey platform
 
 ---
 
@@ -283,7 +283,7 @@ Your device's fingerprint (manufacturerName + productId) is not yet in the app. 
 <summary><strong>Device paired but doesn't respond to commands</strong></summary>
 
 1. Try re-pairing the device (remove and add again)
-2. Check if it's a Tuya DP device (TS0601) — these need specific DP mappings
+2. Check if it's a Tuya DP device (TS0601)  these need specific DP mappings
 3. For safeDivide(BSEED, Zemismart): these are ZCL-only, ensure explicit binding is working
 </details>
 
@@ -302,7 +302,7 @@ This is usually a double-division bug. The app auto-detects divisors from Tuya D
 <details>
 <summary><strong>How to get the test version?</strong></summary>
 
-Install from: [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) — this is auto-promoted from draft builds daily.
+Install from: [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)  this is auto-promoted from draft builds daily.
 </details>
 
 ---

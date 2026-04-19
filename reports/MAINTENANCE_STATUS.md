@@ -1,9 +1,9 @@
 # Universal Tuya Zigbee Maintenance Status - April 11, 2026 (v7.2.6 RC)
 
-## 🛡️ Stability Overview
+##  Stability Overview
 The Universal Tuya Zigbee app has reached a "MAX Local" stability milestone. All high-severity regressions (IDs #170, #194, #200) have been resolved via structural hardening of the `BaseHybridDevice` inheritance chain and manifest permissive matching.
 
-## 🛠️ Key Repairs & Improvements
+##  Key Repairs & Improvements
 
 ### 7. Multi-Gang Flow Card Robustness (Issue #170 Final Fix)
 - **Problem**: Flow cards for multi-gang switches were unlinking due to naming convention inconsistencies (`physical_gang1` vs `gang1_physical`).
@@ -51,7 +51,7 @@ The Universal Tuya Zigbee app has reached a "MAX Local" stability milestone. All
 - **Solution**: Executed autonomous ingestion pipeline (`community-ingestor.js`) to process and map high-confidence fingerprints into respective driver manifests.
 - **Impact**: Expanded device support footprint with 40+ new fingerprints.
 
-## 🔍 Next Steps
+##  Next Steps
 1. **Fleet Monitoring**: Observe the `/test` branch (v7.2.6) for stability verification.
 2. **Autonomous Calibration**: Ingest advanced sensor offset data from forum diagnostics.
 

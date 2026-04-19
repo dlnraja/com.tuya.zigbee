@@ -56,7 +56,7 @@ async function fetchAllItems(repo){
 }
 
 async function extractAllFPs(repo,items,idx){
-  const fpMap=new Map(); // fp → {pids, sources, variants}
+  const fpMap=new Map(); // fp  {pids, sources, variants}
   for(const it of items){
     const num=it.number;const isPR=!!it.pull_request||!!it.head;
     const type=isPR?'PR':'issue';
@@ -92,7 +92,7 @@ async function deepResearchFP(fp,entry,idx){
     const vr=await eng.researchFP(v,{token:TOKEN,index:idx});
     res.variants.push({fp:v,driver:vr.driver,pid:vr.pid,confidence:vr.confidence,exists:!!vr.driverExists});
   }
-  // 3. Try PIDs from issue text → resolve driver via PID map
+  // 3. Try PIDs from issue text  resolve driver via PID map
   for(const pid of entry.pids){
     if(eng.PID_DRIVER_MAP[pid]&&!res.driver)res.driver=eng.PID_DRIVER_MAP[pid];
     const drvs=idx.pIdx.get(pid);
@@ -105,7 +105,7 @@ async function deepResearchFP(fp,entry,idx){
 }
 // === Implement: add all confirmed FP+PID combos to drivers ===
 function addToDriver(driver,fp,pid,meta){
-  if(DRY){console.log('  [DRY] Would add',fp||'','pid:',pid||'','→',driver);return false}
+  if(DRY){console.log('  [DRY] Would add',fp||'','pid:',pid||'','',driver);return false}
   const m=meta.get(driver);if(!m)return false;
   try{const d=JSON.parse(fs.readFileSync(m.path,'utf8'));let ch=false;
     if(fp&&!d.zigbee.manufacturerName.includes(fp)){d.zigbee.manufacturerName.push(fp);d.zigbee.manufacturerName.sort();ch=true}
@@ -161,7 +161,7 @@ async function main(){
   const researched=[];
   for(const[fp,entry]of newFPs.slice(0,60)){
     const res=await deepResearchFP(fp,entry,idx);researched.push(res);
-    console.log(' ',fp,'→',res.driver||'?','('+res.confidence+'%)',res.variants.length+'v');
+    console.log(' ',fp,'',res.driver||'?','('+res.confidence+'%)',res.variants.length+'v');
     if(ghCalls>=MAX_GH)break;
   }
   console.log('\n== Implement ==');
@@ -185,10 +185,10 @@ async function main(){
     md+='| GH API calls | '+ghCalls+'/'+MAX_GH+' |\n';
     const impl=researched.filter(r=>r.actions.length);
     if(impl.length){md+='\n### Implemented\n';
-      for(const r of impl.slice(0,30))md+='- `'+r.fp+'` → **'+r.driver+'** '+r.actions.join(', ')+'\n'}
+      for(const r of impl.slice(0,30))md+='- `'+r.fp+'`  **'+r.driver+'** '+r.actions.join(', ')+'\n'}
     const unresolved=researched.filter(r=>!r.driver);
     if(unresolved.length){md+='\n### Unresolved (need manual review)\n';
-      for(const r of unresolved.slice(0,20))md+='- `'+r.fp+'` — '+r.sources[0]+'\n'}
+      for(const r of unresolved.slice(0,20))md+='- `'+r.fp+'`  '+r.sources[0]+'\n'}
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,md);
   }
 }

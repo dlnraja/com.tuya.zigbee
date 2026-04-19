@@ -31,7 +31,7 @@ drivers.forEach(driverName => {
   // We can't automatically know the ID here easily without manifest, but we can log it.
   const deletionRegex = /try\s*\{\s*\n\s+\.registerRunListener/g;
   if (deletionRegex.test(content)) {
-    console.warn(`⚠️  Possible corrupted flow registration in ${driverName}. Manual check recommended.`);
+    console.warn(`  Possible corrupted flow registration in ${driverName}. Manual check recommended.`);
   }
 
   // 3. Ensure super.onInit() and guard exist
@@ -50,8 +50,8 @@ drivers.forEach(driverName => {
   if (content !== original) {
     fs.writeFileSync(driverPath, content);
     fixedCount++;
-    console.log(`✅ Stabilized driver: ${driverName}`);
+    console.log(` Stabilized driver: ${driverName}`);
   }
 });
 
-console.log(`\n✨ Sweep complete. Stabilized ${fixedCount} drivers.`);
+console.log(`\n Sweep complete. Stabilized ${fixedCount} drivers.`);

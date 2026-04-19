@@ -44,7 +44,7 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
         if (!args.device) return false;
         return args.device.getCapabilityValue('onoff') === true;
       });
-      this.log('[FLOW] ✅ Registered: hvac_dehumidifier_dehumidifier_hybrid_is_on');
+      this.log('[FLOW]  Registered: hvac_dehumidifier_dehumidifier_hybrid_is_on');
     }
 
     // ACTION: Turn on
@@ -56,7 +56,7 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
         await args.device.setCapabilityValue('onoff', true).catch(() => {});
         return true;
       });
-      this.log('[FLOW] ✅ Registered: hvac_dehumidifier_dehumidifier_hybrid_turn_on');
+      this.log('[FLOW]  Registered: hvac_dehumidifier_dehumidifier_hybrid_turn_on');
     }
 
     // ACTION: Turn off
@@ -68,7 +68,7 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
         await args.device.setCapabilityValue('onoff', false).catch(() => {});
         return true;
       });
-      this.log('[FLOW] ✅ Registered: hvac_dehumidifier_dehumidifier_hybrid_turn_off');
+      this.log('[FLOW]  Registered: hvac_dehumidifier_dehumidifier_hybrid_turn_off');
     }
 
     // ACTION: Toggle
@@ -81,7 +81,7 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
         await args.device.setCapabilityValue('onoff', !current).catch(() => {});
         return true;
       });
-      this.log('[FLOW] ✅ Registered: hvac_dehumidifier_dehumidifier_hybrid_toggle');
+      this.log('[FLOW]  Registered: hvac_dehumidifier_dehumidifier_hybrid_toggle');
     }
 
     this.log('[FLOW]  HVAC dehumidifier flow cards registered');

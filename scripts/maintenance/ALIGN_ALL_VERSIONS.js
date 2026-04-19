@@ -21,7 +21,7 @@ if (fs.existsSync(pkgPath)) {
     const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
     pkg.version = TARGET_VERSION;
     fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
-    console.log(`✅ package.json -> ${TARGET_VERSION}`);
+    console.log(` package.json -> ${TARGET_VERSION}`);
 }
 
 // 2. .homeycompose/app.json (Template)
@@ -30,7 +30,7 @@ if (fs.existsSync(templatePath)) {
     const template = JSON.parse(fs.readFileSync(templatePath, 'utf8'));
     template.version = TARGET_VERSION;
     fs.writeFileSync(templatePath, JSON.stringify(template, null, 2) + '\n');
-    console.log(`✅ .homeycompose/app.json -> ${TARGET_VERSION}`);
+    console.log(` .homeycompose/app.json -> ${TARGET_VERSION}`);
 }
 
 // 3. app.json (Generated)
@@ -39,7 +39,7 @@ if (fs.existsSync(appPath)) {
     const app = JSON.parse(fs.readFileSync(appPath, 'utf8'));
     app.version = TARGET_VERSION;
     fs.writeFileSync(appPath, JSON.stringify(app, null, 2) + '\n');
-    console.log(`✅ app.json -> ${TARGET_VERSION}`);
+    console.log(` app.json -> ${TARGET_VERSION}`);
 }
 
 // 4. .homeychangelog.json
@@ -66,7 +66,7 @@ if (fs.existsSync(changelogPath)) {
     });
     keys.forEach(k => sorted[k] = changelog[k]);
     fs.writeFileSync(changelogPath, JSON.stringify(sorted, null, 2) + '\n');
-    console.log(`✅ .homeychangelog.json updated with ${TARGET_VERSION}`);
+    console.log(` .homeychangelog.json updated with ${TARGET_VERSION}`);
 }
 
 // 5. README.md
@@ -76,7 +76,7 @@ if (fs.existsSync(readmePath)) {
     readme = readme.replace(/v[0-9]+\.[0-9]+\.[0-9]+/g, `v${TARGET_VERSION}`);
     readme = readme.replace(/# Universal Tuya Unified Engine \(v.*?\)/, `# Universal Tuya Unified Engine (v${TARGET_VERSION})`);
     fs.writeFileSync(readmePath, readme);
-    console.log(`✅ README.md -> v${TARGET_VERSION}`);
+    console.log(` README.md -> v${TARGET_VERSION}`);
 }
 
-console.log(`\n🚀 All versions aligned to v${TARGET_VERSION}. Ready for Zero-Defect deployment.`);
+console.log(`\n All versions aligned to v${TARGET_VERSION}. Ready for Zero-Defect deployment.`);

@@ -4,7 +4,7 @@
 **GitHub:** https://github.com/Drenso/com.tuya2
 **Version:** 1.2.2
 
-## 🎯 Key Features to Implement
+##  Key Features to Implement
 
 ### Priority 1: Generic DP Triggers (MUST HAVE)
 The Tuya Cloud app has powerful **generic status triggers** that work with ANY Tuya DP:
@@ -48,53 +48,53 @@ Actions to **send any Tuya command** to any DP:
 
 ---
 
-## 📋 Complete Flow Cards Comparison
+##  Complete Flow Cards Comparison
 
 ### TRIGGERS - Tuya Cloud App Has:
 
 | Flow Card | Our App | Status |
 |-----------|---------|--------|
-| Receive Tuya Status (Boolean/Number/String/JSON) | ❌ | **TO ADD** |
-| Button pressed/clicked/double-clicked with switch selector | ✅ | Have |
-| Button knob turned (clockwise/counterclockwise) | ❌ | TO ADD |
-| Camera crying child detected | ❌ | N/A (cloud only) |
-| Camera pet detected | ❌ | N/A (cloud only) |
-| Camera sound detected | ❌ | N/A (cloud only) |
-| Doorbell rang | ❌ | TO ADD (if Zigbee doorbell exists) |
-| Fan light turned on/off | ❌ | TO ADD |
-| Irrigator rain detected | ❌ | TO ADD |
-| Light switch LED on/off | ❌ | TO ADD |
+| Receive Tuya Status (Boolean/Number/String/JSON) |  | **TO ADD** |
+| Button pressed/clicked/double-clicked with switch selector |  | Have |
+| Button knob turned (clockwise/counterclockwise) |  | TO ADD |
+| Camera crying child detected |  | N/A (cloud only) |
+| Camera pet detected |  | N/A (cloud only) |
+| Camera sound detected |  | N/A (cloud only) |
+| Doorbell rang |  | TO ADD (if Zigbee doorbell exists) |
+| Fan light turned on/off |  | TO ADD |
+| Irrigator rain detected |  | TO ADD |
+| Light switch LED on/off |  | TO ADD |
 
 ### TRIGGERS - Our App Already Has (BETTER):
 
 | Flow Card | Description |
 |-----------|-------------|
-| Button pressed/double/long/multi | ✅ Complete |
-| Button released / released after long | ✅ Advanced |
-| Button pressed X times | ✅ Specific count |
-| Contact changed | ✅ |
-| Device offline | ✅ Unique! |
-| Motion with lux condition | ✅ Advanced! |
-| No motion timeout | ✅ Advanced! |
-| Power above/below threshold | ✅ Energy monitoring |
-| Daily energy exceeded | ✅ |
+| Button pressed/double/long/multi |  Complete |
+| Button released / released after long |  Advanced |
+| Button pressed X times |  Specific count |
+| Contact changed |  |
+| Device offline |  Unique! |
+| Motion with lux condition |  Advanced! |
+| No motion timeout |  Advanced! |
+| Power above/below threshold |  Energy monitoring |
+| Daily energy exceeded |  |
 
 ### ACTIONS - Tuya Cloud App Has:
 
 | Flow Card | Our App | Status |
 |-----------|---------|--------|
-| Send Tuya Command (generic DP) | ❌ | **TO ADD** |
-| Camera motion/sound/pet detection switch | ❌ | N/A |
-| Camera night mode | ❌ | N/A |
-| Camera PTZ control | ❌ | N/A |
-| Child lock (circuit breaker) | ❌ | TO ADD |
-| Infrared remote press button | ❌ | N/A (cloud) |
-| Light standby light | ❌ | TO ADD |
-| Sensor sensitivity | ❌ | TO ADD |
+| Send Tuya Command (generic DP) |  | **TO ADD** |
+| Camera motion/sound/pet detection switch |  | N/A |
+| Camera night mode |  | N/A |
+| Camera PTZ control |  | N/A |
+| Child lock (circuit breaker) |  | TO ADD |
+| Infrared remote press button |  | N/A (cloud) |
+| Light standby light |  | TO ADD |
+| Sensor sensitivity |  | TO ADD |
 
 ---
 
-## 🏠 Device Types Comparison
+##  Device Types Comparison
 
 ### Tuya Cloud App Drivers:
 - airco, button, camera, circuit_breaker, dehumidifier, dimmer, doorbell
@@ -104,20 +104,20 @@ Actions to **send any Tuya command** to any DP:
 - siren, socket, thermostat, window_coverings
 
 ### Our App Has (164+ drivers):
-- ✅ All sensor types (climate, motion, presence, contact, smoke, gas, water, vibration)
-- ✅ All switch types (1-6 gang)
-- ✅ All plug/socket types
-- ✅ All light types (dimmer, RGB, color temp)
-- ✅ Covers/curtains/blinds
-- ✅ Thermostats/TRV
-- ✅ Buttons (1-8 button, scene switches)
-- ✅ Sirens/alarms
-- ✅ Air quality (PM2.5, CO2, VOC, formaldehyde)
-- ❌ Missing: Camera (cloud only), Infrared Remote, Irrigator, Humidifier/Dehumidifier
+-  All sensor types (climate, motion, presence, contact, smoke, gas, water, vibration)
+-  All switch types (1-6 gang)
+-  All plug/socket types
+-  All light types (dimmer, RGB, color temp)
+-  Covers/curtains/blinds
+-  Thermostats/TRV
+-  Buttons (1-8 button, scene switches)
+-  Sirens/alarms
+-  Air quality (PM2.5, CO2, VOC, formaldehyde)
+-  Missing: Camera (cloud only), Infrared Remote, Irrigator, Humidifier/Dehumidifier
 
 ---
 
-## ⚙️ Settings Comparison
+##  Settings Comparison
 
 ### Tuya Cloud App Settings:
 - Device Specification label
@@ -130,16 +130,16 @@ Actions to **send any Tuya command** to any DP:
 - Spray level (1-10)
 
 ### Our App Settings (BETTER):
-- ✅ Temperature/humidity calibration
-- ✅ Power reporting intervals
-- ✅ LED indicator settings
-- ✅ Power-on behavior
-- ✅ Time sync settings (LCD devices)
-- ✅ Zigbee-specific settings (manufacturer info)
+-  Temperature/humidity calibration
+-  Power reporting intervals
+-  LED indicator settings
+-  Power-on behavior
+-  Time sync settings (LCD devices)
+-  Zigbee-specific settings (manufacturer info)
 
 ---
 
-## 🚀 Implementation Plan
+##  Implementation Plan
 
 ### Phase 1: Generic DP Flow Cards (HIGH PRIORITY)
 1. Add `receive_dp_value` trigger with autocomplete for DP codes
@@ -159,7 +159,7 @@ Actions to **send any Tuya command** to any DP:
 
 ---
 
-## 💡 Key Takeaways
+##  Key Takeaways
 
 ### What Tuya Cloud Does Better:
 1. **Generic DP access** - Users can trigger/action ANY DP code

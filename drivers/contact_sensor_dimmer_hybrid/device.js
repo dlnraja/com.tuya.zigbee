@@ -4,12 +4,12 @@ const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { setupSonoffSensor, handleSonoffSensorSettings } = require('../../lib/mixins/SonoffSensorMixin');
-// v5.11.99: IASZoneManager removed — UnifiedSensorBase handles IAS enrollment+inversion
-// v5.12.0: FIX Lasse_K #802 — IEEEAddressManager (7 methods) for CIE write + warn hybrid devices
+// v5.11.99: IASZoneManager removed  UnifiedSensorBase handles IAS enrollment+inversion
+// v5.12.0: FIX Lasse_K #802  IEEEAddressManager (7 methods) for CIE write + warn hybrid devices
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 const VALIDATION = {
   BATTERY_MIN: 0,
   BATTERY_MAX: 100,
@@ -27,18 +27,18 @@ const DEBOUNCE = {
 };
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      CONTACT / DOOR SENSOR - v5.5.344 IAS ZONE KEEP-ALIVE FIX               ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Source: https://www.zigbee2mqtt.io/devices/TS0203.html                     ║
- * ║  Features: contact, battery, voltage, tamper, battery_low                    ║
- * ║                                                                              ║
- * ║  v5.5.344: CRITICAL FIX for IAS Zone keep-alive fake state changes          ║
- * ║  Research: github.com/Koenkk/zigbee2mqtt/discussions/25874                  ║
- * ║  - TS0203 sensors send IAS Zone keep-alive that causes fake state changes   ║
- * ║  - Affected: _TZ3000_bpkijo14, _TZ3000_x8q36xwf and others                  ║
- * ║  - Solution: Filter repeated states + longer debounce + state validation    ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       CONTACT / DOOR SENSOR - v5.5.344 IAS ZONE KEEP-ALIVE FIX               
+ * 
+ *   Source: https://www.zigbee2mqtt.io/devices/TS0203.html                     
+ *   Features: contact, battery, voltage, tamper, battery_low                    
+ *                                                                               
+ *   v5.5.344: CRITICAL FIX for IAS Zone keep-alive fake state changes          
+ *   Research: github.com/Koenkk/zigbee2mqtt/discussions/25874                  
+ *   - TS0203 sensors send IAS Zone keep-alive that causes fake state changes   
+ *   - Affected: _TZ3000_bpkijo14, _TZ3000_x8q36xwf and others                  
+ *   - Solution: Filter repeated states + longer debounce + state validation    
+ * 
  */
 class ContactSensorDevice extends UnifiedSensorBase {
 
@@ -54,26 +54,26 @@ class ContactSensorDevice extends UnifiedSensorBase {
    */
   get dpMappings() {
     return {
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // CONTACT STATE - v5.5.343: Debounced to prevent rapid toggling
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // Contact state - DP 1 (0=open, 1=closed for most)
       // v5.5.531: FIXED inverted logic per Z2M: contact=true means CLOSED, contact=false means OPEN
       // Homey: alarm_contact=true means OPEN (alarm!), alarm_contact=false means CLOSED (normal)
       1: {
         capability: 'alarm_contact',
         transform: (v) => {
-          // Boolean: Z2M sends true=closed, false=open → invert for Homey
+          // Boolean: Z2M sends true=closed, false=open  invert for Homey
           if (typeof v === 'boolean') return !v;
-          // Numeric/string: 0 or 'open' means open → alarm=true
+          // Numeric/string: 0 or 'open' means open  alarm=true
           return v === 0 || v === 'open';
         },
         debounce: 500 // v5.5.343: 500ms debounce to prevent rapid toggling
       },
       // v5.12.2: DP 101 now mapped to measure_luminance only (line 128)
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // BATTERY (multiple DPs depending on model)
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // Battery level - DP 2 (v5.5.793: Added validation)
       2: { 
         capability: 'measure_battery', 
@@ -101,14 +101,14 @@ class ContactSensorDevice extends UnifiedSensorBase {
         }
       },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // TAMPER DETECTION
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       5: { capability: 'alarm_tamper', transform: (v) => v === true || v === 1 },
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // v5.5.130: ADDITIONAL FEATURES from Zigbee2MQTT
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // Battery voltage (mV) - for diagnostic purposes
       6: { capability: null, internal: 'battery_voltage' },
       // Sensitivity setting (some models)
@@ -187,7 +187,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
     // v5.5.908: Added _TZ3000_996rpfy6 (blutch32 forum - always shows no)
     // v5.12.2: Added _TZE200_pay2byax (ZG-102ZL reversed contact)
     const invertedByDefault = [
-      // v5.12.1: REMOVED HOBEIAN — Lasse_K #1592 'always ja': standard TS0203 IAS bit0=1=open maps directly to alarm_contact=true, no inversion needed
+      // v5.12.1: REMOVED HOBEIAN  Lasse_K #1592 'always ja': standard TS0203 IAS bit0=1=open maps directly to alarm_contact=true, no inversion needed
       // 'HOBEIAN',  
       '_TZ3000_26fmupbb',  // Known inverted
       '_TZ3000_n2egfsli',  // Known inverted
@@ -199,7 +199,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       '_TZ3000_996rpfy6',  // v5.5.908: blutch32 forum - TS0203 always "no" fix
       '_TZE200_pay2byax',  // v5.12.2: ZG-102ZL reversed
     ].some(id => mfr.toLowerCase().includes(id.toLowerCase()));
-    // v5.12.3: XOR — default inversion + user invert cancel each other out
+    // v5.12.3: XOR  default inversion + user invert cancel each other out
     this._invertedByDefault = invertedByDefault;
     if (invertedByDefault) {
       this._invertContact = !(userInvert || userReverse);
@@ -208,7 +208,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
     }
 
     if (this._isProblematicSensor) {
-      this.log(`[CONTACT] ⚠️ Problematic sensor detected (${mfr}) - extended debounce enabled`);
+      this.log(`[CONTACT]  Problematic sensor detected (${mfr}) - extended debounce enabled`);
       this._debounceMs = Math.max(this._debounceMs, DEBOUNCE.PROBLEMATIC_MIN_MS);
     }
 
@@ -218,7 +218,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
     await setupSonoffSensor(this, zclNode);
     this.log('[CONTACT] v5.11.106 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00 | SONOFF: tamper');
-    this.log(`[CONTACT] ✅ Ready (debounce: ${this._debounceMs}ms, invert: ${this._invertContact}, problematic: ${this._isProblematicSensor})`);
+    this.log(`[CONTACT]  Ready (debounce: ${this._debounceMs}ms, invert: ${this._invertContact}, problematic: ${this._isProblematicSensor})`);
   }
 
   /**
@@ -237,7 +237,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
         this._userExplicitInvert = this._invertContact;
       }
       this.log(`[CONTACT] Invert setting changed to: ${this._invertContact} (invert=${inv}, reverse=${rev})`);
-      // Toggle current displayed state — use super to bypass invert override
+      // Toggle current displayed state  use super to bypass invert override
       const current = this.getCapabilityValue('alarm_contact');
       if (current !== null) {
         const newValue = !current;
@@ -248,7 +248,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
         if (this._contactState) {
           if (this._invertedByDefault) {
             // v5.12.4: For invertedByDefault devices, clear confirmedValue so next DP
-            // event always passes duplicate filter — avoids stuck state when user
+            // event always passes duplicate filter  avoids stuck state when user
             // toggles invert (XOR cancels default, raw values become wrong)
             this._contactState.confirmedValue = null;
             this._contactState.lastValue = null;
@@ -301,7 +301,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
         // Log keep-alive detection (but not spam)
         if (state.iasMessageCount % 10 === 1) {
-          this.log(`[CONTACT] 💓 Keep-alive detected (count: ${state.iasMessageCount}, value unchanged: ${finalValue})`);
+          this.log(`[CONTACT]  Keep-alive detected (count: ${state.iasMessageCount}, value unchanged: ${finalValue})`);
         }
         return; // Don't re-apply same value
       }
@@ -311,7 +311,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
       if (state.lastValue !== null && timeSinceLastChange < this._debounceMs) {
         // Rapid change detected - could be noise or real
-        this.log(`[CONTACT] ⚠️ Rapid change ${state.lastValue} → ${finalValue} (${timeSinceLastChange}ms) - debouncing`);
+        this.log(`[CONTACT]  Rapid change ${state.lastValue}  ${finalValue} (${timeSinceLastChange}ms) - debouncing`);
 
         // Clear existing timer
         if (state.timer) {
@@ -320,7 +320,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
         // Set timer to apply after debounce window
         state.timer = this.homey.setTimeout(async () => {
-          this.log(`[CONTACT] ✅ Debounce complete - applying: ${finalValue}`);
+          this.log(`[CONTACT]  Debounce complete - applying: ${finalValue}`);
           state.lastValue = finalValue;
           state.confirmedValue = finalValue;
           state.lastChangeTime = Date.now();
@@ -341,19 +341,19 @@ class ContactSensorDevice extends UnifiedSensorBase {
           const keepAliveWindow = timeSinceLastChange >= DEBOUNCE.KEEP_ALIVE_MIN_MS && timeSinceLastChange <= DEBOUNCE.KEEP_ALIVE_MAX_MS;
 
           if (keepAliveWindow) {
-            this.log(`[CONTACT] 🚫 BLOCKED: Likely 1-hour keep-alive false "closed" (${Math.round(timeSinceLastChange/1, 60000))}min since open)`);
+            this.log(`[CONTACT]  BLOCKED: Likely 1-hour keep-alive false "closed" (${Math.round(timeSinceLastChange/1, 60000))}min since open)`);
             return; // Ignore this false state change completely
           }
 
-          this.log('[CONTACT] 🔍 Problematic sensor: open→closed change - applying extended debounce');
+          this.log('[CONTACT]  Problematic sensor: openclosed change - applying extended debounce');
 
           if (state.timer) {
             this.homey.clearTimeout(state.timer);
           }
 
-          // Double debounce for problematic open→closed transitions
+          // Double debounce for problematic openclosed transitions
           state.timer = this.homey.setTimeout(async () => {
-            this.log(`[CONTACT] ✅ Extended debounce complete - applying: ${finalValue}`);
+            this.log(`[CONTACT]  Extended debounce complete - applying: ${finalValue}`);
             state.lastValue = finalValue;
             state.confirmedValue = finalValue;
             state.lastChangeTime = Date.now();
@@ -366,7 +366,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       }
 
       // Normal state change - apply immediately
-      this.log(`[CONTACT] 🚪 State change: ${state.confirmedValue} → ${finalValue}`);
+      this.log(`[CONTACT]  State change: ${state.confirmedValue}  ${finalValue}`);
       state.lastValue = finalValue;
       state.confirmedValue = finalValue;
       state.lastChangeTime = now;
@@ -397,7 +397,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
     this._lastBatteryReportTime = now;
     
     const battery = Math.max(VALIDATION.BATTERY_MIN, Math.min(VALIDATION.BATTERY_MAX, value));
-    this.log(`[CONTACT] 🔋 Battery: ${battery}%`);
+    this.log(`[CONTACT]  Battery: ${battery}%`);
     await super.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
   }
 
@@ -414,7 +414,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
     if (super.onUninit) {
       await super.onUninit();
     }
-    this.log('[CONTACT] ✅ Cleanup complete');
+    this.log('[CONTACT]  Cleanup complete');
   }
 
   /**

@@ -1,6 +1,6 @@
 # Generic DIY Zigbee Driver Design
 
-## 📋 Overview
+##  Overview
 
 A universal driver for DIY Zigbee devices built with:
 - **ESP32-C6** (Wi-Fi 6 + Zigbee + BLE)
@@ -9,7 +9,7 @@ A universal driver for DIY Zigbee devices built with:
 - **PTVO firmware** (popular DIY firmware)
 - **Custom ZCL devices**
 
-## 🎯 Goals
+##  Goals
 
 1. **Zero-config pairing** - Detect capabilities from ZCL clusters
 2. **Dynamic capabilities** - Add/remove based on available clusters
@@ -18,7 +18,7 @@ A universal driver for DIY Zigbee devices built with:
 
 ---
 
-## 🔧 Implementation
+##  Implementation
 
 ### Phase 1: Fingerprint Patterns
 
@@ -55,9 +55,9 @@ A universal driver for DIY Zigbee devices built with:
 // lib/devices/GenericDIYDevice.js
 
 const CLUSTER_CAPABILITY_MAP = {
-  // ═══════════════════════════════════════════════════════════════
+  // 
   // ACTUATORS
-  // ═══════════════════════════════════════════════════════════════
+  // 
   0x0006: {  // genOnOff
     capability: 'onoff',
     type: 'actuator',
@@ -83,9 +83,9 @@ const CLUSTER_CAPABILITY_MAP = {
     additionalCaps: ['windowcoverings_state']
   },
 
-  // ═══════════════════════════════════════════════════════════════
+  // 
   // SENSORS
-  // ═══════════════════════════════════════════════════════════════
+  // 
   0x0402: {  // msTemperatureMeasurement
     capability: 'measure_temperature',
     type: 'sensor',
@@ -134,9 +134,9 @@ const CLUSTER_CAPABILITY_MAP = {
     attribute: 'occupancy'
   },
 
-  // ═══════════════════════════════════════════════════════════════
+  // 
   // BUTTONS / INPUTS
-  // ═══════════════════════════════════════════════════════════════
+  // 
   0x0012: {  // genMultistateInput
     capability: 'button',
     type: 'input',
@@ -149,9 +149,9 @@ const CLUSTER_CAPABILITY_MAP = {
     deviceClass: 'button'
   },
 
-  // ═══════════════════════════════════════════════════════════════
+  // 
   // POWER / ENERGY
-  // ═══════════════════════════════════════════════════════════════
+  // 
   0x0702: {  // seMetering
     capability: 'meter_power',
     type: 'sensor',
@@ -166,9 +166,9 @@ const CLUSTER_CAPABILITY_MAP = {
     additionalCaps: ['measure_voltage', 'measure_current']
   },
 
-  // ═══════════════════════════════════════════════════════════════
+  // 
   // POWER CONFIGURATION
-  // ═══════════════════════════════════════════════════════════════
+  // 
   0x0001: {  // genPowerConfiguration
     capability: 'measure_battery',
     type: 'sensor',
@@ -201,7 +201,7 @@ async onNodeInit({ zclNode }) {
         // Register capability if not exists
         if (!this.hasCapability(capName)) {
           await this.addCapability(capName);
-          this.log(`[DIY] ✅ Added capability: ${capName} (cluster ${clusterNum})`);
+          this.log(`[DIY]  Added capability: ${capName} (cluster ${clusterNum})`);
         }
         
         discoveredCaps.push({ epId, clusterId: clusterNum, capability: capName });
@@ -221,7 +221,7 @@ async onNodeInit({ zclNode }) {
 
 ---
 
-## 📦 ESP32 Firmware Template
+##  ESP32 Firmware Template
 
 ### Example: Temperature + Humidity Sensor
 
@@ -282,7 +282,7 @@ void app_main() {
 
 ---
 
-## 🚀 Roadmap
+##  Roadmap
 
 ### v5.7.0 - Basic DIY Support
 - [ ] Create `generic_diy` driver
@@ -304,7 +304,7 @@ void app_main() {
 
 ---
 
-## 📚 Resources
+##  Resources
 
 - [ESP-Zigbee-SDK](https://github.com/espressif/esp-zigbee-sdk)
 - [PTVO Firmware](https://ptvo.info/zigbee-configurable-firmware-features/)

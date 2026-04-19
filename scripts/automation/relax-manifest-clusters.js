@@ -2,13 +2,13 @@
 'use strict';
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RELAX MANIFEST CLUSTERS - v1.0.0                                        ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Bypasses Homey's strict cluster matching for Tuya devices in bridge mode.   ║
- * ║  If a driver supports Tuya MCU devices (_TZE...), it should only require     ║
- * ║  Cluster 0 (Basic) and Cluster 61184 (Tuya) to match correctly.              ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       RELAX MANIFEST CLUSTERS - v1.0.0                                        
+ * 
+ *   Bypasses Homey's strict cluster matching for Tuya devices in bridge mode.   
+ *   If a driver supports Tuya MCU devices (_TZE...), it should only require     
+ *   Cluster 0 (Basic) and Cluster 61184 (Tuya) to match correctly.              
+ * 
  */
 
 const fs = require('fs');

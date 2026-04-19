@@ -304,7 +304,7 @@
           {
             "file": "drivers/motion_sensor_radar_mmwave/device.js",
             "action": "Configure illuminance cluster reporting",
-            "code": "\n// Configure illuminance reporting independently from motion\nasync _configureIlluminanceReporting() {\n  try {\n    const illuminanceCluster = this.zclNode.endpoints[1].clusters.illuminanceMeasurement;\n\n    await illuminanceCluster.configureReporting({\n      measuredValue: {\n        minInterval: 30,      // 30 seconds minimum\n        maxInterval: 300,     // 5 minutes maximum\n        minChange: 50         // 50 lux minimum change\n      }\n    });\n\n    this.log('✅ Illuminance reporting configured for continuous updates');\n  } catch (error) {\n    this.log('❌ Failed to configure illuminance reporting:', error.message);\n  }\n}"
+            "code": "\n// Configure illuminance reporting independently from motion\nasync _configureIlluminanceReporting() {\n  try {\n    const illuminanceCluster = this.zclNode.endpoints[1].clusters.illuminanceMeasurement;\n\n    await illuminanceCluster.configureReporting({\n      measuredValue: {\n        minInterval: 30,      // 30 seconds minimum\n        maxInterval: 300,     // 5 minutes maximum\n        minChange: 50         // 50 lux minimum change\n      }\n    });\n\n    this.log(' Illuminance reporting configured for continuous updates');\n  } catch (error) {\n    this.log(' Failed to configure illuminance reporting:', error.message);\n  }\n}"
           },
           {
             "file": "drivers/motion_sensor_radar_mmwave/device.js",

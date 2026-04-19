@@ -6,7 +6,7 @@ const injectionStr = "\n" +
 "      // v5.13.X: DP109 = Soil Moisture alternative (seen on A89G12C)\n" +
 "      let calibratedMoisture = parsedValue + (this._moistureCalibration || 0);\n" +
 "      calibratedMoisture = Math.max(0, Math.min(100, calibratedMoisture));\n" +
-"      this.log('[SOIL] 🌱 SOIL MOISTURE DP109 = ' + parsedValue + '% -> ' + calibratedMoisture + '%');\n" +
+"      this.log('[SOIL]  SOIL MOISTURE DP109 = ' + parsedValue + '% -> ' + calibratedMoisture + '%');\n" +
 "      let cap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';\n" +
 "      if (this.hasCapability(cap)) {\n" +
 "        this.setCapabilityValue(cap, parseFloat(calibratedMoisture)).catch(()=>{});\n" +

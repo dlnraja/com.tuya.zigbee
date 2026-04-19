@@ -1,6 +1,6 @@
-# 🧠 UNIVERSAL TUYA — AI System Context & Map
+#  UNIVERSAL TUYA  AI System Context & Map
 
-### 🧠 Superior Intelligence Ecosystem (v7.4.5+)
+###  Superior Intelligence Ecosystem (v7.4.5+)
 
 The app now uses a multi-layered intelligence approach to handle the diversity of Tuya hardware:
 
@@ -19,17 +19,17 @@ The app now uses a multi-layered intelligence approach to handle the diversity o
 *   **Checks**: Fingerprint conflicts, SDK 3 casing, Energy dashboard compliance.
 *   **Requirement**: Must pass with 0 conflicts for any production release.
 
-## 🛠️ Zero-Defect Maintenance Rules
+##  Zero-Defect Maintenance Rules
 1.  **Lower-Case Manufacturers**: All fingerprints in `driver.compose.json` MUST be lowercase for standard matching.
 2.  **Flattened Flow Cards**: Use `homey:manager:flow-card:id` syntax only.
 3.  **Parallel Init**: Use `Promise.all` in `onNodeInit` for non-dependent managers.
 4.  **Energy Objects**: All metering devices MUST define an `energy` object with `cumulative: true`.
 
-## 🌌 Project Vision
+##  Project Vision
 Creating a **Zero-Defect, high-performance Zigbee Engine** for Tuya devices on Homey Pro (SDK 3).
 Proprietary branding (Nexus/Proxima) has been generalized to **Unified Engine**.
 
-## 📍 Key Architectural Landmarks
+##  Key Architectural Landmarks
 
 ### 1. Core Device Inheritance
 - **BaseUnifiedDevice.js**: The foundation for ALL devices. Handles hybrid routing (ZCL + Tuya DP).
@@ -44,13 +44,13 @@ Proprietary branding (Nexus/Proxima) has been generalized to **Unified Engine**.
 - **driver-mapping-database.json**: 30,000+ lines of cross-platform fingerprints and DP mappings.
 - **reports/INTELLECTUAL-ENRICHMENT.md**: Deep reasoning for architectural decisions and complex device fixes.
 
-## 🛠️ Critical Rules for IAs
+##  Critical Rules for IAs
 - **Flattened Flow Cards**: Never use objects for card names. Use `homey:manager:flow-card:id`.
 - **Lowercase Manufacturer**: Always use lowercase manufacturer names in `driver.compose.json` for case-insensitive matching.
 - **TimeSync Standard**: Use `GlobalTimeSyncEngine`. Primary cluster 0xEF00 DP 0x24 (36).
 - **Zero Placeholder Icons**: All icons must be 500x500 (large) or 75x75 (small) actual device images.
 
-## 📜 Recent Intelligence (v7.4.4)
+##  Recent Intelligence (v7.4.4)
 - **Insoma Dual Valve**: Fixed battery DP 59 and control logic. Supported `_TZE284_eaet5qt5`.
 - **LCD Sensors**: Fixed humidity divisor 10 error for `_TZE284_vvmbj46n` variants.
 - **Image Audit**: Audited 300+ drivers. Ensured 500x500 compliance.

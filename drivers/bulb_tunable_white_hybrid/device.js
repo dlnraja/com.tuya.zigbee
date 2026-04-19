@@ -37,7 +37,7 @@ class TunableWhiteBulbDevice extends UnifiedLightBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[BULB] ✅ Tunable white bulb ready');
+    this.log('[BULB]  Tunable white bulb ready');
   }
 
 

@@ -29,7 +29,7 @@ class LEDControllerRGBDevice extends UnifiedLightBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[LED-RGB] ✅ LED controller RGB ready');
+    this.log('[LED-RGB]  LED controller RGB ready');
   }
 
 

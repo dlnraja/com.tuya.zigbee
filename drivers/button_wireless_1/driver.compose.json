@@ -308,7 +308,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Ã‰nergÃ©tique"
+        "fr": "Mode Optimisation ÃnergÃ©tique"
       },
       "value": "balanced",
       "values": [
@@ -323,20 +323,20 @@
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Ã‰quilibrÃ©"
+            "fr": "ÃquilibrÃ©"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Ã‰conomie d'Ã©nergie (Batterie plus longue)"
+            "fr": "Ãconomie d'Ã©nergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Ã‰quilibre entre rÃ©activitÃ© et durÃ©e de vie de la batterie"
+        "fr": "Ãquilibre entre rÃ©activitÃ© et durÃ©e de vie de la batterie"
       }
     },
     {
@@ -475,7 +475,7 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
+        "fr": "Maintien Mouvement ÃmulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -497,7 +497,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
+        "fr": "Ãmulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -536,7 +536,7 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ãtat Logicielle"
       },
       "value": false,
       "hint": {

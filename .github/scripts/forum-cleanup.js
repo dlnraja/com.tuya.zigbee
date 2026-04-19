@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// v5.11.29: Comprehensive forum cleanup — delete spam, edit bot signatures, merge consecutive posts
+// v5.11.29: Comprehensive forum cleanup  delete spam, edit bot signatures, merge consecutive posts
 // Run with: HOMEY_EMAIL=x HOMEY_PASSWORD=y node .github/scripts/forum-cleanup.js
 const {getForumAuth,refreshCsrf,authHeaders,fmtCk,FORUM}=require('./forum-auth');
 const {fetchWithRetry}=require('./retry-helper');
@@ -38,8 +38,8 @@ const TO_DELETE=[
   {id:714507,num:'140352#1490',reason:'Merge into #1488'},
   {id:714511,num:'140352#1491',reason:'Merge into #1488'},
   // T26439: HIDDEN by community (flagged as spam!)
-  {id:714597,num:'26439#5403',reason:'HIDDEN — community flagged as spam'},
-  {id:714602,num:'26439#5404',reason:'HIDDEN — community flagged as spam'},
+  {id:714597,num:'26439#5403',reason:'HIDDEN  community flagged as spam'},
+  {id:714602,num:'26439#5404',reason:'HIDDEN  community flagged as spam'},
   // T146735: Consecutive individual replies (merge into #182)
   {id:714609,num:'146735#183',reason:'Merge into #182'},
   {id:714610,num:'146735#184',reason:'Merge into #182'},
@@ -50,21 +50,21 @@ const TO_EDIT=[
   // T140352 #1488: Remove bot signature, merge FPs from #1489-#1491
   {id:714499,num:'140352#1488',reason:'Remove bot signature + merge FPs',
    newRaw:'These fingerprints are already supported in v5.11.25:\n\n'+
-     '- `_TZ3000_itb0omhv` → **switch_1gang**\n'+
-     '- `_TZ3000_u3nv1jwk` → **switch_4gang**\n'+
-     '- `_TZE200_crq3r3la`, `_TZE200_gkfbdvyx` → **thermostat_radiator**\n'+
-     '- `_TZE204_clrdrnya` → **thermostat_radiator**\n\n'+
+     '- `_TZ3000_itb0omhv`  **switch_1gang**\n'+
+     '- `_TZ3000_u3nv1jwk`  **switch_4gang**\n'+
+     '- `_TZE200_crq3r3la`, `_TZE200_gkfbdvyx`  **thermostat_radiator**\n'+
+     '- `_TZE204_clrdrnya`  **thermostat_radiator**\n\n'+
      'You\'ll need to remove and re-pair your device, making sure to select the correct device type during pairing.'},
   // T140352 #1516: Remove "my bot" mention
   {id:714659,num:'140352#1516',reason:'Remove bot mention',
-   newRaw:'Sorry for the duplicate replies earlier — there was an issue with the automated system.\n'+
+   newRaw:'Sorry for the duplicate replies earlier  there was an issue with the automated system.\n'+
      'I\'ll check your device manually.'},
   // T146735 #182: Merge content from #183, #184 into one clean reply
   {id:714607,num:'146735#182',reason:'Merge 3 individual replies into 1',
    newRaw:'Hi,\n\nIt looks like some of the device fingerprints mentioned aren\'t in our driver database yet. '+
      'To help add support, could you please perform a [device interview](https://tools.developer.homey.app/tools/zigbee) '+
      'for each unrecognized device?\n\n'+
-     'Select your device under Zigbee and share the results here — this gives us the cluster and endpoint data '+
+     'Select your device under Zigbee and share the results here  this gives us the cluster and endpoint data '+
      'needed to create a proper driver.\n\n'+
      'If you\'re seeing "unknown" after pairing, try removing the device and re-pairing it.'},
 ];
@@ -105,9 +105,9 @@ async function main(){
     console.log((DRY?'[DRY] ':'')+'EDIT '+p.num+' (id='+p.id+'): '+p.reason);
     if(!DRY){
       try{
-        if(await editPost(p.id,p.newRaw,auth)){editOk++;console.log('  ✓ Edited')}
-        else{editFail++;console.log('  ✗ Edit failed')}
-      }catch(e){editFail++;console.log('  ✗ Error:',e.message)}
+        if(await editPost(p.id,p.newRaw,auth)){editOk++;console.log('   Edited')}
+        else{editFail++;console.log('   Edit failed')}
+      }catch(e){editFail++;console.log('   Error:',e.message)}
       await sleep(2000);
     }else{editOk++}
   }
@@ -119,9 +119,9 @@ async function main(){
     console.log((DRY?'[DRY] ':'')+'DEL '+p.num+' (id='+p.id+'): '+p.reason);
     if(!DRY){
       try{
-        if(await deletePost(p.id,auth)){delOk++;console.log('  ✓ Deleted')}
-        else{delFail++;console.log('  ✗ Delete failed')}
-      }catch(e){delFail++;console.log('  ✗ Error:',e.message)}
+        if(await deletePost(p.id,auth)){delOk++;console.log('   Deleted')}
+        else{delFail++;console.log('   Delete failed')}
+      }catch(e){delFail++;console.log('   Error:',e.message)}
       await sleep(1500);
     }else{delOk++}
   }

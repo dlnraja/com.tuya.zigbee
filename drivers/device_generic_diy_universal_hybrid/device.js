@@ -13,7 +13,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
 
   async onNodeInit() {
     this.log('-------------------------------------------------------');
-    this.log(`🚀 [UNIVERSAL DRIVER] UNLEASHING INTELLIGENCE ON: ${this.getName()}`);
+    this.log(` [UNIVERSAL DRIVER] UNLEASHING INTELLIGENCE ON: ${this.getName()}`);
     this.log(`   Model: ${getModelId(this)} | Manufacturer: ${getManufacturer(this)}`);
     this.log('-------------------------------------------------------');
 
@@ -23,7 +23,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     // 2. Specific Cluster Listeners (Native ZCL Fallbacks)
     this._setupNativeZclListeners();
 
-    this.log('✅ [UNIVERSAL DRIVER] Device online and managed');
+    this.log(' [UNIVERSAL DRIVER] Device online and managed');
   }
 
   /**

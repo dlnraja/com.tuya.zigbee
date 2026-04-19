@@ -1,14 +1,14 @@
 {
   "name": {
     "en": "2-Buttons Wireless Controller",
-    "fr": "2-Boutons ContrÃƒÆ’Ã‚Â´leur Sans Fil",
+    "fr": "2-Boutons ContrÃÆÃÂ´leur Sans Fil",
     "nl": "2-Knoppen Draadloze Controller",
     "de": "2-Tasten Drahtlos-Controller",
     "it": "2-Pulsanti Controller Wireless",
-    "sv": "2-Knappar TrÃƒÆ’Ã‚Â¥dlÃƒÆ’Ã‚Â¶s Kontroller",
-    "no": "2-Knapper TrÃƒÆ’Ã‚Â¥dlÃƒÆ’Ã‚Â¸s Kontroller",
-    "es": "2-Botones Controlador InalÃƒÆ’Ã‚Â¡mbrico",
-    "da": "2-Knapper TrÃƒÆ’Ã‚Â¥dlÃƒÆ’Ã‚Â¸s Controller"
+    "sv": "2-Knappar TrÃÆÃÂ¥dlÃÆÃÂ¶s Kontroller",
+    "no": "2-Knapper TrÃÆÃÂ¥dlÃÆÃÂ¸s Kontroller",
+    "es": "2-Botones Controlador InalÃÆÃÂ¡mbrico",
+    "da": "2-Knapper TrÃÆÃÂ¥dlÃÆÃÂ¸s Controller"
   },
   "class": "sensor",
   "capabilities": [
@@ -157,14 +157,14 @@
       "image": "/drivers/button_wireless_2/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold any button for 5 seconds until the LED blinks rapidly",
-        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â ce que la LED clignote rapidement",
-        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â ce que la LED clignote rapidement",
-        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â ce que la LED clignote rapidement",
-        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â ce que la LED clignote rapidement",
-        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â ce que la LED clignote rapidement",
-        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â ce que la LED clignote rapidement",
-        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â ce que la LED clignote rapidement",
-        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃƒÆ’Ã‚Â ce que la LED clignote rapidement"
+        "fr": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃÆÃÂ ce que la LED clignote rapidement",
+        "nl": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃÆÃÂ ce que la LED clignote rapidement",
+        "de": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃÆÃÂ ce que la LED clignote rapidement",
+        "it": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃÆÃÂ ce que la LED clignote rapidement",
+        "sv": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃÆÃÂ ce que la LED clignote rapidement",
+        "no": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃÆÃÂ ce que la LED clignote rapidement",
+        "es": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃÆÃÂ ce que la LED clignote rapidement",
+        "da": "Appuyez et maintenez n'importe quel bouton pendant 5 secondes jusqu'ÃÆÃÂ ce que la LED clignote rapidement"
       }
     }
   },
@@ -193,7 +193,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "DÃƒÆ’Ã‚Â©tection Automatique"
+            "fr": "DÃÆÃÂ©tection Automatique"
           }
         },
         {
@@ -220,7 +220,7 @@
       ],
       "hint": {
         "en": "Select power source manually or use auto-detection",
-        "fr": "SÃƒÆ’Ã‚Â©lectionnez la source d'alimentation manuellement ou utilisez la dÃƒÆ’Ã‚Â©tection automatique"
+        "fr": "SÃÆÃÂ©lectionnez la source d'alimentation manuellement ou utilisez la dÃÆÃÂ©tection automatique"
       }
     },
     {
@@ -236,7 +236,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "DÃƒÆ’Ã‚Â©tection Automatique"
+            "fr": "DÃÆÃÂ©tection Automatique"
           }
         },
         {
@@ -277,7 +277,7 @@
       ],
       "hint": {
         "en": "Select battery type manually or use auto-detection based on voltage",
-        "fr": "SÃƒÆ’Ã‚Â©lectionnez le type de batterie manuellement ou utilisez la dÃƒÆ’Ã‚Â©tection automatique basÃƒÆ’Ã‚Â©e sur la tension"
+        "fr": "SÃÆÃÂ©lectionnez le type de batterie manuellement ou utilisez la dÃÆÃÂ©tection automatique basÃÆÃÂ©e sur la tension"
       }
     },
     {
@@ -293,7 +293,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger low battery warning when below this percentage",
-        "fr": "DÃƒÆ’Ã‚Â©clencher l'alerte batterie faible en dessous de ce pourcentage"
+        "fr": "DÃÆÃÂ©clencher l'alerte batterie faible en dessous de ce pourcentage"
       }
     },
     {
@@ -309,7 +309,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger critical battery warning when below this percentage",
-        "fr": "DÃƒÆ’Ã‚Â©clencher l'alerte batterie critique en dessous de ce pourcentage"
+        "fr": "DÃÆÃÂ©clencher l'alerte batterie critique en dessous de ce pourcentage"
       }
     },
     {
@@ -322,7 +322,7 @@
       "value": true,
       "hint": {
         "en": "Send flow notifications for battery events",
-        "fr": "Envoyer des notifications de flow pour les ÃƒÆ’Ã‚Â©vÃƒÆ’Ã‚Â©nements de batterie"
+        "fr": "Envoyer des notifications de flow pour les ÃÆÃÂ©vÃÆÃÂ©nements de batterie"
       }
     },
     {
@@ -338,7 +338,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "FrÃƒÆ’Ã‚Â©quence de demande des mises ÃƒÆ’Ã‚Â jour d'ÃƒÆ’Ã‚Â©tat de batterie"
+        "fr": "FrÃÆÃÂ©quence de demande des mises ÃÆÃÂ jour d'ÃÆÃÂ©tat de batterie"
       }
     },
     {
@@ -346,7 +346,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation ÃƒÆ’Ã¢â‚¬Â°nergÃƒÆ’Ã‚Â©tique"
+        "fr": "Mode Optimisation ÃÆÃ¢â¬Â°nergÃÆÃÂ©tique"
       },
       "value": "balanced",
       "values": [
@@ -354,27 +354,27 @@
           "id": "performance",
           "label": {
             "en": "Performance (More responsive)",
-            "fr": "Performance (Plus rÃƒÆ’Ã‚Â©actif)"
+            "fr": "Performance (Plus rÃÆÃÂ©actif)"
           }
         },
         {
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "ÃƒÆ’Ã¢â‚¬Â°quilibrÃƒÆ’Ã‚Â©"
+            "fr": "ÃÆÃ¢â¬Â°quilibrÃÆÃÂ©"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "ÃƒÆ’Ã¢â‚¬Â°conomie d'ÃƒÆ’Ã‚Â©nergie (Batterie plus longue)"
+            "fr": "ÃÆÃ¢â¬Â°conomie d'ÃÆÃÂ©nergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "ÃƒÆ’Ã¢â‚¬Â°quilibre entre rÃƒÆ’Ã‚Â©activitÃƒÆ’Ã‚Â© et durÃƒÆ’Ã‚Â©e de vie de la batterie"
+        "fr": "ÃÆÃ¢â¬Â°quilibre entre rÃÆÃÂ©activitÃÆÃÂ© et durÃÆÃÂ©e de vie de la batterie"
       }
     },
     {
@@ -387,7 +387,7 @@
       "value": false,
       "hint": {
         "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramÃƒÆ’Ã‚Â¨tres du pÃƒÆ’Ã‚Â©riphÃƒÆ’Ã‚Â©rique"
+        "fr": "Afficher la tension brute de la batterie dans les paramÃÆÃÂ¨tres du pÃÆÃÂ©riphÃÆÃÂ©rique"
       }
     },
     {
@@ -400,7 +400,7 @@
       "value": true,
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure rÃƒÆ’Ã‚Â©elle n'est pas disponible (appareils AC/DC seulement)"
+        "fr": "Estimer la consommation quand la mesure rÃÆÃÂ©elle n'est pas disponible (appareils AC/DC seulement)"
       }
     },
     {
@@ -412,7 +412,7 @@
       },
       "hint": {
         "en": "Scene Mode allows single/double/long press. Dimmer Mode only supports single press. Auto tries to detect and switch automatically.",
-        "fr": "Le mode ScÃƒÆ’Ã‚Â¨ne permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de dÃƒÆ’Ã‚Â©tecter et basculer automatiquement."
+        "fr": "Le mode ScÃÆÃÂ¨ne permet les appuis simples/doubles/longs. Le mode Variateur ne supporte que l'appui simple. Auto tente de dÃÆÃÂ©tecter et basculer automatiquement."
       },
       "value": "auto",
       "values": [
@@ -420,14 +420,14 @@
           "id": "auto",
           "label": {
             "en": "Auto-Detect",
-            "fr": "DÃƒÆ’Ã‚Â©tection Auto"
+            "fr": "DÃÆÃÂ©tection Auto"
           }
         },
         {
           "id": "scene",
           "label": {
             "en": "Scene Mode (Multi-press)",
-            "fr": "Mode ScÃƒÆ’Ã‚Â¨ne (Multi-clics)"
+            "fr": "Mode ScÃÆÃÂ¨ne (Multi-clics)"
           }
         },
         {
@@ -444,12 +444,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la DÃƒÆ’Ã‚Â©tection de PrÃƒÆ’Ã‚Â©sence Radio"
+        "fr": "Activer la DÃÆÃÂ©tection de PrÃÆÃÂ©sence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "DÃƒÆ’Ã‚Â©duit la prÃƒÆ’Ã‚Â©sence des fluctuations du signal Zigbee (BETA)"
+        "fr": "DÃÆÃÂ©duit la prÃÆÃÂ©sence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -457,7 +457,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "SensibilitÃƒÆ’Ã‚Â© PrÃƒÆ’Ã‚Â©sence Radio"
+        "fr": "SensibilitÃÆÃÂ© PrÃÆÃÂ©sence Radio"
       },
       "value": 15,
       "min": 5,
@@ -472,12 +472,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "SÃƒÆ’Ã‚Â©curitÃƒÆ’Ã‚Â© Enfant Logicielle"
+        "fr": "SÃÆÃÂ©curitÃÆÃÂ© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "EmpÃƒÆ’Ã‚Âªche les changements d'ÃƒÆ’Ã‚Â©tat manuels sur l'appareil"
+        "fr": "EmpÃÆÃÂªche les changements d'ÃÆÃÂ©tat manuels sur l'appareil"
       }
     },
     {
@@ -492,7 +492,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'ÃƒÆ’Ã‚Â©teint aprÃƒÆ’Ã‚Â¨s X minutes (0 = dÃƒÆ’Ã‚Â©sactivÃƒÆ’Ã‚Â©)"
+        "fr": "S'ÃÆÃÂ©teint aprÃÆÃÂ¨s X minutes (0 = dÃÆÃÂ©sactivÃÆÃÂ©)"
       }
     },
     {
@@ -500,12 +500,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation PrÃƒÆ’Ã‚Â©sence)"
+        "fr": "Mode Vacances (Simulation PrÃÆÃÂ©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil alÃƒÆ’Ã‚Â©atoirement le soir pour simuler une prÃƒÆ’Ã‚Â©sence"
+        "fr": "Actionne l'appareil alÃÆÃÂ©atoirement le soir pour simuler une prÃÆÃÂ©sence"
       }
     },
     {
@@ -513,14 +513,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement ÃƒÆ’Ã¢â‚¬Â°mulÃƒÆ’Ã‚Â© (Secondes)"
+        "fr": "Maintien Mouvement ÃÆÃ¢â¬Â°mulÃÆÃÂ© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃƒÆ’Ã‚Â¨s le reset matÃƒÆ’Ã‚Â©riel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃÆÃÂ¨s le reset matÃÆÃÂ©riel"
       }
     },
     {
@@ -535,7 +535,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "ÃƒÆ’Ã¢â‚¬Â°mulation logicielle pour boutons ÃƒÆ’Ã‚Â action unique"
+        "fr": "ÃÆÃ¢â¬Â°mulation logicielle pour boutons ÃÆÃÂ action unique"
       }
     },
     {
@@ -550,7 +550,7 @@
       "max": 4000,
       "hint": {
         "en": "Cut power if consumption exceeds this value (0 = disabled)",
-        "fr": "Coupure si la consommation dÃƒÆ’Ã‚Â©passe cette valeur (0 = dÃƒÆ’Ã‚Â©sactivÃƒÆ’Ã‚Â©)"
+        "fr": "Coupure si la consommation dÃÆÃÂ©passe cette valeur (0 = dÃÆÃÂ©sactivÃÆÃÂ©)"
       }
     },
     {
@@ -558,7 +558,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "DurÃƒÆ’Ã‚Â©e Inching (Secondes)"
+        "fr": "DurÃÆÃÂ©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -566,7 +566,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'ÃƒÆ’Ã‚Â©teint automatiquement aprÃƒÆ’Ã‚Â¨s X secondes (mode Impulsion)"
+        "fr": "S'ÃÆÃÂ©teint automatiquement aprÃÆÃÂ¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -574,12 +574,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "RÃƒÆ’Ã‚Â©cupÃƒÆ’Ã‚Â©ration d'ÃƒÆ’Ã¢â‚¬Â°tat Logicielle"
+        "fr": "RÃÆÃÂ©cupÃÆÃÂ©ration d'ÃÆÃ¢â¬Â°tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'ÃƒÆ’Ã‚Â©tat prÃƒÆ’Ã‚Â©cÃƒÆ’Ã‚Â©dent aprÃƒÆ’Ã‚Â¨s une coupure de courant"
+        "fr": "Restore l'ÃÆÃÂ©tat prÃÆÃÂ©cÃÆÃÂ©dent aprÃÆÃÂ¨s une coupure de courant"
       }
     },
     {
@@ -592,7 +592,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulÃƒÆ’Ã‚Â©es (LumiÃƒÆ’Ã‚Â¨res/Variateurs)"
+        "fr": "Active les transitions douces simulÃÆÃÂ©es (LumiÃÆÃÂ¨res/Variateurs)"
       }
     },
     {
@@ -607,7 +607,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santÃƒÆ’Ã‚Â© descend sous cette valeur"
+        "fr": "Alerte si le score de santÃÆÃÂ© descend sous cette valeur"
       }
     }
   ],
@@ -635,7 +635,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "VÃƒÆ’Ã‚Â©rifier MÃƒÆ’Ã‚Â J OTA",
+        "fr": "VÃÆÃÂ©rifier MÃÆÃÂ J OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

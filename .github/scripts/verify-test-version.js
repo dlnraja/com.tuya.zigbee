@@ -32,9 +32,9 @@ async function main(){
   log('Builds: '+builds.length+' total, '+test.length+' test, '+draft.length+' draft');
   const inTest=test.some(b=>b.version===ver);
   const inDraft=draft.some(b=>b.version===ver);
-  if(inTest){log('✅ v'+ver+' is on test channel')}
-  else if(inDraft){log('⚠️ v'+ver+' still in draft — promotion may have failed');process.exitCode=1}
-  else{log('❌ v'+ver+' not found in any build');process.exitCode=1}
+  if(inTest){log(' v'+ver+' is on test channel')}
+  else if(inDraft){log(' v'+ver+' still in draft  promotion may have failed');process.exitCode=1}
+  else{log(' v'+ver+' not found in any build');process.exitCode=1}
   // Show latest test version
   if(test.length){const latest=test.sort((a,b)=>(b.version||'').localeCompare(a.version||'',undefined,{numeric:true}))[0];log('Latest test: v'+(latest.version||'?'))}
 }

@@ -2,19 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.562: CRITICAL FIX - "Could not get device by id" error prevention
- * - Conditions now return false instead of throwing when device missing
- * - Actions now return silently instead of throwing when device missing
- * - Added try-catch wrappers to prevent error propagation to Homey
- *
- * v5.5.506: Fixed flow card registration with proper error handling
- */
 class Switch4GangDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -24,217 +12,348 @@ class Switch4GangDriver extends ZigBeeDriver {
     }
   }
 
-
-  /**
-   * Safe wrapper for condition handlers - returns false if device invalid
-   */
-  _safeCondition(handler) {
-    return async (args) => {
-      try {
-        if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
-          this.log('[FLOW] Condition: Device not available (deleted/re-paired?)');
-          return false;
-        }
-        return await handler(args);
-      } catch (err) {
-        this.error('[FLOW] Condition error:', err.message);
-        return false;
-      }
-    };
-  }
-
-  /**
-   * Safe wrapper for action handlers - returns silently if device invalid
-   */
-  _safeAction(handler) {
-    return async (args) => {
-      try {
-        if (!args?.device || typeof args.device.triggerCapabilityListener !== 'function') {
-          this.log('[FLOW] Action: Device not available (deleted/re-paired?)');
-          return;
-        }
-        await handler(args);
-      } catch (err) {
-        this.error('[FLOW] Action error:', err.message);
-      }
-    };
-  }
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
-    
-    if (this._flowCardsRegistered) return;
-    this._flowCardsRegistered = true;
-
-
-
-
-
-
-
-
-
-
-
-
     this.log('4-Gang Switch Driver v5.5.562 initializing...');
-    
-
-    try {
-      // Register flow card triggers for each gang
-
-
-
-
-
-
-
-
-
-      // Register flow card conditions - v5.5.562: using safe wrapper
-
-      this.gang1IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
-        return args.device.getCapabilityValue('onoff') === true;
-      
-  
-  
-  
-  
-  
-  
-  }));
-
-      this.gang2IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
-        return args.device.getCapabilityValue('onoff.gang2') === true;
-      }));
-
-      this.gang3IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
-        return args.device.getCapabilityValue('onoff.gang3') === true;
-      }));
-
-      this.gang4IsOnCondition.registerRunListener(this._safeCondition(async (args) => {
-        return args.device.getCapabilityValue('onoff.gang4') === true;
-      }));
-
-      // Register flow card actions - v5.5.562: using safe wrapper
-
-      this.gang1OnAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device._setGangOnOff(1, true).catch(() => {});
-        await args.device.setCapabilityValue('onoff', true).catch(() => {});
-      }));
-
-      this.gang1OffAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device._setGangOnOff(1, false).catch(() => {});
-        await args.device.setCapabilityValue('onoff', false).catch(() => {});
-      }));
-
-      this.gang2OnAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device.triggerCapabilityListener('onoff.gang2', true);
-      }));
-
-      this.gang2OffAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device.triggerCapabilityListener('onoff.gang2', false);
-      }));
-
-      this.gang3OnAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device.triggerCapabilityListener('onoff.gang3', true);
-      }));
-
-      this.gang3OffAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device.triggerCapabilityListener('onoff.gang3', false);
-      }));
-
-      this.gang4OnAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device.triggerCapabilityListener('onoff.gang4', true);
-      }));
-
-      this.gang4OffAction.registerRunListener(this._safeAction(async (args) => {
-        await args.device.triggerCapabilityListener('onoff.gang4', false);
-      }));
-
-      // v5.5.930: LED backlight flow cards
-      try {
-      (() => { try { return this.homey.flow.getActionCard('switch_4gang_set_backlight'); } catch(e) { return null; } })()
-        .registerRunListener(this._safeAction(async (args) => {
-            await args.device.setBacklightMode(args.mode);
-          }));
-        this.log('[FLOW] ✅ Registered: switch_4gang_set_backlight');
-      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
-
-      try {
-      (() => { try { return this.homey.flow.getActionCard('switch_4gang_set_backlight_color'); } catch(e) { return null; } })()
-        .registerRunListener(this._safeAction(async (args) => {
-            await args.device.setBacklightColor(args.state, args.color);
-          }));
-        this.log('[FLOW] ✅ Registered: switch_4gang_set_backlight_color');
-      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
-
-      try {
-      (() => { try { return this.homey.flow.getActionCard('switch_4gang_set_backlight_brightness'); } catch(e) { return null; } })()
-        .registerRunListener(this._safeAction(async (args) => {
-            await args.device.setBacklightBrightness(args.brightness);
-          }));
-        this.log('[FLOW] ✅ Registered: switch_4gang_set_backlight_brightness');
-      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
-
-      // v5.12.0: Toggle per gang + all on/off
-      const caps = ['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4'];
-      ['gang1', 'gang2', 'gang3', 'gang4'].forEach((gang, idx) => {
-        try {
-      (() => { try { return this.homey.flow.getActionCard('switch_4gang_set_scene_mode'); } catch(e) { return null; } })()
-        .registerRunListener(this._safeAction(async (args) => {
-              const cap = caps[idx];
-              const v = args.device.getCapabilityValue(cap);
-              await args.device._setGangOnOff(idx + 1, !v).catch(() => {});
-              await args.device.setCapabilityValue(cap, !v).catch(() => {});
-            }));
-        } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
-      });
-
-      try {
-
-          .registerRunListener(this._safeAction(async (args) => {
-            for (const cap of caps) {
-              if (args.device.hasCapability(cap)) await args.device._setGangOnOff(idx + 1, true).catch(() => {});
-              await args.device.setCapabilityValue(cap, true).catch(() => {});
-            }
-          }));
-      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
-
-      try {
-
-          .registerRunListener(this._safeAction(async (args) => {
-            for (const cap of caps) {
-              if (args.device.hasCapability(cap)) await args.device._setGangOnOff(idx + 1, false).catch(() => {});
-              await args.device.setCapabilityValue(cap, false).catch(() => {});
-            }
-          }));
-      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
-
-      // v5.12.5: Scene mode triggers + action (ported from wall_switch_4gang_1way)
-      for (const g of [1, 2, 3, 4]) {
-        try {
-      this.homey.flow.getTriggerCard(`switch_4gang_gang${g}_scene`) } catch (e) { this.log(`[FLOW] scene G${g}: ${e.message}`); }
-      }
-
-      try {
-
-          .registerRunListener(this._safeAction(async (args) => {
-            await args.device.setSceneMode(args.mode);
-          }));
-        this.log('[FLOW] ✅ Registered: switch_4gang_set_scene_mode');
-      } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
-
-      this.log('4-Gang Switch Driver v5.12.5 ✅ Flow cards registered');
-    } catch (err) {
-      this.error('4-Gang Switch Driver flow card registration failed:', err.message);
-    }
+    this._registerFlowCards();
   }
 
+  _registerFlowCards() {
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_gang1_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_gang1_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_gang2_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_gang2_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_gang3_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_gang3_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_gang4_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_gang4_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang1_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang1_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang2_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang2_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang3_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang3_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang4_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang4_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang1_single'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang1_double'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang1_triple'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang1_long_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang2_single'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang2_double'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang2_triple'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang2_long_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang3_single'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang3_double'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang3_triple'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang3_long_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang4_single'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang4_double'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang4_triple'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_physical_gang4_long_press'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_power_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_gang1_scene'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_gang2_scene'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_gang3_scene'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('gas_sensor_switch_hybrid_switch_4gang_gang4_scene'); } catch (e) {}
+
+    // CONDITIONS
+    try {
+      const card = this.homey.flow.getConditionCard('gas_sensor_switch_hybrid_switch_4gang_gang1_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition gas_sensor_switch_hybrid_switch_4gang_gang1_is_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('gas_sensor_switch_hybrid_switch_4gang_gang2_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition gas_sensor_switch_hybrid_switch_4gang_gang2_is_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('gas_sensor_switch_hybrid_switch_4gang_gang3_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition gas_sensor_switch_hybrid_switch_4gang_gang3_is_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('gas_sensor_switch_hybrid_switch_4gang_gang4_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition gas_sensor_switch_hybrid_switch_4gang_gang4_is_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('gas_sensor_switch_hybrid_switch_4gang_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition gas_sensor_switch_hybrid_switch_4gang_is_on: ${err.message}`); }
+
+    // ACTIONS
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_turn_on_gang1');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_turn_on_gang1: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_turn_off_gang1');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_turn_off_gang1: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_turn_on_gang2');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_turn_on_gang2: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_turn_off_gang2');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_turn_off_gang2: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_turn_on_gang3');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_turn_on_gang3: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_turn_off_gang3');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_turn_off_gang3: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_turn_on_gang4');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_turn_on_gang4: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_turn_off_gang4');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_turn_off_gang4: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_toggle_gang1');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_toggle_gang1: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_toggle_gang2');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_toggle_gang2: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_toggle_gang3');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_toggle_gang3: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_toggle_gang4');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_toggle_gang4: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_turn_on_all');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const caps = Object.keys(args.device.getCapabilities()).filter(c => c.startsWith('onoff'));
+          for (const cap of caps) { await args.device.triggerCapabilityListener(cap, true).catch(() => {}); }
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_turn_on_all: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_turn_off_all');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const caps = Object.keys(args.device.getCapabilities()).filter(c => c.startsWith('onoff'));
+          for (const cap of caps) { await args.device.triggerCapabilityListener(cap, false).catch(() => {}); }
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_turn_off_all: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_set_backlight');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_set_backlight: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_set_backlight_color');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_set_backlight_color: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_set_backlight_brightness');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_set_backlight_brightness: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_turn_on: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_turn_off: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_toggle: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getActionCard('gas_sensor_switch_hybrid_switch_4gang_set_scene_mode');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device.setSceneMode === 'function') await args.device.setSceneMode(args.mode || args.value);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action gas_sensor_switch_hybrid_switch_4gang_set_scene_mode: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
+  }
 }
 
 module.exports = Switch4GangDriver;
-

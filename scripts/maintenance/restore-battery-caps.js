@@ -4,14 +4,14 @@
  * 
  * PHILOSOPHY: Compose should declare measure_battery for ANY driver
  * that MIGHT have battery-powered variants. The UnifiedBatteryHandler
- * will adapt at runtime — removing the capability if the specific
+ * will adapt at runtime  removing the capability if the specific
  * variant turns out to be mains/kinetic.
  * 
  * This script:
  * 1. Restores measure_battery to drivers with energy.batteries but no battery cap
  * 2. Ensures device.js initializes UnifiedBatteryHandler
  * 3. NEVER adds both measure_battery + alarm_battery (SDK v3)
- * 4. Is IDEMPOTENT — safe to run multiple times
+ * 4. Is IDEMPOTENT  safe to run multiple times
  */
 'use strict';
 const fs = require('fs');
@@ -38,7 +38,7 @@ for (const d of fs.readdirSync(DDIR)) {
   compose.capabilities = caps;
   fs.writeFileSync(composeFile, JSON.stringify(compose, null, 2) + '\n');
 
-  console.log(`✅ ${d}: restored measure_battery (runtime-adaptive)`);
+  console.log(` ${d}: restored measure_battery (runtime-adaptive)`);
   fixed++;
 }
 

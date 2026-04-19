@@ -119,20 +119,20 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
     const settings = this.getSettings() || {};
-    this.log('[LCD] ✅ LCD Temperature/Humidity Sensor ready');
+    this.log('[LCD]  LCD Temperature/Humidity Sensor ready');
     this.log('[LCD] Model:', settings.zb_model_id || settings.zb_modelId || 'TS0201');
     this.log('[LCD] Manufacturer:', settings.zb_manufacturer_name || settings.zb_manufacturerName || 'unknown');
   }
 
   onTuyaStatus(status) {
-    this.log('[LCD] 📥 Data received:', JSON.stringify(status));
+    this.log('[LCD]  Data received:', JSON.stringify(status));
     super.onTuyaStatus(status);
 
     setTimeout(() => {
       const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
-      this.log('[LCD] 📊 Temperature:', temp, '°C Humidity:', hum, '% Battery:', bat, '%');
+      this.log('[LCD]  Temperature:', temp, '°C Humidity:', hum, '% Battery:', bat, '%');
     }, 100);
   }
 

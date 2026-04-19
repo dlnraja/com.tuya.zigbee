@@ -2,14 +2,14 @@
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      IRRIGATION VALVE - v5.5.129 FIXED (extends UnifiedPlugBase properly)    ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  UnifiedPlugBase handles: onoff listener, Tuya DP, ZCL On/Off                ║
- * ║  This class: dpMappings + startWatering action                              ║
- * ║  DPs: 1,5-7,11,13-15,101-104 | ZCL: 6,1,EF00                               ║
- * ║  Models: TS0601, _TZE200_*, Smart irrigation controller                     ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       IRRIGATION VALVE - v5.5.129 FIXED (extends UnifiedPlugBase properly)    
+ * 
+ *   UnifiedPlugBase handles: onoff listener, Tuya DP, ZCL On/Off                
+ *   This class: dpMappings + startWatering action                              
+ *   DPs: 1,5-7,11,13-15,101-104 | ZCL: 6,1,EF00                               
+ *   Models: TS0601, _TZE200_*, Smart irrigation controller                     
+ * 
  */
 class ValveIrrigationDevice extends UnifiedPlugBase {
 
@@ -58,11 +58,11 @@ class ValveIrrigationDevice extends UnifiedPlugBase {
       try { await this.addCapability('meter_water'); } catch (e) { /* ignore */ }
     }
 
-    this.log('[VALVE-IRR] ✅ Ready');
+    this.log('[VALVE-IRR]  Ready');
   }
 
   async startWatering(minutes) {
-    this.log(`[VALVE-IRR] 💧 Starting watering for ${minutes} minutes`);
+    this.log(`[VALVE-IRR]  Starting watering for ${minutes} minutes`);
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
     if (tuya?.datapoint) {
       await tuya.datapoint({ dp: 5, value: minutes, type: 'value' });

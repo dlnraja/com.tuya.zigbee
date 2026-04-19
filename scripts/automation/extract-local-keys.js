@@ -17,11 +17,11 @@ async function main() {
   const region = process.env.TUYA_CLOUD_REGION || 'eu';
 
   if (!accessId || !accessSecret) {
-    console.error('❌ Missing TUYA_CLOUD_ACCESS_ID or TUYA_CLOUD_ACCESS_SECRET environment variables.');
+    console.error(' Missing TUYA_CLOUD_ACCESS_ID or TUYA_CLOUD_ACCESS_SECRET environment variables.');
     process.exit(1);
   }
 
-  console.log(`🚀 Starting Local Key Extraction (Region: ${region})...`);
+  console.log(` Starting Local Key Extraction (Region: ${region})...`);
 
   const auth = new TuyaSmartLifeAuth({
     region,
@@ -34,14 +34,14 @@ async function main() {
     if (!loginRes.success) {
       throw new Error(`Cloud Login Failed: ${loginRes.error}`);
     }
-    console.log('✅ Cloud Authentication Successful');
+    console.log(' Cloud Authentication Successful');
 
     // 2. Fetch Devices
     const devRes = await auth.getDevicesWithLocalKeys();
     if (!devRes.success) {
       throw new Error(`Failed to fetch devices: ${devRes.error}`);
     }
-    console.log(`✅ Fetched ${devRes.devices.length} devices from cloud`);
+    console.log(` Fetched ${devRes.devices.length} devices from cloud`);
 
     // 3. Export to JSON for use in app
     const output = {
@@ -62,14 +62,14 @@ async function main() {
     }
     fs.writeFileSync(outPath, JSON.stringify(output, null, 2));
 
-    console.log(`✅ Extracted local keys saved to: ${outPath}`);
+    console.log(` Extracted local keys saved to: ${outPath}`);
     
     // 4. Verification
     const withKeys = devRes.devices.filter(d => d.local_key).length;
-    console.log(`📊 Statistics: ${withKeys} / ${devRes.devices.length} devices have local keys.`);
+    console.log(` Statistics: ${withKeys} / ${devRes.devices.length} devices have local keys.`);
 
   } catch (err) {
-    console.error(`❌ FATAL: ${err.message}`);
+    console.error(` FATAL: ${err.message}`);
     process.exit(1);
   }
 }

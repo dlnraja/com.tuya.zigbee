@@ -70,7 +70,7 @@ async function main(){
   const aiPost=aiRes?aiRes.text:null;
 
   const fallback='Quick update on **v'+appVersion+'**:\n\n'+
-    (reports['github-scan-report']?'Went through some GitHub reports and community contributions — picked up a few new device fingerprints along the way.\n\n':'')+
+    (reports['github-scan-report']?'Went through some GitHub reports and community contributions  picked up a few new device fingerprints along the way.\n\n':'')+
     (reports['enrichment-report']?'Also cross-referenced a few external sources for new devices.\n\n':'')+
     'As usual, remove and re-pair if anything acts up after updating.';
 
@@ -85,7 +85,7 @@ async function main(){
     if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
     if(!auth){console.error('::warning::No forum auth available');process.exit(0)}
     if(!checkCooldown()){console.log('Skipping (cooldown active)');return}
-    // v5.12.1: Fixed — fetch last 15 posts to find recent dlnraja post
+    // v5.12.1: Fixed  fetch last 15 posts to find recent dlnraja post
     try{
       const lastOwn=await getLastOwnPost();
       if(lastOwn){

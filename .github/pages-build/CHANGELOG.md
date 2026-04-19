@@ -1,1 +1,1 @@
-# 📝 Changelog - Universal Tuya Zigbee Device<div align="center">![Version](https://img.shields.io/badge/Version-1.0.0-blue)![Date](https:
+#  Changelog - Universal Tuya Zigbee Device<div align="center">![Version](https://img.shields.io/badge/Version-1.0.0-blue)![Date](https:

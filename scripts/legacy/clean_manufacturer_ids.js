@@ -99,7 +99,7 @@ async function createBackup(filePath) {
 }
 
 async function cleanClimateSensor() {
-  console.log('🧹 CLEANING climate_sensor MANUFACTURER IDs\n');
+  console.log(' CLEANING climate_sensor MANUFACTURER IDs\n');
 
   const composePath = path.join(__dirname, '../drivers/climate_sensor/driver.compose.json');
   const driver = await readJSON(composePath);
@@ -137,7 +137,7 @@ async function cleanClimateSensor() {
   driver.zigbee.manufacturerName = toKeep;
   await writeJSON(composePath, driver);
 
-  console.log(`\n✅ climate_sensor cleaned: ${originalIds.length} → ${toKeep.length} IDs`);
+  console.log(`\n climate_sensor cleaned: ${originalIds.length}  ${toKeep.length} IDs`);
   console.log(`   Removed: ${originalIds.length - toKeep.length} (duplicates + wrong category)`);
 
   for (const [targetDriver, ids] of Object.entries(toMove)) {
@@ -176,15 +176,15 @@ async function addIdsToDriver(driverName, idsToAdd) {
       await createBackup(composePath);
       driver.zigbee.manufacturerName.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
       await writeJSON(composePath, driver);
-      console.log(`✅ Added ${added} IDs to ${driverName}`);
+      console.log(` Added ${added} IDs to ${driverName}`);
     }
   } catch (err) {
-    console.error(`❌ Cannot add to ${driverName}: ${err.message}`);
+    console.error(` Cannot add to ${driverName}: ${err.message}`);
   }
 }
 
 async function cleanAllDrivers() {
-  console.log('🧹 CLEANING ALL DRIVERS - REMOVING \\r AND DUPLICATES\n');
+  console.log(' CLEANING ALL DRIVERS - REMOVING \\r AND DUPLICATES\n');
 
   const driversDir = path.join(__dirname, '../drivers');
   const entries = await fs.readdir(driversDir, { withFileTypes: true });
@@ -211,19 +211,19 @@ async function cleanAllDrivers() {
         await writeJSON(composePath, driver);
 
         const removed = originalIds.length - cleanedIds.length;
-        console.log(`✅ ${driverName}: ${originalIds.length} → ${cleanedIds.length} (-${removed})`);
+        console.log(` ${driverName}: ${originalIds.length}  ${cleanedIds.length} (-${removed})`);
         totalCleaned += removed;
       }
     } catch {
     }
   }
 
-  console.log(`\n📊 TOTAL CLEANED: ${totalCleaned} invalid/duplicate IDs removed`);
+  console.log(`\n TOTAL CLEANED: ${totalCleaned} invalid/duplicate IDs removed`);
   return totalCleaned;
 }
 
 async function analyzeProductIdAssociations() {
-  console.log('\n🔍 ANALYZING PRODUCT ID ASSOCIATIONS\n');
+  console.log('\n ANALYZING PRODUCT ID ASSOCIATIONS\n');
 
   const driversDir = path.join(__dirname, '../drivers');
   const entries = await fs.readdir(driversDir, { withFileTypes: true });
@@ -253,7 +253,7 @@ async function analyzeProductIdAssociations() {
     }
   }
 
-  console.log('PRODUCT ID → DRIVER MAPPING:\n');
+  console.log('PRODUCT ID  DRIVER MAPPING:\n');
 
   const climateProductIds = ['TS0201', 'RS0201', 'SM0201', 'TH01Z', 'ZG-204ZM'];
 
@@ -270,23 +270,23 @@ async function analyzeProductIdAssociations() {
 }
 
 async function main() {
-  console.log('═══════════════════════════════════════════════════════════════');
+  console.log('');
   console.log('MANUFACTURER IDs CLEANUP & REORGANIZATION');
-  console.log('═══════════════════════════════════════════════════════════════\n');
+  console.log('\n');
 
   const climateResult = await cleanClimateSensor();
 
-  console.log('\n═══════════════════════════════════════════════════════════════');
+  console.log('\n');
 
   const totalCleaned = await cleanAllDrivers();
 
   await analyzeProductIdAssociations();
 
-  console.log('\n═══════════════════════════════════════════════════════════════');
+  console.log('\n');
   console.log('FINAL SUMMARY');
-  console.log('═══════════════════════════════════════════════════════════════\n');
+  console.log('\n');
 
-  console.log(`climate_sensor: ${climateResult.original} → ${climateResult.cleaned} IDs`);
+  console.log(`climate_sensor: ${climateResult.original}  ${climateResult.cleaned} IDs`);
   console.log(`Total IDs cleaned across all drivers: ${totalCleaned}`);
 
   const reportPath = path.join(__dirname, '../CLEANUP_REPORT.json');
@@ -296,17 +296,17 @@ async function main() {
     totalCleaned
   });
 
-  console.log(`\n📄 Report: ${reportPath}`);
+  console.log(`\n Report: ${reportPath}`);
 }
 
 if (require.main === module) {
   main()
     .then(() => {
-      console.log('\n✅ CLEANUP COMPLETE');
+      console.log('\n CLEANUP COMPLETE');
       process.exit(0);
     })
     .catch((err) => {
-      console.error('\n❌ ERROR:', err);
+      console.error('\n ERROR:', err);
       process.exit(1);
     });
 }

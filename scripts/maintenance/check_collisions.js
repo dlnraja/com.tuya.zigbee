@@ -32,7 +32,7 @@ let collisions = 0;
 const report = {};
 for (const [k, v] of map) {
     if (v.length > 1) {
-        console.log(`⚠️ CROSS-DRIVER Collision: ${k} in [${v.join(', ')}]`);
+        console.log(` CROSS-DRIVER Collision: ${k} in [${v.join(', ')}]`);
         report[k] = v;
         collisions++;
     }

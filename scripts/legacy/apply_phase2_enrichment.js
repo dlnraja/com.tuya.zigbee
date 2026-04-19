@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🚀 APPLICATION ENRICHISSEMENT PHASE 2\n');
+console.log(' APPLICATION ENRICHISSEMENT PHASE 2\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -36,7 +36,7 @@ function enrichDriver(driverName, newIds) {
   const composeFile = path.join(DRIVERS_DIR, driverName, 'driver.compose.json');
 
   if (!fs.existsSync(composeFile)) {
-    console.log(`   ⚠️  ${driverName}: driver non trouvé`);
+    console.log(`     ${driverName}: driver non trouvé`);
     stats.driversNotFound++;
     return false;
   }
@@ -45,7 +45,7 @@ function enrichDriver(driverName, newIds) {
     const content = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
 
     if (!content.zigbee || !content.zigbee.manufacturerName) {
-      console.log(`   ⚠️  ${driverName}: pas de manufacturerName dans zigbee config`);
+      console.log(`     ${driverName}: pas de manufacturerName dans zigbee config`);
       return false;
     }
 
@@ -55,7 +55,7 @@ function enrichDriver(driverName, newIds) {
     const idsToAdd = newIds.filter(id => !currentIdsUpper.has(id.toUpperCase()));
 
     if (idsToAdd.length === 0) {
-      console.log(`   ✓ ${driverName}: tous les IDs déjà présents`);
+      console.log(`    ${driverName}: tous les IDs déjà présents`);
       return false;
     }
 
@@ -73,31 +73,31 @@ function enrichDriver(driverName, newIds) {
     stats.driversEnriched++;
     stats.idsAdded += idsToAdd.length;
 
-    console.log(`   ✅ ${driverName}: +${idsToAdd.length} IDs (${currentIds.length} → ${content.zigbee.manufacturerName.length})`);
+    console.log(`    ${driverName}: +${idsToAdd.length} IDs (${currentIds.length}  ${content.zigbee.manufacturerName.length})`);
     console.log(`      Ajoutés: ${normalizedNew.join(', ')}`);
 
     return true;
 
   } catch (e) {
-    console.error(`   ❌ ${driverName}:`, e.message);
+    console.error(`    ${driverName}:`, e.message);
     return false;
   }
 }
 
-console.log('📂 Application enrichissement Phase 2...\n');
+console.log(' Application enrichissement Phase 2...\n');
 
 Object.entries(PHASE2_IDS).forEach(([driverName, ids]) => {
   enrichDriver(driverName, ids);
 });
 
-console.log('\n📊 RAPPORT PHASE 2:\n');
+console.log('\n RAPPORT PHASE 2:\n');
 console.log(`   Drivers enrichis: ${stats.driversEnriched}`);
 console.log(`   IDs ajoutés: ${stats.idsAdded}`);
 console.log(`   Drivers non trouvés: ${stats.driversNotFound}`);
 console.log(`   Backups créés: ${stats.backupsCreated}\n`);
 
 if (stats.driversNotFound > 0) {
-  console.log('⚠️  DRIVERS MANQUANTS (nécessitent création):\n');
+  console.log('  DRIVERS MANQUANTS (nécessitent création):\n');
   Object.keys(PHASE2_IDS).forEach(driver => {
     const composePath = path.join(DRIVERS_DIR, driver, 'driver.compose.json');
     if (!fs.existsSync(composePath)) {
@@ -107,6 +107,6 @@ if (stats.driversNotFound > 0) {
   console.log();
 }
 
-console.log('✅ PHASE 2 TERMINÉE\n');
+console.log(' PHASE 2 TERMINÉE\n');
 
 process.exit(0);

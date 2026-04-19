@@ -1,6 +1,6 @@
 # Research: _TZ3000_h1ipgkwn (TS0002 USB Dongle)
 
-## 📊 Device Summary
+##  Device Summary
 
 | Property | Value |
 |----------|-------|
@@ -11,7 +11,7 @@
 | **Router** | Yes (acts as Zigbee repeater) |
 | **Endpoints** | EP1, EP2, EP242 |
 
-## 🔗 Sources Researched
+##  Sources Researched
 
 ### 1. Z2M GitHub Issue #23625
 - **URL:** https://github.com/Koenkk/zigbee2mqtt/issues/23625
@@ -32,7 +32,7 @@
 - **URL:** https://github.com/sprut/Hub/issues/3517
 - **Confirms:** TS0002 with custom clusters E000, D001
 
-## 📋 Cluster Analysis (from Z2M database)
+##  Cluster Analysis (from Z2M database)
 
 ### Endpoint 1:
 ```json
@@ -62,7 +62,7 @@
 }
 ```
 
-## ⚙️ Driver Configuration
+##  Driver Configuration
 
 ### Correct Driver: `usb_dongle_dual_repeater`
 
@@ -75,14 +75,14 @@
 - `measure_current` - Current
 
 ### Fingerprints (all case variants):
-- `_TZ3000_h1ipgkwn` ✅ (exact from device)
+- `_TZ3000_h1ipgkwn`  (exact from device)
 - `_TZ3000_H1IPGKWN` (uppercase)
 - `_tz3000_h1ipgkwn` (lowercase)
 
 ### ProductId:
-- `TS0002` ✅
+- `TS0002` 
 
-## ❌ Wrong Classification History
+##  Wrong Classification History
 
 This device was incorrectly classified as a **2-gang wall switch** because:
 1. Same `TS0002` productId as wall switches
@@ -93,7 +93,7 @@ This device was incorrectly classified as a **2-gang wall switch** because:
 - Added to `usb_dongle_dual_repeater` driver
 - Added `TS0002` to productId list
 
-## 🔌 Hardware Description
+##  Hardware Description
 
 From AliExpress listing and user reports:
 - **Form Factor:** USB dongle/hub
@@ -105,7 +105,7 @@ From AliExpress listing and user reports:
   - Acts as Zigbee router/repeater
   - Energy monitoring (some variants)
 
-## 📝 Z2M External Converter
+##  Z2M External Converter
 
 ```javascript
 const {deviceEndpoints, identify, onOff, electricityMeter} = require('zigbee-herdsman-converters/lib/modernExtend');
@@ -127,7 +127,7 @@ const definition = {
 module.exports = definition;
 ```
 
-## ✅ Action Taken
+##  Action Taken
 
 1. **v5.6.1:** Moved fingerprint from `switch_2gang` to `usb_dongle_dual_repeater`
 2. **v5.6.2:** Added exact mixed-case fingerprint `_TZ3000_h1ipgkwn`

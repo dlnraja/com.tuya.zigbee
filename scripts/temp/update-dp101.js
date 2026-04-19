@@ -3,7 +3,7 @@ let txt = fs.readFileSync('drivers/soil_sensor/device.js', 'utf8');
 
 const dp101Injection = "\n" +
 "    if (dp === 101) {\n" +
-"      this.log('[SOIL] ☁️ AIR HUMIDITY DP101 = ' + parsedValue + '%');\n" +
+"      this.log('[SOIL]  AIR HUMIDITY DP101 = ' + parsedValue + '%');\n" +
 "      if (this.hasCapability('measure_humidity')) {\n" +
 "        this.setCapabilityValue('measure_humidity', parseFloat(parsedValue)).catch(()=>{});\n" +
 "      }\n" +

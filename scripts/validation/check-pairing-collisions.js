@@ -80,7 +80,7 @@ function checkCollisions(drivers) {
 }
 
 function main() {
-  console.log('🔍 Checking driver pairing collisions...\n');
+  console.log(' Checking driver pairing collisions...\n');
   
   const drivers = loadDrivers();
   console.log(`Found ${drivers.length} drivers\n`);
@@ -88,19 +88,19 @@ function main() {
   const { errors, warnings } = checkCollisions(drivers);
   
   if (warnings.length > 0) {
-    console.log('⚠️ WARNINGS:');
+    console.log(' WARNINGS:');
     warnings.forEach(w => console.log(`  ${w}`));
     console.log('');
   }
   
   if (errors.length > 0) {
-    console.log('❌ ERRORS:');
+    console.log(' ERRORS:');
     errors.forEach(e => console.log(`  ${e}`));
     console.log('');
     process.exit(1);
   }
   
-  console.log('✅ No collisions found');
+  console.log(' No collisions found');
   process.exit(0);
 }
 

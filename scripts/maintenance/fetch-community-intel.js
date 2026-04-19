@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║  COMMUNITY INTEL SCRAPER v1.0                                             ║
- * ║  Fetches all open Issues, PRs, and Comments into a single intelligence     ║
- * ║  snapshot for AI analysis.                                                 ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *   COMMUNITY INTEL SCRAPER v1.0                                             
+ *   Fetches all open Issues, PRs, and Comments into a single intelligence     
+ *   snapshot for AI analysis.                                                 
+ * 
  */
 'use strict';
 
@@ -26,13 +26,13 @@ function gh(cmd) {
 }
 
 async function main() {
-  console.log('🔍 Starting Community Intelligence Gathering...');
+  console.log(' Starting Community Intelligence Gathering...');
 
   if (!fs.existsSync(path.join(ROOT, 'data'))) fs.mkdirSync(path.join(ROOT, 'data'));
   if (!fs.existsSync(path.join(ROOT, 'REPORTS'))) fs.mkdirSync(path.join(ROOT, 'REPORTS'));
 
   // 1. Fetch Issues
-  console.log('  → Fetching Open Issues...');
+  console.log('   Fetching Open Issues...');
   const issuesRaw = gh('issue list --json number,title,body,createdAt,author --state open --limit 50');
   const issues = JSON.parse(issuesRaw || '[]');
 
@@ -43,7 +43,7 @@ async function main() {
   }
 
   // 2. Fetch PRs
-  console.log('  → Fetching Open Pull Requests...');
+  console.log('   Fetching Open Pull Requests...');
   const prsRaw = gh('pr list --json number,title,body,createdAt,author,state --state open --limit 20');
   const prs = JSON.parse(prsRaw || '[]');
 
@@ -64,7 +64,7 @@ async function main() {
   };
 
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(intel, null, 2));
-  console.log(`✅ Intelligence saved to ${path.relative(ROOT, OUTPUT_FILE)}`);
+  console.log(` Intelligence saved to ${path.relative(ROOT, OUTPUT_FILE)}`);
 
   // 3. Generate Markdown Report
   let md = `# Community Intelligence Report\n*Generated: ${intel.timestamp}*\n\n`;
@@ -99,7 +99,7 @@ async function main() {
   }
 
   fs.writeFileSync(REPORT_FILE, md);
-  console.log(`✅ Markdown report saved to ${path.relative(ROOT, REPORT_FILE)}`);
+  console.log(` Markdown report saved to ${path.relative(ROOT, REPORT_FILE)}`);
 }
 
 main().catch(console.error);

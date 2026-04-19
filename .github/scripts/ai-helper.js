@@ -2,7 +2,7 @@ const { safeParse } = require('../../lib/utils / tuyaUtils.js');
 /**
  * AI Helper - Multi-provider with project rules injection
  * Orchestrated for Free Tiers, Prioritizing Intelligent Aggregators.
- * Chain: OpenRouter → HuggingFace → Cerebras → Together → Groq → DeepSeek → Gemini → GitHub Models → OpenAI → Mistral → Kimi
+ * Chain: OpenRouter  HuggingFace  Cerebras  Together  Groq  DeepSeek  Gemini  GitHub Models  OpenAI  Mistral  Kimi
  */
 const fs=require('fs'),path=require('path');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -364,7 +364,7 @@ module.exports={callAI,callAIEnsemble,splitTaskAndCombine,analyzeImage,sleep,loc
 async function main() {
   const args = process.argv.slice(2);
   if (args.includes('--check-health')) {
-    Object.keys(process.env).forEach(k => { if (k.endsWith('_API_KEY') || k === 'HF_TOKEN') console.log('✅ Found ' + k); });
+    Object.keys(process.env).forEach(k => { if (k.endsWith('_API_KEY') || k === 'HF_TOKEN') console.log(' Found ' + k); });
     return;
   }
   
@@ -373,17 +373,17 @@ async function main() {
     const action = args[actionIdx + 1];
     if (action === 'assess_risk') {
       const commits = args[args.indexOf('--commits') + 1] || 1;
-      console.log(`🛡️ Assessing risk for last ${commits} commits...`);
+      console.log(` Assessing risk for last ${commits} commits...`);
       // Simulating git log fetch
       let diff = "";
       try {
         diff = require('child_process').execSync(`git diff HEAD~${commits}..HEAD`).toString();
       } catch (e) {
-        console.log(`⚠️  Could not fetch diff for last ${commits} commits (maybe history is too short). Trying root diff...`);
+        console.log(`  Could not fetch diff for last ${commits} commits (maybe history is too short). Trying root diff...`);
         try {
           diff = require('child_process').execSync(`git diff $(git rev-list --max-parents=0 HEAD)..HEAD`).toString();
         } catch (e2) {
-          console.log(`⚠️  Root diff failed. Using simple HEAD diff.`);
+          console.log(`  Root diff failed. Using simple HEAD diff.`);
           diff = require('child_process').execSync(`git diff HEAD`).toString();
         }
       }
@@ -406,7 +406,7 @@ async function main() {
 
 if (require.main === module) {
   main().catch(err => {
-    console.error('❌ AI Helper Error:', err);
+    console.error(' AI Helper Error:', err);
     process.exit(1);
   });
 }

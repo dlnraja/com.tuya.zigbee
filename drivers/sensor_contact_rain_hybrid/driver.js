@@ -2,14 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.570: CRITICAL FIX - Flow card run listeners were missing
- */
 class LonsonhoContactSensorDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -19,46 +12,68 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('LonsonhoContactSensorDriver v5.5.570 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    // CONDITION: Door/window is/is not open
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('sensor_contact_rain_hybrid_contact_sensor_opened'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('sensor_contact_rain_hybrid_contact_sensor_closed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('sensor_contact_rain_hybrid_contact_sensor_tamper_true'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('sensor_contact_rain_hybrid_contact_sensor_battery_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('sensor_contact_rain_hybrid_contact_sensor_battery_low'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('sensor_contact_rain_hybrid_contact_sensor_left_open'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('sensor_contact_rain_hybrid_contact_sensor_contact_alarm'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('sensor_contact_rain_hybrid_contact_sensor_tamper_alarm'); } catch (e) {}
+
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('contact_sensor_is_open'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('sensor_contact_rain_hybrid_contact_sensor_is_open');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
-      this.log('[FLOW] ✅ Registered: contact_sensor_is_open');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition sensor_contact_rain_hybrid_contact_sensor_is_open: ${err.message}`); }
 
-    // CONDITION: Battery above threshold
     try {
-      (() => { try { return this.homey.flow.getConditionCard('contact_sensor_battery_above'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('sensor_contact_rain_hybrid_contact_sensor_battery_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.threshold || 20);
         });
-      this.log('[FLOW] ✅ Registered: contact_sensor_battery_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition sensor_contact_rain_hybrid_contact_sensor_battery_above: ${err.message}`); }
 
-    this.log('[FLOW]  Contact sensor flow cards registered');
+    try {
+      const card = this.homey.flow.getConditionCard('sensor_contact_rain_hybrid_contact_sensor_contact_open');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition sensor_contact_rain_hybrid_contact_sensor_contact_open: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('sensor_contact_rain_hybrid_contact_sensor_tamper_active');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition sensor_contact_rain_hybrid_contact_sensor_tamper_active: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

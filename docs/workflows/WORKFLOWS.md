@@ -21,9 +21,9 @@ This directory contains GitHub Actions workflows for automating the validation, 
 - GitHub Release creation
 
 **Version Detection:**
-- `BREAKING` or `major:` prefix → **major** bump
-- `feat` or `minor:` prefix → **minor** bump
-- Others → **patch** bump
+- `BREAKING` or `major:` prefix  **major** bump
+- `feat` or `minor:` prefix  **minor** bump
+- Others  **patch** bump
 
 **Required Secrets:**
 - `HOMEY_PAT`: Personal Access Token from https://tools.developer.homey.app/me
@@ -51,8 +51,8 @@ These workflows are kept for reference but are not active:
 
 ## Monthly Workflow
 
-### 📅 `monthly-auto-enrichment.yml`
-**Status:** ✅ Active  
+###  `monthly-auto-enrichment.yml`
+**Status:**  Active  
 **Trigger:** Monthly schedule (1st of month)
 
 Automatic enrichment and updates from external sources.
@@ -66,14 +66,14 @@ graph TD
     A[Push to master] --> B[Checkout Code]
     B --> C[Validate App SDK3]
     C --> D{Valid?}
-    D -->|No| E[❌ Fail]
+    D -->|No| E[ Fail]
     D -->|Yes| F[Generate Changelog]
     F --> G[Detect Version Bump]
     G --> H[Update Version]
     H --> I[Commit & Tag]
     I --> J[Publish to Homey]
     J --> K[Create GitHub Release]
-    K --> L[✅ Success]
+    K --> L[ Success]
 ```
 
 ---
@@ -141,7 +141,7 @@ Trigger via GitHub UI:
 
 ### Required Repository Secrets
 
-Navigate to: **Settings → Secrets and variables → Actions**
+Navigate to: **Settings  Secrets and variables  Actions**
 
 | Secret | Value | Source |
 |--------|-------|--------|

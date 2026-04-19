@@ -53,9 +53,9 @@ class Core Reimplementation {
      * @param {string} [options.function] - "search", "translate", "brainstorm", "code", "analyze"
      *
      * Extra options based on function:
-     *   function: "translate" → { to: "Hindi", from: "English" }
-     *   function: "code"      → { action: "generate|review|debug|explain", language: "Python", code: "..." }
-     *   function: "analyze"   → { url: "https://...", question: "...", focus: "..." }
+     *   function: "translate"  { to: "Hindi", from: "English" }
+     *   function: "code"       { action: "generate|review|debug|explain", language: "Python", code: "..." }
+     *   function: "analyze"    { url: "https://...", question: "...", focus: "..." }
      *
      * @returns {ProximaResponse} with .text, .model, .responseTimeMs
      *

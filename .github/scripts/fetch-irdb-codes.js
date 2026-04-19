@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// fetch-irdb-codes.js — Fetches IR remote codes from public IRDB sources
+// fetch-irdb-codes.js  Fetches IR remote codes from public IRDB sources
 // Used by monthly-irdb-sync.yml workflow
 // Sources: irdb (GitHub), LIRC remotes, Tuya IR blaster DP codes
 const fs = require('fs');

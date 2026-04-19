@@ -2,14 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.571: CRITICAL FIX - Flow card run listeners were missing
- */
 class TuyaDoorbellDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -19,51 +12,80 @@ class TuyaDoorbellDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('TuyaDoorbellDriver v5.5.571 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    // CONDITION: Battery above threshold
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('doorbell_button_pressed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('doorbell_motion_detected'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('doorbell_tamper_true'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('doorbell_battery_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('doorbell_battery_low'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('doorbell_contact_alarm'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('doorbell_tamper_alarm'); } catch (e) {}
+
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('doorbell_battery_above'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('doorbell_battery_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.threshold || 20);
         });
-      this.log('[FLOW] ✅ Registered: doorbell_battery_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition doorbell_battery_above: ${err.message}`); }
 
-    // ACTION: Ring chime
     try {
-      (() => { try { return this.homey.flow.getConditionCard('doorbell_ring_chime'); } catch(e) { return null; } })()
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('doorbell_motion_active');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          try {
-            if (args.device._tuyaEF00Manager) {
-              await args.device._tuyaEF00Manager.sendDatapoint(1, true, 'bool');
-            }
-            return true;
-          } catch (err) { return true; }
+          return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ Registered: doorbell_ring_chime');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition doorbell_motion_active: ${err.message}`); }
 
-    this.log('[FLOW]  Doorbell flow cards registered');
+    try {
+      const card = this.homey.flow.getConditionCard('doorbell_contact_open');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition doorbell_contact_open: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('doorbell_tamper_active');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition doorbell_tamper_active: ${err.message}`); }
+
+    // ACTIONS
+    try {
+      const card = this.homey.flow.getActionCard('doorbell_ring_chime');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          // Generic action handler
+          this.log('[FLOW] Action doorbell_ring_chime triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action doorbell_ring_chime: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

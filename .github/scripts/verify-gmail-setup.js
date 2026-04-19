@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-// v5.12.6: IMAP verifier — OAuth removed
+// v5.12.6: IMAP verifier  OAuth removed
 async function main(){
   const e=process.env.GMAIL_EMAIL||process.env.HOMEY_EMAIL;
   const p=process.env.GMAIL_APP_PASSWORD||process.env.HOMEY_PASSWORD;
@@ -23,7 +23,7 @@ async function main(){
   console.log('Connecting as',e,'...');
   const emails=await imap.readViaIMAP({maxResults:5});
   if(!emails){
-    console.log('FAIL: IMAP returned null — check credentials or 2FA');
+    console.log('FAIL: IMAP returned null  check credentials or 2FA');
     console.log('  App Password: https://myaccount.google.com/apppasswords');
     console.log('  2FA required: https://myaccount.google.com/signinoptions/two-step-verification');
     process.exit(1);
@@ -34,6 +34,6 @@ async function main(){
     console.log('From:',emails[0].from);
     console.log('Date:',emails[0].date);
   }
-  console.log('\nIMAP is working. No token expiry — permanent.');
+  console.log('\nIMAP is working. No token expiry  permanent.');
 }
 main().catch(e=>{console.error(e.message);process.exit(1)});

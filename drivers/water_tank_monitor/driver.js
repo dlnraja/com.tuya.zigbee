@@ -34,21 +34,25 @@ class WaterTankMonitorDriver extends Homey.Driver {
 
     // Condition: fill level above threshold
     try {
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('water_tank_monitor_level_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const pct = args.device.getCapabilityValue('measure_water_percentage') || 0;
           return pct > (args.level || 20);
         });
+      }
     } catch (err) { this.log(`[FLOW] level_above: ${err.message}`); }
 
     // Condition: liquid state is
     try {
-
-        .registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('water_tank_monitor_state_is');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device._lastState === args.state;
         });
+      }
     } catch (err) { this.log(`[FLOW] state_is: ${err.message}`); }
 
     const triggers = [this.stateChangedTrigger, this.levelChangedTrigger,

@@ -74,7 +74,7 @@ async function fetchFile(url) {
 }
 
 function parseTuyaTs(content) {
-    console.log('🔍 Parsing tuya.ts content...');
+    console.log(' Parsing tuya.ts content...');
     const database = {};
     
     // Split into individual device blocks
@@ -133,7 +133,7 @@ function parseTuyaTs(content) {
         }
     }
     
-    console.log(`✅ Extracted mappings for ${processed} unique models.`);
+    console.log(` Extracted mappings for ${processed} unique models.`);
     return database;
 }
 
@@ -167,7 +167,7 @@ function updateDatabase(newMappings) {
     currentDb.lastUpdated = new Date().toISOString();
     
     fs.writeFileSync(DB_PATH, JSON.stringify(currentDb, null, 2));
-    console.log(`🚀 Database updated: ${stats.added} new models, ${stats.updated} models updated.`);
+    console.log(` Database updated: ${stats.added} new models, ${stats.updated} models updated.`);
 }
 
 function updateCredits() {
@@ -179,19 +179,19 @@ function updateCredits() {
     content =safeDivide(content.replace(, lastChecked):\s*'[^']*'/g, `lastChecked: '${now}'`);
     
     fs.writeFileSync(CREDITS_PATH, content);
-    console.log('📝 Updated SourceCredits.js lastChecked date.');
+    console.log(' Updated SourceCredits.js lastChecked date.');
 }
 
 async function main() {
-    console.log('🌐 Fetching latest Tuya mappings from Zigbee2MQTT...');
+    console.log(' Fetching latest Tuya mappings from Zigbee2MQTT...');
     try {
         const content = await fetchFile(Z2M_TUYA_URL);
         const mappings = parseTuyaTs(content);
         updateDatabase(mappings);
         updateCredits();
-        console.log('✨ Synchronization complete!');
+        console.log(' Synchronization complete!');
     } catch (err) {
-        console.error('❌ Sync failed:', err.message);
+        console.error(' Sync failed:', err.message);
         process.exit(1);
     }
 }

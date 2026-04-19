@@ -56,7 +56,7 @@ async function main() {
     };
 
     fs.writeFileSync(targetPath, JSON.stringify(database, null, 2));
-    console.log(`\n✅ Database generated at ${targetPath}`);
+    console.log(`\n Database generated at ${targetPath}`);
     console.log(`   Unique MFRs: ${Object.keys(mfr_index).length}`);
     console.log(`   Unique PIDs: ${Object.keys(pid_index).length}`);
     console.log(`   Drivers: ${Object.keys(drivers).length}`);

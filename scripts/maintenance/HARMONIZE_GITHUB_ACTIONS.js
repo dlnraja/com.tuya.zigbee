@@ -70,7 +70,7 @@ allFiles.forEach(file => {
     }
 });
 
-console.log(`\n✅ Harmonized ${fixedCount} GitHub files/scripts.`);
+console.log(`\n Harmonized ${fixedCount} GitHub files/scripts.`);
 
 // Also harmonize the forum responder specifically in its logic
 const responderPath = path.join(GITHUB_DIR, 'scripts', 'forum-responder.js');

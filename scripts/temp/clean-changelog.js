@@ -49,4 +49,4 @@ finalContent = finalContent.replace(/\n### [^\n]+\n+(?=\n|### |## |---)/g, '\n')
 finalContent = finalContent.replace(/\n{3,}/g, '\n\n');
 
 fs.writeFileSync(file, finalContent);
-console.log('✅ Cleaned up CHANGELOG.md for user-friendly driver focus');
+console.log(' Cleaned up CHANGELOG.md for user-friendly driver focus');

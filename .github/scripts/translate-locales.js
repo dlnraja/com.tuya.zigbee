@@ -29,7 +29,7 @@ async function translateLocales() {
 
         const missingKeysAll = enKeys.filter(k => typeof langData[k] === 'undefined');
         if (!missingKeysAll.length) {
-            console.log(`✅ [${lang}] All locales are up to date.`);
+            console.log(` [${lang}] All locales are up to date.`);
             continue;
         }
         
@@ -47,7 +47,7 @@ async function translateLocales() {
         }
         
         if (staticHit > 0) {
-            console.log(`⚡ [${lang}] Auto-filled ${staticHit} keys using static fallback-map.json.`);
+            console.log(` [${lang}] Auto-filled ${staticHit} keys using static fallback-map.json.`);
         }
         
         if (!missingKeys.length) {
@@ -55,7 +55,7 @@ async function translateLocales() {
             continue;
         }
 
-        console.log(`🔄 [${lang}] Fetching translation for ${missingKeys.length} new keys...`);
+        console.log(` [${lang}] Fetching translation for ${missingKeys.length} new keys...`);
         
         // Chunk translation requests to avoid token limits
         const chunkSize = 20;
@@ -79,13 +79,13 @@ async function translateLocales() {
                         success = true;
                     }
                 } catch(e) {
-                    console.log(`❌ AI JSON parse failed for ${lang} chunk. Using fallback.`);
+                    console.log(` AI JSON parse failed for ${lang} chunk. Using fallback.`);
                 }
             }
             
             // NO-AI FALLBACK
             if (!success) {
-                console.log(`⚠️ Applying non-AI fallback for ${lang} chunk.`);
+                console.log(` Applying non-AI fallback for ${lang} chunk.`);
                 for (const k of chunk) {
                     langData[k] = `[EN] ${mapping[k]}`;
                 }
@@ -93,7 +93,7 @@ async function translateLocales() {
         }
         
         fs.writeFileSync(langPath, JSON.stringify(langData, null, 2));
-        console.log(`✅ [${lang}] File saved.`);
+        console.log(` [${lang}] File saved.`);
     }
 }
 

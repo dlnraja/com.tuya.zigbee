@@ -58,7 +58,9 @@
       "_TZE284_BJZROWV2",
       "_TZE284_DAPWRYY7",
       "_TZE284_DCNSGGVZ",
-      "_TZN3000_CFNPRAB5"
+      "_TZN3000_CFNPRAB5",
+      "_tz3000_3ooaz3ng",
+      "_tz3000_amdymr7l"
     ],
     "productId": [
       "A11Z",
@@ -92,7 +94,8 @@
       "TS0121",
       "TSO121",
       "Z111PL0H-1JX",
-      "ZBMINIL2"
+      "ZBMINIL2",
+      "TS011F"
     ],
     "learnmode": {
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
@@ -129,7 +132,7 @@
       "type": "dropdown",
       "label": {
         "en": "Power Measurement Scale",
-        "fr": "Ã‰chelle Mesure Puissance"
+        "fr": "Ãchelle Mesure Puissance"
       },
       "value": "1",
       "values": [
@@ -143,15 +146,15 @@
         {
           "id": "1",
           "label": {
-            "en": "Ã—1 (Default)",
-            "fr": "Ã—1 (Par dÃ©faut)"
+            "en": "Ã1 (Default)",
+            "fr": "Ã1 (Par dÃ©faut)"
           }
         },
         {
           "id": "10",
           "label": {
-            "en": "Ã—10",
-            "fr": "Ã—10"
+            "en": "Ã10",
+            "fr": "Ã10"
           }
         }
       ],
@@ -165,7 +168,7 @@
       "type": "dropdown",
       "label": {
         "en": "Voltage Measurement Scale",
-        "fr": "Ã‰chelle Mesure Tension"
+        "fr": "Ãchelle Mesure Tension"
       },
       "value": "1",
       "values": [
@@ -179,15 +182,15 @@
         {
           "id": "1",
           "label": {
-            "en": "Ã—1 (Default)",
-            "fr": "Ã—1 (Par dÃ©faut)"
+            "en": "Ã1 (Default)",
+            "fr": "Ã1 (Par dÃ©faut)"
           }
         },
         {
           "id": "10",
           "label": {
-            "en": "Ã—10",
-            "fr": "Ã—10"
+            "en": "Ã10",
+            "fr": "Ã10"
           }
         }
       ],
@@ -201,7 +204,7 @@
       "type": "dropdown",
       "label": {
         "en": "Current Measurement Scale",
-        "fr": "Ã‰chelle Mesure Courant"
+        "fr": "Ãchelle Mesure Courant"
       },
       "value": "1",
       "values": [
@@ -215,15 +218,15 @@
         {
           "id": "1",
           "label": {
-            "en": "Ã—1 (Default)",
-            "fr": "Ã—1 (Par dÃ©faut)"
+            "en": "Ã1 (Default)",
+            "fr": "Ã1 (Par dÃ©faut)"
           }
         },
         {
           "id": "10",
           "label": {
-            "en": "Ã—10",
-            "fr": "Ã—10"
+            "en": "Ã10",
+            "fr": "Ã10"
           }
         }
       ],
@@ -237,7 +240,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy (kWh) Scale",
-        "fr": "Ã‰chelle Ã‰nergie (kWh)"
+        "fr": "Ãchelle Ãnergie (kWh)"
       },
       "value": "1",
       "values": [
@@ -251,15 +254,15 @@
         {
           "id": "1",
           "label": {
-            "en": "Ã—1 (Default)",
-            "fr": "Ã—1 (Par dÃ©faut)"
+            "en": "Ã1 (Default)",
+            "fr": "Ã1 (Par dÃ©faut)"
           }
         },
         {
           "id": "10",
           "label": {
-            "en": "Ã—10",
-            "fr": "Ã—10"
+            "en": "Ã10",
+            "fr": "Ã10"
           }
         }
       ],
@@ -374,7 +377,7 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
+        "fr": "Maintien Mouvement ÃmulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -396,7 +399,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
+        "fr": "Ãmulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -420,7 +423,7 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ãtat Logicielle"
       },
       "value": false,
       "hint": {

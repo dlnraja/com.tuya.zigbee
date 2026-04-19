@@ -1,29 +1,29 @@
-# ✅ CORRECTIFS APPLIQUÉS v4.9.321
+#  CORRECTIFS APPLIQUÉS v4.9.321
 
-## 🎯 CORRECTIFS CRITIQUES (DÉJÀ APPLIQUÉS)
+##  CORRECTIFS CRITIQUES (DÉJÀ APPLIQUÉS)
 
-### 1. ✅ Energy-KPI Crash (COMPLET)
+### 1.  Energy-KPI Crash (COMPLET)
 - `lib/utils/energy-kpi.js` - Remplacé Homey.ManagerSettings par homey.settings
 - `lib/utils/data-collector.js` - 4 appels corrigés
 - `lib/SmartDriverAdaptation.js` - 1 appel corrigé
 
-### 2. ✅ Soil & PIR Sensors NO DATA (COMPLET)
+### 2.  Soil & PIR Sensors NO DATA (COMPLET)
 - `lib/utils/tuya-dp-parser.js` - CRÉÉ (331 lignes)
 - `lib/tuya/TuyaEF00Manager.js` - Listeners dataReport + response ajoutés
 - Request auto DPs critiques au démarrage (DP 1,2,3,5,9,14,15,101,102)
 
-### 3. ✅ Safe Guards (COMPLET)
+### 3.  Safe Guards (COMPLET)
 - `lib/utils/safe-guards.js` - CRÉÉ
   - safeGetDeviceOverride() - Empêche NPE startsWith
   - driverExists() - Validation driver
 
-### 4. ✅ Migration Queue Worker (COMPLET)
+### 4.  Migration Queue Worker (COMPLET)
 - `app.js` - Worker ajouté (démarre après 60s)
 - processMigrationQueue() - Traite migrations en queue
 
 ---
 
-## 🚧 ACTIONS RESTANTES (À FAIRE MANUELLEMENT)
+##  ACTIONS RESTANTES (À FAIRE MANUELLEMENT)
 
 ### A. Mettre à jour `lib/utils/capability-safe-create.js`
 Remplacer le contenu actuel par:
@@ -35,15 +35,15 @@ async function createCapabilitySafe(device, capId, options = {}) {
   try {
     if (!device || !capId) return false;
     if (device.hasCapability(capId)) {
-      device.log && device.log(`[SAFE-CREATE] ✅ ${capId} exists`);
+      device.log && device.log(`[SAFE-CREATE]  ${capId} exists`);
       return true;
     }
     await device.addCapability(capId, options);
-    device.log && device.log(`[SAFE-CREATE] ✅ ${capId} created`);
+    device.log && device.log(`[SAFE-CREATE]  ${capId} created`);
     return true;
   } catch (err) {
     if (/already exists|duplicate/i.test(err.message)) return true;
-    device.error && device.error(`[SAFE-CREATE] ❌ ${capId}:`, err.message);
+    device.error && device.error(`[SAFE-CREATE]  ${capId}:`, err.message);
     return false;
   }
 }
@@ -124,31 +124,31 @@ await queueMigration(
 
 ---
 
-## 🧪 TESTS À FAIRE
+##  TESTS À FAIRE
 
 1. **Redémarre l'app Homey**
 2. **Vérifie les logs:**
-   - `[MIGRATION-WORKER] 🔄 Starting...`
-   - `[TUYA] ✅ dataReport listener registered`
-   - `[TUYA] 🔍 Requesting critical DPs...`
+   - `[MIGRATION-WORKER]  Starting...`
+   - `[TUYA]  dataReport listener registered`
+   - `[TUYA]  Requesting critical DPs...`
 3. **Teste Soil sensor:** Attends 10s, cherche `DP 5`
 4. **Teste PIR sensor:** Bouge, cherche `DP 1`
 
 ---
 
-## 📊 IMPACT ATTENDU
+##  IMPACT ATTENDU
 
 | Fix | Avant | Après |
 |-----|-------|-------|
-| Energy-KPI | 7 crash/min | 0 crash ✅ |
-| Soil/PIR Data | 0% reçu | 90% reçu ✅ |
-| NPE startsWith | Crash app | Protected ✅ |
-| device.setDriver | is not a function | Queue safe ✅ |
-| Zigbee retry | 0% success | 95% success ⏳ |
+| Energy-KPI | 7 crash/min | 0 crash  |
+| Soil/PIR Data | 0% reçu | 90% reçu  |
+| NPE startsWith | Crash app | Protected  |
+| device.setDriver | is not a function | Queue safe  |
+| Zigbee retry | 0% success | 95% success  |
 
 ---
 
-## 🚀 PROCHAINE ÉTAPE
+##  PROCHAINE ÉTAPE
 
 **Applique les actions B, C, D manuellement** puis:
 ```bash

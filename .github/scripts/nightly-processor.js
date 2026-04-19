@@ -68,7 +68,7 @@ function lookupFPs(fps,idx,pidx){
 
 
 
-// v5.11.28: postForum REMOVED — all forum posting now centralized in forum-responder.js (anti-spam)
+// v5.11.28: postForum REMOVED  all forum posting now centralized in forum-responder.js (anti-spam)
 
 // This script is DATA COLLECTION only.
 
@@ -230,7 +230,7 @@ async function processForumPosts(state,idx,pidx,auth,appVersion,dryRun){
 
       if(!reply&&hasFPs){
 
-        const sup=Object.entries(fpResults).filter(([,v])=>v.found).map(([k,v])=>'`'+k+'` → **'+v.drivers.join(', ')+'**');
+        const sup=Object.entries(fpResults).filter(([,v])=>v.found).map(([k,v])=>'`'+k+'`  **'+v.drivers.join(', ')+'**');
 
         const mis=Object.entries(fpResults).filter(([,v])=>!v.found).map(([k])=>'`'+k+'`');
 
@@ -238,9 +238,9 @@ async function processForumPosts(state,idx,pidx,auth,appVersion,dryRun){
 
           reply='**Fingerprint check** (v'+appVersion+'):\n';
 
-          if(sup.length)reply+='✅ Supported: '+sup.join(', ')+'\n';
+          if(sup.length)reply+=' Supported: '+sup.join(', ')+'\n';
 
-          if(mis.length)reply+='❓ Not found: '+mis.join(', ')+' — please share a [device interview](https://tools.developer.homey.app/tools/zigbee).\n';
+          if(mis.length)reply+=' Not found: '+mis.join(', ')+'  please share a [device interview](https://tools.developer.homey.app/tools/zigbee).\n';
 
         }
 
@@ -350,7 +350,7 @@ async function processGitHub(state,idx,pidx,appVersion,dryRun){
 
       if(!reply){
 
-        const sup=Object.entries(fpResults).filter(([,v])=>v.found).map(([k,v])=>'`'+k+'` → **'+v.drivers.join(', ')+'**');
+        const sup=Object.entries(fpResults).filter(([,v])=>v.found).map(([k,v])=>'`'+k+'`  **'+v.drivers.join(', ')+'**');
 
         const mis=Object.entries(fpResults).filter(([,v])=>!v.found).map(([k])=>'`'+k+'`');
 
@@ -360,7 +360,7 @@ async function processGitHub(state,idx,pidx,appVersion,dryRun){
 
           if(sup.length)reply+='**Supported:** '+sup.join(', ')+'\n';
 
-          if(mis.length)reply+='**Not found:** '+mis.join(', ')+' — please provide a [device interview](https://tools.developer.homey.app/tools/zigbee).\n';
+          if(mis.length)reply+='**Not found:** '+mis.join(', ')+'  please provide a [device interview](https://tools.developer.homey.app/tools/zigbee).\n';
 
         }
 
@@ -442,7 +442,7 @@ async function processGitHub(state,idx,pidx,appVersion,dryRun){
 
       if(!prReply){
 
-        const sup=Object.entries(fpResults).filter(([,v])=>v.found).map(([k,v])=>'`'+k+'` → '+v.drivers.join(', '));
+        const sup=Object.entries(fpResults).filter(([,v])=>v.found).map(([k,v])=>'`'+k+'`  '+v.drivers.join(', '));
 
         const mis=Object.entries(fpResults).filter(([,v])=>!v.found).map(([k])=>'`'+k+'`');
 
@@ -450,9 +450,9 @@ async function processGitHub(state,idx,pidx,appVersion,dryRun){
 
           prReply='## PR Fingerprint Review (v'+appVersion+')\n';
 
-          if(sup.length)prReply+='✅ Known: '+sup.join(', ')+'\n';
+          if(sup.length)prReply+=' Known: '+sup.join(', ')+'\n';
 
-          if(mis.length)prReply+='❓ Unknown: '+mis.join(', ')+'\n';
+          if(mis.length)prReply+=' Unknown: '+mis.join(', ')+'\n';
 
         }
 

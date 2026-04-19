@@ -3,7 +3,7 @@
 const { safeParse } = require('../../lib/utils / tuyaUtils.js');
 
 /**
- * Smart Device Library — shared functions for smart-device-processor.js
+ * Smart Device Library  shared functions for smart-device-processor.js
  * Handles: index building, source collection, driver suggestion, fingerprint insertion
  */
 const fs=require('fs'),path=require('path');
@@ -99,7 +99,7 @@ function filterNew(devs,mIdx){
 
 function suggestDriver(dev,pIdx,meta){
   const PM=getPM();
-  // 1. ProductId match — local index first, then static PID map
+  // 1. ProductId match  local index first, then static PID map
   for(const pid of dev.pids){
     const drivers=pIdx.get(pid);if(drivers?.length)return{driver:drivers[0],method:'productId',pid};
     if(PM[pid])return{driver:PM[pid],method:'pid-map',pid};

@@ -18,4 +18,4 @@ content = content.replace('if(alreadyTriaged){', 'if(alreadyTriaged||isOwnerPost
 content = content.replace('if(alreadyTriaged2){', 'if(alreadyTriaged2||isOwnerPost(pr)){');
 
 fs.writeFileSync(file, content);
-console.log('✅ Enhanced triage-run.js with owner detection');
+console.log(' Enhanced triage-run.js with owner detection');

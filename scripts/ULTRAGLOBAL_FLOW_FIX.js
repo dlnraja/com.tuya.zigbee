@@ -50,11 +50,11 @@ function fixDriver(driverName) {
 
   if (changed) {
     fs.writeFileSync(driverPath, content);
-    console.log(`✅ Refactored ${driverName}`);
+    console.log(` Refactored ${driverName}`);
   }
 }
 
 const folders = fs.readdirSync(DRIVERS_DIR);
 folders.forEach(fixDriver);
 
-console.log('✨ Global flow refactoring complete.');
+console.log(' Global flow refactoring complete.');

@@ -5,16 +5,16 @@ Used by automated workflows to detect issues, track device health, and prioritiz
 
 ## Structure
 
-- `reports/` — Individual device diagnostic reports (anonymized)
-- `summary.json` — Aggregated summary of all diagnostics
-- `issues-map.json` — Maps diagnostic findings to GitHub issues
+- `reports/`  Individual device diagnostic reports (anonymized)
+- `summary.json`  Aggregated summary of all diagnostics
+- `issues-map.json`  Maps diagnostic findings to GitHub issues
 
 ## Collection
 
 Data is collected automatically by:
-- `gmail-diagnostics.yml` — Parses diagnostic emails from Gmail
-- `collect-diagnostics.yml` — Pulls live data from Homey API + stores anonymized
-- `homey-device-diagnostics.js` — Fetches device data via HOMEY_PAT_API
+- `gmail-diagnostics.yml`  Parses diagnostic emails from Gmail
+- `collect-diagnostics.yml`  Pulls live data from Homey API + stores anonymized
+- `homey-device-diagnostics.js`  Fetches device data via HOMEY_PAT_API
 
 ## Privacy
 

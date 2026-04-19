@@ -14,15 +14,15 @@ const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap'
 class Button6GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('╔═══════════════════════════════════════════════════════════════════╗');
-    this.log('║           BUTTON 6-GANG v5.8.16 - E000 ENHANCED                   ║');
-    this.log('╚═══════════════════════════════════════════════════════════════════╝');
+    this.log('');
+    this.log('           BUTTON 6-GANG v5.8.16 - E000 ENHANCED                   ');
+    this.log('');
 
     this.buttonCount = 6;
     await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
     await this._setupE000Detection(zclNode);
     await this._setupExtraDetection(zclNode);
-    this.log('[INIT] ✅ Button6GangDevice initialized - 6 buttons ready');
+    this.log('[INIT]  Button6GangDevice initialized - 6 buttons ready');
   }
 
   async _setupExtraDetection(zclNode) {
@@ -42,7 +42,7 @@ class Button6GangDevice extends ButtonDevice {
 
   async _setupE000Detection(zclNode) {
     const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
-    this.log(`[BUTTON6-E000] 🔧 Setting up E000 detection (mfr: ${mfr || 'unknown'})`);
+    this.log(`[BUTTON6-E000]  Setting up E000 detection (mfr: ${mfr || 'unknown'})`);
     this._e000Dedup = {};
 
     for (let ep = 1; ep <= 6; ep++) {
@@ -51,12 +51,12 @@ class Button6GangDevice extends ButtonDevice {
 
       const e000Cluster = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
       if (e000Cluster && typeof e000Cluster.on === 'function') {
-        this.log(`[BUTTON6-E000] 📡 EP${ep} tuyaE000 cluster available`);
+        this.log(`[BUTTON6-E000]  EP${ep} tuyaE000 cluster available`);
         // v5.8.54: Listen for ALL cmd events (cmd0-cmd6, cmdFD/FE/FF)
         const cmdNames = ['cmd0','cmd1','cmd2','cmd3','cmd4','cmd5','cmd6','cmdFD','cmdFE','cmdFF'];
         for (const cmdName of cmdNames) {
           e000Cluster.on(cmdName, async ({ data }) => {
-            this.log(`[BUTTON6-E000] 📥 EP${ep} ${cmdName}: data=${data?.toString?.('hex')}`);
+            this.log(`[BUTTON6-E000]  EP${ep} ${cmdName}: data=${data?.toString?.('hex')}`);
             let btn = ep, press = 'single';
             if (data && data.length >= 2 && data[0] >= 1 && data[0] <= 6) {
               btn = data[0]; press = resolvePressType(data[1], 'BTN6-E000');

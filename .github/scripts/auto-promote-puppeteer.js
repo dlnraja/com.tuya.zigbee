@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * auto-promote-puppeteer.js — Promotes draft build to "test" via browser automation.
- * Athom has NO public API for this — only the web UI works.
+ * auto-promote-puppeteer.js  Promotes draft build to "test" via browser automation.
+ * Athom has NO public API for this  only the web UI works.
  *
  * Required env: HOMEY_EMAIL, HOMEY_PASSWORD
  * Optional: DRY_RUN, GITHUB_STEP_SUMMARY
@@ -89,14 +89,14 @@ async function main() {
       } catch {}
     });
 
-    // Step 1: Go to HOME page (not deep URL — SPA needs step-by-step navigation)
+    // Step 1: Go to HOME page (not deep URL  SPA needs step-by-step navigation)
     log('\n### Step 1: Navigate to home');
     await page.goto(BASE, { waitUntil: 'networkidle2' });
     await waitReady(page, 'home-page', 5000);
     await snap(page, '01-initial');
     log(`  URL: ${page.url()}`);
 
-    // Step 2: Login — detect via URL redirect OR in-page "LOG IN" button
+    // Step 2: Login  detect via URL redirect OR in-page "LOG IN" button
     log('\n### Step 2: Check login');
     const url = page.url();
     const pageText = await page.evaluate(() => document.body?.innerText || '');
@@ -130,7 +130,7 @@ async function main() {
         log(`  Now at: ${page.url()}`);
       }
 
-      // Now we should be on accounts.athom.com — fill credentials
+      // Now we should be on accounts.athom.com  fill credentials
       await doLogin(page);
       await waitReady(page, 'post-login', 5000);
       await snap(page, '04-post-login');
@@ -322,7 +322,7 @@ async function findAndPromote(page, captured) {
   }
 
   if (!hasDraft) {
-    // Check if page has "test" or "live" but no "draft" — means no draft available
+    // Check if page has "test" or "live" but no "draft"  means no draft available
     const hasTest = text.toLowerCase().includes('test');
     const hasLive = text.toLowerCase().includes('live');
     if (hasTest || hasLive) {

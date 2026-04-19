@@ -7,15 +7,15 @@ const PhysicalButtonMixin = require('../../lib/mixins / PhysicalButtonMixin');
 const setupSonoffTRVZB = require('../../lib/mixins / SonoffTRVZBMixin');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RADIATOR VALVE (TRV) - v5.6.0 + Bidirectional Buttons                  ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  UnifiedThermostatBase handles: target_temperature listener                  ║
- * ║  This class: dpMappings + ZCL thermostat + safeDivide(onoff, mode) listeners            ║
- * ║  Profile A (Standard): DPs 1-10,13-15,101-109 - MOES, SEA-ICON             ║
- * ║  Profile B (ME167): DPs 2-5,7,35,36,39,47 - AVATTO safeDivide(ME167, TRV06)             ║
- * ║  v5.6.0: Added bidirectional virtual buttons for mode / safeDivide(boost, child_lock)     ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       RADIATOR VALVE (TRV) - v5.6.0 + Bidirectional Buttons                  
+ * 
+ *   UnifiedThermostatBase handles: target_temperature listener                  
+ *   This class: dpMappings + ZCL thermostat + safeDivide(onoff, mode) listeners            
+ *   Profile A (Standard): DPs 1-10,13-15,101-109 - MOES, SEA-ICON             
+ *   Profile B (ME167): DPs 2-5,7,35,36,39,47 - AVATTO safeDivide(ME167, TRV06)             
+ *   v5.6.0: Added bidirectional virtual buttons for mode / safeDivide(boost, child_lock)     
+ * 
  */
 class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedThermostatBase)) {
 
@@ -185,7 +185,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     await this.initVirtualButtons();
     this._setupTRVVirtualActions();
 
-    this.log(`[TRV] v5.11.105 ✅ Ready (${profile} profile) with bidirectional buttons`);
+    this.log(`[TRV] v5.11.105  Ready (${profile} profile) with bidirectional buttons`);
   }
 
   /**
@@ -234,7 +234,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         thermo.on('attr.pIHeatingDemand', (v) => {
           if (this.hasCapability('dim')) this.setCapabilityValue('dim', safeParse(v, 100)).catch(() => { });
         });
-        this.log('[TRV] ✅ ZCL Thermostat configured');
+        this.log('[TRV]  ZCL Thermostat configured');
       }
     } catch (e) { /* ignore */ }
   }

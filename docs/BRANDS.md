@@ -1,13 +1,13 @@
-# 🏭 Zigbee Brands & Manufacturers Database
+#  Zigbee Brands & Manufacturers Database
 
-## 📊 Statistics
+##  Statistics
 - **Total Vendors (Zigbee2MQTT):** 529+
 - **Total Devices Supported:** 4797+
 - **Tuya White-Label Brands:** 100+
 
 ---
 
-## 🔷 TUYA WHITE-LABEL BRANDS
+##  TUYA WHITE-LABEL BRANDS
 
 Tuya provides a platform that enables OEMs to create smart home devices. These brands use Tuya's Zigbee modules with manufacturer IDs like `_TZ3000_*`, `_TZE200_*`, `_TZE204_*`, etc.
 
@@ -58,24 +58,24 @@ Tuya provides a platform that enables OEMs to create smart home devices. These b
 
 ---
 
-## 🔶 NATIVE ZIGBEE BRANDS (Non-Tuya)
+##  NATIVE ZIGBEE BRANDS (Non-Tuya)
 
 ### Major Ecosystem Brands
 | Brand | Protocol | Products | Proprietary Overlay? |
 |-------|----------|----------|---------------------|
-| **Aqara** | Zigbee 3.0 | Sensors, Switches, Hubs | ✅ Oui (rapports batterie, commandes) |
-| **Sonoff / ITEAD** | Zigbee 3.0 | Prises, Switches, Dongles | ❌ Non (standard) |
-| **Tuya / Moes** | Zigbee 3.0 | Prises, Switches, Variateurs | ✅ Oui (mesure énergie, commandes) |
-| **Philips Hue** | Zigbee 3.0 | Bulbs, Strips, Accessories | ✅ Oui (mises à jour firmware) |
-| **IKEA TRÅDFRI** | Zigbee 3.0 | Bulbs, Plugs, Blinds | ❌ Non (standard) |
-| **Innr** | Zigbee 3.0 | Bulbs, Strips | ❌ Non (standard) |
-| **Gledopto** | Zigbee | LED Controllers RGB/RGBW | ✅ Oui (gestion couleurs) |
-| **Samsung SmartThings** | Zigbee | Capteurs, Prises, Hubs | ✅ Oui (intégration écosystème) |
-| **Schneider Electric / Wiser** | Zigbee | Switches, Variateurs | ❌ Non (standard) |
-| **Legrand / Bticino** | Zigbee | Switches, Prises, Modules | ❌ Non (standard) |
-| **OSRAM/LEDVANCE** | Zigbee | Bulbs | ❌ Non (LIGHTIFY) |
-| **HEIMAN** | Zigbee | Safety Sensors | ❌ Non (standard) |
-| **Develco** | Zigbee | Professional | ❌ Non (commercial) |
+| **Aqara** | Zigbee 3.0 | Sensors, Switches, Hubs |  Oui (rapports batterie, commandes) |
+| **Sonoff / ITEAD** | Zigbee 3.0 | Prises, Switches, Dongles |  Non (standard) |
+| **Tuya / Moes** | Zigbee 3.0 | Prises, Switches, Variateurs |  Oui (mesure énergie, commandes) |
+| **Philips Hue** | Zigbee 3.0 | Bulbs, Strips, Accessories |  Oui (mises à jour firmware) |
+| **IKEA TRÅDFRI** | Zigbee 3.0 | Bulbs, Plugs, Blinds |  Non (standard) |
+| **Innr** | Zigbee 3.0 | Bulbs, Strips |  Non (standard) |
+| **Gledopto** | Zigbee | LED Controllers RGB/RGBW |  Oui (gestion couleurs) |
+| **Samsung SmartThings** | Zigbee | Capteurs, Prises, Hubs |  Oui (intégration écosystème) |
+| **Schneider Electric / Wiser** | Zigbee | Switches, Variateurs |  Non (standard) |
+| **Legrand / Bticino** | Zigbee | Switches, Prises, Modules |  Non (standard) |
+| **OSRAM/LEDVANCE** | Zigbee | Bulbs |  Non (LIGHTIFY) |
+| **HEIMAN** | Zigbee | Safety Sensors |  Non (standard) |
+| **Develco** | Zigbee | Professional |  Non (commercial) |
 
 ### Chinese Ecosystem Brands
 | Brand | Products |
@@ -113,7 +113,7 @@ Tuya provides a platform that enables OEMs to create smart home devices. These b
 
 ---
 
-## 📋 MANUFACTURER NAME PREFIXES
+##  MANUFACTURER NAME PREFIXES
 
 ### Tuya Prefixes
 | Prefix | Description | Example |
@@ -165,9 +165,9 @@ Tuya provides a platform that enables OEMs to create smart home devices. These b
 
 ---
 
-## 🌐 DATA SOURCES
+##  DATA SOURCES
 
-### 🗃️ Sources Principales pour les Drivers Zigbee
+###  Sources Principales pour les Drivers Zigbee
 
 | Source | Description | Contributeurs Clés |
 |--------|-------------|-------------------|
@@ -195,25 +195,25 @@ Tuya provides a platform that enables OEMs to create smart home devices. These b
 
 ---
 
-## 📊 DEVICE CATEGORIES
+##  DEVICE CATEGORIES
 
 | Category | Tuya Devices | Native Devices |
 |----------|--------------|----------------|
-| 💡 **Lighting** | 179 | 500+ |
-| 🎛️ **Switches** | 228 | 300+ |
-| 🔌 **Plugs** | 76 | 200+ |
-| 🌡️ **Climate Sensors** | 85 | 100+ |
-| 🚪 **Contact Sensors** | 65 | 150+ |
-| 👤 **Presence/Motion** | 86 | 200+ |
-| 🪟 **Covers/Blinds** | 115 | 100+ |
-| 🏠 **Thermostats/TRV** | 106 | 50+ |
-| 🚨 **Safety Sensors** | 45 | 80+ |
-| ⚡ **Energy Meters** | 69 | 50+ |
-| 🎮 **Remotes/Buttons** | 58 | 100+ |
+|  **Lighting** | 179 | 500+ |
+|  **Switches** | 228 | 300+ |
+|  **Plugs** | 76 | 200+ |
+|  **Climate Sensors** | 85 | 100+ |
+|  **Contact Sensors** | 65 | 150+ |
+|  **Presence/Motion** | 86 | 200+ |
+|  **Covers/Blinds** | 115 | 100+ |
+|  **Thermostats/TRV** | 106 | 50+ |
+|  **Safety Sensors** | 45 | 80+ |
+|  **Energy Meters** | 69 | 50+ |
+|  **Remotes/Buttons** | 58 | 100+ |
 
 ---
 
-## 🔗 USEFUL LINKS
+##  USEFUL LINKS
 
 ### Device Databases
 - https://www.zigbee2mqtt.io/supported-devices/
@@ -232,7 +232,7 @@ Tuya provides a platform that enables OEMs to create smart home devices. These b
 
 ---
 
-## 💡 COMMENT INTÉGRER CES SOURCES
+##  COMMENT INTÉGRER CES SOURCES
 
 Pour l'application Universal Tuya Zigbee :
 
@@ -244,7 +244,7 @@ Pour l'application Universal Tuya Zigbee :
 
 4. **Contribuer en retour** : Si vous parvenez à ajouter le support d'un appareil manquant, soumettez une "pull request" à ces projets.
 
-### 🔧 Gestion des Surcouches Propriétaires
+###  Gestion des Surcouches Propriétaires
 
 | Fabricant | Type de Surcouche | Solution |
 |-----------|-------------------|----------|

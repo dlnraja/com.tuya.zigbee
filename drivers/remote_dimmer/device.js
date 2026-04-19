@@ -37,7 +37,7 @@ class RemoteDimmerDevice extends ZigBeeDevice {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    this.log('[RemoteDimmer] Init — Lidl HG06323/TS1001');
+    this.log('[RemoteDimmer] Init  Lidl HG06323/TS1001');
 
     // Store device info
     try {
@@ -51,7 +51,7 @@ class RemoteDimmerDevice extends ZigBeeDevice {
     this._lastAction = null;
     this._lastActionTime = 0;
 
-    // Bind OnOff output cluster — receive on/off button presses
+    // Bind OnOff output cluster  receive on/off button presses
     zclNode.endpoints[1].bind(CLUSTER.ON_OFF.NAME, new OnOffBoundCluster({
       onSetOn: () => this._handleAction('on'),
       onSetOff: () => this._handleAction('off'),
@@ -59,7 +59,7 @@ class RemoteDimmerDevice extends ZigBeeDevice {
     }));
     this.log('[RemoteDimmer] OnOff bound');
 
-    // Bind LevelControl output cluster — receive brightness commands
+    // Bind LevelControl output cluster  receive brightness commands
     zclNode.endpoints[1].bind(CLUSTER.LEVEL_CONTROL.NAME, new LevelControlBoundCluster({
       onStep: (p) => this._handleAction(p.mode === 'up' ? 'brightness_step_up' : 'brightness_step_down', p),
       onStepWithOnOff: (p) => this._handleAction(p.mode === 'up' ? 'brightness_step_up' : 'brightness_step_down', p),
@@ -72,7 +72,7 @@ class RemoteDimmerDevice extends ZigBeeDevice {
     }));
     this.log('[RemoteDimmer] LevelControl bound');
 
-    // Bind Scenes output cluster — receive scene button presses
+    // Bind Scenes output cluster  receive scene button presses
     try {
       zclNode.endpoints[1].bind(CLUSTER.SCENES.NAME, new ScenesBoundCluster({
         onRecall: (p) => this._handleAction('scene', p),

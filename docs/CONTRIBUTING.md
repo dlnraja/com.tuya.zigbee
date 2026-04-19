@@ -4,7 +4,7 @@
 
 ### 1. Get Device Interview
 1. Open Homey Developer Tools: `https://developer.homey.app`
-2. Go to Devices → Select your device
+2. Go to Devices  Select your device
 3. Copy the full interview JSON
 
 ### 2. Include Required Info
@@ -38,10 +38,10 @@ npx homey app run
 ```
 drivers/
   my_device/
-    driver.compose.json   ← Device fingerprints
-    driver.js             ← Driver logic
-    device.js             ← Device logic
-    driver.flow.compose.json ← Flow cards
+    driver.compose.json    Device fingerprints
+    driver.js              Driver logic
+    device.js              Device logic
+    driver.flow.compose.json  Flow cards
 ```
 
 ---

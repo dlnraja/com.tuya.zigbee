@@ -68,7 +68,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
         // This switches TS004F from dimmer mode to scene/command mode
         try {
           await onOffCluster.writeAttributes({ 32772: 1 }); // 0x8004 = 32772
-          this.log('[TS004F] ✅ Scene mode enabled via attribute 0x8004');
+          this.log('[TS004F]  Scene mode enabled via attribute 0x8004');
         } catch (writeErr) {
           // Some devices don't support this attribute - that's OK
           this.log('[TS004F] Could not write 0x8004:', writeErr.message);
@@ -76,7 +76,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
           // Alternative: Try via raw Zigbee command
           try {
             await onOffCluster.writeAttributes({ switchMode: 1 });
-            this.log('[TS004F] ✅ Scene mode enabled via switchMode');
+            this.log('[TS004F]  Scene mode enabled via switchMode');
           } catch (altErr) {
             this.log('[TS004F] Alternative also failed:', altErr.message);
           }
@@ -294,7 +294,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
           await sc.bind().catch(e => this.log('[SCENES] Bind error:', e.message));
         }
         
-        this.log('[SCENES] ✅ Scenes cluster listeners configured');
+        this.log('[SCENES]  Scenes cluster listeners configured');
       } else {
         this.log('[SCENES] No scenes cluster found');
       }
@@ -472,7 +472,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
         const triggerCard = this._getFlowCard(specificCardId, 'trigger');
         if (triggerCard) {
             await triggerCard.trigger(this, { action }).catch(() => {});
-            this.log(`[FLOW] ✅ Triggered ${specificCardId}`);
+            this.log(`[FLOW]  Triggered ${specificCardId}`);
         }
       } catch (e) { /* ignore */ }
     }

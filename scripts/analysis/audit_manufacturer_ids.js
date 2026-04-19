@@ -242,7 +242,7 @@ async function auditDriver(driverName, allDriversData) {
 }
 
 async function runFullAudit() {
-  console.log('🔍 MANUFACTURER IDs AUDIT - FULL ANALYSIS\n');
+  console.log(' MANUFACTURER IDs AUDIT - FULL ANALYSIS\n');
 
   const allDrivers = await findAllDrivers();
   console.log(`Found ${allDrivers.length} drivers\n`);
@@ -279,9 +279,9 @@ async function runFullAudit() {
     }
   }
 
-  console.log('\n═══════════════════════════════════════════════════════════════');
+  console.log('\n');
   console.log('SUMMARY');
-  console.log('═══════════════════════════════════════════════════════════════\n');
+  console.log('\n');
 
   let totalInvalidChars = 0;
   let totalDuplicates = 0;
@@ -302,19 +302,19 @@ async function runFullAudit() {
 
   const reportPath = path.join(__dirname, '../MANUFACTURER_IDS_AUDIT.json');
   await fs.writeFile(reportPath, JSON.stringify(audits, null, 2), 'utf8');
-  console.log(`\n📄 Full report: ${reportPath}`);
+  console.log(`\n Full report: ${reportPath}`);
 
   if (audits.length > 0 && audits[0].driver === 'climate_sensor') {
-    console.log('\n═══════════════════════════════════════════════════════════════');
+    console.log('\n');
     console.log('CLIMATE_SENSOR SPECIFIC ANALYSIS');
-    console.log('═══════════════════════════════════════════════════════════════\n');
+    console.log('\n');
 
     const climateAudit = audits[0];
 
     if (climateAudit.issues.wrongDriver.length > 0) {
       console.log('IDs that should be MOVED to other drivers:');
       for (const item of climateAudit.issues.wrongDriver.slice(0, 20)) {
-        console.log(`  ${item.id} → ${item.suggestedType} (${item.reason})`);
+        console.log(`  ${item.id}  ${item.suggestedType} (${item.reason})`);
       }
       if (climateAudit.issues.wrongDriver.length > 20) {
         console.log(`  ... and ${climateAudit.issues.wrongDriver.length - 20} more`);
@@ -328,11 +328,11 @@ async function runFullAudit() {
 if (require.main === module) {
   runFullAudit()
     .then(() => {
-      console.log('\n✅ AUDIT COMPLETE');
+      console.log('\n AUDIT COMPLETE');
       process.exit(0);
     })
     .catch((err) => {
-      console.error('\n❌ ERROR:', err);
+      console.error('\n ERROR:', err);
       process.exit(1);
     });
 }

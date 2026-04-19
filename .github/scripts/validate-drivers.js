@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * validate-drivers.js — Driver Integrity Validator
+ * validate-drivers.js  Driver Integrity Validator
  *
  * Checks discovered from forum reports and debugging sessions:
  * 1. Multi-gang drivers must call super.onNodeInit() (Forum: Rikjes #1676)
@@ -22,25 +22,25 @@ let errors = 0;
 let warnings = 0;
 
 function error(driver, msg) {
-  console.error(`❌ [${driver}] ${msg}`);
+  console.error(` [${driver}] ${msg}`);
   errors++;
 }
 
 function warn(driver, msg) {
-  console.warn(`⚠️  [${driver}] ${msg}`);
+  console.warn(`  [${driver}] ${msg}`);
   warnings++;
 }
 
 function ok(driver, msg) {
   // Only log in verbose mode
-  if (process.env.VERBOSE) console.log(`✅ [${driver}] ${msg}`);
+  if (process.env.VERBOSE) console.log(` [${driver}] ${msg}`);
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // CHECK 1: Valid JSON for all compose files
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 function checkValidJSON() {
-  console.log('\n📋 Check 1: Valid JSON...');
+  console.log('\n Check 1: Valid JSON...');
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(d =>
     fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory()
   );
@@ -67,12 +67,12 @@ function checkValidJSON() {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // CHECK 2: Multi-gang switch drivers must call super.onNodeInit()
-// Discovered: switch_2gang was missing this → "Missing Capability Listener: onoff"
-// ═══════════════════════════════════════════════════════════════════════════════
+// Discovered: switch_2gang was missing this  "Missing Capability Listener: onoff"
+// 
 function checkSuperOnNodeInit() {
-  console.log('\n📋 Check 2: super.onNodeInit() in UnifiedSwitchBase subclasses...');
+  console.log('\n Check 2: super.onNodeInit() in UnifiedSwitchBase subclasses...');
 
   // Drivers that extend UnifiedSwitchBase and MUST call super.onNodeInit()
   const switchDrivers = fs.readdirSync(DRIVERS_DIR).filter(d => {
@@ -93,7 +93,7 @@ function checkSuperOnNodeInit() {
       const hasZclOnlyReturn = content.includes('_initZclOnlyMode') && content.includes('return');
 
       if (!hasSuper && !hasZclOnlyReturn) {
-        error(driver, 'Overrides onNodeInit but NEVER calls super.onNodeInit() — capability listeners will NOT register!');
+        error(driver, 'Overrides onNodeInit but NEVER calls super.onNodeInit()  capability listeners will NOT register!');
       } else if (hasSuper) {
         ok(driver, 'Correctly calls super.onNodeInit()');
       }
@@ -101,11 +101,11 @@ function checkSuperOnNodeInit() {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // CHECK 3: Multi-gang capabilities must exist in driver.compose.json
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 function checkMultiGangCapabilities() {
-  console.log('\n📋 Check 3: Multi-gang capability declarations...');
+  console.log('\n Check 3: Multi-gang capability declarations...');
 
   const switchDrivers = fs.readdirSync(DRIVERS_DIR).filter(d =>
     d.includes('gang') || d.includes('switch')
@@ -136,13 +136,13 @@ function checkMultiGangCapabilities() {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // CHECK 4: Duplicate manufacturer IDs across drivers
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 function checkDuplicateFingerprints() {
-  console.log('\n📋 Check 4: TRUE Fingerprint Collisions (mfr + pid)...');
+  console.log('\n Check 4: TRUE Fingerprint Collisions (mfr + pid)...');
 
-  const fpMap = new Map(); // "mfr|pid" → [driverNames]
+  const fpMap = new Map(); // "mfr|pid"  [driverNames]
 
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(d =>
     fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory()
@@ -184,11 +184,11 @@ function checkDuplicateFingerprints() {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // CHECK 5: Flow cards have matching IDs
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 function checkFlowCards() {
-  console.log('\n📋 Check 5: Flow card consistency...');
+  console.log('\n Check 5: Flow card consistency...');
 
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(d =>
     fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory()
@@ -223,12 +223,12 @@ function checkFlowCards() {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // CHECK 6: UnifiedSwitchBase/PlugBase subclasses with defensive init wrapping
 // v5.11.182: Root cause of "Driver Not Initialized" (Wiosenna_26, Rikjes)
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 function checkDefensiveInit() {
-  console.log('\n📋 Check 6: Defensive init wrapping (register listeners on error)...');
+  console.log('\n Check 6: Defensive init wrapping (register listeners on error)...');
 
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(d => {
     const deviceFile = path.join(DRIVERS_DIR, d, 'device.js');
@@ -258,13 +258,13 @@ function checkDefensiveInit() {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // CHECK 7: Endpoint-capability alignment for multi-gang devices
 // Forum issue: onoff.2 must map to endpoint 2, onoff.gang3 to endpoint 3, etc.
 // Without this, Homey SDK defaults all commands to EP1 or throws undefined
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 function checkEndpointAlignment() {
-  console.log('\n📋 Check 7: Endpoint-capability alignment...');
+  console.log('\n Check 7: Endpoint-capability alignment...');
 
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(d =>
     fs.statSync(path.join(DRIVERS_DIR, d)).isDirectory()
@@ -293,13 +293,13 @@ function checkEndpointAlignment() {
   }
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // RUN ALL CHECKS
-// ═══════════════════════════════════════════════════════════════════════════════
-console.log('═══════════════════════════════════════════════════════════════');
+// 
+console.log('');
 console.log('  TUYA ZIGBEE DRIVER VALIDATOR v5.11.182');
 console.log('  Based on forum reports + debugging discoveries');
-console.log('═══════════════════════════════════════════════════════════════');
+console.log('');
 
 checkValidJSON();
 checkSuperOnNodeInit();
@@ -309,8 +309,8 @@ checkFlowCards();
 checkDefensiveInit();
 checkEndpointAlignment();
 
-console.log('\n═══════════════════════════════════════════════════════════════');
+console.log('\n');
 console.log(`  RESULTS: ${errors} errors, ${warnings} warnings`);
-console.log('═══════════════════════════════════════════════════════════════');
+console.log('');
 
 process.exit(errors > 0 ? 1 : 0);

@@ -44,9 +44,9 @@ class ClimateSensorDriver extends ZigBeeDriver {
     this._registeredIeeeAddresses = new Set();
 
     try {
-      // ═══════════════════════════════════════════════════════════════
+      // 
       // TRIGGER CARDS - IDs must match driver.flow.compose.json
-      // ═══════════════════════════════════════════════════════════════
+      // 
 
 
 
@@ -55,9 +55,9 @@ class ClimateSensorDriver extends ZigBeeDriver {
 
 
 
-      // ═══════════════════════════════════════════════════════════════
+      // 
       // CONDITION CARDS - with device validation
-      // ═══════════════════════════════════════════════════════════════
+      // 
 
       this.tempAboveCondition?.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
@@ -102,7 +102,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         return humidity !== null && humidity < args.humidity;
       });
 
-      this.log('ClimateSensorDriver v5.5.564 ✅ All flow cards registered');
+      this.log('ClimateSensorDriver v5.5.564  All flow cards registered');
     } catch (err) {
       this.error('ClimateSensorDriver flow card registration failed:', err.message);
     }
@@ -127,19 +127,19 @@ class ClimateSensorDriver extends ZigBeeDriver {
 
       // CRITICAL: Skip ANY device with subDeviceId
       if (device.data?.subDeviceId !== undefined) {
-        this.log(`[PAIR] 🚫 BLOCKING sub-device: subDeviceId=${device.data.subDeviceId}`);
+        this.log(`[PAIR]  BLOCKING sub-device: subDeviceId=${device.data.subDeviceId}`);
         continue;
       }
 
       // Skip if we've already seen this IEEE address
       if (ieee && seenIeeeAddresses.has(ieee)) {
-        this.log(`[PAIR] 🚫 Skipping duplicate device for IEEE ${ieee}`);
+        this.log(`[PAIR]  Skipping duplicate device for IEEE ${ieee}`);
         continue;
       }
 
       // Skip if already registered in this driver
       if (ieee && this._registeredIeeeAddresses?.has(ieee)) {
-        this.log(`[PAIR] 🚫 Device already registered: IEEE ${ieee}`);
+        this.log(`[PAIR]  Device already registered: IEEE ${ieee}`);
         continue;
       }
 
@@ -148,10 +148,10 @@ class ClimateSensorDriver extends ZigBeeDriver {
       }
 
       filteredDevices.push(device);
-      this.log(`[PAIR] ✅ Added device: ${device.name || 'Climate Sensor'} (IEEE: ${ieee || 'unknown'})`);
+      this.log(`[PAIR]  Added device: ${device.name || 'Climate Sensor'} (IEEE: ${ieee || 'unknown'})`);
     }
 
-    this.log(`[PAIR] Filtered: ${devices.length} → ${filteredDevices.length} devices`);
+    this.log(`[PAIR] Filtered: ${devices.length}  ${filteredDevices.length} devices`);
     return filteredDevices;
   }
 

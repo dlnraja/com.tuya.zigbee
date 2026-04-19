@@ -55,7 +55,7 @@ class RainSensorDevice extends UnifiedSensorBase {
     // v5.5.889: IAS Zone support for TS0207 rain sensors
     await this._setupIASZone(zclNode);
     
-    this.log('[RAIN] ✅ Rain sensor ready');
+    this.log('[RAIN]  Rain sensor ready');
   }
 
   /**
@@ -76,13 +76,13 @@ class RainSensorDevice extends UnifiedSensorBase {
 
       // Handle Zone Enroll Request
       iasCluster.onZoneEnrollRequest = async (payload) => {
-        this.log('[RAIN-IAS] 📥 Zone Enroll Request received:', payload);
+        this.log('[RAIN-IAS]  Zone Enroll Request received:', payload);
         try {
           await iasCluster.zoneEnrollResponse({
             enrollResponseCode: 0, // Success
             zoneId: 23
           });
-          this.log('[RAIN-IAS] ✅ Zone Enroll Response sent');
+          this.log('[RAIN-IAS]  Zone Enroll Response sent');
         } catch (err) {
           this.log('[RAIN-IAS] Zone enroll response error:', err.message);
         }
@@ -93,7 +93,7 @@ class RainSensorDevice extends UnifiedSensorBase {
         const homeyIeeeAddress = this.homey.zigbee?.getNetwork?.()?.ieeeAddress;
         if (homeyIeeeAddress) {
           await iasCluster.writeAttributes({ iasCieAddress: homeyIeeeAddress });
-          this.log('[RAIN-IAS] ✅ CIE address written:', homeyIeeeAddress);
+          this.log('[RAIN-IAS]  CIE address written:', homeyIeeeAddress);
         }
       } catch (cieErr) {
         this.log('[RAIN-IAS] CIE address write (normal if already set):', cieErr.message);
@@ -104,7 +104,7 @@ class RainSensorDevice extends UnifiedSensorBase {
         const parsed = this._parseIASZoneStatus(payload?.zoneStatus);
         const raining = parsed.alarm1 || parsed.alarm2;
         
-        this.log(`[RAIN-IAS] 🌧️ Zone status: raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2} → raining=${raining}`);
+        this.log(`[RAIN-IAS]  Zone status: raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2}  raining=${raining}`);
 
         if (this.hasCapability('alarm_water')) {
           this.setCapabilityValue('alarm_water', raining).catch(this.error);
@@ -114,14 +114,14 @@ class RainSensorDevice extends UnifiedSensorBase {
       // Attribute listener for zone status
       iasCluster.on('attr.zoneStatus', (status) => {
         const raining = (status & 0x01) !== 0 || (status & 0x02) !== 0;
-        this.log(`[RAIN-IAS] 🌧️ Zone attr status: ${status} → raining=${raining}`);
+        this.log(`[RAIN-IAS]  Zone attr status: ${status}  raining=${raining}`);
         
         if (this.hasCapability('alarm_water')) {
           this.setCapabilityValue('alarm_water', raining).catch(this.error);
         }
       });
 
-      this.log('[RAIN-IAS] ✅ IAS Zone listeners configured');
+      this.log('[RAIN-IAS]  IAS Zone listeners configured');
     } catch (err) {
       this.log('[RAIN-IAS] Setup error:', err.message);
     }

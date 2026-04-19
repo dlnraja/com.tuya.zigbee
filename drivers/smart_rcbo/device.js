@@ -42,7 +42,7 @@ class SmartRCBODevice extends UnifiedPlugBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[RCBO] ✅ Ready');
+    this.log('[RCBO]  Ready');
   }
 
 

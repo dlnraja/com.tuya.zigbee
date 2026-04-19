@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔧 CORRECTION ISSUES RESTANTES - FLOW CARDS\n');
+console.log(' CORRECTION ISSUES RESTANTES - FLOW CARDS\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -250,45 +250,45 @@ function addMissingRunListener(driverName, conditionId) {
   return true;
 }
 
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 // EXÉCUTION
-// ═══════════════════════════════════════════════════════════════════════════════
+// 
 
-console.log('📊 Issues critiques restantes:\n');
+console.log(' Issues critiques restantes:\n');
 console.log(`   Missing registrations: ${auditReport.issues.missingRegistration.length}`);
 console.log(`   Missing runListeners: ${auditReport.issues.missingRunListener.length}\n`);
 
-console.log('═══════════════════════════════════════════════════════════════════════════════');
+console.log('');
 console.log('CORRECTION MISSING REGISTRATIONS');
-console.log('═══════════════════════════════════════════════════════════════════════════════\n');
+console.log('\n');
 
 auditReport.issues.missingRegistration.forEach(issue => {
   const fixed = addMissingRegistration(issue.driver, issue.type, issue.id);
   if (fixed) {
-    console.log(`   ✅ ${issue.driver}: ${issue.type} '${issue.id}' ajouté`);
+    console.log(`    ${issue.driver}: ${issue.type} '${issue.id}' ajouté`);
     stats.driversFixed++;
   }
 });
 
-console.log('\n═══════════════════════════════════════════════════════════════════════════════');
+console.log('\n');
 console.log('CORRECTION MISSING RUNLISTENERS');
-console.log('═══════════════════════════════════════════════════════════════════════════════\n');
+console.log('\n');
 
 auditReport.issues.missingRunListener.forEach(issue => {
   const fixed = addMissingRunListener(issue.driver, issue.id);
   if (fixed) {
-    console.log(`   ✅ ${issue.driver}: runListener pour '${issue.id}' ajouté`);
+    console.log(`    ${issue.driver}: runListener pour '${issue.id}' ajouté`);
   }
 });
 
-console.log('\n═══════════════════════════════════════════════════════════════════════════════');
+console.log('\n');
 console.log('STATISTIQUES');
-console.log('═══════════════════════════════════════════════════════════════════════════════\n');
+console.log('\n');
 
 console.log(`   Registrations ajoutées: ${stats.registrationsAdded}`);
 console.log(`   RunListeners ajoutés: ${stats.runListenersAdded}`);
 console.log(`   Backups créés: ${stats.backupsCreated}\n`);
 
-console.log('✅ CORRECTIONS TERMINÉES\n');
+console.log(' CORRECTIONS TERMINÉES\n');
 
 process.exit(0);

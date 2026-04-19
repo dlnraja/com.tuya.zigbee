@@ -8,7 +8,7 @@ const ROOT = process.cwd();
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
 async function main() {
-  console.log('✨ ADAPTIVE LIGHTING ENFORCER - ACTIVATED');
+  console.log(' ADAPTIVE LIGHTING ENFORCER - ACTIVATED');
   console.log('==========================================');
 
   const entries = fs.readdirSync(DRIVERS_DIR);
@@ -22,7 +22,7 @@ async function main() {
         
         // Only fix if it has 'dim' but NOT 'light_color_temp'
         if (compose.capabilities?.includes('dim') && !compose.capabilities?.includes('light_color_temp')) {
-          console.log(`🛠️  Compensating ${entry}...`);
+          console.log(`  Compensating ${entry}...`);
           
           // 1. Add capability
           compose.capabilities.push('light_color_temp');
@@ -49,10 +49,10 @@ async function main() {
           }
 
           fs.writeFileSync(composePath, JSON.stringify(compose, null, 2));
-          console.log(`   ✅ Added light_color_temp to ${entry}`);
+          console.log(`    Added light_color_temp to ${entry}`);
         }
       } catch (e) {
-        console.error(`   ❌ Failed ${entry}: ${e.message}`);
+        console.error(`    Failed ${entry}: ${e.message}`);
       }
     }
   }

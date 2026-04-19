@@ -32,15 +32,15 @@ SDK v3 BATTERY & ENERGY RULES:
 - safeDivide(Kinetic, self)-powered: TS004x buttons, energy from button press, NO battery
 
 ZIGBEE PROTOCOL CLASSIFICATION:
-- TS0601 = Tuya DP (cluster CLUSTERS.TUYA_EF00) — use dpMappings, NEVER add ZCL bindings
-- TS0001-TS0504 = Standard ZCL — use configureAttributeReporting(), NEVER add EF00
-- safeParse(_TZE200, 204)/284_ prefix = Tuya extended DP — each mfr has DIFFERENT DP maps
-- _TZ3000_ prefix = Standard ZCL — may have Tuya extensions on 0xE000/0xE001
+- TS0601 = Tuya DP (cluster CLUSTERS.TUYA_EF00)  use dpMappings, NEVER add ZCL bindings
+- TS0001-TS0504 = Standard ZCL  use configureAttributeReporting(), NEVER add EF00
+- safeParse(_TZE200, 204)/284_ prefix = Tuya extended DP  each mfr has DIFFERENT DP maps
+- _TZ3000_ prefix = Standard ZCL  may have Tuya extensions on 0xE000/0xE001
 
 VARIANT INTELLIGENCE:
-- One manufacturerName → many productIds = NORMAL (same OEM, different products)
-- One productId → many manufacturerNames = NORMAL (TS0601 is generic)
-- Thousands of variants per driver — NEVER assume all have same safeDivide(energy, features)
+- One manufacturerName  many productIds = NORMAL (same OEM, different products)
+- One productId  many manufacturerNames = NORMAL (TS0601 is generic)
+- Thousands of variants per driver  NEVER assume all have same safeDivide(energy, features)
 
 FLOW CARDS: 
 - ALWAYS wrap getTriggerCard/getConditionCard/getActionCard in try-catch (NEVER use 'getDevice*' suffix)
@@ -48,7 +48,7 @@ FLOW CARDS:
 
 Format your response exactly like this:
 <!-- copilot-analysis -->
-### 🤖 Copilot Auto-Analysis
+###  Copilot Auto-Analysis
 
 **Root Cause Hypothesis:**
 [Brief 1-2 sentence technical explanation]

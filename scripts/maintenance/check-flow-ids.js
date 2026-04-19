@@ -9,7 +9,7 @@ const DRIVERS_DIR = path.join(__dirname, '..', '..', 'drivers');
 try {
   let appJson;
   if (!fs.existsSync(APP_JSON)) {
-    console.warn('⚠️ app.json not found, attempting to build it first...');
+    console.warn(' app.json not found, attempting to build it first...');
     // If not found, it might be first run. But typically we want to check the SOURCE files if we're in CI.
   } else {
     appJson = JSON.parse(fs.readFileSync(APP_JSON, 'utf8'));
@@ -36,7 +36,7 @@ try {
     if (flow.triggers) {
       flow.triggers.forEach(t => {
         if (triggers.has(t.id)) {
-          console.error(`❌ Duplicate Trigger ID: "${t.id}" found in "${drv}" and "${triggers.get(t.id)}"`);
+          console.error(` Duplicate Trigger ID: "${t.id}" found in "${drv}" and "${triggers.get(t.id)}"`);
           collisions++;
         }
         triggers.set(t.id, drv);
@@ -47,7 +47,7 @@ try {
     if (flow.actions) {
       flow.actions.forEach(a => {
         if (actions.has(a.id)) {
-          console.error(`❌ Duplicate Action ID: "${a.id}" found in "${drv}" and "${actions.get(a.id)}"`);
+          console.error(` Duplicate Action ID: "${a.id}" found in "${drv}" and "${actions.get(a.id)}"`);
           collisions++;
         }
         actions.set(a.id, drv);
@@ -58,7 +58,7 @@ try {
     if (flow.conditions) {
       flow.conditions.forEach(c => {
         if (conditions.has(c.id)) {
-          console.error(`❌ Duplicate Condition ID: "${c.id}" found in "${drv}" and "${conditions.get(c.id)}"`);
+          console.error(` Duplicate Condition ID: "${c.id}" found in "${drv}" and "${conditions.get(c.id)}"`);
           collisions++;
         }
         conditions.set(c.id, drv);
@@ -67,11 +67,11 @@ try {
   }
 
   if (collisions > 0) {
-    console.error(`\n🛑 FOUND ${collisions} FLOW CARD ID COLLISIONS! Build will fail.`);
+    console.error(`\n FOUND ${collisions} FLOW CARD ID COLLISIONS! Build will fail.`);
     console.error(`Recommendation: Ensure all driver-specific flow cards are prefixed with the driver ID.`);
     process.exit(1);
   } else {
-    console.log('✅ All Flow card IDs are unique across drivers.');
+    console.log(' All Flow card IDs are unique across drivers.');
   }
 
 } catch (err) {

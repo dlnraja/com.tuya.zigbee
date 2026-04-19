@@ -1,0 +1,32 @@
+name: Autonomous Shadow Publish (Test Track)
+on:
+  push:
+    branches:
+      - main
+jobs:
+  autonomous_build_and_publish:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node (Free Tier Cache)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Sanitize Code (Invisible Chars & Case-Insensitive align)
+        run: node scripts/shadow_sanitizer.js
+          
+      - name: Compile App Manifest (Fix Homey CLI Bug #366)
+        run: npx homey app build
+        
+      - name: Silent Publish to Test Track (No Notifications)
+        uses: athombv/github-action-homey-app-publish@master
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}

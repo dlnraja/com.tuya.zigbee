@@ -1,6 +1,6 @@
-# 🔧 APPLY ZIGBEE RETRY FIX - Instructions
+#  APPLY ZIGBEE RETRY FIX - Instructions
 
-## ⚠️ BaseHybridDevice.js - Édition Manuelle Requise
+##  BaseHybridDevice.js - Édition Manuelle Requise
 
 Le fichier `lib/devices/BaseHybridDevice.js` contient **12 occurrences** de `cluster.configureReporting` qui doivent être remplacées par `configureReportingWithRetry`.
 
@@ -11,7 +11,7 @@ Le fichier `lib/devices/BaseHybridDevice.js` contient **12 occurrences** de `clu
 
 ---
 
-## 📋 **INSTRUCTIONS ÉTAPE PAR ÉTAPE**
+##  **INSTRUCTIONS ÉTAPE PAR ÉTAPE**
 
 ### **Étape 1: Ouvrir le fichier**
 ```
@@ -75,7 +75,7 @@ const success = await configureReportingWithRetry(
 
 ---
 
-## 📍 **LIGNES À MODIFIER**
+##  **LIGNES À MODIFIER**
 
 Voici les numéros de ligne approximatifs (peuvent varier):
 
@@ -94,7 +94,7 @@ Voici les numéros de ligne approximatifs (peuvent varier):
 
 ---
 
-## ✅ **CHECKLIST**
+##  **CHECKLIST**
 
 Après chaque remplacement, vérifier:
 - [ ] `configureReportingWithRetry` est bien appelé
@@ -105,7 +105,7 @@ Après chaque remplacement, vérifier:
 
 ---
 
-## 🧪 **TEST RAPIDE**
+##  **TEST RAPIDE**
 
 Après modifications:
 ```bash
@@ -119,25 +119,25 @@ git commit -m "fix: replace all configureReporting with retry mechanism (12 occu
 
 ---
 
-## 💡 **ALTERNATIVE: Script de remplacement automatique**
+##  **ALTERNATIVE: Script de remplacement automatique**
 
 Si tu préfères, je peux créer un script Node.js qui fait le remplacement automatiquement, mais l'édition manuelle est plus sûre pour ce fichier complexe.
 
 **Temps estimé:** 5-10 minutes
-**Difficulté:** ⭐⭐ (Facile avec Find & Replace)
+**Difficulté:**  (Facile avec Find & Replace)
 
 ---
 
-## 📊 **IMPACT**
+##  **IMPACT**
 
 Une fois appliqué:
-- ✅ 12 appels `configureReporting` → `configureReportingWithRetry`
-- ✅ Retry automatique 3x avec backoff exponentiel
-- ✅ Taux de succès: 30% → 95%
-- ✅ Logs détaillés des failures
+-  12 appels `configureReporting`  `configureReportingWithRetry`
+-  Retry automatique 3x avec backoff exponentiel
+-  Taux de succès: 30%  95%
+-  Logs détaillés des failures
 
 ---
 
-**Status:** ⏳ EN ATTENTE D'ÉDITION MANUELLE  
+**Status:**  EN ATTENTE D'ÉDITION MANUELLE  
 **Priority:** MOYENNE (pas bloquant pour v4.9.321)  
 **Next release:** v4.9.322 (optionnel)

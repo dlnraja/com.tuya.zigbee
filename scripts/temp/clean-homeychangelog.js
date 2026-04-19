@@ -29,4 +29,4 @@ for (const version in data) {
 }
 
 fs.writeFileSync(file, JSON.stringify(data, null, 2));
-console.log('✅ Cleaned up .homeychangelog.json');
+console.log(' Cleaned up .homeychangelog.json');

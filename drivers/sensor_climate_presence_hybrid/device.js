@@ -123,7 +123,7 @@ function getSensorConfig(manufacturerName, modelId = null) {
 
   // Try exact match first (case-insensitive)
   // v5.7.41: FIX - Device reports _TZ3000_8BXRZYXZ but config has _TZ3000_8bxrzyxz
-  const mfrKey = (manufacturerName || '').toLowerCase();
+  const mfrKey = CI.normalize(manufacturerName);
   if (MANUFACTURER_CONFIG_MAP[mfrKey]) {
     return MANUFACTURER_CONFIG_MAP[mfrKey];
   }
@@ -1321,6 +1321,12 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     this.setAvailable().catch(() => { });
 
     let dpId = data.dp || data.dpId || data.datapoint;
+
+    // v7.5.0: Feed all DPs to AutonomousIntelligenceGate for heuristic learning
+    const rawVal = this._parseBufferValue(data.value || data.data);
+    if (this._intelGate && dpId !== undefined) {
+      this._intelGate.process(dpId, rawVal);
+    }
 
     // v5.8.39: Handle COMPOUND DP frames (3reality multi-DP-in-one)
     // When data.length (declared DP size) < actual buffer, slice and parse sub-DPs

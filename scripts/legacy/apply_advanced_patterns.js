@@ -298,7 +298,7 @@ async function applyPattern(driverPath, driverName, patternName, pattern) {
 }
 
 async function applyAdvancedPatterns() {
-  console.log('🔧 APPLYING ADVANCED PATTERNS FROM FORUM ANALYSIS\n');
+  console.log(' APPLYING ADVANCED PATTERNS FROM FORUM ANALYSIS\n');
 
   const stats = {};
   const details = {};
@@ -326,7 +326,7 @@ async function applyAdvancedPatterns() {
         if (result.added) {
           stats[patternName].added++;
           details[patternName].push({ driver: driverName, ...result });
-          console.log(`✅ ${patternName}: ${driverName}`);
+          console.log(` ${patternName}: ${driverName}`);
           if (result.changes.triggers.length) console.log(`   Triggers: ${result.changes.triggers.join(', ')}`);
           if (result.changes.actions.length) console.log(`   Actions: ${result.changes.actions.join(', ')}`);
           if (result.changes.settings.length) console.log(`   Settings: ${result.changes.settings.join(', ')}`);
@@ -334,19 +334,19 @@ async function applyAdvancedPatterns() {
           stats[patternName].skipped++;
         }
       } catch (err) {
-        console.error(`❌ ${patternName}: ${driverName} - ${err.message}`);
+        console.error(` ${patternName}: ${driverName} - ${err.message}`);
       }
     }
   }
 
-  console.log('\n═══════════════════════════════════════════════════════════════');
+  console.log('\n');
   console.log('STATISTICS');
-  console.log('═══════════════════════════════════════════════════════════════\n');
+  console.log('\n');
 
   let totalAdded = 0;
   for (const [patternName, stat] of Object.entries(stats)) {
     if (stat.added > 0) {
-      console.log(`${patternName}: ✅ ${stat.added} drivers`);
+      console.log(`${patternName}:  ${stat.added} drivers`);
       totalAdded += stat.added;
     }
   }
@@ -355,7 +355,7 @@ async function applyAdvancedPatterns() {
 
   const reportPath = path.join(__dirname, '../ADVANCED_PATTERNS_REPORT.json');
   await writeJSON(reportPath, { stats, details, timestamp: new Date().toISOString() });
-  console.log(`\n📄 Report saved: ${reportPath}`);
+  console.log(`\n Report saved: ${reportPath}`);
 
   return { stats, totalAdded };
 }
@@ -363,11 +363,11 @@ async function applyAdvancedPatterns() {
 if (require.main === module) {
   applyAdvancedPatterns()
     .then(({ totalAdded }) => {
-      console.log(`\n✅ ADVANCED PATTERNS APPLIED (${totalAdded} drivers enhanced)`);
+      console.log(`\n ADVANCED PATTERNS APPLIED (${totalAdded} drivers enhanced)`);
       process.exit(0);
     })
     .catch((err) => {
-      console.error('\n❌ ERROR:', err);
+      console.error('\n ERROR:', err);
       process.exit(1);
     });
 }

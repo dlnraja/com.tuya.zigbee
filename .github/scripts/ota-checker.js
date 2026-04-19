@@ -22,10 +22,10 @@ async function checkOta(manufacturerName) {
         }
         
         if (found.length > 0) {
-            console.log(`✅ Found ${found.length} OTA firmwares matching ${manufacturerName}:`);
+            console.log(` Found ${found.length} OTA firmwares matching ${manufacturerName}:`);
             found.forEach(fw => console.log(`  - URL: ${fw.url}`));
         } else {
-            console.log(`❌ No public OTA firmwares found for ${manufacturerName}`);
+            console.log(` No public OTA firmwares found for ${manufacturerName}`);
             console.log('Tuya devices exclusively perform OTA via Tuya gateways unless intercepted.');
         }
     } catch (e) {

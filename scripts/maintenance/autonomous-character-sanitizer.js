@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * 🛠️ AUTONOMOUS CHARACTER SANITIZER v1.0
+ *  AUTONOMOUS CHARACTER SANITIZER v1.0
  * Recursively scans the project for invisible characters (null bytes, control chars, 
  * non-breaking spaces) and automatically removes/replaces them.
  * 
@@ -57,7 +57,7 @@ function processDirectory(dir) {
 
         if (sanitized !== content) {
           fs.writeFileSync(fullPath, sanitized, 'utf8');
-          console.log(`✨ Sanitized: ${path.relative(ROOT, fullPath)}`);
+          console.log(` Sanitized: ${path.relative(ROOT, fullPath)}`);
           stats.filesFixed++;
         }
       }
@@ -65,14 +65,14 @@ function processDirectory(dir) {
   }
 }
 
-console.log('🚀 Starting Autonomous Character Sanitization...');
+console.log(' Starting Autonomous Character Sanitization...');
 try {
   processDirectory(ROOT);
-  console.log('\n📊 Sanitization Summary:');
+  console.log('\n Sanitization Summary:');
   console.log(`- Files Checked: ${stats.filesChecked}`);
   console.log(`- Files Fixed: ${stats.filesFixed}`);
   console.log(`- Invisible Characters Removed: ${stats.charsRemoved}`);
-  console.log('\n✅ System Integrity Restored.');
+  console.log('\n System Integrity Restored.');
 } catch (error) {
-  console.error(`❌ Error during sanitization: ${error.message}`);
+  console.error(` Error during sanitization: ${error.message}`);
 }

@@ -64,22 +64,22 @@
             {
               "id": "standard_6_orders",
               "label": {
-                "en": "🔥 Standard 6 Orders (Confort/Eco/Hors-Gel/Arrêt/Confort-1/Confort-2)",
-                "fr": "🔥 Standard 6 Ordres (Confort/Eco/Hors-Gel/Arrêt/Confort-1/Confort-2)"
+                "en": " Standard 6 Orders (Confort/Eco/Hors-Gel/Arrêt/Confort-1/Confort-2)",
+                "fr": " Standard 6 Ordres (Confort/Eco/Hors-Gel/Arrêt/Confort-1/Confort-2)"
               }
             },
             {
               "id": "standard_4_orders",
               "label": {
-                "en": "⚡ Standard 4 Orders (Confort/Eco/Hors-Gel/Arrêt)",
-                "fr": "⚡ Standard 4 Ordres (Confort/Eco/Hors-Gel/Arrêt)"
+                "en": " Standard 4 Orders (Confort/Eco/Hors-Gel/Arrêt)",
+                "fr": " Standard 4 Ordres (Confort/Eco/Hors-Gel/Arrêt)"
               }
             },
             {
               "id": "simple_on_off",
               "label": {
-                "en": "🔌 Simple ON/OFF",
-                "fr": "🔌 Simple MARCHE/ARRÊT"
+                "en": " Simple ON/OFF",
+                "fr": " Simple MARCHE/ARRÊT"
               }
             }
           ]
@@ -100,22 +100,22 @@
             {
               "id": "single_1n4007",
               "label": {
-                "en": "🔴 Single 1N4007 (Mono-directional)",
-                "fr": "🔴 Simple 1N4007 (Mono-directionnel)"
+                "en": " Single 1N4007 (Mono-directional)",
+                "fr": " Simple 1N4007 (Mono-directionnel)"
               }
             },
             {
               "id": "dual_1n4007",
               "label": {
-                "en": "🔴🔴 Dual 1N4007 (Bi-directional)",
-                "fr": "🔴🔴 Double 1N4007 (Bi-directionnel)"
+                "en": " Dual 1N4007 (Bi-directional)",
+                "fr": " Double 1N4007 (Bi-directionnel)"
               }
             },
             {
               "id": "none",
               "label": {
-                "en": "⚪ No Diode (Direct connection)",
-                "fr": "⚪ Pas de Diode (Connexion directe)"
+                "en": " No Diode (Direct connection)",
+                "fr": " Pas de Diode (Connexion directe)"
               }
             }
           ]
@@ -132,43 +132,43 @@
             {
               "id": "confort",
               "label": {
-                "en": "🏠 Confort (100%)",
-                "fr": "🏠 Confort (100%)"
+                "en": " Confort (100%)",
+                "fr": " Confort (100%)"
               }
             },
             {
               "id": "eco",
               "label": {
-                "en": "🌱 Éco (-3°C/4°C)",
-                "fr": "🌱 Éco (-3°C/4°C)"
+                "en": " Éco (-3°C/4°C)",
+                "fr": " Éco (-3°C/4°C)"
               }
             },
             {
               "id": "confort_minus_1",
               "label": {
-                "en": "🌡️ Confort -1°C",
-                "fr": "🌡️ Confort -1°C"
+                "en": " Confort -1°C",
+                "fr": " Confort -1°C"
               }
             },
             {
               "id": "confort_minus_2",
               "label": {
-                "en": "❄️ Confort -2°C",
-                "fr": "❄️ Confort -2°C"
+                "en": " Confort -2°C",
+                "fr": " Confort -2°C"
               }
             },
             {
               "id": "anti_freeze",
               "label": {
-                "en": "🧊 Hors-Gel (7°C)",
-                "fr": "🧊 Hors-Gel (7°C)"
+                "en": " Hors-Gel (7°C)",
+                "fr": " Hors-Gel (7°C)"
               }
             },
             {
               "id": "off",
               "label": {
-                "en": "⛔ Arrêt",
-                "fr": "⛔ Arrêt"
+                "en": " Arrêt",
+                "fr": " Arrêt"
               }
             }
           ]
@@ -555,37 +555,37 @@
               {
                 "id": "confort",
                 "title": {
-                  "en": "🏠 Confort"
+                  "en": " Confort"
                 }
               },
               {
                 "id": "eco",
                 "title": {
-                  "en": "🌱 Éco"
+                  "en": " Éco"
                 }
               },
               {
                 "id": "confort_minus_1",
                 "title": {
-                  "en": "🌡️ Confort -1°C"
+                  "en": " Confort -1°C"
                 }
               },
               {
                 "id": "confort_minus_2",
                 "title": {
-                  "en": "❄️ Confort -2°C"
+                  "en": " Confort -2°C"
                 }
               },
               {
                 "id": "anti_freeze",
                 "title": {
-                  "en": "🧊 Hors-Gel"
+                  "en": " Hors-Gel"
                 }
               },
               {
                 "id": "off",
                 "title": {
-                  "en": "⛔ Arrêt"
+                  "en": " Arrêt"
                 }
               }
             ]

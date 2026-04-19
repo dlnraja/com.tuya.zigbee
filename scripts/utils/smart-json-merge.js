@@ -49,7 +49,7 @@ function mergeFiles(fileA, fileB, targetFile) {
   });
   
   fs.writeFileSync(targetFile, JSON.stringify(sorted, null, 2));
-  console.log(`✅ Success: ${Object.keys(sorted).length} entries merged.`);
+  console.log(` Success: ${Object.keys(sorted).length} entries merged.`);
 }
 
 if (require.main === module) {

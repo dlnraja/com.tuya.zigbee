@@ -34,7 +34,7 @@ class LockSmartDevice extends UnifiedSensorBase {
 
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
-    this.log('[LOCK] ✅ Ready');
+    this.log('[LOCK]  Ready');
   }
 
 

@@ -3,10 +3,6 @@
 const { Driver } = require('homey');
 
 class IRRemoteDriver extends Driver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -20,25 +16,39 @@ class IRRemoteDriver extends Driver {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
     this.log('Zigbee IR Remote driver initialized');
+    this._registerFlowCards();
+  }
 
-    // Action: Send IR code
-    (() => { try { return this.homey.flow.getActionCard('ir_remote_send_code'); } catch(e) { return null; } })()
-      .registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) throw new Error('No device');
-        await device._sendIR(args.ir_code);
-      });
+  _registerFlowCards() {
+    // TRIGGERS
+    try { this.homey.flow.getTriggerCard('blaster_remote_hybrid_ir_remote_code_learned'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('blaster_remote_hybrid_ir_code_received'); } catch (e) {}
 
-    // Action: Start learning
-    (() => { try { return
+    // ACTIONS
+    try {
+      const card = this.homey.flow.getActionCard('blaster_remote_hybrid_ir_remote_send_code');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device._sendIR === 'function') await args.device._sendIR(args.ir_code || args.code);
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action blaster_remote_hybrid_ir_remote_send_code: ${err.message}`); }
 
-      .registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) throw new Error('No device');
-        await device._startLearn();
-      });
+    try {
+      const card = this.homey.flow.getActionCard('blaster_remote_hybrid_ir_remote_start_learning');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          if (typeof args.device._startLearn === 'function') await args.device._startLearn();
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action blaster_remote_hybrid_ir_remote_start_learning: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

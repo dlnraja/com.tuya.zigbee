@@ -51,11 +51,11 @@ const inferDeviceType = (productId, description) => {
 };
 
 async function main() {
-  console.log('🌐 Community Sync Starting...\n');
+  console.log(' Community Sync Starting...\n');
   fs.mkdirSync(OUT, { recursive: true });
 
   const current = getCurrentFingerprints();
-  console.log(`📊 Current fingerprints in app: ${current.size}`);
+  console.log(` Current fingerprints in app: ${current.size}`);
 
   const r = { 
     ts: new Date().toISOString(), 
@@ -67,7 +67,7 @@ async function main() {
 
   // v7.0.22: Johan sync (INTERNAL ONLY - Silent Source Doctrine)
   try {
-    console.log('\n🔄 JohanBendz sync (Silent)...');
+    console.log('\n JohanBendz sync (Silent)...');
     r.src.johan = require('./extract-johan')();
     if (r.src.johan.fingerprints) {
       r.src.johan.fingerprints.forEach(fp => {
@@ -80,7 +80,7 @@ async function main() {
 
   // Z2M sync (async) - Now with enriched data
   try {
-    console.log('🔄 Zigbee2MQTT sync...');
+    console.log(' Zigbee2MQTT sync...');
     r.src.z2m = await require('./extract-z2m')();
     if (r.src.z2m.fingerprints) {
       r.src.z2m.fingerprints.forEach(fp => {
@@ -94,7 +94,7 @@ async function main() {
 
   // GitHub issues (async)
   try {
-    console.log('🔄 GitHub issues sync...');
+    console.log(' GitHub issues sync...');
     r.src.gh = await require('./parse-issues')();
   } catch(e) { r.src.gh = { error: e.message }; }
 
@@ -116,13 +116,13 @@ async function main() {
   r.newCount = r.newFps.length;
   r.enrichedCount = r.enrichedFps.length;
   
-  console.log(`\n✅ Found ${r.newCount} NEW fingerprints not in current app`);
-  console.log(`📊 Total enriched fingerprints: ${r.enrichedCount}`);
+  console.log(`\n Found ${r.newCount} NEW fingerprints not in current app`);
+  console.log(` Total enriched fingerprints: ${r.enrichedCount}`);
 
   fs.writeFileSync(path.join(OUT, 'report.json'), JSON.stringify(r, null, 2));
   fs.writeFileSync(path.join(OUT, 'new-fingerprints.json'), JSON.stringify(r.newFps, null, 2));
   fs.writeFileSync(path.join(OUT, 'all-enriched.json'), JSON.stringify(r.enrichedFps, null, 2));
-  console.log('✅ Sync complete - reports saved to data/community-sync/');
+  console.log(' Sync complete - reports saved to data/community-sync/');
 }
 
-main().catch(e => { console.error('❌ Fatal:', e); process.exit(1); });
+main().catch(e => { console.error(' Fatal:', e); process.exit(1); });

@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔧 CORRECTION AUTOMATIQUE INTELLIGENTE - TOUS PROBLÈMES SDK3\n');
+console.log(' CORRECTION AUTOMATIQUE INTELLIGENTE - TOUS PROBLÈMES SDK3\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -215,7 +215,7 @@ function processDriver(driverPath) {
 
       // Limiter à 15 max (sauf si moins)
       if (filteredIds.length > 15 && category !== 'generic') {
-        console.log(`   ⚠️  ${driverName}: ${originalCount} IDs → limitant à 15 les plus pertinents`);
+        console.log(`     ${driverName}: ${originalCount} IDs  limitant à 15 les plus pertinents`);
         // Garder les TS* en priorité, puis les _TZ*
         const tsIds = filteredIds.filter(id => id.startsWith('TS'));
         const tzIds = filteredIds.filter(id => id.startsWith('_TZ'));
@@ -230,7 +230,7 @@ function processDriver(driverPath) {
         stats.manufacturerIdsRemoved += (originalCount - filteredIds.length);
 
         if (originalCount - filteredIds.length > 0) {
-          console.log(`   ✅ ${driverName}: ${originalCount} → ${filteredIds.length} manufacturer IDs (catégorie: ${category})`);
+          console.log(`    ${driverName}: ${originalCount}  ${filteredIds.length} manufacturer IDs (catégorie: ${category})`);
         }
       }
     }
@@ -260,7 +260,7 @@ function processDriver(driverPath) {
     }
 
   } catch (e) {
-    console.error(`   ❌ Erreur ${driverName}:`, e.message);
+    console.error(`    Erreur ${driverName}:`, e.message);
   }
 }
 
@@ -281,24 +281,24 @@ function scanDrivers() {
 }
 
 // EXÉCUTION
-console.log('🔍 Analyse des drivers par catégorie...\n');
+console.log(' Analyse des drivers par catégorie...\n');
 scanDrivers();
 
-console.log('\n\n📊 RAPPORT CORRECTIONS:\n');
+console.log('\n\n RAPPORT CORRECTIONS:\n');
 console.log(`   Drivers analysés: ${stats.driversAnalyzed}`);
 console.log(`   Drivers modifiés: ${stats.driversModified}`);
 console.log(`   Manufacturer IDs supprimés: ${stats.manufacturerIdsRemoved}`);
 console.log(`   Backups créés: ${stats.backupsCreated}\n`);
 
 if (stats.driversModified > 0) {
-  console.log('✅ CORRECTIONS APPLIQUÉES\n');
-  console.log('🎯 PROCHAINES ÉTAPES:');
+  console.log(' CORRECTIONS APPLIQUÉES\n');
+  console.log(' PROCHAINES ÉTAPES:');
   console.log('   1. Relancer audit: node scripts/audit_complete_advanced.js');
   console.log('   2. Valider: homey app validate --level publish');
   console.log('   3. Build: homey app build');
   console.log('   4. Commit & push\n');
 } else {
-  console.log('✅ AUCUNE CORRECTION NÉCESSAIRE\n');
+  console.log(' AUCUNE CORRECTION NÉCESSAIRE\n');
 }
 
 process.exit(0);

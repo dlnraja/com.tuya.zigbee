@@ -37,11 +37,11 @@ jobs:
       - name: "Summary"
         if: always()
         run: |
-          echo "✅ Intelligent auto-response workflow completed"
+          echo " Intelligent auto-response workflow completed"
 `;
 
 fs.writeFileSync('.github/workflows/intelligent-auto-respond.yml', workflowYml);
-console.log('✅ Created intelligent-auto-respond.yml workflow');
+console.log(' Created intelligent-auto-respond.yml workflow');
 
 // Create enhanced issue comment handler
 const commentHandler = `
@@ -81,7 +81,7 @@ async function handleComment(context) {
       owner: context.repo.owner,
       repo: context.repo.repo,
       issue_number: issue.number,
-      body: '✅ Thank you for providing diagnostics! This helps tremendously. I will review and respond shortly.'
+      body: ' Thank you for providing diagnostics! This helps tremendously. I will review and respond shortly.'
     });
   }
   
@@ -98,7 +98,7 @@ async function handleComment(context) {
       owner: context.repo.owner,
       repo: context.repo.repo,
       issue_number: issue.number,
-      body: '🎉 Great to hear it\\'s working! I\\'ll close this issue. Feel free to reopen if you encounter any other problems.'
+      body: ' Great to hear it\\'s working! I\\'ll close this issue. Feel free to reopen if you encounter any other problems.'
     });
     
     await context.octokit.issues.update({
@@ -123,7 +123,7 @@ async function handleComment(context) {
       owner: context.repo.owner,
       repo: context.repo.repo,
       issue_number: issue.number,
-      body: '⚠️ Sorry to hear the issue persists. This has been escalated for deeper investigation. Please ensure you\\'ve provided:\n\n- Full diagnostic report\n- App version number\n- Exact manufacturer name and product ID\n- Complete error messages from logs\n\nThis will help identify the root cause.'
+      body: ' Sorry to hear the issue persists. This has been escalated for deeper investigation. Please ensure you\\'ve provided:\n\n- Full diagnostic report\n- App version number\n- Exact manufacturer name and product ID\n- Complete error messages from logs\n\nThis will help identify the root cause.'
     });
   }
 }
@@ -132,7 +132,7 @@ module.exports = { handleComment };
 `;
 
 fs.writeFileSync('.github/scripts/handle-issue-comments.js', commentHandler);
-console.log('✅ Created intelligent comment handler');
+console.log(' Created intelligent comment handler');
 
 // Create DP learning system for future auto-detection
 const dpLearner = `
@@ -223,6 +223,6 @@ module.exports = { DPLearningSystem };
 `;
 
 fs.writeFileSync('.github/scripts/dp-learning-system.js', dpLearner);
-console.log('✅ Created DP learning system for pattern recognition');
+console.log(' Created DP learning system for pattern recognition');
 
-console.log('\n🎯 All intelligent automation systems created!');
+console.log('\n All intelligent automation systems created!');

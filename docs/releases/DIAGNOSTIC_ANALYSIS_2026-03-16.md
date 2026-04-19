@@ -1,7 +1,7 @@
 # Comprehensive Diagnostic Analysis Report
 **Date:** 2026-03-16 | **App Version:** v5.11.125
 
-## 📊 Sources Analyzed
+##  Sources Analyzed
 
 ### 1. Gmail Diagnostics (3 reports)
 - **imap_500881** - _TZE200_pay2byax contact sensor (forum post, already supported)
@@ -18,7 +18,7 @@
 - **Issue #1351:** PIR Motion Brightness _TZE284_bquwrqh1 - wrong driver
 - **Open PRs:** 8 (various fingerprint additions)
 
-## ✅ Fixes Implemented
+##  Fixes Implemented
 
 ### Fix #1: _TZE284_bquwrqh1 Driver Correction (Issue #1351)
 **Problem:** PIR Motion Brightness sensor in presence_sensor_radar (wrong driver)
@@ -29,13 +29,13 @@
 
 ### Fix #2: Fingerprint Analysis
 **Reviewed 12 "unsupported" forum FPs:**
-- ✅ _TZ3000_22ugzkme - Already added to button_wireless_1 (earlier session)
-- ⚠️ _TZ3000_zgyzgd - Similar to _TZ3000_zgyzgdua (button_wireless_4) - possible typo
-- ⚠️ _TZE204_ztqnh5c - Similar to _TZE204_ztqnh5cg (presence_sensor_radar) - possible typo
-- ⚠️ _TZ3000_ztc6ggyl - Exists as _TZE204_ztc6ggyl (presence_sensor_radar) - different prefix
-- 🔍 Remaining 8 FPs need product IDs from forum diagnostics to add
+-  _TZ3000_22ugzkme - Already added to button_wireless_1 (earlier session)
+-  _TZ3000_zgyzgd - Similar to _TZ3000_zgyzgdua (button_wireless_4) - possible typo
+-  _TZE204_ztqnh5c - Similar to _TZE204_ztqnh5cg (presence_sensor_radar) - possible typo
+-  _TZ3000_ztc6ggyl - Exists as _TZE204_ztc6ggyl (presence_sensor_radar) - different prefix
+-  Remaining 8 FPs need product IDs from forum diagnostics to add
 
-## 📋 Pending Actions
+##  Pending Actions
 
 ### GitHub Issue #97: _TZ321C_fkzihaxe8 No Values
 **Status:** Device already supported in presence_sensor_radar driver
@@ -60,7 +60,7 @@
 - Flag: ANNOUNCE
 - Investigation: Check if this is initial pairing announcement or issue
 
-## 📈 Statistics
+##  Statistics
 
 - **Drivers:** 188
 - **Total Fingerprints:** 4,731+
@@ -69,7 +69,7 @@
 - **Forum Posts Reviewed:** 300+
 - **Commits:** 2 (OAuth migration + driver fix)
 
-## 🎯 Summary
+##  Summary
 
 **Fixed:** _TZE284_bquwrqh1 PIR driver mismatch (Issue #1351)
 **Verified:** _TZ321C_fkzihaxe8 already supported (Issue #97 - enrollment issue)

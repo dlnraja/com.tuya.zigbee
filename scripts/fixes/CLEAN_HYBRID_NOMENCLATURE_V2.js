@@ -47,7 +47,7 @@ function processObject(obj) {
 }
 
 function processDrivers() {
-  console.log('🧹 Purging "Hybrid" branding from manifests...');
+  console.log(' Purging "Hybrid" branding from manifests...');
   const drivers = fs.readdirSync(DRIVERS_DIR);
   
   drivers.forEach(d => {
@@ -80,7 +80,7 @@ function processDrivers() {
     });
   });
   
-  console.log('✨ Branding cleanup complete.');
+  console.log(' Branding cleanup complete.');
 }
 
 processDrivers();

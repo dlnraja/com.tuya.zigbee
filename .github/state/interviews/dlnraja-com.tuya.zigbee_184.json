@@ -10,7 +10,7 @@
     "_TZE284_8se38w3c"
   ],
   "bodyLength": 5256,
-  "excerpt": "## 📱 Basic Information\n\n**Brand & Model**: Temperature &humidity sensor with external probe\n**Purchase Link**:  https://www.aliexpress.com/item/1005011541019564.html?spm=a2g0o.order_list.order_list_main.4.54131802dwTFsPhttps:
+  "excerpt": "##  Basic Information\n\n**Brand & Model**: Temperature &humidity sensor with external probe\n**Purchase Link**:  https://www.aliexpress.com/item/1005011541019564.html?spm=a2g0o.order_list.order_list_main.4.54131802dwTFsPhttps:
   "diagComments": [
     {
       "user": "github-actions[bot]",
@@ -18,7 +18,7 @@
       "fps": [
         "_TZE284_8se38w3c"
       ],
-      "excerpt": "<!-- tuya-triage-bot -->\nFingerprint(s) found in v5.11.154:\n\n- `_TZE284_8se38w3c` → **climate_sensor**\n- `TS0601` → **unknown**\n\nInstall the [test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/), **remove the device, and re-pair** so it picks up the correct driver.\n\n**If the device still shows as unknown or doesn't work**, please share a diagnostic report ID and a [Developer Tools interview](https:
+      "excerpt": "<!-- tuya-triage-bot -->\nFingerprint(s) found in v5.11.154:\n\n- `_TZE284_8se38w3c`  **climate_sensor**\n- `TS0601`  **unknown**\n\nInstall the [test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/), **remove the device, and re-pair** so it picks up the correct driver.\n\n**If the device still shows as unknown or doesn't work**, please share a diagnostic report ID and a [Developer Tools interview](https:
     },
     {
       "user": "pemikalsen-sudo",

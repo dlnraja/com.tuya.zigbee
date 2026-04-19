@@ -24,16 +24,16 @@ class FlowRestorerAndFixer {
    * Restaure le backup et applique corrections conservatives
    */
   async restoreAndFix() {
-    console.log('🔄 RESTORING FROM BACKUP AND APPLYING CONSERVATIVE FIXES...');
+    console.log(' RESTORING FROM BACKUP AND APPLYING CONSERVATIVE FIXES...');
 
     // Trouver le backup le plus récent
     const latestBackup = this.findLatestBackup();
     if (!latestBackup) {
-      console.log('❌ No backup found!');
+      console.log(' No backup found!');
       return;
     }
 
-    console.log(`📦 Restoring from: ${latestBackup}`);
+    console.log(` Restoring from: ${latestBackup}`);
 
     // Restaurer les flows depuis le backup
     await this.restoreFromBackup(latestBackup);
@@ -62,10 +62,10 @@ class FlowRestorerAndFixer {
    * Restaure les flows depuis le backup
    */
   async restoreFromBackup(backupDir) {
-    console.log('🔄 Restoring flow files...');
+    console.log(' Restoring flow files...');
 
     await this.copyFlowFilesRecursive(backupDir, this.driversPath);
-    console.log('✅ Flow files restored from backup');
+    console.log(' Flow files restored from backup');
   }
 
   /**
@@ -95,7 +95,7 @@ class FlowRestorerAndFixer {
    * Applique corrections conservatives (seulement les problèmes critiques)
    */
   async applyConservativeFixes() {
-    console.log('🔧 Applying conservative fixes...');
+    console.log(' Applying conservative fixes...');
 
     // Lister tous les drivers
     const drivers = fs.readdirSync(this.driversPath);
@@ -159,11 +159,11 @@ class FlowRestorerAndFixer {
       // Sauvegarder seulement si nécessaire
       if (modified) {
         fs.writeFileSync(flowPath, JSON.stringify(flows, null, 2));
-        console.log(`✅ Applied conservative fixes to ${driverName}`);
+        console.log(` Applied conservative fixes to ${driverName}`);
       }
 
     } catch (error) {
-      console.log(`⚠️ Error processing ${driverName}: ${error.message}`);
+      console.log(` Error processing ${driverName}: ${error.message}`);
     }
   }
 
@@ -219,7 +219,7 @@ class FlowRestorerAndFixer {
           if (flow.id) {
             if (seenIds.has(flow.id)) {
               duplicatesInThis++;
-              console.log(`⚠️  Duplicate detected in ${driverName}: ${flow.id}`);
+              console.log(`  Duplicate detected in ${driverName}: ${flow.id}`);
             } else {
               seenIds.set(flow.id, true);
             }
@@ -230,7 +230,7 @@ class FlowRestorerAndFixer {
 
     if (duplicatesInThis > 0) {
       this.results.duplicatesFound += duplicatesInThis;
-      console.log(`📊 ${driverName}: ${duplicatesInThis} duplicates found (not auto-fixed)`);
+      console.log(` ${driverName}: ${duplicatesInThis} duplicates found (not auto-fixed)`);
     }
   }
 
@@ -238,20 +238,20 @@ class FlowRestorerAndFixer {
    * Génère le rapport final
    */
   generateReport() {
-    console.log('\n📊 RESTORATION & CONSERVATIVE FIX RESULTS:');
-    console.log('═'.repeat(60));
+    console.log('\n RESTORATION & CONSERVATIVE FIX RESULTS:');
+    console.log(''.repeat(60));
     console.log(`Files restored: ${this.results.restored}`);
     console.log(`Conservative fixes applied: ${this.results.conservativelyFixed}`);
     console.log(`Duplicates detected (not fixed): ${this.results.duplicatesFound}`);
 
-    console.log('\n✅ CONSERVATIVE APPROACH COMPLETED:');
+    console.log('\n CONSERVATIVE APPROACH COMPLETED:');
     console.log('- Original flow files restored from backup');
     console.log('- Only critical ID issues fixed (>80 chars, invalid chars)');
     console.log('- Multi-gang switches preserved as-is');
     console.log('- Duplicates detected but NOT automatically merged');
     console.log('- Backward compatibility maintained');
 
-    console.log('\n💡 NEXT STEPS:');
+    console.log('\n NEXT STEPS:');
     if (this.results.duplicatesFound > 0) {
       console.log('- Manual review required for duplicate flows');
       console.log('- Consider driver-specific solutions for multi-gang switches');
@@ -270,7 +270,7 @@ class FlowRestorerAndFixer {
     };
 
     fs.writeFileSync('flow_restoration_report.json', JSON.stringify(report, null, 2));
-    console.log('\n💾 Report saved: flow_restoration_report.json');
+    console.log('\n Report saved: flow_restoration_report.json');
   }
 }
 

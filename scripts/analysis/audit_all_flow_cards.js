@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log('🔍 AUDIT EXHAUSTIF FLOW CARDS - TOUS DRIVERS\n');
+console.log(' AUDIT EXHAUSTIF FLOW CARDS - TOUS DRIVERS\n');
 
 const ROOT = path.join(__dirname, '..', '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -61,9 +61,9 @@ function scanDriver(driverName) {
       issues: []
     };
 
-    // ═══════════════════════════════════════════════════════════════════════════
+    // 
     // CHECK 1: Flow cards définis mais non enregistrés dans driver.js
-    // ═══════════════════════════════════════════════════════════════════════════
+    // 
 
     triggers.forEach(trigger => {
       const registrationPattern = `getTriggerCard('${trigger.id}')`;
@@ -120,9 +120,9 @@ function scanDriver(driverName) {
       }
     });
 
-    // ═══════════════════════════════════════════════════════════════════════════
+    // 
     // CHECK 2: Triggers appelés dans device.js mais non définis
-    // ═══════════════════════════════════════════════════════════════════════════
+    // 
 
     const triggerMatches = deviceJs.match(/getTriggerCard\('([^']+)'\)/g);
     if (triggerMatches) {
@@ -142,9 +142,9 @@ function scanDriver(driverName) {
       });
     }
 
-    // ═══════════════════════════════════════════════════════════════════════════
+    // 
     // CHECK 3: Triggers définis mais jamais appelés
-    // ═══════════════════════════════════════════════════════════════════════════
+    // 
 
     triggers.forEach(trigger => {
       const triggerPattern = `getTriggerCard('${trigger.id}')`;
@@ -160,9 +160,9 @@ function scanDriver(driverName) {
       }
     });
 
-    // ═══════════════════════════════════════════════════════════════════════════
+    // 
     // CHECK 4: Tokens manquants dans triggers
-    // ═══════════════════════════════════════════════════════════════════════════
+    // 
 
     triggers.forEach(trigger => {
       // Certains triggers devraient avoir des tokens (changed, threshold, etc.)
@@ -180,9 +180,9 @@ function scanDriver(driverName) {
       }
     });
 
-    // ═══════════════════════════════════════════════════════════════════════════
+    // 
     // CHECK 5: Capability checks dans conditions
-    // ═══════════════════════════════════════════════════════════════════════════
+    // 
 
     conditions.forEach(condition => {
       const capabilities = compose.capabilities || [];
@@ -215,7 +215,7 @@ function scanDriver(driverName) {
     return result;
 
   } catch (e) {
-    console.error(`   ❌ ${driverName}:`, e.message);
+    console.error(`    ${driverName}:`, e.message);
     return null;
   }
 }
@@ -224,7 +224,7 @@ function scanDriver(driverName) {
  * Scanner tous les drivers
  */
 function scanAllDrivers() {
-  console.log('📂 Scan de tous les drivers...\n');
+  console.log(' Scan de tous les drivers...\n');
 
   const drivers = fs.readdirSync(DRIVERS_DIR).filter(item => {
     return fs.statSync(path.join(DRIVERS_DIR, item)).isDirectory();
@@ -238,9 +238,9 @@ function scanAllDrivers() {
       stats.driversScanned++;
 
       if (result.issues.length > 0) {
-        console.log(`   ⚠️  ${driver}: ${result.issues.length} issues`);
+        console.log(`     ${driver}: ${result.issues.length} issues`);
         result.issues.forEach(issue => {
-          const emoji = issue.severity === 'CRITICAL' ? '🔴' : issue.severity === 'HIGH' ? '🟠' : '🟡';
+          const emoji = issue.severity === 'CRITICAL' ? '' : issue.severity === 'HIGH' ? '' : '';
           console.log(`      ${emoji} ${issue.type}: ${issue.message}`);
         });
         results.push(result);
@@ -252,15 +252,15 @@ function scanAllDrivers() {
 }
 
 // EXÉCUTION
-console.log('═══════════════════════════════════════════════════════════════════════════════');
+console.log('');
 console.log('AUDIT FLOW CARDS - TOUS DRIVERS');
-console.log('═══════════════════════════════════════════════════════════════════════════════\n');
+console.log('\n');
 
 const results = scanAllDrivers();
 
-console.log('\n\n═══════════════════════════════════════════════════════════════════════════════');
+console.log('\n\n');
 console.log('STATISTIQUES GLOBALES');
-console.log('═══════════════════════════════════════════════════════════════════════════════\n');
+console.log('\n');
 
 console.log(`   Drivers scannés: ${stats.driversScanned}`);
 console.log(`   Total triggers définis: ${stats.totalTriggers}`);
@@ -268,32 +268,32 @@ console.log(`   Total conditions définies: ${stats.totalConditions}`);
 console.log(`   Total actions définies: ${stats.totalActions}`);
 console.log(`   Total issues détectées: ${stats.totalIssues}\n`);
 
-console.log('═══════════════════════════════════════════════════════════════════════════════');
+console.log('');
 console.log('ISSUES PAR CATÉGORIE');
-console.log('═══════════════════════════════════════════════════════════════════════════════\n');
+console.log('\n');
 
-console.log(`🔴 CRITICAL - MISSING REGISTRATION: ${issues.missingRegistration.length}`);
+console.log(` CRITICAL - MISSING REGISTRATION: ${issues.missingRegistration.length}`);
 if (issues.missingRegistration.length > 0) {
   issues.missingRegistration.forEach(issue => {
     console.log(`   - ${issue.driver}: ${issue.type} '${issue.id}'`);
   });
 }
 
-console.log(`\n🔴 CRITICAL - MISSING RUNLISTENER: ${issues.missingRunListener.length}`);
+console.log(`\n CRITICAL - MISSING RUNLISTENER: ${issues.missingRunListener.length}`);
 if (issues.missingRunListener.length > 0) {
   issues.missingRunListener.forEach(issue => {
     console.log(`   - ${issue.driver}: condition '${issue.id}'`);
   });
 }
 
-console.log(`\n🔴 CRITICAL - TRIGGERED BUT NOT DEFINED: ${issues.triggeredButNotDefined.length}`);
+console.log(`\n CRITICAL - TRIGGERED BUT NOT DEFINED: ${issues.triggeredButNotDefined.length}`);
 if (issues.triggeredButNotDefined.length > 0) {
   issues.triggeredButNotDefined.forEach(issue => {
     console.log(`   - ${issue.driver}: trigger '${issue.id}'`);
   });
 }
 
-console.log(`\n🟡 WARNING - DEFINED BUT NEVER TRIGGERED: ${issues.definedButNeverTriggered.length}`);
+console.log(`\n WARNING - DEFINED BUT NEVER TRIGGERED: ${issues.definedButNeverTriggered.length}`);
 if (issues.definedButNeverTriggered.length > 0) {
   console.log(`   (Showing first 10)`);
   issues.definedButNeverTriggered.slice(0, 10).forEach(issue => {
@@ -301,14 +301,14 @@ if (issues.definedButNeverTriggered.length > 0) {
   });
 }
 
-console.log(`\n🟠 HIGH - INCORRECT CAPABILITY: ${issues.incorrectCapability.length}`);
+console.log(`\n HIGH - INCORRECT CAPABILITY: ${issues.incorrectCapability.length}`);
 if (issues.incorrectCapability.length > 0) {
   issues.incorrectCapability.forEach(issue => {
-    console.log(`   - ${issue.driver}: condition '${issue.id}' → '${issue.capability}'`);
+    console.log(`   - ${issue.driver}: condition '${issue.id}'  '${issue.capability}'`);
   });
 }
 
-console.log(`\n🟡 MEDIUM - MISSING TOKENS: ${issues.missingTokens.length}`);
+console.log(`\n MEDIUM - MISSING TOKENS: ${issues.missingTokens.length}`);
 if (issues.missingTokens.length > 0) {
   issues.missingTokens.slice(0, 10).forEach(issue => {
     console.log(`   - ${issue.driver}: trigger '${issue.id}'`);
@@ -324,19 +324,19 @@ fs.writeFileSync(reportFile, JSON.stringify({
   results
 }, null, 2), 'utf8');
 
-console.log(`\n\n✅ Rapport sauvegardé: ${reportFile}\n`);
+console.log(`\n\n Rapport sauvegardé: ${reportFile}\n`);
 
-console.log('═══════════════════════════════════════════════════════════════════════════════');
+console.log('');
 console.log('PROCHAINES ÉTAPES');
-console.log('═══════════════════════════════════════════════════════════════════════════════\n');
+console.log('\n');
 
 const criticalCount = issues.missingRegistration.length + issues.missingRunListener.length + issues.triggeredButNotDefined.length;
 
 if (criticalCount > 0) {
-  console.log(`⚠️  ${criticalCount} ISSUES CRITIQUES nécessitent correction IMMÉDIATE\n`);
+  console.log(`  ${criticalCount} ISSUES CRITIQUES nécessitent correction IMMÉDIATE\n`);
   console.log('Exécuter: node scripts/fix_all_flow_issues.js\n');
   process.exit(1);
 } else {
-  console.log('✅ Aucune issue critique détectée\n');
+  console.log(' Aucune issue critique détectée\n');
   process.exit(0);
 }
