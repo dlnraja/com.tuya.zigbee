@@ -80,6 +80,16 @@ function healHybrids() {
             const prefixedId = `${hybrid}_${refId}`;
             newCard.id = prefixedId;
             
+            // FIX: Check if prefixed ID already exists in flowData to prevent duplicates
+            const alreadyExists = (flowData[category] || []).some(card => card.id === prefixedId);
+            if (alreadyExists) {
+              console.log(`  [SKIP] ${hybrid}: Card ${prefixedId} already exists`);
+              existingIds.add(refId);
+              existingIds.add(prefixedId);
+              found = true;
+              break;
+            }
+            
             console.log(`  [SYNC] ${hybrid}: Copying card ${refId} as ${prefixedId} from ${d}`);
             if (!flowData[category]) flowData[category] = [];
             flowData[category].push(newCard);
