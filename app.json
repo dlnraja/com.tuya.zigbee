@@ -108166,7 +108166,10 @@
         "approximation": {
           "usageConstant": 6
         },
-        "mains": true
+        "mains": true,
+        "batteries": [
+          "CR2032"
+        ]
       },
       "zigbee": {
         "manufacturerName": [],
