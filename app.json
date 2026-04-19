@@ -98097,7 +98097,9 @@
       "capabilities": [
         "dim",
         "measure_pm25",
-        "onoff"
+        "onoff",
+        "measure_radio_stability",
+        "measure_maintenance_score"
       ],
       "capabilitiesOptions": {
         "dim": {
@@ -102739,8 +102741,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/air_purifier_siren_hybrid/assets/images/small.png",
-        "large": "/drivers/air_purifier_siren_hybrid/assets/images/large.png"
+        "small": "drivers/air_purifier_siren_hybrid/assets/images/small.png",
+        "large": "drivers/air_purifier_siren_hybrid/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [],
@@ -106047,8 +106049,8 @@
         "light_mode",
         "light_saturation",
         "light_temperature",
-        "measure_battery",
         "onoff",
+        "measure_battery",
         "measure_radio_stability",
         "measure_maintenance_score"
       ],
@@ -106056,10 +106058,7 @@
         "approximation": {
           "usageConstant": 9
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -106887,10 +106886,7 @@
         "approximation": {
           "usageConstant": 9
         },
-        "mains": true,
-        "batteries": [
-          "CR2032"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [],
@@ -107441,10 +107437,7 @@
         "approximation": {
           "usageConstant": 6
         },
-        "mains": true,
-        "batteries": [
-          "CR2032"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -108164,10 +108157,7 @@
         "approximation": {
           "usageConstant": 6
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [],
@@ -108846,10 +108836,7 @@
         "approximation": {
           "usageConstant": 6
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [],
@@ -109525,10 +109512,7 @@
         "approximation": {
           "usageConstant": 9
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -110156,13 +110140,10 @@
         "zigbee"
       ],
       "energy": {
-        "batteries": [
-          "CR2032",
-          "AAA",
-          "AA",
-          "CR2",
-          "CR123A"
-        ]
+        "approximation": {
+          "usageConstant": 9
+        },
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -110329,6 +110310,88 @@
             "en": "Alert if health score drops below this value",
             "fr": "Alerte si le score de santé descend sous cette valeur"
           }
+        },
+        {
+          "id": "enable_natural_light",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Natural Light (Solar Sync)",
+            "fr": "Activer la Lumière Naturelle (Synchro Solaire)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Automatically adjust color temperature based on time of day",
+            "fr": "Ajuste automatiquement la température de couleur au fil de la journée"
+          }
+        },
+        {
+          "id": "enable_radio_sensing",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Radio Presence Sensing",
+            "fr": "Activer la Détection de Présence Radio"
+          },
+          "value": false,
+          "hint": {
+            "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+          }
+        },
+        {
+          "id": "radio_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Radio Presence Sensitivity",
+            "fr": "Sensibilité Présence Radio"
+          },
+          "value": 15,
+          "min": 5,
+          "max": 50,
+          "hint": {
+            "en": "LQI variance threshold (higher = less sensitive)",
+            "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+          }
+        },
+        {
+          "id": "enable_circadian_lighting",
+          "type": "checkbox",
+          "label": {
+            "en": "Circadian Lighting (Adaptive CT)",
+            "fr": "Éclairage Circadien (CT Adaptatif)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Automatically adjust color temperature based on time of day",
+            "fr": "Ajuste automatiquement la température de couleur au cours de la journée"
+          }
+        },
+        {
+          "id": "overload_threshold",
+          "type": "number",
+          "label": {
+            "en": "Overload Protection (Watts)",
+            "fr": "Protection Surcharge (Watts)"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 4000,
+          "hint": {
+            "en": "Cut power if consumption exceeds this value (0 = disabled)",
+            "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+          }
+        },
+        {
+          "id": "enable_night_mode",
+          "type": "checkbox",
+          "label": {
+            "en": "Night Mode (Auto-Dim)",
+            "fr": "Mode Nuit (Auto-Dim)"
+          },
+          "value": false,
+          "hint": {
+            "en": "Automatically dim light when turned on at night",
+            "fr": "Baisse l'intensité lors de l'allumage nocturne"
+          }
         }
       ]
     },
@@ -110355,10 +110418,7 @@
         "approximation": {
           "usageConstant": 9
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -110933,10 +110993,7 @@
         "approximation": {
           "usageConstant": 9
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [],
@@ -111485,10 +111542,7 @@
         "approximation": {
           "usageConstant": 9
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -122683,7 +122737,6 @@
           "_TZE200_AAO6QTCS",
           "_TZE200_AUIN8MZR",
           "_TZE200_BV1JCQQU",
-          "_TZE200_BXDYEAA9",
           "_TZE200_C2FMOM5Z",
           "_TZE200_C7EMYJOM",
           "_TZE200_CIRVGEP4",
@@ -122716,7 +122769,6 @@
           "_TZE200_N5FXYYJW",
           "_TZE200_N8DLJORX",
           "_TZE200_N9CLPSHT",
-          "_TZE200_NE4PIKWM",
           "_TZE200_NHYJ64W2",
           "_TZE200_NVUPS4NH",
           "_TZE200_NYVAVZBJ",
@@ -122870,7 +122922,6 @@
           "_TZE284_KDQRAZMY",
           "_TZE284_LOCANSQN",
           "_TZE284_MPZUABWK",
-          "_TZE284_NE4PIKWM",
           "_TZE284_NNHWCVBK",
           "_TZE284_Q22AVXBV",
           "_TZE284_QOY0EKBD",
@@ -149185,10 +149236,7 @@
         "approximation": {
           "usageConstant": 9
         },
-        "mains": true,
-        "batteries": [
-          "CR2032"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [],
@@ -156248,8 +156296,8 @@
         "measure_maintenance_score"
       ],
       "images": {
-        "large": "/drivers/fingerbot/assets/images/large.png",
-        "small": "/drivers/fingerbot/assets/images/small.png"
+        "large": "drivers/fingerbot/assets/images/large.png",
+        "small": "drivers/fingerbot/assets/images/small.png"
       },
       "energy": {
         "batteries": [
@@ -156279,7 +156327,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/fingerbot/assets/icon.svg",
+          "image": "drivers/fingerbot/assets/icon.svg",
           "instruction": {
             "en": "Press the setup button inside the Finger Bot for approx 10 seconds to enter pairing mode."
           }
@@ -160455,7 +160503,7 @@
       },
       "energy": {
         "approximation": {
-          "usageOff": 0.8,
+          "usageOff": 0.2,
           "usageOn": 100
         },
         "batteries": [
@@ -161907,7 +161955,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/handheld_remote_4_buttons/assets/icon.svg",
+          "image": "drivers/handheld_remote_4_buttons/assets/icon.svg",
           "instruction": {
             "en": "Press the top button for aprox 10 seconds (Zigbee logo will start blinking)."
           }
@@ -165963,10 +166011,7 @@
         "approximation": {
           "usageConstant": 12
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -166510,10 +166555,7 @@
         "approximation": {
           "usageConstant": 12
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -167053,10 +167095,7 @@
         "approximation": {
           "usageConstant": 12
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -167639,10 +167678,7 @@
         "approximation": {
           "usageConstant": 9
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -168464,10 +168500,7 @@
         "approximation": {
           "usageConstant": 6
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [],
@@ -169148,10 +169181,7 @@
         "approximation": {
           "usageConstant": 6
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -169833,10 +169863,7 @@
         "approximation": {
           "usageConstant": 6
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [
@@ -170544,10 +170571,7 @@
         "approximation": {
           "usageConstant": 9
         },
-        "mains": true,
-        "batteries": [
-          "CR2450"
-        ]
+        "mains": true
       },
       "zigbee": {
         "manufacturerName": [],
@@ -173889,8 +173913,8 @@
         "mains": true
       },
       "images": {
-        "large": "/drivers/motion_sensor_2/assets/images/large.png",
-        "small": "/drivers/motion_sensor_2/assets/images/small.png"
+        "large": "drivers/motion_sensor_2/assets/images/large.png",
+        "small": "drivers/motion_sensor_2/assets/images/small.png"
       },
       "zigbee": {
         "manufacturerName": [],
@@ -173911,7 +173935,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/motion_sensor_2/assets/icon.svg",
+          "image": "drivers/motion_sensor_2/assets/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 5 seconds until the LED blinks."
           }
@@ -175955,7 +175979,8 @@
       ],
       "energy": {
         "approximation": {
-          "usageConstant": 0.7
+          "usageOff": 0.7,
+          "usageOn": 100
         }
       },
       "zigbee": {
@@ -175997,7 +176022,6 @@
           "_TZE284_DAPWRYY7",
           "_TZE284_DCNSGGVZ",
           "_TZN3000_CFNPRAB5",
-          "_tz3000_g5xawfcq",
           "_tz3000_3ooaz3ng",
           "_tz3000_amdymr7l"
         ],
@@ -182768,7 +182792,10 @@
           "_TZE284_K6RDMISZ",
           "_TZE284_NOIXX2UZ",
           "_tze200_hvaxb2tc",
-          "_tze200_bvu2wnxz"
+          "_tze200_bvu2wnxz",
+          "_TZE284_NE4PIKWM",
+          "_TZE200_bxdyeaa9",
+          "_TZE200_ne4pikwm"
         ],
         "productId": [
           "014G2461",
@@ -184141,7 +184168,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/remote_button_emergency_sos_hybrid/assets/icon.svg",
+          "image": "drivers/remote_button_emergency_sos_hybrid/assets/icon.svg",
           "instruction": {
             "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
           }
@@ -204879,8 +204906,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/siren_sirentemphumidsensor_hybrid/assets/images/small.png",
-        "large": "/drivers/siren_sirentemphumidsensor_hybrid/assets/images/large.png"
+        "small": "drivers/siren_sirentemphumidsensor_hybrid/assets/images/small.png",
+        "large": "drivers/siren_sirentemphumidsensor_hybrid/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [],
@@ -205132,8 +205159,8 @@
         "zigbee"
       ],
       "images": {
-        "small": "/drivers/sirentemphumidsensor/assets/images/small.png",
-        "large": "/drivers/sirentemphumidsensor/assets/images/large.png"
+        "small": "drivers/sirentemphumidsensor/assets/images/small.png",
+        "large": "drivers/sirentemphumidsensor/assets/images/large.png"
       },
       "zigbee": {
         "manufacturerName": [],
@@ -205574,7 +205601,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_button_switch/assets/icon.svg",
+          "image": "drivers/smart_button_switch/assets/icon.svg",
           "instruction": {
             "en": "Press the button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -207371,7 +207398,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_knob_switch/assets/icon.svg",
+          "image": "drivers/smart_knob_switch/assets/icon.svg",
           "instruction": {
             "en": "Press the side button for aprox 10 seconds (LED should start blinking).",
             "sv": "Håll ned sidoknappen ca 10 sekunder (LED-lampan ska börja blinka)."
@@ -208502,7 +208529,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_remote_1_button/assets/icon.svg",
+          "image": "drivers/smart_remote_1_button/assets/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -208783,7 +208810,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_remote_1_button_2/assets/icon.svg",
+          "image": "drivers/smart_remote_1_button_2/assets/icon.svg",
           "instruction": {
             "en": "Press the reset button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -209082,7 +209109,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/smart_remote_4_buttons/assets/icon.svg",
+          "image": "drivers/smart_remote_4_buttons/assets/icon.svg",
           "instruction": {
             "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
           }
@@ -212805,9 +212832,81 @@
         }
       ],
       "flow": {
-        "triggers": [],
+        "triggers": [
+          {
+            "id": "switch_2gang_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_2gang_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_2gang_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_2gang_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 éteint (physique)"
+            }
+          }
+        ],
         "conditions": [],
-        "actions": []
+        "actions": [
+          {
+            "id": "switch_2gang_turn_on_gang1",
+            "title": {
+              "en": "Turn on Gang 1",
+              "fr": "Allumer Gang 1"
+            }
+          },
+          {
+            "id": "switch_2gang_turn_off_gang1",
+            "title": {
+              "en": "Turn off Gang 1",
+              "fr": "Éteindre Gang 1"
+            }
+          },
+          {
+            "id": "switch_2gang_toggle_gang1",
+            "title": {
+              "en": "Toggle Gang 1",
+              "fr": "Inverser Gang 1"
+            }
+          },
+          {
+            "id": "switch_2gang_turn_on_gang2",
+            "title": {
+              "en": "Turn on Gang 2",
+              "fr": "Allumer Gang 2"
+            }
+          },
+          {
+            "id": "switch_2gang_turn_off_gang2",
+            "title": {
+              "en": "Turn off Gang 2",
+              "fr": "Éteindre Gang 2"
+            }
+          },
+          {
+            "id": "switch_2gang_toggle_gang2",
+            "title": {
+              "en": "Toggle Gang 2",
+              "fr": "Inverser Gang 2"
+            }
+          }
+        ]
       },
       "maintenanceActions": [
         {
@@ -213669,9 +213768,116 @@
         }
       ],
       "flow": {
-        "triggers": [],
+        "triggers": [
+          {
+            "id": "switch_3gang_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_3gang_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_3gang_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_3gang_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_3gang_physical_gang3_on",
+            "title": {
+              "en": "Gang 3 turned on (physical)",
+              "fr": "Gang 3 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_3gang_physical_gang3_off",
+            "title": {
+              "en": "Gang 3 turned off (physical)",
+              "fr": "Gang 3 éteint (physique)"
+            }
+          }
+        ],
         "conditions": [],
-        "actions": []
+        "actions": [
+          {
+            "id": "switch_3gang_turn_on_gang1",
+            "title": {
+              "en": "Turn on Gang 1",
+              "fr": "Allumer Gang 1"
+            }
+          },
+          {
+            "id": "switch_3gang_turn_off_gang1",
+            "title": {
+              "en": "Turn off Gang 1",
+              "fr": "Éteindre Gang 1"
+            }
+          },
+          {
+            "id": "switch_3gang_toggle_gang1",
+            "title": {
+              "en": "Toggle Gang 1",
+              "fr": "Inverser Gang 1"
+            }
+          },
+          {
+            "id": "switch_3gang_turn_on_gang2",
+            "title": {
+              "en": "Turn on Gang 2",
+              "fr": "Allumer Gang 2"
+            }
+          },
+          {
+            "id": "switch_3gang_turn_off_gang2",
+            "title": {
+              "en": "Turn off Gang 2",
+              "fr": "Éteindre Gang 2"
+            }
+          },
+          {
+            "id": "switch_3gang_toggle_gang2",
+            "title": {
+              "en": "Toggle Gang 2",
+              "fr": "Inverser Gang 2"
+            }
+          },
+          {
+            "id": "switch_3gang_turn_on_gang3",
+            "title": {
+              "en": "Turn on Gang 3",
+              "fr": "Allumer Gang 3"
+            }
+          },
+          {
+            "id": "switch_3gang_turn_off_gang3",
+            "title": {
+              "en": "Turn off Gang 3",
+              "fr": "Éteindre Gang 3"
+            }
+          },
+          {
+            "id": "switch_3gang_toggle_gang3",
+            "title": {
+              "en": "Toggle Gang 3",
+              "fr": "Inverser Gang 3"
+            }
+          }
+        ]
       },
       "maintenanceActions": [
         {
@@ -214566,9 +214772,151 @@
         }
       ],
       "flow": {
-        "triggers": [],
+        "triggers": [
+          {
+            "id": "switch_4gang_physical_gang1_on",
+            "title": {
+              "en": "Gang 1 turned on (physical)",
+              "fr": "Gang 1 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_physical_gang1_off",
+            "title": {
+              "en": "Gang 1 turned off (physical)",
+              "fr": "Gang 1 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_physical_gang2_on",
+            "title": {
+              "en": "Gang 2 turned on (physical)",
+              "fr": "Gang 2 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_physical_gang2_off",
+            "title": {
+              "en": "Gang 2 turned off (physical)",
+              "fr": "Gang 2 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_physical_gang3_on",
+            "title": {
+              "en": "Gang 3 turned on (physical)",
+              "fr": "Gang 3 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_physical_gang3_off",
+            "title": {
+              "en": "Gang 3 turned off (physical)",
+              "fr": "Gang 3 éteint (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_physical_gang4_on",
+            "title": {
+              "en": "Gang 4 turned on (physical)",
+              "fr": "Gang 4 allumé (physique)"
+            }
+          },
+          {
+            "id": "switch_4gang_physical_gang4_off",
+            "title": {
+              "en": "Gang 4 turned off (physical)",
+              "fr": "Gang 4 éteint (physique)"
+            }
+          }
+        ],
         "conditions": [],
-        "actions": []
+        "actions": [
+          {
+            "id": "switch_4gang_turn_on_gang1",
+            "title": {
+              "en": "Turn on Gang 1",
+              "fr": "Allumer Gang 1"
+            }
+          },
+          {
+            "id": "switch_4gang_turn_off_gang1",
+            "title": {
+              "en": "Turn off Gang 1",
+              "fr": "Éteindre Gang 1"
+            }
+          },
+          {
+            "id": "switch_4gang_toggle_gang1",
+            "title": {
+              "en": "Toggle Gang 1",
+              "fr": "Inverser Gang 1"
+            }
+          },
+          {
+            "id": "switch_4gang_turn_on_gang2",
+            "title": {
+              "en": "Turn on Gang 2",
+              "fr": "Allumer Gang 2"
+            }
+          },
+          {
+            "id": "switch_4gang_turn_off_gang2",
+            "title": {
+              "en": "Turn off Gang 2",
+              "fr": "Éteindre Gang 2"
+            }
+          },
+          {
+            "id": "switch_4gang_toggle_gang2",
+            "title": {
+              "en": "Toggle Gang 2",
+              "fr": "Inverser Gang 2"
+            }
+          },
+          {
+            "id": "switch_4gang_turn_on_gang3",
+            "title": {
+              "en": "Turn on Gang 3",
+              "fr": "Allumer Gang 3"
+            }
+          },
+          {
+            "id": "switch_4gang_turn_off_gang3",
+            "title": {
+              "en": "Turn off Gang 3",
+              "fr": "Éteindre Gang 3"
+            }
+          },
+          {
+            "id": "switch_4gang_toggle_gang3",
+            "title": {
+              "en": "Toggle Gang 3",
+              "fr": "Inverser Gang 3"
+            }
+          },
+          {
+            "id": "switch_4gang_turn_on_gang4",
+            "title": {
+              "en": "Turn on Gang 4",
+              "fr": "Allumer Gang 4"
+            }
+          },
+          {
+            "id": "switch_4gang_turn_off_gang4",
+            "title": {
+              "en": "Turn off Gang 4",
+              "fr": "Éteindre Gang 4"
+            }
+          },
+          {
+            "id": "switch_4gang_toggle_gang4",
+            "title": {
+              "en": "Toggle Gang 4",
+              "fr": "Inverser Gang 4"
+            }
+          }
+        ]
       },
       "maintenanceActions": [
         {
@@ -224778,7 +225126,6 @@
           "_TZE200_A7SGHMMS",
           "_TZE200_AKJEFHJ5",
           "_TZE200_D0YPNBVN",
-          "_TZE200_FPHXKXUE",
           "_TZE200_HTNNFASR",
           "_TZE200_JT50EA5D",
           "_TZE200_WT9AGWF3",
@@ -225603,7 +225950,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_curtain_switch/assets/icon.svg",
+          "image": "drivers/wall_curtain_switch/assets/icon.svg",
           "instruction": {
             "en": "Power on/off 5 times to enter pairing mode (the LED should blink / device starts beeping) or press the Pause-button 5sec until Open-button blinks."
           }
@@ -226021,7 +226368,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_1_gang/assets/icon.svg",
+          "image": "drivers/wall_remote_1_gang/assets/icon.svg",
           "instruction": {
             "en": "Press the button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -226345,7 +226692,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_2_gang/assets/icon.svg",
+          "image": "drivers/wall_remote_2_gang/assets/icon.svg",
           "instruction": {
             "en": "Press the left button for aprox 10 seconds (the LED should start blinking). A tile for each button will be created."
           }
@@ -226633,7 +226980,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_3_gang/assets/icon.svg",
+          "image": "drivers/wall_remote_3_gang/assets/icon.svg",
           "instruction": {
             "en": "Press the left button for aprox 10 seconds (the LED should start blinking)."
           }
@@ -226959,7 +227306,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_4_gang/assets/icon.svg",
+          "image": "drivers/wall_remote_4_gang/assets/icon.svg",
           "instruction": {
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
@@ -227254,8 +227601,8 @@
         "measure_maintenance_score"
       ],
       "images": {
-        "large": "/drivers/wall_remote_4_gang_2/assets/images/large.png",
-        "small": "/drivers/wall_remote_4_gang_2/assets/images/small.png"
+        "large": "drivers/wall_remote_4_gang_2/assets/images/large.png",
+        "small": "drivers/wall_remote_4_gang_2/assets/images/small.png"
       },
       "energy": {
         "batteries": [
@@ -227313,7 +227660,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_4_gang_2/assets/icon.svg",
+          "image": "drivers/wall_remote_4_gang_2/assets/icon.svg",
           "instruction": {
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
@@ -227439,7 +227786,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_4_gang_3/assets/icon.svg",
+          "image": "drivers/wall_remote_4_gang_3/assets/icon.svg",
           "instruction": {
             "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
           }
@@ -227785,7 +228132,7 @@
           }
         },
         "learnmode": {
-          "image": "/drivers/wall_remote_6_gang/assets/icon.svg",
+          "image": "drivers/wall_remote_6_gang/assets/icon.svg",
           "instruction": {
             "en": "Press pair button for aprox 10 seconds."
           }

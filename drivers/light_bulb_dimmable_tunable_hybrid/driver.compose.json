@@ -20,10 +20,7 @@
     "approximation": {
       "usageConstant": 9
     },
-    "mains": true,
-    "batteries": [
-      "CR2450"
-    ]
+    "mains": true
   },
   "zigbee": {
     "manufacturerName": [
@@ -818,5 +815,6 @@
     "homey": {
       "natural_light": true
     }
-  }
+  },
+  "id": "light_bulb_dimmable_tunable_hybrid"
 }

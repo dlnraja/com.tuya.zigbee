@@ -1,4 +1,7 @@
 {
+  "7.4.6": {
+    "en": "v7.4.6: Critical Image Fix. Resolved validation failures across all drivers by standardizing large.png assets to 500x500 @ 50KB+ requirement. Improved CI/CD robustness and driver asset integrity."
+  },
   "7.4.5": {
     "en": "v7.4.5: Shadow Mode Enforcement. Unified maintenance now operates silently in background. Resolved False Battery Alert for VISION and TS0601 mains-powered sensors. Hardened SDK 3 compliance across core libraries."
   },
@@ -19,5 +22,11 @@
   },
   "7.2.9": {
     "en": "v7.2.9: Universal Engine Reimplementation  Stabilized radar presence, added smart humidity auto-correction, and hardened CI/CD."
+  },
+  "7.2.0": {
+    "en": "The Autonomous Awakening: Adaptive Lighting (Natural Light), Zigbee Radio Sensing (Presence), Smart High-Fidelity Gestures, and Engine Maintenance Orchestration for autonomous fleet healing."
+  },
+  "7.1.0": {
+    "en": "Omni-Sync Architecture: Autonomous sync from Z2M & ZHA, Self-Healing Migration Queue, Enriched DP Parser."
   }
 }

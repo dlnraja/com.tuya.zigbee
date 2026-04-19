@@ -129,11 +129,11 @@ function getSensorConfig(manufacturerName, modelId = null) {
   // v5.5.286: Pattern matching for TZE284_iadro9bf variants
   // Ronny report: manufacturerName can be empty or slightly different
   if (manufacturerName) {
-    const mfrLower = manufacturerName.toLowerCase();
-
     // Match TZE284/TZE204 iadro9bf variants (presence inversion needed)
-    if (mfrLower.includes('iadro9bf') || mfrLower.includes('qasjif9e') ||
-      mfrLower.includes('ztqnh5cg') || mfrLower.includes('sbyx0lm6')) {
+    if (CI.containsCI(manufacturerName, 'iadro9bf') || 
+        CI.containsCI(manufacturerName, 'qasjif9e') ||
+        CI.containsCI(manufacturerName, 'ztqnh5cg') || 
+        CI.containsCI(manufacturerName, 'sbyx0lm6')) {
       console.log(`[RADAR]  Pattern match: ${manufacturerName}  TZE284_IADRO9BF config`);
       return { ...SENSOR_CONFIGS.TZE284_IADRO9BF, configName: 'TZE284_IADRO9BF' };
     }
@@ -377,11 +377,10 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   let maxLux = 10000;  // Default high limit - don't clamp unless really needed
 
   // v5.5.316: Only apply strict 2000 limit for KNOWN ZY-M100 series sensors
-  const mfrLower = (manufacturerName || '').toLowerCase();
-  const isZYM100Series = mfrLower.includes('iadro9bf') ||
-    mfrLower.includes('gkfbdvyx') ||
-    mfrLower.includes('qasjif9e') ||
-    mfrLower.includes('sxm7l9xa');
+  const isZYM100Series = CI.containsCI(manufacturerName, 'iadro9bf') ||
+    CI.containsCI(manufacturerName, 'gkfbdvyx') ||
+    CI.containsCI(manufacturerName, 'qasjif9e') ||
+    CI.containsCI(manufacturerName, 'sxm7l9xa');
   if (isZYM100Series) {
     maxLux = 2000;  // ZY-M100 confirmed 0-2000 lux range
   }

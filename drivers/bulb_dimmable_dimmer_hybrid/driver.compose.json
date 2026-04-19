@@ -23,10 +23,7 @@
     "approximation": {
       "usageConstant": 9
     },
-    "mains": true,
-    "batteries": [
-      "CR2032"
-    ]
+    "mains": true
   },
   "zigbee": {
     "manufacturerName": [],
@@ -551,5 +548,6 @@
     "homey": {
       "natural_light": true
     }
-  }
+  },
+  "id": "bulb_dimmable_dimmer_hybrid"
 }

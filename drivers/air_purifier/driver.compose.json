@@ -14,7 +14,9 @@
   "capabilities": [
     "dim",
     "measure_pm25",
-    "onoff"
+    "onoff",
+    "measure_radio_stability",
+    "measure_maintenance_score"
   ],
   "capabilitiesOptions": {
     "dim": {
@@ -225,5 +227,6 @@
         "fr": "Alerte si le score de santé descend sous cette valeur"
       }
     }
-  ]
+  ],
+  "id": "air_purifier"
 }

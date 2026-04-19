@@ -2,6 +2,7 @@ name: Autonomous Shadow Publish (Test Track)
 on:
   push:
     branches:
+      - master
       - main
 jobs:
   autonomous_build_and_publish:

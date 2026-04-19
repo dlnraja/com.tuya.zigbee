@@ -180,7 +180,6 @@
       "_TZE200_AAO6QTCS",
       "_TZE200_AUIN8MZR",
       "_TZE200_BV1JCQQU",
-      "_TZE200_BXDYEAA9",
       "_TZE200_C2FMOM5Z",
       "_TZE200_C7EMYJOM",
       "_TZE200_CIRVGEP4",
@@ -213,7 +212,6 @@
       "_TZE200_N5FXYYJW",
       "_TZE200_N8DLJORX",
       "_TZE200_N9CLPSHT",
-      "_TZE200_NE4PIKWM",
       "_TZE200_NHYJ64W2",
       "_TZE200_NVUPS4NH",
       "_TZE200_NYVAVZBJ",
@@ -1058,5 +1056,6 @@
     "triggers": [],
     "conditions": [],
     "actions": []
-  }
+  },
+  "id": "climate_sensor"
 }

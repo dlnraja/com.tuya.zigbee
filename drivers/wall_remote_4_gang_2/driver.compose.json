@@ -20,8 +20,8 @@
     "measure_maintenance_score"
   ],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "large": "drivers/wall_remote_4_gang_2/assets/images/large.png",
+    "small": "drivers/wall_remote_4_gang_2/assets/images/small.png"
   },
   "energy": {
     "batteries": [
@@ -79,7 +79,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "drivers/wall_remote_4_gang_2/assets/icon.svg",
       "instruction": {
         "en": "Press the lower left button for aprox 10 seconds (all LED should start blinking)."
       }

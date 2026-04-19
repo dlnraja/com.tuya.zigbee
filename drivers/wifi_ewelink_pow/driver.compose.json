@@ -273,5 +273,6 @@
   "energy": {
     "cumulative": true,
     "cumulativeImportedCapability": "meter_power"
-  }
+  },
+  "id": "wifi_ewelink_pow"
 }

@@ -1,5 +1,5 @@
 {
-  "id": "FingerBot",
+  "id": "fingerbot",
   "name": {
     "en": "Finger Bot",
     "fr": "Doigt Bot",
@@ -23,8 +23,8 @@
     "measure_maintenance_score"
   ],
   "images": {
-    "large": "{{driverAssetsPath}}/images/large.png",
-    "small": "{{driverAssetsPath}}/images/small.png"
+    "large": "drivers/fingerbot/assets/images/large.png",
+    "small": "drivers/fingerbot/assets/images/small.png"
   },
   "energy": {
     "batteries": [
@@ -54,7 +54,7 @@
       }
     },
     "learnmode": {
-      "image": "{{driverAssetsPath}}/icon.svg",
+      "image": "drivers/fingerbot/assets/icon.svg",
       "instruction": {
         "en": "Press the setup button inside the Finger Bot for approx 10 seconds to enter pairing mode."
       }

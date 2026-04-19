@@ -1,5 +1,5 @@
 {
-  "id": "universal_zigbee",
+  "id": "bulb_rgbw_universal_hybrid",
   "name": {
     "en": "Bulb Rgbw Universal",
     "nl": "Bulb Rgbw Universal",
@@ -64,13 +64,10 @@
     "zigbee"
   ],
   "energy": {
-    "batteries": [
-      "CR2032",
-      "AAA",
-      "AA",
-      "CR2",
-      "CR123A"
-    ]
+    "approximation": {
+      "usageConstant": 9
+    },
+    "mains": true
   },
   "zigbee": {
     "manufacturerName": [
@@ -236,6 +233,88 @@
       "hint": {
         "en": "Alert if health score drops below this value",
         "fr": "Alerte si le score de santé descend sous cette valeur"
+      }
+    },
+    {
+      "id": "enable_natural_light",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Natural Light (Solar Sync)",
+        "fr": "Activer la Lumière Naturelle (Synchro Solaire)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Automatically adjust color temperature based on time of day",
+        "fr": "Ajuste automatiquement la température de couleur au fil de la journée"
+      }
+    },
+    {
+      "id": "enable_radio_sensing",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Radio Presence Sensing",
+        "fr": "Activer la Détection de Présence Radio"
+      },
+      "value": false,
+      "hint": {
+        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+      }
+    },
+    {
+      "id": "radio_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radio Presence Sensitivity",
+        "fr": "Sensibilité Présence Radio"
+      },
+      "value": 15,
+      "min": 5,
+      "max": 50,
+      "hint": {
+        "en": "LQI variance threshold (higher = less sensitive)",
+        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+      }
+    },
+    {
+      "id": "enable_circadian_lighting",
+      "type": "checkbox",
+      "label": {
+        "en": "Circadian Lighting (Adaptive CT)",
+        "fr": "Éclairage Circadien (CT Adaptatif)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Automatically adjust color temperature based on time of day",
+        "fr": "Ajuste automatiquement la température de couleur au cours de la journée"
+      }
+    },
+    {
+      "id": "overload_threshold",
+      "type": "number",
+      "label": {
+        "en": "Overload Protection (Watts)",
+        "fr": "Protection Surcharge (Watts)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 4000,
+      "hint": {
+        "en": "Cut power if consumption exceeds this value (0 = disabled)",
+        "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+      }
+    },
+    {
+      "id": "enable_night_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Night Mode (Auto-Dim)",
+        "fr": "Mode Nuit (Auto-Dim)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Automatically dim light when turned on at night",
+        "fr": "Baisse l'intensité lors de l'allumage nocturne"
       }
     }
   ]

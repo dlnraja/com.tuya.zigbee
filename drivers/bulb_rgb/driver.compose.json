@@ -21,10 +21,7 @@
     "approximation": {
       "usageConstant": 6
     },
-    "mains": true,
-    "batteries": [
-      "CR2032"
-    ]
+    "mains": true
   },
   "zigbee": {
     "manufacturerName": [
@@ -717,5 +714,6 @@
     "homey": {
       "natural_light": true
     }
-  }
+  },
+  "id": "bulb_rgb"
 }

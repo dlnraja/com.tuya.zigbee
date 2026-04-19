@@ -79,12 +79,12 @@ async function main() {
       let fixedLine = lineText;
 
       // Pattern 1: x === y -> CI.equalsCI(x, y)
-      // Handles both literals 'abc' and variables sig.modelId
       fixedLine = fixedLine.replace(/([a-zA-Z0-9._$\[\]]+)\s*===\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])/g, 'CI.equalsCI($1, $2)');
       fixedLine = fixedLine.replace(/([a-zA-Z0-9._$\[\]]+)\s*!==\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])/g, '!CI.equalsCI($1, $2)');
       
       // Pattern 2: arr.includes(x) -> CI.includesCI(arr, x)
       fixedLine = fixedLine.replace(/([a-zA-Z0-9._$\[\]]+)\.includes\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\)/g, 'CI.includesCI($1, $2)');
+      
       const patterns = [
         {
           // Variable.toUpperCase() === 'STRING'
@@ -95,6 +95,16 @@ async function main() {
           // Variable.toLowerCase() === 'string'
           pattern: /(\w+|\((?:.*?)\))\.toLowerCase\(\)\s*===?\s*(['"])(.*?)\2/g,
           replacement: 'CI.equalsCI($1, $2$3$2)'
+        },
+        {
+          // mfrLower.includes(x) -> CI.containsCI(manufacturerName, x)
+          pattern: /mfrLower\.includes\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\)/g,
+          replacement: 'CI.containsCI(manufacturerName, $1)'
+        },
+        {
+          // mfr.toLowerCase().includes(x)
+          pattern: /mfr\.toLowerCase\(\)\.includes\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\)/g,
+          replacement: 'CI.containsCI(mfr, $1)'
         },
         {
           // Variable.toUpperCase().startsWith(other)
@@ -114,16 +124,6 @@ async function main() {
         {
           // Variable.toLowerCase().includes(other)
           pattern: /(\w+|\((?:.*?)\))\.toLowerCase\(\)\.includes\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\)/g,
-          replacement: 'CI.containsCI($1, $2)'
-        },
-        {
-          // Variable.startsWith(other)
-          pattern: /(\w+)\.startsWith\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\)/g,
-          replacement: 'CI.startsWithCI($1, $2)'
-        },
-        {
-          // Variable.includes(other)
-          pattern: /(\w+)\.includes\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\)/g,
           replacement: 'CI.containsCI($1, $2)'
         }
       ];

@@ -11,11 +11,16 @@ const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
  *   Models: TS0601, _TZE200_*, Smart irrigation controller                     
  * 
  */
+const IMMAX_MFRS = ['_tze200_xlppj4f5'];
+
 class ValveIrrigationDevice extends UnifiedPlugBase {
 
-  get plugCapabilities() { return ['onoff', 'measure_battery']; }
+  get plugCapabilities() { return ['onoff', 'measure_battery', 'meter_water']; }
 
   get dpMappings() {
+    const mfr = (this.getSetting('zb_manufacturer_name') || '').toLowerCase();
+    const isImmax = IMMAX_MFRS.some(m => mfr.includes(m));
+
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       5: { capability: null, internal: 'countdown_timer', writable: true },
@@ -23,9 +28,9 @@ class ValveIrrigationDevice extends UnifiedPlugBase {
       7: { capability: 'meter_water', divisor: 1 },
       11: { capability: null, internal: 'weather_delay', writable: true },
       13: { capability: 'measure_battery', divisor: 1 },
-      14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolète
+      14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
       15: { capability: 'measure_battery', divisor: 1 },
-      101: { capability: null, internal: 'last_water_time' },
+      101: { capability: isImmax ? 'meter_water' : null, internal: isImmax ? null : 'last_water_time', divisor: 1000 },
       102: { capability: null, internal: 'water_cycle', writable: true },
       103: { capability: null, internal: 'frost_protection', writable: true },
       104: { capability: 'meter_water', divisor: 1 }

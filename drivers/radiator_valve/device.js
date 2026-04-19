@@ -34,12 +34,27 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       '_TZE284_rv6iuyxb', '_tze284_rv6iuyxb',
       '_TZE284_c6wv4xyo', '_tze284_c6wv4xyo',
       '_TZE284_hvaxb2tc', '_tze284_hvaxb2tc',
-      '_TZE204_o3x45p96', '_tze204_o3x45p96'
+      '_TZE204_o3x45p96', '_tze204_o3x45p96',
+      '_tze200_ne4pikwm', '_TZE284_ne4pikwm'
     ];
-    return me167Ids.some(id => mfr.toLowerCase().includes(id.toLowerCase())) ? 'me167' : 'standard';
+    if (me167Ids.some(id => mfr.toLowerCase().includes(id.toLowerCase()))) return 'me167';
+    
+    const nedisIds = ['_TZE284_ne4pikwm', '_tze284_ne4pikwm', 'ne4pikwm'];
+    if (nedisIds.some(id => mfr.toLowerCase().includes(id.toLowerCase()))) return 'nedis';
+    
+    return 'standard';
   }
 
   get dpMappings() {
+    if (this.dpProfile === 'nedis') {
+      return {
+        1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+        2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
+        16: { capability: 'target_temperature', divisor: 10 },
+        24: { capability: 'measure_temperature', divisor: 10 },
+        40: { capability: null, internal: 'child_lock', writable: true }
+      };
+    }
     if (this.dpProfile === 'me167') {
       // Profile B: AVATTO ME167/TRV06 DP mapping
       return {
@@ -147,7 +162,9 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     }
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
-        const dp = profile === 'me167' ? 4 : 3;
+        let dp = 3;
+        if (profile === 'me167') dp = 4;
+        if (profile === 'nedis') dp = 16;
         await this._sendTuyaDP(dp, Math.round(safeMultiply(v, 10)), 'value');
       });
     }
