@@ -38,7 +38,7 @@
 | button_wireless_4 | 29 | SNZB-01M, TS0014, TS0044, TS004F | button.1, button.2, button.3... |
 | button_wireless_6 | 3 | TS0046, TS0601 | button.1, button.2, button.3... |
 | button_wireless_8 | 1 | TS0048 | button.1, button.2, button.3... |
-| button_wireless_fingerbot_hybrid | 0 | TS0001, TS0001_FINGERBOT | onoff, measure_battery, measure_power... |
+| button_wireless_fingerbot_hybrid | 5 | TS0001, TS0001_FINGERBOT | onoff, measure_battery, measure_power... |
 | button_wireless_plug_hybrid | 0 | TS0111, TS011F, TS0121, TSO121 | measure_power, meter_power, measure_voltage... |
 | button_wireless_scene_hybrid | 1 | - | button.1, button.2, measure_battery... |
 | button_wireless_smart_hybrid | 1 | TS0041, TS004F | button.1, measure_battery, measure_radio_stability... |
@@ -158,7 +158,7 @@
 | motion_sensor_switch_hybrid | 1 | - | onoff, measure_battery, measure_power... |
 | pet_feeder | 5 | TS0601, TS0601_FEEDER | button.feed, alarm_generic, measure_radio_stability... |
 | pet_feeder_zigbee | 4 | TS0601 | button, measure_weight, alarm_generic... |
-| plug_energy_monitor | 39 | A11Z, A7Z, CK-BL702-SWP-01(7020), E1603/E1702/E1708, HY0104, HY0105, JZ-ZB-005, LSPA9, LUMI.PLUG.MACN01, LUMI.PLUG.MAEU01, LUMI.PLUG.MMEU01, S31ZB, S40ZBTPB, S40ZBTPF, S40ZBTPG, S60ZBTPE, S60ZBTPF-R2, SA-028-1, SA-029-1, SNZB-06P, SP 120, SP 220, SP 222, SP-EUC01, SP-EUC02, SPM01, SPMZBR2, TRADFRI CONTROL OUTLET, TS0121, TSO121, Z111PL0H-1JX, ZBMINIL2, TS011F | measure_power, meter_power, measure_voltage... |
+| plug_energy_monitor | 40 | A11Z, A7Z, CK-BL702-SWP-01(7020), E1603/E1702/E1708, HY0104, HY0105, JZ-ZB-005, LSPA9, LUMI.PLUG.MACN01, LUMI.PLUG.MAEU01, LUMI.PLUG.MMEU01, S31ZB, S40ZBTPB, S40ZBTPF, S40ZBTPG, S60ZBTPE, S60ZBTPF-R2, SA-028-1, SA-029-1, SNZB-06P, SP 120, SP 220, SP 222, SP-EUC01, SP-EUC02, SPM01, SPMZBR2, TRADFRI CONTROL OUTLET, TS0121, TSO121, Z111PL0H-1JX, ZBMINIL2, TS011F | measure_power, meter_power, measure_voltage... |
 | plug_energy_monitor_hybrid | 1 | S26R2ZB, S31ZB, TS011F, TS0601, ZBMINIL2 | measure_temperature, measure_humidity, measure_battery... |
 | plug_smart | 34 | S26R2ZB, S31 LITE ZB, S40LITE, S60ZBTPF, S60ZBTPG, TS0049, TS0101, TS0111, TS011F, TS0121, TS0601 | measure_battery, measure_current, measure_power... |
 | plug_smart_switch_hybrid | 1 | - | onoff, measure_battery, measure_power... |
@@ -276,6 +276,6 @@
 | zigbee_repeater | 5 | TS0207 | measure_radio_stability, measure_maintenance_score |
 
 ---
-**Total:** 272 drivers, 3018 manufacturer IDs
+**Total:** 272 drivers, 3024 manufacturer IDs
 
-*Generated: 2026-04-19T22:18:15.558Z*
+*Generated: 2026-04-19T22:35:35.216Z*
