@@ -108,7 +108,22 @@ jobs:
             node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); if(r.naNSafetyCheck.length > 0 || r.collisions.length > 0) { console.error('FAILED: Architectural violations detected! (NaN:' + r.naNSafetyCheck.length + ', Collisions:' + r.collisions.length + ')'); process.exit(1); }"
           fi
 
+      - name: 🔄 Case Variant Detection (Z2M/ZHA)
+        run: |
+          echo "=== Detecting missing case variants ==="
+          node scripts/automation/detect-missing-variants.js
+          MISSING=$(node -e "const d=JSON.parse(require('fs').readFileSync('data/community-sync/missing-variants-detected.json','utf8'));console.log(d.total||0)")
+          echo "Found $MISSING missing case variants"
+          if [ "$MISSING" -gt 0 ]; then
+            node scripts/automation/fix-detected-variants.js
+          fi
+
+      - name: 🔍 Fingerprint Collision Analysis
+        run: node scripts/automation/analyze-collisions.js
+
       - name: 🛡️ FINAL FINGERPRINT DISAMBIGUATION
++++++++
+ REPLACE
         run: node scripts/automation/fix-fingerprint-conflicts.js
 
       - name: 🧹 EMERGENCY CORRUPTION REPAIR

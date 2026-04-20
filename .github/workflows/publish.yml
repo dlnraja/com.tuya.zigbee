@@ -1,33 +1,104 @@
-name: Autonomous Shadow Publish (Test Track)
+name: 🚀 Autonomous Publish (Test Track)
 on:
   push:
     branches:
       - master
       - main
+
+permissions:
+  contents: write
+
+env:
+  NODE_VERSION: "22"
+
 jobs:
-  autonomous_build_and_publish:
+  build_and_publish:
     runs-on: ubuntu-latest
     if: github.actor != 'github-actions[bot]'
+    timeout-minutes: 20
     steps:
       - name: Checkout Code
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
       
-      - name: Setup Node (Free Tier Cache)
+      - name: Setup Node
         uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: 'npm'
           
       - name: Install Dependencies
-        run: npm ci
+        run: npm ci --prefer-offline --no-audit || npm install
 
-      - name: Sanitize Code (Invisible Chars & Case-Insensitive align)
-        run: node scripts/shadow_sanitizer.js
+      # Step 1: Case Variant Detection
+      - name: 🔄 Detect Missing Case Variants
+        id: detect-variants
+        run: |
+          echo "=== Detecting missing case variants ==="
+          node scripts/automation/detect-missing-variants.js
+          MISSING=$(node -e "const d=JSON.parse(require('fs').readFileSync('data/community-sync/missing-variants-detected.json','utf8'));console.log(d.total||0)")
+          echo "missing_variants=$MISSING" >> $GITHUB_OUTPUT
+          echo "Found $MISSING missing case variants"
           
-      - name: Compile App Manifest (Fix Homey CLI Bug #366)
+      - name: 🔧 Fix Missing Case Variants
+        if: steps.detect-variants.outputs.missing_variants != '0'
+        run: node scripts/automation/fix-detected-variants.js
+
+      # Step 2: Collision Analysis
+      - name: 🔍 Fingerprint Collision Analysis
+        run: |
+          echo "=== Analyzing fingerprint collisions ==="
+          node scripts/automation/analyze-collisions.js
+
+      # Step 3: Code Quality
+      - name: 🧹 Sanitize Code
+        run: node scripts/shadow_sanitizer.js
+
+      - name: 🛡️ Zero Defect Audit
+        run: node scripts/maintenance/zero-defect-architect-audit.js
+
+      - name: 📊 Validate JSON
+        run: |
+          FAIL=0
+          for f in drivers/*/driver.compose.json; do
+            if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
+              echo "FAIL: $f"
+              FAIL=1
+            fi
+          done
+          if [ "$FAIL" = "1" ]; then exit 1; fi
+          echo "✅ All JSON valid"
+
+      # Step 4: Build & Validate
+      - name: 🔨 Build App
         run: npx homey app build
-        
-      - name: Silent Publish to Test Track (No Notifications)
+
+      - name: 🔍 Validate App
+        run: npx homey app validate --level publish
+
+      - name: 📦 Get App Info
+        id: info
+        run: |
+          VERSION=$(node -p "require('./app.json').version")
+          DRIVERS=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "drivers=$DRIVERS" >> $GITHUB_OUTPUT
+
+      # Step 5: Publish
+      - name: 🚀 Publish to Test Track
         uses: athombv/github-action-homey-app-publish@v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
+          branch: test
+
+      # Step 6: Summary
+      - name: 📊 Summary
+        if: always()
+        run: |
+          echo "## 🚀 Publish Summary" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Version | ${{ steps.info.outputs.version }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Drivers | ${{ steps.info.outputs.drivers }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Case Variants Fixed | ${{ steps.detect-variants.outputs.missing_variants || '0' }} |" >> $GITHUB_STEP_SUMMARY
