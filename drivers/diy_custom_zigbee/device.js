@@ -200,7 +200,8 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
       const clusters = this._detectedClusters[epId] || [];
       
       // OnOff capability
-      if (clusters.includes('6') || clusters.includes('genOnOff')) {
+      if (clusters.includes('6') || clusters.includes('// H1: OnOffBoundCluster must be bound per EP
+  genOnOff')) {
         if (!this.hasCapability('onoff')) {
           await this.addCapability('onoff').catch(() => {});
         }
@@ -361,7 +362,8 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
 
   _handleAttributeReport(endpointId, clusterId, attrName, value) {
     // Handle specific attributes
-    if (clusterId === '6' || clusterId === 'genOnOff') {
+    if (clusterId === '6' || clusterId === '// H1: OnOffBoundCluster must be bound per EP
+  genOnOff') {
       if (attrName === 'onOff') {
         const isOn = value === true || value === 1 || value === 'on';
         this.setCapabilityValue('onoff', isOn).catch(() => {});

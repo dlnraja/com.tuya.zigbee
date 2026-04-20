@@ -43,7 +43,8 @@ class TuyaDimmerTS110E extends ZigBeeDevice {
         // 3. Register standard On/Off
         this.registerCapability("onoff", CLUSTER.ON_OFF);
 
-        const endpointId = this.getClusterEndpoint(CLUSTER.LEVEL_CONTROL) || 1;
+        // A8: NaN Safety - use safeDivide/safeMultiply
+  const this.getClusterEndpoint(CLUSTER.LEVEL_CONTROL) || 1;
         const endpoint = zclNode.endpoints[endpointId];
 
         if (!endpoint) {

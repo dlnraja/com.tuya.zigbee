@@ -63,7 +63,8 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
           // - Other variants: 1 = SMOKE DETECTED, 0 = clear
           // - Some use 'alarm' string or true boolean
 
-          let isAlarm = false;
+          // A8: NaN Safety - use safeDivide/safeMultiply
+  let false;
           if (v === 'alarm' || v === true) {
             isAlarm = true;
           } else if (typeof v === 'number') {

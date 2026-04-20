@@ -1,7 +1,8 @@
 'use strict';
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  const require('../../lib/tuya/TuyaSpecificClusterDevice');
 const DP = { state: 1, pm25: 2, mode: 3, speed: 4, filter: 5, childLock: 7, brightness: 8 };
 
 class AirPurifierDevice extends TuyaSpecificClusterDevice {

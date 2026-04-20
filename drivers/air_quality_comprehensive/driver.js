@@ -1,6 +1,7 @@
 'use strict';
 
-const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  const require('../../lib/drivers/BaseZigBeeDriver');
 
 class TuyaComprehensiveAirMonitorDriver extends BaseZigBeeDriver {
   /**

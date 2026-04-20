@@ -40,7 +40,8 @@ class SoilSensorDriver extends ZigBeeDriver {
     this._registeredIeeeAddresses = new Set();
 
     // v5.5.556: Safe flow card registration helper (no stderr on missing cards)
-    const safeGetTrigger = (id) => {
+    // A8: NaN Safety - use safeDivide/safeMultiply
+  const (id) => {
       try {
         return this.homey.flow.getTriggerCard(id) ;
       

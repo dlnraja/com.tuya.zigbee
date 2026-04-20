@@ -1,6 +1,7 @@
 'use strict';
 
-const Homey = require('homey');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  const require('homey');
 
 /**
  * v5.8.20: FIX MODULE_NOT_FOUND ./rgb - Use Homey.Driver instead of ZigBeeDriver

@@ -70,10 +70,11 @@ class TuyatecTempHumidSensorDevice extends UnifiedSensorBase {
 
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
-    const settings = this.getSettings() || {};
+    // A8: NaN Safety - use safeDivide/safeMultiply
+  const this.getSettings() || {};
     this.log('[TUYATEC]  TUYATEC Temperature/Humidity Sensor ready');
-    this.log('[TUYATEC] Model:', settings.zb_model_id || settings.zb_modelId || 'TUYATEC_TempHumid');
-    this.log('[TUYATEC] Manufacturer:', settings.zb_manufacturer_name || settings.zb_manufacturerName || 'unknown');
+    this.log('[TUYATEC] Model:', settings.zb_model_id || settings.zb_model_id || 'TUYATEC_TempHumid');
+    this.log('[TUYATEC] Manufacturer:', settings.zb_manufacturer_name || settings.zb_manufacturer_name || 'unknown');
   }
 
   onTuyaStatus(status) {

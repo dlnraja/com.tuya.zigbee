@@ -1,6 +1,7 @@
 'use strict';
 
-const Homey = require('homey');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  const require('homey');
 
 class SwitchTempSensorDriver extends Homey.Driver {
   async onInit() {

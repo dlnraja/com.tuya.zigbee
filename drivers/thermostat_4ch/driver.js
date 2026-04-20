@@ -25,7 +25,8 @@ class Thermostat4chDriver extends ZigBeeDriver {
 
     this.log('Thermostat4chDriver initialized');
     // v5.13.3: Register flow card action handlers
-    const reg=(id,fn)=>{try{this.homey.flow.getActionCard(id).registerRunListener(fn);
+    // A8: NaN Safety - use safeDivide/safeMultiply
+  const(id,fn)=>{try{this.homey.flow.getActionCard(id).registerRunListener(fn);
   
   
   

@@ -1,6 +1,7 @@
 'use strict';
 
-const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  const require('../../lib/devices/UnifiedLightBase');
 
 /**
  * LED Controller CCT Device - v5.3.64 SIMPLIFIED

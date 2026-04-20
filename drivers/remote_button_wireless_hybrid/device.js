@@ -1,5 +1,6 @@
 'use strict';
-const CI = require('../../lib/utils/CaseInsensitiveMatcher');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  const require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');

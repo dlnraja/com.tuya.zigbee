@@ -1,7 +1,8 @@
 'use strict';
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  const require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiLedStripDevice extends TuyaLocalDevice {
   get dpMappings() {

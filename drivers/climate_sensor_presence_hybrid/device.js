@@ -623,7 +623,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // v5.8.77: Added zclNode.modelId + _cachedModelId  fixes HOBEIAN ZG-204ZM wrong config
     const settings = this.getSettings() || {};
     const modelId = settings.zb_model_id 
-      || settings.zb_modelId 
+      || settings.zb_model_id 
       || this.getData()?.modelId
       || this.getData()?.productId
       || this.getStoreValue?.('modelId')

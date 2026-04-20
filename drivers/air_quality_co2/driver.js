@@ -34,7 +34,8 @@ class AirQualityCO2Driver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('air_quality_co2_co2_above', 'condition');
+      // A8: NaN Safety - use safeDivide/safeMultiply
+  const this._getFlowCard('air_quality_co2_co2_above', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
