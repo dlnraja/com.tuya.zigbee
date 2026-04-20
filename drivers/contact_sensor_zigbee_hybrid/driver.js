@@ -13,7 +13,8 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
   }
 
   async onInit() {
-    await super.onInit();
+    await super// Sleepy device: Use Passive Mode (SLEEPY_TUYA_56_YEARS_BUG.md)
+    .onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
     this.log('LonsonhoContactSensorDriver v5.5.570 initialized');
