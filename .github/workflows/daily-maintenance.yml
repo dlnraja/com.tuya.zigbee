@@ -35,6 +35,21 @@ jobs:
       - name: 🧠 Run Autonomous Maintenance Orchestrator
         run: node scripts/maintenance/autonomous-maintenance-orchestrator.js
 
+      # Z2M/ZHA case variant compatibility
+      - name: 🔄 Case Variant Sync
+        run: |
+          echo "Syncing case variants for Z2M/ZHA compatibility..."
+          node scripts/automation/detect-missing-variants.js
+          MISSING=$(node -e "const d=JSON.parse(require('fs').readFileSync('data/community-sync/missing-variants-detected.json','utf8'));console.log(d.total||0)")
+          if [ "$MISSING" -gt 0 ]; then
+            echo "Auto-fixing $MISSING missing variants..."
+            node scripts/automation/fix-detected-variants.js
+          else
+            echo "✓ All variants synced"
+          fi
++++++++
+ REPLACE
+
       - name: Commit & Push Changes (Robust)
         run: |
           git config user.name "github-actions[bot]"

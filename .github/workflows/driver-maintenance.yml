@@ -82,6 +82,20 @@ jobs:
           if [ "$FAIL" = "1" ]; then echo "JSON validation failed!"; exit 1; fi
           echo "All JSON valid."
 
+      # Case variant detection for Z2M/ZHA compatibility
+      - name: Detect & Fix Case Variants
+        run: |
+          echo "Detecting missing case variants..."
+          node scripts/automation/detect-missing-variants.js
+          MISSING=$(node -e "const d=JSON.parse(require('fs').readFileSync('data/community-sync/missing-variants-detected.json','utf8'));console.log(d.total||0)")
+          echo "Found $MISSING missing case variants"
+          if [ "$MISSING" -gt 0 ]; then
+            echo "Fixing variants..."
+            node scripts/automation/fix-detected-variants.js
+          fi
++++++++
+ REPLACE
+
       - name: Validate device.js syntax
         continue-on-error: true
         run: |

@@ -108,7 +108,6 @@ jobs:
         run: npx homey app validate --level publish
 
       # Step 3.5a: Case-consistency check (_TZe200 vs _TZE200)
-      # Step 3.5a: Case-consistency check (_TZe200 vs _TZE200)
       - name: Check & Fix FP case consistency
         run: |
           echo "Running manufacturer name normalization..."
@@ -122,7 +121,25 @@ jobs:
             node scripts/automation/fix-case-variants.js || true
           fi
 
+      # Step 3.5a.2: Detect & Fix Missing Case Variants (Z2M compatibility)
+      - name: Detect Missing Case Variants
+        id: detect-variants
+        run: |
+          echo "Detecting missing case variants for Z2M/ZHA compatibility..."
+          node scripts/automation/detect-missing-variants.js
+          # Export count for summary
+          MISSING=$(node -e "const d=JSON.parse(require('fs').readFileSync('data/community-sync/missing-variants-detected.json','utf8'));console.log(d.total||0)")
+          echo "missing_variants=$MISSING" >> $GITHUB_OUTPUT
+          echo "Found $MISSING missing case variants"
+
+      - name: Fix Missing Case Variants
+        if: steps.detect-variants.outputs.missing_variants != '0'
+        run: |
+          echo "Fixing missing case variants..."
+          node scripts/automation/fix-detected-variants.js
       # Step 3.5b: Duplicate FP+PID check
++++++++
+ REPLACE
       - name: Check duplicate FP+PID combos
         run: |
           node -e "
