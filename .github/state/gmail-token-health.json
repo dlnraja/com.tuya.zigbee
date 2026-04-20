@@ -1,6 +1,6 @@
 {
   "mode": "imap",
-  "lastOk": "2026-04-13T08:39:53.310Z",
+  "lastOk": "2026-04-20T08:42:57.238Z",
   "consecutiveFails": 0,
   "emailsFetched": 5,
   "checks": [
@@ -11,6 +11,12 @@
     },
     {
       "time": "2026-04-13T08:39:53.310Z",
+      "ok": true,
+      "mode": "imap",
+      "count": 5
+    },
+    {
+      "time": "2026-04-20T08:42:57.238Z",
       "ok": true,
       "mode": "imap",
       "count": 5
