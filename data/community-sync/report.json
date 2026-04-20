@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-20T18:06:27.607Z",
+  "ts": "2026-04-20T18:34:33.350Z",
   "currentCount": 3170,
   "src": {
     "johan": {
@@ -11033,7 +11033,7 @@
       "enriched": true
     },
     "z2m": {
-      "count": 1504,
+      "count": 1506,
       "fingerprints": [
         {
           "mfr": "_TZ3000_zl1kmjqx",
@@ -13199,6 +13199,11 @@
           "source": "Z2M"
         },
         {
+          "mfr": "_TZE284_r731zlxk",
+          "productId": null,
+          "source": "Z2M"
+        },
+        {
           "mfr": "_TZE200_raz9qavg",
           "productId": null,
           "source": "Z2M"
@@ -14670,6 +14675,11 @@
         },
         {
           "mfr": "_TZE200_odlldrxx",
+          "productId": null,
+          "source": "Z2M"
+        },
+        {
+          "mfr": "_TZE200_m6lwazh9",
           "productId": null,
           "source": "Z2M"
         },
@@ -24818,6 +24828,12 @@
       "driver": null
     },
     {
+      "mfr": "_TZE284_r731zlxk",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
       "mfr": "_TZE200_raz9qavg",
       "productId": null,
       "source": "Z2M",
@@ -26109,6 +26125,12 @@
     },
     {
       "mfr": "_TZE200_odlldrxx",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
+      "mfr": "_TZE200_m6lwazh9",
       "productId": null,
       "source": "Z2M",
       "driver": null
@@ -43842,6 +43864,12 @@
       "driver": null
     },
     {
+      "mfr": "_TZE284_r731zlxk",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
       "mfr": "_TZE200_raz9qavg",
       "productId": null,
       "source": "Z2M",
@@ -45607,6 +45635,12 @@
     },
     {
       "mfr": "_TZE200_odlldrxx",
+      "productId": null,
+      "source": "Z2M",
+      "driver": null
+    },
+    {
+      "mfr": "_TZE200_m6lwazh9",
       "productId": null,
       "source": "Z2M",
       "driver": null
@@ -50328,6 +50362,6 @@
       "driver": null
     }
   ],
-  "newCount": 1417,
-  "enrichedCount": 2154
+  "newCount": 1419,
+  "enrichedCount": 2156
 }
