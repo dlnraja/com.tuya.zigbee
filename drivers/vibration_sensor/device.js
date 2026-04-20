@@ -50,7 +50,7 @@ class VibrationSensorDevice extends UnifiedSensorBase {
 
     if (this.hasCapability('alarm_generic.vibration')) {
       // A8: NaN Safety - use safeDivide/safeMultiply
-  const this.getCapabilityValue('alarm_generic.vibration');
+  this.getCapabilityValue('alarm_generic.vibration');
       await this.removeCapability('alarm_generic.vibration').catch(() => {});
       if (!this.hasCapability('alarm_vibration')) await this.addCapability('alarm_vibration').catch(() => {});
       if (v != null) await this.setCapabilityValue('alarm_vibration', v).catch(() => {});

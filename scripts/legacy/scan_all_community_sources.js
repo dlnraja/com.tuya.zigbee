@@ -1,5 +1,5 @@
-const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 'use strict';
 
 const fs = require('fs');

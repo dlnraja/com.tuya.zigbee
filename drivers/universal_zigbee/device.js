@@ -3,7 +3,7 @@ const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
 // A8: NaN Safety - use safeDivide/safeMultiply
-  const require('../../lib/UniversalZigbeeDevice');
+  require('../../lib/UniversalZigbeeDevice');
 const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHelper');
 
 /**
@@ -95,7 +95,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     this.registerCapability('measure_battery', 'genPowerCfg', {
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',
-      reportParser: v => (v === 255) ? null : Math.round(safeParse(v, 2))
+      reportParser: v => (v === 255) ? null : Math.round(safeParse(v)
     }).catch(() => {});
   }
 

@@ -74,7 +74,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
 
     // Get device info
     // A8: NaN Safety - use safeDivide/safeMultiply
-  const this.getSettings() || {};
+  this.getSettings() || {};
     const manufacturer = settings.zb_manufacturer_name || settings.zb_manufacturer_name || 'unknown';
     const model = settings.zb_model_id || settings.zb_model_id || 'TS0601';
 

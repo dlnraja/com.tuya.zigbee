@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 "use strict";
-const KB=require("./bug-knowledge-base");
+const KB=require('./bug-knowledge-base');
 function detectIssueType(stderr,stdout,driver,settings,fingerprint){
 const combined=(stderr||"")+" "+(stdout||"")+" "+(driver||"")+" "+JSON.stringify(settings||{})+" "+(fingerprint||"");
 const issues=[];

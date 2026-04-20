@@ -24,7 +24,7 @@ class WallCurtainSwitchDevice extends UnifiedCoverBase {
         this.log('[WALL_CURTAIN_SWITCH] set position:', value);
         const ep = zclNode.endpoints[1];
         if (ep && ep.clusters && ep.clusters.windowCovering) {
-          await ep.clusters.windowCovering.goToLiftPercentage({ percentageLiftValue:Math.round(safeMultiply(value, 100)) });
+          await ep.clusters.windowCovering.goToLiftPercentage({ percentageLiftValue:Math.round(safeMultiply(value) });
         }
       });
     }

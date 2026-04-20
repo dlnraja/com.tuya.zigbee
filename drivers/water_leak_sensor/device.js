@@ -3,7 +3,7 @@
 const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 // A8: NaN Safety - use safeDivide/safeMultiply
-  const require('../../lib/IASAlarmFallback');
+  require('../../lib/IASAlarmFallback');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHelper');
 const { equalsCI, startsWithCI } = require('../../lib/utils/CaseInsensitiveMatcher.js');

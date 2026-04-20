@@ -16,7 +16,7 @@ class D extends EweLinkLocalDevice {
     if (this.hasCapability('onoff.2')) this.registerCapabilityListener('onoff.2', async v => { await this._client.setSwitch(v, 1); });
     if (this.hasCapability('dim')) {
       this.registerCapabilityListener('dim', async v => {
-        const spd = Math.max(1, Math.min(3, Math.round(safeMultiply(v, 3))));
+        const spd = Math.max(1, Math.min(3, Math.round(safeMultiply(v));
         await this._client._send('/zeroconf/fan', { fan: 'on', speed: spd });
       });
     }

@@ -1,122 +1,95 @@
 #!/usr/bin/env node
+/**
+ * scan-forks-recursive.js  Recursively scan all forks of com.tuya.zigbee for new fingerprints.
+ * Also scans PRs (open and closed) to identify contributors.
+ *
+ * Required env: GITHUB_TOKEN
+ */
 'use strict';
 const fs=require('fs'),path=require('path');
 const{loadFingerprints}=require('./load-fingerprints');
-const{fetchWithRetry}=require('./retry-helper');
-const ROOT=path.join(__dirname,'..','..');
-const GH='https://api.github.com';
-const TOKEN=process.env.GH_PAT||process.env.GH_TOKEN||process.env.GITHUB_TOKEN;
-const UPSTREAM='JohanBendz/com.tuya.zigbee';
+
 const OWN='dlnraja/com.tuya.zigbee';
-const CREDITS_FILE=path.join(ROOT,'docs','CREDITS.md');
+const UPSTREAM='com-tuya-zigbee/com.tuya.zigbee';
+const MAX_DEPTH=2; // How deep to follow forks
+const CREDITS_FILE=path.join(__dirname,'..','..','CREDITS.md');
 const STATE_FILE=path.join(__dirname,'..','state','fork-scan-state.json');
-const SUMMARY=process.env.GITHUB_STEP_SUMMARY||'/dev/null';
-const MAX_DEPTH=parseInt(process.env.FORK_DEPTH||'3');
-const hdrs={Accept:'application/vnd.github+json','User-Agent':'tuya-fork-scanner'};
-if(TOKEN)hdrs.Authorization='Bearer '+TOKEN;
+const SUMMARY=process.env.GITHUB_STEP_SUMMARY||'summary.txt';
 
-async function ghGet(url){
-  try{const r=await fetchWithRetry(GH+url,{headers:hdrs},{retries:3,label:'ghFork'});
-    if(!r.ok){console.log('  GH '+r.status+': '+url.substring(0,60));return null;}
-    return r.json();
-  }catch{return null;}
+const TOKEN=process.env.GITHUB_TOKEN;
+if(!TOKEN){console.error('GITHUB_TOKEN required');process.exit(1);}
+
+async function fetchGH(url){
+  const r=await fetch('https://api.github.com'+url,{headers:{Authorization:'token '+TOKEN,Accept:'application/vnd.github.v3+json'}});
+  if(!r.ok){if(r.status===403)console.warn(' Rate limit hit?');throw new Error('GH Error '+r.status+': '+await r.text());}
+  return r.json();
 }
 
-async function ghGetAll(url){
-  let all=[],page=1;
-  while(page<=10){
-    const r=await ghGet(url+(url.includes('?')?'&':'?')+'per_page=100&page='+page);
-    if(!r||!r.length)break;
-    all=all.concat(r);page++;
-  }
-  return all;
-}
-
-// Recursively collect all forks (parent -> children -> grandchildren)
 async function collectForks(repo,depth,visited){
-  if(depth>MAX_DEPTH||visited.has(repo))return[];
-  visited.add(repo);
-  console.log('  '.repeat(depth)+'Scanning forks of '+repo+' (depth '+depth+')');
-  const forks=await ghGetAll('/repos/'+repo+'/forks');
-  if(!forks.length)return[];
-  let all=forks.map(f=>({full_name:f.full_name,owner:f.owner?.login||'?',default_branch:f.default_branch||'main',updated:f.updated_at,depth}));
-  // Recurse into each fork's forks
-  for(const f of forks){
-    if(f.forks_count>0&&depth<MAX_DEPTH){
-      const sub=await collectForks(f.full_name,depth+1,visited);
-      all=all.concat(sub);
+  if(depth>=MAX_DEPTH)return[];
+  console.log('  Collecting forks for '+repo+' (depth '+depth+')...');
+  const forks=[];
+  try{
+    const data=await fetchGH('/repos/'+repo+'/forks?per_page=100');
+    for(const f of data){
+      if(!visited.has(f.full_name)){
+        visited.add(f.full_name);
+        forks.push(f.full_name);
+        const sub=await collectForks(f.full_name,depth+1,visited);
+        forks.push(...sub);
+      }
     }
-  }
-  return all;
+  }catch(e){console.error('    Error fetching forks for '+repo+': '+e.message);}
+  return forks;
 }
 
-// Scan a single fork for new fingerprints
-async function scanFork(fork,fps,newFPs,credits){
+async function scanFork(repo,knownFPs,newFPs,credits){
+  console.log('  Scanning '+repo+'...');
   try{
-    const tree=await ghGet('/repos/'+fork.full_name+'/git/trees/'+fork.default_branch+'?recursive=1');
-    if(!tree||!tree.tree)return;
-    const composeFiles=tree.tree.filter(t=>t.path&&t.path.match(/drivers\/.*\/driver\.compose\.json/));
-    for(const cf of composeFiles){
+    const repoInfo=await fetchGH('/repos/'+repo);
+    const branch=repoInfo.default_branch||'master';
+    const tree=await fetchGH('/repos/'+repo+'/git/trees/'+branch+'?recursive=1');
+    const pathList=tree.tree.filter(n=>n.path.endsWith('driver.compose.json')).map(n=>n.path);
+    
+    let foundCount=0;
+    for(const cp of pathList){
       try{
-        const blob=await ghGet('/repos/'+fork.full_name+'/contents/'+cf.path+'?ref='+fork.default_branch);
-        if(!blob||!blob.content)continue;
-        const decoded=Buffer.from(blob.content,'base64').toString('utf8');
-        const matches=decoded.match(/"_T[A-Za-z0-9_]+"/g)||[];
-        const driver=cf.path.match(/drivers\/([^/]+)\//)?.[1]||'unknown';
-        for(const m of matches){
-          const fp=m.replace(/"/g,'');
-          if(!fps.has(fp)&&!newFPs.has(fp)){
-            newFPs.set(fp,{fork:fork.full_name,owner:fork.owner,driver,depth:fork.depth});
-            if(!credits.has(fork.owner))credits.set(fork.owner,{fps:[],prs:0,repo:fork.full_name});
-            credits.get(fork.owner).fps.push(fp);
+        const content=await (await fetch('https://raw.githubusercontent.com/'+repo+'/'+branch+'/'+cp)).text();
+        const json=JSON.parse(content);
+        const fps=[...(json.zigbee?.manufacturerName||[]),...(json.zigbee?.productId||[])];
+        for(const fp of fps){
+          if(!knownFPs.has(fp)){
+            if(!newFPs.has(fp)){
+              newFPs.set(fp,{fork:repo,path:cp,date:new Date().toISOString(),driver:path.basename(path.dirname(cp)),branch});
+              foundCount++;
+            }
+            // Track contributor
+            const owner=repo.split('/')[0];
+            if(!credits.has(owner))credits.set(owner,{fps:[],prs:0,repo});
+            if(!credits.get(owner).fps.includes(fp))credits.get(owner).fps.push(fp);
           }
         }
       }catch{}
     }
-    // Also scan branches for this fork
-    const branches=await ghGet('/repos/'+fork.full_name+'/branches?per_page=20');
-    if(branches&&branches.length>1){
-      for(const b of branches.slice(0,5)){
-        if(b.name===fork.default_branch)continue;
-        try{
-          const btree=await ghGet('/repos/'+fork.full_name+'/git/trees/'+b.name+'?recursive=1');
-          if(!btree||!btree.tree)continue;
-          const bComposes=btree.tree.filter(t=>t.path&&t.path.match(/drivers\/.*\/driver\.compose\.json/));
-          for(const cf of bComposes){
-            const blob=await ghGet('/repos/'+fork.full_name+'/contents/'+cf.path+'?ref='+b.name);
-            if(!blob||!blob.content)continue;
-            const decoded=Buffer.from(blob.content,'base64').toString('utf8');
-            const matches=decoded.match(/"_T[A-Za-z0-9_]+"/g)||[];
-            const driver=cf.path.match(/drivers\/([^/]+)\//)?.[1]||'unknown';
-            for(const m of matches){
-              const fp=m.replace(/"/g,'');
-              if(!fps.has(fp)&&!newFPs.has(fp)){
-                newFPs.set(fp,{fork:fork.full_name,owner:fork.owner,driver,depth:fork.depth,branch:b.name});
-                if(!credits.has(fork.owner))credits.set(fork.owner,{fps:[],prs:0,repo:fork.full_name});
-                credits.get(fork.owner).fps.push(fp);
-              }
-            }
-          }
-        }catch{}
-      }
-    }
-  }catch(e){console.log('  Skip '+fork.full_name+': '+e.message?.slice(0,40));}
+    if(foundCount>0)console.log('    Found '+foundCount+' new fingerprints in '+repo);
+  }catch(e){console.error('    Error scanning '+repo+': '+e.message);}
 }
 
-// Also scan PRs from all repos for credits
 async function scanPRs(repos,credits){
   for(const repo of repos){
-    const prs=await ghGetAll('/repos/'+repo+'/pulls?state=all&per_page=50');
-    for(const pr of(prs||[])){
-      const author=pr.user?.login;
-      if(!author||author==='github-actions[bot]')continue;
-      if(!credits.has(author))credits.set(author,{fps:[],prs:0,repo});
-      credits.get(author).prs++;
-    }
+    console.log('  Scanning PRs for '+repo+'...');
+    try{
+      const prs=await fetchGH('/repos/'+repo+'/pulls?state=all&per_page=100');
+      for(const pr of prs){
+        const user=pr.user?.login;
+        if(!user)continue;
+        if(!credits.has(user))credits.set(user,{fps:[],prs:0,repo:pr.head?.repo?.full_name||'?'});
+        credits.get(user).prs++;
+      }
+    }catch(e){console.error('    Error scanning PRs for '+repo+': '+e.message);}
   }
 }
 
-// Update CREDITS.md
 function updateCredits(credits){
   const sorted=[...credits.entries()].sort((a,b)=>(b[1].fps.length+b[1].prs)-(a[1].fps.length+a[1].prs));
   let md='# Credits & Contributors\n\n';
@@ -126,7 +99,7 @@ function updateCredits(credits){
   md+='|------------|-------------|-----|--------|\n';
   for(const[name,data] of sorted){
     if(data.fps.length===0&&data.prs===0)continue;
-    md+='| [@'+name+'](https://github.com/'+name+') | '+data.fps.length+' | '+data.prs+' | ['+data.repo+'](https:
+    md+='| [@'+name+'](https://github.com/'+name+') | '+data.fps.length+' | '+data.prs+' | ['+data.repo+'](https://github.com/'+data.repo+') |\n';
   }
   md+='\n## New Fingerprints by Contributor\n\n';
   for(const[name,data] of sorted){

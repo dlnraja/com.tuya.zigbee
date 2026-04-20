@@ -4,8 +4,8 @@
  *
  * Auth: PAT -> AthomCloudAPI delegation token (audience: 'apps')
  * API:  apps-api.athom.com/api/v1 (from homey-api SDK spec)
- *   GET  /app/{appId}/build -> list builds
- *   POST /app/{appId}/build/{buildId}/channel -> promote
+ *   GET/app/{appId}/build -> list builds
+ *   POST/app/{appId}/build/{buildId}/channel -> promote
  */
 'use strict';
 const fs = require('fs'), path = require('path');

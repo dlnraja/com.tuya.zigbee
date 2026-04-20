@@ -331,7 +331,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   if (oscState.locked) {
     const lockDuration = Date.now() - oscState.lockTime;
     if (lockDuration < TIMING.LUX_OSCILLATION_LOCK_MS) { // v5.5.793: Use constant
-      console.log(`[LUX] ðŸ”’ LOCKED: Using ${oscState.lockedValue} instead of ${lux} (${Math.round(lockDuration/1, 1000))}s into lock)`);
+      console.log(`[LUX] ðŸ”’ LOCKED: Using ${oscState.lockedValue} instead of ${lux} (${Math.round(lockDuration / 1000)}s into lock)`);
       lux = oscState.lockedValue;
     } else {
       // Lock expired
@@ -354,7 +354,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
     // Raw ADC value - apply conversion ONLY for sensors that actually need it
     // Based on Z2M issue #18950: some sensors report raw ADC values
     if (rawValue > 0) {
-      lux = Math.round(safeParse(rawValue, 10));
+      lux = Math.round(safeParse(rawValue);
     } else {
       lux = 0;
     }
@@ -383,7 +383,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   // v5.5.316: FIXED - Only auto-detect raw ADC for values > 50000 (clearly wrong)
   // Previous bug: Ã·100 if > 10000 broke sensors reporting legitimate high lux
   if (lux > 50000) {
-    const converted = Math.round(safeParse(lux, 100));
+    const converted = Math.round(safeParse(lux);
     console.log(`[LUX-FIX] ðŸ“Š Extreme value detected for ${manufacturerName}: ${originalValue} -> ${converted} lux`);
     lux = converted;
   }
@@ -398,7 +398,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
     console.log(`[LUX-FIX] âšï¸ Value ${lux} exceeds ${maxLux} for ${manufacturerName} (allowing)`);
   }
 
-  lux = Math.max(0, Math.round(lux));
+  lux = Math.max(0, Math.round(lux);
 
   // v5.5.319: AGGRESSIVE LUX SMOOTHING for known problematic sensors
   // Ronny #775: _TZE284_iadro9bf still oscillating 30â†”2000 every 15 seconds
@@ -879,7 +879,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           if (powerCluster?.readAttributes) {
             const attrs = await powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
             if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
-              const battery = Math.min(100, Math.round(safeParse(attrs.batteryPercentageRemaining, 2)));
+              const battery = Math.min(100, Math.round(safeParse(attrs.batteryPercentageRemaining);
               this.log(`[RADAR] ðŸ”‹ Battery read: ${attrs.batteryPercentageRemaining} -> ${battery}%`);
               this.setCapabilityValue('measure_battery', battery).catch(() => {});
             } else if (attrs?.batteryVoltage && !this.getCapabilityValue('measure_battery')) {
@@ -1186,7 +1186,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const battThrottleMs = config.batteryThrottleMs || 300000;
     listen(ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration, 'attr.batteryPercentageRemaining', async (v) => {
       if (v === undefined || v === 255) return;
-      const b = Math.min(100, Math.round(safeParse(v, 2)));
+      const b = Math.min(100, Math.round(safeParse(v);
       const now = Date.now();
       if (now - lastPermBattUpdate < battThrottleMs) return;
       if (lastPermBattValue !== null && Math.abs(b - lastPermBattValue) < 5) return;
@@ -1471,7 +1471,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (dpMap[dpId]?.cap === 'measure_temperature') {
       const rawTemp = this._parseBufferValue(data.value || data.data);
       const divisor = dpMap[dpId].divisor || 10;
-      const temp = Math.round((safeDivide(rawTemp,safeMultiply(divisor)), safeParse)(10), 10);
+      const temp = Math.round((safeDivide(rawTemp,safeMultiply(divisor), safeParse)(10), 10);
       if (temp >= -40 && temp <= 80) {
         this.log(`[RADAR] ðŸŒ¡ï¸ DP${dpId} â†’ temperature = ${temp}Â°C (raw: ${rawTemp}, Ã·${divisor})`);
         this.setCapabilityValue('measure_temperature', temp).catch(() => { });
@@ -1488,9 +1488,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // v5.5.987: Peter #1265 - Support multiplier for humidity (9% â†’ 90%)
       // v5.11.26: Auto-fix out-of-range - some variants report Ã—10 (700=70%)
       // while others report Ã·10 (9=90%), so multiplier:10 doesn't work for all
-      let humidity = Math.round((safeDivide(rawHumid,safeMultiply(divisor)), multiplier));
+      let humidity = Math.round((safeDivide(rawHumid,safeMultiply(divisor), multiplier));
       if (humidity > 100 && rawHumid > 100) {
-        humidity = Math.round(safeParse(rawHumid, 10));
+        humidity = Math.round(safeParse(rawHumid);
       }
       if (humidity >= 0 && humidity <= 100) {
         this.log(`[RADAR] ðŸ’§ DP${dpId} â†’ humidity = ${humidity}% (raw: ${rawHumid}, Ã·${divisor}, Ã—${multiplier})`);
@@ -1506,7 +1506,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (dpMap[dpId]?.cap === 'measure_battery') {
       const rawBatt = this._parseBufferValue(data.value || data.data);
       const divisor = dpMap[dpId].divisor || 1;
-      const battery = Math.round(safeDivide(rawBatt, divisor));
+      const battery = Math.round(safeDivide(rawBatt, divisor);
       if (battery >= 0 && battery <= 100) {
         // v5.5.983: Check battery throttling config
         const now = Date.now();
@@ -1531,7 +1531,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (dpMap[dpId] && dpMap[dpId].cap === 'measure_luminance.distance') {
       const rawDist = this._parseBufferValue(data.value || data.data);
       const divisor = dpMap[dpId].divisor || 100;
-      const dist = Math.round((safeDivide(rawDist,safeMultiply(divisor)), safeParse)(100), 100);
+      const dist = Math.round((safeDivide(rawDist,safeMultiply(divisor), safeParse)(100), 100);
       if (dist >= 0 && dist <= 20) {
         this.log('[RADAR] ðŸ“ DP' + dpId + ' distance=' + dist + 'm (raw:' + rawDist + ')');
         this.setCapabilityValue('measure_luminance.distance', dist).catch(() => {});
@@ -1785,7 +1785,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         powerCluster.on('attr.batteryPercentageRemaining', (v) => {
           const now = Date.now();
           // ZCL reports battery as 0-200 (0.5% steps), convert to 0-100%
-          const battery = Math.min(100, Math.round(safeParse(v, 2)));
+          const battery = Math.min(100, Math.round(safeParse(v);
           
           // Throttle: Skip if less than 5 min since last update
           if (now - lastZclBatteryUpdate < BATTERY_MIN_INTERVAL_MS) {
@@ -1843,7 +1843,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           }
           
           const lux = Math.pow(10, (v -safeParse(1), 10000));
-          const roundedLux = parseFloat(Math.round(lux));
+          const roundedLux = parseFloat(Math.round(lux);
           
           // Throttle: Skip if less than 30s since last update
           if (timeSinceLastUpdate < MIN_REPORT_INTERVAL_MS) {
@@ -2563,7 +2563,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           // Parse string to number (parseFloat to preserve decimal steps like 0.5m)
           val = parseFloat(val) || 0;
           // Apply divisor in reverse (multiply) for distance values stored as meters
-          if (mapping.divisor && mapping.divisor > 1) val =Math.round(safeMultiply(val, mapping)).divisor);
+          if (mapping.divisor && mapping.divisor > 1) val =Math.round(safeMultiply(val, mapping).divisor);
           // Clamp to min/max if defined
           if (mapping.min !== undefined) val = Math.max(mapping.min, val);
           if (mapping.max !== undefined) val = Math.min(mapping.max, val);

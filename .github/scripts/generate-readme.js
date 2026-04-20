@@ -1,5 +1,5 @@
-const { safeParse, safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
+const { safeParse, safeDivide } = require('../../lib/utils/tuyaUtils.js');
 'use strict';
 
 const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
@@ -163,7 +163,7 @@ ${clTable}
 | **Dimmers** | Wall dimmers, LED dimmers, rotary knobs | ZCL + Tuya DP |
 | **Lights** | RGB, RGBW, CCT bulbs, LED strips | ZCL |
 | **Plugs & Sockets** | Smart plugs, energy monitors, power strips | ZCL + Tuya DP |
-| **Sensors** | safeDivide(Temp, humidity), motion, contact, water leak, smoke, air quality | ZCL + Tuya DP |
+| **Sensors** | Temp/humidity, motion, contact, water leak, smoke, air quality | ZCL + Tuya DP |
 | **Presence Radars** | mmWave, PIR+radar unified, HOBEIAN ZG-204ZM | ZCL + Tuya DP |
 | **Thermostats & TRVs** | Radiator valves, floor heating, AVATTO, Moes | Tuya DP |
 | **Covers** | Curtain motors, roller blinds, garage doors | Tuya DP + ZCL |
@@ -171,11 +171,11 @@ ${clTable}
 | **Locks** | Smart door locks, fingerprint locks | Tuya DP |
 | **Climate** | Air purifiers, fans, IR blasters, humidifiers | Tuya DP |
 | **Water** | Valves, tank monitors, garden timers | Tuya DP |
-| **WiFi Devices** | Tuya WiFi switches, plugs, sensors (via cloud API) | safeDivide(WiFi, Cloud) |
+| **WiFi Devices** | Tuya WiFi switches, plugs, sensors (via cloud API) | WiFi/Cloud |
 
 ### Supported Brands
 
-> BSEED, Zemismart, Moes, AVATTO, Lonsonho, HOBEIAN, safeDivide(Lidl, Silvercrest), safeDivide(eWeLink, SONOFF), Girier, Benexmart, Owon, and **hundreds more** via Tuya OEM fingerprints.
+> BSEED, Zemismart, Moes, AVATTO, Lonsonho, HOBEIAN, Lidl/Silvercrest, eWeLink/SONOFF, Girier, Benexmart, Owon, and **hundreds more** via Tuya OEM fingerprints.
 
 ---
 
@@ -216,8 +216,8 @@ Homey Pro
 |----------|----------|-------------|
 | **Daily Everything** | Daily 2 AM UTC | Forum + GitHub auto-response with AI |
 | **Forum Responder** | Every 6h | Monitors topics 140352, 26439 |
-| **GitHub Scanner** | safeDivide(Mon, Thu) | Issues, PRs, forks analysis |
-| **Enrichment Scanner** | safeDivide(Mon, Thu) | Z2M, ZHA, deCONZ, Blakadder sync |
+| **GitHub Scanner** | Mon/Thu | Issues, PRs, forks analysis |
+| **Enrichment Scanner** | Mon/Thu | Z2M, ZHA, deCONZ, Blakadder sync |
 | **Sunday Master** | Sunday 7 AM | Full triage, fork scan, forum scan |
 | **Monthly Comprehensive** | 1st of month | Deep scan all sources |
 
@@ -284,7 +284,7 @@ Your device's fingerprint (manufacturerName + productId) is not yet in the app. 
 
 1. Try re-pairing the device (remove and add again)
 2. Check if it's a Tuya DP device (TS0601)  these need specific DP mappings
-3. For safeDivide(BSEED, Zemismart): these are ZCL-only, ensure explicit binding is working
+3. For BSEED/Zemismart: these are ZCL-only, ensure explicit binding is working
 </details>
 
 <details>
@@ -294,7 +294,7 @@ Some devices (e.g., TS0044 _TZ3000_wkai4ga5) have a firmware bug that always rep
 </details>
 
 <details>
-<summary><strong>safeDivide(Temperature, humidity) values are wrong (divided by 10 or 100)</strong></summary>
+<summary><strong>Temperature/humidity values are wrong (divided by 10 or 100)</strong></summary>
 
 This is usually a double-division bug. The app auto-detects divisors from Tuya DP values. If values are still wrong after re-pairing, open an issue with your exact manufacturerName.
 </details>
@@ -344,7 +344,7 @@ This app is developed in my free time, powered by passion and coffee!
 A massive thank you to the maintainers and contributors of:
 - **[Koenkk](https://github.com/Koenkk)** and all contributors to **Zigbee2MQTT**
 - **[blakadder](https://github.com/blakadder)** and the Zigbee Device Compatibility Repository
-- The **safeDivide(zigpy, ZHA) / zha-device-handlers** maintainers
+- The **zigpy/ZHA / zha-device-handlers** maintainers
 - The **CSA (Connectivity Standards Alliance)** for the Zigbee specifications
 - All developers and testers who share device logs, diagnostics, and fingerprints
 

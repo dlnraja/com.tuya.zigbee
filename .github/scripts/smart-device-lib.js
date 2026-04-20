@@ -1,6 +1,6 @@
-#!/usr / safeDivide(bin, env) node
+#!/usr/bin/env node
 'use strict';
-const { safeParse } = require('../../lib/utils / tuyaUtils.js');
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 /**
  * Smart Device Library  shared functions for smart-device-processor.js

@@ -1,5 +1,5 @@
-const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 /**
  * Universal Tuya Zigbee - Full Fingerprint Sync Pipeline
  * Crawls: Z2M (all files), ZHA (all dirs), Blakadder, deCONZ

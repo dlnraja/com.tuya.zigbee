@@ -335,7 +335,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         divisor: 10,
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(18, v, 'measure_temperature');
-          return (v >= -40 && v <= 80) ?Math.round(safeMultiply(v, safeParse))(10), 10) : null;
+          return (v >= -40 && v <= 80) ?Math.round(safeMultiply(v, safeParse)(10), 10) : null;
         }
       },
       19: {
@@ -351,7 +351,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         divisor: 10,
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(103, v, 'measure_temperature');
-          return (v >= -40 && v <= 80) ?Math.round(safeMultiply(v, safeParse))(10), 10) : null;
+          return (v >= -40 && v <= 80) ?Math.round(safeMultiply(v, safeParse)(10), 10) : null;
         }
       },
       104: {
@@ -373,7 +373,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       mappings[4] = {
         capability: 'measure_temperature',
         divisor: profile.dp4_divisor || 10,
-        transform: (v) => (v >= -40 && v <= 80) ?Math.round(safeMultiply(v, safeParse))(10), 10) : null
+        transform: (v) => (v >= -40 && v <= 80) ?Math.round(safeMultiply(v, safeParse)(10), 10) : null
       };
     } else if (profile.dp4 === 'measure_humidity') {
       // v5.5.991: HOBEIAN ZG-204ZV humidity needs *10 multiplier (Peter_van_Werkhoven)
@@ -392,7 +392,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             // No temperature received  ZG-204ZL PIR-only  DP4 is battery
             if (v >= 0 && v <= 100) {
               device._dynamicCapabilityFromDP?.(4, v, 'measure_battery');
-              device.setCapabilityValue('measure_battery', Math.round(v)).catch(() => {});
+              device.setCapabilityValue('measure_battery', Math.round(v).catch(() => {});
               device.log?.(`[MOTION-DP]  DP4=${v}  battery (no temp DP3 received, ZG-204ZL pattern)`);
             }
             return null; // Not humidity
@@ -429,7 +429,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         divisor: profile.dp5_divisor || 10,
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(5, v, 'measure_temperature');
-          return (v >= -40 && v <= 80) ?Math.round(safeMultiply(v, safeParse))(10), 10) : null;
+          return (v >= -40 && v <= 80) ?Math.round(safeMultiply(v, safeParse)(10), 10) : null;
         }
       };
     }
@@ -465,7 +465,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(3, v, 'measure_temperature');
           const temp = v / (profile.dp3_divisor || 10);
-          return (temp >= -40 && temp <= 80) ?Math.round(safeMultiply(temp, safeParse))(10), 10) : null;
+          return (temp >= -40 && temp <= 80) ?Math.round(safeMultiply(temp, safeParse)(10), 10) : null;
         }
       };
     }
@@ -508,7 +508,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       temperatureMeasurement: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined && data.measuredValue !== -32768) {
-            let temp = Math.round((safeParse(data.measuredValue,safeMultiply(100)), safeParse)(10), 10);
+            let temp = Math.round((safeParse(data.measuredValue,safeMultiply(100), safeParse)(10), 10);
             // v5.5.793: Use validation constants
             if (temp >= VALIDATION.TEMP_MIN && temp <= VALIDATION.TEMP_MAX) {
               // v5.5.793: Apply calibration offset if available
@@ -532,16 +532,16 @@ class MotionSensorDevice extends UnifiedSensorBase {
       relativeHumidity: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined && data.measuredValue !== 65535) {
-            let hum = Math.round(safeParse(data.measuredValue, 100));
+            let hum = Math.round(safeParse(data.measuredValue);
             // v5.5.793: Auto-detect divisor for devices reporting 0-1000 scale
             if (hum > VALIDATION.HUMIDITY_AUTO_DIVISOR_THRESHOLD) {
-              hum = Math.round(safeParse(hum, 10));
+              hum = Math.round(safeParse(hum);
             }
             // v5.5.793: Use validation constants
             if (hum >= VALIDATION.HUMIDITY_MIN && hum <= VALIDATION.HUMIDITY_MAX) {
               // v5.5.793: Apply calibration offset if available
               const offset = this.getSetting?.('humidity_offset') || 0;
-              hum = Math.max(0, Math.min(100, Math.round(hum + offset)));
+              hum = Math.max(0, Math.min(100, Math.round(hum + offset);
               this.log(`[ZCL]  Humidity: ${hum}% (raw: ${data.measuredValue})`);
               this._registerZigbeeHit?.();
               this._lastHumSource = 'ZCL';
@@ -595,7 +595,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             }
             this._lastBatteryReportTime = now;
 
-            let battery = Math.round(safeParse(data.batteryPercentageRemaining, 2));
+            let battery = Math.round(safeParse(data.batteryPercentageRemaining);
             // v5.5.317: Validate battery with inference
             battery = this._batteryInference?.validateBattery(battery) ?? battery;
             this.log(`[ZCL]  Battery: ${battery}%`);
@@ -1289,7 +1289,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         this.log('[MOTION-AWAKE]  Smart temperature read while device is awake...');
         const data = await this._smartZclRead(tempCluster, ['measuredValue'], 3000);
         if (data?.measuredValue !== undefined && data.measuredValue !== -32768 && data.measuredValue !== 0x8000) {
-          const temp = Math.round((safeParse(data.measuredValue,safeMultiply(100)), safeParse)(10), 10);
+          const temp = Math.round((safeParse(data.measuredValue,safeMultiply(100), safeParse)(10), 10);
           this.log(`[MOTION-AWAKE]  Temperature: ${temp}Â°C (raw: ${data.measuredValue})`);
           // Auto-add capability if needed
           if (!this.hasCapability('measure_temperature')) {
@@ -1321,7 +1321,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         this.log('[MOTION-AWAKE]  Smart humidity read while device is awake...');
         const data = await this._smartZclRead(humCluster, ['measuredValue'], 3000);
         if (data?.measuredValue !== undefined && data.measuredValue !== 65535 && data.measuredValue !== 0xFFFF) {
-          const hum = Math.round(safeParse(data.measuredValue, 100));
+          const hum = Math.round(safeParse(data.measuredValue);
           this.log(`[MOTION-AWAKE]  Humidity: ${hum}% (raw: ${data.measuredValue})`);
           // Auto-add capability if needed
           if (!this.hasCapability('measure_humidity')) {
@@ -1439,7 +1439,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
       if (data?.batteryPercentageRemaining !== undefined && data.batteryPercentageRemaining !== 255) {
         this._lastBatteryReportTime = now;
-        const battery = Math.round(safeParse(data.batteryPercentageRemaining, 2));
+        const battery = Math.round(safeParse(data.batteryPercentageRemaining);
         this.log(`[MOTION-BATTERY]  Battery: ${battery}% (raw: ${data.batteryPercentageRemaining})`);
         if (this.hasCapability('measure_battery')) {
           await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });

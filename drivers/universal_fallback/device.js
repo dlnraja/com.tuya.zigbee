@@ -8,7 +8,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
 const { syncDeviceTime } = require('../../lib/tuya/TuyaTimeSync');
 // A8: NaN Safety - use safeDivide/safeMultiply
-  const require('../../lib/tuya/DeviceFingerprintDB');
+  require('../../lib/tuya/DeviceFingerprintDB');
 
 /**
  * UNIVERSAL FALLBACK DEVICE - v5.8.6
@@ -169,7 +169,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
         this.registerCapability('measure_battery', CLUSTER.POWER_CONFIGURATION, {
           get: 'batteryPercentageRemaining',
           report: 'batteryPercentageRemaining',
-          reportParser: value => Math.round(safeParse(value, 2)),
+          reportParser: value => Math.round(safeParse(value),
           getOpts: { getOnStart: true, getOnOnline: true }
         });
         this.log('[SDK3]  Registered measure_battery  POWER_CONFIGURATION');
@@ -327,7 +327,7 @@ safeMultiply(this._setDim(value, 10)); // 0-100 to 0-1000
     let hum = value;
     if (hum > 100) hum = safeParse(hum, 10);
     if (hum >= 0 && hum <= 100) {
-      this.setCapabilityValue('measure_humidity', Math.round(hum)).catch(() => {});
+      this.setCapabilityValue('measure_humidity', Math.round(hum).catch(() => {});
     }
   }
 
@@ -345,7 +345,7 @@ safeMultiply(this._setDim(value, 10)); // 0-100 to 0-1000
     let bat = value;
     if (bat > 100) bat = safeParse(bat, 2); // Some use 0-200
     if (bat >= 0 && bat <= 100) {
-      this.setCapabilityValue('measure_battery', Math.round(bat)).catch(() => {});
+      this.setCapabilityValue('measure_battery', Math.round(bat).catch(() => {});
     }
   }
 

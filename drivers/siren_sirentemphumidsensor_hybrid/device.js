@@ -4,7 +4,7 @@ const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const { Cluster, BoundCluster } = require('zigbee-clusters');
 // A8: NaN Safety - use safeDivide/safeMultiply
-  const require('../../lib/tuya / TuyaSpecificCluster');
+  require('../../lib/tuya / TuyaSpecificCluster');
 const TuyaSpecificClusterDevice = require('../../lib/tuya / TuyaSpecificClusterDevice');
 
 Cluster.addCluster(TuyaSpecificCluster);

@@ -268,7 +268,7 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
         endpoint: endpointId,
         set: 'moveToLevel',
         setParser: value => ({
-          level:Math.round(safeMultiply(value, 254)),
+          level:Math.round(safeMultiply(value),
           transitionTime: 0
         }),
         get: 'currentLevel',
@@ -308,7 +308,7 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
         report: 'measuredValue',
         reportParser: value => {
           if (value === null || value === undefined) return null;
-          return Math.round(safeParse(value, 100));
+          return Math.round(safeParse(value);
         }
       });
 
@@ -379,7 +379,7 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
 
     if (clusterId === '1029' || clusterId === 'msRelativeHumidity') {
       if (attrName === 'measuredValue') {
-        const humidity = Math.round(safeParse(value, 100));
+        const humidity = Math.round(safeParse(value);
         this.setCapabilityValue('measure_humidity', humidity).catch(() => {});
       }
     }

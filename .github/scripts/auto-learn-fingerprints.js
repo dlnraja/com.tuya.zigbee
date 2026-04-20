@@ -2,7 +2,7 @@
 'use strict';
 // v5.11.27: Auto-Learn Fingerprints  scans all driver.compose.json to discover
 // non-Tuya manufacturers and non-TS productIds, then updates load-fingerprints.js
-// Eliminates hardcoded NON_TUYA_KNOWN / NON_TS_PIDS lists going stale
+// Eliminates hardcoded NON_TUYA_KNOWN/NON_TS_PIDS lists going stale
 const fs=require('fs'),path=require('path');
 const DDIR=path.join(__dirname,'..','..','drivers');
 const LFP=path.join(__dirname,'load-fingerprints.js');

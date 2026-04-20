@@ -1,5 +1,3 @@
-const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
-
 // .github/scripts/dp-learning-system.js
 // Machine learning-inspired DP pattern recognition
 

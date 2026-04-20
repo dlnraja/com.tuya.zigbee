@@ -38,7 +38,7 @@ class WaterValveGardenDevice extends ZigBeeDevice {
     const pwrCfg = ep?.clusters?.powerConfiguration;
     if (pwrCfg) {
       pwrCfg.on('attr.batteryPercentageRemaining', (v) => {
-        const pct = Math.min(100, Math.round(safeParse(v, 2)));
+        const pct = Math.min(100, Math.round(safeParse(v);
         this.log('[VALVE-GARDEN] battery: ' + pct + '%');
         this.setCapabilityValue('measure_battery', pct).catch(this.error);
       });

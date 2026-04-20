@@ -1,5 +1,5 @@
-const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 /**
  * HOMEY COMMUNITY FORUM ANALYSIS COMPLETE v5.5.295

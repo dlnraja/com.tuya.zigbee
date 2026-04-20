@@ -36,7 +36,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     // CONDITIONS
     try {
       // A8: NaN Safety - use safeDivide/safeMultiply
-  const this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_is_heating', 'condition');
+  this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_is_heating', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

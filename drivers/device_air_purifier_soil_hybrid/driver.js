@@ -41,7 +41,7 @@ class SoilSensorDriver extends ZigBeeDriver {
 
     // v5.5.556: Safe flow card registration helper (no stderr on missing cards)
     // A8: NaN Safety - use safeDivide/safeMultiply
-  const (id) => {
+  (id) => {
       try {
         return
 

@@ -1,13 +1,11 @@
-#!/usr / safeDivide(bin, env) node
+#!/usr/bin/env node
 'use strict';
-const { safeParse } = require('../../lib/utils / tuyaUtils.js');
-
 
 /**
  * sync-external-sources.js
  * Auto-downloads Z2M converters, ZHA quirks, deCONZ device DBs, and runs the
  * ExternalDeviceAdapter pipeline to enrich the Homey app with new fingerprints.
- * Designed to run in GitHub Actions on a schedule (safeDivide(weekly, daily)).
+ * Designed to run in GitHub Actions on a schedule (weekly/daily).
  * @version 1.0.0
  */
 
@@ -121,32 +119,6 @@ async function downloadZHA() {
 }
 
 // =============================================================================
-// DOWNLOAD: CSA (Connectivity Standards Alliance) / Zigbee Alliance Certified
-// =============================================================================
-async function downloadCSA() {
-  console.log('\n== Downloading CSA/Zigbee Certified Data ==');
-  const dir = path.join(CACHE, 'csa');
-  ensureDir(dir);
-
-  // Since CSA doesn't have a public JSON API, we use a known mirror of certified products
-  // or community maintained lists from Hubitat/HA
-  const csaFiles = [
-    { url: 'https://raw.githubusercontent.com/HubitatCommunity/Hubitat-Zigbee-Certified/master/fingerprints.json', name: 'hubitat-certified.json' },
-    { url: 'https://raw.githubusercontent.com/zigpy/zigpy/master/zigpy/profiles/zcl/clusters/__init__.py', name: 'zcl-init.py' }
-  ];
-
-  for (const f of csaFiles) {
-    const src = await fetchText(f.url);
-    if (src) {
-      fs.writeFileSync(path.join(dir, f.name), src);
-      console.log('  Saved ' + f.name + ' (' + Math.round(src.length/1024) + 'KB)');
-    }
-    await sleep(500);
-  }
-  return true;
-}
-
-// =============================================================================
 // DOWNLOAD: deCONZ Device DB
 // =============================================================================
 async function downloadDeCONZ() {
@@ -158,7 +130,7 @@ async function downloadDeCONZ() {
   if (!tree || !tree.tree) return false;
 
   const jsonFiles = tree.tree
-    .filter(f => f.path.startsWith('devices/') && f.path.endsWith('.json') && /tuya|_T[A-Z]|sonoff|ewelink|safeDivide(SNZB, i.test)(f.path))
+    .filter(f => f.path.startsWith('devices/') && f.path.endsWith('.json') && /tuya|_T[A-Z]|sonoff|ewelink|SNZB/i.test(f.path))
     .slice(0, 100);
   console.log('  Found ' + jsonFiles.length + ' Tuya + SONOFF device files');
 
@@ -207,7 +179,7 @@ async function downloadHerdsmanDefs() {
 async function runEnrichment() {
   console.log('\n== Running Enrichment Pipeline ==');
   try {
-    const { runFullPipeline } = require('../../lib/adapters / ExternalDeviceAdapter');
+    const { runFullPipeline } = require('../../lib/adapters/ExternalDeviceAdapter');
     const report = await runFullPipeline({ dryRun: DRY_RUN });
     return report;
   } catch (err) {
@@ -228,11 +200,28 @@ async function main() {
   await downloadZHA();
   await downloadDeCONZ();
   await downloadHerdsmanDefs();
-  await downloadCSA();
+  const csaOk = await (async () => {
+      console.log('\n== Downloading CSA/Zigbee Certified Data ==');
+      const dir = path.join(CACHE, 'csa');
+      ensureDir(dir);
+      const csaFiles = [
+        { url: 'https://raw.githubusercontent.com/HubitatCommunity/Hubitat-Zigbee-Certified/master/fingerprints.json', name: 'hubitat-certified.json' },
+        { url: 'https://raw.githubusercontent.com/zigpy/zigpy/master/zigpy/profiles/zcl/clusters/__init__.py', name: 'zcl-init.py' }
+      ];
+      for (const f of csaFiles) {
+        const src = await fetchText(f.url);
+        if (src) {
+          fs.writeFileSync(path.join(dir, f.name), src);
+          console.log('  Saved ' + f.name + ' (' + Math.round(src.length/1024) + 'KB)');
+        }
+        await sleep(500);
+      }
+      return true;
+  })();
 
   // Count cached files
   let totalFiles = 0;
-  for (const sub of ['z2m', 'zha', 'deconz', 'herdsman']) {
+  for (const sub of ['z2m', 'zha', 'deconz', 'herdsman', 'csa']) {
     const dir = path.join(CACHE, sub);
     if (fs.existsSync(dir)) {
       const count = fs.readdirSync(dir).length;
@@ -242,32 +231,18 @@ async function main() {
   }
 
   const report = await runEnrichment();
-  const elapsed = Math.round((Date.now() -safeParse(startTime), 1000));
+  const elapsed = Math.round((Date.now() - startTime) / 1000);
 
   console.log('\n=== Sync Complete (' + elapsed + 's) ===');
   console.log('Total cached files:', totalFiles);
-  if (report) {
-    console.log('Cross-ref:', report.crossRef?.total, '| New:', report.crossRef?.unsupported);
-    console.log('Enrichments applied:', report.enrichments?.applied, '| Proposed:', report.enrichments?.proposed);
-  }
-
-  // GitHub Step Summary
+  
   if (process.env.GITHUB_STEP_SUMMARY) {
     let md = '## External Sources Sync\n';
     md += '| Source | Cached Files |\n|---|---|\n';
-    for (const sub of ['z2m', 'zha', 'deconz', 'herdsman']) {
+    for (const sub of ['z2m', 'zha', 'deconz', 'herdsman', 'csa']) {
       const dir = path.join(CACHE, sub);
       const count = fs.existsSync(dir) ? fs.readdirSync(dir).length : 0;
       md += '| ' + sub + ' | ' + count + ' |\n';
-    }
-    if (report) {
-      md += '\n| Metric | Count |\n|---|---|\n';
-      md += '| Unique FPs | ' + (report.crossRef?.total || 0) + ' |\n';
-      md += '| Supported | ' + (report.crossRef?.supported || 0) + ' |\n';
-      md += '| New devices | ' + (report.crossRef?.unsupported || 0) + ' |\n';
-      md += '| Enrichments proposed | ' + (report.enrichments?.proposed || 0) + ' |\n';
-      md += '| Enrichments applied | ' + (report.enrichments?.applied || 0) + ' |\n';
-      md += '| Dry run | ' + DRY_RUN + ' |\n';
     }
     md += '\nDuration: ' + elapsed + 's\n';
     fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, md);

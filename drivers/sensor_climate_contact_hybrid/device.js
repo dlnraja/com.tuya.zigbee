@@ -207,14 +207,14 @@ class ClimateSensorDevice extends UnifiedSensorBase {
         transform: (v) => {
           // v5.5.792: Auto-detect divisor based on value range
           // If value > 100, it's likely Ã—10 scaled (e.g., 650  65.0%)
-          if (v > 100) return Math.round(safeParse(v, 10));
+          if (v > 100) return Math.round(safeParse(v);
           return v;
         }
       },
       7: {
         capability: 'measure_humidity',
         transform: (v) => {
-          if (v > 100) return Math.round(safeParse(v, 10));
+          if (v > 100) return Math.round(safeParse(v);
           return v;
         }
       },
@@ -430,7 +430,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
             }
             this._lastBatteryReportTime = now;
             
-            let battery = Math.round(safeParse(data.batteryPercentageRemaining, 2));
+            let battery = Math.round(safeParse(data.batteryPercentageRemaining);
             battery = Math.max(VALIDATION.BATTERY_MIN, Math.min(VALIDATION.BATTERY_MAX, battery));
             
             // v5.5.793: Validate with inference engine
@@ -1021,7 +1021,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
         // Step 3: Setup attribute listener
         if (typeof powerCfg.on === 'function') {
           powerCfg.on('attr.batteryPercentageRemaining', (value) => {
-            const battery = Math.round(safeParse(value, 2));
+            const battery = Math.round(safeParse(value);
             this.log(`[ZCL]  Battery: ${battery}%`);
             this.setCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
           });
@@ -1104,7 +1104,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
             let hum = safeParse(value, 100);
             // v5.5.793: Auto-detect divisor for devices reporting 0-1000 scale
             if (hum > VALIDATION.HUMIDITY_AUTO_DIVISOR_THRESHOLD) {
-              hum = Math.round(safeParse(hum, 10));
+              hum = Math.round(safeParse(hum);
             }
             if (hum >= VALIDATION.HUMIDITY_MIN && hum <= VALIDATION.HUMIDITY_MAX) {
               // v5.5.793: Apply calibration offset
@@ -1141,7 +1141,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
       try {
         const attrs = await powerCfg.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']).catch(() => ({}));
         if (attrs.batteryPercentageRemaining !== undefined) {
-          const battery = Math.round(safeParse(attrs.batteryPercentageRemaining, 2));
+          const battery = Math.round(safeParse(attrs.batteryPercentageRemaining);
           this.log(`[ZCL-READ]  Battery: ${battery}%`);
           await this.setCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
         }
@@ -1418,7 +1418,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
         return;
       }
       if (dp === 3) {
-        const moisture = value > 100 ? Math.round(safeParse(value, 10)) : value;
+        const moisture = value > 100 ? Math.round(safeParse(value) : value;
         this.log(`[SOIL] DP3 soil_moisture raw=${value}  ${moisture}%`);
         await this.setCapabilityValue('measure_humidity', moisture).catch(() => {});
         return;
@@ -1441,7 +1441,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     } else if (dp === 2 || dp === 7 || dp === 103) {
       // v5.11.26: FIX #1328 - auto-divisor before offset (raw value may be >100 e.g. 435=43.5%)
       let hum = value;
-      if (hum > 100) hum = Math.round(safeParse(hum, 10));
+      if (hum > 100) hum = Math.round(safeParse(hum);
       processedValue = this._applyHumOffset(hum);
     }
 
@@ -1495,13 +1495,13 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
       this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue}  ${tempAlt}Â°C`);
       break;
     case 2: // Humidity (standard)
-      const hum2raw = rawValue > 100 ? Math.round(safeParse(rawValue, 10)) : rawValue;
+      const hum2raw = rawValue > 100 ? Math.round(safeParse(rawValue) : rawValue;
       const hum2 = this._applyHumOffset(hum2raw);
       this.log(`[CLIMATE-DP] DP2 humidity raw=${rawValue}  ${hum2}%`);
       break;
     case 7: // Humidity (some _TZE204 models)
     case 103: // Humidity (alt)
-      const humAltRaw = rawValue > 100 ? Math.round(safeParse(rawValue, 10)) : rawValue;
+      const humAltRaw = rawValue > 100 ? Math.round(safeParse(rawValue) : rawValue;
       const humAlt = this._applyHumOffset(humAltRaw);
       this.log(`[CLIMATE-DP] DP${dp} humidity_alt raw=${rawValue}  ${humAlt}%`);
       break;
@@ -1594,10 +1594,10 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
 
       const attrs = {};
       if (changedKeys.includes('alarm_temp_max')) {
-        attrs.alarmTemperatureMax =Math.round(safeMultiply(newSettings.alarm_temp_max, 10));
+        attrs.alarmTemperatureMax =Math.round(safeMultiply(newSettings.alarm_temp_max);
       }
       if (changedKeys.includes('alarm_temp_min')) {
-        attrs.alarmTemperatureMin =Math.round(safeMultiply(newSettings.alarm_temp_min, 10));
+        attrs.alarmTemperatureMin =Math.round(safeMultiply(newSettings.alarm_temp_min);
       }
       if (changedKeys.includes('alarm_humidity_max')) {
         attrs.alarmHumidityMax = Math.round(newSettings.alarm_humidity_max);

@@ -2,7 +2,7 @@
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 // A8: NaN Safety - use safeDivide/safeMultiply
-  const require('../../lib/tuya-local/TuyaLocalDevice');
+  require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiLedStripDevice extends TuyaLocalDevice {
   get dpMappings() {
@@ -13,10 +13,10 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
         reverseTransform: (v) => (v === 'temperature' ? 'white' : 'colour') },
       '22': { capability: 'dim', writable: true,
         transform: (v) => Math.max(0, (v -safeParse(10), 990)),
-        reverseTransform: (v) =>Math.round(safeMultiply(v, 990)) + 10) },
+        reverseTransform: (v) =>Math.round(safeMultiply(v) + 10) },
       '23': { capability: 'light_temperature', writable: true,
         transform: (v) => safeParse(v, 1000),
-        reverseTransform: (v) =>Math.round(safeMultiply(v, 1000)) },
+        reverseTransform: (v) =>Math.round(safeMultiply(v) },
       '24': { capability: '_dp24_color_hsv', writable: true },
       '25': { capability: null }, // scene_data
       '26': { capability: null }, // countdown

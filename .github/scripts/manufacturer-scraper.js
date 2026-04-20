@@ -68,7 +68,7 @@ Analyze the commercial descriptions (Aliexpress/Tuya) for the fingerprint '${fp}
 1. Guess its exact Homey capabilities (e.g., 'measure_temperature', 'onoff', 'measure_power').
 2. Identify any missing or special Tuya DPs from the text.
 3. Determine the correct device class (socket, light, sensor, etc.).
-Output JSON ONLY `{ "class": "...", "guessed_capabilities": ["..."], "dps": [{"id":1, "cap":"..."}], "reasoning": "..." }``;
+Output JSON ONLY { "class": "...", "guessed_capabilities": ["..."], "dps": [{"id":1, "cap":"..."}], "reasoning": "..." }`;
 
     const aiGuess = await callAI(fullContext, sysPrompt, { maxTokens: 1000 });
     let analysis = {};
