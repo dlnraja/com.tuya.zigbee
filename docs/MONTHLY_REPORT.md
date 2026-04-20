@@ -1,44 +1,17 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-20T10:09:47.437Z*
+*Generated: 2026-04-20T10:52:11.957Z*
 
 ##  Architectural Health [v7.0.22]
 
 | Metric | Value | Status |
 |--------|-------|--------|
 | Total Drivers | 323 |  |
-| Manufacturer IDs | 100040 |  |
-| Collisions | 385 |  |
+| Manufacturer IDs | 55525 |  |
+| Collisions | 0 |  |
 | v7 Architectural Debt | 323 legacy drivers |  |
 | PR Auto-Merger | Active |  |
 | Community Responder | Template Ready |  |
-
-##  Collisions Detected
-
-| ID | Drivers |
-|----|--------|
-| `_TZE200_5zbp6j0u|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_bjzrowv2|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_nkoabg8w|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_xuzcvlku|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_4vobcgd3|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_nogaemzt|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_r0jdjrvi|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_pk0sfzvr|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_fdtjuw7u|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_zpzndjez|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_wmcdj3aq|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_cowvfni3|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_rddyvrci|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_nueqqe6k|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_xaabybja|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_rmymn92d|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_3i3exuay|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_hsgrhjpf|TS0601` | air_purifier, switch_1gang |
-| `_TZE200_uj3f4wr5|TS0601` | air_purifier, curtain_motor |
-| `_TZE204_1fuxihti|TS0601` | air_purifier, switch_1gang |
-
-*...and 365 more*
 
 ##  Action Items
 
