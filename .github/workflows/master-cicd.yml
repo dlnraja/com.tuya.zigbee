@@ -50,6 +50,14 @@ jobs:
         with:
           fetch-depth: 0
       
+      - name: 🧼 SHADOW SANITIZER (Invisible Character Removal)
+        run: node scripts/shadow_sanitizer.js
+
+      - name: 🛡️ SYNTAX PURITY GATE
+        run: |
+          echo "Verifying JS syntax across the entire engine..."
+          node -e "const fs=require('fs'),path=require('path'),{execSync}=require('child_process');const walk=(dir)=>{fs.readdirSync(dir).forEach(f=>{const p=path.join(dir,f);if(fs.statSync(p).isDirectory()){if(!['node_modules','.git','.homeybuild','assets'].includes(f))walk(p)}else if(f.endsWith('.js')){try{execSync('node -c \"'+p+'\"')}catch(e){console.error('SYNTAX ERROR in '+p);process.exit(1)}}})};walk('.') || console.log('Syntax purity verified.')"
+
       - name: 📦 Setup Unified
         uses: ./.github/actions/setup-unified
       
@@ -76,11 +84,6 @@ jobs:
       - name: ⚙️ Run Auto-Ganger
         run: node scripts/automation/generate-subdevices.js
 
-      # - name: 🛡️ AJV Schema Validation (Disabled - Remote Schema URL 404)
-      #   run: |
-      #     curl -s https://raw.githubusercontent.com/athombv/node-homey-app-schema/master/driver.compose.schema.json > .homeycompose/driver.compose.schema.json
-      #     npx ajv validate -s .homeycompose/driver.compose.schema.json -d "drivers/*/driver.compose.json" --all-errors
-      
       - name: 🖼️ FLEET-WIDE IMAGE STABILIZATION
         run: node scripts/maintenance/ensure-500x500-images.js
       
@@ -122,8 +125,6 @@ jobs:
         run: node scripts/automation/analyze-collisions.js
 
       - name: 🛡️ FINAL FINGERPRINT DISAMBIGUATION
-+++++++
- REPLACE
         run: node scripts/automation/fix-fingerprint-conflicts.js
 
       - name: 🧹 EMERGENCY CORRUPTION REPAIR
@@ -164,13 +165,13 @@ jobs:
         uses: athombv/github-action-homey-app-version@v1
         with:
           version: ${{ github.event.inputs.bump || 'patch' }}
-          changelog: "v${{ github.event.inputs.bump || 'patch' }}: 🌌 UNIFIED ENGINE v7.4.6 - Zero-Defect Architecture, Bseed Disambiguation & Hardened Siren Stabilization."
+          changelog: "v${{ github.event.inputs.bump || 'patch' }}: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization."
 
       - name: 🔄 Sync Version
         if: steps.bump.outcome == 'success'
         run: |
           node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');"
-          echo "NEW_VERSION=$(node -p 'require("./app.json").version')" >> $GITHUB_ENV
+          echo "NEW_VERSION=$(node -p 'require(\"./app.json\").version')" >> $GITHUB_ENV
 
       - name: 💾 Commit & Push Version
         if: steps.bump.outcome == 'success'
