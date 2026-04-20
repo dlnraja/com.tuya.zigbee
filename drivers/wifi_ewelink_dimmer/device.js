@@ -8,7 +8,7 @@ class D extends EweLinkLocalDevice{
   };}
   _registerCapListeners(){
     this.registerCapabilityListener('onoff',async v=>{await this._client.setDimmer(this._lastBrightness||100,v);});
-    this.registerCapabilityListener('dim',async v=>{this._lastBrightness=Math.round(safeMultiply(v);await this._client.setDimmer(this._lastBrightness,true);});
+    this.registerCapabilityListener('dim',async v=>{this._lastBrightness=Math.round(safeMultiply(v));await this._client.setDimmer(this._lastBrightness,true);});
   }
   async onInit(){
     this._lastBrightness=100;

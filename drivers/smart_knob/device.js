@@ -64,7 +64,7 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
     if (level?.on) {
       level.on('commandMoveToLevel', ({ level: lvl }) => {
         const dim = Math.max(0, Math.min(1, safeParse(lvl, 254)));
-        const pct =Math.round(safeMultiply(dim);
+        const pct =Math.round(safeMultiply(dim));
         this.setCapabilityValue('dim', dim).catch(() => {});
         this.log('[KNOB] Level:', pct + '%');
         this._getFlowCard('smart_knob_level_changed')?.trigger(this, { level: pct }, {}).catch(() => {})
@@ -78,7 +78,7 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
         const curDim = this.getCapabilityValue('dim') || 0;
         const step = (safeParse(stepSize,safeMultiply(254)), (stepMode) === 0 ? 1 : -1);
         const newDim = Math.max(0, Math.min(1, curDim + step));
-        const pct =Math.round(safeMultiply(newDim);
+        const pct =Math.round(safeMultiply(newDim));
         this.setCapabilityValue('dim', newDim).catch(() => {});
         this.log('[KNOB] Step to:', pct + '%');
         const direction = stepMode === 0 ? 'up' : 'down';
@@ -93,7 +93,7 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
     const power = ep1.clusters?.powerConfiguration || ep1.clusters?.[1];
     if (power?.on) {
       power.on('attr.batteryPercentageRemaining', (val) => {
-        const pct = Math.min(100, Math.round(safeParse(val);
+        const pct = Math.min(100, Math.round(safeParse(val)));
         this.setCapabilityValue('measure_battery', pct).catch(() => {});
       });
     }

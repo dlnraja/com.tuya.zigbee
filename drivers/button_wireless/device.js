@@ -73,7 +73,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
         ]).catch(() => null);
         
         if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
-          const battery = Math.round(safeParse(attrs.batteryPercentageRemaining);
+          const battery = Math.round(safeParse(attrs.batteryPercentageRemaining));
           this.log(`[BUTTON-WIRELESS]  Battery: ${battery}%`);
           if (this.hasCapability('measure_battery')) {
             await this._safeSetCapability('measure_battery', battery).catch(() => {});

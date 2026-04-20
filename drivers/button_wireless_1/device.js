@@ -767,7 +767,7 @@ class Button1GangDevice extends ButtonDevice {
 
         this._powerCluster.on('attr.batteryPercentageRemaining', async (value) => {
           if (value !== undefined && value !== 255 && value !== 0) {
-            const battery = Math.round(safeParse(value);
+            const battery = Math.round(safeParse(value));
             this.log(`[BUTTON1-BATTERY]  Battery report: ${battery}%`);
             // v5.5.519: Check capability exists before setting (fix HOBEIAN AC-powered button error)
             if (this.hasCapability('measure_battery')) {
@@ -810,7 +810,7 @@ class Button1GangDevice extends ButtonDevice {
         try {
           const attrs = await this._powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
           if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
-            const battery = Math.round(safeParse(attrs.batteryPercentageRemaining);
+            const battery = Math.round(safeParse(attrs.batteryPercentageRemaining));
             this.log(`[BUTTON1-BATTERY]  Battery read on wake: ${battery}%`);
             // v5.5.519: Check capability exists before setting
             if (this.hasCapability('measure_battery')) {

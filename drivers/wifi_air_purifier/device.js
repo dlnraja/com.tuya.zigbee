@@ -12,7 +12,7 @@ class WiFiAirPurifierDevice extends TuyaLocalDevice {
       '3':  { capability: null },
       '4':  { capability: 'dim', writable: true,
         transform: (v) => Math.max(0, Math.min(1, safeParse(v, 100))),
-        reverseTransform: (v) =>Math.round(safeMultiply(v) },
+        reverseTransform: (v) =>Math.round(safeMultiply(v) },)
       '5':  { capability: null },
       '6':  { capability: null },
       '11': { capability: null },

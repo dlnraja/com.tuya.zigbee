@@ -144,7 +144,7 @@ class RadiatorWifiTuyaDevice extends Homey.Device {
     this.log(`[RADIATOR-WIFI] Setting target temp: ${value}Â°C`);
     
     // Besterm uses 0.5Â°C steps, multiply by 2
-    const dpValue =Math.round(safeMultiply(value);
+    const dpValue =Math.round(safeMultiply(value));
     
     try {
       await this.tuya.set({ dps: 2, set: dpValue });
