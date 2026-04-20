@@ -14,7 +14,8 @@ class PlugSmartDriver extends ZigBeeDriver {
   }
 
   async onInit() {
-    await super.onInit();
+    await super// Sleepy device: Use Passive Mode (SLEEPY_TUYA_56_YEARS_BUG.md)
+    .onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
     this.log('PlugSmartDriver v5.5.570 initialized');
