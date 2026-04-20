@@ -1,12 +1,17 @@
 {
-  "timestamp": "2026-04-20T09:57:05.361Z",
+  "timestamp": "2026-04-20T11:34:53.555Z",
   "driversChecked": 323,
   "collisions": [],
   "buttonLogicFailures": [],
   "sdkDeprecations": [],
   "radarLogicCheck": [],
   "numericConstantViolations": [],
-  "naNSafetyCheck": [],
+  "naNSafetyCheck": [
+    ".homeybuild\\lib\\adapters\\Z2MConverterAdapter.js:63: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\analytics\\AdvancedAnalytics.js:212: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\analytics\\AdvancedAnalytics.js:338: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\analytics\\AdvancedAnalytics.js:339: Potential unchecked division/multiplication (NaN risk)"
+  ],
   "errors": [
     ".homeybuild\\drivers\\device_air_purifier_presence_hybrid\\device.js:126: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\drivers\\presence_sensor_radar\\device.js:153: Forbidden invisible character (char code 160) detected.",
