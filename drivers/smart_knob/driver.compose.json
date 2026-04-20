@@ -55,9 +55,8 @@
   },
   "images": {
     "small": "drivers/smart_knob/assets/images/small.png",
-    "large": "drivers/smart_knob/assets/images/large.png",
-    "xlarge": "drivers/smart_knob/assets/images/xlarge.png"
-  },
+    "large": "drivers/smart_knob/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

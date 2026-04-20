@@ -38,9 +38,8 @@
   },
   "images": {
     "small": "drivers/led_controller_cct/assets/images/small.png",
-    "large": "drivers/led_controller_cct/assets/images/large.png",
-    "xlarge": "drivers/led_controller_cct/assets/images/xlarge.png"
-  },
+    "large": "drivers/led_controller_cct/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

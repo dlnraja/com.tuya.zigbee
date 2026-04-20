@@ -68,9 +68,8 @@
   },
   "images": {
     "small": "drivers/din_rail_switch/assets/images/small.png",
-    "large": "drivers/din_rail_switch/assets/images/large.png",
-    "xlarge": "drivers/din_rail_switch/assets/images/xlarge.png"
-  },
+    "large": "drivers/din_rail_switch/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

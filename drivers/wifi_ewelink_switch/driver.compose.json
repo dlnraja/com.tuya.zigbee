@@ -228,9 +228,8 @@
   ],
   "images": {
     "small": "drivers/wifi_ewelink_switch/assets/images/small.png",
-    "large": "drivers/wifi_ewelink_switch/assets/images/large.png",
-    "xlarge": "drivers/wifi_ewelink_switch/assets/images/xlarge.png"
-  },
+    "large": "drivers/wifi_ewelink_switch/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

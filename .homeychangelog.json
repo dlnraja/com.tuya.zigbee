@@ -31,5 +31,8 @@
   },
   "7.1.0": {
     "en": "Omni-Sync Architecture: Autonomous sync from Z2M & ZHA, Self-Healing Migration Queue, Enriched DP Parser."
+  },
+  "7.4.8": {
+    "en": "v7.4.8: Optimized build size for stability. Removed redundant xlarge assets and legacy data. Architectural stabilization of flow cards and driver logic. Zero-defect verified."
   }
 }

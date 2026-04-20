@@ -52,9 +52,8 @@
   ],
   "images": {
     "small": "drivers/curtain_motor/assets/images/small.png",
-    "large": "drivers/curtain_motor/assets/images/large.png",
-    "xlarge": "drivers/curtain_motor/assets/images/xlarge.png"
-  },
+    "large": "drivers/curtain_motor/assets/images/large.png"
+    },
   "zigbee": {
     "manufacturerName": [
       "_TZE200_IOSSYXRA"

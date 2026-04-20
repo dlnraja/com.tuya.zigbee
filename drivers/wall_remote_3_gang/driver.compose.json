@@ -20,9 +20,8 @@
   ],
   "images": {
     "large": "drivers/wall_remote_3_gang/assets/images/large.png",
-    "small": "drivers/wall_remote_3_gang/assets/images/small.png",
-    "xlarge": "drivers/wall_remote_3_gang/assets/images/xlarge.png"
-  },
+    "small": "drivers/wall_remote_3_gang/assets/images/small.png"
+    },
   "energy": {
     "batteries": [
       "CR2450"

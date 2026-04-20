@@ -129,9 +129,8 @@
   },
   "images": {
     "small": "drivers/switch_wall_6gang/assets/images/small.png",
-    "large": "drivers/switch_wall_6gang/assets/images/large.png",
-    "xlarge": "drivers/switch_wall_6gang/assets/images/xlarge.png"
-  },
+    "large": "drivers/switch_wall_6gang/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

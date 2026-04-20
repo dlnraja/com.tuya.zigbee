@@ -299,9 +299,8 @@
   ],
   "images": {
     "small": "drivers/wifi_sensor/assets/images/small.png",
-    "large": "drivers/wifi_sensor/assets/images/large.png",
-    "xlarge": "drivers/wifi_sensor/assets/images/xlarge.png"
-  },
+    "large": "drivers/wifi_sensor/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

@@ -67,9 +67,8 @@
   },
   "images": {
     "small": "drivers/switch_temp_sensor/assets/images/small.png",
-    "large": "drivers/switch_temp_sensor/assets/images/large.png",
-    "xlarge": "drivers/switch_temp_sensor/assets/images/xlarge.png"
-  },
+    "large": "drivers/switch_temp_sensor/assets/images/large.png"
+    },
   "maintenanceActions": [
     {
       "id": "ota_check",

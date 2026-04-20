@@ -57,9 +57,8 @@
   },
   "images": {
     "small": "drivers/rain_sensor/assets/images/small.png",
-    "large": "drivers/rain_sensor/assets/images/large.png",
-    "xlarge": "drivers/rain_sensor/assets/images/xlarge.png"
-  },
+    "large": "drivers/rain_sensor/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

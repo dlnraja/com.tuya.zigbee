@@ -68,9 +68,8 @@
   },
   "images": {
     "small": "drivers/floor_heating_thermostat/assets/images/small.png",
-    "large": "drivers/floor_heating_thermostat/assets/images/large.png",
-    "xlarge": "drivers/floor_heating_thermostat/assets/images/xlarge.png"
-  },
+    "large": "drivers/floor_heating_thermostat/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

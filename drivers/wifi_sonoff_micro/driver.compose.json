@@ -235,9 +235,8 @@
   ],
   "images": {
     "small": "drivers/wifi_sonoff_micro/assets/images/small.png",
-    "large": "drivers/wifi_sonoff_micro/assets/images/large.png",
-    "xlarge": "drivers/wifi_sonoff_micro/assets/images/xlarge.png"
-  },
+    "large": "drivers/wifi_sonoff_micro/assets/images/large.png"
+    },
   "maintenanceActions": [
     {
       "id": "ota_check",

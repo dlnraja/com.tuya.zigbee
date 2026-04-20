@@ -134,9 +134,8 @@
   },
   "images": {
     "small": "drivers/smart_knob_rotary/assets/images/small.png",
-    "large": "drivers/smart_knob_rotary/assets/images/large.png",
-    "xlarge": "drivers/smart_knob_rotary/assets/images/xlarge.png"
-  },
+    "large": "drivers/smart_knob_rotary/assets/images/large.png"
+    },
   "maintenanceActions": [
     {
       "id": "ota_check",
