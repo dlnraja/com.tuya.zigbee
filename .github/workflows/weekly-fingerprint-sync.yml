@@ -108,11 +108,19 @@ jobs:
         run: npx homey app validate --level publish
 
       # Step 3.5a: Case-consistency check (_TZe200 vs _TZE200)
-      - name: Check FP case consistency
+      # Step 3.5a: Case-consistency check (_TZe200 vs _TZE200)
+      - name: Check & Fix FP case consistency
         run: |
+          echo "Running manufacturer name normalization..."
+          node scripts/automation/normalize-manufacturer-names.js
           echo "Checking for case-inconsistent FPs..."
-          BAD=$(grep -rohE '"_TZ[a-z][0-9]{3}_[^"]*"' drivers/*/driver.compose.json || true)
-          if [ -n "$BAD" ]; then echo "::warning::Case-inconsistent FPs found: $BAD"; fi
+          # Detect lowercase _TZ* patterns that should be uppercase
+          BAD=$(grep -rohE '"_TZ[A-Za-z][0-9]{3}_[a-z0-9]{4,16}"' drivers/*/driver.compose.json || true)
+          if [ -n "$BAD" ]; then 
+            echo "::warning::Case-inconsistent FPs found: $BAD"
+            echo "Running auto-fix..."
+            node scripts/automation/fix-case-variants.js || true
+          fi
 
       # Step 3.5b: Duplicate FP+PID check
       - name: Check duplicate FP+PID combos
