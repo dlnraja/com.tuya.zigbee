@@ -2,15 +2,15 @@
   "id": "tuya_dp_equals",
   "title": {
     "en": "Tuya DP [[dp]] equals [[value]]",
-    "fr": "DP Tuya [[dp]] égal à [[value]]"
+    "fr": "DP Tuya [[dp]] Ã©gal Ã [[value]]"
   },
   "titleFormatted": {
     "en": "Tuya DP [[dp]] equals [[value]] on [[device]]",
-    "fr": "DP Tuya [[dp]] égal à [[value]] sur [[device]]"
+    "fr": "DP Tuya [[dp]] Ã©gal Ã [[value]] sur [[device]]"
   },
   "hint": {
     "en": "Check if a raw Tuya datapoint has a specific value",
-    "fr": "Vérifie si un datapoint Tuya brut a une valeur spécifique"
+    "fr": "VÃ©rifie si un datapoint Tuya brut a une valeur spÃ©cifique"
   },
   "args": [
     {
@@ -23,7 +23,7 @@
       "type": "number",
       "title": {
         "en": "DP Number",
-        "fr": "Numéro DP"
+        "fr": "NumÃ©ro DP"
       },
       "min": 1,
       "max": 255

@@ -3,12 +3,12 @@
     "en": "DIN Rail Energy Meter",
     "fr": "Compteur DIN Rail",
     "nl": "DIN Rail Energiemeter",
-    "de": "DIN-Schienen Energiezähler",
+    "de": "DIN-Schienen EnergiezÃ¤hler",
     "it": "Contatore DIN Rail",
-    "sv": "DIN-skena Energimätare",
-    "no": "DIN-skinne Energimåler",
+    "sv": "DIN-skena EnergimÃ¤tare",
+    "no": "DIN-skinne EnergimÃ¥ler",
     "es": "Medidor DIN Rail",
-    "da": "DIN-skinne Energimåler"
+    "da": "DIN-skinne EnergimÃ¥ler"
   },
   "class": "sensor",
   "energy": {
@@ -36,14 +36,14 @@
     "meter_power": {
       "title": {
         "en": "Energy Consumed",
-        "fr": "Énergie Consommée"
+        "fr": "Ã‰nergie ConsommÃ©e"
       },
       "units": "kWh"
     },
     "meter_power.exported": {
       "title": {
         "en": "Energy Exported",
-        "fr": "Énergie Exportée"
+        "fr": "Ã‰nergie ExportÃ©e"
       },
       "units": "kWh"
     },
@@ -67,7 +67,7 @@
       "type": "group",
       "label": {
         "en": "Measurement Settings",
-        "fr": "Paramètres de Mesure"
+        "fr": "ParamÃ¨tres de Mesure"
       },
       "children": [
         {
@@ -75,29 +75,29 @@
           "type": "dropdown",
           "label": {
             "en": "Power Scale",
-            "fr": "Échelle Puissance"
+            "fr": "Ã‰chelle Puissance"
           },
           "value": "1",
           "values": [
             {
               "id": "0.1",
               "label": {
-                "en": "÷10",
-                "fr": "÷10"
+                "en": "Ã·10",
+                "fr": "Ã·10"
               }
             },
             {
               "id": "1",
               "label": {
-                "en": "×1 (Default)",
-                "fr": "×1 (Par défaut)"
+                "en": "Ã—1 (Default)",
+                "fr": "Ã—1 (Par dÃ©faut)"
               }
             },
             {
               "id": "10",
               "label": {
-                "en": "×10",
-                "fr": "×10"
+                "en": "Ã—10",
+                "fr": "Ã—10"
               }
             }
           ]
@@ -122,12 +122,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "Sécurité Enfant Logicielle"
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "Empêche les changements d'état manuels sur l'appareil"
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
       }
     },
     {
@@ -142,7 +142,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'éteint après X minutes (0 = désactivé)"
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -150,12 +150,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation Présence)"
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
       }
     },
     {
@@ -163,14 +163,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Émulé (Secondes)"
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
       }
     },
     {
@@ -185,7 +185,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Émulation logicielle pour boutons à action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -193,7 +193,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "Durée Inching (Secondes)"
+        "fr": "DurÃ©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -201,7 +201,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -209,12 +209,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "Récupération d'État Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'état précédent après une coupure de courant"
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
       }
     },
     {
@@ -227,7 +227,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
       }
     },
     {
@@ -242,7 +242,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santé descend sous cette valeur"
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     }
   ],
@@ -260,20 +260,7 @@
       "_TZE204_FSB6ZW01",
       "_TZE204_IPXSZDHV",
       "_TZE204_SHKXSGIS",
-      "_TZE284_2DPA3FQJ",
-      "_TZE200_81yrt3lo",
-      "_TZE200_ac0fhfiq",
-      "_TZE200_cjbofhxw",
-      "_TZE200_davzgqq0",
-      "_TZE200_ipxszdhv",
-      "_TZE200_lzriup1j",
-      "_TZE204_2dpa3fqj",
-      "_TZE204_byzdayie",
-      "_TZE204_davzgqq0",
-      "_TZE204_fsb6zw01",
-      "_TZE204_ipxszdhv",
-      "_TZE204_shkxsgis",
-      "_TZE284_2dpa3fqj"
+      "_TZE284_2DPA3FQJ"
     ],
     "productId": [
       "SDM01-3Z1",
@@ -293,7 +280,7 @@
     "learnmode": {
       "instruction": {
         "en": "Press the pairing button on the meter for 5 seconds until LED blinks rapidly",
-        "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'à ce que la LED clignote rapidement"
+        "fr": "Appuyez sur le bouton d'appairage du compteur pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement"
       }
     }
   },
@@ -313,7 +300,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

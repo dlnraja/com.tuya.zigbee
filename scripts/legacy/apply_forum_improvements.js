@@ -17,10 +17,10 @@ const IMPROVEMENTS = {
           hint: { en: 'Adjust if voltage readings are incorrect', nl: 'Aanpassen indien voltage niet klopt' },
           value: '0.1',
           values: [
-            { id: '0.01', label: { en: '÷100', nl: '÷100' } },
-            { id: '0.1', label: { en: '÷10 (default)', nl: '÷10 (standaard)' } },
-            { id: '1', label: { en: '×1 (no scaling)', nl: '×1 (geen schaling)' } },
-            { id: '10', label: { en: '×10', nl: '×10' } }
+            { id: '0.01', label: { en: 'Ã·100', nl: 'Ã·100' } },
+            { id: '0.1', label: { en: 'Ã·10 (default)', nl: 'Ã·10 (standaard)' } },
+            { id: '1', label: { en: 'Ã—1 (no scaling)', nl: 'Ã—1 (geen schaling)' } },
+            { id: '10', label: { en: 'Ã—10', nl: 'Ã—10' } }
           ]
         },
         {
@@ -30,10 +30,10 @@ const IMPROVEMENTS = {
           hint: { en: 'Adjust if current readings are incorrect', nl: 'Aanpassen indien stroom niet klopt' },
           value: '0.001',
           values: [
-            { id: '0.001', label: { en: '÷1000 (mAA)', nl: '÷1000 (mAA)' } },
-            { id: '0.01', label: { en: '÷100', nl: '÷100' } },
-            { id: '0.1', label: { en: '÷10', nl: '÷10' } },
-            { id: '1', label: { en: '×1', nl: '×1' } }
+            { id: '0.001', label: { en: 'Ã·1000 (mAA)', nl: 'Ã·1000 (mAA)' } },
+            { id: '0.01', label: { en: 'Ã·100', nl: 'Ã·100' } },
+            { id: '0.1', label: { en: 'Ã·10', nl: 'Ã·10' } },
+            { id: '1', label: { en: 'Ã—1', nl: 'Ã—1' } }
           ]
         },
         {
@@ -43,9 +43,9 @@ const IMPROVEMENTS = {
           hint: { en: 'Adjust if power readings are incorrect', nl: 'Aanpassen indien vermogen niet klopt' },
           value: '0.1',
           values: [
-            { id: '0.1', label: { en: '÷10 (default)', nl: '÷10 (standaard)' } },
-            { id: '1', label: { en: '×1', nl: '×1' } },
-            { id: '10', label: { en: '×10', nl: '×10' } }
+            { id: '0.1', label: { en: 'Ã·10 (default)', nl: 'Ã·10 (standaard)' } },
+            { id: '1', label: { en: 'Ã—1', nl: 'Ã—1' } },
+            { id: '10', label: { en: 'Ã—10', nl: 'Ã—10' } }
           ]
         }
       ]
@@ -62,8 +62,8 @@ const IMPROVEMENTS = {
           id: 'temperature_offset',
           type: 'number',
           label: { en: 'Temperature offset', nl: 'Temperatuur correctie' },
-          hint: { en: 'Adjust sensor reading (±10°C)', nl: 'Pas meetwaarde aan (±10°C)' },
-          units: '°C',
+          hint: { en: 'Adjust sensor reading (Â±10Â°C)', nl: 'Pas meetwaarde aan (Â±10Â°C)' },
+          units: 'Â°C',
           value: 0,
           min: -10,
           max: 10,
@@ -73,7 +73,7 @@ const IMPROVEMENTS = {
           id: 'humidity_offset',
           type: 'number',
           label: { en: 'Humidity offset', nl: 'Luchtvochtigheid correctie' },
-          hint: { en: 'Adjust sensor reading (±30%)', nl: 'Pas meetwaarde aan (±30%)' },
+          hint: { en: 'Adjust sensor reading (Â±30%)', nl: 'Pas meetwaarde aan (Â±30%)' },
           units: '%',
           value: 0,
           min: -30,

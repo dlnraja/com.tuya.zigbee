@@ -23,13 +23,13 @@
       "id": "air_purifier_curtain_hybrid_curtain_motor_tilt_set_position",
       "title": {
         "en": "Set position",
-        "fr": "Régler position",
+        "fr": "RÃ©gler position",
         "nl": "Positie instellen",
         "de": "Position einstellen"
       },
       "titleFormatted": {
         "en": "Set position to [[position]]%",
-        "fr": "Régler position à [[position]]%",
+        "fr": "RÃ©gler position Ã [[position]]%",
         "nl": "Positie op [[position]]%",
         "de": "Position auf [[position]]%"
       },
@@ -51,14 +51,14 @@
         "en": "Open",
         "fr": "Ouvrir",
         "nl": "Openen",
-        "de": "Öffnen"
+        "de": "Ã–ffnen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Open",
         "fr": "Ouvrir",
         "nl": "Openen",
-        "de": "Öffnen"
+        "de": "Ã–ffnen"
       }
     },
     {
@@ -67,28 +67,28 @@
         "en": "Close",
         "fr": "Fermer",
         "nl": "Sluiten",
-        "de": "Schließen"
+        "de": "SchlieÃŸen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Close",
         "fr": "Fermer",
         "nl": "Sluiten",
-        "de": "Schließen"
+        "de": "SchlieÃŸen"
       }
     },
     {
       "id": "air_purifier_curtain_hybrid_curtain_motor_tilt_stop",
       "title": {
         "en": "Stop",
-        "fr": "Arrêter",
+        "fr": "ArrÃªter",
         "nl": "Stoppen",
         "de": "Stoppen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Stop",
-        "fr": "Arrêter",
+        "fr": "ArrÃªter",
         "nl": "Stoppen",
         "de": "Stoppen"
       }

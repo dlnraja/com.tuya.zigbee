@@ -6,20 +6,20 @@
       "title": {
         "en": "Siren started",
         "nl": "Sirene gestart",
-        "fr": "Sirène démarrée",
+        "fr": "SirÃ¨ne dÃ©marrÃ©e",
         "de": "Sirene gestartet"
       },
       "hint": {
         "en": "Triggers when the siren starts sounding",
         "nl": "Triggert wanneer de sirene begint te loeien",
-        "fr": "Se déclenche quand la sirène commence à sonner",
-        "de": "Wird ausgelöst, wenn die Sirene zu tönen beginnt"
+        "fr": "Se dÃ©clenche quand la sirÃ¨ne commence Ã sonner",
+        "de": "Wird ausgelÃ¶st, wenn die Sirene zu tÃ¶nen beginnt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Siren started",
         "nl": "Sirene gestart",
-        "fr": "Sirène démarrée",
+        "fr": "SirÃ¨ne dÃ©marrÃ©e",
         "de": "Sirene gestartet"
       }
     },
@@ -28,20 +28,20 @@
       "title": {
         "en": "Siren stopped",
         "nl": "Sirene gestopt",
-        "fr": "Sirène arrêtée",
+        "fr": "SirÃ¨ne arrÃªtÃ©e",
         "de": "Sirene gestoppt"
       },
       "hint": {
         "en": "Triggers when the siren stops sounding",
         "nl": "Triggert wanneer de sirene stopt met loeien",
-        "fr": "Se déclenche quand la sirène arrête de sonner",
-        "de": "Wird ausgelöst, wenn die Sirene aufhört zu tönen"
+        "fr": "Se dÃ©clenche quand la sirÃ¨ne arrÃªte de sonner",
+        "de": "Wird ausgelÃ¶st, wenn die Sirene aufhÃ¶rt zu tÃ¶nen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Siren stopped",
         "nl": "Sirene gestopt",
-        "fr": "Sirène arrêtée",
+        "fr": "SirÃ¨ne arrÃªtÃ©e",
         "de": "Sirene gestoppt"
       }
     },
@@ -65,14 +65,14 @@
       "id": "device_air_purifier_siren_hybrid_siren_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -81,14 +81,14 @@
       "id": "device_air_purifier_siren_hybrid_siren_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -97,14 +97,14 @@
       "id": "device_air_purifier_siren_hybrid_siren_motion_detected",
       "title": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté",
+        "fr": "Mouvement dÃ©tectÃ©",
         "nl": "Beweging gedetecteerd",
         "de": "Bewegung erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté",
+        "fr": "Mouvement dÃ©tectÃ©",
         "nl": "Beweging gedetecteerd",
         "de": "Bewegung erkannt"
       }
@@ -116,29 +116,29 @@
       "title": {
         "en": "Siren !{{is|is not}} sounding",
         "nl": "Sirene !{{loeit|loeit niet}}",
-        "fr": "Sirène !{{sonne|ne sonne pas}}",
-        "de": "Sirene !{{tönt|tönt nicht}}"
+        "fr": "SirÃ¨ne !{{sonne|ne sonne pas}}",
+        "de": "Sirene !{{tÃ¶nt|tÃ¶nt nicht}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Siren !{{is|is not}} sounding",
         "nl": "Sirene !{{loeit|loeit niet}}",
-        "fr": "Sirène !{{sonne|ne sonne pas}}",
-        "de": "Sirene !{{tönt|tönt nicht}}"
+        "fr": "SirÃ¨ne !{{sonne|ne sonne pas}}",
+        "de": "Sirene !{{tÃ¶nt|tÃ¶nt nicht}}"
       }
     },
     {
       "id": "device_air_purifier_siren_hybrid_siren_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -147,14 +147,14 @@
       "id": "device_air_purifier_siren_hybrid_siren_motion_active",
       "title": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       }
@@ -166,13 +166,13 @@
       "title": {
         "en": "Turn on siren",
         "nl": "Sirene aanzetten",
-        "fr": "Activer la sirène",
+        "fr": "Activer la sirÃ¨ne",
         "de": "Sirene einschalten"
       },
       "titleFormatted": {
         "en": "Turn on the siren",
         "nl": "Zet de sirene aan",
-        "fr": "Activer la sirène",
+        "fr": "Activer la sirÃ¨ne",
         "de": "Sirene einschalten"
       },
       "args": []
@@ -182,13 +182,13 @@
       "title": {
         "en": "Turn off siren",
         "nl": "Sirene uitzetten",
-        "fr": "Désactiver la sirène",
+        "fr": "DÃ©sactiver la sirÃ¨ne",
         "de": "Sirene ausschalten"
       },
       "titleFormatted": {
         "en": "Turn off the siren",
         "nl": "Zet de sirene uit",
-        "fr": "Désactiver la sirène",
+        "fr": "DÃ©sactiver la sirÃ¨ne",
         "de": "Sirene ausschalten"
       },
       "args": []
@@ -198,14 +198,14 @@
       "title": {
         "en": "Set volume",
         "nl": "Volume instellen",
-        "fr": "Régler le volume",
-        "de": "Lautstärke einstellen"
+        "fr": "RÃ©gler le volume",
+        "de": "LautstÃ¤rke einstellen"
       },
       "titleFormatted": {
         "en": "Set siren volume to [[volume]]",
         "nl": "Stel sirene volume in op [[volume]]",
-        "fr": "Régler le volume de la sirène à [[volume]]",
-        "de": "Sirenenlautstärke auf [[volume]] einstellen"
+        "fr": "RÃ©gler le volume de la sirÃ¨ne Ã [[volume]]",
+        "de": "SirenenlautstÃ¤rke auf [[volume]] einstellen"
       },
       "args": [
         {
@@ -215,7 +215,7 @@
             "en": "Volume level",
             "nl": "Volumeniveau",
             "fr": "Niveau de volume",
-            "de": "Lautstärkestufe"
+            "de": "LautstÃ¤rkestufe"
           },
           "values": [
             {
@@ -254,13 +254,13 @@
       "title": {
         "en": "Set alarm duration",
         "nl": "Alarmduur instellen",
-        "fr": "Définir la durée de l'alarme",
+        "fr": "DÃ©finir la durÃ©e de l'alarme",
         "de": "Alarmdauer einstellen"
       },
       "titleFormatted": {
         "en": "Set alarm duration to [[duration]] seconds",
         "nl": "Stel alarmduur in op [[duration]] seconden",
-        "fr": "Définir la durée de l'alarme à [[duration]] secondes",
+        "fr": "DÃ©finir la durÃ©e de l'alarme Ã [[duration]] secondes",
         "de": "Alarmdauer auf [[duration]] Sekunden einstellen"
       },
       "args": [
@@ -281,18 +281,18 @@
       "title": {
         "en": "Set alarm melody",
         "nl": "Alarm melodie instellen",
-        "fr": "Définir la mélodie d'alarme",
+        "fr": "DÃ©finir la mÃ©lodie d'alarme",
         "de": "Alarmmelodie einstellen"
       },
       "titleFormatted": {
         "en": "Set alarm melody to [[melody]]",
         "nl": "Stel alarm melodie in op [[melody]]",
-        "fr": "Définir la mélodie d'alarme à [[melody]]",
+        "fr": "DÃ©finir la mÃ©lodie d'alarme Ã [[melody]]",
         "de": "Alarmmelodie auf [[melody]] einstellen"
       },
       "hint": {
         "en": "Select the melody/ringtone for the siren alarm",
-        "fr": "Sélectionner la mélodie/sonnerie pour l'alarme sirène"
+        "fr": "SÃ©lectionner la mÃ©lodie/sonnerie pour l'alarme sirÃ¨ne"
       },
       "args": [
         {
@@ -301,7 +301,7 @@
           "title": {
             "en": "Melody",
             "nl": "Melodie",
-            "fr": "Mélodie",
+            "fr": "MÃ©lodie",
             "de": "Melodie"
           },
           "values": [
@@ -315,8 +315,8 @@
             {
               "id": "1",
               "label": {
-                "en": "Für Elise",
-                "fr": "Pour Élise"
+                "en": "FÃ¼r Elise",
+                "fr": "Pour Ã‰lise"
               }
             },
             {
@@ -386,7 +386,7 @@
               "id": "11",
               "label": {
                 "en": "Alarm Siren",
-                "fr": "Sirène d'alarme"
+                "fr": "SirÃ¨ne d'alarme"
               }
             },
             {
@@ -400,28 +400,28 @@
               "id": "13",
               "label": {
                 "en": "Old Phone",
-                "fr": "Vieux téléphone"
+                "fr": "Vieux tÃ©lÃ©phone"
               }
             },
             {
               "id": "14",
               "label": {
                 "en": "Police Siren",
-                "fr": "Sirène Police"
+                "fr": "SirÃ¨ne Police"
               }
             },
             {
               "id": "15",
               "label": {
                 "en": "Evacuation Bell",
-                "fr": "Cloche Évacuation"
+                "fr": "Cloche Ã‰vacuation"
               }
             },
             {
               "id": "16",
               "label": {
                 "en": "Clock Alarm",
-                "fr": "Réveil"
+                "fr": "RÃ©veil"
               }
             },
             {

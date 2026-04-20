@@ -141,11 +141,11 @@ class AirQualityCO2Device extends UnifiedSensorBase {
     try {
       const temp = ep1.clusters?.msTemperatureMeasurement;
       if (temp?.on) {
-        temp.on('attr.measuredValue', (v) => { const t=safeParse(v, 100); if(t>=-40&&t<=80) this._safeSetCapability('measure_temperature',t).catch(()=>{}); else this.log('[CO2] ZCL temp rejected:',t); });
+        temp.on('attr.measuredValue', (v) => { const t=v/100; if(t>=-40&&t<=80) this._safeSetCapability('measure_temperature',t).catch(()=>{}); else this.log('[CO2] ZCL temp rejected:',t); });
       }
       const hum = ep1.clusters?.msRelativeHumidity;
       if (hum?.on) {
-        hum.on('attr.measuredValue', (v) => { const h=safeParse(v, 100); if(h>=0&&h<=100) this._safeSetCapability('measure_humidity',h).catch(()=>{}); else this.log('[CO2] ZCL hum rejected:',h); });
+        hum.on('attr.measuredValue', (v) => { const h=v/100; if(h>=0&&h<=100) this._safeSetCapability('measure_humidity',h).catch(()=>{}); else this.log('[CO2] ZCL hum rejected:',h); });
       }
     } catch (e) { /* ignore */ }
   }
@@ -153,6 +153,18 @@ class AirQualityCO2Device extends UnifiedSensorBase {
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 

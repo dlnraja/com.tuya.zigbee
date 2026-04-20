@@ -21,14 +21,14 @@
       "id": "switch_wireless_onoff_false",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -37,7 +37,7 @@
       "id": "switch_wireless_button_pressed",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé"
+        "fr": "Bouton appuyÃ©"
       },
       "tokens": [
         {
@@ -52,7 +52,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé"
+        "fr": "Bouton appuyÃ©"
       }
     },
     {

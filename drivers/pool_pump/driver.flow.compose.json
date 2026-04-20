@@ -42,14 +42,14 @@
       "id": "pool_pump_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -58,14 +58,14 @@
       "id": "pool_pump_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -74,16 +74,16 @@
       "id": "pool_pump_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée",
+        "fr": "Puissance changÃ©e",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
+        "de": "Leistung geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Power changed",
-        "fr": "Puissance changée",
+        "fr": "Puissance changÃ©e",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
+        "de": "Leistung geÃ¤ndert"
       }
     }
   ],
@@ -92,14 +92,14 @@
       "id": "pool_pump_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }

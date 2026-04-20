@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "Universal Tuya Engine  Genesis Edition",
-    "fr": "Moteur Tuya Universel  Édition Genesis",
+    "fr": "Moteur Tuya Universel  Ã‰dition Genesis",
     "nl": "Universele Tuya Engine  Genesis Editie",
     "de": "Universelles Tuya Engine  Genesis Edition"
   },
@@ -103,7 +103,7 @@
     "learnmode": {
       "instruction": {
         "en": " Universal Tuya Engine (Genesis Edition) 1. Put your device in pairing mode (usually hold the physical button for 5-10 seconds until the LED flashes).\n2. For coordinators or routers (Zbeacon, SLZB-06, Tuya Router): Ensure the device is powered and within range.\n3. For Legrand/Netatmo: Use the master wireless switch or remote and press 'home' while tapping the device. Capabilities and flow cards will be dynamically mapped via the Genesis Orchestrator.",
-        "fr": " Moteur Tuya Universel (Édition Genesis) 1. Mettez votre appareil en mode appairage (maintenez le bouton physique 5-10s jusqu'au clignotement).\n2. Pour coordinateurs ou routeurs (Zbeacon, SLZB-06): Vérifiez que l'appareil est alimenté.\n3. Pour Legrand/Netatmo: Utilisez l'interrupteur maître sans fil et maintenez 'home' tout en tapotant l'appareil. Les capacités et cartes de flux seront mappées dynamiquement par l'Orchestrateur Genesis."
+        "fr": " Moteur Tuya Universel (Ã‰dition Genesis) 1. Mettez votre appareil en mode appairage (maintenez le bouton physique 5-10s jusqu'au clignotement).\n2. Pour coordinateurs ou routeurs (Zbeacon, SLZB-06): VÃ©rifiez que l'appareil est alimentÃ©.\n3. Pour Legrand/Netatmo: Utilisez l'interrupteur maÃ®tre sans fil et maintenez 'home' tout en tapotant l'appareil. Les capacitÃ©s et cartes de flux seront mappÃ©es dynamiquement par l'Orchestrateur Genesis."
       }
     }
   },
@@ -129,7 +129,7 @@
           "type": "label",
           "label": {
             "en": "Model ID",
-            "fr": "ID Modèle"
+            "fr": "ID ModÃ¨le"
           },
           "value": "Unknown"
         }
@@ -139,7 +139,7 @@
       "type": "group",
       "label": {
         "en": " Discovered Clusters",
-        "fr": " Clusters Découverts"
+        "fr": " Clusters DÃ©couverts"
       },
       "children": [
         {
@@ -156,7 +156,7 @@
           "type": "label",
           "label": {
             "en": "Capabilities Added",
-            "fr": "Capacités Ajoutées"
+            "fr": "CapacitÃ©s AjoutÃ©es"
           },
           "value": "None yet"
         }
@@ -166,7 +166,7 @@
       "type": "group",
       "label": {
         "en": " Advanced",
-        "fr": " Avancé"
+        "fr": " AvancÃ©"
       },
       "children": [
         {
@@ -179,7 +179,7 @@
           "value": false,
           "hint": {
             "en": "Enable to rescan clusters on next init",
-            "fr": "Activer pour rescanner les clusters au prochain démarrage"
+            "fr": "Activer pour rescanner les clusters au prochain dÃ©marrage"
           }
         }
       ]
@@ -189,12 +189,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la Détection de Présence Radio"
+        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -202,7 +202,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "Sensibilité Présence Radio"
+        "fr": "SensibilitÃ© PrÃ©sence Radio"
       },
       "value": 15,
       "min": 5,
@@ -217,12 +217,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "Sécurité Enfant Logicielle"
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "Empêche les changements d'état manuels sur l'appareil"
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
       }
     },
     {
@@ -237,7 +237,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'éteint après X minutes (0 = désactivé)"
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -245,12 +245,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation Présence)"
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
       }
     },
     {
@@ -258,14 +258,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Émulé (Secondes)"
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
       }
     },
     {
@@ -280,7 +280,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Émulation logicielle pour boutons à action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -295,7 +295,7 @@
       "max": 4000,
       "hint": {
         "en": "Cut power if consumption exceeds this value (0 = disabled)",
-        "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+        "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -303,7 +303,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "Durée Inching (Secondes)"
+        "fr": "DurÃ©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -311,7 +311,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -319,12 +319,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "Récupération d'État Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'état précédent après une coupure de courant"
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
       }
     },
     {
@@ -337,7 +337,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
       }
     },
     {
@@ -352,7 +352,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santé descend sous cette valeur"
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     }
   ],
@@ -367,7 +367,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

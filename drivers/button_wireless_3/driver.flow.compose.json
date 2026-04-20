@@ -5,24 +5,24 @@
       "highlight": true,
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé",
+        "fr": "Bouton appuyÃ©",
         "nl": "Knop ingedrukt",
-        "de": "Taste gedrückt",
+        "de": "Taste gedrÃ¼ckt",
         "it": "Pulsante premuto",
         "sv": "Knapp tryckt",
         "no": "Knapp trykket",
-        "es": "Botón presionado",
+        "es": "BotÃ³n presionado",
         "da": "Knap trykket"
       },
       "titleFormatted": {
         "en": "Button [[button]] pressed",
-        "fr": "Bouton [[button]] appuyé",
+        "fr": "Bouton [[button]] appuyÃ©",
         "nl": "Knop [[button]] ingedrukt",
-        "de": "Taste [[button]] gedrückt",
+        "de": "Taste [[button]] gedrÃ¼ckt",
         "it": "Pulsante [[button]] premuto",
         "sv": "Knapp [[button]] tryckt",
         "no": "Knapp [[button]] trykket",
-        "es": "Botón [[button]] presionado",
+        "es": "BotÃ³n [[button]] presionado",
         "da": "Knap [[button]] trykket"
       },
       "tokens": [
@@ -37,7 +37,7 @@
             "it": "Pulsante",
             "sv": "Knapp",
             "no": "Knapp",
-            "es": "Botón",
+            "es": "BotÃ³n",
             "da": "Knap"
           },
           "example": "1"
@@ -49,24 +49,24 @@
       "id": "button_wireless_3_button_3gang_button_double_press",
       "title": {
         "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué",
+        "fr": "Bouton double-cliquÃ©",
         "nl": "Knop dubbel ingedrukt",
-        "de": "Taste doppelt gedrückt",
+        "de": "Taste doppelt gedrÃ¼ckt",
         "it": "Pulsante premuto due volte",
         "sv": "Knapp dubbeltryckt",
         "no": "Knapp dobbeltrykket",
-        "es": "Botón presionado dos veces",
+        "es": "BotÃ³n presionado dos veces",
         "da": "Knap dobbeltklikket"
       },
       "titleFormatted": {
         "en": "Button [[button]] double-pressed",
-        "fr": "Bouton [[button]] double-cliqué",
+        "fr": "Bouton [[button]] double-cliquÃ©",
         "nl": "Knop [[button]] dubbel ingedrukt",
-        "de": "Taste [[button]] doppelt gedrückt",
+        "de": "Taste [[button]] doppelt gedrÃ¼ckt",
         "it": "Pulsante [[button]] premuto due volte",
         "sv": "Knapp [[button]] dubbeltryckt",
         "no": "Knapp [[button]] dobbeltrykket",
-        "es": "Botón [[button]] presionado dos veces",
+        "es": "BotÃ³n [[button]] presionado dos veces",
         "da": "Knap [[button]] dobbeltklikket"
       },
       "tokens": [
@@ -81,7 +81,7 @@
             "it": "Pulsante",
             "sv": "Knapp",
             "no": "Knapp",
-            "es": "Botón",
+            "es": "BotÃ³n",
             "da": "Knap"
           },
           "example": "1"
@@ -93,24 +93,24 @@
       "id": "button_wireless_3_button_3gang_button_long_press",
       "title": {
         "en": "Button long-pressed",
-        "fr": "Bouton pressé longtemps",
+        "fr": "Bouton pressÃ© longtemps",
         "nl": "Knop lang ingedrukt",
-        "de": "Taste lange gedrückt",
+        "de": "Taste lange gedrÃ¼ckt",
         "it": "Pulsante premuto a lungo",
-        "sv": "Knapp långtryckt",
+        "sv": "Knapp lÃ¥ngtryckt",
         "no": "Knapp langttrykket",
-        "es": "Botón presionado largo",
+        "es": "BotÃ³n presionado largo",
         "da": "Knap langt trykket"
       },
       "titleFormatted": {
         "en": "Button [[button]] long-pressed",
-        "fr": "Bouton [[button]] pressé longtemps",
+        "fr": "Bouton [[button]] pressÃ© longtemps",
         "nl": "Knop [[button]] lang ingedrukt",
-        "de": "Taste [[button]] lange gedrückt",
+        "de": "Taste [[button]] lange gedrÃ¼ckt",
         "it": "Pulsante [[button]] premuto a lungo",
-        "sv": "Knapp [[button]] långtryckt",
+        "sv": "Knapp [[button]] lÃ¥ngtryckt",
         "no": "Knapp [[button]] langttrykket",
-        "es": "Botón [[button]] presionado largo",
+        "es": "BotÃ³n [[button]] presionado largo",
         "da": "Knap [[button]] langt trykket"
       },
       "tokens": [
@@ -125,7 +125,7 @@
             "it": "Pulsante",
             "sv": "Knapp",
             "no": "Knapp",
-            "es": "Botón",
+            "es": "BotÃ³n",
             "da": "Knap"
           },
           "example": "1"
@@ -137,24 +137,24 @@
       "id": "button_wireless_3_button_3gang_button_multi_press",
       "title": {
         "en": "Button multi-pressed",
-        "fr": "Bouton multi-cliqué",
+        "fr": "Bouton multi-cliquÃ©",
         "nl": "Knop meerdere keren ingedrukt",
-        "de": "Taste mehrfach gedrückt",
-        "it": "Pulsante premuto più volte",
+        "de": "Taste mehrfach gedrÃ¼ckt",
+        "it": "Pulsante premuto piÃ¹ volte",
         "sv": "Knapp flertryck",
         "no": "Knapp flertrykk",
-        "es": "Botón presionado múltiple",
+        "es": "BotÃ³n presionado mÃºltiple",
         "da": "Knap flertrykket"
       },
       "titleFormatted": {
         "en": "Button [[button]] pressed [[count]] times",
-        "fr": "Bouton [[button]] appuyé [[count]] fois",
+        "fr": "Bouton [[button]] appuyÃ© [[count]] fois",
         "nl": "Knop [[button]] [[count]] keer ingedrukt",
-        "de": "Taste [[button]] [[count]] mal gedrückt",
+        "de": "Taste [[button]] [[count]] mal gedrÃ¼ckt",
         "it": "Pulsante [[button]] premuto [[count]] volte",
-        "sv": "Knapp [[button]] tryckt [[count]] gånger",
+        "sv": "Knapp [[button]] tryckt [[count]] gÃ¥nger",
         "no": "Knapp [[button]] trykket [[count]] ganger",
-        "es": "Botón [[button]] presionado [[count]] veces",
+        "es": "BotÃ³n [[button]] presionado [[count]] veces",
         "da": "Knap [[button]] trykket [[count]] gange"
       },
       "tokens": [
@@ -169,7 +169,7 @@
             "it": "Pulsante",
             "sv": "Knapp",
             "no": "Knapp",
-            "es": "Botón",
+            "es": "BotÃ³n",
             "da": "Knap"
           },
           "example": "1"
@@ -197,25 +197,25 @@
       "id": "button_wireless_3_button_3gang_button_1_pressed",
       "title": {
         "en": "Button 1 pressed",
-        "fr": "Bouton 1 appuyé",
+        "fr": "Bouton 1 appuyÃ©",
         "nl": "Knop 1 ingedrukt",
-        "de": "Taste 1 gedrückt",
+        "de": "Taste 1 gedrÃ¼ckt",
         "it": "Pulsante 1 premuto",
         "sv": "Knapp 1 tryckt",
         "no": "Knapp 1 trykket",
-        "es": "Botón 1 presionado",
+        "es": "BotÃ³n 1 presionado",
         "da": "Knap 1 trykket"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 1 pressed",
-        "fr": "Bouton 1 appuyé",
+        "fr": "Bouton 1 appuyÃ©",
         "nl": "Knop 1 ingedrukt",
-        "de": "Taste 1 gedrückt",
+        "de": "Taste 1 gedrÃ¼ckt",
         "it": "Pulsante 1 premuto",
         "sv": "Knapp 1 tryckt",
         "no": "Knapp 1 trykket",
-        "es": "Botón 1 presionado",
+        "es": "BotÃ³n 1 presionado",
         "da": "Knap 1 trykket"
       }
     },
@@ -223,25 +223,25 @@
       "id": "button_wireless_3_button_3gang_button_2_pressed",
       "title": {
         "en": "Button 2 pressed",
-        "fr": "Bouton 2 appuyé",
+        "fr": "Bouton 2 appuyÃ©",
         "nl": "Knop 2 ingedrukt",
-        "de": "Taste 2 gedrückt",
+        "de": "Taste 2 gedrÃ¼ckt",
         "it": "Pulsante 2 premuto",
         "sv": "Knapp 2 tryckt",
         "no": "Knapp 2 trykket",
-        "es": "Botón 2 presionado",
+        "es": "BotÃ³n 2 presionado",
         "da": "Knap 2 trykket"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 2 pressed",
-        "fr": "Bouton 2 appuyé",
+        "fr": "Bouton 2 appuyÃ©",
         "nl": "Knop 2 ingedrukt",
-        "de": "Taste 2 gedrückt",
+        "de": "Taste 2 gedrÃ¼ckt",
         "it": "Pulsante 2 premuto",
         "sv": "Knapp 2 tryckt",
         "no": "Knapp 2 trykket",
-        "es": "Botón 2 presionado",
+        "es": "BotÃ³n 2 presionado",
         "da": "Knap 2 trykket"
       }
     },
@@ -249,25 +249,25 @@
       "id": "button_wireless_3_button_3gang_button_3_pressed",
       "title": {
         "en": "Button 3 pressed",
-        "fr": "Bouton 3 appuyé",
+        "fr": "Bouton 3 appuyÃ©",
         "nl": "Knop 3 ingedrukt",
-        "de": "Taste 3 gedrückt",
+        "de": "Taste 3 gedrÃ¼ckt",
         "it": "Pulsante 3 premuto",
         "sv": "Knapp 3 tryckt",
         "no": "Knapp 3 trykket",
-        "es": "Botón 3 presionado",
+        "es": "BotÃ³n 3 presionado",
         "da": "Knap 3 trykket"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 3 pressed",
-        "fr": "Bouton 3 appuyé",
+        "fr": "Bouton 3 appuyÃ©",
         "nl": "Knop 3 ingedrukt",
-        "de": "Taste 3 gedrückt",
+        "de": "Taste 3 gedrÃ¼ckt",
         "it": "Pulsante 3 premuto",
         "sv": "Knapp 3 tryckt",
         "no": "Knapp 3 trykket",
-        "es": "Botón 3 presionado",
+        "es": "BotÃ³n 3 presionado",
         "da": "Knap 3 trykket"
       }
     },
@@ -275,25 +275,25 @@
       "id": "button_wireless_3_button_3gang_button_1_double",
       "title": {
         "en": "Button 1 double-pressed",
-        "fr": "Bouton 1 double-cliqué",
+        "fr": "Bouton 1 double-cliquÃ©",
         "nl": "Knop 1 dubbel ingedrukt",
-        "de": "Taste 1 doppelt gedrückt",
+        "de": "Taste 1 doppelt gedrÃ¼ckt",
         "it": "Pulsante 1 premuto due volte",
         "sv": "Knapp 1 dubbeltryckt",
         "no": "Knapp 1 dobbeltrykket",
-        "es": "Botón 1 presionado dos veces",
+        "es": "BotÃ³n 1 presionado dos veces",
         "da": "Knap 1 dobbeltklikket"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 1 double-pressed",
-        "fr": "Bouton 1 double-cliqué",
+        "fr": "Bouton 1 double-cliquÃ©",
         "nl": "Knop 1 dubbel ingedrukt",
-        "de": "Taste 1 doppelt gedrückt",
+        "de": "Taste 1 doppelt gedrÃ¼ckt",
         "it": "Pulsante 1 premuto due volte",
         "sv": "Knapp 1 dubbeltryckt",
         "no": "Knapp 1 dobbeltrykket",
-        "es": "Botón 1 presionado dos veces",
+        "es": "BotÃ³n 1 presionado dos veces",
         "da": "Knap 1 dobbeltklikket"
       }
     },
@@ -301,25 +301,25 @@
       "id": "button_wireless_3_button_3gang_button_2_double",
       "title": {
         "en": "Button 2 double-pressed",
-        "fr": "Bouton 2 double-cliqué",
+        "fr": "Bouton 2 double-cliquÃ©",
         "nl": "Knop 2 dubbel ingedrukt",
-        "de": "Taste 2 doppelt gedrückt",
+        "de": "Taste 2 doppelt gedrÃ¼ckt",
         "it": "Pulsante 2 premuto due volte",
         "sv": "Knapp 2 dubbeltryckt",
         "no": "Knapp 2 dobbeltrykket",
-        "es": "Botón 2 presionado dos veces",
+        "es": "BotÃ³n 2 presionado dos veces",
         "da": "Knap 2 dobbeltklikket"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 2 double-pressed",
-        "fr": "Bouton 2 double-cliqué",
+        "fr": "Bouton 2 double-cliquÃ©",
         "nl": "Knop 2 dubbel ingedrukt",
-        "de": "Taste 2 doppelt gedrückt",
+        "de": "Taste 2 doppelt gedrÃ¼ckt",
         "it": "Pulsante 2 premuto due volte",
         "sv": "Knapp 2 dubbeltryckt",
         "no": "Knapp 2 dobbeltrykket",
-        "es": "Botón 2 presionado dos veces",
+        "es": "BotÃ³n 2 presionado dos veces",
         "da": "Knap 2 dobbeltklikket"
       }
     },
@@ -327,25 +327,25 @@
       "id": "button_wireless_3_button_3gang_button_3_double",
       "title": {
         "en": "Button 3 double-pressed",
-        "fr": "Bouton 3 double-cliqué",
+        "fr": "Bouton 3 double-cliquÃ©",
         "nl": "Knop 3 dubbel ingedrukt",
-        "de": "Taste 3 doppelt gedrückt",
+        "de": "Taste 3 doppelt gedrÃ¼ckt",
         "it": "Pulsante 3 premuto due volte",
         "sv": "Knapp 3 dubbeltryckt",
         "no": "Knapp 3 dobbeltrykket",
-        "es": "Botón 3 presionado dos veces",
+        "es": "BotÃ³n 3 presionado dos veces",
         "da": "Knap 3 dobbeltklikket"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 3 double-pressed",
-        "fr": "Bouton 3 double-cliqué",
+        "fr": "Bouton 3 double-cliquÃ©",
         "nl": "Knop 3 dubbel ingedrukt",
-        "de": "Taste 3 doppelt gedrückt",
+        "de": "Taste 3 doppelt gedrÃ¼ckt",
         "it": "Pulsante 3 premuto due volte",
         "sv": "Knapp 3 dubbeltryckt",
         "no": "Knapp 3 dobbeltrykket",
-        "es": "Botón 3 presionado dos veces",
+        "es": "BotÃ³n 3 presionado dos veces",
         "da": "Knap 3 dobbeltklikket"
       }
     },
@@ -353,25 +353,25 @@
       "id": "button_wireless_3_button_3gang_button_1_long",
       "title": {
         "en": "Button 1 long-pressed",
-        "fr": "Bouton 1 pressé longtemps",
+        "fr": "Bouton 1 pressÃ© longtemps",
         "nl": "Knop 1 lang ingedrukt",
-        "de": "Taste 1 lange gedrückt",
+        "de": "Taste 1 lange gedrÃ¼ckt",
         "it": "Pulsante 1 premuto a lungo",
-        "sv": "Knapp 1 långtryckt",
+        "sv": "Knapp 1 lÃ¥ngtryckt",
         "no": "Knapp 1 langttrykket",
-        "es": "Botón 1 presionado largo",
+        "es": "BotÃ³n 1 presionado largo",
         "da": "Knap 1 langt trykket"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 1 long-pressed",
-        "fr": "Bouton 1 pressé longtemps",
+        "fr": "Bouton 1 pressÃ© longtemps",
         "nl": "Knop 1 lang ingedrukt",
-        "de": "Taste 1 lange gedrückt",
+        "de": "Taste 1 lange gedrÃ¼ckt",
         "it": "Pulsante 1 premuto a lungo",
-        "sv": "Knapp 1 långtryckt",
+        "sv": "Knapp 1 lÃ¥ngtryckt",
         "no": "Knapp 1 langttrykket",
-        "es": "Botón 1 presionado largo",
+        "es": "BotÃ³n 1 presionado largo",
         "da": "Knap 1 langt trykket"
       }
     },
@@ -379,25 +379,25 @@
       "id": "button_wireless_3_button_3gang_button_2_long",
       "title": {
         "en": "Button 2 long-pressed",
-        "fr": "Bouton 2 pressé longtemps",
+        "fr": "Bouton 2 pressÃ© longtemps",
         "nl": "Knop 2 lang ingedrukt",
-        "de": "Taste 2 lange gedrückt",
+        "de": "Taste 2 lange gedrÃ¼ckt",
         "it": "Pulsante 2 premuto a lungo",
-        "sv": "Knapp 2 långtryckt",
+        "sv": "Knapp 2 lÃ¥ngtryckt",
         "no": "Knapp 2 langttrykket",
-        "es": "Botón 2 presionado largo",
+        "es": "BotÃ³n 2 presionado largo",
         "da": "Knap 2 langt trykket"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 2 long-pressed",
-        "fr": "Bouton 2 pressé longtemps",
+        "fr": "Bouton 2 pressÃ© longtemps",
         "nl": "Knop 2 lang ingedrukt",
-        "de": "Taste 2 lange gedrückt",
+        "de": "Taste 2 lange gedrÃ¼ckt",
         "it": "Pulsante 2 premuto a lungo",
-        "sv": "Knapp 2 långtryckt",
+        "sv": "Knapp 2 lÃ¥ngtryckt",
         "no": "Knapp 2 langttrykket",
-        "es": "Botón 2 presionado largo",
+        "es": "BotÃ³n 2 presionado largo",
         "da": "Knap 2 langt trykket"
       }
     },
@@ -405,25 +405,25 @@
       "id": "button_wireless_3_button_3gang_button_3_long",
       "title": {
         "en": "Button 3 long-pressed",
-        "fr": "Bouton 3 pressé longtemps",
+        "fr": "Bouton 3 pressÃ© longtemps",
         "nl": "Knop 3 lang ingedrukt",
-        "de": "Taste 3 lange gedrückt",
+        "de": "Taste 3 lange gedrÃ¼ckt",
         "it": "Pulsante 3 premuto a lungo",
-        "sv": "Knapp 3 långtryckt",
+        "sv": "Knapp 3 lÃ¥ngtryckt",
         "no": "Knapp 3 langttrykket",
-        "es": "Botón 3 presionado largo",
+        "es": "BotÃ³n 3 presionado largo",
         "da": "Knap 3 langt trykket"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 3 long-pressed",
-        "fr": "Bouton 3 pressé longtemps",
+        "fr": "Bouton 3 pressÃ© longtemps",
         "nl": "Knop 3 lang ingedrukt",
-        "de": "Taste 3 lange gedrückt",
+        "de": "Taste 3 lange gedrÃ¼ckt",
         "it": "Pulsante 3 premuto a lungo",
-        "sv": "Knapp 3 långtryckt",
+        "sv": "Knapp 3 lÃ¥ngtryckt",
         "no": "Knapp 3 langttrykket",
-        "es": "Botón 3 presionado largo",
+        "es": "BotÃ³n 3 presionado largo",
         "da": "Knap 3 langt trykket"
       }
     },
@@ -431,72 +431,72 @@
       "id": "button_wireless_3_button_3gang_button_1_triple",
       "title": {
         "en": "Button 1 triple-pressed",
-        "fr": "Bouton 1 triple-cliqué"
+        "fr": "Bouton 1 triple-cliquÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 1 triple-pressed",
-        "fr": "Bouton 1 triple-cliqué"
+        "fr": "Bouton 1 triple-cliquÃ©"
       }
     },
     {
       "id": "button_wireless_3_button_3gang_button_2_triple",
       "title": {
         "en": "Button 2 triple-pressed",
-        "fr": "Bouton 2 triple-cliqué"
+        "fr": "Bouton 2 triple-cliquÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 2 triple-pressed",
-        "fr": "Bouton 2 triple-cliqué"
+        "fr": "Bouton 2 triple-cliquÃ©"
       }
     },
     {
       "id": "button_wireless_3_button_3gang_button_3_triple",
       "title": {
         "en": "Button 3 triple-pressed",
-        "fr": "Bouton 3 triple-cliqué"
+        "fr": "Bouton 3 triple-cliquÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 3 triple-pressed",
-        "fr": "Bouton 3 triple-cliqué"
+        "fr": "Bouton 3 triple-cliquÃ©"
       }
     },
     {
       "id": "button_wireless_3_button_3gang_button_1_release",
       "title": {
         "en": "Button 1 released - after hold",
-        "fr": "Bouton 1 relâché - après maintien"
+        "fr": "Bouton 1 relÃ¢chÃ© - aprÃ¨s maintien"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 1 released (after hold)",
-        "fr": "Bouton 1 relâché (après maintien)"
+        "fr": "Bouton 1 relÃ¢chÃ© (aprÃ¨s maintien)"
       }
     },
     {
       "id": "button_wireless_3_button_3gang_button_2_release",
       "title": {
         "en": "Button 2 released - after hold",
-        "fr": "Bouton 2 relâché - après maintien"
+        "fr": "Bouton 2 relÃ¢chÃ© - aprÃ¨s maintien"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 2 released (after hold)",
-        "fr": "Bouton 2 relâché (après maintien)"
+        "fr": "Bouton 2 relÃ¢chÃ© (aprÃ¨s maintien)"
       }
     },
     {
       "id": "button_wireless_3_button_3gang_button_3_release",
       "title": {
         "en": "Button 3 released - after hold",
-        "fr": "Bouton 3 relâché - après maintien"
+        "fr": "Bouton 3 relÃ¢chÃ© - aprÃ¨s maintien"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 3 released (after hold)",
-        "fr": "Bouton 3 relâché (après maintien)"
+        "fr": "Bouton 3 relÃ¢chÃ© (aprÃ¨s maintien)"
       }
     },
     {

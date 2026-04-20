@@ -31,15 +31,15 @@ function fixDriverFlowRegistration(driverConfig) {
   const driverFile = path.join(DRIVERS_DIR, driverConfig.name, 'driver.js');
 
   if (!fs.existsSync(driverFile)) {
-    console.log(`     ${driverConfig.name}: driver.js non trouvé`);
+    console.log(`     ${driverConfig.name}: driver.js non trouvÃ©`);
     return false;
   }
 
   const content = fs.readFileSync(driverFile, 'utf8');
 
-  // Vérifier si déjà enregistré
+  // VÃ©rifier si dÃ©jÃ enregistrÃ©
   if (content.includes('getTriggerCard') || content.includes('getConditionCard')) {
-    console.log(`    ${driverConfig.name}: déjà enregistré`);
+    console.log(`    ${driverConfig.name}: dÃ©jÃ enregistrÃ©`);
     return false;
   }
 
@@ -47,21 +47,21 @@ function fixDriverFlowRegistration(driverConfig) {
   const backupPath = `${driverFile}.backup-flow-fix-${Date.now()}`;
   fs.copyFileSync(driverFile, backupPath);
 
-  // Créer nouveau contenu avec registration
+  // CrÃ©er nouveau contenu avec registration
   const lines = content.split('\n');
   const onInitIndex = lines.findIndex(l => l.includes('async onInit()') || l.includes('onInit()'));
 
   if (onInitIndex === -1) {
-    console.log(`    ${driverConfig.name}: onInit() non trouvé`);
+    console.log(`    ${driverConfig.name}: onInit() non trouvÃ©`);
     return false;
   }
 
-  // Trouver la ligne après onInit() {
+  // Trouver la ligne aprÃ¨s onInit() {
   let insertIndex = onInitIndex + 1;
   while (insertIndex < lines.length && !lines[insertIndex].includes('{')) {
     insertIndex++;
   }
-  insertIndex++; // Après le {
+  insertIndex++; // AprÃ¨s le {
 
   // Construire code de registration
   const registrationCode = [];
@@ -94,19 +94,19 @@ function fixDriverFlowRegistration(driverConfig) {
   registrationCode.push('    ');
   registrationCode.push(`    this.log('${driverConfig.name}: Flow cards registered');`);
 
-  // Insérer le code
+  // InsÃ©rer le code
   lines.splice(insertIndex, 0, ...registrationCode);
 
   // Sauvegarder
   fs.writeFileSync(driverFile, lines.join('\n'), 'utf8');
 
-  console.log(`    ${driverConfig.name}: Flow registration ajouté`);
+  console.log(`    ${driverConfig.name}: Flow registration ajoutÃ©`);
   console.log(`      Triggers: ${driverConfig.triggers.length}, Conditions: ${driverConfig.conditions.length}`);
 
   return true;
 }
 
-// EXÉCUTION
+// EXÃ‰CUTION
 console.log(' Correction flow registrations...\n');
 
 let fixed = 0;
@@ -116,11 +116,11 @@ DRIVERS_TO_FIX.forEach(config => {
   }
 });
 
-console.log('\n RÉSULTAT:\n');
-console.log(`   Drivers corrigés: ${fixed}/${DRIVERS_TO_FIX.length}\n`);
+console.log('\n RÃ‰SULTAT:\n');
+console.log(`   Drivers corrigÃ©s: ${fixed}/${DRIVERS_TO_FIX.length}\n`);
 
 if (fixed > 0) {
-  console.log(' FLOW REGISTRATIONS AJOUTÉES\n');
+  console.log(' FLOW REGISTRATIONS AJOUTÃ‰ES\n');
   console.log(' Ces drivers auront maintenant des flows fonctionnels:');
   DRIVERS_TO_FIX.forEach(c => {
     console.log(`   - ${c.name}`);

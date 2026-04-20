@@ -79,7 +79,7 @@
       "type": "value",
       "converter": "temperature",
       "scale": 10,
-      "unit": "°C",
+      "unit": "Â°C",
       "writable": false,
       "reportable": true,
       "notes": "Multiple DP options, scale typically 10"
@@ -134,12 +134,12 @@
       "type": "value",
       "converter": "temperature",
       "scale": 10,
-      "unit": "°C",
+      "unit": "Â°C",
       "min": 50,
       "max": 300,
       "writable": true,
       "reportable": true,
-      "notes": "Range depends on device (5-30°C typical)"
+      "notes": "Range depends on device (5-30Â°C typical)"
     },
     
     "thermostat_mode": {

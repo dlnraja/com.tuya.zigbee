@@ -13,7 +13,7 @@ const DRIVERS_DIR = path.join(ROOT, 'drivers');
 const STRINGS_TO_REMOVE = [
   'Hybrid', 'hybrid', 'HYBRID',
   'Hybride', 'hybride',
-  'Híbrido', 'híbrido',
+  'HÃ­brido', 'hÃ­brido',
   'Hibrido', 'hibrido'
 ];
 
@@ -24,8 +24,8 @@ function cleanString(str) {
   // Specific replacements to maintain grammar
   newStr = newStr.replace(/Radar Hybride/g, 'Radar');
   newStr = newStr.replace(/Hybride /g, '');
-  newStr = newStr.replace(/ Híbrido/g, '');
-  newStr = newStr.replace(/ híbrido/g, '');
+  newStr = newStr.replace(/ HÃ­brido/g, '');
+  newStr = newStr.replace(/ hÃ­brido/g, '');
   
   STRINGS_TO_REMOVE.forEach(s => {
     // Regex to remove the word and potentially trailing/leading spaces

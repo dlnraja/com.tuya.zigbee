@@ -7,20 +7,20 @@
         "en": "Door opened",
         "nl": "Deur geopend",
         "fr": "Porte ouverte",
-        "de": "Tür geöffnet"
+        "de": "TÃ¼r geÃ¶ffnet"
       },
       "hint": {
         "en": "Triggers when the door is opened",
         "nl": "Triggert wanneer de deur wordt geopend",
-        "fr": "Se déclenche quand la porte est ouverte",
-        "de": "Wird ausgelöst, wenn die Tür geöffnet wird"
+        "fr": "Se dÃ©clenche quand la porte est ouverte",
+        "de": "Wird ausgelÃ¶st, wenn die TÃ¼r geÃ¶ffnet wird"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door opened",
         "nl": "Deur geopend",
         "fr": "Porte ouverte",
-        "de": "Tür geöffnet"
+        "de": "TÃ¼r geÃ¶ffnet"
       }
     },
     {
@@ -28,21 +28,21 @@
       "title": {
         "en": "Door closed",
         "nl": "Deur gesloten",
-        "fr": "Porte fermée",
-        "de": "Tür geschlossen"
+        "fr": "Porte fermÃ©e",
+        "de": "TÃ¼r geschlossen"
       },
       "hint": {
         "en": "Triggers when the door is closed",
         "nl": "Triggert wanneer de deur wordt gesloten",
-        "fr": "Se déclenche quand la porte est fermée",
-        "de": "Wird ausgelöst, wenn die Tür geschlossen wird"
+        "fr": "Se dÃ©clenche quand la porte est fermÃ©e",
+        "de": "Wird ausgelÃ¶st, wenn die TÃ¼r geschlossen wird"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door closed",
         "nl": "Deur gesloten",
-        "fr": "Porte fermée",
-        "de": "Tür geschlossen"
+        "fr": "Porte fermÃ©e",
+        "de": "TÃ¼r geschlossen"
       }
     },
     {
@@ -50,15 +50,15 @@
       "title": {
         "en": "Door locked",
         "nl": "Deur vergrendeld",
-        "fr": "Porte verrouillée",
-        "de": "Tür verriegelt"
+        "fr": "Porte verrouillÃ©e",
+        "de": "TÃ¼r verriegelt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door locked",
         "nl": "Deur vergrendeld",
-        "fr": "Porte verrouillée",
-        "de": "Tür verriegelt"
+        "fr": "Porte verrouillÃ©e",
+        "de": "TÃ¼r verriegelt"
       }
     },
     {
@@ -66,29 +66,29 @@
       "title": {
         "en": "Door unlocked",
         "nl": "Deur ontgrendeld",
-        "fr": "Porte déverrouillée",
-        "de": "Tür entriegelt"
+        "fr": "Porte dÃ©verrouillÃ©e",
+        "de": "TÃ¼r entriegelt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door unlocked",
         "nl": "Deur ontgrendeld",
-        "fr": "Porte déverrouillée",
-        "de": "Tür entriegelt"
+        "fr": "Porte dÃ©verrouillÃ©e",
+        "de": "TÃ¼r entriegelt"
       }
     },
     {
       "id": "door_controller_garage_hybrid_door_controller_motion_detected",
       "title": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté",
+        "fr": "Mouvement dÃ©tectÃ©",
         "nl": "Beweging gedetecteerd",
         "de": "Bewegung erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté",
+        "fr": "Mouvement dÃ©tectÃ©",
         "nl": "Beweging gedetecteerd",
         "de": "Bewegung erkannt"
       }
@@ -97,16 +97,16 @@
       "id": "door_controller_garage_hybrid_door_controller_contact_alarm",
       "title": {
         "en": "Contact changed",
-        "fr": "Contact changé",
+        "fr": "Contact changÃ©",
         "nl": "Contact gewijzigd",
-        "de": "Kontakt geändert"
+        "de": "Kontakt geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Contact changed",
-        "fr": "Contact changé",
+        "fr": "Contact changÃ©",
         "nl": "Contact gewijzigd",
-        "de": "Kontakt geändert"
+        "de": "Kontakt geÃ¤ndert"
       }
     },
     {
@@ -129,16 +129,16 @@
       "id": "door_controller_garage_hybrid_door_controller_lock_changed",
       "title": {
         "en": "Lock changed",
-        "fr": "Serrure changée",
+        "fr": "Serrure changÃ©e",
         "nl": "Slot gewijzigd",
-        "de": "Schloss geändert"
+        "de": "Schloss geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Lock changed",
-        "fr": "Serrure changée",
+        "fr": "Serrure changÃ©e",
         "nl": "Slot gewijzigd",
-        "de": "Schloss geändert"
+        "de": "Schloss geÃ¤ndert"
       }
     }
   ],
@@ -149,14 +149,14 @@
         "en": "Door !{{is|is not}} open",
         "nl": "Deur !{{is|is niet}} open",
         "fr": "Porte !{{est|n'est pas}} ouverte",
-        "de": "Tür !{{ist|ist nicht}} offen"
+        "de": "TÃ¼r !{{ist|ist nicht}} offen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door !{{is|is not}} open",
         "nl": "Deur !{{is|is niet}} open",
         "fr": "Porte !{{est|n'est pas}} ouverte",
-        "de": "Tür !{{ist|ist nicht}} offen"
+        "de": "TÃ¼r !{{ist|ist nicht}} offen"
       }
     },
     {
@@ -164,29 +164,29 @@
       "title": {
         "en": "Door !{{is|is not}} locked",
         "nl": "Deur !{{is|is niet}} vergrendeld",
-        "fr": "Porte !{{est|n'est pas}} verrouillée",
-        "de": "Tür !{{ist|ist nicht}} verriegelt"
+        "fr": "Porte !{{est|n'est pas}} verrouillÃ©e",
+        "de": "TÃ¼r !{{ist|ist nicht}} verriegelt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Door !{{is|is not}} locked",
         "nl": "Deur !{{is|is niet}} vergrendeld",
-        "fr": "Porte !{{est|n'est pas}} verrouillée",
-        "de": "Tür !{{ist|ist nicht}} verriegelt"
+        "fr": "Porte !{{est|n'est pas}} verrouillÃ©e",
+        "de": "TÃ¼r !{{ist|ist nicht}} verriegelt"
       }
     },
     {
       "id": "door_controller_garage_hybrid_door_controller_motion_active",
       "title": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       }
@@ -215,14 +215,14 @@
         "en": "Open door",
         "nl": "Deur openen",
         "fr": "Ouvrir la porte",
-        "de": "Tür öffnen"
+        "de": "TÃ¼r Ã¶ffnen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Open door",
         "nl": "Deur openen",
         "fr": "Ouvrir la porte",
-        "de": "Tür öffnen"
+        "de": "TÃ¼r Ã¶ffnen"
       }
     },
     {
@@ -231,14 +231,14 @@
         "en": "Close door",
         "nl": "Deur sluiten",
         "fr": "Fermer la porte",
-        "de": "Tür schließen"
+        "de": "TÃ¼r schlieÃŸen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Close door",
         "nl": "Deur sluiten",
         "fr": "Fermer la porte",
-        "de": "Tür schließen"
+        "de": "TÃ¼r schlieÃŸen"
       }
     },
     {
@@ -247,14 +247,14 @@
         "en": "Lock door",
         "nl": "Deur vergrendelen",
         "fr": "Verrouiller la porte",
-        "de": "Tür verriegeln"
+        "de": "TÃ¼r verriegeln"
       },
       "args": [],
       "titleFormatted": {
         "en": "Lock door",
         "nl": "Deur vergrendelen",
         "fr": "Verrouiller la porte",
-        "de": "Tür verriegeln"
+        "de": "TÃ¼r verriegeln"
       }
     },
     {
@@ -262,15 +262,15 @@
       "title": {
         "en": "Unlock door",
         "nl": "Deur ontgrendelen",
-        "fr": "Déverrouiller la porte",
-        "de": "Tür entriegeln"
+        "fr": "DÃ©verrouiller la porte",
+        "de": "TÃ¼r entriegeln"
       },
       "args": [],
       "titleFormatted": {
         "en": "Unlock door",
         "nl": "Deur ontgrendelen",
-        "fr": "Déverrouiller la porte",
-        "de": "Tür entriegeln"
+        "fr": "DÃ©verrouiller la porte",
+        "de": "TÃ¼r entriegeln"
       }
     }
   ]

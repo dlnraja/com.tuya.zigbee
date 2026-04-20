@@ -4,36 +4,36 @@
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_presence_detected_sensor_motion_radar_hybrid",
       "title": {
         "en": "Presence detected",
-        "fr": "Présence détectée"
+        "fr": "PrÃ©sence dÃ©tectÃ©e"
       },
       "args": [],
       "titleFormatted": {
         "en": "Presence detected",
-        "fr": "Présence détectée"
+        "fr": "PrÃ©sence dÃ©tectÃ©e"
       }
     },
     {
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_presence_cleared_sensor_motion_radar_hybrid",
       "title": {
         "en": "Presence cleared",
-        "fr": "Présence disparue"
+        "fr": "PrÃ©sence disparue"
       },
       "args": [],
       "titleFormatted": {
         "en": "Presence cleared",
-        "fr": "Présence disparue"
+        "fr": "PrÃ©sence disparue"
       }
     },
     {
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_motion_detected_sensor_motion_radar_hybrid",
       "title": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement dÃ©tectÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement dÃ©tectÃ©"
       }
     },
     {
@@ -52,7 +52,7 @@
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Illuminance changed",
-        "fr": "Luminosité changée"
+        "fr": "LuminositÃ© changÃ©e"
       },
       "tokens": [
         {
@@ -60,7 +60,7 @@
           "type": "number",
           "title": {
             "en": "Illuminance (lux)",
-            "fr": "Luminosité (lux)"
+            "fr": "LuminositÃ© (lux)"
           },
           "example": 150
         }
@@ -68,22 +68,22 @@
       "args": [],
       "titleFormatted": {
         "en": "Illuminance changed",
-        "fr": "Luminosité changée"
+        "fr": "LuminositÃ© changÃ©e"
       }
     },
     {
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_temperature_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       },
       "tokens": [
         {
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (°C)",
-            "fr": "Température (°C)"
+            "en": "Temperature (Â°C)",
+            "fr": "TempÃ©rature (Â°C)"
           },
           "example": 22.5
         }
@@ -91,14 +91,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       }
     },
     {
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_humidity_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "HumiditÃ© changÃ©e"
       },
       "tokens": [
         {
@@ -106,7 +106,7 @@
           "type": "number",
           "title": {
             "en": "Humidity (%)",
-            "fr": "Humidité (%)"
+            "fr": "HumiditÃ© (%)"
           },
           "example": 55
         }
@@ -114,14 +114,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "HumiditÃ© changÃ©e"
       }
     },
     {
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_target_distance_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Target distance changed",
-        "fr": "Distance cible changée"
+        "fr": "Distance cible changÃ©e"
       },
       "tokens": [
         {
@@ -137,7 +137,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Target distance changed",
-        "fr": "Distance cible changée"
+        "fr": "Distance cible changÃ©e"
       }
     },
     {
@@ -156,7 +156,7 @@
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_battery_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "fr": "Niveau batterie changÃ©"
       },
       "tokens": [
         {
@@ -172,55 +172,55 @@
       "args": [],
       "titleFormatted": {
         "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "fr": "Niveau batterie changÃ©"
       }
     },
     {
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_distance_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Distance changed",
-        "fr": "Distance changée",
+        "fr": "Distance changÃ©e",
         "nl": "Afstand gewijzigd",
-        "de": "Entfernung geändert"
+        "de": "Entfernung geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Distance changed",
-        "fr": "Distance changée",
+        "fr": "Distance changÃ©e",
         "nl": "Afstand gewijzigd",
-        "de": "Entfernung geändert"
+        "de": "Entfernung geÃ¤ndert"
       }
     },
     {
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_temp_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       }
     },
     {
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_lux_changed_sensor_motion_radar_hybrid",
       "title": {
         "en": "Luminance changed",
-        "fr": "Luminance changée",
+        "fr": "Luminance changÃ©e",
         "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
+        "de": "Helligkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Luminance changed",
-        "fr": "Luminance changée",
+        "fr": "Luminance changÃ©e",
         "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
+        "de": "Helligkeit geÃ¤ndert"
       }
     }
   ],
@@ -229,23 +229,23 @@
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_is_presence_detected_sensor_motion_radar_hybrid",
       "title": {
         "en": "Presence is !{{detected|not detected}}",
-        "fr": "Présence !{{détectée|non détectée}}"
+        "fr": "PrÃ©sence !{{dÃ©tectÃ©e|non dÃ©tectÃ©e}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Presence is !{{detected|not detected}}",
-        "fr": "Présence !{{détectée|non détectée}}"
+        "fr": "PrÃ©sence !{{dÃ©tectÃ©e|non dÃ©tectÃ©e}}"
       }
     },
     {
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_above_sensor_motion_radar_hybrid",
       "title": {
         "en": "Illuminance is above",
-        "fr": "Luminosité supérieure à"
+        "fr": "LuminositÃ© supÃ©rieure Ã"
       },
       "titleFormatted": {
         "en": "Illuminance is above [[lux]] lux",
-        "fr": "Luminosité supérieure à [[lux]] lux"
+        "fr": "LuminositÃ© supÃ©rieure Ã [[lux]] lux"
       },
       "args": [
         {
@@ -265,11 +265,11 @@
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_below_sensor_motion_radar_hybrid",
       "title": {
         "en": "Illuminance is below",
-        "fr": "Luminosité inférieure à"
+        "fr": "LuminositÃ© infÃ©rieure Ã"
       },
       "titleFormatted": {
         "en": "Illuminance is below [[lux]] lux",
-        "fr": "Luminosité inférieure à [[lux]] lux"
+        "fr": "LuminositÃ© infÃ©rieure Ã [[lux]] lux"
       },
       "args": [
         {
@@ -289,11 +289,11 @@
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_temperature_above_sensor_motion_radar_hybrid",
       "title": {
         "en": "Temperature is above",
-        "fr": "Température supérieure à"
+        "fr": "TempÃ©rature supÃ©rieure Ã"
       },
       "titleFormatted": {
-        "en": "Temperature is above [[temp]]°C",
-        "fr": "Température supérieure à [[temp]]°C"
+        "en": "Temperature is above [[temp]]Â°C",
+        "fr": "TempÃ©rature supÃ©rieure Ã [[temp]]Â°C"
       },
       "args": [
         {
@@ -304,7 +304,7 @@
           "step": 0.5,
           "title": {
             "en": "Temperature",
-            "fr": "Température"
+            "fr": "TempÃ©rature"
           }
         }
       ]
@@ -313,7 +313,7 @@
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_target_distance_less_than_sensor_motion_radar_hybrid",
       "title": {
         "en": "Target distance is less than",
-        "fr": "Distance cible inférieure à"
+        "fr": "Distance cible infÃ©rieure Ã"
       },
       "titleFormatted": {
         "en": "Target distance < [[distance]] m",
@@ -337,14 +337,14 @@
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_motion_active_sensor_motion_radar_hybrid",
       "title": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       }
@@ -355,11 +355,11 @@
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_radar_sensitivity_sensor_motion_radar_hybrid",
       "title": {
         "en": "Set radar sensitivity",
-        "fr": "Définir sensibilité radar"
+        "fr": "DÃ©finir sensibilitÃ© radar"
       },
       "titleFormatted": {
         "en": "Set radar sensitivity to [[sensitivity]]",
-        "fr": "Définir sensibilité radar à [[sensitivity]]"
+        "fr": "DÃ©finir sensibilitÃ© radar Ã [[sensitivity]]"
       },
       "args": [
         {
@@ -370,7 +370,7 @@
           "step": 1,
           "title": {
             "en": "Sensitivity (0-9)",
-            "fr": "Sensibilité (0-9)"
+            "fr": "SensibilitÃ© (0-9)"
           }
         }
       ]
@@ -379,11 +379,11 @@
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_range_sensor_motion_radar_hybrid",
       "title": {
         "en": "Set detection range",
-        "fr": "Définir plage de détection"
+        "fr": "DÃ©finir plage de dÃ©tection"
       },
       "titleFormatted": {
         "en": "Set detection range [[min]]m - [[max]]m",
-        "fr": "Définir plage de détection [[min]]m - [[max]]m"
+        "fr": "DÃ©finir plage de dÃ©tection [[min]]m - [[max]]m"
       },
       "args": [
         {
@@ -414,11 +414,11 @@
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_fading_time_sensor_motion_radar_hybrid",
       "title": {
         "en": "Set fading time",
-        "fr": "Définir délai d'absence"
+        "fr": "DÃ©finir dÃ©lai d'absence"
       },
       "titleFormatted": {
         "en": "Set fading time to [[seconds]] seconds",
-        "fr": "Définir délai d'absence à [[seconds]] secondes"
+        "fr": "DÃ©finir dÃ©lai d'absence Ã [[seconds]] secondes"
       },
       "args": [
         {
@@ -438,11 +438,11 @@
       "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_delay_sensor_motion_radar_hybrid",
       "title": {
         "en": "Set detection delay",
-        "fr": "Définir délai de détection"
+        "fr": "DÃ©finir dÃ©lai de dÃ©tection"
       },
       "titleFormatted": {
         "en": "Set detection delay to [[seconds]] seconds",
-        "fr": "Définir délai de détection à [[seconds]] secondes"
+        "fr": "DÃ©finir dÃ©lai de dÃ©tection Ã [[seconds]] secondes"
       },
       "args": [
         {

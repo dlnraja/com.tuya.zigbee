@@ -17,7 +17,7 @@
       "title": "Fuite d'eau"
     },
     "alarm_smoke": {
-      "title": "Fumée"
+      "title": "FumÃ©e"
     },
     "alarm_co": {
       "title": "CO"
@@ -35,7 +35,7 @@
       "title": "Alimentation"
     },
     "dim": {
-      "title": "Luminosité",
+      "title": "LuminositÃ©",
       "units": "%"
     },
     "light_hue": {
@@ -45,17 +45,17 @@
       "title": "Saturation"
     },
     "light_temperature": {
-      "title": "Température"
+      "title": "TempÃ©rature"
     },
     "light_mode": {
       "title": "Mode lumineux"
     },
     "measure_temperature": {
-      "title": "Température",
-      "units": "°C"
+      "title": "TempÃ©rature",
+      "units": "Â°C"
     },
     "measure_humidity": {
-      "title": "Humidité",
+      "title": "HumiditÃ©",
       "units": "%"
     },
     "measure_pressure": {
@@ -68,7 +68,7 @@
     },
     "measure_pm25": {
       "title": "PM2.5",
-      "units": "µg/m³"
+      "units": "Âµg/mÂ³"
     },
     "measure_voc": {
       "title": "COV",
@@ -91,18 +91,18 @@
       "units": "A"
     },
     "meter_power": {
-      "title": "Énergie",
+      "title": "Ã‰nergie",
       "units": "kWh"
     },
     "target_temperature": {
-      "title": "Température cible",
-      "units": "°C"
+      "title": "TempÃ©rature cible",
+      "units": "Â°C"
     },
     "windowcoverings_state": {
       "title": "Stores",
       "values": {
         "up": "Haut",
-        "idle": "Arrêt",
+        "idle": "ArrÃªt",
         "down": "Bas"
       }
     },
@@ -117,11 +117,11 @@
   "settings": {
     "power_source": {
       "label": "Source d'Alimentation",
-      "hint": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique",
+      "hint": "SÃ©lectionnez la source d'alimentation manuellement ou utilisez la dÃ©tection automatique",
       "values": {
         "auto": {
           "en": "Auto Detect",
-          "fr": "Détection Automatique"
+          "fr": "DÃ©tection Automatique"
         },
         "ac": {
           "en": "AC Powered",
@@ -139,55 +139,55 @@
     },
     "battery_type": {
       "label": "Type de Batterie",
-      "hint": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+      "hint": "SÃ©lectionnez le type de batterie manuellement ou utilisez la dÃ©tection automatique basÃ©e sur la tension"
     },
     "battery_low_threshold": {
       "label": "Seuil Batterie Faible (%)",
-      "hint": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+      "hint": "DÃ©clencher l'alerte batterie faible en dessous de ce pourcentage"
     },
     "battery_critical_threshold": {
       "label": "Seuil Batterie Critique (%)",
-      "hint": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+      "hint": "DÃ©clencher l'alerte batterie critique en dessous de ce pourcentage"
     },
     "enable_battery_notifications": {
       "label": "Activer Notifications Batterie",
-      "hint": "Envoyer des notifications de flow pour les événements de batterie"
+      "hint": "Envoyer des notifications de flow pour les Ã©vÃ©nements de batterie"
     },
     "battery_report_interval": {
       "label": "Intervalle Rapport Batterie (heures)",
-      "hint": "Fréquence de demande des mises à jour d'état de batterie"
+      "hint": "FrÃ©quence de demande des mises Ã jour d'Ã©tat de batterie"
     },
     "optimization_mode": {
-      "label": "Mode Optimisation Énergétique",
-      "hint": "Équilibre entre réactivité et durée de vie de la batterie",
+      "label": "Mode Optimisation Ã‰nergÃ©tique",
+      "hint": "Ã‰quilibre entre rÃ©activitÃ© et durÃ©e de vie de la batterie",
       "values": {
         "performance": {
           "en": "Performance (More responsive)",
-          "fr": "Performance (Plus réactif)"
+          "fr": "Performance (Plus rÃ©actif)"
         },
         "balanced": {
           "en": "Balanced",
-          "fr": "Équilibré"
+          "fr": "Ã‰quilibrÃ©"
         },
         "power_saving": {
           "en": "Power Saving (Longer battery)",
-          "fr": "Économie d'énergie (Batterie plus longue)"
+          "fr": "Ã‰conomie d'Ã©nergie (Batterie plus longue)"
         }
       }
     },
     "show_voltage": {
       "label": "Afficher Tension Batterie",
-      "hint": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+      "hint": "Afficher la tension brute de la batterie dans les paramÃ¨tres du pÃ©riphÃ©rique"
     },
     "enable_power_estimation": {
       "label": "Activer Estimation Puissance",
-      "hint": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+      "hint": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
     }
   },
   "tabs": {
-    "general": "Général",
-    "advanced": "Avancé",
-    "about": "À propos"
+    "general": "GÃ©nÃ©ral",
+    "advanced": "AvancÃ©",
+    "about": "Ã€ propos"
   },
   "common": {
     "save": "Enregistrer",

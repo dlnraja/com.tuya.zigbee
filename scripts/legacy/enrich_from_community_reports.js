@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log(' ENRICHISSEMENT DEPUIS RAPPORTS COMMUNAUTÉ\n');
+console.log(' ENRICHISSEMENT DEPUIS RAPPORTS COMMUNAUTÃ‰\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -17,14 +17,14 @@ let stats = {
 };
 
 // 
-// DONNÉES FORUM + GITHUB (Janvier 2026)
+// DONNÃ‰ES FORUM + GITHUB (Janvier 2026)
 // 
 
 const COMMUNITY_REPORTS = {
-  // Forum #886 - DÉJÀ TRAITÉ (flow triggers fix)
+  // Forum #886 - DÃ‰JÃ€ TRAITÃ‰ (flow triggers fix)
   presence_sensor_radar: {
-    ids: ['_TZE204_ZTQNH5CG'], // Déjà présent, flow fix appliqué
-    issue: 'Flow triggers ne déclenchaient pas - FIXED driver.js'
+    ids: ['_TZE204_ZTQNH5CG'], // DÃ©jÃ prÃ©sent, flow fix appliquÃ©
+    issue: 'Flow triggers ne dÃ©clenchaient pas - FIXED driver.js'
   },
 
   // Forum Page 44 - PJ-1203A Energy Meter
@@ -59,7 +59,7 @@ const COMMUNITY_REPORTS = {
   }
 };
 
-// Manufacturer IDs à enrichir (from Zigbee2MQTT, GitHub, Forum)
+// Manufacturer IDs Ã enrichir (from Zigbee2MQTT, GitHub, Forum)
 const ENRICHMENT_IDS = {
   // Presence sensors (from Z2M)
   presence_sensor_radar: [
@@ -137,7 +137,7 @@ function enrichDriver(driverName, newIds) {
   const composeFile = path.join(DRIVERS_DIR, driverName, 'driver.compose.json');
 
   if (!fs.existsSync(composeFile)) {
-    console.log(`     ${driverName}: driver non trouvé - nouveau driver nécessaire`);
+    console.log(`     ${driverName}: driver non trouvÃ© - nouveau driver nÃ©cessaire`);
     stats.newDriversNeeded++;
     return false;
   }
@@ -153,11 +153,11 @@ function enrichDriver(driverName, newIds) {
     const currentIds = content.zigbee.manufacturerName;
     const currentIdsUpper = new Set(currentIds.map(id => id.toUpperCase()));
 
-    // Filtrer IDs déjà présents (case insensitive)
+    // Filtrer IDs dÃ©jÃ prÃ©sents (case insensitive)
     const idsToAdd = newIds.filter(id => !currentIdsUpper.has(id.toUpperCase()));
 
     if (idsToAdd.length === 0) {
-      console.log(`    ${driverName}: tous les IDs déjà présents`);
+      console.log(`    ${driverName}: tous les IDs dÃ©jÃ prÃ©sents`);
       return false;
     }
 
@@ -177,7 +177,7 @@ function enrichDriver(driverName, newIds) {
     stats.idsAdded += idsToAdd.length;
 
     console.log(`    ${driverName}: +${idsToAdd.length} IDs (${currentIds.length}  ${content.zigbee.manufacturerName.length})`);
-    console.log(`      Ajoutés: ${normalizedNew.join(', ')}`);
+    console.log(`      AjoutÃ©s: ${normalizedNew.join(', ')}`);
 
     return true;
 
@@ -188,7 +188,7 @@ function enrichDriver(driverName, newIds) {
 }
 
 /**
- * Vérifier si tous les flow triggers sont enregistrés
+ * VÃ©rifier si tous les flow triggers sont enregistrÃ©s
  */
 function verifyFlowTriggers(driverName) {
   const driverFile = path.join(DRIVERS_DIR, driverName, 'driver.js');
@@ -202,7 +202,7 @@ function verifyFlowTriggers(driverName) {
     const driverCode = fs.readFileSync(driverFile, 'utf8');
     const compose = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
 
-    // Vérifier si flow cards existent dans compose
+    // VÃ©rifier si flow cards existent dans compose
     const flowTriggers = compose.flow?.triggers || [];
     const flowConditions = compose.flow?.conditions || [];
 
@@ -210,7 +210,7 @@ function verifyFlowTriggers(driverName) {
       return { ok: true, reason: 'no flow cards defined' };
     }
 
-    // Vérifier si driver.js enregistre les triggers
+    // VÃ©rifier si driver.js enregistre les triggers
     const hasRegistration = driverCode.includes('getDeviceTriggerCard') ||
       driverCode.includes('getDeviceConditionCard');
 
@@ -230,14 +230,14 @@ function verifyFlowTriggers(driverName) {
   }
 }
 
-// EXÉCUTION
-console.log(' Enrichissement drivers depuis rapports communauté...\n');
+// EXÃ‰CUTION
+console.log(' Enrichissement drivers depuis rapports communautÃ©...\n');
 
 Object.entries(ENRICHMENT_IDS).forEach(([driverName, ids]) => {
   enrichDriver(driverName, ids);
 });
 
-console.log('\n\n Vérification flow triggers registration...\n');
+console.log('\n\n VÃ©rification flow triggers registration...\n');
 
 const DRIVERS_WITH_FLOWS = [
   'presence_sensor_radar',
@@ -264,19 +264,19 @@ DRIVERS_WITH_FLOWS.forEach(driverName => {
 // RAPPORT
 console.log('\n\n RAPPORT ENRICHISSEMENT:\n');
 console.log(`   Drivers enrichis: ${stats.driversEnriched}`);
-console.log(`   Manufacturer IDs ajoutés: ${stats.idsAdded}`);
-console.log(`   Nouveaux drivers nécessaires: ${stats.newDriversNeeded}`);
-console.log(`   Backups créés: ${stats.backupsCreated}`);
+console.log(`   Manufacturer IDs ajoutÃ©s: ${stats.idsAdded}`);
+console.log(`   Nouveaux drivers nÃ©cessaires: ${stats.newDriversNeeded}`);
+console.log(`   Backups crÃ©Ã©s: ${stats.backupsCreated}`);
 console.log(`   Flow triggers issues: ${flowIssues.length}\n`);
 
 if (stats.newDriversNeeded > 0) {
-  console.log('  NOUVEAUX DRIVERS NÉCESSAIRES:');
-  console.log('   - energy_meter (PJ-1203A) - ajouter à power_meter');
-  console.log('   - Autres devices forum à analyser\n');
+  console.log('  NOUVEAUX DRIVERS NÃ‰CESSAIRES:');
+  console.log('   - energy_meter (PJ-1203A) - ajouter Ã power_meter');
+  console.log('   - Autres devices forum Ã analyser\n');
 }
 
 if (flowIssues.length > 0) {
-  console.log('  FLOW TRIGGERS À CORRIGER:');
+  console.log('  FLOW TRIGGERS Ã€ CORRIGER:');
   flowIssues.forEach(issue => {
     console.log(`   - ${issue.driver}: Ajouter registration dans driver.js`);
   });
@@ -287,9 +287,9 @@ console.log(' SOURCES:');
 console.log('   - Forum Homey Community (Pages 42-46, Jan 2026)');
 console.log('   - GitHub dlnraja/com.tuya.zigbee (issues/PRs)');
 console.log('   - Zigbee2MQTT device database');
-console.log('   - User reports (#886 presence sensor fix appliqué)\n');
+console.log('   - User reports (#886 presence sensor fix appliquÃ©)\n');
 
-console.log(' ENRICHISSEMENT TERMINÉ\n');
+console.log(' ENRICHISSEMENT TERMINÃ‰\n');
 
 // Sauvegarder rapport
 const reportFile = path.join(ROOT, 'COMMUNITY_ENRICHMENT_REPORT.json');
@@ -301,6 +301,6 @@ fs.writeFileSync(reportFile, JSON.stringify({
   enrichmentIds: ENRICHMENT_IDS
 }, null, 2), 'utf8');
 
-console.log(` Rapport sauvegardé: ${reportFile}\n`);
+console.log(` Rapport sauvegardÃ©: ${reportFile}\n`);
 
 process.exit(flowIssues.length > 0 ? 1 : 0);

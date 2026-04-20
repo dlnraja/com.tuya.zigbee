@@ -398,7 +398,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
       this.setCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
     }
     
-    this.log('Simulated brightness:',Math.round(safeMultiply(this._simulatedBrightness, 100)), '%');
+    this.log('Simulated brightness:',Math.round(this._simulatedBrightness*100), '%');
   }
 
   async _triggerRotateLeft() {
@@ -506,6 +506,18 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     this.log('Smart Knob Rotary device deleted');
   }
 
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
+  }
 }
 
 module.exports = SmartKnobRotaryDevice;

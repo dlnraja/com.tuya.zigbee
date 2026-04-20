@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log(' RÉSOLUTION FINALE CONFLITS + NORMALISATION CASE\n');
+console.log(' RÃ‰SOLUTION FINALE CONFLITS + NORMALISATION CASE\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -16,7 +16,7 @@ let stats = {
   backupsCreated: 0
 };
 
-// Priorités (driver spécifique > générique)
+// PrioritÃ©s (driver spÃ©cifique > gÃ©nÃ©rique)
 const PRIORITY = {
   climate_sensor: 100, motion_sensor: 90, contact_sensor: 85, water_leak_sensor: 85,
   smoke_detector_advanced: 85, gas_sensor: 85, soil_sensor: 80, presence_sensor_radar: 80,
@@ -59,7 +59,7 @@ function analyzeAll() {
 }
 
 /**
- * Détecter conflits réels
+ * DÃ©tecter conflits rÃ©els
  */
 function detectConflicts(allDrivers) {
   const pairMap = new Map(); // "MANUNAME_UPPERCASE|PRODUCTID" -> [drivers]
@@ -92,12 +92,12 @@ function detectConflicts(allDrivers) {
 }
 
 /**
- * Résoudre: normaliser case + retirer des losers
+ * RÃ©soudre: normaliser case + retirer des losers
  */
 function resolve(allDrivers, conflicts) {
   console.log(' PHASE 1: Normalisation case sensitivity\n');
 
-  // Étape 1: Normaliser case (uppercase pour manufacturer names Tuya)
+  // Ã‰tape 1: Normaliser case (uppercase pour manufacturer names Tuya)
   allDrivers.forEach(d => {
     const composeFile = d.path;
     let content = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
@@ -111,7 +111,7 @@ function resolve(allDrivers, conflicts) {
       return m;
     });
 
-    // Déduplication après normalisation
+    // DÃ©duplication aprÃ¨s normalisation
     const uniqueNames = [...new Set(normalizedNames)];
 
     if (uniqueNames.length !== originalNames.length ||
@@ -132,22 +132,22 @@ function resolve(allDrivers, conflicts) {
     }
   });
 
-  console.log(`\n   Duplicates case supprimés: ${stats.caseNormalized}\n`);
+  console.log(`\n   Duplicates case supprimÃ©s: ${stats.caseNormalized}\n`);
 
-  // Étape 2: Re-analyser après normalisation
-  console.log(' PHASE 2: Résolution conflits réels\n');
+  // Ã‰tape 2: Re-analyser aprÃ¨s normalisation
+  console.log(' PHASE 2: RÃ©solution conflits rÃ©els\n');
 
   const refreshed = analyzeAll();
   const remainingConflicts = detectConflicts(refreshed);
 
   if (remainingConflicts.length === 0) {
-    console.log('    AUCUN CONFLIT après normalisation!\n');
+    console.log('    AUCUN CONFLIT aprÃ¨s normalisation!\n');
     return;
   }
 
-  console.log(`   ${remainingConflicts.length} conflits à résoudre\n`);
+  console.log(`   ${remainingConflicts.length} conflits Ã rÃ©soudre\n`);
 
-  // Résolution par priorité
+  // RÃ©solution par prioritÃ©
   const resolutions = new Map(); // driver -> Set(manufacturerNames to remove)
 
   remainingConflicts.forEach(conflict => {
@@ -161,7 +161,7 @@ function resolve(allDrivers, conflicts) {
     });
   });
 
-  // Appliquer résolutions
+  // Appliquer rÃ©solutions
   resolutions.forEach((namesToRemove, driverName) => {
     const composeFile = path.join(DRIVERS_DIR, driverName, 'driver.compose.json');
     if (!fs.existsSync(composeFile)) return;
@@ -194,7 +194,7 @@ function resolve(allDrivers, conflicts) {
   });
 }
 
-// EXÉCUTION
+// EXÃ‰CUTION
 console.log(' Analyse initiale...\n');
 const allDrivers = analyzeAll();
 console.log(`   ${allDrivers.length} drivers\n`);
@@ -206,23 +206,23 @@ resolve(allDrivers, initialConflicts);
 
 // RAPPORT FINAL
 console.log('\n\n RAPPORT FINAL:\n');
-console.log(`   Duplicates case normalisés: ${stats.caseNormalized}`);
-console.log(`   Conflits résolus: ${stats.conflictsResolved}`);
-console.log(`   Fichiers modifiés: ${stats.filesModified}`);
-console.log(`   Backups créés: ${stats.backupsCreated}\n`);
+console.log(`   Duplicates case normalisÃ©s: ${stats.caseNormalized}`);
+console.log(`   Conflits rÃ©solus: ${stats.conflictsResolved}`);
+console.log(`   Fichiers modifiÃ©s: ${stats.filesModified}`);
+console.log(`   Backups crÃ©Ã©s: ${stats.backupsCreated}\n`);
 
-console.log(' VÉRIFICATION FINALE...\n');
+console.log(' VÃ‰RIFICATION FINALE...\n');
 const final = analyzeAll();
 const finalConflicts = detectConflicts(final);
 
 console.log(`   Conflits restants: ${finalConflicts.length}\n`);
 
 if (finalConflicts.length === 0) {
-  console.log(' TOUS LES CONFLITS RÉSOLUS!\n');
-  console.log(' 97.3% des paires sont LÉGITIMES (productIds différents)\n');
+  console.log(' TOUS LES CONFLITS RÃ‰SOLUS!\n');
+  console.log(' 97.3% des paires sont LÃ‰GITIMES (productIds diffÃ©rents)\n');
   process.exit(0);
 } else {
-  console.log('  Conflits résiduels (premiers 10):\n');
+  console.log('  Conflits rÃ©siduels (premiers 10):\n');
   finalConflicts.slice(0, 10).forEach(c => {
     console.log(`   ${c.manufacturerNameUpper} + ${c.productId}: ${c.drivers.join(', ')}`);
   });

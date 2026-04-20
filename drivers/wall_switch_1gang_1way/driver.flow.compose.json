@@ -36,7 +36,7 @@
       "id": "wall_switch_1gang_1way_gang1_scene",
       "title": {
         "en": "Scene triggered",
-        "nl": "Scène geactiveerd"
+        "nl": "ScÃ¨ne geactiveerd"
       },
       "args": [],
       "tokens": [
@@ -53,7 +53,7 @@
       ],
       "titleFormatted": {
         "en": "Scene triggered",
-        "nl": "Scène geactiveerd"
+        "nl": "ScÃ¨ne geactiveerd"
       }
     },
     {
@@ -217,14 +217,14 @@
       "id": "wall_switch_1gang_1way_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
@@ -251,7 +251,7 @@
         "en": "Set power-on behavior",
         "nl": "Stel inschakelgedrag in",
         "de": "Einschaltverhalten einstellen",
-        "fr": "Définir le comportement à la mise sous tension"
+        "fr": "DÃ©finir le comportement Ã la mise sous tension"
       },
       "titleFormatted": {
         "en": "[[device]] Set power-on behavior to [[mode]]",
@@ -298,7 +298,7 @@
         "en": "Set external switch type",
         "nl": "Stel extern schakelaartype in",
         "de": "Externen Schaltertyp einstellen",
-        "fr": "Définir le type d'interrupteur externe"
+        "fr": "DÃ©finir le type d'interrupteur externe"
       },
       "titleFormatted": {
         "en": "[[device]] Set external switch type to [[mode]]",
@@ -343,11 +343,11 @@
       "id": "wall_switch_1gang_1way_set_scene_mode",
       "title": {
         "en": "Set scene mode",
-        "nl": "Stel scènemodus in"
+        "nl": "Stel scÃ¨nemodus in"
       },
       "titleFormatted": {
         "en": "[[device]] set scene mode to [[mode]]",
-        "nl": "[[device]] stel scènemodus in op [[mode]]"
+        "nl": "[[device]] stel scÃ¨nemodus in op [[mode]]"
       },
       "args": [
         {
@@ -387,14 +387,14 @@
       "id": "wall_switch_1gang_1way_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }

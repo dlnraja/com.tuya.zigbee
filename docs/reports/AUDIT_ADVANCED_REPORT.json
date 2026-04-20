@@ -14,223 +14,223 @@
         "severity": "INFO",
         "file": "drivers\\bulb_rgb\\driver.js",
         "cardId": "set_light_effect",
-        "message": "Flow card référencée: set_light_effect"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: set_light_effect"
       },
       {
         "severity": "INFO",
         "file": "drivers\\bulb_rgb\\driver.js",
         "cardId": "set_color_temp_kelvin",
-        "message": "Flow card référencée: set_color_temp_kelvin"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: set_color_temp_kelvin"
       },
       {
         "severity": "INFO",
         "file": "drivers\\ir_blaster\\device.js",
         "cardId": "ir_learn_code",
-        "message": "Flow card référencée: ir_learn_code"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: ir_learn_code"
       },
       {
         "severity": "INFO",
         "file": "drivers\\ir_blaster\\device.js",
         "cardId": "ir_send_code",
-        "message": "Flow card référencée: ir_send_code"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: ir_send_code"
       },
       {
         "severity": "INFO",
         "file": "drivers\\ir_blaster\\driver.js",
         "cardId": "ir_learn_code",
-        "message": "Flow card référencée: ir_learn_code"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: ir_learn_code"
       },
       {
         "severity": "INFO",
         "file": "drivers\\ir_blaster\\driver.js",
         "cardId": "ir_send_code",
-        "message": "Flow card référencée: ir_send_code"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: ir_send_code"
       },
       {
         "severity": "INFO",
         "file": "drivers\\ir_blaster\\driver.js",
         "cardId": "ir_send_by_category",
-        "message": "Flow card référencée: ir_send_by_category"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: ir_send_by_category"
       },
       {
         "severity": "INFO",
         "file": "drivers\\ir_blaster\\driver.js",
         "cardId": "ir_learning_active",
-        "message": "Flow card référencée: ir_learning_active"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: ir_learning_active"
       },
       {
         "severity": "INFO",
         "file": "drivers\\ir_blaster\\driver.js",
         "cardId": "ir_code_exists",
-        "message": "Flow card référencée: ir_code_exists"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: ir_code_exists"
       },
       {
         "severity": "INFO",
         "file": "drivers\\ir_blaster\\driver.js",
         "cardId": "ir_protocol_detected",
-        "message": "Flow card référencée: ir_protocol_detected"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: ir_protocol_detected"
       },
       {
         "severity": "INFO",
         "file": "drivers\\motion_sensor\\driver.js",
         "cardId": "motion_sensor_motion_active",
-        "message": "Flow card référencée: motion_sensor_motion_active"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: motion_sensor_motion_active"
       },
       {
         "severity": "INFO",
         "file": "drivers\\soil_sensor\\device.js",
         "cardId": "soil_sensor_moisture_below",
-        "message": "Flow card référencée: soil_sensor_moisture_below"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: soil_sensor_moisture_below"
       },
       {
         "severity": "INFO",
         "file": "drivers\\soil_sensor\\device.js",
         "cardId": "soil_sensor_moisture_above",
-        "message": "Flow card référencée: soil_sensor_moisture_above"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: soil_sensor_moisture_above"
       },
       {
         "severity": "INFO",
         "file": "drivers\\soil_sensor\\device.js",
         "cardId": "soil_sensor_temperature_above",
-        "message": "Flow card référencée: soil_sensor_temperature_above"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: soil_sensor_temperature_above"
       },
       {
         "severity": "INFO",
         "file": "drivers\\switch_4gang\\driver.js",
         "cardId": "switch_4gang_gang1_is_on",
-        "message": "Flow card référencée: switch_4gang_gang1_is_on"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: switch_4gang_gang1_is_on"
       },
       {
         "severity": "INFO",
         "file": "drivers\\switch_4gang\\driver.js",
         "cardId": "switch_4gang_gang2_is_on",
-        "message": "Flow card référencée: switch_4gang_gang2_is_on"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: switch_4gang_gang2_is_on"
       },
       {
         "severity": "INFO",
         "file": "drivers\\switch_4gang\\driver.js",
         "cardId": "switch_4gang_gang3_is_on",
-        "message": "Flow card référencée: switch_4gang_gang3_is_on"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: switch_4gang_gang3_is_on"
       },
       {
         "severity": "INFO",
         "file": "drivers\\switch_4gang\\driver.js",
         "cardId": "switch_4gang_gang4_is_on",
-        "message": "Flow card référencée: switch_4gang_gang4_is_on"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: switch_4gang_gang4_is_on"
       },
       {
         "severity": "INFO",
         "file": "drivers\\switch_4gang\\driver.js",
         "cardId": "switch_4gang_turn_on_gang1",
-        "message": "Flow card référencée: switch_4gang_turn_on_gang1"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: switch_4gang_turn_on_gang1"
       },
       {
         "severity": "INFO",
         "file": "drivers\\switch_4gang\\driver.js",
         "cardId": "switch_4gang_turn_off_gang1",
-        "message": "Flow card référencée: switch_4gang_turn_off_gang1"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: switch_4gang_turn_off_gang1"
       },
       {
         "severity": "INFO",
         "file": "drivers\\switch_4gang\\driver.js",
         "cardId": "switch_4gang_turn_on_gang2",
-        "message": "Flow card référencée: switch_4gang_turn_on_gang2"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: switch_4gang_turn_on_gang2"
       },
       {
         "severity": "INFO",
         "file": "drivers\\switch_4gang\\driver.js",
         "cardId": "switch_4gang_turn_off_gang2",
-        "message": "Flow card référencée: switch_4gang_turn_off_gang2"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: switch_4gang_turn_off_gang2"
       },
       {
         "severity": "INFO",
         "file": "drivers\\switch_4gang\\driver.js",
         "cardId": "switch_4gang_turn_on_gang3",
-        "message": "Flow card référencée: switch_4gang_turn_on_gang3"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: switch_4gang_turn_on_gang3"
       },
       {
         "severity": "INFO",
         "file": "drivers\\switch_4gang\\driver.js",
         "cardId": "switch_4gang_turn_off_gang3",
-        "message": "Flow card référencée: switch_4gang_turn_off_gang3"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: switch_4gang_turn_off_gang3"
       },
       {
         "severity": "INFO",
         "file": "drivers\\switch_4gang\\driver.js",
         "cardId": "switch_4gang_turn_on_gang4",
-        "message": "Flow card référencée: switch_4gang_turn_on_gang4"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: switch_4gang_turn_on_gang4"
       },
       {
         "severity": "INFO",
         "file": "drivers\\switch_4gang\\driver.js",
         "cardId": "switch_4gang_turn_off_gang4",
-        "message": "Flow card référencée: switch_4gang_turn_off_gang4"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: switch_4gang_turn_off_gang4"
       },
       {
         "severity": "INFO",
         "file": "lib\\flow\\FlowCardManager.js",
         "cardId": "energy_power_above",
-        "message": "Flow card référencée: energy_power_above"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: energy_power_above"
       },
       {
         "severity": "INFO",
         "file": "lib\\flow\\FlowCardManager.js",
         "cardId": "energy_power_below",
-        "message": "Flow card référencée: energy_power_below"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: energy_power_below"
       },
       {
         "severity": "INFO",
         "file": "lib\\flow\\FlowCardManager.js",
         "cardId": "energy_in_standby",
-        "message": "Flow card référencée: energy_in_standby"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: energy_in_standby"
       },
       {
         "severity": "INFO",
         "file": "lib\\flow\\FlowCardManager.js",
         "cardId": "energy_reset_meter",
-        "message": "Flow card référencée: energy_reset_meter"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: energy_reset_meter"
       },
       {
         "severity": "INFO",
         "file": "lib\\flow\\FlowCardManager.js",
         "cardId": "toggle_onoff",
-        "message": "Flow card référencée: toggle_onoff"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: toggle_onoff"
       },
       {
         "severity": "INFO",
         "file": "lib\\flow\\FlowCardManager.js",
         "cardId": "set_brightness_percent",
-        "message": "Flow card référencée: set_brightness_percent"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: set_brightness_percent"
       },
       {
         "severity": "INFO",
         "file": "lib\\flow\\FlowCardManager.js",
         "cardId": "set_fan_speed",
-        "message": "Flow card référencée: set_fan_speed"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: set_fan_speed"
       },
       {
         "severity": "INFO",
         "file": "lib\\flow\\FlowCardManager.js",
         "cardId": "set_valve_position",
-        "message": "Flow card référencée: set_valve_position"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: set_valve_position"
       },
       {
         "severity": "INFO",
         "file": "lib\\flow\\FlowCardManager.js",
         "cardId": "is_motion_detected",
-        "message": "Flow card référencée: is_motion_detected"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: is_motion_detected"
       },
       {
         "severity": "INFO",
         "file": "lib\\flow\\FlowCardManager.js",
         "cardId": "is_contact_open",
-        "message": "Flow card référencée: is_contact_open"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: is_contact_open"
       },
       {
         "severity": "INFO",
         "file": "lib\\flow\\FlowCardManager.js",
         "cardId": "temperature_above",
-        "message": "Flow card référencée: temperature_above"
+        "message": "Flow card rÃ©fÃ©rencÃ©e: temperature_above"
       }
     ],
     "capabilities": [],
@@ -399,7 +399,7 @@
           "drivers\\plug_energy_monitor\\driver.compose.json"
         ],
         "count": 4,
-        "message": "ID partagé par 4 drivers"
+        "message": "ID partagÃ© par 4 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -469,7 +469,7 @@
           "drivers\\weather_station_outdoor\\driver.compose.json"
         ],
         "count": 62,
-        "message": "ID partagé par 62 drivers"
+        "message": "ID partagÃ© par 62 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -479,7 +479,7 @@
           "drivers\\switch_4gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -490,7 +490,7 @@
           "drivers\\switch_4gang\\driver.compose.json"
         ],
         "count": 3,
-        "message": "ID partagé par 3 drivers"
+        "message": "ID partagÃ© par 3 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -500,7 +500,7 @@
           "drivers\\plug_smart\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -511,7 +511,7 @@
           "drivers\\switch_1gang\\driver.compose.json"
         ],
         "count": 3,
-        "message": "ID partagé par 3 drivers"
+        "message": "ID partagÃ© par 3 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -521,7 +521,7 @@
           "drivers\\button_wireless_2\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -531,7 +531,7 @@
           "drivers\\button_wireless_3\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -542,7 +542,7 @@
           "drivers\\scene_switch_4\\driver.compose.json"
         ],
         "count": 3,
-        "message": "ID partagé par 3 drivers"
+        "message": "ID partagÃ© par 3 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -553,7 +553,7 @@
           "drivers\\switch_1gang\\driver.compose.json"
         ],
         "count": 3,
-        "message": "ID partagé par 3 drivers"
+        "message": "ID partagÃ© par 3 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -563,7 +563,7 @@
           "drivers\\switch_1gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -573,7 +573,7 @@
           "drivers\\plug_smart\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -583,7 +583,7 @@
           "drivers\\plug_smart\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -593,7 +593,7 @@
           "drivers\\switch_1gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -603,7 +603,7 @@
           "drivers\\plug_smart\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -613,7 +613,7 @@
           "drivers\\plug_smart\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -623,7 +623,7 @@
           "drivers\\switch_1gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -633,7 +633,7 @@
           "drivers\\plug_smart\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -643,7 +643,7 @@
           "drivers\\switch_1gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -653,7 +653,7 @@
           "drivers\\switch_1gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -663,7 +663,7 @@
           "drivers\\motion_sensor\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -674,7 +674,7 @@
           "drivers\\presence_sensor_radar\\driver.compose.json"
         ],
         "count": 3,
-        "message": "ID partagé par 3 drivers"
+        "message": "ID partagÃ© par 3 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -684,7 +684,7 @@
           "drivers\\scene_switch_1\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -695,7 +695,7 @@
           "drivers\\vibration_sensor\\driver.compose.json"
         ],
         "count": 3,
-        "message": "ID partagé par 3 drivers"
+        "message": "ID partagÃ© par 3 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -705,7 +705,7 @@
           "drivers\\switch_1gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -715,7 +715,7 @@
           "drivers\\dimmer_wall_1gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -725,7 +725,7 @@
           "drivers\\soil_sensor\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -735,7 +735,7 @@
           "drivers\\plug_smart\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -745,7 +745,7 @@
           "drivers\\water_tank_monitor\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -757,7 +757,7 @@
           "drivers\\switch_1gang\\driver.compose.json"
         ],
         "count": 4,
-        "message": "ID partagé par 4 drivers"
+        "message": "ID partagÃ© par 4 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -769,7 +769,7 @@
           "drivers\\thermostat_tuya_dp\\driver.compose.json"
         ],
         "count": 4,
-        "message": "ID partagé par 4 drivers"
+        "message": "ID partagÃ© par 4 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -779,7 +779,7 @@
           "drivers\\motion_sensor_radar_mmwave\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -789,7 +789,7 @@
           "drivers\\motion_sensor_radar_mmwave\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -799,7 +799,7 @@
           "drivers\\presence_sensor_radar\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -809,7 +809,7 @@
           "drivers\\switch_4gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -820,7 +820,7 @@
           "drivers\\usb_outlet_advanced\\driver.compose.json"
         ],
         "count": 3,
-        "message": "ID partagé par 3 drivers"
+        "message": "ID partagÃ© par 3 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -830,7 +830,7 @@
           "drivers\\switch_1gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -840,7 +840,7 @@
           "drivers\\switch_1gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -850,7 +850,7 @@
           "drivers\\switch_1gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -860,7 +860,7 @@
           "drivers\\switch_1gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -870,7 +870,7 @@
           "drivers\\switch_1gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -880,7 +880,7 @@
           "drivers\\usb_outlet_advanced\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -892,7 +892,7 @@
           "drivers\\usb_dongle_dual_repeater\\driver.compose.json"
         ],
         "count": 4,
-        "message": "ID partagé par 4 drivers"
+        "message": "ID partagÃ© par 4 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -903,7 +903,7 @@
           "drivers\\switch_2gang\\driver.compose.json"
         ],
         "count": 3,
-        "message": "ID partagé par 3 drivers"
+        "message": "ID partagÃ© par 3 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -913,7 +913,7 @@
           "drivers\\smart_heater_controller\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -923,7 +923,7 @@
           "drivers\\smart_heater_controller\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -933,7 +933,7 @@
           "drivers\\smart_heater_controller\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -943,7 +943,7 @@
           "drivers\\smart_heater_controller\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -953,7 +953,7 @@
           "drivers\\smart_heater_controller\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -963,7 +963,7 @@
           "drivers\\water_leak_sensor\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -974,7 +974,7 @@
           "drivers\\switch_3gang\\driver.compose.json"
         ],
         "count": 3,
-        "message": "ID partagé par 3 drivers"
+        "message": "ID partagÃ© par 3 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -985,7 +985,7 @@
           "drivers\\switch_4gang\\driver.compose.json"
         ],
         "count": 3,
-        "message": "ID partagé par 3 drivers"
+        "message": "ID partagÃ© par 3 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -995,7 +995,7 @@
           "drivers\\switch_3gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -1005,7 +1005,7 @@
           "drivers\\switch_4gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -1015,7 +1015,7 @@
           "drivers\\switch_4gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -1025,7 +1025,7 @@
           "drivers\\switch_wall_6gang\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -1035,7 +1035,7 @@
           "drivers\\water_valve_smart\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       },
       {
         "severity": "CRITICAL",
@@ -1045,7 +1045,7 @@
           "drivers\\water_valve_smart\\driver.compose.json"
         ],
         "count": 2,
-        "message": "ID partagé par 2 drivers"
+        "message": "ID partagÃ© par 2 drivers"
       }
     ],
     "iasZone": [],
@@ -1268,7 +1268,7 @@
           "onoff",
           "measure_battery"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1282,7 +1282,7 @@
           "onoff",
           "measure_battery"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1296,7 +1296,7 @@
           "light_mode",
           "measure_battery"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1310,7 +1310,7 @@
           "onoff",
           "measure_battery"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1324,7 +1324,7 @@
           "onoff",
           "measure_battery"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1335,7 +1335,7 @@
           "onoff",
           "fan_speed"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1350,7 +1350,7 @@
           "button_dim_down",
           "button_identify"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1360,7 +1360,7 @@
           "measure_battery",
           "onoff"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1373,7 +1373,7 @@
           "measure_battery",
           "onoff"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1389,7 +1389,7 @@
           "target_temperature",
           "fan_speed"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1401,7 +1401,7 @@
           "light_mode",
           "measure_battery"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1415,7 +1415,7 @@
           "light_mode",
           "measure_battery"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1428,7 +1428,7 @@
           "light_saturation",
           "light_mode"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1442,7 +1442,7 @@
           "onoff",
           "measure_battery"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1456,7 +1456,7 @@
           "onoff",
           "measure_battery"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1470,7 +1470,7 @@
           "onoff",
           "meter_power"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1483,7 +1483,7 @@
           "onoff",
           "measure_battery"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1498,7 +1498,7 @@
           "button_toggle",
           "button_identify"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1509,7 +1509,7 @@
           "measure_temperature",
           "thermostat_mode"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1520,7 +1520,7 @@
           "alarm_generic",
           "onoff"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1533,7 +1533,7 @@
           "measure_battery",
           "measure_power"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1547,7 +1547,7 @@
           "meter_power",
           "alarm_generic"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1561,7 +1561,7 @@
           "measure_voltage",
           "measure_battery"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1576,7 +1576,7 @@
           "button_toggle",
           "button_identify"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1592,7 +1592,7 @@
           "button_toggle_2",
           "button_identify"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1608,7 +1608,7 @@
           "button_toggle_3",
           "button_identify"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1625,7 +1625,7 @@
           "button_toggle_4",
           "button_identify"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1636,7 +1636,7 @@
           "meter_power",
           "measure_battery"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1647,7 +1647,7 @@
           "measure_power",
           "meter_power"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1657,7 +1657,7 @@
           "measure_temperature",
           "measure_humidity"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1677,7 +1677,7 @@
           "measure_temperature.ch4",
           "thermostat_mode"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1690,7 +1690,7 @@
           "onoff",
           "measure_humidity"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1703,7 +1703,7 @@
           "measure_voltage",
           "measure_current"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1719,7 +1719,7 @@
           "measure_voltage",
           "measure_current"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1732,7 +1732,7 @@
           "measure_battery",
           "onoff"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1742,7 +1742,7 @@
           "valve_position",
           "measure_battery"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       },
       {
         "severity": "INFO",
@@ -1754,7 +1754,7 @@
           "measure_battery",
           "onoff"
         ],
-        "message": "Device hybride détecté (actuator + sensor)"
+        "message": "Device hybride dÃ©tectÃ© (actuator + sensor)"
       }
     ],
     "customCapabilities": [
@@ -1764,7 +1764,7 @@
         "capabilities": [
           "button"
         ],
-        "message": "Capabilities custom/propriétaires: button"
+        "message": "Capabilities custom/propriÃ©taires: button"
       },
       {
         "severity": "INFO",
@@ -1772,7 +1772,7 @@
         "capabilities": [
           "fan_speed"
         ],
-        "message": "Capabilities custom/propriétaires: fan_speed"
+        "message": "Capabilities custom/propriÃ©taires: fan_speed"
       },
       {
         "severity": "INFO",
@@ -1780,7 +1780,7 @@
         "capabilities": [
           "button"
         ],
-        "message": "Capabilities custom/propriétaires: button"
+        "message": "Capabilities custom/propriÃ©taires: button"
       },
       {
         "severity": "INFO",
@@ -1791,7 +1791,7 @@
           "button_dim_down",
           "button_identify"
         ],
-        "message": "Capabilities custom/propriétaires: button_toggle, button_dim_up, button_dim_down, button_identify"
+        "message": "Capabilities custom/propriÃ©taires: button_toggle, button_dim_up, button_dim_down, button_identify"
       },
       {
         "severity": "INFO",
@@ -1799,7 +1799,7 @@
         "capabilities": [
           "locked"
         ],
-        "message": "Capabilities custom/propriétaires: locked"
+        "message": "Capabilities custom/propriÃ©taires: locked"
       },
       {
         "severity": "INFO",
@@ -1809,7 +1809,7 @@
           "thermostat_mode",
           "fan_speed"
         ],
-        "message": "Capabilities custom/propriétaires: target_temperature, thermostat_mode, fan_speed"
+        "message": "Capabilities custom/propriÃ©taires: target_temperature, thermostat_mode, fan_speed"
       },
       {
         "severity": "INFO",
@@ -1819,7 +1819,7 @@
           "target_temperature",
           "fan_speed"
         ],
-        "message": "Capabilities custom/propriétaires: target_humidity, target_temperature, fan_speed"
+        "message": "Capabilities custom/propriÃ©taires: target_humidity, target_temperature, fan_speed"
       },
       {
         "severity": "INFO",
@@ -1827,7 +1827,7 @@
         "capabilities": [
           "ir_code_received"
         ],
-        "message": "Capabilities custom/propriétaires: ir_code_received"
+        "message": "Capabilities custom/propriÃ©taires: ir_code_received"
       },
       {
         "severity": "INFO",
@@ -1836,7 +1836,7 @@
           "locked",
           "lock_mode"
         ],
-        "message": "Capabilities custom/propriétaires: locked, lock_mode"
+        "message": "Capabilities custom/propriÃ©taires: locked, lock_mode"
       },
       {
         "severity": "INFO",
@@ -1845,7 +1845,7 @@
           "button_toggle",
           "button_identify"
         ],
-        "message": "Capabilities custom/propriétaires: button_toggle, button_identify"
+        "message": "Capabilities custom/propriÃ©taires: button_toggle, button_identify"
       },
       {
         "severity": "INFO",
@@ -1854,7 +1854,7 @@
           "target_temperature",
           "thermostat_mode"
         ],
-        "message": "Capabilities custom/propriétaires: target_temperature, thermostat_mode"
+        "message": "Capabilities custom/propriÃ©taires: target_temperature, thermostat_mode"
       },
       {
         "severity": "INFO",
@@ -1863,7 +1863,7 @@
           "target_temperature",
           "thermostat_mode"
         ],
-        "message": "Capabilities custom/propriétaires: target_temperature, thermostat_mode"
+        "message": "Capabilities custom/propriÃ©taires: target_temperature, thermostat_mode"
       },
       {
         "severity": "INFO",
@@ -1871,7 +1871,7 @@
         "capabilities": [
           "button"
         ],
-        "message": "Capabilities custom/propriétaires: button"
+        "message": "Capabilities custom/propriÃ©taires: button"
       },
       {
         "severity": "INFO",
@@ -1880,7 +1880,7 @@
           "target_temperature",
           "thermostat_mode"
         ],
-        "message": "Capabilities custom/propriétaires: target_temperature, thermostat_mode"
+        "message": "Capabilities custom/propriÃ©taires: target_temperature, thermostat_mode"
       },
       {
         "severity": "INFO",
@@ -1889,7 +1889,7 @@
           "target_temperature",
           "thermostat_mode"
         ],
-        "message": "Capabilities custom/propriétaires: target_temperature, thermostat_mode"
+        "message": "Capabilities custom/propriÃ©taires: target_temperature, thermostat_mode"
       },
       {
         "severity": "INFO",
@@ -1898,7 +1898,7 @@
           "button_toggle",
           "button_identify"
         ],
-        "message": "Capabilities custom/propriétaires: button_toggle, button_identify"
+        "message": "Capabilities custom/propriÃ©taires: button_toggle, button_identify"
       },
       {
         "severity": "INFO",
@@ -1908,7 +1908,7 @@
           "button_toggle_2",
           "button_identify"
         ],
-        "message": "Capabilities custom/propriétaires: button_toggle_1, button_toggle_2, button_identify"
+        "message": "Capabilities custom/propriÃ©taires: button_toggle_1, button_toggle_2, button_identify"
       },
       {
         "severity": "INFO",
@@ -1919,7 +1919,7 @@
           "button_toggle_3",
           "button_identify"
         ],
-        "message": "Capabilities custom/propriétaires: button_toggle_1, button_toggle_2, button_toggle_3, button_identify"
+        "message": "Capabilities custom/propriÃ©taires: button_toggle_1, button_toggle_2, button_toggle_3, button_identify"
       },
       {
         "severity": "INFO",
@@ -1931,7 +1931,7 @@
           "button_toggle_4",
           "button_identify"
         ],
-        "message": "Capabilities custom/propriétaires: button_toggle_1, button_toggle_2, button_toggle_3, button_toggle_4, button_identify"
+        "message": "Capabilities custom/propriÃ©taires: button_toggle_1, button_toggle_2, button_toggle_3, button_toggle_4, button_identify"
       },
       {
         "severity": "INFO",
@@ -1943,7 +1943,7 @@
           "target_temperature.ch4",
           "thermostat_mode"
         ],
-        "message": "Capabilities custom/propriétaires: target_temperature, target_temperature.ch2, target_temperature.ch3, target_temperature.ch4, thermostat_mode"
+        "message": "Capabilities custom/propriÃ©taires: target_temperature, target_temperature.ch2, target_temperature.ch3, target_temperature.ch4, thermostat_mode"
       },
       {
         "severity": "INFO",
@@ -1952,7 +1952,7 @@
           "target_temperature",
           "thermostat_mode"
         ],
-        "message": "Capabilities custom/propriétaires: target_temperature, thermostat_mode"
+        "message": "Capabilities custom/propriÃ©taires: target_temperature, thermostat_mode"
       },
       {
         "severity": "INFO",
@@ -1963,7 +1963,7 @@
           "valve_position.3",
           "valve_position.4"
         ],
-        "message": "Capabilities custom/propriétaires: valve_position.1, valve_position.2, valve_position.3, valve_position.4"
+        "message": "Capabilities custom/propriÃ©taires: valve_position.1, valve_position.2, valve_position.3, valve_position.4"
       },
       {
         "severity": "INFO",
@@ -1971,14 +1971,14 @@
         "capabilities": [
           "valve_position"
         ],
-        "message": "Capabilities custom/propriétaires: valve_position"
+        "message": "Capabilities custom/propriÃ©taires: valve_position"
       }
     ]
   },
   "recommendations": [
     {
       "priority": "HIGH",
-      "action": "Corriger immédiatement les issues critiques (IAS Zone, manufacturer ID duplicates)"
+      "action": "Corriger immÃ©diatement les issues critiques (IAS Zone, manufacturer ID duplicates)"
     },
     {
       "priority": "MEDIUM",

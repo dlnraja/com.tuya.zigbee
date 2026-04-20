@@ -7,7 +7,7 @@ const { safeParse } = require('../../lib/utils/tuyaUtils.js');
  *   v1.0.0 - Janvier 2026                                                       
  *   Corrige automatiquement les images des drivers selon Homey SDK Guidelines  
  *                                                                               
- *   Spécifications Homey:                                                       
+ *   SpÃ©cifications Homey:                                                       
  *   - Small: 75x75 px                                                           
  *   - Large: 500x500 px                                                         
  *   - XLarge: 1000x1000 px                                                      
@@ -27,7 +27,7 @@ const BACKUP_PATH = path.join(__dirname, '..', 'backup', 'images_backup');
 // Mapping des drivers incorrects vers les bonnes sources d'images
 // Sources: Zigbee2MQTT, images existantes correctes, ou URLs directes
 const IMAGE_FIXES = {
-  // === CATÉGORIE 1: Smart Plug utilisé incorrectement ===
+  // === CATÃ‰GORIE 1: Smart Plug utilisÃ© incorrectement ===
   'air_purifier': {
     source: 'z2m',
     model: 'TS0601_air_quality_sensor', // Closest match
@@ -37,19 +37,19 @@ const IMAGE_FIXES = {
   'pool_pump': {
     source: 'copy_from',
     copyFrom: 'switch_1gang', // Use switch module as base
-    description: 'Contrôleur pompe piscine'
+    description: 'ContrÃ´leur pompe piscine'
   },
   'garage_door': {
     source: 'z2m',
     model: 'TS0601_cover_5', // Garage door controller
     fallback: 'copy_from',
     copyFrom: 'door_controller',
-    description: 'Contrôleur porte garage'
+    description: 'ContrÃ´leur porte garage'
   },
   'fan_controller': {
     source: 'copy_from',
     copyFrom: 'ceiling_fan',
-    description: 'Contrôleur ventilateur'
+    description: 'ContrÃ´leur ventilateur'
   },
   'din_rail_switch': {
     source: 'copy_from',
@@ -64,7 +64,7 @@ const IMAGE_FIXES = {
   'fingerprint_lock': {
     source: 'copy_from',
     copyFrom: 'lock_smart',
-    description: 'Serrure biométrique'
+    description: 'Serrure biomÃ©trique'
   },
   'humidifier': {
     source: 'generate',
@@ -76,7 +76,7 @@ const IMAGE_FIXES = {
     source: 'generate',
     baseColor: '#FF6B35',
     icon: 'tuya',
-    description: 'Device Tuya générique'
+    description: 'Device Tuya gÃ©nÃ©rique'
   },
   'smart_breaker': {
     source: 'copy_from',
@@ -86,7 +86,7 @@ const IMAGE_FIXES = {
   'power_clamp_meter': {
     source: 'copy_from',
     copyFrom: 'energy_meter_3phase',
-    description: 'Pince ampèremétrique'
+    description: 'Pince ampÃ¨remÃ©trique'
   },
   'pet_feeder': {
     source: 'generate',
@@ -95,12 +95,12 @@ const IMAGE_FIXES = {
     description: 'Distributeur croquettes'
   },
 
-  // === CATÉGORIE 2: Wall Switch utilisé incorrectement ===
+  // === CATÃ‰GORIE 2: Wall Switch utilisÃ© incorrectement ===
   'hvac_dehumidifier': {
     source: 'generate',
     baseColor: '#03A9F4',
     icon: 'dehumidifier',
-    description: 'Déshumidificateur'
+    description: 'DÃ©shumidificateur'
   },
   'hvac_air_conditioner': {
     source: 'copy_from',
@@ -126,7 +126,7 @@ const IMAGE_FIXES = {
     description: 'Chauffage intelligent'
   },
 
-  // === CATÉGORIE 3: Autres erreurs ===
+  // === CATÃ‰GORIE 3: Autres erreurs ===
   'doorbell': {
     source: 'generate',
     baseColor: '#FFC107',
@@ -148,7 +148,7 @@ const IMAGE_FIXES = {
   'weather_station_outdoor': {
     source: 'copy_from',
     copyFrom: 'rain_sensor',
-    description: 'Station météo extérieure'
+    description: 'Station mÃ©tÃ©o extÃ©rieure'
   },
   'ceiling_fan': {
     source: 'generate',
@@ -169,12 +169,12 @@ let stats = {
 };
 
 /**
- * Crée le dossier de backup si nécessaire
+ * CrÃ©e le dossier de backup si nÃ©cessaire
  */
 function ensureBackupDir() {
   if (!fs.existsSync(BACKUP_PATH)) {
     fs.mkdirSync(BACKUP_PATH, { recursive: true });
-    console.log(` Dossier backup créé: ${BACKUP_PATH}`);
+    console.log(` Dossier backup crÃ©Ã©: ${BACKUP_PATH}`);
   }
 }
 
@@ -210,11 +210,11 @@ function copyImagesFromDriver(sourceDriverId, destDriverId) {
   const destPath = path.join(DRIVERS_PATH, destDriverId, 'assets', 'images');
 
   if (!fs.existsSync(sourcePath)) {
-    console.log(`   Source non trouvée: ${sourceDriverId}`);
+    console.log(`   Source non trouvÃ©e: ${sourceDriverId}`);
     return false;
   }
 
-  // Créer le dossier destination si nécessaire
+  // CrÃ©er le dossier destination si nÃ©cessaire
   if (!fs.existsSync(destPath)) {
     fs.mkdirSync(destPath, { recursive: true });
   }
@@ -234,7 +234,7 @@ function copyImagesFromDriver(sourceDriverId, destDriverId) {
   });
 
   if (copied > 0) {
-    console.log(`   Copié ${copied} images de ${sourceDriverId}  ${destDriverId}`);
+    console.log(`   CopiÃ© ${copied} images de ${sourceDriverId}  ${destDriverId}`);
     stats.copied++;
     return true;
   }
@@ -243,8 +243,8 @@ function copyImagesFromDriver(sourceDriverId, destDriverId) {
 }
 
 /**
- * Génère une image placeholder simple avec canvas
- * Note: Nécessite le package 'canvas' installé
+ * GÃ©nÃ¨re une image placeholder simple avec canvas
+ * Note: NÃ©cessite le package 'canvas' installÃ©
  */
 function generatePlaceholderImage(driverId, config) {
   try {
@@ -269,7 +269,7 @@ function generatePlaceholderImage(driverId, config) {
       ctx.fillStyle = '#FFFFFF';
       ctx.fillRect(0, 0, size, size);
 
-      // Cercle coloré au centre
+      // Cercle colorÃ© au centre
       const centerX = safeParse(size, 2);
       const centerY = safeParse(size, 2);
       const radius = size * 0.35;
@@ -279,7 +279,7 @@ function generatePlaceholderImage(driverId, config) {
       ctx.fillStyle = config.baseColor || '#607D8B';
       ctx.fill();
 
-      // Icône simple (première lettre)
+      // IcÃ´ne simple (premiÃ¨re lettre)
       ctx.fillStyle = '#FFFFFF';
       ctx.font = `bold ${size * 0.3}px Arial`;
       ctx.textAlign = 'center';
@@ -293,7 +293,7 @@ function generatePlaceholderImage(driverId, config) {
       fs.writeFileSync(path.join(destPath, name), buffer);
     });
 
-    console.log(`   Généré images pour ${driverId}`);
+    console.log(`   GÃ©nÃ©rÃ© images pour ${driverId}`);
     stats.generated++;
     return true;
   } catch (err) {
@@ -303,7 +303,7 @@ function generatePlaceholderImage(driverId, config) {
 }
 
 /**
- * Retourne le texte d'icône basé sur le type
+ * Retourne le texte d'icÃ´ne basÃ© sur le type
  */
 function getIconText(iconType) {
   const icons = {
@@ -320,7 +320,7 @@ function getIconText(iconType) {
 }
 
 /**
- * Vérifie si un driver a des images valides
+ * VÃ©rifie si un driver a des images valides
  */
 function hasValidImages(driverId) {
   const imagesPath = path.join(DRIVERS_PATH, driverId, 'assets', 'images');
@@ -342,17 +342,17 @@ async function fixDriverImages(driverId, config) {
 
   let success = false;
 
-  // Stratégie 1: Copier depuis un autre driver
+  // StratÃ©gie 1: Copier depuis un autre driver
   if (config.source === 'copy_from' && config.copyFrom) {
     success = copyImagesFromDriver(config.copyFrom, driverId);
   }
 
-  // Stratégie 2: Générer une image
+  // StratÃ©gie 2: GÃ©nÃ©rer une image
   if (!success && (config.source === 'generate' || config.fallback === 'generate')) {
     success = generatePlaceholderImage(driverId, config);
   }
 
-  // Stratégie 3: Fallback - copier depuis un driver similaire
+  // StratÃ©gie 3: Fallback - copier depuis un driver similaire
   if (!success && config.fallback === 'copy_from' && config.copyFrom) {
     success = copyImagesFromDriver(config.copyFrom, driverId);
   }
@@ -361,18 +361,18 @@ async function fixDriverImages(driverId, config) {
     stats.fixed++;
   } else {
     stats.errors++;
-    console.log(`   Échec pour ${driverId}`);
+    console.log(`   Ã‰chec pour ${driverId}`);
   }
 
   return success;
 }
 
 /**
- * Vérifie la cohérence de toutes les images
+ * VÃ©rifie la cohÃ©rence de toutes les images
  */
 function checkImageConsistency() {
   console.log('\n' + ''.repeat(60));
-  console.log(' VÉRIFICATION COHÉRENCE IMAGES');
+  console.log(' VÃ‰RIFICATION COHÃ‰RENCE IMAGES');
   console.log(''.repeat(60));
 
   const drivers = fs.readdirSync(DRIVERS_PATH).filter(d => {
@@ -426,23 +426,23 @@ async function main() {
   console.log('');
   console.log('');
 
-  // Créer dossier backup
+  // CrÃ©er dossier backup
   ensureBackupDir();
 
-  // Nombre de drivers à corriger
+  // Nombre de drivers Ã corriger
   const driversToFix = Object.keys(IMAGE_FIXES);
   stats.total = driversToFix.length;
 
-  console.log(` ${stats.total} drivers à corriger\n`);
+  console.log(` ${stats.total} drivers Ã corriger\n`);
 
   // Corriger chaque driver
   for (const driverId of driversToFix) {
     const config = IMAGE_FIXES[driverId];
 
-    // Vérifier si le driver existe
+    // VÃ©rifier si le driver existe
     const driverPath = path.join(DRIVERS_PATH, driverId);
     if (!fs.existsSync(driverPath)) {
-      console.log(`\n Driver non trouvé: ${driverId}`);
+      console.log(`\n Driver non trouvÃ©: ${driverId}`);
       stats.skipped++;
       continue;
     }
@@ -450,25 +450,25 @@ async function main() {
     await fixDriverImages(driverId, config);
   }
 
-  // Vérifier cohérence globale
+  // VÃ©rifier cohÃ©rence globale
   const consistency = checkImageConsistency();
 
-  // Résumé
+  // RÃ©sumÃ©
   console.log('\n' + ''.repeat(60));
-  console.log(' RÉSUMÉ FINAL');
+  console.log(' RÃ‰SUMÃ‰ FINAL');
   console.log(''.repeat(60));
-  console.log(` Corrigés: ${stats.fixed}`);
-  console.log(` Copiés: ${stats.copied}`);
-  console.log(` Générés: ${stats.generated}`);
-  console.log(` Ignorés: ${stats.skipped}`);
+  console.log(` CorrigÃ©s: ${stats.fixed}`);
+  console.log(` CopiÃ©s: ${stats.copied}`);
+  console.log(` GÃ©nÃ©rÃ©s: ${stats.generated}`);
+  console.log(` IgnorÃ©s: ${stats.skipped}`);
   console.log(` Erreurs: ${stats.errors}`);
   console.log(''.repeat(60));
 
   if (stats.fixed > 0) {
-    console.log('\n Images corrigées avec succès!');
-    console.log('   Exécutez: npx homey app build');
+    console.log('\n Images corrigÃ©es avec succÃ¨s!');
+    console.log('   ExÃ©cutez: npx homey app build');
   }
 }
 
-// Exécution
+// ExÃ©cution
 main().catch(console.error);

@@ -33,7 +33,7 @@ class RemoteButtonWirelessHybridDriver extends Homey {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('remote_button_wireless_hybrid_brightness_above');
+      const card = this._getFlowCard('remote_button_wireless_hybrid_brightness_above', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -45,7 +45,7 @@ class RemoteButtonWirelessHybridDriver extends Homey {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('remote_button_wireless_hybrid_set_brightness');
+      const card = this._getFlowCard('remote_button_wireless_hybrid_set_brightness', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

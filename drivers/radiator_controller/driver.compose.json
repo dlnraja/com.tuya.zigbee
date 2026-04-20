@@ -25,18 +25,14 @@
       "image": "/drivers/radiator_controller/assets/learnmode.svg",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly",
-        "fr": "Allumer/éteindre l'interrupteur 3 fois rapidement"
+        "fr": "Allumer/Ã©teindre l'interrupteur 3 fois rapidement"
       }
     },
     "manufacturerName": [
       "_TZE200_3REGM3H6",
       "_TZE200_EEKPF0FT",
       "_TZE200_PCDMJ88B",
-      "_TZE204_2EKUZ3DZ",
-      "_TZE200_3regm3h6",
-      "_TZE200_eekpf0ft",
-      "_TZE200_pcdmj88b",
-      "_TZE204_2ekuz3dz"
+      "_TZE204_2EKUZ3DZ"
     ]
   },
   "images": {
@@ -61,29 +57,29 @@
           },
           "hint": {
             "en": "Select the type of pilot wire system used by your electric radiator",
-            "fr": "Sélectionnez le type de système fil pilote de votre radiateur électrique"
+            "fr": "SÃ©lectionnez le type de systÃ¨me fil pilote de votre radiateur Ã©lectrique"
           },
           "value": "standard_6_orders",
           "values": [
             {
               "id": "standard_6_orders",
               "label": {
-                "en": " Standard 6 Orders (Confort/Eco/Hors-Gel/Arrêt/Confort-1/Confort-2)",
-                "fr": " Standard 6 Ordres (Confort/Eco/Hors-Gel/Arrêt/Confort-1/Confort-2)"
+                "en": " Standard 6 Orders (Confort/Eco/Hors-Gel/ArrÃªt/Confort-1/Confort-2)",
+                "fr": " Standard 6 Ordres (Confort/Eco/Hors-Gel/ArrÃªt/Confort-1/Confort-2)"
               }
             },
             {
               "id": "standard_4_orders",
               "label": {
-                "en": " Standard 4 Orders (Confort/Eco/Hors-Gel/Arrêt)",
-                "fr": " Standard 4 Ordres (Confort/Eco/Hors-Gel/Arrêt)"
+                "en": " Standard 4 Orders (Confort/Eco/Hors-Gel/ArrÃªt)",
+                "fr": " Standard 4 Ordres (Confort/Eco/Hors-Gel/ArrÃªt)"
               }
             },
             {
               "id": "simple_on_off",
               "label": {
                 "en": " Simple ON/OFF",
-                "fr": " Simple MARCHE/ARRÊT"
+                "fr": " Simple MARCHE/ARRÃŠT"
               }
             }
           ]
@@ -97,7 +93,7 @@
           },
           "hint": {
             "en": "Hardware diode setup for pilot wire control (1N4007 recommended)",
-            "fr": "Configuration matérielle diode pour contrôle fil pilote (1N4007 recommandée)"
+            "fr": "Configuration matÃ©rielle diode pour contrÃ´le fil pilote (1N4007 recommandÃ©e)"
           },
           "value": "single_1n4007",
           "values": [
@@ -129,7 +125,7 @@
           "type": "dropdown",
           "label": {
             "en": "Default Heating Mode",
-            "fr": "Mode Chauffage par Défaut"
+            "fr": "Mode Chauffage par DÃ©faut"
           },
           "value": "confort",
           "values": [
@@ -143,36 +139,36 @@
             {
               "id": "eco",
               "label": {
-                "en": " Éco (-3°C/4°C)",
-                "fr": " Éco (-3°C/4°C)"
+                "en": " Ã‰co (-3Â°C/4Â°C)",
+                "fr": " Ã‰co (-3Â°C/4Â°C)"
               }
             },
             {
               "id": "confort_minus_1",
               "label": {
-                "en": " Confort -1°C",
-                "fr": " Confort -1°C"
+                "en": " Confort -1Â°C",
+                "fr": " Confort -1Â°C"
               }
             },
             {
               "id": "confort_minus_2",
               "label": {
-                "en": " Confort -2°C",
-                "fr": " Confort -2°C"
+                "en": " Confort -2Â°C",
+                "fr": " Confort -2Â°C"
               }
             },
             {
               "id": "anti_freeze",
               "label": {
-                "en": " Hors-Gel (7°C)",
-                "fr": " Hors-Gel (7°C)"
+                "en": " Hors-Gel (7Â°C)",
+                "fr": " Hors-Gel (7Â°C)"
               }
             },
             {
               "id": "off",
               "label": {
-                "en": " Arrêt",
-                "fr": " Arrêt"
+                "en": " ArrÃªt",
+                "fr": " ArrÃªt"
               }
             }
           ]
@@ -186,7 +182,7 @@
           },
           "hint": {
             "en": "Allow automatic mode switching based on time and presence",
-            "fr": "Permettre le changement automatique de mode selon l'heure et la présence"
+            "fr": "Permettre le changement automatique de mode selon l'heure et la prÃ©sence"
           },
           "value": false
         },
@@ -195,11 +191,11 @@
           "type": "checkbox",
           "label": {
             "en": "Disable Energy Monitoring",
-            "fr": "Désactiver Surveillance Énergétique"
+            "fr": "DÃ©sactiver Surveillance Ã‰nergÃ©tique"
           },
           "hint": {
             "en": "Radiators with pilot wire don't provide accurate energy readings",
-            "fr": "Les radiateurs avec fil pilote ne fournissent pas de mesures énergétiques précises"
+            "fr": "Les radiateurs avec fil pilote ne fournissent pas de mesures Ã©nergÃ©tiques prÃ©cises"
           },
           "value": true
         }
@@ -209,7 +205,7 @@
       "type": "group",
       "label": {
         "en": "Advanced Settings",
-        "fr": "Paramètres Avancés"
+        "fr": "ParamÃ¨tres AvancÃ©s"
       },
       "children": [
         {
@@ -217,11 +213,11 @@
           "type": "number",
           "label": {
             "en": "Signal Duration (ms)",
-            "fr": "Durée Signal (ms)"
+            "fr": "DurÃ©e Signal (ms)"
           },
           "hint": {
             "en": "Duration of pilot wire signal pulses (typically 500-2000ms)",
-            "fr": "Durée des impulsions signal fil pilote (typiquement 500-2000ms)"
+            "fr": "DurÃ©e des impulsions signal fil pilote (typiquement 500-2000ms)"
           },
           "value": 1000,
           "min": 100,
@@ -253,7 +249,7 @@
           },
           "hint": {
             "en": "Force radiator to ignore its internal thermostat (advanced users only)",
-            "fr": "Forcer le radiateur à ignorer son thermostat interne (utilisateurs avancés uniquement)"
+            "fr": "Forcer le radiateur Ã ignorer son thermostat interne (utilisateurs avancÃ©s uniquement)"
           },
           "value": false
         },
@@ -266,7 +262,7 @@
           },
           "hint": {
             "en": "Log detailed pilot wire signals for troubleshooting",
-            "fr": "Enregistrer les signaux fil pilote détaillés pour dépannage"
+            "fr": "Enregistrer les signaux fil pilote dÃ©taillÃ©s pour dÃ©pannage"
           },
           "value": false
         }
@@ -277,12 +273,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "Sécurité Enfant Logicielle"
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "Empêche les changements d'état manuels sur l'appareil"
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
       }
     },
     {
@@ -297,7 +293,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'éteint après X minutes (0 = désactivé)"
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -305,12 +301,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation Présence)"
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
       }
     },
     {
@@ -318,14 +314,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Émulé (Secondes)"
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
       }
     },
     {
@@ -340,7 +336,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Émulation logicielle pour boutons à action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -348,7 +344,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "Durée Inching (Secondes)"
+        "fr": "DurÃ©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -356,7 +352,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -364,12 +360,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "Récupération d'État Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'état précédent après une coupure de courant"
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
       }
     },
     {
@@ -382,7 +378,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
       }
     },
     {
@@ -397,7 +393,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santé descend sous cette valeur"
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     },
     {
@@ -405,20 +401,20 @@
       "type": "checkbox",
       "label": {
         "en": "Adaptive TPI Regulation",
-        "fr": "Régulation TPI Adaptative"
+        "fr": "RÃ©gulation TPI Adaptative"
       },
       "value": false,
       "hint": {
         "en": "Use advanced software-based heating cycles (more precise)",
-        "fr": "Utilise des cycles de chauffe logiciels avancés (plus précis)"
+        "fr": "Utilise des cycles de chauffe logiciels avancÃ©s (plus prÃ©cis)"
       }
     }
   ],
   "name": {
     "en": "Electric Radiator Controller (Pilot Wire)",
-    "fr": "Contrôleur Radiateur Électrique (Fil Pilote)",
+    "fr": "ContrÃ´leur Radiateur Ã‰lectrique (Fil Pilote)",
     "nl": "Radiator Controller",
-    "de": "Heizkörpersteuerung"
+    "de": "HeizkÃ¶rpersteuerung"
   },
   "platforms": [
     "local"
@@ -437,13 +433,13 @@
     "target_temperature": {
       "title": {
         "en": "Target Temperature",
-        "fr": "Température Cible"
+        "fr": "TempÃ©rature Cible"
       },
       "min": 5,
       "max": 30,
       "step": 0.5,
       "units": {
-        "en": "°C"
+        "en": "Â°C"
       }
     },
     "thermostat_mode": {
@@ -465,7 +461,7 @@
         "id": "radiator_controller_radiator_mode_changed",
         "title": {
           "en": "Heating mode changed",
-          "fr": "Mode chauffage changé"
+          "fr": "Mode chauffage changÃ©"
         },
         "tokens": [
           {
@@ -482,7 +478,7 @@
         "id": "radiator_controller_pilot_signal_sent",
         "title": {
           "en": "Pilot wire signal sent",
-          "fr": "Signal fil pilote envoyé"
+          "fr": "Signal fil pilote envoyÃ©"
         },
         "tokens": [
           {
@@ -524,7 +520,7 @@
               {
                 "id": "eco",
                 "title": {
-                  "en": "Éco"
+                  "en": "Ã‰co"
                 }
               },
               {
@@ -536,7 +532,7 @@
               {
                 "id": "off",
                 "title": {
-                  "en": "Arrêt"
+                  "en": "ArrÃªt"
                 }
               }
             ]
@@ -549,7 +545,7 @@
         "id": "radiator_controller_set_heating_mode",
         "title": {
           "en": "Set heating mode to [[mode]]",
-          "fr": "Régler mode chauffage sur [[mode]]"
+          "fr": "RÃ©gler mode chauffage sur [[mode]]"
         },
         "args": [
           {
@@ -565,19 +561,19 @@
               {
                 "id": "eco",
                 "title": {
-                  "en": " Éco"
+                  "en": " Ã‰co"
                 }
               },
               {
                 "id": "confort_minus_1",
                 "title": {
-                  "en": " Confort -1°C"
+                  "en": " Confort -1Â°C"
                 }
               },
               {
                 "id": "confort_minus_2",
                 "title": {
-                  "en": " Confort -2°C"
+                  "en": " Confort -2Â°C"
                 }
               },
               {
@@ -589,7 +585,7 @@
               {
                 "id": "off",
                 "title": {
-                  "en": " Arrêt"
+                  "en": " ArrÃªt"
                 }
               }
             ]
@@ -616,7 +612,7 @@
               {
                 "id": "eco",
                 "title": {
-                  "en": "Éco (230V neg)"
+                  "en": "Ã‰co (230V neg)"
                 }
               },
               {
@@ -628,7 +624,7 @@
               {
                 "id": "off",
                 "title": {
-                  "en": "Arrêt (230V alt)"
+                  "en": "ArrÃªt (230V alt)"
                 }
               }
             ]
@@ -640,13 +636,13 @@
         "title": {
           "en": "Set temperature offset",
           "nl": "Temperatuur offset instellen",
-          "fr": "Définir offset température",
+          "fr": "DÃ©finir offset tempÃ©rature",
           "de": "Temperatur-Offset einstellen"
         },
         "titleFormatted": {
-          "en": "Set temperature offset to [[offset]]°C",
-          "nl": "Stel temperatuur offset in op [[offset]]°C",
-          "fr": "Définir offset température à [[offset]]°C"
+          "en": "Set temperature offset to [[offset]]Â°C",
+          "nl": "Stel temperatuur offset in op [[offset]]Â°C",
+          "fr": "DÃ©finir offset tempÃ©rature Ã [[offset]]Â°C"
         },
         "hint": {
           "en": "Adjust the temperature reading by adding an offset value",
@@ -659,7 +655,7 @@
             "min": -5,
             "max": 5,
             "step": 0.5,
-            "label": "°C"
+            "label": "Â°C"
           }
         ]
       }
@@ -687,7 +683,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

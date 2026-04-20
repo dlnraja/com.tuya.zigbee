@@ -10,24 +10,24 @@ const SMART_CARDS = {
   triggers: [
     {
       id: "radio_presence_detected",
-      title: { en: "Radio sensing presence detected", fr: "Présence détectée par radio (LQI)" }
+      title: { en: "Radio sensing presence detected", fr: "PrÃ©sence dÃ©tectÃ©e par radio (LQI)" }
     }
   ],
   conditions: [
     {
       id: "is_radio_presence_detected",
-      title: { en: "Radio presence is detected", fr: "Présence radio détectée" }
+      title: { en: "Radio presence is detected", fr: "PrÃ©sence radio dÃ©tectÃ©e" }
     }
   ],
   actions: [
     {
       id: "calibrate_virtual_energy",
-      title: { en: "Calibrate virtual energy", fr: "Calibrer l'énergie virtuelle" },
+      title: { en: "Calibrate virtual energy", fr: "Calibrer l'Ã©nergie virtuelle" },
       args: [{ name: "watts", type: "number", placeholder: { en: "Nominal Watts", fr: "Watts nominaux" } }]
     },
     {
        id: "set_sensing_threshold",
-       title: { en: "Set radio sensing sensitivity", fr: "Régler la détection radio" },
+       title: { en: "Set radio sensing sensitivity", fr: "RÃ©gler la dÃ©tection radio" },
        args: [{ name: "threshold", type: "number", placeholder: "2-50" }]
     }
   ]

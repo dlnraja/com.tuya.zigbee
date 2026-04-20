@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log(' CORRECTION AUTOMATIQUE INTELLIGENTE - TOUS PROBLÈMES SDK3\n');
+console.log(' CORRECTION AUTOMATIQUE INTELLIGENTE - TOUS PROBLÃˆMES SDK3\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -17,7 +17,7 @@ let stats = {
   backupsCreated: 0
 };
 
-// Catégories de devices avec leurs manufacturer IDs spécifiques
+// CatÃ©gories de devices avec leurs manufacturer IDs spÃ©cifiques
 const DEVICE_CATEGORIES = {
   // Switches & Relays
   switch: {
@@ -111,17 +111,17 @@ const DEVICE_CATEGORIES = {
   }
 };
 
-// IDs génériques à supprimer (non Tuya/Zigbee 3.0)
+// IDs gÃ©nÃ©riques Ã supprimer (non Tuya/Zigbee 3.0)
 const GENERIC_IDS_TO_REMOVE = [
   'GE', 'IKEA of Sweden', 'Samsung', 'Sengled', 'SmartThings',
   'LEDVANCE', 'OSRAM', 'Philips', 'SYLVANIA', 'CentraLite',
   'Iris', 'Jasco Products', 'Lowe\'s', 'Xiaomi', 'Aqara',
   'MLI', 'GLEDOPTO', 'innr', 'Paulmann', 'Sunricher',
-  'Müller Licht', 'Dresden Elektronik', 'TRADFRI', 'TRÅDFRI'
+  'MÃ¼ller Licht', 'Dresden Elektronik', 'TRADFRI', 'TRÃ…DFRI'
 ];
 
 /**
- * Déterminer catégorie du driver
+ * DÃ©terminer catÃ©gorie du driver
  */
 function getDriverCategory(driverPath, driverName) {
   const lowerName = driverName.toLowerCase();
@@ -136,7 +136,7 @@ function getDriverCategory(driverPath, driverName) {
 }
 
 /**
- * Filtrer manufacturer IDs selon catégorie
+ * Filtrer manufacturer IDs selon catÃ©gorie
  */
 function filterManufacturerIds(ids, category) {
   if (category === 'generic') return ids;
@@ -145,7 +145,7 @@ function filterManufacturerIds(ids, category) {
   if (!config) return ids;
 
   return ids.filter(id => {
-    // Garder si commence par un préfixe valide
+    // Garder si commence par un prÃ©fixe valide
     if (config.validPrefixes.some(prefix => id.startsWith(prefix))) {
       return true;
     }
@@ -155,12 +155,12 @@ function filterManufacturerIds(ids, category) {
       return true;
     }
 
-    // Garder les IDs Tuya spécifiques
+    // Garder les IDs Tuya spÃ©cifiques
     if (id.match(/^_TZ[0-9A-Z]{4}_[a-z0-9]{8}$/)) {
       return true;
     }
 
-    // Supprimer les génériques
+    // Supprimer les gÃ©nÃ©riques
     return false;
   });
 }
@@ -204,19 +204,19 @@ function processDriver(driverPath) {
       const originalIds = driver.zigbee.manufacturerName;
       const originalCount = originalIds.length;
 
-      // Supprimer génériques
+      // Supprimer gÃ©nÃ©riques
       let filteredIds = originalIds.filter(id => !GENERIC_IDS_TO_REMOVE.includes(id));
 
-      // Filtrer selon catégorie
+      // Filtrer selon catÃ©gorie
       filteredIds = filterManufacturerIds(filteredIds, category);
 
-      // Dédupliquer
+      // DÃ©dupliquer
       filteredIds = [...new Set(filteredIds)];
 
-      // Limiter à 15 max (sauf si moins)
+      // Limiter Ã 15 max (sauf si moins)
       if (filteredIds.length > 15 && category !== 'generic') {
-        console.log(`     ${driverName}: ${originalCount} IDs  limitant à 15 les plus pertinents`);
-        // Garder les TS* en priorité, puis les _TZ*
+        console.log(`     ${driverName}: ${originalCount} IDs  limitant Ã 15 les plus pertinents`);
+        // Garder les TS* en prioritÃ©, puis les _TZ*
         const tsIds = filteredIds.filter(id => id.startsWith('TS'));
         const tzIds = filteredIds.filter(id => id.startsWith('_TZ'));
         const others = filteredIds.filter(id => !id.startsWith('TS') && !id.startsWith('_TZ'));
@@ -230,7 +230,7 @@ function processDriver(driverPath) {
         stats.manufacturerIdsRemoved += (originalCount - filteredIds.length);
 
         if (originalCount - filteredIds.length > 0) {
-          console.log(`    ${driverName}: ${originalCount}  ${filteredIds.length} manufacturer IDs (catégorie: ${category})`);
+          console.log(`    ${driverName}: ${originalCount}  ${filteredIds.length} manufacturer IDs (catÃ©gorie: ${category})`);
         }
       }
     }
@@ -247,7 +247,7 @@ function processDriver(driverPath) {
       }
     }
 
-    // Sauvegarder si modifié
+    // Sauvegarder si modifiÃ©
     if (modified) {
       // Backup
       const backupPath = `${composeFile}.backup-intelligent-${Date.now()}`;
@@ -280,25 +280,25 @@ function scanDrivers() {
   });
 }
 
-// EXÉCUTION
-console.log(' Analyse des drivers par catégorie...\n');
+// EXÃ‰CUTION
+console.log(' Analyse des drivers par catÃ©gorie...\n');
 scanDrivers();
 
 console.log('\n\n RAPPORT CORRECTIONS:\n');
-console.log(`   Drivers analysés: ${stats.driversAnalyzed}`);
-console.log(`   Drivers modifiés: ${stats.driversModified}`);
-console.log(`   Manufacturer IDs supprimés: ${stats.manufacturerIdsRemoved}`);
-console.log(`   Backups créés: ${stats.backupsCreated}\n`);
+console.log(`   Drivers analysÃ©s: ${stats.driversAnalyzed}`);
+console.log(`   Drivers modifiÃ©s: ${stats.driversModified}`);
+console.log(`   Manufacturer IDs supprimÃ©s: ${stats.manufacturerIdsRemoved}`);
+console.log(`   Backups crÃ©Ã©s: ${stats.backupsCreated}\n`);
 
 if (stats.driversModified > 0) {
-  console.log(' CORRECTIONS APPLIQUÉES\n');
-  console.log(' PROCHAINES ÉTAPES:');
+  console.log(' CORRECTIONS APPLIQUÃ‰ES\n');
+  console.log(' PROCHAINES Ã‰TAPES:');
   console.log('   1. Relancer audit: node scripts/audit_complete_advanced.js');
   console.log('   2. Valider: homey app validate --level publish');
   console.log('   3. Build: homey app build');
   console.log('   4. Commit & push\n');
 } else {
-  console.log(' AUCUNE CORRECTION NÉCESSAIRE\n');
+  console.log(' AUCUNE CORRECTION NÃ‰CESSAIRE\n');
 }
 
 process.exit(0);

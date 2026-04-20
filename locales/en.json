@@ -52,7 +52,7 @@
     },
     "measure_temperature": {
       "title": "Temperature",
-      "units": "°C"
+      "units": "Â°C"
     },
     "measure_humidity": {
       "title": "Humidity",
@@ -68,7 +68,7 @@
     },
     "measure_pm25": {
       "title": "PM2.5",
-      "units": "µg/m³"
+      "units": "Âµg/mÂ³"
     },
     "measure_voc": {
       "title": "VOC",
@@ -96,7 +96,7 @@
     },
     "target_temperature": {
       "title": "Target temperature",
-      "units": "°C"
+      "units": "Â°C"
     },
     "windowcoverings_state": {
       "title": "Window coverings",
@@ -121,7 +121,7 @@
       "values": {
         "auto": {
           "en": "Auto Detect",
-          "fr": "Détection Automatique"
+          "fr": "DÃ©tection Automatique"
         },
         "ac": {
           "en": "AC Powered",
@@ -163,15 +163,15 @@
       "values": {
         "performance": {
           "en": "Performance (More responsive)",
-          "fr": "Performance (Plus réactif)"
+          "fr": "Performance (Plus rÃ©actif)"
         },
         "balanced": {
           "en": "Balanced",
-          "fr": "Équilibré"
+          "fr": "Ã‰quilibrÃ©"
         },
         "power_saving": {
           "en": "Power Saving (Longer battery)",
-          "fr": "Économie d'énergie (Batterie plus longue)"
+          "fr": "Ã‰conomie d'Ã©nergie (Batterie plus longue)"
         }
       }
     },

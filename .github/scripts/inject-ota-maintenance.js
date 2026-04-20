@@ -22,7 +22,7 @@ for (const d of drivers) {
             id: "ota_check",
             title: {
                 en: "Check Zigbee OTA Update",
-                fr: "Vérifier MàJ OTA",
+                fr: "VÃ©rifier MÃJ OTA",
                 nl: "Controleer op OTA-updates"
             }
         });

@@ -330,7 +330,7 @@
         "clusterDetails": {
           "0": "basic",
           "1": "powerConfiguration (battery: 3.2V, 100%)",
-          "1026": "temperatureMeasurement (26.5°C)",
+          "1026": "temperatureMeasurement (26.5Â°C)",
           "1029": "relativeHumidity (62.3%)",
           "32": "pollControl (checkIn: 14400s)",
           "64529": "eWeLink proprietary (0xFC11)"
@@ -678,7 +678,7 @@
         "inputClusters": [0, 1, 3, 1024, 1280, 61184],
         "dpMap": {
           "DP1": "alarm_motion (presence bool)",
-          "DP3": "measure_temperature (÷10)",
+          "DP3": "measure_temperature (Ã·10)",
           "DP4": "measure_humidity (RAW, no divisor - v5.5.987 fix)",
           "DP9": "measure_luminance (lux, 15% smoothing - v5.5.985)",
           "DP10": "measure_battery",
@@ -701,7 +701,7 @@
           {"version": "5.5.984", "fix": "modelId detection from settings/store"},
           {"version": "5.5.985", "fix": "Lux smoothing (15% threshold)"},
           {"version": "5.5.986", "fix": "ZCL illuminance throttle (30s)"},
-          {"version": "5.5.987", "fix": "Humidity multiplier (×10)"}
+          {"version": "5.5.987", "fix": "Humidity multiplier (Ã—10)"}
         ],
         "crossReference": [
           "Z2M: https://www.zigbee2mqtt.io/devices/ZG-204ZV.html",

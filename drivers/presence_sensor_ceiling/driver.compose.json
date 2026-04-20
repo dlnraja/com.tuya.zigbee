@@ -1,9 +1,9 @@
 {
   "name": {
     "en": "Ceiling Presence Sensor (230V)",
-    "fr": "Capteur de Présence Plafond (230V)",
+    "fr": "Capteur de PrÃ©sence Plafond (230V)",
     "nl": "Plafond Aanwezigheidssensor (230V)",
-    "de": "Decken-Präsenzsensor (230V)"
+    "de": "Decken-PrÃ¤senzsensor (230V)"
   },
   "class": "sensor",
   "capabilities": [
@@ -39,9 +39,7 @@
   "zigbee": {
     "manufacturerName": [
       "_TZE200_DTZZIY1E",
-      "_TZE204_YENSYA2C",
-      "_TZE200_dtzziy1e",
-      "_TZE204_yensya2c"
+      "_TZE204_YENSYA2C"
     ],
     "productId": [
       "TS0601",
@@ -59,7 +57,7 @@
       "image": "/drivers/presence_sensor_ceiling/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes rapidly.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote rapidement."
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote rapidement."
       }
     }
   },
@@ -68,7 +66,7 @@
       "type": "group",
       "label": {
         "en": " Radar Detection",
-        "fr": " Détection Radar"
+        "fr": " DÃ©tection Radar"
       },
       "children": [
         {
@@ -76,7 +74,7 @@
           "type": "number",
           "label": {
             "en": "Radar Sensitivity",
-            "fr": "Sensibilité Radar"
+            "fr": "SensibilitÃ© Radar"
           },
           "value": 7,
           "min": 0,
@@ -84,7 +82,7 @@
           "step": 1,
           "hint": {
             "en": "Detection sensitivity (0=lowest, 9=highest).",
-            "fr": "Sensibilité de détection (0=min, 9=max)."
+            "fr": "SensibilitÃ© de dÃ©tection (0=min, 9=max)."
           }
         },
         {
@@ -100,7 +98,7 @@
           "step": 0.5,
           "hint": {
             "en": "Minimum detection distance. Objects closer will be ignored.",
-            "fr": "Distance minimale de détection. Objets plus proches seront ignorés."
+            "fr": "Distance minimale de dÃ©tection. Objets plus proches seront ignorÃ©s."
           }
         },
         {
@@ -116,7 +114,7 @@
           "step": 0.5,
           "hint": {
             "en": "Maximum detection distance.",
-            "fr": "Distance maximale de détection."
+            "fr": "Distance maximale de dÃ©tection."
           }
         },
         {
@@ -124,7 +122,7 @@
           "type": "number",
           "label": {
             "en": "Absence Delay (s)",
-            "fr": "Délai d'Absence (s)"
+            "fr": "DÃ©lai d'Absence (s)"
           },
           "value": 60,
           "min": 1,
@@ -141,7 +139,7 @@
       "type": "group",
       "label": {
         "en": " Relay Control",
-        "fr": " Contrôle Relais"
+        "fr": " ContrÃ´le Relais"
       },
       "children": [
         {
@@ -157,34 +155,34 @@
               "id": "auto",
               "label": {
                 "en": "Auto (follows presence)",
-                "fr": "Auto (suit la présence)"
+                "fr": "Auto (suit la prÃ©sence)"
               }
             },
             {
               "id": "manual",
               "label": {
                 "en": "Manual (controlled via flows)",
-                "fr": "Manuel (contrôlé via flows)"
+                "fr": "Manuel (contrÃ´lÃ© via flows)"
               }
             },
             {
               "id": "always_on",
               "label": {
                 "en": "Always On",
-                "fr": "Toujours Allumé"
+                "fr": "Toujours AllumÃ©"
               }
             },
             {
               "id": "always_off",
               "label": {
                 "en": "Always Off",
-                "fr": "Toujours Éteint"
+                "fr": "Toujours Ã‰teint"
               }
             }
           ],
           "hint": {
             "en": "Control how the relay responds to presence detection.",
-            "fr": "Contrôler la réponse du relais à la détection de présence."
+            "fr": "ContrÃ´ler la rÃ©ponse du relais Ã la dÃ©tection de prÃ©sence."
           }
         },
         {
@@ -192,7 +190,7 @@
           "type": "number",
           "label": {
             "en": "Relay On Delay (s)",
-            "fr": "Délai Activation Relais (s)"
+            "fr": "DÃ©lai Activation Relais (s)"
           },
           "value": 0,
           "min": 0,
@@ -200,7 +198,7 @@
           "step": 1,
           "hint": {
             "en": "Delay before turning relay on after presence detected.",
-            "fr": "Délai avant d'activer le relais après détection."
+            "fr": "DÃ©lai avant d'activer le relais aprÃ¨s dÃ©tection."
           }
         },
         {
@@ -208,7 +206,7 @@
           "type": "number",
           "label": {
             "en": "Relay Off Delay (s)",
-            "fr": "Délai Désactivation Relais (s)"
+            "fr": "DÃ©lai DÃ©sactivation Relais (s)"
           },
           "value": 0,
           "min": 0,
@@ -216,7 +214,7 @@
           "step": 5,
           "hint": {
             "en": "Delay before turning relay off after presence cleared.",
-            "fr": "Délai avant de désactiver le relais après absence."
+            "fr": "DÃ©lai avant de dÃ©sactiver le relais aprÃ¨s absence."
           }
         }
       ]
@@ -233,7 +231,7 @@
           "type": "number",
           "label": {
             "en": "Illuminance Offset (lux)",
-            "fr": "Décalage Luminosité (lux)"
+            "fr": "DÃ©calage LuminositÃ© (lux)"
           },
           "value": 0,
           "min": -100,
@@ -241,7 +239,7 @@
           "step": 5,
           "hint": {
             "en": "Adjust illuminance reading.",
-            "fr": "Ajuster la lecture de luminosité."
+            "fr": "Ajuster la lecture de luminositÃ©."
           }
         }
       ]
@@ -251,12 +249,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "Sécurité Enfant Logicielle"
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "Empêche les changements d'état manuels sur l'appareil"
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
       }
     },
     {
@@ -271,7 +269,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'éteint après X minutes (0 = désactivé)"
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -279,12 +277,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation Présence)"
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
       }
     },
     {
@@ -292,14 +290,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Émulé (Secondes)"
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
       }
     },
     {
@@ -314,7 +312,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Émulation logicielle pour boutons à action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -322,7 +320,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "Durée Inching (Secondes)"
+        "fr": "DurÃ©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -330,7 +328,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -338,12 +336,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "Récupération d'État Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'état précédent après une coupure de courant"
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
       }
     },
     {
@@ -356,7 +354,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
       }
     },
     {
@@ -371,7 +369,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santé descend sous cette valeur"
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     }
   ],
@@ -409,7 +407,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

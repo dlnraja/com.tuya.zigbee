@@ -210,12 +210,12 @@ function enrichPowerRatings() {
                         "type": "checkbox",
                         "label": {
                             "en": "Enable Natural Light (Solar Sync)",
-                            "fr": "Activer la Lumière Naturelle (Synchro Solaire)"
+                            "fr": "Activer la LumiÃ¨re Naturelle (Synchro Solaire)"
                         },
                         "value": false,
                         "hint": {
                             "en": "Automatically adjust color temperature based on time of day",
-                            "fr": "Ajuste automatiquement la température de couleur au fil de la journée"
+                            "fr": "Ajuste automatiquement la tempÃ©rature de couleur au fil de la journÃ©e"
                         }
                     });
                     changed = true;
@@ -230,12 +230,12 @@ function enrichPowerRatings() {
                         "type": "checkbox",
                         "label": {
                             "en": "Enable Radio Presence Sensing",
-                            "fr": "Activer la Détection de Présence Radio"
+                            "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
                         },
                         "value": false,
                         "hint": {
                             "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-                            "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+                            "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
                         }
                     });
                     changed = true;
@@ -247,7 +247,7 @@ function enrichPowerRatings() {
                         "type": "number",
                         "label": {
                             "en": "Radio Presence Sensitivity",
-                            "fr": "Sensibilité Présence Radio"
+                            "fr": "SensibilitÃ© PrÃ©sence Radio"
                         },
                         "value": 15,
                         "min": 5,
@@ -266,9 +266,9 @@ function enrichPowerRatings() {
                 {
                     "id": "enable_software_child_lock",
                     "type": "checkbox",
-                    "label": { "en": "Software Child Lock", "fr": "Sécurité Enfant Logicielle" },
+                    "label": { "en": "Software Child Lock", "fr": "SÃ©curitÃ© Enfant Logicielle" },
                     "value": false,
-                    "hint": { "en": "Prevents manual state changes on the device", "fr": "Empêche les changements d'état manuels sur l'appareil" }
+                    "hint": { "en": "Prevents manual state changes on the device", "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil" }
                 },
                 {
                     "id": "auto_off_duration",
@@ -277,23 +277,23 @@ function enrichPowerRatings() {
                     "value": 0,
                     "min": 0,
                     "max": 1440,
-                    "hint": { "en": "Turn off automatically after X minutes (0 = disabled)", "fr": "S'éteint après X minutes (0 = désactivé)" }
+                    "hint": { "en": "Turn off automatically after X minutes (0 = disabled)", "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)" }
                 },
                 {
                     "id": "enable_vacation_mode",
                     "type": "checkbox",
-                    "label": { "en": "Vacation Mode (Presence Sim)", "fr": "Mode Vacances (Simulation Présence)" },
+                    "label": { "en": "Vacation Mode (Presence Sim)", "fr": "Mode Vacances (Simulation PrÃ©sence)" },
                     "value": false,
-                    "hint": { "en": "Randomly toggle device during evenings to simulate presence", "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence" }
+                    "hint": { "en": "Randomly toggle device during evenings to simulate presence", "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence" }
                 },
                 {
                     "id": "emulated_motion_hold",
                     "type": "number",
-                    "label": { "en": "Emulated Motion Hold (Seconds)", "fr": "Maintien Mouvement Émulé (Secondes)" },
+                    "label": { "en": "Emulated Motion Hold (Seconds)", "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)" },
                     "value": 0,
                     "min": 0,
                     "max": 3600,
-                    "hint": { "en": "Keep motion 'ON' for X seconds after hardware clears", "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel" }
+                    "hint": { "en": "Keep motion 'ON' for X seconds after hardware clears", "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel" }
                 },
                 {
                     "id": "double_click_interval",
@@ -302,31 +302,31 @@ function enrichPowerRatings() {
                     "value": 400,
                     "min": 100,
                     "max": 1000,
-                    "hint": { "en": "Software emulation for single-action buttons", "fr": "Émulation logicielle pour boutons à action unique" }
+                    "hint": { "en": "Software emulation for single-action buttons", "fr": "Ã‰mulation logicielle pour boutons Ã action unique" }
                 },
                 {
                     "id": "inching_duration",
                     "type": "number",
-                    "label": { "en": "Inching Duration (Secs)", "fr": "Durée Inching (Secondes)" },
+                    "label": { "en": "Inching Duration (Secs)", "fr": "DurÃ©e Inching (Secondes)" },
                     "value": 0,
                     "min": 0,
                     "max": 60,
                     "step": 0.1,
-                    "hint": { "en": "Automatically turn off after X seconds (Pulse mode)", "fr": "S'éteint automatiquement après X secondes (mode Impulsion)" }
+                    "hint": { "en": "Automatically turn off after X seconds (Pulse mode)", "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)" }
                 },
                 {
                     "id": "enable_state_recovery",
                     "type": "checkbox",
-                    "label": { "en": "Software State Recovery", "fr": "Récupération d'État Logicielle" },
+                    "label": { "en": "Software State Recovery", "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle" },
                     "value": false,
-                    "hint": { "en": "Restore previous ON/OFF state after power failure", "fr": "Restore l'état précédent après une coupure de courant" }
+                    "hint": { "en": "Restore previous ON/OFF state after power failure", "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant" }
                 },
                 {
                     "id": "enable_soft_transitions",
                     "type": "checkbox",
                     "label": { "en": "Soft transitions (Fade)", "fr": "Transitions douces (Fade)" },
                     "value": false,
-                    "hint": { "en": "Enable software-simulated smooth transitions (Lights/Dim)", "fr": "Active les transitions douces simulées (Lumières/Variateurs)" }
+                    "hint": { "en": "Enable software-simulated smooth transitions (Lights/Dim)", "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)" }
                 },
                 {
                     "id": "maintenance_threshold",
@@ -335,7 +335,7 @@ function enrichPowerRatings() {
                     "value": 30,
                     "min": 0,
                     "max": 100,
-                    "hint": { "en": "Alert if health score drops below this value", "fr": "Alerte si le score de santé descend sous cette valeur" }
+                    "hint": { "en": "Alert if health score drops below this value", "fr": "Alerte si le score de santÃ© descend sous cette valeur" }
                 }
             ];
             
@@ -344,9 +344,9 @@ function enrichPowerRatings() {
                 smartFeatureSettings.push({
                     "id": "enable_circadian_lighting",
                     "type": "checkbox",
-                    "label": { "en": "Circadian Lighting (Adaptive CT)", "fr": "Éclairage Circadien (CT Adaptatif)" },
+                    "label": { "en": "Circadian Lighting (Adaptive CT)", "fr": "Ã‰clairage Circadien (CT Adaptatif)" },
                     "value": false,
-                    "hint": { "en": "Automatically adjust color temperature based on time of day", "fr": "Ajuste automatiquement la température de couleur au cours de la journée" }
+                    "hint": { "en": "Automatically adjust color temperature based on time of day", "fr": "Ajuste automatiquement la tempÃ©rature de couleur au cours de la journÃ©e" }
                 });
             }
 
@@ -355,9 +355,9 @@ function enrichPowerRatings() {
                 smartFeatureSettings.push({
                     "id": "enable_tpi_regulation",
                     "type": "checkbox",
-                    "label": { "en": "Adaptive TPI Regulation", "fr": "Régulation TPI Adaptative" },
+                    "label": { "en": "Adaptive TPI Regulation", "fr": "RÃ©gulation TPI Adaptative" },
                     "value": false,
-                    "hint": { "en": "Use advanced software-based heating cycles (more precise)", "fr": "Utilise des cycles de chauffe logiciels avancés (plus précis)" }
+                    "hint": { "en": "Use advanced software-based heating cycles (more precise)", "fr": "Utilise des cycles de chauffe logiciels avancÃ©s (plus prÃ©cis)" }
                 });
             }
             
@@ -370,7 +370,7 @@ function enrichPowerRatings() {
                     "value": 0,
                     "min": 0,
                     "max": 4000,
-                    "hint": { "en": "Cut power if consumption exceeds this value (0 = disabled)", "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)" }
+                    "hint": { "en": "Cut power if consumption exceeds this value (0 = disabled)", "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)" }
                 });
             }
 
@@ -380,7 +380,7 @@ function enrichPowerRatings() {
                     "type": "checkbox",
                     "label": { "en": "Night Mode (Auto-Dim)", "fr": "Mode Nuit (Auto-Dim)" },
                     "value": false,
-                    "hint": { "en": "Automatically dim light when turned on at night", "fr": "Baisse l'intensité lors de l'allumage nocturne" }
+                    "hint": { "en": "Automatically dim light when turned on at night", "fr": "Baisse l'intensitÃ© lors de l'allumage nocturne" }
                 });
             }
 

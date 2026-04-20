@@ -4,14 +4,14 @@
       "id": "plug_smart_switch_hybrid_switch_1gang_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -20,14 +20,14 @@
       "id": "plug_smart_switch_hybrid_switch_1gang_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -198,16 +198,16 @@
       "id": "plug_smart_switch_hybrid_switch_1gang_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée",
+        "fr": "Puissance changÃ©e",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
+        "de": "Leistung geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Power changed",
-        "fr": "Puissance changée",
+        "fr": "Puissance changÃ©e",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
+        "de": "Leistung geÃ¤ndert"
       }
     },
     {
@@ -238,14 +238,14 @@
       "id": "plug_smart_switch_hybrid_switch_1gang_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -272,14 +272,14 @@
       "id": "plug_smart_switch_hybrid_switch_1gang_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
@@ -294,7 +294,7 @@
       },
       "hint": {
         "en": "Toggle the switch state (onoff, offon)",
-        "fr": "Basculer l'état (onoff, offon)",
+        "fr": "Basculer l'Ã©tat (onoff, offon)",
         "nl": "Wissel de status (aanuit, uitaan)",
         "de": "Status umschalten (einaus, ausein)"
       },
@@ -310,19 +310,19 @@
       "id": "plug_smart_switch_hybrid_switch_1gang_set_backlight",
       "title": {
         "en": "Set LED backlight mode",
-        "fr": "Définir le mode rétroéclairage LED",
+        "fr": "DÃ©finir le mode rÃ©troÃ©clairage LED",
         "nl": "LED achtergrondverlichting instellen",
         "de": "LED-Hintergrundbeleuchtung einstellen"
       },
       "titleFormatted": {
         "en": "Set LED backlight to [[mode]]",
-        "fr": "Définir le rétroéclairage sur [[mode]]",
+        "fr": "DÃ©finir le rÃ©troÃ©clairage sur [[mode]]",
         "nl": "Stel LED achtergrondverlichting in op [[mode]]",
         "de": "LED-Hintergrundbeleuchtung auf [[mode]] setzen"
       },
       "hint": {
         "en": "Control the switch LED indicator (DP15)",
-        "fr": "Contrôle l'indicateur LED (DP15)",
+        "fr": "ContrÃ´le l'indicateur LED (DP15)",
         "nl": "Beheer de LED indicator (DP15)",
         "de": "Steuert die LED-Anzeige (DP15)"
       },
@@ -338,7 +338,7 @@
               "id": "off",
               "label": {
                 "en": "Off",
-                "fr": "Éteint",
+                "fr": "Ã‰teint",
                 "nl": "Uit",
                 "de": "Aus"
               }
@@ -347,7 +347,7 @@
               "id": "normal",
               "label": {
                 "en": "Normal (LED when ON)",
-                "fr": "Normal (LED quand allumé)",
+                "fr": "Normal (LED quand allumÃ©)",
                 "nl": "Normaal (LED bij AAN)",
                 "de": "Normal (LED bei EIN)"
               }
@@ -356,7 +356,7 @@
               "id": "inverted",
               "label": {
                 "en": "Inverted (LED when OFF)",
-                "fr": "Inversé (LED quand éteint)",
+                "fr": "InversÃ© (LED quand Ã©teint)",
                 "nl": "Omgekeerd (LED bij UIT)",
                 "de": "Invertiert (LED bei AUS)"
               }
@@ -369,21 +369,21 @@
       "id": "plug_smart_switch_hybrid_switch_1gang_set_backlight_color",
       "title": {
         "en": "Set LED color",
-        "fr": "Définir la couleur LED",
+        "fr": "DÃ©finir la couleur LED",
         "nl": "LED kleur instellen",
         "de": "LED-Farbe einstellen"
       },
       "titleFormatted": {
         "en": "Set [[state]] LED color to [[color]]",
-        "fr": "Définir couleur LED [[state]] sur [[color]]",
+        "fr": "DÃ©finir couleur LED [[state]] sur [[color]]",
         "nl": "Stel [[state]] LED kleur in op [[color]]",
         "de": "Setze [[state]] LED-Farbe auf [[color]]"
       },
       "hint": {
         "en": "Set LED color for ON or OFF state (DP103/104, requires colored backlight)",
-        "fr": "Définir couleur LED pour état ON/OFF (DP103/104)",
+        "fr": "DÃ©finir couleur LED pour Ã©tat ON/OFF (DP103/104)",
         "nl": "Stel LED kleur in voor AAN/UIT (DP103/104)",
-        "de": "LED-Farbe für EIN/AUS setzen (DP103/104)"
+        "de": "LED-Farbe fÃ¼r EIN/AUS setzen (DP103/104)"
       },
       "args": [
         {
@@ -397,7 +397,7 @@
               "id": "on",
               "label": {
                 "en": "ON state",
-                "fr": "État ON",
+                "fr": "Ã‰tat ON",
                 "nl": "AAN staat",
                 "de": "EIN-Zustand"
               }
@@ -406,7 +406,7 @@
               "id": "off",
               "label": {
                 "en": "OFF state",
-                "fr": "État OFF",
+                "fr": "Ã‰tat OFF",
                 "nl": "UIT staat",
                 "de": "AUS-Zustand"
               }
@@ -444,7 +444,7 @@
                 "en": "Green",
                 "fr": "Vert",
                 "nl": "Groen",
-                "de": "Grün"
+                "de": "GrÃ¼n"
               }
             },
             {
@@ -453,7 +453,7 @@
                 "en": "White",
                 "fr": "Blanc",
                 "nl": "Wit",
-                "de": "Weiß"
+                "de": "WeiÃŸ"
               }
             },
             {
@@ -489,7 +489,7 @@
                 "en": "Warm White",
                 "fr": "Blanc Chaud",
                 "nl": "Warm Wit",
-                "de": "Warmweiß"
+                "de": "WarmweiÃŸ"
               }
             },
             {
@@ -509,19 +509,19 @@
       "id": "plug_smart_switch_hybrid_switch_1gang_set_backlight_brightness",
       "title": {
         "en": "Set LED brightness",
-        "fr": "Définir luminosité LED",
+        "fr": "DÃ©finir luminositÃ© LED",
         "nl": "LED helderheid instellen",
         "de": "LED-Helligkeit einstellen"
       },
       "titleFormatted": {
         "en": "Set LED brightness to [[brightness]]%",
-        "fr": "Définir luminosité LED à [[brightness]]%",
+        "fr": "DÃ©finir luminositÃ© LED Ã [[brightness]]%",
         "nl": "Stel LED helderheid in op [[brightness]]%",
         "de": "LED-Helligkeit auf [[brightness]]% setzen"
       },
       "hint": {
         "en": "Set LED backlight brightness 0-100% (DP102)",
-        "fr": "Luminosité rétroéclairage 0-100% (DP102)",
+        "fr": "LuminositÃ© rÃ©troÃ©clairage 0-100% (DP102)",
         "nl": "LED helderheid 0-100% (DP102)",
         "de": "LED-Helligkeit 0-100% (DP102)"
       },
@@ -541,19 +541,19 @@
       "id": "plug_smart_switch_hybrid_switch_1gang_set_countdown",
       "title": {
         "en": "Set countdown timer",
-        "fr": "Définir minuterie",
+        "fr": "DÃ©finir minuterie",
         "nl": "Afteltimer instellen",
         "de": "Countdown-Timer setzen"
       },
       "titleFormatted": {
         "en": "Turn off after [[seconds]] seconds",
-        "fr": "Éteindre après [[seconds]] secondes",
+        "fr": "Ã‰teindre aprÃ¨s [[seconds]] secondes",
         "nl": "Uitschakelen na [[seconds]] seconden",
         "de": "Nach [[seconds]] Sekunden ausschalten"
       },
       "hint": {
         "en": "Auto turn off after countdown (DP7, max 86400s = 24h)",
-        "fr": "Extinction auto après compte à rebours (DP7, max 86400s)",
+        "fr": "Extinction auto aprÃ¨s compte Ã rebours (DP7, max 86400s)",
         "nl": "Auto uit na aftellen (DP7, max 86400s)",
         "de": "Auto-Aus nach Countdown (DP7, max 86400s)"
       },
@@ -574,19 +574,19 @@
       "id": "plug_smart_switch_hybrid_switch_1gang_set_child_lock",
       "title": {
         "en": "Set child lock",
-        "fr": "Définir verrouillage enfant",
+        "fr": "DÃ©finir verrouillage enfant",
         "nl": "Kinderslot instellen",
         "de": "Kindersicherung setzen"
       },
       "titleFormatted": {
         "en": "Set child lock to [[locked]]",
-        "fr": "Définir verrouillage sur [[locked]]",
+        "fr": "DÃ©finir verrouillage sur [[locked]]",
         "nl": "Stel kinderslot in op [[locked]]",
         "de": "Kindersicherung auf [[locked]] setzen"
       },
       "hint": {
         "en": "Lock/unlock physical buttons (DP101)",
-        "fr": "Verrouiller/déverrouiller boutons (DP101)",
+        "fr": "Verrouiller/dÃ©verrouiller boutons (DP101)",
         "nl": "Vergrendel/ontgrendel knoppen (DP101)",
         "de": "Tasten sperren/entsperren (DP101)"
       },
@@ -602,7 +602,7 @@
               "id": "true",
               "label": {
                 "en": "Locked",
-                "fr": "Verrouillé",
+                "fr": "VerrouillÃ©",
                 "nl": "Vergrendeld",
                 "de": "Gesperrt"
               }
@@ -611,7 +611,7 @@
               "id": "false",
               "label": {
                 "en": "Unlocked",
-                "fr": "Déverrouillé",
+                "fr": "DÃ©verrouillÃ©",
                 "nl": "Ontgrendeld",
                 "de": "Entsperrt"
               }

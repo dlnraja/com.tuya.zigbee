@@ -6,20 +6,20 @@
       "title": {
         "en": "Presence detected",
         "nl": "Aanwezigheid gedetecteerd",
-        "fr": "Présence détectée",
+        "fr": "PrÃ©sence dÃ©tectÃ©e",
         "de": "Anwesenheit erkannt"
       },
       "titleFormatted": {
         "en": "Human presence detected in the room",
         "nl": "Menselijke aanwezigheid gedetecteerd in de kamer",
-        "fr": "Présence humaine détectée dans la pièce",
+        "fr": "PrÃ©sence humaine dÃ©tectÃ©e dans la piÃ¨ce",
         "de": "Menschliche Anwesenheit im Raum erkannt"
       },
       "hint": {
         "en": "Triggers when the mmWave radar detects human presence (even stationary)",
         "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
-        "fr": "Se déclenche quand le radar mmWave détecte une présence humaine (même immobile)",
-        "de": "Wird ausgelöst, wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationär)"
+        "fr": "Se dÃ©clenche quand le radar mmWave dÃ©tecte une prÃ©sence humaine (mÃªme immobile)",
+        "de": "Wird ausgelÃ¶st, wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationÃ¤r)"
       },
       "args": []
     },
@@ -28,20 +28,20 @@
       "title": {
         "en": "Presence cleared",
         "nl": "Aanwezigheid opgeheven",
-        "fr": "Présence terminée",
+        "fr": "PrÃ©sence terminÃ©e",
         "de": "Anwesenheit beendet"
       },
       "hint": {
         "en": "Triggers when no human presence is detected for the configured timeout",
         "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
-        "fr": "Se déclenche quand aucune présence humaine n'est détectée pendant le délai configuré",
-        "de": "Wird ausgelöst, wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
+        "fr": "Se dÃ©clenche quand aucune prÃ©sence humaine n'est dÃ©tectÃ©e pendant le dÃ©lai configurÃ©",
+        "de": "Wird ausgelÃ¶st, wenn fÃ¼r die konfigurierte ZeitÃ¼berschreitung keine menschliche Anwesenheit erkannt wird"
       },
       "args": [],
       "titleFormatted": {
         "en": "Presence cleared",
         "nl": "Aanwezigheid opgeheven",
-        "fr": "Présence terminée",
+        "fr": "PrÃ©sence terminÃ©e",
         "de": "Anwesenheit beendet"
       }
     },
@@ -50,20 +50,20 @@
       "title": {
         "en": "Motion detected",
         "nl": "Beweging gedetecteerd",
-        "fr": "Mouvement détecté",
+        "fr": "Mouvement dÃ©tectÃ©",
         "de": "Bewegung erkannt"
       },
       "hint": {
         "en": "Triggers when active motion is detected (walking, moving)",
         "nl": "Triggert wanneer actieve beweging wordt gedetecteerd (lopen, bewegen)",
-        "fr": "Se déclenche quand un mouvement actif est détecté (marche, mouvement)",
-        "de": "Wird ausgelöst, wenn aktive Bewegung erkannt wird (Gehen, Bewegen)"
+        "fr": "Se dÃ©clenche quand un mouvement actif est dÃ©tectÃ© (marche, mouvement)",
+        "de": "Wird ausgelÃ¶st, wenn aktive Bewegung erkannt wird (Gehen, Bewegen)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion detected",
         "nl": "Beweging gedetecteerd",
-        "fr": "Mouvement détecté",
+        "fr": "Mouvement dÃ©tectÃ©",
         "de": "Bewegung erkannt"
       }
     },
@@ -72,14 +72,14 @@
       "title": {
         "en": "Illuminance changed",
         "nl": "Lichtsterkte veranderd",
-        "fr": "Luminosité changée",
-        "de": "Helligkeit geändert"
+        "fr": "LuminositÃ© changÃ©e",
+        "de": "Helligkeit geÃ¤ndert"
       },
       "titleFormatted": {
         "en": "Illuminance changed to [[lux]] lux",
         "nl": "Lichtsterkte veranderd naar [[lux]] lux",
-        "fr": "Luminosité changée à [[lux]] lux",
-        "de": "Helligkeit geändert zu [[lux]] lux"
+        "fr": "LuminositÃ© changÃ©e Ã [[lux]] lux",
+        "de": "Helligkeit geÃ¤ndert zu [[lux]] lux"
       },
       "tokens": [
         {
@@ -88,7 +88,7 @@
           "title": {
             "en": "Illuminance (lux)",
             "nl": "Lichtsterkte (lux)",
-            "fr": "Luminosité (lux)",
+            "fr": "LuminositÃ© (lux)",
             "de": "Helligkeit (lux)"
           },
           "example": 150
@@ -101,14 +101,14 @@
       "title": {
         "en": "Detection distance changed",
         "nl": "Detectieafstand veranderd",
-        "fr": "Distance de détection changée",
-        "de": "Erkennungsabstand geändert"
+        "fr": "Distance de dÃ©tection changÃ©e",
+        "de": "Erkennungsabstand geÃ¤ndert"
       },
       "titleFormatted": {
         "en": "Target distance changed to [[distance]] cm",
         "nl": "Doelafstand veranderd naar [[distance]] cm",
-        "fr": "Distance cible changée à [[distance]] cm",
-        "de": "Zielentfernung geändert zu [[distance]] cm"
+        "fr": "Distance cible changÃ©e Ã [[distance]] cm",
+        "de": "Zielentfernung geÃ¤ndert zu [[distance]] cm"
       },
       "tokens": [
         {
@@ -129,16 +129,16 @@
       "id": "climate_sensor_presence_hybrid_sensor_climate_presence_hybrid_presence_sensor_radar_lux_changed_sensor_presence_radar_hybrid",
       "title": {
         "en": "Luminance changed",
-        "fr": "Luminance changée",
+        "fr": "Luminance changÃ©e",
         "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
+        "de": "Helligkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Luminance changed",
-        "fr": "Luminance changée",
+        "fr": "Luminance changÃ©e",
         "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
+        "de": "Helligkeit geÃ¤ndert"
       }
     },
     {
@@ -164,14 +164,14 @@
       "title": {
         "en": "Someone !{{is|is not}} present",
         "nl": "Iemand !{{is|is niet}} aanwezig",
-        "fr": "Quelqu'un !{{est|n'est pas}} présent",
+        "fr": "Quelqu'un !{{est|n'est pas}} prÃ©sent",
         "de": "Jemand !{{ist|ist nicht}} anwesend"
       },
       "args": [],
       "titleFormatted": {
         "en": "Someone !{{is|is not}} present",
         "nl": "Iemand !{{is|is niet}} aanwezig",
-        "fr": "Quelqu'un !{{est|n'est pas}} présent",
+        "fr": "Quelqu'un !{{est|n'est pas}} prÃ©sent",
         "de": "Jemand !{{ist|ist nicht}} anwesend"
       }
     },
@@ -180,14 +180,14 @@
       "title": {
         "en": "Illuminance !{{is|is not}} above",
         "nl": "Lichtsterkte !{{is|is niet}} boven",
-        "fr": "Luminosité !{{est|n'est pas}} au-dessus de",
-        "de": "Helligkeit !{{ist|ist nicht}} über"
+        "fr": "LuminositÃ© !{{est|n'est pas}} au-dessus de",
+        "de": "Helligkeit !{{ist|ist nicht}} Ã¼ber"
       },
       "titleFormatted": {
         "en": "Illuminance !{{is|is not}} above [[lux]] lux",
         "nl": "Lichtsterkte !{{is|is niet}} boven [[lux]] lux",
-        "fr": "Luminosité !{{est|n'est pas}} au-dessus de [[lux]] lux",
-        "de": "Helligkeit !{{ist|ist nicht}} über [[lux]] lux"
+        "fr": "LuminositÃ© !{{est|n'est pas}} au-dessus de [[lux]] lux",
+        "de": "Helligkeit !{{ist|ist nicht}} Ã¼ber [[lux]] lux"
       },
       "args": [
         {
@@ -233,14 +233,14 @@
       "id": "climate_sensor_presence_hybrid_sensor_climate_presence_hybrid_presence_sensor_radar_motion_active_sensor_presence_radar_hybrid",
       "title": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       }

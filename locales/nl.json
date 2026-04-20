@@ -52,7 +52,7 @@
     },
     "measure_temperature": {
       "title": "Temperatuur",
-      "units": "°C"
+      "units": "Â°C"
     },
     "measure_humidity": {
       "title": "Luchtvochtigheid",
@@ -68,7 +68,7 @@
     },
     "measure_pm25": {
       "title": "PM2.5",
-      "units": "µg/m³"
+      "units": "Âµg/mÂ³"
     },
     "measure_voc": {
       "title": "VOS",
@@ -96,7 +96,7 @@
     },
     "target_temperature": {
       "title": "Doeltemperatuur",
-      "units": "°C"
+      "units": "Â°C"
     },
     "windowcoverings_state": {
       "title": "Zonwering",

@@ -4,23 +4,23 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log(' ANALYSE DUPLICATES RESTANTS - DÉTERMINATION LÉGITIMITÉ\n');
+console.log(' ANALYSE DUPLICATES RESTANTS - DÃ‰TERMINATION LÃ‰GITIMITÃ‰\n');
 
 const ROOT = path.join(__dirname, '..');
 const AUDIT_FILE = path.join(ROOT, 'AUDIT_ADVANCED_REPORT.json');
 
-// Product IDs qui PEUVENT être légitimement partagés
+// Product IDs qui PEUVENT Ãªtre lÃ©gitimement partagÃ©s
 const LEGITIMATE_SHARED_PRODUCTS = {
   'TS0601': 'Multi-fonction Tuya (curtains, thermostats, air quality, etc.)',
-  'TS0201': 'Temperature/Humidity sensor (peut être standalone ou combiné)',
-  'TS0041': '1-button controller (différents usages)',
+  'TS0201': 'Temperature/Humidity sensor (peut Ãªtre standalone ou combinÃ©)',
+  'TS0041': '1-button controller (diffÃ©rents usages)',
   'TS0042': '2-button controller (scene vs switch)',
   'TS0043': '3-button controller',
   'TS0044': '4-button controller',
   'TS0046': '6-button controller',
-  'TS0001': '1-gang switch/relay (différents types)',
+  'TS0001': '1-gang switch/relay (diffÃ©rents types)',
   'TS0002': '2-gang switch/relay',
-  'TS0011': '1-gang switch (différent du TS0001)',
+  'TS0011': '1-gang switch (diffÃ©rent du TS0001)',
   'TS0012': '2-gang switch',
   'TS0003': '3-gang switch',
   'TS0004': '4-gang switch',
@@ -28,12 +28,12 @@ const LEGITIMATE_SHARED_PRODUCTS = {
   'TS0006': '6-gang switch',
   'TS0121': 'Smart plug with metering',
   'TS0115': 'Power strip',
-  'TS0202': 'Motion sensor (différents modèles)',
+  'TS0202': 'Motion sensor (diffÃ©rents modÃ¨les)',
   'TS0203': 'Contact sensor (door/window)',
   'TS0210': 'Contact sensor vibration',
   'TS0218': 'Emergency button',
   'TS0222': 'Multi-sensor (temp+humidity+occupancy)',
-  'TS0225': 'Multi-sensor avancé',
+  'TS0225': 'Multi-sensor avancÃ©',
   'TS0302': 'Curtain motor',
   'TS0111': 'Dimmer switch'
 };
@@ -55,7 +55,7 @@ criticalIssues.forEach(issue => {
   const isProduct = issue.manufacturerId.startsWith('PRODUCT:');
 
   if (isProduct && LEGITIMATE_SHARED_PRODUCTS[id]) {
-    // Duplicate légitime
+    // Duplicate lÃ©gitime
     analysis.legitimate.push({
       id,
       reason: LEGITIMATE_SHARED_PRODUCTS[id],
@@ -63,60 +63,60 @@ criticalIssues.forEach(issue => {
       count: issue.count
     });
   } else if (isProduct) {
-    // Product ID partagé mais pas dans la liste légitime
+    // Product ID partagÃ© mais pas dans la liste lÃ©gitime
     analysis.needsReview.push({
       id,
       drivers: issue.drivers,
       count: issue.count,
-      recommendation: 'Vérifier si les drivers sont réellement différents'
+      recommendation: 'VÃ©rifier si les drivers sont rÃ©ellement diffÃ©rents'
     });
   } else {
-    // Manufacturer ID partagé (potentiellement problématique)
+    // Manufacturer ID partagÃ© (potentiellement problÃ©matique)
     analysis.shouldFix.push({
       id,
       drivers: issue.drivers,
       count: issue.count,
-      recommendation: 'Manufacturer ID devrait être unique par variant'
+      recommendation: 'Manufacturer ID devrait Ãªtre unique par variant'
     });
   }
 });
 
-console.log(' DUPLICATES LÉGITIMES (Product IDs multi-usage):\n');
+console.log(' DUPLICATES LÃ‰GITIMES (Product IDs multi-usage):\n');
 analysis.legitimate.forEach(item => {
   console.log(`   ${item.id} (${item.count} drivers)`);
   console.log(`      Raison: ${item.reason}`);
   console.log(`      Drivers: ${item.drivers.map(d => path.basename(path.dirname(d))).join(', ')}\n`);
 });
 
-console.log('\n  DUPLICATES À EXAMINER:\n');
+console.log('\n  DUPLICATES Ã€ EXAMINER:\n');
 analysis.needsReview.forEach(item => {
   console.log(`   ${item.id} (${item.count} drivers)`);
   console.log(`      ${item.recommendation}`);
   console.log(`      Drivers: ${item.drivers.map(d => path.basename(path.dirname(d))).join(', ')}\n`);
 });
 
-console.log('\n DUPLICATES À CORRIGER:\n');
+console.log('\n DUPLICATES Ã€ CORRIGER:\n');
 analysis.shouldFix.forEach(item => {
   console.log(`   ${item.id} (${item.count} drivers)`);
   console.log(`      ${item.recommendation}`);
   console.log(`      Drivers: ${item.drivers.map(d => path.basename(path.dirname(d))).join(', ')}\n`);
 });
 
-console.log('\n RÉSUMÉ:\n');
-console.log(`    Légitimes: ${analysis.legitimate.length}`);
-console.log(`     À examiner: ${analysis.needsReview.length}`);
-console.log(`    À corriger: ${analysis.shouldFix.length}\n`);
+console.log('\n RÃ‰SUMÃ‰:\n');
+console.log(`    LÃ©gitimes: ${analysis.legitimate.length}`);
+console.log(`     Ã€ examiner: ${analysis.needsReview.length}`);
+console.log(`    Ã€ corriger: ${analysis.shouldFix.length}\n`);
 
 // Sauvegarder analyse
 const analysisFile = path.join(ROOT, 'DUPLICATES_ANALYSIS.json');
 fs.writeFileSync(analysisFile, JSON.stringify(analysis, null, 2), 'utf8');
-console.log(` Analyse sauvegardée: ${analysisFile}\n`);
+console.log(` Analyse sauvegardÃ©e: ${analysisFile}\n`);
 
 // Recommandations
 if (analysis.shouldFix.length > 0) {
-  console.log(' ACTIONS RECOMMANDÉES:\n');
-  console.log(`   1. Examiner manuellement les ${analysis.shouldFix.length} manufacturer IDs dupliqués`);
-  console.log('   2. Vérifier si ce sont des variants du même device');
+  console.log(' ACTIONS RECOMMANDÃ‰ES:\n');
+  console.log(`   1. Examiner manuellement les ${analysis.shouldFix.length} manufacturer IDs dupliquÃ©s`);
+  console.log('   2. VÃ©rifier si ce sont des variants du mÃªme device');
   console.log('   3. Si oui, fusionner dans un seul driver');
   console.log('   4. Si non, supprimer le duplicate du driver le moins pertinent\n');
 }

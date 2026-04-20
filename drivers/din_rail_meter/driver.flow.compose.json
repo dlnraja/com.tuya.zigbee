@@ -4,23 +4,23 @@
       "id": "din_rail_meter_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée",
+        "fr": "Puissance changÃ©e",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
+        "de": "Leistung geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Power changed",
-        "fr": "Puissance changée",
+        "fr": "Puissance changÃ©e",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
+        "de": "Leistung geÃ¤ndert"
       }
     },
     {
       "id": "din_rail_meter_voltage_changed",
       "title": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changÃ©e"
       },
       "tokens": [
         {
@@ -35,14 +35,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Voltage changed",
-        "fr": "Tension changée"
+        "fr": "Tension changÃ©e"
       }
     },
     {
       "id": "din_rail_meter_current_changed",
       "title": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changÃ©"
       },
       "tokens": [
         {
@@ -57,14 +57,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Current changed",
-        "fr": "Courant changé"
+        "fr": "Courant changÃ©"
       }
     },
     {
       "id": "din_rail_meter_energy_changed",
       "title": {
         "en": "Energy consumption changed",
-        "fr": "Consommation changée"
+        "fr": "Consommation changÃ©e"
       },
       "tokens": [
         {
@@ -79,7 +79,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Energy consumption changed",
-        "fr": "Consommation changée"
+        "fr": "Consommation changÃ©e"
       }
     }
   ],

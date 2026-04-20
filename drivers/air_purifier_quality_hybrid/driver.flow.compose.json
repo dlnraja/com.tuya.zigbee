@@ -4,7 +4,7 @@
       "id": "air_purifier_quality_hybrid_air_quality_co2_co2_level_changed",
       "title": {
         "en": "CO2 level changed",
-        "fr": "Niveau CO2 changé"
+        "fr": "Niveau CO2 changÃ©"
       },
       "tokens": [
         {
@@ -20,46 +20,46 @@
       "args": [],
       "titleFormatted": {
         "en": "CO2 level changed",
-        "fr": "Niveau CO2 changé"
+        "fr": "Niveau CO2 changÃ©"
       }
     },
     {
       "id": "air_purifier_quality_hybrid_air_quality_co2_co2_alert_on",
       "title": {
         "en": "CO2 alert triggered",
-        "fr": "Alerte CO2 déclenchée"
+        "fr": "Alerte CO2 dÃ©clenchÃ©e"
       },
       "args": [],
       "titleFormatted": {
         "en": "CO2 alert triggered",
-        "fr": "Alerte CO2 déclenchée"
+        "fr": "Alerte CO2 dÃ©clenchÃ©e"
       }
     },
     {
       "id": "air_purifier_quality_hybrid_air_quality_co2_co2_alert_off",
       "title": {
         "en": "CO2 returned to normal",
-        "fr": "CO2 revenu à la normale"
+        "fr": "CO2 revenu Ã la normale"
       },
       "args": [],
       "titleFormatted": {
         "en": "CO2 returned to normal",
-        "fr": "CO2 revenu à la normale"
+        "fr": "CO2 revenu Ã la normale"
       }
     },
     {
       "id": "air_purifier_quality_hybrid_air_quality_co2_air_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       },
       "tokens": [
         {
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "°C",
-            "fr": "°C"
+            "en": "Â°C",
+            "fr": "Â°C"
           },
           "example": 22
         }
@@ -67,14 +67,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       }
     },
     {
       "id": "air_purifier_quality_hybrid_air_quality_co2_air_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "HumiditÃ© changÃ©e"
       },
       "tokens": [
         {
@@ -90,22 +90,22 @@
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "HumiditÃ© changÃ©e"
       }
     },
     {
       "id": "air_purifier_quality_hybrid_air_quality_co2_pm25_changed",
       "title": {
         "en": "PM2.5 level changed",
-        "fr": "Niveau PM2.5 changé"
+        "fr": "Niveau PM2.5 changÃ©"
       },
       "tokens": [
         {
           "name": "pm25",
           "type": "number",
           "title": {
-            "en": "µg/m³",
-            "fr": "µg/m³"
+            "en": "Âµg/mÂ³",
+            "fr": "Âµg/mÂ³"
           },
           "example": 25
         }
@@ -113,39 +113,39 @@
       "args": [],
       "titleFormatted": {
         "en": "PM2.5 level changed",
-        "fr": "Niveau PM2.5 changé"
+        "fr": "Niveau PM2.5 changÃ©"
       }
     },
     {
       "id": "air_purifier_quality_hybrid_air_quality_co2_temp_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       }
     },
     {
       "id": "air_purifier_quality_hybrid_air_quality_co2_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       }
     },
     {
@@ -170,11 +170,11 @@
       "id": "air_purifier_quality_hybrid_air_quality_co2_co2_above",
       "title": {
         "en": "CO2 level is above",
-        "fr": "Niveau CO2 supérieur à"
+        "fr": "Niveau CO2 supÃ©rieur Ã"
       },
       "titleFormatted": {
         "en": "CO2 level is above [[co2]] ppm",
-        "fr": "Niveau CO2 supérieur à [[co2]] ppm"
+        "fr": "Niveau CO2 supÃ©rieur Ã [[co2]] ppm"
       },
       "args": [
         {
@@ -189,11 +189,11 @@
       "id": "air_purifier_quality_hybrid_air_quality_co2_co2_below",
       "title": {
         "en": "CO2 level is below",
-        "fr": "Niveau CO2 inférieur à"
+        "fr": "Niveau CO2 infÃ©rieur Ã"
       },
       "titleFormatted": {
         "en": "CO2 level is below [[co2]] ppm",
-        "fr": "Niveau CO2 inférieur à [[co2]] ppm"
+        "fr": "Niveau CO2 infÃ©rieur Ã [[co2]] ppm"
       },
       "args": [
         {
@@ -208,12 +208,12 @@
       "id": "air_purifier_quality_hybrid_air_quality_co2_air_quality_good",
       "title": {
         "en": "Air quality is good",
-        "fr": "Qualité air bonne"
+        "fr": "QualitÃ© air bonne"
       },
       "args": [],
       "titleFormatted": {
         "en": "Air quality is good",
-        "fr": "Qualité air bonne"
+        "fr": "QualitÃ© air bonne"
       }
     }
   ]

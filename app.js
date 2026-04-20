@@ -65,7 +65,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   quirksDatabase = null; //  Device Quirks Database
   _tuyaUDPDiscovery = null; //  Tuya WiFi UDP Discovery
   // NOTE: Database updates handled by GitHub Actions, not at runtime
-  developerDebugMode = false; //  AUDIT V2: Contrôle verbosity logs
+  developerDebugMode = false; //  AUDIT V2: ContrÃ´le verbosity logs
   experimentalSmartAdapt = false; //  AUDIT V2: Modifications capabilities opt-in
   experimentalCloudMirror = false; //  v7.0.22: Zigbee-to-Cloud mirroring opt-in
 
@@ -404,7 +404,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
   /**
    * Process migration queue worker
-   *  FIX: Exécute les migrations en queue de manière sécurisée
+   *  FIX: ExÃ©cute les migrations en queue de maniÃ¨re sÃ©curisÃ©e
    */
   async processMigrations() {
     try {
@@ -472,7 +472,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
               // Mark as unavailable with clear message
               if (typeof device.setUnavailable === 'function') {
                 device.setUnavailable(
-                  ` Appareil fantôme (subDevice ${data.subDeviceId}). Supprimez cet appareil.`
+                  ` Appareil fantÃ´me (subDevice ${data.subDeviceId}). Supprimez cet appareil.`
                 ).catch(() => { });
               }
             } else {
@@ -803,7 +803,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     try {
       // Battery health insight
       await this.homey.insights.createLog('battery_health', {
-        title: { en: 'Battery Health', fr: 'Santé Batterie' },
+        title: { en: 'Battery Health', fr: 'SantÃ© Batterie' },
         type: 'number',
         units: '%',
         decimals: 0
@@ -811,7 +811,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
       // Device uptime insight
       await this.homey.insights.createLog('device_uptime', {
-        title: { en: 'Device Uptime', fr: 'Disponibilité' },
+        title: { en: 'Device Uptime', fr: 'DisponibilitÃ©' },
         type: 'number',
         units: '%',
         decimals: 1
@@ -819,7 +819,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
       // Zigbee LQI insight
       await this.homey.insights.createLog('zigbee_lqi', {
-        title: { en: 'Zigbee Link Quality', fr: 'Qualité Lien Zigbee' },
+        title: { en: 'Zigbee Link Quality', fr: 'QualitÃ© Lien Zigbee' },
         type: 'number',
         units: '',
         decimals: 0
@@ -827,7 +827,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
       // Command success rate insight
       await this.homey.insights.createLog('command_success_rate', {
-        title: { en: 'Command Success Rate', fr: 'Taux Succès Commandes' },
+        title: { en: 'Command Success Rate', fr: 'Taux SuccÃ¨s Commandes' },
         type: 'number',
         units: '%',
         decimals: 1
@@ -835,7 +835,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
       // OTA update tracking insight
       await this.homey.insights.createLog('ota_updates', {
-        title: { en: 'OTA Updates Available', fr: 'Mises à jour OTA disponibles' },
+        title: { en: 'OTA Updates Available', fr: 'Mises Ã jour OTA disponibles' },
         type: 'number',
         units: '',
         decimals: 0

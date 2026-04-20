@@ -24,13 +24,13 @@ const FIXES = {
       title: {
         en: 'Set temperature offset',
         nl: 'Temperatuur offset instellen',
-        fr: 'Définir offset température',
+        fr: 'DÃ©finir offset tempÃ©rature',
         de: 'Temperatur-Offset einstellen'
       },
       titleFormatted: {
-        en: 'Set temperature offset to [[offset]]°C',
-        nl: 'Stel temperatuur offset in op [[offset]]°C',
-        fr: 'Définir offset température à [[offset]]°C'
+        en: 'Set temperature offset to [[offset]]Â°C',
+        nl: 'Stel temperatuur offset in op [[offset]]Â°C',
+        fr: 'DÃ©finir offset tempÃ©rature Ã [[offset]]Â°C'
       },
       hint: {
         en: 'Adjust the temperature reading by adding an offset value',
@@ -43,7 +43,7 @@ const FIXES = {
           min: -5,
           max: 5,
           step: 0.5,
-          label: '°C'
+          label: 'Â°C'
         }
       ]
     }

@@ -4,31 +4,31 @@
       "id": "light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_turned_on_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé"
+        "fr": "AllumÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allumé"
+        "fr": "AllumÃ©"
       }
     },
     {
       "id": "light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_turned_off_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint"
+        "fr": "Ã‰teint"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Éteint"
+        "fr": "Ã‰teint"
       }
     },
     {
       "id": "light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_dim_changed_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "LuminositÃ© changÃ©e"
       },
       "tokens": [
         {
@@ -36,7 +36,7 @@
           "type": "number",
           "title": {
             "en": "Brightness",
-            "fr": "Luminosité"
+            "fr": "LuminositÃ©"
           },
           "example": 0.75
         }
@@ -44,21 +44,21 @@
       "args": [],
       "titleFormatted": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "LuminositÃ© changÃ©e"
       }
     },
     {
       "id": "light_bulb_rgb_rgbw_hybrid_bulb_rgb_turned_on_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -67,14 +67,14 @@
       "id": "light_bulb_rgb_rgbw_hybrid_bulb_rgb_turned_off_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -101,11 +101,11 @@
       "id": "light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumÃ©|Ã©teint}}"
       },
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumÃ©|Ã©teint}}"
       },
       "args": []
     },
@@ -113,14 +113,14 @@
       "id": "light_bulb_rgb_rgbw_hybrid_bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -143,12 +143,12 @@
       "id": "light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Ã‰teindre"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Ã‰teindre"
       }
     },
     {
@@ -167,7 +167,7 @@
       "id": "light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_set_dim_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Set brightness to...",
-        "fr": "Régler la luminosité à..."
+        "fr": "RÃ©gler la luminositÃ© Ã..."
       },
       "args": [
         {
@@ -180,13 +180,13 @@
           "labelMultiplier": 100,
           "title": {
             "en": "Brightness",
-            "fr": "Luminosité"
+            "fr": "LuminositÃ©"
           }
         }
       ],
       "titleFormatted": {
         "en": "Set brightness to [[brightness]]%",
-        "fr": "Régler la luminosité à [[brightness]]%"
+        "fr": "RÃ©gler la luminositÃ© Ã [[brightness]]%"
       }
     },
     {
@@ -209,14 +209,14 @@
       "id": "light_bulb_rgb_rgbw_hybrid_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
@@ -241,13 +241,13 @@
       "id": "light_bulb_rgb_rgbw_hybrid_bulb_rgb_set_brightness_light_bulb_rgb_rgbw_hybrid",
       "title": {
         "en": "Set brightness",
-        "fr": "Régler luminosité",
+        "fr": "RÃ©gler luminositÃ©",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
       },
       "titleFormatted": {
         "en": "Set brightness to [[brightness]]%",
-        "fr": "Régler luminosité à [[brightness]]%",
+        "fr": "RÃ©gler luminositÃ© Ã [[brightness]]%",
         "nl": "Helderheid op [[brightness]]%",
         "de": "Helligkeit auf [[brightness]]%"
       },

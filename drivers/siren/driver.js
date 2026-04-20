@@ -31,30 +31,30 @@ class TuyaSirenDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('siren_is_sounding');
+      const card = this._getFlowCard('siren_is_sounding', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device || !args.device.getCapabilityValue) return false;
           return args.device.getCapabilityValue('alarm_generic') === true || args.device.getCapabilityValue('onoff') === true;
         });
       }
     } catch (err) { this.error(`Condition siren_is_sounding: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('siren_is_on');
+      const card = this._getFlowCard('siren_is_on', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device || !args.device.getCapabilityValue) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
     } catch (err) { this.error(`Condition siren_is_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('siren_motion_active');
+      const card = this._getFlowCard('siren_motion_active', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device || !args.device.getCapabilityValue) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -62,10 +62,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('siren_turn_on');
+      const card = this._getFlowCard('siren_turn_on', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device || args.device._isInitializing) return false;
           await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
@@ -73,10 +73,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action siren_turn_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('siren_turn_off');
+      const card = this._getFlowCard('siren_turn_off', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device || args.device._isInitializing) return false;
           await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
@@ -84,10 +84,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action siren_turn_off: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('siren_set_volume');
+      const card = this._getFlowCard('siren_set_volume', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device || args.device._isInitializing) return false;
           if (typeof args.device._sendTuyaDP === 'function') { await args.device._sendTuyaDP(5, args.volume || 1, 'enum').catch(() => {}); }
           return true;
         });
@@ -95,10 +95,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action siren_set_volume: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('siren_set_duration');
+      const card = this._getFlowCard('siren_set_duration', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device || args.device._isInitializing) return false;
           if (typeof args.device._sendTuyaDP === 'function') { await args.device._sendTuyaDP(7, args.duration || 30, 'value').catch(() => {}); }
           return true;
         });
@@ -106,10 +106,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action siren_set_duration: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('siren_set_melody');
+      const card = this._getFlowCard('siren_set_melody', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device || args.device._isInitializing) return false;
           if (typeof args.device._sendTuyaDP === 'function') { await args.device._sendTuyaDP(21, parseInt(args.melody, 10) || 0, 'enum').catch(() => {}); }
           return true;
         });
@@ -117,10 +117,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action siren_set_melody: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('siren_toggle');
+      const card = this._getFlowCard('siren_toggle', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device || args.device._isInitializing || !args.device.getCapabilityValue) return false;
           const current = args.device.getCapabilityValue('onoff');
           await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;

@@ -30,7 +30,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v5
         with:
-          node-version: 18
+          node-version: "22"
 
       - name: Fetch Zigbee2MQTT Database & External Sources
         env:

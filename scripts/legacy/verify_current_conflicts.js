@@ -5,7 +5,7 @@ const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const fs = require('fs');
 const path = require('path');
 
-console.log(' VÉRIFICATION CONFLITS ACTUELS (sans restauration)\n');
+console.log(' VÃ‰RIFICATION CONFLITS ACTUELS (sans restauration)\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -36,7 +36,7 @@ function analyzeCurrentDriver(driverName) {
 }
 
 /**
- * Vérifier conflits réels
+ * VÃ©rifier conflits rÃ©els
  */
 function verifyConflicts(allDrivers) {
   const pairMap = new Map();
@@ -85,7 +85,7 @@ function verifyConflicts(allDrivers) {
   };
 }
 
-// EXÉCUTION
+// EXÃ‰CUTION
 console.log(' Scanning drivers actuels...\n');
 
 const drivers = fs.readdirSync(DRIVERS_DIR);
@@ -103,29 +103,29 @@ drivers.forEach(driverName => {
   }
 });
 
-console.log(`   Drivers analysés: ${allDrivers.length}\n`);
+console.log(`   Drivers analysÃ©s: ${allDrivers.length}\n`);
 
 const verification = verifyConflicts(allDrivers);
 
-console.log(' RÉSUMÉ:\n');
+console.log(' RÃ‰SUMÃ‰:\n');
 console.log(`   Total paires (manufacturerName, productId): ${verification.totalPairs}`);
-console.log(`   Paires légitimes: ${verification.legitimatePairs} (${(verification.legitimatePairs/verification.totalPairs * 100).toFixed(1)}%)`);
-console.log(`   Conflits réels: ${verification.conflictPairs}\n`);
+console.log(`   Paires lÃ©gitimes: ${verification.legitimatePairs} (${(verification.legitimatePairs/verification.totalPairs * 100).toFixed(1)}%)`);
+console.log(`   Conflits rÃ©els: ${verification.conflictPairs}\n`);
 
 if (verification.conflicts.length === 0) {
-  console.log('   AUCUN CONFLIT RÉEL!\n');
-  console.log(' Tous les partages de manufacturerName sont LÉGITIMES');
-  console.log('   (productIds différents pour chaque driver)\n');
+  console.log('   AUCUN CONFLIT RÃ‰EL!\n');
+  console.log(' Tous les partages de manufacturerName sont LÃ‰GITIMES');
+  console.log('   (productIds diffÃ©rents pour chaque driver)\n');
   process.exit(0);
 } else {
-  console.log(' CONFLITS RÉELS DÉTECTÉS:\n');
+  console.log(' CONFLITS RÃ‰ELS DÃ‰TECTÃ‰S:\n');
 
   verification.conflicts
     .sort((a, b) => b.count - a.count)
     .slice(0, 50)
     .forEach(conflict => {
       console.log(`   ${conflict.manufacturerName} + ${conflict.productId}:`);
-      console.log(`      Partagé par ${conflict.count} drivers: ${conflict.drivers.join(', ')}`);
+      console.log(`      PartagÃ© par ${conflict.count} drivers: ${conflict.drivers.join(', ')}`);
       console.log();
     });
 

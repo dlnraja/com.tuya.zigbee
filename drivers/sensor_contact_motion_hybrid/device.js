@@ -112,7 +112,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         isPirOnly: true,  //NO temp/humidity sensors
       },
       // Fantem ZB003-x 4-in-1 multisensor
-      // DP5=temp(÷10), DP6=humidity
+      // DP5=temp(Ã·10), DP6=humidity
       'FANTEM': {
         patterns: ['_TZE200_7hfcudw5', '_TZE200_myd45weu',
           '_TZE200_nlrfgpny', 'ZB003-X'],
@@ -514,7 +514,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
               // v5.5.793: Apply calibration offset if available
               const offset = this.getSetting?.('temp_offset') || 0;
               temp =Math.round(safeMultiply((temp + offset), safeParse))(10), 10);
-              this.log(`[ZCL]  Temperature: ${temp}°C (raw: ${data.measuredValue})`);
+              this.log(`[ZCL]  Temperature: ${temp}Â°C (raw: ${data.measuredValue})`);
               this._registerZigbeeHit?.();
               this._lastTempSource = 'ZCL';
               // v5.8.7: Permissive - auto-add capability from ZCL data
@@ -522,7 +522,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
                 this.addCapability('measure_temperature').catch(() => {});
               this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
             } else {
-              this.log(`[ZCL]  Temperature out of range: ${temp}°C (raw: ${data.measuredValue})`);
+              this.log(`[ZCL]  Temperature out of range: ${temp}Â°C (raw: ${data.measuredValue})`);
             }
           }
         }
@@ -813,7 +813,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       || this.getStoreValue?.('manufacturerName')
       || this.getData()?.manufacturerName || '';
     const isVariant = MotionSensorDevice.VARIANT_MANUFACTURERS.some(v => 
-      manufacturerName.toLowerCase().includes(v.toLowerCase())
+      CI.normalize(manufacturerName).includes(CI.normalize(v))
     );
     const isPirOnly = CI.includesCI(MotionSensorDevice.PIR_ONLY_MANUFACTURERS, manufacturerName);
 
@@ -1290,7 +1290,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         const data = await this._smartZclRead(tempCluster, ['measuredValue'], 3000);
         if (data?.measuredValue !== undefined && data.measuredValue !== -32768 && data.measuredValue !== 0x8000) {
           const temp = Math.round((safeParse(data.measuredValue,safeMultiply(100)), safeParse)(10), 10);
-          this.log(`[MOTION-AWAKE]  Temperature: ${temp}°C (raw: ${data.measuredValue})`);
+          this.log(`[MOTION-AWAKE]  Temperature: ${temp}Â°C (raw: ${data.measuredValue})`);
           // Auto-add capability if needed
           if (!this.hasCapability('measure_temperature')) {
             await this.addCapability('measure_temperature').catch(() => { });
@@ -1480,7 +1480,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
           measuredValue: {
             minInterval: 60,      // Min 1 minute between reports
             maxInterval: 3600,    // Max 1 hour
-            minChange: 50         // Report if change >= 0.5°C
+            minChange: 50         // Report if change >= 0.5Â°C
           }
         });
         this.log('[MOTION-REPORTING]  Temperature reporting configured');
@@ -1841,6 +1841,18 @@ class MotionSensorDevice extends UnifiedSensorBase {
     this.log('[MOTION]  Cleanup complete');
   }
 
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
+  }
 }
 
 module.exports = MotionSensorDevice;

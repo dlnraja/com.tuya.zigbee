@@ -26,7 +26,7 @@
     "measure_humidity.soil": {
       "title": {
         "en": "Soil Moisture",
-        "fr": "Humidité du Sol",
+        "fr": "HumiditÃ© du Sol",
         "nl": "Bodemvochtigheid",
         "de": "Bodenfeuchtigkeit"
       }
@@ -34,7 +34,7 @@
     "measure_humidity": {
       "title": {
         "en": "Air Humidity",
-        "fr": "Humidité de l'Air",
+        "fr": "HumiditÃ© de l'Air",
         "nl": "Luchtvochtigheid",
         "de": "Luftfeuchtigkeit"
       }
@@ -52,13 +52,13 @@
         "en": "Fertilizer (EC)",
         "fr": "Engrais (EC)",
         "nl": "Bemesting (EC)",
-        "de": "Dünger (EC)"
+        "de": "DÃ¼nger (EC)"
       }
     },
     "measure_conductivity": {
       "title": {
         "en": "Soil Fertility (EC)",
-        "fr": "Fertilité du Sol (EC)",
+        "fr": "FertilitÃ© du Sol (EC)",
         "nl": "Bodemvruchtbaarheid (EC)",
         "de": "Bodenfruchtbarkeit (EC)"
       }
@@ -96,8 +96,8 @@
           "id": "temperature_calibration",
           "type": "number",
           "label": {
-            "en": "Temperature Offset (°C)",
-            "fr": "Décalage Température (°C)"
+            "en": "Temperature Offset (Â°C)",
+            "fr": "DÃ©calage TempÃ©rature (Â°C)"
           },
           "value": 0,
           "min": -30,
@@ -105,7 +105,7 @@
           "step": 0.1,
           "hint": {
             "en": "Offset to adjust temperature readings (-30 to +30)",
-            "fr": "Décalage pour ajuster les lectures de température (-30 à +30)"
+            "fr": "DÃ©calage pour ajuster les lectures de tempÃ©rature (-30 Ã +30)"
           }
         },
         {
@@ -113,7 +113,7 @@
           "type": "number",
           "label": {
             "en": "Air Humidity Offset (%)",
-            "fr": "Décalage Humidité Air (%)"
+            "fr": "DÃ©calage HumiditÃ© Air (%)"
           },
           "value": 0,
           "min": -30,
@@ -121,7 +121,7 @@
           "step": 1,
           "hint": {
             "en": "Offset to adjust air humidity readings (-30 to +30)",
-            "fr": "Décalage pour ajuster les lectures d'humidité de l'air (-30 à +30)"
+            "fr": "DÃ©calage pour ajuster les lectures d'humiditÃ© de l'air (-30 Ã +30)"
           }
         },
         {
@@ -129,7 +129,7 @@
           "type": "number",
           "label": {
             "en": "Soil Moisture Offset (%)",
-            "fr": "Décalage Humidité Sol (%)"
+            "fr": "DÃ©calage HumiditÃ© Sol (%)"
           },
           "value": 0,
           "min": -30,
@@ -137,7 +137,7 @@
           "step": 1,
           "hint": {
             "en": "Offset to adjust soil moisture readings (-30 to +30)",
-            "fr": "Décalage pour ajuster les lectures d'humidité du sol (-30 à +30)"
+            "fr": "DÃ©calage pour ajuster les lectures d'humiditÃ© du sol (-30 Ã +30)"
           }
         },
         {
@@ -145,7 +145,7 @@
           "type": "dropdown",
           "label": {
             "en": "Decimal Precision",
-            "fr": "Précision"
+            "fr": "PrÃ©cision"
           },
           "value": "1",
           "hint": {
@@ -155,13 +155,13 @@
             {
               "id": "1",
               "label": {
-                "en": "1 decimal (20.5°C)"
+                "en": "1 decimal (20.5Â°C)"
               }
             },
             {
               "id": "2",
               "label": {
-                "en": "2 decimals (20.53°C)"
+                "en": "2 decimals (20.53Â°C)"
               }
             }
           ]
@@ -180,7 +180,7 @@
           "type": "number",
           "label": {
             "en": "Soil Dryness Threshold (%)",
-            "fr": "Seuil Sécheresse Sol (%)"
+            "fr": "Seuil SÃ©cheresse Sol (%)"
           },
           "value": 30,
           "min": 0,
@@ -188,7 +188,7 @@
           "step": 5,
           "hint": {
             "en": "Moisture percentage below which water shortage alarm triggers (0-100%)",
-            "fr": "Pourcentage d'humidité en dessous duquel l'alarme manque d'eau se déclenche (0-100%)"
+            "fr": "Pourcentage d'humiditÃ© en dessous duquel l'alarme manque d'eau se dÃ©clenche (0-100%)"
           }
         }
       ]
@@ -197,7 +197,7 @@
       "type": "group",
       "label": {
         "en": " Settings (v5.5.330 Hobeian)",
-        "fr": " Paramètres (v5.5.330 Hobeian)"
+        "fr": " ParamÃ¨tres (v5.5.330 Hobeian)"
       },
       "children": [
         {
@@ -205,28 +205,28 @@
           "type": "dropdown",
           "label": {
             "en": "Temperature Unit",
-            "fr": "Unité de Température"
+            "fr": "UnitÃ© de TempÃ©rature"
           },
           "value": "celsius",
           "values": [
             {
               "id": "celsius",
               "label": {
-                "en": "Celsius (°C)",
-                "fr": "Celsius (°C)"
+                "en": "Celsius (Â°C)",
+                "fr": "Celsius (Â°C)"
               }
             },
             {
               "id": "fahrenheit",
               "label": {
-                "en": "Fahrenheit (°F)",
-                "fr": "Fahrenheit (°F)"
+                "en": "Fahrenheit (Â°F)",
+                "fr": "Fahrenheit (Â°F)"
               }
             }
           ],
           "hint": {
             "en": "Temperature unit for display",
-            "fr": "Unité de température pour l'affichage"
+            "fr": "UnitÃ© de tempÃ©rature pour l'affichage"
           }
         }
       ]
@@ -236,12 +236,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la Détection de Présence Radio"
+        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -249,7 +249,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "Sensibilité Présence Radio"
+        "fr": "SensibilitÃ© PrÃ©sence Radio"
       },
       "value": 15,
       "min": 5,
@@ -264,12 +264,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "Sécurité Enfant Logicielle"
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "Empêche les changements d'état manuels sur l'appareil"
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
       }
     },
     {
@@ -284,7 +284,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'éteint après X minutes (0 = désactivé)"
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -292,12 +292,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation Présence)"
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
       }
     },
     {
@@ -305,14 +305,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Émulé (Secondes)"
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
       }
     },
     {
@@ -327,7 +327,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Émulation logicielle pour boutons à action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -342,7 +342,7 @@
       "max": 4000,
       "hint": {
         "en": "Cut power if consumption exceeds this value (0 = disabled)",
-        "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+        "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -350,7 +350,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "Durée Inching (Secondes)"
+        "fr": "DurÃ©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -358,7 +358,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -366,12 +366,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "Récupération d'État Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'état précédent après une coupure de courant"
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
       }
     },
     {
@@ -384,7 +384,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
       }
     },
     {
@@ -399,7 +399,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santé descend sous cette valeur"
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     }
   ],
@@ -419,7 +419,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

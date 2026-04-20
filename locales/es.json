@@ -1,7 +1,7 @@
 {
   "capabilities": {
     "measure_battery": {
-      "title": "Batería",
+      "title": "BaterÃ­a",
       "units": "%"
     },
     "alarm_generic": {
@@ -29,10 +29,10 @@
       "title": "Sabotaje"
     },
     "alarm_vibration": {
-      "title": "Vibración"
+      "title": "VibraciÃ³n"
     },
     "onoff": {
-      "title": "Energía"
+      "title": "EnergÃ­a"
     },
     "dim": {
       "title": "Brillo",
@@ -42,7 +42,7 @@
       "title": "Tono"
     },
     "light_saturation": {
-      "title": "Saturación"
+      "title": "SaturaciÃ³n"
     },
     "light_temperature": {
       "title": "Temperatura de color"
@@ -52,14 +52,14 @@
     },
     "measure_temperature": {
       "title": "Temperatura",
-      "units": "°C"
+      "units": "Â°C"
     },
     "measure_humidity": {
       "title": "Humedad",
       "units": "%"
     },
     "measure_pressure": {
-      "title": "Presión",
+      "title": "PresiÃ³n",
       "units": "mbar"
     },
     "measure_co2": {
@@ -68,7 +68,7 @@
     },
     "measure_pm25": {
       "title": "PM2.5",
-      "units": "µg/m³"
+      "units": "Âµg/mÂ³"
     },
     "measure_voc": {
       "title": "COV",
@@ -91,12 +91,12 @@
       "units": "A"
     },
     "meter_power": {
-      "title": "Energía",
+      "title": "EnergÃ­a",
       "units": "kWh"
     },
     "target_temperature": {
       "title": "Temperatura objetivo",
-      "units": "°C"
+      "units": "Â°C"
     },
     "windowcoverings_state": {
       "title": "Persianas",
@@ -107,49 +107,49 @@
       }
     },
     "windowcoverings_set": {
-      "title": "Posición",
+      "title": "PosiciÃ³n",
       "units": "%"
     },
     "button": {
-      "title": "Botón"
+      "title": "BotÃ³n"
     }
   },
   "settings": {
     "power_source": {
-      "label": "Fuente de alimentación",
-      "hint": "Selecciona la fuente de alimentación manualmente o usa detección automática"
+      "label": "Fuente de alimentaciÃ³n",
+      "hint": "Selecciona la fuente de alimentaciÃ³n manualmente o usa detecciÃ³n automÃ¡tica"
     },
     "battery_type": {
-      "label": "Tipo de batería",
-      "hint": "Selecciona el tipo de batería manualmente o usa detección automática basada en voltaje"
+      "label": "Tipo de baterÃ­a",
+      "hint": "Selecciona el tipo de baterÃ­a manualmente o usa detecciÃ³n automÃ¡tica basada en voltaje"
     },
     "battery_low_threshold": {
-      "label": "Umbral batería baja (%)",
-      "hint": "Activar aviso de batería baja por debajo de este porcentaje"
+      "label": "Umbral baterÃ­a baja (%)",
+      "hint": "Activar aviso de baterÃ­a baja por debajo de este porcentaje"
     },
     "battery_critical_threshold": {
-      "label": "Umbral batería crítica (%)",
-      "hint": "Activar aviso de batería crítica por debajo de este porcentaje"
+      "label": "Umbral baterÃ­a crÃ­tica (%)",
+      "hint": "Activar aviso de baterÃ­a crÃ­tica por debajo de este porcentaje"
     },
     "enable_battery_notifications": {
-      "label": "Habilitar notificaciones de batería",
-      "hint": "Enviar notificaciones de flow para eventos de batería"
+      "label": "Habilitar notificaciones de baterÃ­a",
+      "hint": "Enviar notificaciones de flow para eventos de baterÃ­a"
     },
     "battery_report_interval": {
-      "label": "Intervalo de informe de batería (horas)",
-      "hint": "Frecuencia de solicitud de actualizaciones de estado de batería"
+      "label": "Intervalo de informe de baterÃ­a (horas)",
+      "hint": "Frecuencia de solicitud de actualizaciones de estado de baterÃ­a"
     },
     "optimization_mode": {
-      "label": "Modo de optimización de energía",
-      "hint": "Balance entre capacidad de respuesta y duración de batería"
+      "label": "Modo de optimizaciÃ³n de energÃ­a",
+      "hint": "Balance entre capacidad de respuesta y duraciÃ³n de baterÃ­a"
     },
     "show_voltage": {
-      "label": "Mostrar voltaje de batería",
-      "hint": "Mostrar voltaje bruto de batería en configuración del dispositivo"
+      "label": "Mostrar voltaje de baterÃ­a",
+      "hint": "Mostrar voltaje bruto de baterÃ­a en configuraciÃ³n del dispositivo"
     },
     "enable_power_estimation": {
-      "label": "Habilitar estimación de potencia",
-      "hint": "Estimar consumo cuando la medición real no está disponible (solo dispositivos AC/DC)"
+      "label": "Habilitar estimaciÃ³n de potencia",
+      "hint": "Estimar consumo cuando la mediciÃ³n real no estÃ¡ disponible (solo dispositivos AC/DC)"
     }
   },
   "tabs": {

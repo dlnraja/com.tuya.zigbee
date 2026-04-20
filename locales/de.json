@@ -42,7 +42,7 @@
       "title": "Farbton"
     },
     "light_saturation": {
-      "title": "Sättigung"
+      "title": "SÃ¤ttigung"
     },
     "light_temperature": {
       "title": "Farbtemperatur"
@@ -52,7 +52,7 @@
     },
     "measure_temperature": {
       "title": "Temperatur",
-      "units": "°C"
+      "units": "Â°C"
     },
     "measure_humidity": {
       "title": "Luftfeuchtigkeit",
@@ -68,7 +68,7 @@
     },
     "measure_pm25": {
       "title": "PM2.5",
-      "units": "µg/m³"
+      "units": "Âµg/mÂ³"
     },
     "measure_voc": {
       "title": "VOC",
@@ -87,7 +87,7 @@
       "units": "V"
     },
     "measure_current": {
-      "title": "Stromstärke",
+      "title": "StromstÃ¤rke",
       "units": "A"
     },
     "meter_power": {
@@ -96,10 +96,10 @@
     },
     "target_temperature": {
       "title": "Zieltemperatur",
-      "units": "°C"
+      "units": "Â°C"
     },
     "windowcoverings_state": {
-      "title": "Rollläden",
+      "title": "RolllÃ¤den",
       "values": {
         "up": "Auf",
         "idle": "Stop",
@@ -117,23 +117,23 @@
   "settings": {
     "power_source": {
       "label": "Stromquelle",
-      "hint": "Stromquelle manuell auswählen oder automatische Erkennung verwenden"
+      "hint": "Stromquelle manuell auswÃ¤hlen oder automatische Erkennung verwenden"
     },
     "battery_type": {
       "label": "Batterietyp",
-      "hint": "Batterietyp manuell auswählen oder automatische Erkennung basierend auf Spannung verwenden"
+      "hint": "Batterietyp manuell auswÃ¤hlen oder automatische Erkennung basierend auf Spannung verwenden"
     },
     "battery_low_threshold": {
       "label": "Schwellwert niedrige Batterie (%)",
-      "hint": "Warnung bei niedriger Batterie unter diesem Prozentsatz auslösen"
+      "hint": "Warnung bei niedriger Batterie unter diesem Prozentsatz auslÃ¶sen"
     },
     "battery_critical_threshold": {
       "label": "Schwellwert kritische Batterie (%)",
-      "hint": "Warnung bei kritischer Batterie unter diesem Prozentsatz auslösen"
+      "hint": "Warnung bei kritischer Batterie unter diesem Prozentsatz auslÃ¶sen"
     },
     "enable_battery_notifications": {
       "label": "Batteriebenachrichtigungen aktivieren",
-      "hint": "Flow-Benachrichtigungen für Batterieereignisse senden"
+      "hint": "Flow-Benachrichtigungen fÃ¼r Batterieereignisse senden"
     },
     "battery_report_interval": {
       "label": "Batteriebericht-Intervall (Stunden)",
@@ -141,27 +141,27 @@
     },
     "optimization_mode": {
       "label": "Energieoptimierungsmodus",
-      "hint": "Balance zwischen Reaktionsfähigkeit und Batterielebensdauer"
+      "hint": "Balance zwischen ReaktionsfÃ¤higkeit und Batterielebensdauer"
     },
     "show_voltage": {
       "label": "Batteriespannung anzeigen",
-      "hint": "Rohe Batteriespannung in den Geräteeinstellungen anzeigen"
+      "hint": "Rohe Batteriespannung in den GerÃ¤teeinstellungen anzeigen"
     },
     "enable_power_estimation": {
-      "label": "Leistungsschätzung aktivieren",
-      "hint": "Stromverbrauch schätzen, wenn keine echte Messung verfügbar ist (nur AC/DC-Geräte)"
+      "label": "LeistungsschÃ¤tzung aktivieren",
+      "hint": "Stromverbrauch schÃ¤tzen, wenn keine echte Messung verfÃ¼gbar ist (nur AC/DC-GerÃ¤te)"
     }
   },
   "tabs": {
     "general": "Allgemein",
     "advanced": "Erweitert",
-    "about": "Über"
+    "about": "Ãœber"
   },
   "common": {
     "save": "Speichern",
     "cancel": "Abbrechen",
     "ok": "OK",
-    "delete": "Löschen",
+    "delete": "LÃ¶schen",
     "edit": "Bearbeiten"
   }
 }

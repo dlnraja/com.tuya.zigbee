@@ -83,7 +83,7 @@ class RadiatorValveZigbeeDevice extends HybridThermostatBase {
   }
 
   async onTargetTemperatureChange(value) {
-    this.log(\`[TRV-ZIGBEE] Setting target temp: \${value}°C\`);
+    this.log(\`[TRV-ZIGBEE] Setting target temp: \${value}Â°C\`);
     
     // Try DP1 first (most common)
     try {

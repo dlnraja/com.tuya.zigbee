@@ -6,20 +6,20 @@
       "title": {
         "en": "Gas detected!",
         "nl": "Gas gedetecteerd!",
-        "fr": "Gaz détecté !",
+        "fr": "Gaz dÃ©tectÃ© !",
         "de": "Gas erkannt!"
       },
       "hint": {
         "en": "Triggers when combustible gas is detected - evacuate immediately!",
         "nl": "Triggert wanneer brandbaar gas wordt gedetecteerd - evacueer onmiddellijk!",
-        "fr": "Se déclenche quand du gaz combustible est détecté - évacuez immédiatement !",
-        "de": "Wird ausgelöst, wenn brennbares Gas erkannt wird - sofort evakuieren!"
+        "fr": "Se dÃ©clenche quand du gaz combustible est dÃ©tectÃ© - Ã©vacuez immÃ©diatement !",
+        "de": "Wird ausgelÃ¶st, wenn brennbares Gas erkannt wird - sofort evakuieren!"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gas detected!",
         "nl": "Gas gedetecteerd!",
-        "fr": "Gaz détecté !",
+        "fr": "Gaz dÃ©tectÃ© !",
         "de": "Gas erkannt!"
       }
     },
@@ -28,14 +28,14 @@
       "title": {
         "en": "Gas alarm cleared",
         "nl": "Gas alarm opgeheven",
-        "fr": "Alarme gaz terminée",
+        "fr": "Alarme gaz terminÃ©e",
         "de": "Gasalarm aufgehoben"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gas alarm cleared",
         "nl": "Gas alarm opgeheven",
-        "fr": "Alarme gaz terminée",
+        "fr": "Alarme gaz terminÃ©e",
         "de": "Gasalarm aufgehoben"
       }
     },
@@ -45,20 +45,20 @@
       "title": {
         "en": "Carbon monoxide detected!",
         "nl": "Koolmonoxide gedetecteerd!",
-        "fr": "Monoxyde de carbone détecté !",
+        "fr": "Monoxyde de carbone dÃ©tectÃ© !",
         "de": "Kohlenmonoxid erkannt!"
       },
       "hint": {
         "en": "Triggers when CO is detected - evacuate immediately!",
         "nl": "Triggert wanneer CO wordt gedetecteerd - evacueer onmiddellijk!",
-        "fr": "Se déclenche quand du CO est détecté - évacuez immédiatement !",
-        "de": "Wird ausgelöst, wenn CO erkannt wird - sofort evakuieren!"
+        "fr": "Se dÃ©clenche quand du CO est dÃ©tectÃ© - Ã©vacuez immÃ©diatement !",
+        "de": "Wird ausgelÃ¶st, wenn CO erkannt wird - sofort evakuieren!"
       },
       "args": [],
       "titleFormatted": {
         "en": "Carbon monoxide detected!",
         "nl": "Koolmonoxide gedetecteerd!",
-        "fr": "Monoxyde de carbone détecté !",
+        "fr": "Monoxyde de carbone dÃ©tectÃ© !",
         "de": "Kohlenmonoxid erkannt!"
       }
     },
@@ -67,14 +67,14 @@
       "title": {
         "en": "CO alarm cleared",
         "nl": "CO alarm opgeheven",
-        "fr": "Alarme CO terminée",
+        "fr": "Alarme CO terminÃ©e",
         "de": "CO-Alarm aufgehoben"
       },
       "args": [],
       "titleFormatted": {
         "en": "CO alarm cleared",
         "nl": "CO alarm opgeheven",
-        "fr": "Alarme CO terminée",
+        "fr": "Alarme CO terminÃ©e",
         "de": "CO-Alarm aufgehoben"
       }
     },
@@ -99,8 +99,8 @@
       "title": {
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changé",
-        "de": "Batteriestand geändert"
+        "fr": "Niveau batterie changÃ©",
+        "de": "Batteriestand geÃ¤ndert"
       },
       "tokens": [
         {
@@ -119,8 +119,8 @@
       "titleFormatted": {
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changé",
-        "de": "Batteriestand geändert"
+        "fr": "Niveau batterie changÃ©",
+        "de": "Batteriestand geÃ¤ndert"
       }
     },
     {
@@ -178,14 +178,14 @@
       "title": {
         "en": "Gas !{{is|is not}} detected",
         "nl": "Gas !{{is|is niet}} gedetecteerd",
-        "fr": "Gaz !{{est|n'est pas}} détecté",
+        "fr": "Gaz !{{est|n'est pas}} dÃ©tectÃ©",
         "de": "Gas !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gas !{{is|is not}} detected",
         "nl": "Gas !{{is|is niet}} gedetecteerd",
-        "fr": "Gaz !{{est|n'est pas}} détecté",
+        "fr": "Gaz !{{est|n'est pas}} dÃ©tectÃ©",
         "de": "Gas !{{ist|ist nicht}} erkannt"
       }
     },
@@ -194,14 +194,14 @@
       "title": {
         "en": "CO !{{is|is not}} detected",
         "nl": "CO !{{is|is niet}} gedetecteerd",
-        "fr": "CO !{{est|n'est pas}} détecté",
+        "fr": "CO !{{est|n'est pas}} dÃ©tectÃ©",
         "de": "CO !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "CO !{{is|is not}} detected",
         "nl": "CO !{{is|is niet}} gedetecteerd",
-        "fr": "CO !{{est|n'est pas}} détecté",
+        "fr": "CO !{{est|n'est pas}} dÃ©tectÃ©",
         "de": "CO !{{ist|ist nicht}} erkannt"
       }
     },
@@ -209,14 +209,14 @@
       "id": "gas_detector_co_active",
       "title": {
         "en": "CO !{{is|is not}} detected",
-        "fr": "CO !{{est|n'est pas}} détecté",
+        "fr": "CO !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "CO !{{is|is niet}} gedetecteerd",
         "de": "CO !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "CO !{{is|is not}} detected",
-        "fr": "CO !{{est|n'est pas}} détecté",
+        "fr": "CO !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "CO !{{is|is niet}} gedetecteerd",
         "de": "CO !{{ist|ist nicht}} erkannt"
       }
@@ -225,14 +225,14 @@
       "id": "gas_detector_gas_active",
       "title": {
         "en": "Gas !{{is|is not}} detected",
-        "fr": "Gaz !{{est|n'est pas}} détecté",
+        "fr": "Gaz !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "Gas !{{is|is niet}} gedetecteerd",
         "de": "Gas !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gas !{{is|is not}} detected",
-        "fr": "Gaz !{{est|n'est pas}} détecté",
+        "fr": "Gaz !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "Gas !{{is|is niet}} gedetecteerd",
         "de": "Gas !{{ist|ist nicht}} erkannt"
       }
@@ -244,14 +244,14 @@
       "title": {
         "en": "Test the detector",
         "nl": "Detector testen",
-        "fr": "Tester le détecteur",
+        "fr": "Tester le dÃ©tecteur",
         "de": "Detektor testen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Test the detector",
         "nl": "Detector testen",
-        "fr": "Tester le détecteur",
+        "fr": "Tester le dÃ©tecteur",
         "de": "Detektor testen"
       }
     },

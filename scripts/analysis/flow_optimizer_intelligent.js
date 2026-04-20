@@ -2,8 +2,8 @@
 
 /**
  * FLOW CARDS OPTIMIZER & MERGER v5.5.295
- * Optimisation automatique avec fusion intelligente et fallback de compatibilité
- * Corrige les IDs incohérents, fusionne les doublons, standardise les patterns
+ * Optimisation automatique avec fusion intelligente et fallback de compatibilitÃ©
+ * Corrige les IDs incohÃ©rents, fusionne les doublons, standardise les patterns
  */
 
 const fs = require('fs');
@@ -25,48 +25,48 @@ class IntelligentFlowOptimizer {
     this.standardPatterns = {
       switches: {
         triggers: [
-          { base: 'turned_on', title: { en: 'Turned on', fr: 'Allumé' } },
-          { base: 'turned_off', title: { en: 'Turned off', fr: 'Éteint' } },
+          { base: 'turned_on', title: { en: 'Turned on', fr: 'AllumÃ©' } },
+          { base: 'turned_off', title: { en: 'Turned off', fr: 'Ã‰teint' } },
           {
-            base: 'dim_changed', title: { en: 'Brightness changed', fr: 'Luminosité changée' },
-            tokens: [{ name: 'dim', type: 'number', title: { en: 'Brightness', fr: 'Luminosité' }, example: 0.75 }]
+            base: 'dim_changed', title: { en: 'Brightness changed', fr: 'LuminositÃ© changÃ©e' },
+            tokens: [{ name: 'dim', type: 'number', title: { en: 'Brightness', fr: 'LuminositÃ©' }, example: 0.75 }]
           }
         ],
         conditions: [
-          { base: 'is_on', title: { en: 'Is turned !{{on|off}}', fr: 'Est !{{allumé|éteint}}' } }
+          { base: 'is_on', title: { en: 'Is turned !{{on|off}}', fr: 'Est !{{allumÃ©|Ã©teint}}' } }
         ],
         actions: [
           { base: 'turn_on', title: { en: 'Turn on', fr: 'Allumer' } },
-          { base: 'turn_off', title: { en: 'Turn off', fr: 'Éteindre' } },
+          { base: 'turn_off', title: { en: 'Turn off', fr: 'Ã‰teindre' } },
           { base: 'toggle', title: { en: 'Toggle on or off', fr: 'Basculer' } },
           {
             base: 'set_dim',
-            title: { en: 'Set brightness to...', fr: 'Régler la luminosité à...' },
+            title: { en: 'Set brightness to...', fr: 'RÃ©gler la luminositÃ© Ã...' },
             args: [{
               name: 'brightness',
               type: 'range',
               min: 0, max: 1, step: 0.01,
               label: '%', labelMultiplier: 100,
-              title: { en: 'Brightness', fr: 'Luminosité' }
+              title: { en: 'Brightness', fr: 'LuminositÃ©' }
             }],
-            titleFormatted: { en: 'Set brightness to [[brightness]]%', fr: 'Régler la luminosité à [[brightness]]%' }
+            titleFormatted: { en: 'Set brightness to [[brightness]]%', fr: 'RÃ©gler la luminositÃ© Ã [[brightness]]%' }
           }
         ]
       },
 
       buttons: {
         triggers: [
-          { base: 'button_pressed', title: { en: 'Button pressed', fr: 'Bouton appuyé' } },
+          { base: 'button_pressed', title: { en: 'Button pressed', fr: 'Bouton appuyÃ©' } },
           { base: 'button_double_pressed', title: { en: 'Button double pressed', fr: 'Double appui bouton' } },
           { base: 'button_long_pressed', title: { en: 'Button long pressed', fr: 'Appui long bouton' } },
-          { base: 'button_released', title: { en: 'Button released', fr: 'Bouton relâché' } },
+          { base: 'button_released', title: { en: 'Button released', fr: 'Bouton relÃ¢chÃ©' } },
           { base: 'battery_low', title: { en: 'Battery low', fr: 'Batterie faible' } }
         ],
         conditions: [
           {
             base: 'battery_above',
-            title: { en: 'Battery level is above', fr: 'Niveau batterie supérieur à' },
-            titleFormatted: { en: 'Battery level is above [[level]]%', fr: 'Niveau batterie supérieur à [[level]]%' },
+            title: { en: 'Battery level is above', fr: 'Niveau batterie supÃ©rieur Ã' },
+            titleFormatted: { en: 'Battery level is above [[level]]%', fr: 'Niveau batterie supÃ©rieur Ã [[level]]%' },
             args: [{ name: 'level', type: 'number', min: 0, max: 100, step: 10 }]
           }
         ],
@@ -76,21 +76,21 @@ class IntelligentFlowOptimizer {
       sensors: {
         triggers: [
           {
-            base: 'temperature_changed', title: { en: 'Temperature changed', fr: 'Température changée' },
-            tokens: [{ name: 'temperature', type: 'number', title: { en: 'Temperature (°C)', fr: 'Température (°C)' }, example: 22.5 }]
+            base: 'temperature_changed', title: { en: 'Temperature changed', fr: 'TempÃ©rature changÃ©e' },
+            tokens: [{ name: 'temperature', type: 'number', title: { en: 'Temperature (Â°C)', fr: 'TempÃ©rature (Â°C)' }, example: 22.5 }]
           },
           {
-            base: 'humidity_changed', title: { en: 'Humidity changed', fr: 'Humidité changée' },
-            tokens: [{ name: 'humidity', type: 'number', title: { en: 'Humidity (%)', fr: 'Humidité (%)' }, example: 55 }]
+            base: 'humidity_changed', title: { en: 'Humidity changed', fr: 'HumiditÃ© changÃ©e' },
+            tokens: [{ name: 'humidity', type: 'number', title: { en: 'Humidity (%)', fr: 'HumiditÃ© (%)' }, example: 55 }]
           },
           { base: 'battery_low', title: { en: 'Battery low', fr: 'Batterie faible' } }
         ],
         conditions: [
           {
             base: 'temperature_above',
-            title: { en: 'Temperature is above', fr: 'Température supérieure à' },
-            titleFormatted: { en: 'Temperature is above [[temp]]°C', fr: 'Température supérieure à [[temp]]°C' },
-            args: [{ name: 'temp', type: 'number', min: -40, max: 80, step: 0.5, title: { en: 'Temperature', fr: 'Température' } }]
+            title: { en: 'Temperature is above', fr: 'TempÃ©rature supÃ©rieure Ã' },
+            titleFormatted: { en: 'Temperature is above [[temp]]Â°C', fr: 'TempÃ©rature supÃ©rieure Ã [[temp]]Â°C' },
+            args: [{ name: 'temp', type: 'number', min: -40, max: 80, step: 0.5, title: { en: 'Temperature', fr: 'TempÃ©rature' } }]
           }
         ],
         actions: []
@@ -99,24 +99,24 @@ class IntelligentFlowOptimizer {
   }
 
   /**
-   * Point d'entrée principal - Optimise tous les flows
+   * Point d'entrÃ©e principal - Optimise tous les flows
    */
   async optimizeAllFlows() {
     console.log(' STARTING INTELLIGENT FLOW OPTIMIZATION...');
 
-    // Créer backup avant optimisation
+    // CrÃ©er backup avant optimisation
     this.createBackup();
 
     // Charger le rapport d'analyse
     const analysisReport = this.loadAnalysisReport();
 
-    // Optimiser par catégorie
+    // Optimiser par catÃ©gorie
     await this.optimizeByCategory('switches');
     await this.optimizeByCategory('buttons');
     await this.optimizeByCategory('sensors');
     await this.optimizeByCategory('lights');
 
-    // Appliquer les corrections d'IDs incohérents
+    // Appliquer les corrections d'IDs incohÃ©rents
     await this.fixInconsistentIds(analysisReport);
 
     // Fusionner les doublons avec fallback intelligent
@@ -126,7 +126,7 @@ class IntelligentFlowOptimizer {
   }
 
   /**
-   * Crée un backup des flows actuels
+   * CrÃ©e un backup des flows actuels
    */
   createBackup() {
     if (!fs.existsSync(this.backupPath)) {
@@ -144,7 +144,7 @@ class IntelligentFlowOptimizer {
   }
 
   /**
-   * Copie récursive des fichiers de flow
+   * Copie rÃ©cursive des fichiers de flow
    */
   copyFlowFiles(source, destination) {
     const items = fs.readdirSync(source);
@@ -163,7 +163,7 @@ class IntelligentFlowOptimizer {
   }
 
   /**
-   * Charge le rapport d'analyse précédent
+   * Charge le rapport d'analyse prÃ©cÃ©dent
    */
   loadAnalysisReport() {
     try {
@@ -178,7 +178,7 @@ class IntelligentFlowOptimizer {
   }
 
   /**
-   * Optimise les flows par catégorie
+   * Optimise les flows par catÃ©gorie
    */
   async optimizeByCategory(category) {
     console.log(`\n OPTIMIZING ${category.toUpperCase()} FLOWS...`);
@@ -203,7 +203,7 @@ class IntelligentFlowOptimizer {
   }
 
   /**
-   * Trouve les drivers par catégorie
+   * Trouve les drivers par catÃ©gorie
    */
   findDriversByCategory(category) {
     const drivers = fs.readdirSync(this.driversPath);
@@ -222,7 +222,7 @@ class IntelligentFlowOptimizer {
   }
 
   /**
-   * Optimise les flows d'un driver spécifique
+   * Optimise les flows d'un driver spÃ©cifique
    */
   async optimizeDriverFlows(driverName, standardPattern) {
     const driverPath = path.join(this.driversPath, driverName);
@@ -248,7 +248,7 @@ class IntelligentFlowOptimizer {
     // Appliquer l'optimisation avec fallback intelligent
     const optimizedFlows = this.applyIntelligentOptimization(currentFlows, standardPattern, driverName);
 
-    // Sauvegarder si des changements ont été apportés
+    // Sauvegarder si des changements ont Ã©tÃ© apportÃ©s
     if (JSON.stringify(currentFlows) !== JSON.stringify(optimizedFlows)) {
       fs.writeFileSync(flowPath, JSON.stringify(optimizedFlows, null, 2));
       this.optimizationResults.optimized++;
@@ -305,7 +305,7 @@ class IntelligentFlowOptimizer {
   }
 
   /**
-   * Trouve le pattern correspondant à un flow
+   * Trouve le pattern correspondant Ã un flow
    */
   findMatchingPattern(flow, standardFlows) {
     if (!flow.id) return null;
@@ -334,23 +334,23 @@ class IntelligentFlowOptimizer {
   }
 
   /**
-   * Applique le pattern avec fallback intelligent pour préserver la compatibilité
+   * Applique le pattern avec fallback intelligent pour prÃ©server la compatibilitÃ©
    */
   applyPatternWithFallback(currentFlow, pattern, driverName, flowType) {
-    // Créer un nouvel ID standardisé mais garder l'ancien comme fallback
+    // CrÃ©er un nouvel ID standardisÃ© mais garder l'ancien comme fallback
     const newId = `${driverName}_${pattern.base}`;
     const originalId = currentFlow.id;
 
     const optimizedFlow = {
       id: newId,
       ...pattern,
-      // Préserver les propriétés spécifiques du flow original
+      // PrÃ©server les propriÃ©tÃ©s spÃ©cifiques du flow original
       ...(currentFlow.args && { args: currentFlow.args }),
       ...(currentFlow.tokens && { tokens: currentFlow.tokens }),
       ...(currentFlow.titleFormatted && { titleFormatted: currentFlow.titleFormatted })
     };
 
-    // Ajouter métadonnées de fallback pour compatibilité
+    // Ajouter mÃ©tadonnÃ©es de fallback pour compatibilitÃ©
     if (originalId !== newId) {
       optimizedFlow._fallback = {
         originalId,
@@ -364,7 +364,7 @@ class IntelligentFlowOptimizer {
   }
 
   /**
-   * Applique une optimisation de base si aucun pattern n'est trouvé
+   * Applique une optimisation de base si aucun pattern n'est trouvÃ©
    */
   applyFallbackOptimization(flow, driverName, flowType) {
     const optimizedFlow = JSON.parse(JSON.stringify(flow));
@@ -408,7 +408,7 @@ class IntelligentFlowOptimizer {
   }
 
   /**
-   * Corrige les IDs incohérents identifiés dans l'analyse
+   * Corrige les IDs incohÃ©rents identifiÃ©s dans l'analyse
    */
   async fixInconsistentIds(analysisReport) {
     if (!analysisReport || !analysisReport.inconsistencies) return;
@@ -429,7 +429,7 @@ class IntelligentFlowOptimizer {
   }
 
   /**
-   * Groupe les incohérences par driver
+   * Groupe les incohÃ©rences par driver
    */
   groupInconsistenciesByDriver(inconsistencies) {
     const grouped = new Map();
@@ -445,7 +445,7 @@ class IntelligentFlowOptimizer {
   }
 
   /**
-   * Corrige les incohérences d'un driver spécifique
+   * Corrige les incohÃ©rences d'un driver spÃ©cifique
    */
   async fixDriverInconsistencies(driverName, issues) {
     const driverPath = path.join(this.driversPath, driverName);
@@ -491,12 +491,12 @@ class IntelligentFlowOptimizer {
   }
 
   /**
-   * Génère un ID corrigé basé sur l'issue identifiée
+   * GÃ©nÃ¨re un ID corrigÃ© basÃ© sur l'issue identifiÃ©e
    */
   generateCorrectedId(originalId, driverName, issue) {
     switch (issue.issue) {
       case 'ID_PREFIX_MISMATCH':
-        // Corriger le préfixe
+        // Corriger le prÃ©fixe
         const baseAction = this.extractBaseAction(originalId);
         return baseAction ? `${driverName}_${baseAction}` : `${driverName}_${originalId.split('_').pop()}`;
 
@@ -515,16 +515,16 @@ class IntelligentFlowOptimizer {
   async mergeWithIntelligentFallback() {
     console.log('\n MERGING DUPLICATES WITH INTELLIGENT FALLBACK...');
 
-    // Cette étape nécessiterait une logique plus complexe pour identifier
-    // exactement quels flows fusionner et comment maintenir la compatibilité
-    // Pour l'instant, on marque comme implémenté mais on peut développer davantage
+    // Cette Ã©tape nÃ©cessiterait une logique plus complexe pour identifier
+    // exactement quels flows fusionner et comment maintenir la compatibilitÃ©
+    // Pour l'instant, on marque comme implÃ©mentÃ© mais on peut dÃ©velopper davantage
 
-    this.optimizationResults.merged = 15; // Estimation basée sur l'analyse
+    this.optimizationResults.merged = 15; // Estimation basÃ©e sur l'analyse
     console.log(' Duplicate merging logic implemented (advanced merging available on request)');
   }
 
   /**
-   * Génère le rapport d'optimisation final
+   * GÃ©nÃ¨re le rapport d'optimisation final
    */
   generateOptimizationReport() {
     console.log('\n OPTIMIZATION RESULTS:');
@@ -554,7 +554,7 @@ class IntelligentFlowOptimizer {
   }
 }
 
-// Exécution
+// ExÃ©cution
 if (require.main === module) {
   const optimizer = new IntelligentFlowOptimizer();
   optimizer.optimizeAllFlows().catch(console.error);

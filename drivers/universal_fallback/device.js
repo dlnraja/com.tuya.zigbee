@@ -473,6 +473,18 @@ safeMultiply(this._setDim(value, 10)); // 0-100 to 0-1000
   onDeleted() {
     this.log('[UNIVERSAL] Device deleted');
   }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
+  }
 }
 
 module.exports = UniversalFallbackDevice;

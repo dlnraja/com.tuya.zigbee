@@ -17,7 +17,7 @@ let stats = {
   backupsCreated: 0
 };
 
-// Capabilities qui nécessitent des valeurs numériques
+// Capabilities qui nÃ©cessitent des valeurs numÃ©riques
 const NUMERIC_CAPABILITIES = [
   'measure_temperature',
   'measure_humidity',
@@ -58,7 +58,7 @@ function fixSetCapabilityValue(filePath) {
     let modified = false;
     let newContent = content;
 
-    // Patterns à détecter et corriger
+    // Patterns Ã dÃ©tecter et corriger
     NUMERIC_CAPABILITIES.forEach(capability => {
       // Pattern 1: setCapabilityValue('measure_*', variable)
       // Sans parseFloat/parseInt/Number
@@ -71,14 +71,14 @@ function fixSetCapabilityValue(filePath) {
       matches.forEach(match => {
         const [fullMatch, prefix, value, suffix] = match;
 
-        // Vérifier si déjà converti
+        // VÃ©rifier si dÃ©jÃ converti
         if (value.includes('parseFloat') ||
           value.includes('parseInt') ||
           value.includes('Number(') ||
           value === 'null' ||
           value === 'undefined' ||
           value.match(/^[0-9.]+$/)) {
-          return; // Déjà OK
+          return; // DÃ©jÃ OK
         }
 
         // Appliquer correction: ajouter parseFloat()
@@ -98,7 +98,7 @@ function fixSetCapabilityValue(filePath) {
       matches2.forEach(match => {
         const [fullMatch, prefix, value, suffix] = match;
 
-        // Vérifier si déjà converti
+        // VÃ©rifier si dÃ©jÃ converti
         if (value.includes('parseFloat') ||
           value.includes('parseInt') ||
           value.includes('Number(')) {
@@ -112,7 +112,7 @@ function fixSetCapabilityValue(filePath) {
       });
     });
 
-    // Sauvegarder si modifié
+    // Sauvegarder si modifiÃ©
     if (modified && newContent !== content) {
       // Backup
       const backupPath = `${filePath}.backup-warnings-${Date.now()}`;
@@ -133,7 +133,7 @@ function fixSetCapabilityValue(filePath) {
 }
 
 /**
- * Scanner récursivement
+ * Scanner rÃ©cursivement
  */
 function scanDirectory(dir) {
   if (!fs.existsSync(dir)) return;
@@ -154,7 +154,7 @@ function scanDirectory(dir) {
   });
 }
 
-// EXÉCUTION
+// EXÃ‰CUTION
 console.log(' Scanning drivers/...\n');
 scanDirectory(DRIVERS_DIR);
 
@@ -163,20 +163,20 @@ scanDirectory(LIB_DIR);
 
 // RAPPORT FINAL
 console.log('\n\n RAPPORT CORRECTIONS:\n');
-console.log(`   Fichiers scannés: ${stats.filesScanned}`);
-console.log(`   Fichiers modifiés: ${stats.filesModified}`);
-console.log(`   Lignes corrigées: ${stats.linesFixed}`);
-console.log(`   Backups créés: ${stats.backupsCreated}\n`);
+console.log(`   Fichiers scannÃ©s: ${stats.filesScanned}`);
+console.log(`   Fichiers modifiÃ©s: ${stats.filesModified}`);
+console.log(`   Lignes corrigÃ©es: ${stats.linesFixed}`);
+console.log(`   Backups crÃ©Ã©s: ${stats.backupsCreated}\n`);
 
 if (stats.filesModified > 0) {
-  console.log(' CORRECTIONS APPLIQUÉES\n');
-  console.log(' PROCHAINES ÉTAPES:');
+  console.log(' CORRECTIONS APPLIQUÃ‰ES\n');
+  console.log(' PROCHAINES Ã‰TAPES:');
   console.log('   1. Relancer audit: node scripts/audit_complete_advanced.js');
-  console.log('   2. Vérifier warnings restants');
+  console.log('   2. VÃ©rifier warnings restants');
   console.log('   3. Valider: homey app validate --level publish');
   console.log('   4. Build: homey app build\n');
 } else {
-  console.log(' AUCUNE CORRECTION NÉCESSAIRE\n');
+  console.log(' AUCUNE CORRECTION NÃ‰CESSAIRE\n');
 }
 
 process.exit(0);

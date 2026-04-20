@@ -32,7 +32,7 @@ class GenericTuyaDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('device_generic_tuya_universal_hybrid_generic_tuya_battery_above_device_generic_tuya_universal_hybrid');
+      const card = this._getFlowCard('device_generic_tuya_universal_hybrid_generic_tuya_battery_above_device_generic_tuya_universal_hybrid', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -44,7 +44,7 @@ class GenericTuyaDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('device_generic_tuya_universal_hybrid_generic_tuya_request_dp_device_generic_tuya_universal_hybrid');
+      const card = this._getFlowCard('device_generic_tuya_universal_hybrid_generic_tuya_request_dp_device_generic_tuya_universal_hybrid', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

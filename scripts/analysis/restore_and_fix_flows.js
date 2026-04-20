@@ -26,7 +26,7 @@ class FlowRestorerAndFixer {
   async restoreAndFix() {
     console.log(' RESTORING FROM BACKUP AND APPLYING CONSERVATIVE FIXES...');
 
-    // Trouver le backup le plus récent
+    // Trouver le backup le plus rÃ©cent
     const latestBackup = this.findLatestBackup();
     if (!latestBackup) {
       console.log(' No backup found!');
@@ -38,14 +38,14 @@ class FlowRestorerAndFixer {
     // Restaurer les flows depuis le backup
     await this.restoreFromBackup(latestBackup);
 
-    // Appliquer corrections conservatives (uniquement pour les problèmes critiques)
+    // Appliquer corrections conservatives (uniquement pour les problÃ¨mes critiques)
     await this.applyConservativeFixes();
 
     this.generateReport();
   }
 
   /**
-   * Trouve le backup le plus récent
+   * Trouve le backup le plus rÃ©cent
    */
   findLatestBackup() {
     if (!fs.existsSync(this.backupPath)) return null;
@@ -69,7 +69,7 @@ class FlowRestorerAndFixer {
   }
 
   /**
-   * Copie récursive des fichiers de flow
+   * Copie rÃ©cursive des fichiers de flow
    */
   async copyFlowFilesRecursive(source, destination) {
     const items = fs.readdirSync(source);
@@ -92,7 +92,7 @@ class FlowRestorerAndFixer {
   }
 
   /**
-   * Applique corrections conservatives (seulement les problèmes critiques)
+   * Applique corrections conservatives (seulement les problÃ¨mes critiques)
    */
   async applyConservativeFixes() {
     console.log(' Applying conservative fixes...');
@@ -118,17 +118,17 @@ class FlowRestorerAndFixer {
   }
 
   /**
-   * Applique corrections conservatives à un fichier de flow
+   * Applique corrections conservatives Ã un fichier de flow
    */
   async applyConservativeFixToFile(driverName, flowPath) {
     try {
       const flows = JSON.parse(fs.readFileSync(flowPath, 'utf8'));
       let modified = false;
 
-      // Seulement corriger les problèmes suivants (conservativement):
-      // 1. IDs extrêmement longs (>80 caractères)
-      // 2. IDs avec des caractères invalides
-      // 3. IDs sans préfixe du driver
+      // Seulement corriger les problÃ¨mes suivants (conservativement):
+      // 1. IDs extrÃªmement longs (>80 caractÃ¨res)
+      // 2. IDs avec des caractÃ¨res invalides
+      // 3. IDs sans prÃ©fixe du driver
 
       ['triggers', 'conditions', 'actions'].forEach(flowType => {
         if (flows[flowType]) {
@@ -138,7 +138,7 @@ class FlowRestorerAndFixer {
               const fixedId = this.applyConservativeIdFix(flow.id, driverName);
 
               if (fixedId !== originalId) {
-                // Ajouter fallback metadata pour compatibilité
+                // Ajouter fallback metadata pour compatibilitÃ©
                 flow._conservativeFix = {
                   originalId,
                   fixVersion: '5.5.295',
@@ -153,10 +153,10 @@ class FlowRestorerAndFixer {
         }
       });
 
-      // Détecter et signaler les doublons (sans les corriger automatiquement)
+      // DÃ©tecter et signaler les doublons (sans les corriger automatiquement)
       this.detectDuplicatesOnly(flows, driverName);
 
-      // Sauvegarder seulement si nécessaire
+      // Sauvegarder seulement si nÃ©cessaire
       if (modified) {
         fs.writeFileSync(flowPath, JSON.stringify(flows, null, 2));
         console.log(` Applied conservative fixes to ${driverName}`);
@@ -168,12 +168,12 @@ class FlowRestorerAndFixer {
   }
 
   /**
-   * Applique correction conservative à un ID
+   * Applique correction conservative Ã un ID
    */
   applyConservativeIdFix(flowId, driverName) {
     let fixed = flowId;
 
-    // 1. Corriger uniquement les IDs extrêmement longs (>80 chars)
+    // 1. Corriger uniquement les IDs extrÃªmement longs (>80 chars)
     if (fixed.length > 80) {
       // Supprimer seulement les parties les plus redondantes
       fixed = fixed
@@ -184,21 +184,21 @@ class FlowRestorerAndFixer {
         .replace(/_{3,}/g, '_');
     }
 
-    // 2. S'assurer que l'ID commence par le nom du driver (très conservatif)
+    // 2. S'assurer que l'ID commence par le nom du driver (trÃ¨s conservatif)
     if (!fixed.startsWith(driverName) && fixed.length > 60) {
-      // Seulement pour les IDs très longs qui ne commencent pas par le driver
+      // Seulement pour les IDs trÃ¨s longs qui ne commencent pas par le driver
       const basePart = fixed.replace(/^[^_]+_/, '');
       fixed = `${driverName}_${basePart}`;
     }
 
-    // 3. Nettoyer les caractères potentiellement problématiques
+    // 3. Nettoyer les caractÃ¨res potentiellement problÃ©matiques
     fixed = fixed.replace(/[^a-zA-Z0-9_]/g, '_').replace(/_{2,}/g, '_');
 
     return fixed;
   }
 
   /**
-   * Détermine la raison de la correction
+   * DÃ©termine la raison de la correction
    */
   getFixReason(originalId, fixedId) {
     if (originalId.length > 80) return 'id_too_long';
@@ -207,7 +207,7 @@ class FlowRestorerAndFixer {
   }
 
   /**
-   * Détecte les doublons sans les corriger (pour rapport seulement)
+   * DÃ©tecte les doublons sans les corriger (pour rapport seulement)
    */
   detectDuplicatesOnly(flows, driverName) {
     const seenIds = new Map();
@@ -235,7 +235,7 @@ class FlowRestorerAndFixer {
   }
 
   /**
-   * Génère le rapport final
+   * GÃ©nÃ¨re le rapport final
    */
   generateReport() {
     console.log('\n RESTORATION & CONSERVATIVE FIX RESULTS:');
@@ -274,7 +274,7 @@ class FlowRestorerAndFixer {
   }
 }
 
-// Exécution
+// ExÃ©cution
 if (require.main === module) {
   const restorer = new FlowRestorerAndFixer();
   restorer.restoreAndFix().catch(console.error);

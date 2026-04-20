@@ -4,40 +4,40 @@
       "id": "remote_dimmer_button_on",
       "title": {
         "en": "ON button pressed",
-        "fr": "Bouton ON appuyé"
+        "fr": "Bouton ON appuyÃ©"
       },
       "titleFormatted": {
         "en": "ON button pressed",
-        "fr": "Bouton ON appuyé"
+        "fr": "Bouton ON appuyÃ©"
       }
     },
     {
       "id": "remote_dimmer_button_off",
       "title": {
         "en": "OFF button pressed",
-        "fr": "Bouton OFF appuyé"
+        "fr": "Bouton OFF appuyÃ©"
       },
       "titleFormatted": {
         "en": "OFF button pressed",
-        "fr": "Bouton OFF appuyé"
+        "fr": "Bouton OFF appuyÃ©"
       }
     },
     {
       "id": "remote_dimmer_button_toggle",
       "title": {
         "en": "Toggle button pressed",
-        "fr": "Bouton Toggle appuyé"
+        "fr": "Bouton Toggle appuyÃ©"
       },
       "titleFormatted": {
         "en": "Toggle button pressed",
-        "fr": "Bouton Toggle appuyé"
+        "fr": "Bouton Toggle appuyÃ©"
       }
     },
     {
       "id": "remote_dimmer_brightness_up",
       "title": {
         "en": "Brightness up pressed",
-        "fr": "Luminosité + appuyé"
+        "fr": "LuminositÃ© + appuyÃ©"
       },
       "tokens": [
         {
@@ -50,14 +50,14 @@
       ],
       "titleFormatted": {
         "en": "Brightness up pressed",
-        "fr": "Luminosité + appuyé"
+        "fr": "LuminositÃ© + appuyÃ©"
       }
     },
     {
       "id": "remote_dimmer_brightness_down",
       "title": {
         "en": "Brightness down pressed",
-        "fr": "Luminosité - appuyé"
+        "fr": "LuminositÃ© - appuyÃ©"
       },
       "tokens": [
         {
@@ -70,25 +70,25 @@
       ],
       "titleFormatted": {
         "en": "Brightness down pressed",
-        "fr": "Luminosité - appuyé"
+        "fr": "LuminositÃ© - appuyÃ©"
       }
     },
     {
       "id": "remote_dimmer_brightness_stop",
       "title": {
         "en": "Brightness adjustment stopped",
-        "fr": "Ajustement luminosité arrêté"
+        "fr": "Ajustement luminositÃ© arrÃªtÃ©"
       },
       "titleFormatted": {
         "en": "Brightness adjustment stopped",
-        "fr": "Ajustement luminosité arrêté"
+        "fr": "Ajustement luminositÃ© arrÃªtÃ©"
       }
     },
     {
       "id": "remote_dimmer_brightness_set",
       "title": {
         "en": "Brightness level set",
-        "fr": "Niveau de luminosité défini"
+        "fr": "Niveau de luminositÃ© dÃ©fini"
       },
       "tokens": [
         {
@@ -101,14 +101,14 @@
       ],
       "titleFormatted": {
         "en": "Brightness level set",
-        "fr": "Niveau de luminosité défini"
+        "fr": "Niveau de luminositÃ© dÃ©fini"
       }
     },
     {
       "id": "remote_dimmer_scene",
       "title": {
         "en": "Scene button pressed",
-        "fr": "Bouton scène appuyé"
+        "fr": "Bouton scÃ¨ne appuyÃ©"
       },
       "tokens": [
         {
@@ -121,7 +121,7 @@
       ],
       "titleFormatted": {
         "en": "Scene button pressed",
-        "fr": "Bouton scène appuyé"
+        "fr": "Bouton scÃ¨ne appuyÃ©"
       }
     }
   ]

@@ -4,17 +4,17 @@
     "en": "DP threshold crossed",
     "fr": "Seuil DP franchi",
     "nl": "DP drempel overschreden",
-    "de": "DP Schwellwert überschritten"
+    "de": "DP Schwellwert Ã¼berschritten"
   },
   "titleFormatted": {
     "en": "DP [[dp]] on [[device]] crosses threshold [[threshold]]",
     "fr": "DP [[dp]] de [[device]] franchit le seuil [[threshold]]",
     "nl": "DP [[dp]] van [[device]] overschrijdt drempel [[threshold]]",
-    "de": "DP [[dp]] von [[device]] überschreitet Schwellwert [[threshold]]"
+    "de": "DP [[dp]] von [[device]] Ã¼berschreitet Schwellwert [[threshold]]"
   },
   "hint": {
     "en": "Triggers when a numeric DP value crosses a threshold (forum #1016)",
-    "fr": "Se déclenche quand une valeur DP numérique franchit un seuil"
+    "fr": "Se dÃ©clenche quand une valeur DP numÃ©rique franchit un seuil"
   },
   "tokens": [
     {
@@ -22,7 +22,7 @@
       "type": "number",
       "title": {
         "en": "DP Number",
-        "fr": "Numéro DP"
+        "fr": "NumÃ©ro DP"
       },
       "example": 1
     },
@@ -65,7 +65,7 @@
       "type": "number",
       "title": {
         "en": "DP Number",
-        "fr": "Numéro DP"
+        "fr": "NumÃ©ro DP"
       },
       "min": 1,
       "max": 255

@@ -157,14 +157,14 @@
       "id": "wall_dimmer_1gang_1way_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
@@ -189,13 +189,13 @@
       "id": "wall_dimmer_1gang_1way_set_brightness",
       "title": {
         "en": "Set brightness",
-        "fr": "Régler luminosité",
+        "fr": "RÃ©gler luminositÃ©",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
       },
       "titleFormatted": {
         "en": "Set brightness to [[brightness]]%",
-        "fr": "Régler luminosité à [[brightness]]%",
+        "fr": "RÃ©gler luminositÃ© Ã [[brightness]]%",
         "nl": "Helderheid op [[brightness]]%",
         "de": "Helligkeit auf [[brightness]]%"
       },
@@ -217,14 +217,14 @@
       "id": "wall_dimmer_1gang_1way_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }

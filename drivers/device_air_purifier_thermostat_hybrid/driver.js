@@ -35,7 +35,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_is_heating');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_is_heating', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -45,7 +45,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_is_heating: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temperature_above_target');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temperature_above_target', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -56,7 +56,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temperature_above_target: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temperature_below_target');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temperature_below_target', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -66,7 +66,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temperature_below_target: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_mode_is');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_mode_is', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -76,7 +76,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_mode_is: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_child_lock_is');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_child_lock_is', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -86,7 +86,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_child_lock_is: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_is_on');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_is_on', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -97,7 +97,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_target_temperature');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_target_temperature', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -108,7 +108,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_target_temperature: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_mode');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_mode', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -120,7 +120,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_mode: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_increase_temperature');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_increase_temperature', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -132,7 +132,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_increase_temperature: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_decrease_temperature');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_decrease_temperature', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -144,7 +144,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_decrease_temperature: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_child_lock');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_child_lock', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -156,7 +156,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_child_lock: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_comfort_preset');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_comfort_preset', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -168,7 +168,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_comfort_preset: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_schedule_on');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_schedule_on', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -179,7 +179,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_schedule_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_schedule_off');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_schedule_off', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -190,7 +190,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_schedule_off: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turn_on');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turn_on', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -201,7 +201,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turn_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turn_off');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turn_off', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -212,7 +212,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turn_off: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_toggle');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_toggle', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -224,7 +224,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_toggle: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_temperature');
+      const card = this._getFlowCard('device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_temperature', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

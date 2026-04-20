@@ -35,7 +35,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  NODE_VERSION: "20"
+  NODE_VERSION: "22"
   APP_ID: "com.dlnraja.tuya.zigbee"
   SHADOW_MODE: "true"
   DEBUG: "false"
@@ -102,11 +102,17 @@ jobs:
           node scripts/maintenance/zero-defect-architect-audit.js
           if [ -f docs/reports/ZERO_DEFECT_AUDIT.json ]; then
             echo "### 🛡️ Zero Defect Audit Summary" >> $GITHUB_STEP_SUMMARY
-            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); console.log('| Metric | Count | \n| --- | --- | \n| Drivers Checked | ' + r.driversChecked + ' | \n| NaN Safety Warnings | ' + r.naNSafetyCheck.length + ' | \n| ID Collisions | ' + r.collisions.length + ' | \n| SDK Deprecations | ' + r.sdkDeprecations.length + ' | \n| Button Logic Issues | ' + r.buttonLogicFailures.length + ' | \n| Intelligent Inversions | ' + (require('./lib/data/SensorConfigs.js').TZE284_IADRO9BF ? '1 [TZE284]' : '0') + ' |');" >> $GITHUB_STEP_SUMMARY
+            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); console.log('| Metric | Count | \n| --- | --- | \n| Drivers Checked | ' + r.driversChecked + ' | \n| NaN Safety Warnings | ' + r.naNSafetyCheck.length + ' | \n| ID Collisions | ' + r.collisions.length + ' | \n| SDK Deprecations | ' + r.sdkDeprecations.length + ' | \n| Button Logic Issues | ' + r.buttonLogicFailures.length + ' |');" >> $GITHUB_STEP_SUMMARY
             
-            # Fail if there are critical violations
-            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); if(r.naNSafetyCheck.length > 0) { console.error('FAILED: ' + r.naNSafetyCheck.length + ' NaN safety warnings detected!'); process.exit(1); }"
+            # Fail if there are critical violations (NaN or Collisions)
+            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); if(r.naNSafetyCheck.length > 0 || r.collisions.length > 0) { console.error('FAILED: Architectural violations detected! (NaN:' + r.naNSafetyCheck.length + ', Collisions:' + r.collisions.length + ')'); process.exit(1); }"
           fi
+
+      - name: 🛡️ FINAL FINGERPRINT DISAMBIGUATION
+        run: node scripts/automation/fix-fingerprint-conflicts.js
+
+      - name: 🧹 EMERGENCY CORRUPTION REPAIR
+        run: node scripts/remediation/emergency-repair-hardener-corruption.js
 
       - name: Homey Validate (Recursive Auto-Fix)
         run: node scripts/maintenance/recursive-validator.js
@@ -143,7 +149,7 @@ jobs:
         uses: athombv/github-action-homey-app-version@v1
         with:
           version: ${{ github.event.inputs.bump || 'patch' }}
-          changelog: "v${{ github.event.inputs.bump || 'patch' }}: 🌌 UNIFIED ENGINE v7.4.5 - Superior Genesis Intelligence & Architectural Hardening."
+          changelog: "v${{ github.event.inputs.bump || 'patch' }}: 🌌 UNIFIED ENGINE v7.4.6 - Zero-Defect Architecture, Bseed Disambiguation & Hardened Siren Stabilization."
 
       - name: 🔄 Sync Version
         if: steps.bump.outcome == 'success'
@@ -175,7 +181,7 @@ jobs:
       - name: 📤 Silent Publish (Shadow Mode)
         id: publish
         if: env.NEW_VERSION != ''
-        uses: athombv/github-action-homey-app-publish@master
+        uses: athombv/github-action-homey-app-publish@v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
 

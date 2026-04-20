@@ -31,7 +31,7 @@ class RainSensorDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('rain_sensor_is_raining');
+      const card = this._getFlowCard('rain_sensor_is_raining', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -41,7 +41,7 @@ class RainSensorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition rain_sensor_is_raining: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('rain_sensor_rain_intensity_above');
+      const card = this._getFlowCard('rain_sensor_rain_intensity_above', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -52,7 +52,7 @@ class RainSensorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition rain_sensor_rain_intensity_above: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('rain_sensor_water_detected');
+      const card = this._getFlowCard('rain_sensor_water_detected', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

@@ -36,7 +36,7 @@ function enrichDriver(driverName, newIds) {
   const composeFile = path.join(DRIVERS_DIR, driverName, 'driver.compose.json');
 
   if (!fs.existsSync(composeFile)) {
-    console.log(`     ${driverName}: driver non trouvé`);
+    console.log(`     ${driverName}: driver non trouvÃ©`);
     stats.driversNotFound++;
     return false;
   }
@@ -55,7 +55,7 @@ function enrichDriver(driverName, newIds) {
     const idsToAdd = newIds.filter(id => !currentIdsUpper.has(id.toUpperCase()));
 
     if (idsToAdd.length === 0) {
-      console.log(`    ${driverName}: tous les IDs déjà présents`);
+      console.log(`    ${driverName}: tous les IDs dÃ©jÃ prÃ©sents`);
       return false;
     }
 
@@ -74,7 +74,7 @@ function enrichDriver(driverName, newIds) {
     stats.idsAdded += idsToAdd.length;
 
     console.log(`    ${driverName}: +${idsToAdd.length} IDs (${currentIds.length}  ${content.zigbee.manufacturerName.length})`);
-    console.log(`      Ajoutés: ${normalizedNew.join(', ')}`);
+    console.log(`      AjoutÃ©s: ${normalizedNew.join(', ')}`);
 
     return true;
 
@@ -92,12 +92,12 @@ Object.entries(PHASE2_IDS).forEach(([driverName, ids]) => {
 
 console.log('\n RAPPORT PHASE 2:\n');
 console.log(`   Drivers enrichis: ${stats.driversEnriched}`);
-console.log(`   IDs ajoutés: ${stats.idsAdded}`);
-console.log(`   Drivers non trouvés: ${stats.driversNotFound}`);
-console.log(`   Backups créés: ${stats.backupsCreated}\n`);
+console.log(`   IDs ajoutÃ©s: ${stats.idsAdded}`);
+console.log(`   Drivers non trouvÃ©s: ${stats.driversNotFound}`);
+console.log(`   Backups crÃ©Ã©s: ${stats.backupsCreated}\n`);
 
 if (stats.driversNotFound > 0) {
-  console.log('  DRIVERS MANQUANTS (nécessitent création):\n');
+  console.log('  DRIVERS MANQUANTS (nÃ©cessitent crÃ©ation):\n');
   Object.keys(PHASE2_IDS).forEach(driver => {
     const composePath = path.join(DRIVERS_DIR, driver, 'driver.compose.json');
     if (!fs.existsSync(composePath)) {
@@ -107,6 +107,6 @@ if (stats.driversNotFound > 0) {
   console.log();
 }
 
-console.log(' PHASE 2 TERMINÉE\n');
+console.log(' PHASE 2 TERMINÃ‰E\n');
 
 process.exit(0);

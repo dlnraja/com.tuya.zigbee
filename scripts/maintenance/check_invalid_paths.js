@@ -35,7 +35,7 @@ const SAFE_PATTERNS = [
   /base64:/,
   /\/ $/,  // trailing space after / is valid in some contexts
   /console\.log.*lib \/ /,  // examples in console.log/demo output
-  /✗ require/,  // demo examples showing incorrect patterns
+  /âœ— require/,  // demo examples showing incorrect patterns
 ];
 
 function shouldExclude(filePath) {
@@ -71,7 +71,7 @@ function scanFile(filePath, issues) {
       });
     });
   } catch (err) {
-    console.warn(`⚠️  Could not read ${filePath}: ${err.message}`);
+    console.warn(`âšï¸  Could not read ${filePath}: ${err.message}`);
   }
 }
 
@@ -91,12 +91,12 @@ function scanDirectory(dirPath, issues) {
       }
     }
   } catch (err) {
-    console.warn(`⚠️  Could not scan ${dirPath}: ${err.message}`);
+    console.warn(`âšï¸  Could not scan ${dirPath}: ${err.message}`);
   }
 }
 
 function main() {
-  console.log('🔍 Running Invalid Path Scanner...');
+  console.log('ðŸ” Running Invalid Path Scanner...');
   console.log('');
   
   const rootDir = path.resolve(__dirname, '..');
@@ -106,19 +106,19 @@ function main() {
   scanDirectory(rootDir, issues);
   
   // Report results
-  console.log('═══════════════════════════════════════════════════════');
-  console.log('📊 SCAN RESULTS');
-  console.log('═══════════════════════════════════════════════════════');
+  console.log('â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
+  console.log('ðŸ“Š SCAN RESULTS');
+  console.log('â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
   console.log('');
   
   if (issues.length === 0) {
-    console.log('✅ No invalid paths found!');
+    console.log('âœ… No invalid paths found!');
     console.log('');
     console.log('All require/import paths are properly formatted.');
     process.exit(0);
   }
   
-  console.log(`❌ Found ${issues.length} invalid path(s):`);
+  console.log(`âŒ Found ${issues.length} invalid path(s):`);
   console.log('');
   
   // Group by file
@@ -132,25 +132,25 @@ function main() {
   
   // Display issues
   Object.keys(byFile).forEach(file => {
-    console.log(`📄 ${file}`);
+    console.log(`ðŸ“„ ${file}`);
     byFile[file].forEach(issue => {
       console.log(`   Line ${issue.line}: ${issue.pattern}`);
-      console.log(`   → ${issue.content}`);
+      console.log(`   â†’ ${issue.content}`);
     });
     console.log('');
   });
   
-  console.log('═══════════════════════════════════════════════════════');
-  console.log('🔧 FIX INSTRUCTIONS');
-  console.log('═══════════════════════════════════════════════════════');
+  console.log('â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
+  console.log('ðŸ”§ FIX INSTRUCTIONS');
+  console.log('â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
   console.log('');
   console.log('Replace patterns like:');
-  console.log('  ✗ require("./lib / module")');
-  console.log('  ✗ require("./lib /shims / color-space-shim")');
+  console.log('  âœ— require("./lib / module")');
+  console.log('  âœ— require("./lib /shims / color-space-shim")');
   console.log('');
   console.log('With correct paths:');
-  console.log('  ✓ require("./lib/module")');
-  console.log('  ✓ require("./lib/shims/color-space-shim")');
+  console.log('  âœ“ require("./lib/module")');
+  console.log('  âœ“ require("./lib/shims/color-space-shim")');
   console.log('');
   
   // Exit with error for CI/CD

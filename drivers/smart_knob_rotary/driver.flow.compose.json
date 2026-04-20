@@ -11,7 +11,7 @@
       },
       "hint": {
         "en": "When the knob is rotated counter-clockwise",
-        "fr": "Lorsque le bouton est tourné dans le sens antihoraire"
+        "fr": "Lorsque le bouton est tournÃ© dans le sens antihoraire"
       },
       "tokens": [
         {
@@ -19,7 +19,7 @@
           "type": "number",
           "title": {
             "en": "Brightness %",
-            "fr": "Luminosité %"
+            "fr": "LuminositÃ© %"
           },
           "example": 50
         }
@@ -43,7 +43,7 @@
       },
       "hint": {
         "en": "When the knob is rotated clockwise",
-        "fr": "Lorsque le bouton est tourné dans le sens horaire"
+        "fr": "Lorsque le bouton est tournÃ© dans le sens horaire"
       },
       "tokens": [
         {
@@ -51,7 +51,7 @@
           "type": "number",
           "title": {
             "en": "Brightness %",
-            "fr": "Luminosité %"
+            "fr": "LuminositÃ© %"
           },
           "example": 50
         }
@@ -69,13 +69,13 @@
       "highlight": true,
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé",
+        "fr": "Bouton appuyÃ©",
         "nl": "Knop ingedrukt",
-        "de": "Taste gedrückt"
+        "de": "Taste gedrÃ¼ckt"
       },
       "hint": {
         "en": "When the knob button is pressed (single, double, or hold)",
-        "fr": "Lorsque le bouton est appuyé (simple, double ou maintenu)"
+        "fr": "Lorsque le bouton est appuyÃ© (simple, double ou maintenu)"
       },
       "tokens": [
         {
@@ -91,9 +91,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé",
+        "fr": "Bouton appuyÃ©",
         "nl": "Knop ingedrukt",
-        "de": "Taste gedrückt"
+        "de": "Taste gedrÃ¼ckt"
       }
     },
     {
@@ -166,11 +166,11 @@
       "id": "smart_knob_rotary_brightness_above",
       "title": {
         "en": "Brightness level is above...",
-        "fr": "Niveau de luminosité supérieur à..."
+        "fr": "Niveau de luminositÃ© supÃ©rieur Ã..."
       },
       "titleFormatted": {
         "en": "Brightness level is above [[level]]%",
-        "fr": "Niveau de luminosité supérieur à [[level]]%"
+        "fr": "Niveau de luminositÃ© supÃ©rieur Ã [[level]]%"
       },
       "args": [
         {
@@ -192,13 +192,13 @@
       "id": "smart_knob_rotary_set_brightness",
       "title": {
         "en": "Set brightness",
-        "fr": "Régler luminosité",
+        "fr": "RÃ©gler luminositÃ©",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
       },
       "titleFormatted": {
         "en": "Set brightness to [[brightness]]%",
-        "fr": "Régler luminosité à [[brightness]]%",
+        "fr": "RÃ©gler luminositÃ© Ã [[brightness]]%",
         "nl": "Helderheid op [[brightness]]%",
         "de": "Helligkeit auf [[brightness]]%"
       },

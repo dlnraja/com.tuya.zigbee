@@ -8,8 +8,8 @@ const EweLinkLocalDevice = require('../../lib/ewelink-local/EweLinkLocalDevice')
 class SonoffMinir4 extends EweLinkLocalDevice {
 
   /**
-   * Mappage des états (Inspiration Tuya/Sonoff Hybrid)
-   * Centralisé pour profiter de _safeSetCapability héritée
+   * Mappage des Ã©tats (Inspiration Tuya/Sonoff Hybrid)
+   * CentralisÃ© pour profiter de _safeSetCapability hÃ©ritÃ©e
    */
   get stateMappings() {
     return {

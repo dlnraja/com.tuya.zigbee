@@ -93,7 +93,7 @@ function getSensorConfig(manufacturerName, modelId = null) {
       }
       // v5.5.841: HOBEIAN ZG-204ZV MULTISENSOR (Peter_van_Werkhoven diagnostic fix)
       // 5-in-1 sensor: motion, illuminance, temp, humidity, battery
-      // DP mappings: DP1=motion, DP3=temp÷10, DP4=humidity, DP9=lux, DP10=battery
+      // DP mappings: DP1=motion, DP3=tempÃƒÂ·10, DP4=humidity, DP9=lux, DP10=battery
       if (CI.equalsCI(modelId, 'ZG-204ZV')) {
         console.log('[RADAR]  HOBEIAN ZG-204ZV matched  ZG_204ZV_MULTISENSOR config (5-in-1: motion+lux+temp+hum+battery)');
         return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };
@@ -123,7 +123,7 @@ function getSensorConfig(manufacturerName, modelId = null) {
 
   // Try exact match first (case-insensitive)
   // v5.7.41: FIX - Device reports _TZ3000_8BXRZYXZ but config has _TZ3000_8bxrzyxz
-  const mfrKey = (manufacturerName || '').toLowerCase();
+  const mfrKey = CI.normalize(manufacturerName);
   if (MANUFACTURER_CONFIG_MAP[mfrKey]) {
     return MANUFACTURER_CONFIG_MAP[mfrKey];
   }
@@ -386,7 +386,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   }
 
   // v5.5.316: FIXED - Only auto-detect raw ADC for values > 50000 (clearly wrong)
-  // Previous bug: ÷100 if > 10000 broke sensors reporting legitimate high lux
+  // Previous bug: ÃƒÂ·100 if > 10000 broke sensors reporting legitimate high lux
   if (lux > 50000) {
     const converted = Math.round(safeParse(lux, 100));
     console.log(`[LUX-FIX]  Extreme value detected for ${manufacturerName}: ${originalValue} -> ${converted} lux`);
@@ -531,8 +531,8 @@ function transformDistance(value, divisor = 100, manufacturerName = '', deviceId
     distance = VALIDATION.DISTANCE_MAX;
   }
 
-  const result = safeDivide(Math.round(distance * 100), 100); // 2 decimal places
-  console.log(`[DISTANCE-FIX]  ${manufacturerName}: ${originalValue} (÷${effectiveDivisor}) -> ${result}m`);
+  const result = Math.round(distance * 100)/100); // 2 decimal places
+  console.log(`[DISTANCE-FIX]  ${manufacturerName}: ${originalValue} (ÃƒÂ·${effectiveDivisor}) -> ${result}m`);
   return result;
 }
 
@@ -1476,10 +1476,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const divisor = dpMap[dpId].divisor || 10;
       const temp = Math.round((safeDivide(rawTemp,safeMultiply(divisor)), safeParse)(10), 10);
       if (temp >= -40 && temp <= 80) {
-        this.log(`[RADAR]  DP${dpId}  temperature = ${temp}°C (raw: ${rawTemp}, ÷${divisor})`);
+        this.log(`[RADAR]  DP${dpId}  temperature = ${temp}Ã‚Â°C (raw: ${rawTemp}, ÃƒÂ·${divisor})`);
         this.setCapabilityValue('measure_temperature', temp).catch(() => { });
       } else {
-        this.log(`[RADAR]  DP${dpId} temperature out of range: ${temp}°C (raw: ${rawTemp})`);
+        this.log(`[RADAR]  DP${dpId} temperature out of range: ${temp}Ã‚Â°C (raw: ${rawTemp})`);
       }
       return;
     }
@@ -1489,14 +1489,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const divisor = dpMap[dpId].divisor || 1;
       const multiplier = dpMap[dpId].multiplier || 1;
       // v5.5.987: Peter #1265 - Support multiplier for humidity (9%  90%)
-      // v5.11.26: Auto-fix out-of-range - some variants report ×10 (700=70%)
-      // while others report ÷10 (9=90%), so multiplier:10 doesn't work for all
+      // v5.11.26: Auto-fix out-of-range - some variants report Ãƒâ€”10 (700=70%)
+      // while others report ÃƒÂ·10 (9=90%), so multiplier:10 doesn't work for all
       let humidity = Math.round((safeDivide(rawHumid,safeMultiply(divisor)), multiplier));
       if (humidity > 100 && rawHumid > 100) {
         humidity = Math.round(safeParse(rawHumid, 10));
       }
       if (humidity >= 0 && humidity <= 100) {
-        this.log(`[RADAR]  DP${dpId}  humidity = ${humidity}% (raw: ${rawHumid}, ÷${divisor}, ×${multiplier})`);
+        this.log(`[RADAR]  DP${dpId}  humidity = ${humidity}% (raw: ${rawHumid}, ÃƒÂ·${divisor}, Ãƒâ€”${multiplier})`);
         this.setCapabilityValue('measure_humidity', humidity).catch(() => { });
       } else {
         this.log(`[RADAR]  DP${dpId} humidity out of range: ${humidity}% (raw: ${rawHumid})`);
@@ -1987,10 +1987,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const tempCluster = ep1.clusters?.msTemperatureMeasurement || ep1.clusters?.temperatureMeasurement;
       if (tempCluster?.on) {
         tempCluster.on('attr.measuredValue', (v) => {
-          // ZCL reports temperature in hundredths of °C (e.g., 2350 = 23.50°C)
+          // ZCL reports temperature in hundredths of Ã‚Â°C (e.g., 2350 = 23.50Ã‚Â°C)
           const temp = safeParse(v, 100);
           if (temp > -40 && temp < 100) { // Sanity check
-            this.log(`[RADAR]  ZCL Temperature: ${v} -> ${temp}°C`);
+            this.log(`[RADAR]  ZCL Temperature: ${v} -> ${temp}Ã‚Â°C`);
             this.setCapabilityValue('measure_temperature', temp).catch(() => { });
           }
         });
@@ -2750,6 +2750,18 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     }
 
     this.log('[RADAR]  All timers and state cleaned up');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 

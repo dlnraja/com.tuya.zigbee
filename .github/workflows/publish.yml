@@ -10,10 +10,10 @@ jobs:
     if: github.actor != 'github-actions[bot]'
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       
       - name: Setup Node (Free Tier Cache)
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: 'npm'
@@ -28,6 +28,6 @@ jobs:
         run: npx homey app build
         
       - name: Silent Publish to Test Track (No Notifications)
-        uses: athombv/github-action-homey-app-publish@master
+        uses: athombv/github-action-homey-app-publish@v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}

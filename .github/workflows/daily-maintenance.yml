@@ -47,8 +47,13 @@ jobs:
           else
             echo "✓ All variants synced"
           fi
-+++++++
- REPLACE
+
+      - name: 🕵️ ZERO DEFECT AUDIT & HARDENING
+        run: |
+          node scripts/automation/fix-fingerprint-conflicts.js
+          node scripts/remediation/emergency-repair-hardener-corruption.js
+          node scripts/maintenance/zero-defect-architect-audit.js
+
 
       - name: Commit & Push Changes (Robust)
         run: |

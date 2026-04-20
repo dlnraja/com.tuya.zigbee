@@ -125,7 +125,7 @@ jobs:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
       - name: "🎉 Create Release"
         if: success() && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false'))
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ github.run_number }}
           generate_release_notes: true

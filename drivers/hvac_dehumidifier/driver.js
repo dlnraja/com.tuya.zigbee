@@ -39,7 +39,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('hvac_dehumidifier_dehumidifier_hybrid_is_on');
+      const card = this._getFlowCard('hvac_dehumidifier_dehumidifier_hybrid_is_on', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -49,7 +49,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition hvac_dehumidifier_dehumidifier_hybrid_is_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('hvac_dehumidifier_is_on');
+      const card = this._getFlowCard('hvac_dehumidifier_is_on', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -59,7 +59,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition hvac_dehumidifier_is_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('hvac_dehumidifier_water_detected');
+      const card = this._getFlowCard('hvac_dehumidifier_water_detected', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -70,7 +70,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('hvac_dehumidifier_dehumidifier_hybrid_turn_on');
+      const card = this._getFlowCard('hvac_dehumidifier_dehumidifier_hybrid_turn_on', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -81,7 +81,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action hvac_dehumidifier_dehumidifier_hybrid_turn_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('hvac_dehumidifier_dehumidifier_hybrid_turn_off');
+      const card = this._getFlowCard('hvac_dehumidifier_dehumidifier_hybrid_turn_off', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -92,7 +92,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action hvac_dehumidifier_dehumidifier_hybrid_turn_off: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('hvac_dehumidifier_dehumidifier_hybrid_toggle');
+      const card = this._getFlowCard('hvac_dehumidifier_dehumidifier_hybrid_toggle', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -104,7 +104,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action hvac_dehumidifier_dehumidifier_hybrid_toggle: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('hvac_dehumidifier_turn_on');
+      const card = this._getFlowCard('hvac_dehumidifier_turn_on', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -115,7 +115,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action hvac_dehumidifier_turn_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('hvac_dehumidifier_turn_off');
+      const card = this._getFlowCard('hvac_dehumidifier_turn_off', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -126,7 +126,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action hvac_dehumidifier_turn_off: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('hvac_dehumidifier_toggle');
+      const card = this._getFlowCard('hvac_dehumidifier_toggle', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -138,7 +138,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action hvac_dehumidifier_toggle: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('hvac_dehumidifier_set_temperature');
+      const card = this._getFlowCard('hvac_dehumidifier_set_temperature', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

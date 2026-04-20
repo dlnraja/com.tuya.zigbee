@@ -17,7 +17,7 @@
       "title": "Vannlekkasje"
     },
     "alarm_smoke": {
-      "title": "Røyk"
+      "title": "RÃ¸yk"
     },
     "alarm_co": {
       "title": "CO"
@@ -32,7 +32,7 @@
       "title": "Vibrasjon"
     },
     "onoff": {
-      "title": "Strøm"
+      "title": "StrÃ¸m"
     },
     "dim": {
       "title": "Lysstyrke",
@@ -52,7 +52,7 @@
     },
     "measure_temperature": {
       "title": "Temperatur",
-      "units": "°C"
+      "units": "Â°C"
     },
     "measure_humidity": {
       "title": "Luftfuktighet",
@@ -68,7 +68,7 @@
     },
     "measure_pm25": {
       "title": "PM2.5",
-      "units": "µg/m³"
+      "units": "Âµg/mÂ³"
     },
     "measure_voc": {
       "title": "VOC",
@@ -87,7 +87,7 @@
       "units": "V"
     },
     "measure_current": {
-      "title": "Strøm",
+      "title": "StrÃ¸m",
       "units": "A"
     },
     "meter_power": {
@@ -95,8 +95,8 @@
       "units": "kWh"
     },
     "target_temperature": {
-      "title": "Måltemperatur",
-      "units": "°C"
+      "title": "MÃ¥ltemperatur",
+      "units": "Â°C"
     },
     "windowcoverings_state": {
       "title": "Persienner",
@@ -116,20 +116,20 @@
   },
   "settings": {
     "power_source": {
-      "label": "Strømkilde",
-      "hint": "Velg strømkilde manuelt eller bruk automatisk deteksjon"
+      "label": "StrÃ¸mkilde",
+      "hint": "Velg strÃ¸mkilde manuelt eller bruk automatisk deteksjon"
     },
     "battery_type": {
       "label": "Batteritype",
-      "hint": "Velg batteritype manuelt eller bruk automatisk deteksjon basert på spenning"
+      "hint": "Velg batteritype manuelt eller bruk automatisk deteksjon basert pÃ¥ spenning"
     },
     "battery_low_threshold": {
       "label": "Terskel lavt batteri (%)",
-      "hint": "Utløs advarsel for lavt batteri under denne prosenten"
+      "hint": "UtlÃ¸s advarsel for lavt batteri under denne prosenten"
     },
     "battery_critical_threshold": {
       "label": "Terskel kritisk batteri (%)",
-      "hint": "Utløs advarsel for kritisk batteri under denne prosenten"
+      "hint": "UtlÃ¸s advarsel for kritisk batteri under denne prosenten"
     },
     "enable_battery_notifications": {
       "label": "Aktiver batterivarsler",
@@ -137,7 +137,7 @@
     },
     "battery_report_interval": {
       "label": "Batterirapportintervall (timer)",
-      "hint": "Hvor ofte batteristatusoppdateringer etterspørres"
+      "hint": "Hvor ofte batteristatusoppdateringer etterspÃ¸rres"
     },
     "optimization_mode": {
       "label": "Energioptimaliseringsmodus",
@@ -145,11 +145,11 @@
     },
     "show_voltage": {
       "label": "Vis batterispenning",
-      "hint": "Vis rå batterispenning i enhetsinnstillinger"
+      "hint": "Vis rÃ¥ batterispenning i enhetsinnstillinger"
     },
     "enable_power_estimation": {
       "label": "Aktiver effektestimering",
-      "hint": "Estimer forbruk når reell måling ikke er tilgjengelig (kun AC/DC-enheter)"
+      "hint": "Estimer forbruk nÃ¥r reell mÃ¥ling ikke er tilgjengelig (kun AC/DC-enheter)"
     }
   },
   "tabs": {

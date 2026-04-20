@@ -2,15 +2,15 @@
   "id": "tuya_cluster_received",
   "title": {
     "en": "Zigbee cluster event received",
-    "fr": "Événement cluster Zigbee reçu"
+    "fr": "Ã‰vÃ©nement cluster Zigbee reÃ§u"
   },
   "titleFormatted": {
     "en": "Cluster event received on [[device]]",
-    "fr": "Événement cluster reçu sur [[device]]"
+    "fr": "Ã‰vÃ©nement cluster reÃ§u sur [[device]]"
   },
   "hint": {
     "en": "Triggers when a manufacturer cluster frame is received (0xE000-0xFFFF).",
-    "fr": "Se déclenche quand une trame cluster fabricant est reçue."
+    "fr": "Se dÃ©clenche quand une trame cluster fabricant est reÃ§ue."
   },
   "tokens": [
     { "name": "cluster_id", "type": "string", "title": { "en": "Cluster ID" }, "example": "0xE001" },

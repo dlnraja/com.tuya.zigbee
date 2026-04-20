@@ -22,7 +22,7 @@ const REPORTING_MAP = {
   'measure_temperature': {
     cluster: 'msTemperatureMeasurement',
     attr: 'measuredValue',
-    minInterval: 30, maxInterval: 600, minChange: 50 // 0.5°C
+    minInterval: 30, maxInterval: 600, minChange: 50 // 0.5Â°C
   },
   'measure_humidity': {
     cluster: 'msRelativeHumidity',

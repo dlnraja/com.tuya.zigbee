@@ -39,7 +39,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_is_presence_detected_sensor_motion_radar_hybrid');
+      const card = this._getFlowCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_is_presence_detected_sensor_motion_radar_hybrid', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -49,7 +49,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_is_presence_detected_sensor_motion_radar_hybrid: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_illuminance_above_sensor_motion_radar_hybrid');
+      const card = this._getFlowCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_illuminance_above_sensor_motion_radar_hybrid', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -60,7 +60,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_illuminance_above_sensor_motion_radar_hybrid: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_illuminance_below_sensor_motion_radar_hybrid');
+      const card = this._getFlowCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_illuminance_below_sensor_motion_radar_hybrid', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -70,7 +70,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_illuminance_below_sensor_motion_radar_hybrid: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_temperature_above_sensor_motion_radar_hybrid');
+      const card = this._getFlowCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_temperature_above_sensor_motion_radar_hybrid', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -81,7 +81,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_temperature_above_sensor_motion_radar_hybrid: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_target_distance_less_than_sensor_motion_radar_hybrid');
+      const card = this._getFlowCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_target_distance_less_than_sensor_motion_radar_hybrid', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -91,7 +91,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_target_distance_less_than_sensor_motion_radar_hybrid: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_motion_active_sensor_motion_radar_hybrid');
+      const card = this._getFlowCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_motion_active_sensor_motion_radar_hybrid', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -102,7 +102,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_set_radar_sensitivity_sensor_motion_radar_hybrid');
+      const card = this._getFlowCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_set_radar_sensitivity_sensor_motion_radar_hybrid', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -114,7 +114,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_set_radar_sensitivity_sensor_motion_radar_hybrid: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_set_detection_range_sensor_motion_radar_hybrid');
+      const card = this._getFlowCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_set_detection_range_sensor_motion_radar_hybrid', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -126,7 +126,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_set_detection_range_sensor_motion_radar_hybrid: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_set_fading_time_sensor_motion_radar_hybrid');
+      const card = this._getFlowCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_set_fading_time_sensor_motion_radar_hybrid', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -138,7 +138,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_set_fading_time_sensor_motion_radar_hybrid: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_set_detection_delay_sensor_motion_radar_hybrid');
+      const card = this._getFlowCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_set_detection_delay_sensor_motion_radar_hybrid', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

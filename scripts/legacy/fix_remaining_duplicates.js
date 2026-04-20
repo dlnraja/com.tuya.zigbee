@@ -4,12 +4,12 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log(' CORRECTION FINALE - 15 MANUFACTURER IDs DUPLIQUÉS\n');
+console.log(' CORRECTION FINALE - 15 MANUFACTURER IDs DUPLIQUÃ‰S\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
 
-// Duplicates à corriger avec décision intelligente
+// Duplicates Ã corriger avec dÃ©cision intelligente
 const FIXES = {
   '_TZ3210_pagajpog': {
     keep: 'bulb_rgbw',
@@ -29,17 +29,17 @@ const FIXES = {
   '_TZ3000_7ysdnebc': {
     keep: 'dimmer_dual_channel',
     remove: ['dimmer_wall_1gang'],
-    reason: 'Dual channel spécifique'
+    reason: 'Dual channel spÃ©cifique'
   },
   '_TZE204_ikvncluo': {
     keep: 'ir_blaster',
     remove: ['presence_sensor_radar', 'water_tank_monitor'],
-    reason: 'IR blaster spécifique'
+    reason: 'IR blaster spÃ©cifique'
   },
   '_TZ3000_18ejxno0': {
     keep: 'plug_smart',
     remove: ['switch_1gang'],
-    reason: 'Plug spécifique'
+    reason: 'Plug spÃ©cifique'
   },
   '_TZE200_aoclfnxz': {
     keep: 'radiator_valve',
@@ -69,7 +69,7 @@ const FIXES = {
   '_TZ3000_excgg5kb': {
     keep: 'switch_3gang',
     remove: ['switch_4gang'],
-    reason: '3-gang spécifique'
+    reason: '3-gang spÃ©cifique'
   },
   '_TZE284_c8ipbljq': {
     keep: 'switch_wall_6gang',
@@ -101,7 +101,7 @@ function removeManufacturerId(driverName, manufacturerId) {
   const composeFile = path.join(DRIVERS_DIR, driverName, 'driver.compose.json');
 
   if (!fs.existsSync(composeFile)) {
-    console.log(`     ${driverName}/driver.compose.json non trouvé`);
+    console.log(`     ${driverName}/driver.compose.json non trouvÃ©`);
     return false;
   }
 
@@ -117,7 +117,7 @@ function removeManufacturerId(driverName, manufacturerId) {
     const filteredIds = originalIds.filter(id => id !== manufacturerId);
 
     if (filteredIds.length === originalIds.length) {
-      // ID pas trouvé
+      // ID pas trouvÃ©
       return false;
     }
 
@@ -133,7 +133,7 @@ function removeManufacturerId(driverName, manufacturerId) {
     stats.filesModified++;
     stats.idsRemoved++;
 
-    console.log(`    ${driverName}: supprimé ${manufacturerId}`);
+    console.log(`    ${driverName}: supprimÃ© ${manufacturerId}`);
     return true;
 
   } catch (e) {
@@ -142,7 +142,7 @@ function removeManufacturerId(driverName, manufacturerId) {
   }
 }
 
-// EXÉCUTION
+// EXÃ‰CUTION
 console.log(' Application des corrections...\n');
 
 Object.entries(FIXES).forEach(([manufacturerId, config]) => {
@@ -156,23 +156,23 @@ Object.entries(FIXES).forEach(([manufacturerId, config]) => {
   });
 });
 
-// Product IDs à examiner
-console.log('\n\n  PRODUCT IDs À EXAMINER MANUELLEMENT:\n');
+// Product IDs Ã examiner
+console.log('\n\n  PRODUCT IDs Ã€ EXAMINER MANUELLEMENT:\n');
 console.log('   TS0207: rain_sensor vs water_leak_sensor');
-console.log('       Vérifier si même device ou variants');
+console.log('       VÃ©rifier si mÃªme device ou variants');
 console.log('   TS0013: switch_1gang vs switch_3gang');
-console.log('       Probablement légitime (différentes configurations)');
+console.log('       Probablement lÃ©gitime (diffÃ©rentes configurations)');
 console.log('   TS0014: switch_1gang vs switch_4gang');
-console.log('       Probablement légitime (différentes configurations)\n');
+console.log('       Probablement lÃ©gitime (diffÃ©rentes configurations)\n');
 
 console.log('\n RAPPORT CORRECTIONS:\n');
-console.log(`   Fichiers modifiés: ${stats.filesModified}`);
-console.log(`   IDs supprimés: ${stats.idsRemoved}`);
-console.log(`   Backups créés: ${stats.backups}\n`);
+console.log(`   Fichiers modifiÃ©s: ${stats.filesModified}`);
+console.log(`   IDs supprimÃ©s: ${stats.idsRemoved}`);
+console.log(`   Backups crÃ©Ã©s: ${stats.backups}\n`);
 
 if (stats.filesModified > 0) {
-  console.log(' CORRECTIONS APPLIQUÉES\n');
-  console.log(' PROCHAINES ÉTAPES:');
+  console.log(' CORRECTIONS APPLIQUÃ‰ES\n');
+  console.log(' PROCHAINES Ã‰TAPES:');
   console.log('   1. Relancer audit: node scripts/audit_complete_advanced.js');
   console.log('   2. Valider: homey app validate --level publish');
   console.log('   3. Build: homey app build\n');

@@ -4,7 +4,7 @@
       "id": "dimmer_dual_channel_hybrid_dim_changed",
       "title": {
         "en": "Dim level changed",
-        "fr": "Niveau dim changé"
+        "fr": "Niveau dim changÃ©"
       },
       "tokens": [
         {
@@ -20,31 +20,31 @@
       "args": [],
       "titleFormatted": {
         "en": "Dim level changed",
-        "fr": "Niveau dim changé"
+        "fr": "Niveau dim changÃ©"
       }
     },
     {
       "id": "dimmer_dual_channel_hybrid_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé"
+        "fr": "AllumÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allumé"
+        "fr": "AllumÃ©"
       }
     },
     {
       "id": "dimmer_dual_channel_hybrid_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint"
+        "fr": "Ã‰teint"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Éteint"
+        "fr": "Ã‰teint"
       }
     }
   ],
@@ -53,23 +53,23 @@
       "id": "dimmer_dual_channel_hybrid_is_on",
       "title": {
         "en": "Dimmer is !{{on|off}}",
-        "fr": "Variateur est !{{allumé|éteint}}"
+        "fr": "Variateur est !{{allumÃ©|Ã©teint}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Dimmer is !{{on|off}}",
-        "fr": "Variateur est !{{allumé|éteint}}"
+        "fr": "Variateur est !{{allumÃ©|Ã©teint}}"
       }
     },
     {
       "id": "dimmer_dual_channel_hybrid_dim_above",
       "title": {
         "en": "Dim level is above",
-        "fr": "Niveau dim supérieur à"
+        "fr": "Niveau dim supÃ©rieur Ã"
       },
       "titleFormatted": {
         "en": "Dim level is above [[level]]%",
-        "fr": "Niveau dim supérieur à [[level]]%"
+        "fr": "Niveau dim supÃ©rieur Ã [[level]]%"
       },
       "args": [
         {
@@ -99,12 +99,12 @@
       "id": "dimmer_dual_channel_hybrid_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Ã‰teindre"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Ã‰teindre"
       }
     },
     {
@@ -123,11 +123,11 @@
       "id": "dimmer_dual_channel_hybrid_set_dim",
       "title": {
         "en": "Set dim level",
-        "fr": "Définir niveau dim"
+        "fr": "DÃ©finir niveau dim"
       },
       "titleFormatted": {
         "en": "Set dim level to [[level]]%",
-        "fr": "Définir niveau dim à [[level]]%"
+        "fr": "DÃ©finir niveau dim Ã [[level]]%"
       },
       "args": [
         {
@@ -143,37 +143,37 @@
       "id": "dimmer_dual_channel_hybrid_dim_up",
       "title": {
         "en": "Dim up",
-        "fr": "Augmenter luminosité"
+        "fr": "Augmenter luminositÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Dim up",
-        "fr": "Augmenter luminosité"
+        "fr": "Augmenter luminositÃ©"
       }
     },
     {
       "id": "dimmer_dual_channel_hybrid_dim_down",
       "title": {
         "en": "Dim down",
-        "fr": "Diminuer luminosité"
+        "fr": "Diminuer luminositÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Dim down",
-        "fr": "Diminuer luminosité"
+        "fr": "Diminuer luminositÃ©"
       }
     },
     {
       "id": "dimmer_dual_channel_hybrid_set_brightness",
       "title": {
         "en": "Set brightness",
-        "fr": "Régler luminosité",
+        "fr": "RÃ©gler luminositÃ©",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
       },
       "titleFormatted": {
         "en": "Set brightness to [[brightness]]%",
-        "fr": "Régler luminosité à [[brightness]]%",
+        "fr": "RÃ©gler luminositÃ© Ã [[brightness]]%",
         "nl": "Helderheid op [[brightness]]%",
         "de": "Helligkeit auf [[brightness]]%"
       },

@@ -119,7 +119,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       'measure_battery': 100,  // Assume full until first report
       'measure_temperature': null,
       'measure_humidity': null,
-      // SDK3: alarm_battery obsolète - utiliser measure_battery avec seuil
+      // SDK3: alarm_battery obsolÃ¨te - utiliser measure_battery avec seuil
     };
 
     for (const [capability, defaultValue] of Object.entries(defaults)) {
@@ -200,7 +200,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       // Battery (CONFIDENCE: 0 - Official)
       4: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 0 },
       10: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
-      14: { capability: null, internal: 'battery_low', parser: v => !!v, confidence: 0 }, // SDK3: alarm_battery obsolète
+      14: { capability: null, internal: 'battery_low', parser: v => !!v, confidence: 0 }, // SDK3: alarm_battery obsolÃ¨te
       15: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 0 },
       101: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
       105: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
@@ -290,6 +290,18 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     this.log('[GENERIC] Device deleted, cleaning up...');
     this._discoveredDPs?.clear();
     await super.onDeleted();
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 

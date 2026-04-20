@@ -4,31 +4,31 @@
       "id": "rain_sensor_rain_detected",
       "title": {
         "en": "Rain detected",
-        "fr": "Pluie détectée"
+        "fr": "Pluie dÃ©tectÃ©e"
       },
       "args": [],
       "titleFormatted": {
         "en": "Rain detected",
-        "fr": "Pluie détectée"
+        "fr": "Pluie dÃ©tectÃ©e"
       }
     },
     {
       "id": "rain_sensor_rain_stopped",
       "title": {
         "en": "Rain stopped",
-        "fr": "Pluie arrêtée"
+        "fr": "Pluie arrÃªtÃ©e"
       },
       "args": [],
       "titleFormatted": {
         "en": "Rain stopped",
-        "fr": "Pluie arrêtée"
+        "fr": "Pluie arrÃªtÃ©e"
       }
     },
     {
       "id": "rain_sensor_rain_intensity_changed",
       "title": {
         "en": "Rain intensity changed",
-        "fr": "Intensité pluie changée"
+        "fr": "IntensitÃ© pluie changÃ©e"
       },
       "tokens": [
         {
@@ -36,7 +36,7 @@
           "type": "number",
           "title": {
             "en": "Intensity",
-            "fr": "Intensité"
+            "fr": "IntensitÃ©"
           },
           "example": 50
         }
@@ -44,7 +44,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Rain intensity changed",
-        "fr": "Intensité pluie changée"
+        "fr": "IntensitÃ© pluie changÃ©e"
       }
     },
     {
@@ -79,16 +79,16 @@
       "id": "rain_sensor_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       }
     }
   ],
@@ -109,11 +109,11 @@
       "id": "rain_sensor_rain_intensity_above",
       "title": {
         "en": "Rain intensity is above",
-        "fr": "Intensité pluie supérieure à"
+        "fr": "IntensitÃ© pluie supÃ©rieure Ã"
       },
       "titleFormatted": {
         "en": "Rain intensity is above [[intensity]]",
-        "fr": "Intensité pluie supérieure à [[intensity]]"
+        "fr": "IntensitÃ© pluie supÃ©rieure Ã [[intensity]]"
       },
       "args": [
         {
@@ -129,14 +129,14 @@
       "id": "rain_sensor_water_detected",
       "title": {
         "en": "Water !{{is|is not}} detected",
-        "fr": "Eau !{{est|n'est pas}} détectée",
+        "fr": "Eau !{{est|n'est pas}} dÃ©tectÃ©e",
         "nl": "Water !{{is|is niet}} gedetecteerd",
         "de": "Wasser !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Water !{{is|is not}} detected",
-        "fr": "Eau !{{est|n'est pas}} détectée",
+        "fr": "Eau !{{est|n'est pas}} dÃ©tectÃ©e",
         "nl": "Water !{{is|is niet}} gedetecteerd",
         "de": "Wasser !{{ist|ist nicht}} erkannt"
       }

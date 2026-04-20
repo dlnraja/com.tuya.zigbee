@@ -4,7 +4,7 @@
       "id": "shutter_roller_controller_position_changed",
       "title": {
         "en": "Position changed",
-        "fr": "Position changée"
+        "fr": "Position changÃ©e"
       },
       "tokens": [
         {
@@ -20,55 +20,55 @@
       "args": [],
       "titleFormatted": {
         "en": "Position changed",
-        "fr": "Position changée"
+        "fr": "Position changÃ©e"
       }
     },
     {
       "id": "shutter_roller_controller_fully_opened",
       "title": {
         "en": "Fully opened",
-        "fr": "Complètement ouvert"
+        "fr": "ComplÃ¨tement ouvert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Fully opened",
-        "fr": "Complètement ouvert"
+        "fr": "ComplÃ¨tement ouvert"
       }
     },
     {
       "id": "shutter_roller_controller_fully_closed",
       "title": {
         "en": "Fully closed",
-        "fr": "Complètement fermé"
+        "fr": "ComplÃ¨tement fermÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Fully closed",
-        "fr": "Complètement fermé"
+        "fr": "ComplÃ¨tement fermÃ©"
       }
     },
     {
       "id": "shutter_roller_controller_started_moving",
       "title": {
         "en": "Started moving",
-        "fr": "Démarrage mouvement"
+        "fr": "DÃ©marrage mouvement"
       },
       "args": [],
       "titleFormatted": {
         "en": "Started moving",
-        "fr": "Démarrage mouvement"
+        "fr": "DÃ©marrage mouvement"
       }
     },
     {
       "id": "shutter_roller_controller_stopped_moving",
       "title": {
         "en": "Stopped moving",
-        "fr": "Arrêt mouvement"
+        "fr": "ArrÃªt mouvement"
       },
       "args": [],
       "titleFormatted": {
         "en": "Stopped moving",
-        "fr": "Arrêt mouvement"
+        "fr": "ArrÃªt mouvement"
       }
     },
     {
@@ -93,23 +93,23 @@
       "id": "shutter_roller_controller_is_open",
       "title": {
         "en": "Shutter is !{{open|closed}}",
-        "fr": "Volet est !{{ouvert|fermé}}"
+        "fr": "Volet est !{{ouvert|fermÃ©}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Shutter is !{{open|closed}}",
-        "fr": "Volet est !{{ouvert|fermé}}"
+        "fr": "Volet est !{{ouvert|fermÃ©}}"
       }
     },
     {
       "id": "shutter_roller_controller_position_above",
       "title": {
         "en": "Position is above",
-        "fr": "Position supérieure à"
+        "fr": "Position supÃ©rieure Ã"
       },
       "titleFormatted": {
         "en": "Position is above [[position]]%",
-        "fr": "Position supérieure à [[position]]%"
+        "fr": "Position supÃ©rieure Ã [[position]]%"
       },
       "args": [
         {
@@ -125,12 +125,12 @@
       "id": "shutter_roller_controller_is_moving",
       "title": {
         "en": "Shutter is !{{moving|stopped}}",
-        "fr": "Volet !{{en mouvement|arrêté}}"
+        "fr": "Volet !{{en mouvement|arrÃªtÃ©}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Shutter is !{{moving|stopped}}",
-        "fr": "Volet !{{en mouvement|arrêté}}"
+        "fr": "Volet !{{en mouvement|arrÃªtÃ©}}"
       }
     }
   ],
@@ -163,23 +163,23 @@
       "id": "shutter_roller_controller_stop",
       "title": {
         "en": "Stop",
-        "fr": "Arrêter"
+        "fr": "ArrÃªter"
       },
       "args": [],
       "titleFormatted": {
         "en": "Stop",
-        "fr": "Arrêter"
+        "fr": "ArrÃªter"
       }
     },
     {
       "id": "shutter_roller_controller_set_position",
       "title": {
         "en": "Set position",
-        "fr": "Définir position"
+        "fr": "DÃ©finir position"
       },
       "titleFormatted": {
         "en": "Set position to [[position]]%",
-        "fr": "Définir position à [[position]]%"
+        "fr": "DÃ©finir position Ã [[position]]%"
       },
       "args": [
         {
@@ -195,13 +195,13 @@
       "id": "shutter_roller_controller_set_brightness",
       "title": {
         "en": "Set brightness",
-        "fr": "Régler luminosité",
+        "fr": "RÃ©gler luminositÃ©",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
       },
       "titleFormatted": {
         "en": "Set brightness to [[brightness]]%",
-        "fr": "Régler luminosité à [[brightness]]%",
+        "fr": "RÃ©gler luminositÃ© Ã [[brightness]]%",
         "nl": "Helderheid op [[brightness]]%",
         "de": "Helligkeit auf [[brightness]]%"
       },

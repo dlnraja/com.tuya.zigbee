@@ -6,7 +6,7 @@
  * 
  * Targets 2 corruption patterns in driver.js files:
  * 
- * Pattern A (IIFE → null crash):
+ * Pattern A (IIFE â†’ null crash):
  *   (() => { try { return this.homey.flow.getConditionCard('id'); } catch(e) { return null; } })()
  *     .registerRunListener(async (args) => { ... });
  * 
@@ -171,10 +171,10 @@ function verifySyntax(filePath) {
 }
 
 // ==================== MAIN ====================
-console.log('╔══════════════════════════════════════════════════════════════╗');
-console.log('║  MASS FLOW CARD REMEDIATION SCRIPT v1.0                    ║');
-console.log('║  Fixing corrupted IIFE flow card patterns in 112+ drivers  ║');
-console.log('╚══════════════════════════════════════════════════════════════╝');
+console.log('â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—');
+console.log('â•‘  MASS FLOW CARD REMEDIATION SCRIPT v1.0                    â•‘');
+console.log('â•‘  Fixing corrupted IIFE flow card patterns in 112+ drivers  â•‘');
+console.log('â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
 console.log(`Mode: ${DRY_RUN ? 'DRY RUN (no changes)' : 'LIVE (writing files)'}`);
 console.log('');
 
@@ -207,23 +207,23 @@ for (const dir of driverDirs) {
     // Verify
     const verify = verifySyntax(filePath);
     if (!verify.valid && !DRY_RUN) {
-      console.log(`  ⚠️  ${dir}: Fixed but verification warning: ${verify.reason}`);
+      console.log(`  âšï¸  ${dir}: Fixed but verification warning: ${verify.reason}`);
     } else if (VERBOSE) {
-      console.log(`  ✅ ${dir}: ${result.fixes} fix(es) applied`);
+      console.log(`  âœ… ${dir}: ${result.fixes} fix(es) applied`);
     }
   } else {
-    if (VERBOSE) console.log(`  ⏭️  ${dir}: No fixable patterns found (may need manual review)`);
+    if (VERBOSE) console.log(`  â­ï¸  ${dir}: No fixable patterns found (may need manual review)`);
   }
 }
 
 console.log('');
-console.log('═══════════════════════════════════════');
+console.log('â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
 console.log(`  Scanned:  ${stats.scanned}`);
 console.log(`  Fixed:    ${stats.fixed}`);
 console.log(`  Skipped:  ${stats.skipped} (already clean)`);
 console.log(`  Errors:   ${stats.errors}`);
 console.log(`  Remaining: ${stats.scanned - stats.fixed - stats.skipped} (need manual review)`);
-console.log('═══════════════════════════════════════');
+console.log('â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
 
 // Re-scan to check remaining broken files
 let remaining = 0;
@@ -238,8 +238,8 @@ for (const dir of driverDirs) {
 }
 
 if (remaining > 0) {
-  console.log(`\n⚠️  ${remaining} drivers still have dangling .registerRunListener:`);
+  console.log(`\nâšï¸  ${remaining} drivers still have dangling .registerRunListener:`);
   remainingList.forEach(d => console.log(`  - ${d}`));
 } else {
-  console.log('\n✅ All dangling .registerRunListener patterns resolved!');
+  console.log('\nâœ… All dangling .registerRunListener patterns resolved!');
 }

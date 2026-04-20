@@ -6,20 +6,20 @@
       "title": {
         "en": "Doorbell pressed",
         "nl": "Deurbel ingedrukt",
-        "fr": "Sonnette pressée",
-        "de": "Türklingel gedrückt"
+        "fr": "Sonnette pressÃ©e",
+        "de": "TÃ¼rklingel gedrÃ¼ckt"
       },
       "titleFormatted": {
         "en": "Someone rang the doorbell!",
         "nl": "Iemand heeft aangebeld!",
-        "fr": "Quelqu'un a sonné !",
+        "fr": "Quelqu'un a sonnÃ© !",
         "de": "Jemand hat geklingelt!"
       },
       "hint": {
         "en": "Triggers when someone presses the doorbell button",
         "nl": "Triggert wanneer iemand op de deurbel drukt",
-        "fr": "Se déclenche quand quelqu'un appuie sur la sonnette",
-        "de": "Wird ausgelöst, wenn jemand die Türklingel drückt"
+        "fr": "Se dÃ©clenche quand quelqu'un appuie sur la sonnette",
+        "de": "Wird ausgelÃ¶st, wenn jemand die TÃ¼rklingel drÃ¼ckt"
       },
       "args": []
     },
@@ -28,21 +28,21 @@
       "title": {
         "en": "Motion at door",
         "nl": "Beweging bij deur",
-        "fr": "Mouvement à la porte",
-        "de": "Bewegung an der Tür"
+        "fr": "Mouvement Ã la porte",
+        "de": "Bewegung an der TÃ¼r"
       },
       "hint": {
         "en": "Triggers when motion is detected near the doorbell (if supported)",
         "nl": "Triggert wanneer beweging wordt gedetecteerd bij de deurbel (indien ondersteund)",
-        "fr": "Se déclenche quand un mouvement est détecté près de la sonnette (si supporté)",
-        "de": "Wird ausgelöst, wenn Bewegung in der Nähe der Türklingel erkannt wird (falls unterstützt)"
+        "fr": "Se dÃ©clenche quand un mouvement est dÃ©tectÃ© prÃ¨s de la sonnette (si supportÃ©)",
+        "de": "Wird ausgelÃ¶st, wenn Bewegung in der NÃ¤he der TÃ¼rklingel erkannt wird (falls unterstÃ¼tzt)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion at door",
         "nl": "Beweging bij deur",
-        "fr": "Mouvement à la porte",
-        "de": "Bewegung an der Tür"
+        "fr": "Mouvement Ã la porte",
+        "de": "Bewegung an der TÃ¼r"
       }
     },
     {
@@ -56,8 +56,8 @@
       "hint": {
         "en": "Triggers when the doorbell has been tampered with",
         "nl": "Triggert wanneer er met de deurbel is geknoeid",
-        "fr": "Se déclenche quand la sonnette a été sabotée",
-        "de": "Wird ausgelöst, wenn die Türklingel manipuliert wurde"
+        "fr": "Se dÃ©clenche quand la sonnette a Ã©tÃ© sabotÃ©e",
+        "de": "Wird ausgelÃ¶st, wenn die TÃ¼rklingel manipuliert wurde"
       },
       "args": [],
       "titleFormatted": {
@@ -72,14 +72,14 @@
       "title": {
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changé",
-        "de": "Batteriestand geändert"
+        "fr": "Niveau batterie changÃ©",
+        "de": "Batteriestand geÃ¤ndert"
       },
       "titleFormatted": {
         "en": "Battery level changed to [[battery]]%",
         "nl": "Batterijniveau veranderd naar [[battery]]%",
-        "fr": "Niveau batterie changé à [[battery]]%",
-        "de": "Batteriestand geändert zu [[battery]]%"
+        "fr": "Niveau batterie changÃ© Ã [[battery]]%",
+        "de": "Batteriestand geÃ¤ndert zu [[battery]]%"
       },
       "tokens": [
         {
@@ -116,16 +116,16 @@
       "id": "doorbell_contact_alarm",
       "title": {
         "en": "Contact changed",
-        "fr": "Contact changé",
+        "fr": "Contact changÃ©",
         "nl": "Contact gewijzigd",
-        "de": "Kontakt geändert"
+        "de": "Kontakt geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Contact changed",
-        "fr": "Contact changé",
+        "fr": "Contact changÃ©",
         "nl": "Contact gewijzigd",
-        "de": "Kontakt geändert"
+        "de": "Kontakt geÃ¤ndert"
       }
     },
     {
@@ -152,13 +152,13 @@
         "en": "Battery !{{is|is not}} above",
         "nl": "Batterij !{{is|is niet}} boven",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de",
-        "de": "Batterie !{{ist|ist nicht}} über"
+        "de": "Batterie !{{ist|ist nicht}} Ã¼ber"
       },
       "titleFormatted": {
         "en": "Battery !{{is|is not}} above [[threshold]]%",
         "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
-        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+        "de": "Batterie !{{ist|ist nicht}} Ã¼ber [[threshold]]%"
       },
       "args": [
         {
@@ -177,14 +177,14 @@
       "id": "doorbell_motion_active",
       "title": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       }
@@ -229,20 +229,20 @@
         "en": "Ring the chime",
         "nl": "Laat de bel rinkelen",
         "fr": "Faire sonner le carillon",
-        "de": "Glocke läuten"
+        "de": "Glocke lÃ¤uten"
       },
       "hint": {
         "en": "Manually triggers the doorbell chime (if supported)",
         "nl": "Laat de deurbel handmatig rinkelen (indien ondersteund)",
-        "fr": "Déclenche manuellement le carillon de la sonnette (si supporté)",
-        "de": "Löst die Türklingel manuell aus (falls unterstützt)"
+        "fr": "DÃ©clenche manuellement le carillon de la sonnette (si supportÃ©)",
+        "de": "LÃ¶st die TÃ¼rklingel manuell aus (falls unterstÃ¼tzt)"
       },
       "args": [],
       "titleFormatted": {
         "en": "Ring the chime",
         "nl": "Laat de bel rinkelen",
         "fr": "Faire sonner le carillon",
-        "de": "Glocke läuten"
+        "de": "Glocke lÃ¤uten"
       }
     }
   ]

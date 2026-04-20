@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "Smart Heater Controller",
-    "fr": "Contrôleur Radiateur Intelligent",
+    "fr": "ContrÃ´leur Radiateur Intelligent",
     "nl": "Slimme Verwarmingscontroller",
     "de": "Intelligente Heizungssteuerung"
   },
@@ -28,7 +28,7 @@
         "en": "Overheat Protection",
         "fr": "Protection Surchauffe",
         "nl": "Oververhitting Bescherming",
-        "de": "Überhitzungsschutz"
+        "de": "Ãœberhitzungsschutz"
       }
     }
   },
@@ -48,11 +48,7 @@
       "_TZE200_DNZ2ZHQD",
       "_TZE200_SUS6CLYH",
       "_TZE204_B6WAX7G0",
-      "_TZE204_C88TEUJP",
-      "_TZE200_dnz2zhqd",
-      "_TZE200_sus6clyh",
-      "_TZE204_b6wax7g0",
-      "_TZE204_c88teujp"
+      "_TZE204_C88TEUJP"
     ],
     "productId": [
       "TS0601",
@@ -78,7 +74,7 @@
       "type": "group",
       "label": {
         "en": "Temperature Control",
-        "fr": "Contrôle Température",
+        "fr": "ContrÃ´le TempÃ©rature",
         "nl": "Temperatuur Controle",
         "de": "Temperatur Kontrolle"
       },
@@ -87,43 +83,43 @@
           "id": "temperature_calibration",
           "type": "number",
           "label": {
-            "en": "Temperature Calibration (°C)",
-            "fr": "Calibrage Température (°C)",
-            "nl": "Temperatuur Kalibratie (°C)",
-            "de": "Temperatur Kalibrierung (°C)"
+            "en": "Temperature Calibration (Â°C)",
+            "fr": "Calibrage TempÃ©rature (Â°C)",
+            "nl": "Temperatuur Kalibratie (Â°C)",
+            "de": "Temperatur Kalibrierung (Â°C)"
           },
           "hint": {
-            "en": "Adjust temperature reading offset (-10°C to +10°C)",
-            "fr": "Ajuster le décalage de lecture température (-10°C à +10°C)",
-            "nl": "Pas temperatuuraflezing aan (-10°C tot +10°C)",
-            "de": "Temperaturablesung anpassen (-10°C bis +10°C)"
+            "en": "Adjust temperature reading offset (-10Â°C to +10Â°C)",
+            "fr": "Ajuster le dÃ©calage de lecture tempÃ©rature (-10Â°C Ã +10Â°C)",
+            "nl": "Pas temperatuuraflezing aan (-10Â°C tot +10Â°C)",
+            "de": "Temperaturablesung anpassen (-10Â°C bis +10Â°C)"
           },
           "value": 0,
           "min": -10,
           "max": 10,
           "step": 0.1,
-          "units": "°C"
+          "units": "Â°C"
         },
         {
           "id": "heating_hysteresis",
           "type": "number",
           "label": {
-            "en": "Heating Hysteresis (°C)",
-            "fr": "Hystérésis Chauffage (°C)",
-            "nl": "Verwarming Hysterese (°C)",
-            "de": "Heizung Hysterese (°C)"
+            "en": "Heating Hysteresis (Â°C)",
+            "fr": "HystÃ©rÃ©sis Chauffage (Â°C)",
+            "nl": "Verwarming Hysterese (Â°C)",
+            "de": "Heizung Hysterese (Â°C)"
           },
           "hint": {
-            "en": "Temperature difference to start/stop heating (0.5-5°C)",
-            "fr": "Différence température pour démarrer/arrêter chauffage (0.5-5°C)",
-            "nl": "Temperatuurverschil om verwarming te starten/stoppen (0.5-5°C)",
-            "de": "Temperaturdifferenz zum Starten/Stoppen der Heizung (0.5-5°C)"
+            "en": "Temperature difference to start/stop heating (0.5-5Â°C)",
+            "fr": "DiffÃ©rence tempÃ©rature pour dÃ©marrer/arrÃªter chauffage (0.5-5Â°C)",
+            "nl": "Temperatuurverschil om verwarming te starten/stoppen (0.5-5Â°C)",
+            "de": "Temperaturdifferenz zum Starten/Stoppen der Heizung (0.5-5Â°C)"
           },
           "value": 1,
           "min": 0.5,
           "max": 5,
           "step": 0.1,
-          "units": "°C"
+          "units": "Â°C"
         }
       ]
     },
@@ -131,7 +127,7 @@
       "type": "group",
       "label": {
         "en": "Safety & Protection",
-        "fr": "Sécurité & Protection",
+        "fr": "SÃ©curitÃ© & Protection",
         "nl": "Veiligheid & Bescherming",
         "de": "Sicherheit & Schutz"
       },
@@ -140,14 +136,14 @@
           "id": "overheat_protection",
           "type": "number",
           "label": {
-            "en": "Overheat Protection (°C)",
-            "fr": "Protection Surchauffe (°C)",
-            "nl": "Oververhitting Bescherming (°C)",
-            "de": "Überhitzungsschutz (°C)"
+            "en": "Overheat Protection (Â°C)",
+            "fr": "Protection Surchauffe (Â°C)",
+            "nl": "Oververhitting Bescherming (Â°C)",
+            "de": "Ãœberhitzungsschutz (Â°C)"
           },
           "hint": {
             "en": "Maximum allowed temperature before safety shutdown",
-            "fr": "Température maximale autorisée avant arrêt sécurité",
+            "fr": "TempÃ©rature maximale autorisÃ©e avant arrÃªt sÃ©curitÃ©",
             "nl": "Maximaal toegestane temperatuur voor veiligheidsuitschakeling",
             "de": "Maximal erlaubte Temperatur vor Sicherheitsabschaltung"
           },
@@ -155,7 +151,7 @@
           "min": 30,
           "max": 60,
           "step": 1,
-          "units": "°C"
+          "units": "Â°C"
         },
         {
           "id": "child_lock",
@@ -168,9 +164,9 @@
           },
           "hint": {
             "en": "Prevent manual control changes on device",
-            "fr": "Empêcher les modifications de contrôle manuel sur l'appareil",
+            "fr": "EmpÃªcher les modifications de contrÃ´le manuel sur l'appareil",
             "nl": "Voorkom handmatige besturingswijzigingen op apparaat",
-            "de": "Manuelle Steuerungsänderungen am Gerät verhindern"
+            "de": "Manuelle SteuerungsÃ¤nderungen am GerÃ¤t verhindern"
           },
           "value": false
         }
@@ -180,7 +176,7 @@
       "type": "group",
       "label": {
         "en": "Power Management",
-        "fr": "Gestion Énergie",
+        "fr": "Gestion Ã‰nergie",
         "nl": "Energie Beheer",
         "de": "Energie Management"
       },
@@ -196,7 +192,7 @@
           },
           "hint": {
             "en": "Maximum power consumption allowed (500-3000W)",
-            "fr": "Consommation électrique maximale autorisée (500-3000W)",
+            "fr": "Consommation Ã©lectrique maximale autorisÃ©e (500-3000W)",
             "nl": "Maximaal toegestaan stroomverbruik (500-3000W)",
             "de": "Maximal erlaubter Stromverbrauch (500-3000W)"
           },
@@ -213,12 +209,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "Sécurité Enfant Logicielle"
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "Empêche les changements d'état manuels sur l'appareil"
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
       }
     },
     {
@@ -233,7 +229,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'éteint après X minutes (0 = désactivé)"
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -241,12 +237,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation Présence)"
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
       }
     },
     {
@@ -254,14 +250,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Émulé (Secondes)"
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
       }
     },
     {
@@ -276,7 +272,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Émulation logicielle pour boutons à action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -284,7 +280,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "Durée Inching (Secondes)"
+        "fr": "DurÃ©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -292,7 +288,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -300,12 +296,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "Récupération d'État Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'état précédent après une coupure de courant"
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
       }
     },
     {
@@ -318,7 +314,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
       }
     },
     {
@@ -333,7 +329,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santé descend sous cette valeur"
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     }
   ],
@@ -342,7 +338,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

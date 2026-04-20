@@ -2,14 +2,14 @@
   "type": "number",
   "title": {
     "en": "Temperature Calibration",
-    "fr": "Calibration Température"
+    "fr": "Calibration TempÃ©rature"
   },
   "desc": {
     "en": "Temperature offset for local sensor",
-    "fr": "Décalage de température pour le capteur local"
+    "fr": "DÃ©calage de tempÃ©rature pour le capteur local"
   },
   "units": {
-    "en": "°C"
+    "en": "Â°C"
   },
   "getable": true,
   "setable": true,

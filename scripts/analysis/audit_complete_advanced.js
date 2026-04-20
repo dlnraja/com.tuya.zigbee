@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log(' AUDIT COMPLET AVANCÉ SDK3 - ANALYSE INTELLIGENTE\n');
+console.log(' AUDIT COMPLET AVANCÃ‰ SDK3 - ANALYSE INTELLIGENTE\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -46,7 +46,7 @@ try {
 }
 
 /**
- * Scanner récursivement
+ * Scanner rÃ©cursivement
  */
 function scanDirectory(dir, callback) {
   if (!fs.existsSync(dir)) return;
@@ -73,7 +73,7 @@ function analyzeFile(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');
   const relativePath = path.relative(ROOT, filePath);
 
-  // 1. FLOW CARDS - Détection usages invalides
+  // 1. FLOW CARDS - DÃ©tection usages invalides
   if (content.includes('getActionCard') || content.includes('getTriggerCard') || content.includes('getConditionCard')) {
     const matches = content.match(/get(Action|Trigger|Condition)Card\s*\(\s*['"]([^'"]+)['"]/g);
     if (matches) {
@@ -83,7 +83,7 @@ function analyzeFile(filePath) {
           severity: 'INFO',
           file: relativePath,
           cardId,
-          message: `Flow card référencée: ${cardId}`
+          message: `Flow card rÃ©fÃ©rencÃ©e: ${cardId}`
         });
       });
     }
@@ -94,7 +94,7 @@ function analyzeFile(filePath) {
     const lines = content.split('\n');
     lines.forEach((line, idx) => {
       if (line.includes('setCapabilityValue') && line.includes('measure_')) {
-        // Vérifier si parseFloat/parseInt/Number est utilisé
+        // VÃ©rifier si parseFloat/parseInt/Number est utilisÃ©
         if (!line.includes('parseFloat') && !line.includes('parseInt') && !line.includes('Number(')) {
           report.issues.setCapabilityValue.push({
             severity: 'WARNING',
@@ -113,7 +113,7 @@ function analyzeFile(filePath) {
   const replaceMatches = content.matchAll(/([a-zA-Z0-9_.[\]]+)\.replace\s*\(/g);
   for (const match of replaceMatches) {
     const varName = match[1];
-    // Vérifier si String() est utilisé
+    // VÃ©rifier si String() est utilisÃ©
     const beforeMatch = content.substring(Math.max(0, match.index - 10), match.index);
     if (!beforeMatch.includes('String(') && varName.includes('.')) {
       report.issues.replaceUsages.push({
@@ -169,7 +169,7 @@ function analyzeFile(filePath) {
       const driverConfig = JSON.parse(content);
       report.stats.totalDrivers++;
 
-      // Vérifier manufacturer IDs
+      // VÃ©rifier manufacturer IDs
       const manufacturerNames = driverConfig.zigbee?.manufacturerName || [];
       const productIds = driverConfig.zigbee?.productId || [];
 
@@ -183,18 +183,18 @@ function analyzeFile(filePath) {
         report.stats.warningIssues++;
       }
 
-      // Vérifier capabilities
+      // VÃ©rifier capabilities
       const capabilities = driverConfig.capabilities || [];
       if (capabilities.length === 0 && driverConfig.class !== 'other') {
         report.issues.capabilities.push({
           severity: 'WARNING',
           file: relativePath,
-          message: 'Driver sans capabilities défini'
+          message: 'Driver sans capabilities dÃ©fini'
         });
         report.stats.warningIssues++;
       }
 
-      // Vérifier endpoints
+      // VÃ©rifier endpoints
       const endpoints = driverConfig.zigbee?.endpoints || {};
       if (Object.keys(endpoints).length > 1) {
         report.issues.endpoints.push({
@@ -206,7 +206,7 @@ function analyzeFile(filePath) {
         report.stats.infoIssues++;
       }
 
-      // Vérifier energy config
+      // VÃ©rifier energy config
       const energy = driverConfig.energy || {};
       const hasEnergy = capabilities.some(c => c.startsWith('measure_power') || c.startsWith('meter_'));
       const hasBattery = capabilities.some(c => c.includes('battery'));
@@ -215,12 +215,12 @@ function analyzeFile(filePath) {
         report.issues.energyConfig.push({
           severity: 'WARNING',
           file: relativePath,
-          message: 'Capabilities battery sans energy.batteries configuré'
+          message: 'Capabilities battery sans energy.batteries configurÃ©'
         });
         report.stats.warningIssues++;
       }
 
-      // Détecter devices hybrides
+      // DÃ©tecter devices hybrides
       const hasOnOff = capabilities.includes('onoff');
       const hasSensor = capabilities.some(c => c.startsWith('measure_') || c.startsWith('alarm_'));
       if (hasOnOff && hasSensor) {
@@ -228,30 +228,30 @@ function analyzeFile(filePath) {
           severity: 'INFO',
           file: relativePath,
           capabilities,
-          message: 'Device hybride détecté (actuator + sensor)'
+          message: 'Device hybride dÃ©tectÃ© (actuator + sensor)'
         });
         report.stats.infoIssues++;
       }
 
-      // Détecter custom capabilities
+      // DÃ©tecter custom capabilities
       const customCaps = capabilities.filter(c => !c.match(/^(onoff|dim|light_|measure_|meter_|alarm_|button\.|windowcoverings_)/));
       if (customCaps.length > 0) {
         report.issues.customCapabilities.push({
           severity: 'INFO',
           file: relativePath,
           capabilities: customCaps,
-          message: `Capabilities custom/propriétaires: ${customCaps.join(', ')}`
+          message: `Capabilities custom/propriÃ©taires: ${customCaps.join(', ')}`
         });
         report.stats.infoIssues++;
       }
 
-      // Vérifier images
+      // VÃ©rifier images
       const images = driverConfig.images || {};
       if (!images.small || !images.large) {
         report.issues.images.push({
           severity: 'INFO',
           file: relativePath,
-          message: 'Images driver incomplètes'
+          message: 'Images driver incomplÃ¨tes'
         });
         report.stats.infoIssues++;
       }
@@ -262,7 +262,7 @@ function analyzeFile(filePath) {
   }
 }
 
-// EXÉCUTION
+// EXÃ‰CUTION
 console.log(' Scanning drivers/...\n');
 scanDirectory(DRIVERS_DIR, analyzeFile);
 
@@ -300,7 +300,7 @@ Object.entries(manufacturerMap).forEach(([id, files]) => {
       manufacturerId: id,
       drivers: files,
       count: files.length,
-      message: `ID partagé par ${files.length} drivers`
+      message: `ID partagÃ© par ${files.length} drivers`
     });
     report.stats.criticalIssues++;
   }
@@ -310,7 +310,7 @@ Object.entries(manufacturerMap).forEach(([id, files]) => {
 if (report.stats.criticalIssues > 0) {
   report.recommendations.push({
     priority: 'HIGH',
-    action: 'Corriger immédiatement les issues critiques (IAS Zone, manufacturer ID duplicates)'
+    action: 'Corriger immÃ©diatement les issues critiques (IAS Zone, manufacturer ID duplicates)'
   });
 }
 
@@ -332,8 +332,8 @@ if (report.issues.hybridDevices.length > 0) {
 const reportPath = path.join(ROOT, 'AUDIT_ADVANCED_REPORT.json');
 fs.writeFileSync(reportPath, JSON.stringify(report, null, 2), 'utf8');
 
-// AFFICHAGE RÉSUMÉ
-console.log('\n RÉSUMÉ AUDIT:\n');
+// AFFICHAGE RÃ‰SUMÃ‰
+console.log('\n RÃ‰SUMÃ‰ AUDIT:\n');
 console.log(`   Version: ${report.version}`);
 console.log(`   Drivers: ${report.stats.totalDrivers}`);
 console.log(`   Fichiers: ${report.stats.totalFiles}`);
@@ -343,15 +343,15 @@ console.log(`   Info: ${report.stats.infoIssues}\n`);
 
 console.log(' TOP ISSUES:\n');
 if (report.stats.criticalIssues > 0) {
-  console.log(`    ${report.stats.criticalIssues} CRITIQUES à corriger immédiatement`);
+  console.log(`    ${report.stats.criticalIssues} CRITIQUES Ã corriger immÃ©diatement`);
 }
 if (report.stats.warningIssues > 0) {
-  console.log(`     ${report.stats.warningIssues} warnings à examiner`);
+  console.log(`     ${report.stats.warningIssues} warnings Ã examiner`);
 }
 if (report.stats.infoIssues > 0) {
   console.log(`     ${report.stats.infoIssues} infos (enrichissement possible)`);
 }
 
-console.log(`\n Rapport sauvegardé: ${reportPath}\n`);
+console.log(`\n Rapport sauvegardÃ©: ${reportPath}\n`);
 
 process.exit(report.stats.criticalIssues > 0 ? 1 : 0);

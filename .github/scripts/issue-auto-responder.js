@@ -112,7 +112,7 @@ module.exports = async ({ github, context }) => {
         msg += `*Side note:* This app also supports Tuya WiFi models with local LAN control - check the [forum](${FORUM}) for details.\n\n`;
     }
 
-    msg += `---\n[Test version](${APP}) · [Forum thread](${FORUM}) · [Developer Tools](${DEV})`;
+    msg += `---\n[Test version](${APP}) Â· [Forum thread](${FORUM}) Â· [Developer Tools](${DEV})`;
 
     // Post/Update
     if (existingBot && action !== 'opened') {

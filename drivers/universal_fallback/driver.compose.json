@@ -3,7 +3,7 @@
     "en": "Universal Zigbee/Tuya Device",
     "fr": "Appareil Zigbee/Tuya Universel",
     "nl": "Universeel Zigbee/Tuya Apparaat",
-    "de": "Universelles Zigbee/Tuya Gerät"
+    "de": "Universelles Zigbee/Tuya GerÃ¤t"
   },
   "class": "other",
   "capabilities": [
@@ -142,7 +142,7 @@
           "type": "label",
           "label": {
             "en": "Detected Device Type",
-            "fr": "Type d'Appareil Détecté"
+            "fr": "Type d'Appareil DÃ©tectÃ©"
           },
           "value": "Unknown"
         },
@@ -151,7 +151,7 @@
           "type": "label",
           "label": {
             "en": "Detected Capabilities",
-            "fr": "Capacités Détectées"
+            "fr": "CapacitÃ©s DÃ©tectÃ©es"
           },
           "value": "None"
         },
@@ -169,7 +169,7 @@
           "type": "label",
           "label": {
             "en": "Tuya Datapoints Detected",
-            "fr": "Datapoints Tuya Détectés"
+            "fr": "Datapoints Tuya DÃ©tectÃ©s"
           },
           "value": "None"
         }
@@ -195,14 +195,14 @@
               "id": "auto",
               "label": {
                 "en": "Auto Detect",
-                "fr": "Détection Auto"
+                "fr": "DÃ©tection Auto"
               }
             },
             {
               "id": "light",
               "label": {
                 "en": "Light",
-                "fr": "Lumière"
+                "fr": "LumiÃ¨re"
               }
             },
             {
@@ -237,7 +237,7 @@
               "id": "button",
               "label": {
                 "en": "Button/Remote",
-                "fr": "Bouton/Télécommande"
+                "fr": "Bouton/TÃ©lÃ©commande"
               }
             },
             {
@@ -259,7 +259,7 @@
           "value": true,
           "hint": {
             "en": "Log all Tuya datapoint messages for debugging unknown devices",
-            "fr": "Logger tous les messages DP Tuya pour débugger les appareils inconnus"
+            "fr": "Logger tous les messages DP Tuya pour dÃ©bugger les appareils inconnus"
           }
         }
       ]
@@ -269,12 +269,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la Détection de Présence Radio"
+        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -282,7 +282,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "Sensibilité Présence Radio"
+        "fr": "SensibilitÃ© PrÃ©sence Radio"
       },
       "value": 15,
       "min": 5,
@@ -297,12 +297,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "Sécurité Enfant Logicielle"
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "Empêche les changements d'état manuels sur l'appareil"
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
       }
     },
     {
@@ -317,7 +317,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'éteint après X minutes (0 = désactivé)"
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -325,12 +325,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation Présence)"
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
       }
     },
     {
@@ -338,14 +338,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Émulé (Secondes)"
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
       }
     },
     {
@@ -360,7 +360,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Émulation logicielle pour boutons à action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -368,7 +368,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "Durée Inching (Secondes)"
+        "fr": "DurÃ©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -376,7 +376,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -384,12 +384,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "Récupération d'État Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'état précédent après une coupure de courant"
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
       }
     },
     {
@@ -404,7 +404,7 @@
       "max": 4000,
       "hint": {
         "en": "Cut power if consumption exceeds this value (0 = disabled)",
-        "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+        "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -417,7 +417,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
       }
     },
     {
@@ -432,7 +432,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santé descend sous cette valeur"
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     }
   ],
@@ -457,7 +457,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

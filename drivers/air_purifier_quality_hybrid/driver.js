@@ -34,7 +34,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_quality_hybrid_air_quality_co2_co2_above');
+      const card = this._getFlowCard('air_purifier_quality_hybrid_air_quality_co2_co2_above', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -45,7 +45,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition air_purifier_quality_hybrid_air_quality_co2_co2_above: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_quality_hybrid_air_quality_co2_co2_below');
+      const card = this._getFlowCard('air_purifier_quality_hybrid_air_quality_co2_co2_below', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -55,7 +55,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition air_purifier_quality_hybrid_air_quality_co2_co2_below: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('air_purifier_quality_hybrid_air_quality_co2_air_quality_good');
+      const card = this._getFlowCard('air_purifier_quality_hybrid_air_quality_co2_air_quality_good', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

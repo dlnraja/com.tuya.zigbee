@@ -34,7 +34,7 @@ class WaterTankMonitorDriver extends Homey.Driver {
 
     // Condition: fill level above threshold
     try {
-      const card = this.homey.flow.getConditionCard('water_tank_monitor_level_above');
+      const card = this._getFlowCard('water_tank_monitor_level_above', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -46,7 +46,7 @@ class WaterTankMonitorDriver extends Homey.Driver {
 
     // Condition: liquid state is
     try {
-      const card = this.homey.flow.getConditionCard('water_tank_monitor_state_is');
+      const card = this._getFlowCard('water_tank_monitor_state_is', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

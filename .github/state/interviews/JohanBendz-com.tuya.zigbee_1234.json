@@ -16,7 +16,7 @@
       "user": "Rikard7777",
       "date": "2025-06-09T19:14:52Z",
       "fps": [],
-      "excerpt": "### Update: Extended Device Interview Available\n\nAfter pairing the device successfully, an extended interview shows that the device does have standard Zigbee clusters:\n\n**Working standard clusters:**\n- Temperature measurement (1026): Shows 2270 = 22.7°C \n- Battery status (1): Shows 30 = 3.0V and 200 = 100% \n- Relative humidity (1029): Present but shows 0% \n\n**Analysis:**\nThe presence of standard Zigbee clusters suggests this device is a hybrid implementation. Temperature and battery work via standard clusters, but soil moisture data is likely transmitted via the Tuya proprietary cluster (0xEF00) which would explain why humidity shows 0%.\n\nThis information might help determine the best implementation approach for driver development."
+      "excerpt": "### Update: Extended Device Interview Available\n\nAfter pairing the device successfully, an extended interview shows that the device does have standard Zigbee clusters:\n\n**Working standard clusters:**\n- Temperature measurement (1026): Shows 2270 = 22.7Â°C \n- Battery status (1): Shows 30 = 3.0V and 200 = 100% \n- Relative humidity (1029): Present but shows 0% \n\n**Analysis:**\nThe presence of standard Zigbee clusters suggests this device is a hybrid implementation. Temperature and battery work via standard clusters, but soil moisture data is likely transmitted via the Tuya proprietary cluster (0xEF00) which would explain why humidity shows 0%.\n\nThis information might help determine the best implementation approach for driver development."
     },
     {
       "user": "dlnraja",

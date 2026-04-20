@@ -6,20 +6,20 @@
       "title": {
         "en": "CO detected",
         "nl": "CO gedetecteerd",
-        "fr": "CO détecté",
+        "fr": "CO dÃ©tectÃ©",
         "de": "CO erkannt"
       },
       "titleFormatted": {
         "en": "Carbon monoxide alarm triggered!",
         "nl": "Koolmonoxide alarm geactiveerd!",
-        "fr": "Alarme monoxyde de carbone déclenchée !",
-        "de": "Kohlenmonoxid-Alarm ausgelöst!"
+        "fr": "Alarme monoxyde de carbone dÃ©clenchÃ©e !",
+        "de": "Kohlenmonoxid-Alarm ausgelÃ¶st!"
       },
       "hint": {
         "en": "Triggers when carbon monoxide is detected - CRITICAL SAFETY ALERT",
         "nl": "Triggert wanneer koolmonoxide wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
-        "fr": "Se déclenche quand du monoxyde de carbone est détecté - ALERTE DE SÉCURITÉ CRITIQUE",
-        "de": "Wird ausgelöst, wenn Kohlenmonoxid erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
+        "fr": "Se dÃ©clenche quand du monoxyde de carbone est dÃ©tectÃ© - ALERTE DE SÃ‰CURITÃ‰ CRITIQUE",
+        "de": "Wird ausgelÃ¶st, wenn Kohlenmonoxid erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
       },
       "args": []
     },
@@ -28,20 +28,20 @@
       "title": {
         "en": "CO cleared",
         "nl": "CO opgeheven",
-        "fr": "CO dissipé",
+        "fr": "CO dissipÃ©",
         "de": "CO verschwunden"
       },
       "hint": {
         "en": "Triggers when carbon monoxide is no longer detected",
         "nl": "Triggert wanneer koolmonoxide niet meer wordt gedetecteerd",
-        "fr": "Se déclenche quand le monoxyde de carbone n'est plus détecté",
-        "de": "Wird ausgelöst, wenn kein Kohlenmonoxid mehr erkannt wird"
+        "fr": "Se dÃ©clenche quand le monoxyde de carbone n'est plus dÃ©tectÃ©",
+        "de": "Wird ausgelÃ¶st, wenn kein Kohlenmonoxid mehr erkannt wird"
       },
       "args": [],
       "titleFormatted": {
         "en": "CO cleared",
         "nl": "CO opgeheven",
-        "fr": "CO dissipé",
+        "fr": "CO dissipÃ©",
         "de": "CO verschwunden"
       }
     },
@@ -50,14 +50,14 @@
       "title": {
         "en": "CO level changed",
         "nl": "CO niveau veranderd",
-        "fr": "Niveau CO changé",
-        "de": "CO-Wert geändert"
+        "fr": "Niveau CO changÃ©",
+        "de": "CO-Wert geÃ¤ndert"
       },
       "titleFormatted": {
         "en": "CO level changed to [[ppm]] ppm",
         "nl": "CO niveau veranderd naar [[ppm]] ppm",
-        "fr": "Niveau CO changé à [[ppm]] ppm",
-        "de": "CO-Wert geändert zu [[ppm]] ppm"
+        "fr": "Niveau CO changÃ© Ã [[ppm]] ppm",
+        "de": "CO-Wert geÃ¤ndert zu [[ppm]] ppm"
       },
       "tokens": [
         {
@@ -85,8 +85,8 @@
       "hint": {
         "en": "Triggers when battery drops below threshold - Replace battery soon!",
         "nl": "Triggert wanneer de batterij onder de drempel zakt - Vervang binnenkort de batterij!",
-        "fr": "Se déclenche quand la batterie passe sous le seuil - Remplacez la batterie bientôt !",
-        "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt - Batterie bald ersetzen!"
+        "fr": "Se dÃ©clenche quand la batterie passe sous le seuil - Remplacez la batterie bientÃ´t !",
+        "de": "Wird ausgelÃ¶st, wenn die Batterie unter den Schwellenwert fÃ¤llt - Batterie bald ersetzen!"
       },
       "args": [],
       "titleFormatted": {
@@ -100,30 +100,30 @@
       "id": "co_sensor_tamper_true",
       "title": {
         "en": "Tamper alarm triggered",
-        "fr": "Alarme anti-sabotage déclenchée",
+        "fr": "Alarme anti-sabotage dÃ©clenchÃ©e",
         "nl": "Sabotage alarm geactiveerd",
-        "de": "Manipulationsalarm ausgelöst"
+        "de": "Manipulationsalarm ausgelÃ¶st"
       },
       "args": [],
       "titleFormatted": {
         "en": "Tamper alarm triggered",
-        "fr": "Alarme anti-sabotage déclenchée",
+        "fr": "Alarme anti-sabotage dÃ©clenchÃ©e",
         "nl": "Sabotage alarm geactiveerd",
-        "de": "Manipulationsalarm ausgelöst"
+        "de": "Manipulationsalarm ausgelÃ¶st"
       }
     },
     {
       "id": "co_sensor_tamper_false",
       "title": {
         "en": "Tamper alarm cleared",
-        "fr": "Alarme anti-sabotage terminée",
+        "fr": "Alarme anti-sabotage terminÃ©e",
         "nl": "Sabotage alarm opgeheven",
         "de": "Manipulationsalarm beendet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Tamper alarm cleared",
-        "fr": "Alarme anti-sabotage terminée",
+        "fr": "Alarme anti-sabotage terminÃ©e",
         "nl": "Sabotage alarm opgeheven",
         "de": "Manipulationsalarm beendet"
       }
@@ -167,14 +167,14 @@
       "title": {
         "en": "CO !{{is|is not}} detected",
         "nl": "CO !{{is|is niet}} gedetecteerd",
-        "fr": "CO !{{est|n'est pas}} détecté",
+        "fr": "CO !{{est|n'est pas}} dÃ©tectÃ©",
         "de": "CO !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "CO !{{is|is not}} detected",
         "nl": "CO !{{is|is niet}} gedetecteerd",
-        "fr": "CO !{{est|n'est pas}} détecté",
+        "fr": "CO !{{est|n'est pas}} dÃ©tectÃ©",
         "de": "CO !{{ist|ist nicht}} erkannt"
       }
     },
@@ -184,13 +184,13 @@
         "en": "CO level !{{is|is not}} above",
         "nl": "CO niveau !{{is|is niet}} boven",
         "fr": "Niveau CO !{{est|n'est pas}} au-dessus de",
-        "de": "CO-Wert !{{ist|ist nicht}} über"
+        "de": "CO-Wert !{{ist|ist nicht}} Ã¼ber"
       },
       "titleFormatted": {
         "en": "CO level !{{is|is not}} above [[ppm]] ppm",
         "nl": "CO niveau !{{is|is niet}} boven [[ppm]] ppm",
         "fr": "Niveau CO !{{est|n'est pas}} au-dessus de [[ppm]] ppm",
-        "de": "CO-Wert !{{ist|ist nicht}} über [[ppm]] ppm"
+        "de": "CO-Wert !{{ist|ist nicht}} Ã¼ber [[ppm]] ppm"
       },
       "args": [
         {
@@ -211,13 +211,13 @@
         "en": "Battery !{{is|is not}} above",
         "nl": "Batterij !{{is|is niet}} boven",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de",
-        "de": "Batterie !{{ist|ist nicht}} über"
+        "de": "Batterie !{{ist|ist nicht}} Ã¼ber"
       },
       "titleFormatted": {
         "en": "Battery !{{is|is not}} above [[threshold]]%",
         "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
-        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+        "de": "Batterie !{{ist|ist nicht}} Ã¼ber [[threshold]]%"
       },
       "args": [
         {
@@ -236,14 +236,14 @@
       "id": "co_sensor_co_active",
       "title": {
         "en": "CO !{{is|is not}} detected",
-        "fr": "CO !{{est|n'est pas}} détecté",
+        "fr": "CO !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "CO !{{is|is niet}} gedetecteerd",
         "de": "CO !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "CO !{{is|is not}} detected",
-        "fr": "CO !{{est|n'est pas}} détecté",
+        "fr": "CO !{{est|n'est pas}} dÃ©tectÃ©",
         "nl": "CO !{{is|is niet}} gedetecteerd",
         "de": "CO !{{ist|ist nicht}} erkannt"
       }
@@ -283,8 +283,8 @@
       "hint": {
         "en": "Triggers a test on the CO detector (if supported by device)",
         "nl": "Start een test op de CO detector (indien ondersteund door apparaat)",
-        "fr": "Déclenche un test sur le détecteur CO (si supporté par l'appareil)",
-        "de": "Löst einen Test am CO-Melder aus (falls vom Gerät unterstützt)"
+        "fr": "DÃ©clenche un test sur le dÃ©tecteur CO (si supportÃ© par l'appareil)",
+        "de": "LÃ¶st einen Test am CO-Melder aus (falls vom GerÃ¤t unterstÃ¼tzt)"
       },
       "args": []
     }

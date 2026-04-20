@@ -328,7 +328,7 @@ function scanLocalDrivers(){
         hasEF00=/CLUSTERS.TUYA_EF00|CLUSTERS.TUYA_EF00|EF00|TuyaSpecific/i.test(src);
         hasDPMappings=/dpMappings|dp_mappings|dataPoints/i.test(src);
       }
-      // Emit one entry per mfr×pid pair  same mfr with different pids = different device!
+      // Emit one entry per mfrÃ—pid pair  same mfr with different pids = different device!
       for(const fp of mfrs)for(const pid of(pids.length?pids:['?']))results.push({fp,pid,source:'local',driver:d,caps,dps,hasEF00,hasDPMappings});
     }catch{}
   }

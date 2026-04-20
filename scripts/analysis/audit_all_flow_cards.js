@@ -62,7 +62,7 @@ function scanDriver(driverName) {
     };
 
     // 
-    // CHECK 1: Flow cards définis mais non enregistrés dans driver.js
+    // CHECK 1: Flow cards dÃ©finis mais non enregistrÃ©s dans driver.js
     // 
 
     triggers.forEach(trigger => {
@@ -73,7 +73,7 @@ function scanDriver(driverName) {
           severity: 'CRITICAL',
           card: 'trigger',
           id: trigger.id,
-          message: `Trigger '${trigger.id}' défini mais NON enregistré dans driver.js`
+          message: `Trigger '${trigger.id}' dÃ©fini mais NON enregistrÃ© dans driver.js`
         });
         issues.missingRegistration.push({ driver: driverName, type: 'trigger', id: trigger.id });
       }
@@ -87,7 +87,7 @@ function scanDriver(driverName) {
           severity: 'CRITICAL',
           card: 'condition',
           id: condition.id,
-          message: `Condition '${condition.id}' définie mais NON enregistrée dans driver.js`
+          message: `Condition '${condition.id}' dÃ©finie mais NON enregistrÃ©e dans driver.js`
         });
         issues.missingRegistration.push({ driver: driverName, type: 'condition', id: condition.id });
       }
@@ -100,7 +100,7 @@ function scanDriver(driverName) {
           severity: 'CRITICAL',
           card: 'condition',
           id: condition.id,
-          message: `Condition '${condition.id}' enregistrée mais SANS runListener`
+          message: `Condition '${condition.id}' enregistrÃ©e mais SANS runListener`
         });
         issues.missingRunListener.push({ driver: driverName, id: condition.id });
       }
@@ -114,14 +114,14 @@ function scanDriver(driverName) {
           severity: 'HIGH',
           card: 'action',
           id: action.id,
-          message: `Action '${action.id}' définie mais NON enregistrée dans driver.js`
+          message: `Action '${action.id}' dÃ©finie mais NON enregistrÃ©e dans driver.js`
         });
         issues.missingRegistration.push({ driver: driverName, type: 'action', id: action.id });
       }
     });
 
     // 
-    // CHECK 2: Triggers appelés dans device.js mais non définis
+    // CHECK 2: Triggers appelÃ©s dans device.js mais non dÃ©finis
     // 
 
     const triggerMatches = deviceJs.match(/getTriggerCard\('([^']+)'\)/g);
@@ -135,7 +135,7 @@ function scanDriver(driverName) {
             severity: 'CRITICAL',
             card: 'trigger',
             id: triggerId,
-            message: `Trigger '${triggerId}' appelé dans device.js mais NON défini dans driver.compose.json`
+            message: `Trigger '${triggerId}' appelÃ© dans device.js mais NON dÃ©fini dans driver.compose.json`
           });
           issues.triggeredButNotDefined.push({ driver: driverName, id: triggerId });
         }
@@ -143,7 +143,7 @@ function scanDriver(driverName) {
     }
 
     // 
-    // CHECK 3: Triggers définis mais jamais appelés
+    // CHECK 3: Triggers dÃ©finis mais jamais appelÃ©s
     // 
 
     triggers.forEach(trigger => {
@@ -154,7 +154,7 @@ function scanDriver(driverName) {
           severity: 'WARNING',
           card: 'trigger',
           id: trigger.id,
-          message: `Trigger '${trigger.id}' défini mais JAMAIS appelé dans device.js`
+          message: `Trigger '${trigger.id}' dÃ©fini mais JAMAIS appelÃ© dans device.js`
         });
         issues.definedButNeverTriggered.push({ driver: driverName, id: trigger.id });
       }
@@ -203,7 +203,7 @@ function scanDriver(driverName) {
           severity: 'HIGH',
           card: 'condition',
           id: condition.id,
-          message: `Condition '${condition.id}' référence capability '${expectedCap}' non présente dans driver`,
+          message: `Condition '${condition.id}' rÃ©fÃ©rence capability '${expectedCap}' non prÃ©sente dans driver`,
           expectedCap
         });
         issues.incorrectCapability.push({ driver: driverName, id: condition.id, capability: expectedCap });
@@ -251,7 +251,7 @@ function scanAllDrivers() {
   return results;
 }
 
-// EXÉCUTION
+// EXÃ‰CUTION
 console.log('');
 console.log('AUDIT FLOW CARDS - TOUS DRIVERS');
 console.log('\n');
@@ -262,14 +262,14 @@ console.log('\n\n');
 console.log('STATISTIQUES GLOBALES');
 console.log('\n');
 
-console.log(`   Drivers scannés: ${stats.driversScanned}`);
-console.log(`   Total triggers définis: ${stats.totalTriggers}`);
-console.log(`   Total conditions définies: ${stats.totalConditions}`);
-console.log(`   Total actions définies: ${stats.totalActions}`);
-console.log(`   Total issues détectées: ${stats.totalIssues}\n`);
+console.log(`   Drivers scannÃ©s: ${stats.driversScanned}`);
+console.log(`   Total triggers dÃ©finis: ${stats.totalTriggers}`);
+console.log(`   Total conditions dÃ©finies: ${stats.totalConditions}`);
+console.log(`   Total actions dÃ©finies: ${stats.totalActions}`);
+console.log(`   Total issues dÃ©tectÃ©es: ${stats.totalIssues}\n`);
 
 console.log('');
-console.log('ISSUES PAR CATÉGORIE');
+console.log('ISSUES PAR CATÃ‰GORIE');
 console.log('\n');
 
 console.log(` CRITICAL - MISSING REGISTRATION: ${issues.missingRegistration.length}`);
@@ -324,19 +324,19 @@ fs.writeFileSync(reportFile, JSON.stringify({
   results
 }, null, 2), 'utf8');
 
-console.log(`\n\n Rapport sauvegardé: ${reportFile}\n`);
+console.log(`\n\n Rapport sauvegardÃ©: ${reportFile}\n`);
 
 console.log('');
-console.log('PROCHAINES ÉTAPES');
+console.log('PROCHAINES Ã‰TAPES');
 console.log('\n');
 
 const criticalCount = issues.missingRegistration.length + issues.missingRunListener.length + issues.triggeredButNotDefined.length;
 
 if (criticalCount > 0) {
-  console.log(`  ${criticalCount} ISSUES CRITIQUES nécessitent correction IMMÉDIATE\n`);
-  console.log('Exécuter: node scripts/fix_all_flow_issues.js\n');
+  console.log(`  ${criticalCount} ISSUES CRITIQUES nÃ©cessitent correction IMMÃ‰DIATE\n`);
+  console.log('ExÃ©cuter: node scripts/fix_all_flow_issues.js\n');
   process.exit(1);
 } else {
-  console.log(' Aucune issue critique détectée\n');
+  console.log(' Aucune issue critique dÃ©tectÃ©e\n');
   process.exit(0);
 }

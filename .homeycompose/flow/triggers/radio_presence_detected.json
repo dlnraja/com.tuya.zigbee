@@ -2,15 +2,15 @@
   "id": "radio_presence_detected",
   "title": {
     "en": "Radio Presence Sensing Detected",
-    "fr": "Présence Radio Détectée (Inferred)"
+    "fr": "PrÃ©sence Radio DÃ©tectÃ©e (Inferred)"
   },
   "titleFormatted": {
     "en": "Radio Presence detected on [[device]]",
-    "fr": "Présence Radio détectée sur [[device]]"
+    "fr": "PrÃ©sence Radio dÃ©tectÃ©e sur [[device]]"
   },
   "hint": {
     "en": "Triggered when human movement is inferred from Zigbee signal fluctuations",
-    "fr": "Déclenché quand un mouvement est déduit des fluctuations du signal Zigbee"
+    "fr": "DÃ©clenchÃ© quand un mouvement est dÃ©duit des fluctuations du signal Zigbee"
   },
   "args": [
     {

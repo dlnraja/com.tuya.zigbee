@@ -78,7 +78,7 @@ async function main() {
          if (isBotComment && isAutoClose) {
             console.log(`[REOPEN] ${repo} PR #${pr.number}: ${pr.title} (Bot-closed unmerged)`);
             gh(`pr reopen ${pr.number} -R ${repo}`);
-            gh(`pr comment ${pr.number} -R ${repo} --body "${TAG}\n###  Réouverture et Investigation approfondie\n\nBonjour, ce PR a été fermé par inadvertance par nos processus automatisés. Nous re-évaluons toutes les contributions pour assurer une couverture maximale. Nous investiguons chaque cas en profondeur car les variantes de fabricants et de device IDs sont nombreuses. Vos contributions sont essentielles. "`);
+            gh(`pr comment ${pr.number} -R ${repo} --body "${TAG}\n###  RÃ©ouverture et Investigation approfondie\n\nBonjour, ce PR a Ã©tÃ© fermÃ© par inadvertance par nos processus automatisÃ©s. Nous re-Ã©valuons toutes les contributions pour assurer une couverture maximale. Nous investiguons chaque cas en profondeur car les variantes de fabricants et de device IDs sont nombreuses. Vos contributions sont essentielles. "`);
          }
 
       }

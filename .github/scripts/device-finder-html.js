@@ -71,7 +71,7 @@ const bugUrl=R+'/issues/new?template=02_bug_report.yml&title='+encodeURIComponen
 const cls=d.class.charAt(0).toUpperCase()+d.class.slice(1);
 return '<div class="card" data-d="'+d.id+'" data-c="'+d.class+'" data-s="'+[d.id,d.name,...d.mfrs,...d.pids,...d.caps].join(' ').toLowerCase()+'">'
 +'<div style="display:flex;justify-content:space-between;align-items:start"><h3>'+d.name+'</h3>'+proto+'</div>'
-+'<div class="meta">'+cls+' · <code>'+d.id+'</code> · '+d.fpCount+' fingerprints</div>'
++'<div class="meta">'+cls+' Â· <code>'+d.id+'</code> Â· '+d.fpCount+' fingerprints</div>'
 +'<div class="fps">'+fps+pids+'</div>'
 +'<div>'+caps+'</div>'
 +'<div class="actions">'

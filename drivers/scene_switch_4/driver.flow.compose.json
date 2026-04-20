@@ -4,15 +4,15 @@
       "id": "scene_switch_4_button_pressed",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé",
+        "fr": "Bouton appuyÃ©",
         "nl": "Knop ingedrukt",
-        "de": "Taste gedrückt"
+        "de": "Taste gedrÃ¼ckt"
       },
       "titleFormatted": {
         "en": "Button [[button]] pressed",
-        "fr": "Bouton [[button]] appuyé",
+        "fr": "Bouton [[button]] appuyÃ©",
         "nl": "Knop [[button]] ingedrukt",
-        "de": "Taste [[button]] gedrückt"
+        "de": "Taste [[button]] gedrÃ¼ckt"
       },
       "args": [
         {
@@ -70,15 +70,15 @@
       "id": "scene_switch_4_button_double_press",
       "title": {
         "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué",
+        "fr": "Bouton double-cliquÃ©",
         "nl": "Knop dubbel ingedrukt",
-        "de": "Taste doppelt gedrückt"
+        "de": "Taste doppelt gedrÃ¼ckt"
       },
       "titleFormatted": {
         "en": "Button [[button]] double-pressed",
-        "fr": "Bouton [[button]] double-cliqué",
+        "fr": "Bouton [[button]] double-cliquÃ©",
         "nl": "Knop [[button]] dubbel ingedrukt",
-        "de": "Taste [[button]] doppelt gedrückt"
+        "de": "Taste [[button]] doppelt gedrÃ¼ckt"
       },
       "args": [
         {
@@ -138,13 +138,13 @@
         "en": "Button long-pressed",
         "fr": "Bouton appui long",
         "nl": "Knop lang ingedrukt",
-        "de": "Taste lange gedrückt"
+        "de": "Taste lange gedrÃ¼ckt"
       },
       "titleFormatted": {
         "en": "Button [[button]] long-pressed",
         "fr": "Bouton [[button]] appui long",
         "nl": "Knop [[button]] lang ingedrukt",
-        "de": "Taste [[button]] lange gedrückt"
+        "de": "Taste [[button]] lange gedrÃ¼ckt"
       },
       "args": [
         {
@@ -202,30 +202,30 @@
       "id": "scene_switch_4_button_1_pressed",
       "title": {
         "en": "Button 1 pressed",
-        "fr": "Bouton 1 appuyé",
+        "fr": "Bouton 1 appuyÃ©",
         "nl": "Knop 1 ingedrukt",
-        "de": "Taste 1 gedrückt"
+        "de": "Taste 1 gedrÃ¼ckt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 1 pressed",
-        "fr": "Bouton 1 appuyé",
+        "fr": "Bouton 1 appuyÃ©",
         "nl": "Knop 1 ingedrukt",
-        "de": "Taste 1 gedrückt"
+        "de": "Taste 1 gedrÃ¼ckt"
       }
     },
     {
       "id": "scene_switch_4_button_1_double",
       "title": {
         "en": "Button 1 double-pressed",
-        "fr": "Bouton 1 double-cliqué",
+        "fr": "Bouton 1 double-cliquÃ©",
         "nl": "Knop 1 dubbel",
         "de": "Taste 1 doppelt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 1 double-pressed",
-        "fr": "Bouton 1 double-cliqué",
+        "fr": "Bouton 1 double-cliquÃ©",
         "nl": "Knop 1 dubbel",
         "de": "Taste 1 doppelt"
       }
@@ -250,30 +250,30 @@
       "id": "scene_switch_4_button_2_pressed",
       "title": {
         "en": "Button 2 pressed",
-        "fr": "Bouton 2 appuyé",
+        "fr": "Bouton 2 appuyÃ©",
         "nl": "Knop 2 ingedrukt",
-        "de": "Taste 2 gedrückt"
+        "de": "Taste 2 gedrÃ¼ckt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 2 pressed",
-        "fr": "Bouton 2 appuyé",
+        "fr": "Bouton 2 appuyÃ©",
         "nl": "Knop 2 ingedrukt",
-        "de": "Taste 2 gedrückt"
+        "de": "Taste 2 gedrÃ¼ckt"
       }
     },
     {
       "id": "scene_switch_4_button_2_double",
       "title": {
         "en": "Button 2 double-pressed",
-        "fr": "Bouton 2 double-cliqué",
+        "fr": "Bouton 2 double-cliquÃ©",
         "nl": "Knop 2 dubbel",
         "de": "Taste 2 doppelt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 2 double-pressed",
-        "fr": "Bouton 2 double-cliqué",
+        "fr": "Bouton 2 double-cliquÃ©",
         "nl": "Knop 2 dubbel",
         "de": "Taste 2 doppelt"
       }
@@ -298,30 +298,30 @@
       "id": "scene_switch_4_button_3_pressed",
       "title": {
         "en": "Button 3 pressed",
-        "fr": "Bouton 3 appuyé",
+        "fr": "Bouton 3 appuyÃ©",
         "nl": "Knop 3 ingedrukt",
-        "de": "Taste 3 gedrückt"
+        "de": "Taste 3 gedrÃ¼ckt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 3 pressed",
-        "fr": "Bouton 3 appuyé",
+        "fr": "Bouton 3 appuyÃ©",
         "nl": "Knop 3 ingedrukt",
-        "de": "Taste 3 gedrückt"
+        "de": "Taste 3 gedrÃ¼ckt"
       }
     },
     {
       "id": "scene_switch_4_button_3_double",
       "title": {
         "en": "Button 3 double-pressed",
-        "fr": "Bouton 3 double-cliqué",
+        "fr": "Bouton 3 double-cliquÃ©",
         "nl": "Knop 3 dubbel",
         "de": "Taste 3 doppelt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 3 double-pressed",
-        "fr": "Bouton 3 double-cliqué",
+        "fr": "Bouton 3 double-cliquÃ©",
         "nl": "Knop 3 dubbel",
         "de": "Taste 3 doppelt"
       }
@@ -346,30 +346,30 @@
       "id": "scene_switch_4_button_4_pressed",
       "title": {
         "en": "Button 4 pressed",
-        "fr": "Bouton 4 appuyé",
+        "fr": "Bouton 4 appuyÃ©",
         "nl": "Knop 4 ingedrukt",
-        "de": "Taste 4 gedrückt"
+        "de": "Taste 4 gedrÃ¼ckt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 4 pressed",
-        "fr": "Bouton 4 appuyé",
+        "fr": "Bouton 4 appuyÃ©",
         "nl": "Knop 4 ingedrukt",
-        "de": "Taste 4 gedrückt"
+        "de": "Taste 4 gedrÃ¼ckt"
       }
     },
     {
       "id": "scene_switch_4_button_4_double",
       "title": {
         "en": "Button 4 double-pressed",
-        "fr": "Bouton 4 double-cliqué",
+        "fr": "Bouton 4 double-cliquÃ©",
         "nl": "Knop 4 dubbel",
         "de": "Taste 4 doppelt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button 4 double-pressed",
-        "fr": "Bouton 4 double-cliqué",
+        "fr": "Bouton 4 double-cliquÃ©",
         "nl": "Knop 4 dubbel",
         "de": "Taste 4 doppelt"
       }
@@ -394,9 +394,9 @@
       "id": "scene_switch_4_battery_changed",
       "title": {
         "en": "Battery level changed",
-        "fr": "Niveau batterie changé",
+        "fr": "Niveau batterie changÃ©",
         "nl": "Batterijniveau gewijzigd",
-        "de": "Batteriestand geändert"
+        "de": "Batteriestand geÃ¤ndert"
       },
       "tokens": [
         {
@@ -414,9 +414,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Battery level changed",
-        "fr": "Niveau batterie changé",
+        "fr": "Niveau batterie changÃ©",
         "nl": "Batterijniveau gewijzigd",
-        "de": "Batteriestand geändert"
+        "de": "Batteriestand geÃ¤ndert"
       }
     },
     {

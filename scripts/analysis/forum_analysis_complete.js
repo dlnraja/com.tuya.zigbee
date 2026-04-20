@@ -3,8 +3,8 @@ const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 /**
  * HOMEY COMMUNITY FORUM ANALYSIS COMPLETE v5.5.295
- * Analyse complète des forums avec recherches croisées 10+ sources par problème
- * Génère solutions basées sur patterns identifiés dans écosystème Zigbee global
+ * Analyse complÃ¨te des forums avec recherches croisÃ©es 10+ sources par problÃ¨me
+ * GÃ©nÃ¨re solutions basÃ©es sur patterns identifiÃ©s dans Ã©cosystÃ¨me Zigbee global
  */
 
 const fs = require('fs');
@@ -21,7 +21,7 @@ class HomeyForumAnalysisComplete {
   }
 
   /**
-   * Initialise les problèmes critiques identifiés dans les forums
+   * Initialise les problÃ¨mes critiques identifiÃ©s dans les forums
    */
   initializeForumIssues() {
     this.forumIssues = [
@@ -30,7 +30,7 @@ class HomeyForumAnalysisComplete {
         title: 'Door Sensor _TZ3000_n2egfsli Unknown Device',
         forum: 'https://community.homey.app/t/app-pro-tuya-zigbee-app/26439/5377',
         user: 'ruijssantos',
-        description: 'Door sensor _TZ3000_n2egfsli présent dans liste supportée mais détecté comme "Unknown Zigbee Device" au lieu de contact sensor',
+        description: 'Door sensor _TZ3000_n2egfsli prÃ©sent dans liste supportÃ©e mais dÃ©tectÃ© comme "Unknown Zigbee Device" au lieu de contact sensor',
         severity: 'high',
         impact: 'Device pairing failures',
         deviceInfo: {
@@ -44,7 +44,7 @@ class HomeyForumAnalysisComplete {
         title: 'Boutons 4-Gang Physiques Non Fonctionnels',
         forum: 'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/744',
         user: 'Eftychis_Georgilas',
-        description: 'Boutons icônes dans app fonctionnent parfaitement, boutons physiques du device ne répondent pas. Fonctionnait dans app Johan Bendz précédente',
+        description: 'Boutons icÃ´nes dans app fonctionnent parfaitement, boutons physiques du device ne rÃ©pondent pas. Fonctionnait dans app Johan Bendz prÃ©cÃ©dente',
         severity: 'high',
         impact: 'Physical button functionality lost',
         deviceInfo: {
@@ -58,7 +58,7 @@ class HomeyForumAnalysisComplete {
         title: 'Motion Sensor Luminance Update Discontinu',
         forum: 'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/744',
         user: 'Eftychis_Georgilas',
-        description: 'Luminance motion sensor se met à jour seulement lors détection mouvement, devrait être mise à jour continue',
+        description: 'Luminance motion sensor se met Ã jour seulement lors dÃ©tection mouvement, devrait Ãªtre mise Ã jour continue',
         severity: 'medium',
         impact: 'Inaccurate ambient light readings',
         deviceInfo: {
@@ -70,16 +70,16 @@ class HomeyForumAnalysisComplete {
   }
 
   /**
-   * Initialise la recherche multi-sources avec résultats trouvés
+   * Initialise la recherche multi-sources avec rÃ©sultats trouvÃ©s
    */
   initializeMultiSourceResearch() {
-    // Problème 1: _TZ3000_n2egfsli Door Sensor
+    // ProblÃ¨me 1: _TZ3000_n2egfsli Door Sensor
     this.multiSourceResearch.set('door_sensor_tz3000_n2egfsli', {
       sources: [
         {
           name: 'Zigbee2MQTT',
           url: 'https://www.zigbee2mqtt.io/devices/TS0203.html',
-          findings: 'TS0203 supporté avec manufacturer _TZ3000_n2egfsli, fingerprint validé',
+          findings: 'TS0203 supportÃ© avec manufacturer _TZ3000_n2egfsli, fingerprint validÃ©',
           solution: 'Proper fingerprint configuration in Z2M'
         },
         {
@@ -140,7 +140,7 @@ class HomeyForumAnalysisComplete {
       confidence: 95
     });
 
-    // Problème 2: Boutons 4-Gang Physiques
+    // ProblÃ¨me 2: Boutons 4-Gang Physiques
     this.multiSourceResearch.set('buttons_4gang_physical_issue', {
       sources: [
         {
@@ -203,7 +203,7 @@ class HomeyForumAnalysisComplete {
       confidence: 90
     });
 
-    // Problème 3: Motion Luminance Continue
+    // ProblÃ¨me 3: Motion Luminance Continue
     this.multiSourceResearch.set('motion_luminance_continuous_update', {
       sources: [
         {
@@ -267,7 +267,7 @@ class HomeyForumAnalysisComplete {
   }
 
   /**
-   * Génère les solutions basées sur la recherche multi-sources
+   * GÃ©nÃ¨re les solutions basÃ©es sur la recherche multi-sources
    */
   generateSolutions() {
     // Solution 1: Door Sensor _TZ3000_n2egfsli
@@ -404,7 +404,7 @@ async onNodeInit() {
   }
 
   /**
-   * Analyse et génère le rapport complet
+   * Analyse et gÃ©nÃ¨re le rapport complet
    */
   async analyzeAndReport() {
     console.log(' HOMEY COMMUNITY FORUM ANALYSIS COMPLETE');
@@ -439,12 +439,12 @@ async onNodeInit() {
       console.log(`- Based on ${solution.basedOnSources} sources`);
     }
 
-    // Sauvegarder le rapport détaillé
+    // Sauvegarder le rapport dÃ©taillÃ©
     this.saveDetailedReport();
   }
 
   /**
-   * Sauvegarde le rapport détaillé
+   * Sauvegarde le rapport dÃ©taillÃ©
    */
   saveDetailedReport() {
     const report = {
@@ -475,7 +475,7 @@ async onNodeInit() {
   }
 }
 
-// Exécution
+// ExÃ©cution
 if (require.main === module) {
   const analyzer = new HomeyForumAnalysisComplete();
   analyzer.analyzeAndReport().catch(console.error);

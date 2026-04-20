@@ -2,14 +2,14 @@
   "type": "number",
   "title": {
     "en": "Eco Temperature",
-    "fr": "Température Éco"
+    "fr": "TempÃ©rature Ã‰co"
   },
   "desc": {
     "en": "Temperature in eco mode",
-    "fr": "Température en mode éco"
+    "fr": "TempÃ©rature en mode Ã©co"
   },
   "units": {
-    "en": "°C"
+    "en": "Â°C"
   },
   "getable": true,
   "setable": true,

@@ -1,7 +1,7 @@
 {
   "name": {
     "en": "Soil Moisture Sensor",
-    "fr": "Capteur d'Humidité du Sol",
+    "fr": "Capteur d'HumiditÃ© du Sol",
     "nl": "Bodemsensor",
     "de": "Bodensensor"
   },
@@ -19,7 +19,7 @@
     "measure_humidity.soil": {
       "title": {
         "en": "Soil Moisture",
-        "fr": "Humidité du Sol",
+        "fr": "HumiditÃ© du Sol",
         "nl": "Bodemvochtigheid",
         "de": "Bodenfeuchtigkeit"
       }
@@ -27,7 +27,7 @@
     "measure_humidity": {
       "title": {
         "en": "Air Humidity",
-        "fr": "Humidité de l'Air",
+        "fr": "HumiditÃ© de l'Air",
         "nl": "Luchtvochtigheid",
         "de": "Luftfeuchtigkeit"
       }
@@ -45,7 +45,7 @@
         "en": "Fertilizer (EC)",
         "fr": "Engrais (EC)",
         "nl": "Bemesting (EC)",
-        "de": "Dünger (EC)"
+        "de": "DÃ¼nger (EC)"
       }
     }
   },
@@ -112,8 +112,8 @@
           "id": "temperature_calibration",
           "type": "number",
           "label": {
-            "en": "Temperature Offset (°C)",
-            "fr": "Décalage Température (°C)"
+            "en": "Temperature Offset (Â°C)",
+            "fr": "DÃ©calage TempÃ©rature (Â°C)"
           },
           "value": 0,
           "min": -30,
@@ -121,7 +121,7 @@
           "step": 0.1,
           "hint": {
             "en": "Offset to adjust temperature readings (-30 to +30)",
-            "fr": "Décalage pour ajuster les lectures de température (-30 à +30)"
+            "fr": "DÃ©calage pour ajuster les lectures de tempÃ©rature (-30 Ã +30)"
           }
         },
         {
@@ -129,7 +129,7 @@
           "type": "number",
           "label": {
             "en": "Air Humidity Offset (%)",
-            "fr": "Décalage Humidité Air (%)"
+            "fr": "DÃ©calage HumiditÃ© Air (%)"
           },
           "value": 0,
           "min": -30,
@@ -137,7 +137,7 @@
           "step": 1,
           "hint": {
             "en": "Offset to adjust air humidity readings (-30 to +30)",
-            "fr": "Décalage pour ajuster les lectures d'humidité de l'air (-30 à +30)"
+            "fr": "DÃ©calage pour ajuster les lectures d'humiditÃ© de l'air (-30 Ã +30)"
           }
         },
         {
@@ -145,7 +145,7 @@
           "type": "number",
           "label": {
             "en": "Soil Moisture Offset (%)",
-            "fr": "Décalage Humidité Sol (%)"
+            "fr": "DÃ©calage HumiditÃ© Sol (%)"
           },
           "value": 0,
           "min": -30,
@@ -153,7 +153,7 @@
           "step": 1,
           "hint": {
             "en": "Offset to adjust soil moisture readings (-30 to +30)",
-            "fr": "Décalage pour ajuster les lectures d'humidité du sol (-30 à +30)"
+            "fr": "DÃ©calage pour ajuster les lectures d'humiditÃ© du sol (-30 Ã +30)"
           }
         },
         {
@@ -161,7 +161,7 @@
           "type": "dropdown",
           "label": {
             "en": "Decimal Precision",
-            "fr": "Précision"
+            "fr": "PrÃ©cision"
           },
           "value": "1",
           "hint": {
@@ -171,13 +171,13 @@
             {
               "id": "1",
               "label": {
-                "en": "1 decimal (20.5°C)"
+                "en": "1 decimal (20.5Â°C)"
               }
             },
             {
               "id": "2",
               "label": {
-                "en": "2 decimals (20.53°C)"
+                "en": "2 decimals (20.53Â°C)"
               }
             }
           ]
@@ -196,7 +196,7 @@
           "type": "number",
           "label": {
             "en": "Soil Dryness Threshold (%)",
-            "fr": "Seuil Sécheresse Sol (%)"
+            "fr": "Seuil SÃ©cheresse Sol (%)"
           },
           "value": 30,
           "min": 0,
@@ -204,7 +204,7 @@
           "step": 5,
           "hint": {
             "en": "Moisture percentage below which water shortage alarm triggers (0-100%)",
-            "fr": "Pourcentage d'humidité en dessous duquel l'alarme manque d'eau se déclenche (0-100%)"
+            "fr": "Pourcentage d'humiditÃ© en dessous duquel l'alarme manque d'eau se dÃ©clenche (0-100%)"
           }
         }
       ]
@@ -213,7 +213,7 @@
       "type": "group",
       "label": {
         "en": " Settings (v5.5.330 Hobeian)",
-        "fr": " Paramètres (v5.5.330 Hobeian)"
+        "fr": " ParamÃ¨tres (v5.5.330 Hobeian)"
       },
       "children": [
         {
@@ -221,28 +221,28 @@
           "type": "dropdown",
           "label": {
             "en": "Temperature Unit",
-            "fr": "Unité de Température"
+            "fr": "UnitÃ© de TempÃ©rature"
           },
           "value": "celsius",
           "values": [
             {
               "id": "celsius",
               "label": {
-                "en": "Celsius (°C)",
-                "fr": "Celsius (°C)"
+                "en": "Celsius (Â°C)",
+                "fr": "Celsius (Â°C)"
               }
             },
             {
               "id": "fahrenheit",
               "label": {
-                "en": "Fahrenheit (°F)",
-                "fr": "Fahrenheit (°F)"
+                "en": "Fahrenheit (Â°F)",
+                "fr": "Fahrenheit (Â°F)"
               }
             }
           ],
           "hint": {
             "en": "Temperature unit for display",
-            "fr": "Unité de température pour l'affichage"
+            "fr": "UnitÃ© de tempÃ©rature pour l'affichage"
           }
         }
       ]

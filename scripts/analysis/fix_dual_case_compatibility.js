@@ -2,14 +2,14 @@
 /**
  *  EMERGENCY FIX v5.5.297: Dual Case manufacturerName Compatibility
  *
- * PROBLÈME CRITIQUE DÉTECTÉ POST #747:
+ * PROBLÃˆME CRITIQUE DÃ‰TECTÃ‰ POST #747:
  * - v5.5.296 a converti tous _tze204_  _TZE204_ (UPPERCASE)
- * - Mais devices réels reportent manufacturerName en LOWERCASE
- * - Résultat: Device matching CASSÉ, devices non reconnus
+ * - Mais devices rÃ©els reportent manufacturerName en LOWERCASE
+ * - RÃ©sultat: Device matching CASSÃ‰, devices non reconnus
  *
  * SOLUTION:
  * - Ajouter versions LOWERCASE des manufacturerNames UPPERCASE
- * - Maintenir compatibilité bidirectionnelle
+ * - Maintenir compatibilitÃ© bidirectionnelle
  * - Permet recognition devices existants + nouveaux standards
  */
 
@@ -18,7 +18,7 @@ const path = require('path');
 
 const DRIVERS_PATH = path.join(__dirname, 'drivers');
 
-// Patterns Tuya qui nécessitent dual case support
+// Patterns Tuya qui nÃ©cessitent dual case support
 const DUAL_CASE_PATTERNS = [
   { upper: /_TZE204_/g, lower: '_tze204_' },
   { upper: /_TZE200_/g, lower: '_tze200_' },
@@ -76,14 +76,14 @@ class DualCaseCompatibilityFixer {
       const namesToAdd = new Set();
       let addedCount = 0;
 
-      // Rechercher manufacturerNames UPPERCASE qui nécessitent version lowercase
+      // Rechercher manufacturerNames UPPERCASE qui nÃ©cessitent version lowercase
       for (const manufacturerName of originalNames) {
         for (const pattern of DUAL_CASE_PATTERNS) {
           if (pattern.upper.test(manufacturerName)) {
-            // Créer version lowercase
+            // CrÃ©er version lowercase
             const lowercaseName = manufacturerName.replace(pattern.upper, pattern.lower);
 
-            // Vérifier si lowercase version n'existe pas déjà
+            // VÃ©rifier si lowercase version n'existe pas dÃ©jÃ
             if (!originalNames.includes(lowercaseName)) {
               namesToAdd.add(lowercaseName);
               console.log(`   ${driverName}: Adding dual case ${manufacturerName}  ${lowercaseName}`);

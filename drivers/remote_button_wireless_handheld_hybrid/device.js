@@ -1,4 +1,5 @@
 'use strict';
+const CI = require('../../lib/utils/CaseInsensitiveMatcher'); // Fix: Architectural Compliance
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
@@ -621,8 +622,8 @@ class Button4GangDevice extends ButtonDevice {
       ];
       
       // Check if this is TS0044 product (uses 4 endpoints with cluster 57344)
-      const pidLower = (productId || '').toLowerCase();
-      const mfrLower = (manufacturerName || '').toLowerCase();
+      const pidLower = CI.normalize(productId);
+      const mfrLower = CI.normalize(manufacturerName);
       const isTS0044 = pidLower.includes('ts0044') || pidLower.includes('ts004f');
       const usesE000ByManufacturer = knownE000Devices.some(id => mfrLower.includes(id.toLowerCase()));
 

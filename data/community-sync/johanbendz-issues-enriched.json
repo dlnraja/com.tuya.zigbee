@@ -61,7 +61,7 @@
       "protocol": "Tuya DP",
       "dpMappings": {
         "3": "soil_moisture (raw)",
-        "5": "temperature (÷10)",
+        "5": "temperature (Ã·10)",
         "9": "temperature_unit",
         "14": "battery_state",
         "15": "battery (%)"

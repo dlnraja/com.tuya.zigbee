@@ -84,13 +84,25 @@ class TuyatecTempHumidSensorDevice extends UnifiedSensorBase {
       const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
-      this.log('[TUYATEC]  T:', temp, '°C H:', hum, '% B:', bat, '%');
+      this.log('[TUYATEC]  T:', temp, 'Â°C H:', hum, '% B:', bat, '%');
     }, 100);
   }
 
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 

@@ -183,7 +183,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
     this.registerCapabilityListener('dim', async (value, opts) => {
       this.log('');
       this.log('');
-      this.log(`  DIM COMMAND: ${Math.round(safeMultiply(value, 100))}%`);
+      this.log(`  DIM COMMAND: ${Math.round(value*100)}%`);
       this.log('');
 
       const level = Math.max(1, Math.min(254,Math.round(safeMultiply(value, 254))));

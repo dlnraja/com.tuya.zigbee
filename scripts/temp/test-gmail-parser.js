@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { extractPseudo, extractCrashData } = require('./.github/scripts/gmail-imap-reader');
 
-// Crée un mock d'email pour tester le parsing
+// CrÃ©e un mock d'email pour tester le parsing
 const mockEmail = `
 Date: Sun, 28 Mar 2026 20:30:00 +0100
 From: "Homey App Tuya Zigbee" <noreply@athom.com>
@@ -30,6 +30,6 @@ const crashData = extractCrashData(mockEmail);
 console.log('Pseudo:', pseudo);
 console.log('Crash Data:', crashData);
 
-// Sauvegarde dans un fichier pour analyse ultérieure
+// Sauvegarde dans un fichier pour analyse ultÃ©rieure
 fs.writeFileSync('scripts/temp/mock-diag.json', JSON.stringify({ pseudo, crashData }, null, 2));
 

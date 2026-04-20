@@ -2,15 +2,15 @@
   "id": "tuya_raw_received",
   "title": {
     "en": "Tuya raw DP received",
-    "fr": "DP Tuya brut reçu"
+    "fr": "DP Tuya brut reÃ§u"
   },
   "titleFormatted": {
     "en": "Raw DP [[dp]] received on [[device]]",
-    "fr": "DP brut [[dp]] reçu sur [[device]]"
+    "fr": "DP brut [[dp]] reÃ§u sur [[device]]"
   },
   "hint": {
     "en": "Triggers when a raw (type 0) DP is received. Data is provided as hex string.",
-    "fr": "Se déclenche quand un DP brut (type 0) est reçu. Données en hex."
+    "fr": "Se dÃ©clenche quand un DP brut (type 0) est reÃ§u. DonnÃ©es en hex."
   },
   "tokens": [
     { "name": "dp_number", "type": "number", "title": { "en": "DP Number" }, "example": 1 },

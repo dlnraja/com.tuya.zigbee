@@ -30,7 +30,7 @@ class LedStripRgbwDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('led_strip_rgbw_led_strip_rgbw_is_on');
+      const card = this._getFlowCard('led_strip_rgbw_led_strip_rgbw_is_on', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -40,7 +40,7 @@ class LedStripRgbwDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition led_strip_rgbw_led_strip_rgbw_is_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('led_strip_rgbw_is_on');
+      const card = this._getFlowCard('led_strip_rgbw_is_on', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -51,7 +51,7 @@ class LedStripRgbwDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('led_strip_rgbw_led_strip_rgbw_turn_on');
+      const card = this._getFlowCard('led_strip_rgbw_led_strip_rgbw_turn_on', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -62,7 +62,7 @@ class LedStripRgbwDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action led_strip_rgbw_led_strip_rgbw_turn_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('led_strip_rgbw_led_strip_rgbw_turn_off');
+      const card = this._getFlowCard('led_strip_rgbw_led_strip_rgbw_turn_off', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -73,7 +73,7 @@ class LedStripRgbwDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action led_strip_rgbw_led_strip_rgbw_turn_off: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('led_strip_rgbw_led_strip_rgbw_toggle');
+      const card = this._getFlowCard('led_strip_rgbw_led_strip_rgbw_toggle', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -85,7 +85,7 @@ class LedStripRgbwDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action led_strip_rgbw_led_strip_rgbw_toggle: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('led_strip_rgbw_turn_on');
+      const card = this._getFlowCard('led_strip_rgbw_turn_on', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -96,7 +96,7 @@ class LedStripRgbwDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action led_strip_rgbw_turn_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('led_strip_rgbw_turn_off');
+      const card = this._getFlowCard('led_strip_rgbw_turn_off', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -107,7 +107,7 @@ class LedStripRgbwDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action led_strip_rgbw_turn_off: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('led_strip_rgbw_toggle');
+      const card = this._getFlowCard('led_strip_rgbw_toggle', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -119,7 +119,7 @@ class LedStripRgbwDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action led_strip_rgbw_toggle: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('led_strip_rgbw_set_brightness');
+      const card = this._getFlowCard('led_strip_rgbw_set_brightness', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

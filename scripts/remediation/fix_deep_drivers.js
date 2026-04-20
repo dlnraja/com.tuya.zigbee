@@ -228,9 +228,9 @@ function verifyJS(content) {
 }
 
 // ==================== MAIN ====================
-console.log('╔══════════════════════════════════════════════════════════════╗');
-console.log('║  DEEP REMEDIATION SCRIPT v2.0 - Complete Driver Rewrite    ║');
-console.log('╚══════════════════════════════════════════════════════════════╝');
+console.log('â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—');
+console.log('â•‘  DEEP REMEDIATION SCRIPT v2.0 - Complete Driver Rewrite    â•‘');
+console.log('â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
 console.log(`Mode: ${DRY_RUN ? 'DRY RUN' : 'LIVE'}`);
 console.log('');
 
@@ -269,13 +269,13 @@ for (const dir of driverDirs) {
     
     if (flowCards.triggers.length === 0 && flowCards.conditions.length === 0 && flowCards.actions.length === 0) {
       // No flow compose file or empty - generate minimal driver
-      console.log(`    ⚠️  No flow cards found in compose, generating minimal driver`);
+      console.log(`    âšï¸  No flow cards found in compose, generating minimal driver`);
     }
     
     const newContent = generateCleanDriver(info, flowCards);
     
     if (!verifyJS(newContent)) {
-      console.error(`    ❌ Generated code has brace imbalance! Skipping.`);
+      console.error(`    âŒ Generated code has brace imbalance! Skipping.`);
       stats.errors++;
       continue;
     }
@@ -285,21 +285,21 @@ for (const dir of driverDirs) {
     }
     
     stats.rewritten++;
-    console.log(`    ✅ Rewritten (${flowCards.triggers.length}T/${flowCards.conditions.length}C/${flowCards.actions.length}A)`);
+    console.log(`    âœ… Rewritten (${flowCards.triggers.length}T/${flowCards.conditions.length}C/${flowCards.actions.length}A)`);
     
   } catch (err) {
-    console.error(`    ❌ Error: ${err.message}`);
+    console.error(`    âŒ Error: ${err.message}`);
     stats.errors++;
   }
 }
 
 console.log('');
-console.log('═══════════════════════════════════════');
+console.log('â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
 console.log(`  Scanned:    ${stats.scanned}`);
 console.log(`  Rewritten:  ${stats.rewritten}`);
 console.log(`  Skipped:    ${stats.skipped} (already clean)`);
 console.log(`  Errors:     ${stats.errors}`);
-console.log('═══════════════════════════════════════');
+console.log('â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
 
 // Final verification
 let remainingBroken = 0;
@@ -322,7 +322,7 @@ for (const dir of driverDirs) {
 }
 
 if (remainingBroken === 0) {
-  console.log('\n✅ ALL driver.js files are syntactically valid!');
+  console.log('\nâœ… ALL driver.js files are syntactically valid!');
 } else {
-  console.log(`\n⚠️  ${remainingBroken} files still need attention`);
+  console.log(`\nâšï¸  ${remainingBroken} files still need attention`);
 }

@@ -29,7 +29,7 @@ class CeilingFanDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('ceiling_fan_is_on');
+      const card = this._getFlowCard('ceiling_fan_is_on', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -40,7 +40,7 @@ class CeilingFanDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('ceiling_fan_turn_on');
+      const card = this._getFlowCard('ceiling_fan_turn_on', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -51,7 +51,7 @@ class CeilingFanDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action ceiling_fan_turn_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('ceiling_fan_turn_off');
+      const card = this._getFlowCard('ceiling_fan_turn_off', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -62,7 +62,7 @@ class CeilingFanDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action ceiling_fan_turn_off: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('ceiling_fan_toggle');
+      const card = this._getFlowCard('ceiling_fan_toggle', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -74,7 +74,7 @@ class CeilingFanDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action ceiling_fan_toggle: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('ceiling_fan_set_dim');
+      const card = this._getFlowCard('ceiling_fan_set_dim', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -85,7 +85,7 @@ class CeilingFanDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action ceiling_fan_set_dim: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('ceiling_fan_set_brightness');
+      const card = this._getFlowCard('ceiling_fan_set_brightness', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
