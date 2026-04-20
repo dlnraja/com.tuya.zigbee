@@ -32,7 +32,21 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
 
+      # Pre-promotion: Case variant check
+      - name: 🔄 Case Variant Check (Z2M/ZHA)
+        run: |
+          echo "=== Pre-promotion case variant check ==="
+          node scripts/automation/detect-missing-variants.js
+          MISSING=$(node -e "const d=JSON.parse(require('fs').readFileSync('data/community-sync/missing-variants-detected.json','utf8'));console.log(d.total||0)")
+          echo "Found $MISSING missing case variants"
+          if [ "$MISSING" -gt 0 ]; then
+            echo "::warning::Found $MISSING missing variants - auto-fixing..."
+            node scripts/automation/fix-detected-variants.js
+          fi
+
       # When triggered by a publish workflow, wait for Athom to process the draft
++++++++
+ REPLACE
       - name: Wait for Athom draft processing
         if: github.event_name == 'workflow_run'
         run: |
