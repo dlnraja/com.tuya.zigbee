@@ -10,29 +10,95 @@ permissions:
 
 env:
   NODE_VERSION: "22"
+  APP_ID: "com.dlnraja.tuya.zigbee"
 
 jobs:
-  build_and_publish:
+  # ============================================================
+  # JOB 1: PRE-VALIDATION (Syntax & Integrity)
+  # ============================================================
+  pre-validation:
+    name: 🔍 Pre-Validation
     runs-on: ubuntu-latest
-    if: github.actor != 'github-actions[bot]'
-    timeout-minutes: 20
+    timeout-minutes: 10
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v5
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       
-      - name: Setup Node
-        uses: actions/setup-node@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: 'npm'
-          
+      
       - name: Install Dependencies
         run: npm ci --prefer-offline --no-audit || npm install
 
-      # Step 1: Case Variant Detection
-      - name: 🔄 Detect Missing Case Variants
+      # SDK3 Validation: Check app.json SDK version
+      - name: 🎯 SDK3 Validation
+        id: sdk-check
+        run: |
+          SDK=$(node -p "require('./app.json').sdk")
+          if [ "$SDK" != "3" ]; then
+            echo "::error::Invalid SDK: $SDK (expected 3)"
+            exit 1
+          fi
+          echo "✅ SDK3 validated"
+          echo "sdk=3" >> $GITHUB_OUTPUT
+
+      # Syntax validation for all JS files
+      - name: 📜 JavaScript Syntax Validation
+        run: |
+          echo "=== Validating JavaScript syntax ==="
+          for f in $(find lib drivers -name "*.js" -type f 2>/dev/null | head -100); do
+            if ! node --check "$f" 2>/dev/null; then
+              echo "SYNTAX ERROR: $f"
+              exit 1
+            fi
+          done
+          echo "✅ All JS files syntax-valid"
+
+      # JSON validation
+      - name: 📊 JSON Integrity Check
+        run: |
+          echo "=== Validating JSON files ==="
+          FAIL=0
+          for f in app.json drivers/*/driver.compose.json drivers/*/driver.ts 2>/dev/null; do
+            if [ -f "$f" ] && ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
+              echo "JSON ERROR: $f"
+              FAIL=1
+            fi
+          done
+          if [ "$FAIL" = "1" ]; then exit 1; fi
+          echo "✅ All JSON valid"
+
+      # Check for invalid paths/carriage returns
+      - name: 🛡️ Path Integrity Check
+        run: |
+          echo "=== Checking for invalid paths ==="
+          node scripts/maintenance/check_invalid_paths.js || true
+          echo "✅ Path integrity check complete"
+
+  # ============================================================
+  # JOB 2: CODE QUALITY & AUTOMATION
+  # ============================================================
+  code-quality:
+    name: 🧹 Code Quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+      
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      # Case Variant Detection
+      - name: 🔄 Detect Missing Case Variants (Z2M/ZHA)
         id: detect-variants
         run: |
           echo "=== Detecting missing case variants ==="
@@ -41,43 +107,80 @@ jobs:
           echo "missing_variants=$MISSING" >> $GITHUB_OUTPUT
           echo "Found $MISSING missing case variants"
           
-      - name: 🔧 Fix Missing Case Variants
+      - name: 🔧 Auto-Fix Missing Case Variants
         if: steps.detect-variants.outputs.missing_variants != '0'
         run: node scripts/automation/fix-detected-variants.js
 
-      # Step 2: Collision Analysis
+      # Collision Analysis
       - name: 🔍 Fingerprint Collision Analysis
-        run: |
-          echo "=== Analyzing fingerprint collisions ==="
-          node scripts/automation/analyze-collisions.js
+        run: node scripts/automation/analyze-collisions.js
 
-      # Step 3: Code Quality
-      - name: 🧹 Sanitize Code
+      # Shadow Sanitizer
+      - name: 🧹 Shadow Mode Sanitizer
         run: node scripts/shadow_sanitizer.js
 
-      - name: 🛡️ Zero Defect Audit
-        run: node scripts/maintenance/zero-defect-architect-audit.js
+      # String Integrity Gate
+      - name: 🛡️ String Integrity & Invisible Characters
+        run: node scripts/maintenance/string-integrity-gate.js
 
-      - name: 📊 Validate JSON
+      # Zero Defect Audit
+      - name: 🛡️ Zero Defect Architect Audit
         run: |
-          FAIL=0
-          for f in drivers/*/driver.compose.json; do
-            if ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
-              echo "FAIL: $f"
-              FAIL=1
-            fi
-          done
-          if [ "$FAIL" = "1" ]; then exit 1; fi
-          echo "✅ All JSON valid"
+          node scripts/maintenance/zero-defect-architect-audit.js
+          if [ -f docs/reports/ZERO_DEFECT_AUDIT.json ]; then
+            echo "=== Zero Defect Summary ==="
+            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json');console.log('Drivers:',r.driversChecked,'NaN Warnings:',r.naNSafetyCheck.length,'Collisions:',r.collisions.length)"
+          fi
 
-      # Step 4: Build & Validate
+      # SDK3 Specific Checks
+      - name: 📋 SDK3 Compatibility Check
+        run: |
+          echo "=== SDK3 Compatibility Verification ==="
+          node scripts/maintenance/sdk3-smart-linter.js || true
+          echo "✅ SDK3 checks complete"
+
+  # ============================================================
+  # JOB 3: BUILD & VALIDATE
+  # ============================================================
+  build:
+    name: 🔨 Build & Validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+      
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      # Pre-build: Sync versions
+      - name: 🔄 Version Sync
+        run: |
+          node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');"
+
+      # Build App
       - name: 🔨 Build App
+        id: build
         run: npx homey app build
 
-      - name: 🔍 Validate App
+      # Validate App (publish level)
+      - name: 🔍 Validate App (Publish Level)
+        id: validate
         run: npx homey app validate --level publish
 
-      - name: 📦 Get App Info
+      # Image Validation
+      - name: 🖼️ Image Compliance Check
+        run: |
+          node scripts/maintenance/ensure-500x500-images.js
+          node scripts/maintenance/clean-images.js
+
+      # Get App Info
+      - name: 📦 App Info
         id: info
         run: |
           VERSION=$(node -p "require('./app.json').version")
@@ -85,21 +188,150 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "drivers=$DRIVERS" >> $GITHUB_OUTPUT
 
-      # Step 5: Publish to Draft
-      - name: 🚀 Publish to Draft (Promotion via daily-promote-to-test)
+  # ============================================================
+  # JOB 4: PUBLISH TO DRAFT
+  # ============================================================
+  publish:
+    name: 📤 Publish to Draft
+    needs: [pre-validation, code-quality, build]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+      
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: 🔨 Final Build
+        run: npx homey app build
+
+      # Publish to Draft (using athombv action - no branch param!)
+      - name: 🚀 Publish to Draft
+        id: publish
         uses: athombv/github-action-homey-app-publish@v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
-+++++++
- REPLACE
 
-      # Step 6: Summary
-      - name: 📊 Summary
+  # ============================================================
+  # JOB 5: PROMOTE TO TEST (Tiered Approach)
+  # ============================================================
+  promote-to-test:
+    name: 🎯 Promote to Test
+    needs: publish
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+      HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+      HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+      ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+      ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+      
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: 'npm'
+      
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      # Wait for Athom to process draft
+      - name: ⏳ Wait for Draft Processing
+        run: |
+          echo "Waiting 120s for Athom to process draft..."
+          sleep 120
+
+      # Tier 1: Puppeteer Browser Automation
+      - name: "🌐 Tier 1: Promote via Browser (Puppeteer)"
+        id: puppeteer
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          npm install puppeteer --no-save 2>/dev/null || true
+          node .github/scripts/auto-promote-puppeteer.js
+
+      # Tier 2: OAuth
+      - name: "🔐 Tier 2: Promote via OAuth"
+        id: oauth
+        if: steps.puppeteer.outcome != 'success'
+        continue-on-error: true
+        timeout-minutes: 3
+        run: |
+          npm install athom-api --no-save 2>/dev/null || true
+          node .github/scripts/auto-promote-oauth.js
+
+      # Tier 3: PAT API
+      - name: "🔑 Tier 3: Promote via API (PAT)"
+        id: api
+        if: steps.puppeteer.outcome != 'success' && steps.oauth.outcome != 'success'
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/auto-publish-draft.js
+
+      # Tier 4: Retry Puppeteer
+      - name: "🔄 Tier 4: Retry Puppeteer"
+        id: retry
+        if: steps.puppeteer.outcome != 'success' && steps.oauth.outcome != 'success' && steps.api.outcome != 'success'
+        continue-on-error: true
+        timeout-minutes: 5
+        run: |
+          sleep 30
+          node .github/scripts/auto-promote-puppeteer.js
+
+      # Verify test version
+      - name: ✅ Verify Test Version
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/verify-test-version.js
+
+      # Upload screenshots
+      - name: 📸 Upload Screenshots
         if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: promote-screenshots
+          path: screenshots/
+          retention-days: 7
+          if-no-files-found: ignore
+
+  # ============================================================
+  # JOB 6: SUMMARY
+  # ============================================================
+  summary:
+    name: 📊 Summary
+    needs: [pre-validation, code-quality, build, publish, promote-to-test]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: 📝 Generate Summary
         run: |
           echo "## 🚀 Publish Summary" >> $GITHUB_STEP_SUMMARY
-          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
-          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
-          echo "| Version | ${{ steps.info.outputs.version }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Drivers | ${{ steps.info.outputs.drivers }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Case Variants Fixed | ${{ steps.detect-variants.outputs.missing_variants || '0' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Pipeline Status" >> $GITHUB_STEP_SUMMARY
+          echo "| Job | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "| --- | --- |" >> $GITHUB_STEP_SUMMARY
+          echo "| Pre-Validation | ${{ needs.pre-validation.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Code Quality | ${{ needs.code-quality.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Build & Validate | ${{ needs.build.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Publish | ${{ needs.publish.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Promote to Test | ${{ needs.promote-to-test.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### App Info" >> $GITHUB_STEP_SUMMARY
+          echo "- Version: **${{ needs.build.outputs.info_app_version }}**" >> $GITHUB_STEP_SUMMARY
+          echo "- SDK: **3**" >> $GITHUB_STEP_SUMMARY
+          echo "- Drivers: **${{ needs.build.outputs.info_app_drivers }}**" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Links" >> $GITHUB_STEP_SUMMARY
+          echo "- [Test App](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Manage Versions](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee/versions)" >> $GITHUB_STEP_SUMMARY

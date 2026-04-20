@@ -1,4 +1,4 @@
-name: Daily Draft to Test
+name: 🎯 Daily Draft to Test (Multi-Tier)
 on:
   schedule:
     - cron: '45 3 * * *'   # After daily-everything 02:00 publish
@@ -7,32 +7,52 @@ on:
   workflow_run:
     workflows: [Master CI/CD Pipeline, Auto Publish, Auto-Publish on Push, Daily Everything Pipeline]
     types: [completed]
+
 permissions:
   contents: read
+
 concurrency:
   group: promote-to-test
   cancel-in-progress: true
 
 env:
   NODE_VERSION: "22"
+  APP_ID: "com.dlnraja.tuya.zigbee"
+
 defaults:
   run:
     shell: bash
 
 jobs:
-  promote:
-    name: Promote draft to test
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion != 'failure'
+  # ============================================================
+  # PRE-CHECKS: Validate before promotion
+  # ============================================================
+  pre-check:
+    name: 🔍 Pre-Promotion Checks
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+      
       - uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
+      
       - run: npm ci --prefer-offline --no-audit || npm install
 
-      # Pre-promotion: Case variant check
+      # SDK3 Verification
+      - name: 🎯 SDK3 Verification
+        run: |
+          SDK=$(node -p "require('./app.json').sdk")
+          if [ "$SDK" != "3" ]; then
+            echo "::error::Invalid SDK: $SDK (expected 3)"
+            exit 1
+          fi
+          echo "✅ SDK3 verified"
+
+      # Case Variant Check (Z2M/ZHA compatibility)
       - name: 🔄 Case Variant Check (Z2M/ZHA)
         run: |
           echo "=== Pre-promotion case variant check ==="
@@ -44,9 +64,40 @@ jobs:
             node scripts/automation/fix-detected-variants.js
           fi
 
-      # When triggered by a publish workflow, wait for Athom to process the draft
-+++++++
- REPLACE
+      # Syntax Validation
+      - name: 📜 JavaScript Syntax Validation
+        run: |
+          echo "=== Validating JavaScript syntax ==="
+          FAIL=0
+          for f in lib/analytics/*.js lib/utils/*.js 2>/dev/null; do
+            if [ -f "$f" ] && ! node --check "$f" 2>/dev/null; then
+              echo "SYNTAX ERROR: $f"
+              FAIL=1
+            fi
+          done
+          if [ "$FAIL" = "1" ]; then exit 1; fi
+          echo "✅ All syntax valid"
+
+      # JSON Integrity
+      - name: 📊 JSON Integrity Check
+        run: |
+          echo "=== Validating JSON files ==="
+          if ! node -e "JSON.parse(require('fs').readFileSync('app.json','utf8'))" 2>/dev/null; then
+            echo "ERROR: app.json invalid"
+            exit 1
+          fi
+          echo "✅ JSON integrity verified"
+
+  # ============================================================
+  # WAIT FOR DRAFT PROCESSING
+  # ============================================================
+  wait-for-draft:
+    name: ⏳ Wait for Draft Processing
+    needs: pre-check
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # When triggered by a workflow_run, wait for Athom to process the draft
       - name: Wait for Athom draft processing
         if: github.event_name == 'workflow_run'
         run: |
@@ -54,78 +105,168 @@ jobs:
           sleep 120
           echo "Done waiting"
 
-      # Tier 1: Browser automation (Puppeteer) — the ONLY reliable method
-      # Athom has no public API for draft→test, only the web UI works.
-      - name: "Install Puppeteer"
+  # ============================================================
+  # TIER 1: Browser automation (Puppeteer)
+  # ============================================================
+  promote-tier1:
+    name: 🌐 Tier 1: Puppeteer Browser
+    needs: wait-for-draft
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+      HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+      
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Install Puppeteer
         continue-on-error: true
         run: npm install puppeteer --no-save
-      - name: "Tier 1: Promote via Browser (Puppeteer)"
+
+      - name: 🌐 Promote via Browser
         id: puppeteer
         continue-on-error: true
         timeout-minutes: 5
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
         run: node .github/scripts/auto-promote-puppeteer.js
 
-      # Tier 2: OAuth password grant (gets real access token)
-      - name: "Tier 2: Promote via OAuth"
+  # ============================================================
+  # TIER 2: OAuth Password Grant
+  # ============================================================
+  promote-tier2:
+    name: 🔐 Tier 2: OAuth
+    needs: wait-for-draft
+    if: needs.promote-tier1.result != 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+      HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+      ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
+      ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+      
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: 🔐 Promote via OAuth
         id: oauth
-        if: steps.puppeteer.outcome != 'success'
         continue-on-error: true
         timeout-minutes: 3
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
-          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
         run: |
           npm install athom-api --no-save 2>/dev/null || true
           node .github/scripts/auto-promote-oauth.js
 
-      # Tier 3: API attempt with PAT
-      - name: "Tier 3: Promote via API (PAT)"
+  # ============================================================
+  # TIER 3: PAT API
+  # ============================================================
+  promote-tier3:
+    name: 🔑 Tier 3: PAT API
+    needs: wait-for-draft
+    if: needs.promote-tier1.result != 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    env:
+      HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+      
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      
+      - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: 🔑 Promote via API (PAT)
         id: api
-        if: steps.puppeteer.outcome != 'success' && steps.oauth.outcome != 'success'
         continue-on-error: true
-        env:
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/auto-publish-draft.js
 
-      # Tier 4: Retry Puppeteer after 30s
-      - name: "Tier 4: Verify retry (Puppeteer)"
-        if: steps.puppeteer.outcome != 'success' && steps.oauth.outcome != 'success' && steps.api.outcome != 'success'
-        continue-on-error: true
-        timeout-minutes: 5
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-        run: |
+  # ============================================================
+  # TIER 4: Retry Puppeteer
+  # ============================================================
+  promote-tier4:
+    name: 🔄 Tier 4: Retry Puppeteer
+    needs: [promote-tier1, promote-tier2, promote-tier3]
+    if: failure()
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+      HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+      
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      
+      - run: |
+          npm ci --prefer-offline --no-audit || npm install
+          npm install puppeteer --no-save 2>/dev/null || true
           sleep 30
           node .github/scripts/auto-promote-puppeteer.js
 
+  # ============================================================
+  # VERIFICATION & SUMMARY
+  # ============================================================
+  verify:
+    name: ✅ Verify Test Version
+    needs: [promote-tier1, promote-tier2, promote-tier3, promote-tier4]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
       # Upload screenshots for debugging
-      - name: Upload screenshots
+      - name: 📸 Upload Screenshots
         if: always()
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
+        uses: actions/upload-artifact@v4
         with:
           name: promote-screenshots
           path: screenshots/
           retention-days: 7
           if-no-files-found: ignore
 
+      # Verify test version
       - name: Verify test version
         continue-on-error: true
         env:
           HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         run: node .github/scripts/verify-test-version.js
 
-      - name: Summary
+      # Final Summary
+      - name: 📝 Summary
         if: always()
         run: |
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
-          echo "## Draft to Test" >> $GITHUB_STEP_SUMMARY
-          echo "v$VER | Puppeteer=${{ steps.puppeteer.outcome }} | OAuth=${{ steps.oauth.outcome }} | API=${{ steps.api.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "## 🎯 Promotion Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "[Test link](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee/versions)" >> $GITHUB_STEP_SUMMARY
-
+          echo "| Tier | Method | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "| --- | --- | --- |" >> $GITHUB_STEP_SUMMARY
+          echo "| 1 | Puppeteer Browser | ${{ needs.promote-tier1.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 2 | OAuth | ${{ needs.promote-tier2.result || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 3 | PAT API | ${{ needs.promote-tier3.result || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| 4 | Retry Puppeteer | ${{ needs.promote-tier4.result || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Version" >> $GITHUB_STEP_SUMMARY
+          echo "v$VER" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Links" >> $GITHUB_STEP_SUMMARY
+          echo "- [Test App](https://homey.app/a/${{ env.APP_ID }}/test/)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Manage Versions](https://tools.developer.homey.app/apps/app/${{ env.APP_ID }}/versions)" >> $GITHUB_STEP_SUMMARY
