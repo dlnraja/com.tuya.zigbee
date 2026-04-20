@@ -1,4 +1,3 @@
-const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
 // v5.12.0: Immediate forum cleanup  delete hidden/spam posts, edit bot signatures
@@ -30,7 +29,7 @@ const TO_DELETE = [
   { id: 699584, num: '140352#1076', reason: 'Raw FP dump' },
   { id: 700472, num: '140352#1120', reason: 'Consecutive + FP dump' },
 
-  // T140352: Duplicates / consecutive bot posts
+  // T140352: Duplicates/consecutive bot posts
   { id: 698945, num: '140352#1017', reason: 'Duplicate of #1018' },
   { id: 698946, num: '140352#1018', reason: 'Consecutive duplicate' },
 

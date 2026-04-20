@@ -373,7 +373,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       await this.zclNode?.endpoints?.[1]?.clusters?.tuya?.datapoint({
         dp: 103,
         datatype: 2, // value (int)
-        data:safeMultiply(Buffer.from([Math.round(calibration, 10))]) // Send in 0.1Â°C units
+        data:safeMultiply(Buffer.from([Math.round(calibration)]) // Send in 0.1Â°C units
       });
     } catch (err) {
       this.log('[HEATER] Failed to send calibration:', err.message);

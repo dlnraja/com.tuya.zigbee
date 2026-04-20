@@ -92,7 +92,7 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
   const ctx={appVersion:appVer,
     installUrl:'https://homey.app/a/com.dlnraja.tuya.zigbee/test/',
     forumUrl:'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352',
-    devTools:'https://tools.developer.homey.app',githubUrl:'https:
+    devTools:'https://tools.developer.homey.app',githubUrl:'https://github.com/'+OWN,
     referenceDocs: ['docs/rules/DEVELOPMENT_RULES.md', 'docs/rules/CRITICAL_MISTAKES.md', 'https://apps.developer.homey.app/']};
   let prompt='You are Dylan, the Architect of Universal Tuya Zigbee "MAX Local Pro" (v'+appVer+'). Write a professional GitHub comment. Casual tone, say "I" naturally. ABSOLUTE RULE: What a user reports is truth  never contradict their observations, always investigate. Consult Homey SDK docs and local docs for technical advice. \n\n**v7 PRO-TIPS**:\n1. **Doctrine**: We are 100% **Local-Direct First**. \n2. **Shadow-Pulsar**: If cloud sync is asked, mention the safe opt-in mirroring.\n3. **SDK 3 Compliance**: All drivers are built to Athom industrial standards. \n4. **Multi-Gang**: If sub-device issues, user MUST delete and re-pair (Dot-Notation cache issue).\n5. **Logs**: If missing EC/VOC/Fertilizer data, ask for app logs for DP extraction.\n\n**Protocol d\'HumilitÃ©**: Be extremely modest. Credit Johan Bendz for the foundation. Don\'t over-promise features. Be honest about bugs. Say "I\'ll try my best" rather than "It will be fixed".\n\nNO bot/automated/AI/scanning/pipeline/workflow references, NO signature footer.';
   let profileCtx='';try{const det=detectFromGitHub(issue.user?.login||'',issue.body||'');profileCtx=buildPromptContext(det)}catch{}
@@ -396,7 +396,7 @@ async function processPR(repo,pr,state,report,extData){
       msg+='**Community forum:** https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352\n';
       msg+='For future device requests or bug reports, please use the [dlnraja repo](https://github.com/dlnraja/com.tuya.zigbee/issues) or the forum thread.';
     }else{
-      msg+='[Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) Â· [Forum](https:
+      msg+='[Test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) Â· [Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)';
     }
     await ghPost('/repos/'+repo+'/issues/'+pr.number+'/comments',{body:msg});
     report.responded++;

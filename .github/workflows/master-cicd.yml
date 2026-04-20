@@ -50,13 +50,8 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: 🧼 SHADOW SANITIZER (Invisible Character Removal)
-        run: node scripts/shadow_sanitizer.js
-
-      - name: 🛡️ SYNTAX PURITY GATE
-        run: |
-          echo "Verifying JS syntax across the entire engine..."
-          node -e "const fs=require('fs'),path=require('path'),{execSync}=require('child_process');const walk=(dir)=>{fs.readdirSync(dir).forEach(f=>{const p=path.join(dir,f);if(fs.statSync(p).isDirectory()){if(!['node_modules','.git','.homeybuild','assets'].includes(f))walk(p)}else if(f.endsWith('.js')){try{execSync('node -c \"'+p+'\"')}catch(e){console.error('SYNTAX ERROR in '+p);process.exit(1)}}})};walk('.') || console.log('Syntax purity verified.')"
+      - name: 🛡️ ULTIMATE INTEGRITY GATE & SYNTAX PURITY
+        run: node scripts/ULTIMATE_CHECK.js
 
       - name: 📦 Setup Unified
         uses: ./.github/actions/setup-unified

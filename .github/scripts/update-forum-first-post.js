@@ -81,7 +81,7 @@ function buildPost(stats,changelog,ghSummary){
   md+='> **'+stats.drivers+' drivers** Â· **'+stats.fps+'+ fingerprints** Â· Updated '+date+'\n\n';
   md+='Local-first Zigbee control for Tuya devices on Homey Pro  the most comprehensive Tuya app available.\n\n';
   md+='## Install\n\n';
-  md+='**Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) Â· **Test:** [Test Channel](https:
+  md+='**Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) Â· **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)\n\n';
   md+='## What\'s New (v'+stats.version+')\n\n';
   md+=changelog.replace(/^v[\d.]+:\s*/,'')+'\n\n';
 
@@ -99,7 +99,6 @@ function buildPost(stats,changelog,ghSummary){
   md+='- Covers & curtains with tilt Â· TRVs Â· Dimmers Â· IR blasters\n';
   md+='- Auto-configured settings Â· Diagnostic reports\n\n';
 
-  // Changelog history (collapsible)  skip current version explicitly
   const prevHist=hist.filter(h=>h.v!==stats.version);
   if(prevHist.length){
     md+='## Changelog\n\n';
@@ -113,7 +112,7 @@ function buildPost(stats,changelog,ghSummary){
 
   md+='##  Support the Project\n\n';
   md+='This app is free and open-source. If it\'s useful to you, a small donation helps keep it going:\n\n';
-  md+='**PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) Â· **Revolut:** [revolut.me/dylanoul](https:
+  md+='**PayPal:** [paypal.me/dlnraja](https://paypal.me/dlnraja) Â· **Revolut:** [revolut.me/dylanoul](https://revolut.me/dylanoul)\n\n';
 
   md+='---\n*Last updated '+date+'  [Source on GitHub](https://github.com/dlnraja/com.tuya.zigbee)*\n';
   return md;
@@ -155,24 +154,18 @@ async function main(){
   const changelog=getChangelog(stats.version)||'Bug fixes and improvements. See [GitHub](https://github.com/dlnraja/com.tuya.zigbee) for details.';
   const ghSummary=getRecentGitHub()||null;
   const content=buildPost(stats,changelog,ghSummary);
-  // Always save preview for debugging
   const prev=path.join(ROOT,'.github','state','forum-first-post-preview.md');
-  try{fs.writeFileSync(prev,content);}catch{}
+  try{fs.mkdirSync(path.dirname(prev),{recursive:true});fs.writeFileSync(prev,content);}catch{}
   console.log('Generated post:',content.length,'chars');
-  // v5.12.0: Safeguard  compact format should be under 4000 chars
   if(content.length>4000)console.warn(' First post is '+content.length+' chars  should be under 4000 (compact format)');
 
   if(DRY){
     console.log('[DRY RUN] Would update first post of topic',TOPIC);
-    console.log('--- CONTENT PREVIEW (first 500 chars) ---');
-    console.log(content.slice(0,500));
-    console.log('--- END PREVIEW ---');
-    console.log('Full preview saved to:',prev);
     return;
   }
 
   const auth=await getForumAuth();
-  if(!auth){console.error('No auth  need HOMEY_EMAIL/HOMEY_PASSWORD or HOMEY_EMAIL');process.exit(0);}
+  if(!auth){console.error('No auth  need HOMEY_EMAIL/HOMEY_PASSWORD');process.exit(0);}
 
   const postId=await getFirstPostId(auth);
   console.log('First post ID:',postId);

@@ -1,6 +1,6 @@
 'use strict';
 // A8: NaN Safety - use safeDivide/safeMultiply
-  const require('../../lib/devices/UnifiedLightBase');
+  require('../../lib/devices/UnifiedLightBase');
 
 class LEDStripAdvancedDevice extends UnifiedLightBase {
   get lightCapabilities() { return ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature']; }

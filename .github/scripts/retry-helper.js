@@ -151,7 +151,7 @@ async function fetchWithRetry(url, opts = {}, ro = {}) {
         console.log('  [' + (label || 'retry') + '] 429 rate-limited, wait ' + Math.round(waitMs/1000) + 's (' + (i + 1) + '/' + retries + ')');
         // Also increase spacing for this queue to avoid hitting limit again
         const q = getQueue(qName);
-        q.minSpacing = Math.max(q.minSpacing, safeParse(waitMs, 2));
+        q.minSpacing = Math.max(q.minSpacing, (waitMs / 2));
         await sleep(waitMs);
         // Refresh CSRF if Discourse (token may expire during long waits)
         if (qName === 'discourse' && csrfRefresh && authRef) {

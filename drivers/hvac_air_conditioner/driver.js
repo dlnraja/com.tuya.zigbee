@@ -34,7 +34,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
     // CONDITIONS
     try {
       // A8: NaN Safety - use safeDivide/safeMultiply
-  const this._getFlowCard('hvac_air_conditioner_air_conditioner_hybrid_is_on', 'condition');
+  this._getFlowCard('hvac_air_conditioner_air_conditioner_hybrid_is_on', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

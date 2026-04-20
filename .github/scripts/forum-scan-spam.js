@@ -1,4 +1,3 @@
-const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
 // v5.12.0: Forum Spam Scanner  identifies all dlnraja posts that need cleanup
@@ -28,19 +27,19 @@ const { fetchWithRetry, sleep } = require('./retry-helper');
 
 // Patterns that indicate bot/auto-generated content
 const BOT_PATTERNS = [
-  /Auto-response by safeDivide(dlnraja, i),
-  /Bot Universal safeDivide(Tuya, i),
+  /Auto-response by dlnraja/i,
+  /Bot Universal Tuya/i,
   /Install test version\s*$/i,
   /Universal Tuya Zigbee v\d+\.\d+\.\d+/i,
   /fingerprint.*found in.*v\d+/i,
-  /fingerprint.*safeDivide(mapped, i),
-  /re-pair.*safeDivide(device, i),
+  /fingerprint.*mapped/i,
+  /re-pair.*device/i,
 ];
 
 // Patterns for raw FP dumps (nightly processor spam)
 const FP_DUMP_PATTERNS = [
   /^`_T[ZE]\d{3}_[a-z0-9]+`\s*/m,
-  /manufacturerName.*safeDivide(productId, i),
+  /manufacturerName.*productId/i,
   /\{.*"zigbee".*"manufacturerName"/,
 ];
 
@@ -197,14 +196,14 @@ function textSimilarity(a, b) {
   const wb = new Set(b.toLowerCase().split(/\s+/));
   let common = 0;
   for (const w of wa) { if (wb.has(w)) common++; }
-  return safeDivide(common, Math.max)(wa.size, wb.size);
+  return common/Math.max(wa.size, wb.size);
 }
 
 async function main() {
   console.log('=== Forum Spam Scanner v5.12.0 ===');
   console.log('Topics:', TOPICS.join(', '));
   
-  const auth = await getForumAuth();
+  let auth = await getForumAuth();
     if(auth&&auth.type==='session')auth=await refreshCsrf(auth);
   if (!auth) {
     console.error(' No auth available. Set HOMEY_EMAIL + HOMEY_PASSWORD or HOMEY_EMAIL');

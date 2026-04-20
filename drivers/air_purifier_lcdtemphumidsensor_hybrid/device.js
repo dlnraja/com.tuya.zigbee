@@ -2,7 +2,7 @@
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 // A8: NaN Safety - use safeDivide/safeMultiply
-  const require('../../lib/tuya/TuyaSpecificClusterDevice');
+  require('../../lib/tuya/TuyaSpecificClusterDevice');
 const DP = { state: 1, pm25: 2, mode: 3, speed: 4, filter: 5, childLock: 7, brightness: 8 };
 
 class AirPurifierDevice extends TuyaSpecificClusterDevice {
@@ -14,7 +14,7 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
       await this.sendTuyaCommand(DP.state, v, 'bool');
     });
     this.registerCapabilityListener('dim', async (v) => {
-      await this.sendTuyaCommand(DP.speed,Math.round(safeMultiply(v, 100)), 'value');
+      await this.sendTuyaCommand(DP.speed,Math.round(safeMultiply(v), 'value');
     });
     this.log('Air Purifier ready');
   }

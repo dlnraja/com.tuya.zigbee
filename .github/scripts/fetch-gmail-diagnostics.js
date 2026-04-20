@@ -23,7 +23,7 @@ function sanitize(text){
   t=t.replace(/([0-9A-Fa-f]{2}[:-]){5}[0-9A-Fa-f]{2}/g,'[mac]');
   t=t.replace(/\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g,'[ip]');
   t=t.replace(/([0-9a-fA-F]{1,4}:){2,7}[0-9a-fA-F]{1,4}/g,'[ipv6]');
-  t=t.replace(/\b[a-f0-9]{32,}\b/gi,function(m){if(m.length===16)return m;return'[token]'});
+  t=t.replace(/\b[a-f0-9]{32,}\b/gi, function(m){if(m.length===16)return m;return'[token]'});
   t=t.replace(/\+?\d[\d\s\-().]{8,}\d/g,'[phone]');
   t=t.replace(/\/(?:home|Users|user)\/[^\s/]+/gi,'[path]');
   t=t.replace(/C:\\Users\\[^\s\\]+/gi,'[path]');
@@ -57,7 +57,7 @@ function extractSafePseudo(em){
 // Extract Tuya fingerprints from text
 const exFP=t=>({mfr:_vFP(t),pid:_vPID(t)});
 
-// Build fingerprint->driver index from drivers/
+// Build fingerprint->driver index from drivers
 function buildIndex(){
   const idx=new Map(),pidx=new Map();
   if(!fs.existsSync(DD))return idx;

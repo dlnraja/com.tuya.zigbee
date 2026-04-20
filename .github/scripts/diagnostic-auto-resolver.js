@@ -1,11 +1,11 @@
-const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 #!/usr/bin/env node
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 "use strict";
-const fs=require("fs"),path=require("path");
-const{fetchWithRetry}=require("./retry-helper");
-const KB=require("./bug-knowledge-base");
+const fs=require('fs'),path=require('path');
+const{fetchWithRetry}=require('./retry-helper');
+const KB=require('./bug-knowledge-base');
 let _profileDetector=null;
-function getProfileDetector(){if(_profileDetector)return _profileDetector;try{_profileDetector=require("./user-profile-detector")}catch{_profileDetector=null}return _profileDetector}
+function getProfileDetector(){if(_profileDetector)return _profileDetector;try{_profileDetector=require('./user-profile-detector')}catch{_profileDetector=null}return _profileDetector}
 const SD=path.join(__dirname,"..","state");
 const DD=path.join(__dirname,"..","..","drivers");
 const DRY=process.env.DRY_RUN==="true";
@@ -16,8 +16,8 @@ const UP="JohanBendz/com.tuya.zigbee";
 const TAG="<!-- diag-resolver -->";
 const SF=path.join(SD,"resolver-state.json");
 const RF=path.join(SD,"resolver-report.json");
-let appVer="?";try{appVer=require("../../app.json").version}catch{}
-const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require("./fp-validator");
+let appVer="?";try{appVer=require('../../app.json').version}catch{}
+const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP}=require('./fp-validator');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const hdrs=t=>({Accept:"application/vnd.github+json","User-Agent":"tuya-resolver",...(t?{Authorization:"Bearer "+t}:{})});
 const loadJ=f=>{try{return JSON.parse(fs.readFileSync(f,"utf8"))}catch{return null}};

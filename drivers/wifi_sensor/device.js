@@ -1,6 +1,6 @@
 'use strict';
 // A8: NaN Safety - use safeDivide/safeMultiply
-  const require('../../lib/tuya-local/TuyaLocalDevice');
+  require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiSensorDevice extends TuyaLocalDevice {
   get dpMappings() {

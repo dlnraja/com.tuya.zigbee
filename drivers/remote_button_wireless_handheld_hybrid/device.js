@@ -1006,7 +1006,7 @@ class Button4GangDevice extends ButtonDevice {
         if (typeof this._powerCluster.on === 'function') {
           this._powerCluster.on('attr.batteryPercentageRemaining', async (value) => {
             if (value !== undefined && value !== 255 && value !== 0) {
-              const battery = Math.round(safeParse(value, 2));
+              const battery = Math.round(safeParse(value);
               this.log(`[BUTTON4-BATTERY]  Battery report: ${battery}%`);
               await this._updateBattery(battery);
             }
@@ -1081,7 +1081,7 @@ class Button4GangDevice extends ButtonDevice {
       if (attrs?.batteryPercentageRemaining !== undefined &&
         attrs.batteryPercentageRemaining !== 255 &&
         attrs.batteryPercentageRemaining !== 0) {
-        const battery = Math.round(safeParse(attrs.batteryPercentageRemaining, 2));
+        const battery = Math.round(safeParse(attrs.batteryPercentageRemaining);
         this.log(`[BUTTON4-BATTERY]  Battery read success: ${battery}%`);
         await this._updateBattery(battery);
       } else if (attrs?.batteryVoltage !== undefined && attrs.batteryVoltage > 0) {
@@ -1152,10 +1152,10 @@ class Button4GangDevice extends ButtonDevice {
               if (value <= 100) {
                 battery = value; // Direct percentage
               } else if (value <= 200) {
-                battery = Math.round(safeParse(value, 2)); // Doubled percentage
+                battery = Math.round(safeParse(value); // Doubled percentage
               } else if (value <= 3200) {
                 // Voltage in mV (CR2032: 3000mV = 100%, 2000mV = 0%)
-                battery = Math.min(100, Math.max(0, Math.round(safeParse(value - 2000, 10))));
+                battery = Math.min(100, Math.max(0, Math.round(safeParse(value - 2000));
               }
             }
 

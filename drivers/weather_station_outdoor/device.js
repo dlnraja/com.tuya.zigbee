@@ -60,7 +60,7 @@ class WeatherStationOutdoorDevice extends UnifiedSensorBase {
    */
   async setCapabilityValue(capability, value) {
     // A8: NaN Safety - use safeDivide/safeMultiply
-  const this.getCapabilityValue(capability);
+  this.getCapabilityValue(capability);
     await super.setCapabilityValue(capability, value);
     if (prev === value) return;
 

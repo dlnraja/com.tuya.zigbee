@@ -206,7 +206,7 @@ async function main(){
     console.log("  Drivers with DP patterns: "+report.codePatterns.dpPatterns.length);
     console.log("  Drivers with legacy readAttributes: "+report.codePatterns.apiChanges.length);
 
-    // Scan lib/ for cluster definitions (NEW v5.12.5)
+    // Scan lib/for cluster definitions (NEW v5.12.5)
     report.codePatterns.libClusters=[];
     try{
       await sleep(600);
@@ -229,9 +229,9 @@ async function main(){
             });
           }catch{}
         }
-        console.log('  Johan lib/ cluster/helper files: '+report.codePatterns.libClusters.length);
+        console.log('  Johan lib/cluster/helper files: '+report.codePatterns.libClusters.length);
       }
-    }catch(e2){console.log('  lib/ scan error: '+e2.message);}
+    }catch(e2){console.log('  lib/scan error: '+e2.message);}
   }catch(e){console.log("  Code pattern scan error: "+e.message);}
 
   // === DEDUPLICATE AND SUMMARIZE ===

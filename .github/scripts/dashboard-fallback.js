@@ -1,4 +1,3 @@
-const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
 const { fetchWithRetry } = require('./retry-helper');

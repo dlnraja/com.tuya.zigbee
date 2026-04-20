@@ -85,11 +85,11 @@ function extractDPMappings(src){
 }
 
 /**
- * Step 6: Compare Johan lib/ files with ours
+ * Step 6: Compare Johan lib/files with ours
  * Detects new cluster definitions, helper functions, and DP constant files
  */
 function compareLibFiles(report){
-  console.log('Step 6: Comparing lib/ files...');
+  console.log('Step 6: Comparing lib/files...');
   report.libAnalysis={newClusters:[],newHelpers:[],dpConstantDiffs:[]};
 
   const johanLib=path.join(TMP,'lib');
@@ -286,7 +286,7 @@ async function main(){
     }
   }
 
-  // Step 6: Compare lib/ files (NEW v2)
+  // Step 6: Compare lib/files (NEW v2)
   compareLibFiles(report);
 
   // Step 7: Analyze device.js patterns (NEW v2)

@@ -1,4 +1,7 @@
 {
+  "7.4.7": {
+    "en": "v7.4.7: Hotfix. Critical: Fixed syntax error causing permanent app crash on startup. Users experiencing 'App crashes' errors should update immediately. No breaking changes, safe upgrade from v7.4.6."
+  },
   "7.4.6": {
     "en": "v7.4.6: Critical Image Fix. Resolved validation failures across all drivers by standardizing large.png assets to 500x500 @ 50KB+ requirement. Improved CI/CD robustness and driver asset integrity."
   },

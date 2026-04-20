@@ -1,4 +1,3 @@
-const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
 'use strict';
 // v5.11.27: Pattern Detector  scans forum state + GitHub issues for recurring patterns
@@ -12,11 +11,11 @@ const STATE_DIR=path.join(__dirname,'..','state');
 // Known issue patterns with detection regex and fix templates
 const PATTERNS=[
   {id:'inversion',name:'Inverted Sensor State',
-   regex:/invert|reversed|wrong.*(open|closed|state)|open.*when.*closed|closed.*when.*open|backward|safeDivide(opposite, i),
+   regex:/invert|reversed|wrong.*(open|closed|state)|open.*when.*closed|closed.*when.*open|backward|opposite/i,
    fixHint:'Add manufacturerName to invertedByDefault in UnifiedSensorBase.js + device.js',
    files:['lib/devices/UnifiedSensorBase.js','drivers/{driver}/device.js']},
   {id:'battery',name:'False Battery Alert/Missing Battery',
-   regex:/battery.*(0|null|\?|unknown|false|always|100|mains)|mains.*battery|usb.*battery|powered.*safeDivide(battery, i),
+   regex:/battery.*(0|null|\?|unknown|false|always|100|mains)|mains.*battery|usb.*battery|powered.*battery/i,
    fixHint:'Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit',
    files:['drivers/{driver}/device.js']},
   {id:'double_div',name:'Double Division (wrong sensor values)',
@@ -24,23 +23,23 @@ const PATTERNS=[
    fixHint:'Check TuyaEF00Manager.js:1912  skip auto-convert when dpMappings has divisor !== 1',
    files:['lib/tuya/TuyaEF00Manager.js']},
   {id:'pairing',name:'Pairing Failure',
-   regex:/can.t.*(pair|add|find|detect)|won.t.*pair|pair.*fail|not.*found.*pair|unknown.*safeDivide(device, i),
+   regex:/can.t.*(pair|add|find|detect)|won.t.*pair|pair.*fail|not.*found.*pair|unknown.*device/i,
    fixHint:'Check driver.compose.json fingerprints, verify manufacturerName + productId',
    files:['drivers/{driver}/driver.compose.json']},
   {id:'unknown',name:'Device Shows Unknown',
-   regex:/unknown.*unknown|shows.*unknown|appears.*unknown|device.*safeDivide(unknown, i),
+   regex:/unknown.*unknown|shows.*unknown|appears.*unknown|device.*unknown/i,
    fixHint:'Check settings keys: zb_model_id (not zb_modelId), zb_manufacturer_name (not zb_manufacturerName)',
    files:['drivers/{driver}/device.js']},
   {id:'flow_dup',name:'Duplicate Flow Triggers',
-   regex:/flow.*(trigger|fire).*(twice|double|duplicate|multiple)|trigger.*twice|double.*safeDivide(trigger, i),
+   regex:/flow.*(trigger|fire).*(twice|double|duplicate|multiple)|trigger.*twice|double.*trigger/i,
    fixHint:'Add deduplication in setCapabilityValue with 500ms window',
    files:['drivers/{driver}/device.js']},
   {id:'no_response',name:'Device Not Responding',
-   regex:/not respond|no response|offline|unavailable|unreachable|lost safeDivide(connection, i),
+   regex:/not respond|no response|offline|unavailable|unreachable|lost connection/i,
    fixHint:'Check Zigbee mesh, device routing, and cluster bindings',
    files:[]},
   {id:'voltage_wrong',name:'Wrong Voltage',
-   regex:/voltage.*(wrong|high|2\d{3})|2300\s*safeDivide(V, i),
+   regex:/voltage.*(wrong|high|2\d{3})|2300\s*V/i,
    fixHint:'Check voltage divisor',files:[]},
   {id:'no_temperature',name:'No Temperature',
    regex:/temp.*(null|missing|stuck|0\.0)/i,
@@ -52,7 +51,7 @@ const PATTERNS=[
    regex:/power.*(wrong|crazy)|kwh.*(wrong|huge)/i,
    fixHint:'Check energy divisor',files:[]},
   {id:'sensor_zero',name:'Sensor Stuck Zero',
-   regex:/stuck.*(0|zero)|always.*safeDivide(zero, i),
+   regex:/stuck.*(0|zero)|always.*zero/i,
    fixHint:'Re-pair device',files:[]},
 ];
 

@@ -34,38 +34,16 @@ class AirQualityCO2Driver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      // A8: NaN Safety - use safeDivide/safeMultiply
-  const this._getFlowCard('air_quality_co2_co2_above', 'condition');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          const val = args.device.getCapabilityValue('measure_co2') || 0;
-          return val > (args.threshold || 400);
-        });
-      }
+      this._getFlowCard('air_quality_co2_co2_above', 'condition');
     } catch (err) { this.error(`Condition air_quality_co2_co2_above: ${err.message}`); }
+  }
 
+  _getFlowCard(id, type) {
     try {
-      const card = this._getFlowCard('air_quality_co2_co2_below', 'condition');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          return args.device.getCapabilityValue('onoff') === true;
-        });
-      }
-    } catch (err) { this.error(`Condition air_quality_co2_co2_below: ${err.message}`); }
-
-    try {
-      const card = this._getFlowCard('air_quality_co2_air_quality_good', 'condition');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          return args.device.getCapabilityValue('onoff') === true;
-        });
-      }
-    } catch (err) { this.error(`Condition air_quality_co2_air_quality_good: ${err.message}`); }
-
-    this.log('[FLOW] All flow cards registered');
+      return type === 'condition' ? this.homey.flow.getConditionCard(id) : this.homey.flow.getTriggerCard(id);
+    } catch (err) {
+      return null;
+    }
   }
 }
 

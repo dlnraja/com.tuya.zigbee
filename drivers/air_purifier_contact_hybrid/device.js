@@ -168,7 +168,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
     const userReverse = this.getSetting('reverse_alarm') || false;
     this._invertContact = userInvert || userReverse;
     this._userExplicitInvert = this._invertContact;
-    this._debounceMs = (this.getSetting('debounce_time') || safeParse(DEBOUNCE.DEFAULT_MS,safeMultiply(1000)), 1000);
+    this._debounceMs = this.getSetting('debounce_time') || DEBOUNCE.DEFAULT_MS;
     this._lastBatteryReportTime = 0; // v5.5.793: Battery throttling
 
     // v5.5.344: Get manufacturer for problematic device detection
@@ -341,7 +341,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
           const keepAliveWindow = timeSinceLastChange >= DEBOUNCE.KEEP_ALIVE_MIN_MS && timeSinceLastChange <= DEBOUNCE.KEEP_ALIVE_MAX_MS;
 
           if (keepAliveWindow) {
-            this.log(`[CONTACT]  BLOCKED: Likely 1-hour keep-alive false "closed" (${Math.round(timeSinceLastChange/1, 60000))}min since open)`);
+            this.log(`[CONTACT]  BLOCKED: Likely 1-hour keep-alive false "closed" (${Math.round(timeSinceLastChange / 60000)}min since open)`);
             return; // Ignore this false state change completely
           }
 

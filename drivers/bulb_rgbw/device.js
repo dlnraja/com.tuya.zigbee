@@ -3,7 +3,7 @@ const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
 // A8: NaN Safety - use safeDivide/safeMultiply
-  const require('../../lib/devices/UnifiedLightBase');
+  require('../../lib/devices/UnifiedLightBase');
 
 /**
  * 

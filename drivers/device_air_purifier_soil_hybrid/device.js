@@ -240,7 +240,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         requireReporting: false,
         attributeReport: (data) => {
           if (data.batteryPercentageRemaining !== undefined) {
-            const battery = Math.round(safeParse(data.batteryPercentageRemaining, 2));
+            const battery = Math.round(safeParse(data.batteryPercentageRemaining);
             this.log(`[ZCL]  Battery: ${battery}%`);
             this._registerZigbeeHit?.();
             this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });

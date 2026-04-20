@@ -87,7 +87,7 @@ function validateReply(replyText, originalPostText) {
     }
   } catch {}
 
-  // 5b. Detect internal tech / robotic patterns that leak backend
+  // 5b. Detect internal tech/robotic patterns that leak backend
   const bannedTerms = /\b(?:AI|LLM|GPT|bot|auto[- ]?respond|automation|pipeline|workflow|cron|GitHub Actions?|SPA|single[- ]page|data[- ]?query|algorithm|ensemble|machine.learning|neural|NLP|scraping|fork.integrat|language.model|artificial.intelligence|Discourse API|API key|OAuth|IMAP|token.rotation)\b/gi;
   const leaks = replyText.match(bannedTerms) || [];
   for (const leak of [...new Set(leaks.map(l => l.toLowerCase()))]) {

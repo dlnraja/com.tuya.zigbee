@@ -40,7 +40,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     // CONDITIONS
     try {
       // A8: NaN Safety - use safeDivide/safeMultiply
-  const this._getFlowCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_is_presence_detected_sensor_motion_radar_hybrid', 'condition');
+  this._getFlowCard('air_purifier_sensor_hybrid_motion_sensor_radar_mmwave_is_presence_detected_sensor_motion_radar_hybrid', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

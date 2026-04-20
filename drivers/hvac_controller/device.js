@@ -85,7 +85,7 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
     this.registerCapabilityListener('target_temperature', async (value) => {
       this._markAppCommand?.();
       if (this.tuyaEF00Manager) {
-        await this.tuyaEF00Manager.sendTuyaDP(2, 2,Math.round(safeMultiply(value, 10)));
+        await this.tuyaEF00Manager.sendTuyaDP(2, 2,Math.round(safeMultiply(value);
       }
     });
 

@@ -146,7 +146,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
         const id = up
           ? `dimmer_3gang_physical_gang${gang}_brightness_increased`
           : `dimmer_3gang_physical_gang${gang}_brightness_decreased`;
-        this.homey.flow._getFlowCard('up').trigger(this, { brightness:Math.round(safeMultiply(value, 100)) }, {}).catch(() => {});
+        this.homey.flow._getFlowCard('up').trigger(this, { brightness:Math.round(safeMultiply(value) }, {}).catch(() => {});
       }
     } catch (err) {
       this.error('[DIMMER-3G] Flow trigger error:', err.message);
@@ -165,7 +165,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
     if (this.hasCapability('dim')) {
       this.registerCapabilityListener('dim', async (value) => {
         this._markAppCommand(); // v5.5.829
-        await this._sendTuyaDP(2,Math.round(safeMultiply(value, 1000)), 'value');
+        await this._sendTuyaDP(2,Math.round(safeMultiply(value), 'value');
       });
     }
 
@@ -180,7 +180,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
     if (this.hasCapability('dim.channel2')) {
       this.registerCapabilityListener('dim.channel2', async (value) => {
         this._markAppCommand(); // v5.5.829
-        await this._sendTuyaDP(8,Math.round(safeMultiply(value, 1000)), 'value');
+        await this._sendTuyaDP(8,Math.round(safeMultiply(value), 'value');
       });
     }
 
@@ -195,7 +195,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
     if (this.hasCapability('dim.channel3')) {
       this.registerCapabilityListener('dim.channel3', async (value) => {
         this._markAppCommand(); // v5.5.829
-        await this._sendTuyaDP(16,Math.round(safeMultiply(value, 1000)), 'value');
+        await this._sendTuyaDP(16,Math.round(safeMultiply(value), 'value');
       });
     }
   }

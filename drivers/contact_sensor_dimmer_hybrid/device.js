@@ -341,7 +341,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
           const keepAliveWindow = timeSinceLastChange >= DEBOUNCE.KEEP_ALIVE_MIN_MS && timeSinceLastChange <= DEBOUNCE.KEEP_ALIVE_MAX_MS;
 
           if (keepAliveWindow) {
-            this.log(`[CONTACT]  BLOCKED: Likely 1-hour keep-alive false "closed" (${Math.round(timeSinceLastChange/1, 60000))}min since open)`);
+            this.log(`[CONTACT]  BLOCKED: Likely 1-hour keep-alive false "closed" (${Math.round(timeSinceLastChange / 60000)}min since open)`);
             return; // Ignore this false state change completely
           }
 

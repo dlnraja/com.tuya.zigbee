@@ -39,7 +39,7 @@ function post(n,body){
   catch(e){console.log(`Skip comment ${REPO}#${n}: ${e.message.slice(0,80)}`);}
 }
 
-function hasUserSymptoms(b, t='') { if (!b && !t) return false; const l = ((b || '') + ' ' + (t || '')).toLowerCase(); return /doesn.?t.*work|stuck|wrong.*value|shows?.*(0|zero|wrong)|bug|error|issue|problem|broken|not.*updating|after.*(update|install)|missing.*capability|interview|diagnostic|no.*connection|can.?t.*connect|unknown.*node|pairing/.test(l); }
+function hasUserSymptoms(b, t='') { if (!b && !t) return false; const l = ((b || '') + ' ' + (t || '')).toLowerCase(); return/doesn.?t.*work|stuck|wrong.*value|shows?.*(0|zero|wrong)|bug|error|issue|problem|broken|not.*updating|after.*(update|install)|missing.*capability|interview|diagnostic|no.*connection|can.?t.*connect|unknown.*node|pairing/.test(l); }
 
 function supportedMsg(found){
   const lines=found.map(([m,d])=>`| \`${m}\` | **${[].concat(d).join(', ')}** |`).join('\n');

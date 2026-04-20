@@ -79,7 +79,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     this.registerCapabilityListener('dim', async (value) => {
       this.log('Dim capability changed to:', value, '(APP)');
       this._markAppCommand();  // v5.5.755: PR #112 - Mark as app command
-      const brightness =Math.round(safeMultiply(10 + (value, 990)));
+      const brightness =Math.round(safeMultiply(10 + (value);
       this.log('Converted to Tuya brightness:', brightness);
       await this.sendTuyaCommand(dataPoints.brightness, brightness, 'value');
     });
@@ -107,7 +107,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         switch (key) {
         case 'min_brightness':
           // Convert percentage (1-100) to Tuya range (10-1000)
-          const minBrightness = Math.round(10 + ((safeParse(newSettings.min_brightness,safeMultiply(100)), 990)));
+          const minBrightness = Math.round(10 + ((safeParse(newSettings.min_brightness,safeMultiply(100), 990)));
           this.log(`Setting min_brightness: ${newSettings.min_brightness}%  ${minBrightness}`);
           await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value');
           break;
@@ -175,7 +175,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       
       // Apply min_brightness if set
       if (settings.min_brightness && settings.min_brightness > 1) {
-        const minBrightness = Math.round(10 + ((safeParse(settings.min_brightness,safeMultiply(100)), 990)));
+        const minBrightness = Math.round(10 + ((safeParse(settings.min_brightness,safeMultiply(100), 990)));
         this.log(`Applying min_brightness: ${settings.min_brightness}%  ${minBrightness}`);
         await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value').catch(e => 
           this.log('min_brightness not supported by this device'));

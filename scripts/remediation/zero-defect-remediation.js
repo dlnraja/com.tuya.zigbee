@@ -67,15 +67,22 @@ function fixFile(filePath, lineNumbers, type) {
 
   // 2. Add requires at the TOP (doing this last so it doesn't mess up loop above)
   if (changed) {
-    if (type === 'id' && !content.includes('const CI = require')) {
+    const shebang = lines[0] && lines[0].startsWith('#!') ? lines.shift() : null;
+    const contentCheck = lines.join('\n');
+    let hasStrict = lines.findIndex(l => l.includes("'use strict'"));
+    
+    if (type === 'id' && !contentCheck.includes('const CI = require')) {
         const relPath = getRelativePath(filePath, 'lib/utils/CaseInsensitiveMatcher');
-        const insertAt = Math.max(0, lines.findIndex(l => l.includes("'use strict'")) + 1);
+        const insertAt = hasStrict !== -1 ? hasStrict + 1 : 0;
         lines.splice(insertAt, 0, `const CI = require('${relPath}'); // Fix: Architectural Compliance`);
-    } else if (type === 'nan' && !content.includes('safeDivide')) {
+        if (hasStrict !== -1) hasStrict++; // Adjust index for next check
+    } else if (type === 'nan' && !contentCheck.includes('const { safeDivide')) {
         const relPath = getRelativePath(filePath, 'lib/utils/tuyaUtils.js');
-        const insertAt = Math.max(0, lines.findIndex(l => l.includes("'use strict'")) + 1);
+        const insertAt = hasStrict !== -1 ? hasStrict + 1 : 0;
         lines.splice(insertAt, 0, `const { safeDivide, safeMultiply, safeParse } = require('${relPath}'); // Fix: NaN Safety`);
     }
+    
+    if (shebang) lines.unshift(shebang);
     fs.writeFileSync(fullPath, lines.join('\n'));
     console.log(`  - Fixed ${type === 'id' ? 'Identity' : 'NaN'} risks: ${filePath}`);
   }

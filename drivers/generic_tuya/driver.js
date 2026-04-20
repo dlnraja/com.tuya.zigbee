@@ -32,7 +32,7 @@ class GenericTuyaDriver extends ZigBeeDriver {
     // CONDITIONS
     try {
       // A8: NaN Safety - use safeDivide/safeMultiply
-  const this._getFlowCard('generic_tuya_battery_above', 'condition');
+  this._getFlowCard('generic_tuya_battery_above', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

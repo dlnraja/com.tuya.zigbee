@@ -39,11 +39,11 @@ function buildSupportedMsg(found){
     return '`'+m+'`  **'+drivers[0]+'**';
   });
   const fpList=parts.length===1?parts[0]:parts.join(', ');
-  return `I see these fingerprints are mapped in the Universal Tuya Zigbee app(https://github.com/dlnraja/com.tuya.zigbee) v${VER}: ${fpList}.\n\nGrab it here: https:
+  return `I see these fingerprints are mapped in the Universal Tuya Zigbee app (https://github.com/dlnraja/com.tuya.zigbee) v${VER}: ${fpList}.\n\nGrab it here: https://homey.app/a/com.dlnraja.tuya.zigbee/test/`;
 }
 
 function buildUnsupportedMsg(missing){
-  return `\`${missing.join('`, `')}\` ${missing.length===1?'isn\'t':'aren\'t'} in the database yet  logged for the next release.\n\nA [device interview](https://tools.developer.homey.app) would help speed things up. Z2M/ZHA pages or [Blakadder](https:
+  return `\`${missing.join('`, `')}\` ${missing.length===1?'isn\'t':'aren\'t'} in the database yet  logged for the next release.\n\nA [device interview](https://tools.developer.homey.app) would help speed things up. Z2M/ZHA pages or [Blakadder](https://zigbee.blakadder.com/) help too.`;
 }
 
 function buildPRMsg(found,missing){
@@ -59,33 +59,28 @@ function buildPRMsg(found,missing){
   return msg;
 }
 
-// Main
 async function main(){
 const fps=loadFingerprints();
 console.log(`Loaded ${fps.size} fingerprints. Scanning ${REPO}...`);
-const summary=[];
 
-
-// v6.0: Detect dlnraja's own posts - don't auto-respond to owner
 function isOwnerPost(it) {
   try {
     const author = it.user?.login || '';
     return author.toLowerCase() === 'dlnraja' || author.toLowerCase() === (process.env.GITHUB_REPOSITORY_OWNER||'').toLowerCase();
   } catch { return false; }
 }
-// Issues
+
 const issues=JSON.parse(gh(`issue list -R ${REPO} -s open -L 50 --json number,title,body`));
 let iTriaged=0,iCommented=0,iClosed=0;
 for(const it of issues){
-  await sleep(400); // Rate-limit: 0.4s between API calls
+  await sleep(400);
   const alreadyTriaged=wasTriaged(it.number);
   if(alreadyTriaged||isOwnerPost(it)){
     iTriaged++;
-    // v5.11.47: Stale sweep  close already-triaged items where all FPs are supported
     const mfrs2=extractMfrFromText(`${it.title||''} ${it.body||''}`);
     const allSupp2=mfrs2.length>0&&mfrs2.every(m=>fps.has(m));
     if(allSupp2&&!DRY&&CAN_CLOSE){
-      try{gh(`issue close ${it.number} -R ${REPO} -r "completed" -c "All fingerprints supported in v${VER}. Closing as resolved."`);iClosed++;console.log(`  [SWEEP] Closed #${it.number}`);}catch{}
+      try{gh(`issue close ${it.number} -R ${REPO} -r "completed" -c "All fingerprints supported in v${VER}. Closing as resolved."`);iClosed++;}catch{}
     }
     continue;
   }
@@ -102,32 +97,18 @@ for(const it of issues){
   let msg='';
   if(found.length&&!missing.length) msg=buildSupportedMsg(found);
   else if(missing.length&&!found.length) msg=buildUnsupportedMsg(missing);
-  else if(found.length&&missing.length){
-    msg=buildSupportedMsg(found)+`\n\n---\n\`${missing.join('\`, \`')}\` ${missing.length===1?'isn\'t':'aren\'t'} in there yet  logged for next release.`;
-  }
+  else if(found.length&&missing.length) msg=buildSupportedMsg(found)+`\n\n---\n\`${missing.join('\`, \`')}\` ${missing.length===1?'isn\'t':'aren\'t'} in there yet  logged for next release.`;
   if(msg){postComment(it.number,msg);iCommented++;}
-  // Auto-close if ALL FPs supported (only on own repo)
   if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
-    try{gh(`issue edit ${it.number} -R ${REPO} --add-label "awaiting-verification"`);console.log(`  Verify-requested #${it.number}`);}catch{}
+    try{gh(`issue edit ${it.number} -R ${REPO} --add-label "awaiting-verification"`);}catch{}
   }
 }
 
-// PRs
 const prs=JSON.parse(gh(`pr list -R ${REPO} -s open -L 30 --json number,title,body`));
-let pTriaged=0,pCommented=0,pClosed=0;
+let pCommented=0;
 for(const pr of prs){
-  await sleep(400); // Rate-limit: 0.4s between API calls
-  const alreadyTriaged2=wasTriaged(pr.number);
-  if(alreadyTriaged2||isOwnerPost(pr)){
-    pTriaged++;
-    // v5.11.47: Stale sweep  close already-triaged PRs where all FPs supported
-    const mfrs3=extractMfrFromText(`${pr.title||''} ${pr.body||''}`);
-    const allSupp3=mfrs3.length>0&&mfrs3.every(m=>fps.has(m));
-    if(allSupp3&&!DRY&&CAN_CLOSE){
-      try{gh(`pr edit ${pr.number} -R ${REPO} --add-label "awaiting-verification"`);console.log(`  [SWEEP] Verify-requested PR #${pr.number}`);}catch{}
-    }
-    continue;
-  }
+  await sleep(400);
+  if(wasTriaged(pr.number)||isOwnerPost(pr)) continue;
   const prTxt=`${pr.title||''} ${pr.body||''}`;
   const {allMfrs:pM,allPids:pP}=buildFullIndex();
   const {mfr:peM,pid:peP}=extractAllFP(prTxt,pM,pP);
@@ -142,14 +123,12 @@ for(const pr of prs){
     postComment(pr.number,buildPRMsg(found,missing));
     pCommented++;
   }
-  // Auto-close PR if ALL FPs supported (only on own repo)
   if(found.length&&!missing.length&&!DRY&&CAN_CLOSE){
-    try{gh(`pr edit ${pr.number} -R ${REPO} --add-label "awaiting-verification"`);console.log(`  Verify-requested PR #${pr.number}`);}catch{}
+    try{gh(`pr edit ${pr.number} -R ${REPO} --add-label "awaiting-verification"`);}catch{}
   }
 }
 
-const report=`## ${REPO} Triage\n| Metric | Count |\n|--------|-------|\n| Open Issues | ${issues.length} |\n| Already triaged | ${iTriaged} |\n| New comments | ${iCommented} |\n| Issues closed | ${iClosed} |\n| Open PRs | ${prs.length} |\n| PR comments | ${pCommented} |\n| PRs closed | ${pClosed} |`;
-console.log(report);
+const report=`## ${REPO} Triage\n| Metric | Count |\n|--------|-------|\n| Issues commented | ${iCommented} |\n| Issues closed | ${iClosed} |\n| PR comments | ${pCommented} |`;
 fs.appendFileSync(SUMMARY,report+'\n');
 }
 main().catch(e=>{console.error(e.message);process.exit(0)});

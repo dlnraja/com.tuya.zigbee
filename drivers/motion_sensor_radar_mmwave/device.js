@@ -459,7 +459,7 @@ _setupOfflineCheck() {
     const threshold = MotionSensorRadarDevice.OFFLINE_CHECK_MS;
 
     if (elapsed > threshold) {
-      this.log(`[MMWAVE]  No event in ${Math.round(elapsed/1, 60000))} min - marking unavailable`);
+      this.log(`[MMWAVE]  No event in ${Math.round(elapsed / 60000)} min - marking unavailable`);
       this.setUnavailable('Pas de signal depuis 60+ minutes').catch(() => { });
     } else {
       // Make sure it's available if we received data recently

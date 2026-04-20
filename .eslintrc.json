@@ -1,0 +1,21 @@
+{
+  "env": {
+    "node": true,
+    "es2022": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "script"
+  },
+  "rules": {
+    "no-unused-vars": ["warn", { "args": "none" }],
+    "no-undef": "error",
+    "no-constant-condition": "warn",
+    "no-extra-semi": "error",
+    "semi": ["error", "always"],
+    "no-extra-parens": ["error", "all", { "nestedBinaryExpressions": false }],
+    "complexity": ["warn", { "max": 15 }],
+    "max-nested-callbacks": ["warn", 3]
+  }
+}

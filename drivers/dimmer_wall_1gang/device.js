@@ -91,7 +91,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
       this._lastDimValue = dim;
       if (isPhysical && oldDim !== null) {
         const id = increased ? 'dimmer_wall_1gang_physical_brightness_up' : 'dimmer_wall_1gang_physical_brightness_down';
-      this._getFlowCard(id).trigger(this, { brightness:Math.round(safeMultiply(dim, 100)) }, {}).catch(() => {})
+      this._getFlowCard(id).trigger(this, { brightness:Math.round(safeMultiply(dim) }, {}).catch(() => {})
       }
     }
   }

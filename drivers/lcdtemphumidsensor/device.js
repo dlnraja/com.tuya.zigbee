@@ -3,7 +3,7 @@ const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 // A8: NaN Safety - use safeDivide/safeMultiply
-  const require('../../lib/tuya/GlobalTimeSyncEngine');
+  require('../../lib/tuya/GlobalTimeSyncEngine');
 
 /**
  * LCD Temperature & Humidity Sensor Device - v7.4.4

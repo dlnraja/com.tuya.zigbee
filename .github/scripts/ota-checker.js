@@ -11,7 +11,7 @@ async function checkOta(manufacturerName) {
         const res = await fetch(otaUrl);
         const index = await res.json();
         
-        // Z2M OTA uses manufacturerCode / imageType, but sometimes maps by names or URLs
+        // Z2M OTA uses manufacturerCode/imageType, but sometimes maps by names or URLs
         // We'll do a fuzzy match on the URL or metadata
         let found = [];
         for (const fw of index) {

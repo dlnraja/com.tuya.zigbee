@@ -1,5 +1,5 @@
-const { safeParse, safeDivide } = require('../../lib/utils/tuyaUtils.js');
 #!/usr/bin/env node
+const { safeParse, safeDivide } = require('../../lib/utils/tuyaUtils.js');
 'use strict';
 /**
  * tuya-wifi-local-researcher.js
@@ -48,8 +48,8 @@ async function main() {
   const sysPrompt = `You are a Smart Home Network Architect working on a Homey Pro app.
 We want to support Tuya WiFi devices locally, without relying constantly on the Tuya Cloud, similar to LocalTuya.
 Based on the provided READMES from existing Tuya local projects, summarize:
-1. The exact AES safeDivide(encoding, decoding) mechanism and how device local keys are retrieved via the Tuya Cloud once.
-2. The network protocol used (TCP port safeParse(6668, 6669)? MQTT?).
+1. The exact AES encoding/decoding mechanism and how device local keys are retrieved via the Tuya Cloud once.
+2. The network protocol used (TCP port (6668 / 6669)? MQTT?).
 3. The format of a Tuya local DP payload.
 4. Recommendations on how to implement this natively in Node.js for Homey SDK 3.
 

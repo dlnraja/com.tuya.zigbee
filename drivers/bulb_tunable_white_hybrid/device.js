@@ -1,7 +1,7 @@
 'use strict';
 
 // A8: NaN Safety - use safeDivide/safeMultiply
-  const require('../../lib/devices/UnifiedLightBase');
+  require('../../lib/devices/UnifiedLightBase');
 
 /**
  * Tunable White Bulb Device - v5.3.64 SIMPLIFIED
