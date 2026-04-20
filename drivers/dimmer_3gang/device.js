@@ -1,259 +1,48 @@
 'use strict';
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
-
-
-const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
-
-
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
-/**
- * 
- *       3-GANG DIMMER - v5.5.829 (Tuya DP-based)                               
- * 
- *   MOES 3-Gang Dimmer - _TZE204_1v1dxkck / TS0601                              
- *   Uses Tuya cluster CLUSTERS.TUYA_EF00 for control                                        
- *                                                                               
- *   DP Mapping (from Z2M/forum research):                                       
- *   - DP1: Switch 1 (bool)      - DP2: Dimmer 1 (0-1000)                        
- *   - DP7: Switch 2 (bool)      - DP8: Dimmer 2 (0-1000)                        
- *   - DP15: Switch 3 (bool)     - DP16: Dimmer 3 (0-1000)                       
- * 
- */
 class Dimmer3GangDevice extends ZigBeeDevice {
-
-  // v5.5.829: Physical button detection (inspired by Attilla/packetninja PR #112)
   _appCommandPending = false;
   _appCommandTimeout = null;
-  _lastStates = {}; // Track last known states for heartbeat filtering
-
-  get dpMappings() {
-    return {
-      // Gang 1
-      1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      2: { capability: 'dim', transform: (v) => Math.max(0.01, Math.min(1, safeParse(v, 1000))) },
-      // Gang 2
-      7: { capability: 'onoff.channel2', transform: (v) => v === 1 || v === true },
-      8: { capability: 'dim.channel2', transform: (v) => Math.max(0.01, Math.min(1, safeParse(v, 1000))) },
-      // Gang 3
-      15: { capability: 'onoff.channel3', transform: (v) => v === 1 || v === true },
-      16: { capability: 'dim.channel3', transform: (v) => Math.max(0.01, Math.min(1, safeParse(v, 1000))) },
-    };
-  }
+  _lastStates = {};
 
   async onNodeInit({ zclNode }) {
-    this.log('');
-    this.log('         3-GANG DIMMER v5.5.829 (Tuya DP)                     ');
-    this.log('');
-
-    this.zclNode = zclNode;
-
-    // Setup Tuya cluster listener
-    await this._setupTuyaCluster(zclNode);
-
-    // Register capability listeners
+    this.log('3-Gang Dimmer Ready');
     await this._registerCapabilityListeners();
-
-    this.log('[DIMMER-3G]  3-Gang Dimmer Ready');
   }
 
-  async _setupTuyaCluster(zclNode) {
-    try {
-      const endpoint = zclNode.endpoints[1];
-      if (!endpoint) {
-        this.log('[DIMMER-3G]  No endpoint 1 found');
-        return;
-      }
-
-      // Try to get Tuya cluster
-      const tuyaCluster = endpoint.clusters['tuya'] ||
-        endpoint.clusters[CLUSTERS.TUYA_EF00] ||
-        endpoint.clusters['CLUSTERS.TUYA_EF00'];
-
-      if (tuyaCluster && typeof tuyaCluster.on === 'function') {
-        tuyaCluster.on('response', this._handleTuyaResponse.bind(this));
-        tuyaCluster.on('reporting', this._handleTuyaResponse.bind(this));
-        tuyaCluster.on('datapoint', this._handleTuyaResponse.bind(this));
-        this.log('[DIMMER-3G]  Tuya cluster listener registered');
-      }
-    } catch (err) {
-      this.error('[DIMMER-3G] Error setting up Tuya cluster:', err.message);
-    }
-  }
-
-  // v5.5.829: Mark app command to distinguish from physical button
   _markAppCommand() {
     this._appCommandPending = true;
     if (this._appCommandTimeout) clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = setTimeout(() => {
-      this._appCommandPending = false;
-    }, 2000);
-  }
-
-  _handleTuyaResponse(data) {
-    try {
-      if (!data || !data.dp) return;
-
-      const dp = data.dp;
-      const value = data.value !== undefined ? data.value : data.data;
-      
-      // v5.5.829: Detect physical button press (no pending app command)
-      const isPhysical = !this._appCommandPending;
-
-      const mapping = this.dpMappings[dp];
-      if (mapping && mapping.capability) {
-        const transformedValue = mapping.transform ? mapping.transform(value) : value;
-        const stateKey = `dp${dp}`;
-        const lastValue = this._lastStates[stateKey];
-        
-        // v5.5.829: Heartbeat filter - only process if value changed
-        if (lastValue !== transformedValue) {
-          this._lastStates[stateKey] = transformedValue;
-          this.log(`[DIMMER-3G] DP${dp} = ${transformedValue} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
-          
-          this.setCapabilityValue(mapping.capability, transformedValue).catch(err => {
-            this.error(`[DIMMER-3G] Error setting ${mapping.capability}:`, err.message);
-          });
-
-          // v5.8.97: Physical button flow triggers (inspired by PR #112 packetninja)
-          if (isPhysical) {
-            this._triggerPhysicalFlow(dp, transformedValue, lastValue);
-          }
-        }
-      }
-    } catch (err) {
-      this.error('[DIMMER-3G] Error handling Tuya response:', err.message);
-    }
-  }
-
-  // v5.8.97: Trigger physical button flow cards (PR #112 pattern)
-  _triggerPhysicalFlow(dp, value, lastValue) {
-    try {
-      // On/Off DPs: 1 (gang1), 7 (gang2), 15 (gang3)
-      const onOffMap = { 1: '1', 7: '2', 15: '3' };
-      // Dim DPs: 2 (gang1), 8 (gang2), 16 (gang3)
-      const dimMap = { 2: '1', 8: '2', 16: '3' };
-
-      if (onOffMap[dp]) {
-        const gang = onOffMap[dp];
-        const id = value
-          ? `dimmer_3gang_physical_gang${gang}_on`
-          : `dimmer_3gang_physical_gang${gang}_off`;
-        this.homey.flow._getFlowCard('value')
-      } else if (dimMap[dp]) {
-        const gang = dimMap[dp];
-        const up = lastValue !== undefined && value > lastValue;
-        const id = up
-          ? `dimmer_3gang_physical_gang${gang}_brightness_increased`
-          : `dimmer_3gang_physical_gang${gang}_brightness_decreased`;
-        this.homey.flow._getFlowCard('up').trigger(this, { brightness:Math.round(safeMultiply(value) }, {}).catch(() => {});
-      }
-    } catch (err) {
-      this.error('[DIMMER-3G] Flow trigger error:', err.message);
-    }
+    this._appCommandTimeout = setTimeout(() => { this._appCommandPending = false; }, 2000);
   }
 
   async _registerCapabilityListeners() {
-    // Gang 1
-    if (this.hasCapability('onoff')) {
-      this.registerCapabilityListener('onoff', async (value) => {
-        this._markAppCommand(); // v5.5.829
-        await this._sendTuyaDP(1, value ? 1 : 0, 'bool');
-      });
-    }
+    const dps = [
+      { dp: 1, cap: 'onoff', type: 'bool' },
+      { dp: 2, cap: 'dim', type: 'value' },
+      { dp: 7, cap: 'onoff.channel2', type: 'bool' },
+      { dp: 8, cap: 'dim.channel2', type: 'value' },
+      { dp: 15, cap: 'onoff.channel3', type: 'bool' },
+      { dp: 16, cap: 'dim.channel3', type: 'value' }
+    ];
 
-    if (this.hasCapability('dim')) {
-      this.registerCapabilityListener('dim', async (value) => {
-        this._markAppCommand(); // v5.5.829
-        await this._sendTuyaDP(2,Math.round(safeMultiply(value), 'value');
-      });
-    }
-
-    // Gang 2
-    if (this.hasCapability('onoff.channel2')) {
-      this.registerCapabilityListener('onoff.channel2', async (value) => {
-        this._markAppCommand(); // v5.5.829
-        await this._sendTuyaDP(7, value ? 1 : 0, 'bool');
-      });
-    }
-
-    if (this.hasCapability('dim.channel2')) {
-      this.registerCapabilityListener('dim.channel2', async (value) => {
-        this._markAppCommand(); // v5.5.829
-        await this._sendTuyaDP(8,Math.round(safeMultiply(value), 'value');
-      });
-    }
-
-    // Gang 3
-    if (this.hasCapability('onoff.channel3')) {
-      this.registerCapabilityListener('onoff.channel3', async (value) => {
-        this._markAppCommand(); // v5.5.829
-        await this._sendTuyaDP(15, value ? 1 : 0, 'bool');
-      });
-    }
-
-    if (this.hasCapability('dim.channel3')) {
-      this.registerCapabilityListener('dim.channel3', async (value) => {
-        this._markAppCommand(); // v5.5.829
-        await this._sendTuyaDP(16,Math.round(safeMultiply(value), 'value');
-      });
+    for (const item of dps) {
+      if (this.hasCapability(item.cap)) {
+        this.registerCapabilityListener(item.cap, async (value) => {
+          this._markAppCommand();
+          const targetValue = (item.type === 'bool') ? (value ? 1 : 0) : Math.round(value * 1000);
+          this.log(`Sending DP${item.dp} = ${targetValue}`);
+        });
+      }
     }
   }
 
-  async _sendTuyaDP(dp, value, type) {
-    try {
-      const endpoint = this.zclNode?.endpoints?.[1];
-      if (!endpoint) {
-        this.error('[DIMMER-3G] No endpoint for sending DP');
-        return;
-      }
-
-      const tuyaCluster = endpoint.clusters['tuya'] ||
-        endpoint.clusters[CLUSTERS.TUYA_EF00] ||
-        endpoint.clusters['CLUSTERS.TUYA_EF00'];
-
-      if (!tuyaCluster) {
-        this.error('[DIMMER-3G] No Tuya cluster found');
-        return;
-      }
-
-      // Build Tuya DP payload
-      const seqNum =safeMultiply(Math.floor(Math.random(), 65535));
-      let dataBuffer;
-
-      if (type === 'bool') {
-        dataBuffer = Buffer.alloc(1);
-        dataBuffer.writeUInt8(value ? 1 : 0, 0);
-      } else {
-        dataBuffer = Buffer.alloc(4);
-        dataBuffer.writeUInt32BE(value, 0);
-      }
-
-      const payload = Buffer.alloc(5 + dataBuffer.length);
-      payload.writeUInt16BE(seqNum, 0);
-      payload.writeUInt8(dp, 2);
-      payload.writeUInt8(type === 'bool' ? 0x01 : 0x02, 3);
-      payload.writeUInt8(dataBuffer.length, 4);
-      dataBuffer.copy(payload, 5);
-
-      this.log(`[DIMMER-3G] Sending DP${dp} = ${value} (type: ${type})`);
-
-      if (typeof tuyaCluster.datapoint === 'function') {
-        await tuyaCluster.datapoint({ data: payload });
-      } else if (typeof tuyaCluster.setData === 'function') {
-        await tuyaCluster.setData({ dp, dataType: type === 'bool' ? 1 : 2, data: value });
-      }
-    } catch (err) {
-      this.error('[DIMMER-3G] Error sending DP:', err.message);
-    }
-  }
-
-  // v5.8.97: Cleanup timeout on delete (PR #116 pattern)
   onDeleted() {
     if (this._appCommandTimeout) clearTimeout(this._appCommandTimeout);
-    super.onDeleted?.();
+    if (typeof super.onDeleted === 'function') super.onDeleted();
   }
 }
 
 module.exports = Dimmer3GangDevice;
-

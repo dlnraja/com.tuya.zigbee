@@ -18,11 +18,11 @@ async function init(dev) {
       const ep = dev._zclNode?.endpoints?.[1];
       if (ep?.clusters?.powerConfiguration) {
         ep.clusters.powerConfiguration.on('attr.batteryPercentageRemaining', (v) => {
-          dev.setCapabilityValue('measure_battery', Math.round(safeParse(v).catch(() => {});
+          dev.setCapabilityValue('measure_battery', Math.round(safeParse(v).catch(() => {})));
         });
         const r = await ep.clusters.powerConfiguration.readAttributes(['batteryPercentageRemaining']).catch(() => null);
         if (r?.batteryPercentageRemaining != null) {
-          dev.setCapabilityValue('measure_battery', Math.round(safeParse(r.batteryPercentageRemaining).catch(() => {});
+          dev.setCapabilityValue('measure_battery', Math.round(safeParse(r.batteryPercentageRemaining).catch(() => {})));
         }
         dev.log('[IR] Battery reporting active');
       }

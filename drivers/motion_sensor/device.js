@@ -386,7 +386,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             // No temperature received  ZG-204ZL PIR-only  DP4 is battery
             if (v >= 0 && v <= 100) {
               device._dynamicCapabilityFromDP?.(4, v, 'measure_battery');
-              device.setCapabilityValue('measure_battery', Math.round(v).catch(() => {});
+              device.setCapabilityValue('measure_battery', Math.round(v).catch(() => {}));
               device.log?.(`[MOTION-DP]  DP4=${v}  battery (no temp DP3 received, ZG-204ZL pattern)`);
             }
             return null; // Not humidity
@@ -535,7 +535,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             if (hum >= VALIDATION.HUMIDITY_MIN && hum <= VALIDATION.HUMIDITY_MAX) {
               // v5.5.793: Apply calibration offset if available
               const offset = this.getSetting?.('humidity_offset') || 0;
-              hum = Math.max(0, Math.min(100, Math.round(hum + offset);
+              hum = Math.max(0, Math.min(100, Math.round(hum + offset)));
               this.log(`[ZCL]  Humidity: ${hum}% (raw: ${data.measuredValue})`);
               this._registerZigbeeHit?.();
               this._lastHumSource = 'ZCL';

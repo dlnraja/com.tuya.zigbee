@@ -354,7 +354,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
     // Raw ADC value - apply conversion ONLY for sensors that actually need it
     // Based on Z2M issue #18950: some sensors report raw ADC values
     if (rawValue > 0) {
-      lux = Math.round(safeParse(rawValue);
+      lux = Math.round(safeParse(rawValue));
     } else {
       lux = 0;
     }
@@ -383,7 +383,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   // v5.5.316: FIXED - Only auto-detect raw ADC for values > 50000 (clearly wrong)
   // Previous bug: Ã·100 if > 10000 broke sensors reporting legitimate high lux
   if (lux > 50000) {
-    const converted = Math.round(safeParse(lux);
+    const converted = Math.round(safeParse(lux));
     console.log(`[LUX-FIX] ðŸ“Š Extreme value detected for ${manufacturerName}: ${originalValue} -> ${converted} lux`);
     lux = converted;
   }
@@ -398,7 +398,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
     console.log(`[LUX-FIX] âšï¸ Value ${lux} exceeds ${maxLux} for ${manufacturerName} (allowing)`);
   }
 
-  lux = Math.max(0, Math.round(lux);
+  lux = Math.max(0, Math.round(lux));
 
   // v5.5.319: AGGRESSIVE LUX SMOOTHING for known problematic sensors
   // Ronny #775: _TZE284_iadro9bf still oscillating 30â†”2000 every 15 seconds
@@ -877,7 +877,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           if (powerCluster?.readAttributes) {
             const attrs = await powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
             if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
-              const battery = Math.min(100, Math.round(safeParse(attrs.batteryPercentageRemaining);
+              const battery = Math.min(100, Math.round(safeParse(attrs.batteryPercentageRemaining)));
               this.log(`[RADAR] ðŸ”‹ Battery read: ${attrs.batteryPercentageRemaining} -> ${battery}%`);
               this.setCapabilityValue('measure_battery', battery).catch(() => {});
             } else if (attrs?.batteryVoltage && !this.getCapabilityValue('measure_battery')) {
@@ -1184,7 +1184,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const battThrottleMs = config.batteryThrottleMs || 300000;
     listen(ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration, 'attr.batteryPercentageRemaining', async (v) => {
       if (v === undefined || v === 255) return;
-      const b = Math.min(100, Math.round(safeParse(v);
+      const b = Math.min(100, Math.round(safeParse(v)));
       const now = Date.now();
       if (now - lastPermBattUpdate < battThrottleMs) return;
       if (lastPermBattValue !== null && Math.abs(b - lastPermBattValue) < 5) return;
@@ -1487,7 +1487,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // while others report Ã·10 (9=90%), so multiplier:10 doesn't work for all
       let humidity = Math.round(safeMultiply(safeDivide(rawHumid, divisor), multiplier));
       if (humidity > 100 && rawHumid > 100) {
-        humidity = Math.round(safeDivide(rawHumid);
+        humidity = Math.round(safeDivide(rawHumid));
       }
       if (humidity >= 0 && humidity <= 100) {
         this.log(`[RADAR] ðŸ’§ DP${dpId} â†’ humidity = ${humidity}% (raw: ${rawHumid}, Ã·${divisor}, Ã—${multiplier})`);
@@ -1503,7 +1503,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (dpMap[dpId]?.cap === 'measure_battery') {
       const rawBatt = this._parseBufferValue(data.value || data.data);
       const divisor = dpMap[dpId].divisor || 1;
-      const battery = Math.round(safeDivide(rawBatt, divisor);
+      const battery = Math.round(safeDivide(rawBatt, divisor));
       if (battery >= 0 && battery <= 100) {
         // v5.5.983: Check battery throttling config
         const now = Date.now();
@@ -1775,7 +1775,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         powerCluster.on('attr.batteryPercentageRemaining', (v) => {
           const now = Date.now();
           // ZCL reports battery as 0-200 (0.5% steps), convert to 0-100%
-          const battery = Math.min(100, Math.round(safeDivide(v);
+          const battery = Math.min(100, Math.round(safeDivide(v)));
           
           // Throttle: Skip if less than 5 min since last update
           if (now - lastZclBatteryUpdate < BATTERY_MIN_INTERVAL_MS) {
@@ -1799,7 +1799,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           // Backup: calculate from voltage if percentage not available
           // Typical CR2450: 3.0V full, 2.0V empty
           if (v && !this.getCapabilityValue('measure_battery')) {
-            const battery = Math.min(100, Math.max(0, Math.round(safeMultiply(v - 20));
+            const battery = Math.min(100, Math.max(0, Math.round(safeMultiply(v - 20))));
             this.log(`[RADAR] ðŸ”‹ ZCL Battery voltage: ${v/10}V -> ${battery}%`);
             this.setCapabilityValue('measure_battery', battery).catch(() => { });
           }
@@ -1833,7 +1833,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           }
           
           const lux = Math.pow(10, safeDivide(v - 1, 10000));
-          const roundedLux = parseFloat(Math.round(lux);
+          const roundedLux = parseFloat(Math.round(lux));
           
           // Throttle: Skip if less than 30s since last update
           if (timeSinceLastUpdate < MIN_REPORT_INTERVAL_MS) {

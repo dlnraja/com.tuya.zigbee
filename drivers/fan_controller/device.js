@@ -113,7 +113,7 @@ class FanControllerDevice extends ZigBeeDevice {
     const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
     if (!tuyaCluster) return;
 
-    const speed =Math.round(safeMultiply(value);
+    const speed =Math.round(safeMultiply(value));
     try {
       await tuyaCluster.datapoint({ dp: 3, datatype: 2, value: speed });
     } catch (e) {
@@ -132,7 +132,7 @@ class FanControllerDevice extends ZigBeeDevice {
 
     // Register capability listener for dim via Tuya DP
     this.registerCapabilityListener('dim', async (value) => {
-      const speed =Math.round(safeMultiply(value); // 0-4 speed levels
+      const speed =Math.round(safeMultiply(value)); // 0-4 speed levels
       this.log(`Setting fan speed to: ${speed}`);
       try {
         await tuyaCluster.datapoint({ dp: 3, datatype: 2, value: speed });
@@ -178,7 +178,7 @@ class FanControllerDevice extends ZigBeeDevice {
       this.setCapabilityValue('dim', dim).catch(this.error);
       // Trigger speed changed flow card
       try {
-        this.homey.flow.getTriggerCard().trigger(this, { speed:Math.round(safeMultiply(dim) }).catch(this.error);
+        this.homey.flow.getTriggerCard().trigger(this, { speed:Math.round(safeMultiply(dim) }).catch(this.error));
       } catch (e) { /* Card may not exist */ }
       break;
 

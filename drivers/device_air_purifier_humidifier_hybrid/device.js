@@ -38,7 +38,7 @@ class HumidifierDevice extends ZigBeeDevice {
     });
 
     this.registerCapabilityListener('dim', async (value) => {
-      const level =Math.round(safeMultiply(value); // 0=off, 1=low, 2=medium, 3=high
+      const level =Math.round(safeMultiply(value)); // 0=off, 1=low, 2=medium, 3=high
       await tuyaCluster.datapoint({ dp: 5, datatype: 4, value: level });
     });
 

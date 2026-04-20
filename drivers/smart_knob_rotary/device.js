@@ -115,7 +115,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
         // Read initial battery value
         const batteryStatus = await powerCluster.readAttributes(['batteryPercentageRemaining']).catch(() => null);
         if (batteryStatus && batteryStatus.batteryPercentageRemaining !== undefined) {
-          const batteryValue = Math.round(safeParse(batteryStatus.batteryPercentageRemaining);
+          const batteryValue = Math.round(safeParse(batteryStatus.batteryPercentageRemaining));
           await this.setCapabilityValue('measure_battery', batteryValue).catch(this.error);
           this.log('Battery level:', batteryValue, '%');
         }
@@ -416,7 +416,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     const rotateLeftTrigger = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_left'); } catch(e) { return null; } })();
     if (rotateLeftTrigger) {
       await rotateLeftTrigger.trigger(this, { 
-        brightness:Math.round(safeMultiply(this._simulatedBrightness) 
+        brightness:Math.round(safeMultiply(this._simulatedBrightness))
       }).catch(this.error);
     }
   }
@@ -435,7 +435,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     const rotateRightTrigger = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_right'); } catch(e) { return null; } })();
     if (rotateRightTrigger) {
       await rotateRightTrigger.trigger(this, { 
-        brightness:Math.round(safeMultiply(this._simulatedBrightness) 
+        brightness:Math.round(safeMultiply(this._simulatedBrightness))
       }).catch(this.error);
     }
   }

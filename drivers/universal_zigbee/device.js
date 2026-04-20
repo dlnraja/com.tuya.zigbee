@@ -34,8 +34,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     if (!this.zclNode) return;
 
     // A. OnOff (0x0006)
-    this.registerCapability('onoff', '// H1: OnOffBoundCluster must be bound per EP
-  genOnOff', {
+    this.registerCapability('onoff', 'genOnOff', {
       get: 'onOff',
       report: 'onOff',
       getOpts: { getOnStart: true, getOnOnline: true }

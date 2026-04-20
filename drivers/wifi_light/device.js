@@ -16,7 +16,7 @@ class WiFiLightDevice extends TuyaLocalDevice {
         reverseTransform: (v) =>Math.round(safeMultiply(v) + 10) },
       '23': { capability: 'light_temperature', writable: true,
         transform: (v) => safeParse(v, 1000),
-        reverseTransform: (v) =>Math.round(safeMultiply(v) },
+        reverseTransform: (v) =>Math.round(safeMultiply(v) },)
       '24': { capability: '_dp24_color_hsv', writable: true },
       '25': { capability: null },
       '26': { capability: null },

@@ -333,8 +333,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
     const getOnOffCluster = (epNum) => {
       const ep = this._zclNode?.endpoints?.[epNum];
-      return ep?.clusters?.onOff || ep?.clusters?.// H1: OnOffBoundCluster must be bound per EP
-  genOnOff || ep?.clusters?.[6];
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
     };
 
     // Setup attribute listeners for physical button detection

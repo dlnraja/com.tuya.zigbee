@@ -136,12 +136,12 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
     
     // Try DP1 first (most common)
     try {
-      await this.sendTuyaDPCommand(1,Math.round(safeMultiply(value), 2);
+      await this.sendTuyaDPCommand(1,Math.round(safeMultiply(value), 2));
       return true;
     } catch (e1) {
       // Fallback to DP16
       try {
-        await this.sendTuyaDPCommand(16,Math.round(safeMultiply(value), 2);
+        await this.sendTuyaDPCommand(16,Math.round(safeMultiply(value), 2));
         return true;
       } catch (e2) {
         this.error('[TRV-ZIGBEE] Failed to set target temp:', e2.message);
