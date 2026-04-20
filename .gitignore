@@ -1,5 +1,19 @@
+# ==========================================
+# Universal Tuya Zigbee - .gitignore
+# ==========================================
+
+# === NODE MODULES (ALWAYS EXCLUDED) ===
 node_modules/
+.npm/
+.yarn/
+
+# === HOMEY BUILD ARTIFACTS ===
 .homeybuild/
+.homeycompose/
+.homeychangelog.json
+.homeyignore
+
+# === USER DATA & LOCAL FILES ===
 .userdata/
 .logs/
 *.log
@@ -8,14 +22,18 @@ yarn-debug.log*
 yarn-error.log*
 .DS_Store
 Thumbs.db
-NUL
-_proxima/
-skills/
+
+# === AI AGENT DATA (NOT FOR GITHUB) ===
 .agents/
 .memory/
 .windsurf/
+.gemini/
+.gemini/
+skills/
 scratch/
 validation_output.txt
+
+# === COLLISION & DEBUG FILES ===
 collisions.json
 collisions.log
 collisions_v2.log
@@ -23,7 +41,47 @@ CROSS_COLLISIONS.json
 FLOW_CARDS_AUDIT_REPORT.json
 invalid_assets.json
 driver-mapping-database.json
-# Gemini sensitive data
+cross_collisions.json
+
+# === TEMPORARY FILES ===
+NUL
+_proxima/
+tmp/
+temp/
+*.tmp
+*.temp
+
+# === SENSITIVE DATA ===
 gemini*
-.gemini/
 gemini_*
+*secret*
+*password*
+*.key
+
+# === IDE & EDITOR ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === TESTING ===
+test/
+tests/
+coverage/
+
+# === ARTIFACTS ===
+dist/
+build/
+*.tgz
+*.zip
+
+# === DEPENDENCIES ===
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# === ENV FILES ===
+.env
+.env.local
+.env.*.local
