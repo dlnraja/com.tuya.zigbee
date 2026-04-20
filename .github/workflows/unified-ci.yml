@@ -42,6 +42,21 @@ jobs:
       
       - name: 🌌 ZERO DEFECT ARCHITECT AUDIT
         run: node scripts/maintenance/zero-defect-architect-audit.js
+      
+      - name: 🔄 Z2M/ZHA Case Variant Check
+        run: |
+          echo "Checking case variant coverage for Z2M/ZHA compatibility..."
+          node scripts/automation/detect-missing-variants.js
+          MISSING=$(node -e "const d=JSON.parse(require('fs').readFileSync('data/community-sync/missing-variants-detected.json','utf8'));console.log(d.total||0)")
+          echo "Missing case variants: $MISSING"
+          if [ "$MISSING" -gt 0 ]; then
+            echo "::warning::Found $MISSING missing case variants - auto-fixing..."
+            node scripts/automation/fix-detected-variants.js
+          else
+            echo "✓ All drivers have complete case variant coverage"
+          fi
++++++++
+ REPLACE
 
   build:
     name: 🏗️ Production Build & Optimize
