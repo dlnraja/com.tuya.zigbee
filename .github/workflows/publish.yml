@@ -85,12 +85,13 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           echo "drivers=$DRIVERS" >> $GITHUB_OUTPUT
 
-      # Step 5: Publish
-      - name: 🚀 Publish to Test Track
+      # Step 5: Publish to Draft
+      - name: 🚀 Publish to Draft (Promotion via daily-promote-to-test)
         uses: athombv/github-action-homey-app-publish@v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
-          branch: test
++++++++
+ REPLACE
 
       # Step 6: Summary
       - name: 📊 Summary
