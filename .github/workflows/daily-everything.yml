@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "Dry run"
+        description: "Dry run (no commit/publish)"
         type: boolean
         default: false
 
@@ -17,930 +17,117 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: homey-app-store-delivery
-  cancel-in-progress: false
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 defaults:
   run:
     shell: bash
 
 env:
-  NODE_VERSION: "20"
+  NODE_VERSION: "22"
   SHADOW_MODE: "true"
+  PIPELINE_STABILITY: "PRODUCTION_READY"
+  GOOGLE_API_KEY: "${{ secrets.GOOGLE_API_KEY }}"
+  OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}"
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
 
 jobs:
-  everything:
-    name: "MEGA Pipeline — 34 steps"
+  audit_and_intel:
+    name: "🔍 AUDIT & INTEL"
     runs-on: ubuntu-latest
-    timeout-minutes: 360
-    env:
-      # === AI providers — circular chain with free-tier rate limiting ===
-      # ai-helper.js: Gemini→DeepSeek→GitHub Models→OpenAI→Groq→Granite/HF→Mistral→OpenRouter→Cerebras→Together→Kimi→DeepSeek(retry)
-      GOOGLE_API_KEY: "${{ secrets.GOOGLE_API_KEY }}"
-      OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}"
-      DEEPSEEK_API_KEY: "${{ secrets.DEEPSEEK_API_KEY }}"
-      GROQ_API_KEY: "${{ secrets.GROQ_API_KEY }}"
-      HF_TOKEN: "${{ secrets.HF_TOKEN }}"
-      MISTRAL_API_KEY: "${{ secrets.MISTRAL_API_KEY }}"
-      OPENROUTER_API_KEY: "${{ secrets.OPENROUTER_API_KEY }}"
-      CEREBRAS_API_KEY: "${{ secrets.CEREBRAS_API_KEY }}"
-      TOGETHER_API_KEY: "${{ secrets.TOGETHER_API_KEY }}"
-      KIMI_API_KEY: "${{ secrets.KIMI_API_KEY }}"
-      # === GitHub ===
-      GH_PAT: ${{ secrets.GH_PAT }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      # === Forum ===
-      HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-      HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-      # === Gmail (IMAP) ===
-      GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
-      GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-      # === Homey ===
-      HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-      HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: 'npm'
-
-      # ===== 0a. INTELLIGENCE MODE SELECTOR (IA-less Fallback) =====
-      - name: "0a. Intelligence Mode Selector"
-        id: intelligence_selector
-        run: |
-          if [ -n "${{ secrets.GOOGLE_API_KEY }}" ] || [ -n "${{ secrets.OPENAI_API_KEY }}" ] || [ -n "${{ secrets.OPENROUTER_API_KEY }}" ]; then
-            echo "PIPELINE_MODE=AI_ORCHESTRATED" >> $GITHUB_ENV
-            echo "::notice::Pipeline intelligence: AI_ORCHESTRATED (DeepMind Cloud enabled)"
-          else
-            echo "PIPELINE_MODE=RULE_BASED" >> $GITHUB_ENV
-            echo "::warning::Pipeline intelligence: RULE_BASED (IA-less / Cloudless-First mode)"
-          fi
-
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
-      - name: 🛡️ Zigbee Signature Audit
+      - name: 🛡️ Signature Audit
         run: node scripts/ci/signature-audit.js
-      - name: Save START_SHA
-        run: echo "START_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
       - name: App stats
         id: stats
         run: |
-          V=$(node -p "require('./app.json').version")
           D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
-          F=$(node -e "const g=require('path').join('.','drivers');const fs=require('fs');let c=0;for(const d of fs.readdirSync(g)){try{const j=JSON.parse(fs.readFileSync(g+'/'+d+'/driver.compose.json','utf8'));c+=(j.zigbee?.manufacturerName?.length||0)}catch{}}console.log(c)" 2>/dev/null || grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
-          MD=$(node -e "const g=require('path').join('.','drivers');const fs=require('fs');const m=new Map();for(const d of fs.readdirSync(g)){try{const j=JSON.parse(fs.readFileSync(g+'/'+d+'/driver.compose.json','utf8'));for(const n of(j.zigbee?.manufacturerName||[])){if(!m.has(n))m.set(n,[]);m.get(n).push(d)}}catch{}}let c=0;for(const[,v]of m)if(v.length>1)c++;console.log(c)" 2>/dev/null || echo 0)
-          echo "version=$V" >> $GITHUB_OUTPUT
+          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
           echo "drivers=$D" >> $GITHUB_OUTPUT
           echo "fps=$F" >> $GITHUB_OUTPUT
-          echo "multi_driver=$MD" >> $GITHUB_OUTPUT
-          echo "App v$V | $D drivers | $F FPs | $MD multi-driver mfrs"
-
-      - name: "0b. Performance Benchmark (Static)"
-        id: benchmark
+      - name: "Forum & GitHub Triage"
         run: |
-          echo "### 📊 Performance Benchmark" >> $GITHUB_STEP_SUMMARY
-          echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
-          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
-          echo "| Drivers | ${{ steps.stats.outputs.drivers }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| Fingerprints | ${{ steps.stats.outputs.fps }} |" >> $GITHUB_STEP_SUMMARY
-          SIZE=$(du -sh . | cut -f1)
-          echo "| Repo Size | $SIZE |" >> $GITHUB_STEP_SUMMARY
-          IMG_COUNT=$(find drivers -name "*.png" | wc -l)
-          echo "| Images | $IMG_COUNT |" >> $GITHUB_STEP_SUMMARY
-          LARGE_IMG=$(find drivers -name "*.png" -size +200k | wc -l)
-          echo "| Large Images (>200k) | $LARGE_IMG |" >> $GITHUB_STEP_SUMMARY
-          if [ "$LARGE_IMG" -gt 0 ]; then
-             echo "::warning::Found $LARGE_IMG images over 200KB. Run 'npm run images' locally."
-          fi
-
-      # ===== 0. ONE-TIME: Delete duplicate/spam forum posts =====
-      - name: "0. Forum Cleanup (one-time)"
-        id: forum_cleanup
-        continue-on-error: true
-        timeout-minutes: 10
-        run: |
-          if [ ! -f .github/state/cleanup-done.flag ]; then
-            echo "=== Deleting 17 duplicate/spam posts ==="
-            node .github/scripts/forum-cleanup.js || true
-            mkdir -p .github/state && touch .github/state/cleanup-done.flag
-          else
-            echo "Cleanup already done"
-          fi
-
-      # ===== 1. FORUM: Scan + Intel (replies shadowed) =====
-      - name: "1. Forum Scan + Intel (no replies)"
-        if: success() || failure()
-        id: forum_scan
-        continue-on-error: true
-        timeout-minutes: 10
-        env:
-          SHADOW_MODE: 'true'
-          REPLY_TOPICS: "140352"
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: |
-          echo "=== Forum Scan (all threads, read-only intel) ==="
           node .github/scripts/scan-forum.js || true
-          echo "=== Forum Intel Processor (auto-add FPs, detect issues) ==="
-          node .github/scripts/forum-intel-processor.js || true
-          echo "=== Forum replies delegated to forum-auto-responder.yml (SHADOWED) ==="
-
-      # ===== 2. GITHUB: Triage + Respond + Close (SHADOWED) =====
-      - name: "2. GitHub Issues & PRs Manager"
-        if: success() || failure()
-        id: github_mgr
-        continue-on-error: true
-        timeout-minutes: 15
-        env:
-          SHADOW_MODE: 'true'
-          STALE_DAYS: "30"
-          MAX_ITEMS: "100"
-          REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
-        run: node .github/scripts/github-issue-manager.js
-
-      # ===== 3. GITHUB: Upstream Triage (JohanBendz + forks) =====
-      - name: "3. Upstream Triage"
-        if: success() || failure()
-        id: upstream
-        continue-on-error: true
-        timeout-minutes: 15
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-          TARGET_REPO: dlnraja/com.tuya.zigbee
-          APP_VERSION: ${{ steps.stats.outputs.version }}
-          DRIVER_COUNT: ${{ steps.stats.outputs.drivers }}
-          FP_COUNT: ${{ steps.stats.outputs.fps }}
-          SHADOW_MODE: 'true'
-          SCAN_FORKS: "true"
-        run: node .github/scripts/triage-upstream-enhanced.js
-
-      # ===== 3ba. UNIFIED SUPERIOR INTELLIGENCE (v7.4.5) =====
-      - name: "3ba. Superior Orchestrator (Triage + Genesis Self-Heal + Audit)"
-        id: unified
-        continue-on-error: true
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-        run: |
-           echo "### 🌌 Unified Superior Intelligence" >> $GITHUB_STEP_SUMMARY
-           node scripts/maintenance/autonomous-maintenance-orchestrator.js
-           node scripts/maintenance/superior-audit.js
-           if [ -f SUPERIOR_AUDIT_REPORT.md ]; then
-             cat SUPERIOR_AUDIT_REPORT.md >> $GITHUB_STEP_SUMMARY
-           fi
-
-      # ===== 3b. GITHUB: Comprehensive scan (forks+PRs+issues) =====
-      - name: "3b. Comprehensive GitHub Scan"
-        id: comp_gh_scan
-        continue-on-error: true
-        timeout-minutes: 15
-        run: node .github/scripts/retry-runner.js .github/scripts/comprehensive-github-scan.js --retries 2 --delay 10000
-
-      # ===== 3c. GITHUB: PR/Issue FP Scan =====
-      - name: "3c. PR/Issue Fingerprint Scan"
-        id: pr_issue_scan
-        continue-on-error: true
-        timeout-minutes: 10
-        run: node .github/scripts/retry-runner.js .github/scripts/scan-prs-issues.js --retries 2 --delay 8000
-
-      # ===== 4. GITHUB: Scanner (both repos, AI summary) =====
-      - name: "4. GitHub Activity Scanner"
-        if: success() || failure()
-        id: gh_scanner
-        continue-on-error: true
-        timeout-minutes: 10
-        env:
-          SHADOW_MODE: 'true'
-        run: node .github/scripts/github-scanner.js
-
-      # ===== 5. GMAIL: Token pre-check + Diagnostics (2x/day at 8AM+20PM) =====
-      - name: "5a. IMAP Health Check"
-        id: gmail_token
-        continue-on-error: true
-        timeout-minutes: 3
-        env:
-          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-        run: |
-          HOUR=$(date -u +%H)
-          if [ "$HOUR" = "08" ] || [ "$HOUR" = "14" ] || [ "$HOUR" = "20" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            node .github/scripts/gmail-token-keepalive.js || true
-          fi
-      - name: "5b. Gmail Diagnostics"
-        id: gmail
-        continue-on-error: true
-        timeout-minutes: 3
-        run: |
-          HOUR=$(date -u +%H)
-          if [ "$HOUR" = "08" ] || [ "$HOUR" = "14" ] || [ "$HOUR" = "20" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "=== Running Gmail Diagnostics ==="
-            node .github/scripts/fetch-gmail-diagnostics.js || true
-          else
-            # Also allow manual dispatch to run gmail diagnostics
-            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-              node .github/scripts/fetch-gmail-diagnostics.js || true
-            else
-              echo "Skipping Gmail"
-            fi
-          fi
-
-      # ===== 6. NIGHTLY: IA-less / Cloudless-First Processing =====
-      - name: "6. Nightly Rule-Based Processor"
-        id: nightly
-        continue-on-error: true
-        timeout-minutes: 10
-        env:
-          SHADOW_MODE: 'true'
-          PIPELINE_MODE: ${{ env.PIPELINE_MODE }}
-        run: |
-          echo "=== Nightly Process (Mode: $PIPELINE_MODE) ==="
-          node .github/scripts/nightly-processor.js
-
-      # ===== 6a. MASTER STABILIZATION & HYGIENE (NO-AI) =====
-      - name: "6a. Master Stabilization: Flow Cards + Magic Spell + Energy + BVB"
-        id: sterilization
-        continue-on-error: true
-        timeout-minutes: 15
-        run: |
-          echo "=== 🛡️ SDK v3 Flow Card Safety Fixer (v2.0.0) ==="
-          node scripts/maintenance/fix-unsafe-flow-cards.js
-          
-          echo "=== 🛡️ Magic Spell & Energy Settings Validate (v1.1.0) ==="
-          # Rules: super.onNodeInit() check, energy scaling (Issue #197), SOS rules
-          node scripts/automation/validate-magic-spell.js
-          
-          echo "=== ⚙️ Master Self-Heal Engine (Idempotent Repair) ==="
-          # Rules: SDK3 phantoms, FP case, probe dedup, energy batteries
-          node scripts/maintenance/master-self-heal.js
-          
-          echo "=== 🛡️ BVB Health Audit (v6.1.5 - WiFi + Zigbee) ==="
-          # Rules: Bizarree Value Blocking coverage for all drivers
-          node scripts/automation/bvb-impact-report.js || true
-
-          echo "=== 🛡️ Rule 21 Compliance: Flow Interoperability ==="
-          # Rules: Multi-gang filters based on capabilities instead of driver_ids
-          node scripts/maintenance/rule-21-linter.js
-
-          echo "=== 🛡️ Universal Stability Audit (v7.0.x) ==="
-          # Rules: Inheritance check, Safe Flow Card usage, Physical Button Hardening
-          node scripts/maintenance/stability-audit.js || true
-
-          echo "=== 🛡️ Rule 28: Composite Identity & Wildcard Broadening (Thinking Unified Autonomous) ==="
-          node scripts/automation/fingerprint-broadener.js || true
-          
-          echo "=== 🧊 Unified Autonomous: Master Flow-Linkage Patcher ==="
-          node scripts/maintenance/master-flow-patcher.js
-
-          echo "=== 🌱 Unified Autonomous: Autonomous Evolution Engine ==="
-          node scripts/maintenance/autonomous-evolution-engine.js
-
-          echo "=== 🖼️ Unified Visual Rebranding Engine (Autonomous) ==="
-          node scripts/automation/apply-premium-unified-images.js || true
-
-          if [ -f FLOW_CARDS_AUDIT_REPORT.json ]; then
-            node scripts/legacy/fix_all_flow_issues.js || true
-          else
-            echo "ℹ️ No audit report found, running standalone Flow audit first"
-            node scripts/analysis/audit_all_flow_cards.js || true
-            node scripts/legacy/fix_all_flow_issues.js || true
-          fi
-
-      # ===== 6b. GITHUB: SMART PR/ISSUE SCAN (AI if available, else Rule-based) =====
-      - name: "6b. GitHub Issue & Fingerprint Research"
-        id: gh_research
-        continue-on-error: true
-        timeout-minutes: 20
-        env:
-          GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-        run: |
-          if [ "$PIPELINE_MODE" = "AI_ORCHESTRATED" ]; then
-            node .github/scripts/issue-deep-researcher.js
-            node .github/scripts/smart-device-processor.js
-          else
-            echo "⚠️ AI Offline: Using Rule-Based classification (via triage-engine.js)"
-            node .github/scripts/scan-prs-issues.js
-          fi
-
-      # ===== 6c. WIFI HEALTH: Cloudless-First Protocol Check =====
-      - name: "6c. WiFi Protocol & Auto-Healing Audit"
-        continue-on-error: true
-        run: |
-          echo "=== 🌐 Checking WiFi Driver Coherence ==="
-          # Ensures all WiFi drivers use TuyaLocalClient with autoHealing: true
-          grep -l "TuyaLocalDevice" drivers/*/device.js | xargs grep -L "autoHealing" || echo "✅ All WiFi drivers are Auto-Heal ready"
-
-      # ===== 6d. ARCHITECTURAL HEALTH CHECK (Deep Thinking Level 99) =====
-      - name: "6d. v99 Architectural Health Check"
-        id: health_check
-        continue-on-error: true
-        run: |
-          echo "=== 🏆 Verifying Zero-Defect Architectural Gate ==="
-          # Check for manager casing regressions
-          grep -r "_tuyaEF00Manager" drivers/ --exclude-dir=node_modules && (echo "❌ Regression Detected: Legacy casing found!" && exit 1) || echo "✅ No legacy casing regressions."
-          
-          # Check for inheritance gaps
-          node scripts/maintenance/triage-engine.js --report-only
-          
-          echo "=== 🧊 Cloudless Fallback Governance ==="
-          echo "Pipeline Mode: ${{ env.PIPELINE_MODE }}"
-          if [ "${{ env.PIPELINE_MODE }}" = "RULE_BASED" ]; then
-            echo "✅ Governance: Pure Local Rule-Based (IA-less) execution confirmed."
-          fi
-
-
-      - name: "🚩 Commit SDK v3 Linter Fixes"
-        continue-on-error: true
-        run: |
-          git add drivers/ .github/state/ai-rules-memory.json .github/state/sdk3-lint-report.json 2>/dev/null || true
-          if ! git diff --cached --quiet 2>/dev/null; then
-            # Post-commit validation gate: build + validate
-            if npx homey app build 2>&1 | tail -1 | grep -q "error"; then
-              echo "❌ Build failed after linter — rolling back"
-              git checkout -- drivers/
-            else
-              git commit -m "🤖 [SDK v3 Linter] Smart enrichment — architectural stabilization [skip ci]"
-              echo "✅ Linter fixes committed"
-            fi
-          else
-            echo "ℹ️ No linter changes to commit"
-          fi
-
-
-      # ===== 7. FORUM ACTIVITY: Scrape ALL account activity =====
-      - name: "7. Forum Activity Scraper"
-        if: false
-        id: forum_activity
-        continue-on-error: true
-        timeout-minutes: 10
-        env:
-          FORUM_USERNAME: dlnraja
-        run: node .github/scripts/forum-activity-scraper.js
-
-      # ===== 7b. FORUM: Update First Post shadowed =====
-      - name: "7b. Forum First Post Update [SHADOWED]"
-        if: false
-        id: forum_first_post
-        continue-on-error: true
-        timeout-minutes: 5
-        env:
-          SHADOW_MODE: 'true'
-        run: node .github/scripts/update-forum-first-post.js
-
-      # ===== 7c. FORUM: Private Messages (inbox scan) =====
-      - name: "7c. Forum Private Messages"
-        if: false
-        id: forum_pm
-        continue-on-error: true
-        timeout-minutes: 5
-        env:
-          FORUM_USERNAME: dlnraja
-          SHADOW_MODE: 'true'
-        run: node .github/scripts/forum-pm-scanner.js || true
-
-      # ===== 8. SMART DEVICE SCAN: 11-source (Z2M+ZHA+Blakadder+deCONZ+Hubitat+HOMEd+SmartThings+HA Forum+Local) =====
-      - name: "8. Smart Device Functionality Scanner (11 sources)"
-        id: ext_sources
-        continue-on-error: true
-        timeout-minutes: 15
-        run: node .github/scripts/external-sources-scanner.js
-
-      # ===== 9. ENRICHMENT: Cross-reference with device functionality data =====
-      - name: "9. Smart Enrichment Scanner (DP-aware)"
-        id: enrichment
-        continue-on-error: true
-        timeout-minutes: 10
-        run: node .github/scripts/enrichment-scanner.js
-
-      # ===== 9a. EXTERNAL SYNC: Download Z2M/ZHA/deCONZ + run adapter pipeline =====
-      - name: "9a. External Sources Sync (Z2M/ZHA/deCONZ adapters)"
-        id: ext_sync
-        continue-on-error: true
-        timeout-minutes: 15
-        env:
-          SHADOW_MODE: 'true'
-        run: node .github/scripts/sync-external-sources.js
-
-      # ===== 9b. JOHANBENDZ: Full scanner =====
-      - name: "9b. JohanBendz Full Scanner"
-        id: johan_scan
-        continue-on-error: true
-        timeout-minutes: 10
-        run: node .github/scripts/scan-johan-full.js
-
-      - name: "9b1b. Johan SDK3 Auto-Sync"
-        id: johan_sync
-        continue-on-error: true
-        timeout-minutes: 10
-        run: node .github/scripts/sync-johan-sdk3.js
-
-      # ===== 9b1c. AUTO-SCAFFOLD: Create missing drivers from Johan templates =====
-      - name: "9b1c. Auto-Scaffold Missing Drivers"
-        id: auto_scaffold
-        continue-on-error: true
-        timeout-minutes: 10
-        run: node .github/scripts/auto-driver-scaffold.js
-
-      # ===== 9b1d. DRIVER CONFLICT AUDIT: Detect PID/MFR conflicts =====
-      - name: "9b1d. Driver Conflict Audit"
-        id: driver_audit
-        continue-on-error: true
-        timeout-minutes: 5
-        run: |
-          echo "=== 🕵️ Driver Conflict & Case Collision Audit ==="
-          node .github/scripts/driver-conflict-audit.js
-
-      # ===== 9b2. FP RESEARCH ENGINE: Deep classify via Z2M/Blakadder/CompScan =====
-      - name: "9b2. FP Research Engine (Deep Classify)"
-        id: fp_research
-        continue-on-error: true
-        timeout-minutes: 10
-        env:
-          AUTO_ADD: 'true'
-        run: node .github/scripts/fp-research-engine.js
-
-      # ===== 9b3. VARIANT SCANNER: Auto-discover variants + PIDs =====
-      - name: "9b3. Variant Scanner (Variants + PIDs)"
-        id: variant_scan
-        continue-on-error: true
-        timeout-minutes: 15
-        env:
-          SHADOW_MODE: 'true'
-        run: node .github/scripts/variant-scanner.js
-
-      # ===== 9b4. ISSUE DEEP RESEARCHER: Scan PRs/issues, research ALL variants+PIDs =====
-      - name: "9b4. Issue Deep Researcher (PRs+Issues)"
-        id: deep_research
-        continue-on-error: true
-        timeout-minutes: 20
-        env:
-          SHADOW_MODE: 'true'
-        run: node .github/scripts/issue-deep-researcher.js
-
-      # ===== 9b5. SMART DEVICE PROCESSOR: AI cross-reference + complete implementation =====
-      - name: "9b5. Smart Device Processor (AI Brain)"
-        id: smart_proc
-        continue-on-error: true
-        timeout-minutes: 15
-        env:
-          SHADOW_MODE: 'true'
-        run: node .github/scripts/smart-device-processor.js
-
-      # ===== 9c. Cross-Driver Gap Analysis =====
-      - name: "9c. Cross-Driver Gap"
-        id: cross_gap
-        continue-on-error: true
-        timeout-minutes: 5
-        run: node .github/scripts/cross-driver-gap.js || true
-
-      # ===== 9c2. GITHUB: Extra PR/Issue triage check =====
-      - name: "9c2. Extra PR/Issue Triage Check"
-        id: extra_triage
-        continue-on-error: true
-        timeout-minutes: 5
-        run: echo "Extra triage step"
-
-      # ===== 9d. Scan Public APIs (Z2M/ZHA/Blakadder live) =====
-      - name: "9d. Scan Public APIs"
-        id: public_apis
-        continue-on-error: true
-        timeout-minutes: 5
-        run: node .github/scripts/scan-public-apis.js || true
-
-      # ===== 9e. GITHUB DEEP SEARCH: Search 20+ projects for FPs, DPs, converters =====
-      - name: "9e. GitHub Deep Search (20+ projects)"
-        id: gh_deep_search
-        continue-on-error: true
-        timeout-minutes: 15
-        env:
-          MAX_GH_CALLS: "120"
-        run: node .github/scripts/github-deep-search.js
-
-      # ===== 10. AI CHANGELOG: Generate from all findings =====
-      - name: "10. AI Changelog"
-        id: ai_changelog
-        continue-on-error: true
-        timeout-minutes: 10
-        run: node .github/scripts/generate-ai-changelog.js
-
-      - name: "10b. Deep Fork Integrator"
-        id: fork_scan
-        continue-on-error: true
-        timeout-minutes: 15
-        env:
-          FORK_DEPTH: "3"
-        run: node .github/scripts/deep-fork-integrator.js
-
-      - name: "10b1. Autonomous Intel Harvester"
-        id: intel_harvester
-        continue-on-error: true
-        timeout-minutes: 15
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-        run: node scripts/maintenance/autonomous-intel-harvester.js
-
-      - name: "10b2. Legacy Fork FPs (fallback)"
-        id: impl_fork_fps
-        continue-on-error: true
-        timeout-minutes: 5
-        run: |
-          if [ -f .github/state/new-fork-fps.json ]; then
-            node .github/scripts/implement-fork-fps.js
-          else
-            echo "No new-fork-fps.json — deep integrator handled it"
-          fi
-
-      - name: "10b3. Forum Spam Scan"
-        id: spam_scan
-        continue-on-error: true
-        timeout-minutes: 5
-        run: node .github/scripts/forum-scan-spam.js
-
-      - name: "10b4. Forum Cleanup (edit-based)"
-        id: forum_cleanup_edit
-        continue-on-error: true
-        timeout-minutes: 5
-        env:
-          SHADOW_MODE: 'true'
-        run: node .github/scripts/forum-cleanup-edit.js || true
-
-      - name: "10c. Device Finder"
-        id: dev_finder
-        continue-on-error: true
-        timeout-minutes: 5
-        run: node .github/scripts/generate-device-finder.js
-
-      - name: "10d. Auto-Update Docs"
-        id: auto_docs
-        continue-on-error: true
-        timeout-minutes: 5
-        run: node .github/scripts/auto-update-docs.js
-
-      - name: "10e. Generate README"
-        id: gen_readme
-        continue-on-error: true
-        timeout-minutes: 5
-        run: node .github/scripts/generate-readme.js
-
-      # ===== 10g. Homey Device Diagnostics (live Homey data) =====
-      - name: "10g. Homey Device Diagnostics"
-        id: homey_diag
-        continue-on-error: true
-        timeout-minutes: 10
-        run: node .github/scripts/homey-device-diagnostics.js || true
-
-      # ===== 10h. Interview & Crash Log Recovery =====
-      - name: "10h. Interview & Diagnostic Recovery"
-        id: interview_recovery
-        continue-on-error: true
-        timeout-minutes: 10
-        env:
-          SHADOW_MODE: 'true'
-        run: node .github/scripts/interview-recovery.js || true
-
-      # ===== 10h2. Collect & Aggregate Diagnostics =====
-      - name: "10h2. Collect Diagnostics"
-        id: collect_diag
-        continue-on-error: true
-        timeout-minutes: 10
-        run: node .github/scripts/collect-diagnostics.js
-
-      # ===== 10i. Monthly Comprehensive (inline, 1x/day at 02:00) =====
-      - name: "10i. Monthly Comprehensive Sync"
-        id: monthly_comp
-        continue-on-error: true
-        timeout-minutes: 15
-        run: |
-          HOUR=$(date -u +%H)
-          if [ "$HOUR" = "02" ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "=== Running Monthly Comprehensive Sync ==="
-            node .github/scripts/monthly-comprehensive.js || true
-          else
-            echo "Skipping monthly sync (only at 02:00 UTC)"
-          fi
-
-      # ===== 10j. AUTO-LEARN: Discover non-Tuya fingerprints from driver DB =====
-      - name: "10j. Auto-Learn Fingerprints"
-        id: auto_learn
-        continue-on-error: true
-        timeout-minutes: 3
-        run: node .github/scripts/auto-learn-fingerprints.js
-
-      # ===== 10j2. FP COLLISION CHECK: Detect mfr+pid collisions =====
-      - name: "10j2. FP Collision Check"
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 2
-        run: node .github/scripts/fp-collision-check.js
-
-      # ===== 10k. PATTERN DETECTOR: Recurring issue detection =====
-      - name: "10k. Pattern Detector"
-        id: patterns
-        continue-on-error: true
-        timeout-minutes: 5
-        run: node .github/scripts/pattern-detector.js
-
-      # ===== 10k2. RESOLUTION SUMMARY: Symptom intelligence from pattern data =====
-      - name: "10k2. Resolution Summary"
-        id: resolution
-        continue-on-error: true
-        run: node .github/scripts/resolution-summary.js
-
-      # ===== 10k3. CROSS-REF: Correlate all sources =====
-      - name: "10k3. Cross-Reference Intelligence"
-        id: cross_ref
-        continue-on-error: true
-        timeout-minutes: 2
-        run: node .github/scripts/cross-ref-intelligence.js
-
-      # ===== 10l. REPLY SELF-AUDIT: Validate past replies =====
-      - name: "10l. Reply Self-Audit"
-        id: bot_audit
-        continue-on-error: true
-        timeout-minutes: 10
-        run: node .github/scripts/bot-self-audit.js
-
-      # ===== 10m. USER EXPECTATIONS: Generate tracking + decision reference =====
-      # Runs LAST so it has all data from pattern-detector, interview-recovery, reply-audit
-      - name: "10m. Generate User Expectations + Decision Ref"
-        id: gen_expectations
-        continue-on-error: true
-        timeout-minutes: 5
-        run: node .github/scripts/generate-user-expectations.js
-
-      # ===== 10n. MASTER AI BATTLE: Multi-AI orchestrator combining ALL sources =====
-      - name: "10n. Master AI Battle Orchestrator"
-        id: ai_battle
-        continue-on-error: true
-        timeout-minutes: 20
-        env:
-          SHADOW_MODE: 'true'
-          MAX_GH_CALLS: "100"
-        run: node .github/scripts/master-ai-battle.js
-
-      # ===== 10o. AUTONOMOUS EVOLUTION (Logic Cleanup) =====
-      - name: "10o. Autonomous Evolution Cleanup"
-        id: autonomous_maint
-        if: always()
-        continue-on-error: true
-        run: |
-          echo "=== 🧬 Final Evolution Cleanup ==="
-          node scripts/maintenance/autonomous-evolution-engine.js
-
-      # ===== 10p. PIPELINE HEALTH CHECK =====
-      - name: "10p. Pipeline Health Check"
-        id: health
-        if: always()
-        continue-on-error: true
-        run: node .github/scripts/pipeline-health.js
-
-      # ===== 10p. DRIVER LOCALIZATION (I18N) =====
-      - name: "10p. Driver Localization (I18N)"
-        id: i18n
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 15
-        run: node .github/scripts/translate-all.js || true
-
-      # ===== 11. BUMP & COMMIT & PUBLISH (UNIFIED) =====
-      - name: "11a. Generate Daily Changelog"
-        id: changelog_gen
-        if: always()
-        run: node .github/scripts/generate-daily-changelog.js || echo "changelog=Automated maintenance" >> $GITHUB_OUTPUT
-
-      - name: "11b. Version Bump (Patch)"
-        if: always() && github.event_name != 'workflow_dispatch'
-        id: bump
-        uses: athombv/github-action-homey-app-version@v1 # v1
+          node .github/scripts/github-issue-manager.js || true
+          node .github/scripts/github-scanner.js || true
+      - name: "Community Intel Ingestion"
+        run: node scripts/maintenance/fetch-community-intel.js || true
+
+  repair_and_stabilize:
+    name: "🛠️ REPAIR & STABILIZE"
+    needs: audit_and_intel
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          version: patch
-          changelog: ${{ steps.changelog_gen.outputs.changelog }}
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+      - name: "🌌 Orchestrated Self-Healing"
+        run: |
+          node scripts/maintenance/autonomous-maintenance-orchestrator.js
+          node scripts/maintenance/master-self-heal.js
+          node scripts/fixes/ULTIMATE_DRIVER_STABILIZER.js
+      - name: "🧪 SDK v3 Compliance Check"
+        run: node scripts/maintenance/sdk3-smart-linter.js
+      - name: "🖼️ Image Optimization"
+        run: |
+          node scripts/maintenance/ensure-500x500-images.js
+          node scripts/maintenance/clean-images.js
+      - name: "Documentation Update"
+        run: |
+          node .github/scripts/generate-device-finder.js || true
+          node .github/scripts/generate-readme.js || true
 
-      - name: "11c. Unified Commit"
-        id: commit
-        if: always()
+  validate_and_publish:
+    name: "🚀 VALIDATE & PUBLISH"
+    needs: repair_and_stabilize
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+      - name: "🚩 Commit Fixes"
         run: |
           git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
-          # Sync package.json version
-          NEW_VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "${{ steps.stats.outputs.version }}")
-          node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');"
-          
-          # Clean up bad JSON memory files
-          for f in .github/state/*.json; do 
-            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || rm "$f"; 
-          done
-          
-          git add -A .github/state/ drivers/ lib/ docs/ app.json package.json .homeychangelog.json 2>/dev/null || true
-          
-          if git diff --cached --quiet; then
-            echo "ℹ️ No changes to commit"
-          else
-            git commit -m "v${NEW_VER}: architectural stabilization and security hardening [skip ci]"
-            git pull --rebase origin master
-            git push origin master
-          fi
-
-      # ===== 12. VALIDATE + PUBLISH =====
-      - name: "12. Validate"
-        if: always()
-        continue-on-error: true
-        uses: athombv/github-action-homey-app-validate@v1 # v1
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A drivers/ lib/ .github/state/ docs/ app.json package.json
+          git commit -m "🤖 [Unified Engine] v$(node -p "require('./app.json').version") stabilization sweep [skip ci]" || echo "No changes"
+          git push origin master --force || echo "Push failed"
+      - name: "🛠️ Homey Validate"
+        uses: athombv/github-action-homey-app-validate@v1
         with:
           level: publish
-
-      - name: "12b. Publish to Homey"
-        if: steps.bump.outcome == 'success'
-        continue-on-error: true
-        id: pub
-        uses: athombv/github-action-homey-app-publish@v1 # v1
+      - name: "🚀 Homey Publish"
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false')
+        uses: athombv/github-action-homey-app-publish@v1
         with:
           personal_access_token: ${{ secrets.HOMEY_PAT }}
-
-      - name: "12c. Create GitHub Release"
-        if: steps.bump.outcome == 'success'
-        continue-on-error: true
-        uses: softprops/action-gh-release@a06a81a03ee405af7f2048a818ed3f03bbf83c7b # v2
+      - name: "🎉 Create Release"
+        if: success() && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run == 'false'))
+        uses: softprops/action-gh-release@v1
         with:
-          tag_name: v${{ steps.bump.outputs.version || steps.stats.outputs.version }}
-          name: v${{ steps.bump.outputs.version || steps.stats.outputs.version }}
-          body: ${{ steps.changelog_gen.outputs.changelog || 'Automated device support enrichment' }}
-          draft: false
-          prerelease: false
-          make_latest: true
+          tag_name: v${{ github.run_number }}
+          generate_release_notes: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-
-      # ===== 13. DRAFT → TEST =====
-      # v5.11.80: Wait for Athom to process draft before promoting
-      - name: "13. Wait for Athom draft processing"
-        if: steps.pub.outcome == 'success'
-        run: |
-          echo "Waiting 120s for Athom to process draft build..."
-          sleep 120
-          echo "Done waiting"
-
-      # v5.11.27: API method is PRIMARY (more reliable than Puppeteer)
-      # Puppeteer is FALLBACK only (SPA loading issues on CI)
-      - name: "13a. Promote via API (primary)"
-        if: always()
-        id: promote_api
-        continue-on-error: true
-        timeout-minutes: 3
-        env:
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          SHADOW_MODE: 'true'
-        run: node .github/scripts/auto-publish-draft.js
-
-      - name: "13b. Promote via OAuth"
-        if: always() && steps.promote_api.outcome != 'success'
-        id: promote_oauth
-        continue-on-error: true
-        timeout-minutes: 3
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
-          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
-          SHADOW_MODE: 'true'
-          DRY_RUN: 'false'
-        run: |
-          npm install athom-api --no-save 2>/dev/null || true
-          node .github/scripts/auto-promote-oauth.js
-
-      - name: "13c. Install Puppeteer (fallback)"
-        if: always() && steps.promote_api.outcome != 'success' && steps.promote_oauth.outcome != 'success'
-        continue-on-error: true
-        run: |
-          npm install puppeteer --no-save --force || true
-
-      - name: "13d. Promote via Browser (Puppeteer fallback)"
-        if: always() && steps.promote_api.outcome != 'success' && steps.promote_oauth.outcome != 'success'
-        id: promote_puppeteer
-        continue-on-error: true
-        timeout-minutes: 5
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          SHADOW_MODE: 'true'
-          DRY_RUN: 'false'
-        run: node .github/scripts/auto-promote-puppeteer.js
-
-      - name: "13e. Upload promote screenshots"
-        if: always()
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
-        with:
-          name: daily-promote-screenshots
-          path: screenshots/
-          retention-days: 7
-          if-no-files-found: ignore
-
-      # 📣 Forum Announcement (Unified Awareness) - DISABLED FOR SHADOW MODE
-      - name: 💬 Post to Forum [SHADOWED]
-        if: false
-        continue-on-error: true
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          APP_VERSION: ${{ steps.stats.outputs.version }}
-        run: node .github/scripts/post-forum-update.js
-
-      # ===== 14. FORUM POST: Update with latest version - DISABLED FOR SHADOW MODE =====
-      - name: "14. Forum Update [SHADOWED]"
-        if: false
-        continue-on-error: true
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          APP_VERSION: ${{ steps.bump.outputs.version || steps.stats.outputs.version }}
-        run: |
-          # CHANGELOG env intentionally empty — post-forum-update.js reads from .homeychangelog.json
-          node .github/scripts/post-forum-update.js || true
-
-      # ===== 14b. Deploy Device Finder (GitHub Pages) =====
-      - name: "14b. Deploy Device Finder"
-        if: always()
-        continue-on-error: true
-        run: |
-          if [ -f ".github/pages-build/index.html" ]; then
-            echo "Device Finder pages exist, commit handles deploy via deploy-pages workflow"
-          fi
-          # Regenerate if needed
-          node .github/scripts/device-finder-html.js 2>/dev/null || true
-
-      # ===== SUMMARY =====
-      - name: Summary
-        if: always()
-        run: |
-          echo "## 🚀 Daily Everything Pipeline — MEGA (Shadow Mode)" >> $GITHUB_STEP_SUMMARY
-          echo "**App:** v${{ steps.bump.outputs.version || steps.stats.outputs.version }} | ${{ steps.stats.outputs.drivers }} drivers | ${{ steps.stats.outputs.fps }} FPs | ${{ steps.stats.outputs.multi_driver }} multi-driver mfrs" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| # | Step | Status |" >> $GITHUB_STEP_SUMMARY
-          echo "|---|------|--------|" >> $GITHUB_STEP_SUMMARY
-          echo "| 0 | Forum Cleanup | ${{ steps.forum_cleanup.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 1 | Forum Scan + Respond (Shadow) | ${{ steps.forum_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 2 | GitHub Issues & PRs (Shadow) | ${{ steps.github_mgr.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 3 | Upstream Triage (Shadow) | ${{ steps.upstream.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 3b | Comprehensive GH Scan | ${{ steps.comp_gh_scan.outcome }} |" >> $#" +
-          echo "| 3c | PR/Issue FP Scan | ${{ steps.pr_issue_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 4 | GitHub Scanner (Shadow) | ${{ steps.gh_scanner.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 5a | Gmail Token Pre-check | ${{ steps.gmail_token.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 5b | Gmail Diagnostics | ${{ steps.gmail.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 6 | Nightly Processor | ${{ steps.nightly.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 7 | Forum Activity | ${{ steps.forum_activity.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 7b | Forum First Post (Shadow) | ${{ steps.forum_first_post.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 7c | Forum Private Messages (Shadow) | ${{ steps.forum_pm.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 8 | External Sources | ${{ steps.ext_sources.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 9 | Enrichment | ${{ steps.enrichment.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 9a | External Sync (Z2M/ZHA/deCONZ) (Shadow) | ${{ steps.ext_sync.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 9b | JohanBendz Scanner | ${{ steps.johan_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 9b1c | Auto-Scaffold Drivers | ${{ steps.auto_scaffold.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 9b1d | Driver Conflict Audit | ${{ steps.driver_audit.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 9b2 | FP Research Engine | ${{ steps.fp_research.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 9b3 | Variant Scanner (Shadow) | ${{ steps.variant_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 9b4 | Issue Deep Researcher (Shadow) | ${{ steps.deep_research.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 9b5 | Smart Device Processor (Shadow) | ${{ steps.smart_proc.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 9c | Cross-Driver Gap | ${{ steps.cross_gap.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10 | AI Changelog | ${{ steps.ai_changelog.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10b | Deep Fork Integrator | ${{ steps.fork_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10b3 | Forum Spam Scan | ${{ steps.spam_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10b4 | Forum Cleanup Edit (Shadow) | ${{ steps.forum_cleanup_edit.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10c | Device Finder | ${{ steps.dev_finder.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10d | Auto Docs | ${{ steps.auto_docs.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10e | README | ${{ steps.gen_readme.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10g | Homey Diagnostics | ${{ steps.homey_diag.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10h | Interview Recovery (Shadow) | ${{ steps.interview_recovery.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10h2 | Collect Diagnostics | ${{ steps.collect_diag.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10j | Auto-Learn FPs | ${{ steps.auto_learn.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 10k | Pattern Detector | ${{ steps.patterns.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 11 | Commit | ${{ steps.commit.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 12a | **Version Bump** | **${{ steps.bump.outcome }}** |" >> $GITHUB_STEP_SUMMARY
-          echo "| 12b | Validate + Publish | ${{ steps.pub.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 13a | Promote API (Shadow) | ${{ steps.promote_api.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 15 | **Unified Intelligence** | ${{ steps.autonomous_maint.outcome }} |" >> $#" +
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "**Total: 34 automation steps** | [Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) | [Manage](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee) | [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)" >> $GITHUB_STEP_SUMMARY
-
-      - name: Upload reports
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
-        if: always()
-        with:
-          name: daily-reports-${{ github.run_number }}
-          path: |
-            .github/state/*.json
-            docs/rules/*.md
-          retention-days: 14
-
-      # ===== 11. FINAL SELF-CORRECTION AUDIT (AI-POWERED) =====
-      - name: "11. Final Self-Correction Audit (AI-Powered)"
-        id: self_correction
-        if: always()
-        run: |
-          echo "=== 🤖 Final Passing: AI Self-Correction & Regression Audit ==="
-          node scripts/automation/self-correction-audit.js || true
-          echo "=== 🏁 Pipeline Complete ==="
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
