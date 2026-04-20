@@ -1,14 +1,14 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-20T07:05:27.138Z*
+*Generated: 2026-04-20T07:48:28.889Z*
 
 ##  Architectural Health [v7.0.22]
 
 | Metric | Value | Status |
 |--------|-------|--------|
 | Total Drivers | 323 |  |
-| Manufacturer IDs | 63702 |  |
-| Collisions | 4 |  |
+| Manufacturer IDs | 100040 |  |
+| Collisions | 385 |  |
 | v7 Architectural Debt | 323 legacy drivers |  |
 | PR Auto-Merger | Active |  |
 | Community Responder | Template Ready |  |
@@ -17,10 +17,28 @@
 
 | ID | Drivers |
 |----|--------|
-| `_TZ3210_D3M9V8P6|TS0001` | button_wireless_fingerbot_hybrid, fingerbot |
-| `_TZ3210_D3M9V8P6|TS0001_FINGERBOT` | button_wireless_fingerbot_hybrid, fingerbot |
-| `_TZ3210_PWJ6VUJ9|TS0001` | button_wireless_fingerbot_hybrid, fingerbot |
-| `_TZ3210_PWJ6VUJ9|TS0001_FINGERBOT` | button_wireless_fingerbot_hybrid, fingerbot |
+| `_TZE200_5zbp6j0u|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_bjzrowv2|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_nkoabg8w|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_xuzcvlku|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_4vobcgd3|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_nogaemzt|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_r0jdjrvi|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_pk0sfzvr|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_fdtjuw7u|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_zpzndjez|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_wmcdj3aq|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_cowvfni3|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_rddyvrci|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_nueqqe6k|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_xaabybja|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_rmymn92d|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_3i3exuay|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_hsgrhjpf|TS0601` | air_purifier, switch_1gang |
+| `_TZE200_uj3f4wr5|TS0601` | air_purifier, curtain_motor |
+| `_TZE204_1fuxihti|TS0601` | air_purifier, switch_1gang |
+
+*...and 365 more*
 
 ##  Action Items
 
