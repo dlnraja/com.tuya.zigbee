@@ -40,7 +40,7 @@ class PlugSmartDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Plug is/is not on
     try {
-      const card = this.homey.flow.getConditionCard('plug_smart_is_on');
+      const card = this._getFlowCard('plug_smart_is_on', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -52,7 +52,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      const card = this.homey.flow.getActionCard('plug_smart_turn_on');
+      const card = this._getFlowCard('plug_smart_turn_on', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -66,7 +66,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      const card = this.homey.flow.getActionCard('plug_smart_turn_off');
+      const card = this._getFlowCard('plug_smart_turn_off', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -80,7 +80,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      const card = this.homey.flow.getActionCard('plug_smart_toggle');
+      const card = this._getFlowCard('plug_smart_toggle', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -95,7 +95,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Turn on after delay
     try {
-      const card = this.homey.flow.getActionCard('plug_smart_turn_on_delay');
+      const card = this._getFlowCard('plug_smart_turn_on_delay', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -109,7 +109,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Turn off after delay
     try {
-      const card = this.homey.flow.getActionCard('plug_smart_turn_off_delay');
+      const card = this._getFlowCard('plug_smart_turn_off_delay', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

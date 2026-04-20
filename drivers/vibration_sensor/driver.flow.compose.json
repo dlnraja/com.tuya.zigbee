@@ -6,20 +6,20 @@
       "title": {
         "en": "Vibration detected",
         "nl": "Trillingen gedetecteerd",
-        "fr": "Vibration détectée",
+        "fr": "Vibration dÃ©tectÃ©e",
         "de": "Vibration erkannt"
       },
       "titleFormatted": {
         "en": "Vibration was detected",
         "nl": "Trillingen werden gedetecteerd",
-        "fr": "Une vibration a été détectée",
+        "fr": "Une vibration a Ã©tÃ© dÃ©tectÃ©e",
         "de": "Vibration wurde erkannt"
       },
       "hint": {
         "en": "Triggers when the sensor detects movement or vibration",
         "nl": "Triggert wanneer de sensor beweging of trillingen detecteert",
-        "fr": "Se déclenche quand le capteur détecte un mouvement ou une vibration",
-        "de": "Wird ausgelöst, wenn der Sensor Bewegung oder Vibration erkennt"
+        "fr": "Se dÃ©clenche quand le capteur dÃ©tecte un mouvement ou une vibration",
+        "de": "Wird ausgelÃ¶st, wenn der Sensor Bewegung oder Vibration erkennt"
       },
       "args": []
     },
@@ -28,20 +28,20 @@
       "title": {
         "en": "Tilt detected",
         "nl": "Kanteling gedetecteerd",
-        "fr": "Inclinaison détectée",
+        "fr": "Inclinaison dÃ©tectÃ©e",
         "de": "Neigung erkannt"
       },
       "hint": {
         "en": "Triggers when the sensor detects a change in orientation",
-        "nl": "Triggert wanneer de sensor een verandering in oriëntatie detecteert",
-        "fr": "Se déclenche quand le capteur détecte un changement d'orientation",
-        "de": "Wird ausgelöst, wenn der Sensor eine Änderung der Ausrichtung erkennt"
+        "nl": "Triggert wanneer de sensor een verandering in oriÃ«ntatie detecteert",
+        "fr": "Se dÃ©clenche quand le capteur dÃ©tecte un changement d'orientation",
+        "de": "Wird ausgelÃ¶st, wenn der Sensor eine Ã„nderung der Ausrichtung erkennt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Tilt detected",
         "nl": "Kanteling gedetecteerd",
-        "fr": "Inclinaison détectée",
+        "fr": "Inclinaison dÃ©tectÃ©e",
         "de": "Neigung erkannt"
       }
     },
@@ -50,20 +50,20 @@
       "title": {
         "en": "Drop detected",
         "nl": "Val gedetecteerd",
-        "fr": "Chute détectée",
+        "fr": "Chute dÃ©tectÃ©e",
         "de": "Fall erkannt"
       },
       "hint": {
         "en": "Triggers when the sensor detects a freefall or drop",
         "nl": "Triggert wanneer de sensor een vrije val of val detecteert",
-        "fr": "Se déclenche quand le capteur détecte une chute libre",
-        "de": "Wird ausgelöst, wenn der Sensor einen freien Fall erkennt"
+        "fr": "Se dÃ©clenche quand le capteur dÃ©tecte une chute libre",
+        "de": "Wird ausgelÃ¶st, wenn der Sensor einen freien Fall erkennt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Drop detected",
         "nl": "Val gedetecteerd",
-        "fr": "Chute détectée",
+        "fr": "Chute dÃ©tectÃ©e",
         "de": "Fall erkannt"
       }
     },
@@ -78,8 +78,8 @@
       "hint": {
         "en": "Triggers when the sensor has been tampered with",
         "nl": "Triggert wanneer er met de sensor is geknoeid",
-        "fr": "Se déclenche quand le capteur a été saboté",
-        "de": "Wird ausgelöst, wenn der Sensor manipuliert wurde"
+        "fr": "Se dÃ©clenche quand le capteur a Ã©tÃ© sabotÃ©",
+        "de": "Wird ausgelÃ¶st, wenn der Sensor manipuliert wurde"
       },
       "args": [],
       "titleFormatted": {
@@ -94,14 +94,14 @@
       "title": {
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
-        "fr": "Niveau batterie changé",
-        "de": "Batteriestand geändert"
+        "fr": "Niveau batterie changÃ©",
+        "de": "Batteriestand geÃ¤ndert"
       },
       "titleFormatted": {
         "en": "Battery level changed to [[battery]]%",
         "nl": "Batterijniveau veranderd naar [[battery]]%",
-        "fr": "Niveau batterie changé à [[battery]]%",
-        "de": "Batteriestand geändert zu [[battery]]%"
+        "fr": "Niveau batterie changÃ© Ã [[battery]]%",
+        "de": "Batteriestand geÃ¤ndert zu [[battery]]%"
       },
       "tokens": [
         {
@@ -173,14 +173,14 @@
       "title": {
         "en": "Vibration !{{is|is not}} detected",
         "nl": "Trillingen !{{worden|worden niet}} gedetecteerd",
-        "fr": "Vibration !{{est|n'est pas}} détectée",
+        "fr": "Vibration !{{est|n'est pas}} dÃ©tectÃ©e",
         "de": "Vibration !{{wird|wird nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Vibration !{{is|is not}} detected",
         "nl": "Trillingen !{{worden|worden niet}} gedetecteerd",
-        "fr": "Vibration !{{est|n'est pas}} détectée",
+        "fr": "Vibration !{{est|n'est pas}} dÃ©tectÃ©e",
         "de": "Vibration !{{wird|wird nicht}} erkannt"
       }
     },
@@ -190,13 +190,13 @@
         "en": "Battery !{{is|is not}} above",
         "nl": "Batterij !{{is|is niet}} boven",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de",
-        "de": "Batterie !{{ist|ist nicht}} über"
+        "de": "Batterie !{{ist|ist nicht}} Ã¼ber"
       },
       "titleFormatted": {
         "en": "Battery !{{is|is not}} above [[threshold]]%",
         "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
-        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
+        "de": "Batterie !{{ist|ist nicht}} Ã¼ber [[threshold]]%"
       },
       "args": [
         {
@@ -215,14 +215,14 @@
       "id": "vibration_sensor_vibration_active",
       "title": {
         "en": "Vibration !{{is|is not}} detected",
-        "fr": "Vibration !{{est|n'est pas}} détectée",
+        "fr": "Vibration !{{est|n'est pas}} dÃ©tectÃ©e",
         "nl": "Trilling !{{is|is niet}} gedetecteerd",
         "de": "Vibration !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Vibration !{{is|is not}} detected",
-        "fr": "Vibration !{{est|n'est pas}} détectée",
+        "fr": "Vibration !{{est|n'est pas}} dÃ©tectÃ©e",
         "nl": "Trilling !{{is|is niet}} gedetecteerd",
         "de": "Vibration !{{ist|ist nicht}} erkannt"
       }

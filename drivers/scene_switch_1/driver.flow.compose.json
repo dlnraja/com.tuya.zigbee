@@ -4,32 +4,32 @@
       "id": "scene_switch_1_button_pressed",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé",
+        "fr": "Bouton appuyÃ©",
         "nl": "Knop ingedrukt",
-        "de": "Taste gedrückt"
+        "de": "Taste gedrÃ¼ckt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé",
+        "fr": "Bouton appuyÃ©",
         "nl": "Knop ingedrukt",
-        "de": "Taste gedrückt"
+        "de": "Taste gedrÃ¼ckt"
       }
     },
     {
       "id": "scene_switch_1_button_double_press",
       "title": {
         "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué",
+        "fr": "Bouton double-cliquÃ©",
         "nl": "Knop dubbel ingedrukt",
-        "de": "Taste doppelt gedrückt"
+        "de": "Taste doppelt gedrÃ¼ckt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué",
+        "fr": "Bouton double-cliquÃ©",
         "nl": "Knop dubbel ingedrukt",
-        "de": "Taste doppelt gedrückt"
+        "de": "Taste doppelt gedrÃ¼ckt"
       }
     },
     {
@@ -38,23 +38,23 @@
         "en": "Button long-pressed",
         "fr": "Bouton appui long",
         "nl": "Knop lang ingedrukt",
-        "de": "Taste lang gedrückt"
+        "de": "Taste lang gedrÃ¼ckt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Button long-pressed",
         "fr": "Bouton appui long",
         "nl": "Knop lang ingedrukt",
-        "de": "Taste lang gedrückt"
+        "de": "Taste lang gedrÃ¼ckt"
       }
     },
     {
       "id": "scene_switch_1_battery_changed",
       "title": {
         "en": "Battery level changed",
-        "fr": "Niveau de batterie changé",
+        "fr": "Niveau de batterie changÃ©",
         "nl": "Batterijniveau gewijzigd",
-        "de": "Batteriestand geändert"
+        "de": "Batteriestand geÃ¤ndert"
       },
       "tokens": [
         {
@@ -72,9 +72,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Battery level changed",
-        "fr": "Niveau de batterie changé",
+        "fr": "Niveau de batterie changÃ©",
         "nl": "Batterijniveau gewijzigd",
-        "de": "Batteriestand geändert"
+        "de": "Batteriestand geÃ¤ndert"
       }
     },
     {

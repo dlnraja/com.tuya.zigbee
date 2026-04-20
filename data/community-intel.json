@@ -255,7 +255,7 @@
             "login": "pemikalsen-sudo"
           },
           "authorAssociation": "NONE",
-          "body": "Hello again.\n\nI think I have found the DP numbers... Have a look at the bottom of this under tuyaDatapoints:\n\n{\n    fingerprint: [{modelID: \"TS0601\", manufacturerName: \"_TZE284_8se38w3c\"}],\n    model: \"TZ-ZT01_GA4\",\n    vendor: \"Tuya\",\n    description: \"Temperature & humidity Sensor with external probe\",\n    extend: [tuya.modernExtend.tuyaBase({dp: true})],\n    exposes: [\n        e.temperature(),\n        e.numeric(\"temperature_probe\", ea.STATE).withUnit(\"°C\").withDescription(\"Probe temperature\"),\n        e.humidity(),\n        tuya.exposes.batteryState(),\n    ],\n    meta: {\n        tuyaDatapoints: [\n            [1, \"temperature\", tuya.valueConverter.divideBy10],\n            [2, \"humidity\", tuya.valueConverter.raw],\n            [3, \"battery_state\", tuya.valueConverter.batteryState],\n            [38, \"temperature_probe\", tuya.valueConverter.divideBy10],\n        ],\n    },\n},\n\n(Got this one from this URL: https://community.home-assistant.io/t/ts0601-by-tze284-8se38w3c-not-showing-sensor-data/986172/3)",
+          "body": "Hello again.\n\nI think I have found the DP numbers... Have a look at the bottom of this under tuyaDatapoints:\n\n{\n    fingerprint: [{modelID: \"TS0601\", manufacturerName: \"_TZE284_8se38w3c\"}],\n    model: \"TZ-ZT01_GA4\",\n    vendor: \"Tuya\",\n    description: \"Temperature & humidity Sensor with external probe\",\n    extend: [tuya.modernExtend.tuyaBase({dp: true})],\n    exposes: [\n        e.temperature(),\n        e.numeric(\"temperature_probe\", ea.STATE).withUnit(\"Â°C\").withDescription(\"Probe temperature\"),\n        e.humidity(),\n        tuya.exposes.batteryState(),\n    ],\n    meta: {\n        tuyaDatapoints: [\n            [1, \"temperature\", tuya.valueConverter.divideBy10],\n            [2, \"humidity\", tuya.valueConverter.raw],\n            [3, \"battery_state\", tuya.valueConverter.batteryState],\n            [38, \"temperature_probe\", tuya.valueConverter.divideBy10],\n        ],\n    },\n},\n\n(Got this one from this URL: https://community.home-assistant.io/t/ts0601-by-tze284-8se38w3c-not-showing-sensor-data/986172/3)",
           "createdAt": "2026-04-02T10:15:26Z",
           "includesCreatedEdit": false,
           "isMinimized": false,
@@ -569,7 +569,7 @@
             "login": "dlnraja"
           },
           "authorAssociation": "OWNER",
-          "body": "You can do an homey device ZigBee interview also to know witch dp corespond\r\nto your device on and paste it :\r\n\r\nhttps://tools.developer.homey.app/tools/zigbee\r\n\r\n\r\n\r\n\r\n\r\nLe sam. 28 mars 2026, 21:21, Ssssneak ***@***.***> a écrit :\r\n\r\n> *Ssssneak* left a comment (dlnraja/com.tuya.zigbee#170)\r\n> <https:
+          "body": "You can do an homey device ZigBee interview also to know witch dp corespond\r\nto your device on and paste it :\r\n\r\nhttps://tools.developer.homey.app/tools/zigbee\r\n\r\n\r\n\r\n\r\n\r\nLe sam. 28 mars 2026, 21:21, Ssssneak ***@***.***> a Ã©crit :\r\n\r\n> *Ssssneak* left a comment (dlnraja/com.tuya.zigbee#170)\r\n> <https:
           "createdAt": "2026-03-28T20:31:29Z",
           "includesCreatedEdit": false,
           "isMinimized": false,
@@ -951,7 +951,7 @@
             "login": "dlnraja"
           },
           "authorAssociation": "OWNER",
-          "body": "Salut @late4marshmellow !  J'ai de super nouvelles : j'ai implémenté le 'Tuya Magic Spell' directement dans la classe de base des interrupteurs hybrides. \n\nCela force la lecture des attributs genBasic au démarrage, ce qui réveille le reporting des gangs 2 et 3 sur les modèles TS0003 comme le tien (_TZ3000_v4l4b0lp). Plus besoin de patch manuel par driver, c'est maintenant géré proprement et nativement pour tous les interrupteurs multiprises récalcitrants ! \n\nLa version v7.0.x arrive sur le canal Test avec ce correctif. Un immense merci pour ton aide et ta patience sur ce bug ! On ferme la boucle ici. ",
+          "body": "Salut @late4marshmellow !  J'ai de super nouvelles : j'ai implÃ©mentÃ© le 'Tuya Magic Spell' directement dans la classe de base des interrupteurs hybrides. \n\nCela force la lecture des attributs genBasic au dÃ©marrage, ce qui rÃ©veille le reporting des gangs 2 et 3 sur les modÃ¨les TS0003 comme le tien (_TZ3000_v4l4b0lp). Plus besoin de patch manuel par driver, c'est maintenant gÃ©rÃ© proprement et nativement pour tous les interrupteurs multiprises rÃ©calcitrants ! \n\nLa version v7.0.x arrive sur le canal Test avec ce correctif. Un immense merci pour ton aide et ta patience sur ce bug ! On ferme la boucle ici. ",
           "createdAt": "2026-04-06T18:30:35Z",
           "includesCreatedEdit": false,
           "isMinimized": false,
@@ -996,7 +996,7 @@
             "login": "dlnraja"
           },
           "authorAssociation": "OWNER",
-          "body": "I have broken everything late yesterday night \r\n\r\nI will fix asap .\r\n\r\nLe mar. 7 avr. 2026, 10:09, Ssssneak ***@***.***> a écrit :\r\n\r\n> *Ssssneak* left a comment (dlnraja/com.tuya.zigbee#170)\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/170#issuecomment-4197498280>\r\n>\r\n> @dlnraja <https:
+          "body": "I have broken everything late yesterday night \r\n\r\nI will fix asap .\r\n\r\nLe mar. 7 avr. 2026, 10:09, Ssssneak ***@***.***> a Ã©crit :\r\n\r\n> *Ssssneak* left a comment (dlnraja/com.tuya.zigbee#170)\r\n> <https://github.com/dlnraja/com.tuya.zigbee/issues/170#issuecomment-4197498280>\r\n>\r\n> @dlnraja <https:
           "createdAt": "2026-04-07T08:53:58Z",
           "includesCreatedEdit": false,
           "isMinimized": false,

@@ -4,7 +4,7 @@
       "id": "smart_knob_button_pressed",
       "title": {
         "en": "Knob button pressed",
-        "fr": "Bouton du variateur appuyé"
+        "fr": "Bouton du variateur appuyÃ©"
       },
       "tokens": [
         {
@@ -19,7 +19,7 @@
       ],
       "titleFormatted": {
         "en": "Knob button pressed",
-        "fr": "Bouton du variateur appuyé"
+        "fr": "Bouton du variateur appuyÃ©"
       }
     },
     {
@@ -59,7 +59,7 @@
       "id": "smart_knob_rotated",
       "title": {
         "en": "Knob rotated",
-        "fr": "Variateur tourné"
+        "fr": "Variateur tournÃ©"
       },
       "tokens": [
         {
@@ -83,14 +83,14 @@
       ],
       "titleFormatted": {
         "en": "Knob rotated",
-        "fr": "Variateur tourné"
+        "fr": "Variateur tournÃ©"
       }
     },
     {
       "id": "smart_knob_level_changed",
       "title": {
         "en": "Brightness level changed",
-        "fr": "Niveau de luminosité changé"
+        "fr": "Niveau de luminositÃ© changÃ©"
       },
       "tokens": [
         {
@@ -105,7 +105,7 @@
       ],
       "titleFormatted": {
         "en": "Brightness level changed",
-        "fr": "Niveau de luminosité changé"
+        "fr": "Niveau de luminositÃ© changÃ©"
       }
     }
   ]

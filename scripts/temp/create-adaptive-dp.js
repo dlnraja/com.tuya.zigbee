@@ -18,7 +18,7 @@ const DP_VARIANT_PATTERNS = {
       { usage: 'consumption', divisor: 1000, drivers: ['plug_*', 'power_*'], dataType: 2 }
     ],
     detection: (driverType, value, dataType) => {
-      // Temperature values typically 0-500 (0-50°C when divided by 10)
+      // Temperature values typically 0-500 (0-50Â°C when divided by 10)
       if (dataType === 2 && value >= 0 && value <= 500 && (driverType.includes('climate') || driverType.includes('thermostat'))) {
         return { usage: 'measure_temperature', divisor: 10 };
       }

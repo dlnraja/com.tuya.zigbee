@@ -267,7 +267,7 @@ jobs:
 
 **DP Learning System:**
 1. Observes: DP3, value 235, type 2, driver climate_sensor
-2. Predicts: measure_temperature, divisor 10 (23.5°C)
+2. Predicts: measure_temperature, divisor 10 (23.5Â°C)
 3. Updates pattern database
 4. Confidence: 95% (based on 20+ observations)
 

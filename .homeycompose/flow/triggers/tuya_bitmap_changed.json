@@ -2,15 +2,15 @@
   "id": "tuya_bitmap_changed",
   "title": {
     "en": "Tuya bitmap DP changed",
-    "fr": "Bitmap Tuya changé"
+    "fr": "Bitmap Tuya changÃ©"
   },
   "titleFormatted": {
     "en": "Bitmap DP [[dp]] changed on [[device]]",
-    "fr": "Bitmap DP [[dp]] changé sur [[device]]"
+    "fr": "Bitmap DP [[dp]] changÃ© sur [[device]]"
   },
   "hint": {
     "en": "Triggers when a bitmap (type 5) DP changes. Bitmap is a bitmask of active flags.",
-    "fr": "Se déclenche quand un DP bitmap (type 5) change."
+    "fr": "Se dÃ©clenche quand un DP bitmap (type 5) change."
   },
   "tokens": [
     { "name": "dp_number", "type": "number", "title": { "en": "DP Number" }, "example": 14 },

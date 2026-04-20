@@ -4,15 +4,15 @@
       "id": "generic_tuya_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       },
       "tokens": [
         {
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (°C)",
-            "fr": "Température (°C)"
+            "en": "Temperature (Â°C)",
+            "fr": "TempÃ©rature (Â°C)"
           },
           "example": 22.5
         }
@@ -20,14 +20,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       }
     },
     {
       "id": "generic_tuya_measure_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "HumiditÃ© changÃ©e"
       },
       "tokens": [
         {
@@ -35,7 +35,7 @@
           "type": "number",
           "title": {
             "en": "Humidity (%)",
-            "fr": "Humidité (%)"
+            "fr": "HumiditÃ© (%)"
           },
           "example": 65
         }
@@ -43,14 +43,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "HumiditÃ© changÃ©e"
       }
     },
     {
       "id": "generic_tuya_dp_received",
       "title": {
         "en": "Data Point received",
-        "fr": "Point de données reçu"
+        "fr": "Point de donnÃ©es reÃ§u"
       },
       "tokens": [
         {
@@ -58,7 +58,7 @@
           "type": "number",
           "title": {
             "en": "DP Number",
-            "fr": "Numéro DP"
+            "fr": "NumÃ©ro DP"
           },
           "example": 1
         },
@@ -75,7 +75,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Data Point received",
-        "fr": "Point de données reçu"
+        "fr": "Point de donnÃ©es reÃ§u"
       }
     },
     {
@@ -98,32 +98,32 @@
       "id": "generic_tuya_temp_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       }
     },
     {
       "id": "generic_tuya_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       }
     }
   ],
@@ -158,7 +158,7 @@
       "id": "generic_tuya_request_dp",
       "title": {
         "en": "Request Data Point",
-        "fr": "Demander Point de Données"
+        "fr": "Demander Point de DonnÃ©es"
       },
       "titleFormatted": {
         "en": "Request DP [[dp]]",
@@ -173,7 +173,7 @@
           "step": 1,
           "title": {
             "en": "DP Number",
-            "fr": "Numéro DP"
+            "fr": "NumÃ©ro DP"
           }
         }
       ]

@@ -17,7 +17,7 @@
     "alarm_water": {
       "title": {
         "en": "Water Detected",
-        "fr": "Eau Détectée"
+        "fr": "Eau DÃ©tectÃ©e"
       }
     }
   },
@@ -37,16 +37,13 @@
       "TUYATEC-H4WNRTCK",
       "TUYATEC-KTEV3UWQ",
       "_TYZB01_O63SSAAH",
-      "_TYZB01_SQMD19I1",
       "_TYZB01_TTVDUDVX",
       "_TZ3000_0GHWHYPC",
-      "_TZ3000_0S9GUKZT",
       "_TZ3000_1ADSS9DE",
       "_TZ3000_2WCYNPML",
       "_TZ3000_4QAOWTDO",
       "_TZ3000_ABAPLIMJ",
       "_TZ3000_AMIS43TJ",
-      "_TZ3000_AWVMKAYH",
       "_TZ3000_BFOPM9GA",
       "_TZ3000_BZT33CYU",
       "_TZ3000_C8BQTHPO",
@@ -58,16 +55,11 @@
       "_TZ3000_IKUXINVO",
       "_TZ3000_JS34CUMA",
       "_TZ3000_JSFZKFTC",
-      "_TZ3000_K4EJ3WW2",
       "_TZ3000_KQVB5AKV",
-      "_TZ3000_KSTBKT6A",
       "_TZ3000_KYAKWBF8",
-      "_TZ3000_KYB656NO",
       "_TZ3000_MKHKXX1P",
       "_TZ3000_MQIEV3JK",
-      "_TZ3000_MUGYHZ0Q",
       "_TZ3000_O9F2ZQLN",
-      "_TZ3000_OCJLO4EA",
       "_TZ3000_Q8R0BBVY",
       "_TZ3000_QAABWU5C",
       "_TZ3000_QDMNMDDG",
@@ -78,73 +70,16 @@
       "_TZ3000_RURVXHCX",
       "_TZ3000_SGPBZ53B",
       "_TZ3000_SQ510A",
-      "_TZ3000_T6JRIAWG",
       "_TZ3000_TGDDLLX4",
-      "_TZ3000_UPGCBODY",
       "_TZ3000_V8GTIAED",
       "_TZ3000_X3EWPZYR",
       "_TZ3000_XKAP8WTB",
       "_TZ3210_P68KMS0L",
-      "_TZ3210_TGVTVDOC",
-      "_TZE200_JTHF7VB6",
       "_TZE204_LW5NY7TP",
       "_TZE204_QQ9MPFHW",
       "_TZE284_2QX7SIVB",
       "_TZE284_8SEJXCUE",
-      "_TZE284_AGHFUCWI",
-      "_TZ3000_0ghwhypc",
-      "_TZ3000_0s9gukzt",
-      "_TZ3000_1adss9de",
-      "_TZ3000_2wcynpml",
-      "_TZ3000_4qaowtdo",
-      "_TZ3000_abaplimj",
-      "_TZ3000_amis43tj",
-      "_TZ3000_awvmkayh",
-      "_TZ3000_bfopm9ga",
-      "_TZ3000_bzt33cyu",
-      "_TZ3000_c8bqthpo",
-      "_TZ3000_eit8c5cs",
-      "_TZ3000_fvm13j8w",
-      "_TZ3000_fxjo6gfe",
-      "_TZ3000_g92baclx",
-      "_TZ3000_hzlsaltw",
-      "_TZ3000_ikuxinvo",
-      "_TZ3000_js34cuma",
-      "_TZ3000_jsfzkftc",
-      "_TZ3000_k4ej3ww2",
-      "_TZ3000_kqvb5akv",
-      "_TZ3000_kstbkt6a",
-      "_TZ3000_kyakwbf8",
-      "_TZ3000_kyb656no",
-      "_TZ3000_mkhkxx1p",
-      "_TZ3000_mqiev3jk",
-      "_TZ3000_mugyhz0q",
-      "_TZ3000_o9f2zqln",
-      "_TZ3000_ocjlo4ea",
-      "_TZ3000_q8r0bbvy",
-      "_TZ3000_qaabwu5c",
-      "_TZ3000_qdmnmddg",
-      "_TZ3000_qhozxs2b",
-      "_TZ3000_qlai3277",
-      "_TZ3000_qnejhcsu",
-      "_TZ3000_qorepo2x",
-      "_TZ3000_rurvxhcx",
-      "_TZ3000_sgpbz53b",
-      "_TZ3000_sq510a",
-      "_TZ3000_t6jriawg",
-      "_TZ3000_tgddllx4",
-      "_TZ3000_upgcbody",
-      "_TZ3000_v8gtiaed",
-      "_TZ3000_x3ewpzyr",
-      "_TZ3000_xkap8wtb",
-      "_TZ3210_p68kms0l",
-      "_TZ3210_tgvtvdoc",
-      "_TZE200_jthf7vb6",
-      "_TZE204_lw5ny7tp",
-      "_TZE204_qq9mpfhw",
-      "_TZE284_2qx7sivb",
-      "_TZE284_8sejxcue",
-      "_TZE284_aghfucwi"
+      "_TZE284_AGHFUCWI"
     ],
     "productId": [
       "3315-S",
@@ -172,7 +107,7 @@
       "image": "/drivers/water_leak_sensor/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
       }
     },
     "endpoints": {
@@ -198,7 +133,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "fr": "DÃ©tection Automatique"
           }
         },
         {
@@ -225,7 +160,7 @@
       ],
       "hint": {
         "en": "Select power source manually or use auto-detection",
-        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+        "fr": "SÃ©lectionnez la source d'alimentation manuellement ou utilisez la dÃ©tection automatique"
       }
     },
     {
@@ -241,7 +176,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "fr": "DÃ©tection Automatique"
           }
         },
         {
@@ -282,7 +217,7 @@
       ],
       "hint": {
         "en": "Select battery type manually or use auto-detection based on voltage",
-        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+        "fr": "SÃ©lectionnez le type de batterie manuellement ou utilisez la dÃ©tection automatique basÃ©e sur la tension"
       }
     },
     {
@@ -298,7 +233,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger low battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+        "fr": "DÃ©clencher l'alerte batterie faible en dessous de ce pourcentage"
       }
     },
     {
@@ -314,7 +249,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger critical battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+        "fr": "DÃ©clencher l'alerte batterie critique en dessous de ce pourcentage"
       }
     },
     {
@@ -327,7 +262,7 @@
       "value": true,
       "hint": {
         "en": "Send flow notifications for battery events",
-        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+        "fr": "Envoyer des notifications de flow pour les Ã©vÃ©nements de batterie"
       }
     },
     {
@@ -343,7 +278,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+        "fr": "FrÃ©quence de demande des mises Ã jour d'Ã©tat de batterie"
       }
     },
     {
@@ -351,7 +286,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Énergétique"
+        "fr": "Mode Optimisation Ã‰nergÃ©tique"
       },
       "value": "balanced",
       "values": [
@@ -359,27 +294,27 @@
           "id": "performance",
           "label": {
             "en": "Performance (More responsive)",
-            "fr": "Performance (Plus réactif)"
+            "fr": "Performance (Plus rÃ©actif)"
           }
         },
         {
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Équilibré"
+            "fr": "Ã‰quilibrÃ©"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Économie d'énergie (Batterie plus longue)"
+            "fr": "Ã‰conomie d'Ã©nergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+        "fr": "Ã‰quilibre entre rÃ©activitÃ© et durÃ©e de vie de la batterie"
       }
     },
     {
@@ -392,7 +327,7 @@
       "value": false,
       "hint": {
         "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+        "fr": "Afficher la tension brute de la batterie dans les paramÃ¨tres du pÃ©riphÃ©rique"
       }
     },
     {
@@ -405,7 +340,7 @@
       "value": true,
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+        "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
       }
     },
     {
@@ -420,7 +355,7 @@
       "value": false,
       "hint": {
         "en": "Enable if water detection shows opposite state (wet=dry, dry=wet). Lasse_K forum fix.",
-        "fr": "Activer si la détection d'eau affiche l'état inverse (mouillé=sec, sec=mouillé)"
+        "fr": "Activer si la dÃ©tection d'eau affiche l'Ã©tat inverse (mouillÃ©=sec, sec=mouillÃ©)"
       }
     },
     {
@@ -428,12 +363,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la Détection de Présence Radio"
+        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -441,7 +376,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "Sensibilité Présence Radio"
+        "fr": "SensibilitÃ© PrÃ©sence Radio"
       },
       "value": 15,
       "min": 5,
@@ -456,12 +391,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "Sécurité Enfant Logicielle"
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "Empêche les changements d'état manuels sur l'appareil"
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
       }
     },
     {
@@ -476,7 +411,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'éteint après X minutes (0 = désactivé)"
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -484,12 +419,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation Présence)"
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
       }
     },
     {
@@ -497,14 +432,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Émulé (Secondes)"
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
       }
     },
     {
@@ -519,7 +454,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Émulation logicielle pour boutons à action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -534,7 +469,7 @@
       "max": 4000,
       "hint": {
         "en": "Cut power if consumption exceeds this value (0 = disabled)",
-        "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+        "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -542,7 +477,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "Durée Inching (Secondes)"
+        "fr": "DurÃ©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -550,7 +485,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -558,12 +493,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "Récupération d'État Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'état précédent après une coupure de courant"
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
       }
     },
     {
@@ -576,7 +511,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
       }
     },
     {
@@ -591,7 +526,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santé descend sous cette valeur"
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     }
   ],
@@ -630,7 +565,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

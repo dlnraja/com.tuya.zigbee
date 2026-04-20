@@ -33,7 +33,7 @@ class CoSensorDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('co_sensor_co_detected');
+      const card = this._getFlowCard('co_sensor_co_detected', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -43,7 +43,7 @@ class CoSensorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition co_sensor_co_detected: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('co_sensor_co_above');
+      const card = this._getFlowCard('co_sensor_co_above', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -54,7 +54,7 @@ class CoSensorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition co_sensor_co_above: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('co_sensor_battery_above');
+      const card = this._getFlowCard('co_sensor_battery_above', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -65,7 +65,7 @@ class CoSensorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition co_sensor_battery_above: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('co_sensor_co_active');
+      const card = this._getFlowCard('co_sensor_co_active', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -75,7 +75,7 @@ class CoSensorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition co_sensor_co_active: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('co_sensor_tamper_active');
+      const card = this._getFlowCard('co_sensor_tamper_active', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -86,7 +86,7 @@ class CoSensorDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('co_sensor_test_alarm');
+      const card = this._getFlowCard('co_sensor_test_alarm', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

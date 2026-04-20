@@ -8,16 +8,16 @@
       "title": "Alarm"
     },
     "alarm_motion": {
-      "title": "Bevægelse"
+      "title": "BevÃ¦gelse"
     },
     "alarm_contact": {
       "title": "Kontakt"
     },
     "alarm_water": {
-      "title": "Vandlækage"
+      "title": "VandlÃ¦kage"
     },
     "alarm_smoke": {
-      "title": "Røg"
+      "title": "RÃ¸g"
     },
     "alarm_co": {
       "title": "CO"
@@ -32,7 +32,7 @@
       "title": "Vibration"
     },
     "onoff": {
-      "title": "Strøm"
+      "title": "StrÃ¸m"
     },
     "dim": {
       "title": "Lysstyrke",
@@ -42,7 +42,7 @@
       "title": "Farvetone"
     },
     "light_saturation": {
-      "title": "Mætning"
+      "title": "MÃ¦tning"
     },
     "light_temperature": {
       "title": "Farvetemperatur"
@@ -52,7 +52,7 @@
     },
     "measure_temperature": {
       "title": "Temperatur",
-      "units": "°C"
+      "units": "Â°C"
     },
     "measure_humidity": {
       "title": "Luftfugtighed",
@@ -68,7 +68,7 @@
     },
     "measure_pm25": {
       "title": "PM2.5",
-      "units": "µg/m³"
+      "units": "Âµg/mÂ³"
     },
     "measure_voc": {
       "title": "VOC",
@@ -83,11 +83,11 @@
       "units": "W"
     },
     "measure_voltage": {
-      "title": "Spænding",
+      "title": "SpÃ¦nding",
       "units": "V"
     },
     "measure_current": {
-      "title": "Strøm",
+      "title": "StrÃ¸m",
       "units": "A"
     },
     "meter_power": {
@@ -95,8 +95,8 @@
       "units": "kWh"
     },
     "target_temperature": {
-      "title": "Måltemperatur",
-      "units": "°C"
+      "title": "MÃ¥ltemperatur",
+      "units": "Â°C"
     },
     "windowcoverings_state": {
       "title": "Persienner",
@@ -116,24 +116,24 @@
   },
   "settings": {
     "power_source": {
-      "label": "Strømkilde",
-      "hint": "Vælg strømkilde manuelt eller brug automatisk detektion"
+      "label": "StrÃ¸mkilde",
+      "hint": "VÃ¦lg strÃ¸mkilde manuelt eller brug automatisk detektion"
     },
     "battery_type": {
       "label": "Batteritype",
-      "hint": "Vælg batteritype manuelt eller brug automatisk detektion baseret på spænding"
+      "hint": "VÃ¦lg batteritype manuelt eller brug automatisk detektion baseret pÃ¥ spÃ¦nding"
     },
     "battery_low_threshold": {
-      "label": "Tærskel lavt batteri (%)",
-      "hint": "Udløs advarsel for lavt batteri under denne procent"
+      "label": "TÃ¦rskel lavt batteri (%)",
+      "hint": "UdlÃ¸s advarsel for lavt batteri under denne procent"
     },
     "battery_critical_threshold": {
-      "label": "Tærskel kritisk batteri (%)",
-      "hint": "Udløs advarsel for kritisk batteri under denne procent"
+      "label": "TÃ¦rskel kritisk batteri (%)",
+      "hint": "UdlÃ¸s advarsel for kritisk batteri under denne procent"
     },
     "enable_battery_notifications": {
       "label": "Aktiver batterimeddelelser",
-      "hint": "Send flow-meddelelser for batterihændelser"
+      "hint": "Send flow-meddelelser for batterihÃ¦ndelser"
     },
     "battery_report_interval": {
       "label": "Batterirapportinterval (timer)",
@@ -144,12 +144,12 @@
       "hint": "Balance mellem respons og batteritid"
     },
     "show_voltage": {
-      "label": "Vis batterispænding",
-      "hint": "Vis rå batterispænding i enhedsindstillinger"
+      "label": "Vis batterispÃ¦nding",
+      "hint": "Vis rÃ¥ batterispÃ¦nding i enhedsindstillinger"
     },
     "enable_power_estimation": {
       "label": "Aktiver effektestimering",
-      "hint": "Estimer forbrug når reel måling ikke er tilgængelig (kun AC/DC-enheder)"
+      "hint": "Estimer forbrug nÃ¥r reel mÃ¥ling ikke er tilgÃ¦ngelig (kun AC/DC-enheder)"
     }
   },
   "tabs": {

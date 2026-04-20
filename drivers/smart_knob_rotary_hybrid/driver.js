@@ -36,7 +36,7 @@ class SmartKnobRotaryDriver extends Homey {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('smart_knob_rotary_hybrid_smart_knob_rotary_brightness_above_smart_knob_rotary_hybrid');
+      const card = this._getFlowCard('smart_knob_rotary_hybrid_smart_knob_rotary_brightness_above_smart_knob_rotary_hybrid', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -48,7 +48,7 @@ class SmartKnobRotaryDriver extends Homey {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('smart_knob_rotary_hybrid_smart_knob_rotary_set_brightness_smart_knob_rotary_hybrid');
+      const card = this._getFlowCard('smart_knob_rotary_hybrid_smart_knob_rotary_set_brightness_smart_knob_rotary_hybrid', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

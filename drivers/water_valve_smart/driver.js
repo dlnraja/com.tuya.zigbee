@@ -29,7 +29,7 @@ class WaterValveSmartDriver extends Homey.Driver {
     
     // CONDITION: Valve is open
     try {
-      const card = this.homey.flow.getConditionCard('water_valve_smart_is_open');
+      const card = this._getFlowCard('water_valve_smart_is_open', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -41,7 +41,7 @@ class WaterValveSmartDriver extends Homey.Driver {
 
     // CONDITION: Leak is detected
     try {
-      const card = this.homey.flow.getConditionCard('water_valve_smart_leak_is_detected');
+      const card = this._getFlowCard('water_valve_smart_leak_is_detected', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -53,7 +53,7 @@ class WaterValveSmartDriver extends Homey.Driver {
 
     // CONDITION: Temperature above
     try {
-      const card = this.homey.flow.getConditionCard('water_valve_smart_temperature_above');
+      const card = this._getFlowCard('water_valve_smart_temperature_above', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -66,7 +66,7 @@ class WaterValveSmartDriver extends Homey.Driver {
 
     // ACTION: Open valve
     try {
-      const card = this.homey.flow.getActionCard('water_valve_smart_open');
+      const card = this._getFlowCard('water_valve_smart_open', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -82,7 +82,7 @@ class WaterValveSmartDriver extends Homey.Driver {
 
     // ACTION: Close valve
     try {
-      const card = this.homey.flow.getActionCard('water_valve_smart_close');
+      const card = this._getFlowCard('water_valve_smart_close', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -98,7 +98,7 @@ class WaterValveSmartDriver extends Homey.Driver {
 
     // ACTION: Toggle valve
     try {
-      const card = this.homey.flow.getActionCard('water_valve_toggle');
+      const card = this._getFlowCard('water_valve_toggle', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -115,7 +115,7 @@ class WaterValveSmartDriver extends Homey.Driver {
 
     // CONDITION: Water is/is not detected
     try {
-      const card = this.homey.flow.getConditionCard('water_valve_smart_water_detected');
+      const card = this._getFlowCard('water_valve_smart_water_detected', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

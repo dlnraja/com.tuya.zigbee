@@ -16,7 +16,7 @@ let stats = {
   backupsCreated: 0
 };
 
-// Limites par catégorie
+// Limites par catÃ©gorie
 const CATEGORY_LIMITS = {
   sensor: 30,      // climate, motion, contact, soil, etc.
   switch: 30,      // switch_1gang, switch_2gang, etc.
@@ -25,11 +25,11 @@ const CATEGORY_LIMITS = {
   cover: 25,       // curtain_motor
   smoke: 25,       // smoke_detector
   water: 20,       // water_leak
-  other: 20        // défaut
+  other: 20        // dÃ©faut
 };
 
 /**
- * Déterminer catégorie driver
+ * DÃ©terminer catÃ©gorie driver
  */
 function getDriverCategory(driverName) {
   if (driverName.includes('sensor') || driverName.includes('climate') ||
@@ -53,7 +53,7 @@ function restoreDriver(restoration) {
   const composeFile = path.join(driverPath, 'driver.compose.json');
 
   if (!fs.existsSync(composeFile)) {
-    console.log(`     ${restoration.driver}: driver.compose.json non trouvé`);
+    console.log(`     ${restoration.driver}: driver.compose.json non trouvÃ©`);
     return;
   }
 
@@ -71,7 +71,7 @@ function restoreDriver(restoration) {
     const allNames = [...new Set([...currentNames, ...restoration.toRestore])];
     const limitedNames = allNames.slice(0, limit);
 
-    // Sauvegarder si différent
+    // Sauvegarder si diffÃ©rent
     if (limitedNames.length !== currentNames.length) {
       // Backup
       const backupPath = `${composeFile}.backup-restore-${Date.now()}`;
@@ -86,7 +86,7 @@ function restoreDriver(restoration) {
 
       console.log(`    ${restoration.driver}: ${currentNames.length}  ${limitedNames.length} (+${limitedNames.length - currentNames.length})`);
     } else {
-      console.log(`     ${restoration.driver}: déjà à la limite (${currentNames.length})`);
+      console.log(`     ${restoration.driver}: dÃ©jÃ Ã la limite (${currentNames.length})`);
     }
 
   } catch (e) {
@@ -94,18 +94,18 @@ function restoreDriver(restoration) {
   }
 }
 
-// EXÉCUTION
+// EXÃ‰CUTION
 console.log(' Chargement analyse...\n');
 
 if (!fs.existsSync(ANALYSIS_FILE)) {
-  console.error(' Fichier MANUFACTURER_RESTORATION_ANALYSIS.json non trouvé');
-  console.error('   Exécutez d\'abord: node scripts/restore_manufacturer_names.js\n');
+  console.error(' Fichier MANUFACTURER_RESTORATION_ANALYSIS.json non trouvÃ©');
+  console.error('   ExÃ©cutez d\'abord: node scripts/restore_manufacturer_names.js\n');
   process.exit(1);
 }
 
 const restorations = JSON.parse(fs.readFileSync(ANALYSIS_FILE, 'utf8'));
 
-console.log(` ${restorations.length} drivers à restaurer\n`);
+console.log(` ${restorations.length} drivers Ã restaurer\n`);
 console.log(' Application restaurations avec limites intelligentes...\n');
 
 restorations.forEach(restoration => {
@@ -114,13 +114,13 @@ restorations.forEach(restoration => {
 
 // RAPPORT
 console.log('\n\n RAPPORT RESTAURATION:\n');
-console.log(`   Fichiers modifiés: ${stats.filesModified}`);
-console.log(`   Manufacturer names restaurés: ${stats.namesRestored}`);
-console.log(`   Backups créés: ${stats.backupsCreated}\n`);
+console.log(`   Fichiers modifiÃ©s: ${stats.filesModified}`);
+console.log(`   Manufacturer names restaurÃ©s: ${stats.namesRestored}`);
+console.log(`   Backups crÃ©Ã©s: ${stats.backupsCreated}\n`);
 
 if (stats.filesModified > 0) {
-  console.log(' RESTAURATION APPLIQUÉE\n');
-  console.log(' LIMITES PAR CATÉGORIE:');
+  console.log(' RESTAURATION APPLIQUÃ‰E\n');
+  console.log(' LIMITES PAR CATÃ‰GORIE:');
   console.log('   - Sensors: 30 IDs max');
   console.log('   - Switches: 30 IDs max');
   console.log('   - Plugs: 25 IDs max');
@@ -130,7 +130,7 @@ if (stats.filesModified > 0) {
   console.log('   - Water: 20 IDs max');
   console.log('   - Autres: 20 IDs max\n');
 
-  console.log(' PROCHAINES ÉTAPES:');
+  console.log(' PROCHAINES Ã‰TAPES:');
   console.log('   1. Audit: node scripts/audit_complete_advanced.js');
   console.log('   2. Valider: homey app validate --level publish');
   console.log('   3. Build: homey app build\n');

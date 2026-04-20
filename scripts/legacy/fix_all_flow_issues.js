@@ -40,13 +40,13 @@ function fixMissingRegistrations(driverName) {
 
   let content = fs.readFileSync(driverJsPath, 'utf8');
 
-  // Vérifier si déjà enregistré
+  // VÃ©rifier si dÃ©jÃ enregistrÃ©
   const hasRegistrations = content.includes('getTriggerCard') ||
     content.includes('getConditionCard') ||
     content.includes('getActionCard');
 
   if (hasRegistrations) {
-    return 0; // Déjà partiellement enregistré, skip pour éviter duplications
+    return 0; // DÃ©jÃ partiellement enregistrÃ©, skip pour Ã©viter duplications
   }
 
   // Trouver onInit()
@@ -54,7 +54,7 @@ function fixMissingRegistrations(driverName) {
   let onInitIndex = lines.findIndex(l => l.includes('async onInit()') || l.includes('onInit()'));
 
   if (onInitIndex === -1) {
-    // Pas de onInit(), créer
+    // Pas de onInit(), crÃ©er
     const classMatch = content.match(/class\s+(\w+)\s+extends/);
     if (!classMatch) return 0;
 
@@ -65,7 +65,7 @@ function fixMissingRegistrations(driverName) {
     onInitIndex = insertIndex + 2;
   }
 
-  // Trouver position d'insertion (après le { de onInit)
+  // Trouver position d'insertion (aprÃ¨s le { de onInit)
   let insertIndex = onInitIndex + 1;
   while (insertIndex < lines.length && !lines[insertIndex].includes('{')) {
     insertIndex++;
@@ -77,7 +77,7 @@ function fixMissingRegistrations(driverName) {
   fs.copyFileSync(driverJsPath, backupPath);
   stats.backupsCreated++;
 
-  // Générer code de registration
+  // GÃ©nÃ©rer code de registration
   const registrationCode = [];
   registrationCode.push('    ');
 
@@ -95,7 +95,7 @@ function fixMissingRegistrations(driverName) {
     conditions.forEach(condition => {
       registrationCode.push(`    this._${condition.id}Condition = this.homey.flow.getConditionCard('${condition.id}');`);
 
-      // Générer runListener automatique
+      // GÃ©nÃ©rer runListener automatique
       const capability = extractCapabilityFromCondition(condition.id, compose.capabilities);
       if (capability) {
         registrationCode.push(`    this._${condition.id}Condition.registerRunListener(async (args) => {`);
@@ -136,7 +136,7 @@ function fixMissingRegistrations(driverName) {
 
   registrationCode.push(`    this.log('${driverName}: Flow cards registered');`);
 
-  // Insérer
+  // InsÃ©rer
   lines.splice(insertIndex, 0, ...registrationCode);
 
   // Sauvegarder
@@ -184,7 +184,7 @@ function extractCapabilityFromCondition(conditionId, capabilities) {
 }
 
 /**
- * Corriger triggers appelés mais non définis
+ * Corriger triggers appelÃ©s mais non dÃ©finis
  */
 function fixTriggeredButNotDefined(driverName, missingTriggerId) {
   const composePath = path.join(DRIVERS_DIR, driverName, 'driver.compose.json');
@@ -200,7 +200,7 @@ function fixTriggeredButNotDefined(driverName, missingTriggerId) {
     compose.flow.triggers = [];
   }
 
-  // Générer trigger automatiquement
+  // GÃ©nÃ©rer trigger automatiquement
   const triggerDef = generateTriggerDefinition(missingTriggerId);
   compose.flow.triggers.push(triggerDef);
 
@@ -217,7 +217,7 @@ function fixTriggeredButNotDefined(driverName, missingTriggerId) {
 }
 
 /**
- * Générer définition trigger automatiquement
+ * GÃ©nÃ©rer dÃ©finition trigger automatiquement
  */
 function generateTriggerDefinition(triggerId) {
   const titleWords = triggerId.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
@@ -232,10 +232,10 @@ function generateTriggerDefinition(triggerId) {
 }
 
 // 
-// EXÉCUTION
+// EXÃ‰CUTION
 // 
 
-console.log(' Issues à corriger:\n');
+console.log(' Issues Ã corriger:\n');
 console.log(`   Missing registrations: ${auditReport.issues.missingRegistration.length}`);
 console.log(`   Triggered but not defined: ${auditReport.issues.triggeredButNotDefined.length}`);
 console.log(`   Missing runListeners: ${auditReport.issues.missingRunListener.length}\n`);
@@ -256,7 +256,7 @@ auditReport.issues.missingRegistration.forEach(issue => {
 Object.keys(driverGroups).forEach(driver => {
   const count = fixMissingRegistrations(driver);
   if (count > 0) {
-    console.log(`    ${driver}: ${count} registrations ajoutées`);
+    console.log(`    ${driver}: ${count} registrations ajoutÃ©es`);
     stats.driversFixed++;
   }
 });
@@ -268,7 +268,7 @@ console.log('\n');
 auditReport.issues.triggeredButNotDefined.forEach(issue => {
   const fixed = fixTriggeredButNotDefined(issue.driver, issue.id);
   if (fixed) {
-    console.log(`    ${issue.driver}: trigger '${issue.id}' ajouté`);
+    console.log(`    ${issue.driver}: trigger '${issue.id}' ajoutÃ©`);
   }
 });
 
@@ -276,15 +276,15 @@ console.log('\n');
 console.log('STATISTIQUES CORRECTIONS');
 console.log('\n');
 
-console.log(`   Drivers corrigés: ${stats.driversFixed}`);
-console.log(`   Registrations ajoutées: ${stats.registrationsAdded}`);
-console.log(`   RunListeners ajoutés: ${stats.runListenersAdded}`);
-console.log(`   Flow cards ajoutées: ${stats.flowCardsAdded}`);
-console.log(`   Backups créés: ${stats.backupsCreated}\n`);
+console.log(`   Drivers corrigÃ©s: ${stats.driversFixed}`);
+console.log(`   Registrations ajoutÃ©es: ${stats.registrationsAdded}`);
+console.log(`   RunListeners ajoutÃ©s: ${stats.runListenersAdded}`);
+console.log(`   Flow cards ajoutÃ©es: ${stats.flowCardsAdded}`);
+console.log(`   Backups crÃ©Ã©s: ${stats.backupsCreated}\n`);
 
-console.log(' CORRECTIONS TERMINÉES\n');
+console.log(' CORRECTIONS TERMINÃ‰ES\n');
 
-console.log(' Re-lancer audit pour vérifier:\n');
+console.log(' Re-lancer audit pour vÃ©rifier:\n');
 console.log('   node scripts/audit_all_flow_cards.js\n');
 
 process.exit(0);

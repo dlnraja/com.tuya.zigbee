@@ -4,9 +4,9 @@
       "id": "illuminance_sensor_lux_changed",
       "title": {
         "en": "Luminance changed",
-        "fr": "Luminance changée",
+        "fr": "Luminance changÃ©e",
         "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
+        "de": "Helligkeit geÃ¤ndert"
       },
       "tokens": [
         {
@@ -21,9 +21,9 @@
       "args": [],
       "titleFormatted": {
         "en": "Luminance changed",
-        "fr": "Luminance changée",
+        "fr": "Luminance changÃ©e",
         "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
+        "de": "Helligkeit geÃ¤ndert"
       }
     },
     {
@@ -50,13 +50,13 @@
         "en": "Luminance !{{is|is not}} above",
         "fr": "Luminance !{{est|n'est pas}} au-dessus",
         "nl": "Lichtsterkte !{{is|is niet}} boven",
-        "de": "Helligkeit !{{ist|ist nicht}} über"
+        "de": "Helligkeit !{{ist|ist nicht}} Ã¼ber"
       },
       "titleFormatted": {
         "en": "Luminance !{{is|is not}} above [[threshold]] lux",
         "fr": "Luminance !{{est|n'est pas}} au-dessus de [[threshold]] lux",
         "nl": "Lichtsterkte !{{is|is niet}} boven [[threshold]] lux",
-        "de": "Helligkeit !{{ist|ist nicht}} über [[threshold]] Lux"
+        "de": "Helligkeit !{{ist|ist nicht}} Ã¼ber [[threshold]] Lux"
       },
       "args": [
         {

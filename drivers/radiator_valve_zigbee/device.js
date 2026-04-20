@@ -132,7 +132,7 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
   }
 
   async onTargetTemperatureChange(value) {
-    this.log(`[TRV-ZIGBEE] Setting target temp: ${value}°C`);
+    this.log(`[TRV-ZIGBEE] Setting target temp: ${value}Â°C`);
     
     // Try DP1 first (most common)
     try {
@@ -258,6 +258,18 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
     }
   }
 
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
+  }
 }
 
 module.exports = RadiatorValveZigbeeDevice;

@@ -93,8 +93,7 @@ jobs:
             echo "Fixing variants..."
             node scripts/automation/fix-detected-variants.js
           fi
-+++++++
- REPLACE
+
 
       - name: Validate device.js syntax
         continue-on-error: true

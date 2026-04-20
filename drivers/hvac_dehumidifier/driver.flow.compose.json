@@ -4,31 +4,31 @@
       "id": "hvac_dehumidifier_dehumidifier_hybrid_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé"
+        "fr": "AllumÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allumé"
+        "fr": "AllumÃ©"
       }
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_hybrid_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint"
+        "fr": "Ã‰teint"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Éteint"
+        "fr": "Ã‰teint"
       }
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_hybrid_measure_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "HumiditÃ© changÃ©e"
       },
       "tokens": [
         {
@@ -36,7 +36,7 @@
           "type": "number",
           "title": {
             "en": "Humidity",
-            "fr": "Humidité"
+            "fr": "HumiditÃ©"
           },
           "example": 65
         }
@@ -44,14 +44,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "HumiditÃ© changÃ©e"
       }
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_hybrid_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       },
       "tokens": [
         {
@@ -59,7 +59,7 @@
           "type": "number",
           "title": {
             "en": "Temperature",
-            "fr": "Température"
+            "fr": "TempÃ©rature"
           },
           "example": 20.5
         }
@@ -67,14 +67,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       }
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_hybrid_measure_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changÃ©e"
       },
       "tokens": [
         {
@@ -90,19 +90,19 @@
       "args": [],
       "titleFormatted": {
         "en": "Power changed",
-        "fr": "Puissance changée"
+        "fr": "Puissance changÃ©e"
       }
     },
     {
       "id": "hvac_dehumidifier_dehumidifier_hybrid_alarm_water_true",
       "title": {
         "en": "Water leak detected",
-        "fr": "Fuite d'eau détectée"
+        "fr": "Fuite d'eau dÃ©tectÃ©e"
       },
       "args": [],
       "titleFormatted": {
         "en": "Water leak detected",
-        "fr": "Fuite d'eau détectée"
+        "fr": "Fuite d'eau dÃ©tectÃ©e"
       }
     },
     {
@@ -121,14 +121,14 @@
       "id": "hvac_dehumidifier_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -137,14 +137,14 @@
       "id": "hvac_dehumidifier_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -153,48 +153,48 @@
       "id": "hvac_dehumidifier_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       }
     },
     {
       "id": "hvac_dehumidifier_temp_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       }
     },
     {
       "id": "hvac_dehumidifier_power_changed",
       "title": {
         "en": "Power changed",
-        "fr": "Puissance changée",
+        "fr": "Puissance changÃ©e",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
+        "de": "Leistung geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Power changed",
-        "fr": "Puissance changée",
+        "fr": "Puissance changÃ©e",
         "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
+        "de": "Leistung geÃ¤ndert"
       }
     },
     {
@@ -235,11 +235,11 @@
       "id": "hvac_dehumidifier_dehumidifier_hybrid_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumÃ©|Ã©teint}}"
       },
       "titleFormatted": {
         "en": "Is turned !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}"
+        "fr": "Est !{{allumÃ©|Ã©teint}}"
       },
       "args": []
     },
@@ -247,14 +247,14 @@
       "id": "hvac_dehumidifier_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -263,14 +263,14 @@
       "id": "hvac_dehumidifier_water_detected",
       "title": {
         "en": "Water !{{is|is not}} detected",
-        "fr": "Eau !{{est|n'est pas}} détectée",
+        "fr": "Eau !{{est|n'est pas}} dÃ©tectÃ©e",
         "nl": "Water !{{is|is niet}} gedetecteerd",
         "de": "Wasser !{{ist|ist nicht}} erkannt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Water !{{is|is not}} detected",
-        "fr": "Eau !{{est|n'est pas}} détectée",
+        "fr": "Eau !{{est|n'est pas}} dÃ©tectÃ©e",
         "nl": "Water !{{is|is niet}} gedetecteerd",
         "de": "Wasser !{{ist|ist nicht}} erkannt"
       }
@@ -293,12 +293,12 @@
       "id": "hvac_dehumidifier_dehumidifier_hybrid_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Ã‰teindre"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre"
+        "fr": "Ã‰teindre"
       }
     },
     {
@@ -333,14 +333,14 @@
       "id": "hvac_dehumidifier_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
@@ -365,15 +365,15 @@
       "id": "hvac_dehumidifier_set_temperature",
       "title": {
         "en": "Set temperature",
-        "fr": "Régler température",
+        "fr": "RÃ©gler tempÃ©rature",
         "nl": "Temperatuur instellen",
         "de": "Temperatur einstellen"
       },
       "titleFormatted": {
-        "en": "Set temperature to [[temperature]]°C",
-        "fr": "Régler à [[temperature]]°C",
-        "nl": "Instellen op [[temperature]]°C",
-        "de": "Auf [[temperature]]°C einstellen"
+        "en": "Set temperature to [[temperature]]Â°C",
+        "fr": "RÃ©gler Ã [[temperature]]Â°C",
+        "nl": "Instellen op [[temperature]]Â°C",
+        "de": "Auf [[temperature]]Â°C einstellen"
       },
       "args": [
         {
@@ -382,7 +382,7 @@
           "min": 5,
           "max": 35,
           "step": 0.5,
-          "label": "°C",
+          "label": "Â°C",
           "labelDecimals": 1
         }
       ]

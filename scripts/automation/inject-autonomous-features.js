@@ -10,12 +10,12 @@ const NEW_SETTINGS = [
     "type": "checkbox",
     "label": {
       "en": "Enable Virtual Energy Meter",
-      "fr": "Activer le Compteur d'Énergie Virtuel"
+      "fr": "Activer le Compteur d'Ã‰nergie Virtuel"
     },
     "value": true,
     "hint": {
       "en": "Calculate energy based on state when hardware meter is missing",
-      "fr": "Calcule l'énergie selon l'état si le compteur physique manque"
+      "fr": "Calcule l'Ã©nergie selon l'Ã©tat si le compteur physique manque"
     }
   },
   {
@@ -23,14 +23,14 @@ const NEW_SETTINGS = [
     "type": "number",
     "label": {
       "en": "Radio Presence Sensitivity",
-      "fr": "Sensibilité Présence Radio"
+      "fr": "SensibilitÃ© PrÃ©sence Radio"
     },
     "value": 15,
     "min": 5,
     "max": 50,
     "hint": {
       "en": "LQI variance threshold for presence sensing (higher = less sensitive)",
-      "fr": "Seuil de variance LQI pour la détection (plus haut = moins sensible)"
+      "fr": "Seuil de variance LQI pour la dÃ©tection (plus haut = moins sensible)"
     }
   }
 ];

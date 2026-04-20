@@ -2,15 +2,15 @@
   "id": "tuya_dp_changed",
   "title": {
     "en": "Any Tuya DP changed",
-    "fr": "Tout DP Tuya changé"
+    "fr": "Tout DP Tuya changÃ©"
   },
   "titleFormatted": {
     "en": "DP changed on [[device]]",
-    "fr": "DP changé sur [[device]]"
+    "fr": "DP changÃ© sur [[device]]"
   },
   "hint": {
     "en": "Triggers when ANY DP value changes. Includes DP type info (raw/bool/value/string/enum/bitmap).",
-    "fr": "Se déclenche quand N'IMPORTE QUEL DP change. Inclut le type."
+    "fr": "Se dÃ©clenche quand N'IMPORTE QUEL DP change. Inclut le type."
   },
   "tokens": [
     { "name": "dp_number", "type": "number", "title": { "en": "DP Number" }, "example": 1 },

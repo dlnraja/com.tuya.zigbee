@@ -4,7 +4,7 @@
       "id": "device_air_purifier_quality_hybrid_air_quality_comprehensive_comprehensive_air_monitor_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       },
       "tokens": [
         {
@@ -12,7 +12,7 @@
           "type": "number",
           "title": {
             "en": "Temperature",
-            "fr": "Température"
+            "fr": "TempÃ©rature"
           },
           "example": 20.5
         }
@@ -20,14 +20,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       }
     },
     {
       "id": "device_air_purifier_quality_hybrid_air_quality_comprehensive_comprehensive_air_monitor_measure_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "HumiditÃ© changÃ©e"
       },
       "tokens": [
         {
@@ -35,7 +35,7 @@
           "type": "number",
           "title": {
             "en": "Humidity",
-            "fr": "Humidité"
+            "fr": "HumiditÃ©"
           },
           "example": 65
         }
@@ -43,39 +43,39 @@
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "HumiditÃ© changÃ©e"
       }
     },
     {
       "id": "device_air_purifier_quality_hybrid_air_quality_comprehensive_temp_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       }
     },
     {
       "id": "device_air_purifier_quality_hybrid_air_quality_comprehensive_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       }
     },
     {
@@ -120,7 +120,7 @@
         "en": "Temperature !{{is|is not}} above"
       },
       "titleFormatted": {
-        "en": "Temperature !{{is|is not}} above [[temperature]] °C"
+        "en": "Temperature !{{is|is not}} above [[temperature]] Â°C"
       },
       "args": [
         {

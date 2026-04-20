@@ -41,7 +41,7 @@ async function main() {
             id: flowId,
             title: {
               en: `Gang ${g} turned ${action} (physical)`,
-              fr: `Gang ${g} allumé${action === 'off' ? ' (éteint)' : ''} (physique)`
+              fr: `Gang ${g} allumÃ©${action === 'off' ? ' (Ã©teint)' : ''} (physique)`
             }
           });
           modified = true;
@@ -57,7 +57,7 @@ async function main() {
           id: sceneId,
           title: {
             en: `Gang ${g} scene trigger`,
-            fr: `Déclencheur de scène Gang ${g}`
+            fr: `DÃ©clencheur de scÃ¨ne Gang ${g}`
           },
           args: [
             {

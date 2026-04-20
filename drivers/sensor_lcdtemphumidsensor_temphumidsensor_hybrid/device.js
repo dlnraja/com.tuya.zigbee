@@ -36,7 +36,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       18: { capability: 'measure_temperature', divisor: 10 },
       101: { capability: 'measure_temperature', divisor: 10 }, // v6.1.6: fallback for _TZE284_
 
-      // Humidity (÷10 for TZE200 variants like _TZE200_vvmbj46n)
+      // Humidity (Ã·10 for TZE200 variants like _TZE200_vvmbj46n)
       2: { capability: 'measure_humidity', divisor: 10 },
       102: { capability: 'measure_humidity', divisor: 10 }, // v6.1.6: fallback for _TZE284_
 
@@ -132,7 +132,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
-      this.log('[LCD]  Temperature:', temp, '°C Humidity:', hum, '% Battery:', bat, '%');
+      this.log('[LCD]  Temperature:', temp, 'Â°C Humidity:', hum, '% Battery:', bat, '%');
     }, 100);
   }
 
@@ -177,6 +177,18 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
     }
   }
 
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
+  }
 }
 
 module.exports = LCDTempHumidSensorDevice;

@@ -9,11 +9,11 @@ const windowDetection = {
   "type": "boolean",
   "title": {
     "en": "Window Detection",
-    "fr": "Détection Fenêtre"
+    "fr": "DÃ©tection FenÃªtre"
   },
   "desc": {
     "en": "Automatically turn off heating when window is opened",
-    "fr": "Éteint automatiquement le chauffage quand la fenêtre est ouverte"
+    "fr": "Ã‰teint automatiquement le chauffage quand la fenÃªtre est ouverte"
   },
   "getable": true,
   "setable": true,
@@ -35,7 +35,7 @@ const boostMode = {
   },
   "desc": {
     "en": "Temporarily heat at maximum power",
-    "fr": "Chauffage temporaire à puissance maximale"
+    "fr": "Chauffage temporaire Ã puissance maximale"
   },
   "getable": true,
   "setable": true,
@@ -81,14 +81,14 @@ const tempCalibration = {
   "type": "number",
   "title": {
     "en": "Temperature Calibration",
-    "fr": "Calibration Température"
+    "fr": "Calibration TempÃ©rature"
   },
   "desc": {
     "en": "Temperature offset for local sensor",
-    "fr": "Décalage de température pour le capteur local"
+    "fr": "DÃ©calage de tempÃ©rature pour le capteur local"
   },
   "units": {
-    "en": "°C"
+    "en": "Â°C"
   },
   "getable": true,
   "setable": true,
@@ -109,14 +109,14 @@ const ecoTemperature = {
   "type": "number",
   "title": {
     "en": "Eco Temperature",
-    "fr": "Température Éco"
+    "fr": "TempÃ©rature Ã‰co"
   },
   "desc": {
     "en": "Temperature in eco mode",
-    "fr": "Température en mode éco"
+    "fr": "TempÃ©rature en mode Ã©co"
   },
   "units": {
-    "en": "°C"
+    "en": "Â°C"
   },
   "getable": true,
   "setable": true,
@@ -137,14 +137,14 @@ const frostProtectionTemp = {
   "type": "number",
   "title": {
     "en": "Frost Protection Temperature",
-    "fr": "Température Antigel"
+    "fr": "TempÃ©rature Antigel"
   },
   "desc": {
     "en": "Minimum temperature for frost protection",
-    "fr": "Température minimale pour protection antigel"
+    "fr": "TempÃ©rature minimale pour protection antigel"
   },
   "units": {
-    "en": "°C"
+    "en": "Â°C"
   },
   "getable": true,
   "setable": true,

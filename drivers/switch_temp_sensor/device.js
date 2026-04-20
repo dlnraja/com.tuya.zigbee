@@ -118,7 +118,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
           const tempAttr = await cluster.readAttributes(['measuredValue']).catch(() => null);
           if (tempAttr?.measuredValue !== undefined) {
             const temp = safeParse(tempAttr.measuredValue, 100);
-            this.log(`[57346] Initial temperature: ${temp}°C`);
+            this.log(`[57346] Initial temperature: ${temp}Â°C`);
             await this._setTemperature(temp);
           }
         } catch (e) {
@@ -216,7 +216,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
           measuredValue: {
             minInterval: 60,
             maxInterval: 3600,
-            minChange: 10 // 0.1°C
+            minChange: 10 // 0.1Â°C
           }
         }).catch(() => { });
         this.log(' Configured reporting on cluster 57346');
@@ -237,7 +237,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
 
     switch (dp) {
     case DP_TEMPERATURE:
-      // Temperature is usually in 0.1°C units
+      // Temperature is usually in 0.1Â°C units
       const temp = typeof value === 'number' ? safeParse(value, 10) : value;
       this._setTemperature(temp);
       break;
@@ -259,14 +259,14 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
   async _setTemperature(temp) {
     if (typeof temp !== 'number' || isNaN(temp)) return;
 
-    // Sanity check: -40°C to +80°C
+    // Sanity check: -40Â°C to +80Â°C
     if (temp < -40 || temp > 80) {
-      this.log(` Temperature out of range: ${temp}°C`);
+      this.log(` Temperature out of range: ${temp}Â°C`);
       return;
     }
 
     const rounded = Math.round(temp *safeParse(10), 10);
-    this.log(` Temperature: ${rounded}°C`);
+    this.log(` Temperature: ${rounded}Â°C`);
 
     if (this.hasCapability('measure_temperature')) {
       await this.setCapabilityValue('measure_temperature', parseFloat(rounded)).catch(this.error);

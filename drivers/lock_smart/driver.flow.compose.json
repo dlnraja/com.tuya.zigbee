@@ -4,40 +4,40 @@
       "id": "lock_smart_locked",
       "title": {
         "en": "Locked",
-        "fr": "Verrouillé"
+        "fr": "VerrouillÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Locked",
-        "fr": "Verrouillé"
+        "fr": "VerrouillÃ©"
       }
     },
     {
       "id": "lock_smart_unlocked",
       "title": {
         "en": "Unlocked",
-        "fr": "Déverrouillé"
+        "fr": "DÃ©verrouillÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Unlocked",
-        "fr": "Déverrouillé"
+        "fr": "DÃ©verrouillÃ©"
       }
     },
     {
       "id": "lock_smart_lock_changed",
       "title": {
         "en": "Lock changed",
-        "fr": "Serrure changée",
+        "fr": "Serrure changÃ©e",
         "nl": "Slot gewijzigd",
-        "de": "Schloss geändert"
+        "de": "Schloss geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Lock changed",
-        "fr": "Serrure changée",
+        "fr": "Serrure changÃ©e",
         "nl": "Slot gewijzigd",
-        "de": "Schloss geändert"
+        "de": "Schloss geÃ¤ndert"
       }
     },
     {
@@ -78,11 +78,11 @@
       "id": "lock_smart_is_locked",
       "title": {
         "en": "Is !{{locked|unlocked}}",
-        "fr": "Est !{{verrouillé|déverrouillé}}"
+        "fr": "Est !{{verrouillÃ©|dÃ©verrouillÃ©}}"
       },
       "titleFormatted": {
         "en": "Is !{{locked|unlocked}}",
-        "fr": "Est !{{verrouillé|déverrouillé}}"
+        "fr": "Est !{{verrouillÃ©|dÃ©verrouillÃ©}}"
       },
       "args": []
     },
@@ -120,12 +120,12 @@
       "id": "lock_smart_unlock",
       "title": {
         "en": "Unlock",
-        "fr": "Déverrouiller"
+        "fr": "DÃ©verrouiller"
       },
       "args": [],
       "titleFormatted": {
         "en": "Unlock",
-        "fr": "Déverrouiller"
+        "fr": "DÃ©verrouiller"
       }
     }
   ]

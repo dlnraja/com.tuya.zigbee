@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log(' RESTAURATION MANUFACTURER NAMES SUPPRIMÉS\n');
+console.log(' RESTAURATION MANUFACTURER NAMES SUPPRIMÃ‰S\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -102,20 +102,20 @@ scanAllDrivers();
 
 // AFFICHAGE
 console.log(' ANALYSE RESTAURATION:\n');
-console.log(`   Drivers analysés: ${stats.driversAnalyzed}`);
+console.log(`   Drivers analysÃ©s: ${stats.driversAnalyzed}`);
 console.log(`   Drivers avec suppressions: ${restorations.length}\n`);
 
 if (restorations.length > 0) {
-  console.log(' TOP 20 DRIVERS À RESTAURER:\n');
+  console.log(' TOP 20 DRIVERS Ã€ RESTAURER:\n');
 
   restorations
     .sort((a, b) => b.validDeletedCount - a.validDeletedCount)
     .slice(0, 20)
     .forEach(item => {
       console.log(`   ${item.driver}:`);
-      console.log(`      Actuels: ${item.currentCount}, Supprimés valides: ${item.validDeletedCount}`);
+      console.log(`      Actuels: ${item.currentCount}, SupprimÃ©s valides: ${item.validDeletedCount}`);
       console.log(`      ProductIds: ${item.productIds.join(', ')}`);
-      console.log(`      À restaurer (5 premiers): ${item.toRestore.slice(0, 5).join(', ')}`);
+      console.log(`      Ã€ restaurer (5 premiers): ${item.toRestore.slice(0, 5).join(', ')}`);
       if (item.toRestore.length > 5) {
         console.log(`      ... et ${item.toRestore.length - 5} autres`);
       }
@@ -126,20 +126,20 @@ if (restorations.length > 0) {
 // Sauvegarder analyse
 const analysisFile = path.join(ROOT, 'MANUFACTURER_RESTORATION_ANALYSIS.json');
 fs.writeFileSync(analysisFile, JSON.stringify(restorations, null, 2), 'utf8');
-console.log(` Analyse sauvegardée: ${analysisFile}\n`);
+console.log(` Analyse sauvegardÃ©e: ${analysisFile}\n`);
 
 // Statistiques totales
 const totalToRestore = restorations.reduce((sum, r) => sum + r.validDeletedCount, 0);
-console.log(` TOTAL À RESTAURER: ${totalToRestore} manufacturer names valides\n`);
+console.log(` TOTAL Ã€ RESTAURER: ${totalToRestore} manufacturer names valides\n`);
 
 if (totalToRestore > 0) {
   console.log('  RECOMMANDATION:');
-  console.log('   Ces manufacturer names Tuya valides ont été supprimés');
-  console.log('   Ils devraient être restaurés car ils peuvent identifier des variants');
-  console.log('   Le partage entre drivers est LÉGITIME si productIds différents\n');
+  console.log('   Ces manufacturer names Tuya valides ont Ã©tÃ© supprimÃ©s');
+  console.log('   Ils devraient Ãªtre restaurÃ©s car ils peuvent identifier des variants');
+  console.log('   Le partage entre drivers est LÃ‰GITIME si productIds diffÃ©rents\n');
 
-  console.log(' PROCHAINE ÉTAPE:');
-  console.log('   Exécuter script de restauration pour remettre les IDs valides\n');
+  console.log(' PROCHAINE Ã‰TAPE:');
+  console.log('   ExÃ©cuter script de restauration pour remettre les IDs valides\n');
 }
 
 process.exit(totalToRestore > 0 ? 1 : 0);

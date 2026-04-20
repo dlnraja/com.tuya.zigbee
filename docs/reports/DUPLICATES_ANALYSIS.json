@@ -2,7 +2,7 @@
   "legitimate": [
     {
       "id": "TS0201",
-      "reason": "Temperature/Humidity sensor (peut être standalone ou combiné)",
+      "reason": "Temperature/Humidity sensor (peut Ãªtre standalone ou combinÃ©)",
       "drivers": [
         "drivers\\air_quality_co2\\driver.compose.json",
         "drivers\\climate_sensor\\driver.compose.json",
@@ -110,7 +110,7 @@
     },
     {
       "id": "TS0041",
-      "reason": "1-button controller (différents usages)",
+      "reason": "1-button controller (diffÃ©rents usages)",
       "drivers": [
         "drivers\\button_wireless\\driver.compose.json",
         "drivers\\button_wireless_1\\driver.compose.json",
@@ -167,7 +167,7 @@
     },
     {
       "id": "TS0225",
-      "reason": "Multi-sensor avancé",
+      "reason": "Multi-sensor avancÃ©",
       "drivers": [
         "drivers\\climate_sensor\\driver.compose.json",
         "drivers\\motion_sensor_radar_mmwave\\driver.compose.json",
@@ -214,7 +214,7 @@
     },
     {
       "id": "TS0001",
-      "reason": "1-gang switch/relay (différents types)",
+      "reason": "1-gang switch/relay (diffÃ©rents types)",
       "drivers": [
         "drivers\\module_mini_switch\\driver.compose.json",
         "drivers\\plug_smart\\driver.compose.json",
@@ -225,7 +225,7 @@
     },
     {
       "id": "TS0011",
-      "reason": "1-gang switch (différent du TS0001)",
+      "reason": "1-gang switch (diffÃ©rent du TS0001)",
       "drivers": [
         "drivers\\module_mini_switch\\driver.compose.json",
         "drivers\\radiator_controller\\driver.compose.json",
@@ -236,7 +236,7 @@
     },
     {
       "id": "TS0202",
-      "reason": "Motion sensor (différents modèles)",
+      "reason": "Motion sensor (diffÃ©rents modÃ¨les)",
       "drivers": [
         "drivers\\motion_sensor\\driver.compose.json",
         "drivers\\motion_sensor_radar_mmwave\\driver.compose.json"
@@ -312,7 +312,7 @@
         "drivers\\water_leak_sensor\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Vérifier si les drivers sont réellement différents"
+      "recommendation": "VÃ©rifier si les drivers sont rÃ©ellement diffÃ©rents"
     },
     {
       "id": "TS0013",
@@ -321,7 +321,7 @@
         "drivers\\switch_3gang\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Vérifier si les drivers sont réellement différents"
+      "recommendation": "VÃ©rifier si les drivers sont rÃ©ellement diffÃ©rents"
     },
     {
       "id": "TS0014",
@@ -330,7 +330,7 @@
         "drivers\\switch_4gang\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Vérifier si les drivers sont réellement différents"
+      "recommendation": "VÃ©rifier si les drivers sont rÃ©ellement diffÃ©rents"
     }
   ],
   "shouldFix": [
@@ -341,7 +341,7 @@
         "drivers\\dimmer_dual_channel\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     },
     {
       "id": "_TZ3000_0ghwhypc",
@@ -350,7 +350,7 @@
         "drivers\\switch_1gang\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     },
     {
       "id": "_TZ3000_0hkmcrza",
@@ -359,7 +359,7 @@
         "drivers\\plug_smart\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     },
     {
       "id": "_TZ3000_7ysdnebc",
@@ -368,7 +368,7 @@
         "drivers\\dimmer_wall_1gang\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     },
     {
       "id": "_TZE204_ikvncluo",
@@ -378,7 +378,7 @@
         "drivers\\water_tank_monitor\\driver.compose.json"
       ],
       "count": 3,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     },
     {
       "id": "_TZ3000_18ejxno0",
@@ -387,7 +387,7 @@
         "drivers\\switch_1gang\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     },
     {
       "id": "_TZE200_aoclfnxz",
@@ -396,7 +396,7 @@
         "drivers\\smart_heater_controller\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     },
     {
       "id": "_TZE200_b6wax7g0",
@@ -405,7 +405,7 @@
         "drivers\\smart_heater_controller\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     },
     {
       "id": "_TZE200_c88teujp",
@@ -414,7 +414,7 @@
         "drivers\\smart_heater_controller\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     },
     {
       "id": "_TZE200_hue3yfsn",
@@ -423,7 +423,7 @@
         "drivers\\smart_heater_controller\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     },
     {
       "id": "_TZE204_aoclfnxz",
@@ -432,7 +432,7 @@
         "drivers\\smart_heater_controller\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     },
     {
       "id": "_TZ3000_excgg5kb",
@@ -441,7 +441,7 @@
         "drivers\\switch_4gang\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     },
     {
       "id": "_TZE284_c8ipbljq",
@@ -450,7 +450,7 @@
         "drivers\\switch_wall_6gang\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     },
     {
       "id": "_TZE200_81isopgh",
@@ -459,7 +459,7 @@
         "drivers\\water_valve_smart\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     },
     {
       "id": "_TZE200_htnnfasr",
@@ -468,7 +468,7 @@
         "drivers\\water_valve_smart\\driver.compose.json"
       ],
       "count": 2,
-      "recommendation": "Manufacturer ID devrait être unique par variant"
+      "recommendation": "Manufacturer ID devrait Ãªtre unique par variant"
     }
   ]
 }

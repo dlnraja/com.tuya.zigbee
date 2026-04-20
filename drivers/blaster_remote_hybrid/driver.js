@@ -27,7 +27,7 @@ class IRRemoteDriver extends Driver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('blaster_remote_hybrid_ir_remote_send_code');
+      const card = this._getFlowCard('blaster_remote_hybrid_ir_remote_send_code', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -38,7 +38,7 @@ class IRRemoteDriver extends Driver {
     } catch (err) { this.error(`Action blaster_remote_hybrid_ir_remote_send_code: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('blaster_remote_hybrid_ir_remote_start_learning');
+      const card = this._getFlowCard('blaster_remote_hybrid_ir_remote_start_learning', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

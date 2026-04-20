@@ -4,15 +4,15 @@
       "id": "formaldehyde_sensor_formaldehyde_changed",
       "title": {
         "en": "Formaldehyde level changed",
-        "fr": "Niveau formaldéhyde changé"
+        "fr": "Niveau formaldÃ©hyde changÃ©"
       },
       "tokens": [
         {
           "name": "formaldehyde",
           "type": "number",
           "title": {
-            "en": "Formaldehyde (g/m³)",
-            "fr": "Formaldéhyde (g/m³)"
+            "en": "Formaldehyde (g/mÂ³)",
+            "fr": "FormaldÃ©hyde (g/mÂ³)"
           },
           "example": 25
         }
@@ -20,14 +20,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Formaldehyde level changed",
-        "fr": "Niveau formaldéhyde changé"
+        "fr": "Niveau formaldÃ©hyde changÃ©"
       }
     },
     {
       "id": "formaldehyde_sensor_voc_changed",
       "title": {
         "en": "VOC level changed",
-        "fr": "Niveau COV changé"
+        "fr": "Niveau COV changÃ©"
       },
       "tokens": [
         {
@@ -43,19 +43,19 @@
       "args": [],
       "titleFormatted": {
         "en": "VOC level changed",
-        "fr": "Niveau COV changé"
+        "fr": "Niveau COV changÃ©"
       }
     },
     {
       "id": "formaldehyde_sensor_air_quality_alert",
       "title": {
         "en": "Air quality alert",
-        "fr": "Alerte qualité air"
+        "fr": "Alerte qualitÃ© air"
       },
       "args": [],
       "titleFormatted": {
         "en": "Air quality alert",
-        "fr": "Alerte qualité air"
+        "fr": "Alerte qualitÃ© air"
       }
     },
     {
@@ -74,32 +74,32 @@
       "id": "formaldehyde_sensor_temp_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       }
     },
     {
       "id": "formaldehyde_sensor_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       }
     }
   ],
@@ -108,11 +108,11 @@
       "id": "formaldehyde_sensor_formaldehyde_above",
       "title": {
         "en": "Formaldehyde is above",
-        "fr": "Formaldéhyde supérieur à"
+        "fr": "FormaldÃ©hyde supÃ©rieur Ã"
       },
       "titleFormatted": {
-        "en": "Formaldehyde is above [[level]] g/m³",
-        "fr": "Formaldéhyde supérieur à [[level]] g/m³"
+        "en": "Formaldehyde is above [[level]] g/mÂ³",
+        "fr": "FormaldÃ©hyde supÃ©rieur Ã [[level]] g/mÂ³"
       },
       "args": [
         {
@@ -128,12 +128,12 @@
       "id": "formaldehyde_sensor_air_quality_good",
       "title": {
         "en": "Air quality is !{{good|poor}}",
-        "fr": "Qualité air !{{bonne|mauvaise}}"
+        "fr": "QualitÃ© air !{{bonne|mauvaise}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Air quality is !{{good|poor}}",
-        "fr": "Qualité air !{{bonne|mauvaise}}"
+        "fr": "QualitÃ© air !{{bonne|mauvaise}}"
       }
     }
   ]

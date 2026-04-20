@@ -3,7 +3,7 @@
     "en": "Radiator Valve",
     "fr": "Radiator Valve",
     "nl": "Radiatorklep",
-    "de": "Heizkörperventil"
+    "de": "HeizkÃ¶rperventil"
   },
   "class": "thermostat",
   "capabilities": [
@@ -120,6 +120,8 @@
       "_TZE200_TRV602",
       "_TZE200_ZAABEFNT",
       "_TZE200_ZUHSZJ9S",
+      "_TZE200_bxdyeaa9",
+      "_TZE200_ne4pikwm",
       "_TZE204_0DXRPQXL",
       "_TZE204_7RGHPOXO",
       "_TZE204_CA3I8M8P",
@@ -153,123 +155,10 @@
       "_TZE284_HCS66AXL",
       "_TZE284_HVAXB2TC",
       "_TZE284_K6RDMISZ",
-      "_TZE284_NOIXX2UZ",
-      "_tze200_hvaxb2tc",
-      "_tze200_bvu2wnxz",
       "_TZE284_NE4PIKWM",
-      "_TZE200_bxdyeaa9",
-      "_TZE200_ne4pikwm",
-      "_TZ3000_8ykqfsyq",
-      "_TZ3000_abci1hiu",
-      "_TZ3000_c3g3pupu",
-      "_TZ3000_cduqh1l0",
-      "_TZ3000_ckq7u3r4",
-      "_TZ3000_cxkjlbxx",
-      "_TZ3000_dffvflui",
-      "_TZ3000_dksbtrzs",
-      "_TZ3000_e3vhyrdz",
-      "_TZ3000_egfdwm0f",
-      "_TZ3000_exni6swi",
-      "_TZ3000_f1bapcit",
-      "_TZ3000_femsrftq",
-      "_TZ3000_fgwhjm9j",
-      "_TZ3000_gp7p1xsn",
-      "_TZ3000_gznh2xla",
-      "_TZ3000_h1jnz6l9",
-      "_TZ3000_hdc8bbhc",
-      "_TZ3000_hgpnzgac",
-      "_TZ3000_hmitslt3",
-      "_TZ3000_i1rw7p4p",
-      "_TZ3000_idrffznf",
-      "_TZ3000_iv2hvncp",
-      "_TZ3000_j34bmidp",
-      "_TZ3000_jabbwuie",
-      "_TZ3000_jbjz13kn",
-      "_TZ3000_jeanjpmj",
-      "_TZ3000_jimbwdxd",
-      "_TZ3000_jkbrnvhr",
-      "_TZ3000_jnihvwo1",
-      "_TZ3000_jvvhvqjk",
-      "_TZ3000_kas5qbpq",
-      "_TZ3000_kgvnspdl",
-      "_TZ3000_kksch6ep",
-      "_TZ3000_klch39xt",
-      "_TZ3000_kmuxjukf",
-      "_TZ3000_kud7u2l1",
-      "_TZ3000_kvwjujy9",
-      "_TZ3000_l6pwxuxm",
-      "_TZ3000_ld6g3agd",
-      "_TZE200_0hg58epr",
-      "_TZE200_1agwnafq",
-      "_TZE200_44af8ipg",
-      "_TZE200_4hbx5cvx",
-      "_TZE200_502zx5sl",
-      "_TZE200_56bdwt92",
-      "_TZE200_5bdnqwnx",
-      "_TZE200_5tgzpccv",
-      "_TZE200_6mafo2gv",
-      "_TZE200_7rghpoxo",
-      "_TZE200_7tdtqgwv",
-      "_TZE200_8k8k3t3j",
-      "_TZE200_8xtk0cjs",
-      "_TZE200_9kqxlpby",
-      "_TZE200_a4cjpzdi",
-      "_TZE200_ahl6l9k5",
-      "_TZE200_amp6tsvy",
-      "_TZE200_anv5ujhv",
-      "_TZE200_awnadkan",
-      "_TZE200_axbpz5wm",
-      "_TZE200_azqp6ssj",
-      "_TZE200_b8x72kmy",
-      "_TZE200_cxakecfo",
-      "_TZE200_d5p1kr8z",
-      "_TZE200_d8fp6ivb",
-      "_TZE200_dcydapr2",
-      "_TZE200_dfry6ylv",
-      "_TZE200_dmfguuli",
-      "_TZE200_e5hpkc6d",
-      "_TZE200_k1tumq4t",
-      "_TZE200_lrznf59v",
-      "_TZE200_oahqgdig",
-      "_TZE200_rxypyjkw",
-      "_TZE200_trv602",
-      "_TZE200_zaabefnt",
-      "_TZE200_zuhszj9s",
-      "_TZE204_0dxrpqxl",
-      "_TZE204_7rghpoxo",
-      "_TZE204_ca3i8m8p",
-      "_TZE204_cg8hdnjv",
-      "_TZE204_cmyc8g5i",
-      "_TZE204_djurk6p5",
-      "_TZE204_e5hpkc6d",
-      "_TZE204_g9a3awaj",
-      "_TZE204_glk6viwg",
-      "_TZE204_goecjd1t",
-      "_TZE204_hvaxb2tc",
-      "_TZE204_k6rdmisz",
-      "_TZE204_lnbfnyxd",
-      "_TZE204_lnxdk2ch",
-      "_TZE204_locansqn",
-      "_TZE204_mudxchsu",
-      "_TZE204_pay2byax",
-      "_TZE204_pisltm67",
-      "_TZE204_qdihqf3l",
-      "_TZE204_qoy0ekbd",
-      "_TZE204_r7brscr6",
-      "_TZE204_v6ossqfy",
-      "_TZE204_wc2w9t1s",
-      "_TZE204_wgrffniy",
-      "_TZE204_woww89ip",
-      "_TZE204_xby0s3ta",
-      "_TZE204_xdtnpp1a",
-      "_TZE204_ywdxldoj",
-      "_TZE284_cgr0rhza",
-      "_TZE284_cgror0rhza",
-      "_TZE284_hcs66axl",
-      "_TZE284_hvaxb2tc",
-      "_TZE284_k6rdmisz",
-      "_TZE284_noixx2uz",
-      "_TZE284_ne4pikwm"
+      "_TZE284_NOIXX2UZ",
+      "_tze200_bvu2wnxz",
+      "_tze200_hvaxb2tc"
     ],
     "productId": [
       "014G2461",
@@ -294,7 +183,7 @@
       "image": "/drivers/radiator_valve/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
       }
     },
     "endpoints": {
@@ -320,7 +209,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "fr": "DÃ©tection Automatique"
           }
         },
         {
@@ -347,7 +236,7 @@
       ],
       "hint": {
         "en": "Select power source manually or use auto-detection",
-        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+        "fr": "SÃ©lectionnez la source d'alimentation manuellement ou utilisez la dÃ©tection automatique"
       }
     },
     {
@@ -363,7 +252,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "fr": "DÃ©tection Automatique"
           }
         },
         {
@@ -404,7 +293,7 @@
       ],
       "hint": {
         "en": "Select battery type manually or use auto-detection based on voltage",
-        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+        "fr": "SÃ©lectionnez le type de batterie manuellement ou utilisez la dÃ©tection automatique basÃ©e sur la tension"
       }
     },
     {
@@ -420,7 +309,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger low battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+        "fr": "DÃ©clencher l'alerte batterie faible en dessous de ce pourcentage"
       }
     },
     {
@@ -436,7 +325,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger critical battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+        "fr": "DÃ©clencher l'alerte batterie critique en dessous de ce pourcentage"
       }
     },
     {
@@ -449,7 +338,7 @@
       "value": true,
       "hint": {
         "en": "Send flow notifications for battery events",
-        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+        "fr": "Envoyer des notifications de flow pour les Ã©vÃ©nements de batterie"
       }
     },
     {
@@ -465,7 +354,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+        "fr": "FrÃ©quence de demande des mises Ã jour d'Ã©tat de batterie"
       }
     },
     {
@@ -473,7 +362,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Énergétique"
+        "fr": "Mode Optimisation Ã‰nergÃ©tique"
       },
       "value": "balanced",
       "values": [
@@ -481,27 +370,27 @@
           "id": "performance",
           "label": {
             "en": "Performance (More responsive)",
-            "fr": "Performance (Plus réactif)"
+            "fr": "Performance (Plus rÃ©actif)"
           }
         },
         {
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Équilibré"
+            "fr": "Ã‰quilibrÃ©"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Économie d'énergie (Batterie plus longue)"
+            "fr": "Ã‰conomie d'Ã©nergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+        "fr": "Ã‰quilibre entre rÃ©activitÃ© et durÃ©e de vie de la batterie"
       }
     },
     {
@@ -514,7 +403,7 @@
       "value": false,
       "hint": {
         "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+        "fr": "Afficher la tension brute de la batterie dans les paramÃ¨tres du pÃ©riphÃ©rique"
       }
     },
     {
@@ -527,7 +416,7 @@
       "value": true,
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+        "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
       }
     },
     {
@@ -535,12 +424,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la Détection de Présence Radio"
+        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -548,7 +437,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "Sensibilité Présence Radio"
+        "fr": "SensibilitÃ© PrÃ©sence Radio"
       },
       "value": 15,
       "min": 5,
@@ -563,12 +452,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "Sécurité Enfant Logicielle"
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "Empêche les changements d'état manuels sur l'appareil"
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
       }
     },
     {
@@ -583,7 +472,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'éteint après X minutes (0 = désactivé)"
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -591,12 +480,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation Présence)"
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
       }
     },
     {
@@ -604,14 +493,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Émulé (Secondes)"
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
       }
     },
     {
@@ -626,7 +515,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Émulation logicielle pour boutons à action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -641,7 +530,7 @@
       "max": 4000,
       "hint": {
         "en": "Cut power if consumption exceeds this value (0 = disabled)",
-        "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+        "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -649,7 +538,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "Durée Inching (Secondes)"
+        "fr": "DurÃ©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -657,7 +546,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -665,12 +554,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "Récupération d'État Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'état précédent après une coupure de courant"
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
       }
     },
     {
@@ -683,7 +572,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
       }
     },
     {
@@ -698,7 +587,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santé descend sous cette valeur"
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     },
     {
@@ -706,12 +595,12 @@
       "type": "checkbox",
       "label": {
         "en": "Adaptive TPI Regulation",
-        "fr": "Régulation TPI Adaptative"
+        "fr": "RÃ©gulation TPI Adaptative"
       },
       "value": false,
       "hint": {
         "en": "Use advanced software-based heating cycles (more precise)",
-        "fr": "Utilise des cycles de chauffe logiciels avancés (plus précis)"
+        "fr": "Utilise des cycles de chauffe logiciels avancÃ©s (plus prÃ©cis)"
       }
     }
   ],
@@ -750,7 +639,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

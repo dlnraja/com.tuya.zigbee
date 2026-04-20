@@ -6,7 +6,7 @@ const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const fs = require('fs');
 const path = require('path');
 
-console.log(' CORRECTION WARNINGS RESTANTS - Expressions mathématiques\n');
+console.log(' CORRECTION WARNINGS RESTANTS - Expressions mathÃ©matiques\n');
 
 const ROOT = path.join(__dirname, '..');
 
@@ -16,7 +16,7 @@ let stats = {
   backupsCreated: 0
 };
 
-// Liste des corrections spécifiques (extraites du rapport)
+// Liste des corrections spÃ©cifiques (extraites du rapport)
 const FIXES = [
   {
     file: 'drivers/air_quality_co2/device.js',
@@ -142,13 +142,13 @@ const FIXES = [
     file: 'lib/devices/BaseHybridDevice.js',
     line: 3198,
     old: "await this.setCapabilityValue('measure_battery', 50)",
-    new: "await this.setCapabilityValue('measure_battery', 50)" // Déjà numérique, OK
+    new: "await this.setCapabilityValue('measure_battery', 50)" // DÃ©jÃ numÃ©rique, OK
   },
   {
     file: 'lib/devices/BaseTuyaDPDevice.js',
     line: 65,
     old: "await this.setCapabilityValue('measure_battery', 100)",
-    new: "await this.setCapabilityValue('measure_battery', 100)" // Déjà numérique, OK
+    new: "await this.setCapabilityValue('measure_battery', 100)" // DÃ©jÃ numÃ©rique, OK
   },
   {
     file: 'lib/devices/HybridSensorBase.js',
@@ -183,7 +183,7 @@ function applyFixes() {
     const filePath = path.join(ROOT, relativeFile);
 
     if (!fs.existsSync(filePath)) {
-      console.log(`     Fichier non trouvé: ${relativeFile}`);
+      console.log(`     Fichier non trouvÃ©: ${relativeFile}`);
       return;
     }
 
@@ -220,18 +220,18 @@ function applyFixes() {
   });
 }
 
-// EXÉCUTION
-console.log(' Application corrections expressions mathématiques...\n');
+// EXÃ‰CUTION
+console.log(' Application corrections expressions mathÃ©matiques...\n');
 applyFixes();
 
 console.log('\n\n RAPPORT CORRECTIONS:\n');
-console.log(`   Fichiers modifiés: ${stats.filesModified}`);
-console.log(`   Lignes corrigées: ${stats.linesFixed}`);
-console.log(`   Backups créés: ${stats.backupsCreated}\n`);
+console.log(`   Fichiers modifiÃ©s: ${stats.filesModified}`);
+console.log(`   Lignes corrigÃ©es: ${stats.linesFixed}`);
+console.log(`   Backups crÃ©Ã©s: ${stats.backupsCreated}\n`);
 
 if (stats.filesModified > 0) {
-  console.log(' CORRECTIONS APPLIQUÉES\n');
-  console.log(' PROCHAINES ÉTAPES:');
+  console.log(' CORRECTIONS APPLIQUÃ‰ES\n');
+  console.log(' PROCHAINES Ã‰TAPES:');
   console.log('   1. Relancer audit: node scripts/audit_complete_advanced.js');
   console.log('   2. Valider: homey app validate --level publish');
   console.log('   3. Build: homey app build\n');

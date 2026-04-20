@@ -10,7 +10,7 @@
       "title": "Door Sensor _TZ3000_n2egfsli Unknown Device",
       "forum": "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439/5377",
       "user": "ruijssantos",
-      "description": "Door sensor _TZ3000_n2egfsli présent dans liste supportée mais détecté comme \"Unknown Zigbee Device\" au lieu de contact sensor",
+      "description": "Door sensor _TZ3000_n2egfsli prÃ©sent dans liste supportÃ©e mais dÃ©tectÃ© comme \"Unknown Zigbee Device\" au lieu de contact sensor",
       "severity": "high",
       "impact": "Device pairing failures",
       "deviceInfo": {
@@ -24,7 +24,7 @@
       "title": "Boutons 4-Gang Physiques Non Fonctionnels",
       "forum": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/744",
       "user": "Eftychis_Georgilas",
-      "description": "Boutons icônes dans app fonctionnent parfaitement, boutons physiques du device ne répondent pas. Fonctionnait dans app Johan Bendz précédente",
+      "description": "Boutons icÃ´nes dans app fonctionnent parfaitement, boutons physiques du device ne rÃ©pondent pas. Fonctionnait dans app Johan Bendz prÃ©cÃ©dente",
       "severity": "high",
       "impact": "Physical button functionality lost",
       "deviceInfo": {
@@ -38,7 +38,7 @@
       "title": "Motion Sensor Luminance Update Discontinu",
       "forum": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/744",
       "user": "Eftychis_Georgilas",
-      "description": "Luminance motion sensor se met à jour seulement lors détection mouvement, devrait être mise à jour continue",
+      "description": "Luminance motion sensor se met Ã jour seulement lors dÃ©tection mouvement, devrait Ãªtre mise Ã jour continue",
       "severity": "medium",
       "impact": "Inaccurate ambient light readings",
       "deviceInfo": {
@@ -53,7 +53,7 @@
         {
           "name": "Zigbee2MQTT",
           "url": "https://www.zigbee2mqtt.io/devices/TS0203.html",
-          "findings": "TS0203 supporté avec manufacturer _TZ3000_n2egfsli, fingerprint validé",
+          "findings": "TS0203 supportÃ© avec manufacturer _TZ3000_n2egfsli, fingerprint validÃ©",
           "solution": "Proper fingerprint configuration in Z2M"
         },
         {

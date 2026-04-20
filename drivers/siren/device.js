@@ -43,7 +43,7 @@ class SirenDevice extends UnifiedPlugBase {
       // 
       // BATTERY
       // 
-      14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolète
+      14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolÃ¨te
       15: { capability: 'measure_battery', divisor: 1 },
 
       // 
@@ -66,6 +66,9 @@ class SirenDevice extends UnifiedPlugBase {
   }
 
   async onNodeInit({ zclNode }) {
+    this._isInitializing = true;
+    await super.onNodeInit({ zclNode });
+
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([
@@ -103,7 +106,8 @@ class SirenDevice extends UnifiedPlugBase {
       });
     }
 
-    // Flow cards registered in driver.js (NOT here to avoid double-registration)
+    // Flow cards registered in driver.js
+    this._isInitializing = false;
     this.log('[SIREN]  Ready');
   }
 
@@ -140,7 +144,7 @@ class SirenDevice extends UnifiedPlugBase {
   }
 
   async _sendTuyaDP(dp, value, type) {
-    // v5.11.27: Use tuyaEF00Manager from base class (the ONLY working API for EF00 cluster)
+    // v5.11.27: Use tuyaEF00Manager from base class
     if (this.tuyaEF00Manager?.sendDatapoint) {
       await this.tuyaEF00Manager.sendDatapoint(dp, value, type);
       return;
@@ -154,12 +158,17 @@ class SirenDevice extends UnifiedPlugBase {
     }
   }
 
-
-
   async onDeleted() {
     this.log('Device deleted, cleaning up');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
   }
 }
 
 module.exports = SirenDevice;
-

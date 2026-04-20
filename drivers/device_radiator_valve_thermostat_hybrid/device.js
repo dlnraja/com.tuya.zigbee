@@ -36,7 +36,7 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
       24: { capability: 'target_temperature', divisor: 2 },
       35: { capability: 'measure_humidity', divisor: 1 },
       36: { capability: 'heating', transform: (v) => v === 1 || v === true },
-      101: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' } // SDK3: alarm_battery obsolète
+      101: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' } // SDK3: alarm_battery obsolÃ¨te
     };
   }
 
@@ -155,6 +155,18 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
     }
   }
 
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
+  }
 }
 
 module.exports = ThermostatTuyaDPDevice;

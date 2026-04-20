@@ -221,7 +221,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     } catch (e) {
       const msg = e?.message || String(e);
       // Retry if Zigbee is starting up (max 3 retries)
-      if ((msg.includes('Zigbee') || msg.includes('démarrage') || msg.includes('starting')) && retryCount < 3) {
+      if ((msg.includes('Zigbee') || msg.includes('dÃ©marrage') || msg.includes('starting')) && retryCount < 3) {
         this.log(`[SWITCH-2G]  Zigbee starting, will retry electrical reporting in 60s (attempt ${retryCount + 1}/3)`);
         this.homey.setTimeout(() => this._configureElectricalReporting(retryCount + 1), 60000);
       } else {
@@ -249,7 +249,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     } catch (e) {
       const msg = e?.message || String(e);
       // Retry if Zigbee is starting up (max 3 retries)
-      if ((msg.includes('Zigbee') || msg.includes('démarrage') || msg.includes('starting')) && retryCount < 3) {
+      if ((msg.includes('Zigbee') || msg.includes('dÃ©marrage') || msg.includes('starting')) && retryCount < 3) {
         this.log(`[SWITCH-2G]  Zigbee starting, will retry metering reporting in 60s (attempt ${retryCount + 1}/3)`);
         this.homey.setTimeout(() => this._configureMeteringReporting(retryCount + 1), 60000);
       } else {

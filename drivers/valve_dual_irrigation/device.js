@@ -60,6 +60,18 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
     this.error('[VALVE-2]  Error: tuyaEF00Manager not initialized');
     throw new Error('tuya_manager_not_found');
   }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
+  }
 }
 
 module.exports = ValveDualIrrigationDevice;

@@ -33,7 +33,7 @@ class DoorControllerDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('door_controller_garage_hybrid_door_controller_is_open');
+      const card = this._getFlowCard('door_controller_garage_hybrid_door_controller_is_open', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -43,7 +43,7 @@ class DoorControllerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition door_controller_garage_hybrid_door_controller_is_open: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('door_controller_garage_hybrid_door_controller_is_locked');
+      const card = this._getFlowCard('door_controller_garage_hybrid_door_controller_is_locked', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -53,7 +53,7 @@ class DoorControllerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition door_controller_garage_hybrid_door_controller_is_locked: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('door_controller_garage_hybrid_door_controller_motion_active');
+      const card = this._getFlowCard('door_controller_garage_hybrid_door_controller_motion_active', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -63,7 +63,7 @@ class DoorControllerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition door_controller_garage_hybrid_door_controller_motion_active: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('door_controller_garage_hybrid_door_controller_contact_open');
+      const card = this._getFlowCard('door_controller_garage_hybrid_door_controller_contact_open', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -74,7 +74,7 @@ class DoorControllerDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('door_controller_garage_hybrid_door_controller_open');
+      const card = this._getFlowCard('door_controller_garage_hybrid_door_controller_open', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -86,7 +86,7 @@ class DoorControllerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action door_controller_garage_hybrid_door_controller_open: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('door_controller_garage_hybrid_door_controller_close');
+      const card = this._getFlowCard('door_controller_garage_hybrid_door_controller_close', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -98,7 +98,7 @@ class DoorControllerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action door_controller_garage_hybrid_door_controller_close: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('door_controller_garage_hybrid_door_controller_lock');
+      const card = this._getFlowCard('door_controller_garage_hybrid_door_controller_lock', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -110,7 +110,7 @@ class DoorControllerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action door_controller_garage_hybrid_door_controller_lock: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('door_controller_garage_hybrid_door_controller_unlock');
+      const card = this._getFlowCard('door_controller_garage_hybrid_door_controller_unlock', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

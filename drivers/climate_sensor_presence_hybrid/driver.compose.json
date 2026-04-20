@@ -2,9 +2,9 @@
   "name": {
     "en": "Climate Sensor Presence",
     "nl": "Klimaatsensor Aanwezigheid",
-    "fr": "Capteur de Climat Présence",
-    "de": "Klimasensor Präsenz",
-    "es": "Sensor Climático de Presencia"
+    "fr": "Capteur de Climat PrÃ©sence",
+    "de": "Klimasensor PrÃ¤senz",
+    "es": "Sensor ClimÃ¡tico de Presencia"
   },
   "class": "sensor",
   "capabilities": [
@@ -34,7 +34,7 @@
     "measure_luminance.distance": {
       "title": {
         "en": "Detection Distance",
-        "fr": "Distance de Détection",
+        "fr": "Distance de DÃ©tection",
         "nl": "Detectieafstand",
         "de": "Erkennungsdistanz"
       },
@@ -83,7 +83,7 @@
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
       "instruction": {
         "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
       }
     },
     "endpoints": {
@@ -109,7 +109,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "fr": "DÃ©tection Automatique"
           }
         },
         {
@@ -136,7 +136,7 @@
       ],
       "hint": {
         "en": "Select power source manually or use auto-detection",
-        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+        "fr": "SÃ©lectionnez la source d'alimentation manuellement ou utilisez la dÃ©tection automatique"
       }
     },
     {
@@ -152,7 +152,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "fr": "DÃ©tection Automatique"
           }
         },
         {
@@ -193,7 +193,7 @@
       ],
       "hint": {
         "en": "Select battery type manually or use auto-detection based on voltage",
-        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+        "fr": "SÃ©lectionnez le type de batterie manuellement ou utilisez la dÃ©tection automatique basÃ©e sur la tension"
       }
     },
     {
@@ -209,7 +209,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger low battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+        "fr": "DÃ©clencher l'alerte batterie faible en dessous de ce pourcentage"
       }
     },
     {
@@ -225,7 +225,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger critical battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+        "fr": "DÃ©clencher l'alerte batterie critique en dessous de ce pourcentage"
       }
     },
     {
@@ -238,7 +238,7 @@
       "value": true,
       "hint": {
         "en": "Send flow notifications for battery events",
-        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+        "fr": "Envoyer des notifications de flow pour les Ã©vÃ©nements de batterie"
       }
     },
     {
@@ -254,7 +254,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+        "fr": "FrÃ©quence de demande des mises Ã jour d'Ã©tat de batterie"
       }
     },
     {
@@ -262,7 +262,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Énergétique"
+        "fr": "Mode Optimisation Ã‰nergÃ©tique"
       },
       "value": "balanced",
       "values": [
@@ -270,27 +270,27 @@
           "id": "performance",
           "label": {
             "en": "Performance (More responsive)",
-            "fr": "Performance (Plus réactif)"
+            "fr": "Performance (Plus rÃ©actif)"
           }
         },
         {
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Équilibré"
+            "fr": "Ã‰quilibrÃ©"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Économie d'énergie (Batterie plus longue)"
+            "fr": "Ã‰conomie d'Ã©nergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+        "fr": "Ã‰quilibre entre rÃ©activitÃ© et durÃ©e de vie de la batterie"
       }
     },
     {
@@ -303,7 +303,7 @@
       "value": false,
       "hint": {
         "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+        "fr": "Afficher la tension brute de la batterie dans les paramÃ¨tres du pÃ©riphÃ©rique"
       }
     },
     {
@@ -316,7 +316,7 @@
       "value": true,
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+        "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
       }
     },
     {
@@ -324,12 +324,12 @@
       "type": "checkbox",
       "label": {
         "en": "Invert Presence Detection",
-        "fr": "Inverser Détection Présence"
+        "fr": "Inverser DÃ©tection PrÃ©sence"
       },
       "value": false,
       "hint": {
         "en": "Enable if presence shows active when room is empty and inactive when occupied (firmware bug workaround)",
-        "fr": "Activer si la présence indique actif quand la pièce est vide et inactif quand occupée (contournement bug firmware)"
+        "fr": "Activer si la prÃ©sence indique actif quand la piÃ¨ce est vide et inactif quand occupÃ©e (contournement bug firmware)"
       }
     },
     {
@@ -337,7 +337,7 @@
       "type": "dropdown",
       "label": {
         "en": "Motion Detection Mode",
-        "fr": "Mode de Détection",
+        "fr": "Mode de DÃ©tection",
         "nl": "Bewegingsdetectie Modus",
         "de": "Bewegungserkennungsmodus"
       },
@@ -356,7 +356,7 @@
           "id": "1",
           "label": {
             "en": "PIR + Radar (Recommended)",
-            "fr": "PIR + Radar (Recommandé)",
+            "fr": "PIR + Radar (RecommandÃ©)",
             "nl": "PIR + Radar (Aanbevolen)",
             "de": "PIR + Radar (Empfohlen)"
           }
@@ -373,7 +373,7 @@
       ],
       "hint": {
         "en": "ZG-204ZM: Select detection method (PIR for motion, Radar for presence)",
-        "fr": "ZG-204ZM: Sélectionner la méthode de détection (PIR pour mouvement, Radar pour présence)"
+        "fr": "ZG-204ZM: SÃ©lectionner la mÃ©thode de dÃ©tection (PIR pour mouvement, Radar pour prÃ©sence)"
       }
     },
     {
@@ -381,7 +381,7 @@
       "type": "number",
       "label": {
         "en": "Motion Sensitivity",
-        "fr": "Sensibilité Mouvement",
+        "fr": "SensibilitÃ© Mouvement",
         "nl": "Bewegingsgevoeligheid",
         "de": "Bewegungsempfindlichkeit"
       },
@@ -391,7 +391,7 @@
       "step": 1,
       "hint": {
         "en": "ZG-204ZM: PIR/Radar motion sensitivity (0=lowest, 10=highest)",
-        "fr": "ZG-204ZM: Sensibilité PIR/Radar (0=minimum, 10=maximum)"
+        "fr": "ZG-204ZM: SensibilitÃ© PIR/Radar (0=minimum, 10=maximum)"
       }
     },
     {
@@ -399,7 +399,7 @@
       "type": "number",
       "label": {
         "en": "Large Motion Sensitivity",
-        "fr": "Sensibilité Grand Mouvement"
+        "fr": "SensibilitÃ© Grand Mouvement"
       },
       "value": 5,
       "min": 0,
@@ -407,7 +407,7 @@
       "step": 1,
       "hint": {
         "en": "ZG-204ZM: Sensitivity for detecting large movements like walking (0=lowest, 10=highest)",
-        "fr": "ZG-204ZM: Sensibilité pour détecter les grands mouvements comme marcher (0=min, 10=max)"
+        "fr": "ZG-204ZM: SensibilitÃ© pour dÃ©tecter les grands mouvements comme marcher (0=min, 10=max)"
       }
     },
     {
@@ -424,7 +424,7 @@
       "units": "m",
       "hint": {
         "en": "ZG-204ZM: Maximum distance for detecting large movements (0-10 meters)",
-        "fr": "ZG-204ZM: Distance maximale pour détecter les grands mouvements (0-10 mètres)"
+        "fr": "ZG-204ZM: Distance maximale pour dÃ©tecter les grands mouvements (0-10 mÃ¨tres)"
       }
     },
     {
@@ -432,7 +432,7 @@
       "type": "number",
       "label": {
         "en": "Static Detection Distance",
-        "fr": "Distance Détection Statique",
+        "fr": "Distance DÃ©tection Statique",
         "nl": "Statische Detectie Afstand",
         "de": "Statische Erkennungsdistanz"
       },
@@ -443,7 +443,7 @@
       "units": "m",
       "hint": {
         "en": "ZG-204ZM: Maximum distance for detecting stationary persons (0-6 meters)",
-        "fr": "ZG-204ZM: Distance maximale pour détecter les personnes immobiles (0-6 mètres)"
+        "fr": "ZG-204ZM: Distance maximale pour dÃ©tecter les personnes immobiles (0-6 mÃ¨tres)"
       }
     },
     {
@@ -451,7 +451,7 @@
       "type": "number",
       "label": {
         "en": "Static Detection Sensitivity",
-        "fr": "Sensibilité Détection Statique",
+        "fr": "SensibilitÃ© DÃ©tection Statique",
         "nl": "Statische Detectie Gevoeligheid",
         "de": "Statische Erkennungsempfindlichkeit"
       },
@@ -461,7 +461,7 @@
       "step": 1,
       "hint": {
         "en": "ZG-204ZM: Sensitivity for detecting stationary persons (0=lowest, 10=highest)",
-        "fr": "ZG-204ZM: Sensibilité pour détecter les personnes immobiles (0=minimum, 10=maximum)"
+        "fr": "ZG-204ZM: SensibilitÃ© pour dÃ©tecter les personnes immobiles (0=minimum, 10=maximum)"
       }
     },
     {
@@ -478,7 +478,7 @@
       "units": "m",
       "hint": {
         "en": "ZG-204ZM: Maximum distance for detecting micro-movements like breathing (0-6 meters)",
-        "fr": "ZG-204ZM: Distance maximale pour détecter les micro-mouvements comme la respiration (0-6 mètres)"
+        "fr": "ZG-204ZM: Distance maximale pour dÃ©tecter les micro-mouvements comme la respiration (0-6 mÃ¨tres)"
       }
     },
     {
@@ -486,7 +486,7 @@
       "type": "number",
       "label": {
         "en": "Small Motion Sensitivity",
-        "fr": "Sensibilité Petit Mouvement"
+        "fr": "SensibilitÃ© Petit Mouvement"
       },
       "value": 5,
       "min": 0,
@@ -494,7 +494,7 @@
       "step": 1,
       "hint": {
         "en": "ZG-204ZM: Sensitivity for detecting micro-movements like breathing (0=lowest, 10=highest)",
-        "fr": "ZG-204ZM: Sensibilité pour détecter les micro-mouvements (0=minimum, 10=maximum)"
+        "fr": "ZG-204ZM: SensibilitÃ© pour dÃ©tecter les micro-mouvements (0=minimum, 10=maximum)"
       }
     },
     {
@@ -502,7 +502,7 @@
       "type": "number",
       "label": {
         "en": "Presence Keep Time",
-        "fr": "Temps de Maintien Présence",
+        "fr": "Temps de Maintien PrÃ©sence",
         "nl": "Aanwezigheid Vasthoudtijd",
         "de": "Anwesenheit Haltezeit"
       },
@@ -513,7 +513,7 @@
       "units": "s",
       "hint": {
         "en": "ZG-204ZM: How long presence stays active after last detection (seconds)",
-        "fr": "ZG-204ZM: Durée de maintien de la présence après dernière détection (secondes)"
+        "fr": "ZG-204ZM: DurÃ©e de maintien de la prÃ©sence aprÃ¨s derniÃ¨re dÃ©tection (secondes)"
       }
     },
     {
@@ -521,7 +521,7 @@
       "type": "number",
       "label": {
         "en": "Radar Sensitivity",
-        "fr": "Sensibilité Radar"
+        "fr": "SensibilitÃ© Radar"
       },
       "value": 5,
       "min": 1,
@@ -529,7 +529,7 @@
       "step": 1,
       "hint": {
         "en": "Radar detection sensitivity (1=lowest, 9=highest)",
-        "fr": "Sensibilité radar (1=min, 9=max)"
+        "fr": "SensibilitÃ© radar (1=min, 9=max)"
       }
     },
     {
@@ -537,7 +537,7 @@
       "type": "number",
       "label": {
         "en": "Minimum Detection Range",
-        "fr": "Portée Minimale"
+        "fr": "PortÃ©e Minimale"
       },
       "value": 0,
       "min": 0,
@@ -546,7 +546,7 @@
       "units": "m",
       "hint": {
         "en": "Minimum detection range (0-10m)",
-        "fr": "Portée minimale de détection (0-10m)"
+        "fr": "PortÃ©e minimale de dÃ©tection (0-10m)"
       }
     },
     {
@@ -554,7 +554,7 @@
       "type": "number",
       "label": {
         "en": "Maximum Detection Range",
-        "fr": "Portée Maximale"
+        "fr": "PortÃ©e Maximale"
       },
       "value": 6,
       "min": 0,
@@ -563,7 +563,7 @@
       "units": "m",
       "hint": {
         "en": "Maximum detection range (0-10m)",
-        "fr": "Portée maximale de détection (0-10m)"
+        "fr": "PortÃ©e maximale de dÃ©tection (0-10m)"
       }
     },
     {
@@ -571,7 +571,7 @@
       "type": "number",
       "label": {
         "en": "Detection Delay",
-        "fr": "Délai de Détection"
+        "fr": "DÃ©lai de DÃ©tection"
       },
       "value": 1,
       "min": 0,
@@ -580,7 +580,7 @@
       "units": "s",
       "hint": {
         "en": "Delay before presence is reported (0-10s)",
-        "fr": "Délai avant signalement de présence (0-10s)"
+        "fr": "DÃ©lai avant signalement de prÃ©sence (0-10s)"
       }
     },
     {
@@ -595,7 +595,7 @@
       "value": true,
       "hint": {
         "en": "Enable/disable the LED indicator on the sensor",
-        "fr": "Activer/désactiver l'indicateur LED"
+        "fr": "Activer/dÃ©sactiver l'indicateur LED"
       }
     },
     {
@@ -603,12 +603,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la Détection de Présence Radio"
+        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -616,7 +616,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "Sensibilité Présence Radio"
+        "fr": "SensibilitÃ© PrÃ©sence Radio"
       },
       "value": 15,
       "min": 5,
@@ -631,12 +631,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "Sécurité Enfant Logicielle"
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "Empêche les changements d'état manuels sur l'appareil"
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
       }
     },
     {
@@ -651,7 +651,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'éteint après X minutes (0 = désactivé)"
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -659,12 +659,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation Présence)"
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
       }
     },
     {
@@ -672,14 +672,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Émulé (Secondes)"
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
       }
     },
     {
@@ -694,7 +694,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Émulation logicielle pour boutons à action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -709,7 +709,7 @@
       "max": 4000,
       "hint": {
         "en": "Cut power if consumption exceeds this value (0 = disabled)",
-        "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+        "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -717,7 +717,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "Durée Inching (Secondes)"
+        "fr": "DurÃ©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -725,7 +725,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -733,12 +733,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "Récupération d'État Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'état précédent après une coupure de courant"
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
       }
     },
     {
@@ -751,7 +751,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
       }
     },
     {
@@ -766,7 +766,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santé descend sous cette valeur"
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     },
     {
@@ -774,12 +774,12 @@
       "type": "checkbox",
       "label": {
         "en": "Adaptive TPI Regulation",
-        "fr": "Régulation TPI Adaptative"
+        "fr": "RÃ©gulation TPI Adaptative"
       },
       "value": false,
       "hint": {
         "en": "Use advanced software-based heating cycles (more precise)",
-        "fr": "Utilise des cycles de chauffe logiciels avancés (plus précis)"
+        "fr": "Utilise des cycles de chauffe logiciels avancÃ©s (plus prÃ©cis)"
       }
     }
   ],
@@ -827,7 +827,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

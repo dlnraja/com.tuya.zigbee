@@ -32,7 +32,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('gateway_zigbee_bridge_is_connected');
+      const card = this._getFlowCard('gateway_zigbee_bridge_is_connected', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -42,7 +42,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition gateway_zigbee_bridge_is_connected: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('gateway_zigbee_bridge_is_on');
+      const card = this._getFlowCard('gateway_zigbee_bridge_is_on', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -53,7 +53,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('gateway_zigbee_bridge_permit_join');
+      const card = this._getFlowCard('gateway_zigbee_bridge_permit_join', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -65,7 +65,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action gateway_zigbee_bridge_permit_join: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('gateway_zigbee_bridge_disable_join');
+      const card = this._getFlowCard('gateway_zigbee_bridge_disable_join', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -77,7 +77,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action gateway_zigbee_bridge_disable_join: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('gateway_zigbee_bridge_turn_on');
+      const card = this._getFlowCard('gateway_zigbee_bridge_turn_on', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -88,7 +88,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action gateway_zigbee_bridge_turn_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('gateway_zigbee_bridge_turn_off');
+      const card = this._getFlowCard('gateway_zigbee_bridge_turn_off', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -99,7 +99,7 @@ class ZbbridgeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action gateway_zigbee_bridge_turn_off: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('gateway_zigbee_bridge_toggle');
+      const card = this._getFlowCard('gateway_zigbee_bridge_toggle', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

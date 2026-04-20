@@ -4,15 +4,15 @@
       "id": "weather_station_outdoor_outdoor_temperature_changed",
       "title": {
         "en": "Outdoor temperature changed",
-        "fr": "Température extérieure changée"
+        "fr": "TempÃ©rature extÃ©rieure changÃ©e"
       },
       "tokens": [
         {
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "°C",
-            "fr": "°C"
+            "en": "Â°C",
+            "fr": "Â°C"
           },
           "example": 15
         }
@@ -20,14 +20,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Outdoor temperature changed",
-        "fr": "Température extérieure changée"
+        "fr": "TempÃ©rature extÃ©rieure changÃ©e"
       }
     },
     {
       "id": "weather_station_outdoor_outdoor_humidity_changed",
       "title": {
         "en": "Outdoor humidity changed",
-        "fr": "Humidité extérieure changée"
+        "fr": "HumiditÃ© extÃ©rieure changÃ©e"
       },
       "tokens": [
         {
@@ -43,14 +43,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Outdoor humidity changed",
-        "fr": "Humidité extérieure changée"
+        "fr": "HumiditÃ© extÃ©rieure changÃ©e"
       }
     },
     {
       "id": "weather_station_outdoor_pressure_changed",
       "title": {
         "en": "Barometric pressure changed",
-        "fr": "Pression atmosphérique changée"
+        "fr": "Pression atmosphÃ©rique changÃ©e"
       },
       "tokens": [
         {
@@ -66,7 +66,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Barometric pressure changed",
-        "fr": "Pression atmosphérique changée"
+        "fr": "Pression atmosphÃ©rique changÃ©e"
       }
     },
     {
@@ -85,48 +85,48 @@
       "id": "weather_station_outdoor_temp_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       }
     },
     {
       "id": "weather_station_outdoor_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       }
     },
     {
       "id": "weather_station_outdoor_lux_changed",
       "title": {
         "en": "Luminance changed",
-        "fr": "Luminance changée",
+        "fr": "Luminance changÃ©e",
         "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
+        "de": "Helligkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Luminance changed",
-        "fr": "Luminance changée",
+        "fr": "Luminance changÃ©e",
         "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
+        "de": "Helligkeit geÃ¤ndert"
       }
     },
     {
@@ -151,11 +151,11 @@
       "id": "weather_station_outdoor_outdoor_temp_above",
       "title": {
         "en": "Outdoor temperature above",
-        "fr": "Température extérieure supérieure à"
+        "fr": "TempÃ©rature extÃ©rieure supÃ©rieure Ã"
       },
       "titleFormatted": {
-        "en": "Outdoor temperature is above [[temperature]]°C",
-        "fr": "Température extérieure supérieure à [[temperature]]°C"
+        "en": "Outdoor temperature is above [[temperature]]Â°C",
+        "fr": "TempÃ©rature extÃ©rieure supÃ©rieure Ã [[temperature]]Â°C"
       },
       "args": [
         {
@@ -170,11 +170,11 @@
       "id": "weather_station_outdoor_outdoor_temp_below",
       "title": {
         "en": "Outdoor temperature below",
-        "fr": "Température extérieure inférieure à"
+        "fr": "TempÃ©rature extÃ©rieure infÃ©rieure Ã"
       },
       "titleFormatted": {
-        "en": "Outdoor temperature is below [[temperature]]°C",
-        "fr": "Température extérieure inférieure à [[temperature]]°C"
+        "en": "Outdoor temperature is below [[temperature]]Â°C",
+        "fr": "TempÃ©rature extÃ©rieure infÃ©rieure Ã [[temperature]]Â°C"
       },
       "args": [
         {

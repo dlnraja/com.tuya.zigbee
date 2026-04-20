@@ -26,7 +26,7 @@ class DimmerDualChannelDevice extends ZigBeeDevice {
     } catch(e) {}
 
     if (isMains) {
-      this.log('Mode Secteur détecté : Nettoyage des capacités batterie');
+      this.log('Mode Secteur dÃ©tectÃ© : Nettoyage des capacitÃ©s batterie');
       if (this.hasCapability('measure_battery')) {
         await this.removeCapability('measure_battery').catch(this.error);
       }
@@ -34,7 +34,7 @@ class DimmerDualChannelDevice extends ZigBeeDevice {
         await this.setEnergy({ mains: true, batteries: null }).catch(this.error);
       }
     } else {
-      this.log('Mode Pile détecté : Activation du monitoring');
+      this.log('Mode Pile dÃ©tectÃ© : Activation du monitoring');
       if (typeof this.setEnergy === 'function') {
         await this.setEnergy({ mains: false, batteries: ["CR2450"] }).catch(this.error);
       }
@@ -88,6 +88,18 @@ class DimmerDualChannelDevice extends ZigBeeDevice {
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 

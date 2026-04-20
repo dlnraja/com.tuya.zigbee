@@ -6,20 +6,20 @@
       "title": {
         "en": "Turned on",
         "nl": "Ingeschakeld",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "de": "Eingeschaltet"
       },
       "hint": {
         "en": "Triggers when the plug is turned on",
         "nl": "Triggert wanneer de stekker wordt ingeschakeld",
-        "fr": "Se déclenche quand la prise est allumée",
-        "de": "Wird ausgelöst, wenn der Stecker eingeschaltet wird"
+        "fr": "Se dÃ©clenche quand la prise est allumÃ©e",
+        "de": "Wird ausgelÃ¶st, wenn der Stecker eingeschaltet wird"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
         "nl": "Ingeschakeld",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "de": "Eingeschaltet"
       }
     },
@@ -28,20 +28,20 @@
       "title": {
         "en": "Turned off",
         "nl": "Uitgeschakeld",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "de": "Ausgeschaltet"
       },
       "hint": {
         "en": "Triggers when the plug is turned off",
         "nl": "Triggert wanneer de stekker wordt uitgeschakeld",
-        "fr": "Se déclenche quand la prise est éteinte",
-        "de": "Wird ausgelöst, wenn der Stecker ausgeschaltet wird"
+        "fr": "Se dÃ©clenche quand la prise est Ã©teinte",
+        "de": "Wird ausgelÃ¶st, wenn der Stecker ausgeschaltet wird"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
         "nl": "Uitgeschakeld",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "de": "Ausgeschaltet"
       }
     },
@@ -50,20 +50,20 @@
       "title": {
         "en": "Power restored",
         "nl": "Stroom hersteld",
-        "fr": "Alimentation rétablie",
+        "fr": "Alimentation rÃ©tablie",
         "de": "Stromversorgung wiederhergestellt"
       },
       "hint": {
         "en": "Triggers when power is restored after an outage",
         "nl": "Triggert wanneer de stroom is hersteld na een stroomstoring",
-        "fr": "Se déclenche quand l'alimentation est rétablie après une coupure",
-        "de": "Wird ausgelöst, wenn die Stromversorgung nach einem Ausfall wiederhergestellt wird"
+        "fr": "Se dÃ©clenche quand l'alimentation est rÃ©tablie aprÃ¨s une coupure",
+        "de": "Wird ausgelÃ¶st, wenn die Stromversorgung nach einem Ausfall wiederhergestellt wird"
       },
       "args": [],
       "titleFormatted": {
         "en": "Power restored",
         "nl": "Stroom hersteld",
-        "fr": "Alimentation rétablie",
+        "fr": "Alimentation rÃ©tablie",
         "de": "Stromversorgung wiederhergestellt"
       }
     },
@@ -72,8 +72,8 @@
       "title": {
         "en": "Power consumption changed",
         "nl": "Stroomverbruik gewijzigd",
-        "fr": "Consommation changée",
-        "de": "Stromverbrauch geändert"
+        "fr": "Consommation changÃ©e",
+        "de": "Stromverbrauch geÃ¤ndert"
       },
       "tokens": [
         {
@@ -114,8 +114,8 @@
       "titleFormatted": {
         "en": "Power consumption changed",
         "nl": "Stroomverbruik gewijzigd",
-        "fr": "Consommation changée",
-        "de": "Stromverbrauch geändert"
+        "fr": "Consommation changÃ©e",
+        "de": "Stromverbrauch geÃ¤ndert"
       }
     },
     {
@@ -124,14 +124,14 @@
       "title": {
         "en": "Power exceeds threshold",
         "nl": "Vermogen overschrijdt drempel",
-        "fr": "Puissance dépasse seuil",
-        "de": "Leistung überschreitet Schwelle"
+        "fr": "Puissance dÃ©passe seuil",
+        "de": "Leistung Ã¼berschreitet Schwelle"
       },
       "titleFormatted": {
         "en": "Power exceeds [[threshold]] W",
         "nl": "Vermogen overschrijdt [[threshold]] W",
-        "fr": "Puissance dépasse [[threshold]] W",
-        "de": "Leistung überschreitet [[threshold]] W"
+        "fr": "Puissance dÃ©passe [[threshold]] W",
+        "de": "Leistung Ã¼berschreitet [[threshold]] W"
       },
       "tokens": [
         {
@@ -178,14 +178,14 @@
       "title": {
         "en": "Plug !{{is|is not}} on",
         "nl": "Stekker !{{is|is niet}} aan",
-        "fr": "Prise !{{est|n'est pas}} allumée",
+        "fr": "Prise !{{est|n'est pas}} allumÃ©e",
         "de": "Stecker !{{ist|ist nicht}} an"
       },
       "args": [],
       "titleFormatted": {
         "en": "Plug !{{is|is not}} on",
         "nl": "Stekker !{{is|is niet}} aan",
-        "fr": "Prise !{{est|n'est pas}} allumée",
+        "fr": "Prise !{{est|n'est pas}} allumÃ©e",
         "de": "Stecker !{{ist|ist nicht}} an"
       }
     }
@@ -212,13 +212,13 @@
       "title": {
         "en": "Turn off",
         "nl": "Uitschakelen",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "de": "Ausschalten"
       },
       "titleFormatted": {
         "en": "Turn off the plug",
         "nl": "Schakel de stekker uit",
-        "fr": "Éteindre la prise",
+        "fr": "Ã‰teindre la prise",
         "de": "Stecker ausschalten"
       },
       "args": []
@@ -244,13 +244,13 @@
       "title": {
         "en": "Turn on after delay",
         "nl": "Inschakelen na vertraging",
-        "fr": "Allumer après délai",
-        "de": "Nach Verzögerung einschalten"
+        "fr": "Allumer aprÃ¨s dÃ©lai",
+        "de": "Nach VerzÃ¶gerung einschalten"
       },
       "titleFormatted": {
         "en": "Turn on after [[delay]] seconds",
         "nl": "Inschakelen na [[delay]] seconden",
-        "fr": "Allumer après [[delay]] secondes",
+        "fr": "Allumer aprÃ¨s [[delay]] secondes",
         "de": "Nach [[delay]] Sekunden einschalten"
       },
       "args": [
@@ -271,13 +271,13 @@
       "title": {
         "en": "Turn off after delay",
         "nl": "Uitschakelen na vertraging",
-        "fr": "Éteindre après délai",
-        "de": "Nach Verzögerung ausschalten"
+        "fr": "Ã‰teindre aprÃ¨s dÃ©lai",
+        "de": "Nach VerzÃ¶gerung ausschalten"
       },
       "titleFormatted": {
         "en": "Turn off after [[delay]] seconds",
         "nl": "Uitschakelen na [[delay]] seconden",
-        "fr": "Éteindre après [[delay]] secondes",
+        "fr": "Ã‰teindre aprÃ¨s [[delay]] secondes",
         "de": "Nach [[delay]] Sekunden ausschalten"
       },
       "args": [
@@ -297,19 +297,19 @@
       "id": "device_plug_smart_water_hybrid_plug_smart_set_indicator",
       "title": {
         "en": "Set LED indicator mode",
-        "fr": "Définir le mode LED",
+        "fr": "DÃ©finir le mode LED",
         "nl": "LED indicator instellen",
         "de": "LED-Anzeige einstellen"
       },
       "titleFormatted": {
         "en": "Set LED indicator to [[mode]]",
-        "fr": "Définir LED sur [[mode]]",
+        "fr": "DÃ©finir LED sur [[mode]]",
         "nl": "Stel LED in op [[mode]]",
         "de": "LED auf [[mode]] setzen"
       },
       "hint": {
         "en": "Control the plug LED indicator (DP26/27)",
-        "fr": "Contrôle l'indicateur LED",
+        "fr": "ContrÃ´le l'indicateur LED",
         "nl": "Beheer de LED indicator",
         "de": "LED-Anzeige steuern"
       },
@@ -325,7 +325,7 @@
               "id": "off",
               "label": {
                 "en": "Always Off",
-                "fr": "Toujours éteint",
+                "fr": "Toujours Ã©teint",
                 "nl": "Altijd uit",
                 "de": "Immer aus"
               }
@@ -343,7 +343,7 @@
               "id": "inverted",
               "label": {
                 "en": "Inverted",
-                "fr": "Inversé",
+                "fr": "InversÃ©",
                 "nl": "Omgekeerd",
                 "de": "Invertiert"
               }
@@ -352,7 +352,7 @@
               "id": "always_on",
               "label": {
                 "en": "Always On",
-                "fr": "Toujours allumé",
+                "fr": "Toujours allumÃ©",
                 "nl": "Altijd aan",
                 "de": "Immer an"
               }
@@ -365,19 +365,19 @@
       "id": "device_plug_smart_water_hybrid_plug_smart_set_power_on",
       "title": {
         "en": "Set power-on behavior",
-        "fr": "Définir comportement démarrage",
+        "fr": "DÃ©finir comportement dÃ©marrage",
         "nl": "Opstart gedrag instellen",
         "de": "Einschaltverhalten setzen"
       },
       "titleFormatted": {
         "en": "Set power-on behavior to [[behavior]]",
-        "fr": "Définir démarrage sur [[behavior]]",
+        "fr": "DÃ©finir dÃ©marrage sur [[behavior]]",
         "nl": "Stel opstart in op [[behavior]]",
         "de": "Einschaltverhalten auf [[behavior]] setzen"
       },
       "hint": {
         "en": "What happens when power is restored",
-        "fr": "Comportement après coupure",
+        "fr": "Comportement aprÃ¨s coupure",
         "nl": "Wat gebeurt na stroomuitval",
         "de": "Nach Stromausfall"
       },
@@ -393,7 +393,7 @@
               "id": "off",
               "label": {
                 "en": "Start OFF",
-                "fr": "Démarrer éteint",
+                "fr": "DÃ©marrer Ã©teint",
                 "nl": "Start UIT",
                 "de": "Start AUS"
               }
@@ -402,7 +402,7 @@
               "id": "on",
               "label": {
                 "en": "Start ON",
-                "fr": "Démarrer allumé",
+                "fr": "DÃ©marrer allumÃ©",
                 "nl": "Start AAN",
                 "de": "Start EIN"
               }
@@ -411,7 +411,7 @@
               "id": "memory",
               "label": {
                 "en": "Remember state",
-                "fr": "Mémoriser état",
+                "fr": "MÃ©moriser Ã©tat",
                 "nl": "Onthoud staat",
                 "de": "Zustand merken"
               }

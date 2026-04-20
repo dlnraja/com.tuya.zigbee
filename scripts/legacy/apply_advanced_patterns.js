@@ -18,7 +18,7 @@ const ADVANCED_PATTERNS = {
       },
       {
         id: 'key_released',
-        title: { en: 'Key released', nl: 'Toets losgelaten', fr: 'Touche relâchée' },
+        title: { en: 'Key released', nl: 'Toets losgelaten', fr: 'Touche relÃ¢chÃ©e' },
         hint: { en: 'Triggered when a held button is released', nl: 'Geactiveerd wanneer een ingedrukte knop wordt losgelaten' },
         tokens: [
           { name: 'button', type: 'number', title: { en: 'Button number' }, example: 1 }
@@ -60,7 +60,7 @@ const ADVANCED_PATTERNS = {
     actions: [
       {
         id: 'set_forced_brightness',
-        title: { en: 'Set forced brightness', nl: 'Forceer helderheid', fr: 'Forcer luminosité' },
+        title: { en: 'Set forced brightness', nl: 'Forceer helderheid', fr: 'Forcer luminositÃ©' },
         titleFormatted: { en: 'Set [[device]] to [[brightness]]% brightness', nl: 'Zet [[device]] op [[brightness]]% helderheid' },
         hint: { en: 'Force a specific brightness level, ignoring current state', nl: 'Forceer een specifiek helderheidsniveau, negeer huidige status' },
         args: [
@@ -83,7 +83,7 @@ const ADVANCED_PATTERNS = {
     actions: [
       {
         id: 'dim_up',
-        title: { en: 'Dim up', nl: 'Omhoog dimmen', fr: 'Augmenter luminosité' },
+        title: { en: 'Dim up', nl: 'Omhoog dimmen', fr: 'Augmenter luminositÃ©' },
         titleFormatted: { en: 'Dim [[device]] up by [[step]]%', nl: 'Dim [[device]] omhoog met [[step]]%' },
         args: [
           {
@@ -99,7 +99,7 @@ const ADVANCED_PATTERNS = {
       },
       {
         id: 'dim_down',
-        title: { en: 'Dim down', nl: 'Omlaag dimmen', fr: 'Diminuer luminosité' },
+        title: { en: 'Dim down', nl: 'Omlaag dimmen', fr: 'Diminuer luminositÃ©' },
         titleFormatted: { en: 'Dim [[device]] down by [[step]]%', nl: 'Dim [[device]] omlaag met [[step]]%' },
         args: [
           {
@@ -121,7 +121,7 @@ const ADVANCED_PATTERNS = {
     triggers: [
       {
         id: 'power_exceeded',
-        title: { en: 'Power exceeded threshold', nl: 'Vermogen overschrijdt drempel', fr: 'Puissance dépassée' },
+        title: { en: 'Power exceeded threshold', nl: 'Vermogen overschrijdt drempel', fr: 'Puissance dÃ©passÃ©e' },
         hint: { en: 'Triggered when power consumption exceeds a set threshold', nl: 'Geactiveerd wanneer stroomverbruik drempel overschrijdt' },
         tokens: [
           { name: 'power', type: 'number', title: { en: 'Current power (W)' }, example: 150 },
@@ -130,7 +130,7 @@ const ADVANCED_PATTERNS = {
       },
       {
         id: 'standby_detected',
-        title: { en: 'Standby mode detected', nl: 'Standby modus gedetecteerd', fr: 'Mode veille détecté' },
+        title: { en: 'Standby mode detected', nl: 'Standby modus gedetecteerd', fr: 'Mode veille dÃ©tectÃ©' },
         hint: { en: 'Triggered when device enters low power standby mode', nl: 'Geactiveerd wanneer apparaat in standby gaat' },
         tokens: [
           { name: 'power', type: 'number', title: { en: 'Standby power (W)' }, example: 0.5 }

@@ -52,26 +52,26 @@
           "type": "dropdown",
           "label": {
             "en": "Connected Device Type",
-            "fr": "Type d'Appareil Connecté"
+            "fr": "Type d'Appareil ConnectÃ©"
           },
           "hint": {
             "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
-            "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+            "fr": "SÃ©lectionnez le type d'appareil connectÃ© Ã ce module. Radiateur inversera la logique MARCHE/ARRÃŠT."
           },
           "value": "light",
           "values": [
             {
               "id": "light",
               "label": {
-                "en": " Éclairage",
-                "fr": " Éclairage"
+                "en": " Ã‰clairage",
+                "fr": " Ã‰clairage"
               }
             },
             {
               "id": "outdoor_light",
               "label": {
-                "en": " Éclairage extérieur",
-                "fr": " Éclairage extérieur"
+                "en": " Ã‰clairage extÃ©rieur",
+                "fr": " Ã‰clairage extÃ©rieur"
               }
             },
             {
@@ -91,8 +91,8 @@
             {
               "id": "boiler",
               "label": {
-                "en": " Chaudière",
-                "fr": " Chaudière"
+                "en": " ChaudiÃ¨re",
+                "fr": " ChaudiÃ¨re"
               }
             },
             {
@@ -140,8 +140,8 @@
             {
               "id": "door_lock",
               "label": {
-                "en": " Gâche / Serrure",
-                "fr": " Gâche / Serrure"
+                "en": " GÃ¢che / Serrure",
+                "fr": " GÃ¢che / Serrure"
               }
             },
             {
@@ -161,50 +161,50 @@
             {
               "id": "pool",
               "label": {
-                "en": " Équipement piscine",
-                "fr": " Équipement piscine"
+                "en": " Ã‰quipement piscine",
+                "fr": " Ã‰quipement piscine"
               }
             },
             {
               "id": "socket",
               "label": {
-                "en": " Prise commandée",
-                "fr": " Prise commandée"
+                "en": " Prise commandÃ©e",
+                "fr": " Prise commandÃ©e"
               }
             },
             {
               "id": "appliance",
               "label": {
-                "en": " Électroménager",
-                "fr": " Électroménager"
+                "en": " Ã‰lectromÃ©nager",
+                "fr": " Ã‰lectromÃ©nager"
               }
             },
             {
               "id": "coffee_machine",
               "label": {
-                "en": " Machine à café",
-                "fr": " Machine à café"
+                "en": " Machine Ã cafÃ©",
+                "fr": " Machine Ã cafÃ©"
               }
             },
             {
               "id": "alarm",
               "label": {
-                "en": " Alarme / Sirène",
-                "fr": " Alarme / Sirène"
+                "en": " Alarme / SirÃ¨ne",
+                "fr": " Alarme / SirÃ¨ne"
               }
             },
             {
               "id": "camera",
               "label": {
-                "en": " Caméra",
-                "fr": " Caméra"
+                "en": " CamÃ©ra",
+                "fr": " CamÃ©ra"
               }
             },
             {
               "id": "tv",
               "label": {
-                "en": " TV / Écran",
-                "fr": " TV / Écran"
+                "en": " TV / Ã‰cran",
+                "fr": " TV / Ã‰cran"
               }
             },
             {
@@ -239,7 +239,7 @@
           },
           "hint": {
             "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
-            "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+            "fr": "Forcer l'inversion de la logique MARCHE/ARRÃŠT indÃ©pendamment du type (utilisateurs avancÃ©s uniquement)"
           },
           "value": false
         }
@@ -258,7 +258,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "fr": "DÃ©tection Automatique"
           }
         },
         {
@@ -285,7 +285,7 @@
       ],
       "hint": {
         "en": "Select power source manually or use auto-detection",
-        "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+        "fr": "SÃ©lectionnez la source d'alimentation manuellement ou utilisez la dÃ©tection automatique"
       }
     },
     {
@@ -301,7 +301,7 @@
           "id": "auto",
           "label": {
             "en": "Auto Detect",
-            "fr": "Détection Automatique"
+            "fr": "DÃ©tection Automatique"
           }
         },
         {
@@ -342,7 +342,7 @@
       ],
       "hint": {
         "en": "Select battery type manually or use auto-detection based on voltage",
-        "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+        "fr": "SÃ©lectionnez le type de batterie manuellement ou utilisez la dÃ©tection automatique basÃ©e sur la tension"
       }
     },
     {
@@ -358,7 +358,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger low battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+        "fr": "DÃ©clencher l'alerte batterie faible en dessous de ce pourcentage"
       }
     },
     {
@@ -374,7 +374,7 @@
       "step": 5,
       "hint": {
         "en": "Trigger critical battery warning when below this percentage",
-        "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+        "fr": "DÃ©clencher l'alerte batterie critique en dessous de ce pourcentage"
       }
     },
     {
@@ -387,7 +387,7 @@
       "value": true,
       "hint": {
         "en": "Send flow notifications for battery events",
-        "fr": "Envoyer des notifications de flow pour les événements de batterie"
+        "fr": "Envoyer des notifications de flow pour les Ã©vÃ©nements de batterie"
       }
     },
     {
@@ -403,7 +403,7 @@
       "step": 1,
       "hint": {
         "en": "How often to request battery status updates",
-        "fr": "Fréquence de demande des mises à jour d'état de batterie"
+        "fr": "FrÃ©quence de demande des mises Ã jour d'Ã©tat de batterie"
       }
     },
     {
@@ -411,7 +411,7 @@
       "type": "dropdown",
       "label": {
         "en": "Energy Optimization Mode",
-        "fr": "Mode Optimisation Énergétique"
+        "fr": "Mode Optimisation Ã‰nergÃ©tique"
       },
       "value": "balanced",
       "values": [
@@ -419,27 +419,27 @@
           "id": "performance",
           "label": {
             "en": "Performance (More responsive)",
-            "fr": "Performance (Plus réactif)"
+            "fr": "Performance (Plus rÃ©actif)"
           }
         },
         {
           "id": "balanced",
           "label": {
             "en": "Balanced",
-            "fr": "Équilibré"
+            "fr": "Ã‰quilibrÃ©"
           }
         },
         {
           "id": "power_saving",
           "label": {
             "en": "Power Saving (Longer battery)",
-            "fr": "Économie d'énergie (Batterie plus longue)"
+            "fr": "Ã‰conomie d'Ã©nergie (Batterie plus longue)"
           }
         }
       ],
       "hint": {
         "en": "Balance between responsiveness and battery life",
-        "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+        "fr": "Ã‰quilibre entre rÃ©activitÃ© et durÃ©e de vie de la batterie"
       }
     },
     {
@@ -452,7 +452,7 @@
       "value": false,
       "hint": {
         "en": "Display raw battery voltage in device settings",
-        "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+        "fr": "Afficher la tension brute de la batterie dans les paramÃ¨tres du pÃ©riphÃ©rique"
       }
     },
     {
@@ -462,7 +462,7 @@
         "en": "Power-On Behavior",
         "nl": "Gedrag bij inschakelen",
         "de": "Einschaltverhalten",
-        "fr": "Comportement à la mise sous tension"
+        "fr": "Comportement Ã la mise sous tension"
       },
       "hint": {
         "en": "What happens when power is restored after an outage (DP14)",
@@ -503,7 +503,7 @@
       "value": true,
       "hint": {
         "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
-        "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+        "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
       }
     },
     {
@@ -649,12 +649,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la Détection de Présence Radio"
+        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -662,7 +662,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "Sensibilité Présence Radio"
+        "fr": "SensibilitÃ© PrÃ©sence Radio"
       },
       "value": 15,
       "min": 5,
@@ -677,12 +677,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "Sécurité Enfant Logicielle"
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "Empêche les changements d'état manuels sur l'appareil"
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
       }
     },
     {
@@ -697,7 +697,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'éteint après X minutes (0 = désactivé)"
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -705,12 +705,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation Présence)"
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
       }
     },
     {
@@ -718,14 +718,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Émulé (Secondes)"
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
       }
     },
     {
@@ -740,7 +740,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Émulation logicielle pour boutons à action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -755,7 +755,7 @@
       "max": 4000,
       "hint": {
         "en": "Cut power if consumption exceeds this value (0 = disabled)",
-        "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+        "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -763,7 +763,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "Durée Inching (Secondes)"
+        "fr": "DurÃ©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -771,7 +771,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -779,12 +779,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "Récupération d'État Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'état précédent après une coupure de courant"
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
       }
     },
     {
@@ -797,7 +797,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
       }
     },
     {
@@ -812,7 +812,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santé descend sous cette valeur"
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     },
     {
@@ -820,12 +820,12 @@
       "type": "checkbox",
       "label": {
         "en": "Adaptive TPI Regulation",
-        "fr": "Régulation TPI Adaptative"
+        "fr": "RÃ©gulation TPI Adaptative"
       },
       "value": false,
       "hint": {
         "en": "Use advanced software-based heating cycles (more precise)",
-        "fr": "Utilise des cycles de chauffe logiciels avancés (plus précis)"
+        "fr": "Utilise des cycles de chauffe logiciels avancÃ©s (plus prÃ©cis)"
       }
     }
   ],
@@ -834,7 +834,7 @@
     "nl": "Klimaatsensor Schakelaar",
     "fr": "Interrupteur de Capteur Climatique",
     "de": "Klimasensor Schalter",
-    "es": "Interruptor de Sensor Climático"
+    "es": "Interruptor de Sensor ClimÃ¡tico"
   },
   "platforms": [
     "local"
@@ -906,7 +906,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

@@ -369,43 +369,43 @@ function generateMergeSummary(prData, cats, risk, reasons, mergeType, conflictFi
   const author = prData.author?.login || 'unknown';
   const lines = [];
 
-  lines.push(`##  PR fusionnée automatiquement`);
+  lines.push(`##  PR fusionnÃ©e automatiquement`);
   lines.push('');
   lines.push(`**${prData.title}** (par @${author})`);
   lines.push('');
 
   // What was changed (human-readable)
-  lines.push('### Ce qui a été intégré');
+  lines.push('### Ce qui a Ã©tÃ© intÃ©grÃ©');
   if (cats.fingerprints.length > 0) {
     const drivers = cats.fingerprints.map(f => f.split('/')[1] || f).join(', ');
-    lines.push(`-  **${cats.fingerprints.length} fingerprint(s)** mis à jour : ${drivers}`);
+    lines.push(`-  **${cats.fingerprints.length} fingerprint(s)** mis Ã jour : ${drivers}`);
   }
   if (cats.drivers.length > 0) {
     const driverNames = [...new Set(cats.drivers.map(f => f.split('/')[1] || f))].join(', ');
-    lines.push(`-  **${cats.drivers.length} fichier(s) driver** modifié(s) : ${driverNames}`);
+    lines.push(`-  **${cats.drivers.length} fichier(s) driver** modifiÃ©(s) : ${driverNames}`);
   }
   if (cats.scripts.length > 0) {
-    lines.push(`-  **${cats.scripts.length} script(s) automation** modifié(s)`);
+    lines.push(`-  **${cats.scripts.length} script(s) automation** modifiÃ©(s)`);
   }
   if (cats.workflows.length > 0) {
-    lines.push(`-  **${cats.workflows.length} workflow(s) CI/CD** modifié(s)`);
+    lines.push(`-  **${cats.workflows.length} workflow(s) CI/CD** modifiÃ©(s)`);
   }
   if (cats.deps.length > 0) {
-    lines.push(`-  **Dépendances** mises à jour`);
+    lines.push(`-  **DÃ©pendances** mises Ã jour`);
   }
   if (cats.docs.length > 0) {
-    lines.push(`-  **${cats.docs.length} document(s)** mis à jour`);
+    lines.push(`-  **${cats.docs.length} document(s)** mis Ã jour`);
   }
   if (cats.other.length > 0) {
-    lines.push(`-  **${cats.other.length} autre(s) fichier(s)** modifié(s)`);
+    lines.push(`-  **${cats.other.length} autre(s) fichier(s)** modifiÃ©(s)`);
   }
   lines.push('');
 
   // How it was merged
   lines.push('### Comment');
   if (mergeType === 'conflict-resolved') {
-    lines.push(`-  **Conflits détectés et résolus automatiquement** dans : \`${conflictFiles.join('`, `')}\``);
-    lines.push('- La meilleure version de chaque fichier a été sélectionnée intelligemment');
+    lines.push(`-  **Conflits dÃ©tectÃ©s et rÃ©solus automatiquement** dans : \`${conflictFiles.join('`, `')}\``);
+    lines.push('- La meilleure version de chaque fichier a Ã©tÃ© sÃ©lectionnÃ©e intelligemment');
   } else if (mergeType === 'clean') {
     lines.push('-  Merge propre, aucun conflit');
   }
@@ -414,7 +414,7 @@ function generateMergeSummary(prData, cats, risk, reasons, mergeType, conflictFi
   lines.push('');
 
   lines.push('---');
-  lines.push('_ Fusionné par Smart PR Auto-Merge  branche supprimée automatiquement_');
+  lines.push('_ FusionnÃ© par Smart PR Auto-Merge  branche supprimÃ©e automatiquement_');
 
   return lines.join('\n');
 }
@@ -512,13 +512,13 @@ async function processPR(prNumber) {
         git('reset --hard HEAD~1');
         log(`  Validation failed or risk too high (${risk}/10), labeling for review`);
         gh(`pr edit ${prNumber} -R ${REPO} --add-label "needs-review,has-conflicts"`);
-        gh(`pr comment ${prNumber} -R ${REPO} --body " **Tentative de résolution automatique des conflits**\n\nLe merge a été tenté mais la validation a échoué ou le risque est trop élevé (${risk}/10).\n\n**Fichiers en conflit :** ${conflict.files.join(', ')}\n\nMerci de vérifier manuellement avant de fusionner.\n\n_ Smart PR Auto-Merge_"`);
+        gh(`pr comment ${prNumber} -R ${REPO} --body " **Tentative de rÃ©solution automatique des conflits**\n\nLe merge a Ã©tÃ© tentÃ© mais la validation a Ã©chouÃ© ou le risque est trop Ã©levÃ© (${risk}/10).\n\n**Fichiers en conflit :** ${conflict.files.join(', ')}\n\nMerci de vÃ©rifier manuellement avant de fusionner.\n\n_ Smart PR Auto-Merge_"`);
         return false;
       }
     } else {
       log(`   Cannot auto-resolve: ${conflict.reason}`);
       gh(`pr edit ${prNumber} -R ${REPO} --add-label "needs-review,has-conflicts"`);
-      gh(`pr comment ${prNumber} -R ${REPO} --body " **Conflits de merge détectés**\n\nLes conflits n'ont pas pu être résolus automatiquement : ${conflict.reason}\n\nMerci de résoudre les conflits manuellement.\n\n_ Smart PR Auto-Merge_"`);
+      gh(`pr comment ${prNumber} -R ${REPO} --body " **Conflits de merge dÃ©tectÃ©s**\n\nLes conflits n'ont pas pu Ãªtre rÃ©solus automatiquement : ${conflict.reason}\n\nMerci de rÃ©soudre les conflits manuellement.\n\n_ Smart PR Auto-Merge_"`);
       return false;
     }
   }
@@ -545,7 +545,7 @@ async function processPR(prNumber) {
         git('merge --abort 2>/dev/null || git reset --hard HEAD');
         log('  Validation failed, requesting review');
         gh(`pr edit ${prNumber} -R ${REPO} --add-label "needs-review"`);
-        gh(`pr comment ${prNumber} -R ${REPO} --body " **Validation échouée**\n\nLe merge a été tenté mais la validation du code a échoué. Vérifiez les erreurs de syntaxe dans les drivers.\n\nChecks: ${validation.checks.join(' | ')}\n\n_ Smart PR Auto-Merge_"`);
+        gh(`pr comment ${prNumber} -R ${REPO} --body " **Validation Ã©chouÃ©e**\n\nLe merge a Ã©tÃ© tentÃ© mais la validation du code a Ã©chouÃ©. VÃ©rifiez les erreurs de syntaxe dans les drivers.\n\nChecks: ${validation.checks.join(' | ')}\n\n_ Smart PR Auto-Merge_"`);
         return false;
       }
     }
@@ -556,18 +556,18 @@ async function processPR(prNumber) {
 
     const riskEmoji = risk <= 6 ? '' : '';
     const riskAdvice = risk <= 6
-      ? 'Ce PR semble sûr à fusionner manuellement.'
-      : 'Ce PR contient des changements sensibles  vérifiez attentivement avant de fusionner.';
+      ? 'Ce PR semble sÃ»r Ã fusionner manuellement.'
+      : 'Ce PR contient des changements sensibles  vÃ©rifiez attentivement avant de fusionner.';
 
     const changeSummary = [];
     if (cats.fingerprints.length) changeSummary.push(`${cats.fingerprints.length} fingerprints`);
     if (cats.drivers.length) changeSummary.push(`${cats.drivers.length} fichiers driver`);
     if (cats.scripts.length) changeSummary.push(`${cats.scripts.length} scripts`);
     if (cats.workflows.length) changeSummary.push(`${cats.workflows.length} workflows`);
-    if (cats.deps.length) changeSummary.push('dépendances');
+    if (cats.deps.length) changeSummary.push('dÃ©pendances');
     if (cats.docs.length) changeSummary.push(`${cats.docs.length} docs`);
 
-    gh(`pr comment ${prNumber} -R ${REPO} --body "${riskEmoji} **Analyse automatique terminée**\n\n**Risque : ${risk}/10**  ${reasons.join(', ')}\n**Changements :** ${changeSummary.join(', ') || 'aucun classifié'}\n**Total :** ${filesList.length} fichier(s)\n\n${riskAdvice}\n\n_ Smart PR Auto-Merge_"`);
+    gh(`pr comment ${prNumber} -R ${REPO} --body "${riskEmoji} **Analyse automatique terminÃ©e**\n\n**Risque : ${risk}/10**  ${reasons.join(', ')}\n**Changements :** ${changeSummary.join(', ') || 'aucun classifiÃ©'}\n**Total :** ${filesList.length} fichier(s)\n\n${riskAdvice}\n\n_ Smart PR Auto-Merge_"`);
     return false;
   }
 

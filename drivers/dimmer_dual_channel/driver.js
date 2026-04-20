@@ -29,7 +29,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('dimmer_dual_channel_is_on');
+      const card = this._getFlowCard('dimmer_dual_channel_is_on', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -39,7 +39,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition dimmer_dual_channel_is_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('dimmer_dual_channel_dim_above');
+      const card = this._getFlowCard('dimmer_dual_channel_dim_above', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -51,7 +51,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('dimmer_dual_channel_turn_on');
+      const card = this._getFlowCard('dimmer_dual_channel_turn_on', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -62,7 +62,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_dual_channel_turn_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_dual_channel_turn_off');
+      const card = this._getFlowCard('dimmer_dual_channel_turn_off', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -73,7 +73,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_dual_channel_turn_off: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_dual_channel_toggle');
+      const card = this._getFlowCard('dimmer_dual_channel_toggle', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -85,7 +85,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_dual_channel_toggle: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_dual_channel_set_dim');
+      const card = this._getFlowCard('dimmer_dual_channel_set_dim', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -96,7 +96,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_dual_channel_set_dim: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_dual_channel_dim_up');
+      const card = this._getFlowCard('dimmer_dual_channel_dim_up', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -108,7 +108,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_dual_channel_dim_up: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_dual_channel_dim_down');
+      const card = this._getFlowCard('dimmer_dual_channel_dim_down', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -120,7 +120,7 @@ class DimmerDualChannelDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_dual_channel_dim_down: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('dimmer_dual_channel_set_brightness');
+      const card = this._getFlowCard('dimmer_dual_channel_set_brightness', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

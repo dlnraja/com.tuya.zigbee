@@ -46,7 +46,7 @@
         "capability": "measure_temperature",
         "readonly": true,
         "scale": 0.1,
-        "unit": "°C"
+        "unit": "Â°C"
       },
       "2": {
         "name": "humidity",
@@ -249,7 +249,7 @@
         "capability": "measure_temperature",
         "readonly": true,
         "scale": 0.1,
-        "unit": "°C"
+        "unit": "Â°C"
       },
       "24": {
         "name": "target_temp",
@@ -257,7 +257,7 @@
         "capability": "target_temperature",
         "readonly": false,
         "scale": 0.1,
-        "unit": "°C"
+        "unit": "Â°C"
       },
       "101": {
         "name": "eco_mode",
@@ -429,7 +429,7 @@
         "capability": "measure_temperature.soil",
         "readonly": true,
         "scale": 0.1,
-        "unit": "°C"
+        "unit": "Â°C"
       },
       "4": {
         "name": "battery",
@@ -444,7 +444,7 @@
         "capability": "measure_ec",
         "readonly": true,
         "scale": 1,
-        "unit": "µS/cm"
+        "unit": "ÂµS/cm"
       }
     }
   }

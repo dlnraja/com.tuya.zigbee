@@ -14,7 +14,7 @@ const DIRECTORIES_TO_SCAN = [
 ];
 
 // Regex for invisible characters: Zero Width Space (\u200B), BOM (\uFEFF), LTR Override (\u202D), etc.
-const INVISIBLE_CHARS_REGEX = /[\u200B\uFEFF\u202D\u200E\u200F\u202A-\u202E]/g;
+const INVISIBLE_CHARS_REGEX = /[\u200B\uFEFF\u202D\u200E\u200F\u202A-\u202E\u00A0]/g;
 
 function sanitizeFile(filePath) {
   try {
@@ -30,23 +30,24 @@ function sanitizeFile(filePath) {
   }
 }
 
+const EXCLUDE_DIRS = ['node_modules', '.git', '.homeybuild', '.gemini'];
+
 function scanDirectory(dir) {
   if (!fs.existsSync(dir)) return;
   const files = fs.readdirSync(dir);
   for (const file of files) {
+    if (EXCLUDE_DIRS.includes(file)) continue;
     const fullPath = path.join(dir, file);
     const stat = fs.statSync(fullPath);
-    if (stat.isDirectory() && dir.includes('drivers')) {
-      // It's a driver dir
+    if (stat.isDirectory()) {
       scanDirectory(fullPath);
-    } else if (file.endsWith('.json')) { // Focus on JSON manifests
+    } else if (file.endsWith('.json') || file.endsWith('.js') || file.endsWith('.yml')) {
       sanitizeFile(fullPath);
     }
   }
 }
 
-console.log('[SANITIZER] Running invisible character wipe...');
-for (const dir of DIRECTORIES_TO_SCAN) {
-  scanDirectory(dir);
-}
+const ROOT = path.join(__dirname, '..');
+console.log('[SANITIZER] Running universal invisible character wipe at ' + ROOT);
+scanDirectory(ROOT);
 console.log('[SANITIZER] Complete.');

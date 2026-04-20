@@ -31,7 +31,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           const id = type === 'scene' ? `${P}_${gang}_scene` : 
                     type.startsWith('physical') ? `${P}_physical_${gang}_${type.split('_')[1]}` :
                     `${P}_${gang}_${type}`;
-          this.homey.flow.getTriggerCard(id);
+          this._getFlowCard(id, 'trigger');
         } catch (e) {}
       });
     });
@@ -40,7 +40,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     gangs.forEach((gang, idx) => {
       try {
         const id = `${P}_${gang}_is_on`;
-        const card = this.homey.flow.getConditionCard(id);
+        const card = this._getFlowCard(id, 'condition');
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) return false;
@@ -58,7 +58,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         ['turn_on', 'turn_off', 'toggle'].forEach(action => {
           try {
             const id = `${P}_${action}_${gang}`;
-            const card = this.homey.flow.getActionCard(id);
+            const card = this._getFlowCard(id, 'action');
             if (card) {
               card.registerRunListener(async (args) => {
                 if (!args.device) return false;
@@ -75,7 +75,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     // All-gangs actions
     ['turn_on_all', 'turn_off_all'].forEach(action => {
       try {
-        const card = this.homey.flow.getActionCard(`${P}_${action}`);
+        const card = this._getFlowCard(`${P}_${action}`, 'action');
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) return false;
@@ -94,7 +94,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     // SETTINGS ACTIONS
     [{ id: 'set_backlight', fn: 'setBacklightMode' }, { id: 'set_scene_mode', fn: 'setSceneMode' }].forEach(act => {
       try {
-        const card = this.homey.flow.getActionCard(`${P}_${act.id}`);
+        const card = this._getFlowCard(`${P}_${act.id}`, 'action');
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) return false;

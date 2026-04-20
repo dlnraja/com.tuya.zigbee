@@ -11,7 +11,7 @@
       "titleFormatted": {
         "en": "IR learning started with [[protocol]] protocol at [[frequency]]Hz for [[duration]]s",
         "nl": "IR leren gestart met [[protocol]] protocol op [[frequency]]Hz voor [[duration]]s",
-        "de": "IR-Lernen gestartet mit [[protocol]] Protokoll bei [[frequency]]Hz für [[duration]]s",
+        "de": "IR-Lernen gestartet mit [[protocol]] Protokoll bei [[frequency]]Hz fÃ¼r [[duration]]s",
         "fr": "IR learning started with [[protocol]] protocol at [[frequency]]Hz for [[duration]]s"
       },
       "tokens": [
@@ -50,13 +50,13 @@
       "title": {
         "en": "IR Learning State Changed",
         "nl": "IR Leer Status Gewijzigd",
-        "de": "IR-Lern Status Geändert",
+        "de": "IR-Lern Status GeÃ¤ndert",
         "fr": "IR Learning State Changed"
       },
       "titleFormatted": {
         "en": "IR learning state changed to [[state]]",
         "nl": "IR leer status gewijzigd naar [[state]]",
-        "de": "IR-Lern Status geändert zu [[state]]",
+        "de": "IR-Lern Status geÃ¤ndert zu [[state]]",
         "fr": "IR learning state changed to [[state]]"
       },
       "tokens": [
@@ -147,7 +147,7 @@
           "title": {
             "en": "Carrier Frequency",
             "nl": "Draaggolf Frequentie",
-            "de": "Trägerfrequenz"
+            "de": "TrÃ¤gerfrequenz"
           }
         },
         {
@@ -156,7 +156,7 @@
           "title": {
             "en": "Code Length",
             "nl": "Code Lengte",
-            "de": "Code Länge"
+            "de": "Code LÃ¤nge"
           }
         }
       ],
@@ -166,14 +166,14 @@
       "id": "ir_blaster_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -182,14 +182,14 @@
       "id": "ir_blaster_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -332,14 +332,14 @@
       "id": "ir_blaster_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -357,7 +357,7 @@
       "titleFormatted": {
         "en": "Learn IR code [[code_name]] with [[protocol]] protocol at [[frequency]]Hz for [[duration]]s (category: [[category]])",
         "nl": "Leer IR code [[code_name]] met [[protocol]] protocol bij [[frequency]]Hz voor [[duration]]s (categorie: [[category]])",
-        "de": "IR-Code [[code_name]] mit [[protocol]] Protokoll bei [[frequency]]Hz für [[duration]]s lernen (Kategorie: [[category]])",
+        "de": "IR-Code [[code_name]] mit [[protocol]] Protokoll bei [[frequency]]Hz fÃ¼r [[duration]]s lernen (Kategorie: [[category]])",
         "fr": "Learn IR code [[code_name]] with [[protocol]] protocol at [[frequency]]Hz for [[duration]]s (category: [[category]])"
       },
       "args": [
@@ -465,7 +465,7 @@
           "title": {
             "en": "Carrier Frequency (Hz)",
             "nl": "Draaggolf Frequentie (Hz)",
-            "de": "Trägerfrequenz (Hz)"
+            "de": "TrÃ¤gerfrequenz (Hz)"
           },
           "min": 30000,
           "max": 45000,
@@ -606,7 +606,7 @@
           "placeholder": {
             "en": "Leave empty for auto",
             "nl": "Leeg laten voor auto",
-            "de": "Leer lassen für Auto"
+            "de": "Leer lassen fÃ¼r Auto"
           }
         },
         {
@@ -690,10 +690,10 @@
         "nl": "Verstuur airco commando met modus, temperatuur en ventilator snelheid"
       },
       "titleFormatted": {
-        "en": "Set AC to [[mode]] at [[temperature]]°C with [[fan_speed]] fan",
-        "nl": "Zet airco op [[mode]] bij [[temperature]]°C met [[fan_speed]] ventilator",
-        "de": "AC auf [[mode]] bei [[temperature]]°C mit [[fan_speed]] Lüfter setzen",
-        "fr": "Set AC to [[mode]] at [[temperature]]°C with [[fan_speed]] fan"
+        "en": "Set AC to [[mode]] at [[temperature]]Â°C with [[fan_speed]] fan",
+        "nl": "Zet airco op [[mode]] bij [[temperature]]Â°C met [[fan_speed]] ventilator",
+        "de": "AC auf [[mode]] bei [[temperature]]Â°C mit [[fan_speed]] LÃ¼fter setzen",
+        "fr": "Set AC to [[mode]] at [[temperature]]Â°C with [[fan_speed]] fan"
       },
       "args": [
         {
@@ -745,7 +745,7 @@
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (°C)"
+            "en": "Temperature (Â°C)"
           },
           "min": 16,
           "max": 30,
@@ -852,14 +852,14 @@
       "id": "ir_blaster_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
@@ -919,13 +919,13 @@
         "en": "Delete Stored IR Code",
         "fr": "Supprimer Code IR",
         "nl": "Verwijder IR Code",
-        "de": "IR-Code Löschen"
+        "de": "IR-Code LÃ¶schen"
       },
       "titleFormatted": {
         "en": "Delete stored IR code [[code_name]]",
         "fr": "Supprimer le code IR [[code_name]]",
         "nl": "Verwijder opgeslagen IR code [[code_name]]",
-        "de": "Gespeicherten IR-Code [[code_name]] löschen"
+        "de": "Gespeicherten IR-Code [[code_name]] lÃ¶schen"
       },
       "args": [
         {
@@ -955,10 +955,10 @@
         "en": "Send a raw IR code in Pronto Hex or Base64 format directly."
       },
       "titleFormatted": {
-        "en": "Send raw IR code [[raw_code]] at [[frequency]]Hz ×[[repeat]]",
-        "fr": "Envoyer code IR brut [[raw_code]] à [[frequency]]Hz ×[[repeat]]",
-        "nl": "Verstuur raw IR code [[raw_code]] bij [[frequency]]Hz ×[[repeat]]",
-        "de": "Raw IR-Code [[raw_code]] bei [[frequency]]Hz ×[[repeat]] senden"
+        "en": "Send raw IR code [[raw_code]] at [[frequency]]Hz Ã—[[repeat]]",
+        "fr": "Envoyer code IR brut [[raw_code]] Ã [[frequency]]Hz Ã—[[repeat]]",
+        "nl": "Verstuur raw IR code [[raw_code]] bij [[frequency]]Hz Ã—[[repeat]]",
+        "de": "Raw IR-Code [[raw_code]] bei [[frequency]]Hz Ã—[[repeat]] senden"
       },
       "args": [
         {
@@ -979,7 +979,7 @@
           "type": "number",
           "title": {
             "en": "Frequency (Hz)",
-            "fr": "Fréquence (Hz)",
+            "fr": "FrÃ©quence (Hz)",
             "nl": "Frequentie (Hz)",
             "de": "Frequenz (Hz)"
           },
@@ -995,7 +995,7 @@
           "type": "number",
           "title": {
             "en": "Repeat",
-            "fr": "Répétition",
+            "fr": "RÃ©pÃ©tition",
             "nl": "Herhaling",
             "de": "Wiederholung"
           },

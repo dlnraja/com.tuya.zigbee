@@ -8,16 +8,16 @@
       "title": "Larm"
     },
     "alarm_motion": {
-      "title": "Rörelse"
+      "title": "RÃ¶relse"
     },
     "alarm_contact": {
       "title": "Kontakt"
     },
     "alarm_water": {
-      "title": "Vattenläcka"
+      "title": "VattenlÃ¤cka"
     },
     "alarm_smoke": {
-      "title": "Rök"
+      "title": "RÃ¶k"
     },
     "alarm_co": {
       "title": "CO"
@@ -32,7 +32,7 @@
       "title": "Vibration"
     },
     "onoff": {
-      "title": "Ström"
+      "title": "StrÃ¶m"
     },
     "dim": {
       "title": "Ljusstyrka",
@@ -42,17 +42,17 @@
       "title": "Nyans"
     },
     "light_saturation": {
-      "title": "Mättnad"
+      "title": "MÃ¤ttnad"
     },
     "light_temperature": {
-      "title": "Färgtemperatur"
+      "title": "FÃ¤rgtemperatur"
     },
     "light_mode": {
-      "title": "Ljusläge"
+      "title": "LjuslÃ¤ge"
     },
     "measure_temperature": {
       "title": "Temperatur",
-      "units": "°C"
+      "units": "Â°C"
     },
     "measure_humidity": {
       "title": "Luftfuktighet",
@@ -68,7 +68,7 @@
     },
     "measure_pm25": {
       "title": "PM2.5",
-      "units": "µg/m³"
+      "units": "Âµg/mÂ³"
     },
     "measure_voc": {
       "title": "VOC",
@@ -83,11 +83,11 @@
       "units": "W"
     },
     "measure_voltage": {
-      "title": "Spänning",
+      "title": "SpÃ¤nning",
       "units": "V"
     },
     "measure_current": {
-      "title": "Ström",
+      "title": "StrÃ¶m",
       "units": "A"
     },
     "meter_power": {
@@ -95,8 +95,8 @@
       "units": "kWh"
     },
     "target_temperature": {
-      "title": "Måltemperatur",
-      "units": "°C"
+      "title": "MÃ¥ltemperatur",
+      "units": "Â°C"
     },
     "windowcoverings_state": {
       "title": "Persienner",
@@ -116,44 +116,44 @@
   },
   "settings": {
     "power_source": {
-      "label": "Strömkälla",
-      "hint": "Välj strömkälla manuellt eller använd automatisk detektering"
+      "label": "StrÃ¶mkÃ¤lla",
+      "hint": "VÃ¤lj strÃ¶mkÃ¤lla manuellt eller anvÃ¤nd automatisk detektering"
     },
     "battery_type": {
       "label": "Batterityp",
-      "hint": "Välj batterityp manuellt eller använd automatisk detektering baserad på spänning"
+      "hint": "VÃ¤lj batterityp manuellt eller anvÃ¤nd automatisk detektering baserad pÃ¥ spÃ¤nning"
     },
     "battery_low_threshold": {
-      "label": "Tröskelvärde lågt batteri (%)",
-      "hint": "Utlös varning för lågt batteri under denna procent"
+      "label": "TrÃ¶skelvÃ¤rde lÃ¥gt batteri (%)",
+      "hint": "UtlÃ¶s varning fÃ¶r lÃ¥gt batteri under denna procent"
     },
     "battery_critical_threshold": {
-      "label": "Tröskelvärde kritiskt batteri (%)",
-      "hint": "Utlös varning för kritiskt batteri under denna procent"
+      "label": "TrÃ¶skelvÃ¤rde kritiskt batteri (%)",
+      "hint": "UtlÃ¶s varning fÃ¶r kritiskt batteri under denna procent"
     },
     "enable_battery_notifications": {
       "label": "Aktivera batterimeddelanden",
-      "hint": "Skicka flow-meddelanden för batterihändelser"
+      "hint": "Skicka flow-meddelanden fÃ¶r batterihÃ¤ndelser"
     },
     "battery_report_interval": {
       "label": "Batteriraportintervall (timmar)",
-      "hint": "Hur ofta batteristatusuppdateringar begärs"
+      "hint": "Hur ofta batteristatusuppdateringar begÃ¤rs"
     },
     "optimization_mode": {
-      "label": "Energioptimeringsläge",
+      "label": "EnergioptimeringslÃ¤ge",
       "hint": "Balans mellan respons och batteritid"
     },
     "show_voltage": {
-      "label": "Visa batterispänning",
-      "hint": "Visa rå batterispänning i enhetsinställningar"
+      "label": "Visa batterispÃ¤nning",
+      "hint": "Visa rÃ¥ batterispÃ¤nning i enhetsinstÃ¤llningar"
     },
     "enable_power_estimation": {
       "label": "Aktivera effektuppskattning",
-      "hint": "Uppskatta förbrukning när verklig mätning inte är tillgänglig (endast AC/DC-enheter)"
+      "hint": "Uppskatta fÃ¶rbrukning nÃ¤r verklig mÃ¤tning inte Ã¤r tillgÃ¤nglig (endast AC/DC-enheter)"
     }
   },
   "tabs": {
-    "general": "Allmänt",
+    "general": "AllmÃ¤nt",
     "advanced": "Avancerat",
     "about": "Om"
   },

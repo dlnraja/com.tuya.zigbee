@@ -52,7 +52,7 @@
     },
     "measure_temperature": {
       "title": "Temperatura",
-      "units": "°C"
+      "units": "Â°C"
     },
     "measure_humidity": {
       "title": "Wilgotno",
@@ -68,7 +68,7 @@
     },
     "measure_pm25": {
       "title": "PM2.5",
-      "units": "µg/m³"
+      "units": "Âµg/mÂ³"
     },
     "measure_voc": {
       "title": "LZO",
@@ -96,14 +96,14 @@
     },
     "target_temperature": {
       "title": "Temperatura docelowa",
-      "units": "°C"
+      "units": "Â°C"
     },
     "windowcoverings_state": {
       "title": "Rolety",
       "values": {
-        "up": "W gór",
+        "up": "W gÃ³r",
         "idle": "Stop",
-        "down": "W dó"
+        "down": "W dÃ³"
       }
     },
     "windowcoverings_set": {
@@ -116,20 +116,20 @@
   },
   "settings": {
     "power_source": {
-      "label": "ródo zasilania",
-      "hint": "Wybierz ródo zasilania rcznie lub uyj automatycznego wykrywania"
+      "label": "rÃ³do zasilania",
+      "hint": "Wybierz rÃ³do zasilania rcznie lub uyj automatycznego wykrywania"
     },
     "battery_type": {
       "label": "Typ baterii",
       "hint": "Wybierz typ baterii rcznie lub uyj automatycznego wykrywania na podstawie napicia"
     },
     "battery_low_threshold": {
-      "label": "Próg niskiego poziomu baterii (%)",
-      "hint": "Wyzwól ostrzeenie o niskim poziomie baterii poniej tego procentu"
+      "label": "PrÃ³g niskiego poziomu baterii (%)",
+      "hint": "WyzwÃ³l ostrzeenie o niskim poziomie baterii poniej tego procentu"
     },
     "battery_critical_threshold": {
-      "label": "Próg krytycznego poziomu baterii (%)",
-      "hint": "Wyzwól ostrzeenie o krytycznym poziomie baterii poniej tego procentu"
+      "label": "PrÃ³g krytycznego poziomu baterii (%)",
+      "hint": "WyzwÃ³l ostrzeenie o krytycznym poziomie baterii poniej tego procentu"
     },
     "enable_battery_notifications": {
       "label": "Wcz powiadomienia o baterii",
@@ -141,7 +141,7 @@
     },
     "optimization_mode": {
       "label": "Tryb optymalizacji energii",
-      "hint": "Równowaga midzy responsywnoci a czasem pracy baterii"
+      "hint": "RÃ³wnowaga midzy responsywnoci a czasem pracy baterii"
     },
     "show_voltage": {
       "label": "Poka napicie baterii",
@@ -153,7 +153,7 @@
     }
   },
   "tabs": {
-    "general": "Ogólne",
+    "general": "OgÃ³lne",
     "advanced": "Zaawansowane",
     "about": "O aplikacji"
   },

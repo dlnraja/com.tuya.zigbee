@@ -51,7 +51,7 @@ const BATTERY_THROTTLE_MS = 300000; // 5 minutes minimum between updates
  *    v5.5.190: INTELLIGENT PROTOCOL + COMPLETE DP RESEARCH                   
  *   - Auto-detect protocol: TUYA_DP_LCD, TUYA_DP, ZCL_STANDARD, HYBRID         
  *   - Full DP mappings from Z2M #26078, #19731, Blakadder, ZHA                 
- *   - Battery: DP3 (enum low / safeDivide(med, high)) OR DP4 (×2 multiplier) OR ZCL          
+ *   - Battery: DP3 (enum low / safeDivide(med, high)) OR DP4 (Ã—2 multiplier) OR ZCL          
  *   - Time sync: Tuya epoch (2000) for LCD, skipped for ZCL devices            
  *   - Calibration offsets for safeDivide(temp, humidity)                                    
  *   - Wake detection + aggressive DP requests                                  
@@ -70,10 +70,10 @@ const BATTERY_THROTTLE_MS = 300000; // 5 minutes minimum between updates
  *         
  *                                                                               
  *   DP MAPPINGS (verified from Z2M TH05Z, WSD500A, RSH-TH01):                   
- *   - DP1: Temperature (÷10 = °C)                                               
+ *   - DP1: Temperature (Ã·10 = Â°C)                                               
  *   - DP2: Humidity (direct %)                                                  
- *   - DP4: Battery (×2, capped at 100%)                                         
- *   - DP6: Temperature alt (some _TZE204 models, ÷10)                           
+ *   - DP4: Battery (Ã—2, capped at 100%)                                         
+ *   - DP6: Temperature alt (some _TZE204 models, Ã·10)                           
  *   - DP7: Humidity alt (some _TZE204 models)                                   
  *   - DP9: Temperature unit (0=C, 1=F)                                          
  *   - DP10-13: Alarm thresholds (safeDivide(max, min) safeDivide(temp, humidity))                         
@@ -111,7 +111,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
   /**
    * Get temperature offset from settings (for calibration)
-   * @returns {number} Temperature offset in °C
+   * @returns {number} Temperature offset in Â°C
    */
   get temperatureOffset() {
     const settings = this.getSettings() || {};
@@ -138,7 +138,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     const offset = this.temperatureOffset;
     const calibrated = temp + offset;
     if (offset !== 0) {
-      this.log(`[CALIBRATION] Temp: ${temp}°C + offset ${offset}°C = ${calibrated}°C`);
+      this.log(`[CALIBRATION] Temp: ${temp}Â°C + offset ${offset}Â°C = ${calibrated}Â°C`);
     }
     return calibrated;
   }
@@ -180,7 +180,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
    * BATTERY HANDLING DIFFERENCES:
    * - _TZE284_*: DP4 with x2 multiplier (device reports 0-50  0-100%)
    * - _TZE200_*: DP3 (battery_state: low / safeDivide(medium, high)) OR DP4 (raw %)
-   * - _TZ3000_*: ZCL cluster 0x0001 (batteryPercentageRemaining ÷ 2)
+   * - _TZ3000_*: ZCL cluster 0x0001 (batteryPercentageRemaining Ã· 2)
    * - TS0201: ZCL cluster 0x0001 standard
    */
   get dpMappings() {
@@ -201,14 +201,14 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
       // 
       // HUMIDITY DPs (multiple variants)
-      // v5.5.792: FIX LukasT #1163 - _TZE284_1wnh8bqp needs humidity ÷10
-      // Some devices report humidity as 0-1000 (÷10), others as 0-100 (direct)
+      // v5.5.792: FIX LukasT #1163 - _TZE284_1wnh8bqp needs humidity Ã·10
+      // Some devices report humidity as 0-1000 (Ã·10), others as 0-100 (direct)
       // 
       2: {
         capability: 'measure_humidity',
         transform: (v) => {
           // v5.5.792: Auto-detect divisor based on value range
-          // If value > 100, it's likely ×10 scaled (e.g., 650  65.0%)
+          // If value > 100, it's likely Ã—10 scaled (e.g., 650  65.0%)
           if (v > 100) return Math.round(safeParse(v, 10));
           return v;
         }
@@ -243,15 +243,15 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       // Source: Z2M #26078, #19731, Blakadder
       // 
       9: { capability: null, setting: 'temperature_unit' },     // 0=Celsius, 1=Fahrenheit
-      10: { capability: null, setting: 'max_temp_alarm', divisor: 10 },  // Max temp °C/10
-      11: { capability: null, setting: 'min_temp_alarm', divisor: 10 },  // Min temp °C/10
+      10: { capability: null, setting: 'max_temp_alarm', divisor: 10 },  // Max temp Â°C/10
+      11: { capability: null, setting: 'min_temp_alarm', divisor: 10 },  // Min temp Â°C/10
       12: { capability: 'measure_luminance', divisor: 1 },       // v5.5.783: DP12=Lux for multi-sensors
       13: { capability: null, setting: 'min_humidity_alarm' },  // Min humidity %
       14: { capability: null, setting: 'temp_alarm_status' },   // 0=cancel, 1=lower, 2=upper
       15: { capability: null, setting: 'humidity_alarm_status' }, // 0=cancel, 1=lower, 2=upper
       17: { capability: null, setting: 'temp_report_interval' },  // 1-120 minutes
       // v5.12.11: DP18 NOT mapped here - already mapped as measure_temperature above (line 186)
-      19: { capability: null, setting: 'temp_sensitivity', divisor: 10 },  // 0.3-1.0°C
+      19: { capability: null, setting: 'temp_sensitivity', divisor: 10 },  // 0.3-1.0Â°C
       20: { capability: null, setting: 'humidity_sensitivity' }, // 3-10%
 
       // 
@@ -356,7 +356,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     return {
       // 
       // TEMPERATURE - ZCL standard cluster (0x0402)
-      // Value is in 0.01°C units, divide by 100
+      // Value is in 0.01Â°C units, divide by 100
       // 
       temperatureMeasurement: {
         attributeReport: (data) => {
@@ -365,7 +365,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
             
             // v5.5.793: Validate range before processing
             if (rawTemp < VALIDATION.TEMP_MIN || rawTemp > VALIDATION.TEMP_MAX) {
-              this.log(`[ZCL]  Temperature out of range: ${rawTemp}°C`);
+              this.log(`[ZCL]  Temperature out of range: ${rawTemp}Â°C`);
               return;
             }
             
@@ -493,7 +493,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
     // v5.5.317: Initialize intelligent inference engines
     this._climateInference = new ClimateInference(this, {
-      maxTempJump: 5,       // Max 5°C change per reading
+      maxTempJump: 5,       // Max 5Â°C change per reading
       maxHumidityJump: 15,  // Max 15% humidity change per reading
     });
     this._batteryInference = new BatteryInference(this);
@@ -578,7 +578,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     // Using ZCL Time Cluster 0x000A with Zigbee Epoch 2000 (NOT EF00!)
     // 
 
-    // DIAGNOSTIC FORCÉ pour _TZE284_vvmbj46n
+    // DIAGNOSTIC FORCÃ‰ pour _TZE284_vvmbj46n
     const diagnosticMfr = this._manufacturerName || '';
     const diagnosticModelId = this._modelId || '';
     this.log(`[CLIMATE]  DIAGNOSTIC - Device: ${diagnosticMfr} / ${diagnosticModelId}`);
@@ -586,7 +586,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     this.log(`[CLIMATE]  DIAGNOSTIC - isLCDClimateDevice: ${typeof this.isLCDClimateDevice === 'function' ? this.isLCDClimateDevice() : 'N/A'}`);
     this.log(`[CLIMATE]  DIAGNOSTIC - needsTuyaEpoch: ${this.needsTuyaEpoch || 'N/A'}`);
 
-    // Détection RTC via outCluster 0x000A (méthode fiable)
+    // DÃ©tection RTC via outCluster 0x000A (mÃ©thode fiable)
     const rtcDetection = TuyaRtcDetector.hasRtc(this, { useHeuristics: true });
     this.log(`[CLIMATE]  RTC Detection: ${JSON.stringify(rtcDetection)}`);
 
@@ -618,7 +618,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       },safeMultiply(24, 60) * 60 * 1000);
 
       // 
-      // DEBUG MODE: Test toutes les méthodes ZCL (si activé)
+      // DEBUG MODE: Test toutes les mÃ©thodes ZCL (si activÃ©)
       // 
       if (this.getSettings().zigbee_time_debug === true) {
         this.log('[CLIMATE]  ZCL DEBUG MODE: Testing all Time cluster methods...');
@@ -676,7 +676,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     // 
     await this._setupExplicitZCLClusters(zclNode);
 
-    // DIAGNOSTIC FORCÉ - Vérifier état clusters et données
+    // DIAGNOSTIC FORCÃ‰ - VÃ©rifier Ã©tat clusters et donnÃ©es
     this.log(`[CLIMATE]  DIAGNOSTIC - Available clusters: ${JSON.stringify(Object.keys(clusters || {}))}`);
     this.log(`[CLIMATE]  DIAGNOSTIC - Available capabilities: ${JSON.stringify(this.getCapabilities())}`);
     this.log(`[CLIMATE]  DIAGNOSTIC - Current values: temp=${this.getCapabilityValue('measure_temperature')}, hum=${this.getCapabilityValue('measure_humidity')}, bat=${this.getCapabilityValue('measure_battery')}`);
@@ -744,8 +744,8 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
   /**
    * After 5-minute observation window, evaluate if probe is a duplicate.
-   * Tolerance: if ALL samples within 0.5°C  duplicate, remove probe.
-   * If ANY sample differs by > 0.5°C  legitimate dual sensor  keep.
+   * Tolerance: if ALL samples within 0.5Â°C  duplicate, remove probe.
+   * If ANY sample differs by > 0.5Â°C  legitimate dual sensor  keep.
    */
   async _evaluateProbeDedup() {
     const samples = this._probeObservationSamples || [];
@@ -763,7 +763,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       this.log('[PROBE-DEDUP]  Probe never reported data  removing as unused');
       await this.removeCapability('measure_temperature.probe').catch(() => {});
     } else if (allIdentical) {
-      this.log(`[PROBE-DEDUP]  All ${samples.length} samples identical (±0.5°C)  removing duplicate probe`);
+      this.log(`[PROBE-DEDUP]  All ${samples.length} samples identical (Â±0.5Â°C)  removing duplicate probe`);
       await this.removeCapability('measure_temperature.probe').catch(() => {});
     } else {
       this.log(`[PROBE-DEDUP]  Temperatures differ across ${samples.length} samples  keeping probe (legitimate dual sensor)`);
@@ -1124,7 +1124,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
             measuredValue: {
               minInterval: 60,      // 1 min
               maxInterval: 3600,    // 1 hour
-              minChange: 10         // 0.1°C
+              minChange: 10         // 0.1Â°C
             }
           }).catch(() => { });
           this.log('[ZCL-SETUP]  Temperature reporting configured');
@@ -1136,7 +1136,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
             if (temp >= VALIDATION.TEMP_MIN && temp <= VALIDATION.TEMP_MAX) {
               // v5.5.793: Apply calibration offset
               const calibratedTemp = this._applyTempOffset(temp);
-              this.log(`[ZCL]  Temperature: ${calibratedTemp}°C`);
+              this.log(`[ZCL]  Temperature: ${calibratedTemp}Â°C`);
               this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp)).catch(() => { });
             }
           });
@@ -1231,7 +1231,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
         if (attrs.measuredValue !== undefined) {
           const temp = safeParse(attrs.measuredValue, 100);
           if (temp >= -40 && temp <= 80) {
-            this.log(`[ZCL-READ]  Temperature: ${temp}°C`);
+            this.log(`[ZCL-READ]  Temperature: ${temp}Â°C`);
             await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
@@ -1482,11 +1482,11 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     }
 
     // v5.8.98: Soil sensor profile override (ZHA #4282, Z2M #27501)
-    // DP5=temperature(÷10), DP3=soil_moisture(%), DP15=battery(%)
+    // DP5=temperature(Ã·10), DP3=soil_moisture(%), DP15=battery(%)
     if (this._isSoilSensor()) {
       if (dp === 5) {
         const temp = this._applyTempOffset(safeParse(value, 10));
-        this.log(`[SOIL] DP5 temperature raw=${value}  ${temp}°C`);
+        this.log(`[SOIL] DP5 temperature raw=${value}  ${temp}Â°C`);
         await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => {});
         return;
       }
@@ -1540,9 +1540,9 @@ class ClimateSensorDevice extends UnifiedSensorBase {
    * Shows raw + converted values for each DP
    *
    * CRITICAL DP MAPPING for _TZE284_vvmbj46n (TH05Z):
-   * - DP1: temperature ÷10
+   * - DP1: temperature Ã·10
    * - DP2: humidity %
-   * - DP4: battery × 2 (device reports half)
+   * - DP4: battery Ã— 2 (device reports half)
    */
   onTuyaStatus(status) {
     if (!status) {
@@ -1561,14 +1561,14 @@ class ClimateSensorDevice extends UnifiedSensorBase {
 
     // v5.5.190: Log with calibration info
     switch (dp) {
-    case 1: // Temperature (standard) ÷10
+    case 1: // Temperature (standard) Ã·10
       const temp1 = this._applyTempOffset(safeParse(rawValue, 10));
-      this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue}  ${temp1}°C`);
+      this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue}  ${temp1}Â°C`);
       break;
-    case 18: // Temperature (alt) ÷10
+    case 18: // Temperature (alt) Ã·10
     case 6: // Temperature (some _TZE204 models)
       const tempAlt = this._applyTempOffset(safeParse(rawValue, 10));
-      this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue}  ${tempAlt}°C`);
+      this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue}  ${tempAlt}Â°C`);
       break;
     case 2: // Humidity (standard)
       const hum2raw = rawValue > 100 ? Math.round(safeParse(rawValue, 10)) : rawValue;
@@ -1589,9 +1589,9 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       else bat3 =safeMultiply(Math.min(rawValue, 2), 100);
       this.log(`[CLIMATE-DP] DP3 battery_state raw=${rawValue}  ${bat3}% (enum: 0=low, 1=med, 2=high)`);
       break;
-    case 4: // Battery (standard with ×2 multiplier)
+    case 4: // Battery (standard with Ã—2 multiplier)
       const batConverted =safeMultiply(Math.min(rawValue, 2), 100);
-      this.log(`[CLIMATE-DP] DP4 battery raw=${rawValue}  ${batConverted}% (×2 multiplier)`);
+      this.log(`[CLIMATE-DP] DP4 battery raw=${rawValue}  ${batConverted}% (Ã—2 multiplier)`);
       break;
     case 5: // Illuminance (some models)
       this.log(`[CLIMATE-DP] DP5 illuminance raw=${rawValue} lux`);
@@ -1618,7 +1618,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
       if (temp !== null || hum !== null || bat !== null) {
-        this.log(`[CLIMATE]  CAPABILITIES: temp=${temp}°C humidity=${hum}% battery=${bat}%`);
+        this.log(`[CLIMATE]  CAPABILITIES: temp=${temp}Â°C humidity=${hum}% battery=${bat}%`);
       }
     }, 100);
   }

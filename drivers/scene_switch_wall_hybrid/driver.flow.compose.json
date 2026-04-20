@@ -4,15 +4,15 @@
       "id": "scene_switch_wall_hybrid_scene_switch_2_button_pressed_scene_switch_wall_hybrid",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé",
+        "fr": "Bouton appuyÃ©",
         "nl": "Knop ingedrukt",
-        "de": "Taste gedrückt"
+        "de": "Taste gedrÃ¼ckt"
       },
       "titleFormatted": {
         "en": "Button [[button]] pressed",
-        "fr": "Bouton [[button]] appuyé",
+        "fr": "Bouton [[button]] appuyÃ©",
         "nl": "Knop [[button]] ingedrukt",
-        "de": "Taste [[button]] gedrückt"
+        "de": "Taste [[button]] gedrÃ¼ckt"
       },
       "args": [
         {
@@ -58,15 +58,15 @@
       "id": "scene_switch_wall_hybrid_scene_switch_2_button_double_press_scene_switch_wall_hybrid",
       "title": {
         "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué",
+        "fr": "Bouton double-cliquÃ©",
         "nl": "Knop dubbel ingedrukt",
-        "de": "Taste doppelt gedrückt"
+        "de": "Taste doppelt gedrÃ¼ckt"
       },
       "titleFormatted": {
         "en": "Button [[button]] double-pressed",
-        "fr": "Bouton [[button]] double-cliqué",
+        "fr": "Bouton [[button]] double-cliquÃ©",
         "nl": "Knop [[button]] dubbel ingedrukt",
-        "de": "Taste [[button]] doppelt gedrückt"
+        "de": "Taste [[button]] doppelt gedrÃ¼ckt"
       },
       "args": [
         {
@@ -114,13 +114,13 @@
         "en": "Button long-pressed",
         "fr": "Bouton appui long",
         "nl": "Knop lang ingedrukt",
-        "de": "Taste lang gedrückt"
+        "de": "Taste lang gedrÃ¼ckt"
       },
       "titleFormatted": {
         "en": "Button [[button]] long-pressed",
         "fr": "Bouton [[button]] appui long",
         "nl": "Knop [[button]] lang ingedrukt",
-        "de": "Taste [[button]] lang gedrückt"
+        "de": "Taste [[button]] lang gedrÃ¼ckt"
       },
       "args": [
         {

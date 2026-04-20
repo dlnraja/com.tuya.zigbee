@@ -45,7 +45,7 @@ class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
     
     // ACTION: Set Backlight
     try {
-      const card = this.homey.flow.getActionCard(`${P}_set_backlight`);
+      const card = this._getFlowCard(`${P}_set_backlight`, 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -58,7 +58,7 @@ class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set Scene Mode
     try {
-      const card = this.homey.flow.getActionCard(`${P}_set_scene_mode`);
+      const card = this._getFlowCard(`${P}_set_scene_mode`, 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -89,7 +89,7 @@ class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
     ];
     for (const { id, fn } of simpleActions) {
       try {
-        const card = this.homey.flow.getActionCard(id);
+        const card = this._getFlowCard(id, 'action');
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) return false;
@@ -101,7 +101,7 @@ class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
     }
     for (const { id, ep, val } of gangActions) {
       try {
-        const card = this.homey.flow.getActionCard(id);
+        const card = this._getFlowCard(id, 'action');
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) return false;
@@ -123,7 +123,7 @@ class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set power-on behavior (v5.11.30)
     try {
-      const card = this.homey.flow.getActionCard(`${P}_set_power_on_behavior`);
+      const card = this._getFlowCard(`${P}_set_power_on_behavior`, 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -141,7 +141,7 @@ class WallSwitch3Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set external switch type (v5.11.30)
     try {
-      const card = this.homey.flow.getActionCard(`${P}_set_switch_mode`);
+      const card = this._getFlowCard(`${P}_set_switch_mode`, 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

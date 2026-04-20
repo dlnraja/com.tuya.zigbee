@@ -5,19 +5,19 @@ const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const fs = require('fs');
 const path = require('path');
 
-console.log(' SCAN EXHAUSTIF TOUTES SOURCES COMMUNAUTÉ\n');
+console.log(' SCAN EXHAUSTIF TOUTES SOURCES COMMUNAUTÃ‰\n');
 
 const ROOT = path.join(__dirname, '..');
 
 /**
  * 
- * DONNÉES COLLECTÉES MANUELLEMENT (GitHub, Forum, Z2M)
+ * DONNÃ‰ES COLLECTÃ‰ES MANUELLEMENT (GitHub, Forum, Z2M)
  * 
  */
 
 const ALL_SOURCES = {
   // 
-  // FORUM HOMEY (Pages 1-46 analysées)
+  // FORUM HOMEY (Pages 1-46 analysÃ©es)
   // 
   forum: {
     analyzed_pages: '1-46',
@@ -89,7 +89,7 @@ const ALL_SOURCES = {
   },
 
   // 
-  // ZIGBEE2MQTT DATABASE (Dernière sync)
+  // ZIGBEE2MQTT DATABASE (DerniÃ¨re sync)
   // 
   zigbee2mqtt: {
     devices_cross_referenced: [
@@ -137,12 +137,12 @@ const ALL_SOURCES = {
   },
 
   // 
-  // GITHUB ISSUES/PRs (JohanBendz repo - référence historique)
+  // GITHUB ISSUES/PRs (JohanBendz repo - rÃ©fÃ©rence historique)
   // 
   github: {
     reference_repo: 'JohanBendz/com.tuya.zigbee',
 
-    // PRs récentes pertinentes
+    // PRs rÃ©centes pertinentes
     pull_requests: [
       {
         number: 1171,
@@ -162,7 +162,7 @@ const ALL_SOURCES = {
       }
     ],
 
-    // Issues fermées pertinentes (avec solutions)
+    // Issues fermÃ©es pertinentes (avec solutions)
     closed_issues_with_solutions: [
       {
         title: 'Device Request - GIRIER Tuya Smart ZigBee',
@@ -172,7 +172,7 @@ const ALL_SOURCES = {
       }
     ],
 
-    // Devices mentionnés dans issues
+    // Devices mentionnÃ©s dans issues
     devices_from_issues: [
       { id: '_TZ3000_c8ozah8n', model: 'TS0202', type: 'motion', status: 'PENDING' },
       { id: 'SQ510A', manufacturer: 'eWeLink', type: 'water_leak', status: 'PENDING' }
@@ -180,17 +180,17 @@ const ALL_SOURCES = {
   },
 
   // 
-  // PATTERNS & NOUVELLES DÉCOUVERTES
+  // PATTERNS & NOUVELLES DÃ‰COUVERTES
   // 
   patterns: {
     new_manufacturers: [
       'eWeLink', // Compatible Tuya, non-Tuya brand
-      'GIRIER', // Nouvelle marque identifiée
+      'GIRIER', // Nouvelle marque identifiÃ©e
       'SQ510A' // Product ID as manufacturer
     ],
 
     variant_patterns: [
-      // _TZE200_ vs _TZE204_ (même device, firmware différent)
+      // _TZE200_ vs _TZE204_ (mÃªme device, firmware diffÃ©rent)
       { base: '_TZE200_', variant: '_TZE204_', note: 'Firmware variants' },
       // Uppercase vs lowercase (_TZ3000_ vs _tz3000_)
       { pattern: 'case_sensitivity', note: 'Already normalized in Phase 1' }
@@ -259,10 +259,10 @@ const PHASE2_ENRICHMENT = {
 };
 
 /**
- * Générer rapport enrichissement
+ * GÃ©nÃ©rer rapport enrichissement
  */
 function generateEnrichmentReport() {
-  console.log(' GÉNÉRATION RAPPORT ENRICHISSEMENT PHASE 2\n');
+  console.log(' GÃ‰NÃ‰RATION RAPPORT ENRICHISSEMENT PHASE 2\n');
 
   const report = {
     timestamp: new Date().toISOString(),
@@ -318,15 +318,15 @@ function calculateTotalNewIds() {
   return total;
 }
 
-// EXÉCUTION
+// EXÃ‰CUTION
 const report = generateEnrichmentReport();
 
 console.log('');
-console.log('RAPPORT EXHAUSTIF SOURCES COMMUNAUTÉ - PHASE 2');
+console.log('RAPPORT EXHAUSTIF SOURCES COMMUNAUTÃ‰ - PHASE 2');
 console.log('\n');
 
-console.log(' RÉSUMÉ:\n');
-console.log(`   Forum pages analysées: ${report.summary.forum_pages_analyzed}`);
+console.log(' RÃ‰SUMÃ‰:\n');
+console.log(`   Forum pages analysÃ©es: ${report.summary.forum_pages_analyzed}`);
 console.log(`   Devices forum: ${report.summary.forum_devices_found}`);
 console.log(`   Issues forum pending: ${report.summary.forum_issues_pending}`);
 console.log(`   Z2M devices cross-ref: ${report.summary.zigbee2mqtt_cross_referenced}`);
@@ -364,7 +364,7 @@ ALL_SOURCES.forum.issues_unresolved.forEach(issue => {
 });
 
 console.log('\n\n RECOMMANDATIONS:\n');
-console.log('   IMMÉDIAT:');
+console.log('   IMMÃ‰DIAT:');
 report.recommendations.immediate.forEach(r => console.log(`      - ${r}`));
 console.log('\n   COURT TERME:');
 report.recommendations.short_term.forEach(r => console.log(`      - ${r}`));
@@ -375,8 +375,8 @@ report.recommendations.long_term.forEach(r => console.log(`      - ${r}`));
 const reportFile = path.join(ROOT, 'PHASE2_ENRICHMENT_REPORT.json');
 fs.writeFileSync(reportFile, JSON.stringify(report, null, 2), 'utf8');
 
-console.log(`\n\n Rapport Phase 2 sauvegardé: ${reportFile}\n`);
+console.log(`\n\n Rapport Phase 2 sauvegardÃ©: ${reportFile}\n`);
 
-console.log(' PROCHAINE ÉTAPE: Appliquer enrichissement Phase 2\n');
+console.log(' PROCHAINE Ã‰TAPE: Appliquer enrichissement Phase 2\n');
 
 process.exit(0);

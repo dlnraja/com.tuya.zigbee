@@ -4,11 +4,11 @@
       "id": "generic_diy_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       },
       "hint": {
         "en": "When the DIY sensor temperature changes",
-        "fr": "Quand la température du capteur DIY change"
+        "fr": "Quand la tempÃ©rature du capteur DIY change"
       },
       "tokens": [
         {
@@ -16,25 +16,25 @@
           "type": "number",
           "title": {
             "en": "Temperature",
-            "fr": "Température"
+            "fr": "TempÃ©rature"
           },
           "example": 22.5
         }
       ],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       }
     },
     {
       "id": "generic_diy_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "HumiditÃ© changÃ©e"
       },
       "hint": {
         "en": "When the DIY sensor humidity changes",
-        "fr": "Quand l'humidité du capteur DIY change"
+        "fr": "Quand l'humiditÃ© du capteur DIY change"
       },
       "tokens": [
         {
@@ -42,55 +42,55 @@
           "type": "number",
           "title": {
             "en": "Humidity",
-            "fr": "Humidité"
+            "fr": "HumiditÃ©"
           },
           "example": 65
         }
       ],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "HumiditÃ© changÃ©e"
       }
     },
     {
       "id": "generic_diy_motion_detected",
       "title": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement dÃ©tectÃ©"
       },
       "hint": {
         "en": "When the DIY sensor detects motion",
-        "fr": "Quand le capteur DIY détecte un mouvement"
+        "fr": "Quand le capteur DIY dÃ©tecte un mouvement"
       },
       "titleFormatted": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement dÃ©tectÃ©"
       }
     },
     {
       "id": "generic_diy_motion_cleared",
       "title": {
         "en": "Motion cleared",
-        "fr": "Mouvement terminé"
+        "fr": "Mouvement terminÃ©"
       },
       "hint": {
         "en": "When no more motion is detected",
-        "fr": "Quand plus aucun mouvement n'est détecté"
+        "fr": "Quand plus aucun mouvement n'est dÃ©tectÃ©"
       },
       "titleFormatted": {
         "en": "Motion cleared",
-        "fr": "Mouvement terminé"
+        "fr": "Mouvement terminÃ©"
       }
     },
     {
       "id": "generic_diy_button_pressed",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton pressé"
+        "fr": "Bouton pressÃ©"
       },
       "hint": {
         "en": "When a DIY button is pressed",
-        "fr": "Quand un bouton DIY est pressé"
+        "fr": "Quand un bouton DIY est pressÃ©"
       },
       "tokens": [
         {
@@ -98,25 +98,25 @@
           "type": "number",
           "title": {
             "en": "Button number",
-            "fr": "Numéro du bouton"
+            "fr": "NumÃ©ro du bouton"
           },
           "example": 1
         }
       ],
       "titleFormatted": {
         "en": "Button pressed",
-        "fr": "Bouton pressé"
+        "fr": "Bouton pressÃ©"
       }
     },
     {
       "id": "generic_diy_button_double_pressed",
       "title": {
         "en": "Button double pressed",
-        "fr": "Bouton double-pressé"
+        "fr": "Bouton double-pressÃ©"
       },
       "hint": {
         "en": "When a DIY button is double pressed",
-        "fr": "Quand un bouton DIY est double-pressé"
+        "fr": "Quand un bouton DIY est double-pressÃ©"
       },
       "tokens": [
         {
@@ -124,14 +124,14 @@
           "type": "number",
           "title": {
             "en": "Button number",
-            "fr": "Numéro du bouton"
+            "fr": "NumÃ©ro du bouton"
           },
           "example": 1
         }
       ],
       "titleFormatted": {
         "en": "Button double pressed",
-        "fr": "Bouton double-pressé"
+        "fr": "Bouton double-pressÃ©"
       }
     },
     {
@@ -150,7 +150,7 @@
           "type": "number",
           "title": {
             "en": "Button number",
-            "fr": "Numéro du bouton"
+            "fr": "NumÃ©ro du bouton"
           },
           "example": 1
         }
@@ -164,11 +164,11 @@
       "id": "generic_diy_switch_turned_on",
       "title": {
         "en": "Switch turned on",
-        "fr": "Interrupteur activé"
+        "fr": "Interrupteur activÃ©"
       },
       "hint": {
         "en": "When a DIY switch is turned on",
-        "fr": "Quand un interrupteur DIY est activé"
+        "fr": "Quand un interrupteur DIY est activÃ©"
       },
       "tokens": [
         {
@@ -183,18 +183,18 @@
       ],
       "titleFormatted": {
         "en": "Switch turned on",
-        "fr": "Interrupteur activé"
+        "fr": "Interrupteur activÃ©"
       }
     },
     {
       "id": "generic_diy_switch_turned_off",
       "title": {
         "en": "Switch turned off",
-        "fr": "Interrupteur désactivé"
+        "fr": "Interrupteur dÃ©sactivÃ©"
       },
       "hint": {
         "en": "When a DIY switch is turned off",
-        "fr": "Quand un interrupteur DIY est désactivé"
+        "fr": "Quand un interrupteur DIY est dÃ©sactivÃ©"
       },
       "tokens": [
         {
@@ -209,7 +209,7 @@
       ],
       "titleFormatted": {
         "en": "Switch turned off",
-        "fr": "Interrupteur désactivé"
+        "fr": "Interrupteur dÃ©sactivÃ©"
       }
     },
     {
@@ -231,7 +231,7 @@
       "id": "generic_diy_contact_closed",
       "title": {
         "en": "Contact closed",
-        "fr": "Contact fermé"
+        "fr": "Contact fermÃ©"
       },
       "hint": {
         "en": "When the DIY contact sensor closes",
@@ -239,18 +239,18 @@
       },
       "titleFormatted": {
         "en": "Contact closed",
-        "fr": "Contact fermé"
+        "fr": "Contact fermÃ©"
       }
     },
     {
       "id": "generic_diy_illuminance_changed",
       "title": {
         "en": "Illuminance changed",
-        "fr": "Luminosité changée"
+        "fr": "LuminositÃ© changÃ©e"
       },
       "hint": {
         "en": "When the DIY light sensor value changes",
-        "fr": "Quand la luminosité du capteur DIY change"
+        "fr": "Quand la luminositÃ© du capteur DIY change"
       },
       "tokens": [
         {
@@ -258,14 +258,14 @@
           "type": "number",
           "title": {
             "en": "Illuminance (lux)",
-            "fr": "Luminosité (lux)"
+            "fr": "LuminositÃ© (lux)"
           },
           "example": 500
         }
       ],
       "titleFormatted": {
         "en": "Illuminance changed",
-        "fr": "Luminosité changée"
+        "fr": "LuminositÃ© changÃ©e"
       }
     },
     {
@@ -298,7 +298,7 @@
       "id": "generic_diy_pressure_changed",
       "title": {
         "en": "Pressure changed",
-        "fr": "Pression changée"
+        "fr": "Pression changÃ©e"
       },
       "hint": {
         "en": "When the DIY pressure sensor value changes",
@@ -317,18 +317,18 @@
       ],
       "titleFormatted": {
         "en": "Pressure changed",
-        "fr": "Pression changée"
+        "fr": "Pression changÃ©e"
       }
     },
     {
       "id": "generic_diy_analog_changed",
       "title": {
         "en": "Analog value changed",
-        "fr": "Valeur analogique changée"
+        "fr": "Valeur analogique changÃ©e"
       },
       "hint": {
         "en": "When a DIY analog input changes",
-        "fr": "Quand une entrée analogique DIY change"
+        "fr": "Quand une entrÃ©e analogique DIY change"
       },
       "tokens": [
         {
@@ -352,7 +352,7 @@
       ],
       "titleFormatted": {
         "en": "Analog value changed",
-        "fr": "Valeur analogique changée"
+        "fr": "Valeur analogique changÃ©e"
       }
     }
   ],
@@ -361,30 +361,30 @@
       "id": "generic_diy_is_on",
       "title": {
         "en": "DIY switch is on",
-        "fr": "Interrupteur DIY est activé"
+        "fr": "Interrupteur DIY est activÃ©"
       },
       "hint": {
         "en": "Check if the DIY switch is on",
-        "fr": "Vérifie si l'interrupteur DIY est activé"
+        "fr": "VÃ©rifie si l'interrupteur DIY est activÃ©"
       },
       "titleFormatted": {
         "en": "DIY switch is on",
-        "fr": "Interrupteur DIY est activé"
+        "fr": "Interrupteur DIY est activÃ©"
       }
     },
     {
       "id": "generic_diy_motion_active",
       "title": {
         "en": "Motion is detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement dÃ©tectÃ©"
       },
       "hint": {
         "en": "Check if motion is currently detected",
-        "fr": "Vérifie si un mouvement est actuellement détecté"
+        "fr": "VÃ©rifie si un mouvement est actuellement dÃ©tectÃ©"
       },
       "titleFormatted": {
         "en": "Motion is detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement dÃ©tectÃ©"
       }
     },
     {
@@ -395,7 +395,7 @@
       },
       "hint": {
         "en": "Check if the contact sensor is open",
-        "fr": "Vérifie si le capteur de contact est ouvert"
+        "fr": "VÃ©rifie si le capteur de contact est ouvert"
       },
       "titleFormatted": {
         "en": "Contact is open",
@@ -406,15 +406,15 @@
       "id": "generic_diy_temperature_above",
       "title": {
         "en": "Temperature is above...",
-        "fr": "Température supérieure à..."
+        "fr": "TempÃ©rature supÃ©rieure Ã..."
       },
       "titleFormatted": {
-        "en": "Temperature is above [[temperature]] °C",
-        "fr": "Température supérieure à [[temperature]] °C"
+        "en": "Temperature is above [[temperature]] Â°C",
+        "fr": "TempÃ©rature supÃ©rieure Ã [[temperature]] Â°C"
       },
       "hint": {
         "en": "Check if temperature is above a value",
-        "fr": "Vérifie si la température est supérieure à une valeur"
+        "fr": "VÃ©rifie si la tempÃ©rature est supÃ©rieure Ã une valeur"
       },
       "args": [
         {
@@ -422,7 +422,7 @@
           "name": "temperature",
           "title": {
             "en": "Temperature",
-            "fr": "Température"
+            "fr": "TempÃ©rature"
           },
           "placeholder": {
             "en": "25",
@@ -435,15 +435,15 @@
       "id": "generic_diy_humidity_above",
       "title": {
         "en": "Humidity is above...",
-        "fr": "Humidité supérieure à..."
+        "fr": "HumiditÃ© supÃ©rieure Ã..."
       },
       "titleFormatted": {
         "en": "Humidity is above [[humidity]] %",
-        "fr": "Humidité supérieure à [[humidity]] %"
+        "fr": "HumiditÃ© supÃ©rieure Ã [[humidity]] %"
       },
       "hint": {
         "en": "Check if humidity is above a value",
-        "fr": "Vérifie si l'humidité est supérieure à une valeur"
+        "fr": "VÃ©rifie si l'humiditÃ© est supÃ©rieure Ã une valeur"
       },
       "args": [
         {
@@ -451,7 +451,7 @@
           "name": "humidity",
           "title": {
             "en": "Humidity",
-            "fr": "Humidité"
+            "fr": "HumiditÃ©"
           },
           "placeholder": {
             "en": "60",
@@ -464,15 +464,15 @@
       "id": "generic_diy_battery_below",
       "title": {
         "en": "Battery is below...",
-        "fr": "Batterie inférieure à..."
+        "fr": "Batterie infÃ©rieure Ã..."
       },
       "titleFormatted": {
         "en": "Battery is below [[battery]] %",
-        "fr": "Batterie inférieure à [[battery]] %"
+        "fr": "Batterie infÃ©rieure Ã [[battery]] %"
       },
       "hint": {
         "en": "Check if battery is below a percentage",
-        "fr": "Vérifie si la batterie est inférieure à un pourcentage"
+        "fr": "VÃ©rifie si la batterie est infÃ©rieure Ã un pourcentage"
       },
       "args": [
         {
@@ -510,15 +510,15 @@
       "id": "generic_diy_turn_off",
       "title": {
         "en": "Turn off DIY switch",
-        "fr": "Désactiver interrupteur DIY"
+        "fr": "DÃ©sactiver interrupteur DIY"
       },
       "hint": {
         "en": "Turn off the DIY switch",
-        "fr": "Désactive l'interrupteur DIY"
+        "fr": "DÃ©sactive l'interrupteur DIY"
       },
       "titleFormatted": {
         "en": "Turn off DIY switch",
-        "fr": "Désactiver interrupteur DIY"
+        "fr": "DÃ©sactiver interrupteur DIY"
       }
     },
     {
@@ -529,7 +529,7 @@
       },
       "hint": {
         "en": "Toggle the DIY switch state",
-        "fr": "Bascule l'état de l'interrupteur DIY"
+        "fr": "Bascule l'Ã©tat de l'interrupteur DIY"
       },
       "titleFormatted": {
         "en": "Toggle DIY switch",
@@ -540,15 +540,15 @@
       "id": "generic_diy_set_dim",
       "title": {
         "en": "Set DIY dimmer level",
-        "fr": "Définir niveau variateur DIY"
+        "fr": "DÃ©finir niveau variateur DIY"
       },
       "titleFormatted": {
         "en": "Set brightness to [[level]]",
-        "fr": "Définir luminosité à [[level]]"
+        "fr": "DÃ©finir luminositÃ© Ã [[level]]"
       },
       "hint": {
         "en": "Set the brightness level",
-        "fr": "Définit le niveau de luminosité"
+        "fr": "DÃ©finit le niveau de luminositÃ©"
       },
       "args": [
         {
@@ -591,7 +591,7 @@
       },
       "hint": {
         "en": "Turn on a specific endpoint (for multi-switch DIY devices)",
-        "fr": "Active un endpoint spécifique (pour dispositifs DIY multi-interrupteurs)"
+        "fr": "Active un endpoint spÃ©cifique (pour dispositifs DIY multi-interrupteurs)"
       },
       "args": [
         {
@@ -610,15 +610,15 @@
       "id": "generic_diy_turn_off_endpoint",
       "title": {
         "en": "Turn off endpoint...",
-        "fr": "Désactiver endpoint..."
+        "fr": "DÃ©sactiver endpoint..."
       },
       "titleFormatted": {
         "en": "Turn off endpoint [[endpoint]]",
-        "fr": "Désactiver endpoint [[endpoint]]"
+        "fr": "DÃ©sactiver endpoint [[endpoint]]"
       },
       "hint": {
         "en": "Turn off a specific endpoint",
-        "fr": "Désactive un endpoint spécifique"
+        "fr": "DÃ©sactive un endpoint spÃ©cifique"
       },
       "args": [
         {

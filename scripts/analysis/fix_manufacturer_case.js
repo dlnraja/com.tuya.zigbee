@@ -2,7 +2,7 @@
 /**
  * FORUM IMAGES FIX: Corriger case sensitivity manufacturerNames
  *
- * PROBLÈME CRITIQUE DÉTECTÉ:
+ * PROBLÃˆME CRITIQUE DÃ‰TECTÃ‰:
  * - Nombreux _tze204_ en lowercase au lieu de _TZE204_
  * - Standard Tuya requires UPPERCASE format
  * - Affecte recognition des devices

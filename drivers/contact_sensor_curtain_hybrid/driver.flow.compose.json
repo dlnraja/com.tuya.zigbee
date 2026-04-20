@@ -4,7 +4,7 @@
       "id": "contact_sensor_curtain_hybrid_button_pressed",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton pressé"
+        "fr": "Bouton pressÃ©"
       },
       "tokens": [
         {
@@ -21,7 +21,7 @@
           "type": "string",
           "title": {
             "en": "Scene",
-            "fr": "Scène"
+            "fr": "ScÃ¨ne"
           },
           "example": "pressed"
         }
@@ -29,14 +29,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Button pressed",
-        "fr": "Bouton pressé"
+        "fr": "Bouton pressÃ©"
       }
     },
     {
       "id": "contact_sensor_curtain_hybrid_curtain_motor_windowcoverings_set_changed",
       "title": {
         "en": "Position changed",
-        "fr": "Position changée"
+        "fr": "Position changÃ©e"
       },
       "tokens": [
         {
@@ -52,14 +52,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Position changed",
-        "fr": "Position changée"
+        "fr": "Position changÃ©e"
       }
     },
     {
       "id": "contact_sensor_curtain_hybrid_curtain_motor_dim_changed",
       "title": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "LuminositÃ© changÃ©e"
       },
       "tokens": [
         {
@@ -67,7 +67,7 @@
           "type": "number",
           "title": {
             "en": "Brightness",
-            "fr": "Luminosité"
+            "fr": "LuminositÃ©"
           },
           "example": 0.75
         }
@@ -75,7 +75,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Brightness changed",
-        "fr": "Luminosité changée"
+        "fr": "LuminositÃ© changÃ©e"
       }
     },
     {
@@ -120,7 +120,7 @@
       "id": "contact_sensor_curtain_hybrid_curtain_motor_physical_off",
       "title": {
         "en": "Physically closed",
-        "fr": "Fermé physiquement"
+        "fr": "FermÃ© physiquement"
       },
       "tokens": [
         {
@@ -135,14 +135,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Physically closed",
-        "fr": "Fermé physiquement"
+        "fr": "FermÃ© physiquement"
       }
     },
     {
       "id": "contact_sensor_curtain_hybrid_curtain_motor_physical_single",
       "title": {
         "en": "Physically pressed",
-        "fr": "Pressé physiquement"
+        "fr": "PressÃ© physiquement"
       },
       "tokens": [
         {
@@ -157,23 +157,23 @@
       "args": [],
       "titleFormatted": {
         "en": "Physically pressed",
-        "fr": "Pressé physiquement"
+        "fr": "PressÃ© physiquement"
       }
     },
     {
       "id": "contact_sensor_curtain_hybrid_curtain_motor_lux_changed",
       "title": {
         "en": "Luminance changed",
-        "fr": "Luminance changée",
+        "fr": "Luminance changÃ©e",
         "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
+        "de": "Helligkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Luminance changed",
-        "fr": "Luminance changée",
+        "fr": "Luminance changÃ©e",
         "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
+        "de": "Helligkeit geÃ¤ndert"
       }
     }
   ],
@@ -182,7 +182,7 @@
       "id": "contact_sensor_curtain_hybrid_curtain_motor_set_windowcoverings_set",
       "title": {
         "en": "Set position to...",
-        "fr": "Régler la position à..."
+        "fr": "RÃ©gler la position Ã..."
       },
       "args": [
         {
@@ -201,7 +201,7 @@
       ],
       "titleFormatted": {
         "en": "Set position to [[position]]%",
-        "fr": "Régler la position à [[position]]%"
+        "fr": "RÃ©gler la position Ã [[position]]%"
       }
     },
     {
@@ -232,7 +232,7 @@
       "id": "contact_sensor_curtain_hybrid_curtain_motor_set_dim",
       "title": {
         "en": "Set brightness to...",
-        "fr": "Régler la luminosité à..."
+        "fr": "RÃ©gler la luminositÃ© Ã..."
       },
       "args": [
         {
@@ -245,27 +245,27 @@
           "labelMultiplier": 100,
           "title": {
             "en": "Brightness",
-            "fr": "Luminosité"
+            "fr": "LuminositÃ©"
           }
         }
       ],
       "titleFormatted": {
         "en": "Set brightness to [[brightness]]%",
-        "fr": "Régler la luminosité à [[brightness]]%"
+        "fr": "RÃ©gler la luminositÃ© Ã [[brightness]]%"
       }
     },
     {
       "id": "contact_sensor_curtain_hybrid_curtain_motor_stop",
       "title": {
         "en": "Stop",
-        "fr": "Arrêter",
+        "fr": "ArrÃªter",
         "nl": "Stoppen",
         "de": "Stoppen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Stop",
-        "fr": "Arrêter",
+        "fr": "ArrÃªter",
         "nl": "Stoppen",
         "de": "Stoppen"
       }
@@ -280,7 +280,7 @@
       },
       "hint": {
         "en": "Move to the saved favorite position (if supported)",
-        "fr": "Aller à la position favorite enregistrée"
+        "fr": "Aller Ã la position favorite enregistrÃ©e"
       },
       "args": [],
       "titleFormatted": {
@@ -294,13 +294,13 @@
       "id": "contact_sensor_curtain_hybrid_curtain_motor_set_brightness",
       "title": {
         "en": "Set brightness",
-        "fr": "Régler luminosité",
+        "fr": "RÃ©gler luminositÃ©",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
       },
       "titleFormatted": {
         "en": "Set brightness to [[brightness]]%",
-        "fr": "Régler luminosité à [[brightness]]%",
+        "fr": "RÃ©gler luminositÃ© Ã [[brightness]]%",
         "nl": "Helderheid op [[brightness]]%",
         "de": "Helligkeit auf [[brightness]]%"
       },
@@ -320,13 +320,13 @@
       "id": "contact_sensor_curtain_hybrid_curtain_motor_set_position",
       "title": {
         "en": "Set position",
-        "fr": "Régler position",
+        "fr": "RÃ©gler position",
         "nl": "Positie instellen",
         "de": "Position einstellen"
       },
       "titleFormatted": {
         "en": "Set position to [[position]]%",
-        "fr": "Régler position à [[position]]%",
+        "fr": "RÃ©gler position Ã [[position]]%",
         "nl": "Positie op [[position]]%",
         "de": "Position auf [[position]]%"
       },
@@ -348,14 +348,14 @@
         "en": "Open",
         "fr": "Ouvrir",
         "nl": "Openen",
-        "de": "Öffnen"
+        "de": "Ã–ffnen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Open",
         "fr": "Ouvrir",
         "nl": "Openen",
-        "de": "Öffnen"
+        "de": "Ã–ffnen"
       }
     },
     {
@@ -364,14 +364,14 @@
         "en": "Close",
         "fr": "Fermer",
         "nl": "Sluiten",
-        "de": "Schließen"
+        "de": "SchlieÃŸen"
       },
       "args": [],
       "titleFormatted": {
         "en": "Close",
         "fr": "Fermer",
         "nl": "Sluiten",
-        "de": "Schließen"
+        "de": "SchlieÃŸen"
       }
     }
   ]

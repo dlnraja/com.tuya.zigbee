@@ -43,7 +43,7 @@ class SirenDevice extends UnifiedPlugBase {
       // 
       // BATTERY
       // 
-      14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolète
+      14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolÃ¨te
       15: { capability: 'measure_battery', divisor: 1 },
 
       // 
@@ -158,6 +158,18 @@ class SirenDevice extends UnifiedPlugBase {
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 

@@ -35,11 +35,11 @@
       "title": "Alimentazione"
     },
     "dim": {
-      "title": "Luminosità",
+      "title": "LuminositÃ",
       "units": "%"
     },
     "light_hue": {
-      "title": "Tonalità"
+      "title": "TonalitÃ"
     },
     "light_saturation": {
       "title": "Saturazione"
@@ -48,14 +48,14 @@
       "title": "Temperatura colore"
     },
     "light_mode": {
-      "title": "Modalità luce"
+      "title": "ModalitÃ luce"
     },
     "measure_temperature": {
       "title": "Temperatura",
-      "units": "°C"
+      "units": "Â°C"
     },
     "measure_humidity": {
-      "title": "Umidità",
+      "title": "UmiditÃ",
       "units": "%"
     },
     "measure_pressure": {
@@ -68,7 +68,7 @@
     },
     "measure_pm25": {
       "title": "PM2.5",
-      "units": "µg/m³"
+      "units": "Âµg/mÂ³"
     },
     "measure_voc": {
       "title": "COV",
@@ -96,14 +96,14 @@
     },
     "target_temperature": {
       "title": "Temperatura target",
-      "units": "°C"
+      "units": "Â°C"
     },
     "windowcoverings_state": {
       "title": "Tapparelle",
       "values": {
         "up": "Su",
         "idle": "Fermo",
-        "down": "Giù"
+        "down": "GiÃ¹"
       }
     },
     "windowcoverings_set": {
@@ -140,8 +140,8 @@
       "hint": "Frequenza richieste aggiornamento stato batteria"
     },
     "optimization_mode": {
-      "label": "Modalità ottimizzazione energia",
-      "hint": "Bilancia tra reattività e durata batteria"
+      "label": "ModalitÃ ottimizzazione energia",
+      "hint": "Bilancia tra reattivitÃ e durata batteria"
     },
     "show_voltage": {
       "label": "Mostra tensione batteria",
@@ -149,7 +149,7 @@
     },
     "enable_power_estimation": {
       "label": "Abilita stima potenza",
-      "hint": "Stima consumo quando la misura reale non è disponibile (solo dispositivi AC/DC)"
+      "hint": "Stima consumo quando la misura reale non Ã¨ disponibile (solo dispositivi AC/DC)"
     }
   },
   "tabs": {

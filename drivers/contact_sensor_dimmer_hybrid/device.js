@@ -82,7 +82,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
           return battery;
         }
       },
-      // Battery state - DP 3 (enum: 0=normal, 1=low) - SDK3: alarm_battery obsolète, utiliser internal
+      // Battery state - DP 3 (enum: 0=normal, 1=low) - SDK3: alarm_battery obsolÃ¨te, utiliser internal
       3: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
       // Battery alt - DP 4 (v5.5.793: Added validation)
       4: { 
@@ -426,6 +426,18 @@ class ContactSensorDevice extends UnifiedSensorBase {
       this._contactState.timer = null;
     }
     await super.onDeleted?.();
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 

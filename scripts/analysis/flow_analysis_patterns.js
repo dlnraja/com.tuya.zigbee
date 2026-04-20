@@ -2,8 +2,8 @@
 
 /**
  * FLOW CARDS ANALYSIS & OPTIMIZATION TOOL v5.5.295
- * Analyse systématique de tous les flow cards pour identifier patterns, doublons et incohérences
- * Génère un rapport complet et propose des optimisations avec fusion intelligente
+ * Analyse systÃ©matique de tous les flow cards pour identifier patterns, doublons et incohÃ©rences
+ * GÃ©nÃ¨re un rapport complet et propose des optimisations avec fusion intelligente
  */
 
 const fs = require('fs');
@@ -63,7 +63,7 @@ class FlowAnalyzer {
   }
 
   /**
-   * Analyse un fichier de flow spécifique
+   * Analyse un fichier de flow spÃ©cifique
    */
   async analyzeFlowFile(driverName, flowPath) {
     try {
@@ -93,12 +93,12 @@ class FlowAnalyzer {
   }
 
   /**
-   * Analyse les patterns par catégorie
+   * Analyse les patterns par catÃ©gorie
    */
   analyzeFlowPatterns(analysis) {
     const { driverName } = analysis;
 
-    // Catégoriser par type de driver
+    // CatÃ©goriser par type de driver
     if (driverName.includes('switch')) {
       this.patterns.switches.set(driverName, analysis);
     } else if (driverName.includes('button')) {
@@ -111,17 +111,17 @@ class FlowAnalyzer {
   }
 
   /**
-   * Détecte les incohérences dans les IDs et structures
+   * DÃ©tecte les incohÃ©rences dans les IDs et structures
    */
   detectInconsistencies(analysis) {
     const { driverName, triggers, conditions, actions } = analysis;
 
-    // Vérifier la cohérence des IDs
+    // VÃ©rifier la cohÃ©rence des IDs
     const allFlows = [...triggers, ...conditions, ...actions];
 
     allFlows.forEach(flow => {
       if (flow.id) {
-        // Détecter les IDs incohérents
+        // DÃ©tecter les IDs incohÃ©rents
         if (!flow.id.startsWith(driverName)) {
           this.patterns.inconsistencies.push({
             driver: driverName,
@@ -133,7 +133,7 @@ class FlowAnalyzer {
           this.report.inconsistentIds++;
         }
 
-        // Détecter les IDs trop longs ou redondants
+        // DÃ©tecter les IDs trop longs ou redondants
         if (flow.id.length > 50 || flow.id.includes('_smart_') || flow.id.includes('_hybrid_')) {
           this.patterns.inconsistencies.push({
             driver: driverName,
@@ -147,7 +147,7 @@ class FlowAnalyzer {
   }
 
   /**
-   * Génère les optimisations et fusions possibles
+   * GÃ©nÃ¨re les optimisations et fusions possibles
    */
   generateOptimizations() {
     console.log(' GENERATING OPTIMIZATIONS...');
@@ -171,7 +171,7 @@ class FlowAnalyzer {
   optimizeSwitchFlows() {
     const switches = Array.from(this.patterns.switches.entries());
 
-    // Détecter les patterns communs
+    // DÃ©tecter les patterns communs
     const commonTriggers = new Map();
     const commonConditions = new Map();
     const commonActions = new Map();
@@ -302,7 +302,7 @@ class FlowAnalyzer {
   }
 
   /**
-   * Génère le rapport final
+   * GÃ©nÃ¨re le rapport final
    */
   generateReport() {
     console.log('\n FLOW ANALYSIS REPORT:');
@@ -333,12 +333,12 @@ class FlowAnalyzer {
       console.log(`   Recommendation: ${opt.recommendation}`);
     });
 
-    // Sauvegarder le rapport détaillé
+    // Sauvegarder le rapport dÃ©taillÃ©
     this.saveDetailedReport();
   }
 
   /**
-   * Sauvegarde un rapport détaillé en JSON
+   * Sauvegarde un rapport dÃ©taillÃ© en JSON
    */
   saveDetailedReport() {
     const detailedReport = {
@@ -359,7 +359,7 @@ class FlowAnalyzer {
   }
 }
 
-// Exécution
+// ExÃ©cution
 if (require.main === module) {
   const analyzer = new FlowAnalyzer();
   analyzer.analyzeAllFlows().catch(console.error);

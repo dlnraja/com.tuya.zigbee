@@ -2,14 +2,14 @@
   "type": "number",
   "title": {
     "en": "Frost Protection Temperature",
-    "fr": "Température Antigel"
+    "fr": "TempÃ©rature Antigel"
   },
   "desc": {
     "en": "Minimum temperature for frost protection",
-    "fr": "Température minimale pour protection antigel"
+    "fr": "TempÃ©rature minimale pour protection antigel"
   },
   "units": {
-    "en": "°C"
+    "en": "Â°C"
   },
   "getable": true,
   "setable": true,

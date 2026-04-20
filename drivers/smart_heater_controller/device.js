@@ -21,8 +21,8 @@ const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase')
  *
  * Tuya DPs:
  * - DP 1: Power safeDivide(on, off)
- * - DP 2: Target temperature (°C)
- * - DP 3: Current temperature (°C)
+ * - DP 2: Target temperature (Â°C)
+ * - DP 3: Current temperature (Â°C)
  * - DP 4: Thermostat mode (manual/auto/schedule)
  * - DP 6: Power consumption (W)
  * - DP 7: Energy consumed (kWh)
@@ -102,7 +102,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
     this._powerLimit = this.getSetting('power_limit') || 2000;
     this._childLock = this.getSetting('child_lock') || false;
 
-    this.log(`[HEATER]  Configuration: Calibration=${this._temperatureCalibration}°C, Hysteresis=${this._heatingHysteresis}°C, Overheat=${this._overheatProtection}°C`);
+    this.log(`[HEATER]  Configuration: Calibration=${this._temperatureCalibration}Â°C, Hysteresis=${this._heatingHysteresis}Â°C, Overheat=${this._overheatProtection}Â°C`);
 
     // Call parent initialization
     await super.onNodeInit({ zclNode });
@@ -143,19 +143,19 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
   registerSettings() {
     this.registerSetting('temperature_calibration', (newValue) => {
       this._temperatureCalibration = newValue;
-      this.log(`[HEATER]  Temperature calibration updated: ${newValue}°C`);
+      this.log(`[HEATER]  Temperature calibration updated: ${newValue}Â°C`);
       // Send calibration to device
       this._sendCalibration(newValue);
     });
 
     this.registerSetting('heating_hysteresis', (newValue) => {
       this._heatingHysteresis = newValue;
-      this.log(`[HEATER]  Heating hysteresis updated: ${newValue}°C`);
+      this.log(`[HEATER]  Heating hysteresis updated: ${newValue}Â°C`);
     });
 
     this.registerSetting('overheat_protection', (newValue) => {
       this._overheatProtection = newValue;
-      this.log(`[HEATER]  Overheat protection updated: ${newValue}°C`);
+      this.log(`[HEATER]  Overheat protection updated: ${newValue}Â°C`);
       this._sendOverheatProtection(newValue);
     });
 
@@ -211,7 +211,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       break;
 
     case 103: // Temperature calibration response
-      this.log(`[HEATER]  Temperature calibration confirmed: ${value}°C`);
+      this.log(`[HEATER]  Temperature calibration confirmed: ${value}Â°C`);
       break;
 
     default:
@@ -243,7 +243,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       // Apply calibration
       const calibratedTemp = temperature + this._temperatureCalibration;
       await this.setCapabilityValue('target_temperature', parseFloat(calibratedTemp));
-      this.log(`[HEATER]  Target temperature: ${temperature}°C (calibrated: ${calibratedTemp}°C)`);
+      this.log(`[HEATER]  Target temperature: ${temperature}Â°C (calibrated: ${calibratedTemp}Â°C)`);
     } else {
       this.log(`[HEATER]  Invalid target temperature: ${temperature}`);
     }
@@ -257,11 +257,11 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       // Apply calibration
       const calibratedTemp = temperature + this._temperatureCalibration;
       await this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp));
-      this.log(`[HEATER]  Current temperature: ${temperature}°C (calibrated: ${calibratedTemp}°C)`);
+      this.log(`[HEATER]  Current temperature: ${temperature}Â°C (calibrated: ${calibratedTemp}Â°C)`);
 
       // Check overheat protection
       if (temperature >= this._overheatProtection) {
-        this.log(`[HEATER]  OVERHEAT DETECTED: ${temperature}°C >= ${this._overheatProtection}°C`);
+        this.log(`[HEATER]  OVERHEAT DETECTED: ${temperature}Â°C >= ${this._overheatProtection}Â°C`);
         await this.setCapabilityValue('alarm_generic', true);
         // Trigger emergency shutdown
         await this._emergencyShutdown();
@@ -373,7 +373,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       await this.zclNode?.endpoints?.[1]?.clusters?.tuya?.datapoint({
         dp: 103,
         datatype: 2, // value (int)
-        data:safeMultiply(Buffer.from([Math.round(calibration, 10))]) // Send in 0.1°C units
+        data:safeMultiply(Buffer.from([Math.round(calibration, 10))]) // Send in 0.1Â°C units
       });
     } catch (err) {
       this.log('[HEATER] Failed to send calibration:', err.message);

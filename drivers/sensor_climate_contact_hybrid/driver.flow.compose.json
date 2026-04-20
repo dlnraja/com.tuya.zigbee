@@ -5,15 +5,15 @@
       "highlight": true,
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       },
       "tokens": [
         {
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (°C)",
-            "fr": "Température (°C)"
+            "en": "Temperature (Â°C)",
+            "fr": "TempÃ©rature (Â°C)"
           },
           "example": 22.5
         }
@@ -21,14 +21,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       }
     },
     {
       "id": "sensor_climate_contact_hybrid_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "HumiditÃ© changÃ©e"
       },
       "tokens": [
         {
@@ -36,7 +36,7 @@
           "type": "number",
           "title": {
             "en": "Humidity (%)",
-            "fr": "Humidité (%)"
+            "fr": "HumiditÃ© (%)"
           },
           "example": 55
         }
@@ -44,7 +44,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée"
+        "fr": "HumiditÃ© changÃ©e"
       }
     },
     {
@@ -63,64 +63,64 @@
       "id": "sensor_climate_contact_hybrid_temperature_alarm_high",
       "title": {
         "en": "Temperature too high",
-        "fr": "Température trop haute"
+        "fr": "TempÃ©rature trop haute"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature too high",
-        "fr": "Température trop haute"
+        "fr": "TempÃ©rature trop haute"
       }
     },
     {
       "id": "sensor_climate_contact_hybrid_temperature_alarm_low",
       "title": {
         "en": "Temperature too low",
-        "fr": "Température trop basse"
+        "fr": "TempÃ©rature trop basse"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature too low",
-        "fr": "Température trop basse"
+        "fr": "TempÃ©rature trop basse"
       }
     },
     {
       "id": "sensor_climate_contact_hybrid_humidity_alarm_high",
       "title": {
         "en": "Humidity too high",
-        "fr": "Humidité trop haute"
+        "fr": "HumiditÃ© trop haute"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity too high",
-        "fr": "Humidité trop haute"
+        "fr": "HumiditÃ© trop haute"
       }
     },
     {
       "id": "sensor_climate_contact_hybrid_humidity_alarm_low",
       "title": {
         "en": "Humidity too low",
-        "fr": "Humidité trop basse"
+        "fr": "HumiditÃ© trop basse"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity too low",
-        "fr": "Humidité trop basse"
+        "fr": "HumiditÃ© trop basse"
       }
     },
     {
       "id": "sensor_climate_contact_hybrid_temp_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       }
     }
   ],
@@ -129,11 +129,11 @@
       "id": "sensor_climate_contact_hybrid_temperature_above",
       "title": {
         "en": "Temperature is above",
-        "fr": "Température supérieure à"
+        "fr": "TempÃ©rature supÃ©rieure Ã"
       },
       "titleFormatted": {
-        "en": "Temperature is above [[temp]]°C",
-        "fr": "Température supérieure à [[temp]]°C"
+        "en": "Temperature is above [[temp]]Â°C",
+        "fr": "TempÃ©rature supÃ©rieure Ã [[temp]]Â°C"
       },
       "args": [
         {
@@ -144,7 +144,7 @@
           "step": 0.5,
           "title": {
             "en": "Temperature",
-            "fr": "Température"
+            "fr": "TempÃ©rature"
           }
         }
       ]
@@ -153,11 +153,11 @@
       "id": "sensor_climate_contact_hybrid_temperature_below",
       "title": {
         "en": "Temperature is below",
-        "fr": "Température inférieure à"
+        "fr": "TempÃ©rature infÃ©rieure Ã"
       },
       "titleFormatted": {
-        "en": "Temperature is below [[temp]]°C",
-        "fr": "Température inférieure à [[temp]]°C"
+        "en": "Temperature is below [[temp]]Â°C",
+        "fr": "TempÃ©rature infÃ©rieure Ã [[temp]]Â°C"
       },
       "args": [
         {
@@ -168,7 +168,7 @@
           "step": 0.5,
           "title": {
             "en": "Temperature",
-            "fr": "Température"
+            "fr": "TempÃ©rature"
           }
         }
       ]
@@ -177,11 +177,11 @@
       "id": "sensor_climate_contact_hybrid_humidity_above",
       "title": {
         "en": "Humidity is above",
-        "fr": "Humidité supérieure à"
+        "fr": "HumiditÃ© supÃ©rieure Ã"
       },
       "titleFormatted": {
         "en": "Humidity is above [[humidity]]%",
-        "fr": "Humidité supérieure à [[humidity]]%"
+        "fr": "HumiditÃ© supÃ©rieure Ã [[humidity]]%"
       },
       "args": [
         {
@@ -192,7 +192,7 @@
           "step": 1,
           "title": {
             "en": "Humidity (%)",
-            "fr": "Humidité (%)"
+            "fr": "HumiditÃ© (%)"
           }
         }
       ]
@@ -201,11 +201,11 @@
       "id": "sensor_climate_contact_hybrid_humidity_below",
       "title": {
         "en": "Humidity is below",
-        "fr": "Humidité inférieure à"
+        "fr": "HumiditÃ© infÃ©rieure Ã"
       },
       "titleFormatted": {
         "en": "Humidity is below [[humidity]]%",
-        "fr": "Humidité inférieure à [[humidity]]%"
+        "fr": "HumiditÃ© infÃ©rieure Ã [[humidity]]%"
       },
       "args": [
         {
@@ -216,7 +216,7 @@
           "step": 1,
           "title": {
             "en": "Humidity (%)",
-            "fr": "Humidité (%)"
+            "fr": "HumiditÃ© (%)"
           }
         }
       ]

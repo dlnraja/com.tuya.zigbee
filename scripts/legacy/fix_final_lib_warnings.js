@@ -18,16 +18,16 @@ let stats = {
 
 // Corrections exactes (extraites audit)
 const FIXES = [
-  // Valeurs littérales (déjà numériques, mais ajout parseFloat pour conformité)
+  // Valeurs littÃ©rales (dÃ©jÃ numÃ©riques, mais ajout parseFloat pour conformitÃ©)
   {
     file: 'lib/devices/BaseHybridDevice.js',
     old: "await this.setCapabilityValue('measure_battery', 50)",
-    new: "await this.setCapabilityValue('measure_battery', 50)" // Littéral OK
+    new: "await this.setCapabilityValue('measure_battery', 50)" // LittÃ©ral OK
   },
   {
     file: 'lib/devices/BaseTuyaDPDevice.js',
     old: "await this.setCapabilityValue('measure_battery', 100)",
-    new: "await this.setCapabilityValue('measure_battery', 100)" // Littéral OK
+    new: "await this.setCapabilityValue('measure_battery', 100)" // LittÃ©ral OK
   },
   {
     file: 'lib/diagnostics/DeviceHealth.js',
@@ -37,7 +37,7 @@ const FIXES = [
   {
     file: 'lib/helpers/BatteryRouter.js',
     old: "await device.setCapabilityValue('measure_battery', 100)",
-    new: "await device.setCapabilityValue('measure_battery', 100)" // Littéral OK
+    new: "await device.setCapabilityValue('measure_battery', 100)" // LittÃ©ral OK
   },
   {
     file: 'lib/helpers/VirtualCapabilities.js',
@@ -67,17 +67,17 @@ const FIXES = [
   {
     file: 'lib/managers/IASZoneManager.js',
     old: "device.setCapabilityValue('measure_battery', 15)",
-    new: "device.setCapabilityValue('measure_battery', 15)" // Littéral OK
+    new: "device.setCapabilityValue('measure_battery', 15)" // LittÃ©ral OK
   },
   {
     file: 'lib/mixins/TuyaDeviceMixin.js',
     old: "await this.setCapabilityValue('measure_battery', 100)",
-    new: "await this.setCapabilityValue('measure_battery', 100)" // Littéral OK
+    new: "await this.setCapabilityValue('measure_battery', 100)" // LittÃ©ral OK
   },
   {
     file: 'lib/SonoffZclDevice.js',
     old: "await this.setCapabilityValue('measure_battery', 100)",
-    new: "await this.setCapabilityValue('measure_battery', 100)" // Littéral OK
+    new: "await this.setCapabilityValue('measure_battery', 100)" // LittÃ©ral OK
   },
   {
     file: 'lib/SonoffZclDevice.js',
@@ -87,7 +87,7 @@ const FIXES = [
   {
     file: 'lib/SonoffZclDevice.js',
     old: "this.setCapabilityValue('measure_luminance', 0)",
-    new: "this.setCapabilityValue('measure_luminance', 0)" // Littéral OK
+    new: "this.setCapabilityValue('measure_luminance', 0)" // LittÃ©ral OK
   },
   {
     file: 'lib/tuya/DataRecoveryManager.js',
@@ -97,7 +97,7 @@ const FIXES = [
   {
     file: 'lib/tuya/TuyaEF00Manager.js',
     old: "this.device.setCapabilityValue?.('measure_battery', 100)",
-    new: "this.device.setCapabilityValue?.('measure_battery', 100)" // Littéral OK
+    new: "this.device.setCapabilityValue?.('measure_battery', 100)" // LittÃ©ral OK
   },
   {
     file: 'lib/tuya/TuyaGatewayEmulator.js',
@@ -135,7 +135,7 @@ function applyFixes() {
     const filePath = path.join(ROOT, relativeFile);
 
     if (!fs.existsSync(filePath)) {
-      console.log(`     Fichier non trouvé: ${relativeFile}`);
+      console.log(`     Fichier non trouvÃ©: ${relativeFile}`);
       return;
     }
 
@@ -144,7 +144,7 @@ function applyFixes() {
       let modified = false;
 
       fixes.forEach(fix => {
-        if (fix.old === fix.new) return; // Skip si littéral déjà OK
+        if (fix.old === fix.new) return; // Skip si littÃ©ral dÃ©jÃ OK
 
         if (content.includes(fix.old)) {
           content = content.replace(fix.old, fix.new);
@@ -172,22 +172,22 @@ function applyFixes() {
   });
 }
 
-// EXÉCUTION
+// EXÃ‰CUTION
 console.log(' Application corrections finales lib/...\n');
 applyFixes();
 
 console.log('\n\n RAPPORT CORRECTIONS:\n');
-console.log(`   Fichiers modifiés: ${stats.filesModified}`);
-console.log(`   Lignes corrigées: ${stats.linesFixed}`);
-console.log(`   Backups créés: ${stats.backupsCreated}\n`);
+console.log(`   Fichiers modifiÃ©s: ${stats.filesModified}`);
+console.log(`   Lignes corrigÃ©es: ${stats.linesFixed}`);
+console.log(`   Backups crÃ©Ã©s: ${stats.backupsCreated}\n`);
 
 if (stats.filesModified > 0) {
-  console.log(' CORRECTIONS APPLIQUÉES\n');
-  console.log(' NOTE: Valeurs littérales (50, 100, 0, 15) déjà numériques - pas modifiées');
-  console.log('   Seules les variables ont été converties avec parseFloat()\n');
+  console.log(' CORRECTIONS APPLIQUÃ‰ES\n');
+  console.log(' NOTE: Valeurs littÃ©rales (50, 100, 0, 15) dÃ©jÃ numÃ©riques - pas modifiÃ©es');
+  console.log('   Seules les variables ont Ã©tÃ© converties avec parseFloat()\n');
 }
 
-console.log(' PROCHAINES ÉTAPES:');
+console.log(' PROCHAINES Ã‰TAPES:');
 console.log('   1. Relancer audit: node scripts/audit_complete_advanced.js');
 console.log('   2. Valider: homey app validate --level publish');
 console.log('   3. Build: homey app build\n');

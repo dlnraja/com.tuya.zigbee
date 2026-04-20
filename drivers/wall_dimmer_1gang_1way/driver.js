@@ -29,7 +29,7 @@ class WallDimmer1Gang1WayDriver extends Homey {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('wall_dimmer_1gang_1way_is_on');
+      const card = this._getFlowCard('wall_dimmer_1gang_1way_is_on', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -40,7 +40,7 @@ class WallDimmer1Gang1WayDriver extends Homey {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('wall_dimmer_1gang_1way_set_backlight');
+      const card = this._getFlowCard('wall_dimmer_1gang_1way_set_backlight', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -51,7 +51,7 @@ class WallDimmer1Gang1WayDriver extends Homey {
     } catch (err) { this.error(`Action wall_dimmer_1gang_1way_set_backlight: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('wall_dimmer_1gang_1way_turn_on');
+      const card = this._getFlowCard('wall_dimmer_1gang_1way_turn_on', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -62,7 +62,7 @@ class WallDimmer1Gang1WayDriver extends Homey {
     } catch (err) { this.error(`Action wall_dimmer_1gang_1way_turn_on: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('wall_dimmer_1gang_1way_turn_off');
+      const card = this._getFlowCard('wall_dimmer_1gang_1way_turn_off', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -73,7 +73,7 @@ class WallDimmer1Gang1WayDriver extends Homey {
     } catch (err) { this.error(`Action wall_dimmer_1gang_1way_turn_off: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('wall_dimmer_1gang_1way_toggle');
+      const card = this._getFlowCard('wall_dimmer_1gang_1way_toggle', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -85,7 +85,7 @@ class WallDimmer1Gang1WayDriver extends Homey {
     } catch (err) { this.error(`Action wall_dimmer_1gang_1way_toggle: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('wall_dimmer_1gang_1way_set_brightness');
+      const card = this._getFlowCard('wall_dimmer_1gang_1way_set_brightness', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

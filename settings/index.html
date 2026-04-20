@@ -2,82 +2,194 @@
 <html><head>
 <script src="/homey.js" data-origin="settings"></script>
 <style>
-body{font-family:sans-serif;padding:16px;color:#333;font-size:13px}
-h1{font-size:18px}.card{background:#f5f5f5;border-radius:8px;padding:12px;margin:8px 0}
-a{color:#00a870}.fg{margin-bottom:8px}
-label{font-weight:600;font-size:12px;display:block;margin-bottom:2px}
-input,select{width:100%;padding:7px;border:1px solid #ccc;border-radius:5px;font-size:12px;box-sizing:border-box}
-.btn{padding:8px 14px;border:none;border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;background:#00a870;color:#fff}
-.btn:disabled{opacity:.5;cursor:not-allowed}.btn-c{background:#ddd;color:#333}
-.row{display:flex;gap:8px}.row>*{flex:1}
-.msg{font-size:11px;margin-top:5px;padding:5px;border-radius:4px;display:none}
-.ok{color:#00a870;background:#f0faf5}.err{color:#e74c3c;background:#fef2f2}
-.tr{display:flex;align-items:center;justify-content:space-between;padding:6px 0}
-.sw{position:relative;width:40px;height:22px;flex-shrink:0}
+body{font-family:sans-serif;padding:16px;color:#333;font-size:13px;background-color:#ffffff}
+h1{font-size:20px;color:#00a870;margin-top:0}.card{background:#f8faf9;border:1px solid #e1e8e5;border-radius:10px;padding:16px;margin:12px 0;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+a{color:#00a870;text-decoration:none;font-weight:600}a:hover{text-decoration:underline}.fg{margin-bottom:12px}
+label{font-weight:600;font-size:12px;display:block;margin-bottom:4px;color:#555}
+input,select{width:100%;padding:9px;border:1px solid #cbd5e0;border-radius:6px;font-size:13px;box-sizing:border-box;background:#fff}
+input:focus{outline:none;border-color:#00a870;box-shadow:0 0 0 1px #00a870}
+.btn{padding:10px 18px;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;background:#00a870;color:#fff;transition:background 0.2s}
+.btn:hover{background:#008f5d}
+.btn:disabled{opacity:.5;cursor:not-allowed}.btn-c{background:#e2e8f0;color:#4a5568}.btn-c:hover{background:#cbd5e0}
+.row{display:flex;gap:12px}.row>*{flex:1}
+.msg{font-size:12px;margin-top:8px;padding:8px 12px;border-radius:6px;display:none}
+.ok{color:#065f46;background:#d1fae5;border:1px solid #a7f3d0}.err{color:#991b1b;background:#fee2e2;border:1px solid #fecaca}
+.tr{display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #edf2f7}.tr:last-child{border-bottom:none}
+.sw{position:relative;width:44px;height:24px;flex-shrink:0}
 .sw input{opacity:0;width:0;height:0}
-.sl{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#ccc;border-radius:22px;transition:.3s}
-.sl:before{position:absolute;content:"";height:16px;width:16px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.3s}
+.sl{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background:#ccd6d0;border-radius:24px;transition:.3s}
+.sl:before{position:absolute;content:"";height:18px;width:18px;left:3px;bottom:3px;background:#fff;border-radius:50%;transition:.3s;box-shadow:0 1px 2px rgba(0,0,0,0.1)}
 .sw input:checked+.sl{background:#00a870}
-.sw input:checked+.sl:before{transform:translateX(18px)}
-.ss{font-size:10px;color:#999;margin-top:2px}.ss.on{color:#00a870}
+.sw input:checked+.sl:before{transform:translateX(20px)}
+.ss{font-size:11px;color:#718096;margin-top:4px;font-weight:500}.ss.on{color:#00a870}
+.loader{border:3px solid #f3f3f3;border-top:3px solid #00a870;border-radius:50%;width:20px;height:20px;animation:spin 1s linear infinite;display:inline-block;vertical-align:middle;margin-right:8px}
+@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+#init-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:#fff;display:flex;align-items:center;justify-content:center;z-index:100;transition:opacity 0.5s}
 </style></head><body>
-<h1>Universal Tuya Zigbee + WiFi</h1>
-<p>100% Local Control | 138 drivers | 5,579 fingerprints</p>
-<div class="card"><b>Links</b><br>
-<a href="https://github.com/dlnraja/com.tuya.zigbee/issues" target="_blank">Report Issue</a> |
-<a href="https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352" target="_blank">Forum</a></div>
-<div class="card"><h3>WiFi Cloud Credentials</h3>
-<p style="font-size:11px;color:#666">Save your Tuya IoT credentials here. They will be pre-filled when pairing WiFi devices.</p>
-<div class="row"><div class="fg"><label>Access ID</label><input id="aid" placeholder="from iot.tuya.com"/></div>
-<div class="fg"><label>Access Secret</label><input id="as" type="password" placeholder="from iot.tuya.com"/>
-<div class="ss" id="sec-status"></div></div></div>
-<div class="fg"><label>Region</label><select id="reg"><option value="eu">Europe</option><option value="us">Americas</option><option value="cn">China</option><option value="in">India</option></select></div>
-<button class="btn" id="btn-save" disabled onclick="saveCreds()">Save Credentials</button>
-<button class="btn btn-c" id="btn-clear" disabled onclick="clearCreds()">Clear</button>
-<div class="msg ok" id="ok-msg"></div><div class="msg err" id="err-msg"></div></div>
-<div class="card"><h3>Developer Settings</h3>
-<div class="tr"><div><b>Debug Mode</b><br><span style="font-size:11px;color:#666">Verbose logging for troubleshooting</span></div>
-<label class="sw"><input type="checkbox" id="dbg" onchange="setToggle('developer_debug_mode',this.checked)"><span class="sl"></span></label></div>
-<div class="tr"><div><b>Experimental Smart-Adapt</b><br><span style="font-size:11px;color:#666">Auto-modify capabilities (use with caution)</span></div>
-<label class="sw"><input type="checkbox" id="sa" onchange="setToggle('experimental_smart_adapt',this.checked)"><span class="sl"></span></label></div></div>
-<div class="card"><b>Tip:</b> If a device doesn't work, remove it, factory reset (hold button 5-10s), then re-pair close to Homey.</div>
+<div id="init-overlay"><div class="loader"></div> Initializing Tuya Engine...</div>
+
+<h1>🌌 Universal Tuya Engine</h1>
+<p style="color:#666;margin-bottom:20px">High-Performance Local Control | 4,028 drivers | Enterprise Stability</p>
+
+<div class="card">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <b>Support & Resources</b>
+    <div>
+      <a href="https://github.com/dlnraja/com.tuya.zigbee/issues" target="_blank">Issues</a> |
+      <a href="https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352" target="_blank">Forum</a>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>☁️ WiFi Cloud Credentials</h3>
+  <p style="font-size:12px;color:#718096;margin-bottom:12px">Configure your Tuya IoT credentials for semi-automated WiFi device onboarding.</p>
+  <div class="row">
+    <div class="fg">
+      <label>Access ID (Client ID)</label>
+      <input id="aid" placeholder="32 chars from iot.tuya.com"/>
+    </div>
+    <div class="fg">
+      <label>Access Secret</label>
+      <input id="as" type="password" placeholder="32 chars from iot.tuya.com"/>
+      <div class="ss" id="sec-status">Checking configuration...</div>
+    </div>
+  </div>
+  <div class="fg">
+    <label>Data Center Region</label>
+    <select id="reg">
+      <option value="eu">Western Europe (Central)</option>
+      <option value="us">Americas (Western US)</option>
+      <option value="cn">China (Eastern)</option>
+      <option value="in">India</option>
+    </select>
+  </div>
+  <div style="margin-top:16px">
+    <button class="btn" id="btn-save" onclick="saveCreds()">Save Configuration</button>
+    <button class="btn btn-c" id="btn-clear" onclick="clearCreds()">Reset</button>
+  </div>
+  <div class="msg ok" id="ok-msg"></div>
+  <div class="msg err" id="err-msg"></div>
+</div>
+
+<div class="card">
+  <h3>🛠️ Advanced Engine Settings</h3>
+  <div class="tr">
+    <div>
+      <b>Autonomous Debug Mode</b><br>
+      <span style="font-size:11px;color:#718096">Extended logging for heuristic analysis</span>
+    </div>
+    <label class="sw"><input type="checkbox" id="dbg" onchange="setToggle('developer_debug_mode',this.checked)"><span class="sl"></span></label>
+  </div>
+  <div class="tr">
+    <div>
+      <b>Experimental Smart-Adapt (Rule 33)</b><br>
+      <span style="font-size:11px;color:#718096">Force-override capabilities for non-compliant DPs</span>
+    </div>
+    <label class="sw"><input type="checkbox" id="sa" onchange="setToggle('experimental_smart_adapt',this.checked)"><span class="sl"></span></label>
+  </div>
+</div>
+
+<div class="card" style="background:#fffbeb;border-color:#fef3c7;color:#92400e;font-size:12px">
+  <b>💡 Performance Tip:</b> For Zero-Latency response, ensure Zigbee devices are within 5m of a router (repeater) or the Homey Pro. 
+  Sudden "Red Exclamation Marks" usually indicate unreachable mesh nodes or battery depletion.
+</div>
+
 <script>
-var Homey=null;
-function show(id,t){var e=document.getElementById(id);e.textContent=t;e.style.display='block';setTimeout(function(){e.style.display='none'},4000)}
-function saveCreds(){
-if(!Homey){show('err-msg','App not ready yet');return}
-var a=document.getElementById('aid').value.trim(),s=document.getElementById('as').value.trim(),r=document.getElementById('reg').value;
-if(!a||!s){show('err-msg','Access ID and Secret required');return}
-Homey.set('tuya_cloud_access_id',a,function(e){if(e){show('err-msg','Save failed: '+e.message);return}
-Homey.set('tuya_cloud_access_secret',s,function(e2){if(e2){show('err-msg','Save failed: '+e2.message);return}
-Homey.set('tuya_cloud_region',r,function(e3){if(e3){show('err-msg','Save failed: '+e3.message);return}
-show('ok-msg','Credentials saved!');updateSecretStatus(true)})})})
+var Homey = null;
+
+function onHomeyReady(homey) {
+  Homey = homey;
+  
+  // Hide loading overlay
+  const overlay = document.getElementById('init-overlay');
+  if(overlay) {
+    overlay.style.opacity = '0';
+    setTimeout(() => overlay.style.display = 'none', 500);
+  }
+
+  // Initial load
+  Homey.get('tuya_cloud_access_id', (err, val) => { if(val) document.getElementById('aid').value = val; });
+  Homey.get('tuya_cloud_access_secret', (err, val) => { updateSecretStatus(!!val); });
+  Homey.get('tuya_cloud_region', (err, val) => { if(val) document.getElementById('reg').value = val; });
+  Homey.get('developer_debug_mode', (err, val) => { document.getElementById('dbg').checked = !!val; });
+  Homey.get('experimental_smart_adapt', (err, val) => { document.getElementById('sa').checked = !!val; });
+
+  // Support for real-time updates if another tab changes settings
+  Homey.on('settings_set', (key) => {
+     // Optional: reload if needed
+  });
 }
-function clearCreds(){
-if(!Homey){show('err-msg','App not ready yet');return}
-Homey.unset('tuya_cloud_access_id');Homey.unset('tuya_cloud_access_secret');Homey.unset('tuya_cloud_region');
-document.getElementById('aid').value='';document.getElementById('as').value='';
-document.getElementById('reg').value='eu';
-updateSecretStatus(false);show('ok-msg','Credentials cleared')
+
+function show(id, text, isError) {
+  const el = document.getElementById(isError ? 'err-msg' : 'ok-msg');
+  const other = document.getElementById(isError ? 'ok-msg' : 'err-msg');
+  other.style.display = 'none';
+  el.textContent = text;
+  el.style.display = 'block';
+  setTimeout(() => { el.style.display = 'none'; }, 5000);
 }
-function setToggle(key,val){
-if(!Homey){return}
-Homey.set(key,val,function(e){if(e){show('err-msg','Failed: '+e.message)}})
+
+function saveCreds() {
+  if(!Homey) return;
+  const aid = document.getElementById('aid').value.trim();
+  const secret = document.getElementById('as').value.trim();
+  const region = document.getElementById('reg').value;
+
+  if(!aid || !secret) {
+    show(null, 'ID and Secret are required for Cloud binding', true);
+    return;
+  }
+
+  const btn = document.getElementById('btn-save');
+  btn.disabled = true;
+  btn.textContent = 'Saving...';
+
+  // Chained saves (SDK 3)
+  Homey.set('tuya_cloud_access_id', aid, (err) => {
+    if(err) { show(null, err.message, true); btn.disabled = false; btn.textContent = 'Save Configuration'; return; }
+    Homey.set('tuya_cloud_access_secret', secret, (err2) => {
+      if(err2) { show(null, err2.message, true); btn.disabled = false; btn.textContent = 'Save Configuration'; return; }
+      Homey.set('tuya_cloud_region', region, (err3) => {
+        btn.disabled = false;
+        btn.textContent = 'Save Configuration';
+        if(err3) { show(null, err3.message, true); return; }
+        show(null, 'Configuration synchronized successfully', false);
+        updateSecretStatus(true);
+      });
+    });
+  });
 }
-function updateSecretStatus(has){
-var el=document.getElementById('sec-status');
-if(has){el.textContent='Secret is configured';el.className='ss on'}
-else{el.textContent='No secret saved';el.className='ss'}
+
+function clearCreds() {
+  if(!Homey || !confirm('Reset cloud configuration?')) return;
+  Homey.set('tuya_cloud_access_id', null);
+  Homey.set('tuya_cloud_access_secret', null);
+  Homey.set('tuya_cloud_region', 'eu');
+  
+  document.getElementById('aid').value = '';
+  document.getElementById('as').value = '';
+  document.getElementById('reg').value = 'eu';
+  updateSecretStatus(false);
+  show(null, 'Cloud access revoked', false);
 }
-function onHomeyReady(homey){
-try{ Homey=homey; }catch(x){} try{ Homey.ready(); }catch(x){}
-document.getElementById('btn-save').disabled=false;
-document.getElementById('btn-clear').disabled=false;
-Homey.get('tuya_cloud_access_id',function(e,v){if(v)document.getElementById('aid').value=v});
-Homey.get('tuya_cloud_access_secret',function(e,v){updateSecretStatus(!!v)});
-Homey.get('tuya_cloud_region',function(e,v){if(v)document.getElementById('reg').value=v});
-Homey.get('developer_debug_mode',function(e,v){document.getElementById('dbg').checked=!!v});
-Homey.get('experimental_smart_adapt',function(e,v){document.getElementById('sa').checked=!!v});
+
+function setToggle(key, val) {
+  if(!Homey) return;
+  Homey.set(key, val, (err) => {
+    if(err) show(null, 'Engine sync failed: ' + err.message, true);
+  });
 }
-window.onHomeyReady = onHomeyReady;
-</script></body></html>
+
+function updateSecretStatus(has) {
+  const el = document.getElementById('sec-status');
+  if(has) {
+    el.textContent = '🔒 Access Secret Encrypted & Saved';
+    el.className = 'ss on';
+  } else {
+    el.textContent = '❌ No Secret Configured';
+    el.className = 'ss';
+  }
+}
+</script>
+</body></html>

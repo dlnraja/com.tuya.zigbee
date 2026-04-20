@@ -15,21 +15,21 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
  * 
  * PJ-1203A 2-CHANNEL DP MAPPINGS (CORRECTED from Z2M #18419):
  * 
- * DP101: power_a (W ÷10)
+ * DP101: power_a (W Ã·10)
  * DP102: power_direction_a (0=forward, 1=reverse)
  * DP104: power_direction_b
- * DP105: power_b (W ÷10)
- * DP106: energy_forward_a (kWh ÷100)
- * DP107: energy_reverse_a (kWh ÷100)
- * DP108: energy_forward_b (kWh ÷100)
- * DP109: energy_reverse_b (kWh ÷100)
- * DP110: power_factor_a (÷100)
- * DP111: ac_frequency (Hz ÷100)
- * DP112: voltage (V ÷10)
- * DP113: current_a (A ÷1000)
- * DP114: current_b (A ÷1000)
- * DP115: power_ab (W ÷10) - Total power
- * DP121: power_factor_b (÷100)
+ * DP105: power_b (W Ã·10)
+ * DP106: energy_forward_a (kWh Ã·100)
+ * DP107: energy_reverse_a (kWh Ã·100)
+ * DP108: energy_forward_b (kWh Ã·100)
+ * DP109: energy_reverse_b (kWh Ã·100)
+ * DP110: power_factor_a (Ã·100)
+ * DP111: ac_frequency (Hz Ã·100)
+ * DP112: voltage (V Ã·10)
+ * DP113: current_a (A Ã·1000)
+ * DP114: current_b (A Ã·1000)
+ * DP115: power_ab (W Ã·10) - Total power
+ * DP121: power_factor_b (Ã·100)
  * DP129: update_frequency (seconds)
  *
  * 
@@ -205,7 +205,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     // 
     if (profile === 'pj1203a') {
       switch (dp) {
-      case 101: // Power A (W ÷10)
+      case 101: // Power A (W Ã·10)
         const powerA = safeParse(value, 10);
         if (this.hasCapability('measure_power.phase1')) {
           this.setCapabilityValue('measure_power.phase1', powerA).catch(this.error);
@@ -225,7 +225,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         this.log(`[PJ1203A]  Direction B: ${value === 0 ? 'consuming' : 'producing'}`);
         break;
 
-      case 105: // Power B (W ÷10)
+      case 105: // Power B (W Ã·10)
         const powerB = safeParse(value, 10);
         if (this.hasCapability('measure_power.phase2')) {
           this.setCapabilityValue('measure_power.phase2', powerB).catch(this.error);
@@ -235,57 +235,57 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         this._updateTotalPowerPJ1203A();
         break;
 
-      case 106: // Energy forward A (kWh ÷100)
+      case 106: // Energy forward A (kWh Ã·100)
         this._energyForwardA = safeParse(value, 100);
         this.log(`[PJ1203A]  Energy Forward A: ${this._energyForwardA} kWh`);
         this._updateTotalEnergy();
         break;
 
-      case 107: // Energy reverse A (kWh ÷100) - produced/exported
+      case 107: // Energy reverse A (kWh Ã·100) - produced/exported
         this._energyReverseA = safeParse(value, 100);
         this.log(`[PJ1203A]  Energy Reverse A: ${this._energyReverseA} kWh`);
         break;
 
-      case 108: // Energy forward B (kWh ÷100)
+      case 108: // Energy forward B (kWh Ã·100)
         this._energyForwardB = safeParse(value, 100);
         this.log(`[PJ1203A]  Energy Forward B: ${this._energyForwardB} kWh`);
         this._updateTotalEnergy();
         break;
 
-      case 109: // Energy reverse B (kWh ÷100) - produced/exported
+      case 109: // Energy reverse B (kWh Ã·100) - produced/exported
         this._energyReverseB = safeParse(value, 100);
         this.log(`[PJ1203A]  Energy Reverse B: ${this._energyReverseB} kWh`);
         break;
 
-      case 110: // Power factor A (÷100)
+      case 110: // Power factor A (Ã·100)
         this.log(`[PJ1203A]  Power Factor A: ${value/100}`);
         break;
 
-      case 111: // AC frequency (Hz ÷100)
+      case 111: // AC frequency (Hz Ã·100)
         this.log(`[PJ1203A]  AC Frequency: ${value/100} Hz`);
         break;
 
-      case 112: // Voltage (V ÷10)
+      case 112: // Voltage (V Ã·10)
         this.setCapabilityValue('measure_voltage', safeParse(value, 10)).catch(this.error);
         this.log(`[PJ1203A]  Voltage: ${value/10} V`);
         break;
 
-      case 113: // Current A (A ÷1000)
+      case 113: // Current A (A Ã·1000)
         this.setCapabilityValue('measure_current', (safeParse(value,safeMultiply(1000)), this)._ctRatio).catch(this.error);
         this.log(`[PJ1203A]  Current A: ${value/1000} A`);
         break;
 
-      case 114: // Current B (A ÷1000)
+      case 114: // Current B (A Ã·1000)
         this.log(`[PJ1203A]  Current B: ${value/1000} A`);
         break;
 
-      case 115: // Power AB Total (W ÷10)
+      case 115: // Power AB Total (W Ã·10)
         const totalPower = safeParse(value, 10);
         this.setCapabilityValue('measure_power', totalPower).catch(this.error);
         this.log(`[PJ1203A]  Total Power: ${totalPower} W`);
         break;
 
-      case 121: // Power factor B (÷100)
+      case 121: // Power factor B (Ã·100)
         this.log(`[PJ1203A]  Power Factor B: ${value/100}`);
         break;
 
@@ -337,7 +337,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       break;
 
       // v5.8.9: FALLBACK - Handle PJ-1203A DPs even when profile detection fails
-    case 101: // Total power (W) - 3phase OR Power A (W ÷10) - PJ-1203A
+    case 101: // Total power (W) - 3phase OR Power A (W Ã·10) - PJ-1203A
       // Try PJ-1203A scaling first if value seems too high
       const powerVal = value > 10000 ? safeParse(value, 10) : value;
       this.setCapabilityValue('measure_power', powerVal).catch(this.error);
@@ -357,29 +357,29 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       this.log(`[FALLBACK]  Direction B: ${value === 0 ? 'consuming' : 'producing'}`);
       break;
 
-    case 105: // PJ-1203A Power B (W ÷10)
+    case 105: // PJ-1203A Power B (W Ã·10)
       this.log(`[FALLBACK]  Power B: ${value/10} W`);
       break;
 
-    case 111: // PJ-1203A AC Frequency (Hz ÷100)
+    case 111: // PJ-1203A AC Frequency (Hz Ã·100)
       this.log(`[FALLBACK]  AC Frequency: ${value/100} Hz`);
       break;
 
-    case 112: // PJ-1203A Voltage (V ÷10)
+    case 112: // PJ-1203A Voltage (V Ã·10)
       this.setCapabilityValue('measure_voltage', safeParse(value, 10)).catch(this.error);
       this.log(`[FALLBACK]  Voltage: ${value/10} V`);
       break;
 
-    case 113: // PJ-1203A Current A (A ÷1000)
+    case 113: // PJ-1203A Current A (A Ã·1000)
       this.setCapabilityValue('measure_current', (safeParse(value,safeMultiply(1000)), this)._ctRatio).catch(this.error);
       this.log(`[FALLBACK]  Current A: ${value/1000} A`);
       break;
 
-    case 114: // PJ-1203A Current B (A ÷1000)
+    case 114: // PJ-1203A Current B (A Ã·1000)
       this.log(`[FALLBACK]  Current B: ${value/1000} A`);
       break;
 
-    case 115: // PJ-1203A Total Power (W ÷10)
+    case 115: // PJ-1203A Total Power (W Ã·10)
       this.setCapabilityValue('measure_power', safeParse(value, 10)).catch(this.error);
       this.log(`[FALLBACK]  Total Power: ${value/10} W`);
       break;

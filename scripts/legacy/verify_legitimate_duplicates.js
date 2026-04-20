@@ -4,7 +4,7 @@
 const fs = require('fs');
 const path = require('path');
 
-console.log(' VÉRIFICATION DUPLICATES LÉGITIMES (manufacturerName + productId)\n');
+console.log(' VÃ‰RIFICATION DUPLICATES LÃ‰GITIMES (manufacturerName + productId)\n');
 
 const ROOT = path.join(__dirname, '..');
 const DRIVERS_DIR = path.join(ROOT, 'drivers');
@@ -56,8 +56,8 @@ scanDrivers();
 
 // Analyser duplicates
 const report = {
-  legitimate: [],    // Même manufacturerName, productIds DIFFÉRENTS = OK
-  problematic: [],   // Même manufacturerName + productIds OVERLAP = PROBLÈME
+  legitimate: [],    // MÃªme manufacturerName, productIds DIFFÃ‰RENTS = OK
+  problematic: [],   // MÃªme manufacturerName + productIds OVERLAP = PROBLÃˆME
   stats: {
     totalManufacturers: manufacturerMap.size,
     sharedManufacturers: 0,
@@ -71,7 +71,7 @@ manufacturerMap.forEach((drivers, manuName) => {
 
   report.stats.sharedManufacturers++;
 
-  // Vérifier si productIds se chevauchent
+  // VÃ©rifier si productIds se chevauchent
   let hasOverlap = false;
   const allProductIds = new Set();
   const overlaps = [];
@@ -81,7 +81,7 @@ manufacturerMap.forEach((drivers, manuName) => {
       const driver1 = drivers[i];
       const driver2 = drivers[j];
 
-      // Vérifier intersection productIds
+      // VÃ©rifier intersection productIds
       const overlap = driver1.productIds.filter(pid => driver2.productIds.includes(pid));
 
       if (overlap.length > 0) {
@@ -113,7 +113,7 @@ manufacturerMap.forEach((drivers, manuName) => {
         name: d.driver,
         productIds: d.productIds
       })),
-      reason: 'ProductIds différents - partage légitime',
+      reason: 'ProductIds diffÃ©rents - partage lÃ©gitime',
       severity: 'INFO'
     });
     report.stats.legitimateSharing++;
@@ -121,14 +121,14 @@ manufacturerMap.forEach((drivers, manuName) => {
 });
 
 // AFFICHAGE
-console.log(' RÉSULTATS ANALYSE:\n');
+console.log(' RÃ‰SULTATS ANALYSE:\n');
 console.log(`   Total manufacturer names: ${report.stats.totalManufacturers}`);
-console.log(`   Partagés entre drivers: ${report.stats.sharedManufacturers}`);
-console.log(`   Partages LÉGITIMES: ${report.stats.legitimateSharing} `);
-console.log(`   Partages PROBLÉMATIQUES: ${report.stats.problematicSharing} \n`);
+console.log(`   PartagÃ©s entre drivers: ${report.stats.sharedManufacturers}`);
+console.log(`   Partages LÃ‰GITIMES: ${report.stats.legitimateSharing} `);
+console.log(`   Partages PROBLÃ‰MATIQUES: ${report.stats.problematicSharing} \n`);
 
 if (report.legitimate.length > 0) {
-  console.log(' PARTAGES LÉGITIMES (manufacturerName partagé, productIds DIFFÉRENTS):\n');
+  console.log(' PARTAGES LÃ‰GITIMES (manufacturerName partagÃ©, productIds DIFFÃ‰RENTS):\n');
   report.legitimate.slice(0, 10).forEach(item => {
     console.log(`   ${item.manufacturerName} (${item.drivers.length} drivers)`);
     item.drivers.forEach(d => {
@@ -138,12 +138,12 @@ if (report.legitimate.length > 0) {
   });
 
   if (report.legitimate.length > 10) {
-    console.log(`   ... et ${report.legitimate.length - 10} autres partages légitimes\n`);
+    console.log(`   ... et ${report.legitimate.length - 10} autres partages lÃ©gitimes\n`);
   }
 }
 
 if (report.problematic.length > 0) {
-  console.log('\n PARTAGES PROBLÉMATIQUES (manufacturerName + productIds SE CHEVAUCHENT):\n');
+  console.log('\n PARTAGES PROBLÃ‰MATIQUES (manufacturerName + productIds SE CHEVAUCHENT):\n');
   report.problematic.forEach(item => {
     console.log(`   ${item.manufacturerName}`);
     console.log(`      Drivers: ${item.drivers.join(', ')}`);
@@ -158,7 +158,7 @@ if (report.problematic.length > 0) {
 // Sauvegarder rapport
 const reportFile = path.join(ROOT, 'LEGITIMATE_DUPLICATES_VERIFICATION.json');
 fs.writeFileSync(reportFile, JSON.stringify(report, null, 2), 'utf8');
-console.log(`\n Rapport sauvegardé: ${reportFile}\n`);
+console.log(`\n Rapport sauvegardÃ©: ${reportFile}\n`);
 
 // Conclusion
 if (report.stats.problematicSharing > 0) {
@@ -166,9 +166,9 @@ if (report.stats.problematicSharing > 0) {
   console.log(`   ${report.stats.problematicSharing} manufacturer names ont des productIds qui se chevauchent`);
   console.log('   Cela peut causer des conflits lors du pairing\n');
 } else {
-  console.log(' AUCUN PROBLÈME DÉTECTÉ:');
-  console.log('   Tous les partages de manufacturer names sont légitimes');
-  console.log('   (productIds différents entre drivers)\n');
+  console.log(' AUCUN PROBLÃˆME DÃ‰TECTÃ‰:');
+  console.log('   Tous les partages de manufacturer names sont lÃ©gitimes');
+  console.log('   (productIds diffÃ©rents entre drivers)\n');
 }
 
 process.exit(report.stats.problematicSharing > 0 ? 1 : 0);

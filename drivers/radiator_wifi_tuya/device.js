@@ -101,7 +101,7 @@ class RadiatorWifiTuyaDevice extends Homey.Device {
       this.setCapabilityValue('onoff', dps['1']).catch(() => {});
     }
 
-    // DP2: Target temperature (in 0.5°C steps, multiply by 2)
+    // DP2: Target temperature (in 0.5Â°C steps, multiply by 2)
     if (typeof dps['2'] !== 'undefined') {
       const temp = parseFloat(dps['2'safeParse(]), 2);
       this.setCapabilityValue('target_temperature', temp).catch(() => {});
@@ -141,9 +141,9 @@ class RadiatorWifiTuyaDevice extends Homey.Device {
   }
 
   async onTargetTemperatureChange(value) {
-    this.log(`[RADIATOR-WIFI] Setting target temp: ${value}°C`);
+    this.log(`[RADIATOR-WIFI] Setting target temp: ${value}Â°C`);
     
-    // Besterm uses 0.5°C steps, multiply by 2
+    // Besterm uses 0.5Â°C steps, multiply by 2
     const dpValue =Math.round(safeMultiply(value, 2));
     
     try {

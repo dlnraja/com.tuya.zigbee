@@ -2,8 +2,8 @@
 
 /**
  * FLOW EMERGENCY FIXER v5.5.295
- * Correcteur d'urgence pour les IDs doublons créés par l'optimisation
- * Restaure les IDs spécifiques pour switches multi-gang avec fallback intelligent
+ * Correcteur d'urgence pour les IDs doublons crÃ©Ã©s par l'optimisation
+ * Restaure les IDs spÃ©cifiques pour switches multi-gang avec fallback intelligent
  */
 
 const fs = require('fs');
@@ -26,7 +26,7 @@ class FlowEmergencyFixer {
   async fixAllDuplicates() {
     console.log(' EMERGENCY FLOW DUPLICATE FIXER STARTING...');
 
-    // Identifier les drivers multi-gang problématiques
+    // Identifier les drivers multi-gang problÃ©matiques
     const multiGangDrivers = [
       'switch_wall_5gang',
       'switch_wall_6gang',
@@ -52,7 +52,7 @@ class FlowEmergencyFixer {
   }
 
   /**
-   * Fixe un driver multi-gang spécifique
+   * Fixe un driver multi-gang spÃ©cifique
    */
   async fixMultiGangDriver(driverName) {
     const driverPath = path.join(this.driversPath, driverName);
@@ -64,13 +64,13 @@ class FlowEmergencyFixer {
 
     const flows = JSON.parse(fs.readFileSync(flowPath, 'utf8'));
 
-    // Détecter le nombre de gangs
+    // DÃ©tecter le nombre de gangs
     const gangCount = this.extractGangCount(driverName);
 
-    // Fixer les flows avec IDs spécifiques par gang
+    // Fixer les flows avec IDs spÃ©cifiques par gang
     const fixedFlows = this.fixMultiGangFlows(flows, driverName, gangCount);
 
-    // Sauvegarder si des changements ont été faits
+    // Sauvegarder si des changements ont Ã©tÃ© faits
     if (JSON.stringify(flows) !== JSON.stringify(fixedFlows)) {
       fs.writeFileSync(flowPath, JSON.stringify(fixedFlows, null, 2));
       this.fixResults.fixed++;
@@ -127,13 +127,13 @@ class FlowEmergencyFixer {
       const baseType = this.identifyBaseFlowType(flow.id, flow);
 
       if (this.isMultiGangFlow(baseType)) {
-        // Créer des flows spécifiques pour chaque gang
+        // CrÃ©er des flows spÃ©cifiques pour chaque gang
         for (let gang = 1; gang <= gangCount; gang++) {
           const gangFlow = this.createGangSpecificFlow(flow, driverName, gang, baseType);
           fixed.push(gangFlow);
         }
 
-        // Ajouter flows spéciaux (all_on, all_off) si nécessaire
+        // Ajouter flows spÃ©ciaux (all_on, all_off) si nÃ©cessaire
         if (baseType === 'is_on' && flowType === 'condition') {
           fixed.push(this.createAllOnCondition(driverName));
           fixed.push(this.createAllOffCondition(driverName));
@@ -191,7 +191,7 @@ class FlowEmergencyFixer {
   }
 
   /**
-   * Vérifie si un type de flow nécessite des gangs multiples
+   * VÃ©rifie si un type de flow nÃ©cessite des gangs multiples
    */
   isMultiGangFlow(baseType) {
     const multiGangTypes = ['turned_on', 'turned_off', 'is_on', 'turn_on', 'turn_off', 'toggle'];
@@ -199,15 +199,15 @@ class FlowEmergencyFixer {
   }
 
   /**
-   * Crée un flow spécifique pour un gang
+   * CrÃ©e un flow spÃ©cifique pour un gang
    */
   createGangSpecificFlow(originalFlow, driverName, gangNumber, baseType) {
     const gangFlow = JSON.parse(JSON.stringify(originalFlow));
 
-    // Générer l'ID spécifique pour ce gang
+    // GÃ©nÃ©rer l'ID spÃ©cifique pour ce gang
     gangFlow.id = `${driverName}_gang${gangNumber}_${baseType}`;
 
-    // Mettre à jour le titre pour inclure le numéro de gang
+    // Mettre Ã jour le titre pour inclure le numÃ©ro de gang
     if (gangFlow.title) {
       Object.keys(gangFlow.title).forEach(lang => {
         const baseTitle = gangFlow.title[lang];
@@ -234,7 +234,7 @@ class FlowEmergencyFixer {
       });
     }
 
-    // Préserver les métadonnées de fallback
+    // PrÃ©server les mÃ©tadonnÃ©es de fallback
     if (originalFlow._fallback) {
       gangFlow._fallback = {
         ...originalFlow._fallback,
@@ -247,14 +247,14 @@ class FlowEmergencyFixer {
   }
 
   /**
-   * Crée une condition "all on"
+   * CrÃ©e une condition "all on"
    */
   createAllOnCondition(driverName) {
     return {
       id: `${driverName}_all_on`,
       title: {
         en: "All gangs are on",
-        fr: "Tous les gangs sont allumés"
+        fr: "Tous les gangs sont allumÃ©s"
       },
       _fallback: {
         emergencyFix: '5.5.295',
@@ -264,14 +264,14 @@ class FlowEmergencyFixer {
   }
 
   /**
-   * Crée une condition "all off"
+   * CrÃ©e une condition "all off"
    */
   createAllOffCondition(driverName) {
     return {
       id: `${driverName}_all_off`,
       title: {
         en: "All gangs are off",
-        fr: "Tous les gangs sont éteints"
+        fr: "Tous les gangs sont Ã©teints"
       },
       _fallback: {
         emergencyFix: '5.5.295',
@@ -281,7 +281,7 @@ class FlowEmergencyFixer {
   }
 
   /**
-   * Assure l'unicité d'un ID
+   * Assure l'unicitÃ© d'un ID
    */
   ensureUniqueId(originalId, seenIds) {
     let uniqueId = originalId;
@@ -297,7 +297,7 @@ class FlowEmergencyFixer {
   }
 
   /**
-   * Génère le rapport de correction
+   * GÃ©nÃ¨re le rapport de correction
    */
   generateFixReport() {
     console.log('\n EMERGENCY FIX RESULTS:');
@@ -318,7 +318,7 @@ class FlowEmergencyFixer {
   }
 }
 
-// Exécution d'urgence
+// ExÃ©cution d'urgence
 if (require.main === module) {
   const fixer = new FlowEmergencyFixer();
   fixer.fixAllDuplicates().catch(console.error);

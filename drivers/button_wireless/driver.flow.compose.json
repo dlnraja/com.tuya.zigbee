@@ -4,7 +4,7 @@
       "id": "button_wireless_button_pressed",
       "title": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé"
+        "fr": "Bouton appuyÃ©"
       },
       "tokens": [
         {
@@ -20,7 +20,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Button pressed",
-        "fr": "Bouton appuyé"
+        "fr": "Bouton appuyÃ©"
       }
     },
     {
@@ -73,7 +73,7 @@
       "id": "button_wireless_button_release",
       "title": {
         "en": "Button released",
-        "fr": "Bouton relâché"
+        "fr": "Bouton relÃ¢chÃ©"
       },
       "tokens": [
         {
@@ -89,7 +89,7 @@
       "args": [],
       "titleFormatted": {
         "en": "Button released",
-        "fr": "Bouton relâché"
+        "fr": "Bouton relÃ¢chÃ©"
       }
     },
     {
@@ -110,11 +110,11 @@
       "id": "button_wireless_battery_above",
       "title": {
         "en": "Battery level is above",
-        "fr": "Niveau batterie supérieur à"
+        "fr": "Niveau batterie supÃ©rieur Ã"
       },
       "titleFormatted": {
         "en": "Battery level is above [[level]]%",
-        "fr": "Niveau batterie supérieur à [[level]]%"
+        "fr": "Niveau batterie supÃ©rieur Ã [[level]]%"
       },
       "args": [
         {

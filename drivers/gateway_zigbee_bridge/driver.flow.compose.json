@@ -4,24 +4,24 @@
       "id": "gateway_zigbee_bridge_device_joined",
       "title": {
         "en": "Device joined network",
-        "fr": "Appareil rejoint le réseau"
+        "fr": "Appareil rejoint le rÃ©seau"
       },
       "args": [],
       "titleFormatted": {
         "en": "Device joined network",
-        "fr": "Appareil rejoint le réseau"
+        "fr": "Appareil rejoint le rÃ©seau"
       }
     },
     {
       "id": "gateway_zigbee_bridge_device_left",
       "title": {
         "en": "Device left network",
-        "fr": "Appareil quitté le réseau"
+        "fr": "Appareil quittÃ© le rÃ©seau"
       },
       "args": [],
       "titleFormatted": {
         "en": "Device left network",
-        "fr": "Appareil quitté le réseau"
+        "fr": "Appareil quittÃ© le rÃ©seau"
       }
     },
     {
@@ -40,26 +40,26 @@
       "id": "gateway_zigbee_bridge_connection_restored",
       "title": {
         "en": "Connection restored",
-        "fr": "Connexion rétablie"
+        "fr": "Connexion rÃ©tablie"
       },
       "args": [],
       "titleFormatted": {
         "en": "Connection restored",
-        "fr": "Connexion rétablie"
+        "fr": "Connexion rÃ©tablie"
       }
     },
     {
       "id": "gateway_zigbee_bridge_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -68,14 +68,14 @@
       "id": "gateway_zigbee_bridge_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -102,26 +102,26 @@
       "id": "gateway_zigbee_bridge_is_connected",
       "title": {
         "en": "Gateway is !{{connected|disconnected}}",
-        "fr": "Passerelle !{{connectée|déconnectée}}"
+        "fr": "Passerelle !{{connectÃ©e|dÃ©connectÃ©e}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Gateway is !{{connected|disconnected}}",
-        "fr": "Passerelle !{{connectée|déconnectée}}"
+        "fr": "Passerelle !{{connectÃ©e|dÃ©connectÃ©e}}"
       }
     },
     {
       "id": "gateway_zigbee_bridge_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -144,12 +144,12 @@
       "id": "gateway_zigbee_bridge_disable_join",
       "title": {
         "en": "Disable joining",
-        "fr": "Désactiver l'appairage"
+        "fr": "DÃ©sactiver l'appairage"
       },
       "args": [],
       "titleFormatted": {
         "en": "Disable joining",
-        "fr": "Désactiver l'appairage"
+        "fr": "DÃ©sactiver l'appairage"
       }
     },
     {
@@ -172,14 +172,14 @@
       "id": "gateway_zigbee_bridge_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }

@@ -649,6 +649,18 @@ onTuyaStatus(status) {
   // Call parent handler
   super.onTuyaStatus(status);
 }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
+  }
 }
 
 module.exports = MotionSensorRadarDevice;

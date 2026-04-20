@@ -30,7 +30,7 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
   _registerFlowCards() {
     // CONDITION: Outdoor temp above
     try {
-      const card = this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_above');
+      const card = this._getFlowCard('weather_station_outdoor_outdoor_temp_above', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -43,7 +43,7 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
 
     // CONDITION: Outdoor temp below
     try {
-      const card = this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_below');
+      const card = this._getFlowCard('weather_station_outdoor_outdoor_temp_below', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -56,7 +56,7 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
 
     // CONDITION: Pressure rising
     try {
-      const card = this.homey.flow.getConditionCard('weather_station_outdoor_pressure_rising');
+      const card = this._getFlowCard('weather_station_outdoor_pressure_rising', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -69,7 +69,7 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
 
     // CONDITION: Pressure falling
     try {
-      const card = this.homey.flow.getConditionCard('weather_station_outdoor_pressure_falling');
+      const card = this._getFlowCard('weather_station_outdoor_pressure_falling', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

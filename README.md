@@ -1,4 +1,4 @@
-# Universal Tuya Unified Engine v7.4.5
+# Universal Tuya Unified Engine v7.4.6
 
 [![Homey Test Install](https://img.shields.io/badge/Homey-Test_Install-00E6A0?style=for-the-badge&logo=homey)](https:
 [![SDK 3](https://img.shields.io/badge/SDK-3-blue?style=for-the-badge)](https:

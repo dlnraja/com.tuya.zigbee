@@ -8,14 +8,14 @@ const { CLUSTER } = require('zigbee-clusters');
 
 /**
  *  Radiator Controller Device
- * Contrôleur spécialisé pour radiateurs électriques avec fil pilote
+ * ContrÃ´leur spÃ©cialisÃ© pour radiateurs Ã©lectriques avec fil pilote
  *
- * Fonctionnalités:
- * - Support fil pilote 6 ordres (Confort/Eco/Hors-safeDivide(Gel, Arr)êsafeDivide(t, Confort)-safeDivide(1, Confort)-2)
+ * FonctionnalitÃ©s:
+ * - Support fil pilote 6 ordres (Confort/Eco/Hors-safeDivide(Gel, Arr)ÃªsafeDivide(t, Confort)-safeDivide(1, Confort)-2)
  * - Configuration diode 1N4007
- * - Logique inversée automatique
- * - Désactivation monitoring énergétique
- * - Flow cards spécialisés radiateur
+ * - Logique inversÃ©e automatique
+ * - DÃ©sactivation monitoring Ã©nergÃ©tique
+ * - Flow cards spÃ©cialisÃ©s radiateur
  */
 class RadiatorControllerDevice extends ZigBeeDevice {
 
@@ -83,7 +83,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
   }
 
   async initializeRadiatorController() {
-    // Configuration fil pilote par défaut
+    // Configuration fil pilote par dÃ©faut
     this.pilotWireConfig = {
       type: this.getSetting('pilot_wire_type') || 'standard_6_orders',
       diode: this.getSetting('diode_type') || 'single_1n4007',
@@ -91,14 +91,14 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       signalInterval: this.getSetting('signal_interval_s') || 30
     };
 
-    // Modes fil pilote français standard
+    // Modes fil pilote franÃ§ais standard
     this.heatingModes = {
       'confort': { voltage: 0, description: 'Confort (0V)', temp_offset: 0 },
-      'eco': { voltage: -230, description: 'Éco (230V neg)', temp_offset: -3 },
-      'confort_minus_1': { voltage: -115, description: 'Confort -1°C', temp_offset: -1 },
-      'confort_minus_2': { voltage: -115, description: 'Confort -2°C', temp_offset: -2 },
+      'eco': { voltage: -230, description: 'Ã‰co (230V neg)', temp_offset: -3 },
+      'confort_minus_1': { voltage: -115, description: 'Confort -1Â°C', temp_offset: -1 },
+      'confort_minus_2': { voltage: -115, description: 'Confort -2Â°C', temp_offset: -2 },
       'anti_freeze': { voltage: 230, description: 'Hors-Gel (230V pos)', temp_offset: -10 },
-      'off': { voltage: 'alternating', description: 'Arrêt (230V alt)', temp_offset: null }
+      'off': { voltage: 'alternating', description: 'ArrÃªt (230V alt)', temp_offset: null }
     };
 
     this.currentMode = this.getSetting('heating_mode') || 'confort';
@@ -106,20 +106,20 @@ class RadiatorControllerDevice extends ZigBeeDevice {
   }
 
   async setupCapabilities() {
-    // Capability onoff - contrôle marche/arrêt radiateur
+    // Capability onoff - contrÃ´le marche/arrÃªt radiateur
     if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (value) => {
         return this._setRadiatorPower(value);
       });
     }
 
-    // Capability target_temperature - température cible
+    // Capability target_temperature - tempÃ©rature cible
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (value) => {
         return this._setTargetTemperature(value);
       });
 
-      // Température initiale 20°C
+      // TempÃ©rature initiale 20Â°C
       await this.setCapabilityValue('target_temperature', 20).catch(() => {});
     }
 
@@ -133,7 +133,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       await this.setCapabilityValue('thermostat_mode', this.currentMode).catch(() => {});
     }
 
-    // Désactiver energy monitoring si configuré
+    // DÃ©sactiver energy monitoring si configurÃ©
     const energyDisabled = this.getSetting('disable_power_monitoring');
     if (energyDisabled && this.hasCapability('measure_power')) {
       await this.removeCapability('measure_power').catch(() => { });
@@ -206,27 +206,27 @@ class RadiatorControllerDevice extends ZigBeeDevice {
         );
       }
 
-      // Si radiateur éteint, passer en mode arrêt
+      // Si radiateur Ã©teint, passer en mode arrÃªt
       if (!value) {
         await this._setHeatingMode('off');
       } else {
-        // Si allumé, restaurer mode précédent ou confort
+        // Si allumÃ©, restaurer mode prÃ©cÃ©dent ou confort
         const lastMode = this.getStoreValue('lastHeatingMode') || 'confort';
         await this._setHeatingMode(lastMode);
       }
 
       return true;
     } catch (error) {
-      this.error(' Erreur contrôle alimentation radiateur:', error);
+      this.error(' Erreur contrÃ´le alimentation radiateur:', error);
       throw error;
     }
   }
 
   async _setTargetTemperature(temperature) {
-    this.log(` Set target temperature: ${temperature}°C`);
+    this.log(` Set target temperature: ${temperature}Â°C`);
 
     try {
-      // Ajuster mode chauffage selon température
+      // Ajuster mode chauffage selon tempÃ©rature
       const currentTemp = this.getCapabilityValue('measure_temperature') || 20;
       const tempDiff = temperature - currentTemp;
 
@@ -238,7 +238,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
       return true;
     } catch (error) {
-      this.error(' Erreur réglage température:', error);
+      this.error(' Erreur rÃ©glage tempÃ©rature:', error);
       throw error;
     }
   }
@@ -251,7 +251,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     }
 
     try {
-      // Sauvegarder mode précédent (sauf si c'est 'off')
+      // Sauvegarder mode prÃ©cÃ©dent (sauf si c'est 'off')
       if (mode !== 'off') {
         await this.setStoreValue('lastHeatingMode', mode);
       }
@@ -259,7 +259,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       // Envoyer signal fil pilote
       await this._sendPilotWireSignal(mode);
 
-      // Mettre à jour capabilities
+      // Mettre Ã jour capabilities
       await this.setCapabilityValue('thermostat_mode', mode);
       this.currentMode = mode;
 
@@ -292,8 +292,8 @@ class RadiatorControllerDevice extends ZigBeeDevice {
         this.log(' Mode Confort: Aucun signal (0V)');
         break;
 
-      case -230: // Éco - demi-alternance négative
-        this.log(' Mode Éco: Signal 230V négatif');
+      case -230: // Ã‰co - demi-alternance nÃ©gative
+        this.log(' Mode Ã‰co: Signal 230V nÃ©gatif');
         await this._sendModulatedSignal('negative', duration);
         break;
 
@@ -302,13 +302,13 @@ class RadiatorControllerDevice extends ZigBeeDevice {
         await this._sendModulatedSignal('positive', duration);
         break;
 
-      case 'alternating': // Arrêt - signal alternatif
-        this.log(' Mode Arrêt: Signal alternatif');
+      case 'alternating': // ArrÃªt - signal alternatif
+        this.log(' Mode ArrÃªt: Signal alternatif');
         await this._sendModulatedSignal('alternating', duration);
         break;
 
-      case -115: // Confort-1/-2 - signal modulé
-        this.log(` Mode ${signalType}: Signal modulé`);
+      case -115: // Confort-1/-2 - signal modulÃ©
+        this.log(` Mode ${signalType}: Signal modulÃ©`);
         await this._sendModulatedSignal('modulated', duration);
         break;
       }
@@ -320,9 +320,9 @@ class RadiatorControllerDevice extends ZigBeeDevice {
         }).catch(e => this.log('[FLOW] pilot signal trigger error:', e.message));
       }
 
-      // Debug logging si activé
+      // Debug logging si activÃ©
       if (this.getSetting('debug_logging')) {
-        this.log(` DEBUG: Signal ${signalType} envoyé - Durée: ${duration}ms, Type: ${modeConfig.voltage}`);
+        this.log(` DEBUG: Signal ${signalType} envoyÃ© - DurÃ©e: ${duration}ms, Type: ${modeConfig.voltage}`);
       }
 
     } catch (error) {
@@ -333,7 +333,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
   async _sendModulatedSignal(type, duration) {
     // Simuler l'envoi du signal via le module Zigbee
-    // En réalité, ceci contrôle l'état ON/OFF du relais selon la diode
+    // En rÃ©alitÃ©, ceci contrÃ´le l'Ã©tat ON/OFF du relais selon la diode
 
     const diodeConfig = this.pilotWireConfig.diode;
 
@@ -344,7 +344,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       break;
 
     case 'negative':
-      // Signal négatif - selon configuration diode
+      // Signal nÃ©gatif - selon configuration diode
       if (diodeConfig === 'dual_1n4007') {
         await this._pulseRelay(false, duration);
       } else {
@@ -353,7 +353,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       break;
 
     case 'alternating':
-      // Signal alternatif - pulses alternés
+      // Signal alternatif - pulses alternÃ©s
       const pulses = Math.floor(safeParse(duration, 100));
       for (let i = 0; i < pulses; i++) {
         await this._pulseRelay(i % 2 === 0, 50);
@@ -362,7 +362,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       break;
 
     case 'modulated':
-      // Signal modulé - pattern spécial
+      // Signal modulÃ© - pattern spÃ©cial
       await this._pulseRelay(true,safeMultiply(duration, 0).7);
 safeMultiply(await this._delay(duration, 0).3);
       break;
@@ -380,10 +380,10 @@ safeMultiply(await this._delay(duration, 0).3);
           await onOffCluster.setOff();
         }
 
-        // Maintenir état pendant durée
+        // Maintenir Ã©tat pendant durÃ©e
         await this._delay(duration);
 
-        // Retour état neutre (Confort = OFF pour logique inversée)
+        // Retour Ã©tat neutre (Confort = OFF pour logique inversÃ©e)
         await onOffCluster.setOff();
       }
     } catch (error) {
@@ -398,15 +398,15 @@ safeMultiply(await this._delay(duration, 0).3);
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     this.log(' Radiator settings changed:', changedKeys);
 
-    // Mettre à jour configuration fil pilote
+    // Mettre Ã jour configuration fil pilote
     if (changedKeys.includes('pilot_wire_type')) {
       this.pilotWireConfig.type = newSettings.pilot_wire_type;
-      this.log(` Type fil pilote changé: ${newSettings.pilot_wire_type}`);
+      this.log(` Type fil pilote changÃ©: ${newSettings.pilot_wire_type}`);
     }
 
     if (changedKeys.includes('diode_type')) {
       this.pilotWireConfig.diode = newSettings.diode_type;
-      this.log(` Configuration diode changée: ${newSettings.diode_type}`);
+      this.log(` Configuration diode changÃ©e: ${newSettings.diode_type}`);
     }
 
     if (changedKeys.includes('heating_mode')) {
@@ -450,7 +450,7 @@ safeMultiply(await this._delay(duration, 0).3);
     }
   }
 
-  // Méthodes utilitaires
+  // MÃ©thodes utilitaires
   getHeatingModeDescription(mode) {
     return this.heatingModes[mode]?.description || 'Mode inconnu';
   }

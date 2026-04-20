@@ -5,24 +5,24 @@
       "highlight": true,
       "title": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement dÃ©tectÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion detected",
-        "fr": "Mouvement détecté"
+        "fr": "Mouvement dÃ©tectÃ©"
       }
     },
     {
       "id": "sensor_contact_motion_hybrid_motion_sensor_motion_cleared_sensor_contact_motion_hybrid",
       "title": {
         "en": "Motion cleared",
-        "fr": "Mouvement terminé"
+        "fr": "Mouvement terminÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion cleared",
-        "fr": "Mouvement terminé"
+        "fr": "Mouvement terminÃ©"
       }
     },
     {
@@ -41,7 +41,7 @@
       "id": "sensor_contact_motion_hybrid_motion_sensor_battery_changed_sensor_contact_motion_hybrid",
       "title": {
         "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "fr": "Niveau batterie changÃ©"
       },
       "tokens": [
         {
@@ -57,37 +57,37 @@
       "args": [],
       "titleFormatted": {
         "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
+        "fr": "Niveau batterie changÃ©"
       }
     },
     {
       "id": "sensor_contact_motion_hybrid_motion_sensor_tamper_true_sensor_contact_motion_hybrid",
       "title": {
         "en": "Tamper alarm triggered",
-        "fr": "Alarme anti-sabotage déclenchée",
+        "fr": "Alarme anti-sabotage dÃ©clenchÃ©e",
         "nl": "Sabotage alarm geactiveerd",
-        "de": "Manipulationsalarm ausgelöst"
+        "de": "Manipulationsalarm ausgelÃ¶st"
       },
       "args": [],
       "titleFormatted": {
         "en": "Tamper alarm triggered",
-        "fr": "Alarme anti-sabotage déclenchée",
+        "fr": "Alarme anti-sabotage dÃ©clenchÃ©e",
         "nl": "Sabotage alarm geactiveerd",
-        "de": "Manipulationsalarm ausgelöst"
+        "de": "Manipulationsalarm ausgelÃ¶st"
       }
     },
     {
       "id": "sensor_contact_motion_hybrid_motion_sensor_tamper_false_sensor_contact_motion_hybrid",
       "title": {
         "en": "Tamper alarm cleared",
-        "fr": "Alarme anti-sabotage terminée",
+        "fr": "Alarme anti-sabotage terminÃ©e",
         "nl": "Sabotage alarm opgeheven",
         "de": "Manipulationsalarm beendet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Tamper alarm cleared",
-        "fr": "Alarme anti-sabotage terminée",
+        "fr": "Alarme anti-sabotage terminÃ©e",
         "nl": "Sabotage alarm opgeheven",
         "de": "Manipulationsalarm beendet"
       }
@@ -96,21 +96,21 @@
       "id": "sensor_contact_motion_hybrid_motion_sensor_lux_changed_sensor_contact_motion_hybrid",
       "title": {
         "en": "Luminance changed",
-        "fr": "Luminance changée",
+        "fr": "Luminance changÃ©e",
         "nl": "Lichtsterkte veranderd",
-        "de": "Helligkeit geändert"
+        "de": "Helligkeit geÃ¤ndert"
       },
       "titleFormatted": {
         "en": "Luminance changed to [[lux]] lux",
-        "fr": "Luminance changée à [[lux]] lux",
+        "fr": "Luminance changÃ©e Ã [[lux]] lux",
         "nl": "Lichtsterkte veranderd naar [[lux]] lux",
-        "de": "Helligkeit geändert zu [[lux]] lux"
+        "de": "Helligkeit geÃ¤ndert zu [[lux]] lux"
       },
       "hint": {
         "en": "This card triggers when the luminance sensor reports a new value, independent of motion detection",
-        "fr": "Cette carte se déclenche quand le capteur de luminance rapporte une nouvelle valeur, indépendamment de la détection de mouvement",
+        "fr": "Cette carte se dÃ©clenche quand le capteur de luminance rapporte une nouvelle valeur, indÃ©pendamment de la dÃ©tection de mouvement",
         "nl": "Deze kaart wordt geactiveerd wanneer de lichtsensor een nieuwe waarde rapporteert, onafhankelijk van bewegingsdetectie",
-        "de": "Diese Karte wird ausgelöst, wenn der Helligkeitssensor einen neuen Wert meldet, unabhängig von der Bewegungserkennung"
+        "de": "Diese Karte wird ausgelÃ¶st, wenn der Helligkeitssensor einen neuen Wert meldet, unabhÃ¤ngig von der Bewegungserkennung"
       },
       "tokens": [
         {
@@ -160,12 +160,12 @@
       "id": "sensor_contact_motion_hybrid_motion_sensor_motion_active_sensor_contact_motion_hybrid",
       "title": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté"
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté"
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©"
       }
     },
     {

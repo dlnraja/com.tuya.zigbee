@@ -314,6 +314,18 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   // v5.5.935: REMOVED broken _sendTuyaDP override
   // Parent UnifiedCoverBase._sendTuyaDP() handles all DP communication correctly
   // The override was causing "tuya.datapoint: value is an unexpected property" errors
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
+  }
 }
 
 module.exports = CurtainMotorDevice;

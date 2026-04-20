@@ -2,7 +2,7 @@
   "id": "sub_capability_is",
   "title": {
     "en": "Sub-capability [[capability]] is on",
-    "fr": "Sous-capacité [[capability]] est active"
+    "fr": "Sous-capacitÃ© [[capability]] est active"
   },
   "titleFormatted": {
     "en": "[[capability]] is !{{on|off}} on [[device]]",
@@ -10,7 +10,7 @@
   },
   "hint": {
     "en": "Check if a sub-capability is on (e.g. onoff.gang2)",
-    "fr": "Vérifie si une sous-capacité est active (ex: onoff.gang2)"
+    "fr": "VÃ©rifie si une sous-capacitÃ© est active (ex: onoff.gang2)"
   },
   "args": [
     {
@@ -23,7 +23,7 @@
       "type": "text",
       "title": {
         "en": "Capability",
-        "fr": "Capacité"
+        "fr": "CapacitÃ©"
       },
       "placeholder": {
         "en": "onoff.gang2",

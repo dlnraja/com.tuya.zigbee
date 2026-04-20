@@ -4,7 +4,7 @@
       "id": "device_radiator_valve_hybrid_radiator_valve_hybrid_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "Température cible changée"
+        "fr": "TempÃ©rature cible changÃ©e"
       },
       "tokens": [
         {
@@ -12,7 +12,7 @@
           "type": "number",
           "title": {
             "en": "Temperature",
-            "fr": "Température"
+            "fr": "TempÃ©rature"
           },
           "example": 21
         }
@@ -20,14 +20,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Target temperature changed",
-        "fr": "Température cible changée"
+        "fr": "TempÃ©rature cible changÃ©e"
       }
     },
     {
       "id": "device_radiator_valve_hybrid_radiator_valve_measure_temperature_changed_device_radiator_valve_hybrid",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       },
       "tokens": [
         {
@@ -35,7 +35,7 @@
           "type": "number",
           "title": {
             "en": "Temperature",
-            "fr": "Température"
+            "fr": "TempÃ©rature"
           },
           "example": 20.5
         }
@@ -43,23 +43,23 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       }
     },
     {
       "id": "device_radiator_valve_hybrid_radiator_valve_temp_changed_device_radiator_valve_hybrid",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       }
     },
     {
@@ -84,7 +84,7 @@
       "id": "device_radiator_valve_hybrid_radiator_valve_set_target_temperature_device_radiator_valve_hybrid",
       "title": {
         "en": "Set temperature to...",
-        "fr": "Régler la température à..."
+        "fr": "RÃ©gler la tempÃ©rature Ã..."
       },
       "args": [
         {
@@ -95,28 +95,28 @@
           "step": 0.5,
           "title": {
             "en": "Temperature",
-            "fr": "Température"
+            "fr": "TempÃ©rature"
           }
         }
       ],
       "titleFormatted": {
-        "en": "Set temperature to [[temperature]]°C",
-        "fr": "Régler la température à [[temperature]]°C"
+        "en": "Set temperature to [[temperature]]Â°C",
+        "fr": "RÃ©gler la tempÃ©rature Ã [[temperature]]Â°C"
       }
     },
     {
       "id": "device_radiator_valve_hybrid_radiator_valve_set_temperature_device_radiator_valve_hybrid",
       "title": {
         "en": "Set temperature",
-        "fr": "Régler température",
+        "fr": "RÃ©gler tempÃ©rature",
         "nl": "Temperatuur instellen",
         "de": "Temperatur einstellen"
       },
       "titleFormatted": {
-        "en": "Set temperature to [[temperature]]°C",
-        "fr": "Régler à [[temperature]]°C",
-        "nl": "Instellen op [[temperature]]°C",
-        "de": "Auf [[temperature]]°C einstellen"
+        "en": "Set temperature to [[temperature]]Â°C",
+        "fr": "RÃ©gler Ã [[temperature]]Â°C",
+        "nl": "Instellen op [[temperature]]Â°C",
+        "de": "Auf [[temperature]]Â°C einstellen"
       },
       "args": [
         {
@@ -125,7 +125,7 @@
           "min": 5,
           "max": 35,
           "step": 0.5,
-          "label": "°C",
+          "label": "Â°C",
           "labelDecimals": 1
         }
       ]

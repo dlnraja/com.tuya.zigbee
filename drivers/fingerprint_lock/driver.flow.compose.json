@@ -4,16 +4,16 @@
       "id": "fingerprint_lock_lock_changed",
       "title": {
         "en": "Lock changed",
-        "fr": "Serrure changée",
+        "fr": "Serrure changÃ©e",
         "nl": "Slot gewijzigd",
-        "de": "Schloss geändert"
+        "de": "Schloss geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Lock changed",
-        "fr": "Serrure changée",
+        "fr": "Serrure changÃ©e",
         "nl": "Slot gewijzigd",
-        "de": "Schloss geändert"
+        "de": "Schloss geÃ¤ndert"
       }
     },
     {
@@ -54,14 +54,14 @@
       "id": "fingerprint_lock_is_locked",
       "title": {
         "en": "Lock !{{is|is not}} locked",
-        "fr": "Serrure !{{est|n'est pas}} verrouillée",
+        "fr": "Serrure !{{est|n'est pas}} verrouillÃ©e",
         "nl": "Slot !{{is|is niet}} vergrendeld",
         "de": "Schloss !{{ist|ist nicht}} gesperrt"
       },
       "args": [],
       "titleFormatted": {
         "en": "Lock !{{is|is not}} locked",
-        "fr": "Serrure !{{est|n'est pas}} verrouillée",
+        "fr": "Serrure !{{est|n'est pas}} verrouillÃ©e",
         "nl": "Slot !{{is|is niet}} vergrendeld",
         "de": "Schloss !{{ist|ist nicht}} gesperrt"
       }
@@ -104,14 +104,14 @@
       "id": "fingerprint_lock_unlock",
       "title": {
         "en": "Unlock",
-        "fr": "Déverrouiller",
+        "fr": "DÃ©verrouiller",
         "nl": "Ontgrendelen",
         "de": "Entsperren"
       },
       "args": [],
       "titleFormatted": {
         "en": "Unlock",
-        "fr": "Déverrouiller",
+        "fr": "DÃ©verrouiller",
         "nl": "Ontgrendelen",
         "de": "Entsperren"
       }

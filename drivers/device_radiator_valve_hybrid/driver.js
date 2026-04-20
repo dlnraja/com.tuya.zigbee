@@ -29,7 +29,7 @@ class RadiatorValveDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_hybrid_radiator_valve_set_target_temperature_device_radiator_valve_hybrid');
+      const card = this._getFlowCard('device_radiator_valve_hybrid_radiator_valve_set_target_temperature_device_radiator_valve_hybrid', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -40,7 +40,7 @@ class RadiatorValveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_radiator_valve_hybrid_radiator_valve_set_target_temperature_device_radiator_valve_hybrid: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getActionCard('device_radiator_valve_hybrid_radiator_valve_set_temperature_device_radiator_valve_hybrid');
+      const card = this._getFlowCard('device_radiator_valve_hybrid_radiator_valve_set_temperature_device_radiator_valve_hybrid', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

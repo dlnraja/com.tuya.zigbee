@@ -33,7 +33,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('contact_sensor_dimmer_hybrid_contact_sensor_is_open');
+      const card = this._getFlowCard('contact_sensor_dimmer_hybrid_contact_sensor_is_open', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -43,7 +43,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition contact_sensor_dimmer_hybrid_contact_sensor_is_open: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('contact_sensor_dimmer_hybrid_contact_sensor_battery_above');
+      const card = this._getFlowCard('contact_sensor_dimmer_hybrid_contact_sensor_battery_above', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -54,7 +54,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition contact_sensor_dimmer_hybrid_contact_sensor_battery_above: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('contact_sensor_dimmer_hybrid_contact_sensor_contact_open');
+      const card = this._getFlowCard('contact_sensor_dimmer_hybrid_contact_sensor_contact_open', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -64,7 +64,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition contact_sensor_dimmer_hybrid_contact_sensor_contact_open: ${err.message}`); }
 
     try {
-      const card = this.homey.flow.getConditionCard('contact_sensor_dimmer_hybrid_contact_sensor_tamper_active');
+      const card = this._getFlowCard('contact_sensor_dimmer_hybrid_contact_sensor_tamper_active', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

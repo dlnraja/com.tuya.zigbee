@@ -25,7 +25,7 @@
     "measure_temperature.probe": {
       "title": {
         "en": "Probe Temperature",
-        "fr": "Température Sonde",
+        "fr": "TempÃ©rature Sonde",
         "nl": "Sonde Temperatuur",
         "de": "Sondentemperatur"
       }
@@ -59,8 +59,8 @@
           "id": "temperature_calibration",
           "type": "number",
           "label": {
-            "en": "Temperature Offset (°C)",
-            "fr": "Décalage Température (°C)"
+            "en": "Temperature Offset (Â°C)",
+            "fr": "DÃ©calage TempÃ©rature (Â°C)"
           },
           "value": 0,
           "min": -10,
@@ -68,7 +68,7 @@
           "step": 0.1,
           "hint": {
             "en": "Add or subtract from temperature reading. Use positive value if sensor reads too low.",
-            "fr": "Ajouter ou soustraire de la température lue. Valeur positive si capteur lit trop bas."
+            "fr": "Ajouter ou soustraire de la tempÃ©rature lue. Valeur positive si capteur lit trop bas."
           }
         },
         {
@@ -76,7 +76,7 @@
           "type": "number",
           "label": {
             "en": "Humidity Offset (%)",
-            "fr": "Décalage Humidité (%)"
+            "fr": "DÃ©calage HumiditÃ© (%)"
           },
           "value": 0,
           "min": -20,
@@ -84,7 +84,7 @@
           "step": 1,
           "hint": {
             "en": "Add or subtract from humidity reading. Use positive value if sensor reads too low.",
-            "fr": "Ajouter ou soustraire de l'humidité lue. Valeur positive si capteur lit trop bas."
+            "fr": "Ajouter ou soustraire de l'humiditÃ© lue. Valeur positive si capteur lit trop bas."
           }
         },
         {
@@ -92,7 +92,7 @@
           "type": "dropdown",
           "label": {
             "en": "Decimal Precision",
-            "fr": "Précision"
+            "fr": "PrÃ©cision"
           },
           "value": "1",
           "hint": {
@@ -102,13 +102,13 @@
             {
               "id": "1",
               "label": {
-                "en": "1 decimal (20.5°C)"
+                "en": "1 decimal (20.5Â°C)"
               }
             },
             {
               "id": "2",
               "label": {
-                "en": "2 decimals (20.53°C)"
+                "en": "2 decimals (20.53Â°C)"
               }
             }
           ]
@@ -136,16 +136,16 @@
           "value": "auto",
           "hint": {
             "en": "Select time sync format. Auto works for most devices. Change only if clock shows wrong time.",
-            "fr": "Format de synchronisation. Auto fonctionne pour la plupart. Changer si l'heure affichée est incorrecte.",
+            "fr": "Format de synchronisation. Auto fonctionne pour la plupart. Changer si l'heure affichÃ©e est incorrecte.",
             "nl": "Selecteer tijdsync formaat. Auto werkt voor de meeste apparaten.",
-            "de": "Zeitsync-Format wählen. Auto funktioniert für die meisten Geräte."
+            "de": "Zeitsync-Format wÃ¤hlen. Auto funktioniert fÃ¼r die meisten GerÃ¤te."
           },
           "values": [
             {
               "id": "auto",
               "label": {
                 "en": " Auto-detect (recommended)",
-                "fr": " Auto-détection (recommandé)"
+                "fr": " Auto-dÃ©tection (recommandÃ©)"
               }
             },
             {
@@ -187,7 +187,7 @@
               "id": "tuya_extended",
               "label": {
                 "en": " Tuya Extended (9-byte + timezone)",
-                "fr": " Tuya Étendu (9 octets + fuseau)"
+                "fr": " Tuya Ã‰tendu (9 octets + fuseau)"
               }
             },
             {
@@ -225,9 +225,9 @@
           "value": "auto",
           "hint": {
             "en": "Override timezone. Use Auto to use Homey's timezone. Manual override for devices that don't handle DST.",
-            "fr": "Forcer le fuseau. Auto utilise celui de Homey. Manuel pour appareils sans gestion heure d'été.",
+            "fr": "Forcer le fuseau. Auto utilise celui de Homey. Manuel pour appareils sans gestion heure d'Ã©tÃ©.",
             "nl": "Overschrijf tijdzone. Auto gebruikt Homey's tijdzone.",
-            "de": "Zeitzone überschreiben. Auto verwendet Homey's Zeitzone."
+            "de": "Zeitzone Ã¼berschreiben. Auto verwendet Homey's Zeitzone."
           },
           "values": [
             {
@@ -255,7 +255,7 @@
               "id": "gmt+2",
               "label": {
                 "en": " GMT+2 (CEST/EET)",
-                "fr": " GMT+2 (Paris été)"
+                "fr": " GMT+2 (Paris Ã©tÃ©)"
               }
             },
             {
@@ -302,9 +302,9 @@
           "id": "alarm_temp_max",
           "type": "number",
           "label": {
-            "en": "Max Temperature Alarm (°C)",
-            "nl": "Max temperatuur alarm (°C)",
-            "fr": "Alarme température max (°C)"
+            "en": "Max Temperature Alarm (Â°C)",
+            "nl": "Max temperatuur alarm (Â°C)",
+            "fr": "Alarme tempÃ©rature max (Â°C)"
           },
           "hint": {
             "en": "Device will trigger alarm when temperature exceeds this value (E002 cluster, not all devices support this)",
@@ -319,9 +319,9 @@
           "id": "alarm_temp_min",
           "type": "number",
           "label": {
-            "en": "Min Temperature Alarm (°C)",
-            "nl": "Min temperatuur alarm (°C)",
-            "fr": "Alarme température min (°C)"
+            "en": "Min Temperature Alarm (Â°C)",
+            "nl": "Min temperatuur alarm (Â°C)",
+            "fr": "Alarme tempÃ©rature min (Â°C)"
           },
           "hint": {
             "en": "Device will trigger alarm when temperature drops below this value",
@@ -338,7 +338,7 @@
           "label": {
             "en": "Max Humidity Alarm (%)",
             "nl": "Max luchtvochtigheid alarm (%)",
-            "fr": "Alarme humidité max (%)"
+            "fr": "Alarme humiditÃ© max (%)"
           },
           "hint": {
             "en": "Device will trigger alarm when humidity exceeds this value",
@@ -355,7 +355,7 @@
           "label": {
             "en": "Min Humidity Alarm (%)",
             "nl": "Min luchtvochtigheid alarm (%)",
-            "fr": "Alarme humidité min (%)"
+            "fr": "Alarme humiditÃ© min (%)"
           },
           "hint": {
             "en": "Device will trigger alarm when humidity drops below this value",
@@ -385,7 +385,7 @@
           "value": false,
           "hint": {
             "en": " EXPERT ONLY: Test all ZCL Time sync methods on device startup. May drain battery if used frequently.",
-            "fr": " EXPERT UNIQUEMENT: Teste toutes les méthodes sync ZCL Time au démarrage. Peut vider la batterie si utilisé fréquemment."
+            "fr": " EXPERT UNIQUEMENT: Teste toutes les mÃ©thodes sync ZCL Time au dÃ©marrage. Peut vider la batterie si utilisÃ© frÃ©quemment."
           }
         }
       ]
@@ -405,10 +405,10 @@
             "nl": "Temperatuur correctie"
           },
           "hint": {
-            "en": "Adjust sensor reading (±10°C)",
-            "nl": "Pas meetwaarde aan (±10°C)"
+            "en": "Adjust sensor reading (Â±10Â°C)",
+            "nl": "Pas meetwaarde aan (Â±10Â°C)"
           },
-          "units": "°C",
+          "units": "Â°C",
           "value": 0,
           "min": -10,
           "max": 10,
@@ -422,8 +422,8 @@
             "nl": "Luchtvochtigheid correctie"
           },
           "hint": {
-            "en": "Adjust sensor reading (±30%)",
-            "nl": "Pas meetwaarde aan (±30%)"
+            "en": "Adjust sensor reading (Â±30%)",
+            "nl": "Pas meetwaarde aan (Â±30%)"
           },
           "units": "%",
           "value": 0,
@@ -466,12 +466,12 @@
       "type": "checkbox",
       "label": {
         "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la Détection de Présence Radio"
+        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
       },
       "value": false,
       "hint": {
         "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "Déduit la présence des fluctuations du signal Zigbee (BETA)"
+        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
       }
     },
     {
@@ -479,7 +479,7 @@
       "type": "number",
       "label": {
         "en": "Radio Presence Sensitivity",
-        "fr": "Sensibilité Présence Radio"
+        "fr": "SensibilitÃ© PrÃ©sence Radio"
       },
       "value": 15,
       "min": 5,
@@ -494,12 +494,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software Child Lock",
-        "fr": "Sécurité Enfant Logicielle"
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Prevents manual state changes on the device",
-        "fr": "Empêche les changements d'état manuels sur l'appareil"
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
       }
     },
     {
@@ -514,7 +514,7 @@
       "max": 1440,
       "hint": {
         "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'éteint après X minutes (0 = désactivé)"
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -522,12 +522,12 @@
       "type": "checkbox",
       "label": {
         "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation Présence)"
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
       },
       "value": false,
       "hint": {
         "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil aléatoirement le soir pour simuler une présence"
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
       }
     },
     {
@@ -535,14 +535,14 @@
       "type": "number",
       "label": {
         "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Émulé (Secondes)"
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
       },
       "value": 0,
       "min": 0,
       "max": 3600,
       "hint": {
         "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes après le reset matériel"
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
       }
     },
     {
@@ -557,7 +557,7 @@
       "max": 1000,
       "hint": {
         "en": "Software emulation for single-action buttons",
-        "fr": "Émulation logicielle pour boutons à action unique"
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
       }
     },
     {
@@ -572,7 +572,7 @@
       "max": 4000,
       "hint": {
         "en": "Cut power if consumption exceeds this value (0 = disabled)",
-        "fr": "Coupure si la consommation dépasse cette valeur (0 = désactivé)"
+        "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
       }
     },
     {
@@ -580,7 +580,7 @@
       "type": "number",
       "label": {
         "en": "Inching Duration (Secs)",
-        "fr": "Durée Inching (Secondes)"
+        "fr": "DurÃ©e Inching (Secondes)"
       },
       "value": 0,
       "min": 0,
@@ -588,7 +588,7 @@
       "step": 0.1,
       "hint": {
         "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'éteint automatiquement après X secondes (mode Impulsion)"
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
       }
     },
     {
@@ -596,12 +596,12 @@
       "type": "checkbox",
       "label": {
         "en": "Software State Recovery",
-        "fr": "Récupération d'État Logicielle"
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
       },
       "value": false,
       "hint": {
         "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'état précédent après une coupure de courant"
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
       }
     },
     {
@@ -614,7 +614,7 @@
       "value": false,
       "hint": {
         "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulées (Lumières/Variateurs)"
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
       }
     },
     {
@@ -629,7 +629,7 @@
       "max": 100,
       "hint": {
         "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santé descend sous cette valeur"
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
       }
     },
     {
@@ -637,12 +637,12 @@
       "type": "checkbox",
       "label": {
         "en": "Adaptive TPI Regulation",
-        "fr": "Régulation TPI Adaptative"
+        "fr": "RÃ©gulation TPI Adaptative"
       },
       "value": false,
       "hint": {
         "en": "Use advanced software-based heating cycles (more precise)",
-        "fr": "Utilise des cycles de chauffe logiciels avancés (plus précis)"
+        "fr": "Utilise des cycles de chauffe logiciels avancÃ©s (plus prÃ©cis)"
       }
     }
   ],
@@ -662,7 +662,7 @@
       "id": "ota_check",
       "title": {
         "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
+        "fr": "VÃ©rifier MÃJ OTA",
         "nl": "Controleer op OTA-updates"
       }
     }

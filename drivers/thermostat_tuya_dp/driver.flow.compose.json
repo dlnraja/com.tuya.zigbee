@@ -4,15 +4,15 @@
       "id": "thermostat_tuya_dp_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
-        "fr": "Température cible changée"
+        "fr": "TempÃ©rature cible changÃ©e"
       },
       "tokens": [
         {
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (°C)",
-            "fr": "Température (°C)"
+            "en": "Temperature (Â°C)",
+            "fr": "TempÃ©rature (Â°C)"
           },
           "example": 21
         }
@@ -20,22 +20,22 @@
       "args": [],
       "titleFormatted": {
         "en": "Target temperature changed",
-        "fr": "Température cible changée"
+        "fr": "TempÃ©rature cible changÃ©e"
       }
     },
     {
       "id": "thermostat_tuya_dp_temperature_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       },
       "tokens": [
         {
           "name": "temperature",
           "type": "number",
           "title": {
-            "en": "Temperature (°C)",
-            "fr": "Température (°C)"
+            "en": "Temperature (Â°C)",
+            "fr": "TempÃ©rature (Â°C)"
           },
           "example": 22.5
         }
@@ -43,14 +43,14 @@
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée"
+        "fr": "TempÃ©rature changÃ©e"
       }
     },
     {
       "id": "thermostat_tuya_dp_mode_changed",
       "title": {
         "en": "Mode changed",
-        "fr": "Mode changé"
+        "fr": "Mode changÃ©"
       },
       "tokens": [
         {
@@ -66,45 +66,45 @@
       "args": [],
       "titleFormatted": {
         "en": "Mode changed",
-        "fr": "Mode changé"
+        "fr": "Mode changÃ©"
       }
     },
     {
       "id": "thermostat_tuya_dp_heating_started",
       "title": {
         "en": "Heating started",
-        "fr": "Chauffage démarré"
+        "fr": "Chauffage dÃ©marrÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Heating started",
-        "fr": "Chauffage démarré"
+        "fr": "Chauffage dÃ©marrÃ©"
       }
     },
     {
       "id": "thermostat_tuya_dp_heating_stopped",
       "title": {
         "en": "Heating stopped",
-        "fr": "Chauffage arrêté"
+        "fr": "Chauffage arrÃªtÃ©"
       },
       "args": [],
       "titleFormatted": {
         "en": "Heating stopped",
-        "fr": "Chauffage arrêté"
+        "fr": "Chauffage arrÃªtÃ©"
       }
     },
     {
       "id": "thermostat_tuya_dp_turned_on",
       "title": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned on",
-        "fr": "Allumé",
+        "fr": "AllumÃ©",
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       }
@@ -113,14 +113,14 @@
       "id": "thermostat_tuya_dp_turned_off",
       "title": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turned off",
-        "fr": "Éteint",
+        "fr": "Ã‰teint",
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       }
@@ -129,16 +129,16 @@
       "id": "thermostat_tuya_dp_temp_changed",
       "title": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature changed",
-        "fr": "Température changée",
+        "fr": "TempÃ©rature changÃ©e",
         "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
+        "de": "Temperatur geÃ¤ndert"
       }
     },
     {
@@ -161,16 +161,16 @@
       "id": "thermostat_tuya_dp_humidity_changed",
       "title": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       },
       "args": [],
       "titleFormatted": {
         "en": "Humidity changed",
-        "fr": "Humidité changée",
+        "fr": "HumiditÃ© changÃ©e",
         "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
+        "de": "Feuchtigkeit geÃ¤ndert"
       }
     }
   ],
@@ -191,24 +191,24 @@
       "id": "thermostat_tuya_dp_temperature_above_target",
       "title": {
         "en": "Temperature is above target",
-        "fr": "Température supérieure à la cible"
+        "fr": "TempÃ©rature supÃ©rieure Ã la cible"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature is above target",
-        "fr": "Température supérieure à la cible"
+        "fr": "TempÃ©rature supÃ©rieure Ã la cible"
       }
     },
     {
       "id": "thermostat_tuya_dp_temperature_below_target",
       "title": {
         "en": "Temperature is below target",
-        "fr": "Température inférieure à la cible"
+        "fr": "TempÃ©rature infÃ©rieure Ã la cible"
       },
       "args": [],
       "titleFormatted": {
         "en": "Temperature is below target",
-        "fr": "Température inférieure à la cible"
+        "fr": "TempÃ©rature infÃ©rieure Ã la cible"
       }
     },
     {
@@ -230,7 +230,7 @@
               "id": "off",
               "label": {
                 "en": "Off",
-                "fr": "Arrêt"
+                "fr": "ArrÃªt"
               }
             },
             {
@@ -262,26 +262,26 @@
       "id": "thermostat_tuya_dp_child_lock_is",
       "title": {
         "en": "Child lock is !{{enabled|disabled}}",
-        "fr": "Verrouillage enfant !{{activé|désactivé}}"
+        "fr": "Verrouillage enfant !{{activÃ©|dÃ©sactivÃ©}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Child lock is !{{enabled|disabled}}",
-        "fr": "Verrouillage enfant !{{activé|désactivé}}"
+        "fr": "Verrouillage enfant !{{activÃ©|dÃ©sactivÃ©}}"
       }
     },
     {
       "id": "thermostat_tuya_dp_is_on",
       "title": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
       "args": [],
       "titleFormatted": {
         "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       }
@@ -292,11 +292,11 @@
       "id": "thermostat_tuya_dp_set_target_temperature",
       "title": {
         "en": "Set target temperature",
-        "fr": "Définir température cible"
+        "fr": "DÃ©finir tempÃ©rature cible"
       },
       "titleFormatted": {
-        "en": "Set target temperature to [[temperature]]°C",
-        "fr": "Définir température cible à [[temperature]]°C"
+        "en": "Set target temperature to [[temperature]]Â°C",
+        "fr": "DÃ©finir tempÃ©rature cible Ã [[temperature]]Â°C"
       },
       "args": [
         {
@@ -307,7 +307,7 @@
           "step": 0.5,
           "title": {
             "en": "Temperature",
-            "fr": "Température"
+            "fr": "TempÃ©rature"
           }
         }
       ]
@@ -316,11 +316,11 @@
       "id": "thermostat_tuya_dp_set_mode",
       "title": {
         "en": "Set mode",
-        "fr": "Définir mode"
+        "fr": "DÃ©finir mode"
       },
       "titleFormatted": {
         "en": "Set mode to [[mode]]",
-        "fr": "Définir mode à [[mode]]"
+        "fr": "DÃ©finir mode Ã [[mode]]"
       },
       "args": [
         {
@@ -331,7 +331,7 @@
               "id": "off",
               "label": {
                 "en": "Off",
-                "fr": "Arrêt"
+                "fr": "ArrÃªt"
               }
             },
             {
@@ -356,11 +356,11 @@
       "id": "thermostat_tuya_dp_increase_temperature",
       "title": {
         "en": "Increase temperature",
-        "fr": "Augmenter température"
+        "fr": "Augmenter tempÃ©rature"
       },
       "titleFormatted": {
-        "en": "Increase temperature by [[degrees]]°C",
-        "fr": "Augmenter température de [[degrees]]°C"
+        "en": "Increase temperature by [[degrees]]Â°C",
+        "fr": "Augmenter tempÃ©rature de [[degrees]]Â°C"
       },
       "args": [
         {
@@ -371,7 +371,7 @@
           "step": 0.5,
           "title": {
             "en": "Degrees",
-            "fr": "Degrés"
+            "fr": "DegrÃ©s"
           }
         }
       ]
@@ -380,11 +380,11 @@
       "id": "thermostat_tuya_dp_decrease_temperature",
       "title": {
         "en": "Decrease temperature",
-        "fr": "Diminuer température"
+        "fr": "Diminuer tempÃ©rature"
       },
       "titleFormatted": {
-        "en": "Decrease temperature by [[degrees]]°C",
-        "fr": "Diminuer température de [[degrees]]°C"
+        "en": "Decrease temperature by [[degrees]]Â°C",
+        "fr": "Diminuer tempÃ©rature de [[degrees]]Â°C"
       },
       "args": [
         {
@@ -395,7 +395,7 @@
           "step": 0.5,
           "title": {
             "en": "Degrees",
-            "fr": "Degrés"
+            "fr": "DegrÃ©s"
           }
         }
       ]
@@ -404,11 +404,11 @@
       "id": "thermostat_tuya_dp_set_child_lock",
       "title": {
         "en": "Set child lock",
-        "fr": "Définir verrouillage enfant"
+        "fr": "DÃ©finir verrouillage enfant"
       },
       "titleFormatted": {
         "en": "Set child lock to [[enabled]]",
-        "fr": "Définir verrouillage enfant à [[enabled]]"
+        "fr": "DÃ©finir verrouillage enfant Ã [[enabled]]"
       },
       "args": [
         {
@@ -419,14 +419,14 @@
               "id": "true",
               "label": {
                 "en": "Enabled",
-                "fr": "Activé"
+                "fr": "ActivÃ©"
               }
             },
             {
               "id": "false",
               "label": {
                 "en": "Disabled",
-                "fr": "Désactivé"
+                "fr": "DÃ©sactivÃ©"
               }
             }
           ]
@@ -438,13 +438,13 @@
       "highlight": true,
       "title": {
         "en": "Set comfort preset",
-        "fr": "Définir préréglage confort",
+        "fr": "DÃ©finir prÃ©rÃ©glage confort",
         "nl": "Comfort preset instellen",
         "de": "Komfort-Voreinstellung"
       },
       "titleFormatted": {
         "en": "Set to [[preset]] preset",
-        "fr": "Définir préréglage [[preset]]",
+        "fr": "DÃ©finir prÃ©rÃ©glage [[preset]]",
         "nl": "Instellen op [[preset]] preset",
         "de": "Auf [[preset]] Voreinstellung setzen"
       },
@@ -456,36 +456,36 @@
             {
               "id": "comfort",
               "label": {
-                "en": "Comfort (21°C)",
-                "fr": "Confort (21°C)"
+                "en": "Comfort (21Â°C)",
+                "fr": "Confort (21Â°C)"
               }
             },
             {
               "id": "eco",
               "label": {
-                "en": "Eco (18°C)",
-                "fr": "Éco (18°C)"
+                "en": "Eco (18Â°C)",
+                "fr": "Ã‰co (18Â°C)"
               }
             },
             {
               "id": "away",
               "label": {
-                "en": "Away (15°C)",
-                "fr": "Absent (15°C)"
+                "en": "Away (15Â°C)",
+                "fr": "Absent (15Â°C)"
               }
             },
             {
               "id": "sleep",
               "label": {
-                "en": "Sleep (19°C)",
-                "fr": "Nuit (19°C)"
+                "en": "Sleep (19Â°C)",
+                "fr": "Nuit (19Â°C)"
               }
             },
             {
               "id": "boost",
               "label": {
-                "en": "Boost (25°C)",
-                "fr": "Boost (25°C)"
+                "en": "Boost (25Â°C)",
+                "fr": "Boost (25Â°C)"
               }
             }
           ]
@@ -512,14 +512,14 @@
       "id": "thermostat_tuya_dp_schedule_off",
       "title": {
         "en": "Disable schedule",
-        "fr": "Désactiver programmation",
+        "fr": "DÃ©sactiver programmation",
         "nl": "Schema uitschakelen",
         "de": "Zeitplan deaktivieren"
       },
       "args": [],
       "titleFormatted": {
         "en": "Disable schedule",
-        "fr": "Désactiver programmation",
+        "fr": "DÃ©sactiver programmation",
         "nl": "Schema uitschakelen",
         "de": "Zeitplan deaktivieren"
       }
@@ -544,14 +544,14 @@
       "id": "thermostat_tuya_dp_turn_off",
       "title": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
       "args": [],
       "titleFormatted": {
         "en": "Turn off",
-        "fr": "Éteindre",
+        "fr": "Ã‰teindre",
         "nl": "Uitzetten",
         "de": "Ausschalten"
       }
@@ -576,15 +576,15 @@
       "id": "thermostat_tuya_dp_set_temperature",
       "title": {
         "en": "Set temperature",
-        "fr": "Régler température",
+        "fr": "RÃ©gler tempÃ©rature",
         "nl": "Temperatuur instellen",
         "de": "Temperatur einstellen"
       },
       "titleFormatted": {
-        "en": "Set temperature to [[temperature]]°C",
-        "fr": "Régler à [[temperature]]°C",
-        "nl": "Instellen op [[temperature]]°C",
-        "de": "Auf [[temperature]]°C einstellen"
+        "en": "Set temperature to [[temperature]]Â°C",
+        "fr": "RÃ©gler Ã [[temperature]]Â°C",
+        "nl": "Instellen op [[temperature]]Â°C",
+        "de": "Auf [[temperature]]Â°C einstellen"
       },
       "args": [
         {
@@ -593,7 +593,7 @@
           "min": 5,
           "max": 35,
           "step": 0.5,
-          "label": "°C",
+          "label": "Â°C",
           "labelDecimals": 1
         }
       ]

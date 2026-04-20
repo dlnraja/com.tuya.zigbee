@@ -20,7 +20,7 @@ let stats = {
 };
 
 /**
- * Ajouter registration manquante spécifique
+ * Ajouter registration manquante spÃ©cifique
  */
 function addMissingRegistration(driverName, cardType, cardId) {
   const driverJsPath = path.join(DRIVERS_DIR, driverName, 'driver.js');
@@ -33,20 +33,20 @@ function addMissingRegistration(driverName, cardType, cardId) {
   const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
   let content = fs.readFileSync(driverJsPath, 'utf8');
 
-  // Vérifier si déjà enregistré
+  // VÃ©rifier si dÃ©jÃ enregistrÃ©
   const registrationPattern = cardType === 'trigger' ? `getTriggerCard('${cardId}')` :
     cardType === 'condition' ? `getConditionCard('${cardId}')` :
       `getActionCard('${cardId}')`;
 
   if (content.includes(registrationPattern)) {
-    return false; // Déjà enregistré
+    return false; // DÃ©jÃ enregistrÃ©
   }
 
   // Trouver onInit()
   const lines = content.split('\n');
   let insertIndex = -1;
 
-  // Chercher la dernière registration existante du même type
+  // Chercher la derniÃ¨re registration existante du mÃªme type
   let lastRegistrationIndex = -1;
   const searchPattern = cardType === 'trigger' ? 'getTriggerCard' :
     cardType === 'condition' ? 'getConditionCard' :
@@ -59,10 +59,10 @@ function addMissingRegistration(driverName, cardType, cardId) {
   }
 
   if (lastRegistrationIndex !== -1) {
-    // Insérer après la dernière registration du même type
+    // InsÃ©rer aprÃ¨s la derniÃ¨re registration du mÃªme type
     insertIndex = lastRegistrationIndex + 1;
 
-    // Si c'est une condition, chercher le registerRunListener associé
+    // Si c'est une condition, chercher le registerRunListener associÃ©
     if (cardType === 'condition' && lines[lastRegistrationIndex + 1].includes('registerRunListener')) {
       let depth = 0;
       for (let i = lastRegistrationIndex + 1; i < lines.length; i++) {
@@ -79,7 +79,7 @@ function addMissingRegistration(driverName, cardType, cardId) {
     const onInitIndex = lines.findIndex(l => l.includes('async onInit()') || l.includes('onInit()'));
     if (onInitIndex === -1) return false;
 
-    // Trouver position après log
+    // Trouver position aprÃ¨s log
     for (let i = onInitIndex; i < lines.length; i++) {
       if (lines[i].includes('this.log(') && lines[i].includes('Flow cards registered')) {
         insertIndex = i;
@@ -91,7 +91,7 @@ function addMissingRegistration(driverName, cardType, cardId) {
     }
 
     if (insertIndex === -1) {
-      // Après le { de onInit
+      // AprÃ¨s le { de onInit
       insertIndex = onInitIndex + 1;
       while (insertIndex < lines.length && !lines[insertIndex].includes('{')) {
         insertIndex++;
@@ -107,7 +107,7 @@ function addMissingRegistration(driverName, cardType, cardId) {
   fs.copyFileSync(driverJsPath, backupPath);
   stats.backupsCreated++;
 
-  // Générer code
+  // GÃ©nÃ©rer code
   const registrationCode = [];
   const indent = '    ';
 
@@ -144,7 +144,7 @@ function addMissingRegistration(driverName, cardType, cardId) {
     registrationCode.push(`${indent}});`);
   }
 
-  // Insérer
+  // InsÃ©rer
   lines.splice(insertIndex, 0, ...registrationCode);
 
   // Sauvegarder
@@ -211,15 +211,15 @@ function addMissingRunListener(driverName, conditionId) {
   const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
   let content = fs.readFileSync(driverJsPath, 'utf8');
 
-  // Vérifier si runListener déjà présent
+  // VÃ©rifier si runListener dÃ©jÃ prÃ©sent
   const lines = content.split('\n');
   const registrationLine = lines.findIndex(l => l.includes(`getConditionCard('${conditionId}')`));
 
   if (registrationLine === -1) return false;
 
-  // Vérifier si registerRunListener suit
+  // VÃ©rifier si registerRunListener suit
   if (registrationLine + 1 < lines.length && lines[registrationLine + 1].includes('registerRunListener')) {
-    return false; // Déjà présent
+    return false; // DÃ©jÃ prÃ©sent
   }
 
   // Backup
@@ -227,7 +227,7 @@ function addMissingRunListener(driverName, conditionId) {
   fs.copyFileSync(driverJsPath, backupPath);
   stats.backupsCreated++;
 
-  // Générer runListener
+  // GÃ©nÃ©rer runListener
   const capability = extractCapabilityFromCondition(conditionId, compose.capabilities);
   if (!capability) return false;
 
@@ -240,7 +240,7 @@ function addMissingRunListener(driverName, conditionId) {
     `${indent}});`
   ];
 
-  // Insérer après registration
+  // InsÃ©rer aprÃ¨s registration
   lines.splice(registrationLine + 1, 0, ...runListenerCode);
 
   // Sauvegarder
@@ -251,7 +251,7 @@ function addMissingRunListener(driverName, conditionId) {
 }
 
 // 
-// EXÉCUTION
+// EXÃ‰CUTION
 // 
 
 console.log(' Issues critiques restantes:\n');
@@ -265,7 +265,7 @@ console.log('\n');
 auditReport.issues.missingRegistration.forEach(issue => {
   const fixed = addMissingRegistration(issue.driver, issue.type, issue.id);
   if (fixed) {
-    console.log(`    ${issue.driver}: ${issue.type} '${issue.id}' ajouté`);
+    console.log(`    ${issue.driver}: ${issue.type} '${issue.id}' ajoutÃ©`);
     stats.driversFixed++;
   }
 });
@@ -277,7 +277,7 @@ console.log('\n');
 auditReport.issues.missingRunListener.forEach(issue => {
   const fixed = addMissingRunListener(issue.driver, issue.id);
   if (fixed) {
-    console.log(`    ${issue.driver}: runListener pour '${issue.id}' ajouté`);
+    console.log(`    ${issue.driver}: runListener pour '${issue.id}' ajoutÃ©`);
   }
 });
 
@@ -285,10 +285,10 @@ console.log('\n');
 console.log('STATISTIQUES');
 console.log('\n');
 
-console.log(`   Registrations ajoutées: ${stats.registrationsAdded}`);
-console.log(`   RunListeners ajoutés: ${stats.runListenersAdded}`);
-console.log(`   Backups créés: ${stats.backupsCreated}\n`);
+console.log(`   Registrations ajoutÃ©es: ${stats.registrationsAdded}`);
+console.log(`   RunListeners ajoutÃ©s: ${stats.runListenersAdded}`);
+console.log(`   Backups crÃ©Ã©s: ${stats.backupsCreated}\n`);
 
-console.log(' CORRECTIONS TERMINÉES\n');
+console.log(' CORRECTIONS TERMINÃ‰ES\n');
 
 process.exit(0);

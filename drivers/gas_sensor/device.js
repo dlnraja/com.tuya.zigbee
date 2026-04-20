@@ -35,7 +35,7 @@ class GasSensorDevice extends UnifiedSensorBase {
       // 
       4: { capability: 'measure_battery', divisor: 1 },
       9: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === 'fault' },
-      14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolète
+      14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolÃ¨te
 
       // 
       // v5.5.130: CONTROL FEATURES from Zigbee2MQTT
@@ -100,6 +100,18 @@ class GasSensorDevice extends UnifiedSensorBase {
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 

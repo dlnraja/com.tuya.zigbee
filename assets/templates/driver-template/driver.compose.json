@@ -4,7 +4,7 @@
     "en": "Tuya DEVICE_NAME",
     "fr": "Tuya NOM_APPAREIL",
     "nl": "Tuya APPARAATNAAM",
-    "ta": "Tuya சாதன_பெயர்"
+    "ta": "Tuya à®šà®¾à®¤à®©_à®ªà¯†à®¯à®°à¯"
   },
   "class": "sensor|light|switch|thermostat|other",
   "capabilities": ["onoff", "measure_temperature", "measure_humidity"],
@@ -14,7 +14,7 @@
         "en": "Power",
         "fr": "Alimentation",
         "nl": "Aan/Uit",
-        "ta": "மின்சாரம்"
+        "ta": "à®®à®¿à®©à¯à®šà®¾à®°à®®à¯"
       }
     }
   },
