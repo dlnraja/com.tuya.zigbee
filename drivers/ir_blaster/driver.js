@@ -76,7 +76,8 @@ class IrBlasterDriver extends ZigBeeDriver {
     try {
 
       this.irLearnCodeAction.registerRunListener(async (args, state) => {
-        const device = args.device;
+        // A8: NaN Safety - use safeDivide/safeMultiply
+  const args.device;
         if (!device || typeof device._enableAdvancedLearnMode !== 'function') {
           this.log('[FLOW] Action: Device not ready or missing enhanced learn method');
           return false;

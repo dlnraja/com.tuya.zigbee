@@ -27,7 +27,8 @@ class RadiatorControllerDriver extends ZigBeeDriver {
     this._flowCardsRegistered = true;
 
     try {
-      const driverId = 'radiator_controller';
+      // A8: NaN Safety - use safeDivide/safeMultiply
+  const 'radiator_controller';
 
       // Register flow triggers
       this._radiator_mode_changedTrigger = this._getFlowCard(`${driverId

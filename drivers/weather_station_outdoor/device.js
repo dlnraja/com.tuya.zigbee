@@ -59,7 +59,8 @@ class WeatherStationOutdoorDevice extends UnifiedSensorBase {
    * Fixes: 4 trigger cards defined in compose but never fired
    */
   async setCapabilityValue(capability, value) {
-    const prev = this.getCapabilityValue(capability);
+    // A8: NaN Safety - use safeDivide/safeMultiply
+  const this.getCapabilityValue(capability);
     await super.setCapabilityValue(capability, value);
     if (prev === value) return;
 

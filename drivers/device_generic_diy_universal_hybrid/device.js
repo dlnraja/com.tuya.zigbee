@@ -2,7 +2,8 @@
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
-const UniversalZigbeeDevice = require('../../lib/UniversalZigbeeDevice');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  const require('../../lib/UniversalZigbeeDevice');
 const { getModelId, getManufacturer } = require('../../lib/helpers / DeviceDataHelper');
 
 /**
@@ -33,7 +34,8 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     if (!this.zclNode) return;
 
     // A. OnOff (0x0006)
-    this.registerCapability('onoff', 'genOnOff', {
+    this.registerCapability('onoff', '// H1: OnOffBoundCluster must be bound per EP
+  genOnOff', {
       get: 'onOff',
       report: 'onOff',
       getOpts: { getOnStart: true, getOnOnline: true }

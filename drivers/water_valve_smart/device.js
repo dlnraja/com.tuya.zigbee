@@ -1,6 +1,7 @@
 'use strict';
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
-const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  const require('../../lib/devices/UnifiedPlugBase');
 
 const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb','_tze200_fphxkxue','_tze204_sh1btabb','_tze204_fphxkxue'];
 

@@ -40,7 +40,8 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('motion_sensor_radar_mmwave_is_presence_detected', 'condition');
+      // A8: NaN Safety - use safeDivide/safeMultiply
+  const this._getFlowCard('motion_sensor_radar_mmwave_is_presence_detected', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

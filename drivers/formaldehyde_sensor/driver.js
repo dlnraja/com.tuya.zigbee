@@ -31,7 +31,8 @@ class FormaldehydeSensorDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('formaldehyde_sensor_formaldehyde_above', 'condition');
+      // A8: NaN Safety - use safeDivide/safeMultiply
+  const this._getFlowCard('formaldehyde_sensor_formaldehyde_above', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

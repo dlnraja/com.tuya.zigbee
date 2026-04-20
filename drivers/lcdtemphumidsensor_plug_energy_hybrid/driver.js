@@ -33,7 +33,8 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_is_on', 'condition');
+      // A8: NaN Safety - use safeDivide/safeMultiply
+  const this._getFlowCard('lcdtemphumidsensor_plug_energy_hybrid_plug_energy_monitor_is_on', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

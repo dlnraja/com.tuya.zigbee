@@ -177,7 +177,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     // Root cause (diag e2148e06): getData()?.manufacturerName was undefined for _TZE200_3towulqd
     // v5.8.77: Added zclNode + cached sources  fixes DEFAULT profile on first init
     const mfr = this.getSetting?.('zb_manufacturer_name')
-      || this.getSetting?.('zb_manufacturerName')
+      || this.getSetting?.('zb_manufacturer_name')
       || this.getStoreValue?.('manufacturerName')
       || this.getData()?.manufacturerName
       || this.zclNode?.manufacturerName
@@ -809,7 +809,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     // v5.5.925: Check if this is a variant manufacturer (may have temp/humidity)
     // v5.8.53: Use comprehensive fallback chain (matching _getManufacturerProfile fix)
     const manufacturerName = this.getSetting?.('zb_manufacturer_name')
-      || this.getSetting?.('zb_manufacturerName')
+      || this.getSetting?.('zb_manufacturer_name')
       || this.getStoreValue?.('manufacturerName')
       || this.getData()?.manufacturerName || '';
     const isVariant = MotionSensorDevice.VARIANT_MANUFACTURERS.some(v => 
@@ -1182,11 +1182,11 @@ class MotionSensorDevice extends UnifiedSensorBase {
   async _setupTuyaDPPolling(zclNode) {
     // v5.8.53: Use comprehensive fallback chain
     const mfr = this.getSetting?.('zb_manufacturer_name')
-      || this.getSetting?.('zb_manufacturerName')
+      || this.getSetting?.('zb_manufacturer_name')
       || this.getStoreValue?.('manufacturerName')
       || this.getData()?.manufacturerName || '';
     const modelId = this.getSetting?.('zb_model_id')
-      || this.getSetting?.('zb_modelId')
+      || this.getSetting?.('zb_model_id')
       || this.getStoreValue?.('modelId')
       || this.getData()?.modelId || '';
     

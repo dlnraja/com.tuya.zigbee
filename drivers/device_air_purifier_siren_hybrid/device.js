@@ -1,7 +1,8 @@
 'use strict';
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  const require('../../lib/devices/UnifiedPlugBase');
 
 /**
  * 
