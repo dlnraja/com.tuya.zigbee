@@ -22,7 +22,9 @@
       "usageConstant": 6
     },
     "mains": true,
-    "batteries": ["CR2032"]
+    "batteries": [
+      "CR2032"
+    ]
   },
   "zigbee": {
     "manufacturerName": [
@@ -67,7 +69,18 @@
       "_TZ3000_kdpxju99",
       "_TZ3000_h1jnz6l8",
       "_TZ3000_utagpnzs",
-      "_TZ3000_5bsf8vaj"
+      "_TZ3000_5bsf8vaj",
+      "_TZ3000_6zvw8ham",
+      "_TZ3000_gn91mcmz",
+      "_TZ3000_qzjcsmar",
+      "_TZ3210_0zabbfax",
+      "_TZ3210_5vbjzw54",
+      "_TZ3210_95txyzbx",
+      "_TZ3210_a04acm9s",
+      "_TZ3210_cm9mbpr1",
+      "_TZ3290_gnl5a6a5",
+      "_TZB210_aavhaadb",
+      "_TZB210_quinzf3w"
     ],
     "endpoints": {
       "1": {
