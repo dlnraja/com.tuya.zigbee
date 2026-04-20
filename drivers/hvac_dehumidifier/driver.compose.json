@@ -70,9 +70,8 @@
   ],
   "images": {
     "small": "drivers/hvac_dehumidifier/assets/images/small.png",
-    "large": "drivers/hvac_dehumidifier/assets/images/large.png",
-    "xlarge": "drivers/hvac_dehumidifier/assets/images/xlarge.png"
-  },
+    "large": "drivers/hvac_dehumidifier/assets/images/large.png"
+    },
   "zigbee": {
     "manufacturerName": [
       "_TZE200_44XPCTXY",

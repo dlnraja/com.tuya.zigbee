@@ -50,9 +50,8 @@
   },
   "images": {
     "large": "drivers/remote_dimmer/assets/images/large.png",
-    "small": "drivers/remote_dimmer/assets/images/small.png",
-    "xlarge": "drivers/remote_dimmer/assets/images/xlarge.png"
-  },
+    "small": "drivers/remote_dimmer/assets/images/small.png"
+    },
   "maintenanceActions": [
     {
       "id": "ota_check",

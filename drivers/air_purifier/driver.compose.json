@@ -260,9 +260,8 @@
   },
   "images": {
     "small": "drivers/air_purifier/assets/images/small.png",
-    "large": "drivers/air_purifier/assets/images/large.png",
-    "xlarge": "drivers/air_purifier/assets/images/xlarge.png"
-  },
+    "large": "drivers/air_purifier/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

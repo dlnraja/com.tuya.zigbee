@@ -39,9 +39,8 @@
   },
   "images": {
     "small": "drivers/light_sensor_outdoor/assets/images/small.png",
-    "large": "drivers/light_sensor_outdoor/assets/images/large.png",
-    "xlarge": "drivers/light_sensor_outdoor/assets/images/xlarge.png"
-  },
+    "large": "drivers/light_sensor_outdoor/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

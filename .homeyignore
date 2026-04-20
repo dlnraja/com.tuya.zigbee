@@ -10,11 +10,16 @@ node_modules/nyc
 node_modules/ajv
 node_modules/axios
 node_modules/js-yaml
+node_modules/fast-glob
+node_modules/fs-extra
+node_modules/pngjs
+node_modules/homey-lib/webpack
 scripts
 docs
 test
 *.md
 *.txt
+*.map
 .homeybuild
 reimplementation_gateway
 reports
@@ -26,3 +31,7 @@ scratch
 package-lock.json
 .gitignore
 .homeyignore
+assets/branding
+data
+
+xlarge.png

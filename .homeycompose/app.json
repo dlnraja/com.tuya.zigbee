@@ -1,6 +1,6 @@
 {
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "7.4.7",
+  "version": "7.4.8",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -69,9 +69,8 @@
   "permissions": [],
   "images": {
     "small": "/assets/images/small.png",
-    "large": "/assets/images/large.png",
-    "xlarge": "/assets/images/xlarge.png"
-  },
+    "large": "/assets/images/large.png"
+    },
   "author": {
     "name": "Dylan Rajasekaram",
     "email": "dlnraja@gmail.com"

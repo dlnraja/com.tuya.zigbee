@@ -300,9 +300,8 @@
   ],
   "images": {
     "small": "drivers/wifi_door_lock/assets/images/small.png",
-    "large": "drivers/wifi_door_lock/assets/images/large.png",
-    "xlarge": "drivers/wifi_door_lock/assets/images/xlarge.png"
-  },
+    "large": "drivers/wifi_door_lock/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

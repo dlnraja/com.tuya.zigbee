@@ -59,9 +59,8 @@
   },
   "images": {
     "small": "drivers/garage_door/assets/images/small.png",
-    "large": "drivers/garage_door/assets/images/large.png",
-    "xlarge": "drivers/garage_door/assets/images/xlarge.png"
-  },
+    "large": "drivers/garage_door/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

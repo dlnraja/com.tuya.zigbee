@@ -497,9 +497,8 @@
   ],
   "images": {
     "small": "drivers/smoke_detector_advanced/assets/images/small.png",
-    "large": "drivers/smoke_detector_advanced/assets/images/large.png",
-    "xlarge": "drivers/smoke_detector_advanced/assets/images/xlarge.png"
-  },
+    "large": "drivers/smoke_detector_advanced/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

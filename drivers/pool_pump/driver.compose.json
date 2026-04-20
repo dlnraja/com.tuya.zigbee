@@ -45,9 +45,8 @@
   },
   "images": {
     "small": "drivers/pool_pump/assets/images/small.png",
-    "large": "drivers/pool_pump/assets/images/large.png",
-    "xlarge": "drivers/pool_pump/assets/images/xlarge.png"
-  },
+    "large": "drivers/pool_pump/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

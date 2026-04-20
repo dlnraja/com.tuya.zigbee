@@ -264,9 +264,8 @@
   ],
   "images": {
     "small": "drivers/wifi_dehumidifier/assets/images/small.png",
-    "large": "drivers/wifi_dehumidifier/assets/images/large.png",
-    "xlarge": "drivers/wifi_dehumidifier/assets/images/xlarge.png"
-  },
+    "large": "drivers/wifi_dehumidifier/assets/images/large.png"
+    },
   "maintenanceActions": [
     {
       "id": "ota_check",

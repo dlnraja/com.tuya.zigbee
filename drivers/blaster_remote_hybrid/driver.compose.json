@@ -68,9 +68,8 @@
   },
   "images": {
     "large": "drivers/ir_remote/assets/images/large.png",
-    "small": "drivers/ir_remote/assets/images/small.png",
-    "xlarge": "drivers/ir_remote/assets/images/xlarge.png"
-  },
+    "small": "drivers/ir_remote/assets/images/small.png"
+    },
   "maintenanceActions": [
     {
       "id": "ota_check",

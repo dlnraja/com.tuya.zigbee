@@ -34,9 +34,8 @@
   },
   "images": {
     "small": "drivers/valve_dual_irrigation/assets/images/small.png",
-    "large": "drivers/valve_dual_irrigation/assets/images/large.png",
-    "xlarge": "drivers/valve_dual_irrigation/assets/images/xlarge.png"
-  },
+    "large": "drivers/valve_dual_irrigation/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

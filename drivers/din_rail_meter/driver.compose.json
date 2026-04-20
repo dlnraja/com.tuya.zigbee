@@ -286,9 +286,8 @@
   },
   "images": {
     "small": "drivers/din_rail_meter/assets/images/small.png",
-    "large": "drivers/din_rail_meter/assets/images/large.png",
-    "xlarge": "drivers/din_rail_meter/assets/images/xlarge.png"
-  },
+    "large": "drivers/din_rail_meter/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

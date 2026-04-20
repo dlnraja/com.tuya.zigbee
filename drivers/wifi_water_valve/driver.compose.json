@@ -298,9 +298,8 @@
   ],
   "images": {
     "small": "drivers/wifi_water_valve/assets/images/small.png",
-    "large": "drivers/wifi_water_valve/assets/images/large.png",
-    "xlarge": "drivers/wifi_water_valve/assets/images/xlarge.png"
-  },
+    "large": "drivers/wifi_water_valve/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],

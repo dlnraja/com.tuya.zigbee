@@ -104,9 +104,8 @@
   },
   "images": {
     "large": "/drivers/universal_zigbee/assets/images/large.png",
-    "small": "/drivers/universal_zigbee/assets/images/small.png",
-    "xlarge": "/drivers/universal_zigbee/assets/images/xlarge.png"
-  },
+    "small": "/drivers/universal_zigbee/assets/images/small.png"
+    },
   "flow": {
     "triggers": [],
     "conditions": [],

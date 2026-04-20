@@ -18,9 +18,8 @@
   ],
   "images": {
     "large": "drivers/wall_curtain_switch/assets/images/large.png",
-    "small": "drivers/wall_curtain_switch/assets/images/small.png",
-    "xlarge": "drivers/wall_curtain_switch/assets/images/xlarge.png"
-  },
+    "small": "drivers/wall_curtain_switch/assets/images/small.png"
+    },
   "energy": {
     "approximation": {
       "usageConstant": 0.2

@@ -22,9 +22,8 @@
   ],
   "images": {
     "large": "drivers/handheld_remote_4_buttons/assets/images/large.png",
-    "small": "drivers/handheld_remote_4_buttons/assets/images/small.png",
-    "xlarge": "drivers/handheld_remote_4_buttons/assets/images/xlarge.png"
-  },
+    "small": "drivers/handheld_remote_4_buttons/assets/images/small.png"
+    },
   "energy": {
     "batteries": [
       "CR2032"

@@ -665,9 +665,8 @@
   ],
   "images": {
     "small": "drivers/switch_wireless/assets/images/small.png",
-    "large": "drivers/switch_wireless/assets/images/large.png",
-    "xlarge": "drivers/switch_wireless/assets/images/xlarge.png"
-  },
+    "large": "drivers/switch_wireless/assets/images/large.png"
+    },
   "platforms": [
     "local"
   ],
