@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-21T15:17:03.420Z",
+  "ts": "2026-04-21T15:41:57.081Z",
   "currentCount": 3170,
   "src": {
     "johan": {
@@ -11156,6 +11156,17 @@
         },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1376,
+          "title": "[Device Support Request] Tuya TS0011 – _TZ3000_aetquff4 (1-Gang Wall Switch)",
+          "mfrs": [
+            "_TZ3000_aetquff4",
+            "_TZ3000_aetquff4",
+            "_TZ3000_aetquff4",
+            "_TZ3000_aetquff4"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1375,
           "title": "[Device Support Request] Tuya TS0003 – _TZ3000_qkixdnon (Triple Relay Switch)",
           "mfrs": [
@@ -11285,17 +11296,6 @@
             "_TZE284_iadro9bf",
             "_TZE284_iadro9bf",
             "_TZE284_iadro9bf"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1361,
-          "title": "Device Request - [Zigbee 3.9 remote] - [MiBoxer] / [FUT089Z]",
-          "mfrs": [
-            "_TZ3000_xwh1e22x",
-            "_TZ3000_xwh1e22x",
-            "_TZ3000_xwh1e22x",
-            "_TZ3000_xwh1e22x"
           ]
         }
       ]
