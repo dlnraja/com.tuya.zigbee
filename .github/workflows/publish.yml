@@ -168,6 +168,10 @@ jobs:
         id: build
         run: npx homey app build
 
+      # Image Optimization: Strip xlarge images to prevent socket hang up
+      - name: 📉 Image Optimization (Strip XLARGE)
+        run: node scripts/maintenance/STRIP_XLARGE_IMAGES.js
+
       # Validate App (publish level)
       - name: 🔍 Validate App (Publish Level)
         id: validate
@@ -207,6 +211,9 @@ jobs:
           cache: 'npm'
       
       - run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: 📉 Image Optimization (Strip XLARGE)
+        run: node scripts/maintenance/STRIP_XLARGE_IMAGES.js
 
       - name: 🔨 Final Build
         run: npx homey app build

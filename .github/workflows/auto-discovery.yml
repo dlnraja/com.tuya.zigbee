@@ -53,6 +53,11 @@ jobs:
           echo "Generating driver skeletons based on Z2M DP mappings..."
           node .github/scripts/auto-driver-scaffold.js || true
 
+      - name: 🧹 Hygiene & Optimization Gate
+        run: |
+          node scripts/shadow_sanitizer.js
+          node scripts/maintenance/STRIP_XLARGE_IMAGES.js
+
       - name: Commit Discovery Inteligente
         run: |
           git config user.name "unified-agent[bot]"

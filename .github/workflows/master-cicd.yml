@@ -187,6 +187,7 @@ jobs:
         run: |
           npm ci
           node scripts/shadow_sanitizer.js
+          node scripts/maintenance/STRIP_XLARGE_IMAGES.js
           npx homey app build
 
       - name: 📤 Silent Publish (Shadow Mode)

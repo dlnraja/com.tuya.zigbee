@@ -4,6 +4,8 @@ const path = require('path');
 
 const ROOT = process.cwd();
 
+console.log('🚀 Starting Universal Tuya Build Optimizer: Stripping XLARGE Assets...');
+
 // 1. Update app.json (if it exists)
 const appJsonPath = path.join(ROOT, 'app.json');
 if (fs.existsSync(appJsonPath)) {
@@ -13,7 +15,7 @@ if (fs.existsSync(appJsonPath)) {
     // Clean up trailing commas in objects
     appJson = appJson.replace(/,(\s*\})/g, '$1');
     fs.writeFileSync(appJsonPath, appJson);
-    console.log('Updated app.json: Removed xlarge image reference.');
+    console.log('✅ Updated app.json: Removed xlarge image reference.');
 }
 
 // 2. Update .homeycompose/app.json
@@ -23,7 +25,7 @@ if (fs.existsSync(composeAppPath)) {
     composeApp = composeApp.replace(/"xlarge":\s*"\/assets\/images\/xlarge\.png",?\s*/g, '');
     composeApp = composeApp.replace(/,(\s*\})/g, '$1');
     fs.writeFileSync(composeAppPath, composeApp);
-    console.log('Updated .homeycompose/app.json: Removed xlarge image reference.');
+    console.log('✅ Updated .homeycompose/app.json: Removed xlarge image reference.');
 }
 
 // 3. Update all drivers' driver.compose.json
@@ -35,7 +37,7 @@ if (fs.existsSync(driversDir)) {
         const composePath = path.join(driversDir, driver, 'driver.compose.json');
         if (fs.existsSync(composePath)) {
             let content = fs.readFileSync(composePath, 'utf8');
-            if (content.includes('xlarge')) {
+            if (content.includes('"xlarge"')) {
                 // Remove xlarge from images object
                 content = content.replace(/"xlarge":\s*"[^"]+",?\s*/g, '');
                 // Clean up trailing commas
@@ -45,16 +47,25 @@ if (fs.existsSync(driversDir)) {
             }
         }
     });
-    console.log(`Updated ${count} drivers: Removed xlarge image references from driver.compose.json.`);
+    console.log(`✅ Updated ${count} drivers: Removed xlarge image references from driver.compose.json.`);
 }
 
-// 4. Add xlarge.png to .homeyignore
+// 4. Ensure .homeyignore is present and up to date
 const ignoreFile = path.join(ROOT, '.homeyignore');
 if (fs.existsSync(ignoreFile)) {
     let ignore = fs.readFileSync(ignoreFile, 'utf8');
-    if (!ignore.includes('xlarge.png')) {
-        ignore += '\nxlarge.png\n';
+    const requiredIgnores = ['xlarge.png', 'data/', 'assets/branding/'];
+    let changed = false;
+    requiredIgnores.forEach(pat => {
+        if (!ignore.includes(pat)) {
+            ignore += `\n${pat}`;
+            changed = true;
+        }
+    });
+    if (changed) {
         fs.writeFileSync(ignoreFile, ignore);
-        console.log('Added xlarge.png to .homeyignore.');
+        console.log('✅ Updated .homeyignore with stripping patterns.');
     }
 }
+
+console.log('✨ Build optimization complete. Archive size readiness: High.');
