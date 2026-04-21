@@ -1,6 +1,7 @@
 {
   "7.4.9": {
-    "en": "v7.4.9: Critical Stabilization. Fixed widespread 'Unexpected token :' syntax errors and implemented proactive resource cleanup (onUninit) to prevent 'instance destroyed' crashes. Enhanced driver logic for 8 core hybrid sensors."
+    "en": "v7.4.9: 🌌 UNIFIED ENGINE - Critical Stabilization & Syntax Purity. Fixed 'Unexpected token :' in tuyaUtils.js:118. Implemented app lifecycle cleanup (onUninit). Restored corrupted math in core drivers.",
+    "fr": "v7.4.9 : 🐛 HOTFIX CRITIQUE - Correction erreur syntaxe tuyaUtils.js:118 (crash au démarrage). Stabilisation du moteur unifié et restauration des calculs drivers."
   },
   "7.4.7": {
     "en": "v7.4.7: Hotfix. Critical: Fixed syntax error causing permanent app crash on startup. Users experiencing 'App crashes' errors should update immediately. No breaking changes, safe upgrade from v7.4.6."
