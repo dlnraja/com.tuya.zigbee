@@ -2795,3 +2795,59 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | zigbee2mqtt + generic | JohanBendz/com.tuya.zigbee#1365 | device_request |
 | tuya + TS004F | JohanBendz/com.tuya.zigbee#1365 | device_request |
 | tuya + generic | JohanBendz/com.tuya.zigbee#1365 | device_request |
+
+
+## Auto-discovered from GitHub (2026-04-21)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| development + TS0601 | dlnraja/com.tuya.zigbee#275 | bug_report |
+| vision + TS0601 | dlnraja/com.tuya.zigbee#275 | bug_report |
+| _TZE284_6ocnqlhn + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE284_6ocnqlhn + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_lvkk0hdg + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_lvkk0hdg + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_khah2lkr + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_khah2lkr + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE284_0ints6wl + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE284_0ints6wl + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE284_yzr43ayq + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE284_yzr43ayq + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZ3000_wol32olt + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZ3000_wol32olt + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE284_zpvusbtv + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE284_zpvusbtv + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE204_rkbxtclc + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE204_rkbxtclc + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE204_7ytnacie + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE204_7ytnacie + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZ3210_3ulg9kpo + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZ3210_3ulg9kpo + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_dhke3p9w + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_dhke3p9w + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE284_dhke3p9w + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE284_dhke3p9w + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_dwcarsat + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_dwcarsat + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE204_dwcarsat + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE204_dwcarsat + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_blfcpsxz + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_blfcpsxz + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_ogkdpgy2 + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_ogkdpgy2 + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_3ejwxpmu + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_3ejwxpmu + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE204_3ejwxpmu + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE204_3ejwxpmu + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_ggev5fsl + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_ggev5fsl + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_u319yc66 + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_u319yc66 + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_kvpwq8z7 + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE200_kvpwq8z7 + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE204_kvpwq8z7 + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE204_kvpwq8z7 + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE284_uo8qcagc + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZE284_uo8qcagc + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZ3000_rgpqqmbj + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
+| _TZ3000_rgpqqmbj + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
