@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-21T05:42:33.933Z",
+  "timestamp": "2026-04-21T08:13:40.722Z",
   "driversChecked": 323,
   "collisions": [],
   "buttonLogicFailures": [],
@@ -14,9 +14,6 @@
     ".homeybuild\\drivers\\air_purifier\\device.js:18: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\air_purifier\\device.js:48: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\climate_sensor\\device.js:18: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\lib\\analytics\\AdvancedAnalytics.js:212: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\lib\\analytics\\AdvancedAnalytics.js:338: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\lib\\analytics\\AdvancedAnalytics.js:339: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\air_purifier\\device.js:18: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\air_purifier\\device.js:48: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\climate_sensor\\device.js:18: Potential unchecked division/multiplication (NaN risk)",
