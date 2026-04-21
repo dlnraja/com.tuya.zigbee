@@ -132,7 +132,7 @@ class Core Reimplementation {
                     lastError = new Error(
                         `Cannot connect to Core Reimplementation at ${this.baseUrl}. ` +
                         `Is the Core Reimplementation app running? (attempt ${attempt + 1}/${this.maxRetries})`
-                    );
+                    ) ;
                 } else {
                     throw err; // Don't retry unknown errors
                 }

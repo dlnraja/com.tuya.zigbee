@@ -33,7 +33,7 @@ class GarageDoorOpenerDevice extends TuyaZigbeeDevice {
     };
 
     this.registerCapabilityListener('garagedoor_closed', async (value) => {
-      this._markAppCommand?.();
+      this._markAppCommand?.() ;
       if 
 
       (this.tuyaEF00Manager) {
@@ -50,5 +50,6 @@ class GarageDoorOpenerDevice extends TuyaZigbeeDevice {
   }
 }
 module.exports = GarageDoorOpenerDevice;
+
 
 

@@ -113,7 +113,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
    * v5.3.79: AGGRESSIVE FIX - Prevent ANY sub-device creation
    */
   async onPairListDevices(devices) {
-    this.log('[PAIR] Raw devices from Zigbee:', devices?.length || 0);
+    this.log('[PAIR] Raw devices from Zigbee:', devices?.length || 0) ;
 
     if (!devices || devices.length === 0) {
       return devices;
@@ -124,7 +124,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
     const filteredDevices = [];
 
     for (const device of devices) {
-      const ieee = device.settings?.zb_ieee_address || device.data?.ieeeAddress;
+      const ieee = device.settings?.zb_ieee_address || device.data?.ieeeAddress ;
 
       // CRITICAL: Skip ANY device with subDeviceId
       if (device.data?.subDeviceId !== undefined) {
@@ -163,4 +163,5 @@ class ClimateSensorDriver extends ZigBeeDriver {
 // The default ZigBeeDriver behavior is sufficient.
 
 module.exports = ClimateSensorDriver;
+
 

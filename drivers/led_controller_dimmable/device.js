@@ -60,9 +60,9 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
 
     // Get clusters
     const endpoint = zclNode.endpoints[1];
-    this._onOffCluster = endpoint?.clusters?.onOff;
-    this._levelCluster = endpoint?.clusters?.levelControl;
-    this._tuyaCluster = endpoint?.clusters?.tuya;
+    this._onOffCluster = endpoint?.clusters?.onOff ;
+    this._levelCluster = endpoint?.clusters?.levelControl ;
+    this._tuyaCluster = endpoint?.clusters?.tuya ;
 
     // Log cluster availability with detailed info
     this.log(`[LED] onOff cluster: ${this._onOffCluster ? '' : ''}`);
@@ -369,3 +369,4 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
 }
 
 module.exports = LEDControllerDimmableDevice;
+

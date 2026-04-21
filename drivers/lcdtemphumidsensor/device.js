@@ -21,7 +21,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
   /** v7.4.4: Intelligence for _TZE284_ sensors (No humidity divisor) */
   get isUniversalModel() {
-    const mfr = this.getSetting?.('zb_manufacturer_name') || '';
+    const mfr = this.getSetting?.('zb_manufacturer_name') || '' ;
     return mfr.toUpperCase().includes('VVM'); // _TZE284_vvmbj46n
   }
 
@@ -124,3 +124,4 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = LCDTempHumidSensorDevice;
+

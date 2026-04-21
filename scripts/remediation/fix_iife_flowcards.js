@@ -43,7 +43,7 @@ let stats = { scanned: 0, fixed: 0, skipped: 0, errors: 0 };
  */
 function fixPatternA(content) {
   // Match the IIFE pattern that retrieves a flow card and chains .registerRunListener
-  const iifeRegex = /\(\(\)\s*=>\s*\{\s*try\s*\{\s*return\s*(this\.homey\.flow\.(?:getConditionCard|getActionCard|getTriggerCard|getDeviceTriggerCard|getDeviceConditionCard|getDeviceActionCard)\s*\([^)]+\))\s*;\s*\}\s*catch\s*\(\s*\w+\s*\)\s*\{\s*return\s+null\s*;\s*\}\s*\}\s*\)\s*\(\s*\)\s*\n?\s*\.registerRunListener\s*\(/g;
+  const iifeRegex = /\(\(\)\s*=>\s*\{\s*try\s*\{\s*return\s*(this\.homey\.flow\.(?:getConditionCard|getActionCard|getTriggerCard|getDeviceTriggerCard|getDeviceConditionCard|getDeviceActionCard)\s*\([^)]+\))\s*;\s*\}\s*catch\s*\(\s*\w+\s*\)\s*\{\s*return\s+null\s*;\s*\}\s*\}\s*\)\s*\(\s*\)\s*\n?\s*\.registerRunListener\s*\(/g : null;
 
   let count = 0;
   const fixed = content.replace(iifeRegex, (match, cardCall) => {
@@ -55,7 +55,7 @@ function fixPatternA(content) {
   // If the simple regex didn't work, try a more lenient version
   if (count === 0) {
     // Simpler pattern: just look for IIFE().registerRunListener
-    const simpleRegex = /\(\(\)\s*=>\s*\{[^}]*return\s+(this\.homey\.flow\.\w+\([^)]+\))[^}]*\}\s*\)\s*\(\s*\)\s*\n?\s*\.registerRunListener\s*\(/g;
+    const simpleRegex = /\(\(\)\s*=>\s*\{[^}]*return\s+(this\.homey\.flow\.\w+\([^)]+\))[^}]*\}\s*\)\s*\(\s*\)\s*\n?\s*\.registerRunListener\s*\(/g : null;
     const fixed2 = content.replace(simpleRegex, (match, cardCall) => {
       count++;
       return `(() => { try { const _card = ${cardCall}; if (_card) { _card.registerRunListener(`;

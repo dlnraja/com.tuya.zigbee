@@ -98,7 +98,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       'confort_minus_1': { voltage: -115, description: 'Confort -1Â°C', temp_offset: -1 },
       'confort_minus_2': { voltage: -115, description: 'Confort -2Â°C', temp_offset: -2 },
       'anti_freeze': { voltage: 230, description: 'Hors-Gel (230V pos)', temp_offset: -10 },
-      'off': { voltage: 'alternating', description: 'ArrÃªt (230V alt)', temp_offset: null }
+      'off': { voltage: 'alternating', description: 'ArrÃªt (230V alt)', temp_offset }
     };
 
     this.currentMode = this.getSetting('heating_mode') || 'confort';
@@ -452,7 +452,7 @@ safeMultiply(await this._delay(duration, 0).3);
 
   // MÃ©thodes utilitaires
   getHeatingModeDescription(mode) {
-    return this.heatingModes[mode]?.description || 'Mode inconnu';
+    return this.heatingModes[mode]?.description || 'Mode inconnu' ;
   }
 
   isHeating() {
@@ -476,7 +476,7 @@ safeMultiply(await this._delay(duration, 0).3);
   async _tuyaTimeSyncFallback() {
     try {
       const node = this.zclNode || this._zclNode;
-      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya;
+      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya ;
       if (!tuyaCluster) return;
 
       const now = new Date();
@@ -514,3 +514,4 @@ safeMultiply(await this._delay(duration, 0).3);
 }
 
 module.exports = RadiatorControllerDevice;
+

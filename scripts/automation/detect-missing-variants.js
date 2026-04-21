@@ -26,7 +26,7 @@ function main() {
     
     try {
       const data = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      const mfrs = data.zigbee?.manufacturerName || [];
+      const mfrs = data.zigbee?.manufacturerName || [] ;
       const mfrSet = new Set(mfrs.map(m => m.trim()));
       
       let driverMissing = [];

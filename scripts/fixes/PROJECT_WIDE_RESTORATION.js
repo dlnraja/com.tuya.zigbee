@@ -51,7 +51,7 @@ allFiles.forEach(file => {
 
     // 3. Fix extra parentheses after Math.round/100
     // Pattern: Math.round(distance * 100) / 100;
-    const extraParenPattern = /Math\.round\(([^)]+)\)\s*\/\s*(\d+)\);(\s*\/\/.*)?/g;
+    const extraParenPattern = /Math\.round\(([^)]+)\)\s*\/\s*(\d+)\);(\s*\/\/.*)?/g : null;
     if (extraParenPattern.test(content)) {
         content = content.replace(extraParenPattern, 'Math.round($1) / $2;$3');
         changed = true;
@@ -69,7 +69,7 @@ allFiles.forEach(file => {
     }
 
     if (changed) {
-        fs.writeFileSync(file, content);
+        fs.writeFileSync(file, content) ;
         console.log(`[RESTORED] ${path.relative(process.cwd(), file)}`);
     }
 });

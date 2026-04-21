@@ -150,7 +150,7 @@ function main() {
     if (!compose) continue;
 
     // Skip WiFi-only and non-Zigbee drivers
-    if (!compose.zigbee || !compose.zigbee.manufacturerName?.length) continue;
+    if (!compose.zigbee || !compose.zigbee.manufacturerName?.length) continue ;
 
     const caps = compose.capabilities || [];
     const sensorCaps = caps.filter(c => REPORTING_MAP[c.split('.')[0]]);

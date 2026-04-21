@@ -32,9 +32,9 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
     this.log('[SUB-DEVICE] Gang ' + gn + ' initializing...');
     this._gangNumber = gn;
     this.zclNode = zclNode;
-    this._zclState = { lastState: null, pending: false, timeout: null };
-    const ep = zclNode?.endpoints?.[gn];
-    const onOff = ep?.clusters?.onOff;
+    this._zclState = { lastState, pending: false, timeout };
+    const ep = zclNode?.endpoints?.[gn] ;
+    const onOff = ep?.clusters?.onOff ;
     if (!onOff) { this.error('[SUB-DEVICE] No onOff on EP' + gn); return; }
 
     onOff.on('attr.onOff', (value) => {
@@ -56,7 +56,7 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
           if (pTrigger) pTrigger
         }
         if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-          const sid = `wall_switch_3gang_1way_gang${gn}_scene`;
+          const sid = `wall_switch_3gang_1way_gang${gn}_scene` ;
           const sTrigger =
       this._getFlowCard(sid)?.trigger(this, {}, {}).catch(this.error || console.error)
           if (sTrigger) sTrigger.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
@@ -107,9 +107,9 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
     this.log('[PRIMARY] Gang 1 initializing...');
     if (this.hasCapability('onoff.gang2')) await this.removeCapability('onoff.gang2').catch(() => {});
     if (this.hasCapability('onoff.gang3')) await this.removeCapability('onoff.gang3').catch(() => {});
-    this._lastOnoffState = { gang1: null };
+    this._lastOnoffState = { gang1 };
     this._appCommandPending = { gang1: false };
-    this._appCommandTimeout = { gang1: null };
+    this._appCommandTimeout = { gang1 };
     await super.onNodeInit({ zclNode });
     this.initPhysicalButtonDetection(); // rule-19 injected
     this._registerCapabilityListeners(); // rule-12a injected
@@ -119,12 +119,12 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
   }
 
   _setupGang1SceneDetection(zclNode) {
-    const onOff = zclNode?.endpoints?.[1]?.clusters?.onOff;
+    const onOff = zclNode?.endpoints?.[1]?.clusters?.onOff ;
     if (!onOff) return;
     
     const triggerFlows = (value) => {
       const mode = this.sceneMode;
-      const isPhys = !this._appCommandPending?.gang1;
+      const isPhys = !this._appCommandPending?.gang1 ;
       if (isPhys && (mode === 'auto' || mode === 'both')) {
         const pgid = `wall_switch_3gang_1way_physical_gang1_${value ? 'on' : 'off'}`;
         const pTrigger =
@@ -132,7 +132,7 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
         if (pTrigger) pTrigger
       }
       if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-        const sid = 'wall_switch_3gang_1way_gang1_scene';
+        const sid = 'wall_switch_3gang_1way_gang1_scene' ;
         const sTrigger =
       this._getFlowCard(sid)?.trigger(this, {}, {}).catch(this.error || console.error)
         if (sTrigger) {
@@ -161,10 +161,11 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
   }
 
   onDeleted() {
-    if (this._zclState?.timeout) clearTimeout(this._zclState.timeout);
-    super.onDeleted?.();
+    if (this._zclState?.timeout) clearTimeout(this._zclState.timeout) ;
+    super.onDeleted?.() ;
   }
 }
 
 module.exports = WallSwitch3Gang1WayDevice;
+
 

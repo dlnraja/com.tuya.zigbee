@@ -23,7 +23,7 @@ function fixDir(dir) {
 
             // Fix Flow Collisions
             if (compose.flow && (compose.flow.triggers?.length > 0 || compose.flow.conditions?.length > 0 || compose.flow.actions?.length > 0)) {
-                console.log(`[FLOW] Cleaning duplicate flow in ${composePath}`);
+                console.log(`[FLOW] Cleaning duplicate flow in ${composePath}`) ;
                 compose.flow.triggers = [];
                 compose.flow.conditions = [];
                 compose.flow.actions = [];

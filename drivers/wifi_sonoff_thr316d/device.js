@@ -6,9 +6,9 @@ class D extends E{
     switch:{capability:'onoff',transform:v=>v==='on'},
     currentTemperature:{capability:'measure_temperature',divisor:1},
     currentHumidity:{capability:'measure_humidity',divisor:1},
-    deviceType:{capability:null,internal:'deviceType'},
-    mainSwitch:{capability:null,internal:'mainSwitch'},
-    targets:{capability:null,internal:'targets'}
+    deviceType:{capability,internal:'deviceType'},
+    mainSwitch:{capability,internal:'mainSwitch'},
+    targets:{capability,internal:'targets'}
   };}
   _registerCapListeners(){
     this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v);});

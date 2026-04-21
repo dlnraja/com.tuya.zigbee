@@ -26,20 +26,20 @@ class WaterValveSmartDevice extends UnifiedPlugBase {
     }
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      2: { capability: null, internal: 'month_consumption' },
-      3: { capability: null, internal: 'daily_consumption' },
+      2: { capability, internal: 'month_consumption' },
+      3: { capability, internal: 'daily_consumption' },
       5: { capability: 'meter_water', divisor: 1000 },
-      6: { capability: null, internal: 'month_consumption' },
-      7: { capability: null, internal: 'daily_consumption' },
-      9: { capability: null, internal: 'flow_rate' },
+      6: { capability, internal: 'month_consumption' },
+      7: { capability, internal: 'daily_consumption' },
+      9: { capability, internal: 'flow_rate' },
       10: { capability: 'measure_temperature', divisor: 10 },
       11: { capability: 'measure_battery', transform: (v) => {
         if (v > 3000) return 100;
         if (v < 2700) return 0;
         return Math.round(((v - 2700) / 300) * 100);
       }},
-      15: { capability: null, setting: 'auto_clean' },
-      21: { capability: null, internal: 'flow_rate' },
+      15: { capability, setting: 'auto_clean' },
+      21: { capability, internal: 'flow_rate' },
     };
   }
 

@@ -3,19 +3,19 @@ const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
-const { CLUSTERS } = require('../../lib/constants / ZigbeeConstants.js');
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 
 
-const { UnifiedSensorBase } = require('../../lib/devices / UnifiedSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const TuyaTimeManager = require('../../lib/TuyaTimeManager');
 const TuyaDeviceClassifier = require('../../lib/TuyaDeviceClassifier');
 const TuyaEpochDetector = require('../../lib/TuyaEpochDetector');
 const TuyaTimeDebugProbe = require('../../lib/TuyaTimeDebugProbe');
 const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
 const TuyaRtcDetector = require('../../lib/TuyaRtcDetector');
-const { syncDeviceTimeTuya } = require('../../lib/tuya / TuyaTimeSync');
+const { syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
 const { ClimateInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
-const { setupSonoffSensor, handleSonoffSensorSettings } = require('../../lib/mixins / SonoffSensorMixin');
+const { setupSonoffSensor, handleSonoffSensorSettings } = require('../../lib/mixins/SonoffSensorMixin');
 
 // 
 // v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
@@ -241,17 +241,17 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
       // CONFIGURATION DPs - TH05Z/ZG227C LCD sensors
       // Source: Z2M #26078, #19731, Blakadder
       // 
-      9: { capability: null, setting: 'temperature_unit' },     // 0=Celsius, 1=Fahrenheit
-      10: { capability: null, setting: 'max_temp_alarm', divisor: 10 },  // Max temp Â°C/10
-      11: { capability: null, setting: 'min_temp_alarm', divisor: 10 },  // Min temp Â°C/10
+      9: { capability, setting: 'temperature_unit' },     // 0=Celsius, 1=Fahrenheit
+      10: { capability, setting: 'max_temp_alarm', divisor: 10 },  // Max temp Â°C/10
+      11: { capability, setting: 'min_temp_alarm', divisor: 10 },  // Min temp Â°C/10
       12: { capability: 'measure_luminance', divisor: 1 },       // v5.5.783: DP12=Lux for multi-sensors
-      13: { capability: null, setting: 'min_humidity_alarm' },  // Min humidity %
-      14: { capability: null, setting: 'temp_alarm_status' },   // 0=cancel, 1=lower, 2=upper
-      15: { capability: null, setting: 'humidity_alarm_status' }, // 0=cancel, 1=lower, 2=upper
-      17: { capability: null, setting: 'temp_report_interval' },  // 1-120 minutes
+      13: { capability, setting: 'min_humidity_alarm' },  // Min humidity %
+      14: { capability, setting: 'temp_alarm_status' },   // 0=cancel, 1=lower, 2=upper
+      15: { capability, setting: 'humidity_alarm_status' }, // 0=cancel, 1=lower, 2=upper
+      17: { capability, setting: 'temp_report_interval' },  // 1-120 minutes
       // v5.12.11: DP18 NOT mapped here - already mapped as measure_temperature above (line 186)
-      19: { capability: null, setting: 'temp_sensitivity', divisor: 10 },  // 0.3-1.0Â°C
-      20: { capability: null, setting: 'humidity_sensitivity' }, // 3-10%
+      19: { capability, setting: 'temp_sensitivity', divisor: 10 },  // 0.3-1.0Â°C
+      20: { capability, setting: 'humidity_sensitivity' }, // 3-10%
 
       // 
       // ILLUMINANCE (some models like _TZE200_locansqn)
@@ -382,8 +382,8 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
             }
             // v5.5.189: Apply calibration offset
             const temp = this._applyTempOffset(rawTemp);
-            this.log(`[ZCL]  Temperature: ${temp}Â°C (confidence: ${this._climateInference?.getConfidence() || 'N/A'}%)`);
-            this._registerZclData?.(); // v5.5.108: Track for learning
+            this.log(`[ZCL]  Temperature: ${temp}Â°C (confidence: ${this._climateInference?.getConfidence() || 'N/A'}%)`) ;
+            this._registerZclData?.() ; // v5.5.108: Track for learning
             this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
@@ -411,8 +411,8 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
             }
             // v5.5.189: Apply calibration offset
             const humidity = this._applyHumOffset(rawHum);
-            this.log(`[ZCL]  Humidity: ${humidity}% (confidence: ${this._climateInference?.getConfidence() || 'N/A'}%)`);
-            this._registerZclData?.(); // v5.5.108: Track for learning
+            this.log(`[ZCL]  Humidity: ${humidity}% (confidence: ${this._climateInference?.getConfidence() || 'N/A'}%)`) ;
+            this._registerZclData?.() ; // v5.5.108: Track for learning
             this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
           }
         }
@@ -436,11 +436,11 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
             
             // v5.5.793: Validate with inference engine
             if (this._batteryInference) {
-              battery = this._batteryInference.validateBattery(battery) ?? battery;
+              battery = this._batteryInference.validateBattery(battery) ?? battery ;
             }
             
             this.log(`[ZCL]  Battery: ${battery}%`);
-            this._registerZclData?.(); // v5.5.108: Track for learning
+            this._registerZclData?.() ; // v5.5.108: Track for learning
             this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
@@ -511,8 +511,8 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     let modelId = 'unknown';
 
     try {
-      const endpoint = zclNode?.endpoints?.[1];
-      const basicCluster = endpoint?.clusters?.basic;
+      const endpoint = zclNode?.endpoints?.[1] ;
+      const basicCluster = endpoint?.clusters?.basic ;
       if (basicCluster && typeof basicCluster.readAttributes === 'function') {
         const attrs = await basicCluster.readAttributes(['manufacturerName', 'modelId']).catch(() => ({}));
         mfr = attrs.manufacturerName || 'unknown';
@@ -543,8 +543,8 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     // 
     // Detect available clusters
     // 
-    const ep1 = zclNode?.endpoints?.[1];
-    const clusters = ep1?.clusters || {};
+    const ep1 = zclNode?.endpoints?.[1] ;
+    const clusters = ep1?.clusters || {} ;
 
     this._hasTuyaCluster = !!(
       clusters.tuya || clusters.tuyaSpecific ||
@@ -729,7 +729,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
         timezoneMinutes = -now.getTimezoneOffset(); // JS inverted
       } else {
         const tzMap = { 'utc': 0, 'gmt+1': 60, 'gmt+2': 120, 'gmt+3': 180, 'gmt-5': -300, 'gmt-8': -480, 'gmt+8': 480 };
-        timezoneMinutes = tzMap[userTimezone] ?? -now.getTimezoneOffset();
+        timezoneMinutes = tzMap[userTimezone] ?? -now.getTimezoneOffset() ;
       }
 
       this.log('[CLIMATE]  FORCING time sync for LCD climate device');
@@ -802,7 +802,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
           this.log(`[CLIMATE]  Frame hex: ${rawFrame.toString('hex')}`);
 
           // Try to send via endpoint
-          const ep = this.zclNode?.endpoints?.[1];
+          const ep = this.zclNode?.endpoints?.[1] ;
           if (ep && typeof ep.sendFrame === 'function') {
             await ep.sendFrame(CLUSTERS.TUYA_EF00, rawFrame);
             this.log('[CLIMATE]  Sent via endpoint.sendFrame(CLUSTERS.TUYA_EF00)');
@@ -862,7 +862,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
         timezoneMinutes = -now.getTimezoneOffset(); // JS inverted
       } else {
         const tzMap = { 'utc': 0, 'gmt+1': 60, 'gmt+2': 120, 'gmt+3': 180, 'gmt-5': -300, 'gmt-8': -480, 'gmt+8': 480 };
-        timezoneMinutes = tzMap[userTimezone] ?? -now.getTimezoneOffset();
+        timezoneMinutes = tzMap[userTimezone] ?? -now.getTimezoneOffset() ;
       }
 
       const useTuyaEpoch = this.needsTuyaEpoch;
@@ -896,11 +896,11 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     try {
       this.log(`[CLIMATE] Sending DP${dpId}=${value} (${dataType})`);
 
-      const ep = this.zclNode?.endpoints?.[1];
+      const ep = this.zclNode?.endpoints?.[1] ;
       const tuyaCluster = ep?.clusters?.tuya ||
         ep?.clusters?.manuSpecificTuya ||
         ep?.clusters?.[CLUSTERS.TUYA_EF00] ||
-        ep?.clusters?.[CLUSTERS.TUYA_EF00];
+        ep?.clusters?.[CLUSTERS.TUYA_EF00] ;
 
       if (!tuyaCluster) {
         throw new Error('Tuya cluster not available - device needs RE-PAIRING');
@@ -986,7 +986,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
    * This is CRITICAL for battery, temperature, and humidity on ZCL devices
    */
   async _setupExplicitZCLClusters(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1];
+    const ep1 = zclNode?.endpoints?.[1] ;
     if (!ep1) {
       this.log('[ZCL-SETUP]  No endpoint 1');
       return;
@@ -997,7 +997,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     // 
     // POWER CONFIGURATION (Battery) - Cluster 0x0001
     // 
-    const powerCfg = ep1.clusters?.powerConfiguration;
+    const powerCfg = ep1.clusters?.powerConfiguration ;
     if (powerCfg) {
       this.log('[ZCL-SETUP]  PowerConfiguration cluster found');
       try {
@@ -1038,7 +1038,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     // 
     // TEMPERATURE MEASUREMENT - Cluster 0x0402
     // 
-    const tempCluster = ep1.clusters?.temperatureMeasurement || ep1.clusters?.msTemperatureMeasurement;
+    const tempCluster = ep1.clusters?.temperatureMeasurement || ep1.clusters?.msTemperatureMeasurement ;
     if (tempCluster) {
       this.log('[ZCL-SETUP]  TemperatureMeasurement cluster found');
       try {
@@ -1080,7 +1080,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     // 
     // RELATIVE HUMIDITY - Cluster 0x0405
     // 
-    const humCluster = ep1.clusters?.relativeHumidity || ep1.clusters?.msRelativeHumidity;
+    const humCluster = ep1.clusters?.relativeHumidity || ep1.clusters?.msRelativeHumidity ;
     if (humCluster) {
       this.log('[ZCL-SETUP]  RelativeHumidity cluster found');
       try {
@@ -1131,13 +1131,13 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
    * Try to get initial values for temp, humidity, battery
    */
   async _readZCLAttributesNow(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1];
+    const ep1 = zclNode?.endpoints?.[1] ;
     if (!ep1) return;
 
     this.log('[ZCL-READ]  Reading ZCL attributes...');
 
     // Read battery
-    const powerCfg = ep1.clusters?.powerConfiguration;
+    const powerCfg = ep1.clusters?.powerConfiguration ;
     if (powerCfg && typeof powerCfg.readAttributes === 'function') {
       try {
         const attrs = await powerCfg.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']).catch(() => ({}));
@@ -1152,7 +1152,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     }
 
     // Read temperature
-    const tempCluster = ep1.clusters?.temperatureMeasurement || ep1.clusters?.msTemperatureMeasurement;
+    const tempCluster = ep1.clusters?.temperatureMeasurement || ep1.clusters?.msTemperatureMeasurement ;
     if (tempCluster && typeof tempCluster.readAttributes === 'function') {
       try {
         const attrs = await tempCluster.readAttributes(['measuredValue']).catch(() => ({}));
@@ -1169,7 +1169,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     }
 
     // Read humidity
-    const humCluster = ep1.clusters?.relativeHumidity || ep1.clusters?.msRelativeHumidity;
+    const humCluster = ep1.clusters?.relativeHumidity || ep1.clusters?.msRelativeHumidity ;
     if (humCluster && typeof humCluster.readAttributes === 'function') {
       try {
         const attrs = await humCluster.readAttributes(['measuredValue']).catch(() => ({}));
@@ -1237,7 +1237,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
    * This tells the device to start reporting data!
    */
   async _sendTuyaMagicPacket(zclNode) {
-    const endpoint = zclNode?.endpoints?.[1];
+    const endpoint = zclNode?.endpoints?.[1] ;
     if (!endpoint) {
       this.log('[MAGIC-PACKET]  No endpoint 1');
       return;
@@ -1247,7 +1247,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     const tuyaCluster = endpoint.clusters?.['tuya'] ||
       endpoint.clusters?.[CLUSTERS.TUYA_EF00] ||
       endpoint.clusters?.['manuSpecificTuya'] ||
-      endpoint.clusters?.[CLUSTERS.TUYA_EF00];
+      endpoint.clusters?.[CLUSTERS.TUYA_EF00] ;
 
     this.log('[MAGIC-PACKET]  Available clusters:', Object.keys(endpoint.clusters || {}));
 
@@ -1304,14 +1304,14 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     try {
       this.log('[MAGIC-PACKET-RAW]  Sending via raw ZCL command...');
 
-      const endpoint = zclNode?.endpoints?.[1];
+      const endpoint = zclNode?.endpoints?.[1] ;
       if (!endpoint) {
         this.log('[MAGIC-PACKET-RAW]  No endpoint 1');
         return;
       }
 
       // Try to get the raw cluster and send commands
-      const cluster = endpoint.clusters?.tuya || endpoint.clusters?.[CLUSTERS.TUYA_EF00];
+      const cluster = endpoint.clusters?.tuya || endpoint.clusters?.[CLUSTERS.TUYA_EF00] ;
 
       if (cluster) {
         // Send MCU Version Request (Command 0x10)
@@ -1586,8 +1586,8 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     if (!hasE002Change) return;
 
     try {
-      const ep = this._zclNode?.endpoints?.[1];
-      const cluster = ep?.clusters?.tuyaE002 || ep?.clusters?.[0xE002] || ep?.clusters?.[57346];
+      const ep = this._zclNode?.endpoints?.[1] ;
+      const cluster = ep?.clusters?.tuyaE002 || ep?.clusters?.[0xE002] || ep?.clusters?.[57346] ;
       if (!cluster || typeof cluster.writeAttributes !== 'function') {
         this.log('[E002] Cluster not available on this device  thresholds saved locally only');
         return;
@@ -1626,3 +1626,4 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
 }
 
 module.exports = ClimateSensorDevice;
+

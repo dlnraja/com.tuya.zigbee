@@ -64,7 +64,7 @@ function main() {
     
     try {
       const data = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      const mfrs = data.zigbee?.manufacturerName || [];
+      const mfrs = data.zigbee?.manufacturerName || [] ;
       const existingNorm = new Set(mfrs.map(m => m.toUpperCase().replace(/\u0000/g, '').trim()));
       
       const toAddHere = [];

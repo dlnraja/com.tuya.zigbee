@@ -49,7 +49,7 @@ function buildIndex() {
       const data = JSON.parse(fs.readFileSync(cf, 'utf8'));
       drivers.set(d, { path: cf, data });
       for (const m of (data.zigbee?.manufacturerName || [])) {
-        if (!mfrIdx.has(m)) mfrIdx.set(m, []);
+        if (!mfrIdx.has(m)) mfrIdx.set(m, []) ;
         mfrIdx.get(m).push(d);
       }
     } catch {}
@@ -98,8 +98,8 @@ function main() {
         const mfr = item.mfr || item.fp;
         const pid = item.pid;
         let drv = suggestDriverByFP(mfr) || PID_MAP[pid];
-        if (item.title?.toLowerCase().includes('radar')) drv = 'motion_sensor_radar_mmwave';
-        if (item.title?.toLowerCase().includes('thermostat')) drv = 'climate_sensor';
+        if (item.title?.toLowerCase().includes('radar')) drv = 'motion_sensor_radar_mmwave' ;
+        if (item.title?.toLowerCase().includes('thermostat')) drv = 'climate_sensor' ;
         
         if (drv && addFP(mfr, drv, drivers, mfrIdx)) totalAdded++;
       }

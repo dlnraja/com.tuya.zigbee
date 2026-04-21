@@ -34,7 +34,7 @@ for (const d of fs.readdirSync(DDIR)) {
   }
   if (hasRawListener) {
     cleanup += '    // Clean up raw/rx listeners\n';
-    cleanup += '    try { this.zclNode?.removeAllListeners(); } catch (e) { /* ignore */ }\n';
+    cleanup += '    try { this.zclNode?.removeAllListeners() ; } catch (e) { /* ignore */ }\n';
   }
   cleanup += '    this.log(\'Device deleted, cleaning up\');\n';
   cleanup += '  }\n';

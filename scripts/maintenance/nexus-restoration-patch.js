@@ -71,7 +71,7 @@ function patchButton4Gang() {
           };`;
 
   if (!content.includes('Compressed Mapping')) {
-    content = content.replace(/const handleSceneRecall = async \(sceneId\) => \{[\s\S]*?\};/, mappingFix);
+    content = content.replace(/const handleSceneRecall = async \(sceneId\) => \{[\s\S]*?\} : null;/, mappingFix);
     fs.writeFileSync(file, content);
     console.log(' Button 4-Gang: Implemented compressed scene mapping.');
   }
@@ -86,7 +86,7 @@ function patchRadarIlluminance() {
   const reportingLogic = `
     // v5.12.5: Continuous Illuminance Reporting (Forum Issue #37)
     try {
-      const illum = zclNode.endpoints[1]?.clusters?.illuminanceMeasurement;
+      const illum = zclNode.endpoints[1]?.clusters?.illuminanceMeasurement ;
       if (illum) {
         await illum.configureReporting({
           measuredValue: { minInterval: 60, maxInterval: 900, minChange: 10 }

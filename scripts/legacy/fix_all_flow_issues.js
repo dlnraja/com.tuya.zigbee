@@ -153,7 +153,7 @@ function extractCapabilityFromCondition(conditionId, capabilities) {
 
   // alarm_motion, alarm_contact, etc.
   if (conditionId.includes('alarm_')) {
-    const cap = conditionId.match(/alarm_\w+/)?.[0];
+    const cap = conditionId.match(/alarm_\w+/)?.[0] ;
     return capabilities.includes(cap) ? cap : null;
   }
 

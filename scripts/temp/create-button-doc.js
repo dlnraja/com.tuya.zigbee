@@ -32,7 +32,7 @@ The Universal Tuya Zigbee app implements a **bidirectional button system** that 
 
 \`\`\`javascript
 this._virtualButtonState = {
-  lastEvent: null,        // Last virtual button event (any)
+  lastEvent,        // Last virtual button event (any)
   totalPresses: 0,        // Total virtual button presses
   gangs: {},              // Per-gang state tracking
   history: []             // Last 10 virtual button events (circular buffer)

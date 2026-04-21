@@ -81,7 +81,7 @@ static OFFLINE_CHECK_MS =safeMultiply(60, 60) * 1000;
    */
 _getModelConfig() {
   if (!this._modelConfig) {
-    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
+    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '' ;
     this._modelConfig = getModelConfig(mfr);
     this.log(`[MMWAVE]  Model config: ${this._modelConfig.type} for ${mfr}`);
   }
@@ -116,10 +116,10 @@ get _defaultDpMappings() {
       transform: (v) => v === 1 || v === true,
       alsoSets: { 'alarm_human': (v) => v === 1 || v === true }
     },
-    2: { capability: null, setting: 'radar_sensitivity' },      // sensitivity (0-10)
-    3: { capability: null, setting: 'maximum_range', divisor: 100 }, // precision max range (m)
+    2: { capability, setting: 'radar_sensitivity' },      // sensitivity (0-10)
+    3: { capability, setting: 'maximum_range', divisor: 100 }, // precision max range (m)
     4: { capability: 'measure_battery', divisor: 1 },
-    6: { capability: null, setting: 'reverse_direction' },       // motor or relay inversion
+    6: { capability, setting: 'reverse_direction' },       // motor or relay inversion
     9: { capability: 'measure_luminance.distance', divisor: 100 }, // target distance (m)
     12: { capability: 'measure_luminance', divisor: 1 },        // illuminance (lux)
     13: { capability: 'measure_luminance', divisor: 1 },        // alt illuminance (lux)
@@ -134,12 +134,12 @@ get _defaultDpMappings() {
       divisor: 1
     },
     103: { capability: 'measure_luminance', divisor: 1 },       // alt lux
-    104: { capability: null, setting: 'fading_time' },          // fading time (s)
-    105: { capability: null, setting: 'detection_delay' },      // detection delay (s)
+    104: { capability, setting: 'fading_time' },          // fading time (s)
+    105: { capability, setting: 'detection_delay' },      // detection delay (s)
     106: { capability: 'measure_luminance', divisor: 1 },       // alt lux (ZG-204ZM)
-    107: { capability: null, setting: 'indicator' },            // LED indicator
-    108: { capability: null, setting: 'small_detection_distance' },
-    109: { capability: null, setting: 'small_detection_sensitivity' },
+    107: { capability, setting: 'indicator' },            // LED indicator
+    108: { capability, setting: 'small_detection_distance' },
+    109: { capability, setting: 'small_detection_sensitivity' },
     111: { capability: 'measure_luminance', divisor: 10 },      // lux (0.1 lux scale)
   };
 }
@@ -151,19 +151,19 @@ get _relayDpMappings() {
       capability: 'alarm_motion',
       transform: (v) => v === 1 || v === true
     },
-    2: { capability: null, setting: 'radar_sensitivity' },       // 0-9
-    3: { capability: null, setting: 'shield_range' },            //Min range (/100 = m)
-    4: { capability: null, setting: 'detection_range' },         //Max range (/100 = m)
-    6: { capability: null, internal: 'equipment_status' },
+    2: { capability, setting: 'radar_sensitivity' },       // 0-9
+    3: { capability, setting: 'shield_range' },            //Min range (/100 = m)
+    4: { capability, setting: 'detection_range' },         //Max range (/100 = m)
+    6: { capability, internal: 'equipment_status' },
     9: { capability: 'measure_luminance.distance', divisor: 100 }, // Target distance (cmm)
     104: { capability: 'measure_luminance', divisor: 10 },       //Illuminance (/10 = lux)
-    107: { capability: null, setting: 'breaker_mode' },          // 0=standard, 1=local
+    107: { capability, setting: 'breaker_mode' },          // 0=standard, 1=local
     108: {
       capability: 'onoff',
       transform: (v) => v === 1 || v === true
     },
-    109: { capability: null, setting: 'status_indication' },     // LED indicator
-    110: { capability: null, setting: 'illuminance_threshold' },  // /10 = lux
+    109: { capability, setting: 'status_indication' },     // LED indicator
+    110: { capability, setting: 'illuminance_threshold' },  // /10 = lux
   };
 }
 
@@ -241,7 +241,7 @@ async onNodeInit({ zclNode }) {
   if (config.type === 'RELAY' && this.hasCapability('onoff')) {
     this.registerCapabilityListener('onoff', async (value) => {
       this.log(`[MMWAVE]  Relay control: ${value ? 'ON' : 'OFF'} (DP108)`);
-      const tuya = zclNode?.endpoints?.[1]?.clusters?.tuya;
+      const tuya = zclNode?.endpoints?.[1]?.clusters?.tuya ;
       if (tuya?.datapoint) {
         await tuya.datapoint({ dp: 108, value: value ? 1 : 0, type: 'enum' });
       }
@@ -252,7 +252,7 @@ async onNodeInit({ zclNode }) {
   await super.onNodeInit({ zclNode });
     // v5.12.5: Continuous Illuminance Reporting (Forum Issue #37)
     try {
-      const illum = zclNode.endpoints[1]?.clusters?.illuminanceMeasurement;
+      const illum = zclNode.endpoints[1]?.clusters?.illuminanceMeasurement ;
       if (illum) {
         await illum.configureReporting({
           measuredValue: { minInterval: 60, maxInterval: 900, minChange: 10 }
@@ -304,7 +304,7 @@ async _setupContinuousLuminanceReporting(zclNode) {
   this.log('[LUMINANCE-FIX] Research base: Z2M ZG-204ZL, Tuya docs, HA Community, ZHA, etc.');
 
   try {
-    const endpoint = zclNode?.endpoints?.[1];
+    const endpoint = zclNode?.endpoints?.[1] ;
     if (!endpoint) {
       this.log('[LUMINANCE-FIX]  No endpoint 1 found');
       return;
@@ -314,7 +314,7 @@ async _setupContinuousLuminanceReporting(zclNode) {
     const illuminanceCluster = endpoint.clusters?.illuminanceMeasurement
         || endpoint.clusters?.msIlluminanceMeasurement
         || endpoint.clusters?.[0x0400]
-        || endpoint.clusters?.['1024'];
+        || endpoint.clusters?.['1024'] ;
 
     if (illuminanceCluster) {
       this.log('[LUMINANCE-FIX]  Illuminance cluster found - configuring reporting');
@@ -385,8 +385,8 @@ _setupPeriodicLuminanceQuery() {
     try {
       // v5.13.5: If mains powered, also try direct ZCL read for better accuracy
       if (this.mainsPowered) {
-        const ep1 = this.zclNode?.endpoints?.[1];
-        const illu = ep1?.clusters?.msIlluminanceMeasurement || ep1?.clusters?.illuminanceMeasurement;
+        const ep1 = this.zclNode?.endpoints?.[1] ;
+        const illu = ep1?.clusters?.msIlluminanceMeasurement || ep1?.clusters?.illuminanceMeasurement ;
         if (illu) {
           await illu.readAttributes(['measuredValue']).catch(() => {});
         }
@@ -480,7 +480,7 @@ async _sendInitialDataQuery() {
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     this.log('[MMWAVE]  Sending initial dataQuery...');
-    await this._sendTuyaDataQuery?.().catch(() => { });
+    await this._sendTuyaDataQuery?.().catch(() => { }) ;
   } catch (err) {
     this.log('[MMWAVE] Initial dataQuery failed:', err.message);
   }
@@ -529,7 +529,7 @@ async onDeleted() {
     this._luminanceQueryTimer = null;
   }
 
-  await super.onDeleted?.();
+  await super.onDeleted?.() ;
 }
 
 /**
@@ -538,8 +538,8 @@ async onDeleted() {
    */
 async _setupOccupancyCluster(zclNode) {
   try {
-    const endpoint = zclNode?.endpoints?.[1];
-    if (!endpoint?.clusters) return;
+    const endpoint = zclNode?.endpoints?.[1] ;
+    if (!endpoint?.clusters) return ;
 
     const occCluster = endpoint.clusters.occupancySensing
         || endpoint.clusters.msOccupancySensing
@@ -562,14 +562,14 @@ async _setupOccupancyCluster(zclNode) {
       try {
         const attrs = await occCluster.readAttributes(['occupancy']);
         if (attrs?.occupancy !== undefined) {
-          const motion = attrs.occupancy > 0;
+          const motion = attrs.occupancy > 0 ;
           this.log(`[MMWAVE] Initial occupancy: ${motion}`);
           if (this.hasCapability('alarm_motion')) {
             this.setCapabilityValue('alarm_motion', motion).catch(this.error);
           }
         }
       } catch (e) {
-        this.log('[MMWAVE] Initial occupancy read failed (device sleeping?)');
+        this.log('[MMWAVE] Initial occupancy read failed (device sleeping?)");
       }
     }
   } catch (err) {
@@ -582,8 +582,8 @@ async _setupOccupancyCluster(zclNode) {
    */
 async _setupIASMotionListener(zclNode) {
   try {
-    const endpoint = zclNode?.endpoints?.[1];
-    const iasCluster = endpoint?.clusters?.iasZone || endpoint?.clusters?.ssIasZone;
+    const endpoint = zclNode?.endpoints?.[1] ;
+    const iasCluster = endpoint?.clusters?.iasZone || endpoint?.clusters?.ssIasZone ;
 
     if (iasCluster) {
       this.log('[MMWAVE]  IAS Zone cluster found - setting up motion listener');
@@ -591,7 +591,7 @@ async _setupIASMotionListener(zclNode) {
       iasCluster.onZoneStatusChangeNotification = (payload) => {
         this._updateLastEventTime(); // v5.5.69: Track activity
         // v5.5.17: Use universal parser from UnifiedSensorBase
-        const parsed = this._parseIASZoneStatus(payload?.zoneStatus);
+        const parsed = this._parseIASZoneStatus(payload?.zoneStatus) ;
         const motion = parsed.alarm1 || parsed.alarm2;
 
         this.log(`[ZCL-DATA] mmwave.ias_zone raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2}  motion=${motion}`);
@@ -687,3 +687,4 @@ onTuyaStatus(status) {
 }
 
 module.exports = MotionSensorRadarDevice;
+

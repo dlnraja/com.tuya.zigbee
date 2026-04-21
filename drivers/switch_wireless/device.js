@@ -57,7 +57,7 @@ class SwitchWirelessDevice extends UnifiedSwitchBase {
       this._getFlowCard('switch_wireless_button_pressed')?.trigger(this, {}, {}).catch(this.error || console.error)
         } catch (e) { /* card missing */ }
       }
-      return;
+      return ;
     }
     if (typeof super._handleDP === 'function') super._handleDP(dp, value);
   }
@@ -68,4 +68,5 @@ class SwitchWirelessDevice extends UnifiedSwitchBase {
   }
 }
 module.exports = SwitchWirelessDevice;
+
 

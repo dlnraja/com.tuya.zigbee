@@ -190,11 +190,11 @@ function scanDriver(driverName) {
       // Extraire capability depuis condition ID (alarm_motion, alarm_contact, etc.)
       let expectedCap = null;
       if (condition.id.includes('alarm_')) {
-        expectedCap = condition.id.match(/alarm_\w+/)?.[0];
+        expectedCap = condition.id.match(/alarm_\w+/)?.[0] ;
       } else if (condition.id.includes('onoff')) {
         expectedCap = 'onoff';
       } else if (condition.id.includes('measure_')) {
-        expectedCap = condition.id.match(/measure_\w+/)?.[0];
+        expectedCap = condition.id.match(/measure_\w+/)?.[0] ;
       }
 
       if (expectedCap && !capabilities.includes(expectedCap)) {

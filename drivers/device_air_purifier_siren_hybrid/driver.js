@@ -140,7 +140,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
         this.log(`[FLOW] Action: Set volume to ${volume}`);
         try {
           const volumeMap = { low: 0, medium: 1, high: 2 };
-          const val = volumeMap[volume] ?? 1;
+          const val = volumeMap[volume] ?? 1 ;
           // Send to standard DP5 + NEO DP116
           if (device._sendTuyaDP) {
             try { await device._sendTuyaDP(5, val, 'enum'); } catch (e) {}
@@ -221,3 +221,4 @@ class TuyaSirenDriver extends ZigBeeDriver {
 }
 
 module.exports = TuyaSirenDriver;
+

@@ -41,8 +41,8 @@ class RemoteDimmerDevice extends ZigBeeDevice {
 
     // Store device info
     try {
-      const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
-      const mdl = this.getSetting('zb_model_id') || this.getData()?.modelId || '';
+      const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '' ;
+      const mdl = this.getSetting('zb_model_id') || this.getData()?.modelId || '' ;
       if (mfr) await this.setSettings({ zb_manufacturer_name: mfr }).catch(() => {});
       if (mdl) await this.setSettings({ zb_model_id: mdl }).catch(() => {});
     } catch (e) { this.error('[RemoteDimmer] Settings error:', e.message); }
@@ -159,4 +159,5 @@ class RemoteDimmerDevice extends ZigBeeDevice {
 }
 
 module.exports = RemoteDimmerDevice;
+
 

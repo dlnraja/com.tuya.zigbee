@@ -114,7 +114,7 @@ const FIXES = [
     old: "device.setCapabilityValue?.('measure_battery', bat)",
     new: "device.setCapabilityValue?.('measure_battery', parseFloat(bat))"
   }
-];
+] ;
 
 /**
  * Appliquer corrections

@@ -3,11 +3,11 @@ const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
 const { Cluster, BoundCluster } = require('zigbee-clusters');
-const TuyaSpecificCluster = require('../../lib/tuya / TuyaSpecificCluster');
-const TuyaOnOffCluster = require('../../lib/clusters / TuyaOnOffCluster');
-const TuyaSpecificClusterDevice = require('../../lib/tuya / TuyaSpecificClusterDevice');
+const TuyaSpecificCluster = require('../../lib/tuya/TuyaSpecificCluster');
+const TuyaOnOffCluster = require('../../lib/clusters/TuyaOnOffCluster');
+const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 const { getDataValue } = require('../../lib/TuyaHelpers');
-const { V1_FINGER_BOT_DATA_POINTS } = require('../../lib/tuya / TuyaDataPointsJohan');
+const { V1_FINGER_BOT_DATA_POINTS } = require('../../lib/tuya/TuyaDataPointsJohan');
 
 Cluster.addCluster(TuyaSpecificCluster);
 Cluster.addCluster(TuyaOnOffCluster);
@@ -195,7 +195,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
 
     if (zclNode?.endpoints?.[1]?.clusters?.onOff) {
       zclNode.endpoints[1].clusters.onOff.on('attr.onOff', value => {
-        const now = Date.now();
+        const now = Date.now() ;
         const mode = this._getConfiguredMode();
 
         if (mode === 'click') {
@@ -246,7 +246,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
   }
 
   _registerTuyaListeners(zclNode) {
-    const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya;
+    const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya ;
     if (!tuyaCluster) {
       this.error('FingerBot: Tuya cluster not available on endpoint 1');
       return;
@@ -292,7 +292,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
   _registerTimeBoundCluster(zclNode) {
     try {
       if (typeof zclNode?.endpoints?.[1]?.bind === 'function') {
-        this._timeBoundCluster = new FingerBotTimeBoundCluster();
+        this._timeBoundCluster = new FingerBotTimeBoundCluster() ;
         zclNode.endpoints[1].bind('time', this._timeBoundCluster);
       }
     } catch (err) {
@@ -519,7 +519,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
       this._getFlowCard(id)?.trigger(this, {}, {}).catch(this.error || console.error)
       if (card) {
         card.trigger(this, tokens, state)
-          .catch(err => this.error(`Failed to trigger flow card "${id}"`, err));
+          .catch(err => this.error(`Failed to trigger flow card "${id}"`, err)) ;
       }
     } catch (err) {
       this.error(`Flow card "${id}" is not available`, err);
@@ -548,3 +548,4 @@ class FingerBot extends TuyaSpecificClusterDevice {
 }
 
 module.exports = FingerBot;
+

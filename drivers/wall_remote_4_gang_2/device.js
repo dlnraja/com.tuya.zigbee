@@ -16,7 +16,7 @@ class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
       this._getFlowCard('wall_remote_4_gang_buttons_2')?.trigger(this, {}, {}).catch(this.error || console.error)
     if (this._buttonPressedTriggerDevice) {
       this._buttonPressedTriggerDevice.registerRunListener(async (args, state) => {
-        return args.button === state.button;
+        return args.button === state.button ;
       });
     }
     
@@ -32,7 +32,7 @@ class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
     if (clusterId === 6 || clusterId === 8) {
       this.log(`[RX] Remote Frame: ep=${endpointId}, cl=${clusterId}`, JSON.stringify(frame));
       
-      const frameData = frame.toJSON?.().data || frame.data || [];
+      const frameData = frame.toJSON?.().data || frame.data || [] ;
       this.buttonCommandParser(clusterId, frameData);
       return true; // Mark as handled to prevent SDK routing
     }
@@ -65,3 +65,4 @@ class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
 }
 
 module.exports = wall_remote_4_gang_2;
+

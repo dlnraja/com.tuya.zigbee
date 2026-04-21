@@ -38,7 +38,7 @@ const walk = (dir) => {
             line.includes('#!') || line.trim().startsWith('*') || 
             line.trim().startsWith('//') || line.includes('@returns') || 
             line.includes('@param')) {
-           return `${n} / ${d}`;
+           return `${n} / ${d}` ;
         }
         
         return match;

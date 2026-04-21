@@ -323,7 +323,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 
   async sendTuyaCommand(dp, value, type = 'value') {
     try {
-      const tuyaCluster = this.zclNode.endpoints[1]?.clusters?.tuya;
+      const tuyaCluster = this.zclNode.endpoints[1]?.clusters?.tuya ;
 
       if (!tuyaCluster) {
         throw new Error('Tuya cluster not available');
@@ -414,6 +414,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 }
 
 module.exports = WallDimmer1Gang1Way;
+
 
 
 

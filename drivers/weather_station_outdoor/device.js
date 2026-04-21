@@ -83,7 +83,7 @@ class WeatherStationOutdoorDevice extends UnifiedSensorBase {
       }
       case 'measure_battery':
         if (value <= 15 && (prev === undefined || prev === null || prev > 15)) {
-          this._getFlowCard('weather_station_outdoor_battery_low')?.trigger(this, {}, {}).catch(() => {});
+          this._getFlowCard('weather_station_outdoor_battery_low')?.trigger(this, {}, {}).catch(() => {}) ;
         }
         break;
       }
@@ -108,4 +108,5 @@ class WeatherStationOutdoorDevice extends UnifiedSensorBase {
   }
 }
 module.exports = WeatherStationOutdoorDevice;
+
 

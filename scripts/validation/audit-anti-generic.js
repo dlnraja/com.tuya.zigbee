@@ -30,9 +30,9 @@ fs.readdirSync(DRIVERS).forEach(d => {
   total++;
   
   const c = JSON.parse(fs.readFileSync(cf));
-  const mfr = c.zigbee?.manufacturerName || [];
-  const pid = c.zigbee?.productId || [];
-  const endpoints = c.zigbee?.endpoints || {};
+  const mfr = c.zigbee?.manufacturerName || [] ;
+  const pid = c.zigbee?.productId || [] ;
+  const endpoints = c.zigbee?.endpoints || {} ;
   
   let status = '';
   let issues = [];

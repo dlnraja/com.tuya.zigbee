@@ -117,10 +117,10 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     this.log('[GENERIC] Setting default values for KPI...');
 
     const defaults = {
-      'measure_battery': 100,  // Assume full until first report
-      'measure_temperature': null,
-      'measure_humidity': null,
-      // SDK3: alarm_battery obsolÃ¨te - utiliser measure_battery avec seuil
+      'measure_battery': 100, // Assume full until first report
+      'measure_temperature': 20, // Default to a sensible room temperature
+      'measure_humidity': 50, // Default to a sensible humidity
+      // SDK3: alarm_battery obsolète - utiliser measure_battery avec seuil
     };
 
     for (const [capability, defaultValue] of Object.entries(defaults)) {
@@ -174,7 +174,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       type,
       timestamp: Date.now(),
       count: (this._discoveredDPs.get(dp)?.count || 0) + 1
-    });
+    }) ;
 
     // Update settings with discovered DPs
     const dpList = Array.from(this._discoveredDPs.keys()).sort((a, b) => a - b);
@@ -201,7 +201,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       // Battery (CONFIDENCE: 0 - Official)
       4: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 0 },
       10: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
-      14: { capability: null, internal: 'battery_low', parser: v => !!v, confidence: 0 }, // SDK3: alarm_battery obsolÃ¨te
+      14: { capability, internal: 'battery_low', parser: v => !!v, confidence: 0 }, // SDK3: alarm_battery obsolÃ¨te
       15: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 0 },
       101: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
       105: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
@@ -289,7 +289,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
    */
   async onDeleted() {
     this.log('[GENERIC] Device deleted, cleaning up...');
-    this._discoveredDPs?.clear();
+    this._discoveredDPs?.clear() ;
     await super.onDeleted();
   }
 
@@ -307,3 +307,4 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
 }
 
 module.exports = GenericTuyaDevice;
+

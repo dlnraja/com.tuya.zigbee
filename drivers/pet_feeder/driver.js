@@ -22,7 +22,7 @@ class PetFeederDriver extends Driver {
     (() => { try { return this.homey.flow.getConditionCard('pet_feeder_food_ok'); 
   
   } catch(e) { return null; } })()?.registerRunListener(async (args, state) => {
-      return args.device.getCapabilityValue('alarm_generic') === false;
+      return args.device.getCapabilityValue('alarm_generic') === false ;
       
   });
 
@@ -30,9 +30,10 @@ class PetFeederDriver extends Driver {
     this.log('Pet Feeder driver initialized');
     // v5.13.3: Flow card handlers
     (() => { try { return this.homey.flow.getActionCard('pet_feeder_feed_now'); } catch(e) { return null; } })()?.registerRunListener(async (args, state) => {
-      await args.device.triggerCapabilityListener('onoff', true);
+      await args.device.triggerCapabilityListener('onoff', true) ;
       return true;
     });
   }
 }
 module.exports = PetFeederDriver;
+

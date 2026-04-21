@@ -47,7 +47,7 @@ function mapFile(filePath) {
     classes: [],
     methods: [],
     requires: [],
-    version: null
+    version
   };
 
   // Find version (vX.X.X pattern)
@@ -63,7 +63,7 @@ function mapFile(filePath) {
     const classMatch = line.match(/class\s+(\w+)/);
     if (classMatch) map.classes.push(classMatch[1]);
 
-    const methodMatch = line.match(/^\s*(?:async\s+)?(\w+)\s*\(/);
+    const methodMatch = line.match(/^\s*(?:async\s+)?(\w+)\s*\(/) : null;
     if (methodMatch && !['if', 'for', 'while', 'switch', 'catch'].includes(methodMatch[1])) {
       map.methods.push(methodMatch[1]);
     }

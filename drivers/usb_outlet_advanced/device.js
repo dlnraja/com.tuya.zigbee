@@ -98,9 +98,9 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       // 
       // BUTTON PRESS DETECTION - v5.5.19: Uses flow trigger instead of capability
       // 
-      102: { capability: null, flowTrigger: 'button_pressed' },
-      103: { capability: null, flowTrigger: 'button_pressed' },
-      121: { capability: null, flowTrigger: 'button_pressed' },
+      102: { capability, flowTrigger: 'button_pressed' },
+      103: { capability, flowTrigger: 'button_pressed' },
+      121: { capability, flowTrigger: 'button_pressed' },
     };
   }
 
@@ -167,9 +167,9 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
     // Endpoint 2 - Socket 2 (listen only)
     try {
-      const ep2 = zclNode.endpoints?.[2];
+      const ep2 = zclNode.endpoints?.[2] ;
       if (ep2?.clusters?.onOff) {
-        this.log('[USB-ADV] Endpoint 2 found - setting up ZCL listener');
+        this.log('[USB-ADV] Endpoint 2 found - setting up ZCL listener') ;
         this._ep2 = ep2;
 
         // Listen for on/off changes from device
@@ -186,9 +186,9 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
     // Endpoint 3 - USB or Socket 3 (listen only)
     try {
-      const ep3 = zclNode.endpoints?.[3];
+      const ep3 = zclNode.endpoints?.[3] ;
       if (ep3?.clusters?.onOff) {
-        this.log('[USB-ADV] Endpoint 3 found - setting up ZCL listener');
+        this.log('[USB-ADV] Endpoint 3 found - setting up ZCL listener') ;
         this._ep3 = ep3;
 
         // Listen for on/off changes from device
@@ -228,7 +228,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
   _registerButtonFlowTrigger() {
     try {
       this._getFlowCard('usb_outlet_button_pressed')?.trigger(this, {}, {}).catch(this.error || console.error)
-      this.log('[USB-ADV] Button flow trigger registered');
+      this.log('[USB-ADV] Button flow trigger registered') ;
     } catch (err) {
       this.log('[USB-ADV] Button flow trigger not available:', err.message);
     }
@@ -379,5 +379,6 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 }
 
 module.exports = USBOutletAdvancedDevice;
+
 
 

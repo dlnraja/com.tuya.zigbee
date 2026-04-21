@@ -41,7 +41,7 @@ async function main() {
     if (!fs.existsSync(composePath)) continue;
 
     const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-    const mfrs = compose.zigbee?.manufacturerName || [];
+    const mfrs = compose.zigbee?.manufacturerName || [] ;
     const caps = compose.capabilities || [];
     
     let deviceJs = '';
@@ -49,7 +49,7 @@ async function main() {
 
     // A. INTELLIGENCE CROSS-REFERENCE (Capability Gaps)
     for (const mfr of mfrs) {
-      const extMatch = extIntel.allDevices?.find(d => d.fp === mfr);
+      const extMatch = extIntel.allDevices?.find(d => d.fp === mfr) ;
       if (extMatch) {
          const extDPs = extMatch.dps || [];
          const localDPsMatch = deviceJs.match(/dp[:\s=]*(\d+)/g) || [];
@@ -113,7 +113,7 @@ async function main() {
     // E. INNOVATION OPPORTUNITY (Power Monitoring)
     if (drvId.includes('switch') || drvId.includes('plug')) {
        if (!caps.includes('measure_power') && deviceJs.includes(CLUSTERS.TUYA_EF00)) {
-          const hasPowerIntel = mfrs.some(m => extIntel.allDevices?.find(d => d.fp === m && (d.caps?.includes('power') || d.dps?.includes(6))));
+          const hasPowerIntel = mfrs.some(m => extIntel.allDevices?.find(d => d.fp === m && (d.caps?.includes('power') || d.dps?.includes(6)))) ;
           if (hasPowerIntel) {
             report.innovationOpportunities.push({
               driver: drvId,

@@ -44,7 +44,7 @@ async function runAudit() {
         if (fs.existsSync(composePath)) {
             try {
                 const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-                stats.totalFingerprints += (compose.zigbee?.manufacturerName?.length || 0);
+                stats.totalFingerprints += (compose.zigbee?.manufacturerName?.length || 0) ;
             } catch (e) {}
         }
 
@@ -52,7 +52,7 @@ async function runAudit() {
         if (fs.existsSync(flowPath)) {
             try {
                 const flow = JSON.parse(fs.readFileSync(flowPath, 'utf8'));
-                const count = (flow.triggers?.length || 0) + (flow.conditions?.length || 0) + (flow.actions?.length || 0);
+                const count = (flow.triggers?.length || 0) + (flow.conditions?.length || 0) + (flow.actions?.length || 0) ;
                 stats.totalFlowCards += count;
             } catch (e) {}
         }

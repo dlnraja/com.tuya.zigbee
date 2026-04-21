@@ -13,14 +13,14 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
       await this.sendTuyaCommand(DP.state, v, 'bool');
     });
     this.registerCapabilityListener('dim', async (v) => {
-      await this.sendTuyaCommand(DP.speed,Math.round(safeMultiply(v), 'value'));
+      await this.sendTuyaCommand(DP.speed,Math.round(safeMultiply(v, 10)), "value");
     });
     this.log('Air Purifier ready');
   }
 
   handleTuyaDataReport(data) {
     if (!data || data.dp == null) return;
-    const v = data.data ?? data.value;
+    const v = data.data ?? data.value ;
     if (data.dp === DP.state) {
       const s = Boolean(v);
       if (this._lastOnoff !== s) {
@@ -42,9 +42,11 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
     }
   }
 
-  onDeleted() { super.onDeleted?.(); }
+  onDeleted() { super.onDeleted?.() ; }
 }
 
 module.exports = AirPurifierDevice;
+
+
 
 

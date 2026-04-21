@@ -2,7 +2,7 @@
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
-const { UnifiedSensorBase } = require('../../lib/devices / UnifiedSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 class IlluminanceSensorDevice extends UnifiedSensorBase {
   async onNodeInit({ zclNode }) {
@@ -42,7 +42,7 @@ class IlluminanceSensorDevice extends UnifiedSensorBase {
 
       const illuminanceCluster = endpoint.clusters?.illuminanceMeasurement ||
                                   endpoint.clusters?.['msIlluminanceMeasurement'] ||
-                                  endpoint.clusters?.[1024];
+                                  endpoint.clusters?.[1024] ;
 
       if (illuminanceCluster) {
         this.log('[ILLUMINANCE] Found illuminance cluster');
@@ -82,3 +82,4 @@ class IlluminanceSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = IlluminanceSensorDevice;
+

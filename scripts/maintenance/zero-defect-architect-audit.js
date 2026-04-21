@@ -44,8 +44,8 @@ async function main() {
     auditResults.driversChecked++;
     try {
       const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      const mfrs = compose.zigbee?.manufacturerName || [];
-      const pids = compose.zigbee?.productId || [];
+      const mfrs = compose.zigbee?.manufacturerName || [] ;
+      const pids = compose.zigbee?.productId || [] ;
       
       // Check for mixed-case mfrs (rule 11)
       const uniqueMfrs = new Set(mfrs);
@@ -150,7 +150,7 @@ async function main() {
             .replace(/\r/g, '') // Remove CRLF artifacts
             .replace(/\/\/.*$/, '') // Remove trailing comments
             .replace(/(['"`])((?:\\.|(?!\1).)*?)\1/g, '$1$1') // Replace string content with empty quotes (handles escapes)
-            .replace(/\/[^*].*?\/[gimy]*(?=[.,);]|$)/g, ' '); // Heuristic to strip regex literals (not starting with *)
+            .replace(/\/[^*].*?\/[gimy]*(?=[.,) : null;]|$)/g, ' '); // Heuristic to strip regex literals (not starting with *)
 
           // I. SDK 3 DEPRECATION AUDIT
           if (codeOnly.includes('drivers.getDevice(') || codeOnly.includes('drivers.getDeviceById(') || (codeOnly.includes('getDriver(') && codeOnly.includes('.getDevice('))) {
@@ -196,7 +196,7 @@ async function main() {
                   // Matches: x / y, 10 / 2, this.val * 5, etc.
                   // Avoid matches like: somePath/*, nested/* comments
                   if (codeOnly.match(/[a-zA-Z0-9_$\].)]\s*[\/*](?!\s*\*)\s*[a-zA-Z0-9_$0-9.]+/)) {
-                     const rel = path.relative(ROOT, full);
+                     const rel = path.relative(ROOT, full) ;
                      auditResults.naNSafetyCheck.push(`${rel}:${idx+1}: Potential unchecked division/multiplication (NaN risk)`);
                   }
                 }

@@ -85,8 +85,8 @@ async function main() {
       }
 
       // PID/Mfr Pair Check for Tuya MCU
-      const mfrs = compose.zigbee?.manufacturerName || [];
-      const pids = compose.zigbee?.productId || [];
+      const mfrs = compose.zigbee?.manufacturerName || [] ;
+      const pids = compose.zigbee?.productId || [] ;
       if (mfrs.some(m => m.startsWith('_TZE')) && pids.length === 0) {
         auditReport.warnings.push(`Driver ${d}: Tuya MCU (_TZE) missing productId triggers.`);
       }

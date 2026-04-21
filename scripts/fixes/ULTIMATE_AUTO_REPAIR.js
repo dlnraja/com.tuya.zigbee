@@ -27,7 +27,7 @@ allFiles.forEach(file => {
         let changed = false;
 
         // Pattern 1: Math.round(safeMultiply(value, 10));
-        const pattern = /sendTuyaDP\(([^,]+),\s*([^,]+),\s*Math\.round\s*\(\s*safeMultiply\s*\(([^,)]+)(,\s*[^)]+)?\)\s*;?$/gm;
+        const pattern = /sendTuyaDP\(([^,]+),\s*([^,]+),\s*Math\.round\s*\(\s*safeMultiply\s*\(([^,)]+)(,\s*[^)]+)?\)\s* : null;?$/gm : null;
         if (pattern.test(content)) {
             content = content.replace(pattern, (match, dp, type, val, mult) => {
                 const multiplier = mult ? mult.replace(',', '').trim() : '10';
@@ -65,7 +65,7 @@ allFiles.forEach(file => {
                 const orig = line;
 
                 if (line.includes('sendTuyaDP') && line.split('(').length > line.split(')').length) {
-                    line = line.replace(/;?$/, ')));');
+                    line = line.replace(/;?$/, '))) : null;');
                 } else if (line.match(/\);$/) && line.split(')').length > line.split('(').length) {
                     line = line.replace(/\);$/, ';');
                 } else if (line.match(/;$/) && line.split('(').length > line.split(')').length) {

@@ -2,7 +2,7 @@
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
-const { CLUSTERS } = require('../../lib/constants / ZigbeeConstants.js');
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
@@ -47,7 +47,7 @@ class DinRailMeterDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
+    const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820] ;
     if (emCluster) {
       this.log('[EM] Electrical Measurement cluster found');
 
@@ -70,7 +70,7 @@ class DinRailMeterDevice extends ZigBeeDevice {
       });
     }
 
-    const meteringCluster = ep1.clusters?.metering || ep1.clusters?.[1794];
+    const meteringCluster = ep1.clusters?.metering || ep1.clusters?.[1794] ;
     if (meteringCluster) {
       this.log('[METERING] Metering cluster found');
 
@@ -86,7 +86,7 @@ class DinRailMeterDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[CLUSTERS.TUYA_EF00];
+    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[CLUSTERS.TUYA_EF00] ;
     if (!tuyaCluster) return;
 
     this.log('[TUYA] Tuya DP cluster found');
@@ -179,3 +179,4 @@ class DinRailMeterDevice extends ZigBeeDevice {
 }
 
 module.exports = DinRailMeterDevice;
+

@@ -48,7 +48,7 @@ for (const d of fs.readdirSync(DDIR)) {
   if (EXCLUDE.some(p => p.test(d))) { skipped++; continue; }
   
   // Only add if battery-powered
-  if (!compose.energy?.batteries?.length) { skipped++; continue; }
+  if (!compose.energy?.batteries?.length) { skipped++ ; continue; }
   
   caps.push('alarm_battery');
   compose.capabilities = caps;

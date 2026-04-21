@@ -77,7 +77,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
             device.log?.(`[SMOKE]  Smoke alarm: ${isAlarm ? ' TRIGGERED!' : ' clear'}`);
             // v5.5.955: Trigger flow cards (Jolink forum fix)
             const triggerId = isAlarm ? 'smoke_detector_advanced_alarm_smoke_true' : 'smoke_detector_advanced_alarm_smoke_false';
-            device.driver?.homey?.flow?.getTriggerCard?.(triggerId)?.trigger(device, {}).catch(() => {});
+            device.driver?.homey?.flow?.getTriggerCard?.(triggerId)?.trigger(device, {}).catch(() => {}) ;
           }
           return isAlarm;
         }
@@ -94,7 +94,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
       // v5.5.408: Detect tamper vs battery based on value pattern
       // 
       4: {
-        capability: null, // Dynamic - could be tamper or battery
+        capability, // Dynamic - could be tamper or battery
         transform: (v, device) => {
           // If value is boolean-like (0/1/true/false), it's tamper
           // If value is > 1, it's battery percentage
@@ -104,10 +104,10 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
               device.log?.(`[SMOKE] DP4 as tamper: ${isTampered}`);
               // v5.5.955: Trigger tamper flow card
               if (isTampered) {
-                device.driver?.homey?.flow?.getTriggerCard?.('smoke_detector_advanced_alarm_tamper_true')?.trigger(device, {}).catch(() => {});
+                device.driver?.homey?.flow?.getTriggerCard?.('smoke_detector_advanced_alarm_tamper_true')?.trigger(device, {}).catch(() => {}) ;
               }
             }
-            device?.setCapabilityValue?.('alarm_tamper', isTampered).catch(() => { });
+            device?.setCapabilityValue?.('alarm_tamper', isTampered).catch(() => { }) ;
             return null; // Already handled
           } else if (typeof v === 'number' && v > 1) {
             const battery = Math.min(100, v);
@@ -116,10 +116,10 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
               // v5.5.955: Trigger battery flow cards
               // 
               if (battery < 20) {
-                device.driver?.homey?.flow?.getTriggerCard?.('smoke_detector_advanced_battery_low')?.trigger(device, {}).catch(() => {});
+                device.driver?.homey?.flow?.getTriggerCard?.('smoke_detector_advanced_battery_low')?.trigger(device, {}).catch(() => {}) ;
               }
             }
-            device?.setCapabilityValue?.('measure_battery', parseFloat(battery)).catch(() => { });
+            device?.setCapabilityValue?.('measure_battery', parseFloat(battery)).catch(() => { }) ;
             return null; // Already handled
           }
           return v;
@@ -149,7 +149,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
       // Sources: Zigbee2MQTT TS0601_smoke_1-5 definitions
       // 
       11: { 
-        capability: null, 
+        capability, 
         internal: 'fault_alarm',
         transform: (v, device) => {
           // Log fault status for diagnostics
@@ -158,7 +158,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
         }
       },
       16: { 
-        capability: null, 
+        capability, 
         setting: 'silence_alarm', 
         writable: true,
         transform: (v, device) => {
@@ -167,7 +167,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
         }
       },
       13: { 
-        capability: null, 
+        capability, 
         setting: 'alarm_enable', 
         writable: true,
         transform: (v, device) => {
@@ -176,7 +176,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
         }
       },
       8: { 
-        capability: null, 
+        capability, 
         setting: 'self_test', 
         writable: true,
         transform: (v, device) => {
@@ -185,18 +185,18 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
         }
       },
       5: { 
-        capability: null, 
+        capability, 
         setting: 'alarm_volume',
         transform: (v, device) => {
           // Volume levels: low=0, medium=1, high=2
           const volumeMap = { 0: 'low', 1: 'medium', 2: 'high' };
-          const volume = volumeMap[v] ?? 'unknown';
+          const volume = volumeMap[v] ?? 'unknown' ;
           if (device) device.log?.(`[SMOKE] DP5 alarm_volume: ${v} (${volume})`);
           return v;
         }
       },
       9: { 
-        capability: null, 
+        capability, 
         internal: 'smoke_concentration',
         transform: (v, device) => {
           // Smoke concentration in ppm or percentage
@@ -212,9 +212,9 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
     this._registerCapabilityListeners(); // rule-12a injected
 
     // v5.5.503: DIAGNOSTIC LOGGING for Martijn report
-    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || 'UNKNOWN';
-    const modelId = this.getSetting?.('zb_model_id') || this.getData()?.modelId || 'UNKNOWN';
-    const deviceId = this.getData()?.id || 'UNKNOWN';
+    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || 'UNKNOWN' ;
+    const modelId = this.getSetting?.('zb_model_id') || this.getData()?.modelId || 'UNKNOWN' ;
+    const deviceId = this.getData()?.id || 'UNKNOWN' ;
 
     this.log('[SMOKE-ADV] ');
     this.log('[SMOKE-ADV]  Smart Smoke Detector Advanced v5.5.503 Ready');
@@ -228,21 +228,21 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
 
     // v5.5.503: Log available clusters for diagnostics
     try {
-      const ep1 = zclNode?.endpoints?.[1];
+      const ep1 = zclNode?.endpoints?.[1] ;
       if (ep1) {
         const clusterIds = Object.keys(ep1.clusters || {});
         this.log(`[SMOKE-ADV]  Endpoint 1 clusters: ${clusterIds.join(', ') || 'none'}`);
 
         // Check for Tuya cluster (CLUSTERS.TUYA_EF00 = CLUSTERS.TUYA_EF00)
         if (ep1.clusters?.tuya || ep1.clusters?.[CLUSTERS.TUYA_EF00]) {
-          this.log('[SMOKE-ADV]  Tuya cluster CLUSTERS.TUYA_EF00 (CLUSTERS.TUYA_EF00) FOUND - DP communication available');
+          this.log('[SMOKE-ADV]  Tuya cluster CLUSTERS.TUYA_EF00 (CLUSTERS.TUYA_EF00) FOUND - DP communication available') ;
         } else {
           this.log('[SMOKE-ADV]  Tuya cluster CLUSTERS.TUYA_EF00 NOT found - may use IAS Zone instead');
         }
 
         // Check for IAS Zone (0x0500 = 1280)
         if (ep1.clusters?.iasZone || ep1.clusters?.[1280]) {
-          this.log('[SMOKE-ADV]  IAS Zone cluster 0x0500 (1280) FOUND');
+          this.log('[SMOKE-ADV]  IAS Zone cluster 0x0500 (1280) FOUND') ;
         }
       }
     } catch (e) {
@@ -254,7 +254,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
 
     // v5.5.725: IAS Zone enrollment for smoke alarm capability (Jolink forum fix)
     try {
-      const iasZoneCluster = zclNode?.endpoints?.[1]?.clusters?.iasZone || zclNode?.endpoints?.[1]?.clusters?.[1280];
+      const iasZoneCluster = zclNode?.endpoints?.[1]?.clusters?.iasZone || zclNode?.endpoints?.[1]?.clusters?.[1280] ;
       if (iasZoneCluster) {
         this.log('[SMOKE-ADV]  Setting up IAS Zone for smoke alarm...');
         
@@ -272,18 +272,18 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
           
           // v5.5.955: Trigger flow cards for IAS Zone events (Jolink forum fix)
           const smokeTriggerId = smokeAlarm ? 'smoke_detector_advanced_alarm_smoke_true' : 'smoke_detector_advanced_alarm_smoke_false';
-          this.driver?.homey?.flow?.getTriggerCard?.(smokeTriggerId)?.trigger(this, {}).catch(() => {});
+          this.driver?.homey?.flow?.getTriggerCard?.(smokeTriggerId)?.trigger(this, {}).catch(() => {}) ;
           
           this.setCapabilityValue('alarm_smoke', smokeAlarm).catch(e => this.error('Failed to set alarm_smoke', e));
           if (this.hasCapability('alarm_tamper')) {
             this.setCapabilityValue('alarm_tamper', tamperAlarm).catch(e => this.error('Failed to set alarm_tamper', e));
             if (tamperAlarm) {
-              this.driver?.homey?.flow?.getTriggerCard?.('smoke_detector_advanced_alarm_tamper_true')?.trigger(this, {}).catch(() => {});
+              this.driver?.homey?.flow?.getTriggerCard?.('smoke_detector_advanced_alarm_tamper_true')?.trigger(this, {}).catch(() => {}) ;
             }
           }
           if (batteryLow && this.hasCapability('measure_battery')) {
             this.setCapabilityValue('measure_battery', 10).catch(() => {});
-            this.driver?.homey?.flow?.getTriggerCard?.('smoke_detector_advanced_battery_low')?.trigger(this, {}).catch(() => {});
+            this.driver?.homey?.flow?.getTriggerCard?.('smoke_detector_advanced_battery_low')?.trigger(this, {}).catch(() => {}) ;
           }
         });
 
@@ -300,7 +300,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
    */
   async _performIASZoneEnrollment(zclNode) {
     try {
-      const iasZone = zclNode?.endpoints?.[1]?.clusters?.iasZone;
+      const iasZone = zclNode?.endpoints?.[1]?.clusters?.iasZone ;
       if (!iasZone) return;
 
       // Get coordinator IEEE address
@@ -308,7 +308,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
       try {
         ieeeAddress = this.homey.zigbee?.ieeeAddress || 
                       await this.homey.zigbee?.getIeeeAddress?.() ||
-                      this.getData()?.ieeeAddress;
+                      this.getData()?.ieeeAddress ;
       } catch (e) {
         this.log('[SMOKE-ADV] Could not get coordinator IEEE address');
       }
@@ -345,3 +345,4 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
   }
 }
 module.exports = SmokeDetectorAdvancedDevice;
+

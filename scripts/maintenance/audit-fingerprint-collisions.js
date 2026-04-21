@@ -42,7 +42,7 @@ function audit() {
   for (const [mfr, occurrences] of Object.entries(mfrToDrivers)) {
     if (occurrences.length > 1) {
       // Logic check: do they have disjoint PIDs?
-      const driversWithEmptyPids = occurrences.filter(o => o.pids.length === 0);
+      const driversWithEmptyPids = occurrences.filter(o => o.pids.length === 0) ;
       
       if (driversWithEmptyPids.length > 0) {
         collisionCount++;

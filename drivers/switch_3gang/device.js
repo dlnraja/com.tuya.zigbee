@@ -30,7 +30,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   get isZclOnlyDevice() {
     const mfr = this.getSetting?.('zb_manufacturer_name') ||
                 this.getStoreValue?.('zb_manufacturer_name') ||
-                this.getStoreValue?.('manufacturerName') || '';
+                this.getStoreValue?.('manufacturerName') || '' ;
     return includesCI(ZCL_ONLY_MANUFACTURERS_3G, mfr);
   }
 
@@ -105,8 +105,8 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     this._lastCommandTime = 0;
 
     const getOnOffCluster = (epNum) => {
-      const ep = this._zclNode?.endpoints?.[epNum];
-      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+      const ep = this._zclNode?.endpoints?.[epNum] ;
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6] ;
     };
 
     // v5.13.2: Unified listener registration (Capability + Flow Cards)
@@ -199,7 +199,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       }
     }
 
-    await this.initVirtualButtons?.();
+    await this.initVirtualButtons?.() ;
     this.log('[SWITCH-3G]  BSEED ZCL-only mode ready (packetninja v990+v5.8.72)');
   }
 
@@ -209,8 +209,8 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   async _removeGroupMemberships(zclNode) {
     for (const epNum of [1, 2, 3]) {
       try {
-        const ep = zclNode?.endpoints?.[epNum];
-        if (!ep?.clusters) continue;
+        const ep = zclNode?.endpoints?.[epNum] ;
+        if (!ep?.clusters) continue ;
         const g = ep.clusters.groups || ep.clusters.genGroups || ep.clusters[4] || ep.clusters['4'];
         if (!g) { this.log(`[BSEED-3G] EP${epNum} no groups cluster`); continue; }
         const fn = g.removeAll || g.removeAllGroups;
@@ -227,10 +227,11 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   onDeleted() {
     if (this._zclState?.timeout) {
       for (const epNum of [1, 2, 3]) {
-        if (this._zclState.timeout[epNum]) clearTimeout(this._zclState.timeout[epNum]);
+        if (this._zclState.timeout[epNum]) clearTimeout(this._zclState.timeout[epNum]) ;
       }
     }
-    super.onDeleted?.();
+    super.onDeleted?.() ;
   }
 }
 module.exports = Switch3GangDevice;
+

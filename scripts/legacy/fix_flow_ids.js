@@ -13,7 +13,7 @@ const fixFlowCards = (cards) => {
     // Check if this is a generic ID that needs prefixing
     if (genericIds.includes(card.id)) {
       // Extract driver from filter
-      const driverFilter = card.args?.find(arg => arg.filter)?.filter;
+      const driverFilter = card.args?.find(arg => arg.filter)?.filter ;
       if (driverFilter) {
         const match = driverFilter.match(/driver_id=([a-z0-9_]+)/);
         if (match) {

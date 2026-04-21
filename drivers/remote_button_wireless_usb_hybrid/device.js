@@ -107,7 +107,7 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
     // v5.8.68: Read initial state so device doesn't show "unknown"
     onOffCluster.readAttributes(['onOff']).then(data => {
       if (data?.onOff != null) {
-        this.log('[USB_DONGLE]', capabilityId, 'initial state =', data.onOff);
+        this.log('[USB_DONGLE]', capabilityId, 'initial state =', data.onOff) ;
         this.setCapabilityValue(capabilityId, !!data.onOff).catch(this.error);
       }
     }).catch(() => {});
@@ -119,13 +119,13 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
    * tuyaBacklightSwitch: 0=off, 1=on_off, 2=inverted
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    const ep1 = this.zclNode?.endpoints?.[1];
+    const ep1 = this.zclNode?.endpoints?.[1] ;
 
     try {
       if (changedKeys.includes('power_on_behavior')) {
         const val = newSettings.power_on_behavior;
         const map = { off: 0, on: 1, toggle: 3, previous: 2 };
-        const numVal = map[val] ?? 2;
+        const numVal = map[val] ?? 2 ;
         this.log('[USB_DONGLE] Setting power_on_behavior ', val, '(', numVal, ')');
         if (ep1?.clusters?.onOff) {
           await ep1.clusters.onOff.writeAttributes({ moesStartUpOnOff: numVal });
@@ -135,7 +135,7 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
       if (changedKeys.includes('indicator_mode')) {
         const val = newSettings.indicator_mode;
         const map = { off: 0, on_off: 1, inverted: 2 };
-        const numVal = map[val] ?? 1;
+        const numVal = map[val] ?? 1 ;
         this.log('[USB_DONGLE] Setting indicator_mode ', val, '(', numVal, ')');
         if (ep1?.clusters?.onOff) {
           await ep1.clusters.onOff.writeAttributes({ tuyaBacklightSwitch: numVal });
@@ -190,15 +190,15 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
 
         electrical.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).then(data => {
           if (data?.activePower != null) {
-            const power = safeParse(data.activePower, 10);
+            const power = safeParse(data.activePower, 10) ;
             if (this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', parseFloat(power)).catch(this.error);
           }
           if (data?.rmsVoltage != null) {
-            const voltage = safeParse(data.rmsVoltage, 10);
+            const voltage = safeParse(data.rmsVoltage, 10) ;
             if (this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this.error);
           }
           if (data?.rmsCurrent != null) {
-            const current = safeParse(data.rmsCurrent, 1000);
+            const current = safeParse(data.rmsCurrent, 1000) ;
             if (this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', parseFloat(current)).catch(this.error);
           }
         }).catch(() => { });
@@ -224,7 +224,7 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
 
         metering.readAttributes(['currentSummationDelivered']).then(data => {
           if (data?.currentSummationDelivered != null) {
-            const kWh = safeParse(data.currentSummationDelivered, 1000);
+            const kWh = safeParse(data.currentSummationDelivered, 1000) ;
             if (this.hasCapability('meter_power')) this.setCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);
           }
         }).catch(() => { });
@@ -245,3 +245,4 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
 }
 
 module.exports = UsbDongleDualRepeaterDevice;
+

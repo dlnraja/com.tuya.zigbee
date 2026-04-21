@@ -177,7 +177,7 @@ class DPLearningSystem {
         dataType,
         driverType,
         observations: [],
-        commonCapability: null,
+        commonCapability,
         confidence: 0
       };
     }

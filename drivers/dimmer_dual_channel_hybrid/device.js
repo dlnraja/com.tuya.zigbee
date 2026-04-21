@@ -31,7 +31,7 @@ class DimmerDualChannelDevice extends ZigBeeDevice {
         await this.removeCapability('measure_battery').catch(this.error);
       }
       if (typeof this.setEnergy === 'function') {
-        await this.setEnergy({ mains: true, batteries: null }).catch(this.error);
+        await this.setEnergy({ mains: true, batteries }).catch(this.error);
       }
     } else {
       this.log('Mode Pile dÃ©tectÃ© : Activation du monitoring');

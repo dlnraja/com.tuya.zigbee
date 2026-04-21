@@ -33,9 +33,9 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
     this.log('[SUB-DEVICE] Gang 2 initializing...');
     this._gangNumber = gn;
     this.zclNode = zclNode;
-    this._zclState = { lastState: null, pending: false, timeout: null };
-    const ep = zclNode?.endpoints?.[gn];
-    const onOff = ep?.clusters?.onOff;
+    this._zclState = { lastState, pending: false, timeout };
+    const ep = zclNode?.endpoints?.[gn] ;
+    const onOff = ep?.clusters?.onOff ;
     if (!onOff) { this.error('[SUB-DEVICE] No onOff on EP2'); return; }
 
     onOff.on('attr.onOff', (value) => {
@@ -119,9 +119,9 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
   async _initPrimaryDevice(zclNode) {
     this.log('[PRIMARY] Gang 1 initializing...');
     if (this.hasCapability('onoff.gang2')) await this.removeCapability('onoff.gang2').catch(() => {});
-    this._lastOnoffState = { gang1: null };
+    this._lastOnoffState = { gang1 };
     this._appCommandPending = { gang1: false };
-    this._appCommandTimeout = { gang1: null };
+    this._appCommandTimeout = { gang1 };
     await super.onNodeInit({ zclNode });
     this.initPhysicalButtonDetection(); // rule-19 injected
     this._registerCapabilityListeners(); // rule-12a injected
@@ -135,13 +135,13 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
    * Hooks into EP1 onOff reports to trigger scene flows
    */
   _setupGang1SceneDetection(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1];
-    const onOff = ep1?.clusters?.onOff;
+    const ep1 = zclNode?.endpoints?.[1] ;
+    const onOff = ep1?.clusters?.onOff ;
     if (!onOff) return;
 
     const triggerFlows = (value) => {
       const mode = this.sceneMode;
-      const isPhys = !this._appCommandPending?.gang1;
+      const isPhys = !this._appCommandPending?.gang1 ;
       if (isPhys && (mode === 'auto' || mode === 'both')) {
         const pgid = 'wall_switch_2gang_1way_physical_gang1_' + (value ? 'on' : 'off');
         this.homey.flow._getFlowCard(id)
@@ -153,7 +153,7 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
       }
       // In magic mode, revert the load state
       if (isPhys && mode === 'magic') {
-        const currentState = this._lastOnoffState?.gang1;
+        const currentState = this._lastOnoffState?.gang1 ;
         if (currentState !== null && currentState !== undefined) {
           // Revert to previous state after short delay
           setTimeout(async () => {
@@ -186,10 +186,11 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
   }
 
   onDeleted() {
-    if (this._zclState?.timeout) clearTimeout(this._zclState.timeout);
-    super.onDeleted?.();
+    if (this._zclState?.timeout) clearTimeout(this._zclState.timeout) ;
+    super.onDeleted?.() ;
   }
 }
 
 module.exports = WallSwitch2Gang1WayDevice;
+
 

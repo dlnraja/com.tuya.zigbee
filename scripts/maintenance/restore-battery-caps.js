@@ -26,7 +26,7 @@ for (const d of fs.readdirSync(DDIR)) {
 
   const compose = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
   const caps = compose.capabilities || [];
-  const hasBatteries = (compose.energy?.batteries || []).length > 0;
+  const hasBatteries = (compose.energy?.batteries || []).length > 0 ;
   const hasMeasure = caps.includes('measure_battery');
   const hasAlarm = caps.includes('alarm_battery');
 

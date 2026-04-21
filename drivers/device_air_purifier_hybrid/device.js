@@ -27,16 +27,16 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
       7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
       8: { capability: 'valve_position', divisor: 1 },
       9: { capability: 'boost_mode', transform: (v) => v === true || v === 1 },
-      10: { capability: null, internal: 'sound', writable: true },
+      10: { capability, internal: 'sound', writable: true },
       13: { capability: 'measure_battery', divisor: 1 },
-      14: { capability: null, internal: 'min_temp', divisor: 10 },
-      15: { capability: null, internal: 'max_temp', divisor: 10 },
+      14: { capability, internal: 'min_temp', divisor: 10 },
+      15: { capability, internal: 'max_temp', divisor: 10 },
       16: { capability: 'target_temperature', divisor: 2 },
-      17: { capability: null, internal: 'deadzone', divisor: 10 },
+      17: { capability, internal: 'deadzone', divisor: 10 },
       24: { capability: 'target_temperature', divisor: 2 },
       35: { capability: 'measure_humidity', divisor: 1 },
       36: { capability: 'heating', transform: (v) => v === 1 || v === true },
-      101: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' } // SDK3: alarm_battery obsolÃ¨te
+      101: { capability, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' } // SDK3: alarm_battery obsolÃ¨te
     };
   }
 
@@ -126,7 +126,7 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
   async _tuyaTimeSyncFallback() {
     try {
       const node = this.zclNode || this._zclNode;
-      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya;
+      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya ;
       if (!tuyaCluster) return;
 
       const now = new Date();
@@ -170,3 +170,4 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
 }
 
 module.exports = ThermostatTuyaDPDevice;
+

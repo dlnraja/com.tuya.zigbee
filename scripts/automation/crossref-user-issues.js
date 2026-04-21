@@ -10,7 +10,7 @@ function loadDrivers() {
     if (!fs.existsSync(f)) continue;
     try {
       const c = JSON.parse(fs.readFileSync(f, 'utf8'));
-      drivers.push({ name: d, mfrs: c.zigbee?.manufacturerName || [], pids: c.zigbee?.productId || [] });
+      drivers.push({ name: d, mfrs: c.zigbee?.manufacturerName || [], pids: c.zigbee?.productId || [] }) ;
     } catch {}
   }
   return drivers;

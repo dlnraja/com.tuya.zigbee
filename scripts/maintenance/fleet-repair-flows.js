@@ -45,7 +45,7 @@ jsFiles.forEach(file => {
   /**
    * 1. PURGE MISAPPLIED TRIGGER CALLS IN REGISTRATION CONTEXT
    */
-  const brokenTriggerRegex = /\.trigger\(this, \{\}, \{\}\)\.catch\(\(\) => \{\}\);?/g;
+  const brokenTriggerRegex = /\.trigger\(this, \{\}, \{\}\)\.catch\(\(\) => \{\}\);?/g : null;
   content = content.replace(brokenTriggerRegex, "");
 
   /**
@@ -56,7 +56,7 @@ jsFiles.forEach(file => {
   /**
    * 3. CLEAN UP THE NESTED "IIFE HELL" (Rule 17 leftovers)
    */
-  const iifeRegex = /\(\(\) => \{ try \{ return this\.homey\.flow\.(getTriggerCard|getActionCard|getConditionCard)\((.*?)\); \} catch \(e\) \{ this\.error\('\[FLOW-SAFE\] Failed to load card:', e\.message\); return null; \} \}\)\(\)/g;
+  const iifeRegex = /\(\(\) => \{ try \{ return this\.homey\.flow\.(getTriggerCard|getActionCard|getConditionCard)\((.*?)\) : null; \} catch \(e\) \{ this\.error\('\[FLOW-SAFE\] Failed to load card:', e\.message\); return null; \} \}\)\(\)/g;
   content = content.replace(iifeRegex, (match, method, args) => {
     if (isDriver) {
       // Drivers should use standard Homey API
@@ -78,7 +78,7 @@ jsFiles.forEach(file => {
       return `this.homey.flow.${method}(${id})`;
     });
     content = content.replace(/this\._getFlowCard\((.*?)\)/g, (match, id) => {
-      return `this.homey.flow.getTriggerCard(${id})`;
+      return `this.homey.flow.getTriggerCard(${id})` ;
     });
   }
 

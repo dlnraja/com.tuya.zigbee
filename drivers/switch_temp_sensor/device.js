@@ -68,7 +68,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
     try {
       const ep1 = zclNode.endpoints[1];
       if (ep1?.clusters) {
-        const clusterIds = Object.keys(ep1.clusters);
+        const clusterIds = Object.keys(ep1.clusters) ;
         this.log('Available clusters on endpoint 1:', clusterIds.join(', '));
       }
     } catch (e) {
@@ -102,7 +102,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
     try {
       const cluster = ep1?.clusters?.[CLUSTER_TUYA_E002] ||
         ep1?.clusters?.['57346'] ||
-        ep1?.clusters?.[String(CLUSTER_TUYA_E002)];
+        ep1?.clusters?.[String(CLUSTER_TUYA_E002)] ;
 
       if (cluster) {
         this.log(' Found cluster 57346 (0xE002) - Tuya Temp/Humidity');
@@ -117,7 +117,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
         try {
           const tempAttr = await cluster.readAttributes(['measuredValue']).catch(() => null);
           if (tempAttr?.measuredValue !== undefined) {
-            const temp = safeParse(tempAttr.measuredValue, 100);
+            const temp = safeParse(tempAttr.measuredValue, 100) ;
             this.log(`[57346] Initial temperature: ${temp}Â°C`);
             await this._setTemperature(temp);
           }
@@ -154,7 +154,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
     try {
       const cluster = ep1?.clusters?.tuya ||
         ep1?.clusters?.[CLUSTER_TUYA_EF00] ||
-        ep1?.clusters?.['CLUSTERS.TUYA_EF00'];
+        ep1?.clusters?.['CLUSTERS.TUYA_EF00'] ;
 
       if (cluster) {
         this.log(' Found Tuya EF00 cluster');
@@ -178,7 +178,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
     // Temperature Measurement cluster (0x0402)
     try {
       const tempCluster = ep1?.clusters?.temperatureMeasurement ||
-        ep1?.clusters?.[CLUSTER_TEMP];
+        ep1?.clusters?.[CLUSTER_TEMP] ;
       if (tempCluster) {
         this.log(' Found ZCL Temperature cluster');
         tempCluster.on('attr', (attr, value) => {
@@ -192,7 +192,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
     // Relative Humidity cluster (0x0405)
     try {
       const humCluster = ep1?.clusters?.relativeHumidity ||
-        ep1?.clusters?.[CLUSTER_HUMIDITY];
+        ep1?.clusters?.[CLUSTER_HUMIDITY] ;
       if (humCluster) {
         this.log(' Found ZCL Humidity cluster');
         humCluster.on('attr', (attr, value) => {
@@ -210,7 +210,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
   async _configureReporting(ep1) {
     // Try to configure reporting on cluster 57346
     try {
-      const cluster = ep1?.clusters?.[CLUSTER_TUYA_E002];
+      const cluster = ep1?.clusters?.[CLUSTER_TUYA_E002] ;
       if (cluster?.configureReporting) {
         await cluster.configureReporting({
           measuredValue: {
@@ -305,3 +305,4 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
 }
 
 module.exports = SwitchTempSensorDevice;
+

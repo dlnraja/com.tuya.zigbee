@@ -114,7 +114,7 @@ class FullRulesBasedFixer {
       }
       
       // Check for invalid escape sequences
-      const invalidEscape = content.match(/\\(?![nrtvfbxu0\\'"])/g);
+      const invalidEscape = content.match(/\\(?![nrtvfbxu0\\'"])/g) : null;
       if (invalidEscape) {
         issues.push(`Invalid escape sequences: ${invalidEscape.length}`);
       }
@@ -464,7 +464,7 @@ class FullRulesBasedFixer {
     if (this.issues.length > 0) {
       console.log('\n❌ ERRORS:');
       for (const e of this.issues.slice(0, 10)) {
-        console.log(`   ${path.basename(e.file)}: ${e.error || e.errors?.join(', ')}`);
+        console.log(`   ${path.basename(e.file)}: ${e.error || e.errors?.join(', ')}`) ;
       }
     }
     

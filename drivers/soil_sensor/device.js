@@ -93,22 +93,22 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         transform: (v) => ({ 0: 10, 1: 50, 2: 100 }[v] ?? v) 
       },
       102: { capability: 'measure_luminance', divisor: 1 },
-      103: { capability: null, setting: 'report_interval', min: 30, max: 1200 },
-      104: { capability: null, setting: 'soil_calibration', min: -30, max: 30 },
-      107: { capability: null, setting: 'temperature_calibration', min: -20, max: 20 },
-      110: { capability: null, setting: 'soil_warning', min: 0, max: 100 },
+      103: { capability, setting: 'report_interval', min: 30, max: 1200 },
+      104: { capability, setting: 'soil_calibration', min: -30, max: 30 },
+      107: { capability, setting: 'temperature_calibration', min: -20, max: 20 },
+      110: { capability, setting: 'soil_warning', min: 0, max: 100 },
       111: { 
         capability: 'measure_humidity.soil', 
         divisor: 1,
         transform: (v) => {
-          const mfr = this.getSetting?.('zb_manufacturer_name') || '';
+          const mfr = this.getSetting?.('zb_manufacturer_name') || '' ;
           if (mfr.includes('npj9bug3')) return v;
           return v === 1; // Fallback to alarm_water
         }
       },
       112: { capability: 'measure_ec', divisor: 1 }, // Soil Conductivity -> EC
-      113: { capability: null, setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
-      114: { capability: null, setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
+      113: { capability, setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
+      114: { capability, setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
       1: { capability: 'measure_temperature', divisor: 10 },
       4: { capability: 'measure_ec', divisor: 1 },
       101: { capability: 'measure_humidity', divisor: 1 },
@@ -229,3 +229,4 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 }
 
 module.exports = SoilSensorDevice;
+

@@ -77,8 +77,8 @@ function main() {
     
     try {
       const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      const mfrs = compose.zigbee?.manufacturerName || [];
-      const productIds = compose.zigbee?.productId || [];
+      const mfrs = compose.zigbee?.manufacturerName || [] ;
+      const productIds = compose.zigbee?.productId || [] ;
       
       // For each mfr+productId combination
       for (const mfr of mfrs) {

@@ -50,7 +50,7 @@ function parseFile(src, filename) {
       const ctx = lines.slice(Math.max(0,i-3), i+3).join(" ");
       const pidM = ctx.match(/modelID:\s*['"]([^'"]+)['"]/);
       const k = mfr.toLowerCase();
-      if (!fps.has(k)) fps.set(k, { mfr, productId: pidM?pidM[1]:null, model, description: desc, vendor, file: filename, source: "z2m" });
+      if (!fps.has(k)) fps.set(k, { mfr, productId: pidM?pidM[1], model, description: desc, vendor, file: filename, source: "z2m" });
       continue;
     }
 
@@ -71,7 +71,7 @@ function parseFile(src, filename) {
     const allMfrs = [...line.matchAll(/['"](_TZ[A-Z0-9]{1,5}_[a-zA-Z0-9]+|_TYST1[12]_[a-zA-Z0-9]+|TUYATEC[a-zA-Z0-9_-]+)['"]/g)];
     for (const m of allMfrs) {
       const k = m[1].toLowerCase();
-      if (!fps.has(k)) fps.set(k, { mfr: m[1], productId: null, model, description: desc, vendor, file: filename, source: "z2m" });
+      if (!fps.has(k)) fps.set(k, { mfr: m[1], productId, model, description: desc, vendor, file: filename, source: "z2m" });
     }
   }
   return fps;

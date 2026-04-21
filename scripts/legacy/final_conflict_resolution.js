@@ -43,8 +43,8 @@ function analyzeAll() {
 
     try {
       const content = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
-      const manuNames = content.zigbee?.manufacturerName || [];
-      const productIds = content.zigbee?.productId || [];
+      const manuNames = content.zigbee?.manufacturerName || [] ;
+      const productIds = content.zigbee?.productId || [] ;
 
       allDrivers.push({
         driver: driverName,
@@ -102,7 +102,7 @@ function resolve(allDrivers, conflicts) {
     const composeFile = d.path;
     let content = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
 
-    const originalNames = content.zigbee?.manufacturerName || [];
+    const originalNames = content.zigbee?.manufacturerName || [] ;
     const normalizedNames = originalNames.map(m => {
       // Normaliser Tuya IDs en uppercase
       if (m.match(/^_tz[0-9a-z_]+$/i)) {
@@ -171,7 +171,7 @@ function resolve(allDrivers, conflicts) {
       const driver = refreshed.find(d => d.driver === driverName);
       if (!driver) return;
 
-      const originalNames = content.zigbee?.manufacturerName || [];
+      const originalNames = content.zigbee?.manufacturerName || [] ;
       const filtered = originalNames.filter(m => !namesToRemove.has(m.toUpperCase()));
 
       if (filtered.length < originalNames.length) {

@@ -8,12 +8,12 @@ class WiFiSwitch2GangDevice extends TuyaLocalDevice {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
       '2':  { capability: 'onoff.gang2', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '7':  { capability: null }, // countdown_1 (seconds)
-      '8':  { capability: null }, // countdown_2 (seconds)
-      '13': { capability: null }, // master switch
-      '14': { capability: null }, // power-on status: off/on/memory
-      '15': { capability: null }, // indicator: none/relay/pos
-      '16': { capability: null }, // backlight switch
+      '7':  { capability }, // countdown_1 (seconds)
+      '8':  { capability }, // countdown_2 (seconds)
+      '13': { capability }, // master switch
+      '14': { capability }, // power-on status: off/on/memory
+      '15': { capability }, // indicator: none/relay/pos
+      '16': { capability }, // backlight switch
       '20': { capability: 'measure_power', divisor: 10 },
       '21': { capability: 'measure_current', divisor: 1000 },
       '22': { capability: 'measure_voltage', divisor: 10 },

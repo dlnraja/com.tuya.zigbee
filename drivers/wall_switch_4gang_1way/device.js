@@ -33,9 +33,9 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
     this.log('[SUB-DEVICE] Gang ' + gn + ' initializing...');
     this._gangNumber = gn;
     this.zclNode = zclNode;
-    this._zclState = { lastState: null, pending: false, timeout: null };
-    const ep = zclNode?.endpoints?.[gn];
-    const onOff = ep?.clusters?.onOff;
+    this._zclState = { lastState, pending: false, timeout };
+    const ep = zclNode?.endpoints?.[gn] ;
+    const onOff = ep?.clusters?.onOff ;
     if (!onOff) { this.error('[SUB-DEVICE] No onOff on EP' + gn); return; }
 
     onOff.on('attr.onOff', (value) => {
@@ -106,9 +106,9 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
     if (this.hasCapability('onoff.gang2')) await this.removeCapability('onoff.gang2').catch(() => {});
     if (this.hasCapability('onoff.gang3')) await this.removeCapability('onoff.gang3').catch(() => {});
     if (this.hasCapability('onoff.gang4')) await this.removeCapability('onoff.gang4').catch(() => {});
-    this._lastOnoffState = { gang1: null };
+    this._lastOnoffState = { gang1 };
     this._appCommandPending = { gang1: false };
-    this._appCommandTimeout = { gang1: null };
+    this._appCommandTimeout = { gang1 };
     await super.onNodeInit({ zclNode });
     this.initPhysicalButtonDetection(); // rule-19 injected
     this._registerCapabilityListeners(); // rule-12a injected
@@ -118,12 +118,12 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
   }
 
   _setupGang1SceneDetection(zclNode) {
-    const onOff = zclNode?.endpoints?.[1]?.clusters?.onOff;
+    const onOff = zclNode?.endpoints?.[1]?.clusters?.onOff ;
     if (!onOff) return;
     
     const triggerFlows = (value) => {
       const mode = this.sceneMode;
-      const isPhys = !this._appCommandPending?.gang1;
+      const isPhys = !this._appCommandPending?.gang1 ;
       // v5.12.4: Removed 'auto' physical gang trigger - PhysicalButtonMixin handles it (fixes BSEED double-trigger)
       if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
       this._getFlowCard('wall_switch_4gang_1way_gang1_scene')?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {})
@@ -150,10 +150,11 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
   }
 
   onDeleted() {
-    if (this._zclState?.timeout) clearTimeout(this._zclState.timeout);
-    super.onDeleted?.();
+    if (this._zclState?.timeout) clearTimeout(this._zclState.timeout) ;
+    super.onDeleted?.() ;
   }
 }
 
 module.exports = WallSwitch4Gang1WayDevice;
+
 

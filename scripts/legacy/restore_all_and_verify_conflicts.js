@@ -44,9 +44,9 @@ function restoreDriver(driverName) {
     const currentContent = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
     const backupContent = JSON.parse(fs.readFileSync(path.join(driverPath, intelligentBackup), 'utf8'));
 
-    const currentManuNames = currentContent.zigbee?.manufacturerName || [];
-    const backupManuNames = backupContent.zigbee?.manufacturerName || [];
-    const productIds = currentContent.zigbee?.productId || [];
+    const currentManuNames = currentContent.zigbee?.manufacturerName || [] ;
+    const backupManuNames = backupContent.zigbee?.manufacturerName || [] ;
+    const productIds = currentContent.zigbee?.productId || [] ;
 
     if (backupManuNames.length > currentManuNames.length) {
       // Backup avant restauration actuelle

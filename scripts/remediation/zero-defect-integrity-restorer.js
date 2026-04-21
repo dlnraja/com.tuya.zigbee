@@ -39,13 +39,13 @@ function restoreFile(filePath) {
     
     // 1. Fix Broken Statements in Code (return/if/switch)
     // return a/b -> return a/b
-    content = content.replace(/safeDivide\(return (.*?), (.*?)\)/g, 'return $1/$2');
-    content = content.replace(/safeMultiply\(return (.*?), (.*?)\)/g, 'return $1*$2');
-    content = content.replace(/safeParse\(return (.*?), (.*?)\)/g, 'return $1/$2');
+    content = content.replace(/safeDivide\(return (.*?), (.*?)\)/g, 'return $1/$2') ;
+    content = content.replace(/safeMultiply\(return (.*?), (.*?)\)/g, 'return $1*$2') ;
+    content = content.replace(/safeParse\(return (.*?), (.*?)\)/g, 'return $1/$2') ;
     
     // if (a/b -> if (a/b)
-    content = content.replace(/safeDivide\(if \((.*?)\), (.*?)\)/g, 'if ($1/$2)');
-    content = content.replace(/safeMultiply\(if \((.*?)\), (.*?)\)/g, 'if ($1*$2)');
+    content = content.replace(/safeDivide\(if \((.*?)\), (.*?)\)/g, 'if ($1/$2)') : null;
+    content = content.replace(/safeMultiply\(if \((.*?)\), (.*?)\)/g, 'if ($1*$2)') : null;
     
     // 2. Fix String/Comment/Regex Literal Artifacts
     // Since we want to be safe, we'll use a lines-based approach to detect if we are in a "non-code" zone
@@ -67,16 +67,16 @@ function restoreFile(filePath) {
         // Pattern B: String Literals or Regex Literals
         // This is a heuristic: if we see safeDivide( enclosed by quotes or slashes that look like literals
         // Matches " ... a/b ... "
-        line = line.replace(/(['"`\/])([^'"`\/]*?)safeDivide\(([^,]+),\s*([^)]+)\)([^'"`\/]*?)\1/g, '$1$2$3/$4$5$1');
-        line = line.replace(/(['"`\/])([^'"`\/]*?)safeMultiply\(([^,]+),\s*([^)]+)\)([^'"`\/]*?)\1/g, '$1$2$3*$4$5$1');
-        line = line.replace(/(['"`\/])([^'"`\/]*?)safeParse\(([^,]+),\s*([^)]+)\)([^'"`\/]*?)\1/g, '$1$2$3/$4$5$1');
+        line = line.replace(/(['"`\/])([^'"`\/]*?)safeDivide\(([^,]+),\s*([^)]+)\)([^'"`\/]*?)\1/g, '$1$2$3/$4$5$1') : null;
+        line = line.replace(/(['"`\/])([^'"`\/]*?)safeMultiply\(([^,]+),\s*([^)]+)\)([^'"`\/]*?)\1/g, '$1$2$3*$4$5$1') : null;
+        line = line.replace(/(['"`\/])([^'"`\/]*?)safeParse\(([^,]+),\s*([^)]+)\)([^'"`\/]*?)\1/g, '$1$2$3/$4$5$1') : null;
         
         // Pattern C: Specific "Log" pollution in Homey log calls
         // this.log('... safeDivide( ... )')
-        line = line.replace(/(\.log\(['"`][^'"`]*?)safeDivide\(([^,]+),\s*([^)]+)\)([^'"`]*?['"`]\))/g, '$1$2/$3$4');
+        line = line.replace(/(\.log\(['"`][^'"`]*?)safeDivide\(([^,]+),\s*([^)]+)\)([^'"`]*?['"`]\))/g, '$1$2/$3$4') : null;
         
         // Pattern D: Broken Regex characters like \s, \d, \b
-        line = line.replace(/\\safeDivide\((s|d|b|w|W|D|S|B), (.*?)\)/g, '\\$1/$2');
+        line = line.replace(/\\safeDivide\((s|d|b|w|W|D|S|B), (.*?)\)/g, '\\$1/$2') : null;
         
         lines[i] = line;
     }

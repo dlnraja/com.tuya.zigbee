@@ -108,9 +108,9 @@ class FanControllerDevice extends ZigBeeDevice {
   }
 
   async _setFanSpeed(value) {
-    const ep1 = this._zclNode?.endpoints?.[1];
+    const ep1 = this._zclNode?.endpoints?.[1] ;
     if (!ep1) return;
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
+    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184] ;
     if (!tuyaCluster) return;
 
     const speed =Math.round(safeMultiply(value));
@@ -125,7 +125,7 @@ class FanControllerDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
+    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184] ;
     if (!tuyaCluster) return;
 
     this.log('[TUYA] DP cluster found');
@@ -150,8 +150,8 @@ class FanControllerDevice extends ZigBeeDevice {
       }
     });
 
-    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value));
-    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value));
+    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value)) ;
+    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value)) ;
     tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
   }
 
@@ -166,9 +166,11 @@ class FanControllerDevice extends ZigBeeDevice {
       // Trigger flow cards
       try {
         if (!!value && !wasOn) {
-          this.homey.flow.getTriggerCard().trigger(this.catch(this.error);
+          const card = this.homey.flow.getDeviceTriggerCard('fan_turned_on');
+          if (card) card.trigger(this).catch(this.error);
         } else if (!value && wasOn) {
-          this.homey.flow.getTriggerCard().trigger(this.catch(this.error);
+          const card = this.homey.flow.getDeviceTriggerCard('fan_turned_off');
+          if (card) card.trigger(this).catch(this.error);
         }
       } catch (e) { /* Card may not exist */ }
       break;
@@ -178,7 +180,10 @@ class FanControllerDevice extends ZigBeeDevice {
       this.setCapabilityValue('dim', dim).catch(this.error);
       // Trigger speed changed flow card
       try {
-        this.homey.flow.getTriggerCard().trigger(this, { speed:Math.round(safeMultiply(dim) }).catch(this.error));
+        const card = this.homey.flow.getDeviceTriggerCard('fan_speed_changed');
+        if (card) {
+          card.trigger(this, { speed: Math.round(safeMultiply(dim, 100)) }).catch(this.error);
+        }
       } catch (e) { /* Card may not exist */ }
       break;
 
@@ -195,4 +200,6 @@ class FanControllerDevice extends ZigBeeDevice {
 }
 
 module.exports = FanControllerDevice;
+
+
 

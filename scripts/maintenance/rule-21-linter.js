@@ -82,8 +82,8 @@ async function main() {
       const cp = path.join(driversDir, d, 'driver.compose.json');
       if (!fs.existsSync(cp)) return;
       const j = JSON.parse(fs.readFileSync(cp, 'utf8'));
-      const mfrs = j.zigbee?.manufacturerName || [];
-      const pid = (j.zigbee?.productId || [])[0] || 'unknown';
+      const mfrs = j.zigbee?.manufacturerName || [] ;
+      const pid = (j.zigbee?.productId || [])[0] || 'unknown' ;
       
       mfrs.forEach(mfr => {
         if (mfr.startsWith('_TZE') || mfr.startsWith('_TZ3')) {

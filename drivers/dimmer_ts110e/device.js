@@ -38,7 +38,7 @@ try {
 
 class TuyaDimmerTS110E extends ZigBeeDevice {
     async onNodeInit({ zclNode }) {
-        this.printNode();
+        this.printNode() ;
 
         // 3. Register standard On/Off
         this.registerCapability("onoff", CLUSTER.ON_OFF);
@@ -103,3 +103,4 @@ class TuyaDimmerTS110E extends ZigBeeDevice {
 }
 
 module.exports = TuyaDimmerTS110E;
+

@@ -37,7 +37,7 @@ function main() {
     
     try {
       const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      const mfrs = compose.zigbee?.manufacturerName || [];
+      const mfrs = compose.zigbee?.manufacturerName || [] ;
       const existingSet = new Set(mfrs.map(m => m.trim()));
       
       const toAdd = variants.filter(v => !existingSet.has(v));

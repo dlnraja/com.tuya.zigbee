@@ -61,7 +61,7 @@ for (const d of fs.readdirSync(DDIR)) {
 
   // === CHECK 3: WiFi drivers shouldn't have zigbee battery caps injected ===
   const isWifi = compose.connectivity?.includes('cloud') || 
-                 compose.connectivity?.includes('local') && !compose.connectivity?.includes('zigbee');
+                 compose.connectivity?.includes('local') && !compose.connectivity?.includes('zigbee') ;
   if (isWifi && !compose.zigbee) {
     // Pure WiFi/cloud driver  battery handling is driver-specific
     // Don't auto-inject/remove  just warn

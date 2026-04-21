@@ -18,7 +18,7 @@ function healHybrids() {
     // 1. Identify source drivers from the hybrid's name or history (if we had it)
     // For now, let's look at the manufacturerNames in driver.compose.json and try to find which other drivers they belong to
     const compose = JSON.parse(fs.readFileSync(path.join(hybridDir, 'driver.compose.json'), 'utf8'));
-    const mfrs = compose.zigbee?.manufacturerName || [];
+    const mfrs = compose.zigbee?.manufacturerName || [] ;
     
     // 2. Build or Update driver.flow.compose.json
     let flowData = { triggers: [], actions: [], conditions: [] };
@@ -70,7 +70,7 @@ function healHybrids() {
           const dfj = JSON.parse(fs.readFileSync(df, 'utf8'));
           const match = (dfj.triggers?.find(t => t.id === refId)) 
                     || (dfj.actions?.find(a => a.id === refId))
-                    || (dfj.conditions?.find(c => c.id === refId));
+                    || (dfj.conditions?.find(c => c.id === refId)) ;
           
           if (match) {
             const category = dfj.triggers?.find(t => t.id === refId) ? 'triggers' : (dfj.actions?.find(a => a.id === refId) ? 'actions' : 'conditions');

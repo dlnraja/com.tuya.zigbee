@@ -77,7 +77,7 @@ class IrBlasterDriver extends ZigBeeDriver {
 
       this.irLearnCodeAction.registerRunListener(async (args, state) => {
         // A8: NaN Safety - use safeDivide/safeMultiply
-  const args.device;
+        const device = args.device;
         if (!device || typeof device._enableAdvancedLearnMode !== 'function') {
           this.log('[FLOW] Action: Device not ready or missing enhanced learn method');
           return false;
@@ -177,9 +177,9 @@ class IrBlasterDriver extends ZigBeeDriver {
         card.registerRunListener(async (args) => {
           const dev = args.device;
           if (!dev) return false;
-          const b = args.brand?.name || args.brand;
-          const t = args.device_type?.name || args.device_type;
-          const f = args.function_name?.name || args.function_name;
+          const b = args.brand?.name || args.brand ;
+          const t = args.device_type?.name || args.device_type ;
+          const f = args.function_name?.name || args.function_name ;
           const c = IRCodeLibrary.getCode(b, t, f);
           if (!c?.code) { this.log('[IRDB] No code:', b, t, f); return false; }
           await dev.sendIRCode(c.code);
@@ -202,7 +202,7 @@ class IrBlasterDriver extends ZigBeeDriver {
       slc.registerRunListener(async (args) => {
         const d = args.device;
         if (!d || !d._learnedCodes) return false;
-        const n = args.code_name?.name || args.code_name;
+        const n = args.code_name?.name || args.code_name ;
         const c = d._learnedCodes[n];
         if (!c) { this.log('[FLOW] Code not found:', n); return false; }
         await d.sendIRCode(c);
@@ -225,7 +225,7 @@ class IrBlasterDriver extends ZigBeeDriver {
       dc.registerRunListener(async (args) => {
         const d = args.device;
         if (!d || typeof d.deleteStoredCode !== 'function') return false;
-        const n = args.code_name?.name || args.code_name;
+        const n = args.code_name?.name || args.code_name ;
         await d.deleteStoredCode(n);
         return true;
       });
@@ -403,5 +403,6 @@ class IrBlasterDriver extends ZigBeeDriver {
 }
 
 module.exports = IrBlasterDriver;
+
 
 

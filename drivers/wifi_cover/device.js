@@ -19,12 +19,12 @@ class WiFiCoverDevice extends TuyaLocalDevice {
         } },
       '2': { capability: 'windowcoverings_set', writable: true,
         transform: (v) => safeParse(v, 100),
-        reverseTransform: (v) =>Math.round(safeMultiply(v) },)
+        reverseTransform: (v) =>Math.round(safeMultiply(v))},)
       '3': { capability: 'windowcoverings_set',
         transform: (v) => safeParse(v, 100) },
-      '5': { capability: null },
-      '7': { capability: null },
-      '12': { capability: null },
+      '5': { capability },
+      '7': { capability },
+      '12': { capability },
     };
   }
 
@@ -40,3 +40,4 @@ class WiFiCoverDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiCoverDevice;
+

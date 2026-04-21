@@ -83,18 +83,18 @@ class SmartLCDThermostatDevice extends TuyaZigbeeDevice {
     };
 
     this.registerCapabilityListener('target_temperature', async (value) => {
-      this._markAppCommand?.();
+      this._markAppCommand?.() ;
       if (this.tuyaEF00Manager) {
         await this.tuyaEF00Manager.sendTuyaDP(2, 2,Math.round(safeMultiply(value)));
       }
     });
 
     this.registerCapabilityListener('thermostat_mode', async (value) => {
-      this._markAppCommand?.();
+      this._markAppCommand?.() ;
       if 
 
       (this.tuyaEF00Manager) {
-        await this.tuyaEF00Manager.sendTuyaDP(1, 4, MODE_MAP_REV[value] ?? 0);
+        await this.tuyaEF00Manager.sendTuyaDP(1, 4, MODE_MAP_REV[value] ?? 0) ;
       }
     });
 
@@ -113,7 +113,7 @@ class SmartLCDThermostatDevice extends TuyaZigbeeDevice {
   async _tuyaTimeSyncFallback() {
     try {
       const node = this.zclNode || this._zclNode;
-      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya;
+      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya ;
       if (!tuyaCluster) return;
 
       const now = new Date();
@@ -144,5 +144,6 @@ class SmartLCDThermostatDevice extends TuyaZigbeeDevice {
 
 }
 module.exports = SmartLCDThermostatDevice;
+
 
 

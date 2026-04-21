@@ -303,7 +303,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         if (!args.device) return false;
         
         try {
-          const update = await this.otaManager?.checkUpdate(args.device);
+          const update = await this.otaManager?.checkUpdate(args.device) ;
           if (update?.available) {
             await this.homey.notifications.createNotification({
               excerpt: `OTA Update found for ${args.device.getName()} (v${update.newVersion}). Use a Tuya hub or Z2M to flash it safely.`
@@ -336,7 +336,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
     // Log capability stats
     try {
-      const stats = this.capabilityManager?.getStats() || {};
+      const stats = this.capabilityManager?.getStats() || {} ;
       this.log(` Capabilities managed: ${stats.created || 0}`);
     } catch (err) { /* non-critical */ }
 
@@ -377,9 +377,9 @@ class UniversalTuyaZigbeeApp extends Homey.App {
    */
   async markPhantomDevice(device) {
     try {
-      const deviceData = device?.getData?.();
-      const deviceName = device?.getName?.() || 'Unknown';
-      const subDeviceId = deviceData?.subDeviceId;
+      const deviceData = device?.getData?.() ;
+      const deviceName = device?.getName?.() || 'Unknown' ;
+      const subDeviceId = deviceData?.subDeviceId ;
 
       this.error(`[PHANTOM]  Phantom device detected: "${deviceName}" (subDeviceId: ${subDeviceId})`);
       this.error('[PHANTOM]  SDK3 cannot delete devices programmatically!');
@@ -461,7 +461,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
         for (const device of devices) {
           try {
-            const data = device.getData?.() || {};
+            const data = device.getData?.() || {} ;
             const hasSubDeviceId = data.subDeviceId !== undefined;
             const isNoSubDeviceDriver = noSubDeviceDrivers.some(d => driverId.includes(d));
 
@@ -907,6 +907,22 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     if (this.developerDebugMode) {
       this.log('[DEBUG]', ...args);
     }
+  }
+
+  async onUninit() {
+    this.log('Universal Tuya Zigbee App is de-initializing...');
+    
+    // Stop Tuya UDP Discovery
+    if (this._tuyaUDPDiscovery) {
+      try {
+        await this._tuyaUDPDiscovery.stop();
+        this.log(' Tuya WiFi UDP Discovery stopped');
+      } catch (err) {
+        this.error(' Error stopping Tuya UDP Discovery:', err.message);
+      }
+    }
+
+    this.log(' Universal Tuya Zigbee App has been de-initialized');
   }
 
 }

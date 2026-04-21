@@ -25,14 +25,14 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
   get dpMappings() {
     return {
       1: { capability: 'alarm_motion' },
-      2: { capability: null, setting: 'radar_sensitivity' },
-      3: { capability: null, setting: 'minimum_range', divisor: 100 },
-      4: { capability: null, setting: 'maximum_range', divisor: 100 },
+      2: { capability, setting: 'radar_sensitivity' },
+      3: { capability, setting: 'minimum_range', divisor: 100 },
+      4: { capability, setting: 'maximum_range', divisor: 100 },
       9: { capability: 'measure_luminance.distance', divisor: 100 },
       101: { capability: 'onoff' }, // Relay state
-      102: { capability: null, setting: 'fading_time' },
+      102: { capability, setting: 'fading_time' },
       104: { capability: 'measure_luminance' },
-      105: { capability: null, setting: 'indicator_mode' },
+      105: { capability, setting: 'indicator_mode' },
     };
   }
 
@@ -46,7 +46,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
     // Register onoff listener for relay control
     this.registerCapabilityListener('onoff', async (value) => {
       this.log(`[CEILING] Relay control: ${value}`);
-      const tuya = zclNode.endpoints[1]?.clusters?.tuya;
+      const tuya = zclNode.endpoints[1]?.clusters?.tuya ;
       if (tuya?.datapoint) {
           await tuya.datapoint({ dp: 101, value: value ? 1 : 0, type: 'bool' });
       }
@@ -62,3 +62,4 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = CeilingPresenceSensorDevice;
+

@@ -95,7 +95,7 @@ class HVACDehumidifierDevice extends UnifiedThermostatBase {
   async _tuyaTimeSyncFallback() {
     try {
       const node = this.zclNode || this._zclNode;
-      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya;
+      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya ;
       if (!tuyaCluster) return;
 
       const now = new Date();
@@ -126,3 +126,4 @@ class HVACDehumidifierDevice extends UnifiedThermostatBase {
 
 }
 module.exports = HVACDehumidifierDevice;
+

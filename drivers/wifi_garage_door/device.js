@@ -8,9 +8,9 @@ class WiFiGarageDoorDevice extends TuyaLocalDevice {
         transform: (v) => !v,
         reverseTransform: (v) => !v },
       '2':  { capability: 'alarm_contact', transform: (v) => !!v },
-      '3':  { capability: null },
-      '11': { capability: null },
-      '12': { capability: null },
+      '3':  { capability },
+      '11': { capability },
+      '12': { capability },
     };
   }
 

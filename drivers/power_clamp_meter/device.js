@@ -64,7 +64,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     // v5.7.9: Cache manufacturer from zclNode for profile detection
     this._cachedMfr = zclNode?.manufacturerName ||
                       this.getSetting('zb_manufacturer_name') ||
-                      this.getStoreValue('manufacturerName') || '';
+                      this.getStoreValue('manufacturerName') || '' ;
 
     await this._setupTuyaDP(zclNode);
     await this._setupElectricalMeasurement(zclNode);
@@ -77,7 +77,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
+    const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820] ;
     if (emCluster) {
       this.log('[EM] Electrical Measurement cluster available');
 
@@ -99,7 +99,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
+    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184] ;
     if (!tuyaCluster) return;
 
     this.log('[TUYA] DP cluster found');
@@ -119,7 +119,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       
       // Parse based on Tuya datatype
       let value;
-      const buf = Buffer.isBuffer(data) ? data : (data.data ? Buffer.from(data.data) : null);
+      const buf = Buffer.isBuffer(data) ? data : (data.data ? Buffer.from(data.data)) : null;
       
       if (buf && buf.length > 0) {
         switch (datatype) {
@@ -439,3 +439,4 @@ class PowerClampMeterDevice extends ZigBeeDevice {
 }
 
 module.exports = PowerClampMeterDevice;
+

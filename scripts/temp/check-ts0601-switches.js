@@ -13,7 +13,7 @@ for (const sw of switches) {
     const compose = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
     
     // Check if it handles TS0601
-    const hasTS0601 = compose.zigbee?.productId?.includes('TS0601');
+    const hasTS0601 = compose.zigbee?.productId?.includes('TS0601') ;
     if (!hasTS0601) continue;
     
     console.log('\n' + sw + ':');
