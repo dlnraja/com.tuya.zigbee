@@ -52,6 +52,8 @@ jobs:
         run: |
           node scripts/automation/fix-fingerprint-conflicts.js
           node scripts/remediation/emergency-repair-hardener-corruption.js
+          node scripts/maintenance/STRIP_XLARGE_IMAGES.js
+          node scripts/shadow_sanitizer.js
           node scripts/maintenance/zero-defect-architect-audit.js
 
 

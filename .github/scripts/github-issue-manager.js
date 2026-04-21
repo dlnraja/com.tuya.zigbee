@@ -27,8 +27,9 @@ const TAG='<!-- tuya-issue-manager -->';
 const VERIFY_TAG='<!-- awaiting-verification -->';
 const VERIFY_LABEL='awaiting-verification';
 const VERIFY_DAYS=14;
-const REPO_OWNER=process.env.GITHUB_REPOSITORY_OWNER||'dlnraja';
-const OWNER_USERS=new Set([REPO_OWNER,'dlnraja','github-actions','github-actions[bot]','dependabot','dependabot[bot]','tuya-triage-bot','google-labs-jules','snyk-bot','renovate-bot']);
+const REPO_OWNER=(process.env.GITHUB_REPOSITORY_OWNER||'dlnraja').toLowerCase();
+const OWNER_USERS=new Set([REPO_OWNER,'dlnraja','github-actions','github-actions[bot]','dependabot','dependabot[bot]','tuya-triage-bot','google-labs-jules','snyk-bot','renovate-bot'].map(u=>u.toLowerCase()));
+const isOwner = (user) => user && OWNER_USERS.has(user.toLowerCase());
 const{fetchWithRetry}=require('./retry-helper');
 const{extractFP:_vFP,extractFPWithBrands:_vFPB,extractPID:_vPID,isValidTuyaFP,isConcatenatedFP}=require('./fp-validator');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -442,8 +443,8 @@ async function staleSweep(repo,items,isPR,state,report){
     if(sMfrs.length&&sPids.length){allSupp=sMfrs.every(m=>sPids.some(p=>resolveFingerprint(m,p)))}
     else if(allFPs.length){allSupp=allFPs.every(fp=>findAllDrivers(fp).length>0)}
 
-    const issueAuthor = item.user?.login || '';
-    const isAuthorOwner = OWNER_USERS.has(issueAuthor);
+    const issueAuthor = (item.user?.login || '').toLowerCase();
+    const isAuthorOwner = isOwner(issueAuthor);
 
     // Check if we already commented
     const comments=await ghGet('/repos/'+repo+'/issues/'+item.number+'/comments?per_page=10');
@@ -456,7 +457,7 @@ async function staleSweep(repo,items,isPR,state,report){
     let userConfirmed = false;
     if(comments&&comments.length){
       // Look for a comment from a non-owner that confirms it works
-      const userComments = comments.filter(c => !OWNER_USERS.has(c.user?.login));
+      const userComments = comments.filter(c => !isOwner(c.user?.login));
       if(userComments.length) {
         const lastUserComment = (userComments[userComments.length-1].body||'').toLowerCase();
         if(lastUserComment.includes('works')||lastUserComment.includes('working')||lastUserComment.includes('confirmed')||lastUserComment.includes('fixed')||lastUserComment.includes('perfect')) {
@@ -474,8 +475,8 @@ async function staleSweep(repo,items,isPR,state,report){
       const hasVerifyLabel=item.labels&&item.labels.some(l=>(l.name||l)==='awaiting-verification');
       if (allSupp || hasVerifyLabel) {
         shouldClose=true; reason='Auto-closed owner/bot issue after processing';
-      } else if (age >= 7) {
-        shouldClose=true; reason='Auto-closed old owner/bot task';
+      } else if (age >= 1) {
+        shouldClose=true; reason='Auto-closed old owner/bot task (Daily hygiene)';
       }
     } else {
       // It's a user issue. Wait for confirmation.

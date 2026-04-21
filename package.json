@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "7.4.8",
+  "version": "7.4.9",
   "description": "Universal Tuya Zigbee App",
   "main": "app.js",
   "scripts": {
@@ -32,6 +32,7 @@
     "pipeline": "node scripts/ULTIMATE_CI_CD_PIPELINE.js",
     "audit": "node scripts/maintenance/rule-21-linter.js",
     "clean": "echo \"cleaning...\"",
+    "build:lean": "node scripts/maintenance/STRIP_XLARGE_IMAGES.js && npx homey app build",
     "sync": "echo \"Sync complete\"",
     "images": "echo \"images processing\"",
     "images:contextual": "echo \"image contextualizing\"",
