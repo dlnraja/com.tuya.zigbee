@@ -75,7 +75,7 @@ async function main() {
 
       // B. Inheritance Audit
       const manifest = JSON.parse(fs.readFileSync(path.join(DRIVERS_DIR, d, 'driver.compose.json'), 'utf8'));
-      const isTuya = (manifest.zigbee?.manufacturerName || []).some(m => m.startsWith('_T') || m.includes('Tuya'));
+      const isTuya = (manifest.zigbee?.manufacturerName || []).some(m => m.startsWith('_T') || m.includes('Tuya')) ;
       
       if (isTuya && !/BaseHybridDevice|HybridSensorBase|HybridSwitchBase|HybridPlugBase|HybridCoverBase|HybridThermostatBase|AutoAdaptiveDevice/.test(code)) {
         console.warn(`  [ALERT] ${d}: Tuya device missing Hybrid Base inheritance. Potential stability risk.`);
@@ -109,7 +109,7 @@ async function main() {
     console.log(`Triage ${protocolPrefix} ${driverId}...`);
 
     try {
-      const endpoints = manifest.zigbee?.endpoints || {};
+      const endpoints = manifest.zigbee?.endpoints || {} ;
       for (const epId in endpoints) {
         const clusters = endpoints[epId].clusters || [];
         
@@ -121,7 +121,7 @@ async function main() {
 
         // Radar/mWave Check
         if (clusters.includes(CLUSTERS.TUYA_EF00) && driverId.includes('motion') && !driverId.includes('radar')) {
-           const mfrs = manifest.zigbee?.manufacturerName || [];
+           const mfrs = manifest.zigbee?.manufacturerName || [] ;
            if (mfrs.some(m => /_TZE20[04]/.test(m))) {
               console.log(`  [INFO] ${driverId}: Multi-gang radar detected in motion driver. Recommendation: Upgrade to HybridSensorBase.`);
            }

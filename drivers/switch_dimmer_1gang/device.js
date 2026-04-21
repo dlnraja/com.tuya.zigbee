@@ -24,7 +24,7 @@ class SwitchDimmer1GangDevice extends TuyaSpecificClusterDevice {
     this.registerCapabilityListener('dim', async (v) => {
       this._mark(); 
       // Brightness range 10-1000 map (v=0..1)
-      const tuyaVal = Math.round(safeMultiply(10 + safeMultiply(v), 1));
+      const tuyaVal = Math.round(safeMultiply(10 + safeMultiply(v)), 1));
       await this.sendTuyaCommand(DP.brightness, tuyaVal, 'value');
     });
 
@@ -41,7 +41,7 @@ class SwitchDimmer1GangDevice extends TuyaSpecificClusterDevice {
   handleTuyaDataReport(data, isReport = false) {
     if (!data || data.dp == null) return;
     const phys = isReport && !this._appPending;
-    const v = data.data ?? data.value;
+    const v = data.data ?? data.value ;
 
     if (data.dp === DP.state) {
       const s = Boolean(v);
@@ -50,7 +50,7 @@ class SwitchDimmer1GangDevice extends TuyaSpecificClusterDevice {
       this.setCapabilityValue('onoff', s).catch(() => {});
       if (phys) {
         const id = s ? 'switch_dimmer_1gang_turned_on' : 'switch_dimmer_1gang_turned_off';
-        this._getFlowCard(id)?.trigger(this, {}, {}).catch(this.error || console.error);
+        this._getFlowCard(id)?.trigger(this, {}, {}).catch(this.error || console.error) ;
       }
     } else if (data.dp === DP.brightness) {
       const raw = typeof v === 'number' ? v : parseInt(v);
@@ -82,8 +82,10 @@ class SwitchDimmer1GangDevice extends TuyaSpecificClusterDevice {
 
   onDeleted() { 
     clearTimeout(this._appTimeout); 
-    super.onDeleted?.(); 
+    super.onDeleted?.() ; 
   }
 }
 
 module.exports = SwitchDimmer1GangDevice;
+
+

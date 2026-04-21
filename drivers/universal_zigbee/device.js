@@ -78,7 +78,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
 
     // G. IAS Zone (0x0500) -> alarm_contact / alarm_motion/alarm_water
     // Hybrid logic: determine capability from device class or clusters
-    const iasCluster = this.zclNode.endpoints?.[1]?.clusters?.iasZone;
+    const iasCluster = this.zclNode.endpoints?.[1]?.clusters?.iasZone ;
     if (iasCluster) {
       const cap = this.hasCapability('alarm_water') ? 'alarm_water' : 
                   (this.hasCapability('alarm_contact') ? 'alarm_contact' : 'alarm_motion');
@@ -124,3 +124,4 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
 }
 
 module.exports = UniversalZigbeeDeviceSub;
+

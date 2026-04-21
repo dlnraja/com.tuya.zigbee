@@ -32,17 +32,17 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
     this._lastPressTime = 0;
     this._lastPressType = null;
 
-    const ep1 = zclNode?.endpoints?.[1];
+    const ep1 = zclNode?.endpoints?.[1] ;
     if (!ep1) {
       this.log('[KNOB] No endpoint 1');
       return;
     }
 
     // v5.12.12: Scenes cluster for press types (TS004F: 0=single, 1=double, 2=long)
-    const scenes = ep1.clusters?.scenes || ep1.clusters?.[5];
+    const scenes = ep1.clusters?.scenes || ep1.clusters?.[5] ;
     if (scenes?.on) {
       const handleScene = (p) => {
-        const id = p?.sceneId ?? p?.sceneid ?? p?.scene ?? 0;
+        const id = p?.sceneId ?? p?.sceneid ?? p?.scene ?? 0 ;
         this._triggerKnobPress(resolvePressType(id, 'KNOB-SCENE'));
       };
       scenes.on('recall', handleScene);
@@ -51,16 +51,16 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
     }
 
     // OnOff cluster  fallback single press (skip if Scenes already fired)
-    const onOff = ep1.clusters?.onOff || ep1.clusters?.[6];
+    const onOff = ep1.clusters?.onOff || ep1.clusters?.[6] ;
     if (onOff?.on) {
-      const handlePress = () => this._triggerKnobPress('single');
+      const handlePress = () => this._triggerKnobPress('single') ;
       onOff.on('commandToggle', handlePress);
       onOff.on('commandOn', handlePress);
       onOff.on('commandOff', handlePress);
     }
 
     // Listen for rotation via levelControl cluster
-    const level = ep1.clusters?.levelControl || ep1.clusters?.[8];
+    const level = ep1.clusters?.levelControl || ep1.clusters?.[8] ;
     if (level?.on) {
       level.on('commandMoveToLevel', ({ level: lvl }) => {
         const dim = Math.max(0, Math.min(1, safeParse(lvl, 254)));
@@ -86,14 +86,14 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
       this._getFlowCard('smart_knob_rotated')?.trigger(this, { direction, level: pct }, {}).catch(() => {})
       this._getFlowCard('smart_knob_level_changed')?.trigger(this, {}, {}).catch(this.error || console.error)
         } catch (e) { /* card missing */ }
-      });
+      }) ;
     }
 
     // Battery via power configuration cluster
-    const power = ep1.clusters?.powerConfiguration || ep1.clusters?.[1];
+    const power = ep1.clusters?.powerConfiguration || ep1.clusters?.[1] ;
     if (power?.on) {
       power.on('attr.batteryPercentageRemaining', (val) => {
-        const pct = Math.min(100, Math.round(safeParse(val)));
+        const pct = Math.min(100, Math.round(safeParse(val))) ;
         this.setCapabilityValue('measure_battery', pct).catch(() => {});
       });
     }
@@ -118,7 +118,7 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
 
 
   async onDeleted() {
-    this.log('Device deleted, cleaning up');
+    this.log('Device deleted, cleaning up') ;
   }
 
   /**
@@ -134,4 +134,5 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
   }
 }
 module.exports = SmartKnobDevice;
+
 

@@ -27,7 +27,7 @@ class HumidifierDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
+    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184] ;
     if (!tuyaCluster) return;
 
     this.log('[TUYA] DP cluster found');
@@ -48,8 +48,8 @@ class HumidifierDevice extends ZigBeeDevice {
       });
     }
 
-    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value));
-    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value));
+    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value)) ;
+    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value)) ;
     tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
   }
 
@@ -92,3 +92,4 @@ class HumidifierDevice extends ZigBeeDevice {
 }
 
 module.exports = HumidifierDevice;
+

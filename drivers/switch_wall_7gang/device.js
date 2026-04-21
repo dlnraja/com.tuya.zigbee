@@ -24,7 +24,7 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
   get isZclOnlyDevice() {
     const mfr = this.getSetting?.('zb_manufacturer_name') ||
-                this.getStoreValue?.('manufacturerName') || '';
+                this.getStoreValue?.('manufacturerName') || '' ;
     return includesCI(ZCL_ONLY_MANUFACTURERS_7G, mfr);
   }
 
@@ -38,8 +38,8 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       await this._initZclOnlyMode(zclNode);
       return;
     }
-    await this.initPhysicalButtonDetection?.(zclNode);
-    await this.initVirtualButtons?.();
+    await this.initPhysicalButtonDetection?.(zclNode) ;
+    await this.initVirtualButtons?.() ;
     this.log('[SWITCH-7G] v5.5.922  Ready');
   }
 
@@ -56,8 +56,8 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     }
 
     const getOnOffCluster = (epNum) => {
-      const ep = this._zclNode?.endpoints?.[epNum];
-      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+      const ep = this._zclNode?.endpoints?.[epNum] ;
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6] ;
     };
 
     // Register capability listeners FIRST
@@ -112,18 +112,19 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         }
       });
     }
-    await this.initVirtualButtons?.();
+    await this.initVirtualButtons?.() ;
     this.log('[SWITCH-7G]  ZCL-only mode ready (packetninja v990)');
   }
 
   onDeleted() {
     if (this._zclState?.timeout) {
-      for (let i = 1; i <= 7; i++) {
+      for (let i = 1 ; i <= 7; i++) {
         if (this._zclState.timeout[i]) clearTimeout(this._zclState.timeout[i]);
       }
     }
-    super.onDeleted?.();
+    super.onDeleted?.() ;
   }
 }
 module.exports = Switch7GangDevice;
+
 

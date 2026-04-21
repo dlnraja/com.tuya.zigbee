@@ -6,11 +6,11 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER, Cluster, ZCLDataTypes } = require('zigbee-clusters');
 
 // v5.8.52: Import Zosung clusters (registered at app startup in registerClusters.js)
-const ZosungIRControlCluster = require('../../lib/clusters / ZosungIRControlCluster');
-const ZosungIRTransmitCluster = require('../../lib/clusters / ZosungIRTransmitCluster');
+const ZosungIRControlCluster = require('../../lib/clusters/ZosungIRControlCluster');
+const ZosungIRTransmitCluster = require('../../lib/clusters/ZosungIRTransmitCluster');
 // v5.9.14: BoundClusters to receive device-to-coordinator commands
-const ZosungIRTransmitBoundCluster = require('../../lib/clusters / ZosungIRTransmitBoundCluster');
-const ZosungIRControlBoundCluster = require('../../lib/clusters / ZosungIRControlBoundCluster');
+const ZosungIRTransmitBoundCluster = require('../../lib/clusters/ZosungIRTransmitBoundCluster');
+const ZosungIRControlBoundCluster = require('../../lib/clusters/ZosungIRControlBoundCluster');
 const irBlasterInit = require('./irBlasterInit');
 
 // IR Blaster cluster IDs
@@ -143,7 +143,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
     // Setup OnOff cluster for learn mode attribute reports (if available)
     if (zclNode.endpoints[1]?.clusters?.onOff) {
-      this.log('Setting up OnOff cluster for learn mode...');
+      this.log('Setting up OnOff cluster for learn mode...') ;
 
       zclNode.endpoints[1].clusters.onOff.on('attr.onOff', (value) => {
         // v5.11.16: FIX (FrankP #1443) - Guard against device sending onOff=false
@@ -347,7 +347,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
     const zclNode = this._zclNode;
     if (!zclNode?.endpoints?.[1]) {
-      throw new Error('Device not ready');
+      throw new Error('Device not ready') ;
     }
 
     try {
@@ -381,7 +381,7 @@ class IrBlasterDevice extends ZigBeeDevice {
           this.log('Advanced IR learning started via ZosungIRControl (Z2M protocol)');
         } catch (clusterErr) {
           this.log('ZosungIRControl failed, using fallback:', clusterErr.message);
-          await zclNode.endpoints[1].clusters.onOff?.setOn();
+          await zclNode.endpoints[1].clusters.onOff?.setOn() ;
         }
       } else {
         // v5.8.1: Try Tuya DP for learn mode if no Zosung cluster
@@ -393,11 +393,11 @@ class IrBlasterDevice extends ZigBeeDevice {
             this.log('IR learn started via Tuya DP1');
           } catch (tuyaErr) {
             this.log('Tuya DP1 failed, trying OnOff:', tuyaErr.message);
-            await zclNode.endpoints[1].clusters.onOff?.setOn();
+            await zclNode.endpoints[1].clusters.onOff?.setOn() ;
             this.log('IR learn started via OnOff fallback');
           }
         } else {
-          await zclNode.endpoints[1].clusters.onOff?.setOn();
+          await zclNode.endpoints[1].clusters.onOff?.setOn() ;
           this.log('IR learn started via OnOff fallback');
         }
       }
@@ -446,7 +446,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
     const zclNode = this._zclNode;
     if (!zclNode?.endpoints?.[1]) {
-      throw new Error('Device not ready');
+      throw new Error('Device not ready') ;
     }
 
     try {
@@ -461,12 +461,12 @@ class IrBlasterDevice extends ZigBeeDevice {
         } catch (clusterErr) {
           this.log('ZosungIRControl.IRLearn failed:', clusterErr.message);
           // Fallback to OnOff
-          await zclNode.endpoints[1].clusters.onOff?.setOn();
+          await zclNode.endpoints[1].clusters.onOff?.setOn() ;
         }
       } else {
         // Fallback: use OnOff cluster
         this.log('ZosungIRControl cluster not available, using OnOff fallback');
-        await zclNode.endpoints[1].clusters.onOff?.setOn();
+        await zclNode.endpoints[1].clusters.onOff?.setOn() ;
       }
 
       this.setCapabilityValue('onoff', true).catch(() => { });
@@ -492,7 +492,7 @@ class IrBlasterDevice extends ZigBeeDevice {
       },safeMultiply(duration, 1000));
 
       // Trigger flow card
-      this.driver.learningStartedTrigger?.trigger(this, {}, {}).catch(() => { });
+      this.driver.learningStartedTrigger?.trigger(this, {}, {}).catch(() => { }) ;
 
     } catch (err) {
       this.error('Failed to enable learn mode:', err);
@@ -508,7 +508,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
     const zclNode = this._zclNode;
     if (!zclNode?.endpoints?.[1]) {
-      return;
+      return ;
     }
 
     try {
@@ -535,11 +535,11 @@ class IrBlasterDevice extends ZigBeeDevice {
           this.log('IR stop learn command sent via ZosungIRControl cluster');
         } catch (clusterErr) {
           this.log('ZosungIRControl.IRLearn stop failed:', clusterErr.message);
-          await zclNode.endpoints[1].clusters.onOff?.setOff();
+          await zclNode.endpoints[1].clusters.onOff?.setOff() ;
         }
       } else {
         // Fallback: use OnOff cluster
-        await zclNode.endpoints[1].clusters.onOff?.setOff();
+        await zclNode.endpoints[1].clusters.onOff?.setOff() ;
       }
 
       this.setCapabilityValue('onoff', false).catch(() => { });
@@ -573,7 +573,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
     const zclNode = this._zclNode;
     if (!zclNode?.endpoints?.[1]) {
-      throw new Error('Device not ready');
+      throw new Error('Device not ready') ;
     }
 
     try {
@@ -691,7 +691,7 @@ class IrBlasterDevice extends ZigBeeDevice {
   async readLastLearnedCode() {
     const zclNode = this._zclNode;
     if (!zclNode?.endpoints?.[1]) {
-      return null;
+      return null ;
     }
 
     try {
@@ -699,7 +699,7 @@ class IrBlasterDevice extends ZigBeeDevice {
       if (irControlCluster) {
         const result = await irControlCluster.readAttributes(['lastLearnedIRCode']);
         if (result?.lastLearnedIRCode) {
-          this._lastLearnedCode = result.lastLearnedIRCode;
+          this._lastLearnedCode = result.lastLearnedIRCode ;
           this.log(`Read learned IR code: ${this._lastLearnedCode.substring(0, 50)}...`);
           return this._lastLearnedCode;
         }
@@ -833,7 +833,7 @@ class IrBlasterDevice extends ZigBeeDevice {
   _setupTransmitProtocol(cluster) {
     cluster.on('startTransmitAck', (data) => {
       this.log('Transmit ACK received:', data);
-      const ackSeq = data.seq ?? data.sequenceNumber;
+      const ackSeq = data.seq ?? data.sequenceNumber ;
       if (this._pendingIRSeq !== undefined && ackSeq !== undefined && ackSeq !== this._pendingIRSeq) {
         this.log(`[IR-TX] Syncing seq from ACK: ${this._pendingIRSeq} -> ${ackSeq}`);
         this._pendingIRSeq = ackSeq;
@@ -853,7 +853,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     // At this point all chunks are in _receiveBuffers  assemble as base64 + stop learning
     cluster.on('doneReceiving', async (data) => {
       this.log('[IR-RX] Code05 doneReceiving:', JSON.stringify(data));
-      const seq = data.seq ?? data.sequenceNumber;
+      const seq = data.seq ?? data.sequenceNumber ;
       await this._assembleAndFinishLearning(seq);
     });
 
@@ -866,8 +866,8 @@ class IrBlasterDevice extends ZigBeeDevice {
     // v5.9.14: Handle startTransmit from device (learning mode)  Z2M Code00
     cluster.on('startTransmit', async (data) => {
       this.log(' IR code transmission starting from device:', data);
-      const seq = data.seq ?? data.sequenceNumber;
-      const totalLength = data.length ?? data.totalLength ?? 0;
+      const seq = data.seq ?? data.sequenceNumber ;
+      const totalLength = data.length ?? data.totalLength ?? 0 ;
 
       // v5.12.0: Z2M-compatible pre-allocated buffer for chunk assembly
       this._receiveBuffers[seq] = {
@@ -890,7 +890,7 @@ class IrBlasterDevice extends ZigBeeDevice {
           unk3: data.unk3 ?? 0x01,
           cmd: data.cmd ?? 0x02,
           unk4: data.unk4 ?? 0x0000
-        });
+        }) ;
         this.log(' Sent Z2M startTransmitAck (Code01)');
       } catch (err) {
         this.log(' Failed to send startTransmitAck:', err.message);
@@ -927,9 +927,9 @@ class IrBlasterDevice extends ZigBeeDevice {
    * v5.5.362: Handle received code chunk during learning
    */
   async _handleReceivedCodeChunk(data) {
-    const seq = data.seq ?? data.sequenceNumber;
-    const position = data.position ?? 0;
-    let chunkData = data.msgpart ?? data.data;
+    const seq = data.seq ?? data.sequenceNumber ;
+    const position = data.position ?? 0 ;
+    let chunkData = data.msgpart ?? data.data ;
     let expectedCrc = data.msgpartcrc;
     if (expectedCrc === undefined && Buffer.isBuffer(chunkData) && chunkData.length > 1) {
       expectedCrc = chunkData[chunkData.length - 1];
@@ -1018,7 +1018,7 @@ class IrBlasterDevice extends ZigBeeDevice {
   // Handle Tuya IR datapoint
   // v5.8.1: Enhanced Tuya DP handling for IR blasters without Zosung clusters
   _handleTuyaIRDatapoint(data) {
-    this.log('[TUYA-IR] Datapoint received:', JSON.stringify({ dp: data.dp, type: data.datatype, len: data.data?.length }));
+    this.log('[TUYA-IR] Datapoint received:', JSON.stringify({ dp: data.dp, type: data.datatype, len: data.data?.length })) ;
 
     // DP 201: IR code received (learning result)
     if (data.dp === 201 && data.datatype === 3) {
@@ -1028,7 +1028,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
     // DP 202: Learning status (some devices)
     else if (data.dp === 202) {
-      const status = data.data.readUInt8?.(0) ?? data.data[0];
+      const status = data.data.readUInt8?.(0) ?? data.data[0] ;
       this.log(`[TUYA-IR] Learning status: ${status} (0=idle, 1=learning, 2=success, 3=timeout)`);
       if (status === 2 && this._learningState === 1) {
         this.log('[TUYA-IR]  Learning successful, waiting for code...');
@@ -1036,7 +1036,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
     // DP 1: Some IR blasters use DP1 for learn mode toggle
     else if (data.dp === 1) {
-      const learnOn = data.data.readUInt8?.(0) ?? data.data[0];
+      const learnOn = data.data.readUInt8?.(0) ?? data.data[0] ;
       this.log(`[TUYA-IR] Learn mode: ${learnOn ? 'ON' : 'OFF'}`);
       this._learningState = learnOn ? 1 : 0;
     }
@@ -1082,7 +1082,7 @@ class IrBlasterDevice extends ZigBeeDevice {
   // Set IR protocol
   async _setIRProtocol(protocol) {
     const zclNode = this._zclNode;
-    if (!zclNode?.endpoints?.[1]) return;
+    if (!zclNode?.endpoints?.[1]) return ;
 
     const irControlCluster = this._irControlCluster;
     this.log(`IR protocol hint: ${protocol} (IRProtocolSet disabled - struct incompatible)`);
@@ -1206,9 +1206,9 @@ class IrBlasterDevice extends ZigBeeDevice {
     if (!this._pendingIRMessage) return;
 
     // v5.9.14: Z2M-compatible field names
-    const seq = data.seq ?? data.sequenceNumber;
-    const position = data.position ?? 0;
-    const maxlen = data.maxlen ?? data.maxLength ?? 0x32;
+    const seq = data.seq ?? data.sequenceNumber ;
+    const position = data.position ?? 0 ;
+    const maxlen = data.maxlen ?? data.maxLength ?? 0x32 ;
 
     if (seq !== this._pendingIRSeq) {
       this.log(`[IR-TX] Seq mismatch: expected ${this._pendingIRSeq}, got ${seq} - syncing`);
@@ -1233,14 +1233,14 @@ class IrBlasterDevice extends ZigBeeDevice {
         });
       } catch (err) {
         this.error('Failed to send code data response:', err);
-        this._irTransmitReject?.(err);
+        this._irTransmitReject?.(err) ;
       }
     }
   }
 
   // v5.12.0: Handle Code04 from device (sending complete)  respond with Code05 per Z2M
   async _handleTransmitComplete(data) {
-    const seq = data.seq ?? data.sequenceNumber;
+    const seq = data.seq ?? data.sequenceNumber ;
     // Z2M: send Code05 (doneReceiving) back to device
     const cl = this._irTransmitCluster;
     if (cl) {
@@ -1248,7 +1248,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     }
     if (seq === this._pendingIRSeq) {
       this.log('[IR-TX]  IR transmission completed successfully');
-      this._irTransmitResolve?.();
+      this._irTransmitResolve?.() ;
     }
   }
 
@@ -1319,7 +1319,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
     // Set protocol/frequency if specified
     if (protocol || frequency) {
-      await this._setIRProtocol(protocol || analysis?.protocol || 'UNKNOWN');
+      await this._setIRProtocol(protocol || analysis?.protocol || 'UNKNOWN') ;
       if (frequency) {
         await this._setCarrierFrequency(frequency);
       }
@@ -1388,4 +1388,5 @@ class IrBlasterDevice extends ZigBeeDevice {
 }
 
 module.exports = IrBlasterDevice;
+
 

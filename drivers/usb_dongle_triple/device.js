@@ -83,7 +83,7 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
 
     onOff.readAttributes(['onOff']).then(data => {
       if (data?.onOff != null) {
-        this.log('[USB_TRIPLE] ' + capabilityId + ' initial=' + data.onOff);
+        this.log('[USB_TRIPLE] ' + capabilityId + ' initial=' + data.onOff) ;
         this.setCapabilityValue(capabilityId, !!data.onOff).catch(this.error);
       }
     }).catch(() => {});
@@ -95,22 +95,22 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    const ep1 = this.zclNode?.endpoints?.[1];
+    const ep1 = this.zclNode?.endpoints?.[1] ;
     try {
       if (changedKeys.includes('power_on_behavior')) {
         const map = { off: 0, on: 1, toggle: 3, previous: 2 };
-        const val = map[newSettings.power_on_behavior] ?? 2;
+        const val = map[newSettings.power_on_behavior] ?? 2 ;
         if (ep1?.clusters?.onOff) await ep1.clusters.onOff.writeAttributes({ moesStartUpOnOff: val });
       }
       if (changedKeys.includes('indicator_mode')) {
         const map = { off: 0, on_off: 1, inverted: 2 };
-        const val = map[newSettings.indicator_mode] ?? 1;
+        const val = map[newSettings.indicator_mode] ?? 1 ;
         if (ep1?.clusters?.onOff) await ep1.clusters.onOff.writeAttributes({ tuyaBacklightSwitch: val });
       }
       if (changedKeys.includes('switch_mode')) {
         const map = { toggle: 0, state: 1, momentary: 2 };
-        const val = map[newSettings.switch_mode] ?? 0;
-        const e001 = ep1?.clusters?.tuyaE001 || ep1?.clusters?.[0xE001] || ep1?.clusters?.[57345];
+        const val = map[newSettings.switch_mode] ?? 0 ;
+        const e001 = ep1?.clusters?.tuyaE001 || ep1?.clusters?.[0xE001] || ep1?.clusters?.[57345] ;
         if (e001) {
           await e001.writeAttributes({ switchMode: val });
           this.log('[USB_TRIPLE] Switch mode set to', newSettings.switch_mode, '(', val, ')');
@@ -144,9 +144,9 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
         rmsCurrent: { minInterval: 10, maxInterval: 300, minChange: 10 },
       }).catch(e => this.log('[USB_TRIPLE] electrical reporting failed:', e.message));
       electrical.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).then(d => {
-        if (d?.activePower != null && this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', safeParse(d.activePower, 10)).catch(this.error);
-        if (d?.rmsVoltage != null && this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', safeParse(d.rmsVoltage, 10)).catch(this.error);
-        if (d?.rmsCurrent != null && this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', safeParse(d.rmsCurrent, 1000)).catch(this.error);
+        if (d?.activePower != null && this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', safeParse(d.activePower, 10)).catch(this.error) ;
+        if (d?.rmsVoltage != null && this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', safeParse(d.rmsVoltage, 10)).catch(this.error) ;
+        if (d?.rmsCurrent != null && this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', safeParse(d.rmsCurrent, 1000)).catch(this.error) ;
       }).catch(() => {});
     }
 
@@ -158,7 +158,7 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
         currentSummationDelivered: { minInterval: 60, maxInterval: 3600, minChange: 1 }
       }).catch(e => this.log('[USB_TRIPLE] metering reporting failed:', e.message));
       metering.readAttributes(['currentSummationDelivered']).then(d => {
-        if (d?.currentSummationDelivered != null && this.hasCapability('meter_power')) this.setCapabilityValue('meter_power', safeParse(d.currentSummationDelivered, 1000)).catch(this.error);
+        if (d?.currentSummationDelivered != null && this.hasCapability('meter_power')) this.setCapabilityValue('meter_power', safeParse(d.currentSummationDelivered, 1000)).catch(this.error) ;
       }).catch(() => {});
     }
   }
@@ -170,3 +170,4 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
 }
 
 module.exports = UsbDongleTripleDevice;
+

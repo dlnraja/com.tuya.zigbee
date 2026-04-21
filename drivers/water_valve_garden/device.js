@@ -23,8 +23,8 @@ class WaterValveGardenDevice extends ZigBeeDevice {
 
     this.log('[VALVE-GARDEN] v5.9.21 init');
     ensureManufacturerSettings(this);
-    const ep = zclNode?.endpoints?.[1];
-    const onOff = ep?.clusters?.onOff;
+    const ep = zclNode?.endpoints?.[1] ;
+    const onOff = ep?.clusters?.onOff ;
     if (onOff) {
       onOff.on('attr.onOff', (v) => {
         this.log('[VALVE-GARDEN] onOff report: ' + v);
@@ -35,7 +35,7 @@ class WaterValveGardenDevice extends ZigBeeDevice {
       this.log('[VALVE-GARDEN] Set valve: ' + value);
       if (onOff) { await (value ? onOff.setOn() : onOff.setOff()); }
     });
-    const pwrCfg = ep?.clusters?.powerConfiguration;
+    const pwrCfg = ep?.clusters?.powerConfiguration ;
     if (pwrCfg) {
       pwrCfg.on('attr.batteryPercentageRemaining', (v) => {
         const pct = Math.min(100, Math.round(safeParse(v)));
@@ -64,3 +64,4 @@ class WaterValveGardenDevice extends ZigBeeDevice {
   }
 }
 module.exports = WaterValveGardenDevice;
+

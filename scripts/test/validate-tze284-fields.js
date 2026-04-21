@@ -16,7 +16,7 @@ const testCases = [
   { dp: 5, val: 2450, desc: 'Temperature (24.50Â°C)' },
   { dp: 112, val: 500, desc: 'Conductivity' },
   { dp: 15, val: 85, desc: 'Battery %' },
-  { dp: 3, val: null, desc: 'Null moisture' },
+  { dp: 3, val, desc: 'Null moisture' },
   { dp: 5, val: 'NaN', desc: 'String NaN temperature' },
   { dp: 15, val: undefined, desc: 'Undefined battery' }
 ];

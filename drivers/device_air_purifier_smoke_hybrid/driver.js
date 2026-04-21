@@ -177,9 +177,10 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
           manufacturerName: zclNode?.manufacturerName || '_TZE284_rccxox8p',
           productId: zclNode?.productId || 'TS0601'
         }
-      }];
+      }] ;
     }
   }
 }
 
 module.exports = SmartSmokeDetectorAdvancedDriver;
+

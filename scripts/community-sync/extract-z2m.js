@@ -34,9 +34,9 @@ const parseDevices = (src) => {
     // Extract manufacturerName entries
     const mfrMatches = [...block.matchAll(/manufacturerName:\s*['"](_TZ[A-Z0-9]{4}_[a-z0-9]+)['"]/g)];
     const modelIdMatches = [...block.matchAll(/modelID:\s*['"]([^'"]+)['"]/g)];
-    const model = block.match(modelRegex)?.[1];
-    const desc = block.match(descRegex)?.[1];
-    const vendor = block.match(vendorRegex)?.[1];
+    const model = block.match(modelRegex)?.[1] ;
+    const desc = block.match(descRegex)?.[1] ;
+    const vendor = block.match(vendorRegex)?.[1] ;
     
     for (let i = 0; i < mfrMatches.length; i++) {
       const mfr = mfrMatches[i][1];
@@ -59,7 +59,7 @@ const parseDevices = (src) => {
   
   for (const m of standaloneMatches) {
     if (!seenMfrs.has(m[0])) {
-      devices.push({ mfr: m[0], productId: null, source: 'Z2M' });
+      devices.push({ mfr: m[0], productId, source: 'Z2M' });
       seenMfrs.add(m[0]);
     }
   }

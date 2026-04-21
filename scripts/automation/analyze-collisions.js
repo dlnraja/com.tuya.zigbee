@@ -29,8 +29,8 @@ function main() {
     
     try {
       const data = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      const mfrs = data.zigbee?.manufacturerName || [];
-      const pids = data.zigbee?.productId || [];
+      const mfrs = data.zigbee?.manufacturerName || [] ;
+      const pids = data.zigbee?.productId || [] ;
       
       for (const mfr of mfrs) {
         for (const pid of pids) {

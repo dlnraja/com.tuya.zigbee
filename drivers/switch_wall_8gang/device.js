@@ -32,7 +32,7 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
   get isZclOnlyDevice() {
     const mfr = this.getSetting?.('zb_manufacturer_name') ||
-                this.getStoreValue?.('manufacturerName') || '';
+                this.getStoreValue?.('manufacturerName') || '' ;
     return includesCI(ZCL_ONLY_MANUFACTURERS_8G, mfr);
   }
 
@@ -51,8 +51,8 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       6: { capability: 'onoff.gang6', transform: (v) => v === 1 || v === true },
       101: { capability: 'onoff.gang7', transform: (v) => v === 1 || v === true },
       102: { capability: 'onoff.gang8', transform: (v) => v === 1 || v === true },
-      14: { capability: null, setting: 'power_on_behavior' },
-      15: { capability: null, setting: 'led_indicator' }
+      14: { capability, setting: 'power_on_behavior' },
+      15: { capability, setting: 'led_indicator' }
     };
   }
 
@@ -73,8 +73,8 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       await this._initZclOnlyMode(zclNode);
       return;
     }
-    await this.initPhysicalButtonDetection?.(zclNode);
-    await this.initVirtualButtons?.();
+    await this.initPhysicalButtonDetection?.(zclNode) ;
+    await this.initVirtualButtons?.() ;
     this.log('[SWITCH-8G] v5.5.922  Ready (DP 1-6 + DP 101/102)');
   }
 
@@ -91,8 +91,8 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     }
 
     const getOnOffCluster = (epNum) => {
-      const ep = this._zclNode?.endpoints?.[epNum];
-      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+      const ep = this._zclNode?.endpoints?.[epNum] ;
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6] ;
     };
 
     // Register capability listeners FIRST
@@ -147,18 +147,19 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         }
       });
     }
-    await this.initVirtualButtons?.();
+    await this.initVirtualButtons?.() ;
     this.log('[SWITCH-8G]  ZCL-only mode ready (packetninja v990)');
   }
 
   onDeleted() {
     if (this._zclState?.timeout) {
-      for (let i = 1; i <= 8; i++) {
+      for (let i = 1 ; i <= 8; i++) {
         if (this._zclState.timeout[i]) clearTimeout(this._zclState.timeout[i]);
       }
     }
-    super.onDeleted?.();
+    super.onDeleted?.() ;
   }
 }
 module.exports = Switch8GangDevice;
+
 

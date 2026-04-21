@@ -77,25 +77,25 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
     };
 
     this.registerCapabilityListener('onoff', async (value) => {
-      this._markAppCommand?.();
+      this._markAppCommand?.() ;
       if (this.tuyaEF00Manager) {
         await this.tuyaEF00Manager.sendTuyaDP(1, 1, value ? 1 : 0);
       }
     });
 
     this.registerCapabilityListener('target_temperature', async (value) => {
-      this._markAppCommand?.();
+      this._markAppCommand?.() ;
       if (this.tuyaEF00Manager) {
         await this.tuyaEF00Manager.sendTuyaDP(16, 2,Math.round(safeMultiply(value)));
       }
     });
 
     this.registerCapabilityListener('thermostat_mode', async (value) => {
-      this._markAppCommand?.();
+      this._markAppCommand?.() ;
       if 
 
       (this.tuyaEF00Manager) {
-        await this.tuyaEF00Manager.sendTuyaDP(2, 4, MODE_MAP_REV[value] ?? 0);
+        await this.tuyaEF00Manager.sendTuyaDP(2, 4, MODE_MAP_REV[value] ?? 0) ;
       }
     });
 
@@ -114,7 +114,7 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
   async _tuyaTimeSyncFallback() {
     try {
       const node = this.zclNode || this._zclNode;
-      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya;
+      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya ;
       if (!tuyaCluster) return;
 
       const now = new Date();
@@ -145,5 +145,6 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
 
 }
 module.exports = FloorHeatingThermostatDevice;
+
 
 

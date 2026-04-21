@@ -1,8 +1,6 @@
 'use strict';
-const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
-
-// A8: NaN Safety - use safeDivide/safeMultiply
-  require('../../lib/tuya-local/TuyaLocalDevice');
+const { safeMultiply, safeParse, safeDivide } = require('../../lib/utils/tuyaUtils.js');
+const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiLightDevice extends TuyaLocalDevice {
   get dpMappings() {
@@ -12,15 +10,15 @@ class WiFiLightDevice extends TuyaLocalDevice {
         transform: (v) => (v === 'white' ? 'temperature' : 'color'),
         reverseTransform: (v) => (v === 'temperature' ? 'white' : 'colour') },
       '22': { capability: 'dim', writable: true,
-        transform: (v) => Math.max(0, (v -safeParse(10), 990)),
-        reverseTransform: (v) =>Math.round(safeMultiply(v) + 10) },
+        transform: (v) => Math.max(0, safeDivide(v - 10, 990)),
+        reverseTransform: (v) => Math.round(safeMultiply(v, 990)) + 10 },
       '23': { capability: 'light_temperature', writable: true,
-        transform: (v) => safeParse(v, 1000),
-        reverseTransform: (v) =>Math.round(safeMultiply(v) },)
+        transform: (v) => safeDivide(v, 1000),
+        reverseTransform: (v) => Math.round(safeMultiply(v, 1000)) },
       '24': { capability: '_dp24_color_hsv', writable: true },
-      '25': { capability: null },
-      '26': { capability: null },
-      '32': { capability: null },
+      '25': { capability: '_dp25' },
+      '26': { capability: '_dp26' },
+      '32': { capability: '_dp32' },
     };
   }
 
@@ -37,9 +35,9 @@ class WiFiLightDevice extends TuyaLocalDevice {
   }
 
   async _sendColor() {
-    const h = Math.round(safeMultiply((this.getCapabilityValue('light_hue') || 0), 360));
-    const s = Math.round(safeMultiply((this.getCapabilityValue('light_saturation') || 1), 1000));
-    const v = Math.round(safeMultiply((this.getCapabilityValue('dim') || 1), 1000));
+    const h = Math.round(safeMultiply(this.getCapabilityValue('light_hue') || 0, 360));
+    const s = Math.round(safeMultiply(this.getCapabilityValue('light_saturation') || 1, 1000));
+    const v = Math.round(safeMultiply(this.getCapabilityValue('dim') || 1, 1000));
     const hsv = h.toString(16).padStart(4, '0') + s.toString(16).padStart(4, '0') + v.toString(16).padStart(4, '0');
     if (!this._client || !this._client.connected) throw new Error('Not connected');
     this.log('[WIFI-LIGHT] Set color HSV:', h, s, v, '->', hsv);
@@ -55,8 +53,8 @@ class WiFiLightDevice extends TuyaLocalDevice {
         const s = parseInt(hex.substring(4, 8), 16);
         const v = parseInt(hex.substring(8, 12), 16);
         if (h >= 0 && h <= 360 && s >= 0 && s <= 1000 && v >= 0 && v <= 1000) {
-          this.setCapabilityValue('light_hue', safeParse(h, 360)).catch(this.error);
-          this.setCapabilityValue('light_saturation', safeParse(s, 1000)).catch(this.error);
+          this.setCapabilityValue('light_hue', safeDivide(h, 360)).catch(this.error);
+          this.setCapabilityValue('light_saturation', safeDivide(s, 1000)).catch(this.error);
           this.log('[WIFI-LIGHT] DP24 color H=' + h + ' S=' + s + ' V=' + v);
         }
       } catch (e) { /* ignore malformed */ }
@@ -68,7 +66,6 @@ class WiFiLightDevice extends TuyaLocalDevice {
     await super.onInit();
     this.log('[WIFI-LIGHT] Ready (RGBCW with HSV color)');
   }
-
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');

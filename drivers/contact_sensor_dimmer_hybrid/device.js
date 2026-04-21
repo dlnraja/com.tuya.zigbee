@@ -83,7 +83,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
         }
       },
       // Battery state - DP 3 (enum: 0=normal, 1=low) - SDK3: alarm_battery obsolÃ¨te, utiliser internal
-      3: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
+      3: { capability, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
       // Battery alt - DP 4 (v5.5.793: Added validation)
       4: { 
         capability: 'measure_battery', 
@@ -110,11 +110,11 @@ class ContactSensorDevice extends UnifiedSensorBase {
       // v5.5.130: ADDITIONAL FEATURES from Zigbee2MQTT
       // 
       // Battery voltage (mV) - for diagnostic purposes
-      6: { capability: null, internal: 'battery_voltage' },
+      6: { capability, internal: 'battery_voltage' },
       // Sensitivity setting (some models)
-      9: { capability: null, setting: 'sensitivity' },
+      9: { capability, setting: 'sensitivity' },
       // Report interval (some models)
-      10: { capability: null, setting: 'report_interval' },
+      10: { capability, setting: 'report_interval' },
       // v5.11.102: Luminance (lux) for _TZE200_pay2byax ZG-102ZL variant
       101: { capability: 'measure_luminance', divisor: 1 },
     };
@@ -153,12 +153,12 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
     // v5.5.344: Initialize state tracking BEFORE parent init
     this._contactState = {
-      lastValue: null,           // Last confirmed value
+      lastValue,           // Last confirmed value
       lastChangeTime: 0,         // Time of last REAL change
       lastIASTime: 0,            // Time of last IAS message
       iasMessageCount: 0,        // Count of IAS messages for keep-alive detection
-      timer: null,               // Debounce timer
-      confirmedValue: null       // Value confirmed after debounce
+      timer,               // Debounce timer
+      confirmedValue       // Value confirmed after debounce
     };
 
     // v5.5.344: Check for invert setting and debounce time
@@ -172,7 +172,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
     this._lastBatteryReportTime = 0; // v5.5.793: Battery throttling
 
     // v5.5.344: Get manufacturer for problematic device detection
-    const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
+    const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '' ;
     this._isProblematicSensor = [
       '_TZ3000_bpkijo14',
       '_TZ3000_x8q36xwf',
@@ -292,7 +292,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       let finalValue = shouldInvert ? !value : value;
 
       const now = Date.now();
-      const state = this._contactState || { lastValue: null, lastChangeTime: 0, timer: null };
+      const state = this._contactState || { lastValue, lastChangeTime: 0, timer };
 
       // If same value as last confirmed, just update timestamp and skip
       if (state.confirmedValue === finalValue) {
@@ -408,7 +408,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
   async onUninit() {
     this.log('[CONTACT] onUninit - cleaning up...');
     if (this._contactState?.timer) {
-      this.homey.clearTimeout(this._contactState.timer);
+      this.homey.clearTimeout(this._contactState.timer) ;
       this._contactState.timer = null;
     }
     if (super.onUninit) {
@@ -422,10 +422,10 @@ class ContactSensorDevice extends UnifiedSensorBase {
    */
   async onDeleted() {
     if (this._contactState?.timer) {
-      this.homey.clearTimeout(this._contactState.timer);
+      this.homey.clearTimeout(this._contactState.timer) ;
       this._contactState.timer = null;
     }
-    await super.onDeleted?.();
+    await super.onDeleted?.() ;
   }
 
   /**
@@ -442,3 +442,4 @@ class ContactSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = ContactSensorDevice;
+

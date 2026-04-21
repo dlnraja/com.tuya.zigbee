@@ -6,18 +6,18 @@ class WiFiSirenDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':   { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '4':   { capability: null },
-      '5':   { capability: null },
+      '4':   { capability },
+      '5':   { capability },
       '6':   { capability: 'alarm_generic', transform: (v) => !!v },
-      '7':   { capability: null },
+      '7':   { capability },
       '9':   { capability: 'measure_temperature', divisor: 10 },
       '10':  { capability: 'measure_humidity' },
       '13':  { capability: 'measure_battery' },
-      '15':  { capability: null },
-      '101': { capability: null },
-      '102': { capability: null },
-      '103': { capability: null },
-      '104': { capability: null },
+      '15':  { capability },
+      '101': { capability },
+      '102': { capability },
+      '103': { capability },
+      '104': { capability },
     };
   }
 

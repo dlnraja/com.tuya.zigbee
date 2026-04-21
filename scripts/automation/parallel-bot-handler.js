@@ -51,7 +51,7 @@ async function runRepo(repo) {
       ...issues.map(i => ({...i, type: 'issue'})),
       ...prs.map(p => ({...p, type: 'pr'}))
     ].filter(item => {
-      const login = item.author?.login || '';
+      const login = item.author?.login || '' ;
       return BOTS.some(bot => login.toLowerCase().includes(bot.toLowerCase()));
     });
     

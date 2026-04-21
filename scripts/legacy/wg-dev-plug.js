@@ -7,7 +7,7 @@ class WiFiPlugDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1': { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '9': { capability: null },
+      '9': { capability },
       '17': { capability: 'meter_power', divisor: 100 },
       '18': { capability: 'measure_current', divisor: 1000 },
       '19': { capability: 'measure_power', divisor: 10 },

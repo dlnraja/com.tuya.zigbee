@@ -68,7 +68,7 @@ class DualCaseCompatibilityFixer {
       const driverData = JSON.parse(content);
 
       if (!driverData.zigbee?.manufacturerName) {
-        this.results.filesProcessed++;
+        this.results.filesProcessed++ ;
         return;
       }
 

@@ -50,7 +50,7 @@ function parseQuirks(src, filepath) {
   }
   // P2: manufacturer = / model =
   for (const m of src.matchAll(/manufacturer\s*[:=]\s*["']([^"']+)["']/g)) {
-    if (TUYA_MFR.test(m[1]) && !seen.has(m[1])) { seen.add(m[1]); fps.push({ mfr: m[1], productId: null, file: filepath, source: "zha" }); }
+    if (TUYA_MFR.test(m[1]) && !seen.has(m[1])) { seen.add(m[1]); fps.push({ mfr: m[1], productId, file: filepath, source: "zha" }); }
   }
   // P3: .applies_to("mfr", "pid")
   for (const m of src.matchAll(/\.applies_to\s*\(\s*["']([^"']+)["']\s*,\s*["']([^"']+)["']\s*\)/g)) {
@@ -58,7 +58,7 @@ function parseQuirks(src, filepath) {
   }
   // P4: standalone Tuya mfr strings
   for (const m of src.matchAll(/["'](_TZ[A-Z0-9]{1,5}_[a-zA-Z0-9]+|_TYST1[12]_[a-zA-Z0-9]+|TUYATEC[a-zA-Z0-9_-]+)["']/g)) {
-    if (!seen.has(m[1])) { seen.add(m[1]); fps.push({ mfr: m[1], productId: null, file: filepath, source: "zha" }); }
+    if (!seen.has(m[1])) { seen.add(m[1]); fps.push({ mfr: m[1], productId, file: filepath, source: "zha" }); }
   }
   return fps;
 }

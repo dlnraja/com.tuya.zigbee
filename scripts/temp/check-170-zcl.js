@@ -9,6 +9,6 @@ let content = fs.readFileSync(file, 'utf8');
 
 // Does Switch3GangDevice implement `requiresPerEndpointControl`?
 // Let's check what `isZclOnlyDevice` does in _setGangOnOff override.
-const isZclOverrides = content.includes('_setGangOnOff(') || content.includes('setGangOnOff(');
+const isZclOverrides = content.includes('_setGangOnOff(') || content.includes('setGangOnOff(') ;
 console.log('Overrides setGangOnOff in switch_3gang:', isZclOverrides);
 

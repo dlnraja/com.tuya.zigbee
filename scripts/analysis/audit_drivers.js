@@ -41,7 +41,7 @@ for (const driver of drivers) {
     }
     
     // Check 3: Minimal endpoints (only cluster 0)
-    const ep1Clusters = endpoints['1']?.clusters || [];
+    const ep1Clusters = endpoints['1']?.clusters || [] ;
     if (ep1Clusters.length <= 1 && ep1Clusters[0] === 0) {
       // This is OK for permissive matching
     }
@@ -121,8 +121,8 @@ console.log(''.repeat(70));
 const fallbackPath = path.join(driversDir, 'universal_fallback', 'driver.compose.json');
 if (fs.existsSync(fallbackPath)) {
   const fallback = JSON.parse(fs.readFileSync(fallbackPath, 'utf8'));
-  const mfr = fallback.zigbee?.manufacturerName || [];
-  const pids = fallback.zigbee?.productId || [];
+  const mfr = fallback.zigbee?.manufacturerName || [] ;
+  const pids = fallback.zigbee?.productId || [] ;
   console.log(` universal_fallback exists`);
   console.log(`   manufacturerName prefixes: ${mfr.length}`);
   console.log(`   productId patterns: ${pids.length}`);

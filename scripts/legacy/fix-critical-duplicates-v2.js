@@ -140,7 +140,7 @@ function removeFromWrongDrivers(mfr, correctDriver) {
     
     try {
       const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      const mfrs = compose.zigbee?.manufacturerName || [];
+      const mfrs = compose.zigbee?.manufacturerName || [] ;
       
       const idx = mfrs.findIndex(m => m.toLowerCase() === mfr.toLowerCase());
       if (idx !== -1) {
@@ -163,7 +163,7 @@ function removeFromDriver(driver, mfr) {
   
   try {
     const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-    const mfrs = compose.zigbee?.manufacturerName || [];
+    const mfrs = compose.zigbee?.manufacturerName || [] ;
     
     const idx = mfrs.findIndex(m => m.toLowerCase() === mfr.toLowerCase());
     if (idx !== -1) {
@@ -188,7 +188,7 @@ function ensureInDriver(driver, mfr) {
   
   try {
     const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-    const mfrs = compose.zigbee?.manufacturerName || [];
+    const mfrs = compose.zigbee?.manufacturerName || [] ;
     
     const exists = mfrs.some(m => m.toLowerCase() === mfr.toLowerCase());
     if (!exists) {

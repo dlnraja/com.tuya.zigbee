@@ -34,7 +34,7 @@ class SmartBreakerDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
+    const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820] ;
     if (emCluster) {
       if (this.hasCapability('measure_power')) {
         emCluster.on('attr.activePower', (value) => {
@@ -58,13 +58,13 @@ class SmartBreakerDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
+    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184] ;
     if (!tuyaCluster) return;
 
     this.log('[TUYA] DP cluster found');
 
-    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value));
-    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value));
+    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value)) ;
+    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value)) ;
     tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
   }
 
@@ -119,3 +119,4 @@ class SmartBreakerDevice extends ZigBeeDevice {
 }
 
 module.exports = SmartBreakerDevice;
+

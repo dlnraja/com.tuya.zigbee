@@ -56,7 +56,7 @@ class IPCClient {
             // Timeout after 5 seconds
             setTimeout(() => {
                 if (!this.connected) {
-                    reject(new Error('Connection timeout - Is Agent Hub running?'));
+                    reject(new Error('Connection timeout - Is Agent Hub running?')) : null;
                 }
             }, 5000);
         });
@@ -1196,7 +1196,7 @@ server.tool(
                 if (response && response.error) {
                     sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n Error: ${response.error}\n`);
                 } else {
-                    const text = typeof response === 'string' ? response : (response?.response || response?.text || JSON.stringify(response));
+                    const text = typeof response === 'string' ? response : (response?.response || response?.text || JSON.stringify(response)) : null;
                     sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n${text}\n`);
                 }
             });
@@ -1242,7 +1242,7 @@ server.tool(
                 if (response && response.error) {
                     sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n Error: ${response.error}\n`);
                 } else {
-                    const text = typeof response === 'string' ? response : (response?.response || response?.text || JSON.stringify(response));
+                    const text = typeof response === 'string' ? response : (response?.response || response?.text || JSON.stringify(response)) : null;
                     sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n${text}\n`);
                 }
             }

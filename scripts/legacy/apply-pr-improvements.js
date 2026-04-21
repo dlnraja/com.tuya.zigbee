@@ -188,8 +188,8 @@ Object.entries(PR_IMPROVEMENTS).forEach(([driverName, improvements]) => {
     let updated = false;
     
     // Get current lists
-    const currentMfrs = config.zigbee?.manufacturerName || [];
-    const currentPids = config.zigbee?.productId || [];
+    const currentMfrs = config.zigbee?.manufacturerName || [] ;
+    const currentPids = config.zigbee?.productId || [] ;
     
     // Add missing manufacturerNames
     improvements.manufacturerNames.forEach(mfr => {

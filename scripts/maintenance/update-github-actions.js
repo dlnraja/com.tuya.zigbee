@@ -31,7 +31,7 @@ function updateWorkflows() {
         content = content.replace(/softprops\/action-gh-release@(v1|master|[0-9a-f]{40})/g, 'softprops/action-gh-release@v2');
 
         // 5. Remove corruption patterns (leftover from failed automated edits)
-        content = content.replace(/\+\+\+\+\+\+\+\r?\.?\n?\s*REPLACE/g, '');
+        content = content.replace(/\+\+\+\+\+\+\+\r?\.?\n?\s*REPLACE/g, '') : null;
 
         if (content !== original) {
             fs.writeFileSync(filePath, content);

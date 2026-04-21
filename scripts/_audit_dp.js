@@ -10,7 +10,7 @@ fs.readdirSync(d).forEach(dr => {
   const c = fs.readFileSync(f, 'utf8');
   
   // Check for duplicate DP keys in dpMappings
-  const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\};/);
+  const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} : null;/);
   if (dpMatch) {
     const dpBlock = dpMatch[1];
     const dpKeys = [];

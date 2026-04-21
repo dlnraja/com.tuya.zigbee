@@ -134,7 +134,7 @@ function rule_fingerprintCase() {
     try {
       const raw = fs.readFileSync(file, 'utf8');
       const compose = JSON.parse(raw);
-      const mfrs = compose?.zigbee?.manufacturerName;
+      const mfrs = compose?.zigbee?.manufacturerName ;
       if (!Array.isArray(mfrs)) continue;
 
       let changed = false;
@@ -181,7 +181,7 @@ function rule_probeDedup() {
       const caps = compose.capabilities || [];
       if (!caps.includes('measure_temperature.probe')) continue;
 
-      const mfrs = compose?.zigbee?.manufacturerName || [];
+      const mfrs = compose?.zigbee?.manufacturerName || [] ;
       const hasPureZCL = mfrs.some(m => /^_tz3[02]/i.test(m) || /^owon/i.test(m));
       const hasDP = mfrs.some(m => /^_tze/i.test(m) || /^_tyst/i.test(m));
 
@@ -353,7 +353,7 @@ function rule_caseInsensitiveMatching() {
       const line = lines[i];
       // Detect direct string comparisons with manufacturer names without toLowerCase
       if (/manufacturerName\s*===?\s*['"]_T/i.test(line) && !/toLowerCase/.test(line)) {
-        warnings++;
+        warnings++ ;
         addFix('case-insensitive-matching', file, `Line ${i + 1}: manufacturer comparison without toLowerCase()`);
         if (VERBOSE) warn(`${path.relative(ROOT, file)}:${i + 1}: direct manufacturer comparison`);
       }
@@ -377,8 +377,8 @@ function rule_duplicateFingerprints() {
   for (const file of composeFiles) {
     try {
       const compose = JSON.parse(fs.readFileSync(file, 'utf8'));
-      const mfrs = compose?.zigbee?.manufacturerName || [];
-      const pids = compose?.zigbee?.productId || [];
+      const mfrs = compose?.zigbee?.manufacturerName || [] ;
+      const pids = compose?.zigbee?.productId || [] ;
       const driverName = path.basename(path.dirname(file));
 
       for (const m of mfrs) {
@@ -505,12 +505,12 @@ function rule_capabilityInitSanity() {
       if (!/_registerCapabilityListeners\s*\(/.test(code)) {
          // Append it before the end of onNodeInit or before super.onNodeInit
          if (/await super\.onNodeInit/.test(code)) {
-           code = code.replace(/await super\.onNodeInit\s*\(\s*\{.*?\}\s*\);/s, (match) => {
+           code = code.replace(/await super\.onNodeInit\s*\(\s*\{.*?\}\s*\) : null;/s, (match) => {
              return `${match}\n    this._registerCapabilityListeners(); // rule-12a injected`;
            });
          } else if (/onNodeInit\s*\(\{.*?\}\)\s*\{/.test(code)) {
            code = code.replace(/onNodeInit\s*\(\{.*?\}\)\s*\{/, (match) => {
-             return `${match}\n    this._registerCapabilityListeners(); // rule-12a injected`;
+             return `${match}\n    this._registerCapabilityListeners() ; // rule-12a injected`;
            });
          }
       }
@@ -622,12 +622,12 @@ function rule_logicCaseAudit() {
         /manufacturerName\s*===[^']*'[^']+'(?!\s*===)/g, // Match equality with strings, but avoid complex ones
         /manufacturerName\s*!==[^']*'[^']+'(?!\s*!==)/g,
         /\.includes\(\s*this\.(driver\.)?manufacturerName/g
-      ];
+      ] ;
 
       // Filter out safe comparisons (undefined, null, typeof)
       const contentFiltered = content.replace(/manufacturerName\s*===\s*(undefined|null)/g, '')
                                      .replace(/manufacturerName\s*!==\s*(undefined|null)/g, '')
-                                     .replace(/typeof\s+[\s\S]+?manufacturerName/g, '');
+                                     .replace(/typeof\s+[\s\S]+?manufacturerName/g, '') : null;
 
       badComparisons.forEach(regex => {
         if (regex.test(content)) {
@@ -675,7 +675,7 @@ function rule_thisPrefixSafety() {
       // \\s*\\(              -> Followed by an opening parenthesis
       // Exclude matches that are already calls on 'this', 'super', 'device', 'args.device', or 'node'
       // ALSO exclude definitions: preceded by 'async ', 'function ', or 'static '
-      const regex = new RegExp(`(^|[^a-zA-Z0-9_.$])(?<!this\\.|super\\.|device\\.|node\\.|args\\.device\\.|async\\s+|function\\s+|static\\s+)(${method})\\s*\\(`, 'g');
+      const regex = new RegExp(`(^|[^a-zA-Z0-9_.$])(?<!this\\.|super\\.|device\\.|node\\.|args\\.device\\.|async\\s+|function\\s+|static\\s+)(${method})\\s*\\(`, 'g') : null;
       
       code = code.replace(regex, (match, p1, p2) => {
         // Double check we are not in a comment or string (very basic check)
@@ -986,9 +986,9 @@ function rule_physicalButtonDetection() {
       if (code.includes('this.initPhysicalButtonDetection()')) continue;
 
       if (/await super\.onNodeInit/.test(code)) {
-        code = code.replace(/(await super\.onNodeInit\s*\(\s*\{.*?\}\s*\);)/s, `$1\n    this.initPhysicalButtonDetection(); // rule-19 injected`);
+        code = code.replace(/(await super\.onNodeInit\s*\(\s*\{.*?\}\s*\) : null;)/s, `$1\n    this.initPhysicalButtonDetection(); // rule-19 injected`);
       } else if (/async onNodeInit/.test(code)) {
-        code = code.replace(/(async onNodeInit\s*\(\s*\{.*?\}\s*\)\s*\{)/, `$1\n    this.initPhysicalButtonDetection(); // rule-19 injected`);
+        code = code.replace(/(async onNodeInit\s*\(\s*\{.*?\}\s*\)\s*\{)/, `$1\n    this.initPhysicalButtonDetection() : null; // rule-19 injected`);
       }
 
       if (code !== original) {

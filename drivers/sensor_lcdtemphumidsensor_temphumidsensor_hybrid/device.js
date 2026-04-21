@@ -19,7 +19,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
   /** v5.12.3: Fast init for _TZE200_* TS0601 variants (battery sleepy devices) */
   get fastInitMode() {
-    const mfr = this.getSetting?.('zb_manufacturer_name') || '';
+    const mfr = this.getSetting?.('zb_manufacturer_name') || '' ;
     return mfr.toUpperCase().startsWith('_TZE');
   }
 
@@ -148,7 +148,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
   async _tuyaTimeSyncFallback() {
     try {
       const node = this.zclNode || this._zclNode;
-      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya;
+      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya ;
       if (!tuyaCluster) return;
 
       const now = new Date();
@@ -192,3 +192,4 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = LCDTempHumidSensorDevice;
+

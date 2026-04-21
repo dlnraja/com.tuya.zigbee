@@ -31,7 +31,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
       },
       // DP2: Gas concentration value (LEL %)
       2: {
-        capability: null,
+        capability,
         internal: 'gas_value',
         transform: (v) => {
           device.log(`[GAS]  Gas concentration: ${v} LEL%`);
@@ -45,7 +45,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
       },
       // DP7: Alarm duration time (seconds)
       7: {
-        capability: null,
+        capability,
         internal: 'alarm_time',
         transform: (v) => {
           device.log(`[GAS]  Alarm time: ${v}s`);
@@ -54,7 +54,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
       },
       // DP8: Self-test trigger
       8: {
-        capability: null,
+        capability,
         internal: 'self_test',
         transform: (v) => {
           device.log(`[GAS]  Self-test: ${v ? 'active' : 'inactive'}`);
@@ -63,7 +63,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
       },
       // DP9: Self-test result
       9: {
-        capability: null,
+        capability,
         internal: 'self_test_result',
         transform: (v) => {
           const results = ['checking', 'success', 'failure', 'others'];
@@ -74,7 +74,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
       },
       // DP10: Preheat status (sensor warming up)
       10: {
-        capability: null,
+        capability,
         internal: 'preheat',
         transform: (v) => {
           const preheating = v === 1 || v === true;
@@ -84,7 +84,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
       },
       // DP16: Silence alarm
       16: {
-        capability: null,
+        capability,
         internal: 'silence',
         transform: (v) => {
           device.log(`[GAS]  Silence: ${v ? 'muted' : 'unmuted'}`);
@@ -93,7 +93,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
       },
       // DP21: Alarm ringtone selection
       21: {
-        capability: null,
+        capability,
         internal: 'alarm_ringtone',
         transform: (v) => {
           const melodies = ['melody_1', 'melody_2', 'melody_3', 'melody_4', 'melody_5'];

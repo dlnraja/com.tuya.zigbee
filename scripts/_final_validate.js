@@ -40,7 +40,7 @@ fs.readdirSync(d).forEach(dr => {
   const f = path.join(d, dr, 'device.js');
   if (!fs.existsSync(f)) return;
   const c = fs.readFileSync(f, 'utf8');
-  const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\};/);
+  const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} : null;/);
   if (!dpMatch) return;
   const dpBlock = dpMatch[1];
   const dpKeys = [];

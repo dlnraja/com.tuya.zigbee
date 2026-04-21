@@ -9,15 +9,15 @@ class WiFiAirPurifierDevice extends TuyaLocalDevice {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
       '2':  { capability: 'measure_pm25' },
-      '3':  { capability: null },
+      '3':  { capability },
       '4':  { capability: 'dim', writable: true,
         transform: (v) => Math.max(0, Math.min(1, safeParse(v, 100))),
-        reverseTransform: (v) =>Math.round(safeMultiply(v) },)
-      '5':  { capability: null },
-      '6':  { capability: null },
-      '11': { capability: null },
-      '14': { capability: null },
-      '19': { capability: null },
+        reverseTransform: (v) =>Math.round(safeMultiply(v))},)
+      '5':  { capability },
+      '6':  { capability },
+      '11': { capability },
+      '14': { capability },
+      '19': { capability },
       '21': { capability: 'measure_temperature', divisor: 10 },
       '22': { capability: 'measure_humidity' },
     };
@@ -40,3 +40,4 @@ class WiFiAirPurifierDevice extends TuyaLocalDevice {
 }
 
 module.exports = WiFiAirPurifierDevice;
+

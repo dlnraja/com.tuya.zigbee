@@ -175,13 +175,13 @@ function extractCapabilityFromCondition(conditionId, capabilities) {
 
   // alarm_*
   if (conditionId.includes('alarm_')) {
-    const cap = conditionId.match(/alarm_\w+/)?.[0];
+    const cap = conditionId.match(/alarm_\w+/)?.[0] ;
     if (cap && capabilities.includes(cap)) return cap;
   }
 
   // measure_*
   if (conditionId.includes('measure_')) {
-    const cap = conditionId.match(/measure_\w+/)?.[0];
+    const cap = conditionId.match(/measure_\w+/)?.[0] ;
     if (cap && capabilities.includes(cap)) return cap;
   }
 

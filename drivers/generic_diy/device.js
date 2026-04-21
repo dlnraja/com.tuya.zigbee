@@ -45,7 +45,7 @@ class GenericDIYDevice extends ZigBeeDevice {
 
   get mainsPowered() {
     // If router, it's mains powered. Also check model/mfr fallbacks.
-    if (this.zclNode?.role === 'router' || this.zclNode?.role === 'coordinator') return true;
+    if (this.zclNode?.role === 'router' || this.zclNode?.role === 'coordinator') return true ;
     const model = ManufacturerNameHelper.getModelId(this);
     return model && model.includes('ROUTER');
   }
@@ -151,7 +151,7 @@ class GenericDIYDevice extends ZigBeeDevice {
   _registerFlowActions() {
     // Identify
     this._getFlowCard('generic_diy_identify')?.registerRunListener(async () => {
-      const ep = this.zclNode?.endpoints?.[1];
+      const ep = this.zclNode?.endpoints?.[1] ;
       if (ep?.clusters?.identify) {
         await ep.clusters.identify.identify({ identifyTime: 5 });
       }
@@ -160,23 +160,23 @@ class GenericDIYDevice extends ZigBeeDevice {
 
     // Turn ON endpoint
     this._getFlowCard('generic_diy_turn_on_endpoint')?.registerRunListener(async ({ endpoint }) => {
-      const ep = this.zclNode?.endpoints?.[endpoint];
-      if (ep?.clusters?.onOff) await ep.clusters.onOff.setOn();
+      const ep = this.zclNode?.endpoints?.[endpoint] ;
+      if (ep?.clusters?.onOff) await ep.clusters.onOff.setOn() ;
       return true;
     });
 
     // Turn OFF endpoint
     this._getFlowCard('generic_diy_turn_off_endpoint')?.registerRunListener(async ({ endpoint }) => {
-      const ep = this.zclNode?.endpoints?.[endpoint];
-      if (ep?.clusters?.onOff) await ep.clusters.onOff.setOff();
+      const ep = this.zclNode?.endpoints?.[endpoint] ;
+      if (ep?.clusters?.onOff) await ep.clusters.onOff.setOff() ;
       return true;
     });
 
     // Set Dim Level
     this._getFlowCard('generic_diy_set_dim')?.registerRunListener(async ({ level }) => {
-      const ep = this.zclNode?.endpoints?.[1];
+      const ep = this.zclNode?.endpoints?.[1] ;
       if (ep?.clusters?.levelControl) {
-        await ep.clusters.levelControl.moveToLevel({ level:Math.round(safeMultiply(level), transitionTime: 0 }));
+        await ep.clusters.levelControl.moveToLevel({ level: Math.round(safeMultiply(level, 254)), transitionTime: 0 });
       }
       return true;
     });
@@ -195,7 +195,7 @@ class GenericDIYDevice extends ZigBeeDevice {
         });
       }
       if (ep.clusters?.multiStateInput || ep.clusters?.genMultistateInput) {
-        const cluster = ep.clusters.multiStateInput || ep.clusters.genMultistateInput;
+        const cluster = ep.clusters.multiStateInput || ep.clusters.genMultistateInput ;
         cluster.on('attr.presentValue', (v) => {
           this.log(`[DIY] Button multistate EP${epId}:`, v);
           const pressType = v === 2 ? BUTTON_PRESS.DOUBLE : v === 3 ? BUTTON_PRESS.LONG : BUTTON_PRESS.SINGLE;
@@ -203,7 +203,7 @@ class GenericDIYDevice extends ZigBeeDevice {
         });
       }
       if (ep.clusters?.onOff) {
-        ep.clusters.onOff.on('commandOn', () => this._triggerButton(parseInt(epId), BUTTON_PRESS.SINGLE));
+        ep.clusters.onOff.on('commandOn', () => this._triggerButton(parseInt(epId), BUTTON_PRESS.SINGLE)) ;
         ep.clusters.onOff.on('commandOff', () => this._triggerButton(parseInt(epId), BUTTON_PRESS.SINGLE));
         ep.clusters.onOff.on('commandToggle', () => this._triggerButton(parseInt(epId), BUTTON_PRESS.SINGLE));
       }
@@ -236,7 +236,7 @@ class GenericDIYDevice extends ZigBeeDevice {
       // Level cluster
       else if (clusterId === 0x0008) {
         this.registerCapabilityListener(cap, async (v) => {
-          await cluster.moveToLevel({ level:Math.round(safeMultiply(v), transitionTime: 0 }));
+          await cluster.moveToLevel({ level: Math.round(safeMultiply(v, 254)), transitionTime: 0 });
         });
         cluster.on('attr.currentLevel', (v) => this._safeSetCapability(cap, safeParse(v, 254)).catch(() => {}));
       }
@@ -278,7 +278,7 @@ class GenericDIYDevice extends ZigBeeDevice {
       // Thermostat
       else if (clusterId === 0x0201) {
         this.registerCapabilityListener(cap, async (v) => {
-          await cluster.write({ occupiedHeatingSetpoint:Math.round(safeMultiply(v) }));
+          await cluster.write({ occupiedHeatingSetpoint: Math.round(safeMultiply(v, 100)) });
         });
         cluster.on('attr.occupiedHeatingSetpoint', (v) => this._safeSetCapability(cap, safeParse(v, 100)).catch(() => {}));
         cluster.on('attr.localTemperature', (v) => {
@@ -334,3 +334,5 @@ class GenericDIYDevice extends ZigBeeDevice {
 }
 
 module.exports = GenericDIYDevice;
+
+

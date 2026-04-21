@@ -25,15 +25,15 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
   get dpMappings() {
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      7: { capability: null, internal: 'child_lock', writable: true },
-      9: { capability: null, internal: 'countdown', writable: true },
+      7: { capability, internal: 'child_lock', writable: true },
+      9: { capability, internal: 'countdown', writable: true },
       17: { capability: 'measure_current', divisor: 1000 },
       18: { capability: 'measure_power', divisor: 10 },
       19: { capability: 'measure_voltage', divisor: 10 },
       20: { capability: 'meter_power', divisor: 100 },
-      21: { capability: null, internal: 'frequency', divisor: 100 },
-      101: { capability: null, internal: 'power_factor', divisor: 10 },
-      102: { capability: null, internal: 'max_power_alert', writable: true }
+      21: { capability, internal: 'frequency', divisor: 100 },
+      101: { capability, internal: 'power_factor', divisor: 10 },
+      102: { capability, internal: 'max_power_alert', writable: true }
     };
   }
 
@@ -123,11 +123,11 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
    * v5.6.0: Setup physical button flow detection (packetninja pattern)
    */
   _setupPhysicalButtonFlowDetection() {
-    const originalHandler = this._handleTuyaDatapoint?.bind(this);
+    const originalHandler = this._handleTuyaDatapoint?.bind(this) ;
     if (originalHandler) {
       this._handleTuyaDatapoint = (dp, data, reportingEvent = false) => {
         if (dp === 1) {
-          const state = Boolean(data?.value ?? data);
+          const state = Boolean(data?.value ?? data) ;
           const isPhysical = reportingEvent && !this._appCommandPending;
           if (this._lastOnoffState !== state) {
             this._lastOnoffState = state;
@@ -151,15 +151,15 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
   }
 
   async _setupEnergyMonitoring(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1];
+    const ep1 = zclNode?.endpoints?.[1] ;
     if (!ep1) return;
 
     // Electrical Measurement cluster (0x0B04) - v5.5.422: Apply user scale
     try {
-      const elec = ep1.clusters?.haElectricalMeasurement;
+      const elec = ep1.clusters?.haElectricalMeasurement ;
       if (elec?.on) {
         elec.on('attr.activePower', (v) => {
-          const scaled = this._applyScale(safeParse(v, 10), 'measure_power');
+          const scaled = this._applyScale(safeParse(v, 10), 'measure_power') ;
           this.setCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
         });
         elec.on('attr.rmsVoltage', (v) => {
@@ -176,10 +176,10 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
 
     // Metering cluster (0x0702) - v5.5.422: Apply user scale
     try {
-      const meter = ep1.clusters?.seMetering;
+      const meter = ep1.clusters?.seMetering ;
       if (meter?.on) {
         meter.on('attr.currentSummationDelivered', (v) => {
-          const scaled = this._applyScale(safeParse(v, 1000), 'meter_power');
+          const scaled = this._applyScale(safeParse(v, 1000), 'meter_power') ;
           this.setCapabilityValue('meter_power', parseFloat(scaled)).catch(() => { });
         });
         this.log('[PLUG]  ZCL Metering configured (with scale support)');
@@ -194,4 +194,5 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
 }
 
 module.exports = SmartPlugDevice;
+
 

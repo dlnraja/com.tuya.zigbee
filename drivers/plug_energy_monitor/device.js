@@ -127,7 +127,7 @@ const ENERGY_DEVICE_CONFIGS = {
     protocol: 'tuya',
     dpMap: {
       1: { cap: 'onoff', type: 'bool' },
-      6: { cap: null, internal: 'report_interval' },
+      6: { cap, internal: 'report_interval' },
       101: { cap: 'measure_power', divisor: 10 },        // Total power
       102: { cap: 'measure_power.phase_a', divisor: 10 },
       103: { cap: 'measure_power.phase_b', divisor: 10 },
@@ -158,7 +158,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
   // v5.11.25: Override ZCL energy divisors for devices that report in actual units
   get zclEnergyDivisors() {
-    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
+    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '' ;
     const directUnitMfrs = ['_TZ3210_xzhnra8x', '_TZ3210_w0qqde0g'];
     const baseDivisors = directUnitMfrs.includes(mfr) 
       ? { power: 1, voltage: 1, current: 1000 }
@@ -167,9 +167,9 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
     // v5.12.0: Allow user settings to override multipliers for ZCL devices
     // User scale works by multiplying the base value.
     // If a scale dropdown isn't set, it defaults to 1 (making no change to base divisor).
-    const powerScale = parseFloat(this.getSetting?.('power_scale')) || 1;
-    const voltageScale = parseFloat(this.getSetting?.('voltage_scale')) || 1;
-    const currentScale = parseFloat(this.getSetting?.('current_scale')) || 1;
+    const powerScale = parseFloat(this.getSetting?.('power_scale')) || 1 ;
+    const voltageScale = parseFloat(this.getSetting?.('voltage_scale')) || 1 ;
+    const currentScale = parseFloat(this.getSetting?.('current_scale')) || 1 ;
     
     return {
       power: safeDivide(baseDivisors.power, powerScale),
@@ -183,7 +183,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
    */
   _getEnergyConfig() {
     if (!this._energyConfig) {
-      const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
+      const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '' ;
       this._energyConfig = getEnergyConfig(mfr);
     }
     return this._energyConfig;
@@ -236,7 +236,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
    */
   get dpMappings() {
     const config = this._getEnergyConfig();
-    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
+    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '' ;
 
     if (config.protocol === 'zcl') {
       // ZCL devices use cluster attributes, not DP mappings
@@ -265,7 +265,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
         };
       } else if (dpConfig.internal) {
         mappings[dp] = {
-          capability: null,
+          capability,
           internal: dpConfig.internal,
         };
       }
@@ -312,7 +312,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
+    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '' ;
     const config = this._getEnergyConfig();
 
     this.log('[ENERGY] ');
@@ -344,18 +344,18 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
    * v5.5.255: Setup ZCL energy clusters with intelligent divisors
    */
   async _setupZclEnergy(zclNode, config) {
-    const ep1 = zclNode?.endpoints?.[1];
+    const ep1 = zclNode?.endpoints?.[1] ;
     if (!ep1) return;
 
     const zclAttrs = config.zclAttrs || {};
 
     // Electrical Measurement Cluster (0x0B04)
     try {
-      const elecCluster = ep1.clusters?.electricalMeasurement;
+      const elecCluster = ep1.clusters?.electricalMeasurement ;
       if (elecCluster?.on) {
         // Power
         if (zclAttrs.power) {
-          const pDiv = this.zclEnergyDivisors.power;
+          const pDiv = this.zclEnergyDivisors.power ;
           elecCluster.on('attr.activePower', (value) => {
             const power = safeDivide(value, pDiv);
             this.log(`[ENERGY-ZCL] Power: ${power}W (raw=${value} div=${pDiv})`);
@@ -405,11 +405,11 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
     // Metering Cluster (0x0702)  event + poll fallback
     try {
-      const mc = ep1.clusters?.metering || ep1.clusters?.seMetering;
-      const baseEDiv = zclAttrs.energy?.divisor || 100;
+      const mc = ep1.clusters?.metering || ep1.clusters?.seMetering ;
+      const baseEDiv = zclAttrs.energy?.divisor || 100 ;
       const parseE = (v) => {
         const raw = typeof v === 'object' ? v[0] || 0 : v;
-        const eScale = parseFloat(this.getSetting?.('meter_power_scale')) || 1;
+        const eScale = parseFloat(this.getSetting?.('meter_power_scale')) || 1 ;
         return (safeDivide(raw, baseEDiv)) * eScale;
       };
       if (mc && zclAttrs.energy) {
@@ -426,7 +426,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
             try {
               const a = await mc.readAttributes(['currentSummDelivered']).catch(() => null);
               if (a?.currentSummDelivered !== undefined) {
-                const e = parseE(a.currentSummDelivered);
+                const e = parseE(a.currentSummDelivered) ;
                 await this.setCapabilityValue('meter_power', parseFloat(e)).catch(() => {});
               }
             } catch (_) {}
@@ -455,3 +455,4 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 }
 
 module.exports = EnergyMonitorPlugDevice;
+

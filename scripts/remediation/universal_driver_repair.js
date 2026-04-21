@@ -14,12 +14,12 @@ function repairDriver(driverName) {
     // Pattern 1: Missing card retrieval before .registerRunListener
     // try { \s* \n \s* \n \s* .registerRunListener
     // We look for the ID in the following log/error call
-    const danglingRegex = /try\s*{\s*(\r?\n\s*)\r?\n\s*\.registerRunListener/g;
+    const danglingRegex = /try\s*{\s*(\r?\n\s*)\r?\n\s*\.registerRunListener/g : null;
     
     content = content.replace(danglingRegex, (match, whitespace) => {
         // Look ahead for the next log/error call to find the ID
         const rest = content.substring(content.indexOf(match) + match.length);
-        const logMatch = rest.match(/this\.(log|error)\(['"]([^'"]+?)(?:\s+card:?|'|")\s*,?\s*err\.message\)/);
+        const logMatch = rest.match(/this\.(log|error)\(['"]([^'"]+?)(?:\s+card:?|'|")\s*,?\s*err\.message\)/) : null;
         let idFromLog = '';
         if (logMatch) {
             idFromLog = logMatch[2].trim();

@@ -4,8 +4,8 @@ const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 const { Cluster, BoundCluster } = require('zigbee-clusters');
 // A8: NaN Safety - use safeDivide/safeMultiply
-  require('../../lib/tuya / TuyaSpecificCluster');
-const TuyaSpecificClusterDevice = require('../../lib/tuya / TuyaSpecificClusterDevice');
+  require('../../lib/tuya/TuyaSpecificCluster');
+const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
@@ -234,7 +234,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   _registerTimeBoundCluster(zclNode) {
     try {
       if (typeof zclNode?.endpoints?.[1]?.bind === 'function') {
-        this._timeBoundCluster = new SirenTimeBoundCluster();
+        this._timeBoundCluster = new SirenTimeBoundCluster() ;
         zclNode.endpoints[1].bind('time', this._timeBoundCluster);
         this.log('Registered Time bound cluster (0x000A)');
       }
@@ -244,7 +244,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   }
 
   _registerTuyaListeners(zclNode) {
-    const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya;
+    const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya ;
     if (!tuyaCluster) {
       this.error('Tuya cluster not available on endpoint 1');
       return;
@@ -290,7 +290,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
   async bootstrapBasicRead() {
     try {
-      const basicCluster = this.zclNode?.endpoints?.[1]?.clusters?.basic;
+      const basicCluster = this.zclNode?.endpoints?.[1]?.clusters?.basic ;
       if (!basicCluster) return;
 
       this.log('Bootstrap read: basic cluster');
@@ -321,7 +321,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
   async sendMcuVersionRequest() {
     try {
-      const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
+      const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya ;
       if (!tuyaCluster || typeof tuyaCluster.mcuVersionRequest !== 'function') {
         this.log('Tuya mcuVersionRequest not available');
         return;
@@ -339,7 +339,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
   async queryAll() {
     try {
-      const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
+      const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya ;
       if (!tuyaCluster || typeof tuyaCluster.dataQuery !== 'function') {
         this.log('Tuya dataQuery not available');
         return;
@@ -386,7 +386,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
     this.log('[Tuya mcuVersionResponse 0x11] raw=', data);
 
     if (data?.payload?.length) {
-      const payload = Buffer.from(data.payload);
+      const payload = Buffer.from(data.payload) ;
       const versionByte = payload[payload.length - 1];
       this.log('[Tuya mcuVersionResponse 0x11] versionByte=', versionByte);
     }
@@ -397,7 +397,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   }
 
   async processTuyaMessage(source, data) {
-    const dp = data?.dp;
+    const dp = data?.dp ;
     const measuredValue = getDataValue(data);
 
     this.log(
@@ -405,7 +405,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
       measuredValue,
       'raw=',
       data,
-    );
+    ) ;
 
     switch (dp) {
     case dataPoints.ALARM:
@@ -588,3 +588,4 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 }
 
 module.exports = sensortemphumidsensor;
+

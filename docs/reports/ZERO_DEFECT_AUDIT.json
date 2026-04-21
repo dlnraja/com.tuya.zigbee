@@ -1,15 +1,25 @@
 {
-  "timestamp": "2026-04-20T15:19:45.571Z",
+  "timestamp": "2026-04-21T05:42:33.933Z",
   "driversChecked": 323,
   "collisions": [],
   "buttonLogicFailures": [],
   "sdkDeprecations": [],
-  "radarLogicCheck": [],
+  "radarLogicCheck": [
+    "air_purifier_presence_hybrid: Missing hybrid base inheritance for radar.",
+    "climate_sensor_presence_hybrid: Missing hybrid base inheritance for radar.",
+    "device_air_purifier_presence_hybrid: Missing hybrid base inheritance for radar."
+  ],
   "numericConstantViolations": [],
   "naNSafetyCheck": [
+    ".homeybuild\\drivers\\air_purifier\\device.js:18: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\drivers\\air_purifier\\device.js:48: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\drivers\\climate_sensor\\device.js:18: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\analytics\\AdvancedAnalytics.js:212: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\analytics\\AdvancedAnalytics.js:338: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\analytics\\AdvancedAnalytics.js:339: Potential unchecked division/multiplication (NaN risk)",
+    "drivers\\air_purifier\\device.js:18: Potential unchecked division/multiplication (NaN risk)",
+    "drivers\\air_purifier\\device.js:48: Potential unchecked division/multiplication (NaN risk)",
+    "drivers\\climate_sensor\\device.js:18: Potential unchecked division/multiplication (NaN risk)",
     "lib\\analytics\\AdvancedAnalytics.js:212: Potential unchecked division/multiplication (NaN risk)",
     "lib\\analytics\\AdvancedAnalytics.js:338: Potential unchecked division/multiplication (NaN risk)",
     "lib\\analytics\\AdvancedAnalytics.js:339: Potential unchecked division/multiplication (NaN risk)"

@@ -1,11 +1,11 @@
 'use strict';
-const { safeParse } = require('../../lib/utils / tuyaUtils.js');
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-const UnifiedSwitchBase = require('../../lib/devices / UnifiedSwitchBase');
-const VirtualButtonMixin = require('../../lib/mixins / VirtualButtonMixin');
-const PhysicalButtonMixin = require('../../lib/mixins / PhysicalButtonMixin');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { CLUSTER } = require('zigbee-clusters');
-const { includesCI } = require('../../lib/utils / CaseInsensitiveMatcher');
+const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * 
@@ -41,7 +41,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   get isZclOnlyDevice() {
     const mfr = this.getSetting?.('zb_manufacturer_name') ||
                 this.getStoreValue?.('zb_manufacturer_name') ||
-                this.getStoreValue?.('manufacturerName') || '';
+                this.getStoreValue?.('manufacturerName') || '' ;
     return includesCI(ZCL_ONLY_MANUFACTURERS_2G, mfr);
   }
 
@@ -105,9 +105,9 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
    * Sources: Z2M TS0002 profile
    */
   async _setupPowerMeasurement(zclNode) {
-    const endpoint = zclNode?.endpoints?.[1];
+    const endpoint = zclNode?.endpoints?.[1] ;
     if (!endpoint?.clusters) {
-      this.log('[SWITCH-2G] No clusters on EP1');
+      this.log('[SWITCH-2G] No clusters on EP1') ;
       return;
     }
 
@@ -222,7 +222,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]);
       this.log('[SWITCH-2G]  electricalMeasurement reporting configured');
     } catch (e) {
-      const msg = e?.message || String(e);
+      const msg = e?.message || String(e) ;
       // Retry if Zigbee is starting up (max 3 retries)
       if ((msg.includes('Zigbee') || msg.includes('dÃ©marrage') || msg.includes('starting')) && retryCount < 3) {
         this.log(`[SWITCH-2G]  Zigbee starting, will retry electrical reporting in 60s (attempt ${retryCount + 1}/3)`);
@@ -250,7 +250,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]);
       this.log('[SWITCH-2G]  metering reporting configured');
     } catch (e) {
-      const msg = e?.message || String(e);
+      const msg = e?.message || String(e) ;
       // Retry if Zigbee is starting up (max 3 retries)
       if ((msg.includes('Zigbee') || msg.includes('dÃ©marrage') || msg.includes('starting')) && retryCount < 3) {
         this.log(`[SWITCH-2G]  Zigbee starting, will retry metering reporting in 60s (attempt ${retryCount + 1}/3)`);
@@ -332,8 +332,8 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     this._lastCommandTime = 0;
 
     const getOnOffCluster = (epNum) => {
-      const ep = this._zclNode?.endpoints?.[epNum];
-      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+      const ep = this._zclNode?.endpoints?.[epNum] ;
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6] ;
     };
 
     // Setup attribute listeners for physical button detection
@@ -422,7 +422,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       }
     }
 
-    await this.initVirtualButtons?.();
+    await this.initVirtualButtons?.() ;
     this.log('[SWITCH-2G]  BSEED ZCL-only mode ready (packetninja v990+v5.8.72)');
   }
 
@@ -432,8 +432,8 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   async _removeGroupMemberships(zclNode) {
     for (const epNum of [1, 2]) {
       try {
-        const ep = zclNode?.endpoints?.[epNum];
-        if (!ep?.clusters) continue;
+        const ep = zclNode?.endpoints?.[epNum] ;
+        if (!ep?.clusters) continue ;
         const g = ep.clusters.groups || ep.clusters.genGroups || ep.clusters[4] || ep.clusters['4'];
         if (!g) { this.log(`[BSEED-2G] EP${epNum} no groups cluster`); continue; }
         const fn = g.removeAll || g.removeAllGroups;
@@ -450,11 +450,12 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   onDeleted() {
     if (this._zclState?.timeout) {
       for (const epNum of [1, 2]) {
-        if (this._zclState.timeout[epNum]) clearTimeout(this._zclState.timeout[epNum]);
+        if (this._zclState.timeout[epNum]) clearTimeout(this._zclState.timeout[epNum]) ;
       }
     }
-    super.onDeleted?.();
+    super.onDeleted?.() ;
   }
 }
 
 module.exports = Switch2GangDevice;
+

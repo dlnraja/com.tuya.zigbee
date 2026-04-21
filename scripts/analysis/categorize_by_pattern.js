@@ -9,18 +9,18 @@ console.log(`Total orphans: ${orphans.length}`);
 // Format: _TZxyyz_xxxxxxxx where xy indicates device type
 const patterns = {
   // TS0601 devices (Tuya DP protocol) - need context to determine
-  '_TZE200_': { type: 'tuya_dp', driver: null }, // Various - thermostats, sensors, etc
-  '_TZE204_': { type: 'tuya_dp', driver: null },
-  '_TZE284_': { type: 'tuya_dp', driver: null },
-  '_TZE600_': { type: 'tuya_dp', driver: null },
-  '_TZE608_': { type: 'tuya_dp', driver: null },
+  '_TZE200_': { type: 'tuya_dp', driver }, // Various - thermostats, sensors, etc
+  '_TZE204_': { type: 'tuya_dp', driver },
+  '_TZE284_': { type: 'tuya_dp', driver },
+  '_TZE600_': { type: 'tuya_dp', driver },
+  '_TZE608_': { type: 'tuya_dp', driver },
 
   // Standard ZCL devices
-  '_TZ3000_': { type: 'zcl', driver: null }, // Various standard devices
-  '_TZ3210_': { type: 'zcl', driver: null },
-  '_TZ3400_': { type: 'zcl', driver: null },
-  '_TYZB01_': { type: 'zcl', driver: null },
-  '_TYZB02_': { type: 'zcl', driver: null },
+  '_TZ3000_': { type: 'zcl', driver }, // Various standard devices
+  '_TZ3210_': { type: 'zcl', driver },
+  '_TZ3400_': { type: 'zcl', driver },
+  '_TYZB01_': { type: 'zcl', driver },
+  '_TYZB02_': { type: 'zcl', driver },
 
   // Specific patterns
   '_TZ3002_': { type: 'switch', driver: 'switch_1gang' },

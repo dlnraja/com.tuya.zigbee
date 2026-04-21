@@ -3,17 +3,17 @@ let txt = fs.readFileSync('drivers/soil_sensor/device.js', 'utf8');
 
 const replaceBlock = 
         102: { capability: 'measure_luminance', divisor: 1 },
-        103: { capability: null, setting: 'report_interval', min: 30, max: 1200 },
-        104: { capability: null, setting: 'soil_calibration', min: -30, max: 30 },
-        105: { capability: null, setting: 'humidity_calibration', min: -30, max: 30 },
-        106: { capability: null, setting: 'illuminance_calibration', min: -1000, max: 1000 },
-        107: { capability: null, setting: 'temperature_calibration', min: -20, max: 20 },
-        110: { capability: null, setting: 'soil_warning', min: 0, max: 100 },
+        103: { capability, setting: 'report_interval', min: 30, max: 1200 },
+        104: { capability, setting: 'soil_calibration', min: -30, max: 30 },
+        105: { capability, setting: 'humidity_calibration', min: -30, max: 30 },
+        106: { capability, setting: 'illuminance_calibration', min: -1000, max: 1000 },
+        107: { capability, setting: 'temperature_calibration', min: -20, max: 20 },
+        110: { capability, setting: 'soil_warning', min: 0, max: 100 },
         111: { capability: 'alarm_water', transform: (v) => v === 1 },
         112: { capability: 'measure_conductivity', divisor: 1 }, // soil fertility uS/cm
-        113: { capability: null, setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
-        114: { capability: null, setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
-        115: { capability: null, setting: 'soil_fertility_warning_v1', min: 0, max: 5000 },
+        113: { capability, setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
+        114: { capability, setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
+        115: { capability, setting: 'soil_fertility_warning_v1', min: 0, max: 5000 },
 ;
 
 // Extract regex logic into simpler replace

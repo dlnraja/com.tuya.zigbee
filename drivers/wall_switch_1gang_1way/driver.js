@@ -99,7 +99,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ power_on_behavior: args.mode });
-          const pobValue = { off: 0, on: 1, memory: 2 }[args.mode] ?? 2;
+          const pobValue = { off: 0, on: 1, memory: 2 }[args.mode] ?? 2 ;
           if (typeof args.device._writeE001Attribute === 'function') {
             await args.device._writeE001Attribute('powerOnBehavior', pobValue);
           } else if (typeof args.device._sendTuyaDP === 'function') {
@@ -115,7 +115,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ switch_mode: args.mode });
-          const smValue = { toggle: 0, state: 1, momentary: 2 }[args.mode] ?? 0;
+          const smValue = { toggle: 0, state: 1, momentary: 2 }[args.mode] ?? 0 ;
           if (typeof args.device._writeE001Attribute === 'function') {
             await args.device._writeE001Attribute('switchMode', smValue);
           }
@@ -129,4 +129,5 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 }
 
 module.exports = WallSwitch1Gang1WayDriver;
+
 

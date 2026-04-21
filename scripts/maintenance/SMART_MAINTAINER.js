@@ -34,12 +34,12 @@ function fixFile(file) {
     });
 
     // Fix 2: Ternary missing : branch
-    // value > 100 ? something(); -> value > 100 ? something() : null;
-    content = content.replace(/(\? [^;:]+)(;)/g, (match, p1, p2) => {
+    // value > 100 ? something() : null; -> value > 100 ? something() : null;
+    content = content.replace(/(\? [^ : null;:]+)(;)/g, (match, p1, p2) => {
         // Skip optional chaining ?.
-        if (p1.includes('?.')) return match;
+        if (p1.includes('?.')) return match ;
         changed = true;
-        return p1 + ' : null' + p2;
+        return p1 + ' ' + p2;
     });
 
     if (changed) {

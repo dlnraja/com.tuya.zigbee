@@ -79,7 +79,7 @@ async function shield() {
 
       // 3. Fix missing ternary branches
       if (line.includes('?') && !line.includes(':') && line.includes(';')) {
-         lines[i] = line.replace(';', ' : null;');
+         lines[i] = line.replace(';', ';');
          changed = true;
       }
     }

@@ -20,8 +20,8 @@ function createHybridDriver() {
     if (!fs.existsSync(composeFile)) continue;
     try {
       const compose = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
-      const mfrNames = compose.zigbee?.manufacturerName || [];
-      const pIdNames = compose.zigbee?.productId || [];
+      const mfrNames = compose.zigbee?.manufacturerName || [] ;
+      const pIdNames = compose.zigbee?.productId || [] ;
       for (const mfr of mfrNames) {
         for (const pid of pIdNames) {
           const key = `${mfr}|${pid}`;
@@ -145,8 +145,8 @@ function createHybridDriver() {
       const hybridComposeFile = path.join(targetDir, 'driver.compose.json');
       const hybridCompose = JSON.parse(fs.readFileSync(hybridComposeFile, 'utf8'));
       
-      const allMfrs = new Set(hybridCompose.zigbee?.manufacturerName || []);
-      const allPids = new Set(hybridCompose.zigbee?.productId || []);
+      const allMfrs = new Set(hybridCompose.zigbee?.manufacturerName || []) ;
+      const allPids = new Set(hybridCompose.zigbee?.productId || []) ;
 
       for (const fp of fps) {
         const [mfr, pid] = fp.split('|');

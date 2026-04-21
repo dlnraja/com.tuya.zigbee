@@ -22,11 +22,11 @@ module.exports = () => {
   fs.readdirSync(dir).forEach(d => {
     try {
       const c = JSON.parse(fs.readFileSync(`${dir}/${d}/driver.compose.json`));
-      const mfrNames = [].concat(c.zigbee?.manufacturerName || []);
+      const mfrNames = [].concat(c.zigbee?.manufacturerName || []) ;
       const productId = c.zigbee?.productId || null;
       const deviceClass = c.class || null;
       const capabilities = c.capabilities || [];
-      const hasBattery = (c.energy?.batteries || []).length > 0;
+      const hasBattery = (c.energy?.batteries || []).length > 0 ;
       const icon = c.icon || null;
       
       // Extract vendor from name if available

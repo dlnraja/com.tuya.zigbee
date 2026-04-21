@@ -44,7 +44,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
       this._lastOnoffState = v;
       if (isPhysical) {
         const id = v ? 'air_purifier_dimmer_hybrid_dimmer_wall_1gang_physical_on' : 'air_purifier_dimmer_hybrid_dimmer_wall_1gang_physical_off';
-        const card = this.homey.app?._safeGetTriggerCard?.(id);
+        const card = this.homey.app?._safeGetTriggerCard?.(id) ;
         if (card) card.trigger(this, {}, {}).catch(() => {});
       }
     } else if (dpId === 2 || dpId === 101) {
@@ -54,7 +54,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
       this._lastDimValue = dim;
       if (isPhysical && oldDim !== null) {
         const id = increased ? 'air_purifier_dimmer_hybrid_dimmer_wall_1gang_physical_brightness_up' : 'air_purifier_dimmer_hybrid_dimmer_wall_1gang_physical_brightness_down';
-        const card = this.homey.app?._safeGetTriggerCard?.(id);
+        const card = this.homey.app?._safeGetTriggerCard?.(id) ;
         if (card) card.trigger(this, { brightness: Math.round(dim * 100) }, {}).catch(() => {});
       }
     }
@@ -67,3 +67,5 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
 }
 
 module.exports = DimmerWall1GangDevice;
+
+

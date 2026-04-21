@@ -39,7 +39,7 @@ function loadDrivers() {
         pids: new Set((c.zigbee?.productId || []).map(p => p.toLowerCase())),
         isGreedy: !c.zigbee?.productId || c.zigbee.productId.length === 0,
         raw, // original (possibly fixed) raw string
-      });
+      }) ;
     } catch {}
   }
   return drivers;

@@ -7,14 +7,14 @@ class WiFiSwitchDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '7':  { capability: null }, // countdown_1 (seconds)
-      '13': { capability: null }, // master switch
-      '14': { capability: null }, // power-on status: off/on/memory
-      '15': { capability: null }, // indicator: none/relay/pos
-      '16': { capability: null }, // backlight switch
-      '17': { capability: null }, // cycle timing
-      '18': { capability: null }, // random timing
-      '19': { capability: null }, // inching switch
+      '7':  { capability }, // countdown_1 (seconds)
+      '13': { capability }, // master switch
+      '14': { capability }, // power-on status: off/on/memory
+      '15': { capability }, // indicator: none/relay/pos
+      '16': { capability }, // backlight switch
+      '17': { capability }, // cycle timing
+      '18': { capability }, // random timing
+      '19': { capability }, // inching switch
       '20': { capability: 'measure_power', divisor: 10 },
       '21': { capability: 'measure_current', divisor: 1000 },
       '22': { capability: 'measure_voltage', divisor: 10 },

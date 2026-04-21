@@ -55,8 +55,8 @@ function scanExistingDrivers() {
     
     try {
       const data = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      const mfrs = data.zigbee?.manufacturerName || [];
-      const pids = data.zigbee?.productId || [];
+      const mfrs = data.zigbee?.manufacturerName || [] ;
+      const pids = data.zigbee?.productId || [] ;
       const caps = data.capabilities || [];
       
       drivers[driverName] = { mfrs: mfrs.length, pids, caps };

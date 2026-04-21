@@ -22,7 +22,7 @@ class AirPurifierLCDDevice extends TuyaSpecificClusterDevice {
 
   async handleTuyaDataReport(data) {
     if (!data || data.dp == null) return;
-    const v = data.data ?? data.value;
+    const v = data.data ?? data.value ;
 
     if (data.dp === DP.state) {
       const s = Boolean(v);
@@ -45,3 +45,5 @@ class AirPurifierLCDDevice extends TuyaSpecificClusterDevice {
 }
 
 module.exports = AirPurifierLCDDevice;
+
+

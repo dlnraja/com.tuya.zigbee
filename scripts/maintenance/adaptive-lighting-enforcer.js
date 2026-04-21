@@ -22,7 +22,7 @@ async function main() {
         
         // Only fix if it has 'dim' but NOT 'light_color_temp'
         if (compose.capabilities?.includes('dim') && !compose.capabilities?.includes('light_color_temp')) {
-          console.log(`  Compensating ${entry}...`);
+          console.log(`  Compensating ${entry}...`) ;
           
           // 1. Add capability
           compose.capabilities.push('light_color_temp');

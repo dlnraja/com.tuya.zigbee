@@ -29,7 +29,7 @@ class PoolPumpDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
+    const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820] ;
     if (emCluster && this.hasCapability('measure_power')) {
       emCluster.on('attr.activePower', (value) => {
         this.setCapabilityValue('measure_power', safeParse(value, 10)).catch(this.error);
@@ -41,11 +41,11 @@ class PoolPumpDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
+    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184] ;
     if (!tuyaCluster) return;
 
-    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value));
-    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value));
+    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value)) ;
+    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value)) ;
   }
 
   _handleDP(dp, value) {
@@ -77,3 +77,4 @@ class PoolPumpDevice extends ZigBeeDevice {
 }
 
 module.exports = PoolPumpDevice;
+

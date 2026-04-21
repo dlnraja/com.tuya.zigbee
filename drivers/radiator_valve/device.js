@@ -52,21 +52,21 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
         16: { capability: 'target_temperature', divisor: 10 },
         24: { capability: 'measure_temperature', divisor: 10 },
-        40: { capability: null, internal: 'child_lock', writable: true }
+        40: { capability, internal: 'child_lock', writable: true }
       };
     }
     if (this.dpProfile === 'me167') {
       // Profile B: AVATTO ME167/TRV06 DP mapping
       return {
         2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'auto', 1: 'heat', 2: 'off' }[v] ?? 'heat') },
-        3: { capability: null, internal: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
+        3: { capability, internal: 'running_state', transform: (v) => v === 0 ? 'heat' : 'idle' },
         4: { capability: 'target_temperature', divisor: 10 },
         5: { capability: 'measure_temperature', divisor: 10 },
-        7: { capability: null, internal: 'child_lock', writable: true },
+        7: { capability, internal: 'child_lock', writable: true },
         35: { capability: 'alarm_battery', transform: (v) => v === 1 },
-        36: { capability: null, internal: 'frost_protection', writable: true },
-        39: { capability: null, internal: 'anti_scaling', writable: true },
-        47: { capability: null, internal: 'temp_calibration', writable: true }
+        36: { capability, internal: 'frost_protection', writable: true },
+        39: { capability, internal: 'anti_scaling', writable: true },
+        47: { capability, internal: 'temp_calibration', writable: true }
       };
     }
     // Profile A: Standard TRV DP mapping (MOES, etc.)
@@ -75,21 +75,21 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       2: { capability: 'thermostat_mode', transform: (v) => ({ 0: 'heat', 1: 'auto', 2: 'off' }[v] ?? 'heat') },
       3: { capability: 'target_temperature', divisor: 10 },
       4: { capability: 'measure_temperature', divisor: 10 },
-      7: { capability: null, internal: 'child_lock', writable: true },
-      8: { capability: null, internal: 'frost_protection', writable: true },
-      9: { capability: null, internal: 'eco_temp', divisor: 10, writable: true },
-      10: { capability: null, internal: 'comfort_temp', divisor: 10, writable: true },
+      7: { capability, internal: 'child_lock', writable: true },
+      8: { capability, internal: 'frost_protection', writable: true },
+      9: { capability, internal: 'eco_temp', divisor: 10, writable: true },
+      10: { capability, internal: 'comfort_temp', divisor: 10, writable: true },
       13: { capability: 'measure_battery', divisor: 1 },
-      14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === true },
+      14: { capability, internal: 'battery_low', transform: (v) => v === 1 || v === true },
       15: { capability: 'measure_battery', divisor: 1 },
       101: { capability: 'alarm_contact', transform: (v) => v === 1 || v === true },
       102: { capability: 'dim', divisor: 100 },
-      103: { capability: null, internal: 'boost_mode', writable: true },
-      104: { capability: null, internal: 'temp_offset', divisor: 10, writable: true },
-      105: { capability: null, internal: 'min_temp', divisor: 10, writable: true },
-      106: { capability: null, internal: 'max_temp', divisor: 10, writable: true },
-      107: { capability: null, internal: 'away_mode', writable: true },
-      108: { capability: null, internal: 'away_temp', divisor: 10, writable: true },
+      103: { capability, internal: 'boost_mode', writable: true },
+      104: { capability, internal: 'temp_offset', divisor: 10, writable: true },
+      105: { capability, internal: 'min_temp', divisor: 10, writable: true },
+      106: { capability, internal: 'max_temp', divisor: 10, writable: true },
+      107: { capability, internal: 'away_mode', writable: true },
+      108: { capability, internal: 'away_temp', divisor: 10, writable: true },
       109: { capability: 'alarm_generic', transform: (v) => v === 1 || v === true }
     };
   }
@@ -142,9 +142,9 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   async _setupThermostatCluster(zclNode) {
-    const thermo = zclNode?.endpoints?.[1]?.clusters?.hvacThermostat;
+    const thermo = zclNode?.endpoints?.[1]?.clusters?.hvacThermostat ;
     if (thermo?.on) {
-      thermo.on('attr.localTemperature', (v) => this.setCapabilityValue('measure_temperature', safeDivide(parseFloat(v), 100)).catch(() => { }));
+      thermo.on('attr.localTemperature', (v) => this.setCapabilityValue('measure_temperature', safeDivide(parseFloat(v), 100)).catch(() => { })) ;
       thermo.on('attr.occupiedHeatingSetpoint', (v) => this.setCapabilityValue('target_temperature', safeDivide(v, 100)).catch(() => { }));
     }
   }
@@ -157,7 +157,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     if (this.hasCapability('thermostat_mode')) {
       this.registerCapabilityListener('thermostat_mode', async (v) => {
         const val = profile === 'me167' ? { 'auto': 0, 'heat': 1, 'off': 2 }[v] : { 'heat': 0, 'auto': 1, 'off': 2 }[v];
-        await this._sendTuyaDP(2, val ?? 0, 'enum');
+        await this._sendTuyaDP(2, val ?? 0, 'enum') ;
       });
     }
     if (this.hasCapability('target_temperature')) {
@@ -165,15 +165,15 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         let dp = 3;
         if (profile === 'me167') dp = 4;
         if (profile === 'nedis') dp = 16;
-        await this._sendTuyaDP(dp, Math.round(safeMultiply(v), 'value'));
+        await this._sendTuyaDP(dp, Math.round(safeMultiply(v, 10, 10)), "value");
       });
     }
   }
 
   async _sendTuyaDP(dp, value, type) {
-    const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
+    const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya ;
     if (tuya?.datapoint) {
-      await tuya.datapoint({ dp, value, type });
+      await tuya.datapoint({ dp, value, type }) ;
     }
   }
 
@@ -185,7 +185,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 
   async _tuyaTimeSyncFallback() {
     try {
-      const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
+      const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya ;
       if (!tuyaCluster) return;
       const now = new Date();
       const payload = Buffer.from([now.getFullYear() - 2000, now.getMonth() + 1, now.getDate(), now.getHours(), now.getMinutes(), now.getSeconds(), now.getDay() === 0 ? 7 : now.getDay()]);
@@ -208,3 +208,5 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
 }
 
 module.exports = RadiatorValveDevice;
+
+

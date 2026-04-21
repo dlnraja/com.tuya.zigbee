@@ -140,8 +140,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       // TEMPERATURE UNIT - DP9 (Hobeian) / DP2 (QT-07S)
       // 0=Celsius, 1=Fahrenheit - stored internally, not a capability
       // 
-      9: { capability: null, internal: 'temperature_unit' },
-      2: { capability: null, internal: 'temperature_unit' },
+      9: { capability, internal: 'temperature_unit' },
+      2: { capability, internal: 'temperature_unit' },
 
       // 
       // v5.5.406: RESEARCH-BASED DPs from Z2M issue #23260, #27501
@@ -150,25 +150,25 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       // v5.9.22: Z2M #28270 - DP102=illuminance for _TZE284_o9ofysmo/_TZE284_xc3vwx5a
       
       102: { capability: 'measure_luminance', divisor: 1 },
-      103: { capability: null, setting: 'report_interval', min: 30, max: 1200 },
-      104: { capability: null, setting: 'soil_calibration', min: -30, max: 30 },
-      107: { capability: null, setting: 'temperature_calibration', min: -20, max: 20 },
-      110: { capability: null, setting: 'soil_warning', min: 0, max: 100 },
+      103: { capability, setting: 'report_interval', min: 30, max: 1200 },
+      104: { capability, setting: 'soil_calibration', min: -30, max: 30 },
+      107: { capability, setting: 'temperature_calibration', min: -20, max: 20 },
+      110: { capability, setting: 'soil_warning', min: 0, max: 100 },
       111: { 
         capability: 'measure_humidity.soil', 
         divisor: 1,
         // v6.3.1: _TZE200_npj9bug3 uses DP 111 for moisture (%). 
         // For other devices, DP 111 is alarm_water (bool).
         transform: (v) => {
-          const mfr = this.getSetting?.('zb_manufacturer_name') || '';
+          const mfr = this.getSetting?.('zb_manufacturer_name') || '' ;
           if (mfr.includes('npj9bug3')) return v;
           return v === 1; // Fallback to alarm_water
         }
       },
       112: { capability: 'measure_conductivity', divisor: 1 }, // soil fertility uS/cm
-      113: { capability: null, setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
-      114: { capability: null, setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
-      115: { capability: null, setting: 'soil_fertility_warning_v1', min: 0, max: 5000 },
+      113: { capability, setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
+      114: { capability, setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
+      115: { capability, setting: 'soil_fertility_warning_v1', min: 0, max: 5000 },
       // 
       // FALLBACK DPs for other soil sensor variants
       // 
@@ -206,7 +206,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
           if (data.measuredValue !== undefined) {
             const temp = safeParse(data.measuredValue, 100);
             this.log(`[ZCL]  Temperature: ${temp}Â°C`);
-            this._registerZigbeeHit?.();
+            this._registerZigbeeHit?.() ;
             this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
@@ -223,7 +223,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
           if (data.measuredValue !== undefined) {
             const humidity = safeParse(data.measuredValue, 100);
             this.log(`[ZCL]  Humidity/Moisture: ${humidity}%`);
-            this._registerZigbeeHit?.();
+            this._registerZigbeeHit?.() ;
             // v5.11.16: ZCL humidity = AIR humidity. Soil moisture comes via Tuya DP3.
             if (this.hasCapability('measure_humidity')) {
               this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
@@ -242,7 +242,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
           if (data.batteryPercentageRemaining !== undefined) {
             const battery = Math.round(safeParse(data.batteryPercentageRemaining));
             this.log(`[ZCL]  Battery: ${battery}%`);
-            this._registerZigbeeHit?.();
+            this._registerZigbeeHit?.() ;
             this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
@@ -381,7 +381,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     }
     
     if (dp === 111) {
-      const mfr = this.getSetting?.('zb_manufacturer_name') || '';
+      const mfr = this.getSetting?.('zb_manufacturer_name') || '' ;
       if (mfr.includes('npj9bug3')) {
         this.log(`[SOIL]  SOIL MOISTURE DP111 = ${parsedValue}% [npj9bug3 specific]`);
         this._safeSetCapability('measure_humidity.soil', parseFloat(parsedValue));
@@ -437,7 +437,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         return;
       }
       let temp = parsedValue;
-      const mfr = this.getSettingValue?.('zb_manufacturer_name') || '';
+      const mfr = this.getSettingValue?.('zb_manufacturer_name') || '' ;
       const rawCelsius = mfr.toLowerCase().includes('_tze284_oitavov2') || mfr.toLowerCase().includes('_tze200_oitavov2');
       if (rawCelsius) { /* already Â°C */ }
       else if (temp > 1000) temp = safeParse(temp, 100);
@@ -455,7 +455,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         return;
       }
       const batteryMap = { 0: 10, 1: 50, 2: 100 };
-      const battery = batteryMap[parsedValue] ?? parsedValue;
+      const battery = batteryMap[parsedValue] ?? parsedValue ;
       this._safeSetCapability('measure_battery', parseFloat(battery));
       return;
     }
@@ -592,4 +592,5 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 }
 
 module.exports = SoilSensorDevice;
+
 
