@@ -256,7 +256,46 @@
       "_TZ3210_dse8ogfy",
       "_TZ3210_j4pdtz9v",
       "_TZ3210_okbss9dy",
-      "_TZ3400_KEYJHAPK"
+      "_TZ3400_KEYJHAPK",
+      "_TYZB01_ncutbjdi",
+      "_TYZB01_aneiicmq",
+      "_TZ3000_zmy1waw6",
+      "_TZ3000_pmvbt5hh",
+      "_TZ3000_sjpl9eg3",
+      "_TZ3000_majwnphg",
+      "_TZ3000_6axxqqi2",
+      "_TYZB01_zsl6z0pw",
+      "_TZ3000_4js9lo5d",
+      "_TZ3000_pmz6mjyu",
+      "_TYZB01_digziiav",
+      "_TZ3000_llfaquvp",
+      "_TZ3000_qcgw8qfa",
+      "_TZ3000_jcfje0kb",
+      "_TZ3400_keyjhapk",
+      "_TYZB01_xfpdrwvc",
+      "_TZ3000_f8tmviy0",
+      "_TZ3000_gidy6sjs",
+      "_TYZB01_qeqvmvti",
+      "_TYZB01_seqwasot",
+      "_TZ3000_yl3zuyaw",
+      "_TZ3000_3wkqni6o",
+      "_TZ3000_oex7egmt",
+      "_TZ3000_oaq83gqc",
+      "_TZ3000_6eyydfyg",
+      "_TYZB01_mtlhqn48",
+      "_TYZB01_6sadkhcy",
+      "TUYATEC-O6SNCwd6",
+      "_TYZB01_vzrytttn",
+      "_TYZB01_2athzhfr",
+      "_TZ3000_atp7xmd9",
+      "_TZ3000_mrqea2uu",
+      "_TZ3000_mklgayek",
+      "_TYZB01_6g8b7at8",
+      "TUYATEC-nzrrvgco",
+      "_TZ3000_qn8qvk9y",
+      "_TYZB01_xiuox57i",
+      "_TYZB01_b8cr31hp",
+      "_TYZB01_mqel1whf"
     ],
     "productId": [
       "TS0001",
@@ -268,7 +307,9 @@
       "TS0012",
       "TS0013",
       "TS0042",
-      "TS0001_fingerbot"
+      "TS0001_fingerbot",
+      "TS011F",
+      "TS0043"
     ],
     "endpoints": {
       "1": {
@@ -306,7 +347,7 @@
   "images": {
     "small": "drivers/button_wireless_2/assets/images/small.png",
     "large": "drivers/button_wireless_2/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

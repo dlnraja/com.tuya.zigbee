@@ -16,8 +16,8 @@
   "description": {
     "en": "Universal Tuya Unified Engine: High-performance local-first control, self-healing fleet stability & adaptive lighting",
     "nl": "Universele Tuya Unified Engine: Hoogwaardige lokale bediening, zelfherstellende vlootstabiliteit & adaptieve verlichting",
-    "de": "Universelle Tuya Unified Engine: Leistungsstarke lokale Steuerung, selbstheilende Flottenstabilität & adaptive Beleuchtung",
-    "fr": "Moteur Tuya Unified Engine : Contrôle local haute performance, auto-réparation de la flotte & éclairage adaptatif"
+    "de": "Universelle Tuya Unified Engine: Leistungsstarke lokale Steuerung, selbstheilende FlottenstabilitÃ¤t & adaptive Beleuchtung",
+    "fr": "Moteur Tuya Unified Engine : ContrÃ´le local haute performance, auto-rÃ©paration de la flotte & Ã©clairage adaptatif"
   },
   "tags": {
     "en": [
@@ -98316,7 +98316,13 @@
           "_TZE20X_XXXXXXXX",
           "_TZE284_aao3yzhs",
           "_TZE284_g2e6cpnw",
-          "_TZE284_sgabhwa6"
+          "_TZE284_sgabhwa6",
+          "_TZ3210_huzkzqyk",
+          "_TZ2000_avdnvykf",
+          "_TZ2000_hjsgdkfl",
+          "_TZE200_locansqn",
+          "_TZE200_d0yu2xgi",
+          "_TZE20X_xxxxxxxx"
         ],
         "productId": [
           "RH3052",
@@ -107664,7 +107670,13 @@
           "_TZ3210_x13bu7za",
           "_TZ3290_GNL5A6A5",
           "_TZB210_AAVHAADB",
-          "_TZB210_QUINZF3W"
+          "_TZB210_QUINZF3W",
+          "_TZ3000_keabpigv",
+          "_TZ3000_12sxjap4",
+          "_TZ3000_hlijwsai",
+          "eWeLight",
+          "_TZ3210_k1pe6ibm",
+          "_TZ3000_h1jnz6l8"
         ],
         "endpoints": {
           "1": {
@@ -112356,7 +112368,8 @@
           "_TZ3000_fsiepnrh",
           "_TZ3000_p6ju8myv",
           "_TZE200_0BLE7OW3",
-          "_TZE284_3QHGNDV6"
+          "_TZE284_3QHGNDV6",
+          "_TYZB01_qm6djpta"
         ],
         "productId": [
           "TS0215",
@@ -114315,7 +114328,46 @@
           "_TZ3210_dse8ogfy",
           "_TZ3210_j4pdtz9v",
           "_TZ3210_okbss9dy",
-          "_TZ3400_KEYJHAPK"
+          "_TZ3400_KEYJHAPK",
+          "_TYZB01_ncutbjdi",
+          "_TYZB01_aneiicmq",
+          "_TZ3000_zmy1waw6",
+          "_TZ3000_pmvbt5hh",
+          "_TZ3000_sjpl9eg3",
+          "_TZ3000_majwnphg",
+          "_TZ3000_6axxqqi2",
+          "_TYZB01_zsl6z0pw",
+          "_TZ3000_4js9lo5d",
+          "_TZ3000_pmz6mjyu",
+          "_TYZB01_digziiav",
+          "_TZ3000_llfaquvp",
+          "_TZ3000_qcgw8qfa",
+          "_TZ3000_jcfje0kb",
+          "_TZ3400_keyjhapk",
+          "_TYZB01_xfpdrwvc",
+          "_TZ3000_f8tmviy0",
+          "_TZ3000_gidy6sjs",
+          "_TYZB01_qeqvmvti",
+          "_TYZB01_seqwasot",
+          "_TZ3000_yl3zuyaw",
+          "_TZ3000_3wkqni6o",
+          "_TZ3000_oex7egmt",
+          "_TZ3000_oaq83gqc",
+          "_TZ3000_6eyydfyg",
+          "_TYZB01_mtlhqn48",
+          "_TYZB01_6sadkhcy",
+          "TUYATEC-O6SNCwd6",
+          "_TYZB01_vzrytttn",
+          "_TYZB01_2athzhfr",
+          "_TZ3000_atp7xmd9",
+          "_TZ3000_mrqea2uu",
+          "_TZ3000_mklgayek",
+          "_TYZB01_6g8b7at8",
+          "TUYATEC-nzrrvgco",
+          "_TZ3000_qn8qvk9y",
+          "_TYZB01_xiuox57i",
+          "_TYZB01_b8cr31hp",
+          "_TYZB01_mqel1whf"
         ],
         "productId": [
           "TS0001",
@@ -114327,7 +114379,9 @@
           "TS0012",
           "TS0013",
           "TS0042",
-          "TS0001_fingerbot"
+          "TS0001_fingerbot",
+          "TS011F",
+          "TS0043"
         ],
         "endpoints": {
           "1": {
@@ -115615,7 +115669,16 @@
           "_TZ3000_yirp2pgd",
           "_TZ3290_785FBXIK",
           "_TZ3290_NKPXAPOZ",
-          "_TZ3290_YYAX9AJF"
+          "_TZ3290_YYAX9AJF",
+          "_TZ3000_u3nv1jwk",
+          "_TZ3000_vp6clf9d",
+          "_TZ3000_ufhtxr59",
+          "_TZ3000_wkai4ga5",
+          "_TZ3000_uaa99arv",
+          "_TZ3000_jcspr0tp",
+          "_TZ3000_r0pmi2p3",
+          "_TZ3000_fjt5218m",
+          "_TYZB01_bagt1e4o"
         ],
         "productId": [
           "SNZB-01M",
@@ -116277,7 +116340,8 @@
         "manufacturerName": [
           "_TZ3000_ISZEGWPD",
           "_TZE200_ZXX7MI77",
-          "_TZE204_ZXX7MI77"
+          "_TZE204_ZXX7MI77",
+          "_TZ3000_iszegwpd"
         ],
         "productId": [
           "TS0046",
@@ -118479,12 +118543,31 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZ3210_7jnk7l3k",
+          "_TYZB01_iuepbmpv",
+          "_TZ3000_ew31dmgx",
+          "_TZ3000_dpo1ysak",
+          "_TZ3000_plyvnuf5",
+          "_TZ3000_cymsnfvf",
+          "_TZ3000_upjrsxh1",
+          "_TZ3000_mraovvmm",
+          "_TZ3000_gznh2xla",
+          "_TZ3000_1h2x4akh",
+          "_TZ3000_dksbtrzs",
+          "_TZ3000_fukaa7nc",
+          "_TZ3000_88iqnhvd",
+          "_TZ3000_jak16dll",
+          "_TZ3000_4uf3d0ax",
+          "_TZ3000_wzauvbcs",
+          "_TZ3000_vmpbygs5"
+        ],
         "productId": [
           "TS0111",
           "TS011F",
           "TS0121",
-          "TS0121"
+          "TS0121",
+          "TSO121"
         ],
         "learnmode": {
           "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
@@ -123293,7 +123376,8 @@
           "_TZE284_Z7A2JMYY",
           "_TZE284_ZNBL8DJ5",
           "_TZE284_ZNPH9215",
-          "_TZE600_WXQ8DPHA"
+          "_TZE600_WXQ8DPHA",
+          "_TYZB01_cbiezpds"
         ],
         "productId": [
           "CK-TLSR8656-SS5-01(7014)",
@@ -128387,7 +128471,64 @@
           "_TZE608_C75ZQGHM",
           "_TZE608_FMEMCZV1",
           "_TZE608_LAPUUOKE",
-          "_TZE608_XKR8GEP3"
+          "_TZE608_XKR8GEP3",
+          "TUYATEC-sb6t7ett",
+          "TUYATEC-rkqiqvcs",
+          "TUYATEC-crr8qb0p",
+          "_TZ3000_ebar6ljy",
+          "TUYATEC-kbqf60nt",
+          "TUYATEC-r9hgssol",
+          "TUYATEC-trhrga6p",
+          "TUYATEC-ip9ganvw",
+          "_TYZB01_xph99wvr",
+          "_TZ3000_2mbfxlzr",
+          "_TZ3000_402jjyro",
+          "_TZ3000_6jeesvrt",
+          "_TZ3000_26fmupbb",
+          "_TZ3000_bmg14ax2",
+          "_TZ3000_oxslv1c9",
+          "_TZ3000_bzxlofth",
+          "_TZ3000_bzxloft",
+          "_TZ3000_n2egfsli",
+          "_TZ3000_7d8yme6f",
+          "_TZ3000_rgchmad8",
+          "_TZ3000_au1rjicn",
+          "_TZ3000_4ugnzsli",
+          "TUYATEC-7qunn4gq",
+          "_TZ3000_decxrtwa",
+          "_TZ3000_yxqnffam",
+          "_TZ3000_9eeavbk5",
+          "_TZ3000_rcuyhwe3",
+          "_TZ3000_a33rw7ou",
+          "_TZ3000_6zvw8ham",
+          "_TZ3000_yfekcy3n",
+          "_TZ3000_cea5xugq",
+          "_TZ3000_1bwpjvlz",
+          "_TZ3000_au2o5e6q",
+          "_TZ3000_v7chgqso",
+          "_TZ3000_qrldbmfn",
+          "_TZ3000_gntwytxo",
+          "TUYATEC-0l6xaqmi",
+          "_TZ3000_7tbsruql",
+          "_TZ3000_osu834un",
+          "Immax",
+          "Visonic",
+          "_TZ3000_hkcpblrs",
+          "_TZ3000_8yhypbo7",
+          "_TZ3000_cqlnswn0",
+          "_TZ3000_zgrffiwg",
+          "_TZ3000_bpkijo14",
+          "_TZ3000_uvti8nkd",
+          "zbeacon",
+          "TUYATEC-3tipnsrx",
+          "_TZ3000_4uvovz4r",
+          "_TZ3000_3dfewsk1",
+          "_TZ3000_ww9i3e0y",
+          "_TZ3000_wuep9zng",
+          "_TZ1800_ejwkn2h2",
+          "_TYST11_qq9mpfhw",
+          "_TZ3000_fxvjhdyl",
+          "_TZ3000_eit7p838"
         ],
         "productId": [
           "3300-S",
@@ -132774,7 +132915,26 @@
           "_TZE284_1FUXIHTI",
           "_TZE284_HBJWGKDH",
           "_TZE284_LNYZ4A6V",
-          "_TZE284_WAA352QV"
+          "_TZE284_WAA352QV",
+          "_TZ3000_vd43bbfq",
+          "_TZ3000_ke7pzj5d",
+          "_TZ3000_fccpjz5z",
+          "_TZ3000_4uuaja4a",
+          "_TZ3000_zirycpws",
+          "_TZ3210_ol1uhvza",
+          "_TZ3000_eg7awg6a",
+          "_TZ3000_eafaa66e",
+          "_TZ3000_j1xl73iw",
+          "_TZ3000_l6iqph4f",
+          "_TZ3000_dph3rpss",
+          "_TZ3000_8kzqqzu4",
+          "_TZ3000_ltiqubue",
+          "_TZ3000_dbpmpco1",
+          "_TZ3000_fvhunhxb",
+          "_TZ3000_ctbafvhm",
+          "_TZ3000_qqdbccb3",
+          "_TZ3000_wptayaqr",
+          "_TZ3000_qa8s8vca"
         ],
         "productId": [
           "AM02",
@@ -145640,7 +145800,12 @@
           "_TZ3000_CJFMU5HE",
           "_TZ3000_MQ4WUJMP",
           "_TZ3000_kz1anoi8",
-          "_TZ3210_EYMUNFFL"
+          "_TZ3210_EYMUNFFL",
+          "_TZ3000_pnzfdr9y",
+          "_TZ3000_br3laukf",
+          "_TZ3210_eymunffl",
+          "_TZ3000_cjfmu5he",
+          "_TZ3000_mq4wujmp"
         ],
         "productId": [
           "TS0049",
@@ -173539,7 +173704,37 @@
           "_TZE204_SOOUCAN5",
           "_TZE284_0ZSE7XQG",
           "_TZE284_MRF6VTUA",
-          "_TZE284_TRE6HAIF"
+          "_TZE284_TRE6HAIF",
+          "TUYATEC-bd5faf9p",
+          "TUYATEC-zw6hxafz",
+          "_TYZB01_jytabjkb",
+          "_TYZB01_dl7cejts",
+          "_TZ3000_mmtwjmaq",
+          "_TZ3000_kmh5qpmb",
+          "_TZ3000_msl6wxk9",
+          "_TZ3000_mcxw5ehu",
+          "_TZ3000_otvn3lne",
+          "_TZ3000_6ygjfyll",
+          "_TZ3040_6ygjfyll",
+          "_TZ3040_bb6xaihh",
+          "_TZ3000_nss8amz9",
+          "_TZ3000_bsvqrxru",
+          "_TYZB01_dr6sduka",
+          "_TZ3000_o4mkahkc",
+          "_TZ3000_c8ozah8n",
+          "_TZ3040_wqmtjsyk",
+          "_TZ3000_mg4dy6z6",
+          "_TZ3000_y56pgpgs",
+          "_TYZB01_geepvxsy",
+          "TUYATEC-lha8pbwd",
+          "TUYATEC-zn9wyqtr",
+          "TUYATEC-53o41joc",
+          "TUYATEC-deetibst",
+          "TUYATEC-dgtxmihe",
+          "TUYATEC-b5g40alm",
+          "TUYATEC-dxnohkpd",
+          "_TZ3000_lf56vpxj",
+          "_TZ1800_fcdjzz3s"
         ],
         "productId": [
           "3305-S",
@@ -209879,7 +210074,10 @@
           "_TZE284_N4TTSCK2",
           "_TZE284_O9OFYSMO",
           "_TZE284_RCCXOX8P",
-          "_TZE284_XC3VWX5A"
+          "_TZE284_XC3VWX5A",
+          "_TYZB01_dsjszp0x",
+          "_TYZB01_wqcac7lo",
+          "_TZ3210_up3pngle"
         ],
         "endpoints": {
           "1": {
@@ -214094,7 +214292,10 @@
           "_TZ300A_VQRS45NJ",
           "_TZ3210_IYMFXDIS",
           "_TZE204_XIBAABMU",
-          "_TZE284_XIBAABMU"
+          "_TZE284_XIBAABMU",
+          "_TZ3000_hdlpifbk",
+          "_TZ3000_excgg5kb",
+          "_TZ3000_mmkbptmx"
         ]
       },
       "images": {
@@ -223129,7 +223330,8 @@
           "_TZ3210_",
           "_TZE200_",
           "_TZE204_",
-          "_TZE284_"
+          "_TZE284_",
+          "_TYZB01_vkwryfdr"
         ],
         "productId": [
           "005F0C3B",
