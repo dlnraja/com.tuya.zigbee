@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-22T15:23:25.652Z",
+  "ts": "2026-04-22T15:39:46.005Z",
   "currentCount": 3170,
   "src": {
     "johan": {
@@ -11156,6 +11156,18 @@
         },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1377,
+          "title": "[Device Support Request] Tuya TS0001 – _TZ3000_gjrubzje (Single Relay + Metering)",
+          "mfrs": [
+            "_TZ3000_gjrubzje",
+            "_TZ3000_gjrubzje",
+            "_TZ3000_gjrubzje",
+            "_TZ3000_gjrubzje",
+            "_TZ3000_gjrubzje"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1376,
           "title": "[Device Support Request] Tuya TS0011 – _TZ3000_aetquff4 (1-Gang Wall Switch)",
           "mfrs": [
@@ -11285,17 +11297,6 @@
             "_TZE284_hdml1aav",
             "_TZE284_hdml1aav",
             "_TZE284_hdml1aav"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1362,
-          "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
-          "mfrs": [
-            "_TZE284_iadro9bf",
-            "_TZE284_iadro9bf",
-            "_TZE284_iadro9bf",
-            "_TZE284_iadro9bf"
           ]
         }
       ]
