@@ -65,7 +65,10 @@
       "_TZE284_N4TTSCK2",
       "_TZE284_O9OFYSMO",
       "_TZE284_RCCXOX8P",
-      "_TZE284_XC3VWX5A"
+      "_TZE284_XC3VWX5A",
+      "_TYZB01_dsjszp0x",
+      "_TYZB01_wqcac7lo",
+      "_TZ3210_up3pngle"
     ],
     "endpoints": {
       "1": {
@@ -498,7 +501,7 @@
   "images": {
     "small": "drivers/smoke_detector_advanced/assets/images/small.png",
     "large": "drivers/smoke_detector_advanced/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],
