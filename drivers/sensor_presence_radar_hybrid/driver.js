@@ -20,56 +20,46 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     this._registerFlowCards();
   }
 
-  _registerFlowCards() {
-    // TRIGGERS
-    try { this.homey.flow.getTriggerCard('sensor_presence_radar_hybrid_presence_detected'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('sensor_presence_radar_hybrid_presence_cleared'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('sensor_presence_radar_hybrid_presence_sensor_radar_motion_detected_sensor_presence_radar_hybrid'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('sensor_presence_radar_hybrid_presence_sensor_radar_illuminance_changed_sensor_presence_radar_hybrid'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('sensor_presence_radar_hybrid_presence_sensor_radar_distance_changed_sensor_presence_radar_hybrid'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('sensor_presence_radar_hybrid_presence_sensor_radar_lux_changed_sensor_presence_radar_hybrid'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('sensor_presence_radar_hybrid_presence_sensor_radar_battery_low_sensor_presence_radar_hybrid'); } catch (e) {}
+    const triggers = [
+      'presence_detected',
+      'presence_cleared',
+      'presence_sensor_radar_motion_detected_sensor_presence_radar_hybrid',
+      'presence_sensor_radar_illuminance_changed_sensor_presence_radar_hybrid',
+      'presence_sensor_radar_distance_changed_sensor_presence_radar_hybrid',
+      'presence_sensor_radar_lux_changed_sensor_presence_radar_hybrid',
+      'presence_sensor_radar_battery_low_sensor_presence_radar_hybrid'
+    ];
+
+    for (const id of triggers) {
+      try {
+        const fullId = id.startsWith('sensor_presence_radar_hybrid') ? id : `sensor_presence_radar_hybrid_${id}`;
+        this.homey.flow.getTriggerCard(fullId);
+      } catch (e) {
+        this.error(`Failed to register trigger ${id}: ${e.message}`);
+      }
+    }
 
     // CONDITIONS
-    try {
-      const card = const card = this.homey.flow.getConditionCard('sensor_presence_radar_hybrid_presence_sensor_radar_is_present_sensor_presence_radar_hybrid');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          return args.device.getCapabilityValue('alarm_motion') === true;
-        });
-      }
-    } catch (err) { this.error(`Condition sensor_presence_radar_hybrid_presence_sensor_radar_is_present_sensor_presence_radar_hybrid: ${err.message}`); }
+    const conditions = [
+      { id: 'presence_sensor_radar_is_present_sensor_presence_radar_hybrid', capability: 'alarm_motion' },
+      { id: 'presence_sensor_radar_illuminance_above_sensor_presence_radar_hybrid', capability: 'alarm_motion' },
+      { id: 'presence_sensor_radar_distance_within_sensor_presence_radar_hybrid', capability: 'alarm_motion' },
+      { id: 'presence_sensor_radar_motion_active_sensor_presence_radar_hybrid', capability: 'alarm_motion' }
+    ];
 
-    try {
-      const card = const card = this.homey.flow.getConditionCard('sensor_presence_radar_hybrid_presence_sensor_radar_illuminance_above_sensor_presence_radar_hybrid');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          return args.device.getCapabilityValue('alarm_motion') === true;
-        });
+    for (const cond of conditions) {
+      try {
+        const card = this.homey.flow.getConditionCard(cond.id);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            return args.device.getCapabilityValue(cond.capability) === true;
+          });
+        }
+      } catch (e) {
+        this.error(`Failed to register condition ${cond.id}: ${e.message}`);
       }
-    } catch (err) { this.error(`Condition sensor_presence_radar_hybrid_presence_sensor_radar_illuminance_above_sensor_presence_radar_hybrid: ${err.message}`); }
-
-    try {
-      const card = const card = this.homey.flow.getConditionCard('sensor_presence_radar_hybrid_presence_sensor_radar_distance_within_sensor_presence_radar_hybrid');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          return args.device.getCapabilityValue('alarm_motion') === true;
-        });
-      }
-    } catch (err) { this.error(`Condition sensor_presence_radar_hybrid_presence_sensor_radar_distance_within_sensor_presence_radar_hybrid: ${err.message}`); }
-
-    try {
-      const card = const card = this.homey.flow.getConditionCard('sensor_presence_radar_hybrid_presence_sensor_radar_motion_active_sensor_presence_radar_hybrid');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          return args.device.getCapabilityValue('alarm_motion') === true;
-        });
-      }
-    } catch (err) { this.error(`Condition sensor_presence_radar_hybrid_presence_sensor_radar_motion_active_sensor_presence_radar_hybrid: ${err.message}`); }
+    }
 
     this.log('[FLOW] All flow cards registered');
   }

@@ -1084,7 +1084,7 @@ return Math.min(100, v * 2); // Fallback: treat as raw with x2
               maxInterval: 21600,   // 6 hours max
               minChange: 2          // Report on 1% change
             }
-          }).catch(() => { });
+          }).catch(() => {});
           this.log('[ZCL-SETUP]  Battery reporting configured');
         }
 
@@ -1123,18 +1123,18 @@ return Math.min(100, v * 2); // Fallback: treat as raw with x2
               maxInterval: 3600,    // 1 hour
               minChange: 10         // 0.1Â°C
             }
-          }).catch(() => { });
+          }).catch(() => {});
           this.log('[ZCL-SETUP]  Temperature reporting configured');
         }
 
         if (typeof tempCluster.on === 'function') {
           tempCluster.on('attr.measuredValue', (value) => {
-            const temp = value * 100;
+            const temp = value * 100);
             if (temp >= VALIDATION.TEMP_MIN && temp <= VALIDATION.TEMP_MAX) {
               // v5.5.793: Apply calibration offset
               const calibratedTemp = this._applyTempOffset(temp);
               this.log(`[ZCL]  Temperature: ${calibratedTemp}Â°C`);
-              this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp).catch(() => { }));
+              this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp)).catch(() => { });
             }
           });
           this.log('[ZCL-SETUP]  Temperature listener active');
@@ -1165,13 +1165,13 @@ return Math.min(100, v * 2); // Fallback: treat as raw with x2
               maxInterval: 3600,
               minChange: 100        // 1%
             }
-          }).catch(() => { });
+          }).catch(() => {});
           this.log('[ZCL-SETUP]  Humidity reporting configured');
         }
 
         if (typeof humCluster.on === 'function') {
           humCluster.on('attr.measuredValue', (value) => {
-            let hum = value * 100;
+            let hum = value * 100);
             // v5.5.793: Auto-detect divisor for devices reporting 0-1000 scale
             if (hum > VALIDATION.HUMIDITY_AUTO_DIVISOR_THRESHOLD) {
               hum = Math.round(hum);
@@ -1180,7 +1180,7 @@ return Math.min(100, v * 2); // Fallback: treat as raw with x2
               // v5.5.793: Apply calibration offset
               const calibratedHum = this._applyHumOffset(hum);
               this.log(`[ZCL]  Humidity: ${calibratedHum}%`);
-              this.setCapabilityValue('measure_humidity', parseFloat(calibratedHum).catch(() => { }));
+              this.setCapabilityValue('measure_humidity', parseFloat(calibratedHum)).catch(() => { });
             }
           });
           this.log('[ZCL-SETUP]  Humidity listener active');
@@ -1228,7 +1228,7 @@ return Math.min(100, v * 2); // Fallback: treat as raw with x2
           const temp = attrs.measuredValue * 100;
           if (temp >= -40 && temp <= 80) {
             this.log(`[ZCL-READ]  Temperature: ${temp}Â°C`);
-            await this.setCapabilityValue('measure_temperature', parseFloat(temp).catch(() => { }));
+            await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
       } catch (e) {
@@ -1245,7 +1245,7 @@ return Math.min(100, v * 2); // Fallback: treat as raw with x2
           const hum = attrs.measuredValue * 100;
           if (hum >= 0 && hum <= 100) {
             this.log(`[ZCL-READ]  Humidity: ${hum}%`);
-            await this.setCapabilityValue('measure_humidity', parseFloat(hum).catch(() => { }));
+            await this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
           }
         }
       } catch (e) {
@@ -1283,7 +1283,7 @@ return Math.min(100, v * 2); // Fallback: treat as raw with x2
             await this.safeTuyaDataQuery(dpIds, {
               logPrefix: '[CLIMATE-WAKE]',
               delayBetweenQueries: 100
-            }).catch(() => { });
+            }).catch(() => {});
           }
         }
 
@@ -1483,7 +1483,7 @@ return Math.min(100, v * 2); // Fallback: treat as raw with x2
       if (dp === 5) {
         const temp = this._applyTempOffset(value * 10);
         this.log(`[SOIL] DP5 temperature raw=${value}  ${temp}Â°C`);
-        await this.setCapabilityValue('measure_temperature', parseFloat(temp).catch(() => {}));
+        await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
         return;
       }
       if (dp === 3) {

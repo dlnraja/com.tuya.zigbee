@@ -126,7 +126,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const watts = value * 10; // Typically in 0.1W units
           this.log(`[ZCL-DATA] switch.power raw=${value}  ${watts}W`);
           if (this.hasCapability('measure_power')) {
-            this.setCapabilityValue('measure_power', parseFloat(watts).catch(() => { }));
+            this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
           }
         });
 
@@ -135,7 +135,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const volts = value * 10; // Typically in 0.1V units
           this.log(`[ZCL-DATA] switch.voltage raw=${value}  ${volts}V`);
           if (this.hasCapability('measure_voltage')) {
-            this.setCapabilityValue('measure_voltage', parseFloat(volts).catch(() => { }));
+            this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
           }
         });
 
@@ -144,7 +144,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const amps = value * 1000; // Typically in mA
           this.log(`[ZCL-DATA] switch.current raw=${value}  ${amps}A` );
           if (this.hasCapability('measure_current')) {
-            this.setCapabilityValue('measure_current', parseFloat(amps).catch(() => { }));
+            this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
           }
         });
       }
@@ -173,7 +173,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const kwh = value * 1000; // Typically in Wh
           this.log(`[ZCL-DATA] switch.energy raw=${value}  ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
-            this.setCapabilityValue('meter_power', parseFloat(kwh).catch(() => { }));
+            this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
           }
         });
       }
@@ -266,13 +266,13 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]).catch(() => ({}));
 
       if (attrs.activePower != null && this.hasCapability('measure_power')) {
-        this.setCapabilityValue('measure_power',safeParse(attrs.activePower, 10).catch(() => { }));
+        this.setCapabilityValue('measure_power', safeParse(attrs.activePower, 10)).catch(() => { });
       }
       if (attrs.rmsVoltage != null && this.hasCapability('measure_voltage')) {
-        this.setCapabilityValue('measure_voltage',safeParse(attrs.rmsVoltage, 10).catch(() => { }));
+        this.setCapabilityValue('measure_voltage', safeParse(attrs.rmsVoltage, 10)).catch(() => { });
       }
       if (attrs.rmsCurrent != null && this.hasCapability('measure_current')) {
-        this.setCapabilityValue('measure_current',safeParse(attrs.rmsCurrent, 1000).catch(() => { }));
+        this.setCapabilityValue('measure_current', safeParse(attrs.rmsCurrent, 1000)).catch(() => { });
       }
       this.log('[SWITCH-2G] Initial electrical values read');
     } catch (e) {
@@ -321,7 +321,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
     const getOnOffCluster = (epNum) => {
       const ep = this._zclNode?.endpoints?.[epNum];
-      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6] || null;
     };
 
     // v5.5.990: Register capability listeners FIRST (packetninja fix)
@@ -396,12 +396,12 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            this.homey.flow._getFlowCard('flowId').trigger(this, { gang: epNum, state: value }, {})
+            (() => { try { return this.homey.flow.getTriggerCard(flowId); } catch (e) { return null; } })().trigger(this, { gang: epNum, state: value }, {})
               .catch(() => {});
             this.log(`[BSEED-2G]  Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            this.homey.flow._getFlowCard('flowId').trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+            (() => { try { return this.homey.flow.getTriggerCard(flowId); } catch (e) { return null; } })().trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
             this.log(`[BSEED-2G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
           }
         }

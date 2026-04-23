@@ -9,9 +9,9 @@ class D extends E{
     actPow:{capability:'measure_power',divisor:100}
   };}
   _registerCapListeners(){
-    this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v,0);
+    this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v,0));
       });
-    if(this.hasCapability('onoff.2'))this.registerCapabilityListener('onoff.2',async v=>{await this._client.setSwitch(v,1);
+    if(this.hasCapability('onoff.2'))this.registerCapabilityListener('onoff.2',async v=>{await this._client.setSwitch(v,1));
       });
   }
   async onInit(){

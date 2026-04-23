@@ -144,7 +144,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   async _setupThermostatCluster(zclNode) {
     const thermo = zclNode?.endpoints?.[1]?.clusters?.hvacThermostat;
     if (thermo?.on) {
-      thermo.on('attr.localTemperature', (v) => this.setCapabilityValue('measure_temperature', parseFloat(v , 100).catch(() => { })));
+      thermo.on('attr.localTemperature', (v) => this.setCapabilityValue('measure_temperature', parseFloat(v )).catch(() => { }));
       thermo.on('attr.occupiedHeatingSetpoint', (v) => this.setCapabilityValue('target_temperature', v * 100).catch(() => { }));
     }
   }
@@ -166,7 +166,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
         let dp = 3;
         if (profile === 'me167') dp = 4;
         if (profile === 'nedis') dp = 16;
-        await this._sendTuyaDP(dp, Math.round(safeMultiply(v, 10, 10), "value")));
+        await this._sendTuyaDP(dp, Math.round(safeMultiply(v, 10, 10), "value"));
       });
     }
   }

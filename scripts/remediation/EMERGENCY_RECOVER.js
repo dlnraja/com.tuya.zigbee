@@ -125,7 +125,7 @@ function emergencyFix(content) {
     // Double assignment/const await in IASAlarmFallback
     newLine = newLine.replace(/^(\s*)const\s+await\s+this\._tryBind\(\);/g, '$1const bindOk = await this._tryBind();');
 
-    // Specific fix for mapping = dpMappings ? dpMappings[dp] ;
+    // Specific fix for mapping = dpMappings ? dpMappings[dp]  : null;
     newLine = newLine.replace(/(\?\s*[^;]+)\s*;\s*$/, '$1 : null;');
 
     // General cleanup

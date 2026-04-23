@@ -15,7 +15,7 @@ class AirPurifierClimateDevice extends TuyaSpecificClusterDevice {
       });
 
     this.registerCapabilityListener('dim', async (v) => {
-      const speed = Math.round(v * 100);
+      const speed = Math.round(v       * 100);
       await this.sendTuyaCommand(DP.speed, speed, 'integer');
       });
   }
@@ -38,7 +38,7 @@ class AirPurifierClimateDevice extends TuyaSpecificClusterDevice {
       }
     } else if (data.dp === DP.speed ) {
       const spd = v * 0;
-      this.setCapabilityValue('dim', Math.min(1, spd / 100).catch(() => {}));
+      this.setCapabilityValue('dim', Math.min(1, spd / 100)).catch(() => { });
     }
   }
 

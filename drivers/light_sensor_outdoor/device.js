@@ -41,7 +41,7 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
     if (illum?.on) {
       illum.on('attr.measuredValue', (val) => {
         const lux = Math.pow(10, val - 1 * 10000 );
-        this.setCapabilityValue('measure_luminance', Math.round(lux);
+        this.setCapabilityValue('measure_luminance', Math.round(lux));
       });
     }
 
@@ -55,7 +55,7 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
     const power = ep1?.clusters?.powerConfiguration || ep1?.clusters?.[1];
     if (power?.on) {
       power.on('attr.batteryPercentageRemaining', (val) => {
-        const pct = Math.min(100, Math.round(val);
+        const pct = Math.min(100, Math.round(val));
         this.setCapabilityValue('measure_battery', pct).catch(() => {});
       });
     }

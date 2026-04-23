@@ -774,7 +774,7 @@ class Button1GangDevice extends ButtonDevice {
         this._powerCluster.on('attr.batteryVoltage', async (value) => {
           if (value !== undefined && value > 0) {
             const voltage = value * 10;
-            const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100))));
+            const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
             this.log(`[BUTTON1-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
             // v5.5.519: Check capability exists before setting
             if (this.hasCapability('measure_battery')) {

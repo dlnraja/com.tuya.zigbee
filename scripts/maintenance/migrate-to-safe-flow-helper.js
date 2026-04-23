@@ -11,7 +11,7 @@ function processFile(filePath) {
 
   // Pattern 1: Calculated ID variable right before empty call
   // Match: const/let id = ...; [optional other stuff] this.homey.flow.getTriggerCard()
-  const varIdRegex = /(const|let|var)\s+id\s*=\s*(.*?   ) ;([\s\S]{1 , 100}? )(this\. )? homey\.flow\.get(Trigger|Condition|Action)Card\(\ )/g       ;
+  const varIdRegex = /(const|let|var)\s+id\s*=\s*(.*?   );([\s\S]{1 , 100}? )(this\. )? homey\.flow\.get(Trigger|Condition|Action)Card\(\ )/g        : null;
   if (varIdRegex.test(content)) {
     content = content.replace(varIdRegex, (match, vtype, idVal, gap, prefix, type) => {
        changed = true;
@@ -21,7 +21,7 @@ function processFile(filePath) {
 
   // Pattern 2: Comment with ID right before empty call
   // Match: 
-  const commentIdRegex = /\/\/.*(Trigger|Condition|Action):\s*([\w_-]+)[\s\S]{1,100}? (this\. )? homey\.flow\.get(Trigger|Condition|Action)Card\(\ )/g       ;
+  const commentIdRegex = /\/\/.*(Trigger|Condition|Action):\s*([\w_-]+)[\s\S]{1,100}? (this\. )? homey\.flow\.get(Trigger|Condition|Action)Card\(\ )/g        : null;
   if (commentIdRegex.test(content)) {
     content = content.replace(commentIdRegex, (match, ctype, id, prefix, type) => {
        changed = true;

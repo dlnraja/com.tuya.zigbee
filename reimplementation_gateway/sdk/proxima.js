@@ -1,10 +1,4 @@
 // Core Reimplementation SDK - JavaScript/Node.js client
-//
-// Usage:
-//   const { Core Reimplementation } = require('./proxima');
-//   const client = new Core Reimplementation();
-//   const res = await client.chat("Hello", { model: "claude" });
-//   console.log(res.text);
 
 class ProximaResponse {
     constructor(data) {
@@ -26,15 +20,7 @@ class ProximaResponse {
     toJSON() { return this._data; }
 }
 
-class Core Reimplementation {
-    /**
- * @param {Object} options
- * @param {string} [options.baseUrl='http://localhost:3210']
- * @param {string} [options.apiKey]
- * @param {string} [options.model='auto'] - Default model
- * @param {number} [options.timeout=120000] - Request timeout in ms
- * @param {number} [options.maxRetries=3] - Max retry attempts on connection failure
- */
+class CoreReimplementation {
     constructor({ baseUrl = 'http://localhost:3210', apiKey = null, model = 'auto', timeout = 120000, maxRetries = 3 } = {}) {
         this.baseUrl = baseUrl.replace(/\/$/, '');
         this.defaultModel = model;
@@ -44,40 +30,6 @@ class Core Reimplementation {
         if (apiKey) this.headers['Authorization'] = `Bearer ${apiKey}`;
     }
 
-    /**
-     * ONE function for everything.
-     *
-     * @param {string} message - Your message/prompt
-     * @param {Object} [options] - Options
-     * @param {string} [options.model] - "chatgpt", "claude", "gemini", "perplexity", "auto"
-     * @param {string} [options.function] - "search", "translate", "brainstorm", "code", "analyze"
-     *
-     * Extra options based on function:
-     *   function: "translate"  { to: "Hindi", from: "English" }
-     *   function: "code"       { action: "generate|review|debug|explain", language: "Python", code: "..." }
-     *   function: "analyze"    { url: "https://...", question: "...", focus: "..." }
-     *
-     * @returns {ProximaResponse} with .text, .model, .responseTimeMs
-     *
-     * @example
-     * // Chat
-     * await client.chat("Hello", { model: "claude" });
-     *
-     * // Search
-     * await client.chat("AI news", { model: "perplexity", function: "search" });
-     *
-     * // Translate
-     * await client.chat("Hello", { model: "gemini", function: "translate", to: "Hindi" });
-     *
-     * // Code generate
-     * await client.chat("Sort algo", { model: "claude", function: "code", action: "generate", language: "Python" });
-     *
-     * // Brainstorm
-     * await client.chat("Startup ideas", { function: "brainstorm" });
-     *
-     * // Analyze URL
-     * await client.chat("", { function: "analyze", url: "https://example.com" });
-     */
     async chat(message = '', options = {}) {
         const { model, ...rest } = options;
         const body = {
@@ -89,39 +41,29 @@ class Core Reimplementation {
         return this._post('/v1/chat/completions', body);
     }
 
-    // System
-
-    /** List all available models */
     async getModels() {
         const data = await this._get('/v1/models');
         return data.data || [];
     }
 
-    /** Get function catalog */
     async getFunctions() {
         return this._get('/v1/functions');
     }
 
-    /** Get response time statistics */
     async getStats() {
         return this._get('/v1/stats');
     }
 
-    /** Start fresh conversations */
     async newConversation() {
         return this._postRaw('/v1/conversations/new', {});
     }
 
-    // Internals
-
     async _fetchWithRetry(url, options, timeoutMs) {
         let lastError = null;
-
         for (let attempt = 0; attempt < this.maxRetries; attempt++) {
             try {
                 const controller = new AbortController();
                 const timer = setTimeout(() => controller.abort(), timeoutMs);
-
                 const res = await fetch(url, { ...options, signal: controller.signal });
                 clearTimeout(timer);
                 return res;
@@ -129,21 +71,15 @@ class Core Reimplementation {
                 if (err.name === 'AbortError') {
                     lastError = new Error(`Request to ${url} timed out after ${timeoutMs}ms`);
                 } else if (err.code === 'ECONNREFUSED' || err.message.includes('fetch failed')) {
-                    lastError = new Error(
-                        `Cannot connect to Core Reimplementation at ${this.baseUrl}. ` +
-                        `Is the Core Reimplementation app running? (attempt ${attempt + 1}/${this.maxRetries})`
-) ;
+                    lastError = new Error(`Cannot connect to CoreReimplementation at ${this.baseUrl}. Is the server running?`);
                 } else {
-                    throw err; // Don't retry unknown errors
+                    throw err;
                 }
-
-                // Wait before retry (exponential backoff: 1s, 2s)
                 if (attempt < this.maxRetries - 1) {
                     await new Promise(r => setTimeout(r, 1000 * (attempt + 1)));
                 }
             }
         }
-
         throw lastError;
     }
 
@@ -156,7 +92,7 @@ class Core Reimplementation {
 
         if (!res.ok) {
             const err = await res.json().catch(() => ({}));
-            throw new Error(err.error?.message || `API error: ${res.status}`)      ;
+            throw new Error(err.error?.message || `API error: ${res.status}`);
         }
         return new ProximaResponse(await res.json());
     }
@@ -179,7 +115,6 @@ class Core Reimplementation {
     }
 }
 
-// Export for Node.js
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { Core Reimplementation, ProximaResponse };
+    module.exports = { CoreReimplementation, ProximaResponse };
 }

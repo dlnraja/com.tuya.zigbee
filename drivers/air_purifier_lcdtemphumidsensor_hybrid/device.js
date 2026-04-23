@@ -15,7 +15,7 @@ class AirPurifierLCDDevice extends TuyaSpecificClusterDevice {
       });
 
     this.registerCapabilityListener('dim', async (v) => {
-      const speed = Math.round(v * 100);
+      const speed = Math.round(v      * 100);
       await this.sendTuyaCommand(DP.speed, speed, 'integer');
       });
   }

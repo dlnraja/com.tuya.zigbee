@@ -41,7 +41,7 @@ function main() {
       // 1. (a - b) / (c - d) * e
       if (line.includes('/') && line.includes('(') && !line.includes('safeDivide')) {
         // Linear interpolation pattern
-        line = line.replace(/(\(\([^)]+\)\s*\/\s*\([^)]+\)\))(? !\s*\* )/g , '$1')      ;
+        line = line.replace(/(\(\([^)]+\)\s*\/\s*\([^)]+\)\))(? !\s*\* )/g , '$1')       : null;
         // Specific for BatteryProfileDatabase.js: const percent = ((voltage - minVoltage) / (maxVoltage - minVoltage)) * 100;
         line = line.replace(/\(\(voltage\s*-\s*minVoltage\)\s*\/\s*\(maxVoltage\s*-\s*minVoltage\)\)/g, '(voltage - minVoltage / maxVoltage - minVoltage)');
         // Specific for RawClusterFallback.js: (value - 1) / 10000

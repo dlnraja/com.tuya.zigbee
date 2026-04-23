@@ -26,7 +26,7 @@ class AirPurifierDriver extends ZigBeeDriver {
     const triggers = ['air_purifier_turned_on', 'air_purifier_turned_off', 'air_purifier_pm25_changed'];
     for (const id of triggers) {
       try {
-      this.homey.flow.getTriggerCard(id) 
+      (() => { try { return this.homey.flow.getTriggerCard(id); } catch (e) { return null; } })() 
   
   
   
@@ -35,7 +35,7 @@ class AirPurifierDriver extends ZigBeeDriver {
   
   } catch (e) { this.error(`Trigger ${id}: ${e.message}`); }
     }
-    try {  const card = const card = this.homey.flow.getActionCard('set_fan_speed');
+    try {  const card = (() => { try { return this.homey.flow.getActionCard('set_fan_speed'); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -44,7 +44,7 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action set_fan_speed:', e.message); }
-    try {  const card = const card = this.homey.flow.getActionCard('turn_on');
+    try {  const card = (() => { try { return this.homey.flow.getActionCard('turn_on'); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -54,7 +54,7 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action turn_on:', e.message); }
-    try {  const card = const card = this.homey.flow.getActionCard('turn_off');
+    try {  const card = (() => { try { return this.homey.flow.getActionCard('turn_off'); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -64,7 +64,7 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action turn_off:', e.message); }
-    try {  const card = const card = this.homey.flow.getActionCard('toggle');
+    try {  const card = (() => { try { return this.homey.flow.getActionCard('toggle'); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -73,7 +73,7 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action toggle:', e.message); }
-    try {  const card = const card = this.homey.flow.getActionCard('set_brightness');
+    try {  const card = (() => { try { return this.homey.flow.getActionCard('set_brightness'); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

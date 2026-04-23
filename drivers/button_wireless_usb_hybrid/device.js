@@ -199,7 +199,7 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
             const current = data.rmsCurrent * 1000;
             if (this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', parseFloat(current)).catch(this.error);
           }
-        }).catch(() => { });
+        }).catch(() => {});
       }
 
       if (metering) {
@@ -224,7 +224,7 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
           if (data?.currentSummationDelivered != null) {
             const kWh = data.currentSummationDelivered * 1000;if (this.hasCapability('meter_power')) this.setCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);
           }
-        }).catch(() => { });
+        }).catch(() => {});
       }
 
       this.log('[USB_DONGLE] Energy reporting configured' );

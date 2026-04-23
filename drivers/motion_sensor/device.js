@@ -150,8 +150,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       'SIMPLE_PIR': {
         patterns: ['_TZ3000_', '_TZ3210_', '_TYZB01_'],
         dp4: 'measure_battery',
-        dp5,
-        dp6,
+        
         isPirOnly: true,
       },
       // Immax 07502L and similar
@@ -334,7 +333,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         divisor: 10,
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(18, v, 'measure_temperature');
-          return (v >= -40 && v <= 80) ? v / 10   :  null;
+          return (v >= -40 && v <= 80) ? v / 10 : null;
         }
       },
       19: {
@@ -342,7 +341,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         divisor: 1,
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(19, v, 'measure_humidity');
-          return (v >= 0 && v <= 100) ? Math.round(v )   :  null;
+          return (v >= 0 && v <= 100) ? Math.round(v ) : null;
         }
       },
       103: {
@@ -350,7 +349,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         divisor: 10,
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(103, v, 'measure_temperature');
-          return (v >= -40 && v <= 80) ? v / 10   :  null;
+          return (v >= -40 && v <= 80) ? v / 10 : null;
         }
       },
       104: {
@@ -358,7 +357,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         divisor: 1,
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(104, v, 'measure_humidity');
-          return (v >= 0 && v <= 100) ? Math.round(v )   :  null;
+          return (v >= 0 && v <= 100) ? Math.round(v ) : null;
         }
       },
     };
@@ -382,7 +381,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             // No temperature received  ZG-204ZL PIR-only  DP4 is battery
             if (v >= 0 && v <= 100) {
               device._dynamicCapabilityFromDP?.(4, v, 'measure_battery' );
-              device.setCapabilityValue('measure_battery', Math.round(v);
+              device.setCapabilityValue('measure_battery', Math.round(v));
               device.log?.(`[MOTION-DP]  DP4=${v}  battery (no temp DP3 received, ZG-204ZL pattern)`);
             }
             return null; // Not humidity
@@ -507,7 +506,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_temperature'))
                 this.addCapability('measure_temperature').catch(() => {});
-              this.setCapabilityValue('measure_temperature', parseFloat(temp).catch(() => { }));
+              this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
             } else {
               this.log(`[ZCL]  Temperature out of range: ${temp}Â°C (raw: ${data.measuredValue})`);
             }
@@ -527,14 +526,14 @@ class MotionSensorDevice extends UnifiedSensorBase {
             // v5.5.793: Use validation constants
             if (hum >= VALIDATION.HUMIDITY_MIN && hum <= VALIDATION.HUMIDITY_MAX) {
               // v5.5.793: Apply calibration offset if available
-              const offset = this.getSetting?.('humidity_offset' ) || 0;hum = Math.max(0, Math.min(100, Math.round(hum + offset);
+              const offset = this.getSetting?.('humidity_offset' ) || 0;hum = Math.max(0, Math.min(100, Math.round(hum + offset)));
               this.log(`[ZCL]  Humidity: ${hum}% (raw: ${data.measuredValue})`);
               this._registerZigbeeHit?.();
               this._lastHumSource = 'ZCL';
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_humidity'))
                 this.addCapability('measure_humidity').catch(() => {});
-              this.setCapabilityValue('measure_humidity', parseFloat(hum).catch(() => { }));
+              this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
             } else {
               this.log(`[ZCL]  Humidity out of range: ${hum}% (raw: ${data.measuredValue})`);
             }
@@ -554,7 +553,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_luminance'))
                 this.addCapability('measure_luminance').catch(() => {});
-              this.setCapabilityValue('measure_luminance', parseFloat(lux).catch(() => { }));
+              this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
 
               // v5.5.317: Feed lux to motion inference engine
               this._handleLuxForMotionInference(lux);
@@ -589,7 +588,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             // v5.8.7: Permissive - auto-add capability from ZCL data
             if (!this.hasCapability('measure_battery'))
               this.addCapability('measure_battery').catch(() => {});
-            this.setCapabilityValue('measure_battery', parseFloat(battery).catch(() => { }));
+            this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
       }
@@ -1276,7 +1275,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
           if (!this.hasCapability('measure_temperature')) {
             await this.addCapability('measure_temperature').catch(() => { });
           }
-          await this.setCapabilityValue('measure_temperature', parseFloat(temp).catch(() => { }));
+          await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
         } else {
           this.log(`[MOTION-AWAKE] Temperature invalid: ${data?.measuredValue}`);
         }
@@ -1308,7 +1307,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
           if (!this.hasCapability('measure_humidity')) {
             await this.addCapability('measure_humidity').catch(() => { });
           }
-          await this.setCapabilityValue('measure_humidity', parseFloat(hum).catch(() => { }));
+          await this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
         } else {
           this.log(`[MOTION-AWAKE] Humidity invalid: ${data?.measuredValue}`);
         }
@@ -1423,16 +1422,16 @@ class MotionSensorDevice extends UnifiedSensorBase {
         const battery = Math.round(data.batteryPercentageRemaining / 2 );
         this.log(`[MOTION-BATTERY]  Battery: ${battery}% (raw: ${data.batteryPercentageRemaining})`);
         if (this.hasCapability('measure_battery')) {
-          await this.setCapabilityValue('measure_battery', parseFloat(battery).catch(() => { }));
+          await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
         }
       } else if (data?.batteryVoltage !== undefined && data.batteryVoltage > 0) {
         this._lastBatteryReportTime = now;
         // Fallback: estimate from voltage (typical CR2450: 3.0V = 100%, 2.0V = 0%)
         const voltage = data.batteryVoltage / 10;
-        const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100))));
+        const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
         this.log(`[MOTION-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
         if (this.hasCapability('measure_battery')) {
-          await this.setCapabilityValue('measure_battery', parseFloat(battery).catch(() => { }));
+          await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
         }
       } else {
         this.log('[MOTION-BATTERY] Battery data invalid:', data);

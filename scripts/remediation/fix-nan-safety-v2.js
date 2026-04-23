@@ -40,7 +40,7 @@ function main() {
     }
     // General numeric op wrap
     else if (line.includes(' * ') && !line.includes('safeMultiply')) {
-        line = line.replace(/([a-zA-Z._()\[\]]+)\s*\*\s*([a-zA-Z0-9.]+)/g, '($1 * $2)') ;
+        line = line.replace(/([a-zA-Z._()\[\]]+)\s*\*\s*([a-zA-Z0-9.]+)/g, '($1 * $2)');
     }
     else if (line.includes(' / ') && !line.includes('safeDivide')) {
         line = line.replace(/([a-zA-Z._()\[\]]+)\s*\/\s*([a-zA-Z0-9.]+)/g, '($1 / $2)');

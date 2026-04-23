@@ -397,7 +397,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
     console.log(`[LUX-FIX]  Value ${lux} exceeds ${maxLux} for ${manufacturerName} (allowing)`);
   }
 
-  lux = Math.max(0, Math.round(lux);
+  lux = Math.max(0, Math.round(lux));
 
   // v5.5.319: AGGRESSIVE LUX SMOOTHING for known problematic sensors
   // Ronny #775: _TZE284_iadro9bf still oscillating 302000 every 15 seconds
@@ -525,7 +525,7 @@ function transformDistance(value, divisor = 100, manufacturerName = '', deviceId
     distance = VALIDATION.DISTANCE_MAX;
   }
 
-  const result = Math.round(distance * 100)/100); // 2 decimal places
+  const result = Math.round(distance * 100)/100; // 2 decimal places
   console.log(`[DISTANCE-FIX]  ${manufacturerName}: ${originalValue} (Ã·${effectiveDivisor}) -> ${result}m`);
   return result;
 }
@@ -875,11 +875,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           if (powerCluster?.readAttributes) {
             const attrs = await powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
             if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
-              const battery = Math.min(100, Math.round(attrs.batteryPercentageRemaining);
+              const battery = Math.min(100, Math.round(attrs.batteryPercentageRemaining));
               this.log(`[RADAR]  Battery read: ${attrs.batteryPercentageRemaining} -> ${battery}%`);
               this.setCapabilityValue('measure_battery', battery).catch(() => {});
             } else if (attrs?.batteryVoltage && !this.getCapabilityValue('measure_battery')) {
-              const battery = Math.min(100, Math.max(0, Math.round(attrs.batteryVoltage - 20 * 10))));
+              const battery = Math.min(100, Math.max(0, Math.round(attrs.batteryVoltage - 20 * 10)));
               this.log(`[RADAR]  Battery voltage: ${attrs.batteryVoltage/10}V -> ${battery}%`);
               this.setCapabilityValue('measure_battery', battery).catch(() => {});
             }
@@ -1179,7 +1179,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const battThrottleMs = config.batteryThrottleMs || 300000;
     listen(ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration, 'attr.batteryPercentageRemaining', async (v) => {
       if (v === undefined || v === 255) return;
-      const b = Math.min(100, Math.round(v);
+      const b = Math.min(100, Math.round(v));
       const now = Date.now();
       if (now - lastPermBattUpdate < battThrottleMs) return;
       if (lastPermBattValue !== null && Math.abs(b - lastPermBattValue) < 5) return;
@@ -1449,7 +1449,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         this.log(`[RADAR-LUX]  DP${dpId}  ${finalLux} lux`);
       }
       
-      this.setCapabilityValue('measure_luminance', parseFloat(finalLux).catch(() => { }));
+      this.setCapabilityValue('measure_luminance', parseFloat(finalLux)).catch(() => { });
 
       // v5.5.315: Feed lux to intelligent inference engine
       if (dpMap[dpId].feedInference) {
@@ -1462,7 +1462,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // HOBEIAN ZG-204ZV uses DP3 = temp, DP4=humidity - must apply divisor correctly!
     if (dpMap[dpId]?.cap === 'measure_temperature') {
       const rawTemp = this._parseBufferValue(data.value || data.data);const divisor = dpMap[dpId].divisor || 10;
-      const temp = Math.round(rawTemp/divisor * 10) * 10);
+      const temp = Math.round(rawTemp/divisor * 10) * 10;
       if (temp >= -40 && temp <= 80) {
         this.log(`[RADAR]  DP${dpId}  temperature = ${temp}Â°C (raw: ${rawTemp}, Ã·${divisor})`);
         this.setCapabilityValue('measure_temperature', temp).catch(() => { });
@@ -1479,7 +1479,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // v5.5.987: Peter #1265 - Support multiplier for humidity (9%  90%)
       // v5.11.26: Auto-fix out-of-range - some variants report Ã—10 (700=70%)
       // while others report Ã·10 (9=90%), so multiplier:10 doesn't work for all
-      let humidity = Math.round(rawHumid / divisor, multiplier);
+      let humidity = Math.round(rawHumid  / divisor, multiplier);
       if (humidity > 100 && rawHumid > 100) {
         humidity = Math.round(rawHumid);
       }
@@ -1497,7 +1497,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (dpMap[dpId]?.cap === 'measure_battery') {
       const rawBatt = this._parseBufferValue(data.value || data.data);
       const divisor = dpMap[dpId].divisor || 1;
-      const battery = Math.round((rawBatt / divisor);
+      const battery = Math.round((rawBatt  / divisor));
       if (battery >= 0 && battery <= 100) {
         // v5.5.983: Check battery throttling config
         const now = Date.now();
@@ -1522,7 +1522,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (dpMap[dpId] && dpMap[dpId].cap === 'measure_luminance.distance') {
       const rawDist = this._parseBufferValue(data.value || data.data);
       const divisor = dpMap[dpId].divisor || 100;
-      const dist = Math.round(rawDist/divisor * 100) * 100);
+      const dist = Math.round(rawDist/divisor * 100) * 100;
       if (dist >= 0 && dist <= 20) {
         this.log('[RADAR]  DP' + dpId + ' distance=' + dist + 'm (raw:' + rawDist + ')');
         this.setCapabilityValue('measure_luminance.distance', dist).catch(() => {});
@@ -1632,7 +1632,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // Always update distance capability
     const divisor = config.dpMap?.[9]?.divisor || 100;
     const distanceMeters = (rawDistance / divisor );
-    this.setCapabilityValue('measure_luminance.distance', parseFloat(distanceMeters).catch(() => { }));
+    this.setCapabilityValue('measure_luminance.distance', parseFloat(distanceMeters)).catch(() => { });
     this.log(`[RADAR]  Distance: ${distanceMeters}m (raw: ${rawDistance})`);
 
     // v5.5.315: Feed distance to intelligent inference engine
@@ -1644,7 +1644,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // Update presence if inference differs from current state
       if (inferredPresence !== currentPresence && confidence >= 40) {
         this.log(`[RADAR]  INTELLIGENT INFERENCE: presence=${inferredPresence} (confidence: ${confidence}%)`);
-        this._handlePresenceWithDebounce(inferredPresence , 9);
+        this._handlePresenceWithDebounce(inferredPresence );
       }
       this._updatePresenceTimestamp();
       return;
@@ -1892,7 +1892,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         powerCluster.on('attr.batteryPercentageRemaining', (v) => {
           const now = Date.now();
           // ZCL reports battery as 0-200 (0.5% steps), convert to 0-100%
-          const battery = Math.min(100, Math.round(v);
+          const battery = Math.min(100, Math.round(v));
           
           // Throttle: Skip if less than 5 min since last update
           if (now - lastZclBatteryUpdate < BATTERY_MIN_INTERVAL_MS) {
@@ -1916,7 +1916,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           // Backup: calculate from voltage if percentage not available
           // Typical CR2450: 3.0V full, 2.0V empty
           if (v && !this.getCapabilityValue('measure_battery')) {
-            const battery = Math.min(100, Math.max(0, Math.round(v - 20 * 10))));
+            const battery = Math.min(100, Math.max(0, Math.round(v - 20 * 10)));
             this.log(`[RADAR]  ZCL Battery voltage: ${v/10}V -> ${battery}%`);
             this.setCapabilityValue('measure_battery', battery).catch(() => { });
           }
@@ -1949,7 +1949,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           }
           
           const lux = Math.round(Math.pow(10, (v - 1) / 10000));
-          const roundedLux = parseFloat(Math.round(lux);
+          const roundedLux = parseFloat(Math.round(lux));
           
           // Throttle: Skip if less than 30s since last update
           if (timeSinceLastUpdate < MIN_REPORT_INTERVAL_MS) {

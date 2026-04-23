@@ -20,7 +20,7 @@ class SwitchDimmer1GangDevice extends TuyaSpecificClusterDevice {
     this.registerCapabilityListener('dim', async (v) => {
       this._mark(); 
       // Brightness range 10-1000 map (v=0..1)
-      const tuyaVal = Math.round(10 + v * 990);
+      const tuyaVal = Math.round(10 + v      * 990);
       await this.sendTuyaCommand(DP.brightness, tuyaVal, 'value');
     });
 
@@ -59,7 +59,7 @@ class SwitchDimmer1GangDevice extends TuyaSpecificClusterDevice {
   async onSettings({ newSettings, changedKeys }) {
     for (const k of changedKeys) {
       if (k === 'min_brightness') {
-        const val = Math.round(newSettings[k] * 10);
+        const val = Math.round(newSettings[k]      * 10);
         await this.sendTuyaCommand(DP.minBright, val, 'value').catch(() => {});
       }
       if (k === 'power_on_behavior') await this.sendTuyaCommand(DP.powerOn, parseInt(newSettings[k]), 'enum').catch(() => {});

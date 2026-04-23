@@ -18,7 +18,7 @@ class D extends EweLinkLocalDevice {
       });
     if (this.hasCapability('dim')) {
       this.registerCapabilityListener('dim', async v => {
-        const spd = Math.max(1, Math.min(3, Math.round(v);
+        const spd = Math.max(1, Math.min(3, Math.round(v)));
         await this._client._send('/zeroconf/fan', { fan: 'on', speed: spd });
       });
     }

@@ -55,7 +55,7 @@ class FlowRestorerAndFixer {
       .sort()
       .reverse();
 
-    return backups.length > 0 ? path.join(this.backupPath, backups[0]); : null
+    return backups.length > 0 ? path.join(this.backupPath, backups[0]) : null; : null
   }
 
   /**

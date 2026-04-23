@@ -60,10 +60,10 @@ walk(DRIVERS_DIR, (file) => {
   // Regex to find the broken blocks
   // Matches from "try {" to the end of the catch block
   // We use a non-greedy match and then check if it's broken
-  const tryBlockRegex = /try\s*\{\s*\(\(\)\s*=>\s*\{\s*try\s*\{\s*return\s*(\.registerRunListener[\s\S]*? )\s*\}\s*catch\s*\(err\)\s*\{\s*this\.log\(`\[FLOW\]\s+([^`]+)`\);\s*\}\s*\)\(\ )/g ;
+  const tryBlockRegex = /try\s*\{\s*\(\(\)\s*=>\s*\{\s*try\s*\{\s*return\s*(\.registerRunListener[\s\S]*? )\s*\}\s*catch\s*\(err\)\s*\{\s*this\.log\(`\[FLOW\]\s+([^`]+)`\) : null;\s*\}\s*\)\(\ )/g ;
 
   // Let's try an even simpler approach: look for the "return" followed by ".registerRunListener"
-  const brokenPattern = /\(\(\)\s*=>\s*\{\s*try\s*\{\s*return\s+(\s*)\.registerRunListener\(([\s\S]*? )\);\s+this\.log\('\[FLOW\]\s+([^']+)'\);\s*\} catch \(err\) \{ this\.log\(`\[FLOW\]\s+([^`]+)`\ : null); \}/g ;
+  const brokenPattern = /\(\(\)\s*=>\s*\{\s*try\s*\{\s*return\s+(\s*)\.registerRunListener\(([\s\S]*? )\) : null;\s+this\.log\('\[FLOW\]\s+([^']+)'\);\s*\} catch \(err\) \{ this\.log\(`\[FLOW\]\s+([^`]+)`\ : null); \}/g ;
   
   // Wait, the log might be different. Let's look at the ACTUAL code again.
   /*
@@ -81,7 +81,7 @@ walk(DRIVERS_DIR, (file) => {
   // The parenthesis are NOT balanced in the broken ones!
   // It has (() => { try { return but no closing }); at the end of the block before the catch.
 
-  const reallyBrokenRegex = /\(\(\)\s*=>\s*\{\s*try\s*\{\s*return\s*\.registerRunListener\(([\s\S]*? )\);\s+this\.log\('\[FLOW\]\s+([^']+)'\);\s*\}\s*catch\s*\(err\)\s*\{\s*this\.log\(`\[FLOW\]\s+\$\{err\.message\}`\ );\s*\}/g ;
+  const reallyBrokenRegex = /\(\(\)\s*=>\s*\{\s*try\s*\{\s*return\s*\.registerRunListener\(([\s\S]*? )\) : null;\s+this\.log\('\[FLOW\]\s+([^']+)'\);\s*\}\s*catch\s*\(err\)\s*\{\s*this\.log\(`\[FLOW\]\s+\$\{err\.message\}`\ );\s*\}/g ;
 
   if (reallyBrokenRegex.test(content)) {
     content = content.replace(reallyBrokenRegex, (match, listenerBody, flowId) => {
@@ -111,7 +111,7 @@ walk(DRIVERS_DIR, (file) => {
 
   // Pattern: try { \n \n .registerRunListener
   // Matches try { [empty line(s)] .registerRunListener
-  const simpleBrokenRegex = /try\s*\{\s*\.registerRunListener\(([\s\S]*? )\ : null) ;\s*\}\s*catch\s*\(err\)\s*\{\s*(?:this\.log|this\.error)\('([^']+)(?::|')\s*([^']+)? '\);\s*\}/g;
+  const simpleBrokenRegex = /try\s*\{\s*\.registerRunListener\(([\s\S]*? )\ : null) ;\s*\}\s*catch\s*\(err\)\s*\{\s*(?:this\.log|this\.error)\('([^']+)(?::|')\s*([^']+)? '\) : null;\s*\}/g;
   
   // This is too broad. Let's look for specifically empty lines before the dot.
   

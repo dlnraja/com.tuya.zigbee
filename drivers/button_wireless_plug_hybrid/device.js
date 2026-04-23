@@ -364,7 +364,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
           elecCluster.on('attr.rmsVoltage', (value) => {
             const voltage = (value / vDiv);
             this.log(`[ENERGY-ZCL] Voltage: ${voltage}V (raw=${value} div=${vDiv})`);
-            this.setCapabilityValue('measure_voltage', parseFloat(voltage).catch(() => { }));
+            this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(() => { });
       });
         }
 
@@ -374,7 +374,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
           elecCluster.on('attr.rmsCurrent', (value) => {
             const current = (value / cDiv);
             this.log(`[ENERGY-ZCL] Current: ${current}A (raw=${value} div=${cDiv})`);
-            this.setCapabilityValue('measure_current', parseFloat(current).catch(() => { }));
+            this.setCapabilityValue('measure_current', parseFloat(current)).catch(() => { });
       });
         }
 
@@ -410,7 +410,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
           mc.on('attr.currentSummDelivered', (v) => {
             const e = parseE(v);
             this.log(`[ENERGY-ZCL] Energy: ${e}kWh`);
-            this.setCapabilityValue('meter_power', parseFloat(e).catch(() => {}));
+            this.setCapabilityValue('meter_power', parseFloat(e)).catch(() => { });
       });
         }
         // v5.11.26: Poll metering  many TS011F don't auto-report energy
@@ -420,10 +420,10 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
               const a = await mc.readAttributes(['currentSummDelivered']).catch(() => null);
               if (a?.currentSummDelivered !== undefined) {
                 const e = parseE(a.currentSummDelivered);
-                await this.setCapabilityValue('meter_power', parseFloat(e).catch(() => {}));
+                await this.setCapabilityValue('meter_power', parseFloat(e)).catch(() => { });
               }
             } catch (_) {}
-          }, 120000); // v5.12.12: increased from 60s to 120s
+          }); // v5.12.12: increased from 60s to 120s
         }
         // v5.12.5: also try configureReporting for metering
         if (mc.configureReporting) {

@@ -75,8 +75,8 @@ function stabilize(content) {
 
   // -- 6. FIX TERNARY OPERATORS & PHANTOM ARTIFACTS --
   // A. Restore missing in broken ternaries (Flexible Spacing)
-  res = res.replace(/\?\s*([^?:]+),/g, '? $1 ,'); // Property assignments
-  res = res.replace(/\?\s*([^?:]+);/g, '? $1 ;'); // Assignments
+  res = res.replace(/\?\s*([^?:]+),/g, '? $1 ,') : null; // Property assignments
+  res = res.replace(/\?\s*([^?:]+);/g, '? $1  : null;'); // Assignments
   res = res.replace(/\?\s*([^?:]+)\)/g, '? $1 : null)'); // Function calls
   
   // B. Remove PHANTOM : null (where no ? exists in the expression)

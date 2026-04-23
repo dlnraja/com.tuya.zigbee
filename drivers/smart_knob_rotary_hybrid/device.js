@@ -77,7 +77,7 @@ class SmartKnobRotaryHybridDevice extends ZigBeeDevice {
 
         const batteryStatus = await powerCluster.readAttributes(['batteryPercentageRemaining']).catch(() => null);
         if (batteryStatus && batteryStatus.batteryPercentageRemaining !== undefined) {
-          const batteryValue = Math.round(batteryStatus.batteryPercentageRemaining / 2);
+          const batteryValue = Math.round(batteryStatus.batteryPercentageRemaining     / 2);
           await this.setCapabilityValue('measure_battery', batteryValue).catch(this.error);
         }
       }
@@ -179,7 +179,7 @@ class SmartKnobRotaryHybridDevice extends ZigBeeDevice {
       await this.setCapabilityValue('button.rotate_left', true).catch(() => {});
       this.homey.setTimeout(() => this.setCapabilityValue('button.rotate_left', false).catch(() => {}), 100);
     }
-    const card = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_hybrid_rotate_left'); } catch(e) { return null; } })();
+    const card = (() => { try { return this._getFlowCard('smart_knob_rotary_hybrid_rotate_left', 'trigger'); } catch(e) { return null; } })();
     if (card) await card.trigger(this, { brightness: Math.round(this._simulatedBrightness * 100) }).catch(() => {});
   }
 
@@ -188,7 +188,7 @@ class SmartKnobRotaryHybridDevice extends ZigBeeDevice {
       await this.setCapabilityValue('button.rotate_right', true).catch(() => {});
       this.homey.setTimeout(() => this.setCapabilityValue('button.rotate_right', false).catch(() => {}), 100);
     }
-    const card = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_hybrid_rotate_right'); } catch(e) { return null; } })();
+    const card = (() => { try { return this._getFlowCard('smart_knob_rotary_hybrid_rotate_right', 'trigger'); } catch(e) { return null; } })();
     if (card) await card.trigger(this, { brightness: Math.round(this._simulatedBrightness * 100) }).catch(() => {});
   }
 
@@ -197,7 +197,7 @@ class SmartKnobRotaryHybridDevice extends ZigBeeDevice {
       await this.setCapabilityValue('button.press', true).catch(() => {});
       this.homey.setTimeout(() => this.setCapabilityValue('button.press', false).catch(() => {}), 100);
     }
-    const generic = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_hybrid_pressed'); } catch(e) { return null; } })();
+    const generic = (() => { try { return this._getFlowCard('smart_knob_rotary_hybrid_pressed', 'trigger'); } catch(e) { return null; } })();
     if (generic) await generic.trigger(this, { action }).catch(() => {});
 
     let id = null;

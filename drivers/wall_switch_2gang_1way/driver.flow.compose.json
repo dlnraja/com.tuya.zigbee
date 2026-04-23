@@ -129,8 +129,8 @@
         "nl": "Stel LED-indicator modus in"
       },
       "titleFormatted": {
-        "en": "[[device]] set LED to [[mode]]",
-        "nl": "[[device]] stel LED in op [[mode]]"
+        "en": "set LED to [[mode]]",
+        "nl": "stel LED in op [[mode]]"
       },
       "args": [
         {
@@ -176,8 +176,8 @@
         "fr": "DÃ©finir le comportement Ã la mise sous tension"
       },
       "titleFormatted": {
-        "en": "[[device]] Set power-on behavior to [[mode]]",
-        "nl": "[[device]] Stel inschakelgedrag in op [[mode]]"
+        "en": "Set power-on behavior to [[mode]]",
+        "nl": "Stel inschakelgedrag in op [[mode]]"
       },
       "args": [
         {
@@ -223,8 +223,8 @@
         "fr": "DÃ©finir le type d'interrupteur externe"
       },
       "titleFormatted": {
-        "en": "[[device]] Set external switch type to [[mode]]",
-        "nl": "[[device]] Stel extern schakelaartype in op [[mode]]"
+        "en": "Set external switch type to [[mode]]",
+        "nl": "Stel extern schakelaartype in op [[mode]]"
       },
       "args": [
         {
@@ -268,8 +268,8 @@
         "nl": "Stel scÃ¨nemodus in"
       },
       "titleFormatted": {
-        "en": "[[device]] set scene mode to [[mode]]",
-        "nl": "[[device]] stel scÃ¨nemodus in op [[mode]]"
+        "en": "set scene mode to [[mode]]",
+        "nl": "stel scÃ¨nemodus in op [[mode]]"
       },
       "args": [
         {

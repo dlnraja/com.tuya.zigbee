@@ -24,9 +24,8 @@ class SmartScenePanelDriver extends ZigBeeDriver {
     this.log('SmartScenePanelDriver initialized');
 
     // Scene activated trigger with scene filter
-    const sceneTrigger = (() => { try { return this.homey.flow.getTriggerCard('climate_sensor_smart_hybrid_smart_scene_panel_scene_activated'); 
+    const sceneTrigger = this._getFlowCard('climate_sensor_smart_hybrid_smart_scene_panel_scene_activated', 'trigger');
   
-  } catch(e) { return null; } })();
     if (sceneTrigger) {
       sceneTrigger.registerRunListener(async (args, state) => {
         return !args.scene || args.scene === state.scene;

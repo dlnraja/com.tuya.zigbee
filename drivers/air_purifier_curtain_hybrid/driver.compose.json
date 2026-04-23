@@ -58,8 +58,8 @@
           "nl": "Kalibreer gordijnmotor"
         },
         "titleFormatted": {
-          "en": "Calibrate [[device]]",
-          "nl": "Kalibreer [[device]]"
+          "en": "Calibrate",
+          "nl": "Kalibreer"
         },
         "hint": {
           "en": "Run full open/close cycle for position calibration",
@@ -73,8 +73,8 @@
           "nl": "Reset positie naar 0%"
         },
         "titleFormatted": {
-          "en": "Reset [[device]] position",
-          "nl": "Reset [[device]] positie"
+          "en": "Reset position",
+          "nl": "Reset positie"
         },
         "hint": {
           "en": "Reset current position to fully closed",
@@ -89,8 +89,8 @@
           "fr": "Maintenir position rideau"
         },
         "titleFormatted": {
-          "en": "Hold [[device]] at current position",
-          "nl": "Houd [[device]] op huidige positie"
+          "en": "Hold at current position",
+          "nl": "Houd huidige positie"
         },
         "hint": {
           "en": "Stop curtain movement and hold at current position",
@@ -105,8 +105,8 @@
           "fr": "Ouvrir rideau partiellement"
         },
         "titleFormatted": {
-          "en": "Open [[device]] to [[position]]%",
-          "nl": "Open [[device]] naar [[position]]%"
+          "en": "Open to [[position]]%",
+          "nl": "Open naar [[position]]%"
         },
         "args": [
           {

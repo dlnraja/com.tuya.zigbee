@@ -79,7 +79,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     this.registerCapabilityListener('dim', async (value) => {
       this.log('Dim capability changed to:', value, '(APP)');
       this._markAppCommand();  // v5.5.755: PR #112 - Mark as app command
-      const brightness =Math.round(10 + (value);
+      const brightness =Math.round(10  + (value));
       this.log('Converted to Tuya brightness:', brightness);
       await this.sendTuyaCommand(dataPoints.brightness, brightness, 'value');
       });
@@ -107,7 +107,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         switch (key) {
         case 'min_brightness':
           // Convert percentage (1-100) to Tuya range (10-1000)
-          const minBrightness = Math.round(10 + ((safeParse(newSettings.min_brightness,100, 990);
+          const minBrightness = Math.round(10  + ((safeParse(newSettings.min_brightness,100, 990))));
           this.log(`Setting min_brightness: ${newSettings.min_brightness}%  ${minBrightness}`);
           await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value');
           break;
@@ -133,23 +133,23 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
             // Always off: Set DP36=0 (backlight disabled)
             this.log('Trying DP36=0 (backlight off)');
             await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(err => )
-              this.log('DP36 not supported:', err.message));
+              this.log('DP36 not supported:', err.message);
           } else {
             // Normal or inverted: Enable backlight (DP36=1) and set mode (DP37)
             this.log('Trying DP36=1 (backlight on)');
             await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(err => )
-              this.log('DP36 not supported:', err.message));
+              this.log('DP36 not supported:', err.message);
 
             // DP37: 0=none, 1=relay/normal, 2=pos / inverted
             const lightMode = backlightValue; // 1=normal(relay), 2=inverted(pos)
             this.log(`Trying DP37=${lightMode} (light mode)`);
             await this.sendTuyaCommand(dataPoints.backlightLightMode, lightMode, 'enum').catch(err => )
-              this.log('DP37 not supported:', err.message));
+              this.log('DP37 not supported:', err.message);
           }
 
           // Also try original DP15 as fallback
           await this.sendTuyaCommand(dataPoints.backlightMode, backlightValue, 'enum').catch(err => )
-            this.log('DP15 failed (expected):', err.message));
+            this.log('DP15 failed (expected):', err.message);
           break;
 
         default:
@@ -175,23 +175,23 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       
       // Apply min_brightness if set
       if (settings.min_brightness && settings.min_brightness > 1) {
-        const minBrightness = Math.round(10 + ((safeParse(settings.min_brightness,100, 990);
+        const minBrightness = Math.round(10  + ((safeParse(settings.min_brightness,100, 990))));
         this.log(`Applying min_brightness: ${settings.min_brightness}%  ${minBrightness}`);
-        await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value').catch(e => this.log('min_brightness not supported by this device'));
+        await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value').catch(e => this.log('min_brightness not supported by this device');
       }
       
       // Apply power_on_behavior if not default
       if (settings.power_on_behavior && settings.power_on_behavior !== '2') {
         const powerOnValue = parseInt(settings.power_on_behavior , 10);
         this.log(`Applying power_on_behavior: ${powerOnValue}`);
-        await this.sendTuyaCommand(dataPoints.powerOnBehavior, powerOnValue, 'enum').catch(e => this.log('power_on_behavior not supported by this device'));
+        await this.sendTuyaCommand(dataPoints.powerOnBehavior, powerOnValue, 'enum').catch(e => this.log('power_on_behavior not supported by this device');
       }
       
       // Apply light_type if not default
       if (settings.light_type && settings.light_type !== '0') {
         const lightTypeValue = parseInt(settings.light_type , 10);
         this.log(`Applying light_type: ${lightTypeValue}`);
-        await this.sendTuyaCommand(dataPoints.lightType, lightTypeValue, 'enum').catch(e => this.log('light_type not supported by this device'));
+        await this.sendTuyaCommand(dataPoints.lightType, lightTypeValue, 'enum').catch(e => this.log('light_type not supported by this device');
       }
 
       // Apply backlight_mode if not default
@@ -273,7 +273,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
           const flowCardId = state ? 'wall_dimmer_1gang_1way_turned_on' : 'wall_dimmer_1gang_1way_turned_off';
           this.log(`Triggering: ${flowCardId}`);
           this._getFlowCard(flowCardId).trigger(this, {}, {})
-            .catch(err => this.error(`Flow trigger failed: ${err.message}`);
+            .catch(err => this.error(`Flow trigger failed: ${err.message}`));
         }
       }
     }

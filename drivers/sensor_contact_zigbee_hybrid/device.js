@@ -153,12 +153,12 @@ class ContactSensorDevice extends UnifiedSensorBase {
 
     // v5.5.344: Initialize state tracking BEFORE parent init
     this._contactState = {
-      lastValue,           // Last confirmed value
+      lastValue: null,           // Last confirmed value
       lastChangeTime: 0,         // Time of last REAL change
       lastIASTime: 0,            // Time of last IAS message
       iasMessageCount: 0,        // Count of IAS messages for keep-alive detection
-      timer,               // Debounce timer
-      confirmedValue       // Value confirmed after debounce
+      timer: null,               // Debounce timer
+      confirmedValue: null       // Value confirmed after debounce
     };
 
     // v5.5.344: Check for invert setting and debounce time
@@ -291,7 +291,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       let finalValue = shouldInvert ? !value : value;
 
       const now = Date.now();
-      const state = this._contactState || { lastValue, lastChangeTime: 0, timer };
+      const state = this._contactState || { lastValue: null, lastChangeTime: 0, timer: null };
 
       // If same value as last confirmed, just update timestamp and skip
       if (state.confirmedValue === finalValue) {

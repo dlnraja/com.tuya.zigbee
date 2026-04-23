@@ -150,10 +150,10 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       // v5.9.22: Z2M #28270 - DP102=illuminance for _TZE284_o9ofysmo/_TZE284_xc3vwx5a
       
       102: { capability: 'measure_luminance', divisor: 1 },
-      103: { capability, setting: 'report_interval', min: 30, max: 1200 },
-      104: { capability, setting: 'soil_calibration', min: -30, max: 30 },
-      107: { capability, setting: 'temperature_calibration', min: -20, max: 20 },
-      110: { capability, setting: 'soil_warning', min: 0, max: 100 },
+      103: { internal: true, setting: 'report_interval', min: 30, max: 1200 },
+      104: { internal: true, setting: 'soil_calibration', min: -30, max: 30 },
+      107: { internal: true, setting: 'temperature_calibration', min: -20, max: 20 },
+      110: { internal: true, setting: 'soil_warning', min: 0, max: 100 },
       111: { 
         capability: 'measure_humidity.soil', 
         divisor: 1,
@@ -166,9 +166,9 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         }
       },
       112: { capability: 'measure_conductivity', divisor: 1 }, // soil fertility uS/cm
-      113: { capability, setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
-      114: { capability, setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
-      115: { capability, setting: 'soil_fertility_warning_v1', min: 0, max: 5000 },
+      113: { internal: true, setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
+      114: { internal: true, setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
+      115: { internal: true, setting: 'soil_fertility_warning_v1', min: 0, max: 5000 },
       // 
       // FALLBACK DPs for other soil sensor variants
       // 
@@ -207,7 +207,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
             const temp = data.measuredValue * 100;
             this.log(`[ZCL]  Temperature: ${temp}Â°C`);
             this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_temperature', parseFloat(temp).catch(() => { }));
+            this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
       },
@@ -226,7 +226,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
             this._registerZigbeeHit?.();
             // v5.11.16: ZCL humidity = AIR humidity. Soil moisture comes via Tuya DP3.
             if (this.hasCapability('measure_humidity')) {
-              this.setCapabilityValue('measure_humidity', parseFloat(humidity).catch(() => { }));
+              this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
             }
           }
         }
@@ -243,7 +243,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
             const battery = Math.round(data.batteryPercentageRemaining);
             this.log(`[ZCL]  Battery: ${battery}%`);
             this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_battery', parseFloat(battery).catch(() => { }));
+            this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
       }
@@ -474,7 +474,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   _initFlowTriggers() {
     // v5.8.72: Safe flow card getter  prevents onNodeInit crash if card missing
     const safeGetTrigger = (id) => {
-      try { return this._getFlowCard(id; }
+      try { return this._getFlowCard(id); }
+
       catch (e) { this.log(`[SOIL]  Flow trigger '${id}' not available: ${e.message}`); return null; }
     };
 

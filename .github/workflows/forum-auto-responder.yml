@@ -23,6 +23,7 @@ concurrency:
 
 env:
   NODE_VERSION: "22"
+  SHADOW_MODE: "true"
 
 defaults:
   run:

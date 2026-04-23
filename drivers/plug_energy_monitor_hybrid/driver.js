@@ -50,7 +50,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
   getConditionCard(id) {
     try {
-      return this.homey.flow.getConditionCard(id);
+      return (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
     } catch (e) {
       return null;
     }
@@ -58,7 +58,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
   async onPairListDevices(devices) {
     if (!devices || devices.length === 0) return devices;
-    return devices.filter(d => d.data?.subDeviceId === undefined);
+    return devices.filter(d => d.data?.subDeviceId === undefined) : null;
   }
 }
 

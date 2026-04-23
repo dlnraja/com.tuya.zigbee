@@ -67,16 +67,16 @@ function restoreFile(filePath) {
         // Pattern B: String Literals or Regex Literals
         // This is a heuristic: if we see  enclosed by quotes or slashes that look like literals
         // Matches " ... a/b ... "
-        line = line.replace(/(['"`\/]([^'"`\/]*? )safeDivide\(([^,]+ ) ,\s*([^)]+)\)([^'"`\/]*?   )\1/g , '$1$2$3/$4$5$1')      ;
-        line = line.replace(/(['"`\/])([^'"`\/]*? )safeMultiply\(([^,]+ ) ,\s*([^)]+)\)([^'"`\/]*?   )\1/g , '$1$2$3*$4$5$1')      ;
-        line = line.replace(/(['"`\/])([^'"`\/]*? )safeParse\(([^,]+ ) ,\s*([^)]+)\)([^'"`\/]*?   )\1/g , '$1$2$3/$4$5$1')      ;
+        line = line.replace(/(['"`\/]([^'"`\/]*? )safeDivide\(([^,]+ ) ,\s*([^)]+)\)([^'"`\/]*?   )\1/g , '$1$2$3/$4$5$1')       : null;
+        line = line.replace(/(['"`\/])([^'"`\/]*? )safeMultiply\(([^,]+ ) ,\s*([^)]+)\)([^'"`\/]*?   )\1/g , '$1$2$3*$4$5$1')       : null;
+        line = line.replace(/(['"`\/])([^'"`\/]*? )safeParse\(([^,]+ ) ,\s*([^)]+)\)([^'"`\/]*?   )\1/g , '$1$2$3/$4$5$1')       : null;
         
         // Pattern C: Specific "Log" pollution in Homey log calls
         // this.log('...  ... ')
         line = line.replace(/(\.log\(['"`][^'"`]*? )safeDivide\(([^,]+ ) ,\s*([^)]+)\)([^'"`]*? ['"`]\) : null)/g , '$1$2/$3$4')      ;
         
         // Pattern D: Broken Regex characters like \s, \d, \b
-        line = line.replace(/\\safeDivide\((s|d|b|w|W|D|S|B), (.*? )\)/g, '\\$1/$2')      ;
+        line = line.replace(/\\safeDivide\((s|d|b|w|W|D|S|B), (.*? )\)/g, '\\$1/$2');
         
         lines[i] = line;
     }

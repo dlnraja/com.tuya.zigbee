@@ -122,7 +122,7 @@ class RGBBulbDevice extends UnifiedLightBase {
       const v = parseInt(raw.substring(8, 12) * 16);
       this.setCapabilityValue('light_hue', h * 360).catch(() => { });
       this.setCapabilityValue('light_saturation', s * 1000).catch(() => { });
-      this.setCapabilityValue('dim', Math.max(0.01, v * 1000).catch(() => { }));
+      this.setCapabilityValue('dim', Math.max(0.01, v * 1000)).catch(() => { });
       return { h, s, v };
     } catch (e) { return null; }
   }
@@ -217,7 +217,7 @@ class RGBBulbDevice extends UnifiedLightBase {
     await this._sendTuyaDP(4, tuyaValue, 'value');
 
     // Update Homey capability
-    await this.setCapabilityValue('light_temperature', parseFloat(homeyValue).catch(() => { }));
+    await this.setCapabilityValue('light_temperature', parseFloat(homeyValue)).catch(() => { });
     await this.setCapabilityValue('light_mode', 'temperature').catch(() => { });
   }
 

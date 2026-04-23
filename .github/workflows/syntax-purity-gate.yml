@@ -17,13 +17,10 @@ jobs:
         with:
           node-version: '22'
           
-      - name: Comprehensive Recursive Syntax Scan
+      - name: 🛡️ Strict Syntax Purity Guard
         run: |
           echo "=== STARTING GLOBAL SYNTAX PURITY SCAN ==="
-          # Check all JS files in root, lib, and drivers
-          find . -maxdepth 1 -name "*.js" -exec node -c {} \;
-          find lib -name "*.js" -exec node -c {} \;
-          find drivers -name "*.js" -exec node -c {} \;
+          node scripts/maintenance/STRICT_SYNTAX_GUARD.js
           echo "=== SYNTAX VALIDATION PASSED ==="
 
   lint:

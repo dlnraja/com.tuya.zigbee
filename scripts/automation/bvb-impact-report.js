@@ -12,7 +12,7 @@ const DRIVERS_DIR = path.join(ROOT, 'drivers');
 function extractBVB() {
   if (!fs.existsSync(BVB_FILE)) return null;
   const content = fs.readFileSync(BVB_FILE, 'utf8');
-  const match = content.match(/const BVB_CONSTRAINTS = ({[\s\S]+? });/);
+  const match = content.match(/const BVB_CONSTRAINTS = ({[\s\S]+? }) : null;/);
   if (!match ) return null;
   try {
     // Basic parser for the JS object (not JSON)

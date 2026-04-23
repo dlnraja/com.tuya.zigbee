@@ -65,7 +65,7 @@ allFiles.forEach(file => {
                 const orig = line;
 
                 if (line.includes('sendTuyaDP') && line.split('(').length > line.split(')').length) {
-                    line = line.replace(/;? $/, ')));');
+                    line = line.replace(/;? $/, '))) : null;');
                 } else if (line.match(/\);$/) && line.split(')').length > line.split('(').length) {
                     line = line.replace(/\);$/, ';');
                 } else if (line.match(/;$/) && line.split('(').length > line.split(')').length) {

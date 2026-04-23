@@ -428,7 +428,7 @@ class IrBlasterDevice extends ZigBeeDevice {
         protocol: protocol,
         frequency: frequency,
         duration: duration
-      }, {}).catch(() => { });
+      }, {}).catch(() => {};
 
     } catch (err) {
       this._learningState = LEARNING_STATES.ERROR;
@@ -989,7 +989,7 @@ class IrBlasterDevice extends ZigBeeDevice {
         const b = Buffer.alloc(rcv.totalLength);
         for (const c of rcv.chunks) { if (Buffer.isBuffer(c.data)) c.data.copy(b, c.position); }
         return b.toString('base64');
-      })();
+      })(;
       this.log(`[IR-RX] Assembled: ${irCode.length} chars`);
       delete this._receiveBuffers[sequenceNumber];
       return irCode;
@@ -1069,7 +1069,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     this.driver.learningStateChangedTrigger?.trigger(this, {
       state: stateName.toLowerCase(),
       state_code: state
-    }, {}).catch(() => { });
+    }, {}).catch(() => {};
   }
 
   // Initialize enhanced receive handling

@@ -103,7 +103,7 @@ function hasRecentOwnReply(posts){
   if (nonOwn.length === 0) return true; // Just me or other bots? Skip.
   
   // If the absolute latest post in the stream is by me, don't double tap
-  const absoluteLatest = posts[posts.length - 1];
+  const absoluteLatest = posts.length > 0 ? posts[posts.length - 1] : null;
   if (absoluteLatest && absoluteLatest.username === 'dlnraja') return true;
   
   return false;
@@ -192,7 +192,7 @@ function batchedFallback(postInfos,ver){const allText=postInfos.map(p=>p.text).j
     let extInfo='';
     try{const ctx=gatherAll();const extFPs=new Set((ctx.externalSources?.topUnsupported||[]).map(u=>u.fp));const inExt=[...miss.keys()].filter(k=>extFPs.has(k));if(inExt.length)extInfo='  I see '+(inExt.length===1?'it':'them')+' in Z2M/ZHA so shouldn\'t be hard to add'}catch{}
     const mks=[...miss.keys()];
-    m+=(mks.length===1?mks[0]+' isn\'t':mks.join(', ')+' aren\'t')+' in the app yet'+extInfo+'. Can you run a [device interview](https://tools.developer.homey.app/tools/zigbee) and share the result? I\'ll have a look.\n\n';
+    m += (mks.length === 1 ? mks[0] + ' isn\'t' : mks.join(', ') + ' aren\'t') + ' in the app yet' + extInfo + '. Can you run a [device interview](https://tools.developer.homey.app/tools/zigbee) and share the result? I\'ll have a look.\n\n';
   }
   m+='If it acts weird after updating, remove and re-pair  that usually fixes it.';
   return m;

@@ -74,7 +74,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
 
     // Get device info
     // A8: NaN Safety - use safeDivide/safeMultiply
-  this.getSettings() || {};
+    const settings = this.getSettings() || {};
     const manufacturer = settings.zb_manufacturer_name || settings.zb_manufacturer_name || 'unknown';
     const model = settings.zb_model_id || settings.zb_model_id || 'TS0601';
 
@@ -88,7 +88,9 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     this._setupDPDiscovery();
 
     // Request common DPs after delay (for mains-powered devices)
-    setTimeout(() => this._requestCommonDPs() * 5000);
+    this.homey.setTimeout(() => {
+      this._requestCommonDPs().catch(() => {});
+    }, 5000);
 
     // Log auto-adaptive status
     const status = this.getAutoAdaptiveStatus();
@@ -180,7 +182,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     const dpList = Array.from(this._discoveredDPs.keys()).sort((a, b) => a - b);
     await this.setSettings({
       discovered_dps: dpList.length > 0 ? `DPs: ${dpList.join(', ')}` : 'None'
-    }).catch(() => { });
+    }).catch(() => {});
 
     // Auto-map DP to capability using heuristics
     await this._autoMapDP(dp, value, type);
@@ -249,7 +251,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       // Emit event for flow triggers
       this._getFlowCard(`generic_tuya_${capability}_changed`) ?.trigger(this, {
         [capability.replace('measure_', '' ).replace('alarm_', '')]: parsedValue
-      }).catch(() => { });
+      }).catch(() => {});
 
     } catch (err) {
       this.error(`[GENERIC] Failed to set ${capability}:`, err.message);

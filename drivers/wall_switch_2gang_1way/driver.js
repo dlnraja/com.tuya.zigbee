@@ -54,11 +54,11 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
     ];
     for (const id of triggers) {
       try {
-      this.homey.flow.getTriggerCard(id) } catch (err) { this.error(`Trigger ${id}: ${err.message}`); }
+      (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })() } catch (err) { this.error(`Trigger ${id}: ${err.message}`); }
     }
 
     // ACTION: Set backlight mode
-    try {  const card = const card = this.homey.flow.getActionCard('set_backlight');
+    try {  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -70,7 +70,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
     } catch (err) { this.error('Action set_backlight:', err.message); }
 
     // ACTION: Set scene mode
-    try {  const card = const card = this.homey.flow.getActionCard('set_scene_mode');
+    try {  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -98,7 +98,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
     ];
     for (const { id, fn } of simpleActions) {
       try {
-        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
+        (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(async (args) => {
           if (!args.device) return false;
           await fn(args.device);
           return true;
@@ -107,7 +107,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
     }
         for (const { id, ep, val } of gangActions) {
       try {
-        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
+        (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(async (args) => {
           if (!args.device) return false;
           const cap = ep === 1 ? 'onoff' : ('onoff.gang' + ep);
           try {
@@ -129,7 +129,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
       { id: `${P}_turn_off_all`, val: false },
     ]) {
       try {
-        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
+        (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(async (args) => {
           if (!args.device) return false;
           // Determine the number of gangs from P (e.g. 'switch_3gang' -> 3)
           let numGangs = 1;
@@ -146,7 +146,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set power-on behavior (v5.11.30)
     try {
-      const card = const card = this.homey.flow.getActionCard('wall_switch_2gang_1way_set_power_on_behavior card:');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ power_on_behavior: args.mode });
@@ -162,7 +162,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set external switch type (v5.11.30)
     try {
-      const card = const card = this.homey.flow.getActionCard('wall_switch_2gang_1way_set_power_on_behavior card:');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ switch_mode: args.mode });

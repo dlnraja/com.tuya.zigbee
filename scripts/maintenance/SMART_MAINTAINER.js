@@ -12,7 +12,7 @@ function fixFile(file) {
     let changed = false;
 
     // Fix 1: Missing parens in Math/safe calls
-    // regex to find things like Math.round(safeMultiply(a,b);
+    // regex to find things like Math.round(safeMultiply(a,b));
     // and replace with Math.round(safeMultiply(a,b));
     const patterns = [
         /(Math\.round\([^;]+)(\);)/g,
@@ -34,8 +34,8 @@ function fixFile(file) {
     });
 
     // Fix 2: Ternary missing : branch
-    // value > 100 ? something() ; -> value > 100 ? something()       ;
-    content = content.replace(/(\? [^ ;:]+)(;)/g, (match, p1, p2) => {
+    // value > 100 ? something()  : null; -> value > 100 ? something()        : null;
+    content = content.replace(/(\? [^  : null;:]+)(;)/g, (match, p1, p2) => {
         // Skip optional chaining ?.
         if (p1.includes('?.')) return match       ;
         changed = true;

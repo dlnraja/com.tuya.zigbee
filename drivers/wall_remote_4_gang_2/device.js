@@ -52,7 +52,7 @@ class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
     if (this._buttonPressedTriggerDevice) {
       return this._buttonPressedTriggerDevice.trigger(this, {}, { button: `${button}` })
         .then(() => this.log(`[BUTTON] Triggered flow: ${button}`))
-        .catch(err => this.error('[BUTTON] Trigger error:', err.message);
+        .catch(err => this.error('[BUTTON] Trigger error:', err.message));
     }
   }
 

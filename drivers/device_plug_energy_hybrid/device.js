@@ -132,7 +132,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
             this._lastOnoffState = state;
             if (isPhysical) {
               const flowId = state ? 'plug_smart_physical_on' : 'plug_smart_physical_off';
-              this.homey.flow._getFlowCard('flowId')
+              (() => { try { return this.homey.flow.getTriggerCard(flowId); } catch (e) { return null; } })()
             }
           }
         }
@@ -158,15 +158,15 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
       const elec = ep1.clusters?.haElectricalMeasurement;if (elec?.on) {
         elec.on('attr.activePower', (v) => {
           const scaled = this._applyScale(v * 10, 'measure_power');
-          this.setCapabilityValue('measure_power', parseFloat(scaled).catch(() => { }));
+          this.setCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
       });
         elec.on('attr.rmsVoltage', (v) => {
           const scaled = this._applyScale(v * 10, 'measure_voltage');
-          this.setCapabilityValue('measure_voltage', parseFloat(scaled).catch(() => { }));
+          this.setCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
       });
         elec.on('attr.rmsCurrent', (v) => {
           const scaled = this._applyScale(v * 1000, 'measure_current' );
-          this.setCapabilityValue('measure_current', parseFloat(scaled).catch(() => { }));
+          this.setCapabilityValue('measure_current', parseFloat(scaled)).catch(() => { });
       });
         this.log('[PLUG]  ZCL Electrical Measurement configured (with scale support)');
       }
@@ -177,7 +177,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
       const meter = ep1.clusters?.seMetering;if (meter?.on) {
         meter.on('attr.currentSummationDelivered', (v) => {
           const scaled = this._applyScale(v * 1000, 'meter_power');
-          this.setCapabilityValue('meter_power', parseFloat(scaled).catch(() => { }));
+          this.setCapabilityValue('meter_power', parseFloat(scaled)).catch(() => { });
       });
         this.log('[PLUG]  ZCL Metering configured (with scale support)');
       }

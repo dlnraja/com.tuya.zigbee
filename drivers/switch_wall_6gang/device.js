@@ -57,7 +57,7 @@ class Switch6GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
     const getOnOffCluster = (epNum) => {
       const ep = this._zclNode?.endpoints?.[epNum];
-      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6] || null;
     };
 
     // Register capability listeners FIRST

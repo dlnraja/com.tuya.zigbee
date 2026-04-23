@@ -16,7 +16,7 @@ class WaterTankMonitorDriver extends Homey.Driver {
     this.log('Liquid Level Sensor driver initializing...');
 
     const safeGetTrigger = (id) => {
-      try { return this.homey.flow.getTriggerCard(id); 
+      try { return (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); 
   
   
   
@@ -34,7 +34,7 @@ class WaterTankMonitorDriver extends Homey.Driver {
 
     // Condition: fill level above threshold
     try {
-      const card = const card = this.homey.flow.getConditionCard('water_tank_monitor_level_above');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -46,7 +46,7 @@ class WaterTankMonitorDriver extends Homey.Driver {
 
     // Condition: liquid state is
     try {
-      const card = const card = this.homey.flow.getConditionCard('water_tank_monitor_state_is');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

@@ -22,7 +22,7 @@ function processFile(filePath) {
       for (let j = i - 1; j >= Math.max(0, i - 10); j--) {
         const prevLine = lines[j];
         // Match variables ending in 'Id' or 'id'
-        const match = prevLine.match(/(?:const|let|var)\s+(\w*(?:id|Id))\s*=\s*[`'"]? ([\w_-]+ )?[`'"]? /i)      ;
+        const match = prevLine.match(/(?:const|let|var)\s+(\w*(?:id|Id))\s*=\s*[`'"]? ([\w_-]+ )?[`'"]? /i);
         if (match ) {
           foundId = match[1];
           break;
@@ -40,7 +40,7 @@ function processFile(filePath) {
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].includes('homey.flow.get') && !lines[i].includes('_getFlowCard')) {
       lines[i] = lines[i].replace(/(this\.)? homey\.flow\.get(Trigger|Condition|Action)Card\(([^)]+)\)/g, (match, prefix, type, id ) => {
-        return `this._getFlowCard(${id}, '${type.toLowerCase()}')` ;
+        return `this._getFlowCard(${id}, '${type.toLowerCase()}')`  : null;
       });
       changed = true;
     }

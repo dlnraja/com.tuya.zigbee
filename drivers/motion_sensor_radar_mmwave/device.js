@@ -256,7 +256,7 @@ async onNodeInit({ zclNode }) {
       if (illum) {
         await illum.configureReporting({
           measuredValue: { minInterval: 60, maxInterval: 900, minChange: 10 }
-        }).catch(e => this.log('[ILLUM] config failed:', e.message));
+        }).catch(e => this.log('[ILLUM] config failed:', e.message);
         this.log('[ILLUM]  Periodic reporting configured');
       }
     } catch (e) { }
@@ -335,7 +335,7 @@ async _setupContinuousLuminanceReporting(zclNode) {
         illuminanceCluster.on('attr.measuredValue', async (value) => {
           if (value !== null && value !== undefined && value >= 0) {
             this.log(`[LUMINANCE-FIX]  Continuous luminance update: ${value} lux`);
-            await this.setCapabilityValue('measure_luminance', parseFloat(value).catch(() => { }));
+            await this.setCapabilityValue('measure_luminance', parseFloat(value)).catch(() => { });
           }
         });
 
@@ -344,7 +344,7 @@ async _setupContinuousLuminanceReporting(zclNode) {
           const initialValue = await illuminanceCluster.readAttributes(['measuredValue']);
           if (initialValue?.measuredValue !== undefined && initialValue.measuredValue >= 0) {
             this.log(`[LUMINANCE-FIX]  Initial luminance: ${initialValue.measuredValue} lux`);
-            await this.setCapabilityValue('measure_luminance', parseFloat(initialValue.measuredValue).catch(() => { }));
+            await this.setCapabilityValue('measure_luminance', parseFloat(initialValue.measuredValue)).catch(() => { });
           }
         } catch (e) {
           this.log('[LUMINANCE-FIX]  Initial read failed (normal for sleepy devices)');

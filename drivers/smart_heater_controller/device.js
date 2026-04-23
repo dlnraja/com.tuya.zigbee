@@ -337,7 +337,7 @@ class SmartHeaterControllerDevice extends UnifiedThermostatBase {
       this.driver.overheatAlarmTrigger?.trigger(this, {
         temperature: this.getCapabilityValue('measure_temperature') || 0,
         power: this.getCapabilityValue('measure_power') || 0
-      }, {}).catch(() => { });
+      }, {}).catch(() => {});
     }
   }
 

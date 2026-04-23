@@ -34,6 +34,12 @@ const { resolve: resolvePressType, PRESS_MAP } = require('../../lib/utils/TuyaPr
  */
 class Button4GangDevice extends ButtonDevice {
 
+  async setupButtonDetection() {
+    this.log('[BUTTON4]  Using enhanced physical button detection (overriding base)');
+    return Promise.resolve();
+  }
+
+
   // v5.5.617: Scene mode constants (Z2M #7158, SmartThings research)
   static MODE_ATTRIBUTE = 0x8004;
   static SCENE_MODE = 1;
@@ -1019,7 +1025,7 @@ class Button4GangDevice extends ButtonDevice {
             if (value !== undefined && value > 0) {
               const voltage = value * 10;
               // CR2032/CR2450: 3.0V=100%, 2.0V=0%
-              const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100))));
+              const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
               this.log(`[BUTTON4-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
               await this._updateBattery(battery);
             }
@@ -1089,7 +1095,7 @@ class Button4GangDevice extends ButtonDevice {
         await this._updateBattery(battery);
       } else if (attrs?.batteryVoltage !== undefined && attrs.batteryVoltage > 0) {
         const voltage = attrs.batteryVoltage * 10;
-        const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100))));
+        const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
         this.log(`[BUTTON4-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
         await this._updateBattery(battery);
       } else {

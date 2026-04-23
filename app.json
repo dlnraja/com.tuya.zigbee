@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "7.4.9",
+  "version": "7.4.10",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -108,8 +108,8 @@
           "fr": "Minuterie Auto-Off dÃ©clenchÃ©e"
         },
         "titleFormatted": {
-          "en": "Auto-Off Timer triggered on [[device]]",
-          "fr": "Minuterie Auto-Off dÃ©clenchÃ©e sur [[device]]"
+          "en": "Auto-Off Timer triggered",
+          "fr": "Minuterie Auto-Off dÃ©clenchÃ©e"
         },
         "args": [
           {
@@ -125,8 +125,8 @@
           "fr": "Bouton triple-cliquÃ© (Logiciel)"
         },
         "titleFormatted": {
-          "en": "[[device]] button was triple-clicked",
-          "fr": "Bouton de [[device]] triple-cliquÃ©"
+          "en": "button was triple-clicked",
+          "fr": "Bouton triple-cliquÃ©"
         },
         "args": [
           {
@@ -142,8 +142,8 @@
           "fr": "Surcharge dÃ©tectÃ©e (Coupure SÃ©curitÃ©)"
         },
         "titleFormatted": {
-          "en": "Overload detected on [[device]]",
-          "fr": "Surcharge dÃ©tectÃ©e sur [[device]]"
+          "en": "Overload detected",
+          "fr": "Surcharge dÃ©tectÃ©e"
         },
         "args": [
           {
@@ -170,8 +170,8 @@
           "fr": "PrÃ©sence Radio DÃ©tectÃ©e (Inferred)"
         },
         "titleFormatted": {
-          "en": "Radio Presence detected on [[device]]",
-          "fr": "PrÃ©sence Radio dÃ©tectÃ©e sur [[device]]"
+          "en": "Radio Presence detected",
+          "fr": "PrÃ©sence Radio dÃ©tectÃ©e"
         },
         "hint": {
           "en": "Triggered when human movement is inferred from Zigbee signal fluctuations",
@@ -193,10 +193,10 @@
           "de": "Sub-FÃ¤higkeit geÃ¤ndert"
         },
         "titleFormatted": {
-          "en": "[[device]] sub-capability [[capability]] changed",
-          "fr": "Sous-capacitÃ© [[capability]] de [[device]] changÃ©e",
-          "nl": "Sub-capability [[capability]] van [[device]] gewijzigd",
-          "de": "Sub-FÃ¤higkeit [[capability]] von [[device]] geÃ¤ndert"
+          "en": "sub-capability [[capability]] changed",
+          "fr": "Sous-capacitÃ© [[capability]] changÃ©e",
+          "nl": "Sub-capability [[capability]] van gewijzigd",
+          "de": "Sub-FÃ¤higkeit [[capability]] von geÃ¤ndert"
         },
         "hint": {
           "en": "Triggers when any sub-capability changes (e.g. onoff.gang2, dim.1)",
@@ -249,8 +249,8 @@
           "fr": "Bitmap Tuya changÃ©"
         },
         "titleFormatted": {
-          "en": "Bitmap DP [[dp]] changed on [[device]]",
-          "fr": "Bitmap DP [[dp]] changÃ© sur [[device]]"
+          "en": "Bitmap DP [[dp]] changed",
+          "fr": "Bitmap DP [[dp]] changÃ©"
         },
         "hint": {
           "en": "Triggers when a bitmap (type 5) DP changes. Bitmap is a bitmask of active flags.",
@@ -298,8 +298,8 @@
           "fr": "Ã‰vÃ©nement cluster Zigbee reÃ§u"
         },
         "titleFormatted": {
-          "en": "Cluster event received on [[device]]",
-          "fr": "Ã‰vÃ©nement cluster reÃ§u sur [[device]]"
+          "en": "Cluster event received",
+          "fr": "Ã‰vÃ©nement cluster reÃ§u"
         },
         "hint": {
           "en": "Triggers when a manufacturer cluster frame is received (0xE000-0xFFFF).",
@@ -346,8 +346,8 @@
           "fr": "Tout DP Tuya changÃ©"
         },
         "titleFormatted": {
-          "en": "DP changed on [[device]]",
-          "fr": "DP changÃ© sur [[device]]"
+          "en": "DP changed",
+          "fr": "DP changÃ©"
         },
         "hint": {
           "en": "Triggers when ANY DP value changes. Includes DP type info (raw/bool/value/string/enum/bitmap).",
@@ -404,10 +404,10 @@
           "de": "Tuya Datenpunkt empfangen"
         },
         "titleFormatted": {
-          "en": "Tuya DP [[dp]] received on [[device]]",
-          "fr": "DP Tuya [[dp]] reÃ§u sur [[device]]",
-          "nl": "Tuya DP [[dp]] ontvangen op [[device]]",
-          "de": "Tuya DP [[dp]] empfangen auf [[device]]"
+          "en": "Tuya DP [[dp]] received",
+          "fr": "DP Tuya [[dp]] reÃ§u",
+          "nl": "Tuya DP [[dp]] ontvangen",
+          "de": "Tuya DP [[dp]] empfangen auf"
         },
         "hint": {
           "en": "Triggers when a raw Tuya DP is received. Use DP 0 to match any DP.",
@@ -460,10 +460,10 @@
           "de": "DP Schwellwert Ã¼berschritten"
         },
         "titleFormatted": {
-          "en": "DP [[dp]] on [[device]] crosses threshold [[threshold]]",
-          "fr": "DP [[dp]] de [[device]] franchit le seuil [[threshold]]",
-          "nl": "DP [[dp]] van [[device]] overschrijdt drempel [[threshold]]",
-          "de": "DP [[dp]] von [[device]] Ã¼berschreitet Schwellwert [[threshold]]"
+          "en": "DP [[dp]] crosses threshold [[threshold]]",
+          "fr": "DP [[dp]] franchit le seuil [[threshold]]",
+          "nl": "DP [[dp]] van overschrijdt drempel [[threshold]]",
+          "de": "DP [[dp]] von Ã¼berschreitet Schwellwert [[threshold]]"
         },
         "hint": {
           "en": "Triggers when a numeric DP value crosses a threshold (forum #1016)",
@@ -540,8 +540,8 @@
           "fr": "DP Tuya brut reÃ§u"
         },
         "titleFormatted": {
-          "en": "Raw DP [[dp]] received on [[device]]",
-          "fr": "DP brut [[dp]] reÃ§u sur [[device]]"
+          "en": "Raw DP [[dp]] received",
+          "fr": "DP brut [[dp]] reÃ§u"
         },
         "hint": {
           "en": "Triggers when a raw (type 0) DP is received. Data is provided as hex string.",
@@ -55687,8 +55687,8 @@
           "fr": "DP Tuya [[dp]] Ã©gal Ã [[value]]"
         },
         "titleFormatted": {
-          "en": "Tuya DP [[dp]] equals [[value]] on [[device]]",
-          "fr": "DP Tuya [[dp]] Ã©gal Ã [[value]] sur [[device]]"
+          "en": "Tuya DP [[dp]] equals [[value]]",
+          "fr": "DP Tuya [[dp]] Ã©gal Ã [[value]]"
         },
         "hint": {
           "en": "Check if a raw Tuya datapoint has a specific value",
@@ -55727,8 +55727,8 @@
           "fr": "Type DP est..."
         },
         "titleFormatted": {
-          "en": "DP [[dp]] on [[device]] is type [[dp_type]]",
-          "fr": "DP [[dp]] de [[device]] est type [[dp_type]]"
+          "en": "DP [[dp]] is type [[dp_type]]",
+          "fr": "DP [[dp]] est type [[dp_type]]"
         },
         "args": [
           {
@@ -67632,9 +67632,9 @@
           "nl": "OTA firmware updates controleren"
         },
         "titleFormatted": {
-          "en": "Check OTA firmware updates for [[device]]",
-          "fr": "VÃ©rifier les MÃJ OTA pour [[device]]",
-          "nl": "OTA firmware updates controleren voor [[device]]"
+          "en": "Check OTA firmware updates for",
+          "fr": "VÃ©rifier les MÃJ OTA pour",
+          "nl": "OTA firmware updates controleren voor"
         },
         "hint": {
           "en": "Queries Zigbee2MQTT index for updates. You will be notified.",
@@ -67680,8 +67680,8 @@
           "de": "Sub-FÃ¤higkeit setzen"
         },
         "titleFormatted": {
-          "en": "Set [[capability]] to [[value]] on [[device]]",
-          "fr": "DÃ©finir [[capability]] Ã [[value]] sur [[device]]"
+          "en": "Set [[capability]] to [[value]]",
+          "fr": "DÃ©finir [[capability]] Ã [[value]]"
         },
         "hint": {
           "en": "Set a sub-capability value (e.g. onoff.gang2)",
@@ -67724,10 +67724,10 @@
           "de": "Sub-FÃ¤higkeit umschalten"
         },
         "titleFormatted": {
-          "en": "Toggle [[capability]] on [[device]]",
-          "fr": "Basculer [[capability]] sur [[device]]",
-          "nl": "Omschakelen [[capability]] op [[device]]",
-          "de": "Umschalten [[capability]] auf [[device]]"
+          "en": "Toggle [[capability]]",
+          "fr": "Basculer [[capability]]",
+          "nl": "Omschakelen [[capability]]",
+          "de": "Umschalten [[capability]] auf"
         },
         "hint": {
           "en": "Toggle a boolean sub-capability (e.g., onoff.gang2, smart_home_lock.1)",
@@ -67760,8 +67760,8 @@
           "fr": "Eteindre Bouton.."
         },
         "titleFormatted": {
-          "en": "Turn off gang [[gang]] of [[device]]",
-          "fr": "Eteindre bouton [[gang]] de [[device]]"
+          "en": "Turn off gang [[gang]] of",
+          "fr": "Eteindre bouton [[gang]]"
         },
         "args": [
           {
@@ -67820,8 +67820,8 @@
           "fr": "Allumer Bouton.."
         },
         "titleFormatted": {
-          "en": "Turn on gang [[gang]] of [[device]]",
-          "fr": "Allumer bouton [[gang]] de [[device]]"
+          "en": "Turn on gang [[gang]] of",
+          "fr": "Allumer bouton [[gang]]"
         },
         "args": [
           {
@@ -67882,8 +67882,8 @@
           "de": "Tuya DP senden"
         },
         "titleFormatted": {
-          "en": "Send DP [[dp]] with value [[value]] to [[device]]",
-          "fr": "Envoyer DP [[dp]] avec valeur [[value]] Ã [[device]]"
+          "en": "Send DP [[dp]] with value [[value]] to",
+          "fr": "Envoyer DP [[dp]] avec valeur [[value]] Ã"
         },
         "hint": {
           "en": "Send a raw Tuya datapoint value to the device",
@@ -67922,8 +67922,8 @@
           "fr": "Envoyer DP Tuya typÃ©"
         },
         "titleFormatted": {
-          "en": "Send DP [[dp]] ([[dp_type]]) = [[value]] to [[device]]",
-          "fr": "Envoyer DP [[dp]] ([[dp_type]]) = [[value]] Ã [[device]]"
+          "en": "Send DP [[dp]] ([[dp_type]]) = [[value]] to",
+          "fr": "Envoyer DP [[dp]] ([[dp_type]]) = [[value]] Ã"
         },
         "hint": {
           "en": "Send a Tuya DP with explicit type (bool/value/enum/string/raw/bitmap)",
@@ -95734,8 +95734,8 @@
           "nl": "Stel LED-indicator modus in"
         },
         "titleFormatted": {
-          "en": "Set LED indicator on [[device]] to [[mode]]",
-          "nl": "Stel LED-indicator op [[device]] in op [[mode]]"
+          "en": "Set LED indicator to [[mode]]",
+          "nl": "Stel LED-indicator in op [[mode]]"
         },
         "hint": {
           "en": "Control when the LED indicator on the switch is lit",
@@ -95885,8 +95885,8 @@
           "nl": "Stel LED-indicator modus in"
         },
         "titleFormatted": {
-          "en": "[[device]] set LED indicator to [[mode]]",
-          "nl": "[[device]] stel LED-indicator in op [[mode]]"
+          "en": "set LED indicator to [[mode]]",
+          "nl": "stel LED-indicator in op [[mode]]"
         },
         "hint": {
           "en": "Control when the LED indicator on the switch is lit",
@@ -96007,8 +96007,8 @@
           "fr": "DÃ©finir le comportement Ã la mise sous tension"
         },
         "titleFormatted": {
-          "en": "[[device]] Set power-on behavior to [[mode]]",
-          "nl": "[[device]] Stel inschakelgedrag in op [[mode]]"
+          "en": "Set power-on behavior to [[mode]]",
+          "nl": "Stel inschakelgedrag in op [[mode]]"
         },
         "args": [
           {
@@ -96059,8 +96059,8 @@
           "fr": "DÃ©finir le type d'interrupteur externe"
         },
         "titleFormatted": {
-          "en": "[[device]] Set external switch type to [[mode]]",
-          "nl": "[[device]] Stel extern schakelaartype in op [[mode]]"
+          "en": "Set external switch type to [[mode]]",
+          "nl": "Stel extern schakelaartype in op [[mode]]"
         },
         "args": [
           {
@@ -96109,8 +96109,8 @@
           "nl": "Stel scÃ¨nemodus in"
         },
         "titleFormatted": {
-          "en": "[[device]] set scene mode to [[mode]]",
-          "nl": "[[device]] stel scÃ¨nemodus in op [[mode]]"
+          "en": "set scene mode to [[mode]]",
+          "nl": "stel scÃ¨nemodus in op [[mode]]"
         },
         "args": [
           {
@@ -96156,8 +96156,8 @@
           "nl": "Stel LED-indicator modus in"
         },
         "titleFormatted": {
-          "en": "[[device]] set LED to [[mode]]",
-          "nl": "[[device]] stel LED in op [[mode]]"
+          "en": "set LED to [[mode]]",
+          "nl": "stel LED in op [[mode]]"
         },
         "args": [
           {
@@ -96208,8 +96208,8 @@
           "fr": "DÃ©finir le comportement Ã la mise sous tension"
         },
         "titleFormatted": {
-          "en": "[[device]] Set power-on behavior to [[mode]]",
-          "nl": "[[device]] Stel inschakelgedrag in op [[mode]]"
+          "en": "Set power-on behavior to [[mode]]",
+          "nl": "Stel inschakelgedrag in op [[mode]]"
         },
         "args": [
           {
@@ -96260,8 +96260,8 @@
           "fr": "DÃ©finir le type d'interrupteur externe"
         },
         "titleFormatted": {
-          "en": "[[device]] Set external switch type to [[mode]]",
-          "nl": "[[device]] Stel extern schakelaartype in op [[mode]]"
+          "en": "Set external switch type to [[mode]]",
+          "nl": "Stel extern schakelaartype in op [[mode]]"
         },
         "args": [
           {
@@ -96310,8 +96310,8 @@
           "nl": "Stel scÃ¨nemodus in"
         },
         "titleFormatted": {
-          "en": "[[device]] set scene mode to [[mode]]",
-          "nl": "[[device]] stel scÃ¨nemodus in op [[mode]]"
+          "en": "set scene mode to [[mode]]",
+          "nl": "stel scÃ¨nemodus in op [[mode]]"
         },
         "args": [
           {
@@ -96555,8 +96555,8 @@
           "nl": "Stel LED-indicator modus in"
         },
         "titleFormatted": {
-          "en": "[[device]] set LED to [[mode]]",
-          "nl": "[[device]] stel LED in op [[mode]]"
+          "en": "set LED to [[mode]]",
+          "nl": "stel LED in op [[mode]]"
         },
         "args": [
           {
@@ -96607,8 +96607,8 @@
           "fr": "DÃ©finir le comportement Ã la mise sous tension"
         },
         "titleFormatted": {
-          "en": "[[device]] Set power-on behavior to [[mode]]",
-          "nl": "[[device]] Stel inschakelgedrag in op [[mode]]"
+          "en": "Set power-on behavior to [[mode]]",
+          "nl": "Stel inschakelgedrag in op [[mode]]"
         },
         "args": [
           {
@@ -96659,8 +96659,8 @@
           "fr": "DÃ©finir le type d'interrupteur externe"
         },
         "titleFormatted": {
-          "en": "[[device]] Set external switch type to [[mode]]",
-          "nl": "[[device]] Stel extern schakelaartype in op [[mode]]"
+          "en": "Set external switch type to [[mode]]",
+          "nl": "Stel extern schakelaartype in op [[mode]]"
         },
         "args": [
           {
@@ -96709,8 +96709,8 @@
           "nl": "Stel scÃ¨nemodus in"
         },
         "titleFormatted": {
-          "en": "[[device]] set scene mode to [[mode]]",
-          "nl": "[[device]] stel scÃ¨nemodus in op [[mode]]"
+          "en": "set scene mode to [[mode]]",
+          "nl": "stel scÃ¨nemodus in op [[mode]]"
         },
         "args": [
           {
@@ -97008,8 +97008,8 @@
           "nl": "Stel LED-indicator modus in"
         },
         "titleFormatted": {
-          "en": "[[device]] set LED to [[mode]]",
-          "nl": "[[device]] stel LED in op [[mode]]"
+          "en": "set LED to [[mode]]",
+          "nl": "stel LED in op [[mode]]"
         },
         "args": [
           {
@@ -97060,8 +97060,8 @@
           "fr": "DÃ©finir le comportement Ã la mise sous tension"
         },
         "titleFormatted": {
-          "en": "[[device]] Set power-on behavior to [[mode]]",
-          "nl": "[[device]] Stel inschakelgedrag in op [[mode]]"
+          "en": "Set power-on behavior to [[mode]]",
+          "nl": "Stel inschakelgedrag in op [[mode]]"
         },
         "args": [
           {
@@ -97112,8 +97112,8 @@
           "fr": "DÃ©finir le type d'interrupteur externe"
         },
         "titleFormatted": {
-          "en": "[[device]] Set external switch type to [[mode]]",
-          "nl": "[[device]] Stel extern schakelaartype in op [[mode]]"
+          "en": "Set external switch type to [[mode]]",
+          "nl": "Stel extern schakelaartype in op [[mode]]"
         },
         "args": [
           {
@@ -97162,8 +97162,8 @@
           "nl": "Stel scÃ¨nemodus in"
         },
         "titleFormatted": {
-          "en": "[[device]] set scene mode to [[mode]]",
-          "nl": "[[device]] stel scÃ¨nemodus in op [[mode]]"
+          "en": "set scene mode to [[mode]]",
+          "nl": "stel scÃ¨nemodus in op [[mode]]"
         },
         "args": [
           {
@@ -99628,8 +99628,8 @@
               "nl": "Kalibreer gordijnmotor"
             },
             "titleFormatted": {
-              "en": "Calibrate [[device]]",
-              "nl": "Kalibreer [[device]]"
+              "en": "Calibrate",
+              "nl": "Kalibreer"
             },
             "hint": {
               "en": "Run full open/close cycle for position calibration",
@@ -99643,8 +99643,8 @@
               "nl": "Reset positie naar 0%"
             },
             "titleFormatted": {
-              "en": "Reset [[device]] position",
-              "nl": "Reset [[device]] positie"
+              "en": "Reset position",
+              "nl": "Reset positie"
             },
             "hint": {
               "en": "Reset current position to fully closed",
@@ -99659,8 +99659,8 @@
               "fr": "Maintenir position rideau"
             },
             "titleFormatted": {
-              "en": "Hold [[device]] at current position",
-              "nl": "Houd [[device]] op huidige positie"
+              "en": "Hold at current position",
+              "nl": "Houd huidige positie"
             },
             "hint": {
               "en": "Stop curtain movement and hold at current position",
@@ -99675,8 +99675,8 @@
               "fr": "Ouvrir rideau partiellement"
             },
             "titleFormatted": {
-              "en": "Open [[device]] to [[position]]%",
-              "nl": "Open [[device]] naar [[position]]%"
+              "en": "Open to [[position]]%",
+              "nl": "Open naar [[position]]%"
             },
             "args": [
               {
@@ -134141,8 +134141,8 @@
               "nl": "Kalibreer gordijnmotor"
             },
             "titleFormatted": {
-              "en": "Calibrate [[device]]",
-              "nl": "Kalibreer [[device]]"
+              "en": "Calibrate",
+              "nl": "Kalibreer"
             },
             "hint": {
               "en": "Run full open/close cycle for position calibration",
@@ -134156,8 +134156,8 @@
               "nl": "Reset positie naar 0%"
             },
             "titleFormatted": {
-              "en": "Reset [[device]] position",
-              "nl": "Reset [[device]] positie"
+              "en": "Reset position",
+              "nl": "Reset positie"
             },
             "hint": {
               "en": "Reset current position to fully closed",
@@ -134172,8 +134172,8 @@
               "fr": "Maintenir position rideau"
             },
             "titleFormatted": {
-              "en": "Hold [[device]] at current position",
-              "nl": "Houd [[device]] op huidige positie"
+              "en": "Hold at current position",
+              "nl": "Houd huidige positie"
             },
             "hint": {
               "en": "Stop curtain movement and hold at current position",
@@ -134188,8 +134188,8 @@
               "fr": "Ouvrir rideau partiellement"
             },
             "titleFormatted": {
-              "en": "Open [[device]] to [[position]]%",
-              "nl": "Open [[device]] naar [[position]]%"
+              "en": "Open to [[position]]%",
+              "nl": "Open naar [[position]]%"
             },
             "args": [
               {

@@ -68,14 +68,18 @@ class RadiatorControllerDevice extends ZigBeeDevice {
   }
 
   async setupFlowCards() {
-    const modeChanged = this.homey.flow.getDeviceTriggerCard('radiator_mode_changed');
-    if (modeChanged) {
-      this._radiatorModeChangedTrigger = modeChanged;
+    try {
+        const modeChanged = (() => { try { return this.homey.flow.getTriggerCard('radiator_mode_changed'); } catch (e) { return null; } })();
+        this._radiatorModeChangedTrigger = modeChanged;
+    } catch (e) {
+        this.log('radiator_mode_changed trigger not available');
     }
 
-    const heatingAction = this.homey.flow.getActionCard('set_heating_mode');
-    if (heatingAction) {
-      heatingAction.registerRunListener(async (args) => this._setHeatingMode(args.mode));
+    try {
+        const heatingAction = (() => { try { return this.homey.flow.getActionCard('set_heating_mode'); } catch (e) { return null; } })();
+        heatingAction.registerRunListener(async (args) => this._setHeatingMode(args.mode));
+    } catch (e) {
+        this.log('set_heating_mode action not available');
     }
   }
 
@@ -128,7 +132,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
   getSafeCluster(id) {
     const ep = this.zclNode.endpoints[1];
-    return ep?.clusters[id];
+    return ep?.clusters?.[id] || null;
   }
 
   async onSettings({ newSettings, changedKeys }) {

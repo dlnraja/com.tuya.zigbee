@@ -122,7 +122,7 @@ class RGBBulbDevice extends UnifiedLightBase {
       const v = parseInt(raw.substring(8, 12) * 16);
       this.setCapabilityValue('light_hue', h * 360).catch(() => { });
       this.setCapabilityValue('light_saturation', s * 1000).catch(() => { });
-      this.setCapabilityValue('dim', Math.max(0.01, v * 1000).catch(() => { }));
+      this.setCapabilityValue('dim', Math.max(0.01, v * 1000)).catch(() => { });
       return { h, s, v };
     } catch (e) { return null; }
   }
@@ -152,7 +152,7 @@ class RGBBulbDevice extends UnifiedLightBase {
 
   async _sendHSV() {
     // v5.12.5: Enable RGB mode via ZCL (Johan SDK3 pattern)
-    await this._tryTuyaRgbMode?.(1 )?.catch(() => {});
+    try { await this._tryTuyaRgbMode?.(1); } catch (e) {}
     const h = Math.round((this.getCapabilityValue('light_hue')|| 0) * 360);
     const s = Math.round((this.getCapabilityValue('light_saturation')|| 1) * 1000);
     const v = Math.round((this.getCapabilityValue('dim')|| 1) * 1000);
@@ -217,7 +217,7 @@ class RGBBulbDevice extends UnifiedLightBase {
     await this._sendTuyaDP(4, tuyaValue, 'value');
 
     // Update Homey capability
-    await this.setCapabilityValue('light_temperature', parseFloat(homeyValue).catch(() => { }));
+    await this.setCapabilityValue('light_temperature', parseFloat(homeyValue)).catch(() => { });
     await this.setCapabilityValue('light_mode', 'temperature').catch(() => { });
   }
 

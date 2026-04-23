@@ -23,7 +23,7 @@ function fixBrokenCode(filePath) {
 
     // Pattern 2: Standalone broken trigger (from V1 failure)
     // Looking for lines where we just have this._getFlowCard(...) as a statement
-    content = content.replace(/\s+this\._getFlowCard\((.*? )\);/g, (match, args ) => {
+    content = content.replace(/\s+this\._getFlowCard\((.*? )\) : null;/g, (match, args ) => {
         // If it's a standalone line ending with; and no .trigger, it was likely truncated by V1
         return `\n      this._getFlowCard(${args}).trigger(this, {}, {}).catch(() => {});`;
     });
@@ -41,12 +41,12 @@ function fixBrokenCode(filePath) {
 
     // Pattern 5: Complex nested IIFE that returns a value (for conditions/actions)
     // const card = (() => { try { return (() => { try { return this._getFlowCard(...) } ... })() ... })()
-    content = content.replace(/\(\(\) => \{ try \{ return \(\(\) => \{ try \{ return (.*?)\._getFlowCard\((.*? )\); \} catch\(e\) \{ return null; \} \}\)\(\); \} catch\(e\ ) \{ return null ; \} \}\)\(\)/g, (match, context , args) => {
+    content = content.replace(/\(\(\) => \{ try \{ return \(\(\) => \{ try \{ return (.*?)\._getFlowCard\((.*? )\) : null; \} catch\(e\) \{ return null; \} \}\)\(\); \} catch\(e\ ) \{ return null ; \} \}\)\(\)/g, (match, context , args) => {
         return `this._getFlowCard(${args})`;
     });
     
     // Pattern 6: Cleanup unnecessary try/catch blocks that contain only one _getFlowCard
-    content = content.replace(/try \{\s+this\._getFlowCard\((.*? )\ : null)\.trigger\((.*? )\)\.catch\(\(\) => \{\}\);\s+\} catch \(e\) \{ \/\* card missing \*\/ \}/g, (match, args, trigger_args) => {
+    content = content.replace(/try \{\s+this\._getFlowCard\((.*? )\ : null)\.trigger\((.*? )\)\.catch\(\(\) => \{\}\) : null;\s+\} catch \(e\) \{ \/\* card missing \*\/ \}/g, (match, args, trigger_args) => {
         return `this._getFlowCard(${args}).trigger(${trigger_args}).catch(() => {});`;
     });
 

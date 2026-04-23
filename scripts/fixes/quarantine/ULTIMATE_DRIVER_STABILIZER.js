@@ -70,15 +70,15 @@ jsFiles.forEach(file => {
 
   // 4. DEVICE SPECIFIC: Fix lonely _getFlowCard mentions
   if (isDevice) {
-    content = content.replace(/^(\s+)this\._getFlowCard\((.*? )\ : null)( ;|\s+)? (\n|\s+\})/gm, (match, prefix, args, suffix, end) => {
+    content = content.replace(/^(\s+)this\._getFlowCard\(([^)]+)\);?(\s*)$/gm, (match, prefix, args, suffix) => {
         if (args.includes('.trigger') || args.includes('.register')) return match;
         const cleanArgs = args.split(',')[0].trim();
-        return `${prefix}this._getFlowCard(${cleanArgs})?.trigger(this, {}, {}).catch(this.error || console.error)${suffix || ''}${end}`       ;
+        return ${prefix}this._getFlowCard()?.trigger(this, {}, {}).catch(this.error || console.error);;
     });
-    content = content.replace(/\{\s+this\._getFlowCard\((.*? )\)\s+\}/g, (match, args) => {
+    content = content.replace(/\{\s+this\._getFlowCard\(([^)]+)\)\s+\}/g, (match, args) => {
         if (args.includes('.trigger') || args.includes('.register')) return match;
         const cleanArgs = args.split(',')[0].trim();
-        return `{ this._getFlowCard(${cleanArgs})?.trigger(this, {}, {}).catch(this.error || console.error) ; }`;
+        return { this._getFlowCard()?.trigger(this, {}, {}).catch(this.error || console.error) ; };
     });
   }
 
@@ -95,7 +95,7 @@ jsFiles.forEach(file => {
   if (isDriver) {
     // Only remove if NOT followed by a listener or assignment
     // But be careful not to remove valid registrations
-    // content = content.replace(/^\s+this\.homey\.flow\.(get|getAction|getCondition|getTrigger)Card\(.*? \ ) ;? $/gm, "")      ;
+    // content = content.replace(/^\s+this\.homey\.flow\.(get|getAction|getCondition|getTrigger)Card\(.*? \ )  : null;? $/gm, "")       : null;
   }
 
   // 8. FINAL POLISH

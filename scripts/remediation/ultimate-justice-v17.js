@@ -42,7 +42,7 @@ function processFile(filePath) {
     }
 
     // 4. One more pass for the specific ZHAQuirkAdapter patterns if V16 missed them
-    if (content.includes(')        : null;')) {
+    if (content.includes(');')) {
         content = content.replace(/\)\s+:\s+null;/g, ') || null;');
         modified = true;
     }

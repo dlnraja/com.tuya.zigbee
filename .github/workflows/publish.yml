@@ -12,6 +12,7 @@ permissions:
 env:
   NODE_VERSION: "22"
   APP_ID: "com.dlnraja.tuya.zigbee"
+  SHADOW_MODE: "true"
 
 jobs:
   # ============================================================
@@ -47,16 +48,8 @@ jobs:
           echo "sdk=3" >> $GITHUB_OUTPUT
 
       # Syntax validation for all JS files
-      - name: 📜 JavaScript Syntax Validation
-        run: |
-          echo "=== Validating JavaScript syntax ==="
-          for f in $(find lib drivers -name "*.js" -type f 2>/dev/null | head -100); do
-            if ! node --check "$f" 2>/dev/null; then
-              echo "SYNTAX ERROR: $f"
-              exit 1
-            fi
-          done
-          echo "✅ All JS files syntax-valid"
+      - name: 🛡️ STRICT SYNTAX PURITY GUARD
+        run: node scripts/maintenance/STRICT_SYNTAX_GUARD.js
 
       # JSON validation
       - name: 📊 JSON Integrity Check

@@ -27,8 +27,8 @@ for (const driver of drivers) {
   const originalContent = content;
   
   // Remove the hardcoded await this.removeCapability('measure_battery')
-  content = content.replace(/\s*await this\.removeCapability\('measure_battery'\)\.catch\(\(\) => \{\}\);? \s*/g , '')      ;
-  content = content.replace(/\s*await this\.removeCapability\('measure_battery'\);? \s*/g, '')      ;
+  content = content.replace(/\s*await this\.removeCapability\('measure_battery'\)\.catch\(\(\) => \{\}\);? \s*/g , '');
+  content = content.replace(/\s*await this\.removeCapability\('measure_battery'\);? \s*/g, '');
   
   // Remove comments about removing battery
   content = content.replace(/\s*\/\/.*[Rr]emove.*measure_battery.*\n/g, '');

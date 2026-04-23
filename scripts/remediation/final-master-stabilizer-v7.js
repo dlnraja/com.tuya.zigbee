@@ -19,8 +19,8 @@ function processFile(filePath) {
     content = content.replace(/(\/\/ A8: NaN Safety[^\n]+\n\s+)const\s+(\{[^;]+networkLed[^;]+\};)/g, '$1const A = $2');
 
     // 2. Fix Dangling Ternaries (missing : branch)
-    // Pattern: const x = someCheck ? await someCall() ;
-    // We look for ? followed by something then ; without :
+    // Pattern: const x = someCheck ? await someCall()  : null;
+    // We look for ? followed by something then  : null; without :
     content = content.replace(/(\w+)\s*=\s*([^?;]+\?\s*[^?;]+)\s*;\s*/g, (m, p1, p2) => {
         if (!p2.includes(':')) {
             modified = true;

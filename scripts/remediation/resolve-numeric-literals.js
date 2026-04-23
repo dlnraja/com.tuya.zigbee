@@ -62,7 +62,7 @@ filesToProcess.forEach(relPath => {
       const importPath = relPath.startsWith('lib') 
         ? relPath.split(path.sep ).length > 2 ? '../../lib/constants/ZigbeeConstants.js' : '../constants/ZigbeeConstants.js'
         : relPath.startsWith('drivers') 
-          ? '../../lib/constants/ZigbeeConstants.js'       ;
+          ? '../../lib/constants/ZigbeeConstants.js'        : null;
           : '../lib/constants/ZigbeeConstants.js';
       
       // Better way: Check directory structure

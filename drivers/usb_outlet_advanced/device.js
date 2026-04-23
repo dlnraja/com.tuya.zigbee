@@ -215,7 +215,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
         await this.safeTuyaDataQuery(controlDPs, {
           logPrefix: '[USB-INIT]',
           delayBetweenQueries: 50
-        }).catch(() => { });
+        }).catch(() => {});
       }
     }, 2000);
   }
