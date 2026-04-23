@@ -11,7 +11,7 @@ const appJsonPath = path.join(ROOT, 'app.json');
 if (fs.existsSync(appJsonPath)) {
     let appJson = fs.readFileSync(appJsonPath, 'utf8');
     // Remove xlarge image from global images
-    appJson = appJson.replace(/"xlarge":\s*"\/assets\/images\/xlarge\.png",?\s*/g, '') : null;
+    appJson = appJson.replace(/"xlarge":\s*"\/assets\/images\/xlarge\.png",? \s*/g, '')      ;
     // Clean up trailing commas in objects
     appJson = appJson.replace(/,(\s*\})/g, '$1');
     fs.writeFileSync(appJsonPath, appJson);
@@ -22,7 +22,7 @@ if (fs.existsSync(appJsonPath)) {
 const composeAppPath = path.join(ROOT, '.homeycompose', 'app.json');
 if (fs.existsSync(composeAppPath)) {
     let composeApp = fs.readFileSync(composeAppPath, 'utf8');
-    composeApp = composeApp.replace(/"xlarge":\s*"\/assets\/images\/xlarge\.png",?\s*/g, '') : null;
+    composeApp = composeApp.replace(/"xlarge":\s*"\/assets\/images\/xlarge\.png",? \s*/g, '')      ;
     composeApp = composeApp.replace(/,(\s*\})/g, '$1');
     fs.writeFileSync(composeAppPath, composeApp);
     console.log('✅ Updated .homeycompose/app.json: Removed xlarge image reference.');
@@ -39,7 +39,7 @@ if (fs.existsSync(driversDir)) {
             let content = fs.readFileSync(composePath, 'utf8');
             if (content.includes('"xlarge"')) {
                 // Remove xlarge from images object
-                content = content.replace(/"xlarge":\s*"[^"]+",?\s*/g, '') : null;
+                content = content.replace(/"xlarge":\s*"[^"]+",? \s*/g, '')      ;
                 // Clean up trailing commas
                 content = content.replace(/,(\s*\})/g, '$1');
                 fs.writeFileSync(composePath, content);

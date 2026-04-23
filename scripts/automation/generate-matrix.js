@@ -16,7 +16,7 @@ matrix += '|--------|---------------|----------|-------------|\n';
 let totalMfrs = 0;
 for (const [name, d] of [...drivers].sort((a, b) => a[0].localeCompare(b[0]))) {
   totalMfrs += d.mfrs.length;
-  matrix += `| ${name} | ${d.mfrs.length} | ${d.pids.join(', ') || '-'} | ${d.caps.slice(0, 3).join(', ')}${d.caps.length > 3 ? '...' : ''} |\n`;
+  matrix += `| ${name} | ${d.mfrs.length} | ${d.pids.join(', ') || '-'} | ${d.caps.slice(0, 3).join(', ')}${d.caps.length > 3 ? '...' : ''} |\n`      ;
 }
 
 matrix += `\n---\n**Total:** ${drivers.size} drivers, ${totalMfrs} manufacturer IDs\n`;

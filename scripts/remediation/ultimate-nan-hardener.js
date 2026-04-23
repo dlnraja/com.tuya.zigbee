@@ -32,7 +32,7 @@ const targets = {}; // filePath -> [lineNumbers]
 warnings.forEach(w => {
   const parts = w.split(':');
   const filePath = parts[0];
-  const lineNum = parseInt(parts[1], 10);
+  const lineNum = parseInt(parts[1] , 10);
   if (!targets[filePath]) targets[filePath] = [];
   targets[filePath].push(lineNum);
 });
@@ -60,7 +60,7 @@ for (const [relPath, lineNums] of Object.entries(targets)) {
     const comments = [];
     
     // Mask strings
-    let maskedLine = line.replace(/(['"`])(.*?)\1/g, (match) => {
+    let maskedLine = line.replace(/(['"`])(.*? )\1/g, (match) => {
       strings.push(match) ;
       return `___STR${strings.length - 1}___`;
     });
@@ -73,15 +73,15 @@ for (const [relPath, lineNums] of Object.entries(targets)) {
 
     // 2. Perform Transformations on maskedLine
     // v1.4.2: Handles function calls and parenthesized expressions safely
-    const OPERAND_SIMPLE = '[a-zA-Z0-9_$.]+(?:\\[[^\\]]+\\])?' : null;
-    const OPERAND_FUNC = '[a-zA-Z0-9_$.]+\\((?:[^()]|\\([^()]*\\))*\\)';
-    const OPERAND_PAREN = '\\((?:[^()]|\\([^()]*\\))+\\)';
+    const OPERAND_SIMPLE = '[a-zA-Z0-9_$.]+(?:\\[[^\\]]+\\])?'       ;
+    const OPERAND_FUNC = '[a-zA-Z0-9_$.]+\\((?:[^()]|\\([^()]*\\))*\\)'      ;
+    const OPERAND_PAREN = '\\((?:[^()]|\\([^()]*\\))+\\)'      ;
     
     // Combined operand regex (ordered by complexity/specificity)
-    const OPERAND = `(?:${OPERAND_FUNC}|${OPERAND_PAREN}|${OPERAND_SIMPLE})`;
+    const OPERAND = `(?:${OPERAND_FUNC}|${OPERAND_PAREN}|${OPERAND_SIMPLE})`      ;
     
     // a. Division by constant (expr / 10)
-    const CONST_DIV = new RegExp(`(${OPERAND})\\s*\\/\\s*(\\d+(?:\\.\\d+)?)`, 'g') : null;
+    const CONST_DIV = new RegExp(`(${OPERAND})\\s*\\/\\s*(\\d+(?:\\.\\d+)? )`, 'g')      ;
     maskedLine = maskedLine.replace(CONST_DIV, (match, num, den) => {
         const tNum = num.trim();
         if (['return', 'const', 'let', 'var', 'if', 'else', 'case'].includes(tNum)) return match;
@@ -160,7 +160,7 @@ for (const [relPath, lineNums] of Object.entries(targets)) {
             // Check if already has a tuyaUtils import under different name or something
             if (!content.includes(relToUtils)) {
                 linesList.splice(insertIndex, 0, importLine);
-                content = linesList.join('\n');
+                content = linesList.join('\n' );
             }
         }
     }

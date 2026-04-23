@@ -45,14 +45,13 @@ class GenericDIYDevice extends ZigBeeDevice {
 
   get mainsPowered() {
     // If router, it's mains powered. Also check model/mfr fallbacks.
-    if (this.zclNode?.role === 'router' || this.zclNode?.role === 'coordinator') return true ;
-    const model = ManufacturerNameHelper.getModelId(this);
+    if (this.zclNode?.role === 'router' || this.zclNode?.role === 'coordinator') return true;const model = ManufacturerNameHelper.getModelId(this);
     return model && model.includes('ROUTER');
   }
 
   async onNodeInit({ zclNode }) {
     this.log('[DIY] ');
-    this.log('[DIY] UNIVERSAL GENERIC ENGINE v7.4.5');
+    this.log('[DIY] UNIVERSAL GENERIC ENGINE v7.4.5' );
     this.log(`[DIY] Identity: ${this.getName()}`);
     this.log('[DIY] ');
 
@@ -128,15 +127,13 @@ class GenericDIYDevice extends ZigBeeDevice {
   _triggerGangFlows(capability, value) {
     if (capability.startsWith('onoff')) {
         const parts = capability.split('.');
-        const endpoint = parts.length > 1 ? parseInt(parts[1]) : 1;
+        const endpoint = parts.length > 1 ? parseInt(parts[1] ) : 1;
         this._triggerFlow(value ? 'generic_diy_switch_turned_on' : 'generic_diy_switch_turned_off', { endpoint });
     }
   }
 
   _triggerButton(button, pressType) {
-    const flowId = pressType === BUTTON_PRESS.DOUBLE ? 'generic_diy_button_double_pressed' :
-      pressType === BUTTON_PRESS.LONG ? 'generic_diy_button_long_pressed' :
-        'generic_diy_button_pressed';
+    const flowId = pressType === BUTTON_PRESS.DOUBLE ? 'generic_diy_button_double_pressed' : pressType === BUTTON_PRESS.LONG ? 'generic_diy_button_long_pressed' : 'generic_diy_button_pressed';
     this._triggerFlow(flowId, { button });
   }
 
@@ -151,7 +148,7 @@ class GenericDIYDevice extends ZigBeeDevice {
   _registerFlowActions() {
     // Identify
     this._getFlowCard('generic_diy_identify')?.registerRunListener(async () => {
-      const ep = this.zclNode?.endpoints?.[1] ;
+      const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.identify) {
         await ep.clusters.identify.identify({ identifyTime: 5 });
       }
@@ -159,24 +156,24 @@ class GenericDIYDevice extends ZigBeeDevice {
     });
 
     // Turn ON endpoint
-    this._getFlowCard('generic_diy_turn_on_endpoint')?.registerRunListener(async ({ endpoint }) => {
-      const ep = this.zclNode?.endpoints?.[endpoint] ;
-      if (ep?.clusters?.onOff) await ep.clusters.onOff.setOn() ;
+    this._getFlowCard('generic_diy_turn_on_endpoint')?.registerRunListener(async ({ endpoint } ) => {
+      const ep = this.zclNode?.endpoints?.[endpoint];
+      if (ep?.clusters?.onOff) await ep.clusters.onOff.setOn();
       return true;
     });
 
     // Turn OFF endpoint
-    this._getFlowCard('generic_diy_turn_off_endpoint')?.registerRunListener(async ({ endpoint }) => {
-      const ep = this.zclNode?.endpoints?.[endpoint] ;
-      if (ep?.clusters?.onOff) await ep.clusters.onOff.setOff() ;
+    this._getFlowCard('generic_diy_turn_off_endpoint')?.registerRunListener(async ({ endpoint } ) => {
+      const ep = this.zclNode?.endpoints?.[endpoint];
+      if (ep?.clusters?.onOff) await ep.clusters.onOff.setOff();
       return true;
     });
 
     // Set Dim Level
-    this._getFlowCard('generic_diy_set_dim')?.registerRunListener(async ({ level }) => {
-      const ep = this.zclNode?.endpoints?.[1] ;
+    this._getFlowCard('generic_diy_set_dim')?.registerRunListener(async ({ level } ) => {
+      const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.levelControl) {
-        await ep.clusters.levelControl.moveToLevel({ level: Math.round(safeMultiply(level, 254)), transitionTime: 0 });
+        await ep.clusters.levelControl.moveToLevel({ level: Math.round(level * 254), transitionTime: 0 });
       }
       return true;
     });
@@ -192,18 +189,18 @@ class GenericDIYDevice extends ZigBeeDevice {
         ep.clusters.scenes.on('command', (cmd) => {
           this.log(`[DIY] Button scene command EP${epId}:`, cmd);
           this._triggerButton(parseInt(epId), BUTTON_PRESS.SINGLE);
-        });
+      });
       }
       if (ep.clusters?.multiStateInput || ep.clusters?.genMultistateInput) {
-        const cluster = ep.clusters.multiStateInput || ep.clusters.genMultistateInput ;
+        const cluster = ep.clusters.multiStateInput || ep.clusters.genMultistateInput;
         cluster.on('attr.presentValue', (v) => {
           this.log(`[DIY] Button multistate EP${epId}:`, v);
           const pressType = v === 2 ? BUTTON_PRESS.DOUBLE : v === 3 ? BUTTON_PRESS.LONG : BUTTON_PRESS.SINGLE;
           this._triggerButton(parseInt(epId), pressType);
-        });
+      });
       }
       if (ep.clusters?.onOff) {
-        ep.clusters.onOff.on('commandOn', () => this._triggerButton(parseInt(epId), BUTTON_PRESS.SINGLE)) ;
+        ep.clusters.onOff.on('commandOn', () => this._triggerButton(parseInt(epId), BUTTON_PRESS.SINGLE));
         ep.clusters.onOff.on('commandOff', () => this._triggerButton(parseInt(epId), BUTTON_PRESS.SINGLE));
         ep.clusters.onOff.on('commandToggle', () => this._triggerButton(parseInt(epId), BUTTON_PRESS.SINGLE));
       }
@@ -230,23 +227,23 @@ class GenericDIYDevice extends ZigBeeDevice {
       if (clusterId === 0x0006) {
         this.registerCapabilityListener(cap, async (v) => {
           v ? await cluster.setOn() : await cluster.setOff();
-        });
+      });
         cluster.on('attr.onOff', (v) => this._safeSetCapability(cap, v).catch(() => {}));
       }
       // Level cluster
       else if (clusterId === 0x0008) {
         this.registerCapabilityListener(cap, async (v) => {
-          await cluster.moveToLevel({ level: Math.round(safeMultiply(v, 254)), transitionTime: 0 });
-        });
-        cluster.on('attr.currentLevel', (v) => this._safeSetCapability(cap, safeParse(v, 254)).catch(() => {}));
+          await cluster.moveToLevel({ level: Math.round(v * 254), transitionTime: 0 });
+      });
+        cluster.on('attr.currentLevel', (v) => this._safeSetCapability(cap, v * 254).catch(() => {}));
       }
       // Temperature
       else if (clusterId === 0x0402) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, safeParse(v, 100)).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v * 100).catch(() => {}));
       }
       // Humidity
       else if (clusterId === 0x0405) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, safeParse(v, 100)).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v * 100).catch(() => {}));
       }
       // Illuminance
       else if (clusterId === 0x0400) {
@@ -258,7 +255,7 @@ class GenericDIYDevice extends ZigBeeDevice {
       }
       // Battery
       else if (clusterId === 0x0001) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, safeParse(v, 2)).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v * 2).catch(() => {}));
       }
       // Contact
       else if (clusterId === 0x0500) {
@@ -266,31 +263,31 @@ class GenericDIYDevice extends ZigBeeDevice {
       }
       // Pressure
       else if (clusterId === 0x0403) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, safeParse(v, 10)).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v * 10).catch(() => {}));
       }
       // Analog
       else if (clusterId === 0x000C) {
         cluster.on(`attr.${map.attr}`, (v) => {
           this._safeSetCapability(cap, v).catch(() => {});
           this._triggerAnalog(epId, v);
-        });
+      });
       }
       // Thermostat
       else if (clusterId === 0x0201) {
         this.registerCapabilityListener(cap, async (v) => {
-          await cluster.write({ occupiedHeatingSetpoint: Math.round(safeMultiply(v, 100)) });
-        });
-        cluster.on('attr.occupiedHeatingSetpoint', (v) => this._safeSetCapability(cap, safeParse(v, 100)).catch(() => {}));
+          await cluster.write({ occupiedHeatingSetpoint: Math.round(v * 100) });
+      });
+        cluster.on('attr.occupiedHeatingSetpoint', (v) => this._safeSetCapability(cap, v * 100).catch(() => {}));
         cluster.on('attr.localTemperature', (v) => {
-          if (v !== -32768) this._safeSetCapability('measure_temperature', safeParse(v, 100)).catch(() => {});
-        });
+          if (v !== -32768) this._safeSetCapability('measure_temperature', v * 100).catch(() => {});
+      });
       }
       // Other measurement clusters
       else if (map.attr) {
         cluster.on(`attr.${map.attr}`, (v) => {
-          const val = map.div ? safeDivide(v, map.div) : v;
+          const val = map.div ? (v / map.div ) : v;
           this._safeSetCapability(cap, val).catch(() => {});
-        });
+      });
       }
     } catch (e) {
       this.error(`[DIY] Listener setup failed: ${e.message}`);

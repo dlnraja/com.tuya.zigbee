@@ -26,13 +26,13 @@ allFiles.forEach(file => {
     let changed = false;
 
     // Pattern 1: Truncated safe(Multiply|Parse) calls with missing parens
-    // Pattern: Math.round(safeParse(val));  -> Math.round(safeParse(val, 10)));
-    content = content.replace(/Math\.round\s*\(\s*safe(Parse|Multiply)\s*\(([^,)]+)\)\s*;\s*$/gm, "Math.round(safe$1($2, 10));");
-    // Pattern: Math.round(safeParse(val, 10)); -> Math.round(safeParse(val, 10)));
-    content = content.replace(/Math\.round\s*\(\s*safe(Parse|Multiply)\s*\(([^,)]+,\s*[^)]+)\)\s*;\s*$/gm, "Math.round(safe$1($2));");
+    // Pattern: Math.round(val);  -> Math.round(val * 10));
+    content = content.replace(/Math\.round\s*\(\s*safe(Parse|Multiply)\s*\(([^)]+)\)\s*;\s*$/gm, "Math.round(safe$1($2 * 10));");
+    // Pattern: Math.round(val * 10); -> Math.round(val * 10));
+    content = content.replace(/Math\.round\s*\(\s*safe(Parse|Multiply)\s*\(([^)]+,\s*[^)]+)\)\s*;\s*$/gm, "Math.round(safe$1($2));");
     // Pattern 2: Truncated sendTuyaDP
-    // Pattern: sendTuyaDP(1, 2, Math.round(safeMultiply(v, 10))); -> sendTuyaDP(1, 2, Math.round(safeMultiply(v, 10))));
-    content = content.replace(/sendTuyaDP\s*\(([^,]+),\s*([^,]+),\s*Math\.round\s*\(\s*safeMultiply\s*\(([^)]+)\)\s*;\s*$/gm, "sendTuyaDP($1, $2, Math.round(safeMultiply($3))));"));
+    // Pattern: sendTuyaDP(1, 2, Math.round(v * 10)); -> sendTuyaDP(1, 2, Math.round(v * 10)));
+    content = content.replace(/sendTuyaDP\s*\(([^,]+),\s*([^,]+),\s*Math\.round\s*\(\s*safeMultiply\s*\(([^)]+)\)\s*;\s*$/gm, "sendTuyaDP($1, $2, Math.round($3)));"));
 
     // Pattern 3: Unclosed try blocks at end of methods
     // try { ...
@@ -65,9 +65,9 @@ allFiles.forEach(file => {
             const orig = line;
 
             if (line.includes('sendTuyaDP') && line.split('(').length > line.split(')').length) {
-                line = line.replace(/;?$/, '))) : null;');
+                line = line.replace(/;? $/ , ')));');
             } else if (line.includes('Math.round') && line.split('(').length > line.split(')').length) {
-                line = line.replace(/;?$/, ') : null;');
+                line = line.replace(/;? $/, ');');
             } else if (line.trim() === '}' && output.includes('Missing catch or finally')) {
                 // Insert missing catch
                 lines[lineNum - 1] = '    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }';

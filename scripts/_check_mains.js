@@ -8,7 +8,7 @@ const path = require('path');
   const hasConditionalMains = c.includes('get mainsPowered()');
   // Check if mainsPowered is conditional (returns true only for some models)
   const mainMatch = c.match(/get mainsPowered\(\)\s*\{([^}]+)\}/);
-  const mainBody = mainMatch ? mainMatch[1].trim() : '';
+  const mainBody = mainMatch ? mainMatch[1].trim() : ''      ;
   console.log(dr + ':');
   console.log('  mainsPowered body: ' + mainBody.substring(0, 120));
   console.log('  hasRemoveCapability: ' + hasRemove);

@@ -41,7 +41,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     // CONDITIONS
     try {
       // A8: NaN Safety - use safeDivide/safeMultiply
-  this._getFlowCard('motion_sensor_radar_mmwave_is_presence_detected', 'condition');
+  const card = this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_is_presence_detected');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -51,18 +51,18 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition motion_sensor_radar_mmwave_is_presence_detected: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('motion_sensor_radar_mmwave_illuminance_above', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_illuminance_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
-        });
+      });
       }
     } catch (err) { this.error(`Condition motion_sensor_radar_mmwave_illuminance_above: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('motion_sensor_radar_mmwave_illuminance_below', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_illuminance_below');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -72,18 +72,18 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition motion_sensor_radar_mmwave_illuminance_below: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('motion_sensor_radar_mmwave_temperature_above', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_temperature_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
-        });
+      });
       }
     } catch (err) { this.error(`Condition motion_sensor_radar_mmwave_temperature_above: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('motion_sensor_radar_mmwave_target_distance_less_than', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_target_distance_less_than');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -93,7 +93,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition motion_sensor_radar_mmwave_target_distance_less_than: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('motion_sensor_radar_mmwave_motion_active', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_motion_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -104,7 +104,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('motion_sensor_radar_mmwave_set_radar_sensitivity', 'action');
+      const card = const card = this.homey.flow.getActionCard('motion_sensor_radar_mmwave_set_radar_sensitivity');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -116,7 +116,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action motion_sensor_radar_mmwave_set_radar_sensitivity: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('motion_sensor_radar_mmwave_set_detection_range', 'action');
+      const card = const card = this.homey.flow.getActionCard('motion_sensor_radar_mmwave_set_detection_range');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -128,7 +128,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action motion_sensor_radar_mmwave_set_detection_range: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('motion_sensor_radar_mmwave_set_fading_time', 'action');
+      const card = const card = this.homey.flow.getActionCard('motion_sensor_radar_mmwave_set_fading_time');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -140,7 +140,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action motion_sensor_radar_mmwave_set_fading_time: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('motion_sensor_radar_mmwave_set_detection_delay', 'action');
+      const card = const card = this.homey.flow.getActionCard('motion_sensor_radar_mmwave_set_detection_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

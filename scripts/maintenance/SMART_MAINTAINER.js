@@ -34,10 +34,10 @@ function fixFile(file) {
     });
 
     // Fix 2: Ternary missing : branch
-    // value > 100 ? something() : null; -> value > 100 ? something() : null;
-    content = content.replace(/(\? [^ : null;:]+)(;)/g, (match, p1, p2) => {
+    // value > 100 ? something() ; -> value > 100 ? something()       ;
+    content = content.replace(/(\? [^ ;:]+)(;)/g, (match, p1, p2) => {
         // Skip optional chaining ?.
-        if (p1.includes('?.')) return match ;
+        if (p1.includes('?.')) return match       ;
         changed = true;
         return p1 + ' ' + p2;
     });
@@ -52,7 +52,7 @@ function fixFile(file) {
 function run() {
     console.log('Running Smart Maintainer...');
     const walk = (dir) => {
-        const files = fs.readdirSync(dir);
+        const files = fs.readdirSync(dir );
         files.forEach(f => {
             const p = path.join(dir, f);
             if (fs.statSync(p).isDirectory()) walk(p);

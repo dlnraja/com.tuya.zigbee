@@ -44,7 +44,7 @@ collisions.forEach(collision => {
   let bestRank = -1;
 
   drivers.forEach(d => {
-    const rank = GENERICITY_RANK[d] !== undefined ? GENERICITY_RANK[d] : 100;
+    const rank = GENERICITY_RANK[d] !== undefined ? GENERICITY_RANK[d] : 100      ;
     if (rank > bestRank) {
       bestRank = rank;
       bestDriver = d;
@@ -92,7 +92,7 @@ collisions.forEach(collision => {
           const mIdx = compose.zigbee.manufacturerName.findIndex(m => m.toLowerCase() === targetManu.toLowerCase());
           if (mIdx !== -1) {
               // We only remove if the productId also matches or is *
-              const pIdx = (targetModel === '*') ? 0 : (Array.isArray(compose.zigbee.productId) ? compose.zigbee.productId.findIndex(p => p.toLowerCase() === targetModel.toLowerCase()) : -1);
+              const pIdx = (targetModel === '*') ? 0 : (Array.isArray(compose.zigbee.productId) ? compose.zigbee.productId.findIndex(p => p.toLowerCase() === targetModel.toLowerCase() : null) : -1)      ;
               
               if (pIdx !== -1) {
                   // Collision confirmed in this file.

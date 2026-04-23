@@ -33,19 +33,19 @@ class RemoteButtonWirelessHybridDriver extends Homey {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('remote_button_wireless_hybrid_brightness_above', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('remote_button_wireless_hybrid_brightness_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
-        });
+      });
       }
     } catch (err) { this.error(`Condition remote_button_wireless_hybrid_brightness_above: ${err.message}`); }
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('remote_button_wireless_hybrid_set_brightness', 'action');
+      const card = const card = this.homey.flow.getActionCard('remote_button_wireless_hybrid_set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

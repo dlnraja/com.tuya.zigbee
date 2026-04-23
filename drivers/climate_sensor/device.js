@@ -15,7 +15,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
     return {
       1: { capability: 'measure_temperature', divisor: 10 },
       2: { capability: 'measure_humidity', divisor: 1 },
-      4: { capability: 'measure_battery', transform: (v) => Math.min(v * 2, 100) }
+      4: { capability: 'measure_battery', transform: (v) => Math.min(100, v * 2) }
     };
   }
 

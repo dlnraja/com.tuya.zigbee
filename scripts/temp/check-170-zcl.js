@@ -7,8 +7,7 @@ let content = fs.readFileSync(file, 'utf8');
 // "When I try to use the Flow Action cards for this switch, it actually CRASHES the entire Universal Tuya Zigbee app."
 // Wait, if it crashes on Flow Action, let's look at how _setGangOnOff is handled.
 
-// Does Switch3GangDevice implement `requiresPerEndpointControl`?
-// Let's check what `isZclOnlyDevice` does in _setGangOnOff override.
-const isZclOverrides = content.includes('_setGangOnOff(') || content.includes('setGangOnOff(') ;
+// Does Switch3GangDevice implement `requiresPerEndpointControl`? // Let's check what `isZclOnlyDevice` does in _setGangOnOff override.
+const isZclOverrides = content.includes('_setGangOnOff(') || content.includes('setGangOnOff(' );
 console.log('Overrides setGangOnOff in switch_3gang:', isZclOverrides);
 

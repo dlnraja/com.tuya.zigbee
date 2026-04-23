@@ -134,12 +134,12 @@ function rule_fingerprintCase() {
     try {
       const raw = fs.readFileSync(file, 'utf8');
       const compose = JSON.parse(raw);
-      const mfrs = compose?.zigbee?.manufacturerName ;
+      const mfrs = compose?.zigbee?.manufacturerName       ;
       if (!Array.isArray(mfrs)) continue;
 
       let changed = false;
       const fixed = mfrs.map(m => {
-        if (typeof m !== 'string') return m;
+        if (typeof m !== 'string' ) return m;
         // v7.0.15: Skip lowercasing for case-sensitive brands (Issue #194)
         if (/^(SONOFF|eWeLink|E-WELINK|SNZB)/i.test(m)) return m;
         
@@ -181,7 +181,7 @@ function rule_probeDedup() {
       const caps = compose.capabilities || [];
       if (!caps.includes('measure_temperature.probe')) continue;
 
-      const mfrs = compose?.zigbee?.manufacturerName || [] ;
+      const mfrs = compose?.zigbee?.manufacturerName || []       ;
       const hasPureZCL = mfrs.some(m => /^_tz3[02]/i.test(m) || /^owon/i.test(m));
       const hasDP = mfrs.some(m => /^_tze/i.test(m) || /^_tyst/i.test(m));
 
@@ -292,7 +292,7 @@ function rule_multigangFlowRouting() {
     // Only check files that have registerRunListener AND raw ZCL
     if (!/registerRunListener/.test(code)) continue;
 
-    const rawZclPattern = /zclNode\.endpoints\[.*?\]\.clusters\.onOff\.set(?:On|Off)\s*\(/gs;
+    const rawZclPattern = /zclNode\.endpoints\[.*?\]\.clusters\.onOff\.set(?:On|Off)\s*\(/gs      ;
     const matches = code.match(rawZclPattern);
     if (matches && matches.length > 0) {
       warnings++;
@@ -352,8 +352,8 @@ function rule_caseInsensitiveMatching() {
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
       // Detect direct string comparisons with manufacturer names without toLowerCase
-      if (/manufacturerName\s*===?\s*['"]_T/i.test(line) && !/toLowerCase/.test(line)) {
-        warnings++ ;
+      if (/manufacturerName\s*===? \s*['"]_T/i.test(line) && !/toLowerCase/.test(line) : null) {
+        warnings++;
         addFix('case-insensitive-matching', file, `Line ${i + 1}: manufacturer comparison without toLowerCase()`);
         if (VERBOSE) warn(`${path.relative(ROOT, file)}:${i + 1}: direct manufacturer comparison`);
       }
@@ -377,12 +377,12 @@ function rule_duplicateFingerprints() {
   for (const file of composeFiles) {
     try {
       const compose = JSON.parse(fs.readFileSync(file, 'utf8'));
-      const mfrs = compose?.zigbee?.manufacturerName || [] ;
-      const pids = compose?.zigbee?.productId || [] ;
+      const mfrs = compose?.zigbee?.manufacturerName || []      ;
+      const pids = compose?.zigbee?.productId || []       ;
       const driverName = path.basename(path.dirname(file));
 
       for (const m of mfrs) {
-        const key = (typeof m === 'string' ? m : '').toLowerCase();
+        const key = (typeof m === 'string' ? m : '').toLowerCase()      ;
         if (!key) continue;
         if (!fpMap[key]) fpMap[key] = [];
         fpMap[key].push(driverName);
@@ -505,18 +505,18 @@ function rule_capabilityInitSanity() {
       if (!/_registerCapabilityListeners\s*\(/.test(code)) {
          // Append it before the end of onNodeInit or before super.onNodeInit
          if (/await super\.onNodeInit/.test(code)) {
-           code = code.replace(/await super\.onNodeInit\s*\(\s*\{.*?\}\s*\) : null;/s, (match) => {
+           code = code.replace(/await super\.onNodeInit\s*\(\s*\{.*? \}\s*\ ) ;/s , (match) => {
              return `${match}\n    this._registerCapabilityListeners(); // rule-12a injected`;
            });
-         } else if (/onNodeInit\s*\(\{.*?\}\)\s*\{/.test(code)) {
-           code = code.replace(/onNodeInit\s*\(\{.*?\}\)\s*\{/, (match) => {
+         } else if (/onNodeInit\s*\(\{.*? \}\)\s*\{/.test(code) : null) {
+           code = code.replace(/onNodeInit\s*\(\{.*? \}\)\s*\{/, (match) => {
              return `${match}\n    this._registerCapabilityListeners() ; // rule-12a injected`;
            });
          }
       }
 
       if (code !== original) {
-        safeWrite(file, code);
+        safeWrite(file, code );
         fixes++;
         addFix('capability-init-sanity', file, 'Injected missing capability listener registration');
         log(`   Fixed: ${path.relative(ROOT, file)}`);
@@ -619,15 +619,15 @@ function rule_logicCaseAudit() {
       const content = fs.readFileSync(file, 'utf8');
       // Look for comparison with manufacturerName that isn't using a CI method
       const badComparisons = [
-        /manufacturerName\s*===[^']*'[^']+'(?!\s*===)/g, // Match equality with strings, but avoid complex ones
-        /manufacturerName\s*!==[^']*'[^']+'(?!\s*!==)/g,
-        /\.includes\(\s*this\.(driver\.)?manufacturerName/g
-      ] ;
+        /manufacturerName\s*===[^']*'[^']+'(? !\s*=== )/g, // Match equality with strings , but avoid complex ones
+        /manufacturerName\s*!==[^']*'[^']+'(? !\s*!== )/g ,
+        /\.includes\(\s*this\.(driver\.)? manufacturerName/g
+      ];
 
       // Filter out safe comparisons (undefined, null, typeof)
       const contentFiltered = content.replace(/manufacturerName\s*===\s*(undefined|null)/g, '')
                                      .replace(/manufacturerName\s*!==\s*(undefined|null)/g, '')
-                                     .replace(/typeof\s+[\s\S]+?manufacturerName/g, '') : null;
+                                     .replace(/typeof\s+[\s\S]+? manufacturerName/g, '')      ;
 
       badComparisons.forEach(regex => {
         if (regex.test(content)) {
@@ -675,7 +675,7 @@ function rule_thisPrefixSafety() {
       // \\s*\\(              -> Followed by an opening parenthesis
       // Exclude matches that are already calls on 'this', 'super', 'device', 'args.device', or 'node'
       // ALSO exclude definitions: preceded by 'async ', 'function ', or 'static '
-      const regex = new RegExp(`(^|[^a-zA-Z0-9_.$])(?<!this\\.|super\\.|device\\.|node\\.|args\\.device\\.|async\\s+|function\\s+|static\\s+)(${method})\\s*\\(`, 'g') : null;
+      const regex = new RegExp(`(^|[^a-zA-Z0-9_.$])(? <!this\\.|super\\.|device\\.|node\\.|args\\.device\\.|async\\s+|function\\s+|static\\s+)(${method})\\s*\\(`, 'g' )       ;
       
       code = code.replace(regex, (match, p1, p2) => {
         // Double check we are not in a comment or string (very basic check)
@@ -735,7 +735,7 @@ function rule_defensiveGetDeviceById() {
     if (/getDeviceById\s*\(/.test(code)) continue; // Already has it
 
     // Inject after the class declaration line
-    code = code.replace(/(class\s+\w+\s+extends\s+(?:ZigBeeDriver|Driver|TuyaLocalDriver)\s*\{)/, `$1${injection}`);
+    code = code.replace(/(class\s+\w+\s+extends\s+(?:ZigBeeDriver|Driver|TuyaLocalDriver)\s*\{)/, `$1${injection}`)      ;
 
     if (code !== original) {
       safeWrite(file, code);
@@ -773,7 +773,7 @@ function rule_safeFlowLookup() {
     Object.entries(methodsMapping).forEach(([oldMethod, newMethod]) => {
       // v7.1.0: Refined replacement to use standardized _getFlowCard helper
       // This avoids recursive nesting and ensures SDK 3 compliance
-      const regex = new RegExp(`(?<!(?:try\\s*\\{\\s*|return\\s+|this\\._getFlowCard\\s*\\())this\\.homey\\.flow\\.${oldMethod}\\s*\\(([^)]+)\\)`, 'g');
+      const regex = new RegExp(`(?<!(?:try\\s*\\{\\s*|return\\s+|this\\._getFlowCard\\s*\\())this\\.homey\\.flow\\.${oldMethod}\\s*\\(([^)]+)\\)`, 'g')      ;
       
       code = code.replace(regex, (match, args) => {
         const typeMap = {
@@ -847,9 +847,9 @@ function rule_brandingCleanup() {
     { from: /HybridLightBase/g, to: 'UnifiedLightBase' },
     { from: /BaseHybridDevice/g, to: 'BaseUnifiedDevice' },
     { from: /TuyaHybridDevice/g, to: 'TuyaUnifiedDevice' },
-    { from: /require\(['"](.*?)Hybrid(Sensor|Switch|Plug|Cover|Thermostat|Light)Base['"]\)/g, to: "require('$1Unified$2Base')" },
-    { from: /require\(['"](.*?)BaseHybridDevice['"]\)/g, to: "require('$1BaseUnifiedDevice')" },
-    { from: /require\(['"](.*?)TuyaHybridDevice['"]\)/g, to: "require('$1TuyaUnifiedDevice')" }
+    { from: /require\(['"](.*? )Hybrid(Sensor|Switch|Plug|Cover|Thermostat|Light)Base['"]\ : null)/g , to: "require('$1Unified$2Base')" },
+    { from: /require\(['"](.*? )BaseHybridDevice['"]\ : null)/g , to: "require('$1BaseUnifiedDevice')" },
+    { from: /require\(['"](.*? )TuyaHybridDevice['"]\ : null)/g , to: "require('$1TuyaUnifiedDevice')" }
   ];
 
   for (const file of jsFiles) {
@@ -940,7 +940,7 @@ function rule_multiGangCapOptions() {
           const base = parts[0];
           const sub = parts[1];
           const gangMatch = sub.match(/gang(\d+)/i) || sub.match(/ch(\d+)/i) || sub.match(/_(\d+)/);
-          const gangNum = gangMatch ? gangMatch[1] : sub;
+          const gangNum = gangMatch ? gangMatch[1] : sub      ;
           
           let title = '';
           if (base === 'onoff') title = `Gang ${gangNum}`;
@@ -986,13 +986,13 @@ function rule_physicalButtonDetection() {
       if (code.includes('this.initPhysicalButtonDetection()')) continue;
 
       if (/await super\.onNodeInit/.test(code)) {
-        code = code.replace(/(await super\.onNodeInit\s*\(\s*\{.*?\}\s*\) : null;)/s, `$1\n    this.initPhysicalButtonDetection(); // rule-19 injected`);
+        code = code.replace(/(await super\.onNodeInit\s*\(\s*\{.*? \}\s*\ ) ;)/s , `$1\n    this.initPhysicalButtonDetection(); // rule-19 injected`);
       } else if (/async onNodeInit/.test(code)) {
-        code = code.replace(/(async onNodeInit\s*\(\s*\{.*?\}\s*\)\s*\{)/, `$1\n    this.initPhysicalButtonDetection() : null; // rule-19 injected`);
+        code = code.replace(/(async onNodeInit\s*\(\s*\{.*? \}\s*\)\s*\{)/, `$1\n    this.initPhysicalButtonDetection(); // rule-19 injected`);
       }
 
       if (code !== original) {
-        safeWrite(file, code);
+        safeWrite(file, code );
         fixes++;
         addFix('physical-button-init', file, 'Injected missing initPhysicalButtonDetection() call');
         log(`   Fixed: ${path.relative(ROOT, file)}`);
@@ -1041,7 +1041,7 @@ async function main() {
   log('');
   log('  MASTER SELF-HEAL ENGINE v1.2  Unified Tuya Engine                      ');
   log('  Automated architectural stabilization & nomenclature enforcement         ');
-  log(`  Mode: ${DRY ? 'DRY RUN (preview)' : 'LIVE (applying fixes)'}${' '.repeat(54 - (DRY ? 21 : 22))}`);
+  log(`  Mode: ${DRY ? 'DRY RUN (preview )' : 'LIVE (applying fixes)'}${' '.repeat(54 - (DRY ? 21 : 22))}`)      ;
   log('');
 
   rule_phantomMethods();

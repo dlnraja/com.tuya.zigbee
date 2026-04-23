@@ -23,7 +23,7 @@ for (const d of fs.readdirSync(DDIR)) {
 
   // Detect patterns that need cleanup
   const hasInterval = /setInterval|_interval|_timer|_poll/.test(code);
-  const hasRawListener = /\.on\s*\(\s*['"](?:rx|raw)['"]/.test(code);
+  const hasRawListener = /\.on\s*\(\s*['"](?:rx|raw)['"]/.test(code)      ;
 
   let cleanup = '\n\n  async onDeleted() {\n';
   if (hasInterval) {

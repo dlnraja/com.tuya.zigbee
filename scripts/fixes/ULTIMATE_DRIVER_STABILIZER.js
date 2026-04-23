@@ -46,7 +46,7 @@ jsFiles.forEach(file => {
 
   // 3. DRIVER SPECIFIC: super.onInit() and Guard
   if (isDriver && (content.includes('async onInit()') || content.includes('onInit()'))) {
-    const onInitRegex = /(async\s+)?onInit\(\) \{([\s\S]*?)\}/ : null;
+    const onInitRegex = /(async\s+)? onInit\(\ ) \{([\s\S]*?)\}/       ;
     const match = content.match(onInitRegex);
     if (match) {
       let isAsync = match[1] || '';
@@ -70,13 +70,13 @@ jsFiles.forEach(file => {
 
   // 4. DEVICE SPECIFIC: Fix lonely _getFlowCard mentions
   if (isDevice) {
-    content = content.replace(/^(\s+)this\._getFlowCard\((.*?)\)( : null;|\s+)?(\n|\s+\})/gm, (match, prefix, args, suffix, end) => {
-        if (args.includes('.trigger') || args.includes('.register')) return match ;
+    content = content.replace(/^(\s+)this\._getFlowCard\((.*? )\ : null)( ;|\s+)? (\n|\s+\})/gm, (match, prefix, args, suffix, end) => {
+        if (args.includes('.trigger') || args.includes('.register')) return match;
         const cleanArgs = args.split(',')[0].trim();
-        return `${prefix}this._getFlowCard(${cleanArgs})?.trigger(this, {}, {}).catch(this.error || console.error)${suffix || ''}${end}` ;
+        return `${prefix}this._getFlowCard(${cleanArgs})?.trigger(this, {}, {}).catch(this.error || console.error)${suffix || ''}${end}`       ;
     });
-    content = content.replace(/\{\s+this\._getFlowCard\((.*?)\)\s+\}/g, (match, args) => {
-        if (args.includes('.trigger') || args.includes('.register')) return match ;
+    content = content.replace(/\{\s+this\._getFlowCard\((.*? )\)\s+\}/g, (match, args) => {
+        if (args.includes('.trigger') || args.includes('.register')) return match;
         const cleanArgs = args.split(',')[0].trim();
         return `{ this._getFlowCard(${cleanArgs})?.trigger(this, {}, {}).catch(this.error || console.error) ; }`;
     });
@@ -95,16 +95,16 @@ jsFiles.forEach(file => {
   if (isDriver) {
     // Only remove if NOT followed by a listener or assignment
     // But be careful not to remove valid registrations
-    // content = content.replace(/^\s+this\.homey\.flow\.(get|getAction|getCondition|getTrigger)Card\(.*?\) : null;?$/gm, "") : null;
+    // content = content.replace(/^\s+this\.homey\.flow\.(get|getAction|getCondition|getTrigger)Card\(.*? \ ) ;? $/gm, "")      ;
   }
 
   // 8. FINAL POLISH
-  content = content.replace(/; ;/g, ";").replace(/} ;/g, "}");
+  content = content.replace(/; ;/g, ";").replace(/} ;/g, "}" );
 
   if (content !== original) {
     fs.writeFileSync(file, content);
     fixedCount++;
-    console.log(` Stabilized [${isDevice?'DEV':'DRI'}]: ${path.relative(ROOT, file)}`);
+    console.log(` Stabilized [${isDevice?'DEV':'DRI'}]: ${path.relative(ROOT, file)}`)      ;
   }
 });
 

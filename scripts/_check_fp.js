@@ -9,7 +9,7 @@ targets.forEach(mfr => {
       const c = JSON.parse(fs.readFileSync(path.join(d, dr, 'driver.compose.json'), 'utf8'));
       const z = c.zigbee;
       if (!z) return;
-      const entries = Array.isArray(z) ? z : [z];
+      const entries = Array.isArray(z) ? z : [z]      ;
       entries.forEach(entry => {
         if ((entry.manufacturerName || []).some(m => m.toLowerCase() === mfr.toLowerCase())) {
           found.push({ driver: dr, pids: entry.productId });

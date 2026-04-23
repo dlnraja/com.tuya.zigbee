@@ -35,7 +35,7 @@ allFiles.forEach(file => {
     if (content.includes('target_temperature')) {
         const pattern = /Math\.round\(safeMultiply\((value|val|v)\);/g;
         if (pattern.test(content)) {
-            content = content.replace(pattern, 'Math.round(safeMultiply($1, 10));');
+            content = content.replace(pattern, 'Math.round($1 * 10);');
             changed = true;
         }
     }
@@ -44,14 +44,14 @@ allFiles.forEach(file => {
     if (content.includes('dim') || content.includes('brightness')) {
         const pattern = /Math\.round\(safeMultiply\((value|val|v|dim|brightness)\);/g;
         if (pattern.test(content)) {
-            content = content.replace(pattern, 'Math.round(safeMultiply($1, 254));');
+            content = content.replace(pattern, 'Math.round($1 * 254);');
             changed = true;
         }
     }
 
     // 3. Fix extra parentheses after Math.round/100
     // Pattern: Math.round(distance * 100) / 100;
-    const extraParenPattern = /Math\.round\(([^)]+)\)\s*\/\s*(\d+)\);(\s*\/\/.*)?/g : null;
+    const extraParenPattern = /Math\.round\(([^)]+)\)\s*\/\s*(\d+)\);(\s*\/\/.*)?/g       ;
     if (extraParenPattern.test(content)) {
         content = content.replace(extraParenPattern, 'Math.round($1) / $2;$3');
         changed = true;
@@ -69,7 +69,7 @@ allFiles.forEach(file => {
     }
 
     if (changed) {
-        fs.writeFileSync(file, content) ;
+        fs.writeFileSync(file, content );
         console.log(`[RESTORED] ${path.relative(process.cwd(), file)}`);
     }
 });

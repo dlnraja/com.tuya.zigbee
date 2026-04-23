@@ -9,7 +9,8 @@ class D extends E{
     current:{capability:'measure_current',divisor:1000}
   };}
   _registerCapListeners(){
-    this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v);});
+    this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v);
+      });
   }
   async onInit(){
     for(const c of['measure_power','measure_voltage','measure_current','meter_power'])if(!this.hasCapability(c))await this.addCapability(c).catch(()=>{});
@@ -18,7 +19,7 @@ class D extends E{
   _processState(data){
     super._processState(data);
     if(data.oneKwh!==undefined&&this.hasCapability('meter_power')){
-      safeParse(this.setCapabilityValue('meter_power',parseFloat(data.oneKwh), 100)).catch(()=>{});
+      safeParse(this.setCapabilityValue('meter_power',parseFloat(data.oneKwh) * 100)).catch(()=>{});
     }
   }
 

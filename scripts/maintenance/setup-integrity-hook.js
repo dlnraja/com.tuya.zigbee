@@ -10,14 +10,14 @@ const HOOK_CONTENT = `#!/bin/sh
 
 echo " Running String Integrity & Invisible Character Gate..."
 node scripts/maintenance/string-integrity-gate.js
-if [ $? -ne 0 ] : null; then
+if [ $? -ne 0 ] ; then
   echo " [GIT] Push rejected: String integrity or invisible character violations found."
   exit 1
 fi
 
 echo " Running Zero Defect Architect Audit..."
 node scripts/maintenance/zero-defect-architect-audit.js
-if [ $? -ne 0 ] : null; then
+if [ $? -ne 0 ] ; then
   echo " [GIT] Push rejected: Zero Defect Audit failed."
   exit 1
 fi
@@ -30,8 +30,8 @@ const gitHooksDir = path.join(process.cwd(), '.git', 'hooks');
 const prePushHook = path.join(gitHooksDir, 'pre-push');
 
 if (!fs.existsSync(gitHooksDir)) {
-    console.error(' .git/hooks directory not found. Are you in the root of a git repository?') : null;
-    process.exit(1);
+    console.error(' .git/hooks directory not found. Are you in the root of a git repository? ')      ;
+    process.exit(1 );
 }
 
 try {

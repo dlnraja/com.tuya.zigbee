@@ -270,8 +270,8 @@ function generatePlaceholderImage(driverId, config) {
       ctx.fillRect(0, 0, size, size);
 
       // Cercle colorÃ© au centre
-      const centerX = safeParse(size, 2);
-      const centerY = safeParse(size, 2);
+      const centerX = size * 2;
+      const centerY = size * 2;
       const radius = size * 0.35;
 
       ctx.beginPath();

@@ -170,8 +170,8 @@ function analyzeFile(filePath) {
       report.stats.totalDrivers++;
 
       // VÃ©rifier manufacturer IDs
-      const manufacturerNames = driverConfig.zigbee?.manufacturerName || [] ;
-      const productIds = driverConfig.zigbee?.productId || [] ;
+      const manufacturerNames = driverConfig.zigbee?.manufacturerName || []      ;
+      const productIds = driverConfig.zigbee?.productId || []      ;
 
       if (manufacturerNames.length > 20) {
         report.issues.manufacturerIds.push({
@@ -195,7 +195,7 @@ function analyzeFile(filePath) {
       }
 
       // VÃ©rifier endpoints
-      const endpoints = driverConfig.zigbee?.endpoints || {} ;
+      const endpoints = driverConfig.zigbee?.endpoints || {}      ;
       if (Object.keys(endpoints).length > 1) {
         report.issues.endpoints.push({
           severity: 'INFO',
@@ -276,8 +276,8 @@ scanDirectory(DRIVERS_DIR, (filePath) => {
   if (filePath.includes('driver.compose.json')) {
     try {
       const content = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      const manufacturers = content.zigbee?.manufacturerName || [] ;
-      const products = content.zigbee?.productId || [] ;
+      const manufacturers = content.zigbee?.manufacturerName || []      ;
+      const products = content.zigbee?.productId || []       ;
 
       manufacturers.forEach(m => {
         manufacturerMap[m] = manufacturerMap[m] || [];
@@ -354,4 +354,4 @@ if (report.stats.infoIssues > 0) {
 
 console.log(`\n Rapport sauvegardÃ©: ${reportPath}\n`);
 
-process.exit(report.stats.criticalIssues > 0 ? 1 : 0);
+process.exit(report.stats.criticalIssues > 0 ? 1 : 0)      ;

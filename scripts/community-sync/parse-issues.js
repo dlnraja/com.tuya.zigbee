@@ -4,7 +4,7 @@ const REPOS = ['dlnraja/com.tuya.zigbee', 'JohanBendz/com.tuya.zigbee'];
 
 function fetchIssues(repo) {
   return new Promise((resolve) => {
-    const opts = {hostname:'api.github.com', path:`/repos/${repo}/issues?state=open&per_page=50`,
+    const opts = {hostname:'api.github.com', path:`/repos/${repo}/issues? state=open&per_page=50` ,
       headers:{'User-Agent':'CommunitySync'}};
     https.get(opts, res => {
       let d = '';

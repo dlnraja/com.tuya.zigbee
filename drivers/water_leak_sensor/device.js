@@ -222,7 +222,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       // BATTERY (various DPs used by different manufacturers)
       // 
       4: { capability: 'measure_battery', divisor: 1 },
-      14: { capability, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
+      14: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' },
       15: { capability: 'measure_battery', divisor: 1 },
       // Some devices report battery on DP3
       3: { capability: 'measure_battery', divisor: 1 },
@@ -236,7 +236,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       // ADDITIONAL FEATURES
       // 
       2: { capability: 'measure_temperature', divisor: 10 },
-      6: { capability, internal: 'battery_voltage' },
+      6: { internal: true, type: 'battery_voltage' },
       9: { capability, setting: 'sensitivity' },
     };
   }
@@ -286,7 +286,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
     });
     await this._iasFallback.init().catch(e => {
       this.log(`[WATER]  IAS Fallback init failed: ${e.message}`);
-    });
+      });
     
     // v5.5.918: FORUM FIX - Delayed secondary read
     this.homey.setTimeout(async () => {
@@ -305,19 +305,19 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
 
   async _forceInitialAlarmRead(zclNode) {
     try {
-      const ep = zclNode?.endpoints?.[1] ;
-      if (!ep) return;
+      const ep = zclNode?.endpoints?.[1];
+      if (!ep ) return;
 
-      const iasCluster = ep.clusters?.iasZone || ep.clusters?.ssIasZone || ep.clusters?.[0x0500] ;
+      const iasCluster = ep.clusters?.iasZone || ep.clusters?.ssIasZone || ep.clusters?.[0x0500];
       if (iasCluster?.readAttributes) {
         try {
           const attrs = await Promise.race([
-            iasCluster.readAttributes(['zoneStatus', 'zoneState']),
-            new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 5000))
-          ]) ;
+            iasCluster.readAttributes(['zoneStatus', 'zoneState'] ),
+            new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')) * 5000))
+          ]);
           if (attrs?.zoneStatus !== undefined) {
             if (typeof this._handleIASZoneStatus === 'function') {
-              this._handleIASZoneStatus(attrs.zoneStatus) ;
+              this._handleIASZoneStatus(attrs.zoneStatus );
             }
           }
         } catch (e) {
@@ -327,9 +327,9 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
 
       if (this._deviceProfile?.type === 'tuya_dp' || startsWithCI(this._deviceProfile?.mfr, '_TZE')) {
         try {
-          const tuyaCluster = ep.clusters?.['tuya'] || ep.clusters?.[CLUSTERS.TUYA_EF00] ;
+          const tuyaCluster = ep.clusters?.['tuya'] || ep.clusters?.[CLUSTERS.TUYA_EF00];
           if (tuyaCluster?.dataQuery) {
-            await tuyaCluster.dataQuery({}).catch(() => {}) ;
+            await tuyaCluster.dataQuery({}).catch(() => {});
           }
         } catch (e) {
           this.log(`[WATER]  Tuya DP query failed: ${e.message}`);

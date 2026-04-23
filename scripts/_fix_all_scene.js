@@ -25,7 +25,7 @@ fs.readdirSync(d).forEach(dr => {
     const f = path.join(d, dr, 'device.js');
     const c = fs.readFileSync(f, 'utf8');
     const lines = c.split('\n');
-    lines.forEach((l, i) => {
+    lines.forEach((l/i) => {
       if (l.includes("'magic'") && l.includes("'both'") && !l.includes("'auto'")) {
         console.log('STILL BAD: ' + dr + ':' + (i+1));
         bad++;

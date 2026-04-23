@@ -31,7 +31,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -41,7 +41,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_is_on_light_bulb_rgb_rgbw_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -52,7 +52,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -63,7 +63,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -74,7 +74,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -86,7 +86,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_set_dim_light_bulb_rgb_rgbw_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_set_dim_light_bulb_rgb_rgbw_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -97,7 +97,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_smart_bulb_rgb_set_dim_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -108,7 +108,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_turn_on_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -119,7 +119,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_turn_off_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -131,7 +131,7 @@ class SmartBulbRgbDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action light_bulb_rgb_rgbw_hybrid_bulb_rgb_toggle_light_bulb_rgb_rgbw_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_set_brightness_light_bulb_rgb_rgbw_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('light_bulb_rgb_rgbw_hybrid_bulb_rgb_set_brightness_light_bulb_rgb_rgbw_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

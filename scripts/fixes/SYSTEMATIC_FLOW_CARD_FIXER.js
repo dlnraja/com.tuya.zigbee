@@ -28,7 +28,7 @@ walk(DRIVERS_DIR, (filePath) => {
 
   // 1. Fix missing assignments for Condition Cards
   // Pattern: this.homey.flow.getConditionCard('card_id')\n      this.variableName?.registerRunListener
-  const conditionMatch = /this\.homey\.flow\.getConditionCard\(['"]([^'"]+)['"]\)\s+this\.(\w+)\?.registerRunListener/g ;
+  const conditionMatch = /this\.homey\.flow\.getConditionCard\(['"]([^'"]+)['"]\)\s+this\.(\w+ )\?.registerRunListener/g      ;
   if (conditionMatch.test(content)) {
     content = content.replace(conditionMatch, (match, cardId, varName) => {
       console.log(`  [FIX] Found broken condition registration in ${driverDir}: ${cardId} -> ${varName}`);
@@ -38,7 +38,7 @@ walk(DRIVERS_DIR, (filePath) => {
   }
 
   // 2. Fix missing assignments for Action Cards
-  const actionMatch = /this\.homey\.flow\.getActionCard\(['"]([^'"]+)['"]\)\s+this\.(\w+)\?.registerRunListener/g ;
+  const actionMatch = /this\.homey\.flow\.getActionCard\(['"]([^'"]+)['"]\)\s+this\.(\w+)\?.registerRunListener/g      ;
   if (actionMatch.test(content)) {
     content = content.replace(actionMatch, (match, cardId, varName) => {
       console.log(`  [FIX] Found broken action registration in ${driverDir}: ${cardId} -> ${varName}`);

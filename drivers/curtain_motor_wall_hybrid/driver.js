@@ -34,7 +34,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('curtain_motor_wall_hybrid_curtain_motor_set_windowcoverings_set_curtain_motor_wall_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_wall_hybrid_curtain_motor_set_windowcoverings_set_curtain_motor_wall_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -45,7 +45,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_wall_hybrid_curtain_motor_set_windowcoverings_set_curtain_motor_wall_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_wall_hybrid_curtain_motor_windowcoverings_open_curtain_motor_wall_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_wall_hybrid_curtain_motor_windowcoverings_open_curtain_motor_wall_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -57,7 +57,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_wall_hybrid_curtain_motor_windowcoverings_open_curtain_motor_wall_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_wall_hybrid_curtain_motor_windowcoverings_close_curtain_motor_wall_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_wall_hybrid_curtain_motor_windowcoverings_close_curtain_motor_wall_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -69,7 +69,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_wall_hybrid_curtain_motor_windowcoverings_close_curtain_motor_wall_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_wall_hybrid_curtain_motor_set_dim_curtain_motor_wall_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_wall_hybrid_curtain_motor_set_dim_curtain_motor_wall_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -80,7 +80,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_wall_hybrid_curtain_motor_set_dim_curtain_motor_wall_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_wall_hybrid_curtain_motor_stop_curtain_motor_wall_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_wall_hybrid_curtain_motor_stop_curtain_motor_wall_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -92,7 +92,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_wall_hybrid_curtain_motor_stop_curtain_motor_wall_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_wall_hybrid_curtain_motor_set_favorite_curtain_motor_wall_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_wall_hybrid_curtain_motor_set_favorite_curtain_motor_wall_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -104,7 +104,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_wall_hybrid_curtain_motor_set_favorite_curtain_motor_wall_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_wall_hybrid_curtain_motor_set_brightness_curtain_motor_wall_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_wall_hybrid_curtain_motor_set_brightness_curtain_motor_wall_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -115,7 +115,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_wall_hybrid_curtain_motor_set_brightness_curtain_motor_wall_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_wall_hybrid_curtain_motor_set_position_curtain_motor_wall_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_wall_hybrid_curtain_motor_set_position_curtain_motor_wall_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -126,7 +126,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_wall_hybrid_curtain_motor_set_position_curtain_motor_wall_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_wall_hybrid_curtain_motor_open_curtain_motor_wall_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_wall_hybrid_curtain_motor_open_curtain_motor_wall_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -138,7 +138,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_wall_hybrid_curtain_motor_open_curtain_motor_wall_hybrid: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_wall_hybrid_curtain_motor_close_curtain_motor_wall_hybrid', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_wall_hybrid_curtain_motor_close_curtain_motor_wall_hybrid');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

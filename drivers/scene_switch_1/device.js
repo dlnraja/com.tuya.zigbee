@@ -32,18 +32,18 @@ class SceneSwitch1Device extends ButtonDevice {
 
   async _setupE000Detection(zclNode) {
     this._e000Dedup = {};
-    const endpoint = zclNode?.endpoints?.[1] ;
-    if (!endpoint) return;
-    const e000 = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344] ;
+    const endpoint = zclNode?.endpoints?.[1];
+    if (!endpoint ) return;
+    const e000 = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
     if (e000?.on) {
-      e000.on('buttonPress', async ({ button, pressType }) => {
-        await this.triggerButtonPress(1, resolvePressType(pressType, 'SCENE1')) ;
+      e000.on('buttonPress', async ({ button, pressType } ) => {
+        await this.triggerButtonPress(1, resolvePressType(pressType, 'SCENE1'));
       });
     }
-    const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6] ;
+    const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6];
     if (onOff?.on) {
       const handle = async (cmd, type) => {
-        const now = Date.now() ;
+        const now = Date.now();
         if (now - (this._e000Dedup[cmd] || 0) < 500) return;
         this._e000Dedup[cmd] = now;
         await this.triggerButtonPress(1, type);

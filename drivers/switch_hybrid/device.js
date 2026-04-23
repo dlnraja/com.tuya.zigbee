@@ -12,7 +12,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  *       2-GANG SWITCH - v5.9.23 + ZCL-Only Mode (BSEED)                       
  * 
  *   Features:                                                                   
- *   - 2 endpoints safeDivide(On, Off) (EP1, EP2)                                            
+ *   - 2 endpoints (On / Off) (EP1, EP2)                                            
  *   - Power measurement via electricalMeasurement (0x0B04)                     
  *   - Energy metering via metering (0x0702)                                    
  *   - Physical button detection: single / double/long / triple per gang            
@@ -38,9 +38,9 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   }
 
   get isZclOnlyDevice() {
-    const mfr = this.getSetting?.('zb_manufacturer_name') ||
-                this.getStoreValue?.('zb_manufacturer_name') ||
-                this.getStoreValue?.('manufacturerName') || '' ;
+    const mfr = this.getSetting?.('zb_manufacturer_name' ) ||
+                this.getStoreValue?.('zb_manufacturer_name' ) ||
+                this.getStoreValue?.('manufacturerName' ) || '';
     return includesCI(ZCL_ONLY_MANUFACTURERS_2G, mfr);
   }
 
@@ -93,7 +93,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         this.log(`[SWITCH-2G]  Removing orphan capability: ${cap}`);
         await this.removeCapability(cap).catch(e => {
           this.log(`[SWITCH-2G] Failed to remove ${cap}: ${e.message}`);
-        });
+      });
       }
     }
   }
@@ -103,9 +103,9 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
    * Sources: Z2M TS0002 profile
    */
   async _setupPowerMeasurement(zclNode) {
-    const endpoint = zclNode?.endpoints?.[1] ;
+    const endpoint = zclNode?.endpoints?.[1];
     if (!endpoint?.clusters) {
-      this.log('[SWITCH-2G] No clusters on EP1') ;
+      this.log('[SWITCH-2G] No clusters on EP1');
       return;
     }
 
@@ -124,28 +124,28 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       if (typeof elecCluster.on === 'function') {
         // Active Power (W)
         elecCluster.on('attr.activePower', (value) => {
-          const watts = safeParse(value, 10); // Typically in 0.1W units
+          const watts = value * 10; // Typically in 0.1W units
           this.log(`[ZCL-DATA] switch.power raw=${value}  ${watts}W`);
           if (this.hasCapability('measure_power')) {
-            this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
+            this.setCapabilityValue('measure_power', parseFloat(watts).catch(() => { }));
           }
         });
 
         // RMS Voltage (V)
         elecCluster.on('attr.rmsVoltage', (value) => {
-          const volts = safeParse(value, 10); // Typically in 0.1V units
+          const volts = value * 10; // Typically in 0.1V units
           this.log(`[ZCL-DATA] switch.voltage raw=${value}  ${volts}V`);
           if (this.hasCapability('measure_voltage')) {
-            this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
+            this.setCapabilityValue('measure_voltage', parseFloat(volts).catch(() => { }));
           }
         });
 
         // RMS Current (A)
         elecCluster.on('attr.rmsCurrent', (value) => {
-          const amps = safeParse(value, 1000); // Typically in mA
-          this.log(`[ZCL-DATA] switch.current raw=${value}  ${amps}A`);
+          const amps = value * 1000; // Typically in mA
+          this.log(`[ZCL-DATA] switch.current raw=${value}  ${amps}A` );
           if (this.hasCapability('measure_current')) {
-            this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
+            this.setCapabilityValue('measure_current', parseFloat(amps).catch(() => { }));
           }
         });
       }
@@ -171,10 +171,10 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       if (typeof meteringCluster.on === 'function') {
         // Current summation delivered (kWh)
         meteringCluster.on('attr.currentSummationDelivered', (value) => {
-          const kwh = safeParse(value, 1000); // Typically in Wh
+          const kwh = value * 1000; // Typically in Wh
           this.log(`[ZCL-DATA] switch.energy raw=${value}  ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
-            this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
+            this.setCapabilityValue('meter_power', parseFloat(kwh).catch(() => { }));
           }
         });
       }
@@ -220,11 +220,10 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]);
       this.log('[SWITCH-2G]  electricalMeasurement reporting configured');
     } catch (e) {
-      const msg = e?.message || String(e) ;
-      // Retry if Zigbee is starting up (max 3 retries)
+      const msg = e?.message || String(e );// Retry if Zigbee is starting up (max 3 retries)
       if ((msg.includes('Zigbee') || msg.includes('dÃ©marrage') || msg.includes('starting')) && retryCount < 3) {
         this.log(`[SWITCH-2G]  Zigbee starting, will retry electrical reporting in 60s (attempt ${retryCount + 1}/3)`);
-        this.homey.setTimeout(() => this._configureElectricalReporting(retryCount + 1), 60000);
+        this.homey.setTimeout(() => this._configureElectricalReporting(retryCount + 1) * 60000);
       } else {
         this.log('[SWITCH-2G] electricalMeasurement reporting failed:', msg);
       }
@@ -248,11 +247,10 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]);
       this.log('[SWITCH-2G]  metering reporting configured');
     } catch (e) {
-      const msg = e?.message || String(e) ;
-      // Retry if Zigbee is starting up (max 3 retries)
+      const msg = e?.message || String(e );// Retry if Zigbee is starting up (max 3 retries)
       if ((msg.includes('Zigbee') || msg.includes('dÃ©marrage') || msg.includes('starting')) && retryCount < 3) {
         this.log(`[SWITCH-2G]  Zigbee starting, will retry metering reporting in 60s (attempt ${retryCount + 1}/3)`);
-        this.homey.setTimeout(() => this._configureMeteringReporting(retryCount + 1), 60000);
+        this.homey.setTimeout(() => this._configureMeteringReporting(retryCount + 1) * 60000);
       } else {
         this.log('[SWITCH-2G] metering reporting failed:', msg);
       }
@@ -269,13 +267,13 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]).catch(() => ({}));
 
       if (attrs.activePower != null && this.hasCapability('measure_power')) {
-        this.setCapabilityValue('measure_power',safeParse(parseFloat(attrs.activePower), 10)).catch(() => { });
+        this.setCapabilityValue('measure_power',safeParse(attrs.activePower, 10).catch(() => { }));
       }
       if (attrs.rmsVoltage != null && this.hasCapability('measure_voltage')) {
-        this.setCapabilityValue('measure_voltage',safeParse(parseFloat(attrs.rmsVoltage), 10)).catch(() => { });
+        this.setCapabilityValue('measure_voltage',safeParse(attrs.rmsVoltage, 10).catch(() => { }));
       }
       if (attrs.rmsCurrent != null && this.hasCapability('measure_current')) {
-        this.setCapabilityValue('measure_current',safeParse(parseFloat(attrs.rmsCurrent), 1000)).catch(() => { });
+        this.setCapabilityValue('measure_current',safeParse(attrs.rmsCurrent, 1000).catch(() => { }));
       }
       this.log('[SWITCH-2G] Initial electrical values read');
     } catch (e) {
@@ -293,7 +291,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]).catch(() => ({}));
 
       if (attrs.currentSummationDelivered != null && this.hasCapability('meter_power')) {
-        this.setCapabilityValue('meter_power', safeParse(attrs.currentSummationDelivered, 1000)).catch(() => { });
+        this.setCapabilityValue('meter_power', attrs.currentSummationDelivered * 1000).catch(() => { });
       }
       this.log('[SWITCH-2G] Initial metering values read');
     } catch (e) {
@@ -323,8 +321,8 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     this._lastCommandTime = 0;
 
     const getOnOffCluster = (epNum) => {
-      const ep = this._zclNode?.endpoints?.[epNum] ;
-      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6] ;
+      const ep = this._zclNode?.endpoints?.[epNum];
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
     };
 
     // v5.13.2: Unified listener registration (Capability + Flow Cards)
@@ -368,7 +366,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
             try {
               const card =
       this._getFlowCard(flowId)?.trigger(this, {}, {}).catch(this.error || console.error)
-              if (card) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+              if (card ) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
               this.log(`[BSEED-2G]  Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             } catch (e) { }
           }
@@ -377,7 +375,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
             try {
               const card =
       this._getFlowCard(sceneId)?.trigger(this, {}, {}).catch(this.error || console.error)
-              if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+              if (card ) await card.trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {});
               this.log(`[BSEED-2G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
             } catch (e) { }
           }
@@ -419,7 +417,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       }
     }
 
-    await this.initVirtualButtons?.() ;
+    await this.initVirtualButtons?.();
     this.log('[SWITCH-2G]  BSEED ZCL-only mode ready (packetninja v990+v5.8.72)');
   }
 
@@ -429,10 +427,10 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   async _removeGroupMemberships(zclNode) {
     for (const epNum of [1, 2]) {
       try {
-        const ep = zclNode?.endpoints?.[epNum] ;
-        if (!ep?.clusters) continue ;
+        const ep = zclNode?.endpoints?.[epNum];
+        if (!ep?.clusters) continue;
         const g = ep.clusters.groups || ep.clusters.genGroups || ep.clusters[4] || ep.clusters['4'];
-        if (!g) { this.log(`[BSEED-2G] EP${epNum} no groups cluster`); continue; }
+        if (!g) { this.log(`[BSEED-2G] EP${epNum} no groups cluster` ); continue; }
         const fn = g.removeAll || g.removeAllGroups;
         if (typeof fn === 'function') {
           await fn.call(g).catch(e => this.log(`[BSEED-2G] EP${epNum} removeAll warn: ${e.message}`));
@@ -447,10 +445,10 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   onDeleted() {
     if (this._zclState?.timeout) {
       for (const epNum of [1, 2]) {
-        if (this._zclState.timeout[epNum]) clearTimeout(this._zclState.timeout[epNum]) ;
+        if (this._zclState.timeout[epNum]) clearTimeout(this._zclState.timeout[epNum]);
       }
     }
-    super.onDeleted?.() ;
+    super.onDeleted?.();
   }
 }
 

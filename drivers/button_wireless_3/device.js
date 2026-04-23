@@ -42,8 +42,7 @@ class Button3GangDevice extends ButtonDevice {
     this._zclNode = zclNode;
     this._btnDedup = {};
 
-    const eps = Object.keys(zclNode?.endpoints || {}) ;
-    this.log(`[BUTTON3] Endpoints: ${eps.join(', ')}`);
+    const eps = Object.keys(zclNode?.endpoints || {});this.log(`[BUTTON3] Endpoints: ${eps.join(', ')}`);
 
     // Base class handles dynamic capabilities
     await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT]', err.message));
@@ -76,7 +75,7 @@ class Button3GangDevice extends ButtonDevice {
     for (let ep = 1; ep <= 3; ep++) {
       const cluster = zclNode?.endpoints?.[ep]?.clusters?.onOff
         || zclNode?.endpoints?.[ep]?.clusters?.genOnOff
-        || zclNode?.endpoints?.[ep]?.clusters?.[6] ;
+        || zclNode?.endpoints?.[ep]?.clusters?.[6];
       if (!cluster) {
         this.log(`[BUTTON3]  EP${ep} no onOff cluster`);
         continue;
@@ -86,7 +85,7 @@ class Button3GangDevice extends ButtonDevice {
       if (typeof cluster.bind === 'function') {
         try {
           await cluster.bind();
-          this.log(`[BUTTON3]  OnOff bound EP${ep}`);
+          this.log(`[BUTTON3]  OnOff bound EP${ep}` );
         } catch (err) {
           this.log(`[BUTTON3]  Bind EP${ep}: ${err.message}`);
         }
@@ -109,11 +108,11 @@ class Button3GangDevice extends ButtonDevice {
       try {
         const OBC = require('../../lib/clusters/OnOffBoundCluster');
         const ce = ep;
-        const epo = zclNode?.endpoints?.[ep] ;
+        const epo = zclNode?.endpoints?.[ep];
         if (epo) {
           epo.bind('onOff', new OBC({onSetOn:(p)=>{
-            if(p?.cmdId!==0xFD)return ;
-            this.triggerButtonPress(ce, resolvePressType(p.scene??0, 'BTN3-0xFD')) ;
+            if(p?.cmdId!==0xFD)return;
+            this.triggerButtonPress(ce, resolvePressType(p.scene?? 0, 'BTN3-0xFD'));
           }}));
         }
       } catch(e) { this.log(`[BUTTON3-0xFD] ${e.message}`); }
@@ -126,8 +125,8 @@ class Button3GangDevice extends ButtonDevice {
     for (let ep = 1; ep <= 3; ep++) {
       const c = zclNode?.endpoints?.[ep]?.clusters?.multistateInput
         || zclNode?.endpoints?.[ep]?.clusters?.genMultistateInput
-        || zclNode?.endpoints?.[ep]?.clusters?.[0x0012] ;
-      if (!c || typeof c.on !== 'function') continue;
+        || zclNode?.endpoints?.[ep]?.clusters?.[0x0012];
+      if (!c || typeof c.on !== 'function' ) continue;
       c.on('attr.presentValue', async (v) => {
         const m = { 0: 'long', 1: 'single', 2: 'double', 3: 'multi' };
         await this._handleButton(ep, `ms_${v}`, m[v] || 'single');
@@ -150,8 +149,8 @@ class Button3GangDevice extends ButtonDevice {
     }
 
     for (let ep = 1; ep <= 3; ep++) {
-      const endpoint = zclNode?.endpoints?.[ep] ;
-      if (!endpoint) continue;
+      const endpoint = zclNode?.endpoints?.[ep];
+      if (!endpoint ) continue;
 
       const boundCluster = new TuyaE000BoundCluster({
         device: this,
@@ -191,14 +190,14 @@ class Button3GangDevice extends ButtonDevice {
 
       // Hook per-endpoint handleFrame as additional safety net
       for (let ep = 1; ep <= 3; ep++) {
-        const endpoint = zclNode?.endpoints?.[ep] ;
+        const endpoint = zclNode?.endpoints?.[ep];
         if (!endpoint || typeof endpoint.handleFrame !== 'function') continue;
 
         const origEpHandle = endpoint.handleFrame.bind(endpoint);
         endpoint.handleFrame = async (clusterId, frame, meta) => {
           if (clusterId === 57344 || clusterId === 0xE000) {
             this.log(`[BUTTON3-RAW] EP${ep} endpoint-level intercept`);
-            this._parseRawE000Frame(ep, frame);
+            this._parseRawE000Frame(ep, frame );
           }
           return origEpHandle(clusterId, frame, meta);
         };
@@ -216,15 +215,13 @@ class Button3GangDevice extends ButtonDevice {
    */
   _parseRawE000Frame(ep, frame) {
     try {
-      const cmdId = frame?.cmdId ?? frame?.commandId ;
-      const data = frame?.data ;
-      this.log(`[BUTTON3-RAW] Parsing: cmdId=${cmdId}, data=${data?.toString?.('hex') || 'none'}`) ;
+      const cmdId = frame?.cmdId ?? frame?.commandId;
+      const data = frame?.data;this.log(`[BUTTON3-RAW] Parsing: cmdId=${cmdId}, data=${data?.toString?.('hex') || 'none'}`);
 
       // Strategy 1: cmdId is button number (1-3), data[0] is press type
       if (cmdId >= 0 && cmdId <= 3) {
         const mappedBtn = cmdId === 0 ? 1 : cmdId;
-        const pressType = resolvePressType(data?.[0], 'BTN3-RAW-cmd') ;
-        this.log(`[BUTTON3-RAW]  Button ${mappedBtn} ${pressType} (cmdId=${cmdId})`);
+        const pressType = resolvePressType(data?.[0], 'BTN3-RAW-cmd');this.log(`[BUTTON3-RAW]  Button ${mappedBtn} ${pressType} (cmdId=${cmdId})`);
         this.triggerButtonPress(mappedBtn, pressType);
         return;
       }

@@ -153,31 +153,31 @@ function extractCapabilityFromCondition(conditionId, capabilities) {
 
   // alarm_motion, alarm_contact, etc.
   if (conditionId.includes('alarm_')) {
-    const cap = conditionId.match(/alarm_\w+/)?.[0] ;
-    return capabilities.includes(cap) ? cap : null;
+    const cap = conditionId.match(/alarm_\w+/)?.[0]      ;
+    return capabilities.includes(cap) ? cap  :  null     ;
   }
 
   // onoff
   if (conditionId.includes('is_on') || conditionId.includes('onoff')) {
-    return capabilities.includes('onoff') ? 'onoff' : null;
+    return capabilities.includes('onoff') ? 'onoff'  :  null     ;
   }
 
   // measure_temperature, measure_humidity
   if (conditionId.includes('temperature')) {
-    return capabilities.includes('measure_temperature') ? 'measure_temperature' : null;
+    return capabilities.includes('measure_temperature') ? 'measure_temperature'  :  null     ;
   }
   if (conditionId.includes('humidity')) {
-    return capabilities.includes('measure_humidity') ? 'measure_humidity' : null;
+    return capabilities.includes('measure_humidity') ? 'measure_humidity'  :  null     ;
   }
 
   // windowcoverings_state
   if (conditionId.includes('cover') || conditionId.includes('position')) {
-    return capabilities.includes('windowcoverings_state') ? 'windowcoverings_state' : null;
+    return capabilities.includes('windowcoverings_state') ? 'windowcoverings_state'  :  null     ;
   }
 
   // dim
   if (conditionId.includes('level') || conditionId.includes('dimmer')) {
-    return capabilities.includes('dim') ? 'dim' : null;
+    return capabilities.includes('dim') ? 'dim'  :  null     ;
   }
 
   return null;

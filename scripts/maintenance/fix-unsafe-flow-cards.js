@@ -55,14 +55,14 @@ function processFile(filePath) {
   const patterns = [
     {
       // Match this.homey.flow.get... or homey.flow.get...
-      reg: /(?<!try\s*\{\s*|return\s+)(this\.)?homey\.flow\.get(Device)?(Trigger|Condition|Action)Card\(['"]([^'"]+)['"]\)(\.?\w+)?/g,
+      reg: /(? <!try\s*\{\s*|return\s+)(this\. )? homey\.flow\.get(Device )? (Trigger|Condition|Action)Card\(['"]([^'"]+)['"]\ : null)(\.? \w+ )? /g ,
       replacer: (match, prefix, dev, type, id, method) => {
         prefix = prefix || '';
         let cleanCall = `${prefix}homey.flow.get${type}Card('${id}')`;
         const wrapper = `(() => { try { return ${cleanCall}; } catch(e) { return null; } })()`;
         
         if (method) {
-          return `${wrapper}${method.startsWith('.') ? '?' : ''}${method}`;
+          return `${wrapper}${method.startsWith('.') ? '?' : ''}${method}`      ;
         }
         return wrapper;
       }

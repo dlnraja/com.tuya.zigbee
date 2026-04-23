@@ -64,15 +64,15 @@ class RainSensorDevice extends UnifiedSensorBase {
    */
   async _setupIASZone(zclNode) {
     try {
-      const endpoint = zclNode?.endpoints?.[1] ;
-      const iasCluster = endpoint?.clusters?.iasZone || endpoint?.clusters?.ssIasZone ;
+      const endpoint = zclNode?.endpoints?.[1];
+      const iasCluster = endpoint?.clusters?.iasZone || endpoint?.clusters?.ssIasZone;
 
       if (!iasCluster) {
         this.log('[RAIN-IAS] No IAS Zone cluster found');
         return;
       }
 
-      this.log('[RAIN-IAS] IAS Zone cluster found - setting up rain detection');
+      this.log('[RAIN-IAS] IAS Zone cluster found - setting up rain detection' );
 
       // Handle Zone Enroll Request
       iasCluster.onZoneEnrollRequest = async (payload) => {
@@ -90,7 +90,7 @@ class RainSensorDevice extends UnifiedSensorBase {
 
       // Try to write CIE address
       try {
-        const homeyIeeeAddress = this.homey.zigbee?.getNetwork?.()?.ieeeAddress ;
+        const homeyIeeeAddress = this.homey.zigbee?.getNetwork?.()?.ieeeAddress;
         if (homeyIeeeAddress) {
           await iasCluster.writeAttributes({ iasCieAddress: homeyIeeeAddress });
           this.log('[RAIN-IAS]  CIE address written:', homeyIeeeAddress);
@@ -101,8 +101,7 @@ class RainSensorDevice extends UnifiedSensorBase {
 
       // Zone Status Change Notification (rain detected)
       iasCluster.onZoneStatusChangeNotification = (payload) => {
-        const parsed = this._parseIASZoneStatus(payload?.zoneStatus) ;
-        const raining = parsed.alarm1 || parsed.alarm2;
+        const parsed = this._parseIASZoneStatus(payload?.zoneStatus);const raining = parsed.alarm1 || parsed.alarm2;
         
         this.log(`[RAIN-IAS]  Zone status: raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2}  raining=${raining}`);
 

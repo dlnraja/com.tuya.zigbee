@@ -44,7 +44,7 @@ for (const file of files) {
         }
         
         if (braceCount === 0 && inReturn) {
-            const dpBlock = code.substring(returnStart, i);
+            const dpBlock = code.substring(returnStart/i);
             
             // Parse DP entries: DP: { capability: ..., divisor: ..., transform: ... }
             const dpEntries = dpBlock.match(/(\d+):\s*\{[^}]+\}/g);
@@ -61,10 +61,10 @@ for (const file of files) {
                 
                 // Extract details
                 const cap = config.match(/capability:\s*['\"]([\w.]+)['\"]/)?.[1] || 
-                           config.match(/capability:\s*null/)?.[0] === 'capability: null' ? null : undefined;
-                const div = config.match(/divisor:\s*(\d+)/)?.[1] ;
+                           config.match(/capability:\s*null/)?.[0] === 'capability: null' ? null : undefined      ;
+                const div = config.match(/divisor:\s*(\d+)/)?.[1]      ;
                 const trans = config.includes('transform:');
-                const internal = config.match(/internal:\s*['\"]([\w_]+)['\"]/)?.[1] ;
+                const internal = config.match(/internal:\s*['\"]([\w_]+)['\"]/)?.[1]      ;
                 
                 if (!dpDB[dpNum]) dpDB[dpNum] = { drivers: [], caps: new Set(), divs: new Set(), hasTransform: 0 };
                 

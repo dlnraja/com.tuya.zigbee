@@ -81,8 +81,7 @@ function fixDriverFlowRegistration(driverConfig) {
 
       // Ajouter runListener selon le type
       if (conditionId.includes('is_open') || conditionId.includes('is_detected')) {
-        const capability = conditionId.includes('contact') ? 'alarm_contact' :
-          conditionId.includes('water') ? 'alarm_water' : 'alarm_smoke';
+        const capability = conditionId.includes('contact') ? 'alarm_contact' : conditionId.includes('water') ? 'alarm_water' : 'alarm_smoke'      ;
         registrationCode.push(`    this._${conditionId}Condition.registerRunListener(async (args) => {`);
         registrationCode.push(`      const { device } = args;`);
         registrationCode.push(`      return device.getCapabilityValue('${capability}') === true;`);

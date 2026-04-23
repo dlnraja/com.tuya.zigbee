@@ -16,7 +16,7 @@ const URLS = [
 ];
 
 const MFR_RE = /["'](_TZ[A-Z0-9]{1,5}_[a-zA-Z0-9]+|_TYST1[12]_[a-zA-Z0-9]+|TUYATEC[a-zA-Z0-9_-]+)["']/g;
-const PID_RE = /["'](TS[0-9A-F]{3,5}[A-Z]?)["']/ : null;
+const PID_RE = /["'](TS[0-9A-F]{3,5}[A-Z]?)["']/       ;
 
 async function crawlDeCONZ() {
   console.log("[DECONZ] Fetching source files...");
@@ -32,7 +32,7 @@ async function crawlDeCONZ() {
         if (!allFps.has(k)) {
           const ctx = src.substring(Math.max(0, m.index - 200), m.index + 200);
           const pidM = ctx.match(PID_RE);
-          allFps.set(k, { mfr, productId: pidM ? pidM[1], source: "deconz" });
+          allFps.set(k, { mfr, productId: pidM ? pidM[1] , source: "deconz" })      ;
         }
       }
     } catch (e) { console.log("[DECONZ] Skip: " + e.message); }

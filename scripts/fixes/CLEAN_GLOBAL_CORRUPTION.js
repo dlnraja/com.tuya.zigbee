@@ -27,35 +27,35 @@ const rules = [
         replacement: 'Math.round($1/$2)'
     },
     {
-        pattern: /Math\.round\(([^/)]+)\s*\/\s*(\d+)\)(\/\d+)?\)/g,
+        pattern: /Math\.round\(([^/)]+)\s*\/\s*(\d+)\)(\/\d+)? \ : null)/g ,
         replacement: 'Math.round($1/$2)$3'
     },
     // 4. Fix extra closing parentheses after safeMultiply/safeDivide
     {
         pattern: /safeMultiply\(([^,]+),\s*([^)]+)\)\)/g,
-        replacement: 'safeMultiply($1, $2)'
+        replacement: '($1 * $2)'
     },
     {
         pattern: /safeDivide\(([^,]+),\s*([^)]+)\)\)/g,
-        replacement: 'safeDivide($1, $2)'
+        replacement: '($1 / $2)'
     },
     // 5. Fix safeMultiply inside Math.round where closing paren is missing
     {
         pattern: /Math\.round\(safeMultiply\(([^)]+)\)\s*}/g,
-        replacement: 'Math.round(safeMultiply($1, 100)) }'
+        replacement: 'Math.round($1 * 100) }'
     },
     {
         pattern: /Math\.round\(safeMultiply\(([^)]+)\)\s*,/g,
-        replacement: 'Math.round(safeMultiply($1, 100)),'
+        replacement: 'Math.round($1 * 100),'
     },
     // 6. Fix Distance specific corruption: distance * 100)/100)
     {
         pattern: /Math\.round\(safeParse\(([^);]+)\)\s*[^;)]/g,
-        replacement: 'Math.round(safeParse($1, 10))'
+        replacement: 'Math.round($1 * 10)'
     },
     {
         pattern: /Math\.round\(safeParse\(([^);]+)\);/g,
-        replacement: 'Math.round(safeParse($1, 10));'
+        replacement: 'Math.round($1 * 10);'
     },
     {
         pattern: /Math\.round\(distance\s*\*\s*100\)\/100\)\;/g,

@@ -44,7 +44,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     this.registerCapability('dim', 'genLevelCtrl', {
       get: 'currentLevel',
       report: 'currentLevel',
-      reportParser: v => safeParse(v, 254),
+      reportParser: v => v * 254,
       getOpts: { getOnStart: true, getOnOnline: true }
     }).catch(() => {});
 
@@ -52,21 +52,21 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     this.registerCapability('measure_temperature', 'msTemperatureMeasurement', {
       get: 'measuredValue',
       report: 'measuredValue',
-      reportParser: v => safeParse(v, 100)
+      reportParser: v => v * 100
     }).catch(() => {});
 
     // D. Humidity (0x0405)
     this.registerCapability('measure_humidity', 'msRelativeHumidity', {
       get: 'measuredValue',
       report: 'measuredValue',
-      reportParser: v => safeParse(v, 100)
+      reportParser: v => v * 100
     }).catch(() => {});
 
     // E. Illuminance (0x0400)
     this.registerCapability('measure_luminance', 'msIlluminanceMeasurement', {
       get: 'measuredValue',
       report: 'measuredValue',
-      reportParser: v => Math.pow(10, (safeParse(v, 1) - 1) / 10000)
+      reportParser: v => Math.pow(10, (v * 1 - 1) / 10000)
     }).catch(() => {});
 
     // F. Occupancy (0x0406) -> alarm_motion
@@ -78,7 +78,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
 
     // G. IAS Zone (0x0500) -> alarm_contact / alarm_motion/alarm_water
     // Hybrid logic: determine capability from device class or clusters
-    const iasCluster = this.zclNode.endpoints?.[1]?.clusters?.iasZone ;
+    const iasCluster = this.zclNode.endpoints?.[1]?.clusters?.iasZone;
     if (iasCluster) {
       const cap = this.hasCapability('alarm_water') ? 'alarm_water' : 
                   (this.hasCapability('alarm_contact') ? 'alarm_contact' : 'alarm_motion');
@@ -94,7 +94,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     this.registerCapability('measure_battery', 'genPowerCfg', {
       get: 'batteryPercentageRemaining',
       report: 'batteryPercentageRemaining',
-      reportParser: v => (v === 255) ? null : Math.round(safeParse(v)
+      reportParser: v => (v === 255) ? null : Math.round(v)
     }).catch(() => {});
   }
 

@@ -13,16 +13,16 @@ const path = require('path');
 const ROOT = process.cwd();
 
 const TARGETS = [
-    { file: 'drivers/remote_button_wireless_hybrid/device.js', pattern: /Math\.round\(this\._simulatedBrightness\*100\)\)/g, replacement: 'Math.round(safeMultiply(this._simulatedBrightness, 100))' },
-    { file: 'drivers/remote_button_wireless_hybrid/device.js', pattern: /brightness:Math\.round\(safeMultiply\(this\._simulatedBrightness, 100\)\)\)/g, replacement: 'brightness: Math.round(safeMultiply(this._simulatedBrightness, 100))' },
-    { file: 'drivers/smart_knob_rotary/device.js', pattern: /brightness:Math\.round\(safeMultiply\(this\._simulatedBrightness, 100\)\)\)/g, replacement: 'brightness: Math.round(safeMultiply(this._simulatedBrightness, 100))' },
-    { file: 'drivers/smart_knob_rotary_hybrid/device.js', pattern: /brightness:Math\.round\(safeMultiply\(this\._simulatedBrightness, 100\)\)\)/g, replacement: 'brightness: Math.round(safeMultiply(this._simulatedBrightness, 100))' },
-    { file: 'drivers/switch_dimmer_1gang/device.js', pattern: /v\s*\/\s*1000/g, replacement: 'safeParse(v, 1000)' },
-    { file: 'drivers/wifi_ewelink_fan/device.js', pattern: /v\s*\/\s*10/g, replacement: 'safeParse(v, 10)' },
+    { file: 'drivers/remote_button_wireless_hybrid/device.js', pattern: /Math\.round\(this\._simulatedBrightness\*100\)\)/g, replacement: 'Math.round(this._simulatedBrightness * 100)' },
+    { file: 'drivers/remote_button_wireless_hybrid/device.js', pattern: /brightness:Math\.round\(safeMultiply\(this\._simulatedBrightness, 100\)\)\)/g, replacement: 'brightness: Math.round(this._simulatedBrightness * 100)' },
+    { file: 'drivers/smart_knob_rotary/device.js', pattern: /brightness:Math\.round\(safeMultiply\(this\._simulatedBrightness, 100\)\)\)/g, replacement: 'brightness: Math.round(this._simulatedBrightness * 100)' },
+    { file: 'drivers/smart_knob_rotary_hybrid/device.js', pattern: /brightness:Math\.round\(safeMultiply\(this\._simulatedBrightness, 100\)\)\)/g, replacement: 'brightness: Math.round(this._simulatedBrightness * 100)' },
+    { file: 'drivers/switch_dimmer_1gang/device.js', pattern: /v\s*\/\s*1000/g, replacement: 'v * 1000' },
+    { file: 'drivers/wifi_ewelink_fan/device.js', pattern: /v\s*\/\s*10/g, replacement: 'v * 10' },
     { file: 'lib/devices/DeviceTypeManager.js', pattern: /v\s*\/\s*([0-9.]+)/g, replacement: 'safeParse(v, $1)' },
     { file: 'lib/DiagnosticManager.js', pattern: /v\s*\/\s*([0-9.]+)/g, replacement: 'safeParse(v, $1)' },
     { file: 'lib/tuya/TuyaDPDataLogger.js', pattern: /v\s*\/\s*([0-9.]+)/g, replacement: 'safeParse(v, $1)' },
-    { file: 'lib/tuya-local/TuyaLocalClient.js', pattern: /v\s*\/\s*1000/g, replacement: 'safeParse(v, 1000)' },
+    { file: 'lib/tuya-local/TuyaLocalClient.js', pattern: /v\s*\/\s*1000/g, replacement: 'v * 1000' },
     { file: 'lib/utils/DriverMappingLoader.js', pattern: /v\s*\/\s*([0-9.]+)/g, replacement: 'safeParse(v, $1)' },
 ];
 
@@ -53,8 +53,8 @@ function processFile(fullPath) {
     const originalContent = content;
 
     // 1. Fix the crazy nested parens: Math.round(...) ))
-    content = content.replace(/Math\.round\(([^,)]+)\*(\d+)\)\)/g, 'Math.round(safeMultiply($1, $2))');
-    content = content.replace(/Math\.round\(safeMultiply\(([^,]+),\s*(\d+)\)\)\)/g, 'Math.round(safeMultiply($1, $2))');
+    content = content.replace(/Math\.round\(([^)]+)\*(\d+)\)\)/g, 'Math.round(($1 * $2))');
+    content = content.replace(/Math\.round\(safeMultiply\(([^,]+),\s*(\d+)\)\)\)/g, 'Math.round(($1 * $2))');
     
     // 2. Fix the simple v/10 in device type mappings
     content = content.replace(/v\s*=>\s*v\s*\/\s*(\d+)/g, 'v => safeParse(v, $1)');

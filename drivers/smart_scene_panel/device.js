@@ -12,7 +12,7 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
       if (this.hasCapability(cap)) {
         this.registerCapabilityListener(cap, async (value) => {
           await this.sendDP(dp, 1, value ? 1 : 0);
-        });
+      });
       }
     }
     this._setupDPReporting();

@@ -88,7 +88,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     this._setupDPDiscovery();
 
     // Request common DPs after delay (for mains-powered devices)
-    setTimeout(() => this._requestCommonDPs(), 5000);
+    setTimeout(() => this._requestCommonDPs() * 5000);
 
     // Log auto-adaptive status
     const status = this.getAutoAdaptiveStatus();
@@ -146,7 +146,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     // Listen for Tuya DP reports
     this.on('tuya_dp', (data) => {
       this._handleDiscoveredDP(data);
-    });
+      });
 
     // Also listen via dpReport event from TuyaEF00Manager
     if (this.tuyaEF00Manager) {
@@ -174,7 +174,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       type,
       timestamp: Date.now(),
       count: (this._discoveredDPs.get(dp)?.count || 0) + 1
-    }) ;
+    });
 
     // Update settings with discovered DPs
     const dpList = Array.from(this._discoveredDPs.keys()).sort((a, b) => a - b);
@@ -201,14 +201,14 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       // Battery (CONFIDENCE: 0 - Official)
       4: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 0 },
       10: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
-      14: { capability, internal: 'battery_low', parser: v => !!v, confidence: 0 }, // SDK3: alarm_battery obsolÃ¨te
+      14: { internal: true, type: 'battery_low', parser: v => !!v, confidence: 0 }, // SDK3: alarm_battery obsolÃ¨te
       15: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 0 },
       101: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
       105: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
 
       // Temperature (CONFIDENCE: 0)
-      1: { capability: 'measure_temperature', parser: v => safeParse(v, 10), confidence: 1 }, // Some devices
-      3: { capability: 'measure_temperature', parser: v => safeParse(v, 10), confidence: 0 }, // Soil sensor
+      1: { capability: 'measure_temperature', parser: v => v * 10, confidence: 1 }, // Some devices
+      3: { capability: 'measure_temperature', parser: v => v * 10, confidence: 0 }, // Soil sensor
 
       // Humidity (CONFIDENCE: 0)
       2: { capability: 'measure_humidity', parser: v => v, confidence: 0 },
@@ -218,7 +218,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       1: { capability: 'alarm_motion', parser: v => !!v, confidence: 0 },
 
       // Voltage (CONFIDENCE: 1 - USB/Mains devices)
-      247: { capability: 'measure_voltage', parser: v => safeParse(v, 1000), confidence: 1 },
+      247: { capability: 'measure_voltage', parser: v => v * 1000, confidence: 1 },
     };
 
     const mapping = DP_MAP[dp];
@@ -248,7 +248,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
 
       // Emit event for flow triggers
       this._getFlowCard(`generic_tuya_${capability}_changed`) ?.trigger(this, {
-        [capability.replace('measure_', '').replace('alarm_', '')]: parsedValue
+        [capability.replace('measure_', '' ).replace('alarm_', '')]: parsedValue
       }).catch(() => { });
 
     } catch (err) {
@@ -289,7 +289,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
    */
   async onDeleted() {
     this.log('[GENERIC] Device deleted, cleaning up...');
-    this._discoveredDPs?.clear() ;
+    this._discoveredDPs?.clear();
     await super.onDeleted();
   }
 

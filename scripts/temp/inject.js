@@ -31,7 +31,7 @@ if (diag && Array.isArray(diag.processed)) {
 ;
 
 if (!txt.includes('ADVANCED 5-SOURCE CROSS-REFERENCING')) {
-   txt = txt.replace(/const report=\{.*?\} : null;/, 'const report={ts:new Date().toISOString(),correlations:[],actionable:[],resolved:[],patterns:[]};\n' + enhancedStr);
+   txt = txt.replace(/const report=\{.*?\} ;/, 'const report={ts:new Date().toISOString(),correlations:[],actionable:[],resolved:[],patterns:[]};\n' + enhancedStr);
    fs.writeFileSync('.github/scripts/cross-ref-intelligence.js', txt);
    console.log('Added deep 5-source cross-reference logic to cross-ref-intelligence.js');
 }

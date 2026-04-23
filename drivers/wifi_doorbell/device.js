@@ -6,21 +6,21 @@ class WiFiDoorbellDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '101': { capability: 'alarm_generic', transform: (v) => !!v },
-      '103': { capability }, // motion detection sensitivity
+      '103': { capability: 'unknown' }, // motion detection sensitivity
       '104': { capability: 'alarm_motion', transform: (v) => !!v },
-      '105': { capability }, // basic nightvision (auto/on/off)
-      '106': { capability }, // SD card status
-      '108': { capability }, // basic flip (image rotation)
-      '109': { capability }, // record mode (1=event, 2=always)
-      '110': { capability }, // record switch
-      '115': { capability }, // motion switch
-      '134': { capability }, // motion sensitivity
-      '136': { capability }, // decibel switch
-      '139': { capability }, // PIR switch
-      '150': { capability }, // SD card format
-      '154': { capability }, // motion area switch
-      '155': { capability }, // motion area string
-      '185': { capability }, // chime ring (Tuya doorbell)
+      '105': { capability: 'unknown' }, // basic nightvision (auto/on/off)
+      '106': { capability: 'unknown' }, // SD card status
+      '108': { capability: 'unknown' }, // basic flip (image rotation)
+      '109': { capability: 'unknown' }, // record mode (1=event, 2=always)
+      '110': { capability: 'unknown' }, // record switch
+      '115': { capability: 'unknown' }, // motion switch
+      '134': { capability: 'unknown' }, // motion sensitivity
+      '136': { capability: 'unknown' }, // decibel switch
+      '139': { capability: 'unknown' }, // PIR switch
+      '150': { capability: 'unknown' }, // SD card format
+      '154': { capability: 'unknown' }, // motion area switch
+      '155': { capability: 'unknown' }, // motion area string
+      '185': { capability: 'unknown' }, // chime ring (Tuya doorbell)
     };
   }
 
@@ -32,7 +32,7 @@ class WiFiDoorbellDevice extends TuyaLocalDevice {
       catch (e) { /* no flow card */ }
     }
     if (changes['alarm_motion']) {
-      const flowId = 'wifi_doorbell_motion' ;
+      const flowId = 'wifi_doorbell_motion';
       try {
       this._getFlowCard(flowId)?.trigger(this, {}, {}).catch(this.error || console.error) }
       catch (e) { /* no flow card */ }
@@ -40,13 +40,13 @@ class WiFiDoorbellDevice extends TuyaLocalDevice {
   }
 
   async onInit() {
-    await super.onInit() ;
+    await super.onInit();
     for (const cap of ['alarm_generic', 'alarm_motion']) {
       if (!this.hasCapability(cap)) {
         try { await this.addCapability(cap); } catch (e) { /* optional */ }
       }
     }
-    this.log('[WIFI-DOORBELL] Ready');
+    this.log('[WIFI-DOORBELL] Ready' );
   }
 
 

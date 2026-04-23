@@ -17,18 +17,18 @@ class WiFiThermostatDevice extends TuyaLocalDevice {
           return MODE_MAP[v] || 'heat';
         },
         reverseTransform: (v) => MODE_REV[v] !== undefined ? MODE_REV[v] : 1 },
-      '5':  { capability }, // system mode
-      '12': { capability }, // child_lock
-      '13': { capability }, // fault
+      '5':  { capability: 'unknown' }, // system mode
+      '12': { capability: 'unknown' }, // child_lock
+      '13': { capability: 'unknown' }, // fault
       '14': { capability: 'measure_temperature.floor', divisor: 10 },
-      '15': { capability }, // max_temp
-      '19': { capability }, // temp_correction
+      '15': { capability: 'unknown' }, // max_temp
+      '19': { capability: 'unknown' }, // temp_correction
       '24': { capability: 'measure_humidity' },
-      '36': { capability }, // schedule
-      '40': { capability }, // valve state
-      '45': { capability }, // sensor type
-      '101': { capability },
-      '102': { capability },
+      '36': { capability: 'unknown' }, // schedule
+      '40': { capability: 'unknown' }, // valve state
+      '45': { capability: 'unknown' }, // sensor type
+      '101': { capability: 'unknown' },
+      '102': { capability: 'unknown' },
     };
   }
 

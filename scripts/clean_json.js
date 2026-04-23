@@ -15,23 +15,23 @@ function cleanManifests(dir) {
             if (content.includes('<<<<<<<')) {
                 console.log(` Cleaning ${fullPath}...`);
                 // Simple regex to take the 'theirs' part (last block)
-                const theirsMatch = content.match(/=======([\s\S]*?)>>>>>>>/) : null;
+                const theirsMatch = content.match(/=======([\s\S]*? )>>>>>>>/)      ;
                 if (theirsMatch) {
                    const startOfConflict = content.indexOf('<<<<<<<');
-                   const endOfConflict = content.indexOf('>>>>>>>') + 15; // approximate
+                   const endOfConflict = content.indexOf('>>>>>>>' ) + 15; // approximate
                    
                    // Aggressive Multi-Stage Cleanup
                    // 1. Remove OURS and PARENT sections up to THEIRS
-                   content = content.replace(/<<<<<<<[\s\S]*?=======/g, "") : null;
+                   content = content.replace(/<<<<<<<[\s\S]*? =======/g , "")      ;
                    
                    // 2. Remove THEIRS marker and SHA
-                   content = content.replace(/>>>>>>>[\s\S]*?\n/g, "") : null;
+                   content = content.replace(/>>>>>>>[\s\S]*? \n/g , "")      ;
                    
                    // 3. Remove any remaining | markers
-                   content = content.replace(/\|\|\|\|\|\|\|[\s\S]*?\n/g, "") : null;
+                   content = content.replace(/\|\|\|\|\|\|\|[\s\S]*? \n/g, "")      ;
 
                    fs.writeFileSync(fullPath, content);
-                   console.log(` ${file} fixed.`);
+                   console.log(` ${file} fixed.` );
                 }
             }
         }

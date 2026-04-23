@@ -58,7 +58,7 @@ class WiFiCameraDevice extends Homey.Device {
     this.registerCapabilityListener('onoff', async (value) => {
       // value=true means camera ON (privacy OFF), value=false means camera OFF (privacy ON)
       await this._setDP(DP.PRIVACY_MODE, !value);
-    });
+      });
 
     // Initialize cloud client for RTSP
     await this._initCloudClient();
@@ -186,43 +186,6 @@ class WiFiCameraDevice extends Homey.Device {
 
     // Privacy mode (inverted)
     if (dps[DP.PRIVACY_MODE] !== undefined) {
-      this.setCapabilityValue('onoff', !dps[DP.PRIVACY_MODE]).catch(() => {});
-    } else if (dps[DP_ALT.PRIVACY_MODE] !== undefined) {
-      this.setCapabilityValue('onoff', !dps[DP_ALT.PRIVACY_MODE]).catch(() => {});
-    }
-  }
-
-  //  Video Stream Setup 
-  async _setupVideoStream() {
-    const s = this.getSettings();
-    try {
-      if (s.stream_method === 'lan_rtsp' && s.rtsp_url) {
-        // Security: validate RTSP URL protocol
-        if (!/^rtsps?:\/\//i.test(s.rtsp_url)) {
-          this.error('[WIFI-CAM] Invalid RTSP URL - must start with rtsp:// or rtsps:
-          return;
-        }
-        // Direct LAN RTSP
-        this._video = await this.homey.videos.createVideoRTSP(s.rtsp_url);
-        await this.setCameraVideo('main', 'Camera', this._video);
-        this.log('[WIFI-CAM] LAN RTSP stream registered');
-      } else if (s.stream_method === 'cloud_rtsp' && this._cloudClient) {
-        // Cloud RTSP with auto-refresh
-        await this._allocateCloudRTSP();
-        this._startRTSPRefresh();
-      } else {
-        this.log('[WIFI-CAM] No video stream configured (snapshot-only or missing config)');
-      }
-    } catch (err) {
-      this.error('[WIFI-CAM] Video setup failed:', err.message);
-    }
-  }
-
-  async _allocateCloudRTSP() {
-    if (!this._cloudClient) return;
-    const s = this.getSettings();
-    try {
-      const result = await this._cloudClient.allocateRTSP(s.device_id);
       if (result.success && result.result && result.result.url) {
         const rtspUrl = result.result.url;
         this.log('[WIFI-CAM] Cloud RTSP allocated (URL redacted for security)');
@@ -287,7 +250,7 @@ class WiFiCameraDevice extends Homey.Device {
                 res.on('end', resolve);
                 res.on('error', reject);
               }).on('error', reject);
-            });
+      });
           }
         }
       } catch (err) {
@@ -315,7 +278,7 @@ class WiFiCameraDevice extends Homey.Device {
       }
       throw new Error('Camera not connected');
     }
-    await this._tuyaDevice.set({ dps: parseInt(dp, 10), set: value });
+    await this._tuyaDevice.set({ dps: parseInt(dp , 10), set: value });
   }
 
   _dpToCode(dp) {
@@ -341,11 +304,11 @@ class WiFiCameraDevice extends Homey.Device {
     }
     // Night vision
     if (changedKeys.includes('night_vision')) {
-      await this._setDP(DP.NIGHT_VISION, parseInt(newSettings.night_vision, 10)).catch(e => this.error(e));
+      await this._setDP(DP.NIGHT_VISION, parseInt(newSettings.night_vision , 10)).catch(e => this.error(e));
     }
     // Motion sensitivity
     if (changedKeys.includes('motion_sensitivity')) {
-      await this._setDP(DP.MOTION_SENSITIVITY, parseInt(newSettings.motion_sensitivity, 10)).catch(e => this.error(e));
+      await this._setDP(DP.MOTION_SENSITIVITY, parseInt(newSettings.motion_sensitivity , 10)).catch(e => this.error(e));
     }
     // Motion detection on/off
     if (changedKeys.includes('motion_detection')) {
@@ -382,21 +345,17 @@ class WiFiCameraDevice extends Homey.Device {
 
   _registerFlowCards() {
     try {
-      const privacyCard =
-      this._getFlowCard('wifi_camera_set_privacy')?.trigger(this, {}, {}).catch(this.error || console.error)
-      privacyCard.registerRunListener(async (args) => {
-        await this._setDP(DP.PRIVACY_MODE, args.mode === 'on') ;
+      const privacyCard = this.homey.flow.getActionCard('wifi_camera_set_privacy')
+      privacyCard.registerRunListener(async (args ) => {
+        await this._setDP(DP.PRIVACY_MODE, args.mode === 'on');
       });
-      const nvCard =
-      this._getFlowCard('wifi_camera_set_night_vision')?.trigger(this, {}, {}).catch(this.error || console.error)
-      nvCard.registerRunListener(async (args) => {
-        await this._setDP(DP.NIGHT_VISION, parseInt(args.mode, 10)) ;
+      const nvCard = this.homey.flow.getActionCard('wifi_camera_set_night_vision')
+      nvCard.registerRunListener(async (args ) => {
+        await this._setDP(DP.NIGHT_VISION, parseInt(args.mode , 10));
       });
-      const ptzCard =
-      this._getFlowCard('wifi_camera_ptz_move')?.trigger(this, {}, {}).catch(this.error || console.error)
+      const ptzCard = this.homey.flow.getActionCard('wifi_camera_ptz_move')
       ptzCard.registerRunListener(async (args) => {
-        await this._setDP(DP.PTZ_CONTROL, args.direction) ;
-        setTimeout(() => this._setDP(DP.PTZ_STOP, true).catch(() => {}), 1000);
+        await this._setDP(DP.PTZ_CONTROL, args.direction );setTimeout(() => this._setDP(DP.PTZ_STOP, true).catch(() => {}), 1000);
       });
     } catch (e) { this.error('[WIFI-CAM] Flow card registration:', e.message); }
   }

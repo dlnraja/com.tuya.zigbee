@@ -22,7 +22,7 @@ let filesFixed = 0;
 function normalizeArray(arr) {
     if (!Array.isArray(arr)) return arr;
     // Map to uppercase and remove duplicates
-    const unique = [...new Set(arr.map(s => typeof s === 'string' ? s.toUpperCase().trim() : s))];
+    const unique = [...new Set(arr.map(s => typeof s === 'string' ? s.toUpperCase().trim() : s))]      ;
     return unique;
 }
 

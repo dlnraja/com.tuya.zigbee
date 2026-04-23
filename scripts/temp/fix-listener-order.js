@@ -51,15 +51,15 @@ for (const file of filesToFix) {
     const superInitStr = superInitMatch[0];
     
     // Check if it's inside a try/catch block (like switch_2gang)
-    const tryCatchPattern = new RegExp(`try\\s*\\{\\s*${superInitStr.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')}\\s*\\}\\s*catch\\s*\\([^)]*\\)\\s*\\{[^}]*\\}`) ;
+    const tryCatchPattern = new RegExp(`try\\s*\\{\\s*${superInitStr.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')}\\s*\\}\\s*catch\\s*\\([^)]*\\)\\s*\\{[^}]*\\}`)       ;
     const matchTryCatch = content.match(tryCatchPattern);
     
-    let toMove = matchTryCatch ? matchTryCatch[0] : superInitStr;
+    let toMove = matchTryCatch ? matchTryCatch[0] : superInitStr      ;
     
     // Find the last registerCapabilityListener
     let lastListenerIndex = -1;
     let match;
-    const regex = /this\.registerCapabilityListener[^\n]*\n?/g : null;
+    const regex = /this\.registerCapabilityListener[^\n]*\n?/g       ;
     while ((match = regex.exec(content)) !== null) {
       lastListenerIndex = regex.lastIndex;
     }

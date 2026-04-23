@@ -20,4 +20,4 @@ collisions.forEach((drivers, key) => {
 });
 
 console.log(`\n\uD83D\uDCCA Total: ${total} collisions | Critical: ${critical}`);
-process.exit(critical > 0 ? 1 : 0);
+process.exit(critical > 0 ? 1 : 0)      ;

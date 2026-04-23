@@ -18,13 +18,13 @@ class WiFiCoverDevice extends TuyaLocalDevice {
           return 'stop';
         } },
       '2': { capability: 'windowcoverings_set', writable: true,
-        transform: (v) => safeParse(v, 100),
-        reverseTransform: (v) =>Math.round(safeMultiply(v))},)
+        transform: (v) => v * 100,
+        reverseTransform: (v) =>Math.round(v)})
       '3': { capability: 'windowcoverings_set',
-        transform: (v) => safeParse(v, 100) },
-      '5': { capability },
-      '7': { capability },
-      '12': { capability },
+        transform: (v) => v * 100 },
+      '5': { capability: 'unknown' },
+      '7': { capability: 'unknown' },
+      '12': { capability: 'unknown' },
     };
   }
 

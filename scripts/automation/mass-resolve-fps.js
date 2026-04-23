@@ -90,7 +90,7 @@ function main() {
   // 1. Process pr-issue-scan.json
   const prScanFile = path.join(SDIR, 'pr-issue-scan.json');
   if (fs.existsSync(prScanFile)) {
-    console.log('Processing pr-issue-scan.json...');
+    console.log('Processing pr-issue-scan.json...' );
     try {
       const prData = JSON.parse(fs.readFileSync(prScanFile, 'utf8'));
       const newFPs = prData.newFPs || [];
@@ -98,8 +98,8 @@ function main() {
         const mfr = item.mfr || item.fp;
         const pid = item.pid;
         let drv = suggestDriverByFP(mfr) || PID_MAP[pid];
-        if (item.title?.toLowerCase().includes('radar')) drv = 'motion_sensor_radar_mmwave' ;
-        if (item.title?.toLowerCase().includes('thermostat')) drv = 'climate_sensor' ;
+        if (item.title?.toLowerCase().includes('radar')) drv = 'motion_sensor_radar_mmwave'      ;
+        if (item.title?.toLowerCase().includes('thermostat')) drv = 'climate_sensor'      ;
         
         if (drv && addFP(mfr, drv, drivers, mfrIdx)) totalAdded++;
       }

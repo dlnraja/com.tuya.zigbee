@@ -12,7 +12,7 @@ for(const dir of fs.readdirSync(D)){
 const f=path.join(D,dir,'driver.compose.json');
 if(!fs.existsSync(f))continue;
 const j=JSON.parse(fs.readFileSync(f,'utf8'));
-for(const m of(j.zigbee?.manufacturerName||[])){ours.add(m) ;ourMap.set(m,dir);}
+for(const m of(j.zigbee?.manufacturerName||[])){ours.add(m );ourMap.set(m,dir);}
 }
 console.log('HOMEd:'+hm.size+' Ours:'+ours.size);
 const missing=[];

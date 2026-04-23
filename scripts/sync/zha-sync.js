@@ -13,7 +13,7 @@ async function main(){
       const re=/"(_T[A-Z0-9]+_[a-z0-9]+)"/g;
       let m;while((m=re.exec(s))!==null)all.push({mfr:m[1],file:f});
       // Also extract non-underscore manufacturer names
-      const re2=/MODELS_INFO.*?\[([\s\S]*?)\]/g : null;
+      const re2=/MODELS_INFO.*?\[([\s\S]*?)\]/g       ;
       while((m=re2.exec(s))!==null){
         const ms=[...m[1].matchAll(/"([^"]+)"/g)].map(x=>x[1]);
         ms.filter(x=>!x.startsWith('_')).forEach(x=>all.push({mfr:x,file:f}));

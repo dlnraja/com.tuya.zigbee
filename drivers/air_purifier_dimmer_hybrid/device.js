@@ -14,7 +14,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
   get dpMappings() {
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      2: { capability: 'dim', transform: (v) => Math.max(0.01, Math.min(1, safeParse(v, 1000) / 1000)) },
+      2: { capability: 'dim', transform: (v) => Math.max(0.01, Math.min(1, v * 1000 / 1000)) },
       101: { capability: 'dim', divisor: 100 }
     };
   }
@@ -44,7 +44,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
       this._lastOnoffState = v;
       if (isPhysical) {
         const id = v ? 'air_purifier_dimmer_hybrid_dimmer_wall_1gang_physical_on' : 'air_purifier_dimmer_hybrid_dimmer_wall_1gang_physical_off';
-        const card = this.homey.app?._safeGetTriggerCard?.(id) ;
+        const card = this.homey.app?._safeGetTriggerCard?.(id );
         if (card) card.trigger(this, {}, {}).catch(() => {});
       }
     } else if (dpId === 2 || dpId === 101) {
@@ -54,7 +54,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
       this._lastDimValue = dim;
       if (isPhysical && oldDim !== null) {
         const id = increased ? 'air_purifier_dimmer_hybrid_dimmer_wall_1gang_physical_brightness_up' : 'air_purifier_dimmer_hybrid_dimmer_wall_1gang_physical_brightness_down';
-        const card = this.homey.app?._safeGetTriggerCard?.(id) ;
+        const card = this.homey.app?._safeGetTriggerCard?.(id );
         if (card) card.trigger(this, { brightness: Math.round(dim * 100) }, {}).catch(() => {});
       }
     }

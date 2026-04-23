@@ -6,7 +6,7 @@ const CHECK=process.argv.includes('--check');
 let ok=0,er=0;
 (async()=>{
 const dirs=fs.readdirSync(D).filter(d=>fs.statSync(path.join(D,d)).isDirectory());
-console.log(dirs.length+' drivers'+(CHECK?' (check mode)':''));
+console.log(dirs.length+' drivers'+(CHECK? ' (check mode )':''))      ;
 for(const d of dirs){
 const svg=path.join(D,d,'assets','icon.svg');
 const img=path.join(D,d,'assets','images');

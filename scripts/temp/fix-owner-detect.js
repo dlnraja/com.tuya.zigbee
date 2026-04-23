@@ -7,7 +7,7 @@ const insert = `
 // v6.0: Detect dlnraja's own posts - don't auto-respond to owner
 function isOwnerPost(it) {
   try {
-    const author = it.user?.login || '' ;
+    const author = it.user?.login || ''       ;
     return author.toLowerCase() === 'dlnraja';
   } catch { return false; }
 }

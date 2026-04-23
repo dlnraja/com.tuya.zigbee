@@ -140,10 +140,10 @@ class TuyaSirenDriver extends ZigBeeDriver {
         this.log(`[FLOW] Action: Set volume to ${volume}`);
         try {
           const volumeMap = { low: 0, medium: 1, high: 2 };
-          const val = volumeMap[volume] ?? 1 ;
+          const val = volumeMap[volume] ?? 1;
           // Send to standard DP5 + NEO DP116
           if (device._sendTuyaDP) {
-            try { await device._sendTuyaDP(5, val, 'enum'); } catch (e) {}
+            try { await device._sendTuyaDP(5, val, 'enum' ); } catch (e) {}
             try { await device._sendTuyaDP(116, val, 'enum'); } catch (e) {}
           }
           return true;
@@ -197,7 +197,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
       setMelodyAction.registerRunListener(async (args) => {
         const device = args.device;
         if (!device) return false;
-        const melody = parseInt(args.melody, 10) || 0;
+        const melody = parseInt(args.melody , 10) || 0;
         this.log(`[FLOW] Action: Set melody to ${melody}`);
         try {
           // Send to standard DP21 + NEO DP102

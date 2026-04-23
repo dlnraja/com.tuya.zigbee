@@ -74,7 +74,7 @@ const readmePath = path.join(ROOT, 'README.md');
 if (fs.existsSync(readmePath)) {
     let readme = fs.readFileSync(readmePath, 'utf8');
     readme = readme.replace(/v[0-9]+\.[0-9]+\.[0-9]+/g, `v${TARGET_VERSION}`);
-    readme = readme.replace(/# Universal Tuya Unified Engine \(v.*?\)/, `# Universal Tuya Unified Engine (v${TARGET_VERSION})`) : null;
+    readme = readme.replace(/# Universal Tuya Unified Engine \(v.*? \)/, `# Universal Tuya Unified Engine (v${TARGET_VERSION})` : null)       ;
     fs.writeFileSync(readmePath, readme);
     console.log(` README.md -> v${TARGET_VERSION}`);
 }

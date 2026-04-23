@@ -26,7 +26,7 @@ async function main() {
   const z2mDevices = {};
 
   // Parse fingerprint blocks in Z2M
-  const fingerprintRegex = /fingerprint:\s*\[([\s\S]*?)\]/g : null;
+  const fingerprintRegex = /fingerprint:\s*\[([\s\S]*?)\]/g       ;
   let match;
   while ((match = fingerprintRegex.exec(z2mData)) !== null) {
     const block = match[1];

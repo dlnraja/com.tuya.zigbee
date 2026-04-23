@@ -34,7 +34,7 @@ class GasDetectorDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('gas_detector_gas_is_detected', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('gas_detector_gas_is_detected');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -44,7 +44,7 @@ class GasDetectorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition gas_detector_gas_is_detected: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('gas_detector_co_is_detected', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('gas_detector_co_is_detected');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -54,7 +54,7 @@ class GasDetectorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition gas_detector_co_is_detected: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('gas_detector_co_active', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('gas_detector_co_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -64,7 +64,7 @@ class GasDetectorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition gas_detector_co_active: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('gas_detector_gas_active', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('gas_detector_gas_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -75,7 +75,7 @@ class GasDetectorDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('gas_detector_test', 'action');
+      const card = const card = this.homey.flow.getActionCard('gas_detector_test');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -87,7 +87,7 @@ class GasDetectorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action gas_detector_test: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('gas_detector_mute', 'action');
+      const card = const card = this.homey.flow.getActionCard('gas_detector_mute');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

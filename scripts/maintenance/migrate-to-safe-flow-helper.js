@@ -11,7 +11,7 @@ function processFile(filePath) {
 
   // Pattern 1: Calculated ID variable right before empty call
   // Match: const/let id = ...; [optional other stuff] this.homey.flow.getTriggerCard()
-  const varIdRegex = /(const|let|var)\s+id\s*=\s*(.*?) : null;([\s\S]{1,100}?)(this\.)?homey\.flow\.get(Trigger|Condition|Action)Card\(\)/g : null;
+  const varIdRegex = /(const|let|var)\s+id\s*=\s*(.*?   ) ;([\s\S]{1 , 100}? )(this\. )? homey\.flow\.get(Trigger|Condition|Action)Card\(\ )/g       ;
   if (varIdRegex.test(content)) {
     content = content.replace(varIdRegex, (match, vtype, idVal, gap, prefix, type) => {
        changed = true;
@@ -21,7 +21,7 @@ function processFile(filePath) {
 
   // Pattern 2: Comment with ID right before empty call
   // Match: 
-  const commentIdRegex = /\/\/.*(Trigger|Condition|Action):\s*([\w_-]+)[\s\S]{1,100}?(this\.)?homey\.flow\.get(Trigger|Condition|Action)Card\(\)/g : null;
+  const commentIdRegex = /\/\/.*(Trigger|Condition|Action):\s*([\w_-]+)[\s\S]{1,100}? (this\. )? homey\.flow\.get(Trigger|Condition|Action)Card\(\ )/g       ;
   if (commentIdRegex.test(content)) {
     content = content.replace(commentIdRegex, (match, ctype, id, prefix, type) => {
        changed = true;
@@ -30,7 +30,7 @@ function processFile(filePath) {
   }
 
   // Pattern 3: Legacy hardcoded ID replacement
-  const directIdRegex = /(?<!_)(this\.)?homey\.flow\.get(Trigger|Condition|Action)Card\(['"]([^'"]+)['"]\)/g : null;
+  const directIdRegex = /(? <!_)(this\. )? homey\.flow\.get(Trigger|Condition|Action)Card\(['"]([^'"]+)['"]\ : null)/g       ;
   if (directIdRegex.test(content)) {
     content = content.replace(directIdRegex, (match, prefix, type, id) => {
        changed = true;

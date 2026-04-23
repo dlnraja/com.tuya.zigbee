@@ -32,19 +32,19 @@ class GenericTuyaDriver extends ZigBeeDriver {
     // CONDITIONS
     try {
       // A8: NaN Safety - use safeDivide/safeMultiply
-  this._getFlowCard('generic_tuya_battery_above', 'condition');
+  const card = this.homey.flow.getConditionCard('generic_tuya_battery_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.threshold || 20);
-        });
+      });
       }
     } catch (err) { this.error(`Condition generic_tuya_battery_above: ${err.message}`); }
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('generic_tuya_request_dp', 'action');
+      const card = const card = this.homey.flow.getActionCard('generic_tuya_request_dp');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

@@ -8,7 +8,7 @@ const injectionStr =
       calibratedMoisture = Math.max(0, Math.min(100, calibratedMoisture));
       this.log('[SOIL]  SOIL MOISTURE DP109 = ' + parsedValue + '% -> ' + calibratedMoisture + '%');
       
-      let cap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';
+      let cap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity'      ;
       if (this.hasCapability(cap)) {
         this.setCapabilityValue(cap, parseFloat(calibratedMoisture)).catch(()=>{});
       }

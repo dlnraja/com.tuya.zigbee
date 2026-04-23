@@ -14,8 +14,8 @@ const ROOT = process.cwd();
 const AUDIT_FILE = path.join(ROOT, 'docs/reports/ZERO_DEFECT_AUDIT.json');
 
 const TARGETS = [
-  { regex: /(?<!\w)0xEF00(?!\w)/g, replacement: 'CLUSTERS.TUYA_EF00' },
-  { regex: /(?<!\w)61184(?!\w)/g, replacement: 'CLUSTERS.TUYA_EF00' }
+  { regex: /(? <!\w )0xEF00(? !\w )/g , replacement: 'CLUSTERS.TUYA_EF00' },
+  { regex: /(? <!\w )61184(? !\w )/g , replacement: 'CLUSTERS.TUYA_EF00' }
 ];
 
 if (!fs.existsSync(AUDIT_FILE)) {
@@ -58,11 +58,11 @@ filesToProcess.forEach(relPath => {
     if (needsImport && !content.includes('ZigbeeConstants')) {
       // Determine relative path to constants
       const depth = relPath.split(path.sep).length - 1;
-      const prefix = depth === 0 ? './' : '../'.repeat(depth);
+      const prefix = depth === 0 ? './' : '../'.repeat(depth)      ;
       const importPath = relPath.startsWith('lib') 
-        ? relPath.split(path.sep).length > 2 ? '../../lib/constants/ZigbeeConstants.js' : '../constants/ZigbeeConstants.js'
+        ? relPath.split(path.sep ).length > 2 ? '../../lib/constants/ZigbeeConstants.js' : '../constants/ZigbeeConstants.js'
         : relPath.startsWith('drivers') 
-          ? '../../lib/constants/ZigbeeConstants.js'
+          ? '../../lib/constants/ZigbeeConstants.js'       ;
           : '../lib/constants/ZigbeeConstants.js';
       
       // Better way: Check directory structure

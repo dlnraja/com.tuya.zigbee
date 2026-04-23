@@ -87,12 +87,12 @@ class RadiatorValveZigbeeDevice extends HybridThermostatBase {
     
     // Try DP1 first (most common)
     try {
-      await this.sendTuyaDPCommand(1, Math.round(value * 10), 2);
+      await this.sendTuyaDPCommand(1, Math.round(value * 10) * 2);
       return true;
     } catch (e1) {
       // Fallback to DP16
       try {
-        await this.sendTuyaDPCommand(16, Math.round(value * 10), 2);
+        await this.sendTuyaDPCommand(16, Math.round(value * 10) * 2);
         return true;
       } catch (e2) {
         this.error('[TRV-ZIGBEE] Failed to set target temp:', e2.message);
@@ -113,7 +113,7 @@ class RadiatorValveZigbeeDevice extends HybridThermostatBase {
       'off': 5
     };
     
-    const dpValue = modeMap[mode] !== undefined ? modeMap[mode] : 1;
+    const dpValue = modeMap[mode] !== undefined ? modeMap[mode] : 1      ;
     
     try {
       await this.sendTuyaDPCommand(4, dpValue, 4);

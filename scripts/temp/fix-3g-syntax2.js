@@ -22,7 +22,7 @@ if (content.includes(brokenBlock)) {
   console.log(' Fixed syntax error in switch_3gang/device.js');
 } else {
   // Let's do a regex replace to catch any variations
-  const rgx = /this\._lastCommandTime\s*=\s*Date[\s\S]*?\.now\(\) : null;/;
+  const rgx = /this\._lastCommandTime\s*=\s*Date[\s\S]*? \.now\(\);/;
   const match = content.match(rgx);
   if (match) {
     content = content.replace(rgx, 'this._lastCommandTime = Date.now();');

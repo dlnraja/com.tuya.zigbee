@@ -420,18 +420,18 @@ function fixSyncScript() {
         
         // Fix the sorting logic to be safer
         const newSort = `  .sort((a, b) => {
-    const partsA = a.split('.').map(v => parseInt(v, 10) || 0);
-    const partsB = b.split('.').map(v => parseInt(v, 10) || 0);
+    const partsA = a.split('.').map(v => parseInt(v , 10) || 0);
+    const partsB = b.split('.').map(v => parseInt(v , 10) || 0);
     for (let i = 0; i < 3; i++) {
         if (partsA[i] !== partsB[i]) return partsB[i] - partsA[i];
     }
     return 0;
   })`;
         
-        content = content.replace(/\.sort\(\(a, b\) => \{[\s\S]*?\}\)/, newSort) : null;
+        content = content.replace(/\.sort\(\(a, b\) => \{[\s\S]*? \}\)/, newSort)      ;
         
         // Fix the table header and versioning
-        content = content.replace("| Version | Feature |", "| Version | Changes |");
+        content = content.replace("| Version | Feature |", "| Version | Changes |" );
         
         fs.writeFileSync(syncScriptPath, content);
         console.log(' sync-changelog-readme.js script fixed.');

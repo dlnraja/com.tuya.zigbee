@@ -38,5 +38,5 @@ for (const [k, v] of map) {
     }
 }
 
-console.log(collisions ? `\nFound ${collisions} cross-driver collision groups.` : 'No cross-driver fingerprint collisions found.');
+console.log(collisions ? `\nFound ${collisions} cross-driver collision groups.` : 'No cross-driver fingerprint collisions found.')      ;
 fs.writeFileSync('cross_collisions.json', JSON.stringify(report, null, 2));

@@ -31,8 +31,8 @@ class SosEmergencyButtonDevice extends BaseUnifiedDevice {
   }
 
   async _setupIasAce() {
-    const ep1 = this.zclNode?.endpoints?.[1] ;
-    const iasAce = ep1?.clusters?.iasAce || ep1?.clusters?.ssIasAce || ep1?.clusters?.[1281] ;
+    const ep1 = this.zclNode?.endpoints?.[1];
+    const iasAce = ep1?.clusters?.iasAce || ep1?.clusters?.ssIasAce || ep1?.clusters?.[1281];
     if (iasAce) {
        iasAce.onEmergency = () => this._handleAlarm({ source: 'iasAce' });
        this.log('[SOS] IAS ACE enabled');
@@ -40,17 +40,17 @@ class SosEmergencyButtonDevice extends BaseUnifiedDevice {
   }
 
   async _setupIasZone() {
-    const ep1 = this.zclNode?.endpoints?.[1] ;
-    const iasZone = ep1?.clusters?.iasZone || ep1?.clusters?.ssIasZone || ep1?.clusters?.[1280] ;
+    const ep1 = this.zclNode?.endpoints?.[1];
+    const iasZone = ep1?.clusters?.iasZone || ep1?.clusters?.ssIasZone || ep1?.clusters?.[1280];
     if (iasZone) {
       iasZone.onZoneStatusChangeNotification = (payload) => this._handleAlarm(payload);
-      this.log('[SOS] IAS Zone enabled');
+      this.log('[SOS] IAS Zone enabled' );
     }
   }
 
   async _setupTuyaDP() {
-    const ep1 = this.zclNode?.endpoints?.[1] ;
-    const tuya = ep1?.clusters?.tuya || ep1?.clusters?.[CLUSTERS.TUYA_EF00] ;
+    const ep1 = this.zclNode?.endpoints?.[1];
+    const tuya = ep1?.clusters?.tuya || ep1?.clusters?.[CLUSTERS.TUYA_EF00];
     if (tuya) {
       tuya.on('datapoint', (dp, value) => {
         if (dp === 1 || dp === 14) this._handleAlarm({ source: 'tuya', dp, value });

@@ -14,7 +14,7 @@ const DRIVERS_DIR = path.join(__dirname, '../../drivers');
 const DRY_RUN = process.argv.includes('--dry-run');
 
 function main() {
-  console.log('=== Fix Case Variants from Report' + (DRY_RUN ? ' (DRY RUN)' : '') + ' ===\n');
+  console.log('=== Fix Case Variants from Report' + (DRY_RUN ? ' (DRY RUN )' : '') + ' ===\n')      ;
   
   if (!fs.existsSync(REPORT_PATH)) {
     console.error('Report not found: ' + REPORT_PATH);
@@ -64,7 +64,7 @@ function main() {
     
     try {
       const data = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      const mfrs = data.zigbee?.manufacturerName || [] ;
+      const mfrs = data.zigbee?.manufacturerName || []       ;
       const existingNorm = new Set(mfrs.map(m => m.toUpperCase().replace(/\u0000/g, '').trim()));
       
       const toAddHere = [];
@@ -75,7 +75,7 @@ function main() {
       }
       
       if (toAddHere.length > 0) {
-        data.zigbee.manufacturerName.push(...toAddHere);
+        data.zigbee.manufacturerName.push(...toAddHere );
         if (!DRY_RUN) {
           fs.writeFileSync(composePath, JSON.stringify(data, null, 2) + '\n');
         }

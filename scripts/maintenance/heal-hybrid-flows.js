@@ -18,7 +18,7 @@ function healHybrids() {
     // 1. Identify source drivers from the hybrid's name or history (if we had it)
     // For now, let's look at the manufacturerNames in driver.compose.json and try to find which other drivers they belong to
     const compose = JSON.parse(fs.readFileSync(path.join(hybridDir, 'driver.compose.json'), 'utf8'));
-    const mfrs = compose.zigbee?.manufacturerName || [] ;
+    const mfrs = compose.zigbee?.manufacturerName || []      ;
     
     // 2. Build or Update driver.flow.compose.json
     let flowData = { triggers: [], actions: [], conditions: [] };
@@ -34,7 +34,7 @@ function healHybrids() {
 
     // 3. Scan all OTHER drivers for flow cards that match the naming patterns used in this hybrid's device.js
     // Patterns like: hybridName_gangX_scene, hybridName_turned_on, etc.
-    const refs = deviceCode.match(/get(?:DeviceTrigger|Action|Condition)Card\(['"`]([^'"`]+)['"`]\)/g) || [];
+    const refs = deviceCode.match(/get(?:DeviceTrigger|Action|Condition)Card\(['"`]([^'"`]+)['"`]\)/g) || []      ;
     const referencedIds = refs.map(r => r.match(/['"`]([^'"`]+)['"`]/)[1]);
 
     for (const refId of referencedIds) {
@@ -70,10 +70,10 @@ function healHybrids() {
           const dfj = JSON.parse(fs.readFileSync(df, 'utf8'));
           const match = (dfj.triggers?.find(t => t.id === refId)) 
                     || (dfj.actions?.find(a => a.id === refId))
-                    || (dfj.conditions?.find(c => c.id === refId)) ;
+                    || (dfj.conditions?.find(c => c.id === refId))      ;
           
           if (match) {
-            const category = dfj.triggers?.find(t => t.id === refId) ? 'triggers' : (dfj.actions?.find(a => a.id === refId) ? 'actions' : 'conditions');
+            const category = dfj.triggers?.find(t => t.id === refId ) ? 'triggers' : (dfj.actions?.find(a => a.id === refId ) ? 'actions' : 'conditions')      ;
             
             // v7.0.15: Prefix the card ID with the hybrid driver name to avoid global collisions (Issue #170)
             const newCard = JSON.parse(JSON.stringify(match));

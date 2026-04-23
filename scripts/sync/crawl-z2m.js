@@ -50,7 +50,7 @@ function parseFile(src, filename) {
       const ctx = lines.slice(Math.max(0,i-3), i+3).join(" ");
       const pidM = ctx.match(/modelID:\s*['"]([^'"]+)['"]/);
       const k = mfr.toLowerCase();
-      if (!fps.has(k)) fps.set(k, { mfr, productId: pidM?pidM[1], model, description: desc, vendor, file: filename, source: "z2m" });
+      if (!fps.has(k)) fps.set(k, { mfr, productId: pidM? pidM[1], model , description: desc, vendor, file: filename, source: "z2m" })      ;
       continue;
     }
 

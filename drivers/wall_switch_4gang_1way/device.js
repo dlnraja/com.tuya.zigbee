@@ -34,9 +34,9 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
     this._gangNumber = gn;
     this.zclNode = zclNode;
     this._zclState = { lastState, pending: false, timeout };
-    const ep = zclNode?.endpoints?.[gn] ;
-    const onOff = ep?.clusters?.onOff ;
-    if (!onOff) { this.error('[SUB-DEVICE] No onOff on EP' + gn); return; }
+    const ep = zclNode?.endpoints?.[gn];
+    const onOff = ep?.clusters?.onOff;
+    if (!onOff) { this.error('[SUB-DEVICE] No onOff on EP' + gn ); return; }
 
     onOff.on('attr.onOff', (value) => {
       const isPhys = !this._zclState.pending;
@@ -52,7 +52,7 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
       this._getFlowCard(pgid)?.trigger(this, {}, {}).catch(this.error || console.error)
         }
         if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-      this._getFlowCard('wall_switch_4gang_1way_gang' + gn + '_scene').trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {})
+      this._getFlowCard('wall_switch_4gang_1way_gang' + gn + '_scene' ).trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {})
         }
       }
     });
@@ -118,15 +118,14 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
   }
 
   _setupGang1SceneDetection(zclNode) {
-    const onOff = zclNode?.endpoints?.[1]?.clusters?.onOff ;
+    const onOff = zclNode?.endpoints?.[1]?.clusters?.onOff;
     if (!onOff) return;
     
-    const triggerFlows = (value) => {
+    const triggerFlows = (value ) => {
       const mode = this.sceneMode;
-      const isPhys = !this._appCommandPending?.gang1 ;
-      // v5.12.4: Removed 'auto' physical gang trigger - PhysicalButtonMixin handles it (fixes BSEED double-trigger)
+      const isPhys = !this._appCommandPending?.gang1;// v5.12.4: Removed 'auto' physical gang trigger - PhysicalButtonMixin handles it (fixes BSEED double-trigger)
       if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-      this._getFlowCard('wall_switch_4gang_1way_gang1_scene')?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {})
+      this._getFlowCard('wall_switch_4gang_1way_gang1_scene')?.trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {})
         this.log(`[SCENE] Gang 1 scene: ${value ? 'on' : 'off'}`);
       }
     };
@@ -150,8 +149,8 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
   }
 
   onDeleted() {
-    if (this._zclState?.timeout) clearTimeout(this._zclState.timeout) ;
-    super.onDeleted?.() ;
+    if (this._zclState?.timeout) clearTimeout(this._zclState.timeout );
+    super.onDeleted?.();
   }
 }
 

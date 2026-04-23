@@ -31,7 +31,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('bulb_white_smart_bulb_white_is_on', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('bulb_white_smart_bulb_white_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -41,7 +41,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition bulb_white_smart_bulb_white_is_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('bulb_white_is_on', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('bulb_white_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -52,7 +52,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('bulb_white_smart_bulb_white_turn_on', 'action');
+      const card = const card = this.homey.flow.getActionCard('bulb_white_smart_bulb_white_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -63,7 +63,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action bulb_white_smart_bulb_white_turn_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('bulb_white_smart_bulb_white_turn_off', 'action');
+      const card = const card = this.homey.flow.getActionCard('bulb_white_smart_bulb_white_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -74,7 +74,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action bulb_white_smart_bulb_white_turn_off: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('bulb_white_smart_bulb_white_toggle', 'action');
+      const card = const card = this.homey.flow.getActionCard('bulb_white_smart_bulb_white_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -86,7 +86,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action bulb_white_smart_bulb_white_toggle: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('bulb_white_smart_bulb_white_set_dim', 'action');
+      const card = const card = this.homey.flow.getActionCard('bulb_white_smart_bulb_white_set_dim');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -97,7 +97,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action bulb_white_smart_bulb_white_set_dim: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('bulb_white_turn_on', 'action');
+      const card = const card = this.homey.flow.getActionCard('bulb_white_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -108,7 +108,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action bulb_white_turn_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('bulb_white_turn_off', 'action');
+      const card = const card = this.homey.flow.getActionCard('bulb_white_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -119,7 +119,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action bulb_white_turn_off: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('bulb_white_toggle', 'action');
+      const card = const card = this.homey.flow.getActionCard('bulb_white_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -131,7 +131,7 @@ class SmartBulbWhiteDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action bulb_white_toggle: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('bulb_white_set_brightness', 'action');
+      const card = const card = this.homey.flow.getActionCard('bulb_white_set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

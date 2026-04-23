@@ -5,16 +5,16 @@ class WiFiWaterValveDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '2':  { capability },
-      '3':  { capability },
-      '5':  { capability },
+      '2':  { capability: 'unknown' },
+      '3':  { capability: 'unknown' },
+      '5':  { capability: 'unknown' },
       '6':  { capability: 'measure_battery' },
-      '7':  { capability },
-      '9':  { capability },
-      '11': { capability },
-      '12': { capability },
-      '15': { capability },
-      '17': { capability },
+      '7':  { capability: 'unknown' },
+      '9':  { capability: 'unknown' },
+      '11': { capability: 'unknown' },
+      '12': { capability: 'unknown' },
+      '15': { capability: 'unknown' },
+      '17': { capability: 'unknown' },
     };
   }
 

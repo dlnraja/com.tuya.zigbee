@@ -10,7 +10,7 @@ fs.readdirSync(d).forEach(dr => {
   const c = fs.readFileSync(f, 'utf8');
   
   // Check for duplicate DP keys in dpMappings
-  const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} : null;/);
+  const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} ;/);
   if (dpMatch) {
     const dpBlock = dpMatch[1];
     const dpKeys = [];
@@ -44,7 +44,7 @@ fs.readdirSync(d).forEach(dr => {
 });
 
 // Sort by severity
-issues.sort((a, b) => a.severity === 'CRITICAL' ? -1 : 1);
+issues.sort((a, b) => a.severity === 'CRITICAL' ? -1 : 1)      ;
 console.log('=== DP AUDIT RESULTS ===');
 console.log('Total issues: ' + issues.length);
 issues.forEach(i => console.log('  [' + i.severity + '] ' + i.driver + ': ' + i.issue));

@@ -39,20 +39,20 @@ class FingerbotDriver extends ZigBeeDriver {
 
     reg('getActionCard', 'fingerbot_push', async ({ device }) => {
       await device.triggerPush();
-    });
+      });
     reg('getActionCard', 'fingerbot_turn_on', async ({ device }) => {
       await device.setCapabilityValue('onoff', true);
       await device.sendTuyaDP(1, 'bool', true);
-    });
+      });
     reg('getActionCard', 'fingerbot_turn_off', async ({ device }) => {
       await device.setCapabilityValue('onoff', false);
       await device.sendTuyaDP(1, 'bool', false);
-    });
+      });
     reg('getActionCard', 'fingerbot_toggle', async ({ device }) => {
       const cur = device.getCapabilityValue('onoff');
       await device.setCapabilityValue('onoff', !cur);
       await device.sendTuyaDP(1, 'bool', !cur);
-    });
+      });
     reg('getConditionCard', 'fingerbot_is_on', async ({ device }) => {
       return device.getCapabilityValue('onoff') === true;
       });

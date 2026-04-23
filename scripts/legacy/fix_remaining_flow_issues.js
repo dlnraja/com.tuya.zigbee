@@ -34,9 +34,7 @@ function addMissingRegistration(driverName, cardType, cardId) {
   let content = fs.readFileSync(driverJsPath, 'utf8');
 
   // VÃ©rifier si dÃ©jÃ enregistrÃ©
-  const registrationPattern = cardType === 'trigger' ? `getTriggerCard('${cardId}')` :
-    cardType === 'condition' ? `getConditionCard('${cardId}')` :
-      `getActionCard('${cardId}')`;
+  const registrationPattern = cardType === 'trigger' ? `getTriggerCard('${cardId}' )` : cardType === 'condition' ? `getConditionCard('${cardId}' )` : `getActionCard('${cardId}')`      ;
 
   if (content.includes(registrationPattern)) {
     return false; // DÃ©jÃ enregistrÃ©
@@ -48,9 +46,7 @@ function addMissingRegistration(driverName, cardType, cardId) {
 
   // Chercher la derniÃ¨re registration existante du mÃªme type
   let lastRegistrationIndex = -1;
-  const searchPattern = cardType === 'trigger' ? 'getTriggerCard' :
-    cardType === 'condition' ? 'getConditionCard' :
-      'getActionCard';
+  const searchPattern = cardType === 'trigger' ? 'getTriggerCard' : cardType === 'condition' ? 'getConditionCard' : 'getActionCard'      ;
 
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].includes(searchPattern)) {
@@ -175,13 +171,13 @@ function extractCapabilityFromCondition(conditionId, capabilities) {
 
   // alarm_*
   if (conditionId.includes('alarm_')) {
-    const cap = conditionId.match(/alarm_\w+/)?.[0] ;
+    const cap = conditionId.match(/alarm_\w+/)?.[0]       ;
     if (cap && capabilities.includes(cap)) return cap;
   }
 
   // measure_*
   if (conditionId.includes('measure_')) {
-    const cap = conditionId.match(/measure_\w+/)?.[0] ;
+    const cap = conditionId.match(/measure_\w+/)?.[0]       ;
     if (cap && capabilities.includes(cap)) return cap;
   }
 
@@ -241,7 +237,7 @@ function addMissingRunListener(driverName, conditionId) {
   ];
 
   // InsÃ©rer aprÃ¨s registration
-  lines.splice(registrationLine + 1, 0, ...runListenerCode);
+  lines.splice(registrationLine + 1, 0, ...runListenerCode );
 
   // Sauvegarder
   fs.writeFileSync(driverJsPath, lines.join('\n'), 'utf8');

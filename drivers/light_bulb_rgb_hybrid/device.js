@@ -21,7 +21,7 @@ const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
  *   DP7  = countdown (seconds)     DP8  = music_sync (bool)                    
  *   DP21 = power_on_behavior       DP26 = do_not_disturb (bool)                
  *                                                                               
- *   ZCL Clusters: 0x0006 safeDivide(On, Off), 0x0008 Level, 0x0300 Color, CLUSTERS.TUYA_EF00 Tuya       
+ *   ZCL Clusters: 0x0006 (On / Off), 0x0008 Level, 0x0300 Color, CLUSTERS.TUYA_EF00 Tuya       
  *   Models: TS0505B, TS0504B, TS0503A, _TZ3210_*, _TZ3000_*                     
  *                                                                               
  *   NEW v5.5.238 FEATURES:                                                      
@@ -58,22 +58,22 @@ class RGBBulbDevice extends UnifiedLightBase {
       // Core controls
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       2: { capability: 'light_mode', transform: (v) => this._parseLightMode(v) }, // 0=white, 1=color, 2=scene
-      3: { capability: 'dim', transform: (v) => Math.max(0.01, safeParse(v, 1000)) },
-      4: { capability: 'light_temperature', transform: (v) => safeParse(v, 1000) }, // 0-1000  0-1
-      5: { capability, internal: 'hsv', transform: (v) => this._parseHSV(v) },
+      3: { capability: 'dim', transform: (v) => Math.max(0.01, v * 1000) },
+      4: { capability: 'light_temperature', transform: (v) => v * 1000 }, // 0-1000  0-1
+      5: { internal: true, type: 'hsv', transform: (v) => this._parseHSV(v) },
 
       // Extended features
-      6: { capability, internal: 'scene_data' },
-      7: { capability, internal: 'countdown', writable: true },
-      8: { capability, internal: 'music_sync' }, // Music sync mode
+      6: { internal: true, type: 'scene_data' },
+      7: { internal: true, type: 'countdown', writable: true },
+      8: { internal: true, type: 'music_sync' }, // Music sync mode
 
       // Settings
       21: { capability, setting: 'power_on_behavior' }, // off, on, previous
       26: { capability, setting: 'do_not_disturb' }, // Keep off after power loss
 
       // Alternative DPs (some devices use different mappings)
-      24: { capability, internal: 'hsv_alt', transform: (v) => this._parseHSV(v) },
-      25: { capability: 'dim', transform: (v) => Math.max(0.01, safeParse(v, 1000)) },
+      24: { internal: true, type: 'hsv_alt', transform: (v) => this._parseHSV(v) },
+      25: { capability: 'dim', transform: (v) => Math.max(0.01, v * 1000) },
       101: { capability: 'dim', divisor: 100 }
     };
   }
@@ -88,8 +88,8 @@ class RGBBulbDevice extends UnifiedLightBase {
     try {
       // v5.5.288: Enhanced error handling for TS0505B "Could not get device by id" issue
       this.log('[RGB] v5.5.288 - Starting initialization...');
-      this.log(`[RGB] Device ID: ${this.getData()?.id || 'unknown'}`) ;
-      this.log(`[RGB] ManufacturerName: ${this.getData()?.manufacturerName || 'unknown'}`) ;
+      this.log(`[RGB] Device ID: ${this.getData()?.id || 'unknown'}`);
+      this.log(`[RGB] ManufacturerName: ${this.getData()?.manufacturerName || 'unknown'}`);
 
       // Let parent initialize first (handles onoff, dim listeners)
 
@@ -117,24 +117,24 @@ class RGBBulbDevice extends UnifiedLightBase {
   _parseHSV(raw) {
     if (!raw || typeof raw !== 'string' || raw.length < 12) return null;
     try {
-      const h = parseInt(raw.substring(0, 4), 16);
-      const s = parseInt(raw.substring(4, 8), 16);
-      const v = parseInt(raw.substring(8, 12), 16);
-      this.setCapabilityValue('light_hue', safeParse(h, 360)).catch(() => { });
-      this.setCapabilityValue('light_saturation', safeParse(s, 1000)).catch(() => { });
-      this.setCapabilityValue('dim', Math.max(0.01, safeParse(v, 1000))).catch(() => { });
+      const h = parseInt(raw.substring(0, 4) * 16);
+      const s = parseInt(raw.substring(4, 8) * 16);
+      const v = parseInt(raw.substring(8, 12) * 16);
+      this.setCapabilityValue('light_hue', h * 360).catch(() => { });
+      this.setCapabilityValue('light_saturation', s * 1000).catch(() => { });
+      this.setCapabilityValue('dim', Math.max(0.01, v * 1000).catch(() => { }));
       return { h, s, v };
     } catch (e) { return null; }
   }
 
   async _setupColorCluster(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1] ;
-    if (!ep1) return;
+    const ep1 = zclNode?.endpoints?.[1];
+    if (!ep1 ) return;
     try {
-      const colorCluster = ep1.clusters?.lightingColorCtrl || ep1.clusters?.colorControl ;
+      const colorCluster = ep1.clusters?.lightingColorCtrl || ep1.clusters?.colorControl;
       if (colorCluster?.on) {
-        colorCluster.on('attr.currentHue', (v) => this.setCapabilityValue('light_hue', safeParse(v, 254)).catch(() => { })) ;
-        colorCluster.on('attr.currentSaturation', (v) => this.setCapabilityValue('light_saturation', safeParse(v, 254)).catch(() => { }));
+        colorCluster.on('attr.currentHue', (v) => this.setCapabilityValue('light_hue', v * 254).catch(() => { }));
+        colorCluster.on('attr.currentSaturation', (v) => this.setCapabilityValue('light_saturation', v * 254).catch(() => { }));
         this.log('[RGB]  Color cluster listeners added');
       }
     } catch (e) { /* ignore */ }
@@ -152,18 +152,18 @@ class RGBBulbDevice extends UnifiedLightBase {
 
   async _sendHSV() {
     // v5.12.5: Enable RGB mode via ZCL (Johan SDK3 pattern)
-    await this._tryTuyaRgbMode?.(1)?.catch(() => {}) ;
-    const h = Math.round(safeMultiply((this.getCapabilityValue('light_hue'))|| 0), 360));
-    const s = Math.round(safeMultiply((this.getCapabilityValue('light_saturation'))|| 1), 1000));
-    const v = Math.round(safeMultiply((this.getCapabilityValue('dim'))|| 1), 1000));
+    await this._tryTuyaRgbMode?.(1 )?.catch(() => {});
+    const h = Math.round((this.getCapabilityValue('light_hue')|| 0) * 360);
+    const s = Math.round((this.getCapabilityValue('light_saturation')|| 1) * 1000);
+    const v = Math.round((this.getCapabilityValue('dim')|| 1) * 1000);
     const hsv = h.toString(16).padStart(4, '0') + s.toString(16).padStart(4, '0') + v.toString(16).padStart(4, '0');
     await this._sendTuyaDP(5, hsv, 'raw');
-    await this._sendTuyaDP(2, 1, 'enum'); // Switch to color mode
+    await this._sendTuyaDP(2, 1, 'enum' ); // Switch to color mode
   }
 
   async _sendTuyaDP(dp, value, type) {
-    const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya ;
-    if (tuya?.datapoint) await tuya.datapoint({ dp, value, type }) ;
+    const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
+    if (tuya?.datapoint) await tuya.datapoint({ dp, value, type });
   }
 
   // 
@@ -203,10 +203,10 @@ class RGBBulbDevice extends UnifiedLightBase {
 
     // Convert Kelvin to Tuya value (0-1000 scale, inverted)
     // 6500K = 0 (cold), 2000K = 1000 (warm)
-    const tuyaValue = Math.round(((6500 -safeParse(kelvin),safeMultiply(4500)), 1000));
+    const tuyaValue = Math.round(safeMultiply(safeDivide(6500 - kelvin, 4500), 1000));
 
     // Also convert to Homey light_temperature (0 = warm, 1 = cold)
-    const homeyValue = (kelvin -safeParse(2000), 4500);
+    const homeyValue = kelvin - 2000 * 4500;
 
     this.log(`[RGB]  Setting color temp: ${kelvin}K (Tuya: ${tuyaValue}, Homey: ${homeyValue.toFixed(2)})`);
 
@@ -217,7 +217,7 @@ class RGBBulbDevice extends UnifiedLightBase {
     await this._sendTuyaDP(4, tuyaValue, 'value');
 
     // Update Homey capability
-    await this.setCapabilityValue('light_temperature', parseFloat(homeyValue)).catch(() => { });
+    await this.setCapabilityValue('light_temperature', parseFloat(homeyValue).catch(() => { }));
     await this.setCapabilityValue('light_mode', 'temperature').catch(() => { });
   }
 
@@ -252,7 +252,7 @@ class RGBBulbDevice extends UnifiedLightBase {
    */
   async _setPowerOnBehavior(behavior) {
     const values = { off: 0, on: 1, previous: 2 };
-    const value = values[behavior] ?? 2 ;
+    const value = values[behavior] ?? 2;
     this.log(`[RGB]  Setting power_on_behavior: ${behavior} (${value})`);
     await this._sendTuyaDP(21, value, 'enum');
   }
@@ -270,7 +270,7 @@ class RGBBulbDevice extends UnifiedLightBase {
    * Get transition time from settings
    */
   get transitionTime() {
-    return this._transitionTime ?? this.getSetting('transition_time') ?? 0.4 ;
+    return this._transitionTime ?? this.getSetting('transition_time' ) ?? 0.4;
   }
 
 

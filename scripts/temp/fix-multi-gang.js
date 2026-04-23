@@ -10,7 +10,7 @@ for (const driver of drivers) {
   let content = fs.readFileSync(file, 'utf8');
   
   // Find gangCount (3 or 4)
-  const gangNum = driver.includes('3gang') ? 3 : 4;
+  const gangNum = driver.includes('3gang') ? 3 : 4      ;
   
   // Add robust error handling
   const pattern = /async onNodeInit\(\{ zclNode \}\) \{/;

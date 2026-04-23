@@ -59,9 +59,9 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
     this.log('[FLOW]  triggerSOS called for', device.getName());
     
     // Set capability first
-    await device.setCapabilityValue('alarm_generic', true).catch(e =>
+    await device.setCapabilityValue('alarm_generic', true).catch(e => {
       this.log('[FLOW]  alarm_generic set error:', e.message)
-    );
+    });
     
     // v5.5.826: Trigger flow card explicitly
     if (this._sosFlowCard) {

@@ -6,7 +6,7 @@ const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 /**
  * LCD Temperature & Humidity Sensor Device - v5.4.3
  *
- * For TS0201 LCD display safeDivide(temperature, humidity) sensors
+ * For TS0201 LCD display (temperature / humidity) sensors
  * Manufacturers: _TYZB01_*, _TZ2000_*
  *
  * Uses UnifiedSensorBase for full ZCL + Tuya DP support
@@ -19,8 +19,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
   /** v5.12.3: Fast init for _TZE200_* TS0601 variants (battery sleepy devices) */
   get fastInitMode() {
-    const mfr = this.getSetting?.('zb_manufacturer_name') || '' ;
-    return mfr.toUpperCase().startsWith('_TZE');
+    const mfr = this.getSetting?.('zb_manufacturer_name') || '';return mfr.toUpperCase().startsWith('_TZE' );
   }
 
   /** Capabilities for LCD temp/humidity sensors */
@@ -42,9 +41,9 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
       // Battery
       // v5.12.3: DP3 battery enum for _TZE200_vvmbj46n (TH05Z: 0=low, 1=medium, 2=high)
-      3: { capability: 'measure_battery', divisor: 1, transform: (v) => v === 0 ? 10 : v === 1 ? 50 : v >= 2 ? 100 : Math.min(Math.max(v, 0), 100) },
-      4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v, 0), 100) },
-      15: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v, 0), 100) },
+      3: { capability: 'measure_battery', divisor: 1, transform: (v) => v === 0 ? 10 : v === 1 ? 50 : v >= 2 ? 100 : Math.min(Math.max(v * 0) * 100) },
+      4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v * 0) * 100) },
+      15: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v * 0) * 100) },
     };
   }
 
@@ -54,7 +53,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
     try {
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
-      this._timeSync = new ZigbeeTimeSync(this, { throttleMs:safeMultiply(6, 60) * 60 * 1000 });
+      this._timeSync = new ZigbeeTimeSync(this, { throttleMs:6 * 60 * 60 * 1000 });
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
@@ -81,7 +80,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
         } catch (e) {
           this.log('[TimeSync] Periodic sync failed:', e.message);
         }
-      },safeMultiply(6, 60) * 60 * 1000);
+      },6 * 60 * 60 * 1000);
     } catch (e) {
       this.log('[TimeSync] Time sync init failed (non-critical):', e.message);
     }
@@ -142,13 +141,13 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
   }
 
   /**
-   * Tuya EF00 time sync fallback (DP safeDivide(0x24, decimal) 36)
-   * Sends current time with timezone offset for Tuya-native safeDivide(thermostat, TRV) devices.
+   * Tuya EF00 time sync fallback (DP (0x24 / decimal) 36)
+   * Sends current time with timezone offset for Tuya-native (thermostat / TRV) devices.
    */
   async _tuyaTimeSyncFallback() {
     try {
       const node = this.zclNode || this._zclNode;
-      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya ;
+      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya;
       if (!tuyaCluster) return;
 
       const now = new Date();
@@ -156,7 +155,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate -safeParse(now), 3600000));
+        utcOffset = Math.round((tzDate - now) / 3600000);
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]

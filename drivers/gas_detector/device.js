@@ -30,9 +30,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
         transform: (v) => v === 1 || v === true || v === 'alarm'
       },
       // DP2: Gas concentration value (LEL %)
-      2: {
-        capability,
-        internal: 'gas_value',
+      2: { internal: true, type: 'gas_value',
         transform: (v) => {
           device.log(`[GAS]  Gas concentration: ${v} LEL%`);
           // Store for diagnostics, trigger alarm if high
@@ -44,27 +42,21 @@ class GasDetectorDevice extends UnifiedSensorBase {
         }
       },
       // DP7: Alarm duration time (seconds)
-      7: {
-        capability,
-        internal: 'alarm_time',
+      7: { internal: true, type: 'alarm_time',
         transform: (v) => {
           device.log(`[GAS]  Alarm time: ${v}s`);
           return v;
         }
       },
       // DP8: Self-test trigger
-      8: {
-        capability,
-        internal: 'self_test',
+      8: { internal: true, type: 'self_test',
         transform: (v) => {
           device.log(`[GAS]  Self-test: ${v ? 'active' : 'inactive'}`);
           return v === 1 || v === true;
         }
       },
       // DP9: Self-test result
-      9: {
-        capability,
-        internal: 'self_test_result',
+      9: { internal: true, type: 'self_test_result',
         transform: (v) => {
           const results = ['checking', 'success', 'failure', 'others'];
           const result = results[v] || 'unknown';
@@ -73,9 +65,7 @@ class GasDetectorDevice extends UnifiedSensorBase {
         }
       },
       // DP10: Preheat status (sensor warming up)
-      10: {
-        capability,
-        internal: 'preheat',
+      10: { internal: true, type: 'preheat',
         transform: (v) => {
           const preheating = v === 1 || v === true;
           device.log(`[GAS]  Preheat: ${preheating ? 'warming up' : 'ready'}`);
@@ -83,18 +73,14 @@ class GasDetectorDevice extends UnifiedSensorBase {
         }
       },
       // DP16: Silence alarm
-      16: {
-        capability,
-        internal: 'silence',
+      16: { internal: true, type: 'silence',
         transform: (v) => {
           device.log(`[GAS]  Silence: ${v ? 'muted' : 'unmuted'}`);
           return v === 1 || v === true;
         }
       },
       // DP21: Alarm ringtone selection
-      21: {
-        capability,
-        internal: 'alarm_ringtone',
+      21: { internal: true, type: 'alarm_ringtone',
         transform: (v) => {
           const melodies = ['melody_1', 'melody_2', 'melody_3', 'melody_4', 'melody_5'];
           const melody = melodies[v] || 'melody_1';

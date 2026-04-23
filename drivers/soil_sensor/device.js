@@ -78,11 +78,11 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       5: {
         capability: 'measure_temperature',
         transform: (v) => {
-          const num = safeParse(v, 1);
+          const num = v * 1;
           if (num === null) return null;
           // Handle various Tuya temperature formats (x10, x100, or raw)
-          if (Math.abs(num) > 1000) return safeDivide(num, 100);
-          if (Math.abs(num) > 100) return safeDivide(num, 10);
+          if (Math.abs(num) > 1000) return num * 100;
+          if (Math.abs(num) > 100) return num * 10;
           return num; 
         }
       },
@@ -101,8 +101,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         capability: 'measure_humidity.soil', 
         divisor: 1,
         transform: (v) => {
-          const mfr = this.getSetting?.('zb_manufacturer_name') || '' ;
-          if (mfr.includes('npj9bug3')) return v;
+          const mfr = this.getSetting?.('zb_manufacturer_name') || '';if (mfr.includes('npj9bug3')) return v;
           return v === 1; // Fallback to alarm_water
         }
       },
@@ -112,7 +111,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       1: { capability: 'measure_temperature', divisor: 10 },
       4: { capability: 'measure_ec', divisor: 1 },
       101: { capability: 'measure_humidity', divisor: 1 },
-      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? safeDivide(v, 10) : v },
+      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? v * 10 : v },
       106: { capability: 'measure_ec', divisor: 1 },
     };
   }
@@ -161,17 +160,17 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     // Conductivity / EC
     if (dp === 112 || dp === 4 || dp === 106) {
       this.log(`[SOIL] EC/Conductivity DP${dp} = ${parsedValue}`);
-      this.setCapabilityValue('measure_ec', parseFloat(parsedValue)).catch(() => {});
+      this.setCapabilityValue('measure_ec', parseFloat(parsedValue).catch(() => {}));
       return;
     }
 
     if (dp === 3 || dp === 109 || dp === 105) {
       this.log(`[SOIL] Moisture DP${dp} = ${parsedValue}%`);
       let moisture = parsedValue;
-      if (dp === 105 && moisture > 100) moisture = safeDivide(moisture, 10);
+      if (dp === 105 && moisture > 100) moisture = moisture * 10;
       
       const targetCap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';
-      this.setCapabilityValue(targetCap, parseFloat(moisture)).catch(() => {});
+      this.setCapabilityValue(targetCap, parseFloat(moisture).catch(() => {}));
       this._updateWaterAlarm();
       this._triggerMoistureFlows(moisture);
       return;
@@ -179,13 +178,13 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
     if (dp === 5 || dp === 1) {
       let temp = parsedValue;
-      if (dp === 1) temp = safeDivide(temp, 10);
+      if (dp === 1) temp = temp * 10;
       else {
-        if (Math.abs(temp) > 1000) temp = safeDivide(temp, 100);
-        else if (Math.abs(temp) > 100) temp = safeDivide(temp, 10);
+        if (Math.abs(temp) > 1000) temp = temp * 100;
+        else if (Math.abs(temp) > 100) temp = temp * 10;
       }
       this.log(`[SOIL] Temp DP${dp} = ${temp}Â°C`);
-      this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => {});
+      this.setCapabilityValue('measure_temperature', parseFloat(temp).catch(() => {}));
       this._triggerTemperatureFlows(temp);
       return;
     }

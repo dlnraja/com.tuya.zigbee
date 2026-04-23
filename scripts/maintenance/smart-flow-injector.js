@@ -56,7 +56,7 @@ async function main() {
 
       // Inject Native Adaptive Lighting Support Metadata
       if (compose.capabilities?.includes('light_color_temp')) {
-         if (!compose.metadata) compose.metadata = {} ;
+         if (!compose.metadata ) compose.metadata = {};
          compose.metadata.homey = { ...compose.metadata.homey, 'natural_light': true };
       }
 

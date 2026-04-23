@@ -33,7 +33,7 @@ class SirenDevice extends UnifiedPlugBase {
       // v5.5.130: VOLUME & SOUND from Zigbee2MQTT
       // 
       // Volume (0=low, 1=medium, 2=high or 0-100)
-      5: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (safeParse(v, 100))) },
+      5: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (v * 100)) },
       // Duration (60-3600 seconds)
       7: { capability, setting: 'duration', writable: true },
       // Melody/Ringtone (melody_1 to melody_5)
@@ -44,14 +44,14 @@ class SirenDevice extends UnifiedPlugBase {
       // 
       // BATTERY
       // 
-      14: { capability, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolÃ¨te
+      14: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolÃ¨te
       15: { capability: 'measure_battery', divisor: 1 },
 
       // 
       // ENVIRONMENTAL (some sirens have T/H sensors)
       // 
       104: { capability: 'onoff', transform: (v) => !!v },
-      116: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (safeParse(v, 100))) },
+      116: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (v * 100)) },
       103: { capability, setting: 'duration', writable: true },
       101: { capability: 'measure_temperature', divisor: 10 },
       102: { capability: 'measure_humidity', divisor: 1 },
@@ -113,10 +113,10 @@ class SirenDevice extends UnifiedPlugBase {
   }
 
   async _setupIasWD(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1] ;
+    const ep1 = zclNode?.endpoints?.[1];
     try {
-      this._iasWd = ep1?.clusters?.ssIasWd || ep1?.clusters?.iasWd ;
-      if (this._iasWd) this.log('[SIREN]  IAS WD cluster available');
+      this._iasWd = ep1?.clusters?.ssIasWd || ep1?.clusters?.iasWd;
+      if (this._iasWd) this.log('[SIREN]  IAS WD cluster available' );
     } catch (e) { /* ignore */ }
   }
 
@@ -129,7 +129,7 @@ class SirenDevice extends UnifiedPlugBase {
     // v5.11.27: TS0601=DP13, NEO=DP104, TS0216=DP1
     try { await this._sendTuyaDP(13, !!value, 'bool'); } catch (e) {}
     try { await this._sendTuyaDP(104, !!value, 'bool'); } catch (e) {}
-    await super._setOnOff?.(value) ;
+    await super._setOnOff?.(value );
 
     // Also trigger IAS WD if available
     if (this._iasWd?.startWarning) {
@@ -147,15 +147,15 @@ class SirenDevice extends UnifiedPlugBase {
   async _sendTuyaDP(dp, value, type) {
     // v5.11.27: Use tuyaEF00Manager from base class
     if (this.tuyaEF00Manager?.sendDatapoint) {
-      await this.tuyaEF00Manager.sendDatapoint(dp, value, type) ;
+      await this.tuyaEF00Manager.sendDatapoint(dp, value, type);
       return;
     }
     // Fallback: direct cluster write
-    const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya ;
+    const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
     if (tuya?.datapoint) {
-      await tuya.datapoint({ dp, value, type }) ;
+      await tuya.datapoint({ dp, value, type });
     } else {
-      this.log(`[SIREN]  No Tuya DP transport for DP${dp}`);
+      this.log(`[SIREN]  No Tuya DP transport for DP${dp}` );
     }
   }
 

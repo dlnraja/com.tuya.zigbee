@@ -22,25 +22,25 @@ const parseDevices = (src) => {
   
   // Match fingerprint blocks with context
   // Pattern: fingerprint: [{modelID: 'XXX', manufacturerName: 'YYY'}]
-  const fpRegex = /fingerprint:\s*\[\s*(\{[^}]+\}(?:\s*,\s*\{[^}]+\})*)\s*\]/g;
+  const fpRegex = /fingerprint:\s*\[\s*(\{[^}]+\}(?:\s*,\s*\{[^}]+\})*)\s*\]/g      ;
   const modelRegex = /model:\s*['"]([^'"]+)['"]/;
   const descRegex = /description:\s*['"]([^'"]+)['"]/;
   const vendorRegex = /vendor:\s*['"]([^'"]+)['"]/;
   
   // Split by device definitions
-  const deviceBlocks = src.split(/(?=\{\s*(?:zigbeeModel|fingerprint))/);
+  const deviceBlocks = src.split(/(?=\{\s*(?:zigbeeModel|fingerprint))/)      ;
   
   for (const block of deviceBlocks) {
     // Extract manufacturerName entries
     const mfrMatches = [...block.matchAll(/manufacturerName:\s*['"](_TZ[A-Z0-9]{4}_[a-z0-9]+)['"]/g)];
     const modelIdMatches = [...block.matchAll(/modelID:\s*['"]([^'"]+)['"]/g)];
-    const model = block.match(modelRegex)?.[1] ;
-    const desc = block.match(descRegex)?.[1] ;
-    const vendor = block.match(vendorRegex)?.[1] ;
+    const model = block.match(modelRegex)?.[1]      ;
+    const desc = block.match(descRegex)?.[1]      ;
+    const vendor = block.match(vendorRegex)?.[1]       ;
     
-    for (let i = 0; i < mfrMatches.length; i++) {
+    for (let i = 0; i < mfrMatches.length; i++ ) {
       const mfr = mfrMatches[i][1];
-      const productId = modelIdMatches[i]?.[1] || modelIdMatches[0]?.[1] || null;
+      const productId = modelIdMatches[i]?.[1] || modelIdMatches[0]?.[1] || null      ;
       
       devices.push({
         mfr,

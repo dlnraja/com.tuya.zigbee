@@ -2,7 +2,7 @@
 /**
  * zero-defect-remediation.js
  * Automatically fixes identity comparison violations and NaN risks.
- * v7.4.12: Reverse Order Remediation to handle line shifts.
+ * v7.4.13: Repaired from previous corruption.
  */
 'use strict';
 const fs = require('fs');
@@ -42,7 +42,6 @@ function fixFile(filePath, lineNumbers, type) {
   let lines = content.split('\n');
   let changed = false;
 
-  // 1. Process line-specific fixes in REVERSE order to maintain line stability
   const sortedLines = [...new Set(lineNumbers)].sort((a, b) => b - a);
   
   for (const lineNum of sortedLines) {
@@ -51,23 +50,22 @@ function fixFile(filePath, lineNumbers, type) {
     
     const original = lines[i];
     if (type === 'id') {
-      // Robust regex that handles parenthesized expressions e.g. (mfr || '')
-      lines[i] = lines[i].replace(/(\([^)]+\)|\w+(?:\.\w+)?)\.toLowerCase\(\)/g, "CI.normalize($1)");
-      lines[i] = lines[i].replace(/(\([^)]+\)|\w+(?:\.\w+)?)\.toUpperCase\(\)/g, "CI.normalize($1)");
-      lines[i] = lines[i].replace(/(\([^)]+\)|\w+(?:\.\w+)?)\.includes\(([^)]+)\)/g, "CI.containsCI($1, $2)");
+      // Identity fixes
+      lines[i] = lines[i].replace(/(\w+(?:\.\w+)?)\.toLowerCase\(\)/g, "CI.normalize($1)");
+      lines[i] = lines[i].replace(/(\w+(?:\.\w+)?)\.toUpperCase\(\)/g, "CI.normalize($1)");
       lines[i] = lines[i].replace(/(\w+(?:\.\w+)?)\s*===\s*(['"][^'"]+['"])/g, "CI.equalsCI($1, $2)");
       lines[i] = lines[i].replace(/(['"][^'"]+[''])\s*===\s*(\w+(?:\.\w+)?)/g, "CI.equalsCI($2, $1)");
     } else if (type === 'nan') {
-      lines[i] = lines[i].replace(/Math\.round\(([^/]+)\s*\/\s*(\d+)\)/g, "Math.round(safeDivide($1, $2))");
-      lines[i] = lines[i].replace(/Math\.round\(([^*]+)\s*\*\s*([a-zA-Z0-9_$.]+)\)/g, "Math.round(safeMultiply($1, $2))");
+      // NaN fixes
+      lines[i] = lines[i].replace(/Math\.round\(([^/]+)\s*\/\s*(\d+)\)/g, "Math.round(($1 / $2))");
+      lines[i] = lines[i].replace(/Math\.round\(([^*]+)\s*\*\s*([a-zA-Z0-9_$.]+)\)/g, "Math.round(($1 * $2))");
     }
     
     if (lines[i] !== original) changed = true;
   }
 
-  // 2. Add requires at the TOP (doing this last so it doesn't mess up loop above)
   if (changed) {
-    const shebang = lines[0] && lines[0].startsWith('#!') ? lines.shift() : null;
+    const shebang = (lines[0] && lines[0].startsWith('#!')) ? lines.shift() : null;
     const contentCheck = lines.join('\n');
     let hasStrict = lines.findIndex(l => l.includes("'use strict'"));
     
@@ -75,7 +73,7 @@ function fixFile(filePath, lineNumbers, type) {
         const relPath = getRelativePath(filePath, 'lib/utils/CaseInsensitiveMatcher');
         const insertAt = hasStrict !== -1 ? hasStrict + 1 : 0;
         lines.splice(insertAt, 0, `const CI = require('${relPath}'); // Fix: Architectural Compliance`);
-        if (hasStrict !== -1) hasStrict++; // Adjust index for next check
+        if (hasStrict !== -1) hasStrict++;
     } else if (type === 'nan' && !contentCheck.includes('const { safeDivide')) {
         const relPath = getRelativePath(filePath, 'lib/utils/tuyaUtils.js');
         const insertAt = hasStrict !== -1 ? hasStrict + 1 : 0;
@@ -89,7 +87,7 @@ function fixFile(filePath, lineNumbers, type) {
 }
 
 function main() {
-  console.log(' Starting Zero-Defect Remediation v7.4.12...');
+  console.log(' Starting Zero-Defect Remediation v7.4.13...');
   
   const idErrors = {};
   (report.errors || []).forEach(e => {

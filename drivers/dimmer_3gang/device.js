@@ -34,7 +34,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
           this._markAppCommand();
           const targetValue = (item.type === 'bool') ? (value ? 1 : 0) : Math.round(value * 1000);
           this.log(`Sending DP${item.dp} = ${targetValue}`);
-        });
+      });
       }
     }
   }

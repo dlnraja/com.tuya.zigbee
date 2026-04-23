@@ -6,21 +6,21 @@ class EweLinkBulbDevice extends EweLinkLocalDevice {
   get stateMappings() {
     return {
       switch: { capability: 'onoff', transform: v => v === 'on' },
-      brightness: { capability: 'dim', transform: v => safeDivide(v, 100) },
-      colorR: { capability: null },
-      colorG: { capability: null },
-      colorB: { capability: null },
-      mode: { capability: null }
+      brightness: { capability: 'dim', transform: v => v * 100 },
+      colorR: { capability: 'unknown' },
+      colorG: { capability: 'unknown' },
+      colorB: { capability: 'unknown' },
+      mode: { capability: 'unknown' }
     };
   }
 
   _registerCapListeners() {
     this.registerCapabilityListener('onoff', async v => {
       await this._client.setSwitch(v);
-    });
+      });
     this.registerCapabilityListener('dim', async v => {
-      await this._client._send('/zeroconf/dimmable', { brightness: Math.round(safeMultiply(v, 100)) });
-    });
+      await this._client._send('/zeroconf/dimmable', { brightness: Math.round(v * 100) });
+      });
   }
 
   async onInit() {

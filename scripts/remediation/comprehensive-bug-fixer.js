@@ -55,9 +55,9 @@ class ComprehensiveBugFixer {
     
     // Multi-gang switch patterns
     this.multiGangRules = {
-      capabilityPattern: /^onoff(?:\.gang[2-4])?$/,
+      capabilityPattern: /^onoff(?:\.gang[2-4])? $/ ,
       endpointMapping: { 'EP1': 'gang1', 'EP2': 'gang2', 'EP3': 'gang3', 'EP4': 'gang4' },
-      flowIDPattern: /^([^_]+)_(?:physical_)?gang(\d+)_(on|off)$/,
+      flowIDPattern: /^([^_]+)_(?:physical_)? gang(\d+)_(on|off )$/ ,
       broadcastWindow: 2000,  // G4: 2s filter window
     };
     
@@ -69,7 +69,7 @@ class ComprehensiveBugFixer {
   }
 
   log(msg, type = 'info') {
-    const prefix = type === 'error' ? '❌' : type === 'warning' ? '⚠️' : type === 'success' ? '✅' : '📋';
+    const prefix = type === 'error' ? '❌' : type === 'warning' ? '⚠️' : type === 'success' ? '✅' : '📋'      ;
     console.log(`${prefix} ${msg}`);
   }
 
@@ -521,4 +521,4 @@ class ComprehensiveBugFixer {
 // Run
 const fixer = new ComprehensiveBugFixer();
 const result = fixer.scan();
-process.exit(result ? 0 : 0);
+process.exit(result ? 0 : 0)      ;

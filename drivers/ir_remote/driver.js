@@ -26,7 +26,7 @@ class IRRemoteDriver extends Driver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('ir_remote_send_code', 'action');
+      const card = const card = this.homey.flow.getActionCard('ir_remote_send_code');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -37,7 +37,7 @@ class IRRemoteDriver extends Driver {
     } catch (err) { this.error(`Action ir_remote_send_code: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('ir_remote_start_learning', 'action');
+      const card = const card = this.homey.flow.getActionCard('ir_remote_start_learning');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

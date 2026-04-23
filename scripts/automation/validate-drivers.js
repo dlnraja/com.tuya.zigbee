@@ -73,4 +73,4 @@ for (const [name, d] of drivers) {
 }
 
 const s = summary();
-process.exit(s.errors > 0 ? 1 : 0);
+process.exit(s.errors > 0 ? 1 : 0)      ;

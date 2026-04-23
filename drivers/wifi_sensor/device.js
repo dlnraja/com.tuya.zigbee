@@ -7,18 +7,18 @@ class WiFiSensorDevice extends TuyaLocalDevice {
     return {
       '1':  { capability: 'measure_temperature', divisor: 10 },
       '2':  { capability: 'measure_humidity' },
-      '3':  { capability },
+      '3':  { capability: 'unknown' },
       '4':  { capability: 'measure_battery' },
-      '7':  { capability },
-      '9':  { capability },
-      '10': { capability },
+      '7':  { capability: 'unknown' },
+      '9':  { capability: 'unknown' },
+      '10': { capability: 'unknown' },
       '14': { capability: 'alarm_generic',
         transform: (v) => v !== 'normal' && v !== 0 },
       '15': { capability: 'alarm_generic.humidity',
         transform: (v) => v !== 'normal' && v !== 0 },
-      '18': { capability },
-      '19': { capability },
-      '20': { capability },
+      '18': { capability: 'unknown' },
+      '19': { capability: 'unknown' },
+      '20': { capability: 'unknown' },
     };
   }
 

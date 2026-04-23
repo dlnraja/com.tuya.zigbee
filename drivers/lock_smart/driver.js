@@ -30,7 +30,7 @@ class LockSmartDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('lock_smart_is_locked', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('lock_smart_is_locked');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -40,7 +40,7 @@ class LockSmartDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition lock_smart_is_locked: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('lock_smart_tamper_active', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('lock_smart_tamper_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -51,7 +51,7 @@ class LockSmartDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('lock_smart_lock', 'action');
+      const card = const card = this.homey.flow.getActionCard('lock_smart_lock');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -63,7 +63,7 @@ class LockSmartDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action lock_smart_lock: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('lock_smart_unlock', 'action');
+      const card = const card = this.homey.flow.getActionCard('lock_smart_unlock');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

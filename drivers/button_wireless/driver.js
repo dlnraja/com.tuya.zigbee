@@ -30,13 +30,13 @@ class ButtonWirelessDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('button_wireless_battery_above', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('button_wireless_battery_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.threshold || 20);
-        });
+      });
       }
     } catch (err) { this.error(`Condition button_wireless_battery_above: ${err.message}`); }
 

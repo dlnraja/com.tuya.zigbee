@@ -21,8 +21,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
   /** v7.4.4: Intelligence for _TZE284_ sensors (No humidity divisor) */
   get isUniversalModel() {
-    const mfr = this.getSetting?.('zb_manufacturer_name') || '' ;
-    return mfr.toUpperCase().includes('VVM'); // _TZE284_vvmbj46n
+    const mfr = this.getSetting?.('zb_manufacturer_name') || '';return mfr.toUpperCase().includes('VVM' ); // _TZE284_vvmbj46n
   }
 
   /** Capabilities for LCD temp/humidity sensors */
@@ -46,9 +45,9 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
 
       // Battery
       // v5.12.3: DP 3 battery enum (0=low, 1=med, 2=high)
-      3: { capability: 'measure_battery', divisor: 1, transform: (v) => v === 0 ? 10 : v === 1 ? 50 : v >= 2 ? 100 : Math.min(Math.max(v, 0), 100) },
-      4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v, 0), 100) },
-      15: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v, 0), 100) },
+      3: { capability: 'measure_battery', divisor: 1, transform: (v) => v === 0 ? 10 : v === 1 ? 50 : v >= 2 ? 100 : Math.min(Math.max(v * 0) * 100) },
+      4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v * 0) * 100) },
+      15: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v * 0) * 100) },
     };
   }
 
@@ -67,7 +66,7 @@ class LCDTempHumidSensorDevice extends UnifiedSensorBase {
       }, 5000);
       
       // Periodic sync every 4 hours for battery sensors
-      this._timeSyncEngine.schedulePeriodicSync(zclNode,safeMultiply(4, 60) * 60 * 1000);
+      this._timeSyncEngine.schedulePeriodicSync(zclNode,4 * 60 * 60 * 1000);
     } catch (e) {
       this.log('[LCD]  Time sync engine failed:', e.message);
     }

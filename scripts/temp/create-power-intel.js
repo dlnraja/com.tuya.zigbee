@@ -81,7 +81,7 @@ class PowerSourceIntelligence {
     }
 
     // 3. Driver Type Inference
-    const driverId = (device.driver && device.driver.id) ? device.driver.id : '';
+    const driverId = (device.driver && device.driver.id) ? device.driver.id : ''      ;
     const strongMainsDrivers = [
       'switch_1gang', 'switch_2gang', 'switch_3gang', 'switch_4gang',
       'dimmer_wall_1gang', 'dimmer_wall_2gang', 'dimmer_wall_3gang',
@@ -138,7 +138,7 @@ class PowerSourceIntelligence {
     const isMains = powerSource === 'mains' && confidence >= 40;
     
     if (device.log) {
-      device.log('[POWER-INTEL]  Detected Power Source: ' + (isMains ? 'MAINS/USB' : 'BATTERY') + ' (Confidence: ' + confidence + '%)');
+      device.log('[POWER-INTEL]  Detected Power Source: ' + (isMains ? 'MAINS/USB' : 'BATTERY') + ' (Confidence: ' + confidence + '%)')      ;
       reasons.forEach(r => device.log('[POWER-INTEL]  ' + r));
     }
 
@@ -173,8 +173,8 @@ class PowerSourceIntelligence {
       }
     } else {
       // It's battery powered. Add measure_battery if we are confident and driver supports it
-      const driverId = (device.driver && device.driver.id) ? device.driver.id : '';
-      const driverManifest = (device.driver && device.driver.manifest) ? device.driver.manifest : null;
+      const driverId = (device.driver && device.driver.id) ? device.driver.id : ''      ;
+      const driverManifest = (device.driver && device.driver.manifest) ? device.driver.manifest   :  null     ;
       
       if (intel.confidence >= 50 && driverManifest && driverManifest.capabilities && driverManifest.capabilities.includes('measure_battery')) {
         if (!device.hasCapability('measure_battery')) {

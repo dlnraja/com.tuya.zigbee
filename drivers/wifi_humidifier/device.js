@@ -6,17 +6,17 @@ class WiFiHumidifierDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '2':  { capability },
-      '3':  { capability },
-      '4':  { capability },
+      '2':  { capability: 'unknown' },
+      '3':  { capability: 'unknown' },
+      '4':  { capability: 'unknown' },
       '6':  { capability: 'measure_humidity' },
       '7':  { capability: 'measure_temperature', divisor: 10 },
-      '11': { capability },
-      '12': { capability },
-      '13': { capability },
+      '11': { capability: 'unknown' },
+      '12': { capability: 'unknown' },
+      '13': { capability: 'unknown' },
       '14': { capability: 'alarm_water' },
-      '15': { capability },
-      '101': { capability },
+      '15': { capability: 'unknown' },
+      '101': { capability: 'unknown' },
     };
   }
 

@@ -28,8 +28,8 @@ async function main() {
     if (!fs.existsSync(composePath)) continue;
     
     const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-    const mfrs = compose.zigbee?.manufacturerName || [] ;
-    const pids = compose.zigbee?.productId || [] ;
+    const mfrs = compose.zigbee?.manufacturerName || []      ;
+    const pids = compose.zigbee?.productId || []      ;
     
     for (const mfr of mfrs) {
       for (const pid of (pids.length ? pids : ['*'])) {

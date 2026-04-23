@@ -64,10 +64,8 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     // v5.7.9: Cache manufacturer from zclNode for profile detection
     this._cachedMfr = zclNode?.manufacturerName ||
                       this.getSetting('zb_manufacturer_name') ||
-                      this.getStoreValue('manufacturerName') || '' ;
-
-    await this._setupTuyaDP(zclNode);
-    await this._setupElectricalMeasurement(zclNode);
+                      this.getStoreValue('manufacturerName') || '';await this._setupTuyaDP(zclNode);
+    await this._setupElectricalMeasurement(zclNode );
 
     const profile = this.meterProfile;
     this.log(`[METER] v5.7.9  Ready (profile: ${profile}, mfr: ${this._cachedMfr || 'unknown'})`);
@@ -77,20 +75,20 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820] ;
+    const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
     if (emCluster) {
       this.log('[EM] Electrical Measurement cluster available');
 
       emCluster.on('attr.activePower', (value) => {
-        this.setCapabilityValue('measure_power', safeParse(value, 10)).catch(this.error);
+        this.setCapabilityValue('measure_power', value * 10).catch(this.error);
       });
 
       emCluster.on('attr.rmsVoltage', (value) => {
-        this.setCapabilityValue('measure_voltage', safeParse(value, 10)).catch(this.error);
+        this.setCapabilityValue('measure_voltage', value * 10).catch(this.error);
       });
 
       emCluster.on('attr.rmsCurrent', (value) => {
-        this.setCapabilityValue('measure_current', (safeParse(value,safeMultiply(1000)), this)._ctRatio).catch(this.error);
+        this.setCapabilityValue('measure_current', safeParse(value, 1000)._ctRatio).catch(this.error);
       });
     }
   }
@@ -99,10 +97,10 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184] ;
+    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
     if (!tuyaCluster) return;
 
-    this.log('[TUYA] DP cluster found');
+    this.log('[TUYA] DP cluster found' );
 
     // v5.7.40: FIX - Parse data buffer correctly from Tuya events
     // Events have structure: { status, transid, dp, datatype, length, data }
@@ -119,7 +117,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       
       // Parse based on Tuya datatype
       let value;
-      const buf = Buffer.isBuffer(data) ? data : (data.data ? Buffer.from(data.data)) : null;
+      const buf = Buffer.isBuffer(data) ? data : (data.data ? Buffer.from(data.data) : null);
       
       if (buf && buf.length > 0) {
         switch (datatype) {
@@ -155,11 +153,11 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     tuyaCluster.on('response', (r) => {
       const { dp, value } = parseValue(r);
       this._handleDP(dp, value);
-    });
+      });
     tuyaCluster.on('reporting', (r) => {
       const { dp, value } = parseValue(r);
       this._handleDP(dp, value);
-    });
+      });
     tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
   }
 
@@ -206,7 +204,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     if (profile === 'pj1203a') {
       switch (dp) {
       case 101: // Power A (W Ã·10)
-        const powerA = safeParse(value, 10);
+        const powerA = value * 10;
         if (this.hasCapability('measure_power.phase1')) {
           this.setCapabilityValue('measure_power.phase1', powerA).catch(this.error);
         }
@@ -226,7 +224,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 105: // Power B (W Ã·10)
-        const powerB = safeParse(value, 10);
+        const powerB = value * 10;
         if (this.hasCapability('measure_power.phase2')) {
           this.setCapabilityValue('measure_power.phase2', powerB).catch(this.error);
         }
@@ -236,24 +234,24 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 106: // Energy forward A (kWh Ã·100)
-        this._energyForwardA = safeParse(value, 100);
+        this._energyForwardA = value * 100;
         this.log(`[PJ1203A]  Energy Forward A: ${this._energyForwardA} kWh`);
         this._updateTotalEnergy();
         break;
 
       case 107: // Energy reverse A (kWh Ã·100) - produced/exported
-        this._energyReverseA = safeParse(value, 100);
+        this._energyReverseA = value * 100;
         this.log(`[PJ1203A]  Energy Reverse A: ${this._energyReverseA} kWh`);
         break;
 
       case 108: // Energy forward B (kWh Ã·100)
-        this._energyForwardB = safeParse(value, 100);
+        this._energyForwardB = value * 100;
         this.log(`[PJ1203A]  Energy Forward B: ${this._energyForwardB} kWh`);
         this._updateTotalEnergy();
         break;
 
       case 109: // Energy reverse B (kWh Ã·100) - produced/exported
-        this._energyReverseB = safeParse(value, 100);
+        this._energyReverseB = value * 100;
         this.log(`[PJ1203A]  Energy Reverse B: ${this._energyReverseB} kWh`);
         break;
 
@@ -266,12 +264,12 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 112: // Voltage (V Ã·10)
-        this.setCapabilityValue('measure_voltage', safeParse(value, 10)).catch(this.error);
+        this.setCapabilityValue('measure_voltage', value * 10).catch(this.error);
         this.log(`[PJ1203A]  Voltage: ${value/10} V`);
         break;
 
       case 113: // Current A (A Ã·1000)
-        this.setCapabilityValue('measure_current', (safeParse(value,safeMultiply(1000)), this)._ctRatio).catch(this.error);
+        this.setCapabilityValue('measure_current', safeParse(value, 1000)._ctRatio).catch(this.error);
         this.log(`[PJ1203A]  Current A: ${value/1000} A`);
         break;
 
@@ -280,7 +278,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 115: // Power AB Total (W Ã·10)
-        const totalPower = safeParse(value, 10);
+        const totalPower = value * 10;
         this.setCapabilityValue('measure_power', totalPower).catch(this.error);
         this.log(`[PJ1203A]  Total Power: ${totalPower} W`);
         break;
@@ -302,7 +300,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     // 
     switch (dp) {
     case 1: //Total energy (kWh*100)
-      this.setCapabilityValue('meter_power', safeParse(value, 100)).catch(this.error);
+      this.setCapabilityValue('meter_power', value * 100).catch(this.error);
       break;
 
     case 16: // Phase 1 power (W)
@@ -327,19 +325,19 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       break;
 
     case 19: //Voltage (V*10)
-      this.setCapabilityValue('measure_voltage', safeParse(value, 10)).catch(this.error);
+      this.setCapabilityValue('measure_voltage', value * 10).catch(this.error);
       break;
 
     case 20: //Current phase 1 (A*1000)
     case 21: // Current phase 2
     case 22: // Current phase 3
-      this.setCapabilityValue('measure_current', (safeParse(value,safeMultiply(1000)), this)._ctRatio).catch(this.error);
+      this.setCapabilityValue('measure_current', safeParse(value, 1000)._ctRatio).catch(this.error);
       break;
 
       // v5.8.9: FALLBACK - Handle PJ-1203A DPs even when profile detection fails
     case 101: // Total power (W) - 3phase OR Power A (W Ã·10) - PJ-1203A
       // Try PJ-1203A scaling first if value seems too high
-      const powerVal = value > 10000 ? safeParse(value, 10) : value;
+      const powerVal = value > 10000 ? value * 10 : value;
       this.setCapabilityValue('measure_power', powerVal).catch(this.error);
       this.log(`[FALLBACK]  Power: ${powerVal} W (raw: ${value})`);
       break;
@@ -349,7 +347,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         // PJ-1203A direction (0 or 1)
         this.log(`[FALLBACK]  Direction A: ${value === 0 ? 'consuming' : 'producing'}`);
       } else {
-        this.setCapabilityValue('meter_power', safeParse(value, 100)).catch(this.error);
+        this.setCapabilityValue('meter_power', value * 100).catch(this.error);
       }
       break;
 
@@ -366,12 +364,12 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       break;
 
     case 112: // PJ-1203A Voltage (V Ã·10)
-      this.setCapabilityValue('measure_voltage', safeParse(value, 10)).catch(this.error);
+      this.setCapabilityValue('measure_voltage', value * 10).catch(this.error);
       this.log(`[FALLBACK]  Voltage: ${value/10} V`);
       break;
 
     case 113: // PJ-1203A Current A (A Ã·1000)
-      this.setCapabilityValue('measure_current', (safeParse(value,safeMultiply(1000)), this)._ctRatio).catch(this.error);
+      this.setCapabilityValue('measure_current', safeParse(value, 1000)._ctRatio).catch(this.error);
       this.log(`[FALLBACK]  Current A: ${value/1000} A`);
       break;
 
@@ -380,7 +378,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       break;
 
     case 115: // PJ-1203A Total Power (W Ã·10)
-      this.setCapabilityValue('measure_power', safeParse(value, 10)).catch(this.error);
+      this.setCapabilityValue('measure_power', value * 10).catch(this.error);
       this.log(`[FALLBACK]  Total Power: ${value/10} W`);
       break;
 

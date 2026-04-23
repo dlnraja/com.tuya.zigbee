@@ -68,7 +68,7 @@ function findConflicts(drivers) {
   const conflicts = [];
   for (const [key, drvs] of mfrPidMap) {
     if (drvs.length > 1) {
-      const [mfr, pid] = key.split('|');
+      const [mfr, pid] = key.split('|' );
       conflicts.push({ mfr, pid, drivers: drvs });
     }
   }

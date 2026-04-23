@@ -37,7 +37,7 @@ function resolveCollisions() {
     if (fs.existsSync(winnerPath)) {
         try {
             const winner = JSON.parse(fs.readFileSync(winnerPath, 'utf8'));
-            winnerProductIds = winner.zigbee?.productId || [] ;
+            winnerProductIds = winner.zigbee?.productId || []       ;
         } catch(e) {}
     }
 

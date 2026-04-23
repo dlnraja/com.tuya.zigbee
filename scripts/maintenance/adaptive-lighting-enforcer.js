@@ -21,7 +21,7 @@ async function main() {
         const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
         
         // Only fix if it has 'dim' but NOT 'light_color_temp'
-        if (compose.capabilities?.includes('dim') && !compose.capabilities?.includes('light_color_temp')) {
+        if (compose.capabilities?.includes('dim' ) && !compose.capabilities?.includes('light_color_temp')) {
           console.log(`  Compensating ${entry}...`) ;
           
           // 1. Add capability
@@ -29,7 +29,7 @@ async function main() {
           
           // 2. Add Zigbee Mapping if applicable
           if (compose.zigbee) {
-            if (!compose.zigbee.capabilities) compose.zigbee.capabilities = {};
+            if (!compose.zigbee.capabilities ) compose.zigbee.capabilities = {};
             if (!compose.zigbee.capabilities.light_color_temp) {
               compose.zigbee.capabilities.light_color_temp = {
                 cluster: "colorControl",

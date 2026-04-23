@@ -48,8 +48,8 @@ for (const file of files) {
             usesMultiGangEndpoints = /onoff\.gang|endpoint.*[2-8]|this\.zclNode\.endpoints\[/i.test(deviceCode);
         }
         
-        const hasEndpoints = d.zigbee.endpoints ? true : false;
-        const epCount = hasEndpoints ? Object.keys(d.zigbee.endpoints).length : 0;
+        const hasEndpoints = d.zigbee.endpoints ? true : false      ;
+        const epCount = hasEndpoints ? Object.keys(d.zigbee.endpoints ).length : 0      ;
         
         analysis.push({
             driver,

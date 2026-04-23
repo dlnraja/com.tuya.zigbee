@@ -55,17 +55,17 @@ let finalContent = newLines.join('\n');
 let previousContent;
 do {
   previousContent = finalContent;
-  finalContent = finalContent.replace(/\n### [^\n]+\n+(?=\n|### |## |---|$)/g, '\n') : null;
+  finalContent = finalContent.replace(/\n### [^\n]+\n+(? =\n|### |## |---|$ )/g , '\n')      ;
 } while (finalContent !== previousContent);
 
 // Clean up empty releases (## [x.x.x] ... --- with no bullet points inside)
 do {
   previousContent = finalContent;
-  finalContent = finalContent.replace(/\n## \[[^\]]+\][^\n]*\n+(?:---|\n(?=## ))/g, '\n---\n') : null;
+  finalContent = finalContent.replace(/\n## \[[^\]]+\][^\n]*\n+(?:---|\n(? =## ))/g, '\n---\n')      ;
 } while (finalContent !== previousContent);
 
 // Clean up multiple empty lines
-finalContent = finalContent.replace(/\n{3,}/g, '\n\n');
+finalContent = finalContent.replace(/\n{3,}/g, '\n\n' );
 
 fs.writeFileSync(file, finalContent);
 console.log(' Deep cleaned CHANGELOG.md for pure driver focus');

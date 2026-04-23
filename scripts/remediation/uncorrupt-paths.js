@@ -32,8 +32,7 @@ const walk = (dir) => {
         const d = den.trim();
         const line = content.split('\n').find(l => l.includes(match)) || '';
         
-        // Logical check: Is this a path part or a comment?
-        if (n === '..' || n === '.' || d.includes('/') || d.includes('\\') || 
+        // Logical check: Is this a path part or a comment? if (n === '..' || n === '.' || d.includes('/') || d.includes('\\') || 
             line.includes('require(') || line.includes('path.join') || 
             line.includes('#!') || line.trim().startsWith('*') || 
             line.trim().startsWith('//') || line.includes('@returns') || 

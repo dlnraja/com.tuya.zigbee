@@ -34,7 +34,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
     // CONDITIONS
     try {
       // A8: NaN Safety - use safeDivide/safeMultiply
-  this._getFlowCard('hvac_air_conditioner_air_conditioner_hybrid_is_on', 'condition');
+  const card = this.homey.flow.getConditionCard('hvac_air_conditioner_air_conditioner_hybrid_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -44,7 +44,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition hvac_air_conditioner_air_conditioner_hybrid_is_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('hvac_air_conditioner_is_on', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('hvac_air_conditioner_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -55,7 +55,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('hvac_air_conditioner_air_conditioner_hybrid_turn_on', 'action');
+      const card = const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_hybrid_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -66,7 +66,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action hvac_air_conditioner_air_conditioner_hybrid_turn_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('hvac_air_conditioner_air_conditioner_hybrid_turn_off', 'action');
+      const card = const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_hybrid_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -77,7 +77,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action hvac_air_conditioner_air_conditioner_hybrid_turn_off: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('hvac_air_conditioner_air_conditioner_hybrid_toggle', 'action');
+      const card = const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_hybrid_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -89,7 +89,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action hvac_air_conditioner_air_conditioner_hybrid_toggle: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('hvac_air_conditioner_air_conditioner_hybrid_set_target_temperature', 'action');
+      const card = const card = this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_hybrid_set_target_temperature');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -100,7 +100,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action hvac_air_conditioner_air_conditioner_hybrid_set_target_temperature: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('hvac_air_conditioner_turn_on', 'action');
+      const card = const card = this.homey.flow.getActionCard('hvac_air_conditioner_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -111,7 +111,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action hvac_air_conditioner_turn_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('hvac_air_conditioner_turn_off', 'action');
+      const card = const card = this.homey.flow.getActionCard('hvac_air_conditioner_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -122,7 +122,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action hvac_air_conditioner_turn_off: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('hvac_air_conditioner_toggle', 'action');
+      const card = const card = this.homey.flow.getActionCard('hvac_air_conditioner_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -134,7 +134,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action hvac_air_conditioner_toggle: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('hvac_air_conditioner_set_temperature', 'action');
+      const card = const card = this.homey.flow.getActionCard('hvac_air_conditioner_set_temperature');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

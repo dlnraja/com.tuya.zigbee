@@ -9,7 +9,7 @@ const diff = execSync('git diff 3f58bd6ab6^..3f58bd6ab6 -- drivers/', { encoding
 const removedLines = diff.split('\n').filter(line => line.startsWith('-') && line.includes('"_T'));
 const removedIds = [...new Set(removedLines.map(line => {
   const match = line.match(/"(_T[^"]+)"/);
-  return match ? match[1] : null;
+  return match ? match[1]  :  null     ;
 }).filter(Boolean))];
 
 console.log(`Total unique removed manufacturerNames: ${removedIds.length}`);

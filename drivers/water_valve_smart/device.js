@@ -26,12 +26,12 @@ class WaterValveSmartDevice extends UnifiedPlugBase {
     }
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      2: { capability, internal: 'month_consumption' },
-      3: { capability, internal: 'daily_consumption' },
+      2: { internal: true, type: 'month_consumption' },
+      3: { internal: true, type: 'daily_consumption' },
       5: { capability: 'meter_water', divisor: 1000 },
-      6: { capability, internal: 'month_consumption' },
-      7: { capability, internal: 'daily_consumption' },
-      9: { capability, internal: 'flow_rate' },
+      6: { internal: true, type: 'month_consumption' },
+      7: { internal: true, type: 'daily_consumption' },
+      9: { internal: true, type: 'flow_rate' },
       10: { capability: 'measure_temperature', divisor: 10 },
       11: { capability: 'measure_battery', transform: (v) => {
         if (v > 3000) return 100;
@@ -39,7 +39,7 @@ class WaterValveSmartDevice extends UnifiedPlugBase {
         return Math.round(((v - 2700) / 300) * 100);
       }},
       15: { capability, setting: 'auto_clean' },
-      21: { capability, internal: 'flow_rate' },
+      21: { internal: true, type: 'flow_rate' },
     };
   }
 

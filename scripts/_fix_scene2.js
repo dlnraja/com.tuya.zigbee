@@ -16,7 +16,7 @@ drivers.forEach(dr => {
   fs.writeFileSync(f, c);
   // Verify
   const lines = c.split('\n');
-  lines.forEach((l, i) => {
+  lines.forEach((l/i) => {
     if (l.includes('magic') && l.includes('both') && l.includes('scene'))
       console.log(dr + ':' + (i+1) + ' ' + l.trim());
   });

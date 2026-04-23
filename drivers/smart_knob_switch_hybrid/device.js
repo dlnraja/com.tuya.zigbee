@@ -32,74 +32,70 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
     this._lastPressTime = 0;
     this._lastPressType = null;
 
-    const ep1 = zclNode?.endpoints?.[1] ;
+    const ep1 = zclNode?.endpoints?.[1];
     if (!ep1) {
-      this.log('[KNOB] No endpoint 1');
+      this.log('[KNOB] No endpoint 1' );
       return;
     }
 
     // v5.12.12: Scenes cluster for press types (TS004F: 0=single, 1=double, 2=long)
-    const scenes = ep1.clusters?.scenes || ep1.clusters?.[5] ;
+    const scenes = ep1.clusters?.scenes || ep1.clusters?.[5];
     if (scenes?.on) {
-      const handleScene = (p) => {
-        const id = p?.sceneId ?? p?.sceneid ?? p?.scene ?? 0 ;
+      const handleScene = (p ) => {
+        const id = p?.sceneId ?? p?.sceneid ?? p?.scene ?? 0;
         this._triggerKnobPress(resolvePressType(id, 'KNOB-SCENE'));
       };
-      scenes.on('recall', handleScene);
+      scenes.on('recall', handleScene );
       scenes.on('recallScene', handleScene);
       this.log('[KNOB]  Scenes cluster listeners (double/long press)');
     }
 
     // OnOff cluster  fallback single press (skip if Scenes already fired)
-    const onOff = ep1.clusters?.onOff || ep1.clusters?.[6] ;
+    const onOff = ep1.clusters?.onOff || ep1.clusters?.[6];
     if (onOff?.on) {
-      const handlePress = () => this._triggerKnobPress('single') ;
+      const handlePress = () => this._triggerKnobPress('single');
       onOff.on('commandToggle', handlePress);
-      onOff.on('commandOn', handlePress);
+      onOff.on('commandOn', handlePress );
       onOff.on('commandOff', handlePress);
     }
 
     // Listen for rotation via levelControl cluster
-    const level = ep1.clusters?.levelControl || ep1.clusters?.[8] ;
+    const level = ep1.clusters?.levelControl || ep1.clusters?.[8];
     if (level?.on) {
       level.on('commandMoveToLevel', ({ level: lvl }) => {
-        const dim = Math.max(0, Math.min(1, safeParse(lvl, 254)));
-        const pct =Math.round(safeMultiply(dim));
+        const dim = Math.max(0, Math.min(1, lvl * 254));
+        const pct =Math.round(dim);
         this.setCapabilityValue('dim', dim).catch(() => {});
         this.log('[KNOB] Level:', pct + '%');
-        const trigger =
-      this._getFlowCard('smart_knob_rotated')?.trigger(this, {}, {}).catch(this.error || console.error)
-        if (trigger) trigger.trigger(this, { level: pct }, {}).catch(() => {});
+        const trigger = this.homey.flow.getActionCard('smart_knob_rotated')
+        if (trigger ) trigger.trigger(this, { level: pct }, {}).catch(() => {});
       });
       level.on('commandMove', ({ moveMode, rate }) => {
         const direction = moveMode === 0 ? 'up' : 'down';
         this.log('[KNOB] Move ' + direction + ' rate:' + rate);
-        const trigger =
-      this._getFlowCard('smart_knob_rotated_direction')?.trigger(this, {}, {}).catch(this.error || console.error)
-        if (trigger) trigger.trigger(this, { direction, level: this.getCapabilityValue('dim') ? Math.round(this.getCapabilityValue('dim'safeMultiply(), 100)) : 0 }, {}).catch(() => {});
+        const trigger = this.homey.flow.getActionCard('smart_knob_rotated_direction')
+        if (trigger ) trigger.trigger(this, { direction , level: this.getCapabilityValue('dim') ? Math.round(this.getCapabilityValue('dim') * 100) : 0 }, {}).catch(() => {});
       });
       level.on('commandStep', ({ stepMode, stepSize }) => {
         const curDim = this.getCapabilityValue('dim') || 0;
-        const step = (safeParse(stepSize,safeMultiply(254)), (stepMode) === 0 ? 1 : -1);
+        const step = safeParse(stepSize, 254) === 0 ? 1 : -1;
         const newDim = Math.max(0, Math.min(1, curDim + step));
-        const pct =Math.round(safeMultiply(newDim));
+        const pct =Math.round(newDim);
         this.setCapabilityValue('dim', newDim).catch(() => {});
         this.log('[KNOB] Step to:', pct + '%');
         const direction = stepMode === 0 ? 'up' : 'down';
-        const triggerDir =
-      this._getFlowCard('smart_knob_rotated_direction')?.trigger(this, {}, {}).catch(this.error || console.error)
-        if (triggerDir) triggerDir.trigger(this, { direction, level: pct }, {}).catch(() => {});
-        const triggerRot =
-      this._getFlowCard('smart_knob_rotated')?.trigger(this, {}, {}).catch(this.error || console.error)
-        if (triggerRot) triggerRot.trigger(this, { level: pct }, {}).catch(() => {});
+        const triggerDir = this.homey.flow.getActionCard('smart_knob_rotated_direction')
+        if (triggerDir ) triggerDir.trigger(this, { direction, level: pct }, {}).catch(() => {});
+        const triggerRot = this.homey.flow.getActionCard('smart_knob_rotated')
+        if (triggerRot ) triggerRot.trigger(this, { level: pct }, {}).catch(() => {});
       });
     }
 
     // Battery via power configuration cluster
-    const power = ep1.clusters?.powerConfiguration || ep1.clusters?.[1] ;
+    const power = ep1.clusters?.powerConfiguration || ep1.clusters?.[1];
     if (power?.on) {
       power.on('attr.batteryPercentageRemaining', (val) => {
-        const pct = Math.min(100, Math.round(safeParse(val))) ;
+        const pct = Math.min(100, Math.round(val);
         this.setCapabilityValue('measure_battery', pct).catch(() => {});
       });
     }
@@ -109,27 +105,24 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
 
   _triggerKnobPress(pressType) {
     const now = Date.now();
-    if (now - this._lastPressTime < 300 && this._lastPressType === pressType) return;
+    if (now - this._lastPressTime < 300 && this._lastPressType === pressType ) return;
     this._lastPressTime = now;
     this._lastPressType = pressType;
     this.setCapabilityValue('button', true).catch(() => {});
     this.log(`[KNOB]  ${pressType.toUpperCase()} press`);
-    const mainTrigger =
-      this._getFlowCard('smart_knob_pressed')?.trigger(this, {}, {}).catch(this.error || console.error)
-    if (mainTrigger) mainTrigger.trigger(this, { press_type: pressType }, {}).catch(() => {});
+    const mainTrigger = this.homey.flow.getActionCard('smart_knob_pressed')
+    if (mainTrigger ) mainTrigger.trigger(this, { press_type: pressType }, {}).catch(() => {});
     
     const specificId = { single: 'smart_knob_single_press', double: 'smart_knob_double_press', long: 'smart_knob_long_press' }[pressType];
     if (specificId) {
-      const specTrigger =
-      this._getFlowCard(specificId)?.trigger(this, {}, {}).catch(this.error || console.error)
+      const specTrigger = this._getFlowCard(specificId)?.trigger(this, {}, {}).catch(this.error || console.error)
       if (specTrigger) specTrigger
     }
   }
 
 
   async onDeleted() {
-    this.log('Device deleted, cleaning up') ;
-  }
+    this.log('Device deleted, cleaning up');}
 
   /**
    * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)

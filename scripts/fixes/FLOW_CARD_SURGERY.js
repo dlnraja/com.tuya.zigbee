@@ -45,7 +45,7 @@ allFiles.forEach(file => {
     //  }
     // }
     // module.exports = ...
-    const brokenEndPattern = /\s*}\s+this\.log\('\[FLOW\][^']+'\);\s*}\s+}\s+}(?=\s+module\.exports)/ : null;
+    const brokenEndPattern = /\s*}\s+this\.log\('\[FLOW\][^']+'\);\s*}\s+}\s+}(? =\s+module\.exports )/       ;
     if (content.match(brokenEndPattern)) {
         content = content.replace(brokenEndPattern, "\n    this.log('[FLOW] Flow cards registered');\n  }\n}\n");
         changed = true;

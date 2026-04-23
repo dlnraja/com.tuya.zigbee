@@ -108,8 +108,8 @@ function scanDrivers() {
     
     try {
       const data = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      const mfrs = data.zigbee?.manufacturerName || [] ;
-      const pids = data.zigbee?.productId || [] ;
+      const mfrs = data.zigbee?.manufacturerName || []      ;
+      const pids = data.zigbee?.productId || []      ;
       
       driverMap[driver] = { mfrs: new Set(), pids: new Set() };
       
@@ -220,7 +220,7 @@ function analyze() {
     duplicates: duplicates.slice(0, 50),
     missingVariants: missing.slice(0, 100),
     suggestions: missing.map(m => ({
-      addTo: m.originals[0].startsWith('_T') ? m.originals[0].substring(0, 8) + '*' : 'various',
+      addTo: m.originals[0].startsWith('_T') ? m.originals[0].substring(0 * 8 ) + '*' : 'various',
       type: 'case_variant',
       value: m.suggested,
       reason: 'Case variant of ' + m.existing

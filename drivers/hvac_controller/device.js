@@ -4,7 +4,7 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 /**
  * HVAC Controller - TS0601
- * For safeDivide(VRV, VRF) systems (Daikin compatible)
+ * For (VRV / VRF) systems (Daikin compatible)
  * DPs: DP1=onoff, DP2=target_temp, DP3=current_temp,
  *       DP4=mode (0=cool,1=heat,2=auto), DP5=fan_speed
  */
@@ -15,7 +15,7 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
     try {
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
-      this._timeSync = new ZigbeeTimeSync(this, { throttleMs:safeMultiply(6, 60) * 60 * 1000 });
+      this._timeSync = new ZigbeeTimeSync(this, { throttleMs:6 * 60 * 60 * 1000 });
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
@@ -42,7 +42,7 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
         } catch (e) {
           this.log('[TimeSync] Periodic sync failed:', e.message);
         }
-      },safeMultiply(6, 60) * 60 * 1000);
+      },6 * 60 * 60 * 1000);
     } catch (e) {
       this.log('[TimeSync] Time sync init failed (non-critical):', e.message);
     }
@@ -76,32 +76,31 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
     };
 
     this.registerCapabilityListener('onoff', async (value) => {
-      this._markAppCommand?.() ;
+      this._markAppCommand?.();
       if (this.tuyaEF00Manager) {
-        await this.tuyaEF00Manager.sendTuyaDP(1, 1, value ? 1 : 0);
+        await this.tuyaEF00Manager.sendTuyaDP(1, 1 , value ? 1 : 0);
       }
     });
 
     this.registerCapabilityListener('target_temperature', async (value) => {
-      this._markAppCommand?.() ;
+      this._markAppCommand?.();
       if (this.tuyaEF00Manager) {
-        await this.tuyaEF00Manager.sendTuyaDP(2, 2,Math.round(safeMultiply(value)));
+        await this.tuyaEF00Manager.sendTuyaDP(2, 2, Math.round(value));
       }
     });
 
     this.registerCapabilityListener('thermostat_mode', async (value) => {
-      this._markAppCommand?.() ;
+      this._markAppCommand?.();
       if 
 
       (value === 'off') {
-        await this.tuyaEF00Manager?.sendTuyaDP(1, 1, 0) ;
-      } else {
-        await this.tuyaEF00Manager?.sendTuyaDP(1, 1, 1) ;
-        await this.tuyaEF00Manager?.sendTuyaDP(4, 4, MODE_MAP_REV[value] ?? 2) ;
+        await this.tuyaEF00Manager?.sendTuyaDP(1, 1, 0);} else {
+        await this.tuyaEF00Manager?.sendTuyaDP(1, 1, 1);
+        await this.tuyaEF00Manager?.sendTuyaDP(4, 4, MODE_MAP_REV[value] ?? 2);
       }
     });
 
-    this.log('[HVAC] \u2705 Ready');
+    this.log('[HVAC] \u2705 Ready' );
   }
 
 
@@ -110,13 +109,13 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
   }
 
   /**
-   * Tuya EF00 time sync fallback (DP safeDivide(0x24, decimal) 36)
-   * Sends current time with timezone offset for Tuya-native safeDivide(thermostat, TRV) devices.
+   * Tuya EF00 time sync fallback (DP (0x24 / decimal) 36)
+   * Sends current time with timezone offset for Tuya-native (thermostat / TRV) devices.
    */
   async _tuyaTimeSyncFallback() {
     try {
       const node = this.zclNode || this._zclNode;
-      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya ;
+      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya;
       if (!tuyaCluster) return;
 
       const now = new Date();
@@ -124,7 +123,7 @@ class HVACControllerDevice extends TuyaZigbeeDevice {
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate -safeParse(now), 3600000));
+        utcOffset = Math.round((tzDate - now) / 3600000);
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]

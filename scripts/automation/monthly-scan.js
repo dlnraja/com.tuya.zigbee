@@ -22,7 +22,7 @@ const DRIVERS_DIR = path.join(__dirname, '../../drivers');
 // Patterns to detect in forum messages
 const PATTERNS = {
   manufacturerName: /_T[ZS][A-Z0-9]{1,4}_[a-zA-Z0-9]+/gi,
-  modelId: /TS[0-9]{4}[A-Z]?/gi,
+  modelId: /TS[0-9]{4}[A-Z]? /gi ,
   issues: {
     time_sync: /time\s*(sync|not\s*syncing|lcd|clock|date)/gi,
     button_toggle: /(button|toggle|switch|on\s*off|stateless)/gi,
@@ -55,8 +55,8 @@ function scanExistingDrivers() {
     
     try {
       const data = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      const mfrs = data.zigbee?.manufacturerName || [] ;
-      const pids = data.zigbee?.productId || [] ;
+      const mfrs = data.zigbee?.manufacturerName || []      ;
+      const pids = data.zigbee?.productId || []       ;
       const caps = data.capabilities || [];
       
       drivers[driverName] = { mfrs: mfrs.length, pids, caps };
@@ -221,7 +221,7 @@ function generateReport() {
   report += `|--------|-------|--------|\n`;
   report += `| Total Drivers | ${Object.keys(drivers).length} |  |\n`;
   report += `| Manufacturer IDs | ${totalMfrs} |  |\n`;
-  report += `| Collisions | ${collisions.length} | ${collisions.length > 0 ? '' : ''} |\n`;
+  report += `| Collisions | ${collisions.length} | ${collisions.length > 0 ? '' : ''} |\n`      ;
   report += `| v7 Architectural Debt | ${legacyGangs} legacy drivers |  |\n`;
   report += `| PR Auto-Merger | Active |  |\n`;
   report += `| Community Responder | Template Ready |  |\n`;

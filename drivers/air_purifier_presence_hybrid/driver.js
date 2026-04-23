@@ -32,7 +32,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('air_purifier_presence_hybrid_presence_sensor_radar_is_present', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('air_purifier_presence_hybrid_presence_sensor_radar_is_present');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -42,7 +42,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition air_purifier_presence_hybrid_presence_sensor_radar_is_present: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('air_purifier_presence_hybrid_presence_sensor_radar_illuminance_above', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('air_purifier_presence_hybrid_presence_sensor_radar_illuminance_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -52,7 +52,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition air_purifier_presence_hybrid_presence_sensor_radar_illuminance_above: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('air_purifier_presence_hybrid_presence_sensor_radar_distance_within', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('air_purifier_presence_hybrid_presence_sensor_radar_distance_within');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -62,7 +62,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition air_purifier_presence_hybrid_presence_sensor_radar_distance_within: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('air_purifier_presence_hybrid_presence_sensor_radar_motion_active', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('air_purifier_presence_hybrid_presence_sensor_radar_motion_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

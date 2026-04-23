@@ -40,7 +40,7 @@ fs.readdirSync(d).forEach(dr => {
   const f = path.join(d, dr, 'device.js');
   if (!fs.existsSync(f)) return;
   const c = fs.readFileSync(f, 'utf8');
-  const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} : null;/);
+  const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} ;/);
   if (!dpMatch) return;
   const dpBlock = dpMatch[1];
   const dpKeys = [];
@@ -87,7 +87,7 @@ fs.readdirSync(d).forEach(dr => {
   if (!fs.existsSync(f)) return;
   try {
     const c = JSON.parse(fs.readFileSync(f, 'utf8'));
-    const z = Array.isArray(c.zigbee) ? c.zigbee : c.zigbee ? [c.zigbee] : [];
+    const z = Array.isArray(c.zigbee) ? c.zigbee : c.zigbee ? [c.zigbee] : []      ;
     z.forEach(entry => {
       const mfrs = entry.manufacturerName || [];
       const pids = entry.productId || [];

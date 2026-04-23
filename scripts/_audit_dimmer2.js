@@ -18,7 +18,7 @@ dimmers.forEach(dr => {
   
   // Check for duplicate DPs
   if (hasDP) {
-    const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} : null;/);
+    const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} ;/);
     if (dpMatch) {
       const dpBlock = dpMatch[1];
       const dpKeys = [];
@@ -44,7 +44,7 @@ covers.forEach(dr => {
   console.log('[COVER] ' + dr + ': position=' + hasPosition + ' state=' + hasState + ' dpMappings=' + !!hasDP);
   
   if (hasDP) {
-    const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} : null;/);
+    const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} ;/);
     if (dpMatch) {
       const dpBlock = dpMatch[1];
       const dpKeys = [];

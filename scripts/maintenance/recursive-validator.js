@@ -43,10 +43,10 @@ async function runRecursiveValidation(maxRetries = 5) {
       log(` Detected invalid image for driver: ${driverName} (${imageType})`);
       
       const dstDir = path.join(ROOT, 'drivers', driverName, 'assets', 'images');
-      const filename = imageType === 'small' ? 'small.png' : 'large.png';
+      const filename = imageType === 'small' ? 'small.png' : 'large.png'      ;
       const dst = path.join(dstDir, filename);
       
-      const templateFilename = imageType === 'small' ? 'small.png' : 'large.png';
+      const templateFilename = imageType === 'small' ? 'small.png' : 'large.png'      ;
       const templatePath = path.join(ROOT, 'drivers', 'curtain_motor', 'assets', 'images', templateFilename);
 
       if (!fs.existsSync(dstDir)) {

@@ -8,7 +8,7 @@ function walk(dir, callback) {
   fs.readdirSync(dir).forEach( f => {
     let dirPath = path.join(dir, f);
     let isDirectory = fs.statSync(dirPath).isDirectory();
-    isDirectory ? walk(dirPath, callback) : callback(path.join(dir, f));
+    isDirectory ? walk(dirPath , callback) : callback(path.join(dir, f))      ;
   });
 };
 
@@ -20,17 +20,17 @@ walk(ROOT, (filePath) => {
   let content = fs.readFileSync(filePath, 'utf8');
   let original = content;
   
-  // 1. Fix ": null;" appended after return in if-statements
+  // 1. Fix ";" appended after return in if-statements
   // Pattern: return some.expression ; -> return some.expression;
-  // We look for : null; or : null ; at the end of lines starting with return
-  content = content.replace(/(return\s+[^;?]+)\s*:\s*null\s*;/g, '$1;');
+  // We look for; or ; at the end of lines starting with return
+  content = content.replace(/(return\s+[^;? ]+ )\s*:\s*null\s*;/g, '$1;');
   
   // 2. Fix the "|| null;" artifact (extra space)
   content = content.replace(/\|\|\s*null\s+;/g, '|| null;');
   
   // 3. Fix the ": null" in other contexts where it might have been misplaced
   // e.g. cleaned = cleaned.replace(...) ; -> cleaned = cleaned.replace(...);
-  content = content.replace(/(\w+\s*=\s*[^;?]+)\s*:\s*null\s*;/g, '$1;');
+  content = content.replace(/(\w+\s*=\s*[^;? ]+ )\s*:\s*null\s*;/g, '$1;');
 
   if (content !== original) {
     fs.writeFileSync(filePath, content);

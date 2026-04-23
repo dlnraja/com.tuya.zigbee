@@ -47,7 +47,7 @@ app.drivers.forEach(driver => {
   driversProcessed++;
   
   // === SYNC MANUFACTURER NAMES ===
-  const composeMfrs = compose.zigbee?.manufacturerName || [] ;
+  const composeMfrs = compose.zigbee?.manufacturerName || []       ;
   const appMfrs = driver.zigbee.manufacturerName || [];
   
   // Create case-insensitive sets for comparison
@@ -75,7 +75,7 @@ app.drivers.forEach(driver => {
   }
   
   // === SYNC PRODUCT IDS ===
-  const composePids = compose.zigbee?.productId || [] ;
+  const composePids = compose.zigbee?.productId || []       ;
   const appPids = driver.zigbee.productId || [];
   
   const composePidSet = new Set(composePids.map(p => p.toLowerCase()));

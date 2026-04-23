@@ -41,7 +41,7 @@ async function main() {
             id: flowId,
             title: {
               en: `Gang ${g} turned ${action} (physical)`,
-              fr: `Gang ${g} allumÃ©${action === 'off' ? ' (Ã©teint)' : ''} (physique)`
+              fr: `Gang ${g} allumÃ©${action === 'off' ? ' (Ã©teint )' : ''} (physique)`
             }
           });
           modified = true;

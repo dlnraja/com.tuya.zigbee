@@ -15,22 +15,22 @@ function processFile(filePath) {
     
     // Match empty getTriggerCard call
     if (line.includes('homey.flow.getTriggerCard()') || line.includes('homey.flow.getConditionCard()') || line.includes('homey.flow.getActionCard()')) {
-      const type = line.includes('Trigger') ? 'trigger' : (line.includes('Condition') ? 'condition' : 'action');
+      const type = line.includes('Trigger') ? 'trigger' : (line.includes('Condition') ? 'condition' : 'action')      ;
       
       // Look back up to 5 lines for "id =" or "flowCardId =" etc.
       let foundId = null;
       for (let j = i - 1; j >= Math.max(0, i - 10); j--) {
         const prevLine = lines[j];
         // Match variables ending in 'Id' or 'id'
-        const match = prevLine.match(/(?:const|let|var)\s+(\w*(?:id|Id))\s*=\s*[`'"]?([\w_-]+)?[`'"]?/i) : null;
-        if (match) {
+        const match = prevLine.match(/(?:const|let|var)\s+(\w*(?:id|Id))\s*=\s*[`'"]? ([\w_-]+ )?[`'"]? /i)      ;
+        if (match ) {
           foundId = match[1];
           break;
         }
       }
 
       if (foundId) {
-        lines[i] = lines[i].replace(/get(Trigger|Condition|Action)Card\(\)/, `_getFlowCard(${foundId === 'id' ? 'id' : ("'" + foundId + "'")}, '${type}')`);
+        lines[i] = lines[i].replace(/get(Trigger|Condition|Action)Card\(\)/ , `_getFlowCard(${foundId === 'id' ? 'id' : ("'" + foundId + "'")}, '${type}')`)      ;
         changed = true;
       }
     }
@@ -39,7 +39,7 @@ function processFile(filePath) {
   // Also replace any remaining this.homey.flow.get...(...) with this._getFlowCard(...)
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].includes('homey.flow.get') && !lines[i].includes('_getFlowCard')) {
-      lines[i] = lines[i].replace(/(this\.)?homey\.flow\.get(Trigger|Condition|Action)Card\(([^)]+)\)/g, (match, prefix, type, id) => {
+      lines[i] = lines[i].replace(/(this\.)? homey\.flow\.get(Trigger|Condition|Action)Card\(([^)]+)\)/g, (match, prefix, type, id ) => {
         return `this._getFlowCard(${id}, '${type.toLowerCase()}')` ;
       });
       changed = true;

@@ -74,15 +74,15 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {  get mainsPowered() {
 }
 
 // v5.5.26: Offline check timeout (60 min for mmWave - Hubitat recommendation)
-static OFFLINE_CHECK_MS =safeMultiply(60, 60) * 1000;
+static OFFLINE_CHECK_MS =60 * 60 * 1000;
 
 /**
    * v5.5.275: Get model-specific configuration
    */
 _getModelConfig() {
   if (!this._modelConfig) {
-    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '' ;
-    this._modelConfig = getModelConfig(mfr);
+    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
+    this._modelConfig = getModelConfig(mfr );
     this.log(`[MMWAVE]  Model config: ${this._modelConfig.type} for ${mfr}`);
   }
   return this._modelConfig;
@@ -154,7 +154,7 @@ get _relayDpMappings() {
     2: { capability, setting: 'radar_sensitivity' },       // 0-9
     3: { capability, setting: 'shield_range' },            //Min range (/100 = m)
     4: { capability, setting: 'detection_range' },         //Max range (/100 = m)
-    6: { capability, internal: 'equipment_status' },
+    6: { internal: true, type: 'equipment_status' },
     9: { capability: 'measure_luminance.distance', divisor: 100 }, // Target distance (cmm)
     104: { capability: 'measure_luminance', divisor: 10 },       //Illuminance (/10 = lux)
     107: { capability, setting: 'breaker_mode' },          // 0=standard, 1=local
@@ -241,7 +241,7 @@ async onNodeInit({ zclNode }) {
   if (config.type === 'RELAY' && this.hasCapability('onoff')) {
     this.registerCapabilityListener('onoff', async (value) => {
       this.log(`[MMWAVE]  Relay control: ${value ? 'ON' : 'OFF'} (DP108)`);
-      const tuya = zclNode?.endpoints?.[1]?.clusters?.tuya ;
+      const tuya = zclNode?.endpoints?.[1]?.clusters?.tuya;
       if (tuya?.datapoint) {
         await tuya.datapoint({ dp: 108, value: value ? 1 : 0, type: 'enum' });
       }
@@ -252,7 +252,7 @@ async onNodeInit({ zclNode }) {
   await super.onNodeInit({ zclNode });
     // v5.12.5: Continuous Illuminance Reporting (Forum Issue #37)
     try {
-      const illum = zclNode.endpoints[1]?.clusters?.illuminanceMeasurement ;
+      const illum = zclNode.endpoints[1]?.clusters?.illuminanceMeasurement;
       if (illum) {
         await illum.configureReporting({
           measuredValue: { minInterval: 60, maxInterval: 900, minChange: 10 }
@@ -304,9 +304,9 @@ async _setupContinuousLuminanceReporting(zclNode) {
   this.log('[LUMINANCE-FIX] Research base: Z2M ZG-204ZL, Tuya docs, HA Community, ZHA, etc.');
 
   try {
-    const endpoint = zclNode?.endpoints?.[1] ;
+    const endpoint = zclNode?.endpoints?.[1];
     if (!endpoint) {
-      this.log('[LUMINANCE-FIX]  No endpoint 1 found');
+      this.log('[LUMINANCE-FIX]  No endpoint 1 found' );
       return;
     }
 
@@ -314,10 +314,10 @@ async _setupContinuousLuminanceReporting(zclNode) {
     const illuminanceCluster = endpoint.clusters?.illuminanceMeasurement
         || endpoint.clusters?.msIlluminanceMeasurement
         || endpoint.clusters?.[0x0400]
-        || endpoint.clusters?.['1024'] ;
+        || endpoint.clusters?.['1024'];
 
     if (illuminanceCluster) {
-      this.log('[LUMINANCE-FIX]  Illuminance cluster found - configuring reporting');
+      this.log('[LUMINANCE-FIX]  Illuminance cluster found - configuring reporting' );
 
       try {
         // Configure autonomous reporting (independent from motion)
@@ -335,7 +335,7 @@ async _setupContinuousLuminanceReporting(zclNode) {
         illuminanceCluster.on('attr.measuredValue', async (value) => {
           if (value !== null && value !== undefined && value >= 0) {
             this.log(`[LUMINANCE-FIX]  Continuous luminance update: ${value} lux`);
-            await this.setCapabilityValue('measure_luminance', parseFloat(value)).catch(() => { });
+            await this.setCapabilityValue('measure_luminance', parseFloat(value).catch(() => { }));
           }
         });
 
@@ -344,7 +344,7 @@ async _setupContinuousLuminanceReporting(zclNode) {
           const initialValue = await illuminanceCluster.readAttributes(['measuredValue']);
           if (initialValue?.measuredValue !== undefined && initialValue.measuredValue >= 0) {
             this.log(`[LUMINANCE-FIX]  Initial luminance: ${initialValue.measuredValue} lux`);
-            await this.setCapabilityValue('measure_luminance', parseFloat(initialValue.measuredValue)).catch(() => { });
+            await this.setCapabilityValue('measure_luminance', parseFloat(initialValue.measuredValue).catch(() => { }));
           }
         } catch (e) {
           this.log('[LUMINANCE-FIX]  Initial read failed (normal for sleepy devices)');
@@ -379,14 +379,14 @@ _setupPeriodicLuminanceQuery() {
   }
 
   // Query luminance DP every 1 minute for continuous updates if mains powered
-  const queryInterval = this.mainsPowered ?safeMultiply(1, 60) * 1000 :safeMultiply(5, 60) * 1000;
+  const queryInterval = this.mainsPowered ?1 * 60 * 1000 :5 * 60 * 1000;
   
   this._luminanceQueryTimer = setInterval(async () => {
     try {
       // v5.13.5: If mains powered, also try direct ZCL read for better accuracy
       if (this.mainsPowered) {
-        const ep1 = this.zclNode?.endpoints?.[1] ;
-        const illu = ep1?.clusters?.msIlluminanceMeasurement || ep1?.clusters?.illuminanceMeasurement ;
+        const ep1 = this.zclNode?.endpoints?.[1];
+        const illu = ep1?.clusters?.msIlluminanceMeasurement || ep1?.clusters?.illuminanceMeasurement;
         if (illu) {
           await illu.readAttributes(['measuredValue']).catch(() => {});
         }
@@ -465,7 +465,7 @@ _setupOfflineCheck() {
       // Make sure it's available if we received data recently
       this.setAvailable().catch(() => { });
     }
-  },safeMultiply(10, 60) * 1000); // Every 10 minutes
+  },10 * 60 * 1000); // Every 10 minutes
 
   this.log('[MMWAVE]  Offline check started (threshold: 60 min)');
 }
@@ -480,7 +480,7 @@ async _sendInitialDataQuery() {
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     this.log('[MMWAVE]  Sending initial dataQuery...');
-    await this._sendTuyaDataQuery?.().catch(() => { }) ;
+    await this._sendTuyaDataQuery?.().catch(() => { });
   } catch (err) {
     this.log('[MMWAVE] Initial dataQuery failed:', err.message);
   }
@@ -529,7 +529,7 @@ async onDeleted() {
     this._luminanceQueryTimer = null;
   }
 
-  await super.onDeleted?.() ;
+  await super.onDeleted?.();
 }
 
 /**
@@ -538,8 +538,8 @@ async onDeleted() {
    */
 async _setupOccupancyCluster(zclNode) {
   try {
-    const endpoint = zclNode?.endpoints?.[1] ;
-    if (!endpoint?.clusters) return ;
+    const endpoint = zclNode?.endpoints?.[1];
+    if (!endpoint?.clusters) return;
 
     const occCluster = endpoint.clusters.occupancySensing
         || endpoint.clusters.msOccupancySensing
@@ -547,7 +547,7 @@ async _setupOccupancyCluster(zclNode) {
         || endpoint.clusters[0x0406];
 
     if (occCluster) {
-      this.log('[MMWAVE]  OccupancySensing cluster found - setting up listener');
+      this.log('[MMWAVE]  OccupancySensing cluster found - setting up listener' );
 
       occCluster.on('attr.occupancy', (value) => {
         this._updateLastEventTime(); // v5.5.69: Track activity
@@ -562,14 +562,14 @@ async _setupOccupancyCluster(zclNode) {
       try {
         const attrs = await occCluster.readAttributes(['occupancy']);
         if (attrs?.occupancy !== undefined) {
-          const motion = attrs.occupancy > 0 ;
+          const motion = attrs.occupancy > 0;
           this.log(`[MMWAVE] Initial occupancy: ${motion}`);
           if (this.hasCapability('alarm_motion')) {
             this.setCapabilityValue('alarm_motion', motion).catch(this.error);
           }
         }
       } catch (e) {
-        this.log('[MMWAVE] Initial occupancy read failed (device sleeping?)");
+        this.log('[MMWAVE] Initial occupancy read failed (device sleeping?)');
       }
     }
   } catch (err) {
@@ -582,8 +582,8 @@ async _setupOccupancyCluster(zclNode) {
    */
 async _setupIASMotionListener(zclNode) {
   try {
-    const endpoint = zclNode?.endpoints?.[1] ;
-    const iasCluster = endpoint?.clusters?.iasZone || endpoint?.clusters?.ssIasZone ;
+    const endpoint = zclNode?.endpoints?.[1];
+    const iasCluster = endpoint?.clusters?.iasZone || endpoint?.clusters?.ssIasZone;
 
     if (iasCluster) {
       this.log('[MMWAVE]  IAS Zone cluster found - setting up motion listener');
@@ -591,13 +591,12 @@ async _setupIASMotionListener(zclNode) {
       iasCluster.onZoneStatusChangeNotification = (payload) => {
         this._updateLastEventTime(); // v5.5.69: Track activity
         // v5.5.17: Use universal parser from UnifiedSensorBase
-        const parsed = this._parseIASZoneStatus(payload?.zoneStatus) ;
-        const motion = parsed.alarm1 || parsed.alarm2;
+        const parsed = this._parseIASZoneStatus(payload?.zoneStatus);const motion = parsed.alarm1 || parsed.alarm2;
 
         this.log(`[ZCL-DATA] mmwave.ias_zone raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2}  motion=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
-          this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          this.setCapabilityValue('alarm_motion', motion).catch(this.error );
         }
       };
 

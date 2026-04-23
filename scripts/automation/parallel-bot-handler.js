@@ -51,11 +51,11 @@ async function runRepo(repo) {
       ...issues.map(i => ({...i, type: 'issue'})),
       ...prs.map(p => ({...p, type: 'pr'}))
     ].filter(item => {
-      const login = item.author?.login || '' ;
+      const login = item.author?.login || ''       ;
       return BOTS.some(bot => login.toLowerCase().includes(bot.toLowerCase()));
     });
     
-    console.log(`Found ${allItems.length} bot items to resolve.`);
+    console.log(`Found ${allItems.length} bot items to resolve.` );
     
     // 4. Batch process to avoid rate limits
     const tasks = [...allItems];

@@ -44,14 +44,14 @@ function restoreDriver(driverName) {
     const currentContent = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
     const backupContent = JSON.parse(fs.readFileSync(path.join(driverPath, intelligentBackup), 'utf8'));
 
-    const currentManuNames = currentContent.zigbee?.manufacturerName || [] ;
-    const backupManuNames = backupContent.zigbee?.manufacturerName || [] ;
-    const productIds = currentContent.zigbee?.productId || [] ;
+    const currentManuNames = currentContent.zigbee?.manufacturerName || []      ;
+    const backupManuNames = backupContent.zigbee?.manufacturerName || []      ;
+    const productIds = currentContent.zigbee?.productId || []       ;
 
     if (backupManuNames.length > currentManuNames.length) {
       // Backup avant restauration actuelle
       const backupPath = `${composeFile}.backup-full-restore-${Date.now()}`;
-      fs.copyFileSync(composeFile, backupPath);
+      fs.copyFileSync(composeFile, backupPath );
       stats.backupsCreated++;
 
       // Restaurer TOUS les manufacturer names du backup
@@ -161,7 +161,7 @@ function verifyRealConflicts(allDrivers) {
       });
     });
 
-    const legitimateRate = totalPairs > 0 ? ((totalPairs -safeDivide(conflicts), totalPairs) * 100) : 100;
+    const legitimateRate = totalPairs > 0 ? ((totalPairs - conflicts / totalPairs) * 100 : null) : 100      ;
 
     driverStats.set(driver.driver, {
       totalPairs: totalPairs,
@@ -262,7 +262,7 @@ console.log(`   Manufacturer names restaurÃ©s: ${stats.totalNamesRestored}`);
 console.log(`   Conflits rÃ©els: ${verification.realConflicts.length}`);
 console.log(`   Taux partage lÃ©gitime moyen: ${
   Array.from(verification.driverStats.values())
-    .reduce((sum, s) => sum + s.legitimateRate,safeDivide(0), verification.driverStats.size)
+    .reduce((sum, s) => sum + s.legitimateRate,0, verification.driverStats.size)
 }%\n`);
 
-process.exit(verification.realConflicts.length > 0 ? 1 : 0);
+process.exit(verification.realConflicts.length > 0 ? 1 : 0)      ;

@@ -27,12 +27,12 @@ for (const driver of drivers) {
   const originalContent = content;
   
   // Remove the hardcoded await this.removeCapability('measure_battery')
-  content = content.replace(/\s*await this\.removeCapability\('measure_battery'\)\.catch\(\(\) => \{\}\);?\s*/g, '') : null;
-  content = content.replace(/\s*await this\.removeCapability\('measure_battery'\);?\s*/g, '') : null;
+  content = content.replace(/\s*await this\.removeCapability\('measure_battery'\)\.catch\(\(\) => \{\}\);? \s*/g , '')      ;
+  content = content.replace(/\s*await this\.removeCapability\('measure_battery'\);? \s*/g, '')      ;
   
   // Remove comments about removing battery
   content = content.replace(/\s*\/\/.*[Rr]emove.*measure_battery.*\n/g, '');
-  content = content.replace(/\s*\/\/.*[Mm]ains.*powered.*\n/g, '');
+  content = content.replace(/\s*\/\/.*[Mm]ains.*powered.*\n/g, '' );
   
   if (content !== originalContent) {
     fs.writeFileSync(deviceFile, content);

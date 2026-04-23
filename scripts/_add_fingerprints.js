@@ -29,7 +29,7 @@ newFingerprints.forEach(fp => {
   fs.readdirSync(d).forEach(dr => {
     try {
       const c = JSON.parse(fs.readFileSync(path.join(d, dr, 'driver.compose.json'), 'utf8'));
-      const z = Array.isArray(c.zigbee) ? c.zigbee : [c.zigbee];
+      const z = Array.isArray(c.zigbee) ? c.zigbee : [c.zigbee]      ;
       z.forEach(entry => {
         if ((entry.manufacturerName || []).includes(fp.mfr) && (entry.productId || []).includes(fp.pid)) {
           found = true;

@@ -29,7 +29,7 @@ class LedStripAdvancedDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('led_strip_advanced_is_on', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('led_strip_advanced_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -40,7 +40,7 @@ class LedStripAdvancedDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('led_strip_advanced_turn_on', 'action');
+      const card = const card = this.homey.flow.getActionCard('led_strip_advanced_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -51,7 +51,7 @@ class LedStripAdvancedDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action led_strip_advanced_turn_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('led_strip_advanced_turn_off', 'action');
+      const card = const card = this.homey.flow.getActionCard('led_strip_advanced_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -62,7 +62,7 @@ class LedStripAdvancedDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action led_strip_advanced_turn_off: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('led_strip_advanced_toggle', 'action');
+      const card = const card = this.homey.flow.getActionCard('led_strip_advanced_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -74,7 +74,7 @@ class LedStripAdvancedDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action led_strip_advanced_toggle: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('led_strip_advanced_set_dim', 'action');
+      const card = const card = this.homey.flow.getActionCard('led_strip_advanced_set_dim');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -85,7 +85,7 @@ class LedStripAdvancedDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action led_strip_advanced_set_dim: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('led_strip_advanced_set_brightness', 'action');
+      const card = const card = this.homey.flow.getActionCard('led_strip_advanced_set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

@@ -39,7 +39,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Door/window is/is not open
     try {
-      const card = this._getFlowCard('contact_sensor_is_open', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('contact_sensor_is_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -51,13 +51,13 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
 
     // CONDITION: Battery above threshold
     try {
-      const card = this._getFlowCard('contact_sensor_battery_above', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('contact_sensor_battery_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.threshold || 20);
-        });
+      });
         this.log('[FLOW]  Registered: contact_sensor_battery_above');
       }
 

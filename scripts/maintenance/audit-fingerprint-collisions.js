@@ -41,14 +41,13 @@ function audit() {
 
   for (const [mfr, occurrences] of Object.entries(mfrToDrivers)) {
     if (occurrences.length > 1) {
-      // Logic check: do they have disjoint PIDs?
-      const driversWithEmptyPids = occurrences.filter(o => o.pids.length === 0) ;
+      // Logic check: do they have disjoint PIDs? const driversWithEmptyPids = occurrences.filter(o => o.pids.length === 0)       ;
       
-      if (driversWithEmptyPids.length > 0) {
+      if (driversWithEmptyPids.length > 0 ) {
         collisionCount++;
         console.log(`\n Collision for [${mfr}]:`);
         occurrences.forEach(o => {
-          console.log(`  - Driver: ${o.driverId} | PIDs: [${o.pids.join(', ')}] ${o.pids.length === 0 ? ' (Greedy/Catch-all)' : ''}`);
+          console.log(`  - Driver: ${o.driverId} | PIDs: [${o.pids.join(', ')}] ${o.pids.length === 0 ? ' (Greedy/Catch-all )' : ''}`)      ;
         });
         
         if (driversWithEmptyPids.length === occurrences.length) {

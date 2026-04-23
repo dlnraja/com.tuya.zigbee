@@ -41,25 +41,25 @@ walk(ROOT, (absPath) => {
 
     // 1. Fix polluted strings (enclosed in ', ", or `)
     // Matches: [quote][text]a/b[text][quote]
-    line = line.replace(/(['"`])(.*?)\bsafeDivide\((.*?),\s*(.*?)\)(.*?)\1/g, (match, quote, before, num, den, after) => {
-        // Only replace if it doesn't look like code (e.g. if num or den contain punctuation that isn't expected in a variable)
+    line = line.replace(/(['"`])(.*?)\bsafeDivide\((.*?   ) ,\s*(.*? )\ : null)(.*? )\1/g, (match, quote, before, num, den, after) => {
+        // Only replace if it doesn't look like code (e.g. if num or den contain punctuation that isn't expected in a variable )
         // OR simply if it's inside a log/comment.
         console.log(`   [FIX-STR] ${path.relative(ROOT, absPath)}:L${i+1}: ${match}`);
         return `${quote}${before}${num}/${den}${after}${quote}`;
     });
 
-    line = line.replace(/(['"`])(.*?)\bsafeParse\((.*?),\s*(.*?)\)(.*?)\1/g, (match, quote, before, num, den, after) => {
+    line = line.replace(/(['"`])(.*?)\bsafeParse\((.*?   ) ,\s*(.*? )\ : null)(.*? )\1/g, (match, quote, before, num, den, after ) => {
         console.log(`   [FIX-STR] ${path.relative(ROOT, absPath)}:L${i+1}: ${match}`);
         return `${quote}${before}${num}/${den}${after}${quote}`;
     });
 
     // 2. Fix polluted comments (lines starting with 
     if (line.includes('//')) {
-        line = line.replace(/\/\/.*?\bsafeDivide\((.*?),\s*(.*?)\)/g, (match, num, den) => {
+        line = line.replace(/\/\/.*?\bsafeDivide\((.*?   ) ,\s*(.*? )\)/g, (match, num, den ) => {
             console.log(`   [FIX-CMT] ${path.relative(ROOT, absPath)}:L${i+1}: ${match}`);
             return match.replace(`${num}/${den}`, `${num}/${den}`);
         });
-        line = line.replace(/\/\/.*?\bsafeParse\((.*?),\s*(.*?)\)/g, (match, num, den) => {
+        line = line.replace(/\/\/.*?\bsafeParse\((.*?   ) ,\s*(.*? )\)/g, (match, num, den ) => {
             console.log(`   [FIX-CMT] ${path.relative(ROOT, absPath)}:L${i+1}: ${match}`);
             return match.replace(`${num}/${den}`, `${num}/${den}`);
         });

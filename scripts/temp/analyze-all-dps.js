@@ -29,7 +29,7 @@ for (const file of files) {
     const code = fs.readFileSync(file, 'utf8');
     
     // Extract DP mappings pattern
-    const dpMappingMatch = code.match(/dpMappings[^{]*{([^}]+(?:{[^}]+}[^}]*)*)/s);
+    const dpMappingMatch = code.match(/dpMappings[^{]*{([^}]+(?:{[^}]+}[^}]*)*)/s)      ;
     if (!dpMappingMatch) continue;
     
     const dpBlock = dpMappingMatch[0];
@@ -44,15 +44,15 @@ for (const file of files) {
         
         // Extract capability
         const capMatch = dpConfig.match(/capability:\s*['"]([^'"]+)['"]/);
-        const capability = capMatch ? capMatch[1] : null;
+        const capability = capMatch ? capMatch[1]   :  null     ;
         
         // Extract divisor
         const divMatch = dpConfig.match(/divisor:\s*(\d+)/);
-        const divisor = divMatch ? parseInt(divMatch[1]) : 1;
+        const divisor = divMatch ? parseInt(divMatch[1] ) : 1      ;
         
         // Extract internal
         const intMatch = dpConfig.match(/internal:\s*['"]([^'"]+)['"]/);
-        const internal = intMatch ? intMatch[1] : null;
+        const internal = intMatch ? intMatch[1]   :  null     ;
         
         if (!dpDatabase.has(dpNum)) {
             dpDatabase.set(dpNum, []);

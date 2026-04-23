@@ -55,7 +55,7 @@ class FlowRestorerAndFixer {
       .sort()
       .reverse();
 
-    return backups.length > 0 ? path.join(this.backupPath, backups[0]) : null;
+    return backups.length > 0 ? path.join(this.backupPath, backups[0]); : null
   }
 
   /**
@@ -110,7 +110,7 @@ class FlowRestorerAndFixer {
       for (const flowFile of flowFiles) {
         const flowPath = path.join(driverPath, flowFile);
         if (fs.existsSync(flowPath)) {
-          await this.applyConservativeFixToFile(driverName, flowPath);
+          await this.applyConservativeFixToFile(driverName, flowPath );
           break;
         }
       }

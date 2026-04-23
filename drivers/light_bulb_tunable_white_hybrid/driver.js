@@ -28,7 +28,7 @@ class BulbTunableDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('light_bulb_tunable_white_hybrid_is_on', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('light_bulb_tunable_white_hybrid_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -39,7 +39,7 @@ class BulbTunableDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('light_bulb_tunable_white_hybrid_turn_on', 'action');
+      const card = const card = this.homey.flow.getActionCard('light_bulb_tunable_white_hybrid_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -50,7 +50,7 @@ class BulbTunableDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action light_bulb_tunable_white_hybrid_turn_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('light_bulb_tunable_white_hybrid_turn_off', 'action');
+      const card = const card = this.homey.flow.getActionCard('light_bulb_tunable_white_hybrid_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -61,7 +61,7 @@ class BulbTunableDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action light_bulb_tunable_white_hybrid_turn_off: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('light_bulb_tunable_white_hybrid_toggle', 'action');
+      const card = const card = this.homey.flow.getActionCard('light_bulb_tunable_white_hybrid_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -73,7 +73,7 @@ class BulbTunableDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action light_bulb_tunable_white_hybrid_toggle: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('light_bulb_tunable_white_hybrid_set_dim', 'action');
+      const card = const card = this.homey.flow.getActionCard('light_bulb_tunable_white_hybrid_set_dim');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

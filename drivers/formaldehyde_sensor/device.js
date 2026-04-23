@@ -20,7 +20,7 @@ class FormaldehydeSensorDevice extends UnifiedSensorBase {
       18: { capability: 'measure_pm25', divisor: 1 },      // PM2.5
       19: { capability: 'measure_co2', divisor: 1 },       // CO2 ppm
       20: { capability: 'measure_voc', divisor: 1 },       // VOC
-      21: { capability }                              // Formaldehyde (custom)
+      21: { capability: 'unknown' }                              // Formaldehyde (custom)
     };
   }
 

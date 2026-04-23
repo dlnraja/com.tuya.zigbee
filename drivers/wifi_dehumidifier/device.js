@@ -6,17 +6,17 @@ class WiFiDehumidifierDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '2':  { capability }, // mode: auto/manual/dry_clothes/sleep
-      '4':  { capability }, // fan speed: low/mid/high
+      '2':  { capability: 'unknown' }, // mode: auto/manual/dry_clothes/sleep
+      '4':  { capability: 'unknown' }, // fan speed: low/mid/high
       '5':  { capability: 'target_humidity', writable: true },
       '6':  { capability: 'measure_humidity' },
       '7':  { capability: 'measure_temperature' },
       '11': { capability: 'alarm_water', transform: (v) => !!v },
-      '12': { capability }, // child_lock
-      '13': { capability }, // anion (ionizer)
-      '14': { capability }, // countdown
-      '101': { capability }, // defrost
-      '102': { capability }, // filter_reset
+      '12': { capability: 'unknown' }, // child_lock
+      '13': { capability: 'unknown' }, // anion (ionizer)
+      '14': { capability: 'unknown' }, // countdown
+      '101': { capability: 'unknown' }, // defrost
+      '102': { capability: 'unknown' }, // filter_reset
     };
   }
 
