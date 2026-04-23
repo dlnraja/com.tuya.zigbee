@@ -33,7 +33,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('curtain_motor_set_windowcoverings_set', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_set_windowcoverings_set');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -44,7 +44,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_set_windowcoverings_set: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_windowcoverings_open', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_windowcoverings_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -56,7 +56,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_windowcoverings_open: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_windowcoverings_close', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_windowcoverings_close');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -68,7 +68,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_windowcoverings_close: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_set_dim', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_set_dim');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -79,7 +79,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_set_dim: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_stop', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_stop');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -91,7 +91,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_stop: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_set_favorite', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_set_favorite');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -103,7 +103,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_set_favorite: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_set_brightness', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -114,7 +114,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_set_brightness: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_set_position', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_set_position');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -125,7 +125,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_set_position: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_open', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -137,7 +137,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action curtain_motor_open: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('curtain_motor_close', 'action');
+      const card = const card = this.homey.flow.getActionCard('curtain_motor_close');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

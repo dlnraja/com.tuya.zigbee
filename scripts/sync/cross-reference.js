@@ -93,7 +93,7 @@ function crossReference() {
   console.log("  Unmatched (no driver):      " + report.unmatched.length);
   console.log("\nBy driver:");
   for (const [drv, count] of Object.entries(report.missingByDriver).sort((a,b) => b[1] - a[1])) {
-    const exists = drivers[drv] ? "+" : "?" : null;
+    const exists = drivers[drv] ? "+" : "?"       ;
     console.log("  " + exists + " " + drv + ": " + count);
   }
   if (report.actionable.length > 0) {

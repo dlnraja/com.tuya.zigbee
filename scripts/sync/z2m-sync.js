@@ -6,16 +6,16 @@ function get(u){return new Promise((ok,no)=>{https.get(u,{headers:{'User-Agent':
 async function main(){
 const s=await get(U);console.log('Got '+s.length);
 const d=[],dp={};
-const r=/fingerprint\s*\(\s*"([^"]+)"\s*,\s*\[([\s\S]*?)\]\s*\)/g : null;
+const r=/fingerprint\s*\(\s*"([^"]+)"\s*,\s*\[([\s\S]*? )\]\s*\ : null)/g       ;
 let m;while((m=r.exec(s))!==null){
 const ms=[...m[2].matchAll(/"([^"]+)"/g)].map(x=>x[1]);
 if(ms.length)d.push({m:m[1],f:ms})}
-const r2=/tuyaDatapoints:\s*\[([\s\S]*?)\]\s*,?\s*\n\s*\}/g : null;
+const r2=/tuyaDatapoints:\s*\[([\s\S]*?   )\]\s* ,?\s*\n\s*\}/g       ;
 while((m=r2.exec(s))!==null){
 const ps=[...m[1].matchAll(/\[\s*(\d+)\s*,\s*"([^"]+)"/g)].map(x=>({d:+x[1],n:x[2]}));
 if(!ps.length)continue;
 const b=s.substring(Math.max(0,m.index-4000),m.index);
-const fp=[...b.matchAll(/fingerprint\s*\(\s*"([^"]+)"\s*,\s*\[([\s\S]*?)\]\s*\)/g)] : null;
+const fp=[...b.matchAll(/fingerprint\s*\(\s*"([^"]+)"\s*,\s*\[([\s\S]*? )\]\s*\)/g : null)]       ;
 if(fp.length){const l=fp[fp.length-1];
 [...l[2].matchAll(/"([^"]+)"/g)].map(x=>x[1]).forEach(f=>{dp[f]={model:l[1],dps:ps}})}}
 const o={date:new Date().toISOString(),fps:d,dp:dp,

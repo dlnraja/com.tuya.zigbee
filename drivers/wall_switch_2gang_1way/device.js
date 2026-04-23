@@ -34,9 +34,9 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
     this._gangNumber = gn;
     this.zclNode = zclNode;
     this._zclState = { lastState, pending: false, timeout };
-    const ep = zclNode?.endpoints?.[gn] ;
-    const onOff = ep?.clusters?.onOff ;
-    if (!onOff) { this.error('[SUB-DEVICE] No onOff on EP2'); return; }
+    const ep = zclNode?.endpoints?.[gn];
+    const onOff = ep?.clusters?.onOff;
+    if (!onOff) { this.error('[SUB-DEVICE] No onOff on EP2' ); return; }
 
     onOff.on('attr.onOff', (value) => {
       const isPhys = !this._zclState.pending;
@@ -135,14 +135,13 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
    * Hooks into EP1 onOff reports to trigger scene flows
    */
   _setupGang1SceneDetection(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1] ;
-    const onOff = ep1?.clusters?.onOff ;
+    const ep1 = zclNode?.endpoints?.[1];
+    const onOff = ep1?.clusters?.onOff;
     if (!onOff) return;
 
-    const triggerFlows = (value) => {
+    const triggerFlows = (value ) => {
       const mode = this.sceneMode;
-      const isPhys = !this._appCommandPending?.gang1 ;
-      if (isPhys && (mode === 'auto' || mode === 'both')) {
+      const isPhys = !this._appCommandPending?.gang1;if (isPhys && (mode === 'auto' || mode === 'both')) {
         const pgid = 'wall_switch_2gang_1way_physical_gang1_' + (value ? 'on' : 'off');
         this.homey.flow._getFlowCard(id)
       }
@@ -153,8 +152,7 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
       }
       // In magic mode, revert the load state
       if (isPhys && mode === 'magic') {
-        const currentState = this._lastOnoffState?.gang1 ;
-        if (currentState !== null && currentState !== undefined) {
+        const currentState = this._lastOnoffState?.gang1;if (currentState !== null && currentState !== undefined) {
           // Revert to previous state after short delay
           setTimeout(async () => {
             try {
@@ -186,8 +184,8 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
   }
 
   onDeleted() {
-    if (this._zclState?.timeout) clearTimeout(this._zclState.timeout) ;
-    super.onDeleted?.() ;
+    if (this._zclState?.timeout) clearTimeout(this._zclState.timeout );
+    super.onDeleted?.();
   }
 }
 

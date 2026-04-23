@@ -63,7 +63,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
       this.log('[TS004F] Attempting to enable scene mode for', mfr);
       
       if (zclNode.endpoints[1]?.clusters?.onOff) {
-        const onOffCluster = zclNode.endpoints[1].clusters.onOff ;
+        const onOffCluster = zclNode.endpoints[1].clusters.onOff;
         
         // Try to write attribute 0x8004 = 1 to enable scene mode
         // This switches TS004F from dimmer mode to scene/command mode
@@ -115,7 +115,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
         // Read initial battery value
         const batteryStatus = await powerCluster.readAttributes(['batteryPercentageRemaining']).catch(() => null);
         if (batteryStatus && batteryStatus.batteryPercentageRemaining !== undefined) {
-          const batteryValue = Math.round(safeParse(batteryStatus.batteryPercentageRemaining));
+          const batteryValue = Math.round(batteryStatus.batteryPercentageRemaining);
           await this.setCapabilityValue('measure_battery', batteryValue).catch(this.error);
           this.log('Battery level:', batteryValue, '%');
         }
@@ -159,29 +159,29 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
           this._lastOnOffValue = value;
           this._lastOnOffTime = now;
           this._triggerButtonPress(value ? 'on' : 'off');
-        });
+      });
         
         // v5.5.976: Handle command events (Ernst02507 interview shows these)
         onOffCluster.on('on', () => {
           this.log('On command received');
           this._triggerButtonPress('on');
-        });
+      });
         
         onOffCluster.on('off', () => {
           this.log('Off command received');
           this._triggerButtonPress('off');
-        });
+      });
         
         onOffCluster.on('toggle', () => {
           this.log('Toggle command received');
           this._triggerButtonPress('toggle');
-        });
+      });
         
         // Handle onWithTimedOff (some devices use this)
         onOffCluster.on('onWithTimedOff', (payload) => {
           this.log('OnWithTimedOff command:', payload);
           this._triggerButtonPress('on');
-        });
+      });
       }
 
       // Handle Level Control cluster for rotation actions
@@ -193,37 +193,37 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
           this.log('Level move command:', payload);
           const direction = payload.moveMode === 0 ? 'up' : 'down';
           this._handleRotation(direction, payload.rate || 50);
-        });
+      });
 
         // Move with on/off
         levelCluster.on('moveWithOnOff', (payload) => {
           this.log('Level moveWithOnOff command:', payload);
           const direction = payload.moveMode === 0 ? 'up' : 'down';
           this._handleRotation(direction, payload.rate || 50);
-        });
+      });
 
         // Step command (discrete rotation steps)
         levelCluster.on('step', (payload) => {
           this.log('Level step command:', payload);
           const direction = payload.stepMode === 0 ? 'up' : 'down';
           this._handleRotationStep(direction, payload.stepSize || 10);
-        });
+      });
 
         // Step with on/off
         levelCluster.on('stepWithOnOff', (payload) => {
           this.log('Level stepWithOnOff command:', payload);
           const direction = payload.stepMode === 0 ? 'up' : 'down';
           this._handleRotationStep(direction, payload.stepSize || 10);
-        });
+      });
 
         // Stop command
         levelCluster.on('stop', () => {
           this.log('Level stop command received');
-        });
+      });
 
         levelCluster.on('stopWithOnOff', () => {
           this.log('Level stopWithOnOff command received');
-        });
+      });
       }
 
       // v5.5.976: Enhanced Scenes cluster handling (Ernst02507 interview shows scenes in bindings)
@@ -268,27 +268,27 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
 
       // Try to get scenes cluster from bindings (output cluster)
       const sc = ep.clusters?.scenes || ep.clusters?.[5] || 
-                 ep.bindings?.scenes || ep.bindings?.[5] ;
+                 ep.bindings?.scenes || ep.bindings?.[5];
       
       if (sc) {
-        this.log('[SCENES] Setting up Scenes cluster listeners');
+        this.log('[SCENES] Setting up Scenes cluster listeners' );
         
         // Listen for all possible scene events
         sc.on('recall', (p) => { 
           this.log('[SCENES] recall:', JSON.stringify(p)); 
-          this._handleSceneCommand(p?.sceneId ?? p?.groupId ?? p) ; 
-        });
+          this._handleSceneCommand(p?.sceneId ?? p?.groupId ?? p);
+      });
         sc.on('recallScene', (p) => { 
           this.log('[SCENES] recallScene:', JSON.stringify(p)); 
-          this._handleSceneCommand(p?.sceneId ?? p) ; 
-        });
+          this._handleSceneCommand(p?.sceneId ?? p);
+      });
         sc.on('storeScene', (p) => { 
-          this.log('[SCENES] storeScene:', JSON.stringify(p)); 
-        });
+          this.log('[SCENES] storeScene:', JSON.stringify(p));
+      });
         sc.on('addScene', (p) => { 
           this.log('[SCENES] addScene:', JSON.stringify(p)); 
-          this._handleSceneCommand(p?.sceneId ?? 0) ; 
-        });
+          this._handleSceneCommand(p?.sceneId ?? 0);
+      });
         
         // Bind to receive scene commands
         if (typeof sc.bind === 'function') {
@@ -312,15 +312,13 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
   _setupRawSceneListener(endpoint) {
     try {
       // Listen for commands on scenes cluster (0x0005 = 5)
-      const originalHandleFrame = endpoint.handleFrame?.bind(endpoint) ;
-      
-      endpoint.handleFrame = (clusterId, frame, meta) => {
+      const originalHandleFrame = endpoint.handleFrame?.bind(endpoint );endpoint.handleFrame = (clusterId, frame, meta) => {
         // Scenes cluster = 5
         if (clusterId === 5 || clusterId === 0x0005) {
-          this.log('[SCENES-RAW] Frame on cluster 5:', frame?.toString('hex'), meta) ;
+          this.log('[SCENES-RAW] Frame on cluster 5:', frame?.toString('hex'), meta);
           
           // Parse scene command
-          if (frame && frame.length >= 1) {
+          if (frame && frame.length >= 1 ) {
             const cmdId = frame[0];
             // recallScene = 0x05, addScene = 0x00
             if (cmdId === 0x05 && frame.length >= 4) {
@@ -382,7 +380,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
   }
 
   async _handleRotationStep(direction, stepSize) {
-    const delta = direction === 'up' ? (safeParse(stepSize, 254)) : -(safeParse(stepSize, 254));
+    const delta = direction === 'up' ? (stepSize * 254 ) : -(stepSize * 254);
     this._updateSimulatedBrightness(delta);
 
     if (direction === 'up') {
@@ -416,7 +414,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
     const rotateLeftTrigger = (() => { try { return this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_rotate_left'); } catch(e) { return null; } })();
     if (rotateLeftTrigger) {
       await rotateLeftTrigger.trigger(this, { 
-        brightness:Math.round(safeMultiply(this._simulatedBrightness))
+        brightness:Math.round(this._simulatedBrightness)
       }).catch(this.error);
     }
   }
@@ -435,7 +433,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
     const rotateRightTrigger = (() => { try { return this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_rotate_right'); } catch(e) { return null; } })();
     if (rotateRightTrigger) {
       await rotateRightTrigger.trigger(this, { 
-        brightness:Math.round(safeMultiply(this._simulatedBrightness))
+        brightness:Math.round(this._simulatedBrightness)
       }).catch(this.error);
     }
   }
@@ -481,12 +479,14 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
 
   async _setupE000Detection(zclNode) {
     try {
-      const ep = zclNode?.endpoints?.[1] ; if (!ep) return;
-      const e = ep.clusters?.tuyaE000 || ep.clusters?.[57344] ;
+      const ep = zclNode?.endpoints?.[1]; if (!ep ) return;
+      const e = ep.clusters?.tuyaE000 || ep.clusters?.[57344];
       if (e?.on) {
-        e.on('buttonPress', async (d) => { this._triggerButtonPress(resolvePressType(d?.pressType, 'KNOB-E000')) ; });
+        e.on('buttonPress', async (d) => { this._triggerButtonPress(resolvePressType(d?.pressType, 'KNOB-E000'));
+      });
         for (const c of ['cmd0','cmd1','cmd2','cmdFD','cmdFE','cmdFF']) {
-          e.on(c, async ({ data }) => { this._triggerButtonPress(data?.length >= 1 ? resolvePressType(data[0], 'KNOB-E000') : 'single'); });
+          e.on(c , async ({ data }) => { this._triggerButtonPress(data?.length >= 1 ? resolvePressType(data[0] , 'KNOB-E000') : 'single');
+      });
         }
       }
       try {
@@ -499,10 +499,12 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
 
   async _setupTuyaDPDetection(zclNode) {
     try {
-      const tc = zclNode?.endpoints?.[1]?.clusters?.tuya || zclNode?.endpoints?.[1]?.clusters?.[61184] ;
-      if (!tc?.on) return ;
-      tc.on('response', async (d) => { const v = d?.data ?? d?.value ?? 0 ; this._triggerButtonPress(resolvePressType(v, 'KNOB-DP')); });
-      tc.on('datapoint', async (d) => { const v = d?.data?.[0] ?? 0 ; this._triggerButtonPress(resolvePressType(v, 'KNOB-DP')); });
+      const tc = zclNode?.endpoints?.[1]?.clusters?.tuya || zclNode?.endpoints?.[1]?.clusters?.[61184];
+      if (!tc?.on) return;
+      tc.on('response', async (d) => { const v = d?.data ?? d?.value ?? 0; this._triggerButtonPress(resolvePressType(v, 'KNOB-DP'));
+      });
+      tc.on('datapoint', async (d) => { const v = d?.data?.[0] ?? 0; this._triggerButtonPress(resolvePressType(v, 'KNOB-DP'));
+      });
     } catch (e) { this.log('[TUYA-DP] Error:', e.message); }
   }
 

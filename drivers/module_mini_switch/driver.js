@@ -32,7 +32,7 @@ class MiniSwitchDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('module_mini_switch_is_on', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('module_mini_switch_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -43,7 +43,7 @@ class MiniSwitchDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('module_mini_switch_turn_on', 'action');
+      const card = const card = this.homey.flow.getActionCard('module_mini_switch_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -54,7 +54,7 @@ class MiniSwitchDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action module_mini_switch_turn_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('module_mini_switch_turn_off', 'action');
+      const card = const card = this.homey.flow.getActionCard('module_mini_switch_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -65,7 +65,7 @@ class MiniSwitchDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action module_mini_switch_turn_off: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('module_mini_switch_toggle', 'action');
+      const card = const card = this.homey.flow.getActionCard('module_mini_switch_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

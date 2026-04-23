@@ -112,7 +112,7 @@ function buildReportingBlock(capabilities) {
     block += `          minInterval: ${c.minInterval},\n`;
     block += `          maxInterval: ${c.maxInterval},\n`;
     block += `          minChange: ${c.minChange},\n`;
-    block += `        }${i < configs.length - 1 ? ',' : ''}\n`;
+    block += `        }${i < configs.length - 1 ? ' ,' : ''}\n`      ;
   }
   block += `      ]);\n`;
   block += `      this.log('Attribute reporting configured successfully');\n`;
@@ -137,7 +137,7 @@ function syntaxCheck(code) {
 
 function main() {
   console.log('=== Attribute Reporting Injector ===');
-  console.log(`Mode: ${DRY ? 'DRY RUN' : 'LIVE'}`);
+  console.log(`Mode: ${DRY ? 'DRY RUN' : 'LIVE'}`)      ;
 
   let scanned = 0, injected = 0, skipped = 0, errors = 0;
 
@@ -150,7 +150,7 @@ function main() {
     if (!compose) continue;
 
     // Skip WiFi-only and non-Zigbee drivers
-    if (!compose.zigbee || !compose.zigbee.manufacturerName?.length) continue ;
+    if (!compose.zigbee || !compose.zigbee.manufacturerName?.length) continue       ;
 
     const caps = compose.capabilities || [];
     const sensorCaps = caps.filter(c => REPORTING_MAP[c.split('.')[0]]);
@@ -173,7 +173,7 @@ function main() {
     }
 
     const block = buildReportingBlock(sensorCaps);
-    if (!block) { skipped++; continue; }
+    if (!block ) { skipped++; continue; }
 
     // Inject after the init method opening brace
     const newCode = code.substring(0, init.index) + block + code.substring(init.index);

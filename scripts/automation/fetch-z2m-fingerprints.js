@@ -35,12 +35,12 @@ function getLocalFingerprints() {
     try {
       const data = JSON.parse(fs.readFileSync(cf, 'utf8'));
       for (const m of (data.zigbee?.manufacturerName || [])) {
-        mfrs.add(m) ;
+        mfrs.add(m );
         if (!driverMap.has(m)) driverMap.set(m, []);
         driverMap.get(m).push(d);
       }
-      for (const p of (data.zigbee?.productId || [])) pids.add(p) ;
-    } catch (e) { /* skip */ }
+      for (const p of (data.zigbee?.productId || [])) pids.add(p)       ;
+    } catch (e ) { /* skip */ }
   }
   return { mfrs, pids, driverMap };
 }

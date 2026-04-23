@@ -23,8 +23,8 @@ duplicates.forEach(([id, list]) => {
     console.log(`ID: "${id}" - Count: ${list.length}`);
     // Show first few lines of each duplicate
     list.forEach((t, idx) => {
-        const filter = t.args && t.args.find(a => a.filter)?.filter || 'no filter' ;
-        console.log(`  ${idx+1}: filter="${filter}", title="${t.title?.en || 'no title'}"`) ;
+        const filter = t.args && t.args.find(a => a.filter)?.filter || 'no filter'      ;
+        console.log(`  ${idx+1}: filter="${filter}", title="${t.title?.en || 'no title'}"`)       ;
     });
 });
 
@@ -33,8 +33,8 @@ console.log('\n=== BULB_TUNABLE_WHITE RELATED TRIGGERS ===');
 const bulbTriggers = triggers.filter(t => t.id && t.id.includes('bulb_tunable_white'));
 bulbTriggers.forEach(t => {
     console.log(`ID: "${t.id}"`);
-    console.log(`  Filter: ${t.args?.[0]?.filter || 'none'}`) ;
-    console.log(`  Title: ${t.title?.en || 'no title'}`) ;
+    console.log(`  Filter: ${t.args?.[0]?.filter || 'none'}`)      ;
+    console.log(`  Title: ${t.title?.en || 'no title'}`)       ;
 });
 
 // Also check for any trigger with "bulb_tunable" in any part

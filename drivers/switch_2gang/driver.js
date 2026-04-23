@@ -29,12 +29,11 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       ['turned_on', 'turned_off', 'physical_on', 'physical_off', 'scene'].forEach(type => {
         try {
           const id = type === 'scene' ? `${P}_${gang}_scene` : 
-                    type.startsWith('physical') ? `${P}_physical_${gang}_${type.split('_')[1]}` :
-                    `${P}_${gang}_${type}`;
+                    type.startsWith('physical') ? `${P}_physical_${gang}_${type.split('_' )[1]}` : `${P}_${gang}_${type}`;
           this._getFlowCard(id, 'trigger');
         } catch (e) {}
       });
-    });
+      });
 
     // CONDITIONS
     gangs.forEach((gang, idx) => {

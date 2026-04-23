@@ -82,7 +82,7 @@ function processBroadening() {
         if (!fs.existsSync(cp)) return;
         try {
             const j = JSON.parse(fs.readFileSync(cp, 'utf8'));
-            (j.zigbee?.manufacturerName || []).forEach(m => fpToDriver.set(m, d)) ;
+            (j.zigbee?.manufacturerName || []).forEach(m => fpToDriver.set(m, d))       ;
         } catch {}
     });
 

@@ -33,7 +33,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('button_wireless_plug_hybrid_plug_energy_monitor_is_on', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('button_wireless_plug_hybrid_plug_energy_monitor_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -43,30 +43,30 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition button_wireless_plug_hybrid_plug_energy_monitor_is_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('button_wireless_plug_hybrid_plug_energy_monitor_power_above', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('button_wireless_plug_hybrid_plug_energy_monitor_power_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
-        });
+      });
       }
     } catch (err) { this.error(`Condition button_wireless_plug_hybrid_plug_energy_monitor_power_above: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('button_wireless_plug_hybrid_plug_energy_monitor_energy_above', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('button_wireless_plug_hybrid_plug_energy_monitor_energy_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
-        });
+      });
       }
     } catch (err) { this.error(`Condition button_wireless_plug_hybrid_plug_energy_monitor_energy_above: ${err.message}`); }
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('button_wireless_plug_hybrid_plug_energy_monitor_turn_on', 'action');
+      const card = const card = this.homey.flow.getActionCard('button_wireless_plug_hybrid_plug_energy_monitor_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -77,7 +77,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action button_wireless_plug_hybrid_plug_energy_monitor_turn_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('button_wireless_plug_hybrid_plug_energy_monitor_turn_off', 'action');
+      const card = const card = this.homey.flow.getActionCard('button_wireless_plug_hybrid_plug_energy_monitor_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -88,7 +88,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action button_wireless_plug_hybrid_plug_energy_monitor_turn_off: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('button_wireless_plug_hybrid_plug_energy_monitor_toggle', 'action');
+      const card = const card = this.homey.flow.getActionCard('button_wireless_plug_hybrid_plug_energy_monitor_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -100,7 +100,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action button_wireless_plug_hybrid_plug_energy_monitor_toggle: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('button_wireless_plug_hybrid_plug_energy_monitor_reset_meter', 'action');
+      const card = const card = this.homey.flow.getActionCard('button_wireless_plug_hybrid_plug_energy_monitor_reset_meter');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

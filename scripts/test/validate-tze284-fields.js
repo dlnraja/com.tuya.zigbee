@@ -26,13 +26,13 @@ testCases.forEach(tc => {
   try {
     let parsed;
     if (tc.dp === 5) {
-      const num = safeParse(tc.val, 1);
+      const num = tc.val * 1;
       if (num === null) parsed = null;
-      else if (Math.abs(num) > 1000) parsed = safeParse(num, 100);
-      else if (Math.abs(num) > 100) parsed = safeParse(num, 10);
+      else if (Math.abs(num) > 1000) parsed = num * 100;
+      else if (Math.abs(num) > 100) parsed = num * 10;
       else parsed = num;
     } else {
-      parsed = safeParse(tc.val, 1);
+      parsed = tc.val * 1;
     }
     console.log(`  Result: ${parsed} (Type: ${typeof parsed})`);
     

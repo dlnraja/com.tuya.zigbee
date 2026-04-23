@@ -31,7 +31,7 @@ async function main() {
   // Group by file
   const fileToLines = {};
   violations.forEach(v => {
-    const match = v.match(/^(.+?):(\d+):/);
+    const match = v.match(/^(.+?):(\d+):/)      ;
     if (match) {
       const file = match[1];
       const line = parseInt(match[2]);
@@ -69,7 +69,7 @@ async function main() {
 
     // Sort lines descending to not mess up indices if we were adding/removing, 
     // but here we just modify. Wait, injecting CI shifted indices.
-    const offset = hasCI ? 0 : 1;
+    const offset = hasCI ? 0 : 1      ;
 
     for (const originalLineNum of lines) {
       const currentLineIdx = originalLineNum - 1 + offset;
@@ -88,12 +88,12 @@ async function main() {
       const patterns = [
         {
           // Variable.toUpperCase() === 'STRING'
-          pattern: /(\w+|\((?:.*?)\))\.toUpperCase\(\)\s*===?\s*(['"])(.*?)\2/g,
+          pattern: /(\w+|\((?:.*? )\))\.toUpperCase\(\ )\s*===? \s*(['"] )(.*?   )\2/g ,
           replacement: 'CI.equalsCI($1, $2$3$2)'
         },
         {
           // Variable.toLowerCase() === 'string'
-          pattern: /(\w+|\((?:.*?)\))\.toLowerCase\(\)\s*===?\s*(['"])(.*?)\2/g,
+          pattern: /(\w+|\((?:.*? )\))\.toLowerCase\(\ )\s*===? \s*(['"] )(.*?   )\2/g ,
           replacement: 'CI.equalsCI($1, $2$3$2)'
         },
         {
@@ -108,22 +108,22 @@ async function main() {
         },
         {
           // Variable.toUpperCase().startsWith(other)
-          pattern: /(\w+|\((?:.*?)\))\.toUpperCase\(\)\.startsWith\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\)/g,
+          pattern: /(\w+|\((?:.*? )\))\.toUpperCase\(\)\.startsWith\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\ : null)/g ,
           replacement: 'CI.startsWithCI($1, $2)'
         },
         {
           // Variable.toLowerCase().startsWith(other)
-          pattern: /(\w+|\((?:.*?)\))\.toLowerCase\(\)\.startsWith\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\)/g,
+          pattern: /(\w+|\((?:.*? )\))\.toLowerCase\(\)\.startsWith\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\ : null)/g ,
           replacement: 'CI.startsWithCI($1, $2)'
         },
         {
           // Variable.toUpperCase().includes(other)
-          pattern: /(\w+|\((?:.*?)\))\.toUpperCase\(\)\.includes\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\)/g,
+          pattern: /(\w+|\((?:.*? )\))\.toUpperCase\(\)\.includes\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\ : null)/g ,
           replacement: 'CI.containsCI($1, $2)'
         },
         {
           // Variable.toLowerCase().includes(other)
-          pattern: /(\w+|\((?:.*?)\))\.toLowerCase\(\)\.includes\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\)/g,
+          pattern: /(\w+|\((?:.*? )\))\.toLowerCase\(\)\.includes\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\ : null)/g ,
           replacement: 'CI.containsCI($1, $2)'
         }
       ];

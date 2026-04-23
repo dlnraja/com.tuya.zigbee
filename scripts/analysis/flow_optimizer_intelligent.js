@@ -498,7 +498,7 @@ class IntelligentFlowOptimizer {
       case 'ID_PREFIX_MISMATCH':
         // Corriger le prÃ©fixe
         const baseAction = this.extractBaseAction(originalId);
-        return baseAction ? `${driverName}_${baseAction}` : `${driverName}_${originalId.split('_').pop()}`;
+        return baseAction ? `${driverName}_${baseAction}` : `${driverName}_${originalId.split('_').pop()}`      ;
 
       case 'ID_TOO_VERBOSE':
         // Simplifier l'ID

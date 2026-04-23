@@ -56,7 +56,7 @@ class IPCClient {
             // Timeout after 5 seconds
             setTimeout(() => {
                 if (!this.connected) {
-                    reject(new Error('Connection timeout - Is Agent Hub running?')) : null;
+                    reject(new Error('Connection timeout - Is Agent Hub running? ') : null)       ;
                 }
             }, 5000);
         });
@@ -230,7 +230,7 @@ class AIProvider {
         this.name = name;
         this.ipc = ipcClient;
         this.cache = new Map();
-        this.cacheTimeout =safeMultiply(5, 60) * 1000; // 5 minutes
+        this.cacheTimeout =5 * 60 * 1000; // 5 minutes
     }
 
     async ensureInitialized() {
@@ -469,7 +469,7 @@ const server = new McpServer({
 
 // Helper functions
 function toolResponse(result) {
-    return { content: [{ type: 'text', text: typeof result === 'string' ? result : JSON.stringify(result, null, 2) }] };
+    return { content: [{ type: 'text', text: typeof result === 'string' ? result : JSON.stringify(result, null, 2) }] }      ;
 }
 
 function toolError(error) {
@@ -562,7 +562,7 @@ server.tool(
         const disabled = checkDisabled('perplexity');
         if (disabled) return disabled;
         try {
-            const tf = timeframe ? ` from ${timeframe}` : ' recent';
+            const tf = timeframe ? ` from ${timeframe}` : ' recent'      ;
             return toolResponse(await perplexity.search(`Latest news${tf}: ${query}`));
         } catch (err) {
             return toolError(err);
@@ -625,7 +625,7 @@ server.tool(
         if (disabled) return disabled;
         try {
             const query = code
-                ? `Verify this code follows best practices for: ${purpose}\n\nCode:\n${code}`
+                ? `Verify this code follows best practices for: ${purpose}\n\nCode:\n${code}`       ;
                 : `What are the best practices and common patterns for: ${purpose}`;
             return toolResponse(await perplexity.search(query));
         } catch (err) {
@@ -645,10 +645,10 @@ server.tool(
         const disabled = checkDisabled('perplexity');
         if (disabled) return disabled;
         try {
-            const lang = language ? ` (${language})` : '';
+            const lang = language ? ` (${language} )` : ''      ;
             const codeContent = code || '';
             const fileContent = readFileContents(files);
-            const fullCode = fileContent ? `${fileContent}\n\n${codeContent}` : codeContent;
+            const fullCode = fileContent ? `${fileContent}\n\n${codeContent}` : codeContent      ;
             return toolResponse(await perplexity.search(`Explain this code${lang} in detail:\n\n${fullCode}`));
         } catch (err) {
             return toolError(err);
@@ -686,11 +686,11 @@ server.tool(
         const disabled = checkDisabled('perplexity');
         if (disabled) return disabled;
         try {
-            const lang = language ? ` (${language})` : '';
-            const errMsg = error ? `\nError: ${error}` : '';
+            const lang = language ? ` (${language} )` : ''      ;
+            const errMsg = error ? `\nError: ${error}` : ''      ;
             const codeContent = code || '';
             const fileContent = readFileContents(files);
-            const fullCode = fileContent ? `${fileContent}\n\n${codeContent}` : codeContent;
+            const fullCode = fileContent ? `${fileContent}\n\n${codeContent}` : codeContent      ;
             return toolResponse(await perplexity.search(`Debug this code${lang}${errMsg}:\n\n${fullCode}`));
         } catch (err) {
             return toolError(err);
@@ -709,10 +709,10 @@ server.tool(
         const disabled = checkDisabled('perplexity');
         if (disabled) return disabled;
         try {
-            const g = goal ? ` for ${goal}` : '';
+            const g = goal ? ` for ${goal}` : ''      ;
             const codeContent = code || '';
             const fileContent = readFileContents(files);
-            const fullCode = fileContent ? `${fileContent}\n\n${codeContent}` : codeContent;
+            const fullCode = fileContent ? `${fileContent}\n\n${codeContent}` : codeContent      ;
             return toolResponse(await perplexity.search(`Optimize this code${g}:\n\n${fullCode}`));
         } catch (err) {
             return toolError(err);
@@ -731,10 +731,10 @@ server.tool(
         const disabled = checkDisabled('perplexity');
         if (disabled) return disabled;
         try {
-            const ctx = context ? ` Context: ${context}` : '';
+            const ctx = context ? ` Context: ${context}` : ''      ;
             const codeContent = code || '';
             const fileContent = readFileContents(files);
-            const fullCode = fileContent ? `${fileContent}\n\n${codeContent}` : codeContent;
+            const fullCode = fileContent ? `${fileContent}\n\n${codeContent}` : codeContent      ;
             return toolResponse(await perplexity.search(`Review this code for issues, improvements, and best practices.${ctx}\n\n${fullCode}`));
         } catch (err) {
             return toolError(err);
@@ -768,7 +768,7 @@ server.tool(
         const disabled = checkDisabled('perplexity');
         if (disabled) return disabled;
         try {
-            const f = focus ? ` Focus on: ${focus}` : '';
+            const f = focus ? ` Focus on: ${focus}` : ''      ;
             return toolResponse(await perplexity.search(`Summarize this webpage: ${url}${f}`));
         } catch (err) {
             return toolError(err);
@@ -786,7 +786,7 @@ server.tool(
         const disabled = checkDisabled('perplexity');
         if (disabled) return disabled;
         try {
-            const s = style ? ` in ${style} style` : '';
+            const s = style ? ` in ${style} style` : ''      ;
             return toolResponse(await perplexity.search(`Write a comprehensive article about: ${topic}${s}`));
         } catch (err) {
             return toolError(err);
@@ -818,7 +818,7 @@ server.tool(
         const disabled = checkDisabled('perplexity');
         if (disabled) return disabled;
         try {
-            const q = question ? ` Answer: ${question}` : '';
+            const q = question ? ` Answer: ${question}` : ''      ;
             return toolResponse(await perplexity.search(`Analyze this document: ${url}${q}`));
         } catch (err) {
             return toolError(err);
@@ -840,7 +840,7 @@ server.tool(
             if (disabled) return disabled;
 
             // Download image to temp file
-            const https = imageUrl.startsWith('https') ? require('https') : require('http');
+            const https = imageUrl.startsWith('https') ? require('https' ) : require('http')      ;
             const os = require('os');
             const tmpDir = os.tmpdir();
 
@@ -852,7 +852,7 @@ server.tool(
                 const file = fs.createWriteStream(tmpFile);
                 https.get(imageUrl, (response) => {
                     if (response.statusCode >= 300 && response.statusCode < 400 && response.headers.location) {
-                        const redirectModule = response.headers.location.startsWith('https') ? require('https') : require('http');
+                        const redirectModule = response.headers.location.startsWith('https') ? require('https' ) : require('http')      ;
                         redirectModule.get(response.headers.location, (res) => {
                             res.pipe(file);
                             file.on('finish', () => { file.close(); resolve(); });
@@ -866,7 +866,7 @@ server.tool(
 
             console.error(`[analyze_image_url] Downloaded to: ${tmpFile}`);
 
-            const focusText = focus ? ` Focus on: ${focus}.` : '';
+            const focusText = focus ? ` Focus on: ${focus}.` : ''      ;
             const message = `Please analyze this image in detail.${focusText}`;
 
             const providers = { perplexity, chatgpt, claude, gemini };
@@ -913,7 +913,7 @@ server.tool(
         const disabled = checkDisabled('perplexity');
         if (disabled) return disabled;
         try {
-            const c = content ? `\n\nContent:\n${content}` : '';
+            const c = content ? `\n\nContent:\n${content}` : ''      ;
             return toolResponse(await perplexity.search(`${request}${c}`));
         } catch (err) {
             return toolError(err);
@@ -931,7 +931,7 @@ server.tool(
         const disabled = checkDisabled('perplexity');
         if (disabled) return disabled;
         try {
-            const s = style ? ` in ${style} style` : '';
+            const s = style ? ` in ${style} style` : ''      ;
             return toolResponse(await perplexity.search(`Create a detailed AI image generation prompt for: ${description}${s}`));
         } catch (err) {
             return toolError(err);
@@ -952,7 +952,7 @@ server.tool(
         const disabled = checkDisabled('perplexity');
         if (disabled) return disabled;
         try {
-            const from = sourceLanguage ? ` from ${sourceLanguage}` : '';
+            const from = sourceLanguage ? ` from ${sourceLanguage}` : ''      ;
             return toolResponse(await perplexity.search(`Translate${from} to ${targetLanguage}: ${text}`));
         } catch (err) {
             return toolError(err);
@@ -984,7 +984,7 @@ server.tool(
         const disabled = checkDisabled('perplexity');
         if (disabled) return disabled;
         try {
-            const y = year ? ` for ${year}` : '';
+            const y = year ? ` for ${year}` : ''      ;
             return toolResponse(await perplexity.search(`Find statistics and data${y}: ${topic}`));
         } catch (err) {
             return toolError(err);
@@ -1003,7 +1003,7 @@ server.tool(
         const disabled = checkDisabled('perplexity');
         if (disabled) return disabled;
         try {
-            const ctx = context ? ` for ${context}` : '';
+            const ctx = context ? ` for ${context}` : ''      ;
             return toolResponse(await perplexity.search(`Compare ${item1} vs ${item2}${ctx}`));
         } catch (err) {
             return toolError(err);
@@ -1189,14 +1189,14 @@ server.tool(
 
             // Format as clearly separated text so it's readable even in output.txt
             const sections = [];
-            names.forEach((name, i) => {
+            names.forEach((name/i) => {
                 const response = results[i];
                 const label = name.charAt(0).toUpperCase() + name.slice(1);
                 const divider = ''.repeat(60);
                 if (response && response.error) {
                     sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n Error: ${response.error}\n`);
                 } else {
-                    const text = typeof response === 'string' ? response : (response?.response || response?.text || JSON.stringify(response)) : null;
+                    const text = typeof response === 'string' ? response : (response?.response || response?.text || JSON.stringify(response))      ;
                     sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n${text}\n`);
                 }
             });
@@ -1242,8 +1242,8 @@ server.tool(
                 if (response && response.error) {
                     sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n Error: ${response.error}\n`);
                 } else {
-                    const text = typeof response === 'string' ? response : (response?.response || response?.text || JSON.stringify(response)) : null;
-                    sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n${text}\n`);
+                    const text = typeof response === 'string' ? response : (response?.response || response?.text || JSON.stringify(response))      ;
+                    sections.push(`\n${divider}\n## ${label} Response\n${divider}\n\n${text}\n` );
                 }
             }
 
@@ -1352,7 +1352,7 @@ server.tool(
             if (imageExtensions.includes(ext)) {
                 // Image file: upload to provider and ask about it
                 const imageQuestion = question
-                    ? `Please analyze this image and answer: ${question}`
+                    ? `Please analyze this image and answer: ${question}`       ;
                     : `Please analyze this image and describe its contents, purpose, and any notable aspects.`;
 
                 const result = await providers[useProvider].chatWithFile(imageQuestion, filePath);
@@ -1372,7 +1372,7 @@ server.tool(
             }
 
             const message = question
-                ? `${fileContent}\n\nPlease analyze this file and answer: ${question}`
+                ? `${fileContent}\n\nPlease analyze this file and answer: ${question}`       ;
                 : `${fileContent}\n\nPlease analyze this file and explain its contents, purpose, and any notable aspects.`;
 
             const response = await providers[useProvider].chat(message);
@@ -1407,7 +1407,7 @@ server.tool(
                 return toolResponse({ success: false, error: 'Could not read file or file reference is disabled' });
             }
 
-            const focusText = focus ? ` Focus on: ${focus}.` : '';
+            const focusText = focus ? ` Focus on: ${focus}.` : ''      ;
             const message = `${fileContent}\n\nPlease review this code file.${focusText} Identify issues, suggest improvements, and follow best practices.`;
 
             const providers = { perplexity, chatgpt, claude, gemini };
@@ -1458,7 +1458,7 @@ server.tool(
     async () => {
         try {
             const result = await ipcClient.send('toggleWindow');
-            return toolResponse({ success: true, visible: result.visible, message: result.visible ? 'Window shown' : 'Window hidden' });
+            return toolResponse({ success: true, visible: result.visible, message: result.visible ? 'Window shown' : 'Window hidden' })      ;
         } catch (err) {
             return toolError(err);
         }
@@ -1475,8 +1475,7 @@ server.tool(
                 success: true,
                 headlessMode: enabled,
                 message: enabled
-                    ? 'Headless mode enabled - Agent Hub runs in background, MCP still works'
-                    : 'Headless mode disabled - Agent Hub window visible'
+                    ? 'Headless mode enabled - Agent Hub runs in background , MCP still works'  : 'Headless mode disabled - Agent Hub window visible'
             });
         } catch (err) {
             return toolError(err);

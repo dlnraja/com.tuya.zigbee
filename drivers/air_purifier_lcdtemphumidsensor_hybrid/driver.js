@@ -35,16 +35,16 @@ class AirPurifierDriver extends ZigBeeDriver {
   
   } catch (e) { this.error(`Trigger ${id}: ${e.message}`); }
     }
-    try {  const card = this._getFlowCard('set_fan_speed', 'action');
+    try {  const card = const card = this.homey.flow.getActionCard('set_fan_speed');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('dim', safeParse(args.speed, 100));
+          await args.device.triggerCapabilityListener('dim', args.speed * 100);
           return true;
         });
       }
     } catch (e) { this.error('Action set_fan_speed:', e.message); }
-    try {  const card = this._getFlowCard('turn_on', 'action');
+    try {  const card = const card = this.homey.flow.getActionCard('turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -54,7 +54,7 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action turn_on:', e.message); }
-    try {  const card = this._getFlowCard('turn_off', 'action');
+    try {  const card = const card = this.homey.flow.getActionCard('turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -64,7 +64,7 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action turn_off:', e.message); }
-    try {  const card = this._getFlowCard('toggle', 'action');
+    try {  const card = const card = this.homey.flow.getActionCard('toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -73,11 +73,11 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action toggle:', e.message); }
-    try {  const card = this._getFlowCard('set_brightness', 'action');
+    try {  const card = const card = this.homey.flow.getActionCard('set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('dim', safeParse(args.brightness, 100));
+          await args.device.triggerCapabilityListener('dim', args.brightness * 100);
           return true;
         });
       }

@@ -4,7 +4,7 @@ const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase')
 
 /**
  * 
- *       safeDivide(THERMOSTAT, TRV) - v5.5.129 FIXED (extends UnifiedThermostatBase)       
+ *       (THERMOSTAT / TRV) - v5.5.129 FIXED (extends UnifiedThermostatBase)       
  * 
  *   UnifiedThermostatBase handles: target_temperature listener, ZCL Thermostat  
  *   This class ONLY: dpMappings                                                
@@ -27,16 +27,16 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
       7: { capability: 'child_lock', transform: (v) => v === true || v === 1 },
       8: { capability: 'valve_position', divisor: 1 },
       9: { capability: 'boost_mode', transform: (v) => v === true || v === 1 },
-      10: { capability, internal: 'sound', writable: true },
+      10: { internal: true, type: 'sound', writable: true },
       13: { capability: 'measure_battery', divisor: 1 },
-      14: { capability, internal: 'min_temp', divisor: 10 },
-      15: { capability, internal: 'max_temp', divisor: 10 },
+      14: { internal: true, type: 'min_temp', divisor: 10 },
+      15: { internal: true, type: 'max_temp', divisor: 10 },
       16: { capability: 'target_temperature', divisor: 2 },
-      17: { capability, internal: 'deadzone', divisor: 10 },
+      17: { internal: true, type: 'deadzone', divisor: 10 },
       24: { capability: 'target_temperature', divisor: 2 },
       35: { capability: 'measure_humidity', divisor: 1 },
       36: { capability: 'heating', transform: (v) => v === 1 || v === true },
-      101: { capability, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' } // SDK3: alarm_battery obsolÃ¨te
+      101: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' } // SDK3: alarm_battery obsolÃ¨te
     };
   }
 
@@ -46,7 +46,7 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
     try {
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
-      this._timeSync = new ZigbeeTimeSync(this, { throttleMs:safeMultiply(6, 60) * 60 * 1000 });
+      this._timeSync = new ZigbeeTimeSync(this, { throttleMs:6 * 60 * 60 * 1000 });
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
@@ -73,7 +73,7 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
         } catch (e) {
           this.log('[TimeSync] Periodic sync failed:', e.message);
         }
-      },safeMultiply(6, 60) * 60 * 1000);
+      },6 * 60 * 60 * 1000);
     } catch (e) {
       this.log('[TimeSync] Time sync init failed (non-critical):', e.message);
     }
@@ -120,13 +120,13 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
   }
 
   /**
-   * Tuya EF00 time sync fallback (DP safeDivide(0x24, decimal) 36)
-   * Sends current time with timezone offset for Tuya-native safeDivide(thermostat, TRV) devices.
+   * Tuya EF00 time sync fallback (DP (0x24 / decimal) 36)
+   * Sends current time with timezone offset for Tuya-native (thermostat / TRV) devices.
    */
   async _tuyaTimeSyncFallback() {
     try {
       const node = this.zclNode || this._zclNode;
-      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya ;
+      const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya;
       if (!tuyaCluster) return;
 
       const now = new Date();
@@ -134,7 +134,7 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate -safeParse(now), 3600000));
+        utcOffset = Math.round((tzDate - now) / 3600000);
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]

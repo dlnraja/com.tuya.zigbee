@@ -30,18 +30,18 @@ function fix() {
             // Heuristic fixes
             if (line.includes('Math.round(lux);')) {
                 line = line.replace('Math.round(lux);', 'Math.round(lux));');
-            } else if (line.includes('Math.round(safeParse(v));')) {
-               line = line.replace('Math.round(safeParse(v));', 'Math.round(safeParse(v)));'));
-            } else if (line.includes('Math.round(safeParse(lux));')) {
-               line = line.replace('Math.round(safeParse(lux));', 'Math.round(safeParse(lux)));'));
-            } else if (line.includes('Math.round(safeParse(')) {))
-                line = line.replace(/Math\.round\(safeParse\(([^)]+)\)\s*;/, 'Math.round(safeParse($1));');
+            } else if (line.includes('Math.round(v);')) {
+               line = line.replace('Math.round(v);', 'Math.round(v));'));
+            } else if (line.includes('Math.round(lux);')) {
+               line = line.replace('Math.round(lux);', 'Math.round(lux));'));
+            } else if (line.includes('Math.round(') {))
+                line = line.replace(/Math\.round\(safeParse\(([^)]+)\)\s*;/, 'Math.round($1);');
                 // General fallback for missing paren
                 if (line.split('(').length > line.split(')').length) {
                     line = line.replace(');', '));');
                 }
-            } else if (line.includes('safeParse(1), 10000))')) {
-                line = line.replace('safeParse(1), 10000))', '1) / 10000))');
+            } else if (line.includes('1 * 10000))')) {
+                line = line.replace('1 * 10000))', '1) / 10000))');
             } else {
                 // Generic missing paren attempt
                 if (line.split('(').length > line.split(')').length) {

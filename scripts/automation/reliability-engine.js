@@ -49,7 +49,7 @@ function calculateReliability() {
         const composePath = path.join(DRIVERS_DIR, driver, 'driver.compose.json');
         if (fs.existsSync(composePath)) {
             const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-            const manufacturers = compose.zigbee?.manufacturerName || [] ;
+            const manufacturers = compose.zigbee?.manufacturerName || []       ;
             
             let driverScore = 100;
             let totalIssues = 0;

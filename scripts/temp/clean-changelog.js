@@ -45,8 +45,8 @@ for (let i = 0; i < lines.length; i++) {
 
 // Clean up empty lines and empty sections
 let finalContent = newLines.join('\n');
-finalContent = finalContent.replace(/\n### [^\n]+\n+(?=\n|### |## |---)/g, '\n') : null;
-finalContent = finalContent.replace(/\n{3,}/g, '\n\n');
+finalContent = finalContent.replace(/\n### [^\n]+\n+(? =\n|### |## |---)/g, '\n')      ;
+finalContent = finalContent.replace(/\n{3,}/g, '\n\n' );
 
 fs.writeFileSync(file, finalContent);
 console.log(' Cleaned up CHANGELOG.md for user-friendly driver focus');

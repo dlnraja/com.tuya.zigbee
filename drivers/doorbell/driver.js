@@ -32,18 +32,18 @@ class TuyaDoorbellDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('doorbell_battery_above', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('doorbell_battery_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.threshold || 20);
-        });
+      });
       }
     } catch (err) { this.error(`Condition doorbell_battery_above: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('doorbell_motion_active', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('doorbell_motion_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -53,7 +53,7 @@ class TuyaDoorbellDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition doorbell_motion_active: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('doorbell_contact_open', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('doorbell_contact_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -63,7 +63,7 @@ class TuyaDoorbellDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition doorbell_contact_open: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('doorbell_tamper_active', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('doorbell_tamper_active');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -74,7 +74,7 @@ class TuyaDoorbellDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('doorbell_ring_chime', 'action');
+      const card = const card = this.homey.flow.getActionCard('doorbell_ring_chime');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

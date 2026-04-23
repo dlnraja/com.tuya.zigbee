@@ -46,7 +46,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
     // Register onoff listener for relay control
     this.registerCapabilityListener('onoff', async (value) => {
       this.log(`[CEILING] Relay control: ${value}`);
-      const tuya = zclNode.endpoints[1]?.clusters?.tuya ;
+      const tuya = zclNode.endpoints[1]?.clusters?.tuya;
       if (tuya?.datapoint) {
           await tuya.datapoint({ dp: 101, value: value ? 1 : 0, type: 'bool' });
       }

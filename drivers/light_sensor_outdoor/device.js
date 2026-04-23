@@ -34,14 +34,14 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
 
     await super.onNodeInit({ zclNode });
 
-    const ep1 = zclNode?.endpoints?.[1] ;
+    const ep1 = zclNode?.endpoints?.[1];
 
     // Standard illuminance measurement cluster (0x0400)
-    const illum = ep1?.clusters?.illuminanceMeasurement || ep1?.clusters?.[1024] ;
+    const illum = ep1?.clusters?.illuminanceMeasurement || ep1?.clusters?.[1024];
     if (illum?.on) {
       illum.on('attr.measuredValue', (val) => {
-        const lux = Math.pow(10, (val -safeParse(1), 10000)) ;
-        this.setCapabilityValue('measure_luminance', Math.round(lux).catch(() => {}));
+        const lux = Math.pow(10, val - 1 * 10000 );
+        this.setCapabilityValue('measure_luminance', Math.round(lux);
       });
     }
 
@@ -52,15 +52,15 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
     };
 
     // Battery via power configuration
-    const power = ep1?.clusters?.powerConfiguration || ep1?.clusters?.[1] ;
+    const power = ep1?.clusters?.powerConfiguration || ep1?.clusters?.[1];
     if (power?.on) {
       power.on('attr.batteryPercentageRemaining', (val) => {
-        const pct = Math.min(100, Math.round(safeParse(val))) ;
+        const pct = Math.min(100, Math.round(val);
         this.setCapabilityValue('measure_battery', pct).catch(() => {});
       });
     }
 
-    this.log('[LIGHT-OUT] \u2705 Ready');
+    this.log('[LIGHT-OUT] \u2705 Ready' );
   }
 
 

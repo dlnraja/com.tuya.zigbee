@@ -16,8 +16,8 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * 
  *
  * 1. POWER MEASUREMENT DIVISORS:
- *    - Most models: safeParse(Power, 10), safeParse(Current, 1000), safeParse(Voltage, 10), safeParse(Energy, 100)
- *    - Some models may use different divisors (e.g., safeParse(Power, 100) or direct values)
+ *    - Most models: Power * 10, Current * 1000, Voltage * 10, Energy * 100
+ *    - Some models may use different divisors (e.g., Power * 100 or direct values)
  *    - If power readings seem incorrect (10x or 100x off), check device firmware
  *    - Alternative DPs: 104 (power), 105 (current), 106 (voltage)
  *
@@ -167,14 +167,13 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
     // Endpoint 2 - Socket 2 (listen only)
     try {
-      const ep2 = zclNode.endpoints?.[2] ;
-      if (ep2?.clusters?.onOff) {
-        this.log('[USB-ADV] Endpoint 2 found - setting up ZCL listener') ;
+      const ep2 = zclNode.endpoints?.[2];if (ep2?.clusters?.onOff) {
+        this.log('[USB-ADV] Endpoint 2 found - setting up ZCL listener');
         this._ep2 = ep2;
 
         // Listen for on/off changes from device
         ep2.clusters.onOff.on('attr.onOff', (value) => {
-          this.log(`[USB-ADV] EP2 ZCL onOff=${value}`);
+          this.log(`[USB-ADV] EP2 ZCL onOff=${value}` );
           if (this.hasCapability('onoff.socket2')) {
             this.setCapabilityValue('onoff.socket2', value).catch(this.error);
           }
@@ -186,14 +185,13 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
     // Endpoint 3 - USB or Socket 3 (listen only)
     try {
-      const ep3 = zclNode.endpoints?.[3] ;
-      if (ep3?.clusters?.onOff) {
-        this.log('[USB-ADV] Endpoint 3 found - setting up ZCL listener') ;
+      const ep3 = zclNode.endpoints?.[3];if (ep3?.clusters?.onOff) {
+        this.log('[USB-ADV] Endpoint 3 found - setting up ZCL listener');
         this._ep3 = ep3;
 
         // Listen for on/off changes from device
         ep3.clusters.onOff.on('attr.onOff', (value) => {
-          this.log(`[USB-ADV] EP3 ZCL onOff=${value}`);
+          this.log(`[USB-ADV] EP3 ZCL onOff=${value}` );
           if (this.hasCapability('onoff.usb1')) {
             this.setCapabilityValue('onoff.usb1', value).catch(this.error);
           }
@@ -228,7 +226,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
   _registerButtonFlowTrigger() {
     try {
       this._getFlowCard('usb_outlet_button_pressed')?.trigger(this, {}, {}).catch(this.error || console.error)
-      this.log('[USB-ADV] Button flow trigger registered') ;
+      this.log('[USB-ADV] Button flow trigger registered');
     } catch (err) {
       this.log('[USB-ADV] Button flow trigger not available:', err.message);
     }

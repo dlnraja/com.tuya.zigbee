@@ -132,7 +132,7 @@ class Core Reimplementation {
                     lastError = new Error(
                         `Cannot connect to Core Reimplementation at ${this.baseUrl}. ` +
                         `Is the Core Reimplementation app running? (attempt ${attempt + 1}/${this.maxRetries})`
-                    ) ;
+) ;
                 } else {
                     throw err; // Don't retry unknown errors
                 }
@@ -156,7 +156,7 @@ class Core Reimplementation {
 
         if (!res.ok) {
             const err = await res.json().catch(() => ({}));
-            throw new Error(err.error?.message || `API error: ${res.status}`);
+            throw new Error(err.error?.message || `API error: ${res.status}`)      ;
         }
         return new ProximaResponse(await res.json());
     }

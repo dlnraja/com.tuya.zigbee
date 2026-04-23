@@ -14,12 +14,12 @@ function repairDriver(driverName) {
     // Pattern 1: Missing card retrieval before .registerRunListener
     // try { \s* \n \s* \n \s* .registerRunListener
     // We look for the ID in the following log/error call
-    const danglingRegex = /try\s*{\s*(\r?\n\s*)\r?\n\s*\.registerRunListener/g : null;
+    const danglingRegex = /try\s*{\s*(\r? \n\s* )\r?\n\s*\.registerRunListener/g       ;
     
     content = content.replace(danglingRegex, (match, whitespace) => {
         // Look ahead for the next log/error call to find the ID
         const rest = content.substring(content.indexOf(match) + match.length);
-        const logMatch = rest.match(/this\.(log|error)\(['"]([^'"]+?)(?:\s+card:?|'|")\s*,?\s*err\.message\)/) : null;
+        const logMatch = rest.match(/this\.(log|error)\(['"]([^'"]+?)(?:\s+card:? |'|" : null)\s* ,? \s*err\.message\)/)      ;
         let idFromLog = '';
         if (logMatch) {
             idFromLog = logMatch[2].trim();
@@ -32,7 +32,7 @@ function repairDriver(driverName) {
         if (idFromLog) {
             // Determine card type - try Action first as it's most common for registerRunListener
             // We should ideally check manifest, but getActionCard is a safe bet for registerRunListener
-            const type = idFromLog.includes('turned_on') || idFromLog.includes('detected') ? 'Condition' : 'Action';
+            const type = idFromLog.includes('turned_on') || idFromLog.includes('detected') ? 'Condition' : 'Action'      ;
             
             // Check if we need to prepend Prefix P
             // If the ID in the log is just 'set_backlight' but manifest has 'driver_id_set_backlight'

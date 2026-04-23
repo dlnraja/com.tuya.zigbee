@@ -16,7 +16,7 @@ function run(cmd) {
   try {
     return execSync(cmd, { stdio: 'pipe', timeout: 30000 }).toString().trim();
   } catch (e) {
-    return e.stdout ? e.stdout.toString().trim() : '';
+    return e.stdout ? e.stdout.toString().trim() : ''      ;
   }
 }
 

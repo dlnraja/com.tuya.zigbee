@@ -34,7 +34,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      this._getFlowCard('air_quality_co2_co2_above', 'condition');
+      const card = this.homey.flow.getConditionCard('air_quality_co2_co2_above');
     } catch (err) { this.error(`Condition air_quality_co2_co2_above: ${err.message}`); }
   }
 

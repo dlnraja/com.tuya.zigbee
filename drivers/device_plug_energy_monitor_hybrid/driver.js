@@ -32,7 +32,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('device_plug_energy_monitor_hybrid_plug_smart_is_on', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('device_plug_energy_monitor_hybrid_plug_smart_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -43,7 +43,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('device_plug_energy_monitor_hybrid_plug_smart_turn_on', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_plug_energy_monitor_hybrid_plug_smart_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -54,7 +54,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_plug_energy_monitor_hybrid_plug_smart_turn_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_plug_energy_monitor_hybrid_plug_smart_turn_off', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_plug_energy_monitor_hybrid_plug_smart_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -65,7 +65,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_plug_energy_monitor_hybrid_plug_smart_turn_off: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_plug_energy_monitor_hybrid_plug_smart_toggle', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_plug_energy_monitor_hybrid_plug_smart_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -77,7 +77,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_plug_energy_monitor_hybrid_plug_smart_toggle: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_plug_energy_monitor_hybrid_plug_smart_turn_on_delay', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_plug_energy_monitor_hybrid_plug_smart_turn_on_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -88,7 +88,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_plug_energy_monitor_hybrid_plug_smart_turn_on_delay: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_plug_energy_monitor_hybrid_plug_smart_turn_off_delay', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_plug_energy_monitor_hybrid_plug_smart_turn_off_delay');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -99,7 +99,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_plug_energy_monitor_hybrid_plug_smart_turn_off_delay: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_plug_energy_monitor_hybrid_plug_smart_set_indicator', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_plug_energy_monitor_hybrid_plug_smart_set_indicator');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -111,7 +111,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_plug_energy_monitor_hybrid_plug_smart_set_indicator: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_plug_energy_monitor_hybrid_plug_smart_set_power_on', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_plug_energy_monitor_hybrid_plug_smart_set_power_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

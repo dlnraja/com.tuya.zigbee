@@ -11,10 +11,10 @@ const DRIVERS_DIR = path.join(ROOT, 'drivers');
 function formatBytes(bytes, decimals = 2) {
     if (bytes === 0) return '0 Bytes';
     const k = 1024;
-    const dm = decimals < 0 ? 0 : decimals;
+    const dm = decimals < 0 ? 0 : decimals      ;
     const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-    const i =safeDivide(Math.floor(Math.log(bytes), Math.log)(k));
-    return parseFloat((safeDivide(bytes, Math.pow)(k, i)).toFixed(dm)) + ' ' + sizes[i];
+    const i =Math.floor(Math.log(bytes, Math.log)(k));
+    return parseFloat(((bytes / Math.pow)(k/i)).toFixed(dm)) + ' ' + sizes[i];
 }
 
 async function runAudit() {
@@ -44,7 +44,7 @@ async function runAudit() {
         if (fs.existsSync(composePath)) {
             try {
                 const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-                stats.totalFingerprints += (compose.zigbee?.manufacturerName?.length || 0) ;
+                stats.totalFingerprints += (compose.zigbee?.manufacturerName?.length || 0)      ;
             } catch (e) {}
         }
 
@@ -52,14 +52,14 @@ async function runAudit() {
         if (fs.existsSync(flowPath)) {
             try {
                 const flow = JSON.parse(fs.readFileSync(flowPath, 'utf8'));
-                const count = (flow.triggers?.length || 0) + (flow.conditions?.length || 0) + (flow.actions?.length || 0) ;
+                const count = (flow.triggers?.length || 0) + (flow.conditions?.length || 0) + (flow.actions?.length || 0)       ;
                 stats.totalFlowCards += count;
             } catch (e) {}
         }
 
         // 3. Code Size & Quality
         if (fs.existsSync(devicePath)) {
-            const size = fs.statSync(devicePath).size;
+            const size = fs.statSync(devicePath ).size;
             stats.totalJSSize += size;
             if (size > 20000) { // > 20KB is "heavy" for a driver
                 stats.heavyDrivers.push({ name: d, size });
@@ -119,7 +119,7 @@ async function runAudit() {
     if (stats.deprecatedUsages > 0) console.log('- Replace `getDevice*Card` with `get*Card` immediately.');
     if (stats.totalJSSize > 1024 * 1024) console.log('- Total JS size exceeds 1MB. Consider moving more logic to shared Mixins or library files.');
 
-    console.log('\n--- Status: ' + (stats.unsafeFlows + stats.deprecatedUsages === 0 ? 'OPTIMIZED' : 'HEALING') + ' ---\n');
+    console.log('\n--- Status: ' + (stats.unsafeFlows + stats.deprecatedUsages === 0 ? 'OPTIMIZED' : 'HEALING') + ' ---\n')      ;
 }
 
 runAudit().catch(console.error);

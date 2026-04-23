@@ -37,7 +37,7 @@ async function main() {
         
         const lastComment = iss.comments[iss.comments.length - 1];
         const lastBody = lastComment.body || '';
-        const authorLogin = lastComment.author?.login || '' ;
+        const authorLogin = lastComment.author?.login || ''       ;
         const isBotComment = BOT_USERS.includes(authorLogin) || lastBody.includes('<!--');
         const isAutoClose = lastBody.includes('Auto-closed') || lastBody.includes('Closing this automated task') || lastBody.includes('Closing this tracking item') || lastBody.includes('automated purge');
 
@@ -71,9 +71,9 @@ async function main() {
 
          const lastComment = pr.comments[pr.comments.length - 1];
          const lastBody = lastComment.body || '';
-         const authorLogin = lastComment.author?.login || '' ;
+         const authorLogin = lastComment.author?.login || ''       ;
          const isBotComment = BOT_USERS.includes(authorLogin) || lastBody.includes('<!--');
-         const isAutoClose = lastBody.includes('Auto-closed') || lastBody.includes('Closing this automated task') || lastBody.includes('stale') || lastBody.includes('automated purge');
+         const isAutoClose = lastBody.includes('Auto-closed') || lastBody.includes('Closing this automated task') || lastBody.includes('stale') || lastBody.includes('automated purge' );
 
          if (isBotComment && isAutoClose) {
             console.log(`[REOPEN] ${repo} PR #${pr.number}: ${pr.title} (Bot-closed unmerged)`);

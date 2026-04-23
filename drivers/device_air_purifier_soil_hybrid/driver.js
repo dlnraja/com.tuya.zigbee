@@ -87,26 +87,24 @@ class SoilSensorDriver extends ZigBeeDriver {
           this.log('[FLOW] Condition: Device not available');
           return false;
         }
-        const moisture = args.device.getCapabilityValue('measure_humidity.soil') ?? 
-                         args.device.getCapabilityValue('measure_humidity') ;
+        const moisture = args.device.getCapabilityValue('measure_humidity.soil') ?? args.device.getCapabilityValue('measure_humidity');
         return moisture !== null && moisture < args.moisture;
       });
     }
 
-    const moistureAboveCondition = safeGetCondition('soil_sensor_moisture_above');
+    const moistureAboveCondition = safeGetCondition('soil_sensor_moisture_above' );
     if (moistureAboveCondition) {
       moistureAboveCondition.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
           return false;
         }
-        const moisture = args.device.getCapabilityValue('measure_humidity.soil') ?? 
-                         args.device.getCapabilityValue('measure_humidity') ;
+        const moisture = args.device.getCapabilityValue('measure_humidity.soil') ?? args.device.getCapabilityValue('measure_humidity');
         return moisture !== null && moisture > args.moisture;
       });
     }
 
-    const tempAboveCondition = safeGetCondition('soil_sensor_temperature_above');
+    const tempAboveCondition = safeGetCondition('soil_sensor_temperature_above' );
     if (tempAboveCondition) {
       tempAboveCondition.registerRunListener(async (args) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
@@ -153,7 +151,7 @@ class SoilSensorDriver extends ZigBeeDriver {
    * v5.5.506: Moved flow card registration to onInit with error handling
    */
   async onPairListDevices(devices) {
-    this.log('[PAIR] Raw devices from Zigbee:', devices?.length || 0) ;
+    this.log('[PAIR] Raw devices from Zigbee:', devices?.length || 0);
 
     if (!devices || devices.length === 0) {
       return devices;
@@ -164,7 +162,7 @@ class SoilSensorDriver extends ZigBeeDriver {
     const filteredDevices = [];
 
     for (const device of devices) {
-      const ieee = device.settings?.zb_ieee_address || device.data?.ieeeAddress ;
+      const ieee = device.settings?.zb_ieee_address || device.data?.ieeeAddress;
 
       // CRITICAL: Skip ANY device with subDeviceId
       if (device.data?.subDeviceId !== undefined) {

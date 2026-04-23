@@ -42,25 +42,25 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   get dpMappings() {
     return {
       1: { capability: 'windowcoverings_state', transform: (v) => v === 0 || v === 'open' ? 'up' : v === 2 || v === 'close' ? 'down' : 'idle' },
-      2: { capability: 'windowcoverings_set', transform: (v) => safeParse(v, 100) },
-      3: { capability: 'dim', transform: (v) => safeParse(v, 100) },
-      4: { capability, internal: 'mode', writable: true },
-      5: { capability, internal: 'reverse', writable: true },
-      6: { capability, internal: 'border' },
-      7: { capability, internal: 'position_reached' },
+      2: { capability: 'windowcoverings_set', transform: (v) => v * 100 },
+      3: { capability: 'dim', transform: (v) => v * 100 },
+      4: { internal: true, type: 'mode', writable: true },
+      5: { internal: true, type: 'reverse', writable: true },
+      6: { internal: true, type: 'border' },
+      7: { internal: true, type: 'position_reached' },
       8: { capability: 'moving', transform: (v) => v === 1 || v === 2 || v === 'opening' || v === 'closing' },
-      9: { capability: 'windowcoverings_tilt_set', transform: (v) => safeParse(v, 100) },
-      10: { capability, internal: 'speed', writable: true },
-      12: { capability, internal: 'backlight', writable: true },
+      9: { capability: 'windowcoverings_tilt_set', transform: (v) => v * 100 },
+      10: { internal: true, type: 'speed', writable: true },
+      12: { internal: true, type: 'backlight', writable: true },
       13: { capability: 'measure_battery', divisor: 1 },
       // v5.5.322: Luminance sensor (Eftychis #779 - curtain robot has lux sensor)
       14: { capability: 'measure_luminance', divisor: 1 },
       104: { capability: 'measure_luminance', divisor: 1 }, // Alternative DP for lux
       // v5.5.322: Button press detection (physical button on curtain robot)
-      15: { capability, internal: 'button_press', handler: '_handleButtonPress' },
-      105: { capability, internal: 'button_press', handler: '_handleButtonPress' }, // Alternative DP
-      101: { capability, internal: 'open_time', writable: true },
-      102: { capability, internal: 'close_time', writable: true }
+      15: { internal: true, type: 'button_press', handler: '_handleButtonPress' },
+      105: { internal: true, type: 'button_press', handler: '_handleButtonPress' }, // Alternative DP
+      101: { internal: true, type: 'open_time', writable: true },
+      102: { internal: true, type: 'close_time', writable: true }
     };
   }
 
@@ -79,7 +79,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
 
     // v5.5.322: Add luminance + button for Tuya DP curtains (Eftychis #779)
     // v5.8.40: Skip for TS130F ZCL curtains (Tbao forum: _TZ3000_bs93npae)
-    const { protocol } = this._detectProtocol?.() || {} ;
+    const { protocol } = this._detectProtocol?.() || {};
     if (protocol !== 'ZCL') {
       if (!this.hasCapability('measure_luminance')) {
         try {
@@ -90,7 +90,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       if (!this.hasCapability('button')) {
         try {
           await this.addCapability('button');
-          this.log('[CURTAIN]  Added button capability');
+          this.log('[CURTAIN]  Added button capability' );
         } catch (e) { /* ignore */ }
       }
     } else {
@@ -159,7 +159,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    */
   async onDeleted() {
     if (this._healthInterval) clearInterval(this._healthInterval);
-    await super.onDeleted?.() ;
+    await super.onDeleted?.();
   }
 
   _markAppCommand() {
@@ -176,15 +176,15 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   async _setupTuyaDPListener() {
     try {
       const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya
-        || this.zclNode?.endpoints?.[1]?.clusters?.[61184] ;
+        || this.zclNode?.endpoints?.[1]?.clusters?.[61184];
 
       if (tuyaCluster && typeof tuyaCluster.on === 'function') {
         tuyaCluster.on('response', (status, transId, data) => {
           this._handleTuyaDP(data);
-        });
+      });
         tuyaCluster.on('dataReport', (data) => {
           this._handleTuyaDP(data);
-        });
+      });
         this.log('[CURTAIN]  Tuya DP listener registered');
       }
     } catch (err) {
@@ -199,20 +199,20 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     if (!data) return;
 
     const dp = data.dp || data.datapoint;
-    const value = data.data?.[0] ?? data.value ;
+    const value = data.data?.[0] ?? data.value;
 
-    this.log(`[CURTAIN] DP${dp} = ${value}`);
+    this.log(`[CURTAIN] DP${dp} = ${value}` );
 
     // Luminance (lux) - DP14 or DP104
     if ((dp === 14 || dp === 104) && this.hasCapability('measure_luminance')) {
-      const lux = typeof value === 'number' ? value : parseInt(value, 10) || 0;
-      this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
+      const lux = typeof value === 'number' ? value : parseInt(value , 10) || 0;
+      this.setCapabilityValue('measure_luminance', parseFloat(lux).catch(() => { }));
       this.log(`[CURTAIN]  Lux: ${lux}`);
     }
 
     // Battery - DP13
     if (dp === 13 && this.hasCapability('measure_battery')) {
-      const battery = typeof value === 'number' ? value : parseInt(value, 10) || 0;
+      const battery = typeof value === 'number' ? value : parseInt(value , 10) || 0;
       this.setCapabilityValue('measure_battery', parseFloat(Math.min(100, Math.max(0, battery)))).catch(() => { });
       this.log(`[CURTAIN]  Battery: ${battery}%`);
     }
@@ -237,9 +237,8 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       }, 500);
 
       // Trigger flow card if available
-      const triggerCard =
-      this._getFlowCard('curtain_motor_shutter_hybrid_button_pressed')?.trigger(this, {}, {}).catch(this.error || console.error)
-      if (triggerCard) {
+      const triggerCard = this.homey.flow.getActionCard('curtain_motor_shutter_hybrid_button_pressed')
+      if (triggerCard ) {
         await triggerCard.trigger(this, { button: 1, scene: 'pressed' }).catch(() => { });
       }
     } catch (err) {
@@ -258,20 +257,18 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       const openTime = this.getSetting('open_time') || 0;
       const closeTime = this.getSetting('close_time') || 0;
       const reverse = this.getSetting('reverse_direction') || false;
-      const { protocol } = this._detectProtocol?.() || {} ;
+      const { protocol } = this._detectProtocol?.() || {};
 
       // v5.12.5: ZCL curtains (TS130F) use TuyaWindowCoveringCluster attributes (Johan SDK3)
       if (protocol === 'ZCL') {
-        const wcCluster = this.zclNode?.endpoints?.[1]?.clusters?.windowCovering ;
+        const wcCluster = this.zclNode?.endpoints?.[1]?.clusters?.windowCovering;
         if (wcCluster?.writeAttributes) {
-          if (reverse) {
-            await wcCluster.writeAttributes({ motorReversal: reverse ? 'On' : 'Off' }).catch(e =>
-              this.log('[CURTAIN] ZCL motorReversal:', e.message));
+          if (reverse ) {
+            await wcCluster.writeAttributes({ motorReversal: reverse ? 'On' : 'Off' }).catch(e => this.log('[CURTAIN] ZCL motorReversal:', e.message));
           }
           if (openTime > 0 || closeTime > 0) {
             const calTime = Math.max(openTime, closeTime);
-            await wcCluster.writeAttributes({ calibrationTime: calTime }).catch(e =>
-              this.log('[CURTAIN] ZCL calibrationTime:', e.message));
+            await wcCluster.writeAttributes({ calibrationTime: calTime }).catch(e => this.log('[CURTAIN] ZCL calibrationTime:', e.message));
           }
           this.log('[CURTAIN] ZCL calibration settings applied');
           return;
@@ -300,7 +297,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     try {
-      await super.onSettings?.({ oldSettings, newSettings, changedKeys }) ;
+      await super.onSettings?.({ oldSettings, newSettings, changedKeys } );
 
       if (changedKeys.includes('open_time') || changedKeys.includes('close_time') || changedKeys.includes('reverse_direction')) {
         this.log('[CURTAIN] Calibration settings changed, applying...');

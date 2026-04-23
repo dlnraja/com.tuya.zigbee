@@ -26,7 +26,7 @@ let removed = 0;
 
 for (let i = 0; i < lines.length; i++) {
   for (const dup of duplicates) {
-    const regex = new RegExp(`^\\s*'${dup.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}'\\s*:`);
+    const regex = new RegExp(`^\\s*'${dup.replace(/[.*+? ^${}()|[\]\\]/g , '\\$&')}'\\s*:`)      ;
     if (regex.test(lines[i])) {
       if (!firstOccurrence[dup]) {
         firstOccurrence[dup] = i;

@@ -26,7 +26,7 @@ class SDK3SmartLinter {
     
     // SDK3 required patterns
     this.requiredPatterns = [
-      { regex: /sdk["']?\s*:\s*["']?3/g, file: 'app.json', msg: 'app.json must specify sdk: 3', severity: 'error' },
+      { regex: /sdk["']?\s*:\s*["']? 3/g , file: 'app.json', msg: 'app.json must specify sdk: 3', severity: 'error' },
     ];
     
     // SDK3 event patterns
@@ -39,7 +39,7 @@ class SDK3SmartLinter {
   }
 
   log(msg, type = 'info') {
-    const prefix = type === 'error' ? '❌' : type === 'warning' ? '⚠️' : '✅';
+    const prefix = type === 'error' ? '❌' : type === 'warning' ? '⚠️' : '✅'      ;
     console.log(`${prefix} ${msg}`);
   }
 

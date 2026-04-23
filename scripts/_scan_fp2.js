@@ -9,7 +9,7 @@ fs.readdirSync(d).forEach(dr => {
     const z = c.zigbee;
     if (!z) return;
     // zigbee can be object or array
-    const entries = Array.isArray(z) ? z : [z];
+    const entries = Array.isArray(z) ? z : [z]      ;
     entries.forEach(entry => {
       const mfrs = entry.manufacturerName || [];
       const pids = entry.productId || [];

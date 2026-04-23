@@ -8,14 +8,14 @@ const path = require('path');
 
 const REPLACEMENTS = [
   {
-    // Fix illuminance formula corruption: (v -safeParse(1), 10000) -> (v - 1) / 10000
+    // Fix illuminance formula corruption: (v - 1) / 10000 -> (v - 1) / 10000
     from: /-safeParse\(1\), 10000/g,
     to: '- 1) / 10000'
   },
   {
-    // Fix temperature formula corruption: safeDivide(temp, 10))), 10) -> safeDivide(temp, 10)), 10)
+    // Fix temperature formula corruption: temp * 10)), 10) -> temp * 10), 10)
     from: /safeDivide\(temp, 10\)\)\), 10\)/g,
-    to: 'safeDivide(temp, 10)), 10)'
+    to: 'temp * 10), 10)'
   },
   {
     // Fix endpoint cluster read corruption

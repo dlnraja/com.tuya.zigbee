@@ -31,9 +31,9 @@ if (Array.isArray(flow.actions)) {
 }
 
 console.log(`Total flow items: ${allFlowItems.length}`);
-console.log(`Triggers: ${flow.triggers?.length || 0}`) ;
-console.log(`Conditions: ${flow.conditions?.length || 0}`) ;
-console.log(`Actions: ${flow.actions?.length || 0}`) ;
+console.log(`Triggers: ${flow.triggers?.length || 0}`)      ;
+console.log(`Conditions: ${flow.conditions?.length || 0}`)      ;
+console.log(`Actions: ${flow.actions?.length || 0}`)       ;
 
 // Group by ID
 const grouped = {};
@@ -48,7 +48,7 @@ console.log('\n=== DUPLICATE FLOW IDs (across triggers/conditions/actions) ===')
 duplicates.forEach(([id, list]) => {
     console.log(`ID: "${id}" - Count: ${list.length}`);
     list.forEach((item, idx) => {
-        console.log(`  ${idx+1}: type=${item.type}, filter=${item.item.args?.[0]?.filter || 'none'}, title=${item.item.title?.en || 'no title'}`) ;
+        console.log(`  ${idx+1}: type=${item.type}, filter=${item.item.args?.[0]?.filter || 'none'}, title=${item.item.title?.en || 'no title'}`)       ;
     });
 });
 
@@ -59,7 +59,7 @@ const matches = allFlowItems.filter(item => item.id === problemId);
 if (matches.length > 0) {
     console.log(`Found ${matches.length} occurrences:`);
     matches.forEach((match, idx) => {
-        console.log(`  ${idx+1}: type=${match.type}, title=${match.item.title?.en || 'no title'}`) ;
+        console.log(`  ${idx+1}: type=${match.type}, title=${match.item.title?.en || 'no title'}`)       ;
     });
 } else {
     console.log(`No exact matches found.`);

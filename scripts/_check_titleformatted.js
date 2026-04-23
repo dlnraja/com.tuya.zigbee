@@ -15,7 +15,7 @@ fs.readdirSync(d).forEach(dr => {
         const hasDev = JSON.stringify(t.titleFormatted).includes('[[device]]');
         if (hasDev) {
           triggerViolations++;
-          if (examples.length < 3) examples.push({ driver: dr, id: t.id, titleFormatted: t.titleFormatted?.en || JSON.stringify(t.titleFormatted).substring(0,80) }) ;
+          if (examples.length < 3) examples.push({ driver: dr, id: t.id, titleFormatted: t.titleFormatted?.en || JSON.stringify(t.titleFormatted ).substring(0,80) })       ;
         }
       }
     });

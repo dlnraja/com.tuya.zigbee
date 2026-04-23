@@ -83,7 +83,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
         }
       },
       // Battery state - DP 3 (enum: 0=normal, 1=low) - SDK3: alarm_battery obsolÃ¨te, utiliser internal
-      3: { capability, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
+      3: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' },
       // Battery alt - DP 4 (v5.5.793: Added validation)
       4: { 
         capability: 'measure_battery', 
@@ -110,7 +110,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
       // v5.5.130: ADDITIONAL FEATURES from Zigbee2MQTT
       // 
       // Battery voltage (mV) - for diagnostic purposes
-      6: { capability, internal: 'battery_voltage' },
+      6: { internal: true, type: 'battery_voltage' },
       // Sensitivity setting (some models)
       9: { capability, setting: 'sensitivity' },
       // Report interval (some models)
@@ -168,12 +168,11 @@ class ContactSensorDevice extends UnifiedSensorBase {
     const userReverse = this.getSetting('reverse_alarm') || false;
     this._invertContact = userInvert || userReverse;
     this._userExplicitInvert = this._invertContact;
-    this._debounceMs = (this.getSetting('debounce_time') || safeParse(DEBOUNCE.DEFAULT_MS,safeMultiply(1000)), 1000);
+    this._debounceMs = (this.getSetting('debounce_time') || safeParse(DEBOUNCE.DEFAULT_MS,1000), 1000);
     this._lastBatteryReportTime = 0; // v5.5.793: Battery throttling
 
     // v5.5.344: Get manufacturer for problematic device detection
-    const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '' ;
-    this._isProblematicSensor = [
+    const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';this._isProblematicSensor = [
       '_TZ3000_bpkijo14',
       '_TZ3000_x8q36xwf',
       '_TZ3000_402jjyro',
@@ -359,7 +358,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
             state.lastChangeTime = Date.now();
             state.iasMessageCount = 0;
             await super.setCapabilityValue(capability, finalValue).catch(() => { });
-          },safeMultiply(this._debounceMs, 2));
+          },this._debounceMs * 2);
 
           return;
         }
@@ -408,13 +407,13 @@ class ContactSensorDevice extends UnifiedSensorBase {
   async onUninit() {
     this.log('[CONTACT] onUninit - cleaning up...');
     if (this._contactState?.timer) {
-      this.homey.clearTimeout(this._contactState.timer) ;
+      this.homey.clearTimeout(this._contactState.timer);
       this._contactState.timer = null;
     }
     if (super.onUninit) {
       await super.onUninit();
     }
-    this.log('[CONTACT]  Cleanup complete');
+    this.log('[CONTACT]  Cleanup complete' );
   }
 
   /**
@@ -422,10 +421,10 @@ class ContactSensorDevice extends UnifiedSensorBase {
    */
   async onDeleted() {
     if (this._contactState?.timer) {
-      this.homey.clearTimeout(this._contactState.timer) ;
+      this.homey.clearTimeout(this._contactState.timer );
       this._contactState.timer = null;
     }
-    await super.onDeleted?.() ;
+    await super.onDeleted?.();
   }
 
   /**

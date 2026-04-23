@@ -29,11 +29,11 @@ class PetFeederDevice extends ZigBeeDevice {
   }
 
   async _triggerFeed() {
-    const ep1 = this.zclNode?.endpoints?.[1] ;
-    const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184] ;
+    const ep1 = this.zclNode?.endpoints?.[1];
+    const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
 
     if (tuyaCluster) {
-      this.log('Triggering manual feed...');
+      this.log('Triggering manual feed...' );
       await tuyaCluster.datapoint({ dp: 3, datatype: 2, value: 1 });
     }
   }
@@ -42,13 +42,13 @@ class PetFeederDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184] ;
+    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
     if (!tuyaCluster) return;
 
-    this.log('[TUYA] DP cluster found');
+    this.log('[TUYA] DP cluster found' );
 
-    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value)) ;
-    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value)) ;
+    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value));
+    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value));
     tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
   }
 

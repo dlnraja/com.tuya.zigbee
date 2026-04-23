@@ -28,24 +28,27 @@ class Button8GangDevice extends ButtonDevice {
   async _setupExtraDetection(zclNode) {
     // v5.9.22: Use centralized resolvePressType (prevents 0-index regression)
     for (let ep = 1; ep <= 8; ep++) {
-      const e = zclNode?.endpoints?.[ep] ; if (!e) continue;
-      const sc = e.clusters?.scenes || e.clusters?.[5] ;
-      if (sc?.on) { sc.on('recall', async (p) => { await this.triggerButtonPress(ep, resolvePressType(p?.sceneId ?? 0, 'BTN8-scene')) ; }); }
-      const ms = e.clusters?.multistateInput || e.clusters?.[18] ;
-      if (ms?.on) { ms.on('attr.presentValue', async (v) => { await this.triggerButtonPress(ep, resolvePressType(v, 'BTN8-multi')) ; }); }
+      const e = zclNode?.endpoints?.[ep]; if (!e ) continue;
+      const sc = e.clusters?.scenes || e.clusters?.[5];
+      if (sc?.on) { sc.on('recall', async (p ) => { await this.triggerButtonPress(ep, resolvePressType(p?.sceneId ?? 0, 'BTN8-scene'));
+      }); }
+      const ms = e.clusters?.multistateInput || e.clusters?.[18];
+      if (ms?.on) { ms.on('attr.presentValue', async (v ) => { await this.triggerButtonPress(ep, resolvePressType(v, 'BTN8-multi'));
+      }); }
     }
     try {
-      const tc = zclNode?.endpoints?.[1]?.clusters?.tuya || zclNode?.endpoints?.[1]?.clusters?.[61184] ;
-      if (tc?.on) { tc.on('response', async (d) => { const dp = d?.dp ?? d?.dpId ; const v = d?.data ?? d?.value ?? 0 ; if (dp >= 1 && dp <= 8) await this.triggerButtonPress(dp, resolvePressType(v, 'BTN8-DP')); }); }
+      const tc = zclNode?.endpoints?.[1]?.clusters?.tuya || zclNode?.endpoints?.[1]?.clusters?.[61184];
+      if (tc?.on) { tc.on('response', async (d) => { const dp = d?.dp ?? d?.dpId; const v = d?.data ?? d?.value ?? 0; if (dp >= 1 && dp <= 8) await this.triggerButtonPress(dp, resolvePressType(v, 'BTN8-DP'));
+      }); }
     } catch (e) { /* ok */ }
   }
 
   async _setupE000Detection(zclNode) {
     this._e000Dedup = {};
     for (let ep = 1; ep <= 8; ep++) {
-      const endpoint = zclNode?.endpoints?.[ep] ;
-      if (!endpoint) continue;
-      const e000 = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344] ;
+      const endpoint = zclNode?.endpoints?.[ep];
+      if (!endpoint ) continue;
+      const e000 = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
       if (e000?.on) {
         // v5.8.54: Listen for ALL cmd events (cmd0-cmd6, cmdFD/FE/FF)
         const cmdNames = ['cmd0','cmd1','cmd2','cmd3','cmd4','cmd5','cmd6','cmdFD','cmdFE','cmdFF'];
@@ -58,13 +61,13 @@ class Button8GangDevice extends ButtonDevice {
               press = resolvePressType(data[0], 'BTN8-E000');
             }
             await this.triggerButtonPress(btn, press);
-          });
+      });
         }
       }
-      const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6] ;
+      const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6];
       if (onOff?.on) {
         const handle = async (cmd, type) => {
-          const now = Date.now() ;
+          const now = Date.now();
           if (now - (this._e000Dedup[`${ep}_${cmd}`] || 0) < 500) return;
           this._e000Dedup[`${ep}_${cmd}`] = now;
           await this.triggerButtonPress(ep, type);
@@ -77,8 +80,8 @@ class Button8GangDevice extends ButtonDevice {
     try {
       const TuyaE000BoundCluster = require('../../lib/clusters/TuyaE000BoundCluster');
       for (let ep = 1; ep <= 8; ep++) {
-        const endpoint = zclNode?.endpoints?.[ep] ;
-        if (!endpoint) continue;
+        const endpoint = zclNode?.endpoints?.[ep];
+        if (!endpoint ) continue;
         const bc = new TuyaE000BoundCluster({
           device: this,
           onButtonPress: async (b, t) => this.triggerButtonPress((b >= 1 && b <= 8) ? b : ep, t)

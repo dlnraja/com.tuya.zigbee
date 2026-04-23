@@ -5,7 +5,7 @@ class WiFiRobotVacuumDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '2':  { capability },
+      '2':  { capability: 'unknown' },
       '3':  { capability: 'vacuumcleaner_state',
         transform: (v) => {
           const map = { standby: 'stopped', cleaning: 'cleaning', paused: 'stopped',
@@ -13,18 +13,18 @@ class WiFiRobotVacuumDevice extends TuyaLocalDevice {
             sleep: 'stopped', fault: 'stopped' };
           return map[v] || 'stopped';
         } },
-      '4':  { capability },
-      '5':  { capability },
+      '4':  { capability: 'unknown' },
+      '5':  { capability: 'unknown' },
       '6':  { capability: 'measure_battery' },
-      '11': { capability },
-      '14': { capability },
-      '15': { capability },
-      '16': { capability },
-      '17': { capability },
-      '25': { capability },
-      '26': { capability },
-      '27': { capability },
-      '28': { capability },
+      '11': { capability: 'unknown' },
+      '14': { capability: 'unknown' },
+      '15': { capability: 'unknown' },
+      '16': { capability: 'unknown' },
+      '17': { capability: 'unknown' },
+      '25': { capability: 'unknown' },
+      '26': { capability: 'unknown' },
+      '27': { capability: 'unknown' },
+      '28': { capability: 'unknown' },
     };
   }
 

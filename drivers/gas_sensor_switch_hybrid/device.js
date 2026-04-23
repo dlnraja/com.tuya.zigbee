@@ -60,9 +60,9 @@ class Switch4GangDevice extends BaseClass {
   }
 
   get isZclOnlyDevice() {
-    const mfr = this.getSetting?.('zb_manufacturer_name') ||
-                this.getStoreValue?.('zb_manufacturer_name') ||
-                this.getStoreValue?.('manufacturerName') || '' ;
+    const mfr = this.getSetting?.('zb_manufacturer_name' ) ||
+                this.getStoreValue?.('zb_manufacturer_name' ) ||
+                this.getStoreValue?.('manufacturerName' ) || '';
     return includesCI(ZCL_ONLY_MANUFACTURERS_4G, mfr);
   }
 
@@ -138,8 +138,8 @@ class Switch4GangDevice extends BaseClass {
 
     // v5.5.999: Helper to get onOff cluster from endpoint with multiple lookup strategies
     const getOnOffCluster = (epNum) => {
-      const ep = this._zclNode?.endpoints?.[epNum] ;
-      if (!ep?.clusters) return null ;
+      const ep = this._zclNode?.endpoints?.[epNum];
+      if (!ep?.clusters) return null;
       return ep.clusters.onOff || ep.clusters.genOnOff || ep.clusters[6] || ep.clusters['6'];
     };
 
@@ -213,7 +213,7 @@ class Switch4GangDevice extends BaseClass {
       setupEndpointListener(epNum);
     }
 
-    await this.initVirtualButtons?.() ;
+    await this.initVirtualButtons?.();
     this.log('[SWITCH-4G]  BSEED ZCL-only mode ready (packetninja technique)');
   }
 
@@ -227,7 +227,7 @@ class Switch4GangDevice extends BaseClass {
       if (!OnOffCluster) return;
 
       for (const epNum of [1, 2, 3, 4]) {
-        const ep = zclNode?.endpoints?.[epNum] ;
+        const ep = zclNode?.endpoints?.[epNum];
         if (!ep) continue;
         if (!ep.clusters) ep.clusters = {};
 
@@ -237,7 +237,7 @@ class Switch4GangDevice extends BaseClass {
 
         let clusterInstance = null;
         try {
-          clusterInstance = new OnOffCluster(ep);
+          clusterInstance = new OnOffCluster(ep );
         } catch (e1) {
           try { clusterInstance = new OnOffCluster({ endpoint: ep }); } catch (e2) { }
         }
@@ -258,14 +258,14 @@ class Switch4GangDevice extends BaseClass {
   async _removeGroupMemberships(zclNode) {
     for (const epNum of [1, 2, 3, 4]) {
       try {
-        const ep = zclNode?.endpoints?.[epNum] ;
-        if (!ep?.clusters) continue ;
+        const ep = zclNode?.endpoints?.[epNum];
+        if (!ep?.clusters) continue;
         const g = ep.clusters.groups || ep.clusters.genGroups || ep.clusters[4] || ep.clusters['4'];
         if (!g) continue;
         const fn = g.removeAll || g.removeAllGroups;
         if (typeof fn === 'function') {
           await fn.call(g).catch(() => {});
-          this.log(`[BSEED-4G] EP${epNum}  Group memberships removed`);
+          this.log(`[BSEED-4G] EP${epNum}  Group memberships removed` );
         }
       } catch (err) { }
     }
@@ -277,20 +277,20 @@ class Switch4GangDevice extends BaseClass {
   async _bindAllEndpoints(zclNode) {
     for (const epNum of [1, 2, 3, 4]) {
       try {
-        const ep = zclNode?.endpoints?.[epNum] ;
-        if (!ep?.clusters) continue ;
+        const ep = zclNode?.endpoints?.[epNum];
+        if (!ep?.clusters) continue;
         const onOff = ep.clusters.onOff || ep.clusters.genOnOff || ep.clusters[6] || ep.clusters['6'];
         if (onOff && typeof onOff.bind === 'function') {
           await onOff.bind().catch(() => {});
-          this.log(`[BSEED-4G] EP${epNum} onOff cluster bound`);
+          this.log(`[BSEED-4G] EP${epNum} onOff cluster bound` );
         }
       } catch (err) { }
     }
 
     for (const epNum of [1, 2, 3, 4]) {
       try {
-        const ep = zclNode?.endpoints?.[epNum] ;
-        if (!ep?.clusters) continue ;
+        const ep = zclNode?.endpoints?.[epNum];
+        if (!ep?.clusters) continue;
         const onOff = ep.clusters.onOff || ep.clusters.genOnOff || ep.clusters[6] || ep.clusters['6'];
         if (onOff && typeof onOff.configureReporting === 'function') {
           await onOff.configureReporting({
@@ -305,10 +305,10 @@ class Switch4GangDevice extends BaseClass {
   onDeleted() {
     if (this._zclState?.timeout) {
       for (const epNum of [1, 2, 3, 4]) {
-        if (this._zclState.timeout[epNum]) clearTimeout(this._zclState.timeout[epNum]) ;
+        if (this._zclState.timeout[epNum]) clearTimeout(this._zclState.timeout[epNum]);
       }
     }
-    super.onDeleted?.() ;
+    super.onDeleted?.();
   }
 }
 module.exports = Switch4GangDevice;

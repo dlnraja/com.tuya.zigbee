@@ -29,8 +29,8 @@ const currentVersion = appJson.version;
 // Get latest 10 versions (sorted descending)
 const versions = Object.keys(changelog)
                                                 .sort((a, b) => {
-    const partsA = a.split('.').map(v => parseInt(v, 10) || 0);
-    const partsB = b.split('.').map(v => parseInt(v, 10) || 0);
+    const partsA = a.split('.').map(v => parseInt(v , 10) || 0);
+    const partsB = b.split('.').map(v => parseInt(v , 10) || 0);
     for (let i = 0; i < 3; i++) {
         if (partsA[i] !== partsB[i]) return partsB[i] - partsA[i];
     }

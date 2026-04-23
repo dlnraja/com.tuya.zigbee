@@ -7,7 +7,7 @@ const insert = `
 // v6.0: Detect dlnraja's own posts - skip auto-triage for owner
 function isOwnerPost(issueData) {
   try {
-    const author = issueData.user?.login || issueData.author?.login || '' ;
+    const author = issueData.user?.login || issueData.author?.login || ''       ;
     return author.toLowerCase() === 'dlnraja';
   } catch { return false; }
 }

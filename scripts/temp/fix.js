@@ -5,9 +5,9 @@ function fixFile(path) {
     let txt = fs.readFileSync(path, 'utf8');
     
     // We want to replace this exact string:
-    // const cap = idx === 0 ? 'onoff' : \onoff.$\{idx + 1}\;
+    // const cap = idx === 0 ? 'onoff' : \onoff.$\{idx + 1}\      ;
     // with this:
-    // const cap = idx === 0 ? 'onoff' : \onoff.gang$\{idx + 1}\;
+    // const cap = idx === 0 ? 'onoff' : \onoff.gang$\{idx + 1}\      ;
     
     txt = txt.split("const cap = idx === 0 ? 'onoff' : \onoff.$\{idx + 1}\;").join("const cap = idx === 0 ? 'onoff' : \onoff.gang$\{idx + 1}\;");
     

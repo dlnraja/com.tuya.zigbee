@@ -48,7 +48,7 @@ class MotionSensorDriver extends ZigBeeDriver {
       // CONDITION CARDS - with device validation
       // 
 
-      this.motionActiveCondition?.registerRunListener(async (args) => {
+      this.motionActiveCondition?.registerRunListener(async (args ) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
           return false;

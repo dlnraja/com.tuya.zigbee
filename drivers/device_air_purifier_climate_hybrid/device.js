@@ -11,19 +11,19 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
     this._lastPm25 = null;
     this.registerCapabilityListener('onoff', async (v) => {
       await this.sendTuyaCommand(DP.state, v, 'bool');
-    });
+      });
     this.registerCapabilityListener('dim', async (v) => {
-      await this.sendTuyaCommand(DP.speed,Math.round(safeMultiply(v, 10, 10)), "value");
-    });
+      await this.sendTuyaCommand(DP.speed,Math.round(safeMultiply(v, 10, 10), "value")));
+      });
     this.log('Air Purifier ready');
   }
 
   async handleTuyaDataReport(data) {
     if (!data || data.dp == null) return;
-    const v = data.data ?? data.value ;
+    const v = data.data ?? data.value;
     if (data.dp === DP.state) {
       const s = Boolean(v);
-      if (this._lastOnoff !== s) {
+      if (this._lastOnoff !== s ) {
         this._lastOnoff = s;
         this.setCapabilityValue('onoff', s).catch(() => {});
         const id = s ? 'air_purifier_climate_hybrid_air_purifier_turned_on' : 'air_purifier_climate_hybrid_air_purifier_turned_off';
@@ -39,18 +39,17 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
         this._lastPm25 = pm;
         this.setCapabilityValue('measure_pm25', pm).catch(() => {});
         try {
-          const card =
-      this._getFlowCard('air_purifier_climate_hybrid_air_purifier_pm25_changed')?.trigger(this, {}, {}).catch(this.error || console.error)
-          if (card) await card.trigger(this, { pm25: pm }, {}).catch(() => {});
+          const card = this.homey.flow.getActionCard('air_purifier_climate_hybrid_air_purifier_pm25_changed')
+          if (card ) await card.trigger(this, { pm25: pm }, {}).catch(() => {});
         } catch (e) {}
       }
     } else if (data.dp === DP.speed) {
       const spd = typeof v === 'number' ? v : parseInt(v);
-      this.setCapabilityValue('dim', safeParse(spd, 100)).catch(() => {});
+      this.setCapabilityValue('dim', spd * 100).catch(() => {});
     }
   }
 
-  onDeleted() { super.onDeleted?.() ; }
+  onDeleted() { super.onDeleted?.(); }
 }
 
 module.exports = AirPurifierDevice;

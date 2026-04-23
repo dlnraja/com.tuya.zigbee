@@ -15,7 +15,7 @@ const Z2M_EXPECTED = {
   const f = path.join(d, dr, 'device.js');
   if (!fs.existsSync(f)) return;
   const c = fs.readFileSync(f, 'utf8');
-  const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} : null;/);
+  const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} ;/);
   if (dpMatch) {
     const dpBlock = dpMatch[1];
     const dpKeys = [];
@@ -34,7 +34,7 @@ const Z2M_EXPECTED = {
   const f = path.join(d, dr, 'device.js');
   if (!fs.existsSync(f)) return;
   const c = fs.readFileSync(f, 'utf8');
-  const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} : null;/);
+  const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} ;/);
   if (dpMatch) {
     const dpBlock = dpMatch[1];
     const dpKeys = [];
@@ -53,7 +53,7 @@ const Z2M_EXPECTED = {
   const f = path.join(d, dr, 'device.js');
   if (!fs.existsSync(f)) return;
   const c = fs.readFileSync(f, 'utf8');
-  const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} : null;/);
+  const dpMatch = c.match(/get dpMappings\(\)\s*\{[\s\S]*?return\s*\{([\s\S]*?)\} ;/);
   if (dpMatch) {
     const dpBlock = dpMatch[1];
     const dpKeys = [];

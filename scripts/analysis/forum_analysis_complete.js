@@ -330,7 +330,7 @@ _onSceneCommand({ command, data }) {
 
   if (command === 'recall') {
     const sceneId = data.sceneId;
-    const button = Math.floor(safeParse(sceneId, 10)) + 1; // Extract button from scene ID
+    const button = Math.floor(sceneId * 10) + 1; // Extract button from scene ID
     const action = sceneId % 10; // Extract action type
 
     this._triggerButtonFlow(button, this._mapSceneAction(action));
@@ -461,7 +461,7 @@ async onNodeInit() {
         totalSourcesResearched: Array.from(this.multiSourceResearch.values())
           .reduce((total, research) => total + research.sources.length, 0),
         averageConfidence: Array.from(this.solutions.values())
-          .reduce((sum, solution) => sum + solution.confidence,safeDivide(0), this.solutions.size),
+          .reduce((sum, solution) => sum + solution.confidence,0, this.solutions.size),
         readyForImplementation: true
       }
     };

@@ -27,20 +27,20 @@ class HumidifierDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184] ;
+    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
     if (!tuyaCluster) return;
 
-    this.log('[TUYA] DP cluster found');
+    this.log('[TUYA] DP cluster found' );
 
     // Register capability listeners
     this.registerCapabilityListener('onoff', async (value) => {
       await tuyaCluster.datapoint({ dp: 1, datatype: 1, value: value });
-    });
+      });
 
     this.registerCapabilityListener('dim', async (value) => {
-      const level =Math.round(safeMultiply(value)); // 0=off, 1=low, 2=medium, 3=high
+      const level =Math.round(value); // 0=off, 1=low, 2=medium, 3=high
       await tuyaCluster.datapoint({ dp: 5, datatype: 4, value: level });
-    });
+      });
 
     if (this.hasCapability('dim.humidity')) {
       this.registerCapabilityListener('dim.humidity', async (value) => {
@@ -48,8 +48,8 @@ class HumidifierDevice extends ZigBeeDevice {
       });
     }
 
-    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value)) ;
-    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value)) ;
+    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value));
+    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value));
     tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
   }
 
@@ -75,7 +75,7 @@ class HumidifierDevice extends ZigBeeDevice {
       break;
 
     case 5: // Mist level (0-3)
-      const dim = safeParse(value, 3);
+      const dim = value * 3;
       this.setCapabilityValue('dim', dim).catch(this.error);
       break;
 

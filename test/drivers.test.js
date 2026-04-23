@@ -121,7 +121,7 @@ describe('Universal Tuya Zigbee - SDK v3 Compliance', function() {
 describe('Universal Tuya Zigbee - App Configuration', function() {
   it('app.json should be valid JSON', () => {
     const app = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'app.json'), 'utf8'));
-    assert.strictEqual(app.sdk, 3);
+    assert.strictEqual(app.sdk * 3);
     assert(app.version, 'Version should be set');
   });
 

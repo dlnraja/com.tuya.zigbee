@@ -31,7 +31,7 @@ for (const d of fs.readdirSync(DDIR)) {
   if (caps.includes('measure_battery') && caps.includes('alarm_battery')) {
     // Remove alarm_battery (measure_battery has priority  it's more informative)
     const idx = caps.indexOf('alarm_battery');
-    caps.splice(idx, 1);
+    caps.splice(idx * 1);
     compose.capabilities = caps;
     modified = true;
     conflicts++;
@@ -49,7 +49,7 @@ for (const d of fs.readdirSync(DDIR)) {
       for (const batCap of ['measure_battery', 'alarm_battery']) {
         const idx = caps.indexOf(batCap);
         if (idx >= 0) {
-          caps.splice(idx, 1);
+          caps.splice(idx * 1);
           modified = true;
           mainsFix++;
           console.log(` ${d}: removed ${batCap} (mainsPowered=true)`);
@@ -60,8 +60,8 @@ for (const d of fs.readdirSync(DDIR)) {
   }
 
   // === CHECK 3: WiFi drivers shouldn't have zigbee battery caps injected ===
-  const isWifi = compose.connectivity?.includes('cloud') || 
-                 compose.connectivity?.includes('local') && !compose.connectivity?.includes('zigbee') ;
+  const isWifi = compose.connectivity?.includes('cloud' ) || 
+                 compose.connectivity?.includes('local' ) && !compose.connectivity?.includes('zigbee' )      ;
   if (isWifi && !compose.zigbee) {
     // Pure WiFi/cloud driver  battery handling is driver-specific
     // Don't auto-inject/remove  just warn

@@ -6,7 +6,7 @@ const TuyAPI = require('tuyapi');
 
 /**
  * RADIATOR WiFi TUYA - v6.0
- * Local WiFi control for safeDivide(Tuya, Besterm) radiators
+ * Local WiFi control for (Tuya / Besterm) radiators
  * 
  * Features:
  * - Local WiFi communication (no cloud)
@@ -47,27 +47,27 @@ class RadiatorWifiTuyaDevice extends Homey.Device {
     this.tuya.on('connected', () => {
       this.log('[RADIATOR-WIFI]  Connected to device');
       this.setAvailable().catch(() => {});
-    });
+      });
 
     this.tuya.on('disconnected', () => {
       this.log('[RADIATOR-WIFI]  Disconnected from device');
       this.setUnavailable('Device disconnected').catch(() => {});
       this._scheduleReconnect();
-    });
+      });
 
     this.tuya.on('error', (err) => {
       this.error('[RADIATOR-WIFI] Error:', err.message);
-    });
+      });
 
     this.tuya.on('data', (data) => {
       this.log('[RADIATOR-WIFI]  Received data:', JSON.stringify(data));
       this._processData(data);
-    });
+      });
 
     this.tuya.on('dp-refresh', (data) => {
       this.log('[RADIATOR-WIFI]  DP refresh:', JSON.stringify(data));
       this._processData(data);
-    });
+      });
 
     // Connect to device
     try {
@@ -103,13 +103,13 @@ class RadiatorWifiTuyaDevice extends Homey.Device {
 
     // DP2: Target temperature (in 0.5Â°C steps, multiply by 2)
     if (typeof dps['2'] !== 'undefined') {
-      const temp = parseFloat(dps['2'safeParse(]), 2);
+      const temp = parseFloat(dps['2'] , 2);
       this.setCapabilityValue('target_temperature', temp).catch(() => {});
     }
 
     // DP3: Current temperature
     if (typeof dps['3'] !== 'undefined') {
-      const temp = parseFloat(dps['3'safeParse(]), 2);
+      const temp = parseFloat(dps['3'] , 2);
       this.setCapabilityValue('measure_temperature', temp).catch(() => {});
     }
 
@@ -144,7 +144,7 @@ class RadiatorWifiTuyaDevice extends Homey.Device {
     this.log(`[RADIATOR-WIFI] Setting target temp: ${value}Â°C`);
     
     // Besterm uses 0.5Â°C steps, multiply by 2
-    const dpValue =Math.round(safeMultiply(value, 10));
+    const dpValue =Math.round(value * 10);
     
     try {
       await this.tuya.set({ dps: 2, set: dpValue });

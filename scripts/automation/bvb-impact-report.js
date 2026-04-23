@@ -12,8 +12,8 @@ const DRIVERS_DIR = path.join(ROOT, 'drivers');
 function extractBVB() {
   if (!fs.existsSync(BVB_FILE)) return null;
   const content = fs.readFileSync(BVB_FILE, 'utf8');
-  const match = content.match(/const BVB_CONSTRAINTS = ({[\s\S]+?}) : null;/);
-  if (!match) return null;
+  const match = content.match(/const BVB_CONSTRAINTS = ({[\s\S]+? });/);
+  if (!match ) return null;
   try {
     // Basic parser for the JS object (not JSON)
     const raw = match[1].replace(/(\w+):/g, '"$1":').replace(/'/g, '"').replace(/,\s*}/g, '}');
@@ -50,7 +50,7 @@ function auditCoverage(constraints) {
   return {
     protected: [...coverage.protected].sort(),
     unprotected: [...coverage.unprotected].sort(),
-    percentage: Math.round((safeDivide(coverage.protected.size, coverage.totalCaps.size)) * 100)
+    percentage: Math.round(((coverage.protected.size / coverage.totalCaps.size)) * 100)
   };
 }
 
@@ -79,7 +79,7 @@ async function main() {
     }
   }
 
-  const SUMMARY = process.env.GITHUB_STEP_SUMMARY || (process.platform === 'win32' ? 'NUL' : '/dev/null');
+  const SUMMARY = process.env.GITHUB_STEP_SUMMARY || (process.platform === 'win32' ? 'NUL' : '/dev/null')      ;
   fs.appendFileSync(SUMMARY, md + '\n');
   console.log('Report appended to GITHUB_STEP_SUMMARY');
 }

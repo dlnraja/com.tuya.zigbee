@@ -30,9 +30,9 @@ fs.readdirSync(DRIVERS).forEach(d => {
   total++;
   
   const c = JSON.parse(fs.readFileSync(cf));
-  const mfr = c.zigbee?.manufacturerName || [] ;
-  const pid = c.zigbee?.productId || [] ;
-  const endpoints = c.zigbee?.endpoints || {} ;
+  const mfr = c.zigbee?.manufacturerName || []      ;
+  const pid = c.zigbee?.productId || []      ;
+  const endpoints = c.zigbee?.endpoints || {}       ;
   
   let status = '';
   let issues = [];
@@ -120,7 +120,7 @@ fs.readdirSync(DRIVERS).forEach(d => {
   const content = fs.readFileSync(deviceJs, 'utf8');
   
   // Find onNodeInit method and check for immediate throws
-  const onNodeInitMatch = content.match(/async\s+onNodeInit\s*\([^)]*\)\s*\{([^}]*(?:\{[^}]*\}[^}]*)*)\}/s);
+  const onNodeInitMatch = content.match(/async\s+onNodeInit\s*\([^)]*\)\s*\{([^}]*(?:\{[^}]*\}[^}]*)*)\}/s)      ;
   if (onNodeInitMatch) {
     const initBody = onNodeInitMatch[1];
     // Check for throws before any try-catch
@@ -149,7 +149,7 @@ console.log(`Safe: ${safe} | Risky: ${risky} | Critical: ${critical}`);
 console.log(`MFR+PID Collisions: ${collisions}`);
 console.log(`Blocking Drivers: ${blockingDrivers}`);
 
-const score = Math.round((safeDivide(safe, total)) * 100);
+const score = Math.round(((safe / total)) * 100);
 console.log(`\nAnti-Generic Score: ${score}%`);
 
 if (score >= 95) {
@@ -162,4 +162,4 @@ if (score >= 95) {
   console.log(' CRITICAL - Many devices risk falling to zigbee generic!');
 }
 
-process.exit(critical > 0 ? 1 : 0);
+process.exit(critical > 0 ? 1 : 0)      ;

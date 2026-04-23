@@ -31,9 +31,9 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   }
 
   get isZclOnlyDevice() {
-    const mfr = this.getSetting?.('zb_manufacturer_name') ||
-                this.getStoreValue?.('manufacturerName') || '' ;
-    return includesCI(ZCL_ONLY_MANUFACTURERS_8G, mfr);
+    const mfr = this.getSetting?.('zb_manufacturer_name' ) ||
+                this.getStoreValue?.('manufacturerName') || '';
+    return includesCI(ZCL_ONLY_MANUFACTURERS_8G, mfr );
   }
 
   /**
@@ -73,8 +73,8 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       await this._initZclOnlyMode(zclNode);
       return;
     }
-    await this.initPhysicalButtonDetection?.(zclNode) ;
-    await this.initVirtualButtons?.() ;
+    await this.initPhysicalButtonDetection?.(zclNode );
+    await this.initVirtualButtons?.();
     this.log('[SWITCH-8G] v5.5.922  Ready (DP 1-6 + DP 101/102)');
   }
 
@@ -91,8 +91,8 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     }
 
     const getOnOffCluster = (epNum) => {
-      const ep = this._zclNode?.endpoints?.[epNum] ;
-      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6] ;
+      const ep = this._zclNode?.endpoints?.[epNum];
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
     };
 
     // Register capability listeners FIRST
@@ -131,7 +131,7 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
             try {
               const card =
       this._getFlowCard(flowId)?.trigger(this, {}, {}).catch(this.error || console.error)
-              if (card) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+              if (card ) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
               this.log(`[SWITCH-8G]  Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             } catch (e) { }
           }
@@ -140,24 +140,24 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
             try {
               const card =
       this._getFlowCard(sceneId)?.trigger(this, {}, {}).catch(this.error || console.error)
-              if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+              if (card ) await card.trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {});
               this.log(`[SWITCH-8G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
             } catch (e) { }
           }
         }
       });
     }
-    await this.initVirtualButtons?.() ;
+    await this.initVirtualButtons?.();
     this.log('[SWITCH-8G]  ZCL-only mode ready (packetninja v990)');
   }
 
   onDeleted() {
     if (this._zclState?.timeout) {
-      for (let i = 1 ; i <= 8; i++) {
-        if (this._zclState.timeout[i]) clearTimeout(this._zclState.timeout[i]);
+      for (let i = 1; i <= 8; i++) {
+        if (this._zclState.timeout[i]) clearTimeout(this._zclState.timeout[i] );
       }
     }
-    super.onDeleted?.() ;
+    super.onDeleted?.();
   }
 }
 module.exports = Switch8GangDevice;

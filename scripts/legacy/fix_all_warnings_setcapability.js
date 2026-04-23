@@ -63,11 +63,11 @@ function fixSetCapabilityValue(filePath) {
       // Pattern 1: setCapabilityValue('measure_*', variable)
       // Sans parseFloat/parseInt/Number
       const regex1 = new RegExp(
-        `((?:this\\.|await\\s+this\\.|await\\s+)?setCapabilityValue\\s*\\(\\s*['"\`]${capability}['"\`]\\s*,\\s*)([a-zA-Z0-9_.\\[\\]]+)(\\s*[,\\)])`,
+        `((?:this\\.|await\\s+this\\.|await\\s+)? setCapabilityValue\\s*\\(\\s*['"\`]${capability}['"\`]\\s*,\\s*)([a-zA-Z0-9_.\\[\\]]+)(\\s*[,\\)])`,
         'g'
       ) ;
 
-      const matches = [...content.matchAll(regex1)];
+      const matches = [...content.matchAll(regex1 )];
       matches.forEach(match => {
         const [fullMatch, prefix, value, suffix] = match;
 
@@ -90,7 +90,7 @@ function fixSetCapabilityValue(filePath) {
 
       // Pattern 2: setCapabilityValue('measure_*', expression.property)
       const regex2 = new RegExp(
-        `((?:this\\.|await\\s+this\\.|await\\s+)?setCapabilityValue\\s*\\(\\s*['"\`]${capability}['"\`]\\s*,\\s*)([a-zA-Z0-9_.\\[\\]]+\\.[a-zA-Z0-9_.\\[\\]]+)(\\s*[,\\)])`,
+        `((?:this\\.|await\\s+this\\.|await\\s+)? setCapabilityValue\\s*\\(\\s*['"\`]${capability}['"\`]\\s*,\\s*)([a-zA-Z0-9_.\\[\\]]+\\.[a-zA-Z0-9_.\\[\\]]+)(\\s*[,\\)])`,
         'g'
       ) ;
 
@@ -124,7 +124,7 @@ function fixSetCapabilityValue(filePath) {
       stats.filesModified++;
 
       const relativePath = path.relative(ROOT, filePath);
-      console.log(`    ${relativePath}`);
+      console.log(`    ${relativePath}` );
     }
 
   } catch (e) {

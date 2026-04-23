@@ -26,7 +26,7 @@ for (const d of fs.readdirSync(DDIR)) {
 
   const compose = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
   const caps = compose.capabilities || [];
-  const hasBatteries = (compose.energy?.batteries || []).length > 0 ;
+  const hasBatteries = (compose.energy?.batteries || []).length > 0       ;
   const hasMeasure = caps.includes('measure_battery');
   const hasAlarm = caps.includes('alarm_battery');
 
@@ -34,7 +34,7 @@ for (const d of fs.readdirSync(DDIR)) {
   if (!hasBatteries || hasMeasure || hasAlarm) { skipped++; continue; }
 
   // Add measure_battery (will be adapted at runtime by UnifiedBatteryHandler)
-  caps.push('measure_battery');
+  caps.push('measure_battery' );
   compose.capabilities = caps;
   fs.writeFileSync(composeFile, JSON.stringify(compose, null, 2) + '\n');
 

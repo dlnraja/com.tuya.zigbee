@@ -16,7 +16,7 @@ class PetFeederZigbeeDevice extends TuyaZigbeeDevice {
     };
 
     this.registerCapabilityListener('button', async () => {
-      this._markAppCommand?.() ;
+      this._markAppCommand?.();
       if (this.tuyaEF00Manager) {
         // DP4: manual feed (1 portion)
         await this.tuyaEF00Manager.sendTuyaDP(4, 2, 1);

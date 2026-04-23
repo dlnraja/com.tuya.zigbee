@@ -21,8 +21,8 @@ let stats = { scanned: 0, rewritten: 0, skipped: 0, errors: 0 };
 function detectDriverInfo(content) {
   // Extract class name
   const classMatch = content.match(/class\s+(\w+)\s+extends\s+(\w+)/);
-  const className = classMatch ? classMatch[1] : 'TuyaDriver';
-  const baseClass = classMatch ? classMatch[2] : 'ZigBeeDriver';
+  const className = classMatch ? classMatch[1] : 'TuyaDriver'      ;
+  const baseClass = classMatch ? classMatch[2] : 'ZigBeeDriver'      ;
   
   // Extract imports
   const imports = [];
@@ -41,8 +41,8 @@ function detectDriverInfo(content) {
   let hasHomeyDriver = imports.some(l => l.includes("require('homey')"));
   
   // Extract init log message
-  const logMatch = content.match(/this\.log\(['"`]([^'"`]*(?:initialized|init)[^'"`]*)['"]/i);
-  const initMessage = logMatch ? logMatch[1] : `${className} initialized`;
+  const logMatch = content.match(/this\.log\(['"`]([^'"`]*(?:initialized|init)[^'"`]*)['"]/i)      ;
+  const initMessage = logMatch ? logMatch[1] : `${className} initialized`      ;
   
   return { className, baseClass, imports, hasZigBeeDriver, hasHomeyDriver, initMessage };
 }
@@ -197,7 +197,7 @@ function generateCleanDriver(info, flowCards) {
       } else if (id.includes('set_duration')) {
         code += `          if (typeof args.device._sendTuyaDP === 'function') { await args.device._sendTuyaDP(7, args.duration || 30, 'value').catch(() => {}); }\n`;
       } else if (id.includes('set_melody')) {
-        code += `          if (typeof args.device._sendTuyaDP === 'function') { await args.device._sendTuyaDP(21, parseInt(args.melody, 10) || 0, 'enum').catch(() => {}); }\n`;
+        code += `          if (typeof args.device._sendTuyaDP === 'function') { await args.device._sendTuyaDP(21, parseInt(args.melody , 10) || 0, 'enum').catch(() => {}); }\n`;
       } else {
         code += `          // Generic action handler\n`;
         code += `          this.log('[FLOW] Action ${id} triggered for', args.device.getName());\n`;
@@ -231,7 +231,7 @@ function verifyJS(content) {
 console.log('â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—');
 console.log('â•‘  DEEP REMEDIATION SCRIPT v2.0 - Complete Driver Rewrite    â•‘');
 console.log('â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•');
-console.log(`Mode: ${DRY_RUN ? 'DRY RUN' : 'LIVE'}`);
+console.log(`Mode: ${DRY_RUN ? 'DRY RUN' : 'LIVE'}`)      ;
 console.log('');
 
 const driverDirs = fs.readdirSync(DRIVERS_DIR).filter(d => {

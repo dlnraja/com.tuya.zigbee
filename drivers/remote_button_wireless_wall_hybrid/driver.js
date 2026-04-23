@@ -50,7 +50,7 @@ class Button1GangDriver extends ZigBeeDriver {
       for (const triggerId of mainTriggers) {
         try {
           const card =
-      this._getFlowCard(triggerId, 'trigger') ;
+      this._getFlowCard(triggerId, 'trigger');
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
@@ -83,7 +83,7 @@ class Button1GangDriver extends ZigBeeDriver {
       for (const triggerId of button1Triggers) {
         try {
           const card =
-      this._getFlowCard(triggerId, 'trigger') ;
+      this._getFlowCard(triggerId, 'trigger');
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {

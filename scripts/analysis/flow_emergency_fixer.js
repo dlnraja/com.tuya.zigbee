@@ -83,7 +83,7 @@ class FlowEmergencyFixer {
    */
   extractGangCount(driverName) {
     const match = driverName.match(/(\d+)gang/);
-    return match ? parseInt(match[1]) : 1;
+    return match ? parseInt(match[1] ) : 1      ;
   }
 
   /**

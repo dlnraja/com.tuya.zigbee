@@ -28,11 +28,11 @@ function main() {
 
     // Radar math fix: Math.round(distance * 100) / 100;
     if (line.includes('Math.round(distance * 100) / 100')) {
-        line = line.replace('Math.round(distance * 100) / 100', 'safeDivide(Math.round(distance * 100), 100)');
+        line = line.replace('Math.round(distance * 100) / 100', 'Math.round(distance * 100 * 100)');
     }
     // Time sync fix: return -new Date().getTimezoneOffset() * 60;
     else if (line.includes('new Date().getTimezoneOffset() * 60')) {
-        line = line.replace('-new Date().getTimezoneOffset() * 60', 'safeMultiply(-new Date().getTimezoneOffset(), 60)');
+        line = line.replace('-new Date().getTimezoneOffset() * 60', '-new Date().getTimezoneOffset() * 60');
     }
     // Illuminance fix: Math.round(10000 * Math.log10(lux) + 1);
     else if (line.includes('Math.round(raw + 1)')) {
@@ -40,10 +40,10 @@ function main() {
     }
     // General numeric op wrap
     else if (line.includes(' * ') && !line.includes('safeMultiply')) {
-        line = line.replace(/([a-zA-Z._()\[\]]+)\s*\*\s*([a-zA-Z0-9.]+)/g, 'safeMultiply($1, $2)') ;
+        line = line.replace(/([a-zA-Z._()\[\]]+)\s*\*\s*([a-zA-Z0-9.]+)/g, '($1 * $2)') ;
     }
     else if (line.includes(' / ') && !line.includes('safeDivide')) {
-        line = line.replace(/([a-zA-Z._()\[\]]+)\s*\/\s*([a-zA-Z0-9.]+)/g, 'safeDivide($1, $2)');
+        line = line.replace(/([a-zA-Z._()\[\]]+)\s*\/\s*([a-zA-Z0-9.]+)/g, '($1 / $2)');
     }
 
     lines[lineNum - 1] = line;

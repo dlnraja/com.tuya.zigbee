@@ -59,7 +59,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
       // CONDITION CARDS - with device validation
       // 
 
-      this.tempAboveCondition?.registerRunListener(async (args) => {
+      this.tempAboveCondition?.registerRunListener(async (args ) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
           return false;
@@ -72,11 +72,11 @@ class ClimateSensorDriver extends ZigBeeDriver {
   
   }
         // A8: NaN Safety - use safeDivide/safeMultiply
-  const args.device.getCapabilityValue('measure_temperature');
+  const val = args.device.getCapabilityValue('measure_temperature');
         return temp !== null && temp > args.temp;
       });
 
-      this.tempBelowCondition?.registerRunListener(async (args) => {
+      this.tempBelowCondition?.registerRunListener(async (args ) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
           return false;
@@ -85,7 +85,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         return temp !== null && temp < args.temp;
       });
 
-      this.humidityAboveCondition?.registerRunListener(async (args) => {
+      this.humidityAboveCondition?.registerRunListener(async (args ) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
           return false;
@@ -94,7 +94,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         return humidity !== null && humidity > args.humidity;
       });
 
-      this.humidityBelowCondition?.registerRunListener(async (args) => {
+      this.humidityBelowCondition?.registerRunListener(async (args ) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
           return false;
@@ -113,7 +113,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
    * v5.3.79: AGGRESSIVE FIX - Prevent ANY sub-device creation
    */
   async onPairListDevices(devices) {
-    this.log('[PAIR] Raw devices from Zigbee:', devices?.length || 0) ;
+    this.log('[PAIR] Raw devices from Zigbee:', devices?.length || 0);
 
     if (!devices || devices.length === 0) {
       return devices;
@@ -124,7 +124,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
     const filteredDevices = [];
 
     for (const device of devices) {
-      const ieee = device.settings?.zb_ieee_address || device.data?.ieeeAddress ;
+      const ieee = device.settings?.zb_ieee_address || device.data?.ieeeAddress;
 
       // CRITICAL: Skip ANY device with subDeviceId
       if (device.data?.subDeviceId !== undefined) {

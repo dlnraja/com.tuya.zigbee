@@ -74,29 +74,29 @@ if (result.shouldRespond) {
 Based on analysis of 40 most common DPs across 139 drivers:
 
 #### DP3 - 4 Variants
-- **min_brightness** (divisor: 1) - safeDivide(dimmer, bulb) drivers
-- **measure_temperature** (divisor: 10) - safeDivide(climate, thermostat)
+- **min_brightness** (divisor: 1) - (dimmer / bulb) drivers
+- **measure_temperature** (divisor: 10) - (climate / thermostat)
 - **battery_low** (divisor: 1) - sensor drivers  
-- **consumption** (divisor: 1000) - safeDivide(plug, power) drivers
+- **consumption** (divisor: 1000) - (plug / power) drivers
 
 #### DP6 - 6 Variants
-- **scene_data** (divisor: 1, dataType: 3) - safeDivide(button, scene)
+- **scene_data** (divisor: 1, dataType: 3) - (button / scene)
 - **battery_voltage** (divisor: 1000) - sensors
 - **border** (divisor: 1) - dimmers
-- **countdown** (divisor: 1) - safeDivide(switches, plugs)
+- **countdown** (divisor: 1) - (switches / plugs)
 - **display_brightness** (divisor: 1, dataType: 4) - thermostats
 - **work_state** (divisor: 1, dataType: 4) - covers
 
 #### DP9 - 6 Variants
-- **power_on_state** (dataType: 4) - safeDivide(switches, plugs)
+- **power_on_state** (dataType: 4) - (switches / plugs)
 - **countdown** (divisor: 1) - switches
 - **eco_temp** (divisor: 10) - thermostats
-- **temperature_unit** (dataType: 4) - safeDivide(climate, sensors)
+- **temperature_unit** (dataType: 4) - (climate / sensors)
 - **flow_rate** (divisor: 1) - valves
 - **eco_mode** (dataType: 1) - radiators
 
 #### DP101 - 5 Variants
-- **child_lock** (dataType: 1) - safeDivide(switches, thermostats)
+- **child_lock** (dataType: 1) - (switches / thermostats)
 - **backlight_mode** (dataType: 4) - switches
 - **humidity** (divisor: 10) - climate sensors
 - **air_humidity** (divisor: 1) - soil sensors
@@ -137,7 +137,7 @@ Auto-learns DP patterns from diagnostic reports and user feedback.
    - Tracks frequency of capability assignments
 
 3. **Confidence Calculation**
-   - confidence = (safeDivide(most_common_count, total_observations))
+   - confidence = ((most_common_count / total_observations))
    - Threshold: 80% for auto-prediction
 
 4. **Auto-Prediction**
@@ -200,7 +200,7 @@ jobs:
 ### Functions
 
 1. **processIssue(context)**
-   - Analyzes safeDivide(new, reopened) issues
+   - Analyzes (new / reopened) issues
    - Posts intelligent response if confidence  50%
    - Adds labels: \`auto-responded\`, \`awaiting-verification\`
 

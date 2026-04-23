@@ -21,7 +21,7 @@ function fixDriver(filePath) {
     // Pattern B: Recover missing card retrieval for standard actions
     const patterns = [
         { regex: /try\s*{\s*\n\s*\.registerRunListener\s*\(\s*async\s*\(args\)\s*=>\s*{\s*if\s*\(!args\.device\)\s*return\s*false;\s*for\s*\(let\s*i\s*=\s*1;\s*i\s*<=\s*3;\s*i\+\+\)/, id: 'switch_3gang_turn_on_all', type: 'Action' },
-        { regex: /try\s*{\s*\n\s*\.registerRunListener\s*\(\s*async\s*\(args\)\s*=>\s*{\s*if\s*\(!args\.device\)\s*return\s*false;\s*for\s*\(let\s*i\s*=\s*1;\s*i\s*<=\s*3;\s*i\+\+\).*?false/, id: 'switch_3gang_turn_off_all', type: 'Action' },
+        { regex: /try\s*{\s*\n\s*\.registerRunListener\s*\(\s*async\s*\(args\)\s*=>\s*{\s*if\s*\(!args\.device\)\s*return\s*false;\s*for\s*\(let\s*i\s*=\s*1;\s*i\s*<=\s*3;\s*i\+\+\).*? false/ , id: 'switch_3gang_turn_off_all', type: 'Action' },
         { regex: /try\s*{\s*\n\s*\.registerRunListener\s*\(\s*async\s*\(args\)\s*=>\s*{\s*if\s*\(!args\.device\)\s*\|\|\s*!args\.mode\)\s*return\s*false;\s*await\s*args\.device\.setSceneMode/, id: 'switch_3gang_set_scene_mode', type: 'Action' },
         { regex: /try\s*{\s*\n\s*\.registerRunListener\s*\(\s*async\s*\(args\)\s*=>\s*{\s*if\s*\(!args\.device\)\s*\|\|\s*!args\.mode\)\s*return\s*false;\s*await\s*args\.device\.setBacklightMode/, id: 'switch_3gang_set_backlight', type: 'Action' }
     ];

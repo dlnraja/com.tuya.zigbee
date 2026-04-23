@@ -33,18 +33,18 @@ class SceneSwitch2Device extends ButtonDevice {
   async _setupE000Detection(zclNode) {
     this._e000Dedup = {};
     for (let ep = 1; ep <= 2; ep++) {
-      const endpoint = zclNode?.endpoints?.[ep] ;
-      if (!endpoint) continue;
-      const e000 = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344] ;
+      const endpoint = zclNode?.endpoints?.[ep];
+      if (!endpoint ) continue;
+      const e000 = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
       if (e000?.on) {
         e000.on('buttonPress', async ({ button, pressType }) => {
           await this.triggerButtonPress((button >= 1 && button <= 2) ? button : ep, resolvePressType(pressType, 'SCENE2'));
-        });
+      });
       }
-      const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6] ;
+      const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6];
       if (onOff?.on) {
         const handle = async (cmd, type) => {
-          const now = Date.now() ;
+          const now = Date.now();
           if (now - (this._e000Dedup[`${ep}_${cmd}`] || 0) < 500) return;
           this._e000Dedup[`${ep}_${cmd}`] = now;
           await this.triggerButtonPress(ep, type);
@@ -57,8 +57,8 @@ class SceneSwitch2Device extends ButtonDevice {
     try {
       const TuyaE000BoundCluster = require('../../lib/clusters/TuyaE000BoundCluster');
       for (let ep = 1; ep <= 2; ep++) {
-        const endpoint = zclNode?.endpoints?.[ep] ;
-        if (!endpoint) continue;
+        const endpoint = zclNode?.endpoints?.[ep];
+        if (!endpoint ) continue;
         const bc = new TuyaE000BoundCluster({
           device: this,
           onButtonPress: async (b, t) => this.triggerButtonPress((b >= 1 && b <= 2) ? b : ep, t)

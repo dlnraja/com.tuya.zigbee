@@ -21,7 +21,7 @@ drivers.forEach(driver => {
 
   // 1. Remove IntelligentPresenceInference class block
   if (content.includes('class IntelligentPresenceInference')) {
-    const regex = /class IntelligentPresenceInference \{[\s\S]*?\n\}/ : null;
+    const regex = /class IntelligentPresenceInference \{[\s\S]*?\n\}/       ;
     if (regex.test(content)) {
       content = content.replace(regex, `const IntelligentPresenceInference = require('${HELPERS.IntelligentPresenceInference}');`);
       console.log(`[REFACTOR]  Centralized IntelligentPresenceInference in ${driver}`);
@@ -31,7 +31,7 @@ drivers.forEach(driver => {
 
   // 2. Remove IntelligentDPAutoDiscovery class block
   if (content.includes('class IntelligentDPAutoDiscovery')) {
-    const regex = /class IntelligentDPAutoDiscovery \{[\s\S]*?\n\}/ : null;
+    const regex = /class IntelligentDPAutoDiscovery \{[\s\S]*?\n\}/       ;
     if (regex.test(content)) {
       content = content.replace(regex, `const IntelligentDPAutoDiscovery = require('${HELPERS.IntelligentDPAutoDiscovery}');`);
       console.log(`[REFACTOR]  Centralized IntelligentDPAutoDiscovery in ${driver}`);
@@ -41,7 +41,7 @@ drivers.forEach(driver => {
 
   // 3. Remove SENSOR_CONFIGS object block
   if (content.includes('const SENSOR_CONFIGS = {')) {
-    const regex = /const SENSOR_CONFIGS = \{[\s\S]*?\n\} : null;/;
+    const regex = /const SENSOR_CONFIGS = \{[\s\S]*?\n\} ;/;
     if (regex.test(content)) {
       content = content.replace(regex, `const SENSOR_CONFIGS = require('${HELPERS.SENSOR_CONFIGS}');`);
       console.log(`[REFACTOR]  Centralized SENSOR_CONFIGS in ${driver}`);

@@ -23,16 +23,16 @@ class ValveIrrigationDevice extends UnifiedPlugBase {
 
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      5: { capability, internal: 'countdown_timer', writable: true },
-      6: { capability, internal: 'remaining_time' },
+      5: { internal: true, type: 'countdown_timer', writable: true },
+      6: { internal: true, type: 'remaining_time' },
       7: { capability: 'meter_water', divisor: 1 },
-      11: { capability, internal: 'weather_delay', writable: true },
+      11: { internal: true, type: 'weather_delay', writable: true },
       13: { capability: 'measure_battery', divisor: 1 },
-      14: { capability, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
+      14: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' },
       15: { capability: 'measure_battery', divisor: 1 },
-      101: { capability: isImmax ? 'meter_water', internal: isImmax ? null : 'last_water_time', divisor: 1000 },
-      102: { capability, internal: 'water_cycle', writable: true },
-      103: { capability, internal: 'frost_protection', writable: true },
+      101: { capability: isImmax ? 'meter_water' , internal: isImmax ? null : 'last_water_time', divisor: 1000 },
+      102: { internal: true, type: 'water_cycle', writable: true },
+      103: { internal: true, type: 'frost_protection', writable: true },
       104: { capability: 'meter_water', divisor: 1 }
     };
   }
@@ -68,7 +68,7 @@ class ValveIrrigationDevice extends UnifiedPlugBase {
 
   async startWatering(minutes) {
     this.log(`[VALVE-IRR]  Starting watering for ${minutes} minutes`);
-    const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya ;
+    const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
     if (tuya?.datapoint) {
       await tuya.datapoint({ dp: 5, value: minutes, type: 'value' });
       await tuya.datapoint({ dp: 1, value: true, type: 'bool' });

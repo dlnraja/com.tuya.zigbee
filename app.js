@@ -3,9 +3,6 @@ const initStartTime = Date.now();
 
 const { safeDivide, safeMultiply, safeParse } = require('./lib/utils/tuyaUtils.js');
 
-
-
-
 // v5.11.185: Suppress punycode DEP0040 deprecation from transitive deps
 // (whatwg-url@5/tr46@0.0.3 via node-fetch@2  not our code)
 require('./lib/suppress-punycode');
@@ -65,7 +62,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   quirksDatabase = null; //  Device Quirks Database
   _tuyaUDPDiscovery = null; //  Tuya WiFi UDP Discovery
   // NOTE: Database updates handled by GitHub Actions, not at runtime
-  developerDebugMode = false; //  AUDIT V2: ContrÃ´le verbosity logs
+  developerDebugMode = false; //  AUDIT V2: Contrôle verbosity logs
   experimentalSmartAdapt = false; //  AUDIT V2: Modifications capabilities opt-in
   experimentalCloudMirror = false; //  v7.0.22: Zigbee-to-Cloud mirroring opt-in
 
@@ -223,7 +220,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         try {
           this.optimizer = new PerformanceOptimizer({
             maxCacheSize: 1000,
-            maxCacheMemory:safeMultiply(10, 1024) * 1024 // 10 MB
+            maxCacheMemory:10 * 1024 * 1024 // 10 MB
           });
           this.log(' Performance Optimizer initialized');
         } catch (err) { this.error(' Optimizer failed:', err.message); }
@@ -303,7 +300,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         if (!args.device) return false;
         
         try {
-          const update = await this.otaManager?.checkUpdate(args.device) ;
+          const update = await this.otaManager?.checkUpdate(args.device);
           if (update?.available) {
             await this.homey.notifications.createNotification({
               excerpt: `OTA Update found for ${args.device.getName()} (v${update.newVersion}). Use a Tuya hub or Z2M to flash it safely.`
@@ -336,7 +333,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
     // Log capability stats
     try {
-      const stats = this.capabilityManager?.getStats() || {} ;
+      const stats = this.capabilityManager?.getStats() || {};
       this.log(` Capabilities managed: ${stats.created || 0}`);
     } catch (err) { /* non-critical */ }
 
@@ -377,9 +374,9 @@ class UniversalTuyaZigbeeApp extends Homey.App {
    */
   async markPhantomDevice(device) {
     try {
-      const deviceData = device?.getData?.() ;
-      const deviceName = device?.getName?.() || 'Unknown' ;
-      const subDeviceId = deviceData?.subDeviceId ;
+      const deviceData = device?.getData?.();
+      const deviceName = device?.getName?.() || 'Unknown';
+      const subDeviceId = deviceData?.subDeviceId;
 
       this.error(`[PHANTOM]  Phantom device detected: "${deviceName}" (subDeviceId: ${subDeviceId})`);
       this.error('[PHANTOM]  SDK3 cannot delete devices programmatically!');
@@ -404,7 +401,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
   /**
    * Process migration queue worker
-   *  FIX: ExÃ©cute les migrations en queue de maniÃ¨re sÃ©curisÃ©e
+   *  FIX: Exécute les migrations en queue de manière sécurisée
    */
   async processMigrations() {
     try {
@@ -461,7 +458,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
         for (const device of devices) {
           try {
-            const data = device.getData?.() || {} ;
+            const data = device.getData?.() || {};
             const hasSubDeviceId = data.subDeviceId !== undefined;
             const isNoSubDeviceDriver = noSubDeviceDrivers.some(d => driverId.includes(d));
 
@@ -472,7 +469,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
               // Mark as unavailable with clear message
               if (typeof device.setUnavailable === 'function') {
                 device.setUnavailable(
-                  ` Appareil fantÃ´me (subDevice ${data.subDeviceId}). Supprimez cet appareil.`
+                  " Appareil fantôme (subDevice " + data.subDeviceId + "). Supprimez cet appareil."
                 ).catch(() => { });
               }
             } else {
@@ -514,8 +511,8 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         capabilities: this.capabilityManager ? this.capabilityManager.getStats() : {},
         analytics: this.analytics ? await this.analytics.getAnalyticsReport() : {},
         performance: this.optimizer ? this.optimizer.getStats() : {},
-        identificationDatabase: this.identificationDatabase ? this.identificationDatabase.getStats() : null,
-        diagnostics: this.diagnosticAPI ? this.diagnosticAPI.getFullReport(true) : null // MCP/AI data
+        identificationDatabase: this.identificationDatabase ? this.identificationDatabase.getStats() : {},
+        diagnostics: this.diagnosticAPI ? this.diagnosticAPI.getFullReport(true) : {} // MCP/AI data
       };
 
       // Combine everything
@@ -551,7 +548,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
           `Total Logs: ${appInfo.diagnostics.diagnostics.summary.totalLogs || 0}`,
           `Total Errors: ${appInfo.diagnostics.diagnostics.summary.totalErrors || 0}`,
           `Total Devices: ${appInfo.diagnostics.diagnostics.summary.totalDevices || 0}`,
-          `Critical Errors: ${appInfo.diagnostics.diagnostics.summary.criticalErrors || 0}`,
+          `Critical Errors: ${appInfo.diagnostics.diagnostics.summary.totalLogs || 0}`,
           `Recent Errors (5min): ${appInfo.diagnostics.diagnostics.summary.recentErrors || 0}`,
           '',
           appInfo.diagnostics.diagnostics.topErrors.length > 0 ? [
@@ -621,7 +618,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         if (dev._universalBridge) {
           let val = args.value;
           if (args.dp_type === 'bool') val = val === 'true' || val === '1';
-          else if (['value','enum','bitmap'].includes(args.dp_type)) val = parseInt(val, 10);
+          else if (['value','enum','bitmap'].includes(args.dp_type)) val = parseInt(val , 10);
           return dev._universalBridge.sendDP(args.dp, val, args.dp_type);
         }
         return false;
@@ -675,7 +672,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   }
 
   /**
-   * Setup diagnostic logging to capture all logs for safeDivide(MCP, AI)
+   * Setup diagnostic logging to capture all logs for (MCP / AI)
    */
   _setupDiagnosticLogging() {
     // Store original methods
@@ -743,7 +740,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
   }
 
   /**
-   * Get diagnostic API report (accessible for safeDivide(MCP, AI))
+   * Get diagnostic API report (accessible for (MCP / AI))
    * Can be called externally for real-time diagnostics
    */
   getDiagnosticReport() {
@@ -777,7 +774,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
   /**
    * Get complete MCP diagnostic package
-   * @returns {Promise<Object>} All diagnostic data for safeDivide(MCP, AI)
+   * @returns {Promise<Object>} All diagnostic data for (MCP / AI)
    */
   async getCompleteMCPDiagnostics() {
     return {
@@ -803,7 +800,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
     try {
       // Battery health insight
       await this.homey.insights.createLog('battery_health', {
-        title: { en: 'Battery Health', fr: 'SantÃ© Batterie' },
+        title: { en: 'Battery Health', fr: 'Santé Batterie' },
         type: 'number',
         units: '%',
         decimals: 0
@@ -811,7 +808,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
       // Device uptime insight
       await this.homey.insights.createLog('device_uptime', {
-        title: { en: 'Device Uptime', fr: 'DisponibilitÃ©' },
+        title: { en: 'Device Uptime', fr: 'Disponibilité' },
         type: 'number',
         units: '%',
         decimals: 1
@@ -819,7 +816,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
       // Zigbee LQI insight
       await this.homey.insights.createLog('zigbee_lqi', {
-        title: { en: 'Zigbee Link Quality', fr: 'QualitÃ© Lien Zigbee' },
+        title: { en: 'Zigbee Link Quality', fr: 'Qualité Lien Zigbee' },
         type: 'number',
         units: '',
         decimals: 0
@@ -827,7 +824,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
       // Command success rate insight
       await this.homey.insights.createLog('command_success_rate', {
-        title: { en: 'Command Success Rate', fr: 'Taux SuccÃ¨s Commandes' },
+        title: { en: 'Command Success Rate', fr: 'Taux Succès Commandes' },
         type: 'number',
         units: '%',
         decimals: 1
@@ -835,7 +832,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
       // OTA update tracking insight
       await this.homey.insights.createLog('ota_updates', {
-        title: { en: 'OTA Updates Available', fr: 'Mises Ã jour OTA disponibles' },
+        title: { en: 'OTA Updates Available', fr: 'Mises à jour OTA disponibles' },
         type: 'number',
         units: '',
         decimals: 0
@@ -928,4 +925,3 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 }
 
 module.exports = UniversalTuyaZigbeeApp;
-

@@ -40,7 +40,7 @@ const BATTERY_THROTTLE_MS = 300000; // 5 minutes minimum between updates
  * 
  *                                                                               
  *    v5.5.317: INTELLIGENT INFERENCE ENGINE                                   
- *   - Validates safeDivide(temperature, humidity) with cross-correlation                    
+ *   - Validates (temperature / humidity) with cross-correlation                    
  *   - Smooths erratic readings from unstable sensors                           
  *   - Predicts battery life from discharge patterns                            
  *                                                                               
@@ -49,9 +49,9 @@ const BATTERY_THROTTLE_MS = 300000; // 5 minutes minimum between updates
  *    v5.5.190: INTELLIGENT PROTOCOL + COMPLETE DP RESEARCH                   
  *   - Auto-detect protocol: TUYA_DP_LCD, TUYA_DP, ZCL_STANDARD, HYBRID         
  *   - Full DP mappings from Z2M #26078, #19731, Blakadder, ZHA                 
- *   - Battery: DP3 (enum low / safeDivide(med, high)) OR DP4 (Ã—2 multiplier) OR ZCL          
+ *   - Battery: DP3 (enum low / (med / high)) OR DP4 (Ã—2 multiplier) OR ZCL          
  *   - Time sync: Tuya epoch (2000) for LCD, skipped for ZCL devices            
- *   - Calibration offsets for safeDivide(temp, humidity)                                    
+ *   - Calibration offsets for (temp / humidity)                                    
  *   - Wake detection + aggressive DP requests                                  
  *   - Illuminance support (DP5) for multi-sensor devices                       
  *                                                                               
@@ -74,11 +74,11 @@ const BATTERY_THROTTLE_MS = 300000; // 5 minutes minimum between updates
  *   - DP6: Temperature alt (some _TZE204 models, Ã·10)                           
  *   - DP7: Humidity alt (some _TZE204 models)                                   
  *   - DP9: Temperature unit (0=C, 1=F)                                          
- *   - DP10-13: Alarm thresholds (safeDivide(max, min) safeDivide(temp, humidity))                         
+ *   - DP10-13: Alarm thresholds ((max / min) (temp / humidity))                         
  *   - DP14-15: Alarm status (NOT battery!)                                      
  *   - DP17-20: Reporting config (intervals, sensitivity)                        
  *   - DP18: Alt temperature on some firmware                                    
- *   - DP101-103: Button safeDivide(press, illuminance) on some models                      
+ *   - DP101-103: Button (press / illuminance) on some models                      
  *                                                                               
  * 
  */
@@ -177,7 +177,7 @@ class ClimateSensorDevice extends UnifiedSensorBase {
    *
    * BATTERY HANDLING DIFFERENCES:
    * - _TZE284_*: DP4 with x2 multiplier (device reports 0-50  0-100%)
-   * - _TZE200_*: DP3 (battery_state: low / safeDivide(medium, high)) OR DP4 (raw %)
+   * - _TZE200_*: DP3 (battery_state: low / (medium / high)) OR DP4 (raw %)
    * - _TZ3000_*: ZCL cluster 0x0001 (batteryPercentageRemaining Ã· 2)
    * - TS0201: ZCL cluster 0x0001 standard
    */
@@ -207,14 +207,14 @@ class ClimateSensorDevice extends UnifiedSensorBase {
         transform: (v) => {
           // v5.5.792: Auto-detect divisor based on value range
           // If value > 100, it's likely Ã—10 scaled (e.g., 650  65.0%)
-          if (v > 100) return Math.round(safeParse(v));
+          if (v > 100) return Math.round(v);
           return v;
         }
       },
       7: {
         capability: 'measure_humidity',
         transform: (v) => {
-          if (v > 100) return Math.round(safeParse(v));
+          if (v > 100) return Math.round(v);
           return v;
         }
       },
@@ -231,10 +231,10 @@ class ClimateSensorDevice extends UnifiedSensorBase {
           if (v === 0) return 10;   // low
           if (v === 1) return 50;   // medium
           if (v === 2) return 100;  // high
-return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
+return Math.min(100, v * 2); // Fallback: treat as raw with x2
         }
       },
-      4: { capability: 'measure_battery', transform: (v) =>safeMultiply(Math.min(v, 2), 100) }, // x2 multiplier
+      4: { capability: 'measure_battery', transform: (v) =>Math.min(100, v * 2) }, // x2 multiplier
 
       // 
       // CONFIGURATION DPs - TH05Z/ZG227C LCD sensors
@@ -261,8 +261,8 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
       // BATTERY ALTERNATE DPs (HOBEIAN and some other sensors)
       // v5.5.710: Fix for HOBEIAN temp/humidity sensors using DP101 for battery
       // 
-      101: { capability: 'measure_battery', transform: (v) => Math.min(Math.max(v, 0), 100) },
-      102: { capability: 'measure_battery', transform: (v) => Math.min(Math.max(v, 0), 100) },
+      101: { capability: 'measure_battery', transform: (v) => Math.min(Math.max(v * 0) * 100) },
+      102: { capability: 'measure_battery', transform: (v) => Math.min(Math.max(v * 0) * 100) },
     };
   }
 
@@ -363,7 +363,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
       temperatureMeasurement: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined && data.measuredValue !== -32768) {
-            let rawTemp = safeParse(data.measuredValue, 100);
+            let rawTemp = data.measuredValue * 100;
             
             // v5.5.793: Validate range before processing
             if (rawTemp < VALIDATION.TEMP_MIN || rawTemp > VALIDATION.TEMP_MAX) {
@@ -381,7 +381,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
             }
             // v5.5.189: Apply calibration offset
             // v6.0: Use _safeSetCapability to ensure offsets and consistency logic are applied
-            this._registerZclData?.() ; // v5.5.108: Track for learning
+            this._registerZclData?.(); // v5.5.108: Track for learning
             this._safeSetCapability('measure_temperature', rawTemp).catch(() => { });
           }
 
@@ -395,7 +395,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
       relativeHumidity: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
-            let rawHum = safeParse(data.measuredValue, 100);
+            let rawHum = data.measuredValue * 100;
             // v5.5.317: Validate with inference engine (smooths erratic readings)
             if (this._climateInference) {
               rawHum = this._climateInference.validateHumidity(rawHum);
@@ -410,7 +410,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
             }
             // v5.5.189: Apply calibration offset
             // v6.0: Use _safeSetCapability to ensure offsets and consistency logic are applied
-            this._registerZclData?.() ; // v5.5.108: Track for learning
+            this._registerZclData?.(); // v5.5.108: Track for learning
             this._safeSetCapability('measure_humidity', rawHum).catch(() => { });
           }
 
@@ -430,16 +430,16 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
             }
             this._lastBatteryReportTime = now;
             
-            let battery = Math.round(safeParse(data.batteryPercentageRemaining));
+            let battery = Math.round(data.batteryPercentageRemaining);
             battery = Math.max(VALIDATION.BATTERY_MIN, Math.min(VALIDATION.BATTERY_MAX, battery));
             
             // v5.5.793: Validate with inference engine
             if (this._batteryInference) {
-              battery = this._batteryInference.validateBattery(battery) ?? battery ;
+              battery = this._batteryInference.validateBattery(battery) ?? battery;
             }
             
             this.log(`[ZCL]  Battery: ${battery}%`);
-            this._registerZclData?.() ; // v5.5.108: Track for learning
+            this._registerZclData?.(); // v5.5.108: Track for learning
             this._safeSetCapability('measure_battery', battery).catch(() => { });
           }
 
@@ -521,7 +521,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
         this._probeObservationSamples = [];
         this._probeObservationTimer = this.homey.setTimeout(() => {
           this._evaluateProbeDedup();
-        },safeMultiply(5, 60) * 1000); // 5 minutes
+        },5 * 60 * 1000); // 5 minutes
         this.log('[CLIMATE]  Probe observation started (5min window for dedup check)');
       }
     }
@@ -533,8 +533,8 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     let modelId = 'unknown';
 
     try {
-      const endpoint = zclNode?.endpoints?.[1] ;
-      const basicCluster = endpoint?.clusters?.basic ;
+      const endpoint = zclNode?.endpoints?.[1];
+      const basicCluster = endpoint?.clusters?.basic;
       if (basicCluster && typeof basicCluster.readAttributes === 'function') {
         const attrs = await basicCluster.readAttributes(['manufacturerName', 'modelId']).catch(() => ({}));
         mfr = attrs.manufacturerName || 'unknown';
@@ -565,13 +565,11 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     // 
     // Detect available clusters
     // 
-    const ep1 = zclNode?.endpoints?.[1] ;
-    const clusters = ep1?.clusters || {} ;
-
-    this._hasTuyaCluster = !!(
+    const ep1 = zclNode?.endpoints?.[1];
+    const clusters = ep1?.clusters || {};this._hasTuyaCluster = !!(
       clusters.tuya || clusters.tuyaSpecific ||
       clusters[CLUSTERS.TUYA_EF00] || clusters['CLUSTERS.TUYA_EF00']
-    );
+     );
 
     this.log(`[CLIMATE] Tuya cluster: ${this._hasTuyaCluster ? '' : ''}`);
 
@@ -599,7 +597,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
       // ZCL TIME SYNC: Production-ready avec bind + writeAttributes + throttle
       // 
       this.zigbeeTimeSync = new ZigbeeTimeSync(this, {
-        throttleMs:safeMultiply(24, 60) * 60 * 1000, // 24h throttle (battery safe)
+        throttleMs:24 * 60 * 60 * 1000, // 24h throttle (battery safe)
         maxRetries: 3,
         retryDelayMs: 2000
       });
@@ -617,7 +615,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
         this.log('[CLIMATE]  Daily ZCL Time sync...');
         const result = await this.zigbeeTimeSync.sync();
         this.log(`[CLIMATE] Daily sync result: ${result.success ? 'success' : result.reason}`);
-      },safeMultiply(24, 60) * 60 * 1000);
+      },24 * 60 * 60 * 1000);
 
       // 
       // DEBUG MODE: Test toutes les mÃ©thodes ZCL (si activÃ©)
@@ -658,10 +656,8 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
       // Schedule hourly Tuya EF00 sync for LCD devices (in addition to ZCL daily)
       this._hourlyLcdSyncInterval = this.homey.setInterval(async () => {
         this.log('[CLIMATE]  Hourly LCD Tuya EF00 time sync...');
-        await this._sendForcedTimeSync().catch(e =>
-          this.log('[CLIMATE] LCD sync failed:', e.message)
-        );
-      },safeMultiply(60, 60) * 1000); // 1 hour
+        await this._sendForcedTimeSync().catch(e => this.log('[CLIMATE] LCD sync failed:', e.message));
+      },60 * 60 * 1000); // 1 hour
     }
 
     // Legacy time sync for non-RTC devices (keep existing behavior)
@@ -669,7 +665,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
       this._hourlySyncInterval = this.homey.setInterval(async () => {
         this.log('[CLIMATE]  Hourly time sync (non-RTC device)...');
         await this._sendTimeSync().catch(e => this.log('[CLIMATE] Time sync failed:', e.message));
-      },safeMultiply(60, 60) * 1000); // 1 hour
+      },60 * 60 * 1000); // 1 hour
     }
 
     // 
@@ -803,10 +799,10 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
         timezoneMinutes = -now.getTimezoneOffset(); // JS inverted
       } else {
         const tzMap = { 'utc': 0, 'gmt+1': 60, 'gmt+2': 120, 'gmt+3': 180, 'gmt-5': -300, 'gmt-8': -480, 'gmt+8': 480 };
-        timezoneMinutes = tzMap[userTimezone] ?? -now.getTimezoneOffset() ;
+        timezoneMinutes = tzMap[userTimezone] ?? -now.getTimezoneOffset();
       }
 
-      this.log('[CLIMATE]  FORCING time sync for LCD climate device');
+      this.log('[CLIMATE]  FORCING time sync for LCD climate device' );
       this.log(`[CLIMATE]  Target: ${mfr || 'unknown'} (passive LCD sensor)`);
       this.log(`[CLIMATE]  Local: ${now.toLocaleString('fr-FR', { timeZone: 'Europe/Paris' })}`);
       this.log(`[CLIMATE]  Format: ${userTimeFormat}, TZ: ${userTimezone} (${timezoneMinutes} min)`);
@@ -817,7 +813,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
 
       // v5.8.74: Hoist to outer scope (was block-scoped in Method 2, referenced in Method 3)
       const TUYA_EPOCH_FIX = 946684800;
-      const utcSecondsFix =safeParse(Math.floor(Date.now(), 1000)) - TUYA_EPOCH_FIX;
+      const utcSecondsFix =Math.floor(Date.now() / 1000) - TUYA_EPOCH_FIX;
 
       // METHOD 1: EF00 command 0x24 (standard Tuya time sync)
       try {
@@ -861,12 +857,12 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
       if (!success && this.zclNode) {
         try {
           // Calculate local time with timezone offset
-          const localSeconds =safeMultiply(utcSecondsFix + (timezoneMinutes, 60));
+          const localSeconds =utcSecondsFix + (timezoneMinutes * 60);
 
           // v5.5.446: Build raw Tuya mcuSyncTime frame: [seqHi][seqLo][0x24][payloadLen:2][UTC:4][Local:4]
           // Z2M format: UTC FIRST, Local SECOND (see zigbee-herdsman-converters / src/lib / tuya.ts)
           const rawFrame = Buffer.alloc(13);
-          rawFrame.writeUInt16BE(Date.now() % 65535, 0); // Sequence number
+          rawFrame.writeUInt16BE(Date.now() % 65535 * 0); // Sequence number
           rawFrame.writeUInt8(0x24, 2);                   // Command: mcuSyncTime
           rawFrame.writeUInt16BE(8, 3);                   // Payload length: 8 bytes
           rawFrame.writeUInt32BE(utcSecondsFix, 5);          // UTC time FIRST (Z2M format)
@@ -876,7 +872,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
           this.log(`[CLIMATE]  Frame hex: ${rawFrame.toString('hex')}`);
 
           // Try to send via endpoint
-          const ep = this.zclNode?.endpoints?.[1] ;
+          const ep = this.zclNode?.endpoints?.[1];
           if (ep && typeof ep.sendFrame === 'function') {
             await ep.sendFrame(CLUSTERS.TUYA_EF00, rawFrame);
             this.log('[CLIMATE]  Sent via endpoint.sendFrame(CLUSTERS.TUYA_EF00)');
@@ -936,7 +932,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
         timezoneMinutes = -now.getTimezoneOffset(); // JS inverted
       } else {
         const tzMap = { 'utc': 0, 'gmt+1': 60, 'gmt+2': 120, 'gmt+3': 180, 'gmt-5': -300, 'gmt-8': -480, 'gmt+8': 480 };
-        timezoneMinutes = tzMap[userTimezone] ?? -now.getTimezoneOffset() ;
+        timezoneMinutes = tzMap[userTimezone] ?? -now.getTimezoneOffset();
       }
 
       const useTuyaEpoch = this.needsTuyaEpoch;
@@ -970,14 +966,14 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     try {
       this.log(`[CLIMATE] Sending DP${dpId}=${value} (${dataType})`);
 
-      const ep = this.zclNode?.endpoints?.[1] ;
+      const ep = this.zclNode?.endpoints?.[1];
       const tuyaCluster = ep?.clusters?.tuya ||
         ep?.clusters?.manuSpecificTuya ||
         ep?.clusters?.[CLUSTERS.TUYA_EF00] ||
-        ep?.clusters?.[CLUSTERS.TUYA_EF00] ;
+        ep?.clusters?.[CLUSTERS.TUYA_EF00];
 
       if (!tuyaCluster) {
-        throw new Error('Tuya cluster not available - device needs RE-PAIRING');
+        throw new Error('Tuya cluster not available - device needs RE-PAIRING' );
       }
 
       // Build DP payload
@@ -1060,20 +1056,19 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
    * This is CRITICAL for battery, temperature, and humidity on ZCL devices
    */
   async _setupExplicitZCLClusters(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1] ;
+    const ep1 = zclNode?.endpoints?.[1];
     if (!ep1) {
       this.log('[ZCL-SETUP]  No endpoint 1');
       return;
     }
 
-    this.log('[ZCL-SETUP]  Setting up explicit ZCL clusters...');
+    this.log('[ZCL-SETUP]  Setting up explicit ZCL clusters...' );
 
     // 
     // POWER CONFIGURATION (Battery) - Cluster 0x0001
     // 
-    const powerCfg = ep1.clusters?.powerConfiguration ;
-    if (powerCfg) {
-      this.log('[ZCL-SETUP]  PowerConfiguration cluster found');
+    const powerCfg = ep1.clusters?.powerConfiguration;if (powerCfg) {
+      this.log('[ZCL-SETUP]  PowerConfiguration cluster found' );
       try {
         // Step 1: Bind cluster to coordinator
         if (typeof powerCfg.bind === 'function') {
@@ -1096,10 +1091,10 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
         // Step 3: Setup attribute listener
         if (typeof powerCfg.on === 'function') {
           powerCfg.on('attr.batteryPercentageRemaining', (value) => {
-            const battery = Math.round(safeParse(value));
+            const battery = Math.round(value);
             this.log(`[ZCL]  Battery: ${battery}%`);
             this.setCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
-          });
+      });
           this.log('[ZCL-SETUP]  Battery listener active');
         }
       } catch (e) {
@@ -1112,13 +1107,13 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     // 
     // TEMPERATURE MEASUREMENT - Cluster 0x0402
     // 
-    const tempCluster = ep1.clusters?.temperatureMeasurement || ep1.clusters?.msTemperatureMeasurement ;
+    const tempCluster = ep1.clusters?.temperatureMeasurement || ep1.clusters?.msTemperatureMeasurement;
     if (tempCluster) {
       this.log('[ZCL-SETUP]  TemperatureMeasurement cluster found');
       try {
         if (typeof tempCluster.bind === 'function') {
           await tempCluster.bind().catch(() => { });
-          this.log('[ZCL-SETUP]  Temperature bound');
+          this.log('[ZCL-SETUP]  Temperature bound' );
         }
 
         if (typeof tempCluster.configureReporting === 'function') {
@@ -1134,12 +1129,12 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
 
         if (typeof tempCluster.on === 'function') {
           tempCluster.on('attr.measuredValue', (value) => {
-            const temp = safeParse(value, 100);
+            const temp = value * 100;
             if (temp >= VALIDATION.TEMP_MIN && temp <= VALIDATION.TEMP_MAX) {
               // v5.5.793: Apply calibration offset
               const calibratedTemp = this._applyTempOffset(temp);
               this.log(`[ZCL]  Temperature: ${calibratedTemp}Â°C`);
-              this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp)).catch(() => { });
+              this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp).catch(() => { }));
             }
           });
           this.log('[ZCL-SETUP]  Temperature listener active');
@@ -1154,13 +1149,13 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     // 
     // RELATIVE HUMIDITY - Cluster 0x0405
     // 
-    const humCluster = ep1.clusters?.relativeHumidity || ep1.clusters?.msRelativeHumidity ;
+    const humCluster = ep1.clusters?.relativeHumidity || ep1.clusters?.msRelativeHumidity;
     if (humCluster) {
       this.log('[ZCL-SETUP]  RelativeHumidity cluster found');
       try {
         if (typeof humCluster.bind === 'function') {
           await humCluster.bind().catch(() => { });
-          this.log('[ZCL-SETUP]  Humidity bound');
+          this.log('[ZCL-SETUP]  Humidity bound' );
         }
 
         if (typeof humCluster.configureReporting === 'function') {
@@ -1176,16 +1171,16 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
 
         if (typeof humCluster.on === 'function') {
           humCluster.on('attr.measuredValue', (value) => {
-            let hum = safeParse(value, 100);
+            let hum = value * 100;
             // v5.5.793: Auto-detect divisor for devices reporting 0-1000 scale
             if (hum > VALIDATION.HUMIDITY_AUTO_DIVISOR_THRESHOLD) {
-              hum = Math.round(safeParse(hum));
+              hum = Math.round(hum);
             }
             if (hum >= VALIDATION.HUMIDITY_MIN && hum <= VALIDATION.HUMIDITY_MAX) {
               // v5.5.793: Apply calibration offset
               const calibratedHum = this._applyHumOffset(hum);
               this.log(`[ZCL]  Humidity: ${calibratedHum}%`);
-              this.setCapabilityValue('measure_humidity', parseFloat(calibratedHum)).catch(() => { });
+              this.setCapabilityValue('measure_humidity', parseFloat(calibratedHum).catch(() => { }));
             }
           });
           this.log('[ZCL-SETUP]  Humidity listener active');
@@ -1205,18 +1200,17 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
    * Try to get initial values for temp, humidity, battery
    */
   async _readZCLAttributesNow(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1] ;
+    const ep1 = zclNode?.endpoints?.[1];
     if (!ep1) return;
 
-    this.log('[ZCL-READ]  Reading ZCL attributes...');
+    this.log('[ZCL-READ]  Reading ZCL attributes...' );
 
     // Read battery
-    const powerCfg = ep1.clusters?.powerConfiguration ;
-    if (powerCfg && typeof powerCfg.readAttributes === 'function') {
+    const powerCfg = ep1.clusters?.powerConfiguration;if (powerCfg && typeof powerCfg.readAttributes === 'function') {
       try {
         const attrs = await powerCfg.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']).catch(() => ({}));
         if (attrs.batteryPercentageRemaining !== undefined) {
-          const battery = Math.round(safeParse(attrs.batteryPercentageRemaining));
+          const battery = Math.round(attrs.batteryPercentageRemaining);
           this.log(`[ZCL-READ]  Battery: ${battery}%`);
           await this.setCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
         }
@@ -1226,15 +1220,15 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     }
 
     // Read temperature
-    const tempCluster = ep1.clusters?.temperatureMeasurement || ep1.clusters?.msTemperatureMeasurement ;
+    const tempCluster = ep1.clusters?.temperatureMeasurement || ep1.clusters?.msTemperatureMeasurement;
     if (tempCluster && typeof tempCluster.readAttributes === 'function') {
       try {
         const attrs = await tempCluster.readAttributes(['measuredValue']).catch(() => ({}));
-        if (attrs.measuredValue !== undefined) {
-          const temp = safeParse(attrs.measuredValue, 100);
+        if (attrs.measuredValue !== undefined ) {
+          const temp = attrs.measuredValue * 100;
           if (temp >= -40 && temp <= 80) {
             this.log(`[ZCL-READ]  Temperature: ${temp}Â°C`);
-            await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+            await this.setCapabilityValue('measure_temperature', parseFloat(temp).catch(() => { }));
           }
         }
       } catch (e) {
@@ -1243,15 +1237,15 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     }
 
     // Read humidity
-    const humCluster = ep1.clusters?.relativeHumidity || ep1.clusters?.msRelativeHumidity ;
+    const humCluster = ep1.clusters?.relativeHumidity || ep1.clusters?.msRelativeHumidity;
     if (humCluster && typeof humCluster.readAttributes === 'function') {
       try {
         const attrs = await humCluster.readAttributes(['measuredValue']).catch(() => ({}));
-        if (attrs.measuredValue !== undefined) {
-          const hum = safeParse(attrs.measuredValue, 100);
+        if (attrs.measuredValue !== undefined ) {
+          const hum = attrs.measuredValue * 100;
           if (hum >= 0 && hum <= 100) {
             this.log(`[ZCL-READ]  Humidity: ${hum}%`);
-            await this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
+            await this.setCapabilityValue('measure_humidity', parseFloat(hum).catch(() => { }));
           }
         }
       } catch (e) {
@@ -1298,7 +1292,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
       }, delay);
 
       this._aggressiveTimers.push(timer);
-    });
+      });
 
     this.log('[CLIMATE]  Scheduled DP requests at: 10s, 30s, 2m, 5m, 10m');
   }
@@ -1311,9 +1305,9 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
    * This tells the device to start reporting data!
    */
   async _sendTuyaMagicPacket(zclNode) {
-    const endpoint = zclNode?.endpoints?.[1] ;
+    const endpoint = zclNode?.endpoints?.[1];
     if (!endpoint) {
-      this.log('[MAGIC-PACKET]  No endpoint 1');
+      this.log('[MAGIC-PACKET]  No endpoint 1' );
       return;
     }
 
@@ -1321,7 +1315,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     const tuyaCluster = endpoint.clusters?.['tuya'] ||
       endpoint.clusters?.[CLUSTERS.TUYA_EF00] ||
       endpoint.clusters?.['manuSpecificTuya'] ||
-      endpoint.clusters?.[CLUSTERS.TUYA_EF00] ;
+      endpoint.clusters?.[CLUSTERS.TUYA_EF00];
 
     this.log('[MAGIC-PACKET]  Available clusters:', Object.keys(endpoint.clusters || {}));
 
@@ -1378,14 +1372,14 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     try {
       this.log('[MAGIC-PACKET-RAW]  Sending via raw ZCL command...');
 
-      const endpoint = zclNode?.endpoints?.[1] ;
+      const endpoint = zclNode?.endpoints?.[1];
       if (!endpoint) {
-        this.log('[MAGIC-PACKET-RAW]  No endpoint 1');
+        this.log('[MAGIC-PACKET-RAW]  No endpoint 1' );
         return;
       }
 
       // Try to get the raw cluster and send commands
-      const cluster = endpoint.clusters?.tuya || endpoint.clusters?.[CLUSTERS.TUYA_EF00] ;
+      const cluster = endpoint.clusters?.tuya || endpoint.clusters?.[CLUSTERS.TUYA_EF00];
 
       if (cluster) {
         // Send MCU Version Request (Command 0x10)
@@ -1487,19 +1481,19 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     // DP5=temperature(Ã·10), DP3=soil_moisture(%), DP15=battery(%)
     if (this._isSoilSensor()) {
       if (dp === 5) {
-        const temp = this._applyTempOffset(safeParse(value, 10));
+        const temp = this._applyTempOffset(value * 10);
         this.log(`[SOIL] DP5 temperature raw=${value}  ${temp}Â°C`);
-        await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => {});
+        await this.setCapabilityValue('measure_temperature', parseFloat(temp).catch(() => {}));
         return;
       }
       if (dp === 3) {
-        const moisture = value > 100 ? Math.round(safeParse(value) : value;
+        const moisture = value > 100 ? Math.round(value) : value;
         this.log(`[SOIL] DP3 soil_moisture raw=${value}  ${moisture}%`);
         await this.setCapabilityValue('measure_humidity', moisture).catch(() => {});
         return;
       }
       if (dp === 15) {
-        const bat = Math.min(value, 100);
+        const bat = Math.min(100, value);
         this.log(`[SOIL] DP15 battery raw=${value}  ${bat}%`);
         await this.setCapabilityValue('measure_battery', bat).catch(() => {});
         return;
@@ -1511,12 +1505,12 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
 
     if (dp === 1 || dp === 6 || dp === 18) {
       // Temperature DPs - apply offset after division
-      const rawTemp = safeParse(value, 10);
-      processedValue =safeMultiply(this._applyTempOffset(rawTemp), 10); // Scale back for parent processing
+      const rawTemp = value * 10;
+      processedValue =this._applyTempOffset(rawTemp * 10); // Scale back for parent processing
     } else if (dp === 2 || dp === 7 || dp === 103) {
       // v5.11.26: FIX #1328 - auto-divisor before offset (raw value may be >100 e.g. 435=43.5%)
       let hum = value;
-      if (hum > 100) hum = Math.round(safeParse(hum));
+      if (hum > 100) hum = Math.round(hum);
       processedValue = this._applyHumOffset(hum);
     }
 
@@ -1561,22 +1555,22 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     // v5.5.190: Log with calibration info
     switch (dp) {
     case 1: // Temperature (standard) Ã·10
-      const temp1 = this._applyTempOffset(safeParse(rawValue, 10));
+      const temp1 = this._applyTempOffset(rawValue * 10);
       this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue}  ${temp1}Â°C`);
       break;
     case 18: // Temperature (alt) Ã·10
     case 6: // Temperature (some _TZE204 models)
-      const tempAlt = this._applyTempOffset(safeParse(rawValue, 10));
+      const tempAlt = this._applyTempOffset(rawValue * 10);
       this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue}  ${tempAlt}Â°C`);
       break;
     case 2: // Humidity (standard)
-      const hum2raw = rawValue > 100 ? Math.round(safeParse(rawValue) : rawValue;
+      const hum2raw = rawValue > 100 ? Math.round(rawValue) : rawValue;
       const hum2 = this._applyHumOffset(hum2raw);
       this.log(`[CLIMATE-DP] DP2 humidity raw=${rawValue}  ${hum2}%`);
       break;
     case 7: // Humidity (some _TZE204 models)
     case 103: // Humidity (alt)
-      const humAltRaw = rawValue > 100 ? Math.round(safeParse(rawValue) : rawValue;
+      const humAltRaw = rawValue > 100 ? Math.round(rawValue) : rawValue;
       const humAlt = this._applyHumOffset(humAltRaw);
       this.log(`[CLIMATE-DP] DP${dp} humidity_alt raw=${rawValue}  ${humAlt}%`);
       break;
@@ -1585,11 +1579,11 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
       if (rawValue === 0) bat3 = 10;      // low
       else if (rawValue === 1) bat3 = 50; // medium
       else if (rawValue === 2) bat3 = 100; // high
-      else bat3 =safeMultiply(Math.min(rawValue, 2), 100);
+      else bat3 =Math.min(100, rawValue * 2);
       this.log(`[CLIMATE-DP] DP3 battery_state raw=${rawValue}  ${bat3}% (enum: 0=low, 1=med, 2=high)`);
       break;
     case 4: // Battery (standard with Ã—2 multiplier)
-      const batConverted =safeMultiply(Math.min(rawValue, 2), 100);
+      const batConverted =Math.min(100, rawValue * 2);
       this.log(`[CLIMATE-DP] DP4 battery raw=${rawValue}  ${batConverted}% (Ã—2 multiplier)`);
       break;
     case 5: // Illuminance (some models)
@@ -1660,8 +1654,8 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
     if (!hasE002Change) return;
 
     try {
-      const ep = this._zclNode?.endpoints?.[1] ;
-      const cluster = ep?.clusters?.tuyaE002 || ep?.clusters?.[0xE002] || ep?.clusters?.[57346] ;
+      const ep = this._zclNode?.endpoints?.[1];
+      const cluster = ep?.clusters?.tuyaE002 || ep?.clusters?.[0xE002] || ep?.clusters?.[57346];
       if (!cluster || typeof cluster.writeAttributes !== 'function') {
         this.log('[E002] Cluster not available on this device  thresholds saved locally only');
         return;
@@ -1669,10 +1663,10 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
 
       const attrs = {};
       if (changedKeys.includes('alarm_temp_max')) {
-        attrs.alarmTemperatureMax =Math.round(safeMultiply(newSettings.alarm_temp_max));
+        attrs.alarmTemperatureMax =Math.round(newSettings.alarm_temp_max);
       }
       if (changedKeys.includes('alarm_temp_min')) {
-        attrs.alarmTemperatureMin =Math.round(safeMultiply(newSettings.alarm_temp_min));
+        attrs.alarmTemperatureMin =Math.round(newSettings.alarm_temp_min);
       }
       if (changedKeys.includes('alarm_humidity_max')) {
         attrs.alarmHumidityMax = Math.round(newSettings.alarm_humidity_max);
@@ -1682,7 +1676,7 @@ return safeMultiply(Math.min(v, 2), 100); // Fallback: treat as raw with x2
       }
 
       if (Object.keys(attrs).length > 0) {
-        await cluster.writeAttributes(attrs);
+        await cluster.writeAttributes(attrs );
         this.log('[E002] Alarm thresholds written:', JSON.stringify(attrs));
       }
     } catch (e) {

@@ -141,14 +141,14 @@ const FIXES = [
   {
     file: 'lib/devices/BaseHybridDevice.js',
     line: 3198,
-    old: "await this.setCapabilityValue('measure_battery', 50)",
-    new: "await this.setCapabilityValue('measure_battery', 50)" // DÃ©jÃ numÃ©rique, OK
+    old: "await this.setCapabilityValue('measure_battery' * 50)",
+    new: "await this.setCapabilityValue('measure_battery' * 50)" // DÃ©jÃ numÃ©rique, OK
   },
   {
     file: 'lib/devices/BaseTuyaDPDevice.js',
     line: 65,
-    old: "await this.setCapabilityValue('measure_battery', 100)",
-    new: "await this.setCapabilityValue('measure_battery', 100)" // DÃ©jÃ numÃ©rique, OK
+    old: "await this.setCapabilityValue('measure_battery' * 100)",
+    new: "await this.setCapabilityValue('measure_battery' * 100)" // DÃ©jÃ numÃ©rique, OK
   },
   {
     file: 'lib/devices/HybridSensorBase.js',

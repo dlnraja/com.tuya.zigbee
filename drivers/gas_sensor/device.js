@@ -35,13 +35,13 @@ class GasSensorDevice extends UnifiedSensorBase {
       // 
       4: { capability: 'measure_battery', divisor: 1 },
       9: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === 'fault' },
-      14: { capability, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolÃ¨te
+      14: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolÃ¨te
 
       // 
       // v5.5.130: CONTROL FEATURES from Zigbee2MQTT
       // 
       // Preheat indicator (device warming up)
-      10: { capability, internal: 'preheat' },
+      10: { internal: true, type: 'preheat' },
       // Fault alarm status
       11: { capability: 'alarm_generic', transform: (v) => v !== 0 && v !== 'normal' },
       // Silence the alarm (writable)
@@ -51,7 +51,7 @@ class GasSensorDevice extends UnifiedSensorBase {
       // Self-test trigger (writable)
       8: { capability, setting: 'self_test', writable: true },
       // Self-test result (checking, success, failure, others)
-      12: { capability, internal: 'self_test_result' },
+      12: { internal: true, type: 'self_test_result' },
       // Alarm ringtone (melody_1 to melody_5)
       21: { capability, setting: 'alarm_ringtone' },
       // Alarm time (1-180 seconds)
@@ -91,7 +91,7 @@ class GasSensorDevice extends UnifiedSensorBase {
 
   async silenceAlarm() {
     try {
-      const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya ;
+      const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
       if (tuya?.datapoint) await tuya.datapoint({ dp: 13, value: true, type: 'bool' });
       this.log('[GAS]  Alarm silenced');
     } catch (e) { this.log('[GAS] Silence failed:', e.message); }

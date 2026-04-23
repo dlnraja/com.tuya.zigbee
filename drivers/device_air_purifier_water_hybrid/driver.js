@@ -29,18 +29,18 @@ class WaterTankMonitorDriver extends Homey {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('device_air_purifier_water_hybrid_water_tank_monitor_level_above', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('device_air_purifier_water_hybrid_water_tank_monitor_level_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
-        });
+      });
       }
     } catch (err) { this.error(`Condition device_air_purifier_water_hybrid_water_tank_monitor_level_above: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_air_purifier_water_hybrid_water_tank_monitor_state_is', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('device_air_purifier_water_hybrid_water_tank_monitor_state_is');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

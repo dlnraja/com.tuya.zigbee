@@ -14,7 +14,7 @@ const DRIVERS_DIR = path.join(__dirname, '../../drivers');
 const DRY_RUN = process.argv.includes('--dry-run');
 
 function main() {
-  console.log('=== Fix Detected Variants' + (DRY_RUN ? ' (DRY RUN)' : '') + ' ===\n');
+  console.log('=== Fix Detected Variants' + (DRY_RUN ? ' (DRY RUN )' : '') + ' ===\n')      ;
   
   if (!fs.existsSync(DETECTED_PATH)) {
     console.error('Detected file not found: ' + DETECTED_PATH);
@@ -37,13 +37,13 @@ function main() {
     
     try {
       const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-      const mfrs = compose.zigbee?.manufacturerName || [] ;
+      const mfrs = compose.zigbee?.manufacturerName || []       ;
       const existingSet = new Set(mfrs.map(m => m.trim()));
       
       const toAdd = variants.filter(v => !existingSet.has(v));
       
       if (toAdd.length > 0) {
-        compose.zigbee.manufacturerName.push(...toAdd);
+        compose.zigbee.manufacturerName.push(...toAdd );
         
         if (!DRY_RUN) {
           fs.writeFileSync(composePath, JSON.stringify(compose, null, 2) + '\n');

@@ -49,7 +49,7 @@ function checkManifests() {
     for (const f of manifests) {
         try {
             const json = JSON.parse(fs.readFileSync(f, 'utf8'));
-            const mfrs = json.zigbee?.manufacturerName || [] ;
+            const mfrs = json.zigbee?.manufacturerName || []      ;
             for (const m of mfrs) {
                 // We check for duplicates within the SAME driver (already handled by deduplicator)
                 // But specifically check for CASE COLLISIONS that might have been missed

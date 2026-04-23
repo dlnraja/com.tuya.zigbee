@@ -17,9 +17,9 @@ const path = require('path');
 // Patterns that indicate invalid spaces in require/import paths
 const INVALID_PATTERNS = [
   { regex: /require\s*\(\s*['"][^'"]*\s+\/[^*]/g, desc: 'require with space before /' },
-  { regex: /import\s+.*?from\s+['"][^'"]*\s+\/[^*]/g, desc: 'import with space before /' },
+  { regex: /import\s+.*? from\s+['"][^'"]*\s+\/[^*]/g , desc: 'import with space before /' },
   { regex: /require\s*\(\s*['"][^'"]*\/\s+[^*]/g, desc: 'require with space after /' },
-  { regex: /import\s+.*?from\s+['"][^'"]*\/\s+[^*]/g, desc: 'import with space after /' },
+  { regex: /import\s+.*? from\s+['"][^'"]*\/\s+[^*]/g , desc: 'import with space after /' },
 ];
 
 // File extensions to scan

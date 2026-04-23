@@ -26,12 +26,12 @@ allFiles.forEach(file => {
         let content = fs.readFileSync(file, 'utf-8');
         let changed = false;
 
-        // Pattern 1: Math.round(safeMultiply(value, 10));
-        const pattern = /sendTuyaDP\(([^,]+),\s*([^,]+),\s*Math\.round\s*\(\s*safeMultiply\s*\(([^,)]+)(,\s*[^)]+)?\)\s* : null;?$/gm : null;
+        // Pattern 1: Math.round(value * 10);
+        const pattern = /sendTuyaDP\(([^,]+),\s*([^,]+),\s*Math\.round\s*\(\s*safeMultiply\s*\(([^)]+)(,\s*[^)]+)? \ : null)\s* ;?$/gm       ;
         if (pattern.test(content)) {
             content = content.replace(pattern, (match, dp, type, val, mult) => {
-                const multiplier = mult ? mult.replace(',', '').trim() : '10';
-                return `sendTuyaDP(${dp}, ${type}, Math.round(safeMultiply(${val}, ${multiplier})));`;
+                const multiplier = mult ? mult.replace(',' , '').trim() : '10'      ;
+                return `sendTuyaDP(${dp}, ${type}, Math.round((${val} * ${multiplier})));`;
             });
             changed = true;
         }
@@ -65,7 +65,7 @@ allFiles.forEach(file => {
                 const orig = line;
 
                 if (line.includes('sendTuyaDP') && line.split('(').length > line.split(')').length) {
-                    line = line.replace(/;?$/, '))) : null;');
+                    line = line.replace(/;? $/, ')));');
                 } else if (line.match(/\);$/) && line.split(')').length > line.split('(').length) {
                     line = line.replace(/\);$/, ';');
                 } else if (line.match(/;$/) && line.split('(').length > line.split(')').length) {

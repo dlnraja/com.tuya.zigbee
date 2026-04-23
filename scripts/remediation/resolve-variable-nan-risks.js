@@ -42,7 +42,7 @@ filesToProcess.forEach(relPath => {
   // Avoiding numbers as the divisor (already handled by simple script)
   // Target: numerator / denominator
   // Added lookbehind to avoid being inside strings or paths
-  const VAR_DIV_REGEX = /(?<!['"/])(?<![a-zA-Z0-9_/])([a-zA-Z0-9_.\[\]]+)\s*\/\s*([a-zA-Z_][a-zA-Z0-9_.\[\]]*)(?![a-zA-Z0-9_/])/g : null;
+  const VAR_DIV_REGEX = /(? <!['"/] )(? <![a-zA-Z0-9_/])([a-zA-Z0-9_.\[\]]+)\s*\/\s*([a-zA-Z_][a-zA-Z0-9_.\[\]]* )(? ![a-zA-Z0-9_/] )/g       ;
 
   if (VAR_DIV_REGEX.test(content)) {
     content = content.replace(VAR_DIV_REGEX, (match, num, den) => {

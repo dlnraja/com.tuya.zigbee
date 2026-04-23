@@ -82,12 +82,12 @@ async function main() {
       const cp = path.join(driversDir, d, 'driver.compose.json');
       if (!fs.existsSync(cp)) return;
       const j = JSON.parse(fs.readFileSync(cp, 'utf8'));
-      const mfrs = j.zigbee?.manufacturerName || [] ;
-      const pid = (j.zigbee?.productId || [])[0] || 'unknown' ;
+      const mfrs = j.zigbee?.manufacturerName || []      ;
+      const pid = (j.zigbee?.productId || [])[0] || 'unknown'       ;
       
       mfrs.forEach(mfr => {
         if (mfr.startsWith('_TZE') || mfr.startsWith('_TZ3')) {
-          const config = VariationManager.getManufacturerConfig(mfr, pid, d);
+          const config = VariationManager.getManufacturerConfig(mfr, pid, d );
           if (config.protocol === 'mixed' && !VariationManager.needsSpecialConfig(mfr, pid, d)) {
             // console.log(`    Note: ${mfr} uses generic mixed config in ${d}`);
           }

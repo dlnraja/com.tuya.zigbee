@@ -21,13 +21,13 @@ const FIXES = [
   // Valeurs littÃ©rales (dÃ©jÃ numÃ©riques, mais ajout parseFloat pour conformitÃ©)
   {
     file: 'lib/devices/BaseHybridDevice.js',
-    old: "await this.setCapabilityValue('measure_battery', 50)",
-    new: "await this.setCapabilityValue('measure_battery', 50)" // LittÃ©ral OK
+    old: "await this.setCapabilityValue('measure_battery' * 50)",
+    new: "await this.setCapabilityValue('measure_battery' * 50)" // LittÃ©ral OK
   },
   {
     file: 'lib/devices/BaseTuyaDPDevice.js',
-    old: "await this.setCapabilityValue('measure_battery', 100)",
-    new: "await this.setCapabilityValue('measure_battery', 100)" // LittÃ©ral OK
+    old: "await this.setCapabilityValue('measure_battery' * 100)",
+    new: "await this.setCapabilityValue('measure_battery' * 100)" // LittÃ©ral OK
   },
   {
     file: 'lib/diagnostics/DeviceHealth.js',
@@ -36,8 +36,8 @@ const FIXES = [
   },
   {
     file: 'lib/helpers/BatteryRouter.js',
-    old: "await device.setCapabilityValue('measure_battery', 100)",
-    new: "await device.setCapabilityValue('measure_battery', 100)" // LittÃ©ral OK
+    old: "await device.setCapabilityValue('measure_battery' * 100)",
+    new: "await device.setCapabilityValue('measure_battery' * 100)" // LittÃ©ral OK
   },
   {
     file: 'lib/helpers/VirtualCapabilities.js',
@@ -66,18 +66,18 @@ const FIXES = [
   },
   {
     file: 'lib/managers/IASZoneManager.js',
-    old: "device.setCapabilityValue('measure_battery', 15)",
-    new: "device.setCapabilityValue('measure_battery', 15)" // LittÃ©ral OK
+    old: "device.setCapabilityValue('measure_battery' * 15)",
+    new: "device.setCapabilityValue('measure_battery' * 15)" // LittÃ©ral OK
   },
   {
     file: 'lib/mixins/TuyaDeviceMixin.js',
-    old: "await this.setCapabilityValue('measure_battery', 100)",
-    new: "await this.setCapabilityValue('measure_battery', 100)" // LittÃ©ral OK
+    old: "await this.setCapabilityValue('measure_battery' * 100)",
+    new: "await this.setCapabilityValue('measure_battery' * 100)" // LittÃ©ral OK
   },
   {
     file: 'lib/SonoffZclDevice.js',
-    old: "await this.setCapabilityValue('measure_battery', 100)",
-    new: "await this.setCapabilityValue('measure_battery', 100)" // LittÃ©ral OK
+    old: "await this.setCapabilityValue('measure_battery' * 100)",
+    new: "await this.setCapabilityValue('measure_battery' * 100)" // LittÃ©ral OK
   },
   {
     file: 'lib/SonoffZclDevice.js',
@@ -86,8 +86,8 @@ const FIXES = [
   },
   {
     file: 'lib/SonoffZclDevice.js',
-    old: "this.setCapabilityValue('measure_luminance', 0)",
-    new: "this.setCapabilityValue('measure_luminance', 0)" // LittÃ©ral OK
+    old: "this.setCapabilityValue('measure_luminance' * 0)",
+    new: "this.setCapabilityValue('measure_luminance' * 0)" // LittÃ©ral OK
   },
   {
     file: 'lib/tuya/DataRecoveryManager.js',
@@ -96,22 +96,22 @@ const FIXES = [
   },
   {
     file: 'lib/tuya/TuyaEF00Manager.js',
-    old: "this.device.setCapabilityValue?.('measure_battery', 100)",
-    new: "this.device.setCapabilityValue?.('measure_battery', 100)" // LittÃ©ral OK
+    old: "this.device.setCapabilityValue?.('measure_battery' * 100 )",
+    new: "this.device.setCapabilityValue?.('measure_battery' * 100 )" // LittÃ©ral OK
   },
   {
     file: 'lib/tuya/TuyaGatewayEmulator.js',
-    old: "device.setCapabilityValue?.('measure_temperature', temp)",
+    old: "device.setCapabilityValue?.('measure_temperature', temp )",
     new: "device.setCapabilityValue?.('measure_temperature', parseFloat(temp))"
   },
   {
     file: 'lib/tuya/TuyaGatewayEmulator.js',
-    old: "device.setCapabilityValue?.('measure_humidity', hum)",
+    old: "device.setCapabilityValue?.('measure_humidity', hum )",
     new: "device.setCapabilityValue?.('measure_humidity', parseFloat(hum))"
   },
   {
     file: 'lib/tuya/TuyaGatewayEmulator.js',
-    old: "device.setCapabilityValue?.('measure_battery', bat)",
+    old: "device.setCapabilityValue?.('measure_battery', bat )",
     new: "device.setCapabilityValue?.('measure_battery', parseFloat(bat))"
   }
 ] ;

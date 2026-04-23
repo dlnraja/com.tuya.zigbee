@@ -32,7 +32,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('shutter_roller_controller_is_open', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('shutter_roller_controller_is_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -42,18 +42,18 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition shutter_roller_controller_is_open: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('shutter_roller_controller_position_above', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('shutter_roller_controller_position_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
-        });
+      });
       }
     } catch (err) { this.error(`Condition shutter_roller_controller_position_above: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('shutter_roller_controller_is_moving', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('shutter_roller_controller_is_moving');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -64,7 +64,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('shutter_roller_controller_open', 'action');
+      const card = const card = this.homey.flow.getActionCard('shutter_roller_controller_open');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -76,7 +76,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action shutter_roller_controller_open: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('shutter_roller_controller_close', 'action');
+      const card = const card = this.homey.flow.getActionCard('shutter_roller_controller_close');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -88,7 +88,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action shutter_roller_controller_close: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('shutter_roller_controller_stop', 'action');
+      const card = const card = this.homey.flow.getActionCard('shutter_roller_controller_stop');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -100,7 +100,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action shutter_roller_controller_stop: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('shutter_roller_controller_set_position', 'action');
+      const card = const card = this.homey.flow.getActionCard('shutter_roller_controller_set_position');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -111,7 +111,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action shutter_roller_controller_set_position: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('shutter_roller_controller_set_brightness', 'action');
+      const card = const card = this.homey.flow.getActionCard('shutter_roller_controller_set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

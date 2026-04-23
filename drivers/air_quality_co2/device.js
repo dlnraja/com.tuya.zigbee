@@ -44,7 +44,7 @@ class AirQualityCO2Device extends UnifiedSensorBase {
       // v5.11.26: DP22=HCHO per Z2M (was incorrectly mapped to VOC)
       22: { capability: 'measure_formaldehyde', divisor: 100 },
       14: { capability: 'measure_battery', divisor: 1 },
-      15: { capability, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
+      15: { internal: true, type: 'battery_low', transform: (v) => v === 1 || v === 'low' },
       1: { capability: 'alarm_generic', transform: (v) => v === true || v === 1 }
     };
   }
@@ -135,17 +135,17 @@ class AirQualityCO2Device extends UnifiedSensorBase {
   }
 
   async _setupAirQualityZCL(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1] ;
-    if (!ep1) return;
+    const ep1 = zclNode?.endpoints?.[1];
+    if (!ep1 ) return;
 
     try {
-      const temp = ep1.clusters?.msTemperatureMeasurement ;
-      if (temp?.on) {
-        temp.on('attr.measuredValue', (v) => { const t=v/100 ; if(t>=-40&&t<=80) this._safeSetCapability('measure_temperature',t).catch(()=>{}); else this.log('[CO2] ZCL temp rejected:',t); });
+      const temp = ep1.clusters?.msTemperatureMeasurement;if (temp?.on) {
+        temp.on('attr.measuredValue', (v ) => { const t=v/100; if(t>=-40&&t<=80) this._safeSetCapability('measure_temperature',t).catch(()=>{}); else this.log('[CO2] ZCL temp rejected:',t);
+      });
       }
-      const hum = ep1.clusters?.msRelativeHumidity ;
-      if (hum?.on) {
-        hum.on('attr.measuredValue', (v) => { const h=v/100 ; if(h>=0&&h<=100) this._safeSetCapability('measure_humidity',h).catch(()=>{}); else this.log('[CO2] ZCL hum rejected:',h); });
+      const hum = ep1.clusters?.msRelativeHumidity;if (hum?.on) {
+        hum.on('attr.measuredValue', (v ) => { const h=v/100; if(h>=0&&h<=100) this._safeSetCapability('measure_humidity',h).catch(()=>{}); else this.log('[CO2] ZCL hum rejected:',h);
+      });
       }
     } catch (e) { /* ignore */ }
   }

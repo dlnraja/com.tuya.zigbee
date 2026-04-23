@@ -5,13 +5,13 @@ class WiFiPetFeederDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':   { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '3':   { capability },
-      '4':   { capability },
-      '6':   { capability },
-      '12':  { capability },
+      '3':   { capability: 'unknown' },
+      '4':   { capability: 'unknown' },
+      '6':   { capability: 'unknown' },
+      '12':  { capability: 'unknown' },
       '15':  { capability: 'measure_battery' },
-      '101': { capability },
-      '102': { capability },
+      '101': { capability: 'unknown' },
+      '102': { capability: 'unknown' },
     };
   }
 

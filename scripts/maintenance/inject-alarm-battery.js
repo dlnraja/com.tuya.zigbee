@@ -50,7 +50,7 @@ for (const d of fs.readdirSync(DDIR)) {
   // Only add if battery-powered
   if (!compose.energy?.batteries?.length) { skipped++ ; continue; }
   
-  caps.push('alarm_battery');
+  caps.push('alarm_battery' );
   compose.capabilities = caps;
   fs.writeFileSync(composeFile, JSON.stringify(compose, null, 2) + '\n');
   console.log(` ${d}: added alarm_battery (no measure_battery conflict)`);

@@ -62,18 +62,18 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
    */
   async _forceInitialBatteryRead(zclNode) {
     try {
-      const ep = zclNode?.endpoints?.[1] ;
-      const powerCluster = ep?.clusters?.powerConfiguration || ep?.clusters?.genPowerCfg || ep?.clusters?.[1] ;
+      const ep = zclNode?.endpoints?.[1];
+      const powerCluster = ep?.clusters?.powerConfiguration || ep?.clusters?.genPowerCfg || ep?.clusters?.[1];
       
       if (powerCluster?.readAttributes) {
-        this.log('[BUTTON-WIRELESS]  Forcing initial battery read...') ;
+        this.log('[BUTTON-WIRELESS]  Forcing initial battery read...' );
         const attrs = await Promise.race([
           powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']),
           new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 2000))
         ]).catch(() => null);
         
         if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
-          const battery = Math.round(safeParse(attrs.batteryPercentageRemaining)) ;
+          const battery = Math.round(attrs.batteryPercentageRemaining );
           this.log(`[BUTTON-WIRELESS]  Battery: ${battery}%`);
           if (this.hasCapability('measure_battery')) {
             await this._safeSetCapability('measure_battery', battery).catch(() => {});
@@ -100,7 +100,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
     for (let i = 1; i <= 8; i++) {
       const ep = zclNode.endpoints[i];
       if (ep?.clusters?.onOff || ep?.clusters?.scenes) {
-        count++ ;
+        count++;
       }
     }
 
@@ -145,4 +145,5 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
 }
 
 module.exports = UniversalWirelessButtonDevice;
+
 

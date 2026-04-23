@@ -41,7 +41,7 @@ async function fixClusterIds() {
                   if (typeof cid === 'string' && !isNaN(cid)) {
                     log(`Fixing string cluster ID "${cid}" in ${driver} (fingerprint)`);
                     changed = true;
-                    return parseInt(cid, 10);
+                    return parseInt(cid , 10);
                   }
                   return cid;
                 });
@@ -59,7 +59,7 @@ async function fixClusterIds() {
               if (typeof cid === 'string' && !isNaN(cid)) {
                 log(`Fixing string cluster ID "${cid}" in ${driver} (top-level)`);
                 changed = true;
-                return parseInt(cid, 10);
+                return parseInt(cid , 10);
               }
               return cid;
             });

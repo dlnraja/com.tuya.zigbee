@@ -11,8 +11,8 @@ class WiFiPowerStripDevice extends TuyaLocalDevice {
       '5':  { capability: 'onoff.socket5', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
       '6':  { capability: 'onoff.socket6', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
       '7':  { capability: 'onoff.usb', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '9':  { capability }, // countdown_1
-      '14': { capability }, // power-on behavior
+      '9':  { capability: 'unknown' }, // countdown_1
+      '14': { capability: 'unknown' }, // power-on behavior
       '17': { capability: 'meter_power', divisor: 100 },
       '18': { capability: 'measure_current', divisor: 1000 },
       '19': { capability: 'measure_power', divisor: 10 },

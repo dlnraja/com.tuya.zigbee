@@ -21,8 +21,8 @@ function analyzeCurrentDriver(driverName) {
 
   try {
     const content = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
-    const manufacturerNames = content.zigbee?.manufacturerName || [] ;
-    const productIds = content.zigbee?.productId || [] ;
+    const manufacturerNames = content.zigbee?.manufacturerName || []      ;
+    const productIds = content.zigbee?.productId || []      ;
 
     return {
       driver: driverName,

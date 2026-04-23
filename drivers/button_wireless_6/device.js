@@ -28,47 +28,50 @@ class Button6GangDevice extends ButtonDevice {
   async _setupExtraDetection(zclNode) {
     // v5.9.22: Use centralized resolvePressType (prevents 0-index regression)
     for (let ep = 1; ep <= 6; ep++) {
-      const e = zclNode?.endpoints?.[ep] ; if (!e) continue;
-      const sc = e.clusters?.scenes || e.clusters?.[5] ;
-      if (sc?.on) { sc.on('recall', async (p) => { await this.triggerButtonPress(ep, resolvePressType(p?.sceneId ?? 0, 'BTN6-scene')) ; }); }
-      const ms = e.clusters?.multistateInput || e.clusters?.[18] ;
-      if (ms?.on) { ms.on('attr.presentValue', async (v) => { await this.triggerButtonPress(ep, resolvePressType(v, 'BTN6-multi')) ; }); }
+      const e = zclNode?.endpoints?.[ep]; if (!e ) continue;
+      const sc = e.clusters?.scenes || e.clusters?.[5];
+      if (sc?.on) { sc.on('recall', async (p ) => { await this.triggerButtonPress(ep, resolvePressType(p?.sceneId ?? 0, 'BTN6-scene'));
+      }); }
+      const ms = e.clusters?.multistateInput || e.clusters?.[18];
+      if (ms?.on) { ms.on('attr.presentValue', async (v ) => { await this.triggerButtonPress(ep, resolvePressType(v, 'BTN6-multi'));
+      }); }
     }
     try {
-      const tc = zclNode?.endpoints?.[1]?.clusters?.tuya || zclNode?.endpoints?.[1]?.clusters?.[61184] ;
-      if (tc?.on) { tc.on('response', async (d) => { const dp = d?.dp ?? d?.dpId ; const v = d?.data ?? d?.value ?? 0 ; if (dp >= 1 && dp <= 6) await this.triggerButtonPress(dp, resolvePressType(v, 'BTN6-DP')); }); }
+      const tc = zclNode?.endpoints?.[1]?.clusters?.tuya || zclNode?.endpoints?.[1]?.clusters?.[61184];
+      if (tc?.on) { tc.on('response', async (d) => { const dp = d?.dp ?? d?.dpId; const v = d?.data ?? d?.value ?? 0; if (dp >= 1 && dp <= 6) await this.triggerButtonPress(dp, resolvePressType(v, 'BTN6-DP'));
+      }); }
     } catch (e) { /* ok */ }
   }
 
   async _setupE000Detection(zclNode) {
-    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '' ;
+    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     this.log(`[BUTTON6-E000]  Setting up E000 detection (mfr: ${mfr || 'unknown'})`);
     this._e000Dedup = {};
 
     for (let ep = 1; ep <= 6; ep++) {
-      const endpoint = zclNode?.endpoints?.[ep] ;
-      if (!endpoint) continue;
+      const endpoint = zclNode?.endpoints?.[ep];
+      if (!endpoint ) continue;
 
-      const e000Cluster = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344] ;
+      const e000Cluster = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
       if (e000Cluster && typeof e000Cluster.on === 'function') {
-        this.log(`[BUTTON6-E000]  EP${ep} tuyaE000 cluster available`);
+        this.log(`[BUTTON6-E000]  EP${ep} tuyaE000 cluster available` );
         // v5.8.54: Listen for ALL cmd events (cmd0-cmd6, cmdFD/FE/FF)
         const cmdNames = ['cmd0','cmd1','cmd2','cmd3','cmd4','cmd5','cmd6','cmdFD','cmdFE','cmdFF'];
         for (const cmdName of cmdNames) {
           e000Cluster.on(cmdName, async ({ data }) => {
-            this.log(`[BUTTON6-E000]  EP${ep} ${cmdName}: data=${data?.toString?.('hex')}`) ;
+            this.log(`[BUTTON6-E000]  EP${ep} ${cmdName}: data=${data?.toString?.('hex')}`);
             let btn = ep, press = 'single';
             if (data && data.length >= 2 && data[0] >= 1 && data[0] <= 6) {
               btn = data[0]; press = resolvePressType(data[1], 'BTN6-E000');
             } else if (data && data.length >= 1) {
-              press = resolvePressType(data[0], 'BTN6-E000');
+              press = resolvePressType(data[0], 'BTN6-E000' );
             }
             await this.triggerButtonPress(btn, press);
-          });
+      });
         }
       }
 
-      const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6] ;
+      const onOff = endpoint.clusters?.onOff || endpoint.clusters?.[6];
       if (onOff && typeof onOff.on === 'function') {
         const handle = async (cmd, type) => {
           const now = Date.now();
@@ -89,8 +92,8 @@ class Button6GangDevice extends ButtonDevice {
     try {
       const TuyaE000BoundCluster = require('../../lib/clusters/TuyaE000BoundCluster');
       for (let ep = 1; ep <= 6; ep++) {
-        const endpoint = zclNode?.endpoints?.[ep] ;
-        if (!endpoint) continue;
+        const endpoint = zclNode?.endpoints?.[ep];
+        if (!endpoint ) continue;
         const bc = new TuyaE000BoundCluster({
           device: this,
           onButtonPress: async (button, pressType) => {

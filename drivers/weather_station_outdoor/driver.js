@@ -31,33 +31,33 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
   _registerFlowCards() {
     // CONDITION: Outdoor temp above
     try {
-      const card = this._getFlowCard('weather_station_outdoor_outdoor_temp_above', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
           return temp > (args.temperature || 20);
-        });
+      });
         this.log('[FLOW]  Registered: weather_station_outdoor_outdoor_temp_above');
       }
     } catch (err) { this.log(`[FLOW]  weather_station_outdoor_outdoor_temp_above: ${err.message}`); }
 
     // CONDITION: Outdoor temp below
     try {
-      const card = this._getFlowCard('weather_station_outdoor_outdoor_temp_below', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('weather_station_outdoor_outdoor_temp_below');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const temp = args.device.getCapabilityValue('measure_temperature') || 0;
           return temp < (args.temperature || 5);
-        });
+      });
         this.log('[FLOW]  Registered: weather_station_outdoor_outdoor_temp_below');
       }
     } catch (err) { this.log(`[FLOW]  weather_station_outdoor_outdoor_temp_below: ${err.message}`); }
 
     // CONDITION: Pressure rising
     try {
-      const card = this._getFlowCard('weather_station_outdoor_pressure_rising', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('weather_station_outdoor_pressure_rising');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -70,7 +70,7 @@ class WeatherStationOutdoorDriver extends Homey.Driver {
 
     // CONDITION: Pressure falling
     try {
-      const card = this._getFlowCard('weather_station_outdoor_pressure_falling', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('weather_station_outdoor_pressure_falling');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

@@ -33,7 +33,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('usb_outlet_advanced_is_on', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('usb_outlet_advanced_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -44,7 +44,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('usb_outlet_advanced_turn_on', 'action');
+      const card = const card = this.homey.flow.getActionCard('usb_outlet_advanced_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -55,7 +55,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action usb_outlet_advanced_turn_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('usb_outlet_advanced_turn_off', 'action');
+      const card = const card = this.homey.flow.getActionCard('usb_outlet_advanced_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -66,7 +66,7 @@ class UsbOutletAdvancedDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action usb_outlet_advanced_turn_off: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('usb_outlet_advanced_toggle', 'action');
+      const card = const card = this.homey.flow.getActionCard('usb_outlet_advanced_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

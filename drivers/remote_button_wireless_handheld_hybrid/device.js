@@ -18,12 +18,12 @@ const { resolve: resolvePressType, PRESS_MAP } = require('../../lib/utils/TuyaPr
  *   v5.5.379: CRITICAL FIX - TS004F Scene Mode Switching                        
  *   - TS004F has TWO modes: Dimmer (default) and Scene                         
  *   - Dimmer mode: Only single press works, uses levelControl cluster          
- *   - Scene mode: Single / safeDivide(double, long) work, uses scenes cluster                 
+ *   - Scene mode: Single / (double / long) work, uses scenes cluster                 
  *   - Mode controlled by: Cluster 6 (onOff), Attribute 0x8004                  
  *   - Value 0 = Dimmer mode, Value 1 = Scene mode                              
  *   - Research: SmartThings, Z2M #7158, ZHA #1372                              
  *                                                                               
- *   STRUCTURE safeDivide(TS0044, TS004F):                                                    
+ *   STRUCTURE (TS0044 / TS004F):                                                    
  *   EP1: Button 1 (scenes, onOff, powerCfg, groups)                             
  *   EP2: Button 2 (scenes, onOff, groups)                                       
  *   EP3: Button 3 (scenes, onOff, groups)                                       
@@ -73,8 +73,7 @@ class Button4GangDevice extends ButtonDevice {
     this.buttonCount = 4;
 
     // v5.5.295: Log available endpoints for debugging
-    const availableEndpoints = Object.keys(zclNode?.endpoints || {}) ;
-    this.log(`[BUTTON4]  Available endpoints: ${availableEndpoints.join(', ')}`);
+    const availableEndpoints = Object.keys(zclNode?.endpoints || {});this.log(`[BUTTON4]  Available endpoints: ${availableEndpoints.join(', ')}`);
 
     // Initialize base (power detection + button detection)
     await super.onNodeInit({ zclNode }).catch(err => this.error(err));
@@ -114,13 +113,13 @@ class Button4GangDevice extends ButtonDevice {
   async _intelligentModeSwitch(zclNode) {
     // v5.7.18: Use multiple sources for device info (getData may be empty on init)
     const productId = this.getData()?.productId 
-      || this.getStoreValue?.('productId')
-      || this.getSetting?.('zb_model_id')
-      || '' ;
-    const manufacturerName = this.getSetting?.('zb_manufacturer_name')
+      || this.getStoreValue?.('productId' )
+      || this.getSetting?.('zb_model_id' )
+      || '';
+    const manufacturerName = this.getSetting?.('zb_manufacturer_name' )
       || this.getStoreValue?.('manufacturerName')
       || this.getData()?.manufacturerName
-      || '' ;
+      || '';
 
     // Only TS004F needs mode switching (TS0044 doesn't have this issue)
     const isTS004F = containsCI(productId, 'TS004F');
@@ -162,10 +161,10 @@ class Button4GangDevice extends ButtonDevice {
       // Get onOff cluster on endpoint 1
       const onOffCluster = zclNode?.endpoints?.[1]?.clusters?.onOff
         || zclNode?.endpoints?.[1]?.clusters?.genOnOff
-        || zclNode?.endpoints?.[1]?.clusters?.[6] ;
+        || zclNode?.endpoints?.[1]?.clusters?.[6];
 
       if (!onOffCluster) {
-        this.log('[BUTTON4-MODE]  OnOff cluster not found on EP1');
+        this.log('[BUTTON4-MODE]  OnOff cluster not found on EP1' );
         return;
       }
 
@@ -248,7 +247,7 @@ class Button4GangDevice extends ButtonDevice {
 
       await new Promise(r => setTimeout(r, 50)); // Small delay before read
       const attrs = await onOffCluster.readAttributes([Button4GangDevice.MODE_ATTRIBUTE]);
-      const mode = attrs?.[Button4GangDevice.MODE_ATTRIBUTE] ?? attrs?.['32772'] ?? attrs?.['0x8004'] ;
+      const mode = attrs?.[Button4GangDevice.MODE_ATTRIBUTE] ?? attrs?.['32772'] ?? attrs?.['0x8004'];
 
       this.log(`[BUTTON4-MODE]  Verify read: mode = ${mode}`);
       return mode === Button4GangDevice.SCENE_MODE;
@@ -278,7 +277,7 @@ class Button4GangDevice extends ButtonDevice {
           }
         }
       }
-    },safeMultiply(5, 60) * 1000); // 5 minutes
+    },5 * 60 * 1000); // 5 minutes
   }
 
   /**
@@ -295,18 +294,18 @@ class Button4GangDevice extends ButtonDevice {
     this.homey.setTimeout(async () => {
       if (this._zclNode) {
         for (let ep = 1; ep <= 4; ep++) {
-          const endpoint = this._zclNode?.endpoints?.[ep] ;
-          if (!endpoint) continue;
-          const onOff = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6] ;
+          const endpoint = this._zclNode?.endpoints?.[ep];
+          if (!endpoint ) continue;
+          const onOff = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6];
           if (onOff?.bind) {
-            onOff.bind().then(() => this.log(`[BUTTON4-REBIND]  OnOff bound EP${ep}`)).catch(() => {}) ;
+            onOff.bind().then(() => this.log(`[BUTTON4-REBIND]  OnOff bound EP${ep}`)).catch(() => {});
           }
-          const scenes = endpoint.clusters?.scenes || endpoint.clusters?.genScenes || endpoint.clusters?.[5] ;
+          const scenes = endpoint.clusters?.scenes || endpoint.clusters?.genScenes || endpoint.clusters?.[5];
           if (scenes?.bind) {
-            scenes.bind().then(() => this.log(`[BUTTON4-REBIND]  Scenes bound EP${ep}`)).catch(() => {}) ;
+            scenes.bind().then(() => this.log(`[BUTTON4-REBIND]  Scenes bound EP${ep}`)).catch(() => {});
           }
         }
-        await this._intelligentModeSwitch(this._zclNode);
+        await this._intelligentModeSwitch(this._zclNode );
       }
     }, 300);
   }
@@ -327,27 +326,27 @@ class Button4GangDevice extends ButtonDevice {
     this.log('[BUTTON4-PHYSICAL]  Setting up enhanced physical button detection...');
     this.log('[BUTTON4-PHYSICAL] Research base: Z2M, ZHA, SmartThings, deCONZ patterns');
 
-    const manufacturerName = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '' ;
+    const manufacturerName = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     this.log(`[BUTTON4-PHYSICAL] Manufacturer: ${manufacturerName}`);
 
     try {
       // Setup scene cluster listeners on all 4 endpoints for physical buttons
       for (let ep = 1; ep <= 4; ep++) {
-        const endpoint = zclNode?.endpoints?.[ep] ;
+        const endpoint = zclNode?.endpoints?.[ep];
         if (!endpoint) {
-          this.log(`[BUTTON4-PHYSICAL]  Endpoint ${ep} not found`);
+          this.log(`[BUTTON4-PHYSICAL]  Endpoint ${ep} not found` );
           continue;
         }
 
         // v5.11.16: Fire-and-forget bind (don't block init on sleepy battery buttons)
         for (const cl of [endpoint.clusters?.onOff, endpoint.clusters?.multistateInput || endpoint.clusters?.genMultistateInput, endpoint.clusters?.scenes]) {
-          if (cl?.bind) { cl.bind().catch(() => {}) ; }
+          if (cl?.bind) { cl.bind().catch(() => {}); }
         }
 
         // v5.5.369: FIXED scenes cluster listener - use multiple event patterns
-        const scenesCluster = endpoint.clusters?.scenes || endpoint.clusters?.genScenes || endpoint.clusters?.[5] ;
+        const scenesCluster = endpoint.clusters?.scenes || endpoint.clusters?.genScenes || endpoint.clusters?.[5];
         if (scenesCluster) {
-          this.log(`[BUTTON4-PHYSICAL]  Setting up scene listener on EP${ep}...`);
+          this.log(`[BUTTON4-PHYSICAL]  Setting up scene listener on EP${ep}...` );
 
           // v5.9.22: Use centralized PRESS_MAP (prevents 0-index regression)
           const handleSceneRecall = async (sceneId) => {
@@ -360,22 +359,22 @@ class Button4GangDevice extends ButtonDevice {
           if (typeof scenesCluster.on === 'function') {
             scenesCluster.on('recall', async (payload) => {
               this.log(`[BUTTON4-SCENE] EP${ep} recall event:`, payload);
-              const sceneId = payload?.sceneId ?? payload?.sceneid ?? payload?.scene ?? 0 ;
+              const sceneId = payload?.sceneId ?? payload?.sceneid ?? payload?.scene ?? 0;
               await handleSceneRecall(sceneId);
-            });
+      });
 
             // v5.5.369: Pattern 2 - 'recallScene' event (alternative naming)
             scenesCluster.on('recallScene', async (payload) => {
               this.log(`[BUTTON4-SCENE] EP${ep} recallScene event:`, payload);
-              const sceneId = payload?.sceneId ?? payload?.sceneid ?? payload?.scene ?? 0 ;
+              const sceneId = payload?.sceneId ?? payload?.sceneid ?? payload?.scene ?? 0;
               await handleSceneRecall(sceneId);
-            });
+      });
 
             // v5.5.369: Pattern 3 - Generic 'command' event (fallback)
             scenesCluster.on('command', async (commandName, commandPayload) => {
               this.log(`[BUTTON4-SCENE] EP${ep} command: ${commandName}`, commandPayload);
               if (commandName === 'recall' || commandName === 'recallScene') {
-                const sceneId = commandPayload?.sceneId ?? commandPayload?.sceneid ?? commandPayload?.scene ?? 0 ;
+                const sceneId = commandPayload?.sceneId ?? commandPayload?.sceneid ?? commandPayload?.scene ?? 0;
                 await handleSceneRecall(sceneId);
               }
             });
@@ -383,13 +382,13 @@ class Button4GangDevice extends ButtonDevice {
 
           this.log(`[BUTTON4-PHYSICAL]  Scene listener configured for EP${ep}`);
         } else {
-          this.log(`[BUTTON4-PHYSICAL]  No scenes cluster on EP${ep}`);
+          this.log(`[BUTTON4-PHYSICAL]  No scenes cluster on EP${ep}` );
         }
 
         // v5.5.369: FIXED multistateInput cluster listener - use multiple event patterns
-        const multistateCluster = endpoint.clusters?.multistateInput || endpoint.clusters?.genMultistateInput || endpoint.clusters?.[18] ;
+        const multistateCluster = endpoint.clusters?.multistateInput || endpoint.clusters?.genMultistateInput || endpoint.clusters?.[18];
         if (multistateCluster) {
-          this.log(`[BUTTON4-PHYSICAL]  Setting up multistateInput listener on EP${ep}...`);
+          this.log(`[BUTTON4-PHYSICAL]  Setting up multistateInput listener on EP${ep}...` );
 
           // v5.9.22: Use centralized resolvePressType (prevents 0-index regression)
           const handleMultistate = async (value) => {
@@ -403,28 +402,28 @@ class Button4GangDevice extends ButtonDevice {
             multistateCluster.on('attr.presentValue', async (value) => {
               this.log(`[BUTTON4-MULTISTATE] EP${ep} attr.presentValue: ${value}`);
               await handleMultistate(value);
-            });
+      });
 
             // v5.5.369: Pattern 2 - presentValue (SDK3 style)
             multistateCluster.on('presentValue', async (value) => {
               this.log(`[BUTTON4-MULTISTATE] EP${ep} presentValue: ${value}`);
               await handleMultistate(value);
-            });
+      });
 
             // v5.5.369: Pattern 3 - report event with attributes
             multistateCluster.on('report', async (attributes) => {
               this.log(`[BUTTON4-MULTISTATE] EP${ep} report:`, attributes);
               if (attributes?.presentValue !== undefined) {
-                await handleMultistate(attributes.presentValue) ;
+                await handleMultistate(attributes.presentValue);
               }
             });
 
-            this.log(`[BUTTON4-PHYSICAL]  MultistateInput listener configured for EP${ep}`);
+            this.log(`[BUTTON4-PHYSICAL]  MultistateInput listener configured for EP${ep}` );
           }
         }
 
         // Also ensure onOff cluster is available for virtual buttons (app icons)
-        const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6] ;
+        const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6];
         if (onOffCluster) {
           this.log(`[BUTTON4-PHYSICAL]  OnOff cluster available on EP${ep} (virtual buttons)`);
 
@@ -455,7 +454,7 @@ class Button4GangDevice extends ButtonDevice {
         // v5.8.47: MOES TS0044/TS004F dimmer mode fix - levelControl cluster detection
         // When in dimmer mode (default after battery change), buttons send
         // moveWithOnOff / stepWithOnOff/stop on levelControl cluster (8) instead of scenes
-        const levelCluster = endpoint.clusters?.levelControl || endpoint.clusters?.genLevelCtrl || endpoint.clusters?.[8] ;
+        const levelCluster = endpoint.clusters?.levelControl || endpoint.clusters?.genLevelCtrl || endpoint.clusters?.[8];
         if (levelCluster) {
           if (typeof levelCluster.on === 'function') {
             // v5.11.16: Fire-and-forget bind (don't block init on sleepy buttons)
@@ -470,13 +469,13 @@ class Button4GangDevice extends ButtonDevice {
             levelCluster.on('commandMoveWithOnOff', async (payload) => {
               this.log(`[BUTTON4-LEVEL] EP${ep} commandMoveWithOnOff:`, payload);
               await handleLevelCommand('moveWithOnOff');
-            });
+      });
 
             // stepWithOnOff = step command (single press on some FW)
             levelCluster.on('commandStepWithOnOff', async (payload) => {
               this.log(`[BUTTON4-LEVEL] EP${ep} commandStepWithOnOff:`, payload);
               await handleLevelCommand('stepWithOnOff');
-            });
+      });
 
             // Generic command fallback for level cluster
             levelCluster.on('command', async (commandName, commandPayload) => {
@@ -511,7 +510,7 @@ class Button4GangDevice extends ButtonDevice {
   /**
    * v5.5.367: MOES ESW-0ZAA-EU FIX - Tuya DP button detection
    * Some MOES 4-button devices send button presses via Tuya cluster (CLUSTERS.TUYA_EF00)
-   * instead of standard ZCL safeDivide(scenes, onOff) commands
+   * instead of standard ZCL (scenes / onOff) commands
    *
    * Common Tuya DP patterns for buttons:
    * - DP 1-4: Button 1-4 press events
@@ -523,7 +522,7 @@ class Button4GangDevice extends ButtonDevice {
         || zclNode?.endpoints?.[1]?.clusters?.manuSpecificTuya
         || zclNode?.endpoints?.[1]?.clusters?.[CLUSTERS.TUYA_EF00]
         || zclNode?.endpoints?.[1]?.clusters?.['CLUSTERS.TUYA_EF00']
-        || zclNode?.endpoints?.[1]?.clusters?.[CLUSTERS.TUYA_EF00] ;
+        || zclNode?.endpoints?.[1]?.clusters?.[CLUSTERS.TUYA_EF00];
 
       if (!tuyaCluster) {
         this.log('[BUTTON4-TUYA-DP]  No Tuya cluster found - using ZCL only');
@@ -535,8 +534,8 @@ class Button4GangDevice extends ButtonDevice {
       if (typeof tuyaCluster.on === 'function') {
         // Listen for Tuya datapoint reports
         tuyaCluster.on('response', async (data) => {
-          const dp = data?.dp ?? data?.dataPointId ?? data?.dpId ;
-          const value = data?.data ?? data?.value ?? data?.raw?.[0] ?? 0 ;
+          const dp = data?.dp ?? data?.dataPointId ?? data?.dpId;
+          const value = data?.data ?? data?.value ?? data?.raw?.[0] ?? 0;
 
           this.log(`[BUTTON4-TUYA-DP]  DP${dp} = ${value}`, data);
 
@@ -563,8 +562,8 @@ class Button4GangDevice extends ButtonDevice {
         tuyaCluster.on('report', async (data) => {
           this.log('[BUTTON4-TUYA-DP]  Report event:', data);
           // Process same as response
-          const dp = data?.dp ?? data?.dataPointId ?? data?.dpId ;
-          const value = data?.data ?? data?.value ?? 0 ;
+          const dp = data?.dp ?? data?.dataPointId ?? data?.dpId;
+          const value = data?.data ?? data?.value ?? 0;
           if (dp >= 1 && dp <= 4) {
             await this.triggerButtonPress(dp, resolvePressType(value, 'BTN4-DP-rpt'));
           }
@@ -597,12 +596,10 @@ class Button4GangDevice extends ButtonDevice {
     try {
       // v5.5.967: Get manufacturer from multiple sources (may be empty on first init)
       const manufacturerName = this.getData()?.manufacturerName 
-        || this.getStoreValue?.('manufacturerName')
-        || this.getSetting?.('zb_manufacturer_name')
-        || '' ;
-      const productId = this.getData()?.productId || '' ;
-      
-      // v5.5.967: Log device info for debugging
+        || this.getStoreValue?.('manufacturerName' )
+        || this.getSetting?.('zb_manufacturer_name' )
+        || '';
+      const productId = this.getData()?.productId || '';// v5.5.967: Log device info for debugging
       this.log(`[BUTTON4-E000]  Device: mfr=${manufacturerName || 'empty'}, product=${productId || 'empty'}`);
       
       // v5.5.992: Known devices that use cluster 0xE000 (expanded list)
@@ -661,9 +658,9 @@ class Button4GangDevice extends ButtonDevice {
 
       // Setup BoundCluster on all 4 endpoints
       for (let ep = 1; ep <= 4; ep++) {
-        const endpoint = zclNode?.endpoints?.[ep] ;
+        const endpoint = zclNode?.endpoints?.[ep];
         if (!endpoint) {
-          this.log(`[BUTTON4-E000]  EP${ep} not available`);
+          this.log(`[BUTTON4-E000]  EP${ep} not available` );
           continue;
         }
 
@@ -698,12 +695,12 @@ class Button4GangDevice extends ButtonDevice {
       this._e000OnOffDedup = {}; // Track last command time per endpoint
       
       for (let ep = 1; ep <= 4; ep++) {
-        const endpoint = zclNode?.endpoints?.[ep] ;
-        if (!endpoint) continue;
+        const endpoint = zclNode?.endpoints?.[ep];
+        if (!endpoint ) continue;
 
-        const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6] ;
+        const onOffCluster = endpoint.clusters?.onOff || endpoint.clusters?.genOnOff || endpoint.clusters?.[6];
         if (onOffCluster && typeof onOffCluster.on === 'function') {
-          this.log(`[BUTTON4-E000]  Setting up onOff command listeners on EP${ep}...`);
+          this.log(`[BUTTON4-E000]  Setting up onOff command listeners on EP${ep}...` );
 
           const handleCommand = async (cmdName, pressType) => {
             const now = Date.now();
@@ -748,13 +745,13 @@ class Button4GangDevice extends ButtonDevice {
               onSetOn: (p) => {
                 // Tuya custom 0xFD = scene press type in payload
                 if (p?.cmdId === 0xFD) {
-                  const action = resolvePressType(p.scene ?? 0, 'BTN4-0xFD') ;
+                  const action = resolvePressType(p.scene ?? 0, 'BTN4-0xFD');
                   this.log(`[BUTTON4-0xFD] EP${curEp} pressType=${p.scene}  ${action}`);
                   this.triggerButtonPress(curEp, action);
                   return;
                 }
                 // Standard ON = single press
-                safeHandle('setOn', 'single', p);
+                safeHandle('setOn', 'single', p );
               },
               onSetOff: (p) => safeHandle('setOff', 'double', p),
               onToggle: (p) => safeHandle('toggle', 'long', p),
@@ -773,13 +770,13 @@ class Button4GangDevice extends ButtonDevice {
       // TuyaE000Cluster is now registered via Cluster.addCluster() in registerClusters.js
       // This allows SDK to properly route frames to cluster.on() listeners
       for (let ep = 1; ep <= 4; ep++) {
-        const endpoint = zclNode?.endpoints?.[ep] ;
-        if (!endpoint) continue;
+        const endpoint = zclNode?.endpoints?.[ep];
+        if (!endpoint ) continue;
 
         // Access the registered cluster by name 'tuyaE000'
-        const e000Cluster = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344] ;
+        const e000Cluster = endpoint.clusters?.tuyaE000 || endpoint.clusters?.[57344];
         if (e000Cluster && typeof e000Cluster.on === 'function') {
-          this.log(`[BUTTON4-E000]  EP${ep} - Setting up tuyaE000 cluster listeners...`);
+          this.log(`[BUTTON4-E000]  EP${ep} - Setting up tuyaE000 cluster listeners...` );
           
           // v5.8.54: Listen for ALL cmd events (cmd0-cmd6, cmdFD / FE/FF)
           // Previous version only had buttonPress(0x00) + buttonEvent(0x01) with
@@ -787,9 +784,9 @@ class Button4GangDevice extends ButtonDevice {
           const cmdNames = ['cmd0','cmd1','cmd2','cmd3','cmd4','cmd5','cmd6','cmdFD','cmdFE','cmdFF'];
           for (const cmdName of cmdNames) {
             e000Cluster.on(cmdName, async ({ data }) => {
-              this.log(`[BUTTON4-E000]  EP${ep} ${cmdName}: data=${data?.toString?.('hex')}`) ;
+              this.log(`[BUTTON4-E000]  EP${ep} ${cmdName}: data=${data?.toString?.('hex')}`);
               this._handleRawE000Frame(ep, { data });
-            });
+      });
           }
 
           this.log(`[BUTTON4-E000]  tuyaE000 cluster listeners configured for EP${ep}`);
@@ -827,16 +824,15 @@ class Button4GangDevice extends ButtonDevice {
         zclNode.handleFrame = async (endpointId, clusterId, frame, meta) => {
           // Log ALL frames for debugging (only when dp_debug_mode is enabled)
           if (this.getSetting?.('dp_debug_mode')) {
-            this.log(`[BUTTON4-NODE]  EP${endpointId} cluster ${clusterId} frame received`) ;
-          }
+            this.log(`[BUTTON4-NODE]  EP${endpointId} cluster ${clusterId} frame received` );}
           
           // Intercept cluster 57344 (0xE000) frames
           if (clusterId === 57344 || clusterId === 0xE000) {
             this.log(`[BUTTON4-NODE]  EP${endpointId} cluster 57344 INTERCEPTED:`, {
               cmdId: frame?.cmdId,
               data: frame?.data?.toString?.('hex') || 'no data'
-            }) ;
-            this._handleRawE000Frame(endpointId, frame);
+            });
+            this._handleRawE000Frame(endpointId, frame );
           }
           
           // Always call original handler
@@ -848,19 +844,17 @@ class Button4GangDevice extends ButtonDevice {
       // v5.5.968: LEVEL 2 - Listen for 'message' event on zclNode (lower level)
       if (zclNode && typeof zclNode.on === 'function') {
         zclNode.on('message', (message) => {
-          const clusterId = message?.clusterId ;
-          if (clusterId === 57344 || clusterId === 0xE000) {
+          const clusterId = message?.clusterId;if (clusterId === 57344 || clusterId === 0xE000) {
             this.log('[BUTTON4-MSG]  zclNode message cluster 57344:', message);
-            const ep = message?.endpointId || 1 ;
-            this._handleRawE000Frame(ep, message);
+            const ep = message?.endpointId || 1;this._handleRawE000Frame(ep, message);
           }
         });
         this.log('[BUTTON4-MSG]  zclNode message listener registered');
       }
       
       for (let ep = 1; ep <= 4; ep++) {
-        const endpoint = zclNode?.endpoints?.[ep] ;
-        if (!endpoint) continue;
+        const endpoint = zclNode?.endpoints?.[ep];
+        if (!endpoint ) continue;
 
         // v5.5.968: LEVEL 3 - Listen for ALL incoming frames at endpoint level
         if (typeof endpoint.on === 'function') {
@@ -871,7 +865,7 @@ class Button4GangDevice extends ButtonDevice {
                 clusterId,
                 cmdId: frame?.cmdId,
                 data: frame?.data?.toString?.('hex') || 'no data'
-              }) ;
+              });
               
               // Parse button press from frame
               this._handleRawE000Frame(ep, frame);
@@ -891,13 +885,12 @@ class Button4GangDevice extends ButtonDevice {
         }
 
         // v5.5.968: LEVEL 5 - Hook into endpoint.handleFrame
-        const originalHandleFrame = endpoint.handleFrame?.bind(endpoint) ;
-        if (originalHandleFrame) {
+        const originalHandleFrame = endpoint.handleFrame?.bind(endpoint);if (originalHandleFrame) {
           endpoint.handleFrame = async (clusterId, frame, meta) => {
             // Intercept cluster 57344 frames BEFORE they're discarded
             if (clusterId === 57344 || clusterId === 0xE000) {
               this.log(`[BUTTON4-HOOK]  EP${ep} intercepted cluster 57344 frame`);
-              this._handleRawE000Frame(ep, frame);
+              this._handleRawE000Frame(ep, frame );
             }
             // Always call original handler
             return originalHandleFrame(clusterId, frame, meta);
@@ -917,18 +910,15 @@ class Button4GangDevice extends ButtonDevice {
    */
   _handleRawE000Frame(ep, frame) {
     try {
-      const cmdId = frame?.cmdId ?? frame?.commandId ;
-      const data = frame?.data ;
-      
-      this.log(`[BUTTON4-RAW]  Parsing frame: cmdId=${cmdId}, data=${data?.toString?.('hex')}`) ;
+      const cmdId = frame?.cmdId ?? frame?.commandId;
+      const data = frame?.data;this.log(`[BUTTON4-RAW]  Parsing frame: cmdId=${cmdId}, data=${data?.toString?.('hex')}`);
       
       // v5.9.22: Use centralized resolvePressType (prevents 0-index regression)
       
       // Strategy 1: cmdId as button number (1-4), data[0] as press type
       if (cmdId >= 0 && cmdId <= 4) {
         const button = cmdId === 0 ? 1 : cmdId;
-        const pressType = resolvePressType(data?.[0], 'BTN4-RAW-cmd') ;
-        this.log(`[BUTTON4-RAW]  Button ${button} ${pressType.toUpperCase()} (cmdId strategy)`);
+        const pressType = resolvePressType(data?.[0], 'BTN4-RAW-cmd');this.log(`[BUTTON4-RAW]  Button ${button} ${pressType.toUpperCase()} (cmdId strategy)`);
         this.triggerButtonPress(button, pressType);
         return;
       }
@@ -972,7 +962,7 @@ class Button4GangDevice extends ButtonDevice {
       // Command ID might be button number
       if (commandId >= 1 && commandId <= 4) {
         const button = commandId;
-        const pressType = resolvePressType(payload?.[0] ?? payload?.data?.[0], 'BTN4-RAW-cmd2') ;
+        const pressType = resolvePressType(payload?.[0] ?? payload?.data?.[0], 'BTN4-RAW-cmd2');
         this.log(`[BUTTON4-RAW]  Button ${button} ${pressType.toUpperCase()} (command strategy)`);
         this.triggerButtonPress(button, pressType);
       } else {
@@ -997,16 +987,16 @@ class Button4GangDevice extends ButtonDevice {
     try {
       this._powerCluster = zclNode?.endpoints?.[1]?.clusters?.powerConfiguration
         || zclNode?.endpoints?.[1]?.clusters?.genPowerCfg
-        || zclNode?.endpoints?.[1]?.clusters?.[1] ;
+        || zclNode?.endpoints?.[1]?.clusters?.[1];
 
       if (this._powerCluster) {
-        this.log('[BUTTON4-BATTERY]  Setting up battery reporting on EP1...');
+        this.log('[BUTTON4-BATTERY]  Setting up battery reporting on EP1...' );
 
         // Listen for battery attribute reports
         if (typeof this._powerCluster.on === 'function') {
           this._powerCluster.on('attr.batteryPercentageRemaining', async (value) => {
             if (value !== undefined && value !== 255 && value !== 0) {
-              const battery = Math.round(safeParse(value));
+              const battery = Math.round(value);
               this.log(`[BUTTON4-BATTERY]  Battery report: ${battery}%`);
               await this._updateBattery(battery);
             }
@@ -1014,9 +1004,9 @@ class Button4GangDevice extends ButtonDevice {
 
           this._powerCluster.on('attr.batteryVoltage', async (value) => {
             if (value !== undefined && value > 0) {
-              const voltage = safeParse(value, 10);
+              const voltage = value * 10;
               // CR2032/CR2450: 3.0V=100%, 2.0V=0%
-              const battery = Math.min(100, Math.max(0,Math.round(safeMultiply(voltage - 2.0, 100))));
+              const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100))));
               this.log(`[BUTTON4-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
               await this._updateBattery(battery);
             }
@@ -1044,7 +1034,7 @@ class Button4GangDevice extends ButtonDevice {
    */
   async _updateBattery(battery) {
     if (battery >= 0 && battery <= 100) {
-      await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+      await this.setCapabilityValue('measure_battery', parseFloat(battery).catch(() => { }));
       await this.setStoreValue('last_battery_percentage', battery).catch(() => { });
       await this.setStoreValue('last_battery_time', Date.now()).catch(() => { });
       this._lastBatteryRead = Date.now();
@@ -1081,12 +1071,12 @@ class Button4GangDevice extends ButtonDevice {
       if (attrs?.batteryPercentageRemaining !== undefined &&
         attrs.batteryPercentageRemaining !== 255 &&
         attrs.batteryPercentageRemaining !== 0) {
-        const battery = Math.round(safeParse(attrs.batteryPercentageRemaining)) ;
+        const battery = Math.round(attrs.batteryPercentageRemaining );
         this.log(`[BUTTON4-BATTERY]  Battery read success: ${battery}%`);
         await this._updateBattery(battery);
       } else if (attrs?.batteryVoltage !== undefined && attrs.batteryVoltage > 0) {
-        const voltage = safeParse(attrs.batteryVoltage, 10) ;
-        const battery = Math.min(100, Math.max(0,Math.round(safeMultiply(voltage - 2.0, 100))));
+        const voltage = attrs.batteryVoltage * 10;
+        const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100))));
         this.log(`[BUTTON4-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
         await this._updateBattery(battery);
       } else {
@@ -1133,16 +1123,16 @@ class Button4GangDevice extends ButtonDevice {
       const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya
         || zclNode?.endpoints?.[1]?.clusters?.manuSpecificTuya
         || zclNode?.endpoints?.[1]?.clusters?.[CLUSTERS.TUYA_EF00]
-        || zclNode?.endpoints?.[1]?.clusters?.['CLUSTERS.TUYA_EF00'] ;
+        || zclNode?.endpoints?.[1]?.clusters?.['CLUSTERS.TUYA_EF00'];
 
       if (tuyaCluster && typeof tuyaCluster.on === 'function') {
-        this.log('[BUTTON4-BATTERY]  Setting up Tuya DP battery fallback...');
+        this.log('[BUTTON4-BATTERY]  Setting up Tuya DP battery fallback...' );
 
         tuyaCluster.on('response', async (data) => {
           // Battery is commonly on DP 2, 3, 4, 10, or 101 for Tuya buttons
           const batteryDPs = [2, 3, 4, 10, 15, 101];
-          const dp = data?.dp ?? data?.dataPointId ;
-          const value = data?.data ?? data?.value ?? data?.raw?.[0] ;
+          const dp = data?.dp ?? data?.dataPointId;
+          const value = data?.data ?? data?.value ?? data?.raw?.[0];
 
           if (batteryDPs.includes(dp) && value !== undefined) {
             let battery = null;
@@ -1152,16 +1142,16 @@ class Button4GangDevice extends ButtonDevice {
               if (value <= 100) {
                 battery = value; // Direct percentage
               } else if (value <= 200) {
-                battery = Math.round(safeParse(value)); // Doubled percentage
+                battery = Math.round(value ); // Doubled percentage
               } else if (value <= 3200) {
                 // Voltage in mV (CR2032: 3000mV = 100%, 2000mV = 0%)
-                battery = Math.min(100, Math.max(0, Math.round(safeParse(value - 2000))));
+                battery = Math.min(100, Math.max(0, Math.round(value - 2000)));
               }
             }
 
             if (battery !== null && battery >= 0 && battery <= 100) {
               this.log(`[BUTTON4-BATTERY-DP]  Battery from DP${dp}: ${battery}%`);
-              await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+              await this.setCapabilityValue('measure_battery', parseFloat(battery).catch(() => { }));
               await this.setStoreValue('last_battery_percentage', battery).catch(() => { });
             }
           }
@@ -1220,7 +1210,7 @@ class Button4GangDevice extends ButtonDevice {
       this.log('[BUTTON4-BIND]  Attempting explicit Zigbee binding for cluster 57344...');
       
       // Get coordinator address from zclNode
-      const coordinatorAddress = zclNode?.coordinatorAddress || this.homey?.zigbee?.coordinatorAddress ;
+      const coordinatorAddress = zclNode?.coordinatorAddress || this.homey?.zigbee?.coordinatorAddress;
       
       if (!coordinatorAddress) {
         this.log('[BUTTON4-BIND]  Coordinator address not available, skipping explicit binding');
@@ -1228,9 +1218,9 @@ class Button4GangDevice extends ButtonDevice {
       }
       
       // Try binding on endpoint 1 (where cluster 57344 is listed)
-      const endpoint = zclNode?.endpoints?.[1] ;
+      const endpoint = zclNode?.endpoints?.[1];
       if (!endpoint) {
-        this.log('[BUTTON4-BIND]  Endpoint 1 not available');
+        this.log('[BUTTON4-BIND]  Endpoint 1 not available' );
         return;
       }
       
@@ -1249,7 +1239,7 @@ class Button4GangDevice extends ButtonDevice {
       // Alternative: Use zclNode's ZDO if available
       if (zclNode?.zdo && typeof zclNode.zdo.bind === 'function') {
         try {
-          await zclNode.zdo.bind(1, 57344, coordinatorAddress) ;
+          await zclNode.zdo.bind(1, 57344, coordinatorAddress);
           this.log('[BUTTON4-BIND]  ZDO bind succeeded for cluster 57344');
           return;
         } catch (zdoErr) {

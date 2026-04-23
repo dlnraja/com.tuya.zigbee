@@ -30,7 +30,7 @@ class RadiatorValveDriver extends ZigBeeDriver {
     // ACTIONS
     try {
       // A8: NaN Safety - use safeDivide/safeMultiply
-  this._getFlowCard('device_radiator_valve_smart_hybrid_set_target_temperature', 'action');
+  const card = this.homey.flow.getActionCard('device_radiator_valve_smart_hybrid_set_target_temperature');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -41,7 +41,7 @@ class RadiatorValveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_radiator_valve_smart_hybrid_set_target_temperature: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_smart_hybrid_set_temperature', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_radiator_valve_smart_hybrid_set_temperature');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

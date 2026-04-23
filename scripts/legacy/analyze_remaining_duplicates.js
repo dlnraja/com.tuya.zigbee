@@ -121,4 +121,4 @@ if (analysis.shouldFix.length > 0) {
   console.log('   4. Si non, supprimer le duplicate du driver le moins pertinent\n');
 }
 
-process.exit(analysis.shouldFix.length > 0 ? 1 : 0);
+process.exit(analysis.shouldFix.length > 0 ? 1 : 0)      ;

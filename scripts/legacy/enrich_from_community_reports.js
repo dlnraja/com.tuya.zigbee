@@ -203,8 +203,8 @@ function verifyFlowTriggers(driverName) {
     const compose = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
 
     // VÃ©rifier si flow cards existent dans compose
-    const flowTriggers = compose.flow?.triggers || [] ;
-    const flowConditions = compose.flow?.conditions || [] ;
+    const flowTriggers = compose.flow?.triggers || []      ;
+    const flowConditions = compose.flow?.conditions || []      ;
 
     if (flowTriggers.length === 0 && flowConditions.length === 0) {
       return { ok: true, reason: 'no flow cards defined' };
@@ -303,4 +303,4 @@ fs.writeFileSync(reportFile, JSON.stringify({
 
 console.log(` Rapport sauvegardÃ©: ${reportFile}\n`);
 
-process.exit(flowIssues.length > 0 ? 1 : 0);
+process.exit(flowIssues.length > 0 ? 1 : 0)      ;

@@ -15,16 +15,14 @@ class WallCurtainSwitchDevice extends UnifiedCoverBase {
 
     // v5.13.1: CRITICAL FIX  must call super to initialize protocol detection,
     // Tuya DP, capability migration, and ZCL fallbacks from UnifiedCoverBase
-    await super.onNodeInit({ zclNode }).catch(e =>
-      this.log('[WALL_CURTAIN_SWITCH] super.onNodeInit warn:', e.message)
-    );
+    await super.onNodeInit({ zclNode }).catch(e => this.log('[WALL_CURTAIN_SWITCH] super.onNodeInit warn:', e.message));
 
     if (this.hasCapability('windowcoverings_set')) {
       this.registerCapabilityListener('windowcoverings_set', async (value) => {
         this.log('[WALL_CURTAIN_SWITCH] set position:', value);
         const ep = zclNode.endpoints[1];
         if (ep && ep.clusters && ep.clusters.windowCovering) {
-          await ep.clusters.windowCovering.goToLiftPercentage({ percentageLiftValue:Math.round(safeMultiply(value))}));
+          await ep.clusters.windowCovering.goToLiftPercentage({ percentageLiftValue: Math.round(value) });
         }
       });
     }

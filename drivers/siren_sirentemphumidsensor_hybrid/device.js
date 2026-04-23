@@ -1,10 +1,9 @@
 'use strict';
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-
 const { Cluster, BoundCluster } = require('zigbee-clusters');
 // A8: NaN Safety - use safeDivide/safeMultiply
-  require('../../lib/tuya/TuyaSpecificCluster');
+require('../../lib/tuya/TuyaSpecificCluster');
 const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 
 Cluster.addCluster(TuyaSpecificCluster);
@@ -24,9 +23,6 @@ const dataPoints = {
   TEMP_ALARM: 0x71,
   HUM_ALARM: 0x72,
   VOLUME: 0x74,
-
-  // Optional on some Tuya variants only.
-  // TUYA_BATTERY_PERCENTAGE: 0x0F,
 };
 
 const dataTypes = {
@@ -58,11 +54,6 @@ melodiesMapping.set(15, 'Evacuation bell');
 melodiesMapping.set(16, 'Clock alarm');
 melodiesMapping.set(17, 'Fire alarm');
 
-const volumeMapping = new Map();
-volumeMapping.set('high', { volume: 100, tuya: 0 });
-volumeMapping.set('medium', { volume: 66, tuya: 1 });
-volumeMapping.set('low', { volume: 33, tuya: 2 });
-
 const ZIGBEE_EPOCH_MS = Date.UTC(2000, 0, 1, 0, 0, 0);
 const ZCL_STATUS_SUCCESS = 0x00;
 const ZCL_STATUS_UNSUPPORTED_ATTRIBUTE = 0x86;
@@ -72,53 +63,37 @@ const ZCL_TYPE_INT32 = 0x2B;
 
 const convertMultiByteNumberPayloadToSingleDecimalNumber = chunks => {
   let value = 0;
-
   for (let i = 0; i < chunks.length; i++) {
     value <<= 8;
     value += chunks[i];
   }
-
   return value;
 };
 
 const getDataValue = dpValue => {
   if (!dpValue || !dpValue.data) return null;
-
   switch (dpValue.datatype) {
-  case dataTypes.raw:
-    return dpValue.data;
-  case dataTypes.bool:
-    return dpValue.data[0] === 1;
-  case dataTypes.value:
-    return convertMultiByteNumberPayloadToSingleDecimalNumber(dpValue.data);
+  case dataTypes.raw: return dpValue.data;
+  case dataTypes.bool: return dpValue.data[0] === 1;
+  case dataTypes.value: return convertMultiByteNumberPayloadToSingleDecimalNumber(dpValue.data);
   case dataTypes.string: {
     let dataString = '';
-    for (let i = 0; i < dpValue.data.length; ++i) {
-      dataString += String.fromCharCode(dpValue.data[i]);
-    }
+    for (let i = 0; i < dpValue.data.length; ++i) dataString += String.fromCharCode(dpValue.data[i]);
     return dataString;
   }
-  case dataTypes.enum:
-    return dpValue.data[0];
-  case dataTypes.bitmap:
-    return convertMultiByteNumberPayloadToSingleDecimalNumber(dpValue.data);
-  default:
-    return null;
+  case dataTypes.enum: return dpValue.data[0];
+  case dataTypes.bitmap: return convertMultiByteNumberPayloadToSingleDecimalNumber(dpValue.data);
+  default: return null;
   }
 };
 
 class SirenTimeBoundCluster extends BoundCluster {
-
   async readAttributes({ attributes }) {
     const chunks = [];
-
     for (const attributeId of attributes) {
       switch (attributeId) {
-      case 0x0007: { // localTime
-        const localTime =
-            Math.floor((Date.now() -safeParse(ZIGBEE_EPOCH_MS), 1000)) +
-safeMultiply((-new Date().getTimezoneOffset(), 60));
-
+      case 0x0007: {
+        const localTime = Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000) + (-new Date().getTimezoneOffset() * 60);
         const buf = Buffer.alloc(8);
         buf.writeUInt16LE(0x0007, 0);
         buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
@@ -127,10 +102,8 @@ safeMultiply((-new Date().getTimezoneOffset(), 60));
         chunks.push(buf);
         break;
       }
-
-      case 0x0000: { // time
-        const utcTime = Math.floor((Date.now() -safeParse(ZIGBEE_EPOCH_MS), 1000));
-
+      case 0x0000: {
+        const utcTime = Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000);
         const buf = Buffer.alloc(8);
         buf.writeUInt16LE(0x0000, 0);
         buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
@@ -139,29 +112,25 @@ safeMultiply((-new Date().getTimezoneOffset(), 60));
         chunks.push(buf);
         break;
       }
-
-      case 0x0001: { // timeStatus
+      case 0x0001: {
         const buf = Buffer.alloc(5);
         buf.writeUInt16LE(0x0001, 0);
         buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
         buf.writeUInt8(ZCL_TYPE_BITMAP8, 3);
-        buf.writeUInt8(0x02, 4); // synchronized
+        buf.writeUInt8(0x02, 4);
         chunks.push(buf);
         break;
       }
-
-      case 0x0002: { // timeZone
-        const timeZone =safeMultiply(-new Date().getTimezoneOffset(), 60);
-
+      case 0x0002: {
+        const timeZone = -new Date().getTimezoneOffset() * 60;
         const buf = Buffer.alloc(8);
         buf.writeUInt16LE(0x0002, 0);
         buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
         buf.writeUInt8(ZCL_TYPE_INT32, 3);
-        buf.writeInt32LE(timeZone, 4);
+        buf.writeInt32LE(timeZone * 4);
         chunks.push(buf);
         break;
       }
-
       default: {
         const buf = Buffer.alloc(3);
         buf.writeUInt16LE(attributeId, 0);
@@ -171,46 +140,21 @@ safeMultiply((-new Date().getTimezoneOffset(), 60));
       }
       }
     }
-
-    return {
-      attributes: Buffer.concat(chunks),
-    };
+    return { attributes: Buffer.concat(chunks) };
   }
 }
 
 class sensortemphumidsensor extends TuyaSpecificClusterDevice {
-
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'msRelativeHumidity',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 100,
-        }
+        { cluster: 'msTemperatureMeasurement', attributeName: 'measuredValue', minInterval: 30, maxInterval: 600, minChange: 50 },
+        { cluster: 'msRelativeHumidity', attributeName: 'measuredValue', minInterval: 30, maxInterval: 600, minChange: 100 }
       ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    this.printNode();
-
-    this._timeBoundCluster = null;
+    } catch (err) { this.log('Attribute reporting config failed:', err.message); }
 
     await this.ensureCapability('measure_temperature');
     await this.ensureCapability('measure_humidity');
-    // await this.ensureCapability('measure_battery');
     await this.ensureCapability('alarm_battery');
     await this.ensureCapability('alarm_siren');
 
@@ -218,67 +162,34 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
     this._registerTuyaListeners(zclNode);
 
     this.registerCapabilityListener('onoff', async value => {
-      this.log('onoff:', value);
       await this.writeBool(dataPoints.ALARM, value);
-
-      this.homey.setTimeout(() => {
-        this.queryAll().catch(this.error);
-      }, 1200);
+      this.homey.setTimeout(() => this.queryAll().catch(this.error), 1200);
     });
 
-    this.homey.setTimeout(() => {
-      this.bootstrap().catch(this.error);
-    }, 5000);
+    this.homey.setTimeout(() => this.bootstrap().catch(this.error), 5000);
   }
 
   _registerTimeBoundCluster(zclNode) {
     try {
       if (typeof zclNode?.endpoints?.[1]?.bind === 'function') {
-        this._timeBoundCluster = new SirenTimeBoundCluster() ;
+        this._timeBoundCluster = new SirenTimeBoundCluster();
         zclNode.endpoints[1].bind('time', this._timeBoundCluster);
-        this.log('Registered Time bound cluster (0x000A)');
       }
-    } catch (err) {
-      this.error('Failed to register Time bound cluster', err);
-    }
+    } catch (err) { this.error('Failed to register Time bound cluster', err); }
   }
 
   _registerTuyaListeners(zclNode) {
-    const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya ;
-    if (!tuyaCluster) {
-      this.error('Tuya cluster not available on endpoint 1');
-      return;
-    }
-
-    tuyaCluster.on('response', data => {
-      this.processTuyaMessage('response', data).catch(this.error);
-    });
-
-    tuyaCluster.on('reporting', data => {
-      this.processTuyaMessage('reporting', data).catch(this.error);
-    });
-
-    tuyaCluster.on('datapoint', data => {
-      this.processTuyaMessage('datapoint', data).catch(this.error);
-    });
-
-    tuyaCluster.on('reportingConfiguration', data => {
-      this.processTuyaMessage('reportingConfiguration', data).catch(this.error);
-    });
-
-    tuyaCluster.on('timeSync', data => {
-      this.onTuyaTimeSync(data).catch(this.error);
-    });
-
-    tuyaCluster.on('mcuVersionResponse', data => {
-      this.onMcuVersionResponse(data).catch(this.error);
-    });
+    const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya;
+    if (!tuyaCluster) return;
+    tuyaCluster.on('response', data => this.processTuyaMessage('response', data).catch(this.error));
+    tuyaCluster.on('reporting', data => this.processTuyaMessage('reporting', data).catch(this.error));
+    tuyaCluster.on('datapoint', data => this.processTuyaMessage('datapoint', data).catch(this.error));
+    tuyaCluster.on('timeSync', data => this.onTuyaTimeSync(data).catch(this.error));
+    tuyaCluster.on('mcuVersionResponse', data => this.onMcuVersionResponse(data).catch(this.error));
   }
 
   async ensureCapability(capabilityId) {
-    if (!this.hasCapability(capabilityId)) {
-      await this.addCapability(capabilityId);
-    }
+    if (!this.hasCapability(capabilityId)) await this.addCapability(capabilityId);
   }
 
   async bootstrap() {
@@ -290,302 +201,82 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
   async bootstrapBasicRead() {
     try {
-      const basicCluster = this.zclNode?.endpoints?.[1]?.clusters?.basic ;
-      if (!basicCluster) return;
-
-      this.log('Bootstrap read: basic cluster');
-
-      const result = await basicCluster.readAttributes([
-        'manufacturerName',
-        'zclVersion',
-        'appVersion',
-        'modelId',
-        'powerSource',
-        'attributeReportingStatus',
-      ]);
-
-      this.log('Bootstrap read result:', result);
-    } catch (error) {
-      this.error('Bootstrap read failed', error);
-    }
+      const basicCluster = this.zclNode?.endpoints?.[1]?.clusters?.basic;
+      if (basicCluster) await basicCluster.readAttributes(['manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource']);
+    } catch (error) { this.error('Bootstrap read failed', error); }
   }
 
   async forceCelsiusMode() {
-    try {
-      this.log('Setting Tuya temperature unit DP 0x70 => Celsius');
-      await this.writeBool(dataPoints.TEMP_UNIT, true);
-    } catch (error) {
-      this.error('Failed to set Celsius mode', error);
-    }
+    try { await this.writeBool(dataPoints.TEMP_UNIT, true); } catch (error) { this.error('Failed to set Celsius mode', error); }
   }
 
   async sendMcuVersionRequest() {
     try {
-      const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya ;
-      if (!tuyaCluster || typeof tuyaCluster.mcuVersionRequest !== 'function') {
-        this.log('Tuya mcuVersionRequest not available');
-        return;
-      }
-
-      const payload = Buffer.from([0x00, this.transactionID & 0xff]);
-      this.transactionID += 1;
-
-      this.log('Sending Tuya mcuVersionRequest (0x10), payload=', payload);
+      const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
+      if (!tuyaCluster || typeof tuyaCluster.mcuVersionRequest !== 'function') return;
+      const payload = Buffer.from([0x00, 0x00]);
       await tuyaCluster.mcuVersionRequest({ payload });
-    } catch (error) {
-      this.error('Failed to send Tuya mcuVersionRequest', error);
-    }
+    } catch (error) { this.error('Failed to send Tuya mcuVersionRequest', error); }
   }
 
   async queryAll() {
     try {
-      const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya ;
-      if (!tuyaCluster || typeof tuyaCluster.dataQuery !== 'function') {
-        this.log('Tuya dataQuery not available');
-        return;
-      }
-
-      this.log('Sending Tuya dataQuery (0x03)');
-      await tuyaCluster.dataQuery({});
-    } catch (error) {
-      this.error('Failed to send Tuya dataQuery', error);
-    }
+      const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
+      if (tuyaCluster && typeof tuyaCluster.dataQuery === 'function') await tuyaCluster.dataQuery({});
+    } catch (error) { this.error('Failed to send Tuya dataQuery', error); }
   }
 
   async onTuyaTimeSync(data) {
-    this.log('[Tuya timeSync request] raw=', data);
-
     try {
-      const utcSeconds =safeParse(Math.floor(Date.now(), 1000));
-      const localSeconds =safeMultiply(utcSeconds - (new Date().getTimezoneOffset(), 60));
-
+      const utcSeconds = Math.floor(Date.now() / 1000);
+      const localSeconds = utcSeconds - (new Date().getTimezoneOffset() * 60);
       const payload = Buffer.alloc(8);
       payload.writeUInt32BE(utcSeconds >>> 0, 0);
       payload.writeUInt32BE(localSeconds >>> 0, 4);
-
-      this.log(
-        '[Tuya timeSync response] utc=',
-        utcSeconds,
-        'local=',
-        localSeconds,
-        'payload=',
-        payload,
-      );
-
       await this.zclNode.endpoints[1].clusters.tuya.timeSync({ payload });
-
-      this.homey.setTimeout(() => {
-        this.queryAll().catch(this.error);
-      }, 500);
-    } catch (error) {
-      this.error('Failed to respond to Tuya timeSync request', error);
-    }
+      this.homey.setTimeout(() => this.queryAll().catch(this.error), 500);
+    } catch (error) { this.error('Failed to respond to Tuya timeSync request', error); }
   }
 
   async onMcuVersionResponse(data) {
-    this.log('[Tuya mcuVersionResponse 0x11] raw=', data);
-
-    if (data?.payload?.length) {
-      const payload = Buffer.from(data.payload) ;
-      const versionByte = payload[payload.length - 1];
-      this.log('[Tuya mcuVersionResponse 0x11] versionByte=', versionByte);
-    }
-
-    this.homey.setTimeout(() => {
-      this.queryAll().catch(this.error);
-    }, 500);
+    this.homey.setTimeout(() => this.queryAll().catch(this.error), 500);
   }
 
   async processTuyaMessage(source, data) {
-    const dp = data?.dp ;
+    const dp = data?.dp;
     const measuredValue = getDataValue(data);
-
-    this.log(
-      `[Tuya ${source}] dp=${dp} datatype=${data?.datatype} value=`,
-      measuredValue,
-      'raw=',
-      data,
-    ) ;
-
     switch (dp) {
     case dataPoints.ALARM:
-      await this.safeSetCapabilityValue('onoff', !!measuredValue);
-      await this.safeSetCapabilityValue('alarm_siren', !!measuredValue);
+      await this.setCapabilityValue('onoff', !!measuredValue).catch(() => {});
+      await this.setCapabilityValue('alarm_siren', !!measuredValue).catch(() => {});
       break;
-
-    case dataPoints.TEMPERATURE:
-      this.reportTemperatureCapacity(measuredValue);
-      break;
-
-    case dataPoints.HUMIDITY:
-      this.reportHumidityCapacity(measuredValue);
-      break;
-
-    case dataPoints.POWER_MODE:
-      this.handlePowerMode(measuredValue);
-      break;
-
-    case dataPoints.VOLUME:
-      await this.safeSetSettings({ alarmvolume: String(measuredValue) });
-      break;
-
-    case dataPoints.DURATION:
-      await this.safeSetSettings({ alarmsoundtime: measuredValue });
-      break;
-
-    case dataPoints.MELODY:
-      await this.safeSetSettings({ alarmtune: String(measuredValue) });
-      break;
-
-      /*       case dataPoints.TUYA_BATTERY_PERCENTAGE:
-        this.reportBatteryPercentageCapacity(measuredValue);
-        break; */
-
-    case dataPoints.TEMP_UNIT:
-    case dataPoints.TEMP_ALARM:
-    case dataPoints.HUM_ALARM:
-    case dataPoints.TEMP_MIN:
-    case dataPoints.TEMP_MAX:
-    case dataPoints.HUM_MIN:
-    case dataPoints.HUM_MAX:
-      this.log(`Known DP ${dp}, current value:`, measuredValue);
-      break;
-
-    default:
-      this.log(`UNHANDLED Tuya ${source}: dp=${dp}, value=${measuredValue}`, data);
-      break;
+    case dataPoints.TEMPERATURE: this.reportTemperatureCapacity(measuredValue); break;
+    case dataPoints.HUMIDITY: this.reportHumidityCapacity(measuredValue); break;
+    case dataPoints.POWER_MODE: this.handlePowerMode(measuredValue); break;
+    case dataPoints.VOLUME: await this.setSettings({ alarmvolume: String(measuredValue) }).catch(() => {}); break;
+    case dataPoints.DURATION: await this.setSettings({ alarmsoundtime: measuredValue }).catch(() => {}); break;
+    case dataPoints.MELODY: await this.setSettings({ alarmtune: String(measuredValue) }).catch(() => {}); break;
     }
   }
 
   handlePowerMode(measuredValue) {
-    switch (measuredValue) {
-    case 0:
-    case 1:
-      this.log('Power mode: battery');
-      this.reportAlarmBatteryCapacity(false);
-      break;
-
-    case 2:
-    case 3:
-    case 4:
-      this.log('Power mode: dc/usb');
-      this.reportAlarmBatteryCapacity(false);
-      break;
-
-    default:
-      this.log('Unknown power mode:', measuredValue);
-      break;
-    }
-  }
-
-  async safeSetCapabilityValue(capabilityId, value) {
-    try {
-      await this.setCapabilityValue(capabilityId, value);
-    } catch (error) {
-      this.error(`Failed to set capability ${capabilityId} to ${value}`, error);
-    }
-  }
-
-  async safeSetSettings(settings) {
-    try {
-      await this.setSettings(settings);
-    } catch (error) {
-      this.error('Failed to update settings', settings, error);
-    }
+    this.setCapabilityValue('alarm_battery', measuredValue === 0 || measuredValue === 1).catch(() => {});
   }
 
   reportHumidityCapacity(measuredValue) {
     const humidityOffset = Number(this.getSetting('humidity_offset') || 0);
-    const parsedValue = Number(measuredValue);
-
-    this.log(
-      'measure_humidity | relative humidity:',
-      parsedValue,
-      '+ humidity offset',
-      humidityOffset,
-    );
-
-    this.setCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this.error);
+    this.setCapabilityValue('measure_humidity', Number(measuredValue) + humidityOffset).catch(() => {});
   }
 
   reportTemperatureCapacity(measuredValue) {
     const temperatureOffset = Number(this.getSetting('temperature_offset') || 0);
-    const parsedValue =safeParse(Number(measuredValue), 10);
-
-    this.log(
-      'measure_temperature | temperature:',
-      parsedValue,
-      '+ temperature offset',
-      temperatureOffset,
-    );
-
-    this.setCapabilityValue('measure_temperature', parsedValue + temperatureOffset).catch(this.error);
+    this.setCapabilityValue('measure_temperature', (Number(measuredValue) / 10) + temperatureOffset).catch(() => {});
   }
 
-  /*   reportBatteryPercentageCapacity(measuredValue) {
-    const parsedValue = Number(measuredValue);
-
-    this.log('measure_battery | battery percentage remaining:', parsedValue, '%');
-    this.setCapabilityValue('measure_battery', parsedValue).catch(this.error);
-  } */
-
-  reportAlarmBatteryCapacity(measuredValue) {
-    this.log('alarm_battery | battery alarm:', measuredValue);
-    this.setCapabilityValue('alarm_battery', measuredValue).catch(this.error);
-  }
-
-  async onSettings({ newSettings, changedKeys }) {
-    for (const updatedSetting of changedKeys) {
-      switch (updatedSetting) {
-      case 'alarmvolume':
-        await this.sendAlarmVolume(Number(newSettings[updatedSetting]));
-        break;
-
-      case 'alarmsoundtime':
-        await this.sendAlarmDuration(Number(newSettings[updatedSetting]));
-        break;
-
-      case 'alarmtune':
-        await this.sendAlarmTune(Number(newSettings[updatedSetting]));
-        break;
-
-      default:
-        break;
-      }
-    }
-  }
-
-  async sendAlarmVolume(volume) {
-    this.log('Sending alarm volume:', volume);
-    await this.writeEnum(dataPoints.VOLUME, volume);
-  }
-
-  async sendAlarmDuration(duration) {
-    this.log('Sending alarm duration:', duration, 's');
-    await this.writeData32(dataPoints.DURATION, duration);
-  }
-
-  async sendAlarmTune(tune) {
-    this.log('Sending alarm tune:', melodiesMapping.get(tune), '(', tune, ')');
-    await this.writeEnum(dataPoints.MELODY, tune);
-  }
-
-  onDeleted() {
-    this.log('sensortemphumidsensor removed');
-  }
-
-  /**
-   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
-   */
   async onEndDeviceAnnounce() {
-    this.log('[REJOIN] Device announced itself, refreshing state...');
     if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
-    // Proactive data recovery if supported
-    if (this._dataRecoveryManager) {
-       this._dataRecoveryManager.triggerRecovery();
-    }
+    if (this._dataRecoveryManager) this._dataRecoveryManager.triggerRecovery();
   }
 }
 
 module.exports = sensortemphumidsensor;
-

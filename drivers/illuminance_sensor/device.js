@@ -42,17 +42,17 @@ class IlluminanceSensorDevice extends UnifiedSensorBase {
 
       const illuminanceCluster = endpoint.clusters?.illuminanceMeasurement ||
                                   endpoint.clusters?.['msIlluminanceMeasurement'] ||
-                                  endpoint.clusters?.[1024] ;
+                                  endpoint.clusters?.[1024];
 
       if (illuminanceCluster) {
-        this.log('[ILLUMINANCE] Found illuminance cluster');
+        this.log('[ILLUMINANCE] Found illuminance cluster' );
 
         if (typeof illuminanceCluster.on === 'function') {
           illuminanceCluster.on('attr.measuredValue', async (value) => {
             const lux = this._convertToLux(value);
             this.log(`[ILLUMINANCE] Received: raw=${value}, lux=${lux}`);
             await this.setCapabilityValue('measure_luminance', lux).catch(this.error);
-          });
+      });
         }
 
         if (typeof illuminanceCluster.configureReporting === 'function') {
@@ -72,7 +72,7 @@ class IlluminanceSensorDevice extends UnifiedSensorBase {
 
   _convertToLux(value) {
     if (value === 0 || value === 0xFFFF) return 0;
-    return Math.round(Math.pow(10, (value -safeParse(1), 10000)));
+    return Math.round(Math.pow(10, (value  - 1) / 10000));
   }
 
 

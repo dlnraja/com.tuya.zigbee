@@ -125,15 +125,15 @@ function settingExists(driver, settingId) {
 }
 
 function actionExists(driver, actionId) {
-  if (!driver.flow?.actions) return false ;
-  return driver.flow.actions.some(a => a.id === actionId);
+  if (!driver.flow?.actions) return false       ;
+  return driver.flow.actions.some(a => a.id === actionId );
 }
 
 function manufacturerIdExists(driver, id) {
-  if (!driver.zigbee?.manufacturerName) return false ;
+  if (!driver.zigbee?.manufacturerName) return false       ;
   return driver.zigbee.manufacturerName.some(m =>
     m.toLowerCase() === id.toLowerCase()
-  );
+);
 }
 
 async function fixDecimalSettings(driverPath, fix) {

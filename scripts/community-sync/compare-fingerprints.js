@@ -14,7 +14,7 @@ function getCurrentFingerprints() {
   fs.readdirSync(driversDir).forEach(d => {
     try {
       const c = JSON.parse(fs.readFileSync(path.join(driversDir, d, 'driver.compose.json')));
-      [].concat(c.zigbee?.manufacturerName || []).forEach(m => m && fps.add(m)) ;
+      [].concat(c.zigbee?.manufacturerName || []).forEach(m => m && fps.add(m))       ;
     } catch(e) {}
   });
   return fps;
@@ -28,13 +28,13 @@ function getCurrentFingerprintsEnriched() {
   fs.readdirSync(driversDir).forEach(d => {
     try {
       const c = JSON.parse(fs.readFileSync(path.join(driversDir, d, 'driver.compose.json')));
-      const productId = c.zigbee?.productId || null;
+      const productId = c.zigbee?.productId || null      ;
       const deviceType = c.class || null;
       const capabilities = c.capabilities || [];
-      const hasBattery = (c.energy?.batteries || []).length > 0 ;
+      const hasBattery = (c.energy?.batteries || []).length > 0      ;
       
       [].concat(c.zigbee?.manufacturerName || []).forEach(mfr => {
-        if (!mfr) return ;
+        if (!mfr ) return;
         map.set(mfr, { driver: d, productId, deviceType, capabilities, hasBattery });
       });
     } catch(e) {}

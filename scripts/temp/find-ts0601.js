@@ -39,7 +39,7 @@ for (const file of files) {
             ts0601Drivers.push({
                 driver,
                 hasEndpoints: d.zigbee.endpoints ? true : false,
-                endpointCount: d.zigbee.endpoints ? Object.keys(d.zigbee.endpoints).length : 0
+                endpointCount: d.zigbee.endpoints ? Object.keys(d.zigbee.endpoints ).length : 0
             });
         }
     } catch(e) {

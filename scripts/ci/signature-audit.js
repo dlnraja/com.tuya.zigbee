@@ -93,7 +93,7 @@ function audit() {
     // Rule 2: Adaptive Lighting Readiness
     if (entry.includes('bulb') || entry.includes('light')) {
        const compose = JSON.parse(fs.readFileSync(path.join(DRIVERS_DIR, entry, 'driver.compose.json'), 'utf8'));
-       if (compose.capabilities?.includes('dim') && !compose.capabilities?.includes('light_color_temp')) {
+       if (compose.capabilities?.includes('dim' ) && !compose.capabilities?.includes('light_color_temp')) {
           architecturalIssues.push(`[ADAPTIVE] ${entry}: Dimmable light missing light_color_temp capability.`);
        }
     }

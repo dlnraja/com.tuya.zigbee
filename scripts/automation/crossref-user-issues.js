@@ -10,7 +10,7 @@ function loadDrivers() {
     if (!fs.existsSync(f)) continue;
     try {
       const c = JSON.parse(fs.readFileSync(f, 'utf8'));
-      drivers.push({ name: d, mfrs: c.zigbee?.manufacturerName || [], pids: c.zigbee?.productId || [] }) ;
+      drivers.push({ name: d, mfrs: c.zigbee?.manufacturerName || [], pids: c.zigbee?.productId || [] })       ;
     } catch {}
   }
   return drivers;
@@ -22,10 +22,10 @@ function findDriver(mfr, pid, drivers) {
 
 const drivers = loadDrivers();
 const args = process.argv.slice(2);
-if (args.length >= 1) {
+if (args.length >= 1 ) {
   const [mfr, pid] = args;
   const matches = findDriver(mfr, pid || null, drivers);
-  console.log(matches.length ? matches.join(', ') : 'NOT FOUND');
+  console.log(matches.length ? matches.join(' , ') : 'NOT FOUND')      ;
 } else {
   console.log('Usage: node crossref-user-issues.js <mfr> [pid]');
   console.log('Drivers: ' + drivers.length + ', Total mfrs: ' + drivers.reduce((s,d) => s + d.mfrs.length, 0));

@@ -47,8 +47,8 @@ class FingerBotTimeBoundCluster extends BoundCluster {
       switch (attributeId) {
       case 0x0007: { // localTime
         const localTime =
-            Math.floor((Date.now() -safeParse(ZIGBEE_EPOCH_MS), 1000)) +
-safeMultiply((-new Date().getTimezoneOffset(), 60));
+            Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000) +
+(-new Date().getTimezoneOffset() * 60);
 
         const buf = Buffer.alloc(8);
         buf.writeUInt16LE(0x0007, 0);
@@ -60,7 +60,7 @@ safeMultiply((-new Date().getTimezoneOffset(), 60));
       }
 
       case 0x0000: { // time
-        const utcTime = Math.floor((Date.now() -safeParse(ZIGBEE_EPOCH_MS), 1000));
+        const utcTime = Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000);
 
         const buf = Buffer.alloc(8);
         buf.writeUInt16LE(0x0000, 0);
@@ -82,13 +82,13 @@ safeMultiply((-new Date().getTimezoneOffset(), 60));
       }
 
       case 0x0002: { // timeZone
-        const timeZone =safeMultiply(-new Date().getTimezoneOffset(), 60);
+        const timeZone =-new Date().getTimezoneOffset() * 60;
 
         const buf = Buffer.alloc(8);
         buf.writeUInt16LE(0x0002, 0);
         buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
         buf.writeUInt8(ZCL_TYPE_INT32, 3);
-        buf.writeInt32LE(timeZone, 4);
+        buf.writeInt32LE(timeZone * 4);
         chunks.push(buf);
         break;
       }
@@ -195,7 +195,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
 
     if (zclNode?.endpoints?.[1]?.clusters?.onOff) {
       zclNode.endpoints[1].clusters.onOff.on('attr.onOff', value => {
-        const now = Date.now() ;
+        const now = Date.now();
         const mode = this._getConfiguredMode();
 
         if (mode === 'click') {
@@ -246,7 +246,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
   }
 
   _registerTuyaListeners(zclNode) {
-    const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya ;
+    const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya;
     if (!tuyaCluster) {
       this.error('FingerBot: Tuya cluster not available on endpoint 1');
       return;
@@ -292,7 +292,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
   _registerTimeBoundCluster(zclNode) {
     try {
       if (typeof zclNode?.endpoints?.[1]?.bind === 'function') {
-        this._timeBoundCluster = new FingerBotTimeBoundCluster() ;
+        this._timeBoundCluster = new FingerBotTimeBoundCluster();
         zclNode.endpoints[1].bind('time', this._timeBoundCluster);
       }
     } catch (err) {
@@ -341,7 +341,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
     }
 
     this._guiPulseTimeout = this.homey.setTimeout(() => {
-      this._setCapabilitySafe('onoff', false, 'Failed to reset momentary GUI state');
+      this._setCapabilitySafe('onoff', false, 'Failed to reset momentary GUI state' );
     }, MOMENTARY_GUI_PULSE_MS);
   }
 
@@ -515,14 +515,21 @@ class FingerBot extends TuyaSpecificClusterDevice {
    */
   _triggerFlowCard(id, tokens = {}, state = {}) {
     try {
-      const card =
-      this._getFlowCard(id)?.trigger(this, {}, {}).catch(this.error || console.error)
+      const card = this._getFlowCard(id);
       if (card) {
         card.trigger(this, tokens, state)
-          .catch(err => this.error(`Failed to trigger flow card "${id}"`, err)) ;
+          .catch(err => this.error(`Failed to trigger flow card "${id}"`, err));
       }
     } catch (err) {
       this.error(`Flow card "${id}" is not available`, err);
+    }
+  }
+
+  _getFlowCard(id) {
+    try {
+      return this.homey.flow.getDeviceTriggerCard(id);
+    } catch (err) {
+      return null;
     }
   }
 

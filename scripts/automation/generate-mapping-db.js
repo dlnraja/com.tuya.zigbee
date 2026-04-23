@@ -19,8 +19,8 @@ async function main() {
 
         try {
             const data = JSON.parse(fs.readFileSync(cf, 'utf8'));
-            const manufacturers = data.zigbee?.manufacturerName || [] ;
-            const productIds = data.zigbee?.productId || [] ;
+            const manufacturers = data.zigbee?.manufacturerName || []      ;
+            const productIds = data.zigbee?.productId || []      ;
             
             drivers[d] = {
                 name: data.name?.en || d,

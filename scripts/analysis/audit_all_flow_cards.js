@@ -41,8 +41,8 @@ function scanDriver(driverName) {
 
   try {
     const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
-    const driverJs = fs.existsSync(driverJsPath) ? fs.readFileSync(driverJsPath, 'utf8') : '';
-    const deviceJs = fs.existsSync(deviceJsPath) ? fs.readFileSync(deviceJsPath, 'utf8') : '';
+    const driverJs = fs.existsSync(driverJsPath) ? fs.readFileSync(driverJsPath , 'utf8') : ''      ;
+    const deviceJs = fs.existsSync(deviceJsPath) ? fs.readFileSync(deviceJsPath , 'utf8') : ''      ;
 
     const flow = compose.flow || {};
     const triggers = flow.triggers || [];
@@ -190,11 +190,11 @@ function scanDriver(driverName) {
       // Extraire capability depuis condition ID (alarm_motion, alarm_contact, etc.)
       let expectedCap = null;
       if (condition.id.includes('alarm_')) {
-        expectedCap = condition.id.match(/alarm_\w+/)?.[0] ;
+        expectedCap = condition.id.match(/alarm_\w+/)?.[0]       ;
       } else if (condition.id.includes('onoff')) {
         expectedCap = 'onoff';
       } else if (condition.id.includes('measure_')) {
-        expectedCap = condition.id.match(/measure_\w+/)?.[0] ;
+        expectedCap = condition.id.match(/measure_\w+/)?.[0]      ;
       }
 
       if (expectedCap && !capabilities.includes(expectedCap)) {
@@ -240,7 +240,7 @@ function scanAllDrivers() {
       if (result.issues.length > 0) {
         console.log(`     ${driver}: ${result.issues.length} issues`);
         result.issues.forEach(issue => {
-          const emoji = issue.severity === 'CRITICAL' ? '' : issue.severity === 'HIGH' ? '' : '';
+          const emoji = issue.severity === 'CRITICAL' ? '' : issue.severity === 'HIGH' ? '' : ''      ;
           console.log(`      ${emoji} ${issue.type}: ${issue.message}`);
         });
         results.push(result);

@@ -35,18 +35,18 @@ class AirQualityCO2Driver extends ZigBeeDriver {
     // CONDITIONS
     try {
       // A8: NaN Safety - use safeDivide/safeMultiply
-  this._getFlowCard('air_purifier_quality_hybrid_air_quality_co2_co2_above', 'condition');
+  const card = this.homey.flow.getConditionCard('air_purifier_quality_hybrid_air_quality_co2_co2_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
-        });
+      });
       }
     } catch (err) { this.error(`Condition air_purifier_quality_hybrid_air_quality_co2_co2_above: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('air_purifier_quality_hybrid_air_quality_co2_co2_below', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('air_purifier_quality_hybrid_air_quality_co2_co2_below');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -56,7 +56,7 @@ class AirQualityCO2Driver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition air_purifier_quality_hybrid_air_quality_co2_co2_below: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('air_purifier_quality_hybrid_air_quality_co2_air_quality_good', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('air_purifier_quality_hybrid_air_quality_co2_air_quality_good');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

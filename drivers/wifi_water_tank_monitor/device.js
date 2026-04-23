@@ -6,12 +6,12 @@ const LIQUID_STATE = { 0: 'normal', 1: 'low', 2: 'high' };
 class WiFiWaterTankMonitorDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
-      '1':  { capability }, // liquid_state handled manually
+      '1':  { capability: 'unknown' }, // liquid_state handled manually
       '2':  { capability: 'measure_water_level' }, // cm
-      '7':  { capability }, // max_set limit
-      '8':  { capability }, // min_set limit
-      '19': { capability }, // installation_height
-      '21': { capability }, // liquid_depth_max
+      '7':  { capability: 'unknown' }, // max_set limit
+      '8':  { capability: 'unknown' }, // min_set limit
+      '19': { capability: 'unknown' }, // installation_height
+      '21': { capability: 'unknown' }, // liquid_depth_max
       '22': { capability: 'measure_water_percentage' }
     };
   }

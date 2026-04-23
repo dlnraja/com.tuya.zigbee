@@ -42,9 +42,9 @@ function analyzeDriver(driverName) {
     const currentContent = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
     const backupContent = JSON.parse(fs.readFileSync(path.join(driverPath, intelligentBackup), 'utf8'));
 
-    const currentManuNames = new Set(currentContent.zigbee?.manufacturerName || []) ;
-    const backupManuNames = backupContent.zigbee?.manufacturerName || [] ;
-    const currentProductIds = currentContent.zigbee?.productId || [] ;
+    const currentManuNames = new Set(currentContent.zigbee?.manufacturerName || [])      ;
+    const backupManuNames = backupContent.zigbee?.manufacturerName || []      ;
+    const currentProductIds = currentContent.zigbee?.productId || []       ;
 
     const deletedNames = backupManuNames.filter(m => !currentManuNames.has(m));
 
@@ -142,4 +142,4 @@ if (totalToRestore > 0) {
   console.log('   ExÃ©cuter script de restauration pour remettre les IDs valides\n');
 }
 
-process.exit(totalToRestore > 0 ? 1 : 0);
+process.exit(totalToRestore > 0 ? 1 : 0)      ;

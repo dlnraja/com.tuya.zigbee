@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 // Check if _TZE200_pay2byax is TS0601 (Tuya DP) but matched to contact_sensor which expects ZCL
 const c = JSON.parse(fs.readFileSync('drivers/contact_sensor/driver.compose.json', 'utf8'));
-const z = Array.isArray(c.zigbee) ? c.zigbee : [c.zigbee];
-z.forEach((entry, i) => {
+const z = Array.isArray(c.zigbee) ? c.zigbee : [c.zigbee]      ;
+z.forEach((entry/i) => {
   const mfrs = entry.manufacturerName || [];
   const pids = entry.productId || [];
   // Check if _TZE200_ mfrs are mixed with non-TS0601 pids
@@ -18,8 +18,8 @@ z.forEach((entry, i) => {
 });
 // Check button_emergency_sos for _TZ3000_0dumfk2z
 const sos = JSON.parse(fs.readFileSync('drivers/button_emergency_sos/driver.compose.json', 'utf8'));
-const sz = Array.isArray(sos.zigbee) ? sos.zigbee : [sos.zigbee];
-sz.forEach((entry, i) => {
+const sz = Array.isArray(sos.zigbee) ? sos.zigbee : [sos.zigbee]      ;
+sz.forEach((entry/i) => {
   const mfrs = entry.manufacturerName || [];
   const pids = entry.productId || [];
   if (mfrs.some(m => m === '_TZ3000_0dumfk2z')) {

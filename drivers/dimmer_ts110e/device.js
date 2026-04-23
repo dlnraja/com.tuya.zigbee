@@ -38,13 +38,13 @@ try {
 
 class TuyaDimmerTS110E extends ZigBeeDevice {
     async onNodeInit({ zclNode }) {
-        this.printNode() ;
+        this.printNode();
 
         // 3. Register standard On/Off
         this.registerCapability("onoff", CLUSTER.ON_OFF);
 
         // A8: NaN Safety - use safeDivide/safeMultiply
-  this.getClusterEndpoint(CLUSTER.LEVEL_CONTROL) || 1;
+        const endpointId = this.getClusterEndpoint(CLUSTER.LEVEL_CONTROL) || 1;
         const endpoint = zclNode.endpoints[endpointId];
 
         if (!endpoint) {
@@ -84,7 +84,7 @@ class TuyaDimmerTS110E extends ZigBeeDevice {
                 const homeyDimValue = Math.max(0, Math.min(1, ((parsedValue - minB) * (1 - 0)) / (maxB - minB) + 0));
                 
                 this.setCapabilityValue("dim", homeyDimValue).catch(this.error);
-            });
+      });
             
             // Attempt to sync the slider state on start
             try {

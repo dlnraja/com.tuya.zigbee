@@ -8,7 +8,8 @@ class D extends EweLinkLocalDevice{
     currentHumidity:{capability:'measure_humidity',transform:v=>parseFloat(v)||0}
   };}
   _registerCapListeners(){
-    this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v);});
+    this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v);
+      });
   }
   async onInit(){
     for(const c of['measure_temperature','measure_humidity'])if(!this.hasCapability(c))try{await this.addCapability(c);}catch(e){}

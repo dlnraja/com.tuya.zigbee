@@ -39,10 +39,10 @@ function analyzeDriver(driverName) {
     const currentContent = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
     const backupContent = JSON.parse(fs.readFileSync(path.join(driverPath, intelligentBackup), 'utf8'));
 
-    const currentManuNames = new Set(currentContent.zigbee?.manufacturerName || []) ;
-    const backupManuNames = new Set(backupContent.zigbee?.manufacturerName || []) ;
-    const currentProductIds = new Set(currentContent.zigbee?.productId || []) ;
-    const backupProductIds = new Set(backupContent.zigbee?.productId || []) ;
+    const currentManuNames = new Set(currentContent.zigbee?.manufacturerName || [])      ;
+    const backupManuNames = new Set(backupContent.zigbee?.manufacturerName || [])      ;
+    const currentProductIds = new Set(currentContent.zigbee?.productId || [])      ;
+    const backupProductIds = new Set(backupContent.zigbee?.productId || [])       ;
 
     // Manufacturer names supprimÃ©s
     const deletedManuNames = [...backupManuNames].filter(m => !currentManuNames.has(m));

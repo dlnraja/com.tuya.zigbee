@@ -51,7 +51,7 @@ const enhancement = `  async onNodeInit({ zclNode }) {
     }
   }`;
 
-content = content.replace(/async onNodeInit\(\{ zclNode \}\) \{[^}]+\n(?:[^}]+\n)*  \}/m, enhancement);
+content = content.replace(/async onNodeInit\(\{ zclNode \}\) \{[^}]+\n(?:[^}]+\n)*  \}/m, enhancement)      ;
 
 fs.writeFileSync(deviceFile, content);
 console.log(' Enhanced switch_2gang with error recovery');

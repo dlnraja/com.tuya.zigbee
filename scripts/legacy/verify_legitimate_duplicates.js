@@ -31,8 +31,8 @@ function scanDrivers() {
       const content = fs.readFileSync(composeFile, 'utf8');
       const driver = JSON.parse(content);
 
-      const manufacturerNames = driver.zigbee?.manufacturerName || [] ;
-      const productIds = driver.zigbee?.productId || [] ;
+      const manufacturerNames = driver.zigbee?.manufacturerName || []      ;
+      const productIds = driver.zigbee?.productId || []      ;
 
       manufacturerNames.forEach(manuName => {
         if (!manufacturerMap.has(manuName)) {
@@ -171,4 +171,4 @@ if (report.stats.problematicSharing > 0) {
   console.log('   (productIds diffÃ©rents entre drivers)\n');
 }
 
-process.exit(report.stats.problematicSharing > 0 ? 1 : 0);
+process.exit(report.stats.problematicSharing > 0 ? 1 : 0)      ;

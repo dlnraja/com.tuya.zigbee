@@ -25,15 +25,15 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
   get dpMappings() {
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      7: { capability, internal: 'child_lock', writable: true },
-      9: { capability, internal: 'countdown', writable: true },
+      7: { internal: true, type: 'child_lock', writable: true },
+      9: { internal: true, type: 'countdown', writable: true },
       17: { capability: 'measure_current', divisor: 1000 },
       18: { capability: 'measure_power', divisor: 10 },
       19: { capability: 'measure_voltage', divisor: 10 },
       20: { capability: 'meter_power', divisor: 100 },
-      21: { capability, internal: 'frequency', divisor: 100 },
-      101: { capability, internal: 'power_factor', divisor: 10 },
-      102: { capability, internal: 'max_power_alert', writable: true }
+      21: { internal: true, type: 'frequency', divisor: 100 },
+      101: { internal: true, type: 'power_factor', divisor: 10 },
+      102: { internal: true, type: 'max_power_alert', writable: true }
     };
   }
 
@@ -46,14 +46,14 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     // Let the base value from caller be the raw value, and we apply the scale directly if possible!
     // But then default must match. Let's just multiply the base divided value by however it differs from 1.
     
-    if (capability === 'measure_power') return safeMultiply(value, powerScale);
-    if (capability === 'meter_power') return safeMultiply(value, energyScale);
+    if (capability === 'measure_power') return (value * powerScale);
+    if (capability === 'meter_power') return (value * energyScale);
     
     const voltageScale = parseFloat(this.getSetting('voltage_scale')) || 0.1;
-    if (capability === 'measure_voltage') return safeMultiply(value, (safeParse)(voltageScale, 0.1)); 
+    if (capability === 'measure_voltage') return (value * (safeParse)(voltageScale * 0.1)); 
     
     const currentScale = parseFloat(this.getSetting('current_scale')) || 0.001;
-    if (capability === 'measure_current') return safeMultiply(value, (safeParse)(currentScale, 0.001));
+    if (capability === 'measure_current') return (value * (safeParse)(currentScale * 0.001));
 
     return value;
   }
@@ -123,13 +123,12 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
    * v5.6.0: Setup physical button flow detection (packetninja pattern)
    */
   _setupPhysicalButtonFlowDetection() {
-    const originalHandler = this._handleTuyaDatapoint?.bind(this) ;
-    if (originalHandler) {
+    const originalHandler = this._handleTuyaDatapoint?.bind(this );if (originalHandler) {
       this._handleTuyaDatapoint = (dp, data, reportingEvent = false) => {
         if (dp === 1) {
-          const state = Boolean(data?.value ?? data) ;
+          const state = Boolean(data?.value ?? data);
           const isPhysical = reportingEvent && !this._appCommandPending;
-          if (this._lastOnoffState !== state) {
+          if (this._lastOnoffState !== state ) {
             this._lastOnoffState = state;
             if (isPhysical) {
               const flowId = state ? 'plug_smart_physical_on' : 'plug_smart_physical_off';
@@ -151,37 +150,35 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
   }
 
   async _setupEnergyMonitoring(zclNode) {
-    const ep1 = zclNode?.endpoints?.[1] ;
-    if (!ep1) return;
+    const ep1 = zclNode?.endpoints?.[1];
+    if (!ep1 ) return;
 
     // Electrical Measurement cluster (0x0B04) - v5.5.422: Apply user scale
     try {
-      const elec = ep1.clusters?.haElectricalMeasurement ;
-      if (elec?.on) {
+      const elec = ep1.clusters?.haElectricalMeasurement;if (elec?.on) {
         elec.on('attr.activePower', (v) => {
-          const scaled = this._applyScale(safeParse(v, 10), 'measure_power') ;
-          this.setCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
-        });
+          const scaled = this._applyScale(v * 10, 'measure_power');
+          this.setCapabilityValue('measure_power', parseFloat(scaled).catch(() => { }));
+      });
         elec.on('attr.rmsVoltage', (v) => {
-          const scaled = this._applyScale(safeParse(v, 10), 'measure_voltage');
-          this.setCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
-        });
+          const scaled = this._applyScale(v * 10, 'measure_voltage');
+          this.setCapabilityValue('measure_voltage', parseFloat(scaled).catch(() => { }));
+      });
         elec.on('attr.rmsCurrent', (v) => {
-          const scaled = this._applyScale(safeParse(v, 1000), 'measure_current');
-          this.setCapabilityValue('measure_current', parseFloat(scaled)).catch(() => { });
-        });
+          const scaled = this._applyScale(v * 1000, 'measure_current' );
+          this.setCapabilityValue('measure_current', parseFloat(scaled).catch(() => { }));
+      });
         this.log('[PLUG]  ZCL Electrical Measurement configured (with scale support)');
       }
     } catch (e) { /* ignore */ }
 
     // Metering cluster (0x0702) - v5.5.422: Apply user scale
     try {
-      const meter = ep1.clusters?.seMetering ;
-      if (meter?.on) {
+      const meter = ep1.clusters?.seMetering;if (meter?.on) {
         meter.on('attr.currentSummationDelivered', (v) => {
-          const scaled = this._applyScale(safeParse(v, 1000), 'meter_power') ;
-          this.setCapabilityValue('meter_power', parseFloat(scaled)).catch(() => { });
-        });
+          const scaled = this._applyScale(v * 1000, 'meter_power');
+          this.setCapabilityValue('meter_power', parseFloat(scaled).catch(() => { }));
+      });
         this.log('[PLUG]  ZCL Metering configured (with scale support)');
       }
     } catch (e) { /* ignore */ }

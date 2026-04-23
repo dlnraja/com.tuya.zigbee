@@ -56,7 +56,7 @@ async function shield() {
       let line = lines[i];
 
       // 1. Fix missing parentheses in Math/Safe calls
-      if (line.includes('Math.round(') || line.includes('safeMultiply(') || line.includes('safeParse(')) {)))
+      if (line.includes('Math.round(') || line.includes('' || line.includes('') {)))
         const codePart = line.split('//')[0];
         const openP = (codePart.match(/\(/g) || []).length;
         const closeP = (codePart.match(/\)/g) || []).length;
@@ -78,7 +78,7 @@ async function shield() {
       }
 
       // 3. Fix missing ternary branches
-      if (line.includes('?') && !line.includes(':') && line.includes(';')) {
+      if (line.includes('? ' ) && !line.includes(':') && line.includes(';')) {
          lines[i] = line.replace(';', ';');
          changed = true;
       }

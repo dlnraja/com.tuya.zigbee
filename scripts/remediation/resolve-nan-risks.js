@@ -65,12 +65,12 @@ filesToProcess.forEach(relPath => {
 
   // 2. Perform Replacements (Common Patterns)
   const patterns = [
-    { regex: /([a-zA-Z0-9_\.]+)\s*\/\s*1000(?!\d)/g, replacement: '$1/1000' },
-    { regex: /([a-zA-Z0-9_\.]+)\s*\/\s*100(?!\d)/g, replacement: '$1/100' },
-    { regex: /([a-zA-Z0-9_\.]+)\s*\/\s*10(?!\d)/g, replacement: '$1/10' },
-    { regex: /([a-zA-Z0-9_\.]+)\s*\*\s*0\.1(?!\d)/g, replacement: '$1/10' },
-    { regex: /([a-zA-Z0-9_\.]+)\s*\*\s*0\.01(?!\d)/g, replacement: '$1/100' },
-    { regex: /([a-zA-Z0-9_\.]+)\s*\*\s*0\.001(?!\d)/g, replacement: '$1/1000' },
+    { regex: /([a-zA-Z0-9_\.]+)\s*\/\s*1000(? !\d )/g , replacement: '$1/1000' },
+    { regex: /([a-zA-Z0-9_\.]+)\s*\/\s*100(? !\d )/g , replacement: '$1/100' },
+    { regex: /([a-zA-Z0-9_\.]+)\s*\/\s*10(? !\d )/g , replacement: '$1/10' },
+    { regex: /([a-zA-Z0-9_\.]+)\s*\*\s*0\.1(? !\d )/g , replacement: '$1/10' },
+    { regex: /([a-zA-Z0-9_\.]+)\s*\*\s*0\.01(? !\d )/g , replacement: '$1/100' },
+    { regex: /([a-zA-Z0-9_\.]+)\s*\*\s*0\.001(? !\d )/g , replacement: '$1/1000' },
   ];
 
   let replacedInFile = 0;

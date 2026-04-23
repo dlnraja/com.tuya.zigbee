@@ -36,7 +36,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     // CONDITIONS
     try {
       // A8: NaN Safety - use safeDivide/safeMultiply
-  this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_is_heating', 'condition');
+  const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_is_heating');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -46,18 +46,18 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_is_heating: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_temperature_above_target', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_temperature_above_target');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
-        });
+      });
       }
     } catch (err) { this.error(`Condition device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_temperature_above_target: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_temperature_below_target', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_temperature_below_target');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -67,7 +67,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_temperature_below_target: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_mode_is', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_mode_is');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -77,7 +77,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_mode_is: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_child_lock_is', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_child_lock_is');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -87,7 +87,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_child_lock_is: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_is_on', 'condition');
+      const card = const card = this.homey.flow.getConditionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -98,7 +98,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_set_target_temperature', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_set_target_temperature');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -109,7 +109,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_set_target_temperature: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_set_mode', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_set_mode');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -121,7 +121,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_set_mode: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_increase_temperature', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_increase_temperature');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -133,7 +133,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_increase_temperature: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_decrease_temperature', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_decrease_temperature');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -145,7 +145,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_decrease_temperature: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_set_child_lock', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_set_child_lock');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -157,7 +157,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_set_child_lock: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_set_comfort_preset', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_set_comfort_preset');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -169,7 +169,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_set_comfort_preset: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_schedule_on', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_schedule_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -180,7 +180,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_schedule_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_schedule_off', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_schedule_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -191,7 +191,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_schedule_off: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_turn_on', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -202,7 +202,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_turn_on: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_turn_off', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -213,7 +213,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_turn_off: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_toggle', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -225,7 +225,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_toggle: ${err.message}`); }
 
     try {
-      const card = this._getFlowCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_set_temperature', 'action');
+      const card = const card = this.homey.flow.getActionCard('device_radiator_valve_thermostat_hybrid_thermostat_tuya_dp_set_temperature');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

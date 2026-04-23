@@ -41,20 +41,20 @@ function main() {
       // 1. (a - b) / (c - d) * e
       if (line.includes('/') && line.includes('(') && !line.includes('safeDivide')) {
         // Linear interpolation pattern
-        line = line.replace(/(\(\([^)]+\)\s*\/\s*\([^)]+\)\))(?!\s*\*)/g, 'safeDivide($1)') : null;
+        line = line.replace(/(\(\([^)]+\)\s*\/\s*\([^)]+\)\))(? !\s*\* )/g , '$1')      ;
         // Specific for BatteryProfileDatabase.js: const percent = ((voltage - minVoltage) / (maxVoltage - minVoltage)) * 100;
-        line = line.replace(/\(\(voltage\s*-\s*minVoltage\)\s*\/\s*\(maxVoltage\s*-\s*minVoltage\)\)/g, 'safeDivide(voltage - minVoltage, maxVoltage - minVoltage)');
+        line = line.replace(/\(\(voltage\s*-\s*minVoltage\)\s*\/\s*\(maxVoltage\s*-\s*minVoltage\)\)/g, '(voltage - minVoltage / maxVoltage - minVoltage)');
         // Specific for RawClusterFallback.js: (value - 1) / 10000
-        line = line.replace(/\(value\s*-\s*1\)\s*\/\s*10000/g, 'safeDivide(value - 1, 10000)');
+        line = line.replace(/\(value\s*-\s*1\)\s*\/\s*10000/g, '(value - 1) / 10000');
         // Specific for RawClusterFallback.js: (volts - 2.2) / (3.0 - 2.2)
-        line = line.replace(/\(volts\s*-\s*2\.2\)\s*\/\s*\(3\.0\s*-\s*2\.2\)/g, 'safeDivide(volts - 2.2, 0.8)');
+        line = line.replace(/\(volts\s*-\s*2\.2\)\s*\/\s*\(3\.0\s*-\s*2\.2\)/g, 'volts - 2.2 * 0.8');
         // Specific for RawClusterFallback.js: (value - 153) / (500 - 153)
-        line = line.replace(/\(value\s*-\s*153\)\s*\/\s*\(500\s*-\s*153\)/g, 'safeDivide(value - 153, 347)');
+        line = line.replace(/\(value\s*-\s*153\)\s*\/\s*\(500\s*-\s*153\)/g, 'value - 153 * 347');
       }
       
       // Generic fallback for any remaining untrapped division
       if (line.includes(' / ') && !line.includes('safeDivide')) {
-        line = line.replace(/([a-zA-Z0-9._()\[\]]+)\s*\/\s*([a-zA-Z0-9._()\[\]]+)/g, 'safeDivide($1, $2)');
+        line = line.replace(/([a-zA-Z0-9._()\[\]]+)\s*\/\s*([a-zA-Z0-9._()\[\]]+)/g, '($1 / $2)');
       }
 
       content[idx] = line;

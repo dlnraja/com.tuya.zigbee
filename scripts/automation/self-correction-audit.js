@@ -85,8 +85,8 @@ async function main() {
       }
 
       // PID/Mfr Pair Check for Tuya MCU
-      const mfrs = compose.zigbee?.manufacturerName || [] ;
-      const pids = compose.zigbee?.productId || [] ;
+      const mfrs = compose.zigbee?.manufacturerName || []      ;
+      const pids = compose.zigbee?.productId || []      ;
       if (mfrs.some(m => m.startsWith('_TZE')) && pids.length === 0) {
         auditReport.warnings.push(`Driver ${d}: Tuya MCU (_TZE) missing productId triggers.`);
       }
@@ -143,12 +143,12 @@ async function main() {
   }
 
   // 4. Summarize to GitHub Summary
-  const SUMMARY = process.env.GITHUB_STEP_SUMMARY || (process.platform === 'win32' ? 'NUL' : '/dev/null');
+  const SUMMARY = process.env.GITHUB_STEP_SUMMARY || (process.platform === 'win32' ? 'NUL' : '/dev/null')      ;
   let md = '###  Self-Correction Audit Result\n';
   md += `| Check | Status |\n|--------|--------|\n`;
-  md += `| Syntax | ${auditReport.syntaxOk ? '' : ''} |\n`;
-  md += `| BVB Coherence | ${auditReport.bvbCoherenceOk ? '' : ''} |\n`;
-  md += `| Performance/Regressions | ${auditReport.noDegradation ? '' : ''} |\n\n`;
+  md += `| Syntax | ${auditReport.syntaxOk ? '' : ''} |\n`      ;
+  md += `| BVB Coherence | ${auditReport.bvbCoherenceOk ? '' : ''} |\n`      ;
+  md += `| Performance/Regressions | ${auditReport.noDegradation ? '' : ''} |\n\n`      ;
 
   if (auditReport.errors.length) {
     md += '####  Errors\n';

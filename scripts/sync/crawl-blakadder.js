@@ -18,7 +18,7 @@ async function crawlBlakadder() {
   console.log("[BLAKADDER] Fetching all.json...");
   const data = await fetchJSON(URL);
   // data is array of device objects or object keyed by model
-  const devices = Array.isArray(data) ? data : Object.values(data);
+  const devices = Array.isArray(data) ? data : Object.values(data)      ;
   console.log("[BLAKADDER] " + devices.length + " total devices in DB");
 
   const fps = new Map();

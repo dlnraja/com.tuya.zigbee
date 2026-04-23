@@ -17,8 +17,7 @@ function walk(dir, callback) {
 }
 
 const pattern1 = /trigger\(this\s+\{/g; // trigger(this, {
-const pattern2 = /trigger\(this\s+\}/g; // trigger(this, } - used in ButtonDevice?
-const pattern3 = /trigger\(this\.catch/g ; // trigger(this.catch
+const pattern2 = /trigger\(this\s+\}/g; // trigger(this, } - used in ButtonDevice? const pattern3 = /trigger\(this\.catch/g ; // trigger(this.catch
 
 let fixedCount = 0;
 

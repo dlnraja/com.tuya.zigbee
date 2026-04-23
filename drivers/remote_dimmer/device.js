@@ -41,8 +41,8 @@ class RemoteDimmerDevice extends ZigBeeDevice {
 
     // Store device info
     try {
-      const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '' ;
-      const mdl = this.getSetting('zb_model_id') || this.getData()?.modelId || '' ;
+      const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
+      const mdl = this.getSetting('zb_model_id') || this.getData()?.modelId || '';
       if (mfr) await this.setSettings({ zb_manufacturer_name: mfr }).catch(() => {});
       if (mdl) await this.setSettings({ zb_model_id: mdl }).catch(() => {});
     } catch (e) { this.error('[RemoteDimmer] Settings error:', e.message); }
@@ -85,7 +85,7 @@ class RemoteDimmerDevice extends ZigBeeDevice {
       const powerCfg = zclNode.endpoints[1].clusters.powerConfiguration;
       if (powerCfg) {
         powerCfg.on('attr.batteryPercentageRemaining', (value) => {
-          const pct = Math.round(safeParse(value));
+          const pct = Math.round(value);
           this.log('[RemoteDimmer] Battery:', pct, '%');
           this.setCapabilityValue('measure_battery', pct).catch(this.error);
           this.setCapabilityValue('alarm_battery', pct < 20).catch(this.error);
@@ -132,11 +132,11 @@ class RemoteDimmerDevice extends ZigBeeDevice {
     if (cardId) {
       const tokens = { action };
       if (payload.stepSize !== undefined) tokens.step_size = payload.stepSize;
-      if (payload.level !== undefined) tokens.level = Math.round((safeParse(payload.level) * 100));
+      if (payload.level !== undefined) tokens.level = Math.round((payload.level * 100);
       if (payload.rate !== undefined) tokens.rate = payload.rate;
       if (payload.sceneId !== undefined) tokens.scene_id = payload.sceneId;
 
-      this.homey.flow._getFlowCard(id).trigger(this tokens, {})
+      this.homey.flow.getTriggerCard(cardId).trigger(this, tokens, {})
         .catch(err => this.error('[RemoteDimmer] Flow trigger error:', err.message));
     }
   }
@@ -159,5 +159,3 @@ class RemoteDimmerDevice extends ZigBeeDevice {
 }
 
 module.exports = RemoteDimmerDevice;
-
-

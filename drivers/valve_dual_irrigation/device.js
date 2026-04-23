@@ -28,7 +28,7 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
       26: { internal: 'duration_2' },
 
       // Battery (Research research shows DP 59 for these dual valves, DP 101/15 as fallback)
-      59: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v, 0), 100) },
+      59: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v * 0) * 100) },
       101: { capability: 'measure_battery', divisor: 1 },
       15: { capability: 'measure_battery', divisor: 1 }
     };
@@ -42,12 +42,12 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
       this.log(`[VALVE-2] Setting Valve 1 = ${value}`);
       // Insoma valves often require explicit 1/0 as bool
       await this.sendDP(1, value ? true : false, 'bool');
-    });
+      });
 
     this.registerCapabilityListener('onoff.valve_2', async (value) => {
       this.log(`[VALVE-2] Setting Valve 2 = ${value}`);
       await this.sendDP(2, value ? true : false, 'bool');
-    });
+      });
 
     this.log('[VALVE-2]  Ready (Dual Engine v7.4.4)');
   }

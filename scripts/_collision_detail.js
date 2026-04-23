@@ -9,7 +9,7 @@ fs.readdirSync(d).forEach(dr => {
   if (!fs.existsSync(f)) return;
   try {
     const c = JSON.parse(fs.readFileSync(f, 'utf8'));
-    const z = Array.isArray(c.zigbee) ? c.zigbee : c.zigbee ? [c.zigbee] : [];
+    const z = Array.isArray(c.zigbee) ? c.zigbee : c.zigbee ? [c.zigbee] : []      ;
     z.forEach(entry => {
       const mfrs = entry.manufacturerName || [];
       const pids = entry.productId || [];

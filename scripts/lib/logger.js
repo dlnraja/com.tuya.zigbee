@@ -3,7 +3,7 @@
 function createLogger(prefix) {
   let errors = 0, warnings = 0;
   function log(type, context, msg) {
-    const icon = type === 'error' ? '\u274C' : type === 'warn' ? '\u26A0\uFE0F' : '\u2705';
+    const icon = type === 'error' ? '\u274C' : type === 'warn' ? '\u26A0\uFE0F' : '\u2705'      ;
     console.log(icon + ' [' + context + '] ' + msg);
     if (type === 'error') errors++;
     if (type === 'warn') warnings++;

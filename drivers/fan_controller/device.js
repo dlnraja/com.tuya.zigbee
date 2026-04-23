@@ -44,10 +44,8 @@ class FanControllerDevice extends ZigBeeDevice {
     // Safe flow card getter to prevent crashes on missing cards
     const safeGetCard = (type, id) => {
       try {
-        if (type === 'action') return
-      this._getFlowCard(id, 'action') ;
-        if (type === 'condition') return
-      this._getFlowCard(id, 'condition') ;
+        if (type === 'action') return this._getFlowCard(id, 'action');
+        if (type === 'condition') return this._getFlowCard(id, 'condition');
       } catch (e) {
         this.log(`[FLOW] Card '${id}' not available: ${e.message}`);
       }
@@ -58,7 +56,7 @@ class FanControllerDevice extends ZigBeeDevice {
     const setSpeedCard = safeGetCard('action', 'fan_controller_set_speed');
     if (setSpeedCard) {
       setSpeedCard.registerRunListener(async (args, state) => {
-        const speed = safeParse(args.speed, 100); // Convert 0-100 to 0-1
+        const speed = args.speed * 100; // Convert 0-100 to 0-1
         await this.setCapabilityValue('dim', speed);
         await this._setFanSpeed(speed);
         return true;
@@ -101,19 +99,19 @@ class FanControllerDevice extends ZigBeeDevice {
     const speedIsCard = safeGetCard('condition', 'fan_controller_speed_is');
     if (speedIsCard) {
       speedIsCard.registerRunListener(async (args, state) => {
-        const current = safeMultiply((this.getCapabilityValue('dim') || 0), 100);
+        const current = (this.getCapabilityValue('dim') || 0) * 100;
         return Math.abs(current - args.speed) < 5;
       });
     }
   }
 
   async _setFanSpeed(value) {
-    const ep1 = this._zclNode?.endpoints?.[1] ;
-    if (!ep1) return;
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184] ;
+    const ep1 = this._zclNode?.endpoints?.[1];
+    if (!ep1 ) return;
+    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
     if (!tuyaCluster) return;
 
-    const speed =Math.round(safeMultiply(value));
+    const speed =Math.round(value );
     try {
       await tuyaCluster.datapoint({ dp: 3, datatype: 2, value: speed });
     } catch (e) {
@@ -125,14 +123,14 @@ class FanControllerDevice extends ZigBeeDevice {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184] ;
+    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
     if (!tuyaCluster) return;
 
-    this.log('[TUYA] DP cluster found');
+    this.log('[TUYA] DP cluster found' );
 
     // Register capability listener for dim via Tuya DP
     this.registerCapabilityListener('dim', async (value) => {
-      const speed =Math.round(safeMultiply(value)); // 0-4 speed levels
+      const speed =Math.round(value); // 0-4 speed levels
       this.log(`Setting fan speed to: ${speed}`);
       try {
         await tuyaCluster.datapoint({ dp: 3, datatype: 2, value: speed });
@@ -150,8 +148,8 @@ class FanControllerDevice extends ZigBeeDevice {
       }
     });
 
-    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value)) ;
-    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value)) ;
+    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value));
+    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value));
     tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
   }
 
@@ -176,13 +174,13 @@ class FanControllerDevice extends ZigBeeDevice {
       break;
 
     case 3: // Speed (0-4)
-      const dim = safeParse(value, 4); // Convert to 0-1 range
+      const dim = value * 4; // Convert to 0-1 range
       this.setCapabilityValue('dim', dim).catch(this.error);
       // Trigger speed changed flow card
       try {
         const card = this.homey.flow.getDeviceTriggerCard('fan_speed_changed');
         if (card) {
-          card.trigger(this, { speed: Math.round(safeMultiply(dim, 100)) }).catch(this.error);
+          card.trigger(this, { speed: Math.round(dim * 100) }).catch(this.error);
         }
       } catch (e) { /* Card may not exist */ }
       break;
