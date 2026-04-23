@@ -1,51 +1,51 @@
 {
-  "timestamp": "2026-04-12T07:54:05.298Z",
+  "timestamp": "2026-04-23T08:06:18.573Z",
   "suggestions": [
     {
-      "pattern": "False Battery Alert / Missing Battery",
+      "pattern": "False Battery Alert/Missing Battery",
       "id": "battery",
-      "count": 34,
+      "count": 25,
       "priority": "high",
       "topFPs": [
         [
           "vision",
-          25
-        ],
-        [
-          "TS0601",
-          16
+          20
         ],
         [
           "_TZE",
-          15
+          11
+        ],
+        [
+          "TS0601",
+          11
         ],
         [
           "_TZ3000_",
-          12
-        ],
-        [
-          "sensor",
-          12
-        ],
-        [
-          "router",
-          12
+          7
         ],
         [
           "_TZE204_",
-          6
-        ],
-        [
-          "TS0202",
           5
         ],
         [
-          "button",
-          5
+          "router",
+          4
         ],
         [
-          "test",
-          5
+          "_TZE200_",
+          4
+        ],
+        [
+          "MOES",
+          3
+        ],
+        [
+          "TS0044",
+          3
+        ],
+        [
+          "_TYZB",
+          3
         ]
       ],
       "fix": "Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit",
@@ -54,61 +54,9 @@
       ]
     },
     {
-      "pattern": "Pairing Failure",
-      "id": "pairing",
-      "count": 9,
-      "priority": "high",
-      "topFPs": [
-        [
-          "_TZE",
-          5
-        ],
-        [
-          "TS0601",
-          5
-        ],
-        [
-          "vision",
-          5
-        ],
-        [
-          "example",
-          3
-        ],
-        [
-          "_TZ3000_",
-          3
-        ],
-        [
-          "generic",
-          3
-        ],
-        [
-          "button",
-          3
-        ],
-        [
-          "sensor",
-          3
-        ],
-        [
-          "_TZE284_",
-          3
-        ],
-        [
-          "_TZ3000_o4mkahkc",
-          2
-        ]
-      ],
-      "fix": "Check driver.compose.json fingerprints, verify manufacturerName + productId",
-      "files": [
-        "drivers/{driver}/driver.compose.json"
-      ]
-    },
-    {
       "pattern": "Device Not Responding",
       "id": "no_response",
-      "count": 6,
+      "count": 5,
       "priority": "high",
       "topFPs": [
         [
@@ -117,19 +65,11 @@
         ],
         [
           "_TZ3000_",
-          3
+          2
         ],
         [
           "TS0601",
-          3
-        ],
-        [
-          "sensor",
-          3
-        ],
-        [
-          "test",
-          3
+          2
         ],
         [
           "_TZ3210_w0qqde0g",
@@ -150,62 +90,18 @@
         [
           "TS0203",
           1
+        ],
+        [
+          "HOBEIAN",
+          1
+        ],
+        [
+          "ZG-204Z",
+          1
         ]
       ],
       "fix": "Check Zigbee mesh, device routing, and cluster bindings",
       "files": []
-    },
-    {
-      "pattern": "Device Shows Unknown",
-      "id": "unknown",
-      "count": 5,
-      "priority": "high",
-      "topFPs": [
-        [
-          "_TZE",
-          3
-        ],
-        [
-          "TS0601",
-          3
-        ],
-        [
-          "_TZE284_aa03yzhs",
-          2
-        ],
-        [
-          "_TZE284_",
-          2
-        ],
-        [
-          "generic",
-          2
-        ],
-        [
-          "sensor",
-          2
-        ],
-        [
-          "test",
-          2
-        ],
-        [
-          "vision",
-          2
-        ],
-        [
-          "dlnraja",
-          1
-        ],
-        [
-          "example",
-          1
-        ]
-      ],
-      "fix": "Check settings keys: zb_model_id (not zb_modelId), zb_manufacturer_name (not zb_manufacturerName)",
-      "files": [
-        "drivers/{driver}/device.js"
-      ]
     },
     {
       "pattern": "Ring/Alarm Wrong",
@@ -226,15 +122,15 @@
           3
         ],
         [
-          "router",
-          2
-        ],
-        [
           "_TZ3000_j1v25l17",
           2
         ],
         [
           "_TZE204_clrdrnya",
+          1
+        ],
+        [
+          "router",
           1
         ],
         [
@@ -250,12 +146,64 @@
           1
         ],
         [
-          "sensor",
+          "_TZ3000_gjnozsaz",
           1
         ]
       ],
       "fix": "Check alarm DP map",
       "files": []
+    },
+    {
+      "pattern": "Pairing Failure",
+      "id": "pairing",
+      "count": 4,
+      "priority": "medium",
+      "topFPs": [
+        [
+          "vision",
+          4
+        ],
+        [
+          "_TZE",
+          3
+        ],
+        [
+          "TS0601",
+          3
+        ],
+        [
+          "_TZE284_hdml1aav",
+          2
+        ],
+        [
+          "_TZE284_",
+          2
+        ],
+        [
+          "_TZE204_yvx5lh6k",
+          1
+        ],
+        [
+          "_TZE204_",
+          1
+        ],
+        [
+          "_TZ3210_jtifm80b",
+          1
+        ],
+        [
+          "_TZ3210_",
+          1
+        ],
+        [
+          "TS0502B",
+          1
+        ]
+      ],
+      "fix": "Check driver.compose.json fingerprints, verify manufacturerName + productId",
+      "files": [
+        "drivers/{driver}/driver.compose.json"
+      ]
     },
     {
       "pattern": "Double Division (wrong sensor values)",
@@ -280,10 +228,6 @@
           2
         ],
         [
-          "router",
-          2
-        ],
-        [
           "_TZE204_qyr2m29i",
           1
         ],
@@ -292,15 +236,11 @@
           1
         ],
         [
-          "Moes",
-          1
-        ],
-        [
-          "test",
-          1
-        ],
-        [
           "_TZE204_clrdrnya",
+          1
+        ],
+        [
+          "router",
           1
         ]
       ],
@@ -310,21 +250,13 @@
       ]
     },
     {
-      "pattern": "Inverted Sensor State",
-      "id": "inversion",
-      "count": 1,
-      "priority": "low",
+      "pattern": "Device Shows Unknown",
+      "id": "unknown",
+      "count": 2,
+      "priority": "medium",
       "topFPs": [
         [
-          "_TZE200_wfxuhoea",
-          1
-        ],
-        [
-          "deconz",
-          1
-        ],
-        [
-          "vision",
+          "_TZE284_aa03yzhs",
           1
         ],
         [
@@ -332,17 +264,36 @@
           1
         ],
         [
-          "_TZE200_",
+          "_TZE284_",
           1
         ],
         [
           "TS0601",
           1
+        ],
+        [
+          "_TZ3210_jtifm80b",
+          1
+        ],
+        [
+          "vision",
+          1
+        ],
+        [
+          "_TZ3210_",
+          1
+        ],
+        [
+          "TS0502B",
+          1
+        ],
+        [
+          "TS0502",
+          1
         ]
       ],
-      "fix": "Add manufacturerName to invertedByDefault in HybridSensorBase.js + device.js",
+      "fix": "Check settings keys: zb_model_id (not zb_modelId), zb_manufacturer_name (not zb_manufacturerName)",
       "files": [
-        "lib/devices/HybridSensorBase.js",
         "drivers/{driver}/device.js"
       ]
     },
@@ -373,59 +324,17 @@
       "files": []
     },
     {
-      "pattern": "No Temperature",
-      "id": "no_temperature",
-      "count": 1,
-      "priority": "low",
-      "topFPs": [
-        [
-          "_TZ3000_tsgqxdb4",
-          1
-        ],
-        [
-          "sonoff",
-          1
-        ],
-        [
-          "_TZ3000_",
-          1
-        ],
-        [
-          "TS0201",
-          1
-        ],
-        [
-          "TS0601",
-          1
-        ],
-        [
-          "debug",
-          1
-        ],
-        [
-          "sensor",
-          1
-        ],
-        [
-          "test",
-          1
-        ]
-      ],
-      "fix": "Check DP18 divisor",
-      "files": []
-    },
-    {
       "pattern": "Wrong Energy",
       "id": "energy_wrong",
       "count": 1,
       "priority": "low",
       "topFPs": [
         [
-          "router",
-          2
+          "_TZE204_clrdrnya",
+          1
         ],
         [
-          "_TZE204_clrdrnya",
+          "router",
           1
         ],
         [
@@ -443,14 +352,6 @@
         [
           "TS0601",
           1
-        ],
-        [
-          "sensor",
-          1
-        ],
-        [
-          "relay",
-          1
         ]
       ],
       "fix": "Check energy divisor",
@@ -458,15 +359,15 @@
     }
   ],
   "detections": {
-    "inversion": 1,
-    "battery": 34,
+    "inversion": 0,
+    "battery": 25,
     "double_div": 2,
-    "pairing": 9,
-    "unknown": 5,
+    "pairing": 4,
+    "unknown": 2,
     "flow_dup": 0,
-    "no_response": 6,
+    "no_response": 5,
     "voltage_wrong": 1,
-    "no_temperature": 1,
+    "no_temperature": 0,
     "ring_value": 5,
     "energy_wrong": 1,
     "sensor_zero": 0
