@@ -122,7 +122,7 @@ class RGBBulbDevice extends UnifiedLightBase {
       const v = parseInt(raw.substring(8, 12) * 16);
       this.setCapabilityValue('light_hue', h * 360).catch(() => { });
       this.setCapabilityValue('light_saturation', s * 1000).catch(() => { });
-      this.setCapabilityValue('dim', Math.max(0.01, v * 1000).catch(() => { }));
+      this.setCapabilityValue('dim', Math.max(0.01, v * 1000)).catch(() => { });
       return { h, s, v };
     } catch (e) { return null; }
   }
@@ -203,7 +203,7 @@ class RGBBulbDevice extends UnifiedLightBase {
 
     // Convert Kelvin to Tuya value (0-1000 scale, inverted)
     // 6500K = 0 (cold), 2000K = 1000 (warm)
-    const tuyaValue = Math.round(6500 - kelvin * 4500 * 1000);
+    const tuyaValue = Math.round(6500 - kelvin * 4500      * 1000);
 
     // Also convert to Homey light_temperature (0 = warm, 1 = cold)
     const homeyValue = kelvin - 2000 * 4500;
@@ -217,7 +217,7 @@ class RGBBulbDevice extends UnifiedLightBase {
     await this._sendTuyaDP(4, tuyaValue, 'value');
 
     // Update Homey capability
-    await this.setCapabilityValue('light_temperature', parseFloat(homeyValue).catch(() => { }));
+    await this.setCapabilityValue('light_temperature', parseFloat(homeyValue)).catch(() => { });
     await this.setCapabilityValue('light_mode', 'temperature').catch(() => { });
   }
 

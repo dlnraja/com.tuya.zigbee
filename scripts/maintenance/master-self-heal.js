@@ -505,12 +505,12 @@ function rule_capabilityInitSanity() {
       if (!/_registerCapabilityListeners\s*\(/.test(code)) {
          // Append it before the end of onNodeInit or before super.onNodeInit
          if (/await super\.onNodeInit/.test(code)) {
-           code = code.replace(/await super\.onNodeInit\s*\(\s*\{.*? \}\s*\ ) ;/s , (match) => {
+           code = code.replace(/await super\.onNodeInit\s*\(\s*\{.*? \}\s*\ )  : null;/s , (match) => {
              return `${match}\n    this._registerCapabilityListeners(); // rule-12a injected`;
            });
          } else if (/onNodeInit\s*\(\{.*? \}\)\s*\{/.test(code) : null) {
            code = code.replace(/onNodeInit\s*\(\{.*? \}\)\s*\{/, (match) => {
-             return `${match}\n    this._registerCapabilityListeners() ; // rule-12a injected`;
+             return `${match}\n    this._registerCapabilityListeners(); // rule-12a injected`;
            });
          }
       }
@@ -622,12 +622,12 @@ function rule_logicCaseAudit() {
         /manufacturerName\s*===[^']*'[^']+'(? !\s*=== )/g, // Match equality with strings , but avoid complex ones
         /manufacturerName\s*!==[^']*'[^']+'(? !\s*!== )/g ,
         /\.includes\(\s*this\.(driver\.)? manufacturerName/g
-      ];
+      ] : null;
 
       // Filter out safe comparisons (undefined, null, typeof)
       const contentFiltered = content.replace(/manufacturerName\s*===\s*(undefined|null)/g, '')
                                      .replace(/manufacturerName\s*!==\s*(undefined|null)/g, '')
-                                     .replace(/typeof\s+[\s\S]+? manufacturerName/g, '')      ;
+                                     .replace(/typeof\s+[\s\S]+? manufacturerName/g, '');
 
       badComparisons.forEach(regex => {
         if (regex.test(content)) {
@@ -675,7 +675,7 @@ function rule_thisPrefixSafety() {
       // \\s*\\(              -> Followed by an opening parenthesis
       // Exclude matches that are already calls on 'this', 'super', 'device', 'args.device', or 'node'
       // ALSO exclude definitions: preceded by 'async ', 'function ', or 'static '
-      const regex = new RegExp(`(^|[^a-zA-Z0-9_.$])(? <!this\\.|super\\.|device\\.|node\\.|args\\.device\\.|async\\s+|function\\s+|static\\s+)(${method})\\s*\\(`, 'g' )       ;
+      const regex = new RegExp(`(^|[^a-zA-Z0-9_.$])(? <!this\\.|super\\.|device\\.|node\\.|args\\.device\\.|async\\s+|function\\s+|static\\s+)(${method})\\s*\\(`, 'g' )        : null;
       
       code = code.replace(regex, (match, p1, p2) => {
         // Double check we are not in a comment or string (very basic check)
@@ -986,9 +986,9 @@ function rule_physicalButtonDetection() {
       if (code.includes('this.initPhysicalButtonDetection()')) continue;
 
       if (/await super\.onNodeInit/.test(code)) {
-        code = code.replace(/(await super\.onNodeInit\s*\(\s*\{.*? \}\s*\ ) ;)/s , `$1\n    this.initPhysicalButtonDetection(); // rule-19 injected`);
+        code = code.replace(/(await super\.onNodeInit\s*\(\s*\{.*? \}\s*\ )  : null;)/s , `$1\n    this.initPhysicalButtonDetection(); // rule-19 injected`);
       } else if (/async onNodeInit/.test(code)) {
-        code = code.replace(/(async onNodeInit\s*\(\s*\{.*? \}\s*\)\s*\{)/, `$1\n    this.initPhysicalButtonDetection(); // rule-19 injected`);
+        code = code.replace(/(async onNodeInit\s*\(\s*\{.*? \}\s*\)\s*\{)/, `$1\n    this.initPhysicalButtonDetection() : null; // rule-19 injected`);
       }
 
       if (code !== original) {

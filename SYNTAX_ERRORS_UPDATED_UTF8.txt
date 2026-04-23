@@ -1,0 +1,49 @@
+﻿Checking 1031 files...
+[SYNTAX-ERROR] drivers\fingerbot\device.js: SyntaxError: missing ) after argument list at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\fingerbot\device.js:521
+[SYNTAX-ERROR] drivers\generic_diy\device.js: SyntaxError: missing ) after argument list at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\generic_diy\device.js:104
+[SYNTAX-ERROR] drivers\generic_tuya\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\generic_tuya\device.js:239
+[SYNTAX-ERROR] drivers\ir_remote\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\ir_remote\device.js:151
+[SYNTAX-ERROR] drivers\light_bulb_rgb_hybrid\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\light_bulb_rgb_hybrid\device.js:156
+[SYNTAX-ERROR] drivers\light_bulb_rgb_led_hybrid\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\light_bulb_rgb_led_hybrid\device.js:156
+[SYNTAX-ERROR] drivers\light_bulb_rgb_rgbw_hybrid\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\light_bulb_rgb_rgbw_hybrid\device.js:156
+[SYNTAX-ERROR] drivers\motion_sensor\device.js: SyntaxError: Unexpected token ';' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\motion_sensor\device.js:376
+[SYNTAX-ERROR] drivers\motion_sensor_2\device.js: SyntaxError: missing ) after argument list at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\motion_sensor_2\device.js:79
+[SYNTAX-ERROR] drivers\motion_sensor_radar_mmwave\device.js: SyntaxError: Invalid or unexpected token at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\motion_sensor_radar_mmwave\device.js:572
+[SYNTAX-ERROR] drivers\presence_sensor_radar\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\presence_sensor_radar\device.js:528
+[SYNTAX-ERROR] drivers\radiator_valve_zigbee\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\radiator_valve_zigbee\device.js:139
+[SYNTAX-ERROR] drivers\remote_button_wireless_hybrid\device.js: SyntaxError: missing ) after argument list at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\remote_button_wireless_hybrid\device.js:120
+[SYNTAX-ERROR] drivers\remote_button_wireless_plug_hybrid\driver.js: SyntaxError: Missing catch or finally after try at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\remote_button_wireless_plug_hybrid\driver.js:134
+[SYNTAX-ERROR] drivers\remote_dimmer\device.js: SyntaxError: missing ) after argument list at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\remote_dimmer\device.js:137
+[SYNTAX-ERROR] drivers\scene_switch_4\driver.js: SyntaxError: Unexpected token 'if' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\scene_switch_4\driver.js:55
+[SYNTAX-ERROR] drivers\sensor_climate_lcdtemphumidsensor_hybrid\device.js: SyntaxError: Unexpected token '*' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\sensor_climate_lcdtemphumidsensor_hybrid\device.js:37
+[SYNTAX-ERROR] drivers\sensor_climate_motion_hybrid\device.js: SyntaxError: Unexpected token ';' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\sensor_climate_motion_hybrid\device.js:377
+[SYNTAX-ERROR] drivers\sensor_climate_presence_hybrid\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\sensor_climate_presence_hybrid\device.js:533
+[SYNTAX-ERROR] drivers\sensor_contact_motion_hybrid\device.js: SyntaxError: Unexpected token ';' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\sensor_contact_motion_hybrid\device.js:377
+[SYNTAX-ERROR] drivers\sensor_contact_presence_hybrid\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\sensor_contact_presence_hybrid\device.js:533
+[SYNTAX-ERROR] drivers\sensor_contact_zigbee_hybrid\driver.js: SyntaxError: Missing catch or finally after try at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\sensor_contact_zigbee_hybrid\driver.js:65
+[SYNTAX-ERROR] drivers\sensor_gas_presence_hybrid\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\sensor_gas_presence_hybrid\device.js:533
+[SYNTAX-ERROR] drivers\sensor_lcdtemphumidsensor_soil_hybrid\device.js: SyntaxError: missing ) after argument list at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\sensor_lcdtemphumidsensor_soil_hybrid\device.js:477
+[SYNTAX-ERROR] drivers\sensor_motion_presence_hybrid\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\sensor_motion_presence_hybrid\device.js:528
+[SYNTAX-ERROR] drivers\sensor_motion_radar_hybrid\device.js: SyntaxError: Invalid or unexpected token at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\sensor_motion_radar_hybrid\device.js:549
+[SYNTAX-ERROR] drivers\sensor_presence_radar_hybrid\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\sensor_presence_radar_hybrid\device.js:528
+[SYNTAX-ERROR] drivers\sirentemphumidsensor\device.js: SyntaxError: Unexpected token ';' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\sirentemphumidsensor\device.js:360
+[SYNTAX-ERROR] drivers\smart_heater_controller\device.js: SyntaxError: missing ) after argument list at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\smart_heater_controller\device.js:376
+[SYNTAX-ERROR] drivers\smart_knob_switch_hybrid\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\smart_knob_switch_hybrid\device.js:77
+[SYNTAX-ERROR] drivers\thermostat_4ch\driver.js: SyntaxError: Unexpected token '(' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\thermostat_4ch\driver.js:29
+[SYNTAX-ERROR] drivers\universal_fallback\device.js: SyntaxError: Unexpected identifier 'getOpts' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\universal_fallback\device.js:173
+[SYNTAX-ERROR] drivers\valve_irrigation\device.js: SyntaxError: Unexpected token ',' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\valve_irrigation\device.js:33
+[SYNTAX-ERROR] drivers\wall_curtain_switch\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\wall_curtain_switch\device.js:25
+[SYNTAX-ERROR] drivers\wall_dimmer_1gang_1way\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\wall_dimmer_1gang_1way\device.js:135
+[SYNTAX-ERROR] drivers\wall_remote_4_gang_2\device.js: SyntaxError: missing ) after argument list at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\wall_remote_4_gang_2\device.js:55
+[SYNTAX-ERROR] drivers\wifi_air_purifier\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\wifi_air_purifier\device.js:15
+[SYNTAX-ERROR] drivers\wifi_camera\device.js: SyntaxError: await is only valid in async functions and the top level bodies of modules at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\wifi_camera\device.js:196
+[SYNTAX-ERROR] drivers\wifi_cover\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\wifi_cover\device.js:22
+[SYNTAX-ERROR] drivers\wifi_ewelink_dimmer\device.js: SyntaxError: Unexpected token ')' at C:\Users\HP\Desktop\homey app\tuya_repair\drivers\wifi_ewelink_dimmer\device.js:12
+node : 40 files have syntax errors!
+Au caractère Ligne:1 : 1
++ node scripts\remediation\check-all-syntax.js > SYNTAX_ERRORS_UPDATED. ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (40 files have syntax errors!:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+

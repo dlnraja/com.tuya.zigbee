@@ -428,7 +428,7 @@ function fixSyncScript() {
     return 0;
   })`;
         
-        content = content.replace(/\.sort\(\(a, b\) => \{[\s\S]*? \}\)/, newSort)      ;
+        content = content.replace(/\.sort\(\(a, b\) => \{[\s\S]*? \}\)/, newSort);
         
         // Fix the table header and versioning
         content = content.replace("| Version | Feature |", "| Version | Changes |" );

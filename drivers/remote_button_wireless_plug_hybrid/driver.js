@@ -39,7 +39,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Plug is on/off
     try {
-      const card = const card = this.homey.flow.getConditionCard('plug_energy_monitor_is_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -51,7 +51,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // CONDITION: Power above threshold
     try {
-      const card = const card = this.homey.flow.getConditionCard('plug_energy_monitor_power_above');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -64,7 +64,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // CONDITION: Energy above threshold
     try {
-      const card = const card = this.homey.flow.getConditionCard('plug_energy_monitor_energy_above');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -77,7 +77,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      const card = const card = this.homey.flow.getActionCard('plug_energy_monitor_turn_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -91,7 +91,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      const card = const card = this.homey.flow.getActionCard('plug_energy_monitor_turn_off');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -105,7 +105,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      const card = const card = this.homey.flow.getActionCard('plug_energy_monitor_toggle');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -120,7 +120,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Reset energy meter
     try {
-      const card = const card = this.homey.flow.getActionCard('plug_energy_monitor_reset_meter');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

@@ -25,7 +25,7 @@ class SmartRcboDriver extends ZigBeeDriver {
     this.log('SmartRcboDriver initialized');
     // v5.13.3: Register flow card action handlers
     const reg = (id, fn) => { try {
-      this.homey.flow.getActionCard(id).registerRunListener(fn) 
+      (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(fn) 
   
   
   

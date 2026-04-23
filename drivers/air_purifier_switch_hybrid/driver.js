@@ -22,21 +22,21 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    try { this.homey.flow.getTriggerCard('air_purifier_switch_hybrid_switch_1gang_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('air_purifier_switch_hybrid_switch_1gang_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('air_purifier_switch_hybrid_switch_1gang_physical_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('air_purifier_switch_hybrid_switch_1gang_physical_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('air_purifier_switch_hybrid_switch_1gang_physical_single'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('air_purifier_switch_hybrid_switch_1gang_physical_double'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('air_purifier_switch_hybrid_switch_1gang_physical_long_press'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('air_purifier_switch_hybrid_switch_1gang_physical_triple'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('air_purifier_switch_hybrid_switch_1gang_battery_low'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('air_purifier_switch_hybrid_switch_1gang_power_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('air_purifier_switch_hybrid_switch_1gang_gang1_scene'); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
 
     // CONDITIONS
     try {
-      const card = const card = this.homey.flow.getConditionCard('air_purifier_switch_hybrid_switch_1gang_is_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -47,7 +47,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = const card = this.homey.flow.getActionCard('air_purifier_switch_hybrid_switch_1gang_turn_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -58,7 +58,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action air_purifier_switch_hybrid_switch_1gang_turn_on: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('air_purifier_switch_hybrid_switch_1gang_turn_off');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -69,7 +69,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action air_purifier_switch_hybrid_switch_1gang_turn_off: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('air_purifier_switch_hybrid_switch_1gang_toggle');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -81,7 +81,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action air_purifier_switch_hybrid_switch_1gang_toggle: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('air_purifier_switch_hybrid_switch_1gang_set_backlight');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -92,7 +92,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action air_purifier_switch_hybrid_switch_1gang_set_backlight: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('air_purifier_switch_hybrid_switch_1gang_set_backlight_color');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -103,7 +103,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action air_purifier_switch_hybrid_switch_1gang_set_backlight_color: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('air_purifier_switch_hybrid_switch_1gang_set_backlight_brightness');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -114,7 +114,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action air_purifier_switch_hybrid_switch_1gang_set_backlight_brightness: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('air_purifier_switch_hybrid_switch_1gang_set_countdown');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -126,7 +126,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action air_purifier_switch_hybrid_switch_1gang_set_countdown: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('air_purifier_switch_hybrid_switch_1gang_set_child_lock');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -138,7 +138,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action air_purifier_switch_hybrid_switch_1gang_set_child_lock: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('air_purifier_switch_hybrid_switch_1gang_set_scene_mode');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

@@ -22,21 +22,21 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_target_temperature_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_temperature_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_mode_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_heating_started'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_heating_stopped'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_temp_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_battery_low'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('thermostat_tuya_dp_humidity_changed'); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
 
     // CONDITIONS
     try {
       // A8: NaN Safety - use safeDivide/safeMultiply
-  const card = this.homey.flow.getConditionCard('thermostat_tuya_dp_is_heating');
+  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -46,7 +46,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition thermostat_tuya_dp_is_heating: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('thermostat_tuya_dp_temperature_above_target');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -57,7 +57,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition thermostat_tuya_dp_temperature_above_target: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('thermostat_tuya_dp_temperature_below_target');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -67,7 +67,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition thermostat_tuya_dp_temperature_below_target: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('thermostat_tuya_dp_mode_is');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -77,7 +77,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition thermostat_tuya_dp_mode_is: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('thermostat_tuya_dp_child_lock_is');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -87,7 +87,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition thermostat_tuya_dp_child_lock_is: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('thermostat_tuya_dp_is_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -98,7 +98,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = const card = this.homey.flow.getActionCard('thermostat_tuya_dp_set_target_temperature');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -109,7 +109,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action thermostat_tuya_dp_set_target_temperature: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('thermostat_tuya_dp_set_mode');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -121,7 +121,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action thermostat_tuya_dp_set_mode: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('thermostat_tuya_dp_increase_temperature');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -133,7 +133,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action thermostat_tuya_dp_increase_temperature: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('thermostat_tuya_dp_decrease_temperature');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -145,7 +145,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action thermostat_tuya_dp_decrease_temperature: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('thermostat_tuya_dp_set_child_lock');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -157,7 +157,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action thermostat_tuya_dp_set_child_lock: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('thermostat_tuya_dp_set_comfort_preset');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -169,7 +169,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action thermostat_tuya_dp_set_comfort_preset: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('thermostat_tuya_dp_schedule_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -180,7 +180,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action thermostat_tuya_dp_schedule_on: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('thermostat_tuya_dp_schedule_off');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -191,7 +191,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action thermostat_tuya_dp_schedule_off: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('thermostat_tuya_dp_turn_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -202,7 +202,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action thermostat_tuya_dp_turn_on: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('thermostat_tuya_dp_turn_off');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -213,7 +213,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action thermostat_tuya_dp_turn_off: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('thermostat_tuya_dp_toggle');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -225,7 +225,7 @@ class ThermostatTuyaDpDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action thermostat_tuya_dp_toggle: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('thermostat_tuya_dp_set_temperature');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

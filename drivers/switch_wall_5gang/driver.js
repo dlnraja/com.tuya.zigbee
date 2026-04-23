@@ -22,57 +22,57 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang1_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang1_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang2_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang2_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang3_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang3_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang4_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang4_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang5_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang5_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang1_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang1_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang1_single'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang1_double'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang1_triple'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang1_long_press'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang2_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang2_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang2_single'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang2_double'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang2_triple'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang2_long_press'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang3_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang3_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang3_single'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang3_double'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang3_triple'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang3_long_press'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang4_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang4_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang4_single'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang4_double'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang4_triple'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang4_long_press'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang5_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang5_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang5_single'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang5_double'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang5_triple'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_physical_gang5_long_press'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang1_scene'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang2_scene'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang3_scene'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang4_scene'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('switch_wall_5gang_gang5_scene'); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
 
     // CONDITIONS
     try {
-      const card = const card = this.homey.flow.getConditionCard('switch_wall_5gang_gang1_is_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -82,7 +82,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition switch_wall_5gang_gang1_is_on: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('switch_wall_5gang_gang2_is_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -92,7 +92,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition switch_wall_5gang_gang2_is_on: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('switch_wall_5gang_gang3_is_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -102,7 +102,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition switch_wall_5gang_gang3_is_on: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('switch_wall_5gang_gang4_is_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -112,7 +112,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition switch_wall_5gang_gang4_is_on: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('switch_wall_5gang_gang5_is_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -122,7 +122,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition switch_wall_5gang_gang5_is_on: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('switch_wall_5gang_is_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -133,7 +133,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_on_gang1');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -144,7 +144,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_turn_on_gang1: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_off_gang1');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -155,7 +155,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_turn_off_gang1: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_on_gang2');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -166,7 +166,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_turn_on_gang2: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_off_gang2');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -177,7 +177,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_turn_off_gang2: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_on_gang3');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -188,7 +188,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_turn_on_gang3: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_off_gang3');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -199,7 +199,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_turn_off_gang3: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_on_gang4');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -210,7 +210,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_turn_on_gang4: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_off_gang4');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -221,7 +221,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_turn_off_gang4: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_on_gang5');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -232,7 +232,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_turn_on_gang5: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_off_gang5');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -243,7 +243,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_turn_off_gang5: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_toggle_gang1');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -255,7 +255,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_toggle_gang1: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_toggle_gang2');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -267,7 +267,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_toggle_gang2: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_toggle_gang3');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -279,7 +279,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_toggle_gang3: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_toggle_gang4');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -291,7 +291,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_toggle_gang4: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_toggle_gang5');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -303,7 +303,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_toggle_gang5: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_on_all');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -315,7 +315,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_turn_on_all: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_off_all');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -327,7 +327,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_turn_off_all: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_set_backlight');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -338,7 +338,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_set_backlight: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_set_backlight_color');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -349,7 +349,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_set_backlight_color: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_set_backlight_brightness');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -360,7 +360,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_set_backlight_brightness: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -371,7 +371,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_turn_on: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_off');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -382,7 +382,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_turn_off: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_toggle');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -394,7 +394,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action switch_wall_5gang_toggle: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('switch_wall_5gang_set_scene_mode');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

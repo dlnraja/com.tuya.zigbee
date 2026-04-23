@@ -19,11 +19,11 @@ function repairDriver(driverName) {
         if (block.match(/^\s*(\r? \n\s* )\r? \n\s*\.registerRunListener/)) {
             // This block is mangled.
             // Look into the catch part of this block
-            const catchMatch = block.match(/} catch \(err\) { this\.(log|error )\('([^']+?)(\s+card:? |'|" : null)\s* ,? \s*err\.message\)/)      ;
+            const catchMatch = block.match(/} catch \(err\) { this\.(log|error )\('([^']+?)(\s+card:? |'|" : null)\s* ,? \s*err\.message\)/);
             if (catchMatch) {
                 let id = catchMatch[2].trim();
                 // Clean up suffixes like " card:" or " failed:"
-                id = id.replace(/ card:? $/ , '').replace(/ failed:? $/ , '').replace(/ registered:? $/ , '')      ;
+                id = id.replace(/ card:? $/ , '').replace(/ failed:? $/ , '').replace(/ registered:? $/ , '');
                 
                 const pMatch = content.match(/const P = ['"]([^'"]+)['"]/);
                 if (pMatch && !id.startsWith(pMatch[1])) {
@@ -33,7 +33,7 @@ function repairDriver(driverName) {
                 // Determine type
                 const type = id.includes('turned_on') || id.includes('detected') || id.includes('is_on') ? 'Condition' : 'Action'      ;
                 
-                block = block.replace(/^\s*(\r? \n\s* )\r? \n\s*\.registerRunListener/ , `\n      const card = this.homey.flow.get${type}Card('${id}') ;\n      if (card) card.registerRunListener`);
+                block = block.replace(/^\s*(\r? \n\s* )\r? \n\s*\.registerRunListener/ , `\n      const card = this.homey.flow.get${type}Card('${id}')  : null;\n      if (card) card.registerRunListener`);
                 changed = true;
             }
         }

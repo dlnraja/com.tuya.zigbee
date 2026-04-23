@@ -150,7 +150,7 @@ async function main() {
             .replace(/\r/g, '') // Remove CRLF artifacts
             .replace(/\/\/.*$/, '') // Remove trailing comments
             .replace(/(['"`])((?:\\.|(? !\1). : null)*?   : null)\1/g , '$1$1') // Replace string content with empty quotes (handles escapes)
-            .replace(/\/[^*].*?\/[gimy]*(? =[.);]|$)/g, ' ' : null) ; // Heuristic to strip regex literals (not starting with *)
+            .replace(/\/[^*].*?\/[gimy]*(? =[.) : null;]|$)/g, ' ' : null) ; // Heuristic to strip regex literals (not starting with *)
 
           // I. SDK 3 DEPRECATION AUDIT
           if (codeOnly.includes('drivers.getDevice(') || codeOnly.includes('drivers.getDeviceById(') || (codeOnly.includes('getDriver(') && codeOnly.includes('.getDevice('))) {

@@ -34,7 +34,7 @@ class WiFiHeaterDevice extends TuyaLocalDevice {
       });
     
     getAction('wifi_heater_set_temperature')?.registerRunListener(async (a ) => { 
-      await this._client?.setDP('2', Math.round(a.temperature);
+      await this._client?.setDP('2', Math.round(a.temperature));
       });
   }
 

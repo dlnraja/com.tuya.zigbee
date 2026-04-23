@@ -8,7 +8,6 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 class LonsonhoContactSensorDriver extends ZigBeeDriver {
   /**
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
    */
   getDeviceById(id) {
     try {
@@ -19,7 +18,6 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -27,43 +25,36 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
 
     this.log('LonsonhoContactSensorDriver v5.5.570 initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
     // CONDITION: Door/window is/is not open
     try {
-      const card = const card = this.homey.flow.getConditionCard('contact_sensor_is_open');
+      const card = (() => { try { return this.homey.flow.getConditionCard('contact_sensor_is_open'); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
-        this.log('[FLOW]  Registered: contact_sensor_is_open');
+        this.log('[FLOW] Registered: contact_sensor_is_open');
       }
     } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }
 
     // CONDITION: Battery above threshold
     try {
-      const card = const card = this.homey.flow.getConditionCard('contact_sensor_battery_above');
+      const card = (() => { try { return this.homey.flow.getConditionCard('contact_sensor_battery_above'); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.threshold || 20);
-      });
-        this.log('[FLOW]  Registered: contact_sensor_battery_above');
+        });
+        this.log('[FLOW] Registered: contact_sensor_battery_above');
       }
+    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }
 
-    this.log('[FLOW]  Contact sensor flow cards registered');
+    this.log('[FLOW] Contact sensor flow cards registered');
   }
 }
-    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }
 
 module.exports = LonsonhoContactSensorDriver;

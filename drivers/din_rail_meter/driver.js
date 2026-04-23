@@ -31,7 +31,7 @@ class DinRailMeterDriver extends BaseZigBeeDriver {
       this._energyChangedTrigger = this._getFlowCard('din_rail_meter_energy_changed', 'trigger');
       
       // Register condition
-      this._powerAboveCondition = const card = this.homey.flow.getConditionCard('din_rail_meter_power_above');
+      this._powerAboveCondition = this._getFlowCard('din_rail_meter_power_above', 'condition');
       if (this._powerAboveCondition) {
         this._powerAboveCondition.registerRunListener(async (args, state) => {
           if (args.device && typeof args.device.getCapabilityValue === 'function') {
@@ -44,7 +44,7 @@ class DinRailMeterDriver extends BaseZigBeeDriver {
       }
       
       // Register action (already present but keep for consistency)
-      const actionCard = (() => { try { return this.homey.flow.getActionCard('din_rail_meter_reset_meter'); } catch(e) { return null; } })();
+      const actionCard = (() => { try { return this._getFlowCard('din_rail_meter_reset_meter', 'action'); } catch(e) { return null; } })();
       if (actionCard) {
         actionCard.registerRunListener(async (args, state) => {
           if (args.device && typeof args.device.resetMeter === 'function') {

@@ -62,7 +62,7 @@ class IlluminanceSensorDevice extends UnifiedSensorBase {
               maxInterval: 3600,
               minChange: 100
             }
-          }).catch(e => this.log('[ILLUMINANCE] Reporting config failed:', e.message));
+          }).catch(e => this.log('[ILLUMINANCE] Reporting config failed:', e.message);
         }
       }
     } catch (err) {
@@ -82,4 +82,3 @@ class IlluminanceSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = IlluminanceSensorDevice;
-

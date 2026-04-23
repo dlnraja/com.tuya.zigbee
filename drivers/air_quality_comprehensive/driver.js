@@ -33,9 +33,9 @@ class TuyaComprehensiveAirMonitorDriver extends BaseZigBeeDriver {
       this._batteryLowTrigger = this._getFlowCard('air_quality_comprehensive_battery_low', 'trigger');
       
       // Conditions
-      this._co2AboveCondition = const card = this.homey.flow.getConditionCard('air_quality_comprehensive_co2_above');
-      this._tempAboveCondition = const card = this.homey.flow.getConditionCard('air_quality_comprehensive_temp_above');
-      this._humidityAboveCondition = const card = this.homey.flow.getConditionCard('air_quality_comprehensive_humidity_above');
+      this._co2AboveCondition = this._getFlowCard('air_quality_comprehensive_co2_above', 'condition');
+      this._tempAboveCondition = this._getFlowCard('air_quality_comprehensive_temp_above', 'condition');
+      this._humidityAboveCondition = this._getFlowCard('air_quality_comprehensive_humidity_above', 'condition');
       
       this.log('Air quality comprehensive flow cards registered successfully');
     } catch (error) {

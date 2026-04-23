@@ -1,0 +1,71 @@
+name: "🤖 FLEET INTELLIGENCE — Autonomous Governance"
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Run every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+env:
+  NODE_VERSION: "22"
+  GH_PAT: ${{ secrets.GH_PAT }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+jobs:
+  triage_and_discovery:
+    name: "🧠 Triage & Discovery"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+      
+      - name: "🔍 Issue & PR Triage"
+        run: |
+          node .github/scripts/github-issue-manager.js || true
+          node .github/scripts/github-scanner.js || true
+      
+      - name: "🤖 Bot Accuracy Refinement"
+        run: |
+          node scripts/maintenance/BOT_ACCURACY_FIXER.js
+      
+      - name: "🤖 Parallel Bot Cleanup"
+        run: |
+          # Use GH_PAT for cross-repo actions if needed
+          node scripts/automation/parallel-bot-handler.js || true
+
+      - name: "🗺️ Project Mapping"
+        run: |
+          node scripts/automation/project-mapper.js || true
+
+      - name: "💾 Commit Metadata Updates"
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/state/ lib/data/BOT_FORCED_DISCOVERY.json docs/PROJECT_MAP.md
+          git commit -m "🤖 [Fleet Intel] Periodic metadata sync [skip ci]" || echo "No metadata changes"
+          git push origin master || echo "Push failed"
+
+  auto_merger:
+    name: "🤝 Auto-Merger"
+    needs: triage_and_discovery
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: "🚀 Run PR Auto-Merger"
+        run: |
+          node scripts/automation/pr-auto-merger.js || true

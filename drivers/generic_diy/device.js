@@ -45,7 +45,8 @@ class GenericDIYDevice extends ZigBeeDevice {
 
   get mainsPowered() {
     // If router, it's mains powered. Also check model/mfr fallbacks.
-    if (this.zclNode?.role === 'router' || this.zclNode?.role === 'coordinator') return true;const model = ManufacturerNameHelper.getModelId(this);
+    if (this.zclNode?.role === 'router' || this.zclNode?.role === 'coordinator') return true;
+    const model = ManufacturerNameHelper.getModelId(this);
     return model && model.includes('ROUTER');
   }
 
@@ -227,67 +228,67 @@ class GenericDIYDevice extends ZigBeeDevice {
       if (clusterId === 0x0006) {
         this.registerCapabilityListener(cap, async (v) => {
           v ? await cluster.setOn() : await cluster.setOff();
-      });
-        cluster.on('attr.onOff', (v) => this._safeSetCapability(cap, v).catch(() => {}));
+        });
+        cluster.on('attr.onOff', (v) => this._safeSetCapability(cap, v).catch(() => { }));
       }
       // Level cluster
       else if (clusterId === 0x0008) {
         this.registerCapabilityListener(cap, async (v) => {
           await cluster.moveToLevel({ level: Math.round(v * 254), transitionTime: 0 });
-      });
-        cluster.on('attr.currentLevel', (v) => this._safeSetCapability(cap, v * 254).catch(() => {}));
+        });
+        cluster.on('attr.currentLevel', (v) => this._safeSetCapability(cap, v / 254).catch(() => { }));
       }
       // Temperature
       else if (clusterId === 0x0402) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v * 100).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v / 100).catch(() => { }));
       }
       // Humidity
       else if (clusterId === 0x0405) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v * 100).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v / 100).catch(() => { }));
       }
       // Illuminance
       else if (clusterId === 0x0400) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v).catch(() => { }));
       }
       // Motion
       else if (clusterId === 0x0406) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v > 0).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v > 0).catch(() => { }));
       }
       // Battery
       else if (clusterId === 0x0001) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v * 2).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v / 2).catch(() => { }));
       }
       // Contact
       else if (clusterId === 0x0500) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, (v & 1) > 0).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, (v & 1) > 0).catch(() => { }));
       }
       // Pressure
       else if (clusterId === 0x0403) {
-        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v * 10).catch(() => {}));
+        cluster.on(`attr.${map.attr}`, (v) => this._safeSetCapability(cap, v / 10).catch(() => { }));
       }
       // Analog
       else if (clusterId === 0x000C) {
         cluster.on(`attr.${map.attr}`, (v) => {
           this._safeSetCapability(cap, v).catch(() => {});
           this._triggerAnalog(epId, v);
-      });
+        });
       }
       // Thermostat
       else if (clusterId === 0x0201) {
         this.registerCapabilityListener(cap, async (v) => {
           await cluster.write({ occupiedHeatingSetpoint: Math.round(v * 100) });
-      });
-        cluster.on('attr.occupiedHeatingSetpoint', (v) => this._safeSetCapability(cap, v * 100).catch(() => {}));
+        });
+        cluster.on('attr.occupiedHeatingSetpoint', (v) => this._safeSetCapability(cap, v / 100).catch(() => { }));
         cluster.on('attr.localTemperature', (v) => {
-          if (v !== -32768) this._safeSetCapability('measure_temperature', v * 100).catch(() => {});
-      });
+          if (v !== -32768) this._safeSetCapability('measure_temperature', v / 100).catch(() => {});
+        });
       }
       // Other measurement clusters
       else if (map.attr) {
         cluster.on(`attr.${map.attr}`, (v) => {
           const val = map.div ? (v / map.div ) : v;
           this._safeSetCapability(cap, val).catch(() => {});
-      });
+        });
       }
     } catch (e) {
       this.error(`[DIY] Listener setup failed: ${e.message}`);
@@ -331,5 +332,3 @@ class GenericDIYDevice extends ZigBeeDevice {
 }
 
 module.exports = GenericDIYDevice;
-
-

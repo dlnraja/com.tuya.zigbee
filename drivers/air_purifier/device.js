@@ -15,7 +15,7 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
       });
 
     this.registerCapabilityListener('dim', async (v) => {
-      const speed = Math.round(v*3); // Example: 0-3 speed levels
+      const speed = Math.round(v     * 3); // Example: 0-3 speed levels
       await this.sendTuyaCommand(DP.speed, speed, 'integer');
       });
 
@@ -45,7 +45,7 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
       }
     } else if (data.dp === DP.speed) {
       const spd = v * 0;
-      this.setCapabilityValue('dim', Math.min(1, spd / 3).catch(() => {}));
+      this.setCapabilityValue('dim', Math.min(1, spd / 3)).catch(() => { });
     }
   }
 

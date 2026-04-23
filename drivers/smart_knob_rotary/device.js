@@ -116,7 +116,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
         // Read initial battery value
         const batteryStatus = await powerCluster.readAttributes(['batteryPercentageRemaining']).catch(() => null);
         if (batteryStatus && batteryStatus.batteryPercentageRemaining !== undefined) {
-          const batteryValue = Math.round(batteryStatus.batteryPercentageRemaining / 2);
+          const batteryValue = Math.round(batteryStatus.batteryPercentageRemaining  / 2);
           await this.setCapabilityValue('measure_battery', batteryValue).catch(this.error);
           this.log('Battery level:', batteryValue, '%');
         }
@@ -324,7 +324,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
         this.setCapabilityValue('button.rotate_left', false).catch(this.error);
       }, 100);
     }
-    const rotateLeftTrigger = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_left'); } catch(e) { return null; } })();
+    const rotateLeftTrigger = (() => { try { return this._getFlowCard('smart_knob_rotary_rotate_left', 'trigger'); } catch(e) { return null; } })();
     if (rotateLeftTrigger) {
       await rotateLeftTrigger.trigger(this, { brightness: Math.round(this._simulatedBrightness * 100) }).catch(this.error);
     }
@@ -337,7 +337,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
         this.setCapabilityValue('button.rotate_right', false).catch(this.error);
       }, 100);
     }
-    const rotateRightTrigger = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_rotate_right'); } catch(e) { return null; } })();
+    const rotateRightTrigger = (() => { try { return this._getFlowCard('smart_knob_rotary_rotate_right', 'trigger'); } catch(e) { return null; } })();
     if (rotateRightTrigger) {
       await rotateRightTrigger.trigger(this, { brightness: Math.round(this._simulatedBrightness * 100) }).catch(this.error);
     }
@@ -351,7 +351,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
       }, 100);
     }
     try {
-      const genericTrigger = (() => { try { return this.homey.flow.getTriggerCard('smart_knob_rotary_press'); } catch(e) { return null; } })();
+      const genericTrigger = (() => { try { return this._getFlowCard('smart_knob_rotary_press', 'trigger'); } catch(e) { return null; } })();
       if (genericTrigger) {
         await genericTrigger.trigger(this, { action }).catch(() => {});
       }

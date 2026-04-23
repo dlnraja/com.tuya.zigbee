@@ -64,7 +64,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
     } catch (err) { this.error('Scene trigger failed:', err.message); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('Scene mode action failed:');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSceneMode(args.mode);
@@ -75,7 +75,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set backlight mode
     try {
-      const card = const card = this.homey.flow.getActionCard('Scene mode action failed:');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           this.log(`Flow: Setting backlight mode to ${args.mode}`);
@@ -95,7 +95,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set power-on behavior (v5.11.30)
     try {
-      const card = const card = this.homey.flow.getActionCard('Scene mode action failed:');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ power_on_behavior: args.mode });
@@ -111,7 +111,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set external switch type (v5.11.30)
     try {
-      const card = const card = this.homey.flow.getActionCard('Scene mode action failed:');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ switch_mode: args.mode });

@@ -19,8 +19,8 @@ function processFile(filePath) {
         modified = true;
     }
 
-    // 2. Fix 'match(...) : null;' -> 'match(...) || null;'
-    if (content.includes(')        : null;')) {
+    // 2. Fix 'match(...);' -> 'match(...) || null;'
+    if (content.includes(');')) {
         content = content.replace(/\)\s+:\s+null;/g, ') || null;');
         modified = true;
     }

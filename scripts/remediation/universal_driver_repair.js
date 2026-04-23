@@ -19,7 +19,7 @@ function repairDriver(driverName) {
     content = content.replace(danglingRegex, (match, whitespace) => {
         // Look ahead for the next log/error call to find the ID
         const rest = content.substring(content.indexOf(match) + match.length);
-        const logMatch = rest.match(/this\.(log|error)\(['"]([^'"]+?)(?:\s+card:? |'|" : null)\s* ,? \s*err\.message\)/)      ;
+        const logMatch = rest.match(/this\.(log|error)\(['"]([^'"]+?)(?:\s+card:? |'|" : null)\s* ,? \s*err\.message\)/);
         let idFromLog = '';
         if (logMatch) {
             idFromLog = logMatch[2].trim();

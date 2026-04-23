@@ -86,7 +86,7 @@ function audit() {
       // We allow it in onNodeInit for initial state, but warn for usage in reports
       if (content.includes('this.onNodeInit')) {
         // Check if it's used OUTSIDE onNodeInit
-        const outsideOnNodeInit = content.replace(/async\s+onNodeInit[\s\S]*? async/, '---').includes('this.setCapabilityValue')      ;
+        const outsideOnNodeInit = content.replace(/async\s+onNodeInit[\s\S]*? async/, '---').includes('this.setCapabilityValue');
         if (outsideOnNodeInit) {
           console.warn(` [${d}] Hybrid device uses raw setCapabilityValue outside onNodeInit. Use _safeSetCapability.`);
           warnings++;

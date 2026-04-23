@@ -132,11 +132,11 @@ class RemoteDimmerDevice extends ZigBeeDevice {
     if (cardId) {
       const tokens = { action };
       if (payload.stepSize !== undefined) tokens.step_size = payload.stepSize;
-      if (payload.level !== undefined) tokens.level = Math.round((payload.level * 100);
+      if (payload.level !== undefined) tokens.level = Math.round((payload.level * 100));
       if (payload.rate !== undefined) tokens.rate = payload.rate;
       if (payload.sceneId !== undefined) tokens.scene_id = payload.sceneId;
 
-      this.homey.flow.getTriggerCard(cardId).trigger(this, tokens, {})
+      (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().trigger(this, tokens, {})
         .catch(err => this.error('[RemoteDimmer] Flow trigger error:', err.message));
     }
   }

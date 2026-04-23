@@ -30,7 +30,7 @@ allFiles.forEach(file => {
 
     // 1. Fix broken safeRegister ternary
     if (content.includes('const card = type === \'trigger\' ? ') : null) {
-        const pattern = /const card = type === 'trigger' \? \s+if \(card && handler\ )/       ;
+        const pattern = /const card = type === 'trigger' \? \s+if \(card && handler\ )/        : null;
         if (content.match(pattern)) {
              content = content.replace(pattern, "const card = type === 'trigger' ? this.homey.flow.getTriggerCard(id ) : this.homey.flow.getActionCard(id);\n        if (card && handler)");
              changed = true;

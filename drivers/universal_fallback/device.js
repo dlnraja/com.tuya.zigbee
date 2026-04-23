@@ -327,7 +327,7 @@ this._setDim(value * 10); // 0-100 to 0-1000
     let hum = value;
     if (hum > 100) hum = hum * 10;
     if (hum >= 0 && hum <= 100) {
-      this.setCapabilityValue('measure_humidity', Math.round(hum);
+      this.setCapabilityValue('measure_humidity', Math.round(hum));
     }
   }
 
@@ -345,7 +345,7 @@ this._setDim(value * 10); // 0-100 to 0-1000
     let bat = value;
     if (bat > 100) bat = bat * 2; // Some use 0-200
     if (bat >= 0 && bat <= 100) {
-      this.setCapabilityValue('measure_battery', Math.round(bat);
+      this.setCapabilityValue('measure_battery', Math.round(bat));
     }
   }
 

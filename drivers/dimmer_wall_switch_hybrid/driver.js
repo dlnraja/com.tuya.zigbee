@@ -22,23 +22,23 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_gang1_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_gang1_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_gang2_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_gang2_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_physical_gang1_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_physical_gang1_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_physical_gang2_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_physical_gang2_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_turned_on'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_turned_off'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_power_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_gang1_scene'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('dimmer_wall_switch_hybrid_switch_2gang_gang2_scene'); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
 
     // CONDITIONS
     try {
-      const card = const card = this.homey.flow.getConditionCard('dimmer_wall_switch_hybrid_switch_2gang_gang1_is_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -48,7 +48,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition dimmer_wall_switch_hybrid_switch_2gang_gang1_is_on: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('dimmer_wall_switch_hybrid_switch_2gang_gang2_is_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -58,7 +58,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition dimmer_wall_switch_hybrid_switch_2gang_gang2_is_on: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('dimmer_wall_switch_hybrid_switch_2gang_is_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -69,7 +69,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
 
     // ACTIONS
     try {
-      const card = const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_on_gang1');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -80,7 +80,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_on_gang1: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_off_gang1');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -91,7 +91,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_off_gang1: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_on_gang2');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -102,7 +102,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_on_gang2: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_off_gang2');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -113,7 +113,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_off_gang2: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_toggle_gang1');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -125,7 +125,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_toggle_gang1: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_toggle_gang2');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -137,7 +137,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_toggle_gang2: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_on_all');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -149,7 +149,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_on_all: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_off_all');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -161,7 +161,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_off_all: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_set_backlight');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -172,7 +172,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_set_backlight: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_on');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -183,7 +183,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_on: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_turn_off');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -194,7 +194,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_turn_off: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_toggle');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -206,7 +206,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action dimmer_wall_switch_hybrid_switch_2gang_toggle: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('dimmer_wall_switch_hybrid_switch_2gang_set_scene_mode');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

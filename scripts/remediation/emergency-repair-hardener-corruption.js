@@ -49,9 +49,9 @@ function repairFile(filePath) {
         
         // 1b. More generic string pollution cleanup:
         // Catches " ... x/y ... " or ` ... x/y ... `
-        line = line.replace(/(['"`][^'"`]*? )safeDivide\(([^,]+ ) ,\s*([^)]+)\)([^'"`]*? ['"`] )/g , '$1$2/$3$4')      ;
-        line = line.replace(/(['"`][^'"`]*? )safeMultiply\(([^,]+ ) ,\s*([^)]+)\)([^'"`]*? ['"`] )/g , '$1$2*$3$4')      ;
-        line = line.replace(/(['"`][^'"`]*? )safeParse\(([^,]+ ) ,\s*([^)]+)\)([^'"`]*? ['"`] )/g , '$1$2/$3$4')      ;
+        line = line.replace(/(['"`][^'"`]*? )safeDivide\(([^,]+ ) ,\s*([^)]+)\)([^'"`]*? ['"`] )/g , '$1$2/$3$4');
+        line = line.replace(/(['"`][^'"`]*? )safeMultiply\(([^,]+ ) ,\s*([^)]+)\)([^'"`]*? ['"`] )/g , '$1$2*$3$4');
+        line = line.replace(/(['"`][^'"`]*? )safeParse\(([^,]+ ) ,\s*([^)]+)\)([^'"`]*? ['"`] )/g , '$1$2/$3$4');
         
         // 2. Fix Comment Pollution in definitions: 
         line = line.replace(/\/\/ (.*? )safeMultiply\(([^,]+),\s*([^)]+)\ : null)/g , '// $1$2 * $3')      ;
@@ -66,7 +66,7 @@ function repairFile(filePath) {
         line = line.replace(/safeParse\(Math\.round\(([^,]+),\s*([^)]+)\)/g, 'Math.round($1/1, $2)'); // Wait, X/10
         
         // Wait, Math.round(v/10)? // If it was Math.round(v / 10), then it's Math.round(v/10)
-        line = line.replace(/safeParse\(Math\.round\(([^,]+),\s*([^)]+)\)/g, 'Math.round($1/$2)') ;
+        line = line.replace(/safeParse\(Math\.round\(([^,]+),\s*([^)]+)\)/g, 'Math.round($1/$2)');
 
         // 4. Fix double safeParse/safeMultiply: Math.round(v*10)/10
         line = line.replace(/safeMultiply\(Math\.round\(([^,]+),\s*safeParse\)\((\d+)\),\s*(\d+)\)/g, 'Math.round($1*$2)/$3');

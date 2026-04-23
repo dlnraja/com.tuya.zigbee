@@ -1006,7 +1006,7 @@ class Button4GangDevice extends ButtonDevice {
             if (value !== undefined && value > 0) {
               const voltage = value * 10;
               // CR2032/CR2450: 3.0V=100%, 2.0V=0%
-              const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100))));
+              const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
               this.log(`[BUTTON4-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
               await this._updateBattery(battery);
             }
@@ -1034,7 +1034,7 @@ class Button4GangDevice extends ButtonDevice {
    */
   async _updateBattery(battery) {
     if (battery >= 0 && battery <= 100) {
-      await this.setCapabilityValue('measure_battery', parseFloat(battery).catch(() => { }));
+      await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
       await this.setStoreValue('last_battery_percentage', battery).catch(() => { });
       await this.setStoreValue('last_battery_time', Date.now()).catch(() => { });
       this._lastBatteryRead = Date.now();
@@ -1076,7 +1076,7 @@ class Button4GangDevice extends ButtonDevice {
         await this._updateBattery(battery);
       } else if (attrs?.batteryVoltage !== undefined && attrs.batteryVoltage > 0) {
         const voltage = attrs.batteryVoltage * 10;
-        const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100))));
+        const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
         this.log(`[BUTTON4-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
         await this._updateBattery(battery);
       } else {
@@ -1151,7 +1151,7 @@ class Button4GangDevice extends ButtonDevice {
 
             if (battery !== null && battery >= 0 && battery <= 100) {
               this.log(`[BUTTON4-BATTERY-DP]  Battery from DP${dp}: ${battery}%`);
-              await this.setCapabilityValue('measure_battery', parseFloat(battery).catch(() => { }));
+              await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
               await this.setStoreValue('last_battery_percentage', battery).catch(() => { });
             }
           }

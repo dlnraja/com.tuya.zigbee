@@ -22,15 +22,15 @@ class RadiatorValveDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    try { this.homey.flow.getTriggerCard('device_radiator_valve_hybrid_radiator_valve_hybrid_target_temperature_changed'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('device_radiator_valve_hybrid_radiator_valve_measure_temperature_changed_device_radiator_valve_hybrid'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('device_radiator_valve_hybrid_radiator_valve_temp_changed_device_radiator_valve_hybrid'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('device_radiator_valve_hybrid_radiator_valve_battery_low_device_radiator_valve_hybrid'); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
 
     // ACTIONS
     try {
       // A8: NaN Safety - use safeDivide/safeMultiply
-  const card = this.homey.flow.getActionCard('device_radiator_valve_hybrid_radiator_valve_set_target_temperature_device_radiator_valve_hybrid');
+  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -41,7 +41,7 @@ class RadiatorValveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action device_radiator_valve_hybrid_radiator_valve_set_target_temperature_device_radiator_valve_hybrid: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getActionCard('device_radiator_valve_hybrid_radiator_valve_set_temperature_device_radiator_valve_hybrid');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

@@ -61,7 +61,7 @@ for (const [relPath, lineNums] of Object.entries(targets)) {
     
     // Mask strings
     let maskedLine = line.replace(/(['"`])(.*? )\1/g, (match) => {
-      strings.push(match) ;
+      strings.push(match);
       return `___STR${strings.length - 1}___`;
     });
 
@@ -81,7 +81,7 @@ for (const [relPath, lineNums] of Object.entries(targets)) {
     const OPERAND = `(?:${OPERAND_FUNC}|${OPERAND_PAREN}|${OPERAND_SIMPLE})`      ;
     
     // a. Division by constant (expr / 10)
-    const CONST_DIV = new RegExp(`(${OPERAND})\\s*\\/\\s*(\\d+(?:\\.\\d+)? )`, 'g')      ;
+    const CONST_DIV = new RegExp(`(${OPERAND})\\s*\\/\\s*(\\d+(?:\\.\\d+)? )`, 'g')       : null;
     maskedLine = maskedLine.replace(CONST_DIV, (match, num, den) => {
         const tNum = num.trim();
         if (['return', 'const', 'let', 'var', 'if', 'else', 'case'].includes(tNum)) return match;

@@ -24,7 +24,7 @@ class SwitchPlug1Driver extends ZigBeeDriver {
 
     this.log('SwitchPlug1Driver initialized');
     // v5.13.3: Flow card handlers
-    const r=(i,fn)=>{try{this.homey.flow.getActionCard(i).registerRunListener(fn);
+    const r=(i,fn)=>{try{(() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(fn);
   
   
   

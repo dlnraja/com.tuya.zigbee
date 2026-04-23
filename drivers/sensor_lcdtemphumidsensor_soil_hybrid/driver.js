@@ -43,7 +43,7 @@ class SoilSensorDriver extends ZigBeeDriver {
     // A8: NaN Safety - use safeDivide/safeMultiply
   (id) => {
       try {
-        return this.homey.flow.getTriggerCard(id);
+        return (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       
   
   
@@ -59,7 +59,7 @@ class SoilSensorDriver extends ZigBeeDriver {
 
     const safeGetCondition = (id) => {
       try {
-        return this.homey.flow.getConditionCard(id);
+        return (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       } catch (e) {
         this.log(`[FLOW] Condition '${id}' not defined - skipping`);
         return null;

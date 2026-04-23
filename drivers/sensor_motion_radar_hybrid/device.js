@@ -242,7 +242,7 @@ async onNodeInit({ zclNode }) {
       this.log(`[MMWAVE]  Relay contro
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
-l: ${value ? 'ON' : 'OFF'} (DP108)`);
+l: ${value ? 'ON' : 'OFF'} (DP108)`;
       const tuya = zclNode?.endpoints?.[1]?.clusters?.tuya;
       if (tuya?.datapoint) {
         await tuya.datapoint({ dp: 108, value: value ? 1 : 0, type: 'enum' });
@@ -323,7 +323,7 @@ async _setupContinuousLuminanceReporting(zclNode) {
         illuminanceCluster.on('attr.measuredValue', async (value) => {
           if (value !== null && value !== undefined && value >= 0) {
             this.log(`[LUMINANCE-FIX]  Continuous luminance update: ${value} lux`);
-            await this.setCapabilityValue('measure_luminance', parseFloat(value).catch(() => { }));
+            await this.setCapabilityValue('measure_luminance', parseFloat(value)).catch(() => { });
           }
         });
 
@@ -332,7 +332,7 @@ async _setupContinuousLuminanceReporting(zclNode) {
           const initialValue = await illuminanceCluster.readAttributes(['measuredValue']);
           if (initialValue?.measuredValue !== undefined && initialValue.measuredValue >= 0) {
             this.log(`[LUMINANCE-FIX]  Initial luminance: ${initialValue.measuredValue} lux`);
-            await this.setCapabilityValue('measure_luminance', parseFloat(initialValue.measuredValue).catch(() => { }));
+            await this.setCapabilityValue('measure_luminance', parseFloat(initialValue.measuredValue)).catch(() => { });
           }
         } catch (e) {
           this.log('[LUMINANCE-FIX]  Initial read failed (normal for sleepy devices)');

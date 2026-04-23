@@ -65,9 +65,9 @@ allFiles.forEach(file => {
             const orig = line;
 
             if (line.includes('sendTuyaDP') && line.split('(').length > line.split(')').length) {
-                line = line.replace(/;? $/ , ')));');
+                line = line.replace(/;? $/ , '))) : null;');
             } else if (line.includes('Math.round') && line.split('(').length > line.split(')').length) {
-                line = line.replace(/;? $/, ');');
+                line = line.replace(/;? $/, ') : null;');
             } else if (line.trim() === '}' && output.includes('Missing catch or finally')) {
                 // Insert missing catch
                 lines[lineNum - 1] = '    } catch (err) { this.log(`[FLOW-ERROR] ${err.message}`); }';

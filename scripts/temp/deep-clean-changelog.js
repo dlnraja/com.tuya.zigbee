@@ -55,13 +55,13 @@ let finalContent = newLines.join('\n');
 let previousContent;
 do {
   previousContent = finalContent;
-  finalContent = finalContent.replace(/\n### [^\n]+\n+(? =\n|### |## |---|$ )/g , '\n')      ;
+  finalContent = finalContent.replace(/\n### [^\n]+\n+(? =\n|### |## |---|$ )/g , '\n');
 } while (finalContent !== previousContent);
 
 // Clean up empty releases (## [x.x.x] ... --- with no bullet points inside)
 do {
   previousContent = finalContent;
-  finalContent = finalContent.replace(/\n## \[[^\]]+\][^\n]*\n+(?:---|\n(? =## ))/g, '\n---\n')      ;
+  finalContent = finalContent.replace(/\n## \[[^\]]+\][^\n]*\n+(?:---|\n(? =## ))/g, '\n---\n');
 } while (finalContent !== previousContent);
 
 // Clean up multiple empty lines

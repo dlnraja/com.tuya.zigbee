@@ -31,7 +31,7 @@ function main() {
         const models = modelMatch[1].split(',').map(m => m.trim().replace(/['"]/g, '')).filter(Boolean);
         
         // Extract tuyaDatapoints
-        const dpMatch = fullBlock.match(/tuyaDatapoints:\s*\[([\s\S]+?   )\] ,\s*\}/)      ;
+        const dpMatch = fullBlock.match(/tuyaDatapoints:\s*\[([\s\S]+?   )\] ,\s*\}/);
         if (dpMatch) {
             console.log(`[SYNC] Found ${models[0]} with DP mapping`);
         }

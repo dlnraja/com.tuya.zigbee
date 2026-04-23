@@ -79,11 +79,12 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit || npm install
-      - name: "🌌 Orchestrated Self-Healing"
+      - name: "🌌 Orchestrated Self-Healing (Intelligent Engine)"
         run: |
+          node scripts/maintenance/INTELLIGENT_ENGINE_STABILIZER.js
           node scripts/maintenance/autonomous-maintenance-orchestrator.js
-          node scripts/maintenance/master-self-heal.js
-          node scripts/fixes/ULTIMATE_DRIVER_STABILIZER.js
+      - name: "🛡️ Strict Syntax Guard"
+        run: node scripts/maintenance/STRICT_SYNTAX_GUARD.js
       - name: "🧪 SDK v3 Compliance Check"
         run: node scripts/maintenance/sdk3-smart-linter.js
       - name: "🖼️ Image Optimization"

@@ -411,11 +411,11 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-    const rotateLeftTrigger = (() => { try { return this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_rotate_left'); } catch(e) { return null; } })();
+    const rotateLeftTrigger = (() => { try { return this._getFlowCard('remote_button_wireless_hybrid_rotate_left', 'trigger'); } catch(e) { return null; } })();
     if (rotateLeftTrigger) {
       await rotateLeftTrigger.trigger(this, { 
         brightness:Math.round(this._simulatedBrightness)
-      }).catch(this.error);
+      }).catch(this.error;
     }
   }
 
@@ -430,11 +430,11 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-    const rotateRightTrigger = (() => { try { return this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_rotate_right'); } catch(e) { return null; } })();
+    const rotateRightTrigger = (() => { try { return this._getFlowCard('remote_button_wireless_hybrid_rotate_right', 'trigger'); } catch(e) { return null; } })();
     if (rotateRightTrigger) {
       await rotateRightTrigger.trigger(this, { 
         brightness:Math.round(this._simulatedBrightness)
-      }).catch(this.error);
+      }).catch(this.error;
     }
   }
 
@@ -450,7 +450,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
 
     // Trigger generic flow card with action token
     try {
-      const genericTrigger = (() => { try { return this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_press'); } catch(e) { return null; } })();
+      const genericTrigger = (() => { try { return this._getFlowCard('remote_button_wireless_hybrid_press', 'trigger'); } catch(e) { return null; } })();
       if (genericTrigger) {
         await genericTrigger.trigger(this, { action }).catch(() => {});
       }
@@ -482,10 +482,10 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
       const ep = zclNode?.endpoints?.[1]; if (!ep ) return;
       const e = ep.clusters?.tuyaE000 || ep.clusters?.[57344];
       if (e?.on) {
-        e.on('buttonPress', async (d) => { this._triggerButtonPress(resolvePressType(d?.pressType, 'KNOB-E000'));
+        e.on('buttonPress', async (d) => { this._triggerButtonPress(resolvePressType(d?.pressType, 'KNOB-E000')));
       });
         for (const c of ['cmd0','cmd1','cmd2','cmdFD','cmdFE','cmdFF']) {
-          e.on(c , async ({ data }) => { this._triggerButtonPress(data?.length >= 1 ? resolvePressType(data[0] , 'KNOB-E000') : 'single');
+          e.on(c , async ({ data }) => { this._triggerButtonPress(data?.length >= 1 ? resolvePressType(data[0] , 'KNOB-E000') : 'single'));
       });
         }
       }
@@ -501,9 +501,9 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
     try {
       const tc = zclNode?.endpoints?.[1]?.clusters?.tuya || zclNode?.endpoints?.[1]?.clusters?.[61184];
       if (!tc?.on) return;
-      tc.on('response', async (d) => { const v = d?.data ?? d?.value ?? 0; this._triggerButtonPress(resolvePressType(v, 'KNOB-DP'));
+      tc.on('response', async (d) => { const v = d?.data ?? d?.value ?? 0; this._triggerButtonPress(resolvePressType(v, 'KNOB-DP')));
       });
-      tc.on('datapoint', async (d) => { const v = d?.data?.[0] ?? 0; this._triggerButtonPress(resolvePressType(v, 'KNOB-DP'));
+      tc.on('datapoint', async (d) => { const v = d?.data?.[0] ?? 0; this._triggerButtonPress(resolvePressType(v, 'KNOB-DP')));
       });
     } catch (e) { this.log('[TUYA-DP] Error:', e.message); }
   }

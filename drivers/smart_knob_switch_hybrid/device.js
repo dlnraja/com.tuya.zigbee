@@ -67,13 +67,13 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
         const pct =Math.round(dim);
         this.setCapabilityValue('dim', dim).catch(() => {});
         this.log('[KNOB] Level:', pct + '%');
-        const trigger = this.homey.flow.getActionCard('smart_knob_rotated')
+        const trigger = this._getFlowCard('smart_knob_rotated', 'action')
         if (trigger ) trigger.trigger(this, { level: pct }, {}).catch(() => {});
       });
       level.on('commandMove', ({ moveMode, rate }) => {
-        const direction = moveMode === 0 ? 'up' : 'down';
+        const direction = moveMode === 0 ? 'up' : 'down');
         this.log('[KNOB] Move ' + direction + ' rate:' + rate);
-        const trigger = this.homey.flow.getActionCard('smart_knob_rotated_direction')
+        const trigger = this._getFlowCard('smart_knob_rotated_direction', 'action')
         if (trigger ) trigger.trigger(this, { direction , level: this.getCapabilityValue('dim') ? Math.round(this.getCapabilityValue('dim') * 100) : 0 }, {}).catch(() => {});
       });
       level.on('commandStep', ({ stepMode, stepSize }) => {
@@ -84,9 +84,9 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
         this.setCapabilityValue('dim', newDim).catch(() => {});
         this.log('[KNOB] Step to:', pct + '%');
         const direction = stepMode === 0 ? 'up' : 'down';
-        const triggerDir = this.homey.flow.getActionCard('smart_knob_rotated_direction')
+        const triggerDir = this._getFlowCard('smart_knob_rotated_direction', 'action')
         if (triggerDir ) triggerDir.trigger(this, { direction, level: pct }, {}).catch(() => {});
-        const triggerRot = this.homey.flow.getActionCard('smart_knob_rotated')
+        const triggerRot = this._getFlowCard('smart_knob_rotated', 'action')
         if (triggerRot ) triggerRot.trigger(this, { level: pct }, {}).catch(() => {});
       });
     }
@@ -95,7 +95,7 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
     const power = ep1.clusters?.powerConfiguration || ep1.clusters?.[1];
     if (power?.on) {
       power.on('attr.batteryPercentageRemaining', (val) => {
-        const pct = Math.min(100, Math.round(val);
+        const pct = Math.min(100, Math.round(val));
         this.setCapabilityValue('measure_battery', pct).catch(() => {});
       });
     }
@@ -110,7 +110,7 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
     this._lastPressType = pressType;
     this.setCapabilityValue('button', true).catch(() => {});
     this.log(`[KNOB]  ${pressType.toUpperCase()} press`);
-    const mainTrigger = this.homey.flow.getActionCard('smart_knob_pressed')
+    const mainTrigger = this._getFlowCard('smart_knob_pressed', 'action')
     if (mainTrigger ) mainTrigger.trigger(this, { press_type: pressType }, {}).catch(() => {});
     
     const specificId = { single: 'smart_knob_single_press', double: 'smart_knob_double_press', long: 'smart_knob_long_press' }[pressType];

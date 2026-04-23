@@ -65,7 +65,7 @@ function fixSetCapabilityValue(filePath) {
       const regex1 = new RegExp(
         `((?:this\\.|await\\s+this\\.|await\\s+)? setCapabilityValue\\s*\\(\\s*['"\`]${capability}['"\`]\\s*,\\s*)([a-zA-Z0-9_.\\[\\]]+)(\\s*[,\\)])`,
         'g'
-      ) ;
+      );
 
       const matches = [...content.matchAll(regex1 )];
       matches.forEach(match => {
@@ -92,7 +92,7 @@ function fixSetCapabilityValue(filePath) {
       const regex2 = new RegExp(
         `((?:this\\.|await\\s+this\\.|await\\s+)? setCapabilityValue\\s*\\(\\s*['"\`]${capability}['"\`]\\s*,\\s*)([a-zA-Z0-9_.\\[\\]]+\\.[a-zA-Z0-9_.\\[\\]]+)(\\s*[,\\)])`,
         'g'
-      ) ;
+      );
 
       const matches2 = [...content.matchAll(regex2)];
       matches2.forEach(match => {

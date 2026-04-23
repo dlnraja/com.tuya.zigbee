@@ -31,7 +31,7 @@ class USBHubDualDriver extends ZigBeeDriver {
      // v5.5.534: SDK3 CRITICAL
     this.log('USB Hub Dual Driver v5.5.534 initialized');
     // v5.13.3: Flow card handlers
-    const r=(i,fn)=>{try{this.homey.flow.getActionCard(i).registerRunListener(fn);
+    const r=(i,fn)=>{try{(() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(fn);
   
   
   

@@ -99,7 +99,7 @@ function processFile(filePath) {
     });
 
     // J. Fix trailing semicolons in ternary assignments (IntelligentDeviceAdapter pattern)
-    // ? 'noBattery' ;
+    // ? 'noBattery'  : null;
     content = content.replace(/\?\s*'([^']+)'\s*;/g, (m, p1) => {
         modified = true;
         return `? '${p1}' : null;`;

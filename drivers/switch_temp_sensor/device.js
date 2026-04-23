@@ -218,7 +218,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
             maxInterval: 3600,
             minChange: 10 // 0.1Â°C
           }
-        }).catch(() => { });
+        }).catch(() => {});
         this.log(' Configured reporting on cluster 57346');
       }
     } catch (e) { /* ignore */ }
@@ -265,7 +265,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
       return;
     }
 
-    const rounded = Math.round(temp *10 * 10);
+    const rounded = Math.round(temp *10      * 10);
     this.log(` Temperature: ${rounded}Â°C`);
 
     if (this.hasCapability('measure_temperature')) {

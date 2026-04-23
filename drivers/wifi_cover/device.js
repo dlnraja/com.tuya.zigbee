@@ -19,7 +19,7 @@ class WiFiCoverDevice extends TuyaLocalDevice {
         } },
       '2': { capability: 'windowcoverings_set', writable: true,
         transform: (v) => v * 100,
-        reverseTransform: (v) =>Math.round(v)})
+        reverseTransform: (v) => Math.round(v) },
       '3': { capability: 'windowcoverings_set',
         transform: (v) => v * 100 },
       '5': { capability: 'unknown' },

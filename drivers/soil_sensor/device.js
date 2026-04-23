@@ -160,7 +160,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
     // Conductivity / EC
     if (dp === 112 || dp === 4 || dp === 106) {
       this.log(`[SOIL] EC/Conductivity DP${dp} = ${parsedValue}`);
-      this.setCapabilityValue('measure_ec', parseFloat(parsedValue).catch(() => {}));
+      this.setCapabilityValue('measure_ec', parseFloat(parsedValue)).catch(() => { });
       return;
     }
 
@@ -170,7 +170,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       if (dp === 105 && moisture > 100) moisture = moisture * 10;
       
       const targetCap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';
-      this.setCapabilityValue(targetCap, parseFloat(moisture).catch(() => {}));
+      this.setCapabilityValue(targetCap, parseFloat(moisture)).catch(() => { });
       this._updateWaterAlarm();
       this._triggerMoistureFlows(moisture);
       return;
@@ -184,7 +184,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         else if (Math.abs(temp) > 100) temp = temp * 10;
       }
       this.log(`[SOIL] Temp DP${dp} = ${temp}Â°C`);
-      this.setCapabilityValue('measure_temperature', parseFloat(temp).catch(() => {}));
+      this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
       this._triggerTemperatureFlows(temp);
       return;
     }

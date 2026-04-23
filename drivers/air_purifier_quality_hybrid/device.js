@@ -103,7 +103,7 @@ class AirQualityCO2Device extends UnifiedSensorBase {
     // Setup ZCL temp/humidity (specific to air quality sensors)
     await this._setupAirQualityZCL(zclNode);
 
-    this.log('[CO2]  Ready with cross-validation');
+    this.log('[CO2] Ready with cross-validation');
   }
 
   /**
@@ -118,7 +118,7 @@ class AirQualityCO2Device extends UnifiedSensorBase {
     // Calculate and log AQI
     const aqi = this._airQualityInference.calculateAQI();
     if (aqi !== null) {
-      this.log(`[CO2]  Air Quality Index: ${aqi} (CO2: ${validatedCO2}ppm)`);
+      this.log(`[CO2] Air Quality Index: ${aqi} (CO2: ${validatedCO2}ppm)`);
     }
 
     return validatedCO2;
@@ -136,16 +136,31 @@ class AirQualityCO2Device extends UnifiedSensorBase {
 
   async _setupAirQualityZCL(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1 ) return;
+    if (!ep1) return;
 
     try {
-      const temp = ep1.clusters?.msTemperatureMeasurement;if (temp?.on) {
-        temp.on('attr.measuredValue', (v ) => { const t=v/100; if(t>=-40&&t<=80) this._safeSetCapability('measure_temperature',t).catch(()=>{}); else this.log('[CO2] ZCL temp rejected:',t);
-      });
+      const temp = ep1.clusters?.msTemperatureMeasurement;
+      if (temp?.on) {
+        temp.on('attr.measuredValue', (v) => {
+          const t = v / 100;
+          if (t >= -40 && t <= 80) {
+            this._safeSetCapability('measure_temperature', t).catch(() => {});
+          } else {
+            this.log('[CO2] ZCL temp rejected:', t);
+          }
+        });
       }
-      const hum = ep1.clusters?.msRelativeHumidity;if (hum?.on) {
-        hum.on('attr.measuredValue', (v ) => { const h=v/100; if(h>=0&&h<=100) this._safeSetCapability('measure_humidity',h).catch(()=>{}); else this.log('[CO2] ZCL hum rejected:',h);
-      });
+
+      const hum = ep1.clusters?.msRelativeHumidity;
+      if (hum?.on) {
+        hum.on('attr.measuredValue', (v) => {
+          const h = v / 100;
+          if (h >= 0 && h <= 100) {
+            this._safeSetCapability('measure_humidity', h).catch(() => {});
+          } else {
+            this.log('[CO2] ZCL hum rejected:', h);
+          }
+        });
       }
     } catch (e) { /* ignore */ }
   }
@@ -169,6 +184,3 @@ class AirQualityCO2Device extends UnifiedSensorBase {
 }
 
 module.exports = AirQualityCO2Device;
-
-
-

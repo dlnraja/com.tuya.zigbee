@@ -35,7 +35,7 @@ function patchDriver(driverName, field, value) {
 
 // Known safe auto-add: only Tuya _T* mfrs and standard Tuya productIds
 const SAFE_MFR = /^(_T[A-Z][A-Za-z0-9]{3,5}_[a-z0-9]{4,16}|SONOFF|eWeLink|EWELINK)$/;
-const SAFE_PID = /^(TS\d{4}[A-Z]? |SNZB-\d{2}\w*|ZBMINI\w*|S31ZB|S26R2ZB|S[46]0ZBT\w+|BASICZBR\d*|01MINIZB|ZBCurtain|TRVZB|SWV-\w+|MG1_\w+|ZBM5[\w-]+ )$/       ;
+const SAFE_PID = /^(TS\d{4}[A-Z]? |SNZB-\d{2}\w*|ZBMINI\w*|S31ZB|S26R2ZB|S[46]0ZBT\w+|BASICZBR\d*|01MINIZB|ZBCurtain|TRVZB|SWV-\w+|MG1_\w+|ZBM5[\w-]+ )$/        : null;
 
 function main() {
   const report = loadMissing();

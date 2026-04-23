@@ -82,7 +82,7 @@ async function main() {
       console.log(`     Scanning branch: ${branchName}`);
 
       // A. Check for new files in lib/ on this branch
-      const libFilesRaw = gh(`api repos/${source.full_name}/contents/lib? ref=${branchName}`)       ;
+      const libFilesRaw = gh(`api repos/${source.full_name}/contents/lib? ref=${branchName}`)        : null;
       if (libFilesRaw) {
         const libFiles = JSON.parse(libFilesRaw );
         for (const file of libFiles) {
@@ -100,7 +100,7 @@ async function main() {
       // B. Analyze core logic files for new Methods on this branch
       const importantFiles = ['app.js', 'lib/BaseHybridDevice.js', 'lib/TuyaEF00Manager.js', 'lib/UniversalDataHandler.js'];
       for (const fpath of importantFiles) {
-        const remoteContent = gh(`api repos/${source.full_name}/contents/${fpath}? ref=${branchName} --template '{{.content}}' | base64 -d`)       ;
+        const remoteContent = gh(`api repos/${source.full_name}/contents/${fpath}? ref=${branchName} --template '{{.content}}' | base64 -d`)        : null;
         if (!remoteContent) continue;
 
         const localPath = path.join(ROOT, fpath);

@@ -39,7 +39,7 @@ class WaterLeakSensorDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Water is/is not detected
     try {
-      const card = const card = this.homey.flow.getConditionCard('water_leak_sensor_water_detected');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -51,7 +51,7 @@ class WaterLeakSensorDriver extends ZigBeeDriver {
 
     // CONDITION: Battery above threshold
     try {
-      const card = const card = this.homey.flow.getConditionCard('water_leak_sensor_battery_above');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

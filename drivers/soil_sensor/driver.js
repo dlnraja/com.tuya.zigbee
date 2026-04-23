@@ -28,7 +28,7 @@ class SoilSensorDriver extends ZigBeeDriver {
 
     const safeGetTrigger = (id) => {
       try {
-        return this.homey.flow.getTriggerCard(id);
+        return (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       } catch (e) {
         this.log(`[FLOW] Trigger '${id}' not defined - skipping`);
         return null;
@@ -37,7 +37,7 @@ class SoilSensorDriver extends ZigBeeDriver {
 
     const safeGetCondition = (id) => {
       try {
-        return this.homey.flow.getConditionCard(id);
+        return (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       } catch (e) {
         this.log(`[FLOW] Condition '${id}' not defined - skipping`);
         return null;

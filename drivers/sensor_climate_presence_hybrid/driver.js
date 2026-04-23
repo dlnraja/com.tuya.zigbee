@@ -22,17 +22,17 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    try { this.homey.flow.getTriggerCard('sensor_climate_presence_hybrid_sensor_presence_radar_hybrid_presence_detected'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('sensor_climate_presence_hybrid_sensor_presence_radar_hybrid_presence_cleared'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('sensor_climate_presence_hybrid_presence_sensor_radar_motion_detected_sensor_presence_radar_hybrid'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('sensor_climate_presence_hybrid_presence_sensor_radar_illuminance_changed_sensor_presence_radar_hybrid'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('sensor_climate_presence_hybrid_presence_sensor_radar_distance_changed_sensor_presence_radar_hybrid'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('sensor_climate_presence_hybrid_presence_sensor_radar_lux_changed_sensor_presence_radar_hybrid'); } catch (e) {}
-    try { this.homey.flow.getTriggerCard('sensor_climate_presence_hybrid_presence_sensor_radar_battery_low_sensor_presence_radar_hybrid'); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
 
     // CONDITIONS
     try {
-      const card = const card = this.homey.flow.getConditionCard('sensor_climate_presence_hybrid_presence_sensor_radar_is_present_sensor_presence_radar_hybrid');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -42,7 +42,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition sensor_climate_presence_hybrid_presence_sensor_radar_is_present_sensor_presence_radar_hybrid: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('sensor_climate_presence_hybrid_presence_sensor_radar_illuminance_above_sensor_presence_radar_hybrid');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -52,7 +52,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition sensor_climate_presence_hybrid_presence_sensor_radar_illuminance_above_sensor_presence_radar_hybrid: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('sensor_climate_presence_hybrid_presence_sensor_radar_distance_within_sensor_presence_radar_hybrid');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -62,7 +62,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition sensor_climate_presence_hybrid_presence_sensor_radar_distance_within_sensor_presence_radar_hybrid: ${err.message}`); }
 
     try {
-      const card = const card = this.homey.flow.getConditionCard('sensor_climate_presence_hybrid_presence_sensor_radar_motion_active_sensor_presence_radar_hybrid');
+      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;

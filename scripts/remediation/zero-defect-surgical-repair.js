@@ -69,10 +69,10 @@ const REPLACEMENT_PATTERNS = [
         replace: 'let i = 1;'
     },
     // 10. IntelligentDeviceAdapter configKey fix
-    // Pattern: ? 'noBattery' ; -> ? 'noBattery' : null;
+    // Pattern: ? 'noBattery'  : null; -> ? 'noBattery' : null;
     {
         name: 'Adapter configKey fix',
-        regex: / \? 'noBattery'\s+;/g,
+        regex: / \? 'noBattery'\s+ : null;/g,
         replace: " ? 'noBattery' : null;"
     },
     // 11. EnergyManager corruption (specific example)

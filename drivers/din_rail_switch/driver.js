@@ -23,7 +23,7 @@ class DinRailSwitchDriver extends Driver {
 
     this.log('Din Rail Switch driver initialized');
     // v5.13.3: Register flow card action handlers
-    const reg=(id,fn)=>{try{this.homey.flow.getActionCard(id).registerRunListener(fn);
+    const reg=(id,fn)=>{try{(() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(fn);
   
   
   

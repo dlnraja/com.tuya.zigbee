@@ -50,8 +50,11 @@ jobs:
         with:
           fetch-depth: 0
       
-      - name: 🛡️ ULTIMATE INTEGRITY GATE & SYNTAX PURITY
+      - name: 🛡️ ULTIMATE INTEGRITY GATE
         run: node scripts/ULTIMATE_CHECK.js
+      
+      - name: 🛡️ STRICT SYNTAX PURITY GUARD
+        run: node scripts/maintenance/STRICT_SYNTAX_GUARD.js
 
       - name: 📦 Setup Unified
         uses: ./.github/actions/setup-unified

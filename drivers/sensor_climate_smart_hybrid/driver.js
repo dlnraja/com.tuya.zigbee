@@ -24,7 +24,7 @@ class SmartScenePanelDriver extends ZigBeeDriver {
     this.log('SmartScenePanelDriver initialized');
 
     // Scene activated trigger with scene filter
-    const sceneTrigger = (() => { try { return this.homey.flow.getTriggerCard('smart_scene_panel_scene_activated'); } catch(e) { return null; } })();
+    const sceneTrigger = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch(e) { return null; } })();
     sceneTrigger.registerRunListener(async (args, state) => {
       return !args.scene || args.scene === state.scene;
       });

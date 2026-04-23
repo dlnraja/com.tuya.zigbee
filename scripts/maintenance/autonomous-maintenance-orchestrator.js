@@ -50,7 +50,7 @@ async function main() {
   const startTime = Date.now();
   console.log('---  Universal Tuya Hybrid Engine Orchestrator Session ---');
   
-  const state = fs.existsSync(STATE_FILE) ? JSON.parse(fs.readFileSync(STATE_FILE , 'utf8')) : { lastRun: 0, errors: [] }      ;
+  const state = fs.existsSync(STATE_FILE) ? JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')) : { lastRun: 0, errors: [] };
 
   // PHASE 1: Intelligence & Triage (Task Divider)
   // This identifies what needs to be fixed and blocks regressions
@@ -98,7 +98,7 @@ async function main() {
   const isValid = run('npx homey app validate --level publish', 'Ph5: Homey SDK3 Validation Audit');
 
   // PHASE 6: Report Generation
-  const duration = Date.now() - startTime * 1000).toFixed(1);
+  const duration = ((Date.now() - startTime) / 1000).toFixed(1);
   const report = {
     lastRun: Date.now(),
     duration,
