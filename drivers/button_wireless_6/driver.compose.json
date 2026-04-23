@@ -94,7 +94,8 @@
     "manufacturerName": [
       "_TZ3000_ISZEGWPD",
       "_TZE200_ZXX7MI77",
-      "_TZE204_ZXX7MI77"
+      "_TZE204_ZXX7MI77",
+      "_TZ3000_iszegwpd"
     ],
     "productId": [
       "TS0046",
@@ -176,7 +177,7 @@
   "images": {
     "small": "drivers/button_wireless_6/assets/images/small.png",
     "large": "drivers/button_wireless_6/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

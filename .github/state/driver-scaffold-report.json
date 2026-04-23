@@ -1,11 +1,13 @@
 {
-  "timestamp": "2026-04-12T05:05:17.357Z",
+  "timestamp": "2026-04-22T05:47:23.677Z",
   "conflicts": [
     {
       "pid": "RH3052",
       "drivers": [
         "air_purifier",
+        "air_purifier_climate_hybrid",
         "climate_sensor",
+        "device_air_purifier_climate_hybrid",
         "temphumidsensor",
         "universal_zigbee"
       ],
@@ -20,10 +22,13 @@
       "pid": "TS0201",
       "drivers": [
         "air_purifier",
+        "air_purifier_climate_hybrid",
         "air_purifier_lcdtemphumidsensor_hybrid",
         "climate_sensor",
+        "device_air_purifier_climate_hybrid",
         "lcdtemphumidsensor",
         "sensor_climate_lcdtemphumidsensor_hybrid",
+        "sensor_lcdtemphumidsensor_temphumidsensor_hybrid",
         "temphumidsensor",
         "universal_zigbee"
       ],
@@ -38,7 +43,9 @@
       "pid": "TS0222",
       "drivers": [
         "air_purifier",
+        "air_purifier_climate_hybrid",
         "climate_sensor",
+        "device_air_purifier_climate_hybrid",
         "illuminance_sensor",
         "light_sensor_outdoor"
       ],
@@ -52,9 +59,12 @@
       "pid": "TY0201",
       "drivers": [
         "air_purifier",
+        "air_purifier_climate_hybrid",
         "climate_sensor",
+        "device_air_purifier_climate_hybrid",
         "lcdtemphumidsensor",
         "sensor_climate_lcdtemphumidsensor_hybrid",
+        "sensor_lcdtemphumidsensor_temphumidsensor_hybrid",
         "temphumidsensor",
         "universal_zigbee"
       ],
@@ -62,211 +72,6 @@
         "fan",
         "sensor",
         "other"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "rh3052",
-      "drivers": [
-        "air_purifier",
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "classes": [
-        "fan",
-        "sensor"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0201",
-      "drivers": [
-        "air_purifier",
-        "air_purifier_lcdtemphumidsensor_hybrid",
-        "climate_sensor",
-        "lcdtemphumidsensor",
-        "sensor_climate_lcdtemphumidsensor_hybrid",
-        "temphumidsensor"
-      ],
-      "classes": [
-        "fan",
-        "sensor"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0222",
-      "drivers": [
-        "air_purifier",
-        "climate_sensor",
-        "illuminance_sensor",
-        "light_sensor_outdoor"
-      ],
-      "classes": [
-        "fan",
-        "sensor"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0601",
-      "drivers": [
-        "air_purifier",
-        "air_purifier_climate_hybrid",
-        "air_purifier_contact_hybrid",
-        "air_purifier_curtain_hybrid",
-        "air_purifier_dimmer_hybrid",
-        "air_purifier_lcdtemphumidsensor_hybrid",
-        "air_purifier_motion_hybrid",
-        "air_purifier_presence_hybrid",
-        "air_purifier_siren_hybrid",
-        "air_purifier_soil_hybrid",
-        "air_purifier_switch_hybrid",
-        "air_quality_co2",
-        "air_quality_comprehensive",
-        "air_quality_comprehensive_hybrid",
-        "button_emergency_sos",
-        "button_wireless_6",
-        "ceiling_fan",
-        "climate_sensor",
-        "climate_sensor_gas_hybrid",
-        "climate_sensor_plug_hybrid",
-        "climate_sensor_presence_hybrid",
-        "co_sensor",
-        "contact_sensor",
-        "contact_sensor_plug_hybrid",
-        "curtain_motor",
-        "curtain_motor_shutter_hybrid",
-        "curtain_motor_tilt",
-        "curtain_motor_tilt_hybrid",
-        "device_air_purifier_floor_hybrid",
-        "device_air_purifier_hybrid",
-        "device_air_purifier_motion_hybrid",
-        "device_air_purifier_plug_hybrid",
-        "device_air_purifier_presence_hybrid",
-        "device_air_purifier_quality_hybrid",
-        "device_air_purifier_radiator_hybrid",
-        "device_air_purifier_smoke_hybrid",
-        "device_air_purifier_soil_hybrid",
-        "device_air_purifier_thermostat_hybrid",
-        "device_din_rail_meter_hybrid",
-        "device_floor_heating_hybrid",
-        "device_floor_heating_thermostat_hybrid",
-        "device_generic_tuya_universal_hybrid",
-        "device_plug_energy_hybrid",
-        "device_radiator_valve_hybrid",
-        "device_radiator_valve_smart_hybrid",
-        "dimmer_3gang",
-        "dimmer_dual_channel",
-        "dimmer_dual_channel_hybrid",
-        "dimmer_wall_1gang",
-        "dimmer_wall_plug_hybrid",
-        "dimmer_wall_switch_hybrid",
-        "dimmer_wall_water_hybrid",
-        "din_rail_meter",
-        "din_rail_switch",
-        "door_controller",
-        "door_controller_garage_hybrid",
-        "doorbell",
-        "energy_meter_3phase",
-        "fan_controller",
-        "fingerprint_lock",
-        "floor_heating_thermostat",
-        "formaldehyde_sensor",
-        "garage_door",
-        "garage_door_opener",
-        "gas_detector",
-        "gas_sensor",
-        "humidifier",
-        "hvac_air_conditioner",
-        "hvac_controller",
-        "hvac_dehumidifier",
-        "ir_blaster",
-        "lcdtemphumidsensor",
-        "lcdtemphumidsensor_plug_energy_hybrid",
-        "light_sensor_outdoor",
-        "lock_smart",
-        "motion_sensor",
-        "motion_sensor_2",
-        "pet_feeder",
-        "pet_feeder_zigbee",
-        "plug_energy_monitor_hybrid",
-        "plug_smart",
-        "pool_pump",
-        "power_clamp_meter",
-        "power_meter",
-        "presence_sensor_ceiling",
-        "presence_sensor_radar",
-        "radiator_controller",
-        "radiator_valve",
-        "radiator_valve_zigbee",
-        "rain_sensor",
-        "scene_switch_4",
-        "sensor_climate_contact_hybrid",
-        "sensor_climate_lcdtemphumidsensor_hybrid",
-        "sensor_climate_smart_hybrid",
-        "sensor_contact_plug_hybrid",
-        "sensor_contact_rain_hybrid",
-        "sensor_contact_water_hybrid",
-        "sensor_lcdtemphumidsensor_soil_hybrid",
-        "siren",
-        "siren_sirentemphumidsensor_hybrid",
-        "sirentemphumidsensor",
-        "smart_breaker",
-        "smart_heater",
-        "smart_heater_controller",
-        "smart_lcd_thermostat",
-        "smart_rcbo",
-        "smart_scene_panel",
-        "smoke_detector_advanced",
-        "soil_sensor",
-        "switch_1gang",
-        "switch_3gang",
-        "switch_4gang",
-        "switch_dimmer_1gang",
-        "switch_hybrid",
-        "switch_wall_5gang",
-        "switch_wall_6gang",
-        "switch_wall_8gang",
-        "thermostat_4ch",
-        "thermostat_tuya_dp",
-        "usb_outlet_advanced",
-        "valve_irrigation",
-        "valve_single",
-        "vibration_sensor",
-        "water_leak_sensor",
-        "water_tank_monitor",
-        "water_valve_smart",
-        "weather_station_outdoor"
-      ],
-      "classes": [
-        "fan",
-        "sensor",
-        "windowcoverings",
-        "light",
-        "other",
-        "socket",
-        "thermostat",
-        "lock",
-        "doorbell",
-        "garagedoor",
-        "remote",
-        "heater"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ty0201",
-      "drivers": [
-        "air_purifier",
-        "climate_sensor",
-        "lcdtemphumidsensor",
-        "sensor_climate_lcdtemphumidsensor_hybrid",
-        "temphumidsensor"
-      ],
-      "classes": [
-        "fan",
-        "sensor"
       ],
       "crossClass": true
     },
@@ -295,23 +100,10 @@
       "crossClass": false
     },
     {
-      "pid": "ts1201",
-      "drivers": [
-        "blaster_remote_hybrid",
-        "ir_blaster",
-        "ir_remote"
-      ],
-      "classes": [
-        "remote"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "TS0052",
+      "pid": "TS0501",
       "drivers": [
         "bulb_dimmable",
-        "bulb_dimmable_dimmer_hybrid",
-        "dimmer_wall_1gang",
+        "bulb_white",
         "universal_zigbee"
       ],
       "classes": [
@@ -334,10 +126,42 @@
       "crossClass": true
     },
     {
-      "pid": "TS1101",
+      "pid": "TS0502B",
       "drivers": [
         "bulb_dimmable",
+        "bulb_tunable_white",
+        "bulb_tunable_white_hybrid",
+        "led_controller_dimmable",
+        "light_bulb_dimmable_tunable_hybrid",
+        "light_bulb_tunable_white_hybrid",
+        "universal_zigbee"
+      ],
+      "classes": [
+        "light",
+        "other"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TS0052",
+      "drivers": [
         "bulb_dimmable_dimmer_hybrid",
+        "device_generic_diy_universal_hybrid",
+        "dimmer_bulb_dimmable_hybrid",
+        "dimmer_wall_1gang",
+        "universal_zigbee"
+      ],
+      "classes": [
+        "light",
+        "other"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TS1101",
+      "drivers": [
+        "bulb_dimmable_dimmer_hybrid",
+        "dimmer_bulb_dimmable_hybrid",
         "dimmer_dual_channel",
         "dimmer_dual_channel_hybrid",
         "dimmer_wall_1gang"
@@ -350,8 +174,8 @@
     {
       "pid": "TS110E",
       "drivers": [
-        "bulb_dimmable",
         "bulb_dimmable_dimmer_hybrid",
+        "dimmer_bulb_dimmable_hybrid",
         "dimmer_dual_channel",
         "dimmer_ts110e",
         "dimmer_wall_1gang"
@@ -364,8 +188,8 @@
     {
       "pid": "TS110F",
       "drivers": [
-        "bulb_dimmable",
         "bulb_dimmable_dimmer_hybrid",
+        "dimmer_bulb_dimmable_hybrid",
         "dimmer_dual_channel",
         "dimmer_wall_1gang"
       ],
@@ -373,99 +197,6 @@
         "light"
       ],
       "crossClass": false
-    },
-    {
-      "pid": "ts0052",
-      "drivers": [
-        "bulb_dimmable",
-        "bulb_dimmable_dimmer_hybrid",
-        "dimmer_wall_1gang"
-      ],
-      "classes": [
-        "light"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "ts0501b",
-      "drivers": [
-        "bulb_dimmable",
-        "led_controller_dimmable",
-        "wall_dimmer_1gang_1way"
-      ],
-      "classes": [
-        "light",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts1101",
-      "drivers": [
-        "bulb_dimmable",
-        "bulb_dimmable_dimmer_hybrid",
-        "dimmer_dual_channel",
-        "dimmer_dual_channel_hybrid",
-        "dimmer_wall_1gang"
-      ],
-      "classes": [
-        "light"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "ts110e",
-      "drivers": [
-        "bulb_dimmable",
-        "bulb_dimmable_dimmer_hybrid",
-        "dimmer_ts110e",
-        "dimmer_wall_1gang"
-      ],
-      "classes": [
-        "light"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "ts110f",
-      "drivers": [
-        "bulb_dimmable",
-        "bulb_dimmable_dimmer_hybrid",
-        "dimmer_wall_1gang"
-      ],
-      "classes": [
-        "light"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "TS0501",
-      "drivers": [
-        "bulb_dimmable",
-        "bulb_white",
-        "universal_zigbee"
-      ],
-      "classes": [
-        "light",
-        "other"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "TS0502B",
-      "drivers": [
-        "bulb_dimmable",
-        "bulb_tunable_white",
-        "bulb_tunable_white_hybrid",
-        "led_controller_dimmable",
-        "light_bulb_dimmable_tunable_hybrid",
-        "universal_zigbee"
-      ],
-      "classes": [
-        "light",
-        "other"
-      ],
-      "crossClass": true
     },
     {
       "pid": "TS0503A",
@@ -496,8 +227,21 @@
       "drivers": [
         "bulb_rgb",
         "bulb_rgbw",
+        "bulb_rgbw_universal_hybrid",
         "light_bulb_rgb_hybrid",
         "light_bulb_rgb_rgbw_hybrid",
+        "universal_zigbee"
+      ],
+      "classes": [
+        "light",
+        "other"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TS0505",
+      "drivers": [
+        "bulb_rgb",
         "universal_zigbee"
       ],
       "classes": [
@@ -511,6 +255,7 @@
       "drivers": [
         "bulb_rgb",
         "bulb_rgbw",
+        "bulb_rgbw_universal_hybrid",
         "light_bulb_rgb_hybrid",
         "light_bulb_rgb_rgbw_hybrid",
         "universal_zigbee"
@@ -527,6 +272,7 @@
         "bulb_rgb",
         "bulb_rgb_led_hybrid",
         "bulb_rgbw",
+        "bulb_rgbw_universal_hybrid",
         "led_strip",
         "light_bulb_rgb_hybrid",
         "light_bulb_rgb_led_hybrid",
@@ -540,63 +286,10 @@
       "crossClass": true
     },
     {
-      "pid": "ts0504b",
-      "drivers": [
-        "bulb_rgb",
-        "bulb_rgbw",
-        "light_bulb_rgb_hybrid",
-        "light_bulb_rgb_rgbw_hybrid"
-      ],
-      "classes": [
-        "light"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "ts0505a",
-      "drivers": [
-        "bulb_rgb",
-        "bulb_rgbw",
-        "light_bulb_rgb_hybrid",
-        "light_bulb_rgb_rgbw_hybrid"
-      ],
-      "classes": [
-        "light"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "ts0505b",
-      "drivers": [
-        "bulb_rgb",
-        "bulb_rgb_led_hybrid",
-        "bulb_rgbw",
-        "led_strip",
-        "light_bulb_rgb_hybrid",
-        "light_bulb_rgb_led_hybrid",
-        "light_bulb_rgb_rgbw_hybrid"
-      ],
-      "classes": [
-        "light"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "TS0505",
-      "drivers": [
-        "bulb_rgb",
-        "universal_zigbee"
-      ],
-      "classes": [
-        "light",
-        "other"
-      ],
-      "crossClass": true
-    },
-    {
       "pid": "CK-BL702-AL-01(7009_Z102LG03-1)",
       "drivers": [
         "bulb_rgbw",
+        "bulb_rgbw_universal_hybrid",
         "universal_zigbee"
       ],
       "classes": [
@@ -609,18 +302,7 @@
       "pid": "TS0504A",
       "drivers": [
         "bulb_rgbw",
-        "universal_zigbee"
-      ],
-      "classes": [
-        "light",
-        "other"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "TS0502A",
-      "drivers": [
-        "bulb_tunable_white",
+        "bulb_rgbw_universal_hybrid",
         "universal_zigbee"
       ],
       "classes": [
@@ -639,6 +321,18 @@
         "light"
       ],
       "crossClass": false
+    },
+    {
+      "pid": "TS0502A",
+      "drivers": [
+        "bulb_tunable_white",
+        "universal_zigbee"
+      ],
+      "classes": [
+        "light",
+        "other"
+      ],
+      "crossClass": true
     },
     {
       "pid": "TS0218",
@@ -690,51 +384,15 @@
       "crossClass": true
     },
     {
-      "pid": "snzb-01",
-      "drivers": [
-        "button_wireless",
-        "remote_button_wireless_hybrid"
-      ],
-      "classes": [
-        "button",
-        "sensor"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "snzb-01m",
-      "drivers": [
-        "button_wireless",
-        "button_wireless_4",
-        "remote_button_wireless_hybrid"
-      ],
-      "classes": [
-        "button",
-        "sensor"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "snzb-01p",
-      "drivers": [
-        "button_wireless",
-        "remote_button_wireless_hybrid"
-      ],
-      "classes": [
-        "button",
-        "sensor"
-      ],
-      "crossClass": true
-    },
-    {
       "pid": "TS0001",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_fingerbot_hybrid",
         "button_wireless_switch_hybrid",
         "button_wireless_wall_hybrid",
         "fingerbot",
         "fingerbot_switch_hybrid",
+        "remote_button_wireless_fingerbot_hybrid",
+        "remote_button_wireless_hybrid",
         "remote_button_wireless_valve_hybrid",
         "remote_button_wireless_wall_hybrid",
         "switch_1gang",
@@ -755,27 +413,13 @@
       "pid": "TS0001_FINGERBOT",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_fingerbot_hybrid",
-        "fingerbot"
+        "fingerbot",
+        "remote_button_wireless_fingerbot_hybrid"
       ],
       "classes": [
         "sensor",
-        "socket",
-        "button"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "TS0001_fingerbot",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_fingerbot_hybrid",
-        "fingerbot"
-      ],
-      "classes": [
-        "sensor",
-        "socket",
-        "button"
+        "button",
+        "socket"
       ],
       "crossClass": true
     },
@@ -785,6 +429,7 @@
         "button_wireless_2",
         "button_wireless_switch_hybrid",
         "button_wireless_wall_hybrid",
+        "remote_button_wireless_hybrid",
         "remote_button_wireless_usb_hybrid",
         "remote_button_wireless_wall_hybrid",
         "switch_2gang",
@@ -805,6 +450,7 @@
         "button_wireless_2",
         "button_wireless_switch_hybrid",
         "button_wireless_wall_hybrid",
+        "remote_button_wireless_hybrid",
         "remote_button_wireless_wall_hybrid",
         "switch_2gang",
         "switch_3gang",
@@ -838,6 +484,7 @@
         "button_wireless_2",
         "button_wireless_switch_hybrid",
         "button_wireless_wall_hybrid",
+        "remote_button_wireless_hybrid",
         "remote_button_wireless_wall_hybrid",
         "switch_1gang",
         "universal_zigbee",
@@ -856,6 +503,7 @@
         "button_wireless_2",
         "button_wireless_switch_hybrid",
         "button_wireless_wall_hybrid",
+        "remote_button_wireless_hybrid",
         "remote_button_wireless_wall_hybrid",
         "switch_2gang",
         "universal_zigbee",
@@ -874,6 +522,7 @@
         "button_wireless_2",
         "button_wireless_switch_hybrid",
         "button_wireless_wall_hybrid",
+        "remote_button_wireless_hybrid",
         "remote_button_wireless_wall_hybrid",
         "switch_2gang",
         "switch_3gang",
@@ -891,7 +540,6 @@
       "pid": "TS0042",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_scene_hybrid",
         "button_wireless_wall_hybrid",
         "remote_button_wireless_hybrid",
         "remote_button_wireless_scene_hybrid",
@@ -906,238 +554,6 @@
         "sensor",
         "other",
         "remote",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "TS0043",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_3",
-        "button_wireless_scene_hybrid",
-        "button_wireless_wall_hybrid",
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_scene_hybrid",
-        "remote_button_wireless_wall_hybrid",
-        "scene_switch_3",
-        "scene_switch_wall_hybrid",
-        "universal_zigbee",
-        "wall_remote_3_gang",
-        "wall_switch_3gang_1way"
-      ],
-      "classes": [
-        "sensor",
-        "other",
-        "remote",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "TS0111",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid",
-        "plug_smart",
-        "remote_button_wireless_plug_hybrid",
-        "universal_zigbee"
-      ],
-      "classes": [
-        "sensor",
-        "socket",
-        "other"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0001",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_fingerbot_hybrid",
-        "button_wireless_switch_hybrid",
-        "button_wireless_wall_hybrid",
-        "fingerbot",
-        "fingerbot_switch_hybrid",
-        "remote_button_wireless_valve_hybrid",
-        "remote_button_wireless_wall_hybrid",
-        "switch_1gang",
-        "valve_single",
-        "wall_switch_1gang_1way"
-      ],
-      "classes": [
-        "sensor",
-        "socket",
-        "button",
-        "thermostat"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0001_fingerbot",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_fingerbot_hybrid",
-        "fingerbot"
-      ],
-      "classes": [
-        "sensor",
-        "socket",
-        "button"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0002",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_switch_hybrid",
-        "button_wireless_wall_hybrid",
-        "remote_button_wireless_usb_hybrid",
-        "remote_button_wireless_wall_hybrid",
-        "switch_2gang",
-        "usb_dongle_dual_repeater",
-        "wall_switch_2gang_1way"
-      ],
-      "classes": [
-        "sensor",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0003",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_switch_hybrid",
-        "button_wireless_wall_hybrid",
-        "remote_button_wireless_wall_hybrid",
-        "switch_2gang",
-        "switch_3gang",
-        "usb_dongle_triple",
-        "wall_switch_3gang_1way"
-      ],
-      "classes": [
-        "sensor",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts000f",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_switch_hybrid",
-        "switch_1gang"
-      ],
-      "classes": [
-        "sensor",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0011",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_switch_hybrid",
-        "button_wireless_wall_hybrid",
-        "remote_button_wireless_wall_hybrid",
-        "switch_1gang",
-        "wall_switch_1gang_1way"
-      ],
-      "classes": [
-        "sensor",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0012",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_switch_hybrid",
-        "button_wireless_wall_hybrid",
-        "remote_button_wireless_wall_hybrid",
-        "switch_2gang",
-        "wall_switch_2gang_1way"
-      ],
-      "classes": [
-        "sensor",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0013",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_switch_hybrid",
-        "button_wireless_wall_hybrid",
-        "remote_button_wireless_wall_hybrid",
-        "switch_2gang",
-        "switch_3gang",
-        "wall_switch_3gang_1way"
-      ],
-      "classes": [
-        "sensor",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0042",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_scene_hybrid",
-        "button_wireless_wall_hybrid",
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_scene_hybrid",
-        "remote_button_wireless_wall_hybrid",
-        "scene_switch_2",
-        "scene_switch_wall_hybrid",
-        "wall_remote_2_gang",
-        "wall_switch_2gang_1way"
-      ],
-      "classes": [
-        "sensor",
-        "remote",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0043",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_3",
-        "button_wireless_scene_hybrid",
-        "button_wireless_wall_hybrid",
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_scene_hybrid",
-        "remote_button_wireless_wall_hybrid",
-        "scene_switch_3",
-        "scene_switch_wall_hybrid",
-        "wall_remote_3_gang",
-        "wall_switch_3gang_1way"
-      ],
-      "classes": [
-        "sensor",
-        "remote",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0111",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid",
-        "plug_smart",
-        "remote_button_wireless_plug_hybrid"
-      ],
-      "classes": [
-        "sensor",
         "socket"
       ],
       "crossClass": true
@@ -1148,12 +564,13 @@
         "button_wireless_2",
         "button_wireless_plug_hybrid",
         "button_wireless_switch_hybrid",
-        "device_plug_energy_hybrid",
+        "plug_energy_monitor",
         "plug_energy_monitor_hybrid",
         "plug_smart",
         "switch_1gang",
         "switch_hybrid",
-        "universal_zigbee"
+        "universal_zigbee",
+        "usb_outlet_advanced"
       ],
       "classes": [
         "sensor",
@@ -1163,27 +580,24 @@
       "crossClass": true
     },
     {
-      "pid": "TS0121",
+      "pid": "TS0043",
       "drivers": [
         "button_wireless_2",
-        "button_wireless_plug_hybrid",
-        "plug_energy_monitor"
+        "button_wireless_3",
+        "button_wireless_wall_hybrid",
+        "remote_button_wireless_hybrid",
+        "remote_button_wireless_scene_hybrid",
+        "remote_button_wireless_wall_hybrid",
+        "scene_switch_3",
+        "scene_switch_wall_hybrid",
+        "universal_zigbee",
+        "wall_remote_3_gang",
+        "wall_switch_3gang_1way"
       ],
       "classes": [
         "sensor",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "TSO121",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug_hybrid",
-        "plug_energy_monitor"
-      ],
-      "classes": [
-        "sensor",
+        "other",
+        "remote",
         "socket"
       ],
       "crossClass": true
@@ -1226,60 +640,6 @@
       "drivers": [
         "button_wireless_4",
         "button_wireless_smart_hybrid",
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_smart_hybrid",
-        "remote_button_wireless_wall_hybrid",
-        "smart_knob",
-        "smart_knob_rotary",
-        "smart_knob_rotary_hybrid",
-        "smart_knob_switch",
-        "smart_knob_switch_hybrid",
-        "smart_remote_1_button",
-        "wall_dimmer_1gang_1way",
-        "wall_remote_4_gang_2"
-      ],
-      "classes": [
-        "sensor",
-        "remote",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0014",
-      "drivers": [
-        "button_wireless_4",
-        "button_wireless_switch_hybrid",
-        "switch_4gang"
-      ],
-      "classes": [
-        "sensor",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0044",
-      "drivers": [
-        "button_wireless_4",
-        "handheld_remote_4_buttons",
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_wall_hybrid",
-        "wall_remote_4_gang",
-        "wall_remote_4_gang_3"
-      ],
-      "classes": [
-        "sensor",
-        "remote"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts004f",
-      "drivers": [
-        "button_wireless_4",
-        "button_wireless_smart_hybrid",
-        "remote_button_wireless_hybrid",
         "remote_button_wireless_smart_hybrid",
         "remote_button_wireless_wall_hybrid",
         "smart_knob",
@@ -1315,52 +675,29 @@
       "crossClass": true
     },
     {
-      "pid": "ts0046",
-      "drivers": [
-        "button_wireless_6",
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_wall_hybrid",
-        "wall_remote_6_gang"
-      ],
-      "classes": [
-        "sensor",
-        "remote"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts011f",
+      "pid": "TS0111",
       "drivers": [
         "button_wireless_plug_hybrid",
-        "button_wireless_switch_hybrid",
-        "device_plug_energy_hybrid",
-        "plug_energy_monitor_hybrid",
         "plug_smart",
-        "switch_1gang",
-        "switch_hybrid"
+        "remote_button_wireless_hybrid",
+        "remote_button_wireless_plug_hybrid",
+        "universal_zigbee"
       ],
       "classes": [
         "socket",
-        "sensor"
+        "sensor",
+        "other"
       ],
       "crossClass": true
     },
     {
-      "pid": "ts0121",
+      "pid": "TS0121",
       "drivers": [
         "button_wireless_plug_hybrid",
-        "plug_energy_monitor"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "tso121",
-      "drivers": [
         "button_wireless_plug_hybrid",
-        "plug_energy_monitor"
+        "plug_energy_monitor",
+        "plug_energy_monitor",
+        "plug_smart"
       ],
       "classes": [
         "socket"
@@ -1371,7 +708,6 @@
       "pid": "TS0041",
       "drivers": [
         "button_wireless_smart_hybrid",
-        "remote_button_wireless_hybrid",
         "remote_button_wireless_smart_hybrid",
         "remote_button_wireless_wall_hybrid",
         "smart_button_switch",
@@ -1385,26 +721,23 @@
       "crossClass": true
     },
     {
-      "pid": "ts0041",
-      "drivers": [
-        "button_wireless_smart_hybrid",
-        "remote_button_wireless_hybrid",
-        "remote_button_wireless_smart_hybrid",
-        "remote_button_wireless_wall_hybrid",
-        "smart_button_switch"
-      ],
-      "classes": [
-        "sensor",
-        "remote"
-      ],
-      "crossClass": true
-    },
-    {
       "pid": "CK-TLSR8656-SS5-01(7014)",
       "drivers": [
         "climate_sensor",
         "sensor_climate_temphumidsensor_hybrid",
         "temphumidsensor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "EXCELLUX",
+      "drivers": [
+        "climate_sensor",
+        "contact_sensor",
+        "motion_sensor"
       ],
       "classes": [
         "sensor"
@@ -1450,57 +783,25 @@
       "crossClass": false
     },
     {
-      "pid": "ck-tlsr8656-ss5-01(7014)",
-      "drivers": [
-        "climate_sensor",
-        "sensor_climate_temphumidsensor_hybrid",
-        "temphumidsensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "zg-227z",
-      "drivers": [
-        "climate_sensor",
-        "sensor_climate_contact_hybrid",
-        "sensor_climate_temphumidsensor_hybrid",
-        "temphumidsensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "zg-303z",
-      "drivers": [
-        "climate_sensor",
-        "soil_sensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
       "pid": "Q9MPFHW",
       "drivers": [
         "contact_sensor",
         "sensor_contact_water_hybrid",
+        "universal_zigbee",
         "water_leak_sensor"
       ],
       "classes": [
-        "sensor"
+        "sensor",
+        "other"
       ],
-      "crossClass": false
+      "crossClass": true
     },
     {
       "pid": "TS0203",
       "drivers": [
         "contact_sensor",
+        "device_generic_tuya_universal_hybrid",
+        "sensor_presence_radar_hybrid",
         "universal_zigbee"
       ],
       "classes": [
@@ -1515,6 +816,7 @@
         "contact_sensor",
         "contact_sensor_zigbee_hybrid",
         "rain_sensor",
+        "sensor_contact_rain_hybrid",
         "sensor_contact_water_hybrid",
         "sensor_contact_zigbee_hybrid",
         "universal_zigbee",
@@ -1554,54 +856,10 @@
       "crossClass": true
     },
     {
-      "pid": "q9mpfhw",
-      "drivers": [
-        "contact_sensor",
-        "sensor_contact_water_hybrid",
-        "universal_zigbee",
-        "water_leak_sensor"
-      ],
-      "classes": [
-        "sensor",
-        "other"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0203",
-      "drivers": [
-        "contact_sensor",
-        "sensor_presence_radar_hybrid"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "ts0207",
-      "drivers": [
-        "contact_sensor",
-        "contact_sensor_zigbee_hybrid",
-        "rain_sensor",
-        "sensor_contact_rain_hybrid",
-        "sensor_contact_water_hybrid",
-        "sensor_contact_zigbee_hybrid",
-        "usb_dongle_dual_repeater",
-        "water_leak_sensor",
-        "zigbee_repeater"
-      ],
-      "classes": [
-        "sensor",
-        "socket",
-        "other"
-      ],
-      "crossClass": true
-    },
-    {
       "pid": "TS0105",
       "drivers": [
         "curtain_motor",
+        "device_generic_diy_universal_hybrid",
         "universal_zigbee"
       ],
       "classes": [
@@ -1649,16 +907,48 @@
       "crossClass": true
     },
     {
-      "pid": "ts0301",
+      "pid": "TS0026",
       "drivers": [
-        "curtain_motor",
-        "gas_sensor"
+        "device_generic_diy_universal_hybrid",
+        "universal_zigbee"
       ],
       "classes": [
-        "windowcoverings",
-        "sensor"
+        "other"
       ],
-      "crossClass": true
+      "crossClass": false
+    },
+    {
+      "pid": "TS0041A",
+      "drivers": [
+        "device_generic_diy_universal_hybrid",
+        "universal_zigbee"
+      ],
+      "classes": [
+        "other"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "TS0224",
+      "drivers": [
+        "device_generic_diy_universal_hybrid",
+        "universal_zigbee"
+      ],
+      "classes": [
+        "other"
+      ],
+      "crossClass": false
+    },
+    {
+      "pid": "TS0901",
+      "drivers": [
+        "device_generic_diy_universal_hybrid",
+        "universal_zigbee"
+      ],
+      "classes": [
+        "other"
+      ],
+      "crossClass": false
     },
     {
       "pid": "S26R2ZB",
@@ -1676,17 +966,6 @@
     },
     {
       "pid": "S31 LITE ZB",
-      "drivers": [
-        "device_plug_energy_hybrid",
-        "plug_smart"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "S31 Lite zb",
       "drivers": [
         "device_plug_energy_hybrid",
         "plug_smart"
@@ -1730,94 +1009,6 @@
       "crossClass": false
     },
     {
-      "pid": "s26r2zb",
-      "drivers": [
-        "device_plug_energy_hybrid",
-        "plug_energy_monitor_hybrid",
-        "plug_smart",
-        "switch_1gang"
-      ],
-      "classes": [
-        "socket",
-        "sensor"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "s31 lite zb",
-      "drivers": [
-        "device_plug_energy_hybrid",
-        "plug_smart"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "s40lite",
-      "drivers": [
-        "device_plug_energy_hybrid",
-        "plug_smart"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "s60zbtpf",
-      "drivers": [
-        "device_plug_energy_hybrid",
-        "plug_smart"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "s60zbtpg",
-      "drivers": [
-        "device_plug_energy_hybrid",
-        "plug_smart"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "s31zb",
-      "drivers": [
-        "device_plug_energy_hybrid",
-        "plug_energy_monitor",
-        "plug_energy_monitor_hybrid",
-        "switch_1gang"
-      ],
-      "classes": [
-        "socket",
-        "sensor"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "zbminil2",
-      "drivers": [
-        "device_plug_energy_hybrid",
-        "module_mini_switch",
-        "module_mini_switch_hybrid",
-        "plug_energy_monitor",
-        "plug_energy_monitor_hybrid",
-        "switch_1gang"
-      ],
-      "classes": [
-        "socket",
-        "sensor"
-      ],
-      "crossClass": true
-    },
-    {
       "pid": "TS0049",
       "drivers": [
         "device_plug_smart_hybrid",
@@ -1831,22 +1022,6 @@
         "socket",
         "other",
         "thermostat"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0049",
-      "drivers": [
-        "device_plug_smart_hybrid",
-        "device_plug_smart_water_hybrid",
-        "plug_smart",
-        "valve_irrigation",
-        "water_valve_garden"
-      ],
-      "classes": [
-        "socket",
-        "thermostat",
-        "other"
       ],
       "crossClass": true
     },
@@ -1880,7 +1055,8 @@
         "gas_sensor",
         "motion_sensor",
         "presence_sensor_radar",
-        "sensor_motion_presence_hybrid"
+        "sensor_motion_presence_hybrid",
+        "sensor_presence_radar_hybrid"
       ],
       "classes": [
         "sensor"
@@ -1898,19 +1074,6 @@
         "other"
       ],
       "crossClass": true
-    },
-    {
-      "pid": "ts0225",
-      "drivers": [
-        "gas_sensor",
-        "motion_sensor",
-        "presence_sensor_radar",
-        "sensor_motion_presence_hybrid"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
     },
     {
       "pid": "S31ZB",
@@ -1964,29 +1127,6 @@
       "crossClass": true
     },
     {
-      "pid": "snzb-06p",
-      "drivers": [
-        "plug_energy_monitor",
-        "presence_sensor_radar"
-      ],
-      "classes": [
-        "socket",
-        "sensor"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "zbmini",
-      "drivers": [
-        "module_mini_switch",
-        "switch_1gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
       "pid": "TRI-C1ZR",
       "drivers": [
         "led_controller_dimmable",
@@ -2011,42 +1151,7 @@
       "crossClass": true
     },
     {
-      "pid": "tri-c1zr",
-      "drivers": [
-        "led_controller_dimmable",
-        "wall_dimmer_1gang_1way"
-      ],
-      "classes": [
-        "light",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "tri-k1zr",
-      "drivers": [
-        "led_controller_dimmable",
-        "wall_dimmer_1gang_1way"
-      ],
-      "classes": [
-        "light",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
       "pid": "01MINIZB",
-      "drivers": [
-        "module_mini_switch",
-        "switch_1gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "01minizb",
       "drivers": [
         "module_mini_switch",
         "switch_1gang"
@@ -2112,61 +1217,6 @@
       "crossClass": false
     },
     {
-      "pid": "zbm5-1c-120",
-      "drivers": [
-        "module_mini_switch",
-        "switch_1gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "zbminil2-r2",
-      "drivers": [
-        "module_mini_switch",
-        "switch_1gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "zbminir",
-      "drivers": [
-        "module_mini_switch",
-        "switch_1gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "zbminir2",
-      "drivers": [
-        "module_mini_switch",
-        "switch_1gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "zbminir2-r2",
-      "drivers": [
-        "module_mini_switch",
-        "switch_1gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
       "pid": "IH012-RT01",
       "drivers": [
         "motion_sensor",
@@ -2215,20 +1265,10 @@
       "crossClass": true
     },
     {
-      "pid": "ts0101",
-      "drivers": [
-        "plug_smart",
-        "switch_1gang"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false
-    },
-    {
       "pid": "ZG-204ZL",
       "drivers": [
         "presence_sensor_radar",
+        "sensor_presence_radar_hybrid",
         "universal_zigbee"
       ],
       "classes": [
@@ -2241,6 +1281,7 @@
       "pid": "ZG-204ZM",
       "drivers": [
         "presence_sensor_radar",
+        "sensor_presence_radar_hybrid",
         "universal_zigbee"
       ],
       "classes": [
@@ -2250,29 +1291,7 @@
       "crossClass": true
     },
     {
-      "pid": "zg-204zl",
-      "drivers": [
-        "presence_sensor_radar",
-        "sensor_presence_radar_hybrid"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "zg-204zm",
-      "drivers": [
-        "presence_sensor_radar",
-        "sensor_presence_radar_hybrid"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "zg-204zv",
+      "pid": "ZG-204ZV",
       "drivers": [
         "presence_sensor_radar",
         "sensor_presence_radar_hybrid"
@@ -2307,45 +1326,7 @@
       "crossClass": false
     },
     {
-      "pid": "zg-222z",
-      "drivers": [
-        "rain_sensor",
-        "water_leak_sensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
-      "pid": "zg-223z",
-      "drivers": [
-        "rain_sensor",
-        "water_leak_sensor"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
-    },
-    {
       "pid": "TS0726",
-      "drivers": [
-        "scene_switch_2",
-        "scene_switch_3",
-        "switch_1gang",
-        "switch_hybrid",
-        "switch_wall_6gang",
-        "wall_switch_4gang_1way"
-      ],
-      "classes": [
-        "sensor",
-        "socket"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "ts0726",
       "drivers": [
         "scene_switch_2",
         "scene_switch_3",
@@ -2373,18 +1354,6 @@
         "other"
       ],
       "crossClass": true
-    },
-    {
-      "pid": "ers-10tzbvk-aa",
-      "drivers": [
-        "scene_switch_4",
-        "smart_knob",
-        "smart_knob_rotary"
-      ],
-      "classes": [
-        "sensor"
-      ],
-      "crossClass": false
     },
     {
       "pid": "TS0216",
@@ -2530,77 +1499,16 @@
       "crossClass": true
     }
   ],
-  "uncoveredFPs": [
-    {
-      "johanDriver": "double_power_point_2",
-      "missingMfrs": [
-        "_TYZB01_hlla45kx"
-      ],
-      "pids": [
-        "TS011F"
-      ],
-      "class": "socket",
-      "pidsCovered": true
-    },
-    {
-      "johanDriver": "lcdtemphumidsensor",
-      "missingMfrs": [
-        "_TYZB01_iuepbmpv"
-      ],
-      "pids": [
-        "TS0201",
-        "TY0201"
-      ],
-      "class": "sensor",
-      "pidsCovered": true
-    },
-    {
-      "johanDriver": "outdoor_2_socket",
-      "missingMfrs": [
-        "_TZ3000_uwkja6z1"
-      ],
-      "pids": [
-        "TS011F"
-      ],
-      "class": "socket",
-      "pidsCovered": true
-    },
-    {
-      "johanDriver": "plug",
-      "missingMfrs": [
-        "_TZ3000_ew31dmgx",
-        "_TZ3000_wamqdr3f"
-      ],
-      "pids": [
-        "TS011F"
-      ],
-      "class": "socket",
-      "pidsCovered": true
-    },
-    {
-      "johanDriver": "smartplug",
-      "missingMfrs": [
-        "_TYZB01_iuepbmpv",
-        "_TZ3000_wzmuk9ai"
-      ],
-      "pids": [
-        "TS0121",
-        "TSO121",
-        "TS011F"
-      ],
-      "class": "socket",
-      "pidsCovered": true
-    }
-  ],
+  "uncoveredFPs": [],
   "missingDrivers": [],
   "scaffolded": [],
   "errors": [],
   "summary": {
-    "ourDrivers": 309,
+    "ourDrivers": 323,
     "johanDrivers": 113,
-    "pidConflicts": 175,
-    "crossClassConflicts": 118,
-    "uncoveredFPGroups": 5,
+    "pidConflicts": 108,
+    "crossClassConflicts": 79,
+    "uncoveredFPGroups": 0,
     "missingDriverTypes": 0,
     "scaffolded": 0,
     "fpsAdded": 0,
