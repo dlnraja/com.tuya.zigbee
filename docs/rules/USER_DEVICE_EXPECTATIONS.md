@@ -2851,3 +2851,12 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | _TZE284_uo8qcagc + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
 | _TZ3000_rgpqqmbj + TS0601 | dlnraja/com.tuya.zigbee#279 | device_request |
 | _TZ3000_rgpqqmbj + Arteco | dlnraja/com.tuya.zigbee#279 | device_request |
+
+
+## Auto-discovered from GitHub (2026-04-26)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZE284_aaeasoll + TS0601 | JohanBendz/com.tuya.zigbee#1379 | device_request |
+| example + TS0601 | JohanBendz/com.tuya.zigbee#1379 | device_request |
+| vision + TS0601 | JohanBendz/com.tuya.zigbee#1379 | device_request |
