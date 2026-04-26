@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-26T11:46:55.214Z",
+  "ts": "2026-04-26T12:00:25.414Z",
   "currentCount": 3368,
   "src": {
     "johan": {
@@ -11090,6 +11090,15 @@
         },
         {
           "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1380,
+          "title": "Device Request - Water Leakage Sensor - Shenzen Xriver Technology / _TZ3000_baeiitad / TS0207",
+          "mfrs": [
+            "_TZ3000_baeiitad",
+            "_TZ3000_baeiitad"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
           "num": 1379,
           "title": "Device Request - [SmarterCurry Solar Lux Sensor] - [SmarterCurry] / [TZE284_aaeasoll / TS0601]",
           "mfrs": [
@@ -11232,16 +11241,6 @@
           "mfrs": [
             "_TZ3000_gwkzibhs",
             "_TZ3000_gwkzibhs"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1363,
-          "title": "Device Request - ZIGBEE Soil moister sensor - _TZE284_hdml1aav / [TS0601]",
-          "mfrs": [
-            "_TZE284_hdml1aav",
-            "_TZE284_hdml1aav",
-            "_TZE284_hdml1aav"
           ]
         }
       ]
