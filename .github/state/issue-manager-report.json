@@ -1,28 +1,48 @@
 {
-  "timestamp": "2026-04-26T09:48:33.715Z",
+  "timestamp": "2026-04-27T10:17:23.935Z",
   "appVersion": "7.4.9",
   "responded": 0,
   "closed": 0,
   "labeled": 0,
   "issuesProcessed": 107,
   "prsProcessed": 37,
-  "skipped": 105,
+  "skipped": 106,
   "newFingerprints": [
     {
-      "fp": "_TZE284_aaeasoll + TS0601",
-      "source": "JohanBendz/com.tuya.zigbee#1379",
+      "fp": "_TZ3000_baeiitad + TS0207",
+      "source": "JohanBendz/com.tuya.zigbee#1380",
       "type": "device_request"
     },
     {
-      "fp": "example + TS0601",
-      "source": "JohanBendz/com.tuya.zigbee#1379",
+      "fp": "_TZ3000_baeiitad + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1380",
       "type": "device_request"
     },
     {
-      "fp": "vision + TS0601",
-      "source": "JohanBendz/com.tuya.zigbee#1379",
+      "fp": "example + TS0207",
+      "source": "JohanBendz/com.tuya.zigbee#1380",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1380",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS0207",
+      "source": "JohanBendz/com.tuya.zigbee#1380",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1380",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_ + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1380",
       "type": "device_request"
     }
   ],
-  "evolutionSummary": "Project evolution: 107 issues and 37 PRs processed, yielding 3 new fingerprints—_TZE284_aaeasoll, example, and vision (all TS0601) sourced from community request #1379—expanding coverage while preserving legacy anchors. Core stability improved via time-sync fixes (10-byte seq-aware payloads), double-division bug resolution (divisor≠1 skip), and BSEED ZCL broadcast guardrails (per-EP state tracking, 2s windows). Dynamic healing strengthened with passive 0xEF00 listeners for sleepy TS02xx/TS004x devices, eliminating “56 years ago” symptoms, and mains-powered sensors now correctly drop measure_battery. Flow card registration hardened with _flowCardsRegistered guards and SDK3-compliant get[Type]Card usage; multi-gang cards filter by capability (onoff.gangN) not driver_id. PhysicalButtonMixin deduplication and app-command windows tightened to 2s. Analytics, OTA, and quirks layers matured; nightly/monthly automation now triages upstream, scans forks, and enforces caseless fingerprint matching. Action items: integrate the three new TS0601 DPs, validate backlight strings (off/normal/inverted), and extend energy DP heuristics for 101–105 ranges."
+  "evolutionSummary": "Project evolution: 107 issues and 37 PRs processed yielded 7 new fingerprints, all from JohanBendz#1380 (TZ3000 + TS0207 variants and generic placeholders). No issues closed or responses logged, indicating backlog accumulation and unvalidated requests. Action items: verify TZ3000+TS0207 sensor cluster compatibility (IASZone/PowerConfig), add concrete manufacturer mappings, retire placeholder “example/vision” entries, and enforce diagnostic uploads before onboarding. Focus on closing stale requests, validating driver assignments, and converting raw PRs into actionable driver updates or legacy anchors to prevent fragmentation."
 }

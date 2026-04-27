@@ -2860,3 +2860,16 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | _TZE284_aaeasoll + TS0601 | JohanBendz/com.tuya.zigbee#1379 | device_request |
 | example + TS0601 | JohanBendz/com.tuya.zigbee#1379 | device_request |
 | vision + TS0601 | JohanBendz/com.tuya.zigbee#1379 | device_request |
+
+
+## Auto-discovered from GitHub (2026-04-27)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3000_baeiitad + TS0207 | JohanBendz/com.tuya.zigbee#1380 | device_request |
+| _TZ3000_baeiitad + generic | JohanBendz/com.tuya.zigbee#1380 | device_request |
+| example + TS0207 | JohanBendz/com.tuya.zigbee#1380 | device_request |
+| example + generic | JohanBendz/com.tuya.zigbee#1380 | device_request |
+| vision + TS0207 | JohanBendz/com.tuya.zigbee#1380 | device_request |
+| vision + generic | JohanBendz/com.tuya.zigbee#1380 | device_request |
+| _TZ3000_ + generic | JohanBendz/com.tuya.zigbee#1380 | device_request |
