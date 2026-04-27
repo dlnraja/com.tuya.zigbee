@@ -1,22 +1,44 @@
 {
-  "timestamp": "2026-04-24T08:13:31.888Z",
+  "timestamp": "2026-04-27T21:06:43.377Z",
   "driversChecked": 323,
-  "collisions": [
-    {
-      "id": "HOBEIAN|TS0601",
-      "drivers": [
-        "sensor_presence_radar_hybrid",
-        "switch_3gang"
-      ]
-    }
-  ],
+  "collisions": [],
   "buttonLogicFailures": [],
   "sdkDeprecations": [],
   "radarLogicCheck": [],
   "numericConstantViolations": [],
   "naNSafetyCheck": [
+    "lib\\adapters\\ExternalDeviceAdapter.js:163: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\adapters\\ExternalDeviceAdapter.js:164: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\adapters\\ExternalDeviceAdapter.js:165: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\adapters\\ExternalDeviceAdapter.js:166: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\adapters\\SecurityManager.js:83: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\adapters\\SecurityManager.js:347: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\adapters\\SecurityManager.js:348: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\adapters\\SecurityManager.js:349: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\diagnostics\\SystemLogsCollector.js:618: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\diagnostics\\SystemLogsCollector.js:619: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\dynamic\\SmartFlowManager.js:85: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\dynamic\\SmartFlowManager.js:205: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:100: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:145: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:171: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:273: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:277: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:281: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:308: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:310: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:311: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:321: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:348: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:349: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:373: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:375: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\IntelligentSensorInference.js:376: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\ir\\IRCodeLibrary.js:73: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\ir\\IRCodeLibrary.js:77: Potential unchecked division/multiplication (NaN risk)",
     "lib\\utils\\MathUtils.js:14: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\utils\\MathUtils.js:21: Potential unchecked division/multiplication (NaN risk)"
+    "lib\\utils\\MathUtils.js:21: Potential unchecked division/multiplication (NaN risk)",
+    "tests\\unit\\core.test.js:29: Potential unchecked division/multiplication (NaN risk)"
   ],
   "errors": [
     "lib\\ManufacturerVariationManager.js:68: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
