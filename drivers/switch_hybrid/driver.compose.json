@@ -16,11 +16,7 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "productId": [
-      "TS011F",
-      "TS0601",
-      "TS0726"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/switch_2gang/assets/learnmode.svg",
       "instruction": {
@@ -46,7 +42,7 @@
   "images": {
     "small": "drivers/switch_2gang/assets/images/small.png",
     "large": "drivers/switch_2gang/assets/images/large.png"
-    },
+  },
   "settings": [
     {
       "type": "group",

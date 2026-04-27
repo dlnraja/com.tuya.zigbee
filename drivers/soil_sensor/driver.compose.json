@@ -68,50 +68,8 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "A89G12C",
-      "_TZE200_4XSYPNEY",
-      "_TZE200_9CV5TCGQ",
-      "_TZE200_A0GSPFYZ",
-      "_TZE200_DNZ6YVL2",
-      "_TZE200_E2BEDVO9",
-      "_TZE200_FQYTFYMK",
-      "_TZE200_KA8L86IU",
-      "_TZE200_SH8V7FHD",
-      "_TZE204_4BJIXEFP",
-      "_TZE204_4XSYPNEY",
-      "_TZE204_A0GSPFYZ",
-      "_TZE204_FHVDGEUH",
-      "_TZE204_FQYTFYMK",
-      "_TZE204_SH8V7FHD",
-      "_TZE21C_DOHBHB5K",
-      "_TZE284_33BWCGA2",
-      "_TZE284_3URSCHQL",
-      "_TZE284_4XSYPNEY",
-      "_TZE284_9CQCPKGB",
-      "_TZE284_A0GSPFYZ",
-      "_TZE284_AA03YZHS",
-      "_TZE284_AP9OWRSA",
-      "_TZE284_AWEPDIWI",
-      "_TZE284_E2BEDVO9",
-      "_TZE284_FQYTFYMK",
-      "_TZE284_GA1MAEOF",
-      "_TZE284_HDML1AAV",
-      "_TZE284_IP2AKL4W",
-      "_TZE284_M1CVYNEB",
-      "_TZE284_NHGDF6QR",
-      "_TZE284_NPJ9BUG3",
-      "_TZE284_NT4PQUEF",
-      "_TZE284_OITAVOV2",
-      "_TZE284_WCKQZTDQ",
-      "_TZE284_rqcuwlsa"
-    ],
-    "productId": [
-      "ARTECO",
-      "CS-201Z",
-      "TS0601",
-      "ZG-303Z"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -443,7 +401,7 @@
   "images": {
     "small": "drivers/soil_sensor/assets/images/small.png",
     "large": "drivers/soil_sensor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

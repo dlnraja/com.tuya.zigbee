@@ -40,7 +40,7 @@ function processFile(filePath) {
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].includes('homey.flow.get') && !lines[i].includes('_getFlowCard')) {
       lines[i] = lines[i].replace(/(this\.)? homey\.flow\.get(Trigger|Condition|Action)Card\(([^)]+)\)/g, (match, prefix, type, id ) => {
-        return `this._getFlowCard(${id}, '${type.toLowerCase()}')`  : null;
+        return `this._getFlowCard(${id}, '${type.toLowerCase()}')`;
       });
       changed = true;
     }

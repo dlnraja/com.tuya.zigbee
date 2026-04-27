@@ -1,0 +1,71 @@
+# .github/workflows/syntax-check.yml
+name: Syntax & Build Validation
+
+on:
+  push:
+    branches: [master, main, auto-sync-johan-enhanced]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Syntax & Build Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: JavaScript syntax check (all lib/ files)
+        run: |
+          echo "🔍 Checking syntax of all JavaScript files in lib/..."
+          ERRORS=0
+          while IFS= read -r file; do
+            if ! node -c "$file" 2>/dev/null; then
+              echo "::error file=$file::Syntax error in $file"
+              ERRORS=$((ERRORS + 1))
+            fi
+          done < <(find lib -name "*.js" -type f)
+          
+          if [ $ERRORS -gt 0 ]; then
+            echo "::error::Found $ERRORS syntax errors"
+            exit 1
+          fi
+          echo "✅ All JS files passed syntax check"
+
+      - name: Detect critical code patterns
+        run: |
+          echo "🔍 Scanning for critical patterns..."
+          # Pattern 1: Hybrid if/ternary (invalid)
+          if grep -rn "if.*return.*:" lib/ --include="*.js" | grep -v node_modules; then
+            echo "::error::Found invalid hybrid if/ternary patterns"
+            exit 1
+          fi
+          # Pattern 2: Unmatched parentheses in return
+          if grep -rn "return.*)), " lib/ --include="*.js" | grep -v node_modules; then
+            echo "::error::Found unmatched parentheses patterns"
+            exit 1
+          fi
+          echo "✅ No critical patterns detected"
+
+      - name: ESLint validation
+        run: npx eslint lib/ --ext .js --max-warnings=0
+
+      - name: Unit Tests
+        run: npm test
+
+      - name: Homey SDK validation
+        run: npx homey app validate --level=publish

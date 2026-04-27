@@ -45,9 +45,7 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
       }
     },
-    "productId": [
-      "TS0601"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -469,7 +467,7 @@
   "images": {
     "small": "drivers/gas_detector/assets/images/small.png",
     "large": "drivers/gas_detector/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

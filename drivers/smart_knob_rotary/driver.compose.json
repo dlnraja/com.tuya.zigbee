@@ -81,14 +81,8 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_CSFLGQJ2"
-    ],
-    "productId": [
-      "ERS-10TZBVK-AA",
-      "TS004F",
-      "ZG-101ZD"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -114,7 +108,7 @@
   "images": {
     "small": "drivers/smart_knob_rotary/assets/images/small.png",
     "large": "drivers/smart_knob_rotary/assets/images/large.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

@@ -23,14 +23,8 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_1V1DXKCK",
-      "_TZE204_PDZNLBHV"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_DIMMER3"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -81,7 +75,7 @@
   "images": {
     "small": "drivers/dimmer_3gang/assets/images/small.png",
     "large": "drivers/dimmer_3gang/assets/images/large.png"
-    },
+  },
   "energy": {
     "approximation": {
       "usageOn": 60,

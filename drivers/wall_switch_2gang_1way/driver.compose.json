@@ -24,7 +24,7 @@
   "images": {
     "small": "drivers/wall_switch_2gang_1way/assets/images/small.png",
     "large": "drivers/wall_switch_2gang_1way/assets/images/large.png"
-    },
+  },
   "devices": {
     "secondSwitch": {
       "class": "socket",
@@ -42,18 +42,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_BLHVSAQF",
-      "_TZ3000_BSEED",
-      "_TZ3000_XK5UDND6",
-      "_TZ3000_Z1UEZKPI",
-      "_TZ3000_cauq1okq"
-    ],
-    "productId": [
-      "TS0002",
-      "TS0012",
-      "TS0042"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

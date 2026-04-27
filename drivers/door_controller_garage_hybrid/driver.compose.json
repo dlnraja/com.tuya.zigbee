@@ -27,9 +27,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0601"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -445,7 +443,7 @@
   "images": {
     "small": "drivers/door_controller/assets/images/small.png",
     "large": "drivers/door_controller/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

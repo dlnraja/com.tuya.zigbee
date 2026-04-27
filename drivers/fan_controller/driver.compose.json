@@ -29,28 +29,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_9HV6KPDS",
-      "_TZ3000_CPYISD3C",
-      "_TZ3000_HK7BCQHU",
-      "_TZ3000_HK7WDZRV",
-      "_TZ3210_LZQQ3U4R",
-      "_TZ3210_X1MDZM6O",
-      "_TZE200_A5ZYJDPN",
-      "_TZE200_FVLDKU9H",
-      "_TZE200_KDS0PRMV",
-      "_TZE204_2JNOY8DJ",
-      "_TZE204_A5ZYJDPN",
-      "_TZE204_FVLDKU9H",
-      "_TZE204_KDS0PRMV",
-      "_TZE284_4HDBT6RN",
-      "_TZE284_IKUL00SX",
-      "_TZE284_PGLPVDAR"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_FANCTRL"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -69,7 +49,7 @@
   "images": {
     "small": "drivers/fan_controller/assets/images/small.png",
     "large": "drivers/fan_controller/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

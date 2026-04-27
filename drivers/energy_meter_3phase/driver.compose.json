@@ -25,25 +25,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3210_402VRQ2I",
-      "_TZ3400_402VRQ2I",
-      "_TZE200_D2ZFGTIJ",
-      "_TZE200_S4SA1MCX",
-      "_TZE200_X8DIWKQB",
-      "_TZE204_D2ZFGTIJ",
-      "_TZE204_JRCFSAA3",
-      "_TZE204_S4SA1MCX",
-      "_TZE204_SDYKKWSU",
-      "_TZE204_X8DIWKQB",
-      "_TZE284_D2ZFGTIJ",
-      "_TZE284_S4SA1MCX",
-      "_TZE284_X8DIWKQB"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_3PHASE"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -56,7 +39,7 @@
   "images": {
     "small": "drivers/energy_meter_3phase/assets/images/small.png",
     "large": "drivers/energy_meter_3phase/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

@@ -68,8 +68,8 @@ class RGBBulbDevice extends UnifiedLightBase {
       8: { internal: true, type: 'music_sync' }, // Music sync mode
 
       // Settings
-      21: { capability, setting: 'power_on_behavior' }, // off, on, previous
-      26: { capability, setting: 'do_not_disturb' }, // Keep off after power loss
+      21: { setting: 'power_on_behavior' }, // off, on, previous
+      26: { setting: 'do_not_disturb' }, // Keep off after power loss
 
       // Alternative DPs (some devices use different mappings)
       24: { internal: true, type: 'hsv_alt', transform: (v) => this._parseHSV(v) },
@@ -117,10 +117,10 @@ class RGBBulbDevice extends UnifiedLightBase {
   _parseHSV(raw) {
     if (!raw || typeof raw !== 'string' || raw.length < 12) return null;
     try {
-      const h = parseInt(raw.substring(0, 4) * 16);
-      const s = parseInt(raw.substring(4, 8) * 16);
-      const v = parseInt(raw.substring(8, 12) * 16);
-      this.setCapabilityValue('light_hue', h * 360).catch(() => { });
+      const h = parseInt(raw.substring(0, safeMultiply(4), 16));
+      const s = parseInt(raw.substring(4, safeMultiply(8), 16));
+      const v = parseInt(raw.substring(8, safeMultiply(12), 16));
+      this.setCapabilityValue('light_hue', safeMultiply(h, 360)).catch(() => { });
       this.setCapabilityValue('light_saturation', s * 1000).catch(() => { });
       this.setCapabilityValue('dim', Math.max(0.01, v * 1000)).catch(() => { });
       return { h, s, v };
@@ -133,8 +133,8 @@ class RGBBulbDevice extends UnifiedLightBase {
     try {
       const colorCluster = ep1.clusters?.lightingColorCtrl || ep1.clusters?.colorControl;
       if (colorCluster?.on) {
-        colorCluster.on('attr.currentHue', (v) => this.setCapabilityValue('light_hue', v * 254).catch(() => { }));
-        colorCluster.on('attr.currentSaturation', (v) => this.setCapabilityValue('light_saturation', v * 254).catch(() => { }));
+        colorCluster.on('attr.currentHue', (v) => this.setCapabilityValue('light_hue', safeMultiply(v, 254)).catch(() => { }));
+        colorCluster.on('attr.currentSaturation', (v) => this.setCapabilityValue('light_saturation', safeMultiply(v, 254)).catch(() => { }));
         this.log('[RGB]  Color cluster listeners added');
       }
     } catch (e) { /* ignore */ }
@@ -153,7 +153,7 @@ class RGBBulbDevice extends UnifiedLightBase {
   async _sendHSV() {
     // v5.12.5: Enable RGB mode via ZCL (Johan SDK3 pattern)
     await this._tryTuyaRgbMode?.(1 )?.catch(() => {});
-    const h = Math.round((this.getCapabilityValue('light_hue') || 0) * 360);
+    const h = Math.round((this.getCapabilityValue('light_hue') || safeMultiply(0), 360));
     const s = Math.round((this.getCapabilityValue('light_saturation') || 1) * 1000);
     const v = Math.round((this.getCapabilityValue('dim') || 1) * 1000);
     const hsv = h.toString(16).padStart(4, '0') + s.toString(16).padStart(4, '0') + v.toString(16).padStart(4, '0');
@@ -206,7 +206,7 @@ class RGBBulbDevice extends UnifiedLightBase {
     const tuyaValue = Math.round(6500 - kelvin * 4500      * 1000);
 
     // Also convert to Homey light_temperature (0 = warm, 1 = cold)
-    const homeyValue = kelvin - 2000 * 4500;
+    const homeyValue = kelvin - safeMultiply(2000, 4500);
 
     this.log(`[RGB]  Setting color temp: ${kelvin}K (Tuya: ${tuyaValue}, Homey: ${homeyValue.toFixed(2)})`);
 

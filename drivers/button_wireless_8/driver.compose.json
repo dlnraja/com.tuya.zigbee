@@ -109,12 +109,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3400_KEYJQTHH"
-    ],
-    "productId": [
-      "TS0048"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -211,7 +207,7 @@
   "images": {
     "small": "drivers/button_wireless_8/assets/images/small.png",
     "large": "drivers/button_wireless_8/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

@@ -27,13 +27,8 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_MCE9KJPM"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_HCHO"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -257,7 +252,7 @@
   "images": {
     "small": "drivers/formaldehyde_sensor/assets/images/small.png",
     "large": "drivers/formaldehyde_sensor/assets/images/large.png"
-    },
+  },
   "capabilitiesOptions": {},
   "platforms": [
     "local"

@@ -80,11 +80,11 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       this.log('[EM] Electrical Measurement cluster available');
 
       emCluster.on('attr.activePower', (value) => {
-        this.setCapabilityValue('measure_power', value * 10).catch(this.error);
+        this.setCapabilityValue('measure_power', safeMultiply(value, 10)).catch(this.error);
       });
 
       emCluster.on('attr.rmsVoltage', (value) => {
-        this.setCapabilityValue('measure_voltage', value * 10).catch(this.error);
+        this.setCapabilityValue('measure_voltage', safeMultiply(value, 10)).catch(this.error);
       });
 
       emCluster.on('attr.rmsCurrent', (value) => {
@@ -204,7 +204,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     if (profile === 'pj1203a') {
       switch (dp) {
       case 101: // Power A (W Ã·10)
-        const powerA = value * 10;
+        const powerA = safeMultiply(value, 10);
         if (this.hasCapability('measure_power.phase1')) {
           this.setCapabilityValue('measure_power.phase1', powerA).catch(this.error);
         }
@@ -224,7 +224,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 105: // Power B (W Ã·10)
-        const powerB = value * 10;
+        const powerB = safeMultiply(value, 10);
         if (this.hasCapability('measure_power.phase2')) {
           this.setCapabilityValue('measure_power.phase2', powerB).catch(this.error);
         }
@@ -264,7 +264,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 112: // Voltage (V Ã·10)
-        this.setCapabilityValue('measure_voltage', value * 10).catch(this.error);
+        this.setCapabilityValue('measure_voltage', safeMultiply(value, 10)).catch(this.error);
         this.log(`[PJ1203A]  Voltage: ${value/10} V`);
         break;
 
@@ -278,7 +278,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 115: // Power AB Total (W Ã·10)
-        const totalPower = value * 10;
+        const totalPower = safeMultiply(value, 10);
         this.setCapabilityValue('measure_power', totalPower).catch(this.error);
         this.log(`[PJ1203A]  Total Power: ${totalPower} W`);
         break;
@@ -325,7 +325,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       break;
 
     case 19: //Voltage (V*10)
-      this.setCapabilityValue('measure_voltage', value * 10).catch(this.error);
+      this.setCapabilityValue('measure_voltage', safeMultiply(value, 10)).catch(this.error);
       break;
 
     case 20: //Current phase 1 (A*1000)
@@ -337,7 +337,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       // v5.8.9: FALLBACK - Handle PJ-1203A DPs even when profile detection fails
     case 101: // Total power (W) - 3phase OR Power A (W Ã·10) - PJ-1203A
       // Try PJ-1203A scaling first if value seems too high
-      const powerVal = value > 10000 ? value * 10 : value;
+      const powerVal = value > 10000 ? safeMultiply(value, 10) : value;
       this.setCapabilityValue('measure_power', powerVal).catch(this.error);
       this.log(`[FALLBACK]  Power: ${powerVal} W (raw: ${value})`);
       break;
@@ -364,7 +364,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       break;
 
     case 112: // PJ-1203A Voltage (V Ã·10)
-      this.setCapabilityValue('measure_voltage', value * 10).catch(this.error);
+      this.setCapabilityValue('measure_voltage', safeMultiply(value, 10)).catch(this.error);
       this.log(`[FALLBACK]  Voltage: ${value/10} V`);
       break;
 
@@ -378,7 +378,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       break;
 
     case 115: // PJ-1203A Total Power (W Ã·10)
-      this.setCapabilityValue('measure_power', value * 10).catch(this.error);
+      this.setCapabilityValue('measure_power', safeMultiply(value, 10)).catch(this.error);
       this.log(`[FALLBACK]  Total Power: ${value/10} W`);
       break;
 

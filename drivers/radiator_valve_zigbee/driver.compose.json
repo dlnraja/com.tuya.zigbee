@@ -30,9 +30,7 @@
     }
   },
   "zigbee": {
-    "productId": [
-      "TS0601"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -41,16 +39,12 @@
         ]
       }
     },
-    "manufacturerName": [
-      "_TYST11_2EKUZ3DZ",
-      "_TYST11_KLY8GJLZ",
-      "_TZE200_BHD_5KN9"
-    ]
+    "manufacturerName": []
   },
   "images": {
     "small": "drivers/radiator_valve_zigbee/assets/images/small.png",
     "large": "drivers/radiator_valve_zigbee/assets/images/large.png"
-    },
+  },
   "energy": {
     "batteries": [
       "CR2450"

@@ -14,9 +14,7 @@ class SoilSensorDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -32,18 +30,14 @@ class SoilSensorDriver extends ZigBeeDriver {
       } catch (e) {
         this.log(`[FLOW] Trigger '${id}' not defined - skipping`);
         return null;
-      }
-    };
-
+        }
     const safeGetCondition = (id) => {
       try {
         return (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       } catch (e) {
         this.log(`[FLOW] Condition '${id}' not defined - skipping`);
         return null;
-      }
-    };
-
+        }
     // Register triggers
     this._moistureChangedTrigger = safeGetTrigger('soil_sensor_moisture_changed');
     this._soilDryTrigger = safeGetTrigger('soil_sensor_soil_dry');
@@ -74,9 +68,7 @@ class SoilSensorDriver extends ZigBeeDriver {
         const temp = args.device.getCapabilityValue('measure_temperature');
         return temp !== null && temp > args.temp;
       });
-    }
-  }
-
+      }
   async onPairListDevices(devices) {
     if (!devices || devices.length === 0) return devices;
 
@@ -93,7 +85,5 @@ class SoilSensorDriver extends ZigBeeDriver {
       filteredDevices.push(device);
     }
     return filteredDevices;
-  }
-}
-
+    }
 module.exports = SoilSensorDriver;

@@ -27,55 +27,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ1800_AKZVKZQQ",
-      "_TZ1800_HO6I0ZK9",
-      "_TZ3000_00MK2XZY",
-      "_TZ3000_0YXEAWJT",
-      "_TZ3000_1OBWWNMQ",
-      "_TZ3000_5F43H46R",
-      "_TZ3000_8GS8H2E4",
-      "_TZ3000_AIR9M6AF",
-      "_TZ3000_BR3LAUKF",
-      "_TZ3000_CPHMQ0Q7",
-      "_TZ3000_G1PZICMQ",
-      "_TZ3000_G5XAWFCQ",
-      "_TZ3000_J0KTMUL1",
-      "_TZ3000_KDI2O9M6",
-      "_TZ3000_MVVW8WNX",
-      "_TZ3000_PL5V1YYY",
-      "_TZ3000_PNZFDR9Y",
-      "_TZ3000_RDTIXBNU",
-      "_TZ3000_TWQCTVNA",
-      "_TZ3000_UPJRXMSR",
-      "_TZ3000_VZOPCETZ",
-      "_TZ3000_W0QQDE0G",
-      "_TZ3000_Z6FGD73R",
-      "_TZ3210_1AC",
-      "_TZ3210_2AC",
-      "_TZ3210_6CMEIJTD",
-      "_TZ3210_BEP7CCEW",
-      "_TZ3210_C7NC9W3C",
-      "_TZ3210_CJRNGDR3",
-      "_TZ3210_FGWHJM9J",
-      "_TZ3210_NHQKA112",
-      "_TZ3210_PH1JOC22",
-      "_TZ3210_RAQJCXO5",
-      "_TZ3210_YVXJAWLT"
-    ],
-    "productId": [
-      "S26R2ZB",
-      "S31 LITE ZB",
-      "S40LITE",
-      "S60ZBTPF",
-      "S60ZBTPG",
-      "TS0049",
-      "TS0101",
-      "TS0111",
-      "TS011F",
-      "TS0121",
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/plug_smart/assets/learnmode.svg",
       "instruction": {
@@ -1502,7 +1455,7 @@
   "images": {
     "small": "drivers/plug_smart/assets/images/small.png",
     "large": "drivers/plug_smart/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

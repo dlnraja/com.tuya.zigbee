@@ -1,27 +1,30 @@
 'use strict';
 
-// A8: NaN Safety - use safeDivide/safeMultiply
-  require('homey');
+const Homey = require('homey');
 
 class SwitchTempSensorDriver extends Homey.Driver {
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
+    this.log('Switch Temp Sensor driver v7.4.11 initialized');
+    
+    try {
+      const card = this.homey.flow.getActionCard('switch_temp_sensor_set_temperature');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.setCapabilityValue('target_temperature', args.temperature).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) {
+      this.error(`Flow card error: ${err.message}`);
+    }
+  }
 
-    this.log('Switch with Temperature Sensor Driver initialized');
-    // v5.13.3: Flow card handlers
-    const r=(i,fn)=>{try{(() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(fn);
-  
-  
-  
-  
-  
-  
-  }catch(e){this.log('[Flow]',i,e.message);}};
-    r('switch_temp_sensor_turn_on',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
-    r('switch_temp_sensor_turn_off',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});
-    r('switch_temp_sensor_toggle',async({device})=>{const v=device.getCapabilityValue('onoff');await device.triggerCapabilityListener('onoff',!v);return true;});
+  async onPairListDevices() {
+    return [];
   }
 }
 

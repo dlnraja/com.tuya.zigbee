@@ -136,12 +136,12 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
     
     // Try DP1 first (most common)
     try {
-      await this.sendTuyaDPCommand(1, Math.round(value * 10) * 2);
+      await this.sendTuyaDPCommand(1, safeMultiply(Math.round(value, 10)safeMultiply(), 2));
       return true;
     } catch (e1) {
       // Fallback to DP16
       try {
-        await this.sendTuyaDPCommand(16, Math.round(value * 10) * 2);
+        await this.sendTuyaDPCommand(16, safeMultiply(Math.round(value, 10)safeMultiply(), 2));
         return true;
       } catch (e2) {
         this.error('[TRV-ZIGBEE] Failed to set target temp:', e2.message);
@@ -237,7 +237,7 @@ class RadiatorValveZigbeeDevice extends UnifiedThermostatBase {
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate - now) / 3600000);
+        utcOffset = Math.round((tzDate - safeDivide(now), 3600000));
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]

@@ -45,17 +45,17 @@ class GasSensorDevice extends UnifiedSensorBase {
       // Fault alarm status
       11: { capability: 'alarm_generic', transform: (v) => v !== 0 && v !== 'normal' },
       // Silence the alarm (writable)
-      13: { capability, setting: 'silence', writable: true },
+      13: { setting: 'silence', writable: true },
       // Sensitivity setting
-      16: { capability, setting: 'sensitivity', writable: true },
+      16: { setting: 'sensitivity', writable: true },
       // Self-test trigger (writable)
-      8: { capability, setting: 'self_test', writable: true },
+      8: { setting: 'self_test', writable: true },
       // Self-test result (checking, success, failure, others)
       12: { internal: true, type: 'self_test_result' },
       // Alarm ringtone (melody_1 to melody_5)
-      21: { capability, setting: 'alarm_ringtone' },
+      21: { setting: 'alarm_ringtone' },
       // Alarm time (1-180 seconds)
-      7: { capability, setting: 'alarm_time' },
+      7: { setting: 'alarm_time' },
     };
   }
 

@@ -18,14 +18,14 @@ function processDir(dir) {
 function processJs(filePath) {
     try {
         let content = fs.readFileSync(filePath, 'utf8');
-        if (!content.includes(' : null;')) return;
+        if (!content.includes(';')) return;
 
         // Fix the pattern: (...) : null; where no ? is present before the :
         // We look for lines ending in ) : null; and see if they have ?
         const lines = content.split('\n');
         let changed = false;
         const newLines = lines.map(line => {
-            if (line.includes(') : null;') && !line.includes('?')) {
+            if (line.includes(');') && !line.includes('?')) {
                 changed = true;
                 return line.replace(');', ');');
             }
@@ -41,6 +41,6 @@ function processJs(filePath) {
     }
 }
 
-console.log('Cleaning up stray ": null;" syntax errors...');
+console.log('Cleaning up stray ";" syntax errors...');
 processDir('.');
 console.log('Done.');

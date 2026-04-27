@@ -88,28 +88,8 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "SONOFF",
-      "_TZ3000_AN5RJIWD",
-      "_TZ3000_TZVBIMPQ",
-      "_TZ3000_YJ6K7VFO"
-    ],
-    "productId": [
-      "SNZB-01",
-      "SNZB-01M",
-      "SNZB-01P",
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0042",
-      "TS0043",
-      "TS0044",
-      "TS0046",
-      "TS0111"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -135,7 +115,7 @@
   "images": {
     "small": "drivers/smart_knob_rotary/assets/images/small.png",
     "large": "drivers/smart_knob_rotary/assets/images/large.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

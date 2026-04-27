@@ -30,7 +30,7 @@ function processFile(filePath) {
   }
 
   // Pattern 3: Legacy hardcoded ID replacement
-  const directIdRegex = /(? <!_)(this\. )? homey\.flow\.get(Trigger|Condition|Action)Card\(['"]([^'"]+)['"]\ : null)/g       ;
+  const directIdRegex = /(? <!_)(this\. )? homey\.flow\.get(Trigger|Condition|Action)Card\(['"]([^'"]+)['"])/g       ;
   if (directIdRegex.test(content)) {
     content = content.replace(directIdRegex, (match, prefix, type, id) => {
        changed = true;

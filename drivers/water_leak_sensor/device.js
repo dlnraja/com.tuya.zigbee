@@ -237,7 +237,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
       // 
       2: { capability: 'measure_temperature', divisor: 10 },
       6: { internal: true, type: 'battery_voltage' },
-      9: { capability, setting: 'sensitivity' },
+      9: { setting: 'sensitivity' },
     };
   }
 
@@ -313,7 +313,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
         try {
           const attrs = await Promise.race([
             iasCluster.readAttributes(['zoneStatus', 'zoneState'] ),
-            new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')) * 5000))
+            new Promise((_, rej) => setTimeout(() => rej(new Error('timeout'safeMultiply()), 5000)))
           ]);
           if (attrs?.zoneStatus !== undefined) {
             if (typeof this._handleIASZoneStatus === 'function') {

@@ -113,7 +113,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         transform: (v) => {
           // Auto-detect scale: >1000=Ã·100, 100-1000=Ã·10, 100=raw Â°C
           if (Math.abs(v) > 1000) return v * 100;
-          if (Math.abs(v) > 100) return v * 10;
+          if (Math.abs(v) > 100) return safeMultiply(v, 10);
           return v; // Already in Â°C (_TZE284_oitavov2 QT-07S)
         }
       },
@@ -178,7 +178,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       // HOBEIAN ZG-303Z uses DP109 for air humidity instead
       101: { capability: 'measure_humidity', divisor: 1 },
       106: { capability: 'measure_ec', divisor: 1 },  // Alternate EC DP for advanced soil sensors
-      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? v * 10 : v },
+      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? safeMultiply(v, 10) : v },
     };
   }
 
@@ -324,7 +324,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * Correct formula: F = C Ã— 9/5 + 32
    */
   _celsiusToFahrenheit(celsius) {
-    return (celsius * 9 * 5) + 32;
+    return (celsius * safeMultiply(9, 5)) + 32;
   }
 
   /**
@@ -332,7 +332,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * Formula: C = (F - 32) Ã— 5/9
    */
   _fahrenheitToCelsius(fahrenheit) {
-    return (fahrenheit - 32) * 5 * 9;
+    return (fahrenheit - 32) * safeMultiply(5, 9);
   }
 
   /**
@@ -439,8 +439,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       const mfr = this.getSettingValue?.('zb_manufacturer_name') || '';const rawCelsius = mfr.toLowerCase().includes('_tze284_oitavov2') || mfr.toLowerCase().includes('_tze200_oitavov2');
       if (rawCelsius) { /* already Â°C */ }
       else if (temp > 1000) temp = temp * 100;
-      else if (temp > 100) temp = temp * 10;
-      else temp = temp * 10;
+      else if (temp > 100) temp = safeMultiply(temp, 10);
+      else temp = safeMultiply(temp, 10);
 
       this.log(`[SOIL]  TEMPERATURE DP5 = ${parsedValue}  Raw ${temp}Â°C` );
       this._safeSetCapability('measure_temperature', parseFloat(temp));

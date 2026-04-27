@@ -40,18 +40,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_K7QGYRRB",
-      "_TZE200_NT5DGEJC",
-      "_TZE204_A0SYESF5",
-      "_TZE204_K7QGYRRB",
-      "_TZE204_MJA3FUJA",
-      "_TZE204_NT5DGEJC"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_HUMID"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -70,7 +60,7 @@
   "images": {
     "small": "drivers/humidifier/assets/images/small.png",
     "large": "drivers/humidifier/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

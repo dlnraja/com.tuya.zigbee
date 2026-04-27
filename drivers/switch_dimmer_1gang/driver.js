@@ -14,9 +14,7 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -47,9 +45,7 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
         this.log(`Trigger: ${id}`);
       } catch (err) {
         this.error(`Failed trigger ${id}: ${err.message}`);
-      }
-    }
-
+        }
     // Action: set brightness
     try {
       const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
@@ -95,8 +91,7 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
           await args.device.triggerCapabilityListener('onoff', !cur);
           return true;
         });
-    } catch (err) { this.error('Action toggle failed:', err.message); }
-  }
+    } catch (err) { this.error('Action toggle failed:', err.message);   }
 }
 
 module.exports = SwitchDimmer1GangDriver;

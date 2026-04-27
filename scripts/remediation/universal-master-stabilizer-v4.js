@@ -102,7 +102,7 @@ function processFile(filePath) {
     // ? 'noBattery'  : null;
     content = content.replace(/\?\s*'([^']+)'\s*;/g, (m, p1) => {
         modified = true;
-        return `? '${p1}' : null;`;
+        return `? '${p1}';`;
     });
 
     // K. Fix mangled let 1; loops

@@ -23,48 +23,8 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_0DVM9MVA",
-      "_TZE200_1N2ZEV06",
-      "_TZE200_3YP57TBY",
-      "_TZE200_5TOC8EFA",
-      "_TZE200_9GVRUQF5",
-      "_TZE200_CHYVMHAY",
-      "_TZE200_CWBVMSAR",
-      "_TZE200_EBB90C7Y",
-      "_TZE200_FHN3NEGR",
-      "_TZE200_GD4RVYKV",
-      "_TZE200_GH1S8WTK",
-      "_TZE200_HVE5TGNY",
-      "_TZE200_I48QYN9S",
-      "_TZE200_IYIZDVLS",
-      "_TZE200_KDS0PQET",
-      "_TZE200_KDS22L0T",
-      "_TZE200_KFVQ6AVY",
-      "_TZE200_KKR3IGO4",
-      "_TZE200_NE7XGWGV",
-      "_TZE200_NPP2I7SB",
-      "_TZE200_O9D1HDMA",
-      "_TZE200_OWWDXJWL",
-      "_TZE200_QDIHQF3L",
-      "_TZE200_WGRFFNIY",
-      "_TZE200_WLOSFENA",
-      "_TZE200_YW7CAHQS",
-      "_TZE200_ZTVWU4NK",
-      "_TZE204_0DVM9MVA",
-      "_TZE204_5TOC8EFA",
-      "_TZE204_DWVKJFWR",
-      "_TZE204_P3LQQY2R",
-      "_TZE204_XYUGZIQV",
-      "_TZE204_ZNBL8DJ5",
-      "_TZE204_ZNLQJMIH",
-      "_TZE284_AOCLFNXZ",
-      "_TZE284_O3X2TA6N"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_THERMO"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -77,7 +37,7 @@
   "images": {
     "large": "drivers/thermostat_tuya_dp/assets/images/large.png",
     "small": "drivers/thermostat_tuya_dp/assets/images/small.png"
-    },
+  },
   "energy": {
     "batteries": [
       "CR2450"

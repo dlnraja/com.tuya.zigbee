@@ -115,7 +115,7 @@ function emergencyFix(content) {
         const trimmed = newLine.trim();
         if ( (trimmed.includes('=') || trimmed.startsWith('return ')) && !trimmed.match(/[,)]$|^\/\//)) {
              if (trimmed.endsWith(';')) {
-                 newLine = newLine.replace(/;\s*$/, ' : null;');
+                 newLine = newLine.replace(/;\s*$/, ';');
              } else {
                  newLine = newLine.replace(/([^; \t]+)$/, '$1 : null');
              }

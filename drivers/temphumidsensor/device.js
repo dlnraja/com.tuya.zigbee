@@ -33,7 +33,7 @@ class TuyatecTempHumidSensorDevice extends UnifiedSensorBase {
       2: { capability: 'measure_humidity', divisor: 1 },
 
       // Battery
-      4: { capability: 'measure_battery', divisor: 1, transform: (v) =>Math.min(100, v * 2) },
+      4: { capability: 'measure_battery', divisor: 1, transform: (v) =>Math.min(100, safeMultiply(v, 2)) },
     };
   }
 

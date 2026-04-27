@@ -37,10 +37,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0601",
-      "ZG-227Z"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -652,7 +649,7 @@
   "images": {
     "small": "drivers/climate_sensor/assets/images/small.png",
     "large": "drivers/climate_sensor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

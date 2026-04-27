@@ -16,10 +16,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -134,7 +131,5 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
     }
 
     this.log('[FLOW]  Energy monitor plug flow cards registered');
-  }
-}
-
+    }
 module.exports = PlugEnergyMonitorDriver;

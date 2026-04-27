@@ -192,13 +192,13 @@ const RULES = [
   },
   {
     id: 'FIX_MISSING_TERNARY_COLON',
-    desc: 'Fix "return x ? y ;" which should be "return x ? y : null;"',
+    desc: 'Fix "return x ? y ;" which should be "return x ? y;"',
     ext: '.js',
     fix: (code) => {
       // Regex updated to avoid matching optional chaining ?.
       return code.replace(/return\s+([^?;. \t]+)\s*\?\s+(?!\.)([^?;]+);/g, (match, p1, p2) => {
         if (!p2.includes(':')) {
-           return `return ${p1.trim()} ? ${p2.trim()} : null;`;
+           return `return ${p1.trim()} ? ${p2.trim()};`;
         }
         return match;
       });

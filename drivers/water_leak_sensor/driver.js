@@ -16,10 +16,7 @@ class WaterLeakSensorDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -63,7 +60,5 @@ class WaterLeakSensorDriver extends ZigBeeDriver {
     } catch (err) { this.log(`[FLOW]  water_leak_sensor_battery_above: ${err.message}`); }
 
     this.log('[FLOW]  Water leak sensor flow cards registered');
-  }
-}
-
+    }
 module.exports = WaterLeakSensorDriver;

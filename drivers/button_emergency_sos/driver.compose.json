@@ -35,41 +35,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TYZB01_QM6DJPTA",
-      "_TYZB01_TRQOESC6",
-      "_TZ3000_8UTXXTZR",
-      "_TZ3000_8XZ0PYQY",
-      "_TZ3000_C0GF6XD7",
-      "_TZ3000_CDSO6BJW",
-      "_TZ3000_FYWHZH9U",
-      "_TZ3000_GNWGNWVQ",
-      "_TZ3000_GRATY6SJ",
-      "_TZ3000_IMKWGFWH",
-      "_TZ3000_IRWUZILV",
-      "_TZ3000_IS27VZCO",
-      "_TZ3000_IYSTCADI",
-      "_TZ3000_N0H1DR7U",
-      "_TZ3000_NXDZIQZC",
-      "_TZ3000_PESZEJY7",
-      "_TZ3000_QJHWTNKF",
-      "_TZ3000_RMHKDZ0L",
-      "_TZ3000_U2BBAGU4",
-      "_TZ3000_ZPJUQNCO",
-      "_TZ3000_eo3dttwe",
-      "_TZ3000_fsiepnrh",
-      "_TZ3000_p6ju8myv",
-      "_TZE200_0BLE7OW3",
-      "_TZE284_3QHGNDV6",
-      "_TYZB01_qm6djpta"
-    ],
-    "productId": [
-      "TS0215",
-      "TS0215A",
-      "TS0218",
-      "TS0601",
-      "ZBPB10BK"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

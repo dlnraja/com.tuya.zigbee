@@ -68,7 +68,7 @@ class motion_sensor_2 extends ZigBeeDevice {
   // Handle battery status attribute reports
   onBatteryPercentageRemainingAttributeReport(batteryPercentageRemaining) {
     const batteryThreshold = this.getSetting('batteryThreshold') || 20;
-    const batteryLevel = batteryPercentageRemaining * 2; // Convert to percentage
+    const batteryLevel = safeMultiply(batteryPercentageRemaining, 2); // Convert to percentage
     this.log('measure_battery | Battery level (%):', batteryLevel);
     this.setCapabilityValue('measure_battery', batteryLevel).catch(this.error);
     this.setCapabilityValue('alarm_battery', batteryLevel < batteryThreshold).catch(this.error);

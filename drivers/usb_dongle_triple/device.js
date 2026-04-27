@@ -129,10 +129,10 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
 
     if (electrical) {
       electrical.on('attr.activePower', v => {
-        if (this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', v * 10).catch(this.error);
+        if (this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', safeMultiply(v, 10)).catch(this.error);
       });
       electrical.on('attr.rmsVoltage', v => {
-        if (this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', v * 10).catch(this.error);
+        if (this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', safeMultiply(v, 10)).catch(this.error);
       });
       electrical.on('attr.rmsCurrent', v => {
         if (this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', v * 1000).catch(this.error);
@@ -143,7 +143,7 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
         rmsCurrent: { minInterval: 10, maxInterval: 300, minChange: 10 },
       }).catch(e => this.log('[USB_TRIPLE] electrical reporting failed:', e.message);
       electrical.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).then(d => {
-        if (d?.activePower != null && this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', d.activePower * 10).catch(this.error);if (d?.rmsVoltage != null && this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', d.rmsVoltage * 10).catch(this.error);
+        if (d?.activePower != null && this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', safeMultiply(d.activePower, 10)).catch(this.error);if (d?.rmsVoltage != null && this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', safeMultiply(d.rmsVoltage, 10)).catch(this.error);
         if (d?.rmsCurrent != null && this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', d.rmsCurrent * 1000).catch(this.error);
       }).catch(() => {});
     }

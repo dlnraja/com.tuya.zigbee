@@ -41,6 +41,19 @@ async function main() {
     if (!fs.existsSync(composePath)) continue;
 
     const compose = JSON.parse(fs.readFileSync(composePath, 'utf8'));
+    
+    // Load flows from separate file if it exists (Rule 15 compatibility)
+    const flowPath = path.join(DRIVERS_DIR, drvId, 'driver.flow.compose.json');
+    let flowData = compose.flow || {};
+    if (fs.existsSync(flowPath)) {
+       try {
+         const extraFlows = JSON.parse(fs.readFileSync(flowPath, 'utf8'));
+         flowData = { ...flowData, ...extraFlows };
+       } catch (e) {
+         console.error(` Failed to parse flow file for ${drvId}`);
+       }
+    }
+    
     const mfrs = compose.zigbee?.manufacturerName || []       ;
     const caps = compose.capabilities || [];
     
@@ -67,25 +80,26 @@ async function main() {
       }
     }
 
-    // B. ARCHITECTURAL CHALLENGE (Hybrid Coverage)
-    const isHybridSource = deviceJs.includes('BaseHybridDevice') || deviceJs.includes('Hybrid');
-    if (drvId.includes('sensor') && drvId.includes('radar') && !isHybridSource) {
+    // B. ARCHITECTURAL CHALLENGE (Hybrid/Unified Coverage)
+    const isModernSource = deviceJs.includes('BaseHybridDevice') || deviceJs.includes('Hybrid') || 
+                           deviceJs.includes('UnifiedSensorBase') || deviceJs.includes('BaseUnifiedDevice');
+    if (drvId.includes('sensor') && drvId.includes('radar') && !isModernSource) {
        report.violations.push({
          driver: drvId,
-         violation: 'NON_HYBRID_RADAR',
+         violation: 'NON_MODERN_RADAR',
          severity: 'HIGH',
-         fix: 'Migrate to HybridSensorBase for improved stability.'
+         fix: 'Migrate to UnifiedSensorBase or HybridSensorBase for improved stability.'
        });
     }
 
-    // C. FLOW LINKAGE CHALLENGE (Multi-Gang)
-    if (drvId.includes('gang') && drvId.includes('switch')) {
+    // C. FLOW LINKAGE CHALLENGE (Multi-Gang - Zigbee Only)
+    if (drvId.includes('gang') && drvId.includes('switch') && !drvId.includes('wifi')) {
        const gangMatch = drvId.match(/(\d+)gang/);
        if (gangMatch) {
           const expectedGangs = parseInt(gangMatch[1]);
           for (let g = 2; g <= expectedGangs; g++) {
              const flowId = `${drvId}_physical_gang${g}_on`;
-             if (!JSON.stringify(compose.flow || {}).includes(flowId)) {
+             if (!JSON.stringify(flowData).includes(flowId)) {
                 report.violations.push({
                   driver: drvId,
                   violation: 'UNLINKED_GANG_FLOW',

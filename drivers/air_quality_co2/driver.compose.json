@@ -65,23 +65,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3210_GUIJTL8K",
-      "_TZ3210_HQUIXJEG",
-      "_TZE200_7BZTMFM1",
-      "_TZE200_RBBX5MFQ",
-      "_TZE200_YWAGC4RJ",
-      "_TZE204_7BZTMFM1",
-      "_TZE204_A8SDABTG",
-      "_TZE204_OGKDPGY2",
-      "_TZE204_RBBX5MFQ",
-      "_TZE204_YWAGC4RJ",
-      "_TZE204_ZL1KMJQX"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_CO2"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -373,7 +358,7 @@
   "images": {
     "small": "drivers/air_quality_co2/assets/images/small.png",
     "large": "drivers/air_quality_co2/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

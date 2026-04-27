@@ -51,12 +51,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_ULYN7B1O"
-    ],
-    "productId": [
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -69,7 +65,7 @@
   "images": {
     "small": "drivers/floor_heating_thermostat/assets/images/small.png",
     "large": "drivers/floor_heating_thermostat/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

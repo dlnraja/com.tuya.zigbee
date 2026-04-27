@@ -26,19 +26,10 @@
   "images": {
     "small": "drivers/wall_switch_1gang_1way/assets/images/small.png",
     "large": "drivers/wall_switch_1gang_1way/assets/images/large.png"
-    },
+  },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_OVYAISIP",
-      "_TZ3000_PK8TGTDB",
-      "_TZ3000_VW40ZQP4",
-      "_TZ3000_blhvsaqf",
-      "_TZ3000_ysdv91bk"
-    ],
-    "productId": [
-      "TS0001",
-      "TS0011"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

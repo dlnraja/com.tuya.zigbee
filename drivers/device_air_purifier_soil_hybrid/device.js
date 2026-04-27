@@ -113,7 +113,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         transform: (v) => {
           // Auto-detect scale: >1000=Ã·100, 100-1000=Ã·10, 100=raw Â°C
           if (Math.abs(v) > 1000) return v * 100;
-          if (Math.abs(v) > 100) return v * 10;
+          if (Math.abs(v) > 100) return safeMultiply(v, 10);
           return v; // Already in Â°C (_TZE284_oitavov2 QT-07S)
         }
       },
@@ -150,10 +150,10 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       // v5.9.22: Z2M #28270 - DP102=illuminance for _TZE284_o9ofysmo/_TZE284_xc3vwx5a
       
       102: { capability: 'measure_luminance', divisor: 1 },
-      103: { capability, setting: 'report_interval', min: 30, max: 1200 },
-      104: { capability, setting: 'soil_calibration', min: -30, max: 30 },
-      107: { capability, setting: 'temperature_calibration', min: -20, max: 20 },
-      110: { capability, setting: 'soil_warning', min: 0, max: 100 },
+      103: { setting: 'report_interval', min: 30, max: 1200 },
+      104: { setting: 'soil_calibration', min: -30, max: 30 },
+      107: { setting: 'temperature_calibration', min: -20, max: 20 },
+      110: { setting: 'soil_warning', min: 0, max: 100 },
       111: { 
         capability: 'measure_humidity.soil', 
         divisor: 1,
@@ -166,9 +166,9 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
         }
       },
       112: { capability: 'measure_conductivity', divisor: 1 }, // soil fertility uS/cm
-      113: { capability, setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
-      114: { capability, setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
-      115: { capability, setting: 'soil_fertility_warning_v1', min: 0, max: 5000 },
+      113: { setting: 'soil_fertility_calibration', min: -1000, max: 1000 },
+      114: { setting: 'soil_fertility_warning_setting', min: 0, max: 5000 },
+      115: { setting: 'soil_fertility_warning_v1', min: 0, max: 5000 },
       // 
       // FALLBACK DPs for other soil sensor variants
       // 
@@ -178,7 +178,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       // HOBEIAN ZG-303Z uses DP109 for air humidity instead
       101: { capability: 'measure_humidity', divisor: 1 },
       106: { capability: 'measure_ec', divisor: 1 },  // Alternate EC DP for advanced soil sensors
-      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? v * 10 : v },
+      105: { capability: 'measure_humidity.soil', divisor: 1, transform: (v) => v > 100 ? safeMultiply(v, 10) : v },
     };
   }
 
@@ -324,7 +324,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * Correct formula: F = C Ã— 9/5 + 32
    */
   _celsiusToFahrenheit(celsius) {
-    return (celsius * 9 * 5) + 32;
+    return (celsius * safeMultiply(9, 5)) + 32;
   }
 
   /**
@@ -332,7 +332,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
    * Formula: C = (F - 32) Ã— 5/9
    */
   _fahrenheitToCelsius(fahrenheit) {
-    return (fahrenheit - 32) * 5 * 9;
+    return (fahrenheit - 32) * safeMultiply(5, 9);
   }
 
   /**
@@ -439,8 +439,8 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
       const mfr = this.getSettingValue?.('zb_manufacturer_name') || '';const rawCelsius = mfr.toLowerCase().includes('_tze284_oitavov2') || mfr.toLowerCase().includes('_tze200_oitavov2');
       if (rawCelsius) { /* already Â°C */ }
       else if (temp > 1000) temp = temp * 100;
-      else if (temp > 100) temp = temp * 10;
-      else temp = temp * 10;
+      else if (temp > 100) temp = safeMultiply(temp, 10);
+      else temp = safeMultiply(temp, 10);
 
       this.log(`[SOIL]  TEMPERATURE DP5 = ${parsedValue}  Raw ${temp}Â°C` );
       this._safeSetCapability('measure_temperature', parseFloat(temp));

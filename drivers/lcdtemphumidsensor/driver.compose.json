@@ -20,20 +20,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_DOWSTJBA",
-      "_TZ3000_OTTF8UOX",
-      "_TZ3000_RDH96MRD",
-      "_TZ3000_V1V0578S",
-      "_TZ3000_VAX66FBA",
-      "_TZ3000_XR5M6P9Y",
-      "_TZE284_HDML1AAV"
-    ],
-    "productId": [
-      "TS0201",
-      "TS0601_LCD",
-      "TY0201"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -46,7 +34,7 @@
   "images": {
     "small": "drivers/lcdtemphumidsensor/assets/images/small.png",
     "large": "drivers/lcdtemphumidsensor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

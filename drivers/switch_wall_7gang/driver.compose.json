@@ -73,13 +73,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TYZB01_7GANG001",
-      "_TZ3000_7GANG001"
-    ],
-    "productId": [
-      "TS0007"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -588,7 +583,7 @@
   "images": {
     "small": "drivers/switch_wall_7gang/assets/images/small.png",
     "large": "drivers/switch_wall_7gang/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

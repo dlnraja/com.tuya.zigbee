@@ -35,7 +35,7 @@ function processJs(filePath) {
                 if (line.includes('.replace(') || line.includes('.set(') || line.includes('.log(') || line.includes(' = ')) {
                      // If it has ) : null; at the end, and we can't find a clear ternary start
                      // Let's just remove it if it's at the very end.
-                     if (line.trim().endsWith(': null;')) {
+                     if (line.trim().endsWith(';')) {
                          // Check for ? outside of regex/strings
                          const partBefore = line.substring(0, line.lastIndexOf(':'));
                          // Remove strings and regexes from partBefore
@@ -59,7 +59,7 @@ function processJs(filePath) {
     }
 }
 
-console.log('Cleaning up stray ": null;" syntax errors (v5)...');
+console.log('Cleaning up stray ";" syntax errors (v5)...');
 processDir('.');
 processDir('.github');
 console.log('Done.');

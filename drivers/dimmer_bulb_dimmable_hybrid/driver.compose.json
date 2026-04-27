@@ -28,12 +28,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0052",
-      "TS1101",
-      "TS110E",
-      "TS110F"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -498,7 +493,7 @@
   "images": {
     "small": "drivers/bulb_dimmable/assets/images/small.png",
     "large": "drivers/bulb_dimmable/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

@@ -1,13 +1,19 @@
 {
+<<<<<<< HEAD
   "timestamp": "2026-04-27T10:58:16.530Z",
+||||||| parent of 7bcb0a3ea (v7.4.11: Fix 66+ corrupted drivers, add missing fingerprints)
+  "timestamp": "2026-04-25T10:31:42.578Z",
+=======
+<<<<<<< Updated upstream
+  "timestamp": "2026-04-25T10:31:42.578Z",
+||||||| Stash base
+  "timestamp": "2026-04-23T10:48:56.418Z",
+=======
+  "timestamp": "2026-04-24T06:49:51.341Z",
+>>>>>>> Stashed changes
+>>>>>>> 7bcb0a3ea (v7.4.11: Fix 66+ corrupted drivers, add missing fingerprints)
   "devices": [],
-  "unmatchedFPs": [
-    {
-      "fp": "_TZE284_hdml1aav",
-      "source": "gmail",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zig"
-    }
-  ],
+  "unmatchedFPs": [],
   "errors": [
     {
       "err": "IAS Zone enrollment incomplete. Remove and re-add device if sensor not respondin",

@@ -1,25 +1,26 @@
 {
-  "timestamp": "2026-04-21T08:13:40.722Z",
+  "timestamp": "2026-04-24T08:13:31.888Z",
   "driversChecked": 323,
-  "collisions": [],
+  "collisions": [
+    {
+      "id": "HOBEIAN|TS0601",
+      "drivers": [
+        "sensor_presence_radar_hybrid",
+        "switch_3gang"
+      ]
+    }
+  ],
   "buttonLogicFailures": [],
   "sdkDeprecations": [],
-  "radarLogicCheck": [
-    "air_purifier_presence_hybrid: Missing hybrid base inheritance for radar.",
-    "climate_sensor_presence_hybrid: Missing hybrid base inheritance for radar.",
-    "device_air_purifier_presence_hybrid: Missing hybrid base inheritance for radar."
-  ],
+  "radarLogicCheck": [],
   "numericConstantViolations": [],
   "naNSafetyCheck": [
-    ".homeybuild\\drivers\\air_purifier\\device.js:18: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\drivers\\air_purifier\\device.js:48: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\drivers\\climate_sensor\\device.js:18: Potential unchecked division/multiplication (NaN risk)",
-    "drivers\\air_purifier\\device.js:18: Potential unchecked division/multiplication (NaN risk)",
-    "drivers\\air_purifier\\device.js:48: Potential unchecked division/multiplication (NaN risk)",
-    "drivers\\climate_sensor\\device.js:18: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\analytics\\AdvancedAnalytics.js:212: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\analytics\\AdvancedAnalytics.js:338: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\analytics\\AdvancedAnalytics.js:339: Potential unchecked division/multiplication (NaN risk)"
+    "lib\\utils\\MathUtils.js:14: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\utils\\MathUtils.js:21: Potential unchecked division/multiplication (NaN risk)"
   ],
-  "errors": []
+  "errors": [
+    "lib\\ManufacturerVariationManager.js:68: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\ManufacturerVariationManager.js:69: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\ManufacturerVariationManager.js:71: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper."
+  ]
 }

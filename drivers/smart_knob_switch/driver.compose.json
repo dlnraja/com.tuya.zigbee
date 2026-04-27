@@ -24,7 +24,7 @@
   "images": {
     "large": "drivers/smart_knob_switch/assets/images/large.png",
     "small": "drivers/smart_knob_switch/assets/images/small.png"
-    },
+  },
   "energy": {
     "batteries": [
       "CR2032"
@@ -36,9 +36,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS004F"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

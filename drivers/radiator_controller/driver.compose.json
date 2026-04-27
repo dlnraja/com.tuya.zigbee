@@ -9,10 +9,7 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "productId": [
-      "TS0601",
-      "TS0601_RAD"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -28,17 +25,12 @@
         "fr": "Allumer/Ã©teindre l'interrupteur 3 fois rapidement"
       }
     },
-    "manufacturerName": [
-      "_TZE200_3REGM3H6",
-      "_TZE200_EEKPF0FT",
-      "_TZE200_PCDMJ88B",
-      "_TZE204_2EKUZ3DZ"
-    ]
+    "manufacturerName": []
   },
   "images": {
     "small": "drivers/radiator_controller/assets/images/small.png",
     "large": "drivers/radiator_controller/assets/images/large.png"
-    },
+  },
   "settings": [
     {
       "type": "group",

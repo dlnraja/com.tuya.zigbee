@@ -622,7 +622,7 @@ function rule_logicCaseAudit() {
         /manufacturerName\s*===[^']*'[^']+'(? !\s*=== )/g, // Match equality with strings , but avoid complex ones
         /manufacturerName\s*!==[^']*'[^']+'(? !\s*!== )/g ,
         /\.includes\(\s*this\.(driver\.)? manufacturerName/g
-      ] : null;
+      ];
 
       // Filter out safe comparisons (undefined, null, typeof)
       const contentFiltered = content.replace(/manufacturerName\s*===\s*(undefined|null)/g, '')
@@ -675,7 +675,7 @@ function rule_thisPrefixSafety() {
       // \\s*\\(              -> Followed by an opening parenthesis
       // Exclude matches that are already calls on 'this', 'super', 'device', 'args.device', or 'node'
       // ALSO exclude definitions: preceded by 'async ', 'function ', or 'static '
-      const regex = new RegExp(`(^|[^a-zA-Z0-9_.$])(? <!this\\.|super\\.|device\\.|node\\.|args\\.device\\.|async\\s+|function\\s+|static\\s+)(${method})\\s*\\(`, 'g' )        : null;
+      const regex = new RegExp(`(^|[^a-zA-Z0-9_.$])(? <!this\\.|super\\.|device\\.|node\\.|args\\.device\\.|async\\s+|function\\s+|static\\s+)(${method})\\s*\\(`, 'g' );
       
       code = code.replace(regex, (match, p1, p2) => {
         // Double check we are not in a comment or string (very basic check)
@@ -847,9 +847,9 @@ function rule_brandingCleanup() {
     { from: /HybridLightBase/g, to: 'UnifiedLightBase' },
     { from: /BaseHybridDevice/g, to: 'BaseUnifiedDevice' },
     { from: /TuyaHybridDevice/g, to: 'TuyaUnifiedDevice' },
-    { from: /require\(['"](.*? )Hybrid(Sensor|Switch|Plug|Cover|Thermostat|Light)Base['"]\ : null)/g , to: "require('$1Unified$2Base')" },
-    { from: /require\(['"](.*? )BaseHybridDevice['"]\ : null)/g , to: "require('$1BaseUnifiedDevice')" },
-    { from: /require\(['"](.*? )TuyaHybridDevice['"]\ : null)/g , to: "require('$1TuyaUnifiedDevice')" }
+    { from: /require\(['"](.*? )Hybrid(Sensor|Switch|Plug|Cover|Thermostat|Light)Base['"])/g , to: "require('$1Unified$2Base')" },
+    { from: /require\(['"](.*? )BaseHybridDevice['"])/g , to: "require('$1BaseUnifiedDevice')" },
+    { from: /require\(['"](.*? )TuyaHybridDevice['"])/g , to: "require('$1TuyaUnifiedDevice')" }
   ];
 
   for (const file of jsFiles) {

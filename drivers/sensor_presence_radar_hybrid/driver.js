@@ -9,9 +9,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -36,9 +34,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
         this.homey.flow.getTriggerCard(fullId);
       } catch (e) {
         this.error(`Failed to register trigger ${id}: ${e.message}`);
-      }
-    }
-
+        }
     // CONDITIONS
     const conditions = [
       { id: 'presence_sensor_radar_is_present_sensor_presence_radar_hybrid', capability: 'alarm_motion' },
@@ -58,11 +54,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
         }
       } catch (e) {
         this.error(`Failed to register condition ${cond.id}: ${e.message}`);
-      }
-    }
-
+        }
     this.log('[FLOW] All flow cards registered');
-  }
-}
-
+    }
 module.exports = PresenceSensorRadarDriver;

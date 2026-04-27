@@ -27,13 +27,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_5UER6SWW"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0603"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -46,7 +41,7 @@
   "images": {
     "small": "drivers/garage_door_opener/assets/images/small.png",
     "large": "drivers/garage_door_opener/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

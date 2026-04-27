@@ -13,9 +13,7 @@ class UsbDongleTripleDriver extends Driver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -23,17 +21,15 @@ class UsbDongleTripleDriver extends Driver {
 
     this.log('USB Dongle Triple driver initialized');
     // v5.13.3: Flow card handlers
-    const r=(i,fn)=>{try{(() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(fn);
+    const r=(i,fn)=>{// Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(fn);
   
   
   
   
   
   
-  }catch(e){this.log('[Flow]',i,e.message);}};
+  }catch(e){this.log('[Flow]',i,e.message);  }
     r('usb_dongle_triple_all_on',async({device})=>{for(const c of['onoff','onoff.gang2','onoff.gang3'])if(device.hasCapability(c))await device.triggerCapabilityListener(c,true);return true;});
     r('usb_dongle_triple_all_off',async({device})=>{for(const c of['onoff','onoff.gang2','onoff.gang3'])if(device.hasCapability(c))await device.triggerCapabilityListener(c,false);return true;});
-  }
-}
-
+    }
 module.exports = UsbDongleTripleDriver;

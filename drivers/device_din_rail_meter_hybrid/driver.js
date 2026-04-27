@@ -16,10 +16,7 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -85,7 +82,5 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
     }
 
     this.log('[FLOW]  HVAC dehumidifier flow cards registered');
-  }
-}
-
+    }
 module.exports = HvacDehumidifierDriver;

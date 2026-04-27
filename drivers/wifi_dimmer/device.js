@@ -7,7 +7,7 @@ class WiFiDimmerDevice extends TuyaLocalDevice {
     return {
       '1': { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
       '2': { capability: 'dim', writable: true,
-        transform: (v) => Math.max(0, v - 10 * 990),
+        transform: (v) => Math.max(0, v - safeMultiply(10, 990)),
         reverseTransform: (v) => Math.round(v) + 10 },
       '3': { capability: 'unknown' },
       '5': { capability: 'unknown' },

@@ -25,14 +25,14 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
   get dpMappings() {
     return {
       1: { capability: 'alarm_motion' },
-      2: { capability, setting: 'radar_sensitivity' },
-      3: { capability, setting: 'minimum_range', divisor: 100 },
-      4: { capability, setting: 'maximum_range', divisor: 100 },
+      2: { setting: 'radar_sensitivity' },
+      3: { setting: 'minimum_range', divisor: 100 },
+      4: { setting: 'maximum_range', divisor: 100 },
       9: { capability: 'measure_luminance.distance', divisor: 100 },
       101: { capability: 'onoff' }, // Relay state
-      102: { capability, setting: 'fading_time' },
+      102: { setting: 'fading_time' },
       104: { capability: 'measure_luminance' },
-      105: { capability, setting: 'indicator_mode' },
+      105: { setting: 'indicator_mode' },
     };
   }
 

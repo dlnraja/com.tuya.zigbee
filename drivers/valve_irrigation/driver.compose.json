@@ -17,32 +17,8 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3210_0JXEOADC",
-      "_TZE200_2WG5QRJY",
-      "_TZE200_5UODVHGC",
-      "_TZE200_7YTB3H8U",
-      "_TZE200_81ISOPGH",
-      "_TZE200_A7SGHMMS",
-      "_TZE200_AKJEFHJ5",
-      "_TZE200_D0YPNBVN",
-      "_TZE200_HTNNFASR",
-      "_TZE200_JT50EA5D",
-      "_TZE200_WT9AGWF3",
-      "_TZE200_XLPPJ4F5",
-      "_TZE200_YXCGYJF1",
-      "_TZE204_4FBLXPMA",
-      "_TZE204_7YTB3H8U",
-      "_TZE204_81ISOPGH",
-      "_TZE204_A7SGHMMS",
-      "_TZE284_7YTB3H8U",
-      "_TZE284_V5XJYPHJ"
-    ],
-    "productId": [
-      "TS0049",
-      "TS0601",
-      "TS0601_IRRIGATION"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -55,7 +31,7 @@
   "images": {
     "small": "drivers/valve_irrigation/assets/images/small.png",
     "large": "drivers/valve_irrigation/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

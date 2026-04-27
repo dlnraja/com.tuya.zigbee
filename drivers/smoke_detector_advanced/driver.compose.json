@@ -26,50 +26,7 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_TYZB01_0APS0H1R",
-      "_TYZB01_DSJSZP0X",
-      "_TYZB01_O7M83470",
-      "_TYZB01_TOB46AOQ",
-      "_TYZB01_WQCAC7LO",
-      "_TZ3000_0FKMFXWG",
-      "_TZ3000_4FQSTSNH",
-      "_TZ3000_HHIODADE",
-      "_TZ3000_QTCWWGTH",
-      "_TZ3000_RCVVXJGE",
-      "_TZ3000_TKK7WWML",
-      "_TZ3000_XN3Y7XXY",
-      "_TZ3000_YSVSPCHY",
-      "_TZ3000_YTF0X5WM",
-      "_TZ3210_HQUNEE3S",
-      "_TZ3210_UP3PNGLE",
-      "_TZE200_0ZAF1CR8",
-      "_TZE200_5D3VHJRO",
-      "_TZE200_DQ1MFJUG",
-      "_TZE200_M8IIKWAS",
-      "_TZE200_QCASMFAN",
-      "_TZE200_UX5V4DBD",
-      "_TZE200_UX8DLKEV",
-      "_TZE200_VAFD6GKZ",
-      "_TZE200_YTIBQBRA",
-      "_TZE204_CJBOFHXW",
-      "_TZE204_KGAXPVXR",
-      "_TZE204_LHX6WPRC",
-      "_TZE204_QAXKDGYT",
-      "_TZE204_RCCXOX8P",
-      "_TZE204_VAFD6GKZ",
-      "_TZE284_0ZAF1CR8",
-      "_TZE284_6YCGARAB",
-      "_TZE284_AI4RQHKY",
-      "_TZE284_CJBOFHXW",
-      "_TZE284_N4TTSCK2",
-      "_TZE284_O9OFYSMO",
-      "_TZE284_RCCXOX8P",
-      "_TZE284_XC3VWX5A",
-      "_TYZB01_dsjszp0x",
-      "_TYZB01_wqcac7lo",
-      "_TZ3210_up3pngle"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -85,22 +42,7 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
       }
     },
-    "productId": [
-      "GS361A-H04",
-      "HS1SA",
-      "HS3SA",
-      "JTYJ-GD-01LM/BW",
-      "LUMI.SENSOR_SMOKE",
-      "NAS-SD02B0",
-      "PG-S11Z",
-      "SA12IZL",
-      "SD8SC_00.00.03.12TC",
-      "SMSZB-120",
-      "SSSQS01LM",
-      "TS0205",
-      "TS0601",
-      "YG400A"
-    ]
+    "productId": []
   },
   "settings": [
     {

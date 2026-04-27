@@ -11,9 +11,7 @@ class PetFeederDriver extends Driver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -33,7 +31,6 @@ class PetFeederDriver extends Driver {
       await args.device.triggerCapabilityListener('onoff', true);
       return true;
     });
-  }
-}
+    }
 module.exports = PetFeederDriver;
 

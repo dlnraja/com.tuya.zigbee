@@ -20,19 +20,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_JNHU1LLV",
-      "_TZ3000_tzvbimpq",
-      "_TZB000_yqjaollc"
-    ],
-    "productId": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "RH3052",
-      "SNTZ003",
-      "TS0201",
-      "TY0201",
-      "ZG-227Z"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -45,7 +34,7 @@
   "images": {
     "small": "drivers/temphumidsensor/assets/images/small.png",
     "large": "drivers/temphumidsensor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

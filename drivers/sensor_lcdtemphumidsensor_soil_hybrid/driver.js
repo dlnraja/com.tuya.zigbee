@@ -23,10 +23,7 @@ class SoilSensorDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -54,18 +51,14 @@ class SoilSensorDriver extends ZigBeeDriver {
   } catch (e) {
         this.log(`[FLOW] Trigger '${id}' not defined - skipping`);
         return null;
-      }
-    };
-
+        }
     const safeGetCondition = (id) => {
       try {
         return (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       } catch (e) {
         this.log(`[FLOW] Condition '${id}' not defined - skipping`);
         return null;
-      }
-    };
-
+        }
     // Register trigger cards (graceful if not defined)
     this._moistureChangedTrigger = safeGetTrigger('soil_sensor_moisture_changed');
     this._soilDryTrigger = safeGetTrigger('soil_sensor_soil_dry');
@@ -190,10 +183,7 @@ class SoilSensorDriver extends ZigBeeDriver {
 
     this.log(`[PAIR] Filtered: ${devices.length}  ${filteredDevices.length} devices`);
     return filteredDevices;
-  }
-
-}
-
+    }
 module.exports = SoilSensorDriver;
 
 

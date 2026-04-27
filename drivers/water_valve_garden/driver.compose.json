@@ -29,14 +29,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_HWNPHLIV",
-      "_TZ3000_OGJPFOYN",
-      "_TZ3000_SRLDGDXZ"
-    ],
-    "productId": [
-      "TS0049"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -239,7 +233,7 @@
   "images": {
     "small": "drivers/water_valve_garden/assets/images/small.png",
     "large": "drivers/water_valve_garden/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

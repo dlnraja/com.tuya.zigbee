@@ -23,7 +23,7 @@
   "images": {
     "large": "drivers/handheld_remote_4_buttons/assets/images/large.png",
     "small": "drivers/handheld_remote_4_buttons/assets/images/small.png"
-    },
+  },
   "energy": {
     "batteries": [
       "CR2032"
@@ -31,9 +31,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0044"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

@@ -19,15 +19,8 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_RUAVTJNQ",
-      "_TZE204_K6JHSR0Q",
-      "_TZE204_RUAVTJNQ"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_POOL"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -46,7 +39,7 @@
   "images": {
     "small": "drivers/pool_pump/assets/images/small.png",
     "large": "drivers/pool_pump/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

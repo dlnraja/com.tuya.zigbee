@@ -380,7 +380,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
   }
 
   async _handleRotationStep(direction, stepSize) {
-    const delta = direction === 'up' ? (stepSize * 254 ) : -(stepSize * 254);
+    const delta = direction === 'up' ? safeMultiply((stepSize, 254) ) : -safeMultiply((stepSize, 254));
     this._updateSimulatedBrightness(delta);
 
     if (direction === 'up') {

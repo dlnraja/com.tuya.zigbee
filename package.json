@@ -1,6 +1,6 @@
 {
   "name": "com.dlnraja.tuya.zigbee",
-  "version": "7.4.10",
+  "version": "7.4.11",
   "description": "Universal Tuya Zigbee App",
   "main": "app.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "validate:ajv": "ajv validate -s docs/schemas/driver.compose.schema.json -d 'drivers/**/driver.compose.json'",
     "publish": "homey app publish",
     "rename": "node scripts/fixes/RENAME_ALL_DUPLICATE_NAMES.js",
-    "test": "mocha test/**/*.test.js --timeout 5000",
+    "test": "mocha tests/**/*.test.js --timeout 5000",
     "test:watch": "mocha test/**/*.test.js --watch",
     "test:coverage": "nyc mocha test/**/*.test.js",
     "lint": "eslint lib/ drivers/ --ext .js",
@@ -52,6 +52,9 @@
     "validate:recursive": "node scripts/validation/comprehensive-recursive-validator.js",
     "fix:auto": "node scripts/validation/auto-fix-common-issues.js",
     "validate:fix": "npm run validate:recursive && npm run fix:auto && npm run validate:recursive",
+    "syntax:check": "find lib -name '*.js' -exec node -c {} \\;",
+    "validate:all": "bash scripts/validate-all.sh",
+    "extract:fingerprints": "node scripts/extract-fingerprints.js",
     "generate-driver": "node .github/scripts/generate-driver.js"
   },
   "keywords": [

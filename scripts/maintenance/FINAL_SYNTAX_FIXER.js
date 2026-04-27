@@ -35,7 +35,7 @@ walk(path.join(ROOT, 'drivers'), (file) => {
 
     // 2. Broken ternaries: return x ? y : null; -> return x ? y : null;
     if (trimmed.startsWith('return ') && trimmed.includes('?') && !trimmed.includes(':') && trimmed.endsWith(';')) {
-       lines[i] = line.substring(0, line.lastIndexOf(';')).trimEnd() + ' : null;';
+       lines[i] = line.substring(0, line.lastIndexOf(';')).trimEnd() + ';';
        changed = true;
        continue;
     }

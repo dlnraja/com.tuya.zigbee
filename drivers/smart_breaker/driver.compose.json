@@ -30,13 +30,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE204_68NVBIO9"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_BREAKER"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -55,7 +50,7 @@
   "images": {
     "small": "drivers/smart_breaker/assets/images/small.png",
     "large": "drivers/smart_breaker/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

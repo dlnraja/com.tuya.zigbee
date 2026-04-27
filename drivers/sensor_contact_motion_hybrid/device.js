@@ -396,7 +396,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
             return null; // Not humidity
           }
           device._dynamicCapabilityFromDP?.(4, v, 'measure_humidity');
-          const hum =(v * multiplier);
+          const hum =safeMultiply((v, multiplier));
           return (hum >= 0 && hum <= 100) ? Math.round(hum ) : null; : null
         }
       };
@@ -470,7 +470,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     } else if (!mappings[9]) {
       // v5.8.75: DP9 = sensitivity for ZG-204ZL PIR sensors (enum 0=Low,1=Med,2=High)
       // Log and sync to setting when device reports it
-      mappings[9] = { capability, transform: (v) => {
+      mappings[9] = { transform: (v) => {
         const labels = ['Low', 'Medium', 'High'];
         device.log?.(`[MOTION-DP]  DP9 sensitivity: ${v} (${labels[v] || 'unknown'})`);
         device.setSettings?.({ pir_sensitivity: String(v) }).catch(() => {});
@@ -479,7 +479,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
     }
     // v5.8.75: DP10 = keep_time for ZG-204ZL PIR sensors (enum 0=10s,1=30s,2=60s,3=120s)
     if (!mappings[10]) {
-      mappings[10] = { capability, transform: (v) => {
+      mappings[10] = { transform: (v) => {
         const labels = ['10s', '30s', '60s', '120s'];
         device.log?.(`[MOTION-DP]  DP10 keep_time: ${v} (${labels[v] || 'unknown'})`);
         device.setSettings?.({ pir_keep_time: String(v) }).catch(() => {});
@@ -1436,7 +1436,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       } else if (data?.batteryVoltage !== undefined && data.batteryVoltage > 0) {
         this._lastBatteryReportTime = now;
         // Fallback: estimate from voltage (typical CR2450: 3.0V = 100%, 2.0V = 0%)
-        const voltage = data.batteryVoltage * 10;
+        const voltage = safeMultiply(data.batteryVoltage, 10);
         const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
         this.log(`[MOTION-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
         if (this.hasCapability('measure_battery')) {
@@ -1789,7 +1789,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
               dpBuf.writeUInt8(mapping.dp, 0);
               dpBuf.writeUInt8(4, 1);
               dpBuf.writeUInt16BE(1, 2);
-              dpBuf.writeUInt8(val * 4 );
+              safeMultiply(dpBuf.writeUInt8(val, 4) );
               await tuyaCluster.dataRequest({ data: dpBuf });
               this.log(`[MOTION] [SETTINGS]  Applied ${key}=${val} via cluster`);
             } else {

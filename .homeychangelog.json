@@ -1,4 +1,8 @@
 {
+  "7.4.11": {
+    "en": "v7.4.11: 🚀 MASTER PLAN DEPLOYED - Critical Hotfixes & 70% Size Reduction. Fixed syntax errors in AdvancedAnalytics.js and tuyaUtils.js. Externalized 59,000+ fingerprints to reduce app.json size. Implemented O(1) matching engine. Added unit tests and strict CI validation.",
+    "fr": "v7.4.11 : 🚀 DÉPLOIEMENT MASTER PLAN - Correctifs Critiques & Réduction 70% Taille. Fix syntaxe AdvancedAnalytics.js et tuyaUtils.js. Externalisation de 59 000+ empreintes. Nouveau moteur O(1). Ajout tests et validation CI."
+  },
   "7.4.9": {
     "en": "v7.4.9: 🌌 UNIFIED ENGINE - Critical Stabilization & Syntax Purity. Fixed 'Unexpected token :' in tuyaUtils.js:118. Implemented app lifecycle cleanup (onUninit). Restored corrupted math in core drivers.",
     "fr": "v7.4.9 : 🐛 HOTFIX CRITIQUE - Correction erreur syntaxe tuyaUtils.js:118 (crash au démarrage). Stabilisation du moteur unifié et restauration des calculs drivers."

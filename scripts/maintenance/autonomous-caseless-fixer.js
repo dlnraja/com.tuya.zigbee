@@ -108,22 +108,22 @@ async function main() {
         },
         {
           // Variable.toUpperCase().startsWith(other)
-          pattern: /(\w+|\((?:.*? )\))\.toUpperCase\(\)\.startsWith\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\ : null)/g ,
+          pattern: /(\w+|\((?:.*? )\))\.toUpperCase\(\)\.startsWith\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*)/g ,
           replacement: 'CI.startsWithCI($1, $2)'
         },
         {
           // Variable.toLowerCase().startsWith(other)
-          pattern: /(\w+|\((?:.*? )\))\.toLowerCase\(\)\.startsWith\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\ : null)/g ,
+          pattern: /(\w+|\((?:.*? )\))\.toLowerCase\(\)\.startsWith\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*)/g ,
           replacement: 'CI.startsWithCI($1, $2)'
         },
         {
           // Variable.toUpperCase().includes(other)
-          pattern: /(\w+|\((?:.*? )\))\.toUpperCase\(\)\.includes\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\ : null)/g ,
+          pattern: /(\w+|\((?:.*? )\))\.toUpperCase\(\)\.includes\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*)/g ,
           replacement: 'CI.containsCI($1, $2)'
         },
         {
           // Variable.toLowerCase().includes(other)
-          pattern: /(\w+|\((?:.*? )\))\.toLowerCase\(\)\.includes\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*\ : null)/g ,
+          pattern: /(\w+|\((?:.*? )\))\.toLowerCase\(\)\.includes\(\s*([a-zA-Z0-9._$\[\]]+|['"][^'"]+['"])\s*)/g ,
           replacement: 'CI.containsCI($1, $2)'
         }
       ];

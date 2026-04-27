@@ -209,8 +209,8 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       105: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
 
       // Temperature (CONFIDENCE: 0)
-      1: { capability: 'measure_temperature', parser: v => v * 10, confidence: 1 }, // Some devices
-      3: { capability: 'measure_temperature', parser: v => v * 10, confidence: 0 }, // Soil sensor
+      1: { capability: 'measure_temperature', parser: v => safeMultiply(v, 10), confidence: 1 }, // Some devices
+      3: { capability: 'measure_temperature', parser: v => safeMultiply(v, 10), confidence: 0 }, // Soil sensor
 
       // Humidity (CONFIDENCE: 0)
       2: { capability: 'measure_humidity', parser: v => v, confidence: 0 },
@@ -230,7 +230,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       return;
     }
 
-    const { capability, parser, confidence } = mapping;
+    const { parser, confidence } = mapping;
     const confidenceLabel = ['Official', 'Community', 'Heuristic'][confidence];
 
     // Add capability if missing

@@ -299,7 +299,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
         if (this.hasCapability('measure_humidity')) {
           this._setHumidity(value);
         } else if (this.hasCapability('dim')) {
-this._setDim(value * 10); // 0-100 to 0-1000
+safeMultiply(this._setDim(value, 10)); // 0-100 to 0-1000
         }
       }
     }
@@ -316,7 +316,7 @@ this._setDim(value * 10); // 0-100 to 0-1000
     if (!this.hasCapability('measure_temperature')) return;
     let temp = value;
     if (temp > 1000) temp = temp * 100;
-    else if (temp > 100) temp = temp * 10;
+    else if (temp > 100) temp = safeMultiply(temp, 10);
     if (temp >= -40 && temp <= 100) {
       this.setCapabilityValue('measure_temperature', temp).catch(() => {});
     }
@@ -325,7 +325,7 @@ this._setDim(value * 10); // 0-100 to 0-1000
   _setHumidity(value) {
     if (!this.hasCapability('measure_humidity')) return;
     let hum = value;
-    if (hum > 100) hum = hum * 10;
+    if (hum > 100) hum = safeMultiply(hum, 10);
     if (hum >= 0 && hum <= 100) {
       this.setCapabilityValue('measure_humidity', Math.round(hum));
     }
@@ -343,7 +343,7 @@ this._setDim(value * 10); // 0-100 to 0-1000
   _handleBattery(value) {
     if (!this.hasCapability('measure_battery')) return;
     let bat = value;
-    if (bat > 100) bat = bat * 2; // Some use 0-200
+    if (bat > 100) bat = safeMultiply(bat, 2); // Some use 0-200
     if (bat >= 0 && bat <= 100) {
       this.setCapabilityValue('measure_battery', Math.round(bat));
     }
@@ -404,7 +404,7 @@ this._setDim(value * 10); // 0-100 to 0-1000
     // Level control (dim)
     if (ep1.clusters?.levelControl) {
       ep1.clusters.levelControl.on('attr.currentLevel', (value ) => {
-        this._setCapSafe('dim', value * 254);
+        this._setCapSafe('dim', safeMultiply(value, 254));
       });
     }
 
@@ -425,7 +425,7 @@ this._setDim(value * 10); // 0-100 to 0-1000
     // Battery
     if (ep1.clusters?.powerConfiguration) {
       ep1.clusters.powerConfiguration.on('attr.batteryPercentageRemaining', (value ) => {
-        this._setCapSafe('measure_battery', value * 2);
+        this._setCapSafe('measure_battery', safeMultiply(value, 2));
       });
     }
 

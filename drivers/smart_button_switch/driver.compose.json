@@ -23,7 +23,7 @@
   "images": {
     "large": "drivers/smart_button_switch/assets/images/large.png",
     "small": "drivers/smart_button_switch/assets/images/small.png"
-    },
+  },
   "energy": {
     "batteries": [
       "CR2450"
@@ -36,9 +36,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0041"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

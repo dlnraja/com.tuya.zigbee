@@ -27,9 +27,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0601_SHUTTER"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -445,7 +443,7 @@
   "images": {
     "small": "drivers/shutter_roller_controller/assets/images/small.png",
     "large": "drivers/shutter_roller_controller/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

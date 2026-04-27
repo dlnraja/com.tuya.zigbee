@@ -235,6 +235,6 @@ jobs:
             echo "### 🌌 Zero Defect Architect Audit" >> $GITHUB_STEP_SUMMARY
             node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); console.log('| Metric | Count |\n| --- | --- |\n| Drivers Checked | ' + r.driversChecked + ' |\n| NaN Safety Warnings | ' + r.naNSafetyCheck.length + ' |\n| ID Collisions | ' + r.collisions.length + ' |\n| SDK Deprecations | ' + r.sdkDeprecations.length + ' |\n| Button Logic Issues | ' + r.buttonLogicFailures.length + ' |');" >> $GITHUB_STEP_SUMMARY
             
-            # Fail on NaN safety warnings or Logic failures
-            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); if(r.naNSafetyCheck.length > 0 || r.buttonLogicFailures.length > 0) process.exit(1);"
+            # Fail on all critical metrics to ensure Zero-Defect state
+            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); if(r.naNSafetyCheck.length > 0 || r.buttonLogicFailures.length > 0 || r.errors.length > 0 || r.collisions.length > 0 || r.sdkDeprecations.length > 0) { console.error('Architectural violations detected!'); process.exit(1); }"
           fi

@@ -27,46 +27,8 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "SONOFF",
-      "_TZ3000_BDBB0FON",
-      "_TZ3000_XWH1E22X",
-      "_TZ3000_ZWSZQDPY",
-      "_TZ3210_ALPROTO2",
-      "_TZ3210_B3KIQ1I0",
-      "_TZ3210_DKUL5XIX",
-      "_TZ3210_DXRJKPI4",
-      "_TZ3210_GS9SHYQA",
-      "_TZ3210_HZY4RJZ3",
-      "_TZ3210_JAAP6JEB",
-      "_TZ3210_LEYZ4RJU",
-      "_TZ3210_MJAS4MDS",
-      "_TZ3210_QIGBOVCQ",
-      "_TZ3210_RKGNGB5O",
-      "_TZ3210_RWY3HAGT",
-      "_TZ3210_S1X06GJA",
-      "_TZ3210_S8LVBBU",
-      "_TZ3210_WUHEIK5L",
-      "_TZ3210_ZFBLRUVV",
-      "_TZB210_U3RI0968",
-      "_TZB210_UOIQHJQE",
-      "_TZB210_ZDVRSTS8"
-    ],
-    "productId": [
-      "CK-BL702-AL-01(7009_Z102LG03-1)",
-      "CLASSIC A60 RGBW",
-      "FE-GU10-5W",
-      "FLEX RGBW",
-      "GENERIC",
-      "GL-B-008Z",
-      "GL-C-008",
-      "SMD9300",
-      "TS0504A",
-      "TS0504B",
-      "TS0505A",
-      "TS0505B",
-      "TS1002"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -532,7 +494,7 @@
   "images": {
     "small": "drivers/bulb_rgbw/assets/images/small.png",
     "large": "drivers/bulb_rgbw/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

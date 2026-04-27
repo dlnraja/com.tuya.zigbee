@@ -39,7 +39,7 @@ function processFile(filePath) {
     content = content.replace(/const\s+(\w+)\s*=\s*(device\.getStoreValue\s+\?\s+[^?;]+)\s*;\s*/g, (m, p1, p2) => {
         if (!p2.includes(':')) {
             modified = true;
-            return `const ${p1} = ${p2} : null;`;
+            return `const ${p1} = ${p2};`;
         }
         return m;
     });

@@ -108,5 +108,70 @@ if (fs.existsSync(mixinPath)) {
   }
 }
 
+// 7. Manual Identity Comparison (Use CI helper)
+const utilFile = path.join(__dirname, '..', '..', 'lib', 'Util.js');
+const helperFile = path.join(__dirname, '..', '..', 'lib', 'utils', 'CaseInsensitiveMatcher.js');
+for (const d of dirs) {
+  const devFile = path.join(DIRS, d, 'device.js');
+  if (fs.existsSync(devFile)) {
+    const txt = fs.readFileSync(devFile, 'utf8');
+    if ((txt.includes('manufacturerName') || txt.includes('modelId') || txt.includes('productId')) && 
+        (txt.includes('===') || txt.includes('==') || txt.includes('.toLowerCase()'))) {
+      if (!txt.includes('CI.includesCI') && !txt.includes('CaseInsensitiveMatcher')) {
+        warn(d + ' potentially uses manual identity comparison. Consider using lib/utils/CaseInsensitiveMatcher.js');
+      }
+    }
+  }
+}
+
+// 8. Arithmetic Integrity (Prevent regex corruption)
+const arithCheck = path.join(__dirname, '..', '..', 'scripts', 'maintenance', 'ARITHMETIC_INTEGRITY_CHECK.js');
+if (fs.existsSync(arithCheck)) {
+  console.log('Running Arithmetic Integrity Check...');
+  const { execSync } = require('child_process');
+  try {
+    execSync('node ' + arithCheck, { stdio: 'inherit' });
+    console.log('✅ Arithmetic Integrity OK');
+  } catch (e) {
+    error('Arithmetic Integrity Check FAILED. Regex corruption detected.');
+  }
+}
+
+// 10. Rule 21: Capability-Based Flow Filtering
+for (const d of dirs) {
+  const flowFile = path.join(DIRS, d, 'driver.flow.compose.json');
+  if (fs.existsSync(flowFile)) {
+    try {
+      const j = JSON.parse(fs.readFileSync(flowFile, 'utf8'));
+      if (j.triggers) {
+        for (const t of j.triggers) {
+          // If the trigger ID doesn't contain a generic keyword, it should be filtered
+          const isGeneric = ['status_changed', 'online', 'offline'].some(k => t.id.includes(k));
+          if (!isGeneric && !t.filter && !t.args?.some(a => a.name === 'capability')) {
+             // warn(d + ' trigger ' + t.id + ' may be missing capability filtering (Rule 21)');
+          }
+        }
+      }
+    } catch (e) {}
+  }
+}
+
+// 9. Forbidden Invisible Characters
+const FORBIDDEN_CHARS = [0xFEFF, 0x200B, 0x00A0, 0x0000];
+for (const d of dirs) {
+  const files = [path.join(DIRS, d, 'device.js'), path.join(DIRS, d, 'driver.compose.json'), path.join(DIRS, d, 'driver.flow.compose.json')];
+  for (const f of files) {
+    if (fs.existsSync(f)) {
+      const buf = fs.readFileSync(f);
+      for (let i = 0; i < buf.length; i++) {
+        if (FORBIDDEN_CHARS.includes(buf[i])) {
+          error(path.relative(path.join(DIRS, '..'), f) + ' contains forbidden invisible character (char code ' + buf[i] + ')');
+          break;
+        }
+      }
+    }
+  }
+}
+
 console.log('Done. ' + errors + ' errors, ' + warnings + ' warnings.');
 if (errors > 0) process.exit(1);

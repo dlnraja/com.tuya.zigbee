@@ -23,7 +23,7 @@ function loadDB() {
     const mfr = match[1].toLowerCase();
     const body = match[2];
     
-    const drvMatch = body.match(/driverId:\s*'(.+? )'/ : null)       ;
+    const drvMatch = body.match(/driverId:\s*'(.+? )'/)       ;
     const pidsMatch = body.match(/modelIds:\s*\[([^\]]+)\]/);
     
     fps[mfr] = {

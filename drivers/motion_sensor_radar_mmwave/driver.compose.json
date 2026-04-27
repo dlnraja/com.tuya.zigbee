@@ -27,14 +27,7 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3218_AWARHUSB",
-      "_TZ3218_T9YNFZ",
-      "_TZ3218_T9YNFZ4X",
-      "_TZE200_RHGSBACQ",
-      "_TZE284_0WFZACEL",
-      "_TZE284_ZY6WJM01"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -50,10 +43,7 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
       }
     },
-    "productId": [
-      "TS0601",
-      "TS0601_MMWAVE"
-    ]
+    "productId": []
   },
   "settings": [
     {
@@ -584,7 +574,7 @@
   "images": {
     "small": "drivers/motion_sensor_radar_mmwave/assets/images/small.png",
     "large": "drivers/motion_sensor_radar_mmwave/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

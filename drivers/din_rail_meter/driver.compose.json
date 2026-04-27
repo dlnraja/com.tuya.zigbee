@@ -247,28 +247,8 @@
     }
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_81YRT3LO",
-      "_TZE200_AC0FHFIQ",
-      "_TZE200_CJBOFHXW",
-      "_TZE200_DAVZGQQ0",
-      "_TZE200_IPXSZDHV",
-      "_TZE200_LZRIUP1J",
-      "_TZE204_2DPA3FQJ",
-      "_TZE204_BYZDAYIE",
-      "_TZE204_DAVZGQQ0",
-      "_TZE204_FSB6ZW01",
-      "_TZE204_IPXSZDHV",
-      "_TZE204_SHKXSGIS",
-      "_TZE284_2DPA3FQJ"
-    ],
-    "productId": [
-      "SDM01-3Z1",
-      "SDM02-2Z1",
-      "SPM01-1Z2",
-      "SPM02-3Z3",
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -287,7 +267,7 @@
   "images": {
     "small": "drivers/din_rail_meter/assets/images/small.png",
     "large": "drivers/din_rail_meter/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

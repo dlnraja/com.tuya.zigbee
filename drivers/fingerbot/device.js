@@ -88,7 +88,7 @@ class FingerBotTimeBoundCluster extends BoundCluster {
         buf.writeUInt16LE(0x0002, 0);
         buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
         buf.writeUInt8(ZCL_TYPE_INT32, 3);
-        buf.writeInt32LE(timeZone * 4);
+        safeMultiply(buf.writeInt32LE(timeZone, 4));
         chunks.push(buf);
         break;
       }

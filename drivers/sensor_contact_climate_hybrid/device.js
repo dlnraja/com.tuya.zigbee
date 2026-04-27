@@ -232,26 +232,26 @@ class ClimateSensorDevice extends UnifiedSensorBase {
           if (v === 0) return 10;   // low
           if (v === 1) return 50;   // medium
           if (v === 2) return 100;  // high
-return Math.min(100, v * 2); // Fallback: treat as raw with x2
+return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
         }
       },
-      4: { capability: 'measure_battery', transform: (v) =>Math.min(100, v * 2) }, // x2 multiplier
+      4: { capability: 'measure_battery', transform: (v) =>Math.min(100, safeMultiply(v, 2)) }, // x2 multiplier
 
       // 
       // CONFIGURATION DPs - TH05Z/ZG227C LCD sensors
       // Source: Z2M #26078, #19731, Blakadder
       // 
-      9: { capability, setting: 'temperature_unit' },     // 0=Celsius, 1=Fahrenheit
-      10: { capability, setting: 'max_temp_alarm', divisor: 10 },  // Max temp Â°C/10
-      11: { capability, setting: 'min_temp_alarm', divisor: 10 },  // Min temp Â°C/10
+      9: { setting: 'temperature_unit' },     // 0=Celsius, 1=Fahrenheit
+      10: { setting: 'max_temp_alarm', divisor: 10 },  // Max temp Â°C/10
+      11: { setting: 'min_temp_alarm', divisor: 10 },  // Min temp Â°C/10
       12: { capability: 'measure_luminance', divisor: 1 },       // v5.5.783: DP12=Lux for multi-sensors
-      13: { capability, setting: 'min_humidity_alarm' },  // Min humidity %
-      14: { capability, setting: 'temp_alarm_status' },   // 0=cancel, 1=lower, 2=upper
-      15: { capability, setting: 'humidity_alarm_status' }, // 0=cancel, 1=lower, 2=upper
-      17: { capability, setting: 'temp_report_interval' },  // 1-120 minutes
+      13: { setting: 'min_humidity_alarm' },  // Min humidity %
+      14: { setting: 'temp_alarm_status' },   // 0=cancel, 1=lower, 2=upper
+      15: { setting: 'humidity_alarm_status' }, // 0=cancel, 1=lower, 2=upper
+      17: { setting: 'temp_report_interval' },  // 1-120 minutes
       // v5.12.11: DP18 NOT mapped here - already mapped as measure_temperature above (line 186)
-      19: { capability, setting: 'temp_sensitivity', divisor: 10 },  // 0.3-1.0Â°C
-      20: { capability, setting: 'humidity_sensitivity' }, // 3-10%
+      19: { setting: 'temp_sensitivity', divisor: 10 },  // 0.3-1.0Â°C
+      20: { setting: 'humidity_sensitivity' }, // 3-10%
 
       // 
       // ILLUMINANCE (some models like _TZE200_locansqn)
@@ -788,7 +788,7 @@ return Math.min(100, v * 2); // Fallback: treat as raw with x2
           // v5.5.446: Build raw Tuya mcuSyncTime frame: [seqHi][seqLo][0x24][payloadLen:2][UTC:4][Local:4]
           // Z2M format: UTC FIRST, Local SECOND (see zigbee-herdsman-converters / src/lib / tuya.ts)
           const rawFrame = Buffer.alloc(13);
-          rawFrame.writeUInt16BE(Date.now() % 65535 * 0); // Sequence number
+          rawFrame.writeUInt16BE(Date.now() % safeMultiply(65535, 0)); // Sequence number
           rawFrame.writeUInt8(0x24, 2);                   // Command: mcuSyncTime
           rawFrame.writeUInt16BE(8, 3);                   // Payload length: 8 bytes
           rawFrame.writeUInt32BE(utcSecondsFix, 5);          // UTC time FIRST (Z2M format)
@@ -1407,7 +1407,7 @@ return Math.min(100, v * 2); // Fallback: treat as raw with x2
     // DP5=temperature(Ã·10), DP3=soil_moisture(%), DP15=battery(%)
     if (this._isSoilSensor()) {
       if (dp === 5) {
-        const temp = this._applyTempOffset(value * 10);
+        const temp = safeMultiply(this._applyTempOffset(value, 10));
         this.log(`[SOIL] DP5 temperature raw=${value}  ${temp}Â°C`);
         await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
         return;
@@ -1431,8 +1431,8 @@ return Math.min(100, v * 2); // Fallback: treat as raw with x2
 
     if (dp === 1 || dp === 6 || dp === 18) {
       // Temperature DPs - apply offset after division
-      const rawTemp = value * 10;
-      processedValue =this._applyTempOffset(rawTemp * 10); // Scale back for parent processing
+      const rawTemp = safeMultiply(value, 10);
+      processedValue =safeMultiply(this._applyTempOffset(rawTemp, 10)); // Scale back for parent processing
     } else if (dp === 2 || dp === 7 || dp === 103) {
       // v5.11.26: FIX #1328 - auto-divisor before offset (raw value may be >100 e.g. 435=43.5%)
       let hum = value;
@@ -1481,12 +1481,12 @@ return Math.min(100, v * 2); // Fallback: treat as raw with x2
     // v5.5.190: Log with calibration info
     switch (dp) {
     case 1: // Temperature (standard) Ã·10
-      const temp1 = this._applyTempOffset(rawValue * 10);
+      const temp1 = safeMultiply(this._applyTempOffset(rawValue, 10));
       this.log(`[CLIMATE-DP] DP1 temperature raw=${rawValue}  ${temp1}Â°C`);
       break;
     case 18: // Temperature (alt) Ã·10
     case 6: // Temperature (some _TZE204 models)
-      const tempAlt = this._applyTempOffset(rawValue * 10);
+      const tempAlt = safeMultiply(this._applyTempOffset(rawValue, 10));
       this.log(`[CLIMATE-DP] DP${dp} temperature_alt raw=${rawValue}  ${tempAlt}Â°C`);
       break;
     case 2: // Humidity (standard)
@@ -1505,11 +1505,11 @@ return Math.min(100, v * 2); // Fallback: treat as raw with x2
       if (rawValue === 0) bat3 = 10;      // low
       else if (rawValue === 1) bat3 = 50; // medium
       else if (rawValue === 2) bat3 = 100; // high
-      else bat3 =Math.min(100, rawValue * 2);
+      else bat3 =Math.min(100, safeMultiply(rawValue, 2));
       this.log(`[CLIMATE-DP] DP3 battery_state raw=${rawValue}  ${bat3}% (enum: 0=low, 1=med, 2=high)`);
       break;
     case 4: // Battery (standard with Ã—2 multiplier)
-      const batConverted =Math.min(100, rawValue * 2);
+      const batConverted =Math.min(100, safeMultiply(rawValue, 2));
       this.log(`[CLIMATE-DP] DP4 battery raw=${rawValue}  ${batConverted}% (Ã—2 multiplier)`);
       break;
     case 5: // Illuminance (some models)

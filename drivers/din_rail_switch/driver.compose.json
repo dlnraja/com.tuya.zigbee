@@ -37,20 +37,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_3R9FTHMW",
-      "_TZ3000_5F43H46B",
-      "_TZ3000_7Y5IKXWQ",
-      "_TZ3000_FJM6MJRJ",
-      "_TZ3000_RJXQSO4A",
-      "_TZE200_FJB98HBQ",
-      "_TZE204_AQNAZJ70",
-      "_TZE204_FJB98HBQ"
-    ],
-    "productId": [
-      "TS0001_DIN",
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -69,7 +57,7 @@
   "images": {
     "small": "drivers/din_rail_switch/assets/images/small.png",
     "large": "drivers/din_rail_switch/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

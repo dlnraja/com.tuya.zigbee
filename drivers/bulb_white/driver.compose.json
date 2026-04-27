@@ -27,13 +27,8 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_GXNSTJTS",
-      "_TZ3000_OBORYZTC"
-    ],
-    "productId": [
-      "TS0501"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -498,7 +493,7 @@
   "images": {
     "small": "drivers/bulb_white/assets/images/small.png",
     "large": "drivers/bulb_white/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

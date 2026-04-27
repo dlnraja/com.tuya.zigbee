@@ -27,13 +27,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_MRAOVVMM"
-    ],
-    "productId": [
-      "TS0015",
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/switch_wall_5gang/assets/learnmode.svg",
       "instruction": {
@@ -706,7 +701,7 @@
   "images": {
     "small": "drivers/switch_wall_5gang/assets/images/small.png",
     "large": "drivers/switch_wall_5gang/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

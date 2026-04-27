@@ -24,14 +24,8 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3210_TKKB1YM8",
-      "_TZE200_BXOO2SWD"
-    ],
-    "productId": [
-      "TS0601",
-      "TS1101"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -70,7 +64,7 @@
   "images": {
     "large": "drivers/dimmer_dual_channel/assets/images/large.png",
     "small": "drivers/dimmer_dual_channel/assets/images/small.png"
-    },
+  },
   "energy": {
     "approximation": {
       "usageOn": 60,

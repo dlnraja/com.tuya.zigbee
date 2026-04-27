@@ -10,7 +10,7 @@
   "images": {
     "small": "drivers/generic_tuya/assets/images/small.png",
     "large": "drivers/generic_tuya/assets/images/large.png"
-    },
+  },
   "capabilities": [
     "measure_battery",
     "measure_temperature",
@@ -42,35 +42,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "BITRON",
-      "BLITZWOLF",
-      "BSEED",
-      "BW-",
-      "DANFOSS",
-      "EUROTRONIC",
-      "GIRIER",
-      "IKEA",
-      "IKEA OF SWEDEN",
-      "LEGRAND",
-      "LIDL",
-      "LONSONHO",
-      "LUMI",
-      "NAS-",
-      "NEO",
-      "SCHNEIDER ELECTRIC",
-      "SIGNIFY",
-      "SIGNIFY NETHERLANDS B.V.",
-      "SMARTTHINGS",
-      "SUNRICHER",
-      "TRADFRI",
-      "TUYA",
-      "WOOX"
-    ],
-    "productId": [
-      "TS0203",
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

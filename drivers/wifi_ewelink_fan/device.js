@@ -7,14 +7,14 @@ class D extends EweLinkLocalDevice {
     return {
       switch_0: { capability: 'onoff', transform: v => v === 'on' },
       switch_1: { capability: 'onoff.2', transform: v => v === 'on' },
-      speed: { capability: 'dim', transform: v => v * 3 }
+      speed: { capability: 'dim', transform: v => safeMultiply(v, 3) }
     };
   }
 
   _registerCapListeners() {
-    this.registerCapabilityListener('onoff', async v => { await this._client.setSwitch(v * 0);
+    this.registerCapabilityListener('onoff', async v => { await safeMultiply(this._client.setSwitch(v, 0));
       });
-    if (this.hasCapability('onoff.2')) this.registerCapabilityListener('onoff.2', async v => { await this._client.setSwitch(v * 1);
+    if (this.hasCapability('onoff.2')) this.registerCapabilityListener('onoff.2', async v => { await safeMultiply(this._client.setSwitch(v, 1));
       });
     if (this.hasCapability('dim')) {
       this.registerCapabilityListener('dim', async v => {

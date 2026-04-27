@@ -220,7 +220,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
         try {
           this.optimizer = new PerformanceOptimizer({
             maxCacheSize: 1000,
-            maxCacheMemory:10 * 1024 * 1024 // 10 MB
+            maxCacheMemory: safeMultiply(10, 1048576) // 10 MB
           });
           this.log(' Performance Optimizer initialized');
         } catch (err) { this.error(' Optimizer failed:', err.message); }

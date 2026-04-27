@@ -35,11 +35,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0042",
-      "TS0601_SCENE2",
-      "TS0726"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -52,7 +48,7 @@
   "images": {
     "small": "drivers/scene_switch_2/assets/images/small.png",
     "large": "drivers/scene_switch_2/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

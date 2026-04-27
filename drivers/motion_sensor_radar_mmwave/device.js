@@ -19,153 +19,119 @@ const { WakeStrategies } = require('../../lib/tuya/TuyaGatewayEmulator');
  * - ADVANCED models: Full capabilities (DP101/102 for distance/time)
  */
 
-// 
-// MODEL-SPECIFIC CONFIGURATIONS
-// v5.5.275: Fix for dlnraja's _TZE200_rhgsbacq showing NULL capabilities
-// 
-const MODEL_CONFIGS = {
-  // SIMPLE radars - basic presence only (no distance/time)
-  SIMPLE: {
-    models: [
-      '_TZE200_rhgsbacq', '_TZE200_kb5noeto', '_TZE200_5b5noeto',
-      '_TZE200_bh3n6gk8', '_TZE200_1ibpyhdc', '_TZE200_ttcovulf',
-      '_TZE200_sgpeacqp', '_TZE200_holel4dk',
-    ],
-    capabilities: ['alarm_motion', 'measure_luminance', 'measure_battery'],
-    dps: [1, 4, 12, 15],  // Only query these DPs
-  },
-  // ADVANCED radars - full features
-  ADVANCED: {
-    models: [
-      '_TZE200_2aaelwxk', '_TZE200_3towulqd',
-      '_TZE204_ijxvkhd0', '_TZE204_qasjif9e', '_TZE204_sxm7l9xa',
-      '_TZE284_fwondbzy',
-    ],
-    capabilities: ['alarm_motion', 'alarm_human', 'measure_luminance.distance', 'measure_presence_time', 'measure_luminance', 'measure_battery'],
-    dps: [1, 2, 3, 4, 9, 10, 11, 12, 15, 101, 102, 103, 104, 105],
-  },
-  // RELAY radars - MTG/Wenzhi presence sensors with relay output
-  // Z2M: MTG075-ZB-RL, MTG235-ZB-RL, MTG275-ZB-RL, MTG035-ZB-RL
-  // Source: Z2M tuya.ts tuyaDatapoints for MTG075-ZB-RL
-  RELAY: {
-    models: [
-      '_TZE204_clrdrnya', '_TZE200_clrdrnya', '_TZE204_sbyx0lm6', '_TZE200_sbyx0lm6',
-      '_TZE204_dtzziy1e', '_TZE204_mtoaryre', '_TZE200_mp902om5', '_TZE204_pfayrzcw',
-      '_TZE284_4qznlkbu',
-    ],
-    capabilities: ['alarm_motion', 'onoff', 'measure_luminance.distance', 'measure_luminance'],
-    mainsPowered: true,
-    dps: [1, 2, 3, 4, 6, 9, 104, 107, 108, 109, 110],
-  },
-};
+const SENSOR_CONFIGS = require('../../lib/data/SensorConfigs');
+const { getManufacturer, getModelId } = require('../../lib/helpers/DeviceDataHelper');
 
-function getModelConfig(manufacturerName) {
-  for (const [type, config] of Object.entries(MODEL_CONFIGS)) {
-    if (CI.includesCI(config.models, manufacturerName)) {
-      return { type, ...config };
+// Build reverse lookup: manufacturerName -> config
+const MANUFACTURER_CONFIG_MAP = {};
+for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
+  for (const mfr of config.sensors) {
+    MANUFACTURER_CONFIG_MAP[mfr.toLowerCase()] = { ...config, configName };
+  }
+}
+
+// v7.4.11: Standardized configuration resolution
+function getSensorConfig(manufacturerName, modelId = null) {
+  const mfr = CI.normalize(manufacturerName);
+  const model = CI.normalize(modelId || '');
+
+  // 1. DUAL-KEY MATCH
+  if (CI.equalsCI(mfr, 'HOBEIAN') || CI.equalsCI(mfr, 'hobeian')) {
+    if (CI.containsCI(model, 'ZG-204ZM')) return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
+    if (CI.containsCI(model, 'ZG-204ZV')) return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };
+    if (CI.containsCI(model, 'ZG-227Z')) return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI' };
+    if (CI.containsCI(model, 'ZG-204ZL')) return { ...SENSOR_CONFIGS.ZG_204ZL_PIR, configName: 'ZG_204ZL_PIR' };
+    return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM_FALLBACK' };
+  }
+
+  // 2. EXACT MATCH
+  const config = MANUFACTURER_CONFIG_MAP[mfr];
+  if (config) return config;
+
+  // 3. PATTERN MATCH
+  if (manufacturerName) {
+    const knownVariants = ['iadro9bf', 'qasjif9e', 'ztqnh5cg', 'sbyx0lm6'];
+    if (knownVariants.some(variant => CI.containsCI(manufacturerName, variant))) {
+      return { ...SENSOR_CONFIGS.TZE284_IADRO9BF, configName: 'TZE284_IADRO9BF_PATTERN' };
     }
   }
-  // Default to ADVANCED for unknown models
-  return { type: 'ADVANCED', ...MODEL_CONFIGS.ADVANCED };
+
+  return SENSOR_CONFIGS.DEFAULT;
 }
+
 class MotionSensorRadarDevice extends UnifiedSensorBase {  get mainsPowered() {
-  const config = this._getModelConfig();
-  return config.mainsPowered === true;
+  const config = this._getSensorConfig();
+  return config.mainsPowered === true || !config.battery;
 }
 
 // v5.5.26: Offline check timeout (60 min for mmWave - Hubitat recommendation)
-static OFFLINE_CHECK_MS =60 * 60 * 1000;
+static OFFLINE_CHECK_MS = 60 * 60 * 1000;
 
 /**
-   * v5.5.275: Get model-specific configuration
-   */
-_getModelConfig() {
-  if (!this._modelConfig) {
-    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
-    this._modelConfig = getModelConfig(mfr );
-    this.log(`[MMWAVE]  Model config: ${this._modelConfig.type} for ${mfr}`);
+    * v7.4.11: Get model-specific configuration from central library
+    */
+_getSensorConfig() {
+  if (!this._sensorConfig) {
+    const mfr = getManufacturer(this);
+    const model = getModelId(this);
+    this._sensorConfig = getSensorConfig(mfr, model);
+    this.log(`[MMWAVE]  Config matched: ${this._sensorConfig.configName} for ${mfr} (${model})`);
   }
-  return this._modelConfig;
+  return this._sensorConfig;
 }
 
 /**
-   * v5.5.275: Model-specific capabilities
-   * SIMPLE models only get basic presence + illuminance
-   * ADVANCED models get full distance/time features
-   */
+    * v5.5.275: Model-specific capabilities
+    */
 get sensorCapabilities() {
-  const config = this._getModelConfig();
-  return config.capabilities;
+  const config = this._getSensorConfig();
+  const caps = ['alarm_motion', 'alarm_human'];
+  
+  // Add capabilities from DP map
+  for (const dp of Object.values(config.dpMap || {})) {
+    if (dp.cap && !caps.includes(dp.cap)) caps.push(dp.cap);
+  }
+  
+  if (config.battery && !caps.includes('measure_battery')) caps.push('measure_battery');
+  
+  return caps;
 }
 
 /**
-   * v5.3.97: COMPLETE DP mappings from Z2M
-   * v5.12.0: Model-aware  RELAY models use MTG075-ZB-RL DPs
-   */
+    * v7.4.11: Standardized DP mappings from central library
+    */
 get dpMappings() {
-  const config = this._getModelConfig();
-  if (config.type === 'RELAY') return this._relayDpMappings;
-  return this._defaultDpMappings;
+  const config = this._getSensorConfig();
+  const dpMap = config.dpMap || {};
+  const mappings = {};
+  
+  for (const [dpId, dpConfig] of Object.entries(dpMap)) {
+    const dp = parseInt(dpId);
+    if (dpConfig.cap) {
+      mappings[dp] = {
+        capability: dpConfig.cap,
+        divisor: dpConfig.divisor || 1,
+        transform: (v) => {
+          if (dpConfig.multiplier) v = safeMultiply(v, dpConfig.multiplier);
+          if (dpConfig.divisor) v = safeDivide(v, dpConfig.divisor);
+          if (dpConfig.type === 'presence_bool') return v === 1 || v === true;
+          if (dpConfig.type === 'presence_enum') return v === 1 || v === 2;
+          return v;
+        }
+      };
+      
+      // Auto-set alarm_human for motion sensors
+      if (dpConfig.cap === 'alarm_motion') {
+        mappings[dp].alsoSets = { 'alarm_human': mappings[dp].transform };
+      }
+    } else if (dpConfig.internal) {
+      mappings[dp] = { internal: dpConfig.internal, divisor: dpConfig.divisor || 1 };
+    }
+  }
+  
+  return mappings;
 }
 
-// Default HOBEIAN/ZG-204Z DP mappings
-get _defaultDpMappings() {
-  return {
-    1: {
-      capability: 'alarm_motion',
-      transform: (v) => v === 1 || v === true,
-      alsoSets: { 'alarm_human': (v) => v === 1 || v === true }
-    },
-    2: { capability, setting: 'radar_sensitivity' },      // sensitivity (0-10)
-    3: { capability, setting: 'maximum_range', divisor: 100 }, // precision max range (m)
-    4: { capability: 'measure_battery', divisor: 1 },
-    6: { capability, setting: 'reverse_direction' },       // motor or relay inversion
-    9: { capability: 'measure_luminance.distance', divisor: 100 }, // target distance (m)
-    12: { capability: 'measure_luminance', divisor: 1 },        // illuminance (lux)
-    13: { capability: 'measure_luminance', divisor: 1 },        // alt illuminance (lux)
-    15: { capability: 'measure_battery', divisor: 1 },
-    101: {
-      capability: 'measure_presence_time',
-      divisor: 1,
-      alsoSetsMotion: true
-    },
-    102: {
-      capability: 'measure_presence_time',                      // alt presence time
-      divisor: 1
-    },
-    103: { capability: 'measure_luminance', divisor: 1 },       // alt lux
-    104: { capability, setting: 'fading_time' },          // fading time (s)
-    105: { capability, setting: 'detection_delay' },      // detection delay (s)
-    106: { capability: 'measure_luminance', divisor: 1 },       // alt lux (ZG-204ZM)
-    107: { capability, setting: 'indicator' },            // LED indicator
-    108: { capability, setting: 'small_detection_distance' },
-    109: { capability, setting: 'small_detection_sensitivity' },
-    111: { capability: 'measure_luminance', divisor: 10 },      // lux (0.1 lux scale)
-  };
-}
-
-// MTG/Wenzhi RELAY radar DP mappings (Z2M: MTG075-ZB-RL)
-get _relayDpMappings() {
-  return {
-    1: {
-      capability: 'alarm_motion',
-      transform: (v) => v === 1 || v === true
-    },
-    2: { capability, setting: 'radar_sensitivity' },       // 0-9
-    3: { capability, setting: 'shield_range' },            //Min range (/100 = m)
-    4: { capability, setting: 'detection_range' },         //Max range (/100 = m)
-    6: { internal: true, type: 'equipment_status' },
-    9: { capability: 'measure_luminance.distance', divisor: 100 }, // Target distance (cmm)
-    104: { capability: 'measure_luminance', divisor: 10 },       //Illuminance (/10 = lux)
-    107: { capability, setting: 'breaker_mode' },          // 0=standard, 1=local
-    108: {
-      capability: 'onoff',
-      transform: (v) => v === 1 || v === true
-    },
-    109: { capability, setting: 'status_indication' },     // LED indicator
-    110: { capability, setting: 'illuminance_threshold' },  // /10 = lux
-  };
-}
 
 async onNodeInit({ zclNode }) {
   // --- Attribute Reporting Configuration (auto-generated) ---
@@ -256,7 +222,7 @@ async onNodeInit({ zclNode }) {
       if (illum) {
         await illum.configureReporting({
           measuredValue: { minInterval: 60, maxInterval: 900, minChange: 10 }
-        }).catch(e => this.log('[ILLUM] config failed:', e.message);
+        }).catch(e => this.log('[ILLUM] config failed:', e.message));
         this.log('[ILLUM]  Periodic reporting configured');
       }
     } catch (e) { }
@@ -379,7 +345,7 @@ _setupPeriodicLuminanceQuery() {
   }
 
   // Query luminance DP every 1 minute for continuous updates if mains powered
-  const queryInterval = this.mainsPowered ?1 * 60 * 1000 :5 * 60 * 1000;
+  const queryInterval = this.mainsPowered ? 1 * 60 * 1000 : 5 * 60 * 1000;
   
   this._luminanceQueryTimer = setInterval(async () => {
     try {
@@ -465,7 +431,7 @@ _setupOfflineCheck() {
       // Make sure it's available if we received data recently
       this.setAvailable().catch(() => { });
     }
-  },10 * 60 * 1000); // Every 10 minutes
+  }, 10 * 60 * 1000); // Every 10 minutes
 
   this.log('[MMWAVE]  Offline check started (threshold: 60 min)');
 }
@@ -591,7 +557,8 @@ async _setupIASMotionListener(zclNode) {
       iasCluster.onZoneStatusChangeNotification = (payload) => {
         this._updateLastEventTime(); // v5.5.69: Track activity
         // v5.5.17: Use universal parser from UnifiedSensorBase
-        const parsed = this._parseIASZoneStatus(payload?.zoneStatus);const motion = parsed.alarm1 || parsed.alarm2;
+        const parsed = this._parseIASZoneStatus(payload?.zoneStatus);
+        const motion = parsed.alarm1 || parsed.alarm2;
 
         this.log(`[ZCL-DATA] mmwave.ias_zone raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2}  motion=${motion}`);
 
@@ -686,4 +653,3 @@ onTuyaStatus(status) {
 }
 
 module.exports = MotionSensorRadarDevice;
-

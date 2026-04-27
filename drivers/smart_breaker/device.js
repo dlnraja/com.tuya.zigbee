@@ -38,12 +38,12 @@ class SmartBreakerDevice extends ZigBeeDevice {
     if (emCluster) {
       if (this.hasCapability('measure_power')) {
         emCluster.on('attr.activePower', (value) => {
-          this.setCapabilityValue('measure_power', value * 10).catch(this.error);
+          this.setCapabilityValue('measure_power', safeMultiply(value, 10)).catch(this.error);
       });
       }
       if (this.hasCapability('measure_voltage')) {
         emCluster.on('attr.rmsVoltage', (value) => {
-          this.setCapabilityValue('measure_voltage', value * 10).catch(this.error);
+          this.setCapabilityValue('measure_voltage', safeMultiply(value, 10)).catch(this.error);
       });
       }
       if (this.hasCapability('measure_current')) {
@@ -100,7 +100,7 @@ class SmartBreakerDevice extends ZigBeeDevice {
 
     case 19: //Voltage (V*10)
       if (this.hasCapability('measure_voltage')) {
-        this.setCapabilityValue('measure_voltage', value * 10).catch(this.error);
+        this.setCapabilityValue('measure_voltage', safeMultiply(value, 10)).catch(this.error);
       }
       break;
 

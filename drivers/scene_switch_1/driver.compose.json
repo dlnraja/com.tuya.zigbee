@@ -25,14 +25,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_PESZEJY7",
-      "_TZ3000_QZJCSMAR",
-      "_TZ3000_TKUSJMUE"
-    ],
-    "productId": [
-      "TS0601_SCENE1"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -45,7 +39,7 @@
   "images": {
     "small": "drivers/scene_switch_1/assets/images/small.png",
     "large": "drivers/scene_switch_1/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

@@ -27,52 +27,8 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TYZB01_qezuin6k",
-      "_TYZB01_v8gtiaed",
-      "_TZ3000_7ysdnebc",
-      "_TZ3000_92chsky7",
-      "_TZ3000_9EVM3OTQ",
-      "_TZ3000_ktuoyvt5",
-      "_TZ3000_mgusv51k",
-      "_TZ3210_3mpwqzuu",
-      "_TZ3210_4ubylghk",
-      "_TZ3210_EBBFKVOY",
-      "_TZ3210_HZDHB62Z",
-      "_TZ3210_LFBZ816S",
-      "_TZ3210_V5YQUXMA",
-      "_TZ3210_YLUVWHJC",
-      "_TZ3210_invesber",
-      "_TZ3210_k1msuvg6",
-      "_TZ3210_ngqk6jia",
-      "_TZ3210_pagajpog",
-      "_TZ3210_wdexaypg",
-      "_TZ3210_weaqkhab",
-      "_TZ3210_zdrhqmo0",
-      "_TZ3210_zxbtub8r"
-    ],
-    "productId": [
-      "A19 W 10 YEAR",
-      "BR30 W 10 YEAR",
-      "GL-B-001Z",
-      "LED1623G12",
-      "LED1649C5",
-      "LED1836G9",
-      "LWB004",
-      "LWB006",
-      "LWB010",
-      "LWB014",
-      "PAR38 W 10 YEAR",
-      "PLUG 01",
-      "RB 165",
-      "RB 175 W",
-      "RS 125",
-      "TS0501",
-      "TS0501A",
-      "TS0501B",
-      "TS0502B",
-      "ZBT-DIMMABLELIGHT"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -760,7 +716,7 @@
   "images": {
     "small": "drivers/bulb_dimmable/assets/images/small.png",
     "large": "drivers/bulb_dimmable/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

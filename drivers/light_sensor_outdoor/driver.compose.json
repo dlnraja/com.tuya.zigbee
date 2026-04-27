@@ -21,13 +21,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3210_SNZBBGVI"
-    ],
-    "productId": [
-      "TS0222",
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -40,7 +35,7 @@
   "images": {
     "small": "drivers/light_sensor_outdoor/assets/images/small.png",
     "large": "drivers/light_sensor_outdoor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

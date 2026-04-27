@@ -14,15 +14,8 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_AHXWESAG",
-      "_TZE200_VRJKCAM9"
-    ],
-    "productId": [
-      "TS0001",
-      "TS0601",
-      "TS0601_VALVE"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -35,7 +28,7 @@
   "images": {
     "small": "drivers/valve_single/assets/images/small.png",
     "large": "drivers/valve_single/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

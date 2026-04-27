@@ -34,12 +34,8 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_BJ9M6V91"
-    ],
-    "productId": [
-      "TS0225"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
       "instruction": {
@@ -734,7 +730,7 @@
   "images": {
     "small": "drivers/presence_sensor_radar/assets/images/small.png",
     "large": "drivers/presence_sensor_radar/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

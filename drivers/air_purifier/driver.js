@@ -14,9 +14,7 @@ class AirPurifierDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -25,16 +23,14 @@ class AirPurifierDriver extends ZigBeeDriver {
     this.log('Air Purifier Driver initialized');
     const triggers = ['air_purifier_turned_on', 'air_purifier_turned_off', 'air_purifier_pm25_changed'];
     for (const id of triggers) {
-      try {
-      (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })() 
+      // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })() 
   
   
   
   
   
   
-  } catch (e) { this.error(`Trigger ${id}: ${e.message}`); }
-    }
+  } catch (e) { this.error(`Trigger ${id}: ${e.message}`);   }
     try {  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
         card.registerRunListener(async (args) => {
@@ -81,8 +77,7 @@ class AirPurifierDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (e) { this.error('Action set_brightness:', e.message); }
-  }
+    } catch (e) { this.error('Action set_brightness:', e.message);   }
 }
 
 module.exports = AirPurifierDriver;

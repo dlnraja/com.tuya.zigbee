@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "7.4.10",
+  "version": "7.4.11",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -108,8 +108,8 @@
           "fr": "Minuterie Auto-Off dÃ©clenchÃ©e"
         },
         "titleFormatted": {
-          "en": "Auto-Off Timer triggered",
-          "fr": "Minuterie Auto-Off dÃ©clenchÃ©e"
+          "en": "Auto-Off Timer triggered on [[device]]",
+          "fr": "Minuterie Auto-Off dÃ©clenchÃ©e sur [[device]]"
         },
         "args": [
           {
@@ -125,8 +125,8 @@
           "fr": "Bouton triple-cliquÃ© (Logiciel)"
         },
         "titleFormatted": {
-          "en": "button was triple-clicked",
-          "fr": "Bouton triple-cliquÃ©"
+          "en": "[[device]] button was triple-clicked",
+          "fr": "Bouton de [[device]] triple-cliquÃ©"
         },
         "args": [
           {
@@ -142,8 +142,8 @@
           "fr": "Surcharge dÃ©tectÃ©e (Coupure SÃ©curitÃ©)"
         },
         "titleFormatted": {
-          "en": "Overload detected",
-          "fr": "Surcharge dÃ©tectÃ©e"
+          "en": "Overload detected on [[device]]",
+          "fr": "Surcharge dÃ©tectÃ©e sur [[device]]"
         },
         "args": [
           {
@@ -170,8 +170,8 @@
           "fr": "PrÃ©sence Radio DÃ©tectÃ©e (Inferred)"
         },
         "titleFormatted": {
-          "en": "Radio Presence detected",
-          "fr": "PrÃ©sence Radio dÃ©tectÃ©e"
+          "en": "Radio Presence detected on [[device]]",
+          "fr": "PrÃ©sence Radio dÃ©tectÃ©e sur [[device]]"
         },
         "hint": {
           "en": "Triggered when human movement is inferred from Zigbee signal fluctuations",
@@ -193,10 +193,10 @@
           "de": "Sub-FÃ¤higkeit geÃ¤ndert"
         },
         "titleFormatted": {
-          "en": "sub-capability [[capability]] changed",
-          "fr": "Sous-capacitÃ© [[capability]] changÃ©e",
-          "nl": "Sub-capability [[capability]] van gewijzigd",
-          "de": "Sub-FÃ¤higkeit [[capability]] von geÃ¤ndert"
+          "en": "[[device]] sub-capability [[capability]] changed",
+          "fr": "Sous-capacitÃ© [[capability]] de [[device]] changÃ©e",
+          "nl": "Sub-capability [[capability]] van [[device]] gewijzigd",
+          "de": "Sub-FÃ¤higkeit [[capability]] von [[device]] geÃ¤ndert"
         },
         "hint": {
           "en": "Triggers when any sub-capability changes (e.g. onoff.gang2, dim.1)",
@@ -249,8 +249,8 @@
           "fr": "Bitmap Tuya changÃ©"
         },
         "titleFormatted": {
-          "en": "Bitmap DP [[dp]] changed",
-          "fr": "Bitmap DP [[dp]] changÃ©"
+          "en": "Bitmap DP [[dp]] changed on [[device]]",
+          "fr": "Bitmap DP [[dp]] changÃ© sur [[device]]"
         },
         "hint": {
           "en": "Triggers when a bitmap (type 5) DP changes. Bitmap is a bitmask of active flags.",
@@ -298,8 +298,8 @@
           "fr": "Ã‰vÃ©nement cluster Zigbee reÃ§u"
         },
         "titleFormatted": {
-          "en": "Cluster event received",
-          "fr": "Ã‰vÃ©nement cluster reÃ§u"
+          "en": "Cluster event received on [[device]]",
+          "fr": "Ã‰vÃ©nement cluster reÃ§u sur [[device]]"
         },
         "hint": {
           "en": "Triggers when a manufacturer cluster frame is received (0xE000-0xFFFF).",
@@ -346,8 +346,8 @@
           "fr": "Tout DP Tuya changÃ©"
         },
         "titleFormatted": {
-          "en": "DP changed",
-          "fr": "DP changÃ©"
+          "en": "DP changed on [[device]]",
+          "fr": "DP changÃ© sur [[device]]"
         },
         "hint": {
           "en": "Triggers when ANY DP value changes. Includes DP type info (raw/bool/value/string/enum/bitmap).",
@@ -404,10 +404,10 @@
           "de": "Tuya Datenpunkt empfangen"
         },
         "titleFormatted": {
-          "en": "Tuya DP [[dp]] received",
-          "fr": "DP Tuya [[dp]] reÃ§u",
-          "nl": "Tuya DP [[dp]] ontvangen",
-          "de": "Tuya DP [[dp]] empfangen auf"
+          "en": "Tuya DP [[dp]] received on [[device]]",
+          "fr": "DP Tuya [[dp]] reÃ§u sur [[device]]",
+          "nl": "Tuya DP [[dp]] ontvangen op [[device]]",
+          "de": "Tuya DP [[dp]] empfangen auf [[device]]"
         },
         "hint": {
           "en": "Triggers when a raw Tuya DP is received. Use DP 0 to match any DP.",
@@ -460,10 +460,10 @@
           "de": "DP Schwellwert Ã¼berschritten"
         },
         "titleFormatted": {
-          "en": "DP [[dp]] crosses threshold [[threshold]]",
-          "fr": "DP [[dp]] franchit le seuil [[threshold]]",
-          "nl": "DP [[dp]] van overschrijdt drempel [[threshold]]",
-          "de": "DP [[dp]] von Ã¼berschreitet Schwellwert [[threshold]]"
+          "en": "DP [[dp]] on [[device]] crosses threshold [[threshold]]",
+          "fr": "DP [[dp]] de [[device]] franchit le seuil [[threshold]]",
+          "nl": "DP [[dp]] van [[device]] overschrijdt drempel [[threshold]]",
+          "de": "DP [[dp]] von [[device]] Ã¼berschreitet Schwellwert [[threshold]]"
         },
         "hint": {
           "en": "Triggers when a numeric DP value crosses a threshold (forum #1016)",
@@ -540,8 +540,8 @@
           "fr": "DP Tuya brut reÃ§u"
         },
         "titleFormatted": {
-          "en": "Raw DP [[dp]] received",
-          "fr": "DP brut [[dp]] reÃ§u"
+          "en": "Raw DP [[dp]] received on [[device]]",
+          "fr": "DP brut [[dp]] reÃ§u sur [[device]]"
         },
         "hint": {
           "en": "Triggers when a raw (type 0) DP is received. Data is provided as hex string.",
@@ -55437,12 +55437,9 @@
         ]
       },
       {
-        "id": "wifi_switch_2gang_g1_on",
+        "id": "wifi_switch_2gang_physical_gang1_on",
         "title": {
-          "en": "Gang 1 turned on"
-        },
-        "titleFormatted": {
-          "en": "Gang 1 turned on"
+          "en": "Gang 1 turned on (physical)"
         },
         "args": [
           {
@@ -55453,12 +55450,9 @@
         ]
       },
       {
-        "id": "wifi_switch_2gang_g1_off",
+        "id": "wifi_switch_2gang_physical_gang1_off",
         "title": {
-          "en": "Gang 1 turned off"
-        },
-        "titleFormatted": {
-          "en": "Gang 1 turned off"
+          "en": "Gang 1 turned off (physical)"
         },
         "args": [
           {
@@ -55469,12 +55463,9 @@
         ]
       },
       {
-        "id": "wifi_switch_2gang_g2_on",
+        "id": "wifi_switch_2gang_physical_gang2_on",
         "title": {
-          "en": "Gang 2 turned on"
-        },
-        "titleFormatted": {
-          "en": "Gang 2 turned on"
+          "en": "Gang 2 turned on (physical)"
         },
         "args": [
           {
@@ -55485,18 +55476,197 @@
         ]
       },
       {
-        "id": "wifi_switch_2gang_g2_off",
+        "id": "wifi_switch_2gang_physical_gang2_off",
         "title": {
-          "en": "Gang 2 turned off"
-        },
-        "titleFormatted": {
-          "en": "Gang 2 turned off"
+          "en": "Gang 2 turned off (physical)"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=wifi_switch_2gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_3gang_physical_gang1_on",
+        "title": {
+          "en": "Gang 1 turned on (physical)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_3gang_physical_gang1_off",
+        "title": {
+          "en": "Gang 1 turned off (physical)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_3gang_physical_gang2_on",
+        "title": {
+          "en": "Gang 2 turned on (physical)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_3gang_physical_gang2_off",
+        "title": {
+          "en": "Gang 2 turned off (physical)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_3gang_physical_gang3_on",
+        "title": {
+          "en": "Gang 3 turned on (physical)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_3gang_physical_gang3_off",
+        "title": {
+          "en": "Gang 3 turned off (physical)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang1_on",
+        "title": {
+          "en": "Gang 1 turned on (physical)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang1_off",
+        "title": {
+          "en": "Gang 1 turned off (physical)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang2_on",
+        "title": {
+          "en": "Gang 2 turned on (physical)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang2_off",
+        "title": {
+          "en": "Gang 2 turned off (physical)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang3_on",
+        "title": {
+          "en": "Gang 3 turned on (physical)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang3_off",
+        "title": {
+          "en": "Gang 3 turned off (physical)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang4_on",
+        "title": {
+          "en": "Gang 4 turned on (physical)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang4_off",
+        "title": {
+          "en": "Gang 4 turned off (physical)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
           }
         ]
       },
@@ -55687,8 +55857,8 @@
           "fr": "DP Tuya [[dp]] Ã©gal Ã [[value]]"
         },
         "titleFormatted": {
-          "en": "Tuya DP [[dp]] equals [[value]]",
-          "fr": "DP Tuya [[dp]] Ã©gal Ã [[value]]"
+          "en": "Tuya DP [[dp]] equals [[value]] on [[device]]",
+          "fr": "DP Tuya [[dp]] Ã©gal Ã [[value]] sur [[device]]"
         },
         "hint": {
           "en": "Check if a raw Tuya datapoint has a specific value",
@@ -55727,8 +55897,8 @@
           "fr": "Type DP est..."
         },
         "titleFormatted": {
-          "en": "DP [[dp]] is type [[dp_type]]",
-          "fr": "DP [[dp]] est type [[dp_type]]"
+          "en": "DP [[dp]] on [[device]] is type [[dp_type]]",
+          "fr": "DP [[dp]] de [[device]] est type [[dp_type]]"
         },
         "args": [
           {
@@ -67485,9 +67655,6 @@
         "title": {
           "en": "Gang 1 is on"
         },
-        "titleFormatted": {
-          "en": "Gang 1 is on"
-        },
         "args": [
           {
             "type": "device",
@@ -67501,14 +67668,102 @@
         "title": {
           "en": "Gang 2 is on"
         },
-        "titleFormatted": {
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_2gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_3gang_g1_is_on",
+        "title": {
+          "en": "Gang 1 is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_3gang_g2_is_on",
+        "title": {
           "en": "Gang 2 is on"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=wifi_switch_2gang"
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_3gang_g3_is_on",
+        "title": {
+          "en": "Gang 3 is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_4gang_g1_is_on",
+        "title": {
+          "en": "Gang 1 is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_4gang_g2_is_on",
+        "title": {
+          "en": "Gang 2 is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_4gang_g3_is_on",
+        "title": {
+          "en": "Gang 3 is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ]
+      },
+      {
+        "id": "wifi_switch_4gang_g4_is_on",
+        "title": {
+          "en": "Gang 4 is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
           }
         ]
       },
@@ -67632,9 +67887,9 @@
           "nl": "OTA firmware updates controleren"
         },
         "titleFormatted": {
-          "en": "Check OTA firmware updates for",
-          "fr": "VÃ©rifier les MÃJ OTA pour",
-          "nl": "OTA firmware updates controleren voor"
+          "en": "Check OTA firmware updates for [[device]]",
+          "fr": "VÃ©rifier les MÃJ OTA pour [[device]]",
+          "nl": "OTA firmware updates controleren voor [[device]]"
         },
         "hint": {
           "en": "Queries Zigbee2MQTT index for updates. You will be notified.",
@@ -67680,8 +67935,8 @@
           "de": "Sub-FÃ¤higkeit setzen"
         },
         "titleFormatted": {
-          "en": "Set [[capability]] to [[value]]",
-          "fr": "DÃ©finir [[capability]] Ã [[value]]"
+          "en": "Set [[capability]] to [[value]] on [[device]]",
+          "fr": "DÃ©finir [[capability]] Ã [[value]] sur [[device]]"
         },
         "hint": {
           "en": "Set a sub-capability value (e.g. onoff.gang2)",
@@ -67724,10 +67979,10 @@
           "de": "Sub-FÃ¤higkeit umschalten"
         },
         "titleFormatted": {
-          "en": "Toggle [[capability]]",
-          "fr": "Basculer [[capability]]",
-          "nl": "Omschakelen [[capability]]",
-          "de": "Umschalten [[capability]] auf"
+          "en": "Toggle [[capability]] on [[device]]",
+          "fr": "Basculer [[capability]] sur [[device]]",
+          "nl": "Omschakelen [[capability]] op [[device]]",
+          "de": "Umschalten [[capability]] auf [[device]]"
         },
         "hint": {
           "en": "Toggle a boolean sub-capability (e.g., onoff.gang2, smart_home_lock.1)",
@@ -67760,8 +68015,8 @@
           "fr": "Eteindre Bouton.."
         },
         "titleFormatted": {
-          "en": "Turn off gang [[gang]] of",
-          "fr": "Eteindre bouton [[gang]]"
+          "en": "Turn off gang [[gang]] of [[device]]",
+          "fr": "Eteindre bouton [[gang]] de [[device]]"
         },
         "args": [
           {
@@ -67820,8 +68075,8 @@
           "fr": "Allumer Bouton.."
         },
         "titleFormatted": {
-          "en": "Turn on gang [[gang]] of",
-          "fr": "Allumer bouton [[gang]]"
+          "en": "Turn on gang [[gang]] of [[device]]",
+          "fr": "Allumer bouton [[gang]] de [[device]]"
         },
         "args": [
           {
@@ -67882,8 +68137,8 @@
           "de": "Tuya DP senden"
         },
         "titleFormatted": {
-          "en": "Send DP [[dp]] with value [[value]] to",
-          "fr": "Envoyer DP [[dp]] avec valeur [[value]] Ã"
+          "en": "Send DP [[dp]] with value [[value]] to [[device]]",
+          "fr": "Envoyer DP [[dp]] avec valeur [[value]] Ã [[device]]"
         },
         "hint": {
           "en": "Send a raw Tuya datapoint value to the device",
@@ -67922,8 +68177,8 @@
           "fr": "Envoyer DP Tuya typÃ©"
         },
         "titleFormatted": {
-          "en": "Send DP [[dp]] ([[dp_type]]) = [[value]] to",
-          "fr": "Envoyer DP [[dp]] ([[dp_type]]) = [[value]] Ã"
+          "en": "Send DP [[dp]] ([[dp_type]]) = [[value]] to [[device]]",
+          "fr": "Envoyer DP [[dp]] ([[dp_type]]) = [[value]] Ã [[device]]"
         },
         "hint": {
           "en": "Send a Tuya DP with explicit type (bool/value/enum/string/raw/bitmap)",
@@ -114137,7 +114392,6 @@
           "_TYZB01_ANEIICMQ",
           "_TYZB01_B8CR31HP",
           "_TYZB01_DIGZIIAV",
-          "_TYZB01_IUEPBMPV",
           "_TYZB01_MQEL1WHF",
           "_TYZB01_MTLHQN48",
           "_TYZB01_NCUTBJDI",
@@ -114154,18 +114408,14 @@
           "_TYZB02_keyjhapk",
           "_TZ3000_0zfrhq4i",
           "_TZ3000_18ejxno0",
-          "_TZ3000_1H2X4AKH",
-          "_TZ3000_1obwwnmq",
           "_TZ3000_2dlwlvex",
           "_TZ3000_2putqrmw",
           "_TZ3000_3WKQNI6O",
           "_TZ3000_3ias4w4o",
-          "_TZ3000_3ooaz3ng",
           "_TZ3000_3u4hripk",
           "_TZ3000_3uimvkn6",
           "_TZ3000_46t1rvdu",
           "_TZ3000_4JS9LO5D",
-          "_TZ3000_4UF3D0AX",
           "_TZ3000_4o16jdca",
           "_TZ3000_4ux0ondb",
           "_TZ3000_56bdyj21",
@@ -114181,48 +114431,35 @@
           "_TZ3000_6l1pjfqe",
           "_TZ3000_7ed9cqgi",
           "_TZ3000_7jx5ypra",
-          "_TZ3000_88IQNHVD",
           "_TZ3000_8nkb7mof",
           "_TZ3000_9hpxg80k",
           "_TZ3000_ARFWFGOA",
           "_TZ3000_ATP7XMD9",
-          "_TZ3000_CYMSNFVF",
           "_TZ3000_D0YPG4O2",
-          "_TZ3000_DKSBTRZS",
-          "_TZ3000_DPO1YSAK",
           "_TZ3000_F8TMVIY0",
           "_TZ3000_FQ1SXFRJ",
-          "_TZ3000_FUKAA7NC",
           "_TZ3000_GIDY6SJS",
-          "_TZ3000_GZNH2XLA",
-          "_TZ3000_JAK16DLL",
           "_TZ3000_JCFJE0KB",
           "_TZ3000_KT7OBMNN",
           "_TZ3000_LLFAQUVP",
           "_TZ3000_MAJWNPHG",
           "_TZ3000_MKLGAYEK",
-          "_TZ3000_MRAOVVMM",
           "_TZ3000_MRQEA2UU",
           "_TZ3000_OAQ83GQC",
           "_TZ3000_OEX7EGMT",
           "_TZ3000_OKOZ9TJS",
-          "_TZ3000_PLYVNUF5",
           "_TZ3000_PMVBT5HH",
           "_TZ3000_PMZ6MJYU",
           "_TZ3000_QCGW8QFA",
           "_TZ3000_QN8QVK9Y",
           "_TZ3000_QOUS95ZH",
           "_TZ3000_SJPL9EG3",
-          "_TZ3000_UPJRSXH1",
-          "_TZ3000_VMPBYGS5",
-          "_TZ3000_WZAUVBCS",
           "_TZ3000_XR7ITFXQ",
           "_TZ3000_YL3ZUYAW",
           "_TZ3000_ZMY1WAW6",
           "_TZ3000_a7ouggvs",
           "_TZ3000_aezbqpcu",
           "_TZ3000_amdymr71",
-          "_TZ3000_amdymr7l",
           "_TZ3000_b28wrpvx",
           "_TZ3000_bfn1w0mm",
           "_TZ3000_bvrlqyj7",
@@ -114230,7 +114467,6 @@
           "_TZ3000_cdamjqm9",
           "_TZ3000_cehuw1lw",
           "_TZ3000_cfnprab5",
-          "_TZ3000_cphmq0q7",
           "_TZ3000_dfgbtub0",
           "_TZ3000_e98krvvk",
           "_TZ3000_ew3ldmgx",
@@ -114239,7 +114475,6 @@
           "_TZ3000_fkvaniuu",
           "_TZ3000_fqoynhku",
           "_TZ3000_fvh3pjaz",
-          "_TZ3000_g5xawfcq",
           "_TZ3000_g8n1n7lg",
           "_TZ3000_gbm10jnj",
           "_TZ3000_gjnozsaz",
@@ -114257,7 +114492,6 @@
           "_TZ3000_j9568h44",
           "_TZ3000_ji4araar",
           "_TZ3000_jl7qyupf",
-          "_TZ3000_kdi2o9m6",
           "_TZ3000_ksw8qtmt",
           "_TZ3000_kx0pris5",
           "_TZ3000_lepzuhto",
@@ -114288,7 +114522,6 @@
           "_TZ3000_qystbcjg",
           "_TZ3000_qzjcsmar",
           "_TZ3000_r6buo8ba",
-          "_TZ3000_rdtixbnu",
           "_TZ3000_rmjr4ufz",
           "_TZ3000_rrjr1q0u",
           "_TZ3000_ruldv5dt",
@@ -114300,31 +114533,23 @@
           "_TZ3000_thhxrept",
           "_TZ3000_tqlv4ug4",
           "_TZ3000_tvuarksa",
-          "_TZ3000_typdpbpg",
-          "_TZ3000_typdpdpg",
           "_TZ3000_u5u4cakc",
           "_TZ3000_uwkja6z1",
           "_TZ3000_vtscrpmw",
           "_TZ3000_vvlivusi",
-          "_TZ3000_vzopcetz",
           "_TZ3000_w05exif3",
-          "_TZ3000_w0qqde0g",
           "_TZ3000_w0ypwa1f",
-          "_TZ3000_w8jwkczz",
           "_TZ3000_waho4jtj",
-          "_TZ3000_wamqdr3f",
           "_TZ3000_ww6drja5",
           "_TZ3000_wyhuocal",
           "_TZ3000_wzmuk9ai",
           "_TZ3000_y4ona9me",
           "_TZ3000_yhagrqmd",
           "_TZ3000_ynmowqk2",
-          "_TZ3000_ysdv91bk",
           "_TZ3000_yw5tvzsk",
           "_TZ3000_zloso4jk",
           "_TZ3000_zmy4lslw",
           "_TZ3210_232nryqh",
-          "_TZ3210_7JNK7L3K",
           "_TZ3210_dse8ogfy",
           "_TZ3210_j4pdtz9v",
           "_TZ3210_okbss9dy",
@@ -118546,7 +118771,6 @@
         "manufacturerName": [
           "_TZ3210_7jnk7l3k",
           "_TYZB01_iuepbmpv",
-          "_TZ3000_ew31dmgx",
           "_TZ3000_dpo1ysak",
           "_TZ3000_plyvnuf5",
           "_TZ3000_cymsnfvf",
@@ -177631,7 +177855,6 @@
           "_TZ3000_5F43H46R",
           "_TZ3000_8GS8H2E4",
           "_TZ3000_AIR9M6AF",
-          "_TZ3000_BR3LAUKF",
           "_TZ3000_CPHMQ0Q7",
           "_TZ3000_G1PZICMQ",
           "_TZ3000_G5XAWFCQ",
@@ -177639,7 +177862,6 @@
           "_TZ3000_KDI2O9M6",
           "_TZ3000_MVVW8WNX",
           "_TZ3000_PL5V1YYY",
-          "_TZ3000_PNZFDR9Y",
           "_TZ3000_RDTIXBNU",
           "_TZ3000_TWQCTVNA",
           "_TZ3000_UPJRXMSR",
@@ -212333,7 +212555,6 @@
           "_TZ3000_7HP93XPR",
           "_TZ3000_7VCDO2VN",
           "_TZ3000_BI6LPSEW",
-          "_TZ3000_CAUQ1OKQ",
           "_TZ3000_CRIIAHCG",
           "_TZ3000_GKESADUS",
           "_TZ3000_H1LPGKWN",
@@ -214294,8 +214515,7 @@
           "_TZE204_XIBAABMU",
           "_TZE284_XIBAABMU",
           "_TZ3000_hdlpifbk",
-          "_TZ3000_excgg5kb",
-          "_TZ3000_mmkbptmx"
+          "_TZ3000_excgg5kb"
         ]
       },
       "images": {
@@ -226406,7 +226626,8 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_TZB210_ZXBTUB8R"
+          "_TZB210_ZXBTUB8R",
+          "_TZ3000_blhvsaqf"
         ],
         "productId": [
           "EDM-1ZBA-EU",
@@ -228712,7 +228933,9 @@
         "manufacturerName": [
           "_TZ3000_OVYAISIP",
           "_TZ3000_PK8TGTDB",
-          "_TZ3000_VW40ZQP4"
+          "_TZ3000_VW40ZQP4",
+          "_TZ3000_blhvsaqf",
+          "_TZ3000_ysdv91bk"
         ],
         "productId": [
           "TS0001",
@@ -228850,7 +229073,8 @@
           "_TZ3000_BLHVSAQF",
           "_TZ3000_BSEED",
           "_TZ3000_XK5UDND6",
-          "_TZ3000_Z1UEZKPI"
+          "_TZ3000_Z1UEZKPI",
+          "_TZ3000_cauq1okq"
         ],
         "productId": [
           "TS0002",

@@ -51,6 +51,10 @@ jobs:
       - name: 🛡️ STRICT SYNTAX PURITY GUARD
         run: node scripts/maintenance/STRICT_SYNTAX_GUARD.js
 
+      # Architectural Rule Enforcement (Rule 21, 24, 25)
+      - name: 🛡️ Architectural Rule Enforcement
+        run: node .github/scripts/enforce-rules.js
+
       # JSON validation
       - name: 📊 JSON Integrity Check
         run: |

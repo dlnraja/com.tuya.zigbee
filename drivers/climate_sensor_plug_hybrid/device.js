@@ -46,8 +46,8 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     // Let the base value from caller be the raw value, and we apply the scale directly if possible!
     // But then default must match. Let's just multiply the base divided value by however it differs from 1.
     
-    if (capability === 'measure_power') return (value * powerScale);
-    if (capability === 'meter_power') return (value * energyScale);
+    if (capability === 'measure_power') return safeMultiply((value, powerScale));
+    if (capability === 'meter_power') return safeMultiply((value, energyScale));
     
     const voltageScale = parseFloat(this.getSetting('voltage_scale')) || 0.1;
     if (capability === 'measure_voltage') return (value * (safeParse)(voltageScale * 0.1)); 
@@ -157,11 +157,11 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     try {
       const elec = ep1.clusters?.haElectricalMeasurement;if (elec?.on) {
         elec.on('attr.activePower', (v) => {
-          const scaled = this._applyScale(v * 10, 'measure_power');
+          const scaled = safeMultiply(this._applyScale(v, 10), 'measure_power');
           this.setCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
       });
         elec.on('attr.rmsVoltage', (v) => {
-          const scaled = this._applyScale(v * 10, 'measure_voltage');
+          const scaled = safeMultiply(this._applyScale(v, 10), 'measure_voltage');
           this.setCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
       });
         elec.on('attr.rmsCurrent', (v) => {

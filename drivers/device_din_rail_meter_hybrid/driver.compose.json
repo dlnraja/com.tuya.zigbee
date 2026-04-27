@@ -81,15 +81,10 @@
   "images": {
     "small": "drivers/hvac_dehumidifier/assets/images/small.png",
     "large": "drivers/hvac_dehumidifier/assets/images/large.png"
-    },
+  },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE204_EAAC7DKW",
-      "_TZE204_NSLR42TT"
-    ],
-    "productId": [
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

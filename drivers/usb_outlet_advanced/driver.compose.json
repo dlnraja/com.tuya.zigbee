@@ -62,27 +62,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_2XLVLNEZ",
-      "_TZ3000_2XLVLNVP",
-      "_TZ3000_8KCQDNGY",
-      "_TZ3000_ATP3BEWS",
-      "_TZ3000_J4GG6D1B",
-      "_TZ3000_KO6V90PG",
-      "_TZ3000_QYOLRMC9",
-      "_TZ3000_TYPDPDPG",
-      "_TZ3000_U5U4CAHO",
-      "_TZB210_2DP1BPQQ",
-      "_TZB210_HBEJZGPJ",
-      "_TZB210_WLBHVABF",
-      "_TZE200_BSEED2G",
-      "_TZE204_BSEED3G"
-    ],
-    "productId": [
-      "TS0115",
-      "TS011F",
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -723,7 +704,7 @@
   "images": {
     "small": "drivers/usb_outlet_advanced/assets/images/small.png",
     "large": "drivers/usb_outlet_advanced/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

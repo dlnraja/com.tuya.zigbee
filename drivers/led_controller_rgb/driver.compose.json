@@ -19,10 +19,7 @@
   ],
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0503",
-      "TS0504"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -40,7 +37,7 @@
   "images": {
     "small": "drivers/led_controller_rgb/assets/images/small.png",
     "large": "drivers/led_controller_rgb/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

@@ -123,7 +123,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       if (typeof elecCluster.on === 'function') {
         // Active Power (W)
         elecCluster.on('attr.activePower', (value) => {
-          const watts = value * 10; // Typically in 0.1W units
+          const watts = safeMultiply(value, 10); // Typically in 0.1W units
           this.log(`[ZCL-DATA] switch.power raw=${value}  ${watts}W`);
           if (this.hasCapability('measure_power')) {
             this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
@@ -132,7 +132,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
         // RMS Voltage (V)
         elecCluster.on('attr.rmsVoltage', (value) => {
-          const volts = value * 10; // Typically in 0.1V units
+          const volts = safeMultiply(value, 10); // Typically in 0.1V units
           this.log(`[ZCL-DATA] switch.voltage raw=${value}  ${volts}V`);
           if (this.hasCapability('measure_voltage')) {
             this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });

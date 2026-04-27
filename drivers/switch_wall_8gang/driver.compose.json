@@ -80,17 +80,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_8GANG001",
-      "_TZE200_NVXORHCJ",
-      "_TZE200_WS8G8U0B",
-      "_TZE204_8GANG001",
-      "_TZE204_WS8G8U0B"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_8GANG"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -548,7 +539,7 @@
   "images": {
     "small": "drivers/switch_wall_8gang/assets/images/small.png",
     "large": "drivers/switch_wall_8gang/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

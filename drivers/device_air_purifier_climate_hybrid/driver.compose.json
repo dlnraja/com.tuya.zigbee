@@ -32,13 +32,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "RH3052",
-      "TS0201",
-      "TS0222",
-      "TS0601",
-      "TY0201"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -56,7 +50,7 @@
   "images": {
     "small": "drivers/air_purifier/assets/images/small.png",
     "large": "drivers/air_purifier/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

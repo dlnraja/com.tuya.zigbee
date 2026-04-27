@@ -1004,7 +1004,7 @@ class Button4GangDevice extends ButtonDevice {
 
           this._powerCluster.on('attr.batteryVoltage', async (value) => {
             if (value !== undefined && value > 0) {
-              const voltage = value * 10;
+              const voltage = safeMultiply(value, 10);
               // CR2032/CR2450: 3.0V=100%, 2.0V=0%
               const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
               this.log(`[BUTTON4-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
@@ -1075,7 +1075,7 @@ class Button4GangDevice extends ButtonDevice {
         this.log(`[BUTTON4-BATTERY]  Battery read success: ${battery}%`);
         await this._updateBattery(battery);
       } else if (attrs?.batteryVoltage !== undefined && attrs.batteryVoltage > 0) {
-        const voltage = attrs.batteryVoltage * 10;
+        const voltage = safeMultiply(attrs.batteryVoltage, 10);
         const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
         this.log(`[BUTTON4-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
         await this._updateBattery(battery);

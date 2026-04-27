@@ -45,9 +45,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0601_TEMPSWITCH"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -68,7 +66,7 @@
   "images": {
     "small": "drivers/switch_temp_sensor/assets/images/small.png",
     "large": "drivers/switch_temp_sensor/assets/images/large.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

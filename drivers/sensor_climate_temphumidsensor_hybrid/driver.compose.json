@@ -32,29 +32,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "HOBEIAN",
-      "TUYATEC-1G3TAWNP",
-      "TUYATEC-1UXX9CCI",
-      "TUYATEC-ABKEHQUS",
-      "TUYATEC-BFQ2I2SY",
-      "TUYATEC-G3GL6CGY",
-      "TUYATEC-GQHXIXYK",
-      "TUYATEC-HAOIUWZY",
-      "TUYATEC-OJMXEIKG",
-      "TUYATEC-OJMXEIKQ",
-      "TUYATEC-PRHS1RSD",
-      "TUYATEC-QUN7VQ14",
-      "TUYATEC-RIUJ5XZS",
-      "TUYATEC-V3UXBUXY",
-      "TUYATEC-VMGH3FXD",
-      "TUYATEC-YG5DCBFU",
-      "_TZ3000_I8JFIEZR"
-    ],
-    "productId": [
-      "CK-TLSR8656-SS5-01(7014)",
-      "ZG-227Z"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -666,7 +645,7 @@
   "images": {
     "small": "drivers/climate_sensor/assets/images/small.png",
     "large": "drivers/climate_sensor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

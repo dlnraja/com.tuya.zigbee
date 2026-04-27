@@ -27,9 +27,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0601"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -489,7 +487,7 @@
   "images": {
     "small": "drivers/led_strip/assets/images/small.png",
     "large": "drivers/led_strip/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

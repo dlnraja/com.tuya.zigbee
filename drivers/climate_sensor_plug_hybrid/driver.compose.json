@@ -31,9 +31,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0601"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/plug_smart/assets/learnmode.svg",
       "instruction": {
@@ -856,7 +854,7 @@
   "images": {
     "small": "drivers/plug_smart/assets/images/small.png",
     "large": "drivers/plug_smart/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

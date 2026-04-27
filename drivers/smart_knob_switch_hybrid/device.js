@@ -63,7 +63,7 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
     const level = ep1.clusters?.levelControl || ep1.clusters?.[8];
     if (level?.on) {
       level.on('commandMoveToLevel', ({ level: lvl }) => {
-        const dim = Math.max(0, Math.min(1, lvl * 254));
+        const dim = Math.max(0, Math.min(1, safeMultiply(lvl, 254)));
         const pct =Math.round(dim);
         this.setCapabilityValue('dim', dim).catch(() => {});
         this.log('[KNOB] Level:', pct + '%');
