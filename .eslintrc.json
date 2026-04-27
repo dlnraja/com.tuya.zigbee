@@ -13,7 +13,7 @@
     "no-conditional-assignment": "error",
     "no-unused-expressions": "error",
     "no-self-compare": "error",
-    "no-extra-parens": ["off"],
+    "no-extra-parens": ["error", "all", { "nestedBinaryExpressions": false }],
     "curly": ["error", "all"],
     "eqeqeq": ["error", "smart"],
     "no-var": "error",

@@ -1,0 +1,33 @@
+{
+  "mapping_rules": [
+    {
+      "canonical": "tuya",
+      "variants": ["Tuya", "tuya", "TUYA", "Tuya_Smart", "TuyaInc", "tuya-inc", "Tuya Smart", " TUYA ", "tuya.smart", "TUYA_SMART"],
+      "device_id_patterns": ["^TS\\d{4}$", "^zigbee_.*", "^tuya_.*"],
+      "metadata": { "country": "CN", "protocols": ["zigbee", "wifi", "matter"], "first_seen": "2020-01-01" }
+    },
+    {
+      "canonical": "lidl_silvercrest",
+      "variants": ["Lidl", "SilverCrest", "silvercrest", "LIDL_SILVERCREST", "Silvercrest", "silver-crest", "LIDL"],
+      "device_id_patterns": ["^TS011F$", "^lidl_.*"],
+      "metadata": { "country": "DE", "protocols": ["zigbee"], "first_seen": "2021-11-01" }
+    },
+    {
+      "canonical": "moes",
+      "variants": ["Moes", "MOES", "moes", "Moes House", "MOES-HOUSE"],
+      "device_id_patterns": ["^TS0601$", "^TS0602$"],
+      "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2021-03-01" }
+    },
+    {
+      "canonical": "blitzwolf",
+      "variants": ["BlitzWolf", "BLITZWOLF", "blitzwolf", "BlitzWolfBW", "blitzwolf-shenzhen"],
+      "device_id_patterns": ["^TS011F$", "^TS0501B?$"],
+      "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2020-06-01" }
+    }
+  ],
+  "generated_mapping": {
+    "tuya": "tuya", "tuya_smart": "tuya", "tuyainc": "tuya", "tuya_inc": "tuya",
+    "lidl": "lidl_silvercrest", "silvercrest": "lidl_silvercrest",
+    "moes": "moes", "blitzwolf": "blitzwolf"
+  }
+}
