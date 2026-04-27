@@ -16,14 +16,7 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "productId": [
-      "JZ-ZB-004",
-      "TS0004",
-      "TS0004_POWER",
-      "TS0004_SWITCH_MODULE",
-      "TS0014",
-      "TS0601"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -53,57 +46,7 @@
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": [
-      "LELLKI",
-      "_TZ3000_3N2MINVF",
-      "_TZ3000_4VOBCWSC",
-      "_TZ3000_A37EIX1S",
-      "_TZ3000_AQSJYH1H",
-      "_TZ3000_EXCGG5KB",
-      "_TZ3000_EYZPWHTC",
-      "_TZ3000_HDLPIFBK",
-      "_TZ3000_JWOYQYCG",
-      "_TZ3000_KFKQKJQE",
-      "_TZ3000_KT6XXA4O",
-      "_TZ3000_LCJSEWLO",
-      "_TZ3000_MRDUUBOD",
-      "_TZ3000_PDVKKCUC",
-      "_TZ3000_R9E2W7DN",
-      "_TZ3000_S6MA1NH4",
-      "_TZ3000_SSUP6H68",
-      "_TZ3000_TYG4YIAT",
-      "_TZ3000_UZ6IBHIB",
-      "_TZ3000_WOPF2SOX",
-      "_TZ3000_WWTNSHOL",
-      "_TZ3000_XABCKQV1",
-      "_TZ3000_XK5UDND6",
-      "_TZ3000_Z6ZPLT0Y",
-      "_TZ3000_imaccztn",
-      "_TZ3000_u3oupgdy",
-      "_TZ3000_wkr3jqmr",
-      "_TZ3002_9EAVTO1K",
-      "_TZ3002_A4KVF6ZD",
-      "_TZ3002_HKAKTRYD",
-      "_TZ3002_L8BFZLCD",
-      "_TZ3002_PW4AD2XA",
-      "_TZ3002_TLSVXHXC",
-      "_TZ3002_U7D3NES3",
-      "_TZ3002_UU4UIRCB",
-      "_TZ3002_XKXGFXSG",
-      "_TZ3002_YBTQBYK3",
-      "_TZ3002_YPTOMML1",
-      "_TZ3002_ZYUAJKZZ",
-      "_TZ300A_OHJMIFIZ",
-      "_TZ300A_RNCJ86AF",
-      "_TZ300A_VKFLNSL0",
-      "_TZ300A_VQRS45NJ",
-      "_TZ3210_IYMFXDIS",
-      "_TZE204_XIBAABMU",
-      "_TZE284_XIBAABMU",
-      "_TZ3000_hdlpifbk",
-      "_TZ3000_excgg5kb",
-      "_TZ3000_mmkbptmx"
-    ]
+    "manufacturerName": []
   },
   "images": {
     "small": "drivers/switch_4gang/assets/images/small.png",

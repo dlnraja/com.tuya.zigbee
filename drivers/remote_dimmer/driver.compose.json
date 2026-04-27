@@ -21,12 +21,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TYZB01_BNGWDJSR"
-    ],
-    "productId": [
-      "TS1001"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -51,7 +47,7 @@
   "images": {
     "large": "drivers/remote_dimmer/assets/images/large.png",
     "small": "drivers/remote_dimmer/assets/images/small.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

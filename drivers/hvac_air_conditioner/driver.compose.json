@@ -111,15 +111,10 @@
   "images": {
     "small": "drivers/hvac_air_conditioner/assets/images/small.png",
     "large": "drivers/hvac_air_conditioner/assets/images/large.png"
-    },
+  },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE204_ZUHSZJ9S"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_AC"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

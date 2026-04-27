@@ -15,14 +15,7 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "productId": [
-      "TS0003",
-      "TS0003_POWER",
-      "TS0003_SWITCH_MODULE",
-      "TS0013",
-      "TS0601",
-      "ZG-302Z3"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -47,40 +40,12 @@
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": [
-      "HOBEIAN",
-      "_TYZB01_4LWQWYQN",
-      "_TZ3000_0Q5FJQGW",
-      "_TZ3000_34ZBIMXH",
-      "_TZ3000_AVOTANJ3",
-      "_TZ3000_C0WBNBBF",
-      "_TZ3000_CAHKWEZX",
-      "_TZ3000_ECGIIID3",
-      "_TZ3000_IV4EQ7EH",
-      "_TZ3000_KHTLVDFC",
-      "_TZ3000_LY9APZKY",
-      "_TZ3000_MZCP0OF6",
-      "_TZ3000_NHHKLSXW",
-      "_TZ3000_NWIDMC4N",
-      "_TZ3000_PFC7I3KT",
-      "_TZ3000_PMSXMTTQ",
-      "_TZ3000_SNQ47IZK",
-      "_TZ3000_TBFW3XJ0",
-      "_TZ3000_UDTMRASG",
-      "_TZ3000_V4L4B0LP",
-      "_TZ3000_VJHCXJEB",
-      "_TZ3000_WQFDVXEN",
-      "_TZ3000_ZEUULSON",
-      "_TZ3210_N0WBKYSI",
-      "_TZ33000_D9YFGZUR",
-      "_TZE204_E1HUTAAJ",
-      "_TZE284_C8IPBLJQ"
-    ]
+    "manufacturerName": []
   },
   "images": {
     "small": "drivers/switch_3gang/assets/images/small.png",
     "large": "drivers/switch_3gang/assets/images/large.png"
-    },
+  },
   "settings": [
     {
       "type": "group",

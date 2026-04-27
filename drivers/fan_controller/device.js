@@ -174,7 +174,7 @@ class FanControllerDevice extends ZigBeeDevice {
       break;
 
     case 3: // Speed (0-4)
-      const dim = value * 4; // Convert to 0-1 range
+      const dim = safeMultiply(value, 4); // Convert to 0-1 range
       this.setCapabilityValue('dim', dim).catch(this.error);
       // Trigger speed changed flow card
       try {

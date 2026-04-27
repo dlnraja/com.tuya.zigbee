@@ -24,14 +24,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_YCDQSMPD",
-      "_TZE204_NKLQJK97"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_DOOR"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -447,7 +441,7 @@
   "images": {
     "small": "drivers/door_controller/assets/images/small.png",
     "large": "drivers/door_controller/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

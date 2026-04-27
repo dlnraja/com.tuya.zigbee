@@ -25,20 +25,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_BSE1XPUI",
-      "_TZE200_BWERWHPR",
-      "_TZE200_VU0JDQNM",
-      "_TZE200_XYHHCX94",
-      "_TZE204_BWERWHPR",
-      "_TZE204_PVVBOMMB",
-      "_TZE204_VU0JDQNM",
-      "_TZE204_XYHHCX94"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_LOCK"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "learnmode": {
       "instruction": {
         "en": "Follow the lock's pairing instructions (usually hold * + # for 5 seconds)",
@@ -57,7 +45,7 @@
   "images": {
     "small": "drivers/fingerprint_lock/assets/images/small.png",
     "large": "drivers/fingerprint_lock/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

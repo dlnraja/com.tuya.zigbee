@@ -31,3 +31,6 @@ walk(ROOT, (file) => {
   }
 });
 console.log(`--- Total Errors: ${errors} ---`);
+if (errors > 0) {
+  process.exit(1);
+}

@@ -46,23 +46,7 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_8N7LQBM0",
-      "_TZ3000_CTFTGJWB",
-      "_TZ3000_G8N1N7LG",
-      "_TZ3000_UDL7UYD2",
-      "_TZ3000_YZ38GDRA",
-      "_TZ3218_7FIYO3KV",
-      "_TZ3290_IXD9MVV4",
-      "_TZE200_R32CTEZX",
-      "_TZE200_YLTIVVZB",
-      "_TZE204_R32CTEZX",
-      "_TZE204_WT66HAAX",
-      "_TZE284_7ZAZVLYN",
-      "_TZE284_AJLU4CUD",
-      "_TZE284_IDN2HTGU",
-      "_TZE284_WT66HAAX"
-    ],
+    "manufacturerName": [],
     "learnmode": {
       "image": "/drivers/water_valve_smart/assets/learnmode.svg",
       "instruction": {
@@ -70,15 +54,7 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
       }
     },
-    "productId": [
-      "SWV-ZFE",
-      "SWV-ZFU",
-      "SWV-ZN",
-      "SWV-ZNE",
-      "SWV-ZNU",
-      "TS0601",
-      "TS0601_WATERVALVE"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -487,7 +463,7 @@
   "images": {
     "small": "drivers/water_valve_smart/assets/images/small.png",
     "large": "drivers/water_valve_smart/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

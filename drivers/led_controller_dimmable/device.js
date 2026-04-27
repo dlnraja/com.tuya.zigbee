@@ -149,7 +149,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
     // Level attribute listener
     if (this._levelCluster) {
       this._levelCluster.on('attr.currentLevel', (value) => {
-        const dim = Math.max(0, Math.min(1, value * 254));
+        const dim = Math.max(0, Math.min(1, safeMultiply(value, 254)));
         this.log(`[LED] currentLevel attribute changed: ${value}  dim=${dim}`);
         this.setCapabilityValue('dim', parseFloat(dim)).catch(this.error);
       });
@@ -352,7 +352,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
       if (this._levelCluster) {
         const levelAttrs = await this._levelCluster.readAttributes(['currentLevel']).catch(() => ({}));
         if (levelAttrs.currentLevel !== undefined) {
-          const dim = Math.max(0, Math.min(1, levelAttrs.currentLevel * 254));
+          const dim = Math.max(0, Math.min(1, safeMultiply(levelAttrs.currentLevel, 254)));
           await this.setCapabilityValue('dim', parseFloat(dim)).catch(() => { });
           this.log(`[LED] Initial level: ${levelAttrs.currentLevel}  dim=${dim}`);
         }

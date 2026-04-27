@@ -16,12 +16,8 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_ZLOSO4JK"
-    ],
-    "productId": [
-      "TS0122"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -34,7 +30,7 @@
   "images": {
     "small": "drivers/switch_plug_2/assets/images/small.png",
     "large": "drivers/switch_plug_2/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

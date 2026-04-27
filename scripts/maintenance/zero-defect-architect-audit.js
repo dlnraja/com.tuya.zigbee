@@ -143,7 +143,7 @@ async function main() {
             .replace(/\r/g, '')
             .replace(/\/\/.*$/, '')
             .replace(/(['"`])((?:\\.|(?!\1).)*?)\1/g, '$1$1')
-            .replace(/\/[^*].*?\/[gimy]*(?=[.) ;]|$)/g, ' ');
+            .replace(/\/[^*].*?\/[gimy]*(?=[.) ,;\]]|$)/g, ' '); // Improved regex literal detection
 
           if (codeOnly.includes('drivers.getDevice(') || codeOnly.includes('drivers.getDeviceById(') || (codeOnly.includes('getDriver(') && codeOnly.includes('.getDevice('))) {
             const rel = path.relative(ROOT, full);

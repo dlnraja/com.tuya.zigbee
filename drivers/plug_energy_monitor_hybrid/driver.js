@@ -12,9 +12,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -45,21 +43,15 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
         const power = args.device.getCapabilityValue('measure_power');
         return power !== null && power > args.power;
       });
-    }
-  }
-
+      }
   getConditionCard(id) {
     try {
       return (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
     } catch (e) {
       return null;
-    }
-  }
-
+      }
   async onPairListDevices(devices) {
     if (!devices || devices.length === 0) return devices;
     return devices.filter(d => d.data?.subDeviceId === undefined) : null;
-  }
-}
-
+    }
 module.exports = PlugEnergyMonitorDriver;

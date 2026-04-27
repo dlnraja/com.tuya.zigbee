@@ -24,24 +24,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_EAJ2E3TM",
-      "_TZ3000_FEMSAIY7",
-      "_TZ3000_GDKES7ES",
-      "_TZE200_BMZPHLD8",
-      "_TZE200_G2KIYJVF",
-      "_TZE200_I0B1DBQU",
-      "_TZE200_KAGKGK0I",
-      "_TZE200_LGSTEPHA",
-      "_TZE200_NE4S6Z47",
-      "_TZE204_KHOQSS0A",
-      "_TZE204_RRBCYH1F",
-      "_TZE284_MGSTDYZ3"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_SMARTLOCK"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/lock_smart/assets/learnmode.svg",
       "instruction": {
@@ -457,7 +441,7 @@
   "images": {
     "small": "drivers/lock_smart/assets/images/small.png",
     "large": "drivers/lock_smart/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

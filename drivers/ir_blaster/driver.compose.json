@@ -36,43 +36,8 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3290_0XK5DGCV",
-      "_TZ3290_5LUHABKC",
-      "_TZ3290_785FBXIK",
-      "_TZ3290_7V1K4VUF",
-      "_TZ3290_AI4V11WR0MYCYH7K",
-      "_TZ3290_CFV2UYXE",
-      "_TZ3290_GHTYM4CE",
-      "_TZ3290_GNL5A6A5XVQL7C2A",
-      "_TZ3290_GNLSAFC7",
-      "_TZ3290_HDLPIFBK",
-      "_TZ3290_JXVZQATW",
-      "_TZ3290_JXVZQATWGSAQZX1U",
-      "_TZ3290_KJFZUYCL",
-      "_TZ3290_LYPNQVLE",
-      "_TZ3290_LYPNQVLEM5EQ1REE",
-      "_TZ3290_NBA3KNPS",
-      "_TZ3290_NBA3KNPSARKAWGNT",
-      "_TZ3290_NKPXAPOZ",
-      "_TZ3290_NLFQEDRT",
-      "_TZ3290_NWGYCQCO",
-      "_TZ3290_QDSS6SCO",
-      "_TZ3290_RLKMY85Q",
-      "_TZ3290_TVFRXBG9",
-      "_TZ3290_WLQDKVP7",
-      "_TZ3290_YAC64INU",
-      "_TZ3290_YYAX9AJF",
-      "_TZE200_KYFGCYF1",
-      "_TZE200_OWVFNI2Z",
-      "_TZE204_IKVNCLUO",
-      "_TZE284_3MZB0SDZ",
-      "_TZE284_LA9VHSOK"
-    ],
-    "productId": [
-      "TS0601",
-      "TS1201"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -85,7 +50,7 @@
   "images": {
     "small": "drivers/ir_blaster/assets/images/small.png",
     "large": "drivers/ir_blaster/assets/images/large.png"
-    },
+  },
   "energy": {
     "batteries": [
       "CR2450"

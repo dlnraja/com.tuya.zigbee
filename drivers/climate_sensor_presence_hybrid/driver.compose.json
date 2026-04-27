@@ -76,9 +76,7 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0601"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
       "instruction": {
@@ -786,7 +784,7 @@
   "images": {
     "small": "drivers/presence_sensor_radar/assets/images/small.png",
     "large": "drivers/presence_sensor_radar/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

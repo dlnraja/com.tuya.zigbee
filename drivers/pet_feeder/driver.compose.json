@@ -32,17 +32,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_ARRW4HHC",
-      "_TZE200_NYMXY9GQ",
-      "_TZE204_ARRW4HHC",
-      "_TZE204_DQ1MFJUG",
-      "_TZE204_NYMXY9GQ"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_FEEDER"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -66,7 +57,7 @@
   "images": {
     "small": "drivers/pet_feeder/assets/images/small.png",
     "large": "drivers/pet_feeder/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

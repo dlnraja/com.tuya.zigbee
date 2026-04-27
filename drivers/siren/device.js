@@ -35,11 +35,11 @@ class SirenDevice extends UnifiedPlugBase {
       // Volume (0=low, 1=medium, 2=high or 0-100)
       5: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (v * 100)) },
       // Duration (60-3600 seconds)
-      7: { capability, setting: 'duration', writable: true },
+      7: { setting: 'duration', writable: true },
       // Melody/Ringtone (melody_1 to melody_5)
-      21: { capability, setting: 'melody', writable: true },
+      21: { setting: 'melody', writable: true },
       // Alarm type (sound, light, sound+light, normal)
-      16: { capability, setting: 'alarm_type', writable: true },
+      16: { setting: 'alarm_type', writable: true },
 
       // 
       // BATTERY
@@ -52,7 +52,7 @@ class SirenDevice extends UnifiedPlugBase {
       // 
       104: { capability: 'onoff', transform: (v) => !!v },
       116: { capability: 'volume_set', transform: (v) => ({ 0: 0.33, 1: 0.66, 2: 1.0 }[v] ?? (v * 100)) },
-      103: { capability, setting: 'duration', writable: true },
+      103: { setting: 'duration', writable: true },
       101: { capability: 'measure_temperature', divisor: 10 },
       102: { capability: 'measure_humidity', divisor: 1 },
 
@@ -60,7 +60,7 @@ class SirenDevice extends UnifiedPlugBase {
       // v5.5.130: ADDITIONAL FEATURES
       // 
       // Strobe light control
-      6: { capability, setting: 'strobe' },
+      6: { setting: 'strobe' },
       // Tamper alarm
       4: { capability: 'alarm_tamper', transform: (v) => v === 1 || v === true },
     };

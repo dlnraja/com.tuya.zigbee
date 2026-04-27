@@ -17,26 +17,14 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "productId": [
-      "TS0001",
-      "TS0002",
-      "TS0003",
-      "TS000F",
-      "TS0011",
-      "TS0012",
-      "TS0013",
-      "TS0014",
-      "TS011F"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/switch_2gang/assets/learnmode.svg",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": [
-      "_TZ3000_ADKVZOOY"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -54,7 +42,7 @@
   "images": {
     "small": "drivers/switch_2gang/assets/images/small.png",
     "large": "drivers/switch_2gang/assets/images/large.png"
-    },
+  },
   "settings": [
     {
       "type": "group",

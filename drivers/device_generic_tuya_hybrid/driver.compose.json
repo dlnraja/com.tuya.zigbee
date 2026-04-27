@@ -73,20 +73,8 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "AQARA",
-      "AUBESS",
-      "AVATTO",
-      "HEIMAN",
-      "MOES",
-      "PHILIPS",
-      "SILVERCREST",
-      "XIAOMI",
-      "ZEMISMART"
-    ],
-    "productId": [
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -106,7 +94,7 @@
   "images": {
     "large": "/drivers/universal_zigbee/assets/images/large.png",
     "small": "/drivers/universal_zigbee/assets/images/small.png"
-    },
+  },
   "flow": {
     "triggers": [],
     "conditions": [],

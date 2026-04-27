@@ -86,7 +86,7 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
     this.registerCapabilityListener('target_temperature', async (value) => {
       this._markAppCommand?.();
       if (this.tuyaEF00Manager) {
-        await this.tuyaEF00Manager.sendTuyaDP(16, 2, Math.round(value * 10));
+        await this.tuyaEF00Manager.sendTuyaDP(16, 2, safeMultiply(Math.round(value, 10)));
       }
     });
 
@@ -122,7 +122,7 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate - now) / 3600000);
+        utcOffset = Math.round((tzDate - safeDivide(now), 3600000));
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]

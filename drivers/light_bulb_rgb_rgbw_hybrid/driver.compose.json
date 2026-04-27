@@ -28,36 +28,7 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_AS7EQIRI",
-      "_TZ3000_FBJA4Q6H",
-      "_TZ3000_HCM1FQXE",
-      "_TZ3000_KEABPIGB",
-      "_TZ3000_KIHKX3CQ",
-      "_TZ3000_LZFWT5QX",
-      "_TZ3000_M6U3Q8JY",
-      "_TZ3000_TQLV4YZ4",
-      "_TZ3000_U5U4CAKC",
-      "_TZ3000_W2UG5KGU",
-      "_TZ3000_X2FQBDUN",
-      "_TZ3210_0C4NP92R",
-      "_TZ3210_0FC3G9SQ",
-      "_TZ3210_1AGIHF3Z",
-      "_TZ3210_B8JDOSXO",
-      "_TZ3210_BCPLF4DS",
-      "_TZ3210_DXRJKPI6",
-      "_TZ3210_H1ZVCPWD",
-      "_TZ3210_JKBDRVVF",
-      "_TZ3210_LEZKAFXF",
-      "_TZ3210_LMQQUXUS",
-      "_TZ3210_RBGFKWBL",
-      "_TZ3210_S8LVBBUC",
-      "_TZ3210_SROEZL0S",
-      "_TZ3210_SW9UXOEA",
-      "_TZ3210_TAW0FC13",
-      "_TZ3210_WBSGMOJQ",
-      "_TZ3210_WUHEYHVM"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -78,11 +49,7 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
       }
     },
-    "productId": [
-      "TS0504B",
-      "TS0505A",
-      "TS0505B"
-    ],
+    "productId": [],
     "capabilities": {
       "light_color_temp": {
         "cluster": "colorControl",
@@ -657,7 +624,7 @@
   "images": {
     "small": "drivers/bulb_rgb/assets/images/small.png",
     "large": "drivers/bulb_rgb/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

@@ -20,13 +20,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "ZG-106Z"
-    ],
-    "productId": [
-      "TS0222",
-      "ZG-106Z"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -47,7 +42,7 @@
   "images": {
     "small": "drivers/illuminance_sensor/assets/images/small.png",
     "large": "drivers/illuminance_sensor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

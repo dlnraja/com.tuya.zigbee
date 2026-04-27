@@ -3,7 +3,7 @@ const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
 // A8: NaN Safety - use safeDivide/safeMultiply
-  require('../../lib/UniversalZigbeeDevice');
+const UniversalZigbeeDevice = require('../../lib/UniversalZigbeeDevice');
 const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHelper');
 
 /**
@@ -44,7 +44,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     this.registerCapability('dim', 'genLevelCtrl', {
       get: 'currentLevel',
       report: 'currentLevel',
-      reportParser: v => v * 254,
+      reportParser: v => safeMultiply(v, 254),
       getOpts: { getOnStart: true, getOnOnline: true }
     }).catch(() => {});
 

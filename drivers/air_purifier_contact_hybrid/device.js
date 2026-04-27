@@ -112,9 +112,9 @@ class ContactSensorDevice extends UnifiedSensorBase {
       // Battery voltage (mV) - for diagnostic purposes
       6: { internal: true, type: 'battery_voltage' },
       // Sensitivity setting (some models)
-      9: { capability, setting: 'sensitivity' },
+      9: { setting: 'sensitivity' },
       // Report interval (some models)
-      10: { capability, setting: 'report_interval' },
+      10: { setting: 'report_interval' },
       // v5.11.102: Luminance (lux) for _TZE200_pay2byax ZG-102ZL variant
       101: { capability: 'measure_luminance', divisor: 1 },
     };
@@ -358,7 +358,7 @@ class ContactSensorDevice extends UnifiedSensorBase {
             state.lastChangeTime = Date.now();
             state.iasMessageCount = 0;
             await super.setCapabilityValue(capability, finalValue).catch(() => { });
-          },this._debounceMs * 2);
+          },safeMultiply(this._debounceMs, 2));
 
           return;
         }

@@ -419,17 +419,8 @@
     }
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_BYFDWKTR",
-      "_TZ3000_VSN4QAL7",
-      "_TZE200_WJK6RURM",
-      "_TZE204_WJK6RURM",
-      "_TZE284_WJK6RURM"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_METER"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -442,7 +433,7 @@
   "images": {
     "small": "drivers/power_meter/assets/images/small.png",
     "large": "drivers/power_meter/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

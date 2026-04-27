@@ -28,12 +28,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE284_GAJ531W3"
-    ],
-    "productId": [
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/radiator_valve/assets/learnmode.svg",
       "instruction": {
@@ -462,7 +458,7 @@
   "images": {
     "small": "drivers/radiator_valve/assets/images/small.png",
     "large": "drivers/radiator_valve/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

@@ -50,12 +50,10 @@
   "images": {
     "small": "drivers/usb_dongle_triple/assets/images/small.png",
     "large": "drivers/usb_dongle_triple/assets/images/large.png"
-    },
+  },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0003"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

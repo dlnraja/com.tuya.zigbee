@@ -27,9 +27,7 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_OBORYZTC"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -50,9 +48,7 @@
         "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'Ã ce que la LED clignote."
       }
     },
-    "productId": [
-      "TS0601_STRIP_ADV"
-    ]
+    "productId": []
   },
   "settings": [
     {
@@ -492,7 +488,7 @@
   "images": {
     "small": "drivers/led_strip_advanced/assets/images/small.png",
     "large": "drivers/led_strip_advanced/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

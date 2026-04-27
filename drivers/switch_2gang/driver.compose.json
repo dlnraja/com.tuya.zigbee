@@ -15,56 +15,14 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "productId": [
-      "TS0002",
-      "TS0002_POWER",
-      "TS0002_SWITCH_MODULE",
-      "TS0003",
-      "TS0012",
-      "TS0013",
-      "ZG-302Z2",
-      "ZG-305Z"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/switch_2gang/assets/learnmode.svg",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": [
-      "_TZ3000_4JS6G1CW",
-      "_TZ3000_7HP93XPR",
-      "_TZ3000_7VCDO2VN",
-      "_TZ3000_BI6LPSEW",
-      "_TZ3000_CAUQ1OKQ",
-      "_TZ3000_CRIIAHCG",
-      "_TZ3000_GKESADUS",
-      "_TZ3000_H1LPGKWN",
-      "_TZ3000_HZNZBL0X",
-      "_TZ3000_ITGNGNQZ",
-      "_TZ3000_JCSPR0TP",
-      "_TZ3000_KGXEJ1DV",
-      "_TZ3000_L9BRJWAU",
-      "_TZ3000_NPZFYKBS",
-      "_TZ3000_PGCCLDDI",
-      "_TZ3000_PXFJRZYJ",
-      "_TZ3000_RFJCTVIQ",
-      "_TZ3000_RMIEW70N",
-      "_TZ3000_TRIBAKZK",
-      "_TZ3000_UGAEM1NB",
-      "_TZ3000_VJHCXJQB",
-      "_TZ3000_YW8Z2AXP",
-      "_TZ3000_YXMAFZMD",
-      "_TZ3000_ZMLUNNHY",
-      "_TZ3002_OVSW7U2P",
-      "_TZ3002_YMCCTKNK",
-      "_TZ3210_PDNWPNZ5",
-      "_TZE200_G1IB5LDV",
-      "_TZE200_O7VDUIDQ",
-      "_TZE204_G1IB5LDV",
-      "_TZE204_WUNUFSIL",
-      "_TZE204_ZPVUSBTV"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -82,7 +40,7 @@
   "images": {
     "small": "drivers/switch_2gang/assets/images/small.png",
     "large": "drivers/switch_2gang/assets/images/large.png"
-    },
+  },
   "settings": [
     {
       "type": "group",

@@ -23,7 +23,7 @@ function processJs(filePath) {
         let changed = false;
         const newLines = lines.map(line => {
             if (line.match(/\)\s*:\s*null\s*;/)) {
-                if (line.trim().endsWith(': null;')) {
+                if (line.trim().endsWith(';')) {
                      const partBefore = line.substring(0, line.lastIndexOf(':'));
                      const sanitized = partBefore.replace(/'[^']*'/g, "''").replace(/"[^"]*"/g, '""').replace(/\/[^\/]+\//g, '//');
                      if (!sanitized.includes('?')) {
@@ -45,7 +45,7 @@ function processJs(filePath) {
 }
 
 const target = process.argv[2] || '.';
-console.log(`Cleaning up stray ": null;" syntax errors in ${target}...`);
+console.log(`Cleaning up stray ";" syntax errors in ${target}...`);
 processDir(target);
 if (target === '.') processDir('.github');
 console.log('Done.');

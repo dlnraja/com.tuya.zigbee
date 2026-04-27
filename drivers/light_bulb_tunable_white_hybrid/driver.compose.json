@@ -27,9 +27,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0502B"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -495,7 +493,7 @@
   "images": {
     "small": "drivers/bulb_tunable_white/assets/images/small.png",
     "large": "drivers/bulb_tunable_white/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

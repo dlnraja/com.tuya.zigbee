@@ -38,7 +38,7 @@ class WaterValveSmartDevice extends UnifiedPlugBase {
         if (v < 2700) return 0;
         return Math.round(((v - 2700) / 300) * 100);
       }},
-      15: { capability, setting: 'auto_clean' },
+      15: { setting: 'auto_clean' },
       21: { internal: true, type: 'flow_rate' },
     };
   }

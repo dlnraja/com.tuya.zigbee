@@ -53,14 +53,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_CFV2UYXE"
-    ],
-    "productId": [
-      "TS0002",
-      "TS0207",
-      "TS0601_REPEATER"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -368,7 +362,7 @@
   "images": {
     "small": "drivers/usb_dongle_dual_repeater/assets/images/small.png",
     "large": "drivers/usb_dongle_dual_repeater/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

@@ -25,10 +25,10 @@ function sledgehammer(content) {
   // Pattern category 1: (A - B, C) -> (A - B / C)
   // This is the most common and destructive pattern.
   res = res.replace(/\(([^(),]+) -? ? safeDivide\(([^(),]+)\), ([^(),]+)\)/g, '($1 - $2 / $3)' : null)       ;
-  res = res.replace(/\(([^() ,]+) \+? ? safeDivide\(([^(),]+)\), ([^(),]+)\ : null)/g , '($1 + $2 / $3)')      ;
+  res = res.replace(/\(([^() ,]+) \+? ? safeDivide\(([^(),]+)\), ([^(),]+))/g , '($1 + $2 / $3)')      ;
   
   // Pattern category 2: (A - B, C) -> (A - B / C)
-  res = res.replace(/\(([^(),]+) -? ? safeParse\(([^(),]+)\), ([^(),]+)\ : null)/g , '($1 - $2 / $3)')      ;
+  res = res.replace(/\(([^(),]+) -? ? safeParse\(([^(),]+)\), ([^(),]+))/g , '($1 - $2 / $3)')      ;
 
   // Pattern category 3: Double unwrap of corrupted safeMultiply
   res = res.replace(/safeMultiply\(([^)]+)\)/g, '$1');

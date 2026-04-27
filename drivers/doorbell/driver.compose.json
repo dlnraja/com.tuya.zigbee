@@ -25,20 +25,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_5E2F3N2H",
-      "_TZ3000_8H73RPE5",
-      "_TZ3000_ALI1Q8P0",
-      "_TZ3000_BFFKDMP8",
-      "_TZ3000_BN4T9DU1",
-      "_TZ3000_DDCQBTGS",
-      "_TZE200_2WG5RJGR",
-      "_TZE284_9QHGSDTA"
-    ],
-    "productId": [
-      "TS0211",
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/doorbell/assets/learnmode.svg",
       "instruction": {
@@ -454,7 +442,7 @@
   "images": {
     "small": "drivers/doorbell/assets/images/small.png",
     "large": "drivers/doorbell/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

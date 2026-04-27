@@ -46,9 +46,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0601"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -250,7 +248,7 @@
   "images": {
     "small": "drivers/smart_scene_panel/assets/images/small.png",
     "large": "drivers/smart_scene_panel/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

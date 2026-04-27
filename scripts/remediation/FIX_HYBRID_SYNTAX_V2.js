@@ -43,8 +43,8 @@ function processJs(filePath) {
         }
 
         // Fix 4: || ep?.clusters?.[6] : null; -> || ep?.clusters?.[6] || null;
-        if (content.includes('|| ep?.clusters?.[6] : null;')) {
-            content = content.split('|| ep?.clusters?.[6] : null;').join('|| ep?.clusters?.[6] || null;');
+        if (content.includes('|| ep?.clusters?.[6];')) {
+            content = content.split('|| ep?.clusters?.[6];').join('|| ep?.clusters?.[6] || null;');
             changed = true;
         }
 

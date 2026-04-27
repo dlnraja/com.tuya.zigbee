@@ -16,10 +16,7 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "productId": [
-      "TS0001",
-      "TS0001_FINGERBOT"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/switch_1gang/assets/learnmode.svg",
       "instruction": {
@@ -39,7 +36,7 @@
   "images": {
     "small": "drivers/switch_1gang/assets/images/small.png",
     "large": "drivers/switch_1gang/assets/images/large.png"
-    },
+  },
   "settings": [
     {
       "type": "group",

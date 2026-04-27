@@ -1,4 +1,4 @@
-﻿ERROR_IN_FILE: C:\Users\HP\Desktop\homey app\tuya_repair\.homeybuild\app.js
+ERROR_IN_FILE: C:\Users\HP\Desktop\homey app\tuya_repair\.homeybuild\app.js
 node : C:\Users\HP\Desktop\homey app\tuya_repair\.homeybuild\app.js:537
 Au caractère Ligne:1 : 71
 + ... s -Recurse | ForEach-Object { $err = node -c $_.FullName 2>&1; if ($L ...

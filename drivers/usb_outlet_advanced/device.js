@@ -98,9 +98,9 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       // 
       // BUTTON PRESS DETECTION - v5.5.19: Uses flow trigger instead of capability
       // 
-      102: { capability, flowTrigger: 'button_pressed' },
-      103: { capability, flowTrigger: 'button_pressed' },
-      121: { capability, flowTrigger: 'button_pressed' },
+      102: { flowTrigger: 'button_pressed' },
+      103: { flowTrigger: 'button_pressed' },
+      121: { flowTrigger: 'button_pressed' },
     };
   }
 

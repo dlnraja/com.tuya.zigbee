@@ -17,13 +17,8 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZE204_CKUD7U2L"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_HEATER"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -36,7 +31,7 @@
   "images": {
     "small": "drivers/smart_heater/assets/images/small.png",
     "large": "drivers/smart_heater/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

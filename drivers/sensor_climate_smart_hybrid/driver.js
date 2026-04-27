@@ -13,9 +13,7 @@ class SmartScenePanelDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -47,8 +45,6 @@ class SmartScenePanelDriver extends ZigBeeDriver {
     }
 
     this.log('SmartScenePanelDriver flow cards registered');
-  }
-}
-
+    }
 module.exports = SmartScenePanelDriver;
 

@@ -35,18 +35,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_K1MSAVLX",
-      "_TZ3000_OTWPDQ1D",
-      "_TZE204_U6X1ZYV2"
-    ],
-    "productId": [
-      "TS0207",
-      "TS0207_RAIN",
-      "TS0601",
-      "ZG-222Z",
-      "ZG-223Z"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -58,7 +48,7 @@
   "images": {
     "small": "drivers/rain_sensor/assets/images/small.png",
     "large": "drivers/rain_sensor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

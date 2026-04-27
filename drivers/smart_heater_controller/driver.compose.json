@@ -41,18 +41,10 @@
   "images": {
     "small": "drivers/smart_heater_controller/assets/images/small.png",
     "large": "drivers/smart_heater_controller/assets/images/large.png"
-    },
+  },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_DNZ2ZHQD",
-      "_TZE200_SUS6CLYH",
-      "_TZE204_B6WAX7G0",
-      "_TZE204_C88TEUJP"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_HEATCTRL"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

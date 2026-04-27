@@ -23,29 +23,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_0ZRCCFGX",
-      "_TZ3000_JWCIXNRZ",
-      "_TZ3000_OBACBUKL",
-      "_TZ3000_RUL9YXCC",
-      "_TZ3000_UG1VTUZN",
-      "_TZ3290_8XZB2GHN",
-      "_TZ3290_RLKMY85Q4PZOXOBL",
-      "_TZ3290_UC8LWBI2",
-      "_TZ3290_YAC64INUDPOVOABA",
-      "_TZE200_D7LPRUVI",
-      "_TZE200_HKDL5FMV",
-      "_TZE204_1WNH8BQP",
-      "_TZE204_JYGVP6FK",
-      "_TZE204_KSZ749X8",
-      "_TZE204_MUVKRJR5",
-      "_TZE284_1WNH8BQP",
-      "_TZE284_D4H8J2N6"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_WIRELESSSW"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -666,7 +645,7 @@
   "images": {
     "small": "drivers/switch_wireless/assets/images/small.png",
     "large": "drivers/switch_wireless/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

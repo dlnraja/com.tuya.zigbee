@@ -25,13 +25,8 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_ZION52EF"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_THERMO4CH"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -44,7 +39,7 @@
   "images": {
     "small": "drivers/thermostat_4ch/assets/images/small.png",
     "large": "drivers/thermostat_4ch/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

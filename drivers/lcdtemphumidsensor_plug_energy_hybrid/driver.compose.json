@@ -30,12 +30,8 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TYZB01_IUEPBMPV"
-    ],
-    "productId": [
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
       "instruction": {
@@ -402,7 +398,7 @@
   "images": {
     "small": "drivers/plug_energy_monitor/assets/images/small.png",
     "large": "drivers/plug_energy_monitor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

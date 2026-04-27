@@ -68,19 +68,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_JCKXIP3G",
-      "_TZ3000_KGVAMGXS",
-      "_TZ3000_ZGYZGDUA",
-      "_TZE200_ZQTIAM9D",
-      "_TZE204_2M38MH6K",
-      "_TZE204_ZQTIAM9D"
-    ],
-    "productId": [
-      "ERS-10TZBVK-AA",
-      "TS0601",
-      "ZG-101ZS"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -93,7 +82,7 @@
   "images": {
     "small": "drivers/scene_switch_4/assets/images/small.png",
     "large": "drivers/scene_switch_4/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

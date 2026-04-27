@@ -24,37 +24,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TYZB01_B6EAXDLH",
-      "_TYZB01_BNGGSFSF",
-      "_TZ3000_8R5U7WKH",
-      "_TZ3000_AB7HFUIL",
-      "_TZ3000_AOGB3S2T",
-      "_TZ3000_D0YL2HSY",
-      "_TZ3000_D0YU2XGI",
-      "_TZ3000_FABWS1W2",
-      "_TZ3000_FWFWIFIN",
-      "_TZ3000_FWUELQS5",
-      "_TZ3000_HDR3NFEI",
-      "_TZ3000_HV9CQCCI",
-      "_TZ3000_KFPSBNOI",
-      "_TZ3000_RKKR4OOA",
-      "_TZ3000_T13N5ZO0",
-      "_TZ3000_T6JSGIZP",
-      "_TZ3000_XNH7CQTE",
-      "_TZE200_NLRFGPNY",
-      "_TZE200_T1BLO2BJ",
-      "_TZE200_WNVHLCGL",
-      "_TZE204_5SBEBBZS",
-      "_TZE204_NLRFGPNY",
-      "_TZE204_Q76RTOA9",
-      "_TZE284_NLRFGPNY"
-    ],
-    "productId": [
-      "TS0216",
-      "TS0219",
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/siren/assets/learnmode.svg",
       "instruction": {
@@ -470,7 +441,7 @@
   "images": {
     "small": "drivers/siren/assets/images/small.png",
     "large": "drivers/siren/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

@@ -17,10 +17,7 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -122,7 +119,5 @@ class PlugSmartDriver extends ZigBeeDriver {
     } catch (err) { this.log(`[FLOW]  ${err.message}`); }
 
     this.log('[FLOW]  Smart plug flow cards registered');
-  }
-}
-
+    }
 module.exports = PlugSmartDriver;

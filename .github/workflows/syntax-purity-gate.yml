@@ -21,7 +21,9 @@ jobs:
         run: |
           echo "=== STARTING GLOBAL SYNTAX PURITY SCAN ==="
           node scripts/maintenance/STRICT_SYNTAX_GUARD.js
-          echo "=== SYNTAX VALIDATION PASSED ==="
+          echo "=== STARTING ARITHMETIC INTEGRITY SCAN ==="
+          node scripts/maintenance/ARITHMETIC_INTEGRITY_CHECK.js
+          echo "=== VALIDATION PASSED ==="
 
   lint:
     runs-on: ubuntu-latest

@@ -32,7 +32,7 @@ class PoolPumpDevice extends ZigBeeDevice {
     const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
     if (emCluster && this.hasCapability('measure_power')) {
       emCluster.on('attr.activePower', (value) => {
-        this.setCapabilityValue('measure_power', value * 10).catch(this.error);
+        this.setCapabilityValue('measure_power', safeMultiply(value, 10)).catch(this.error);
       });
     }
   }

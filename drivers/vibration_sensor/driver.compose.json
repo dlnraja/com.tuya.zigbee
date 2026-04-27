@@ -22,51 +22,8 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_TYZB01_3ZV6OLEO",
-      "_TYZB01_821SIATI",
-      "_TYZB01_GEIGPSY4",
-      "_TYZB01_J9XXAHCL",
-      "_TZ3000_8BXRZYXZ",
-      "_TZ3000_BMFW11GS",
-      "_TZ3000_BMFW9YKL",
-      "_TZ3000_C0EPQJ4N",
-      "_TZ3000_D9MXCG6G",
-      "_TZ3000_EZ2W5NZP",
-      "_TZ3000_FBJNWZKO",
-      "_TZ3000_FKXMYWJV",
-      "_TZ3000_KY0FQ4HO",
-      "_TZ3000_LQPT3MVR",
-      "_TZ3000_LZDJJFSS",
-      "_TZ3000_RCFWRSLT",
-      "_TZ3000_WQWDOQIB",
-      "_TZE200_AHPCYZTH",
-      "_TZE200_BFMFHXRA",
-      "_TZE200_CSCPPKXZ",
-      "_TZE200_FODV6BKR",
-      "_TZE200_GNPN9HXB",
-      "_TZE200_GRGOL3XP",
-      "_TZE200_KCCDZAEO",
-      "_TZE200_KHX7NNKA",
-      "_TZE200_KIJXNB8Q",
-      "_TZE200_S7RSRTBG",
-      "_TZE200_TMSZBTZQ",
-      "_TZE200_ULI8WASJ",
-      "_TZE200_VQ5U79U3",
-      "_TZE200_Y8JIJHBA",
-      "_TZE200_YI4JTQQ1",
-      "_TZE204_CSCPPKXZ",
-      "_TZE204_KHX7NNKA",
-      "_TZE284_CSCPPKXZ"
-    ],
-    "productId": [
-      "TS0209",
-      "TS0210",
-      "TS0601",
-      "ZG-102ZM",
-      "ZG-103Z",
-      "ZG-103ZL"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -79,7 +36,7 @@
   "images": {
     "small": "drivers/vibration_sensor/assets/images/small.png",
     "large": "drivers/vibration_sensor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

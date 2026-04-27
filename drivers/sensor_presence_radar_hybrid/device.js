@@ -77,66 +77,33 @@ for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
 }
 
 // Get sensor config by manufacturerName and optional modelId
-// v5.5.512: Added modelId matching for HOBEIAN devices
+// v7.4.11: HARDENED - Centralized dual-key resolution (Mfr + ModelId)
 function getSensorConfig(manufacturerName, modelId = null) {
-  // v5.5.803: HOBEIAN special handling - match by manufacturerName + modelId
-  // HOBEIAN makes multiple products, need modelId to distinguish
-  // v5.5.803 FIX: Handle "null" string and actual null values - use DEFAULT config for auto-discovery
-  if (CI.equalsCI(manufacturerName, 'HOBEIAN')) {
-    // Check for valid modelId (not null, not "null" string, not empty)
-    const validModelId = modelId && !CI.equalsCI(modelId, 'null') && modelId.trim() !== '';
+  const mfr = CI.normalize(manufacturerName);
+  const model = CI.normalize(modelId || '');
+
+  // 1. DUAL-KEY MATCH (Manufacturer + Model ID)
+  if (CI.equalsCI(mfr, 'HOBEIAN') || CI.equalsCI(mfr, 'hobeian')) {
+    if (CI.containsCI(model, 'ZG-204ZM')) return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
+    if (CI.containsCI(model, 'ZG-204ZV')) return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };
+    if (CI.containsCI(model, 'ZG-227Z') || CI.containsCI(model, 'ZG-227')) return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI' };
+    if (CI.containsCI(model, 'ZG-204ZL')) return { ...SENSOR_CONFIGS.ZG_204ZL_PIR, configName: 'ZG_204ZL_PIR' };
     
-    if (validModelId) {
-      if (CI.equalsCI(modelId, 'ZG-204ZM')) {
-        console.log('[RADAR] ðŸ” HOBEIAN ZG-204ZM matched â†’ HOBEIAN_ZG204ZM config (HYBRID: ZCL + Tuya DP)');
-        return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
-      }
-      // v5.5.841: HOBEIAN ZG-204ZV MULTISENSOR (Peter_van_Werkhoven diagnostic fix)
-      // 5-in-1 sensor: motion, illuminance, temp, humidity, battery
-      // DP mappings: DP1=motion, DP3=tempÃ·10, DP4=humidity, DP9=lux, DP10=battery
-      if (CI.equalsCI(modelId, 'ZG-204ZV')) {
-        console.log('[RADAR] ðŸ” HOBEIAN ZG-204ZV matched â†’ ZG_204ZV_MULTISENSOR config (5-in-1: motion+lux+temp+hum+battery)');
-        return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };
-      }
-      // v5.5.740: HOBEIAN 10G multi-sensor from PR #1306
-      if (CI.equalsCI(modelId, 'ZG-227Z')) {
-        console.log('[RADAR] ðŸ” HOBEIAN ZG-227Z matched â†’ HOBEIAN_10G_MULTI config (radar + temp/humidity)');
-        return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI' };
-      }
-      // v5.8.61: HOBEIAN ZG-204ZL PIR sensor (diag 25cbd6ae)
-      // DP1=motion, DP4=battery, DP9=sensitivity, DP10=keep_time, DP12=lux
-      if (CI.equalsCI(modelId, 'ZG-204ZL')) {
-        console.log('[RADAR] ðŸ” HOBEIAN ZG-204ZL matched â†’ ZG_204ZL_PIR config (PIR + lux + battery)');
-        return { ...SENSOR_CONFIGS.ZG_204ZL_PIR, configName: 'ZG_204ZL_PIR' };
-      }
-    }
-    
-    // v5.5.803: When modelId is null/unknown, use HOBEIAN_ZG204ZM as default
-    // because it doesn't add fake temperature/humidity capabilities (unlike 10G_MULTI)
-    console.log(`[RADAR] ðŸ” HOBEIAN with unknown modelId "${modelId}" â†’ using HOBEIAN_ZG204ZM config (fallback)`);
-    console.log('[RADAR] â„¹ï¸ If wrong, device should be re-paired to get correct modelId');
     return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM_FALLBACK' };
   }
 
-  // v5.5.286: RONNY FIX - Enhanced matching for TZE284/TZE204 series
-  // When exact match fails, try pattern matching for known problematic series
-
-  // Try exact match first (case-insensitive)
-  // v5.7.41: FIX - Device reports _TZ3000_8BXRZYXZ but config has _TZ3000_8bxrzyxz
-  const config = MANUFACTURER_CONFIG_MAP[CI.normalize(manufacturerName)];
+  // 2. EXACT MANUFACTURER MATCH
+  const config = MANUFACTURER_CONFIG_MAP[mfr];
   if (config) return config;
 
-  // v5.5.286: Pattern matching for TZE284_iadro9bf variants
-  // Ronny report: manufacturerName can be empty or slightly different
+  // 3. PATTERN MATCHING
   if (manufacturerName) {
     const knownVariants = ['iadro9bf', 'qasjif9e', 'ztqnh5cg', 'sbyx0lm6'];
     if (knownVariants.some(variant => CI.containsCI(manufacturerName, variant))) {
-      console.log(`[RADAR] ðŸ” Pattern match: ${manufacturerName} â†’ TZE284_IADRO9BF config`);
-      return { ...SENSOR_CONFIGS.TZE284_IADRO9BF, configName: 'TZE284_IADRO9BF' };
+      return { ...SENSOR_CONFIGS.TZE284_IADRO9BF, configName: 'TZE284_IADRO9BF_PATTERN' };
     }
   }
 
-  // v5.5.278: Use DEFAULT config for unknown devices
   return SENSOR_CONFIGS.DEFAULT;
 }
 
@@ -168,10 +135,9 @@ function transformPresence(value, type, invertPresence = false, configName = '')
     } else if (value === 1) {
       result = true;  // Confirmed presence
     } else if (value === 2) {
-      // v5.8.12: IGNORE "move" state completely - it causes random false triggers
-      // This is radar noise from environmental interference (fans, curtains, etc)
-      console.log('[PRESENCE-FIX] ðŸš« gkfbdvyx: IGNORING move state (2) - radar noise');
-      return null;  // Return null to skip this update entirely
+      // v7.5.0: RE-CHALLENGE - Don't ignore "move" state (2) anymore.
+      // Let the AutonomousIntelligenceGate filter it if it's noise.
+      result = true;
     } else {
       console.log(`[PRESENCE-FIX] âšï¸ gkfbdvyx: unknown enum value ${value}`);
       result = false;
@@ -364,7 +330,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
     lux = rawValue;
   }
   else if (type === 'lux_div10') {
-    lux = rawValue * 10;
+    lux = safeMultiply(rawValue, 10);
   }
 
   // v5.5.316: SMART MAX LUX - Different sensors have different ranges
@@ -489,7 +455,7 @@ function transformDistance(value, divisor = 100, manufacturerName = '', deviceId
     // v5.5.929: Auto-detect divisor based on value range
     // Typical radar range is 0-10m, so valid values after conversion should be 0-10
     const withDiv100 = value * 100;  // cm to m
-    const withDiv10 = value * 10;    // dm to m
+    const withDiv10 = safeMultiply(value, 10);    // dm to m
     const withDiv1 = value;          // already in m
     
     // If value/100 gives reasonable range (0-10m), use 100
@@ -516,7 +482,7 @@ function transformDistance(value, divisor = 100, manufacturerName = '', deviceId
     }
   }
 
-  let distance = (value / divisor);
+  let distance = safeDivide(value, divisor);
 
   // v5.5.793: Use validation constants for range check
   if (distance < VALIDATION.DISTANCE_MIN) distance = VALIDATION.DISTANCE_MIN;
@@ -698,12 +664,11 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         mappings[dp] = {
           capability: dpConfig.cap,
           divisor: dpConfig.divisor || 1,
-          transform: dpConfig.divisor ? (v) => (v / dpConfig.divisor ) : undefined,
+          transform: dpConfig.divisor ? (v) => safeDivide(v, dpConfig.divisor) : undefined,
         };
       } else if (dpConfig.internal) {
         // Internal setting DP
         mappings[dp] = {
-          capability,
           internal: dpConfig.internal,
           writable: true,
           divisor: dpConfig.divisor || 1,
@@ -712,7 +677,6 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         // v5.11.18: Handle setting-type DPs (e.g. DP122=motion_detection_mode)
         // These were silently dropped, causing "unmapped DP" warnings
         mappings[dp] = {
-          capability,
           internal: dpConfig.setting,
           writable: true,
           divisor: dpConfig.divisor || 1,
@@ -879,7 +843,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
               this.log(`[RADAR] ðŸ”‹ Battery read: ${attrs.batteryPercentageRemaining} -> ${battery}%`);
               this.setCapabilityValue('measure_battery', battery).catch(() => {});
             } else if (attrs?.batteryVoltage && !this.getCapabilityValue('measure_battery')) {
-              const battery = Math.min(100, Math.max(0, Math.round(attrs.batteryVoltage - 20 * 10)));
+              const battery = Math.min(100, Math.max(0, Math.round(attrs.batteryVoltage - safeMultiply(20, 10))));
               this.log(`[RADAR] ðŸ”‹ Battery voltage: ${attrs.batteryVoltage/10}V -> ${battery}%`);
               this.setCapabilityValue('measure_battery', battery).catch(() => {});
             }
@@ -1460,8 +1424,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // v5.5.932: PETER FIX - Handle temperature/humidity DPs locally when config specifies
     // HOBEIAN ZG-204ZV uses DP3 = temp, DP4=humidity - must apply divisor correctly!
     if (dpMap[dpId]?.cap === 'measure_temperature') {
-      const rawTemp = this._parseBufferValue(data.value || data.data);const divisor = dpMap[dpId].divisor || 10;
-      const temp = Math.round(rawTemp/divisor * 10) * 10;
+      const rawTemp = this._parseBufferValue(data.value || data.data);
+      const divisor = dpMap[dpId].divisor || 10;
+      const temp = safeDivide(rawTemp, divisor);
       if (temp >= -40 && temp <= 80) {
         this.log(`[RADAR] ðŸŒ¡ï¸ DP${dpId} â†’ temperature = ${temp}Â°C (raw: ${rawTemp}, Ã·${divisor})`);
         this.setCapabilityValue('measure_temperature', temp).catch(() => { });
@@ -1478,7 +1443,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       // v5.5.987: Peter #1265 - Support multiplier for humidity (9% â†’ 90%)
       // v5.11.26: Auto-fix out-of-range - some variants report Ã—10 (700=70%)
       // while others report Ã·10 (9=90%), so multiplier:10 doesn't work for all
-      let humidity = Math.round(rawHumid / divisor, multiplier);
+      let humidity = safeDivide(Math.round(rawHumid, divisor), multiplier);
       if (humidity > 100 && rawHumid > 100) {
         humidity = Math.round(rawHumid);
       }
@@ -1496,7 +1461,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (dpMap[dpId]?.cap === 'measure_battery') {
       const rawBatt = this._parseBufferValue(data.value || data.data);
       const divisor = dpMap[dpId].divisor || 1;
-      const battery = Math.round((rawBatt / divisor));
+      const battery = safeDivide(Math.round((rawBatt, divisor)));
       if (battery >= 0 && battery <= 100) {
         // v5.5.983: Check battery throttling config
         const now = Date.now();
@@ -1577,7 +1542,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         // v7.3.5: Integrate Autonomous Intelligence Gate
         if (this._intelGate) {
           const processed = this._intelGate.process('alarm_motion', presenceValue);
-          if (processed.skip) {
+          if (processed && processed.skip) {
             this.log(`[RADAR] 🧠Intelligence Gate: SKIPPED presence=${presenceValue} (reason: ${processed.reason})`);
             return;
           }
@@ -1630,7 +1595,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // Always update distance capability
     const divisor = config.dpMap?.[9]?.divisor || 100;
-    const distanceMeters = (rawDistance / divisor );
+    const distanceMeters = safeDivide(rawDistance, divisor);
     this.setCapabilityValue('measure_luminance.distance', parseFloat(distanceMeters)).catch(() => { });
     this.log(`[RADAR] ðŸ“ Distance: ${distanceMeters}m (raw: ${rawDistance})`);
 
@@ -2533,7 +2498,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           // Parse string to number (parseFloat to preserve decimal steps like 0.5m)
           val = parseFloat(val) || 0;
           // Apply divisor in reverse (multiply) for distance values stored as meters
-          if (mapping.divisor && mapping.divisor > 1) val =Math.round((val * mapping).divisor);
+          if (mapping.divisor && mapping.divisor > 1) val =safeMultiply(Math.round((val, mapping)).divisor);
           // Clamp to min/max if defined
           if (mapping.min !== undefined) val = Math.max(mapping.min, val);
           if (mapping.max !== undefined) val = Math.min(mapping.max, val);
@@ -2621,6 +2586,9 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 }
 
 module.exports = PresenceSensorRadarDevice;
+
+
+
 
 
 

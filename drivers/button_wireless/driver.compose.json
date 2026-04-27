@@ -26,21 +26,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_ARFWFGOA",
-      "_TZ3000_LQ01",
-      "_TZ3000_WQXWPITA",
-      "_TZ3400_KEY8KK7R"
-    ],
-    "productId": [
-      "CK-TLSR8656-SS5-01(7000)",
-      "SNZB-01",
-      "SNZB-01M",
-      "SNZB-01P",
-      "TS0040",
-      "WB-01",
-      "WB01"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -66,7 +53,7 @@
   "images": {
     "small": "drivers/button_wireless/assets/images/small.png",
     "large": "drivers/button_wireless/assets/images/large.png"
-    },
+  },
   "settings": [
     {
       "id": "power_source",

@@ -24,9 +24,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0601_GW"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -442,7 +440,7 @@
   "images": {
     "small": "drivers/gateway_zigbee_bridge/assets/images/small.png",
     "large": "drivers/gateway_zigbee_bridge/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

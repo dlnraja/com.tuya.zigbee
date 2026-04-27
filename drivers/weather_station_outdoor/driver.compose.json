@@ -30,14 +30,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_VKIBFP3D",
-      "_TZE200_WLCYXDKY"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_WEATHER"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -285,7 +279,7 @@
   "images": {
     "small": "drivers/weather_station_outdoor/assets/images/small.png",
     "large": "drivers/weather_station_outdoor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

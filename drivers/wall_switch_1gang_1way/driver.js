@@ -16,10 +16,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -124,10 +121,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
     } catch (err) { this.log('set_switch_mode card:', err.message); }
 
     this.log('Flow cards registration complete');
-  }
-
-}
-
+    }
 module.exports = WallSwitch1Gang1WayDriver;
 
 

@@ -27,21 +27,8 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_12SXJAP4",
-      "_TZ3000_HLIJWSAI",
-      "_TZ3000_KEABPIGV",
-      "_TZ3210_0ZABBFA",
-      "_TZ3210_0ZABBFAX",
-      "_TZ3210_95TXYZBX",
-      "_TZ3210_A5FXGUXR",
-      "_TZ3210_EEJM8DCR",
-      "_TZ3210_SROEZL0S",
-      "_TZ3210_TRM3L2AW"
-    ],
-    "productId": [
-      "TS0601_STRIP_RGBW"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -536,7 +523,7 @@
   "images": {
     "small": "drivers/led_strip_rgbw/assets/images/small.png",
     "large": "drivers/led_strip_rgbw/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

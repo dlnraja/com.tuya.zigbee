@@ -67,9 +67,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0002"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -377,7 +375,7 @@
   "images": {
     "small": "drivers/usb_dongle_dual_repeater/assets/images/small.png",
     "large": "drivers/usb_dongle_dual_repeater/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

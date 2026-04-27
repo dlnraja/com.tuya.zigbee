@@ -23,13 +23,7 @@
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": [
-      "_TZ3000_abdtkjfs",
-      "_TZ3000_vjxw5w5g",
-      "_TZ3000_z2mdo1ye",
-      "_TZ3210_D3M9V8P6",
-      "_TZ3210_PWJ6VUJ9"
-    ],
+    "manufacturerName": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -42,7 +36,7 @@
   "images": {
     "small": "drivers/switch_1gang/assets/images/small.png",
     "large": "drivers/switch_1gang/assets/images/large.png"
-    },
+  },
   "settings": [
     {
       "type": "group",

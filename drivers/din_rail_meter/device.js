@@ -52,13 +52,13 @@ class DinRailMeterDevice extends ZigBeeDevice {
       this.log('[EM] Electrical Measurement cluster found' );
 
       emCluster.on('attr.activePower', (value) => {
-        const power =((value * safeParse)(this._powerScale) * 10);
+        const power = safeMultiply(value, this._powerScale) * 10;
         this.log(`[EM] Power: ${power}W`);
         this.setCapabilityValue('measure_power', power).catch(this.error);
       });
 
       emCluster.on('attr.rmsVoltage', (value) => {
-        const voltage = value * 10;
+        const voltage = safeMultiply(value, 10);
         this.log(`[EM] Voltage: ${voltage}V`);
         this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
       });
@@ -128,13 +128,13 @@ class DinRailMeterDevice extends ZigBeeDevice {
       break;
 
     case 18: // Power (W)
-      const power =(value * this)._powerScale;
+      const power = safeMultiply(value, this._powerScale);
       this.log(`[DP18] Power: ${power}W`);
       this.setCapabilityValue('measure_power', power).catch(this.error);
       break;
 
     case 19: //Voltage (V*10)
-      const voltage = value * 10;
+      const voltage = safeMultiply(value, 10);
       this.log(`[DP19] Voltage: ${voltage}V`);
       this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
       break;

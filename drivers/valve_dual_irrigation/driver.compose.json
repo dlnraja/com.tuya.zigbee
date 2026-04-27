@@ -14,14 +14,8 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "manufacturerName": [
-      "_TZE204_XLPPJ4F5",
-      "_TZE284_EAET5QT5",
-      "_TZE284_FHVPALTK"
-    ],
-    "productId": [
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -35,7 +29,7 @@
   "images": {
     "small": "drivers/valve_dual_irrigation/assets/images/small.png",
     "large": "drivers/valve_dual_irrigation/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

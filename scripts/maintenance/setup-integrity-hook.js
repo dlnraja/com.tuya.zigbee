@@ -30,7 +30,7 @@ const gitHooksDir = path.join(process.cwd(), '.git', 'hooks');
 const prePushHook = path.join(gitHooksDir, 'pre-push');
 
 if (!fs.existsSync(gitHooksDir)) {
-    console.error(' .git/hooks directory not found. Are you in the root of a git repository? ')       : null;
+    console.error(' .git/hooks directory not found. Are you in the root of a git repository? ');
     process.exit(1 );
 }
 

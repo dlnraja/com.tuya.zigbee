@@ -71,21 +71,10 @@
   "images": {
     "small": "drivers/hvac_dehumidifier/assets/images/small.png",
     "large": "drivers/hvac_dehumidifier/assets/images/large.png"
-    },
+  },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_44XPCTXY",
-      "_TZE200_BGJFXH3O",
-      "_TZE200_QTBRWRFV",
-      "_TZE204_44XPCTXY",
-      "_TZE204_BGJFXH3O",
-      "_TZE204_OISQYL4O",
-      "_TZE204_QTBRWRFV"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_DEHUM"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

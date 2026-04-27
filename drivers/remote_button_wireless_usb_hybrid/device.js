@@ -163,13 +163,13 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
         this.log('[USB_DONGLE] Setting up haElectricalMeasurement listeners');
 
         electrical.on('attr.activePower', value => {
-          const power = value * 10;
+          const power = safeMultiply(value, 10);
           this.log('[USB_DONGLE] Power:', power, 'W');
           if (this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', parseFloat(power)).catch(this.error);
       });
 
         electrical.on('attr.rmsVoltage', value => {
-          const voltage = value * 10;
+          const voltage = safeMultiply(value, 10);
           this.log('[USB_DONGLE] Voltage:', voltage, 'V');
           if (this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this.error);
       });
@@ -189,10 +189,10 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
 
         electrical.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).then(data => {
           if (data?.activePower != null) {
-            const power = data.activePower * 10;if (this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', parseFloat(power)).catch(this.error);
+            const power = safeMultiply(data.activePower, 10);if (this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', parseFloat(power)).catch(this.error);
           }
           if (data?.rmsVoltage != null) {
-            const voltage = data.rmsVoltage * 10;
+            const voltage = safeMultiply(data.rmsVoltage, 10);
             if (this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this.error);
           }
           if (data?.rmsCurrent != null) {

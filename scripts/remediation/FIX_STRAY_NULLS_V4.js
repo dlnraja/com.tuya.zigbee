@@ -42,7 +42,7 @@ function processJs(filePath) {
     }
 }
 
-console.log('Cleaning up stray ": null;" syntax errors (v4)...');
+console.log('Cleaning up stray ";" syntax errors (v4)...');
 processDir('.');
 processDir('.github');
 console.log('Done.');

@@ -27,41 +27,8 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_49qchf10",
-      "_TZ3000_6DWFRA5L",
-      "_TZ3000_8uaoilu9",
-      "_TZ3000_BUMEAUZP",
-      "_TZ3000_PSG0ZX5J",
-      "_TZ3000_el5kt5im",
-      "_TZ3000_oborybow",
-      "_TZ3210_AGWVAPNP",
-      "_TZ3210_CLAEH5DS",
-      "_TZ3210_KSQWLZ9V"
-    ],
-    "productId": [
-      "CLASSIC A60 TW",
-      "E11-N13",
-      "E11-N14",
-      "E12-N13",
-      "E12-N14",
-      "GL-B-007Z",
-      "GL-C-007",
-      "LED1545G12",
-      "LED1546G12",
-      "LTW001",
-      "LTW004",
-      "LTW010",
-      "LTW012",
-      "LTW013",
-      "LTW015",
-      "RB 178 T",
-      "RS 128 T",
-      "TS0502",
-      "TS0502A",
-      "TS0502B",
-      "ZBT-CCTLIGHT"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -527,7 +494,7 @@
   "images": {
     "small": "drivers/bulb_tunable_white/assets/images/small.png",
     "large": "drivers/bulb_tunable_white/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

@@ -51,62 +51,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "EWELINK",
-      "_TYZB02_KEYJQTHH",
-      "_TZ3000_0CXTPYLT",
-      "_TZ3000_22UGZKME",
-      "_TZ3000_5BPEDA8U",
-      "_TZ3000_8RPPVWDA",
-      "_TZ3000_ADNDOLVX",
-      "_TZ3000_ARFWFGRE",
-      "_TZ3000_AXPDXQGU",
-      "_TZ3000_B4AWZGCT",
-      "_TZ3000_BSVQRUX3",
-      "_TZ3000_CSFLGQJ2",
-      "_TZ3000_EBAR5P3Z",
-      "_TZ3000_F97VQ5MN",
-      "_TZ3000_FKP5ZYHO",
-      "_TZ3000_ITB0OMHV",
-      "_TZ3000_JA5OSU5G",
-      "_TZ3000_KE_X0OO3",
-      "_TZ3000_KXAOW5KI",
-      "_TZ3000_NXDZIQZC",
-      "_TZ3000_PESZEJY7",
-      "_TZ3000_PZUI3SKT",
-      "_TZ3000_Q68478X7",
-      "_TZ3000_TK3S5TYG",
-      "_TZ3000_URI7BER7",
-      "_TZ3000_VN88EZAR",
-      "_TZ3000_XKWALGNE",
-      "_TZ3000_YJ6K7VFO",
-      "_TZ3210_AMLEYEEJ"
-    ],
-    "productId": [
-      "3450-L",
-      "E1524/E1810",
-      "E1743",
-      "E1744",
-      "E1812",
-      "E2001/E2002",
-      "E2123",
-      "LUMI.REMOTE.B1ACN01",
-      "LUMI.SENSOR_SWITCH",
-      "LUMI.SENSOR_SWITCH.AQ2",
-      "LUMI.SENSOR_SWITCH.AQ3",
-      "ROM001",
-      "RWL020",
-      "RWL021",
-      "RWL022",
-      "WXKG01LM",
-      "WXKG02LM",
-      "WXKG03LM",
-      "WXKG06LM",
-      "WXKG07LM",
-      "WXKG11LM",
-      "WXKG12LM",
-      "ZG-101ZL"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -133,7 +79,7 @@
   "images": {
     "small": "drivers/button_wireless_1/assets/images/small.png",
     "large": "drivers/button_wireless_1/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

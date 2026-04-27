@@ -19,7 +19,7 @@ class UniversalZigbeeDeviceSub extends UniversalZigbeeDevice {
     this.registerCapability('dim', 'genLevelCtrl', {
       get: 'currentLevel',
       report: 'currentLevel',
-      reportParser: v => v * 254
+      reportParser: v => safeMultiply(v, 254)
     }).catch(() => {});
 
     this.registerCapability('measure_battery', 'genPowerCfg', {

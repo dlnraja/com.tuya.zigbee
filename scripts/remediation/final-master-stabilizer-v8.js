@@ -26,7 +26,7 @@ function processFile(filePath) {
     content = content.replace(/(const lastSeen\s*=\s*device\.getStoreValue\s+\?\s+[^;]+);/g, (m, p1) => {
         if (!p1.includes(':')) {
             modified = true;
-            return `${p1} : null;`;
+            return `${p1};`;
         }
         return m;
     });

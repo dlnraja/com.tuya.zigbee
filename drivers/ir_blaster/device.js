@@ -1121,7 +1121,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     if (buffer.length < 10) return IR_FREQUENCIES.DEFAULT;
 
     const patterns = [];
-    for (let i = 0; i < Math.min(buffer.length * 50); i += 2) {
+    for (let i = 0; i < safeMultiply(Math.min(buffer.length, 50)); i += 2) {
       const pulse = buffer.readUInt16BE(i);
       patterns.push(pulse);
     }
@@ -1172,11 +1172,11 @@ class IrBlasterDevice extends ZigBeeDevice {
   // Helper: find repeating patterns
   _findRepeatingPatterns(buffer) {
     const patterns = [];
-    const maxPatternLength = Math.min(buffer.length * 2 * 64);
+    const maxPatternLength = Math.min(buffer.length * safeMultiply(2, 64));
 
     for (let len = 8; len <= maxPatternLength; len += 2) {
       const pattern = buffer.slice(0, len);
-      const nextPattern = buffer.slice(len,len * 2);
+      const nextPattern = buffer.slice(len,safeMultiply(len, 2));
 
       if (pattern.equals(nextPattern)) {
         patterns.push(pattern);

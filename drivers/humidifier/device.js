@@ -75,7 +75,7 @@ class HumidifierDevice extends ZigBeeDevice {
       break;
 
     case 5: // Mist level (0-3)
-      const dim = value * 3;
+      const dim = safeMultiply(value, 3);
       this.setCapabilityValue('dim', dim).catch(this.error);
       break;
 

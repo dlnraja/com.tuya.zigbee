@@ -6,7 +6,7 @@ function get(u){return new Promise((ok,no)=>{https.get(u,{headers:{'User-Agent':
 async function main(){
 const s=await get(U);console.log('Got '+s.length);
 const d=[],dp={};
-const r=/fingerprint\s*\(\s*"([^"]+)"\s*,\s*\[([\s\S]*? )\]\s*\ : null)/g       ;
+const r=/fingerprint\s*\(\s*"([^"]+)"\s*,\s*\[([\s\S]*? )\]\s*)/g       ;
 let m;while((m=r.exec(s))!==null){
 const ms=[...m[2].matchAll(/"([^"]+)"/g)].map(x=>x[1]);
 if(ms.length)d.push({m:m[1],f:ms})}

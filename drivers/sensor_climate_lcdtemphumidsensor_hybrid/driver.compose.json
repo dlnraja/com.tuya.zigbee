@@ -33,11 +33,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0201",
-      "TS0601",
-      "TY0201"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -649,7 +645,7 @@
   "images": {
     "small": "drivers/climate_sensor/assets/images/small.png",
     "large": "drivers/climate_sensor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

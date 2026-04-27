@@ -13,10 +13,7 @@ class SwitchPlug1Driver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -24,19 +21,16 @@ class SwitchPlug1Driver extends ZigBeeDriver {
 
     this.log('SwitchPlug1Driver initialized');
     // v5.13.3: Flow card handlers
-    const r=(i,fn)=>{try{(() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(fn);
+    const r=(i,fn)=>{// Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(fn);
   
   
   
   
   
   
-  }catch(e){this.log('[Flow]',i,e.message);}};
+  }catch(e){this.log('[Flow]',i,e.message);  }
     r('switch_plug_1_turn_on',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
     r('switch_plug_1_turn_off',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});
     r('switch_plug_1_toggle',async({device})=>{const v=device.getCapabilityValue('onoff');await device.triggerCapabilityListener('onoff',!v);return true;});
-  }
-
-}
-
+    }
 module.exports = SwitchPlug1Driver;

@@ -1,5 +1,61 @@
 {
-  "triggers": [],
-  "conditions": [],
+  "triggers": [
+    {
+      "id": "wifi_switch_3gang_physical_gang1_on",
+      "title": {
+        "en": "Gang 1 turned on (physical)"
+      }
+    },
+    {
+      "id": "wifi_switch_3gang_physical_gang1_off",
+      "title": {
+        "en": "Gang 1 turned off (physical)"
+      }
+    },
+    {
+      "id": "wifi_switch_3gang_physical_gang2_on",
+      "title": {
+        "en": "Gang 2 turned on (physical)"
+      }
+    },
+    {
+      "id": "wifi_switch_3gang_physical_gang2_off",
+      "title": {
+        "en": "Gang 2 turned off (physical)"
+      }
+    },
+    {
+      "id": "wifi_switch_3gang_physical_gang3_on",
+      "title": {
+        "en": "Gang 3 turned on (physical)"
+      }
+    },
+    {
+      "id": "wifi_switch_3gang_physical_gang3_off",
+      "title": {
+        "en": "Gang 3 turned off (physical)"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "wifi_switch_3gang_g1_is_on",
+      "title": {
+        "en": "Gang 1 is on"
+      }
+    },
+    {
+      "id": "wifi_switch_3gang_g2_is_on",
+      "title": {
+        "en": "Gang 2 is on"
+      }
+    },
+    {
+      "id": "wifi_switch_3gang_g3_is_on",
+      "title": {
+        "en": "Gang 3 is on"
+      }
+    }
+  ],
   "actions": []
 }

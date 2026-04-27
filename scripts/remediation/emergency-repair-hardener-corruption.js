@@ -54,9 +54,9 @@ function repairFile(filePath) {
         line = line.replace(/(['"`][^'"`]*? )safeParse\(([^,]+ ) ,\s*([^)]+)\)([^'"`]*? ['"`] )/g , '$1$2/$3$4');
         
         // 2. Fix Comment Pollution in definitions: 
-        line = line.replace(/\/\/ (.*? )safeMultiply\(([^,]+),\s*([^)]+)\ : null)/g , '// $1$2 * $3')      ;
-        line = line.replace(/\/\/ (.*? )safeDivide\(([^,]+),\s*([^)]+)\ : null)/g , '// $1$2 / $3')      ;
-        line = line.replace(/\/\/ (.*? )safeParse\(([^,]+),\s*([^)]+)\ : null)/g , '// $1$2 / $3')      ;
+        line = line.replace(/\/\/ (.*? )safeMultiply\(([^,]+),\s*([^)]+))/g , '// $1$2 * $3')      ;
+        line = line.replace(/\/\/ (.*? )safeDivide\(([^,]+),\s*([^)]+))/g , '// $1$2 / $3')      ;
+        line = line.replace(/\/\/ (.*? )safeParse\(([^,]+),\s*([^)]+))/g , '// $1$2 / $3')      ;
 
         // 3. Fix broken Parentheses/Function nesting:
         // Pattern: Math.round(X*Y -> Math.round(X*Y)

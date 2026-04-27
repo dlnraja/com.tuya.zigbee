@@ -44,14 +44,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_B6WAX7G0",
-      "_TZE200_C88TEUJP",
-      "_TZE204_P3DBF6QS"
-    ],
-    "productId": [
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -64,7 +58,7 @@
   "images": {
     "small": "drivers/smart_lcd_thermostat/assets/images/small.png",
     "large": "drivers/smart_lcd_thermostat/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

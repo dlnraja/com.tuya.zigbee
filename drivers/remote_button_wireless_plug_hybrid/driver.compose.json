@@ -31,9 +31,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0111"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
       "instruction": {
@@ -400,7 +398,7 @@
   "images": {
     "small": "drivers/plug_energy_monitor/assets/images/small.png",
     "large": "drivers/plug_energy_monitor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

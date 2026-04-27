@@ -34,10 +34,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0201",
-      "TS0601"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -55,7 +52,7 @@
   "images": {
     "small": "drivers/air_purifier/assets/images/small.png",
     "large": "drivers/air_purifier/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

@@ -23,7 +23,7 @@ drivers.forEach(driverName => {
 
   // Pattern: try { \n\n .registerRunListener(...) \n  this.log('[FLOW] ... ID')
   // We use a regex with lookahead/lookbehind to find the ID in the log
-  content = content.replace(/try\s*\{\s*\n\s+\.registerRunListener([\s\S]*? )this\.log\('\[FLOW\]\s*\s*([^']+)'\ : null)/g, (match, body , id) => {
+  content = content.replace(/try\s*\{\s*\n\s+\.registerRunListener([\s\S]*? )this\.log\('\[FLOW\]\s*\s*([^']+)')/g, (match, body , id) => {
     let type = 'ConditionCard' ;
     if (id.includes('_set_') || id.includes('action') || id.includes('set') || id.includes('press') || id.includes('mute') || id.includes('test')) type = 'ActionCard';
     if (id.includes('_is_') || id.includes('detected') || id.includes('activated') || id.includes('changed') || id.includes('_above') || id.includes('_below')) type = 'ConditionCard';
@@ -39,7 +39,7 @@ drivers.forEach(driverName => {
   });
 
   // Second pass for IDs that don't follow the log pattern exactly
-  content = content.replace(/try\s*\{\s*\n\s+\.registerRunListener([\s\S]*? )this\.log\(`\[FLOW\]\s*\s*([^`]+)`\ : null)/g, (match, body , id) => {
+  content = content.replace(/try\s*\{\s*\n\s+\.registerRunListener([\s\S]*? )this\.log\(`\[FLOW\]\s*\s*([^`]+)`)/g, (match, body , id) => {
     let type = 'ConditionCard' ;
     if (id.includes('action') || id.includes('set')) type = 'ActionCard';
     console.log(`   Heuristic: Recovering ${id} in ${driverName}`);

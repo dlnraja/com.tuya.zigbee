@@ -21,9 +21,7 @@
     "alarm_tamper"
   ],
   "zigbee": {
-    "productId": [
-      "TS0601"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -58,7 +56,7 @@
   "images": {
     "small": "drivers/switch_4gang/assets/images/small.png",
     "large": "drivers/switch_4gang/assets/images/large.png"
-    },
+  },
   "settings": [
     {
       "type": "group",

@@ -70,12 +70,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_ISZEGWPD"
-    ],
-    "productId": [
-      "TS0601_SCENE6"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -88,7 +84,7 @@
   "images": {
     "small": "drivers/scene_switch_6/assets/images/small.png",
     "large": "drivers/scene_switch_6/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

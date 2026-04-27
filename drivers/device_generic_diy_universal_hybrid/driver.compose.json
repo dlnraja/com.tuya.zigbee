@@ -73,19 +73,8 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [
-      "DANFOSS",
-      "LEGRAND",
-      "SCHNEIDER ELECTRIC"
-    ],
-    "productId": [
-      "TS0026",
-      "TS0041A",
-      "TS0052",
-      "TS0105",
-      "TS0224",
-      "TS0901"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -105,7 +94,7 @@
   "images": {
     "large": "/drivers/universal_zigbee/assets/images/large.png",
     "small": "/drivers/universal_zigbee/assets/images/small.png"
-    },
+  },
   "flow": {
     "triggers": [],
     "conditions": [],

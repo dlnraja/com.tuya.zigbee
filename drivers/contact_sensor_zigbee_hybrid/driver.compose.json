@@ -27,9 +27,7 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0207"
-    ],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/contact_sensor/assets/learnmode.svg",
       "instruction": {
@@ -486,7 +484,7 @@
   "images": {
     "small": "drivers/contact_sensor/assets/images/small.png",
     "large": "drivers/contact_sensor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

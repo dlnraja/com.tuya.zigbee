@@ -51,8 +51,8 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       6: { capability: 'onoff.gang6', transform: (v) => v === 1 || v === true },
       101: { capability: 'onoff.gang7', transform: (v) => v === 1 || v === true },
       102: { capability: 'onoff.gang8', transform: (v) => v === 1 || v === true },
-      14: { capability, setting: 'power_on_behavior' },
-      15: { capability, setting: 'led_indicator' }
+      14: { setting: 'power_on_behavior' },
+      15: { setting: 'led_indicator' }
     };
   }
 

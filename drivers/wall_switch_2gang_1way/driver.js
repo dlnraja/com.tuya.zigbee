@@ -18,10 +18,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-    }
-  }
-
-
+      }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -53,10 +50,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
       `${P}_gang1_scene`, `${P}_gang2_scene`
     ];
     for (const id of triggers) {
-      try {
-      (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })() } catch (err) { this.error(`Trigger ${id}: ${err.message}`); }
-    }
-
+      // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })() } catch (err) { this.error(`Trigger ${id}: ${err.message}`);   }
     // ACTION: Set backlight mode
     try {  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
       if (card) {
@@ -97,17 +91,14 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
       { id: `${P}_toggle_gang2`, ep: 2, val: 'toggle' },
     ];
     for (const { id, fn } of simpleActions) {
-      try {
-        (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(async (args) => {
+      // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(async (args) => {
           if (!args.device) return false;
           await fn(args.device);
           return true;
         });
-      } catch (err) { this.error(`Action ${id}: ${err.message}`); }
-    }
+      } catch (err) { this.error(`Action ${id}: ${err.message}`);   }
         for (const { id, ep, val } of gangActions) {
-      try {
-        (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(async (args) => {
+      // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(async (args) => {
           if (!args.device) return false;
           const cap = ep === 1 ? 'onoff' : ('onoff.gang' + ep);
           try {
@@ -121,15 +112,13 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
           }
           return true;
         });
-      } catch (err) { this.error(`Action ${id}: ${err.message}`); }
-    }
+      } catch (err) { this.error(`Action ${id}: ${err.message}`);   }
     // All gangs on/off
         for (const { id, val } of [
       { id: `${P}_turn_on_all`, val: true },
       { id: `${P}_turn_off_all`, val: false },
     ]) {
-      try {
-        (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(async (args) => {
+      // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(async (args) => {
           if (!args.device) return false;
           // Determine the number of gangs from P (e.g. 'switch_3gang' -> 3)
           let numGangs = 1;
@@ -137,13 +126,10 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
           if (match) numGangs = parseInt(match[1] , 10);
           for (let ep = 1; ep <= numGangs; ep++) {
             const cap = ep === 1 ? 'onoff' : ('onoff.gang' + ep);
-            try { await args.device.triggerCapabilityListener(cap, val); } catch(e) {}
-          }
+            try { await args.device.triggerCapabilityListener(cap, val); } catch(e) {  }
           return true;
         });
-      } catch (err) { this.error(`Action ${id}: ${err.message}`); }
-    }
-
+      } catch (err) { this.error(`Action ${id}: ${err.message}`);   }
     // ACTION: Set power-on behavior (v5.11.30)
     try {
       const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
@@ -175,10 +161,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
     } catch (err) { this.log('set_switch_mode card:', err.message); }
 
     this.log(` ${P}: ${triggers.length} triggers + ${simpleActions.length + gangActions.length + 2} actions registered`);
-  }
-
-}
-
+    }
 module.exports = WallSwitch2Gang1WayDriver;
 
 

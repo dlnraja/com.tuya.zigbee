@@ -35,16 +35,8 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "HOBEIAN"
-    ],
-    "productId": [
-      "TS0203",
-      "TS0225",
-      "ZG-204ZL",
-      "ZG-204ZM",
-      "ZG-204ZV"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
       "instruction": {
@@ -739,7 +731,7 @@
   "images": {
     "small": "drivers/presence_sensor_radar/assets/images/small.png",
     "large": "drivers/presence_sensor_radar/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

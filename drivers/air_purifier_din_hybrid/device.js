@@ -64,14 +64,14 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
 
       if (this.hasCapability('measure_power')) {
         emCluster.on('attr.activePower', (value) => {
-          const power = value * 10;
+          const power = safeMultiply(value, 10);
           this.setCapabilityValue('measure_power', power).catch(this.error);
       });
       }
 
       if (this.hasCapability('measure_voltage')) {
         emCluster.on('attr.rmsVoltage', (value) => {
-          const voltage = value * 10;
+          const voltage = safeMultiply(value, 10);
           this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
       });
       }
@@ -138,7 +138,7 @@ class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeD
 
     case 19: //Voltage (V*10)
       if (this.hasCapability('measure_voltage')) {
-        this.setCapabilityValue('measure_voltage', value * 10).catch(this.error);
+        this.setCapabilityValue('measure_voltage', safeMultiply(value, 10)).catch(this.error);
       }
       break;
 

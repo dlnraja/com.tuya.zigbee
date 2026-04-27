@@ -28,24 +28,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_DKGXJJN1",
-      "_TZ3000_HSWQNLJZ",
-      "_TZ3000_JD3U8DKZ",
-      "_TZ3000_TQLV4UJ4",
-      "_TZ3000_VMPBYGS5"
-    ],
-    "productId": [
-      "01MINIZB",
-      "ZBM5-1C-120",
-      "ZBMINI",
-      "ZBMINI-L",
-      "ZBMINIL2",
-      "ZBMINIL2-R2",
-      "ZBMINIR",
-      "ZBMINIR2",
-      "ZBMINIR2-R2"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -602,7 +586,7 @@
   "images": {
     "small": "drivers/module_mini_switch/assets/images/small.png",
     "large": "drivers/module_mini_switch/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

@@ -28,7 +28,7 @@ class ValveDualIrrigationDevice extends BaseUnifiedDevice {
       26: { internal: 'duration_2' },
 
       // Battery (Research research shows DP 59 for these dual valves, DP 101/15 as fallback)
-      59: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v * 0) * 100) },
+      59: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(100, Math.max(0, v)) },
       101: { capability: 'measure_battery', divisor: 1 },
       15: { capability: 'measure_battery', divisor: 1 }
     };

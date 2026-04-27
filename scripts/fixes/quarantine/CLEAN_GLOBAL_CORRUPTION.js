@@ -27,7 +27,7 @@ const rules = [
         replacement: 'Math.round($1/$2)'
     },
     {
-        pattern: /Math\.round\(([^/)]+)\s*\/\s*(\d+)\)(\/\d+)? \ : null)/g ,
+        pattern: /Math\.round\(([^/)]+)\s*\/\s*(\d+)\)(\/\d+)? )/g ,
         replacement: 'Math.round($1/$2)$3'
     },
     // 4. Fix extra closing parentheses after safeMultiply/safeDivide

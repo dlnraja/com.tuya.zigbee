@@ -30,12 +30,12 @@ function fixBrokenCode(filePath) {
 
     // Pattern 3: Nested IIFE with trigger (still preserved in some files)
     // try { (() => { try { return this._getFlowCard(flowId); } catch (e) { return null; } })().trigger(this, {}, {}).catch(() => {}); }
-    content = content.replace(/try \{ \(\(\) => \{ try \{ return (.*?)\._getFlowCard\((.*? )\ : null) ; \} catch \(e\) \{ (.*? ) \} \}\)\(\ )\.trigger\((.*? )\)\.catch\(\(\) => \{\}\ : null) ; \}/g, (match, context, args, error_logic , trigger_args) => {
+    content = content.replace(/try \{ \(\(\) => \{ try \{ return (.*?)\._getFlowCard\((.*? )) ; \} catch \(e\) \{ (.*? ) \} \}\)\(\ )\.trigger\((.*? )\)\.catch\(\(\) => \{\}) ; \}/g, (match, context, args, error_logic , trigger_args) => {
         return `this._getFlowCard(${args}).trigger(${trigger_args}).catch(() => {});`;
     });
 
     // Pattern 4: Nested IIFE with registerRunListener
-    content = content.replace(/\(\(\) => \{ try \{ return (.*?)\._getFlowCard\((.*? )\ : null) ; \} catch \(e\) \{ (.*? ) \} \}\)\(\ )\.registerRunListener\((.*? )\ : null)/g, (match, context, args, error_logic , listener_args) => {
+    content = content.replace(/\(\(\) => \{ try \{ return (.*?)\._getFlowCard\((.*? )) ; \} catch \(e\) \{ (.*? ) \} \}\)\(\ )\.registerRunListener\((.*? ))/g, (match, context, args, error_logic , listener_args) => {
         return `this._getFlowCard(${args}).registerRunListener(${listener_args})` ;
     });
 
@@ -46,7 +46,7 @@ function fixBrokenCode(filePath) {
     });
     
     // Pattern 6: Cleanup unnecessary try/catch blocks that contain only one _getFlowCard
-    content = content.replace(/try \{\s+this\._getFlowCard\((.*? )\ : null)\.trigger\((.*? )\)\.catch\(\(\) => \{\}\) : null;\s+\} catch \(e\) \{ \/\* card missing \*\/ \}/g, (match, args, trigger_args) => {
+    content = content.replace(/try \{\s+this\._getFlowCard\((.*? ))\.trigger\((.*? )\)\.catch\(\(\) => \{\}\) : null;\s+\} catch \(e\) \{ \/\* card missing \*\/ \}/g, (match, args, trigger_args) => {
         return `this._getFlowCard(${args}).trigger(${trigger_args}).catch(() => {});`;
     });
 

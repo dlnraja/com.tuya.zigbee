@@ -107,9 +107,7 @@
   ],
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS004F"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -135,7 +133,7 @@
   "images": {
     "small": "drivers/smart_knob_rotary/assets/images/small.png",
     "large": "drivers/smart_knob_rotary/assets/images/large.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

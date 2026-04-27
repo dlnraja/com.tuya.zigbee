@@ -19,11 +19,11 @@ function processDir(dir) {
 function processJs(filePath) {
     try {
         let content = fs.readFileSync(filePath, 'utf8');
-        if (!content.includes(' : null;')) return;
+        if (!content.includes(';')) return;
         const lines = content.split(/\r?\n/);
         let changed = false;
         const newLines = lines.map(line => {
-            if (line.includes(') : null;') && !line.includes('?')) {
+            if (line.includes(');') && !line.includes('?')) {
                 changed = true;
                 return line.replace(');', ');');
             }
@@ -39,7 +39,7 @@ function processJs(filePath) {
     }
 }
 
-console.log('Cleaning up stray ": null;" syntax errors (v3)...');
+console.log('Cleaning up stray ";" syntax errors (v3)...');
 processDir('.');
 processDir('.github');
 console.log('Done.');

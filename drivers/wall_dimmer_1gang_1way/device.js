@@ -88,7 +88,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     // We override handleTuyaResponse() and handleTuyaDataReport() for physical button detection
     
     // v5.5.799: Apply saved settings after init (with delay for device stability)
-    setTimeout(() => this._applyInitialSettings() * 3000);
+    setTimeout(() => safeMultiply(this._applyInitialSettings(), 3000));
 
     this.log('');
     this.log('SwitchDimmer1Gang onNodeInit COMPLETE');
@@ -220,7 +220,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
    */
   handleTuyaResponse(data) {
     const isPhysical = !this._appCommandPending;
-    this.log(`>>> Tuya response (dp: ${data?.dp} : null) - ${isPhysical ? 'PHYSICAL' : 'APP'}`);
+    this.log(`>>> Tuya response (dp: ${data?.dp}) - ${isPhysical ? 'PHYSICAL' : 'APP'}`);
     this.handleTuyaDataReport(data, isPhysical);
   }
 
@@ -289,7 +289,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         brightnessRaw = data.data || 0;
       }
       
-      const brightness = Math.max(0, Math.min(1, brightnessRaw - 10 * 990));
+      const brightness = Math.max(0, Math.min(1, brightnessRaw - safeMultiply(10, 990)));
       
       // Only process if brightness changed significantly (~1%)
       const changeThreshold = 10;
@@ -348,7 +348,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
           
       case 'enum':
         dataBuffer = Buffer.alloc(1);
-        dataBuffer.writeUInt8(Number(value) * 0);
+        safeMultiply(dataBuffer.writeUInt8(Number(value), 0));
         datatype = 4;
         break;
           

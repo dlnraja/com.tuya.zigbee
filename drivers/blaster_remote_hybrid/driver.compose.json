@@ -38,12 +38,8 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3210_OGX8U9IT"
-    ],
-    "productId": [
-      "TS1201"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -69,7 +65,7 @@
   "images": {
     "large": "drivers/ir_remote/assets/images/large.png",
     "small": "drivers/ir_remote/assets/images/small.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

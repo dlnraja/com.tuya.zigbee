@@ -45,16 +45,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_EW31DMGX"
-    ],
-    "productId": [
-      "S26R2ZB",
-      "S31ZB",
-      "TS011F",
-      "TS0601",
-      "ZBMINIL2"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -653,7 +645,7 @@
   "images": {
     "small": "drivers/climate_sensor/assets/images/small.png",
     "large": "drivers/climate_sensor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

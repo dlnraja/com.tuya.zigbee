@@ -73,7 +73,7 @@ const REPLACEMENT_PATTERNS = [
     {
         name: 'Adapter configKey fix',
         regex: / \? 'noBattery'\s+ : null;/g,
-        replace: " ? 'noBattery' : null;"
+        replace: " ? 'noBattery';"
     },
     // 11. EnergyManager corruption (specific example)
     // Pattern: safeMultiply(this._energyTotal, 0.001) but maybe mangled

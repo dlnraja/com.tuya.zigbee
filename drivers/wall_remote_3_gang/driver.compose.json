@@ -21,7 +21,7 @@
   "images": {
     "large": "drivers/wall_remote_3_gang/assets/images/large.png",
     "small": "drivers/wall_remote_3_gang/assets/images/small.png"
-    },
+  },
   "energy": {
     "batteries": [
       "CR2450"
@@ -29,12 +29,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_W8JWKCZZ"
-    ],
-    "productId": [
-      "TS0043"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [

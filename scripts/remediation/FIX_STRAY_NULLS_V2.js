@@ -43,6 +43,6 @@ function processJs(filePath) {
     }
 }
 
-console.log('Cleaning up stray ": null;" syntax errors (v2)...');
+console.log('Cleaning up stray ";" syntax errors (v2)...');
 processDir('.');
 console.log('Done.');

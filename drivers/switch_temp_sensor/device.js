@@ -238,7 +238,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
     switch (dp) {
     case DP_TEMPERATURE:
       // Temperature is usually in 0.1Â°C units
-      const temp = typeof value === 'number' ? value * 10 : value;
+      const temp = typeof value === 'number' ? safeMultiply(value, 10) : value;
       this._setTemperature(temp);
       break;
 
@@ -265,7 +265,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
       return;
     }
 
-    const rounded = Math.round(temp *10      * 10);
+    const rounded = safeMultiply(Math.round(temp, 1)safeMultiply(0, 10));
     this.log(` Temperature: ${rounded}Â°C`);
 
     if (this.hasCapability('measure_temperature')) {

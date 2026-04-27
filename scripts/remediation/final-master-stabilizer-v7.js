@@ -24,7 +24,7 @@ function processFile(filePath) {
     content = content.replace(/(\w+)\s*=\s*([^?;]+\?\s*[^?;]+)\s*;\s*/g, (m, p1, p2) => {
         if (!p2.includes(':')) {
             modified = true;
-            return `${p1} = ${p2} : null;`;
+            return `${p1} = ${p2};`;
         }
         return m;
     });

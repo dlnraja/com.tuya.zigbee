@@ -59,9 +59,7 @@
   },
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0001"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -98,7 +96,7 @@
   "images": {
     "small": "drivers/button_wireless_2/assets/images/small.png",
     "large": "drivers/button_wireless_2/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

@@ -33,13 +33,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_URI7BER7"
-    ],
-    "productId": [
-      "ERS-10TZBVK-AA",
-      "TS004F"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -56,7 +51,7 @@
   "images": {
     "small": "drivers/smart_knob/assets/images/small.png",
     "large": "drivers/smart_knob/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

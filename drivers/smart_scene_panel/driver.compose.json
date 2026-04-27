@@ -42,13 +42,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE284_IBNZ7ORZ",
-      "_TZE284_RLYTPMIJ"
-    ],
-    "productId": [
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -237,7 +232,7 @@
   "images": {
     "small": "drivers/smart_scene_panel/assets/images/small.png",
     "large": "drivers/smart_scene_panel/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

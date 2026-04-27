@@ -31,12 +31,8 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_CJRNGDR3"
-    ],
-    "productId": [
-      "TS0601"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "learnmode": {
       "image": "/drivers/plug_smart/assets/learnmode.svg",
       "instruction": {
@@ -846,7 +842,7 @@
   "images": {
     "small": "drivers/plug_smart/assets/images/small.png",
     "large": "drivers/plug_smart/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

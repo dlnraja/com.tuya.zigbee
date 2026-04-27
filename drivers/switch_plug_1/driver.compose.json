@@ -16,9 +16,7 @@
   ],
   "zigbee": {
     "manufacturerName": [],
-    "productId": [
-      "TS0601_SP1"
-    ],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -31,7 +29,7 @@
   "images": {
     "small": "drivers/switch_plug_1/assets/images/small.png",
     "large": "drivers/switch_plug_1/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

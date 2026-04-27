@@ -32,16 +32,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_E3WZDXCX",
-      "_TZ3000_SJ7XOCBP",
-      "_TZE200_3JBSLZH4",
-      "_TZE204_3JBSLZH4"
-    ],
-    "productId": [
-      "TS0601",
-      "TS0601_GARAGE"
-    ],
+    "manufacturerName": [],
+    "productId": [],
     "endpoints": {
       "1": {
         "clusters": [
@@ -60,7 +52,7 @@
   "images": {
     "small": "drivers/garage_door/assets/images/small.png",
     "large": "drivers/garage_door/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

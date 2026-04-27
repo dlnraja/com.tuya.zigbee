@@ -37,7 +37,7 @@ concurrency:
 env:
   NODE_VERSION: "22"
   APP_ID: "com.dlnraja.tuya.zigbee"
-  SHADOW_MODE: "true"
+  SHADOW_MODE: "false"
   DEBUG: "false"
 
 jobs:
@@ -55,6 +55,9 @@ jobs:
       
       - name: 🛡️ STRICT SYNTAX PURITY GUARD
         run: node scripts/maintenance/STRICT_SYNTAX_GUARD.js
+      
+      - name: 🛡️ ARITHMETIC INTEGRITY GUARD
+        run: node scripts/maintenance/ARITHMETIC_INTEGRITY_CHECK.js
 
       - name: 📦 Setup Unified
         uses: ./.github/actions/setup-unified
@@ -105,8 +108,8 @@ jobs:
             echo "### 🛡️ Zero Defect Audit Summary" >> $GITHUB_STEP_SUMMARY
             node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); console.log('| Metric | Count | \n| --- | --- | \n| Drivers Checked | ' + r.driversChecked + ' | \n| NaN Safety Warnings | ' + r.naNSafetyCheck.length + ' | \n| ID Collisions | ' + r.collisions.length + ' | \n| SDK Deprecations | ' + r.sdkDeprecations.length + ' | \n| Button Logic Issues | ' + r.buttonLogicFailures.length + ' |');" >> $GITHUB_STEP_SUMMARY
             
-            # Fail if there are critical violations (NaN or Collisions)
-            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); if(r.naNSafetyCheck.length > 0 || r.collisions.length > 0) { console.error('FAILED: Architectural violations detected! (NaN:' + r.naNSafetyCheck.length + ', Collisions:' + r.collisions.length + ')'); process.exit(1); }"
+            # Fail if there are critical violations
+            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); if(r.naNSafetyCheck.length > 0 || r.collisions.length > 0 || r.errors.length > 0 || r.sdkDeprecations.length > 0 || r.buttonLogicFailures.length > 0) { console.error('FAILED: Architectural violations detected!'); process.exit(1); }"
           fi
 
       - name: 🔄 Case Variant Detection (Z2M/ZHA)
