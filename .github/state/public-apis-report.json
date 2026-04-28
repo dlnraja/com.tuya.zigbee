@@ -1,0 +1,200 @@
+{
+  "source": "davemachado/public-api",
+  "timestamp": "2026-04-28T12:12:08.326Z",
+  "total": 1426,
+  "ai": [
+    {
+      "name": "Gitter",
+      "url": "https://developer.gitter.im/docs/welcome",
+      "desc": "Chat for Developers",
+      "auth": "OAuth"
+    },
+    {
+      "name": "GeoJS",
+      "url": "https://www.geojs.io/",
+      "desc": "IP geolocation with ChatOps integration",
+      "auth": "No"
+    },
+    {
+      "name": "Infermedica",
+      "url": "https://developer.infermedica.com/docs/",
+      "desc": "NLP based symptom checker and patient triage API for health diagnosis from text",
+      "auth": "apiKey"
+    },
+    {
+      "name": "Lexigram",
+      "url": "https://docs.lexigram.io/",
+      "desc": "NLP that extracts mentions of clinical concepts from text, gives access to clinical ontology",
+      "auth": "apiKey"
+    },
+    {
+      "name": "AI For Thai",
+      "url": "https://aiforthai.in.th/index.php",
+      "desc": "Free Various Thai AI API",
+      "auth": "apiKey"
+    },
+    {
+      "name": "Clarifai",
+      "url": "https://docs.clarifai.com/api-guide/api-overview",
+      "desc": "Computer Vision",
+      "auth": "OAuth"
+    },
+    {
+      "name": "Cloudmersive",
+      "url": "https://www.cloudmersive.com/image-recognition-and-processing-api",
+      "desc": "Image captioning, face recognition, NSFW classification",
+      "auth": "apiKey"
+    },
+    {
+      "name": "Deepcode",
+      "url": "https://www.deepcode.ai",
+      "desc": "AI for code review",
+      "auth": "No"
+    },
+    {
+      "name": "Dialogflow",
+      "url": "https://cloud.google.com/dialogflow/docs/",
+      "desc": "Natural Language Processing",
+      "auth": "apiKey"
+    },
+    {
+      "name": "EXUDE-API",
+      "url": "http://uttesh.com/exude-api/",
+      "desc": "Used for the primary ways for filtering the stopping, stemming words from the text data",
+      "auth": "No"
+    },
+    {
+      "name": "Hirak FaceAPI",
+      "url": "https://faceapi.hirak.site/",
+      "desc": "Face detection, face recognition with age estimation/gender estimation, accurate, no quota limits",
+      "auth": "apiKey"
+    },
+    {
+      "name": "Imagga",
+      "url": "https://imagga.com/",
+      "desc": "Image Recognition Solutions like Tagging, Visual Search, NSFW moderation",
+      "auth": "apiKey"
+    },
+    {
+      "name": "Inferdo",
+      "url": "https://rapidapi.com/user/inferdo",
+      "desc": "Computer Vision services like Facial detection, Image labeling, NSFW classification",
+      "auth": "apiKey"
+    },
+    {
+      "name": "IPS Online",
+      "url": "https://docs.identity.ps/docs",
+      "desc": "Face and License Plate Anonymization",
+      "auth": "apiKey"
+    },
+    {
+      "name": "Irisnet",
+      "url": "https://irisnet.de/api/",
+      "desc": "Realtime content moderation API that blocks or blurs unwanted images in real-time",
+      "auth": "apiKey"
+    },
+    {
+      "name": "Keen IO",
+      "url": "https://keen.io/",
+      "desc": "Data Analytics",
+      "auth": "apiKey"
+    },
+    {
+      "name": "Machinetutors",
+      "url": "https://www.machinetutors.com/portfolio/MT_api.html",
+      "desc": "AI Solutions: Video/Image Classification & Tagging, NSFW, Icon/Image/Audio Search, NLP",
+      "auth": "apiKey"
+    },
+    {
+      "name": "MessengerX.io",
+      "url": "https://messengerx.rtfd.io",
+      "desc": "A FREE API for developers to build and monetize personalized ML based chat apps",
+      "auth": "apiKey"
+    },
+    {
+      "name": "NLP Cloud",
+      "url": "https://nlpcloud.io",
+      "desc": "NLP API using spaCy and transformers for NER, sentiments, classification, summarization, and more",
+      "auth": "apiKey"
+    },
+    {
+      "name": "OpenVisionAPI",
+      "url": "https://openvisionapi.com",
+      "desc": "Open source computer vision API based on open source models",
+      "auth": "No"
+    },
+    {
+      "name": "Perspective",
+      "url": "https://perspectiveapi.com",
+      "desc": "NLP API to return probability that if text is toxic, obscene, insulting or threatening",
+      "auth": "apiKey"
+    },
+    {
+      "name": "Roboflow Universe",
+      "url": "https://universe.roboflow.com",
+      "desc": "Pre-trained computer vision models",
+      "auth": "apiKey"
+    },
+    {
+      "name": "SkyBiometry",
+      "url": "https://skybiometry.com/documentation/",
+      "desc": "Face Detection, Face Recognition and Face Grouping",
+      "auth": "apiKey"
+    },
+    {
+      "name": "Time Door",
+      "url": "https://timedoor.io",
+      "desc": "A time series analysis API",
+      "auth": "apiKey"
+    },
+    {
+      "name": "Unplugg",
+      "url": "https://unplu.gg/test_api.html",
+      "desc": "Forecasting API for timeseries data",
+      "auth": "apiKey"
+    },
+    {
+      "name": "WolframAlpha",
+      "url": "https://products.wolframalpha.com/api/",
+      "desc": "Provides specific answers to questions using data and algorithms",
+      "auth": "apiKey"
+    }
+  ],
+  "iot": [
+    {
+      "name": "Blynk-Cloud",
+      "url": "https://blynkapi.docs.apiary.io/#",
+      "desc": "Control IoT Devices from Blynk IoT Cloud",
+      "auth": "apiKey"
+    },
+    {
+      "name": "PM2.5 Open Data Portal",
+      "url": "https://pm25.lass-net.org/#apis",
+      "desc": "Open low-cost PM2.5 sensor data",
+      "auth": "No"
+    }
+  ],
+  "free_ai": [
+    {
+      "name": "GeoJS",
+      "url": "https://www.geojs.io/",
+      "desc": "IP geolocation with ChatOps integration"
+    },
+    {
+      "name": "Deepcode",
+      "url": "https://www.deepcode.ai",
+      "desc": "AI for code review"
+    },
+    {
+      "name": "EXUDE-API",
+      "url": "http://uttesh.com/exude-api/",
+      "desc": "Used for the primary ways for filtering the stopping, stemming words from the text data"
+    },
+    {
+      "name": "OpenVisionAPI",
+      "url": "https://openvisionapi.com",
+      "desc": "Open source computer vision API based on open source models"
+    }
+  ],
+  "dev_count": 151
+}
