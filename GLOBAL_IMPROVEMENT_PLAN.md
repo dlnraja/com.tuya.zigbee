@@ -156,9 +156,9 @@ The architecture strictly enforces separation of concerns via dotfiles:
 - `drivers/`, `lib/`, `app.js` = Homey app (deployed via `homey app install`)
 - `.homeyignore` prevents GitHub files from being included in app builds
 
-### Workflow Schedule (v7.4.15)
+### Workflow Schedule (v7.4.16)
 
-| Workflow | Former Schedule | New Schedule | Notes |
+| Workflow | Former | New | Notes |
 |----------|----------------|--------------|-------|
 | daily-promote-to-test.yml | 2x daily (03:45, 15:30 UTC) | **Weekly Monday 03:45 UTC** | Reduced to weekly |
 | daily-maintenance.yml | Weekly Monday 03:00 | **Weekly Monday 03:00** | Renamed to "Weekly" |
@@ -204,3 +204,6 @@ The architecture strictly enforces separation of concerns via dotfiles:
 - `gmail-diagnostics.yml` requires: `GMAIL_EMAIL`, `GMAIL_APP_PASSWORD` secrets
 - Local execution not possible without IMAP credentials
 - Run on GitHub Actions with configured secrets
+
+
+
