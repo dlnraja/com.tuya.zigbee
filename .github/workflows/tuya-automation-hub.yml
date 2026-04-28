@@ -11,19 +11,13 @@ on:
         default: 'all'
         options:
           - all
-          - forum-only
           - github-only
           - enrichment-only
-          - forum-update-only
           - nightly-process
       dry_run:
         description: 'Dry run (no posts)'
         type: boolean
         default: true
-      topics:
-        description: 'Forum topic IDs'
-        type: string
-        default: '140352,26439,146735,89271,54018'
 
 permissions:
   contents: write
@@ -42,8 +36,6 @@ defaults:
     shell: bash
 
 jobs:
-  # forum-responder: REMOVED — now handled exclusively by forum-auto-responder.yml (2x/day)
-  # This prevents triple-posting from hub + responder + sunday workflows
 
   github-scanner:
     name: GitHub Scanner
@@ -69,6 +61,7 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || '' }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || '' }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
@@ -126,6 +119,7 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || '' }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || '' }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
@@ -144,6 +138,7 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || '' }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || '' }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
@@ -161,6 +156,7 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY || '' }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY || '' }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
@@ -183,6 +179,7 @@ jobs:
           HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           GEMINI_MAX_TIER: "1"
         run: node .github/scripts/sync-sdk3-docs.js
       - name: Commit state (Robust)
@@ -195,7 +192,7 @@ jobs:
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
           if [ "$CODE_FILES" -gt 0 ]; then
-            git commit -m "Enrichment v${VER}: ${F} FPs cross-referenced Z2M/ZHA/forum, ${CODE_FILES} file(s) [skip ci]"
+            git commit -m "Enrichment v${VER}: ${F} FPs cross-referenced Z2M/ZHA, ${CODE_FILES} file(s) [skip ci]"
             
             # Intelligent Push with Retry/Rebase
             MAX_RETRIES=5
@@ -211,34 +208,30 @@ jobs:
             echo "No changes to commit for Enrichment Scanner."
           fi
 
-  forum-update:
-    name: Forum Status Update
+  post-scan-promote:
+    name: Promotion Check
     runs-on: ubuntu-latest
     timeout-minutes: 10
     needs: [github-scanner, enrichment-scanner]
     if: |
       always() && (
         github.event_name == 'schedule' && github.event.schedule == '0 4 * * 1,4' ||
-        github.event_name == 'workflow_dispatch' && (inputs.mode == 'all' || inputs.mode == 'forum-update-only')
+        github.event_name == 'workflow_dispatch' && inputs.mode == 'all'
       )
     steps:
-      - uses: actions/checkout@v5 # v5
+      - uses: actions/checkout@v5
       - run: git pull origin master || true
-      - uses: actions/setup-node@v5 # v5
+      - uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
-      
+
       - name: App stats
         id: stats
         run: |
           V=$(node -p "require('./app.json').version")
           echo "version=$V" >> $GITHUB_OUTPUT
           echo "NEW_VERSION=$V" >> $GITHUB_ENV
-
-      # forum-updater.js REMOVED — duplicate forum poster (post-forum-update.js in publish.yml is the sole source)
-      - name: Forum Summary (skipped)
-        run: echo "Forum updates handled by post-forum-update.js on publish only"
 
       # ===== DRAFT → TEST (Puppeteer + API fallback) =====
       - name: Install Puppeteer
@@ -260,13 +253,3 @@ jobs:
         run: |
           if [ -z "$HOMEY_PAT" ]; then exit 0; fi
           node .github/scripts/auto-publish-draft.js || true
-
-      # 📣 Forum Announcement (Unified Awareness)
-      - name: 💬 Post to Forum
-        if: always() && env.SHADOW_MODE != 'true'
-        continue-on-error: true
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          APP_VERSION: ${{ env.NEW_VERSION }}
-        run: node .github/scripts/post-forum-update.js

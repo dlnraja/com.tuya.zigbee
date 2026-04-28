@@ -15,6 +15,7 @@ env:
   GH_PAT: ${{ secrets.GH_PAT }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
 
 jobs:
   triage_and_discovery:

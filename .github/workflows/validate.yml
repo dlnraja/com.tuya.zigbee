@@ -3,7 +3,7 @@ name: 🔍 Validate Homey App
 
 on:
   schedule:
-    - cron: '0 12 * * *'
+    - cron: '0 12 * * 0' # Weekly Sunday 12:00 UTC
   pull_request:
     branches:
       - master

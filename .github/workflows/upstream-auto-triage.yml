@@ -2,7 +2,7 @@ name: "Upstream Auto-Triage & Redirect"
 
 on:
   schedule:
-    - cron: '30 6,18 * * *'  # 2x daily, offset from daily-everything
+    - cron: '30 6 * * 1'  # Weekly on Monday 06:30 UTC
   workflow_dispatch:
     inputs:
       dry_run:
@@ -44,6 +44,7 @@ jobs:
       # === AI providers — circular chain (ai-helper.js) ===
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
       DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
       HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
@@ -139,52 +140,9 @@ jobs:
           SCAN_FORKS: "false"
         run: node .github/scripts/triage-upstream-enhanced.js
 
-  scan-forum:
-    name: "Scan Forum"
-    needs: stats
-    runs-on: ubuntu-latest
-    timeout-minutes: 25
-    steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-      - run: npm ci --prefer-offline --no-audit || npm install
-      - uses: actions/cache@a7833574556fa59680c1b7cb190c1735db73ebf0 # v4
-        with:
-          path: /tmp/last_forum_post.txt
-          key: forum-${{ github.run_number }}
-          restore-keys: forum-
-      - name: Scan forum for new device requests
-        id: forum_scan
-        continue-on-error: true
-        env:
-          LAST_POST_FILE: /tmp/last_forum_post.txt
-        run: |
-          node .github/scripts/scan-forum.js
-          if [ -s /tmp/forum_issues.json ]; then
-            echo "has_issues=true" >> $GITHUB_OUTPUT
-          fi
-      - name: Create issue for forum requests
-        if: steps.forum_scan.outputs.has_issues == 'true'
-        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
-        with:
-          script: |
-            const fs=require('fs');
-            const issues=JSON.parse(fs.readFileSync('/tmp/forum_issues.json','utf8'));
-            if(!issues.length)return;
-            const rows=issues.map(i=>
-              `| ${i.user} | ${i.date} | [#${i.postNum}](https://community.homey.app/t/${i.topicId}/${i.postNum}) | \`${i.missing.join('`,`')}\` |`).join('\n');
-            await github.rest.issues.create({
-              owner:context.repo.owner,repo:context.repo.repo,
-              title:`[Forum] ${issues.length} device request(s)`,
-              body:`## Forum device requests\n\n| User | Date | Post | Missing FPs |\n|---|---|---|---|\n${rows}`,
-              labels:['enhancement','forum-request']
-            });
-
   summary:
     name: "Summary"
-    needs: [triage-upstream, triage-dlnraja, scan-forum]
+    needs: [triage-upstream, triage-dlnraja]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -193,5 +151,3 @@ jobs:
           echo "## Upstream Auto-Triage Complete" >> "$GITHUB_STEP_SUMMARY"
           echo "- JohanBendz: ${{ needs.triage-upstream.result }}" >> "$GITHUB_STEP_SUMMARY"
           echo "- dlnraja: ${{ needs.triage-dlnraja.result }}" >> "$GITHUB_STEP_SUMMARY"
-          echo "- Forum: ${{ needs.scan-forum.result }}" >> "$GITHUB_STEP_SUMMARY"
-

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 // v5.12.6: IMAP-only mode  OAuth removed entirely
-const fs=require('fs'),path=require('path');
+const fs=require('fs'),path=require('path'),crypto=require('crypto');
 const{fetchWithRetry}=require('./retry-helper');
 let eng=null;try{eng=require('./fp-research-engine')}catch{}
 let imap=null;try{imap=require('./gmail-imap-reader')}catch(err){console.error('gmail-imap-reader load error:',err.message)}
@@ -42,16 +42,23 @@ function sanitizeFrom(from){
 // v5.13.0: Extract safe pseudo (username without PII) from email metadata
 function extractSafePseudo(em){
   const p=em.pseudo||{};
-  if(p.source==='github'&&p.username)return{source:'github',username:p.username};
-  if(p.source==='forum'&&p.username)return{source:'forum',username:p.username};
-  if(p.source==='homey_system')return{source:'homey_system',username:null};
+  const email=em.from||'';
+  
+  // Create a persistent pseudonym from email
+  const h=crypto.createHash('sha256').update(email.toLowerCase()).digest('hex').substring(0,12);
+  const pseudonym=`user_${h}`;
+
+  if(p.source==='github'&&p.username)return{source:'github',username:p.username,pseudonym};
+  if(p.source==='forum'&&p.username)return{source:'forum',username:p.username,pseudonym};
+  if(p.source==='homey_system')return{source:'homey_system',username:null,pseudonym:'system'};
+  
   // User emails: only keep first name initial + last name initial
   if(p.displayName){
     const parts=p.displayName.split(/\s+/);
-    if(parts.length>=2)return{source:'user',username:parts[0][0]+'.'+parts[parts.length-1][0]+'.'};
-    return{source:'user',username:parts[0].substring(0,3)+'...'};
+    if(parts.length>=2)return{source:'user',username:parts[0][0]+'.'+parts[parts.length-1][0]+'.',pseudonym};
+    return{source:'user',username:parts[0].substring(0,3)+'...',pseudonym};
   }
-  return{source:p.source||'unknown',username:null};
+  return{source:p.source||'unknown',username:null,pseudonym};
 }
 
 // Extract Tuya fingerprints from text

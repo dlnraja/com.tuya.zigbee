@@ -112,8 +112,8 @@ async function callAI(text,sysPrompt,opts={}){
     if (res) return res;
   }
 
-  // 2. HuggingFace (Aggregator)
-  if (process.env.HF_TOKEN && cbOk('hf')) {
+  // 2. HuggingFace (Aggregator) — 500/day cap
+  if (process.env.HF_TOKEN && cbOk('hf') && (_rt.d['hf']||0) < 500) {
     let hfM='meta-llama/Llama-3.1-8B-Instruct';
     if(tk.cx>=3)hfM='Qwen/Qwen2.5-72B-Instruct';
     else if(tk.type==='code')hfM='Qwen/Qwen2.5-Coder-32B-Instruct';
@@ -128,8 +128,8 @@ async function callAI(text,sysPrompt,opts={}){
     if (res) return res;
   }
 
-  // 3. Cerebras (Fast 70B)
-  if (process.env.CEREBRAS_API_KEY && cbOk('cerebras')) {
+  // 3. Cerebras (Fast 70B) — 100/day cap
+  if (process.env.CEREBRAS_API_KEY && cbOk('cerebras') && (_rt.d['cerebras']||0) < 100) {
     console.log('  Trying Cerebras...');
     const res = await callAIEngine(
       'https://api.cerebras.ai/v1/chat/completions',
@@ -140,8 +140,8 @@ async function callAI(text,sysPrompt,opts={}){
     if (res) return res;
   }
 
-  // 4. Together.ai
-  if (process.env.TOGETHER_API_KEY && cbOk('together')) {
+  // 4. Together.ai — 200/day cap
+  if (process.env.TOGETHER_API_KEY && cbOk('together') && (_rt.d['together']||0) < 200) {
     console.log('  Trying Together...');
     const res = await callAIEngine(
       'https://api.together.xyz/v1/chat/completions',
@@ -152,8 +152,8 @@ async function callAI(text,sysPrompt,opts={}){
     if (res) return res;
   }
 
-  // 5. Groq
-  if (process.env.GROQ_API_KEY && cbOk('groq')) {
+  // 5. Groq — 500/day cap
+  if (process.env.GROQ_API_KEY && cbOk('groq') && (_rt.d['groq']||0) < 500) {
     console.log('  Trying Groq...');
     const res = await callAIEngine(
       'https://api.groq.com/openai/v1/chat/completions',
@@ -164,8 +164,8 @@ async function callAI(text,sysPrompt,opts={}){
     if (res) return res;
   }
 
-  // 6. DeepSeek
-  if (process.env.DEEPSEEK_API_KEY && cbOk('deepseek')) {
+  // 6. DeepSeek — 50/day cap
+  if (process.env.DEEPSEEK_API_KEY && cbOk('deepseek') && (_rt.d['deepseek']||0) < 50) {
     const dsM=tk.cx>=3?'deepseek-reasoner':'deepseek-chat';
     console.log(`  Trying DeepSeek (${dsM})...`);
     const res = await callAIEngine(
@@ -192,9 +192,9 @@ async function callAI(text,sysPrompt,opts={}){
     } else console.log('  Gemini cap reached.');
   }
 
-  // 8. GitHub Models 
+  // 8. GitHub Models — 100/day cap
   const ghToken = process.env.GH_PAT || process.env.GITHUB_TOKEN;
-  if (ghToken && cbOk('gh-models')) {
+  if (ghToken && cbOk('gh-models') && (_rt.d['gh-models']||0) < 100) {
     const ghSys = fullSysPrompt.length > 6000 ? sysPrompt.substring(0, 5000) + '...' : fullSysPrompt;
     console.log('  Trying GitHub Models...');
     const res = await callAIEngine(
@@ -206,9 +206,9 @@ async function callAI(text,sysPrompt,opts={}){
     if (res) return res;
   }
 
-  // 9. OpenAI (Strict Limits)
+  // 9. OpenAI (Strict Limits) — 50/day cap
   if (process.env.OPENAI_API_KEY && cbOk('openai')) {
-    if ((_rt.d['openai']||0) < 200 && (_rt.m['openai']||0) < 3) {
+    if ((_rt.d['openai']||0) < 50 && (_rt.m['openai']||0) < 3) {
       console.log('  Trying OpenAI...');
       const res = await callAIEngine(
         'https://api.openai.com/v1/chat/completions',
@@ -234,14 +234,26 @@ async function callAI(text,sysPrompt,opts={}){
     }
   }
 
-    // 11. Kimi
-    if (process.env.KIMI_API_KEY && cbOk('kimi')) {
+    // 11. Kimi — 50/day cap
+    if (process.env.KIMI_API_KEY && cbOk('kimi') && (_rt.d['kimi']||0) < 50) {
       console.log('  Trying Kimi...');
       const res = await callAIEngine(
         'https://api.moonshot.cn/v1/chat/completions',
         {'Authorization': 'Bearer ' + process.env.KIMI_API_KEY, 'Content-Type': 'application/json'},
         {model:'moonshot-v1-8k', messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:text.substring(0,6000)}], max_tokens:Math.min(maxTokens, 1024), temperature:0.2},
         'kimi'
+      );
+      if (res) return res;
+    }
+
+    // 12. NVIDIA NIM — 40 RPM, 800/day cap (free tier)
+    if (process.env.NVIDIA_API_KEY && cbOk('nvidia') && (_rt.d['nvidia']||0) < 800) {
+      console.log('  Trying NVIDIA NIM...');
+      const res = await callAIEngine(
+        'https://integrate.api.nvidia.com/v1/chat/completions',
+        {'Authorization': 'Bearer ' + process.env.NVIDIA_API_KEY, 'Content-Type': 'application/json'},
+        {model:'meta/llama-3.1-8b-instruct', messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:text.substring(0,10000)}], max_tokens:Math.min(maxTokens, 1024), temperature:0.2},
+        'nvidia'
       );
       if (res) return res;
     }
@@ -340,26 +352,13 @@ async function fetchImageBase64(url){
 
 function textSimilarity(a,b){
   if(!a||!b)return 0;const bg=s=>{const g=new Set();for(let i=0;i<s.length-1;i++)g.add(s.slice(i,i+2).toLowerCase());return g};
-  const sa=bg(a),sb=bg(b);if(!sa.size||!sb.size)return 0;let c=0;for(const g of sa)if(sb.has(g))c++;return safeDivide(c, Math.max)(sa.size,sb.size);
+  const sa=bg(a),sb=bg(b);if(!sa.size||!sb.size)return 0;let c=0;for(const g of sa)if(sb.has(g))c++;return(sa.size>0?c/Math.max(sa.size,sb.size):0);
 }
 function isDuplicateContent(a,b,thr){return textSimilarity(a,b)>=(thr||0.40)}
-const MAX_POST_SIZE=28000;
-const _cdF=path.join(__dirname,'..','..','.github','state','forum-post-cooldown.json');
-function _getCD(){try{return JSON.parse(fs.readFileSync(_cdF,'utf8'))}catch{return{}}}
-function _setCD(){try{fs.mkdirSync(path.dirname(_cdF),{recursive:true});fs.writeFileSync(_cdF,JSON.stringify({t:Date.now()}))}catch{}}
-function smartMergePost(existing,fresh,opts){
-  if(!existing||!existing.trim()){_setCD();return{action:'edit',content:fresh,reason:'empty'};}
-  if(!fresh||!fresh.trim())return{action:'skip',content:existing,reason:'no new'};
-  if(!(opts||{}).force){const cd=_getCD();if(cd.t&&Date.now()-cd.t<1800000)return{action:'skip',content:existing,reason:'cooldown'};}
-  if(isDuplicateContent(fresh,existing,0.40))return{action:'skip',content:existing,reason:'duplicate'};
-  let merged=fresh.replace(/^---+$/gm,'').replace(/\n{3,}/g,'\n\n').trim();
-  if(merged.length>MAX_POST_SIZE)merged=merged.slice(0,MAX_POST_SIZE);
-  _setCD();return{action:'edit',content:merged,reason:'replaced'};
-}
 function getAIBudget(){_rtLoad();return{used:_rt.d,budget:_rtBudget()}}
 function localFallback(){}
 
-module.exports={callAI,callAIEnsemble,splitTaskAndCombine,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,MAX_POST_SIZE,smartMergePost,getAIBudget,classifyTask};
+module.exports={callAI,callAIEnsemble,splitTaskAndCombine,analyzeImage,sleep,localFallback,textSimilarity,isDuplicateContent,getAIBudget,classifyTask};
 
 async function main() {
   const args = process.argv.slice(2);
