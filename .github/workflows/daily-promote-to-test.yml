@@ -1,8 +1,7 @@
-name: 🎯 Daily Draft to Test (Multi-Tier)
+name: 🎯 Weekly Draft to Test (Multi-Tier)
 on:
   schedule:
-    - cron: '45 3 * * *'   # After daily-everything 02:00 publish
-    - cron: '30 15 * * *'  # After daily-everything 14:00 publish
+    - cron: '45 3 * * 1'   # Monday 03:45 UTC — after weekly maintenance window
   workflow_dispatch:
   workflow_run:
     workflows: [Master CI/CD Pipeline, Auto Publish, Auto-Publish on Push, Daily Everything Pipeline]

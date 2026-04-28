@@ -155,3 +155,16 @@ The architecture strictly enforces separation of concerns via dotfiles:
 - `.github/` = GitHub automation, CI/CD, AI scripts (not deployed to Homey)
 - `drivers/`, `lib/`, `app.js` = Homey app (deployed via `homey app install`)
 - `.homeyignore` prevents GitHub files from being included in app builds
+
+### Workflow Schedule (v7.4.15)
+
+| Workflow | Former Schedule | New Schedule | Notes |
+|----------|----------------|--------------|-------|
+| daily-promote-to-test.yml | 2x daily (03:45, 15:30 UTC) | **Weekly Monday 03:45 UTC** | Reduced to weekly |
+| daily-maintenance.yml | Weekly Monday 03:00 | **Weekly Monday 03:00** | Renamed to "Weekly" |
+| nightly-auto-process.yml | Manual only | Manual only | Still manual dispatch |
+| daily-everything.yml | Weekly Sunday 02:00 | **Weekly Sunday 02:00** | Already weekly |
+| weekly-fingerprint-sync.yml | Weekly Monday 06:00 | **Weekly Monday 06:00** | Already weekly |
+| sunday-master.yml | Manual only | Manual only | Still manual dispatch |
+
+**Principle**: All automatic workflows now run **once per week maximum** to conserve AI API credits and minimize GitHub Actions usage.
