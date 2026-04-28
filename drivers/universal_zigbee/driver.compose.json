@@ -75,6 +75,9 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_TYST11_",
+      "_TYZB01_",
+      "_TYZB02_",
       "_TZ1800_",
       "_TZ2000_",
       "_TZ3000_",
@@ -100,9 +103,7 @@
       "_TZE283_",
       "_TZE284_",
       "_TZE600_",
-      "_TZE608_",
-      "_TYZB01_",
-      "_TYZB02_"
+      "_TZE608_"
     ],
     "productId": [],
     "endpoints": {
