@@ -23,9 +23,13 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "eWeLink",
+      "eweLink",
       "CK-BL702-SWP-01(7020)"
     ],
-    "productId": [],
+    "productId": [
+      "CK-BL702-SWP-01(7020)"
+    ],
     "learnmode": {
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
       "instruction": {
