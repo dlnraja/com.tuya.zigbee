@@ -76,9 +76,82 @@
 | Mon+Thu | 04:00 | tuya-automation-hub | Deep scan |
 | Wed | 07:00 | weekly-verification | Fork verification |
 
+## 6. Dependency & Package Analysis
+- **Core Runtime**: `homey-zigbeedriver`, `tuyapi`, `zigbee-clusters` (Strict SDK 3.x compliance).
+- **Core Utilities**: `color-space`, `qrcode`.
+- **Security & Version Overrides**: Forced versions of `punycode` and `color-space` in `package.json` to avoid vulnerabilities.
+- **Dev & Intelligence**: 
+  - *Scraping*: `puppeteer`, `cheerio`
+  - *Mail Diagnostics*: `imapflow`
+  - *Image Optimization*: `sharp`, `canvas`
+
+## 7. Dotfiles & System Cartography
+The architecture strictly enforces separation of concerns via dotfiles:
+- **`.agents/rules/security.md`**: Mandatory constraints. No hardcoded secrets. PII MUST be anonymized in diagnostics. Strict input sanitization and `DRY_RUN` support.
+- **`.agents/rules/architectural.md`**: Enforces `driver-mapping-database.json` centralized mapping and SDK3 adherence.
+- **`.gemini/rules/repository.md`**: Defines **Case-Less Architecture** (`CaseInsensitiveMatcher`), **NaN Safety** (`safeParse`), and **Flow Card Safety** (mandatory `try-catch`).
+- **`.eslintrc.json`**: Linter bounds and rules validation for CI.
+- **`.homeyignore` & `.gitignore`**: Strict payload management. Ensures the 7MB app footprint does not explode by excluding GitHub actions, AI scripts, docs, and raw artifacts from the Homey build.
+- **`.homeychangelog.json`**: For maintaining automated changelog consistency across deployments.
+
 ---
 
 **Status**: ACTIVE  
 **Orchestrator**: dlnraja-bot  
 **Doctrine**: Silent Operation (no forum posting)  
 **Next Pulse**: Sunday 02:00 UTC
+
+---
+
+## v7.4.15 Update Notes
+
+### AI Provider Budget (Updated)
+
+**TIER 1 - FREE TIER (Use First):**
+| Provider | Secret | Daily Cap | Notes |
+|----------|--------|-----------|-------|
+| NVIDIA NIM | NVIDIA_API_KEY | 800/day | **PRIORITY** - Free, 40 RPM |
+| HuggingFace | HF_TOKEN | 500/day | Community inference |
+| Groq | GROQ_API_KEY | 500/day | Fast Llama |
+| OpenRouter | OPENROUTER_API_KEY | Varies | Filter :free models |
+
+**TIER 2 - PAID (Budget Strict):**
+| Provider | Secret | Daily Cap | Max Monthly |
+|----------|--------|-----------|-------------|
+| Cerebras | CEREBRAS_API_KEY | 100/day | $5 max |
+| Together.ai | TOGETHER_API_KEY | 200/day | $10 max |
+| DeepSeek | DEEPSEEK_API_KEY | 50/day | $3 max |
+| Kimi | KIMI_API_KEY | 50/day | $5 max |
+
+**TIER 3 - PREMIUM (Very Strict):**
+| Provider | Secret | Daily Cap | Max Monthly |
+|----------|--------|-----------|-------------|
+| OpenAI | OPENAI_API_KEY | 50/day | $10 max |
+| Mistral | MISTRAL_API_KEY | 30/day | $5 max |
+| Gemini | GOOGLE_API_KEY | 1400/day | Free tier |
+
+### Secrets Setup Priority (v7.4.15)
+
+1. **NVIDIA_API_KEY** - Add immediately! (800 calls/day FREE)
+2. HOMEY_PAT - publishing
+3. HOMEY_PAT_API - real device diagnostics
+4. GOOGLE_API_KEY - AI analysis
+5. HOMEY_EMAIL + HOMEY_PASSWORD - forum (read-only, no posting)
+6. GH_PAT - cross-repo
+7. Gmail secrets - diagnostic pipeline
+8. HF_TOKEN, GROQ_API_KEY - Free tier redundancy
+9. CEREBRAS_API_KEY, TOGETHER_API_KEY - Paid fallback
+10. Remaining AI keys (optional)
+
+### Forum Doctrine (v7.4.15)
+
+- **NO AUTOMATIC FORUM POSTING** - All posting must be manual
+- Forum scripts are READ-ONLY (scan, read, no post)
+- `forum-responder.js` restricted to T140352 only (own thread)
+- Bot was flagged by moderators (Feb 2026) - no more auto-posting
+
+### GitHub vs App Separation
+
+- `.github/` = GitHub automation, CI/CD, AI scripts (not deployed to Homey)
+- `drivers/`, `lib/`, `app.js` = Homey app (deployed via `homey app install`)
+- `.homeyignore` prevents GitHub files from being included in app builds

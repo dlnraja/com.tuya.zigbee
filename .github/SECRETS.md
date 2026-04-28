@@ -123,11 +123,36 @@ All forum scripts authenticate via `forum-auth.js`  `getForumAuth()`  session co
 
 ## Priority Setup Order
 
-1. HOMEY_PAT  publishing
-2. HOMEY_PAT_API  real device diagnostics
-3. GOOGLE_API_KEY  AI analysis (most workflows)
-4. HOMEY_EMAIL + HOMEY_PASSWORD  forum
-5. GH_PAT  cross-repo (scopes: repo, read:org)
-6. Gmail secrets  diagnostic pipeline
-7. OPENAI_API_KEY  GPT fallback
-8. Remaining AI keys (optional, any one adds redundancy)
+1. **NVIDIA_API_KEY** (NEW) - FREE TIER: 800 calls/day! Add immediately for free AI
+2. HOMEY_PAT  publishing
+3. HOMEY_PAT_API  real device diagnostics
+4. GOOGLE_API_KEY  AI analysis (most workflows)
+5. HOMEY_EMAIL + HOMEY_PASSWORD  forum
+6. GH_PAT  cross-repo (scopes: repo, read:org)
+7. Gmail secrets  diagnostic pipeline
+8. OPENAI_API_KEY  GPT fallback
+9. HF_TOKEN, GROQ_API_KEY - Free tier AI redundancy
+10. Remaining AI keys (optional, any one adds redundancy)
+
+## AI Provider Tiers (Updated v7.4.15)
+
+**TIER 1 - FREE (Use First):**
+| Provider | Secret | Daily Cap |
+|----------|--------|-----------|
+| NVIDIA NIM | NVIDIA_API_KEY | 800 |
+| HuggingFace | HF_TOKEN | 500 |
+| Groq | GROQ_API_KEY | 500 |
+| OpenRouter | OPENROUTER_API_KEY | Varies |
+
+**TIER 2 - PAID (Budget Strict):**
+| Provider | Secret | Daily Cap | Max Monthly |
+|----------|--------|-----------|-------------|
+| Cerebras | CEREBRAS_API_KEY | 100 | $5 |
+| Together.ai | TOGETHER_API_KEY | 200 | $10 |
+| DeepSeek | DEEPSEEK_API_KEY | 50 | $3 |
+
+**TIER 3 - PREMIUM (Very Strict):**
+| Provider | Secret | Daily Cap | Max Monthly |
+|----------|--------|-----------|-------------|
+| OpenAI | OPENAI_API_KEY | 50 | $10 |
+| Mistral | MISTRAL_API_KEY | 30 | $5 |
