@@ -139,20 +139,27 @@ All forum scripts authenticate via `forum-auth.js`  `getForumAuth()`  session co
 **TIER 1 - FREE (Use First):**
 | Provider | Secret | Daily Cap |
 |----------|--------|-----------|
-| NVIDIA NIM | NVIDIA_API_KEY | 800 |
-| HuggingFace | HF_TOKEN | 500 |
-| Groq | GROQ_API_KEY | 500 |
+| NVIDIA NIM | NVIDIA_API_KEY | 800/day |
+| HuggingFace | HF_TOKEN | 500/day |
+| Groq | GROQ_API_KEY | 500/day |
 | OpenRouter | OPENROUTER_API_KEY | Varies |
 
-**TIER 2 - PAID (Budget Strict):**
-| Provider | Secret | Daily Cap | Max Monthly |
-|----------|--------|-----------|-------------|
-| Cerebras | CEREBRAS_API_KEY | 100 | $5 |
-| Together.ai | TOGETHER_API_KEY | 200 | $10 |
-| DeepSeek | DEEPSEEK_API_KEY | 50 | $3 |
+**TIER 2 - SUBSCRIPTION (Monthly Budget):**
+| Provider | Secret | Monthly Budget | Notes |
+|----------|--------|---------------|-------|
+| **Minimax** | MINIMAX_API_KEY | ~$20/month | Subscription-based, tracked via MINIMAX_BUDGET env var (default: 50000 tokens/month) |
 
-**TIER 3 - PREMIUM (Very Strict):**
+**TIER 3 - PAID (Budget Strict):**
 | Provider | Secret | Daily Cap | Max Monthly |
 |----------|--------|-----------|-------------|
-| OpenAI | OPENAI_API_KEY | 50 | $10 |
-| Mistral | MISTRAL_API_KEY | 30 | $5 |
+| Cerebras | CEREBRAS_API_KEY | 100/day | $5 |
+| Together.ai | TOGETHER_API_KEY | 200/day | $10 |
+| DeepSeek | DEEPSEEK_API_KEY | 50/day | $3 |
+| Kimi | KIMI_API_KEY | 50/day | $5 |
+
+**TIER 4 - PREMIUM (Very Strict):**
+| Provider | Secret | Daily Cap | Max Monthly |
+|----------|--------|-----------|-------------|
+| OpenAI | OPENAI_API_KEY | 50/day | $10 |
+| Mistral | MISTRAL_API_KEY | 30/day | $5 |
+| Gemini | GOOGLE_API_KEY | 1400/day | Free tier |
