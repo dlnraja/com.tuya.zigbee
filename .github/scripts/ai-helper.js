@@ -258,7 +258,24 @@ async function callAI(text,sysPrompt,opts={}){
     if (res) return res;
   }
 
-    console.log(`  [Waiter] All AI engines exhausted on attempt ${globalAttempts + 1}/${maxGlobalAttempts}.`);
+  // 13. Minimax — Monthly subscription (~$20/month) — Budget tracked via MINIMAX_BUDGET
+  if (process.env.MINIMAX_API_KEY && cbOk('minimax')) {
+    const minBudget = parseInt(process.env.MINIMAX_BUDGET) || 50000; // Default 50k tokens/month budget
+    const minUsed = _rt.d['minimax'] || 0;
+    const minPct = Math.round((minUsed / minBudget) * 100);
+    console.log(`  Trying Minimax (used: ${minUsed}/${minBudget} tokens [${minPct}%])...`);
+    if (minUsed < minBudget) {
+      const res = await callAIEngine(
+        'https://api.minimax.chat/v1/chat/completions',
+        {'Authorization': 'Bearer ' + process.env.MINIMAX_API_KEY, 'Content-Type': 'application/json'},
+        {model:'abab6.5-chat', messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:text.substring(0,8000)}], max_tokens:Math.min(maxTokens, 2048), temperature:0.2},
+        'minimax'
+      );
+      if (res) return res;
+    } else console.log('  Minimax budget exhausted (' + minPct + '%).');
+  }
+
+  console.log(`  [Waiter] All AI engines exhausted on attempt ${globalAttempts + 1}/${maxGlobalAttempts}.`);
     globalAttempts++;
     if (globalAttempts >= maxGlobalAttempts) break;
     
