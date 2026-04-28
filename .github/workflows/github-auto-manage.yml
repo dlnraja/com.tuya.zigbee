@@ -2,7 +2,7 @@ name: "GitHub Auto-Manage Issues & PRs"
 
 on:
   schedule:
-    - cron: '30 9 * * *'  # 1x daily backup, main coverage by daily-everything
+    - cron: '30 9 * * 1'  # 1x daily backup, main coverage by daily-everything
   workflow_dispatch:
     inputs:
       dry_run:

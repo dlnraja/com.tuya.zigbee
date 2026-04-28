@@ -1,7 +1,7 @@
 name: Collect Diagnostics
 on:
   schedule:
-    - cron: '15 10 * * *'
+    - cron: '15 10 * * 1'
   workflow_dispatch:
 
 permissions:
