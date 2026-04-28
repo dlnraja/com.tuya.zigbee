@@ -158,7 +158,7 @@
 | motion_sensor_switch_hybrid | 0 | - | onoff, measure_battery, measure_power... |
 | pet_feeder | 0 | - | button.feed, alarm_generic, measure_radio_stability... |
 | pet_feeder_zigbee | 0 | - | button, measure_weight, alarm_generic... |
-| plug_energy_monitor | 1 | - | measure_power, meter_power, measure_voltage... |
+| plug_energy_monitor | 3 | CK-BL702-SWP-01(7020) | measure_power, meter_power, measure_voltage... |
 | plug_energy_monitor_hybrid | 0 | - | measure_temperature, measure_humidity, measure_battery... |
 | plug_smart | 0 | - | measure_battery, measure_current, measure_power... |
 | plug_smart_switch_hybrid | 0 | - | onoff, measure_battery, measure_power... |
@@ -277,6 +277,6 @@
 | zigbee_repeater | 0 | - | measure_radio_stability, measure_maintenance_score |
 
 ---
-**Total:** 273 drivers, 32 manufacturer IDs
+**Total:** 273 drivers, 34 manufacturer IDs
 
-*Generated: 2026-04-28T18:17:03.613Z*
+*Generated: 2026-04-28T18:54:55.815Z*
