@@ -168,3 +168,39 @@ The architecture strictly enforces separation of concerns via dotfiles:
 | sunday-master.yml | Manual only | Manual only | Still manual dispatch |
 
 **Principle**: All automatic workflows now run **once per week maximum** to conserve AI API credits and minimize GitHub Actions usage.
+
+---
+
+## v7.4.16 Diagnostic Analysis (2026-04-28)
+
+### Gmail Diagnostics Results
+
+**4 Unmatched Fingerprints from Emails - ALL SUPPORTED:**
+| Fingerprint | Drivers | Status |
+|-------------|---------|--------|
+| `_TZE200_u6x1zyv2` | air_quality_comprehensive | ✅ EXISTS (TS0005, TS0006, TS0601) |
+| `_TZE284_hdml1aav` | sensor_lcdtemphumidsensor_soil_hybrid | ✅ EXISTS (TS0601) |
+| `_TZB000_yqjaollc` | temphumidsensor, plug_energy_monitor | ✅ EXISTS (59 entries) |
+| `_TZ3000_tzvbimpq` | remote_button_wireless_hybrid | ✅ EXISTS (24 entries) |
+
+**Error Patterns:**
+- `getDeviceConditionCard`: NOT in codebase → OLD version report
+- IAS Zone enrollment: FIXED in v7.4.x (dataQuery on init)
+
+**Protocol Distribution (resolver-report.json):**
+- tuya_dp: 8, zcl: 3, ias: 1, unknown: 7
+
+### No Corrections Required
+✅ All fingerprints from emails are already supported in `data/fingerprints.json`  
+✅ No critical issues to fix from Gmail diagnostics  
+✅ Errors are from OLD app versions, not current codebase
+
+### Homey Pro Local Access
+- **Name**: Homey Pro de Dylan
+- **Access**: via HOMEY_PAT_API or HOMEY_PAT secrets
+- **Use**: Real device diagnostics, device pairing tests
+
+### GitHub Actions Execution
+- `gmail-diagnostics.yml` requires: `GMAIL_EMAIL`, `GMAIL_APP_PASSWORD` secrets
+- Local execution not possible without IMAP credentials
+- Run on GitHub Actions with configured secrets
