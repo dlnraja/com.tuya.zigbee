@@ -127,15 +127,7 @@ jobs:
           if [ -z "$HOMEY_PAT" ]; then exit 0; fi
           node .github/scripts/auto-publish-draft.js || true
 
-      # 📣 Forum Announcement (Unified Awareness)
-      - name: 💬 Post to Forum
-        if: always()
-        continue-on-error: true
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          APP_VERSION: ${{ steps.stats.outputs.version }}
-        run: node .github/scripts/post-forum-update.js
+      # FORUM POSTING REMOVED v7.4.15 - No automatic forum posting (bot flagged by moderators Feb 2026)
 
       - name: Summary
         if: always()

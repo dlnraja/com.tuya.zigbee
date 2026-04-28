@@ -235,14 +235,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
-      - name: 💬 Post to Forum
-        if: (steps.promote_puppeteer.outcome == 'success' || steps.promote_api.outcome == 'success') && (github.event.inputs.post_forum != 'false')
-        continue-on-error: true
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          APP_VERSION: ${{ env.NEW_VERSION }}
-        run: node .github/scripts/post-forum-update.js
+      # FORUM POSTING REMOVED v7.4.15 - No automatic forum posting (bot flagged by moderators Feb 2026)
+      # All forum updates must be done manually via https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
 
       - name: 📝 Final Summary
         if: always()
