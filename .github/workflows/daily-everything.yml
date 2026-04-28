@@ -2,8 +2,7 @@ name: "🌌 UNIFIED ENGINE — Daily Galaxy Orchestrator"
 
 on:
   schedule:
-    - cron: '0 2 * * *'    # Full overnight scan at 02:00 UTC
-    - cron: '0 14 * * *'   # Afternoon catch-up scan
+    - cron: '0 2 * * 0'    # Full overnight scan at 02:00 UTC every Sunday
   workflow_dispatch:
     inputs:
       dry_run:
@@ -30,6 +29,7 @@ env:
   PIPELINE_STABILITY: "PRODUCTION_READY"
   GOOGLE_API_KEY: "${{ secrets.GOOGLE_API_KEY }}"
   OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}"
+  NVIDIA_API_KEY: "${{ secrets.NVIDIA_API_KEY }}"
   GH_PAT: ${{ secrets.GH_PAT }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
@@ -58,9 +58,8 @@ jobs:
           F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l)
           echo "drivers=$D" >> $GITHUB_OUTPUT
           echo "fps=$F" >> $GITHUB_OUTPUT
-      - name: "Forum & GitHub Triage"
+      - name: "GitHub Triage"
         run: |
-          node .github/scripts/scan-forum.js || true
           node .github/scripts/github-issue-manager.js || true
           node .github/scripts/github-scanner.js || true
       - name: "Community Intel Ingestion"

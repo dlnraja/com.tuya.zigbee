@@ -2,7 +2,7 @@ name: Sync Changelog to README
 
 on:
   schedule:
-    - cron: '30 12 * * *'  # Daily 12:30 UTC — sync changelog to README
+    - cron: '30 12 * * 1'  # Weekly Monday 12:30 UTC - sync changelog to README
   push:
     branches: [master]
     paths:

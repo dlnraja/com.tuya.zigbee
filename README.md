@@ -19,7 +19,7 @@ A high-performance, unified, local-first engine for Tuya Zigbee and WiFi devices
 
 1. Install the [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) for the latest stability fixes.
 2. Pair your device using the "Search for my device" option.
-3. If your device is not recognized, please provide a diagnostic report on the [Homey Forum Thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).
+3. If your device is not recognized, please provide a diagnostic report on the [GitHub Issues](https://github.com/dlnraja/com.tuya.zigbee/issues).
 
 ##  Architectural Standard
 

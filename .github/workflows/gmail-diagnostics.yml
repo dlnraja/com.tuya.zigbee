@@ -1,11 +1,7 @@
 name: Gmail Diagnostics Auto-Analysis
 on:
-  push:
-    tags:
-      - 'v*'
   schedule:
-    - cron: '0 7 * * *'    # Morning sweep (standalone, daily-everything runs at 02:00+14:00)
-    - cron: '0 19 * * *'   # Evening sweep (catch afternoon emails)
+    - cron: '0 22 * * 0'    # Weekly sweep (Sunday 22:00 UTC)
   workflow_dispatch:
 
 permissions:
