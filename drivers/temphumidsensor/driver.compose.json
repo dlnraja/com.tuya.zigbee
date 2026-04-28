@@ -20,7 +20,9 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZE284_8se38w3c"
+    ],
     "productId": [],
     "endpoints": {
       "1": {

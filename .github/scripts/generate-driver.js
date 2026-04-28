@@ -51,6 +51,10 @@ async function findOrEnrichDriver(manufacturerName, typeHint) {
     if (foundDriver) {
         console.log(`Enriching existing driver: ${foundDriver}`);
         const compose = JSON.parse(fs.readFileSync(foundDriver, 'utf8'));
+        if (!compose.zigbee) compose.zigbee = {};
+        if (!compose.zigbee.manufacturerName) compose.zigbee.manufacturerName = [];
+        if (!Array.isArray(compose.zigbee.manufacturerName)) compose.zigbee.manufacturerName = [compose.zigbee.manufacturerName].filter(Boolean);
+        
         if (!compose.zigbee.manufacturerName.includes(manufacturerName)) {
             compose.zigbee.manufacturerName.push(manufacturerName);
             fs.writeFileSync(foundDriver, JSON.stringify(compose, null, 2));

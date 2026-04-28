@@ -37,6 +37,27 @@ const newFingerprints = {
     'driver': 'soil_sensor',
     'profile': 'sensor',
     'description': 'Smart Solar Soil Sensor (direct match)'
+  },
+  
+  // Issue #184: Temperature & humidity sensor with external probe
+  '_TZE284_8se38w3c|TS0601': {
+    'driver': 'sensor_climate_temphumidsensor_hybrid',
+    'profile': 'sensor',
+    'description': 'Temperature & Humidity Sensor with external probe'
+  },
+  
+  // Issue #170: TS0003
+  '_TZ3000_v4l4b0lp|TS0003': {
+    'driver': 'switch_3gang',
+    'profile': 'switch',
+    'description': 'TS0003 3 Gang Switch'
+  },
+  
+  // Issue #194: plug_energy_monitor
+  'CK-BL702-SWP-01(7020)|': {
+    'driver': 'plug_energy_monitor',
+    'profile': 'socket',
+    'description': 'CK-BL702-SWP-01(7020) Energy Monitor Plug'
   }
 };
 
