@@ -158,7 +158,7 @@
 | motion_sensor_switch_hybrid | 0 | - | onoff, measure_battery, measure_power... |
 | pet_feeder | 0 | - | button.feed, alarm_generic, measure_radio_stability... |
 | pet_feeder_zigbee | 0 | - | button, measure_weight, alarm_generic... |
-| plug_energy_monitor | 0 | - | measure_power, meter_power, measure_voltage... |
+| plug_energy_monitor | 1 | - | measure_power, meter_power, measure_voltage... |
 | plug_energy_monitor_hybrid | 0 | - | measure_temperature, measure_humidity, measure_battery... |
 | plug_smart | 0 | - | measure_battery, measure_current, measure_power... |
 | plug_smart_switch_hybrid | 0 | - | onoff, measure_battery, measure_power... |
@@ -230,7 +230,7 @@
 | soil_sensor | 0 | - | measure_humidity.soil, measure_temperature, measure_humidity... |
 | switch_1gang | 0 | - | onoff, measure_battery, measure_power... |
 | switch_2gang | 0 | - | onoff, onoff.gang2, measure_power... |
-| switch_3gang | 0 | - | onoff, onoff.gang2, onoff.gang3... |
+| switch_3gang | 1 | - | onoff, onoff.gang2, onoff.gang3... |
 | switch_4gang | 0 | - | onoff, onoff.gang2, onoff.gang3... |
 | switch_dimmer_1gang | 0 | - | onoff, dim, measure_radio_stability... |
 | switch_hybrid | 0 | - | onoff, onoff.gang2, measure_power... |
@@ -243,7 +243,7 @@
 | switch_wall_8gang | 0 | - | onoff, onoff.gang2, onoff.gang3... |
 | switch_wall_hybrid | 0 | - | onoff, measure_battery, measure_power... |
 | switch_wireless | 0 | - | alarm_generic, measure_battery, measure_radio_stability... |
-| temphumidsensor | 0 | - | measure_temperature, measure_humidity, measure_battery... |
+| temphumidsensor | 1 | - | measure_temperature, measure_humidity, measure_battery... |
 | thermostat_4ch | 0 | - | onoff, onoff.ch2, onoff.ch3... |
 | thermostat_tuya_dp | 0 | - | target_temperature, measure_temperature, thermostat_mode... |
 | universal_fallback | 0 | - | measure_battery, measure_radio_stability, measure_maintenance_score |
@@ -252,7 +252,7 @@
 | usb_dongle_triple | 0 | - | onoff, onoff.usb2, onoff.usb3... |
 | usb_outlet_advanced | 0 | - | onoff, onoff.socket2, onoff.usb1... |
 | valve_dual_irrigation | 0 | - | onoff.valve_1, onoff.valve_2, measure_battery... |
-| valve_irrigation | 0 | - | dim.valve_1, dim.valve_2, dim.valve_3... |
+| valve_irrigation | 1 | - | dim.valve_1, dim.valve_2, dim.valve_3... |
 | valve_single | 0 | - | onoff, dim.valve, measure_battery... |
 | vibration_sensor | 0 | - | alarm_vibration, measure_temperature, measure_battery... |
 | wall_curtain_switch | 0 | - | windowcoverings_set, windowcoverings_state, measure_radio_stability... |
@@ -273,9 +273,10 @@
 | water_valve_garden | 0 | - | onoff, measure_battery, measure_radio_stability... |
 | water_valve_smart | 0 | - | onoff, meter_water, measure_temperature... |
 | weather_station_outdoor | 0 | - | measure_temperature, measure_humidity, measure_pressure... |
+| wifi_water_valve | 0 | - | onoff, measure_battery, measure_radio_stability... |
 | zigbee_repeater | 0 | - | measure_radio_stability, measure_maintenance_score |
 
 ---
-**Total:** 272 drivers, 28 manufacturer IDs
+**Total:** 273 drivers, 32 manufacturer IDs
 
-*Generated: 2026-04-28T12:11:55.894Z*
+*Generated: 2026-04-28T14:35:42.364Z*
