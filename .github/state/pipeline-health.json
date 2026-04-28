@@ -1,0 +1,49 @@
+{
+  "runs": [
+    {
+      "ts": "2026-04-28T20:20:32.786Z",
+      "wf": "Sunday Master Automation",
+      "stale": 0,
+      "missing": 3,
+      "alerts": 1
+    }
+  ],
+  "alerts": [
+    {
+      "type": "missing",
+      "files": [
+        "nightly-state.json",
+        "diagnostics-state.json",
+        "github-state.json"
+      ],
+      "msg": "3 state file(s) missing"
+    }
+  ],
+  "lastRun": "2026-04-28T20:20:32.786Z",
+  "fileHealth": {
+    "nightly-state.json": {
+      "ok": false
+    },
+    "diagnostics-state.json": {
+      "ok": false
+    },
+    "pattern-data.json": {
+      "ok": true,
+      "ageH": 0,
+      "size": 339
+    },
+    "resolver-state.json": {
+      "ok": true,
+      "ageH": 0,
+      "size": 8340
+    },
+    "issue-manager-state.json": {
+      "ok": true,
+      "ageH": 0,
+      "size": 20552
+    },
+    "github-state.json": {
+      "ok": false
+    }
+  }
+}
