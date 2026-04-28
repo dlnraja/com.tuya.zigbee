@@ -247,12 +247,12 @@
 | thermostat_4ch | 0 | - | onoff, onoff.ch2, onoff.ch3... |
 | thermostat_tuya_dp | 0 | - | target_temperature, measure_temperature, thermostat_mode... |
 | universal_fallback | 0 | - | measure_battery, measure_radio_stability, measure_maintenance_score |
-| universal_zigbee | 28 | - | onoff, dim, measure_temperature... |
+| universal_zigbee | 29 | - | onoff, dim, measure_temperature... |
 | usb_dongle_dual_repeater | 0 | - | onoff, onoff.usb2, measure_power... |
 | usb_dongle_triple | 0 | - | onoff, onoff.usb2, onoff.usb3... |
 | usb_outlet_advanced | 0 | - | onoff, onoff.socket2, onoff.usb1... |
 | valve_dual_irrigation | 0 | - | onoff.valve_1, onoff.valve_2, measure_battery... |
-| valve_irrigation | 1 | - | dim.valve_1, dim.valve_2, dim.valve_3... |
+| valve_irrigation | 2 | - | dim.valve_1, dim.valve_2, dim.valve_3... |
 | valve_single | 0 | - | onoff, dim.valve, measure_battery... |
 | vibration_sensor | 0 | - | alarm_vibration, measure_temperature, measure_battery... |
 | wall_curtain_switch | 0 | - | windowcoverings_set, windowcoverings_state, measure_radio_stability... |
@@ -276,6 +276,6 @@
 | zigbee_repeater | 0 | - | measure_radio_stability, measure_maintenance_score |
 
 ---
-**Total:** 272 drivers, 34 manufacturer IDs
+**Total:** 272 drivers, 36 manufacturer IDs
 
-*Generated: 2026-04-28T20:42:02.977Z*
+*Generated: 2026-04-28T21:10:27.809Z*
