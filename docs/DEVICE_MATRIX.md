@@ -273,10 +273,9 @@
 | water_valve_garden | 0 | - | onoff, measure_battery, measure_radio_stability... |
 | water_valve_smart | 0 | - | onoff, meter_water, measure_temperature... |
 | weather_station_outdoor | 0 | - | measure_temperature, measure_humidity, measure_pressure... |
-| wifi_water_valve | 0 | - | onoff, measure_battery, measure_radio_stability... |
 | zigbee_repeater | 0 | - | measure_radio_stability, measure_maintenance_score |
 
 ---
-**Total:** 273 drivers, 34 manufacturer IDs
+**Total:** 272 drivers, 34 manufacturer IDs
 
-*Generated: 2026-04-28T18:54:55.815Z*
+*Generated: 2026-04-28T19:31:01.689Z*
