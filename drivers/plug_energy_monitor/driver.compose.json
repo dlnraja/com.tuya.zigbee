@@ -22,7 +22,9 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "CK-BL702-SWP-01(7020)"
+    ],
     "productId": [],
     "learnmode": {
       "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",

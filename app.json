@@ -466,7 +466,7 @@
           "de": "DP [[dp]] von [[device]] Ã¼berschreitet Schwellwert [[threshold]]"
         },
         "hint": {
-          "en": "Triggers when a numeric DP value crosses a threshold",
+          "en": "Triggers when a numeric DP value crosses a threshold (forum #1016)",
           "fr": "Se dÃ©clenche quand une valeur DP numÃ©rique franchit un seuil"
         },
         "tokens": [
@@ -173646,7 +173646,9 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "CK-BL702-SWP-01(7020)"
+        ],
         "productId": [],
         "learnmode": {
           "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
@@ -209224,7 +209226,9 @@
             "en": "Turn the switch on/off 3 times quickly"
           }
         },
-        "manufacturerName": []
+        "manufacturerName": [
+          "_TZ3000_v4l4b0lp"
+        ]
       },
       "images": {
         "small": "drivers/switch_3gang/assets/images/small.png",
@@ -217701,7 +217705,9 @@
         "mains": true
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE284_8se38w3c"
+        ],
         "productId": [],
         "endpoints": {
           "1": {
@@ -220915,7 +220921,9 @@
         "measure_maintenance_score"
       ],
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TZE200_xlppj4f5"
+        ],
         "productId": [],
         "endpoints": {
           "1": {
@@ -225792,7 +225800,7 @@
           },
           "value": false,
           "hint": {
-            "en": "Enable if water detection shows opposite state (wet=dry, dry=wet)..",
+            "en": "Enable if water detection shows opposite state (wet=dry, dry=wet). Lasse_K forum fix.",
             "fr": "Activer si la dÃ©tection d'eau affiche l'Ã©tat inverse (mouillÃ©=sec, sec=mouillÃ©)"
           }
         },
@@ -243287,7 +243295,10 @@
         "conditions": [],
         "actions": []
       },
-      "id": "wifi_water_valve"
+      "id": "wifi_water_valve",
+      "zigbee": {
+        "manufacturerName": []
+      }
     },
     {
       "name": {

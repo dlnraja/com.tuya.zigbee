@@ -299,7 +299,7 @@
   "images": {
     "small": "drivers/wifi_water_valve/assets/images/small.png",
     "large": "drivers/wifi_water_valve/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],
@@ -341,5 +341,8 @@
     "conditions": [],
     "actions": []
   },
-  "id": "wifi_water_valve"
+  "id": "wifi_water_valve",
+  "zigbee": {
+    "manufacturerName": []
+  }
 }
