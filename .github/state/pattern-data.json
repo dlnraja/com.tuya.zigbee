@@ -1,0 +1,351 @@
+{
+  "timestamp": "2026-04-28T08:16:36.730Z",
+  "suggestions": [
+    {
+      "pattern": "False Battery Alert/Missing Battery",
+      "id": "battery",
+      "count": 25,
+      "priority": "high",
+      "topFPs": [
+        [
+          "vision",
+          20
+        ],
+        [
+          "TS0601",
+          11
+        ],
+        [
+          "_TZ3000_",
+          7
+        ],
+        [
+          "_TZE204_",
+          5
+        ],
+        [
+          "router",
+          4
+        ],
+        [
+          "_TZE200_",
+          4
+        ],
+        [
+          "TS0044",
+          3
+        ],
+        [
+          "_TYZB01_",
+          3
+        ],
+        [
+          "TS0202",
+          3
+        ],
+        [
+          "_TZE284_",
+          2
+        ]
+      ],
+      "fix": "Set `get mainsPowered() { return true; }` and remove measure_battery in onNodeInit",
+      "files": [
+        "drivers/{driver}/device.js"
+      ]
+    },
+    {
+      "pattern": "Device Not Responding",
+      "id": "no_response",
+      "count": 5,
+      "priority": "high",
+      "topFPs": [
+        [
+          "vision",
+          3
+        ],
+        [
+          "_TZ3000_",
+          2
+        ],
+        [
+          "TS0601",
+          2
+        ],
+        [
+          "_TZ3210_w0qqde0g",
+          1
+        ],
+        [
+          "_TZ3210_",
+          1
+        ],
+        [
+          "TS011F",
+          1
+        ],
+        [
+          "_TZ3000_zutizvyk",
+          1
+        ],
+        [
+          "TS0203",
+          1
+        ],
+        [
+          "HOBEIAN",
+          1
+        ],
+        [
+          "ZG-204Z",
+          1
+        ]
+      ],
+      "fix": "Check Zigbee mesh, device routing, and cluster bindings",
+      "files": []
+    },
+    {
+      "pattern": "Ring/Alarm Wrong",
+      "id": "ring_value",
+      "count": 5,
+      "priority": "high",
+      "topFPs": [
+        [
+          "vision",
+          5
+        ],
+        [
+          "_TZ3000_",
+          3
+        ],
+        [
+          "TS011F",
+          3
+        ],
+        [
+          "_TZ3000_j1v25l17",
+          2
+        ],
+        [
+          "_TZE204_clrdrnya",
+          1
+        ],
+        [
+          "router",
+          1
+        ],
+        [
+          "_TZE204_",
+          1
+        ],
+        [
+          "TS0601",
+          1
+        ],
+        [
+          "_TZ3000_gjnozsaz",
+          1
+        ],
+        [
+          "_TZ3000_g",
+          1
+        ]
+      ],
+      "fix": "Check alarm DP map",
+      "files": []
+    },
+    {
+      "pattern": "Pairing Failure",
+      "id": "pairing",
+      "count": 4,
+      "priority": "medium",
+      "topFPs": [
+        [
+          "vision",
+          4
+        ],
+        [
+          "TS0601",
+          3
+        ],
+        [
+          "_TZE284_hdml1aav",
+          2
+        ],
+        [
+          "_TZE284_",
+          2
+        ],
+        [
+          "_TZE204_yvx5lh6k",
+          1
+        ],
+        [
+          "_TZE204_",
+          1
+        ],
+        [
+          "_TZ3210_jtifm80b",
+          1
+        ],
+        [
+          "_TZ3210_",
+          1
+        ],
+        [
+          "TS0502B",
+          1
+        ]
+      ],
+      "fix": "Check driver.compose.json fingerprints, verify manufacturerName + productId",
+      "files": [
+        "drivers/{driver}/driver.compose.json"
+      ]
+    },
+    {
+      "pattern": "Double Division (wrong sensor values)",
+      "id": "double_div",
+      "count": 2,
+      "priority": "medium",
+      "topFPs": [
+        [
+          "vision",
+          2
+        ],
+        [
+          "_TZE204_",
+          2
+        ],
+        [
+          "TS0601",
+          2
+        ],
+        [
+          "_TZE204_qyr2m29i",
+          1
+        ],
+        [
+          "_TZE204_clrdrnya",
+          1
+        ],
+        [
+          "router",
+          1
+        ]
+      ],
+      "fix": "Check TuyaEF00Manager.js:1912  skip auto-convert when dpMappings has divisor !== 1",
+      "files": [
+        "lib/tuya/TuyaEF00Manager.js"
+      ]
+    },
+    {
+      "pattern": "Device Shows Unknown",
+      "id": "unknown",
+      "count": 2,
+      "priority": "medium",
+      "topFPs": [
+        [
+          "_TZE284_aa03yzhs",
+          1
+        ],
+        [
+          "_TZE284_",
+          1
+        ],
+        [
+          "TS0601",
+          1
+        ],
+        [
+          "_TZ3210_jtifm80b",
+          1
+        ],
+        [
+          "vision",
+          1
+        ],
+        [
+          "_TZ3210_",
+          1
+        ],
+        [
+          "TS0502B",
+          1
+        ]
+      ],
+      "fix": "Check settings keys: zb_model_id (not zb_modelId), zb_manufacturer_name (not zb_manufacturerName)",
+      "files": [
+        "drivers/{driver}/device.js"
+      ]
+    },
+    {
+      "pattern": "Wrong Voltage",
+      "id": "voltage_wrong",
+      "count": 1,
+      "priority": "low",
+      "topFPs": [
+        [
+          "_TZ3000_xr3htd96",
+          1
+        ],
+        [
+          "vision",
+          1
+        ],
+        [
+          "_TZ3000_",
+          1
+        ],
+        [
+          "TS0201",
+          1
+        ]
+      ],
+      "fix": "Check voltage divisor",
+      "files": []
+    },
+    {
+      "pattern": "Wrong Energy",
+      "id": "energy_wrong",
+      "count": 1,
+      "priority": "low",
+      "topFPs": [
+        [
+          "_TZE204_clrdrnya",
+          1
+        ],
+        [
+          "router",
+          1
+        ],
+        [
+          "vision",
+          1
+        ],
+        [
+          "_TZE204_",
+          1
+        ],
+        [
+          "TS0601",
+          1
+        ]
+      ],
+      "fix": "Check energy divisor",
+      "files": []
+    }
+  ],
+  "detections": {
+    "inversion": 0,
+    "battery": 25,
+    "double_div": 2,
+    "pairing": 4,
+    "unknown": 2,
+    "flow_dup": 0,
+    "no_response": 5,
+    "voltage_wrong": 1,
+    "no_temperature": 0,
+    "ring_value": 5,
+    "energy_wrong": 1,
+    "sensor_zero": 0
+  }
+}
