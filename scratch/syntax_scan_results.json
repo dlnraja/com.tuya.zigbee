@@ -1,0 +1,630 @@
+[
+  {
+    "file": ".homeybuild\\app.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\app.js:537\r\n       ;\r\n       ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\air_purifier_sensor_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\air_purifier_sensor_hybrid\\device.js:546\r\n        this.log('[MMWAVE] Initial occupancy read failed (device sleeping? )')       ;\r\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\air_purifier_siren_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\air_purifier_siren_hybrid\\device.js:120\r\n(-new Date().getTimezoneOffset() * 60;\r\n                                     ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\bulb_rgb\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\bulb_rgb\\device.js:206\r\n    const tuyaValue = Math.round(6500 - kelvin / 4500 * 1000;\r\n                                                        ^^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\bulb_rgb_led_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\bulb_rgb_led_hybrid\\device.js:206\r\n    const tuyaValue = Math.round(6500 - kelvin / 4500 * 1000;\r\n                                                        ^^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\bulb_rgb_rgbw_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\bulb_rgb_rgbw_hybrid\\device.js:206\r\n    const tuyaValue = Math.round(6500 - kelvin / 4500 * 1000;\r\n                                                        ^^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\button_wireless\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\button_wireless\\device.js:120\r\n       ;\r\n       ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\button_wireless_plug_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\button_wireless_plug_hybrid\\device.js:165\r\n       ;\r\n       ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\button_wireless_switch_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\button_wireless_switch_hybrid\\device.js:310\r\n      lastState: { 1, 2 },\r\n                   ^\r\n\r\nSyntaxError: Unexpected number\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\device_air_purifier_plug_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\device_air_purifier_plug_hybrid\\device.js:165\r\n       ;\r\n       ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\device_radiator_valve_smart_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\device_radiator_valve_smart_hybrid\\device.js:129\r\n      }, safeMultiply(6, 60, 60 * 1000);\r\n                                      ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\dimmer_ts110e\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\dimmer_ts110e\\device.js:106\r\n\r\n\r\n\r\nSyntaxError: Unexpected end of input\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\dimmer_wall_plug_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\dimmer_wall_plug_hybrid\\device.js:165\r\n       ;\r\n       ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\dimmer_wall_switch_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\dimmer_wall_switch_hybrid\\device.js:310\r\n      lastState: { 1, 2 },\r\n                   ^\r\n\r\nSyntaxError: Unexpected number\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\fingerbot\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\fingerbot\\device.js:51\r\n(-new Date().getTimezoneOffset() * 60;\r\n                                     ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\gas_sensor_switch_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\gas_sensor_switch_hybrid\\device.js:49\r\n  ? PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) \r\n                                                            ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\ir_blaster\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\ir_blaster\\device.js:1130\r\n    const avgPulse = patterns.reduce((a, b) => a + b,(0 / patterns.length);\r\n                                                                         ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\lcdtemphumidsensor_plug_energy_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\lcdtemphumidsensor_plug_energy_hybrid\\device.js:165\r\n       ;\r\n       ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\light_bulb_rgb_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\light_bulb_rgb_hybrid\\device.js:156\r\n    const h = Math.round((this.getCapabilityValue('light_hue')|| 0) * 360));\r\n                                                                          ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\light_bulb_rgb_led_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\light_bulb_rgb_led_hybrid\\device.js:156\r\n    const h = Math.round((this.getCapabilityValue('light_hue')|| 0) * 360));\r\n                                                                          ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\light_bulb_rgb_rgbw_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\light_bulb_rgb_rgbw_hybrid\\device.js:156\r\n    const h = Math.round((this.getCapabilityValue('light_hue')|| 0) * 360));\r\n                                                                          ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\motion_sensor\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\motion_sensor\\device.js:376\r\n   :  null     ;\r\n               ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\motion_sensor_2\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\motion_sensor_2\\device.js:369\r\n  async onEndDeviceAnnounce() {\r\n        ^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Unexpected identifier 'onEndDeviceAnnounce'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\motion_sensor_radar_mmwave\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\motion_sensor_radar_mmwave\\device.js:572\r\n        this.log('[MMWAVE] Initial occupancy read failed (device sleeping? )\")       ;\r\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\plug_energy_monitor\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\plug_energy_monitor\\device.js:165\r\n       ;\r\n       ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\plug_energy_monitor_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\plug_energy_monitor_hybrid\\device.js:234\r\nreturn safeMultiply(Math.min(v, 2, 100); // Fallback: treat as raw with x2\r\n                                      ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\plug_energy_monitor_hybrid\\driver.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\plug_energy_monitor_hybrid\\driver.js:75\r\n  const args.device.getCapabilityValue('measure_temperature');\r\n        ^\r\n\r\nSyntaxError: Identifier 'args' has already been declared\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\presence_sensor_radar\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\presence_sensor_radar\\device.js:529\r\n  const result = Math.round(distance * 100)/100); // 2 decimal places\r\n                                               ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\radiator_controller\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\radiator_controller\\device.js:507\r\n  getSafeCluster(clusterId, endpointId = 1) {\r\n                                            ^\r\n\r\nSyntaxError: Unexpected token '{'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\radiator_controller\\driver.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\radiator_controller\\driver.js:31\r\n  const 'radiator_controller';\r\n        ^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Unexpected string\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\radiator_valve\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\radiator_valve\\device.js:147\r\n      thermo.on('attr.localTemperature', (v) => this.setCapabilityValue('measure_temperature', parseFloat(v , 100).catch(() => { })) ;\r\n                                                                                                                                   ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\radiator_valve_zigbee\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\radiator_valve_zigbee\\device.js:139\r\n      await this.sendTuyaDPCommand(1,Math.round(value * 10) * 2));\r\n                                                                ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\radiator_wifi_tuya\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\radiator_wifi_tuya\\device.js:203\r\n    } * 60000); // Every 60 seconds\r\n    ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\remote_button_wireless_plug_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\remote_button_wireless_plug_hybrid\\device.js:165\r\n       ;\r\n       ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\remote_button_wireless_plug_hybrid\\driver.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\remote_button_wireless_plug_hybrid\\driver.js:134\r\n  }\r\n  ^\r\n\r\nSyntaxError: Missing catch or finally after try\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\remote_dimmer\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\remote_dimmer\\device.js:139\r\n      this.homey.flow._getFlowCard(id).trigger(this tokens, {})\r\n                                               ^^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\scene_switch_4\\driver.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\scene_switch_4\\driver.js:55\r\n        if (card) {\r\n        ^^\r\n\r\nSyntaxError: Unexpected token 'if'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_climate_contact_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_climate_contact_hybrid\\device.js:234\r\nreturn safeMultiply(Math.min(v, 2, 100); // Fallback: treat as raw with x2\r\n                                      ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_climate_contact_hybrid\\driver.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_climate_contact_hybrid\\driver.js:75\r\n  const args.device.getCapabilityValue('measure_temperature');\r\n        ^\r\n\r\nSyntaxError: Identifier 'args' has already been declared\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_climate_lcdtemphumidsensor_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_climate_lcdtemphumidsensor_hybrid\\device.js:37\r\n * \r\n ^\r\n\r\nSyntaxError: Unexpected token '*'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_climate_lcdtemphumidsensor_hybrid\\driver.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_climate_lcdtemphumidsensor_hybrid\\driver.js:75\r\n  const args.device.getCapabilityValue('measure_temperature');\r\n        ^\r\n\r\nSyntaxError: Identifier 'args' has already been declared\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_climate_motion_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_climate_motion_hybrid\\device.js:377\r\n   :  null     ;\r\n               ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_climate_presence_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_climate_presence_hybrid\\device.js:534\r\n  const result = Math.round(distance * 100)/100); // 2 decimal places\r\n                                               ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_climate_temphumidsensor_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_climate_temphumidsensor_hybrid\\device.js:234\r\nreturn safeMultiply(Math.min(v, 2, 100); // Fallback: treat as raw with x2\r\n                                      ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_climate_temphumidsensor_hybrid\\driver.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_climate_temphumidsensor_hybrid\\driver.js:75\r\n  const args.device.getCapabilityValue('measure_temperature');\r\n        ^\r\n\r\nSyntaxError: Identifier 'args' has already been declared\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_contact_climate_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_contact_climate_hybrid\\device.js:235\r\nreturn safeMultiply(Math.min(v, 2, 100); // Fallback: treat as raw with x2\r\n                                      ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_contact_climate_hybrid\\driver.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_contact_climate_hybrid\\driver.js:75\r\n  const args.device.getCapabilityValue('measure_temperature');\r\n        ^\r\n\r\nSyntaxError: Identifier 'args' has already been declared\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_contact_motion_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_contact_motion_hybrid\\device.js:377\r\n   :  null     ;\r\n               ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_contact_presence_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_contact_presence_hybrid\\device.js:534\r\n  const result = Math.round(distance * 100)/100); // 2 decimal places\r\n                                               ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_contact_zigbee_hybrid\\driver.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_contact_zigbee_hybrid\\driver.js:65\r\n  }\r\n  ^\r\n\r\nSyntaxError: Missing catch or finally after try\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_gas_presence_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_gas_presence_hybrid\\device.js:534\r\n  const result = Math.round(distance * 100)/100); // 2 decimal places\r\n                                               ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_motion_presence_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_motion_presence_hybrid\\device.js:529\r\n  const result = Math.round(distance * 100)/100); // 2 decimal places\r\n                                               ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_motion_radar_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_motion_radar_hybrid\\device.js:549\r\n        this.log('[MMWAVE] Initial occupancy read failed (device sleeping? )\")       ;\r\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sensor_presence_radar_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sensor_presence_radar_hybrid\\device.js:529\r\n  const result = Math.round(distance * 100)/100); // 2 decimal places\r\n                                               ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\sirentemphumidsensor\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\sirentemphumidsensor\\device.js:120\r\n(-new Date().getTimezoneOffset() * 60;\r\n                                     ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\siren_sirentemphumidsensor_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\siren_sirentemphumidsensor_hybrid\\device.js:120\r\n(-new Date().getTimezoneOffset() * 60;\r\n                                     ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\smart_heater_controller\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\smart_heater_controller\\device.js:376\r\n        data:Buffer.from([Math.round(calibration])) // Send in 0.1Â°C units\r\n                                     ^^^^^^^^^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\smart_knob\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\smart_knob\\device.js:75\r\n        this._getFlowCard('smart_knob_rotated')?.trigger(this, { direction , level: this.getCapabilityValue('dim') ? Math.round(this.getCapabilityValue('dim'safeMultiply() * 100)) : 0 }, {}).catch(() => {})\r\n                                                                                                                                                        ^^^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\smart_knob_switch_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\smart_knob_switch_hybrid\\device.js:79\r\n        if (trigger ) trigger.trigger(this, { direction , level: this.getCapabilityValue('dim') ? Math.round(this.getCapabilityValue('dim'safeMultiply() * 100)) : 0 }, {}).catch(() => {})      ;\r\n                                                                                                                                     ^^^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\smoke_detector_advanced\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\smoke_detector_advanced\\device.js:67\r\n  let false;\r\n  ^^^\r\n\r\nSyntaxError: Unexpected strict mode reserved word\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\switch_2gang\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\switch_2gang\\device.js:320\r\n      lastState: { 1, 2 },\r\n                   ^\r\n\r\nSyntaxError: Unexpected number\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\switch_3gang\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\switch_3gang\\device.js:93\r\n      lastState: { 1, 2, 3 },\r\n                   ^\r\n\r\nSyntaxError: Unexpected number\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\switch_4gang\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\switch_4gang\\device.js:49\r\n  ? PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) \r\n                                                            ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\switch_dimmer_1gang\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\switch_dimmer_1gang\\device.js:27\r\n      const tuyaVal = Math.round(10 + v * 1));\r\n                                            ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\switch_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\switch_hybrid\\device.js:311\r\n      lastState: { 1, 2 },\r\n                   ^\r\n\r\nSyntaxError: Unexpected number\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\temphumidsensor\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\temphumidsensor\\device.js:36\r\n      4: { capability: 'measure_battery', divisor: 1, transform: (v) =>safeMultiply(Math.min(v, 2, 100) },\r\n                                                                                                      ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": ".homeybuild\\drivers\\thermostat_4ch\\driver.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\.homeybuild\\drivers\\thermostat_4ch\\driver.js:29\r\n  const(id,fn)=>{try{this.homey.flow.getActionCard(id).registerRunListener(fn);\r\n       ^\r\n\r\nSyntaxError: Unexpected token '('\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\sensor_climate_motion_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_climate_motion_hybrid\\device.js:377\r\n   :  null;\r\n          ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\sensor_climate_presence_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_climate_presence_hybrid\\device.js:533\r\n  const result = Math.round(distance * 100)/100); // 2 decimal places\r\n                                               ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\sensor_contact_motion_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_contact_motion_hybrid\\device.js:377\r\n   :  null;\r\n          ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\sensor_contact_presence_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_contact_presence_hybrid\\device.js:533\r\n  const result = Math.round(distance * 100)/100); // 2 decimal places\r\n                                               ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\sensor_contact_zigbee_hybrid\\driver.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_contact_zigbee_hybrid\\driver.js:65\r\n  }\r\n  ^\r\n\r\nSyntaxError: Missing catch or finally after try\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\sensor_gas_presence_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_gas_presence_hybrid\\device.js:533\r\n  const result = Math.round(distance * 100)/100); // 2 decimal places\r\n                                               ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\sensor_lcdtemphumidsensor_soil_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_lcdtemphumidsensor_soil_hybrid\\device.js:477\r\n      try { return this._getFlowCard(id; }\r\n                                     ^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\sensor_motion_presence_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_motion_presence_hybrid\\device.js:528\r\n  const result = Math.round(distance * 100)/100); // 2 decimal places\r\n                                               ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\sensor_motion_radar_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_motion_radar_hybrid\\device.js:549\r\n        this.log('[MMWAVE] Initial occupancy read failed (device sleeping? )\");\r\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\sensor_presence_radar_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sensor_presence_radar_hybrid\\device.js:528\r\n  const result = Math.round(distance * 100)/100); // 2 decimal places\r\n                                               ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\sirentemphumidsensor\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\sirentemphumidsensor\\device.js:360\r\n      const localSeconds =utcSeconds - (new Date().getTimezoneOffset() * 60;\r\n                                                                           ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\smart_heater_controller\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_heater_controller\\device.js:376\r\n        data:Buffer.from([Math.round(calibration])) // Send in 0.1Â°C units\r\n                                     ^^^^^^^^^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\smart_knob_switch_hybrid\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\smart_knob_switch_hybrid\\device.js:77\r\n        if (trigger ) trigger.trigger(this, { direction , level: this.getCapabilityValue('dim') ? Math.round(this.getCapabilityValue('dim') * 100)) : 0 }, {}).catch(() => {});\r\n                                                                                                                                                         ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\thermostat_4ch\\driver.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\thermostat_4ch\\driver.js:29\r\n  const(id,fn)=>{try{this.homey.flow.getActionCard(id).registerRunListener(fn);\r\n       ^\r\n\r\nSyntaxError: Unexpected token '('\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\universal_fallback\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\universal_fallback\\device.js:173\r\n          getOpts: { getOnStart: true, getOnOnline: true }\r\n          ^^^^^^^\r\n\r\nSyntaxError: Unexpected identifier 'getOpts'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\valve_irrigation\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\valve_irrigation\\device.js:33\r\n      101: { capability: isImmax ? 'meter_water' , internal: isImmax ? null : 'last_water_time', divisor: 1000 },\r\n                                                 ^\r\n\r\nSyntaxError: Unexpected token ','\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\wall_curtain_switch\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_curtain_switch\\device.js:25\r\n          await ep.clusters.windowCovering.goToLiftPercentage({ percentageLiftValue:Math.round(value)}));\r\n                                                                                                       ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\wall_dimmer_1gang_1way\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_dimmer_1gang_1way\\device.js:135\r\n            await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(err => )\r\n                                                                                               ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\wall_remote_4_gang_2\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wall_remote_4_gang_2\\device.js:55\r\n        .catch(err => this.error('[BUTTON] Trigger error:', err.message);\r\n                                                                       ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\wifi_air_purifier\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_air_purifier\\device.js:15\r\n        reverseTransform: (v) =>Math.round(v)})\r\n                                              ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\wifi_camera\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_camera\\device.js:196\r\n          this._video = await this.homey.videos.createVideoRTSP(rtspUrl);\r\n                        ^^^^^\r\n\r\nSyntaxError: await is only valid in async functions and the top level bodies of modules\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\wifi_cover\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_cover\\device.js:22\r\n        reverseTransform: (v) =>Math.round(v)})\r\n                                              ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "drivers\\wifi_ewelink_dimmer\\device.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\drivers\\wifi_ewelink_dimmer\\device.js:12\r\n    this.registerCapabilityListener('dim',async v=>{this._lastBrightness=Math.round(v);await this._client.setDimmer(this._lastBrightness,true));\r\n                                                                                                                                              ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "reimplementation_gateway\\sdk\\proxima.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\reimplementation_gateway\\sdk\\proxima.js:29\r\nclass Core Reimplementation {\r\n           ^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Unexpected identifier 'Reimplementation'\r\n    at checkSyntax (node:internal/main/check_syntax:74:5)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "reimplementation_gateway\\src\\mcp-server-v3.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\reimplementation_gateway\\src\\mcp-server-v3.js:2\r\n#!/usr/bin/env node\r\n^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at checkSyntax (node:internal/main/check_syntax:74:5)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scratch\\clean_github_scripts.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scratch\\clean_github_scripts.js:45\r\n    return `require('${Math.round(p.replace(/\\s+/g)}')`;\r\n                                                  ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scratch\\detect_await.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scratch\\detect_await.js:14\r\n        const funcMatch = line.match(/(async\\s+)?(function\\s+\\w+|[\\w\\$]+\\s*\\(.*? \\ )\\s*\\{|[\\w\\$]+\\s*=\\s*\\(.*? \\ )\\s*=>|[\\w\\$]+\\s*=\\s*async\\s*\\(.*? \\)\\s*=>)/)      ;\r\n                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /(async\\s+)?(function\\s+\\w+|[\\w\\$]+\\s*\\(.*? \\ )\\s*\\{|[\\w\\$]+\\s*=\\s*\\(.*? \\ )\\s*=>|[\\w\\$]+\\s*=\\s*async\\s*\\(.*? \\)\\s*=>)/: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scratch\\fix_light_capabilities.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scratch\\fix_light_capabilities.js:21\r\n        data = data.replace(/\"light_color_temp\",\\s*/ganalyqe yout \r\n                            ^\r\n\r\nSyntaxError: Invalid regular expression flags\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scratch\\fix_needs_epoch.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scratch\\fix_needs_epoch.js:11\r\ncontent = content.replace(/get needsTuyaEpoch\\(\\) \\{[\\s\\S]*? qoy0ekbd'\) ;\\s+\\}/ ,\r\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /get needsTuyaEpoch\\(\\) \\{[\\s\\S]*? qoy0ekbd'\) ;\\s+\\}/: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scratch\\fix_radar_script.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scratch\\fix_radar_script.js:25\r\n        lines.slice(1587, 1595).forEach((l/i) => console.log(`${1588+i}: [${l}]`));\r\n                                         ^^^\r\n\r\nSyntaxError: Invalid destructuring assignment target\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scratch\\refactor_climate_pass2.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scratch\\refactor_climate_pass2.js:6\r\nconst needsTuyaEpochRegex = /get needsTuyaEpoch\\(\\) \\{[\\s\\S]*? get needsTuyaEpoch\\(\\ ) \\{[\\s\\S]*? return mfr\\.startsWith\\('_tze200'\\ )[\\s\\S]*?qoy0ekbd' ;\\s+}/;\r\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /get needsTuyaEpoch\\(\\) \\{[\\s\\S]*? get needsTuyaEpoch\\(\\ ) \\{[\\s\\S]*? return mfr\\.startsWith\\('_tze200'\\ )[\\s\\S]*?qoy0ekbd' ;\\s+}/: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scratch\\refactor_climate_temphumid.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scratch\\refactor_climate_temphumid.js:80\r\ncontent = content.replace(/const mfr = \\(this\\.getSetting\\('zb_manufacturer_name'\\) \\|\\| ''\\)\\.toLowerCase\\(\\ );/g, \"const mfr = getManufacturer(this);\");\r\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /const mfr = \\(this\\.getSetting\\('zb_manufacturer_name'\\) \\|\\| ''\\)\\.toLowerCase\\(\\ );/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scratch\\refactor_presence_drivers.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scratch\\refactor_presence_drivers.js:40\r\n  content = content.replace(/const mfrKey = manufacturerName\\? \\.toLowerCase\\(\\ ) \\|\\| '' ;/g, \"const mfrKey = (manufacturerName || '').toLowerCase();\");\r\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /const mfrKey = manufacturerName\\? \\.toLowerCase\\(\\ ) \\|\\| '' ;/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scratch\\repair_null_syntax.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scratch\\repair_null_syntax.js:53\r\n    content = content.replace(/\\(device sleeping\\? \\)\\s*['\"]\)\\s*:\\s*null\\s*;/g, '(device sleeping? )\");');\r\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /\\(device sleeping\\? \\)\\s*['\"]\)\\s*:\\s*null\\s*;/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\analysis\\restore_and_fix_flows.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\analysis\\restore_and_fix_flows.js:58\r\n    return backups.length > 0 ? path.join(this.backupPath, backups[0]);\r\n                                                                      ^\r\n\r\nSyntaxError: Unexpected token ';'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\fixes\\AUTO_SYNTAX_REPAIR.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\fixes\\AUTO_SYNTAX_REPAIR.js:34\r\n               line = line.replace('Math.round(v);', 'Math.round(v));'));\r\n                                                                       ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\fixes\\CLEAN_GLOBAL_CORRUPTION.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\fixes\\CLEAN_GLOBAL_CORRUPTION.js:30\r\n        pattern: /Math\\.round\\(([^/)]+)\\s*\\/\\s*(\\d+)\\)(\\/\\d+)? \)/g ,\r\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /Math\\.round\\(([^/)]+)\\s*\\/\\s*(\\d+)\\)(\\/\\d+)? \)/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\fixes\\FINAL_STRUCTURAL_PUNCH.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\fixes\\FINAL_STRUCTURAL_PUNCH.js:32\r\n    if (content.includes('const card = type === \\'trigger\\' ? ')) {\r\n                                                                 ^\r\n\r\nSyntaxError: Unexpected token ':'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\fixes\\FLOW_CARD_SURGERY.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\fixes\\FLOW_CARD_SURGERY.js:48\r\n    const brokenEndPattern = /\\s*}\\s+this\\.log\\('\\[FLOW\\][^']+'\\);\\s*}\\s+}\\s+}(? =\\s+module\\.exports )/       ;\r\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /\\s*}\\s+this\\.log\\('\\[FLOW\\][^']+'\\);\\s*}\\s+}\\s+}(? =\\s+module\\.exports )/: Invalid group\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\fixes\\HEALING_HAMMER.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\fixes\\HEALING_HAMMER.js:35\r\n    content = content.replace(/sendTuyaDP\\s*\\(([^,]+),\\s*([^,]+),\\s*Math\\.round\\s*\\(\\s*safeMultiply\\s*\\(([^)]+)\\)\\s*;\\s*$/gm, \"sendTuyaDP($1, $2, Math.round($3)));\"));\r\n                                                                                                                                                                     ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\fixes\\MASSIVE_RESTORATION.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\fixes\\MASSIVE_RESTORATION.js:34\r\n    content = content.replace(/Math\\.round\\(\\(safeDivide\\(rawTemp,safeMultiply\\(divisor\\),\\s*safeParse\\)\\(10\\),\\s*10\\));/g, 'Math.round((rawTemp / divisor) * 10) / 10;'));\r\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /Math\\.round\\(\\(safeDivide\\(rawTemp,safeMultiply\\(divisor\\),\\s*safeParse\\)\\(10\\),\\s*10\\));/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\fixes\\RECOVER_CORRUPTED_FLOWS.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\fixes\\RECOVER_CORRUPTED_FLOWS.js:26\r\n  content = content.replace(/try\\s*\\{\\s*\\n\\s+\\.registerRunListener([\\s\\S]*? )this\\.log\\('\\[FLOW\\]\\s*\\s*([^']+)'\)/g, (match, body , id) => {\r\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /try\\s*\\{\\s*\\n\\s+\\.registerRunListener([\\s\\S]*? )this\\.log\\('\\[FLOW\\]\\s*\\s*([^']+)'\)/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\fixes\\ULTIMATE_AUTO_REPAIR.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\fixes\\ULTIMATE_AUTO_REPAIR.js:30\r\n        const pattern = /sendTuyaDP\\(([^,]+),\\s*([^,]+),\\s*Math\\.round\\s*\\(\\s*safeMultiply\\s*\\(([^)]+)(,\\s*[^)]+)? \)\\s* ;?$/gm       ;\r\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /sendTuyaDP\\(([^,]+),\\s*([^,]+),\\s*Math\\.round\\s*\\(\\s*safeMultiply\\s*\\(([^)]+)(,\\s*[^)]+)? \)\\s* ;?$/gm: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\fixes\\ULTIMATE_DRIVER_STABILIZER.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\fixes\\ULTIMATE_DRIVER_STABILIZER.js:49\r\n    const onInitRegex = /(async\\s+)? onInit\\(\\ ) \\{([\\s\\S]*?)\\}/       ;\r\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /(async\\s+)? onInit\\(\\ ) \\{([\\s\\S]*?)\\}/: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\legacy\\restore_all_and_verify_conflicts.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\legacy\\restore_all_and_verify_conflicts.js:164\r\n    const legitimateRate = totalPairs > 0 ? ((totalPairs - conflicts / totalPairs) * 100) : 100      ;\r\n                                                                                         ^\r\n\r\nSyntaxError: Unexpected token ':'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\maintenance\\ALIGN_ALL_VERSIONS.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\ALIGN_ALL_VERSIONS.js:77\r\n    readme = readme.replace(/# Universal Tuya Unified Engine \\(v.*? \\)/, `# Universal Tuya Unified Engine (v${TARGET_VERSION})`)       ;\r\n                                                                                                                            ^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\maintenance\\autonomous-caseless-fixer.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\autonomous-caseless-fixer.js:91\r\n          pattern: /(\\w+|\\((?:.*? )\\))\\.toUpperCase\\(\\ )\\s*===? \\s*(['\"] )(.*?   )\\2/g ,\r\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /(\\w+|\\((?:.*? )\\))\\.toUpperCase\\(\\ )\\s*===? \\s*(['\"] )(.*?   )\\2/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\maintenance\\autonomous-intel-harvester.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\autonomous-intel-harvester.js:110\r\n        const funcRegex = /(?:async\\s+)? ([a-zA-Z0-9_]+)\\s*\\([^)]*\)\\s*\\{/g       ;\r\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /(?:async\\s+)? ([a-zA-Z0-9_]+)\\s*\\([^)]*\)\\s*\\{/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\maintenance\\autonomous-maintenance-orchestrator.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\autonomous-maintenance-orchestrator.js:101\r\n  const duration = Date.now() - startTime * 1000).toFixed(1);\r\n                                                ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\maintenance\\fix-broken-iife-triggers.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\fix-broken-iife-triggers.js:33\r\n    content = content.replace(/try \\{ \\(\\(\\) => \\{ try \\{ return (.*?)\\._getFlowCard\\((.*? )\) ; \\} catch \\(e\\) \\{ (.*? ) \\} \\}\\)\\(\\ )\\.trigger\\((.*? )\\)\\.catch\\(\\(\\) => \\{\\}\) ; \\}/g, (match, context, args, error_logic , trigger_args) => {\r\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /try \\{ \\(\\(\\) => \\{ try \\{ return (.*?)\\._getFlowCard\\((.*? )\) ; \\} catch \\(e\\) \\{ (.*? ) \\} \\}\\)\\(\\ )\\.trigger\\((.*? )\\)\\.catch\\(\\(\\) => \\{\\}\) ; \\}/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\maintenance\\fix-unsafe-flow-cards.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\fix-unsafe-flow-cards.js:58\r\n      reg: /(? <!try\\s*\\{\\s*|return\\s+)(this\\. )? homey\\.flow\\.get(Device )? (Trigger|Condition|Action)Card\\(['\"]([^'\"]+)['\"]\)(\\.? \\w+ )? /g ,\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /(? <!try\\s*\\{\\s*|return\\s+)(this\\. )? homey\\.flow\\.get(Device )? (Trigger|Condition|Action)Card\\(['\"]([^'\"]+)['\"]\)(\\.? \\w+ )? /g: Invalid group\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\maintenance\\fleet-repair-flows.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\fleet-repair-flows.js:59\r\n  const iifeRegex = /\\(\\(\\) => \\{ try \\{ return this\\.homey\\.flow\\.(getTriggerCard|getActionCard|getConditionCard)\\((.*? )\) ; \\} catch \\(e\\) \\{ this\\.error\\('\\[FLOW-SAFE\\] Failed to load card:', e\\.message\\); return null; \\} \\}\\)\\(\\)/g;\r\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /\\(\\(\\) => \\{ try \\{ return this\\.homey\\.flow\\.(getTriggerCard|getActionCard|getConditionCard)\\((.*? )\) ; \\} catch \\(e\\) \\{ this\\.error\\('\\[FLOW-SAFE\\] Failed to load card:', e\\.message\\); return null; \\} \\}\\)\\(\\)/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\maintenance\\harden-driver-identification.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\harden-driver-identification.js:26\r\n    const drvMatch = body.match(/driverId:\\s*'(.+? )'/)       ;\r\n                                ^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\maintenance\\INTEGRITY_SHIELD.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\INTEGRITY_SHIELD.js:59\r\n      if (line.includes('Math.round(') || line.includes('' || line.includes('') {)))\r\n                                                                              ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\maintenance\\master-self-heal.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\master-self-heal.js:355\r\n      if (/manufacturerName\\s*===? \\s*['\"]_T/i.test(line) && !/toLowerCase/.test(line)) {\r\n                                                                                       ^\r\n\r\nSyntaxError: Unexpected token ':'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\maintenance\\migrate-to-safe-flow-helper.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\migrate-to-safe-flow-helper.js:14\r\n  const varIdRegex = /(const|let|var)\\s+id\\s*=\\s*(.*?   ) ;([\\s\\S]{1 , 100}? )(this\\. )? homey\\.flow\\.get(Trigger|Condition|Action)Card\\(\\ )/g       ;\r\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /(const|let|var)\\s+id\\s*=\\s*(.*?   ) ;([\\s\\S]{1 , 100}? )(this\\. )? homey\\.flow\\.get(Trigger|Condition|Action)Card\\(\\ )/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\maintenance\\update-github-actions.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\update-github-actions.js:34\r\n        content = content.replace(/\\+\\+\\+\\+\\+\\+\\+\\r?\\.?\\n? \\s*REPLACE/g, '')       ;\r\n                                                                         ^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\maintenance\\zero-defect-architect-audit.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\zero-defect-architect-audit.js:152\r\n            .replace(/(['\"`])((?:\\\\.|(? !\\1). : null)*?   : null)\\1/g , '$1$1') // Replace string content with empty quotes (handles escapes)\r\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /(['\"`])((?:\\\\.|(? !\\1). : null)*?   : null)\\1/g: Invalid group\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\remediation\\emergency-repair-hardener-corruption.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\remediation\\emergency-repair-hardener-corruption.js:57\r\n        line = line.replace(/\\/\\/ (.*? )safeMultiply\\(([^,]+),\\s*([^)]+)\)/g , '// $1$2 * $3')      ;\r\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /\\/\\/ (.*? )safeMultiply\\(([^,]+),\\s*([^)]+)\)/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\remediation\\fix-nan-safety.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\remediation\\fix-nan-safety.js:44\r\n        line = line.replace(/(\\(\\([^)]+\\)\\s*\\/\\s*\\([^)]+\\)\\))(? !\\s*\\* )/g , '$1')      ;\r\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /(\\(\\([^)]+\\)\\s*\\/\\s*\\([^)]+\\)\\))(? !\\s*\\* )/g: Invalid group\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\remediation\\fix-pollution.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\remediation\\fix-pollution.js:44\r\n    line = line.replace(/(['\"`])(.*?)\\bsafeDivide\\((.*?   ) ,\\s*(.*? )\)(.*? )\\1/g, (match, quote, before, num, den, after) => {\r\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /(['\"`])(.*?)\\bsafeDivide\\((.*?   ) ,\\s*(.*? )\)(.*? )\\1/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\remediation\\fix_corrupted_js.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\remediation\\fix_corrupted_js.js:63\r\n  const tryBlockRegex = /try\\s*\\{\\s*\\(\\(\\)\\s*=>\\s*\\{\\s*try\\s*\\{\\s*return\\s*(\\.registerRunListener[\\s\\S]*? )\\s*\\}\\s*catch\\s*\\(err\\)\\s*\\{\\s*this\\.log\\(`\\[FLOW\\]\\s+([^`]+)`\\);\\s*\\}\\s*\\)\\(\\ )/g ;\r\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /try\\s*\\{\\s*\\(\\(\\)\\s*=>\\s*\\{\\s*try\\s*\\{\\s*return\\s*(\\.registerRunListener[\\s\\S]*? )\\s*\\}\\s*catch\\s*\\(err\\)\\s*\\{\\s*this\\.log\\(`\\[FLOW\\]\\s+([^`]+)`\\);\\s*\\}\\s*\\)\\(\\ )/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\remediation\\full-rules-based-fixer.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\remediation\\full-rules-based-fixer.js:35\r\n      batteryCheckOrder: { pattern: /measure_battery\\s*[<>=]+\\s*200(? ![0-9] )/g , msg: 'A4: Check battery <=100 FIRST' },\r\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /measure_battery\\s*[<>=]+\\s*200(? ![0-9] )/g: Invalid group\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\remediation\\resolve-manifest-collisions.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\remediation\\resolve-manifest-collisions.js:95\r\n              const pIdx = (targetModel === '*') ? 0 : (Array.isArray(compose.zigbee.productId) ? compose.zigbee.productId.findIndex(p => p.toLowerCase() === targetModel.toLowerCase()) : -1)      ;\r\n                                                                                                                                                                                      ^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\remediation\\resolve-nan-risks.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\remediation\\resolve-nan-risks.js:68\r\n    { regex: /([a-zA-Z0-9_\\.]+)\\s*\\/\\s*1000(? !\\d )/g , replacement: '$1/1000' },\r\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /([a-zA-Z0-9_\\.]+)\\s*\\/\\s*1000(? !\\d )/g: Invalid group\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\remediation\\resolve-numeric-literals.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\remediation\\resolve-numeric-literals.js:17\r\n  { regex: /(? <!\\w )0xEF00(? !\\w )/g , replacement: 'CLUSTERS.TUYA_EF00' },\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /(? <!\\w )0xEF00(? !\\w )/g: Invalid group\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\remediation\\resolve-variable-nan-risks.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\remediation\\resolve-variable-nan-risks.js:45\r\n  const VAR_DIV_REGEX = /(? <!['\"/] )(? <![a-zA-Z0-9_/])([a-zA-Z0-9_.\\[\\]]+)\\s*\\/\\s*([a-zA-Z_][a-zA-Z0-9_.\\[\\]]* )(? ![a-zA-Z0-9_/] )/g       ;\r\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /(? <!['\"/] )(? <![a-zA-Z0-9_/])([a-zA-Z0-9_.\\[\\]]+)\\s*\\/\\s*([a-zA-Z_][a-zA-Z0-9_.\\[\\]]* )(? ![a-zA-Z0-9_/] )/g: Invalid group\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\remediation\\sledgehammer-integrity.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\remediation\\sledgehammer-integrity.js:27\r\n  res = res.replace(/\\(([^(),]+) -? ? safeDivide\\(([^(),]+)\\), ([^(),]+)\\)/g, '($1 - $2 / $3)')       ;\r\n                                                                              ^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\remediation\\uncorrupt-paths.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\remediation\\uncorrupt-paths.js:39\r\n            line.includes('@param')) {\r\n                                   ^\r\n\r\nSyntaxError: Unexpected token ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\remediation\\zero-defect-integrity-restorer.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\remediation\\zero-defect-integrity-restorer.js:42\r\n    content = content.replace(/safeDivide\\(return (.*?   ) , (.*? )\)/g , 'return $1/$2')       ;\r\n                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /safeDivide\\(return (.*?   ) , (.*? )\)/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\sync\\crawl-deconz.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\sync\\crawl-deconz.js:35\r\n          allFps.set(k, { mfr, productId: pidM ? pidM[1] , source: \"deconz\" })      ;\r\n                                                         ^\r\n\r\nSyntaxError: Unexpected token ','\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\sync\\crawl-z2m.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\sync\\crawl-z2m.js:53\r\n      if (!fps.has(k)) fps.set(k, { mfr, productId: pidM? pidM[1], model , description: desc, vendor, file: filename, source: \"z2m\" })      ;\r\n                                                                 ^\r\n\r\nSyntaxError: Unexpected token ','\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\sync\\run.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\sync\\run.js:39\r\n  const elapsed = ((Date.now() - start) / 1000.toFixed(1);\r\n                                          ^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\sync\\z2m-sync.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\sync\\z2m-sync.js:9\r\nconst r=/fingerprint\\s*\\(\\s*\"([^\"]+)\"\\s*,\\s*\\[([\\s\\S]*? )\\]\\s*\)/g       ;\r\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /fingerprint\\s*\\(\\s*\"([^\"]+)\"\\s*,\\s*\\[([\\s\\S]*? )\\]\\s*\)/g: Unmatched ')'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\temp\\check.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\temp\\check.js:4\r\n  const p = \\drivers/\\/driver.compose.json\\;\r\n            ^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\temp\\clean-changelog.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\temp\\clean-changelog.js:48\r\nfinalContent = finalContent.replace(/\\n### [^\\n]+\\n+(? =\\n|### |## |---)/g, '\\n')      ;\r\n                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /\\n### [^\\n]+\\n+(? =\\n|### |## |---)/g: Invalid group\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\temp\\deep-clean-changelog.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\temp\\deep-clean-changelog.js:58\r\n  finalContent = finalContent.replace(/\\n### [^\\n]+\\n+(? =\\n|### |## |---|$ )/g , '\\n')      ;\r\n                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid regular expression: /\\n### [^\\n]+\\n+(? =\\n|### |## |---|$ )/g: Invalid group\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\temp\\fix-owner-detect.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\temp\\fix-owner-detect.js:16\r\ncontent = content.replace('// Issues\\nconst issues', insert + '\r\n                                                              ^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\temp\\fix-syntax-2.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\temp\\fix-syntax-2.js:6\r\ncontent = content.replace(\"this.log('[FLOW] \\r\\n    // v5.12.5\", \"this.log('[FLOW]  Scene mode setup');\\r\\n    \r\n                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\temp\\fix-syntax-2g.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\temp\\fix-syntax-2g.js:5\r\ncontent = content.replace(\"this.log('[FLOW] \\r\\n    // v5.12.5\", \"this.log('[FLOW]  Scene mode setup');\\r\\n    \r\n                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\temp\\fix_mains.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\temp\\fix_mains.js:18\r\n                if (!txt.includes('removeCapability(''measure_battery'')') && !txt.includes('removeCapability(\"measure_battery\")') && !txt.includes('removeCapability(\\measure_battery\\)')) {\r\n                                  ^^^^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\temp\\inject.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\temp\\inject.js:7\r\nif (diag && Array.isArray(diag.processed)) {\r\n^^\r\n\r\nSyntaxError: Unexpected token 'if'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\temp\\test-extract2.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\temp\\test-extract2.js:2\r\nconst text = \\Hi @dlnraja ,\r\n             ^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\temp\\update-dp2.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\temp\\update-dp2.js:5\r\n        102: { capability: 'measure_luminance', divisor: 1 },\r\n           ^\r\n\r\nSyntaxError: Unexpected token ':'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\temp\\update-dp3.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\temp\\update-dp3.js:19\r\nconst endMarker = \"// \\r\\n        \r\n                  ^^^^^^^^^^^^^^^^\r\n\r\nSyntaxError: Invalid or unexpected token\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\temp\\update-sensor-base.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\temp\\update-sensor-base.js:13\r\n  const replaceString =     // v6.0: Intelligent Power Source Detection\\n    this.log('');\\n    this.log(' STEP 2.1: Intelligent Power Source Detection...');\\n    await PowerSourceIntelligence.applyCapabilities(this, zclNode);;\r\n  ^^^^^\r\n\r\nSyntaxError: Unexpected token 'const'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\temp\\update-soil.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\temp\\update-soil.js:5\r\n    if (dp === 109) {\r\n    ^^\r\n\r\nSyntaxError: Unexpected token 'if'\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\_check_driver_issues.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\_check_driver_issues.js:6\r\nz.forEach((entry/i) => {\r\n           ^^^^^^^\r\n\r\nSyntaxError: Invalid destructuring assignment target\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\_fix_all_scene.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\_fix_all_scene.js:28\r\n    lines.forEach((l/i) => {\r\n                   ^^^\r\n\r\nSyntaxError: Invalid destructuring assignment target\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  },
+  {
+    "file": "scripts\\_fix_scene2.js",
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\_fix_scene2.js:19\r\n  lines.forEach((l/i) => {\r\n                 ^^^\r\n\r\nSyntaxError: Invalid destructuring assignment target\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+  }
+]

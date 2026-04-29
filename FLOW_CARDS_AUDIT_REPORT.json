@@ -1,0 +1,724 @@
+{
+  "timestamp": "2026-04-12T01:10:02.426Z",
+  "stats": {
+    "driversScanned": 305,
+    "totalTriggers": 33,
+    "totalConditions": 2,
+    "totalActions": 11,
+    "totalIssues": 55
+  },
+  "issues": {
+    "missingRegistration": [
+      {
+        "driver": "air_purifier_curtain_hybrid",
+        "type": "action",
+        "id": "air_purifier_curtain_hybrid_curtain_calibrate"
+      },
+      {
+        "driver": "air_purifier_curtain_hybrid",
+        "type": "action",
+        "id": "air_purifier_curtain_hybrid_curtain_reset_position"
+      },
+      {
+        "driver": "air_purifier_curtain_hybrid",
+        "type": "action",
+        "id": "air_purifier_curtain_hybrid_curtain_hold"
+      },
+      {
+        "driver": "air_purifier_curtain_hybrid",
+        "type": "action",
+        "id": "air_purifier_curtain_hybrid_curtain_open_partial"
+      },
+      {
+        "driver": "curtain_motor_tilt",
+        "type": "action",
+        "id": "curtain_motor_tilt_curtain_calibrate"
+      },
+      {
+        "driver": "curtain_motor_tilt",
+        "type": "action",
+        "id": "curtain_motor_tilt_curtain_reset_position"
+      },
+      {
+        "driver": "curtain_motor_tilt",
+        "type": "action",
+        "id": "curtain_motor_tilt_curtain_hold"
+      },
+      {
+        "driver": "curtain_motor_tilt",
+        "type": "action",
+        "id": "curtain_motor_tilt_curtain_open_partial"
+      },
+      {
+        "driver": "ir_remote",
+        "type": "trigger",
+        "id": "ir_remote_ir_code_received"
+      },
+      {
+        "driver": "radiator_controller",
+        "type": "trigger",
+        "id": "radiator_controller_radiator_mode_changed"
+      },
+      {
+        "driver": "radiator_controller",
+        "type": "trigger",
+        "id": "radiator_controller_pilot_signal_sent"
+      },
+      {
+        "driver": "radiator_controller",
+        "type": "condition",
+        "id": "radiator_controller_radiator_is_heating"
+      },
+      {
+        "driver": "radiator_controller",
+        "type": "condition",
+        "id": "radiator_controller_heating_mode_is"
+      },
+      {
+        "driver": "radiator_controller",
+        "type": "action",
+        "id": "radiator_controller_set_heating_mode"
+      },
+      {
+        "driver": "radiator_controller",
+        "type": "action",
+        "id": "radiator_controller_send_pilot_signal"
+      },
+      {
+        "driver": "radiator_controller",
+        "type": "action",
+        "id": "radiator_controller_set_temperature_offset"
+      }
+    ],
+    "missingRunListener": [],
+    "triggeredButNotDefined": [
+      {
+        "driver": "remote_button_wireless_hybrid",
+        "id": "remote_button_wireless_hybrid_rotate_left"
+      },
+      {
+        "driver": "remote_button_wireless_hybrid",
+        "id": "remote_button_wireless_hybrid_rotate_right"
+      },
+      {
+        "driver": "remote_button_wireless_hybrid",
+        "id": "remote_button_wireless_hybrid_press"
+      },
+      {
+        "driver": "smart_knob_rotary",
+        "id": "smart_knob_rotary_rotate_left"
+      },
+      {
+        "driver": "smart_knob_rotary",
+        "id": "smart_knob_rotary_rotate_right"
+      },
+      {
+        "driver": "smart_knob_rotary",
+        "id": "smart_knob_rotary_press"
+      }
+    ],
+    "definedButNeverTriggered": [
+      {
+        "driver": "dimmer_3gang",
+        "id": "dimmer_3gang_gang1_scene"
+      },
+      {
+        "driver": "dimmer_3gang",
+        "id": "dimmer_3gang_gang2_scene"
+      },
+      {
+        "driver": "dimmer_3gang",
+        "id": "dimmer_3gang_gang3_scene"
+      },
+      {
+        "driver": "ir_remote",
+        "id": "ir_remote_ir_code_received"
+      },
+      {
+        "driver": "radiator_controller",
+        "id": "radiator_controller_radiator_mode_changed"
+      },
+      {
+        "driver": "radiator_controller",
+        "id": "radiator_controller_pilot_signal_sent"
+      },
+      {
+        "driver": "wifi_switch_2gang",
+        "id": "wifi_switch_2gang_physical_gang1_on"
+      },
+      {
+        "driver": "wifi_switch_2gang",
+        "id": "wifi_switch_2gang_physical_gang1_off"
+      },
+      {
+        "driver": "wifi_switch_2gang",
+        "id": "wifi_switch_2gang_physical_gang2_on"
+      },
+      {
+        "driver": "wifi_switch_2gang",
+        "id": "wifi_switch_2gang_physical_gang2_off"
+      },
+      {
+        "driver": "wifi_switch_2gang",
+        "id": "wifi_switch_2gang_gang1_scene"
+      },
+      {
+        "driver": "wifi_switch_2gang",
+        "id": "wifi_switch_2gang_gang2_scene"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_physical_gang1_on"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_physical_gang1_off"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_physical_gang2_on"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_physical_gang2_off"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_physical_gang3_on"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_physical_gang3_off"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_gang1_scene"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_gang2_scene"
+      },
+      {
+        "driver": "wifi_switch_3gang",
+        "id": "wifi_switch_3gang_gang3_scene"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang1_on"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang1_off"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang2_on"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang2_off"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang3_on"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang3_off"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang4_on"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_physical_gang4_off"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_gang1_scene"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_gang2_scene"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_gang3_scene"
+      },
+      {
+        "driver": "wifi_switch_4gang",
+        "id": "wifi_switch_4gang_gang4_scene"
+      }
+    ],
+    "missingTokens": [],
+    "incorrectCapability": []
+  },
+  "results": [
+    {
+      "driver": "air_purifier_curtain_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 4,
+      "issues": [
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "air_purifier_curtain_hybrid_curtain_calibrate",
+          "message": "Action 'air_purifier_curtain_hybrid_curtain_calibrate' dÃ©finie mais NON enregistrÃ©e dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "air_purifier_curtain_hybrid_curtain_reset_position",
+          "message": "Action 'air_purifier_curtain_hybrid_curtain_reset_position' dÃ©finie mais NON enregistrÃ©e dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "air_purifier_curtain_hybrid_curtain_hold",
+          "message": "Action 'air_purifier_curtain_hybrid_curtain_hold' dÃ©finie mais NON enregistrÃ©e dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "air_purifier_curtain_hybrid_curtain_open_partial",
+          "message": "Action 'air_purifier_curtain_hybrid_curtain_open_partial' dÃ©finie mais NON enregistrÃ©e dans driver.js"
+        }
+      ]
+    },
+    {
+      "driver": "curtain_motor_tilt",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 4,
+      "issues": [
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "curtain_motor_tilt_curtain_calibrate",
+          "message": "Action 'curtain_motor_tilt_curtain_calibrate' dÃ©finie mais NON enregistrÃ©e dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "curtain_motor_tilt_curtain_reset_position",
+          "message": "Action 'curtain_motor_tilt_curtain_reset_position' dÃ©finie mais NON enregistrÃ©e dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "curtain_motor_tilt_curtain_hold",
+          "message": "Action 'curtain_motor_tilt_curtain_hold' dÃ©finie mais NON enregistrÃ©e dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "curtain_motor_tilt_curtain_open_partial",
+          "message": "Action 'curtain_motor_tilt_curtain_open_partial' dÃ©finie mais NON enregistrÃ©e dans driver.js"
+        }
+      ]
+    },
+    {
+      "driver": "dimmer_3gang",
+      "triggers": 3,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_3gang_gang1_scene",
+          "message": "Trigger 'dimmer_3gang_gang1_scene' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_3gang_gang2_scene",
+          "message": "Trigger 'dimmer_3gang_gang2_scene' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "dimmer_3gang_gang3_scene",
+          "message": "Trigger 'dimmer_3gang_gang3_scene' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "ir_remote",
+      "triggers": 1,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "ir_remote_ir_code_received",
+          "message": "Trigger 'ir_remote_ir_code_received' dÃ©fini mais NON enregistrÃ© dans driver.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "ir_remote_ir_code_received",
+          "message": "Trigger 'ir_remote_ir_code_received' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "radiator_controller",
+      "triggers": 2,
+      "conditions": 2,
+      "actions": 3,
+      "issues": [
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "radiator_controller_radiator_mode_changed",
+          "message": "Trigger 'radiator_controller_radiator_mode_changed' dÃ©fini mais NON enregistrÃ© dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "radiator_controller_pilot_signal_sent",
+          "message": "Trigger 'radiator_controller_pilot_signal_sent' dÃ©fini mais NON enregistrÃ© dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "CRITICAL",
+          "card": "condition",
+          "id": "radiator_controller_radiator_is_heating",
+          "message": "Condition 'radiator_controller_radiator_is_heating' dÃ©finie mais NON enregistrÃ©e dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "CRITICAL",
+          "card": "condition",
+          "id": "radiator_controller_heating_mode_is",
+          "message": "Condition 'radiator_controller_heating_mode_is' dÃ©finie mais NON enregistrÃ©e dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "radiator_controller_set_heating_mode",
+          "message": "Action 'radiator_controller_set_heating_mode' dÃ©finie mais NON enregistrÃ©e dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "radiator_controller_send_pilot_signal",
+          "message": "Action 'radiator_controller_send_pilot_signal' dÃ©finie mais NON enregistrÃ©e dans driver.js"
+        },
+        {
+          "type": "MISSING_REGISTRATION",
+          "severity": "HIGH",
+          "card": "action",
+          "id": "radiator_controller_set_temperature_offset",
+          "message": "Action 'radiator_controller_set_temperature_offset' dÃ©finie mais NON enregistrÃ©e dans driver.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "radiator_controller_radiator_mode_changed",
+          "message": "Trigger 'radiator_controller_radiator_mode_changed' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "radiator_controller_pilot_signal_sent",
+          "message": "Trigger 'radiator_controller_pilot_signal_sent' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "remote_button_wireless_hybrid",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "remote_button_wireless_hybrid_rotate_left",
+          "message": "Trigger 'remote_button_wireless_hybrid_rotate_left' appelÃ© dans device.js mais NON dÃ©fini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "remote_button_wireless_hybrid_rotate_right",
+          "message": "Trigger 'remote_button_wireless_hybrid_rotate_right' appelÃ© dans device.js mais NON dÃ©fini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "remote_button_wireless_hybrid_press",
+          "message": "Trigger 'remote_button_wireless_hybrid_press' appelÃ© dans device.js mais NON dÃ©fini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "smart_knob_rotary",
+      "triggers": 0,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "smart_knob_rotary_rotate_left",
+          "message": "Trigger 'smart_knob_rotary_rotate_left' appelÃ© dans device.js mais NON dÃ©fini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "smart_knob_rotary_rotate_right",
+          "message": "Trigger 'smart_knob_rotary_rotate_right' appelÃ© dans device.js mais NON dÃ©fini dans driver.compose.json"
+        },
+        {
+          "type": "TRIGGERED_NOT_DEFINED",
+          "severity": "CRITICAL",
+          "card": "trigger",
+          "id": "smart_knob_rotary_press",
+          "message": "Trigger 'smart_knob_rotary_press' appelÃ© dans device.js mais NON dÃ©fini dans driver.compose.json"
+        }
+      ]
+    },
+    {
+      "driver": "wifi_switch_2gang",
+      "triggers": 6,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_2gang_physical_gang1_on",
+          "message": "Trigger 'wifi_switch_2gang_physical_gang1_on' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_2gang_physical_gang1_off",
+          "message": "Trigger 'wifi_switch_2gang_physical_gang1_off' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_2gang_physical_gang2_on",
+          "message": "Trigger 'wifi_switch_2gang_physical_gang2_on' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_2gang_physical_gang2_off",
+          "message": "Trigger 'wifi_switch_2gang_physical_gang2_off' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_2gang_gang1_scene",
+          "message": "Trigger 'wifi_switch_2gang_gang1_scene' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_2gang_gang2_scene",
+          "message": "Trigger 'wifi_switch_2gang_gang2_scene' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "wifi_switch_3gang",
+      "triggers": 9,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_physical_gang1_on",
+          "message": "Trigger 'wifi_switch_3gang_physical_gang1_on' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_physical_gang1_off",
+          "message": "Trigger 'wifi_switch_3gang_physical_gang1_off' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_physical_gang2_on",
+          "message": "Trigger 'wifi_switch_3gang_physical_gang2_on' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_physical_gang2_off",
+          "message": "Trigger 'wifi_switch_3gang_physical_gang2_off' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_physical_gang3_on",
+          "message": "Trigger 'wifi_switch_3gang_physical_gang3_on' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_physical_gang3_off",
+          "message": "Trigger 'wifi_switch_3gang_physical_gang3_off' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_gang1_scene",
+          "message": "Trigger 'wifi_switch_3gang_gang1_scene' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_gang2_scene",
+          "message": "Trigger 'wifi_switch_3gang_gang2_scene' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_3gang_gang3_scene",
+          "message": "Trigger 'wifi_switch_3gang_gang3_scene' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        }
+      ]
+    },
+    {
+      "driver": "wifi_switch_4gang",
+      "triggers": 12,
+      "conditions": 0,
+      "actions": 0,
+      "issues": [
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang1_on",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang1_on' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang1_off",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang1_off' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang2_on",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang2_on' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang2_off",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang2_off' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang3_on",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang3_on' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang3_off",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang3_off' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang4_on",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang4_on' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_physical_gang4_off",
+          "message": "Trigger 'wifi_switch_4gang_physical_gang4_off' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_gang1_scene",
+          "message": "Trigger 'wifi_switch_4gang_gang1_scene' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_gang2_scene",
+          "message": "Trigger 'wifi_switch_4gang_gang2_scene' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_gang3_scene",
+          "message": "Trigger 'wifi_switch_4gang_gang3_scene' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        },
+        {
+          "type": "DEFINED_NOT_TRIGGERED",
+          "severity": "WARNING",
+          "card": "trigger",
+          "id": "wifi_switch_4gang_gang4_scene",
+          "message": "Trigger 'wifi_switch_4gang_gang4_scene' dÃ©fini mais JAMAIS appelÃ© dans device.js"
+        }
+      ]
+    }
+  ]
+}
