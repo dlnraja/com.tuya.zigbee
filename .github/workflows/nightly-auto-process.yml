@@ -2,7 +2,7 @@ name: Nightly Auto-Process
 
 on:
 #  schedule:
-#    - cron: '30 5 * * *'  # 5:30 UTC — safe gap after daily-everything 02:00 (120min timeout)
+#    - cron: '30 5 * * 3'  # 5:30 UTC — safe gap after daily-everything 02:00 (120min timeout)
   workflow_dispatch:
     inputs:
       dry_run:
