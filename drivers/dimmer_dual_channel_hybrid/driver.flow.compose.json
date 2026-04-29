@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "dimmer_dual_channel_hybrid_dim_changed",
+      "id": "dimmer_dual_channel_dim_changed",
       "title": {
         "en": "Dim level changed",
         "fr": "Niveau dim changÃ©"
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "dimmer_dual_channel_hybrid_turned_on",
+      "id": "dimmer_dual_channel_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©"
@@ -36,7 +36,7 @@
       }
     },
     {
-      "id": "dimmer_dual_channel_hybrid_turned_off",
+      "id": "dimmer_dual_channel_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint"
@@ -50,7 +50,7 @@
   ],
   "conditions": [
     {
-      "id": "dimmer_dual_channel_hybrid_is_on",
+      "id": "dimmer_dual_channel_is_on",
       "title": {
         "en": "Dimmer is !{{on|off}}",
         "fr": "Variateur est !{{allumÃ©|Ã©teint}}"
@@ -62,7 +62,7 @@
       }
     },
     {
-      "id": "dimmer_dual_channel_hybrid_dim_above",
+      "id": "dimmer_dual_channel_dim_above",
       "title": {
         "en": "Dim level is above",
         "fr": "Niveau dim supÃ©rieur Ã"
@@ -84,7 +84,7 @@
   ],
   "actions": [
     {
-      "id": "dimmer_dual_channel_hybrid_turn_on",
+      "id": "dimmer_dual_channel_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -96,7 +96,7 @@
       }
     },
     {
-      "id": "dimmer_dual_channel_hybrid_turn_off",
+      "id": "dimmer_dual_channel_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre"
@@ -108,7 +108,7 @@
       }
     },
     {
-      "id": "dimmer_dual_channel_hybrid_toggle",
+      "id": "dimmer_dual_channel_toggle",
       "title": {
         "en": "Toggle",
         "fr": "Basculer"
@@ -120,7 +120,7 @@
       }
     },
     {
-      "id": "dimmer_dual_channel_hybrid_set_dim",
+      "id": "dimmer_dual_channel_set_dim",
       "title": {
         "en": "Set dim level",
         "fr": "DÃ©finir niveau dim"
@@ -140,7 +140,7 @@
       ]
     },
     {
-      "id": "dimmer_dual_channel_hybrid_dim_up",
+      "id": "dimmer_dual_channel_dim_up",
       "title": {
         "en": "Dim up",
         "fr": "Augmenter luminositÃ©"
@@ -152,7 +152,7 @@
       }
     },
     {
-      "id": "dimmer_dual_channel_hybrid_dim_down",
+      "id": "dimmer_dual_channel_dim_down",
       "title": {
         "en": "Dim down",
         "fr": "Diminuer luminositÃ©"
@@ -164,7 +164,7 @@
       }
     },
     {
-      "id": "dimmer_dual_channel_hybrid_set_brightness",
+      "id": "dimmer_dual_channel_set_brightness",
       "title": {
         "en": "Set brightness",
         "fr": "RÃ©gler luminositÃ©",

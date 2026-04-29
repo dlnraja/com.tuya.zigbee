@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "button_wireless_smart_hybrid_button_wireless_1_button_1gang_button_pressed_button_wireless_smart_hybrid",
+      "id": "button_wireless_smart_button_wireless_1_button_1gang_button_pressed_button_wireless_smart",
       "title": {
         "en": "Button pressed",
         "fr": "Bouton appuyÃ©"
@@ -24,7 +24,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_smart_hybrid_button_wireless_1_button_1gang_button_double_press_button_wireless_smart_hybrid",
+      "id": "button_wireless_smart_button_wireless_1_button_1gang_button_double_press_button_wireless_smart",
       "title": {
         "en": "Button double-pressed",
         "fr": "Bouton double-cliquÃ©"
@@ -47,7 +47,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_smart_hybrid_button_wireless_1_button_1gang_button_long_press_button_wireless_smart_hybrid",
+      "id": "button_wireless_smart_button_wireless_1_button_1gang_button_long_press_button_wireless_smart",
       "title": {
         "en": "Button long-pressed",
         "fr": "Bouton pressÃ© longtemps"
@@ -70,7 +70,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_smart_hybrid_button_wireless_1_button_1gang_button_multi_press_button_wireless_smart_hybrid",
+      "id": "button_wireless_smart_button_wireless_1_button_1gang_button_multi_press_button_wireless_smart",
       "title": {
         "en": "Button multi-pressed",
         "fr": "Bouton multi-cliquÃ©"
@@ -102,7 +102,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_smart_hybrid_button_wireless_1_button_1gang_button_1_pressed_button_wireless_smart_hybrid",
+      "id": "button_wireless_smart_button_wireless_1_button_1gang_button_1_pressed_button_wireless_smart",
       "title": {
         "en": "Button 1 pressed",
         "fr": "Bouton 1 appuyÃ©"
@@ -114,7 +114,7 @@
       }
     },
     {
-      "id": "button_wireless_smart_hybrid_button_wireless_1_button_1gang_button_1_double_button_wireless_smart_hybrid",
+      "id": "button_wireless_smart_button_wireless_1_button_1gang_button_1_double_button_wireless_smart",
       "title": {
         "en": "Button 1 double-pressed",
         "fr": "Bouton 1 double-cliquÃ©"
@@ -126,7 +126,7 @@
       }
     },
     {
-      "id": "button_wireless_smart_hybrid_button_wireless_1_button_1gang_button_1_long_button_wireless_smart_hybrid",
+      "id": "button_wireless_smart_button_wireless_1_button_1gang_button_1_long_button_wireless_smart",
       "title": {
         "en": "Button 1 long-pressed",
         "fr": "Bouton 1 pressÃ© longtemps"
@@ -138,7 +138,7 @@
       }
     },
     {
-      "id": "button_wireless_smart_hybrid_button_wireless_1_button_1gang_button_1_triple_button_wireless_smart_hybrid",
+      "id": "button_wireless_smart_button_wireless_1_button_1gang_button_1_triple_button_wireless_smart",
       "title": {
         "en": "Button 1 triple-pressed",
         "fr": "Bouton 1 triple-cliquÃ©"
@@ -150,7 +150,7 @@
       }
     },
     {
-      "id": "button_wireless_smart_hybrid_button_wireless_1_button_1gang_button_1_release_button_wireless_smart_hybrid",
+      "id": "button_wireless_smart_button_wireless_1_button_1gang_button_1_release_button_wireless_smart",
       "title": {
         "en": "Button 1 released - after hold",
         "fr": "Bouton 1 relÃ¢chÃ© - aprÃ¨s maintien"
@@ -162,7 +162,7 @@
       }
     },
     {
-      "id": "button_wireless_smart_hybrid_button_wireless_1_battery_low_button_wireless_smart_hybrid",
+      "id": "button_wireless_smart_button_wireless_1_battery_low_button_wireless_smart",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",

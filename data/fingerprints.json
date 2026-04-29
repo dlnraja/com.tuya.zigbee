@@ -72,7 +72,7 @@
     "profile": "other"
   },
   "AQARA|TS0601": {
-    "driver": "device_generic_tuya_hybrid",
+    "driver": "device_generic_tuya",
     "profile": "other"
   },
   "ARDUINO|ARDUINO_ZIGBEE": {
@@ -376,7 +376,7 @@
     "profile": "other"
   },
   "AUBESS|TS0601": {
-    "driver": "device_generic_tuya_hybrid",
+    "driver": "device_generic_tuya",
     "profile": "other"
   },
   "AUGUST|TS0203": {
@@ -404,7 +404,7 @@
     "profile": "other"
   },
   "AVATTO|TS0601": {
-    "driver": "device_generic_tuya_hybrid",
+    "driver": "device_generic_tuya",
     "profile": "other"
   },
   "B3876M9|CK-BL702-MWS-01": {
@@ -516,19 +516,19 @@
     "profile": "other"
   },
   "BITRON|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "BITRON|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "BLITZWOLF|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "BLITZWOLF|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "BOSCH|0X8040": {
@@ -724,11 +724,11 @@
     "profile": "other"
   },
   "BSEED|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "BSEED|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "BTICINO|TS0203": {
@@ -748,11 +748,11 @@
     "profile": "other"
   },
   "BW-|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "BW-|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "CAT0001|3300-S": {
@@ -4769,35 +4769,35 @@
     "profile": "other"
   },
   "DANFOSS|TS0026": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "DANFOSS|TS0041A": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "DANFOSS|TS0052": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "DANFOSS|TS0105": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "DANFOSS|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "DANFOSS|TS0224": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "DANFOSS|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "DANFOSS|TS0901": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "DAWON DNS|TS0203": {
@@ -14529,11 +14529,11 @@
     "profile": "other"
   },
   "EUROTRONIC|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "EUROTRONIC|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "EWELIGHT|E11-G13": {
@@ -14637,7 +14637,7 @@
     "profile": "sensor"
   },
   "EWELINK|CK-BL702-AL-01(7009_Z102LG03-1)": {
-    "driver": "bulb_rgbw_universal_hybrid",
+    "driver": "bulb_rgbw_universal",
     "profile": "other"
   },
   "EWELINK|E1524/E1810": {
@@ -14697,39 +14697,39 @@
     "profile": "sensor"
   },
   "EWELINK|S26R2ZB": {
-    "driver": "device_plug_energy_hybrid",
+    "driver": "device_plug_energy",
     "profile": "socket"
   },
   "EWELINK|S31 LITE ZB": {
-    "driver": "device_plug_energy_hybrid",
+    "driver": "device_plug_energy",
     "profile": "socket"
   },
   "EWELINK|S40LITE": {
-    "driver": "device_plug_energy_hybrid",
+    "driver": "device_plug_energy",
     "profile": "socket"
   },
   "EWELINK|S60ZBTPF": {
-    "driver": "device_plug_energy_hybrid",
+    "driver": "device_plug_energy",
     "profile": "socket"
   },
   "EWELINK|S60ZBTPG": {
-    "driver": "device_plug_energy_hybrid",
+    "driver": "device_plug_energy",
     "profile": "socket"
   },
   "EWELINK|TS0504A": {
-    "driver": "bulb_rgbw_universal_hybrid",
+    "driver": "bulb_rgbw_universal",
     "profile": "other"
   },
   "EWELINK|TS0504B": {
-    "driver": "bulb_rgbw_universal_hybrid",
+    "driver": "bulb_rgbw_universal",
     "profile": "other"
   },
   "EWELINK|TS0505A": {
-    "driver": "bulb_rgbw_universal_hybrid",
+    "driver": "bulb_rgbw_universal",
     "profile": "other"
   },
   "EWELINK|TS0505B": {
-    "driver": "bulb_rgbw_universal_hybrid",
+    "driver": "bulb_rgbw_universal",
     "profile": "other"
   },
   "EWELINK|WXKG01LM": {
@@ -15705,11 +15705,11 @@
     "profile": "other"
   },
   "GIRIER|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "GIRIER|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "GLEDOPTO|TS0203": {
@@ -15745,7 +15745,7 @@
     "profile": "other"
   },
   "HEIMAN|TS0601": {
-    "driver": "device_generic_tuya_hybrid",
+    "driver": "device_generic_tuya",
     "profile": "other"
   },
   "HEIMGARD|TS0203": {
@@ -16049,7 +16049,7 @@
     "profile": "other"
   },
   "HOBEIAN|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "HOBEIAN|TS0003": {
@@ -16069,11 +16069,11 @@
     "profile": "socket"
   },
   "HOBEIAN|TS0203": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "HOBEIAN|TS0225": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "HOBEIAN|TS0601": {
@@ -16081,19 +16081,19 @@
     "profile": "socket"
   },
   "HOBEIAN|ZG-204ZL": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "HOBEIAN|ZG-204ZM": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "HOBEIAN|ZG-204ZV": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "HOBEIAN|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "HOBEIAN|ZG-302Z3": {
@@ -17277,19 +17277,19 @@
     "profile": "other"
   },
   "IKEA OF SWEDEN|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "IKEA OF SWEDEN|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "IKEA|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "IKEA|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "ILUMINIZE|TS0203": {
@@ -18425,35 +18425,35 @@
     "profile": "other"
   },
   "LEGRAND|TS0026": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "LEGRAND|TS0041A": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "LEGRAND|TS0052": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "LEGRAND|TS0105": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "LEGRAND|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "LEGRAND|TS0224": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "LEGRAND|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "LEGRAND|TS0901": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "LEGRAND|ZBMINI": {
@@ -19201,11 +19201,11 @@
     "profile": "other"
   },
   "LIDL|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "LIDL|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "LIFX|TS0203": {
@@ -19265,11 +19265,11 @@
     "profile": "other"
   },
   "LONSONHO|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "LONSONHO|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "LUMI ROUTER|0X8040": {
@@ -19733,11 +19733,11 @@
     "profile": "other"
   },
   "LUMI|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "LUMI|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "LUTRON ELECTRONICS|TS0203": {
@@ -20381,7 +20381,7 @@
     "profile": "other"
   },
   "MOES|TS0601": {
-    "driver": "device_generic_tuya_hybrid",
+    "driver": "device_generic_tuya",
     "profile": "other"
   },
   "MONOPRICE|TS0203": {
@@ -20425,11 +20425,11 @@
     "profile": "other"
   },
   "NAS-|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "NAS-|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "NEO COOLCAM|TS0203": {
@@ -20441,11 +20441,11 @@
     "profile": "other"
   },
   "NEO|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "NEO|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "NETATMO|0X8040": {
@@ -23245,7 +23245,7 @@
     "profile": "other"
   },
   "PHILIPS|TS0601": {
-    "driver": "device_generic_tuya_hybrid",
+    "driver": "device_generic_tuya",
     "profile": "other"
   },
   "PHOSCON|ARDUINO_ZIGBEE": {
@@ -27577,35 +27577,35 @@
     "profile": "other"
   },
   "SCHNEIDER ELECTRIC|TS0026": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "SCHNEIDER ELECTRIC|TS0041A": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "SCHNEIDER ELECTRIC|TS0052": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "SCHNEIDER ELECTRIC|TS0105": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "SCHNEIDER ELECTRIC|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "SCHNEIDER ELECTRIC|TS0224": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "SCHNEIDER ELECTRIC|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "SCHNEIDER ELECTRIC|TS0901": {
-    "driver": "device_generic_diy_universal_hybrid",
+    "driver": "device_generic_diy_universal",
     "profile": "other"
   },
   "SCHNEIDER|0X8040": {
@@ -28001,19 +28001,19 @@
     "profile": "other"
   },
   "SIGNIFY NETHERLANDS B.V.|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "SIGNIFY NETHERLANDS B.V.|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "SIGNIFY|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "SIGNIFY|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "SILABS|ARDUINO_ZIGBEE": {
@@ -28601,7 +28601,7 @@
     "profile": "other"
   },
   "SILVERCREST|TS0601": {
-    "driver": "device_generic_tuya_hybrid",
+    "driver": "device_generic_tuya",
     "profile": "other"
   },
   "SINOPE TECHNOLOGIES|TS0203": {
@@ -29941,11 +29941,11 @@
     "profile": "other"
   },
   "SMARTTHINGS|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "SMARTTHINGS|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "SMARTTHINGS|TUBE": {
@@ -30565,15 +30565,15 @@
     "profile": "light"
   },
   "SONOFF|SNZB-01": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "SONOFF|SNZB-01M": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "SONOFF|SNZB-01P": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "SONOFF|SNZB-06P": {
@@ -30613,47 +30613,47 @@
     "profile": "socket"
   },
   "SONOFF|TS0001": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "SONOFF|TS0002": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "SONOFF|TS0003": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "SONOFF|TS0011": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "SONOFF|TS0012": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "SONOFF|TS0013": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "SONOFF|TS0042": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "SONOFF|TS0043": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "SONOFF|TS0044": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "SONOFF|TS0046": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "SONOFF|TS0111": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "SONOFF|TS011F": {
@@ -30717,11 +30717,11 @@
     "profile": "other"
   },
   "SUNRICHER|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "SUNRICHER|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "SWANN|TS0203": {
@@ -32285,11 +32285,11 @@
     "profile": "other"
   },
   "TRADFRI|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "TRADFRI|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "TRUST INTERNATIONAL|TS0203": {
@@ -33417,19 +33417,19 @@
     "profile": "sensor"
   },
   "TUYATEC-1G3TAWNP|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-1G3TAWNP|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-1UXX9CCI|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-1UXX9CCI|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-1g3tawnp|RH3052": {
@@ -34217,11 +34217,11 @@
     "profile": "sensor"
   },
   "TUYATEC-ABKEHQUS|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-ABKEHQUS|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-B5G40ALM|3305-S": {
@@ -34529,11 +34529,11 @@
     "profile": "sensor"
   },
   "TUYATEC-BFQ2I2SY|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-BFQ2I2SY|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-Bfq2i2Sy|RH3052": {
@@ -35025,19 +35025,19 @@
     "profile": "sensor"
   },
   "TUYATEC-G3GL6CGY|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-G3GL6CGY|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-GQHXIXYK|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-GQHXIXYK|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-H4WNRTCK|3315-S": {
@@ -35121,11 +35121,11 @@
     "profile": "sensor"
   },
   "TUYATEC-HAOIUWZY|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-HAOIUWZY|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-HaoiuWzy|RH3052": {
@@ -35873,35 +35873,35 @@
     "profile": "sensor"
   },
   "TUYATEC-OJMXEIKG|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-OJMXEIKG|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-OJMXEIKQ|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-OJMXEIKQ|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-PRHS1RSD|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-PRHS1RSD|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-QUN7VQ14|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-QUN7VQ14|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-R9HGSSOL|3300-S": {
@@ -36033,11 +36033,11 @@
     "profile": "sensor"
   },
   "TUYATEC-RIUJ5XZS|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-RIUJ5XZS|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-RKQIQVCS|3300-S": {
@@ -36537,27 +36537,27 @@
     "profile": "sensor"
   },
   "TUYATEC-V3UXBUXY|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-V3UXBUXY|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-VMGH3FXD|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-VMGH3FXD|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-YG5DCBFU|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-YG5DCBFU|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "TUYATEC-ZN9WYQTR|3305-S": {
@@ -39157,11 +39157,11 @@
     "profile": "other"
   },
   "TUYA|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "TUYA|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "TZE204_7SJNCIRF|TS0016": {
@@ -39801,15 +39801,15 @@
     "profile": "other"
   },
   "WOOX|TS0203": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "WOOX|TS0601": {
-    "driver": "device_generic_tuya_universal_hybrid",
+    "driver": "device_generic_tuya_universal",
     "profile": "other"
   },
   "XIAOMI|TS0601": {
-    "driver": "device_generic_tuya_hybrid",
+    "driver": "device_generic_tuya",
     "profile": "other"
   },
   "XYZROE|ARDUINO_ZIGBEE": {
@@ -41433,7 +41433,7 @@
     "profile": "sensor"
   },
   "ZEMISMART|TS0601": {
-    "driver": "device_generic_tuya_hybrid",
+    "driver": "device_generic_tuya",
     "profile": "other"
   },
   "ZEN THERMOSTAT|TS0203": {
@@ -51157,7 +51157,7 @@
     "profile": "sensor"
   },
   "_TYZB01_IUEPBMPV|TS0601": {
-    "driver": "lcdtemphumidsensor_plug_energy_hybrid",
+    "driver": "lcdtemphumidsensor_plug_energy",
     "profile": "socket"
   },
   "_TYZB01_J9XXAHCL|TS0209": {
@@ -54225,19 +54225,19 @@
     "profile": "sensor"
   },
   "_TYZB01_iuepbmpv|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TYZB01_iuepbmpv|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TYZB01_iuepbmpv|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TYZB01_iuepbmpv|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TYZB01_jytabjkb|3305-S": {
@@ -56553,11 +56553,11 @@
     "profile": "sensor"
   },
   "_TYZB02_keyjqthh|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TYZB02_keyjqthh|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TYZB02_|005F0C3B": {
@@ -60897,19 +60897,19 @@
     "profile": "windowcoverings"
   },
   "_TZ3000_1h2x4akh|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_1h2x4akh|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_1h2x4akh|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_1h2x4akh|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_22UGZKME|3450-L": {
@@ -65269,19 +65269,19 @@
     "profile": "sensor"
   },
   "_TZ3000_4uf3d0ax|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_4uf3d0ax|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_4uf3d0ax|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_4uf3d0ax|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_4ugnzsli|3300-S": {
@@ -65413,11 +65413,11 @@
     "profile": "sensor"
   },
   "_TZ3000_4upl1fcj|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_4upl1fcj|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_4uuaja4a|AM02": {
@@ -70485,19 +70485,19 @@
     "profile": "sensor"
   },
   "_TZ3000_88iqnhvd|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_88iqnhvd|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_88iqnhvd|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_88iqnhvd|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_8BXRZYXZ|TS0209": {
@@ -71473,11 +71473,11 @@
     "profile": "sensor"
   },
   "_TZ3000_8rppvwda|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_8rppvwda|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_8uaoilu9|CLASSIC A60 TW": {
@@ -73673,39 +73673,39 @@
     "profile": "socket"
   },
   "_TZ3000_ADKVZOOY|TS0001": {
-    "driver": "button_wireless_switch_hybrid",
+    "driver": "button_wireless_switch",
     "profile": "socket"
   },
   "_TZ3000_ADKVZOOY|TS0002": {
-    "driver": "button_wireless_switch_hybrid",
+    "driver": "button_wireless_switch",
     "profile": "socket"
   },
   "_TZ3000_ADKVZOOY|TS0003": {
-    "driver": "button_wireless_switch_hybrid",
+    "driver": "button_wireless_switch",
     "profile": "socket"
   },
   "_TZ3000_ADKVZOOY|TS000F": {
-    "driver": "button_wireless_switch_hybrid",
+    "driver": "button_wireless_switch",
     "profile": "socket"
   },
   "_TZ3000_ADKVZOOY|TS0011": {
-    "driver": "button_wireless_switch_hybrid",
+    "driver": "button_wireless_switch",
     "profile": "socket"
   },
   "_TZ3000_ADKVZOOY|TS0012": {
-    "driver": "button_wireless_switch_hybrid",
+    "driver": "button_wireless_switch",
     "profile": "socket"
   },
   "_TZ3000_ADKVZOOY|TS0013": {
-    "driver": "button_wireless_switch_hybrid",
+    "driver": "button_wireless_switch",
     "profile": "socket"
   },
   "_TZ3000_ADKVZOOY|TS0014": {
-    "driver": "button_wireless_switch_hybrid",
+    "driver": "button_wireless_switch",
     "profile": "socket"
   },
   "_TZ3000_ADKVZOOY|TS011F": {
-    "driver": "button_wireless_switch_hybrid",
+    "driver": "button_wireless_switch",
     "profile": "socket"
   },
   "_TZ3000_ADNDOLVX|3450-L": {
@@ -74641,59 +74641,59 @@
     "profile": "sensor"
   },
   "_TZ3000_AN5RJIWD|SNZB-01": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_AN5RJIWD|SNZB-01M": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_AN5RJIWD|SNZB-01P": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_AN5RJIWD|TS0001": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_AN5RJIWD|TS0002": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_AN5RJIWD|TS0003": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_AN5RJIWD|TS0011": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_AN5RJIWD|TS0012": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_AN5RJIWD|TS0013": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_AN5RJIWD|TS0042": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_AN5RJIWD|TS0043": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_AN5RJIWD|TS0044": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_AN5RJIWD|TS0046": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_AN5RJIWD|TS0111": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_AOGB3S2T|TS0216": {
@@ -75233,19 +75233,19 @@
     "profile": "socket"
   },
   "_TZ3000_AS7EQIRI|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3000_AS7EQIRI|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_AS7EQIRI|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_AS7EQIRI|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_ATP3BEWS|TS0115": {
@@ -80001,15 +80001,15 @@
     "profile": "socket"
   },
   "_TZ3000_CJFMU5HE|TS0049": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3000_CJFMU5HE|TS0101": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3000_CJRNGDR3|TS0601": {
-    "driver": "sensor_contact_plug_hybrid",
+    "driver": "sensor_contact_plug",
     "profile": "socket"
   },
   "_TZ3000_CKQ7U3R4|014G2461": {
@@ -81005,7 +81005,7 @@
     "profile": "sensor"
   },
   "_TZ3000_CYMSNFVF|ZBMINIL2": {
-    "driver": "module_mini_switch_hybrid",
+    "driver": "module_mini_switch",
     "profile": "socket"
   },
   "_TZ3000_CZIEW6EU|TS0016": {
@@ -84661,23 +84661,23 @@
     "profile": "socket"
   },
   "_TZ3000_EW31DMGX|S26R2ZB": {
-    "driver": "plug_energy_monitor_hybrid",
+    "driver": "plug_energy_monitor",
     "profile": "sensor"
   },
   "_TZ3000_EW31DMGX|S31ZB": {
-    "driver": "plug_energy_monitor_hybrid",
+    "driver": "plug_energy_monitor",
     "profile": "sensor"
   },
   "_TZ3000_EW31DMGX|TS011F": {
-    "driver": "plug_energy_monitor_hybrid",
+    "driver": "plug_energy_monitor",
     "profile": "sensor"
   },
   "_TZ3000_EW31DMGX|TS0601": {
-    "driver": "plug_energy_monitor_hybrid",
+    "driver": "plug_energy_monitor",
     "profile": "sensor"
   },
   "_TZ3000_EW31DMGX|ZBMINIL2": {
-    "driver": "plug_energy_monitor_hybrid",
+    "driver": "plug_energy_monitor",
     "profile": "sensor"
   },
   "_TZ3000_EXC99DVW|CK-TLSR8656-SS5-01(7014)": {
@@ -85521,19 +85521,19 @@
     "profile": "socket"
   },
   "_TZ3000_FBJA4Q6H|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3000_FBJA4Q6H|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_FBJA4Q6H|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_FBJA4Q6H|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_FBJNWZKO|TS0209": {
@@ -89553,19 +89553,19 @@
     "profile": "socket"
   },
   "_TZ3000_HCM1FQXE|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3000_HCM1FQXE|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_HCM1FQXE|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_HCM1FQXE|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_HDC8BBHA|01MINIZB": {
@@ -91749,11 +91749,11 @@
     "profile": "socket"
   },
   "_TZ3000_I8JFIEZR|CK-TLSR8656-SS5-01(7014)": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "_TZ3000_I8JFIEZR|ZG-227Z": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor"
   },
   "_TZ3000_I8L0NQDU|A11Z": {
@@ -97093,19 +97093,19 @@
     "profile": "socket"
   },
   "_TZ3000_KEABPIGB|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3000_KEABPIGB|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_KEABPIGB|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_KEABPIGB|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_KEABPIGB|TS0601": {
@@ -97761,19 +97761,19 @@
     "profile": "socket"
   },
   "_TZ3000_KIHKX3CQ|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3000_KIHKX3CQ|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_KIHKX3CQ|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_KIHKX3CQ|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_KJ0NWDZ6|01MINIZB": {
@@ -101845,19 +101845,19 @@
     "profile": "sensor"
   },
   "_TZ3000_LZFWT5QX|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3000_LZFWT5QX|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_LZFWT5QX|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_LZFWT5QX|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_M0VAAZWU|TS0207": {
@@ -101969,19 +101969,19 @@
     "profile": "socket"
   },
   "_TZ3000_M6U3Q8JY|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3000_M6U3Q8JY|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_M6U3Q8JY|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_M6U3Q8JY|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_M7WTQKFW|TS0005": {
@@ -103421,11 +103421,11 @@
     "profile": "sensor"
   },
   "_TZ3000_MQ4WUJMP|TS0049": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3000_MQ4WUJMP|TS0101": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3000_MQ4WUJMP|TS0201": {
@@ -120217,19 +120217,19 @@
     "profile": "socket"
   },
   "_TZ3000_TQLV4YZ4|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3000_TQLV4YZ4|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_TQLV4YZ4|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_TQLV4YZ4|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_TRDX8UXS|01MINIZB": {
@@ -121289,67 +121289,67 @@
     "profile": "socket"
   },
   "_TZ3000_TZVBIMPQ|SNZB-01": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|SNZB-01M": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|SNZB-01P": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|TS0001": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|TS0002": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|TS0003": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|TS0011": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|TS0012": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|TS0013": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|TS0041": {
-    "driver": "remote_button_wireless_smart_hybrid",
+    "driver": "remote_button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|TS0042": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|TS0043": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|TS0044": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|TS0046": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|TS004F": {
-    "driver": "remote_button_wireless_smart_hybrid",
+    "driver": "remote_button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|TS0111": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_TZVBIMPQ|TS0203": {
@@ -121537,19 +121537,19 @@
     "profile": "socket"
   },
   "_TZ3000_U5U4CAKC|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3000_U5U4CAKC|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_U5U4CAKC|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_U5U4CAKC|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_UAA34G7V|01MINIZB": {
@@ -125273,19 +125273,19 @@
     "profile": "socket"
   },
   "_TZ3000_W2UG5KGU|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3000_W2UG5KGU|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_W2UG5KGU|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_W2UG5KGU|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_W3C7OURU|01MINIZB": {
@@ -127297,19 +127297,19 @@
     "profile": "sensor"
   },
   "_TZ3000_X2FQBDUN|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3000_X2FQBDUN|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_X2FQBDUN|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_X2FQBDUN|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3000_X3EWPZYR|3315-S": {
@@ -129797,59 +129797,59 @@
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|SNZB-01": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|SNZB-01M": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|SNZB-01P": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|TS0001": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|TS0002": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|TS0003": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|TS0011": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|TS0012": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|TS0013": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|TS0042": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|TS0043": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|TS0044": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|TS0046": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|TS0111": {
-    "driver": "remote_button_wireless_hybrid",
+    "driver": "remote_button_wireless",
     "profile": "sensor"
   },
   "_TZ3000_YJ6K7VFO|WXKG01LM": {
@@ -133237,11 +133237,11 @@
     "profile": "sensor"
   },
   "_TZ3000_axpdxqgu|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_axpdxqgu|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_b28wrpvx|TS0001": {
@@ -133689,11 +133689,11 @@
     "profile": "sensor"
   },
   "_TZ3000_br3laukf|TS0049": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3000_br3laukf|TS0101": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3000_bsvqrxru|3305-S": {
@@ -134557,11 +134557,11 @@
     "profile": "sensor"
   },
   "_TZ3000_cjfmu5he|TS0049": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3000_cjfmu5he|TS0101": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3000_cqlnswn0|3300-S": {
@@ -134769,19 +134769,19 @@
     "profile": "windowcoverings"
   },
   "_TZ3000_cymsnfvf|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_cymsnfvf|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_cymsnfvf|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_cymsnfvf|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_czuyt8lz|SNZB-01M": {
@@ -135149,19 +135149,19 @@
     "profile": "sensor"
   },
   "_TZ3000_dksbtrzs|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_dksbtrzs|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_dksbtrzs|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_dksbtrzs|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_dku2cfsc|SNZB-01M": {
@@ -135377,19 +135377,19 @@
     "profile": "windowcoverings"
   },
   "_TZ3000_dpo1ysak|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_dpo1ysak|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_dpo1ysak|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_dpo1ysak|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_e3vhyirx|AM02": {
@@ -136253,19 +136253,19 @@
     "profile": "sensor"
   },
   "_TZ3000_f97vq5mn|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_f97vq5mn|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_fa9mlvja|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_fa9mlvja|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_fccpjz5z|AM02": {
@@ -136509,11 +136509,11 @@
     "profile": "sensor"
   },
   "_TZ3000_fkp5zyho|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_fkp5zyho|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_fkvaniuu|TS0001": {
@@ -136657,19 +136657,19 @@
     "profile": "sensor"
   },
   "_TZ3000_fukaa7nc|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_fukaa7nc|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_fukaa7nc|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_fukaa7nc|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_fvh3pjaz|TS0001": {
@@ -137565,19 +137565,19 @@
     "profile": "sensor"
   },
   "_TZ3000_gznh2xla|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_gznh2xla|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_gznh2xla|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_gznh2xla|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_h1c2eamp|TS0001": {
@@ -138461,11 +138461,11 @@
     "profile": "sensor"
   },
   "_TZ3000_itb0omhv|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_itb0omhv|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_itnrsufe|RH3052": {
@@ -138697,19 +138697,19 @@
     "profile": "sensor"
   },
   "_TZ3000_jak16dll|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_jak16dll|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_jak16dll|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_jak16dll|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_jcfje0kb|TS0001": {
@@ -139905,11 +139905,11 @@
     "profile": "sensor"
   },
   "_TZ3000_kz1anoi8|TS0049": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3000_kz1anoi8|TS0101": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3000_l6iqph4f|AM02": {
@@ -141281,27 +141281,27 @@
     "profile": "sensor"
   },
   "_TZ3000_mq4wujmp|TS0049": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3000_mq4wujmp|TS0101": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3000_mraovvmm|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_mraovvmm|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_mraovvmm|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_mraovvmm|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_mrqea2uu|TS0001": {
@@ -143681,11 +143681,11 @@
     "profile": "sensor"
   },
   "_TZ3000_peszejy7|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_peszejy7|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_pjcqjtev|TS0001": {
@@ -143737,19 +143737,19 @@
     "profile": "sensor"
   },
   "_TZ3000_plyvnuf5|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_plyvnuf5|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_plyvnuf5|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_plyvnuf5|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_pmvbt5hh|TS0001": {
@@ -143849,11 +143849,11 @@
     "profile": "sensor"
   },
   "_TZ3000_pnzfdr9y|TS0049": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3000_pnzfdr9y|TS0101": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3000_prits6g4|TS0001": {
@@ -143905,11 +143905,11 @@
     "profile": "sensor"
   },
   "_TZ3000_pzui3skt|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_pzui3skt|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_q50zhdsc|E11-G13": {
@@ -144009,11 +144009,11 @@
     "profile": "light"
   },
   "_TZ3000_q68478x7|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_q68478x7|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_qa8s8vca|AM02": {
@@ -144453,11 +144453,11 @@
     "profile": "sensor"
   },
   "_TZ3000_qgwcxxws|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_qgwcxxws|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_qja6nq5z|SNZB-01M": {
@@ -146057,11 +146057,11 @@
     "profile": "sensor"
   },
   "_TZ3000_tk3s5tyg|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_tk3s5tyg|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_tqlv4ug4|TS0001": {
@@ -146657,19 +146657,19 @@
     "profile": "sensor"
   },
   "_TZ3000_upjrsxh1|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_upjrsxh1|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_upjrsxh1|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_upjrsxh1|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_uri7ongn|SNZB-01M": {
@@ -147194,19 +147194,19 @@
     "profile": "windowcoverings"
   },
   "_TZ3000_vmpbygs5|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_vmpbygs5|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_vmpbygs5|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_vmpbygs5|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_vp6clf9d|SNZB-01M": {
@@ -148062,19 +148062,19 @@
     "profile": "sensor"
   },
   "_TZ3000_wzauvbcs|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_wzauvbcs|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_wzauvbcs|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_wzauvbcs|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3000_wzmuk9ai|TS0001": {
@@ -148542,11 +148542,11 @@
     "profile": "sensor"
   },
   "_TZ3000_yj6k7vfo|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_yj6k7vfo|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZ3000_yl3zuyaw|TS0001": {
@@ -151674,35 +151674,35 @@
     "profile": "light"
   },
   "_TZ3210_0C4NP92R|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3210_0C4NP92R|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_0C4NP92R|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_0C4NP92R|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_0FC3G9SQ|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3210_0FC3G9SQ|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_0FC3G9SQ|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_0FC3G9SQ|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_0JXEOADC|TS0049": {
@@ -151866,19 +151866,19 @@
     "profile": "socket"
   },
   "_TZ3210_1AGIHF3Z|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3210_1AGIHF3Z|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_1AGIHF3Z|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_1AGIHF3Z|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_232nryqh|TS0001": {
@@ -152910,19 +152910,19 @@
     "profile": "sensor"
   },
   "_TZ3210_7jnk7l3k|TS0111": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3210_7jnk7l3k|TS011F": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3210_7jnk7l3k|TS0121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3210_7jnk7l3k|TSO121": {
-    "driver": "button_wireless_plug_hybrid",
+    "driver": "button_wireless_plug",
     "profile": "socket"
   },
   "_TZ3210_8N4DN1NE|CK-TLSR8656-SS5-01(7014)": {
@@ -153818,31 +153818,31 @@
     "profile": "light"
   },
   "_TZ3210_B8JDOSXO|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_B8JDOSXO|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_B8JDOSXO|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_BCPLF4DS|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3210_BCPLF4DS|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_BCPLF4DS|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_BCPLF4DS|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_BEP7CCEW|S26R2ZB": {
@@ -154690,19 +154690,19 @@
     "profile": "light"
   },
   "_TZ3210_DXRJKPI6|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3210_DXRJKPI6|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_DXRJKPI6|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_DXRJKPI6|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_E5T9BFDV|TS0052": {
@@ -154822,7 +154822,7 @@
     "profile": "light"
   },
   "_TZ3210_EEJM8DCR|TS0505B": {
-    "driver": "light_bulb_rgb_led_hybrid",
+    "driver": "light_bulb_rgb_led",
     "profile": "light"
   },
   "_TZ3210_EEJM8DCR|TS0601": {
@@ -154994,7 +154994,7 @@
     "profile": "socket"
   },
   "_TZ3210_EYMUNFFL|TS0049": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3210_EYMUNFFL|TS0052": {
@@ -155002,7 +155002,7 @@
     "profile": "light"
   },
   "_TZ3210_EYMUNFFL|TS0101": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3210_EYMUNFFL|TS0601": {
@@ -155278,19 +155278,19 @@
     "profile": "sensor"
   },
   "_TZ3210_H1ZVCPWD|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3210_H1ZVCPWD|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_H1ZVCPWD|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_H1ZVCPWD|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_HBMQBOZL|TS0052": {
@@ -155582,7 +155582,7 @@
     "profile": "light"
   },
   "_TZ3210_INVESBER|TS0505B": {
-    "driver": "light_bulb_rgb_led_hybrid",
+    "driver": "light_bulb_rgb_led",
     "profile": "light"
   },
   "_TZ3210_INVESBER|TS0601": {
@@ -155946,19 +155946,19 @@
     "profile": "sensor"
   },
   "_TZ3210_JKBDRVVF|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3210_JKBDRVVF|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_JKBDRVVF|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_JKBDRVVF|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_JOWHPXOP|3300-S": {
@@ -156386,19 +156386,19 @@
     "profile": "light"
   },
   "_TZ3210_LEZKAFXF|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3210_LEZKAFXF|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_LEZKAFXF|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_LEZKAFXF|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_LFBZ816S|A19 W 10 YEAR": {
@@ -156482,19 +156482,19 @@
     "profile": "light"
   },
   "_TZ3210_LMQQUXUS|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3210_LMQQUXUS|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_LMQQUXUS|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_LMQQUXUS|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_LZQQ3U4R|TS0601": {
@@ -156822,7 +156822,7 @@
     "profile": "light"
   },
   "_TZ3210_OGX8U9IT|TS1201": {
-    "driver": "blaster_remote_hybrid",
+    "driver": "blaster_remote",
     "profile": "remote"
   },
   "_TZ3210_OHVNWAMM|TS0052": {
@@ -157506,19 +157506,19 @@
     "profile": "socket"
   },
   "_TZ3210_RBGFKWBL|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3210_RBGFKWBL|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_RBGFKWBL|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_RBGFKWBL|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_RKGNGB5O|CK-BL702-AL-01(7009_Z102LG03-1)": {
@@ -157774,15 +157774,15 @@
     "profile": "light"
   },
   "_TZ3210_S8LVBBUC|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_S8LVBBUC|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_S8LVBBUC|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_S8LVBBU|CK-BL702-AL-01(7009_Z102LG03-1)": {
@@ -158006,19 +158006,19 @@
     "profile": "sensor"
   },
   "_TZ3210_SROEZL0S|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3210_SROEZL0S|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_SROEZL0S|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_SROEZL0S|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_SROEZL0S|TS0601_STRIP_RGBW": {
@@ -158026,15 +158026,15 @@
     "profile": "light"
   },
   "_TZ3210_SW9UXOEA|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_SW9UXOEA|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_SW9UXOEA|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_SXTFESC6|AM02": {
@@ -158154,27 +158154,27 @@
     "profile": "fan"
   },
   "_TZ3210_TAW0FC13|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3210_TAW0FC13|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_TAW0FC13|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_TAW0FC13|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_TKKB1YM8|TS0601": {
-    "driver": "dimmer_dual_channel_hybrid",
+    "driver": "dimmer_dual_channel",
     "profile": "light"
   },
   "_TZ3210_TKKB1YM8|TS1101": {
-    "driver": "dimmer_dual_channel_hybrid",
+    "driver": "dimmer_dual_channel",
     "profile": "light"
   },
   "_TZ3210_TQLV4UG4|01MINIZB": {
@@ -158746,15 +158746,15 @@
     "profile": "socket"
   },
   "_TZ3210_WBSGMOJQ|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_WBSGMOJQ|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_WBSGMOJQ|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_WJZ9EPJD|TS0052": {
@@ -158874,19 +158874,19 @@
     "profile": "light"
   },
   "_TZ3210_WUHEYHVM|TS0502B": {
-    "driver": "light_bulb_dimmable_tunable_hybrid",
+    "driver": "light_bulb_dimmable_tunable",
     "profile": "light"
   },
   "_TZ3210_WUHEYHVM|TS0504B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_WUHEYHVM|TS0505A": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_WUHEYHVM|TS0505B": {
-    "driver": "light_bulb_rgb_rgbw_hybrid",
+    "driver": "light_bulb_rgb_rgbw",
     "profile": "light"
   },
   "_TZ3210_WUHZZFQG|TS0052": {
@@ -159898,11 +159898,11 @@
     "profile": "windowcoverings"
   },
   "_TZ3210_eymunffl|TS0049": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3210_eymunffl|TS0101": {
-    "driver": "device_plug_smart_hybrid",
+    "driver": "device_plug_smart",
     "profile": "socket"
   },
   "_TZ3210_huzkzqyk|RH3052": {
@@ -172214,7 +172214,7 @@
     "profile": "thermostat"
   },
   "_TZE200_BJ9M6V91|TS0225": {
-    "driver": "sensor_motion_presence_hybrid",
+    "driver": "sensor_motion_presence",
     "profile": "sensor"
   },
   "_TZE200_BMZPHLD8|TS0601": {
@@ -172482,11 +172482,11 @@
     "profile": "lock"
   },
   "_TZE200_BXOO2SWD|TS0601": {
-    "driver": "dimmer_dual_channel_hybrid",
+    "driver": "dimmer_dual_channel",
     "profile": "light"
   },
   "_TZE200_BXOO2SWD|TS1101": {
-    "driver": "dimmer_dual_channel_hybrid",
+    "driver": "dimmer_dual_channel",
     "profile": "light"
   },
   "_TZE200_BYNNCZCB|01MINIZB": {
@@ -176898,27 +176898,27 @@
     "profile": "sensor"
   },
   "_TZE200_GNPN9HXB|TS0203": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_GNPN9HXB|TS0225": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_GNPN9HXB|TS0601": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_GNPN9HXB|ZG-204ZL": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_GNPN9HXB|ZG-204ZM": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_GNPN9HXB|ZG-204ZV": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_GNW1RRIL|CK-BL702-MWS-01": {
@@ -177102,27 +177102,27 @@
     "profile": "socket"
   },
   "_TZE200_GRGOL3XP|TS0203": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_GRGOL3XP|TS0225": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_GRGOL3XP|TS0601": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_GRGOL3XP|ZG-204ZL": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_GRGOL3XP|ZG-204ZM": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_GRGOL3XP|ZG-204ZV": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_GUBDGAI2|CK-BL702-MWS-01": {
@@ -178802,7 +178802,7 @@
     "profile": "sensor"
   },
   "_TZE200_IOSSYXRA|TS0601": {
-    "driver": "curtain_motor_tilt_hybrid",
+    "driver": "curtain_motor_tilt",
     "profile": "windowcoverings"
   },
   "_TZE200_IOXKJVUZ|TS0204": {
@@ -187546,11 +187546,11 @@
     "profile": "sensor"
   },
   "_TZE200_SH1BTABA|TS0041": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZE200_SH1BTABA|TS004F": {
-    "driver": "button_wireless_smart_hybrid",
+    "driver": "button_wireless_smart",
     "profile": "sensor"
   },
   "_TZE200_SH1BTABB|TS0601": {
@@ -189214,27 +189214,27 @@
     "profile": "sensor"
   },
   "_TZE200_ULI8WASJ|TS0203": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_ULI8WASJ|TS0225": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_ULI8WASJ|TS0601": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_ULI8WASJ|ZG-204ZL": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_ULI8WASJ|ZG-204ZM": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_ULI8WASJ|ZG-204ZV": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_ULYN7B1O|TS0601": {
@@ -192406,27 +192406,27 @@
     "profile": "sensor"
   },
   "_TZE200_Y8JIJHBA|TS0203": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_Y8JIJHBA|TS0225": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_Y8JIJHBA|TS0601": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_Y8JIJHBA|ZG-204ZL": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_Y8JIJHBA|ZG-204ZM": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_Y8JIJHBA|ZG-204ZV": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_Y8YJULON|TS0052": {
@@ -196630,51 +196630,51 @@
     "profile": "fan"
   },
   "_TZE200_gnpn9hxb|TS0203": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_gnpn9hxb|TS0225": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_gnpn9hxb|TS0601": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_gnpn9hxb|ZG-204ZL": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_gnpn9hxb|ZG-204ZM": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_gnpn9hxb|ZG-204ZV": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_grgol3xp|TS0203": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_grgol3xp|TS0225": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_grgol3xp|TS0601": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_grgol3xp|ZG-204ZL": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_grgol3xp|ZG-204ZM": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_grgol3xp|ZG-204ZV": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_gwkapsoq|RH3052": {
@@ -197934,27 +197934,27 @@
     "profile": "fan"
   },
   "_TZE200_uli8wasj|TS0203": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_uli8wasj|TS0225": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_uli8wasj|TS0601": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_uli8wasj|ZG-204ZL": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_uli8wasj|ZG-204ZM": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_uli8wasj|ZG-204ZV": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_utkemkbs|RH3052": {
@@ -198198,7 +198198,7 @@
     "profile": "fan"
   },
   "_TZE200_xlppj4f5|TS0601": {
-    "driver": "device_radiator_valve_hybrid",
+    "driver": "device_radiator_valve",
     "profile": "valve",
     "description": "Immax NEO Smart Water Timer"
   },
@@ -198251,27 +198251,27 @@
     "profile": "fan"
   },
   "_TZE200_y8jijhba|TS0203": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_y8jijhba|TS0225": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_y8jijhba|TS0601": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_y8jijhba|ZG-204ZL": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_y8jijhba|ZG-204ZM": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_y8jijhba|ZG-204ZV": {
-    "driver": "sensor_presence_radar_hybrid",
+    "driver": "sensor_presence_radar",
     "profile": "sensor"
   },
   "_TZE200_yh7aoahi|RH3052": {
@@ -204587,7 +204587,7 @@
     "profile": "sensor"
   },
   "_TZE204_EAAC7DKW|TS0601": {
-    "driver": "device_din_rail_meter_hybrid",
+    "driver": "device_din_rail_meter",
     "profile": "fan"
   },
   "_TZE204_EZQY5PVH|TS0225": {
@@ -209651,7 +209651,7 @@
     "profile": "light"
   },
   "_TZE204_NSLR42TT|TS0601": {
-    "driver": "device_din_rail_meter_hybrid",
+    "driver": "device_din_rail_meter",
     "profile": "fan"
   },
   "_TZE204_NT5DGEJC|TS0601": {
@@ -222143,7 +222143,7 @@
     "profile": "sensor"
   },
   "_TZE284_8se38w3c|TS0601": {
-    "driver": "sensor_climate_temphumidsensor_hybrid",
+    "driver": "sensor_climate_temphumidsensor",
     "profile": "sensor",
     "description": "Temperature & Humidity Sensor with external probe"
   },
@@ -225476,7 +225476,7 @@
     "profile": "sensor"
   },
   "_TZE284_GAJ531W3|TS0601": {
-    "driver": "device_air_purifier_radiator_hybrid",
+    "driver": "device_air_purifier_radiator",
     "profile": "thermostat"
   },
   "_TZE284_GGEV5FSL|TS0225": {
@@ -225900,7 +225900,7 @@
     "profile": "thermostat"
   },
   "_TZE284_HDML1AAV|TS0601": {
-    "driver": "sensor_lcdtemphumidsensor_soil_hybrid",
+    "driver": "sensor_lcdtemphumidsensor_soil",
     "profile": "sensor"
   },
   "_TZE284_HDYJYQJM|CK-TLSR8656-SS5-01(7014)": {
@@ -233536,7 +233536,7 @@
     "profile": "fan"
   },
   "_TZE284_fhvpaltk|TS0601": {
-    "driver": "device_radiator_valve_hybrid",
+    "driver": "device_radiator_valve",
     "profile": "valve",
     "description": "Insoma Two Way Irrigation Valve"
   },
@@ -233565,7 +233565,7 @@
     "profile": "fan"
   },
   "_TZE284_hdml1aav|TS0601": {
-    "driver": "sensor_lcdtemphumidsensor_soil_hybrid",
+    "driver": "sensor_lcdtemphumidsensor_soil",
     "profile": "sensor"
   },
   "_TZE284_rqcuwlsa|ARTECO": {

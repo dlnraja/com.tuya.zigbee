@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_smart_bulb_rgb_turned_on_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_smart_bulb_rgb_turned_on_bulb_rgb_led",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_smart_bulb_rgb_turned_off_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_smart_bulb_rgb_turned_off_bulb_rgb_led",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_smart_bulb_rgb_dim_changed_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_smart_bulb_rgb_dim_changed_bulb_rgb_led",
       "title": {
         "en": "Brightness changed",
         "fr": "LuminositÃ© changÃ©e"
@@ -48,7 +48,7 @@
       }
     },
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_turned_on_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_turned_on_bulb_rgb_led",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©",
@@ -64,7 +64,7 @@
       }
     },
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_turned_off_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_turned_off_bulb_rgb_led",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -80,7 +80,7 @@
       }
     },
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_battery_low_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_battery_low_bulb_rgb_led",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -98,7 +98,7 @@
   ],
   "conditions": [
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_smart_bulb_rgb_is_on_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_smart_bulb_rgb_is_on_bulb_rgb_led",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}"
@@ -110,7 +110,7 @@
       "args": []
     },
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_is_on_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_is_on_bulb_rgb_led",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}",
@@ -128,7 +128,7 @@
   ],
   "actions": [
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_smart_bulb_rgb_turn_on_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_smart_bulb_rgb_turn_on_bulb_rgb_led",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_smart_bulb_rgb_turn_off_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_smart_bulb_rgb_turn_off_bulb_rgb_led",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre"
@@ -152,7 +152,7 @@
       }
     },
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_smart_bulb_rgb_toggle_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_smart_bulb_rgb_toggle_bulb_rgb_led",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
@@ -164,7 +164,7 @@
       }
     },
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_smart_bulb_rgb_set_dim_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_smart_bulb_rgb_set_dim_bulb_rgb_led",
       "title": {
         "en": "Set brightness to...",
         "fr": "RÃ©gler la luminositÃ© Ã..."
@@ -190,7 +190,7 @@
       }
     },
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_turn_on_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_turn_on_bulb_rgb_led",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -206,7 +206,7 @@
       }
     },
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_turn_off_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_turn_off_bulb_rgb_led",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre",
@@ -222,7 +222,7 @@
       }
     },
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_toggle_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_toggle_bulb_rgb_led",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -238,7 +238,7 @@
       }
     },
     {
-      "id": "bulb_rgb_led_hybrid_bulb_rgb_set_brightness_bulb_rgb_led_hybrid",
+      "id": "bulb_rgb_led_bulb_rgb_set_brightness_bulb_rgb_led",
       "title": {
         "en": "Set brightness",
         "fr": "RÃ©gler luminositÃ©",

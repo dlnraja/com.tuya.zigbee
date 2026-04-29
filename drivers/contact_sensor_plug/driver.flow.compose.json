@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "contact_sensor_plug_hybrid_plug_smart_turned_on",
+      "id": "contact_sensor_plug_plug_smart_turned_on",
       "highlight": true,
       "title": {
         "en": "Turned on",
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "contact_sensor_plug_hybrid_plug_smart_turned_off",
+      "id": "contact_sensor_plug_plug_smart_turned_off",
       "title": {
         "en": "Turned off",
         "nl": "Uitgeschakeld",
@@ -46,7 +46,7 @@
       }
     },
     {
-      "id": "contact_sensor_plug_hybrid_plug_smart_power_restored",
+      "id": "contact_sensor_plug_plug_smart_power_restored",
       "title": {
         "en": "Power restored",
         "nl": "Stroom hersteld",
@@ -68,7 +68,7 @@
       }
     },
     {
-      "id": "contact_sensor_plug_hybrid_plug_smart_power_changed",
+      "id": "contact_sensor_plug_plug_smart_power_changed",
       "title": {
         "en": "Power consumption changed",
         "nl": "Stroomverbruik gewijzigd",
@@ -119,7 +119,7 @@
       }
     },
     {
-      "id": "contact_sensor_plug_hybrid_plug_smart_power_threshold",
+      "id": "contact_sensor_plug_plug_smart_power_threshold",
       "highlight": true,
       "title": {
         "en": "Power exceeds threshold",
@@ -156,7 +156,7 @@
       ]
     },
     {
-      "id": "contact_sensor_plug_hybrid_plug_smart_battery_low",
+      "id": "contact_sensor_plug_plug_smart_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -174,7 +174,7 @@
   ],
   "conditions": [
     {
-      "id": "contact_sensor_plug_hybrid_plug_smart_is_on",
+      "id": "contact_sensor_plug_plug_smart_is_on",
       "title": {
         "en": "Plug !{{is|is not}} on",
         "nl": "Stekker !{{is|is niet}} aan",
@@ -192,7 +192,7 @@
   ],
   "actions": [
     {
-      "id": "contact_sensor_plug_hybrid_plug_smart_turn_on",
+      "id": "contact_sensor_plug_plug_smart_turn_on",
       "title": {
         "en": "Turn on",
         "nl": "Inschakelen",
@@ -208,7 +208,7 @@
       "args": []
     },
     {
-      "id": "contact_sensor_plug_hybrid_plug_smart_turn_off",
+      "id": "contact_sensor_plug_plug_smart_turn_off",
       "title": {
         "en": "Turn off",
         "nl": "Uitschakelen",
@@ -224,7 +224,7 @@
       "args": []
     },
     {
-      "id": "contact_sensor_plug_hybrid_plug_smart_toggle",
+      "id": "contact_sensor_plug_plug_smart_toggle",
       "title": {
         "en": "Toggle",
         "nl": "Schakelen",
@@ -240,7 +240,7 @@
       "args": []
     },
     {
-      "id": "contact_sensor_plug_hybrid_plug_smart_turn_on_delay",
+      "id": "contact_sensor_plug_plug_smart_turn_on_delay",
       "title": {
         "en": "Turn on after delay",
         "nl": "Inschakelen na vertraging",
@@ -267,7 +267,7 @@
       ]
     },
     {
-      "id": "contact_sensor_plug_hybrid_plug_smart_turn_off_delay",
+      "id": "contact_sensor_plug_plug_smart_turn_off_delay",
       "title": {
         "en": "Turn off after delay",
         "nl": "Uitschakelen na vertraging",
@@ -294,7 +294,7 @@
       ]
     },
     {
-      "id": "contact_sensor_plug_hybrid_plug_smart_set_indicator",
+      "id": "contact_sensor_plug_plug_smart_set_indicator",
       "title": {
         "en": "Set LED indicator mode",
         "fr": "DÃ©finir le mode LED",
@@ -362,7 +362,7 @@
       ]
     },
     {
-      "id": "contact_sensor_plug_hybrid_plug_smart_set_power_on",
+      "id": "contact_sensor_plug_plug_smart_set_power_on",
       "title": {
         "en": "Set power-on behavior",
         "fr": "DÃ©finir comportement dÃ©marrage",

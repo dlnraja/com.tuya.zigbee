@@ -1,5 +1,5 @@
 {
-  "id": "remote_button_emergency_sos_hybrid",
+  "id": "remote_button_emergency_sos",
   "name": {
     "en": "Remote Button Emergency Sos",
     "nl": "Afstandsbediening Noodknop Sos",
@@ -48,7 +48,7 @@
       }
     },
     "learnmode": {
-      "image": "drivers/remote_button_emergency_sos_hybrid/assets/icon.svg",
+      "image": "drivers/remote_button_emergency_sos/assets/icon.svg",
       "instruction": {
         "en": "Push a pin gently into the reset hole on the backside of the unit for aprox 10 seconds until the led on the front blinks rapidly."
       }

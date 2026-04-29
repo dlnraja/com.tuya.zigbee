@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "air_purifier_quality_hybrid_air_quality_co2_co2_level_changed",
+      "id": "air_purifier_quality_air_quality_co2_co2_level_changed",
       "title": {
         "en": "CO2 level changed",
         "fr": "Niveau CO2 changÃ©"
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "air_purifier_quality_hybrid_air_quality_co2_co2_alert_on",
+      "id": "air_purifier_quality_air_quality_co2_co2_alert_on",
       "title": {
         "en": "CO2 alert triggered",
         "fr": "Alerte CO2 dÃ©clenchÃ©e"
@@ -36,7 +36,7 @@
       }
     },
     {
-      "id": "air_purifier_quality_hybrid_air_quality_co2_co2_alert_off",
+      "id": "air_purifier_quality_air_quality_co2_co2_alert_off",
       "title": {
         "en": "CO2 returned to normal",
         "fr": "CO2 revenu Ã la normale"
@@ -48,7 +48,7 @@
       }
     },
     {
-      "id": "air_purifier_quality_hybrid_air_quality_co2_air_temperature_changed",
+      "id": "air_purifier_quality_air_quality_co2_air_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e"
@@ -71,7 +71,7 @@
       }
     },
     {
-      "id": "air_purifier_quality_hybrid_air_quality_co2_air_humidity_changed",
+      "id": "air_purifier_quality_air_quality_co2_air_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "HumiditÃ© changÃ©e"
@@ -94,7 +94,7 @@
       }
     },
     {
-      "id": "air_purifier_quality_hybrid_air_quality_co2_pm25_changed",
+      "id": "air_purifier_quality_air_quality_co2_pm25_changed",
       "title": {
         "en": "PM2.5 level changed",
         "fr": "Niveau PM2.5 changÃ©"
@@ -117,7 +117,7 @@
       }
     },
     {
-      "id": "air_purifier_quality_hybrid_air_quality_co2_temp_changed",
+      "id": "air_purifier_quality_air_quality_co2_temp_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e",
@@ -133,7 +133,7 @@
       }
     },
     {
-      "id": "air_purifier_quality_hybrid_air_quality_co2_humidity_changed",
+      "id": "air_purifier_quality_air_quality_co2_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "HumiditÃ© changÃ©e",
@@ -149,7 +149,7 @@
       }
     },
     {
-      "id": "air_purifier_quality_hybrid_air_quality_co2_battery_low",
+      "id": "air_purifier_quality_air_quality_co2_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -167,7 +167,7 @@
   ],
   "conditions": [
     {
-      "id": "air_purifier_quality_hybrid_air_quality_co2_co2_above",
+      "id": "air_purifier_quality_air_quality_co2_co2_above",
       "title": {
         "en": "CO2 level is above",
         "fr": "Niveau CO2 supÃ©rieur Ã"
@@ -186,7 +186,7 @@
       ]
     },
     {
-      "id": "air_purifier_quality_hybrid_air_quality_co2_co2_below",
+      "id": "air_purifier_quality_air_quality_co2_co2_below",
       "title": {
         "en": "CO2 level is below",
         "fr": "Niveau CO2 infÃ©rieur Ã"
@@ -205,7 +205,7 @@
       ]
     },
     {
-      "id": "air_purifier_quality_hybrid_air_quality_co2_air_quality_good",
+      "id": "air_purifier_quality_air_quality_co2_air_quality_good",
       "title": {
         "en": "Air quality is good",
         "fr": "QualitÃ© air bonne"

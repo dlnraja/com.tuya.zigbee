@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "plug_energy_monitor_hybrid_climate_sensor_temperature_changed_sensor_climate_contact_hybrid",
+      "id": "plug_energy_monitor_climate_sensor_temperature_changed_sensor_climate_contact",
       "highlight": true,
       "title": {
         "en": "Temperature changed",
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "plug_energy_monitor_hybrid_climate_sensor_humidity_changed_sensor_climate_contact_hybrid",
+      "id": "plug_energy_monitor_climate_sensor_humidity_changed_sensor_climate_contact",
       "title": {
         "en": "Humidity changed",
         "fr": "HumiditÃ© changÃ©e"
@@ -48,7 +48,7 @@
       }
     },
     {
-      "id": "plug_energy_monitor_hybrid_climate_sensor_battery_low_sensor_climate_contact_hybrid",
+      "id": "plug_energy_monitor_climate_sensor_battery_low_sensor_climate_contact",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
@@ -60,7 +60,7 @@
       }
     },
     {
-      "id": "plug_energy_monitor_hybrid_climate_sensor_temperature_alarm_high_sensor_climate_contact_hybrid",
+      "id": "plug_energy_monitor_climate_sensor_temperature_alarm_high_sensor_climate_contact",
       "title": {
         "en": "Temperature too high",
         "fr": "TempÃ©rature trop haute"
@@ -72,7 +72,7 @@
       }
     },
     {
-      "id": "plug_energy_monitor_hybrid_climate_sensor_temperature_alarm_low_sensor_climate_contact_hybrid",
+      "id": "plug_energy_monitor_climate_sensor_temperature_alarm_low_sensor_climate_contact",
       "title": {
         "en": "Temperature too low",
         "fr": "TempÃ©rature trop basse"
@@ -84,7 +84,7 @@
       }
     },
     {
-      "id": "plug_energy_monitor_hybrid_climate_sensor_humidity_alarm_high_sensor_climate_contact_hybrid",
+      "id": "plug_energy_monitor_climate_sensor_humidity_alarm_high_sensor_climate_contact",
       "title": {
         "en": "Humidity too high",
         "fr": "HumiditÃ© trop haute"
@@ -96,7 +96,7 @@
       }
     },
     {
-      "id": "plug_energy_monitor_hybrid_climate_sensor_humidity_alarm_low_sensor_climate_contact_hybrid",
+      "id": "plug_energy_monitor_climate_sensor_humidity_alarm_low_sensor_climate_contact",
       "title": {
         "en": "Humidity too low",
         "fr": "HumiditÃ© trop basse"
@@ -108,7 +108,7 @@
       }
     },
     {
-      "id": "plug_energy_monitor_hybrid_climate_sensor_temp_changed_sensor_climate_contact_hybrid",
+      "id": "plug_energy_monitor_climate_sensor_temp_changed_sensor_climate_contact",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e",
@@ -126,7 +126,7 @@
   ],
   "conditions": [
     {
-      "id": "plug_energy_monitor_hybrid_climate_sensor_temperature_above_sensor_climate_contact_hybrid",
+      "id": "plug_energy_monitor_climate_sensor_temperature_above_sensor_climate_contact",
       "title": {
         "en": "Temperature is above",
         "fr": "TempÃ©rature supÃ©rieure Ã"
@@ -150,7 +150,7 @@
       ]
     },
     {
-      "id": "plug_energy_monitor_hybrid_climate_sensor_temperature_below_sensor_climate_contact_hybrid",
+      "id": "plug_energy_monitor_climate_sensor_temperature_below_sensor_climate_contact",
       "title": {
         "en": "Temperature is below",
         "fr": "TempÃ©rature infÃ©rieure Ã"
@@ -174,7 +174,7 @@
       ]
     },
     {
-      "id": "plug_energy_monitor_hybrid_climate_sensor_humidity_above_sensor_climate_contact_hybrid",
+      "id": "plug_energy_monitor_climate_sensor_humidity_above_sensor_climate_contact",
       "title": {
         "en": "Humidity is above",
         "fr": "HumiditÃ© supÃ©rieure Ã"
@@ -198,7 +198,7 @@
       ]
     },
     {
-      "id": "plug_energy_monitor_hybrid_climate_sensor_humidity_below_sensor_climate_contact_hybrid",
+      "id": "plug_energy_monitor_climate_sensor_humidity_below_sensor_climate_contact",
       "title": {
         "en": "Humidity is below",
         "fr": "HumiditÃ© infÃ©rieure Ã"

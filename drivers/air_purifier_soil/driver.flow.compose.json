@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_moisture_changed",
+      "id": "air_purifier_soil_soil_sensor_moisture_changed",
       "title": {
         "en": "Soil moisture changed",
         "nl": "Bodemvochtigheid veranderd",
@@ -30,7 +30,7 @@
       "args": []
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_temperature_changed",
+      "id": "air_purifier_soil_soil_sensor_temperature_changed",
       "title": {
         "en": "Soil temperature changed",
         "nl": "Bodemtemperatuur veranderd",
@@ -59,7 +59,7 @@
       "args": []
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_soil_dry",
+      "id": "air_purifier_soil_soil_sensor_soil_dry",
       "highlight": true,
       "title": {
         "en": "Soil is dry - needs water",
@@ -82,7 +82,7 @@
       }
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_soil_wet",
+      "id": "air_purifier_soil_soil_sensor_soil_wet",
       "title": {
         "en": "Soil is wet",
         "nl": "Grond is nat",
@@ -104,7 +104,7 @@
       }
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_soil_optimal",
+      "id": "air_purifier_soil_soil_sensor_soil_optimal",
       "title": {
         "en": "Soil moisture is optimal",
         "nl": "Bodemvochtigheid is optimaal",
@@ -126,7 +126,7 @@
       }
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_frost_warning",
+      "id": "air_purifier_soil_soil_sensor_frost_warning",
       "title": {
         "en": "Frost warning",
         "nl": "Vorstwaarschwing",
@@ -148,7 +148,7 @@
       }
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_battery_changed",
+      "id": "air_purifier_soil_soil_sensor_battery_changed",
       "title": {
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
@@ -177,7 +177,7 @@
       "args": []
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_battery_low",
+      "id": "air_purifier_soil_soil_sensor_battery_low",
       "title": {
         "en": "Battery is low",
         "nl": "Batterij is bijna leeg",
@@ -193,7 +193,7 @@
       }
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_temp_changed",
+      "id": "air_purifier_soil_soil_sensor_temp_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e",
@@ -209,7 +209,7 @@
       }
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_humidity_changed",
+      "id": "air_purifier_soil_soil_sensor_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "HumiditÃ© changÃ©e",
@@ -225,7 +225,7 @@
       }
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_water_alarm",
+      "id": "air_purifier_soil_soil_sensor_water_alarm",
       "title": {
         "en": "Water alarm",
         "fr": "Alarme eau",
@@ -243,7 +243,7 @@
   ],
   "conditions": [
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_moisture_below",
+      "id": "air_purifier_soil_soil_sensor_moisture_below",
       "title": {
         "en": "Soil moisture !{{is|is not}} below",
         "nl": "Bodemvochtigheid !{{is|is niet}} onder",
@@ -270,7 +270,7 @@
       ]
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_moisture_above",
+      "id": "air_purifier_soil_soil_sensor_moisture_above",
       "title": {
         "en": "Soil moisture !{{is|is not}} above",
         "nl": "Bodemvochtigheid !{{is|is niet}} boven",
@@ -297,7 +297,7 @@
       ]
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_temperature_above",
+      "id": "air_purifier_soil_soil_sensor_temperature_above",
       "title": {
         "en": "Soil temperature !{{is|is not}} above",
         "nl": "Bodemtemperatuur !{{is|is niet}} boven",
@@ -324,7 +324,7 @@
       ]
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_needs_water",
+      "id": "air_purifier_soil_soil_sensor_needs_water",
       "title": {
         "en": "Soil !{{needs|does not need}} water",
         "nl": "Grond !{{heeft|heeft geen}} water nodig",
@@ -340,7 +340,7 @@
       }
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_battery_above",
+      "id": "air_purifier_soil_soil_sensor_battery_above",
       "title": {
         "en": "Battery !{{is|is not}} above",
         "nl": "Batterij !{{is|is niet}} boven",
@@ -367,7 +367,7 @@
       ]
     },
     {
-      "id": "air_purifier_soil_hybrid_soil_sensor_water_detected",
+      "id": "air_purifier_soil_soil_sensor_water_detected",
       "title": {
         "en": "Water !{{is|is not}} detected",
         "fr": "Eau !{{est|n'est pas}} dÃ©tectÃ©e",

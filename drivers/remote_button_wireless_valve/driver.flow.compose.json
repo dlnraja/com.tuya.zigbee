@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_button_2gang_button_pressed",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_button_2gang_button_pressed",
       "title": {
         "en": "Button pressed",
         "fr": "Bouton appuyÃ©"
@@ -24,7 +24,7 @@
       "args": []
     },
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_button_2gang_button_double_press",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_button_2gang_button_double_press",
       "title": {
         "en": "Button double-pressed",
         "fr": "Bouton double-cliquÃ©"
@@ -47,7 +47,7 @@
       "args": []
     },
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_button_2gang_button_long_press",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_button_2gang_button_long_press",
       "title": {
         "en": "Button long-pressed",
         "fr": "Bouton pressÃ© longtemps"
@@ -70,7 +70,7 @@
       "args": []
     },
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_button_2gang_button_multi_press",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_button_2gang_button_multi_press",
       "title": {
         "en": "Button multi-pressed",
         "fr": "Bouton multi-cliquÃ©"
@@ -102,7 +102,7 @@
       "args": []
     },
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_button_2gang_button_1_pressed",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_button_2gang_button_1_pressed",
       "title": {
         "en": "Button 1 pressed",
         "fr": "Bouton 1 appuyÃ©"
@@ -114,7 +114,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_button_2gang_button_1_double",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_button_2gang_button_1_double",
       "title": {
         "en": "Button 1 double-pressed",
         "fr": "Bouton 1 double-cliquÃ©"
@@ -126,7 +126,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_button_2gang_button_1_long",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_button_2gang_button_1_long",
       "title": {
         "en": "Button 1 long-pressed",
         "fr": "Bouton 1 pressÃ© longtemps"
@@ -138,7 +138,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_button_2gang_button_2_pressed",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_button_2gang_button_2_pressed",
       "title": {
         "en": "Button 2 pressed",
         "fr": "Bouton 2 appuyÃ©"
@@ -150,7 +150,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_button_2gang_button_2_double",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_button_2gang_button_2_double",
       "title": {
         "en": "Button 2 double-pressed",
         "fr": "Bouton 2 double-cliquÃ©"
@@ -162,7 +162,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_button_2gang_button_2_long",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_button_2gang_button_2_long",
       "title": {
         "en": "Button 2 long-pressed",
         "fr": "Bouton 2 pressÃ© longtemps"
@@ -174,7 +174,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_button_2gang_button_1_triple",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_button_2gang_button_1_triple",
       "title": {
         "en": "Button 1 triple-pressed",
         "fr": "Bouton 1 triple-cliquÃ©"
@@ -186,7 +186,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_button_2gang_button_2_triple",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_button_2gang_button_2_triple",
       "title": {
         "en": "Button 2 triple-pressed",
         "fr": "Bouton 2 triple-cliquÃ©"
@@ -198,7 +198,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_button_2gang_button_1_release",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_button_2gang_button_1_release",
       "title": {
         "en": "Button 1 released - after hold",
         "fr": "Bouton 1 relÃ¢chÃ© - aprÃ¨s maintien"
@@ -210,7 +210,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_button_2gang_button_2_release",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_button_2gang_button_2_release",
       "title": {
         "en": "Button 2 released - after hold",
         "fr": "Bouton 2 relÃ¢chÃ© - aprÃ¨s maintien"
@@ -222,7 +222,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_valve_hybrid_button_wireless_valve_hybrid_button_wireless_2_battery_low",
+      "id": "remote_button_wireless_valve_button_wireless_valve_button_wireless_2_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",

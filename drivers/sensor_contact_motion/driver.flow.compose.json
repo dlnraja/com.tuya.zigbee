@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "sensor_contact_motion_hybrid_motion_sensor_motion_detected_sensor_contact_motion_hybrid",
+      "id": "sensor_contact_motion_motion_sensor_motion_detected_sensor_contact_motion",
       "highlight": true,
       "title": {
         "en": "Motion detected",
@@ -14,7 +14,7 @@
       }
     },
     {
-      "id": "sensor_contact_motion_hybrid_motion_sensor_motion_cleared_sensor_contact_motion_hybrid",
+      "id": "sensor_contact_motion_motion_sensor_motion_cleared_sensor_contact_motion",
       "title": {
         "en": "Motion cleared",
         "fr": "Mouvement terminÃ©"
@@ -26,7 +26,7 @@
       }
     },
     {
-      "id": "sensor_contact_motion_hybrid_motion_sensor_battery_low_sensor_contact_motion_hybrid",
+      "id": "sensor_contact_motion_motion_sensor_battery_low_sensor_contact_motion",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
@@ -38,7 +38,7 @@
       }
     },
     {
-      "id": "sensor_contact_motion_hybrid_motion_sensor_battery_changed_sensor_contact_motion_hybrid",
+      "id": "sensor_contact_motion_motion_sensor_battery_changed_sensor_contact_motion",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changÃ©"
@@ -61,7 +61,7 @@
       }
     },
     {
-      "id": "sensor_contact_motion_hybrid_motion_sensor_tamper_true_sensor_contact_motion_hybrid",
+      "id": "sensor_contact_motion_motion_sensor_tamper_true_sensor_contact_motion",
       "title": {
         "en": "Tamper alarm triggered",
         "fr": "Alarme anti-sabotage dÃ©clenchÃ©e",
@@ -77,7 +77,7 @@
       }
     },
     {
-      "id": "sensor_contact_motion_hybrid_motion_sensor_tamper_false_sensor_contact_motion_hybrid",
+      "id": "sensor_contact_motion_motion_sensor_tamper_false_sensor_contact_motion",
       "title": {
         "en": "Tamper alarm cleared",
         "fr": "Alarme anti-sabotage terminÃ©e",
@@ -93,7 +93,7 @@
       }
     },
     {
-      "id": "sensor_contact_motion_hybrid_motion_sensor_lux_changed_sensor_contact_motion_hybrid",
+      "id": "sensor_contact_motion_motion_sensor_lux_changed_sensor_contact_motion",
       "title": {
         "en": "Luminance changed",
         "fr": "Luminance changÃ©e",
@@ -139,7 +139,7 @@
       "args": []
     },
     {
-      "id": "sensor_contact_motion_hybrid_motion_sensor_tamper_alarm_sensor_contact_motion_hybrid",
+      "id": "sensor_contact_motion_motion_sensor_tamper_alarm_sensor_contact_motion",
       "title": {
         "en": "Tamper alarm",
         "fr": "Alarme sabotage",
@@ -157,7 +157,7 @@
   ],
   "conditions": [
     {
-      "id": "sensor_contact_motion_hybrid_motion_sensor_motion_active_sensor_contact_motion_hybrid",
+      "id": "sensor_contact_motion_motion_sensor_motion_active_sensor_contact_motion",
       "title": {
         "en": "Motion !{{is|is not}} detected",
         "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©"
@@ -169,7 +169,7 @@
       }
     },
     {
-      "id": "sensor_contact_motion_hybrid_motion_sensor_tamper_active_sensor_contact_motion_hybrid",
+      "id": "sensor_contact_motion_motion_sensor_tamper_active_sensor_contact_motion",
       "title": {
         "en": "Tamper !{{is|is not}} active",
         "fr": "Sabotage !{{est|n'est pas}} actif",

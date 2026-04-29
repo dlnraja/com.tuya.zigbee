@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_gas_detected",
+      "id": "climate_sensor_gas_gas_detector_gas_detected",
       "highlight": true,
       "title": {
         "en": "Gas detected!",
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_gas_cleared",
+      "id": "climate_sensor_gas_gas_detector_gas_cleared",
       "title": {
         "en": "Gas alarm cleared",
         "nl": "Gas alarm opgeheven",
@@ -40,7 +40,7 @@
       }
     },
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_co_detected",
+      "id": "climate_sensor_gas_gas_detector_co_detected",
       "highlight": true,
       "title": {
         "en": "Carbon monoxide detected!",
@@ -63,7 +63,7 @@
       }
     },
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_co_cleared",
+      "id": "climate_sensor_gas_gas_detector_co_cleared",
       "title": {
         "en": "CO alarm cleared",
         "nl": "CO alarm opgeheven",
@@ -79,7 +79,7 @@
       }
     },
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_tamper_true",
+      "id": "climate_sensor_gas_gas_detector_tamper_true",
       "title": {
         "en": "Tamper alert",
         "nl": "Sabotage alarm",
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_battery_changed",
+      "id": "climate_sensor_gas_gas_detector_battery_changed",
       "title": {
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
@@ -124,7 +124,7 @@
       }
     },
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_battery_low",
+      "id": "climate_sensor_gas_gas_detector_battery_low",
       "title": {
         "en": "Battery is low",
         "nl": "Batterij is bijna leeg",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_co_alarm",
+      "id": "climate_sensor_gas_gas_detector_co_alarm",
       "title": {
         "en": "CO alarm",
         "fr": "Alarme CO",
@@ -156,7 +156,7 @@
       }
     },
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_gas_alarm",
+      "id": "climate_sensor_gas_gas_detector_gas_alarm",
       "title": {
         "en": "Gas alarm",
         "fr": "Alarme gaz",
@@ -174,7 +174,7 @@
   ],
   "conditions": [
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_gas_is_detected",
+      "id": "climate_sensor_gas_gas_detector_gas_is_detected",
       "title": {
         "en": "Gas !{{is|is not}} detected",
         "nl": "Gas !{{is|is niet}} gedetecteerd",
@@ -190,7 +190,7 @@
       }
     },
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_co_is_detected",
+      "id": "climate_sensor_gas_gas_detector_co_is_detected",
       "title": {
         "en": "CO !{{is|is not}} detected",
         "nl": "CO !{{is|is niet}} gedetecteerd",
@@ -206,7 +206,7 @@
       }
     },
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_co_active",
+      "id": "climate_sensor_gas_gas_detector_co_active",
       "title": {
         "en": "CO !{{is|is not}} detected",
         "fr": "CO !{{est|n'est pas}} dÃ©tectÃ©",
@@ -222,7 +222,7 @@
       }
     },
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_gas_active",
+      "id": "climate_sensor_gas_gas_detector_gas_active",
       "title": {
         "en": "Gas !{{is|is not}} detected",
         "fr": "Gaz !{{est|n'est pas}} dÃ©tectÃ©",
@@ -240,7 +240,7 @@
   ],
   "actions": [
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_test",
+      "id": "climate_sensor_gas_gas_detector_test",
       "title": {
         "en": "Test the detector",
         "nl": "Detector testen",
@@ -256,7 +256,7 @@
       }
     },
     {
-      "id": "climate_sensor_gas_hybrid_gas_detector_mute",
+      "id": "climate_sensor_gas_gas_detector_mute",
       "title": {
         "en": "Mute alarm",
         "nl": "Alarm dempen",

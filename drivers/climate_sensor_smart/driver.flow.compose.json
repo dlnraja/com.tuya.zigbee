@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "climate_sensor_smart_hybrid_smart_scene_panel_scene_activated",
+      "id": "climate_sensor_smart_smart_scene_panel_scene_activated",
       "title": {
         "en": "Scene activated"
       },
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "id": "climate_sensor_smart_hybrid_smart_scene_panel_switch_1_changed",
+      "id": "climate_sensor_smart_smart_scene_panel_switch_1_changed",
       "title": {
         "en": "Switch 1 changed"
       },
@@ -51,7 +51,7 @@
       }
     },
     {
-      "id": "climate_sensor_smart_hybrid_smart_scene_panel_switch_2_changed",
+      "id": "climate_sensor_smart_smart_scene_panel_switch_2_changed",
       "title": {
         "en": "Switch 2 changed"
       },
@@ -60,7 +60,7 @@
       }
     },
     {
-      "id": "climate_sensor_smart_hybrid_smart_scene_panel_switch_3_changed",
+      "id": "climate_sensor_smart_smart_scene_panel_switch_3_changed",
       "title": {
         "en": "Switch 3 changed"
       },
@@ -69,7 +69,7 @@
       }
     },
     {
-      "id": "climate_sensor_smart_hybrid_smart_scene_panel_switch_4_changed",
+      "id": "climate_sensor_smart_smart_scene_panel_switch_4_changed",
       "title": {
         "en": "Switch 4 changed"
       },
@@ -80,7 +80,7 @@
   ],
   "actions": [
     {
-      "id": "climate_sensor_smart_hybrid_smart_scene_panel_set_switch_1",
+      "id": "climate_sensor_smart_smart_scene_panel_set_switch_1",
       "title": {
         "en": "Set switch 1"
       },
@@ -95,7 +95,7 @@
       ]
     },
     {
-      "id": "climate_sensor_smart_hybrid_smart_scene_panel_set_switch_2",
+      "id": "climate_sensor_smart_smart_scene_panel_set_switch_2",
       "title": {
         "en": "Set switch 2"
       },
@@ -110,7 +110,7 @@
       ]
     },
     {
-      "id": "climate_sensor_smart_hybrid_smart_scene_panel_set_switch_3",
+      "id": "climate_sensor_smart_smart_scene_panel_set_switch_3",
       "title": {
         "en": "Set switch 3"
       },
@@ -125,7 +125,7 @@
       ]
     },
     {
-      "id": "climate_sensor_smart_hybrid_smart_scene_panel_set_switch_4",
+      "id": "climate_sensor_smart_smart_scene_panel_set_switch_4",
       "title": {
         "en": "Set switch 4"
       },

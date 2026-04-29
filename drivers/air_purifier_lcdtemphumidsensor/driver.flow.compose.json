@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_turned_on",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_turned_off",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_pm25_changed",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_pm25_changed",
       "title": {
         "en": "PM2.5 changed",
         "fr": "PM2.5 changÃ©",
@@ -61,7 +61,7 @@
   ],
   "conditions": [
     {
-      "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_is_on",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_is_on",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}",
@@ -79,7 +79,7 @@
   ],
   "actions": [
     {
-      "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_turn_on",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_turn_off",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre",
@@ -111,7 +111,7 @@
       }
     },
     {
-      "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_toggle",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_toggle",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -127,7 +127,7 @@
       }
     },
     {
-      "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_set_fan_speed",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_set_fan_speed",
       "title": {
         "en": "Set fan speed",
         "fr": "RÃ©gler vitesse",
@@ -153,7 +153,7 @@
       ]
     },
     {
-      "id": "air_purifier_lcdtemphumidsensor_hybrid_air_purifier_set_brightness",
+      "id": "air_purifier_lcdtemphumidsensor_air_purifier_set_brightness",
       "title": {
         "en": "Set brightness",
         "fr": "RÃ©gler luminositÃ©",

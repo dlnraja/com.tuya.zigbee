@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_air_purifier_din_hybrid_din_rail_meter_power_changed",
+      "id": "device_air_purifier_din_din_rail_meter_power_changed",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changÃ©e",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": "device_air_purifier_din_hybrid_din_rail_meter_voltage_changed",
+      "id": "device_air_purifier_din_din_rail_meter_voltage_changed",
       "title": {
         "en": "Voltage changed",
         "fr": "Tension changÃ©e"
@@ -39,7 +39,7 @@
       }
     },
     {
-      "id": "device_air_purifier_din_hybrid_din_rail_meter_current_changed",
+      "id": "device_air_purifier_din_din_rail_meter_current_changed",
       "title": {
         "en": "Current changed",
         "fr": "Courant changÃ©"
@@ -61,7 +61,7 @@
       }
     },
     {
-      "id": "device_air_purifier_din_hybrid_din_rail_meter_energy_changed",
+      "id": "device_air_purifier_din_din_rail_meter_energy_changed",
       "title": {
         "en": "Energy consumption changed",
         "fr": "Consommation changÃ©e"
@@ -85,7 +85,7 @@
   ],
   "conditions": [
     {
-      "id": "device_air_purifier_din_hybrid_din_rail_meter_power_above",
+      "id": "device_air_purifier_din_din_rail_meter_power_above",
       "title": {
         "en": "Power !{{is|is not}} above"
       },
@@ -105,7 +105,7 @@
   ],
   "actions": [
     {
-      "id": "device_air_purifier_din_hybrid_din_rail_meter_reset_meter",
+      "id": "device_air_purifier_din_din_rail_meter_reset_meter",
       "title": {
         "en": "Reset energy meter"
       },

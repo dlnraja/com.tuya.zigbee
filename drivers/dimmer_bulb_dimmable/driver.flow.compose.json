@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_smart_bulb_dimmer_turned_on",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_smart_bulb_dimmer_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_smart_bulb_dimmer_turned_off",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_smart_bulb_dimmer_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_smart_bulb_dimmer_dim_changed",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_smart_bulb_dimmer_dim_changed",
       "title": {
         "en": "Brightness changed",
         "fr": "LuminositÃ© changÃ©e"
@@ -48,7 +48,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_turned_on",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©",
@@ -64,7 +64,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_turned_off",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -80,7 +80,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_battery_low",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -98,7 +98,7 @@
   ],
   "conditions": [
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_smart_bulb_dimmer_is_on",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_smart_bulb_dimmer_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}"
@@ -110,7 +110,7 @@
       "args": []
     },
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_is_on",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_is_on",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}",
@@ -128,7 +128,7 @@
   ],
   "actions": [
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_smart_bulb_dimmer_turn_on",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_smart_bulb_dimmer_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_smart_bulb_dimmer_turn_off",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_smart_bulb_dimmer_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre"
@@ -152,7 +152,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_smart_bulb_dimmer_toggle",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_smart_bulb_dimmer_toggle",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
@@ -164,7 +164,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_smart_bulb_dimmer_set_dim",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_smart_bulb_dimmer_set_dim",
       "title": {
         "en": "Set brightness to...",
         "fr": "RÃ©gler la luminositÃ© Ã..."
@@ -190,7 +190,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_turn_on",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -206,7 +206,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_turn_off",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre",
@@ -222,7 +222,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_toggle",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_toggle",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -238,7 +238,7 @@
       }
     },
     {
-      "id": "dimmer_bulb_dimmable_hybrid_bulb_dimmable_dimmer_hybrid_bulb_dimmable_set_brightness",
+      "id": "dimmer_bulb_dimmable_bulb_dimmable_dimmer_bulb_dimmable_set_brightness",
       "title": {
         "en": "Set brightness",
         "fr": "RÃ©gler luminositÃ©",

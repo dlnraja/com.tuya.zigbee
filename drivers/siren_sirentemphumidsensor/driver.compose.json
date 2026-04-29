@@ -1,5 +1,5 @@
 {
-  "id": "siren_sirentemphumidsensor_hybrid",
+  "id": "siren_sirentemphumidsensor",
   "name": {
     "en": "Siren Sirentemphumidsensor",
     "nl": "Siren Sirentemphumidsensor",
@@ -38,8 +38,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "drivers/siren_sirentemphumidsensor_hybrid/assets/images/small.png",
-    "large": "drivers/siren_sirentemphumidsensor_hybrid/assets/images/large.png"
+    "small": "drivers/siren_sirentemphumidsensor/assets/images/small.png",
+    "large": "drivers/siren_sirentemphumidsensor/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [],

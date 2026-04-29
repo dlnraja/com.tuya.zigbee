@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "air_purifier_curtain_hybrid_curtain_motor_tilt_battery_low",
+      "id": "air_purifier_curtain_curtain_motor_tilt_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -20,7 +20,7 @@
   "conditions": [],
   "actions": [
     {
-      "id": "air_purifier_curtain_hybrid_curtain_motor_tilt_set_position",
+      "id": "air_purifier_curtain_curtain_motor_tilt_set_position",
       "title": {
         "en": "Set position",
         "fr": "RÃ©gler position",
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "id": "air_purifier_curtain_hybrid_curtain_motor_tilt_open",
+      "id": "air_purifier_curtain_curtain_motor_tilt_open",
       "title": {
         "en": "Open",
         "fr": "Ouvrir",
@@ -62,7 +62,7 @@
       }
     },
     {
-      "id": "air_purifier_curtain_hybrid_curtain_motor_tilt_close",
+      "id": "air_purifier_curtain_curtain_motor_tilt_close",
       "title": {
         "en": "Close",
         "fr": "Fermer",
@@ -78,7 +78,7 @@
       }
     },
     {
-      "id": "air_purifier_curtain_hybrid_curtain_motor_tilt_stop",
+      "id": "air_purifier_curtain_curtain_motor_tilt_stop",
       "title": {
         "en": "Stop",
         "fr": "ArrÃªter",

@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_gang1_turned_on",
+      "id": "dimmer_wall_switch_switch_2gang_gang1_turned_on",
       "title": {
         "en": "Gang 1 turned on",
         "fr": "Gang 1 allumÃ©",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_gang1_turned_off",
+      "id": "dimmer_wall_switch_switch_2gang_gang1_turned_off",
       "title": {
         "en": "Gang 1 turned off",
         "fr": "Gang 1 Ã©teint",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_gang2_turned_on",
+      "id": "dimmer_wall_switch_switch_2gang_gang2_turned_on",
       "title": {
         "en": "Gang 2 turned on",
         "fr": "Gang 2 allumÃ©",
@@ -49,7 +49,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_gang2_turned_off",
+      "id": "dimmer_wall_switch_switch_2gang_gang2_turned_off",
       "title": {
         "en": "Gang 2 turned off",
         "fr": "Gang 2 Ã©teint",
@@ -65,7 +65,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_physical_gang1_on",
+      "id": "dimmer_wall_switch_switch_2gang_physical_gang1_on",
       "title": {
         "en": "Physical button gang 1 ON",
         "fr": "Bouton physique gang 1 ON",
@@ -87,7 +87,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_physical_gang1_off",
+      "id": "dimmer_wall_switch_switch_2gang_physical_gang1_off",
       "title": {
         "en": "Physical button gang 1 OFF",
         "fr": "Bouton physique gang 1 OFF",
@@ -103,7 +103,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_physical_gang2_on",
+      "id": "dimmer_wall_switch_switch_2gang_physical_gang2_on",
       "title": {
         "en": "Physical button gang 2 ON",
         "fr": "Bouton physique gang 2 ON",
@@ -119,7 +119,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_physical_gang2_off",
+      "id": "dimmer_wall_switch_switch_2gang_physical_gang2_off",
       "title": {
         "en": "Physical button gang 2 OFF",
         "fr": "Bouton physique gang 2 OFF",
@@ -135,7 +135,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_turned_on",
+      "id": "dimmer_wall_switch_switch_2gang_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©",
@@ -151,7 +151,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_turned_off",
+      "id": "dimmer_wall_switch_switch_2gang_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -167,7 +167,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_power_changed",
+      "id": "dimmer_wall_switch_switch_2gang_power_changed",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changÃ©e",
@@ -183,7 +183,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_gang1_scene",
+      "id": "dimmer_wall_switch_switch_2gang_gang1_scene",
       "title": {
         "en": "Gang 1 scene triggered"
       },
@@ -205,7 +205,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_gang2_scene",
+      "id": "dimmer_wall_switch_switch_2gang_gang2_scene",
       "title": {
         "en": "Gang 2 scene triggered"
       },
@@ -229,7 +229,7 @@
   ],
   "conditions": [
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_gang1_is_on",
+      "id": "dimmer_wall_switch_switch_2gang_gang1_is_on",
       "title": {
         "en": "Gang 1 is !{{on|off}}",
         "fr": "Gang 1 est !{{allumÃ©|Ã©teint}}",
@@ -245,7 +245,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_gang2_is_on",
+      "id": "dimmer_wall_switch_switch_2gang_gang2_is_on",
       "title": {
         "en": "Gang 2 is !{{on|off}}",
         "fr": "Gang 2 est !{{allumÃ©|Ã©teint}}",
@@ -261,7 +261,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_is_on",
+      "id": "dimmer_wall_switch_switch_2gang_is_on",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}",
@@ -279,7 +279,7 @@
   ],
   "actions": [
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_turn_on_gang1",
+      "id": "dimmer_wall_switch_switch_2gang_turn_on_gang1",
       "title": {
         "en": "Turn on gang 1",
         "fr": "Allumer gang 1",
@@ -295,7 +295,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_turn_off_gang1",
+      "id": "dimmer_wall_switch_switch_2gang_turn_off_gang1",
       "title": {
         "en": "Turn off gang 1",
         "fr": "Ã‰teindre gang 1",
@@ -311,7 +311,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_turn_on_gang2",
+      "id": "dimmer_wall_switch_switch_2gang_turn_on_gang2",
       "title": {
         "en": "Turn on gang 2",
         "fr": "Allumer gang 2",
@@ -327,7 +327,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_turn_off_gang2",
+      "id": "dimmer_wall_switch_switch_2gang_turn_off_gang2",
       "title": {
         "en": "Turn off gang 2",
         "fr": "Ã‰teindre gang 2",
@@ -343,7 +343,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_toggle_gang1",
+      "id": "dimmer_wall_switch_switch_2gang_toggle_gang1",
       "title": {
         "en": "Toggle gang 1",
         "fr": "Basculer gang 1",
@@ -365,7 +365,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_toggle_gang2",
+      "id": "dimmer_wall_switch_switch_2gang_toggle_gang2",
       "title": {
         "en": "Toggle gang 2",
         "fr": "Basculer gang 2",
@@ -381,7 +381,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_turn_on_all",
+      "id": "dimmer_wall_switch_switch_2gang_turn_on_all",
       "title": {
         "en": "Turn on all gangs",
         "fr": "Allumer tous les gangs",
@@ -403,7 +403,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_turn_off_all",
+      "id": "dimmer_wall_switch_switch_2gang_turn_off_all",
       "title": {
         "en": "Turn off all gangs",
         "fr": "Ã‰teindre tous les gangs",
@@ -419,7 +419,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_set_backlight",
+      "id": "dimmer_wall_switch_switch_2gang_set_backlight",
       "title": {
         "en": "Set LED backlight mode",
         "fr": "DÃ©finir le mode rÃ©troÃ©clairage LED",
@@ -481,7 +481,7 @@
       ]
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_turn_on",
+      "id": "dimmer_wall_switch_switch_2gang_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -497,7 +497,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_turn_off",
+      "id": "dimmer_wall_switch_switch_2gang_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre",
@@ -513,7 +513,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_toggle",
+      "id": "dimmer_wall_switch_switch_2gang_toggle",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -529,7 +529,7 @@
       }
     },
     {
-      "id": "dimmer_wall_switch_hybrid_switch_2gang_set_scene_mode",
+      "id": "dimmer_wall_switch_switch_2gang_set_scene_mode",
       "title": {
         "en": "Set scene mode"
       },

@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_air_purifier_led_hybrid_led_strip_led_strip_turned_on",
+      "id": "device_air_purifier_led_led_strip_led_strip_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "device_air_purifier_led_hybrid_led_strip_led_strip_turned_off",
+      "id": "device_air_purifier_led_led_strip_led_strip_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "device_air_purifier_led_hybrid_led_strip_turned_on",
+      "id": "device_air_purifier_led_led_strip_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©",
@@ -41,7 +41,7 @@
       }
     },
     {
-      "id": "device_air_purifier_led_hybrid_led_strip_turned_off",
+      "id": "device_air_purifier_led_led_strip_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -57,7 +57,7 @@
       }
     },
     {
-      "id": "device_air_purifier_led_hybrid_led_strip_battery_low",
+      "id": "device_air_purifier_led_led_strip_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -75,7 +75,7 @@
   ],
   "conditions": [
     {
-      "id": "device_air_purifier_led_hybrid_led_strip_led_strip_is_on",
+      "id": "device_air_purifier_led_led_strip_led_strip_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}"
@@ -87,7 +87,7 @@
       "args": []
     },
     {
-      "id": "device_air_purifier_led_hybrid_led_strip_is_on",
+      "id": "device_air_purifier_led_led_strip_is_on",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}",
@@ -105,7 +105,7 @@
   ],
   "actions": [
     {
-      "id": "device_air_purifier_led_hybrid_led_strip_led_strip_turn_on",
+      "id": "device_air_purifier_led_led_strip_led_strip_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -117,7 +117,7 @@
       }
     },
     {
-      "id": "device_air_purifier_led_hybrid_led_strip_led_strip_turn_off",
+      "id": "device_air_purifier_led_led_strip_led_strip_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre"
@@ -129,7 +129,7 @@
       }
     },
     {
-      "id": "device_air_purifier_led_hybrid_led_strip_led_strip_toggle",
+      "id": "device_air_purifier_led_led_strip_led_strip_toggle",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
@@ -141,7 +141,7 @@
       }
     },
     {
-      "id": "device_air_purifier_led_hybrid_led_strip_turn_on",
+      "id": "device_air_purifier_led_led_strip_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -157,7 +157,7 @@
       }
     },
     {
-      "id": "device_air_purifier_led_hybrid_led_strip_turn_off",
+      "id": "device_air_purifier_led_led_strip_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre",
@@ -173,7 +173,7 @@
       }
     },
     {
-      "id": "device_air_purifier_led_hybrid_led_strip_toggle",
+      "id": "device_air_purifier_led_led_strip_toggle",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -189,7 +189,7 @@
       }
     },
     {
-      "id": "device_air_purifier_led_hybrid_led_strip_set_brightness",
+      "id": "device_air_purifier_led_led_strip_set_brightness",
       "title": {
         "en": "Set brightness",
         "fr": "RÃ©gler luminositÃ©",

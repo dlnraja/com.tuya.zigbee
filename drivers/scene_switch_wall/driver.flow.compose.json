@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "scene_switch_wall_hybrid_scene_switch_2_button_pressed_scene_switch_wall_hybrid",
+      "id": "scene_switch_wall_scene_switch_2_button_pressed_scene_switch_wall",
       "title": {
         "en": "Button pressed",
         "fr": "Bouton appuyÃ©",
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "id": "scene_switch_wall_hybrid_scene_switch_2_button_double_press_scene_switch_wall_hybrid",
+      "id": "scene_switch_wall_scene_switch_2_button_double_press_scene_switch_wall",
       "title": {
         "en": "Button double-pressed",
         "fr": "Bouton double-cliquÃ©",
@@ -109,7 +109,7 @@
       ]
     },
     {
-      "id": "scene_switch_wall_hybrid_scene_switch_2_button_long_press_scene_switch_wall_hybrid",
+      "id": "scene_switch_wall_scene_switch_2_button_long_press_scene_switch_wall",
       "title": {
         "en": "Button long-pressed",
         "fr": "Bouton appui long",
@@ -163,7 +163,7 @@
       ]
     },
     {
-      "id": "scene_switch_wall_hybrid_scene_switch_2_battery_low_scene_switch_wall_hybrid",
+      "id": "scene_switch_wall_scene_switch_2_battery_low_scene_switch_wall",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -179,7 +179,7 @@
       }
     },
     {
-      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_1_pressed_scene_switch_wall_hybrid",
+      "id": "scene_switch_wall_scene_switch_2_button_2gang_button_1_pressed_scene_switch_wall",
       "title": {
         "en": "Button 1 pressed",
         "fr": "Bouton 1 appuye"
@@ -191,7 +191,7 @@
       }
     },
     {
-      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_1_double_scene_switch_wall_hybrid",
+      "id": "scene_switch_wall_scene_switch_2_button_2gang_button_1_double_scene_switch_wall",
       "title": {
         "en": "Button 1 double-pressed",
         "fr": "Bouton 1 double-appui"
@@ -203,7 +203,7 @@
       }
     },
     {
-      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_1_long_scene_switch_wall_hybrid",
+      "id": "scene_switch_wall_scene_switch_2_button_2gang_button_1_long_scene_switch_wall",
       "title": {
         "en": "Button 1 long-pressed",
         "fr": "Bouton 1 appui long"
@@ -215,7 +215,7 @@
       }
     },
     {
-      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_1_triple_scene_switch_wall_hybrid",
+      "id": "scene_switch_wall_scene_switch_2_button_2gang_button_1_triple_scene_switch_wall",
       "title": {
         "en": "Button 1 triple-pressed",
         "fr": "Bouton 1 triple-appui"
@@ -227,7 +227,7 @@
       }
     },
     {
-      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_1_release_scene_switch_wall_hybrid",
+      "id": "scene_switch_wall_scene_switch_2_button_2gang_button_1_release_scene_switch_wall",
       "title": {
         "en": "Button 1 released",
         "fr": "Bouton 1 relache"
@@ -239,7 +239,7 @@
       }
     },
     {
-      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_2_pressed_scene_switch_wall_hybrid",
+      "id": "scene_switch_wall_scene_switch_2_button_2gang_button_2_pressed_scene_switch_wall",
       "title": {
         "en": "Button 2 pressed",
         "fr": "Bouton 2 appuye"
@@ -251,7 +251,7 @@
       }
     },
     {
-      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_2_double_scene_switch_wall_hybrid",
+      "id": "scene_switch_wall_scene_switch_2_button_2gang_button_2_double_scene_switch_wall",
       "title": {
         "en": "Button 2 double-pressed",
         "fr": "Bouton 2 double-appui"
@@ -263,7 +263,7 @@
       }
     },
     {
-      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_2_long_scene_switch_wall_hybrid",
+      "id": "scene_switch_wall_scene_switch_2_button_2gang_button_2_long_scene_switch_wall",
       "title": {
         "en": "Button 2 long-pressed",
         "fr": "Bouton 2 appui long"
@@ -275,7 +275,7 @@
       }
     },
     {
-      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_2_triple_scene_switch_wall_hybrid",
+      "id": "scene_switch_wall_scene_switch_2_button_2gang_button_2_triple_scene_switch_wall",
       "title": {
         "en": "Button 2 triple-pressed",
         "fr": "Bouton 2 triple-appui"
@@ -287,7 +287,7 @@
       }
     },
     {
-      "id": "scene_switch_wall_hybrid_scene_switch_2_button_2gang_button_2_release_scene_switch_wall_hybrid",
+      "id": "scene_switch_wall_scene_switch_2_button_2gang_button_2_release_scene_switch_wall",
       "title": {
         "en": "Button 2 released",
         "fr": "Bouton 2 relache"

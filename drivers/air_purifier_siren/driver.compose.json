@@ -1,5 +1,5 @@
 {
-  "id": "air_purifier_siren_hybrid",
+  "id": "air_purifier_siren",
   "name": {
     "en": "Air Purifier Siren",
     "nl": "Luchtzuiveraar Sirene",
@@ -39,8 +39,8 @@
     "zigbee"
   ],
   "images": {
-    "small": "drivers/air_purifier_siren_hybrid/assets/images/small.png",
-    "large": "drivers/air_purifier_siren_hybrid/assets/images/large.png"
+    "small": "drivers/air_purifier_siren/assets/images/small.png",
+    "large": "drivers/air_purifier_siren/assets/images/large.png"
   },
   "zigbee": {
     "manufacturerName": [],

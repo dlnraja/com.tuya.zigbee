@@ -50,7 +50,7 @@
   "flow": {
     "actions": [
       {
-        "id": "air_purifier_curtain_hybrid_curtain_calibrate",
+        "id": "air_purifier_curtain_curtain_calibrate",
         "title": {
           "en": "Calibrate curtain motor",
           "nl": "Kalibreer gordijnmotor"
@@ -65,7 +65,7 @@
         }
       },
       {
-        "id": "air_purifier_curtain_hybrid_curtain_reset_position",
+        "id": "air_purifier_curtain_curtain_reset_position",
         "title": {
           "en": "Reset position to 0%",
           "nl": "Reset positie naar 0%"
@@ -80,7 +80,7 @@
         }
       },
       {
-        "id": "air_purifier_curtain_hybrid_curtain_hold",
+        "id": "air_purifier_curtain_curtain_hold",
         "title": {
           "en": "Hold curtain position",
           "nl": "Gordijn positie vasthouden",
@@ -96,7 +96,7 @@
         }
       },
       {
-        "id": "air_purifier_curtain_hybrid_curtain_open_partial",
+        "id": "air_purifier_curtain_curtain_open_partial",
         "title": {
           "en": "Open curtain partially",
           "nl": "Gordijn gedeeltelijk openen",
@@ -305,5 +305,5 @@
       }
     }
   ],
-  "id": "air_purifier_curtain_hybrid"
+  "id": "air_purifier_curtain"
 }

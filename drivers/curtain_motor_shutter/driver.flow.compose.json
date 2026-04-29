@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "curtain_motor_shutter_hybrid_button_pressed_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_button_pressed_curtain_motor_shutter",
       "title": {
         "en": "Button pressed",
         "fr": "Bouton pressÃ©"
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_windowcoverings_set_changed_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_windowcoverings_set_changed_curtain_motor_shutter",
       "title": {
         "en": "Position changed",
         "fr": "Position changÃ©e"
@@ -56,7 +56,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_dim_changed_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_dim_changed_curtain_motor_shutter",
       "title": {
         "en": "Brightness changed",
         "fr": "LuminositÃ© changÃ©e"
@@ -79,7 +79,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_battery_low_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_battery_low_curtain_motor_shutter",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_physical_on_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_physical_on_curtain_motor_shutter",
       "title": {
         "en": "Physically opened",
         "fr": "Ouvert physiquement"
@@ -117,7 +117,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_physical_off_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_physical_off_curtain_motor_shutter",
       "title": {
         "en": "Physically closed",
         "fr": "FermÃ© physiquement"
@@ -139,7 +139,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_physical_single_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_physical_single_curtain_motor_shutter",
       "title": {
         "en": "Physically pressed",
         "fr": "PressÃ© physiquement"
@@ -161,7 +161,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_lux_changed_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_lux_changed_curtain_motor_shutter",
       "title": {
         "en": "Luminance changed",
         "fr": "Luminance changÃ©e",
@@ -177,7 +177,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_button_pressed",
+      "id": "curtain_motor_shutter_button_pressed",
       "title": {
         "en": "Button pressed",
         "fr": "Bouton pressÃ©"
@@ -211,7 +211,7 @@
   ],
   "actions": [
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_set_windowcoverings_set_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_set_windowcoverings_set_curtain_motor_shutter",
       "title": {
         "en": "Set position to...",
         "fr": "RÃ©gler la position Ã..."
@@ -237,7 +237,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_windowcoverings_open_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_windowcoverings_open_curtain_motor_shutter",
       "title": {
         "en": "Open",
         "fr": "Ouvrir"
@@ -249,7 +249,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_windowcoverings_close_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_windowcoverings_close_curtain_motor_shutter",
       "title": {
         "en": "Close",
         "fr": "Fermer"
@@ -261,7 +261,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_set_dim_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_set_dim_curtain_motor_shutter",
       "title": {
         "en": "Set brightness to...",
         "fr": "RÃ©gler la luminositÃ© Ã..."
@@ -287,7 +287,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_stop_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_stop_curtain_motor_shutter",
       "title": {
         "en": "Stop",
         "fr": "ArrÃªter",
@@ -303,7 +303,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_set_favorite_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_set_favorite_curtain_motor_shutter",
       "title": {
         "en": "Go to favorite position",
         "fr": "Aller position favorite",
@@ -323,7 +323,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_set_brightness_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_set_brightness_curtain_motor_shutter",
       "title": {
         "en": "Set brightness",
         "fr": "RÃ©gler luminositÃ©",
@@ -349,7 +349,7 @@
       ]
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_set_position_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_set_position_curtain_motor_shutter",
       "title": {
         "en": "Set position",
         "fr": "RÃ©gler position",
@@ -375,7 +375,7 @@
       ]
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_open_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_open_curtain_motor_shutter",
       "title": {
         "en": "Open",
         "fr": "Ouvrir",
@@ -391,7 +391,7 @@
       }
     },
     {
-      "id": "curtain_motor_shutter_hybrid_curtain_motor_close_curtain_motor_shutter_hybrid",
+      "id": "curtain_motor_shutter_curtain_motor_close_curtain_motor_shutter",
       "title": {
         "en": "Close",
         "fr": "Fermer",

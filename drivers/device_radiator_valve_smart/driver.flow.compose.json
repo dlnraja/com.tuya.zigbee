@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_radiator_valve_smart_hybrid_radiator_valve_target_temperature_changed_device_radiator_valve_smart_hybrid",
+      "id": "device_radiator_valve_smart_radiator_valve_target_temperature_changed_device_radiator_valve_smart",
       "title": {
         "en": "Target temperature changed",
         "fr": "TempÃ©rature cible changÃ©e"
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "device_radiator_valve_smart_hybrid_measure_temperature_changed",
+      "id": "device_radiator_valve_smart_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e"
@@ -47,7 +47,7 @@
       }
     },
     {
-      "id": "device_radiator_valve_smart_hybrid_temp_changed",
+      "id": "device_radiator_valve_smart_temp_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e",
@@ -63,7 +63,7 @@
       }
     },
     {
-      "id": "device_radiator_valve_smart_hybrid_battery_low",
+      "id": "device_radiator_valve_smart_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -81,7 +81,7 @@
   ],
   "actions": [
     {
-      "id": "device_radiator_valve_smart_hybrid_set_target_temperature",
+      "id": "device_radiator_valve_smart_set_target_temperature",
       "title": {
         "en": "Set temperature to...",
         "fr": "RÃ©gler la tempÃ©rature Ã..."
@@ -105,7 +105,7 @@
       }
     },
     {
-      "id": "device_radiator_valve_smart_hybrid_set_temperature",
+      "id": "device_radiator_valve_smart_set_temperature",
       "title": {
         "en": "Set temperature",
         "fr": "RÃ©gler tempÃ©rature",

@@ -1,7 +1,7 @@
 {
   "actions": [
     {
-      "id": "button_wireless_usb_hybrid_usb_dongle_dual_repeater_turn_on",
+      "id": "button_wireless_usb_usb_dongle_dual_repeater_turn_on",
       "title": {
         "en": "Turn on"
       },
@@ -11,7 +11,7 @@
       }
     },
     {
-      "id": "button_wireless_usb_hybrid_usb_dongle_dual_repeater_turn_off",
+      "id": "button_wireless_usb_usb_dongle_dual_repeater_turn_off",
       "title": {
         "en": "Turn off"
       },
@@ -21,7 +21,7 @@
       }
     },
     {
-      "id": "button_wireless_usb_hybrid_usb_dongle_dual_repeater_toggle",
+      "id": "button_wireless_usb_usb_dongle_dual_repeater_toggle",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -39,7 +39,7 @@
   ],
   "triggers": [
     {
-      "id": "button_wireless_usb_hybrid_usb_dongle_dual_repeater_turned_on",
+      "id": "button_wireless_usb_usb_dongle_dual_repeater_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©",
@@ -55,7 +55,7 @@
       }
     },
     {
-      "id": "button_wireless_usb_hybrid_usb_dongle_dual_repeater_turned_off",
+      "id": "button_wireless_usb_usb_dongle_dual_repeater_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -71,7 +71,7 @@
       }
     },
     {
-      "id": "button_wireless_usb_hybrid_usb_dongle_dual_repeater_power_changed",
+      "id": "button_wireless_usb_usb_dongle_dual_repeater_power_changed",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changÃ©e",
@@ -89,7 +89,7 @@
   ],
   "conditions": [
     {
-      "id": "button_wireless_usb_hybrid_usb_dongle_dual_repeater_is_on",
+      "id": "button_wireless_usb_usb_dongle_dual_repeater_is_on",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}",

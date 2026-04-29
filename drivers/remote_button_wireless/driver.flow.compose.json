@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "remote_button_wireless_hybrid_rotate_left",
+      "id": "remote_button_wireless_rotate_left",
       "highlight": true,
       "title": {
         "en": "Rotated left",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_hybrid_rotate_right",
+      "id": "remote_button_wireless_rotate_right",
       "highlight": true,
       "title": {
         "en": "Rotated right",
@@ -65,7 +65,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_hybrid_pressed",
+      "id": "remote_button_wireless_pressed",
       "highlight": true,
       "title": {
         "en": "Button pressed",
@@ -97,7 +97,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_hybrid_single_press",
+      "id": "remote_button_wireless_single_press",
       "title": {
         "en": "Single press",
         "fr": "Appui simple",
@@ -113,7 +113,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_hybrid_double_press",
+      "id": "remote_button_wireless_double_press",
       "title": {
         "en": "Double press",
         "fr": "Double appui",
@@ -129,7 +129,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_hybrid_long_press",
+      "id": "remote_button_wireless_long_press",
       "title": {
         "en": "Long press",
         "fr": "Appui long",
@@ -145,7 +145,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_hybrid_battery_low",
+      "id": "remote_button_wireless_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -163,7 +163,7 @@
   ],
   "conditions": [
     {
-      "id": "remote_button_wireless_hybrid_brightness_above",
+      "id": "remote_button_wireless_brightness_above",
       "title": {
         "en": "Brightness level is above...",
         "fr": "Niveau de luminositÃ© supÃ©rieur Ã..."
@@ -189,7 +189,7 @@
   ],
   "actions": [
     {
-      "id": "remote_button_wireless_hybrid_set_brightness",
+      "id": "remote_button_wireless_set_brightness",
       "title": {
         "en": "Set brightness",
         "fr": "RÃ©gler luminositÃ©",

@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_air_purifier_smoke_hybrid_smoke_detector_advanced_alarm_smoke_true",
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_alarm_smoke_true",
       "highlight": true,
       "title": {
         "en": "Smoke detected",
@@ -24,7 +24,7 @@
       "args": []
     },
     {
-      "id": "device_air_purifier_smoke_hybrid_smoke_detector_advanced_alarm_smoke_false",
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_alarm_smoke_false",
       "title": {
         "en": "Smoke cleared",
         "nl": "Rook opgeheven",
@@ -46,7 +46,7 @@
       }
     },
     {
-      "id": "device_air_purifier_smoke_hybrid_smoke_detector_advanced_alarm_tamper_true",
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_alarm_tamper_true",
       "title": {
         "en": "Tamper alert",
         "nl": "Sabotage alarm",
@@ -68,7 +68,7 @@
       }
     },
     {
-      "id": "device_air_purifier_smoke_hybrid_smoke_detector_advanced_battery_low",
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_battery_low",
       "title": {
         "en": "Battery is low",
         "nl": "Batterij is bijna leeg",
@@ -90,7 +90,7 @@
       }
     },
     {
-      "id": "device_air_purifier_smoke_hybrid_smoke_detector_advanced_test_triggered",
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_test_triggered",
       "title": {
         "en": "Test button pressed",
         "nl": "Testknop ingedrukt",
@@ -112,7 +112,7 @@
       }
     },
     {
-      "id": "device_air_purifier_smoke_hybrid_smoke_detector_advanced_smoke_alarm",
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_smoke_alarm",
       "title": {
         "en": "Smoke detected",
         "fr": "FumÃ©e dÃ©tectÃ©e",
@@ -128,7 +128,7 @@
       }
     },
     {
-      "id": "device_air_purifier_smoke_hybrid_smoke_detector_advanced_temp_changed",
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_temp_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e",
@@ -144,7 +144,7 @@
       }
     },
     {
-      "id": "device_air_purifier_smoke_hybrid_smoke_detector_advanced_humidity_changed",
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "HumiditÃ© changÃ©e",
@@ -160,7 +160,7 @@
       }
     },
     {
-      "id": "device_air_purifier_smoke_hybrid_smoke_detector_advanced_tamper_alarm",
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_tamper_alarm",
       "title": {
         "en": "Tamper alarm",
         "fr": "Alarme sabotage",
@@ -178,7 +178,7 @@
   ],
   "conditions": [
     {
-      "id": "device_air_purifier_smoke_hybrid_smoke_detector_advanced_smoke_detected",
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_smoke_detected",
       "title": {
         "en": "Smoke !{{is|is not}} detected",
         "nl": "Rook !{{is|is niet}} gedetecteerd",
@@ -194,7 +194,7 @@
       }
     },
     {
-      "id": "device_air_purifier_smoke_hybrid_smoke_detector_advanced_battery_above",
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_battery_above",
       "title": {
         "en": "Battery !{{is|is not}} above",
         "nl": "Batterij !{{is|is niet}} boven",
@@ -221,7 +221,7 @@
       ]
     },
     {
-      "id": "device_air_purifier_smoke_hybrid_smoke_detector_advanced_smoke_active",
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_smoke_active",
       "title": {
         "en": "Smoke !{{is|is not}} detected",
         "fr": "FumÃ©e !{{est|n'est pas}} dÃ©tectÃ©e",
@@ -237,7 +237,7 @@
       }
     },
     {
-      "id": "device_air_purifier_smoke_hybrid_smoke_detector_advanced_tamper_active",
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_tamper_active",
       "title": {
         "en": "Tamper !{{is|is not}} active",
         "fr": "Sabotage !{{est|n'est pas}} actif",
@@ -255,7 +255,7 @@
   ],
   "actions": [
     {
-      "id": "device_air_purifier_smoke_hybrid_smoke_detector_advanced_test_alarm",
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_test_alarm",
       "title": {
         "en": "Test the alarm",
         "nl": "Test het alarm",
