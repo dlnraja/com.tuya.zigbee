@@ -205,5 +205,105 @@ The architecture strictly enforces separation of concerns via dotfiles:
 - Local execution not possible without IMAP credentials
 - Run on GitHub Actions with configured secrets
 
+---
 
+## v7.4.17 Refactor & Validation Fixes (2026-04-29)
+
+### Major Refactor: _hybrid Suffix Removal
+
+**Problem**: All drivers had `_hybrid` suffix in directory names, causing confusion and bloated naming.
+
+**Solution**: Complete removal of `_hybrid` suffix from:
+- 120+ driver directory names (renamed via `git mv`)
+- 6400+ references in `app.json`, `data/fingerprints.json`, `driver-mapping-database.json`
+- 245 driver JSON files (`driver.compose.json`, `driver.flow.compose.json`)
+- 8 duplicate `_hybrid` drivers deleted (identical flow card IDs causing conflicts)
+
+**Duplicate drivers removed**:
+| Duplicate | Base Driver | Issue |
+|-----------|-------------|-------|
+| `bulb_tunable_white_hybrid` | `bulb_tunable_white` | 8 duplicate flow card IDs |
+| `dimmer_dual_channel_hybrid` | `dimmer_dual_channel` | 12 duplicate flow card IDs |
+| `smart_knob_rotary_hybrid` | `smart_knob_rotary` | 3 duplicate flow card IDs |
+| `air_quality_comprehensive_hybrid` | `air_quality_comprehensive` | 8 duplicate flow card IDs |
+| `curtain_motor_tilt_hybrid` | `curtain_motor_tilt` | 18 duplicate flow card IDs |
+| `module_mini_switch_hybrid` | `module_mini_switch` | 11 duplicate flow card IDs |
+| `plug_energy_monitor_hybrid` | `plug_energy_monitor` | 24 duplicate flow card IDs |
+| `smart_knob_switch_hybrid` | `smart_knob_switch` | 15 duplicate flow card IDs |
+
+**Final state**: 315 drivers, 0 ID collisions, 0 `_hybrid` references in critical files.
+
+### Validation Fixes
+
+**[[device]] Missing in Flow Cards**:
+- Fixed 24 actions across 4 drivers (`wall_switch_1gang_1way`, `wall_switch_2gang_1way`, `wall_switch_3gang_1way`, `wall_switch_4gang_1way`)
+- Both EN and NL titleFormatted required `[[device]]` for actions with `type: "device"` args
+- **Rule**: ALL flow card actions with device args MUST include `[[device]]` in ALL language variants
+
+**Missing Driver Images**:
+- Added `small.png`, `large.png`, `xlarge.png` to 10 drivers that were missing them
+- **Rule**: Every driver MUST have all 3 image sizes in `assets/images/`
+
+### Bug Fixes
+
+**Issue #162 — Fingerbot _getFlowCard() Infinite Recursion**:
+- **Root cause**: `_getFlowCard()` method called itself recursively with same arguments
+- **Fix**: Replaced with proper Homey SDK3 API calls:
+  ```javascript
+  // BEFORE (BROKEN):
+  _getFlowCard(id, type = 'trigger') {
+    if (type === 'action') return this._getFlowCard(id, 'action');
+    // ... infinite recursion
+    
+  // AFTER (FIXED):
+  _getFlowCard(id, type = 'trigger') {
+    if (type === 'action') return this.homey.flow.getActionCard(id);
+    if (type === 'condition') return this.homey.flow.getConditionCard(id);
+    return this.homey.flow.getTriggerCard(id);
+  }
+  ```
+- **Impact**: Fingerbot flow cards (button press, battery low, mode change) now trigger correctly
+
+### New Rules Discovered
+
+| Rule | Description |
+|------|-------------|
+| **Rule 27** | Flow card IDs must be globally unique across ALL drivers (no duplicates) |
+| **Rule 28** | Removing driver directories requires cleaning ALL references in app.json, fingerprints.json, and driver-mapping-database.json |
+| **Rule 29** | `[[device]]` placeholder required in ALL language variants of titleFormatted for actions with device args |
+
+### Scripts Created
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/fix-hybrid-refs.js` | Remove `_hybrid` from app.json, fingerprints.json, driver-mapping-database.json |
+| `scripts/fix-hybrid-refs-all.js` | Remove `_hybrid` from ALL JSON files in drivers/ directory |
+
+### YML Automation Issues Found
+
+**tuya-automation-hub.yml**:
+- Dead conditional: Monthly SDK3 sync step checks `github.event.schedule == '0 4 1 * *'` but schedule is `0 4 * * 1,4` — **never runs on schedule**
+- 12 API keys duplicated across 3 jobs (36 env declarations) — should use reusable workflow
+- `continue-on-error: true` on all scanner steps silently swallows failures
+
+**ai-helper.js**:
+- NVIDIA NIM configured as PRIORITY (800/day free) ✅
+- OpenRouter model discovery fetches ALL models on every call — should cache with TTL
+- Rate state file (`_rtSave()`) writes on every API call — race condition risk in concurrent CI
+
+### Commits Summary
+
+| Hash | Description |
+|------|-------------|
+| `9d181dbb5` | FIX: add [[device]] to NL titleFormatted in wall_switch_2/3/4gang_1way |
+| `3d7383971` | FIX: add [[device]] to all titleFormatted.en in wall_switch_2/3/4gang_1way |
+| `ef844a245` | FIX: remove ALL _hybrid refs from app.json, fingerprints.json, driver-mapping-database.json |
+| `424538e42` | FIX: remove 8 duplicate _hybrid drivers causing flow card ID conflicts |
+| `a333a197b` | FIX Issue #162: fingerbot _getFlowCard() infinite recursion |
+
+**Status**: ACTIVE  
+**Orchestrator**: dlnraja-bot  
+**Doctrine**: Silent Operation (no forum posting)  
+**Validation**: ✅ PUBLISH level passes (Build + npx + Athom Docker)  
+**Next Pulse**: Sunday 02:00 UTC
 
