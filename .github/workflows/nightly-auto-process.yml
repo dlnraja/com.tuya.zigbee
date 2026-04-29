@@ -128,7 +128,6 @@ jobs:
           echo "Screenshot analyzer module: $(node -e "const s=require('./.github/scripts/screenshot-analyzer');console.log(Object.keys(s).join(', '))")"
           echo "Deep analysis prompts: $(node -e "const{PROMPTS}=require('./.github/scripts/screenshot-analyzer');console.log(Object.keys(PROMPTS).length+' prompt types: '+Object.keys(PROMPTS).join(', '))")"
 
-      # Forum replies delegated to forum-auto-responder.yml (2x/day, dedicated workflow)
 
       - name: Comprehensive GitHub Scan
         if: always()
