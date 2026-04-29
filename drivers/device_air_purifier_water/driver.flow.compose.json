@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_air_purifier_water_hybrid_water_tank_monitor_state_changed",
+      "id": "device_air_purifier_water_water_tank_monitor_state_changed",
       "title": {
         "en": "Liquid state changed",
         "nl": "Vloeistofstatus veranderd",
@@ -29,7 +29,7 @@
       }
     },
     {
-      "id": "device_air_purifier_water_hybrid_water_tank_monitor_level_changed",
+      "id": "device_air_purifier_water_water_tank_monitor_level_changed",
       "title": {
         "en": "Liquid level changed",
         "nl": "Vloeistofniveau veranderd",
@@ -63,7 +63,7 @@
       }
     },
     {
-      "id": "device_air_purifier_water_hybrid_water_tank_monitor_low",
+      "id": "device_air_purifier_water_water_tank_monitor_low",
       "highlight": true,
       "title": {
         "en": "Liquid level is low",
@@ -80,7 +80,7 @@
       }
     },
     {
-      "id": "device_air_purifier_water_hybrid_water_tank_monitor_high",
+      "id": "device_air_purifier_water_water_tank_monitor_high",
       "title": {
         "en": "Liquid level is high",
         "nl": "Vloeistofniveau is hoog",
@@ -98,7 +98,7 @@
   ],
   "conditions": [
     {
-      "id": "device_air_purifier_water_hybrid_water_tank_monitor_level_above",
+      "id": "device_air_purifier_water_water_tank_monitor_level_above",
       "title": {
         "en": "Fill level !{{is|is not}} above",
         "nl": "Vulniveau !{{is|is niet}} boven",
@@ -125,7 +125,7 @@
       ]
     },
     {
-      "id": "device_air_purifier_water_hybrid_water_tank_monitor_state_is",
+      "id": "device_air_purifier_water_water_tank_monitor_state_is",
       "title": {
         "en": "Liquid state !{{is|is not}}",
         "nl": "Vloeistofstatus !{{is|is niet}}",

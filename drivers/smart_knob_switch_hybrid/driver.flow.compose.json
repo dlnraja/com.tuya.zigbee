@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "smart_knob_switch_hybrid_smart_knob_button_pressed_smart_knob_switch_hybrid",
+      "id": "smart_knob_switch_smart_knob_button_pressed_smart_knob_switch",
       "title": {
         "en": "Knob button pressed",
         "fr": "Bouton du variateur appuyÃ©"
@@ -23,7 +23,7 @@
       }
     },
     {
-      "id": "smart_knob_switch_hybrid_smart_knob_single_press_smart_knob_switch_hybrid",
+      "id": "smart_knob_switch_smart_knob_single_press_smart_knob_switch",
       "title": {
         "en": "Knob single press",
         "fr": "Appui simple"
@@ -34,7 +34,7 @@
       }
     },
     {
-      "id": "smart_knob_switch_hybrid_smart_knob_double_press_smart_knob_switch_hybrid",
+      "id": "smart_knob_switch_smart_knob_double_press_smart_knob_switch",
       "title": {
         "en": "Knob double press",
         "fr": "Double appui"
@@ -45,7 +45,7 @@
       }
     },
     {
-      "id": "smart_knob_switch_hybrid_smart_knob_long_press_smart_knob_switch_hybrid",
+      "id": "smart_knob_switch_smart_knob_long_press_smart_knob_switch",
       "title": {
         "en": "Knob long press",
         "fr": "Appui long"
@@ -56,7 +56,7 @@
       }
     },
     {
-      "id": "smart_knob_switch_hybrid_smart_knob_rotated_smart_knob_switch_hybrid",
+      "id": "smart_knob_switch_smart_knob_rotated_smart_knob_switch",
       "title": {
         "en": "Knob rotated",
         "fr": "Variateur tournÃ©"
@@ -87,7 +87,7 @@
       }
     },
     {
-      "id": "smart_knob_switch_hybrid_smart_knob_level_changed_smart_knob_switch_hybrid",
+      "id": "smart_knob_switch_smart_knob_level_changed_smart_knob_switch",
       "title": {
         "en": "Brightness level changed",
         "fr": "Niveau de luminositÃ© changÃ©"
@@ -109,7 +109,7 @@
       }
     },
     {
-      "id": "smart_knob_switch_hybrid_level_changed",
+      "id": "smart_knob_switch_level_changed",
       "title": {
         "en": "Brightness level changed",
         "fr": "Niveau de luminositÃ© changÃ©"
@@ -131,7 +131,7 @@
       }
     },
     {
-      "id": "smart_knob_switch_hybrid_rotated",
+      "id": "smart_knob_switch_rotated",
       "title": {
         "en": "Knob rotated",
         "fr": "Variateur tournÃ©"
@@ -162,7 +162,7 @@
       }
     },
     {
-      "id": "smart_knob_switch_hybrid_button_pressed",
+      "id": "smart_knob_switch_button_pressed",
       "title": {
         "en": "Knob button pressed",
         "fr": "Bouton du variateur appuyÃ©"

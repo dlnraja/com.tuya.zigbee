@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "module_mini_switch_hybrid_module_mini_switch_onoff_true",
+      "id": "module_mini_switch_module_mini_switch_onoff_true",
       "title": {
         "en": "Turned on"
       },
@@ -18,7 +18,7 @@
       }
     },
     {
-      "id": "module_mini_switch_hybrid_module_mini_switch_turned_on",
+      "id": "module_mini_switch_module_mini_switch_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©",
@@ -34,7 +34,7 @@
       }
     },
     {
-      "id": "module_mini_switch_hybrid_module_mini_switch_turned_off",
+      "id": "module_mini_switch_module_mini_switch_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -50,7 +50,7 @@
       }
     },
     {
-      "id": "module_mini_switch_hybrid_module_mini_switch_battery_low",
+      "id": "module_mini_switch_module_mini_switch_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -66,7 +66,7 @@
       }
     },
     {
-      "id": "module_mini_switch_hybrid_module_mini_switch_physical_on",
+      "id": "module_mini_switch_module_mini_switch_physical_on",
       "title": {
         "en": "Physical button turned on",
         "fr": "Bouton physique allumÃ©"
@@ -78,7 +78,7 @@
       }
     },
     {
-      "id": "module_mini_switch_hybrid_module_mini_switch_physical_off",
+      "id": "module_mini_switch_module_mini_switch_physical_off",
       "title": {
         "en": "Physical button turned off",
         "fr": "Bouton physique Ã©teint"
@@ -90,7 +90,7 @@
       }
     },
     {
-      "id": "module_mini_switch_hybrid_module_mini_switch_power_changed",
+      "id": "module_mini_switch_module_mini_switch_power_changed",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changÃ©e",
@@ -108,7 +108,7 @@
   ],
   "conditions": [
     {
-      "id": "module_mini_switch_hybrid_module_mini_switch_is_on",
+      "id": "module_mini_switch_module_mini_switch_is_on",
       "title": {
         "en": "Is !{{on|off}}"
       },
@@ -120,7 +120,7 @@
   ],
   "actions": [
     {
-      "id": "module_mini_switch_hybrid_module_mini_switch_turn_on",
+      "id": "module_mini_switch_module_mini_switch_turn_on",
       "title": {
         "en": "Turn on"
       },
@@ -130,7 +130,7 @@
       }
     },
     {
-      "id": "module_mini_switch_hybrid_module_mini_switch_turn_off",
+      "id": "module_mini_switch_module_mini_switch_turn_off",
       "title": {
         "en": "Turn off"
       },
@@ -140,7 +140,7 @@
       }
     },
     {
-      "id": "module_mini_switch_hybrid_module_mini_switch_toggle",
+      "id": "module_mini_switch_module_mini_switch_toggle",
       "title": {
         "en": "Toggle"
       },

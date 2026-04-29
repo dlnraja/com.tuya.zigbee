@@ -1,7 +1,7 @@
 {
   "actions": [
     {
-      "id": "device_air_purifier_humidifier_hybrid_humidifier_turn_on",
+      "id": "device_air_purifier_humidifier_humidifier_turn_on",
       "title": {
         "en": "Turn on"
       },
@@ -11,7 +11,7 @@
       }
     },
     {
-      "id": "device_air_purifier_humidifier_hybrid_humidifier_turn_off",
+      "id": "device_air_purifier_humidifier_humidifier_turn_off",
       "title": {
         "en": "Turn off"
       },
@@ -21,7 +21,7 @@
       }
     },
     {
-      "id": "device_air_purifier_humidifier_hybrid_humidifier_toggle",
+      "id": "device_air_purifier_humidifier_humidifier_toggle",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -37,7 +37,7 @@
       }
     },
     {
-      "id": "device_air_purifier_humidifier_hybrid_humidifier_set_brightness",
+      "id": "device_air_purifier_humidifier_humidifier_set_brightness",
       "title": {
         "en": "Set brightness",
         "fr": "RÃ©gler luminositÃ©",
@@ -65,7 +65,7 @@
   ],
   "triggers": [
     {
-      "id": "device_air_purifier_humidifier_hybrid_humidifier_turned_on",
+      "id": "device_air_purifier_humidifier_humidifier_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©",
@@ -81,7 +81,7 @@
       }
     },
     {
-      "id": "device_air_purifier_humidifier_hybrid_humidifier_turned_off",
+      "id": "device_air_purifier_humidifier_humidifier_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -97,7 +97,7 @@
       }
     },
     {
-      "id": "device_air_purifier_humidifier_hybrid_humidifier_humidity_changed",
+      "id": "device_air_purifier_humidifier_humidifier_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "HumiditÃ© changÃ©e",
@@ -115,7 +115,7 @@
   ],
   "conditions": [
     {
-      "id": "device_air_purifier_humidifier_hybrid_humidifier_is_on",
+      "id": "device_air_purifier_humidifier_humidifier_is_on",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}",

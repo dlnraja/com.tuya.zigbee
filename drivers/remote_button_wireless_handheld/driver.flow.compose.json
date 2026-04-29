@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_pressed_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_pressed_remote_button_wireless_handheld",
       "title": {
         "en": "A button was pressed",
         "fr": "Un bouton a Ã©tÃ© appuyÃ©"
@@ -28,7 +28,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_double_press_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_double_press_remote_button_wireless_handheld",
       "title": {
         "en": "A button was double-pressed",
         "fr": "Un bouton a Ã©tÃ© double-cliquÃ©"
@@ -55,7 +55,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_long_press_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_long_press_remote_button_wireless_handheld",
       "title": {
         "en": "A button was long-pressed",
         "fr": "Un bouton a Ã©tÃ© appuyÃ© longtemps"
@@ -82,7 +82,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_multi_press_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_multi_press_remote_button_wireless_handheld",
       "title": {
         "en": "A button was multi-pressed",
         "fr": "Un bouton a Ã©tÃ© multi-cliquÃ©"
@@ -118,7 +118,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_1_pressed_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_1_pressed_remote_button_wireless_handheld",
       "title": {
         "en": "Button 1 pressed",
         "fr": "Bouton 1 appuyÃ©"
@@ -130,7 +130,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_1_double_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_1_double_remote_button_wireless_handheld",
       "title": {
         "en": "Button 1 double-pressed",
         "fr": "Bouton 1 double-cliquÃ©"
@@ -142,7 +142,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_1_long_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_1_long_remote_button_wireless_handheld",
       "title": {
         "en": "Button 1 long-pressed",
         "fr": "Bouton 1 pressÃ© longtemps"
@@ -154,7 +154,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_2_pressed_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_2_pressed_remote_button_wireless_handheld",
       "title": {
         "en": "Button 2 pressed",
         "fr": "Bouton 2 appuyÃ©"
@@ -166,7 +166,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_2_double_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_2_double_remote_button_wireless_handheld",
       "title": {
         "en": "Button 2 double-pressed",
         "fr": "Bouton 2 double-cliquÃ©"
@@ -178,7 +178,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_2_long_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_2_long_remote_button_wireless_handheld",
       "title": {
         "en": "Button 2 long-pressed",
         "fr": "Bouton 2 pressÃ© longtemps"
@@ -190,7 +190,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_3_pressed_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_3_pressed_remote_button_wireless_handheld",
       "title": {
         "en": "Button 3 pressed",
         "fr": "Bouton 3 appuyÃ©"
@@ -202,7 +202,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_3_double_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_3_double_remote_button_wireless_handheld",
       "title": {
         "en": "Button 3 double-pressed",
         "fr": "Bouton 3 double-cliquÃ©"
@@ -214,7 +214,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_3_long_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_3_long_remote_button_wireless_handheld",
       "title": {
         "en": "Button 3 long-pressed",
         "fr": "Bouton 3 pressÃ© longtemps"
@@ -226,7 +226,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_4_pressed_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_4_pressed_remote_button_wireless_handheld",
       "title": {
         "en": "Button 4 pressed",
         "fr": "Bouton 4 appuyÃ©"
@@ -238,7 +238,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_4_double_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_4_double_remote_button_wireless_handheld",
       "title": {
         "en": "Button 4 double-pressed",
         "fr": "Bouton 4 double-cliquÃ©"
@@ -250,7 +250,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_4_long_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_4_long_remote_button_wireless_handheld",
       "title": {
         "en": "Button 4 long-pressed",
         "fr": "Bouton 4 pressÃ© longtemps"
@@ -262,7 +262,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_1_triple_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_1_triple_remote_button_wireless_handheld",
       "title": {
         "en": "Button 1 triple-pressed",
         "fr": "Bouton 1 triple-cliquÃ©"
@@ -274,7 +274,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_2_triple_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_2_triple_remote_button_wireless_handheld",
       "title": {
         "en": "Button 2 triple-pressed",
         "fr": "Bouton 2 triple-cliquÃ©"
@@ -286,7 +286,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_3_triple_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_3_triple_remote_button_wireless_handheld",
       "title": {
         "en": "Button 3 triple-pressed",
         "fr": "Bouton 3 triple-cliquÃ©"
@@ -298,7 +298,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_4_triple_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_4_triple_remote_button_wireless_handheld",
       "title": {
         "en": "Button 4 triple-pressed",
         "fr": "Bouton 4 triple-cliquÃ©"
@@ -310,7 +310,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_1_release_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_1_release_remote_button_wireless_handheld",
       "title": {
         "en": "Button 1 released - after hold",
         "fr": "Bouton 1 relÃ¢chÃ© - aprÃ¨s maintien"
@@ -322,7 +322,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_2_release_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_2_release_remote_button_wireless_handheld",
       "title": {
         "en": "Button 2 released - after hold",
         "fr": "Bouton 2 relÃ¢chÃ© - aprÃ¨s maintien"
@@ -334,7 +334,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_3_release_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_3_release_remote_button_wireless_handheld",
       "title": {
         "en": "Button 3 released - after hold",
         "fr": "Bouton 3 relÃ¢chÃ© - aprÃ¨s maintien"
@@ -346,7 +346,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_button_4gang_button_4_release_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_button_4gang_button_4_release_remote_button_wireless_handheld",
       "title": {
         "en": "Button 4 released - after hold",
         "fr": "Bouton 4 relÃ¢chÃ© - aprÃ¨s maintien"
@@ -358,7 +358,7 @@
       }
     },
     {
-      "id": "remote_button_wireless_handheld_hybrid_button_wireless_4_battery_low_remote_button_wireless_handheld_hybrid",
+      "id": "remote_button_wireless_handheld_button_wireless_4_battery_low_remote_button_wireless_handheld",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",

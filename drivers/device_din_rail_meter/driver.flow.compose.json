@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_dehumidifier_hybrid_turned_on",
+      "id": "device_din_rail_meter_hvac_dehumidifier_dehumidifier_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_dehumidifier_hybrid_turned_off",
+      "id": "device_din_rail_meter_hvac_dehumidifier_dehumidifier_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_dehumidifier_hybrid_measure_humidity_changed",
+      "id": "device_din_rail_meter_hvac_dehumidifier_dehumidifier_measure_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "HumiditÃ© changÃ©e"
@@ -48,7 +48,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_dehumidifier_hybrid_measure_temperature_changed",
+      "id": "device_din_rail_meter_hvac_dehumidifier_dehumidifier_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e"
@@ -71,7 +71,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_dehumidifier_hybrid_measure_power_changed",
+      "id": "device_din_rail_meter_hvac_dehumidifier_dehumidifier_measure_power_changed",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changÃ©e"
@@ -94,7 +94,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_dehumidifier_hybrid_alarm_water_true",
+      "id": "device_din_rail_meter_hvac_dehumidifier_dehumidifier_alarm_water_true",
       "title": {
         "en": "Water leak detected",
         "fr": "Fuite d'eau dÃ©tectÃ©e"
@@ -106,7 +106,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_dehumidifier_hybrid_alarm_water_false",
+      "id": "device_din_rail_meter_hvac_dehumidifier_dehumidifier_alarm_water_false",
       "title": {
         "en": "No water leak",
         "fr": "Aucune fuite d'eau"
@@ -118,7 +118,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_turned_on",
+      "id": "device_din_rail_meter_hvac_dehumidifier_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©",
@@ -134,7 +134,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_turned_off",
+      "id": "device_din_rail_meter_hvac_dehumidifier_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -150,7 +150,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_humidity_changed",
+      "id": "device_din_rail_meter_hvac_dehumidifier_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "HumiditÃ© changÃ©e",
@@ -166,7 +166,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_temp_changed",
+      "id": "device_din_rail_meter_hvac_dehumidifier_temp_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e",
@@ -182,7 +182,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_power_changed",
+      "id": "device_din_rail_meter_hvac_dehumidifier_power_changed",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changÃ©e",
@@ -198,7 +198,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_water_alarm",
+      "id": "device_din_rail_meter_hvac_dehumidifier_water_alarm",
       "title": {
         "en": "Water alarm",
         "fr": "Alarme eau",
@@ -214,7 +214,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_battery_low",
+      "id": "device_din_rail_meter_hvac_dehumidifier_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -232,7 +232,7 @@
   ],
   "conditions": [
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_dehumidifier_hybrid_is_on",
+      "id": "device_din_rail_meter_hvac_dehumidifier_dehumidifier_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}"
@@ -244,7 +244,7 @@
       "args": []
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_is_on",
+      "id": "device_din_rail_meter_hvac_dehumidifier_is_on",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}",
@@ -260,7 +260,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_water_detected",
+      "id": "device_din_rail_meter_hvac_dehumidifier_water_detected",
       "title": {
         "en": "Water !{{is|is not}} detected",
         "fr": "Eau !{{est|n'est pas}} dÃ©tectÃ©e",
@@ -278,7 +278,7 @@
   ],
   "actions": [
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_dehumidifier_hybrid_turn_on",
+      "id": "device_din_rail_meter_hvac_dehumidifier_dehumidifier_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -290,7 +290,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_dehumidifier_hybrid_turn_off",
+      "id": "device_din_rail_meter_hvac_dehumidifier_dehumidifier_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre"
@@ -302,7 +302,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_dehumidifier_hybrid_toggle",
+      "id": "device_din_rail_meter_hvac_dehumidifier_dehumidifier_toggle",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
@@ -314,7 +314,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_turn_on",
+      "id": "device_din_rail_meter_hvac_dehumidifier_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -330,7 +330,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_turn_off",
+      "id": "device_din_rail_meter_hvac_dehumidifier_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre",
@@ -346,7 +346,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_toggle",
+      "id": "device_din_rail_meter_hvac_dehumidifier_toggle",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -362,7 +362,7 @@
       }
     },
     {
-      "id": "device_din_rail_meter_hybrid_hvac_dehumidifier_set_temperature",
+      "id": "device_din_rail_meter_hvac_dehumidifier_set_temperature",
       "title": {
         "en": "Set temperature",
         "fr": "RÃ©gler tempÃ©rature",

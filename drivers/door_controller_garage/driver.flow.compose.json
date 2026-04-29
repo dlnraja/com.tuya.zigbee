@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "door_controller_garage_hybrid_door_controller_opened",
+      "id": "door_controller_garage_door_controller_opened",
       "highlight": true,
       "title": {
         "en": "Door opened",
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "door_controller_garage_hybrid_door_controller_closed",
+      "id": "door_controller_garage_door_controller_closed",
       "title": {
         "en": "Door closed",
         "nl": "Deur gesloten",
@@ -46,7 +46,7 @@
       }
     },
     {
-      "id": "door_controller_garage_hybrid_door_controller_locked",
+      "id": "door_controller_garage_door_controller_locked",
       "title": {
         "en": "Door locked",
         "nl": "Deur vergrendeld",
@@ -62,7 +62,7 @@
       }
     },
     {
-      "id": "door_controller_garage_hybrid_door_controller_unlocked",
+      "id": "door_controller_garage_door_controller_unlocked",
       "title": {
         "en": "Door unlocked",
         "nl": "Deur ontgrendeld",
@@ -78,7 +78,7 @@
       }
     },
     {
-      "id": "door_controller_garage_hybrid_door_controller_motion_detected",
+      "id": "door_controller_garage_door_controller_motion_detected",
       "title": {
         "en": "Motion detected",
         "fr": "Mouvement dÃ©tectÃ©",
@@ -94,7 +94,7 @@
       }
     },
     {
-      "id": "door_controller_garage_hybrid_door_controller_contact_alarm",
+      "id": "door_controller_garage_door_controller_contact_alarm",
       "title": {
         "en": "Contact changed",
         "fr": "Contact changÃ©",
@@ -110,7 +110,7 @@
       }
     },
     {
-      "id": "door_controller_garage_hybrid_door_controller_battery_low",
+      "id": "door_controller_garage_door_controller_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -126,7 +126,7 @@
       }
     },
     {
-      "id": "door_controller_garage_hybrid_door_controller_lock_changed",
+      "id": "door_controller_garage_door_controller_lock_changed",
       "title": {
         "en": "Lock changed",
         "fr": "Serrure changÃ©e",
@@ -144,7 +144,7 @@
   ],
   "conditions": [
     {
-      "id": "door_controller_garage_hybrid_door_controller_is_open",
+      "id": "door_controller_garage_door_controller_is_open",
       "title": {
         "en": "Door !{{is|is not}} open",
         "nl": "Deur !{{is|is niet}} open",
@@ -160,7 +160,7 @@
       }
     },
     {
-      "id": "door_controller_garage_hybrid_door_controller_is_locked",
+      "id": "door_controller_garage_door_controller_is_locked",
       "title": {
         "en": "Door !{{is|is not}} locked",
         "nl": "Deur !{{is|is niet}} vergrendeld",
@@ -176,7 +176,7 @@
       }
     },
     {
-      "id": "door_controller_garage_hybrid_door_controller_motion_active",
+      "id": "door_controller_garage_door_controller_motion_active",
       "title": {
         "en": "Motion !{{is|is not}} detected",
         "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
@@ -192,7 +192,7 @@
       }
     },
     {
-      "id": "door_controller_garage_hybrid_door_controller_contact_open",
+      "id": "door_controller_garage_door_controller_contact_open",
       "title": {
         "en": "Contact !{{is|is not}} open",
         "fr": "Contact !{{est|n'est pas}} ouvert",
@@ -210,7 +210,7 @@
   ],
   "actions": [
     {
-      "id": "door_controller_garage_hybrid_door_controller_open",
+      "id": "door_controller_garage_door_controller_open",
       "title": {
         "en": "Open door",
         "nl": "Deur openen",
@@ -226,7 +226,7 @@
       }
     },
     {
-      "id": "door_controller_garage_hybrid_door_controller_close",
+      "id": "door_controller_garage_door_controller_close",
       "title": {
         "en": "Close door",
         "nl": "Deur sluiten",
@@ -242,7 +242,7 @@
       }
     },
     {
-      "id": "door_controller_garage_hybrid_door_controller_lock",
+      "id": "door_controller_garage_door_controller_lock",
       "title": {
         "en": "Lock door",
         "nl": "Deur vergrendelen",
@@ -258,7 +258,7 @@
       }
     },
     {
-      "id": "door_controller_garage_hybrid_door_controller_unlock",
+      "id": "door_controller_garage_door_controller_unlock",
       "title": {
         "en": "Unlock door",
         "nl": "Deur ontgrendelen",

@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "hvac_air_conditioner_air_conditioner_hybrid_turned_on",
+      "id": "hvac_air_conditioner_air_conditioner_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "hvac_air_conditioner_air_conditioner_hybrid_turned_off",
+      "id": "hvac_air_conditioner_air_conditioner_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "hvac_air_conditioner_air_conditioner_hybrid_target_temperature_changed",
+      "id": "hvac_air_conditioner_air_conditioner_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
         "fr": "TempÃ©rature cible changÃ©e"
@@ -48,7 +48,7 @@
       }
     },
     {
-      "id": "hvac_air_conditioner_air_conditioner_hybrid_measure_temperature_changed",
+      "id": "hvac_air_conditioner_air_conditioner_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e"
@@ -137,7 +137,7 @@
   ],
   "conditions": [
     {
-      "id": "hvac_air_conditioner_air_conditioner_hybrid_is_on",
+      "id": "hvac_air_conditioner_air_conditioner_is_on",
       "title": {
         "en": "Is turned !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}"
@@ -167,7 +167,7 @@
   ],
   "actions": [
     {
-      "id": "hvac_air_conditioner_air_conditioner_hybrid_turn_on",
+      "id": "hvac_air_conditioner_air_conditioner_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer"
@@ -179,7 +179,7 @@
       }
     },
     {
-      "id": "hvac_air_conditioner_air_conditioner_hybrid_turn_off",
+      "id": "hvac_air_conditioner_air_conditioner_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre"
@@ -191,7 +191,7 @@
       }
     },
     {
-      "id": "hvac_air_conditioner_air_conditioner_hybrid_toggle",
+      "id": "hvac_air_conditioner_air_conditioner_toggle",
       "title": {
         "en": "Toggle on or off",
         "fr": "Basculer"
@@ -203,7 +203,7 @@
       }
     },
     {
-      "id": "hvac_air_conditioner_air_conditioner_hybrid_set_target_temperature",
+      "id": "hvac_air_conditioner_air_conditioner_set_target_temperature",
       "title": {
         "en": "Set temperature to...",
         "fr": "RÃ©gler la tempÃ©rature Ã..."

@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang1_turned_on",
+      "id": "gas_sensor_switch_switch_4gang_gang1_turned_on",
       "title": {
         "en": "Gang 1 turned on",
         "fr": "Gang 1 allumÃ©",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang1_turned_off",
+      "id": "gas_sensor_switch_switch_4gang_gang1_turned_off",
       "title": {
         "en": "Gang 1 turned off",
         "fr": "Gang 1 Ã©teint",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang2_turned_on",
+      "id": "gas_sensor_switch_switch_4gang_gang2_turned_on",
       "title": {
         "en": "Gang 2 turned on",
         "fr": "Gang 2 allumÃ©",
@@ -49,7 +49,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang2_turned_off",
+      "id": "gas_sensor_switch_switch_4gang_gang2_turned_off",
       "title": {
         "en": "Gang 2 turned off",
         "fr": "Gang 2 Ã©teint",
@@ -65,7 +65,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang3_turned_on",
+      "id": "gas_sensor_switch_switch_4gang_gang3_turned_on",
       "title": {
         "en": "Gang 3 turned on",
         "fr": "Gang 3 allumÃ©",
@@ -81,7 +81,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang3_turned_off",
+      "id": "gas_sensor_switch_switch_4gang_gang3_turned_off",
       "title": {
         "en": "Gang 3 turned off",
         "fr": "Gang 3 Ã©teint",
@@ -97,7 +97,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang4_turned_on",
+      "id": "gas_sensor_switch_switch_4gang_gang4_turned_on",
       "title": {
         "en": "Gang 4 turned on",
         "fr": "Gang 4 allumÃ©",
@@ -113,7 +113,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang4_turned_off",
+      "id": "gas_sensor_switch_switch_4gang_gang4_turned_off",
       "title": {
         "en": "Gang 4 turned off",
         "fr": "Gang 4 Ã©teint",
@@ -129,7 +129,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang1_on",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang1_on",
       "title": {
         "en": "Physical gang 1 ON",
         "fr": "Physique gang 1 ON",
@@ -145,7 +145,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang1_off",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang1_off",
       "title": {
         "en": "Physical gang 1 OFF",
         "fr": "Physique gang 1 OFF",
@@ -161,7 +161,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang2_on",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang2_on",
       "title": {
         "en": "Physical gang 2 ON",
         "fr": "Physique gang 2 ON",
@@ -177,7 +177,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang2_off",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang2_off",
       "title": {
         "en": "Physical gang 2 OFF",
         "fr": "Physique gang 2 OFF",
@@ -193,7 +193,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang3_on",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang3_on",
       "title": {
         "en": "Physical gang 3 ON",
         "fr": "Physique gang 3 ON",
@@ -209,7 +209,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang3_off",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang3_off",
       "title": {
         "en": "Physical gang 3 OFF",
         "fr": "Physique gang 3 OFF",
@@ -225,7 +225,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang4_on",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang4_on",
       "title": {
         "en": "Physical gang 4 ON",
         "fr": "Physique gang 4 ON",
@@ -241,7 +241,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang4_off",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang4_off",
       "title": {
         "en": "Physical gang 4 OFF",
         "fr": "Physique gang 4 OFF",
@@ -257,7 +257,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang1_single",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang1_single",
       "title": {
         "en": "Gang 1 single press - physical",
         "fr": "Gang 1 appui simple - physique"
@@ -269,7 +269,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang1_double",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang1_double",
       "title": {
         "en": "Gang 1 double press - physical",
         "fr": "Gang 1 double appui - physique"
@@ -281,7 +281,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang1_triple",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang1_triple",
       "title": {
         "en": "Gang 1 triple press - physical",
         "fr": "Gang 1 triple appui - physique"
@@ -293,7 +293,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang1_long_press",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang1_long_press",
       "title": {
         "en": "Gang 1 long press - physical",
         "fr": "Gang 1 appui long - physique"
@@ -305,7 +305,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang2_single",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang2_single",
       "title": {
         "en": "Gang 2 single press - physical",
         "fr": "Gang 2 appui simple - physique"
@@ -317,7 +317,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang2_double",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang2_double",
       "title": {
         "en": "Gang 2 double press - physical",
         "fr": "Gang 2 double appui - physique"
@@ -329,7 +329,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang2_triple",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang2_triple",
       "title": {
         "en": "Gang 2 triple press - physical",
         "fr": "Gang 2 triple appui - physique"
@@ -341,7 +341,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang2_long_press",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang2_long_press",
       "title": {
         "en": "Gang 2 long press - physical",
         "fr": "Gang 2 appui long - physique"
@@ -353,7 +353,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang3_single",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang3_single",
       "title": {
         "en": "Gang 3 single press - physical",
         "fr": "Gang 3 appui simple - physique"
@@ -365,7 +365,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang3_double",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang3_double",
       "title": {
         "en": "Gang 3 double press - physical",
         "fr": "Gang 3 double appui - physique"
@@ -377,7 +377,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang3_triple",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang3_triple",
       "title": {
         "en": "Gang 3 triple press - physical",
         "fr": "Gang 3 triple appui - physique"
@@ -389,7 +389,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang3_long_press",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang3_long_press",
       "title": {
         "en": "Gang 3 long press - physical",
         "fr": "Gang 3 appui long - physique"
@@ -401,7 +401,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang4_single",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang4_single",
       "title": {
         "en": "Gang 4 single press - physical",
         "fr": "Gang 4 appui simple - physique"
@@ -413,7 +413,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang4_double",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang4_double",
       "title": {
         "en": "Gang 4 double press - physical",
         "fr": "Gang 4 double appui - physique"
@@ -425,7 +425,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang4_triple",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang4_triple",
       "title": {
         "en": "Gang 4 triple press - physical",
         "fr": "Gang 4 triple appui - physique"
@@ -437,7 +437,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_physical_gang4_long_press",
+      "id": "gas_sensor_switch_switch_4gang_physical_gang4_long_press",
       "title": {
         "en": "Gang 4 long press - physical",
         "fr": "Gang 4 appui long - physique"
@@ -449,7 +449,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_turned_on",
+      "id": "gas_sensor_switch_switch_4gang_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©",
@@ -465,7 +465,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_turned_off",
+      "id": "gas_sensor_switch_switch_4gang_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -481,7 +481,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_power_changed",
+      "id": "gas_sensor_switch_switch_4gang_power_changed",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changÃ©e",
@@ -497,7 +497,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang1_scene",
+      "id": "gas_sensor_switch_switch_4gang_gang1_scene",
       "title": {
         "en": "Gang 1 scene triggered"
       },
@@ -519,7 +519,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang2_scene",
+      "id": "gas_sensor_switch_switch_4gang_gang2_scene",
       "title": {
         "en": "Gang 2 scene triggered"
       },
@@ -541,7 +541,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang3_scene",
+      "id": "gas_sensor_switch_switch_4gang_gang3_scene",
       "title": {
         "en": "Gang 3 scene triggered"
       },
@@ -563,7 +563,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang4_scene",
+      "id": "gas_sensor_switch_switch_4gang_gang4_scene",
       "title": {
         "en": "Gang 4 scene triggered"
       },
@@ -587,7 +587,7 @@
   ],
   "conditions": [
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang1_is_on",
+      "id": "gas_sensor_switch_switch_4gang_gang1_is_on",
       "title": {
         "en": "Gang 1 is !{{on|off}}",
         "fr": "Gang 1 est !{{allumÃ©|Ã©teint}}",
@@ -603,7 +603,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang2_is_on",
+      "id": "gas_sensor_switch_switch_4gang_gang2_is_on",
       "title": {
         "en": "Gang 2 is !{{on|off}}",
         "fr": "Gang 2 est !{{allumÃ©|Ã©teint}}",
@@ -619,7 +619,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang3_is_on",
+      "id": "gas_sensor_switch_switch_4gang_gang3_is_on",
       "title": {
         "en": "Gang 3 is !{{on|off}}",
         "fr": "Gang 3 est !{{allumÃ©|Ã©teint}}",
@@ -635,7 +635,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_gang4_is_on",
+      "id": "gas_sensor_switch_switch_4gang_gang4_is_on",
       "title": {
         "en": "Gang 4 is !{{on|off}}",
         "fr": "Gang 4 est !{{allumÃ©|Ã©teint}}",
@@ -651,7 +651,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_is_on",
+      "id": "gas_sensor_switch_switch_4gang_is_on",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}",
@@ -669,7 +669,7 @@
   ],
   "actions": [
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_turn_on_gang1",
+      "id": "gas_sensor_switch_switch_4gang_turn_on_gang1",
       "title": {
         "en": "Turn on gang 1",
         "fr": "Allumer gang 1",
@@ -685,7 +685,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_turn_off_gang1",
+      "id": "gas_sensor_switch_switch_4gang_turn_off_gang1",
       "title": {
         "en": "Turn off gang 1",
         "fr": "Ã‰teindre gang 1",
@@ -701,7 +701,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_turn_on_gang2",
+      "id": "gas_sensor_switch_switch_4gang_turn_on_gang2",
       "title": {
         "en": "Turn on gang 2",
         "fr": "Allumer gang 2",
@@ -717,7 +717,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_turn_off_gang2",
+      "id": "gas_sensor_switch_switch_4gang_turn_off_gang2",
       "title": {
         "en": "Turn off gang 2",
         "fr": "Ã‰teindre gang 2",
@@ -733,7 +733,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_turn_on_gang3",
+      "id": "gas_sensor_switch_switch_4gang_turn_on_gang3",
       "title": {
         "en": "Turn on gang 3",
         "fr": "Allumer gang 3",
@@ -749,7 +749,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_turn_off_gang3",
+      "id": "gas_sensor_switch_switch_4gang_turn_off_gang3",
       "title": {
         "en": "Turn off gang 3",
         "fr": "Ã‰teindre gang 3",
@@ -765,7 +765,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_turn_on_gang4",
+      "id": "gas_sensor_switch_switch_4gang_turn_on_gang4",
       "title": {
         "en": "Turn on gang 4",
         "fr": "Allumer gang 4",
@@ -781,7 +781,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_turn_off_gang4",
+      "id": "gas_sensor_switch_switch_4gang_turn_off_gang4",
       "title": {
         "en": "Turn off gang 4",
         "fr": "Ã‰teindre gang 4",
@@ -797,7 +797,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_toggle_gang1",
+      "id": "gas_sensor_switch_switch_4gang_toggle_gang1",
       "title": {
         "en": "Toggle gang 1",
         "nl": "Gang 1 wisselen"
@@ -809,7 +809,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_toggle_gang2",
+      "id": "gas_sensor_switch_switch_4gang_toggle_gang2",
       "title": {
         "en": "Toggle gang 2",
         "nl": "Gang 2 wisselen"
@@ -821,7 +821,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_toggle_gang3",
+      "id": "gas_sensor_switch_switch_4gang_toggle_gang3",
       "title": {
         "en": "Toggle gang 3",
         "nl": "Gang 3 wisselen"
@@ -833,7 +833,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_toggle_gang4",
+      "id": "gas_sensor_switch_switch_4gang_toggle_gang4",
       "title": {
         "en": "Toggle gang 4",
         "nl": "Gang 4 wisselen"
@@ -845,7 +845,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_turn_on_all",
+      "id": "gas_sensor_switch_switch_4gang_turn_on_all",
       "title": {
         "en": "Turn on all gangs",
         "nl": "Alle gangs aanzetten"
@@ -857,7 +857,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_turn_off_all",
+      "id": "gas_sensor_switch_switch_4gang_turn_off_all",
       "title": {
         "en": "Turn off all gangs",
         "nl": "Alle gangs uitzetten"
@@ -869,7 +869,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_set_backlight",
+      "id": "gas_sensor_switch_switch_4gang_set_backlight",
       "title": {
         "en": "Set LED backlight mode",
         "fr": "Mode rÃ©troÃ©clairage LED"
@@ -912,7 +912,7 @@
       ]
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_set_backlight_color",
+      "id": "gas_sensor_switch_switch_4gang_set_backlight_color",
       "title": {
         "en": "Set LED color",
         "fr": "Couleur LED"
@@ -973,7 +973,7 @@
       ]
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_set_backlight_brightness",
+      "id": "gas_sensor_switch_switch_4gang_set_backlight_brightness",
       "title": {
         "en": "Set LED brightness",
         "fr": "LuminositÃ© LED"
@@ -996,7 +996,7 @@
       ]
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_turn_on",
+      "id": "gas_sensor_switch_switch_4gang_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -1012,7 +1012,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_turn_off",
+      "id": "gas_sensor_switch_switch_4gang_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre",
@@ -1028,7 +1028,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_toggle",
+      "id": "gas_sensor_switch_switch_4gang_toggle",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -1044,7 +1044,7 @@
       }
     },
     {
-      "id": "gas_sensor_switch_hybrid_switch_4gang_set_scene_mode",
+      "id": "gas_sensor_switch_switch_4gang_set_scene_mode",
       "title": {
         "en": "Set scene mode",
         "fr": "Definir le mode scene"

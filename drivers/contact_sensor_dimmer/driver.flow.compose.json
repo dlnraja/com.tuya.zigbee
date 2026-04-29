@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "contact_sensor_dimmer_hybrid_contact_sensor_opened",
+      "id": "contact_sensor_dimmer_contact_sensor_opened",
       "highlight": true,
       "title": {
         "en": "Door/window opened",
@@ -24,7 +24,7 @@
       "args": []
     },
     {
-      "id": "contact_sensor_dimmer_hybrid_contact_sensor_closed",
+      "id": "contact_sensor_dimmer_contact_sensor_closed",
       "title": {
         "en": "Door/window closed",
         "nl": "Deur/raam gesloten",
@@ -46,7 +46,7 @@
       }
     },
     {
-      "id": "contact_sensor_dimmer_hybrid_contact_sensor_tamper_true",
+      "id": "contact_sensor_dimmer_contact_sensor_tamper_true",
       "title": {
         "en": "Tamper alert",
         "nl": "Sabotage alarm",
@@ -68,7 +68,7 @@
       }
     },
     {
-      "id": "contact_sensor_dimmer_hybrid_contact_sensor_battery_changed",
+      "id": "contact_sensor_dimmer_contact_sensor_battery_changed",
       "title": {
         "en": "Battery level changed",
         "nl": "Batterijniveau veranderd",
@@ -97,7 +97,7 @@
       "args": []
     },
     {
-      "id": "contact_sensor_dimmer_hybrid_contact_sensor_battery_low",
+      "id": "contact_sensor_dimmer_contact_sensor_battery_low",
       "title": {
         "en": "Battery is low",
         "nl": "Batterij is bijna leeg",
@@ -119,7 +119,7 @@
       }
     },
     {
-      "id": "contact_sensor_dimmer_hybrid_contact_sensor_left_open",
+      "id": "contact_sensor_dimmer_contact_sensor_left_open",
       "title": {
         "en": "Left open for duration",
         "nl": "Te lang open gelaten",
@@ -154,7 +154,7 @@
       "args": []
     },
     {
-      "id": "contact_sensor_dimmer_hybrid_contact_sensor_contact_alarm",
+      "id": "contact_sensor_dimmer_contact_sensor_contact_alarm",
       "title": {
         "en": "Contact changed",
         "fr": "Contact changÃ©",
@@ -170,7 +170,7 @@
       }
     },
     {
-      "id": "contact_sensor_dimmer_hybrid_contact_sensor_tamper_alarm",
+      "id": "contact_sensor_dimmer_contact_sensor_tamper_alarm",
       "title": {
         "en": "Tamper alarm",
         "fr": "Alarme sabotage",
@@ -188,7 +188,7 @@
   ],
   "conditions": [
     {
-      "id": "contact_sensor_dimmer_hybrid_contact_sensor_is_open",
+      "id": "contact_sensor_dimmer_contact_sensor_is_open",
       "title": {
         "en": "Door/window !{{is|is not}} open",
         "nl": "Deur/raam !{{is|is niet}} open",
@@ -204,7 +204,7 @@
       }
     },
     {
-      "id": "contact_sensor_dimmer_hybrid_contact_sensor_battery_above",
+      "id": "contact_sensor_dimmer_contact_sensor_battery_above",
       "title": {
         "en": "Battery !{{is|is not}} above",
         "nl": "Batterij !{{is|is niet}} boven",
@@ -231,7 +231,7 @@
       ]
     },
     {
-      "id": "contact_sensor_dimmer_hybrid_contact_sensor_contact_open",
+      "id": "contact_sensor_dimmer_contact_sensor_contact_open",
       "title": {
         "en": "Contact !{{is|is not}} open",
         "fr": "Contact !{{est|n'est pas}} ouvert",
@@ -247,7 +247,7 @@
       }
     },
     {
-      "id": "contact_sensor_dimmer_hybrid_contact_sensor_tamper_active",
+      "id": "contact_sensor_dimmer_contact_sensor_tamper_active",
       "title": {
         "en": "Tamper !{{is|is not}} active",
         "fr": "Sabotage !{{est|n'est pas}} actif",

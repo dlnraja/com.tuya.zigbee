@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "blaster_remote_hybrid_ir_remote_code_learned",
+      "id": "blaster_remote_ir_remote_code_learned",
       "title": {
         "en": "An IR code was learned",
         "fr": "Un code IR a Ã©tÃ© appris"
@@ -22,7 +22,7 @@
       }
     },
     {
-      "id": "blaster_remote_hybrid_ir_code_received",
+      "id": "blaster_remote_ir_code_received",
       "title": {
         "en": "ir code received"
       },
@@ -34,7 +34,7 @@
   ],
   "actions": [
     {
-      "id": "blaster_remote_hybrid_ir_remote_send_code",
+      "id": "blaster_remote_ir_remote_send_code",
       "title": {
         "en": "Send an IR code",
         "fr": "Envoyer un code IR"
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "id": "blaster_remote_hybrid_ir_remote_start_learning",
+      "id": "blaster_remote_ir_remote_start_learning",
       "title": {
         "en": "Start learning an IR code",
         "fr": "Commencer l'apprentissage d'un code IR"

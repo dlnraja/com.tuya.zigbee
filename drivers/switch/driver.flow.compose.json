@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "switch_hybrid_switch_2gang_gang1_turned_on_switch_hybrid",
+      "id": "switch_switch_2gang_gang1_turned_on_switch",
       "title": {
         "en": "Gang 1 turned on",
         "fr": "Gang 1 allumÃ©",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_gang1_turned_off_switch_hybrid",
+      "id": "switch_switch_2gang_gang1_turned_off_switch",
       "title": {
         "en": "Gang 1 turned off",
         "fr": "Gang 1 Ã©teint",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_gang2_turned_on_switch_hybrid",
+      "id": "switch_switch_2gang_gang2_turned_on_switch",
       "title": {
         "en": "Gang 2 turned on",
         "fr": "Gang 2 allumÃ©",
@@ -49,7 +49,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_gang2_turned_off_switch_hybrid",
+      "id": "switch_switch_2gang_gang2_turned_off_switch",
       "title": {
         "en": "Gang 2 turned off",
         "fr": "Gang 2 Ã©teint",
@@ -65,7 +65,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_physical_gang1_on_switch_hybrid",
+      "id": "switch_switch_2gang_physical_gang1_on_switch",
       "title": {
         "en": "Physical button gang 1 ON",
         "fr": "Bouton physique gang 1 ON",
@@ -87,7 +87,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_physical_gang1_off_switch_hybrid",
+      "id": "switch_switch_2gang_physical_gang1_off_switch",
       "title": {
         "en": "Physical button gang 1 OFF",
         "fr": "Bouton physique gang 1 OFF",
@@ -103,7 +103,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_physical_gang2_on_switch_hybrid",
+      "id": "switch_switch_2gang_physical_gang2_on_switch",
       "title": {
         "en": "Physical button gang 2 ON",
         "fr": "Bouton physique gang 2 ON",
@@ -119,7 +119,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_physical_gang2_off_switch_hybrid",
+      "id": "switch_switch_2gang_physical_gang2_off_switch",
       "title": {
         "en": "Physical button gang 2 OFF",
         "fr": "Bouton physique gang 2 OFF",
@@ -135,7 +135,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_turned_on_switch_hybrid",
+      "id": "switch_switch_2gang_turned_on_switch",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©",
@@ -151,7 +151,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_turned_off_switch_hybrid",
+      "id": "switch_switch_2gang_turned_off_switch",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -167,7 +167,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_power_changed_switch_hybrid",
+      "id": "switch_switch_2gang_power_changed_switch",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changÃ©e",
@@ -183,7 +183,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_gang1_scene_switch_hybrid",
+      "id": "switch_switch_2gang_gang1_scene_switch",
       "title": {
         "en": "Gang 1 scene triggered"
       },
@@ -205,7 +205,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_gang2_scene_switch_hybrid",
+      "id": "switch_switch_2gang_gang2_scene_switch",
       "title": {
         "en": "Gang 2 scene triggered"
       },
@@ -227,7 +227,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_gangX_scene",
+      "id": "switch_switch_2gang_gangX_scene",
       "title": {
         "en": "Dynamic card switch_2gang_gangX_scene"
       },
@@ -239,7 +239,7 @@
   ],
   "conditions": [
     {
-      "id": "switch_hybrid_switch_2gang_gang1_is_on_switch_hybrid",
+      "id": "switch_switch_2gang_gang1_is_on_switch",
       "title": {
         "en": "Gang 1 is !{{on|off}}",
         "fr": "Gang 1 est !{{allumÃ©|Ã©teint}}",
@@ -255,7 +255,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_gang2_is_on_switch_hybrid",
+      "id": "switch_switch_2gang_gang2_is_on_switch",
       "title": {
         "en": "Gang 2 is !{{on|off}}",
         "fr": "Gang 2 est !{{allumÃ©|Ã©teint}}",
@@ -271,7 +271,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_is_on_switch_hybrid",
+      "id": "switch_switch_2gang_is_on_switch",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}",
@@ -289,7 +289,7 @@
   ],
   "actions": [
     {
-      "id": "switch_hybrid_switch_2gang_turn_on_gang1_switch_hybrid",
+      "id": "switch_switch_2gang_turn_on_gang1_switch",
       "title": {
         "en": "Turn on gang 1",
         "fr": "Allumer gang 1",
@@ -305,7 +305,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_turn_off_gang1_switch_hybrid",
+      "id": "switch_switch_2gang_turn_off_gang1_switch",
       "title": {
         "en": "Turn off gang 1",
         "fr": "Ã‰teindre gang 1",
@@ -321,7 +321,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_turn_on_gang2_switch_hybrid",
+      "id": "switch_switch_2gang_turn_on_gang2_switch",
       "title": {
         "en": "Turn on gang 2",
         "fr": "Allumer gang 2",
@@ -337,7 +337,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_turn_off_gang2_switch_hybrid",
+      "id": "switch_switch_2gang_turn_off_gang2_switch",
       "title": {
         "en": "Turn off gang 2",
         "fr": "Ã‰teindre gang 2",
@@ -353,7 +353,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_toggle_gang1_switch_hybrid",
+      "id": "switch_switch_2gang_toggle_gang1_switch",
       "title": {
         "en": "Toggle gang 1",
         "fr": "Basculer gang 1",
@@ -375,7 +375,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_toggle_gang2_switch_hybrid",
+      "id": "switch_switch_2gang_toggle_gang2_switch",
       "title": {
         "en": "Toggle gang 2",
         "fr": "Basculer gang 2",
@@ -391,7 +391,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_turn_on_all_switch_hybrid",
+      "id": "switch_switch_2gang_turn_on_all_switch",
       "title": {
         "en": "Turn on all gangs",
         "fr": "Allumer tous les gangs",
@@ -413,7 +413,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_turn_off_all_switch_hybrid",
+      "id": "switch_switch_2gang_turn_off_all_switch",
       "title": {
         "en": "Turn off all gangs",
         "fr": "Ã‰teindre tous les gangs",
@@ -429,7 +429,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_set_backlight_switch_hybrid",
+      "id": "switch_switch_2gang_set_backlight_switch",
       "title": {
         "en": "Set LED backlight mode",
         "fr": "DÃ©finir le mode rÃ©troÃ©clairage LED",
@@ -491,7 +491,7 @@
       ]
     },
     {
-      "id": "switch_hybrid_switch_2gang_turn_on_switch_hybrid",
+      "id": "switch_switch_2gang_turn_on_switch",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -507,7 +507,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_turn_off_switch_hybrid",
+      "id": "switch_switch_2gang_turn_off_switch",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre",
@@ -523,7 +523,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_toggle_switch_hybrid",
+      "id": "switch_switch_2gang_toggle_switch",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -539,7 +539,7 @@
       }
     },
     {
-      "id": "switch_hybrid_switch_2gang_set_scene_mode_switch_hybrid",
+      "id": "switch_switch_2gang_set_scene_mode_switch",
       "title": {
         "en": "Set scene mode"
       },

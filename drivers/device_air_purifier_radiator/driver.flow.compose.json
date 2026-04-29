@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_air_purifier_radiator_hybrid_radiator_valve_target_temperature_changed",
+      "id": "device_air_purifier_radiator_radiator_valve_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
         "fr": "TempÃ©rature cible changÃ©e"
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "device_air_purifier_radiator_hybrid_radiator_valve_measure_temperature_changed",
+      "id": "device_air_purifier_radiator_radiator_valve_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e"
@@ -47,7 +47,7 @@
       }
     },
     {
-      "id": "device_air_purifier_radiator_hybrid_radiator_valve_temp_changed",
+      "id": "device_air_purifier_radiator_radiator_valve_temp_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e",
@@ -63,7 +63,7 @@
       }
     },
     {
-      "id": "device_air_purifier_radiator_hybrid_radiator_valve_battery_low",
+      "id": "device_air_purifier_radiator_radiator_valve_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -81,7 +81,7 @@
   ],
   "actions": [
     {
-      "id": "device_air_purifier_radiator_hybrid_radiator_valve_set_target_temperature",
+      "id": "device_air_purifier_radiator_radiator_valve_set_target_temperature",
       "title": {
         "en": "Set temperature to...",
         "fr": "RÃ©gler la tempÃ©rature Ã..."
@@ -105,7 +105,7 @@
       }
     },
     {
-      "id": "device_air_purifier_radiator_hybrid_radiator_valve_set_temperature",
+      "id": "device_air_purifier_radiator_radiator_valve_set_temperature",
       "title": {
         "en": "Set temperature",
         "fr": "RÃ©gler tempÃ©rature",

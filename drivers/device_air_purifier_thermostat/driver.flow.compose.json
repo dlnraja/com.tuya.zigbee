@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_target_temperature_changed",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_target_temperature_changed",
       "title": {
         "en": "Target temperature changed",
         "fr": "TempÃ©rature cible changÃ©e"
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temperature_changed",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e"
@@ -47,7 +47,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_mode_changed",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_mode_changed",
       "title": {
         "en": "Mode changed",
         "fr": "Mode changÃ©"
@@ -70,7 +70,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_heating_started",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_heating_started",
       "title": {
         "en": "Heating started",
         "fr": "Chauffage dÃ©marrÃ©"
@@ -82,7 +82,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_heating_stopped",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_heating_stopped",
       "title": {
         "en": "Heating stopped",
         "fr": "Chauffage arrÃªtÃ©"
@@ -94,7 +94,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turned_on",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©",
@@ -110,7 +110,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turned_off",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -126,7 +126,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temp_changed",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_temp_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e",
@@ -142,7 +142,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_battery_low",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -158,7 +158,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_humidity_changed",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "HumiditÃ© changÃ©e",
@@ -176,7 +176,7 @@
   ],
   "conditions": [
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_is_heating",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_is_heating",
       "title": {
         "en": "Thermostat is !{{heating|not heating}}",
         "fr": "Thermostat !{{chauffe|ne chauffe pas}}"
@@ -188,7 +188,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temperature_above_target",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_temperature_above_target",
       "title": {
         "en": "Temperature is above target",
         "fr": "TempÃ©rature supÃ©rieure Ã la cible"
@@ -200,7 +200,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_temperature_below_target",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_temperature_below_target",
       "title": {
         "en": "Temperature is below target",
         "fr": "TempÃ©rature infÃ©rieure Ã la cible"
@@ -212,7 +212,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_mode_is",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_mode_is",
       "title": {
         "en": "Mode is",
         "fr": "Mode est"
@@ -259,7 +259,7 @@
       ]
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_child_lock_is",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_child_lock_is",
       "title": {
         "en": "Child lock is !{{enabled|disabled}}",
         "fr": "Verrouillage enfant !{{activÃ©|dÃ©sactivÃ©}}"
@@ -271,7 +271,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_is_on",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_is_on",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}",
@@ -289,7 +289,7 @@
   ],
   "actions": [
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_target_temperature",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_set_target_temperature",
       "title": {
         "en": "Set target temperature",
         "fr": "DÃ©finir tempÃ©rature cible"
@@ -313,7 +313,7 @@
       ]
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_mode",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_set_mode",
       "title": {
         "en": "Set mode",
         "fr": "DÃ©finir mode"
@@ -353,7 +353,7 @@
       ]
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_increase_temperature",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_increase_temperature",
       "title": {
         "en": "Increase temperature",
         "fr": "Augmenter tempÃ©rature"
@@ -377,7 +377,7 @@
       ]
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_decrease_temperature",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_decrease_temperature",
       "title": {
         "en": "Decrease temperature",
         "fr": "Diminuer tempÃ©rature"
@@ -401,7 +401,7 @@
       ]
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_child_lock",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_set_child_lock",
       "title": {
         "en": "Set child lock",
         "fr": "DÃ©finir verrouillage enfant"
@@ -434,7 +434,7 @@
       ]
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_comfort_preset",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_set_comfort_preset",
       "highlight": true,
       "title": {
         "en": "Set comfort preset",
@@ -493,7 +493,7 @@
       ]
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_schedule_on",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_schedule_on",
       "title": {
         "en": "Enable schedule",
         "fr": "Activer programmation",
@@ -509,7 +509,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_schedule_off",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_schedule_off",
       "title": {
         "en": "Disable schedule",
         "fr": "DÃ©sactiver programmation",
@@ -525,7 +525,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turn_on",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -541,7 +541,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_turn_off",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre",
@@ -557,7 +557,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_toggle",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_toggle",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -573,7 +573,7 @@
       }
     },
     {
-      "id": "device_air_purifier_thermostat_hybrid_thermostat_tuya_dp_set_temperature",
+      "id": "device_air_purifier_thermostat_thermostat_tuya_dp_set_temperature",
       "title": {
         "en": "Set temperature",
         "fr": "RÃ©gler tempÃ©rature",

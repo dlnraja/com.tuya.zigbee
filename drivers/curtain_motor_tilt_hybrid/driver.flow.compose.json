@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "curtain_motor_tilt_hybrid_button_pressed",
+      "id": "curtain_motor_tilt_button_pressed",
       "title": {
         "en": "Button pressed",
         "fr": "Bouton pressÃ©"
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_windowcoverings_set_changed",
+      "id": "curtain_motor_tilt_curtain_motor_windowcoverings_set_changed",
       "title": {
         "en": "Position changed",
         "fr": "Position changÃ©e"
@@ -56,7 +56,7 @@
       }
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_dim_changed",
+      "id": "curtain_motor_tilt_curtain_motor_dim_changed",
       "title": {
         "en": "Brightness changed",
         "fr": "LuminositÃ© changÃ©e"
@@ -79,7 +79,7 @@
       }
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_battery_low",
+      "id": "curtain_motor_tilt_curtain_motor_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_physical_on",
+      "id": "curtain_motor_tilt_curtain_motor_physical_on",
       "title": {
         "en": "Physically opened",
         "fr": "Ouvert physiquement"
@@ -117,7 +117,7 @@
       }
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_physical_off",
+      "id": "curtain_motor_tilt_curtain_motor_physical_off",
       "title": {
         "en": "Physically closed",
         "fr": "FermÃ© physiquement"
@@ -139,7 +139,7 @@
       }
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_physical_single",
+      "id": "curtain_motor_tilt_curtain_motor_physical_single",
       "title": {
         "en": "Physically pressed",
         "fr": "PressÃ© physiquement"
@@ -161,7 +161,7 @@
       }
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_lux_changed",
+      "id": "curtain_motor_tilt_curtain_motor_lux_changed",
       "title": {
         "en": "Luminance changed",
         "fr": "Luminance changÃ©e",
@@ -179,7 +179,7 @@
   ],
   "actions": [
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_set_windowcoverings_set",
+      "id": "curtain_motor_tilt_curtain_motor_set_windowcoverings_set",
       "title": {
         "en": "Set position to...",
         "fr": "RÃ©gler la position Ã..."
@@ -205,7 +205,7 @@
       }
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_windowcoverings_open",
+      "id": "curtain_motor_tilt_curtain_motor_windowcoverings_open",
       "title": {
         "en": "Open",
         "fr": "Ouvrir"
@@ -217,7 +217,7 @@
       }
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_windowcoverings_close",
+      "id": "curtain_motor_tilt_curtain_motor_windowcoverings_close",
       "title": {
         "en": "Close",
         "fr": "Fermer"
@@ -229,7 +229,7 @@
       }
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_set_dim",
+      "id": "curtain_motor_tilt_curtain_motor_set_dim",
       "title": {
         "en": "Set brightness to...",
         "fr": "RÃ©gler la luminositÃ© Ã..."
@@ -255,7 +255,7 @@
       }
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_stop",
+      "id": "curtain_motor_tilt_curtain_motor_stop",
       "title": {
         "en": "Stop",
         "fr": "ArrÃªter",
@@ -271,7 +271,7 @@
       }
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_set_favorite",
+      "id": "curtain_motor_tilt_curtain_motor_set_favorite",
       "title": {
         "en": "Go to favorite position",
         "fr": "Aller position favorite",
@@ -291,7 +291,7 @@
       }
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_set_brightness",
+      "id": "curtain_motor_tilt_curtain_motor_set_brightness",
       "title": {
         "en": "Set brightness",
         "fr": "RÃ©gler luminositÃ©",
@@ -317,7 +317,7 @@
       ]
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_set_position",
+      "id": "curtain_motor_tilt_curtain_motor_set_position",
       "title": {
         "en": "Set position",
         "fr": "RÃ©gler position",
@@ -343,7 +343,7 @@
       ]
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_open",
+      "id": "curtain_motor_tilt_curtain_motor_open",
       "title": {
         "en": "Open",
         "fr": "Ouvrir",
@@ -359,7 +359,7 @@
       }
     },
     {
-      "id": "curtain_motor_tilt_hybrid_curtain_motor_close",
+      "id": "curtain_motor_tilt_curtain_motor_close",
       "title": {
         "en": "Close",
         "fr": "Fermer",

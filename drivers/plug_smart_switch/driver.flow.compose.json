@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_turned_on",
+      "id": "plug_smart_switch_switch_1gang_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©",
@@ -17,7 +17,7 @@
       }
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_turned_off",
+      "id": "plug_smart_switch_switch_1gang_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_physical_on",
+      "id": "plug_smart_switch_switch_1gang_physical_on",
       "title": {
         "en": "Physical ON",
         "fr": "Physique ON",
@@ -55,7 +55,7 @@
       }
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_physical_off",
+      "id": "plug_smart_switch_switch_1gang_physical_off",
       "title": {
         "en": "Physical OFF",
         "fr": "Physique OFF",
@@ -71,7 +71,7 @@
       }
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_physical_single",
+      "id": "plug_smart_switch_switch_1gang_physical_single",
       "title": {
         "en": "Single press",
         "fr": "Simple pression",
@@ -93,7 +93,7 @@
       }
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_physical_double",
+      "id": "plug_smart_switch_switch_1gang_physical_double",
       "title": {
         "en": "Double press",
         "fr": "Double pression",
@@ -115,7 +115,7 @@
       }
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_physical_long_press",
+      "id": "plug_smart_switch_switch_1gang_physical_long_press",
       "title": {
         "en": "Long press",
         "fr": "Pression longue",
@@ -147,7 +147,7 @@
       }
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_physical_triple",
+      "id": "plug_smart_switch_switch_1gang_physical_triple",
       "title": {
         "en": "Triple press",
         "fr": "Triple pression",
@@ -179,7 +179,7 @@
       }
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_battery_low",
+      "id": "plug_smart_switch_switch_1gang_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -195,7 +195,7 @@
       }
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_power_changed",
+      "id": "plug_smart_switch_switch_1gang_power_changed",
       "title": {
         "en": "Power changed",
         "fr": "Puissance changÃ©e",
@@ -211,7 +211,7 @@
       }
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_gang1_scene",
+      "id": "plug_smart_switch_switch_1gang_gang1_scene",
       "title": {
         "en": "Gang 1 scene triggered"
       },
@@ -235,7 +235,7 @@
   ],
   "conditions": [
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_is_on",
+      "id": "plug_smart_switch_switch_1gang_is_on",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}",
@@ -253,7 +253,7 @@
   ],
   "actions": [
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_turn_on",
+      "id": "plug_smart_switch_switch_1gang_turn_on",
       "title": {
         "en": "Turn on",
         "fr": "Allumer",
@@ -269,7 +269,7 @@
       }
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_turn_off",
+      "id": "plug_smart_switch_switch_1gang_turn_off",
       "title": {
         "en": "Turn off",
         "fr": "Ã‰teindre",
@@ -285,7 +285,7 @@
       }
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_toggle",
+      "id": "plug_smart_switch_switch_1gang_toggle",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",
@@ -307,7 +307,7 @@
       }
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_set_backlight",
+      "id": "plug_smart_switch_switch_1gang_set_backlight",
       "title": {
         "en": "Set LED backlight mode",
         "fr": "DÃ©finir le mode rÃ©troÃ©clairage LED",
@@ -366,7 +366,7 @@
       ]
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_set_backlight_color",
+      "id": "plug_smart_switch_switch_1gang_set_backlight_color",
       "title": {
         "en": "Set LED color",
         "fr": "DÃ©finir la couleur LED",
@@ -506,7 +506,7 @@
       ]
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_set_backlight_brightness",
+      "id": "plug_smart_switch_switch_1gang_set_backlight_brightness",
       "title": {
         "en": "Set LED brightness",
         "fr": "DÃ©finir luminositÃ© LED",
@@ -538,7 +538,7 @@
       ]
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_set_countdown",
+      "id": "plug_smart_switch_switch_1gang_set_countdown",
       "title": {
         "en": "Set countdown timer",
         "fr": "DÃ©finir minuterie",
@@ -571,7 +571,7 @@
       ]
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_set_child_lock",
+      "id": "plug_smart_switch_switch_1gang_set_child_lock",
       "title": {
         "en": "Set child lock",
         "fr": "DÃ©finir verrouillage enfant",
@@ -621,7 +621,7 @@
       ]
     },
     {
-      "id": "plug_smart_switch_hybrid_switch_1gang_set_scene_mode",
+      "id": "plug_smart_switch_switch_1gang_set_scene_mode",
       "title": {
         "en": "Set scene mode"
       },

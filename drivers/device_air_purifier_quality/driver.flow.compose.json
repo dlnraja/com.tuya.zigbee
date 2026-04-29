@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_air_purifier_quality_hybrid_air_quality_comprehensive_comprehensive_air_monitor_measure_temperature_changed",
+      "id": "device_air_purifier_quality_air_quality_comprehensive_comprehensive_air_monitor_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e"
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "device_air_purifier_quality_hybrid_air_quality_comprehensive_comprehensive_air_monitor_measure_humidity_changed",
+      "id": "device_air_purifier_quality_air_quality_comprehensive_comprehensive_air_monitor_measure_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "HumiditÃ© changÃ©e"
@@ -47,7 +47,7 @@
       }
     },
     {
-      "id": "device_air_purifier_quality_hybrid_air_quality_comprehensive_temp_changed",
+      "id": "device_air_purifier_quality_air_quality_comprehensive_temp_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e",
@@ -63,7 +63,7 @@
       }
     },
     {
-      "id": "device_air_purifier_quality_hybrid_air_quality_comprehensive_humidity_changed",
+      "id": "device_air_purifier_quality_air_quality_comprehensive_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "HumiditÃ© changÃ©e",
@@ -79,7 +79,7 @@
       }
     },
     {
-      "id": "device_air_purifier_quality_hybrid_air_quality_comprehensive_battery_low",
+      "id": "device_air_purifier_quality_air_quality_comprehensive_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -97,7 +97,7 @@
   ],
   "conditions": [
     {
-      "id": "device_air_purifier_quality_hybrid_air_quality_comprehensive_co2_above",
+      "id": "device_air_purifier_quality_air_quality_comprehensive_co2_above",
       "title": {
         "en": "CO !{{is|is not}} above"
       },
@@ -115,7 +115,7 @@
       ]
     },
     {
-      "id": "device_air_purifier_quality_hybrid_air_quality_comprehensive_temp_above",
+      "id": "device_air_purifier_quality_air_quality_comprehensive_temp_above",
       "title": {
         "en": "Temperature !{{is|is not}} above"
       },
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "id": "device_air_purifier_quality_hybrid_air_quality_comprehensive_humidity_above",
+      "id": "device_air_purifier_quality_air_quality_comprehensive_humidity_above",
       "title": {
         "en": "Humidity !{{is|is not}} above"
       },

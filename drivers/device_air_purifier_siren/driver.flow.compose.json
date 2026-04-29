@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "device_air_purifier_siren_hybrid_siren_alarm_triggered",
+      "id": "device_air_purifier_siren_siren_alarm_triggered",
       "highlight": true,
       "title": {
         "en": "Siren started",
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "device_air_purifier_siren_hybrid_siren_alarm_stopped",
+      "id": "device_air_purifier_siren_siren_alarm_stopped",
       "title": {
         "en": "Siren stopped",
         "nl": "Sirene gestopt",
@@ -46,7 +46,7 @@
       }
     },
     {
-      "id": "device_air_purifier_siren_hybrid_siren_battery_low",
+      "id": "device_air_purifier_siren_siren_battery_low",
       "title": {
         "en": "Battery is low",
         "nl": "Batterij is bijna leeg",
@@ -62,7 +62,7 @@
       }
     },
     {
-      "id": "device_air_purifier_siren_hybrid_siren_turned_on",
+      "id": "device_air_purifier_siren_siren_turned_on",
       "title": {
         "en": "Turned on",
         "fr": "AllumÃ©",
@@ -78,7 +78,7 @@
       }
     },
     {
-      "id": "device_air_purifier_siren_hybrid_siren_turned_off",
+      "id": "device_air_purifier_siren_siren_turned_off",
       "title": {
         "en": "Turned off",
         "fr": "Ã‰teint",
@@ -94,7 +94,7 @@
       }
     },
     {
-      "id": "device_air_purifier_siren_hybrid_siren_motion_detected",
+      "id": "device_air_purifier_siren_siren_motion_detected",
       "title": {
         "en": "Motion detected",
         "fr": "Mouvement dÃ©tectÃ©",
@@ -112,7 +112,7 @@
   ],
   "conditions": [
     {
-      "id": "device_air_purifier_siren_hybrid_siren_is_sounding",
+      "id": "device_air_purifier_siren_siren_is_sounding",
       "title": {
         "en": "Siren !{{is|is not}} sounding",
         "nl": "Sirene !{{loeit|loeit niet}}",
@@ -128,7 +128,7 @@
       }
     },
     {
-      "id": "device_air_purifier_siren_hybrid_siren_is_on",
+      "id": "device_air_purifier_siren_siren_is_on",
       "title": {
         "en": "Is !{{on|off}}",
         "fr": "Est !{{allumÃ©|Ã©teint}}",
@@ -144,7 +144,7 @@
       }
     },
     {
-      "id": "device_air_purifier_siren_hybrid_siren_motion_active",
+      "id": "device_air_purifier_siren_siren_motion_active",
       "title": {
         "en": "Motion !{{is|is not}} detected",
         "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
@@ -162,7 +162,7 @@
   ],
   "actions": [
     {
-      "id": "device_air_purifier_siren_hybrid_siren_turn_on",
+      "id": "device_air_purifier_siren_siren_turn_on",
       "title": {
         "en": "Turn on siren",
         "nl": "Sirene aanzetten",
@@ -178,7 +178,7 @@
       "args": []
     },
     {
-      "id": "device_air_purifier_siren_hybrid_siren_turn_off",
+      "id": "device_air_purifier_siren_siren_turn_off",
       "title": {
         "en": "Turn off siren",
         "nl": "Sirene uitzetten",
@@ -194,7 +194,7 @@
       "args": []
     },
     {
-      "id": "device_air_purifier_siren_hybrid_siren_set_volume",
+      "id": "device_air_purifier_siren_siren_set_volume",
       "title": {
         "en": "Set volume",
         "nl": "Volume instellen",
@@ -250,7 +250,7 @@
       ]
     },
     {
-      "id": "device_air_purifier_siren_hybrid_siren_set_duration",
+      "id": "device_air_purifier_siren_siren_set_duration",
       "title": {
         "en": "Set alarm duration",
         "nl": "Alarmduur instellen",
@@ -277,7 +277,7 @@
       ]
     },
     {
-      "id": "device_air_purifier_siren_hybrid_siren_set_melody",
+      "id": "device_air_purifier_siren_siren_set_melody",
       "title": {
         "en": "Set alarm melody",
         "nl": "Alarm melodie instellen",
@@ -436,7 +436,7 @@
       ]
     },
     {
-      "id": "device_air_purifier_siren_hybrid_siren_toggle",
+      "id": "device_air_purifier_siren_siren_toggle",
       "title": {
         "en": "Toggle",
         "fr": "Basculer",

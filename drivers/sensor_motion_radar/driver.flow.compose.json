@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_presence_detected_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_presence_detected_sensor_motion_radar",
       "title": {
         "en": "Presence detected",
         "fr": "PrÃ©sence dÃ©tectÃ©e"
@@ -13,7 +13,7 @@
       }
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_presence_cleared_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_presence_cleared_sensor_motion_radar",
       "title": {
         "en": "Presence cleared",
         "fr": "PrÃ©sence disparue"
@@ -25,7 +25,7 @@
       }
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_motion_detected_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_motion_detected_sensor_motion_radar",
       "title": {
         "en": "Motion detected",
         "fr": "Mouvement dÃ©tectÃ©"
@@ -37,7 +37,7 @@
       }
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_no_motion_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_no_motion_sensor_motion_radar",
       "title": {
         "en": "No motion",
         "fr": "Aucun mouvement"
@@ -49,7 +49,7 @@
       }
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_changed_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_illuminance_changed_sensor_motion_radar",
       "title": {
         "en": "Illuminance changed",
         "fr": "LuminositÃ© changÃ©e"
@@ -72,7 +72,7 @@
       }
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_temperature_changed_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_temperature_changed_sensor_motion_radar",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e"
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_humidity_changed_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_humidity_changed_sensor_motion_radar",
       "title": {
         "en": "Humidity changed",
         "fr": "HumiditÃ© changÃ©e"
@@ -118,7 +118,7 @@
       }
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_target_distance_changed_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_target_distance_changed_sensor_motion_radar",
       "title": {
         "en": "Target distance changed",
         "fr": "Distance cible changÃ©e"
@@ -141,7 +141,7 @@
       }
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_battery_low_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_battery_low_sensor_motion_radar",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible"
@@ -153,7 +153,7 @@
       }
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_battery_changed_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_battery_changed_sensor_motion_radar",
       "title": {
         "en": "Battery level changed",
         "fr": "Niveau batterie changÃ©"
@@ -176,7 +176,7 @@
       }
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_distance_changed_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_distance_changed_sensor_motion_radar",
       "title": {
         "en": "Distance changed",
         "fr": "Distance changÃ©e",
@@ -192,7 +192,7 @@
       }
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_temp_changed_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_temp_changed_sensor_motion_radar",
       "title": {
         "en": "Temperature changed",
         "fr": "TempÃ©rature changÃ©e",
@@ -208,7 +208,7 @@
       }
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_lux_changed_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_lux_changed_sensor_motion_radar",
       "title": {
         "en": "Luminance changed",
         "fr": "Luminance changÃ©e",
@@ -226,7 +226,7 @@
   ],
   "conditions": [
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_is_presence_detected_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_is_presence_detected_sensor_motion_radar",
       "title": {
         "en": "Presence is !{{detected|not detected}}",
         "fr": "PrÃ©sence !{{dÃ©tectÃ©e|non dÃ©tectÃ©e}}"
@@ -238,7 +238,7 @@
       }
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_above_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_illuminance_above_sensor_motion_radar",
       "title": {
         "en": "Illuminance is above",
         "fr": "LuminositÃ© supÃ©rieure Ã"
@@ -262,7 +262,7 @@
       ]
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_below_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_illuminance_below_sensor_motion_radar",
       "title": {
         "en": "Illuminance is below",
         "fr": "LuminositÃ© infÃ©rieure Ã"
@@ -286,7 +286,7 @@
       ]
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_temperature_above_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_temperature_above_sensor_motion_radar",
       "title": {
         "en": "Temperature is above",
         "fr": "TempÃ©rature supÃ©rieure Ã"
@@ -310,7 +310,7 @@
       ]
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_target_distance_less_than_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_target_distance_less_than_sensor_motion_radar",
       "title": {
         "en": "Target distance is less than",
         "fr": "Distance cible infÃ©rieure Ã"
@@ -334,7 +334,7 @@
       ]
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_motion_active_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_motion_active_sensor_motion_radar",
       "title": {
         "en": "Motion !{{is|is not}} detected",
         "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
@@ -352,7 +352,7 @@
   ],
   "actions": [
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_radar_sensitivity_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_set_radar_sensitivity_sensor_motion_radar",
       "title": {
         "en": "Set radar sensitivity",
         "fr": "DÃ©finir sensibilitÃ© radar"
@@ -376,7 +376,7 @@
       ]
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_range_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_set_detection_range_sensor_motion_radar",
       "title": {
         "en": "Set detection range",
         "fr": "DÃ©finir plage de dÃ©tection"
@@ -411,7 +411,7 @@
       ]
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_fading_time_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_set_fading_time_sensor_motion_radar",
       "title": {
         "en": "Set fading time",
         "fr": "DÃ©finir dÃ©lai d'absence"
@@ -435,7 +435,7 @@
       ]
     },
     {
-      "id": "sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_delay_sensor_motion_radar_hybrid",
+      "id": "sensor_motion_radar_motion_sensor_radar_mmwave_set_detection_delay_sensor_motion_radar",
       "title": {
         "en": "Set detection delay",
         "fr": "DÃ©finir dÃ©lai de dÃ©tection"
