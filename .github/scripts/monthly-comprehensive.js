@@ -245,14 +245,7 @@ async function editForumPost(postId,content,auth){
 }
 
 // --- FORUM AUTH + POST (uses forum-auth.js) ---
-async function postToForum(topicId,content,auth){
-  const h=auth.type==='apikey'
-    ?{'Content-Type':'application/json','User-Api-Key':auth.key}
-    :{'Content-Type':'application/json','X-CSRF-Token':auth.csrf,'X-Requested-With':'XMLHttpRequest',Cookie:fmtCk(auth.cookies)};
-  const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:h,
-    body:JSON.stringify({topic_id:topicId,raw:content})},{retries:3,label:'forumPost'});
-  return r.ok?(await r.json()):null;
-}
+async function postToForum(){console.log("FORUM POSTING DISABLED");return null;}
 async function main(){
   const dryRun=process.env.DRY_RUN!=='false';
   const repos=['dlnraja/com.tuya.zigbee','JohanBendz/com.tuya.zigbee'];

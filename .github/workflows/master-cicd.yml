@@ -20,8 +20,6 @@ on:
         description: 'Promote to test channel'
         type: boolean
         default: true
-      post_forum:
-        description: 'Post update to Homey Forum'
         type: boolean
         default: false
 
@@ -236,7 +234,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
 
-      # FORUM POSTING REMOVED v7.4.15 - No automatic forum posting (bot flagged by moderators Feb 2026)
       # All forum updates must be done manually via https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
 
       - name: 📝 Final Summary
