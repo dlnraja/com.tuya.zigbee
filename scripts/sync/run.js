@@ -36,7 +36,7 @@ async function run() {
 
   console.log("");
   const report = crossReference();
-  const elapsed = ((Date.now() - start) / 1000.toFixed(1);
+  const elapsed = ((Date.now() - start) / 1000).toFixed(1);
   console.log("\n Done in " + elapsed + "s | Reports: scripts / sync/data/");
   return report;
 }
