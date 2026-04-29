@@ -154,10 +154,10 @@
         "en": "Set LED indicator mode",
         "nl": "Stel LED-indicator modus in"
       },
-      "titleFormatted": {
-        "en": "Set [[device]] LED indicator to [[mode]]",
-        "nl": "stel LED-indicator in op [[mode]]"
-      },
+        "titleFormatted": {
+          "en": "Set [[device]] LED indicator to [[mode]]",
+          "nl": "Stel [[device]] LED-indicator in op [[mode]]"
+        },
       "hint": {
         "en": "Control when the LED indicator on the switch is lit",
         "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt"
