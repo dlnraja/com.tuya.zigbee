@@ -60,15 +60,15 @@ jobs:
       - name: 📊 JSON Integrity Check
         run: |
           echo "=== Validating JSON files ==="
-          FAIL=0
-          for f in app.json drivers/*/driver.compose.json drivers/*/driver.ts 2>/dev/null; do
-            if [ -f "$f" ] && ! node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null; then
-              echo "JSON ERROR: $f"
-              FAIL=1
-            fi
-          done
-          if [ "$FAIL" = "1" ]; then exit 1; fi
-          echo "✅ All JSON valid"
+          node -e "
+            const fs=require('fs'),path=require('path');
+            const files=['app.json'];
+            try{fs.readdirSync('drivers').filter(d=>{try{return fs.statSync(path.join('drivers',d)).isDirectory()}catch{return false}}).forEach(d=>{files.push(path.join('drivers',d,'driver.compose.json'));});}catch(e){}
+            let fail=0;
+            for(const f of files){try{JSON.parse(fs.readFileSync(f,'utf8'))}catch(e){console.log('JSON ERROR: '+f);fail=1;}}
+            if(fail)process.exit(1);
+            console.log('All JSON valid');
+          "
 
       # Check for invalid paths/carriage returns
       - name: 🛡️ Path Integrity Check
