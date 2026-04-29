@@ -4,6 +4,12 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
+## v5.11.208 (2026-04-29)
+
+Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers.
+
+---
+
 ## v5.11.207 (2026-04-29)
 
 Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers.
