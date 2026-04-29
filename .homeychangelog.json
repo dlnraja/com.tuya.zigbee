@@ -1,4 +1,13 @@
 {
+  "5.11.208": {
+    "en": "Universal Tuya Zigbee app v5.11.208: Fixed app ID."
+  },
+  "5.11.207": {
+    "en": "Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers."
+  },
+  "5.11.206": {
+    "en": "Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers."
+  },
   "5.11.205": {
     "en": "Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers."
   },
@@ -50,22 +59,7 @@
   "5.11.189": {
     "en": "Added 27 new device fingerprints including Nedis SmartLife Radiator. Fixed SDK v3 flow card crashes, resolved alarm_battery capability conflicts, and restored battery reporting. Added time sync for 13 TRV drivers and fixed missing capabilities in 10 remote drivers."
   },
-  "5.11.188": {
-    "en": "Community sync: 27 new fingerprints added from Z2M/ZHA/forum/JohanBendz. Minor and forum improvements. Total: ."
-  },
-  "5.11.187": {
-    "en": "Mntenance release. No user-facing changes."
-  },
-  "5.11.186": {
-    "en": "Universal Tuya Zigbee app v5.11.186 adds 681 new fingerprints and updates 193 drivers."
-  },
-  "5.11.206": {
-    "en": "Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers."
-  },
-  "5.11.207": {
-    "en": "Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers."
-  },
-  "5.11.208": {
-    "en": "Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers."
+  "5.11.209": {
+    "en": "Universal Tuya Zigbee app v5.11.208: Fixed app ID."
   }
 }
