@@ -2,7 +2,7 @@ name: "🤖 FLEET INTELLIGENCE — Autonomous Governance"
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # Run every 6 hours
+    - cron: '0 4 * * 1'  # Weekly Monday 04:00 UTC (consolidated into maintenance cycle)
   workflow_dispatch:
 
 permissions:

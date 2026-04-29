@@ -2,7 +2,7 @@ name: "Deploy Device Finder to GitHub Pages"
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # Daily 09:00 UTC — keep Device Finder updated
+    - cron: '0 9 * * 1'  # Weekly Monday 09:00 UTC — keep Device Finder updated
   workflow_dispatch:
   workflow_run:
     workflows: ["Daily Everything Pipeline"]

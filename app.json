@@ -96140,7 +96140,7 @@
           "nl": "Stel LED-indicator modus in"
         },
         "titleFormatted": {
-          "en": "set LED indicator to [[mode]]",
+          "en": "Set [[device]] LED indicator to [[mode]]",
           "nl": "stel LED-indicator in op [[mode]]"
         },
         "hint": {
@@ -173647,9 +173647,13 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "eWeLink",
+          "eweLink",
           "CK-BL702-SWP-01(7020)"
         ],
-        "productId": [],
+        "productId": [
+          "CK-BL702-SWP-01(7020)"
+        ],
         "learnmode": {
           "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
           "instruction": {
@@ -243295,10 +243299,7 @@
         "conditions": [],
         "actions": []
       },
-      "id": "wifi_water_valve",
-      "zigbee": {
-        "manufacturerName": []
-      }
+      "id": "wifi_water_valve"
     },
     {
       "name": {

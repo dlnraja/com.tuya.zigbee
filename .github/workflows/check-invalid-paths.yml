@@ -12,7 +12,7 @@ on:
       - '**.json'
       - '**.ts'
   schedule:
-    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+    - cron: '0 6 * * 1'  # Weekly Monday 06:00 UTC (consolidated into maintenance cycle)
 
 jobs:
   check-paths:
