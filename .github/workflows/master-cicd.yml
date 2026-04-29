@@ -66,6 +66,7 @@ jobs:
         id: intelligence_selector
         run: |
           if [ -n "${{ secrets.GOOGLE_API_KEY }}" ]; then
+          if [ -n "${{ secrets.NVIDIA_API_KEY }}" ]; then
             echo "PIPELINE_MODE=AI_ORCHESTRATED" >> $GITHUB_ENV
             echo "::notice::Pipeline intelligence: AI_ORCHESTRATED"
           else

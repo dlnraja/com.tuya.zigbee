@@ -39,6 +39,7 @@ jobs:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
           MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
           KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
           TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
