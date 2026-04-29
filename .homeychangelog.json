@@ -1,4 +1,10 @@
 {
+  "5.11.205": {
+    "en": "Universal Tuya Zigbee app v5.11.205 adds new device support and fixes bugs affecting users."
+  },
+  "5.11.204": {
+    "en": "v5.11.203: Emergency SOS Buttons:, Device Support:, Expanded compatibility for wireless emergency buttons and panic switches., Total driver count increased to 213."
+  },
   "5.11.203": {
     "en": "Added universal support for all 4 Zigbee SOS reporting standards to emergency buttons, improving cross-brand compatibility. Added 3 new device fingerprints. Now supports 213 drivers."
   },
@@ -52,14 +58,5 @@
   },
   "5.11.186": {
     "en": "Universal Tuya Zigbee app v5.11.186 adds 681 new fingerprints and updates 193 drivers."
-  },
-  "5.11.185": {
-    "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.184": {
-    "en": "v5.11.166: Added missing `button.push` capability to Finger, resolving issue #162., Synchronized energy scaling UI components across smart plugs., Fixed SDK v3 flow card deprecation and energy scale issue #137."
-  },
-  "5.11.204": {
-    "en": "v5.11.203: Emergency SOS Buttons:, Device Support:, Expanded compatibility for wireless emergency buttons and panic switches., Total driver count increased to 213."
   }
 }
