@@ -527,9 +527,9 @@ class FingerBot extends TuyaSpecificClusterDevice {
 
   _getFlowCard(id, type = 'trigger') {
     try {
-      if (type === 'action') return this._getFlowCard(id, 'action');
-      if (type === 'condition') return this._getFlowCard(id, 'condition');
-      return this._getFlowCard(id, 'trigger');
+      if (type === 'action') return this.homey.flow.getActionCard(id);
+      if (type === 'condition') return this.homey.flow.getConditionCard(id);
+      return this.homey.flow.getTriggerCard(id);
     } catch (err) {
       return null;
     }
