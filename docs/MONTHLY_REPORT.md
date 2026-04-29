@@ -1,15 +1,15 @@
 # Monthly Tuya Zigbee Report - 2026-04
 
-*Generated: 2026-04-29T08:18:13.492Z*
+*Generated: 2026-04-29T10:35:28.142Z*
 
 ##  Architectural Health [v7.0.22]
 
 | Metric | Value | Status |
 |--------|-------|--------|
-| Total Drivers | 323 |  |
+| Total Drivers | 315 |  |
 | Manufacturer IDs | 3 |  |
 | Collisions | 0 |  |
-| v7 Architectural Debt | 323 legacy drivers |  |
+| v7 Architectural Debt | 315 legacy drivers |  |
 | PR Auto-Merger | Active |  |
 | Community Responder | Template Ready |  |
 
