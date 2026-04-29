@@ -70,7 +70,6 @@ function loadForumData(){
   if(fs.existsSync(nightlyFile)){
     try{
       const data=JSON.parse(fs.readFileSync(nightlyFile,'utf8'));
-      if(data.forum)posts.push(...data.forum);
     }catch{}
   }
   // Load from forum activity
@@ -109,7 +108,6 @@ function detectPatterns(posts, issues){
 
   for(const pat of PATTERNS) detections.set(pat.id, []);
 
-  // Scan forum posts
   for(const post of posts){
     const text=post.text||post.raw||post.reply||post.excerpt||'';
     if(!text)continue;
@@ -205,9 +203,7 @@ function generateReport(suggestions){
 
 if(require.main===module){
   console.log('=== Pattern Detector ===');
-  const posts=loadForumData();
   const issues=loadGitHubData();
-  console.log('Loaded:',posts.length,'forum posts,',issues.length,'GitHub issues');
 
   const detections=detectPatterns(posts,issues);
   const suggestions=generateFixSuggestions(detections);

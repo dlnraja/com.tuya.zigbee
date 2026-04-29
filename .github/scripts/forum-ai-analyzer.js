@@ -5,7 +5,6 @@
  * Scraper TOUS les messages du forum Homey et les analyse via Minimax AI
  * Source: Minimax (abonnement ~20€/mois - PRIMAIR)
  * 
- * Usage: node .github/scripts/forum-ai-analyzer.js [--dry-run]
  */
 const fs=require('fs'),path=require('path');
 const{getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
@@ -76,7 +75,6 @@ async function scanTopic(topicId,auth,maxPosts=100){
 async function analyzeWithAI(topicData){
   console.log(`  Analyzing ${topicData.posts.length} posts via Minimax...`);
   
-  const prompt=`Analyze these Homey forum posts for the Universal Tuya Zigbee app (com.dlnraja.tuya.zigbee).
 
 For each post containing a device request or fingerprint, extract:
 1. User request details
@@ -94,7 +92,6 @@ Output as JSON array:
 
   // USE MINIMAX PRIMARILY
   const result=await callAI(prompt,
-    'You are Dylan, French developer of the Universal Tuya Zigbee Homey app. Analyze forum posts and extract device requests with fingerprints. JSON only.',
     {maxTokens:4096,complexity:'high'}
   );
   
