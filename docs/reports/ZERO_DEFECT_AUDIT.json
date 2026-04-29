@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-29T14:15:12.317Z",
+  "timestamp": "2026-04-29T14:54:33.188Z",
   "driversChecked": 315,
   "collisions": [],
   "buttonLogicFailures": [],
@@ -69,8 +69,7 @@
     "lib\\ir\\IRCodeLibrary.js:73: Potential unchecked division/multiplication (NaN risk)",
     "lib\\ir\\IRCodeLibrary.js:77: Potential unchecked division/multiplication (NaN risk)",
     "lib\\utils\\MathUtils.js:14: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\utils\\MathUtils.js:21: Potential unchecked division/multiplication (NaN risk)",
-    "tests\\unit\\core.test.js:29: Potential unchecked division/multiplication (NaN risk)"
+    "lib\\utils\\MathUtils.js:21: Potential unchecked division/multiplication (NaN risk)"
   ],
   "errors": [
     ".homeybuild\\lib\\ManufacturerVariationManager.js:68: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
