@@ -101,4 +101,5 @@ jobs:
           echo "Scanning for leak patterns in production-ready files..."
           # Scan for PATs, API Keys, and raw developer emails
           grep -rriE "HOMEY_PAT|GOOGLE_API_KEY|OPENAI_API_KEY" . --exclude-dir=.git --exclude-dir=node_modules && exit 1 || echo "✅ No critical secrets detected"
+          grep -rriE "HOMEY_PAT|NVIDIA_API_KEY|OPENAI_API_KEY" . --exclude-dir=.git --exclude-dir=node_modules && exit 1 || echo "✅ No critical secrets detected"
 
