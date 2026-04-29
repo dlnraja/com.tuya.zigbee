@@ -18,7 +18,6 @@
 | air_purifier_switch | 0 | - | onoff, measure_battery, measure_power... |
 | air_quality_co2 | 0 | - | measure_co2, measure_temperature, measure_humidity... |
 | air_quality_comprehensive | 0 | - | measure_co2, measure_pm25, measure_pm10... |
-| air_quality_comprehensive_hybrid | 0 | - | measure_co2, measure_pm25, measure_pm10... |
 | blaster_remote | 0 | - | button.learn_ir, ir_learned_code, ir_send_code... |
 | bulb_dimmable | 0 | - | dim, light_hue, light_mode... |
 | bulb_dimmable_dimmer | 0 | - | dim, light_hue, light_saturation... |
@@ -28,7 +27,6 @@
 | bulb_rgbw | 0 | - | onoff, dim, light_hue... |
 | bulb_rgbw_universal | 0 | - | onoff, dim, measure_temperature... |
 | bulb_tunable_white | 0 | - | dim, light_hue, light_saturation... |
-| bulb_tunable_white_hybrid | 0 | - | dim, light_hue, light_saturation... |
 | bulb_white | 0 | - | dim, light_hue, light_saturation... |
 | button_emergency_sos | 0 | - | alarm_generic, measure_battery, measure_radio_stability... |
 | button_wireless | 0 | - | measure_battery, measure_radio_stability, measure_maintenance_score |
@@ -64,7 +62,6 @@
 | curtain_motor | 0 | - | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_shutter | 0 | - | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_tilt | 0 | - | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
-| curtain_motor_tilt_hybrid | 0 | - | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | curtain_motor_wall | 0 | - | windowcoverings_state, windowcoverings_set, windowcoverings_tilt_set... |
 | device_air_purifier | 0 | - | target_temperature, measure_temperature, thermostat_mode... |
 | device_air_purifier_climate | 0 | - | onoff, dim, measure_pm25... |
@@ -100,7 +97,6 @@
 | dimmer_air_purifier | 0 | - | dim, onoff, measure_power... |
 | dimmer_bulb_dimmable | 0 | - | dim, light_hue, light_saturation... |
 | dimmer_dual_channel | 0 | - | onoff, dim, onoff.channel2... |
-| dimmer_dual_channel_hybrid | 0 | - | onoff, dim, onoff.channel2... |
 | dimmer_ts110e | 0 | - | onoff, dim, measure_radio_stability... |
 | dimmer_wall_1gang | 0 | - | dim, onoff, measure_power... |
 | dimmer_wall_plug | 0 | - | measure_power, meter_power, measure_voltage... |
@@ -151,7 +147,6 @@
 | light_sensor_outdoor | 0 | - | measure_luminance, measure_battery, measure_radio_stability... |
 | lock_smart | 0 | - | locked, lock_mode, measure_battery... |
 | module_mini_switch | 0 | - | measure_battery, alarm_generic, measure_power... |
-| module_mini_switch_hybrid | 0 | - | measure_battery, alarm_generic, measure_power... |
 | motion_sensor | 0 | - | alarm_motion, measure_battery, measure_luminance... |
 | motion_sensor_2 | 0 | - | measure_battery, measure_luminance, alarm_motion... |
 | motion_sensor_radar_mmwave | 0 | - | alarm_motion, measure_luminance.distance, measure_temperature... |
@@ -159,7 +154,6 @@
 | pet_feeder | 0 | - | button.feed, alarm_generic, measure_radio_stability... |
 | pet_feeder_zigbee | 0 | - | button, measure_weight, alarm_generic... |
 | plug_energy_monitor | 3 | CK-BL702-SWP-01(7020) | measure_power, meter_power, measure_voltage... |
-| plug_energy_monitor_hybrid | 0 | - | measure_temperature, measure_humidity, measure_battery... |
 | plug_smart | 0 | - | measure_battery, measure_current, measure_power... |
 | plug_smart_switch | 0 | - | onoff, measure_battery, measure_power... |
 | pool_pump | 0 | - | onoff, measure_power, meter_power... |
@@ -217,9 +211,7 @@
 | smart_heater_controller | 0 | - | onoff, target_temperature, measure_temperature... |
 | smart_knob | 0 | - | button, dim, measure_battery... |
 | smart_knob_rotary | 0 | - | button.rotate_left, button.rotate_right, button.press... |
-| smart_knob_rotary_hybrid | 0 | - | button.rotate_left, button.rotate_right, button.press... |
 | smart_knob_switch | 0 | - | dim, alarm_battery, measure_radio_stability... |
-| smart_knob_switch_hybrid | 0 | - | button, dim, measure_battery... |
 | smart_lcd_thermostat | 0 | - | target_temperature, measure_temperature, measure_humidity... |
 | smart_rcbo | 0 | - | onoff, alarm_generic, measure_power... |
 | smart_remote_1_button | 0 | - | measure_battery, measure_radio_stability, measure_maintenance_score |
@@ -276,6 +268,6 @@
 | zigbee_repeater | 0 | - | measure_radio_stability, measure_maintenance_score |
 
 ---
-**Total:** 272 drivers, 36 manufacturer IDs
+**Total:** 264 drivers, 36 manufacturer IDs
 
-*Generated: 2026-04-29T08:18:13.449Z*
+*Generated: 2026-04-29T10:35:28.097Z*
