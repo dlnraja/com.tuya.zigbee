@@ -172,7 +172,7 @@ jobs:
         run: node .github/scripts/diagnostic-auto-resolver.js
       - name: Monthly Homey SDK 3 Reference Sync
         continue-on-error: true
-        if: github.event.schedule == '0 4 1 * *' || github.event_name == 'workflow_dispatch'
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}

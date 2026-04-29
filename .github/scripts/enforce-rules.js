@@ -156,16 +156,17 @@ for (const d of dirs) {
   }
 }
 
-// 9. Forbidden Invisible Characters
+// 9. Forbidden Invisible Characters (decode to string first for multi-byte UTF-8)
 const FORBIDDEN_CHARS = [0xFEFF, 0x200B, 0x00A0, 0x0000];
+const FORBIDDEN_NAMES = ['BOM', 'zero-width space', 'NBSP', 'null'];
 for (const d of dirs) {
   const files = [path.join(DIRS, d, 'device.js'), path.join(DIRS, d, 'driver.compose.json'), path.join(DIRS, d, 'driver.flow.compose.json')];
   for (const f of files) {
     if (fs.existsSync(f)) {
-      const buf = fs.readFileSync(f);
-      for (let i = 0; i < buf.length; i++) {
-        if (FORBIDDEN_CHARS.includes(buf[i])) {
-          error(path.relative(path.join(DIRS, '..'), f) + ' contains forbidden invisible character (char code ' + buf[i] + ')');
+      const content = fs.readFileSync(f, 'utf8');
+      for (let i = 0; i < FORBIDDEN_CHARS.length; i++) {
+        if (content.includes(String.fromCharCode(FORBIDDEN_CHARS[i]))) {
+          error(path.relative(path.join(DIRS, '..'), f) + ' contains forbidden invisible character: ' + FORBIDDEN_NAMES[i] + ' (U+' + FORBIDDEN_CHARS[i].toString(16).toUpperCase().padStart(4, '0') + ')');
           break;
         }
       }
