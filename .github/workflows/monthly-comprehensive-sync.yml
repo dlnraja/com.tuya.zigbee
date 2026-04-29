@@ -167,7 +167,6 @@ jobs:
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-        run: node .github/scripts/forum-scan-spam.js
 
       - name: Auto-Learn Fingerprints
         continue-on-error: true
