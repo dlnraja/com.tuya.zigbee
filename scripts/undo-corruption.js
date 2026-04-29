@@ -53,7 +53,7 @@ if (fs.existsSync(diagPath)) {
     diagContent = diagContent.replace(/\/reporting safeDivide\(failed, i\)/g, '/reporting failed/');
     diagContent = diagContent.replace(/\/safeDivide\(MODULE_NOT_FOUND, i\)/g, '/MODULE_NOT_FOUND/');
     
-    // Also fix line 163: safeMultiply((errorRatio, 50))
+    // Also fix line 163: safeMultiply(errorRatio, 50)
     diagContent = diagContent.replace(/safeMultiply\(\(errorRatio, 50\)\)/g, 'safeMultiply(errorRatio, 50)');
     diagContent = diagContent.replace(/safeMultiply\(\(warningRatio, 20\)\)/g, 'safeMultiply(warningRatio, 20)');
 
