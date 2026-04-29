@@ -89,8 +89,20 @@ async function callAI(text,sysPrompt,opts={}){
   const fullSysPrompt=PROJECT_RULES+archContext+rulesContext+'\n\n'+sysPrompt;
   
   _rtLoad();
-  
-  // 1. OpenRouter (Aggregator - High priority)
+
+  // 1. NVIDIA NIM — 40 RPM, 800/day cap (free tier) — PRIORITY FREE TIER
+  if (process.env.NVIDIA_API_KEY && cbOk('nvidia') && (_rt.d['nvidia']||0) < 800) {
+    console.log('  Trying NVIDIA NIM (FREE TIER - Priority)...');
+    const res = await callAIEngine(
+      'https://integrate.api.nvidia.com/v1/chat/completions',
+      {'Authorization': 'Bearer ' + process.env.NVIDIA_API_KEY, 'Content-Type': 'application/json'},
+      {model:'meta/llama-3.1-8b-instruct', messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:text.substring(0,10000)}], max_tokens:Math.min(maxTokens, 1024), temperature:0.2},
+      'nvidia'
+    );
+    if (res) return res;
+  }
+
+  // 2. OpenRouter (Aggregator - High priority)
   if (process.env.OPENROUTER_API_KEY && cbOk('openrouter')) {
     console.log('  Trying OpenRouter...');
     let orModel = 'google/gemini-2.0-flash-lite-preview-02-05:free'; // Safe fallback
@@ -112,7 +124,7 @@ async function callAI(text,sysPrompt,opts={}){
     if (res) return res;
   }
 
-  // 2. HuggingFace (Aggregator) — 500/day cap
+  // 3. HuggingFace (Aggregator) — 500/day cap
   if (process.env.HF_TOKEN && cbOk('hf') && (_rt.d['hf']||0) < 500) {
     let hfM='meta-llama/Llama-3.1-8B-Instruct';
     if(tk.cx>=3)hfM='Qwen/Qwen2.5-72B-Instruct';
@@ -128,7 +140,7 @@ async function callAI(text,sysPrompt,opts={}){
     if (res) return res;
   }
 
-  // 3. Cerebras (Fast 70B) — 100/day cap
+  // 4. Cerebras (Fast 70B) — 100/day cap
   if (process.env.CEREBRAS_API_KEY && cbOk('cerebras') && (_rt.d['cerebras']||0) < 100) {
     console.log('  Trying Cerebras...');
     const res = await callAIEngine(
@@ -140,7 +152,7 @@ async function callAI(text,sysPrompt,opts={}){
     if (res) return res;
   }
 
-  // 4. Together.ai — 200/day cap
+  // 5. Together.ai — 200/day cap
   if (process.env.TOGETHER_API_KEY && cbOk('together') && (_rt.d['together']||0) < 200) {
     console.log('  Trying Together...');
     const res = await callAIEngine(
@@ -152,7 +164,7 @@ async function callAI(text,sysPrompt,opts={}){
     if (res) return res;
   }
 
-  // 5. Groq — 500/day cap
+  // 6. Groq — 500/day cap
   if (process.env.GROQ_API_KEY && cbOk('groq') && (_rt.d['groq']||0) < 500) {
     console.log('  Trying Groq...');
     const res = await callAIEngine(
@@ -164,7 +176,7 @@ async function callAI(text,sysPrompt,opts={}){
     if (res) return res;
   }
 
-  // 6. DeepSeek — 50/day cap
+  // 7. DeepSeek — 50/day cap
   if (process.env.DEEPSEEK_API_KEY && cbOk('deepseek') && (_rt.d['deepseek']||0) < 50) {
     const dsM=tk.cx>=3?'deepseek-reasoner':'deepseek-chat';
     console.log(`  Trying DeepSeek (${dsM})...`);
@@ -177,7 +189,7 @@ async function callAI(text,sysPrompt,opts={}){
     if (res) return res;
   }
 
-  // 7. Gemini (High Cap, free tier limits apply)
+  // 8. Gemini (High Cap, free tier limits apply)
   if (process.env.GOOGLE_API_KEY && cbOk('gemini')) {
     const gemUsed = _rt.d['gemini'] || 0;
     if (gemUsed < 1400) {
@@ -192,7 +204,7 @@ async function callAI(text,sysPrompt,opts={}){
     } else console.log('  Gemini cap reached.');
   }
 
-  // 8. GitHub Models — 100/day cap
+  // 9. GitHub Models — 100/day cap
   const ghToken = process.env.GH_PAT || process.env.GITHUB_TOKEN;
   if (ghToken && cbOk('gh-models') && (_rt.d['gh-models']||0) < 100) {
     const ghSys = fullSysPrompt.length > 6000 ? sysPrompt.substring(0, 5000) + '...' : fullSysPrompt;
@@ -206,7 +218,7 @@ async function callAI(text,sysPrompt,opts={}){
     if (res) return res;
   }
 
-  // 9. OpenAI (Strict Limits) — 50/day cap
+  // 10. OpenAI (Strict Limits) — 50/day cap
   if (process.env.OPENAI_API_KEY && cbOk('openai')) {
     if ((_rt.d['openai']||0) < 50 && (_rt.m['openai']||0) < 3) {
       console.log('  Trying OpenAI...');
@@ -220,7 +232,7 @@ async function callAI(text,sysPrompt,opts={}){
     }
   }
 
-  // 10. Mistral
+  // 11. Mistral
   if (process.env.MISTRAL_API_KEY && cbOk('mistral')) {
     if ((_rt.d['mistral']||0) < 30 && (_rt.m['mistral']||0) < 1) {
       console.log('  Trying Mistral...');
@@ -234,7 +246,7 @@ async function callAI(text,sysPrompt,opts={}){
     }
   }
 
-    // 11. Kimi — 50/day cap
+    // 12. Kimi — 50/day cap
     if (process.env.KIMI_API_KEY && cbOk('kimi') && (_rt.d['kimi']||0) < 50) {
       console.log('  Trying Kimi...');
       const res = await callAIEngine(
@@ -245,18 +257,6 @@ async function callAI(text,sysPrompt,opts={}){
       );
       if (res) return res;
     }
-
-  // 12. NVIDIA NIM — 40 RPM, 800/day cap (free tier) — PRIORITY FREE TIER
-  if (process.env.NVIDIA_API_KEY && cbOk('nvidia') && (_rt.d['nvidia']||0) < 800) {
-    console.log('  Trying NVIDIA NIM (FREE TIER - Priority)...');
-    const res = await callAIEngine(
-      'https://integrate.api.nvidia.com/v1/chat/completions',
-      {'Authorization': 'Bearer ' + process.env.NVIDIA_API_KEY, 'Content-Type': 'application/json'},
-      {model:'meta/llama-3.1-8b-instruct', messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:text.substring(0,10000)}], max_tokens:Math.min(maxTokens, 1024), temperature:0.2},
-      'nvidia'
-    );
-    if (res) return res;
-  }
 
   // 13. Minimax — Monthly subscription (~$20/month) — Budget tracked via MINIMAX_BUDGET
   if (process.env.MINIMAX_API_KEY && cbOk('minimax')) {
