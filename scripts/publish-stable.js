@@ -22,4 +22,4 @@ child.stdout.on('data', (data) => {
 });
 child.stderr.on('data', (data) => process.stderr.write(data));
 child.on('close', (code) => { console.log('\nExit code:', code); process.exit(code || 0); });
-setTimeout(() => { child.kill(); process.exit(1); }, 300000);
+setTimeout(() => { child.kill(); process.exit(1); }, 600000);
