@@ -1,0 +1,63 @@
+#!/usr/bin/env node
+'use strict';
+const { spawn } = require('child_process');
+const path = require('path');
+
+const app = require('../app.json');
+console.log('Publishing:', app.id, 'v' + app.version);
+
+const child = spawn('npx', ['homey', 'app', 'publish'], {
+  cwd: path.join(__dirname, '..'),
+  stdio: ['pipe', 'pipe', 'pipe'],
+  shell: true
+});
+
+let step = 0;
+let output = '';
+
+child.stdout.on('data', (data) => {
+  const text = data.toString();
+  output += text;
+  process.stdout.write(text);
+
+  // Step 1: uncommitted changes
+  if (text.includes('uncommitted changes') && step === 0) {
+    child.stdin.write('y\n');
+    step = 1;
+  }
+  // Step 2: guidelines
+  if (text.includes('App Store guidelines') && step <= 1) {
+    child.stdin.write('y\n');
+    step = 2;
+  }
+  // Step 3: version number update - say NO to keep current version
+  if (text.includes('update your app') && step <= 2) {
+    child.stdin.write('n\n');
+    step = 3;
+  }
+  // Step 4: version selection (arrow keys) - send Enter to select Patch
+  if (text.includes('Select the desired version') && step <= 3) {
+    // Send Enter to select the first option (Patch)
+    setTimeout(() => child.stdin.write('\n'), 500);
+    step = 4;
+  }
+  // Step 5: any remaining y/N
+  if (text.match(/\(y\/N\)/i) && step >= 3) {
+    child.stdin.write('y\n');
+  }
+  if (text.match(/\(Y\/n\)/i) && step >= 3) {
+    child.stdin.write('y\n');
+  }
+});
+
+child.stderr.on('data', (data) => process.stderr.write(data));
+
+child.on('close', (code) => {
+  console.log('\nExit code:', code);
+  if (output.includes('Published') || output.includes('success') || code === 0) {
+    console.log('SUCCESS: App published!');
+  }
+  process.exit(code || 0);
+});
+
+setTimeout(() => { child.kill(); process.exit(1); }, 300000);

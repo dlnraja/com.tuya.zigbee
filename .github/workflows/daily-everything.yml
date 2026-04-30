@@ -81,7 +81,6 @@ jobs:
           echo "multi_driver=$MD" >> $GITHUB_OUTPUT
           echo "App v$V | $D drivers | $F FPs | $MD multi-driver mfrs"
 
-      # ===== 0. ONE-TIME: Delete duplicate/spam forum posts =====
       - name: "0. Forum Cleanup (one-time)"
         id: forum_cleanup
         continue-on-error: true
@@ -95,8 +94,6 @@ jobs:
             echo "Cleanup already done"
           fi
 
-      # ===== 1. FORUM: Scan + Intel (replies handled by forum-auto-responder.yml) =====
-      - name: "1. Forum Scan + Intel (no replies)"
         id: forum_scan
         continue-on-error: true
         timeout-minutes: 10
@@ -110,7 +107,6 @@ jobs:
           node .github/scripts/scan-forum.js || true
           echo "=== Forum Intel Processor (auto-add FPs, detect issues) ==="
           node .github/scripts/forum-intel-processor.js || true
-          echo "=== Forum replies delegated to forum-auto-responder.yml ==="
 
       # ===== 2. GITHUB: Triage + Respond + Close =====
       - name: "2. GitHub Issues & PRs Manager"
@@ -195,7 +191,6 @@ jobs:
             fi
           fi
 
-      # ===== 6. NIGHTLY: Scan forum+GitHub data (no replies — forum-responder handles that) =====
       - name: "6. Nightly Processor (scan-only)"
         id: nightly
         continue-on-error: true
@@ -353,16 +348,12 @@ jobs:
         timeout-minutes: 10
         env:
           FORUM_USERNAME: dlnraja
-        run: node .github/scripts/forum-activity-scraper.js
 
       # ===== 7b. FORUM: Update First Post with Changelogs =====
-      - name: "7b. Forum First Post Update"
-        id: forum_first_post
         continue-on-error: true
         timeout-minutes: 5
         env:
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
-        run: node .github/scripts/update-forum-first-post.js
 
       # ===== 7c. FORUM: Private Messages (inbox scan) =====
       - name: "7c. Forum Private Messages"
@@ -525,7 +516,6 @@ jobs:
         id: spam_scan
         continue-on-error: true
         timeout-minutes: 5
-        run: node .github/scripts/forum-scan-spam.js
 
       - name: "10b4. Forum Cleanup (edit-based)"
         id: forum_cleanup_edit
@@ -813,8 +803,6 @@ jobs:
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           APP_VERSION: ${{ steps.bump.outputs.version || steps.stats.outputs.version }}
         run: |
-          # CHANGELOG env intentionally empty — post-forum-update.js reads from .homeychangelog.json
-          node .github/scripts/post-forum-update.js || true
 
       # ===== 14b. Deploy Device Finder (GitHub Pages) =====
       - name: "14b. Deploy Device Finder"
@@ -837,7 +825,6 @@ jobs:
           echo "| # | Step | Status |" >> $GITHUB_STEP_SUMMARY
           echo "|---|------|--------|" >> $GITHUB_STEP_SUMMARY
           echo "| 0 | Forum Cleanup | ${{ steps.forum_cleanup.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 1 | Forum Scan + Respond | ${{ steps.forum_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 2 | GitHub Issues & PRs | ${{ steps.github_mgr.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 3 | Upstream Triage | ${{ steps.upstream.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 3b | Comprehensive GH Scan | ${{ steps.comp_gh_scan.outcome }} |" >> $GITHUB_STEP_SUMMARY
@@ -847,7 +834,6 @@ jobs:
           echo "| 5b | Gmail Diagnostics | ${{ steps.gmail.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 6 | Nightly Processor | ${{ steps.nightly.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 7 | Forum Activity | ${{ steps.forum_activity.outcome }} |" >> $GITHUB_STEP_SUMMARY
-          echo "| 7b | Forum First Post | ${{ steps.forum_first_post.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 7c | Forum Private Messages | ${{ steps.forum_pm.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 8 | External Sources | ${{ steps.ext_sources.outcome }} |" >> $GITHUB_STEP_SUMMARY
           echo "| 9 | Enrichment | ${{ steps.enrichment.outcome }} |" >> $GITHUB_STEP_SUMMARY

@@ -189,13 +189,11 @@ jobs:
       - run: npm ci --prefer-offline --no-audit || npm install
       - uses: actions/cache@a7833574556fa59680c1b7cb190c1735db73ebf0 # v4
         with:
-          path: /tmp/last_forum_post.txt
           key: forum-${{ github.run_number }}
           restore-keys: forum-
       - name: Run forum scan
         id: forum_scan
         env:
-          LAST_POST_FILE: /tmp/last_forum_post.txt
         run: |
           node .github/scripts/scan-forum.js
           if [ -s /tmp/forum_issues.json ]; then
@@ -222,11 +220,9 @@ jobs:
             await github.rest.issues.create({
               owner:context.repo.owner,repo:context.repo.repo,
               title:dupTitle,
-              body:`## Forum requests\n| User | Date | Post | Missing |\n|---|---|---|---|\n${rows}`,
               labels:['enhancement','forum-request']
             });
 
-  # forum-respond: REMOVED — now handled exclusively by forum-auto-responder.yml (2x/day)
   # This was causing duplicate replies alongside hub + dedicated responder workflows
 
   gmail-diagnostics:
@@ -353,7 +349,6 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FORUM_USERNAME: dlnraja
-        run: node .github/scripts/forum-activity-scraper.js
 
   johanbendz-full:
     name: "JohanBendz Full Scanner"
@@ -428,7 +423,6 @@ jobs:
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-        run: node .github/scripts/forum-scan-spam.js
       - name: Cleanup (edit-based)
         continue-on-error: true
         env:
@@ -683,7 +677,6 @@ jobs:
           git push || true
 
   update-forum-thread:
-    name: "Update Forum First Post"
     needs: [generate-changelog]
     if: always()
     runs-on: ubuntu-latest
@@ -696,12 +689,10 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: Update first post of forum thread
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
-        run: node .github/scripts/update-forum-first-post.js
   promote-to-test:
     name: "Promote Draft to Test"
     needs: [generate-changelog, update-forum-thread]
@@ -777,7 +768,6 @@ jobs:
           echo "- Full Fork Verification: ${{ needs.scan-forks.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Cross-driver gaps: ${{ needs.cross-driver-gaps.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Forum scan: ${{ needs.scan-forum.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Forum respond: handled by forum-auto-responder.yml" >> $GITHUB_STEP_SUMMARY
           echo "- Gmail diagnostics: ${{ needs.gmail-diagnostics.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Device diagnostics: ${{ needs.device-diagnostics.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- External sources: ${{ needs.external-sources.result }}" >> $GITHUB_STEP_SUMMARY
@@ -788,7 +778,6 @@ jobs:
           echo "- GitHub issue manager: ${{ needs.github-issue-manager.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Forum activity: ${{ needs.forum-activity.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- JohanBendz full: ${{ needs.johanbendz-full.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Forum first post: ${{ needs.update-forum-thread.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Comprehensive scan: ${{ needs.comprehensive-scan.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Ecosystem scan: ${{ needs.ecosystem-scan.result }}" >> $GITHUB_STEP_SUMMARY
           echo "- Forum cleanup: ${{ needs.forum-cleanup.result }}" >> $GITHUB_STEP_SUMMARY
