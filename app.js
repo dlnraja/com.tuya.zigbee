@@ -44,6 +44,8 @@ const EmergencyDeviceFix = require('./lib/emergency/EmergencyDeviceFix'); //  Em
 // See: .github / workflows/MASTER-intelligent-enrichment.yml
 const SourceCredits = require('./lib/data/SourceCredits'); //  Source attributions
 const TuyaUDPDiscovery = require('./lib/tuya-local/TuyaUDPDiscovery');
+const SmartValueProcessor = require('./lib/utils/SmartValueProcessor');
+const CapabilityAutoAdapter = require('./lib/utils/CapabilityAutoAdapter');
 
 class UniversalTuyaZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
