@@ -244,7 +244,7 @@
 | usb_dongle_triple | 0 | - | onoff, onoff.usb2, onoff.usb3... |
 | usb_outlet_advanced | 0 | - | onoff, onoff.socket2, onoff.usb1... |
 | valve_dual_irrigation | 0 | - | onoff.valve_1, onoff.valve_2, measure_battery... |
-| valve_irrigation | 2 | - | dim.valve_1, dim.valve_2, dim.valve_3... |
+| valve_irrigation | 3 | - | dim.valve_1, dim.valve_2, dim.valve_3... |
 | valve_single | 0 | - | onoff, dim.valve, measure_battery... |
 | vibration_sensor | 0 | - | alarm_vibration, measure_temperature, measure_battery... |
 | wall_curtain_switch | 0 | - | windowcoverings_set, windowcoverings_state, measure_radio_stability... |
@@ -268,6 +268,6 @@
 | zigbee_repeater | 0 | - | measure_radio_stability, measure_maintenance_score |
 
 ---
-**Total:** 264 drivers, 36 manufacturer IDs
+**Total:** 264 drivers, 37 manufacturer IDs
 
-*Generated: 2026-04-30T19:53:18.526Z*
+*Generated: 2026-04-30T20:46:53.444Z*
