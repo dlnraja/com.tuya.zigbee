@@ -23,11 +23,30 @@
       "variants": ["BlitzWolf", "BLITZWOLF", "blitzwolf", "BlitzWolfBW", "blitzwolf-shenzhen"],
       "device_id_patterns": ["^TS011F$", "^TS0501B?$"],
       "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2020-06-01" }
+    },
+    {
+      "canonical": "insoma",
+      "variants": ["Insoma", "INSOMA", "insoma", "_TZE284_fhvpaltk"],
+      "device_id_patterns": ["^TS0601$"],
+      "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2025-01-01" }
+    },
+    {
+      "canonical": "immax",
+      "variants": ["Immax", "IMMAX", "immax", "immax-neo", "Immax NEO"],
+      "device_id_patterns": ["^TS0601$"],
+      "metadata": { "country": "CZ", "protocols": ["zigbee"], "first_seen": "2022-06-01" }
+    },
+    {
+      "canonical": "moes_house",
+      "variants": ["MoesHouse", "MOES_HOUSE", "moes_house", "Moes-House"],
+      "device_id_patterns": ["^TS0601$", "^TS0602$"],
+      "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2021-03-01" }
     }
   ],
   "generated_mapping": {
     "tuya": "tuya", "tuya_smart": "tuya", "tuyainc": "tuya", "tuya_inc": "tuya",
     "lidl": "lidl_silvercrest", "silvercrest": "lidl_silvercrest",
-    "moes": "moes", "blitzwolf": "blitzwolf"
+    "moes": "moes", "blitzwolf": "blitzwolf",
+    "insoma": "insoma", "immax": "immax", "moes_house": "moes_house"
   }
 }
