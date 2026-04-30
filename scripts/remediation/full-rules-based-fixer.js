@@ -32,7 +32,7 @@ class FullRulesBasedFixer {
       settingsKeys: { pattern: /zb_modelId|zb_manufacturerName/gi, fix: (m) => m.replace(/Id$/, '_id').replace(/Name$/, '_name') },
       flowTitleFormatted: { pattern: /titleFormatted.*\[\[device\]\]/g, fix: 'REMOVE', msg: 'A2: NO titleFormatted with [[device]]' },
       pressTypeIndex: { pattern: /\bpressType\s*[=:]\s*([2-9]|[1-9][0-9])/g, msg: 'A3: pressType must be 0=single 1=double 2=hold' },
-      batteryCheckOrder: { pattern: /measure_battery\s*[<>=]+\s*200(? ![0-9] )/g , msg: 'A4: Check battery <=100 FIRST' },
+      batteryCheckOrder: { pattern: /measure_battery\s*[<>=]+\s*200(?![0-9])/g, msg: 'A4: Check battery <=100 FIRST' },
       doubleInversion: { pattern: /\.setCapabilityValue\([^)]*invert[^)]*invert/sg, msg: 'A5: Invert ONCE only' },
       importPath: { pattern: /require\(['"]\.\.\/lib\/TuyaZigbeeDevice/g, fix: "require('../../lib/tuya/TuyaZigbeeDevice')" },
       mixinOrder: { pattern: /PhysicalButtonMixin\([^)]*VirtualButtonMixin\(/g, fix: 'VirtualButtonMixin(BaseUnifiedDevice)' },
@@ -48,29 +48,29 @@ class FullRulesBasedFixer {
       wildcardFingerprint: { pattern: /"_TZE(284|200|204)_\*"/g, msg: 'F6: No wildcards in SDK3 fingerprints' },
       
       // G. MULTI-GANG
-      broadcastFilter: { pattern: /onOffCommand(? !.*_lastCommandedGang )/g , msg: 'G4: Add broadcast filter with 2s window' },
+      broadcastFilter: { pattern: /onOffCommand(?!.*_lastCommandedGang)/g, msg: 'G4: Add broadcast filter with 2s window' },
       
       // H. BUTTON
-      missingBoundCluster: { pattern: /genOnOff(? !.*bind )/g , msg: 'H1: OnOffBoundCluster must be bound per EP' },
+      missingBoundCluster: { pattern: /genOnOff(?!.*bind)/g, msg: 'H1: OnOffBoundCluster must be bound per EP' },
       
       // K. TUYA DP
-      timeSync: { pattern: /0x24(? !.*_respondToTimeSync )/g , msg: 'K6: Use _respondToTimeSync for time sync protocol' },
+      timeSync: { pattern: /0x24(?!.*_respondToTimeSync)/g, msg: 'K6: Use _respondToTimeSync for time sync protocol' },
     };
     
     // Rules from repository.md (SDK3 compliance)
     this.sdk3Rules = {
       flowCardTryCatch: { pattern: /getTriggerCard\(|getActionCard\(|getConditionCard\(/g, msg: 'SDK3: Wrap flow cards in try-catch' },
       explicitFlowId: { pattern: /getDeviceTriggerCard\(\)/g, msg: 'SDK3: Use explicit ID with getDeviceTriggerCard' },
-      thisPrefix: { pattern: /(? <!\.)(setCapabilityValue|getSettings|addCapability )\(/g , msg: 'SDK3: Use this. prefix for SDK methods' },
+      thisPrefix: { pattern: /(?<!\.)(setCapabilityValue|getSettings|addCapability)\(/g, msg: 'SDK3: Use this. prefix for SDK methods' },
       asyncMethods: { pattern: /(onNodeInit|onDeleted|onSettings)\s*\(\s*\)\s*\{/g, msg: 'SDK3: Methods must be async' },
       getDeviceOverride: { pattern: /getDeviceById\s*\(/g, msg: 'SDK3: Use defensive getDevice override' },
     };
     
     // Rules from diagnose-device-issues.md
     this.diagnoseRules = {
-      ghostPress: { pattern: /lastTime:\s*0(? ![,\}] : null)/g , msg: 'Diagnose: lastTime=0 causes ghost presses' },
+      ghostPress: { pattern: /lastTime:\s*0(?![,\}]: null)/g, msg: 'Diagnose: lastTime=0 causes ghost presses' },
       duplicateListeners: { pattern: /registerCapabilityListener\(/g, msg: 'Diagnose: Prevent duplicate listener registration' },
-      emptyValueCaching: { pattern: /_cached.*=\s*value(? !\s*if )/g , msg: 'Diagnose: Don\'t cache empty values' },
+      emptyValueCaching: { pattern: /_cached.*=\s*value(?!\s*if)/g, msg: 'Diagnose: Don\'t cache empty values' },
       doubleDivision: { pattern: /\/10\s*\/10/g, msg: 'Diagnose: Double-division detected' },
       mcuSyncTime: { pattern: /mcuSyncTime|mcu_sync_time/g, msg: 'Diagnose: Time sync needs proper handling' },
     };
@@ -114,7 +114,7 @@ class FullRulesBasedFixer {
       }
       
       // Check for invalid escape sequences
-      const invalidEscape = content.match(/\\(? ![nrtvfbxu0\\'"])/g : null)       ;
+      const invalidEscape = content.match(/\\(?![nrtvfbxu0\\'"])/g) || [];
       if (invalidEscape) {
         issues.push(`Invalid escape sequences: ${invalidEscape.length}`);
       }

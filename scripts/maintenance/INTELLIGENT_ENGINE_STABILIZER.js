@@ -144,6 +144,7 @@ const RULES = [
     ext: '.js',
     fix: (code) => code.replace(/require\s*\(\s*['"]punycode['"]\s*\)/g, "require('punycode/')")
   },
+/*
   {
     id: 'UNWRAP_NESTED_FLOW_WRAPPERS',
     desc: 'Unwrap recursively nested try-catch flow wrappers',
@@ -159,6 +160,8 @@ const RULES = [
       return code;
     }
   },
+*/
+/*
   {
     id: 'SAFE_FLOW_LOOKUP',
     desc: 'Wrap Flow card lookups in try-catch wrapper',
@@ -177,6 +180,7 @@ const RULES = [
       return code;
     }
   },
+*/
   {
     id: 'FIX_INVALID_RETURN_TERNARY',
     desc: 'Fix "return x : y" which should be "return x ? x : y"',
