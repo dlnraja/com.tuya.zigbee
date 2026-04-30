@@ -1,17 +1,14 @@
-name: Update Forum Post #1
 on:
   workflow_dispatch:
   push:
     branches: [master]
     paths:
-      - '.github/templates/forum-post-1.md'
       - '.github/scripts/update-post-1.js'
 
 permissions:
   contents: read
 
 concurrency:
-  group: update-forum-post-1
   cancel-in-progress: true
 
 env:
@@ -31,7 +28,6 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
-      - name: Update Forum Post 1
         continue-on-error: true
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}

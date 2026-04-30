@@ -151,14 +151,12 @@ jobs:
       - run: npm ci --prefer-offline --no-audit || npm install
       - uses: actions/cache@a7833574556fa59680c1b7cb190c1735db73ebf0 # v4
         with:
-          path: /tmp/last_forum_post.txt
           key: forum-${{ github.run_number }}
           restore-keys: forum-
       - name: Scan forum for new device requests
         id: forum_scan
         continue-on-error: true
         env:
-          LAST_POST_FILE: /tmp/last_forum_post.txt
         run: |
           node .github/scripts/scan-forum.js
           if [ -s /tmp/forum_issues.json ]; then
@@ -173,11 +171,9 @@ jobs:
             const issues=JSON.parse(fs.readFileSync('/tmp/forum_issues.json','utf8'));
             if(!issues.length)return;
             const rows=issues.map(i=>
-              `| ${i.user} | ${i.date} | [#${i.postNum}](https://community.homey.app/t/${i.topicId}/${i.postNum}) | \`${i.missing.join('`,`')}\` |`).join('\n');
             await github.rest.issues.create({
               owner:context.repo.owner,repo:context.repo.repo,
               title:`[Forum] ${issues.length} device request(s)`,
-              body:`## Forum device requests\n\n| User | Date | Post | Missing FPs |\n|---|---|---|---|\n${rows}`,
               labels:['enhancement','forum-request']
             });
 

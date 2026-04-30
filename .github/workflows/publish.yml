@@ -1,6 +1,5 @@
 # Auto Publish - Official Athom Actions (NO CLI)
 # Required secrets: HOMEY_PAT (from https://tools.developer.homey.app/me)
-# Optional: HOMEY_EMAIL + HOMEY_PASSWORD (for forum posting via cookie auth)
 name: Auto Publish
 on:
   workflow_dispatch:
@@ -245,7 +244,6 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
-      - name: Post to Forum
         if: steps.pat.outputs.ok == 'true'
         continue-on-error: true
         env:
@@ -254,7 +252,6 @@ jobs:
           APP_VERSION: ${{ steps.bump.outputs.version }}
           CHANGELOG: ${{ steps.cl.outputs.text }}
           PUBLISH_URL: ${{ steps.pub.outputs.url || 'https://homey.app/a/com.dlnraja.tuya.zigbee/test/' }}
-        run: node .github/scripts/post-forum-update.js
 
       - name: Summary
         if: always()
