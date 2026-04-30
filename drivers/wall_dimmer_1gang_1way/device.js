@@ -272,7 +272,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         if (isPhysicalPress) {
           const flowCardId = state ? 'wall_dimmer_1gang_1way_turned_on' : 'wall_dimmer_1gang_1way_turned_off';
           this.log(`Triggering: ${flowCardId}`);
-          this._getFlowCard(flowCardId).trigger(this, {}, {})
+          this.homey.flow.getTriggerCard(flowCardId).trigger(this, {}, {})
             .catch(err => this.error(`Flow trigger failed: ${err.message}`));
         }
       }
@@ -306,11 +306,11 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         if (isPhysicalPress) {
           if (brightnessIncreased) {
             this.log('Triggering: wall_dimmer_1gang_1way_brightness_increased (PHYSICAL)');
-            this._getFlowCard('wall_dimmer_1gang_1way_brightness_increased').trigger(this, { brightness })
+            this.homey.flow.getTriggerCard('wall_dimmer_1gang_1way_brightness_increased').trigger(this, { brightness })
               .catch(this.error);
           } else if (brightnessDecreased) {
             this.log('Triggering: wall_dimmer_1gang_1way_brightness_decreased (PHYSICAL)');
-            this._getFlowCard('wall_dimmer_1gang_1way_brightness_decreased').trigger(this, { brightness })
+            this.homey.flow.getTriggerCard('wall_dimmer_1gang_1way_brightness_decreased').trigger(this, { brightness })
               .catch(this.error);
           }
         }

@@ -67,13 +67,13 @@ class WeatherStationOutdoorDevice extends UnifiedSensorBase {
     try {
       switch (capability) {
       case 'measure_temperature':
-        this._getFlowCard('weather_station_outdoor_outdoor_temperature_changed')?.trigger(this, { temperature: value }, {}).catch(() => {})
+        this.homey.flow.getTriggerCard('weather_station_outdoor_outdoor_temperature_changed')?.trigger(this, { temperature: value }, {}).catch(() => {})
         break;
       case 'measure_humidity':
-        this._getFlowCard('weather_station_outdoor_outdoor_humidity_changed')?.trigger(this, { humidity: value }, {}).catch(() => {})
+        this.homey.flow.getTriggerCard('weather_station_outdoor_outdoor_humidity_changed')?.trigger(this, { humidity: value }, {}).catch(() => {})
         break;
       case 'measure_pressure': {
-        this._getFlowCard('weather_station_outdoor_pressure_changed')?.trigger(this, { pressure: value }, {}).catch(() => {})
+        this.homey.flow.getTriggerCard('weather_station_outdoor_pressure_changed')?.trigger(this, { pressure: value }, {}).catch(() => {})
         // Track pressure trend for condition cards
         if (prev != null && typeof prev === 'number') {
           const trend = value > prev ? 'rising' : value < prev ? 'falling' : 'stable';
@@ -83,7 +83,7 @@ class WeatherStationOutdoorDevice extends UnifiedSensorBase {
       }
       case 'measure_battery':
         if (value <= 15 && (prev === undefined || prev === null || prev > 15)) {
-          this._getFlowCard('weather_station_outdoor_battery_low')?.trigger(this, {}, {}).catch(() => {});}
+          this.homey.flow.getTriggerCard('weather_station_outdoor_battery_low')?.trigger(this, {}, {}).catch(() => {});}
         break;
       }
     } catch (e) { /* flow card may not exist */ }

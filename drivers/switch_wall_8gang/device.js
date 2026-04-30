@@ -130,7 +130,7 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
             const flowId = `switch_wall_8gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
             try {
               const card =
-      this._getFlowCard(flowId)?.trigger(this, {}, {}).catch(this.error || console.error)
+      this.homey.flow.getTriggerCard(flowId)?.trigger(this, {}, {}).catch(this.error || console.error)
               if (card ) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
               this.log(`[SWITCH-8G]  Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             } catch (e) { }
@@ -139,7 +139,7 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
             const sceneId = `switch_wall_8gang_gang${epNum}_scene`;
             try {
               const card =
-      this._getFlowCard(sceneId)?.trigger(this, {}, {}).catch(this.error || console.error)
+      this.homey.flow.getTriggerCard(sceneId)?.trigger(this, {}, {}).catch(this.error || console.error)
               if (card ) await card.trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {});
               this.log(`[SWITCH-8G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
             } catch (e) { }

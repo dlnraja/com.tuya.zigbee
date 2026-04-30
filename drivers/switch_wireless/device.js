@@ -40,7 +40,7 @@ class SwitchWirelessDevice extends UnifiedSwitchBase {
       this._safeSetCapability('onoff', boolVal).catch(() => {});
       try {
         const id = boolVal ? 'switch_wireless_onoff_true' : 'switch_wireless_onoff_false';
-      this._getFlowCard(id) .trigger(this, { timestamp: new Date().toISOString() }, {}).catch(() => {});
+      this.homey.flow.getTriggerCard(id) .trigger(this, { timestamp: new Date().toISOString() }, {}).catch(() => {});
       } catch (e) { /* card missing */ }
       return;
     }
@@ -53,8 +53,8 @@ class SwitchWirelessDevice extends UnifiedSwitchBase {
       const c = { single: 'switch_wireless_single_press', double: 'switch_wireless_double_press', long: 'switch_wireless_long_press' }[pressType];
       if (c) {
         try {
-      this._getFlowCard(c)?.trigger(this, {}, {}).catch(this.error || console.error)
-      this._getFlowCard('switch_wireless_button_pressed')?.trigger(this, {}, {}).catch(this.error || console.error)
+      this.homey.flow.getTriggerCard(c)?.trigger(this, {}, {}).catch(this.error || console.error)
+      this.homey.flow.getTriggerCard('switch_wireless_button_pressed')?.trigger(this, {}, {}).catch(this.error || console.error)
         } catch (e) { /* card missing */ }
       }
       return;

@@ -190,7 +190,7 @@ class Switch4GangDevice extends BaseClass {
         if (isPhysical && (mode === 'auto' || mode === 'both')) {
           const flowId = `switch_4gang_physical_gang${gangNum}_${value ? 'on' : 'off'}`;
           try {
-            const card = this._getFlowCard(flowId);
+            const card = this.homey.flow.getTriggerCard(flowId);
             if (card) await card.trigger(this, { gang: gangNum, state: value }, {}).catch(() => {});
             this.log(`[BSEED-4G]  Physical G${gangNum} ${value ? 'ON' : 'OFF'}`);
           } catch (e) { }
@@ -199,7 +199,7 @@ class Switch4GangDevice extends BaseClass {
         if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
           const sceneId = `switch_4gang_gang${gangNum}_scene`;
           try {
-            const card = this._getFlowCard(sceneId);
+            const card = this.homey.flow.getTriggerCard(sceneId);
             if (card) await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
             this.log(`[BSEED-4G]  Scene G${gangNum} ${value ? 'on' : 'off'}`);
           } catch (e) { }

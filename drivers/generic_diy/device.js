@@ -100,7 +100,7 @@ class GenericDIYDevice extends ZigBeeDevice {
   // 
 
   _triggerFlow(flowId, tokens = {}) {
-    const card = this._getFlowCard(flowId);
+    const card = this.homey.flow.getTriggerCard(flowId);
     if (card) {
       card.trigger(this, tokens, {}).catch(e => this.error(`[DIY] Flow ${flowId}: ${e.message}`));
       this.log(`[DIY]  Flow: ${flowId}`, tokens);
@@ -148,7 +148,7 @@ class GenericDIYDevice extends ZigBeeDevice {
 
   _registerFlowActions() {
     // Identify
-    this._getFlowCard('generic_diy_identify')?.registerRunListener(async () => {
+    this.homey.flow.getTriggerCard('generic_diy_identify')?.registerRunListener(async () => {
       const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.identify) {
         await ep.clusters.identify.identify({ identifyTime: 5 });
@@ -157,21 +157,21 @@ class GenericDIYDevice extends ZigBeeDevice {
     });
 
     // Turn ON endpoint
-    this._getFlowCard('generic_diy_turn_on_endpoint')?.registerRunListener(async ({ endpoint } ) => {
+    this.homey.flow.getTriggerCard('generic_diy_turn_on_endpoint')?.registerRunListener(async ({ endpoint } ) => {
       const ep = this.zclNode?.endpoints?.[endpoint];
       if (ep?.clusters?.onOff) await ep.clusters.onOff.setOn();
       return true;
     });
 
     // Turn OFF endpoint
-    this._getFlowCard('generic_diy_turn_off_endpoint')?.registerRunListener(async ({ endpoint } ) => {
+    this.homey.flow.getTriggerCard('generic_diy_turn_off_endpoint')?.registerRunListener(async ({ endpoint } ) => {
       const ep = this.zclNode?.endpoints?.[endpoint];
       if (ep?.clusters?.onOff) await ep.clusters.onOff.setOff();
       return true;
     });
 
     // Set Dim Level
-    this._getFlowCard('generic_diy_set_dim')?.registerRunListener(async ({ level } ) => {
+    this.homey.flow.getTriggerCard('generic_diy_set_dim')?.registerRunListener(async ({ level } ) => {
       const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.levelControl) {
         await ep.clusters.levelControl.moveToLevel({ level: safeMultiply(Math.round(level, 254)), transitionTime: 0 });

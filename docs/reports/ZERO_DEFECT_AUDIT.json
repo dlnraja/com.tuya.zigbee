@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-04-29T19:53:58.509Z",
+  "timestamp": "2026-04-30T02:32:18.032Z",
   "driversChecked": 315,
   "collisions": [],
   "buttonLogicFailures": [],
@@ -38,7 +38,6 @@
     ".homeybuild\\lib\\ir\\IRCodeLibrary.js:77: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\utils\\MathUtils.js:14: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\utils\\MathUtils.js:21: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\tests\\unit\\core.test.js:29: Potential unchecked division/multiplication (NaN risk)",
     "lib\\adapters\\ExternalDeviceAdapter.js:163: Potential unchecked division/multiplication (NaN risk)",
     "lib\\adapters\\ExternalDeviceAdapter.js:164: Potential unchecked division/multiplication (NaN risk)",
     "lib\\adapters\\ExternalDeviceAdapter.js:165: Potential unchecked division/multiplication (NaN risk)",

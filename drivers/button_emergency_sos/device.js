@@ -60,13 +60,13 @@ class SosEmergencyButtonDevice extends BaseUnifiedDevice {
         }
         if (dp === 13) {
            // v7.1.0: Safe flow trigger for double press
-           const doubleCard = this._getFlowCard('button_emergency_sos_double_pressed');
+           const doubleCard = this.homey.flow.getTriggerCard('button_emergency_sos_double_pressed');
            if (doubleCard) {
              doubleCard.trigger(this, {}, {}).catch(this.error);
            }
            
            // v7.1.0: Safe flow trigger for long press
-           const longCard = this._getFlowCard('button_emergency_sos_long_pressed');
+           const longCard = this.homey.flow.getTriggerCard('button_emergency_sos_long_pressed');
            if (longCard) {
              longCard.trigger(this, {}, {}).catch(this.error);
            }
@@ -83,7 +83,7 @@ class SosEmergencyButtonDevice extends BaseUnifiedDevice {
     this.setCapabilityValue('alarm_generic', true).catch(() => {});
     
     // v7.1.0: Safe flow trigger for generic press
-    const pressCard = this._getFlowCard('button_emergency_sos_pressed', 'trigger');
+    const pressCard = this.homey.flow.getTriggerCard('button_emergency_sos_pressed', 'trigger');
     if (pressCard) {
       pressCard.trigger(this, {}, {}).catch(this.error);
     }
