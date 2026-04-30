@@ -161,7 +161,7 @@ jobs:
           REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
         run: node .github/scripts/github-issue-manager.js
 
-      - name: Forum Spam Scan
+      - name: Community Spam Scan
         continue-on-error: true
         timeout-minutes: 5
         env:

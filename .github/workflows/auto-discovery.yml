@@ -1,4 +1,4 @@
-name: Auto Discovery from Forums & Z2M (Enhanced)
+name: Auto Discovery from Z2M & Community (Enhanced)
 
 on:
   workflow_dispatch:
@@ -45,7 +45,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo "Comparing forum requested IDs against Z2M implementations..."
+          echo "Comparing community requested IDs against Z2M implementations..."
           node .github/scripts/cross-ref-intelligence.js || true
           node .github/scripts/scan-prs-issues.js || true
 
