@@ -911,16 +911,47 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
   async onUninit() {
     this.log('Universal Tuya Zigbee App is de-initializing...');
-    
+
     // Stop Tuya UDP Discovery
     if (this._tuyaUDPDiscovery) {
-      try {
-        await this._tuyaUDPDiscovery.stop();
-        this.log(' Tuya WiFi UDP Discovery stopped');
-      } catch (err) {
-        this.error(' Error stopping Tuya UDP Discovery:', err.message);
+      try { await this._tuyaUDPDiscovery.stop(); } catch (e) {}
+    }
+
+    // Cleanup all sub-managers to prevent resource leaks
+    const cleanup = [
+      ['analytics', this.analytics],
+      ['discovery', this.discovery],
+      ['optimizer', this.optimizer],
+      ['systemLogsCollector', this.systemLogsCollector],
+      ['diagnosticAPI', this.diagnosticAPI],
+      ['logBuffer', this.logBuffer],
+      ['suggestionEngine', this.suggestionEngine],
+      ['otaManager', this.otaManager],
+      ['flowCardManager', this.flowCardManager],
+      ['universalFlowLoader', this.universalFlowLoader],
+      ['identificationDatabase', this.identificationDatabase],
+    ];
+    for (const [name, mgr] of cleanup) {
+      if (mgr && typeof mgr.destroy === 'function') {
+        try { mgr.destroy(); } catch (e) {}
+      } else if (mgr && typeof mgr.stop === 'function') {
+        try { mgr.stop(); } catch (e) {}
       }
     }
+
+    // Reset state
+    this._flowCardsRegistered = false;
+    this.analytics = null;
+    this.discovery = null;
+    this.optimizer = null;
+    this.systemLogsCollector = null;
+    this.diagnosticAPI = null;
+    this.logBuffer = null;
+    this.suggestionEngine = null;
+    this.otaManager = null;
+    this.flowCardManager = null;
+    this.universalFlowLoader = null;
+    this.identificationDatabase = null;
 
     this.log(' Universal Tuya Zigbee App has been de-initialized');
   }
