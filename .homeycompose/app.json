@@ -1,5 +1,5 @@
 {
-  "id": "com.dlnraja.tuya.zigbee",
+  "id": "com.dlnraja.tuya.zigbee.stable",
   "version": "5.11.209",
   "compatibility": ">=12.2.0",
   "sdk": 3,
@@ -7,10 +7,10 @@
     "local"
   ],
   "name": {
-    "en": "Universal Tuya",
-    "nl": "Universal Tuya",
-    "de": "Universal Tuya",
-    "fr": "Universal Tuya"
+    "en": "Universal Tuya Stable",
+    "nl": "Universal Tuya Stable",
+    "de": "Universal Tuya Stable",
+    "fr": "Universal Tuya Stable"
   },
   "description": {
     "en": "Every Tuya device under one roof, 100% local",
