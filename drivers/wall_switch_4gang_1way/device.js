@@ -47,12 +47,12 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
         if (mode !== 'magic') this.setCapabilityValue('onoff', value).catch(() => {});
         if (isPhys && (mode === 'auto' || mode === 'both')) {
           const fid = 'wall_switch_4gang_1way_turned_' + (value ? 'on' : 'off');
-      this._getFlowCard(fid)?.trigger(this, {}, {}).catch(this.error || console.error)
+      this.homey.flow.getTriggerCard(fid)?.trigger(this, {}, {}).catch(this.error || console.error)
           const pgid = `wall_switch_4gang_1way_physical_gang${gn}_` + (value ? 'on' : 'off');
-      this._getFlowCard(pgid)?.trigger(this, {}, {}).catch(this.error || console.error)
+      this.homey.flow.getTriggerCard(pgid)?.trigger(this, {}, {}).catch(this.error || console.error)
         }
         if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-      this._getFlowCard('wall_switch_4gang_1way_gang' + gn + '_scene' ).trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {})
+      this.homey.flow.getTriggerCard('wall_switch_4gang_1way_gang' + gn + '_scene' ).trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {})
         }
       }
     });
@@ -125,7 +125,7 @@ class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
       const mode = this.sceneMode;
       const isPhys = !this._appCommandPending?.gang1;// v5.12.4: Removed 'auto' physical gang trigger - PhysicalButtonMixin handles it (fixes BSEED double-trigger)
       if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-      this._getFlowCard('wall_switch_4gang_1way_gang1_scene')?.trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {})
+      this.homey.flow.getTriggerCard('wall_switch_4gang_1way_gang1_scene')?.trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {})
         this.log(`[SCENE] Gang 1 scene: ${value ? 'on' : 'off'}`);
       }
     };

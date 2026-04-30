@@ -146,7 +146,7 @@ class GasPresenceHybridDevice extends UnifiedSensorBase {
   }
   async _triggerPresenceFlows(detected) {
     const cardId = detected ? 'sensor_gas_presence_hybrid_presence_sensor_radar_presence_detected' : 'sensor_gas_presence_hybrid_presence_sensor_radar_presence_cleared';
-    try { await this._getFlowCard(cardId).trigger(this, {}).catch(() => {}); } catch (e) {}
+    try { await this.homey.flow.getTriggerCard(cardId).trigger(this, {}).catch(() => {}); } catch (e) {}
   }
   async _setupZclClusters(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];

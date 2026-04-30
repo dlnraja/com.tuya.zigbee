@@ -89,7 +89,7 @@ class WaterValveSmartDevice extends UnifiedPlugBase {
     // Helper to trigger flow cards safely
     const triggerCard = async (id, tokens = {}, state = {}) => {
       try {
-        const card = this._getFlowCard(id);
+        const card = this.homey.flow.getTriggerCard(id);
         if (card) {
           await card.trigger(this, tokens, state);
         }

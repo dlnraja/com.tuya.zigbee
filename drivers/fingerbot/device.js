@@ -515,7 +515,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
    */
   _triggerFlowCard(id, tokens = {}, state = {}) {
     try {
-      const card = this._getFlowCard(id);
+      const card = this.homey.flow.getTriggerCard(id);
       if (card) {
         card.trigger(this, tokens, state)
           .catch(err => this.error(`Failed to trigger flow card "${id}"`, err));

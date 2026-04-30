@@ -106,7 +106,7 @@ class ContactPresenceHybridDevice extends UnifiedSensorBase {
   }
   async _triggerPresenceFlows(detected) {
     const cardId = detected ? 'sensor_contact_presence_hybrid_presence_detected' : 'sensor_contact_presence_hybrid_presence_cleared';
-    try { await this._getFlowCard(cardId).trigger(this, {}).catch(() => {}); } catch (e) {}
+    try { await this.homey.flow.getTriggerCard(cardId).trigger(this, {}).catch(() => {}); } catch (e) {}
   }
   async _setupZclClusters(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];

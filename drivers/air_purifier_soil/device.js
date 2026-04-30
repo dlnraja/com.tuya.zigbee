@@ -39,7 +39,7 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
 
   _initFlowTriggers() {
     const safeGetTrigger = (id) => {
-      try { return this._getFlowCard(id); }
+      try { return this.homey.flow.getTriggerCard(id); }
       catch (e) { this.log(`[SOIL] Flow trigger '${id}' not available`); return null; }
     };
     this._flowTriggerMoistureChanged = safeGetTrigger('soil_sensor_moisture_changed');

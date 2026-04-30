@@ -411,7 +411,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-    const rotateLeftTrigger = (() => { try { return this._getFlowCard('remote_button_wireless_hybrid_rotate_left', 'trigger'); } catch(e) { return null; } })();
+    const rotateLeftTrigger = (() => { try { return this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_rotate_left', 'trigger'); } catch(e) { return null; } })();
     if (rotateLeftTrigger) {
       await rotateLeftTrigger.trigger(this, { 
         brightness:Math.round(this._simulatedBrightness)
@@ -430,7 +430,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
     }
 
     // Trigger flow card
-    const rotateRightTrigger = (() => { try { return this._getFlowCard('remote_button_wireless_hybrid_rotate_right', 'trigger'); } catch(e) { return null; } })();
+    const rotateRightTrigger = (() => { try { return this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_rotate_right', 'trigger'); } catch(e) { return null; } })();
     if (rotateRightTrigger) {
       await rotateRightTrigger.trigger(this, { 
         brightness:Math.round(this._simulatedBrightness)
@@ -450,7 +450,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
 
     // Trigger generic flow card with action token
     try {
-      const genericTrigger = (() => { try { return this._getFlowCard('remote_button_wireless_hybrid_press', 'trigger'); } catch(e) { return null; } })();
+      const genericTrigger = (() => { try { return this.homey.flow.getTriggerCard('remote_button_wireless_hybrid_press', 'trigger'); } catch(e) { return null; } })();
       if (genericTrigger) {
         await genericTrigger.trigger(this, { action }).catch(() => {});
       }
@@ -468,7 +468,7 @@ class RemoteButtonWirelessHybridDevice extends ZigBeeDevice {
     
     if (specificCardId) {
       try {
-        const triggerCard = this._getFlowCard(specificCardId, 'trigger');
+        const triggerCard = this.homey.flow.getTriggerCard(specificCardId, 'trigger');
         if (triggerCard) {
             await triggerCard.trigger(this, { action }).catch(() => {});
             this.log(`[FLOW]  Triggered ${specificCardId}`);

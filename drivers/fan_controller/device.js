@@ -44,8 +44,8 @@ class FanControllerDevice extends ZigBeeDevice {
     // Safe flow card getter to prevent crashes on missing cards
     const safeGetCard = (type, id) => {
       try {
-        if (type === 'action') return this._getFlowCard(id, 'action');
-        if (type === 'condition') return this._getFlowCard(id, 'condition');
+        if (type === 'action') return this.homey.flow.getTriggerCard(id, 'action');
+        if (type === 'condition') return this.homey.flow.getTriggerCard(id, 'condition');
       } catch (e) {
         this.log(`[FLOW] Card '${id}' not available: ${e.message}`);
       }
@@ -164,10 +164,10 @@ class FanControllerDevice extends ZigBeeDevice {
       // Trigger flow cards
       try {
         if (!!value && !wasOn) {
-          const card = this._getFlowCard('fan_turned_on', 'trigger');
+          const card = this.homey.flow.getTriggerCard('fan_turned_on', 'trigger');
           if (card) card.trigger(this).catch(this.error);
         } else if (!value && wasOn) {
-          const card = this._getFlowCard('fan_turned_off', 'trigger');
+          const card = this.homey.flow.getTriggerCard('fan_turned_off', 'trigger');
           if (card) card.trigger(this).catch(this.error);
         }
       } catch (e) { /* Card may not exist */ }
@@ -178,7 +178,7 @@ class FanControllerDevice extends ZigBeeDevice {
       this.setCapabilityValue('dim', dim).catch(this.error);
       // Trigger speed changed flow card
       try {
-        const card = this._getFlowCard('fan_speed_changed', 'trigger');
+        const card = this.homey.flow.getTriggerCard('fan_speed_changed', 'trigger');
         if (card) {
           card.trigger(this, { speed: Math.round(dim * 100) }).catch(this.error);
         }
