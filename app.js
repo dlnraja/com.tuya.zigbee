@@ -332,6 +332,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
     this.log(' Universal Tuya Zigbee App has been initialized');
     this.log(' Advanced systems: Analytics, Discovery, Performance, OTA, Quirks, System Logs, Intelligent ID Database');
+    this.homey.markReady();
 
     // Log capability stats
     try {
