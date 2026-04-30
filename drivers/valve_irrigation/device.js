@@ -11,11 +11,37 @@ const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
  * ║  Models: TS0601, _TZE200_*, Smart irrigation controller                     ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
+const INSOMA_MFRS = ['_tze284_fhvpaltk'];
+const IMMAX_MFRS = ['_tze200_xlppj4f5'];
+
 class ValveIrrigationDevice extends HybridPlugBase {
 
   get plugCapabilities() { return ['onoff', 'measure_battery']; }
 
+  /**
+   * v5.11.210: Detect Insoma 2-way irrigation valve for dual-valve DP mapping
+   */
+  get isInsoma() {
+    const mfr = (this.getSetting('zb_manufacturer_name') || '').toLowerCase();
+    return INSOMA_MFRS.some(m => mfr.includes(m));
+  }
+
   get dpMappings() {
+    const mfr = (this.getSetting('zb_manufacturer_name') || '').toLowerCase();
+    const isImmax = IMMAX_MFRS.some(m => mfr.includes(m));
+
+    // v5.11.210: Insoma 2-way valve uses DP 1 (valve1) + DP 2 (valve2) + DP 13 (battery)
+    if (this.isInsoma) {
+      return {
+        1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+        2: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+        5: { capability: null, internal: 'countdown_timer', writable: true },
+        6: { capability: null, internal: 'remaining_time' },
+        13: { capability: 'measure_battery', divisor: 1 },
+        14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
+      };
+    }
+
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       5: { capability: null, internal: 'countdown_timer', writable: true },
@@ -23,9 +49,9 @@ class ValveIrrigationDevice extends HybridPlugBase {
       7: { capability: 'meter_water', divisor: 1 },
       11: { capability: null, internal: 'weather_delay', writable: true },
       13: { capability: 'measure_battery', divisor: 1 },
-      14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' }, // SDK3: alarm_battery obsolète
+      14: { capability: null, internal: 'battery_low', transform: (v) => v === 1 || v === 'low' },
       15: { capability: 'measure_battery', divisor: 1 },
-      101: { capability: null, internal: 'last_water_time' },
+      101: { capability: isImmax ? 'meter_water' : null, internal: isImmax ? null : 'last_water_time', divisor: 1000 },
       102: { capability: null, internal: 'water_cycle', writable: true },
       103: { capability: null, internal: 'frost_protection', writable: true },
       104: { capability: 'meter_water', divisor: 1 }
