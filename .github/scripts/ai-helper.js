@@ -91,11 +91,12 @@ async function callAI(text,sysPrompt,opts={}){
   _rtLoad();
 
   // 1. NVIDIA NIM — 40 RPM, 800/day cap (free tier) — PRIORITY FREE TIER
-  if (process.env.NVIDIA_API_KEY && cbOk('nvidia') && (_rt.d['nvidia']||0) < 800) {
+  const nvidiaKey = process.env.NVIDIA_API_KEY || process.env.NVIDIA;
+  if (nvidiaKey && cbOk('nvidia') && (_rt.d['nvidia']||0) < 800) {
     console.log('  Trying NVIDIA NIM (FREE TIER - Priority)...');
     const res = await callAIEngine(
       'https://integrate.api.nvidia.com/v1/chat/completions',
-      {'Authorization': 'Bearer ' + process.env.NVIDIA_API_KEY, 'Content-Type': 'application/json'},
+      {'Authorization': 'Bearer ' + nvidiaKey, 'Content-Type': 'application/json'},
       {model:'meta/llama-3.1-8b-instruct', messages:[{role:'system',content:fullSysPrompt.substring(0,6000)},{role:'user',content:text.substring(0,10000)}], max_tokens:Math.min(maxTokens, 1024), temperature:0.2},
       'nvidia'
     );
