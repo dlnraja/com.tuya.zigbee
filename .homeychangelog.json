@@ -42,5 +42,8 @@
   },
   "7.4.8": {
     "en": "v7.4.8: Optimized build size for stability. Removed redundant xlarge assets and legacy data. Architectural stabilization of flow cards and driver logic. Zero-defect verified."
+  },
+  "7.4.19": {
+    "en": "Bug fixes and stability improvements"
   }
 }

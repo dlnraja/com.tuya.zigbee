@@ -16,6 +16,7 @@ child.stdout.on('data', (data) => {
   if (text.includes('uncommitted changes') && step === 0) { child.stdin.write('y\n'); step = 1; }
   if (text.includes('App Store guidelines') && step <= 1) { child.stdin.write('y\n'); step = 2; }
   if (text.includes('update your app') && step <= 2) { child.stdin.write('n\n'); step = 3; }
+  if (text.includes("What's new") || text.includes('Changelog')) { child.stdin.write('Bug fixes and stability improvements\n'); step = 4; }
   if (text.match(/\(y\/N\)/i) && step >= 3) { child.stdin.write('y\n'); }
   if (text.match(/\(Y\/n\)/i) && step >= 3) { child.stdin.write('y\n'); }
 });
