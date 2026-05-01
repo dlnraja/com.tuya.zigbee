@@ -116,7 +116,7 @@
 | floor_heating_thermostat | 0 | - | target_temperature, measure_temperature, measure_temperature.floor... |
 | formaldehyde_sensor | 0 | - | measure_co2, measure_temperature, measure_humidity... |
 | garage_door | 0 | - | garagedoor_closed, alarm_contact, measure_radio_stability... |
-| garage_door_opener | 0 | - | garagedoor_closed, alarm_contact, measure_radio_stability... |
+| garage_door_opener | 1 | TS0603 | garagedoor_closed, alarm_contact, measure_radio_stability... |
 | gas_detector | 0 | - | alarm_generic, alarm_co, alarm_co2... |
 | gas_sensor | 0 | - | alarm_co, alarm_co2, alarm_contact... |
 | gas_sensor_switch | 0 | - | onoff, onoff.gang2, onoff.gang3... |
@@ -268,6 +268,6 @@
 | zigbee_repeater | 0 | - | measure_radio_stability, measure_maintenance_score |
 
 ---
-**Total:** 264 drivers, 37 manufacturer IDs
+**Total:** 264 drivers, 38 manufacturer IDs
 
-*Generated: 2026-05-01T23:16:50.710Z*
+*Generated: 2026-05-01T23:39:54.841Z*
