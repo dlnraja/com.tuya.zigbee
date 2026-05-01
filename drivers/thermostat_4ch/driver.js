@@ -15,6 +15,7 @@ class Thermostat4chDriver extends ZigBeeDriver {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
       }
+    }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -24,13 +25,6 @@ class Thermostat4chDriver extends ZigBeeDriver {
     // v5.13.3: Register flow card action handlers
     // A8: NaN Safety - use safeDivide/safeMultiply
   const(id,fn)=>{try{this.homey.flow.getActionCard(id).registerRunListener(fn);
-  
-  
-  
-  
-  
-  
-  }catch(e){this.log('[Flow]',id,e.message);  }
     reg('thermostat_4ch_turn_on',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
     reg('thermostat_4ch_turn_off',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});
     reg('thermostat_4ch_toggle',async({device})=>{const v=device.getCapabilityValue('onoff');await device.triggerCapabilityListener('onoff',!v);return true;});
@@ -42,4 +36,7 @@ class Thermostat4chDriver extends ZigBeeDriver {
       return true;
     });
     }
+}
+}
+}
 module.exports = Thermostat4chDriver;

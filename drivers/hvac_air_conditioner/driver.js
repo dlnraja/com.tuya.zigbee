@@ -9,7 +9,9 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-      }
+    }
+  }
+
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -20,19 +22,18 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_air_conditioner_hybrid_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_air_conditioner_hybrid_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_air_conditioner_hybrid_target_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_air_conditioner_hybrid_measure_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_turned_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_turned_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_temp_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('hvac_air_conditioner_battery_low'); } catch (e) {}
 
     // CONDITIONS
     try {
-      // A8: NaN Safety - use safeDivide/safeMultiply
-  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = this.homey.flow.getConditionCard('hvac_air_conditioner_air_conditioner_hybrid_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -143,5 +144,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action hvac_air_conditioner_set_temperature: ${err.message}`); }
 
     this.log('[FLOW] All flow cards registered');
-    }
+  }
+}
+
 module.exports = HvacAirConditionerDriver;

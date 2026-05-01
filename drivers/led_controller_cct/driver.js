@@ -13,7 +13,10 @@ class LedControllerCctDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-      }
+    }
+  }
+
+
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -21,14 +24,15 @@ class LedControllerCctDriver extends ZigBeeDriver {
 
     this.log('LedControllerCctDriver initialized');
     // v5.13.3: Register flow card action handlers
-    const reg = (id, fn) => { // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(fn) 
+    const reg = (id, fn) => { try {
+      this.homey.flow.getActionCard(id).registerRunListener(fn) 
   
   
   
   
   
   
-  } catch (e) { this.log('[Flow]', id, e.message);   }
+  } catch (e) { this.log('[Flow]', id, e.message); } };
     reg('led_controller_cct_turn_on', async ({ device }) => { await device.triggerCapabilityListener('onoff', true); return true; });
     // v5.13.3: Condition handler
 
@@ -37,5 +41,8 @@ class LedControllerCctDriver extends ZigBeeDriver {
     reg('led_controller_cct_turn_off', async ({ device }) => { await device.triggerCapabilityListener('onoff', false); return true; });
     reg('led_controller_cct_toggle', async ({ device }) => { const v = device.getCapabilityValue('onoff'); await device.triggerCapabilityListener('onoff', !v); return true; });
 
-    }
+  }
+
+}
+
 module.exports = LedControllerCctDriver;

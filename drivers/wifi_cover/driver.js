@@ -13,7 +13,9 @@ class WiFiCoverDriver extends TuyaLocalDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-      }
+    }
+  }
+
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -26,16 +28,18 @@ class WiFiCoverDriver extends TuyaLocalDriver {
     
     this.log('[WIFI-COVER-DRV] Driver initialized');
     // v5.13.3: Flow card handlers
-    const r=(i,fn)=>{// Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(fn);
+    const r=(i,fn)=>{try{this.homey.flow.getActionCard(i).registerRunListener(fn);
   
   
   
   
   
   
-  }catch(e){this.log('[Flow]',i,e.message);  }
+  }catch(e){this.log('[Flow]',i,e.message);}};
     r('wifi_cover_open',async({device})=>{await device.triggerCapabilityListener('windowcoverings_state','up');return true;});
     r('wifi_cover_close',async({device})=>{await device.triggerCapabilityListener('windowcoverings_state','down');return true;});
     r('wifi_cover_stop',async({device})=>{await device.triggerCapabilityListener('windowcoverings_state','idle');return true;});
-    }
+  }
+}
+
 module.exports = WiFiCoverDriver;

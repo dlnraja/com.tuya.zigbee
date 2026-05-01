@@ -11,13 +11,15 @@ class PetFeederDriver extends Driver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-      }
+    }
+  }
+
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 
-    (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })());
+    (() => { try { return this.homey.flow.getConditionCard('pet_feeder_food_ok'); 
   
   } catch(e) { return null; } })()?.registerRunListener(async (args, state) => {
       return args.device.getCapabilityValue('alarm_generic') === false;
@@ -27,10 +29,10 @@ class PetFeederDriver extends Driver {
 
     this.log('Pet Feeder driver initialized');
     // v5.13.3: Flow card handlers
-    (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch(e) { return null; } })()?.registerRunListener(async (args, state ) => {
+    (() => { try { return this.homey.flow.getActionCard('pet_feeder_feed_now'); } catch(e) { return null; } })()?.registerRunListener(async (args, state) => {
       await args.device.triggerCapabilityListener('onoff', true);
       return true;
     });
-    }
+  }
+}
 module.exports = PetFeederDriver;
-

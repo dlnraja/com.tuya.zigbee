@@ -16,7 +16,10 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-      }
+    }
+  }
+
+
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -61,7 +64,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
     } catch (err) { this.error('Scene trigger failed:', err.message); }
 
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = this.homey.flow.getActionCard('Scene mode action failed:');
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSceneMode(args.mode);
@@ -72,7 +75,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set backlight mode
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = this.homey.flow.getActionCard('Scene mode action failed:');
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           this.log(`Flow: Setting backlight mode to ${args.mode}`);
@@ -92,13 +95,13 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set power-on behavior (v5.11.30)
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = this.homey.flow.getActionCard('Scene mode action failed:');
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ power_on_behavior: args.mode });
           const pobValue = { off: 0, on: 1, memory: 2 }[args.mode] ?? 2;
           if (typeof args.device._writeE001Attribute === 'function') {
-            await args.device._writeE001Attribute('powerOnBehavior', pobValue );
+            await args.device._writeE001Attribute('powerOnBehavior', pobValue);
           } else if (typeof args.device._sendTuyaDP === 'function') {
             await args.device._sendTuyaDP(14, pobValue, 'enum');
           }
@@ -108,7 +111,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set external switch type (v5.11.30)
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = this.homey.flow.getActionCard('Scene mode action failed:');
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ switch_mode: args.mode });
@@ -121,7 +124,9 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
     } catch (err) { this.log('set_switch_mode card:', err.message); }
 
     this.log('Flow cards registration complete');
-    }
-module.exports = WallSwitch1Gang1WayDriver;
+  }
 
+}
+
+module.exports = WallSwitch1Gang1WayDriver;
 

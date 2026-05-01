@@ -15,6 +15,7 @@ class AirPurifierDriver extends ZigBeeDriver {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
       }
+    }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -23,7 +24,6 @@ class AirPurifierDriver extends ZigBeeDriver {
     this.log('Air Purifier Driver initialized');
     const triggers = ['air_purifier_turned_on', 'air_purifier_turned_off', 'air_purifier_pm25_changed'];
     for (const id of triggers) {
-      // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })() 
   
   
   
@@ -31,7 +31,7 @@ class AirPurifierDriver extends ZigBeeDriver {
   
   
   } catch (e) { this.error(`Trigger ${id}: ${e.message}`);   }
-    try {  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+    try {  const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -40,7 +40,7 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action set_fan_speed:', e.message); }
-    try {  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+    try {  const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -50,7 +50,7 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action turn_on:', e.message); }
-    try {  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+    try {  const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -60,7 +60,7 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action turn_off:', e.message); }
-    try {  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+    try {  const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -69,7 +69,7 @@ class AirPurifierDriver extends ZigBeeDriver {
         });
       }
     } catch (e) { this.error('Action toggle:', e.message); }
-    try {  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+    try {  const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -80,5 +80,6 @@ class AirPurifierDriver extends ZigBeeDriver {
     } catch (e) { this.error('Action set_brightness:', e.message);   }
 }
 
+}
 module.exports = AirPurifierDriver;
 
