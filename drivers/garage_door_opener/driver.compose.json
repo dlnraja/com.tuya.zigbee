@@ -27,8 +27,8 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": ["_TZE608_c75zqghm"],
+    "productId": ["TS0603"],
     "endpoints": {
       "1": {
         "clusters": [
