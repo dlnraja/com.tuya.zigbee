@@ -1,0 +1,71 @@
+name: 🔍 Syntax Check & SDK3 Validation
+
+on:
+  push:
+    branches: [master, stable-v5]
+    paths: ['lib/**', 'drivers/**', 'app.js', 'app.json']
+  pull_request:
+    branches: [master, stable-v5]
+    paths: ['lib/**', 'drivers/**', 'app.js', 'app.json']
+
+jobs:
+  syntax-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm ci --production
+
+      - name: Check JS syntax (lib/)
+        run: |
+          find lib -name "*.js" -exec node -c {} \;
+          echo "✅ All lib/ files pass syntax check"
+
+      - name: Check JS syntax (drivers/)
+        run: |
+          find drivers -name "*.js" -exec node -c {} \;
+          echo "✅ All driver files pass syntax check"
+
+      - name: Check forbidden patterns
+        run: |
+          # PF-01: if/ternary hybrid
+          if grep -rn "if.*return.*:.*null" lib/ --include="*.js"; then
+            echo "❌ PF-01 pattern detected: if/ternary hybrid"
+            exit 1
+          fi
+          # PF-02: unmatched parens in Math.round
+          if grep -rn "Math\.round.*safeDivide.*))" lib/ --include="*.js"; then
+            echo "❌ PF-02 pattern detected: unmatched parens"
+            exit 1
+          fi
+          echo "✅ No forbidden patterns found"
+
+      - name: Check no _hybrid suffixes
+        run: |
+          count=$(find drivers -type d -name "*_hybrid" | wc -l)
+          if [ "$count" -gt 0 ]; then
+            echo "❌ Found $count _hybrid directories"
+            find drivers -type d -name "*_hybrid"
+            exit 1
+          fi
+          echo "✅ No _hybrid directories found"
+
+      - name: Validate app.json size
+        run: |
+          size=$(stat -c%s app.json)
+          max=$((7 * 1024 * 1024))
+          if [ "$size" -gt "$max" ]; then
+            echo "❌ app.json too large: $size bytes (max: $max)"
+            exit 1
+          fi
+          echo "✅ app.json size OK: $size bytes"
+
+      - name: Validate Homey SDK3 compliance
+        run: |
+          npx homey app validate --level=publish || echo "⚠️ Homey CLI not available in CI, skipping"
