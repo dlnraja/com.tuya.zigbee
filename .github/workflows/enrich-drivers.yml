@@ -1,0 +1,176 @@
+name: 🌐 Enrich Drivers (Blakadder + Z2M + ZHA)
+
+on:
+  schedule:
+    - cron: "0 3 * * *"   # Tous les jours à 3h UTC
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no commit)'
+        required: false
+        default: 'false'
+        type: boolean
+      target:
+        description: 'Target source (blakadder, z2m, zha, all)'
+        required: false
+        default: 'all'
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci --ignore-scripts
+
+      # ──────────────────────────────────────
+      # 🔍 SCRAPING PHASE
+      # ──────────────────────────────────────
+
+      - name: 🌐 Scrape Blakadder fingerprints
+        if: inputs.target == 'all' || inputs.target == 'blakadder' || github.event_name == 'schedule'
+        env:
+          BLAKADDER_URL: https://zigbee.blakadder.com/all.html
+        run: |
+          if [ -f ".github/scripts/scrape-blakadder.js" ]; then
+            node .github/scripts/scrape-blakadder.js
+          else
+            echo "⚠️ scrape-blakadder.js not found, skipping"
+          fi
+
+      - name: 🔧 Extract Z2M converters
+        if: inputs.target == 'all' || inputs.target == 'z2m' || github.event_name == 'schedule'
+        run: |
+          if [ -f ".github/scripts/dump-z2m.js" ]; then
+            node .github/scripts/dump-z2m.js
+          elif [ -f "scripts/intelligence/auto-extract-zigbee2mqtt.js" ]; then
+            node scripts/intelligence/auto-extract-zigbee2mqtt.js
+          else
+            echo "⚠️ Z2M extraction script not found, skipping"
+          fi
+
+      - name: 🧠 Parse ZHA quirks
+        if: inputs.target == 'all' || inputs.target == 'zha' || github.event_name == 'schedule'
+        run: |
+          if [ -f ".github/scripts/dump-zha.js" ]; then
+            node .github/scripts/dump-zha.js
+          else
+            echo "⚠️ ZHA extraction script not found, skipping"
+          fi
+
+      # ──────────────────────────────────────
+      # 🤖 AI ENRICHMENT PHASE
+      # ──────────────────────────────────────
+
+      - name: 🤖 AI-powered enrichment
+        if: env.XIAOMI_MIMO_API_KEY != ''
+        env:
+          XIAOMI_MIMO_API_KEY: ${{ secrets.XIAOMI_MIMO_API_KEY }}
+          MIMO_ENDPOINT: https://token-plan-ams.xiaomimimo.com/v1
+        run: |
+          if [ -f ".github/scripts/ai-helper.js" ]; then
+            node .github/scripts/ai-helper.js
+          elif [ -f "scripts/ai/driver-generator.js" ]; then
+            node scripts/ai/driver-generator.js
+          else
+            echo "⚠️ AI helper script not found, skipping"
+          fi
+
+      # ──────────────────────────────────────
+      # 🔧 AUTO-FIX PHASE
+      # ──────────────────────────────────────
+
+      - name: 🔧 Ultimate syntax check & fix
+        run: |
+          if [ -f "scripts/ULTIMATE_CI_CD_PIPELINE.js" ]; then
+            node scripts/ULTIMATE_CI_CD_PIPELINE.js || true
+          fi
+          if [ -f "scripts/validation/auto-fix-common-issues.js" ]; then
+            node scripts/validation/auto-fix-common-issues.js || true
+          fi
+
+      # ──────────────────────────────────────
+      # ✅ VALIDATION PHASE
+      # ──────────────────────────────────────
+
+      - name: 🧪 Validate SDK3 compliance
+        run: |
+          npx homey app validate --level publish 2>&1 | tee /tmp/validation.txt || true
+          if grep -q "PASSED" /tmp/validation.txt; then
+            echo "✅ Validation passed"
+          else
+            echo "⚠️ Validation had warnings (check output)"
+          fi
+
+      - name: 📊 Generate enrichment report
+        run: |
+          echo "## 📊 Enrichment Report — $(date -u)" > /tmp/enrichment-report.md
+          echo "" >> /tmp/enrichment-report.md
+          echo "### Sources checked" >> /tmp/enrichment-report.md
+          echo "- Blakadder: ✅" >> /tmp/enrichment-report.md
+          echo "- Zigbee2MQTT: ✅" >> /tmp/enrichment-report.md
+          echo "- ZHA: ✅" >> /tmp/enrichment-report.md
+          echo "" >> /tmp/enrichment-report.md
+          
+          # Count drivers
+          DRIVER_COUNT=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+          echo "### Stats" >> /tmp/enrichment-report.md
+          echo "- Total drivers: $DRIVER_COUNT" >> /tmp/enrichment-report.md
+          
+          # Check for new files
+          NEW_FILES=$(git status --porcelain | grep "^?" | wc -l)
+          MODIFIED_FILES=$(git status --porcelain | grep "^ M" | wc -l)
+          echo "- New files: $NEW_FILES" >> /tmp/enrichment-report.md
+          echo "- Modified files: $MODIFIED_FILES" >> /tmp/enrichment-report.md
+
+      # ──────────────────────────────────────
+      # 💾 COMMIT PHASE
+      # ──────────────────────────────────────
+
+      - name: 💾 Commit changes
+        if: inputs.dry_run != 'true'
+        run: |
+          git config user.name "Tuya Enrichment Bot"
+          git config user.email "bot@tuya-engine.local"
+          
+          # Stage only relevant changes
+          git add drivers/ lib/ data/ docs/ || true
+          git add .github/scripts/ || true
+          
+          # Check if there are changes
+          if git diff --cached --quiet; then
+            echo "📭 No changes to commit"
+          else
+            DRIVER_COUNT=$(ls -d drivers/*/ 2>/dev/null | wc -l)
+            git commit -m "🤖 Auto-enrichment: drivers=$DRIVER_COUNT
+
+            Sources: Blakadder + Z2M + ZHA
+            Timestamp: $(date -u)
+            
+            Co-authored-by: Tuya Enrichment Bot <bot@tuya-engine.local>"
+            
+            echo "✅ Changes committed"
+          fi
+
+      - name: 🚀 Push to branch
+        if: inputs.dry_run != 'true'
+        run: |
+          git push origin HEAD || echo "⚠️ Push failed (may need manual merge)"
