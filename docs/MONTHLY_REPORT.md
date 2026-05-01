@@ -1,6 +1,6 @@
-# Monthly Tuya Zigbee Report - 2026-04
+# Monthly Tuya Zigbee Report - 2026-05
 
-*Generated: 2026-04-30T23:40:43.978Z*
+*Generated: 2026-05-01T00:04:23.421Z*
 
 ##  Architectural Health [v7.0.22]
 
