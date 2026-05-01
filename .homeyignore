@@ -31,10 +31,6 @@ scratch
 package-lock.json
 .gitignore
 .homeyignore
-assets/branding
-data
-
+/data/
+/assets/branding/
 xlarge.png
-
-data/
-assets/branding/
