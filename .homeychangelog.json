@@ -61,5 +61,8 @@
   },
   "5.11.209": {
     "en": "Universal Tuya Zigbee app v5.11.208: Fixed app ID."
+  },
+  "5.11.210": {
+    "en": "Universal Tuya Zigbee v5.11.210: Stability release - verified syntax integrity on all lib/ files, confirmed SDK3 compliance, 213 drivers operational."
   }
 }
