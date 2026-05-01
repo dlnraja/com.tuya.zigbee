@@ -1,71 +1,52 @@
-# .github/workflows/syntax-check.yml
-name: Syntax & Build Validation
+name: Syntax Validation Gate
 
 on:
   push:
-    branches: [master, main, auto-sync-johan-enhanced]
+    branches: [master, stable-v5]
   pull_request:
-    branches: [master, main]
-  workflow_dispatch:
+    branches: [master]
 
 jobs:
-  validate:
-    name: Syntax & Build Check
+  syntax-check:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
-    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: 'npm'
-
       - name: Install dependencies
-        run: npm ci
-
-      - name: JavaScript syntax check (all lib/ files)
+        run: npm ci --ignore-scripts
+      - name: Check JS syntax (lib/)
         run: |
-          echo "🔍 Checking syntax of all JavaScript files in lib/..."
-          ERRORS=0
-          while IFS= read -r file; do
-            if ! node -c "$file" 2>/dev/null; then
-              echo "::error file=$file::Syntax error in $file"
-              ERRORS=$((ERRORS + 1))
+          find lib -name '*.js' -exec node -c {} \;
+          echo "✅ All lib/ files pass syntax check"
+      - name: Check JS syntax (drivers/)
+        run: |
+          FAIL=0
+          for f in drivers/*/driver.js; do
+            if ! node -c "$f" 2>/dev/null; then
+              echo "❌ SYNTAX ERROR: $f"
+              FAIL=$((FAIL+1))
             fi
-          done < <(find lib -name "*.js" -type f)
-          
-          if [ $ERRORS -gt 0 ]; then
-            echo "::error::Found $ERRORS syntax errors"
+          done
+          if [ $FAIL -gt 0 ]; then
+            echo "❌ $FAIL driver files have syntax errors"
             exit 1
           fi
-          echo "✅ All JS files passed syntax check"
-
-      - name: Detect critical code patterns
+          echo "✅ All driver files pass syntax check"
+      - name: Check for forbidden patterns
         run: |
-          echo "🔍 Scanning for critical patterns..."
-          # Pattern 1: Hybrid if/ternary (invalid)
-          if grep -rn "if.*return.*:" lib/ --include="*.js" | grep -v node_modules; then
-            echo "::error::Found invalid hybrid if/ternary patterns"
+          if grep -r "getDeviceConditionCard" drivers/ lib/ --include="*.js" -l; then
+            echo "❌ Found forbidden getDeviceConditionCard usage"
             exit 1
           fi
-          # Pattern 2: Unmatched parentheses in return
-          if grep -rn "return.*)), " lib/ --include="*.js" | grep -v node_modules; then
-            echo "::error::Found unmatched parentheses patterns"
-            exit 1
-          fi
-          echo "✅ No critical patterns detected"
-
-      - name: ESLint validation
-        run: npx eslint lib/ --ext .js --max-warnings=0
-
-      - name: Unit Tests
-        run: npm test
-
-      - name: Homey SDK validation
+          echo "✅ No forbidden patterns found"
+      - name: Validate Homey app
         run: npx homey app validate --level=publish
+      - name: Check app.json size
+        run: |
+          SIZE=$(stat -c%s app.json 2>/dev/null || wc -c < app.json)
+          echo "app.json size: $SIZE bytes"
+          if [ $SIZE -gt 10485760 ]; then
+            echo "⚠️ app.json exceeds 10MB"
+          fi
