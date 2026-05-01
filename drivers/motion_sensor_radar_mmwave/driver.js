@@ -10,10 +10,11 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-      }
+    }
+  }
+
   async onInit() {
-    await super// Sleepy device: Use Passive Mode (SLEEPY_TUYA_56_YEARS_BUG.md)
-    .onInit();
+    await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
     this.log('RadarMotionSensorMmwaveDriver v5.5.583 initialized');
@@ -22,24 +23,23 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('motion_sensor_radar_mmwave_presence_detected'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('motion_sensor_radar_mmwave_presence_cleared'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('motion_sensor_radar_mmwave_motion_detected'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('motion_sensor_radar_mmwave_no_motion'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('motion_sensor_radar_mmwave_illuminance_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('motion_sensor_radar_mmwave_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('motion_sensor_radar_mmwave_humidity_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('motion_sensor_radar_mmwave_target_distance_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('motion_sensor_radar_mmwave_battery_low'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('motion_sensor_radar_mmwave_battery_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('motion_sensor_radar_mmwave_distance_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('motion_sensor_radar_mmwave_temp_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('motion_sensor_radar_mmwave_lux_changed'); } catch (e) {}
 
     // CONDITIONS
     try {
-      // A8: NaN Safety - use safeDivide/safeMultiply
-  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_is_presence_detected');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -55,7 +55,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
           if (!args.device) return false;
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
-      });
+        });
       }
     } catch (err) { this.error(`Condition motion_sensor_radar_mmwave_illuminance_above: ${err.message}`); }
 
@@ -76,7 +76,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
           if (!args.device) return false;
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
-      });
+        });
       }
     } catch (err) { this.error(`Condition motion_sensor_radar_mmwave_temperature_above: ${err.message}`); }
 
@@ -150,5 +150,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Action motion_sensor_radar_mmwave_set_detection_delay: ${err.message}`); }
 
     this.log('[FLOW] All flow cards registered');
-    }
+  }
+}
+
 module.exports = RadarMotionSensorMmwaveDriver;

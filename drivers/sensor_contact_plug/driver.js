@@ -18,6 +18,7 @@ class PlugSmartDriver extends ZigBeeDriver {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
       }
+    }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -37,7 +38,7 @@ class PlugSmartDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Plug is/is not on
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -49,7 +50,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -63,7 +64,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -77,7 +78,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -92,7 +93,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Turn on after delay
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -106,7 +107,7 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     // ACTION: Turn off after delay
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -120,4 +121,5 @@ class PlugSmartDriver extends ZigBeeDriver {
 
     this.log('[FLOW]  Smart plug flow cards registered');
     }
+}
 module.exports = PlugSmartDriver;

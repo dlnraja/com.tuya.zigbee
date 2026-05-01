@@ -9,7 +9,9 @@ class FormaldehydeSensorDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-      }
+    }
+  }
+
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -20,23 +22,22 @@ class FormaldehydeSensorDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('formaldehyde_sensor_formaldehyde_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('formaldehyde_sensor_voc_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('formaldehyde_sensor_air_quality_alert'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('formaldehyde_sensor_battery_low'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('formaldehyde_sensor_temp_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('formaldehyde_sensor_humidity_changed'); } catch (e) {}
 
     // CONDITIONS
     try {
-      // A8: NaN Safety - use safeDivide/safeMultiply
-  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = this.homey.flow.getConditionCard('formaldehyde_sensor_formaldehyde_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
-      });
+        });
       }
     } catch (err) { this.error(`Condition formaldehyde_sensor_formaldehyde_above: ${err.message}`); }
 
@@ -51,5 +52,7 @@ class FormaldehydeSensorDriver extends ZigBeeDriver {
     } catch (err) { this.error(`Condition formaldehyde_sensor_air_quality_good: ${err.message}`); }
 
     this.log('[FLOW] All flow cards registered');
-    }
+  }
+}
+
 module.exports = FormaldehydeSensorDriver;

@@ -17,6 +17,7 @@ class USBHubDualDriver extends ZigBeeDriver {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
       }
+    }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -29,16 +30,11 @@ class USBHubDualDriver extends ZigBeeDriver {
      // v5.5.534: SDK3 CRITICAL
     this.log('USB Hub Dual Driver v5.5.534 initialized');
     // v5.13.3: Flow card handlers
-    const r=(i,fn)=>{// Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(fn);
-  
-  
-  
-  
-  
-  
-  }catch(e){this.log('[Flow]',i,e.message);  }
+    const r=(i,fn)=>{
     r('usb_dongle_dual_repeater_turn_on',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
     r('usb_dongle_dual_repeater_turn_off',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});
     r('usb_dongle_dual_repeater_toggle',async({device})=>{const v=device.getCapabilityValue('onoff');await device.triggerCapabilityListener('onoff',!v);return true;});
     }
+}
+}
 module.exports = USBHubDualDriver;

@@ -10,6 +10,7 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
       }
+    }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -57,4 +58,6 @@ class PresenceSensorRadarDriver extends ZigBeeDriver {
         }
     this.log('[FLOW] All flow cards registered');
     }
+}
+}
 module.exports = PresenceSensorRadarDriver;

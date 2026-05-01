@@ -17,6 +17,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
       }
+    }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -36,7 +37,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Plug is on/off
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -48,7 +49,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // CONDITION: Power above threshold
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -61,7 +62,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // CONDITION: Energy above threshold
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -74,7 +75,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -88,7 +89,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -102,7 +103,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -117,7 +118,7 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     // ACTION: Reset energy meter
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -132,4 +133,5 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
 
     this.log('[FLOW]  Energy monitor plug flow cards registered');
     }
+}
 module.exports = PlugEnergyMonitorDriver;

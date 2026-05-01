@@ -24,6 +24,7 @@ class SoilSensorDriver extends ZigBeeDriver {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
       }
+    }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -40,7 +41,7 @@ class SoilSensorDriver extends ZigBeeDriver {
     // A8: NaN Safety - use safeDivide/safeMultiply
   (id) => {
       try {
-        return (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+        return null;
       
   
   
@@ -54,7 +55,7 @@ class SoilSensorDriver extends ZigBeeDriver {
         }
     const safeGetCondition = (id) => {
       try {
-        return (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+        return null;
       } catch (e) {
         this.log(`[FLOW] Condition '${id}' not defined - skipping`);
         return null;
@@ -184,6 +185,9 @@ class SoilSensorDriver extends ZigBeeDriver {
     this.log(`[PAIR] Filtered: ${devices.length}  ${filteredDevices.length} devices`);
     return filteredDevices;
     }
+}
+}
+}
 module.exports = SoilSensorDriver;
 
 

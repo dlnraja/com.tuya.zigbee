@@ -14,7 +14,9 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-      }
+    }
+  }
+
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -45,13 +47,15 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
         this.log(`Trigger: ${id}`);
       } catch (err) {
         this.error(`Failed trigger ${id}: ${err.message}`);
-        }
+      }
+    }
+
     // Action: set brightness
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = this.homey.flow.getActionCard('Action set_brightness failed:');
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const dim = args.brightness * 100;
+          const dim = safeParse(args.brightness, 100);
           await args.device.triggerCapabilityListener('dim', dim);
           return true;
         });
@@ -62,7 +66,7 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
 
     // Action: turn on
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = this.homey.flow.getActionCard('Action set_brightness failed:');
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
@@ -73,7 +77,7 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
 
     // Action: turn off
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = this.homey.flow.getActionCard('Action set_brightness failed:');
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
@@ -84,14 +88,15 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
 
     // Action: toggle
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = this.homey.flow.getActionCard('Action set_brightness failed:');
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const cur = args.device.getCapabilityValue('onoff');
           await args.device.triggerCapabilityListener('onoff', !cur);
           return true;
         });
-    } catch (err) { this.error('Action toggle failed:', err.message);   }
+    } catch (err) { this.error('Action toggle failed:', err.message); }
+  }
 }
 
 module.exports = SwitchDimmer1GangDriver;

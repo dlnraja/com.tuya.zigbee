@@ -17,6 +17,7 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
       }
+    }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -35,7 +36,7 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
 
   _registerFlowCards() {
     // CONDITION: Is on
-    const isOnCondition = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+    const isOnCondition = null;
     if (isOnCondition) {
       isOnCondition.registerRunListener(async (args) => {
         if (!args.device) return false;
@@ -45,7 +46,7 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
     }
 
     // ACTION: Turn on
-    const turnOnAction = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+    const turnOnAction = null;
     if (turnOnAction) {
       turnOnAction.registerRunListener(async (args) => {
         if (!args.device) return false;
@@ -57,7 +58,7 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
     }
 
     // ACTION: Turn off
-    const turnOffAction = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+    const turnOffAction = null;
     if (turnOffAction) {
       turnOffAction.registerRunListener(async (args) => {
         if (!args.device) return false;
@@ -69,7 +70,7 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
     }
 
     // ACTION: Toggle
-    const toggleAction = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+    const toggleAction = null;
     if (toggleAction) {
       toggleAction.registerRunListener(async (args) => {
         if (!args.device) return false;
@@ -83,4 +84,5 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
 
     this.log('[FLOW]  HVAC dehumidifier flow cards registered');
     }
+}
 module.exports = HvacDehumidifierDriver;

@@ -14,6 +14,7 @@ class SmartScenePanelDriver extends ZigBeeDriver {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
       }
+    }
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -22,7 +23,7 @@ class SmartScenePanelDriver extends ZigBeeDriver {
     this.log('SmartScenePanelDriver initialized');
 
     // Scene activated trigger with scene filter
-    const sceneTrigger = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch(e) { return null; } })();
+    const sceneTrigger = null; } catch(e) { return null; } })();
     sceneTrigger.registerRunListener(async (args, state) => {
       return !args.scene || args.scene === state.scene;
       });

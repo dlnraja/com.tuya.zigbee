@@ -18,7 +18,10 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-      }
+    }
+  }
+
+
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
@@ -50,9 +53,12 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
       `${P}_gang1_scene`, `${P}_gang2_scene`
     ];
     for (const id of triggers) {
-      // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })() } catch (err) { this.error(`Trigger ${id}: ${err.message}`);   }
+      try {
+      this.homey.flow.getTriggerCard(id) } catch (err) { this.error(`Trigger ${id}: ${err.message}`); }
+    }
+
     // ACTION: Set backlight mode
-    try {  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+    try {  const card = this.homey.flow.getActionCard('set_backlight');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -64,7 +70,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
     } catch (err) { this.error('Action set_backlight:', err.message); }
 
     // ACTION: Set scene mode
-    try {  const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+    try {  const card = this.homey.flow.getActionCard('set_scene_mode');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -91,14 +97,17 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
       { id: `${P}_toggle_gang2`, ep: 2, val: 'toggle' },
     ];
     for (const { id, fn } of simpleActions) {
-      // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(async (args) => {
+      try {
+        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
           if (!args.device) return false;
           await fn(args.device);
           return true;
         });
-      } catch (err) { this.error(`Action ${id}: ${err.message}`);   }
+      } catch (err) { this.error(`Action ${id}: ${err.message}`); }
+    }
         for (const { id, ep, val } of gangActions) {
-      // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(async (args) => {
+      try {
+        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
           if (!args.device) return false;
           const cap = ep === 1 ? 'onoff' : ('onoff.gang' + ep);
           try {
@@ -112,33 +121,38 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
           }
           return true;
         });
-      } catch (err) { this.error(`Action ${id}: ${err.message}`);   }
+      } catch (err) { this.error(`Action ${id}: ${err.message}`); }
+    }
     // All gangs on/off
         for (const { id, val } of [
       { id: `${P}_turn_on_all`, val: true },
       { id: `${P}_turn_off_all`, val: false },
     ]) {
-      // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })().registerRunListener(async (args) => {
+      try {
+        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
           if (!args.device) return false;
           // Determine the number of gangs from P (e.g. 'switch_3gang' -> 3)
           let numGangs = 1;
           const match = P.match(/^switch_(\d+)gang$/);
-          if (match) numGangs = parseInt(match[1] , 10);
+          if (match) numGangs = parseInt(match[1], 10);
           for (let ep = 1; ep <= numGangs; ep++) {
             const cap = ep === 1 ? 'onoff' : ('onoff.gang' + ep);
-            try { await args.device.triggerCapabilityListener(cap, val); } catch(e) {  }
+            try { await args.device.triggerCapabilityListener(cap, val); } catch(e) {}
+          }
           return true;
         });
-      } catch (err) { this.error(`Action ${id}: ${err.message}`);   }
+      } catch (err) { this.error(`Action ${id}: ${err.message}`); }
+    }
+
     // ACTION: Set power-on behavior (v5.11.30)
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = this.homey.flow.getActionCard('wall_switch_2gang_1way_set_power_on_behavior card:');
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ power_on_behavior: args.mode });
           const pobValue = { off: 0, on: 1, memory: 2 }[args.mode] ?? 2;
           if (typeof args.device._writeE001Attribute === 'function') {
-            await args.device._writeE001Attribute('powerOnBehavior', pobValue );
+            await args.device._writeE001Attribute('powerOnBehavior', pobValue);
           } else if (typeof args.device._sendTuyaDP === 'function') {
             await args.device._sendTuyaDP(14, pobValue, 'enum');
           }
@@ -148,7 +162,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set external switch type (v5.11.30)
     try {
-      const card = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })();
+      const card = this.homey.flow.getActionCard('wall_switch_2gang_1way_set_power_on_behavior card:');
       if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ switch_mode: args.mode });
@@ -161,7 +175,9 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
     } catch (err) { this.log('set_switch_mode card:', err.message); }
 
     this.log(` ${P}: ${triggers.length} triggers + ${simpleActions.length + gangActions.length + 2} actions registered`);
-    }
-module.exports = WallSwitch2Gang1WayDriver;
+  }
 
+}
+
+module.exports = WallSwitch2Gang1WayDriver;
 
