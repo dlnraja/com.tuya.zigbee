@@ -31,6 +31,15 @@ scratch
 package-lock.json
 .gitignore
 .homeyignore
-/data/
+data/fingerprints.json
+data/manufacturers.json
+data/bug-fixes-report.json
+data/bug-patterns.json
+data/COMMUNITY_ENRICHMENT_REPORT.json
+data/community-intel.json
+data/full-rules-fix-report.json
+data/PHASE2_ENRICHMENT_REPORT.json
+data/community-sync/
+data/intel-harvest/
 /assets/branding/
 xlarge.png
