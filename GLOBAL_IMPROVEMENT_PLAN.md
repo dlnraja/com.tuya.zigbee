@@ -37,6 +37,11 @@
 - **Legacy Anchors**: Preserve old fingerprints during Unified Engine migration
 - **Mixin Refactoring**: Standardize Tuya patterns into `lib/mixins/`
 
+### 3.3 High-End Intelligence (Layers 9-11)
+- **Layer 9 (Session)**: Zosung IR fragmentation/reassembly for long payloads (Broadlink/Pronto transcoding).
+- **Layer 10 (Health)**: `HealthMonitor` heartbeat tracking (Cluster 0x0000, Attr 0xFF01) for sleepy device availability.
+- **Layer 11 (Sanity)**: `SanityFilter` plausibility checks to reject "ghost" sensor jumps (e.g., 20°C → 0°C → 20°C).
+
 ## 4. API Cost Control
 
 ### 4.1 Provider Budget Caps (per day)
@@ -53,6 +58,8 @@
 | DeepSeek | 50 | Pay-per-use |
 | Kimi | 50 | Limited |
 | Mistral | 30 | Free tier |
+| XiaomiMimo | 200 | https://token-plan-ams.xiaomimimo.com/v1 |
+| NVIDIA NIM | 800 | Priority Provider |
 
 ### 4.2 Workflow Minute Budget
 - Public repo = **unlimited free** GitHub Actions minutes
@@ -334,3 +341,21 @@ The architecture strictly enforces separation of concerns via dotfiles:
 - All enrichment done without forum notification
 - Project continues silently
 - Users informed via GitHub issues/PRs only
+
+---
+
+## 8. Opus 4.6 AI Framework (The Mega-Prompt)
+To ensure autonomous maintenance without hallucinations, all agents must adhere to:
+1. **Fingerprint Integrity**: Matching MUST combine `manufacturerName` + `productId`. Never match on `manufacturerName` alone.
+2. **Caseless Enforcement**: All comparisons MUST use `lib/utils/CaseInsensitiveMatcher.js`.
+3. **SDK 3.0 Strictness**: `this.` prefix is mandatory. `async` overrides are mandatory. `try-catch` on all flow card lookups is mandatory.
+4. **Zosung IR Standard**: Support clusters `0xE004` (Learning) and `0xED00` (Transmit) via the fragmentation layer.
+5. **Zero-Defect Audit**: Run `node scripts/PRE_COMMIT_CHECKS.js` before ANY push.
+6. **Ground Truth**: User diagnostics in `diagnostics/summary.json` override all theoretical documentation.
+7. **Silent Protocol**: All CI/CD operations are silent. Forum mentions are prohibited.
+
+**Status**: ACTIVE  
+**Orchestrator**: dlnraja-bot  
+**Doctrine**: Silent Operation (no forum posting)  
+**Validation**: ✅ PUBLISH level passes  
+**Next Pulse**: Sunday 02:00 UTC
