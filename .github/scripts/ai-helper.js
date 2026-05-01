@@ -102,6 +102,19 @@ async function callAI(text,sysPrompt,opts={}){
     );
     if (res) return res;
   }
+  
+  // 1.5. XiaomiMimo (Premium Tier) — 200/day cap (v2.5 pro)
+  const mimoKey = process.env.XIAOMI_MIMO_API_KEY;
+  if (mimoKey && cbOk('xiaomimimo') && (_rt.d['xiaomimimo']||0) < 200) {
+    console.log('  Trying XiaomiMimo (v2.5 Pro)...');
+    const res = await callAIEngine(
+      'https://token-plan-ams.xiaomimimo.com/v1/chat/completions',
+      {'Authorization': 'Bearer ' + mimoKey, 'Content-Type': 'application/json'},
+      {model:'gpt-4o', messages:[{role:'system',content:fullSysPrompt},{role:'user',content:text}], max_tokens:maxTokens, temperature:0.2},
+      'xiaomimimo'
+    );
+    if (res) return res;
+  }
 
   // 2. OpenRouter (Aggregator - High priority)
   if (process.env.OPENROUTER_API_KEY && cbOk('openrouter')) {
