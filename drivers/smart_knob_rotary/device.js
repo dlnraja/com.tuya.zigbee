@@ -412,3 +412,5 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 }
 
 module.exports = SmartKnobRotaryDevice;
+
+

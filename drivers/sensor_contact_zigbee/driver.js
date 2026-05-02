@@ -30,7 +30,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Door/window is/is not open
     try {
-      const card = (() => { try { return this.homey.flow.getConditionCard('contact_sensor_is_open'); } catch (e) { return null; } })();
+      const card = ( () => { try { return this.homey.flow.getConditionCard('contact_sensor_is_open'); } catch(e) { return null; } } )();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -42,7 +42,7 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
 
     // CONDITION: Battery above threshold
     try {
-      const card = (() => { try { return this.homey.flow.getConditionCard('contact_sensor_battery_above'); } catch (e) { return null; } })();
+      const card = ( () => { try { return this.homey.flow.getConditionCard('contact_sensor_battery_above'); } catch(e) { return null; } } )();
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -58,3 +58,5 @@ class LonsonhoContactSensorDriver extends ZigBeeDriver {
 }
 
 module.exports = LonsonhoContactSensorDriver;
+
+

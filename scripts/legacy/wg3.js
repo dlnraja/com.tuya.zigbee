@@ -1,12 +1,1 @@
-const w=require('./wg1');
-w('wifi_fan','WiFi Fan (Tuya Local)','fan',['onoff','dim']);
-w('wifi_humidifier','WiFi Humidifier (Tuya Local)','other',['onoff','measure_humidity']);
-w('wifi_siren','WiFi Siren (Tuya Local)','other',['onoff','alarm_generic']);
-w('wifi_garage_door','WiFi Garage Door (Tuya Local)','garagedoor',['garagedoor_closed']);
-w('wifi_sensor','WiFi Sensor (Tuya Local)','sensor',['measure_temperature','measure_humidity','measure_battery']);
-w('wifi_water_valve','WiFi Water Valve (Tuya Local)','other',['onoff']);
-w('wifi_air_purifier','WiFi Air Purifier (Tuya Local)','other',['onoff']);
-w('wifi_ir_remote','WiFi IR Remote (Tuya Local)','remote',['onoff']);
-w('wifi_pet_feeder','WiFi Pet Feeder (Tuya Local)','other',['onoff']);
-w('wifi_door_lock','WiFi Door Lock (Tuya Local)','lock',['locked','measure_battery']);
-w('wifi_robot_vacuum','WiFi Robot Vacuum (Tuya Local)','vacuumcleaner',['onoff','vacuumcleaner_state']);
+'use strict';

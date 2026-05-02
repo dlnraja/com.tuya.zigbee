@@ -1,8 +1,6 @@
 'use strict';
-const { safeDivide, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const TuyaUnifiedDevice = require('../../lib/devices/TuyaUnifiedDevice');
-const BatteryCalculator = require('../../lib/battery/BatteryCalculator');
-const { SoilMoistureInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
 class SoilSensorDevice extends TuyaUnifiedDevice {
 
@@ -34,15 +32,6 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode }).catch(err => this.log('[SOIL] Base init error:', err.message));
     this.log('Soil Sensor v5.5.317 Ready');
-    this._initFlowTriggers();
-  }
-
-  _initFlowTriggers() {
-    const safeGetTrigger = (id) => {
-      try { return this.homey.flow.getTriggerCard(id); }
-      catch (e) { this.log(`[SOIL] Flow trigger '${id}' not available`); return null; }
-    };
-    this._flowTriggerMoistureChanged = safeGetTrigger('soil_sensor_moisture_changed');
   }
 
   _handleDP(dpId, value) {

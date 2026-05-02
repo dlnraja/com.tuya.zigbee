@@ -237,7 +237,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       }, 500);
 
       // Trigger flow card if available
-      const triggerCard = (() => { try { return ; } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })()
+      const triggerCard = ( () => { try { return ; } catch(e) { return null; } } )();
       if (triggerCard ) {
         await triggerCard.trigger(this, { button: 1, scene: 'pressed' }).catch(() => { });
       }
@@ -326,5 +326,8 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
 }
 
 module.exports = CurtainMotorDevice;
+
+
+
 
 

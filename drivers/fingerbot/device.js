@@ -558,3 +558,5 @@ class FingerBot extends TuyaSpecificClusterDevice {
 
 module.exports = FingerBot;
 
+
+
