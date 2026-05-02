@@ -1,7 +1,7 @@
 {
   "source": "davemachado/public-api",
-  "timestamp": "2026-05-02T10:58:34.366Z",
-  "total": 1439,
+  "timestamp": "2026-05-02T11:21:41.220Z",
+  "total": 1443,
   "ai": [
     {
       "name": "Gitter",
@@ -148,6 +148,12 @@
       "auth": "apiKey"
     },
     {
+      "name": "TensorFeed",
+      "url": "https://tensorfeed.ai/developers",
+      "desc": "Real-time AI news, model pricing, service status, and agent activity feeds",
+      "auth": "No"
+    },
+    {
       "name": "Time Door",
       "url": "https://timedoor.io",
       "desc": "A time series analysis API",
@@ -200,7 +206,12 @@
       "name": "OpenVisionAPI",
       "url": "https://openvisionapi.com",
       "desc": "Open source computer vision API based on open source models"
+    },
+    {
+      "name": "TensorFeed",
+      "url": "https://tensorfeed.ai/developers",
+      "desc": "Real-time AI news, model pricing, service status, and agent activity feeds"
     }
   ],
-  "dev_count": 153
+  "dev_count": 154
 }
