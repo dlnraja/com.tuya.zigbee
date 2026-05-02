@@ -3,7 +3,7 @@ const { execSync } = require('child_process');
 const PR_IDS = [1162, 1161, 1137, 1128, 1122, 1121, 1118, 1106, 1075];
 const UPSTREAM = 'JohanBendz/com.tuya.zigbee';
 
-console.log('=== ACCEPTING AND MERGING PRs FINELY WITH AUTO-RESOLVE ===');
+console.log('=== ACCEPTING AND MERGING PRs FINELY WITH AUTO-RESOLVE (PS1) ===');
 
 for (const id of PR_IDS) {
     console.log(`\nProcessing PR #${id}...`);
@@ -24,7 +24,7 @@ for (const id of PR_IDS) {
             execSync(`git merge ${prBranch} --no-edit --allow-unrelated-histories`, { stdio: 'inherit' });
         } catch (mergeErr) {
             console.log('  ⚠️ Conflict detected. Attempting auto-resolve...');
-            execSync('node scripts/resolve_conflicts.js', { stdio: 'inherit' });
+            execSync('powershell -File scripts/resolve_conflicts.ps1', { stdio: 'inherit' });
         }
         
         console.log(`  ✅ PR #${id} processed.`);
