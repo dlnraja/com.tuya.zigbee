@@ -1,11 +1,11 @@
 # resolve_conflicts.ps1
 Write-Host "=== AUTO-RESOLVING CONFLICTS (PowerShell) ==="
 
-$status = git status --short
+$status = git status --porcelain
 $hasConflicts = $false
 
 foreach ($line in ($status -split "`n")) {
-    if ($line.StartsWith("UU ")) {
+    if ($line -match "^(UU|AA|DU|UD|UA|AU) ") {
         $hasConflicts = $true
         $file = $line.Substring(3).Trim()
         Write-Host "Resolving conflict in: $file"
@@ -34,5 +34,5 @@ if ($hasConflicts) {
     git commit -m "chore: auto-resolve merge conflicts"
     Write-Host "✅ Conflicts resolved and committed."
 } else {
-    Write-Host "No conflicts found."
+    Write-Host "No conflicts found by porcelain check."
 }
