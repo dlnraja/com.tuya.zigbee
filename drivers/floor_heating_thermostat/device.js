@@ -86,7 +86,7 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
     this.registerCapabilityListener('target_temperature', async (value) => {
       this._markAppCommand?.();
       if (this.tuyaEF00Manager) {
-        await this.tuyaEF00Manager.sendTuyaDP(16, 2, safeMultiply(Math.round(value, 10)));
+        await this.tuyaEF00Manager.sendTuyaDP(16, 2, safeMultiply(Math.round(value), 10));
       }
     });
 

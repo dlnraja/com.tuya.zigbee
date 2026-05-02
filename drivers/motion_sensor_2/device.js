@@ -37,7 +37,7 @@ class motion_sensor_2 extends ZigBeeDevice {
           maxInterval: 3600, // Maximum interval (1 hour)
           minChange: 10, // Report changes above 10 lux
         }
-      ]).catch(this.error;
+      ]).catch(this.error);
     }
 
     // alarm_motion handler

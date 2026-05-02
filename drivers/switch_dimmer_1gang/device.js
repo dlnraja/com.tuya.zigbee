@@ -60,7 +60,7 @@ class SwitchDimmer1GangDevice extends TuyaSpecificClusterDevice {
   async onSettings({ newSettings, changedKeys }) {
     for (const k of changedKeys) {
       if (k === 'min_brightness') {
-        const val = safeMultiply(Math.round(newSettings[k], 10));
+        const val = safeMultiply(Math.round(newSettings[k]), 10);
         await this.sendTuyaCommand(DP.minBright, val, 'value').catch(() => {});
       }
       if (k === 'power_on_behavior') await this.sendTuyaCommand(DP.powerOn, parseInt(newSettings[k]), 'enum').catch(() => {});

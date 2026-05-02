@@ -65,7 +65,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
     const getOnOffCluster = (epNum) => {
       const ep = this._zclNode.endpoints[epNum];
-      return ep?.clusters?.onOff || ep?.clusters?.genOnOff : null;
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || null;
     };
 
     this._registerCapabilityListeners();
@@ -88,13 +88,12 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           const isPhysical = !this._zclState.pending[epNum];
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_3gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            this.driver?.homey?.flow?.getTriggerCard(flowId)?.trigger(this, { gang: epNum, state: value }).catch(() => {});
+            this.driver?.homey?.flow?.getDeviceTriggerCard(flowId)?.trigger(this, { gang: epNum, state: value }).catch(() => {});
           }
         }
       });
     }
 
-    // Configure reporting
     for (const epNum of [1, 2, 3]) {
       const onOff = getOnOffCluster(epNum);
       if (onOff?.configureReporting) {
@@ -104,7 +103,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       }
     }
 
-    await this.initVirtualButtons?.();
+    if (this.initVirtualButtons) await this.initVirtualButtons();
   }
 
   async _removeGroupMemberships(zclNode) {
@@ -125,7 +124,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         if (this._zclState.timeout[epNum]) clearTimeout(this._zclState.timeout[epNum]);
       }
     }
-    super.onDeleted?.();
+    if (super.onDeleted) super.onDeleted();
   }
 }
 

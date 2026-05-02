@@ -55,7 +55,7 @@ files.forEach(file => {
     // 10. Fix safeDivide(MODULE_NOT_FOUND, i) -> MODULE_NOT_FOUND
     content = content.replace(/safeDivide\(MODULE_NOT_FOUND, i\)/g, 'MODULE_NOT_FOUND');
 
-    // 11. Fix safeMultiply((X, Y)) -> safeMultiply(X, Y)
+    // 11. Fix safeMultiply(X, Y) -> safeMultiply(X, Y)
     content = content.replace(/safeMultiply\(\(([^,]+), ([^,]+)\)\)/g, 'safeMultiply($1, $2)');
 
     // 12. Fix the regex characters that got corrupted

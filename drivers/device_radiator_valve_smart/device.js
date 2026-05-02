@@ -265,7 +265,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
         const dp = profile === 'me167' ? 4 : 3;
-        await this._sendTuyaDP(dp, safeMultiply(Math.round(v, 10)), 'value');
+        await this._sendTuyaDP(dp, safeMultiply(Math.round(v), 10), 'value');
       });
     }
   }

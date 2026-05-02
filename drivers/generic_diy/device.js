@@ -174,7 +174,7 @@ class GenericDIYDevice extends ZigBeeDevice {
     this.homey.flow.getTriggerCard('generic_diy_set_dim')?.registerRunListener(async ({ level } ) => {
       const ep = this.zclNode?.endpoints?.[1];
       if (ep?.clusters?.levelControl) {
-        await ep.clusters.levelControl.moveToLevel({ level: safeMultiply(Math.round(level, 254)), transitionTime: 0 });
+        await ep.clusters.levelControl.moveToLevel({ level: safeMultiply(Math.round(level), 254), transitionTime: 0 });
       }
       return true;
     });
@@ -234,7 +234,7 @@ class GenericDIYDevice extends ZigBeeDevice {
       // Level cluster
       else if (clusterId === 0x0008) {
         this.registerCapabilityListener(cap, async (v) => {
-          await cluster.moveToLevel({ level: safeMultiply(Math.round(v, 254)), transitionTime: 0 });
+          await cluster.moveToLevel({ level: safeMultiply(Math.round(v), 254), transitionTime: 0 });
         });
         cluster.on('attr.currentLevel', (v) => this._safeSetCapability(cap, v / 254).catch(() => { }));
       }
