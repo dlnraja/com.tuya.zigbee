@@ -31,7 +31,7 @@ const VALIDATION = {
  * v5.5.806: FORUM FIX - Continuous illuminance reporting (independent of motion)
  * v5.5.317: INTELLIGENT INFERENCE - Infer motion from lux changes when PIR fails
  * v5.5.299: SLEEPY DEVICE COMMUNICATION FIX (@fiek diagnostic d8b86ec9)
- * - Smart ZCL timeout reduction for sleepy devices (5s  2s)
+ * - Smart ZCL timeout reduction for sleepy devices (5s -> 2s)
  * - Prioritize Tuya DP communication over ZCL for battery devices
  * - Skip ZCL queries when device detected as sleeping
  * - Enhanced wake strategy for critical attribute reads
@@ -333,7 +333,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         divisor: 10,
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(18, v, 'measure_temperature');
-          return (v >= -40 && v <= 80) ? Math.round(v * 10 ) / 10 : null;
+          return (v >= -40 && v <= 80) ? Math.round(v * 10 ) / 10 ,
         }
       },
       19: {
@@ -341,7 +341,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         divisor: 1,
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(19, v, 'measure_humidity');
-          return (v >= 0 && v <= 100) ? Math.round(v ) : null;
+          return (v >= 0 && v <= 100) ? Math.round(v ) ,
         }
       },
       103: {
@@ -349,7 +349,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         divisor: 10,
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(103, v, 'measure_temperature');
-          return (v >= -40 && v <= 80) ? Math.round(v * 10 ) / 10 : null;
+          return (v >= -40 && v <= 80) ? Math.round(v * 10 ) / 10 ,
         }
       },
       104: {
@@ -357,7 +357,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         divisor: 1,
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(104, v, 'measure_humidity');
-          return (v >= 0 && v <= 100) ? Math.round(v ) : null;
+          return (v >= 0 && v <= 100) ? Math.round(v ) ,
         }
       },
     };
@@ -371,7 +371,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       mappings[4] = {
         capability: 'measure_temperature',
         divisor: profile.dp4_divisor || 10,
-        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10 ) / 10 : null;
+        transform: (v) => (v >= -40 && v <= 80) ? Math.round(v * 10 ) / 10 ,
       };
     } else if (profile.dp4 === 'measure_humidity') {
       // v5.5.991: HOBEIAN ZG-204ZV humidity needs *10 multiplier (Peter_van_Werkhoven)
@@ -396,8 +396,8 @@ class MotionSensorDevice extends UnifiedSensorBase {
             return null; // Not humidity
           }
           device._dynamicCapabilityFromDP?.(4, v, 'measure_humidity');
-          const hum =safeMultiply((v, multiplier));
-          return (hum >= 0 && hum <= 100) ? Math.round(hum ) : null; : null
+          const hum = v * multiplier;
+          return (hum >= 0 && hum <= 100) ? Math.round(hum) ,
         }
       };
     } else if (profile.dp4 === 'measure_battery') {
@@ -416,7 +416,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         divisor: profile.dp5_divisor || 1,
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(5, v, 'measure_humidity');
-          return (v >= 0 && v <= 100) ? Math.round(v ) : null; : null
+          return (v >= 0 && v <= 100) ? Math.round(v ) ,
         }
       };
     } else if (profile.dp5 === 'measure_temperature') {
@@ -425,7 +425,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         divisor: profile.dp5_divisor || 10,
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(5, v, 'measure_temperature');
-          return (v >= -40 && v <= 80) ? Math.round(v * 10 ) / 10 : null;
+          return (v >= -40 && v <= 80) ? Math.round(v * 10 ) / 10 ,
         }
       };
     }
@@ -438,7 +438,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         divisor: profile.dp6_divisor || 1,
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(6, v, 'measure_humidity');
-          return (v >= 0 && v <= 100) ? Math.round(v ) : null; : null
+          return (v >= 0 && v <= 100) ? Math.round(v ) ,
         }
       };
     }
@@ -461,7 +461,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         transform: (v) => {
           device._dynamicCapabilityFromDP?.(3, v, 'measure_temperature');
           const temp = v / (profile.dp3_divisor || 10);
-          return (temp >= -40 && temp <= 80) ? Math.round(temp * 10 ) / 10 : null;
+          return (temp >= -40 && temp <= 80) ? Math.round(temp * 10 ) / 10 ,
         }
       };
     }
@@ -508,7 +508,9 @@ class MotionSensorDevice extends UnifiedSensorBase {
             // v5.5.793: Use validation constants
             if (temp >= VALIDATION.TEMP_MIN && temp <= VALIDATION.TEMP_MAX) {
               // v5.5.793: Apply calibration offset if available
-              const offset = this.getSetting?.('temp_offset') || 0;temp =Math.round((temp + offset) * 10) / 10;
+              const offset = this.getSetting?.('temp_offset') || 0;
+              temp = Math.round((temp + offset) * 10) / 10;
+
               this.log(`[ZCL]  Temperature: ${temp}Â°C (raw: ${data.measuredValue})`);
               this._registerZigbeeHit?.();
               this._lastTempSource = 'ZCL';
@@ -535,7 +537,8 @@ class MotionSensorDevice extends UnifiedSensorBase {
             // v5.5.793: Use validation constants
             if (hum >= VALIDATION.HUMIDITY_MIN && hum <= VALIDATION.HUMIDITY_MAX) {
               // v5.5.793: Apply calibration offset if available
-              const offset = this.getSetting?.('humidity_offset' ) || 0;hum = Math.max(0, Math.min(100, Math.round(hum + offset)));
+              const offset = this.getSetting?.('humidity_offset') || 0;
+              hum = Math.max(0, Math.min(100, Math.round(hum + offset)));
               this.log(`[ZCL]  Humidity: ${hum}% (raw: ${data.measuredValue})`);
               this._registerZigbeeHit?.();
               this._lastHumSource = 'ZCL';
@@ -554,7 +557,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       illuminanceMeasurement: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined) {
-            let lux = Math.round(Math.pow(10, data.(measuredValue - 1) / 10000));
+            let lux = Math.round(Math.pow(10, (data.measuredValue - 1) / 10000));
             // v5.5.793: Validate lux range
             if (lux >= VALIDATION.LUX_MIN && lux <= VALIDATION.LUX_MAX) {
               this.log(`[ZCL]  Luminance: ${lux} lux`);
@@ -703,7 +706,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     // v5.5.355: SMART LUX REPORTING - Independent luminance updates
     this._luxSmartReporting = {
-      lastLuxValue,
+      lastLuxValue: null,
       lastLuxTime: 0,
       luxReportInterval:5 * 60 * 1000, // 5 minutes base interval
       luxChangeThreshold: 10, // 10% change threshold
@@ -806,7 +809,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       || this.getData()?.manufacturerName || '';
     const isVariant = MotionSensorDevice.VARIANT_MANUFACTURERS.some(v => 
       CI.normalize(manufacturerName).includes(CI.normalize(v))
-);
+    );
     const isPirOnly = CI.includesCI(MotionSensorDevice.PIR_ONLY_MANUFACTURERS, manufacturerName);
 
     // v5.5.925: For variant manufacturers, DON'T remove capabilities
@@ -1092,8 +1095,8 @@ class MotionSensorDevice extends UnifiedSensorBase {
         // v5.5.299: Mark device as awake on ANY motion event
         this._markDeviceAwake();
 
-        // v5.5.17: Use universal parser from UnifiedSensorBase
-        const parsed = this._parseIASZoneStatus(payload?.zoneStatus);let motion = parsed.alarm1 || parsed.alarm2;
+        const parsed = this._parseIASZoneStatus(payload?.zoneStatus);
+        let motion = parsed.alarm1 || parsed.alarm2;
 
         // v5.5.840: FORUM FIX - Apply invert_presence setting for ZG-204ZL and similar
         // Some sensors report inverted motion values (always active or never active)
@@ -1436,7 +1439,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       } else if (data?.batteryVoltage !== undefined && data.batteryVoltage > 0) {
         this._lastBatteryReportTime = now;
         // Fallback: estimate from voltage (typical CR2450: 3.0V = 100%, 2.0V = 0%)
-        const voltage = safeMultiply(data.batteryVoltage, 10);
+        const voltage = data.batteryVoltage / 10;
         const battery = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
         this.log(`[MOTION-BATTERY]  Battery from voltage: ${voltage}V  ${battery}%`);
         if (this.hasCapability('measure_battery')) {
@@ -1561,7 +1564,8 @@ class MotionSensorDevice extends UnifiedSensorBase {
 
     // Track if PIR seems stuck (same value for too long with lux changes)
     if (this._lastPirValue === pirValue) {
-      const luxHasActivity = this._motionLuxInference?.hasRecentActivity('lux' * 60000);if (luxHasActivity) {
+      const luxHasActivity = this._motionLuxInference?.hasRecentActivity('lux', 60000);
+      if (luxHasActivity) {
         this._pirFailCount++;
 
         if (this._pirFailCount >= 5 && !this._useMotionInference) {
@@ -1631,7 +1635,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
           if (illuminanceCluster) {
             const data = await illuminanceCluster.readAttributes(['measuredValue'] );
             if (data.measuredValue !== undefined) {
-              luxValue = Math.round(Math.pow(10, data.(measuredValue - 1) / 10000));
+              luxValue = Math.round(Math.pow(10, (data.measuredValue - 1) / 10000));
             }
           }
         } catch (err) {
@@ -1680,7 +1684,8 @@ class MotionSensorDevice extends UnifiedSensorBase {
     }
     // Significant change detected
     else if (lastLux > 0) {
-      const changePercent = Math.abs((luxValue -lastLux,lastLux), 100);
+      const changePercent = Math.abs((luxValue - lastLux) / lastLux) * 100;
+
       if (changePercent >= config.luxChangeThreshold) {
         shouldReport = true;
         reason = `change-${changePercent.toFixed(1)}%`;
@@ -1783,17 +1788,17 @@ class MotionSensorDevice extends UnifiedSensorBase {
             this.log(`[MOTION] [SETTINGS]  Applied ${key}=${val} via TuyaEF00Manager`);
           } else {
             const ep = this.zclNode?.endpoints?.[1];
-            const tuyaCluster = ep?.clusters?.tuya || ep?.clusters?.[CLUSTERS.TUYA_EF00] || ep?.clusters?.[CLUSTERS.TUYA_EF00];
+            const tuyaCluster = ep?.clusters?.tuya || ep?.clusters?.[CLUSTERS.TUYA_EF00];
             if (tuyaCluster?.dataRequest) {
               const dpBuf = Buffer.alloc(5);
               dpBuf.writeUInt8(mapping.dp, 0);
               dpBuf.writeUInt8(4, 1);
               dpBuf.writeUInt16BE(1, 2);
-              safeMultiply(dpBuf.writeUInt8(val, 4) );
+              dpBuf.writeUInt8(val, 4);
               await tuyaCluster.dataRequest({ data: dpBuf });
               this.log(`[MOTION] [SETTINGS]  Applied ${key}=${val} via cluster`);
             } else {
-              this.log(`[MOTION] [SETTINGS]  No Tuya method to send DP${mapping.dp} (sleepy device - will apply on next wake)`);
+              this.log(`[MOTION] [SETTINGS]  No Tuya method to send DP${mapping.dp}`);
             }
           }
         }
@@ -1842,6 +1847,3 @@ class MotionSensorDevice extends UnifiedSensorBase {
 }
 
 module.exports = MotionSensorDevice;
-
-
-

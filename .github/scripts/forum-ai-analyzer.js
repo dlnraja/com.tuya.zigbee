@@ -29,7 +29,7 @@ function extractFP(txt){
   return[...new Set(fp)];
 }
 
-function loadState(){try{return JSON.parse(fs.readFileSync(STATE_F,'utf8'))}catch{return{lastRun:null,processedTopics:{},lastPostNumbers:{}}}
+function loadState(){try{return JSON.parse(fs.readFileSync(STATE_F,'utf8'))}catch{return{lastRun:null,processedTopics:{},lastPostNumbers:{}}}}
 function saveState(s){fs.mkdirSync(path.dirname(STATE_F),{recursive:true});fs.writeFileSync(STATE_F,JSON.stringify(s,null,2)+'\n')}
 
 async function forumGet(ep,auth,opts={}){
@@ -75,7 +75,7 @@ async function scanTopic(topicId,auth,maxPosts=100){
 async function analyzeWithAI(topicData){
   console.log(`  Analyzing ${topicData.posts.length} posts via Minimax...`);
   
-
+  const prompt = `
 For each post containing a device request or fingerprint, extract:
 1. User request details
 2. Device fingerprints (manufacturerName patterns like _TZ3000_, _TZE200_, etc.)

@@ -12,15 +12,23 @@ const { execSync } = require('child_process');
 console.log('=== 🌌 ULTIMATE ENGINE PURITY CHECK ===');
 
 const walk = (dir, ext, cb) => {
-    fs.readdirSync(dir).forEach(f => {
-        const p = path.join(dir, f);
-        const stat = fs.statSync(p);
-        if (stat.isDirectory()) {
-            if (!['node_modules', '.git', '.homeybuild', 'assets'].includes(f)) walk(p, ext, cb);
-        } else if (f.endsWith(ext)) {
-            cb(p);
-        }
-    });
+    try {
+        fs.readdirSync(dir).forEach(f => {
+            const p = path.join(dir, f);
+            try {
+                const stat = fs.statSync(p);
+                if (stat.isDirectory()) {
+                    if (!['node_modules', '.git', '.homeybuild', 'assets'].includes(f)) walk(p, ext, cb);
+                } else if (f.endsWith(ext)) {
+                    cb(p);
+                }
+            } catch (e) {
+                // Ignore files that disappeared during walk
+            }
+        });
+    } catch (e) {
+        // Ignore dirs that disappeared
+    }
 };
 
 let errors = 0;
@@ -60,6 +68,23 @@ try {
     console.log('✅');
 } catch (e) {
     console.error('\n❌ Homey validation failed!');
+    errors++;
+}
+
+// 4. Intelligence DB Check
+process.stdout.write('Checking Intelligence DB... ');
+try {
+    const dbPath = path.join(__dirname, '../data/universal_tuya_urls.json');
+    if (!fs.existsSync(dbPath)) {
+        throw new Error('Intelligence DB missing');
+    }
+    const db = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+    if (!db.categories || db.categories.length === 0) {
+        throw new Error('Intelligence DB empty or malformed');
+    }
+    console.log('✅');
+} catch (e) {
+    console.error(`\n❌ Intelligence DB Error: ${e.message}`);
     errors++;
 }
 

@@ -46,8 +46,8 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
     // Let the base value from caller be the raw value, and we apply the scale directly if possible!
     // But then default must match. Let's just multiply the base divided value by however it differs from 1.
     
-    if (capability === 'measure_power') return safeMultiply((value, powerScale));
-    if (capability === 'meter_power') return safeMultiply((value, energyScale));
+    if (capability === 'measure_power') return safeMultiply(value, powerScale);
+    if (capability === 'meter_power') return safeMultiply(value, energyScale);
     
     const voltageScale = parseFloat(this.getSetting('voltage_scale')) || 0.1;
     if (capability === 'measure_voltage') return (value * (safeParse)(voltageScale * 0.1)); 

@@ -2498,7 +2498,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           // Parse string to number (parseFloat to preserve decimal steps like 0.5m)
           val = parseFloat(val) || 0;
           // Apply divisor in reverse (multiply) for distance values stored as meters
-          if (mapping.divisor && mapping.divisor > 1) val =safeMultiply(Math.round((val, mapping)).divisor);
+          if (mapping.divisor && mapping.divisor > 1) val = Math.round(safeMultiply(val, mapping.divisor));
           // Clamp to min/max if defined
           if (mapping.min !== undefined) val = Math.max(mapping.min, val);
           if (mapping.max !== undefined) val = Math.min(mapping.max, val);

@@ -13,19 +13,13 @@ class CurtainMotorTiltDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-      }
     }
+  }
+
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-
-
-
-
-
-
-
 
     this.log('CurtainMotorTiltDriver initialized');
     // v5.13.3: Register flow card action handlers
@@ -33,12 +27,12 @@ class CurtainMotorTiltDriver extends ZigBeeDriver {
       try {
         const card = this.homey.flow.getActionCard(id);
         if (card) card.registerRunListener(fn);
+      } catch (e) { this.error(e); }
     };
     reg('curtain_motor_tilt_turn_on', async ({ device }) => { await device.triggerCapabilityListener('onoff', true); return true; });
     reg('curtain_motor_tilt_turn_off', async ({ device }) => { await device.triggerCapabilityListener('onoff', false); return true; });
     reg('curtain_motor_tilt_toggle', async ({ device }) => { const v = device.getCapabilityValue('onoff'); await device.triggerCapabilityListener('onoff', !v); return true; });
+  }
+}
 
-    }
-}
-}
 module.exports = CurtainMotorTiltDriver;

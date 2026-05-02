@@ -255,6 +255,16 @@ class UniversalTuyaZigbeeApp extends Homey.App {
           this.quirksDatabase = QuirksDatabase;
           this.log(' OTA & Quirks initialized');
         } catch (err) { this.error(' OTA/Quirks failed:', err.message); }
+      })(),
+
+      // Intelligence Health Check
+      (async () => {
+        try {
+          const IntelligenceHealth = require('./lib/tuya/IntelligenceHealth');
+          const health = await IntelligenceHealth.checkSources();
+          const activeCount = Object.values(health).filter(v => v).length;
+          this.log(` Intelligence Sources Health: ${activeCount}/${Object.keys(health).length} reachable`);
+        } catch (err) { this.error(' Intelligence Health check failed:', err.message); }
       })()
     ];
 
