@@ -20,7 +20,7 @@ for (const id of PR_IDS) {
         
         // Merge PR branch
         console.log(`  Merging ${prBranch} into master...`);
-        execSync(`git merge ${prBranch} --no-edit`, { stdio: 'inherit' });
+        execSync(`git merge ${prBranch} --no-edit --allow-unrelated-histories`, { stdio: 'inherit' });
         
         console.log(`  ✅ PR #${id} merged successfully.`);
         
