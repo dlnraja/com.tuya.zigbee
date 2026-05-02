@@ -1,21 +1,7 @@
-# MEGA-PROMPT ULTIME - VERSION FINALE 2025
-# Code Owners for com.tuya.zigbee
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
 
-# Global owners
-* @dlnraja
+# will automaticall assign repository owner as reviewer:
+* @JohanBendz
 
-# Drivers
-drivers/ @dlnraja
-
-# Scripts
-scripts/ @dlnraja
-
-# Documentation
-*.md @dlnraja
-README* @dlnraja
-
-# GitHub Actions
-.github/ @dlnraja
-
-# Templates
-templates/ @dlnraja
+# not valid as habbo656 does not have write access to this repository:
+# /drivers/thermostatic_radiator_valve @habbo656

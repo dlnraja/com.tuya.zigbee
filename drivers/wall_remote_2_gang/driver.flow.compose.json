@@ -1,114 +1,55 @@
 {
   "triggers": [
     {
-      "id": "wall_remote_2_gang_button_2gang_button_1_pressed",
-      "title": {
-        "fr": "Bouton 1 appuyÃ©",
-        "en": "Button 1 pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 appuyÃ©",
-        "en": "Button 1 pressed"
-      }
-    },
-    {
-      "id": "wall_remote_2_gang_button_2gang_button_1_double",
-      "title": {
-        "fr": "Bouton 1 double-appui",
-        "en": "Button 1 double-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 double-appui",
-        "en": "Button 1 double-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_2_gang_button_2gang_button_1_long",
-      "title": {
-        "fr": "Bouton 1 appui long",
-        "en": "Button 1 long-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 appui long",
-        "en": "Button 1 long-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_2_gang_button_2gang_button_1_triple",
-      "title": {
-        "fr": "Bouton 1 triple-appui",
-        "en": "Button 1 triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 triple-appui",
-        "en": "Button 1 triple-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_2_gang_button_2gang_button_1_release",
-      "title": {
-        "fr": "Bouton 1 relÃ¢chÃ©",
-        "en": "Button 1 released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 relÃ¢chÃ©",
-        "en": "Button 1 released"
-      }
-    },
-    {
-      "id": "wall_remote_2_gang_button_2gang_button_2_pressed",
-      "title": {
-        "fr": "Bouton 2 appuyÃ©",
-        "en": "Button 2 pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 appuyÃ©",
-        "en": "Button 2 pressed"
-      }
-    },
-    {
-      "id": "wall_remote_2_gang_button_2gang_button_2_double",
-      "title": {
-        "fr": "Bouton 2 double-appui",
-        "en": "Button 2 double-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 double-appui",
-        "en": "Button 2 double-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_2_gang_button_2gang_button_2_long",
-      "title": {
-        "fr": "Bouton 2 appui long",
-        "en": "Button 2 long-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 appui long",
-        "en": "Button 2 long-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_2_gang_button_2gang_button_2_triple",
-      "title": {
-        "fr": "Bouton 2 triple-appui",
-        "en": "Button 2 triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 triple-appui",
-        "en": "Button 2 triple-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_2_gang_button_2gang_button_2_release",
-      "title": {
-        "fr": "Bouton 2 relÃ¢chÃ©",
-        "en": "Button 2 released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 relÃ¢chÃ©",
-        "en": "Button 2 released"
-      }
+      "id": "wall_remote_2_gang_buttons",
+      "title": {"en": "Button Action"},
+      "titleFormatted": {"en": "The [[action]]"},
+      "args": [
+        {
+          "name": "action",
+          "type": "dropdown",
+          "title": {"en": "Button Action"},
+          "titleFormatted": {"en": "The [[action]]"},
+          "values": [
+            {
+              "id": "left-oneClick",
+              "label": {
+                "en": "left button was pressed 1 time"
+              }
+            },
+            {
+              "id": "left-twoClicks",
+              "label": {
+                "en": "left button was pressed 2 times"
+              }
+            },
+            {
+              "id": "left-longPress",
+              "label": {
+                "en": "left button was held down"
+              }
+            },
+            {
+              "id": "right-oneClick",
+              "label": {
+                "en": "right button was pressed 1 time"
+              }
+            },
+            {
+              "id": "right-twoClicks",
+              "label": {
+                "en": "right button was pressed 2 times"
+              }
+            },
+            {
+              "id": "right-longPress",
+              "label": {
+                "en": "right button was held down"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

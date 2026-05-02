@@ -1,169 +1,54 @@
 {
   "triggers": [
     {
-      "id": "wall_remote_3_gang_button_3gang_button_1_pressed",
-      "title": {
-        "fr": "Bouton 1 appuyÃ©",
-        "en": "Button 1 pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 appuyÃ©",
-        "en": "Button 1 pressed"
-      }
-    },
-    {
-      "id": "wall_remote_3_gang_button_3gang_button_1_double",
-      "title": {
-        "fr": "Bouton 1 double-appui",
-        "en": "Button 1 double-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 double-appui",
-        "en": "Button 1 double-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_3_gang_button_3gang_button_1_long",
-      "title": {
-        "fr": "Bouton 1 appui long",
-        "en": "Button 1 long-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 appui long",
-        "en": "Button 1 long-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_3_gang_button_3gang_button_1_triple",
-      "title": {
-        "fr": "Bouton 1 triple-appui",
-        "en": "Button 1 triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 triple-appui",
-        "en": "Button 1 triple-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_3_gang_button_3gang_button_1_release",
-      "title": {
-        "fr": "Bouton 1 relÃ¢chÃ©",
-        "en": "Button 1 released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 relÃ¢chÃ©",
-        "en": "Button 1 released"
-      }
-    },
-    {
-      "id": "wall_remote_3_gang_button_3gang_button_2_pressed",
-      "title": {
-        "fr": "Bouton 2 appuyÃ©",
-        "en": "Button 2 pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 appuyÃ©",
-        "en": "Button 2 pressed"
-      }
-    },
-    {
-      "id": "wall_remote_3_gang_button_3gang_button_2_double",
-      "title": {
-        "fr": "Bouton 2 double-appui",
-        "en": "Button 2 double-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 double-appui",
-        "en": "Button 2 double-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_3_gang_button_3gang_button_2_long",
-      "title": {
-        "fr": "Bouton 2 appui long",
-        "en": "Button 2 long-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 appui long",
-        "en": "Button 2 long-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_3_gang_button_3gang_button_2_triple",
-      "title": {
-        "fr": "Bouton 2 triple-appui",
-        "en": "Button 2 triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 triple-appui",
-        "en": "Button 2 triple-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_3_gang_button_3gang_button_2_release",
-      "title": {
-        "fr": "Bouton 2 relÃ¢chÃ©",
-        "en": "Button 2 released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 relÃ¢chÃ©",
-        "en": "Button 2 released"
-      }
-    },
-    {
-      "id": "wall_remote_3_gang_button_3gang_button_3_pressed",
-      "title": {
-        "fr": "Bouton 3 appuyÃ©",
-        "en": "Button 3 pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 appuyÃ©",
-        "en": "Button 3 pressed"
-      }
-    },
-    {
-      "id": "wall_remote_3_gang_button_3gang_button_3_double",
-      "title": {
-        "fr": "Bouton 3 double-appui",
-        "en": "Button 3 double-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 double-appui",
-        "en": "Button 3 double-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_3_gang_button_3gang_button_3_long",
-      "title": {
-        "fr": "Bouton 3 appui long",
-        "en": "Button 3 long-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 appui long",
-        "en": "Button 3 long-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_3_gang_button_3gang_button_3_triple",
-      "title": {
-        "fr": "Bouton 3 triple-appui",
-        "en": "Button 3 triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 triple-appui",
-        "en": "Button 3 triple-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_3_gang_button_3gang_button_3_release",
-      "title": {
-        "fr": "Bouton 3 relÃ¢chÃ©",
-        "en": "Button 3 released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 relÃ¢chÃ©",
-        "en": "Button 3 released"
-      }
+      "id": "wall_remote_3_gang_buttons",
+      "title": {"en": "Button Action"},
+      "titleFormatted": {"en": "The [[action]]"},
+      "args": [
+        {
+          "name": "action",
+          "type": "dropdown",
+          "title": {"en": "Button Action"},
+          "values": [
+            {
+              "id": "left-oneClick",
+              "label": {
+                "en": "Left Button: 1 Click"
+              }
+            },
+            {
+              "id": "left-twoClicks",
+              "label": {
+                "en": "Left Button: 2 Clicks"
+              }
+            },
+            {
+              "id": "right-oneClick",
+              "label": {
+                "en": "Right Button: 1 Click"
+              }
+            },
+            {
+              "id": "right-twoClicks",
+              "label": {
+                "en": "Right Button: 2 Clicks"
+              }
+            },
+            {
+              "id": "center-oneClick",
+              "label": {
+                "en": "Center Button: 1 Click"
+              }
+            },
+            {
+              "id": "center-twoClicks",
+              "label": {
+                "en": "Center Button: 2 Clicks"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

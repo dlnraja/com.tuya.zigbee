@@ -1,16 +1,31 @@
 {
+  "id": "zigbeerepeater",
   "name": {
-    "en": "Zigbee Signal Repeater",
-    "fr": "RÃ©pÃ©teur de Signal Zigbee"
+    "en": "Zigbee Repeater"
   },
   "class": "other",
+  "platforms": ["local"],
+  "connectivity": ["zigbee"],
   "capabilities": [
-    "measure_radio_stability",
-    "measure_maintenance_score"
   ],
+  "images": {
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "small": "{{driverAssetsPath}}/images/small.png"
+  },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZ3000_m0vaazab",
+      "_TZ3000_5k5vh43t",
+      "_TZ3000_ufttklsz",
+      "_TZ3000_gszjt2xx",
+      "_TZ3000_nkkl7uzv",
+      "_TZ3000_nlsszmzl",
+      "_TZ3000_misw04hq",
+      "_TZ3000_wlquqiiz"
+    ],
+    "productId": [
+      "TS0207"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
@@ -20,171 +35,10 @@
       }
     },
     "learnmode": {
+      "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Plug in the USB repeater and hold button 5s."
+        "en": "Put the device in a USB slot and let it power up."
       }
     }
-  },
-  "icon": "/drivers/zigbee_repeater/assets/icon.svg",
-  "images": {
-    "small": "drivers/zigbee_repeater/assets/images/small.png",
-    "large": "drivers/zigbee_repeater/assets/images/large.png"
-  },
-  "energy": {
-    "approximation": {
-      "usageConstant": 1
-    }
-  },
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "zigbee"
-  ],
-  "maintenanceActions": [
-    {
-      "id": "ota_check",
-      "title": {
-        "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃJ OTA",
-        "nl": "Controleer op OTA-updates"
-      }
-    }
-  ],
-  "flow": {
-    "triggers": [],
-    "conditions": [],
-    "actions": []
-  },
-  "settings": [
-    {
-      "id": "enable_software_child_lock",
-      "type": "checkbox",
-      "label": {
-        "en": "Software Child Lock",
-        "fr": "SÃ©curitÃ© Enfant Logicielle"
-      },
-      "value": false,
-      "hint": {
-        "en": "Prevents manual state changes on the device",
-        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
-      }
-    },
-    {
-      "id": "auto_off_duration",
-      "type": "number",
-      "label": {
-        "en": "Auto-Off Timer (Minutes)",
-        "fr": "Minuterie Auto-Off (Minutes)"
-      },
-      "value": 0,
-      "min": 0,
-      "max": 1440,
-      "hint": {
-        "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
-      }
-    },
-    {
-      "id": "enable_vacation_mode",
-      "type": "checkbox",
-      "label": {
-        "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation PrÃ©sence)"
-      },
-      "value": false,
-      "hint": {
-        "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
-      }
-    },
-    {
-      "id": "emulated_motion_hold",
-      "type": "number",
-      "label": {
-        "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
-      },
-      "value": 0,
-      "min": 0,
-      "max": 3600,
-      "hint": {
-        "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
-      }
-    },
-    {
-      "id": "double_click_interval",
-      "type": "number",
-      "label": {
-        "en": "Double Click Interval (ms)",
-        "fr": "Intervalle Double-Clic (ms)"
-      },
-      "value": 400,
-      "min": 100,
-      "max": 1000,
-      "hint": {
-        "en": "Software emulation for single-action buttons",
-        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
-      }
-    },
-    {
-      "id": "inching_duration",
-      "type": "number",
-      "label": {
-        "en": "Inching Duration (Secs)",
-        "fr": "DurÃ©e Inching (Secondes)"
-      },
-      "value": 0,
-      "min": 0,
-      "max": 60,
-      "step": 0.1,
-      "hint": {
-        "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
-      }
-    },
-    {
-      "id": "enable_state_recovery",
-      "type": "checkbox",
-      "label": {
-        "en": "Software State Recovery",
-        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
-      },
-      "value": false,
-      "hint": {
-        "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
-      }
-    },
-    {
-      "id": "enable_soft_transitions",
-      "type": "checkbox",
-      "label": {
-        "en": "Soft transitions (Fade)",
-        "fr": "Transitions douces (Fade)"
-      },
-      "value": false,
-      "hint": {
-        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
-      }
-    },
-    {
-      "id": "maintenance_threshold",
-      "type": "number",
-      "label": {
-        "en": "Maintenance Alert Threshold",
-        "fr": "Seuil Alerte Maintenance"
-      },
-      "value": 30,
-      "min": 0,
-      "max": 100,
-      "hint": {
-        "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
-      }
-    }
-  ],
-  "id": "zigbee_repeater"
+  }
 }

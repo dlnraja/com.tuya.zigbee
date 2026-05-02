@@ -1,24 +1,52 @@
 'use strict';
 
-const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+// const { CLUSTER } = require('zigbee-clusters');
 
-/**
- * Wall Remote 3 Gang - TS0043
- * 3-button battery wall remote using ZCL scenes/onOff clusters
- * v5.12.0: Converted from log-only stub to full ButtonDevice
- */
-class WallRemote3GangDevice extends ButtonDevice {
-  async onNodeInit({ zclNode }) {
-    this.buttonCount = 3;
-    this.log('[WALL_REMOTE_3_GANG] v5.12.0 init - 3 buttons');
-    await super.onNodeInit({ zclNode }).catch(err => this.error('[WALL_REMOTE_3_GANG] init err:', err.message));
-    this.log('[WALL_REMOTE_3_GANG] ready');
-  }
+class wall_remote_3_gang extends ZigBeeDevice {
+
+    async onNodeInit({zclNode}) {
+
+        var debounce = 0;
+        this.printNode();
+
+        const node = await this.homey.zigbee.getNode(this);
+        node.handleFrame = (endpointId, clusterId, frame, meta) => {
+          if (clusterId === 6) {
+            this.log("endpointId:", endpointId,", clusterId:", clusterId,", frame:", frame, ", meta:", meta);
+            this.log("Frame JSON data:", frame.toJSON());
+            frame = frame.toJSON();
+            debounce = debounce+1;
+            if (debounce===1){
+              this.buttonCommandParser(endpointId, frame);
+            } else {
+              debounce=0;
+            }
+          }
+        };
+  
+        this._buttonPressedTriggerDevice = this.homey.flow.getDeviceTriggerCard('wall_remote_3_gang_buttons')
+        .registerRunListener(async (args, state) => {
+          return (null, args.action === state.action);
+        });
+      
+    }
+  
+      buttonCommandParser(ep, frame) {
+        var button = ep === 1 ? 'left' : ep === 3 ? 'right' : 'center';
+        var action = frame.data[3] === 0 ? 'oneClick' : 'twoClicks';
+        return this._buttonPressedTriggerDevice.trigger(this, {}, { action: `${button}-${action}` })
+        .then(() => this.log(`Triggered Wall Remote 3 Gang, action=${button}-${action}`))
+        .catch(err => this.error('Error triggering Wall Remote 3 Gang', err));
+      }
 
 
-  async onDeleted() {
-    this.log('Device deleted, cleaning up');
-  }
+    onDeleted(){
+		this.log("3 Gang Wall Remote removed")
+	}
+
 }
 
-module.exports = WallRemote3GangDevice;
+module.exports = wall_remote_3_gang;
+
+
