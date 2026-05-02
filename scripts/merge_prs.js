@@ -29,10 +29,8 @@ for (const id of PR_IDS) {
         
     } catch (err) {
         console.error(`  ❌ Failed to merge PR #${id}: ${err.message}`);
-        // Abort merge if in progress
         try { execSync('git merge --abort', { stdio: 'ignore' }); } catch (e) {}
-        // Ensure we are back on the target branch
-        try { execSync('git checkout feature/accept-upstream-prs', { stdio: 'ignore' }); } catch (e) {}
+        try { execSync('git checkout -f feature/accept-upstream-prs', { stdio: 'ignore' }); } catch (e) {}
     }
 }
 
