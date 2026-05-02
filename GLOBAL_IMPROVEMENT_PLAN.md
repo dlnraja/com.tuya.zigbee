@@ -138,4 +138,76 @@ Les workflows suivants **lisent** le forum pour enrichissement (sans écrire) :
 
 ---
 
-**Prochaines étapes** : Implémenter L9-L11, enrichir le catalogue de drivers, optimiser l'orchestration IA.
+---
+
+## 📐 RÈGLE CRITIQUE : FINGERPRINTS = manufacturerName + productId (COMBINED)
+
+> **Source** : `docs/rules/DEVELOPMENT_RULES.md`, `docs/rules/CRITICAL_MISTAKES.md`, `docs/rules/ZIGBEE_TUYA_RULES.md`
+
+### La loi fondamentale
+Un appareil Zigbee est reconnu **si et seulement si** le couple `manufacturerName` + `productId` (modelId) correspond **simultanément** dans un driver.
+
+```
+✅ VALIDE : _TZ3000_xyz + TS0002 dans switch_2gang
+✅ VALIDE : _TZ3000_xyz + TS0001 dans switch_1gang (même manufacturerName, productId différent)
+❌ CONFLIT : _TZ3000_xyz + TS0002 dans switch_2gang ET dimmer_2gang (même couple dans 2 drivers incompatibles)
+```
+
+### Règles détaillées
+| # | Règle | Source |
+|---|-------|--------|
+| F1 | Fingerprint = manufacturerName + productId COMBINED (les 2 doivent matcher) | DEVELOPMENT_RULES.md |
+| F2 | Un même manufacturerName dans plusieurs drivers est NORMAL (différents productIds) | DEVELOPMENT_RULES.md |
+| F3 | Pas de wildcards dans manufacturerName (ex: `_TZE284_*` est INVALIDE) | ZIGBEE_TUYA_RULES.md |
+| F4 | Toutes comparaisons manufacturerName/modelId/productId DOIVENT être case-insensitive via `CaseInsensitiveMatcher.js` | DEVELOPMENT_RULES.md |
+| F5 | `.toLowerCase()` manuel sur ces champs est INTERDIT dans les drivers | DEVELOPMENT_RULES.md |
+| F6 | Settings keys : `zb_model_id` (pas `zb_modelId`), `zb_manufacturer_name` (pas `zb_manufacturerName`) | CRITICAL_MISTAKES.md |
+| F7 | Un appareil qui match un productId (ex: TS0601) mais pas le manufacturerName → tenter match via productId + nombre d'endpoints/clusters | DYNAMIC_HEALING.md |
+
+### Cas spéciaux connus
+| Cas | Explication | Action |
+|-----|-------------|--------|
+| BSEED/Zemismart TS0601 | ZCL-only malgré TS0601 → ignorer Tuya DP | Vérifier protocole via interview |
+| Immax NEO valve (#260) | Même TS0601 que climate_sensor → FP seulement dans valve_irrigation | Re-pair si mauvais driver |
+| `_TZ3000_cauq1okq` TS0002 (Piotr) | Firmware dual-toggle → UNFIXABLE (Z2M #14750) | Documenter comme limitation |
+| Capteurs air quality USB | USB-powered mais a measure_battery → supprimer cap batterie, mainsPowered=true | ProductValueValidator |
+
+---
+
+## 🌐 89 URLs DE RÉFÉRENCE — ÉCOSYSTÈME COMPLET
+
+### 🔴 Critique (22 URLs)
+| URL | Scope |
+|-----|-------|
+| `github.com/dlnraja/com.tuya.zigbee` | Repo principal, branches master/stable-v5 |
+| `github.com/JohanBendz/com.tuya.zigbee` | Repo source historique |
+| `developers.homey.app/sdk/` | Référence SDK 3.0 |
+| `developers.homey.app/the-basics/app-manifest` | Manifeste app.json |
+| `community.homey.app/t/.../140352` | Thread officiel forum |
+| `zigbee.blakadder.com/index.html` | 2693+ devices, fingerprints |
+| `zigbee.blakadder.com/all.html` | Liste complète pour scraping batch |
+| `zigbee.blakadder.com/Tuya.html` | Tous devices Tuya |
+| `github.com/Koenkk/zigbee-herdsman-converters/.../tuya.ts` | Référence DP Tuya Z2M |
+| `github.com/blakadder/zigbee/blob/master/devices.json` | DB JSON pour scraping auto |
+| `token-plan-ams.xiaomimimo.com/v1` | XiaomiMimo v2.5 Pro (primary IA) |
+| `homey.app/a/com.dlnraja.tuya.zigbee.stable/` | App stable production |
+
+### 🟠 Haute (28 URLs)
+- Issues/PRs/Actions du repo, `lib/`, `drivers/`
+- Z2M/ZHA repos, forums FR/DE
+- Docs fabricants : Legrand (`0xFC40`), Hue (`0xFC03`), Xiaomi (`0xFCC0`), Sonoff (`0x0B04`)
+- Fallbacks IA : OpenAI, DeepSeek, HuggingFace, Groq
+
+### 🟡 Moyenne (22 URLs)
+- Forums CN/JP/RU (Baidu, Zhihu, CSDN, Habr, 4PDA, Qiita)
+- Catégories Blakadder (sensors, switches, plugs, covers, hvac)
+- Specs Zigbee (ZCL PDF, CSA IoT, Wikipedia)
+
+### 🔵 Basse (15 URLs)
+- Specs industrielles (Panasonic, Orvibo, Konke)
+- Webhooks monitoring (Discord, Slack, Sentry)
+- Documentation legacy
+
+---
+
+**Prochaines étapes** : Implémenter L9-L11, enrichir le catalogue de drivers via scraping hebdomadaire Blakadder+Z2M+ZHA, optimiser l'orchestration IA avec les 89 sources de référence.
