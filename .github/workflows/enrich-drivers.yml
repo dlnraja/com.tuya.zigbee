@@ -2,7 +2,7 @@ name: 🌐 Enrich Drivers (Blakadder + Z2M + ZHA)
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # Tous les jours à 3h UTC
+    - cron: "0 3 * * 1"   # Every Monday 3h UTC (weekly to save GitHub Actions minutes)
   workflow_dispatch:
     inputs:
       dry_run:
@@ -81,10 +81,11 @@ jobs:
       # ──────────────────────────────────────
 
       - name: 🤖 AI-powered enrichment
-        if: env.XIAOMI_MIMO_API_KEY != ''
+        if: env.XIAOMI_MIMO_API_KEY != '' || env.NVIDIA_API_KEY != ''
         env:
           XIAOMI_MIMO_API_KEY: ${{ secrets.XIAOMI_MIMO_API_KEY }}
           MIMO_ENDPOINT: https://token-plan-ams.xiaomimimo.com/v1
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
         run: |
           if [ -f ".github/scripts/ai-helper.js" ]; then
             node .github/scripts/ai-helper.js
