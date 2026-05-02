@@ -10,13 +10,7 @@ for (const id of PR_IDS) {
     try {
         // Fetch PR
         console.log(`  Fetching PR branch...`);
-        // Force delete local branch if exists to avoid non-fast-forward errors
-        try {
-            const branchName = execSync(`gh pr view ${id} --repo ${UPSTREAM} --json headRefName --template "{{.headRefName}}"`).toString().trim();
-            execSync(`git branch -D ${branchName}`, { stdio: 'ignore' });
-        } catch (e) {}
-        
-        execSync(`gh pr checkout ${id} --repo ${UPSTREAM}`, { stdio: 'inherit' });
+        execSync(`gh pr checkout ${id} --repo ${UPSTREAM} --force`, { stdio: 'inherit' });
         
         const prBranch = execSync('git branch --show-current').toString().trim();
         console.log(`  On branch: ${prBranch}`);
