@@ -1,24 +1,42 @@
 'use strict';
 
-const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+// const { CLUSTER } = require('zigbee-clusters');
 
-/**
- * Smart Button Switch - TS0041
- * 1-button battery switch using ZCL scenes/onOff clusters
- * v5.12.0: Converted from log-only stub to full ButtonDevice
- */
-class SmartButtonSwitchDevice extends ButtonDevice {
-  async onNodeInit({ zclNode }) {
-    this.buttonCount = 1;
-    this.log('[SMART_BUTTON_SWITCH] v5.12.0 init - 1 button');
-    await super.onNodeInit({ zclNode }).catch(err => this.error('[SMART_BUTTON_SWITCH] init err:', err.message));
-    this.log('[SMART_BUTTON_SWITCH] ready');
-  }
+class smart_button_switch extends ZigBeeDevice {
+
+    async onNodeInit({zclNode}) {
+        this.printNode();
+
+        const node = await this.homey.zigbee.getNode(this);
+        node.handleFrame = (endpointId, clusterId, frame, meta) => {
+          if (clusterId === 6) {
+            this.log("endpointId:", endpointId,", clusterId:", clusterId,", frame:", frame, ", meta:", meta);
+            this.log("Frame JSON data:", frame.toJSON());
+            frame = frame.toJSON();
+            this.buttonCommandParser(frame);
+          }
+        };
+  
+        this._buttonPressedTriggerDevice = this.homey.flow.getDeviceTriggerCard('smart_button_switch_buttons')
+        .registerRunListener(async (args, state) => {
+          return (null, args.action === state.action);
+        });
+      
+    }
+  
+      buttonCommandParser(frame) {
+        var action = frame.data[3] === 0 ? 'oneClick' : 'twoClicks';
+        return this._buttonPressedTriggerDevice.trigger(this, {}, { action: `${action}` })
+        .then(() => this.log(`Triggered Smart Button Switch, action=${action}`))
+        .catch(err => this.error('Error triggering Smart Button Switch', err));
+      }
 
 
-  async onDeleted() {
-    this.log('Device deleted, cleaning up');
-  }
+    onDeleted(){
+		this.log("Smart Button Switch removed")
+	}
+
 }
 
-module.exports = SmartButtonSwitchDevice;
+module.exports = smart_button_switch;

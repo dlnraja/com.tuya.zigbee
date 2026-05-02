@@ -1,126 +1,67 @@
 'use strict';
-const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
-const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
-// A8: NaN Safety - use safeDivide/safeMultiply
-  require('../../lib/tuya/GlobalTimeSyncEngine');
+const Homey = require('homey');
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { CLUSTER } = require('zigbee-clusters');
 
-/**
- * LCD Temperature & Humidity Sensor Device - v7.4.4
- *
- * For TS0201 LCD display temperature/humidity sensors
- * Manufacturers: _TYZB01_*, _TZ2000_*, _TZE284_vvmbj46n*
- *
- * Uses UnifiedSensorBase for full ZCL + Tuya DP support
- * Supports: Temperature, Humidity, Battery, Time Synchronization
- */
-class LCDTempHumidSensorDevice extends UnifiedSensorBase {
+class lcdtemphumidsensor extends ZigBeeDevice {
+	
+	async onNodeInit({zclNode}) {
 
-  /** Battery powered */
-  get mainsPowered() { return false; }
+		this.printNode();
 
-  /** v7.4.4: Intelligence for _TZE284_ sensors (No humidity divisor) */
-  get isUniversalModel() {
-    const mfr = this.getSetting?.('zb_manufacturer_name') || '';return mfr.toUpperCase().includes('VVM' ); // _TZE284_vvmbj46n
-  }
+/* 		if (this.isFirstInit()){
+			await this.configureAttributeReporting([
+				{
+					endpointId: 1,
+					cluster: CLUSTER.POWER_CONFIGURATION,
+					attributeName: 'batteryPercentageRemaining',
+                    minInterval: 60, // Minimum interval (1 minute)
+                    maxInterval: 21600, // Maximum interval (6 hours)
+                    minChange: 1, // Report changes greater than 1%
+				}
+			]);
+		} */
 
-  /** Capabilities for LCD temp/humidity sensors */
-  get sensorCapabilities() {
-    return ['measure_temperature', 'measure_humidity', 'measure_battery'];
-  }
+		// measure_temperature
+		zclNode.endpoints[1].clusters[CLUSTER.TEMPERATURE_MEASUREMENT.NAME]
+		.on('attr.measuredValue', this.onTemperatureMeasuredAttributeReport.bind(this));
+  
+		// measure_humidity
+		zclNode.endpoints[1].clusters[CLUSTER.RELATIVE_HUMIDITY_MEASUREMENT.NAME]
+		.on('attr.measuredValue', this.onRelativeHumidityMeasuredAttributeReport.bind(this));
 
-  /** DP mappings for TS0201 LCD sensors */
-  get dpMappings() {
-    const isVVM = this.isUniversalModel;
-    return {
-      // Temperature (Standard DP 1 or 18 or 101)
-      1: { capability: 'measure_temperature', divisor: 10 },
-      18: { capability: 'measure_temperature', divisor: 10 },
-      101: { capability: 'measure_temperature', divisor: 10 },
+		// measure_battery // alarm_battery
+		zclNode.endpoints[1].clusters[CLUSTER.POWER_CONFIGURATION.NAME]
+		.on('attr.batteryPercentageRemaining', this.onBatteryPercentageRemainingAttributeReport.bind(this));
 
-      // Humidity (DP 2 or 102)
-      // v7.4.4: Research shows _TZE284_vvmbj46n does NOT use divisor 10 for humidity!
-      2: { capability: 'measure_humidity', divisor: isVVM ? 1 : 10 },
-      102: { capability: 'measure_humidity', divisor: isVVM ? 1 : 10 },
+	}
 
-      // Battery
-      // v5.12.3: DP 3 battery enum (0=low, 1=med, 2=high)
-      3: { capability: 'measure_battery', divisor: 1, transform: (v) => v === 0 ? 10 : v === 1 ? 50 : v >= 2 ? 100 : Math.min(Math.max(v * 0) * 100) },
-      4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v * 0) * 100) },
-      15: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(Math.max(v * 0) * 100) },
-    };
-  }
+	onTemperatureMeasuredAttributeReport(measuredValue) {
+		const temperatureOffset = this.getSetting('temperature_offset') || 0;
+		const parsedValue = this.getSetting('temperature_decimals') === '2' ? Math.round((measuredValue / 100) * 100) / 100 : Math.round((measuredValue / 100) * 10) / 10;
+		this.log('measure_temperature | temperatureMeasurement - measuredValue (temperature):', parsedValue, '+ temperature offset', temperatureOffset);
+		this.setCapabilityValue('measure_temperature', parsedValue + temperatureOffset).catch(this.error);
+	}
 
-  async onNodeInit({ zclNode }) {
-    // --- Global Time Sync Engine v7.4.4 ---
-    // LCD sensors need clock sync for the display to show correct time.
-    try {
-      this._timeSyncEngine = new GlobalTimeSyncEngine(this);
-      
-      // Setup listener for MCU time requests
-      this._timeSyncEngine.setupListener(zclNode);
-      
-      // Perform initial sync after 5 seconds
-      this.homey.setTimeout(async () => {
-        await this._timeSyncEngine.syncTime(zclNode).catch(() => {});
-      }, 5000);
-      
-      // Periodic sync every 4 hours for battery sensors
-      this._timeSyncEngine.schedulePeriodicSync(zclNode,4 * 60 * 60 * 1000);
-    } catch (e) {
-      this.log('[LCD]  Time sync engine failed:', e.message);
-    }
+	onRelativeHumidityMeasuredAttributeReport(measuredValue) {
+		const humidityOffset = this.getSetting('humidity_offset') || 0;
+		const parsedValue = this.getSetting('humidity_decimals') === '2' ? Math.round((measuredValue / 100) * 100) / 100 : Math.round((measuredValue / 100) * 10) / 10;
+		this.log('measure_humidity | relativeHumidity - measuredValue (humidity):', parsedValue, '+ humidity offset', humidityOffset);
+		this.setCapabilityValue('measure_humidity', parsedValue + humidityOffset).catch(this.error);
+	}
 
-    // --- Attribute Reporting Configuration ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 60,
-          maxInterval: 3600,
-          minChange: 50, // 0.5C
-        },
-        {
-          cluster: 'msRelativeHumidity',
-          attributeName: 'measuredValue',
-          minInterval: 60,
-          maxInterval: 3600,
-          minChange: 100, // 1%
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 86400,
-          minChange: 2,
-        }
-      ]);
-    } catch (err) {
-      this.log('[LCD]  Attribute reporting config skipped (using DP polling/reports)');
-    }
+	onBatteryPercentageRemainingAttributeReport(batteryPercentageRemaining) {
+		const batteryThreshold = this.getSetting('batteryThreshold') || 20;
+		this.log("measure_battery | powerConfiguration - batteryPercentageRemaining (%): ", batteryPercentageRemaining/2);
+		this.setCapabilityValue('measure_battery', batteryPercentageRemaining/2).catch(this.error);
+		this.setCapabilityValue('alarm_battery', (batteryPercentageRemaining/2 < batteryThreshold) ? true : false).catch(this.error);
+	}
 
-    await super.onNodeInit({ zclNode });
-    this.log('[LCD]  LCD Sensor ready (Universal Sync Engine active)');
-  }
+	onDeleted(){
+	this.log("temphumidsensor removed")
+	}
 
-  onTuyaStatus(status) {
-    this.log('[LCD]  Data received:', JSON.stringify(status));
-    super.onTuyaStatus(status);
-  }
-
-  /**
-   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
-   */
-  async onEndDeviceAnnounce() {
-    this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
-    // Proactive data recovery if supported
-    if (this._dataRecoveryManager) {
-       this._dataRecoveryManager.triggerRecovery();
-    }
-  }
 }
 
-module.exports = LCDTempHumidSensorDevice;
-
+module.exports = lcdtemphumidsensor;

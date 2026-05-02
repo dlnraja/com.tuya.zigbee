@@ -1,245 +1,45 @@
 {
-  "id": "motion_sensor_2",
-  "name": {
-    "en": "Motion Sensor",
-    "fr": "Capteur de mouvement",
-    "nl": "Bewegingssensor",
-    "de": "Bewegungsmelder",
-    "es": "Sensor de movimiento"
-  },
-  "class": "sensor",
-  "platforms": [
-    "local"
-  ],
-  "connectivity": [
-    "zigbee"
-  ],
-  "capabilities": [
-    "measure_battery",
-    "measure_luminance",
-    "alarm_motion",
-    "measure_radio_stability",
-    "measure_maintenance_score"
-  ],
-  "energy": {
-    "batteries": [
-      "CR2450"
+    "id": "motion_sensor_2",
+    "name": {
+      "en": "Motion Sensor"
+    },
+    "class": "sensor",
+    "platforms": ["local"],
+    "connectivity": ["zigbee"],
+    "capabilities": [
+      "measure_battery",
+      "measure_luminance",
+      "alarm_motion",
+      "alarm_battery"
     ],
-    "mains": true
-  },
-  "images": {
-    "large": "drivers/motion_sensor_2/assets/images/large.png",
-    "small": "drivers/motion_sensor_2/assets/images/small.png"
-  },
-  "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          61184
-        ],
-        "bindings": [
-          1,
-          1024,
-          1280
-        ]
-      }
+    "energy": {
+      "batteries": ["CR2450"]
     },
-    "learnmode": {
-      "image": "drivers/motion_sensor_2/assets/icon.svg",
-      "instruction": {
-        "en": "Press the reset button for aprox 5 seconds until the LED blinks."
+    "images": {
+      "large": "{{driverAssetsPath}}/images/large.png",
+      "small": "{{driverAssetsPath}}/images/small.png"
+    },
+    "zigbee": {
+      "manufacturerName": [
+        "_TZE200_3towulqd",
+        "_TZE200_bh3n6gk8",
+        "_TZE200_1ibpyhdc",
+        "_TZE200_ttcovulf"
+      ],
+      "productId": [
+        "TS0601"
+      ],
+      "endpoints": {
+        "1": {
+          "clusters": [0, 1, 1024, 1280, 61184],
+          "bindings": [1, 1024, 1280]
+        }
+      },
+      "learnmode": {
+        "image": "{{driverAssetsPath}}/icon.svg",
+        "instruction": {
+          "en": "Press the reset button for aprox 5 seconds until the LED blinks."
+        }
       }
     }
-  },
-  "maintenanceActions": [
-    {
-      "id": "ota_check",
-      "title": {
-        "en": "Check Zigbee OTA Update",
-        "fr": "VÃ©rifier MÃJ OTA",
-        "nl": "Controleer op OTA-updates"
-      }
-    }
-  ],
-  "flow": {
-    "triggers": [],
-    "conditions": [],
-    "actions": []
-  },
-  "settings": [
-    {
-      "id": "enable_radio_sensing",
-      "type": "checkbox",
-      "label": {
-        "en": "Enable Radio Presence Sensing",
-        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
-      },
-      "value": false,
-      "hint": {
-        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
-        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
-      }
-    },
-    {
-      "id": "radio_sensitivity",
-      "type": "number",
-      "label": {
-        "en": "Radio Presence Sensitivity",
-        "fr": "SensibilitÃ© PrÃ©sence Radio"
-      },
-      "value": 15,
-      "min": 5,
-      "max": 50,
-      "hint": {
-        "en": "LQI variance threshold (higher = less sensitive)",
-        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
-      }
-    },
-    {
-      "id": "enable_software_child_lock",
-      "type": "checkbox",
-      "label": {
-        "en": "Software Child Lock",
-        "fr": "SÃ©curitÃ© Enfant Logicielle"
-      },
-      "value": false,
-      "hint": {
-        "en": "Prevents manual state changes on the device",
-        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
-      }
-    },
-    {
-      "id": "auto_off_duration",
-      "type": "number",
-      "label": {
-        "en": "Auto-Off Timer (Minutes)",
-        "fr": "Minuterie Auto-Off (Minutes)"
-      },
-      "value": 0,
-      "min": 0,
-      "max": 1440,
-      "hint": {
-        "en": "Turn off automatically after X minutes (0 = disabled)",
-        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
-      }
-    },
-    {
-      "id": "enable_vacation_mode",
-      "type": "checkbox",
-      "label": {
-        "en": "Vacation Mode (Presence Sim)",
-        "fr": "Mode Vacances (Simulation PrÃ©sence)"
-      },
-      "value": false,
-      "hint": {
-        "en": "Randomly toggle device during evenings to simulate presence",
-        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
-      }
-    },
-    {
-      "id": "emulated_motion_hold",
-      "type": "number",
-      "label": {
-        "en": "Emulated Motion Hold (Seconds)",
-        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
-      },
-      "value": 0,
-      "min": 0,
-      "max": 3600,
-      "hint": {
-        "en": "Keep motion 'ON' for X seconds after hardware clears",
-        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
-      }
-    },
-    {
-      "id": "double_click_interval",
-      "type": "number",
-      "label": {
-        "en": "Double Click Interval (ms)",
-        "fr": "Intervalle Double-Clic (ms)"
-      },
-      "value": 400,
-      "min": 100,
-      "max": 1000,
-      "hint": {
-        "en": "Software emulation for single-action buttons",
-        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
-      }
-    },
-    {
-      "id": "overload_threshold",
-      "type": "number",
-      "label": {
-        "en": "Overload Protection (Watts)",
-        "fr": "Protection Surcharge (Watts)"
-      },
-      "value": 0,
-      "min": 0,
-      "max": 4000,
-      "hint": {
-        "en": "Cut power if consumption exceeds this value (0 = disabled)",
-        "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
-      }
-    },
-    {
-      "id": "inching_duration",
-      "type": "number",
-      "label": {
-        "en": "Inching Duration (Secs)",
-        "fr": "DurÃ©e Inching (Secondes)"
-      },
-      "value": 0,
-      "min": 0,
-      "max": 60,
-      "step": 0.1,
-      "hint": {
-        "en": "Automatically turn off after X seconds (Pulse mode)",
-        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
-      }
-    },
-    {
-      "id": "enable_state_recovery",
-      "type": "checkbox",
-      "label": {
-        "en": "Software State Recovery",
-        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
-      },
-      "value": false,
-      "hint": {
-        "en": "Restore previous ON/OFF state after power failure",
-        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
-      }
-    },
-    {
-      "id": "enable_soft_transitions",
-      "type": "checkbox",
-      "label": {
-        "en": "Soft transitions (Fade)",
-        "fr": "Transitions douces (Fade)"
-      },
-      "value": false,
-      "hint": {
-        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
-        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
-      }
-    },
-    {
-      "id": "maintenance_threshold",
-      "type": "number",
-      "label": {
-        "en": "Maintenance Alert Threshold",
-        "fr": "Seuil Alerte Maintenance"
-      },
-      "value": 30,
-      "min": 0,
-      "max": 100,
-      "hint": {
-        "en": "Alert if health score drops below this value",
-        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
-      }
-    }
-  ]
-}
+  }

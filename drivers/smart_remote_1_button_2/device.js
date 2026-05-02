@@ -1,24 +1,71 @@
-'use strict';
+"use strict";
 
-const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { ZigBeeDevice } = require("homey-zigbeedriver");
+const { debug, CLUSTER } = require('zigbee-clusters');
 
-/**
- * Smart Remote 1 Button 2 - TS004F variant
- * 1-button battery remote using ZCL scenes/onOff clusters
- * v5.12.0: Converted from log-only stub to full ButtonDevice
- */
-class SmartRemote1Button2Device extends ButtonDevice {
+class smart_remote_1b_2 extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
-    this.buttonCount = 1;
-    this.log('[SMART_REMOTE_1_BUTTON_2] v5.12.0 init - 1 button');
-    await super.onNodeInit({ zclNode }).catch(err => this.error('[SMART_REMOTE_1_BUTTON_2] init err:', err.message));
-    this.log('[SMART_REMOTE_1_BUTTON_2] ready');
+    this.printNode();
+
+    const node = await this.homey.zigbee.getNode(this);
+    node.handleFrame = (endpointId, clusterId, frame, meta) => {
+      if (clusterId === 6) {
+        this.log(
+          "endpointId:",
+          endpointId,
+          ", clusterId:",
+          clusterId,
+          ", frame:",
+          frame,
+          ", meta:",
+          meta
+        );
+        this.log("Frame JSON data:", frame.toJSON());
+        this.buttonCommandParser(frame);
+      }
+      else if(clusterId === 8)
+      {
+        this.log(
+          "endpointId:",
+          endpointId,
+          ", clusterId:",
+          clusterId,
+          ", frame:",
+          frame,
+          ", meta:",
+          meta
+        );
+        this.log("Frame JSON data:", frame.toJSON());
+        this.buttonCommandParserCL8(frame);
+      }
+    };
+
+    this._buttonPressedTriggerDevice = this.homey.flow
+      .getDeviceTriggerCard("smart_remote_1_button_2")
+      .registerRunListener(async (args, state) => {
+        return null, args.action === state.action;
+      });
   }
 
+  buttonCommandParser(frame) {
+    var action = frame[2] === 1 ? "oneClick" : "twoClicks";
+    return this._buttonPressedTriggerDevice
+      .trigger(this, {}, { action: `${action}` })
+      .then(() => this.log(`Triggered 1 button Smart Remote, action=${action}`))
+      .catch((err) => this.error("Error triggering 1 button Smart Remote", err));
+  }
 
-  async onDeleted() {
-    this.log('Device deleted, cleaning up');
+  buttonCommandParserCL8(frame) {
+    var action = frame[2] === 0 ? "oneClick" : "twoClicks";
+    return this._buttonPressedTriggerDevice
+      .trigger(this, {}, { action: `${action}` })
+      .then(() => this.log(`Triggered 1 button Smart Remote, action=${action}`))
+      .catch((err) => this.error("Error triggering 1 button Smart Remote", err));
+  }
+
+  onDeleted() {
+    this.log("1 button Smart Remote Controller has been removed");
   }
 }
 
-module.exports = SmartRemote1Button2Device;
+module.exports = smart_remote_1b_2;

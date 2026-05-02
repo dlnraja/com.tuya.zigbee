@@ -1,59 +1,66 @@
 {
   "triggers": [
     {
-      "id": "smart_knob_switch_button_1gang_button_1_pressed",
+      "id": "smart_knob_switch_button",
       "title": {
-        "fr": "Bouton appuyÃ©",
-        "en": "Button pressed"
+        "en": "Button",
+        "sv": "Knapp"
       },
       "titleFormatted": {
-        "fr": "Bouton appuyÃ©",
-        "en": "Button pressed"
-      }
-    },
-    {
-      "id": "smart_knob_switch_button_1gang_button_1_double",
-      "title": {
-        "fr": "Bouton double-appui",
-        "en": "Button double-pressed"
+        "en": "The [[button]]",
+        "sv": "[[button]]"
       },
-      "titleFormatted": {
-        "fr": "Bouton double-appui",
-        "en": "Button double-pressed"
-      }
-    },
-    {
-      "id": "smart_knob_switch_button_1gang_button_1_long",
-      "title": {
-        "fr": "Bouton appui long",
-        "en": "Button long-pressed"
+      "hint": {
+        "en": "This card will trigger when the button is used",
+        "sv": "Detta kort körs när knappen används"
       },
-      "titleFormatted": {
-        "fr": "Bouton appui long",
-        "en": "Button long-pressed"
-      }
-    },
-    {
-      "id": "smart_knob_switch_button_1gang_button_1_triple",
-      "title": {
-        "fr": "Bouton triple-appui",
-        "en": "Button triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton triple-appui",
-        "en": "Button triple-pressed"
-      }
-    },
-    {
-      "id": "smart_knob_switch_button_1gang_button_1_release",
-      "title": {
-        "fr": "Bouton relÃ¢chÃ©",
-        "en": "Button released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton relÃ¢chÃ©",
-        "en": "Button released"
-      }
+      "args": [
+        {
+          "name": "button",
+          "type": "dropdown",
+          "title": {
+            "en": "Button Used",
+            "sv": "Knappen används"
+          },
+          "values": [
+            {
+              "id": "press",
+              "label": {
+                "en": "Pressed",
+                "sv": "Nedtryckt"
+              }
+            },
+            {
+              "id": "left",
+              "label": {
+                "en": "Rotated counter clockwise",
+                "sv": "Roterats moturs"
+              }
+            },
+            {
+              "id": "right",
+              "label": {
+                "en": "Rotated clockwise",
+                "sv": "Roterats medurs"
+              }
+            },
+            {
+              "id": "hold-left",
+              "label": {
+                "en": "Pressed and rotated counter clockwise",
+                "sv": "Nedtyrckt och roterats moturs"
+              }
+            },
+            {
+              "id": "hold-right",
+              "label": {
+                "en": "Pressed and rotated clockwise",
+                "sv": "Nedtyrckt och roterats medurs"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

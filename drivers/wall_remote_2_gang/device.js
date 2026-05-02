@@ -1,24 +1,49 @@
 'use strict';
 
-const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { debug, CLUSTER } = require('zigbee-clusters');
 
-/**
- * Wall Remote 2 Gang - TS0042
- * 2-button battery wall remote using ZCL scenes/onOff clusters
- * v5.12.0: Converted from log-only stub to full ButtonDevice
- */
-class WallRemote2GangDevice extends ButtonDevice {
-  async onNodeInit({ zclNode }) {
-    this.buttonCount = 2;
-    this.log('[WALL_REMOTE_2_GANG] v5.12.0 init - 2 buttons');
-    await super.onNodeInit({ zclNode }).catch(err => this.error('[WALL_REMOTE_2_GANG] init err:', err.message));
-    this.log('[WALL_REMOTE_2_GANG] ready');
-  }
+class wall_remote_2_gang extends ZigBeeDevice {
 
+    async onNodeInit({zclNode}) {
 
-  async onDeleted() {
-    this.log('Device deleted, cleaning up');
-  }
+        var debounce = 0;
+        // debug(true);
+        this.printNode();
+
+        const node = await this.homey.zigbee.getNode(this);
+        node.handleFrame = (endpointId, clusterId, frame, meta) => {
+          if (clusterId === 6) {
+            this.log("endpointId:", endpointId,", clusterId:", clusterId,", frame:", frame, ", meta:", meta);
+            this.log("Frame JSON data:", frame.toJSON());
+            debounce = debounce+1;
+            if (debounce===1){
+              this.buttonCommandParser(endpointId, frame);
+            } else {
+              debounce=0;
+            }
+          }
+        };
+  
+        this._buttonPressedTriggerDevice = this.homey.flow.getDeviceTriggerCard('wall_remote_2_gang_buttons')
+        .registerRunListener(async (args, state) => {
+          return (null, args.action === state.action);
+        });
+      
+    }
+
+    buttonCommandParser(ep, frame) {
+      var button = ep === 1 ? 'left' : 'right';
+      var action = frame[3] === 0 ? 'oneClick' : frame[3] === 1 ? 'twoClicks' : 'longPress';
+      return this._buttonPressedTriggerDevice.trigger(this, {}, { action: `${button}-${action}` })
+      .then(() => this.log(`Triggered 2 Gang Smart Switch, action=${button}-${action}`))
+      .catch(err => this.error('Error triggering 2 Gang Smart Switch', err));
+    }
+
+    onDeleted(){
+		this.log("2 Gang Wall Remote removed")
+	}
+
 }
 
-module.exports = WallRemote2GangDevice;
+module.exports = wall_remote_2_gang;

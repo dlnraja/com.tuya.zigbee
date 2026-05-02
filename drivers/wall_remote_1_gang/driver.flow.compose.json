@@ -1,59 +1,30 @@
 {
   "triggers": [
     {
-      "id": "wall_remote_1_gang_button_1gang_button_1_pressed",
-      "title": {
-        "fr": "Bouton appuyÃ©",
-        "en": "Button pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton appuyÃ©",
-        "en": "Button pressed"
-      }
-    },
-    {
-      "id": "wall_remote_1_gang_button_1gang_button_1_double",
-      "title": {
-        "fr": "Bouton double-appui",
-        "en": "Button double-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton double-appui",
-        "en": "Button double-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_1_gang_button_1gang_button_1_long",
-      "title": {
-        "fr": "Bouton appui long",
-        "en": "Button long-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton appui long",
-        "en": "Button long-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_1_gang_button_1gang_button_1_triple",
-      "title": {
-        "fr": "Bouton triple-appui",
-        "en": "Button triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton triple-appui",
-        "en": "Button triple-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_1_gang_button_1gang_button_1_release",
-      "title": {
-        "fr": "Bouton relÃ¢chÃ©",
-        "en": "Button released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton relÃ¢chÃ©",
-        "en": "Button released"
-      }
+      "id": "wall_remote_1_gang_buttons",
+      "title": {"en": "Button Action"},
+      "titleFormatted": {"en": "Button had [[action]]"},
+      "args": [
+        {
+          "name": "action",
+          "type": "dropdown",
+          "title": {"en": "Button Action"},
+          "values": [
+            {
+              "id": "oneClick",
+              "label": {
+                "en": "1 Click"
+              }
+            },
+            {
+              "id": "twoClicks",
+              "label": {
+                "en": "2 Clicks"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

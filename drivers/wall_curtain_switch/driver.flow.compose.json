@@ -1,5 +1,12 @@
 {
-  "triggers": [],
-  "conditions": [],
-  "actions": []
-}
+    "actions": [
+      {
+        "id": "wall_move_open",
+        "title": { "en": "Open", "de": "Öffnen" }
+      },
+      {
+        "id": "wall_move_close",
+        "title": { "en": "Close", "de": "Schließen" }
+      }
+    ]
+  }

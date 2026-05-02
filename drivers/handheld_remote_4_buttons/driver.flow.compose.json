@@ -1,224 +1,67 @@
 {
-  "triggers": [
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_1_pressed",
-      "title": {
-        "fr": "Bouton 1 appuyÃ©",
-        "en": "Button 1 pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 appuyÃ©",
-        "en": "Button 1 pressed"
+    "triggers": [
+      {
+        "id": "handheld_remote_4_buttons",
+        "title": {"en": "Button was pressed"},
+        "titleFormatted": {"en": "[[button]] button was pressed [[action]]"},
+        "args": [
+          {
+            "name": "button",
+            "type": "dropdown",
+            "title": {"en":"Button"},
+            "values": [
+                {
+                  "id": "button1",
+                  "label": {
+                    "en": "Button 1"
+                  }
+                },
+                {
+                  "id": "button2",
+                  "label": {
+                    "en": "Button 2"
+                  }
+                },
+                {
+                  "id": "button3",
+                  "label": {
+                    "en": "Button 3"
+                  }
+                },
+                {
+                  "id": "button4",
+                  "label": {
+                    "en": "Button 4"
+                  }
+                }
+            ]
+          },
+          {
+            "name": "action",
+            "type": "dropdown",
+            "title": {"en": "Action"},
+            "values": [
+              {
+                "id": "single",
+                "label": {
+                  "en": "once"
+                }
+              },
+              {
+                "id": "double",
+                "label": {
+                  "en": "twice"
+                }
+              },
+              {
+                "id": "long",
+                "label": {
+                  "en": "long"
+                }
+              }
+            ]
+          }
+        ]
       }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_1_double",
-      "title": {
-        "fr": "Bouton 1 double-appui",
-        "en": "Button 1 double-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 double-appui",
-        "en": "Button 1 double-pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_1_long",
-      "title": {
-        "fr": "Bouton 1 appui long",
-        "en": "Button 1 long-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 appui long",
-        "en": "Button 1 long-pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_1_triple",
-      "title": {
-        "fr": "Bouton 1 triple-appui",
-        "en": "Button 1 triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 triple-appui",
-        "en": "Button 1 triple-pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_1_release",
-      "title": {
-        "fr": "Bouton 1 relÃ¢chÃ©",
-        "en": "Button 1 released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 relÃ¢chÃ©",
-        "en": "Button 1 released"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_2_pressed",
-      "title": {
-        "fr": "Bouton 2 appuyÃ©",
-        "en": "Button 2 pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 appuyÃ©",
-        "en": "Button 2 pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_2_double",
-      "title": {
-        "fr": "Bouton 2 double-appui",
-        "en": "Button 2 double-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 double-appui",
-        "en": "Button 2 double-pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_2_long",
-      "title": {
-        "fr": "Bouton 2 appui long",
-        "en": "Button 2 long-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 appui long",
-        "en": "Button 2 long-pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_2_triple",
-      "title": {
-        "fr": "Bouton 2 triple-appui",
-        "en": "Button 2 triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 triple-appui",
-        "en": "Button 2 triple-pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_2_release",
-      "title": {
-        "fr": "Bouton 2 relÃ¢chÃ©",
-        "en": "Button 2 released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 relÃ¢chÃ©",
-        "en": "Button 2 released"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_3_pressed",
-      "title": {
-        "fr": "Bouton 3 appuyÃ©",
-        "en": "Button 3 pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 appuyÃ©",
-        "en": "Button 3 pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_3_double",
-      "title": {
-        "fr": "Bouton 3 double-appui",
-        "en": "Button 3 double-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 double-appui",
-        "en": "Button 3 double-pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_3_long",
-      "title": {
-        "fr": "Bouton 3 appui long",
-        "en": "Button 3 long-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 appui long",
-        "en": "Button 3 long-pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_3_triple",
-      "title": {
-        "fr": "Bouton 3 triple-appui",
-        "en": "Button 3 triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 triple-appui",
-        "en": "Button 3 triple-pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_3_release",
-      "title": {
-        "fr": "Bouton 3 relÃ¢chÃ©",
-        "en": "Button 3 released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 relÃ¢chÃ©",
-        "en": "Button 3 released"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_4_pressed",
-      "title": {
-        "fr": "Bouton 4 appuyÃ©",
-        "en": "Button 4 pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 4 appuyÃ©",
-        "en": "Button 4 pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_4_double",
-      "title": {
-        "fr": "Bouton 4 double-appui",
-        "en": "Button 4 double-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 4 double-appui",
-        "en": "Button 4 double-pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_4_long",
-      "title": {
-        "fr": "Bouton 4 appui long",
-        "en": "Button 4 long-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 4 appui long",
-        "en": "Button 4 long-pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_4_triple",
-      "title": {
-        "fr": "Bouton 4 triple-appui",
-        "en": "Button 4 triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 4 triple-appui",
-        "en": "Button 4 triple-pressed"
-      }
-    },
-    {
-      "id": "handheld_remote_4_buttons_button_4gang_button_4_release",
-      "title": {
-        "fr": "Bouton 4 relÃ¢chÃ©",
-        "en": "Button 4 released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 4 relÃ¢chÃ©",
-        "en": "Button 4 released"
-      }
-    }
-  ]
-}
+    ]
+  }

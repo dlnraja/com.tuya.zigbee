@@ -1,51 +1,208 @@
-'use strict';
-const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
+"use strict";
 
-let UnifiedCoverBase;
-try {
-  UnifiedCoverBase = require('../../lib/devices/UnifiedCoverBase');
-} catch (e) {
-  const { ZigBeeDevice } = require('homey-zigbeedriver');
-  UnifiedCoverBase = ZigBeeDevice;
-}
+const { ZigBeeDevice } = require("homey-zigbeedriver");
+const { Cluster, debug, CLUSTER } = require("zigbee-clusters");
+const TuyaWindowCoveringCluster = require("../../lib/TuyaWindowCoveringCluster");
+const { mapValueRange } = require('../../lib/util');
 
-class WallCurtainSwitchDevice extends UnifiedCoverBase {
-  async onNodeInit({ zclNode }) {
-    this.log('[WALL_CURTAIN_SWITCH] init');
+Cluster.addCluster(TuyaWindowCoveringCluster);
 
-    // v5.13.1: CRITICAL FIX  must call super to initialize protocol detection,
-    // Tuya DP, capability migration, and ZCL fallbacks from UnifiedCoverBase
-    await super.onNodeInit({ zclNode }).catch(e => this.log('[WALL_CURTAIN_SWITCH] super.onNodeInit warn:', e.message));
+const UP_OPEN = 'upOpen';
+const DOWN_CLOSE = 'downClose';
+const REPORT_DEBOUNCER = 5000;
 
-    if (this.hasCapability('windowcoverings_set')) {
-      this.registerCapabilityListener('windowcoverings_set', async (value) => {
-        this.log('[WALL_CURTAIN_SWITCH] set position:', value);
-        const ep = zclNode.endpoints[1];
-        if (ep && ep.clusters && ep.clusters.windowCovering) {
-          await ep.clusters.windowCovering.goToLiftPercentage({ percentageLiftValue: Math.round(value) });
+class wallcurtainswitch extends ZigBeeDevice {
+
+    invertPercentageLiftValue = false;
+
+    constructor(...args) {
+        super(...args);
+        this._reportPercentageDebounce = null;
+        this._reportDebounceEnabled = false;
+    }
+
+    async onNodeInit({ zclNode }) {
+        await super.onNodeInit({ zclNode });
+
+        this.printNode();
+
+        // code borrowed from here most recent version of zigbee driver to handle lift percentage + invert correctly
+        // remove once the package was updated
+        // https://github.com/athombv/node-homey-zigbeedriver/blob/master/lib/system/capabilities/windowcoverings_set/windowCovering.js
+        this.registerCapability(
+            "windowcoverings_set",
+            CLUSTER.WINDOW_COVERING,
+            {
+                setParser: async (value) => {
+                    // Refresh timer or set new timer to prevent reports from updating the dim slider directly
+                    // when set command from Homey
+                    if (this._reportPercentageDebounce) {
+                      this._reportPercentageDebounce.refresh();
+                    } else {
+                      this._reportPercentageDebounce = this.homey.setTimeout(() => {
+                        this._reportDebounceEnabled = false;
+                        this._reportPercentageDebounce = null;
+                      }, REPORT_DEBOUNCER);
+                    }
+
+                    // Used to check if reports are generated based on set command from Homey
+                    this._reportDebounceEnabled = true;
+
+                    // Override goToLiftPercentage to enforce blind to open/close completely
+                    if (value === 0 || value === 1) {
+                      this.debug(`set → \`windowcoverings_set\`: ${value} → setParser → ${value === 1 ? UP_OPEN : DOWN_CLOSE}`);
+                      const { endpoint } = this._getClusterCapabilityConfiguration('windowcoverings_set', CLUSTER.WINDOW_COVERING);
+                      const windowCoveringEndpoint = endpoint ?? this.getClusterEndpoint(CLUSTER.WINDOW_COVERING);
+                      if (windowCoveringEndpoint === null) throw new Error('missing_window_covering_cluster');
+
+                      const windowCoveringCommand = value === 1 ? UP_OPEN : DOWN_CLOSE;
+                      await this.zclNode.endpoints[windowCoveringEndpoint].clusters
+                        .windowCovering[windowCoveringCommand]();
+
+                      await this.setCapabilityValue('windowcoverings_set', value);
+                      return null;
+                    }
+
+                    const mappedValue = mapValueRange(
+                      0, 1, 0, 100, this.invertPercentageLiftValue ? 1 - value : value,
+                    );
+                    const gotToLiftPercentageCommand = {
+                      // Round, otherwise might not be accepted by device
+                      percentageLiftValue: Math.round(mappedValue),
+                    };
+                    this.debug(`set → \`windowcoverings_set\`: ${value} → setParser → goToLiftPercentage`, gotToLiftPercentageCommand);
+                    // Send goToLiftPercentage command
+                    return gotToLiftPercentageCommand;
+                },
+                reportParser: (value) => {
+                    // Validate input
+                    if (value < 0 || value > 100) return null;
+
+                    // Parse input value
+                    const parsedValue = mapValueRange(
+                      0, 100, 0, 1, this.invertPercentageLiftValue ? 100 - value : value,
+                    );
+
+                    // Refresh timer if needed
+                    if (this._reportPercentageDebounce) {
+                      this._reportPercentageDebounce.refresh();
+                    }
+
+                    // If reports are not generated by set command from Homey update directly
+                    if (!this._reportDebounceEnabled) return parsedValue;
+
+                    // Return value
+                    return null;
+                },
+            }
+        );
+        await this._configureStateCapability(this.getSetting("has_state"));
+
+        const attrs = await this.zclNode.endpoints[1].clusters.windowCovering
+            .readAttributes(["calibrationTime", "motorReversal"])
+            .catch((err) =>
+                this.error("Error when reading settings from device", err)
+            );
+
+        if (attrs.calibrationTime) {
+            await this.setSettings({ movetime: attrs.calibrationTime / 10 });
         }
-      });
+
+        if (attrs.motorReversal) {
+            this.setSettings({ reverse: attrs.motorReversal === 'On' })
+        }
+
+        const moveOpen = this.homey.flow.getActionCard("wall_move_open");
+        moveOpen.registerRunListener(async (args, state) => {
+            await this.zclNode.endpoints[1].clusters.windowCovering[UP_OPEN]();
+        });
+
+        const moveClose = this.homey.flow.getActionCard("wall_move_close");
+        moveClose.registerRunListener(async (args, state) => {
+            await this.zclNode.endpoints[1].clusters.windowCovering[DOWN_CLOSE]();
+        });
     }
 
-    if (this.hasCapability('windowcoverings_state')) {
-      this.registerCapabilityListener('windowcoverings_state', async (value) => {
-        this.log('[WALL_CURTAIN_SWITCH] state:', value);
-        const ep = zclNode.endpoints[1];
-        if (!ep || !ep.clusters || !ep.clusters.windowCovering) return;
-        if (value === 'up') await ep.clusters.windowCovering.upOpen();
-        else if (value === 'down') await ep.clusters.windowCovering.downClose();
-        else await ep.clusters.windowCovering.stop();
-      });
+    // When upgrading to node-zigbee-clusters v.2.0.0 this must be adressed:
+    // v2.0.0
+    // Changed Cluster.readAttributes signature, attributes must now be specified as an array of strings.
+    // zclNode.endpoints[1].clusters.windowCovering.readAttributes(['motorReversal', 'ANY OTHER IF NEEDED']);
+
+    async onSettings({ oldSettings, newSettings, changedKeys }) {
+        try {
+            if (changedKeys.includes("reverse")) {
+                const motorReversed = newSettings["reverse"];
+                await this.zclNode.endpoints[1].clusters.windowCovering.writeAttributes(
+                    { motorReversal: motorReversed ? "On" : "Off" }
+                );
+
+                if (this.motorReversed === 'On') {
+                    this.invertPercentageLiftValue = true;
+                }
+            }
+
+            if (changedKeys.includes("calibration_mode")) {
+                const calibrationMode = newSettings["calibration_mode"];
+                await this.zclNode.endpoints[1].clusters.windowCovering.writeAttributes(
+                    { calibrationMode: calibrationMode ? "Start" : "End" }
+                );
+            }
+
+            if (changedKeys.includes("movetime")) {
+                const movetime = newSettings["movetime"];
+                await this.zclNode.endpoints[1].clusters.windowCovering.writeAttributes(
+                    { calibrationTime: movetime * 10 }
+                );
+            }
+
+            if (changedKeys.includes("has_state")) {
+                await this._configureStateCapability(newSettings["has_state"]);
+            }
+        } catch (e) {
+            this.error("Error during setting change", e);
+        }
     }
 
-    this.log('[WALL_CURTAIN_SWITCH] ready');
-  }
+    onDeleted(){
+		this.log("Wall mounted curtain switch removed")
+	}
 
+    onUninit() {
+        if (this._reportPercentageDebounce) {
+          this.homey.clearTimeout(this._reportPercentageDebounce);
+        }
+    }
 
-  async onDeleted() {
-    this.log('Device deleted, cleaning up');
-  }
+    async _configureStateCapability(hasState) {
+        const key = "windowcoverings_state";
+
+        if (hasState) {
+            if (!this.hasCapability(key)) {
+                await this.addCapability(key);
+            }
+
+            this.registerCapability(key, CLUSTER.WINDOW_COVERING, {
+                report: "windowCoverStatus",
+                reportParser: (val) => {
+                    return {
+                        Open: "up",
+                        Stop: "idle",
+                        Close: "down",
+                    }[val];
+                },
+                reportOpts: {
+                    configureAttributeReporting: {
+                        minInterval: 60, // Minimum interval (1 minute)
+                        maxInterval: 21600, // Maximum interval (6 hours)
+                        minChange: 1, // Report changes greater than 1%
+                    },
+                },
+            });
+        } else if (this.hasCapability(key)) {
+            await this.removeCapability(key);
+        }
+    }
+
 }
 
-module.exports = WallCurtainSwitchDevice;
-
+module.exports = wallcurtainswitch;

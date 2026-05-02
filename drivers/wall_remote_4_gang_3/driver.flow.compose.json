@@ -1,224 +1,90 @@
 {
   "triggers": [
     {
-      "id": "wall_remote_4_gang_3_button_4gang_button_1_pressed",
-      "title": {
-        "fr": "Bouton 1 appuyÃ©",
-        "en": "Button 1 pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 appuyÃ©",
-        "en": "Button 1 pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_1_double",
-      "title": {
-        "fr": "Bouton 1 double-appui",
-        "en": "Button 1 double-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 double-appui",
-        "en": "Button 1 double-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_1_long",
-      "title": {
-        "fr": "Bouton 1 appui long",
-        "en": "Button 1 long-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 appui long",
-        "en": "Button 1 long-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_1_triple",
-      "title": {
-        "fr": "Bouton 1 triple-appui",
-        "en": "Button 1 triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 triple-appui",
-        "en": "Button 1 triple-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_1_release",
-      "title": {
-        "fr": "Bouton 1 relÃ¢chÃ©",
-        "en": "Button 1 released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 1 relÃ¢chÃ©",
-        "en": "Button 1 released"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_2_pressed",
-      "title": {
-        "fr": "Bouton 2 appuyÃ©",
-        "en": "Button 2 pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 appuyÃ©",
-        "en": "Button 2 pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_2_double",
-      "title": {
-        "fr": "Bouton 2 double-appui",
-        "en": "Button 2 double-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 double-appui",
-        "en": "Button 2 double-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_2_long",
-      "title": {
-        "fr": "Bouton 2 appui long",
-        "en": "Button 2 long-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 appui long",
-        "en": "Button 2 long-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_2_triple",
-      "title": {
-        "fr": "Bouton 2 triple-appui",
-        "en": "Button 2 triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 triple-appui",
-        "en": "Button 2 triple-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_2_release",
-      "title": {
-        "fr": "Bouton 2 relÃ¢chÃ©",
-        "en": "Button 2 released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 2 relÃ¢chÃ©",
-        "en": "Button 2 released"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_3_pressed",
-      "title": {
-        "fr": "Bouton 3 appuyÃ©",
-        "en": "Button 3 pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 appuyÃ©",
-        "en": "Button 3 pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_3_double",
-      "title": {
-        "fr": "Bouton 3 double-appui",
-        "en": "Button 3 double-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 double-appui",
-        "en": "Button 3 double-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_3_long",
-      "title": {
-        "fr": "Bouton 3 appui long",
-        "en": "Button 3 long-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 appui long",
-        "en": "Button 3 long-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_3_triple",
-      "title": {
-        "fr": "Bouton 3 triple-appui",
-        "en": "Button 3 triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 triple-appui",
-        "en": "Button 3 triple-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_3_release",
-      "title": {
-        "fr": "Bouton 3 relÃ¢chÃ©",
-        "en": "Button 3 released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 3 relÃ¢chÃ©",
-        "en": "Button 3 released"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_4_pressed",
-      "title": {
-        "fr": "Bouton 4 appuyÃ©",
-        "en": "Button 4 pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 4 appuyÃ©",
-        "en": "Button 4 pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_4_double",
-      "title": {
-        "fr": "Bouton 4 double-appui",
-        "en": "Button 4 double-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 4 double-appui",
-        "en": "Button 4 double-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_4_long",
-      "title": {
-        "fr": "Bouton 4 appui long",
-        "en": "Button 4 long-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 4 appui long",
-        "en": "Button 4 long-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_4_triple",
-      "title": {
-        "fr": "Bouton 4 triple-appui",
-        "en": "Button 4 triple-pressed"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 4 triple-appui",
-        "en": "Button 4 triple-pressed"
-      }
-    },
-    {
-      "id": "wall_remote_4_gang_3_button_4gang_button_4_release",
-      "title": {
-        "fr": "Bouton 4 relÃ¢chÃ©",
-        "en": "Button 4 released"
-      },
-      "titleFormatted": {
-        "fr": "Bouton 4 relÃ¢chÃ©",
-        "en": "Button 4 released"
-      }
+      "id": "wall_remote_4_gang_buttons_3",
+      "title": {"en": "Button Action"},
+      "titleFormatted": {"en": "The [[action]]"},
+      "args": [
+        {
+          "name": "action",
+          "type": "dropdown",
+          "title": {"en": "Button Action"},
+          "values": [
+            {
+              "id": "leftUp-oneClick",
+              "label": {
+                "en": "upper left button was pressed 1 time"
+              }
+            },
+            {
+              "id": "leftUp-twoClicks",
+              "label": {
+                "en": "upper left button was pressed 2 times"
+              }
+            },
+            {
+              "id": "leftUp-longPress",
+              "label": {
+                "en": "upper left button was held down"
+              }
+            },
+            {
+              "id": "rightUp-oneClick",
+              "label": {
+                "en": "upper right button was pressed 1 time"
+              }
+            },
+            {
+              "id": "rightUp-twoClicks",
+              "label": {
+                "en": "upper right button was pressed 2 times"
+              }
+            },
+            {
+              "id": "rightUp-longPress",
+              "label": {
+                "en": "upper right button was held down"
+              }
+            },
+            {
+              "id": "leftDown-oneClick",
+              "label": {
+                "en": "lower left button was pressed 1 time"
+              }
+            },
+            {
+              "id": "leftDown-twoClicks",
+              "label": {
+                "en": "lower left button was pressed 2 times"
+              }
+            },
+            {
+              "id": "leftDown-longPress",
+              "label": {
+                "en": "lower left button was held down"
+              }
+            },
+            {
+              "id": "rightDown-oneClick",
+              "label": {
+                "en": "lower right button was pressed 1 time"
+              }
+            },
+            {
+              "id": "rightDown-twoClicks",
+              "label": {
+                "en": "lower right button was pressed 2 times"
+              }
+            },
+            {
+              "id": "rightDown-longPress",
+              "label": {
+                "en": "lower right button was held down"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }
