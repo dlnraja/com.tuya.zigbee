@@ -42,7 +42,16 @@ const QuirksDatabase = require('./lib/quirks/QuirksDatabase'); //  Device Quirks
 const EmergencyDeviceFix = require('./lib/emergency/EmergencyDeviceFix'); //  Emergency Fix System
 // NOTE: Database updates are handled by GitHub Actions ONLY, NOT at runtime
 // See: .github / workflows/MASTER-intelligent-enrichment.yml
-const SourceCredits = require('./lib/data/SourceCredits'); //  Source attributions
+let SourceCredits = {};
+try {
+  SourceCredits = require('./lib/data/SourceCredits'); //  Source attributions
+} catch (_e) {
+  SourceCredits = {
+    contributors: [],
+    licenses: { MIT: 'https://opensource.org/licenses/MIT' },
+    attribution: 'Based on work by Johan Bendz and community contributors'
+  };
+}
 const TuyaUDPDiscovery = require('./lib/tuya-local/TuyaUDPDiscovery');
 const SmartValueProcessor = require('./lib/utils/SmartValueProcessor');
 const CapabilityAutoAdapter = require('./lib/utils/CapabilityAutoAdapter');
