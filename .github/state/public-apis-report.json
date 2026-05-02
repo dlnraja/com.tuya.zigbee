@@ -1,7 +1,7 @@
 {
   "source": "davemachado/public-api",
-  "timestamp": "2026-05-02T07:30:02.120Z",
-  "total": 1427,
+  "timestamp": "2026-05-02T08:45:41.278Z",
+  "total": 1433,
   "ai": [
     {
       "name": "Gitter",
@@ -43,6 +43,12 @@
       "name": "Cloudmersive",
       "url": "https://www.cloudmersive.com/image-recognition-and-processing-api",
       "desc": "Image captioning, face recognition, NSFW classification",
+      "auth": "apiKey"
+    },
+    {
+      "name": "DeepAI",
+      "url": "https://deepai.org/",
+      "desc": "Provides AI-powered APIs for text generation, image processing, and more",
       "auth": "apiKey"
     },
     {
@@ -196,5 +202,5 @@
       "desc": "Open source computer vision API based on open source models"
     }
   ],
-  "dev_count": 151
+  "dev_count": 152
 }
