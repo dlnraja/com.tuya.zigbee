@@ -243,3 +243,5 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
 
 module.exports = UsbDongleDualRepeaterDevice;
 
+
+

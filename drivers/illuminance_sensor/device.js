@@ -1,12 +1,13 @@
 'use strict';
-const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { ZigBeeDevice } = require('homey-zigbeedriver');
 
+class IlluminanceSensorDevice extends ZigBeeDevice {
 
-const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
-
-class IlluminanceSensorDevice extends UnifiedSensorBase {
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
+    await super.onNodeInit({ zclNode });
+    this.log('Illuminance Sensor v5.9.12 Ready');
+
     try {
       await this.configureAttributeReporting([
         {
@@ -14,70 +15,31 @@ class IlluminanceSensorDevice extends UnifiedSensorBase {
           attributeName: 'measuredValue',
           minInterval: 30,
           maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
+          minChange: 10,
         }
-      ]);
-      this.log('Attribute reporting configured successfully');
+      ]).catch(e => this.log('[ILLUMINANCE] Reporting config failed:', e.message));
     } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
+      this.log('Reporting config error:', err.message);
     }
 
-    this.log('[ILLUMINANCE] Initializing illuminance sensor');
-    await super.onNodeInit({ zclNode });
-    this._registerCapabilityListeners(); // rule-12a injected
-    await this._setupIlluminanceCluster(zclNode);
-  }
-
-  async _setupIlluminanceCluster(zclNode) {
-    try {
-      const endpoint = zclNode.endpoints[1];
-      if (!endpoint) return;
-
-      const illuminanceCluster = endpoint.clusters?.illuminanceMeasurement ||
-                                  endpoint.clusters?.['msIlluminanceMeasurement'] ||
-                                  endpoint.clusters?.[1024];
-
-      if (illuminanceCluster) {
-        this.log('[ILLUMINANCE] Found illuminance cluster' );
-
-        if (typeof illuminanceCluster.on === 'function') {
-          illuminanceCluster.on('attr.measuredValue', async (value) => {
-            const lux = this._convertToLux(value);
-            this.log(`[ILLUMINANCE] Received: raw=${value}, lux=${lux}`);
-            await this.setCapabilityValue('measure_luminance', lux).catch(this.error);
+    const ep = zclNode.endpoints[1];
+    if (ep && ep.clusters.msIlluminanceMeasurement) {
+      ep.clusters.msIlluminanceMeasurement.on('attr.measuredValue', (value) => {
+        this.setCapabilityValue('measure_luminance', value).catch(() => {});
       });
-        }
-
-        if (typeof illuminanceCluster.configureReporting === 'function') {
-          await illuminanceCluster.configureReporting({
-            measuredValue: {
-              minInterval: 10,
-              maxInterval: 3600,
-              minChange: 100
-            }
-          }).catch(e => this.log('[ILLUMINANCE] Reporting config failed:', e.message);
-        }
-      }
-    } catch (err) {
-      this.error('[ILLUMINANCE] Setup error:', err.message);
+      this._readInitialLuminance(ep.clusters.msIlluminanceMeasurement);
     }
   }
 
-  _convertToLux(value) {
-    if (value === 0 || value === 0xFFFF) return 0;
-    return Math.round(Math.pow(10, (value  - 1) / 10000));
-  }
-
-
-  async onDeleted() {
-    this.log('Device deleted, cleaning up');
+  async _readInitialLuminance(cluster) {
+    try {
+      const data = await cluster.readAttributes(['measuredValue']).catch(() => ({}));
+      if (data.measuredValue != null) {
+        this.setCapabilityValue('measure_luminance', data.measuredValue).catch(() => {});
+      }
+    } catch (e) {
+      this.log('Initial luminance read failed:', e.message);
+    }
   }
 }
 

@@ -1,391 +1,45 @@
-name: Nightly Auto-Process
+name: "Nightly Auto-Process (Weekly)"
 
 on:
-#  schedule:
-#    - cron: '30 5 * * 3'  # 5:30 UTC — safe gap after daily-everything 02:00 (120min timeout)
+  schedule:
+    - cron: '0 2 * * 0' # Sunday at 02:00 UTC
   workflow_dispatch:
-    inputs:
-      dry_run:
-        description: 'Dry run (no posts/comments)'
-        type: boolean
-        default: true
 
 permissions:
   contents: write
   issues: write
-  pull-requests: write
-
-concurrency:
-  group: nightly-process
-  cancel-in-progress: false
-
-env:
-  NODE_VERSION: "22"
-
-defaults:
-  run:
-    shell: bash
 
 jobs:
-  nightly:
-    name: Process New Messages
+  maintenance:
+    name: "Autonomous Maintenance"
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    env:
-      # === AI providers — circular chain (ai-helper.js) ===
-      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY || '' }}
-      HF_TOKEN: ${{ secrets.HF_TOKEN || '' }}
-      MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY || '' }}
-      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY || '' }}
-      CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY || '' }}
-      TOGETHER_API_KEY: ${{ secrets.TOGETHER_API_KEY || '' }}
-      KIMI_API_KEY: ${{ secrets.KIMI_API_KEY || '' }}
-      NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY || '' }}
-
+    
     steps:
-      - uses: actions/checkout@v5 # v5
+      - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
-
-      - uses: actions/setup-node@v5 # v5
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
-      - run: npm ci --prefer-offline --no-audit || npm install
-
-      - name: "0a. Intelligence Mode Selector (Cloudless-First)"
-        id: intelligence_selector
-        run: |
-          if [ -n "${{ secrets.GOOGLE_API_KEY }}" ] || [ -n "${{ secrets.OPENAI_API_KEY }}" ] || [ -n "${{ secrets.OPENROUTER_API_KEY }}" ]; then
-            echo "PIPELINE_MODE=AI_ORCHESTRATED" >> $GITHUB_ENV
-            echo "::notice::Pipeline intelligence: AI_ORCHESTRATED (Cloud enabled)"
-          else
-            echo "PIPELINE_MODE=RULE_BASED" >> $GITHUB_ENV
-            echo "::warning::Pipeline intelligence: RULE_BASED (Cloudless-First fallback active)"
-          fi
-
-      - name: Run Nightly Processor
-        continue-on-error: true
+          node-version: '20'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Run Nightly Auto-Process
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PIPELINE_MODE: ${{ env.PIPELINE_MODE }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          # Optional AI fallbacks (MISTRAL, DEEPSEEK, GROQ) — see .github/SECRETS.md
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-          GEMINI_MAX_TIER: "2"
-          DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
-        run: node .github/scripts/nightly-processor.js
-
-      - name: Homey Device Diagnostics
-        if: always()
-        continue-on-error: true
-        env:
-          HOMEY_PAT_API: ${{ secrets.HOMEY_PAT_API }}
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-        run: node .github/scripts/homey-device-diagnostics.js
-
-
-      - name: "Protocol Pattern Detection (Multi-Protocol)"
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 5
-        run: node .github/scripts/protocol-pattern-detector.js
-
-      - name: "Smart Device Scanner (11 sources, fp|pid composite key)"
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 15
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          GEMINI_MAX_TIER: "1"
-        run: node .github/scripts/external-sources-scanner.js
-
-      - name: "Smart Enrichment (DP-aware, fp|pid profiles)"
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 10
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          GEMINI_MAX_TIER: "1"
-        run: node .github/scripts/enrichment-scanner.js
-
-      - name: Screenshot Analysis Pipeline
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 5
-        env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          GH_PAT: ${{ secrets.GH_PAT }}
+        run: node scripts/maintenance/nightly-auto-process.js
+        
+      - name: Commit and Push Changes
         run: |
-          echo "Screenshot analyzer module: $(node -e "const s=require('./.github/scripts/screenshot-analyzer');console.log(Object.keys(s).join(', '))")"
-          echo "Deep analysis prompts: $(node -e "const{PROMPTS}=require('./.github/scripts/screenshot-analyzer');console.log(Object.keys(PROMPTS).length+' prompt types: '+Object.keys(PROMPTS).join(', '))")"
-
-
-      - name: Comprehensive GitHub Scan
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 15
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-        run: node .github/scripts/retry-runner.js .github/scripts/comprehensive-github-scan.js --retries 2 --delay 10000
-
-      - name: PR/Issue Fingerprint Scan
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 10
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-        run: node .github/scripts/retry-runner.js .github/scripts/scan-prs-issues.js --retries 2 --delay 8000
-
-      - name: "Cross-Reference Intelligence"
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 2
-        run: node .github/scripts/cross-ref-intelligence.js
-
-      - name: Sleep 30s before Issue Manager
-        if: always()
-        run: sleep 30
-
-      - name: GitHub Issue Manager
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 30
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
-          STALE_DAYS: "30"
-          MAX_ITEMS: "50"
-          REPOS: "dlnraja/com.tuya.zigbee,JohanBendz/com.tuya.zigbee"
-          GEMINI_MAX_TIER: "1"
-          RATE_LIMIT_SLEEP: "5000"
-        run: node .github/scripts/github-issue-manager.js
-
-      - name: Auto-Learn Fingerprints
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 3
-        run: node .github/scripts/auto-learn-fingerprints.js
-
-      - name: FP Collision Check
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 2
-        run: node .github/scripts/fp-collision-check.js
-
-      - name: Pattern Detector
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 5
-        run: node .github/scripts/pattern-detector.js
-
-      - name: "Flow Card Handler Audit"
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 2
-        run: |
-          echo "Checking for unregistered flow card handlers..."
-          node -e "
-          const fs=require('fs'),p=require('path'),d='drivers';let miss=0;
-          for(const dir of fs.readdirSync(d)){
-            const ff=p.join(d,dir,'driver.flow.compose.json');
-            const df=p.join(d,dir,'driver.js');
-            if(!fs.existsSync(ff))continue;
-            try{
-              const flow=JSON.parse(fs.readFileSync(ff,'utf8'));
-              const drv=fs.readFileSync(df,'utf8');
-              const acts=(flow.actions||[]).length;
-              const hasReg=drv.includes('registerRunListener')||drv.includes('_registerFlowCards');
-              if(!hasReg&&acts>0){console.log('::warning::'+dir+': '+acts+' flow actions with no handler');miss++}
-            }catch{}
-          }
-          console.log('Flow audit: '+miss+' drivers missing handlers');
-          "
-
-      - name: "Mains-Powered Battery Cap Check"
-        if: always()
-        continue-on-error: true
-        run: |
-          node -e "
-          const fs=require('fs'),p=require('path'),d='drivers';
-          for(const dir of fs.readdirSync(d)){
-            const df=p.join(d,dir,'device.js');
-            if(!fs.existsSync(df))continue;
-            const c=fs.readFileSync(df,'utf8');
-            if(c.includes('mainsPowered')&&c.includes('return true')){
-              const dc=p.join(d,dir,'driver.compose.json');
-              if(!fs.existsSync(dc))continue;
-              const j=JSON.parse(fs.readFileSync(dc,'utf8'));
-              if((j.capabilities||[]).includes('measure_battery')&&!c.includes('removeCapability')){
-                console.log('::warning::'+dir+': mainsPowered but has measure_battery without removal');
-              }
-            }
-          }
-          "
-
-      - name: "DP Divisor Audit"
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 2
-        run: |
-          node -e "
-          const fs=require('fs'),p=require('path');
-          let issues=0;
-          for(const dir of fs.readdirSync('drivers')){
-            const df=p.join('drivers',dir,'device.js');
-            if(!fs.existsSync(df))continue;
-            const c=fs.readFileSync(df,'utf8');
-            const m=c.match(/divisor\s*:\s*(\d+)/g)||[];
-            const hasDivisor=m.some(x=>!x.includes(':1')&&!x.includes(': 1'));
-            if(hasDivisor&&!c.includes('_dynamicDpMappings')){
-              console.log('::warning::'+dir+': has divisor in dpMappings - verify no double-division');
-              issues++;
-            }
-          }
-          console.log('DP divisor audit: '+issues+' driver(s) to review');
-          "
-
-      - name: "Misplaced FP Detector"
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 2
-        run: node .github/scripts/misplaced-fp-detector.js
-
-      - name: "Diagnostic Auto-Resolver (cross-ref diags → issues/PRs)"
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 15
-        env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
-        run: node .github/scripts/diagnostic-auto-resolver.js
-
-      - name: "Resolution Summary (symptom intelligence)"
-        if: always()
-        continue-on-error: true
-        run: node .github/scripts/resolution-summary.js
-
-      - name: Generate AI Changelog
-        if: always()
-        continue-on-error: true
-        env:
-          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          GH_PAT: ${{ secrets.GH_PAT }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GEMINI_MAX_TIER: "1"
-        run: node .github/scripts/generate-ai-changelog.js
-
-      # ===== DRAFT → TEST (Puppeteer + API fallback) =====
-      - name: Install Puppeteer
-        if: always()
-        continue-on-error: true
-        run: npm install puppeteer --no-save
-
-      - name: "Tier 1: Promote via Browser (Puppeteer)"
-        id: puppeteer
-        if: always()
-        continue-on-error: true
-        timeout-minutes: 5
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run && 'true' || 'false' }}
-        run: node .github/scripts/auto-promote-puppeteer.js
-
-      - name: "Tier 2: Promote via OAuth"
-        id: oauth
-        if: always() && steps.puppeteer.outcome != 'success'
-        continue-on-error: true
-        timeout-minutes: 3
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-          ATHOM_CLIENT_ID: ${{ secrets.ATHOM_CLIENT_ID }}
-          ATHOM_CLIENT_SECRET: ${{ secrets.ATHOM_CLIENT_SECRET }}
-        run: |
-          npm install athom-api --no-save 2>/dev/null || true
-          node .github/scripts/auto-promote-oauth.js
-
-      - name: "Tier 3: Promote via API (PAT)"
-        id: api
-        if: always() && steps.puppeteer.outcome != 'success'
-        continue-on-error: true
-        env:
-          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
-        run: node .github/scripts/auto-publish-draft.js
-
-      - name: "Tier 4: Verify retry (Puppeteer)"
-        if: always() && steps.puppeteer.outcome != 'success' && steps.oauth.outcome != 'success' && steps.api.outcome != 'success'
-        continue-on-error: true
-        timeout-minutes: 5
-        env:
-          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
-          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
-        run: |
-          sleep 30
-          node .github/scripts/auto-promote-puppeteer.js
-
-      - name: Upload promote screenshots
-        if: always()
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
-        with:
-          name: nightly-promote-screenshots
-          path: screenshots/
-          retention-days: 7
-          if-no-files-found: ignore
-
-      - name: Update Architecture Reference
-        if: always()
-        continue-on-error: true
-        run: node .github/scripts/update-architecture.js
-
-      - name: "Pipeline Health Check"
-        if: always()
-        continue-on-error: true
-        run: node .github/scripts/pipeline-health.js
-
-      - name: Commit state and docs
-        if: always()
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # Validate JSON state files before commit
-          for f in .github/state/*.json; do node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" 2>/dev/null || { echo "::warning::Invalid JSON: $f"; git checkout -- "$f" 2>/dev/null; }; done
-          git add .github/state/ docs/ drivers/ lib/ CHANGELOG.md README.md .homeychangelog.json
-          VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
-          FILES=$(git diff --cached --name-only | wc -l)
-          D=$(ls -d drivers/*/ 2>/dev/null | wc -l)
-          F=$(grep -rohE '"_T[A-Za-z0-9_]+"' drivers/*/driver.compose.json 2>/dev/null | sort -uf | wc -l || true)
-          git diff --cached --quiet || git commit -m "v${VER}: ${D} drivers, ${F} FPs — ${FILES} file(s) updated [skip ci]"
-          git pull --rebase origin master || true
-          git push || true
-
-      - name: Upload report
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
-        if: always()
-        with:
-          name: nightly-report
-          path: .github/state/nightly-report.json
-          retention-days: 30
-
-      - name: Upload device report
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v4
-        if: always()
-        with:
-          name: homey-device-report
-          path: .github/state/homey-device-report.json
-          retention-days: 30
-
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          git diff-index --quiet HEAD || git commit -m "auto: weekly maintenance stabilization [skip ci]"
+          git push origin HEAD:master

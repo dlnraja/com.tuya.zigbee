@@ -44,7 +44,7 @@ class DinRailMeterDriver extends BaseZigBeeDriver {
       }
       
       // Register action (already present but keep for consistency)
-      const actionCard = (() => { try { return this._getFlowCard('din_rail_meter_reset_meter', 'action'); } catch(e) { return null; } })();
+      const actionCard = ( () => { try { return this._getFlowCard('din_rail_meter_reset_meter', 'action'); } catch(e) { return null; } } )();
       if (actionCard) {
         actionCard.registerRunListener(async (args, state) => {
           if (args.device && typeof args.device.resetMeter === 'function') {
@@ -62,3 +62,5 @@ class DinRailMeterDriver extends BaseZigBeeDriver {
 }
 
 module.exports = DinRailMeterDriver;
+
+

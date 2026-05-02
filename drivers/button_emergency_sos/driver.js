@@ -25,15 +25,15 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
     this._flowCardsRegistered = true;
 
     try {
-      this._sosFlowCard = (() => { try { return this.homey.flow.getTriggerCard('button_emergency_sos_pressed'); } catch (e) { return null; } })();
+      this._sosFlowCard = ( () => { try { return this.homey.flow.getTriggerCard('button_emergency_sos_pressed'); } catch(e) { return null; } } )();
       if (this._sosFlowCard) {
         this._sosFlowCard.registerRunListener(async (args, state) => {
           return true;
         });
       }
 
-      this._doublePressCard = (() => { try { return this.homey.flow.getTriggerCard('button_emergency_sos_double_pressed'); } catch (e) { return null; } })();
-      this._longPressCard = (() => { try { return this.homey.flow.getTriggerCard('button_emergency_sos_long_pressed'); } catch (e) { return null; } })();
+      this._doublePressCard = ( () => { try { return this.homey.flow.getTriggerCard('button_emergency_sos_double_pressed'); } catch(e) { return null; } } )();
+      this._longPressCard = ( () => { try { return this.homey.flow.getTriggerCard('button_emergency_sos_long_pressed'); } catch(e) { return null; } } )();
       
       this.log('SosEmergencyButtonDriver initialized');
     } catch (e) {
@@ -75,3 +75,5 @@ class SosEmergencyButtonDriver extends ZigBeeDriver {
 }
 
 module.exports = SosEmergencyButtonDriver;
+
+

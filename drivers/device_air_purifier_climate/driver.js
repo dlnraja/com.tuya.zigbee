@@ -24,13 +24,10 @@ class AirPurifierDriver extends ZigBeeDriver {
     this.log('Air Purifier Driver initialized');
     const triggers = ['air_purifier_turned_on', 'air_purifier_turned_off', 'air_purifier_pm25_changed'];
     for (const id of triggers) {
-  
-  
-  
-  
-  
-  
-  } catch (e) { this.error(`Trigger ${id}: ${e.message}`);   }
+      try {
+        // Flow card registration logic was lost during previous corruption
+      } catch (e) { this.error(`Trigger ${id}: ${e.message}`); }
+    }
     try {  const card = null;
       if (card) {
         card.registerRunListener(async (args) => {

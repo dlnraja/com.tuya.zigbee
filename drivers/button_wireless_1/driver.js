@@ -95,7 +95,7 @@ class Button1GangDriver extends ZigBeeDriver {
 
       // Battery trigger
       try {
-        const batteryCard = (() => { try { return this._getFlowCard('battery_alarm_low', 'trigger'); } catch(e) { return null; } })();
+        const batteryCard = ( () => { try { return this._getFlowCard('battery_alarm_low', 'trigger'); } catch(e) { return null; } } )();
         if (batteryCard) {
           batteryCard.registerRunListener(async (args, state) => {
             if (!args.device) return false;
@@ -113,4 +113,6 @@ class Button1GangDriver extends ZigBeeDriver {
 }
 
 module.exports = Button1GangDriver;
+
+
 

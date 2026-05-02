@@ -1129,7 +1129,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
         if (typeof tempCluster.on === 'function') {
           tempCluster.on('attr.measuredValue', (value) => {
-            const temp = value * 100);
+            const temp = value / 100;
             if (temp >= VALIDATION.TEMP_MIN && temp <= VALIDATION.TEMP_MAX) {
               // v5.5.793: Apply calibration offset
               const calibratedTemp = this._applyTempOffset(temp);
@@ -1171,7 +1171,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
         if (typeof humCluster.on === 'function') {
           humCluster.on('attr.measuredValue', (value) => {
-            let hum = value * 100);
+            let hum = value / 100;
             // v5.5.793: Auto-detect divisor for devices reporting 0-1000 scale
             if (hum > VALIDATION.HUMIDITY_AUTO_DIVISOR_THRESHOLD) {
               hum = Math.round(hum);

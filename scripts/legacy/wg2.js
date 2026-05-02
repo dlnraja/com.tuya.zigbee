@@ -1,10 +1,1 @@
-const w=require('./wg1');
-w('wifi_switch','WiFi Switch (Tuya Local)','socket',['onoff']);
-w('wifi_switch_2gang','WiFi 2-Gang Switch','socket',['onoff','onoff.gang2'],{onoff:{title:{en:'Switch 1'}},'onoff.gang2':{title:{en:'Switch 2'}}});
-w('wifi_switch_3gang','WiFi 3-Gang Switch','socket',['onoff','onoff.gang2','onoff.gang3'],{onoff:{title:{en:'S1'}},'onoff.gang2':{title:{en:'S2'}},'onoff.gang3':{title:{en:'S3'}}});
-w('wifi_switch_4gang','WiFi 4-Gang Switch','socket',['onoff','onoff.gang2','onoff.gang3','onoff.gang4'],{onoff:{title:{en:'S1'}},'onoff.gang2':{title:{en:'S2'}},'onoff.gang3':{title:{en:'S3'}},'onoff.gang4':{title:{en:'S4'}}});
-w('wifi_plug','WiFi Smart Plug (Tuya Local)','socket',['onoff','measure_power','meter_power']);
-w('wifi_dimmer','WiFi Dimmer (Tuya Local)','light',['onoff','dim']);
-w('wifi_light','WiFi Light RGBCW (Tuya Local)','light',['onoff','dim','light_hue','light_saturation','light_temperature','light_mode']);
-w('wifi_cover','WiFi Curtain Motor (Tuya Local)','curtain',['windowcoverings_state','windowcoverings_set']);
-w('wifi_thermostat','WiFi Thermostat (Tuya Local)','thermostat',['onoff','target_temperature','measure_temperature']);
+'use strict';
