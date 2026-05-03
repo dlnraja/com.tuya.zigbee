@@ -36,8 +36,12 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZ3290_yyax9ajf"
+    ],
+    "productId": [
+      "TS1201"
+    ],
     "endpoints": {
       "1": {
         "clusters": [

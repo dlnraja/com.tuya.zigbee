@@ -32,8 +32,12 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZ3000_baeiitad"
+    ],
+    "productId": [
+      "TS0207"
+    ],
     "learnmode": {
       "image": "/drivers/water_leak_sensor/assets/learnmode.svg",
       "instruction": {
