@@ -4,10 +4,20 @@ on:
   schedule:
     - cron: '0 2 * * 0' # Sunday at 02:00 UTC
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run (no commit/publish)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
   issues: write
+  pull-requests: write
+
+concurrency:
+  group: nightly-process
+  cancel-in-progress: false
 
 jobs:
   maintenance:
@@ -29,17 +39,42 @@ jobs:
           
       - name: Install dependencies
         run: npm install
-        
+
+      - name: Run String Integrity Gate
+        run: node scripts/maintenance/STRICT_SYNTAX_GUARD.js || true
+
       - name: Run Nightly Auto-Process
         env:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          XIAOMI_MIMO_API_KEY: ${{ secrets.XIAOMI_MIMO_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
         run: node scripts/maintenance/nightly-auto-process.js
-        
+
+      - name: Scrape Forum Messages
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node .github/scripts/forum-ai-analyzer.js --dry-run || true
+
+      - name: Run Diagnostic Auto-Resolver
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT: ${{ secrets.GH_PAT }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+          DRY_RUN: "true"
+        run: node .github/scripts/diagnostic-auto-resolver.js || true
+
+      - name: Validate App
+        run: npx homey app validate --level publish || true
+
       - name: Commit and Push Changes
+        if: inputs.dry_run != true
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -A
-          git diff-index --quiet HEAD || git commit -m "auto: weekly maintenance stabilization [skip ci]"
+          git diff-index --quiet HEAD || git commit -m "auto: weekly maintenance + forum sync + diagnostics [skip ci]"
           git push origin HEAD:master
