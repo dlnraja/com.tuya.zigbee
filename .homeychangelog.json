@@ -71,5 +71,11 @@
   "7.5.5": {
     "en": "Bug fixes and stability improvements"
   },
-  "version": "7.5.7"
+  "version": "7.5.7",
+  "7.5.8": {
+    "en": "Fixed DeviceIdentificationDatabase crash on app init — replace null .getDriver() with Homey API .getDrivers() for proper driver enumeration. This resolves crash loops reported on forum when database tries to build before drivers are loaded.",
+    "nl": "App-initialisatiecrash opgelost in DeviceIdentificationDatabase — null .getDriver() vervangen door Homey API .getDrivers() voor correcte driver-opsomming.",
+    "de": "App-Init-Absturz im DeviceIdentificationDatabase behoben — null .getDriver() durch Homey API .getDrivers() ersetzt.",
+    "fr": "Crash au démarrage résolu dans DeviceIdentificationDatabase — .getDriver() null remplacé par l'API Homey .getDrivers() pour l'énumération correcte des pilotes."
+  }
 }
