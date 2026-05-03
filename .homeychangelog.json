@@ -1,4 +1,8 @@
 {
+  "7.5.7": {
+    "en": "v7.5.7: Critical stabilization & energy estimation. Fixed SourceCredits crash (#302). Added 18 new device fingerprints from community and JohanBendz issues. Created EnergyEstimator.js for smart power estimation without native sensors. Added vibration sensor auto-reset. Fixed BSEED 2-gang support. Stabilized 596 files (0 syntax errors). All 54 GitHub Actions workflows optimized with concurrency groups.",
+    "fr": "v7.5.7 : Stabilisation critique et estimation energie. Fix crash SourceCredits (#302). Ajout 18 nouveaux fingerprints. Creation EnergyEstimator.js pour estimation puissance sans capteur natif. Ajout reset auto vibration sensor. Fix support BSEED 2-gang. 596 fichiers stabilises (0 erreur syntaxe). 54 workflows GitHub Actions optimises."
+  },
   "7.4.11": {
     "en": "v7.4.11: 🚀 MASTER PLAN DEPLOYED - Critical Hotfixes & 70% Size Reduction. Fixed syntax errors in AdvancedAnalytics.js and tuyaUtils.js. Externalized 59,000+ fingerprints to reduce app.json size. Implemented O(1) matching engine. Added unit tests and strict CI validation.",
     "fr": "v7.4.11 : 🚀 DÉPLOIEMENT MASTER PLAN - Correctifs Critiques & Réduction 70% Taille. Fix syntaxe AdvancedAnalytics.js et tuyaUtils.js. Externalisation de 59 000+ empreintes. Nouveau moteur O(1). Ajout tests et validation CI."
