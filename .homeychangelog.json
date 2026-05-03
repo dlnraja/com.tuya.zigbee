@@ -64,5 +64,8 @@
   },
   "5.11.210": {
     "en": "Universal Tuya Zigbee v5.11.210: Stability release - verified syntax integrity on all lib/ files, confirmed SDK3 compliance, 213 drivers operational."
+  },
+  "5.11.211": {
+    "en": "Universal Tuya Zigbee v5.11.211: Fixed DeviceIdentificationDatabase crash on startup (ReferenceError: lastUpdate is not defined). Added crash-proof constructor with try/catch fallback."
   }
 }
