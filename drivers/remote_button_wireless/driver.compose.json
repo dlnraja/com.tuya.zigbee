@@ -88,8 +88,12 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZ3000_tzvbimpq"
+    ],
+    "productId": [
+      "TS0041"
+    ],
     "endpoints": {
       "1": {
         "clusters": [

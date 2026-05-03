@@ -21,9 +21,12 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZE284_8se38w3c"
+      "_TZE284_8se38w3c",
+      "_TZB000_yqjaollc"
     ],
-    "productId": [],
+    "productId": [
+      "TS0201"
+    ],
     "endpoints": {
       "1": {
         "clusters": [

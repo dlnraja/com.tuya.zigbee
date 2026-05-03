@@ -38,8 +38,12 @@
   },
   "subDevices": [],
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZE200_u6x1zyv2"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "learnmode": {
       "image": "/drivers/air_quality_comprehensive/assets/learnmode.svg",
       "instruction": {
