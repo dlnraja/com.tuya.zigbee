@@ -25,6 +25,15 @@ class VibrationSensorDevice extends UnifiedSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
+    // Vibration reset timer (configurable via settings, default 30s)
+    this._vibrationResetMs = 30000;
+    try {
+      const settings = this.getSettings();
+      if (settings && settings.vibration_reset_delay) {
+        this._vibrationResetMs = settings.vibration_reset_delay * 1000;
+      }
+    } catch {}
+    this._vibrationTimer = null;
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([
@@ -63,11 +72,35 @@ class VibrationSensorDevice extends UnifiedSensorBase {
 
     await super.onNodeInit({ zclNode });
     this._registerCapabilityListeners(); // rule-12a injected
-    this.log('[VIBRATION]  Vibration sensor v5.11.47 ready');
+
+    // Auto-reset vibration alarm to idle after delay
+    if (this.hasCapability('alarm_vibration')) {
+      this.registerCapabilityListener('alarm_vibration', async (value) => {
+        if (value === true) {
+          if (this._vibrationTimer) clearTimeout(this._vibrationTimer);
+          this._vibrationTimer = setTimeout(async () => {
+            try {
+              await this.setCapabilityValue('alarm_vibration', false);
+              this.log('[VIBRATION] Auto-reset to idle after', this._vibrationResetMs, 'ms');
+            } catch {}
+          }, this._vibrationResetMs);
+        }
+      });
+    }
+
+    this.log('[VIBRATION]  Vibration sensor v7.5.8 ready (auto-reset:', this._vibrationResetMs, 'ms)');
   }
 
 
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    if (changedKeys.includes('vibration_reset_delay')) {
+      this._vibrationResetMs = (newSettings.vibration_reset_delay || 30) * 1000;
+      this.log('[VIBRATION] Reset delay updated to', this._vibrationResetMs, 'ms');
+    }
+  }
+
   async onDeleted() {
+    if (this._vibrationTimer) clearTimeout(this._vibrationTimer);
     this.log('Device deleted, cleaning up');
   }
 
