@@ -28,8 +28,12 @@
     "large": "drivers/wall_switch_1gang_1way/assets/images/large.png"
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZ3000_aetquff4"
+    ],
+    "productId": [
+      "TS0011"
+    ],
     "endpoints": {
       "1": {
         "clusters": [

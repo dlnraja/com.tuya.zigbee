@@ -16,14 +16,18 @@
     "measure_maintenance_score"
   ],
   "zigbee": {
-    "productId": [],
+    "productId": [
+      "TS0001"
+    ],
     "learnmode": {
       "image": "/drivers/switch_2gang/assets/learnmode.svg",
       "instruction": {
         "en": "Turn the switch on/off 3 times quickly"
       }
     },
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_TZ3000_gjrubzje"
+    ],
     "endpoints": {
       "1": {
         "clusters": [

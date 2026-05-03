@@ -23,8 +23,12 @@
     "zigbee"
   ],
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZE204_xalsoe3m"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
