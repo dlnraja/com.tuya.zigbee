@@ -53,8 +53,12 @@
     "large": "drivers/curtain_motor/assets/images/large.png"
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZE200_4hbx5cor"
+    ],
+    "productId": [
+      "TS0601"
+    ],
     "endpoints": {
       "1": {
         "clusters": [
