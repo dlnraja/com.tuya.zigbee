@@ -4,6 +4,28 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
+## v5.11.211 (2026-05-03)
+
+### Critical Fixes
+- Fixed SourceCredits crash on startup (MODULE_NOT_FOUND)
+- Fixed getDeviceConditionCard SDK3 error in all drivers
+- Added validate-driver-manifests.js for CI consistency
+
+### Device Support
+- Added BSEED 2-gang switch (_TZ3000_l9brjwau)
+- Added vibration sensor auto-reset to idle (configurable delay)
+- Added 6 fingerprints from user suggestions
+
+### Stability
+- 596 files stabilized (0 syntax errors)
+- 400+ maintenance scripts neutralized
+
+### CI/CD
+- Added publish-stable.yml for automatic test deployment
+- All GitHub Actions workflows optimized with concurrency groups
+
+---
+
 ## v5.11.209 (2026-04-29)
 
 Universal Tuya Zigbee app v5.11.208: Fixed app ID.
