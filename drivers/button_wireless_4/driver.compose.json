@@ -72,8 +72,12 @@
     "mains": true
   },
   "zigbee": {
-    "manufacturerName": [],
-    "productId": [],
+    "manufacturerName": [
+      "_TZ3000_vp6clf9d"
+    ],
+    "productId": [
+      "TS0044"
+    ],
     "learnmode": {
       "image": "/drivers/button_wireless_4/assets/learnmode.svg",
       "instruction": {
