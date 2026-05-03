@@ -8,6 +8,9 @@ on:
     branches: [master, stable-v5]
     paths: ['lib/**', 'drivers/**', 'app.js', 'app.json']
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   syntax-check:
     runs-on: ubuntu-latest
