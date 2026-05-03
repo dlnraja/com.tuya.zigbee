@@ -12,6 +12,9 @@ on:
         type: boolean
         default: true
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   # 1. Verification de l'accessibilité et de la syntaxe
   verify-and-lint:

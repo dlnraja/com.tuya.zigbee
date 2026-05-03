@@ -12,6 +12,9 @@ on:
         type: boolean
         default: false
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   validate:
     name: 🔍 Universal Validation (SDK 3 Strict)

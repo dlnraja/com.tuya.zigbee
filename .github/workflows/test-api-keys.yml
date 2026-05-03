@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '0 0 * * 0' # Weekly on Sunday
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   test-apis:
     name: Check AI API Keys
