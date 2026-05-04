@@ -1,5 +1,21 @@
-'use strict';
-const initStartTime = Date.now();
+const Homey = require('homey');
+
+// v7.5.8: Global Flow Card Helper for SDK3 compatibility
+// Fixes "this._getFlowCard is not a function" in legacy-style drivers
+Homey.Driver.prototype._getFlowCard = function(id, type) {
+  try {
+    if (type === 'trigger') return this.homey.flow.getDeviceTriggerCard(id);
+    if (type === 'condition') return this.homey.flow.getDeviceConditionCard(id);
+    if (type === 'action') return this.homey.flow.getDeviceActionCard(id);
+    // Fallback for generic calls
+    return this.homey.flow.getDeviceTriggerCard(id) 
+        || this.homey.flow.getDeviceConditionCard(id) 
+        || this.homey.flow.getDeviceActionCard(id);
+  } catch (e) {
+    if (this.error) this.error(`[FLOW-SAFE] Failed to get flow card ${id}: ${e.message}`);
+    return null;
+  }
+};
 
 const { safeDivide, safeMultiply, safeParse } = require('./lib/utils/tuyaUtils.js');
 
@@ -22,7 +38,8 @@ try {
 const { EventEmitter } = require('events');
 EventEmitter.defaultMaxListeners = 50;
 
-const Homey = require('homey');
+
+
 const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
 const FlowCardManager = require('./lib/flow/FlowCardManager');
 const UniversalFlowCardLoader = require('./lib/flow/UniversalFlowCardLoader');

@@ -200,6 +200,17 @@
       }
     },
     
+    "water-valve-dual": {
+      "name": "Dual Water Valve",
+      "description": "Two-way motorized water valve controller",
+      "capabilities": ["onoff", "onoff.valve2"],
+      "traits": ["OnOffTrait", "MultiGangTrait"],
+      "dp_mapping": {
+        "onoff": { "dp": 1, "type": "bool" },
+        "onoff.valve2": { "dp": 2, "type": "bool" }
+      }
+    },
+    
     "button-1": {
       "name": "Wireless Button 1-Key",
       "description": "Single button remote",
@@ -236,7 +247,7 @@
     "sensors/contact": ["contact-basic"],
     "sensors/safety": ["water-leak"],
     "climate": ["thermostat-basic"],
-    "motors": ["curtain-motor"],
+    "motors": ["curtain-motor", "water-valve-dual"],
     "buttons": ["button-1", "button-4"]
   }
 }

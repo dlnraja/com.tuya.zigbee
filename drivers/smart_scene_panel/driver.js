@@ -23,31 +23,47 @@ class SmartScenePanelDriver extends ZigBeeDriver {
 
     this.log('SmartScenePanelDriver initialized');
 
-    // Scene activated trigger with scene filter
-      const sceneTrigger =
-
-    sceneTrigger.registerRunListener(async (args, state) => {
-      return !args.scene || args.scene === state.scene;
-      
-  
-  
-  });
-
-    // Switch changed triggers (1-4)
-    for (let g = 1; g <= 4; g++) {
-      const card =
-      this._getFlowCard(`smart_scene_panel_switch_${g}_changed`, 'trigger');
-      card.registerRunListener(async () => true);
+    // Register scene trigger card safely
+    try {
+      const sceneTrigger = this.homey.flow.getTriggerCard('smart_scene_panel_scene_activated');
+      if (sceneTrigger) {
+        sceneTrigger.registerRunListener(async (args, state) => {
+          return !args.scene || args.scene === state.scene;
+        });
+      }
+    } catch (err) {
+      this.error('[FLOW] Failed to register scene_activated trigger:', err.message);
     }
 
-    // Action cards: set switch
+    // Switch changed triggers (1-4) - defensive registration
     for (let g = 1; g <= 4; g++) {
-      const card =
-      this._getFlowCard(`smart_scene_panel_set_switch_${g}`, 'action');
-      card.registerRunListener(async (args, state) => {
-        await args.device.triggerCapabilityListener(`onoff.gang${g}`, args.state);
-        await args.device.sendDP(23 + g, 1, args.state ? 1 : 0);
-      });
+      try {
+        const cardId = `smart_scene_panel_switch_${g}_changed`;
+        const card = this.homey.flow.getTriggerCard(cardId);
+        if (card) card.registerRunListener(async () => true);
+      } catch (err) {
+        this.error(`[FLOW] Failed to register switch_${g}_changed:`, err.message);
+      }
+    }
+
+    // Action cards: set switch - defensive registration
+    for (let g = 1; g <= 4; g++) {
+      try {
+        const cardId = `smart_scene_panel_set_switch_${g}`;
+        const card = this.homey.flow.getActionCard(cardId);
+        if (card) {
+          card.registerRunListener(async (args, state) => {
+            try {
+              await args.device.triggerCapabilityListener(`onoff.gang${g}`, args.state);
+              await args.device.sendDP(23 + g, 1, args.state ? 1 : 0);
+            } catch (e) {
+              this.error('[FLOW] set_switch action failed:', e.message);
+            }
+          });
+        }
+      } catch (err) {
+        this.error(`[FLOW] Failed to register set_switch_${g}:`, err.message);
+      }
     }
 
     this.log('SmartScenePanelDriver flow cards registered');
@@ -55,4 +71,3 @@ class SmartScenePanelDriver extends ZigBeeDriver {
 }
 
 module.exports = SmartScenePanelDriver;
-

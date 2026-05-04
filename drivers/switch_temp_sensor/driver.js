@@ -1,8 +1,8 @@
 'use strict';
 
-const Homey = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class SwitchTempSensorDriver extends Homey.Driver {
+class SwitchTempSensorDriver extends ZigBeeDriver {
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;

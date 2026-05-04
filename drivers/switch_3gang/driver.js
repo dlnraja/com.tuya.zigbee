@@ -2,7 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class TuyaZigbeeDriver extends ZigBeeDriver {
+class TuyaZigbee3GangDriver extends ZigBeeDriver {
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -21,24 +21,32 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
   }
 
   _registerFlowCards() {
+    const safeGet = (type, id) => {
+      try {
+        return type === 'condition' 
+          ? this.homey.flow.getConditionCard(id) 
+          : this.homey.flow.getActionCard(id);
+      } catch (e) { return null; }
+    };
+
     const P = 'switch_3gang';
     
-    // TRIGGERS (Ensure they are accessible)
+    // TRIGGERS
     ['gang1', 'gang2', 'gang3'].forEach(gang => {
       ['turned_on', 'turned_off', 'physical_on', 'physical_off', 'scene'].forEach(type => {
         try {
           const id = type === 'scene' ? `${P}_${gang}_scene` : 
-                    type.startsWith('physical') ? `${P}_physical_${gang}_${type.split('_' )[1]}` : `${P}_${gang}_${type}`;
-          this._getFlowCard(id, 'trigger');
+                    type.startsWith('physical') ? `${P}_physical_${gang}_${type.split('_')[1]}` : `${P}_${gang}_${type}`;
+          this.homey.flow.getTriggerCard(id);
         } catch (e) {}
       });
-      });
+    });
 
     // CONDITIONS
     ['gang1', 'gang2', 'gang3'].forEach((gang, idx) => {
       try {
         const id = `${P}_${gang}_is_on`;
-        const card = this._getFlowCard(id, 'condition');
+        const card = safeGet('condition', id);
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) return false;
@@ -57,7 +65,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
         ['turn_on', 'turn_off', 'toggle'].forEach(action => {
           try {
             const id = `${P}_${action}_${gang}`;
-            const card = this._getFlowCard(id, 'action');
+            const card = safeGet('action', id);
             if (card) {
               card.registerRunListener(async (args) => {
                 if (!args.device) return false;
@@ -74,7 +82,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     // SETTINGS ACTIONS
     [{ id: 'set_backlight', fn: 'setBacklightMode' }, { id: 'set_scene_mode', fn: 'setSceneMode' }].forEach(act => {
       try {
-        const card = this._getFlowCard(`${P}_${act.id}`, 'action');
+        const card = safeGet('action', `${P}_${act.id}`);
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) return false;
@@ -90,4 +98,4 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
   }
 }
 
-module.exports = TuyaZigbeeDriver;
+module.exports = TuyaZigbee3GangDriver;

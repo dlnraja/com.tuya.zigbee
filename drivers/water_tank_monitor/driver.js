@@ -1,12 +1,12 @@
 'use strict';
 
-const Homey = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
  * Liquid Level Sensor Driver
  * v7.4.11: Fixed corrupted flow card registration
  */
-class WaterTankMonitorDriver extends Homey.Driver {
+class WaterTankMonitorDriver extends ZigBeeDriver {
 
   async onInit() {
     await super.onInit();

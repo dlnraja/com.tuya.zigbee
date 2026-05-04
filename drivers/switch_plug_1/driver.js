@@ -5,7 +5,6 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 class SwitchPlug1Driver extends ZigBeeDriver {
   /**
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
    */
   getDeviceById(id) {
     try {
@@ -16,27 +15,36 @@ class SwitchPlug1Driver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 
     this.log('SwitchPlug1Driver initialized');
-    // v5.13.3: Flow card handlers
-    const r=(i,fn)=>{try{this.homey.flow.getActionCard(i).registerRunListener(fn);
-  
-  
-  
-  
-  
-  
-  }catch(e){this.log('[Flow]',i,e.message);}};
-    r('switch_plug_1_turn_on',async({device})=>{await device.triggerCapabilityListener('onoff',true);return true;});
-    r('switch_plug_1_turn_off',async({device})=>{await device.triggerCapabilityListener('onoff',false);return true;});
-    r('switch_plug_1_toggle',async({device})=>{const v=device.getCapabilityValue('onoff');await device.triggerCapabilityListener('onoff',!v);return true;});
+    this._registerFlowCards();
   }
 
+  _registerFlowCards() {
+    const P = 'switch_plug_1';
+
+    // ACTIONS
+    ['turn_on', 'turn_off', 'toggle'].forEach(action => {
+      try {
+        const id = `${P}_${action}`;
+        const card = this._getFlowCard(id, 'action');
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            let val = action === 'turn_on' ? true : (action === 'turn_off' ? false : !args.device.getCapabilityValue('onoff'));
+            await args.device.triggerCapabilityListener('onoff', val);
+            return true;
+          });
+        }
+      } catch (err) { this.error(`Action ${action} failed: ${err.message}`); }
+    });
+
+    this.log('[FLOW] Plug 1 flow cards registered');
+  }
 }
 
 module.exports = SwitchPlug1Driver;

@@ -84,6 +84,9 @@ jobs:
       - name: ⚙️ Run Auto-Ganger
         run: node scripts/automation/generate-subdevices.js
 
+      - name: ⚙️ Run Intelligent Scraper
+        run: node scripts/automation/intelligent-scraper.js
+
       - name: 🖼️ FLEET-WIDE IMAGE STABILIZATION
         run: node scripts/maintenance/ensure-500x500-images.js
       

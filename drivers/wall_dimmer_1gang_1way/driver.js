@@ -1,8 +1,8 @@
 'use strict';
 
-const Homey = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class WallDimmer1Gang1WayDriver extends Homey {
+class WallDimmer1Gang1WayDriver extends ZigBeeDriver {
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -16,17 +16,11 @@ class WallDimmer1Gang1WayDriver extends Homey {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-    this.log('Wall Dimmer 1-Gang 1-Way Driver has been initialized');
+    this.log('WallDimmer1Gang1WayDriver v7.5.1 initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // TRIGGERS
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-
     // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('wall_dimmer_1gang_1way_is_on');
@@ -100,4 +94,3 @@ class WallDimmer1Gang1WayDriver extends Homey {
 }
 
 module.exports = WallDimmer1Gang1WayDriver;
-

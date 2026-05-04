@@ -1,12 +1,11 @@
 'use strict';
-const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class SwitchDimmer1GangDriver extends ZigBeeDriver {
   /**
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
    */
   getDeviceById(id) {
     try {
@@ -24,80 +23,82 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
 
     this.log('Switch Dimmer 1-Gang Driver initialized');
     this._registerFlowCards();
-  
-  
-  
-  
-  
-  
-  
   }
 
   _registerFlowCards() {
-    const triggers = [
-      'switch_dimmer_1gang_turned_on',
-      'switch_dimmer_1gang_turned_off',
-      'switch_dimmer_1gang_dim_changed',
-      'switch_dimmer_1gang_brightness_increased',
-      'switch_dimmer_1gang_brightness_decreased'
-    ];
-    for (const id of triggers) {
+    const safeGet = (type, id) => {
       try {
+        return type === 'condition' 
+          ? this.homey.flow.getConditionCard(id) 
+          : this.homey.flow.getActionCard(id);
+      } catch (e) { return null; }
+    };
 
-        this.log(`Trigger: ${id}`);
-      } catch (err) {
-        this.error(`Failed trigger ${id}: ${err.message}`);
-      }
-    }
+    const P = 'switch_dimmer_1gang';
 
-    // Action: set brightness
+    // CONDITIONS
     try {
-      const card = this.homey.flow.getActionCard('Action set_brightness failed:');
-      if (card) card.registerRunListener(async (args) => {
+      const card = safeGet('condition', `${P}_is_on`);
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const dim = safeParse(args.brightness, 100);
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition is_on failed: ${err.message}`); }
+
+    // ACTIONS: set_brightness
+    try {
+      const card = safeGet('action', `${P}_set_brightness`);
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const dim = safeParse(args.brightness || args.value, 100) / 100;
           await args.device.triggerCapabilityListener('dim', dim);
           return true;
         });
-      this.log('Action: set_brightness');
-    } catch (err) {
-      this.error('Action set_brightness failed:', err.message);
-    }
+      }
+    } catch (err) { this.error(`Action set_brightness failed: ${err.message}`); }
 
-    // Action: turn on
+    // ACTIONS: turn_on
     try {
-      const card = this.homey.flow.getActionCard('Action set_brightness failed:');
-      if (card) card.registerRunListener(async (args) => {
+      const card = safeGet('action', `${P}_turn_on`);
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
-          await args.device.setCapabilityValue('onoff', true).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
-    } catch (err) { this.error('Action turn_on failed:', err.message); }
+      }
+    } catch (err) { this.error(`Action turn_on failed: ${err.message}`); }
 
-    // Action: turn off
+    // ACTIONS: turn_off
     try {
-      const card = this.homey.flow.getActionCard('Action set_brightness failed:');
-      if (card) card.registerRunListener(async (args) => {
+      const card = safeGet('action', `${P}_turn_off`);
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
-          await args.device.setCapabilityValue('onoff', false).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
-    } catch (err) { this.error('Action turn_off failed:', err.message); }
+      }
+    } catch (err) { this.error(`Action turn_off failed: ${err.message}`); }
 
-    // Action: toggle
+    // ACTIONS: toggle
     try {
-      const card = this.homey.flow.getActionCard('Action set_brightness failed:');
-      if (card) card.registerRunListener(async (args) => {
+      const card = safeGet('action', `${P}_toggle`);
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const cur = args.device.getCapabilityValue('onoff');
-          await args.device.triggerCapabilityListener('onoff', !cur);
+          const current = args.device.getCapabilityValue('onoff');
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
         });
-    } catch (err) { this.error('Action toggle failed:', err.message); }
+      }
+    } catch (err) { this.error(`Action toggle failed: ${err.message}`); }
+
+    this.log('[FLOW] Dimmer flow cards registered');
   }
 }
 
 module.exports = SwitchDimmer1GangDriver;
-

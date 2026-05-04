@@ -17,7 +17,7 @@ class VibrationSensorDriver extends ZigBeeDriver {
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 
-    this.log('VibrationSensorDriver initialized');
+    this.log('VibrationSensorDriver v7.5.1 initialized');
     this._registerFlowCards();
   }
 
@@ -28,7 +28,7 @@ class VibrationSensorDriver extends ZigBeeDriver {
     conditions.forEach(cond => {
       try {
         const id = `${P}_${cond}`;
-        const card = this._getFlowCard(id, 'condition');
+        const card = this.homey.flow.getConditionCard(id);
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) return false;

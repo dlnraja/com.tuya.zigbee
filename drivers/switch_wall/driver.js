@@ -2,7 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class TuyaZigbeeDriver extends ZigBeeDriver {
+class TuyaZigbeeWallSwitchDriver extends ZigBeeDriver {
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -16,38 +16,35 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-    this.log('Tuya Zigbee 1-Gang Switch Driver v5.5.570 initialized');
+    this.log('Tuya Zigbee 1-Gang Wall Switch Driver initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // TRIGGERS
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
+    const safeGet = (type, id) => {
+      try {
+        return type === 'condition' 
+          ? this.homey.flow.getConditionCard(id) 
+          : this.homey.flow.getActionCard(id);
+      } catch (e) { return null; }
+    };
+
+    const P = 'switch_wall_switch_1gang';
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('switch_wall_hybrid_switch_1gang_is_on');
+      const card = safeGet('condition', `${P}_is_on`);
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
-    } catch (err) { this.error(`Condition switch_wall_hybrid_switch_1gang_is_on: ${err.message}`); }
+    } catch (err) { this.error(`Condition ${P}_is_on failed: ${err.message}`); }
 
-    // ACTIONS
+    // ACTIONS: turn_on
     try {
-      const card = this.homey.flow.getActionCard('switch_wall_hybrid_switch_1gang_turn_on');
+      const card = safeGet('action', `${P}_turn_on`);
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -55,10 +52,11 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_hybrid_switch_1gang_turn_on: ${err.message}`); }
+    } catch (err) { this.error(`Action ${P}_turn_on failed: ${err.message}`); }
 
+    // ACTIONS: turn_off
     try {
-      const card = this.homey.flow.getActionCard('switch_wall_hybrid_switch_1gang_turn_off');
+      const card = safeGet('action', `${P}_turn_off`);
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -66,10 +64,11 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_hybrid_switch_1gang_turn_off: ${err.message}`); }
+    } catch (err) { this.error(`Action ${P}_turn_off failed: ${err.message}`); }
 
+    // ACTIONS: toggle
     try {
-      const card = this.homey.flow.getActionCard('switch_wall_hybrid_switch_1gang_toggle');
+      const card = safeGet('action', `${P}_toggle`);
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -78,79 +77,37 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action switch_wall_hybrid_switch_1gang_toggle: ${err.message}`); }
+    } catch (err) { this.error(`Action ${P}_toggle failed: ${err.message}`); }
 
-    try {
-      const card = this.homey.flow.getActionCard('switch_wall_hybrid_switch_1gang_set_backlight');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
-          return true;
-        });
-      }
-    } catch (err) { this.error(`Action switch_wall_hybrid_switch_1gang_set_backlight: ${err.message}`); }
+    // SETTINGS ACTIONS
+    const settingsActions = [
+      { id: 'set_backlight', fn: 'setBacklightMode' },
+      { id: 'set_backlight_color', fn: 'setBacklightColor' },
+      { id: 'set_backlight_brightness', fn: 'setBacklightBrightness' },
+      { id: 'set_countdown', fn: 'setCountdown' },
+      { id: 'set_child_lock', fn: 'setChildLock' },
+      { id: 'set_scene_mode', fn: 'setSceneMode' }
+    ];
 
-    try {
-      const card = this.homey.flow.getActionCard('switch_wall_hybrid_switch_1gang_set_backlight_color');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
-          return true;
-        });
-      }
-    } catch (err) { this.error(`Action switch_wall_hybrid_switch_1gang_set_backlight_color: ${err.message}`); }
+    settingsActions.forEach(act => {
+      try {
+        const card = safeGet('action', `${P}_${act.id}`);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            if (typeof args.device[act.fn] === 'function') {
+              await args.device[act.fn](args.mode || args.value);
+              return true;
+            }
+            this.log(`[FLOW] Device missing method: ${act.fn}`);
+            return false;
+          });
+        }
+      } catch (err) { this.error(`Action ${P}_${act.id} failed: ${err.message}`); }
+    });
 
-    try {
-      const card = this.homey.flow.getActionCard('switch_wall_hybrid_switch_1gang_set_backlight_brightness');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
-          return true;
-        });
-      }
-    } catch (err) { this.error(`Action switch_wall_hybrid_switch_1gang_set_backlight_brightness: ${err.message}`); }
-
-    try {
-      const card = this.homey.flow.getActionCard('switch_wall_hybrid_switch_1gang_set_countdown');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          // Generic action handler
-          this.log('[FLOW] Action switch_wall_hybrid_switch_1gang_set_countdown triggered for', args.device.getName());
-          return true;
-        });
-      }
-    } catch (err) { this.error(`Action switch_wall_hybrid_switch_1gang_set_countdown: ${err.message}`); }
-
-    try {
-      const card = this.homey.flow.getActionCard('switch_wall_hybrid_switch_1gang_set_child_lock');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          // Generic action handler
-          this.log('[FLOW] Action switch_wall_hybrid_switch_1gang_set_child_lock triggered for', args.device.getName());
-          return true;
-        });
-      }
-    } catch (err) { this.error(`Action switch_wall_hybrid_switch_1gang_set_child_lock: ${err.message}`); }
-
-    try {
-      const card = this.homey.flow.getActionCard('switch_wall_hybrid_switch_1gang_set_scene_mode');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          if (typeof args.device.setSceneMode === 'function') await args.device.setSceneMode(args.mode || args.value);
-          return true;
-        });
-      }
-    } catch (err) { this.error(`Action switch_wall_hybrid_switch_1gang_set_scene_mode: ${err.message}`); }
-
-    this.log('[FLOW] All flow cards registered');
+    this.log('[FLOW] Wall switch flow cards registered');
   }
 }
 
-module.exports = TuyaZigbeeDriver;
-
+module.exports = TuyaZigbeeWallSwitchDriver;

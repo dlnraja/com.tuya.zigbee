@@ -1,8 +1,8 @@
 'use strict';
 
-const Homey = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class WeatherStationOutdoorDriver extends Homey.Driver {
+class WeatherStationOutdoorDriver extends ZigBeeDriver {
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
