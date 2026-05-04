@@ -212,6 +212,91 @@ Un appareil Zigbee est reconnu **si et seulement si** le couple `manufacturerNam
 
 **Prochaines étapes** : Implémenter L9-L11, enrichir le catalogue de drivers via scraping hebdomadaire Blakadder+Z2M+ZHA, optimiser l'orchestration IA avec les 89 sources de référence.
 
+---
+
+## Session du 4 mai 2026 - Audit de Conformité & Protection des Tokens
+
+### 🔒 RÈGLES DE PROTECTION DES TOKENS (AJOUTÉES)
+
+| Règle | Description | Statut |
+|-------|-------------|--------|
+| **T1** | JAMAIS de tokens dans le code source commité | ✅ Conforme |
+| **T2** | Tous les tokens passent par `${{ secrets.* }}` dans les YMLs | ✅ Conforme |
+| **T3** | GOOGLE_API_KEY, NVIDIA_API_KEY, GH_PAT sont les seuls secrets utilisés | ✅ Conforme |
+| **T4** | Aucun token hardcodé dans les scripts JS | ✅ Conforme |
+| **T5** | Pas de `.env` commité (vérifié : aucun `.env` dans le repo) | ✅ Conforme |
+
+### 📊 AUDIT DES WORKFLOWS GITHUB ACTIONS
+
+| Workflow | Cron | Fréquence | Conformité |
+|----------|------|-----------|------------|
+| `daily-everything.yml` | `0 3 * * 1` | Lundi (hebdo) | ✅ Conforme |
+| `daily-maintenance.yml` | `0 3 * * 1` | Lundi (hebdo) | ✅ Conforme |
+| `nightly-auto-process.yml` | `0 2 * * 1` | Lundi (hebdo) | ✅ Conforme |
+| `tuya-automation-hub.yml` | `0 4 * * 1,4` | Lun + Jeu (2x/sem) | ✅ Conforme |
+| `gmail-diagnostics.yml` | `0 22 * * 0` | Dimanche (hebdo) | ✅ Conforme |
+| `unified-maintenance.yml` | `0 3 * * 1` | Lundi (hebdo) | ✅ Conforme |
+| `sunday-master.yml` | `0 4 * * 0` | Dimanche (hebdo) | ✅ Conforme |
+| `weekly-fingerprint-sync.yml` | `0 4 * * 0` | Dimanche (hebdo) | ✅ Conforme |
+| `sync-changelog-readme.yml` | `0 8 * * 1` | Lundi (hebdo) | ✅ Conforme |
+| `sync-johan.yml` | `0 5 * * 1` | Lundi (hebdo) | ✅ Conforme |
+| `validate.yml` | `push + PR` | Sur événement | ✅ Conforme |
+| `syntax-validation.yml` | `push + PR` | Sur événement | ✅ Conforme |
+| `diagnostic-anonymizer.yml` | `workflow_dispatch` | Manuel | ✅ Conforme |
+| `upstream-auto-triage.yml` | `workflow_dispatch` | Manuel | ✅ Conforme |
+
+**Conclusion** : Aucun workflow quotidien superflu. Tous sont hebdomadaires, bi-hebdomadaires, ou sur événement. ✅
+
+### 🔍 VÉRIFICATION FORUM (READ-ONLY)
+
+| Fichier | Action | Risque |
+|---------|--------|--------|
+| `forum-ai-analyzer.js` | Lecture seule des topics | ✅ Aucun |
+| `GITHUB_RESPONSES_*.md` | Réponses manuelles documentées | ✅ Aucun |
+| `FORUM_RESPONSES.md` | Template de réponse manuel | ✅ Aucun |
+
+**Conclusion** : Aucun code n'écrit automatiquement sur le forum Homey. Toute interaction est manuelle et documentée. ✅
+
+### 🔍 VÉRIFICATION DISTINCTION GITHUB vs HOMEY APP
+
+| Vérification | Résultat |
+|--------------|----------|
+| `app.js` contient du code GitHub Actions ? | ❌ Aucun |
+| `app.js` importe des modules GitHub-only ? | ❌ Aucun |
+| `package.json` dépendances runtime vs dev séparées ? | ✅ Oui |
+| Scripts dans `lib/` utilisent `process.env.GITHUB_*` ? | ❌ Aucun |
+| `.homeyignore` exclut `.github/` du bundle ? | ✅ Oui |
+| `.homeyignore` exclut `scripts/` du bundle ? | ✅ Oui |
+
+**Conclusion** : Le code exécuté dans l'App Homey est strictement séparé du code d'automatisation GitHub Actions. Aucun leak. ✅
+
+### 🤖 AUDIT AI-HELPER (13 PROVIDERS)
+
+| Vérification | Résultat |
+|--------------|----------|
+| Rate limits configurés par provider ? | ✅ 13/13 |
+| Circuit breakers (3 échecs → pause 5 min) ? | ✅ Configuré |
+| Retry avec backoff exponentiel ? | ✅ 3 tentatives max |
+| Quota daily max par provider ? | ✅ Configuré |
+| Rotation automatique si quota épuisé ? | ✅ Oui |
+| Cache pour éviter appels redondants ? | ✅ 30 min TTL |
+| GOOGLE_API_KEY → Gemini uniquement ? | ✅ Confirmé |
+| NVIDIA_API_KEY → NIM uniquement ? | ✅ Confirmé |
+
+**Conclusion** : Protection anti-boucle infinie et anti-surfacturation robuste. ✅
+
+### 📋 CONFORMITÉ GLOBALE
+
+| Catégorie | Score |
+|-----------|-------|
+| Protection des tokens | 100% |
+| Fréquence des workflows | 100% hebdo+ |
+| Forum read-only | 100% |
+| Distinction GitHub/Homey | 100% |
+| AI rate limits | 100% |
+
+**AUDIT FINAL** : ✅✅✅✅✅ Aucune anomalie détectée. Toutes les règles de sécurité et de protection des tokens sont respectées. Les workflows sont optimisés pour minimiser la consommation de ressources GitHub Actions sans sacrifier la maintenance.
+
 
 ## Session du 3 mai 2026 - Investigations croisees
 
