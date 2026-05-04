@@ -5,7 +5,7 @@ const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDev
 const DP = { state: 1, pm25: 2, mode: 3, speed: 4, filter: 5, childLock: 7, brightness: 8 };
 
 class AirPurifierDevice extends TuyaSpecificClusterDevice {
-  async onNodeInit({ zclNode }) {
+  async onNodeInit() {
     this.log('Air Purifier init...');
     this._lastOnoff = null;
     this._lastPm25 = null;
@@ -23,7 +23,9 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
   }
 
   handleTuyaDataReport(data) {
-    if (!data || data.dp == null) return;
+    if (!data || data.dp == null) {
+      return;
+    }
     const v = data.data ?? data.value;
 
     if (data.dp === DP.state) {
@@ -33,7 +35,9 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
         this.setCapabilityValue('onoff', s).catch(() => {});
         const id = s ? 'air_purifier_turned_on' : 'air_purifier_turned_off';
         const card = this.homey.app?._safeGetTriggerCard?.(id);
-        if (card) card.trigger(this, {}, {}).catch(() => {});
+        if (card) {
+          card.trigger(this, {}, {}).catch(() => {});
+        }
       }
     } else if (data.dp === DP.pm25) {
       const pm = safeParse(v);
@@ -41,7 +45,9 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
         this._lastPm25 = pm;
         this.setCapabilityValue('measure_pm25', pm).catch(() => {});
         const card = this.homey.app?._safeGetTriggerCard?.('air_purifier_pm25_changed');
-        if (card) card.trigger(this, { pm25: pm }, {}).catch(() => {});
+        if (card) {
+          card.trigger(this, { pm25: pm }, {}).catch(() => {});
+        }
       }
     } else if (data.dp === DP.speed) {
       const spd = safeParse(v);
