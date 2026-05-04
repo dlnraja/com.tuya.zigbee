@@ -1,59 +1,7 @@
 {
-  "timestamp": "2026-04-28T10:58:35.961Z",
+  "timestamp": "2026-05-04T10:57:11.249Z",
   "devices": [],
-  "unmatchedFPs": [
-    {
-      "fp": "_TZE200_u6x1zyv2",
-      "source": "gmail",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zig"
-    },
-    {
-      "fp": "_TZE284_hdml1aav",
-      "source": "gmail",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zig"
-    },
-    {
-      "fp": "_TZB000_yqjaollc",
-      "source": "gmail",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostic"
-    },
-    {
-      "fp": "_TZ3000_tzvbimpq",
-      "source": "gmail",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zig"
-    }
-  ],
-  "errors": [
-    {
-      "err": "IAS Zone enrollment incomplete. Remove and re-add device if sensor not respondin",
-      "source": "gmail"
-    },
-    {
-      "err": "this.homey.flow.getDeviceConditionCard is not a function",
-      "source": "gmail"
-    },
-    {
-      "err": "Initializing Driver air_quality_comprehensive: TypeError: this.homey.flow.getDev",
-      "source": "gmail"
-    },
-    {
-      "err": "Initializing Driver din_rail_meter: TypeError: this.homey.flow.getDeviceConditio",
-      "source": "gmail"
-    },
-    {
-      "err": "message for rain sensor:",
-      "source": "gmail"
-    },
-    {
-      "err": "on contact sensor for me !",
-      "source": "gmail"
-    },
-    {
-      "err": "could not get device by ID.",
-      "source": "gmail"
-    }
-  ],
-  "sources": {
-    "gmail": 56
-  }
+  "unmatchedFPs": [],
+  "errors": [],
+  "sources": {}
 }
