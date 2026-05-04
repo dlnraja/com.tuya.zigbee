@@ -1,0 +1,1338 @@
+{
+  "timestamp": "2026-05-04T05:20:11.468Z",
+  "pidConflicts": [
+    {
+      "pid": "TS0002",
+      "drivers": [
+        "switch",
+        "switch_2gang",
+        "wall_switch_2gang_1way"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "TS0201",
+      "drivers": [
+        "air_quality_comprehensive",
+        "temphumidsensor"
+      ],
+      "classes": [
+        "sensor"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "TS0001",
+      "drivers": [
+        "switch",
+        "wall_switch_1gang_1way"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "TS0003",
+      "drivers": [
+        "switch",
+        "wall_switch_3gang_1way"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "TS011F",
+      "drivers": [
+        "switch",
+        "switch_2gang"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    },
+    {
+      "pid": "TS0011",
+      "drivers": [
+        "switch",
+        "wall_switch_1gang_1way"
+      ],
+      "classes": [
+        "socket"
+      ],
+      "crossClass": false,
+      "severity": "low"
+    }
+  ],
+  "mfrConflicts": [
+    {
+      "mfr": "_TZ3000_l9brjwau",
+      "drivers": [
+        "switch_2gang",
+        "wall_switch_2gang_1way"
+      ],
+      "sharedPids": [
+        "TS0002"
+      ],
+      "risk": "high"
+    }
+  ],
+  "caseCollisions": [],
+  "orphans": [
+    {
+      "driver": "air_purifier",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "air_purifier_climate",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "air_purifier_contact",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "air_purifier_curtain",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "air_purifier_dimmer",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "air_purifier_din",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "air_purifier_lcdtemphumidsensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "air_purifier_motion",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "air_purifier_presence",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "air_purifier_quality",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "air_purifier_sensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "air_purifier_siren",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "air_purifier_soil",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "air_purifier_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "air_quality_co2",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "blaster_remote",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "bulb_dimmable",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "bulb_dimmable_dimmer",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "bulb_rgb",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "bulb_rgb_led",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "bulb_rgb_rgbw",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "bulb_rgbw",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "bulb_rgbw_universal",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "bulb_tunable_white",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "bulb_white",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_emergency_sos",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_wireless",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_wireless_1",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_wireless_2",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_wireless_3",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_wireless_6",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_wireless_8",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_wireless_fingerbot",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_wireless_plug",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_wireless_scene",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_wireless_smart",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_wireless_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_wireless_usb",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_wireless_valve",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "button_wireless_wall",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "ceiling_fan",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "climate_sensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "climate_sensor_dimmer",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "climate_sensor_gas",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "climate_sensor_plug",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "climate_sensor_presence",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "climate_sensor_smart",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "climate_sensor_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "co_sensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "contact_sensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "contact_sensor_curtain",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "contact_sensor_dimmer",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "contact_sensor_plug",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "contact_sensor_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "contact_sensor_zigbee",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "curtain_motor_shutter",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "curtain_motor_tilt",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "curtain_motor_wall",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_climate",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_din",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_floor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_humidifier",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_led",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_motion",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_plug",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_presence",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_quality",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_radiator",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_siren",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_smart",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_smoke",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_soil",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_thermostat",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_air_purifier_water",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_din_rail_meter",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_floor_heating",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_floor_heating_thermostat",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_generic_diy_universal",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_generic_tuya",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_generic_tuya_universal",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_plug_energy",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_plug_energy_monitor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_plug_smart",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_plug_smart_water",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_radiator_valve",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_radiator_valve_smart",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "device_radiator_valve_thermostat",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "dimmer_3gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "dimmer_air_purifier",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "dimmer_bulb_dimmable",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "dimmer_dual_channel",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "dimmer_ts110e",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "dimmer_wall_1gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "dimmer_wall_plug",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "dimmer_wall_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "dimmer_wall_water",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "din_rail_meter",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "din_rail_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "diy_custom_zigbee",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "door_controller",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "door_controller_garage",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "doorbell",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "energy_meter_3phase",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "fan_controller",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "fingerbot",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "fingerbot_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "fingerprint_lock",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "floor_heating_thermostat",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "formaldehyde_sensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "garage_door",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "gas_detector",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "gas_sensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "gas_sensor_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "gateway_zigbee_bridge",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "generic_diy",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "generic_tuya",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "handheld_remote_4_buttons",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "humidifier",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "hvac_air_conditioner",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "hvac_controller",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "hvac_dehumidifier",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "ir_blaster",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "lcdtemphumidsensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "lcdtemphumidsensor_plug_energy",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "led_controller_cct",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "led_controller_dimmable",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "led_controller_rgb",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "led_strip",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "led_strip_advanced",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "led_strip_rgbw",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "light_bulb_dimmable_tunable",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "light_bulb_rgb",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "light_bulb_rgb_led",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "light_bulb_rgb_rgbw",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "light_bulb_tunable_white",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "light_sensor_outdoor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "lock_smart",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "module_mini_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "motion_sensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "motion_sensor_2",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "motion_sensor_radar_mmwave",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "motion_sensor_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "pet_feeder",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "pet_feeder_zigbee",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "plug_smart",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "plug_smart_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "pool_pump",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "power_clamp_meter",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "power_meter",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "presence_sensor_ceiling",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "radiator_controller",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "radiator_valve",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "radiator_valve_zigbee",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "radiator_wifi_tuya",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "rain_sensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "remote_button_emergency_sos",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "remote_button_wireless_fingerbot",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "remote_button_wireless_handheld",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "remote_button_wireless_plug",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "remote_button_wireless_scene",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "remote_button_wireless_smart",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "remote_button_wireless_usb",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "remote_button_wireless_valve",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "remote_button_wireless_wall",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "remote_dimmer",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "scene_switch_1",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "scene_switch_2",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "scene_switch_3",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "scene_switch_4",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "scene_switch_6",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "scene_switch_wall",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_climate_contact",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_climate_lcdtemphumidsensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_climate_motion",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_climate_presence",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_climate_smart",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_climate_temphumidsensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_contact_climate",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_contact_motion",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_contact_plug",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_contact_presence",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_contact_rain",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_contact_water",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_contact_zigbee",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_gas_presence",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_lcdtemphumidsensor_temphumidsensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_motion_presence",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_motion_radar",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sensor_presence_radar",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "shutter_roller_controller",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "siren",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "siren_sirentemphumidsensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "sirentemphumidsensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "smart_breaker",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "smart_button_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "smart_heater",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "smart_heater_controller",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "smart_knob",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "smart_knob_rotary",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "smart_knob_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "smart_lcd_thermostat",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "smart_rcbo",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "smart_remote_1_button",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "smart_remote_1_button_2",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "smart_remote_4_buttons",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "smart_scene_panel",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "smoke_detector_advanced",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "switch_1gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "switch_3gang",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZ3000_v4l4b0lp"
+      ]
+    },
+    {
+      "driver": "switch_4gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "switch_dimmer_1gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "switch_plug_1",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "switch_plug_2",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "switch_temp_sensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "switch_wall",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "switch_wall_5gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "switch_wall_6gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "switch_wall_7gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "switch_wall_8gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "switch_wireless",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "thermostat_4ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "universal_fallback",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "universal_zigbee",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TYST11_",
+        "_TYZB01_",
+        "_TYZB02_",
+        "_TZ1800_",
+        "_TZ2000_",
+        "_TZ3000_",
+        "_TZ3002_",
+        "_TZ300A_",
+        "_TZ3040_",
+        "_TZ3210_",
+        "_TZ3218_",
+        "_TZ321C_",
+        "_TZ3290_",
+        "_TZ3400_",
+        "_TZ6210_",
+        "_TZB000_",
+        "_TZB210_",
+        "_TZE200_",
+        "_TZE201_",
+        "_TZE202_",
+        "_TZE203_",
+        "_TZE204_",
+        "_TZE20X_",
+        "_TZE210_",
+        "_TZE21C_",
+        "_TZE283_",
+        "_TZE284_",
+        "_TZE600_",
+        "_TZE608_"
+      ]
+    },
+    {
+      "driver": "usb_dongle_dual_repeater",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "usb_dongle_triple",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "usb_outlet_advanced",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "valve_dual_irrigation",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "valve_irrigation",
+      "reason": "no_product_ids",
+      "mfrs": [
+        "_TZE200_xlppj4f5",
+        "_TZE204_xlppj4f5",
+        "_TZE284_fhvpaltk"
+      ]
+    },
+    {
+      "driver": "valve_single",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "vibration_sensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wall_curtain_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wall_dimmer_1gang_1way",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wall_remote_1_gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wall_remote_2_gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wall_remote_3_gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wall_remote_4_gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wall_remote_4_gang_2",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wall_remote_4_gang_3",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wall_remote_6_gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wall_switch_4gang_1way",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "water_tank_monitor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "water_valve_garden",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "water_valve_smart",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "weather_station_outdoor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_air_purifier",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_air_quality",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_camera",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_cover",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_dehumidifier",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_dimmer",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_door_lock",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_doorbell",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_bulb",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_dimmer",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_fan",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_led",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_plug",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_pow",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_switch_2ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_switch_4ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ewelink_th",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_fan",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_garage_door",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_generic",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_heater",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_humidifier",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_ir_remote",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_led_strip",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_light",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_pet_feeder",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_plug",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_power_strip",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_robot_vacuum",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sensor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_siren",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_basicr4",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_dualr3",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_micro",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_minir3",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_minir4",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_pow_elite",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_smate2",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_thr316d",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_tx_1ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_tx_2ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_sonoff_tx_3ch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_switch",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_switch_2gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_switch_3gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_switch_4gang",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_thermostat",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_water_tank_monitor",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "wifi_water_valve",
+      "reason": "no_fingerprints"
+    },
+    {
+      "driver": "zigbee_repeater",
+      "reason": "no_fingerprints"
+    }
+  ],
+  "splitSuggestions": [],
+  "pairingAudit": [
+    {
+      "driver": "universal_zigbee",
+      "risk": "high",
+      "reason": "Tuya MCU (_TZE) driver missing productId triggers (risky generic matching)"
+    },
+    {
+      "driver": "valve_irrigation",
+      "risk": "high",
+      "reason": "Tuya MCU (_TZE) driver missing productId triggers (risky generic matching)"
+    }
+  ],
+  "summary": {
+    "totalDrivers": 315,
+    "pidConflicts": 6,
+    "highSeverity": 0,
+    "mfrConflicts": 1,
+    "orphans": 296,
+    "splitSuggestions": 0
+  }
+}
