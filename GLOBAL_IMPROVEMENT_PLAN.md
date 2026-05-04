@@ -339,3 +339,72 @@ Un appareil Zigbee est reconnu **si et seulement si** le couple `manufacturerNam
 - 12 multiplicateurs de marque
 - Compatible Zigbee et WiFi
 - Persiste etat via device store
+
+---
+
+## Session du 4 mai 2026 - Resume Antigravity
+
+### Issues GitHub analyseees (via gh issue view)
+| Issue | Titre | Action | Status |
+|-------|-------|--------|--------|
+| #308 | [BUG] Setting tab not loading | v7.5.7 + Homey Pro 13.1.5 | OPEN - En investigation |
+| #307 | [Auto] 644 new fingerprints (2026-05) | Community sync | OPEN - En traitement |
+| #305 | Zigbee Gate Opener Module / TS0603 | _TZE608_c75zqghm → garage_door_opener | OPEN - Auto-resolu |
+| #276 | Smart Solar Soil Sensor | _TZE284_rqcuwlsa → soil_sensor | OPEN - Auto-resolu |
+
+### PRs GitHub recuperes (via gh pr list)
+- PR #306 MERGED : Universal Maintenance: Device Variants Synchronisation
+- PR #284 MERGED : Johan SDK3 Sync - 198 FPs added, 0 DP gaps
+- 10+ PRs closed (automerge, upstream sync)
+- Total: ~30 PRs analysables
+
+### Git commit & push
+- Commit: 2f11e33a8
+- 18+ fingerprints ajoutes aux drivers :
+  - _TZE200_u6x1zyv2 → air_quality_comprehensive
+  - _TZ3000_vp6clf9d → button_wireless_4
+  - _TZE200_4hbx5cor → curtain_motor
+  - _TZE284_aaeasoll → presence_sensor_radar
+  - _TZ3290_yyax9ajf → switch
+  - _TZE200_crq3r3la → presence_sensor_radar
+  - _TZ3000_tzvbimpq → remote_button_wireless
+  - _TZE284_hdml1aav → switch
+  - _TZ3000_gjrubzje → switch_2gang (TS0001)
+  - _TZ3000_l9brjwau → switch_2gang (TS0002)
+  - _TZB000_yqjaollc → temphumidsensor (TS0201)
+  - _TZE204_xalsoe3m → wall_switch_1gang
+  - _TZ3000_aetquff4, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk → wall_switch_1gang_1way
+  - _TZ3000_qkixdnon → wall_switch_2gang_1way (TS0003)
+  - _TZ3000_baeiitad → water_leak_sensor (TS0207)
+- air_purifier/device.js : cleanup onNodeInit() + handleTuyaDataReport formatting
+
+### Emails Gmail
+- IMAP credentials manquants : GMAIL_EMAIL + GMAIL_APP_PASSWORD non configures
+- Script: .github/scripts/fetch-gmail-diagnostics.js
+- Necessite configuration des secrets IMAP
+
+### Regles FINGERPRINTS (manufacturerName + productId COMBINED)
+| # | Regle | Status |
+|---|-------|--------|
+| F1 | Fingerprint = manufacturerName + productId COMBINED | ✅ Confirme |
+| F2 | Meme mfrName dans plusieurs drivers = normal (diff productIds) | ✅ Confirme |
+| F3 | Pas de wildcards dans mfrName (ex: _TZE284_* est INVALIDE) | ✅ Confirme |
+| F4 | Case-insensitive via CaseInsensitiveMatcher.js | ✅ Confirme |
+| F5 | .toLowerCase() manuel INTERDIT dans les drivers | ✅ Confirme |
+| F6 | Settings keys : zb_model_id, zb_manufacturer_name | ✅ Confirme |
+| F7 | productId match mais pas mfrName → tentative via endpoints/clusters | ✅ Confirme |
+
+### Protection Copilot GitHub (nouvelle regle)
+| Regle | Description | Statut |
+|-------|-------------|--------|
+| C1 | PAS de GitHub Copilot dans les workflows YML | A verifier |
+| C2 | Limiter les actions AI a NVIDIA NIM (free tier 800/jour) | ✅ Confirme |
+| C3 | Budget token strict pour eviter facturation | ✅ Confirme |
+| C4 | Aucun cofte pour les providers payants (OpenAI, DeepSeek) | A configurer |
+
+### Prochaines etapes
+1. Fixer issue #308 (Settings tab bug)
+2. Traiter 644 new fingerprints de #307
+3. Configurer IMAP credentials pour dump Gmail
+4. Analyser forum thread #140352 page 2007+
+5. Mettre a jour .github/workflows/ pour Copilot budget limits
