@@ -408,10 +408,77 @@ Un appareil Zigbee est reconnu **si et seulement si** le couple `manufacturerNam
 3. Configurer IMAP credentials pour dump Gmail (GMAIL_EMAIL + GMAIL_APP_PASSWORD)
 4. Analyser forum thread #140352 page 2007+
 5. Protection Copilot: Aucun GitHub Copilot utilisé dans les 43+ workflows
+6. ManufacturerName variants: 2572 manquants identifiés
 
 ---
 
 ## Session du 4 mai 2026 - Antigravity PM (Complétée)
+
+### ✅ Investigations effectuées
+
+| Investigation | Résultat |
+|----------------|----------|
+| settings/index.html (195 lines) | HTML correct, pas d'erreurs JS |
+| 83 implementations onSettings | Toutes SDK3 pattern |
+| 16 bases avec onSettings | UnifiedSwitch/Sensor/Plug/Cover |
+| app.js initializeSettings() | Correct, pas de bug |
+| NVIDIA_API_KEY dans YMLs | 43 workflows - TOUS configurés |
+| Copilot usage | 0 GitHub Copilot détecté dans workflows |
+| Rate limits | 13 providers avec limites journalières |
+| Circuit breakers | Configurés (3 échecs → pause 5 min) |
+
+### 🔒 Protection Copilot Confirmée
+
+| Règle | Description | Status |
+|-------|-------------|--------|
+| C1 | PAS de GitHub Copilot dans les workflows | ✅ Confirmé (0 usage) |
+| C2 | NVIDIA NIM prioritaire (800/jour free tier) | ✅ 43 workflows |
+| C3 | Budget token strict pour tous providers | ✅ Configuré |
+| C4 | OPENAI/DeepSeek utilisés comme fallback ONLY | ✅ Configuré |
+
+### 🐛 Issue #308 - Settings Tab Fix
+
+**Diagnostic final:**
+- `settings/index.html` est syntaxiquement correct
+- Cause probable: Cache navigateur Homey + firmware 13.1.5
+- Solution: Clear cache, hard refresh, ou réinstaller app
+- Réponse publiée: https://github.com/dlnraja/com.tuya.zigbee/issues/308#issuecomment-4373057523
+
+### 📊 Issue #307 - 644 Fingerprints
+
+**Données extraites:**
+- Source: Internal-Audit monthly sync v5.12.1
+- Catégories: christmas_lights, curtain, dimmer, doorwindowsensor
+- With productId: 644/644 (100%)
+- Battery devices: 275 (43%)
+- Pipeline auto обработка в процессе
+
+### 📊 Case Normalization Stats
+
+| Stat | Valeur |
+|------|--------|
+| Total manufacturerNames | 3086 |
+| Total productIds | 601 |
+| Duplicates | 333 |
+| Missing variants | 2572 |
+
+### 📋 GitHub PRs Récents
+
+| PR | Titre | Status |
+|----|-------|--------|
+| #306 | Universal Maintenance: Device Variants Synchronisation | MERGED |
+| #284 | Johan SDK3 Sync — 198 FPs added, 0 DP gaps | MERGED |
+| #274 | Device Variants Synchronisation | MERGED |
+
+### 📋 GitHub Issues Actifs
+
+| Issue | Titre | Status |
+|-------|-------|--------|
+| #308 | [BUG] Setting tab not loading | OPEN - Résolu |
+| #307 | [Auto] 644 new fingerprints (2026-05) | OPEN - Pipeline auto |
+| #305 | Zigbee Gate Opener Module / TS0603 | AUTO-RESOLU |
+| #276 | Smart Solar Soil Sensor | AUTO-RESOLU |
+| #162 | [fingerbot] Bug: | OPEN - Waiting user |
 
 ### ✅ Investigations effectuées
 
