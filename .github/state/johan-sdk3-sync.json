@@ -1,0 +1,5441 @@
+{
+  "timestamp": "2026-05-04T05:19:58.511Z",
+  "added": [
+    {
+      "fp": "_TZE200_s8gkrkxk",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_5zbp6j0u",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_bjzrowv2",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_nkoabg8w",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_xuzcvlku",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_4vobcgd3",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_nogaemzt",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_r0jdjrvi",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_pk0sfzvr",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_fdtjuw7u",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_zpzndjez",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_wmcdj3aq",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_cowvfni3",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_rddyvrci",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_nueqqe6k",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_xaabybja",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_rmymn92d",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_3i3exuay",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_zah67ekd",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_hsgrhjpf",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_68nvbio9",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_pw7mji0l",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_uj3f4wr5",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_1fuxihti",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_axgvo9jh",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_gaj531w3",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_yia0p3tr",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_nw1r9hp6",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_cf1sl3tj",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_9p5xmj5r",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_xu4a5rhj",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_la2c2uo9",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_hlx9tnzb",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_ip2akl4w",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_1agwnems",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_579lguh2",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_vucankjx",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_4mh6tyyo",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_n9ctkb6j",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_9qhuzgo0",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_dcnsggvz",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_5cuocqty",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_e3oitdyu",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_zenj4lxv",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_bxoo2swd",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_gwkapsoq",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_fjjbhx9d",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "TUYATEC-g3gl6cgy",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-Bfq2i2Sy",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-abkehqus",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "_TZ3210_j4pdtz9v",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0001_fingerbot"
+      ]
+    },
+    {
+      "fp": "_TZ3210_dse8ogfy",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0001_fingerbot"
+      ]
+    },
+    {
+      "fp": "_TZ3210_232nryqh",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0001_fingerbot"
+      ]
+    },
+    {
+      "fp": "_TZ3210_okbss9dy",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0001_fingerbot"
+      ]
+    },
+    {
+      "fp": "TUYATEC-3tipnsrx",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "RH3001",
+        "TS0207"
+      ]
+    },
+    {
+      "fp": "_TZ3000_4uvovz4r",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "RH3001",
+        "TS0207"
+      ]
+    },
+    {
+      "fp": "_TZ3000_3dfewsk1",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "RH3001",
+        "TS0207"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ww9i3e0y",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "RH3001",
+        "TS0207"
+      ]
+    },
+    {
+      "fp": "_TZ3000_wuep9zng",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "RH3001",
+        "TS0207"
+      ]
+    },
+    {
+      "fp": "_TZ3000_u3nv1jwk",
+      "driver": "button_wireless_4",
+      "pids": [
+        "TS0044"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qaaysllp",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TS0222"
+      ]
+    },
+    {
+      "fp": "_TYZB01_ftdkanlj",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TS0222"
+      ]
+    },
+    {
+      "fp": "_TYZB01_kvwjujy9",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TS0222"
+      ]
+    },
+    {
+      "fp": "_TZ3210_huzkzqyk",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TS0222"
+      ]
+    },
+    {
+      "fp": "_TZ2000_a476raq2",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "fp": "_TZ2000_xogb73am",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "fp": "_TZ2000_avdnvykf",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "fp": "_TZ2000_hjsgdkfl",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "fp": "_TYZB01_a476raq2",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "fp": "_TYZB01_hjsgdkfl",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "fp": "_TZ3000_rusu2vzb",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "fp": "_TZ3000_yd2e749y",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ywagc4rj",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "fp": "_TZ3000_itnrsufe",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "fp": "_TZ3000_bjawzodf",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "fp": "_TZ3210_ncw88jfq",
+      "driver": "temphumidsensor",
+      "pids": [
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "fp": "_TZE200_bjawzodf",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_zl1kmjqx",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_locansqn",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_bq5c8xfe",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_qyflbnbj",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_vs0skpuc",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_44af8vyi",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_3towulqd",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_bh3n6gk8",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_1ibpyhdc",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_ttcovulf",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_ztc6ggyl",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE201_ztc6ggyl",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE202_ztc6ggyl",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE203_ztc6ggyl",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_ztc6ggyl",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_qasjif9e",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_sgpeacqp",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_xsm7l9xa",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_wukb7rhc",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_xpq2rzhq",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_holel4dk",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_jva8ink8",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_lyetpprm",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_ikvncluo",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_ztqnh5cg",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_7gclukjs",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_sxm7l9xa",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_ijxvkhd0",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZ3210_tgvtvdoc",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207"
+      ]
+    },
+    {
+      "fp": "_TZ3000_g8n1n7lg",
+      "driver": "switch",
+      "pids": [
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_nuenzetq",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0002"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ruldv5dt",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0002"
+      ]
+    },
+    {
+      "fp": "_TZE204_t1blo2bj",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_d0yu2xgi",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TYST11_d0yu2xgi",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZ3000_cayepv1a",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0002",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_lepzuhto",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qystbcjg",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_6l1pjfqe",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZE200_yvx5lh6k",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_8ygsuhe1",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_mja3fuja",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_ryfmq5rl",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_c2fmom5z",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZ3000_fa9mlvja",
+      "driver": "remote_button_wireless",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TZ3000_yj6k7vfo",
+      "driver": "remote_button_wireless",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qgwcxxws",
+      "driver": "remote_button_wireless",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TYZB01_phjeraqq",
+      "driver": "switch",
+      "pids": [
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_3ooaz3ng",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_g5xawfcq",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_vtscrpmw",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_rdtixbnu",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_8nkb7mof",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_cphmq0q7",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ew3ldmgx",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_w0qqde0g",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_mraovvmm",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_u5u4cakc",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_typdpdpg",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_gjnozsaz",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_amdymr7l",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_amdymr71",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_typdpbpg",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ksw8qtmt",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_zloso4jk",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_5f43h46b",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_cehuw1lw",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_fqoynhku",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ynmowqk2",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_kx0pris5",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_hdopuwv6",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_bfn1w0mm",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_0zfrhq4i",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_gznh2xla",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ss98ec5d",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_gnjozsaz",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_gvn91tmx",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_1h2x4akh",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_r6buo8ba",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_2putqrmw",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_5ity3zyu",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_okaz9tjs",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_eyzb8yg3",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_dksbtrzs",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_nkcobies",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_j1v25l17",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_waho4jtj",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_3uimvkn6",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_pjcqjtev",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ww6drja5",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_fukaa7nc",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_88iqnhvd",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_3ias4w4o",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_wzmuk9ai",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_jak16dll",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZE200_ntcy3xu1",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_m9skfctm",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_rccxox8p",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_vzekyi4c",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_ntcy3xu1",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_t5p1vj8r",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_uebojraa",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_yh7aoahi",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZ3000_1obwwnmq",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_vzopcetz",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_4uf3d0ax",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_wzauvbcs",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_vmpbygs5",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_o005nuxx",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_cfnprab5",
+      "driver": "switch_2gang",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZE200_myd45weu",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_ga1maeof",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_9cqcpkgb",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_myd45weu",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE284_aao3yzhs",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE284_sgabhwa6",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_2se8efxh",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE284_g2e6cpnw",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TYZB01_ncutbjdi",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TYZB01_aneiicmq",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_zmy1waw6",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_pmvbt5hh",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_sjpl9eg3",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_m9af2l6g",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ji4araar",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qmi1cfuq",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_npzfdcof",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_tqlv4ug4",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_rmjr4ufz",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_mx3vgyea",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_46t1rvdu",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_majwnphg",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_6axxqqi2",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TZ3000_prits6g4",
+      "driver": "switch",
+      "pids": [
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TYZB01_zsl6z0pw",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TZ3000_4js9lo5d",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TZ3000_pmz6mjyu",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TYZB01_digziiav",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TZ3000_fisb3ajo",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TZ3000_bvrlqyj7",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TZ3000_jl7qyupf",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TZ3000_7ed9cqgi",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TZ3000_llfaquvp",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TZ3000_lmlsduws",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qaa59zqd",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qcgw8qfa",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TZ3000_jcfje0kb",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ruxexjfz",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TZ3000_zmy4lslw",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_odzoiovu",
+      "driver": "switch",
+      "pids": [
+        "TS0003"
+      ]
+    },
+    {
+      "fp": "_TZ3000_lvhy15ix",
+      "driver": "switch",
+      "pids": [
+        "TS0003"
+      ]
+    },
+    {
+      "fp": "_TZ3000_4o16jdca",
+      "driver": "switch",
+      "pids": [
+        "TS0003"
+      ]
+    },
+    {
+      "fp": "TUYATEC-yg5dcbfu",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-prhs1rsd",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-gqhxixyk",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-vmgh3fxd",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-ojmxeikg",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-ojmxeikq",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-1g3tawnp",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "_TZ3000_i8jfiezr",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-v3uxbuxy",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "_TZ3000_bguser20",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "_TZ3000_8ybe88nf",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "_TZ3000_fie1dpkm",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-riuj5xzs",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-1uxx9cci",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "_TZ3000_f2bw0b6k",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-HaoiuWzy",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "_TZ3000_dowj6gyi",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "_TZ3000_0s1izerx",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-qun7vq14",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "_TZ3000_akqdg6g7",
+      "driver": "temphumidsensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "_TZ3000_fllyghyj",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0201",
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZ3000_xr3htd96",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0201",
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZ3000_saiqcn0y",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0201",
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_a8sdabtg",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0201",
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZ3000_utwgoauk",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0201",
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZ3000_zl1kmjqx",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0201",
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZ3000_6uzkisv2",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0201",
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_yjjdcqsq",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_vvmbj46n",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_yjjdcqsq",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_utkemkbs",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_upagmta9",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_utkemkbs",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_9yapgbuv",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_cirvgep4",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_cirvgep4",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_9yapgbuv",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_sur6q7ko",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_hue3yfsn",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_husqqvux",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_lnbfnyxd",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_lllliz3p",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_mudxchsu",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_7yoranx2",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_e9ba97vf",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_kds0pmmv",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_kly8gjlz",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_py4cm3he",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE20X_xxxxxxxx",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TYZB01_ymcdbl3u",
+      "driver": "switch",
+      "pids": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_o4cjetlm",
+      "driver": "switch",
+      "pids": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TYZB01_4tlksk8a",
+      "driver": "switch",
+      "pids": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_tvuarksa",
+      "driver": "switch",
+      "pids": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_j9568h44",
+      "driver": "switch",
+      "pids": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_iedbgyxt",
+      "driver": "switch",
+      "pids": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_w0ypwa1f",
+      "driver": "switch",
+      "pids": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_5ucujjts",
+      "driver": "switch",
+      "pids": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZE200_3p5ydos3",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_whpb9yts",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_ebwgzdqq",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_ctq0k47x",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_9i9dt8is",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_dfxkcots",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_w4cryh2i",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_ojzhk75b",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_9cxuhakf",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_a0syesf5",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_swaamsoy",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_p0gzbqct",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_vevc4c6g",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_0nauxa0p",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TYZB02_keyjqthh",
+      "driver": "remote_button_wireless",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TZ3000_tk3s5tyg",
+      "driver": "remote_button_wireless",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TZ3000_fkp5zyho",
+      "driver": "remote_button_wireless",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TZ3000_axpdxqgu",
+      "driver": "remote_button_wireless",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TZ3000_peszejy7",
+      "driver": "remote_button_wireless",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TZ3000_pzui3skt",
+      "driver": "remote_button_wireless",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TZ3000_f97vq5mn",
+      "driver": "remote_button_wireless",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TZ3000_itb0omhv",
+      "driver": "remote_button_wireless",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TZ3000_8rppvwda",
+      "driver": "remote_button_wireless",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TZ3000_4upl1fcj",
+      "driver": "remote_button_wireless",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TZ3000_q68478x7",
+      "driver": "remote_button_wireless",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ufhtxr59",
+      "driver": "button_wireless_4",
+      "pids": [
+        "TS0044"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ee8nrt2l",
+      "driver": "button_wireless_4",
+      "pids": [
+        "TS0044"
+      ]
+    },
+    {
+      "fp": "_TZ3000_a4xycprs",
+      "driver": "button_wireless_4",
+      "pids": [
+        "TS0044"
+      ]
+    },
+    {
+      "fp": "_TZ3000_wkai4ga5",
+      "driver": "button_wireless_4",
+      "pids": [
+        "TS0044"
+      ]
+    },
+    {
+      "fp": "_TZ3000_uaa99arv",
+      "driver": "button_wireless_4",
+      "pids": [
+        "TS0044"
+      ]
+    },
+    {
+      "fp": "_TZ3000_jcspr0tp",
+      "driver": "button_wireless_4",
+      "pids": [
+        "TS0044"
+      ]
+    },
+    {
+      "fp": "_TZ3000_b28wrpvx",
+      "driver": "switch",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_4ux0ondb",
+      "driver": "switch",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_y4ona9me",
+      "driver": "switch",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_5ct6e7ye",
+      "driver": "switch",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TYZB01_xfpdrwvc",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TZ3000_9hpxg80k",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TZ3000_f8tmviy0",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TZ3000_gidy6sjs",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TYZB01_qeqvmvti",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TYZB01_seqwasot",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TZ3000_hktqahrq",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TZ3000_yl3zuyaw",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TZ3000_3wkqni6o",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TZ3000_oex7egmt",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TZ3000_hafsqare",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TZ3000_oaq83gqc",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TZ3000_hhiodade",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TZ3000_6eyydfyg",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TZ3000_7jx5ypra",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TZ3000_3u4hripk",
+      "driver": "switch",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TZE200_gbagoilo",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TYZB01_mtlhqn48",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TYZB01_6sadkhcy",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_fvh3pjaz",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_svoqrno4",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "TUYATEC-O6SNCwd6",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TYZB01_vzrytttn",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_nta0gb8h",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_lupfd8zu",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_yhagrqmd",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_5vujyute",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TYZB01_2athzhfr",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_56bdyj21",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_e98krvvk",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_18ejxno0",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_atp7xmd9",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_mrqea2uu",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_mklgayek",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_p8alo7qa",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TYZB01_6g8b7at8",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "TUYATEC-nzrrvgco",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qn8qvk9y",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_s8r1qoyq",
+      "driver": "switch",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TYZB01_xiuox57i",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TYZB01_b8cr31hp",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_wyhuocal",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_cdamjqm9",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TYZB01_mqel1whf",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_hlwm8e96",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_thhxrept",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_2dlwlvex",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qcdqw8nf",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_vvlivusi",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_5e5ptb24",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_lrgccsxm",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_w05exif3",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qewo8dlz",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_aezbqpcu",
+      "driver": "switch",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_r0pmi2p3",
+      "driver": "button_wireless_4",
+      "pids": [
+        "TS0014",
+        "TS0044"
+      ]
+    },
+    {
+      "fp": "_TZ3000_dku2cfsc",
+      "driver": "button_wireless_4",
+      "pids": [
+        "TS0014",
+        "TS0044"
+      ]
+    },
+    {
+      "fp": "_TZ3000_fjt5218m",
+      "driver": "button_wireless_4",
+      "pids": [
+        "TS0014",
+        "TS0044"
+      ]
+    },
+    {
+      "fp": "_TYZB01_bagt1e4o",
+      "driver": "button_wireless_4",
+      "pids": [
+        "TS0014",
+        "TS0044"
+      ]
+    },
+    {
+      "fp": "_TZE200_shkxsgis",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_aagrxlbd",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_aqnazj70",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_di3tfv5b",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_mexisfik",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_6wi2mope",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_iik0pquw",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_jwsjbxjs",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_r731zlxk",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_9mahtqtg",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_aoclfnxz",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE204_aoclfnxz",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_2ekuz3dz",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TYZB01_sqmd19i1",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TYST11_qq9mpfhw",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TZ3000_fxvjhdyl",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TZ3000_eit7p838",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TZ3000_t6jriawg",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TZ3000_85czd6fy",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TZ3000_kyb656no",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TZ3000_0s9gukzt",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TZ3000_kstbkt6a",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TZ3000_mugyhz0q",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TZ3000_upgcbody",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TZ3000_k4ej3ww2",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TZ3000_6oabgtzv",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ocjlo4ea",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TZ3000_awvmkayh",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TZE200_qq9mpfhw",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZE200_jthf7vb6",
+      "driver": "air_quality_comprehensive",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TZ3000_m0vaazab",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207"
+      ]
+    },
+    {
+      "fp": "_TZ3000_5k5vh43t",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ufttklsz",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207"
+      ]
+    },
+    {
+      "fp": "_TZ3000_gszjt2xx",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207"
+      ]
+    },
+    {
+      "fp": "_TZ3000_nkkl7uzv",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207"
+      ]
+    },
+    {
+      "fp": "_TZ3000_nlsszmzl",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207"
+      ]
+    },
+    {
+      "fp": "_TZ3000_misw04hq",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207"
+      ]
+    },
+    {
+      "fp": "_TZ3000_wlquqiiz",
+      "driver": "water_leak_sensor",
+      "pids": [
+        "TS0207"
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "fp": "_TZ3000_vd43bbfq",
+      "johanDriver": "curtain_module",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_1dd0d5yi",
+      "johanDriver": "curtain_module",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ke7pzj5d",
+      "johanDriver": "curtain_module",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_fccpjz5z",
+      "johanDriver": "curtain_module",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_4uuaja4a",
+      "johanDriver": "curtain_module",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_zirycpws",
+      "johanDriver": "curtain_module",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_femsaaua",
+      "johanDriver": "curtain_module",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_e3vhyirx",
+      "johanDriver": "curtain_module",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_jwv3cwak",
+      "johanDriver": "curtain_module",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3210_dwytrmda",
+      "johanDriver": "curtain_module",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3210_ol1uhvza",
+      "johanDriver": "curtain_module",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_eg7awg6a",
+      "johanDriver": "curtain_module",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_eafaa66e",
+      "johanDriver": "curtain_module",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_j1xl73iw",
+      "johanDriver": "curtain_module_2_gang",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_l6iqph4f",
+      "johanDriver": "curtain_module_2_gang",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3210_invesber",
+      "johanDriver": "dimmable_led_strip",
+      "pids": [
+        "TS0502B"
+      ]
+    },
+    {
+      "fp": "_TZ3210_zdrhqmo0",
+      "johanDriver": "dimmable_recessed_led",
+      "pids": [
+        "TS0502B"
+      ]
+    },
+    {
+      "fp": "_TYZB01_qezuin6k",
+      "johanDriver": "dimmer_1_gang",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS0052"
+      ]
+    },
+    {
+      "fp": "_TZ3210_ngqk6jia",
+      "johanDriver": "dimmer_1_gang_2",
+      "pids": [
+        "TS110E"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ktuoyvt5",
+      "johanDriver": "dimmer_1_gang",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS0052"
+      ]
+    },
+    {
+      "fp": "_TZ3210_zxbtub8r",
+      "johanDriver": "dimmer_1_gang",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS0052"
+      ]
+    },
+    {
+      "fp": "_TZ3210_weaqkhab",
+      "johanDriver": "dimmer_1_gang",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS0052"
+      ]
+    },
+    {
+      "fp": "_TZ3210_k1msuvg6",
+      "johanDriver": "dimmer_1_gang",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS0052"
+      ]
+    },
+    {
+      "fp": "_TZ3000_mgusv51k",
+      "johanDriver": "dimmer_1_gang",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS0052"
+      ]
+    },
+    {
+      "fp": "_TYZB01_v8gtiaed",
+      "johanDriver": "dimmer_2_gang",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS1101"
+      ]
+    },
+    {
+      "fp": "_TZ3000_92chsky7",
+      "johanDriver": "dimmer_2_gang",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS1101"
+      ]
+    },
+    {
+      "fp": "_TZ3210_wdexaypg",
+      "johanDriver": "dimmer_2_gang",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS1101"
+      ]
+    },
+    {
+      "fp": "_TZ3210_3mpwqzuu",
+      "johanDriver": "dimmer_2_gang",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS1101"
+      ]
+    },
+    {
+      "fp": "_TZ3210_pagajpog",
+      "johanDriver": "dimmer_2_gang",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS1101"
+      ]
+    },
+    {
+      "fp": "_TZ3210_4ubylghk",
+      "johanDriver": "dimmer_2_gang",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS1101"
+      ]
+    },
+    {
+      "fp": "_TZ3000_7ysdnebc",
+      "johanDriver": "dimmer_2_gang",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS1101"
+      ]
+    },
+    {
+      "fp": "TUYATEC-sb6t7ett",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-rkqiqvcs",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-crr8qb0p",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ebar6ljy",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-kbqf60nt",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-r9hgssol",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-trhrga6p",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-ip9ganvw",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TYZB01_xph99wvr",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_2mbfxlzr",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_402jjyro",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_6jeesvrt",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_26fmupbb",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_bmg14ax2",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_oxslv1c9",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_bzxlofth",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_bzxloft",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_n2egfsli",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_7d8yme6f",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_rgchmad8",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_au1rjicn",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_4ugnzsli",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-7qunn4gq",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_decxrtwa",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_yxqnffam",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_9eeavbk5",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_rcuyhwe3",
+      "johanDriver": "smart_door_window_sensor",
+      "pids": [
+        "TY0203",
+        "TS0203"
+      ]
+    },
+    {
+      "fp": "_TZ3000_a33rw7ou",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_6zvw8ham",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_yfekcy3n",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_cea5xugq",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_1bwpjvlz",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_au2o5e6q",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_v7chgqso",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qrldbmfn",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TZ3000_gntwytxo",
+      "johanDriver": "doorwindowsensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-0l6xaqmi",
+      "johanDriver": "doorwindowsensor_2",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "DoorWindow-Sensor-ZB3.0",
+        "MCT-340 E"
+      ]
+    },
+    {
+      "fp": "_TZ3000_7tbsruql",
+      "johanDriver": "doorwindowsensor_2",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "DoorWindow-Sensor-ZB3.0",
+        "MCT-340 E"
+      ]
+    },
+    {
+      "fp": "_TZ3000_osu834un",
+      "johanDriver": "doorwindowsensor_2",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "DoorWindow-Sensor-ZB3.0",
+        "MCT-340 E"
+      ]
+    },
+    {
+      "fp": "Immax",
+      "johanDriver": "doorwindowsensor_2",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "DoorWindow-Sensor-ZB3.0",
+        "MCT-340 E"
+      ]
+    },
+    {
+      "fp": "Visonic",
+      "johanDriver": "doorwindowsensor_2",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "DoorWindow-Sensor-ZB3.0",
+        "MCT-340 E"
+      ]
+    },
+    {
+      "fp": "_TZ3000_hkcpblrs",
+      "johanDriver": "doorwindowsensor_2",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "DoorWindow-Sensor-ZB3.0",
+        "MCT-340 E"
+      ]
+    },
+    {
+      "fp": "_TZ3000_8yhypbo7",
+      "johanDriver": "doorwindowsensor_2",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "DoorWindow-Sensor-ZB3.0",
+        "MCT-340 E"
+      ]
+    },
+    {
+      "fp": "_TZ3000_cqlnswn0",
+      "johanDriver": "doorwindowsensor_2",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "DoorWindow-Sensor-ZB3.0",
+        "MCT-340 E"
+      ]
+    },
+    {
+      "fp": "_TZ3000_zgrffiwg",
+      "johanDriver": "doorwindowsensor_3",
+      "pids": [
+        "TS0203"
+      ]
+    },
+    {
+      "fp": "_TZ3000_bpkijo14",
+      "johanDriver": "doorwindowsensor_3",
+      "pids": [
+        "TS0203"
+      ]
+    },
+    {
+      "fp": "_TZ3000_uvti8nkd",
+      "johanDriver": "doorwindowsensor_3",
+      "pids": [
+        "TS0203"
+      ]
+    },
+    {
+      "fp": "zbeacon",
+      "johanDriver": "doorwindowsensor_4",
+      "pids": [
+        "DS01"
+      ]
+    },
+    {
+      "fp": "_TZ3210_7jnk7l3k",
+      "johanDriver": "double_power_point",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TYZB01_hlla45kx",
+      "johanDriver": "double_power_point_2",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TYZB01_iuepbmpv",
+      "johanDriver": "smartplug",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TYZB01_cbiezpds",
+      "johanDriver": "lcdtemphumidsensor_2",
+      "pids": [
+        "SM0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-bd5faf9p",
+      "johanDriver": "motion_sensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-zw6hxafz",
+      "johanDriver": "motion_sensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "_TZ3000_uwkja6z1",
+      "johanDriver": "outdoor_2_socket",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_pnzfdr9y",
+      "johanDriver": "outdoor_plug",
+      "pids": [
+        "TS0101"
+      ]
+    },
+    {
+      "fp": "_TZ3000_br3laukf",
+      "johanDriver": "outdoor_plug",
+      "pids": [
+        "TS0101"
+      ]
+    },
+    {
+      "fp": "_TYZB01_jytabjkb",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TYZB01_dl7cejts",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3000_mmtwjmaq",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3000_kmh5qpmb",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3000_msl6wxk9",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3000_mcxw5ehu",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3000_otvn3lne",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3000_6ygjfyll",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3040_6ygjfyll",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3040_bb6xaihh",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3000_nss8amz9",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3000_bsvqrxru",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TYZB01_dr6sduka",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3000_o4mkahkc",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3000_c8ozah8n",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3040_wqmtjsyk",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3000_mg4dy6z6",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3000_y56pgpgs",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TYZB01_geepvxsy",
+      "johanDriver": "pir_sensor_2",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "TUYATEC-lha8pbwd",
+      "johanDriver": "pirsensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-zn9wyqtr",
+      "johanDriver": "pirsensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-53o41joc",
+      "johanDriver": "pirsensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-deetibst",
+      "johanDriver": "pirsensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-dgtxmihe",
+      "johanDriver": "pirsensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-b5g40alm",
+      "johanDriver": "pirsensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-dxnohkpd",
+      "johanDriver": "pirsensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "_TZ3000_kdi2o9m6",
+      "johanDriver": "plug",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ew31dmgx",
+      "johanDriver": "plug",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_dpo1ysak",
+      "johanDriver": "smartplug",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_plyvnuf5",
+      "johanDriver": "plug",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_hyfvrar3",
+      "johanDriver": "plug",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_cymsnfvf",
+      "johanDriver": "plug",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_upjrsxh1",
+      "johanDriver": "plug",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_wamqdr3f",
+      "johanDriver": "plug",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZE200_2aaelwxk",
+      "johanDriver": "radar_sensor_ceiling",
+      "pids": [
+        "TS0225"
+      ]
+    },
+    {
+      "fp": "_TZ3000_hdlpifbk",
+      "johanDriver": "relay_board_4_channel",
+      "pids": [
+        "TS0004"
+      ]
+    },
+    {
+      "fp": "_TZ3000_excgg5kb",
+      "johanDriver": "relay_board_4_channel",
+      "pids": [
+        "TS0004"
+      ]
+    },
+    {
+      "fp": "_TZ3000_u3oupgdy",
+      "johanDriver": "relay_board_4_channel",
+      "pids": [
+        "TS0004"
+      ]
+    },
+    {
+      "fp": "_TZ3000_wkr3jqmr",
+      "johanDriver": "relay_board_4_channel",
+      "pids": [
+        "TS0004"
+      ]
+    },
+    {
+      "fp": "_TZ3000_imaccztn",
+      "johanDriver": "relay_board_4_channel",
+      "pids": [
+        "TS0004"
+      ]
+    },
+    {
+      "fp": "_TZ3000_odygigth",
+      "johanDriver": "rgb_bulb_E14",
+      "pids": [
+        "TS0505A"
+      ]
+    },
+    {
+      "fp": "_TZ3000_dbou1ap4",
+      "johanDriver": "rgb_bulb_E27",
+      "pids": [
+        "TS0505A",
+        "TS0505B",
+        "ZB-CL01"
+      ]
+    },
+    {
+      "fp": "_TZ3000_keabpigv",
+      "johanDriver": "rgb_bulb_E27",
+      "pids": [
+        "TS0505A",
+        "TS0505B",
+        "ZB-CL01"
+      ]
+    },
+    {
+      "fp": "_TZ3000_12sxjap4",
+      "johanDriver": "rgb_bulb_E27",
+      "pids": [
+        "TS0505A",
+        "TS0505B",
+        "ZB-CL01"
+      ]
+    },
+    {
+      "fp": "_TZ3000_hlijwsai",
+      "johanDriver": "rgb_bulb_E27",
+      "pids": [
+        "TS0505A",
+        "TS0505B",
+        "ZB-CL01"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qd7hej8u",
+      "johanDriver": "rgb_bulb_E27",
+      "pids": [
+        "TS0505A",
+        "TS0505B",
+        "ZB-CL01"
+      ]
+    },
+    {
+      "fp": "_TZ3210_mja6r5ix",
+      "johanDriver": "rgb_bulb_E27",
+      "pids": [
+        "TS0505A",
+        "TS0505B",
+        "ZB-CL01"
+      ]
+    },
+    {
+      "fp": "_TZ3000_q50zhdsc",
+      "johanDriver": "rgb_bulb_E27",
+      "pids": [
+        "TS0505A",
+        "TS0505B",
+        "ZB-CL01"
+      ]
+    },
+    {
+      "fp": "eWeLight",
+      "johanDriver": "rgb_bulb_E27",
+      "pids": [
+        "TS0505A",
+        "TS0505B",
+        "ZB-CL01"
+      ]
+    },
+    {
+      "fp": "_TZ3210_x13bu7za",
+      "johanDriver": "rgb_ceiling_led_light",
+      "pids": [
+        "TS0505B"
+      ]
+    },
+    {
+      "fp": "_TZ3000_8uaoilu9",
+      "johanDriver": "rgb_floor_led_light",
+      "pids": [
+        "TS0502A"
+      ]
+    },
+    {
+      "fp": "_TZ3000_gek6snaj",
+      "johanDriver": "rgb_led_light_bar",
+      "pids": [
+        "TS0505A",
+        "TS0505B"
+      ]
+    },
+    {
+      "fp": "_TZ3210_iystcadi",
+      "johanDriver": "rgb_led_light_bar",
+      "pids": [
+        "TS0505A",
+        "TS0505B"
+      ]
+    },
+    {
+      "fp": "_TZ3000_riwp3k79",
+      "johanDriver": "rgb_led_strip",
+      "pids": [
+        "TS0505A"
+      ]
+    },
+    {
+      "fp": "_TZ3000_obacbukl",
+      "johanDriver": "rgb_led_strip_controller",
+      "pids": [
+        "TS0503A",
+        "TS0503B",
+        "TS0505B",
+        "TS0504B"
+      ]
+    },
+    {
+      "fp": "_TZ3000_dl4pxp1r",
+      "johanDriver": "rgb_led_strip_controller",
+      "pids": [
+        "TS0503A",
+        "TS0503B",
+        "TS0505B",
+        "TS0504B"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qqjaziws",
+      "johanDriver": "rgb_led_strip_controller",
+      "pids": [
+        "TS0503A",
+        "TS0503B",
+        "TS0505B",
+        "TS0504B"
+      ]
+    },
+    {
+      "fp": "_TZ3000_i8l0nqdu",
+      "johanDriver": "rgb_led_strip_controller",
+      "pids": [
+        "TS0503A",
+        "TS0503B",
+        "TS0505B",
+        "TS0504B"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ukuvyhaa",
+      "johanDriver": "rgb_led_strip_controller",
+      "pids": [
+        "TS0503A",
+        "TS0503B",
+        "TS0505B",
+        "TS0504B"
+      ]
+    },
+    {
+      "fp": "_TZ3210_k1pe6ibm",
+      "johanDriver": "rgb_led_strip_controller",
+      "pids": [
+        "TS0503A",
+        "TS0503B",
+        "TS0505B",
+        "TS0504B"
+      ]
+    },
+    {
+      "fp": "_TZ3000_9cpuaca6",
+      "johanDriver": "rgb_mood_light",
+      "pids": [
+        "TS0505A",
+        "TS0505B"
+      ]
+    },
+    {
+      "fp": "_TZ3210_r0xgkft5",
+      "johanDriver": "rgb_mood_light",
+      "pids": [
+        "TS0505A",
+        "TS0505B"
+      ]
+    },
+    {
+      "fp": "_TZ3000_kdpxju99",
+      "johanDriver": "rgb_spot_GU10",
+      "pids": [
+        "TS0505A"
+      ]
+    },
+    {
+      "fp": "_TZ3000_h1jnz6l8",
+      "johanDriver": "rgb_spot_GardenLight",
+      "pids": [
+        "TS0505A"
+      ]
+    },
+    {
+      "fp": "_TZ3000_utagpnzs",
+      "johanDriver": "rgb_wall_led_light",
+      "pids": [
+        "TS0505A"
+      ]
+    },
+    {
+      "fp": "_TZ3000_5bsf8vaj",
+      "johanDriver": "rgb_wall_led_light",
+      "pids": [
+        "TS0505A"
+      ]
+    },
+    {
+      "fp": "_TZ3000_lf56vpxj",
+      "johanDriver": "slim_motion_sensor",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qeuvnohg",
+      "johanDriver": "smartPlug_DinRail",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TZ1800_ejwkn2h2",
+      "johanDriver": "smart_door_window_sensor",
+      "pids": [
+        "TY0203",
+        "TS0203"
+      ]
+    },
+    {
+      "fp": "_TZ3210_eymunffl",
+      "johanDriver": "smart_garden_irrigation_control",
+      "pids": [
+        "TS0101",
+        "TS0049"
+      ]
+    },
+    {
+      "fp": "_TZ3000_cjfmu5he",
+      "johanDriver": "smart_garden_irrigation_control",
+      "pids": [
+        "TS0101",
+        "TS0049"
+      ]
+    },
+    {
+      "fp": "_TZ3000_kz1anoi8",
+      "johanDriver": "smart_garden_irrigation_control",
+      "pids": [
+        "TS0101",
+        "TS0049"
+      ]
+    },
+    {
+      "fp": "_TZ3000_mq4wujmp",
+      "johanDriver": "smart_garden_irrigation_control",
+      "pids": [
+        "TS0101",
+        "TS0049"
+      ]
+    },
+    {
+      "fp": "_TZ3000_abrsvsou",
+      "johanDriver": "smart_knob_switch",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_4fjiwweb",
+      "johanDriver": "smart_knob_switch",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qja6nq5z",
+      "johanDriver": "smart_knob_switch",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ixla93vd",
+      "johanDriver": "smart_knob_switch",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_uri7ongn",
+      "johanDriver": "smart_knob_switch",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ1800_fcdjzz3s",
+      "johanDriver": "smart_motion_sensor",
+      "pids": [
+        "TY0202"
+      ]
+    },
+    {
+      "fp": "_TZ3000_kjfzuycl",
+      "johanDriver": "smart_remote_1_button",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_rco1yzb1",
+      "johanDriver": "smart_remote_1_button",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_yirp2pgd",
+      "johanDriver": "smart_remote_1_button",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ja5osu5g",
+      "johanDriver": "smart_remote_1_button_2",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_fsiepnrh",
+      "johanDriver": "smart_remote_4_buttons",
+      "pids": [
+        "TS0215A"
+      ]
+    },
+    {
+      "fp": "_TYZB01_qm6djpta",
+      "johanDriver": "smart_remote_4_buttons",
+      "pids": [
+        "TS0215A"
+      ]
+    },
+    {
+      "fp": "_TZ3000_p6ju8myv",
+      "johanDriver": "smart_remote_4_buttons",
+      "pids": [
+        "TS0215A"
+      ]
+    },
+    {
+      "fp": "_TZ3000_eo3dttwe",
+      "johanDriver": "smart_remote_4_buttons",
+      "pids": [
+        "TS0215A"
+      ]
+    },
+    {
+      "fp": "_TYZB01_dsjszp0x",
+      "johanDriver": "smoke_sensor",
+      "pids": [
+        "TS0205"
+      ]
+    },
+    {
+      "fp": "_TYZB01_wqcac7lo",
+      "johanDriver": "smoke_sensor",
+      "pids": [
+        "TS0205"
+      ]
+    },
+    {
+      "fp": "_TZ3210_up3pngle",
+      "johanDriver": "smoke_sensor3",
+      "pids": [
+        "TS0205"
+      ]
+    },
+    {
+      "fp": "_TYZB01_vkwryfdr",
+      "johanDriver": "socket_power_strip_four",
+      "pids": [
+        "TS0115"
+      ]
+    },
+    {
+      "fp": "LELLKI",
+      "johanDriver": "socket_power_strip_four_three",
+      "pids": [
+        "JZ-ZB-004"
+      ]
+    },
+    {
+      "fp": "_TZ3000_mmkbptmx",
+      "johanDriver": "switch_4_gang_metering",
+      "pids": [
+        "TS0004"
+      ]
+    },
+    {
+      "fp": "_TZ3000_oborybow",
+      "johanDriver": "tunable_bulb_E14",
+      "pids": [
+        "TS0502A"
+      ]
+    },
+    {
+      "fp": "_TZ3000_49qchf10",
+      "johanDriver": "tunable_bulb_E27",
+      "pids": [
+        "TS0502A"
+      ]
+    },
+    {
+      "fp": "_TZ3000_el5kt5im",
+      "johanDriver": "tunable_spot_GU10",
+      "pids": [
+        "TS0502A"
+      ]
+    },
+    {
+      "fp": "_TZ3000_dph3rpss",
+      "johanDriver": "wall_curtain_switch",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_8kzqqzu4",
+      "johanDriver": "wall_curtain_switch",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ltiqubue",
+      "johanDriver": "wall_curtain_switch",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_dbpmpco1",
+      "johanDriver": "wall_curtain_switch",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_fvhunhxb",
+      "johanDriver": "wall_curtain_switch",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_ctbafvhm",
+      "johanDriver": "wall_curtain_switch",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qqdbccb3",
+      "johanDriver": "wall_curtain_switch",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_wptayaqr",
+      "johanDriver": "wall_curtain_switch",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qa8s8vca",
+      "johanDriver": "wall_curtain_switch",
+      "pids": [
+        "TS130F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_owgcnkrh",
+      "johanDriver": "wall_remote_2_gang",
+      "pids": [
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TYZB02_keyjhapk",
+      "johanDriver": "wall_remote_2_gang",
+      "pids": [
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_oikiyf3b",
+      "johanDriver": "wall_remote_2_gang",
+      "pids": [
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_dfgbtub0",
+      "johanDriver": "wall_remote_2_gang",
+      "pids": [
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_h1c2eamp",
+      "johanDriver": "wall_remote_2_gang",
+      "pids": [
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3400_keyjhapk",
+      "johanDriver": "wall_remote_2_gang",
+      "pids": [
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_5e235jpa",
+      "johanDriver": "wall_remote_2_gang",
+      "pids": [
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_fkvaniuu",
+      "johanDriver": "wall_remote_2_gang",
+      "pids": [
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TZ3000_a7ouggvs",
+      "johanDriver": "wall_remote_3_gang",
+      "pids": [
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TYZB02_key8kk7r",
+      "johanDriver": "wall_remote_3_gang",
+      "pids": [
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_qzjcsmar",
+      "johanDriver": "wall_remote_3_gang",
+      "pids": [
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_rrjr1q0u",
+      "johanDriver": "wall_remote_3_gang",
+      "pids": [
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_w8jwkczz",
+      "johanDriver": "wall_remote_3_gang",
+      "pids": [
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_gbm10jnj",
+      "johanDriver": "wall_remote_3_gang",
+      "pids": [
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_yw5tvzsk",
+      "johanDriver": "wall_remote_3_gang",
+      "pids": [
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_sj7jbgks",
+      "johanDriver": "wall_remote_3_gang",
+      "pids": [
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TZ3000_xabckq1v",
+      "johanDriver": "wall_remote_4_gang_2",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_nuombroo",
+      "johanDriver": "wall_remote_4_gang_2",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_czuyt8lz",
+      "johanDriver": "wall_remote_4_gang_2",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_0ht8dnxj",
+      "johanDriver": "wall_remote_4_gang_2",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_b3mgfu0d",
+      "johanDriver": "wall_remote_4_gang_2",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_11pg3ima",
+      "johanDriver": "wall_remote_4_gang_2",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_et7afzxz",
+      "johanDriver": "wall_remote_4_gang_2",
+      "pids": [
+        "TS004F"
+      ]
+    },
+    {
+      "fp": "_TZ3000_iszegwpd",
+      "johanDriver": "wall_remote_6_gang",
+      "pids": [
+        "TS0046"
+      ]
+    }
+  ],
+  "dpGaps": [],
+  "errors": [],
+  "newDrivers": [
+    "christmas_lights",
+    "curtain_module",
+    "curtain_module_2_gang",
+    "dimmable_led_strip",
+    "dimmable_recessed_led",
+    "dimmer_1_gang",
+    "dimmer_1_gang_2",
+    "dimmer_1_gang_tuya",
+    "dimmer_2_gang",
+    "dimmer_2_gang_tuya",
+    "doorwindowsensor",
+    "doorwindowsensor_2",
+    "doorwindowsensor_3",
+    "doorwindowsensor_4",
+    "double_power_point",
+    "double_power_point_2",
+    "flood_sensor",
+    "lcdtemphumidluxsensor",
+    "lcdtemphumidsensor_2",
+    "lcdtemphumidsensor_3",
+    "outdoor_2_socket",
+    "outdoor_plug",
+    "pir_sensor_2",
+    "pirsensor",
+    "plug",
+    "radar_sensor",
+    "radar_sensor_2",
+    "radar_sensor_ceiling",
+    "relay_board_1_channel",
+    "relay_board_2_channel",
+    "relay_board_4_channel",
+    "rgb_bulb_E14",
+    "rgb_bulb_E27",
+    "rgb_ceiling_led_light",
+    "rgb_floor_led_light",
+    "rgb_led_light_bar",
+    "rgb_led_strip",
+    "rgb_led_strip_controller",
+    "rgb_mood_light",
+    "rgb_spot_GU10",
+    "rgb_spot_GardenLight",
+    "rgb_wall_led_light",
+    "slim_motion_sensor",
+    "smartPlug_DinRail",
+    "smart_air_detection_box",
+    "smart_door_window_sensor",
+    "smart_garden_irrigation_control",
+    "smart_motion_sensor",
+    "smart_switch",
+    "smartplug",
+    "smartplug_2_socket",
+    "smoke_sensor",
+    "smoke_sensor2",
+    "smoke_sensor3",
+    "socket_power_strip",
+    "socket_power_strip_four",
+    "socket_power_strip_four_three",
+    "socket_power_strip_four_two",
+    "soilsensor",
+    "soilsensor_2",
+    "switch_1_gang",
+    "switch_1_gang_metering",
+    "switch_2_gang",
+    "switch_2_gang_metering",
+    "switch_3_gang",
+    "switch_4_gang_metering",
+    "temphumidsensor2",
+    "temphumidsensor3",
+    "temphumidsensor4",
+    "temphumidsensor5",
+    "thermostatic_radiator_valve",
+    "tunable_bulb_E14",
+    "tunable_bulb_E27",
+    "tunable_spot_GU10",
+    "tuya_dummy_device",
+    "valvecontroller",
+    "wall_dimmer_tuya",
+    "wall_socket",
+    "wall_switch_1_gang",
+    "wall_switch_1_gang_tuya",
+    "wall_switch_2_gang",
+    "wall_switch_3_gang",
+    "wall_switch_4_gang",
+    "wall_switch_4_gang_tuya",
+    "wall_switch_5_gang_tuya",
+    "wall_switch_6_gang_tuya",
+    "wall_thermostat",
+    "water_detector",
+    "water_leak_sensor_tuya"
+  ],
+  "libAnalysis": {
+    "newClusters": [
+      {
+        "file": "IASZoneBoundCluster.js",
+        "id": null,
+        "name": null,
+        "extendsCluster": "BoundCluster",
+        "attributes": [
+          {
+            "name": "zoneEnrollResponse",
+            "id": "0"
+          }
+        ],
+        "commands": [
+          {
+            "name": "zoneEnrollResponse",
+            "id": "0"
+          }
+        ],
+        "existsInOurs": false
+      },
+      {
+        "file": "OnOffBoundCluster.js",
+        "id": null,
+        "name": null,
+        "extendsCluster": "BoundCluster",
+        "attributes": [],
+        "commands": [],
+        "existsInOurs": true
+      },
+      {
+        "file": "TuyaColorControlCluster.js",
+        "id": null,
+        "name": null,
+        "extendsCluster": "ColorControlCluster",
+        "attributes": [
+          {
+            "name": "currentHue",
+            "id": "0"
+          },
+          {
+            "name": "currentSaturation",
+            "id": "1"
+          },
+          {
+            "name": "currentX",
+            "id": "3"
+          },
+          {
+            "name": "currentY",
+            "id": "4"
+          },
+          {
+            "name": "colorTemperatureMireds",
+            "id": "7"
+          },
+          {
+            "name": "colorMode",
+            "id": "8"
+          },
+          {
+            "name": "tuyaBrightness",
+            "id": "61441"
+          },
+          {
+            "name": "tuyaRgbMode",
+            "id": "61440"
+          },
+          {
+            "name": "moveToHue",
+            "id": "0"
+          },
+          {
+            "name": "moveToSaturation",
+            "id": "3"
+          },
+          {
+            "name": "moveToHueAndSaturation",
+            "id": "6"
+          },
+          {
+            "name": "moveToColor",
+            "id": "7"
+          },
+          {
+            "name": "moveToColorTemperature",
+            "id": "10"
+          },
+          {
+            "name": "tuyaRgbMode",
+            "id": "240"
+          }
+        ],
+        "commands": [
+          {
+            "name": "moveToHue",
+            "id": "0"
+          },
+          {
+            "name": "moveToSaturation",
+            "id": "3"
+          },
+          {
+            "name": "moveToHueAndSaturation",
+            "id": "6"
+          },
+          {
+            "name": "moveToColor",
+            "id": "7"
+          },
+          {
+            "name": "moveToColorTemperature",
+            "id": "10"
+          },
+          {
+            "name": "tuyaRgbMode",
+            "id": "240"
+          }
+        ],
+        "existsInOurs": true
+      },
+      {
+        "file": "TuyaLevelControlCluster.js",
+        "id": null,
+        "name": null,
+        "extendsCluster": "LevelControlCluster",
+        "attributes": [
+          {
+            "name": "tuyaBrightness",
+            "id": "0xF000"
+          },
+          {
+            "name": "moveToLevelTuya",
+            "id": "0xF0"
+          }
+        ],
+        "commands": [
+          {
+            "name": "moveToLevelTuya",
+            "id": "0xF0"
+          }
+        ],
+        "existsInOurs": false
+      },
+      {
+        "file": "TuyaOnOffCluster.js",
+        "id": null,
+        "name": null,
+        "extendsCluster": "OnOffCluster",
+        "attributes": [
+          {
+            "name": "childLock",
+            "id": "0x8000"
+          },
+          {
+            "name": "indicatorMode",
+            "id": "0x8001"
+          },
+          {
+            "name": "relayStatus",
+            "id": "0x8002"
+          }
+        ],
+        "commands": [],
+        "existsInOurs": true
+      },
+      {
+        "file": "TuyaPowerOnStateCluster.js",
+        "id": null,
+        "name": null,
+        "extendsCluster": "Cluster",
+        "attributes": [
+          {
+            "name": "powerOnstate",
+            "id": "53264"
+          }
+        ],
+        "commands": [],
+        "existsInOurs": false
+      },
+      {
+        "file": "TuyaSpecificBoundCluster.js",
+        "id": null,
+        "name": null,
+        "extendsCluster": "BoundCluster",
+        "attributes": [],
+        "commands": [],
+        "existsInOurs": false
+      },
+      {
+        "file": "TuyaSpecificCluster.js",
+        "id": 61184,
+        "name": "tuya",
+        "extendsCluster": "Cluster",
+        "attributes": [
+          {
+            "name": "datapoint",
+            "id": "0x00"
+          },
+          {
+            "name": "reporting",
+            "id": "0x01"
+          },
+          {
+            "name": "response",
+            "id": "0x02"
+          },
+          {
+            "name": "dataQuery",
+            "id": "0x03"
+          },
+          {
+            "name": "dataReport",
+            "id": "0x05"
+          },
+          {
+            "name": "reportingConfiguration",
+            "id": "0x06"
+          },
+          {
+            "name": "mcuVersionRequest",
+            "id": "0x10"
+          },
+          {
+            "name": "mcuVersionResponse",
+            "id": "0x11"
+          },
+          {
+            "name": "timeSync",
+            "id": "0x24"
+          }
+        ],
+        "commands": [
+          {
+            "name": "dataQuery",
+            "id": "0x03"
+          },
+          {
+            "name": "dataReport",
+            "id": "0x05"
+          },
+          {
+            "name": "mcuVersionRequest",
+            "id": "0x10"
+          },
+          {
+            "name": "mcuVersionResponse",
+            "id": "0x11"
+          },
+          {
+            "name": "timeSync",
+            "id": "0x24"
+          }
+        ],
+        "existsInOurs": true
+      },
+      {
+        "file": "TuyaSpecificClusterDevice.js",
+        "id": null,
+        "name": null,
+        "extendsCluster": "ZigBeeDevice",
+        "attributes": [],
+        "commands": [],
+        "existsInOurs": false
+      },
+      {
+        "file": "TuyaWindowCoveringCluster.js",
+        "id": null,
+        "name": null,
+        "extendsCluster": "WindowCoveringCluster",
+        "attributes": [
+          {
+            "name": "windowCoverStatus",
+            "id": "0xF000"
+          },
+          {
+            "name": "calibrationMode",
+            "id": "61441"
+          },
+          {
+            "name": "motorReversal",
+            "id": "61442"
+          },
+          {
+            "name": "calibrationTime",
+            "id": "61443"
+          }
+        ],
+        "commands": [],
+        "existsInOurs": true
+      },
+      {
+        "file": "WindowCoveringBoundCluster.js",
+        "id": null,
+        "name": null,
+        "extendsCluster": "BoundCluster",
+        "attributes": [],
+        "commands": [],
+        "existsInOurs": false
+      }
+    ],
+    "newHelpers": [
+      {
+        "file": "TuyaDataPoints.js",
+        "exports": []
+      },
+      {
+        "file": "TuyaHelpers.js",
+        "exports": []
+      }
+    ],
+    "dpConstantDiffs": [],
+    "dpConstantBlocks": 25
+  },
+  "patternAnalysis": {
+    "readAttributesCalls": 48,
+    "dimAutoOnOff": 3,
+    "tuyaListenerPattern": 6,
+    "errorHandling": 8
+  },
+  "summary": {
+    "totalJohanFPs": 636,
+    "totalOurFPs": 56,
+    "missingFPs": 634,
+    "addedFPs": 417,
+    "skippedFPs": 217,
+    "dpGaps": 0,
+    "newDrivers": 89,
+    "libClusters": 11,
+    "libHelpers": 2,
+    "patterns": {
+      "readAttributesCalls": 48,
+      "dimAutoOnOff": 3,
+      "tuyaListenerPattern": 6,
+      "errorHandling": 8
+    }
+  }
+}
