@@ -1,0 +1,14 @@
+{
+  "mode": "imap",
+  "checks": [
+    {
+      "time": "2026-05-04T08:48:15.404Z",
+      "ok": true,
+      "mode": "imap",
+      "count": 5
+    }
+  ],
+  "lastOk": "2026-05-04T08:48:15.404Z",
+  "consecutiveFails": 0,
+  "emailsFetched": 5
+}
