@@ -15,6 +15,7 @@
 | Créer capabilities dim.valve_1..4 | ✅ Done | #260 |
 | Validation `homey app validate --level publish` | ✅ PASSED | — |
 | Push stable-v5 + master synchronisés | ✅ Done | — |
+| Fix Flow Card registration errors (8 drivers) | ✅ Done | Commit 3b9c2ce4b |
 
 ---
 
