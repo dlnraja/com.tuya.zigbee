@@ -1,0 +1,183 @@
+name: "🏗️ Stable-v5 CI/CD Pipeline"
+
+on:
+  push:
+    branches:
+      - stable-v5
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 'Version bump'
+        required: true
+        default: 'patch'
+        type: choice
+        options: [patch, minor, major, none]
+      promote:
+        description: 'Promote to test channel'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: homey-stable-app-store-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: "22"
+  APP_ID: "com.dlnraja.tuya.zigbee.stable"
+  STABLE_APP: "true"
+  DEBUG: "false"
+
+jobs:
+  validate:
+    name: 🛡️ Validate (v5 Stable)
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, '[skip ci]')
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          ref: stable-v5
+      
+      - name: 🛡️ ULTIMATE INTEGRITY GATE
+        run: node scripts/ULTIMATE_CHECK.js
+      
+      - name: 🛡️ STRICT SYNTAX PURITY GUARD
+        run: node scripts/maintenance/STRICT_SYNTAX_GUARD.js
+      
+      - name: 📦 Setup Unified
+        uses: ./.github/actions/setup-unified
+      
+      - name: 🔄 Case Variant Detection (Z2M/ZHA)
+        run: |
+          echo "=== Detecting missing case variants ==="
+          node scripts/automation/detect-missing-variants.js
+          MISSING=$(node -e "const d=JSON.parse(require('fs').readFileSync('data/community-sync/missing-variants-detected.json','utf8'));console.log(d.total||0)")
+          echo "Found $MISSING missing case variants"
+          if [ "$MISSING" -gt 0 ]; then
+            node scripts/automation/fix-detected-variants.js
+          fi
+      
+      - name: 🔍 Fingerprint Collision Analysis
+        run: node scripts/automation/analyze-collisions.js
+      
+      - name: Homey Validate (Publish Level)
+        run: npx homey app validate --level publish
+
+  publish-and-promote:
+    name: 🚀 Publish & Promote (v5 Stable)
+    needs: validate
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'push' && !contains(github.event.head_commit.message, '[skip ci]'))
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          ref: stable-v5
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      
+      - name: 📦 Setup Unified
+        uses: ./.github/actions/setup-unified
+      
+      - name: 🏷️ Version Bump
+        id: bump
+        if: github.event.inputs.bump != 'none'
+        uses: athombv/github-action-homey-app-version@v1
+        with:
+          version: ${{ github.event.inputs.bump || 'patch' }}
+          changelog: "v${{ github.event.inputs.bump || 'patch' }}: 🏗️ STABLE v5.11 - Maintenance & Compatibility Fixes."
+      
+      - name: 🔄 Sync Version
+        if: steps.bump.outcome == 'success'
+        run: |
+          node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');"
+          echo "NEW_VERSION=$(node -p 'require(\"./app.json\").version')" >> $GITHUB_ENV
+      
+      - name: 💾 Commit & Push Version
+        if: steps.bump.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add app.json package.json .homeychangelog.json
+          
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "v${{ env.NEW_VERSION }}: stable-v5 automatic version bump [skip ci]"
+            git pull --rebase origin stable-v5
+            git push origin HEAD:stable-v5
+          fi
+      
+      - name: 🏗️ Pre-build
+        run: |
+          npm ci
+          node scripts/shadow_sanitizer.js
+          node scripts/maintenance/STRIP_XLARGE_IMAGES.js
+          npx homey app build
+      
+      - name: 📤 Publish to Draft (Stable App)
+        id: publish
+        if: env.NEW_VERSION != ''
+        uses: athombv/github-action-homey-app-publish@v1
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+      
+      - name: 🎯 Promote to Test (Puppeteer)
+        if: steps.publish.outcome == 'success' && (github.event.inputs.promote != 'false')
+        id: promote_puppeteer
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          STABLE_APP_ID: "com.dlnraja.tuya.zigbee.stable"
+        run: |
+          echo "Waiting for build processing..."
+          sleep 150
+          npm install puppeteer --no-save
+          node .github/scripts/auto-promote-puppeteer.js
+      
+      - name: 🎯 Promote to Test (API Fallback)
+        if: steps.publish.outcome == 'success' && (github.event.inputs.promote != 'false') && steps.promote_puppeteer.outcome != 'success'
+        id: promote_api
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/auto-publish-draft.js
+      
+      - name: 🐙 Create Release
+        if: steps.publish.outcome == 'success'
+        continue-on-error: true
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: stable-v${{ env.NEW_VERSION }}
+          name: "Stable v5.11.${NEW_VERSION}"
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      
+      - name: 📝 Final Summary
+        if: always()
+        run: |
+          echo "## 🚀 Stable-v5 Deployment Results" >> $GITHUB_STEP_SUMMARY
+          echo "### App: com.dlnraja.tuya.zigbee.stable (v5.11)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Outcome |" >> $GITHUB_STEP_SUMMARY
+          echo "| --- | --- |" >> $GITHUB_STEP_SUMMARY
+          echo "| Version | v${{ env.NEW_VERSION || 'N/A' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Validation | ${{ needs.validate.result }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Publish | ${{ steps.publish.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Promotion (Puppeteer) | ${{ steps.promote_puppeteer.outcome || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Promotion (API) | ${{ steps.promote_api.outcome || 'skipped' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Links" >> $GITHUB_STEP_SUMMARY
+          echo "- [Stable Test App](https://homey.app/a/com.dlnraja.tuya.zigbee.stable/test/)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Manage Versions](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee.stable/versions)" >> $GITHUB_STEP_SUMMARY

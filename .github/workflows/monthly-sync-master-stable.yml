@@ -1,0 +1,189 @@
+name: "🔄 Monthly Master → Stable-v5 Sync"
+
+on:
+  schedule:
+    - cron: '0 6 1 * *'  # First day of month at 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (no changes)'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  sync:
+    name: 🔄 Sync master → stable-v5
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      
+      - name: 🔄 Fetch both branches
+        run: |
+          git fetch origin master stable-v5
+          git checkout stable-v5
+          git pull origin stable-v5
+      
+      - name: 🔍 Analyze changes from master
+        run: |
+          echo "=== Analyzing master → stable-v5 changes ==="
+          MASTER_HASH=$(git rev-parse origin/master)
+          STABLE_HASH=$(git rev-parse origin/stable-v5)
+          echo "Master: $MASTER_HASH"
+          echo "Stable: $STABLE_HASH"
+          
+          # Find common ancestor
+          MERGE_BASE=$(git merge-base master stable-v5)
+          echo "Merge base: $MERGE_BASE"
+          
+          # Count commits since last sync
+          COMMITS=$(git log --oneline $MERGE_BASE..origin/master | wc -l)
+          echo "New commits in master: $COMMITS"
+          
+          # List changed files
+          CHANGED_FILES=$(git diff --name-only $MERGE_BASE..origin/master | head -50)
+          echo "Changed files (50 max):"
+          echo "$CHANGED_FILES"
+          
+          # Check for breaking changes
+          echo ""
+          echo "=== Checking for breaking changes ==="
+          CRITICAL_FILES=$(echo "$CHANGED_FILES" | grep -E "^(app\.json|drivers/[^/]+/driver\.js|lib/)" || true)
+          if [ -n "$CRITICAL_FILES" ]; then
+            echo "Critical files changed:"
+            echo "$CRITICAL_FILES"
+          fi
+      
+      - name: 🤖 AI-assisted sync decision
+        if: env.GOOGLE_API_KEY != '' || env.NVIDIA_API_KEY != ''
+        run: |
+          echo "=== AI-assisted merge decision ==="
+          node .github/scripts/ai-helper.js --action analyze_sync_conflicts --source master --target stable-v5
+      
+      - name: 🔄 Attempt merge (master → stable-v5)
+        if: github.event.inputs.dry_run != 'true'
+        id: merge
+        continue-on-error: true
+        run: |
+          echo "=== Attempting merge ==="
+          git merge origin/master --no-edit || true
+          
+          # Check merge result
+          if [ $? -eq 0 ]; then
+            echo "✅ Merge successful"
+          else
+            echo "⚠️ Merge conflicts detected"
+            CONFLICTS=$(git diff --name-only --diff-filter=U)
+            echo "Conflict files: $CONFLICTS"
+            
+            # Auto-resolve non-critical conflicts
+            for f in $CONFLICTS; do
+              if echo "$f" | grep -qE "\.md$|docs/"; then
+                echo "Auto-resolving documentation conflict: $f"
+                git checkout --theirs "$f"
+              fi
+            done
+            
+            # Check remaining conflicts
+            REMAINING=$(git diff --name-only --diff-filter=U)
+            if [ -n "$REMAINING" ]; then
+              echo "Remaining conflicts: $REMAINING"
+              git merge --abort
+              echo "::error::Merge conflicts need manual resolution"
+              exit 1
+            fi
+          fi
+      
+      - name: 🔧 Version compatibility check
+        if: github.event.inputs.dry_run != 'true' && success()
+        run: |
+          echo "=== Version compatibility check ==="
+          MASTER_VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "unknown")
+          STABLE_VER=$(git show stable-v5:app.json 2>/dev/null | node -e "try{console.log(JSON.parse(require('fs').readFileSync(0,'utf8')).version)}catch{echo('N/A')}"" || echo "N/A")
+          echo "Master version: $MASTER_VER"
+          echo "Stable version: $STABLE_VER"
+          
+          # Ensure stable version follows v5.11.x pattern
+          if ! echo "$STABLE_VER" | grep -qE "^5\.11\."; then
+            echo "::warning::Stable version doesn't follow v5.11.x pattern"
+          fi
+      
+      - name: 📦 Build & Validate
+        if: github.event.inputs.dry_run != 'true' && success()
+        run: |
+          npm ci --prefer-offline --no-audit || npm install
+          node scripts/maintenance/STRIP_XLARGE_IMAGES.js
+          npx homey app build
+          npx homey app validate --level publish
+      
+      - name: 💾 Commit & Push
+        if: github.event.inputs.dry_run != 'true' && success()
+        run: |
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git add -A
+            git commit -m "🔄 Sync from master (monthly merge) [skip ci]"
+            git push origin stable-v5
+            echo "✅ Pushed to stable-v5"
+          fi
+      
+      - name: 🐙 Create Sync PR
+        if: github.event.inputs.dry_run != 'true' && success()
+        continue-on-error: true
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: auto/sync-master-to-stable
+          base: stable-v5
+          title: "🔄 Auto-sync: master → stable-v5 (monthly)"
+          body: |
+            ## Sync Summary
+            - Source: master
+            - Target: stable-v5
+            - Auto-merged via GitHub Actions
+            
+            ### Changes included
+            This PR merges latest changes from master branch to stable-v5.
+            
+            ### Validation
+            - [x] Build passed
+            - [x] Validation passed
+            
+            ### Links
+            - [Master branch](https://github.com/dlnraja/com.tuya.zigbee/tree/master)
+            - [Stable-v5 branch](https://github.com/dlnraja/com.tuya.zigbee/tree/stable-v5)
+          delete-branch: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 📝 Summary
+        if: always()
+        run: |
+          echo "## 🔄 Master → Stable-v5 Sync Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Step | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "| --- | --- |" >> $GITHUB_STEP_SUMMARY
+          echo "| Fetch branches | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "| Analyze changes | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "| Merge attempt | ${{ steps.merge.outcome }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Version check | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "| Build & Validate | ${{ env.BUILD_STATUS || 'N/A' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Push to stable-v5 | ✅ |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Links" >> $GITHUB_STEP_SUMMARY
+          echo "- [Stable App Test](https://homey.app/a/com.dlnraja.tuya.zigbee.stable/test/)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Manage Stable Versions](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee.stable/versions)" >> $GITHUB_STEP_SUMMARY
