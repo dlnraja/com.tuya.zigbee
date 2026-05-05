@@ -10,7 +10,7 @@
 'use strict';
 const fs = require('fs'), path = require('path');
 const { fetchWithRetry } = require('./retry-helper');
-const APP = 'com.dlnraja.tuya.zigbee';
+const APP = process.env.APP_ID || process.env.STABLE_APP_ID || 'com.dlnraja.tuya.zigbee';
 const PAT = process.env.HOMEY_PAT;
 const DRY = process.env.DRY_RUN === 'true';
 const SUM = process.env.GITHUB_STEP_SUMMARY || null;

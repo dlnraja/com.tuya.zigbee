@@ -9,7 +9,7 @@
 'use strict';
 const fs = require('fs'), path = require('path');
 const { promoteViaBrowserSession } = require('./promote-via-session');
-const APP_ID = 'com.dlnraja.tuya.zigbee';
+const APP_ID = process.env.APP_ID || process.env.STABLE_APP_ID || 'com.dlnraja.tuya.zigbee';
 const BASE = 'https://tools.developer.homey.app';
 const VERSIONS_URL = `${BASE}/apps/app/${APP_ID}/versions`;
 const EMAIL = process.env.HOMEY_EMAIL;
