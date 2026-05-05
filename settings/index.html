@@ -97,8 +97,21 @@ input:focus{outline:none;border-color:#00a870;box-shadow:0 0 0 1px #00a870}
 
 <script>
 var Homey = null;
+var homeyReadyReceived = false;
+
+// Fallback: if Homey.ready never fires, unlock UI after 5 seconds
+setTimeout(() => {
+  if(!homeyReadyReceived) {
+    const overlay = document.getElementById('init-overlay');
+    if(overlay) {
+      overlay.style.opacity = '0';
+      setTimeout(() => overlay.style.display = 'none', 500);
+    }
+  }
+}, 5000);
 
 function onHomeyReady(homey) {
+  homeyReadyReceived = true;
   Homey = homey;
   
   // Hide loading overlay
