@@ -96,74 +96,66 @@ input:focus{outline:none;border-color:#00a870;box-shadow:0 0 0 1px #00a870}
 </div>
 
 <script>
-var Homey = null;
-var homeyReadyReceived = false;
+var settingsHomey = null;
 
-// Fallback: if Homey.ready never fires, unlock UI after 5 seconds
-setTimeout(() => {
-  if(!homeyReadyReceived) {
-    const overlay = document.getElementById('init-overlay');
-    if(overlay) {
-      overlay.style.opacity = '0';
-      setTimeout(() => overlay.style.display = 'none', 500);
-    }
-  }
-}, 5000);
-
-function onHomeyReady(homey) {
-  homeyReadyReceived = true;
-  Homey = homey;
-  
-  // Hide loading overlay
-  const overlay = document.getElementById('init-overlay');
+function hideInitOverlay() {
+  var overlay = document.getElementById('init-overlay');
   if(overlay) {
     overlay.style.opacity = '0';
-    setTimeout(() => overlay.style.display = 'none', 500);
+    setTimeout(function() { overlay.style.display = 'none'; }, 500);
   }
+}
 
-  // Initial load
-  Homey.get('tuya_cloud_access_id', (err, val) => { if(val) document.getElementById('aid').value = val; });
-  Homey.get('tuya_cloud_access_secret', (err, val) => { updateSecretStatus(!!val); });
-  Homey.get('tuya_cloud_region', (err, val) => { if(val) document.getElementById('reg').value = val; });
-  Homey.get('developer_debug_mode', (err, val) => { document.getElementById('dbg').checked = !!val; });
-  Homey.get('experimental_smart_adapt', (err, val) => { document.getElementById('sa').checked = !!val; });
+// Safety net: hide spinner after 8s regardless of what happens
+setTimeout(function() {
+  hideInitOverlay();
+}, 8000);
 
-  // Support for real-time updates if another tab changes settings
-  Homey.on('settings_set', (key) => {
-     // Optional: reload if needed
-  });
+function onHomeyReady(homey) {
+  settingsHomey = homey;
+
+  // Signal to Homey host that the page is done loading (required in SDK3)
+  try { homey.ready(); } catch(e) {}
+
+  hideInitOverlay();
+
+  homey.get('tuya_cloud_access_id', function(err, val) { if(val) document.getElementById('aid').value = val; });
+  homey.get('tuya_cloud_access_secret', function(err, val) { updateSecretStatus(!!val); });
+  homey.get('tuya_cloud_region', function(err, val) { if(val) document.getElementById('reg').value = val; });
+  homey.get('developer_debug_mode', function(err, val) { document.getElementById('dbg').checked = !!val; });
+  homey.get('experimental_smart_adapt', function(err, val) { document.getElementById('sa').checked = !!val; });
 }
 
 function show(id, text, isError) {
-  const el = document.getElementById(isError ? 'err-msg' : 'ok-msg');
-  const other = document.getElementById(isError ? 'ok-msg' : 'err-msg');
+  var el = document.getElementById(isError ? 'err-msg' : 'ok-msg');
+  var other = document.getElementById(isError ? 'ok-msg' : 'err-msg');
   other.style.display = 'none';
   el.textContent = text;
   el.style.display = 'block';
-  setTimeout(() => { el.style.display = 'none'; }, 5000);
+  setTimeout(function() { el.style.display = 'none'; }, 5000);
 }
 
 function saveCreds() {
-  if(!Homey) return;
-  const aid = document.getElementById('aid').value.trim();
-  const secret = document.getElementById('as').value.trim();
-  const region = document.getElementById('reg').value;
+  if(!settingsHomey) return;
+  var aid = document.getElementById('aid').value.trim();
+  var secret = document.getElementById('as').value.trim();
+  var region = document.getElementById('reg').value;
 
   if(!aid || !secret) {
     show(null, 'ID and Secret are required for Cloud binding', true);
     return;
   }
 
-  const btn = document.getElementById('btn-save');
+  var btn = document.getElementById('btn-save');
   btn.disabled = true;
   btn.textContent = 'Saving...';
 
   // Chained saves (SDK 3)
-  Homey.set('tuya_cloud_access_id', aid, (err) => {
+  settingsHomey.set('tuya_cloud_access_id', aid, function(err) {
     if(err) { show(null, err.message, true); btn.disabled = false; btn.textContent = 'Save Configuration'; return; }
-    Homey.set('tuya_cloud_access_secret', secret, (err2) => {
+    settingsHomey.set('tuya_cloud_access_secret', secret, function(err2) {
       if(err2) { show(null, err2.message, true); btn.disabled = false; btn.textContent = 'Save Configuration'; return; }
-      Homey.set('tuya_cloud_region', region, (err3) => {
+      settingsHomey.set('tuya_cloud_region', region, function(err3) {
         btn.disabled = false;
         btn.textContent = 'Save Configuration';
         if(err3) { show(null, err3.message, true); return; }
@@ -175,10 +167,10 @@ function saveCreds() {
 }
 
 function clearCreds() {
-  if(!Homey || !confirm('Reset cloud configuration?')) return;
-  Homey.set('tuya_cloud_access_id', null);
-  Homey.set('tuya_cloud_access_secret', null);
-  Homey.set('tuya_cloud_region', 'eu');
+  if(!settingsHomey || !confirm('Reset cloud configuration?')) return;
+  settingsHomey.set('tuya_cloud_access_id', null);
+  settingsHomey.set('tuya_cloud_access_secret', null);
+  settingsHomey.set('tuya_cloud_region', 'eu');
   
   document.getElementById('aid').value = '';
   document.getElementById('as').value = '';
@@ -188,14 +180,14 @@ function clearCreds() {
 }
 
 function setToggle(key, val) {
-  if(!Homey) return;
-  Homey.set(key, val, (err) => {
+  if(!settingsHomey) return;
+  settingsHomey.set(key, val, function(err) {
     if(err) show(null, 'Engine sync failed: ' + err.message, true);
   });
 }
 
 function updateSecretStatus(has) {
-  const el = document.getElementById('sec-status');
+  var el = document.getElementById('sec-status');
   if(has) {
     el.textContent = '🔒 Access Secret Encrypted & Saved';
     el.className = 'ss on';
@@ -205,7 +197,8 @@ function updateSecretStatus(has) {
   }
 }
 
-// SDK3 Ready call
-Homey.ready(onHomeyReady);
+// SDK3 Ready call — Homey host will call window.onHomeyReady when bridge is ready
+window.onHomeyReady = onHomeyReady;
+
 </script>
 </body></html>
