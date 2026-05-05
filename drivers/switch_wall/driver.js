@@ -16,7 +16,7 @@ class TuyaZigbeeWallSwitchDriver extends ZigBeeDriver {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-    this.log('Tuya Zigbee 1-Gang Wall Switch Driver initialized');
+    this.log('Tuya Zigbee 1-Gang Wall Switch Driver v7.5.8 initialized');
     this._registerFlowCards();
   }
 
@@ -26,10 +26,14 @@ class TuyaZigbeeWallSwitchDriver extends ZigBeeDriver {
         return type === 'condition' 
           ? this.homey.flow.getConditionCard(id) 
           : this.homey.flow.getActionCard(id);
-      } catch (e) { return null; }
+      } catch (e) { 
+        this.log(`[FLOW] Card not found: ${id} - ${e.message}`);
+        return null; 
+      }
     };
 
-    const P = 'switch_wall_switch_1gang';
+    // CORRECTED PREFIX: switch_wall_hybrid_switch_1gang (not switch_wall_switch_1gang)
+    const P = 'switch_wall_hybrid_switch_1gang';
 
     // CONDITIONS
     try {
@@ -39,6 +43,7 @@ class TuyaZigbeeWallSwitchDriver extends ZigBeeDriver {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
+        this.log(`[FLOW] Registered: ${P}_is_on`);
       }
     } catch (err) { this.error(`Condition ${P}_is_on failed: ${err.message}`); }
 
@@ -51,6 +56,7 @@ class TuyaZigbeeWallSwitchDriver extends ZigBeeDriver {
           await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
+        this.log(`[FLOW] Registered: ${P}_turn_on`);
       }
     } catch (err) { this.error(`Action ${P}_turn_on failed: ${err.message}`); }
 
@@ -63,6 +69,7 @@ class TuyaZigbeeWallSwitchDriver extends ZigBeeDriver {
           await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
+        this.log(`[FLOW] Registered: ${P}_turn_off`);
       }
     } catch (err) { this.error(`Action ${P}_turn_off failed: ${err.message}`); }
 
@@ -76,6 +83,7 @@ class TuyaZigbeeWallSwitchDriver extends ZigBeeDriver {
           await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
         });
+        this.log(`[FLOW] Registered: ${P}_toggle`);
       }
     } catch (err) { this.error(`Action ${P}_toggle failed: ${err.message}`); }
 
@@ -102,6 +110,7 @@ class TuyaZigbeeWallSwitchDriver extends ZigBeeDriver {
             this.log(`[FLOW] Device missing method: ${act.fn}`);
             return false;
           });
+          this.log(`[FLOW] Registered: ${P}_${act.id}`);
         }
       } catch (err) { this.error(`Action ${P}_${act.id} failed: ${err.message}`); }
     });
