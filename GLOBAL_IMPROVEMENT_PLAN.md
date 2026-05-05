@@ -543,3 +543,5 @@ Un appareil Zigbee est reconnu **si et seulement si** le couple `manufacturerNam
    - Extraire nouveaux patterns de devices
 
 3. **push final** après toutes corrections
+  
+| Replace all _getFlowCard with SDK3 API (14 drivers) | ? Done | Commit aea23d2d2 |
