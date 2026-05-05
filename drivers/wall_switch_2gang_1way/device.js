@@ -49,19 +49,19 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
           this.setCapabilityValue('onoff', value).catch(() => {});
         }
         if (isPhys) {
-          // Auto/Both: trigger physical button flow (general + per-gang)
-          if (mode === 'auto' || mode === 'both') {
-            const fid = 'wall_switch_2gang_1way_turned_' + (value ? 'on' : 'off');
-            this.homey.flow._getFlowCard(id)
-            const pgid = 'wall_switch_2gang_1way_physical_gang2_' + (value ? 'on' : 'off');
-            this.homey.flow._getFlowCard(id)
-          }
-          // Magic/Both: trigger scene flow
-          if (mode === 'auto' || mode === 'magic' || mode === 'both') {
-            const action = value ? 'on' : 'off';
-            this.homey.flow._getFlowCard('pgid').trigger(this, { action }, {}).catch(() => {});
-            this.log(`[SCENE] Gang 2 scene: ${action}`);
-          }
+        // Auto/Both: trigger physical button flow (general + per-gang)
+        if (mode === 'auto' || mode === 'both') {
+          const fid = 'wall_switch_2gang_1way_turned_' + (value ? 'on' : 'off');
+          try { this.homey.flow.getTriggerCard(fid).trigger(this, { gang: 2 }, {}).catch(() => {}); } catch(e) {}
+          const pgid = 'wall_switch_2gang_1way_physical_gang2_' + (value ? 'on' : 'off');
+          try { this.homey.flow.getTriggerCard(pgid).trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {}); } catch(e) {}
+        }
+        // Magic/Both: trigger scene flow
+        if (mode === 'auto' || mode === 'magic' || mode === 'both') {
+          const action = value ? 'on' : 'off';
+          try { this.homey.flow.getTriggerCard(`wall_switch_2gang_1way_gang2_scene`).trigger(this, { action }, {}).catch(() => {}); } catch(e) {}
+          this.log(`[SCENE] Gang 2 scene: ${action}`);
+        }
           // Magic: revert load to previous state
           if (mode === 'magic' && this._zclState._prevState !== null && this._zclState._prevState !== undefined) {
             setTimeout(async () => {
@@ -143,11 +143,11 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
       const mode = this.sceneMode;
       const isPhys = !this._appCommandPending?.gang1;if (isPhys && (mode === 'auto' || mode === 'both')) {
         const pgid = 'wall_switch_2gang_1way_physical_gang1_' + (value ? 'on' : 'off');
-        this.homey.flow._getFlowCard(id)
+        try { this.homey.flow.getTriggerCard(pgid).trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {}); } catch(e) {}
       }
       if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
         const action = value ? 'on' : 'off';
-        this.homey.flow._getFlowCard(id).trigger(this, { action }, {}).catch(() => {});
+        try { this.homey.flow.getTriggerCard('wall_switch_2gang_1way_gang1_scene').trigger(this, { action }, {}).catch(() => {}); } catch(e) {}
         this.log(`[SCENE] Gang 1 scene: ${action}`);
       }
       // In magic mode, revert the load state

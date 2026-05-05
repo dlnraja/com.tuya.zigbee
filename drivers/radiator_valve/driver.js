@@ -24,10 +24,19 @@ class RadiatorValveDriver extends ZigBeeDriver {
     const P = 'radiator_valve';
     const actions = ['set_target_temperature', 'set_temperature'];
 
+    // Safe card getter
+    const safeGet = (type, id) => {
+      try {
+        return type === 'condition'
+          ? this.homey.flow.getConditionCard(id)
+          : this.homey.flow.getActionCard(id);
+      } catch (e) { return null; }
+    };
+
     actions.forEach(act => {
       try {
         const id = `${P}_${act}`;
-        const card = this._getFlowCard(id, 'action');
+        const card = safeGet('action', id);
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) return false;

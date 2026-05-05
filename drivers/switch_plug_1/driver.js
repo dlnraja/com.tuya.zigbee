@@ -27,11 +27,20 @@ class SwitchPlug1Driver extends ZigBeeDriver {
   _registerFlowCards() {
     const P = 'switch_plug_1';
 
+    // Safe card getter
+    const safeGet = (type, id) => {
+      try {
+        return type === 'condition'
+          ? this.homey.flow.getConditionCard(id)
+          : this.homey.flow.getActionCard(id);
+      } catch (e) { return null; }
+    };
+
     // ACTIONS
     ['turn_on', 'turn_off', 'toggle'].forEach(action => {
       try {
         const id = `${P}_${action}`;
-        const card = this._getFlowCard(id, 'action');
+        const card = safeGet('action', id);
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) return false;

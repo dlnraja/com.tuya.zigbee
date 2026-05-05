@@ -34,7 +34,7 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
       if (this._lastPm25 !== pm) {
         this._lastPm25 = pm;
         this.setCapabilityValue('measure_pm25', pm).catch(() => {});
-        this.homey.flow._getFlowCard(id).trigger(this, { pm25: pm }, {}).catch(() => {});
+        this.homey.flow.getTriggerCard('air_purifier_pm25_changed').trigger(this, { pm25: pm }, {}).catch(() => {});
       }
     } else if (data.dp === DP.speed) {
       const spd = typeof v === 'number' ? v : parseInt(v);

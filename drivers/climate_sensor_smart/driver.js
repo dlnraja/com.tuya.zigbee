@@ -2,11 +2,7 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class SmartScenePanelDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
+class ClimateSensorSmartDriver extends ZigBeeDriver {
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -21,22 +17,32 @@ class SmartScenePanelDriver extends ZigBeeDriver {
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 
-    this.log('SmartScenePanelDriver initialized');
+    this.log('ClimateSensorSmartDriver initialized');
+
+    // Safe card getter
+    const safeGet = (type, id) => {
+      try {
+        return type === 'condition'
+          ? this.homey.flow.getConditionCard(id)
+          : (type === 'action'
+            ? this.homey.flow.getActionCard(id)
+            : this.homey.flow.getTriggerCard(id));
+      } catch (e) { return null; }
+    };
 
     // Scene activated trigger with scene filter
-    const sceneTrigger = this._getFlowCard('climate_sensor_smart_hybrid_smart_scene_panel_scene_activated', 'trigger');
-  
+    const sceneTrigger = safeGet('trigger', 'climate_sensor_smart_hybrid_smart_scene_panel_scene_activated');
+
     if (sceneTrigger) {
       sceneTrigger.registerRunListener(async (args, state) => {
         return !args.scene || args.scene === state.scene;
-      
-  });
+      });
     }
 
     // Switch changed triggers (1-4)
     for (let g = 1; g <= 4; g++) {
       try {
-        const card = this._getFlowCard(`smart_scene_panel_switch_${g}_changed`, 'trigger');
+        const card = safeGet('trigger', `smart_scene_panel_switch_${g}_changed`);
         if (card) {
           card.registerRunListener(async () => true);
         }
@@ -48,7 +54,7 @@ class SmartScenePanelDriver extends ZigBeeDriver {
     // Action cards: set switch
     for (let g = 1; g <= 4; g++) {
       try {
-        const card = this._getFlowCard(`smart_scene_panel_set_switch_${g}`, 'action');
+        const card = safeGet('action', `smart_scene_panel_set_switch_${g}`);
         if (card) {
           card.registerRunListener(async (args) => {
             if (args.device) {
@@ -65,9 +71,8 @@ class SmartScenePanelDriver extends ZigBeeDriver {
       }
     }
 
-    this.log('SmartScenePanelDriver flow cards registered');
+    this.log('ClimateSensorSmartDriver flow cards registered');
   }
 }
 
-module.exports = SmartScenePanelDriver;
-
+module.exports = ClimateSensorSmartDriver;

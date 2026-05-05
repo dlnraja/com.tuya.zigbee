@@ -3,18 +3,10 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
- * v5.5.533: Button 1-Gang Driver - FIXED flow card IDs to match driver.flow.compose.json
- * v5.5.114: Original - used FlowCardHelper which generated WRONG IDs
- * 
- * CRITICAL: Flow card IDs MUST match driver.flow.compose.json exactly!
- * - Correct: button_wireless_1_button_1gang_button_pressed
- * - Wrong:   button_wireless_1_button_pressed (what FlowCardHelper generated)
+ * v7.5.9: Button 1-Gang Driver - FIXED to use SDK3 API
+ * CRITICAL: Use homey.flow.getTriggerCard() instead of _getFlowCard()
  */
 class Button1GangDriver extends ZigBeeDriver {
-  /**
-   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
-   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
-   */
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -24,20 +16,18 @@ class Button1GangDriver extends ZigBeeDriver {
     }
   }
 
-
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
 
-    
-    if (this._flowCardsRegistered) return;
-    this._flowCardsRegistered = true;
+    this.log('Button1GangDriver v7.5.9 initialized');
 
-     // v5.5.533: SDK3 CRITICAL - must call super first!
-    this.log('Button1GangDriver v5.5.533 initialized');
+    // Safe trigger getter
+    const safeTrigger = (id) => {
+      try { return this.homey.flow.getTriggerCard(id); } catch(e) { return null; }
+    };
 
-    // v5.5.533: Register flow cards with CORRECT IDs matching driver.flow.compose.json
     try {
       // Main triggers with button token
       const mainTriggers = [
@@ -49,35 +39,7 @@ class Button1GangDriver extends ZigBeeDriver {
 
       for (const triggerId of mainTriggers) {
         try {
-          const card = this._getFlowCard(triggerId, 'trigger');
-          if (card) {
-            card.registerRunListener(async (args, state) => {
-              if (!args.device) {
-                this.error(`[FLOW] Device not found for ${triggerId
-  
-  
-  }`);
-                return false;
-              }
-              return true;
-            });
-            this.log(`[FLOW]  ${triggerId}`);
-          }
-        } catch (e) {
-          this.log(`[FLOW]  ${triggerId} not found`);
-        }
-      }
-
-      // Button 1 specific triggers (no token needed)
-      const button1Triggers = [
-        'button_wireless_1_button_1gang_button_1_pressed',
-        'button_wireless_1_button_1gang_button_1_double',
-        'button_wireless_1_button_1gang_button_1_long'
-      ];
-
-      for (const triggerId of button1Triggers) {
-        try {
-          const card = this._getFlowCard(triggerId, 'trigger');
+          const card = safeTrigger(triggerId);
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
@@ -86,16 +48,41 @@ class Button1GangDriver extends ZigBeeDriver {
               }
               return true;
             });
-            this.log(`[FLOW]  ${triggerId}`);
+            this.log(`[FLOW] Registered: ${triggerId}`);
           }
         } catch (e) {
-          this.log(`[FLOW]  ${triggerId} not found`);
+          this.log(`[FLOW] ${triggerId} not found`);
+        }
+      }
+
+      // Button 1 specific triggers
+      const button1Triggers = [
+        'button_wireless_1_button_1gang_button_1_pressed',
+        'button_wireless_1_button_1gang_button_1_double',
+        'button_wireless_1_button_1gang_button_1_long'
+      ];
+
+      for (const triggerId of button1Triggers) {
+        try {
+          const card = safeTrigger(triggerId);
+          if (card) {
+            card.registerRunListener(async (args, state) => {
+              if (!args.device) {
+                this.error(`[FLOW] Device not found for ${triggerId}`);
+                return false;
+              }
+              return true;
+            });
+            this.log(`[FLOW] Registered: ${triggerId}`);
+          }
+        } catch (e) {
+          this.log(`[FLOW] ${triggerId} not found`);
         }
       }
 
       // Battery trigger
       try {
-        const batteryCard = ( () => { try { return this._getFlowCard('battery_alarm_low', 'trigger'); } catch(e) { return null; } } )();
+        const batteryCard = safeTrigger('battery_alarm_low');
         if (batteryCard) {
           batteryCard.registerRunListener(async (args, state) => {
             if (!args.device) return false;
@@ -113,6 +100,3 @@ class Button1GangDriver extends ZigBeeDriver {
 }
 
 module.exports = Button1GangDriver;
-
-
-

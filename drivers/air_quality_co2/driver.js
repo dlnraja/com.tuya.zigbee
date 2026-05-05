@@ -21,29 +21,30 @@ class AirQualityCO2Driver extends ZigBeeDriver {
   }
 
   _registerFlowCards() {
+    // Safe card getter
+    const safeGet = (type, id) => {
+      try {
+        return type === 'condition'
+          ? this.homey.flow.getConditionCard(id)
+          : this.homey.flow.getTriggerCard(id);
+      } catch (e) { return null; }
+    };
+
     // TRIGGERS
-    try { this._getFlowCard('air_quality_co2_co2_level_changed', 'trigger'); } catch (e) {}
-    try { this._getFlowCard('air_quality_co2_co2_alert_on', 'trigger'); } catch (e) {}
-    try { this._getFlowCard('air_quality_co2_co2_alert_off', 'trigger'); } catch (e) {}
-    try { this._getFlowCard('air_quality_co2_air_temperature_changed', 'trigger'); } catch (e) {}
-    try { this._getFlowCard('air_quality_co2_air_humidity_changed', 'trigger'); } catch (e) {}
-    try { this._getFlowCard('air_quality_co2_pm25_changed', 'trigger'); } catch (e) {}
-    try { this._getFlowCard('air_quality_co2_temp_changed', 'trigger'); } catch (e) {}
-    try { this._getFlowCard('air_quality_co2_humidity_changed', 'trigger'); } catch (e) {}
-    try { this._getFlowCard('air_quality_co2_battery_low', 'trigger'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('air_quality_co2_co2_level_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('air_quality_co2_co2_alert_on'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('air_quality_co2_co2_alert_off'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('air_quality_co2_air_temperature_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('air_quality_co2_air_humidity_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('air_quality_co2_pm25_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('air_quality_co2_temp_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('air_quality_co2_humidity_changed'); } catch (e) {}
+    try { this.homey.flow.getTriggerCard('air_quality_co2_battery_low'); } catch (e) {}
 
     // CONDITIONS
     try {
-      const card = this._getFlowCard('air_quality_co2_co2_above', 'condition');
+      const card = safeGet('condition', 'air_quality_co2_co2_above');
     } catch (err) { this.error(`Condition air_quality_co2_co2_above: ${err.message}`); }
-  }
-
-  _getFlowCard(id, type) {
-    try {
-      return type === 'condition' ? this._getFlowCard(id, 'condition') : this._getFlowCard(id, 'trigger');
-    } catch (err) {
-      return null;
-    }
   }
 }
 

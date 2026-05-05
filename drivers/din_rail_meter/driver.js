@@ -23,15 +23,26 @@ class DinRailMeterDriver extends BaseZigBeeDriver {
 
     this.log('Din Rail Meter driver initialized');
     
+    // Safe card getter helper
+    const safeGet = (type, id) => {
+      try {
+        return type === 'condition'
+          ? this.homey.flow.getConditionCard(id)
+          : (type === 'action'
+            ? this.homey.flow.getActionCard(id)
+            : this.homey.flow.getTriggerCard(id));
+      } catch (e) { return null; }
+    };
+
     // Register triggers from driver.flow.compose.json
     try {
-      this._powerChangedTrigger = this._getFlowCard('din_rail_meter_power_changed', 'trigger');
-      this._voltageChangedTrigger = this._getFlowCard('din_rail_meter_voltage_changed', 'trigger');
-      this._currentChangedTrigger = this._getFlowCard('din_rail_meter_current_changed', 'trigger');
-      this._energyChangedTrigger = this._getFlowCard('din_rail_meter_energy_changed', 'trigger');
-      
+      this._powerChangedTrigger = safeGet('trigger', 'din_rail_meter_power_changed');
+      this._voltageChangedTrigger = safeGet('trigger', 'din_rail_meter_voltage_changed');
+      this._currentChangedTrigger = safeGet('trigger', 'din_rail_meter_current_changed');
+      this._energyChangedTrigger = safeGet('trigger', 'din_rail_meter_energy_changed');
+
       // Register condition
-      this._powerAboveCondition = this._getFlowCard('din_rail_meter_power_above', 'condition');
+      this._powerAboveCondition = safeGet('condition', 'din_rail_meter_power_above');
       if (this._powerAboveCondition) {
         this._powerAboveCondition.registerRunListener(async (args, state) => {
           if (args.device && typeof args.device.getCapabilityValue === 'function') {
@@ -42,9 +53,9 @@ class DinRailMeterDriver extends BaseZigBeeDriver {
           return false;
         });
       }
-      
+
       // Register action (already present but keep for consistency)
-      const actionCard = ( () => { try { return this._getFlowCard('din_rail_meter_reset_meter', 'action'); } catch(e) { return null; } } )();
+      const actionCard = safeGet('action', 'din_rail_meter_reset_meter');
       if (actionCard) {
         actionCard.registerRunListener(async (args, state) => {
           if (args.device && typeof args.device.resetMeter === 'function') {
@@ -53,7 +64,7 @@ class DinRailMeterDriver extends BaseZigBeeDriver {
           return true;
         });
       }
-      
+
       this.log('Din Rail Meter flow cards registered successfully');
     } catch(e) {
       this.log('[Flow]', e.message);
