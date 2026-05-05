@@ -141,7 +141,7 @@ function saveCreds() {
   var secret = document.getElementById('as').value.trim();
   var region = document.getElementById('reg').value;
 
-  if(!aid || !secret) {
+  if(!aid) {
     show(null, 'ID and Secret are required for Cloud binding', true);
     return;
   }
@@ -150,17 +150,29 @@ function saveCreds() {
   btn.disabled = true;
   btn.textContent = 'Saving...';
 
+  function saveRegion(cb) {
+    settingsHomey.set('tuya_cloud_region', region, cb);
+  }
+
+  function saveSecret(cb) {
+    if(secret) {
+      settingsHomey.set('tuya_cloud_access_secret', secret, cb);
+    } else {
+      cb(null); // skip if field left blank (already configured)
+    }
+  }
+
   // Chained saves (SDK 3)
   settingsHomey.set('tuya_cloud_access_id', aid, function(err) {
     if(err) { show(null, err.message, true); btn.disabled = false; btn.textContent = 'Save Configuration'; return; }
-    settingsHomey.set('tuya_cloud_access_secret', secret, function(err2) {
+    saveSecret(function(err2) {
       if(err2) { show(null, err2.message, true); btn.disabled = false; btn.textContent = 'Save Configuration'; return; }
-      settingsHomey.set('tuya_cloud_region', region, function(err3) {
+      saveRegion(function(err3) {
         btn.disabled = false;
         btn.textContent = 'Save Configuration';
         if(err3) { show(null, err3.message, true); return; }
         show(null, 'Configuration synchronized successfully', false);
-        updateSecretStatus(true);
+        if(secret) updateSecretStatus(true);
       });
     });
   });
