@@ -1,6 +1,6 @@
 # 🌍 GLOBAL IMPROVEMENT PLAN — Universal Tuya Engine v7.x
 
-> **Dernière mise à jour** : 2026-05-02  
+> **Dernière mise à jour** : 2026-05-05  
 > **Branche** : master (v7+) / stable-v5  
 > **Statut** : En cours d'exécution
 
