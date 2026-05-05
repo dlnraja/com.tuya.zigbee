@@ -544,4 +544,60 @@ Un appareil Zigbee est reconnu **si et seulement si** le couple `manufacturerNam
 
 3. **push final** après toutes corrections
   
-| Replace all _getFlowCard with SDK3 API (14 drivers) | ? Done | Commit aea23d2d2 |
+| Replace all _getFlowCard with SDK3 API (14 drivers) | ✅ Done | Commit aea23d2d2 |
+
+---
+
+## Session du 5 mai 2026 - Dual-App CI/CD Setup
+
+### 🎯 Objectif
+Configurer auto-push, auto-publish et auto-draft-to-test pour les 2 apps Homey :
+- **Universal Tuya Zigbee** (`master`) → `com.dlnraja.tuya.zigbee` (v7.x)
+- **Universal Tuya Zigbee Stable** (`stable-v5`) → `com.dlnraja.tuya.zigbee.stable` (v5.11.x)
+
+### ✅ Fichiers créés/modifiés
+
+| Fichier | Action | Description |
+|---------|--------|-------------|
+| `.github/workflows/stable-v5-cicd.yml` | Créé | CI/CD pipeline pour app stable v5.11 |
+| `.github/workflows/monthly-sync-master-stable.yml` | Créé | Sync mensuel master → stable-v5 |
+| `.github/scripts/auto-publish-draft.js` | Modifié | Support `APP_ID`/`STABLE_APP_ID` env vars |
+| `.github/scripts/auto-promote-puppeteer.js` | Modifié | Support `APP_ID`/`STABLE_APP_ID` env vars |
+
+### 📊 Pipeline CI/CD Dual-App
+
+#### Master (v7 - Experimental)
+| Étape | Workflow | Action |
+|-------|----------|--------|
+| Push → master | `master-cicd.yml` | Validation → Build → Publish → Promote to Test |
+| Manual dispatch | `master-cicd.yml` | Version bump (patch/minor/major) + Publish |
+
+#### Stable-v5 (v5.11 - Production)
+| Étape | Workflow | Action |
+|-------|----------|--------|
+| Push → stable-v5 | `stable-v5-cicd.yml` | Validation → Build → Publish → Promote to Test |
+| Manual dispatch | `stable-v5-cicd.yml` | Version bump (patch/minor/major) + Publish |
+
+#### Sync mensuel
+| Étape | Workflow | Action |
+|-------|----------|--------|
+| 1er du mois 06h UTC | `monthly-sync-master-stable.yml` | Auto-merge master → stable-v5 |
+
+### 🔧 Scripts adaptés pour les 2 apps
+
+Les scripts de promotion (`auto-publish-draft.js`, `auto-promote-puppeteer.js`) utilisent maintenant :
+- `APP_ID` : Par défaut `com.dlnraja.tuya.zigbee` (master)
+- `STABLE_APP_ID` : Pour l'app stable `com.dlnraja.tuya.zigbee.stable`
+
+### 🐙 Commits GitHub
+- `a86d2638c` : feat: Add stable-v5 CI/CD pipeline + monthly master→stable sync
+- `e3c402532` : feat: Support dual-app (master + stable-v5) in promotion scripts
+
+### ✅ Todos complétés
+- [x] Créer stable-v5-cicd.yml (app stable)
+- [x] Créer monthly-sync-master-stable.yml (sync mensuel)
+- [x] Adapter auto-publish-draft.js pour les 2 apps
+- [x] Adapter auto-promote-puppeteer.js pour les 2 apps
+- [x] master-cicd.yml déjà configuré (auto-publish + promote)
+- [x] Push vers GitHub
+- [x] Documenter dans GLOBAL_IMPROVEMENT_PLAN.md
