@@ -355,7 +355,7 @@ ${staticResults.map(r => `- ${r.severity.toUpperCase()}: ${r.desc}`).join('\n') 
 2. AWAIT: Every 'this.setCapabilityValue()' MUST be preceded by 'await'.
 3. API: Use exclusively 'this.homey.<managerId>' (this.homey.drivers, this.homey.flow, this.homey.settings). NEVER generate global 'ManagerDrivers' or 'ManagerZwave'.
 4. MEMORY: Every event listener (.on()) must have cleanup in 'async onDeleted()' via removeAllListeners(). This prevents memory leaks on Homey Pro 2023.
-5. FLOW CARDS: ALWAYS wrap getDeviceTriggerCard or getActionCard in try-catch. Also NOTE: `this.homey.flow.getDeviceConditionCard` DOES NOT EXIST (use `getConditionCard` instead if needed).
+5. FLOW CARDS: ALWAYS wrap getDeviceTriggerCard or getActionCard in try-catch. NOTE: getDeviceConditionCard DOES NOT EXIST (use getConditionCard or getDeviceConditionCard instead).
 
 === SDK v3 BATTERY & ENERGY RULES (CRITICAL) ===
 1. NEVER combine measure_battery + alarm_battery on same device. Causes duplicate UI and Flow Cards.

@@ -1,0 +1,93 @@
+{
+  "name": {
+    "en": "Dimmer Dual Channel Hybrid",
+    "nl": "Dimmer Dual Channel Hybrid",
+    "fr": "Dimmer Dual Channel Hybrid"
+  },
+  "class": "light",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "onoff.channel2",
+    "dim.channel2",
+    "measure_power",
+    "measure_battery"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_0hb4rdnp",
+      "_tze200_4mh6tyyo",
+      "_tze200_gne0e6mk"
+    ],
+    "productId": [
+      "TS1101",
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          61184
+        ]
+      }
+    }
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Channel 1",
+        "da": "Kanal 1"
+      }
+    },
+    "dim": {
+      "title": {
+        "en": "Brightness 1",
+        "da": "Lysstyrke 1"
+      }
+    },
+    "onoff.channel2": {
+      "title": {
+        "en": "Channel 2",
+        "da": "Kanal 2"
+      }
+    },
+    "dim.channel2": {
+      "title": {
+        "en": "Brightness 2",
+        "da": "Lysstyrke 2"
+      }
+    }
+  },
+  "images": {
+    "large": "drivers/dimmer_dual_channel/assets/images/large.png",
+    "small": "drivers/dimmer_dual_channel/assets/images/small.png",
+    "xlarge": "drivers/dimmer_dual_channel/assets/images/xlarge.png"
+  },
+  "energy": {
+    "approximation": {
+      "usageOn": 60,
+      "usageOff": 0.5
+    }
+  },
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}
