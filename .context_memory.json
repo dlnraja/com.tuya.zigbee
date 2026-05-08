@@ -1,0 +1,31 @@
+{
+  "version": "5.11.212",
+  "phase": 0,
+  "timestamp": "2026-05-08T16:56:15.002Z",
+  "branches": [
+    "stable-v5"
+  ],
+  "last_commits": [
+    "232b95a33 feat: add PROJECT_INDEX.md - AI reference guide with glossary and architecture",
+    "ab2097ed0 fix: removed 3784 duplicate fingerprints, added 4 hybrid drivers, clean collisions",
+    "4b71bb49d Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]",
+    "8bbda4c60 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]",
+    "3aca30958 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]",
+    "e8a4e5989 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]",
+    "99cc9d8b5 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]",
+    "7290f37cf Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]",
+    "e4967e976 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]",
+    "eef1d1518 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]"
+  ],
+  "dotfiles_parsed": [
+    ".cursorrules",
+    ".windsurfrules",
+    ".eslintrc.json",
+    ".prettierrc",
+    ".gitattributes",
+    ".gitignore",
+    ".homeyignore"
+  ],
+  "shadow_mode": true,
+  "pending_tasks": []
+}
