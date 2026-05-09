@@ -44,7 +44,18 @@
       "_tze284_iilebqoo",
       "_tz3000_otwpdq1d",
       "_tze200_jsaqgakf",
-      "_tze200_2pddnnrk"
+      "_tze200_2pddnnrk",
+      "_TZ3000_abaplimj",
+      "_TZ3000_awvmkayh",
+      "_TZ3000_k1msavlx",
+      "_TZ3210_p68kms0l",
+      "_TZ3210_tgvtvdoc",
+      "_TZE200_u6x1zyv2",
+      "_TZE204_u6x1zyv2",
+      "_TZE284_iilebqoo",
+      "_TZ3000_otwpdq1d",
+      "_TZE200_jsaqgakf",
+      "_TZE200_2pddnnrk"
     ],
     "productId": [
       "TS0207_rain",
@@ -61,6 +72,44 @@
       }
     }
   },
+  "settings": [
+    {
+      "id": "sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Rain Detection Sensitivity (0-9)",
+        "fr": "Sensibilité Détection Pluie (0-9)",
+        "nl": "Regen Gevoeligheid (0-9)"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 9,
+      "step": 1,
+      "hint": {
+        "en": "Higher value makes rain detection more sensitive.",
+        "fr": "Des valeurs plus élevées augmentent la sensibilité de détection de la pluie.",
+        "nl": "Hogere waarde maakt de regendetectie gevoeliger."
+      }
+    },
+    {
+      "id": "illuminance_sampling",
+      "type": "number",
+      "label": {
+        "en": "Illuminance Reporting Interval (min)",
+        "fr": "Intervalle de Rapport Lumineux (min)",
+        "nl": "Licht Meetinterval (min)"
+      },
+      "value": 10,
+      "min": 1,
+      "max": 480,
+      "step": 1,
+      "hint": {
+        "en": "How often the sensor reports light level updates (1 to 480 minutes).",
+        "fr": "Intervalle en minutes pour les rapports de luminosité (1 à 480 min).",
+        "nl": "Hoe vaak de sensor lichtmetingen rapporteert (1 tot 480 minuten)."
+      }
+    }
+  ],
   "images": {
     "small": "drivers/rain_sensor/assets/images/small.png",
     "large": "drivers/rain_sensor/assets/images/large.png",
