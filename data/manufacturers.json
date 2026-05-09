@@ -1,0 +1,163 @@
+{
+  "mapping_rules": [
+    {
+      "canonical": "tuya",
+      "variants": ["Tuya", "tuya", "TUYA", "Tuya_Smart", "TuyaInc", "tuya-inc", "Tuya Smart", " TUYA ", "tuya.smart", "TUYA_SMART", "tuyasmart", "TY"],
+      "device_id_patterns": ["^TS\\d{4}$", "^zigbee_.*", "^tuya_.*", "^_TYZB01_.*", "^_TYZB02_.*", "^_TZ3000_.*", "^_TZ3210_.*", "^_TZE200_.*", "^_TZE204_.*", "^_TZE284_.*", "^_TZE608_.*"],
+      "metadata": { "country": "CN", "protocols": ["zigbee", "wifi", "matter"], "first_seen": "2020-01-01" }
+    },
+    {
+      "canonical": "lidl_silvercrest",
+      "variants": ["Lidl", "SilverCrest", "silvercrest", "LIDL_SILVERCREST", "Silvercrest", "silver-crest", "LIDL", "LIDL HOME", "Lidl Silvercrest"],
+      "device_id_patterns": ["^TS011F$", "^lidl_.*"],
+      "metadata": { "country": "DE", "protocols": ["zigbee"], "first_seen": "2021-11-01" }
+    },
+    {
+      "canonical": "moes",
+      "variants": ["Moes", "MOES", "moes", "Moes House", "MOES-HOUSE", "MOES_HOUSE", "MoesHouse", "moes_house"],
+      "device_id_patterns": ["^TS0601$", "^TS0602$", "^_TZE200_.*"],
+      "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2021-03-01" }
+    },
+    {
+      "canonical": "blitzwolf",
+      "variants": ["BlitzWolf", "BLITZWOLF", "blitzwolf", "BlitzWolfBW", "blitzwolf-shenzhen"],
+      "device_id_patterns": ["^TS011F$", "^TS0501B?$"],
+      "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2020-06-01" }
+    },
+    {
+      "canonical": "insoma",
+      "variants": ["Insoma", "INSOMA", "insoma", "_TZE284_fhvpaltk"],
+      "device_id_patterns": ["^TS0601$"],
+      "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2025-01-01" }
+    },
+    {
+      "canonical": "immax",
+      "variants": ["Immax", "IMMAX", "immax", "immax-neo", "Immax NEO"],
+      "device_id_patterns": ["^TS0601$"],
+      "metadata": { "country": "CZ", "protocols": ["zigbee"], "first_seen": "2022-06-01" }
+    },
+    {
+      "canonical": "sonoff",
+      "variants": ["SONOFF", "Sonoff", "sonoff", "eWeLink", "ewelink", "ITEAD"],
+      "device_id_patterns": ["^ZBMINI.*$", "^SNZB.*$", "^ZBMicro$", "^ZBM.*$", "^NSPanel.*$"],
+      "metadata": { "country": "CN", "protocols": ["zigbee", "wifi"], "first_seen": "2020-01-01" }
+    },
+    {
+      "canonical": "xiaomi_aqara",
+      "variants": ["Xiaomi", "XIAOMI", "xiaomi", "Aqara", "AQARA", "aqara", "Lumi", "LUMI", "lumi", "LUMI United", "Aqara Old"],
+      "device_id_patterns": ["^lumi\\..*$", "^RTCGQ.*$", "^WSDCGQ.*$", "^MCCGQ.*$", "^WXCJN.*$", "^QBKG.*$", "^lumi_.*"],
+      "metadata": { "country": "CN", "protocols": ["zigbee", "matter"], "first_seen": "2018-01-01" }
+    },
+    {
+      "canonical": "philips_hue",
+      "variants": ["Philips", "PHILIPS", "philips", "Signify", "SIGNIFY", "Signify Netherlands B.V.", "Philips Lighting", "Royal Philips Electronics"],
+      "device_id_patterns": ["^92900.*$", "^72999.*$", "^91500.*$", "^046677.*$"],
+      "metadata": { "country": "NL", "protocols": ["zigbee", "matter"], "first_seen": "2012-01-01" }
+    },
+    {
+      "canonical": "ikea",
+      "variants": ["IKEA", "IKEA of Sweden", "IKEA TRÅDFRI", "IKEA-TRADFRI", "IKEA Dirigera"],
+      "device_id_patterns": ["^E1[0-9]{3}$", "^ICTC-G-.*$", "^LED15.*$", "^ICPSHC24.*$"],
+      "metadata": { "country": "SE", "protocols": ["zigbee"], "first_seen": "2017-01-01" }
+    },
+    {
+      "canonical": "legrand",
+      "variants": ["Legrand", "LEGRAND", "legrand", "Legrand Netatmo", "Netatmo", "NETATMO", "Bticino", "BTICINO"],
+      "device_id_patterns": ["^067773$", "^064882$", "^067776$", "^160431$"],
+      "metadata": { "country": "FR", "protocols": ["zigbee"], "first_seen": "2020-01-01" }
+    },
+    {
+      "canonical": "osram",
+      "variants": ["OSRAM", "Osram", "osram", "LEDVANCE", "Ledvance", "ledvance", "OSRAM LIGHTIFY"],
+      "device_id_patterns": ["^AB32840.*$", "^AC036.*$", "^AB32816$"],
+      "metadata": { "country": "DE", "protocols": ["zigbee"], "first_seen": "2016-01-01" }
+    },
+    {
+      "canonical": "schneider_electric",
+      "variants": ["Schneider Electric", "Schneider", "SCHNEIDER", "Wiser"],
+      "device_id_patterns": ["^41ECSF18BSW$"],
+      "metadata": { "country": "FR", "protocols": ["zigbee"], "first_seen": "2021-01-01" }
+    },
+    {
+      "canonical": "smartthings",
+      "variants": ["SmartThings", "SMARTTHINGS", "smartthings", "Samsung SmartThings"],
+      "device_id_patterns": ["^3325-G$"],
+      "metadata": { "country": "KR", "protocols": ["zigbee"], "first_seen": "2018-01-01" }
+    },
+    {
+      "canonical": "sengled",
+      "variants": ["Sengled", "SENGLED", "sengled"],
+      "device_id_patterns": ["^E1[1-9]-.*$", "^E1C-N6E$", "^E1D-G7F$"],
+      "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2019-01-01" }
+    },
+    {
+      "canonical": "third_reality",
+      "variants": ["Third Reality", "THIRD REALITY", "ThirdReality", "3RD REALITY"],
+      "device_id_patterns": ["^3RSS.*$", "^3RSL.*$", "^3RSB.*$"],
+      "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2020-01-01" }
+    },
+    {
+      "canonical": "konke",
+      "variants": ["Konke", "KONKE", "konke", "Konke Technology"],
+      "device_id_patterns": ["^3SNZB.*$", "^2AJZ4KP$"],
+      "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2020-01-01" }
+    },
+    {
+      "canonical": "zentra",
+      "variants": ["Zemismart", "ZEMISMART", "zemismart", "Zemismart Home"],
+      "device_id_patterns": ["^TS0601$", "^TS0001$", "^TS0002$"],
+      "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2019-01-01" }
+    },
+    {
+      "canonical": "bseed",
+      "variants": ["BSEED", "Bseed", "bseed"],
+      "device_id_patterns": ["^TS004[1-4]$", "^_TYZB01_.*"],
+      "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2021-01-01" }
+    },
+    {
+      "canonical": "zosung",
+      "variants": ["Zosung", "ZOSUNG", "zosung", "ZS3L"],
+      "device_id_patterns": ["^ZS3L.*$", "^_TZE200_.*zosung.*"],
+      "metadata": { "country": "CN", "protocols": ["zigbee"], "first_seen": "2022-01-01" }
+    },
+    {
+      "canonical": "centralite",
+      "variants": ["Centralite", "CENTRALITE", "centralite", "Centralite Products"],
+      "device_id_patterns": ["^3157100$"],
+      "metadata": { "country": "US", "protocols": ["zigbee"], "first_seen": "2018-01-01" }
+    }
+  ],
+  "generated_mapping": {
+    "tuya": "tuya",
+    "tuya_smart": "tuya",
+    "tuyainc": "tuya",
+    "tuya_inc": "tuya",
+    "lidl": "lidl_silvercrest",
+    "silvercrest": "lidl_silvercrest",
+    "moes": "moes",
+    "blitzwolf": "blitzwolf",
+    "insoma": "insoma",
+    "immax": "immax",
+    "sonoff": "sonoff",
+    "ewelink": "sonoff",
+    "xiaomi": "xiaomi_aqara",
+    "aqara": "xiaomi_aqara",
+    "lumi": "xiaomi_aqara",
+    "philips": "philips_hue",
+    "signify": "philips_hue",
+    "ikea": "ikea",
+    "legrand": "legrand",
+    "netatmo": "legrand",
+    "osram": "osram",
+    "ledvance": "osram",
+    "schneider": "schneider_electric",
+    "smartthings": "smartthings",
+    "sengled": "sengled",
+    "third_reality": "third_reality",
+    "konke": "konke",
+    "zemismart": "zentra",
+    "bseed": "bseed",
+    "zosung": "zosung",
+    "centralite": "centralite"
+  }
+}
