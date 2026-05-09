@@ -69,19 +69,7 @@ class Button1GangDriver extends ZigBeeDriver {
         }
       }
 
-      // Battery trigger
-      try {
-// 
-        if (batteryCard) {
-          batteryCard.registerRunListener(async (args, state) => {
-            if (!args.device) return false;
-            return true;
-          });
-// 
-        }
-      } catch (e) {
-        // Optional
-      }
+      // Battery trigger — v5.11.x: removed undefined batteryCard; handled by UnifiedBatteryHandler
 
     } catch (err) {
       this.error('[FLOW] Flow card registration failed:', err.message);
