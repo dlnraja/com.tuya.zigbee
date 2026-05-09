@@ -1,11 +1,11 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * Vibration Sensor Device - v5.3.64 SIMPLIFIED
  */
-class VibrationSensorDevice extends HybridSensorBase {
+class VibrationSensorDevice extendsSensorBase {
 
   get mainsPowered() { return false; }
 

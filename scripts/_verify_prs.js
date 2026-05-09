@@ -15,12 +15,12 @@ fs.readdirSync(d).forEach(dr => {
   }
 });
 
-// PR #119: wall_switch_1gang_1way should use HybridSwitchBase
+// PR #119: wall_switch_1gang_1way should useSwitchBase
 const ws1 = path.join(d, 'wall_switch_1gang_1way', 'device.js');
 if (fs.existsSync(ws1)) {
   const c = fs.readFileSync(ws1, 'utf8');
-  if (c.includes('HybridSwitchBase')) checks.push('PR#119 OK: wall_switch_1gang_1way uses HybridSwitchBase');
-  else checks.push('PR#119 ISSUE: wall_switch_1gang_1way NOT using HybridSwitchBase');
+  if (c.includes('HybridSwitchBase')) checks.push('PR#119 OK: wall_switch_1gang_1way usesSwitchBase');
+  else checks.push('PR#119 ISSUE: wall_switch_1gang_1way NOT usingSwitchBase');
 }
 
 // PR #118: _TZ3000_ysdv91bk should be in a driver

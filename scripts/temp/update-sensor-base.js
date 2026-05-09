@@ -15,9 +15,9 @@ if (!content.includes('PowerSourceIntelligence')) {
   if (content.includes(searchString)) {
     content = content.replace(searchString, replaceString);
     fs.writeFileSync(targetFile, content);
-    console.log('✅ Updated HybridSensorBase.js with PowerSourceIntelligence');
+    console.log('✅ UpdatedSensorBase.js with PowerSourceIntelligence');
   } else {
-    console.log('❌ Could not find exact string to replace in HybridSensorBase.js');
+    console.log('❌ Could not find exact string to replace inSensorBase.js');
   }
 } else {
   console.log('HybridSensorBase.js already contains PowerSourceIntelligence');

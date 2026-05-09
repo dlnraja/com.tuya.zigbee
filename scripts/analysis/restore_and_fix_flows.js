@@ -178,7 +178,7 @@ class FlowRestorerAndFixer {
       // Supprimer seulement les parties les plus redondantes
       fixed = fixed
         .replace(/_smart_bulb_dimmer_/g, '_')
-        .replace(/_smart_switch_\d+gang_hybrid_/g, '_')
+        .replace(/_smart_switch_\d+gang_/g, '_')
         .replace(/_comprehensive_air_monitor_/g, '_')
         .replace(/_wall_switch_\d+gang_/g, '_')
         .replace(/_{3,}/g, '_');

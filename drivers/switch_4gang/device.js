@@ -1,14 +1,14 @@
 'use strict';
 
 // v5.5.530: Fix "Class extends value undefined" error
-let HybridSwitchBase;
+letSwitchBase;
 try {
-  HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+ SwitchBase = require('../../lib/devices/HybridSwitchBase');
   if (!HybridSwitchBase) throw new Error('HybridSwitchBase is undefined');
 } catch (e) {
-  console.error('[switch_4gang] HybridSwitchBase load failed:', e.message);
+  console.error('[switch_4gang]SwitchBase load failed:', e.message);
   const { ZigBeeDevice } = require('homey-zigbeedriver');
-  HybridSwitchBase = ZigBeeDevice;
+ SwitchBase = ZigBeeDevice;
 }
 
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -47,9 +47,9 @@ const ZCL_ONLY_MANUFACTURERS_4G = [
 // Tuya DP was ignored (device is ZCL-only), breaking virtual buttons completely
 const FORCE_TUYA_DP_4G = [];
 
-const BaseClass = typeof HybridSwitchBase === 'function' 
+const BaseClass = typeofSwitchBase === 'function' 
   ? PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) 
-  : HybridSwitchBase;
+  :SwitchBase;
 
 class Switch4GangDevice extends BaseClass {
   get gangCount() { return 4; }

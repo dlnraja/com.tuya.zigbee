@@ -1,7 +1,7 @@
 'use strict';
-const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+constPlugBase = require('../../lib/devices/HybridPlugBase');
 
-class SmartRCBODevice extends HybridPlugBase {
+class SmartRCBODevice extendsPlugBase {
   get plugCapabilities() { return ['onoff', 'measure_power', 'meter_power']; }
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---

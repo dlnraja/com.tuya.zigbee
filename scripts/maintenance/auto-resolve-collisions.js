@@ -67,8 +67,8 @@ function createHybridDriver() {
       for (const p of split) if (!/\d/.test(p) && p !== 'gang' && p.length > 2) parts.add(p);
     }
 
-    // Try to build a clean name like bulb_rgb_rgbw_hybrid
-    let newName = Array.from(parts).slice(0, 3).join('_') + '_hybrid';
+    // Try to build a clean name like bulb_rgb_rgbw
+    let newName = Array.from(parts).slice(0, 3).join('_') + '';
     if (types.size === 1) {
       newName = Array.from(types)[0] + '_' + newName;
     }
@@ -80,7 +80,7 @@ function createHybridDriver() {
     const targetDir = path.join(DRIVERS_DIR, newName);
 
     console.log(`\nResolving collision between: ${sourceDrivers.join(' & ')}`);
-    console.log(`Creating combined hybrid driver: ${newName}`);
+    console.log(`Creating combined driver: ${newName}`);
 
     // If it doesn't exist, create it by copying the most capable driver (the one with most capabilities)
     let bestDriver = sourceDrivers[0];
@@ -106,16 +106,16 @@ function createHybridDriver() {
         fs.cpSync(path.join(bestDriverDir, f), path.join(targetDir, f), { recursive: true });
       }
 
-      // Merge capabilities and endpoints from all clashing drivers into the hybrid's compose
-      const hybridComposeFile = path.join(targetDir, 'driver.compose.json');
-      const hybridCompose = JSON.parse(fs.readFileSync(hybridComposeFile, 'utf8'));
+      // Merge capabilities and endpoints from all clashing drivers into the's compose
+      constComposeFile = path.join(targetDir, 'driver.compose.json');
+      constCompose = JSON.parse(fs.readFileSync(hybridComposeFile, 'utf8'));
       
       const allCaps = new Set(hybridCompose.capabilities || []);
       const allMfrs = new Set();
       const allPids = new Set();
 
       // Change name
-      hybridCompose.name = {
+     Compose.name = {
         "en": newName.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
         "nl": newName.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
         "fr": newName.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
@@ -126,24 +126,24 @@ function createHybridDriver() {
         if (c.capabilities) c.capabilities.forEach(cap => allCaps.add(cap));
       }
 
-      hybridCompose.capabilities = Array.from(allCaps);
+     Compose.capabilities = Array.from(allCaps);
       
-      // Add the clashing FPs to the hybrid driver
+      // Add the clashing FPs to the driver
       for (const fp of fps) {
         const [mfr, pid] = fp.split('|');
         allMfrs.add(mfr);
         allPids.add(pid);
       }
       
-      if(!hybridCompose.zigbee) hybridCompose.zigbee = {};
-      hybridCompose.zigbee.manufacturerName = Array.from(allMfrs);
-      hybridCompose.zigbee.productId = Array.from(allPids);
+      if(!hybridCompose.zigbee)Compose.zigbee = {};
+     Compose.zigbee.manufacturerName = Array.from(allMfrs);
+     Compose.zigbee.productId = Array.from(allPids);
       
       fs.writeFileSync(hybridComposeFile, JSON.stringify(hybridCompose, null, 2) + '\n');
     } else {
-      // If hybrid already exists, just append the FPs
-      const hybridComposeFile = path.join(targetDir, 'driver.compose.json');
-      const hybridCompose = JSON.parse(fs.readFileSync(hybridComposeFile, 'utf8'));
+      // If already exists, just append the FPs
+      constComposeFile = path.join(targetDir, 'driver.compose.json');
+      constCompose = JSON.parse(fs.readFileSync(hybridComposeFile, 'utf8'));
       
       const allMfrs = new Set(hybridCompose.zigbee?.manufacturerName || []);
       const allPids = new Set(hybridCompose.zigbee?.productId || []);
@@ -154,8 +154,8 @@ function createHybridDriver() {
         allPids.add(pid);
       }
 
-      hybridCompose.zigbee.manufacturerName = Array.from(allMfrs);
-      hybridCompose.zigbee.productId = Array.from(allPids);
+     Compose.zigbee.manufacturerName = Array.from(allMfrs);
+     Compose.zigbee.productId = Array.from(allPids);
       fs.writeFileSync(hybridComposeFile, JSON.stringify(hybridCompose, null, 2) + '\n');
     }
 

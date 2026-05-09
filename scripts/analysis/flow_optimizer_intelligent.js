@@ -394,7 +394,7 @@ class IntelligentFlowOptimizer {
     // Supprimer les termes redondants
     let simplified = originalId
       .replace(/_smart_/g, '_')
-      .replace(/_hybrid_/g, '_')
+      .replace(/_/g, '_')
       .replace(/_device_/g, '_')
       .replace(/_{2,}/g, '_')
       .replace(/_$/, '');
@@ -536,7 +536,7 @@ class IntelligentFlowOptimizer {
     console.log(`Errors encountered: ${this.optimizationResults.errors}`);
 
     console.log('\n✅ OPTIMIZATIONS APPLIED:');
-    console.log('- Standardized flow IDs (removed _smart_, _hybrid_)');
+    console.log('- Standardized flow IDs (removed _smart_, _)');
     console.log('- Applied consistent naming patterns');
     console.log('- Added backward compatibility fallbacks');
     console.log('- Cleaned up verbose IDs');

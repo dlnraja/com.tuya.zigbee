@@ -6,7 +6,7 @@ const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap'
 /**
  * Button2GangDevice - v5.8.16 Enhanced
  *
- * FIX v5.2.92: Was incorrectly extending HybridDevice
+ * FIX v5.2.92: Was incorrectly extendingDevice
  * FIX v5.8.16: Added cluster 0xE000 + tuyaE000 support
  *
  * Handles single/double/long press for 2 buttons

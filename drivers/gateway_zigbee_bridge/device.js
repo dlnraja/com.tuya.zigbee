@@ -3,7 +3,7 @@
 const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
 /**
- * ZbbridgeDevice - Unified Hybrid Driver
+ * ZbbridgeDevice - Unified Driver
  * Auto-detects power source: AC/DC/Battery (CR2032/CR2450/AAA/AA)
  * Dynamically manages capabilities based on power source
  */

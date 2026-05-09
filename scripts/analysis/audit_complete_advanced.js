@@ -31,7 +31,7 @@ const report = {
     endpoints: [],
     images: [],
     energyConfig: [],
-    hybridDevices: [],
+   Devices: [],
     customCapabilities: []
   },
   recommendations: []
@@ -220,7 +220,7 @@ function analyzeFile(filePath) {
         report.stats.warningIssues++;
       }
 
-      // Détecter devices hybrides
+      // Détecter deviceses
       const hasOnOff = capabilities.includes('onoff');
       const hasSensor = capabilities.some(c => c.startsWith('measure_') || c.startsWith('alarm_'));
       if (hasOnOff && hasSensor) {
@@ -228,7 +228,7 @@ function analyzeFile(filePath) {
           severity: 'INFO',
           file: relativePath,
           capabilities,
-          message: 'Device hybride détecté (actuator + sensor)'
+          message: 'Devicee détecté (actuator + sensor)'
         });
         report.stats.infoIssues++;
       }
@@ -324,7 +324,7 @@ if (report.issues.setCapabilityValue.length > 5) {
 if (report.issues.hybridDevices.length > 0) {
   report.recommendations.push({
     priority: 'LOW',
-    action: `Enrichir ${report.issues.hybridDevices.length} devices hybrides avec settings power_source`
+    action: `Enrichir ${report.issues.hybridDevices.length} deviceses avec settings power_source`
   });
 }
 

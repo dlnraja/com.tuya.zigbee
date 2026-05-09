@@ -21,7 +21,7 @@ const { SoilMoistureInference, BatteryInference } = require('../../lib/Intellige
  * ║  - tuyaCluster handlers (Tuya DP reception via 0xEF00)                       ║
  * ║  - cluster handlers (Zigbee standard reception)                              ║
  * ║  - tuyaBoundCluster (Tuya DP commands to device)                             ║
- * ║  - Hybrid mode auto-detection after 15 min                                   ║
+ * ║  - mode auto-detection after 15 min                                   ║
  * ║                                                                              ║
  * ║  KNOWN MODELS:                                                               ║
  * ║  - TS0601 / _TZE284_oitavov2 : QT-07S Soil moisture sensor                   ║
@@ -49,7 +49,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
   get forceActiveTuyaMode() { return true; }
 
   // v5.5.54: Enable TRUE HYBRID mode - listen to BOTH ZCL AND Tuya DP
-  get hybridModeEnabled() { return true; }
+  getModeEnabled() { return true; }
 
   /** Capabilities for soil sensors - v5.5.330 Hobeian */
   get sensorCapabilities() {
@@ -252,7 +252,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
     this.log('[SOIL] ℹ️ First data may take 10-60 minutes after pairing');
     this.log('[SOIL] 📋 DP Mappings: DP3=soil_moisture, DP5=temp, DP14=battery_state, DP15=battery%, DP101=air_humidity, DP102=lux');
     this.log('[SOIL] 🔧 forceActiveTuyaMode:', this.forceActiveTuyaMode);
-    this.log('[SOIL] 🔧 hybridModeEnabled:', this.hybridModeEnabled);
+    this.log('[SOIL] 🔧ModeEnabled:', this.hybridModeEnabled);
 
     // v5.5.334: Load settings for calibration and thresholds (Hobeian PR#6)
     this._temperatureCalibration = this.getSetting('temperature_calibration') || 0;

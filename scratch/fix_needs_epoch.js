@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = 'drivers/sensor_climate_lcdtemphumidsensor_hybrid/device.js';
+const path = 'drivers/sensor_climate_lcdtemphumidsensor/device.js';
 let content = fs.readFileSync(path, 'utf8');
 
 const regex = /get needsTuyaEpoch\(\) \{[\s\S]*?\}\s+}/       ;

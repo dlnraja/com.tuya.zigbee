@@ -1,13 +1,13 @@
 'use strict';
 
-const HybridLightBase = require('../../lib/devices/HybridLightBase');
+constLightBase = require('../../lib/devices/HybridLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║      DIMMABLE BULB - v5.5.992 + Virtual Buttons                             ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  HybridLightBase handles: onoff, dim listeners completely                   ║
+ * ║ LightBase handles: onoff, dim listeners completely                   ║
  * ║  v5.5.992: Added virtual toggle/dim up/down buttons                         ║
  * ║  DPs: 1=switch, 2=brightness, 3=min brightness, 4=countdown, 21=power-on    ║
  * ║  ZCL: 0x0006 On/Off, 0x0008 Level Control                                   ║

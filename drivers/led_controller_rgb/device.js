@@ -1,11 +1,11 @@
 'use strict';
 
-const HybridLightBase = require('../../lib/devices/HybridLightBase');
+constLightBase = require('../../lib/devices/HybridLightBase');
 
 /**
  * LED Controller RGB Device - v5.3.64 SIMPLIFIED
  */
-class LEDControllerRGBDevice extends HybridLightBase {
+class LEDControllerRGBDevice extendsLightBase {
 
   get lightCapabilities() {
     return ['onoff', 'dim', 'light_hue', 'light_saturation'];

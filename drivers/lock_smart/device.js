@@ -1,7 +1,7 @@
 'use strict';
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 
-class LockSmartDevice extends HybridSensorBase {
+class LockSmartDevice extendsSensorBase {
   get mainsPowered() { return false; }
   get sensorCapabilities() { return ['locked', 'measure_battery', 'alarm_tamper']; }
   get dpMappings() {

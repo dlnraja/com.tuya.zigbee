@@ -125,7 +125,7 @@ const ZCL_ONLY_MANUFACTURERS_2G = [
 - DP14: Power-on behavior
 - DP15: Backlight mode
 
-### Hybrid Mode
+### Mode
 - Supports BOTH ZCL and Tuya DP
 - ProtocolAutoOptimizer decides best path
 - Fallback chain: ZCL → Tuya DP → Direct value set

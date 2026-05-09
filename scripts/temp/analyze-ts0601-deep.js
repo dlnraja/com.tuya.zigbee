@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-// Identify PURE Tuya DP drivers vs hybrid/ZCL drivers
+// Identify PURE Tuya DP drivers vs/ZCL drivers
 function walkDir(dir) {
     let results = [];
     const list = fs.readdirSync(dir);

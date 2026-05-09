@@ -143,7 +143,7 @@ async onNodeInit({ zclNode }) {
 ## 🚀 Key Improvements
 
 ### Multi-Protocol Intelligence
-- Hybrid switches now detect protocol automatically
+- switches now detect protocol automatically
 - Fallback chain: ZCL → Tuya DP → Direct set
 - ProtocolAutoOptimizer makes runtime decisions
 
@@ -162,7 +162,7 @@ async onNodeInit({ zclNode }) {
 All changes tested against:
 - ✅ Multi-gang switches (2/3/4 gang)
 - ✅ Scene mode buttons (TS004F/TS0044)
-- ✅ Hybrid protocols (ZCL + Tuya DP)
+- ✅ protocols (ZCL + Tuya DP)
 - ✅ GitHub bot behavior (owner detection)
 - ✅ Error recovery (partial failures)
 

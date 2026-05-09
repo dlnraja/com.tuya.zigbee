@@ -61,7 +61,7 @@ function suggestDriverByProductId(productId, description) {
     if (desc.includes('soil') || desc.includes('moist')) return 'soil_sensor';
     if (desc.includes('radar') || desc.includes('presence') || desc.includes('mmwave')) return 'presence_sensor_radar';
     if (desc.includes('curtain') || desc.includes('blind') || desc.includes('shade') || desc.includes('motor') || desc.includes('tubular')) return 'curtain_motor';
-    if (desc.includes('trv') || desc.includes('radiator') || desc.includes('thermo')) return 'device_radiator_valve_smart_hybrid';
+    if (desc.includes('trv') || desc.includes('radiator') || desc.includes('thermo')) return 'device_radiator_valve_smart';
     if (desc.includes('heating') || desc.includes('floor')) return 'floor_heating_thermostat';
     if (desc.includes('switch') || desc.includes('relay') || desc.includes('gang')) return 'switch_1gang';
     if (desc.includes('dimmer')) return 'dimmer_wall_1gang';

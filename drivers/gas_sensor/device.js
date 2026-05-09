@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -10,7 +10,7 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
  * ║  Features: gas, gas_value, self_test, silence, alarm_ringtone, alarm_time   ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class GasSensorDevice extends HybridSensorBase {
+class GasSensorDevice extendsSensorBase {
 
   get mainsPowered() { return true; }
 
@@ -85,7 +85,7 @@ class GasSensorDevice extends HybridSensorBase {
     await super.onNodeInit({ zclNode });
     this.log('[GAS] v5.5.292 - DPs: 1,2,3,4,9-11,13,14,16 | ZCL: IAS,PWR,EF00');
     this.log('[GAS] ✅ Ready');
-    // v5.5.292: Flow triggers now handled by HybridSensorBase._triggerCustomFlowsIfNeeded()
+    // v5.5.292: Flow triggers now handled bySensorBase._triggerCustomFlowsIfNeeded()
   }
 
   async silenceAlarm() {

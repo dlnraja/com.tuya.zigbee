@@ -1,19 +1,19 @@
 'use strict';
 
-const HybridLightBase = require('../../lib/devices/HybridLightBase');
+constLightBase = require('../../lib/devices/HybridLightBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RGBW/RGBCCT BULB - v5.5.129 FIXED (extends HybridLightBase properly)   ║
+ * ║      RGBW/RGBCCT BULB - v5.5.129 FIXED (extendsLightBase properly)   ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  HybridLightBase handles: onoff, dim, light_temperature listeners           ║
+ * ║ LightBase handles: onoff, dim, light_temperature listeners           ║
  * ║  This class EXTENDS with: light_hue, light_saturation, light_mode, HSV      ║
  * ║  DPs: 1=switch, 2=mode, 3=brightness, 4=color temp, 5=HSV                   ║
  * ║  ZCL: 0x0006 On/Off, 0x0008 Level, 0x0300 Color Control                     ║
  * ║  Models: TS0505B, TS0504B, _TZ3210_*, _TZ3000_*                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class RGBWBulbDevice extends HybridLightBase {
+class RGBWBulbDevice extendsLightBase {
 
   get lightCapabilities() {
     return ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature', 'light_mode'];

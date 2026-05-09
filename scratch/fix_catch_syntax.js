@@ -31,7 +31,7 @@ walk('.', (file) => {
 
   // Fix }).catch(err => this.log(...); -> }).catch(err => this.log(...));
   // This one is trickier. Let's look for common patterns.
-  // drivers\remote_button_wireless_hybrid\device.js:113: }).catch(err => this.log('Battery reporting config failed:', err.message));
+  // drivers\remote_button_wireless\device.js:113: }).catch(err => this.log('Battery reporting config failed:', err.message));
   const logCatchRegex = /}\)\.catch\(err => this\.log\('([^']+)', err\.message\);/g;
   if (logCatchRegex.test(content)) {
     content = content.replace(logCatchRegex, "}).catch(err => this.log('$1', err.message));");

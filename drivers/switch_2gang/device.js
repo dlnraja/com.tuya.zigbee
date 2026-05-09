@@ -1,5 +1,5 @@
 'use strict';
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+constSwitchBase = require('../../lib/devices/HybridSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { CLUSTER } = require('zigbee-clusters');
@@ -53,7 +53,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     await this._cleanupOrphanCapabilities();
 
     // v5.13.1: CRITICAL FIX — Call super.onNodeInit() to register capability listeners
-    // Without this, HybridSwitchBase._registerCapabilityListeners() never fires,
+    // Without this,SwitchBase._registerCapabilityListeners() never fires,
     // causing "Missing Capability Listener: onoff" for standard Tuya DP 2-gang switches
     // (Forum: Rikjes #1676, _TZ3000_jl7qyupf)
     await super.onNodeInit({ zclNode });

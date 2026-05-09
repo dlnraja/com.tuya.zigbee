@@ -62,8 +62,8 @@ const Z2M_EXPECTED = {
     while ((m = dpRegex.exec(dpBlock)) !== null) dpKeys.push(parseInt(m[1]));
     console.log(dr + ' DPs: ' + dpKeys.join(','));
   } else {
-    // Check HybridThermostatBase
-    console.log(dr + ': uses HybridThermostatBase dpMappings');
+    // CheckThermostatBase
+    console.log(dr + ': usesThermostatBase dpMappings');
   }
 });
 

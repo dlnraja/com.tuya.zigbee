@@ -1,8 +1,8 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 
-class IlluminanceSensorDevice extends HybridSensorBase {
+class IlluminanceSensorDevice extendsSensorBase {
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {

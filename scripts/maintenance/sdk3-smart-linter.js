@@ -369,7 +369,7 @@ ${staticResults.map(r => `- ${r.severity.toUpperCase()}: ${r.desc}`).join('\n') 
 4. POWER SOURCE TYPES (all must be supported):
    - Battery: energy.batteries in compose, ZCL cluster 0x0001 or Tuya DP 4/10/14/15/21/100-105
    - Mains (220V/USB): mainsPowered() returns true, NO battery caps
-   - Hybrid (mains + battery backup): runtime detection, same driver serves both
+   - (mains + battery backup): runtime detection, same driver serves both
    - Kinetic/mechanical (self-powered): TS004x buttons, energy from click, NO battery
    - Chinese exotic: ANY combination possible, even ALL at once
 5. NEVER assume power source from driver name or manufacturerName alone.
@@ -403,7 +403,7 @@ When mapping new features, respect this strict hierarchy:
 3. RAW/RX (Last Resort): Only for non-standard trames outside ZCL and EF00 (e.g., Tuya scene buttons).
 
 === OMNI-CHANNEL COMMAND ROUTING & PHYSICAL BUTTON RULES (CRITICAL) ===
-To properly handle multi-gang, hybrid Tuya/ZCL routers, and buttons across ALL levels of abstraction (Raw ZCL, Tuya EF00, Flow, UI, Physical), drivers MUST implement the Omni-Channel routing pattern:
+To properly handle multi-gang, Tuya/ZCL routers, and buttons across ALL levels of abstraction (Raw ZCL, Tuya EF00, Flow, UI, Physical), drivers MUST implement the Omni-Channel routing pattern:
 1. APP/UI COMMANDS -> PROTOCOL OMNI-CATCHER: All incoming 'Turn On/Off' commands (whether from UI tile, Homey Flow Action 'Turn on', or Web API) MUST ultimately route through `this.triggerCapabilityListener('onoff.gangX', val)`.
    - NEVER use `this.setCapabilityValue` to *execute* an action (it only changes UI).
    - NEVER use raw `args.device.zclNode.endpoints[ep].clusters.onOff.setOn()` directly in Flow Actions.

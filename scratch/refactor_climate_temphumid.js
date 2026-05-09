@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const targetFile = 'drivers/sensor_climate_temphumidsensor_hybrid/device.js';
+const targetFile = 'drivers/sensor_climate_temphumidsensor/device.js';
 const filePath = path.join(process.cwd(), targetFile);
 
 let content = fs.readFileSync(filePath, 'utf8');
@@ -83,4 +83,4 @@ content = content.replace(/const isPureZCL = mfr\.startsWith\('_tz3000_'\) \|\| 
                         CI.startsWithCI(mfr, '_tz6210_') || CI.startsWithCI(mfr, 'owon');`);
 
 fs.writeFileSync(filePath, content);
-console.log('Successfully refactored sensor_climate_temphumidsensor_hybrid/device.js');
+console.log('Successfully refactored sensor_climate_temphumidsensor/device.js');
