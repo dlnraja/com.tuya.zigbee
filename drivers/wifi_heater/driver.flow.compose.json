@@ -19,23 +19,11 @@
             "de": "Modus"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Heater mode changed",
-        "fr": "Mode chauffage modifié",
-        "nl": "Verwarmingsmodus gewijzigd",
-        "de": "Heizmodus geändert"
-      }
+      ]
     },
     {
       "id": "wifi_heater_turned_on",
       "title": {
-        "en": "Heater turned on",
-        "fr": "Radiateur allumé",
-        "nl": "Verwarming ingeschakeld",
-        "de": "Heizung eingeschaltet"
-      },
-      "titleFormatted": {
         "en": "Heater turned on",
         "fr": "Radiateur allumé",
         "nl": "Verwarming ingeschakeld",
@@ -45,12 +33,6 @@
     {
       "id": "wifi_heater_turned_off",
       "title": {
-        "en": "Heater turned off",
-        "fr": "Radiateur éteint",
-        "nl": "Verwarming uitgeschakeld",
-        "de": "Heizung ausgeschaltet"
-      },
-      "titleFormatted": {
         "en": "Heater turned off",
         "fr": "Radiateur éteint",
         "nl": "Verwarming uitgeschakeld",
@@ -66,12 +48,6 @@
         "fr": "Radiateur est allumé",
         "nl": "Verwarming is aan",
         "de": "Heizung ist an"
-      },
-      "titleFormatted": {
-        "en": "Heater is on",
-        "fr": "Radiateur est allumé",
-        "nl": "Verwarming is aan",
-        "de": "Heizung ist an"
       }
     },
     {
@@ -81,12 +57,6 @@
         "fr": "Mode chauffage est...",
         "nl": "Verwarmingsmodus is...",
         "de": "Heizmodus ist..."
-      },
-      "titleFormatted": {
-        "en": "Heater mode is [[mode]]",
-        "fr": "Mode chauffage est [[mode]]",
-        "nl": "Verwarmingsmodus is [[mode]]",
-        "de": "Heizmodus ist [[mode]]"
       },
       "args": [
         {
@@ -125,12 +95,6 @@
         "nl": "Stel verwarmingsmodus in",
         "de": "Heizmodus einstellen"
       },
-      "titleFormatted": {
-        "en": "Set heater mode to [[mode]]",
-        "fr": "Définir mode chauffage à [[mode]]",
-        "nl": "Stel verwarmingsmodus in op [[mode]]",
-        "de": "Heizmodus auf [[mode]] einstellen"
-      },
       "args": [
         {
           "name": "mode",
@@ -165,10 +129,6 @@
         "fr": "Définir température cible",
         "nl": "Stel doeltemperatuur in",
         "de": "Zieltemperatur einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set target temperature to [[temperature]] °C",
-        "fr": "Définir température cible à [[temperature]] °C"
       },
       "args": [
         {

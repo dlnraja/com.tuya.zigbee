@@ -155,7 +155,7 @@ const WATER_SENSOR_PROFILES = {
   }
 };
 
-class WaterLeakSensorDevice extendsSensorBase {
+class WaterLeakSensorDevice extends SensorBase {
 
   get mainsPowered() { return false; }
 

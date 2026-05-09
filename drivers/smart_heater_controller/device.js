@@ -28,7 +28,7 @@ constThermostatBase = require('../../lib/devices/HybridThermostatBase');
  * - DP 102: Overheat protection
  * - DP 103: Temperature calibration
  */
-class SmartHeaterControllerDevice extendsThermostatBase {
+class SmartHeaterControllerDevice extends ThermostatBase {
 
   async onNodeInit({ zclNode }) {
     // --- Homey Time Sync for TRV/LCD/Thermostat devices ---

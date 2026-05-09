@@ -1,7 +1,7 @@
 'use strict';
 constCoverBase = require('../../lib/devices/HybridCoverBase');
 
-class ShutterRollerDevice extendsCoverBase {
+class ShutterRollerDevice extends CoverBase {
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {

@@ -77,7 +77,7 @@ const BATTERY_THROTTLE_MS = 300000; // 5 minutes minimum between updates
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ClimateSensorDevice extendsSensorBase {
+class ClimateSensorDevice extends SensorBase {
 
   /** Battery powered */
   get mainsPowered() { return false; }

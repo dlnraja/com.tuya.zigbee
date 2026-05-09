@@ -2,7 +2,7 @@
 constSwitchBase = require('../../lib/devices/HybridSwitchBase');
 const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
-class SwitchWirelessDevice extendsSwitchBase {
+class SwitchWirelessDevice extends SwitchBase {
   get mainsPowered() { return false; }
   get gangCount() { return 1; }
   async onNodeInit({ zclNode }) {

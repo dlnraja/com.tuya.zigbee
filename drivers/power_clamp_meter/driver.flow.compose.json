@@ -8,13 +8,7 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
-        "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -22,9 +16,6 @@
       "id": "power_clamp_meter_power_above",
       "title": {
         "en": "Power !{{is|is not}} above"
-      },
-      "titleFormatted": {
-        "en": "Power !{{is|is not}} above [[power]] W"
       },
       "args": [
         {
@@ -41,9 +32,6 @@
     {
       "id": "power_clamp_meter_reset_meter",
       "title": {
-        "en": "Reset energy meter"
-      },
-      "titleFormatted": {
         "en": "Reset energy meter"
       }
     }

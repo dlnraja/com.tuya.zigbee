@@ -42,7 +42,7 @@ const LIGHT_EFFECTS = {
   party: '060e0d0000000000000003e803e80b4003e803e8', // Party mode
 };
 
-class RGBBulbDevice extendsLightBase {
+class RGBBulbDevice extends LightBase {
 
   get lightCapabilities() {
     return ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature', 'light_mode'];

@@ -1,7 +1,7 @@
 'use strict';
 constLightBase = require('../../lib/devices/HybridLightBase');
 
-class LEDStripRGBWDevice extendsLightBase {
+class LEDStripRGBWDevice extends LightBase {
   get lightCapabilities() { return ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature']; }
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---

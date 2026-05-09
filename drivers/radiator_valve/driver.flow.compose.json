@@ -17,11 +17,7 @@
           "example": 21
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Target temperature changed",
-        "fr": "Température cible changée"
-      }
+      "args": []
     },
     {
       "id": "radiator_valve_measure_temperature_changed",
@@ -40,11 +36,7 @@
           "example": 20.5
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
-      }
+      "args": []
     },
     {
       "id": "radiator_valve_temp_changed",
@@ -54,13 +46,7 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
-      }
+      "args": []
     },
     {
       "id": "radiator_valve_battery_low",
@@ -70,13 +56,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -98,11 +78,7 @@
             "fr": "Température"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Set temperature to [[temperature]]°C",
-        "fr": "Régler la température à [[temperature]]°C"
-      }
+      ]
     },
     {
       "id": "radiator_valve_set_temperature",
@@ -111,12 +87,6 @@
         "fr": "Régler température",
         "nl": "Temperatuur instellen",
         "de": "Temperatur einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set temperature to [[temperature]]°C",
-        "fr": "Régler à [[temperature]]°C",
-        "nl": "Instellen op [[temperature]]°C",
-        "de": "Auf [[temperature]]°C einstellen"
       },
       "args": [
         {

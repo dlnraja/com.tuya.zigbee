@@ -6,11 +6,7 @@
         "en": "Presence detected",
         "fr": "Présence détectée"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Presence detected",
-        "fr": "Présence détectée"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_presence_cleared_dup_cqjhy",
@@ -18,11 +14,7 @@
         "en": "Presence cleared",
         "fr": "Présence disparue"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Presence cleared",
-        "fr": "Présence disparue"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_motion_detected_dup_io3d5",
@@ -30,11 +22,7 @@
         "en": "Motion detected",
         "fr": "Mouvement détecté"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion detected",
-        "fr": "Mouvement détecté"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_no_motion_dup_wnox6",
@@ -42,11 +30,7 @@
         "en": "No motion",
         "fr": "Aucun mouvement"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "No motion",
-        "fr": "Aucun mouvement"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_illuminance_changed_dup_6zwia",
@@ -65,11 +49,7 @@
           "example": 150
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Illuminance changed",
-        "fr": "Luminosité changée"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_temperature_changed_dup_qla6y",
@@ -88,11 +68,7 @@
           "example": 22.5
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_humidity_changed_dup_4fdih",
@@ -111,11 +87,7 @@
           "example": 55
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_target_distance_changed_dup_nf4wn",
@@ -134,11 +106,7 @@
           "example": 2.5
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Target distance changed",
-        "fr": "Distance cible changée"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_battery_low_dup_eq4s2",
@@ -146,11 +114,7 @@
         "en": "Battery low",
         "fr": "Batterie faible"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_battery_changed_dup_1tqng",
@@ -169,11 +133,7 @@
           "example": 75
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_distance_changed_dup_hjsk4",
@@ -183,13 +143,7 @@
         "nl": "Afstand gewijzigd",
         "de": "Entfernung geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Distance changed",
-        "fr": "Distance changée",
-        "nl": "Afstand gewijzigd",
-        "de": "Entfernung geändert"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_temp_changed_dup_6w3n3",
@@ -199,13 +153,7 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_lux_changed_dup_l4xe1",
@@ -215,13 +163,7 @@
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Luminance changed",
-        "fr": "Luminance changée",
-        "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -231,21 +173,13 @@
         "en": "Presence is !{{detected|not detected}}",
         "fr": "Présence !{{détectée|non détectée}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Presence is !{{detected|not detected}}",
-        "fr": "Présence !{{détectée|non détectée}}"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_radar_mmwave_illuminance_above_dup_fhhem",
       "title": {
         "en": "Illuminance is above",
         "fr": "Luminosité supérieure à"
-      },
-      "titleFormatted": {
-        "en": "Illuminance is above [[lux]] lux",
-        "fr": "Luminosité supérieure à [[lux]] lux"
       },
       "args": [
         {
@@ -267,10 +201,6 @@
         "en": "Illuminance is below",
         "fr": "Luminosité inférieure à"
       },
-      "titleFormatted": {
-        "en": "Illuminance is below [[lux]] lux",
-        "fr": "Luminosité inférieure à [[lux]] lux"
-      },
       "args": [
         {
           "name": "lux",
@@ -291,10 +221,6 @@
         "en": "Temperature is above",
         "fr": "Température supérieure à"
       },
-      "titleFormatted": {
-        "en": "Temperature is above [[temp]]°C",
-        "fr": "Température supérieure à [[temp]]°C"
-      },
       "args": [
         {
           "name": "temp",
@@ -314,10 +240,6 @@
       "title": {
         "en": "Target distance is less than",
         "fr": "Distance cible inférieure à"
-      },
-      "titleFormatted": {
-        "en": "Target distance < [[distance]] m",
-        "fr": "Distance cible < [[distance]] m"
       },
       "args": [
         {
@@ -341,13 +263,7 @@
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
-        "nl": "Beweging !{{is|is niet}} gedetecteerd",
-        "de": "Bewegung !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -356,10 +272,6 @@
       "title": {
         "en": "Set radar sensitivity",
         "fr": "Définir sensibilité radar"
-      },
-      "titleFormatted": {
-        "en": "Set radar sensitivity to [[sensitivity]]",
-        "fr": "Définir sensibilité radar à [[sensitivity]]"
       },
       "args": [
         {
@@ -380,10 +292,6 @@
       "title": {
         "en": "Set detection range",
         "fr": "Définir plage de détection"
-      },
-      "titleFormatted": {
-        "en": "Set detection range [[min]]m - [[max]]m",
-        "fr": "Définir plage de détection [[min]]m - [[max]]m"
       },
       "args": [
         {
@@ -416,10 +324,6 @@
         "en": "Set fading time",
         "fr": "Définir délai d'absence"
       },
-      "titleFormatted": {
-        "en": "Set fading time to [[seconds]] seconds",
-        "fr": "Définir délai d'absence à [[seconds]] secondes"
-      },
       "args": [
         {
           "name": "seconds",
@@ -439,10 +343,6 @@
       "title": {
         "en": "Set detection delay",
         "fr": "Définir délai de détection"
-      },
-      "titleFormatted": {
-        "en": "Set detection delay to [[seconds]] seconds",
-        "fr": "Définir délai de détection à [[seconds]] secondes"
       },
       "args": [
         {

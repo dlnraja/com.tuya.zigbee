@@ -12,10 +12,7 @@
           "title": "Timestamp"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on"
-      }
+      "args": []
     },
     {
       "id": "switch_wireless_onoff_false",
@@ -25,13 +22,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "switch_wireless_button_pressed",
@@ -49,11 +40,7 @@
           "example": "single"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button pressed",
-        "fr": "Bouton appuyé"
-      }
+      "args": []
     },
     {
       "id": "switch_wireless_single_press",
@@ -61,11 +48,7 @@
         "en": "Single press",
         "fr": "Appui simple"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Single press",
-        "fr": "Appui simple"
-      }
+      "args": []
     },
     {
       "id": "switch_wireless_double_press",
@@ -73,11 +56,7 @@
         "en": "Double press",
         "fr": "Double appui"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Double press",
-        "fr": "Double appui"
-      }
+      "args": []
     },
     {
       "id": "switch_wireless_long_press",
@@ -85,11 +64,7 @@
         "en": "Long press",
         "fr": "Appui long"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Long press",
-        "fr": "Appui long"
-      }
+      "args": []
     },
     {
       "id": "switch_wireless_battery_low",
@@ -99,13 +74,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -114,10 +83,7 @@
       "title": {
         "en": "Is !{{on|off}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -126,30 +92,21 @@
       "title": {
         "en": "Turn on"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on"
-      }
+      "args": []
     },
     {
       "id": "switch_wireless_turn_off",
       "title": {
         "en": "Turn off"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off"
-      }
+      "args": []
     },
     {
       "id": "switch_wireless_toggle",
       "title": {
         "en": "Toggle"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle"
-      }
+      "args": []
     }
   ]
 }

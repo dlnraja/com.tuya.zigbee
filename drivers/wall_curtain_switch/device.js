@@ -8,7 +8,7 @@ try {
  CoverBase = ZigBeeDevice;
 }
 
-class WallCurtainSwitchDevice extendsCoverBase {
+class WallCurtainSwitchDevice extends CoverBase {
   async onNodeInit({ zclNode }) {
     this.log('[WALL_CURTAIN_SWITCH] init');
 

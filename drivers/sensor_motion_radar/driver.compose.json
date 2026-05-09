@@ -28,7 +28,9 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
-      "_tze200_ttcovulf"
+      "_tze200_ttcovulf",
+      "_TZE200_ttcovulf",
+      "_TZE200_TTCOVULF"
     ],
     "endpoints": {
       "1": {

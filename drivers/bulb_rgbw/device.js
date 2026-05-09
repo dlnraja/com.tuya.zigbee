@@ -4,7 +4,7 @@ constLightBase = require('../../lib/devices/HybridLightBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      RGBW/RGBCCT BULB - v5.5.129 FIXED (extendsLightBase properly)   ║
+ * ║      RGBW/RGBCCT BULB - v5.5.129 FIXED (extends LightBase properly)   ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║ LightBase handles: onoff, dim, light_temperature listeners           ║
  * ║  This class EXTENDS with: light_hue, light_saturation, light_mode, HSV      ║
@@ -13,7 +13,7 @@ constLightBase = require('../../lib/devices/HybridLightBase');
  * ║  Models: TS0505B, TS0504B, _TZ3210_*, _TZ3000_*                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class RGBWBulbDevice extendsLightBase {
+class RGBWBulbDevice extends LightBase {
 
   get lightCapabilities() {
     return ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature', 'light_mode'];

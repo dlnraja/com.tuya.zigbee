@@ -1,7 +1,7 @@
 'use strict';
 constThermostatBase = require('../../lib/devices/HybridThermostatBase');
 
-class HVACAirConditionerDevice extendsThermostatBase {
+class HVACAirConditionerDevice extends ThermostatBase {
   get mainsPowered() { return true; }
   get thermostatCapabilities() { return ['onoff', 'target_temperature', 'measure_temperature', 'thermostat_mode']; }
   async onNodeInit({ zclNode }) {

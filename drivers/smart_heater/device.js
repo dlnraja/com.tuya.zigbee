@@ -1,7 +1,7 @@
 'use strict';
 constThermostatBase = require('../../lib/devices/HybridThermostatBase');
 
-class SmartHeaterDevice extendsThermostatBase {
+class SmartHeaterDevice extends ThermostatBase {
   get mainsPowered() { return true; }
   get thermostatCapabilities() { return ['onoff', 'target_temperature', 'measure_temperature']; }
   async onNodeInit({ zclNode }) {

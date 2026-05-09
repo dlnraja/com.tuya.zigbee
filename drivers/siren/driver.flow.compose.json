@@ -15,13 +15,7 @@
         "fr": "Se déclenche quand la sirène commence à sonner",
         "de": "Wird ausgelöst, wenn die Sirene zu tönen beginnt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Siren started",
-        "nl": "Sirene gestart",
-        "fr": "Sirène démarrée",
-        "de": "Sirene gestartet"
-      }
+      "args": []
     },
     {
       "id": "siren_alarm_stopped",
@@ -37,13 +31,7 @@
         "fr": "Se déclenche quand la sirène arrête de sonner",
         "de": "Wird ausgelöst, wenn die Sirene aufhört zu tönen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Siren stopped",
-        "nl": "Sirene gestopt",
-        "fr": "Sirène arrêtée",
-        "de": "Sirene gestoppt"
-      }
+      "args": []
     },
     {
       "id": "siren_battery_low",
@@ -53,13 +41,7 @@
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery is low",
-        "nl": "Batterij is bijna leeg",
-        "fr": "Batterie faible",
-        "de": "Batterie ist schwach"
-      }
+      "args": []
     },
     {
       "id": "siren_turned_on",
@@ -69,13 +51,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "siren_turned_off",
@@ -85,13 +61,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "siren_motion_detected",
@@ -101,13 +71,7 @@
         "nl": "Beweging gedetecteerd",
         "de": "Bewegung erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion detected",
-        "fr": "Mouvement détecté",
-        "nl": "Beweging gedetecteerd",
-        "de": "Bewegung erkannt"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -119,13 +83,7 @@
         "fr": "Sirène !{{sonne|ne sonne pas}}",
         "de": "Sirene !{{tönt|tönt nicht}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Siren !{{is|is not}} sounding",
-        "nl": "Sirene !{{loeit|loeit niet}}",
-        "fr": "Sirène !{{sonne|ne sonne pas}}",
-        "de": "Sirene !{{tönt|tönt nicht}}"
-      }
+      "args": []
     },
     {
       "id": "siren_is_on",
@@ -135,13 +93,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     },
     {
       "id": "siren_motion_active",
@@ -151,13 +103,7 @@
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
-        "nl": "Beweging !{{is|is niet}} gedetecteerd",
-        "de": "Bewegung !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -166,12 +112,6 @@
       "title": {
         "en": "Turn on siren",
         "nl": "Sirene aanzetten",
-        "fr": "Activer la sirène",
-        "de": "Sirene einschalten"
-      },
-      "titleFormatted": {
-        "en": "Turn on the siren",
-        "nl": "Zet de sirene aan",
         "fr": "Activer la sirène",
         "de": "Sirene einschalten"
       },
@@ -185,12 +125,6 @@
         "fr": "Désactiver la sirène",
         "de": "Sirene ausschalten"
       },
-      "titleFormatted": {
-        "en": "Turn off the siren",
-        "nl": "Zet de sirene uit",
-        "fr": "Désactiver la sirène",
-        "de": "Sirene ausschalten"
-      },
       "args": []
     },
     {
@@ -200,12 +134,6 @@
         "nl": "Volume instellen",
         "fr": "Régler le volume",
         "de": "Lautstärke einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set siren volume to [[volume]]",
-        "nl": "Stel sirene volume in op [[volume]]",
-        "fr": "Régler le volume de la sirène à [[volume]]",
-        "de": "Sirenenlautstärke auf [[volume]] einstellen"
       },
       "args": [
         {
@@ -257,12 +185,6 @@
         "fr": "Définir la durée de l'alarme",
         "de": "Alarmdauer einstellen"
       },
-      "titleFormatted": {
-        "en": "Set alarm duration to [[duration]] seconds",
-        "nl": "Stel alarmduur in op [[duration]] seconden",
-        "fr": "Définir la durée de l'alarme à [[duration]] secondes",
-        "de": "Alarmdauer auf [[duration]] Sekunden einstellen"
-      },
       "args": [
         {
           "name": "duration",
@@ -283,12 +205,6 @@
         "nl": "Alarm melodie instellen",
         "fr": "Définir la mélodie d'alarme",
         "de": "Alarmmelodie einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set alarm melody to [[melody]]",
-        "nl": "Stel alarm melodie in op [[melody]]",
-        "fr": "Définir la mélodie d'alarme à [[melody]]",
-        "de": "Alarmmelodie auf [[melody]] einstellen"
       },
       "hint": {
         "en": "Select the melody/ringtone for the siren alarm",
@@ -443,13 +359,7 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     }
   ]
 }

@@ -3,7 +3,7 @@ constPlugBase = require('../../lib/devices/HybridPlugBase');
 
 const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb','_tze200_fphxkxue','_tze204_sh1btabb','_tze204_fphxkxue'];
 
-class WaterValveSmartDevice extendsPlugBase {
+class WaterValveSmartDevice extends PlugBase {
   get plugCapabilities() { return ['onoff','measure_battery','measure_temperature','meter_water']; }
 
   get isGardenTimer() {

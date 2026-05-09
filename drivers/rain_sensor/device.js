@@ -7,7 +7,7 @@ const {SensorBase } = require('../../lib/devices/HybridSensorBase');
  * v5.5.889: Added IAS Zone support for TS0207 devices (Dominique_C forum report)
  * v5.3.64: SIMPLIFIED base implementation
  */
-class RainSensorDevice extendsSensorBase {
+class RainSensorDevice extends SensorBase {
 
   get mainsPowered() { return false; }
 

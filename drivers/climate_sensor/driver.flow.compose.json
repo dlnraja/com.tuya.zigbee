@@ -18,11 +18,7 @@
           "example": 22.5
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_humidity_changed",
@@ -41,11 +37,7 @@
           "example": 55
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_battery_low",
@@ -53,11 +45,7 @@
         "en": "Battery low",
         "fr": "Batterie faible"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_temperature_alarm_high",
@@ -65,11 +53,7 @@
         "en": "Temperature too high",
         "fr": "Température trop haute"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature too high",
-        "fr": "Température trop haute"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_temperature_alarm_low",
@@ -77,11 +61,7 @@
         "en": "Temperature too low",
         "fr": "Température trop basse"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature too low",
-        "fr": "Température trop basse"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_humidity_alarm_high",
@@ -89,11 +69,7 @@
         "en": "Humidity too high",
         "fr": "Humidité trop haute"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity too high",
-        "fr": "Humidité trop haute"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_humidity_alarm_low",
@@ -101,11 +77,7 @@
         "en": "Humidity too low",
         "fr": "Humidité trop basse"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity too low",
-        "fr": "Humidité trop basse"
-      }
+      "args": []
     },
     {
       "id": "climate_sensor_temp_changed",
@@ -115,13 +87,7 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -130,10 +96,6 @@
       "title": {
         "en": "Temperature is above",
         "fr": "Température supérieure à"
-      },
-      "titleFormatted": {
-        "en": "Temperature is above [[temp]]°C",
-        "fr": "Température supérieure à [[temp]]°C"
       },
       "args": [
         {
@@ -155,10 +117,6 @@
         "en": "Temperature is below",
         "fr": "Température inférieure à"
       },
-      "titleFormatted": {
-        "en": "Temperature is below [[temp]]°C",
-        "fr": "Température inférieure à [[temp]]°C"
-      },
       "args": [
         {
           "name": "temp",
@@ -179,10 +137,6 @@
         "en": "Humidity is above",
         "fr": "Humidité supérieure à"
       },
-      "titleFormatted": {
-        "en": "Humidity is above [[humidity]]%",
-        "fr": "Humidité supérieure à [[humidity]]%"
-      },
       "args": [
         {
           "name": "humidity",
@@ -202,10 +156,6 @@
       "title": {
         "en": "Humidity is below",
         "fr": "Humidité inférieure à"
-      },
-      "titleFormatted": {
-        "en": "Humidity is below [[humidity]]%",
-        "fr": "Humidité inférieure à [[humidity]]%"
       },
       "args": [
         {

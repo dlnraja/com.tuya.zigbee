@@ -13,10 +13,7 @@
             "en": "Temperature"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "Temperature changed"
-      }
+      ]
     }
   ],
   "conditions": [],
@@ -25,9 +22,6 @@
       "id": "wifi_thermostat_set_temp",
       "title": {
         "en": "Set temperature"
-      },
-      "titleFormatted": {
-        "en": "Set temperature to [[temperature]]°C"
       },
       "args": [
         {

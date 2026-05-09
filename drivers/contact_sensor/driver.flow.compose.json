@@ -9,12 +9,6 @@
         "fr": "Porte/fenêtre ouverte",
         "de": "Tür/Fenster geöffnet"
       },
-      "titleFormatted": {
-        "en": "The door or window was opened",
-        "nl": "De deur of het raam werd geopend",
-        "fr": "La porte ou fenêtre a été ouverte",
-        "de": "Die Tür oder das Fenster wurde geöffnet"
-      },
       "hint": {
         "en": "Triggers when the magnet separates from the sensor",
         "nl": "Triggert wanneer de magneet van de sensor wordt gescheiden",
@@ -37,13 +31,7 @@
         "fr": "Se déclenche quand l'aimant touche le capteur",
         "de": "Wird ausgelöst, wenn der Magnet den Sensor berührt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Door/window closed",
-        "nl": "Deur/raam gesloten",
-        "fr": "Porte/fenêtre fermée",
-        "de": "Tür/Fenster geschlossen"
-      }
+      "args": []
     },
     {
       "id": "contact_sensor_tamper_true",
@@ -59,13 +47,7 @@
         "fr": "Se déclenche quand le capteur a été saboté",
         "de": "Wird ausgelöst, wenn der Sensor manipuliert wurde"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper alert",
-        "nl": "Sabotage alarm",
-        "fr": "Alerte sabotage",
-        "de": "Manipulationsalarm"
-      }
+      "args": []
     },
     {
       "id": "contact_sensor_battery_changed",
@@ -74,12 +56,6 @@
         "nl": "Batterijniveau veranderd",
         "fr": "Niveau batterie changé",
         "de": "Batteriestand geändert"
-      },
-      "titleFormatted": {
-        "en": "Battery level changed to [[battery]]%",
-        "nl": "Batterijniveau veranderd naar [[battery]]%",
-        "fr": "Niveau batterie changé à [[battery]]%",
-        "de": "Batteriestand geändert zu [[battery]]%"
       },
       "tokens": [
         {
@@ -110,13 +86,7 @@
         "fr": "Se déclenche quand la batterie passe sous le seuil",
         "de": "Wird ausgelöst, wenn die Batterie unter den Schwellenwert fällt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery is low",
-        "nl": "Batterij is bijna leeg",
-        "fr": "Batterie faible",
-        "de": "Batterie ist schwach"
-      }
+      "args": []
     },
     {
       "id": "contact_sensor_left_open",
@@ -125,12 +95,6 @@
         "nl": "Te lang open gelaten",
         "fr": "Resté ouvert trop longtemps",
         "de": "Zu lange offen gelassen"
-      },
-      "titleFormatted": {
-        "en": "Left open for [[duration]] minutes",
-        "nl": "Meer dan [[duration]] minuten open",
-        "fr": "Ouvert depuis [[duration]] minutes",
-        "de": "Seit [[duration]] Minuten offen"
       },
       "hint": {
         "en": "Triggers when the sensor has been open for the specified duration",
@@ -161,13 +125,7 @@
         "nl": "Contact gewijzigd",
         "de": "Kontakt geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Contact changed",
-        "fr": "Contact changé",
-        "nl": "Contact gewijzigd",
-        "de": "Kontakt geändert"
-      }
+      "args": []
     },
     {
       "id": "contact_sensor_tamper_alarm",
@@ -177,13 +135,7 @@
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper alarm",
-        "fr": "Alarme sabotage",
-        "nl": "Sabotagealarm",
-        "de": "Manipulationsalarm"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -195,13 +147,7 @@
         "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte",
         "de": "Tür/Fenster !{{ist|ist nicht}} offen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Door/window !{{is|is not}} open",
-        "nl": "Deur/raam !{{is|is niet}} open",
-        "fr": "Porte/fenêtre !{{est|n'est pas}} ouverte",
-        "de": "Tür/Fenster !{{ist|ist nicht}} offen"
-      }
+      "args": []
     },
     {
       "id": "contact_sensor_battery_above",
@@ -210,12 +156,6 @@
         "nl": "Batterij !{{is|is niet}} boven",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de",
         "de": "Batterie !{{ist|ist nicht}} über"
-      },
-      "titleFormatted": {
-        "en": "Battery !{{is|is not}} above [[threshold]]%",
-        "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
-        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
-        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
       },
       "args": [
         {
@@ -238,13 +178,7 @@
         "nl": "Contact !{{is|is niet}} open",
         "de": "Kontakt !{{ist|ist nicht}} offen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Contact !{{is|is not}} open",
-        "fr": "Contact !{{est|n'est pas}} ouvert",
-        "nl": "Contact !{{is|is niet}} open",
-        "de": "Kontakt !{{ist|ist nicht}} offen"
-      }
+      "args": []
     },
     {
       "id": "contact_sensor_tamper_active",
@@ -254,13 +188,7 @@
         "nl": "Sabotage !{{is|is niet}} actief",
         "de": "Manipulation !{{ist|ist nicht}} aktiv"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper !{{is|is not}} active",
-        "fr": "Sabotage !{{est|n'est pas}} actif",
-        "nl": "Sabotage !{{is|is niet}} actief",
-        "de": "Manipulation !{{ist|ist nicht}} aktiv"
-      }
+      "args": []
     }
   ]
 }

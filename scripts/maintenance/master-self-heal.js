@@ -111,7 +111,7 @@ function rule_phantomMethods() {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 function rule_fingerprintCase() {
-  log('\n📋 Rule 2: Fingerprint Case Normalization');
+  log('\n📋 Rule 2: Fingerprint Casing Robustness (Multi-Case Expansion)');
   const composeFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.compose.json'));
   let fixes = 0;
 
@@ -122,28 +122,57 @@ function rule_fingerprintCase() {
       const mfrs = compose?.zigbee?.manufacturerName;
       if (!Array.isArray(mfrs)) continue;
 
-      let changed = false;
-      const fixed = mfrs.map(m => {
-        if (typeof m !== 'string') return m;
-        const lower = m.toLowerCase();
-        if (m !== lower) { changed = true; return lower; }
-        return m;
-      });
+      const expandedMfrs = [];
+      const seen = new Set();
 
-      if (changed) {
-        compose.zigbee.manufacturerName = fixed;
-        const uppercaseCount = mfrs.filter(m => m !== m.toLowerCase()).length;
+      for (const m of mfrs) {
+        if (typeof m !== 'string') {
+          if (!seen.has(m)) {
+            seen.add(m);
+            expandedMfrs.push(m);
+          }
+          continue;
+        }
+
+        // Generate casing variants to support Homey Core's case-sensitive pairing engine
+        const variants = [m.toLowerCase()];
+
+        if (m.toLowerCase().startsWith('_tz')) {
+          const underscoreIndex = m.indexOf('_', 1);
+          if (underscoreIndex !== -1) {
+            const prefix = m.substring(0, underscoreIndex).toUpperCase();
+            const suffix = m.substring(underscoreIndex).toLowerCase();
+            variants.push(prefix + suffix); // Mixed case, e.g., _TZE200_2se8efxh
+          }
+        }
+        variants.push(m.toUpperCase()); // Fully uppercase, e.g., _TZE200_2SE8EFXH
+
+        for (const variant of variants) {
+          if (!seen.has(variant)) {
+            seen.add(variant);
+            expandedMfrs.push(variant);
+          }
+        }
+      }
+
+      // Check if any new casing variants were added or if order/content changed
+      const originalSerialized = JSON.stringify(mfrs);
+      const fixedSerialized = JSON.stringify(expandedMfrs);
+
+      if (originalSerialized !== fixedSerialized) {
+        compose.zigbee.manufacturerName = expandedMfrs;
         safeWrite(file, JSON.stringify(compose, null, 2) + '\n');
         fixes++;
-        addFix('fingerprint-case', file, `Lowercased ${uppercaseCount} fingerprints`);
-        log(`  ✅ Fixed: ${path.relative(ROOT, file)} (${uppercaseCount} fingerprints)`);
+        const addedCount = expandedMfrs.length - mfrs.length;
+        addFix('fingerprint-case', file, `Expanded fingerprints with robust casing variants (added ${addedCount})`);
+        log(`  ✅ Fixed (Case Robustness): ${path.relative(ROOT, file)} (added ${addedCount} variants, total: ${expandedMfrs.length})`);
       }
     } catch (e) {
       report.errors.push({ rule: 'fingerprint-case', file, error: e.message });
     }
   }
 
-  log(`  → ${fixes} files fixed`);
+  log(`  → ${fixes} files updated for complete case-insensitivity`);
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════

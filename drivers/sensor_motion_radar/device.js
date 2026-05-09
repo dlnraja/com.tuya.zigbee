@@ -65,7 +65,7 @@ function getModelConfig(manufacturerName) {
   // Default to ADVANCED for unknown models
   return { type: 'ADVANCED', ...MODEL_CONFIGS.ADVANCED };
 }
-class MotionSensorRadarDevice extendsSensorBase {  get mainsPowered() {
+class MotionSensorRadarDevice extends SensorBase {  get mainsPowered() {
   const config = this._getModelConfig();
   return config.mainsPowered === true;
 }

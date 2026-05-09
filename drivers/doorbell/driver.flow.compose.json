@@ -9,12 +9,6 @@
         "fr": "Sonnette pressée",
         "de": "Türklingel gedrückt"
       },
-      "titleFormatted": {
-        "en": "Someone rang the doorbell!",
-        "nl": "Iemand heeft aangebeld!",
-        "fr": "Quelqu'un a sonné !",
-        "de": "Jemand hat geklingelt!"
-      },
       "hint": {
         "en": "Triggers when someone presses the doorbell button",
         "nl": "Triggert wanneer iemand op de deurbel drukt",
@@ -37,13 +31,7 @@
         "fr": "Se déclenche quand un mouvement est détecté près de la sonnette (si supporté)",
         "de": "Wird ausgelöst, wenn Bewegung in der Nähe der Türklingel erkannt wird (falls unterstützt)"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion at door",
-        "nl": "Beweging bij deur",
-        "fr": "Mouvement à la porte",
-        "de": "Bewegung an der Tür"
-      }
+      "args": []
     },
     {
       "id": "doorbell_tamper_true",
@@ -59,13 +47,7 @@
         "fr": "Se déclenche quand la sonnette a été sabotée",
         "de": "Wird ausgelöst, wenn die Türklingel manipuliert wurde"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper alert",
-        "nl": "Sabotage alarm",
-        "fr": "Alerte sabotage",
-        "de": "Manipulationsalarm"
-      }
+      "args": []
     },
     {
       "id": "doorbell_battery_changed",
@@ -74,12 +56,6 @@
         "nl": "Batterijniveau veranderd",
         "fr": "Niveau batterie changé",
         "de": "Batteriestand geändert"
-      },
-      "titleFormatted": {
-        "en": "Battery level changed to [[battery]]%",
-        "nl": "Batterijniveau veranderd naar [[battery]]%",
-        "fr": "Niveau batterie changé à [[battery]]%",
-        "de": "Batteriestand geändert zu [[battery]]%"
       },
       "tokens": [
         {
@@ -104,13 +80,7 @@
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery is low",
-        "nl": "Batterij is bijna leeg",
-        "fr": "Batterie faible",
-        "de": "Batterie ist schwach"
-      }
+      "args": []
     },
     {
       "id": "doorbell_contact_alarm",
@@ -120,13 +90,7 @@
         "nl": "Contact gewijzigd",
         "de": "Kontakt geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Contact changed",
-        "fr": "Contact changé",
-        "nl": "Contact gewijzigd",
-        "de": "Kontakt geändert"
-      }
+      "args": []
     },
     {
       "id": "doorbell_tamper_alarm",
@@ -136,13 +100,7 @@
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper alarm",
-        "fr": "Alarme sabotage",
-        "nl": "Sabotagealarm",
-        "de": "Manipulationsalarm"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -153,12 +111,6 @@
         "nl": "Batterij !{{is|is niet}} boven",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de",
         "de": "Batterie !{{ist|ist nicht}} über"
-      },
-      "titleFormatted": {
-        "en": "Battery !{{is|is not}} above [[threshold]]%",
-        "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
-        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
-        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
       },
       "args": [
         {
@@ -181,13 +133,7 @@
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
-        "nl": "Beweging !{{is|is niet}} gedetecteerd",
-        "de": "Bewegung !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     },
     {
       "id": "doorbell_contact_open",
@@ -197,13 +143,7 @@
         "nl": "Contact !{{is|is niet}} open",
         "de": "Kontakt !{{ist|ist nicht}} offen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Contact !{{is|is not}} open",
-        "fr": "Contact !{{est|n'est pas}} ouvert",
-        "nl": "Contact !{{is|is niet}} open",
-        "de": "Kontakt !{{ist|ist nicht}} offen"
-      }
+      "args": []
     },
     {
       "id": "doorbell_tamper_active",
@@ -213,13 +153,7 @@
         "nl": "Sabotage !{{is|is niet}} actief",
         "de": "Manipulation !{{ist|ist nicht}} aktiv"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper !{{is|is not}} active",
-        "fr": "Sabotage !{{est|n'est pas}} actif",
-        "nl": "Sabotage !{{is|is niet}} actief",
-        "de": "Manipulation !{{ist|ist nicht}} aktiv"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -237,13 +171,7 @@
         "fr": "Déclenche manuellement le carillon de la sonnette (si supporté)",
         "de": "Löst die Türklingel manuell aus (falls unterstützt)"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Ring the chime",
-        "nl": "Laat de bel rinkelen",
-        "fr": "Faire sonner le carillon",
-        "de": "Glocke läuten"
-      }
+      "args": []
     }
   ]
 }

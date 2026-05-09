@@ -6,10 +6,6 @@
         "en": "Button pressed",
         "fr": "Bouton appuyé"
       },
-      "titleFormatted": {
-        "en": "Button [[button]] pressed",
-        "fr": "Bouton [[button]] appuyé"
-      },
       "tokens": [
         {
           "name": "button",
@@ -28,10 +24,6 @@
       "title": {
         "en": "Button double-pressed",
         "fr": "Bouton double-cliqué"
-      },
-      "titleFormatted": {
-        "en": "Button [[button]] double-pressed",
-        "fr": "Bouton [[button]] double-cliqué"
       },
       "tokens": [
         {
@@ -52,10 +44,6 @@
         "en": "Button long-pressed",
         "fr": "Bouton pressé longtemps"
       },
-      "titleFormatted": {
-        "en": "Button [[button]] long-pressed",
-        "fr": "Bouton [[button]] pressé longtemps"
-      },
       "tokens": [
         {
           "name": "button",
@@ -74,10 +62,6 @@
       "title": {
         "en": "Button multi-pressed",
         "fr": "Bouton multi-cliqué"
-      },
-      "titleFormatted": {
-        "en": "Button [[button]] pressed [[count]] times",
-        "fr": "Bouton [[button]] appuyé [[count]] fois"
       },
       "tokens": [
         {
@@ -107,11 +91,7 @@
         "en": "Button 1 pressed",
         "fr": "Bouton 1 appuyé"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 1 pressed",
-        "fr": "Bouton 1 appuyé"
-      }
+      "args": []
     },
     {
       "id": "button_wireless_1_button_1gang_button_1_double_dup_mk2ax",
@@ -119,11 +99,7 @@
         "en": "Button 1 double-pressed",
         "fr": "Bouton 1 double-cliqué"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 1 double-pressed",
-        "fr": "Bouton 1 double-cliqué"
-      }
+      "args": []
     },
     {
       "id": "button_wireless_1_button_1gang_button_1_long_dup_k5n4v",
@@ -131,11 +107,7 @@
         "en": "Button 1 long-pressed",
         "fr": "Bouton 1 pressé longtemps"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 1 long-pressed",
-        "fr": "Bouton 1 pressé longtemps"
-      }
+      "args": []
     },
     {
       "id": "button_wireless_1_button_1gang_button_1_triple_dup_mbm87",
@@ -143,11 +115,7 @@
         "en": "Button 1 triple-pressed",
         "fr": "Bouton 1 triple-cliqué"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 1 triple-pressed",
-        "fr": "Bouton 1 triple-cliqué"
-      }
+      "args": []
     },
     {
       "id": "button_wireless_1_button_1gang_button_1_release_dup_zzkbq",
@@ -155,11 +123,7 @@
         "en": "Button 1 released - after hold",
         "fr": "Bouton 1 relâché - après maintien"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 1 released (after hold)",
-        "fr": "Bouton 1 relâché (après maintien)"
-      }
+      "args": []
     },
     {
       "id": "button_wireless_1_battery_low_dup_9u6py",
@@ -169,13 +133,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ]
 }

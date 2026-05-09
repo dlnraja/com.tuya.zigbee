@@ -205,3 +205,7 @@ page-dump.html
 .netrc
 .npmrc
 !.npmrc.example
+
+# Temporary workspace directories and scratch scripts
+tmp/
+count_fps.js

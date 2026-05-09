@@ -1,0 +1,44 @@
+# 🤖 Cline / Roo Code Project Rules
+
+## ⚠️ CRITICAL PROVIDER GUARD
+**CRITICAL: Always provide a brief explanation or thought process in plain text before using any tool or executing a command. Never send a message containing only a tool call. This is required to prevent API 400 errors with the Moonshot/Kimi provider.**
+
+---
+
+## 📐 CORE ZIGBEE & TUYA RULES (MUST OBEY)
+
+1. **Fingerprints Rule**: `manufacturerName` + `productId` (combined) must BOTH match.
+   - It is normal for the same `manufacturerName` to exist in multiple drivers with different `productId`s.
+   - **NO WILDCARDS** in `manufacturerName` (e.g., `_TZE284_*` is strictly forbidden).
+   - All comparisons must be case-insensitive using the custom utility [CaseInsensitiveMatcher.js](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/lib/CaseInsensitiveMatcher.js). Manual `.toLowerCase()` is forbidden.
+   - Setting keys must be `zb_model_id` (not `zb_modelId`) and `zb_manufacturer_name` (not `zb_manufacturerName`).
+
+2. **Energy & Hybrid Drivers Rule**:
+   - All drivers are inherently hybrid and must support all types of energy monitoring/generation.
+   - **Remove the "hybrid" or "hybride" suffix** from all drivers, directories, configuration keys, and classes, as energy management is globalized.
+
+3. **Local Tuya WiFi Architecture Rule**:
+   - Do **NOT** instantiate raw `tuyapi` directly in device classes. Always use the robust [TuyaLocalClient.js](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/lib/tuya-local/TuyaLocalClient.js) wrapper instead.
+   - Ensure a minimal command queue delay of `200ms` between sequential DP updates to prevent over-flooding Tuya's microcontrollers.
+   - Always implement standard Homey SDK3 lifecycle hooks: `onUninit()` and `onDeleted()`. Ensure they cleanly release resources (TCP sockets, event listeners, and timers) using `_destroyDevice()` to prevent memory leaks during app reloads or device disables.
+
+4. **Runtime 100% Local**:
+   - Zero cloud API calls in the Homey application runtime code.
+
+5. **Bundle Size Limit (< 7MB)**:
+   - Always exclude `.github/`, `scripts/`, `docs/`, `tmp/`, and `.git/` via [.homeyignore](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/.homeyignore).
+
+---
+
+## 🕵️ SHADOW MODE PROTOCOL
+- All repairs, synchronizations, and automation pipelines must be operated in **Shadow Mode** — meaning no public forum announcements, no notifications to external threads, and zero automated forum interactions. Work in background silence.
+
+---
+
+## 🔗 IMPORTANT REFERENCE FILES
+
+- **Global Plan**: [GLOBAL_IMPROVEMENT_PLAN.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/GLOBAL_IMPROVEMENT_PLAN.md)
+- **Architectural Rules**: [ARCHITECTURAL_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/ARCHITECTURAL_RULES.md)
+- **Development Rules**: [DEVELOPMENT_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/DEVELOPMENT_RULES.md) (or similar docs under rules directory)
+- **Zigbee/Tuya Specifics**: [ZIGBEE_TUYA_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/ZIGBEE_TUYA_RULES.md)
+- **Critical Mistakes to Avoid**: [CRITICAL_MISTAKES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/CRITICAL_MISTAKES.md)
