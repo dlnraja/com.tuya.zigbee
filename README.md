@@ -113,7 +113,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v5.11.195** | Bug fixes for climate sensor dual temperature display, critical SDK3 method crash fix, enhanced physical button flow ... |
 | **v5.11.194** | Added support for 28 new Tuya device variants, including the Nedis SmartLife Radiator Control. Total coverage now spa... |
 | **v5.11.193** | Resolved fingerprint pairing conflicts, added support for new Tuya device variants, and improved SDK compatibility fo... |
-| **v5.11.192** | Added 28+ new device fingerprints including Nedis SmartLife Radiator Control. Implemented smart hybrid matching to au... |
+| **v5.11.192** | Added 28+ new device fingerprints including Nedis SmartLife Radiator Control. Implemented smart matching to au... |
 | **v5.11.191** | Added 28 new device fingerprints, including Nedis SmartLife Radiator Control. Expanded compatibility across switch, s... |
 | **v5.11.190** | Added 27 new device fingerprints and low-battery alerts for 113 devices. Fixed SDK v3 flow crashes, restored missing ... |
 
@@ -154,7 +154,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **Lights** | RGB, RGBW, CCT bulbs, LED strips | ZCL |
 | **Plugs & Sockets** | Smart plugs, energy monitors, power strips | ZCL + Tuya DP |
 | **Sensors** | Temp/humidity, motion, contact, water leak, smoke, air quality | ZCL + Tuya DP |
-| **Presence Radars** | mmWave, PIR+radar hybrid, HOBEIAN ZG-204ZM | ZCL + Tuya DP |
+| **Presence Radars** | mmWave, PIR+radar, HOBEIAN ZG-204ZM | ZCL + Tuya DP |
 | **Thermostats & TRVs** | Radiator valves, floor heating, AVATTO, Moes | Tuya DP |
 | **Covers** | Curtain motors, roller blinds, garage doors | Tuya DP + ZCL |
 | **Buttons & Remotes** | Scene switches (1-4 button), SOS buttons, rotary | ZCL |
@@ -174,7 +174,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 ```
 Homey Pro
   └─ Universal Tuya Zigbee App (SDK3)
-       ├─ Hybrid Protocol Engine
+       ├─ Protocol Engine
        │    ├─ Tuya DP (Cluster 0xEF00) ─ DP1-DP255 data points
        │    └─ Standard ZCL ─ onOff, levelControl, colorControl, etc.
        ├─ DeviceProfileRegistry (149 profiles)

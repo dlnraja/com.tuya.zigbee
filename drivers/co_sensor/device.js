@@ -1,11 +1,11 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * CO Sensor Device - v5.3.64 SIMPLIFIED
  */
-class COSensorDevice extends HybridSensorBase {
+class COSensorDevice extendsSensorBase {
 
   get mainsPowered() { return false; }
 

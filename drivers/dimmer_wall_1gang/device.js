@@ -1,12 +1,12 @@
 'use strict';
-const HybridLightBase = require('../../lib/devices/HybridLightBase');
+constLightBase = require('../../lib/devices/HybridLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║      1-GANG DIMMER - v5.5.412 + Virtual Buttons                             ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  HybridLightBase handles: onoff, dim listeners and ZCL setup                ║
+ * ║ LightBase handles: onoff, dim listeners and ZCL setup                ║
  * ║  v5.5.412: Added virtual toggle/dim up/dim down buttons                     ║
  * ║  DPs: 1-5,7,9,14,101,102 | ZCL: 6,8,EF00                                   ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝

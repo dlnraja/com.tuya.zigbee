@@ -1,11 +1,11 @@
 'use strict';
 
-const HybridLightBase = require('../../lib/devices/HybridLightBase');
+constLightBase = require('../../lib/devices/HybridLightBase');
 
 /**
  * White Bulb Device - v5.3.64 SIMPLIFIED
  */
-class WhiteBulbDevice extends HybridLightBase {
+class WhiteBulbDevice extendsLightBase {
 
   get lightCapabilities() {
     return ['onoff', 'dim'];

@@ -32,16 +32,16 @@ function generateHistoryAnalysis() {
 'v5.x (2024-Q1) → Stable base, drivers séparés\n' +
 'v7.0.0 (2024-Q3) → Migration unified driver, complexité accrue\n' +
 'v5.11.x (2025-2026) → Community-driven improvements\n' +
-'v5.11.212 (2026-05-08) → Phase 0-1 complete, context preservation, hybrid drivers\n' +
+'v5.11.212 (2026-05-08) → Phase 0-1 complete, context preservation, drivers\n' +
 '```\n\n' +
 '## 🐛 Regression Patterns Identified\n' +
 '| Pattern | Files Affected | Root Cause | Prevention |\n' +
 '|---------|---------------|------------|------------|\n' +
 '| Unmatched parentheses | AdvancedAnalytics.js | Copy-paste refactor | ESLint: no-unmatched-parens |\n' +
-'| Hybrid if/ternary | tuyaUtils.js | Optimization without test | ESLint: no-hybrid-if-ternary |\n\n' +
+'| if/ternary | tuyaUtils.js | Optimization without test | ESLint: no-hybrid-if-ternary |\n\n' +
 '## 🤝 Community-Driven Improvements (v5.11.212)\n' +
 '- **3784 duplicate fingerprints removed** from 146 drivers\n' +
-'- **4 new hybrid drivers** added (floor_heating, radiator_valve, dimmer_dual, presence_radar)\n' +
+'- **4 new drivers** added (floor_heating, radiator_valve, dimmer_dual, presence_radar)\n' +
 '- **1531 new Z2M fingerprints** synced via community-sync\n' +
 '- **Rule 24 variants handling** implemented\n' +
 '- **Context preservation** via .context_* files\n\n' +
@@ -50,7 +50,7 @@ function generateHistoryAnalysis() {
 '|--------|-----------|-------------------|\n' +
 '| Fingerprint count | ~3,500 | 5,000+ (with sync) |\n' +
 '| Duplicate MFRs removed | 0 | 3,784 |\n' +
-'| Hybrid drivers | 0 | 4 |\n' +
+'| drivers | 0 | 4 |\n' +
 '| True collisions | 54,373 | 0 |\n\n' +
 '## 🔍 Recent Commits\n' +
 commits.slice(0, 20).map(c => '- ' + c).join('\n') + '\n\n' +
@@ -73,7 +73,7 @@ function generateContributingGuide() {
 '## 🎯 Principes Directeurs\n\n' +
 '1. **Shadow Implementation** : Aucune publication publique\n' +
 '2. **Zero Defect** : Chaque module validé syntaxiquement + testé\n' +
-'3. **Permissivité Native** : Drivers adaptatifs sans suffixe _hybrid\n' +
+'3. **Permissivité Native** : Drivers adaptatifs sans suffixe \n' +
 '4. **Rules IA** : Conformité Rules 21, 24, 25\n\n' +
 '## 🔒 Anti-Patterns à Éviter\n\n' +
 '### Syntaxe JavaScript\n' +
@@ -81,7 +81,7 @@ function generateContributingGuide() {
 'return Math.round(safeDivide(uptime*10))), 10);\n\n' +
 '// ✅ CORRECT\n' +
 'return Math.round(safeDivide(uptime*10), 10);\n\n' +
-'// ❌ WRONG - Hybrid if/ternary\n' +
+'// ❌ WRONG - if/ternary\n' +
 'if (device.zclNode?.modelId) return device.zclNode.modelId : null;\n\n' +
 '// ✅ CORRECT\n' +
 'return device.zclNode?.modelId ?? null;\n\n' +
@@ -100,7 +100,7 @@ function generateContributingGuide() {
 '- [ ] ESLint sans erreur critique\n' +
 '- [ ] lint-collisions.js: 0 collisions\n' +
 '- [ ] Version synchronisée (package.json + .homeychangelog.json)\n' +
-'- [ ] Pas de _hybrid dans les noms de drivers\n\n' +
+'- [ ] Pas de  dans les noms de drivers\n\n' +
 '## 🔧 Scripts Utilitaires\n' +
 '```bash\n' +
 '# Validation complète\n' +

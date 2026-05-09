@@ -175,8 +175,8 @@ function rule_probeDedup() {
         addFix('probe-dedup-static', file, 'Removed static probe from pure-ZCL driver');
         log(`  ✅ Fixed: ${path.relative(ROOT, file)}`);
       } else if (hasPureZCL && hasDP) {
-        // Hybrid driver with both ZCL and DP fingerprints — keep probe, it's variant-dependent
-        if (VERBOSE) log(`  ℹ️  Hybrid driver: ${path.relative(ROOT, file)} — keeping probe (variant-aware)`);
+        // driver with both ZCL and DP fingerprints — keep probe, it's variant-dependent
+        if (VERBOSE) log(`  ℹ️  driver: ${path.relative(ROOT, file)} — keeping probe (variant-aware)`);
       }
     } catch (e) {
       report.errors.push({ rule: 'probe-dedup-static', file, error: e.message });

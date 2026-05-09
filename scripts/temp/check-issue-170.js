@@ -7,7 +7,7 @@ let content = fs.readFileSync(file, 'utf8');
 // If it crashes on flow action, it means a flow card listener is invoking an undefined method or hitting an error on `this.isZclOnlyDevice` block.
 
 // Check the `isZclOnlyDevice` implementation
-// Wait, looking at the code, in HybridSwitchBase.js, the capability listeners try to call `this.triggerSubCapabilityFlow`. If that crashes...
+// Wait, looking at the code, inSwitchBase.js, the capability listeners try to call `this.triggerSubCapabilityFlow`. If that crashes...
 // Also, in device.js for switch_3gang: 
 
 if (content.includes('ZCL_ONLY_MANUFACTURERS_3G')) {

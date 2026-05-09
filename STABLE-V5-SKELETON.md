@@ -9,7 +9,7 @@
 - **Stabilité avant tout** - Basé sur v5.11.154 (référence forum post #1682)
 - **Couverture maximale** - Ajout incremental des device IDs via commits
 - **Drivers simples** - Mapping DP statique, pas de complexité inutile
-- **NO _hybrid suffix** - Tous les drivers sont adaptatifs à toutes les sources d'énergie
+- **NO  suffix** - Tous les drivers sont adaptatifs à toutes les sources d'énergie
 
 ### Structure des fichiers
 ```
@@ -26,8 +26,8 @@ tuya-repair-stable-v5/
 │   └── [46 autres drivers prioritaires]
 ├── lib/
 │   ├── devices/
-│   │   ├── HybridSwitchBase.js      (DP statique)
-│   │   ├── HybridSensorBase.js      (DP statique)
+│   │   ├──SwitchBase.js      (DP statique)
+│   │   ├──SensorBase.js      (DP statique)
 │   │   └── BaseHybridDevice.js      (182KB)
 │   ├── mixins/
 │   │   ├── PhysicalButtonMixin.js   (2000ms timeout)
@@ -93,7 +93,7 @@ tuya-repair-stable-v5/
 
 ## ⚙️ CONFIGURATION ENERGY ADAPTATIVE (STABLE-V5)
 
-### Pattern: NO _hybrid suffix, adaptatif
+### Pattern: NO  suffix, adaptatif
 
 ```javascript
 // drivers/switch_1gang/device.js
@@ -120,7 +120,7 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
 
 ```javascript
 // drivers/climate_sensor/device.js
-class Device extends HybridSensorBase {
+class Device extendsSensorBase {
   
   async onNodeInit() {
     // Remove battery for mains-powered variants
@@ -235,7 +235,7 @@ stable-v5 (v5.11.206+) ← Stable, minimal, proven
 ## ✅ CHECKLIST STABLE-V5
 
 - [ ] 50 drivers prioritaires sélectionnés
-- [ ] NO _hybrid suffix (adaptatif)
+- [ ] NO  suffix (adaptatif)
 - [ ] DP mappings statiques (pas de dynamic detection)
 - [ ] Physical button detection (2000ms timeout)
 - [ ] IAS Zone support (contact, motion)

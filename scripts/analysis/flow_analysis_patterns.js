@@ -134,7 +134,7 @@ class FlowAnalyzer {
         }
 
         // Détecter les IDs trop longs ou redondants
-        if (flow.id.length > 50 || flow.id.includes('_smart_') || flow.id.includes('_hybrid_')) {
+        if (flow.id.length > 50 || flow.id.includes('_smart_') || flow.id.includes('_')) {
           this.patterns.inconsistencies.push({
             driver: driverName,
             flowId: flow.id,

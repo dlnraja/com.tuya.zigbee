@@ -21,7 +21,7 @@
 | Fingerprints ajoutés | 5 | ✅ |
 | Fingerprints en double supprimés | 3,784 | ✅ |
 | Collisions critiques | 0 | ✅ |
-| Hybrid drivers ajoutés | 4 | ✅ |
+| drivers ajoutés | 4 | ✅ |
 
 ---
 
@@ -103,7 +103,7 @@ contact_sensor:      Diag 0c838576-ae7b-4626-ae08-06dab019f1fb
 | True collisions | 0 | ✅ |
 | Collisions mineures | 3 | ⚠️ Non critiques |
 | Fingerprints uniques | 5,000+ | ✅ |
-| Drivers hybrides | 4 | ✅ |
+| Driverses | 4 | ✅ |
 | Émoji supprimés (v5.11.154) | ∞ | ✅ |
 
 ---
@@ -140,7 +140,7 @@ _TZ3000_hafsqare, _TZ3000_e98krvvk, _TZ3000_iedbgyxt
 - [x] Fingerprints manquants ajoutés (5 dispositifs)
 - [x] Collisions corrigées (0 true collisions)
 - [x] Anti-patterns évités (zb_model_id, no emoji)
-- [x] Mixin order correct (PhysicalButtonMixin → VirtualButtonMixin → HybridSwitchBase)
+- [x] Mixin order correct (PhysicalButtonMixin → VirtualButtonMixin →SwitchBase)
 - [x] Backlight values: strings only ("off", "normal", "inverted")
 - [x] Phase delay 2000ms pour physical button detection
 - [x] Validation lint-collisions.js: PASS

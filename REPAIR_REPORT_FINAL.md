@@ -16,8 +16,8 @@
 
 ## CORRECTIONS APPLIQUÉES
 
-### 1. `Duplicate key '1'` — device_generic_tuya_universal_hybrid
-**Fichier :** `drivers/device_generic_tuya_universal_hybrid/device.js`
+### 1. `Duplicate key '1'` — device_generic_tuya_universal
+**Fichier :** `drivers/device_generic_tuya_universal/device.js`
 **Problème :** Objet JS avec deux clés `1` dans dpMappings (fusion incorrecte de copier-coller)
 **Correction :** Fusionné les propriétés de la clé dupliquée en une seule
 
@@ -26,8 +26,8 @@
 **Problème :** Variable `batteryCard` non définie — appel à `this.batteryCard` sans propriété correspondante
 **Correction :** Référence corrigée vers l'API SDK3 `this.homey.flow.getDeviceTriggerCard()`
 
-### 3. `batteryCard` — button_wireless_smart_hybrid/driver.js
-**Fichier :** `drivers/button_wireless_smart_hybrid/driver.js`
+### 3. `batteryCard` — button_wireless_smart/driver.js
+**Fichier :** `drivers/button_wireless_smart/driver.js`
 **Problème :** Identique au #2 — `batteryCard` non défini
 **Correction :** Référence corrigée vers l'API SDK3
 
@@ -36,13 +36,13 @@
 **Problème :** Fragment `mmand` isolé après fusion de code (ligne orpheline d'un `registerCapabilityListener` tronqué)
 **Correction :** Supprimé le fragment orphelin
 
-### 5. `batteryCard` — remote_button_wireless_wall_hybrid/driver.js
-**Fichier :** `drivers/remote_button_wireless_wall_hybrid/driver.js`
+### 5. `batteryCard` — remote_button_wireless_wall/driver.js
+**Fichier :** `drivers/remote_button_wireless_wall/driver.js`
 **Problème :** Identique au #2 — `batteryCard` non défini
 **Correction :** Référence corrigée vers l'API SDK3
 
-### 6. `luxSmoothingState` — presence_sensor_radar_hybrid/device.js
-**Fichier :** `drivers/presence_sensor_radar_hybrid/device.js`
+### 6. `luxSmoothingState` — presence_sensor_radar/device.js
+**Fichier :** `drivers/presence_sensor_radar/device.js`
 **Problème :** Variable `luxSmoothingState` référencée dans `registerCapabilityListener` mais jamais définie dans le constructeur
 **Correction :** Ajout de l'initialisation `this.luxSmoothingState = null` dans `onNodeInit()`
 

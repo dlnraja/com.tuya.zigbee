@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 const IASAlarmFallback = require('../../lib/IASAlarmFallback');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHelper');
@@ -151,11 +151,11 @@ const WATER_SENSOR_PROFILES = {
     type: 'hybrid', // Try both IAS Zone and Tuya DP
     iasAlarmBit: 'both', // v5.5.549 fix: check both bits
     hasTamper: true,
-    notes: 'Unknown manufacturer - using hybrid mode'
+    notes: 'Unknown manufacturer - using mode'
   }
 };
 
-class WaterLeakSensorDevice extends HybridSensorBase {
+class WaterLeakSensorDevice extendsSensorBase {
 
   get mainsPowered() { return false; }
 
@@ -395,7 +395,7 @@ class WaterLeakSensorDevice extends HybridSensorBase {
    */
   async setCapabilityValue(capability, value) {
     if (capability === 'alarm_water') {
-      // v5.11.5: Skip inversion for IAS events — HybridSensorBase already applied it
+      // v5.11.5: Skip inversion for IAS events —SensorBase already applied it
       // Prevents double-inversion bug (Lasse_K forum)
       const isIAS = this._iasOriginatedWaterAlarm;
       this._iasOriginatedWaterAlarm = false;

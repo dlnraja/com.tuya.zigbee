@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const files = [
-  'drivers/plug_energy_monitor_hybrid/device.js'
+  'drivers/plug_energy_monitor/device.js'
 ];
 
 const header = `'use strict';

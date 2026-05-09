@@ -2,11 +2,11 @@ const fs = require('fs');
 const path = require('path');
 
 const files = [
-  'drivers/sensor_climate_contact_hybrid/device.js',
-  'drivers/sensor_climate_motion_hybrid/device.js',
-  'drivers/plug_energy_monitor_hybrid/device.js',
-  'drivers/sensor_climate_temphumidsensor_hybrid/device.js',
-  'drivers/sensor_contact_climate_hybrid/device.js'
+  'drivers/sensor_climate_contact/device.js',
+  'drivers/sensor_climate_motion/device.js',
+  'drivers/plug_energy_monitor/device.js',
+  'drivers/sensor_climate_temphumidsensor/device.js',
+  'drivers/sensor_contact_climate/device.js'
 ];
 
 files.forEach(file => {
@@ -26,7 +26,7 @@ files.forEach(file => {
   // Fix specific motion sensor issues
   content = content.replace(/if \(mfr\.includes\('qoy0ekbd'\)\) return true;/g, "if (CI.containsCI(mfr, 'qoy0ekbd')) return true;");
 
-  // Fix sensor_climate_contact_hybrid specific line 1407
+  // Fix sensor_climate_contact specific line 1407
   content = content.replace(/if \(\(this\._manufacturerName \|\| ''\)\.toLowerCase\(\)\.includes\('_tze284'\)\)/g, "if (CI.containsCI(getManufacturer(this), '_tze284'))");
 
   fs.writeFileSync(filePath, content);

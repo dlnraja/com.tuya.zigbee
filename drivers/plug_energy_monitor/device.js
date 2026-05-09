@@ -1,6 +1,6 @@
 'use strict';
 
-const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+constPlugBase = require('../../lib/devices/HybridPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
 const { setupSonoffEnergy } = require('../../lib/mixins/SonoffEnergyMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -13,7 +13,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ║  - Auto-detects energy meter type per manufacturerName                       ║
  * ║  - Supports ZCL (TS011F) and Tuya DP (TS0601) protocols                     ║
  * ║  - Dynamic divisors for power/voltage/current/energy                         ║
- * ║  - Intelligent hybrid mode for mixed protocol devices                        ║
+ * ║  - Intelligent mode for mixed protocol devices                        ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 

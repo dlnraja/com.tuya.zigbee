@@ -1,7 +1,7 @@
 'use strict';
-const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+constPlugBase = require('../../lib/devices/HybridPlugBase');
 
-class PowerMeterDevice extends HybridPlugBase {
+class PowerMeterDevice extendsPlugBase {
   get plugCapabilities() { return ['measure_power', 'meter_power', 'measure_voltage', 'measure_current']; }
   get dpMappings() {
     return {

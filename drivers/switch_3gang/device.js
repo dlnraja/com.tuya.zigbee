@@ -1,5 +1,5 @@
 'use strict';
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+constSwitchBase = require('../../lib/devices/HybridSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');

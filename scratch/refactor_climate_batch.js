@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 const files = [
-  'drivers/sensor_climate_contact_hybrid/device.js',
-  'drivers/sensor_climate_motion_hybrid/device.js'
+  'drivers/sensor_climate_contact/device.js',
+  'drivers/sensor_climate_motion/device.js'
 ];
 
 const header = `'use strict';

@@ -2,15 +2,15 @@ const fs = require('fs');
 const path = require('path');
 
 const targets = [
-  'drivers/sensor_climate_presence_hybrid/device.js',
+  'drivers/sensor_climate_presence/device.js',
   'drivers/presence_sensor_radar/device.js',
-  'drivers/air_purifier_presence_hybrid/device.js',
+  'drivers/air_purifier_presence/device.js',
   'drivers/presence_sensor_ceiling/device.js',
-  'drivers/sensor_presence_radar_hybrid/device.js',
-  'drivers/device_air_purifier_presence_hybrid/device.js',
-  'drivers/sensor_contact_presence_hybrid/device.js',
-  'drivers/sensor_gas_presence_hybrid/device.js',
-  'drivers/sensor_motion_presence_hybrid/device.js'
+  'drivers/sensor_presence_radar/device.js',
+  'drivers/device_air_purifier_presence/device.js',
+  'drivers/sensor_contact_presence/device.js',
+  'drivers/sensor_gas_presence/device.js',
+  'drivers/sensor_motion_presence/device.js'
 ];
 
 targets.forEach(target => {

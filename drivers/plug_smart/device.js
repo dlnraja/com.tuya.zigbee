@@ -1,6 +1,6 @@
 'use strict';
 
-const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+constPlugBase = require('../../lib/devices/HybridPlugBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
@@ -8,7 +8,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║      SMART PLUG - v5.6.0 + Virtual/Physical Buttons (packetninja pattern)   ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  HybridPlugBase handles: onoff listener, Tuya DP, ZCL On/Off                ║
+ * ║ PlugBase handles: onoff listener, Tuya DP, ZCL On/Off                ║
  * ║  This class ONLY: dpMappings + ZCL energy monitoring listeners              ║
  * ║  DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00                          ║
  * ║  v5.6.0: Added bidirectional physical/virtual button support                ║

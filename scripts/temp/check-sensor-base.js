@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-// Extract battery related code from HybridSensorBase.js
+// Extract battery related code fromSensorBase.js
 const file = 'lib/devices/HybridSensorBase.js';
 let content = fs.readFileSync(file, 'utf8');
 

@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 const TuyaTimeManager = require('../../lib/TuyaTimeManager');
 const TuyaDeviceClassifier = require('../../lib/TuyaDeviceClassifier');
 const TuyaEpochDetector = require('../../lib/TuyaEpochDetector');
@@ -77,7 +77,7 @@ const BATTERY_THROTTLE_MS = 300000; // 5 minutes minimum between updates
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ClimateSensorDevice extends HybridSensorBase {
+class ClimateSensorDevice extendsSensorBase {
 
   /** Battery powered */
   get mainsPowered() { return false; }
@@ -91,7 +91,7 @@ class ClimateSensorDevice extends HybridSensorBase {
   get forceActiveTuyaMode() { return true; }
 
   // v5.5.54: Enable TRUE HYBRID mode - listen to BOTH ZCL AND Tuya DP
-  get hybridModeEnabled() { return true; }
+  getModeEnabled() { return true; }
 
   /** Capabilities for climate sensors */
   get sensorCapabilities() {
@@ -957,7 +957,7 @@ class ClimateSensorDevice extends HybridSensorBase {
 
   /**
    * v5.5.440: Send Tuya DP command for LCD time sync
-   * Based on HybridCoverBase implementation
+   * Based onCoverBase implementation
    */
   async _sendTuyaDP(dpId, value, dataType = 'value') {
     try {

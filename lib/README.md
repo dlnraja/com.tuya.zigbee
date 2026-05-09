@@ -24,7 +24,7 @@ lib/
 ## 🔧 devices/ - Classes de Base
 
 ### TuyaHybridDevice.js (v5.5.46)
-**Classe de base pour TOUS les devices hybrides Tuya/Zigbee**
+**Classe de base pour TOUS les deviceses Tuya/Zigbee**
 
 ```javascript
 const TuyaHybridDevice = require('../../lib/devices/TuyaHybridDevice');
@@ -60,7 +60,7 @@ class MyDevice extends TuyaHybridDevice {
 ```
 
 **Fonctionnalités:**
-- ✅ Mode hybride (Tuya + Zigbee simultanés)
+- ✅ Modee (Tuya + Zigbee simultanés)
 - ✅ Auto-décision après 15 min
 - ✅ Listeners directs sur `clusters.tuya`
 - ✅ Raw frame parser fallback
@@ -131,7 +131,7 @@ Base de données locale des 2100+ devices Tuya.
 ### KnownProtocolsDatabase.js
 Référentiel LOCAL des protocoles connus (pas d'internet!).
 
-### HybridProtocolManager.js
+###ProtocolManager.js
 Auto-détection avec fallback après 15 minutes.
 
 ---

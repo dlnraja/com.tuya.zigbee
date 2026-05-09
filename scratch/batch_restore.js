@@ -3,11 +3,11 @@ const fs = require('fs');
 const path = require('path');
 
 const files = [
-    'drivers/device_air_purifier_din_hybrid/driver.js',
-    'drivers/device_air_purifier_hybrid/driver.js',
-    'drivers/device_air_purifier_motion_hybrid/driver.js',
-    'drivers/device_air_purifier_plug_hybrid/driver.js',
-    'drivers/device_air_purifier_presence_hybrid/device.js'
+    'drivers/device_air_purifier_din/driver.js',
+    'drivers/device_air_purifier/driver.js',
+    'drivers/device_air_purifier_motion/driver.js',
+    'drivers/device_air_purifier_plug/driver.js',
+    'drivers/device_air_purifier_presence/device.js'
 ];
 
 const driverTemplate = `'use strict';

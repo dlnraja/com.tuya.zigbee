@@ -4,8 +4,8 @@ const path = require('path');
 
 const files = [
   'drivers/presence_sensor_radar/device.js',
-  'drivers/sensor_presence_radar_hybrid/device.js',
-  'drivers/sensor_motion_presence_hybrid/device.js'
+  'drivers/sensor_presence_radar/device.js',
+  'drivers/sensor_motion_presence/device.js'
 ];
 
 files.forEach(file => {

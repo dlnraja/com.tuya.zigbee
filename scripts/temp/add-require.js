@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-// Add PowerSourceIntelligence to HybridSensorBase.js
+// Add PowerSourceIntelligence toSensorBase.js
 const file = 'lib/devices/HybridSensorBase.js';
 let content = fs.readFileSync(file, 'utf8');
 
@@ -18,7 +18,7 @@ if (!content.includes('PowerSourceIntelligence')) {
   }
   
   fs.writeFileSync(file, newLines.join('\n'));
-  console.log('✅ Added PowerSourceIntelligence require to HybridSensorBase.js');
+  console.log('✅ Added PowerSourceIntelligence require toSensorBase.js');
 } else {
   console.log('Already contains PowerSourceIntelligence');
 }

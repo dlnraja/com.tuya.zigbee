@@ -1,5 +1,5 @@
 'use strict';
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+constSwitchBase = require('../../lib/devices/HybridSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixins/SonoffEwelinkMixin');
@@ -8,7 +8,7 @@ const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixin
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║      1-GANG SWITCH - v5.5.940 SIMPLIFIED (PR #118 rollback)                 ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Uses HybridSwitchBase which provides:                                       ║
+ * ║  UsesSwitchBase which provides:                                       ║
  * ║  - dpMappings for DP 1-8 (gang switches) + DP 14-15 (settings)              ║
  * ║  - _setupTuyaDPMode() + _setupZCLMode()                                      ║
  * ║  - _registerCapabilityListeners() for all gangs                              ║
@@ -82,7 +82,7 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     }
 
     // v5.8.95: Removed redundant _markAppCommand + broken _handleTuyaDatapoint wrapper.
-    // HybridSwitchBase._setGangOnOff() now calls PhysicalButtonMixin.markAppCommand() centrally.
+    //SwitchBase._setGangOnOff() now calls PhysicalButtonMixin.markAppCommand() centrally.
     await super.onNodeInit({ zclNode });
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();

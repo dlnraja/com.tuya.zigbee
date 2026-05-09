@@ -1,5 +1,5 @@
 'use strict';
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 
 /**
  * Gas Detector Device - TS0601 Tuya DP Protocol
@@ -17,7 +17,7 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
  * - DP16: silence (bool) - mute alarm
  * - DP21: alarm_ringtone (enum: 0-4 = melody_1 to melody_5)
  */
-class GasDetectorDevice extends HybridSensorBase {
+class GasDetectorDevice extendsSensorBase {
   get mainsPowered() { return true; }
   get sensorCapabilities() { return ['alarm_gas']; }
   

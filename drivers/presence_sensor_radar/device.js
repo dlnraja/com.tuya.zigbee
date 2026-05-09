@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
@@ -1205,7 +1205,7 @@ const SENSOR_CONFIGS = {
   // 7. Hubitat/kkossev implementations
   //
   // NOTE: _TZE200_* variants use pure Tuya DP (see ZG_204ZM_RADAR config below)
-  //       But "HOBEIAN" branded uses hybrid ZCL + Tuya!
+  //       But "HOBEIAN" branded uses ZCL + Tuya!
   // ─────────────────────────────────────────────────────────────────────────────
   'HOBEIAN_ZG204ZM': {
     sensors: ['HOBEIAN'],
@@ -1990,7 +1990,7 @@ function transformDistance(value, divisor = 100, manufacturerName = '', deviceId
   return result;
 }
 
-class PresenceSensorRadarDevice extends HybridSensorBase {
+class PresenceSensorRadarDevice extendsSensorBase {
 
   /**
    * v5.5.277: Get manufacturerName with multiple fallback methods
@@ -2429,7 +2429,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
     await this._setupZclClusters(zclNode);    // This was missing and caused presence not to work on TZE284 devices
     await this._setupTuyaDPListeners(zclNode);
 
-    // v5.5.518: Send Tuya magic packet for devices that need it (LeapMMW 5.8G hybrid)
+    // v5.5.518: Send Tuya magic packet for devices that need it (LeapMMW 5.8G)
     // These devices don't show cluster 61184 in interview but still use Tuya DPs
     if (config.needsMagicPacket) {
       await this._sendTuyaMagicPacket(zclNode);
@@ -2820,7 +2820,7 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
   /**
    * v5.5.304: ENHANCED Tuya response handler with presence=null workaround
-   * - Coordinate with HybridSensorBase to avoid dual processing
+   * - Coordinate withSensorBase to avoid dual processing
    * - Only handle special presence DPs locally (1, 105, 112)
    * - v5.5.304: DISTANCE-BASED PRESENCE INFERENCE for firmware bug workaround
    * - v5.5.364: AUTO-DISCOVERY integration for unknown devices
@@ -2922,8 +2922,8 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       }
     }
 
-    // v5.5.310: FIXED - Handle DP12 and DP103 locally, NOT via HybridSensorBase!
-    // Problem: HybridSensorBase universal profile maps DP103 to temperature, not lux
+    // v5.5.310: FIXED - Handle DP12 and DP103 locally, NOT viaSensorBase!
+    // Problem:SensorBase universal profile maps DP103 to temperature, not lux
     // Solution: Handle lux DPs (12, 102, 103) directly here using local dpMap config
     // Note: config and dpMap already declared above for static mapping check
 
@@ -3046,10 +3046,10 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
       return;
     }
 
-    // Only filter DPs that HybridSensorBase handles for settings (NOT capabilities!)
+    // Only filter DPs thatSensorBase handles for settings (NOT capabilities!)
     const HYBRIDSENSOR_SETTINGS_DPS = [2, 15]; // settings only, NOT temp/humidity/battery
     if (HYBRIDSENSOR_SETTINGS_DPS.includes(dpId) && !dpMap[dpId]?.cap) {
-      // Let HybridSensorBase handle settings DPs only
+      // LetSensorBase handle settings DPs only
       return;
     }
 
@@ -3805,12 +3805,12 @@ class PresenceSensorRadarDevice extends HybridSensorBase {
 
   /**
    * v5.5.518: Send Tuya Magic Packet to enable DP communication
-   * Required for LeapMMW 5.8G hybrid devices that don't show cluster 61184
+   * Required for LeapMMW 5.8G devices that don't show cluster 61184
    * Source: Z2M configureMagicPacket + dataQuery sequence
    */
   async _sendTuyaMagicPacket(zclNode) {
     try {
-      this.log('[RADAR] 🪄 Sending Tuya Magic Packet (LeapMMW 5.8G hybrid)...');
+      this.log('[RADAR] 🪄 Sending Tuya Magic Packet (LeapMMW 5.8G)...');
 
       const ep1 = zclNode?.endpoints?.[1];
       if (!ep1) {

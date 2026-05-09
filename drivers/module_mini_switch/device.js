@@ -1,5 +1,5 @@
 'use strict';
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+constSwitchBase = require('../../lib/devices/HybridSwitchBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixins/SonoffEwelinkMixin');
 

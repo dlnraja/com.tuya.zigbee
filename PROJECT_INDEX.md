@@ -107,13 +107,13 @@
 │                      drivers/ (218 drivers)                      │
 │  ├── zigbee/ (switches, sensors, covers, climate, etc.)        │
 │  ├── wifi/ (smartlife, ewelink, sonoff, tuya local)              │
-│  └── hybrid/ (multi-protocol devices)                            │
+│  └──/ (multi-protocol devices)                            │
 └─────────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │                        lib/ (core library)                      │
-│  ├── devices/ (Base classes: HybridSwitch, Sensor, Cover...)   │
+│  ├── devices/ (Base classes:Switch, Sensor, Cover...)   │
 │  ├── mixins/ (PhysicalButton, VirtualButton, TuyaDevice)        │
 │  ├── tuya/ (TuyaEF00Manager, UniversalTuyaParser, fingerprints) │
 │  ├── battery/ (UnifiedBatteryHandler, BatteryCalculator)     │
@@ -213,13 +213,13 @@ Homey.Device (SDK3)
         └── TuyaZigbeeDevice (lib/tuya/TuyaZigbeeDevice.js)
               └── TuyaHybridDevice (lib/devices/TuyaHybridDevice.js)
                     └── BaseHybridDevice (lib/devices/BaseHybridDevice.js) [182KB]
-                          ├── HybridSwitchBase (40KB)
+                          ├──SwitchBase (40KB)
                           │     └── + PhysicalButtonMixin + VirtualButtonMixin
-                          ├── HybridSensorBase (207KB)
-                          ├── HybridCoverBase (35KB)
-                          ├── HybridLightBase (29KB)
-                          ├── HybridPlugBase (37KB)
-                          ├── HybridThermostatBase
+                          ├──SensorBase (207KB)
+                          ├──CoverBase (35KB)
+                          ├──LightBase (29KB)
+                          ├──PlugBase (37KB)
+                          ├──ThermostatBase
                           └── ButtonDevice (80KB)
 ```
 
@@ -227,7 +227,7 @@ Homey.Device (SDK3)
 | File | Size | Purpose |
 |------|------|---------|
 | DeviceFingerprintDB.js | 215KB | Complete fingerprint database |
-| HybridSensorBase.js | 207KB | All sensor logic |
+|SensorBase.js | 207KB | All sensor logic |
 | BaseHybridDevice.js | 182KB | Master base device |
 | TuyaEF00Manager.js | 93KB | DP protocol handler |
 | ButtonDevice.js | 80KB | Button/scene device |
@@ -236,7 +236,7 @@ Homey.Device (SDK3)
 ```javascript
 // CORRECT:
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+constSwitchBase = require('../../lib/devices/HybridSwitchBase');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 // WRONG (missing ../../):
@@ -252,7 +252,7 @@ const TuyaZigbeeDevice = require('../../lib/TuyaZigbeeDevice');
 |------|-------|-------------|-------|
 | Battery | sensor, remote | measure_battery OR alarm_battery | Never both |
 | Mains | socket, light, fan | NONE | get mainsPowered() = true |
-| Hybrid | varies | Runtime detection | mainsPowered getter + conditional |
+| | varies | Runtime detection | mainsPowered getter + conditional |
 | Kinetic | remote | NONE | Energy harvesting (TS004x) |
 | USB | varies | NONE | Treated as mains |
 
@@ -388,7 +388,7 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
 ### Library Files
 | Path | Files | Purpose |
 |------|-------|---------|
-| lib/devices/ | HybridSwitchBase, HybridSensorBase, etc. | Device base classes |
+| lib/devices/ |SwitchBase,SensorBase, etc. | Device base classes |
 | lib/mixins/ | PhysicalButton, VirtualButton, TuyaDevice | Mixins |
 | lib/tuya/ | TuyaEF00Manager, UniversalTuyaParser, etc. | Tuya protocol |
 | lib/battery/ | UnifiedBatteryHandler, BatteryCalculator | Battery management |
@@ -472,13 +472,13 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
 | Sonoff | wifi_sonoff_minir3, wifi_sonoff_pow_elite |
 | Generic | wifi_generic, wifi_sensor |
 
-### Hybrid Drivers
+### Drivers
 | Driver | Features |
 |--------|----------|
-| device_floor_heating_hybrid | Floor heating + thermostat |
-| device_radiator_valve_hybrid | Radiator valve + TRV |
-| dimmer_dual_channel_hybrid | Dual channel dimmer |
-| sensor_presence_radar_hybrid | Radar presence + contact |
+| device_floor_heating | Floor heating + thermostat |
+| device_radiator_valve | Radiator valve + TRV |
+| dimmer_dual_channel | Dual channel dimmer |
+| sensor_presence_radar | Radar presence + contact |
 
 ---
 
@@ -524,7 +524,7 @@ async onNodeInit() {
 
 ### Matching Priority (STRICT ORDER)
 1. **Specific drivers** (manufacturerName + productId OR manufacturerName alone)
-2. **Family permissive drivers** (TS0601, TS004x, Tuya Hybrid)
+2. **Family permissive drivers** (TS0601, TS004x, Tuya)
 3. **universal_fallback**
 4. **zigbee generic is FORBIDDEN** unless all above fail
 
@@ -611,7 +611,7 @@ APIFREELLM_KEY  → ApiFreeLLM (free, unlimited)
 ### Key Versions
 | Version | Date | Key Changes |
 |---------|------|-------------|
-| v5.11.212 | 2026-05-08 | 3784 duplicate fingerprints removed, 4 hybrid drivers |
+| v5.11.212 | 2026-05-08 | 3784 duplicate fingerprints removed, 4 drivers |
 | v5.11.211 | 2026-05 | DeviceIdentificationDatabase crash fix |
 | v5.11.210 | 2026-05 | Stability release, 213 drivers |
 | v5.11.205 | 2026-04 | Stable app (com.dlnraja.tuya.zigbee.stable) |
@@ -622,7 +622,7 @@ APIFREELLM_KEY  → ApiFreeLLM (free, unlimited)
 
 ### Latest Commits (stable-v5)
 ```bash
-ab2097ed0 fix: removed 3784 duplicate fingerprints, added 4 hybrid drivers
+ab2097ed0 fix: removed 3784 duplicate fingerprints, added 4 drivers
 cb038cde7 feat: mega community sync v8.0 data collection
 4ce88bbe9 bump: v5.11.212
 670d3dda0 fix: make DeviceIdentificationDatabase crash-proof
@@ -637,7 +637,7 @@ cb038cde7 feat: mega community sync v8.0 data collection
 - TuyaEF00Manager skips auto-convert when dpMappings divisor !== 1
 
 ### ZCL Cluster Double-Parsing
-- **Risk**: Hybrid sensors with `setupUniversalZCLListeners`
+- **Risk**: sensors with `setupUniversalZCLListeners`
 - **Fix**: Check `!this.clusterHandlers?.temperatureMeasurement` before `_setupZCLCluster`
 
 ### Phantom Capabilities

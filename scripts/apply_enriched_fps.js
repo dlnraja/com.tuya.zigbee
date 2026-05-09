@@ -18,7 +18,7 @@ function suggestDriverByProductId(productId, description) {
     if (desc.includes('soil') || desc.includes('moist')) return 'soil_sensor';
     if (desc.includes('radar') || desc.includes('presence') || desc.includes('mmwave') || desc.includes('human')) return 'motion_sensor';
     if (desc.includes('curtain') || desc.includes('blind') || desc.includes('shade') || desc.includes('motor') || desc.includes('tubular') || desc.includes('clutch')) return 'curtain_motor';
-    if (desc.includes('trv') || desc.includes('radiator') || desc.includes('thermostatic') || desc.includes('rad.valve')) return 'device_radiator_valve_smart_hybrid';
+    if (desc.includes('trv') || desc.includes('radiator') || desc.includes('thermostatic') || desc.includes('rad.valve')) return 'device_radiator_valve_smart';
     if (desc.includes('heating') || desc.includes('floor') || desc.includes('ufh')) return 'floor_heating_thermostat';
     if (desc.includes('switch') || desc.includes('relay') || desc.includes('gang')) return 'switch_1gang';
     if (desc.includes('dimmer')) return 'dimmer_wall_1gang';
@@ -83,8 +83,8 @@ const DRIVER_MAP = {
   'bulb_rgb': 'bulb_rgb',
   'bulb_rgbw': 'bulb_rgbw',
   'bulb_tunable_white': 'bulb_tunable_white',
-  'bulb_rgb_led_hybrid': 'bulb_rgb_led_hybrid',
-  'light_bulb_rgb_rgbw_hybrid': 'light_bulb_rgb_rgbw_hybrid',
+  'bulb_rgb_led': 'bulb_rgb_led',
+  'light_bulb_rgb_rgbw': 'light_bulb_rgb_rgbw',
   'led_strip': 'led_strip',
   'led_strip_advanced': 'led_strip_advanced',
   'led_strip_rgbw': 'led_strip_rgbw',
@@ -96,8 +96,8 @@ const DRIVER_MAP = {
   'socket_1gang': 'socket',
   'curtain_motor': 'curtain_motor',
   'curtain_motor_tilt': 'curtain_motor_tilt',
-  'curtain_motor_wall_hybrid': 'curtain_motor_wall_hybrid',
-  'curtain_motor_shutter_hybrid': 'curtain_motor_shutter_hybrid',
+  'curtain_motor_wall': 'curtain_motor_wall',
+  'curtain_motor_shutter': 'curtain_motor_shutter',
   'climate_sensor': 'climate_sensor',
   'temphumidsensor': 'climate_sensor',
   'contact_sensor': 'contact_sensor',
@@ -123,7 +123,7 @@ const DRIVER_MAP = {
   'button_wireless_4': 'button_wireless_4',
   'button_wireless_6': 'button_wireless_6',
   'button_wireless_8': 'button_wireless_8',
-  'button_wireless_smart_hybrid': 'button_wireless_smart_hybrid',
+  'button_wireless_smart': 'button_wireless_smart',
   'button_emergency_sos': 'button_emergency_sos',
   'doorbell': 'doorbell',
   'door_controller': 'door_controller',
@@ -141,9 +141,9 @@ const DRIVER_MAP = {
   'hvac_controller': 'hvac_controller',
   'hvac_dehumidifier': 'hvac_dehumidifier',
   'floor_heating_thermostat': 'floor_heating_thermostat',
-  'device_radiator_valve_smart_hybrid': 'device_radiator_valve_smart_hybrid',
-  'device_floor_heating_thermostat_hybrid': 'device_floor_heating_thermostat_hybrid',
-  'device_generic_tuya_universal_hybrid': 'device_generic_tuya_universal_hybrid',
+  'device_radiator_valve_smart': 'device_radiator_valve_smart',
+  'device_floor_heating_thermostat': 'device_floor_heating_thermostat',
+  'device_generic_tuya_universal': 'device_generic_tuya_universal',
   'diy_custom_zigbee': 'diy_custom_zigbee',
   'generic_diy': 'generic_diy',
   'generic_tuya': 'generic_tuya',
@@ -154,7 +154,7 @@ const DRIVER_MAP = {
   // Fix unmapped names from enriched data
   'plug': 'socket',
   'water_valve_smart': 'water_valve',
-  'radiator_valve': 'device_radiator_valve_smart_hybrid',
+  'radiator_valve': 'device_radiator_valve_smart',
 };
 
 // Get list of actual driver directories

@@ -1,7 +1,7 @@
 'use strict';
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 
-class AirQualityComprehensiveDevice extends HybridSensorBase {
+class AirQualityComprehensiveDevice extendsSensorBase {
   get mainsPowered() { return true; }
   get sensorCapabilities() { return ['measure_co2', 'measure_pm25', 'measure_temperature', 'measure_humidity', 'measure_voc', 'measure_formaldehyde']; }
   get dpMappings() {
