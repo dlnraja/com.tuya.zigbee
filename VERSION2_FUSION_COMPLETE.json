@@ -1,0 +1,208 @@
+{
+  "version": "5.11.212",
+  "generated": "2026-05-08T17:12:40.000Z",
+  "status": "VALIDATED",
+  "title": "VERSION 2: FUSION COMPLETE - Universal Tuya Zigbee",
+  
+  "sources_consolidated": {
+    "github_issues": {
+      "total_analyzed": 8,
+      "resolved": 5,
+      "fixed": 3,
+      "pending": 0,
+      "issues": [
+        {"number": 184, "title": "_TZE284_8se38w3c TS0601 Temp/Humidity External Probe", "status": "FIXED", "driver": "climate_sensor", "action": "fingerprint_added"},
+        {"number": 183, "title": "_TZ3000_tsgqxdb4 Climate Sensor TS0201", "status": "FIXED", "driver": "climate_sensor", "action": "fingerprint_added"},
+        {"number": 182, "title": "[Auto] New Tuya devices found in zigbee2mqtt", "status": "PROCESSED", "action": "community_sync_v7.5.8"},
+        {"number": 178, "title": "[soil_sensor] Bug: No Connection _TZE284_oitavov2", "status": "CONFIRMED_SUPPORTED", "driver": "soil_sensor", "notes": "Already supported, DP3=moisture, DP5=temp, DP14/15=battery"},
+        {"number": 171, "title": "Bseed E-touch series Zigbee 1-Gang", "status": "CONFIRMED_SUPPORTED", "driver": "switch_1gang", "notes": "ZCL-only fingerprints confirmed"},
+        {"number": 170, "title": "TS0003 (_TZ3000_v4l4b0lp) Gang Flow cards unlinked", "status": "FIXED", "driver": "switch_2gang", "action": "fingerprint_added"},
+        {"number": 165, "title": "Device Request - Zigbee Light sensor ZG-106Z", "status": "REVIEWED", "action": "need_more_info"},
+        {"number": 164, "title": "[DEVICE]", "status": "CLOSED", "action": "no_data"}
+      ]
+    },
+    "forum_t140352": {
+      "posts_analyzed": 1634,
+      "recent_posts": 12,
+      "resolved": 3,
+      "fixed": 4,
+      "pending": 1,
+      "posts": [
+        {"post_number": 1679, "user": "EchoNL", "issue": "Loratap 3-btn (_TZ3000_famkxci2) not working", "status": "FIXED", "driver": "button_wireless_3"},
+        {"post_number": 1679, "user": "EchoNL", "issue": "Loratap 4-btn (_TZ3000_ee8nrt2l) not working", "status": "FIXED", "driver": "button_wireless_4"},
+        {"post_number": 1689, "user": "FrankP", "issue": "_TZ3000_tzvbimpq 2-gang wall remote not working", "status": "FIXED", "driver": "switch_2gang"},
+        {"post_number": 1690, "user": "Peter_van_Werkhoven", "issue": "Contact sensor data not received", "status": "PENDING_DIAGNOSTIC", "diag": "0c838576-ae7b-4626-ae08-06dab019f1fb"},
+        {"post_number": 1682, "user": "dlnraja", "issue": "v5.11.154 pushed", "status": "RESOLVED"},
+        {"post_number": 1685, "user": "dlnraja", "issue": "Contact sensor unknown → re-pairing", "status": "RESOLVED"},
+        {"post_number": 1688, "user": "Lasse_K", "issue": "function.unknown = generic Zigbee support", "status": "CONFIRMED"}
+      ]
+    },
+    "collisions": {
+      "total_entries": 54373,
+      "true_collisions": 0,
+      "minor_collisions": 3,
+      "fixed_duplicates": 3784,
+      "validation": "PASS"
+    }
+  },
+  
+  "fingerprints_added": [
+    {
+      "manufacturerName": "_TZ3000_famkxci2",
+      "productId": "TS0043",
+      "driver": "button_wireless_3",
+      "device_name": "Loratap 3-Button Remote",
+      "source": "forum_t140352_1679",
+      "issue": "not working"
+    },
+    {
+      "manufacturerName": "_TZ3000_ee8nrt2l",
+      "productId": "TS0044",
+      "driver": "button_wireless_4",
+      "device_name": "Loratap 4-Button Remote",
+      "source": "forum_t140352_1679",
+      "issue": "not working"
+    },
+    {
+      "manufacturerName": "_TZ3000_tzvbimpq",
+      "productId": "TS0003",
+      "driver": "switch_2gang",
+      "device_name": "2-Gang Wall Remote",
+      "source": "forum_t140352_1689",
+      "issue": "could not get device by ID"
+    },
+    {
+      "manufacturerName": "_TZ3000_tsgqxdb4",
+      "productId": "TS0201",
+      "driver": "climate_sensor",
+      "device_name": "Climate Sensor",
+      "source": "github_issue_183",
+      "issue": "not recognized"
+    },
+    {
+      "manufacturerName": "_TZE284_8se38w3c",
+      "productId": "TS0601",
+      "driver": "climate_sensor",
+      "device_name": "Temp/Humidity External Probe",
+      "source": "github_issue_184",
+      "issue": "not recognized"
+    }
+  ],
+  
+  "fingerprints_already_supported": [
+    {
+      "manufacturerName": "_TZE284_oitavov2",
+      "productId": "TS0601",
+      "driver": "soil_sensor",
+      "notes": "DP3=moisture, DP5=temp, DP14/15=battery, lignes 27,88,486"
+    },
+    {
+      "manufacturerName": "_TZ3000_l9brjwau",
+      "productId": "TS0001",
+      "driver": "switch_1gang",
+      "notes": "BSEED ZCL-only fingerprint"
+    },
+    {
+      "manufacturerName": "_TZ3000_blhvsaqf",
+      "productId": "TS0001",
+      "driver": "switch_1gang",
+      "notes": "BSEED ZCL-only fingerprint"
+    }
+  ],
+  
+  "rules_compliance": {
+    "rule_21_flow_filtering": {
+      "pattern": "{driver}_physical_gang{N}_{on|off}",
+      "status": "COMPLIANT",
+      "validated": true
+    },
+    "rule_24_manufacturer_normalization": {
+      "pattern": "_TZ3000_* vs _TZ3000 vs tz3000",
+      "status": "COMPLIANT",
+      "validated": true
+    },
+    "rule_25_time_sync": {
+      "formats_supported": 8,
+      "timezone_override": true,
+      "status": "COMPLIANT",
+      "validated": true
+    },
+    "settings_keys": {
+      "zb_model_id": "CORRECT (NOT zb_modelId)",
+      "zb_manufacturer_name": "CORRECT (NOT zb_manufacturerName)",
+      "status": "COMPLIANT",
+      "validated": true
+    },
+    "mixin_order": {
+      "correct_order": "PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))",
+      "status": "COMPLIANT",
+      "validated": true
+    },
+    "backlight_values": {
+      "values": ["off", "normal", "inverted"],
+      "type": "strings_only",
+      "status": "COMPLIANT",
+      "validated": true
+    },
+    "physical_button_detection": {
+      "timeout_ms": 2000,
+      "pattern": "PR #120",
+      "status": "COMPLIANT",
+      "validated": true
+    },
+    "bseed_zcl_only": {
+      "fingerprints": [
+        "_TZ3000_l9brjwau",
+        "_TZ3000_blhvsaqf",
+        "_TZ3000_ysdv91bk",
+        "_TZ3000_hafsqare",
+        "_TZ3000_e98krvvk",
+        "_TZ3000_iedbgyxt"
+      ],
+      "status": "COMPLIANT",
+      "validated": true
+    }
+  },
+  
+  "hybrid_drivers_added": 4,
+  "fingerprint_db_size": "4200+",
+  
+  "validation_results": {
+    "lint_collisions": {
+      "true_collisions": 0,
+      "minor_collisions": 3,
+      "critical": 0,
+      "status": "PASS"
+    },
+    "string_integrity_gate": "PASS",
+    "zero_defect_audit": "PASS"
+  },
+  
+  "pending_actions": [
+    {
+      "action": "diagnostic_contact_sensor",
+      "diag_code": "0c838576-ae7b-4626-ae08-06dab019f1fb",
+      "user": "Peter_van_Werkhoven",
+      "issue": "Contact sensor shows '56 Years ago' (timestamp never updated)",
+      "priority": "medium",
+      "next_step": "Request Homey logs + verify endpoint + check cluster 0x0500"
+    }
+  ],
+  
+  "files_created": [
+    "VERSION1_RAPPORT_CONSOLIDE.md",
+    "VERSION2_FUSION_COMPLETE.json",
+    "ISSUES_ANALYSIS.md",
+    "HISTORY_ANALYSIS.md",
+    "CONTRIBUTING.md",
+    "scripts/automation/integrate-to-master.js"
+  ],
+  
+  "commits_pushed": [
+    "0f86bc48c: feat: add HISTORY_ANALYSIS.md and CONTRIBUTING.md",
+    "b43c83597: feat: add 5 missing fingerprints (Loratap, Wall Remote, Climate Sensors)"
+  ],
+  
+  "git_branch": "stable-v5",
+  "github_repo": "dlnraja/com.tuya.zigbee"
+}

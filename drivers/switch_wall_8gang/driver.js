@@ -95,8 +95,9 @@ class SwitchWall8gangDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('switch_wall_8gang_turn_on_all')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          for (const cap of Object.values(capMap)) {
-            if (args.device.hasCapability(cap)) await args.device._setGangOnOff(idx + 1, true).catch(() => {});
+          for (const [gi, cap] of Object.entries(capMap)) {
+            const gangNum = Number(gi);
+            if (args.device.hasCapability(cap)) await args.device._setGangOnOff(gangNum, true).catch(() => {});
             await args.device.setCapabilityValue(cap, true).catch(() => {});
           }
           return true;
@@ -108,8 +109,9 @@ class SwitchWall8gangDriver extends ZigBeeDriver {
       this.homey.flow.getActionCard('switch_wall_8gang_turn_off_all')
         .registerRunListener(async (args) => {
           if (!args.device) return false;
-          for (const cap of Object.values(capMap)) {
-            if (args.device.hasCapability(cap)) await args.device._setGangOnOff(idx + 1, false).catch(() => {});
+          for (const [gi, cap] of Object.entries(capMap)) {
+            const gangNum = Number(gi);
+            if (args.device.hasCapability(cap)) await args.device._setGangOnOff(gangNum, false).catch(() => {});
             await args.device.setCapabilityValue(cap, false).catch(() => {});
           }
           return true;

@@ -211,9 +211,6 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       2: { capability: 'measure_humidity', parser: v => v, confidence: 0 },
       5: { capability: 'measure_humidity', parser: v => v, confidence: 0 }, // Soil moisture
 
-      // Motion/Presence (CONFIDENCE: 0)
-      1: { capability: 'alarm_motion', parser: v => !!v, confidence: 0 },
-
       // Voltage (CONFIDENCE: 1 - USB/Mains devices)
       247: { capability: 'measure_voltage', parser: v => v / 1000, confidence: 1 },
     };

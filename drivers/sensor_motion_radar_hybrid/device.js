@@ -164,49 +164,49 @@ get _relayDpMappings() {
 }
 
 async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'ssIasZone',
-          attributeName: 'zoneStatus',
-          minInterval: 0,
-          maxInterval: 3600,
-          minChange: 1,
-        },
-        {
-          cluster: 'msIlluminanceMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'msRelativeHumidity',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 100,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
+  // --- Attribute Reporting Configuration (auto-generated) ---
+  try {
+    await this.configureAttributeReporting([
+      {
+        cluster: 'ssIasZone',
+        attributeName: 'zoneStatus',
+        minInterval: 0,
+        maxInterval: 3600,
+        minChange: 1,
+      },
+      {
+        cluster: 'msIlluminanceMeasurement',
+        attributeName: 'measuredValue',
+        minInterval: 30,
+        maxInterval: 600,
+        minChange: 50,
+      },
+      {
+        cluster: 'msTemperatureMeasurement',
+        attributeName: 'measuredValue',
+        minInterval: 30,
+        maxInterval: 600,
+        minChange: 50,
+      },
+      {
+        cluster: 'msRelativeHumidity',
+        attributeName: 'measuredValue',
+        minInterval: 30,
+        maxInterval: 600,
+        minChange: 100,
+      },
+      {
+        cluster: 'genPowerCfg',
+        attributeName: 'batteryPercentageRemaining',
+        minInterval: 3600,
+        maxInterval: 43200,
+        minChange: 2,
+      }
+    ]);
+    this.log('Attribute reporting configured successfully');
+  } catch (err) {
+    this.log('Attribute reporting config failed (device may not support it):', err.message);
+  }
 
   // v5.5.65: Remove alarm_contact if it was wrongly added (radar uses alarm_motion)
   if (this.hasCapability('alarm_contact')) {

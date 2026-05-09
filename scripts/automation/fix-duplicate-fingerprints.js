@@ -96,7 +96,7 @@ function main() {
     console.log('\n--- Phase 2: Saving changes ---');
     let saved = 0;
     for (const driver of drivers) {
-      if (driver.content.zigbee.manufacturerName.length !== driver.mfrs.length) {
+      if (driver.content.zigbee && driver.content.zigbee.manufacturerName && driver.content.zigbee.manufacturerName.length !== driver.mfrs.length) {
         fs.writeFileSync(driver.file, JSON.stringify(driver.content, null, 2) + '\n');
         saved++;
         console.log(`  💾 Saved ${driver.name}`);
@@ -113,7 +113,4 @@ function main() {
   console.log('\n=== FIX COMPLETE ===');
 }
 
-main().catch(e => {
-  console.error('Fatal:', e.message);
-  process.exit(1);
-});
+main();

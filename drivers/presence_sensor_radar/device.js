@@ -25,6 +25,8 @@ const TIMING = {
 
 // v5.5.404: Module-level state for lux oscillation detection across device instances
 const luxOscillationState = new Map();
+// v5.11.x: Module-level state for aggressive lux smoothing (Ronny #775 pattern)
+const luxSmoothingState = new Map();
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
