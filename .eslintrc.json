@@ -1,59 +1,55 @@
 {
   "env": {
     "node": true,
-    "es2022": true,
-    "mocha": true
+    "es2022": true
   },
-  "extends": "eslint:recommended",
   "parserOptions": {
     "ecmaVersion": 2022,
     "sourceType": "module"
   },
+  "extends": ["eslint:recommended"],
   "rules": {
-    "linebreak-style": "off",
-    "no-unused-vars": "off",
-    "no-empty": "off",
-    "no-case-declarations": "off",
-    "no-useless-escape": "off",
-    "no-useless-catch": "off",
-    "no-constant-condition": "off",
-    "no-undef": "off",
-    "indent": [
-      "error",
-      2
-    ],
-    "linebreak-style": [
-      "error",
-      "unix"
-    ],
-    "quotes": [
-      "error",
-      "single"
-    ],
-    "semi": [
-      "error",
-      "always"
-    ],
-    "no-unused-vars": [
-      "warn"
-    ],
-    "no-console": [
-      "off"
-    ],
-    "no-undef": [
-      "error"
-    ]
+    "no-unexpected-multiline": "error",
+    "no-cond-assign": "error",
+    "no-unused-expressions": "error",
+    "no-self-compare": "error",
+    "no-extra-parens": ["error", "all", { "nestedBinaryExpressions": false }],
+    "curly": ["error", "all"],
+    "eqeqeq": ["error", "smart"],
+    "no-var": "error",
+    "prefer-const": "warn",
+    "prefer-template": "warn",
+    "no-console": "off",
+    "no-debugger": "error",
+    "no-return-await": "warn",
+    "complexity": ["warn", 25],
+    "max-depth": ["warn", 5],
+    "max-nested-callbacks": ["warn", 3],
+    "max-params": ["warn", 6],
+    "max-statements": ["warn", 100],
+    "no-eval": "error",
+    "no-implied-eval": "error"
+  },
+  "globals": {
+    "Homey": "readonly",
+    "module": "writable",
+    "require": "writable",
+    "console": "writable",
+    "Buffer": "readonly",
+    "setTimeout": "readonly",
+    "setInterval": "readonly",
+    "clearTimeout": "readonly",
+    "clearInterval": "readonly",
+    "process": "readonly",
+    "__dirname": "readonly"
   },
   "ignorePatterns": [
     "node_modules/",
-    "dist/",
+    ".homey/",
     "build/",
-    ".homeycompose/",
-    "assets/",
-    "drivers/**/assets/",
-    "scripts/",
-    "test/"
+    "data/",
+    "tmp/",
+    ".cache/",
+    "coverage/"
   ]
 }
-
-
