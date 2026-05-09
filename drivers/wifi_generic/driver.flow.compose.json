@@ -20,10 +20,7 @@
             "en": "Value"
           }
         }
-      ],
-      "titleFormatted": {
-        "en": "A DP value changed"
-      }
+      ]
     }
   ],
   "actions": [
@@ -31,9 +28,6 @@
       "id": "wifi_generic_set_dp",
       "title": {
         "en": "Set a DP value"
-      },
-      "titleFormatted": {
-        "en": "Set DP [[dp]] to [[value]] ([[type]])"
       },
       "args": [
         {

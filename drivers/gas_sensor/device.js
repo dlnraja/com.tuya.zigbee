@@ -10,7 +10,7 @@ const {SensorBase } = require('../../lib/devices/HybridSensorBase');
  * ║  Features: gas, gas_value, self_test, silence, alarm_ringtone, alarm_time   ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class GasSensorDevice extendsSensorBase {
+class GasSensorDevice extends SensorBase {
 
   get mainsPowered() { return true; }
 

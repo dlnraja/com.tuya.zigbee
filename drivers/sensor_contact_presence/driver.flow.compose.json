@@ -9,12 +9,6 @@
         "fr": "Présence détectée",
         "de": "Anwesenheit erkannt"
       },
-      "titleFormatted": {
-        "en": "Human presence detected in the room",
-        "nl": "Menselijke aanwezigheid gedetecteerd in de kamer",
-        "fr": "Présence humaine détectée dans la pièce",
-        "de": "Menschliche Anwesenheit im Raum erkannt"
-      },
       "hint": {
         "en": "Triggers when the mmWave radar detects human presence (even stationary)",
         "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
@@ -37,13 +31,7 @@
         "fr": "Se déclenche quand aucune présence humaine n'est détectée pendant le délai configuré",
         "de": "Wird ausgelöst, wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Presence cleared",
-        "nl": "Aanwezigheid opgeheven",
-        "fr": "Présence terminée",
-        "de": "Anwesenheit beendet"
-      }
+      "args": []
     },
     {
       "id": "contact_presence_motion_detected",
@@ -59,13 +47,7 @@
         "fr": "Se déclenche quand un mouvement actif est détecté (marche, mouvement)",
         "de": "Wird ausgelöst, wenn aktive Bewegung erkannt wird (Gehen, Bewegen)"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion detected",
-        "nl": "Beweging gedetecteerd",
-        "fr": "Mouvement détecté",
-        "de": "Bewegung erkannt"
-      }
+      "args": []
     },
     {
       "id": "contact_presence_illuminance_changed",
@@ -74,12 +56,6 @@
         "nl": "Lichtsterkte veranderd",
         "fr": "Luminosité changée",
         "de": "Helligkeit geändert"
-      },
-      "titleFormatted": {
-        "en": "Illuminance changed to [[lux]] lux",
-        "nl": "Lichtsterkte veranderd naar [[lux]] lux",
-        "fr": "Luminosité changée à [[lux]] lux",
-        "de": "Helligkeit geändert zu [[lux]] lux"
       },
       "tokens": [
         {
@@ -104,12 +80,6 @@
         "fr": "Distance de détection changée",
         "de": "Erkennungsabstand geändert"
       },
-      "titleFormatted": {
-        "en": "Target distance changed to [[distance]] cm",
-        "nl": "Doelafstand veranderd naar [[distance]] cm",
-        "fr": "Distance cible changée à [[distance]] cm",
-        "de": "Zielentfernung geändert zu [[distance]] cm"
-      },
       "tokens": [
         {
           "name": "distance",
@@ -133,13 +103,7 @@
         "nl": "Lichtsterkte gewijzigd",
         "de": "Helligkeit geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Luminance changed",
-        "fr": "Luminance changée",
-        "nl": "Lichtsterkte gewijzigd",
-        "de": "Helligkeit geändert"
-      }
+      "args": []
     },
     {
       "id": "contact_presence_battery_low",
@@ -149,13 +113,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -167,13 +125,7 @@
         "fr": "Quelqu'un !{{est|n'est pas}} présent",
         "de": "Jemand !{{ist|ist nicht}} anwesend"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Someone !{{is|is not}} present",
-        "nl": "Iemand !{{is|is niet}} aanwezig",
-        "fr": "Quelqu'un !{{est|n'est pas}} présent",
-        "de": "Jemand !{{ist|ist nicht}} anwesend"
-      }
+      "args": []
     },
     {
       "id": "contact_presence_illuminance_above",
@@ -182,12 +134,6 @@
         "nl": "Lichtsterkte !{{is|is niet}} boven",
         "fr": "Luminosité !{{est|n'est pas}} au-dessus de",
         "de": "Helligkeit !{{ist|ist nicht}} über"
-      },
-      "titleFormatted": {
-        "en": "Illuminance !{{is|is not}} above [[lux]] lux",
-        "nl": "Lichtsterkte !{{is|is niet}} boven [[lux]] lux",
-        "fr": "Luminosité !{{est|n'est pas}} au-dessus de [[lux]] lux",
-        "de": "Helligkeit !{{ist|ist nicht}} über [[lux]] lux"
       },
       "args": [
         {
@@ -210,12 +156,6 @@
         "fr": "Cible !{{est|n'est pas}} dans la distance",
         "de": "Ziel !{{ist|ist nicht}} innerhalb der Entfernung"
       },
-      "titleFormatted": {
-        "en": "Target !{{is|is not}} within [[distance]] cm",
-        "nl": "Doel !{{is|is niet}} binnen [[distance]] cm",
-        "fr": "Cible !{{est|n'est pas}} dans [[distance]] cm",
-        "de": "Ziel !{{ist|ist nicht}} innerhalb von [[distance]] cm"
-      },
       "args": [
         {
           "name": "distance",
@@ -237,13 +177,7 @@
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
-        "nl": "Beweging !{{is|is niet}} gedetecteerd",
-        "de": "Bewegung !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     }
   ]
 }

@@ -17,11 +17,7 @@
           "example": 50
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Dim level changed",
-        "fr": "Niveau dim changé"
-      }
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_turned_on",
@@ -29,11 +25,7 @@
         "en": "Turned on",
         "fr": "Allumé"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé"
-      }
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_turned_off",
@@ -41,11 +33,7 @@
         "en": "Turned off",
         "fr": "Éteint"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -55,21 +43,13 @@
         "en": "Dimmer is !{{on|off}}",
         "fr": "Variateur est !{{allumé|éteint}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Dimmer is !{{on|off}}",
-        "fr": "Variateur est !{{allumé|éteint}}"
-      }
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_dim_above",
       "title": {
         "en": "Dim level is above",
         "fr": "Niveau dim supérieur à"
-      },
-      "titleFormatted": {
-        "en": "Dim level is above [[level]]%",
-        "fr": "Niveau dim supérieur à [[level]]%"
       },
       "args": [
         {
@@ -89,11 +69,7 @@
         "en": "Turn on",
         "fr": "Allumer"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer"
-      }
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_turn_off",
@@ -101,11 +77,7 @@
         "en": "Turn off",
         "fr": "Éteindre"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre"
-      }
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_toggle",
@@ -113,21 +85,13 @@
         "en": "Toggle",
         "fr": "Basculer"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer"
-      }
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_set_dim",
       "title": {
         "en": "Set dim level",
         "fr": "Définir niveau dim"
-      },
-      "titleFormatted": {
-        "en": "Set dim level to [[level]]%",
-        "fr": "Définir niveau dim à [[level]]%"
       },
       "args": [
         {
@@ -145,11 +109,7 @@
         "en": "Dim up",
         "fr": "Augmenter luminosité"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Dim up",
-        "fr": "Augmenter luminosité"
-      }
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_dim_down",
@@ -157,11 +117,7 @@
         "en": "Dim down",
         "fr": "Diminuer luminosité"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Dim down",
-        "fr": "Diminuer luminosité"
-      }
+      "args": []
     },
     {
       "id": "dimmer_dual_channel_set_brightness",
@@ -170,12 +126,6 @@
         "fr": "Régler luminosité",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set brightness to [[brightness]]%",
-        "fr": "Régler luminosité à [[brightness]]%",
-        "nl": "Helderheid op [[brightness]]%",
-        "de": "Helligkeit auf [[brightness]]%"
       },
       "args": [
         {

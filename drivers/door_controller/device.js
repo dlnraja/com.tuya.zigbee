@@ -1,7 +1,7 @@
 'use strict';
 constPlugBase = require('../../lib/devices/HybridPlugBase');
 
-class DoorControllerDevice extendsPlugBase {
+class DoorControllerDevice extends PlugBase {
   get plugCapabilities() { return ['onoff', 'garagedoor_closed']; }
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---

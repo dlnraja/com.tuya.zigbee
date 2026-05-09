@@ -1,7 +1,7 @@
 'use strict';
 const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 
-class WeatherStationOutdoorDevice extendsSensorBase {
+class WeatherStationOutdoorDevice extends SensorBase {
   get mainsPowered() { return false; }
   get sensorCapabilities() { return ['measure_temperature', 'measure_humidity', 'measure_battery']; }
   async onNodeInit({ zclNode }) {

@@ -38,7 +38,7 @@ const DEBOUNCE = {
  * ║  - Solution: Filter repeated states + longer debounce + state validation    ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ContactSensorDevice extendsSensorBase {
+class ContactSensorDevice extends SensorBase {
 
   get mainsPowered() { return false; }
 

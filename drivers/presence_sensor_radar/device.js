@@ -1990,7 +1990,7 @@ function transformDistance(value, divisor = 100, manufacturerName = '', deviceId
   return result;
 }
 
-class PresenceSensorRadarDevice extendsSensorBase {
+class PresenceSensorRadarDevice extends SensorBase {
 
   /**
    * v5.5.277: Get manufacturerName with multiple fallback methods

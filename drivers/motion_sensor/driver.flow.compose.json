@@ -7,11 +7,7 @@
         "en": "Motion detected",
         "fr": "Mouvement détecté"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion detected",
-        "fr": "Mouvement détecté"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_motion_cleared",
@@ -19,11 +15,7 @@
         "en": "Motion cleared",
         "fr": "Mouvement terminé"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion cleared",
-        "fr": "Mouvement terminé"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_battery_low",
@@ -31,11 +23,7 @@
         "en": "Battery low",
         "fr": "Batterie faible"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_battery_changed",
@@ -54,11 +42,7 @@
           "example": 75
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery level changed",
-        "fr": "Niveau batterie changé"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_tamper_true",
@@ -68,13 +52,7 @@
         "nl": "Sabotage alarm geactiveerd",
         "de": "Manipulationsalarm ausgelöst"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper alarm triggered",
-        "fr": "Alarme anti-sabotage déclenchée",
-        "nl": "Sabotage alarm geactiveerd",
-        "de": "Manipulationsalarm ausgelöst"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_tamper_false",
@@ -84,13 +62,7 @@
         "nl": "Sabotage alarm opgeheven",
         "de": "Manipulationsalarm beendet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper alarm cleared",
-        "fr": "Alarme anti-sabotage terminée",
-        "nl": "Sabotage alarm opgeheven",
-        "de": "Manipulationsalarm beendet"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_lux_changed",
@@ -99,12 +71,6 @@
         "fr": "Luminance changée",
         "nl": "Lichtsterkte veranderd",
         "de": "Helligkeit geändert"
-      },
-      "titleFormatted": {
-        "en": "Luminance changed to [[lux]] lux",
-        "fr": "Luminance changée à [[lux]] lux",
-        "nl": "Lichtsterkte veranderd naar [[lux]] lux",
-        "de": "Helligkeit geändert zu [[lux]] lux"
       },
       "hint": {
         "en": "This card triggers when the luminance sensor reports a new value, independent of motion detection",
@@ -146,13 +112,7 @@
         "nl": "Sabotagealarm",
         "de": "Manipulationsalarm"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper alarm",
-        "fr": "Alarme sabotage",
-        "nl": "Sabotagealarm",
-        "de": "Manipulationsalarm"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -162,11 +122,7 @@
         "en": "Motion !{{is|is not}} detected",
         "fr": "Mouvement !{{est|n'est pas}} détecté"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté"
-      }
+      "args": []
     },
     {
       "id": "motion_sensor_tamper_active",
@@ -176,13 +132,7 @@
         "nl": "Sabotage !{{is|is niet}} actief",
         "de": "Manipulation !{{ist|ist nicht}} aktiv"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Tamper !{{is|is not}} active",
-        "fr": "Sabotage !{{est|n'est pas}} actif",
-        "nl": "Sabotage !{{is|is niet}} actief",
-        "de": "Manipulation !{{ist|ist nicht}} aktiv"
-      }
+      "args": []
     }
   ]
 }

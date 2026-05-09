@@ -15,13 +15,7 @@
         "fr": "Se déclenche quand la porte est ouverte",
         "de": "Wird ausgelöst, wenn die Tür geöffnet wird"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Door opened",
-        "nl": "Deur geopend",
-        "fr": "Porte ouverte",
-        "de": "Tür geöffnet"
-      }
+      "args": []
     },
     {
       "id": "door_controller_closed",
@@ -37,13 +31,7 @@
         "fr": "Se déclenche quand la porte est fermée",
         "de": "Wird ausgelöst, wenn die Tür geschlossen wird"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Door closed",
-        "nl": "Deur gesloten",
-        "fr": "Porte fermée",
-        "de": "Tür geschlossen"
-      }
+      "args": []
     },
     {
       "id": "door_controller_locked",
@@ -53,13 +41,7 @@
         "fr": "Porte verrouillée",
         "de": "Tür verriegelt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Door locked",
-        "nl": "Deur vergrendeld",
-        "fr": "Porte verrouillée",
-        "de": "Tür verriegelt"
-      }
+      "args": []
     },
     {
       "id": "door_controller_unlocked",
@@ -69,13 +51,7 @@
         "fr": "Porte déverrouillée",
         "de": "Tür entriegelt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Door unlocked",
-        "nl": "Deur ontgrendeld",
-        "fr": "Porte déverrouillée",
-        "de": "Tür entriegelt"
-      }
+      "args": []
     },
     {
       "id": "door_controller_motion_detected",
@@ -85,13 +61,7 @@
         "nl": "Beweging gedetecteerd",
         "de": "Bewegung erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion detected",
-        "fr": "Mouvement détecté",
-        "nl": "Beweging gedetecteerd",
-        "de": "Bewegung erkannt"
-      }
+      "args": []
     },
     {
       "id": "door_controller_contact_alarm",
@@ -101,13 +71,7 @@
         "nl": "Contact gewijzigd",
         "de": "Kontakt geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Contact changed",
-        "fr": "Contact changé",
-        "nl": "Contact gewijzigd",
-        "de": "Kontakt geändert"
-      }
+      "args": []
     },
     {
       "id": "door_controller_battery_low",
@@ -117,13 +81,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     },
     {
       "id": "door_controller_lock_changed",
@@ -133,13 +91,7 @@
         "nl": "Slot gewijzigd",
         "de": "Schloss geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Lock changed",
-        "fr": "Serrure changée",
-        "nl": "Slot gewijzigd",
-        "de": "Schloss geändert"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -151,13 +103,7 @@
         "fr": "Porte !{{est|n'est pas}} ouverte",
         "de": "Tür !{{ist|ist nicht}} offen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Door !{{is|is not}} open",
-        "nl": "Deur !{{is|is niet}} open",
-        "fr": "Porte !{{est|n'est pas}} ouverte",
-        "de": "Tür !{{ist|ist nicht}} offen"
-      }
+      "args": []
     },
     {
       "id": "door_controller_is_locked",
@@ -167,13 +113,7 @@
         "fr": "Porte !{{est|n'est pas}} verrouillée",
         "de": "Tür !{{ist|ist nicht}} verriegelt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Door !{{is|is not}} locked",
-        "nl": "Deur !{{is|is niet}} vergrendeld",
-        "fr": "Porte !{{est|n'est pas}} verrouillée",
-        "de": "Tür !{{ist|ist nicht}} verriegelt"
-      }
+      "args": []
     },
     {
       "id": "door_controller_motion_active",
@@ -183,13 +123,7 @@
         "nl": "Beweging !{{is|is niet}} gedetecteerd",
         "de": "Bewegung !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion !{{is|is not}} detected",
-        "fr": "Mouvement !{{est|n'est pas}} détecté",
-        "nl": "Beweging !{{is|is niet}} gedetecteerd",
-        "de": "Bewegung !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     },
     {
       "id": "door_controller_contact_open",
@@ -199,13 +133,7 @@
         "nl": "Contact !{{is|is niet}} open",
         "de": "Kontakt !{{ist|ist nicht}} offen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Contact !{{is|is not}} open",
-        "fr": "Contact !{{est|n'est pas}} ouvert",
-        "nl": "Contact !{{is|is niet}} open",
-        "de": "Kontakt !{{ist|ist nicht}} offen"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -217,13 +145,7 @@
         "fr": "Ouvrir la porte",
         "de": "Tür öffnen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Open door",
-        "nl": "Deur openen",
-        "fr": "Ouvrir la porte",
-        "de": "Tür öffnen"
-      }
+      "args": []
     },
     {
       "id": "door_controller_close",
@@ -233,13 +155,7 @@
         "fr": "Fermer la porte",
         "de": "Tür schließen"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Close door",
-        "nl": "Deur sluiten",
-        "fr": "Fermer la porte",
-        "de": "Tür schließen"
-      }
+      "args": []
     },
     {
       "id": "door_controller_lock",
@@ -249,13 +165,7 @@
         "fr": "Verrouiller la porte",
         "de": "Tür verriegeln"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Lock door",
-        "nl": "Deur vergrendelen",
-        "fr": "Verrouiller la porte",
-        "de": "Tür verriegeln"
-      }
+      "args": []
     },
     {
       "id": "door_controller_unlock",
@@ -265,13 +175,7 @@
         "fr": "Déverrouiller la porte",
         "de": "Tür entriegeln"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Unlock door",
-        "nl": "Deur ontgrendelen",
-        "fr": "Déverrouiller la porte",
-        "de": "Tür entriegeln"
-      }
+      "args": []
     }
   ]
 }

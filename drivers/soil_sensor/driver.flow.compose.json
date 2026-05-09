@@ -8,12 +8,6 @@
         "fr": "Humidité sol changée",
         "de": "Bodenfeuchtigkeit geändert"
       },
-      "titleFormatted": {
-        "en": "Soil moisture changed to [[moisture]]%",
-        "nl": "Bodemvochtigheid veranderd naar [[moisture]]%",
-        "fr": "Humidité sol changée à [[moisture]]%",
-        "de": "Bodenfeuchtigkeit geändert zu [[moisture]]%"
-      },
       "tokens": [
         {
           "name": "moisture",
@@ -36,12 +30,6 @@
         "nl": "Bodemtemperatuur veranderd",
         "fr": "Température sol changée",
         "de": "Bodentemperatur geändert"
-      },
-      "titleFormatted": {
-        "en": "Soil temperature changed to [[temperature]]°C",
-        "nl": "Bodemtemperatuur veranderd naar [[temperature]]°C",
-        "fr": "Température sol changée à [[temperature]]°C",
-        "de": "Bodentemperatur geändert zu [[temperature]]°C"
       },
       "tokens": [
         {
@@ -73,13 +61,7 @@
         "fr": "Se déclenche quand l'humidité du sol passe sous le seuil de sécheresse",
         "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit unter den Trockenschwellenwert fällt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Soil is dry - needs water",
-        "nl": "Grond is droog - heeft water nodig",
-        "fr": "Sol sec - besoin d'eau",
-        "de": "Boden ist trocken - braucht Wasser"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_soil_wet",
@@ -95,13 +77,7 @@
         "fr": "Se déclenche quand l'humidité du sol dépasse le seuil d'humidité",
         "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit über den Nässeschwellenwert steigt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Soil is wet",
-        "nl": "Grond is nat",
-        "fr": "Sol humide",
-        "de": "Boden ist nass"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_soil_optimal",
@@ -117,13 +93,7 @@
         "fr": "Se déclenche quand l'humidité du sol est dans la plage optimale pour la croissance des plantes",
         "de": "Wird ausgelöst, wenn die Bodenfeuchtigkeit im optimalen Bereich für Pflanzenwachstum liegt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Soil moisture is optimal",
-        "nl": "Bodemvochtigheid is optimaal",
-        "fr": "Humidité du sol optimale",
-        "de": "Bodenfeuchtigkeit ist optimal"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_frost_warning",
@@ -139,13 +109,7 @@
         "fr": "Se déclenche quand la température du sol passe sous 2°C - protégez vos plantes !",
         "de": "Wird ausgelöst, wenn die Bodentemperatur unter 2°C fällt - schützen Sie Ihre Pflanzen!"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Frost warning",
-        "nl": "Vorstwaarschwing",
-        "fr": "Alerte gel",
-        "de": "Frostwarnung"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_battery_changed",
@@ -154,12 +118,6 @@
         "nl": "Batterijniveau veranderd",
         "fr": "Niveau batterie changé",
         "de": "Batteriestand geändert"
-      },
-      "titleFormatted": {
-        "en": "Battery level changed to [[battery]]%",
-        "nl": "Batterijniveau veranderd naar [[battery]]%",
-        "fr": "Niveau batterie changé à [[battery]]%",
-        "de": "Batteriestand geändert zu [[battery]]%"
       },
       "tokens": [
         {
@@ -184,13 +142,7 @@
         "fr": "Batterie faible",
         "de": "Batterie ist schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery is low",
-        "nl": "Batterij is bijna leeg",
-        "fr": "Batterie faible",
-        "de": "Batterie ist schwach"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_temp_changed",
@@ -200,13 +152,7 @@
         "nl": "Temperatuur gewijzigd",
         "de": "Temperatur geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Temperature changed",
-        "fr": "Température changée",
-        "nl": "Temperatuur gewijzigd",
-        "de": "Temperatur geändert"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_humidity_changed",
@@ -216,13 +162,7 @@
         "nl": "Vochtigheid gewijzigd",
         "de": "Feuchtigkeit geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Humidity changed",
-        "fr": "Humidité changée",
-        "nl": "Vochtigheid gewijzigd",
-        "de": "Feuchtigkeit geändert"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_water_alarm",
@@ -232,13 +172,7 @@
         "nl": "Wateralarm",
         "de": "Wasseralarm"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Water alarm",
-        "fr": "Alarme eau",
-        "nl": "Wateralarm",
-        "de": "Wasseralarm"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -249,12 +183,6 @@
         "nl": "Bodemvochtigheid !{{is|is niet}} onder",
         "fr": "Humidité sol !{{est|n'est pas}} en dessous de",
         "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} unter"
-      },
-      "titleFormatted": {
-        "en": "Soil moisture !{{is|is not}} below [[moisture]]%",
-        "nl": "Bodemvochtigheid !{{is|is niet}} onder [[moisture]]%",
-        "fr": "Humidité sol !{{est|n'est pas}} en dessous de [[moisture]]%",
-        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} unter [[moisture]]%"
       },
       "args": [
         {
@@ -277,12 +205,6 @@
         "fr": "Humidité sol !{{est|n'est pas}} au-dessus de",
         "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} über"
       },
-      "titleFormatted": {
-        "en": "Soil moisture !{{is|is not}} above [[moisture]]%",
-        "nl": "Bodemvochtigheid !{{is|is niet}} boven [[moisture]]%",
-        "fr": "Humidité sol !{{est|n'est pas}} au-dessus de [[moisture]]%",
-        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} über [[moisture]]%"
-      },
       "args": [
         {
           "name": "moisture",
@@ -303,12 +225,6 @@
         "nl": "Bodemtemperatuur !{{is|is niet}} boven",
         "fr": "Température sol !{{est|n'est pas}} au-dessus de",
         "de": "Bodentemperatur !{{ist|ist nicht}} über"
-      },
-      "titleFormatted": {
-        "en": "Soil temperature !{{is|is not}} above [[temp]]°C",
-        "nl": "Bodemtemperatuur !{{is|is niet}} boven [[temp]]°C",
-        "fr": "Température sol !{{est|n'est pas}} au-dessus de [[temp]]°C",
-        "de": "Bodentemperatur !{{ist|ist nicht}} über [[temp]]°C"
       },
       "args": [
         {
@@ -331,13 +247,7 @@
         "fr": "Sol !{{a besoin|n'a pas besoin}} d'eau",
         "de": "Boden !{{braucht|braucht kein}} Wasser"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Soil !{{needs|does not need}} water",
-        "nl": "Grond !{{heeft|heeft geen}} water nodig",
-        "fr": "Sol !{{a besoin|n'a pas besoin}} d'eau",
-        "de": "Boden !{{braucht|braucht kein}} Wasser"
-      }
+      "args": []
     },
     {
       "id": "soil_sensor_battery_above",
@@ -346,12 +256,6 @@
         "nl": "Batterij !{{is|is niet}} boven",
         "fr": "Batterie !{{est|n'est pas}} au-dessus de",
         "de": "Batterie !{{ist|ist nicht}} über"
-      },
-      "titleFormatted": {
-        "en": "Battery !{{is|is not}} above [[threshold]]%",
-        "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
-        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
-        "de": "Batterie !{{ist|ist nicht}} über [[threshold]]%"
       },
       "args": [
         {
@@ -374,13 +278,7 @@
         "nl": "Water !{{is|is niet}} gedetecteerd",
         "de": "Wasser !{{ist|ist nicht}} erkannt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Water !{{is|is not}} detected",
-        "fr": "Eau !{{est|n'est pas}} détectée",
-        "nl": "Water !{{is|is niet}} gedetecteerd",
-        "de": "Wasser !{{ist|ist nicht}} erkannt"
-      }
+      "args": []
     }
   ]
 }

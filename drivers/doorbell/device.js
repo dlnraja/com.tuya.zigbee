@@ -1,7 +1,7 @@
 'use strict';
 const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 
-class DoorbellDevice extendsSensorBase {
+class DoorbellDevice extends SensorBase {
   get mainsPowered() { return false; }
   get sensorCapabilities() { return ['alarm_generic', 'measure_battery', 'alarm_tamper']; }
   get dpMappings() {

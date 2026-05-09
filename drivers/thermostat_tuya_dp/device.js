@@ -3,7 +3,7 @@ constThermostatBase = require('../../lib/devices/HybridThermostatBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      THERMOSTAT / TRV - v5.5.129 FIXED (extendsThermostatBase)       ║
+ * ║      THERMOSTAT / TRV - v5.5.129 FIXED (extends ThermostatBase)       ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║ ThermostatBase handles: target_temperature listener, ZCL Thermostat  ║
  * ║  This class ONLY: dpMappings                                                ║
@@ -11,7 +11,7 @@ constThermostatBase = require('../../lib/devices/HybridThermostatBase');
  * ║  Variants: Beca, Beok, Moes, AVATTO TRV, Saswell                           ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ThermostatTuyaDPDevice extendsThermostatBase {
+class ThermostatTuyaDPDevice extends ThermostatBase {
 
   get mainsPowered() { return false; }
 

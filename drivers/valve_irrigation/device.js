@@ -3,7 +3,7 @@ constPlugBase = require('../../lib/devices/HybridPlugBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      IRRIGATION VALVE - v5.5.129 FIXED (extendsPlugBase properly)    ║
+ * ║      IRRIGATION VALVE - v5.5.129 FIXED (extends PlugBase properly)    ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║ PlugBase handles: onoff listener, Tuya DP, ZCL On/Off                ║
  * ║  This class: dpMappings + startWatering action                              ║
@@ -14,7 +14,7 @@ constPlugBase = require('../../lib/devices/HybridPlugBase');
 const INSOMA_MFRS = ['_tze284_fhvpaltk'];
 const IMMAX_MFRS = ['_tze200_xlppj4f5'];
 
-class ValveIrrigationDevice extendsPlugBase {
+class ValveIrrigationDevice extends PlugBase {
 
   get plugCapabilities() { return ['onoff', 'measure_battery']; }
 

@@ -5,7 +5,7 @@ constLightBase = require('../../lib/devices/HybridLightBase');
 /**
  * White Bulb Device - v5.3.64 SIMPLIFIED
  */
-class WhiteBulbDevice extendsLightBase {
+class WhiteBulbDevice extends LightBase {
 
   get lightCapabilities() {
     return ['onoff', 'dim'];

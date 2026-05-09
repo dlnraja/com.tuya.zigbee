@@ -21,7 +21,7 @@ const {SensorBase } = require('../../lib/devices/HybridSensorBase');
  * ║  Supported: _TZE284_rccxox8p, _TZE200_rccxox8p, _TZE204_rccxox8p, etc.      ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SmokeDetectorAdvancedDevice extendsSensorBase {
+class SmokeDetectorAdvancedDevice extends SensorBase {
   get mainsPowered() { return false; }
   get sensorCapabilities() { return ['alarm_smoke', 'measure_battery', 'measure_temperature', 'measure_humidity', 'alarm_tamper']; }
 

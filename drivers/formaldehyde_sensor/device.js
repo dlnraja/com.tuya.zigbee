@@ -5,7 +5,7 @@ const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 /**
  * Formaldehyde Sensor Device - v5.3.64 SIMPLIFIED
  */
-class FormaldehydeSensorDevice extendsSensorBase {
+class FormaldehydeSensorDevice extends SensorBase {
 
   get mainsPowered() { return true; }
 

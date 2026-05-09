@@ -27,7 +27,7 @@ const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 
 const LIQUID_STATE = { 0: 'normal', 1: 'low', 2: 'high' };
 
-class WaterTankMonitorDevice extendsSensorBase {
+class WaterTankMonitorDevice extends SensorBase {
 
   async onNodeInit({ zclNode }) {
     this.log('[LIQUID] Initializing liquid level sensor...');

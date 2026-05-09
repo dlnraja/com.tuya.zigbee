@@ -6,11 +6,7 @@
         "en": "Device joined network",
         "fr": "Appareil rejoint le réseau"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Device joined network",
-        "fr": "Appareil rejoint le réseau"
-      }
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_device_left",
@@ -18,11 +14,7 @@
         "en": "Device left network",
         "fr": "Appareil quitté le réseau"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Device left network",
-        "fr": "Appareil quitté le réseau"
-      }
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_connection_lost",
@@ -30,11 +22,7 @@
         "en": "Connection lost",
         "fr": "Connexion perdue"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Connection lost",
-        "fr": "Connexion perdue"
-      }
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_connection_restored",
@@ -42,11 +30,7 @@
         "en": "Connection restored",
         "fr": "Connexion rétablie"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Connection restored",
-        "fr": "Connexion rétablie"
-      }
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_turned_on",
@@ -56,13 +40,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_turned_off",
@@ -72,13 +50,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_battery_low",
@@ -88,13 +60,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -104,11 +70,7 @@
         "en": "Gateway is !{{connected|disconnected}}",
         "fr": "Passerelle !{{connectée|déconnectée}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Gateway is !{{connected|disconnected}}",
-        "fr": "Passerelle !{{connectée|déconnectée}}"
-      }
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_is_on",
@@ -118,13 +80,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -134,11 +90,7 @@
         "en": "Permit joining",
         "fr": "Autoriser l'appairage"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Permit joining",
-        "fr": "Autoriser l'appairage"
-      }
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_disable_join",
@@ -146,11 +98,7 @@
         "en": "Disable joining",
         "fr": "Désactiver l'appairage"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Disable joining",
-        "fr": "Désactiver l'appairage"
-      }
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_turn_on",
@@ -160,13 +108,7 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      }
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_turn_off",
@@ -176,13 +118,7 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      }
+      "args": []
     },
     {
       "id": "gateway_zigbee_bridge_toggle",
@@ -192,13 +128,7 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     }
   ]
 }

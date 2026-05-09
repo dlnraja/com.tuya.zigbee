@@ -8,13 +8,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_turned_off",
@@ -24,13 +18,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_pm25_changed",
@@ -50,13 +38,7 @@
           "example": 35
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "PM2.5 changed",
-        "fr": "PM2.5 changé",
-        "nl": "PM2.5 gewijzigd",
-        "de": "PM2.5 geändert"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -68,13 +50,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ],
   "actions": [
@@ -86,13 +62,7 @@
         "nl": "Aanzetten",
         "de": "Einschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_turn_off",
@@ -102,13 +72,7 @@
         "nl": "Uitzetten",
         "de": "Ausschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off",
-        "fr": "Éteindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_toggle",
@@ -118,13 +82,7 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     },
     {
       "id": "air_purifier_set_fan_speed",
@@ -133,12 +91,6 @@
         "fr": "Régler vitesse",
         "nl": "Snelheid instellen",
         "de": "Geschwindigkeit einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set fan speed to [[speed]]%",
-        "fr": "Régler vitesse à [[speed]]%",
-        "nl": "Snelheid instellen op [[speed]]%",
-        "de": "Geschwindigkeit auf [[speed]]% setzen"
       },
       "args": [
         {
@@ -159,12 +111,6 @@
         "fr": "Régler luminosité",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set brightness to [[brightness]]%",
-        "fr": "Régler luminosité à [[brightness]]%",
-        "nl": "Helderheid op [[brightness]]%",
-        "de": "Helligkeit auf [[brightness]]%"
       },
       "args": [
         {

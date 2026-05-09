@@ -5,7 +5,7 @@ const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 /**
  * Vibration Sensor Device - v5.3.64 SIMPLIFIED
  */
-class VibrationSensorDevice extendsSensorBase {
+class VibrationSensorDevice extends SensorBase {
 
   get mainsPowered() { return false; }
 

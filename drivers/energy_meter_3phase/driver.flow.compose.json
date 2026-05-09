@@ -8,13 +8,7 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
-        "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
-      }
+      "args": []
     },
     {
       "id": "energy_meter_3phase_battery_low",
@@ -24,13 +18,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     },
     {
       "id": "energy_meter_3phase_voltage_changed",
@@ -47,10 +35,7 @@
           "example": 230
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Voltage changed"
-      }
+      "args": []
     },
     {
       "id": "energy_meter_3phase_current_changed",
@@ -67,10 +52,7 @@
           "example": 5
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Current changed"
-      }
+      "args": []
     },
     {
       "id": "energy_meter_3phase_energy_changed",
@@ -87,10 +69,7 @@
           "example": 10
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Energy changed"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -98,9 +77,6 @@
       "id": "energy_meter_3phase_power_above",
       "title": {
         "en": "Power !{{is|is not}} above"
-      },
-      "titleFormatted": {
-        "en": "Power !{{is|is not}} above [[power]] W"
       },
       "args": [
         {
@@ -117,9 +93,6 @@
     {
       "id": "energy_meter_3phase_reset_meter",
       "title": {
-        "en": "Reset energy meter"
-      },
-      "titleFormatted": {
         "en": "Reset energy meter"
       }
     }

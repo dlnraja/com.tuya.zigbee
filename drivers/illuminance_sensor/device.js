@@ -2,7 +2,7 @@
 
 const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 
-class IlluminanceSensorDevice extendsSensorBase {
+class IlluminanceSensorDevice extends SensorBase {
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {

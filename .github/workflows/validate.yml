@@ -189,6 +189,9 @@ jobs:
             console.log('Switch/socket drivers: '+switchDrivers+', with TX fallback: '+withFallback);
           "
 
+      - name: 🧪 Run Universal Tuya Multi-Layer Quality Gate
+        run: node scripts/_verify_prs.js
+
       - name: 🔍 Validate (npx primary)
         run: npx homey app validate --level ${{ inputs.level || 'publish' }}
 

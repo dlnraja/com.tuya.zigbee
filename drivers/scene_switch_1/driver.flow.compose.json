@@ -8,13 +8,7 @@
         "nl": "Knop ingedrukt",
         "de": "Taste gedrückt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button pressed",
-        "fr": "Bouton appuyé",
-        "nl": "Knop ingedrukt",
-        "de": "Taste gedrückt"
-      }
+      "args": []
     },
     {
       "id": "scene_switch_1_button_double_press",
@@ -24,13 +18,7 @@
         "nl": "Knop dubbel ingedrukt",
         "de": "Taste doppelt gedrückt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button double-pressed",
-        "fr": "Bouton double-cliqué",
-        "nl": "Knop dubbel ingedrukt",
-        "de": "Taste doppelt gedrückt"
-      }
+      "args": []
     },
     {
       "id": "scene_switch_1_button_long_press",
@@ -40,13 +28,7 @@
         "nl": "Knop lang ingedrukt",
         "de": "Taste lang gedrückt"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button long-pressed",
-        "fr": "Bouton appui long",
-        "nl": "Knop lang ingedrukt",
-        "de": "Taste lang gedrückt"
-      }
+      "args": []
     },
     {
       "id": "scene_switch_1_battery_changed",
@@ -69,13 +51,7 @@
           "example": 80
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery level changed",
-        "fr": "Niveau de batterie changé",
-        "nl": "Batterijniveau gewijzigd",
-        "de": "Batteriestand geändert"
-      }
+      "args": []
     },
     {
       "id": "scene_switch_1_battery_low",
@@ -85,13 +61,7 @@
         "nl": "Batterij laag",
         "de": "Batterie schwach"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible",
-        "nl": "Batterij laag",
-        "de": "Batterie schwach"
-      }
+      "args": []
     },
     {
       "id": "scene_switch_1_button_1gang_button_1_pressed",
@@ -99,11 +69,7 @@
         "en": "Button pressed",
         "fr": "Bouton appuye"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button pressed",
-        "fr": "Bouton appuye"
-      }
+      "args": []
     },
     {
       "id": "scene_switch_1_button_1gang_button_1_double",
@@ -111,11 +77,7 @@
         "en": "Button double-pressed",
         "fr": "Bouton double-appui"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button double-pressed",
-        "fr": "Bouton double-appui"
-      }
+      "args": []
     },
     {
       "id": "scene_switch_1_button_1gang_button_1_long",
@@ -123,11 +85,7 @@
         "en": "Button long-pressed",
         "fr": "Bouton appui long"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button long-pressed",
-        "fr": "Bouton appui long"
-      }
+      "args": []
     },
     {
       "id": "scene_switch_1_button_1gang_button_1_triple",
@@ -135,11 +93,7 @@
         "en": "Button triple-pressed",
         "fr": "Bouton triple-appui"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button triple-pressed",
-        "fr": "Bouton triple-appui"
-      }
+      "args": []
     },
     {
       "id": "scene_switch_1_button_1gang_button_1_release",
@@ -147,11 +101,7 @@
         "en": "Button released",
         "fr": "Bouton relache"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button released",
-        "fr": "Bouton relache"
-      }
+      "args": []
     }
   ]
 }

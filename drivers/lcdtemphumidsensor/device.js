@@ -11,7 +11,7 @@ const {SensorBase } = require('../../lib/devices/HybridSensorBase');
  * UsesSensorBase for full ZCL + Tuya DP support
  * Supports: Temperature, Humidity, Battery
  */
-class LCDTempHumidSensorDevice extendsSensorBase {
+class LCDTempHumidSensorDevice extends SensorBase {
 
   /** Battery powered */
   get mainsPowered() { return false; }

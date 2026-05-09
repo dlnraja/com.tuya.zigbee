@@ -5,20 +5,14 @@
       "title": {
         "en": "Turn on"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn on"
-      }
+      "args": []
     },
     {
       "id": "dimmer_3gang_turn_off",
       "title": {
         "en": "Turn off"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turn off"
-      }
+      "args": []
     },
     {
       "id": "dimmer_3gang_toggle",
@@ -28,13 +22,7 @@
         "nl": "Wisselen",
         "de": "Umschalten"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      }
+      "args": []
     },
     {
       "id": "dimmer_3gang_set_brightness",
@@ -43,12 +31,6 @@
         "fr": "Régler luminosité",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set brightness to [[brightness]]%",
-        "fr": "Régler luminosité à [[brightness]]%",
-        "nl": "Helderheid op [[brightness]]%",
-        "de": "Helligkeit auf [[brightness]]%"
       },
       "args": [
         {
@@ -69,18 +51,12 @@
       "args": [],
       "title": {
         "en": "Gang 1 on - physical"
-      },
-      "titleFormatted": {
-        "en": "Gang 1 on - physical"
       }
     },
     {
       "id": "dimmer_3gang_physical_gang1_off",
       "args": [],
       "title": {
-        "en": "Gang 1 off - physical"
-      },
-      "titleFormatted": {
         "en": "Gang 1 off - physical"
       }
     },
@@ -99,10 +75,7 @@
           },
           "type": "number"
         }
-      ],
-      "titleFormatted": {
-        "en": "Gang 1 brightness up - physical"
-      }
+      ]
     },
     {
       "id": "dimmer_3gang_physical_gang1_brightness_decreased",
@@ -119,18 +92,12 @@
           },
           "type": "number"
         }
-      ],
-      "titleFormatted": {
-        "en": "Gang 1 brightness down - physical"
-      }
+      ]
     },
     {
       "id": "dimmer_3gang_physical_gang2_on",
       "args": [],
       "title": {
-        "en": "Gang 2 on - physical"
-      },
-      "titleFormatted": {
         "en": "Gang 2 on - physical"
       }
     },
@@ -138,9 +105,6 @@
       "id": "dimmer_3gang_physical_gang2_off",
       "args": [],
       "title": {
-        "en": "Gang 2 off - physical"
-      },
-      "titleFormatted": {
         "en": "Gang 2 off - physical"
       }
     },
@@ -159,10 +123,7 @@
           },
           "type": "number"
         }
-      ],
-      "titleFormatted": {
-        "en": "Gang 2 brightness up - physical"
-      }
+      ]
     },
     {
       "id": "dimmer_3gang_physical_gang2_brightness_decreased",
@@ -179,18 +140,12 @@
           },
           "type": "number"
         }
-      ],
-      "titleFormatted": {
-        "en": "Gang 2 brightness down - physical"
-      }
+      ]
     },
     {
       "id": "dimmer_3gang_physical_gang3_on",
       "args": [],
       "title": {
-        "en": "Gang 3 on - physical"
-      },
-      "titleFormatted": {
         "en": "Gang 3 on - physical"
       }
     },
@@ -198,9 +153,6 @@
       "id": "dimmer_3gang_physical_gang3_off",
       "args": [],
       "title": {
-        "en": "Gang 3 off - physical"
-      },
-      "titleFormatted": {
         "en": "Gang 3 off - physical"
       }
     },
@@ -219,10 +171,7 @@
           },
           "type": "number"
         }
-      ],
-      "titleFormatted": {
-        "en": "Gang 3 brightness up - physical"
-      }
+      ]
     },
     {
       "id": "dimmer_3gang_physical_gang3_brightness_decreased",
@@ -239,10 +188,7 @@
           },
           "type": "number"
         }
-      ],
-      "titleFormatted": {
-        "en": "Gang 3 brightness down - physical"
-      }
+      ]
     },
     {
       "id": "dimmer_3gang_turned_on",
@@ -252,13 +198,7 @@
         "nl": "Aangezet",
         "de": "Eingeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      }
+      "args": []
     },
     {
       "id": "dimmer_3gang_turned_off",
@@ -268,13 +208,7 @@
         "nl": "Uitgezet",
         "de": "Ausgeschaltet"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -286,13 +220,7 @@
         "nl": "Is !{{aan|uit}}",
         "de": "Ist !{{ein|aus}}"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      }
+      "args": []
     }
   ]
 }

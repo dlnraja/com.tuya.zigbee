@@ -17,11 +17,7 @@
           "example": "1"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button pressed",
-        "fr": "Bouton appuyé"
-      }
+      "args": []
     },
     {
       "id": "button_wireless_button_double_press",
@@ -40,11 +36,7 @@
           "example": "1"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button double pressed",
-        "fr": "Double appui bouton"
-      }
+      "args": []
     },
     {
       "id": "button_wireless_button_long_press",
@@ -63,11 +55,7 @@
           "example": "1"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button long pressed",
-        "fr": "Appui long bouton"
-      }
+      "args": []
     },
     {
       "id": "button_wireless_button_release",
@@ -86,11 +74,7 @@
           "example": "1"
         }
       ],
-      "args": [],
-      "titleFormatted": {
-        "en": "Button released",
-        "fr": "Bouton relâché"
-      }
+      "args": []
     },
     {
       "id": "button_wireless_battery_low",
@@ -98,11 +82,7 @@
         "en": "Battery low",
         "fr": "Batterie faible"
       },
-      "args": [],
-      "titleFormatted": {
-        "en": "Battery low",
-        "fr": "Batterie faible"
-      }
+      "args": []
     }
   ],
   "conditions": [
@@ -111,10 +91,6 @@
       "title": {
         "en": "Battery level is above",
         "fr": "Niveau batterie supérieur à"
-      },
-      "titleFormatted": {
-        "en": "Battery level is above [[level]]%",
-        "fr": "Niveau batterie supérieur à [[level]]%"
       },
       "args": [
         {

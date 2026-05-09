@@ -13,7 +13,7 @@ const { AirQualityInference, BatteryInference } = require('../../lib/Intelligent
  * ║  Variants: _TZE200_ywagc4rj, _TZE200_zl1kmjqx                               ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class AirQualityCO2Device extendsSensorBase {
+class AirQualityCO2Device extends SensorBase {
 
   get mainsPowered() { return false; }
 

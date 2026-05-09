@@ -5,7 +5,7 @@ constLightBase = require('../../lib/devices/HybridLightBase');
 /**
  * LED Strip Device - v5.3.64 SIMPLIFIED
  */
-class LEDStripDevice extendsLightBase {
+class LEDStripDevice extends LightBase {
 
   get lightCapabilities() {
     return ['onoff', 'dim', 'light_hue', 'light_saturation'];
