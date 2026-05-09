@@ -127,6 +127,32 @@ class RainSensorDevice extendsSensorBase {
   }
 
 
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    await super.onSettings({ oldSettings, newSettings, changedKeys }).catch(e => this.error('[RAIN] super.onSettings error:', e.message));
+
+    this.log(`[RAIN] [SETTINGS] Changed keys: ${changedKeys.join(', ')}`);
+
+    const RAIN_SETTING_DP_MAP = {
+      sensitivity: { dp: 102, type: 'value' },
+      illuminance_sampling: { dp: 103, type: 'value' }
+    };
+
+    for (const key of changedKeys) {
+      try {
+        const mapping = RAIN_SETTING_DP_MAP[key];
+        if (mapping && this.tuyaEF00Manager) {
+          const val = parseInt(newSettings[key]);
+          if (!isNaN(val)) {
+            await this.tuyaEF00Manager.sendDP(mapping.dp, val, mapping.type);
+            this.log(`[RAIN] [SETTINGS] Applied ${key}=${val} (DP${mapping.dp})`);
+          }
+        }
+      } catch (err) {
+        this.log(`[RAIN] [SETTINGS] Error applying ${key}: ${err.message}`);
+      }
+    }
+  }
+
   async onDeleted() {
     this.log('Device deleted, cleaning up');
   }
