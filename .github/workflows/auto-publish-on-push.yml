@@ -187,6 +187,7 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
+      - name: Post update to Homey Community Forum
         if: steps.check_pat.outputs.has_pat == 'true'
         continue-on-error: true
         env:
@@ -194,6 +195,7 @@ jobs:
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           APP_VERSION: ${{ steps.info.outputs.version }}
           CHANGELOG: ${{ steps.cl.outputs.text }}
+        run: node .github/scripts/post-forum-update.js
 
       - name: Regenerate README & Docs with fresh stats
         if: always()

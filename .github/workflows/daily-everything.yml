@@ -94,6 +94,7 @@ jobs:
             echo "Cleanup already done"
           fi
 
+      - name: "1. Forum Scan"
         id: forum_scan
         continue-on-error: true
         timeout-minutes: 10
@@ -347,13 +348,23 @@ jobs:
         continue-on-error: true
         timeout-minutes: 10
         env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FORUM_USERNAME: dlnraja
+        run: node .github/scripts/forum-activity-scraper.js || true
 
       # ===== 7b. FORUM: Update First Post with Changelogs =====
+      - name: "7b. Forum Update First Post"
+        id: update_first_post
         continue-on-error: true
         timeout-minutes: 5
         env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/update-forum-first-post.js || true
 
       # ===== 7c. FORUM: Private Messages (inbox scan) =====
       - name: "7c. Forum Private Messages"
@@ -516,6 +527,11 @@ jobs:
         id: spam_scan
         continue-on-error: true
         timeout-minutes: 5
+        env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/forum-scan-spam.js || true
 
       - name: "10b4. Forum Cleanup (edit-based)"
         id: forum_cleanup_edit
@@ -802,7 +818,7 @@ jobs:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           APP_VERSION: ${{ steps.bump.outputs.version || steps.stats.outputs.version }}
-        run: |
+        run: node .github/scripts/post-forum-update.js || true
 
       # ===== 14b. Deploy Device Finder (GitHub Pages) =====
       - name: "14b. Deploy Device Finder"
