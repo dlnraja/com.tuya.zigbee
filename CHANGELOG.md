@@ -4,7 +4,18 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.10] - 2026-05-10
+## [7.5.11] - 2026-05-10
+
+### Bug Fixes
+- Fixed ReferenceError crashes across all Hybrid Base classes (Sensor, Cover, Light, Plug, Switch, Thermostat) during dynamic capability updates. This resolves rare crashes when capabilities are added or removed at runtime.
+- Fixed `_safeSetCapability` ReferenceError in HybridSensorBase.
+
+### Improvements
+- Updated to 221 drivers and 6636 fingerprints.
+- Improved internal error handling for capability updates.
+---
+
+ [7.5.10] - 2026-05-10
 
 ### Bug Fixes
 - Fixed a ReferenceError in HybridSensorBase when calling _safeSetCapability, which could cause sensor devices to crash on startup or during capability updates.
