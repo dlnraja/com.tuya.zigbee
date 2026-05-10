@@ -13,9 +13,7 @@
   "class": "garagedoor",
   "capabilities": [
     "garagedoor_closed",
-    "alarm_contact",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "alarm_contact"
   ],
   "capabilitiesOptions": {
     "garagedoor_closed": {

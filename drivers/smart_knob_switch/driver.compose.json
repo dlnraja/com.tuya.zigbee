@@ -17,9 +17,7 @@
   ],
   "capabilities": [
     "dim",
-    "alarm_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "alarm_battery"
   ],
   "images": {
     "large": "drivers/smart_knob_switch/assets/images/large.png",

@@ -6,9 +6,7 @@
   "capabilities": [
     "onoff",
     "vacuumcleaner_state",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "pair": [
     {
@@ -300,7 +298,7 @@
   "images": {
     "small": "drivers/wifi_robot_vacuum/assets/images/small.png",
     "large": "drivers/wifi_robot_vacuum/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

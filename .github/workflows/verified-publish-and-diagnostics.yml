@@ -8,7 +8,7 @@ on:
         required: true
         default: '7.4.9'
       run_diagnostics:
-        description: 'Lancer l\'analyse des logs de crash'
+        description: "Lancer l'analyse des logs de crash"
         type: boolean
         default: true
 

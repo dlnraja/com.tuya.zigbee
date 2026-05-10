@@ -6,9 +6,7 @@
   "capabilities": [
     "onoff",
     "onoff.gang2",
-    "onoff.gang3",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff.gang3"
   ],
   "pair": [
     {
@@ -257,7 +255,7 @@
   "images": {
     "small": "drivers/wifi_switch_3gang/assets/images/small.png",
     "large": "drivers/wifi_switch_3gang/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

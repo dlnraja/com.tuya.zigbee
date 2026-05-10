@@ -8,9 +8,7 @@
   "class": "sensor",
   "capabilities": [
     "measure_luminance",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "measure_luminance": {

@@ -10,9 +10,7 @@
     "dim",
     "onoff",
     "measure_power",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "energy": {
     "approximation": {

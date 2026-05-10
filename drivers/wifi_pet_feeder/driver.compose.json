@@ -5,9 +5,7 @@
   "class": "other",
   "capabilities": [
     "onoff",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "pair": [
     {
@@ -299,7 +297,7 @@
   "images": {
     "small": "drivers/wifi_pet_feeder/assets/images/small.png",
     "large": "drivers/wifi_pet_feeder/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

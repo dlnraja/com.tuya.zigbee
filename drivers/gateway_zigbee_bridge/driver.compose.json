@@ -9,9 +9,7 @@
   "capabilities": [
     "alarm_generic",
     "measure_battery",
-    "onoff",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff"
   ],
   "energy": {
     "batteries": [

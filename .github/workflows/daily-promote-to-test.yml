@@ -108,7 +108,7 @@ jobs:
   # TIER 1: Browser automation (Puppeteer)
   # ============================================================
   promote-tier1:
-    name: 🌐 Tier 1: Puppeteer Browser
+    name: "🌐 Tier 1: Puppeteer Browser"
     needs: wait-for-draft
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -140,7 +140,7 @@ jobs:
   # TIER 2: OAuth Password Grant
   # ============================================================
   promote-tier2:
-    name: 🔐 Tier 2: OAuth
+    name: "🔐 Tier 2: OAuth"
     needs: wait-for-draft
     if: needs.promote-tier1.result != 'success'
     runs-on: ubuntu-latest
@@ -173,7 +173,7 @@ jobs:
   # TIER 3: PAT API
   # ============================================================
   promote-tier3:
-    name: 🔑 Tier 3: PAT API
+    name: "🔑 Tier 3: PAT API"
     needs: wait-for-draft
     if: needs.promote-tier1.result != 'success'
     runs-on: ubuntu-latest
@@ -200,7 +200,7 @@ jobs:
   # TIER 4: Retry Puppeteer
   # ============================================================
   promote-tier4:
-    name: 🔄 Tier 4: Retry Puppeteer
+    name: "🔄 Tier 4: Retry Puppeteer"
     needs: [promote-tier1, promote-tier2, promote-tier3]
     if: failure()
     runs-on: ubuntu-latest
@@ -232,6 +232,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - run: npm ci --prefer-offline --no-audit || npm install
+
       # Upload screenshots for debugging
       - name: 📸 Upload Screenshots
         if: always()

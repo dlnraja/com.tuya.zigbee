@@ -5,9 +5,7 @@
   "class": "doorbell",
   "capabilities": [
     "alarm_generic",
-    "alarm_motion",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "alarm_motion"
   ],
   "pair": [
     {
@@ -262,7 +260,7 @@
   "images": {
     "small": "drivers/wifi_doorbell/assets/images/small.png",
     "large": "drivers/wifi_doorbell/assets/images/large.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

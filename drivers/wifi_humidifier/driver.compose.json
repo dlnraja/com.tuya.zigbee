@@ -7,9 +7,7 @@
     "onoff",
     "measure_humidity",
     "measure_temperature",
-    "alarm_water",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "alarm_water"
   ],
   "pair": [
     {
@@ -258,7 +256,7 @@
   "images": {
     "small": "drivers/wifi_humidifier/assets/images/small.png",
     "large": "drivers/wifi_humidifier/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

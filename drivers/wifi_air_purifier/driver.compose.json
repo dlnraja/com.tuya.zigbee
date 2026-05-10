@@ -8,9 +8,7 @@
     "dim",
     "measure_pm25",
     "measure_temperature",
-    "measure_humidity",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_humidity"
   ],
   "pair": [
     {
@@ -259,7 +257,7 @@
   "images": {
     "small": "drivers/wifi_air_purifier/assets/images/small.png",
     "large": "drivers/wifi_air_purifier/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

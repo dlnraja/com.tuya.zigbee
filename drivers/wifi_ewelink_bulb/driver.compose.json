@@ -6,9 +6,7 @@
   "capabilities": [
     "onoff",
     "dim",
-    "light_temperature",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "light_temperature"
   ],
   "pair": [
     {
@@ -313,7 +311,7 @@
   "images": {
     "small": "drivers/wifi_ewelink_bulb/assets/images/small.png",
     "large": "drivers/wifi_ewelink_bulb/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

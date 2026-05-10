@@ -8,9 +8,7 @@
     "alarm_generic",
     "measure_temperature",
     "measure_humidity",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "pair": [
     {
@@ -302,7 +300,7 @@
   "images": {
     "small": "drivers/wifi_siren/assets/images/small.png",
     "large": "drivers/wifi_siren/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

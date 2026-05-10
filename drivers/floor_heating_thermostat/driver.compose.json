@@ -11,9 +11,7 @@
     "measure_temperature",
     "measure_temperature.floor",
     "thermostat_mode",
-    "onoff",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff"
   ],
   "capabilitiesOptions": {
     "target_temperature": {

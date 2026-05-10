@@ -1,6 +1,5 @@
 'use strict';
 
-const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class RemoteButtonWirelessDriver extends ZigBeeDriver {
@@ -23,29 +22,37 @@ class RemoteButtonWirelessDriver extends ZigBeeDriver {
 
   _registerFlowCards() {
     // TRIGGERS
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
-    // Removed corrupted nested block})(); } catch (e) {}
+    const triggerCards = [
+      'remote_button_wireless_rotate_left',
+      'remote_button_wireless_rotate_right',
+      'remote_button_wireless_pressed',
+      'remote_button_wireless_single_press',
+      'remote_button_wireless_double_press',
+      'remote_button_wireless_long_press',
+      'remote_button_wireless_battery_low'
+    ];
+    for (const id of triggerCards) {
+      try {
+        const card = this.homey.flow.getTriggerCard(id);
+        if (card) this.log(`[FLOW] Trigger registered: ${id}`);
+      } catch (err) { this.error(`Trigger ${id}: ${err.message}`); }
+    }
 
     // CONDITIONS
     try {
-      const card = this.homey.flow.getConditionCard('remote_button_wireless_hybrid_brightness_above');
+      const card = this.homey.flow.getConditionCard('remote_button_wireless_brightness_above');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const val = args.device.getCapabilityValue('measure_co2') || 0;
-          return val > (args.threshold || 400);
-      });
+          const val = args.device.getCapabilityValue('measure_luminance') || 0;
+          return val > (args.threshold || 100);
+        });
       }
-    } catch (err) { this.error(`Condition remote_button_wireless_hybrid_brightness_above: ${err.message}`); }
+    } catch (err) { this.error(`Condition brightness_above: ${err.message}`); }
 
     // ACTIONS
     try {
-      const card = this.homey.flow.getActionCard('remote_button_wireless_hybrid_set_brightness');
+      const card = this.homey.flow.getActionCard('remote_button_wireless_set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
@@ -53,12 +60,11 @@ class RemoteButtonWirelessDriver extends ZigBeeDriver {
           return true;
         });
       }
-    } catch (err) { this.error(`Action remote_button_wireless_hybrid_set_brightness: ${err.message}`); }
+    } catch (err) { this.error(`Action set_brightness: ${err.message}`); }
 
     this.log('[FLOW] All flow cards registered');
   }
 }
 
 module.exports = RemoteButtonWirelessDriver;
-
 

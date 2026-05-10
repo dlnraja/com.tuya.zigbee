@@ -8,9 +8,7 @@
   "class": "sensor",
   "capabilities": [
     "alarm_generic",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "alarm_generic": {

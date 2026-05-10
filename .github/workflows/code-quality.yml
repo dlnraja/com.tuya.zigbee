@@ -39,6 +39,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+
       - name: 🤖 AI Orchestrator Health
         run: node .github/scripts/ai-helper.js --check-health
 

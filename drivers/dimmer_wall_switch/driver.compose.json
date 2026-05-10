@@ -11,9 +11,7 @@
     "button.toggle_2",
     "button.identify",
     "measure_battery",
-    "dim",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "dim"
   ],
   "zigbee": {
     "productId": [],

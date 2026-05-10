@@ -13,9 +13,7 @@
     "measure_temperature",
     "measure_humidity",
     "alarm_battery",
-    "alarm_siren",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "alarm_siren"
   ],
   "capabilitiesOptions": {
     "onoff": {

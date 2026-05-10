@@ -8,9 +8,7 @@
     "measure_power",
     "meter_power",
     "measure_current",
-    "measure_voltage",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_voltage"
   ],
   "pair": [
     {
@@ -259,7 +257,7 @@
   "images": {
     "small": "drivers/wifi_plug/assets/images/small.png",
     "large": "drivers/wifi_plug/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

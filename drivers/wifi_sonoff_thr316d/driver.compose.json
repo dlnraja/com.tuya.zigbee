@@ -232,14 +232,12 @@
     "onoff",
     "measure_temperature",
     "measure_humidity",
-    "target_temperature",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "target_temperature"
   ],
   "images": {
     "small": "drivers/wifi_sonoff_thr316d/assets/images/small.png",
     "large": "drivers/wifi_sonoff_thr316d/assets/images/large.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

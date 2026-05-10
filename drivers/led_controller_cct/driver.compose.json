@@ -11,9 +11,7 @@
     "dim",
     "light_temperature",
     "light_mode",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [],

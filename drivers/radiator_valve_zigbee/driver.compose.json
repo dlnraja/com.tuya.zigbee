@@ -14,9 +14,7 @@
     "measure_battery",
     "onoff",
     "window_detection",
-    "child_lock",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "child_lock"
   ],
   "capabilitiesOptions": {
     "target_temperature": {

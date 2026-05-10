@@ -12,9 +12,7 @@
     "button.2",
     "measure_battery",
     "onoff",
-    "dim.valve",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "dim.valve"
   ],
   "capabilitiesOptions": {
     "maintenanceAction": true,

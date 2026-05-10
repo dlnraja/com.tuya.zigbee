@@ -12,9 +12,7 @@
     "dim.valve_3",
     "dim.valve_4",
     "measure_battery",
-    "onoff",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff"
   ],
   "zigbee": {
     "manufacturerName": [

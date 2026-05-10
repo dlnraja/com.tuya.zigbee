@@ -11,9 +11,7 @@
     "meter_water",
     "measure_temperature",
     "alarm_water",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {

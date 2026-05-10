@@ -11,9 +11,7 @@
     "measure_humidity",
     "measure_pressure",
     "measure_luminance",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "measure_temperature": {

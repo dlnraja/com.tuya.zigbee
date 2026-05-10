@@ -5,9 +5,7 @@
   "class": "curtain",
   "capabilities": [
     "windowcoverings_state",
-    "windowcoverings_set",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "windowcoverings_set"
   ],
   "pair": [
     {
@@ -256,7 +254,7 @@
   "images": {
     "small": "drivers/wifi_cover/assets/images/small.png",
     "large": "drivers/wifi_cover/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

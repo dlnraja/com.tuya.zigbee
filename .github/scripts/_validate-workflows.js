@@ -40,7 +40,7 @@ for (const f of files) {
     for (const s of job.steps) {
       if (s.id) stepIds.add(s.id);
       if (s.uses && s.uses.startsWith('actions/checkout')) hasCheckout = true;
-      if (s.uses && s.uses.startsWith('actions/setup-node')) hasNode = true;
+      if (s.uses && (s.uses.startsWith('actions/setup-node') || s.uses.includes('setup-unified'))) { hasNode = true; hasNpmInstall = true; }
       if (s.run && /npm (ci|install)/.test(s.run)) hasNpmInstall = true;
 
       // Check script file refs (all paths)

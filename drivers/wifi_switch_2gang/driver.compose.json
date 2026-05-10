@@ -5,9 +5,7 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.gang2",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff.gang2"
   ],
   "pair": [
     {
@@ -256,7 +254,7 @@
   "images": {
     "small": "drivers/wifi_switch_2gang/assets/images/small.png",
     "large": "drivers/wifi_switch_2gang/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

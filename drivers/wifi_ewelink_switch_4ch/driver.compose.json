@@ -7,9 +7,7 @@
     "onoff",
     "onoff.2",
     "onoff.3",
-    "onoff.4",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff.4"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -254,7 +252,7 @@
   "images": {
     "small": "drivers/wifi_ewelink_switch_4ch/assets/images/small.png",
     "large": "drivers/wifi_ewelink_switch_4ch/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

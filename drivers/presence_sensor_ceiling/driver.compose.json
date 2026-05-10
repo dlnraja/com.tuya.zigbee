@@ -10,9 +10,7 @@
     "alarm_motion",
     "onoff",
     "measure_luminance",
-    "measure_luminance.distance",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_luminance.distance"
   ],
   "capabilitiesOptions": {
     "onoff": {

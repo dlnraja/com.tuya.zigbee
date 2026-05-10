@@ -9,9 +9,7 @@
     "light_hue",
     "light_saturation",
     "light_temperature",
-    "light_mode",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "light_mode"
   ],
   "pair": [
     {
@@ -348,7 +346,7 @@
   "images": {
     "small": "drivers/wifi_led_strip/assets/images/small.png",
     "large": "drivers/wifi_led_strip/assets/images/large.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

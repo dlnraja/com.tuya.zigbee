@@ -12,9 +12,7 @@
     "alarm_contact",
     "alarm_gas",
     "alarm_tamper",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "energy": {
     "batteries": [

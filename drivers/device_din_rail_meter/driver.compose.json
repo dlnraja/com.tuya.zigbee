@@ -20,9 +20,7 @@
     "meter_power",
     "measure_voltage",
     "measure_current",
-    "meter_power.exported",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "meter_power.exported"
   ],
   "capabilitiesOptions": {
     "onoff": {
