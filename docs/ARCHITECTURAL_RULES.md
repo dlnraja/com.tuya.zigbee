@@ -41,3 +41,8 @@
 - **Strict Syntax Guard Isolation:** The temporary draft or development scripts directory (`temp`) must be explicitly ignored by the syntax checker so only active production, lib, drivers, and standard CI/CD files are validated, keeping the repository's build green.
 - **Hybrid-Compatible Base Exports:** Base classes exported from `lib/devices/` (like `SensorBase` / `HybridSensorBase.js`) must use direct exports together with self-referential class properties (`SensorBase.SensorBase = SensorBase; module.exports = SensorBase;`) to ensure absolute compatibility with both direct destructured requires (used by driver implementations) and index-based requires.
 
+## R26: Universal Evolution & Continuous Enrichment Loop (Rule 26)
+- **Continuous Lifecycle Sweep:** On *every* single prompt execution or task processed, the developer agent MUST execute a comprehensive, full-scope repository sweep.
+- **Components of the Loop:** This loop comprises: scanning and triaging latest community PRs/issues/images (`scan-prs-issues.js`), auto-learning newly found fingerprints (`auto-learn-fingerprints.js`), running self-heals and automated code-fixes (`auto-fix-common-issues.js`), verifying drivers, and collectively enriching ALL yml files, javascript source codes, base classes, rules configs (`.clinerule`, `.cursorrules`, `.windsurfrules`), automations, cartographies, indexes, and reference databases. No element of the ecosystem must be left stagnant.
+
+

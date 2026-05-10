@@ -46,7 +46,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **Homey Compatibility** | >=12.2.0 |
 | **Last Updated** | 2026-05-10 |
 
-### Top 20 Drivers by Fingerprint Count
+### Top 221 drivers by Fingerprint Count
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
@@ -181,7 +181,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 221 Drivers ─ 10,815+ fingerprints
+       └─ 221 drivers ─ 10,10821 fingerprints
 ```
 
 ---
