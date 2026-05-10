@@ -4,7 +4,21 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.11] - 2026-05-10
+## [7.5.12] - 2026-05-10
+
+### Bug Fixes
+- Fixed sensor fallback check for unknown model IDs to prevent incorrect capability assignments
+- Cleaned up HybridSensorBase exports to remove unused draft scripts
+
+### Improvements
+- Updated documentation, project rules, and configuration files for better developer experience
+- Refreshed fingerprint cross-reference and project status docs
+
+### New Fingerprints
+- Added support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm / TS0601)
+---
+
+ [7.5.11] - 2026-05-10
 
 ### Bug Fixes
 - Fixed ReferenceError crashes across all Hybrid Base classes (Sensor, Cover, Light, Plug, Switch, Thermostat) during dynamic capability updates. This resolves rare crashes when capabilities are added or removed at runtime.
