@@ -1,0 +1,61 @@
+name: 🛡️ Fleet-Wide Comprehensive Validation
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fleet-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: "22"
+
+jobs:
+  fleet-audit:
+    name: 🛡️ Fleet Audit & Validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: 📥 Checkout Code
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: 📦 Install Dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: 🛡️ STRICT_SYNTAX_GUARD Check
+        run: node scripts/ci/STRICT_SYNTAX_GUARD.js
+
+      - name: 🧹 ESLint Quality Gate
+        run: npx eslint lib/ --ext .js
+
+      - name: 🧪 Run Critical Unit Tests
+        run: node --test test/critical/manufacturerResolver.test.js
+
+      - name: 📁 Hybrid Folder Regression Check
+        run: |
+          HYBRIDS=$(find drivers -maxdepth 1 -type d -name "*_hybrid" 2>/dev/null | wc -l)
+          if [ "$HYBRIDS" -gt 0 ]; then
+            echo "❌ REGRESSION: Found $HYBRIDS legacy hybrid driver directories!"
+            find drivers -maxdepth 1 -type d -name "*_hybrid"
+            exit 1
+          else
+            echo "✅ No hybrid folders found."
+          fi
+
+      - name: 🔍 Homey Publish-Level Validation
+        run: npx homey app validate --level publish

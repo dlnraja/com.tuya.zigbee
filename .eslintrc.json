@@ -1,7 +1,8 @@
 {
   "env": {
     "node": true,
-    "es2022": true
+    "es2022": true,
+    "homey": true
   },
   "parserOptions": {
     "ecmaVersion": 2022,
@@ -14,6 +15,7 @@
     "no-unused-expressions": "error",
     "no-self-compare": "error",
     "no-extra-parens": ["error", "all", { "nestedBinaryExpressions": false }],
+    "no-mixed-operators": "warn",
     "curly": ["error", "all"],
     "eqeqeq": ["error", "smart"],
     "no-var": "error",
@@ -21,14 +23,18 @@
     "prefer-template": "warn",
     "no-console": "off",
     "no-debugger": "error",
-    "no-return-await": "warn",
-    "complexity": ["warn", 25],
-    "max-depth": ["warn", 5],
+    "complexity": ["warn", 15],
+    "max-depth": ["warn", 4],
     "max-nested-callbacks": ["warn", 3],
-    "max-params": ["warn", 6],
-    "max-statements": ["warn", 100],
+    "max-params": ["warn", 5],
+    "max-statements": ["warn", 50],
+    "no-return-await": "warn",
+    "handle-callback-err": ["error", "^(err|error)$"],
     "no-eval": "error",
-    "no-implied-eval": "error"
+    "no-implied-eval": "error",
+    "no-new-func": "error",
+    "no-unsafe-negation": "error",
+    "no-throw-literal": "error"
   },
   "globals": {
     "Homey": "readonly",
@@ -47,6 +53,7 @@
     "node_modules/",
     ".homey/",
     "build/",
+    "drivers/",
     "data/",
     "tmp/",
     ".cache/",
