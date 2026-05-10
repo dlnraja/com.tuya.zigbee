@@ -291,7 +291,7 @@ async function main() {
   const cmd = args[0].toLowerCase();
   const arg = args.slice(1).join(' ');
 
-  if (cmd === 'help' || (!arg && cmd !== 'urls')) {
+  if (cmd === 'help' || (!arg && !['urls', 'collect', 'gh-issues', 'gh-prs'].includes(cmd))) {
     printHelp();
     return;
   }
