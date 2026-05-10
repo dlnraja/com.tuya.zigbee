@@ -80,7 +80,8 @@ if (isPhysical) {
 
 ### BSEED ZCL-only fingerprints:
 `_TZ3000_l9brjwau`, `_TZ3000_blhvsaqf`, `_TZ3000_ysdv91bk`,
-`_TZ3000_hafsqare`, `_TZ3000_e98krvvk`, `_TZ3000_iedbgyxt`
+`_TZ3000_hafsqare`, `_TZ3000_e98krvvk`, `_TZ3000_iedbgyxt`,
+`_TZ3000_v4l4b0lp` (TS0003 3-gang switch - Issue #170)
 
 ## TUYA DP PROTOCOL
 - Cluster 0xEF00 (61184)
@@ -416,3 +417,24 @@ this.homey.settings.get('key');             // ManagerSettings
 - NEVER consecutive bot posts — always merge with own last post
 - Ghostwriter tone: casual, like a dev editing their own post ("edit: just pushed...")
 - NEVER expose: automation, bots, AI, pipelines, Johan, upstream sync
+
+## DYNAMIC APP PROMOTION & INTELLIGENT TOOLS
+
+### Parallel Release Tracks (Dual Release Guard)
+- **Live Branch (`master`)**: Compiles to App ID `com.dlnraja.tuya.zigbee` (Production / SDK v7.x).
+- **Parallel Testing Branch (`stable-v5`)**: Compiles to App ID `com.dlnraja.tuya.zigbee.stable` (v5 parallel).
+- Critical fixes and library improvements must be synchronized across both tracks.
+
+### Dynamic App Resolution in Automation
+- Never hardcode App IDs or release namespaces in automated scripts or deployment helpers (e.g., `auto-publish-draft.js`, `auto-promote-oauth.js`, `auto-promote-puppeteer.js`).
+- Always load and parse `app.json` dynamically at runtime to resolve the active App ID and compiled version.
+
+### Casing Normalization
+- Always run `scripts/maintenance/master-self-heal.js` to normalize case-variants and prevent duplicates.
+
+### Internet Research Scraper Tool
+- For web searching and workspace resource indexing without local browser/web server engines, utilize `.github/scripts/internet-research-tool.js`:
+  - `node .github/scripts/internet-research-tool.js search "query"` (DuckDuckGo scraping)
+  - `node .github/scripts/internet-research-tool.js urls` (Workspace reference URL extractor)
+  - `node .github/scripts/internet-research-tool.js fetch "url"` (Webpage-to-Markdown)
+  - `node .github/scripts/internet-research-tool.js scan "term"` (Full-text file searcher)
