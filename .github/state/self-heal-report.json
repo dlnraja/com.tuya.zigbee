@@ -1,8 +1,33 @@
 {
-  "timestamp": "2026-05-10T13:18:24.663Z",
+  "timestamp": "2026-05-10T23:33:35.787Z",
   "totalFiles": 0,
-  "totalFixes": 72,
+  "totalFixes": 77,
   "rules": {
+    "fingerprint-case": {
+      "count": 5,
+      "files": [
+        {
+          "file": "drivers\\device_din_rail\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+        },
+        {
+          "file": "drivers\\energy_meter_3phase\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+        },
+        {
+          "file": "drivers\\illuminance_sensor\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+        },
+        {
+          "file": "drivers\\motion_sensor\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+        },
+        {
+          "file": "drivers\\switch_3gang\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+        }
+      ]
+    },
     "flow-card-try-catch": {
       "count": 61,
       "files": [
