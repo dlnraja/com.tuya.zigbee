@@ -7,4 +7,4 @@ class D extends EweLinkLocalDevice{
   }
   async onInit(){await super.onInit();this.log('[EWE-PLUG] Ready - S20/S26/S26R2');}
 }
-module.exports=D;
+module.exports = D;

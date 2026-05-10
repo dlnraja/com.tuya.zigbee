@@ -6,4 +6,4 @@ class WallCurtainSwitchDriver extends Driver{
   async onInit(){this.log('wall_curtain_switch driver init');}
 }
 
-module.exports=WallCurtainSwitchDriver;
+module.exports = WallCurtainSwitchDriver;

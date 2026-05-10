@@ -7,7 +7,7 @@ get dpMappings(){return{
 '1':{capability:'onoff',writable:true,transform:v=>!!v,reverseTransform:v=>!!v},
 '2':{capability:'dim',writable:true,transform:v=>(v-10)/990,reverseTransform:v=>Math.round(v*990+10)},
 }}}
-module.exports=D;
+module.exports = D;
 `);
 w('wifi_light/device.js',`'use strict';
 const TuyaLocalDevice=require('../../lib/tuya-local/TuyaLocalDevice');
@@ -17,6 +17,6 @@ get dpMappings(){return{
 '22':{capability:'dim',writable:true,transform:v=>(v-10)/990,reverseTransform:v=>Math.round(v*990+10)},
 '23':{capability:'light_temperature',writable:true,transform:v=>v/1000,reverseTransform:v=>Math.round(v*1000)},
 }}}
-module.exports=D;
+module.exports = D;
 `);
 console.log('done');

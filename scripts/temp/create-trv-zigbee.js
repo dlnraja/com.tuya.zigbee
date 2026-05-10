@@ -24,7 +24,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * - Multi-manufacturer support (Tuya, Moes, Saswell, etc.)
  */
 
-class RadiatorValveZigbeeDevice extendsThermostatBase {
+class RadiatorValveZigbeeDevice extends ThermostatBase {
   get supportsScheduler() { return true; }
   get supportsBoost() { return true; }
   get supportsEcoMode() { return true; }

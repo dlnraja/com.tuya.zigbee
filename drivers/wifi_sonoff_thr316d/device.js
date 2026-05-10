@@ -23,4 +23,4 @@ class D extends E{
     this.log('Device deleted, cleaning up');
   }
 }
-module.exports=D;
+module.exports = D;

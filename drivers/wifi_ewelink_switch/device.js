@@ -7,4 +7,4 @@ class D extends EweLinkLocalDevice{
   }
   async onInit(){await super.onInit();this.log('[EWE-SWITCH] Ready - BASIC/MINI/RF/SV/R4/R5');}
 }
-module.exports=D;
+module.exports = D;

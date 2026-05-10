@@ -9,7 +9,7 @@ get dpMappings(){return{
 '2':{capability:'measure_humidity',transform:v=>v},
 '4':{capability:'measure_battery',transform:v=>v},
 }}}
-module.exports=D;
+module.exports = D;
 `);
 
 w('wifi_water_valve/device.js',`'use strict';
@@ -18,7 +18,7 @@ class D extends TuyaLocalDevice{
 get dpMappings(){return{
 '1':{capability:'onoff',writable:true,transform:v=>!!v,reverseTransform:v=>!!v},
 }}}
-module.exports=D;
+module.exports = D;
 `);
 
 w('wifi_air_purifier/device.js',`'use strict';
@@ -27,7 +27,7 @@ class D extends TuyaLocalDevice{
 get dpMappings(){return{
 '1':{capability:'onoff',writable:true,transform:v=>!!v,reverseTransform:v=>!!v},
 }}}
-module.exports=D;
+module.exports = D;
 `);
 
 w('wifi_ir_remote/device.js',`'use strict';
@@ -36,7 +36,7 @@ class D extends TuyaLocalDevice{
 get dpMappings(){return{
 '1':{capability:'onoff',writable:true,transform:v=>!!v,reverseTransform:v=>!!v},
 }}}
-module.exports=D;
+module.exports = D;
 `);
 
 w('wifi_pet_feeder/device.js',`'use strict';
@@ -45,7 +45,7 @@ class D extends TuyaLocalDevice{
 get dpMappings(){return{
 '1':{capability:'onoff',writable:true,transform:v=>!!v,reverseTransform:v=>!!v},
 }}}
-module.exports=D;
+module.exports = D;
 `);
 
 w('wifi_robot_vacuum/device.js',`'use strict';
@@ -56,6 +56,6 @@ get dpMappings(){return{
 '1':{capability:'onoff',writable:true,transform:v=>!!v,reverseTransform:v=>!!v},
 '3':{capability:'vacuumcleaner_state',transform:v=>SM[v]||'stopped'},
 }}}
-module.exports=D;
+module.exports = D;
 `);
 console.log('misc done');
