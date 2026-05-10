@@ -4,7 +4,32 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## v5.11.211 (2026-05-03)
+## [7.5.9] - 2026-05-10
+
+### Bug Fixes
+- Fix ProtocolArbitrator reference error in BaseHybridDevice initialization (crash on startup)
+- Reclassify _TZE608 openers from contact_sensor to garage_door_opener (#305)
+- Resolve fleet-wide extends syntax crash across 59 driver files
+- Remove duplicate driver.flow.compose.json in hybrid drivers (SDK3 validation fix)
+- Remove SDK3 deprecated getTriggerCard references (runtime crash)
+- Implement case-insensitive driver profile and DP lookup matching
+- Clean 3,784 duplicate fingerprints and resolve driver collisions
+- Fix SourceCredits MODULE_NOT_FOUND crash on all Homey firmware versions (#302)
+- Make DeviceIdentificationDatabase crash-proof
+- Implement O(1) DynamicDriverMatcher with caseless resolver
+
+### New Features
+- Add 5 missing fingerprints: Loratap, Wall Remote, Climate Sensors
+- Add Z2M enriched fingerprints with anti-generic audit fix
+- Add rain and soil sensor pairing casing fixes and custom settings handler
+- Add uppercase manufacturer name variants for soil and rain sensors
+- Add 4 new hybrid drivers
+
+### Stats
+- 221 drivers, 6636 fingerprints
+---
+
+ v5.11.211 (2026-05-03)
 
 ### Critical Fixes
 - Fixed SourceCredits crash on startup (MODULE_NOT_FOUND)
