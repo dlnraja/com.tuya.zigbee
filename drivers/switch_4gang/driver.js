@@ -128,24 +128,21 @@ class Switch4GangDriver extends ZigBeeDriver {
 
       // v5.5.930: LED backlight flow cards
       try {
-        this.homey.flow.getActionCard('switch_4gang_set_backlight')
-          .registerRunListener(this._safeAction(async (args) => {
+        (() => { try { return this.homey.flow.getActionCard('switch_4gang_set_backlight'); } catch(e) { return null; } })()?.registerRunListener(this._safeAction(async (args) => {
             await args.device.setBacklightMode(args.mode);
           }));
         this.log('[FLOW] ✅ switch_4gang_set_backlight');
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
       try {
-        this.homey.flow.getActionCard('switch_4gang_set_backlight_color')
-          .registerRunListener(this._safeAction(async (args) => {
+        (() => { try { return this.homey.flow.getActionCard('switch_4gang_set_backlight_color'); } catch(e) { return null; } })()?.registerRunListener(this._safeAction(async (args) => {
             await args.device.setBacklightColor(args.state, args.color);
           }));
         this.log('[FLOW] ✅ switch_4gang_set_backlight_color');
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
       try {
-        this.homey.flow.getActionCard('switch_4gang_set_backlight_brightness')
-          .registerRunListener(this._safeAction(async (args) => {
+        (() => { try { return this.homey.flow.getActionCard('switch_4gang_set_backlight_brightness'); } catch(e) { return null; } })()?.registerRunListener(this._safeAction(async (args) => {
             await args.device.setBacklightBrightness(args.brightness);
           }));
         this.log('[FLOW] ✅ switch_4gang_set_backlight_brightness');
@@ -155,8 +152,7 @@ class Switch4GangDriver extends ZigBeeDriver {
       const caps = ['onoff', 'onoff.gang2', 'onoff.gang3', 'onoff.gang4'];
       ['gang1', 'gang2', 'gang3', 'gang4'].forEach((gang, idx) => {
         try {
-          this.homey.flow.getActionCard(`switch_4gang_toggle_${gang}`)
-            .registerRunListener(this._safeAction(async (args) => {
+          (() => { try { return this.homey.flow.getActionCard(`switch_4gang_toggle_${gang}`); } catch(e) { return null; } })()?.registerRunListener(this._safeAction(async (args) => {
               const cap = caps[idx];
               const v = args.device.getCapabilityValue(cap);
               await args.device._setGangOnOff(idx + 1, !v).catch(() => {});
@@ -166,8 +162,7 @@ class Switch4GangDriver extends ZigBeeDriver {
       });
 
       try {
-        this.homey.flow.getActionCard('switch_4gang_turn_on_all')
-          .registerRunListener(this._safeAction(async (args) => {
+        (() => { try { return this.homey.flow.getActionCard('switch_4gang_turn_on_all'); } catch(e) { return null; } })()?.registerRunListener(this._safeAction(async (args) => {
             for (const cap of caps) {
               const gi = caps.indexOf(cap) + 1;
               if (args.device.hasCapability(cap)) await args.device._setGangOnOff(gi, true).catch(() => {});
@@ -177,8 +172,7 @@ class Switch4GangDriver extends ZigBeeDriver {
       } catch (e) { this.log(`[FLOW] ⚠️ ${e.message}`); }
 
       try {
-        this.homey.flow.getActionCard('switch_4gang_turn_off_all')
-          .registerRunListener(this._safeAction(async (args) => {
+        (() => { try { return this.homey.flow.getActionCard('switch_4gang_turn_off_all'); } catch(e) { return null; } })()?.registerRunListener(this._safeAction(async (args) => {
             for (const cap of caps) {
               const gi = caps.indexOf(cap) + 1;
               if (args.device.hasCapability(cap)) await args.device._setGangOnOff(gi, false).catch(() => {});
@@ -193,8 +187,7 @@ class Switch4GangDriver extends ZigBeeDriver {
       }
 
       try {
-        this.homey.flow.getActionCard('switch_4gang_set_scene_mode')
-          .registerRunListener(this._safeAction(async (args) => {
+        (() => { try { return this.homey.flow.getActionCard('switch_4gang_set_scene_mode'); } catch(e) { return null; } })()?.registerRunListener(this._safeAction(async (args) => {
             await args.device.setSceneMode(args.mode);
           }));
         this.log('[FLOW] ✅ switch_4gang_set_scene_mode');

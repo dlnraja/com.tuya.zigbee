@@ -14,9 +14,7 @@
     "alarm_water",
     "onoff",
     "target_temperature",
-    "dim.speed",
-    "measure_battery",
-    "alarm_battery"
+    "dim.speed"
   ],
   "capabilitiesOptions": {
     "onoff": {

@@ -66,14 +66,12 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
         const pct = Math.round(dim * 100);
         this.setCapabilityValue('dim', dim).catch(() => {});
         this.log('[KNOB] Level:', pct + '%');
-        this.homey.flow.getDeviceTriggerCard('smart_knob_level_changed')
-          .trigger(this, { level: pct }, {}).catch(() => {});
+        (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_level_changed'); } catch(e) { return null; } })()?.trigger(this, { level: pct }, {}).catch(() => {});
       });
       level.on('commandMove', ({ moveMode, rate }) => {
         const direction = moveMode === 0 ? 'up' : 'down';
         this.log('[KNOB] Move ' + direction + ' rate:' + rate);
-        this.homey.flow.getDeviceTriggerCard('smart_knob_rotated')
-          .trigger(this, { direction, level: this.getCapabilityValue('dim') ? Math.round(this.getCapabilityValue('dim') * 100) : 0 }, {}).catch(() => {});
+        (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotated'); } catch(e) { return null; } })()?.trigger(this, { direction, level: this.getCapabilityValue('dim') ? Math.round(this.getCapabilityValue('dim') * 100) : 0 }, {}).catch(() => {});
       });
       level.on('commandStep', ({ stepMode, stepSize }) => {
         const curDim = this.getCapabilityValue('dim') || 0;
@@ -83,10 +81,8 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
         this.setCapabilityValue('dim', newDim).catch(() => {});
         this.log('[KNOB] Step to:', pct + '%');
         const direction = stepMode === 0 ? 'up' : 'down';
-        this.homey.flow.getDeviceTriggerCard('smart_knob_rotated')
-          .trigger(this, { direction, level: pct }, {}).catch(() => {});
-        this.homey.flow.getDeviceTriggerCard('smart_knob_level_changed')
-          .trigger(this, { level: pct }, {}).catch(() => {});
+        (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotated'); } catch(e) { return null; } })()?.trigger(this, { direction, level: pct }, {}).catch(() => {});
+        (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_level_changed'); } catch(e) { return null; } })()?.trigger(this, { level: pct }, {}).catch(() => {});
       });
     }
 
@@ -109,11 +105,10 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
     this._lastPressType = pressType;
     this.setCapabilityValue('button', true).catch(() => {});
     this.log(`[KNOB] 🔘 ${pressType.toUpperCase()} press`);
-    this.homey.flow.getDeviceTriggerCard('smart_knob_button_pressed')
-      .trigger(this, { press_type: pressType }, {}).catch(() => {});
+    (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_button_pressed'); } catch(e) { return null; } })()?.trigger(this, { press_type: pressType }, {}).catch(() => {});
     const card = { single: 'smart_knob_single_press', double: 'smart_knob_double_press', long: 'smart_knob_long_press' }[pressType];
     if (card) {
-      this.homey.flow.getDeviceTriggerCard(card).trigger(this, {}, {}).catch(() => {});
+      (() => { try { return this.homey.flow.getDeviceTriggerCard(card); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
     }
   }
 

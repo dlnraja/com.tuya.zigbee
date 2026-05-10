@@ -15,8 +15,7 @@ class DoorControllerDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Door is open
     try {
-      this.homey.flow.getConditionCard('door_controller_is_open')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getConditionCard('door_controller_is_open'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_contact') === true;
         });
@@ -25,8 +24,7 @@ class DoorControllerDriver extends ZigBeeDriver {
 
     // CONDITION: Door is locked
     try {
-      this.homey.flow.getConditionCard('door_controller_is_locked')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getConditionCard('door_controller_is_locked'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('locked') === true;
         });
@@ -35,8 +33,7 @@ class DoorControllerDriver extends ZigBeeDriver {
 
     // ACTION: Open door
     try {
-      this.homey.flow.getActionCard('door_controller_open')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('door_controller_open'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
@@ -47,8 +44,7 @@ class DoorControllerDriver extends ZigBeeDriver {
 
     // ACTION: Close door
     try {
-      this.homey.flow.getActionCard('door_controller_close')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('door_controller_close'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
@@ -59,8 +55,7 @@ class DoorControllerDriver extends ZigBeeDriver {
 
     // ACTION: Lock door
     try {
-      this.homey.flow.getActionCard('door_controller_lock')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('door_controller_lock'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('locked', true);
           return true;
@@ -70,8 +65,7 @@ class DoorControllerDriver extends ZigBeeDriver {
 
     // ACTION: Unlock door
     try {
-      this.homey.flow.getActionCard('door_controller_unlock')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('door_controller_unlock'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('locked', false);
           return true;

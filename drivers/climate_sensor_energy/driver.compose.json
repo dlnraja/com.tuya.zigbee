@@ -1,0 +1,72 @@
+{
+  "name": {
+    "en": "Climate Sensor Energy",
+    "nl": "Climate Sensor Energy",
+    "fr": "Climate Sensor Energy"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "measure_power",
+    "meter_power",
+    "measure_voltage",
+    "measure_current",
+    "measure_power.phase1",
+    "measure_power.phase2",
+    "measure_power.phase3",
+    "measure_battery",
+    "alarm_battery",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "energy": {
+    "batteries": [
+      "AAA",
+      "AAA"
+    ]
+  },
+  "zigbee": {
+    "manufacturerName": [
+      "_tze284_6ocnqlhn",
+      "_TZE284_6ocnqlhn",
+      "_TZE284_6OCNQLHN"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          2820,
+          1794,
+          61184
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/energy_meter_3phase/assets/images/small.png",
+    "large": "drivers/energy_meter_3phase/assets/images/large.png",
+    "xlarge": "drivers/energy_meter_3phase/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "Vérifier MàJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ]
+}

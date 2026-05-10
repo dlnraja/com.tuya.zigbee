@@ -15,8 +15,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is open
     try {
-      this.homey.flow.getConditionCard('shutter_roller_controller_is_open')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getConditionCard('shutter_roller_controller_is_open'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           const pos = args.device.getCapabilityValue('windowcoverings_set') || 0;
           return pos > 0;
@@ -26,8 +25,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
     // CONDITION: Position above
     try {
-      this.homey.flow.getConditionCard('shutter_roller_controller_position_above')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getConditionCard('shutter_roller_controller_position_above'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           const pos = args.device.getCapabilityValue('windowcoverings_set') || 0;
           return (pos * 100) > (args.position || 50);
@@ -37,8 +35,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
     // CONDITION: Is moving
     try {
-      this.homey.flow.getConditionCard('shutter_roller_controller_is_moving')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getConditionCard('shutter_roller_controller_is_moving'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           const state = args.device.getCapabilityValue('windowcoverings_state');
           return state === 'up' || state === 'down';
@@ -48,8 +45,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
     // ACTION: Open
     try {
-      this.homey.flow.getActionCard('shutter_roller_controller_open')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('shutter_roller_controller_open'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('windowcoverings_set', 1);
           return true;
@@ -59,8 +55,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
     // ACTION: Close
     try {
-      this.homey.flow.getActionCard('shutter_roller_controller_close')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('shutter_roller_controller_close'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('windowcoverings_set', 0);
           return true;
@@ -70,8 +65,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
     // ACTION: Stop
     try {
-      this.homey.flow.getActionCard('shutter_roller_controller_stop')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('shutter_roller_controller_stop'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('windowcoverings_state', 'idle');
           return true;
@@ -81,8 +75,7 @@ class RollerShutterControllerDriver extends ZigBeeDriver {
 
     // ACTION: Set position
     try {
-      this.homey.flow.getActionCard('shutter_roller_controller_set_position')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('shutter_roller_controller_set_position'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('windowcoverings_set', (args.position || 50) / 100);
           return true;

@@ -107,15 +107,16 @@ function createHybridDriver() {
       }
 
       // Merge capabilities and endpoints from all clashing drivers into the's compose
-      constComposeFile = path.join(targetDir, 'driver.compose.json');
-      constCompose = JSON.parse(fs.readFileSync(hybridComposeFile, 'utf8'));
+      // Merge capabilities and endpoints from all clashing drivers into the compose
+      const composeFile = path.join(targetDir, 'driver.compose.json');
+      let hybridCompose = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
       
       const allCaps = new Set(hybridCompose.capabilities || []);
       const allMfrs = new Set();
       const allPids = new Set();
 
       // Change name
-     Compose.name = {
+      hybridCompose.name = {
         "en": newName.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
         "nl": newName.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase()),
         "fr": newName.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
@@ -126,7 +127,7 @@ function createHybridDriver() {
         if (c.capabilities) c.capabilities.forEach(cap => allCaps.add(cap));
       }
 
-     Compose.capabilities = Array.from(allCaps);
+      hybridCompose.capabilities = Array.from(allCaps);
       
       // Add the clashing FPs to the driver
       for (const fp of fps) {
@@ -135,15 +136,15 @@ function createHybridDriver() {
         allPids.add(pid);
       }
       
-      if(!hybridCompose.zigbee)Compose.zigbee = {};
-     Compose.zigbee.manufacturerName = Array.from(allMfrs);
-     Compose.zigbee.productId = Array.from(allPids);
+      if(!hybridCompose.zigbee) hybridCompose.zigbee = {};
+      hybridCompose.zigbee.manufacturerName = Array.from(allMfrs);
+      hybridCompose.zigbee.productId = Array.from(allPids);
       
-      fs.writeFileSync(hybridComposeFile, JSON.stringify(hybridCompose, null, 2) + '\n');
+      fs.writeFileSync(composeFile, JSON.stringify(hybridCompose, null, 2) + '\n');
     } else {
       // If already exists, just append the FPs
-      constComposeFile = path.join(targetDir, 'driver.compose.json');
-      constCompose = JSON.parse(fs.readFileSync(hybridComposeFile, 'utf8'));
+      const composeFile = path.join(targetDir, 'driver.compose.json');
+      let hybridCompose = JSON.parse(fs.readFileSync(composeFile, 'utf8'));
       
       const allMfrs = new Set(hybridCompose.zigbee?.manufacturerName || []);
       const allPids = new Set(hybridCompose.zigbee?.productId || []);
@@ -154,9 +155,9 @@ function createHybridDriver() {
         allPids.add(pid);
       }
 
-     Compose.zigbee.manufacturerName = Array.from(allMfrs);
-     Compose.zigbee.productId = Array.from(allPids);
-      fs.writeFileSync(hybridComposeFile, JSON.stringify(hybridCompose, null, 2) + '\n');
+      hybridCompose.zigbee.manufacturerName = Array.from(allMfrs);
+      hybridCompose.zigbee.productId = Array.from(allPids);
+      fs.writeFileSync(composeFile, JSON.stringify(hybridCompose, null, 2) + '\n');
     }
 
     // Now, REMOVE the clashing manufacturer AND productId intersections from the old drivers

@@ -7,36 +7,28 @@ class RemoteDimmerDriver extends Driver {
     this.log('Remote Control Dimmer driver initialized');
 
     // Trigger: ON button pressed
-    this.homey.flow.getDeviceTriggerCard('remote_dimmer_button_on')
-      .registerRunListener(async () => true);
+    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_button_on'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
 
     // Trigger: OFF button pressed
-    this.homey.flow.getDeviceTriggerCard('remote_dimmer_button_off')
-      .registerRunListener(async () => true);
+    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_button_off'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
 
     // Trigger: Toggle button pressed
-    this.homey.flow.getDeviceTriggerCard('remote_dimmer_button_toggle')
-      .registerRunListener(async () => true);
+    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_button_toggle'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
 
     // Trigger: Brightness up
-    this.homey.flow.getDeviceTriggerCard('remote_dimmer_brightness_up')
-      .registerRunListener(async () => true);
+    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_brightness_up'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
 
     // Trigger: Brightness down
-    this.homey.flow.getDeviceTriggerCard('remote_dimmer_brightness_down')
-      .registerRunListener(async () => true);
+    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_brightness_down'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
 
     // Trigger: Brightness stop
-    this.homey.flow.getDeviceTriggerCard('remote_dimmer_brightness_stop')
-      .registerRunListener(async () => true);
+    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_brightness_stop'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
 
     // Trigger: Brightness set
-    this.homey.flow.getDeviceTriggerCard('remote_dimmer_brightness_set')
-      .registerRunListener(async () => true);
+    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_brightness_set'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
 
     // Trigger: Scene recalled
-    this.homey.flow.getDeviceTriggerCard('remote_dimmer_scene')
-      .registerRunListener(async () => true);
+    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_scene'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
   }
 }
 
