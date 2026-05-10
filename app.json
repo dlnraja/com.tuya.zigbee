@@ -17443,238 +17443,6 @@
         ]
       },
       {
-        "id": "switch_2gang_gang1_turned_on_dup_mp7ii",
-        "title": {
-          "en": "Gang 1 turned on",
-          "fr": "Gang 1 allumé",
-          "nl": "Gang 1 aangezet",
-          "de": "Gang 1 eingeschaltet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_gang1_turned_off_dup_9tm04",
-        "title": {
-          "en": "Gang 1 turned off",
-          "fr": "Gang 1 éteint",
-          "nl": "Gang 1 uitgezet",
-          "de": "Gang 1 ausgeschaltet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_gang2_turned_on_dup_jmjhn",
-        "title": {
-          "en": "Gang 2 turned on",
-          "fr": "Gang 2 allumé",
-          "nl": "Gang 2 aangezet",
-          "de": "Gang 2 eingeschaltet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_gang2_turned_off_dup_sp9yr",
-        "title": {
-          "en": "Gang 2 turned off",
-          "fr": "Gang 2 éteint",
-          "nl": "Gang 2 uitgezet",
-          "de": "Gang 2 ausgeschaltet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_physical_gang1_on_dup_gw7za",
-        "title": {
-          "en": "Physical button gang 1 ON",
-          "fr": "Bouton physique gang 1 ON",
-          "nl": "Fysieke knop gang 1 AAN",
-          "de": "Physische Taste gang 1 EIN"
-        },
-        "hint": {
-          "en": "Triggers only when physical button turns ON gang 1",
-          "fr": "Se déclenche uniquement quand le bouton physique allume gang 1",
-          "nl": "Triggert alleen wanneer fysieke knop gang 1 inschakelt",
-          "de": "Wird nur ausgelöst, wenn physische Taste gang 1 einschaltet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_physical_gang1_off_dup_8axi2",
-        "title": {
-          "en": "Physical button gang 1 OFF",
-          "fr": "Bouton physique gang 1 OFF",
-          "nl": "Fysieke knop gang 1 UIT",
-          "de": "Physische Taste gang 1 AUS"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_physical_gang2_on_dup_wzafm",
-        "title": {
-          "en": "Physical button gang 2 ON",
-          "fr": "Bouton physique gang 2 ON",
-          "nl": "Fysieke knop gang 2 AAN",
-          "de": "Physische Taste gang 2 EIN"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_physical_gang2_off_dup_nh22j",
-        "title": {
-          "en": "Physical button gang 2 OFF",
-          "fr": "Bouton physique gang 2 OFF",
-          "nl": "Fysieke knop gang 2 UIT",
-          "de": "Physische Taste gang 2 AUS"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turned_on_dup_t8zqh",
-        "title": {
-          "en": "Turned on",
-          "fr": "Allumé",
-          "nl": "Aangezet",
-          "de": "Eingeschaltet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turned_off_dup_uumxz",
-        "title": {
-          "en": "Turned off",
-          "fr": "Éteint",
-          "nl": "Uitgezet",
-          "de": "Ausgeschaltet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_power_changed_dup_po97j",
-        "title": {
-          "en": "Power changed",
-          "fr": "Puissance changée",
-          "nl": "Vermogen gewijzigd",
-          "de": "Leistung geändert"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_gang1_scene_dup_x88ma",
-        "title": {
-          "en": "Gang 1 scene triggered"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action"
-            },
-            "example": {
-              "en": "on"
-            }
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_gang2_scene_dup_pbba2",
-        "title": {
-          "en": "Gang 2 scene triggered"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action"
-            },
-            "example": {
-              "en": "on"
-            }
-          }
-        ]
-      },
-      {
         "id": "switch_1gang_turned_on",
         "title": {
           "en": "Turned on",
@@ -31142,54 +30910,6 @@
         ]
       },
       {
-        "id": "switch_2gang_gang1_is_on_dup_fofko",
-        "title": {
-          "en": "Gang 1 is !{{on|off}}",
-          "fr": "Gang 1 est !{{allumé|éteint}}",
-          "nl": "Gang 1 is !{{aan|uit}}",
-          "de": "Gang 1 ist !{{ein|aus}}"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_gang2_is_on_dup_zcnjp",
-        "title": {
-          "en": "Gang 2 is !{{on|off}}",
-          "fr": "Gang 2 est !{{allumé|éteint}}",
-          "nl": "Gang 2 is !{{aan|uit}}",
-          "de": "Gang 2 ist !{{ein|aus}}"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_is_on_dup_18uj2",
-        "title": {
-          "en": "Is !{{on|off}}",
-          "fr": "Est !{{allumé|éteint}}",
-          "nl": "Is !{{aan|uit}}",
-          "de": "Ist !{{ein|aus}}"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
         "id": "switch_1gang_is_on",
         "title": {
           "en": "Is !{{on|off}}",
@@ -39453,292 +39173,6 @@
         ]
       },
       {
-        "id": "switch_2gang_turn_on_gang1_dup_388ho",
-        "title": {
-          "en": "Turn on gang 1",
-          "fr": "Allumer gang 1",
-          "nl": "Gang 1 aanzetten",
-          "de": "Gang 1 einschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turn_off_gang1_dup_50ly9",
-        "title": {
-          "en": "Turn off gang 1",
-          "fr": "Éteindre gang 1",
-          "nl": "Gang 1 uitzetten",
-          "de": "Gang 1 ausschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turn_on_gang2_dup_i4u1e",
-        "title": {
-          "en": "Turn on gang 2",
-          "fr": "Allumer gang 2",
-          "nl": "Gang 2 aanzetten",
-          "de": "Gang 2 einschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turn_off_gang2_dup_yr4no",
-        "title": {
-          "en": "Turn off gang 2",
-          "fr": "Éteindre gang 2",
-          "nl": "Gang 2 uitzetten",
-          "de": "Gang 2 ausschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_toggle_gang1_dup_7h8xm",
-        "title": {
-          "en": "Toggle gang 1",
-          "fr": "Basculer gang 1",
-          "nl": "Gang 1 wisselen",
-          "de": "Gang 1 umschalten"
-        },
-        "hint": {
-          "en": "Toggle the state of gang 1 (on→off, off→on)",
-          "fr": "Basculer l'état du gang 1",
-          "nl": "Wissel de status van gang 1",
-          "de": "Status von Gang 1 umschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_toggle_gang2_dup_v991u",
-        "title": {
-          "en": "Toggle gang 2",
-          "fr": "Basculer gang 2",
-          "nl": "Gang 2 wisselen",
-          "de": "Gang 2 umschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turn_on_all_dup_wcbv5",
-        "title": {
-          "en": "Turn on all gangs",
-          "fr": "Allumer tous les gangs",
-          "nl": "Alle gangs aanzetten",
-          "de": "Alle Gangs einschalten"
-        },
-        "hint": {
-          "en": "Turn on both gang 1 and gang 2",
-          "fr": "Allumer gang 1 et gang 2",
-          "nl": "Gang 1 en gang 2 aanzetten",
-          "de": "Gang 1 und Gang 2 einschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turn_off_all_dup_mes91",
-        "title": {
-          "en": "Turn off all gangs",
-          "fr": "Éteindre tous les gangs",
-          "nl": "Alle gangs uitzetten",
-          "de": "Alle Gangs ausschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_set_backlight_dup_9ax17",
-        "title": {
-          "en": "Set LED backlight mode",
-          "fr": "Définir le mode rétroéclairage LED",
-          "nl": "LED achtergrondverlichting instellen",
-          "de": "LED-Hintergrundbeleuchtung einstellen"
-        },
-        "hint": {
-          "en": "Control the switch LED indicator (requires Tuya DP15 support)",
-          "fr": "Contrôle l'indicateur LED (nécessite Tuya DP15)",
-          "nl": "Beheer de schakelaar LED indicator (vereist Tuya DP15)",
-          "de": "Steuert die Schalter-LED-Anzeige (erfordert Tuya DP15)"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          },
-          {
-            "type": "dropdown",
-            "name": "mode",
-            "title": {
-              "en": "Mode",
-              "fr": "Mode",
-              "nl": "Modus",
-              "de": "Modus"
-            },
-            "values": [
-              {
-                "id": "off",
-                "label": {
-                  "en": "Off",
-                  "fr": "Éteint",
-                  "nl": "Uit",
-                  "de": "Aus"
-                }
-              },
-              {
-                "id": "normal",
-                "label": {
-                  "en": "Normal (LED when ON)",
-                  "fr": "Normal (LED quand allumé)",
-                  "nl": "Normaal (LED bij AAN)",
-                  "de": "Normal (LED bei EIN)"
-                }
-              },
-              {
-                "id": "inverted",
-                "label": {
-                  "en": "Inverted (LED when OFF)",
-                  "fr": "Inversé (LED quand éteint)",
-                  "nl": "Omgekeerd (LED bij UIT)",
-                  "de": "Invertiert (LED bei AUS)"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turn_on_dup_eazqq",
-        "title": {
-          "en": "Turn on",
-          "fr": "Allumer",
-          "nl": "Aanzetten",
-          "de": "Einschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turn_off_dup_qnr7m",
-        "title": {
-          "en": "Turn off",
-          "fr": "Éteindre",
-          "nl": "Uitzetten",
-          "de": "Ausschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_toggle_dup_mvw87",
-        "title": {
-          "en": "Toggle",
-          "fr": "Basculer",
-          "nl": "Wisselen",
-          "de": "Umschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_set_scene_mode_dup_fpixx",
-        "title": {
-          "en": "Set scene mode"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch"
-          },
-          {
-            "name": "mode",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "auto",
-                "label": {
-                  "en": "Auto (Normal + flows)"
-                }
-              },
-              {
-                "id": "magic",
-                "label": {
-                  "en": "Magic (Scene only)"
-                }
-              },
-              {
-                "id": "both",
-                "label": {
-                  "en": "Both (Load + scene)"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
         "id": "switch_1gang_turn_on",
         "title": {
           "en": "Turn on",
@@ -46543,7 +45977,8 @@
         "measure_voc",
         "measure_formaldehyde",
         "alarm_generic",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "subDevices": [],
       "capabilitiesOptions": {
@@ -46775,8 +46210,7 @@
         "measure_humidity",
         "measure_voc",
         "measure_formaldehyde",
-        "alarm_generic",
-        "measure_battery"
+        "alarm_generic"
       ],
       "capabilitiesOptions": {
         "alarm_generic": {
@@ -47182,7 +46616,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -47644,7 +47079,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -48176,7 +47612,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -48638,7 +48075,8 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -49230,7 +48668,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -49711,7 +49150,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -50035,7 +49475,8 @@
       "class": "sensor",
       "capabilities": [
         "alarm_generic",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "alarm_generic": {
@@ -50552,7 +49993,8 @@
       },
       "class": "button",
       "capabilities": [
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_battery": {
@@ -50943,7 +50385,8 @@
       "class": "sensor",
       "capabilities": [
         "button.1",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -51438,7 +50881,8 @@
       "capabilities": [
         "button.1",
         "button.2",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -51871,7 +51315,8 @@
         "button.1",
         "button.2",
         "button.3",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -52376,7 +51821,8 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -52928,7 +52374,8 @@
         "button.4",
         "button.5",
         "button.6",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -53416,7 +52863,8 @@
         "button.6",
         "button.7",
         "button.8",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -53923,7 +53371,8 @@
       "class": "sensor",
       "capabilities": [
         "button.1",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -54319,8 +53768,7 @@
       "capabilities": [
         "dim",
         "onoff",
-        "dim.speed",
-        "measure_battery"
+        "dim.speed"
       ],
       "energy": {
         "batteries": [
@@ -54642,7 +54090,8 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -55354,9 +54803,6 @@
           "_tze200_kf2hbko4",
           "_TZE200_kf2hbko4",
           "_TZE200_KF2HBKO4",
-          "_tze200_khah2lkr",
-          "_TZE200_khah2lkr",
-          "_TZE200_KHAH2LKR",
           "_tze200_khx7nnka",
           "_TZE200_khx7nnka",
           "_TZE200_KHX7NNKA",
@@ -56278,9 +55724,6 @@
           "_tze284_6kijc7nd",
           "_TZE284_6kijc7nd",
           "_TZE284_6KIJC7ND",
-          "_tze284_6ocnqlhn",
-          "_TZE284_6ocnqlhn",
-          "_TZE284_6OCNQLHN",
           "_tze284_6teua268",
           "_TZE284_6teua268",
           "_TZE284_6TEUA268",
@@ -57143,6 +56586,390 @@
     },
     {
       "name": {
+        "en": "Device Radiator Valve Smart",
+        "nl": "Device Radiator Valve Smart",
+        "fr": "Device Radiator Valve Smart"
+      },
+      "class": "thermostat",
+      "capabilities": [
+        "target_temperature",
+        "measure_temperature",
+        "thermostat_mode",
+        "measure_battery",
+        "measure_humidity",
+        "alarm_battery"
+      ],
+      "energy": {
+        "batteries": [
+          "AA"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      },
+      "zigbee": {
+        "manufacturerName": [],
+        "productId": [
+          "TS0601"
+        ],
+        "learnmode": {
+          "image": "/drivers/radiator_valve/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "power_source",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Source",
+            "fr": "Source d'Alimentation"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "ac",
+              "label": {
+                "en": "AC Powered",
+                "fr": "Alimentation Secteur"
+              }
+            },
+            {
+              "id": "dc",
+              "label": {
+                "en": "DC Powered",
+                "fr": "Alimentation DC"
+              }
+            },
+            {
+              "id": "battery",
+              "label": {
+                "en": "Battery Powered",
+                "fr": "Sur Batterie"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select power source manually or use auto-detection",
+            "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+          }
+        },
+        {
+          "id": "battery_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Battery Type",
+            "fr": "Type de Batterie"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "CR2032",
+              "label": {
+                "en": "CR2032",
+                "fr": "CR2032 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "CR2450",
+              "label": {
+                "en": "CR2450",
+                "fr": "CR2450 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "AAA",
+              "label": {
+                "en": "AAA",
+                "fr": "AAA"
+              }
+            },
+            {
+              "id": "AA",
+              "label": {
+                "en": "AA",
+                "fr": "AA"
+              }
+            },
+            {
+              "id": "CR123A",
+              "label": {
+                "en": "CR123A",
+                "fr": "CR123A"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select battery type manually or use auto-detection based on voltage",
+            "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+          }
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible (%)"
+          },
+          "value": 20,
+          "min": 0,
+          "max": 50,
+          "step": 5,
+          "hint": {
+            "en": "Trigger low battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "battery_critical_threshold",
+          "type": "number",
+          "label": {
+            "en": "Critical Battery Threshold",
+            "fr": "Seuil Batterie Critique (%)"
+          },
+          "value": 10,
+          "min": 0,
+          "max": 30,
+          "step": 5,
+          "hint": {
+            "en": "Trigger critical battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "enable_battery_notifications",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true,
+          "hint": {
+            "en": "Send flow notifications for battery events",
+            "fr": "Envoyer des notifications de flow pour les événements de batterie"
+          }
+        },
+        {
+          "id": "battery_report_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Report Interval",
+            "fr": "Intervalle Rapport Batterie (heures)"
+          },
+          "value": 24,
+          "min": 1,
+          "max": 168,
+          "step": 1,
+          "hint": {
+            "en": "How often to request battery status updates",
+            "fr": "Fréquence de demande des mises à jour d'état de batterie"
+          }
+        },
+        {
+          "id": "optimization_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Energy Optimization Mode",
+            "fr": "Mode Optimisation Énergétique"
+          },
+          "value": "balanced",
+          "values": [
+            {
+              "id": "performance",
+              "label": {
+                "en": "Performance (More responsive)",
+                "fr": "Performance (Plus réactif)"
+              }
+            },
+            {
+              "id": "balanced",
+              "label": {
+                "en": "Balanced",
+                "fr": "Équilibré"
+              }
+            },
+            {
+              "id": "power_saving",
+              "label": {
+                "en": "Power Saving (Longer battery)",
+                "fr": "Économie d'énergie (Batterie plus longue)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Balance between responsiveness and battery life",
+            "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+          }
+        },
+        {
+          "id": "show_voltage",
+          "type": "checkbox",
+          "label": {
+            "en": "Show Battery Voltage",
+            "fr": "Afficher Tension Batterie"
+          },
+          "value": false,
+          "hint": {
+            "en": "Display raw battery voltage in device settings",
+            "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+          }
+        },
+        {
+          "id": "enable_power_estimation",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Power Estimation",
+            "fr": "Activer Estimation Puissance"
+          },
+          "value": true,
+          "hint": {
+            "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+            "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+          }
+        }
+      ],
+      "images": {
+        "small": "drivers/radiator_valve/assets/images/small.png",
+        "large": "drivers/radiator_valve/assets/images/large.png",
+        "xlarge": "drivers/radiator_valve/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "select_driver"
+          }
+        },
+        {
+          "id": "select_driver",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
+      "id": "climate_sensor_device"
+    },
+    {
+      "name": {
+        "en": "Climate Sensor Energy",
+        "nl": "Climate Sensor Energy",
+        "fr": "Climate Sensor Energy"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current",
+        "measure_power.phase1",
+        "measure_power.phase2",
+        "measure_power.phase3",
+        "measure_battery",
+        "alarm_battery",
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "energy": {
+        "batteries": [
+          "AAA",
+          "AAA"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_tze284_6ocnqlhn",
+          "_TZE284_6ocnqlhn",
+          "_TZE284_6OCNQLHN"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              3,
+              4,
+              5,
+              6,
+              2820,
+              1794,
+              61184
+            ]
+          }
+        }
+      },
+      "images": {
+        "small": "drivers/energy_meter_3phase/assets/images/small.png",
+        "large": "drivers/energy_meter_3phase/assets/images/large.png",
+        "xlarge": "drivers/energy_meter_3phase/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
+      "id": "climate_sensor_energy"
+    },
+    {
+      "name": {
         "en": "CO Sensor",
         "fr": "Capteur CO",
         "nl": "CO Sensor",
@@ -57153,7 +56980,8 @@
         "alarm_co",
         "measure_battery",
         "measure_co",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -57226,7 +57054,8 @@
         "alarm_contact",
         "measure_battery",
         "alarm_tamper",
-        "measure_luminance"
+        "measure_luminance",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -57870,8 +57699,7 @@
         "windowcoverings_tilt_set",
         "measure_luminance",
         "button",
-        "dim",
-        "measure_battery"
+        "dim"
       ],
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -58665,7 +58493,6 @@
         "measure_luminance",
         "button",
         "dim",
-        "measure_battery",
         "alarm_generic"
       ],
       "capabilitiesOptions": {
@@ -59086,7 +58913,8 @@
         "windowcoverings_set",
         "windowcoverings_tilt_set",
         "alarm_generic",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -59306,8 +59134,7 @@
         "windowcoverings_tilt_set",
         "measure_luminance",
         "button",
-        "dim",
-        "measure_battery"
+        "dim"
       ],
       "capabilitiesOptions": {
         "windowcoverings_set": {
@@ -59734,6 +59561,325 @@
     },
     {
       "name": {
+        "en": "Device Din Rail Meter",
+        "nl": "Device Din Rail Meter",
+        "fr": "Device Din Rail Meter"
+      },
+      "class": "doorbell",
+      "capabilities": [
+        "alarm_motion",
+        "alarm_contact",
+        "measure_battery",
+        "alarm_generic",
+        "alarm_tamper",
+        "alarm_battery",
+        "measure_power",
+        "meter_power",
+        "measure_voltage",
+        "measure_current",
+        "meter_power.exported"
+      ],
+      "energy": {
+        "batteries": [
+          "OTHER",
+          "OTHER"
+        ]
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_tz3210_emqmwtym",
+          "_TZ3210_emqmwtym",
+          "_TZ3210_EMQMWTYM"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "learnmode": {
+          "image": "/drivers/doorbell/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              61184
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "power_source",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Source",
+            "fr": "Source d'Alimentation"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "ac",
+              "label": {
+                "en": "AC Powered",
+                "fr": "Alimentation Secteur"
+              }
+            },
+            {
+              "id": "dc",
+              "label": {
+                "en": "DC Powered",
+                "fr": "Alimentation DC"
+              }
+            },
+            {
+              "id": "battery",
+              "label": {
+                "en": "Battery Powered",
+                "fr": "Sur Batterie"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select power source manually or use auto-detection",
+            "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+          }
+        },
+        {
+          "id": "battery_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Battery Type",
+            "fr": "Type de Batterie"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "CR2032",
+              "label": {
+                "en": "CR2032",
+                "fr": "CR2032 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "CR2450",
+              "label": {
+                "en": "CR2450",
+                "fr": "CR2450 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "AAA",
+              "label": {
+                "en": "AAA",
+                "fr": "AAA"
+              }
+            },
+            {
+              "id": "AA",
+              "label": {
+                "en": "AA",
+                "fr": "AA"
+              }
+            },
+            {
+              "id": "CR123A",
+              "label": {
+                "en": "CR123A",
+                "fr": "CR123A"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select battery type manually or use auto-detection based on voltage",
+            "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+          }
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible (%)"
+          },
+          "value": 20,
+          "min": 0,
+          "max": 50,
+          "step": 5,
+          "hint": {
+            "en": "Trigger low battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "battery_critical_threshold",
+          "type": "number",
+          "label": {
+            "en": "Critical Battery Threshold",
+            "fr": "Seuil Batterie Critique (%)"
+          },
+          "value": 10,
+          "min": 0,
+          "max": 30,
+          "step": 5,
+          "hint": {
+            "en": "Trigger critical battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "enable_battery_notifications",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true,
+          "hint": {
+            "en": "Send flow notifications for battery events",
+            "fr": "Envoyer des notifications de flow pour les événements de batterie"
+          }
+        },
+        {
+          "id": "battery_report_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Report Interval",
+            "fr": "Intervalle Rapport Batterie (heures)"
+          },
+          "value": 24,
+          "min": 1,
+          "max": 168,
+          "step": 1,
+          "hint": {
+            "en": "How often to request battery status updates",
+            "fr": "Fréquence de demande des mises à jour d'état de batterie"
+          }
+        },
+        {
+          "id": "optimization_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Energy Optimization Mode",
+            "fr": "Mode Optimisation Énergétique"
+          },
+          "value": "balanced",
+          "values": [
+            {
+              "id": "performance",
+              "label": {
+                "en": "Performance (More responsive)",
+                "fr": "Performance (Plus réactif)"
+              }
+            },
+            {
+              "id": "balanced",
+              "label": {
+                "en": "Balanced",
+                "fr": "Équilibré"
+              }
+            },
+            {
+              "id": "power_saving",
+              "label": {
+                "en": "Power Saving (Longer battery)",
+                "fr": "Économie d'énergie (Batterie plus longue)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Balance between responsiveness and battery life",
+            "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+          }
+        },
+        {
+          "id": "show_voltage",
+          "type": "checkbox",
+          "label": {
+            "en": "Show Battery Voltage",
+            "fr": "Afficher Tension Batterie"
+          },
+          "value": false,
+          "hint": {
+            "en": "Display raw battery voltage in device settings",
+            "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+          }
+        },
+        {
+          "id": "enable_power_estimation",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Power Estimation",
+            "fr": "Activer Estimation Puissance"
+          },
+          "value": true,
+          "hint": {
+            "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+            "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+          }
+        }
+      ],
+      "images": {
+        "small": "drivers/doorbell/assets/images/small.png",
+        "large": "drivers/doorbell/assets/images/large.png",
+        "xlarge": "drivers/doorbell/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "select_driver"
+          }
+        },
+        {
+          "id": "select_driver",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "capabilitiesOptions": {},
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
+      "id": "device_din_rail_meter"
+    },
+    {
+      "name": {
         "en": "Device Floor Heating",
         "nl": "Device Floor Heating",
         "fr": "Device Floor Heating"
@@ -59745,7 +59891,8 @@
         "measure_temperature.floor",
         "thermostat_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "target_temperature": {
@@ -59844,7 +59991,8 @@
         "measure_temperature.floor",
         "thermostat_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "target_temperature": {
@@ -59941,7 +60089,8 @@
       "capabilities": [
         "measure_battery",
         "measure_temperature",
-        "measure_humidity"
+        "measure_humidity",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -60115,7 +60264,8 @@
         "measure_temperature",
         "thermostat_mode",
         "measure_battery",
-        "measure_humidity"
+        "measure_humidity",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -60432,7 +60582,8 @@
         "measure_temperature",
         "thermostat_mode",
         "measure_battery",
-        "measure_humidity"
+        "measure_humidity",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -60443,14 +60594,7 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [
-          "_tze200_khah2lkr",
-          "_TZE200_khah2lkr",
-          "_TZE200_KHAH2LKR",
-          "_tze200_spyvfeti",
-          "_TZE200_spyvfeti",
-          "_TZE200_SPYVFETI"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0601"
         ],
@@ -60974,12 +61118,10 @@
         "dim",
         "onoff",
         "measure_power",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -61909,10 +62051,7 @@
           "_TZE204_CJBOFHXW",
           "_tze284_cjbofhxw",
           "_TZE284_cjbofhxw",
-          "_TZE284_CJBOFHXW",
-          "_tz3210_emqmwtym",
-          "_TZ3210_emqmwtym",
-          "_TZ3210_EMQMWTYM"
+          "_TZE284_CJBOFHXW"
         ],
         "productId": [
           "SPM01-1Z2",
@@ -62080,12 +62219,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        }
-      },
       "maintenanceActions": [
         {
           "id": "ota_check",
@@ -62110,7 +62243,8 @@
         "onoff",
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -62715,7 +62849,8 @@
         "alarm_motion",
         "alarm_contact",
         "measure_battery",
-        "locked"
+        "locked",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -63036,7 +63171,8 @@
         "alarm_contact",
         "measure_battery",
         "alarm_generic",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -63072,10 +63208,7 @@
           "_TZE200_2WG5RJGR",
           "_tze284_9qhgsdta",
           "_TZE284_9qhgsdta",
-          "_TZE284_9QHGSDTA",
-          "_tz3210_emqmwtym",
-          "_TZ3210_emqmwtym",
-          "_TZ3210_EMQMWTYM"
+          "_TZE284_9QHGSDTA"
         ],
         "productId": [
           "TS0211",
@@ -63381,7 +63514,8 @@
         "measure_power.phase1",
         "measure_power.phase2",
         "measure_power.phase3",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -63429,10 +63563,7 @@
           "_TZE284_S4SA1MCX",
           "_tze284_x8diwkqb",
           "_TZE284_x8diwkqb",
-          "_TZE284_X8DIWKQB",
-          "_tze284_6ocnqlhn",
-          "_TZE284_6ocnqlhn",
-          "_TZE284_6OCNQLHN"
+          "_TZE284_X8DIWKQB"
         ],
         "productId": [
           "TS0601",
@@ -63619,7 +63750,8 @@
         "onoff",
         "button.push",
         "finger_bot_mode",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "/drivers/fingerbot/assets/images/large.png",
@@ -63695,7 +63827,8 @@
       "capabilities": [
         "locked",
         "alarm_tamper",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -63894,8 +64027,7 @@
         "measure_co2",
         "measure_temperature",
         "measure_humidity",
-        "measure_pm25",
-        "measure_battery"
+        "measure_pm25"
       ],
       "energy": {
         "approximation": {
@@ -64188,8 +64320,7 @@
         "alarm_generic",
         "alarm_co",
         "alarm_co2",
-        "alarm_gas",
-        "measure_battery"
+        "alarm_gas"
       ],
       "capabilitiesOptions": {
         "alarm_generic": {
@@ -64553,8 +64684,7 @@
         "alarm_co2",
         "alarm_contact",
         "alarm_gas",
-        "alarm_tamper",
-        "measure_battery"
+        "alarm_tamper"
       ],
       "energy": {
         "batteries": [
@@ -64931,7 +65061,8 @@
       "capabilities": [
         "alarm_generic",
         "measure_battery",
-        "onoff"
+        "onoff",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -65253,7 +65384,8 @@
         "xlarge": "drivers/generic_diy/assets/images/xlarge.png"
       },
       "capabilities": [
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -65493,7 +65625,8 @@
       "capabilities": [
         "measure_battery",
         "measure_temperature",
-        "measure_humidity"
+        "measure_humidity",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -65974,6 +66107,7 @@
       ],
       "capabilities": [
         "button",
+        "measure_battery",
         "alarm_battery"
       ],
       "images": {
@@ -66194,8 +66328,7 @@
         "measure_temperature",
         "thermostat_mode",
         "dim.speed",
-        "onoff",
-        "measure_battery"
+        "onoff"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -66710,8 +66843,7 @@
         "alarm_water",
         "onoff",
         "target_temperature",
-        "dim.speed",
-        "measure_battery"
+        "dim.speed"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -66743,9 +66875,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "CR2032",
           "CR2450",
@@ -67086,7 +67215,8 @@
       "class": "sensor",
       "capabilities": [
         "measure_luminance",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -67107,10 +67237,7 @@
           "_TZ3000_do6txrcw",
           "_TZ3000_DO6TXRCW",
           "zg-106z",
-          "ZG-106Z",
-          "_tze200_hl0ss9oa",
-          "_TZE200_hl0ss9oa",
-          "_TZE200_HL0SS9OA"
+          "ZG-106Z"
         ],
         "productId": [
           "TS0222",
@@ -67167,8 +67294,7 @@
       "class": "remote",
       "capabilities": [
         "button.learn_ir",
-        "onoff",
-        "measure_battery"
+        "onoff"
       ],
       "capabilitiesOptions": {
         "button.learn_ir": {
@@ -67345,8 +67471,7 @@
       "capabilities": [
         "button.learn_ir",
         "ir_learned_code",
-        "ir_send_code",
-        "measure_battery"
+        "ir_send_code"
       ],
       "capabilitiesOptions": {
         "button.learn_ir": {
@@ -67441,7 +67566,8 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -67568,7 +67694,8 @@
         "dim",
         "light_temperature",
         "light_mode",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -67723,7 +67850,8 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -67796,7 +67924,8 @@
         "onoff",
         "light_hue",
         "light_saturation",
-        "light_mode"
+        "light_mode",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -68152,7 +68281,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -68482,7 +68612,8 @@
         "light_mode",
         "dim",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -68873,7 +69004,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -69418,7 +69550,8 @@
       "class": "sensor",
       "capabilities": [
         "measure_luminance",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_luminance": {
@@ -69488,7 +69621,8 @@
         "locked",
         "lock_mode",
         "measure_battery",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -69840,7 +69974,8 @@
         "measure_voltage",
         "measure_current",
         "onoff",
-        "meter_power"
+        "meter_power",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -69850,10 +69985,7 @@
           "AA",
           "CR123A",
           "INTERNAL"
-        ],
-        "approximation": {
-          "usageConstant": 0.5
-        }
+        ]
       },
       "zigbee": {
         "manufacturerName": [
@@ -70334,7 +70466,8 @@
         "measure_luminance",
         "measure_temperature",
         "measure_humidity",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -70585,10 +70718,7 @@
           "_TZ3000_LF56VPXJ",
           "_tze200_gjldowol",
           "_TZE200_gjldowol",
-          "_TZE200_GJLDOWOL",
-          "_tze200_4pm4pekt",
-          "_TZE200_4pm4pekt",
-          "_TZE200_4PM4PEKT"
+          "_TZE200_GJLDOWOL"
         ],
         "productId": [
           "TS0202",
@@ -71025,7 +71155,8 @@
       "capabilities": [
         "measure_battery",
         "measure_luminance",
-        "alarm_motion"
+        "alarm_motion",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -71114,7 +71245,8 @@
         "measure_temperature",
         "measure_humidity",
         "measure_luminance",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -71862,12 +71994,10 @@
         "measure_voltage",
         "measure_current",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -72859,13 +72989,10 @@
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        },
         "batteries": [
           "OTHER"
         ]
@@ -73717,12 +73844,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        }
-      },
       "maintenanceActions": [
         {
           "id": "ota_check",
@@ -73896,7 +74017,8 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_power": {
@@ -74425,7 +74547,8 @@
         "measure_humidity",
         "alarm_human",
         "measure_battery",
-        "measure_luminance.distance"
+        "measure_luminance.distance",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_luminance.distance": {
@@ -74468,9 +74591,6 @@
           "_tze200_2aaelwxk",
           "_TZE200_2aaelwxk",
           "_TZE200_2AAELWXK",
-          "_tze200_4pm4pekt",
-          "_TZE200_4pm4pekt",
-          "_TZE200_4PM4PEKT",
           "_tze200_7gclukjs",
           "_TZE200_7gclukjs",
           "_TZE200_7GCLUKJS",
@@ -74492,9 +74612,6 @@
           "_tze200_gkfbdvyx",
           "_TZE200_gkfbdvyx",
           "_TZE200_GKFBDVYX",
-          "_tze200_hl0ss9oa",
-          "_TZE200_hl0ss9oa",
-          "_TZE200_HL0SS9OA",
           "_tze200_hyhl5y36",
           "_TZE200_hyhl5y36",
           "_TZE200_HYHL5Y36",
@@ -75914,7 +76031,8 @@
         "target_temperature",
         "measure_temperature",
         "thermostat_mode",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -76766,7 +76884,8 @@
         "measure_battery",
         "onoff",
         "window_detection",
-        "child_lock"
+        "child_lock",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "target_temperature": {
@@ -76952,7 +77071,8 @@
       "capabilities": [
         "alarm_water",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "alarm_water": {
@@ -77556,7 +77676,8 @@
       "class": "sensor",
       "capabilities": [
         "button.1",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -78021,7 +78142,8 @@
         "zigbee"
       ],
       "capabilities": [
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -78083,7 +78205,8 @@
       "class": "sensor",
       "capabilities": [
         "button.1",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -78200,7 +78323,8 @@
       "capabilities": [
         "button.1",
         "button.2",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -78326,7 +78450,8 @@
         "button.1",
         "button.2",
         "button.3",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -78461,7 +78586,8 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -78649,7 +78775,8 @@
         "button.4",
         "button.5",
         "button.6",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -78802,7 +78929,8 @@
       "capabilities": [
         "button.1",
         "button.2",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -78932,7 +79060,8 @@
         "alarm_contact",
         "alarm_tamper",
         "measure_luminance",
-        "alarm_water"
+        "alarm_water",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -79424,7 +79553,8 @@
         "measure_temperature",
         "measure_humidity",
         "alarm_tamper",
-        "alarm_contact"
+        "alarm_contact",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -79849,7 +79979,8 @@
         "measure_battery",
         "measure_luminance.distance",
         "alarm_contact",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_luminance.distance": {
@@ -80454,6 +80585,1244 @@
     },
     {
       "name": {
+        "en": "Sensor Illuminance Presence",
+        "nl": "Sensor Illuminance Presence",
+        "fr": "Sensor Illuminance Presence"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_human",
+        "measure_battery",
+        "measure_luminance.distance",
+        "alarm_battery"
+      ],
+      "capabilitiesOptions": {
+        "measure_luminance.distance": {
+          "title": {
+            "en": "Detection Distance",
+            "fr": "Distance de Détection",
+            "nl": "Detectieafstand",
+            "de": "Erkennungsdistanz"
+          },
+          "units": {
+            "en": "m"
+          }
+        }
+      },
+      "subDevices": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_tze200_hl0ss9oa",
+          "_TZE200_hl0ss9oa",
+          "_TZE200_HL0SS9OA"
+        ],
+        "productId": [
+          "TS0225"
+        ],
+        "learnmode": {
+          "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1024,
+              1280,
+              1030,
+              61184
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "power_source",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Source",
+            "fr": "Source d'Alimentation"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "ac",
+              "label": {
+                "en": "AC Powered",
+                "fr": "Alimentation Secteur"
+              }
+            },
+            {
+              "id": "dc",
+              "label": {
+                "en": "DC Powered",
+                "fr": "Alimentation DC"
+              }
+            },
+            {
+              "id": "battery",
+              "label": {
+                "en": "Battery Powered",
+                "fr": "Sur Batterie"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select power source manually or use auto-detection",
+            "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+          }
+        },
+        {
+          "id": "battery_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Battery Type",
+            "fr": "Type de Batterie"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "CR2032",
+              "label": {
+                "en": "CR2032",
+                "fr": "CR2032 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "CR2450",
+              "label": {
+                "en": "CR2450",
+                "fr": "CR2450 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "AAA",
+              "label": {
+                "en": "AAA",
+                "fr": "AAA"
+              }
+            },
+            {
+              "id": "AA",
+              "label": {
+                "en": "AA",
+                "fr": "AA"
+              }
+            },
+            {
+              "id": "CR123A",
+              "label": {
+                "en": "CR123A",
+                "fr": "CR123A"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select battery type manually or use auto-detection based on voltage",
+            "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+          }
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible (%)"
+          },
+          "value": 20,
+          "min": 0,
+          "max": 50,
+          "step": 5,
+          "hint": {
+            "en": "Trigger low battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "battery_critical_threshold",
+          "type": "number",
+          "label": {
+            "en": "Critical Battery Threshold",
+            "fr": "Seuil Batterie Critique (%)"
+          },
+          "value": 10,
+          "min": 0,
+          "max": 30,
+          "step": 5,
+          "hint": {
+            "en": "Trigger critical battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "enable_battery_notifications",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true,
+          "hint": {
+            "en": "Send flow notifications for battery events",
+            "fr": "Envoyer des notifications de flow pour les événements de batterie"
+          }
+        },
+        {
+          "id": "battery_report_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Report Interval",
+            "fr": "Intervalle Rapport Batterie (heures)"
+          },
+          "value": 24,
+          "min": 1,
+          "max": 168,
+          "step": 1,
+          "hint": {
+            "en": "How often to request battery status updates",
+            "fr": "Fréquence de demande des mises à jour d'état de batterie"
+          }
+        },
+        {
+          "id": "optimization_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Energy Optimization Mode",
+            "fr": "Mode Optimisation Énergétique"
+          },
+          "value": "balanced",
+          "values": [
+            {
+              "id": "performance",
+              "label": {
+                "en": "Performance (More responsive)",
+                "fr": "Performance (Plus réactif)"
+              }
+            },
+            {
+              "id": "balanced",
+              "label": {
+                "en": "Balanced",
+                "fr": "Équilibré"
+              }
+            },
+            {
+              "id": "power_saving",
+              "label": {
+                "en": "Power Saving (Longer battery)",
+                "fr": "Économie d'énergie (Batterie plus longue)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Balance between responsiveness and battery life",
+            "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+          }
+        },
+        {
+          "id": "show_voltage",
+          "type": "checkbox",
+          "label": {
+            "en": "Show Battery Voltage",
+            "fr": "Afficher Tension Batterie"
+          },
+          "value": false,
+          "hint": {
+            "en": "Display raw battery voltage in device settings",
+            "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+          }
+        },
+        {
+          "id": "enable_power_estimation",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Power Estimation",
+            "fr": "Activer Estimation Puissance"
+          },
+          "value": true,
+          "hint": {
+            "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+            "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+          }
+        },
+        {
+          "id": "invert_presence",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert Presence Detection",
+            "fr": "Inverser Détection Présence"
+          },
+          "value": false,
+          "hint": {
+            "en": "Enable if presence shows active when room is empty and inactive when occupied (firmware bug workaround)",
+            "fr": "Activer si la présence indique actif quand la pièce est vide et inactif quand occupée (contournement bug firmware)"
+          }
+        },
+        {
+          "id": "motion_detection_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Motion Detection Mode",
+            "fr": "Mode de Détection",
+            "nl": "Bewegingsdetectie Modus",
+            "de": "Bewegungserkennungsmodus"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "PIR Only",
+                "fr": "PIR Uniquement",
+                "nl": "Alleen PIR",
+                "de": "Nur PIR"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "PIR + Radar (Recommended)",
+                "fr": "PIR + Radar (Recommandé)",
+                "nl": "PIR + Radar (Aanbevolen)",
+                "de": "PIR + Radar (Empfohlen)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Radar Only",
+                "fr": "Radar Uniquement",
+                "nl": "Alleen Radar",
+                "de": "Nur Radar"
+              }
+            }
+          ],
+          "hint": {
+            "en": "ZG-204ZM: Select detection method (PIR for motion, Radar for presence)",
+            "fr": "ZG-204ZM: Sélectionner la méthode de détection (PIR pour mouvement, Radar pour présence)"
+          }
+        },
+        {
+          "id": "motion_detection_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Motion Sensitivity",
+            "fr": "Sensibilité Mouvement",
+            "nl": "Bewegingsgevoeligheid",
+            "de": "Bewegungsempfindlichkeit"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZG-204ZM: PIR/Radar motion sensitivity (0=lowest, 10=highest)",
+            "fr": "ZG-204ZM: Sensibilité PIR/Radar (0=minimum, 10=maximum)"
+          }
+        },
+        {
+          "id": "large_motion_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Large Motion Sensitivity",
+            "fr": "Sensibilité Grand Mouvement"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZG-204ZM: Sensitivity for detecting large movements like walking (0=lowest, 10=highest)",
+            "fr": "ZG-204ZM: Sensibilité pour détecter les grands mouvements comme marcher (0=min, 10=max)"
+          }
+        },
+        {
+          "id": "large_motion_distance",
+          "type": "number",
+          "label": {
+            "en": "Large Motion Distance",
+            "fr": "Distance Grand Mouvement"
+          },
+          "value": 10,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "units": "m",
+          "hint": {
+            "en": "ZG-204ZM: Maximum distance for detecting large movements (0-10 meters)",
+            "fr": "ZG-204ZM: Distance maximale pour détecter les grands mouvements (0-10 mètres)"
+          }
+        },
+        {
+          "id": "static_detection_distance",
+          "type": "number",
+          "label": {
+            "en": "Static Detection Distance",
+            "fr": "Distance Détection Statique",
+            "nl": "Statische Detectie Afstand",
+            "de": "Statische Erkennungsdistanz"
+          },
+          "value": 6,
+          "min": 0,
+          "max": 6,
+          "step": 1,
+          "units": "m",
+          "hint": {
+            "en": "ZG-204ZM: Maximum distance for detecting stationary persons (0-6 meters)",
+            "fr": "ZG-204ZM: Distance maximale pour détecter les personnes immobiles (0-6 mètres)"
+          }
+        },
+        {
+          "id": "static_detection_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Static Detection Sensitivity",
+            "fr": "Sensibilité Détection Statique",
+            "nl": "Statische Detectie Gevoeligheid",
+            "de": "Statische Erkennungsempfindlichkeit"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZG-204ZM: Sensitivity for detecting stationary persons (0=lowest, 10=highest)",
+            "fr": "ZG-204ZM: Sensibilité pour détecter les personnes immobiles (0=minimum, 10=maximum)"
+          }
+        },
+        {
+          "id": "small_detection_distance",
+          "type": "number",
+          "label": {
+            "en": "Small Motion Distance",
+            "fr": "Distance Petit Mouvement"
+          },
+          "value": 6,
+          "min": 0,
+          "max": 6,
+          "step": 1,
+          "units": "m",
+          "hint": {
+            "en": "ZG-204ZM: Maximum distance for detecting micro-movements like breathing (0-6 meters)",
+            "fr": "ZG-204ZM: Distance maximale pour détecter les micro-mouvements comme la respiration (0-6 mètres)"
+          }
+        },
+        {
+          "id": "small_detection_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Small Motion Sensitivity",
+            "fr": "Sensibilité Petit Mouvement"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZG-204ZM: Sensitivity for detecting micro-movements like breathing (0=lowest, 10=highest)",
+            "fr": "ZG-204ZM: Sensibilité pour détecter les micro-mouvements (0=minimum, 10=maximum)"
+          }
+        },
+        {
+          "id": "fading_time",
+          "type": "number",
+          "label": {
+            "en": "Presence Keep Time",
+            "fr": "Temps de Maintien Présence",
+            "nl": "Aanwezigheid Vasthoudtijd",
+            "de": "Anwesenheit Haltezeit"
+          },
+          "value": 90,
+          "min": 0,
+          "max": 28800,
+          "step": 10,
+          "units": "s",
+          "hint": {
+            "en": "ZG-204ZM: How long presence stays active after last detection (seconds)",
+            "fr": "ZG-204ZM: Durée de maintien de la présence après dernière détection (secondes)"
+          }
+        },
+        {
+          "id": "radar_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Radar Sensitivity",
+            "fr": "Sensibilité Radar"
+          },
+          "value": 5,
+          "min": 1,
+          "max": 9,
+          "step": 1,
+          "hint": {
+            "en": "Radar detection sensitivity (1=lowest, 9=highest)",
+            "fr": "Sensibilité radar (1=min, 9=max)"
+          }
+        },
+        {
+          "id": "min_range",
+          "type": "number",
+          "label": {
+            "en": "Minimum Detection Range",
+            "fr": "Portée Minimale"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "units": "m",
+          "hint": {
+            "en": "Minimum detection range (0-10m)",
+            "fr": "Portée minimale de détection (0-10m)"
+          }
+        },
+        {
+          "id": "max_range",
+          "type": "number",
+          "label": {
+            "en": "Maximum Detection Range",
+            "fr": "Portée Maximale"
+          },
+          "value": 6,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "units": "m",
+          "hint": {
+            "en": "Maximum detection range (0-10m)",
+            "fr": "Portée maximale de détection (0-10m)"
+          }
+        },
+        {
+          "id": "detection_delay",
+          "type": "number",
+          "label": {
+            "en": "Detection Delay",
+            "fr": "Délai de Détection"
+          },
+          "value": 1,
+          "min": 0,
+          "max": 10,
+          "step": 0.1,
+          "units": "s",
+          "hint": {
+            "en": "Delay before presence is reported (0-10s)",
+            "fr": "Délai avant signalement de présence (0-10s)"
+          }
+        },
+        {
+          "id": "indicator",
+          "type": "checkbox",
+          "label": {
+            "en": "LED Indicator",
+            "fr": "Indicateur LED",
+            "nl": "LED Indicator",
+            "de": "LED-Anzeige"
+          },
+          "value": true,
+          "hint": {
+            "en": "Enable/disable the LED indicator on the sensor",
+            "fr": "Activer/désactiver l'indicateur LED"
+          }
+        }
+      ],
+      "images": {
+        "small": "drivers/presence_sensor_radar/assets/images/small.png",
+        "large": "drivers/presence_sensor_radar/assets/images/large.png",
+        "xlarge": "drivers/presence_sensor_radar/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A",
+          "INTERNAL"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "select_driver"
+          }
+        },
+        {
+          "id": "select_driver",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
+      "id": "sensor_illuminance_presence"
+    },
+    {
+      "name": {
+        "en": "Sensor Motion Presence",
+        "nl": "Sensor Motion Presence",
+        "fr": "Sensor Motion Presence"
+      },
+      "class": "sensor",
+      "capabilities": [
+        "alarm_motion",
+        "measure_luminance",
+        "measure_temperature",
+        "measure_humidity",
+        "alarm_human",
+        "measure_battery",
+        "measure_luminance.distance",
+        "alarm_battery",
+        "alarm_tamper"
+      ],
+      "capabilitiesOptions": {
+        "measure_luminance.distance": {
+          "title": {
+            "en": "Detection Distance",
+            "fr": "Distance de Détection",
+            "nl": "Detectieafstand",
+            "de": "Erkennungsdistanz"
+          },
+          "units": {
+            "en": "m"
+          }
+        }
+      },
+      "subDevices": [],
+      "zigbee": {
+        "manufacturerName": [
+          "_tze200_4pm4pekt",
+          "_TZE200_4pm4pekt",
+          "_TZE200_4PM4PEKT"
+        ],
+        "productId": [
+          "TS0225",
+          "TS0601"
+        ],
+        "learnmode": {
+          "image": "/drivers/presence_sensor_radar/assets/learnmode.svg",
+          "instruction": {
+            "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
+            "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
+          }
+        },
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1024,
+              1280,
+              1030,
+              61184
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "power_source",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Source",
+            "fr": "Source d'Alimentation"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "ac",
+              "label": {
+                "en": "AC Powered",
+                "fr": "Alimentation Secteur"
+              }
+            },
+            {
+              "id": "dc",
+              "label": {
+                "en": "DC Powered",
+                "fr": "Alimentation DC"
+              }
+            },
+            {
+              "id": "battery",
+              "label": {
+                "en": "Battery Powered",
+                "fr": "Sur Batterie"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select power source manually or use auto-detection",
+            "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+          }
+        },
+        {
+          "id": "battery_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Battery Type",
+            "fr": "Type de Batterie"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "CR2032",
+              "label": {
+                "en": "CR2032",
+                "fr": "CR2032 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "CR2450",
+              "label": {
+                "en": "CR2450",
+                "fr": "CR2450 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "AAA",
+              "label": {
+                "en": "AAA",
+                "fr": "AAA"
+              }
+            },
+            {
+              "id": "AA",
+              "label": {
+                "en": "AA",
+                "fr": "AA"
+              }
+            },
+            {
+              "id": "CR123A",
+              "label": {
+                "en": "CR123A",
+                "fr": "CR123A"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select battery type manually or use auto-detection based on voltage",
+            "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+          }
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible (%)"
+          },
+          "value": 20,
+          "min": 0,
+          "max": 50,
+          "step": 5,
+          "hint": {
+            "en": "Trigger low battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "battery_critical_threshold",
+          "type": "number",
+          "label": {
+            "en": "Critical Battery Threshold",
+            "fr": "Seuil Batterie Critique (%)"
+          },
+          "value": 10,
+          "min": 0,
+          "max": 30,
+          "step": 5,
+          "hint": {
+            "en": "Trigger critical battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "enable_battery_notifications",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true,
+          "hint": {
+            "en": "Send flow notifications for battery events",
+            "fr": "Envoyer des notifications de flow pour les événements de batterie"
+          }
+        },
+        {
+          "id": "battery_report_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Report Interval",
+            "fr": "Intervalle Rapport Batterie (heures)"
+          },
+          "value": 24,
+          "min": 1,
+          "max": 168,
+          "step": 1,
+          "hint": {
+            "en": "How often to request battery status updates",
+            "fr": "Fréquence de demande des mises à jour d'état de batterie"
+          }
+        },
+        {
+          "id": "optimization_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Energy Optimization Mode",
+            "fr": "Mode Optimisation Énergétique"
+          },
+          "value": "balanced",
+          "values": [
+            {
+              "id": "performance",
+              "label": {
+                "en": "Performance (More responsive)",
+                "fr": "Performance (Plus réactif)"
+              }
+            },
+            {
+              "id": "balanced",
+              "label": {
+                "en": "Balanced",
+                "fr": "Équilibré"
+              }
+            },
+            {
+              "id": "power_saving",
+              "label": {
+                "en": "Power Saving (Longer battery)",
+                "fr": "Économie d'énergie (Batterie plus longue)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Balance between responsiveness and battery life",
+            "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+          }
+        },
+        {
+          "id": "show_voltage",
+          "type": "checkbox",
+          "label": {
+            "en": "Show Battery Voltage",
+            "fr": "Afficher Tension Batterie"
+          },
+          "value": false,
+          "hint": {
+            "en": "Display raw battery voltage in device settings",
+            "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+          }
+        },
+        {
+          "id": "enable_power_estimation",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Power Estimation",
+            "fr": "Activer Estimation Puissance"
+          },
+          "value": true,
+          "hint": {
+            "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+            "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+          }
+        },
+        {
+          "id": "invert_presence",
+          "type": "checkbox",
+          "label": {
+            "en": "Invert Presence Detection",
+            "fr": "Inverser Détection Présence"
+          },
+          "value": false,
+          "hint": {
+            "en": "Enable if presence shows active when room is empty and inactive when occupied (firmware bug workaround)",
+            "fr": "Activer si la présence indique actif quand la pièce est vide et inactif quand occupée (contournement bug firmware)"
+          }
+        },
+        {
+          "id": "motion_detection_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Motion Detection Mode",
+            "fr": "Mode de Détection",
+            "nl": "Bewegingsdetectie Modus",
+            "de": "Bewegungserkennungsmodus"
+          },
+          "value": "1",
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "PIR Only",
+                "fr": "PIR Uniquement",
+                "nl": "Alleen PIR",
+                "de": "Nur PIR"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "PIR + Radar (Recommended)",
+                "fr": "PIR + Radar (Recommandé)",
+                "nl": "PIR + Radar (Aanbevolen)",
+                "de": "PIR + Radar (Empfohlen)"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Radar Only",
+                "fr": "Radar Uniquement",
+                "nl": "Alleen Radar",
+                "de": "Nur Radar"
+              }
+            }
+          ],
+          "hint": {
+            "en": "ZG-204ZM: Select detection method (PIR for motion, Radar for presence)",
+            "fr": "ZG-204ZM: Sélectionner la méthode de détection (PIR pour mouvement, Radar pour présence)"
+          }
+        },
+        {
+          "id": "motion_detection_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Motion Sensitivity",
+            "fr": "Sensibilité Mouvement",
+            "nl": "Bewegingsgevoeligheid",
+            "de": "Bewegungsempfindlichkeit"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZG-204ZM: PIR/Radar motion sensitivity (0=lowest, 10=highest)",
+            "fr": "ZG-204ZM: Sensibilité PIR/Radar (0=minimum, 10=maximum)"
+          }
+        },
+        {
+          "id": "large_motion_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Large Motion Sensitivity",
+            "fr": "Sensibilité Grand Mouvement"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZG-204ZM: Sensitivity for detecting large movements like walking (0=lowest, 10=highest)",
+            "fr": "ZG-204ZM: Sensibilité pour détecter les grands mouvements comme marcher (0=min, 10=max)"
+          }
+        },
+        {
+          "id": "large_motion_distance",
+          "type": "number",
+          "label": {
+            "en": "Large Motion Distance",
+            "fr": "Distance Grand Mouvement"
+          },
+          "value": 10,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "units": "m",
+          "hint": {
+            "en": "ZG-204ZM: Maximum distance for detecting large movements (0-10 meters)",
+            "fr": "ZG-204ZM: Distance maximale pour détecter les grands mouvements (0-10 mètres)"
+          }
+        },
+        {
+          "id": "static_detection_distance",
+          "type": "number",
+          "label": {
+            "en": "Static Detection Distance",
+            "fr": "Distance Détection Statique",
+            "nl": "Statische Detectie Afstand",
+            "de": "Statische Erkennungsdistanz"
+          },
+          "value": 6,
+          "min": 0,
+          "max": 6,
+          "step": 1,
+          "units": "m",
+          "hint": {
+            "en": "ZG-204ZM: Maximum distance for detecting stationary persons (0-6 meters)",
+            "fr": "ZG-204ZM: Distance maximale pour détecter les personnes immobiles (0-6 mètres)"
+          }
+        },
+        {
+          "id": "static_detection_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Static Detection Sensitivity",
+            "fr": "Sensibilité Détection Statique",
+            "nl": "Statische Detectie Gevoeligheid",
+            "de": "Statische Erkennungsempfindlichkeit"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZG-204ZM: Sensitivity for detecting stationary persons (0=lowest, 10=highest)",
+            "fr": "ZG-204ZM: Sensibilité pour détecter les personnes immobiles (0=minimum, 10=maximum)"
+          }
+        },
+        {
+          "id": "small_detection_distance",
+          "type": "number",
+          "label": {
+            "en": "Small Motion Distance",
+            "fr": "Distance Petit Mouvement"
+          },
+          "value": 6,
+          "min": 0,
+          "max": 6,
+          "step": 1,
+          "units": "m",
+          "hint": {
+            "en": "ZG-204ZM: Maximum distance for detecting micro-movements like breathing (0-6 meters)",
+            "fr": "ZG-204ZM: Distance maximale pour détecter les micro-mouvements comme la respiration (0-6 mètres)"
+          }
+        },
+        {
+          "id": "small_detection_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Small Motion Sensitivity",
+            "fr": "Sensibilité Petit Mouvement"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZG-204ZM: Sensitivity for detecting micro-movements like breathing (0=lowest, 10=highest)",
+            "fr": "ZG-204ZM: Sensibilité pour détecter les micro-mouvements (0=minimum, 10=maximum)"
+          }
+        },
+        {
+          "id": "fading_time",
+          "type": "number",
+          "label": {
+            "en": "Presence Keep Time",
+            "fr": "Temps de Maintien Présence",
+            "nl": "Aanwezigheid Vasthoudtijd",
+            "de": "Anwesenheit Haltezeit"
+          },
+          "value": 90,
+          "min": 0,
+          "max": 28800,
+          "step": 10,
+          "units": "s",
+          "hint": {
+            "en": "ZG-204ZM: How long presence stays active after last detection (seconds)",
+            "fr": "ZG-204ZM: Durée de maintien de la présence après dernière détection (secondes)"
+          }
+        },
+        {
+          "id": "radar_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Radar Sensitivity",
+            "fr": "Sensibilité Radar"
+          },
+          "value": 5,
+          "min": 1,
+          "max": 9,
+          "step": 1,
+          "hint": {
+            "en": "Radar detection sensitivity (1=lowest, 9=highest)",
+            "fr": "Sensibilité radar (1=min, 9=max)"
+          }
+        },
+        {
+          "id": "min_range",
+          "type": "number",
+          "label": {
+            "en": "Minimum Detection Range",
+            "fr": "Portée Minimale"
+          },
+          "value": 0,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "units": "m",
+          "hint": {
+            "en": "Minimum detection range (0-10m)",
+            "fr": "Portée minimale de détection (0-10m)"
+          }
+        },
+        {
+          "id": "max_range",
+          "type": "number",
+          "label": {
+            "en": "Maximum Detection Range",
+            "fr": "Portée Maximale"
+          },
+          "value": 6,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "units": "m",
+          "hint": {
+            "en": "Maximum detection range (0-10m)",
+            "fr": "Portée maximale de détection (0-10m)"
+          }
+        },
+        {
+          "id": "detection_delay",
+          "type": "number",
+          "label": {
+            "en": "Detection Delay",
+            "fr": "Délai de Détection"
+          },
+          "value": 1,
+          "min": 0,
+          "max": 10,
+          "step": 0.1,
+          "units": "s",
+          "hint": {
+            "en": "Delay before presence is reported (0-10s)",
+            "fr": "Délai avant signalement de présence (0-10s)"
+          }
+        },
+        {
+          "id": "indicator",
+          "type": "checkbox",
+          "label": {
+            "en": "LED Indicator",
+            "fr": "Indicateur LED",
+            "nl": "LED Indicator",
+            "de": "LED-Anzeige"
+          },
+          "value": true,
+          "hint": {
+            "en": "Enable/disable the LED indicator on the sensor",
+            "fr": "Activer/désactiver l'indicateur LED"
+          }
+        }
+      ],
+      "images": {
+        "small": "drivers/presence_sensor_radar/assets/images/small.png",
+        "large": "drivers/presence_sensor_radar/assets/images/large.png",
+        "xlarge": "drivers/presence_sensor_radar/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2032",
+          "CR2450",
+          "AAA",
+          "AA",
+          "CR123A",
+          "INTERNAL"
+        ],
+        "approximation": {
+          "usageConstant": 0.5
+        }
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "select_driver"
+          }
+        },
+        {
+          "id": "select_driver",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
+      "id": "sensor_motion_presence"
+    },
+    {
+      "name": {
         "en": "Sensor Motion Radar",
         "nl": "Sensor Motion Radar",
         "fr": "Sensor Motion Radar"
@@ -80465,7 +81834,8 @@
         "measure_temperature",
         "measure_humidity",
         "measure_luminance",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -80922,7 +82292,8 @@
         "measure_battery",
         "measure_luminance.distance",
         "alarm_contact",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_luminance.distance": {
@@ -81543,7 +82914,8 @@
         "measure_battery",
         "windowcoverings_set",
         "windowcoverings_tilt_set",
-        "dim"
+        "dim",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -81867,7 +83239,8 @@
         "alarm_motion",
         "measure_battery",
         "alarm_generic",
-        "onoff"
+        "onoff",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -82258,11 +83631,11 @@
         "onoff",
         "measure_temperature",
         "measure_humidity",
-        "alarm_battery",
         "alarm_siren",
         "alarm_motion",
         "measure_battery",
-        "alarm_generic"
+        "alarm_generic",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -82338,8 +83711,9 @@
         "onoff",
         "measure_temperature",
         "measure_humidity",
-        "alarm_battery",
-        "alarm_siren"
+        "alarm_siren",
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -82477,12 +83851,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        }
-      },
       "maintenanceActions": [
         {
           "id": "ota_check",
@@ -82509,7 +83877,8 @@
       ],
       "capabilities": [
         "button.1",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/smart_button_switch/assets/images/large.png",
@@ -82621,8 +83990,7 @@
         "target_temperature",
         "thermostat_mode",
         "measure_temperature",
-        "measure_power",
-        "measure_battery"
+        "measure_power"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -82752,12 +84120,6 @@
               61184
             ]
           }
-        }
-      },
-      "energy": {
-        "approximation": {
-          "usageOn": 1500,
-          "usageOff": 5
         }
       },
       "settings": [
@@ -82919,7 +84281,8 @@
       "capabilities": [
         "button",
         "dim",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button": {
@@ -83013,7 +84376,8 @@
         "button.rotate_right",
         "button.press",
         "dim",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.rotate_left": {
@@ -83160,6 +84524,7 @@
       ],
       "capabilities": [
         "dim",
+        "measure_battery",
         "alarm_battery"
       ],
       "images": {
@@ -83359,7 +84724,8 @@
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -83428,7 +84794,8 @@
         "zigbee"
       ],
       "capabilities": [
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/smart_remote_1_button/assets/images/large.png",
@@ -83535,7 +84902,8 @@
       ],
       "capabilities": [
         "button.1",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/smart_remote_1_button_2/assets/images/large.png",
@@ -83660,7 +85028,8 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/smart_remote_4_buttons/assets/images/large.png",
@@ -83934,7 +85303,8 @@
         "measure_battery",
         "measure_temperature",
         "measure_humidity",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -84370,7 +85740,8 @@
         "measure_battery",
         "alarm_water",
         "measure_ec",
-        "measure_conductivity"
+        "measure_conductivity",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_humidity.soil": {
@@ -84727,7 +86098,8 @@
         "button.toggle_2",
         "button.identify",
         "measure_battery",
-        "button.toggle"
+        "button.toggle",
+        "alarm_battery"
       ],
       "zigbee": {
         "productId": [
@@ -84748,7 +86120,10 @@
           "_TYZB01_ZSL6Z0PW",
           "_tz3000_qkixdnon",
           "_TZ3000_qkixdnon",
-          "_TZ3000_QKIXDNON"
+          "_TZ3000_QKIXDNON",
+          "_tz3000_mw1pqqqt",
+          "_TZ3000_mw1pqqqt",
+          "_TZ3000_MW1PQQQT"
         ],
         "endpoints": {
           "1": {
@@ -85306,9 +86681,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -85354,7 +86726,8 @@
         "measure_voltage",
         "measure_current",
         "button.toggle",
-        "button.identify"
+        "button.identify",
+        "alarm_battery"
       ],
       "zigbee": {
         "productId": [
@@ -85869,9 +87242,6 @@
           "_tz3000_mtmtljo4",
           "_TZ3000_mtmtljo4",
           "_TZ3000_MTMTLJO4",
-          "_tz3000_mw1pqqqt",
-          "_TZ3000_mw1pqqqt",
-          "_TZ3000_MW1PQQQT",
           "_tz3000_mx3vgyea",
           "_TZ3000_mx3vgyea",
           "_TZ3000_MX3VGYEA",
@@ -87033,9 +88403,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -87083,7 +88450,8 @@
         "button.toggle_1",
         "button.toggle_2",
         "button.identify",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "productId": [
@@ -87932,9 +89300,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -87982,7 +89347,8 @@
         "button.toggle_2",
         "button.toggle_3",
         "button.identify",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "productId": [
@@ -88204,10 +89570,7 @@
           "_TZ3000_YPGRI8YZ",
           "_tz3000_avotanj3",
           "_TZ3000_avotanj3",
-          "_TZ3000_AVOTANJ3",
-          "_tz3000_mw1pqqqt",
-          "_TZ3000_mw1pqqqt",
-          "_TZ3000_MW1PQQQT"
+          "_TZ3000_AVOTANJ3"
         ]
       },
       "images": {
@@ -88759,9 +90122,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -88810,7 +90170,8 @@
         "button.toggle_3",
         "button.toggle_4",
         "button.identify",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "productId": [
@@ -89648,9 +91009,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -89877,7 +91235,8 @@
         "onoff",
         "measure_power",
         "meter_power",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -90151,7 +91510,8 @@
         "onoff.outlet2",
         "measure_power",
         "meter_power",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -90516,6 +91876,642 @@
       "id": "switch_temp_sensor"
     },
     {
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "onoff.gang2",
+        "onoff.gang3",
+        "measure_power",
+        "meter_power",
+        "button.toggle_1",
+        "button.toggle_2",
+        "button.toggle_3",
+        "button.identify",
+        "measure_battery",
+        "alarm_battery",
+        "onoff.usb2",
+        "onoff.usb3",
+        "measure_voltage",
+        "measure_current"
+      ],
+      "zigbee": {
+        "productId": [
+          "TS0003"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              6
+            ]
+          },
+          "2": {
+            "clusters": [
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              6
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/switch_3gang/assets/learnmode.svg",
+          "instruction": {
+            "en": "Turn the switch on/off 3 times quickly"
+          }
+        },
+        "manufacturerName": [
+          "_tz3000_mw1pqqqt",
+          "_TZ3000_mw1pqqqt",
+          "_TZ3000_MW1PQQQT"
+        ]
+      },
+      "images": {
+        "small": "drivers/switch_3gang/assets/images/small.png",
+        "large": "drivers/switch_3gang/assets/images/large.png",
+        "xlarge": "drivers/switch_3gang/assets/images/xlarge.png"
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Type Configuration",
+            "fr": "Configuration Type d'Appareil"
+          },
+          "children": [
+            {
+              "id": "device_type",
+              "type": "dropdown",
+              "label": {
+                "en": "Connected Device Type",
+                "fr": "Type d'Appareil Connecté"
+              },
+              "hint": {
+                "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+                "fr": "Sélectionnez le type d'appareil connecté à ce module. Radiateur inversera la logique MARCHE/ARRÊT."
+              },
+              "value": "light",
+              "values": [
+                {
+                  "id": "light",
+                  "label": {
+                    "en": "💡 Éclairage",
+                    "fr": "💡 Éclairage"
+                  }
+                },
+                {
+                  "id": "outdoor_light",
+                  "label": {
+                    "en": "🏡 Éclairage extérieur",
+                    "fr": "🏡 Éclairage extérieur"
+                  }
+                },
+                {
+                  "id": "radiator",
+                  "label": {
+                    "en": "🔥 Radiateur (fil pilote)",
+                    "fr": "🔥 Radiateur (fil pilote)"
+                  }
+                },
+                {
+                  "id": "water_heater",
+                  "label": {
+                    "en": "🚿 Chauffe-eau / Cumulus",
+                    "fr": "🚿 Chauffe-eau / Cumulus"
+                  }
+                },
+                {
+                  "id": "boiler",
+                  "label": {
+                    "en": "🏠 Chaudière",
+                    "fr": "🏠 Chaudière"
+                  }
+                },
+                {
+                  "id": "underfloor_heating",
+                  "label": {
+                    "en": "🦶 Plancher chauffant",
+                    "fr": "🦶 Plancher chauffant"
+                  }
+                },
+                {
+                  "id": "fan",
+                  "label": {
+                    "en": "🌀 Ventilateur / VMC",
+                    "fr": "🌀 Ventilateur / VMC"
+                  }
+                },
+                {
+                  "id": "ac",
+                  "label": {
+                    "en": "❄️ Climatisation",
+                    "fr": "❄️ Climatisation"
+                  }
+                },
+                {
+                  "id": "extractor",
+                  "label": {
+                    "en": "💨 Extracteur / Hotte",
+                    "fr": "💨 Extracteur / Hotte"
+                  }
+                },
+                {
+                  "id": "shutter",
+                  "label": {
+                    "en": "🪟 Volet roulant / Store",
+                    "fr": "🪟 Volet roulant / Store"
+                  }
+                },
+                {
+                  "id": "gate",
+                  "label": {
+                    "en": "🚗 Portail / Garage",
+                    "fr": "🚗 Portail / Garage"
+                  }
+                },
+                {
+                  "id": "door_lock",
+                  "label": {
+                    "en": "🔐 Gâche / Serrure",
+                    "fr": "🔐 Gâche / Serrure"
+                  }
+                },
+                {
+                  "id": "pump",
+                  "label": {
+                    "en": "💧 Pompe",
+                    "fr": "💧 Pompe"
+                  }
+                },
+                {
+                  "id": "irrigation",
+                  "label": {
+                    "en": "🌱 Arrosage",
+                    "fr": "🌱 Arrosage"
+                  }
+                },
+                {
+                  "id": "pool",
+                  "label": {
+                    "en": "🏊 Équipement piscine",
+                    "fr": "🏊 Équipement piscine"
+                  }
+                },
+                {
+                  "id": "socket",
+                  "label": {
+                    "en": "🔌 Prise commandée",
+                    "fr": "🔌 Prise commandée"
+                  }
+                },
+                {
+                  "id": "appliance",
+                  "label": {
+                    "en": "🧺 Électroménager",
+                    "fr": "🧺 Électroménager"
+                  }
+                },
+                {
+                  "id": "coffee_machine",
+                  "label": {
+                    "en": "☕ Machine à café",
+                    "fr": "☕ Machine à café"
+                  }
+                },
+                {
+                  "id": "alarm",
+                  "label": {
+                    "en": "🚨 Alarme / Sirène",
+                    "fr": "🚨 Alarme / Sirène"
+                  }
+                },
+                {
+                  "id": "camera",
+                  "label": {
+                    "en": "📹 Caméra",
+                    "fr": "📹 Caméra"
+                  }
+                },
+                {
+                  "id": "tv",
+                  "label": {
+                    "en": "📺 TV / Écran",
+                    "fr": "📺 TV / Écran"
+                  }
+                },
+                {
+                  "id": "audio",
+                  "label": {
+                    "en": "🔊 Audio / Hifi",
+                    "fr": "🔊 Audio / Hifi"
+                  }
+                },
+                {
+                  "id": "fountain",
+                  "label": {
+                    "en": "⛲ Fontaine",
+                    "fr": "⛲ Fontaine"
+                  }
+                },
+                {
+                  "id": "other",
+                  "label": {
+                    "en": "⚙️ Autre appareil",
+                    "fr": "⚙️ Autre appareil"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "invert_logic_manual",
+              "type": "checkbox",
+              "label": {
+                "en": "Manual Logic Inversion",
+                "fr": "Inversion Logique Manuelle"
+              },
+              "hint": {
+                "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+                "fr": "Forcer l'inversion de la logique MARCHE/ARRÊT indépendamment du type (utilisateurs avancés uniquement)"
+              },
+              "value": false
+            }
+          ]
+        },
+        {
+          "id": "power_source",
+          "type": "dropdown",
+          "label": {
+            "en": "Power Source",
+            "fr": "Source d'Alimentation"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "ac",
+              "label": {
+                "en": "AC Powered",
+                "fr": "Alimentation Secteur"
+              }
+            },
+            {
+              "id": "dc",
+              "label": {
+                "en": "DC Powered",
+                "fr": "Alimentation DC"
+              }
+            },
+            {
+              "id": "battery",
+              "label": {
+                "en": "Battery Powered",
+                "fr": "Sur Batterie"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select power source manually or use auto-detection",
+            "fr": "Sélectionnez la source d'alimentation manuellement ou utilisez la détection automatique"
+          }
+        },
+        {
+          "id": "battery_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Battery Type",
+            "fr": "Type de Batterie"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto Detect",
+                "fr": "Détection Automatique"
+              }
+            },
+            {
+              "id": "CR2032",
+              "label": {
+                "en": "CR2032",
+                "fr": "CR2032 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "CR2450",
+              "label": {
+                "en": "CR2450",
+                "fr": "CR2450 (Pile Bouton 3V)"
+              }
+            },
+            {
+              "id": "AAA",
+              "label": {
+                "en": "AAA",
+                "fr": "AAA"
+              }
+            },
+            {
+              "id": "AA",
+              "label": {
+                "en": "AA",
+                "fr": "AA"
+              }
+            },
+            {
+              "id": "CR123A",
+              "label": {
+                "en": "CR123A",
+                "fr": "CR123A"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Select battery type manually or use auto-detection based on voltage",
+            "fr": "Sélectionnez le type de batterie manuellement ou utilisez la détection automatique basée sur la tension"
+          }
+        },
+        {
+          "id": "battery_low_threshold",
+          "type": "number",
+          "label": {
+            "en": "Low Battery Threshold",
+            "fr": "Seuil Batterie Faible (%)"
+          },
+          "value": 20,
+          "min": 0,
+          "max": 50,
+          "step": 5,
+          "hint": {
+            "en": "Trigger low battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie faible en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "battery_critical_threshold",
+          "type": "number",
+          "label": {
+            "en": "Critical Battery Threshold",
+            "fr": "Seuil Batterie Critique (%)"
+          },
+          "value": 10,
+          "min": 0,
+          "max": 30,
+          "step": 5,
+          "hint": {
+            "en": "Trigger critical battery warning when below this percentage",
+            "fr": "Déclencher l'alerte batterie critique en dessous de ce pourcentage"
+          }
+        },
+        {
+          "id": "enable_battery_notifications",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Battery Notifications",
+            "fr": "Activer Notifications Batterie"
+          },
+          "value": true,
+          "hint": {
+            "en": "Send flow notifications for battery events",
+            "fr": "Envoyer des notifications de flow pour les événements de batterie"
+          }
+        },
+        {
+          "id": "battery_report_interval",
+          "type": "number",
+          "label": {
+            "en": "Battery Report Interval",
+            "fr": "Intervalle Rapport Batterie (heures)"
+          },
+          "value": 24,
+          "min": 1,
+          "max": 168,
+          "step": 1,
+          "hint": {
+            "en": "How often to request battery status updates",
+            "fr": "Fréquence de demande des mises à jour d'état de batterie"
+          }
+        },
+        {
+          "id": "optimization_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Energy Optimization Mode",
+            "fr": "Mode Optimisation Énergétique"
+          },
+          "value": "balanced",
+          "values": [
+            {
+              "id": "performance",
+              "label": {
+                "en": "Performance (More responsive)",
+                "fr": "Performance (Plus réactif)"
+              }
+            },
+            {
+              "id": "balanced",
+              "label": {
+                "en": "Balanced",
+                "fr": "Équilibré"
+              }
+            },
+            {
+              "id": "power_saving",
+              "label": {
+                "en": "Power Saving (Longer battery)",
+                "fr": "Économie d'énergie (Batterie plus longue)"
+              }
+            }
+          ],
+          "hint": {
+            "en": "Balance between responsiveness and battery life",
+            "fr": "Équilibre entre réactivité et durée de vie de la batterie"
+          }
+        },
+        {
+          "id": "show_voltage",
+          "type": "checkbox",
+          "label": {
+            "en": "Show Battery Voltage",
+            "fr": "Afficher Tension Batterie"
+          },
+          "value": false,
+          "hint": {
+            "en": "Display raw battery voltage in device settings",
+            "fr": "Afficher la tension brute de la batterie dans les paramètres du périphérique"
+          }
+        },
+        {
+          "id": "power_on_behavior",
+          "type": "dropdown",
+          "label": {
+            "en": "Power-On Behavior",
+            "nl": "Gedrag bij inschakelen",
+            "de": "Einschaltverhalten",
+            "fr": "Comportement à la mise sous tension"
+          },
+          "hint": {
+            "en": "What happens when power is restored after an outage (DP14)",
+            "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
+          },
+          "value": "memory",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Always Off",
+                "nl": "Altijd Uit"
+              }
+            },
+            {
+              "id": "on",
+              "label": {
+                "en": "Always On",
+                "nl": "Altijd Aan"
+              }
+            },
+            {
+              "id": "memory",
+              "label": {
+                "en": "Last State",
+                "nl": "Laatste status"
+              }
+            }
+          ]
+        },
+        {
+          "id": "enable_power_estimation",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable Power Estimation",
+            "fr": "Activer Estimation Puissance"
+          },
+          "value": true,
+          "hint": {
+            "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+            "fr": "Estimer la consommation quand la mesure réelle n'est pas disponible (appareils AC/DC seulement)"
+          }
+        },
+        {
+          "id": "scene_mode",
+          "type": "dropdown",
+          "label": {
+            "en": "Scene Mode",
+            "fr": "Mode Scene"
+          },
+          "hint": {
+            "en": "Auto=normal+triggers, Magic=scene-only, Both=load+scene"
+          },
+          "value": "auto",
+          "values": [
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto (Normal + flows)"
+              }
+            },
+            {
+              "id": "magic",
+              "label": {
+                "en": "Magic (Scene only)"
+              }
+            },
+            {
+              "id": "both",
+              "label": {
+                "en": "Both (Load + scene)"
+              }
+            }
+          ]
+        }
+      ],
+      "name": {
+        "en": "Switch Usb Dongle",
+        "nl": "Switch Usb Dongle",
+        "fr": "Switch Usb Dongle"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "title": {
+            "en": "Gang 1",
+            "fr": "Gang 1"
+          }
+        },
+        "onoff.gang2": {
+          "title": {
+            "en": "Gang 2",
+            "fr": "Gang 2"
+          }
+        },
+        "onoff.gang3": {
+          "title": {
+            "en": "Gang 3",
+            "fr": "Gang 3"
+          }
+        }
+      },
+      "metadata": {
+        "app": {
+          "id": "com.dlnraja.tuya.zigbee",
+          "name": "Universal Tuya Zigbee",
+          "version": "4.1.3",
+          "api": {
+            "min": 3,
+            "max": 3
+          }
+        }
+      },
+      "energy": {
+        "batteries": [
+          "OTHER"
+        ]
+      },
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "select_driver"
+          }
+        },
+        {
+          "id": "select_driver",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "maintenanceActions": [
+        {
+          "id": "ota_check",
+          "title": {
+            "en": "Check Zigbee OTA Update",
+            "fr": "Vérifier MàJ OTA",
+            "nl": "Controleer op OTA-updates"
+          }
+        }
+      ],
+      "id": "switch_usb_dongle"
+    },
+    {
       "name": {
         "en": "Wall Switch 5gang",
         "fr": "Wall Switch 5gang",
@@ -90529,7 +92525,8 @@
         "onoff.gang3",
         "onoff.gang4",
         "onoff.gang5",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -91145,7 +93142,8 @@
         "onoff.gang4",
         "onoff.gang5",
         "onoff.gang6",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -91790,7 +93788,8 @@
         "onoff.gang5",
         "onoff.gang6",
         "onoff.gang7",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -92230,7 +94229,8 @@
         "onoff.gang6",
         "onoff.gang7",
         "onoff.gang8",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -92629,7 +94629,8 @@
       "class": "sensor",
       "capabilities": [
         "alarm_generic",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -93155,7 +95156,8 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -93306,8 +95308,7 @@
         "measure_temperature.ch2",
         "measure_temperature.ch3",
         "measure_temperature.ch4",
-        "thermostat_mode",
-        "measure_battery"
+        "thermostat_mode"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -93395,7 +95396,8 @@
         "thermostat_mode",
         "measure_battery",
         "onoff",
-        "measure_humidity"
+        "measure_humidity",
+        "alarm_battery"
       ],
       "platforms": [
         "local"
@@ -93651,7 +95653,8 @@
       },
       "class": "other",
       "capabilities": [
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {},
       "energy": {
@@ -93969,7 +95972,8 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -93998,9 +96002,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageConstant": 5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -94219,11 +96220,6 @@
           }
         }
       },
-      "energy": {
-        "approximation": {
-          "usageConstant": 7.5
-        }
-      },
       "platforms": [
         "local"
       ],
@@ -94236,11 +96232,7 @@
         "xlarge": "drivers/usb_dongle_triple/assets/images/xlarge.png"
       },
       "zigbee": {
-        "manufacturerName": [
-          "_tz3000_mw1pqqqt",
-          "_TZ3000_mw1pqqqt",
-          "_TZ3000_MW1PQQQT"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0003"
         ],
@@ -94421,7 +96413,8 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -94456,9 +96449,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "OTHER"
         ]
@@ -95036,7 +97026,8 @@
         "dim.valve_3",
         "dim.valve_4",
         "measure_battery",
-        "onoff"
+        "onoff",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -95193,7 +97184,8 @@
       "capabilities": [
         "onoff",
         "dim.valve",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -95261,7 +97253,8 @@
         "alarm_vibration",
         "measure_temperature",
         "measure_battery",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -95679,7 +97672,8 @@
       ],
       "capabilities": [
         "button.1",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_1_gang/assets/images/large.png",
@@ -95797,7 +97791,8 @@
       "capabilities": [
         "button.1",
         "button.2",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -95949,7 +97944,8 @@
         "button.1",
         "button.2",
         "button.3",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_3_gang/assets/images/large.png",
@@ -96098,7 +98094,8 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_4_gang/assets/images/large.png",
@@ -96253,7 +98250,8 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "/drivers/wall_remote_4_gang_2/assets/images/large.png",
@@ -96391,7 +98389,8 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_4_gang_3/assets/images/large.png",
@@ -96548,7 +98547,8 @@
         "button.4",
         "button.5",
         "button.6",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_6_gang/assets/images/large.png",
@@ -97868,7 +99868,8 @@
       "capabilities": [
         "alarm_water",
         "measure_battery",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "alarm_water": {
@@ -98040,9 +100041,9 @@
           "ZG-222Z",
           "ZG-223Z",
           "LS21001",
-          "_TZ3000_eit6l5",
-          "_TZ3000_k4ej3ww2",
-          "_TZ3000_kyb656no",
+          "_tz3000_eit6l5",
+          "_tz3000_k4ej3ww2",
+          "_tz3000_kyb656no",
           "lumi.sensor_wleak.aq1",
           "SJCGQ11LM",
           "SJCGQ12LM",
@@ -98368,6 +100369,7 @@
         "alarm_water_low",
         "alarm_water_high",
         "alarm_water",
+        "measure_battery",
         "alarm_battery"
       ],
       "capabilitiesOptions": {
@@ -98610,7 +100612,8 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -98715,7 +100718,8 @@
         "meter_water",
         "measure_temperature",
         "alarm_water",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -99072,7 +101076,8 @@
         "measure_humidity",
         "measure_pressure",
         "measure_luminance",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -100137,7 +102142,8 @@
         "locked",
         "measure_battery",
         "alarm_generic",
-        "alarm_contact"
+        "alarm_contact",
+        "alarm_battery"
       ],
       "pair": [
         {
@@ -102485,7 +104491,8 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "pair": [
         {
@@ -102892,7 +104899,8 @@
       "capabilities": [
         "onoff",
         "vacuumcleaner_state",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "pair": [
         {
@@ -103022,7 +105030,8 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "pair": [
         {
@@ -103154,7 +105163,8 @@
         "alarm_generic",
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "pair": [
         {
@@ -105304,7 +107314,8 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "pair": [
         {
