@@ -1,4 +1,19 @@
 {
+  "7.5.9": {
+    "en": "v7.5.9: . Fixed ProtocolArbitrator crash, _TZE608 opener reclassification, SDK3 validation errors, duplicate fingerprints, case-insensitive matching, and MODULE_NOT_FOUND crash. Added 5 new fingerprints, Z2M enriched mappings, rain/soil sensor fixes."
+  },
+  "5.11.212": {
+    "en": "Implement Rule 24 caseless resolver and dynamic O(1) matching system for high-performance pairing."
+  },
+  "5.11.211": {
+    "en": "Universal Tuya Zigbee v5.11.211: Fixed DeviceIdentificationDatabase crash on startup (ReferenceError: lastUpdate is not defined). Added crash-proof constructor with try/catch fallback."
+  },
+  "5.11.210": {
+    "en": "Universal Tuya Zigbee v5.11.210: Stability release - verified syntax integrity on all lib/ files, confirmed SDK3 compliance, 213 drivers operational."
+  },
+  "5.11.209": {
+    "en": "Universal Tuya Zigbee app v5.11.208: Fixed app ID."
+  },
   "5.11.208": {
     "en": "Universal Tuya Zigbee app v5.11.208: Fixed app ID."
   },
@@ -44,31 +59,7 @@
   "5.11.194": {
     "en": "Added support for 28 new Tuya device variants, including the Nedis SmartLife Radiator Control. Total coverage now spans ."
   },
-  "5.11.193": {
-    "en": "Resolved fingerprint pairing conflicts, added support for new Tuya device variants, and improved SDK compatibility for stable connections."
-  },
-  "5.11.192": {
-    "en": "Added 28+ new device fingerprints including Nedis SmartLife Radiator Control. Implemented smart hybrid matching to automatically resolve fingerprint collisions during pairing. Updated RGB bulb driver and refined device pattern recognition for improved stability."
-  },
-  "5.11.191": {
-    "en": "Added 28 new device fingerprints, including Nedis SmartLife Radiator Control. Expanded compatibility across switch, sensor, and climate drivers."
-  },
-  "5.11.190": {
-    "en": "Added 27 new device fingerprints and low-battery alerts for 113 devices. Fixed SDK v3 flow crashes, restored missing battery capabilities, added time sync for 13 thermostats, and fixed missing capabilities in 10 remote drivers."
-  },
-  "5.11.189": {
-    "en": "Added 27 new device fingerprints including Nedis SmartLife Radiator. Fixed SDK v3 flow card crashes, resolved alarm_battery capability conflicts, and restored battery reporting. Added time sync for 13 TRV drivers and fixed missing capabilities in 10 remote drivers."
-  },
-  "5.11.209": {
-    "en": "Universal Tuya Zigbee app v5.11.208: Fixed app ID."
-  },
-  "5.11.210": {
-    "en": "Universal Tuya Zigbee v5.11.210: Stability release - verified syntax integrity on all lib/ files, confirmed SDK3 compliance, 213 drivers operational."
-  },
-  "5.11.211": {
-    "en": "Universal Tuya Zigbee v5.11.211: Fixed DeviceIdentificationDatabase crash on startup (ReferenceError: lastUpdate is not defined). Added crash-proof constructor with try/catch fallback."
-  },
-  "5.11.212": {
-    "en": "Implement Rule 24 caseless resolver and dynamic O(1) matching system for high-performance pairing."
+  "7.5.10": {
+    "en": "v7.5.9: Fix ProtocolArbitrator reference error in BaseHybridDevice initialization (crash on startup), Reclassify _TZE608 openers from contact_sensor to garage_door_opener (#305), Resolve fleet-wide extends syntax crash across 59 driver files, Remove duplicate driver.flow.compose.json in hybrid drivers (SDK3 validation fix), Remove SDK3 deprecated getTriggerCard references (runtime crash)"
   }
 }
