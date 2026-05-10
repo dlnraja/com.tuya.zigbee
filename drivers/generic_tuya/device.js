@@ -244,9 +244,16 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       this.log(`[GENERIC] ✅ DP${dp} → ${capability} = ${parsedValue} (CONFIDENCE: ${confidence})`);
 
       // Emit event for flow triggers
-      this.homey.flow.getTriggerCard(`generic_tuya_${capability}_changed`)?.trigger(this, {
-        [capability.replace('measure_', '').replace('alarm_', '')]: parsedValue
-      }).catch(() => { });
+      try {
+        const trigger = this.homey.flow.getTriggerCard(`generic_tuya_${capability}_changed`);
+        if (trigger) {
+          trigger.trigger(this, {
+            [capability.replace('measure_', '').replace('alarm_', '')]: parsedValue
+          }).catch(err => this.error(`[FLOW-ERROR] Trigger fail for generic_tuya_${capability}_changed:`, err.message));
+        }
+      } catch (err) {
+        this.error(`[FLOW-WARNING] Could not get trigger card generic_tuya_${capability}_changed:`, err.message);
+      }
 
     } catch (err) {
       this.error(`[GENERIC] Failed to set ${capability}:`, err.message);
