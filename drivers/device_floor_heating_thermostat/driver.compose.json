@@ -11,7 +11,8 @@
     "measure_temperature.floor",
     "thermostat_mode",
     "onoff",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "target_temperature": {

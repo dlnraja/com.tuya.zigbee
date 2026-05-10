@@ -8,7 +8,8 @@
     "measure_voltage",
     "measure_current",
     "button.toggle",
-    "button.identify"
+    "button.identify",
+    "alarm_battery"
   ],
   "zigbee": {
     "productId": [
@@ -1687,9 +1688,6 @@
     }
   },
   "energy": {
-    "approximation": {
-      "usageConstant": 0.5
-    },
     "batteries": [
       "OTHER"
     ]

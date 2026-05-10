@@ -18,6 +18,10 @@
  *  6. multigang-flow-routing — Replace raw ZCL onOff.setOn() with triggerCapabilityListener
  *  7. dp-variant-doc         — Flag DP mappings missing variant comments
  *  8. case-insensitive-matching — Ensure all manufacturer comparisons use .toLowerCase()
+ *  9. duplicate-fingerprints — Flag pairing ambiguity across drivers
+ * 10. punycode-deprecation  — Replace deprecated punycode module
+ * 11. dual-battery-cleanup  — Ensure both battery capabilities are declared statically
+ * 12. energy-approximation-cleanup — Remove redundant energy.approximation on measuring devices
  */
 'use strict';
 
@@ -443,6 +447,88 @@ function rule_punycodeDeprecation() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
+// RULE 11: DUAL BATTERY CAPABILITY CLEANUP (Rule R7.1) - ADAPTIVE PARADIGM
+// Ensures BOTH measure_battery and alarm_battery are present statically in driver.compose.json
+// so that the driver is fully compiled to adapt to battery/mains variants at runtime!
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function rule_dualBatteryCleanup() {
+  log('\n📋 Rule 11: Dual Battery Capability Injection (Rule R7.1 - Adaptive Mode)');
+  const composeFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.compose.json'));
+  let fixes = 0;
+
+  for (const file of composeFiles) {
+    try {
+      const compose = JSON.parse(fs.readFileSync(file, 'utf8'));
+      const caps = compose.capabilities || [];
+
+      if (caps.includes('measure_battery') || caps.includes('alarm_battery')) {
+        const hasMeasure = caps.includes('measure_battery');
+        const hasAlarm = caps.includes('alarm_battery');
+
+        if (!hasMeasure || !hasAlarm) {
+          const newCaps = [...caps];
+          if (!hasMeasure) newCaps.push('measure_battery');
+          if (!hasAlarm) newCaps.push('alarm_battery');
+          
+          compose.capabilities = newCaps;
+          safeWrite(file, JSON.stringify(compose, null, 2) + '\n');
+          fixes++;
+          addFix('dual-battery-cleanup', file, 'Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation');
+          log(`  ✅ Fixed: ${path.relative(ROOT, file)} (declared both battery capabilities for adaptive power discovery)`);
+        }
+      }
+    } catch (e) {
+      report.errors.push({ rule: 'dual-battery-cleanup', file, error: e.message });
+    }
+  }
+
+  log(`  → ${fixes} files updated for runtime battery/mains adaptation`);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// RULE 12: ENERGY APPROXIMATION CONFLICT RESOLUTION
+// If a driver defines real-time capabilities like measure_power or meter_power,
+// it must NOT contain the energy.approximation manifest configuration.
+// ═══════════════════════════════════════════════════════════════════════════════
+
+function rule_energyApproximationCleanup() {
+  log('\n📋 Rule 12: Energy Approximation Conflict Resolution');
+  const composeFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.compose.json'));
+  let fixes = 0;
+
+  for (const file of composeFiles) {
+    try {
+      const compose = JSON.parse(fs.readFileSync(file, 'utf8'));
+      const caps = compose.capabilities || [];
+
+      const hasApproximation = compose.energy && compose.energy.approximation;
+      const hasMeasurePower = caps.includes('measure_power');
+      const hasMeterPower = caps.includes('meter_power');
+
+      if (hasApproximation && (hasMeasurePower || hasMeterPower)) {
+        // Resolve conflict: remove energy.approximation because device has real measurement capabilities
+        delete compose.energy.approximation;
+        
+        // Clean up empty energy key if no other sub-keys exist
+        if (Object.keys(compose.energy).length === 0) {
+          delete compose.energy;
+        }
+
+        safeWrite(file, JSON.stringify(compose, null, 2) + '\n');
+        fixes++;
+        addFix('energy-approximation-cleanup', file, 'Removed redundant energy.approximation configuration from measuring driver');
+        log(`  ✅ Fixed: ${path.relative(ROOT, file)} (resolved energy approximation conflict)`);
+      }
+    } catch (e) {
+      report.errors.push({ rule: 'energy-approximation-cleanup', file, error: e.message });
+    }
+  }
+
+  log(`  → ${fixes} files updated for energy compliance`);
+}
+
+// ═══════════════════════════════════════════════════════════════════════════════
 // MAIN ORCHESTRATOR
 // ═══════════════════════════════════════════════════════════════════════════════
 
@@ -458,6 +544,8 @@ async function main() {
   rule_fingerprintCase();
   rule_probeDedup();
   rule_energyBatteries();
+  rule_dualBatteryCleanup();
+  rule_energyApproximationCleanup();
 
   // DETECTION RULES (report only, manual fixes recommended)
   rule_flowCardTryCatch();
@@ -474,7 +562,7 @@ async function main() {
   log('  SELF-HEAL REPORT');
   log('═══════════════════════════════════════════════════════════════════════');
 
-  const autoFixed = ['sdk3-phantom-methods', 'fingerprint-case', 'probe-dedup-static', 'energy-batteries'];
+  const autoFixed = ['sdk3-phantom-methods', 'fingerprint-case', 'probe-dedup-static', 'energy-batteries', 'dual-battery-cleanup', 'energy-approximation-cleanup'];
   const manualReview = Object.keys(report.rules).filter(r => !autoFixed.includes(r));
 
   let totalAutoFixes = 0;

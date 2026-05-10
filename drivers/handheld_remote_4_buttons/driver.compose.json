@@ -12,7 +12,8 @@
   ],
   "capabilities": [
     "button",
-    "alarm_battery"
+    "alarm_battery",
+    "measure_battery"
   ],
   "images": {
     "large": "drivers/handheld_remote_4_buttons/assets/images/large.png",

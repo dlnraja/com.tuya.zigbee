@@ -12,13 +12,10 @@
     "meter_power",
     "measure_current",
     "measure_voltage",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
-    "approximation": {
-      "usageOn": 0,
-      "usageOff": 0
-    },
     "batteries": [
       "OTHER"
     ]

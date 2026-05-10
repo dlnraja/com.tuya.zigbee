@@ -11,7 +11,8 @@
     "button.toggle_2",
     "button.identify",
     "measure_battery",
-    "button.toggle"
+    "button.toggle",
+    "alarm_battery"
   ],
   "zigbee": {
     "productId": [
@@ -590,9 +591,6 @@
     }
   },
   "energy": {
-    "approximation": {
-      "usageConstant": 0.5
-    },
     "batteries": [
       "OTHER"
     ]

@@ -1,627 +1,628 @@
 {
-  "timestamp": "2026-05-09T23:43:56.862Z",
+  "timestamp": "2026-05-10T09:13:02.066Z",
   "totalFiles": 0,
-  "totalFixes": 3869,
+  "totalFixes": 3867,
   "rules": {
-    "fingerprint-case": {
-      "count": 153,
+    "dual-battery-cleanup": {
+      "count": 135,
       "files": [
         {
-          "file": "drivers\\air_purifier\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 10)"
-        },
-        {
           "file": "drivers\\air_quality_co2\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 14)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\air_quality_comprehensive\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 34)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\bulb_dimmable\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 80)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\bulb_rgb\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 39)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\bulb_rgbw\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 170)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\bulb_rgb_led\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\bulb_tunable_white\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 92)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\bulb_white\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\button_emergency_sos\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 75)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\button_wireless\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 10)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\button_wireless_1\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 50)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\button_wireless_2\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 16)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\button_wireless_3\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 18)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\button_wireless_4\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 57)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\button_wireless_6\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\button_wireless_8\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\button_wireless_smart\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\ceiling_fan\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\climate_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1330)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\contact_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 169)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\co_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 8)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\curtain_motor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 240)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\curtain_motor_shutter\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\curtain_motor_tilt\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 56)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\curtain_motor_wall\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 16)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\device_floor_heating\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
+        },
+        {
+          "file": "drivers\\device_floor_heating_thermostat\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\device_generic_tuya_universal\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 24)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\device_radiator_valve\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\device_radiator_valve_smart\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
-        },
-        {
-          "file": "drivers\\dimmer_3gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
-        },
-        {
-          "file": "drivers\\dimmer_dual_channel\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 16)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\dimmer_wall_1gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 257)"
-        },
-        {
-          "file": "drivers\\din_rail_meter\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 56)"
-        },
-        {
-          "file": "drivers\\din_rail_switch\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 28)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\diy_custom_zigbee\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 103)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\doorbell\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 18)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\door_controller\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\energy_meter_3phase\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 28)"
-        },
-        {
-          "file": "drivers\\fan_controller\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 32)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\fingerbot\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 8)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\fingerprint_lock\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 16)"
-        },
-        {
-          "file": "drivers\\floor_heating_thermostat\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 10)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\formaldehyde_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
-        },
-        {
-          "file": "drivers\\garage_door\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 16)"
-        },
-        {
-          "file": "drivers\\garage_door_opener\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 10)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\gas_detector\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 25)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\gas_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 40)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\gateway_zigbee_bridge\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\generic_diy\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 24)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\generic_tuya\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 176)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
-          "file": "drivers\\humidifier\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 14)"
+          "file": "drivers\\handheld_remote_4_buttons\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\hvac_air_conditioner\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
-        },
-        {
-          "file": "drivers\\hvac_controller\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 8)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\hvac_dehumidifier\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 14)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\illuminance_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 9)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\ir_blaster\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 62)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\ir_remote\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 12)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\lcdtemphumidsensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 21)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\led_controller_cct\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 6)"
-        },
-        {
-          "file": "drivers\\led_controller_dimmable\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\led_controller_rgb\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\led_strip\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 18)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\led_strip_advanced\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\led_strip_rgbw\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 22)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\light_bulb_rgb_rgbw\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 64)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\light_sensor_outdoor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\lock_smart\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 24)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\module_mini_switch\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 14)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\motion_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 151)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\motion_sensor_2\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\motion_sensor_radar_mmwave\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 44)"
-        },
-        {
-          "file": "drivers\\pet_feeder\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 12)"
-        },
-        {
-          "file": "drivers\\pet_feeder_zigbee\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 8)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\plug_energy_monitor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 294)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\plug_smart\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 62)"
-        },
-        {
-          "file": "drivers\\pool_pump\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 8)"
-        },
-        {
-          "file": "drivers\\power_clamp_meter\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 14)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\power_meter\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 10)"
-        },
-        {
-          "file": "drivers\\presence_sensor_ceiling\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 10)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\presence_sensor_radar\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 196)"
-        },
-        {
-          "file": "drivers\\radiator_controller\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 10)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\radiator_valve\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 343)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\radiator_valve_zigbee\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\rain_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
-        },
-        {
-          "file": "drivers\\remote_button_wireless_handheld\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\remote_button_wireless_wall\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 48)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\remote_dimmer\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\scene_switch_1\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\scene_switch_2\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\scene_switch_3\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\scene_switch_4\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 22)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\scene_switch_6\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\scene_switch_wall\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\sensor_climate_contact\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
+        },
+        {
+          "file": "drivers\\sensor_contact_motion\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\sensor_contact_presence\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\sensor_motion_radar\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\sensor_presence_radar\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\shutter_roller_controller\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\siren\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 50)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
-          "file": "drivers\\siren_sirentemphumidsensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+          "file": "drivers\\sirentemphumidsensor\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
-          "file": "drivers\\smart_breaker\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 8)"
+          "file": "drivers\\smart_button_switch\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\smart_heater\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
-        },
-        {
-          "file": "drivers\\smart_heater_controller\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 10)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\smart_knob\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 8)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\smart_knob_rotary\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 12)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
-          "file": "drivers\\smart_lcd_thermostat\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 8)"
+          "file": "drivers\\smart_knob_switch\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\smart_rcbo\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\smart_remote_1_button\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\smart_remote_1_button_2\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\smart_remote_4_buttons\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
-        },
-        {
-          "file": "drivers\\smart_scene_panel\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\smoke_detector_advanced\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 71)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\soil_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 9)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\switch\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\switch_1gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 650)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\switch_2gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 177)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\switch_3gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 125)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\switch_4gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 156)"
-        },
-        {
-          "file": "drivers\\switch_dimmer_1gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\switch_plug_1\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\switch_plug_2\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
-        },
-        {
-          "file": "drivers\\switch_temp_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\switch_wall_5gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\switch_wall_6gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 16)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\switch_wall_7gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\switch_wall_8gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 10)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\switch_wireless\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\temphumidsensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 27)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\thermostat_4ch\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\thermostat_tuya_dp\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 134)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\universal_fallback\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\usb_dongle_dual_repeater\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
-        },
-        {
-          "file": "drivers\\usb_dongle_triple\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\usb_outlet_advanced\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 25)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\valve_irrigation\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 66)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\valve_single\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\vibration_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 42)"
-        },
-        {
-          "file": "drivers\\wall_curtain_switch\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
-        },
-        {
-          "file": "drivers\\wall_dimmer_1gang_1way\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\wall_remote_1_gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\wall_remote_2_gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 15)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\wall_remote_3_gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
-          "file": "drivers\\wall_switch_1gang_1way\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 14)"
+          "file": "drivers\\wall_remote_4_gang\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
-          "file": "drivers\\wall_switch_2gang_1way\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 30)"
+          "file": "drivers\\wall_remote_4_gang_2\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
-          "file": "drivers\\wall_switch_3gang_1way\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 44)"
+          "file": "drivers\\wall_remote_4_gang_3\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
-          "file": "drivers\\wall_switch_4gang_1way\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "file": "drivers\\wall_remote_6_gang\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\water_leak_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 92)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\water_tank_monitor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 20)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\water_valve_garden\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 12)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\water_valve_smart\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 12)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
           "file": "drivers\\weather_station_outdoor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
         },
         {
-          "file": "drivers\\zigbee_repeater\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 26)"
+          "file": "drivers\\wifi_door_lock\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
+        },
+        {
+          "file": "drivers\\wifi_pet_feeder\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
+        },
+        {
+          "file": "drivers\\wifi_robot_vacuum\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
+        },
+        {
+          "file": "drivers\\wifi_sensor\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
+        },
+        {
+          "file": "drivers\\wifi_siren\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
+        },
+        {
+          "file": "drivers\\wifi_water_valve\\driver.compose.json",
+          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
+        }
+      ]
+    },
+    "energy-approximation-cleanup": {
+      "count": 17,
+      "files": [
+        {
+          "file": "drivers\\dimmer_wall_1gang\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\din_rail_switch\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\hvac_dehumidifier\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\module_mini_switch\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\plug_energy_monitor\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\plug_smart\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\pool_pump\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\smart_breaker\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\smart_heater_controller\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\switch\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\switch_1gang\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\switch_2gang\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\switch_3gang\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\switch_4gang\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\usb_dongle_dual_repeater\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\usb_dongle_triple\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
+        },
+        {
+          "file": "drivers\\usb_outlet_advanced\\driver.compose.json",
+          "detail": "Removed redundant energy.approximation configuration from measuring driver"
         }
       ]
     },
     "flow-card-try-catch": {
-      "count": 142,
+      "count": 141,
       "files": [
         {
           "file": "drivers\\air_purifier\\device.js",
@@ -1178,10 +1179,6 @@
         {
           "file": "lib\\mixins\\PhysicalButtonMixin.js",
           "detail": "Line 716: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\SDK3BestPractices.js",
-          "detail": "Line 46: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\SonoffZclDevice.js",
