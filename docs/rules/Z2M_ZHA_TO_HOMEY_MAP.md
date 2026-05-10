@@ -63,3 +63,17 @@ If the source capability **IS NOT AVAILABLE NATIVELY** in Homey, be hyper-intell
 2. **Event Streams / Action Clicks**: If it's a momentary action (like a button click, a swipe, a dynamic string that isn't a state), **DO NOT USE CAPABILITIES**. Use `tuya_cluster_event` or **Flow Cards** (triggers mapping in `app.json` or `driver.compose.json`).
 3. **Raw RX / TX Overrides**: For non-standard Zigbee devices that don't even use Tuya DP, instruct the code to use **Passive Raw ZCL Frame Listeners** (`endpoint.on('zcl')`), intercepting the payload directly via Rx (Receive) and responding via Tx (Transmit raw Data). 
 4. **Custom `.json` Files**: As an absolute last resort, if a capability MUST exist in the UI as an interactive button/slider and there is no Tuya or Homey generic equivalent, create a custom `.json` inside `.homeycompose/capabilities/` ONLY.
+
+## 7. Intelligent Divisor & Scale Correctors (`smartScaleValue`)
+When importing raw measurements, always rely on the global, automated `smartScaleValue` engine. It dynamically intercepts setting updates and scales values into normal bounds:
+*   **Temperature**: Corrects 10x/100x multiples (e.g. `2150` -> `21.5°C`).
+*   **Humidity**: Truncates 10x/100x out-of-bounds scales (e.g. `550` -> `55%`).
+*   **Voltage**: Automatically scales millivolts or tenths of a volt into standard residential `100V-260V` ranges (e.g. `23000` or `2300` -> `230V`).
+*   **Current**: Scales milliamperes into standard Amperes (e.g. `1500` -> `1.5A`).
+*   **Power**: Detects raw watts vs tenths of a watt (e.g. `30000` -> `3000W`).
+
+## 8. Battery Conflict Resolution Policy
+To resolve the classic conflict where devices report either a percentage *or* an alarm, but rarely both:
+*   **Bidirectional Sync**: If percentage drops below 15%, `alarm_battery` is auto-asserted to `true`.
+*   **Virtual Synthesis**: If only an alarm is reported, `SmartBatteryManager` synthesizes a clean `10%` percentage (on alarm) or `100%` (when healthy) to satisfy both capability requirements on the Homey UI and prevent layout bugs.
+

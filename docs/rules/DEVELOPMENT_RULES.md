@@ -1,6 +1,6 @@
 # Development Rules - Universal Tuya Zigbee
 
-## 🚨 CRITICAL RULES
+##  CRITICAL RULES
 
 ### 1. Publication Rule
 **NEVER use `npx homey app publish` locally.**  
@@ -10,12 +10,12 @@ The workflow `.github/workflows/publish.yml` handles publication automatically.
 ### 2. ManufacturerName Duplication Rule
 **ManufacturerNames CAN be in multiple drivers** - this is NORMAL and EXPECTED!
 
-#### ✅ VALID: Same manufacturerName in multiple drivers
+####  VALID: Same manufacturerName in multiple drivers
 ```
-_TZ3000_abcdefgh + TS0001 → switch_1gang
-_TZ3000_abcdefgh + TS0002 → switch_2gang
-_TZ3000_abcdefgh + TS0003 → switch_3gang
-_TZ3000_abcdefgh + TS0012 → dimmer_2gang
+_TZ3000_abcdefgh + TS0001  switch_1gang
+_TZ3000_abcdefgh + TS0002  switch_2gang
+_TZ3000_abcdefgh + TS0003  switch_3gang
+_TZ3000_abcdefgh + TS0012  dimmer_2gang
 ```
 The same manufacturer makes multiple device variants with different productIds.
 
@@ -24,7 +24,7 @@ Homey matches BOTH values together. A device is matched when:
 - Its `manufacturerName` is in the driver's list AND
 - Its `productId` is in the driver's list
 
-#### ❌ TRUE conflicts to avoid
+####  TRUE conflicts to avoid
 Only remove a fingerprint if it causes WRONG driver matching:
 - Same manufacturerName + same productId in two incompatible drivers
 - Example: `_TZ3000_xyz` + `TS0002` in both `switch_2gang` AND `dimmer_2gang`
@@ -35,13 +35,17 @@ Only remove a fingerprint if it causes WRONG driver matching:
 - Same OEM supplies different productIds for different device types
 
 ### 3. SDK3 Compliance
-- **No wildcards** in manufacturerName (e.g., `_TZE284_*` is INVALID)
-- Must use complete IDs like `_TZE284_rccxox8p`
-- All flow cards must be registered in both `driver.flow.compose.json` AND compiled into `app.json`
+- **Getter Mandate**: ALWAYS use `this.homey.flow.getTriggerCard('id')`, `this.homey.flow.getActionCard('id')`, or `this.homey.flow.getConditionCard('id')` for driver-specific flow cards. Generic methods like `getTriggerCard` (without calling on flow manager) are DEPRECATED in some contexts, but the 'Device' suffix added in previous documentation was a hallucination and causes runtime crashes.
+- **Card IDs**: Every getter call MUST pass the explicit ID defined in `driver.flow.compose.json`. Naked calls (without arguments) are INVALID and will cause flows to remain unlinked.
+- **No wildcards** in manufacturerName (e.g., `_TZE284_*` is INVALID).
+- All flow cards must be registered in both `driver.flow.compose.json` AND compiled into `app.json`.
 
-### 4. Case-Insensitive Matching
-All manufacturerName/productId comparisons use case-insensitive matching.
-Include both cases when possible: `_TZE200_abcdefgh` and `_tze200_abcdefgh`
+### 4. Case-Less & Sanitization Standards (ZERO-TOLERANCE)
+- **Architectural Mandate**: ALL comparisons involving `manufacturerName`, `modelId`, or `productId` MUST be case-insensitive AND sanitized.
+- **Implementation**: ONLY use `lib/utils/CaseInsensitiveMatcher.js`. Manual `.toLowerCase()`, `.toUpperCase()`, or `.trim()` on these fields in driver or maintenance logic is EXPLICITLY FORBIDDEN.
+- **Invisible Character Cleanup**: We must proactively eliminate null bytes (`\0`), control characters, and non-breaking spaces that frequently corrupt Tuya firmware reports.
+- **Standards Enforcement**: Maintenance scripts like `zero-defect-architect-audit.js` will automatically reject any code or manifest that uses raw string comparisons or contains unsanitized invisible characters.
+- **Fingerprints**: While logic is case-insensitive, keep exact discovered casing in `driver.compose.json` for reference, but acknowledge that the matching engine is case-less.
 
 ### 5. Sleepy Battery Devices
 TS0601 battery devices use **passive mode**:
@@ -49,31 +53,35 @@ TS0601 battery devices use **passive mode**:
 - Data reports when device wakes (up to 24h for first report)
 - This is EXPECTED BEHAVIOR, not a bug
 
+### 6. Tuya Time Sync (10-byte Standard) - NEW
+Modern Tuya devices (TZE284 series) require precise timing responses:
+- **Payload Format**: `[seq:2][UTC:4][Local:4]` (10 bytes total).
+- **Sequence Number**: The GW MUST extract and echo the `seqNum` from the device's request frame (Cmd 0x24).
+- **Implementation**: Use the unified `_respondToTimeSync(sequenceNumber)` method in `BaseHybridDevice` which delegates to `TuyaTimeSync.js`.
+- **Warning**: Sending only 8 bytes or an incorrect sequence number will cause time sync to fail and the device to remain in an unconfigured state.
+
 ---
 
-## 📋 Flow Card Rules
+##  Flow Card Rules
 
 ### Flow Card ID Matching
-- Flow card IDs in `driver.js` MUST exactly match IDs in `driver.flow.compose.json`
-- If compose doesn't auto-compile to `app.json`, add manually to `app.json`
+- Flow card IDs in `driver.js` MUST exactly match IDs in `driver.flow.compose.json`.
+- Standard Prefix: `${driverId}_`. Auto-prefixed by Rule 11 of the Self-Heal engine.
+- Multi-gang Pattern: `${driverId}_gang${N}_${action}` or `${driverId}_physical_gang${N}_${action}`.
 
 ### Flow Card Registration Pattern
 ```javascript
-// In driver.js onInit()
-this._triggerCard = this.homey.flow.getDeviceTriggerCard('driver_name_trigger_id');
+//  CORRECT: SDK 3 compliant with explicit ID
+const flowId = 'my_driver_trigger_name';
+this._triggerCard = this.homey.flow.getTriggerCard(flowId);
 
-// The ID must exist in driver.flow.compose.json:
-{
-  "triggers": [{
-    "id": "driver_name_trigger_id",
-    "title": { "en": "...", "fr": "..." }
-  }]
-}
+//  INCORRECT: Missing ID and non-existent getter
+this._triggerCard = this.homey.flow.getDeviceTriggerCard(); 
 ```
 
 ---
 
-## 🔧 Device Support Rules
+##  Device Support Rules
 
 ### Adding New Manufacturer IDs
 1. Search Zigbee2MQTT, ZHA, Blakadder for existing IDs
@@ -98,17 +106,22 @@ For battery devices, bindings must be in `driver.compose.json`:
 ### Hybrid Energy & Battery Handling
 **CRITICAL RULE**: Tuya manufacturers frequently mix hardware cases! A device seemingly designed for wall installation might be battery-powered, mains-powered, self-kinetic (mechanical push force), or hybrid.
 1. **Never assume static power sources.** Drivers must handle all variants regardless of the driver's name.
-2. **UnifiedBatteryHandler**: Drivers MUST use `UnifiedBatteryHandler` for energy management. It dynamically adapts at runtime to:
+2. **UnifiedBatteryHandler & SmartBatteryManager**: Drivers leverage the bidirectional sync engine in `SmartBatteryManager.js` for energy management. It dynamically adapts at runtime to:
    - Native Zigbee (`genPowerCfg`)
    - Tuya DP (`batteryPercentageRemaining`)
    - Custom Zigbee
    - Missing battery attributes (detects if it's mechanical/mains instead)
-3. **Capability Injection**: Declare `measure_battery` in `driver.compose.json` when variants *might* have batteries. The handler will auto-remove it at runtime if the matched device has `mainsPowered().` No destructive string replacements!
-4. **SDK v3 Conflicts**: Exclusively use `measure_battery`. NEVER include both `measure_battery` and `alarm_battery`.
+3. **Capability Injection**: Declare both `measure_battery` and `alarm_battery` when variants might have batteries. 
+4. **Bidirectional Sync & Conflict Resolution**: The runtime automatically reconciles percentage drops to trigger the low battery alarm. Conversely, if a device only reports binary low battery alarms, `SmartBatteryManager` synthesizes clean virtual percentages (10% on alarm, 100% on healthy) to prevent empty layout blocks or card glitches on the Homey UI.
+
+### 7. Smart Scale Value Correctors (NEW)
+**CRITICAL RULE**: Do not write hardcoded ad-hoc scaling or division calculations (e.g. `value / 100`) inside individual drivers for standard temperature, humidity, voltage, current, power, or energy readings.
+1. **Global Interceptor**: The base `TuyaZigbeeDevice.js` class intercepts all calls to `safeSetCapabilityValue` and runs them through `smartScaleValue` globally.
+2. **Auto-divisors**: This automatically repairs out-of-bounds metrics (such as scaling temperature tenths vs hundredths or voltage millivolts vs volts) based on physiological ranges, keeping code clean and eliminating ad-hoc divisor bugs.
 
 ---
 
-## 🌐 Sources for Device Research
+##  Sources for Device Research
 
 ### Primary Sources
 1. **Zigbee2MQTT**: https://www.zigbee2mqtt.io/supported-devices/
@@ -122,7 +135,7 @@ For battery devices, bindings must be in `driver.compose.json`:
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ### Key Directories
 - `drivers/` - All device drivers (organized by FUNCTION, not brand)
@@ -133,12 +146,12 @@ For battery devices, bindings must be in `driver.compose.json`:
 
 ### Naming Convention
 Drivers are named by **function**, not brand:
-- ✅ `switch_2gang`, `climate_sensor`, `presence_sensor_radar`
-- ❌ `tuya_switch`, `moes_thermostat`
+-  `switch_2gang`, `climate_sensor`, `presence_sensor_radar`
+-  `tuya_switch`, `moes_thermostat`
 
 ---
 
-## 🔄 Git Workflow
+##  Git Workflow
 
 ### Commit Messages
 Format: `v{version}: {description}`
@@ -154,7 +167,7 @@ GitHub Actions auto-syncs README on push (skip with `[skip ci]` in commit messag
 
 ---
 
-## 🐛 Common Issues & Solutions
+##  Common Issues & Solutions
 
 ### "Invalid Flow Card ID"
 **Cause**: Flow card not in `app.json`
