@@ -217,11 +217,12 @@ jobs:
       - name: Summary
         if: always()
         run: |
+          APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "com.dlnraja.tuya.zigbee")
           echo "## v${{ steps.info.outputs.version }}" >> $GITHUB_STEP_SUMMARY
           echo "**Changelog:** ${{ steps.cl.outputs.text }}" >> $GITHUB_STEP_SUMMARY
           if [ "${{ steps.check_pat.outputs.has_pat }}" == "true" ]; then
             echo "Published to Homey App Store (Test channel)" >> $GITHUB_STEP_SUMMARY
-            echo "[Install test version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)" >> $GITHUB_STEP_SUMMARY
+            echo "[Install test version](https://homey.app/a/$APP_ID/test/)" >> $GITHUB_STEP_SUMMARY
           else
             echo "Validated only (HOMEY_PAT not set)" >> $GITHUB_STEP_SUMMARY
           fi

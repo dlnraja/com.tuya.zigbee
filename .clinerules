@@ -12,6 +12,7 @@
    - **NO WILDCARDS** in `manufacturerName` (e.g., `_TZE284_*` is strictly forbidden).
    - All comparisons must be case-insensitive using the custom utility [CaseInsensitiveMatcher.js](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/lib/CaseInsensitiveMatcher.js). Manual `.toLowerCase()` is forbidden.
    - Setting keys must be `zb_model_id` (not `zb_modelId`) and `zb_manufacturer_name` (not `zb_manufacturerName`).
+   - **BSEED 3-Gang ZCL Routing (Issue #170)**: Ensure `_TZ3000_v4l4b0lp` is registered inside the `ZCL_ONLY_MANUFACTURERS_3G` array in `drivers/switch_3gang/device.js` to force routing over standard ZCL Clusters (OnOff) instead of Tuya custom DP (0xEF00) mode, ensuring sub-capability flow cards are bound correctly.
 
 2. **Energy & Hybrid Drivers Rule**:
    - All drivers are inherently hybrid and must support all types of energy monitoring/generation.
@@ -25,7 +26,12 @@
 4. **Runtime 100% Local**:
    - Zero cloud API calls in the Homey application runtime code.
 
-5. **Bundle Size Limit (< 7MB)**:
+5. **Dynamic App Promotion, Casing & Research Tools**:
+   - **Dynamic App Resolution**: Avoid hardcoding `APP_ID` or release namespaces inside GitHub deployment scripts (like `auto-publish-draft.js`, `auto-promote-oauth.js`, and `auto-promote-puppeteer.js`). Load them dynamically from `app.json` at runtime to support parallel tracks (`com.dlnraja.tuya.zigbee` on `master` and `com.dlnraja.tuya.zigbee.stable` on `stable-v5`).
+   - **Casing Normalization**: Run `scripts/maintenance/master-self-heal.js` to auto-normalize casing variants of community fingerprints on both tracks.
+   - **Internet Research & Indexing**: For web scraping and file tracing without active MCP search servers, always utilize `.github/scripts/internet-research-tool.js`.
+
+6. **Bundle Size Limit (< 7MB)**:
    - Always exclude `.github/`, `scripts/`, `docs/`, `tmp/`, and `.git/` via [.homeyignore](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/.homeyignore).
 
 ---
@@ -38,7 +44,8 @@
 ## 🔗 IMPORTANT REFERENCE FILES
 
 - **Global Plan**: [GLOBAL_IMPROVEMENT_PLAN.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/GLOBAL_IMPROVEMENT_PLAN.md)
+- **Project Index**: [PROJECT_INDEX.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/PROJECT_INDEX.md)
 - **Architectural Rules**: [ARCHITECTURAL_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/ARCHITECTURAL_RULES.md)
-- **Development Rules**: [DEVELOPMENT_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/DEVELOPMENT_RULES.md) (or similar docs under rules directory)
+- **Development Rules**: [DEVELOPMENT_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/DEVELOPMENT_RULES.md)
 - **Zigbee/Tuya Specifics**: [ZIGBEE_TUYA_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/ZIGBEE_TUYA_RULES.md)
 - **Critical Mistakes to Avoid**: [CRITICAL_MISTAKES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/CRITICAL_MISTAKES.md)

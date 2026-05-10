@@ -202,6 +202,55 @@ function findProjectResources(term) {
   return results;
 }
 
+// Recursively scan Markdown and TXT files and extract all URLs matching http:// or https://
+function extractUrlsFromFiles() {
+  const urls = new Map(); // url -> Array of files it appeared in
+  const rootDir = path.join(__dirname, '..', '..');
+  
+  function scanDir(dir) {
+    const files = fs.readdirSync(dir);
+    for (const file of files) {
+      if (['node_modules', '.git', '.gemini', 'screenshots', 'tmp'].includes(file)) continue;
+      
+      const fullPath = path.join(dir, file);
+      const stat = fs.statSync(fullPath);
+      
+      if (stat.isDirectory()) {
+        scanDir(fullPath);
+      } else if (stat.isFile()) {
+        const ext = path.extname(file).toLowerCase();
+        if (['.md', '.txt'].includes(ext)) {
+          try {
+            const content = fs.readFileSync(fullPath, 'utf8');
+            const matches = content.match(/https?:\/\/[^\s)\]"\']+/gi);
+            if (matches) {
+              for (let url of matches) {
+                // Clean trailing characters like punctuation, etc.
+                url = url.replace(/[.,;:]+$/, '');
+                // Skip local paths or schema references or generic test paths
+                if (url.includes('127.0.0.1') || url.includes('localhost') || url.includes('schemas.xml') || url.endsWith('.png') || url.endsWith('.jpg') || url.endsWith('.js')) continue;
+                
+                const relPath = path.relative(rootDir, fullPath);
+                if (!urls.has(url)) {
+                  urls.set(url, []);
+                }
+                if (!urls.get(url).includes(relPath)) {
+                  urls.get(url).push(relPath);
+                }
+              }
+            }
+          } catch (e) {
+            // Skip unreadable files
+          }
+        }
+      }
+    }
+  }
+  
+  scanDir(rootDir);
+  return urls;
+}
+
 // Help documentation
 function printHelp() {
   console.log(`
@@ -211,7 +260,7 @@ A native dependency-free script for web search, document retrieval,
 forum scanning, and workspace asset indexing.
 
 Usage:
-  node .github/scripts/internet-research-tool.js <command> <argument>
+  node .github/scripts/internet-research-tool.js <command> [argument]
 
 Commands:
   search <query>     Perform a general web search on DuckDuckGo
@@ -220,6 +269,7 @@ Commands:
   github <query>     Filter search specifically for GitHub issues and code
   fetch <url>        Download any webpage and parse it to clean Markdown
   scan <term>        Locate files in the repository matching any keyword
+  urls               Extract and list all external references/URLs in project files
   help               Print this usage documentation
   `);
 }
@@ -235,7 +285,7 @@ async function main() {
   const cmd = args[0].toLowerCase();
   const arg = args.slice(1).join(' ');
 
-  if (cmd === 'help' || !arg) {
+  if (cmd === 'help' || (!arg && cmd !== 'urls')) {
     printHelp();
     return;
   }
@@ -294,6 +344,27 @@ async function main() {
         }
         console.log(`Found ${matchedFiles.length} file(s):`);
         matchedFiles.forEach(f => console.log(`  - ${f}`));
+        break;
+      }
+
+      case 'urls': {
+        console.log(`🔗 [Project URL Extractor] Extracting reference links from workspace...\n`);
+        const urlsMap = extractUrlsFromFiles();
+        if (!urlsMap.size) {
+          console.log('No external URLs found.');
+          return;
+        }
+        console.log(`Extracted ${urlsMap.size} unique URL(s):\n`);
+        const sortedUrls = [...urlsMap.keys()].sort();
+        sortedUrls.forEach((u, idx) => {
+          console.log(`[${idx + 1}] ${u}`);
+          console.log(`    Cross-referenced in:`);
+          urlsMap.get(u).slice(0, 5).forEach(f => console.log(`      - ${f}`));
+          if (urlsMap.get(u).length > 5) {
+            console.log(`      - ... and ${urlsMap.get(u).length - 5} other file(s)`);
+          }
+          console.log();
+        });
         break;
       }
 
