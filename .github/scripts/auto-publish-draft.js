@@ -10,7 +10,17 @@
 'use strict';
 const fs = require('fs'), path = require('path');
 const { fetchWithRetry } = require('./retry-helper');
-const APP = 'com.dlnraja.tuya.zigbee';
+
+// Dynamically read App ID and version from app.json
+const APP_JSON_PATH = path.join(__dirname, '..', '..', 'app.json');
+let appJson = {};
+try {
+  appJson = JSON.parse(fs.readFileSync(APP_JSON_PATH, 'utf8'));
+} catch (e) {
+  console.error('Warning: could not read app.json:', e.message);
+}
+const APP = appJson.id || 'com.dlnraja.tuya.zigbee';
+
 const PAT = process.env.HOMEY_PAT;
 const DRY = process.env.DRY_RUN === 'true';
 const SUM = process.env.GITHUB_STEP_SUMMARY || null;
@@ -93,7 +103,7 @@ async function promoteBuild(token, buildId, apiBase) {
 }
 
 async function main() {
-  const ver = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'app.json'), 'utf8')).version;
+  const ver = appJson.version || 'unknown';
   log('## Auto-Publish Draft -> Test');
   log('App: ' + APP + ' | Version: v' + ver + ' | DRY=' + DRY);
   log('PAT: present (' + PAT.length + ' chars)');

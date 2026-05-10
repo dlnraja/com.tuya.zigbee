@@ -9,7 +9,17 @@
 'use strict';
 const fs = require('fs'), path = require('path');
 const { promoteViaBrowserSession } = require('./promote-via-session');
-const APP_ID = 'com.dlnraja.tuya.zigbee';
+
+// Dynamically read App ID from app.json
+const APP_JSON_PATH = path.join(__dirname, '..', '..', 'app.json');
+let appJson = {};
+try {
+  appJson = JSON.parse(fs.readFileSync(APP_JSON_PATH, 'utf8'));
+} catch (e) {
+  console.error('Warning: could not read app.json:', e.message);
+}
+const APP_ID = appJson.id || 'com.dlnraja.tuya.zigbee';
+
 const BASE = 'https://tools.developer.homey.app';
 const VERSIONS_URL = `${BASE}/apps/app/${APP_ID}/versions`;
 const EMAIL = process.env.HOMEY_EMAIL;
