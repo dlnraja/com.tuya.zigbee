@@ -8,7 +8,7 @@ get dpMappings(){return{
 '1':{capability:'onoff',writable:true,transform:v=>!!v,reverseTransform:v=>!!v},
 '13':{capability:'alarm_generic',transform:v=>!!v},
 }}}
-module.exports=D;
+module.exports = D;
 `);
 
 w('wifi_garage_door/device.js',`'use strict';
@@ -17,7 +17,7 @@ class D extends TuyaLocalDevice{
 get dpMappings(){return{
 '1':{capability:'garagedoor_closed',writable:true,transform:v=>!v,reverseTransform:v=>!v},
 }}}
-module.exports=D;
+module.exports = D;
 `);
 
 w('wifi_door_lock/device.js',`'use strict';
@@ -27,6 +27,6 @@ get dpMappings(){return{
 '1':{capability:'locked',transform:v=>!!v},
 '4':{capability:'measure_battery',transform:v=>v},
 }}}
-module.exports=D;
+module.exports = D;
 `);
 console.log('security done');

@@ -6,4 +6,4 @@ class SmartButtonSwitchDriver extends Driver{
   async onInit(){this.log('smart_button_switch driver init');}
 }
 
-module.exports=SmartButtonSwitchDriver;
+module.exports = SmartButtonSwitchDriver;

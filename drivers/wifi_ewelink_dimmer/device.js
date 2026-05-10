@@ -21,4 +21,4 @@ class D extends EweLinkLocalDevice{
     this.log('Device deleted, cleaning up');
   }
 }
-module.exports=D;
+module.exports = D;

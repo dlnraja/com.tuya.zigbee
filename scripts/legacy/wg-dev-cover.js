@@ -9,6 +9,6 @@ get dpMappings(){return{
 '1':{capability:'windowcoverings_state',writable:true,transform:v=>MAP[v]||'idle',reverseTransform:v=>RMAP[v]||'stop'},
 '2':{capability:'windowcoverings_set',writable:true,transform:v=>v/100,reverseTransform:v=>Math.round(v*100)},
 }}}
-module.exports=D;
+module.exports = D;
 `);
 console.log('done');

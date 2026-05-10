@@ -6,4 +6,4 @@ class SmartRemote4ButtonsDriver extends Driver{
   async onInit(){this.log('smart_remote_4_buttons driver init');}
 }
 
-module.exports=SmartRemote4ButtonsDriver;
+module.exports = SmartRemote4ButtonsDriver;
