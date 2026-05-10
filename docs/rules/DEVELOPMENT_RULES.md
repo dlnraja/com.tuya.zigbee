@@ -119,6 +119,12 @@ For battery devices, bindings must be in `driver.compose.json`:
 1. **Global Interceptor**: The base `TuyaZigbeeDevice.js` class intercepts all calls to `safeSetCapabilityValue` and runs them through `smartScaleValue` globally.
 2. **Auto-divisors**: This automatically repairs out-of-bounds metrics (such as scaling temperature tenths vs hundredths or voltage millivolts vs volts) based on physiological ranges, keeping code clean and eliminating ad-hoc divisor bugs.
 
+### 8. Post-Promotion Documentation & Registry Synchronization (MANDATORY)
+On every app promotion (draft-to-test / production / branch synchronization), it is mandatory to recursively audit, normalize, and update all markdown documentation files (`.md`), technical registries/reference databases (like `app.json`, `package.json`, fingerprint matrices, and cross-references), dotfiles (`.eslintignore`, `.homeyignore`, etc.), rules configuration files (such as `.clinerule`, `.cursorrules`, etc.), architectural maps, and cartography/index files (like `PROJECT_INDEX.md`, `FINGERPRINT-CROSSREF.md`) to maintain perfect structural alignment with active codebase updates and prevent documentation rot.
+- **Comment robustness in CI/CD pipeline checks**: When grep'ing for banned words, comment lines (`//` or `*`) must be ignored (using `grep -v '^[[:space:]]*//' | grep -v '^[[:space:]]*\*'`) to prevent false-positive failures during code-quality validations.
+- **Draft script isolation in STRICT_SYNTAX_GUARD**: The temporary draft or development scripts directory (`temp`) must be explicitly ignored by the syntax checker so only active production, lib, drivers, and standard CI/CD files are validated, keeping the repository's build green.
+- **Hybrid-Compatible Base Class Exports**: Base classes exported from `lib/devices/` (like `SensorBase` / `HybridSensorBase.js`) must use direct exports together with self-referential class properties (`SensorBase.SensorBase = SensorBase; module.exports = SensorBase;`) to ensure absolute compatibility with both direct destructured requires (used by driver implementations) and index-based requires.
+
 ---
 
 ##  Sources for Device Research
