@@ -1,7 +1,18 @@
 #!/usr/bin/env node
 'use strict';
 const fs = require('fs');
-const APP = 'com.dlnraja.tuya.zigbee';
+const path = require('path');
+
+// Dynamically read App ID from app.json
+const APP_JSON_PATH = path.join(__dirname, '..', '..', 'app.json');
+let appJson = {};
+try {
+  appJson = JSON.parse(fs.readFileSync(APP_JSON_PATH, 'utf8'));
+} catch (e) {
+  console.error('Warning: could not read app.json:', e.message);
+}
+const APP = appJson.id || 'com.dlnraja.tuya.zigbee';
+
 const E = process.env.HOMEY_EMAIL, P = process.env.HOMEY_PASSWORD;
 const SUM = process.env.GITHUB_STEP_SUMMARY;
 const CID = process.env.ATHOM_CLIENT_ID;
