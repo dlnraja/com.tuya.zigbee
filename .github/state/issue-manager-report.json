@@ -1,153 +1,858 @@
 {
-  "timestamp": "2026-04-05T09:46:09.522Z",
-  "appVersion": "5.11.195",
-  "responded": 0,
+  "timestamp": "2026-05-10T15:31:18.966Z",
+  "appVersion": "7.5.10",
+  "responded": 3,
   "closed": 0,
   "labeled": 0,
-  "issuesProcessed": 103,
+  "issuesProcessed": 200,
   "prsProcessed": 36,
-  "skipped": 102,
+  "skipped": 167,
   "newFingerprints": [
     {
-      "fp": "_TZ3000_wol32olt",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "Zbeacon + TS0001",
+      "source": "JohanBendz/com.tuya.zigbee#1394",
       "type": "device_request"
     },
     {
-      "fp": "_TZE284_uo8qcagc",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "Zbeacon + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1394",
       "type": "device_request"
     },
     {
-      "fp": "_TZB210_qzsxaqqe",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "example + TS0001",
+      "source": "JohanBendz/com.tuya.zigbee#1394",
       "type": "device_request"
     },
     {
-      "fp": "_TZE284_tgrzpqf4",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1394",
       "type": "device_request"
     },
     {
-      "fp": "_TZE284_nbv4tdaz",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "router + TS0001",
+      "source": "JohanBendz/com.tuya.zigbee#1394",
       "type": "device_request"
     },
     {
-      "fp": "_TZ3000_dojqjapa",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "router + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1394",
       "type": "device_request"
     },
     {
-      "fp": "_TZE204_cduqh1l0",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "vision + TS0001",
+      "source": "JohanBendz/com.tuya.zigbee#1394",
       "type": "device_request"
     },
     {
-      "fp": "_TZE284_4vobcgd3",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1394",
       "type": "device_request"
     },
     {
-      "fp": "_TZ3210_zifx0xoj",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "example + TS0601",
+      "source": "JohanBendz/com.tuya.zigbee#1393",
       "type": "device_request"
     },
     {
-      "fp": "_TZ3210_2putqrmw",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "router + TS0601",
+      "source": "JohanBendz/com.tuya.zigbee#1393",
       "type": "device_request"
     },
     {
-      "fp": "_TZ3008_reatplte",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "_TZ3040_o4mkahkc + TS0202",
+      "source": "JohanBendz/com.tuya.zigbee#1392",
       "type": "device_request"
     },
     {
-      "fp": "_TZ3000_uyrhiafs",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "_TZ3040_o4mkahkc + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1392",
       "type": "device_request"
     },
     {
-      "fp": "_TZ3000_t7ugva7q",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "example + TS0202",
+      "source": "JohanBendz/com.tuya.zigbee#1392",
       "type": "device_request"
     },
     {
-      "fp": "_TZ3210_imaccztn",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1392",
       "type": "device_request"
     },
     {
-      "fp": "_TZ3000_icoxotza",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "vision + TS0202",
+      "source": "JohanBendz/com.tuya.zigbee#1392",
       "type": "device_request"
     },
     {
-      "fp": "_TZ3210_vbfp8eyv",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1392",
       "type": "device_request"
     },
     {
-      "fp": "_TZE284_bw4ayyeh",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "_TZ3000_996rpfy6 + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1391",
       "type": "device_request"
     },
     {
-      "fp": "_TZ3210_7vgttna6",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "example + TS0203",
+      "source": "JohanBendz/com.tuya.zigbee#1391",
       "type": "device_request"
     },
     {
-      "fp": "_TZ3210_a04acm9s",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1391",
       "type": "device_request"
     },
     {
-      "fp": "_TZ3210_cm9mbpr1",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1391",
       "type": "device_request"
     },
     {
-      "fp": "_TZE284_mul9abs3",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "Zbeacon + TS0505B",
+      "source": "JohanBendz/com.tuya.zigbee#1390",
       "type": "device_request"
     },
     {
-      "fp": "_TZ3002_vsom92pp",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "Zbeacon + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1390",
       "type": "device_request"
     },
     {
-      "fp": "_TZE284_3regm3h6",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "Zbeacon + TS0505",
+      "source": "JohanBendz/com.tuya.zigbee#1390",
       "type": "device_request"
     },
     {
-      "fp": "_TZE204_ouy7vpm1",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "example + TS0505B",
+      "source": "JohanBendz/com.tuya.zigbee#1390",
       "type": "device_request"
     },
     {
-      "fp": "_TZE284_mvtclclq",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1390",
       "type": "device_request"
     },
     {
-      "fp": "_TZE200_hbnfokum",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "example + TS0505",
+      "source": "JohanBendz/com.tuya.zigbee#1390",
       "type": "device_request"
     },
     {
-      "fp": "_TZE200_w0ap83qu",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "router + TS0505B",
+      "source": "JohanBendz/com.tuya.zigbee#1390",
       "type": "device_request"
     },
     {
-      "fp": "_TZE284_4vbj3fxh",
-      "source": "dlnraja/com.tuya.zigbee#192",
+      "fp": "router + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1390",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + TS0505",
+      "source": "JohanBendz/com.tuya.zigbee#1390",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS0505B",
+      "source": "JohanBendz/com.tuya.zigbee#1390",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1390",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS0505",
+      "source": "JohanBendz/com.tuya.zigbee#1390",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_qja6nq5z + TS004F",
+      "source": "JohanBendz/com.tuya.zigbee#1389",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_qja6nq5z + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1389",
+      "type": "device_request"
+    },
+    {
+      "fp": "custom + TS004F",
+      "source": "JohanBendz/com.tuya.zigbee#1389",
+      "type": "device_request"
+    },
+    {
+      "fp": "custom + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1389",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + TS004F",
+      "source": "JohanBendz/com.tuya.zigbee#1389",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1389",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3210_5ct6e7ye + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1388",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + TS011F",
+      "source": "JohanBendz/com.tuya.zigbee#1388",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1388",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + TS011F",
+      "source": "JohanBendz/com.tuya.zigbee#1388",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1388",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE284_rqcuwlsa + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1387",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1387",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1387",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE284_aao3yzhs + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1009",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + TS0601",
+      "source": "JohanBendz/com.tuya.zigbee#1009",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1009",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1009",
+      "type": "device_request"
+    },
+    {
+      "fp": "zigbee2mqtt + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1009",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1009",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE608_c75zqghm + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1385",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + TS0603",
+      "source": "JohanBendz/com.tuya.zigbee#1385",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1385",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + TS0603",
+      "source": "JohanBendz/com.tuya.zigbee#1385",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1385",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS0603",
+      "source": "JohanBendz/com.tuya.zigbee#1385",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1385",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE + TS0603",
+      "source": "JohanBendz/com.tuya.zigbee#1385",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1385",
+      "type": "device_request"
+    },
+    {
+      "fp": "test + TS0601",
+      "source": "JohanBendz/com.tuya.zigbee#1384",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3290_yyax9ajf + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1383",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + TS1201",
+      "source": "JohanBendz/com.tuya.zigbee#1383",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1383",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS1201",
+      "source": "JohanBendz/com.tuya.zigbee#1383",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1383",
+      "type": "device_request"
+    },
+    {
+      "fp": "tuya + TS1201",
+      "source": "JohanBendz/com.tuya.zigbee#1383",
+      "type": "device_request"
+    },
+    {
+      "fp": "tuya + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1383",
+      "type": "device_request"
+    },
+    {
+      "fp": "test + TS1201",
+      "source": "JohanBendz/com.tuya.zigbee#1383",
+      "type": "device_request"
+    },
+    {
+      "fp": "test + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1383",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE200_crq3r3la + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + CK-BL702-MWS-01",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + CK-BL702-MWS-01(7016)",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + CK-BL702-MWS-01",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + CK-BL702-MWS-01(7016)",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + CK-BL702-MWS-01",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + CK-BL702-MWS-01(7016)",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "lumi + CK-BL702-MWS-01",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "lumi + CK-BL702-MWS-01(7016)",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "lumi + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "tuya + CK-BL702-MWS-01",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "tuya + CK-BL702-MWS-01(7016)",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "tuya + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE + CK-BL702-MWS-01",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE + CK-BL702-MWS-01(7016)",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1382",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE204_xalsoe3m + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1381",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + TS0601",
+      "source": "JohanBendz/com.tuya.zigbee#1381",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1381",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + TS0601",
+      "source": "JohanBendz/com.tuya.zigbee#1381",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1381",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1381",
+      "type": "device_request"
+    },
+    {
+      "fp": "moes + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1381",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1381",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_baeiitad + TS0207",
+      "source": "JohanBendz/com.tuya.zigbee#1380",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_baeiitad + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1380",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + TS0207",
+      "source": "JohanBendz/com.tuya.zigbee#1380",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1380",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS0207",
+      "source": "JohanBendz/com.tuya.zigbee#1380",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1380",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE284_aaeasoll + TS0601",
+      "source": "JohanBendz/com.tuya.zigbee#1379",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + TS0601",
+      "source": "JohanBendz/com.tuya.zigbee#1379",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_gjrubzje + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1377",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_g + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1377",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + TS0001",
+      "source": "JohanBendz/com.tuya.zigbee#1377",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1377",
+      "type": "device_request"
+    },
+    {
+      "fp": "test + TS0001",
+      "source": "JohanBendz/com.tuya.zigbee#1377",
+      "type": "device_request"
+    },
+    {
+      "fp": "test + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1377",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_aetquff4 + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1376",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + TS0011",
+      "source": "JohanBendz/com.tuya.zigbee#1376",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1376",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS0011",
+      "source": "JohanBendz/com.tuya.zigbee#1376",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1376",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_qkixdnon + TS0003",
+      "source": "JohanBendz/com.tuya.zigbee#1375",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_qkixdnon + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1375",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + TS0003",
+      "source": "JohanBendz/com.tuya.zigbee#1375",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1375",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + TS0003",
+      "source": "JohanBendz/com.tuya.zigbee#1375",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1375",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + TS0601",
+      "source": "JohanBendz/com.tuya.zigbee#1374",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + TS0601",
+      "source": "JohanBendz/com.tuya.zigbee#1374",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + TS0001",
+      "source": "JohanBendz/com.tuya.zigbee#1371",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS0001",
+      "source": "JohanBendz/com.tuya.zigbee#1371",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + TS0011",
+      "source": "JohanBendz/com.tuya.zigbee#1370",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + TS0012",
+      "source": "JohanBendz/com.tuya.zigbee#1370",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + TS0013",
+      "source": "JohanBendz/com.tuya.zigbee#1370",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS0011",
+      "source": "JohanBendz/com.tuya.zigbee#1370",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS0012",
+      "source": "JohanBendz/com.tuya.zigbee#1370",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS0013",
+      "source": "JohanBendz/com.tuya.zigbee#1370",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS0012",
+      "source": "JohanBendz/com.tuya.zigbee#1369",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_enmfaave + TS0004",
+      "source": "JohanBendz/com.tuya.zigbee#1368",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_enmfaave + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1368",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + TS0004",
+      "source": "JohanBendz/com.tuya.zigbee#1368",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1368",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS0004",
+      "source": "JohanBendz/com.tuya.zigbee#1368",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1368",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_0t4zjtia + TS0001",
+      "source": "JohanBendz/com.tuya.zigbee#1366",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_0t4zjtia + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1366",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + TS0001",
+      "source": "JohanBendz/com.tuya.zigbee#1366",
+      "type": "device_request"
+    },
+    {
+      "fp": "router + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1366",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS0001",
+      "source": "JohanBendz/com.tuya.zigbee#1366",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1366",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_kaflzta4 + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1365",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS004F",
+      "source": "JohanBendz/com.tuya.zigbee#1365",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1365",
+      "type": "device_request"
+    },
+    {
+      "fp": "zigbee2mqtt + TS004F",
+      "source": "JohanBendz/com.tuya.zigbee#1365",
+      "type": "device_request"
+    },
+    {
+      "fp": "zigbee2mqtt + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1365",
+      "type": "device_request"
+    },
+    {
+      "fp": "MOES + TS004F",
+      "source": "JohanBendz/com.tuya.zigbee#1365",
+      "type": "device_request"
+    },
+    {
+      "fp": "MOES + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1365",
+      "type": "device_request"
+    },
+    {
+      "fp": "tuya + TS004F",
+      "source": "JohanBendz/com.tuya.zigbee#1365",
+      "type": "device_request"
+    },
+    {
+      "fp": "tuya + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1365",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_gwkzibhs + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1364",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TS3000_gwkzibhs + TS004F",
+      "source": "JohanBendz/com.tuya.zigbee#1364",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TS3000_gwkzibhs + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1364",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_g + TS004F",
+      "source": "JohanBendz/com.tuya.zigbee#1364",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZ3000_g + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1364",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + TS004F",
+      "source": "JohanBendz/com.tuya.zigbee#1364",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1364",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + TS004F",
+      "source": "JohanBendz/com.tuya.zigbee#1364",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1364",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE284_hdml1aav + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1363",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + TS0601",
+      "source": "JohanBendz/com.tuya.zigbee#1363",
+      "type": "device_request"
+    },
+    {
+      "fp": "example + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1363",
+      "type": "device_request"
+    },
+    {
+      "fp": "vision + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1363",
+      "type": "device_request"
+    },
+    {
+      "fp": "_TZE + generic",
+      "source": "JohanBendz/com.tuya.zigbee#1363",
       "type": "device_request"
     }
   ],
-  "evolutionSummary": "This cycle processed **103 issues** and **36 PRs**, identifying **28 new device fingerprints** primarily sourced from issue #192. Key additions include `_TZ3000_wol32olt`, `_TZE284_uo8qcagc`, `_TZB210_qzsxaqqe`, and multiple `_TZE284`/`_TZ3210` variants. While **0 issues were closed** in this batch, the high processing volume reflects active backlog triage and fingerprint ingestion.\n\n**Action Items:**\n• **Driver Mapping:** Assign the 28 new fingerprints to compatible drivers using strict `manufacturerName` + `productId` pairing. Cross-reference `_TZE284`/`_TZB210` DPs against `TuyaDataPointsZ2M.js` to avoid double-division or capability conflicts.\n• **Issue #192 Priority:** Validate DP mappings for requested devices, update `DeviceFingerprintDB.js`, and ensure no wildcard patterns are used in `driver.compose.json`.\n• **Community Response:** Draft replies for pending device requests, guiding users to re-pair or submit `tools.developer.homey.app` diagnostics if clusters are missing.\n• **CI/CD Deployment:** Commit fingerprint updates to trigger GitHub Actions publishing. Verify against the 4,300+ baseline to prevent routing collisions.\n\nThe app continues scaling robust Tuya Zigbee compatibility across switches, sensors, and energy monitors."
+  "evolutionSummary": "In the latest project evolution, we successfully identified 169 new feature requests (FPs) related to device compatibility, primarily driven by contributions from JohanBendz on the Tuya Zigbee repository. Notable new devices include various configurations of Zbeacon, routers, and examples with TS0001 and TS0601 models, enhancing our device support landscape.\n\nDespite the high volume of issues processed (200) and pull requests (36), no issues were closed during this period, indicating ongoing challenges that require further attention. The focus remains on addressing these unresolved issues while integrating the newly discovered devices into our system.\n\nAction items moving forward include prioritizing the resolution of outstanding issues and evaluating the feasibility of implementing the new devices into our framework. Continued collaboration with contributors will be essential to streamline this process and enhance overall project outcomes."
 }

@@ -2471,3 +2471,74 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 | _TZE200_hbnfokum | dlnraja/com.tuya.zigbee#190 | device_request |
 | _TZE200_w0ap83qu | dlnraja/com.tuya.zigbee#190 | device_request |
 | _TZE284_4vbj3fxh | dlnraja/com.tuya.zigbee#190 | device_request |
+
+
+## Auto-discovered from GitHub (2026-05-10)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| vision + TS0041 | dlnraja/com.tuya.zigbee#314 | bug_report |
+| router + TS0603 | dlnraja/com.tuya.zigbee#305 | bug_report |
+| router + TS0601 | dlnraja/com.tuya.zigbee#305 | bug_report |
+| vision + TS0603 | dlnraja/com.tuya.zigbee#305 | bug_report |
+| debug + TS0603 | dlnraja/com.tuya.zigbee#305 | bug_report |
+| debug + TS0601 | dlnraja/com.tuya.zigbee#305 | bug_report |
+| test + TS0603 | dlnraja/com.tuya.zigbee#305 | bug_report |
+| test + TS0601 | dlnraja/com.tuya.zigbee#305 | bug_report |
+| _TZE + TS0603 | dlnraja/com.tuya.zigbee#305 | bug_report |
+
+
+## Auto-discovered from GitHub (2026-05-10)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| Zbeacon + TS0001 | JohanBendz/com.tuya.zigbee#1394 | device_request |
+| Zbeacon + generic | JohanBendz/com.tuya.zigbee#1394 | device_request |
+| example + TS0001 | JohanBendz/com.tuya.zigbee#1394 | device_request |
+| example + generic | JohanBendz/com.tuya.zigbee#1394 | device_request |
+| router + TS0001 | JohanBendz/com.tuya.zigbee#1394 | device_request |
+| router + generic | JohanBendz/com.tuya.zigbee#1394 | device_request |
+| vision + TS0001 | JohanBendz/com.tuya.zigbee#1394 | device_request |
+| vision + generic | JohanBendz/com.tuya.zigbee#1394 | device_request |
+| example + TS0601 | JohanBendz/com.tuya.zigbee#1393 | device_request |
+| router + TS0601 | JohanBendz/com.tuya.zigbee#1393 | device_request |
+| _TZ3040_o4mkahkc + TS0202 | JohanBendz/com.tuya.zigbee#1392 | device_request |
+| _TZ3040_o4mkahkc + generic | JohanBendz/com.tuya.zigbee#1392 | device_request |
+| example + TS0202 | JohanBendz/com.tuya.zigbee#1392 | device_request |
+| example + generic | JohanBendz/com.tuya.zigbee#1392 | device_request |
+| vision + TS0202 | JohanBendz/com.tuya.zigbee#1392 | device_request |
+| vision + generic | JohanBendz/com.tuya.zigbee#1392 | device_request |
+| _TZ3000_996rpfy6 + generic | JohanBendz/com.tuya.zigbee#1391 | device_request |
+| example + TS0203 | JohanBendz/com.tuya.zigbee#1391 | device_request |
+| example + generic | JohanBendz/com.tuya.zigbee#1391 | device_request |
+| vision + generic | JohanBendz/com.tuya.zigbee#1391 | device_request |
+| Zbeacon + TS0505B | JohanBendz/com.tuya.zigbee#1390 | device_request |
+| Zbeacon + generic | JohanBendz/com.tuya.zigbee#1390 | device_request |
+| Zbeacon + TS0505 | JohanBendz/com.tuya.zigbee#1390 | device_request |
+| example + TS0505B | JohanBendz/com.tuya.zigbee#1390 | device_request |
+| example + generic | JohanBendz/com.tuya.zigbee#1390 | device_request |
+| example + TS0505 | JohanBendz/com.tuya.zigbee#1390 | device_request |
+| router + TS0505B | JohanBendz/com.tuya.zigbee#1390 | device_request |
+| router + generic | JohanBendz/com.tuya.zigbee#1390 | device_request |
+| router + TS0505 | JohanBendz/com.tuya.zigbee#1390 | device_request |
+| vision + TS0505B | JohanBendz/com.tuya.zigbee#1390 | device_request |
+| vision + generic | JohanBendz/com.tuya.zigbee#1390 | device_request |
+| vision + TS0505 | JohanBendz/com.tuya.zigbee#1390 | device_request |
+| _TZ3000_qja6nq5z + TS004F | JohanBendz/com.tuya.zigbee#1389 | device_request |
+| _TZ3000_qja6nq5z + generic | JohanBendz/com.tuya.zigbee#1389 | device_request |
+| custom + TS004F | JohanBendz/com.tuya.zigbee#1389 | device_request |
+| custom + generic | JohanBendz/com.tuya.zigbee#1389 | device_request |
+| example + TS004F | JohanBendz/com.tuya.zigbee#1389 | device_request |
+| example + generic | JohanBendz/com.tuya.zigbee#1389 | device_request |
+| _TZ3210_5ct6e7ye + generic | JohanBendz/com.tuya.zigbee#1388 | device_request |
+| example + TS011F | JohanBendz/com.tuya.zigbee#1388 | device_request |
+| example + generic | JohanBendz/com.tuya.zigbee#1388 | device_request |
+| router + TS011F | JohanBendz/com.tuya.zigbee#1388 | device_request |
+| router + generic | JohanBendz/com.tuya.zigbee#1388 | device_request |
+| _TZE284_rqcuwlsa + generic | JohanBendz/com.tuya.zigbee#1387 | device_request |
+| vision + generic | JohanBendz/com.tuya.zigbee#1387 | device_request |
+| _TZE + generic | JohanBendz/com.tuya.zigbee#1387 | device_request |
+| _TZE284_aao3yzhs + generic | JohanBendz/com.tuya.zigbee#1009 | device_request |
+| example + TS0601 | JohanBendz/com.tuya.zigbee#1009 | device_request |
+| example + generic | JohanBendz/com.tuya.zigbee#1009 | device_request |
+| vision + generic | JohanBendz/com.tuya.zigbee#1009 | device_request |
