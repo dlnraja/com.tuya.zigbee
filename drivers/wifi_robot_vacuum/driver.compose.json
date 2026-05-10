@@ -6,7 +6,8 @@
   "capabilities": [
     "onoff",
     "vacuumcleaner_state",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "pair": [
     {

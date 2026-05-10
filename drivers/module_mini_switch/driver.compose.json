@@ -13,7 +13,8 @@
     "measure_voltage",
     "measure_current",
     "onoff",
-    "meter_power"
+    "meter_power",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -23,10 +24,7 @@
       "AA",
       "CR123A",
       "INTERNAL"
-    ],
-    "approximation": {
-      "usageConstant": 0.5
-    }
+    ]
   },
   "zigbee": {
     "manufacturerName": [

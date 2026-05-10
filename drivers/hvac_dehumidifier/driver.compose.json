@@ -15,7 +15,8 @@
     "onoff",
     "target_temperature",
     "dim.speed",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -47,9 +48,6 @@
     }
   },
   "energy": {
-    "approximation": {
-      "usageConstant": 0.5
-    },
     "batteries": [
       "CR2032",
       "CR2450",
