@@ -11,6 +11,12 @@
  *   node .github/scripts/internet-research-tool.js reddit "tuya smart plug disconnect"
  *   node .github/scripts/internet-research-tool.js fetch "https://www.zigbee2mqtt.io/devices/TS0601.html"
  *   node .github/scripts/internet-research-tool.js scan "Switch3GangDevice"
+ *   node .github/scripts/internet-research-tool.js homeyforum "140352"
+ *   node .github/scripts/internet-research-tool.js gh-issues
+ *   node .github/scripts/internet-research-tool.js gh-prs
+ *   node .github/scripts/internet-research-tool.js blakadder "TZE200"
+ *   node .github/scripts/internet-research-tool.js z2m "TS0601"
+ *   node .github/scripts/internet-research-tool.js collect
  */
 'use strict';
 
@@ -365,6 +371,119 @@ async function main() {
           }
           console.log();
         });
+        break;
+      }
+
+      case 'homeyforum': {
+        console.log(`🏠 [Homey Forum Scraper] Fetching thread content: ${arg}...\n`);
+        const forumUrl = arg.includes('community.homey.app') ? arg
+          : `https://community.homey.app/t/${arg}`;
+        const html = await fetchUrl(forumUrl);
+        const posts = [];
+        const postBlocks = html.split(/class="topic-body"|"post"/i);
+        for (let i = 1; i < postBlocks.length && i <= 20; i++) {
+          const block = postBlocks[i];
+          const authorMatch = block.match(/class="[^"]*names[^"]*"[^>]*>([^<]+)/i);
+          const dateMatch = block.match(/datetime="([^"]+)"/i);
+          const contentMatch = block.match(/class="[^"]*post[^"]*cooked[^"]*"[^>]*>([\s\S]*?)<\/div>/i);
+          if (contentMatch) {
+            const text = contentMatch[1].replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+            posts.push({
+              author: authorMatch ? authorMatch[1].trim() : 'Unknown',
+              date: dateMatch ? dateMatch[1] : 'Unknown',
+              text: text.substring(0, 500)
+            });
+          }
+        }
+        if (!posts.length) { console.log('No posts parsed from forum thread.'); return; }
+        posts.forEach((p, i) => console.log(`[${i + 1}] ${p.author} (${p.date}):\n    ${p.text}\n`));
+        break;
+      }
+
+      case 'gh-issues':
+      case 'gh-prs': {
+        const isPRs = cmd === 'gh-prs';
+        const repo = arg || 'dlnraja/com.tuya.zigbee';
+        const apiUrl = `https://api.github.com/repos/${repo}/${isPRs ? 'pulls' : 'issues'}?state=all&per_page=30&sort=updated`;
+        console.log(`🐙 [GitHub ${isPRs ? 'PRs' : 'Issues'}] Fetching from ${repo}...\n`);
+        const json = await fetchUrl(apiUrl, { headers: { 'Accept': 'application/vnd.github.v3+json', 'User-Agent': 'universal-tuya-research' } });
+        const items = JSON.parse(json);
+        if (!items.length) { console.log('No items found.'); return; }
+        items.forEach((item, idx) => {
+          const state = item.state === 'open' ? '🟢' : '🔴';
+          console.log(`${state} [${item.number}] ${item.title}`);
+          console.log(`    Author: ${item.user?.login || 'N/A'} | Updated: ${item.updated_at?.substring(0, 10)}`);
+          if (item.labels?.length) console.log(`    Labels: ${item.labels.map(l => l.name).join(', ')}`);
+          console.log();
+        });
+        break;
+      }
+
+      case 'blakadder': {
+        const query = arg || '';
+        console.log(`📡 [Blakadder Scraper] Searching devices for: "${query}"...\n`);
+        const blUrl = query
+          ? `https://zigbee.blakadder.com/search.html?q=${encodeURIComponent(query)}`
+          : 'https://zigbee.blakadder.com/all.html';
+        const html = await fetchUrl(blUrl);
+        const devices = [];
+        const linkRegex = /href="([^"]*\.html)"[^>]*>([^<]+)</g;
+        let match;
+        while ((match = linkRegex.exec(html)) !== null) {
+          const href = match[1];
+          const name = match[2].trim();
+          if (href.includes('/') && name.length > 2 && !href.includes('index')) {
+            devices.push({ name, url: `https://zigbee.blakadder.com/${href}` });
+          }
+        }
+        const unique = [...new Map(devices.map(d => [d.name, d])).values()].slice(0, 30);
+        unique.forEach((d, i) => console.log(`[${i + 1}] ${d.name}\n    ${d.url}`));
+        break;
+      }
+
+      case 'z2m': {
+        const query = arg || 'tuya';
+        console.log(`⚡ [Z2M Converters] Searching for: "${query}"...\n`);
+        const z2mUrl = `https://raw.githubusercontent.com/Koenkk/zigbee-herdsman-converters/master/src/devices/tuya.ts`;
+        const tsSource = await fetchUrl(z2mUrl);
+        const matches = [];
+        const modelRegex = new RegExp(`model:\\s*'([^']*${query}[^']*)'|vendor:\\s*'([^']*${query}[^']*)'`, 'gi');
+        let m;
+        while ((m = modelRegex.exec(tsSource)) !== null) {
+          const ctx = tsSource.substring(Math.max(0, m.index - 200), Math.min(tsSource.length, m.index + 200));
+          const modelMatch = ctx.match(/model:\s*'([^']+)'/);
+          const vendorMatch = ctx.match(/vendor:\s*'([^']+)'/);
+          matches.push({ model: modelMatch?.[1] || 'N/A', vendor: vendorMatch?.[1] || 'N/A' });
+        }
+        const uniqModels = [...new Map(matches.map(m => [m.model, m])).values()].slice(0, 20);
+        uniqModels.forEach((m, i) => console.log(`[${i + 1}] ${m.vendor} / ${m.model}`));
+        break;
+      }
+
+      case 'collect': {
+        console.log(`🔄 [Aggregated Collector] Running full scan of project, forums, GitHub, Blakadder, Z2M...\n`);
+        const output = { timestamp: new Date().toISOString(), projectUrls: {}, github: { issues: [], prs: [] }, blakadder: [], z2m: [] };
+        // 1. Project URLs
+        const urlsMap = extractUrlsFromFiles();
+        output.projectUrls = { count: urlsMap.size, topUrls: [...urlsMap.keys()].slice(0, 50) };
+        // 2. GitHub Issues
+        try {
+          const ghJson = await fetchUrl('https://api.github.com/repos/dlnraja/com.tuya.zigbee/issues?state=open&per_page=20', { headers: { 'Accept': 'application/vnd.github.v3+json', 'User-Agent': 'universal-tuya-research' } });
+          output.github.issues = JSON.parse(ghJson).map(i => ({ number: i.number, title: i.title, updated: i.updated_at }));
+        } catch (e) { output.github.issuesError = e.message; }
+        // 3. GitHub PRs
+        try {
+          const prJson = await fetchUrl('https://api.github.com/repos/dlnraja/com.tuya.zigbee/pulls?state=open&per_page=20', { headers: { 'Accept': 'application/vnd.github.v3+json', 'User-Agent': 'universal-tuya-research' } });
+          output.github.prs = JSON.parse(prJson).map(p => ({ number: p.number, title: p.title, updated: p.updated_at }));
+        } catch (e) { output.github.prsError = e.message; }
+        // Save report
+        const reportPath = path.join(__dirname, '..', '..', 'tmp', 'research-collect-report.json');
+        fs.mkdirSync(path.dirname(reportPath), { recursive: true });
+        fs.writeFileSync(reportPath, JSON.stringify(output, null, 2));
+        console.log(`✅ Aggregated report saved to: ${reportPath}`);
+        console.log(`   Project URLs: ${output.projectUrls.count}`);
+        console.log(`   GitHub Issues: ${output.github.issues.length}`);
+        console.log(`   GitHub PRs: ${output.github.prs.length}`);
         break;
       }
 
