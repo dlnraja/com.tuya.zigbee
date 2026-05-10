@@ -85,6 +85,9 @@ function buildForumPost(ver,cl,stats,url){
 }
 
 async function main(){
+  console.log('[DRY RUN] Forced read-only mode — skipping actual post update.');
+  fs.appendFileSync(SUM,'Forum update skipped (forced dry run)\n');
+  return;
   const state=loadState();
   const ver=process.env.APP_VERSION||require(path.join(process.cwd(),'app.json')).version;
   // Version dedup: skip if we already posted this exact version

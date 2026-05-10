@@ -262,7 +262,7 @@ async function batchAI(postInfos,ver,threadCtx){
 }
 
 async function main(){
-  let dry=process.env.DRY_RUN==='true';
+  let dry=true; // Forced read-only guard (no forum writing allowed)
   const tids=(process.env.FORUM_TOPICS||'140352').split(',').map(Number);
   // IMPORTANT: Only reply on OUR OWN thread (140352). Never post on other people's threads!
   const replyTids=new Set((process.env.REPLY_TOPICS||'140352').split(',').map(Number));

@@ -1,8 +1,8 @@
 {
   "name": {
-    "en": "Device Din Rail Meter",
-    "nl": "Device Din Rail Meter",
-    "fr": "Device Din Rail Meter"
+    "en": "Device Din Rail",
+    "nl": "Device Din Rail",
+    "fr": "Device Din Rail"
   },
   "class": "doorbell",
   "capabilities": [
@@ -25,7 +25,11 @@
     ]
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tz3210_emqmwtym",
+      "_TZ3210_emqmwtym",
+      "_TZ3210_EMQMWTYM"
+    ],
     "productId": [
       "TS0601"
     ],
