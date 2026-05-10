@@ -67,5 +67,8 @@
   },
   "5.11.211": {
     "en": "Universal Tuya Zigbee v5.11.211: Fixed DeviceIdentificationDatabase crash on startup (ReferenceError: lastUpdate is not defined). Added crash-proof constructor with try/catch fallback."
+  },
+  "5.11.212": {
+    "en": "Implement Rule 24 caseless resolver and dynamic O(1) matching system for high-performance pairing."
   }
 }
