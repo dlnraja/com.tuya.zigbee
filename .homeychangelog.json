@@ -1,4 +1,7 @@
 {
+  "7.5.11": {
+    "en": "v7.5.11: Fixed ReferenceError crashes in HybridSensorBase, HybridCoverBase, HybridLightBase, HybridPlugBase, HybridSwitchBase, and HybridThermostatBase during dynamic capability updates."
+  },
   "7.5.10": {
     "en": "Fixed a crash in HybridSensorBase that caused a ReferenceError on _safeSetCapability. Added support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm)."
   },
@@ -56,10 +59,7 @@
   "5.11.196": {
     "en": "Fixed pairing for 151 devices with uppercase manufacturer IDs, updated fingerprints across bulb, button, and sensor drivers, and improved overall Tuya Zigbee compatibility."
   },
-  "5.11.195": {
-    "en": "Bug fixes for climate sensor dual temperature display, critical SDK3 method crash fix, enhanced physical button flow support for multi-gang devices, and 28 new device fingerprints from community sources."
-  },
-  "7.5.11": {
-    "en": "v7.5.10: Fixed a ReferenceError in HybridSensorBase when calling _safeSetCapability, which could cause sensor devices to crash on startup or during capability updates., Added support for Nedis SmartLife Radiator Control (fingerprint: _TZE284_ne4pikwm)., Updated device interview database with 8 new entries for better compatibility."
+  "7.5.12": {
+    "en": "v7.5.11: Fixed ReferenceError crashes across all Hybrid Base classes (Sensor, Cover, Light, Plug, Switch, Thermostat) during dynamic capability updates. This resolves rare crashes when capabilities are added or removed at runtime., Fixed `_safeSetCapability` ReferenceError in HybridSensorBase., Updated to 221 drivers and 6636 fingerprints., Improved internal error handling for capability updates."
   }
 }
