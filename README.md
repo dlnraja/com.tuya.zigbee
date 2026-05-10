@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.10 |
+| **App Version** | v7.5.11 |
 | **Device Fingerprints** | 10,815+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 221 (171 Zigbee + 50 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.10** | v7.5.9: Fix ProtocolArbitrator reference error in BaseHybridDevice initialization (crash on startup), Reclassify _TZE... |
+| **v7.5.11** | v7.5.10: Fixed a ReferenceError in HybridSensorBase when calling _safeSetCapability, which could cause sensor devices... |
+| **v7.5.10** | Fixed a crash in HybridSensorBase that caused a ReferenceError on _safeSetCapability. Added support for Nedis SmartLi... |
 | **v7.5.9** | v7.5.9: . Fixed ProtocolArbitrator crash, _TZE608 opener reclassification, SDK3 validation errors, duplicate fingerpr... |
 | **v5.11.212** | Implement Rule 24 caseless resolver and dynamic O(1) matching system for high-performance pairing. |
 | **v5.11.211** | Universal Tuya Zigbee v5.11.211: Fixed DeviceIdentificationDatabase crash on startup (ReferenceError: lastUpdate is n... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.203** | Added universal support for all 4 Zigbee SOS reporting standards to emergency buttons, improving cross-brand compatib... |
 | **v5.11.202** | Added support for new Tuya devices and improved pairing instructions. |
 | **v5.11.201** | Added 3 new device fingerprints including Nedis SmartLife Radiator Control. Fixed connection recovery and battery rep... |
-| **v5.11.200** | Added support for ZG-204ZM and WiFi water sensor. Stabilized sleepy devices. |
 
 <!-- CHANGELOG_END -->
 

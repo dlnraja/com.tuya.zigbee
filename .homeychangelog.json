@@ -1,4 +1,7 @@
 {
+  "7.5.10": {
+    "en": "Fixed a crash in HybridSensorBase that caused a ReferenceError on _safeSetCapability. Added support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm)."
+  },
   "7.5.9": {
     "en": "v7.5.9: . Fixed ProtocolArbitrator crash, _TZE608 opener reclassification, SDK3 validation errors, duplicate fingerprints, case-insensitive matching, and MODULE_NOT_FOUND crash. Added 5 new fingerprints, Z2M enriched mappings, rain/soil sensor fixes."
   },
@@ -56,10 +59,7 @@
   "5.11.195": {
     "en": "Bug fixes for climate sensor dual temperature display, critical SDK3 method crash fix, enhanced physical button flow support for multi-gang devices, and 28 new device fingerprints from community sources."
   },
-  "5.11.194": {
-    "en": "Added support for 28 new Tuya device variants, including the Nedis SmartLife Radiator Control. Total coverage now spans ."
-  },
-  "7.5.10": {
-    "en": "v7.5.9: Fix ProtocolArbitrator reference error in BaseHybridDevice initialization (crash on startup), Reclassify _TZE608 openers from contact_sensor to garage_door_opener (#305), Resolve fleet-wide extends syntax crash across 59 driver files, Remove duplicate driver.flow.compose.json in hybrid drivers (SDK3 validation fix), Remove SDK3 deprecated getTriggerCard references (runtime crash)"
+  "7.5.11": {
+    "en": "v7.5.10: Fixed a ReferenceError in HybridSensorBase when calling _safeSetCapability, which could cause sensor devices to crash on startup or during capability updates., Added support for Nedis SmartLife Radiator Control (fingerprint: _TZE284_ne4pikwm)., Updated device interview database with 8 new entries for better compatibility."
   }
 }
