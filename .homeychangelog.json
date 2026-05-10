@@ -1,4 +1,7 @@
 {
+  "7.5.12": {
+    "en": "v7.5.12: . Fixed sensor fallback logic for unknown models. Added new fingerprints for radiator valve (_TZE284_ne4pikwm). Updated documentation and project rules."
+  },
   "7.5.11": {
     "en": "v7.5.11: Fixed ReferenceError crashes in HybridSensorBase, HybridCoverBase, HybridLightBase, HybridPlugBase, HybridSwitchBase, and HybridThermostatBase during dynamic capability updates."
   },
@@ -56,10 +59,7 @@
   "5.11.197": {
     "en": "Added support for 3 new Tuya device fingerprints and integrated 2,141 upstream device profiles to improve automatic pairing and driver matching."
   },
-  "5.11.196": {
-    "en": "Fixed pairing for 151 devices with uppercase manufacturer IDs, updated fingerprints across bulb, button, and sensor drivers, and improved overall Tuya Zigbee compatibility."
-  },
-  "7.5.12": {
-    "en": "v7.5.11: Fixed ReferenceError crashes across all Hybrid Base classes (Sensor, Cover, Light, Plug, Switch, Thermostat) during dynamic capability updates. This resolves rare crashes when capabilities are added or removed at runtime., Fixed `_safeSetCapability` ReferenceError in HybridSensorBase., Updated to 221 drivers and 6636 fingerprints., Improved internal error handling for capability updates."
+  "7.5.13": {
+    "en": "v7.5.12: Fixed sensor fallback check for unknown model IDs to prevent incorrect capability assignments, Cleaned up HybridSensorBase exports to remove unused draft scripts, Updated documentation, project rules, and configuration files for better developer experience, Refreshed fingerprint cross-reference and project status docs, Added support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm /"
   }
 }

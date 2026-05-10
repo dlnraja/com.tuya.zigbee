@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.12 |
+| **App Version** | v7.5.13 |
 | **Device Fingerprints** | 10,815+ |
 | **Unique Product IDs** | 559 |
 | **Drivers** | 221 (171 Zigbee + 50 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.12** | v7.5.11: Fixed ReferenceError crashes across all Hybrid Base classes (Sensor, Cover, Light, Plug, Switch, Thermostat)... |
+| **v7.5.13** | v7.5.12: Fixed sensor fallback check for unknown model IDs to prevent incorrect capability assignments, Cleaned up Hy... |
+| **v7.5.12** | v7.5.12: . Fixed sensor fallback logic for unknown models. Added new fingerprints for radiator valve (_TZE284_ne4pikw... |
 | **v7.5.11** | v7.5.11: Fixed ReferenceError crashes in HybridSensorBase, HybridCoverBase, HybridLightBase, HybridPlugBase, HybridSw... |
 | **v7.5.10** | Fixed a crash in HybridSensorBase that caused a ReferenceError on _safeSetCapability. Added support for Nedis SmartLi... |
 | **v7.5.9** | v7.5.9: . Fixed ProtocolArbitrator crash, _TZE608 opener reclassification, SDK3 validation errors, duplicate fingerpr... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.205** | Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers. |
 | **v5.11.204** | v5.11.203: Emergency SOS Buttons:, Device Support:, Expanded compatibility for wireless emergency buttons and panic s... |
 | **v5.11.203** | Added universal support for all 4 Zigbee SOS reporting standards to emergency buttons, improving cross-brand compatib... |
-| **v5.11.202** | Added support for new Tuya devices and improved pairing instructions. |
 
 <!-- CHANGELOG_END -->
 
