@@ -1,9 +1,9 @@
 'use strict';
 
 const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
-const Homey = require('homey');
+const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-class RemoteButtonWirelessHybridDriver extends Homey {
+class RemoteButtonWirelessDriver extends ZigBeeDriver {
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);
@@ -17,7 +17,7 @@ class RemoteButtonWirelessHybridDriver extends Homey {
     await super.onInit();
     if (this._flowCardsRegistered) return;
     this._flowCardsRegistered = true;
-    this.log('Remote Button Wireless Hybrid driver initialized');
+    this.log('Remote Button Wireless driver initialized');
     this._registerFlowCards();
   }
 
@@ -59,5 +59,6 @@ class RemoteButtonWirelessHybridDriver extends Homey {
   }
 }
 
-module.exports = RemoteButtonWirelessHybridDriver;
+module.exports = RemoteButtonWirelessDriver;
+
 
