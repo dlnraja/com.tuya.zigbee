@@ -4,7 +4,7 @@ const fs=require('fs'),path=require('path');
 const {getForumAuth,refreshCsrf,fmtCk,FORUM}=require('./forum-auth');
 const{fetchWithRetry}=require('./retry-helper');
 const TOPIC=140352,ROOT=path.join(__dirname,'..','..');
-const DRY=process.env.DRY_RUN==='true';
+const DRY=true; // Forced read-only guard (no forum writing allowed)
 
 function getStats(){
   const app=JSON.parse(fs.readFileSync(path.join(ROOT,'app.json'),'utf8'));

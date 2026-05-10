@@ -5,7 +5,7 @@
 const {getForumAuth,refreshCsrf,authHeaders,fmtCk,FORUM}=require('./forum-auth');
 const {fetchWithRetry}=require('./retry-helper');
 
-const DRY=process.env.DRY_RUN==='true';
+const DRY=true; // Forced read-only guard (no forum writing allowed)
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 
 // ===== 1. POSTS TO DELETE =====
