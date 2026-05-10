@@ -55,6 +55,8 @@ function getHeaders(auth, json) {
 }
 
 async function main() {
+  console.log('[DRY RUN] Forced read-only mode — skipping forum cleanup edit.');
+  return;
   console.log(`=== Forum Cleanup via EDIT v5.12.0 ===`);
   console.log(`Posts to edit: ${TO_EDIT.length}`);
 
