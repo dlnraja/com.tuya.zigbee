@@ -1,8 +1,37 @@
 {
-  "timestamp": "2026-05-10T09:44:18.309Z",
+  "timestamp": "2026-05-10T12:01:21.157Z",
   "totalFiles": 0,
-  "totalFixes": 72,
+  "totalFixes": 85,
   "rules": {
+    "fingerprint-case": {
+      "count": 6,
+      "files": [
+        {
+          "file": "drivers\\device_radiator_valve_smart\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+        },
+        {
+          "file": "drivers\\doorbell\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+        },
+        {
+          "file": "drivers\\energy_meter_3phase\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+        },
+        {
+          "file": "drivers\\illuminance_sensor\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+        },
+        {
+          "file": "drivers\\motion_sensor\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+        },
+        {
+          "file": "drivers\\switch_3gang\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+        }
+      ]
+    },
     "flow-card-try-catch": {
       "count": 61,
       "files": [
@@ -299,6 +328,39 @@
         {
           "file": "drivers\\water_valve_smart\\device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
+        }
+      ]
+    },
+    "duplicate-fingerprints": {
+      "count": 7,
+      "files": [
+        {
+          "file": "drivers",
+          "detail": "_tze284_6ocnqlhn|ts0601 found in: climate_sensor_energy, energy_meter_3phase"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3210_emqmwtym|ts0601 found in: device_din_rail_meter, doorbell"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_hl0ss9oa|ts0225 found in: illuminance_sensor, sensor_illuminance_presence"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_4pm4pekt|ts0225 found in: motion_sensor, sensor_motion_presence"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_4pm4pekt|ts0601 found in: motion_sensor, sensor_motion_presence"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mw1pqqqt|ts0601 found in: switch, switch_3gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_mw1pqqqt|ts0003 found in: switch_3gang, switch_usb_dongle"
         }
       ]
     },
