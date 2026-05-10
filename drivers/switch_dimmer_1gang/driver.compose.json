@@ -8,9 +8,7 @@
   "class": "light",
   "capabilities": [
     "onoff",
-    "dim",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "dim"
   ],
   "capabilitiesOptions": {
     "onoff": {

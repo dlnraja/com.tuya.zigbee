@@ -4,9 +4,7 @@
   },
   "class": "remote",
   "capabilities": [
-    "onoff",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff"
   ],
   "pair": [
     {
@@ -255,7 +253,7 @@
   "images": {
     "small": "drivers/wifi_ir_remote/assets/images/small.png",
     "large": "drivers/wifi_ir_remote/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

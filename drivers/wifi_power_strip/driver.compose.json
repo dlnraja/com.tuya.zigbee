@@ -9,9 +9,7 @@
     "onoff.socket3",
     "onoff.socket4",
     "measure_power",
-    "meter_power",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "meter_power"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -288,7 +286,7 @@
   "images": {
     "small": "drivers/wifi_power_strip/assets/images/small.png",
     "large": "drivers/wifi_power_strip/assets/images/large.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

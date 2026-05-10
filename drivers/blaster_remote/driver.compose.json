@@ -15,9 +15,7 @@
     "ir_learned_code",
     "ir_send_code",
     "measure_battery",
-    "onoff",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff"
   ],
   "capabilitiesOptions": {
     "button.learn_ir": {

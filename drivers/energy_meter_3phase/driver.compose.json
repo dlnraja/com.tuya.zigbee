@@ -14,9 +14,7 @@
     "measure_power.phase1",
     "measure_power.phase2",
     "measure_power.phase3",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "energy": {
     "batteries": [

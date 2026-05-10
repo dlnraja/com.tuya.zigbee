@@ -6,9 +6,7 @@
   "capabilities": [
     "onoff",
     "measure_temperature",
-    "measure_humidity",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_humidity"
   ],
   "pair": [
     {
@@ -231,7 +229,7 @@
   "images": {
     "small": "drivers/wifi_ewelink_th/assets/images/small.png",
     "large": "drivers/wifi_ewelink_th/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

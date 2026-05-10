@@ -5,9 +5,7 @@
   "class": "light",
   "capabilities": [
     "onoff",
-    "dim",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "dim"
   ],
   "pair": [
     {
@@ -230,7 +228,7 @@
   "images": {
     "small": "drivers/wifi_ewelink_led/assets/images/small.png",
     "large": "drivers/wifi_ewelink_led/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

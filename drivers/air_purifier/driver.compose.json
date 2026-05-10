@@ -14,9 +14,7 @@
   "capabilities": [
     "dim",
     "measure_pm25",
-    "onoff",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff"
   ],
   "capabilitiesOptions": {
     "dim": {

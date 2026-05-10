@@ -12,9 +12,7 @@
   ],
   "capabilities": [
     "windowcoverings_set",
-    "windowcoverings_state",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "windowcoverings_state"
   ],
   "images": {
     "large": "drivers/wall_curtain_switch/assets/images/large.png",

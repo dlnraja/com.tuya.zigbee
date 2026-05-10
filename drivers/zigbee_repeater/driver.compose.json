@@ -4,10 +4,7 @@
     "fr": "RÃ©pÃ©teur de Signal Zigbee"
   },
   "class": "other",
-  "capabilities": [
-    "measure_radio_stability",
-    "measure_maintenance_score"
-  ],
+  "capabilities": [],
   "zigbee": {
     "manufacturerName": [],
     "productId": [],

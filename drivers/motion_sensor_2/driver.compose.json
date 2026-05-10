@@ -17,9 +17,7 @@
   "capabilities": [
     "measure_battery",
     "measure_luminance",
-    "alarm_motion",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "alarm_motion"
   ],
   "energy": {
     "batteries": [

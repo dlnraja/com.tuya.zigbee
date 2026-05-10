@@ -9,9 +9,7 @@
   "capabilities": [
     "button",
     "measure_weight",
-    "alarm_generic",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "alarm_generic"
   ],
   "capabilitiesOptions": {
     "button": {

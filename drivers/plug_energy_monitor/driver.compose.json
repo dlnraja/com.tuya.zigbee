@@ -11,9 +11,7 @@
     "meter_power",
     "measure_voltage",
     "measure_current",
-    "onoff",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff"
   ],
   "energy": {
     "approximation": {

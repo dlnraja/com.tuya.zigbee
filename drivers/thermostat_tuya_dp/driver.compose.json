@@ -12,9 +12,7 @@
     "thermostat_mode",
     "measure_battery",
     "onoff",
-    "measure_humidity",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_humidity"
   ],
   "platforms": [
     "local"

@@ -12,9 +12,7 @@
     "onoff.channel2",
     "dim.channel2",
     "onoff.channel3",
-    "dim.channel3",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "dim.channel3"
   ],
   "platforms": [
     "local"

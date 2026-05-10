@@ -13,9 +13,7 @@
     "meter_power",
     "measure_current",
     "measure_voltage",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [],

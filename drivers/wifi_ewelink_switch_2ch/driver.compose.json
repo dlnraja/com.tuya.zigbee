@@ -5,9 +5,7 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "onoff.2",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff.2"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -242,7 +240,7 @@
   "images": {
     "small": "drivers/wifi_ewelink_switch_2ch/assets/images/small.png",
     "large": "drivers/wifi_ewelink_switch_2ch/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

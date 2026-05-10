@@ -233,9 +233,7 @@
     "onoff.2",
     "measure_power",
     "measure_voltage",
-    "measure_current",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_current"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -252,7 +250,7 @@
   "images": {
     "small": "drivers/wifi_sonoff_dualr3/assets/images/small.png",
     "large": "drivers/wifi_sonoff_dualr3/assets/images/large.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

@@ -233,14 +233,12 @@
     "measure_power",
     "measure_voltage",
     "measure_current",
-    "meter_power",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "meter_power"
   ],
   "images": {
     "small": "drivers/wifi_sonoff_pow_elite/assets/images/small.png",
     "large": "drivers/wifi_sonoff_pow_elite/assets/images/large.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

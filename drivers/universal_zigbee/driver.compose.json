@@ -32,9 +32,7 @@
     "tuya_dp_value",
     "tuya_dp_string",
     "tuya_dp_raw",
-    "tuya_cluster_event",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "tuya_cluster_event"
   ],
   "capabilitiesOptions": {
     "tuya_dp_value": {

@@ -9,9 +9,7 @@
   "class": "sensor",
   "capabilities": [
     "button.1",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "button.1": {

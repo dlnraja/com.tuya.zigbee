@@ -229,14 +229,12 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff"
   ],
   "images": {
     "small": "drivers/wifi_sonoff_tx_1ch/assets/images/small.png",
     "large": "drivers/wifi_sonoff_tx_1ch/assets/images/large.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

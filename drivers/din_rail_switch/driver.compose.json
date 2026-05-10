@@ -16,9 +16,7 @@
     "measure_power",
     "meter_power",
     "measure_voltage",
-    "measure_current",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_current"
   ],
   "capabilitiesOptions": {
     "measure_power": {

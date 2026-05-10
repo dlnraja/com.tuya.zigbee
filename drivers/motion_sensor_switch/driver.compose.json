@@ -13,9 +13,7 @@
     "measure_luminance",
     "measure_temperature",
     "measure_humidity",
-    "alarm_tamper",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "alarm_tamper"
   ],
   "zigbee": {
     "productId": [],

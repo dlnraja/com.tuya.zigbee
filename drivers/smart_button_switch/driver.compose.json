@@ -16,9 +16,7 @@
   ],
   "capabilities": [
     "button.1",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "images": {
     "large": "drivers/smart_button_switch/assets/images/large.png",

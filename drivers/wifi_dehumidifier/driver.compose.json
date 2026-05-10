@@ -8,9 +8,7 @@
     "measure_humidity",
     "measure_temperature",
     "target_humidity",
-    "alarm_water",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "alarm_water"
   ],
   "pair": [
     {
@@ -265,7 +263,7 @@
   "images": {
     "small": "drivers/wifi_dehumidifier/assets/images/small.png",
     "large": "drivers/wifi_dehumidifier/assets/images/large.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

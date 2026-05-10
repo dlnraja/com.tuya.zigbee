@@ -7,9 +7,7 @@
     "onoff",
     "measure_power",
     "measure_voltage",
-    "measure_current",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_current"
   ],
   "pair": [
     {
@@ -232,7 +230,7 @@
   "images": {
     "small": "drivers/wifi_ewelink_pow/assets/images/small.png",
     "large": "drivers/wifi_ewelink_pow/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

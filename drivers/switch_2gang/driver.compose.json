@@ -10,9 +10,7 @@
     "button.toggle_1",
     "button.toggle_2",
     "button.identify",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "zigbee": {
     "productId": [

@@ -231,9 +231,7 @@
   "capabilities": [
     "onoff",
     "onoff.2",
-    "onoff.3",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff.3"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -255,7 +253,7 @@
   "images": {
     "small": "drivers/wifi_sonoff_tx_3ch/assets/images/small.png",
     "large": "drivers/wifi_sonoff_tx_3ch/assets/images/large.png"
-    },
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

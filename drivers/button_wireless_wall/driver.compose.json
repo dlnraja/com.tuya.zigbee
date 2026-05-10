@@ -11,9 +11,7 @@
     "button.1",
     "button.2",
     "measure_battery",
-    "onoff",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff"
   ],
   "capabilitiesOptions": {
     "maintenanceAction": true,

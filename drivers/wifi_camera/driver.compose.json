@@ -5,9 +5,7 @@
   "class": "camera",
   "capabilities": [
     "alarm_motion",
-    "onoff",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "onoff"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -432,7 +430,7 @@
   "images": {
     "small": "drivers/wifi_camera/assets/images/small.png",
     "large": "drivers/wifi_camera/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],

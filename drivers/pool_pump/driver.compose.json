@@ -14,9 +14,7 @@
   "capabilities": [
     "onoff",
     "measure_power",
-    "meter_power",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "meter_power"
   ],
   "zigbee": {
     "manufacturerName": [],

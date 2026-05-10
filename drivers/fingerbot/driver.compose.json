@@ -18,9 +18,7 @@
     "onoff",
     "button.push",
     "finger_bot_mode",
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "images": {
     "large": "drivers/fingerbot/assets/images/large.png",

@@ -11,9 +11,7 @@
     "large": "drivers/generic_diy/assets/images/large.png"
   },
   "capabilities": [
-    "measure_battery",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "measure_battery"
   ],
   "energy": {
     "batteries": [

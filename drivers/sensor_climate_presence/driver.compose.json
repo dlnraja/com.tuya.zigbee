@@ -17,9 +17,7 @@
     "measure_luminance.distance",
     "alarm_contact",
     "alarm_tamper",
-    "alarm_water",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "alarm_water"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {

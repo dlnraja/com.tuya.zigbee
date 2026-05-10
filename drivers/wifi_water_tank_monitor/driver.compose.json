@@ -9,9 +9,7 @@
     "measure_water_percentage",
     "alarm_water_low",
     "alarm_water_high",
-    "alarm_water",
-    "measure_radio_stability",
-    "measure_maintenance_score"
+    "alarm_water"
   ],
   "capabilitiesOptions": {
     "measure_water_level": {
@@ -355,7 +353,7 @@
   "images": {
     "small": "drivers/wifi_water_tank_monitor/assets/images/small.png",
     "large": "drivers/wifi_water_tank_monitor/assets/images/large.png"
-    },
+  },
   "platforms": [
     "local"
   ],
