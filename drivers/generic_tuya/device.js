@@ -140,20 +140,21 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     // Track discovered DPs
     this._discoveredDPs = new Map();
 
+    this._tuyaDPHandler = (data) => this._handleDiscoveredDP(data);
+    this._ef00DPHandler = (data) => {
+      this._handleDiscoveredDP({
+        dp: data.dpId,
+        value: data.value,
+        type: data.dpType
+      });
+    };
+
     // Listen for Tuya DP reports
-    this.on('tuya_dp', (data) => {
-      this._handleDiscoveredDP(data);
-    });
+    this.on('tuya_dp', this._tuyaDPHandler);
 
     // Also listen via dpReport event from TuyaEF00Manager
     if (this.tuyaEF00Manager) {
-      this.tuyaEF00Manager.on('dpReport', (data) => {
-        this._handleDiscoveredDP({
-          dp: data.dpId,
-          value: data.value,
-          type: data.dpType
-        });
-      });
+      this.tuyaEF00Manager.on('dpReport', this._ef00DPHandler);
     }
   }
 
@@ -294,6 +295,10 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
   async onDeleted() {
     this.log('[GENERIC] Device deleted, cleaning up...');
     this._discoveredDPs?.clear();
+    if (this._tuyaDPHandler) this.removeListener('tuya_dp', this._tuyaDPHandler);
+    if (this.tuyaEF00Manager && this._ef00DPHandler) {
+      this.tuyaEF00Manager.removeListener('dpReport', this._ef00DPHandler);
+    }
     await super.onDeleted();
   }
 }
