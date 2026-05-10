@@ -15,8 +15,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getConditionCard('switch_wireless_is_on')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getConditionCard('switch_wireless_is_on'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
@@ -25,8 +24,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getActionCard('switch_wireless_turn_on')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('switch_wireless_turn_on'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
@@ -37,8 +35,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getActionCard('switch_wireless_turn_off')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('switch_wireless_turn_off'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
@@ -49,8 +46,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getActionCard('switch_wireless_toggle')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('switch_wireless_toggle'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
           await args.device._setGangOnOff(1, !current).catch(() => {});

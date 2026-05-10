@@ -29,8 +29,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set backlight mode
     try {
-      this.homey.flow.getActionCard(`${P}_set_backlight`)
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard(`${P}_set_backlight`); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setBacklightMode(args.mode);
           await args.device.setSettings({ backlight_mode: args.mode }).catch(() => {});
@@ -40,8 +39,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set scene mode
     try {
-      this.homey.flow.getActionCard(`${P}_set_scene_mode`)
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard(`${P}_set_scene_mode`); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSceneMode(args.mode);
           await args.device.setSettings({ scene_mode: args.mode }).catch(() => {});
@@ -66,7 +64,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
     ];
     for (const { id, fn } of simpleActions) {
       try {
-        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
+        (() => { try { return this.homey.flow.getActionCard(id); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await fn(args.device);
           return true;
@@ -75,7 +73,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
     }
     for (const { id, ep, val } of gangActions) {
       try {
-        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
+        (() => { try { return this.homey.flow.getActionCard(id); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           const cap = ep === 1 ? 'onoff' : ('onoff.gang' + ep);
           try {
@@ -97,7 +95,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
       { id: `${P}_turn_off_all`, val: false },
     ]) {
       try {
-        this.homey.flow.getActionCard(id).registerRunListener(async (args) => {
+        (() => { try { return this.homey.flow.getActionCard(id); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           // Determine the number of gangs from P (e.g. 'switch_3gang' -> 3)
           let numGangs = 1;
@@ -114,8 +112,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set power-on behavior (v5.11.30)
     try {
-      this.homey.flow.getActionCard(`${P}_set_power_on_behavior`)
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard(`${P}_set_power_on_behavior`); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ power_on_behavior: args.mode });
           const pobValue = { off: 0, on: 1, memory: 2 }[args.mode] ?? 2;
@@ -130,8 +127,7 @@ class WallSwitch2Gang1WayDriver extends ZigBeeDriver {
 
     // ACTION: Set external switch type (v5.11.30)
     try {
-      this.homey.flow.getActionCard(`${P}_set_switch_mode`)
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard(`${P}_set_switch_mode`); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSettings({ switch_mode: args.mode });
           const smValue = { toggle: 0, state: 1, momentary: 2 }[args.mode] ?? 0;

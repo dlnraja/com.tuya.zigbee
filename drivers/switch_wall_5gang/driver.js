@@ -19,8 +19,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     // Register conditions for each gang
     gangs.forEach(gang => {
       try {
-        this.homey.flow.getConditionCard(`switch_wall_5gang_gang${gang}_is_on`)
-          .registerRunListener(async (args) => {
+        (() => { try { return this.homey.flow.getConditionCard(`switch_wall_5gang_gang${gang}_is_on`); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
             if (!args.device) return false;
             return args.device.getCapabilityValue(capMap[gang]) === true;
           });
@@ -31,8 +30,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     // Register actions for each gang
     gangs.forEach(gang => {
       try {
-        this.homey.flow.getActionCard(`switch_wall_5gang_turn_on_gang${gang}`)
-          .registerRunListener(async (args) => {
+        (() => { try { return this.homey.flow.getActionCard(`switch_wall_5gang_turn_on_gang${gang}`); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
             if (!args.device) return false;
             await args.device.triggerCapabilityListener(capMap[gang], true);
             return true;
@@ -41,8 +39,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       } catch (err) { this.log(`[FLOW] ⚠️ turn_on_gang${gang}: ${err.message}`); }
 
       try {
-        this.homey.flow.getActionCard(`switch_wall_5gang_turn_off_gang${gang}`)
-          .registerRunListener(async (args) => {
+        (() => { try { return this.homey.flow.getActionCard(`switch_wall_5gang_turn_off_gang${gang}`); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
             if (!args.device) return false;
             await args.device.triggerCapabilityListener(capMap[gang], false);
             return true;
@@ -52,8 +49,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
 
       // v5.5.930: Toggle action
       try {
-        this.homey.flow.getActionCard(`switch_wall_5gang_toggle_gang${gang}`)
-          .registerRunListener(async (args) => {
+        (() => { try { return this.homey.flow.getActionCard(`switch_wall_5gang_toggle_gang${gang}`); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
             if (!args.device) return false;
             const current = args.device.getCapabilityValue(capMap[gang]);
             await args.device.triggerCapabilityListener(capMap[gang], !current);
@@ -65,8 +61,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
 
     // v5.5.930: LED backlight flow cards
     try {
-      this.homey.flow.getActionCard('switch_wall_5gang_set_backlight')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('switch_wall_5gang_set_backlight'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device || !args.mode) return false;
           await args.device.setBacklightMode(args.mode);
           return true;
@@ -75,8 +70,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.log(`[FLOW] ⚠️ set_backlight: ${err.message}`); }
 
     try {
-      this.homey.flow.getActionCard('switch_wall_5gang_set_backlight_color')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('switch_wall_5gang_set_backlight_color'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device || !args.state || !args.color) return false;
           await args.device.setBacklightColor(args.state, args.color);
           return true;
@@ -85,8 +79,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.log(`[FLOW] ⚠️ set_backlight_color: ${err.message}`); }
 
     try {
-      this.homey.flow.getActionCard('switch_wall_5gang_set_backlight_brightness')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('switch_wall_5gang_set_backlight_brightness'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device || args.brightness === undefined) return false;
           await args.device.setBacklightBrightness(args.brightness);
           return true;
@@ -96,8 +89,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
 
     // v5.5.930: All on/off actions
     try {
-      this.homey.flow.getActionCard('switch_wall_5gang_turn_on_all')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('switch_wall_5gang_turn_on_all'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           for (const [gi, cap] of Object.entries(capMap)) {
             const gangNum = Number(gi);
@@ -112,8 +104,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     } catch (err) { this.log(`[FLOW] ⚠️ turn_on_all: ${err.message}`); }
 
     try {
-      this.homey.flow.getActionCard('switch_wall_5gang_turn_off_all')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('switch_wall_5gang_turn_off_all'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           for (const [gi, cap] of Object.entries(capMap)) {
             const gangNum = Number(gi);
@@ -130,8 +121,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
     
     // v5.12.5: Scene mode action
     try {
-      this.homey.flow.getActionCard('switch_wall_5gang_set_scene_mode')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('switch_wall_5gang_set_scene_mode'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.setSceneMode(args.mode);
           return true;

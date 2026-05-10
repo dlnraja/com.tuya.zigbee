@@ -390,27 +390,32 @@ function rule_caseInsensitiveMatching() {
 function rule_duplicateFingerprints() {
   log('\n📋 Rule 9: Duplicate Fingerprints Across Drivers');
   const composeFiles = findFiles(DRIVERS_DIR, '.json').filter(f => f.endsWith('driver.compose.json'));
-  const fpMap = {}; // fingerprint → [driver1, driver2, ...]
+  const fpMap = {}; // fingerprint → Set of drivers
   let dupeCount = 0;
 
   for (const file of composeFiles) {
     try {
       const compose = JSON.parse(fs.readFileSync(file, 'utf8'));
       const mfrs = compose?.zigbee?.manufacturerName || [];
-      const pids = compose?.zigbee?.productId || [];
+      const pids = compose?.zigbee?.productId || ['']; // default to empty string if no productId
       const driverName = path.basename(path.dirname(file));
 
       for (const m of mfrs) {
-        const key = (typeof m === 'string' ? m : '').toLowerCase();
-        if (!key) continue;
-        if (!fpMap[key]) fpMap[key] = [];
-        fpMap[key].push(driverName);
+        const mKey = (typeof m === 'string' ? m : '').toLowerCase();
+        if (!mKey) continue;
+        for (const p of pids) {
+          const pKey = (typeof p === 'string' ? p : '').toLowerCase();
+          const key = `${mKey}|${pKey}`;
+          if (!fpMap[key]) fpMap[key] = new Set();
+          fpMap[key].add(driverName);
+        }
       }
     } catch (e) { /* skip */ }
   }
 
   // Find duplicates
-  for (const [fp, drivers] of Object.entries(fpMap)) {
+  for (const [fp, driverSet] of Object.entries(fpMap)) {
+    const drivers = Array.from(driverSet);
     if (drivers.length > 1) {
       dupeCount++;
       addFix('duplicate-fingerprints', DRIVERS_DIR, `${fp} found in: ${drivers.join(', ')}`);

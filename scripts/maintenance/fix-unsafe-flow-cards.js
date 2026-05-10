@@ -25,11 +25,11 @@ const LIBDIR = path.join(process.cwd(), 'lib');
 // Patterns that need wrapping - bare calls without try-catch
 const UNSAFE_PATTERNS = [
   // Direct calls on this.homey.flow
-  /(?<!\/\/.*)(this\.homey\.flow\.getDevice(?:Trigger|Condition|Action)Card\(['"][^'"]+['"]\))(?!\s*\))/g,
-  /(?<!\/\/.*)(this\.homey\.flow\.get(?:Action|Trigger|Condition)Card\(['"][^'"]+['"]\))(?!\s*\))/g,
+  /(?<!\/\/.*)(this\.homey\.flow\.getDevice(?:Trigger|Condition|Action)Card\([^)]+\))(?!\s*\))/g,
+  /(?<!\/\/.*)(this\.homey\.flow\.get(?:Action|Trigger|Condition)Card\([^)]+\))(?!\s*\))/g,
   // Calls via variable alias (cf = this.homey.flow)
-  /(?<!\/\/.*)(?<!safeGet\()(?<!return\s)(cf\.getDevice(?:Trigger|Condition|Action)Card\(['"][^'"]+['"]\))(?!\s*\))/g,
-  /(?<!\/\/.*)(?<!safeGet\()(?<!return\s)(cf\.get(?:Action|Trigger)Card\(['"][^'"]+['"]\))(?!\s*\))/g,
+  /(?<!\/\/.*)(?<!safeGet\()(?<!return\s)(cf\.getDevice(?:Trigger|Condition|Action)Card\([^)]+\))(?!\s*\))/g,
+  /(?<!\/\/.*)(?<!safeGet\()(?<!return\s)(cf\.get(?:Action|Trigger)Card\([^)]+\))(?!\s*\))/g,
 ];
 
 function isAlreadySafe(code, matchIndex) {
@@ -70,28 +70,28 @@ function processFile(filePath) {
   
   // Simpler approach: wrap each get*Card call
   const replacements = [
-    [/this\.homey\.flow\.getDeviceTriggerCard\((['"][^'"]+['"])\)\.(\w+)/g, 
+    [/this\.homey\.flow\.getDeviceTriggerCard\(([^)]+)\)\s*\.(\w+)/g, 
      (m, id, method) => `(() => { try { return this.homey.flow.getDeviceTriggerCard(${id}); } catch(e) { return null; } })()?.${method}`],
-    [/this\.homey\.flow\.getDeviceConditionCard\((['"][^'"]+['"])\)\.(\w+)/g,
+    [/this\.homey\.flow\.getDeviceConditionCard\(([^)]+)\)\s*\.(\w+)/g,
      (m, id, method) => `(() => { try { return this.homey.flow.getDeviceConditionCard(${id}); } catch(e) { return null; } })()?.${method}`],
-    [/this\.homey\.flow\.getDeviceActionCard\((['"][^'"]+['"])\)\.(\w+)/g,
+    [/this\.homey\.flow\.getDeviceActionCard\(([^)]+)\)\s*\.(\w+)/g,
      (m, id, method) => `(() => { try { return this.homey.flow.getDeviceActionCard(${id}); } catch(e) { return null; } })()?.${method}`],
-    [/this\.homey\.flow\.getActionCard\((['"][^'"]+['"])\)\.(\w+)/g,
+    [/this\.homey\.flow\.getActionCard\(([^)]+)\)\s*\.(\w+)/g,
      (m, id, method) => `(() => { try { return this.homey.flow.getActionCard(${id}); } catch(e) { return null; } })()?.${method}`],
-    [/this\.homey\.flow\.getTriggerCard\((['"][^'"]+['"])\)\.(\w+)/g,
+    [/this\.homey\.flow\.getTriggerCard\(([^)]+)\)\s*\.(\w+)/g,
      (m, id, method) => `(() => { try { return this.homey.flow.getTriggerCard(${id}); } catch(e) { return null; } })()?.${method}`],
-    [/this\.homey\.flow\.getConditionCard\((['"][^'"]+['"])\)\.(\w+)/g,
+    [/this\.homey\.flow\.getConditionCard\(([^)]+)\)\s*\.(\w+)/g,
      (m, id, method) => `(() => { try { return this.homey.flow.getConditionCard(${id}); } catch(e) { return null; } })()?.${method}`],
     // cf alias versions  
-    [/cf\.getDeviceTriggerCard\((['"][^'"]+['"])\)\.(\w+)/g,
+    [/cf\.getDeviceTriggerCard\(([^)]+)\)\s*\.(\w+)/g,
      (m, id, method) => `(() => { try { return cf.getDeviceTriggerCard(${id}); } catch(e) { return null; } })()?.${method}`],
-    [/cf\.getDeviceConditionCard\((['"][^'"]+['"])\)\.(\w+)/g,
+    [/cf\.getDeviceConditionCard\(([^)]+)\)\s*\.(\w+)/g,
      (m, id, method) => `(() => { try { return cf.getDeviceConditionCard(${id}); } catch(e) { return null; } })()?.${method}`],
-    [/cf\.getDeviceActionCard\((['"][^'"]+['"])\)\.(\w+)/g,
+    [/cf\.getDeviceActionCard\(([^)]+)\)\s*\.(\w+)/g,
      (m, id, method) => `(() => { try { return cf.getDeviceActionCard(${id}); } catch(e) { return null; } })()?.${method}`],
-    [/cf\.getActionCard\((['"][^'"]+['"])\)\.(\w+)/g,
+    [/cf\.getActionCard\(([^)]+)\)\s*\.(\w+)/g,
      (m, id, method) => `(() => { try { return cf.getActionCard(${id}); } catch(e) { return null; } })()?.${method}`],
-    [/cf\.getTriggerCard\((['"][^'"]+['"])\)\.(\w+)/g,
+    [/cf\.getTriggerCard\(([^)]+)\)\s*\.(\w+)/g,
      (m, id, method) => `(() => { try { return cf.getTriggerCard(${id}); } catch(e) { return null; } })()?.${method}`],
   ];
   

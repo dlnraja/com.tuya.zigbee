@@ -10,11 +10,11 @@
     "onoff",
     "measure_temperature",
     "measure_humidity",
-    "alarm_battery",
     "alarm_siren",
     "alarm_motion",
     "measure_battery",
-    "alarm_generic"
+    "alarm_generic",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {

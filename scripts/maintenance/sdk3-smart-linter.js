@@ -376,8 +376,8 @@ ${staticResults.map(r => `- ${r.severity.toUpperCase()}: ${r.desc}`).join('\n') 
 6. Battery DPs: 4, 10, 14, 15, 21, 100, 101, 102, 104, 105 (percentage)
 7. Voltage DPs: 33, 35, 247 (mV or 10mV, convert via discharge curve)
 8. IAS Zone Status bit 3 = low-battery boolean alarm
-9. energy.batteries: Whenever a driver assigns `measure_battery` in its capabilities, YOU MUST strictly define an `"energy": { "batteries": ["OTHER"] }` array (or "AA", "CR2032") in `driver.compose.json` to pass Homey SDK3 validation!
-10. measure_battery_changed: NEVER manually define `measure_battery_changed` (or `_temp_changed`, `_humidity_changed`) explicitly in flow triggers. Homey SDK v3 implicitly auto-generates them.
+9. energy.batteries: Whenever a driver assigns \`measure_battery\` in its capabilities, YOU MUST strictly define an \`"energy": { "batteries": ["OTHER"] }\` array (or "AA", "CR2032") in \`driver.compose.json\` to pass Homey SDK3 validation!
+10. measure_battery_changed: NEVER manually define \`measure_battery_changed\` (or \`_temp_changed\`, \`_humidity_changed\`) explicitly in flow triggers. Homey SDK v3 implicitly auto-generates them.
 
 === ZIGBEE PROTOCOL TYPES (all must be respected) ===
 1. Tuya DP (TS0601 / cluster 0xEF00): Uses dpMappings + TuyaEF00Manager.
@@ -404,20 +404,20 @@ When mapping new features, respect this strict hierarchy:
 
 === OMNI-CHANNEL COMMAND ROUTING & PHYSICAL BUTTON RULES (CRITICAL) ===
 To properly handle multi-gang, Tuya/ZCL routers, and buttons across ALL levels of abstraction (Raw ZCL, Tuya EF00, Flow, UI, Physical), drivers MUST implement the Omni-Channel routing pattern:
-1. APP/UI COMMANDS -> PROTOCOL OMNI-CATCHER: All incoming 'Turn On/Off' commands (whether from UI tile, Homey Flow Action 'Turn on', or Web API) MUST ultimately route through `this.triggerCapabilityListener('onoff.gangX', val)`.
-   - NEVER use `this.setCapabilityValue` to *execute* an action (it only changes UI).
-   - NEVER use raw `args.device.zclNode.endpoints[ep].clusters.onOff.setOn()` directly in Flow Actions.
-   - Using `triggerCapabilityListener` ensures the 'onoff' capability handler decides if the payload goes via pure ZCL (`this.zclNode...`) or Tuya DPs (`this._handleTuyaDatapoint...`).
-2. PHYSICAL VS VIRTUAL DETECTION (`_appCommandPending`):
-   - In `registerCapabilityListener('onoff', ...)`, ALWAYS flag `this._appCommandPending = true` with a `setTimeout` of 2000ms.
+1. APP/UI COMMANDS -> PROTOCOL OMNI-CATCHER: All incoming 'Turn On/Off' commands (whether from UI tile, Homey Flow Action 'Turn on', or Web API) MUST ultimately route through 'this.triggerCapabilityListener("onoff.gangX", val)'.
+   - NEVER use 'this.setCapabilityValue' to *execute* an action (it only changes UI).
+   - NEVER use raw 'args.device.zclNode.endpoints[ep].clusters.onOff.setOn()' directly in Flow Actions.
+   - Using 'triggerCapabilityListener' ensures the 'onoff' capability handler decides if the payload goes via pure ZCL ('this.zclNode...') or Tuya DPs ('this._handleTuyaDatapoint...').
+2. PHYSICAL VS VIRTUAL DETECTION ('_appCommandPending'):
+   - In 'registerCapabilityListener("onoff", ...)', ALWAYS flag 'this._appCommandPending = true' with a 'setTimeout' of 2000ms.
    - This flag proves the command originated logically from Homey (App/Flow/Virtual).
 3. PHYSICAL STATE ARRIVAL (Device -> Homey):
-   - When state arrives horizontally from the device either via ZCL Report (`this.zclNode...on('attr')`) or Custom Tuya DP (`_handleTuyaDatapoint`), check `this._appCommandPending`.
-   - If `_appCommandPending === true`: This is a bidirectional ACK of the virtual command. Do nothing except `this.setCapabilityValue`.
-   - If `_appCommandPending !== true`: THIS IS A PHYSICAL BUTTON PRESS / REAL WORLD EVENT. Trigger `this.homey.flow.getDeviceTriggerCard('turned_on_physical_gangX').trigger(this)`!
+   - When state arrives horizontally from the device either via ZCL Report ('this.zclNode...on("attr")') or Custom Tuya DP ('_handleTuyaDatapoint'), check 'this._appCommandPending'.
+   - If '_appCommandPending === true': This is a bidirectional ACK of the virtual command. Do nothing except 'this.setCapabilityValue'.
+   - If '_appCommandPending !== true': THIS IS A PHYSICAL BUTTON PRESS / REAL WORLD EVENT. Trigger 'this.homey.flow.getDeviceTriggerCard("turned_on_physical_gangX").trigger(this)'!
 4. RAW / STREAM / CUSTOM FALLBACKS:
-   - For heavily customized tuples (e.g. TS004F/Scene buttons), catch raw commands via `this.zclNode.on('rawCommand')`.
-   - Before acting, translate the raw endpoint and cluster command directly into a normalized `triggerCapabilityListener` or a direct Flow trigger! This unifies the execution pipe.
+   - For heavily customized tuples (e.g. TS004F/Scene buttons), catch raw commands via 'this.zclNode.on("rawCommand")'.
+   - Before acting, translate the raw endpoint and cluster command directly into a normalized 'triggerCapabilityListener' or a direct Flow trigger! This unifies the execution pipe.
 
 === ADVANCED PATTERNS ===
 

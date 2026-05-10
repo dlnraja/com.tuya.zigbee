@@ -15,8 +15,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Is on
     try {
-      this.homey.flow.getConditionCard('hvac_air_conditioner_air_conditioner_is_on')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getConditionCard('hvac_air_conditioner_air_conditioner_is_on'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
@@ -25,8 +24,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
 
     // ACTION: Turn on
     try {
-      this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_turn_on')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_turn_on'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
@@ -37,8 +35,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
 
     // ACTION: Turn off
     try {
-      this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_turn_off')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_turn_off'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
@@ -49,8 +46,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
 
     // ACTION: Toggle
     try {
-      this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_toggle')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_toggle'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
           await args.device._setGangOnOff(1, !current).catch(() => {});
@@ -62,8 +58,7 @@ class HvacAirConditionerDriver extends ZigBeeDriver {
 
     // ACTION: Set target temperature
     try {
-      this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_set_target_temperature')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('hvac_air_conditioner_air_conditioner_set_target_temperature'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device.triggerCapabilityListener('target_temperature', args.temperature);
           return true;

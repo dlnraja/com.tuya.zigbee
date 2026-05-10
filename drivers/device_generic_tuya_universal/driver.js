@@ -20,8 +20,7 @@ class GenericTuyaDriver extends ZigBeeDriver {
   _registerFlowCards() {
     // CONDITION: Battery above
     try {
-      this.homey.flow.getConditionCard('generic_tuya_battery_above')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getConditionCard('generic_tuya_battery_above'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.level || 20);
@@ -31,8 +30,7 @@ class GenericTuyaDriver extends ZigBeeDriver {
 
     // ACTION: Request DP
     try {
-      this.homey.flow.getActionCard('generic_tuya_request_dp')
-        .registerRunListener(async (args) => {
+      (() => { try { return this.homey.flow.getActionCard('generic_tuya_request_dp'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
           if (!args.device) return false;
           try {
             if (args.device._tuyaEF00Manager) {
