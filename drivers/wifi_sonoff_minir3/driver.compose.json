@@ -73,7 +73,11 @@
   ],
   "discovery": "ewelink_mdns",
   "name": {
-    "en": "SONOFF MINI R3"
+    "en": "SONOFF MINI R3",
+    "fr": "SONOFF MINI R3",
+    "nl": "SONOFF MINI R3",
+    "de": "SONOFF MINI R3",
+    "es": "SONOFF MINI R3"
   },
   "class": "socket",
   "capabilities": [

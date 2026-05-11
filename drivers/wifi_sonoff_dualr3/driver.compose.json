@@ -73,7 +73,11 @@
   ],
   "discovery": "ewelink_mdns",
   "name": {
-    "en": "SONOFF DUAL R3"
+    "en": "SONOFF DUAL R3",
+    "fr": "SONOFF DUAL R3",
+    "nl": "SONOFF DUAL R3",
+    "de": "SONOFF DUAL R3",
+    "es": "SONOFF DUAL R3"
   },
   "class": "socket",
   "capabilities": [

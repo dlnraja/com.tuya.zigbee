@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-11T04:09:29.487Z",
+  "timestamp": "2026-05-11T15:47:50.691Z",
   "conflicts": [
     {
       "pid": "TS0501B",
@@ -18,6 +18,7 @@
       "pid": "TS110E",
       "drivers": [
         "bulb_dimmable",
+        "bulb_dimmable_dimmer",
         "dimmer_wall_1gang"
       ],
       "classes": [
@@ -29,6 +30,7 @@
       "pid": "TS110F",
       "drivers": [
         "bulb_dimmable",
+        "bulb_dimmable_dimmer",
         "dimmer_wall_1gang"
       ],
       "classes": [
@@ -40,6 +42,7 @@
       "pid": "TS0052",
       "drivers": [
         "bulb_dimmable",
+        "bulb_dimmable_dimmer",
         "dimmer_wall_1gang"
       ],
       "classes": [
@@ -51,6 +54,7 @@
       "pid": "TS1101",
       "drivers": [
         "bulb_dimmable",
+        "bulb_dimmable_dimmer",
         "dimmer_dual_channel",
         "dimmer_wall_1gang"
       ],
@@ -89,6 +93,7 @@
       "pid": "TS0215A",
       "drivers": [
         "button_emergency_sos",
+        "remote_button_emergency_sos",
         "smart_remote_4_buttons"
       ],
       "classes": [
@@ -152,6 +157,7 @@
       "pid": "TS0042",
       "drivers": [
         "button_wireless_2",
+        "remote_button_wireless_wall",
         "scene_switch_2",
         "scene_switch_wall",
         "wall_remote_2_gang",
@@ -299,6 +305,44 @@
       "classes": [
         "sensor",
         "remote",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TSO121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true
+    },
+    {
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "fingerbot",
+        "switch_1gang"
+      ],
+      "classes": [
+        "sensor",
+        "button",
         "socket"
       ],
       "crossClass": true
@@ -477,6 +521,7 @@
       "drivers": [
         "contact_sensor",
         "rain_sensor",
+        "sensor_contact_water",
         "usb_dongle_dual_repeater",
         "water_leak_sensor",
         "zigbee_repeater"
@@ -492,6 +537,7 @@
       "pid": "q9mpfhw",
       "drivers": [
         "contact_sensor",
+        "sensor_contact_water",
         "water_leak_sensor"
       ],
       "classes": [
@@ -521,18 +567,6 @@
       "classes": [
         "windowcoverings",
         "sensor"
-      ],
-      "crossClass": true
-    },
-    {
-      "pid": "TS000F",
-      "drivers": [
-        "fingerbot",
-        "switch_1gang"
-      ],
-      "classes": [
-        "button",
-        "socket"
       ],
       "crossClass": true
     },
@@ -857,10 +891,10 @@
   "scaffolded": [],
   "errors": [],
   "summary": {
-    "ourDrivers": 221,
+    "ourDrivers": 225,
     "johanDrivers": 113,
-    "pidConflicts": 67,
-    "crossClassConflicts": 31,
+    "pidConflicts": 69,
+    "crossClassConflicts": 33,
     "uncoveredFPGroups": 0,
     "missingDriverTypes": 0,
     "scaffolded": 0,

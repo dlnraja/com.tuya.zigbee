@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "WiFi Sensor (Tuya Local)"
+    "en": "WiFi Sensor (Tuya Local)",
+    "fr": "Capteur WiFi (Tuya Local)",
+    "nl": "WiFi-sensor (Tuya Lokaal)",
+    "de": "WiFi-Sensor (Tuya Lokal)",
+    "es": "Sensor WiFi (Tuya Local)"
   },
   "class": "sensor",
   "capabilities": [

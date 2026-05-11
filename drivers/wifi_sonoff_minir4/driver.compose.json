@@ -73,7 +73,11 @@
   ],
   "discovery": "ewelink_mdns",
   "name": {
-    "en": "SONOFF MINI R4 / R4M"
+    "en": "SONOFF MINI R4 / R4M",
+    "fr": "SONOFF MINI R4 / R4M",
+    "nl": "SONOFF MINI R4 / R4M",
+    "de": "SONOFF MINI R4 / R4M",
+    "es": "SONOFF MINI R4 / R4M"
   },
   "class": "socket",
   "capabilities": [

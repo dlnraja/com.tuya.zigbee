@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "WiFi Power Strip (Tuya Local)"
+    "en": "WiFi Power Strip (Tuya Local)",
+    "fr": "Multiprise WiFi (Tuya Local)",
+    "nl": "WiFi-stekkerdoos (Tuya Lokaal)",
+    "de": "WiFi-Steckdosenleiste (Tuya Lokal)",
+    "es": "Regleta WiFi (Tuya Local)"
   },
   "class": "socket",
   "capabilities": [

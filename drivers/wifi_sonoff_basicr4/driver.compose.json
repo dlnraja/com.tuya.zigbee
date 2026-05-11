@@ -73,7 +73,11 @@
   ],
   "discovery": "ewelink_mdns",
   "name": {
-    "en": "SONOFF BASIC R4"
+    "en": "SONOFF BASIC R4",
+    "fr": "SONOFF BASIC R4",
+    "nl": "SONOFF BASIC R4",
+    "de": "SONOFF BASIC R4",
+    "es": "SONOFF BASIC R4"
   },
   "class": "socket",
   "capabilities": [

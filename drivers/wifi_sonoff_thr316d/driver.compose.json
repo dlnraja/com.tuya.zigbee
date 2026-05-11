@@ -73,7 +73,11 @@
   ],
   "discovery": "ewelink_mdns",
   "name": {
-    "en": "SONOFF THR316D / THR320D"
+    "en": "SONOFF THR316D / THR320D",
+    "fr": "SONOFF THR316D / THR320D",
+    "nl": "SONOFF THR316D / THR320D",
+    "de": "SONOFF THR316D / THR320D",
+    "es": "SONOFF THR316D / THR320D"
   },
   "class": "thermostat",
   "capabilities": [

@@ -73,7 +73,11 @@
   ],
   "discovery": "ewelink_mdns",
   "name": {
-    "en": "SONOFF TX Touch 2-Gang"
+    "en": "SONOFF TX Touch 2-Gang",
+    "fr": "SONOFF TX Touch 2-Gang",
+    "nl": "SONOFF TX Touch 2-Gang",
+    "de": "SONOFF TX Touch 2-Gang",
+    "es": "SONOFF TX Touch 2-Gang"
   },
   "class": "socket",
   "capabilities": [

@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-05-11T03:53:06.350Z",
+  "timestamp": "2026-05-11T15:32:50.896Z",
   "totalFiles": 0,
-  "totalFixes": 215,
+  "totalFixes": 262,
   "rules": {
     "fingerprint-case": {
-      "count": 143,
+      "count": 147,
       "files": [
         {
           "file": "drivers/air_purifier/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
         },
         {
           "file": "drivers/air_quality_co2/driver.compose.json",
@@ -20,11 +20,15 @@
         },
         {
           "file": "drivers/bulb_dimmable/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+        },
+        {
+          "file": "drivers/bulb_dimmable_dimmer/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
         },
         {
           "file": "drivers/bulb_rgb/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added -1)"
         },
         {
           "file": "drivers/bulb_rgb_led/driver.compose.json",
@@ -44,7 +48,7 @@
         },
         {
           "file": "drivers/button_emergency_sos/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
         },
         {
           "file": "drivers/button_wireless/driver.compose.json",
@@ -56,7 +60,7 @@
         },
         {
           "file": "drivers/button_wireless_2/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added -1)"
         },
         {
           "file": "drivers/button_wireless_3/driver.compose.json",
@@ -64,7 +68,7 @@
         },
         {
           "file": "drivers/button_wireless_4/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
         },
         {
           "file": "drivers/button_wireless_6/driver.compose.json",
@@ -84,7 +88,7 @@
         },
         {
           "file": "drivers/climate_sensor/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added -1)"
         },
         {
           "file": "drivers/co_sensor/driver.compose.json",
@@ -92,7 +96,7 @@
         },
         {
           "file": "drivers/contact_sensor/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added -8)"
         },
         {
           "file": "drivers/curtain_motor/driver.compose.json",
@@ -136,7 +140,7 @@
         },
         {
           "file": "drivers/dimmer_wall_1gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
         },
         {
           "file": "drivers/din_rail_meter/driver.compose.json",
@@ -228,7 +232,11 @@
         },
         {
           "file": "drivers/lcdtemphumidsensor/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+        },
+        {
+          "file": "drivers/lcdtemphumidsensor_plug_energy/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
         },
         {
           "file": "drivers/led_controller_cct/driver.compose.json",
@@ -272,7 +280,7 @@
         },
         {
           "file": "drivers/motion_sensor/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added -12)"
         },
         {
           "file": "drivers/motion_sensor_2/driver.compose.json",
@@ -335,12 +343,16 @@
           "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
+          "file": "drivers/remote_button_emergency_sos/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+        },
+        {
           "file": "drivers/remote_button_wireless_handheld/driver.compose.json",
           "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
           "file": "drivers/remote_button_wireless_wall/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
         },
         {
           "file": "drivers/remote_dimmer/driver.compose.json",
@@ -369,6 +381,10 @@
         {
           "file": "drivers/scene_switch_wall/driver.compose.json",
           "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/sensor_contact_water/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
         },
         {
           "file": "drivers/sensor_motion_radar/driver.compose.json",
@@ -424,7 +440,7 @@
         },
         {
           "file": "drivers/smart_remote_4_buttons/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
         },
         {
           "file": "drivers/smart_scene_panel/driver.compose.json",
@@ -432,7 +448,7 @@
         },
         {
           "file": "drivers/smoke_detector_advanced/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added -2)"
         },
         {
           "file": "drivers/soil_sensor/driver.compose.json",
@@ -444,7 +460,7 @@
         },
         {
           "file": "drivers/switch_1gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
         },
         {
           "file": "drivers/switch_2gang/driver.compose.json",
@@ -504,7 +520,7 @@
         },
         {
           "file": "drivers/usb_outlet_advanced/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added -1)"
         },
         {
           "file": "drivers/valve_irrigation/driver.compose.json",
@@ -532,7 +548,7 @@
         },
         {
           "file": "drivers/wall_remote_2_gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
         },
         {
           "file": "drivers/wall_remote_3_gang/driver.compose.json",
@@ -556,7 +572,7 @@
         },
         {
           "file": "drivers/water_leak_sensor/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
         },
         {
           "file": "drivers/water_tank_monitor/driver.compose.json",
@@ -839,7 +855,7 @@
       ]
     },
     "dp-variant-docs": {
-      "count": 9,
+      "count": 10,
       "files": [
         {
           "file": "drivers/climate_sensor_device/device.js",
@@ -851,6 +867,10 @@
         },
         {
           "file": "drivers/device_radiator_valve_smart/device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers/lcdtemphumidsensor_plug_energy/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
@@ -876,6 +896,184 @@
         {
           "file": "drivers/water_valve_smart/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
+        }
+      ]
+    },
+    "case-insensitive-matching": {
+      "count": 24,
+      "files": [
+        {
+          "file": "lib/NewDevices2025.js",
+          "detail": "Line 247: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/TuyaRtcDetector.js",
+          "detail": "Line 85: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/clusters/TuyaSpecificCluster.js",
+          "detail": "Line 410: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/devices/ButtonDevice.js",
+          "detail": "Line 478: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/devices/HybridSensorBase.js",
+          "detail": "Line 1667: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/devices/HybridSensorBase.js",
+          "detail": "Line 1696: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/devices/HybridThermostatBase.js",
+          "detail": "Line 174: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/helpers/BatteryRouter.js",
+          "detail": "Line 265: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/helpers/DeviceHintsDatabase.js",
+          "detail": "Line 479: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/helpers/DeviceHintsDatabase.js",
+          "detail": "Line 481: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/helpers/device_helpers.js",
+          "detail": "Line 302: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/managers/PowerSourceDetector.js",
+          "detail": "Line 63: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/managers/PowerSourceDetector.js",
+          "detail": "Line 64: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/managers/SmartDriverAdaptation.js",
+          "detail": "Line 636: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/mixins/PhysicalButtonMixin.js",
+          "detail": "Line 340: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/protocol/IntelligentProtocolRouter.js",
+          "detail": "Line 13: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/tuya/TuyaDataPointsZ2M.js",
+          "detail": "Line 1329: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/tuya/TuyaDataPointsZ2M.js",
+          "detail": "Line 1351: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/tuya/TuyaTimeSyncFormats.js",
+          "detail": "Line 377: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/utils/DriverMappingLoader.js",
+          "detail": "Line 1028: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/utils/DriverMappingLoader.js",
+          "detail": "Line 1036: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/utils/tuyaUtils.js",
+          "detail": "Line 70: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/utils/tuyaUtils.js",
+          "detail": "Line 76: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/utils/tuyaUtils.js",
+          "detail": "Line 85: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        }
+      ]
+    },
+    "duplicate-fingerprints": {
+      "count": 18,
+      "files": [
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_qezuin6k|ts110e found in: bulb_dimmable, bulb_dimmable_dimmer, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_qezuin6k|ts110f found in: bulb_dimmable, bulb_dimmable_dimmer, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_qezuin6k|ts0052 found in: bulb_dimmable, bulb_dimmable_dimmer, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_qezuin6k|ts1101 found in: bulb_dimmable, bulb_dimmable_dimmer, dimmer_wall_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_qm6djpta|ts0215a found in: button_emergency_sos, remote_button_emergency_sos, smart_remote_4_buttons"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb02_keyjhapk|ts0042 found in: button_wireless_2, remote_button_wireless_wall, wall_remote_2_gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb02_keyjhapk|ts0043 found in: button_wireless_2, remote_button_wireless_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-3tipnsrx|ts0601 found in: contact_sensor, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-3tipnsrx|ts0207 found in: contact_sensor, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "tuyatec-3tipnsrx|q9mpfhw found in: contact_sensor, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_sqmd19i1|ts0601 found in: contact_sensor, sensor_contact_water, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_sqmd19i1|ts0207 found in: contact_sensor, sensor_contact_water, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_sqmd19i1|q9mpfhw found in: contact_sensor, sensor_contact_water, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_qq9mpfhw|ts0601 found in: contact_sensor, sensor_contact_water, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_qq9mpfhw|ts0207 found in: contact_sensor, sensor_contact_water, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyst11_qq9mpfhw|q9mpfhw found in: contact_sensor, sensor_contact_water, water_leak_sensor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_iuepbmpv|ts0601 found in: lcdtemphumidsensor, lcdtemphumidsensor_plug_energy, plug_energy_monitor"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_gbm10jnj|ts0042 found in: remote_button_wireless_wall, scene_switch_2"
         }
       ]
     },

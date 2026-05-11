@@ -1,5 +1,5 @@
 {
-  "ts": "2026-05-11T04:51:47.083Z",
+  "ts": "2026-05-11T16:24:43.728Z",
   "correlations": [],
   "actionable": [
     {
@@ -43,25 +43,25 @@
     {
       "id": "battery",
       "pattern": "False Battery Alert / Missing Battery",
-      "count": 32,
+      "count": 36,
       "priority": "high"
     },
     {
       "id": "pairing",
       "pattern": "Pairing Failure",
+      "count": 17,
+      "priority": "high"
+    },
+    {
+      "id": "no_response",
+      "pattern": "Device Not Responding",
       "count": 9,
       "priority": "high"
     },
     {
       "id": "unknown",
       "pattern": "Device Shows Unknown",
-      "count": 5,
-      "priority": "high"
-    },
-    {
-      "id": "no_response",
-      "pattern": "Device Not Responding",
-      "count": 5,
+      "count": 6,
       "priority": "high"
     },
     {

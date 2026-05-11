@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-05-11T03:55:55.474Z",
+  "timestamp": "2026-05-11T15:34:27.437Z",
   "driversScanned": 20,
-  "staticIssues": 44,
+  "staticIssues": 43,
   "autoFixed": 0,
-  "aiSuggestions": 12,
-  "aiApplied": 0,
+  "aiSuggestions": 34,
+  "aiApplied": 6,
   "dryRun": false,
   "results": [
     {
@@ -12,7 +12,8 @@
       "issues": [
         "sdk3-await-capability",
         "sdk3-case-sensitive-fingerprint"
-      ]
+      ],
+      "aiModel": "deepseek"
     },
     {
       "driver": "air_quality_co2",
@@ -20,13 +21,15 @@
         "sdk3-await-capability",
         "sdk3-battery-conflict",
         "sdk3-case-sensitive-fingerprint"
-      ]
+      ],
+      "aiModel": "deepseek"
     },
     {
       "driver": "air_quality_comprehensive",
       "issues": [
         "sdk3-case-sensitive-fingerprint"
-      ]
+      ],
+      "aiModel": "deepseek"
     },
     {
       "driver": "bulb_dimmable",
@@ -34,7 +37,15 @@
         "sdk3-battery-conflict",
         "sdk3-case-sensitive-fingerprint"
       ],
-      "aiModel": "openrouter"
+      "aiModel": "deepseek"
+    },
+    {
+      "driver": "bulb_dimmable_dimmer",
+      "issues": [
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ],
+      "aiModel": "deepseek"
     },
     {
       "driver": "bulb_rgb",
@@ -42,8 +53,7 @@
         "sdk3-await-capability",
         "sdk3-battery-conflict",
         "sdk3-case-sensitive-fingerprint"
-      ],
-      "aiModel": "openrouter"
+      ]
     },
     {
       "driver": "bulb_rgb_led",
@@ -144,15 +154,7 @@
       "issues": [
         "sdk3-case-sensitive-fingerprint"
       ]
-    },
-    {
-      "driver": "climate_sensor",
-      "issues": [
-        "sdk3-await-capability",
-        "sdk3-battery-conflict",
-        "sdk3-case-sensitive-fingerprint"
-      ]
     }
   ],
-  "memoryPatterns": 10
+  "memoryPatterns": 11
 }

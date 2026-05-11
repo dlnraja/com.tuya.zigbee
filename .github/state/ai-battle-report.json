@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-05-11T05:02:25.167Z",
+  "timestamp": "2026-05-11T16:35:22.355Z",
   "dryRun": false,
   "sources": {
     "external": 1607,
-    "github": 25,
+    "github": 10,
     "forks": 0,
-    "johan": 45,
+    "johan": 41,
     "gmail": 0,
     "forum": 0,
     "diagnostics": 0,
@@ -16,14 +16,13 @@
     "details": []
   },
   "classified": {
-    "total": 20,
+    "total": 16,
     "byMethod": {
-      "ai-single": 19,
-      "ai-consensus(2/2)": 1
+      "ai-single": 16
     },
     "details": [
       {
-        "fp": "_TZ3040_o4mkahkc",
+        "fp": "_TZ3000_hyarhbyx",
         "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
@@ -32,17 +31,8 @@
         ]
       },
       {
-        "fp": "_TZ3000_baeiitad",
-        "driver": "switch_1gang",
-        "method": "ai-consensus(2/2)",
-        "pids": [],
-        "sources": [
-          "johan"
-        ]
-      },
-      {
         "fp": "_TZE284_aaeasoll",
-        "driver": "motion_sensor",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -51,25 +41,7 @@
       },
       {
         "fp": "_TYST11_jeaxp72v",
-        "driver": "smoke_detector_advanced",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "johan"
-        ]
-      },
-      {
-        "fp": "_TZ3000_enmfaave",
-        "driver": "switch_1gang",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "johan"
-        ]
-      },
-      {
-        "fp": "_TZ3000_0t4zjtia",
-        "driver": "switch_1gang",
+        "driver": "bulb_rgbw",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -87,7 +59,7 @@
       },
       {
         "fp": "_TYZB01_zqvwka4k",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -96,7 +68,7 @@
       },
       {
         "fp": "_TYZB01_4lwqwyqn",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -105,7 +77,7 @@
       },
       {
         "fp": "_TYZB01_kvwjujy9",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -114,7 +86,7 @@
       },
       {
         "fp": "_TYZB01_o7m83470",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -123,7 +95,7 @@
       },
       {
         "fp": "_TYZB01_tob46aoq",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -132,7 +104,7 @@
       },
       {
         "fp": "_TYZB01_0w3d5uw3",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -141,7 +113,7 @@
       },
       {
         "fp": "_TYZB01_0aps0h1r",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -150,7 +122,7 @@
       },
       {
         "fp": "_TYZB01_bngwdjsr",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -159,7 +131,7 @@
       },
       {
         "fp": "_TYZB01_ftdkanlj",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -168,7 +140,7 @@
       },
       {
         "fp": "_TYZB01_yr95mpib",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -177,7 +149,7 @@
       },
       {
         "fp": "_TYZB01_b6eaxdlh",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -186,16 +158,7 @@
       },
       {
         "fp": "_TYZB01_gr6rozze",
-        "driver": "bulb_dimmable",
-        "method": "ai-single",
-        "pids": [],
-        "sources": [
-          "johan"
-        ]
-      },
-      {
-        "fp": "_TYZB01_ncutbjdi",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -205,7 +168,7 @@
     ]
   },
   "implemented": {
-    "added": 1,
+    "added": 0,
     "skipped": 0
   },
   "ghApiCalls": 100

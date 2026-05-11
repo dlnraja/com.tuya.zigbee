@@ -1,6 +1,6 @@
-# 🏠 Universal Tuya Zigbee v7.5.13
+# 🏠 Universal Tuya Zigbee v7.5.14
 
-> **221 drivers** · **10821+ fingerprints** · Updated 2026-05-11
+> **225 drivers** · **10860+ fingerprints** · Updated 2026-05-11
 
 Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
@@ -8,27 +8,27 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 **Stable:** [Homey App Store](https://homey.app/a/com.dlnraja.tuya.zigbee/) · **Test:** [Test Channel](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) · **Source:** [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
 
-## What's New (v7.5.13)
+## What's New (v7.5.14)
 
-Fixed sensor fallback check for unknown model IDs to prevent incorrect capability assignments, Cleaned up HybridSensorBase exports to remove unused draft scripts, Updated documentation, project rules, and configuration files for better developer experience, Refreshed fingerprint cross-reference and project status docs, Added support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm /
+Fixed radiator valve and smart radiator valve device initialization issues, Resolved energy meter 3-phase and power clamp meter reporting problems, Corrected presence sensor radar and motion sensor behavior, Fixed climate sensor and climate sensor device recognition, Addressed wireless button (1-gang, 4-gang, smart) pairing and response issues
 
 ## Supported Devices
 
 | Category | Drivers | FPs |
 |---|---|---|
-| 🔌 Socket | 50 | 2563 |
-| 💡 Light | 23 | 1193 |
-| 📡 Sensor | 58 | 4335 |
+| 🔌 Socket | 51 | 2533 |
+| 💡 Light | 24 | 1193 |
+| 📡 Sensor | 59 | 4399 |
 | 🌡️ Thermostat | 18 | 900 |
 | 🪟 Windowcoverings | 5 | 478 |
 | 🔐 Lock | 4 | 66 |
-| 🌀 Fan | 10 | 111 |
+| 🌀 Fan | 10 | 116 |
 | 🔔 Doorbell | 4 | 27 |
-| 🎮 Remote | 17 | 156 |
+| 🎮 Remote | 18 | 158 |
 | 🔘 Button | 2 | 27 |
 | 🔥 Heater | 4 | 36 |
 | 🚗 Garagedoor | 3 | 39 |
-| 📦 Other | 18 | 887 |
+| 📦 Other | 18 | 885 |
 | 📦 Curtain | 2 | 3 |
 
 [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) — search by fingerprint
@@ -45,13 +45,13 @@ Fixed sensor fallback check for unknown model IDs to prevent incorrect capabilit
 
 <details><summary>Previous versions</summary>
 
+**v7.5.13:** . Added new fingerprints for motion sensor, illuminance sensor, 3-gang switch, energy meter, and DIN rail. Fixed INSOMA dual irrigation valve and smart wireless button detection. Improved climate sensor recognition.
+
 **v7.5.12:** . Fixed sensor fallback logic for unknown models. Added new fingerprints for radiator valve (_TZE284_ne4pikwm). Updated documentation and project rules.
 
 **v7.5.11:** Fixed ReferenceError crashes in HybridSensorBase, HybridCoverBase, HybridLightBase, HybridPlugBase, HybridSwitchBase, and HybridThermostatBase during dynamic capability updates.
 
 **v7.5.10:** Fixed a crash in HybridSensorBase that caused a ReferenceError on _safeSetCapability. Added support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm).
-
-**v7.5.9:** . Fixed ProtocolArbitrator crash, _TZE608 opener reclassification, SDK3 validation errors, duplicate fingerprints, case-insensitive matching, and MODULE_NOT_FOUND crash. Added 5 new fingerprints, Z2M enriched mappings, rain/soil sensor fixes.
 
 </details>
 
