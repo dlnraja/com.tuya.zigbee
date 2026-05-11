@@ -4,7 +4,32 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.12] - 2026-05-10
+## [7.5.14] - 2026-05-11
+
+### Bug Fixes
+- Fixed radiator valve and smart radiator valve device initialization issues
+- Resolved energy meter 3-phase and power clamp meter reporting problems
+- Corrected presence sensor radar and motion sensor behavior
+- Fixed climate sensor and climate sensor device recognition
+- Addressed wireless button (1-gang, 4-gang, smart) pairing and response issues
+- Fixed contact sensor and door controller device handling
+- Resolved plug smart and plug energy monitor device issues
+- Corrected generic Tuya and DIY custom Zigbee device initialization
+- Fixed LED controller dimmable device behavior
+- Resolved LCD temperature/humidity sensor device issues
+
+### Improvements
+- Enhanced device detection for climate sensors and wireless buttons
+- Improved radiator WiFi Tuya device support
+- Updated power meter and energy monitoring device handling
+
+### New Fingerprints
+- Added support for INSOMA DUAL IRRIGATION VALVE (_TZE284_fhvpaltk)
+- Added support for Smart Wireless Button 1 (_TZ3000_b4awzgct)
+- Added support for climate sensor (_TZ3000_fllyghyj)
+---
+
+ [7.5.12] - 2026-05-10
 
 ### Bug Fixes
 - Fixed sensor fallback check for unknown model IDs to prevent incorrect capability assignments
