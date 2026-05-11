@@ -1,0 +1,490 @@
+{
+  "timestamp": "2026-05-11T04:20:20.144Z",
+  "appVersion": "7.5.13",
+  "forum": 128,
+  "github": 31,
+  "diagnostics": 56,
+  "diagNewFPs": 0,
+  "diagCritical": 0,
+  "forumDetails": [
+    {
+      "topic": 140352,
+      "post": 1689,
+      "user": "FrankP",
+      "fps": [
+        "_TZ3000_tzvbimpq"
+      ],
+      "reply": "This device fingerprint `_TZ3000_tzvbimpq` is **registered in two drivers** (`switch_2gang` and `wall_remote_2_gang`), which is a **true fingerprint collision**. This is the most likely root cause — H",
+      "model": "openrouter"
+    },
+    {
+      "topic": 140352,
+      "post": 1701,
+      "user": "Adri1",
+      "fps": [
+        "_TZ3000_bgsigers"
+      ],
+      "reply": "**Analysis of `_TZ3000_bgsigers` + `TS0201` (TS0201 Temp/Humidity Sensor)**\n\nThe fingerprint lookup confirms that `_TZ3000_bgsigers` already exists in the `lcdtemphumidsensor` driver, and `TS0201` exi",
+      "model": "openrouter"
+    },
+    {
+      "topic": 140352,
+      "post": 1703,
+      "user": "Adri1",
+      "fps": [
+        "example",
+        "test"
+      ],
+      "reply": "This is a known issue with duplicate Flow card IDs across multiple RGB bulb drivers. The problem occurs because `bulb_rgb`, `bulb_rgb_led_hybrid`, and `light_bulb_rgb_rgbw_hybrid` all define flow card",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1722,
+      "user": "Meruem",
+      "fps": [
+        "_TZE284_bquwrqh1",
+        "_TZE",
+        "dlnraja",
+        "lumi",
+        "test"
+      ],
+      "reply": "Hi @Meruem,\n\nThanks for the detailed logs. Let me break down both devices:\n\n## 1. Presence Radar Sensor (`_TZE284_bquwrqh1`)\n\nThis fingerprint **is supported** in the `presence_sensor_radar` driver. T",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1724,
+      "user": "Fantuz",
+      "fps": [
+        "_TZE284_9ern5sfh",
+        "_TZE"
+      ],
+      "reply": "Hi @Fantuz,\n\nGood news — your `_TZE284_9ern5sfn` LCD Temperature and Humidity sensor is already supported! It matches the **climate_sensor** driver.\n\nHere's what to do:\n\n1. **Update** the app to the l",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1725,
+      "user": "Wojciech_Ciarkowski",
+      "fps": [
+        "example"
+      ],
+      "reply": "Looking at your soil sensor issue, the moisture dropping to 0% for hours then recovering suggests a few possible causes:\n\n1. **Battery/power issue** - Low battery can cause erratic readings. Check if ",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1728,
+      "user": "ManuelKugler",
+      "fps": [
+        "_TZE284_oitavov2",
+        "_TZE284_hdml1aav",
+        "_TZE284_aao3yzhs",
+        "_TZE200_npj9bug3",
+        "A89G12C",
+        "HOBEIAN",
+        "_TZE"
+      ],
+      "reply": "All four of your HOBEIAN soil sensors are fully supported by the `soil_sensor` driver. The fingerprints `_TZE284_oitavov2`, `_TZE284_hdml1aav`, `_TZE284_aao3yzhs`, and `_TZE200_npj9bug3` are all prese",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1731,
+      "user": "Clement_Loridan",
+      "fps": [],
+      "reply": "The Sonoff SNZB-01M is supported in the `button_wireless` and `button_wireless_4` drivers. If it's showing as \"unsupported device\" with only battery info, this is a pairing issue, not a compatibility ",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1744,
+      "user": "Peter_van_Werkhoven",
+      "fps": [
+        "example"
+      ],
+      "reply": "Hello Peter,\n\nThank you for reaching out and for providing the diagnostic code. I've analyzed the situation.\n\n**Regarding the \"nothing works anymore\" issue after updating to v7:**\n\nThis is a known iss",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1745,
+      "user": "FrankP",
+      "fps": [
+        "_TZ3000_tzvbimpq",
+        "_TZ3290_7v1k4vufotpowp9z",
+        "_TZ3290_7v1k4vuf"
+      ],
+      "reply": "Both devices are fully supported, but there's a known pairing issue with TS0042 and TS1201 devices in recent versions. Let me help you get them working again.\n\n**TS0042 (2-gang wall remote)**: This is",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1747,
+      "user": "Ronald_Bok",
+      "fps": [
+        "_TZE284_oitavov2",
+        "_TZE"
+      ],
+      "reply": "Hi Ronald,\n\nGood news - your soil sensor with `_TZE284_oitavov2` is supported by the **soil_sensor** driver. The issue you're seeing with \"unknown zigbee devices\" after reinstalling is likely related ",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1751,
+      "user": "JJ10",
+      "fps": [
+        "test"
+      ],
+      "reply": "I see you're having trouble with your presence sensors after the latest update. Let me help you get them working again.\n\n**First, please don't re-pair them yet** - we need to identify the issue first.",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1757,
+      "user": "Clement_Loridan",
+      "fps": [
+        "dlnraja",
+        "tuya"
+      ],
+      "reply": "The SNZB-01M is a known device and is fully supported. Here's what you need to know:\n\n**Which driver to pick:** The correct driver is **button_wireless_4**. This is the dedicated driver for the SNZB-0",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1759,
+      "user": "Fantuz",
+      "fps": [],
+      "reply": "Hi @Fantuz,\n\nThe issue you're seeing is that TS0601 is a generic product ID used by many different Tuya devices. The app has over 100 drivers that match TS0601, so it falls back to the \"Universal Zigb",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1760,
+      "user": "Clement_Loridan",
+      "fps": [],
+      "reply": "Hi @Clement_Loridan,\n\nThe SNZB-01M is supported by the `button_wireless` and `button_wireless_4` drivers. The \"silent events\" issue is a known symptom of the **\"56 Years Ago\" bug** that affects sleepy",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1763,
+      "user": "Rikjes",
+      "fps": [
+        "tuya"
+      ],
+      "reply": "This is a known critical bug introduced in v7.0.0 that was fixed in v7.0.12. The error `this.tuyaEF00manager.sendDP is not a function` occurs because the TuyaEF00Manager initialization sequence was ch",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1765,
+      "user": "Mitch_Vallinga",
+      "fps": [],
+      "reply": "Hi Mitch,\n\nThis is a known issue with the TS130F curtain modules in v7. The \"window covering cluster not available\" error typically occurs when the device's cluster reporting configuration gets corrup",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1766,
+      "user": "Clement_Loridan",
+      "fps": [
+        "dlnraja"
+      ],
+      "reply": "I see your concern, Clement. Let me clarify why the GitHub issue was closed.\n\nLooking at your device fingerprint, it matches the `generic_diy` driver. This driver is designed for DIY/prototyping devic",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1770,
+      "user": "tlink",
+      "fps": [
+        "dlnraja"
+      ],
+      "reply": "Thank you for the diagnostic ID. I've looked into your device data.\n\nYour device is being matched to the `generic_diy` driver based on its manufacturer name. This is a catch-all driver for DIY or unce",
+      "model": "deepseek"
+    },
+    {
+      "topic": 140352,
+      "post": 1776,
+      "user": "Mahom",
+      "fps": [
+        "dlnraja"
+      ],
+      "reply": "Hi @Mahom,\n\nThanks for reporting this. The fingerprint `_TZ3000_l9brjwau` + `TS0002` is actually already supported in the **switch_2gang** driver. The issue is that your device paired as a generic dev",
+      "model": "deepseek"
+    }
+  ],
+  "githubDetails": [
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 317,
+      "user": "vladivdv-bot",
+      "fps": [
+        "test"
+      ],
+      "title": "NOT WORK FOR HIST SERVER VERSION",
+      "response": "Thank you for the detailed report. This is a known limitation of the **Homey Self-Hosted Server** environment when using the **WiFi IR blaster** pairing flow.\n\n## Root Cause\n\nThe IR WiFi device pairing process relies on the **Tuya IoT Cloud API** to authenticate and retrieve device tokens. On the Se",
+      "model": "deepseek"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 312,
+      "user": "tjoepatjoep",
+      "fps": [
+        "_TZE284_fhvpaltk",
+        "_TZE",
+        "vision"
+      ],
+      "title": "INSOMA DUAL IRRIGATION VALVE ISSUE. New COMPLETE fingerprint",
+      "response": "## Insoma Dual Irrigation Valve — `_TZE284_fhvpaltk` + `TS0601`\n\n### ✅ Fingerprint Already Supported\n\nYour device fingerprint (`_TZE284_fhvpaltk` / `TS0601`) **is already mapped** to the **`valve_irrigation`** driver. No new driver entry is needed.\n\n### Pairing Instructions\n\n1. **Reset the valve** —",
+      "model": "openrouter"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 314,
+      "user": "Lalla80111",
+      "fps": [
+        "_TZ3000_b4awzgct",
+        "vision"
+      ],
+      "title": "Smart Wireless Button (1), unknown device",
+      "response": "## Analysis: Smart Wireless Button (1) — `_TZ3000_b4awzgct` + `TS0041`\n\n### Fingerprint Status: ✅ Supported\n\nThe fingerprint `_TZ3000_b4awzgct` + `TS0041` is mapped to the **`button_wireless_1`** driver. This is a 1-gang wireless battery button (TS0041 family).\n\n### Interview Observations\n\n- **Sleep",
+      "model": "openrouter"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 316,
+      "user": "Lalla80111",
+      "fps": [
+        "_TZ3000_fllyghyj"
+      ],
+      "title": "Climate sensor, wrong device recognized",
+      "response": "## Analysis\n\n**Fingerprint**: `_TZ3000_fllyghyj` + `TS0201`\n**Device Type**: Battery-powered end device — temperature + humidity only (TS0201 classic)\n\n### Root Cause\n\nThe fingerprint lookup confirms `_TZ3000_fllyghyj` exists in the `climate_sensor` driver's manufacturer list, and `TS0201` exists in",
+      "model": "openrouter"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1394,
+      "user": "4576ggv4536",
+      "fps": [
+        "example",
+        "router",
+        "vision"
+      ],
+      "title": "Device Request - Smart Mini Switch Zigbee - Zbeacon / TS0001",
+      "response": "## Analysis for `Zbeacon + TS0001` — Smart Mini Switch\n\n### Device Type\nThis is a **mains-powered single-gang smart switch** with standard ZCL `onOff` (0x0006) and Tuya DP clusters (`0xEF00`, `0xEF01`).\n\n### Cluster Summary\n| Cluster | ID | Role |\n|---------|----|------|\n| Basic | 0x0000 | Device in",
+      "model": "openrouter"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1393,
+      "user": "macmonty",
+      "fps": [
+        "_TZE204_81yrt3lo",
+        "_TZE",
+        "example",
+        "router",
+        "vision",
+        "zigbee2mqtt"
+      ],
+      "title": "Device Request - Tuya - PJ-1203A Bidirectional Energy Meter - _TZE204_81yrt3lo / TS0601",
+      "response": "## Device Request: PJ-1203A Bidirectional Energy Meter (`_TZE204_81yrt3lo`)\n\n### Status: **Already Supported** ✅\n\nThe fingerprint `_TZE204_81yrt3lo` + `TS0601` is **already mapped** to the **`din_rail_meter`** driver in the fingerprint database. No code changes are required.\n\n### How to Pair\n\n1. **U",
+      "model": "openrouter"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1392,
+      "user": "4576ggv4536",
+      "fps": [
+        "_TZ3040_o4mkahkc",
+        "example",
+        "vision"
+      ],
+      "title": "Device Request - PIR Motion Detector Zigbee - _TZ3040_o4mkahkc / TS0202",
+      "response": "## Analysis\n\n**Fingerprint**: `_TZ3040_o4mkahkc` (manufacturerName) + `TS0202` (modelId)\n\n**Status**: The `TS0202` model is **already supported** by the **`motion_sensor`** driver, but the manufacturer `_TZ3040_o4mkahkc` is missing from its fingerprint list.\n\n### Device Profile\n- **Type**: Battery-p",
+      "model": "openrouter"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1391,
+      "user": "4576ggv4536",
+      "fps": [
+        "_TZ3000_996rpfy6",
+        "example",
+        "vision"
+      ],
+      "title": "Device Request - Door Sensor Zigbee - _TZ3000_996rpfy6 / TS0203",
+      "response": "## Door Sensor `_TZ3000_996rpfy6` / `TS0203` — Already Supported ✅\n\nThis fingerprint combination is **already covered** by the built-in **`contact_sensor`** driver. Both `manufacturerName: _TZ3000_996rpfy6` and `productId: TS0203` are registered in that driver's fingerprint list.\n\n### How to Pair\n\n1",
+      "model": "openrouter"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1390,
+      "user": "4576ggv4536",
+      "fps": [
+        "example",
+        "router",
+        "vision"
+      ],
+      "title": "Device Request - Tuya RGB e27 Bulb Zigbee - Zbeacon / TS0505B",
+      "response": "## Device Request: Tuya RGB E27 Bulb (Zbeacon / TS0505B)\n\n**Status: Already Supported** ✅\n\nThe fingerprint `Zbeacon` + `TS0505B` is already present in the Universal Tuya Zigbee app. This device is handled by multiple drivers due to the common Tuya product ID:\n\n| Driver | Path |\n|--------|------|\n| `",
+      "model": "openrouter"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1389,
+      "user": "migueleap",
+      "fps": [
+        "_TZ3000_qja6nq5z",
+        "custom",
+        "example"
+      ],
+      "title": "Device Request – Tuya Smart Knob Switch – _TZ3000_qja6nq5z / TS004F",
+      "response": "Thank you for the detailed device request and interview data, @migueleap.\n\n## Analysis\n\nYour device (`_TZ3000_qja6nq5z` / `TS004F`) is a **ZCL-only smart knob** — it does **not** use the Tuya proprietary cluster `0xEF00`. This is confirmed by the interview, which shows only standard ZCL clusters (0,",
+      "model": "deepseek"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1388,
+      "user": "migueleap",
+      "fps": [
+        "_TZ3210_5ct6e7ye",
+        "example",
+        "router"
+      ],
+      "title": "Device Request – Tuya Smart Socket with Energy Monitoring – _TZ3210_5ct6e7ye / TS011F",
+      "response": "Thank you for the detailed device request and interview data, @migueleap.\n\nThis device is **already supported** by the `plug_energy_monitor` driver. The fingerprint `_TZ3210_5ct6e7ye` + `TS011F` is present in the driver's `driver.compose.json`.\n\n## What's happening\n\nYour device is a standard Tuya TS",
+      "model": "deepseek"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1387,
+      "user": "vikinos",
+      "fps": [
+        "_TZE284_rqcuwlsa",
+        "_TZE",
+        "vision"
+      ],
+      "title": "Device Request - Smart Solar Soil Sensor",
+      "response": "## Device Request Analysis: Smart Solar Soil Sensor\n\nThank you for providing the detailed device interview, @vikinos. This is very helpful.\n\n### Fingerprint Analysis\n\nYour device has been identified with:\n- **Manufacturer**: `_TZE284_rqcuwlsa`\n- **Product ID**: `TS0601`\n- **Type**: End device (batte",
+      "model": "deepseek"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1386,
+      "user": "KasvanD",
+      "fps": [
+        "ZG-106Z"
+      ],
+      "title": "Device request- Tuya Light sensor",
+      "response": "## Device Request: Tuya Light Sensor (ZG-106Z)\n\nThank you for your request, @KasvanD. The ZG-106Z light sensor is already supported in Universal Tuya Zigbee v5.11.179+ under the **illuminance_sensor** driver.\n\n### ✅ Supported Device\n\n| Detail | Value |\n|--------|-------|\n| **Driver** | `illuminance_",
+      "model": "deepseek"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1385,
+      "user": "PDominikPL",
+      "fps": [
+        "_TZE608_c75zqghm",
+        "_TZE",
+        "example",
+        "router",
+        "vision"
+      ],
+      "title": "Device Request - Zigbee Gate Opener Module - _TZE608_c75zqghm / TS0603",
+      "response": "Thank you for the detailed device interview, @PDominikPL.\n\nThis is a **Zigbee Gate Opener Module** (model QS-Zigbee-C03 / TS0603) from manufacturer `_TZE608_c75zqghm`. The interview confirms it's a mains-powered router with the Tuya proprietary cluster (0xEF00 / 61184) on endpoint 1, which is the st",
+      "model": "deepseek"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1384,
+      "user": "tjoepatjoep",
+      "fps": [
+        "_TZE284_fhvpaltk",
+        "_TZE",
+        "test"
+      ],
+      "title": "Device Request - [_TZE284_fhvpaltk] - [Insoma] / [TS0601]",
+      "response": "Thank you for the detailed report and for providing the Zigbee fingerprint.\n\nBased on the data you've shared, the device `_TZE284_fhvpaltk` (TS0601) is **already supported** by the **`valve_irrigation`** driver.\n\nYour device interview shows it has the Tuya proprietary cluster (0xEF00) on endpoint 1,",
+      "model": "deepseek"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1383,
+      "user": "johbiraus",
+      "fps": [
+        "_TZ3290_yyax9ajf",
+        "example",
+        "vision",
+        "tuya",
+        "test"
+      ],
+      "title": "Device Request - Zigbee Smart IR Remote - _TZ3290_yyax9ajf / TS1201",
+      "response": "Thank you for the detailed device interview, @johbiraus.\n\nBased on the interview data, your device `_TZ3290_yyax9ajf` / `TS1201` is **already supported** by the **`ir_blaster`** driver in Universal Tuya Zigbee.\n\n### Analysis\n\n- **Fingerprint Match**: The combination `_TZ3290_yyax9ajf` + `TS1201` is ",
+      "model": "deepseek"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1382,
+      "user": "dzsandzsee",
+      "fps": [
+        "_TZE200_crq3r3la",
+        "_TZE",
+        "example",
+        "router",
+        "vision",
+        "lumi",
+        "tuya"
+      ],
+      "title": "Device Request - Presense sensor - tuya / _TZE200_crq3r3la",
+      "response": "Thank you for the detailed device request and interview data, @dzsandzsee.\n\nThis device is **already supported** in the Universal Tuya Zigbee app.\n\n**Driver:** `presence_sensor_radar`\n\nThe fingerprint `_TZE200_crq3r3la` (manufacturerName) combined with model ID `CK-BL702-MWS-01(7016)` is already reg",
+      "model": "deepseek"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1381,
+      "user": "gangstigen-glitch",
+      "fps": [
+        "_TZE204_xalsoe3m",
+        "_TZE",
+        "example",
+        "router",
+        "vision",
+        "moes"
+      ],
+      "title": "Device Request Moes Smart thermostat Zigbeee _TZE204_xalsoe3m TS0601",
+      "response": "This is a Moes Smart Thermostat for heated floors, model `_TZE204_xalsoe3m` (TS0601). The device is **already supported** in the Universal Tuya Zigbee app.\n\n## ✅ Supported Device\n\nYour device fingerprint `_TZE204_xalsoe3m` + `TS0601` is handled by the **`climate_sensor`** driver. This driver support",
+      "model": "deepseek"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1380,
+      "user": "pixelwiese",
+      "fps": [
+        "_TZ3000_baeiitad",
+        "example",
+        "vision"
+      ],
+      "title": "Device Request - Water Leakage Sensor - Shenzen Xriver Technology / _TZ3000_baeiitad / TS0207",
+      "response": "This is a standard **ZCL-only water leak sensor** (TS0207) using the IAS Zone cluster (0x0500) with `zoneType: \"waterSensor\"`. The fingerprint `_TZ3000_baeiitad` + `TS0207` is not yet in our database, but the device is fully supported by the existing `water_leak_sensor` driver.\n\n## Analysis\n\nYour in",
+      "model": "deepseek"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1379,
+      "user": "TobiasB295",
+      "fps": [
+        "_TZE284_aaeasoll",
+        "_TZE",
+        "example",
+        "vision",
+        "tuya"
+      ],
+      "title": "Device Request - [SmarterCurry Solar Lux Sensor] - [SmarterCurry] / [TZE284_aaeasoll / TS0601]",
+      "response": "Thank you for the detailed device request and interview data for the **SmarterCurry Solar Lux Sensor** (`_TZE284_aaeasoll` / `TS0601`).\n\n## Analysis\n\nThis is a **new, unsupported fingerprint** (`_TZE284_aaeasoll` + `TS0601`). The device is a solar-powered Zigbee light/lux sensor with dusk detection,",
+      "model": "deepseek"
+    }
+  ]
+}
