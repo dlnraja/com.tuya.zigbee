@@ -18,7 +18,8 @@ async function tryConnect(user, pass) {
     logger: false,
     socketTimeout: 60000,
     connectionTimeout: 30000,
-    greetingTimeout: 30000
+    greetingTimeout: 30000,
+    tls: { rejectUnauthorized: false }
   });
   c.on('error', err => console.log('[IMAP] Socket event:', err.message));
   await c.connect();

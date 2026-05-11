@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-05-11T03:18:13.906Z",
+  "mode": "live",
+  "fpStats": {
+    "known": 10186,
+    "missing": 0,
+    "added": 0,
+    "skipped": 0,
+    "needsReview": 0
+  },
+  "issueCategories": {
+    "wifi_request": 3
+  },
+  "added": [],
+  "suggestions": [],
+  "topPainPoints": [
+    "wifi_request: 3"
+  ],
+  "wifiRequestCount": 3,
+  "pairingIssueCount": 0
+}

@@ -223,7 +223,17 @@ function extractCrashData(body) {
 }
 
 async function tryConnect(user, pass) {
-  const c = new ImapFlow({ host: 'imap.gmail.com', port: 993, secure: true, auth: { user, pass }, logger: false, socketTimeout: 60000, connectionTimeout: 30000, greetingTimeout: 30000 });
+  const c = new ImapFlow({
+    host: 'imap.gmail.com',
+    port: 993,
+    secure: true,
+    auth: { user, pass },
+    logger: false,
+    socketTimeout: 60000,
+    connectionTimeout: 30000,
+    greetingTimeout: 30000,
+    tls: { rejectUnauthorized: false }
+  });
   c.on('error', err => console.log('[IMAP] Socket event:', err.message));
   await c.connect();
   return c;
