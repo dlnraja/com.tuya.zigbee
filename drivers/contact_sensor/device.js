@@ -2,6 +2,7 @@
 
 const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 const { setupSonoffSensor, handleSonoffSensorSettings } = require('../../lib/mixins/SonoffSensorMixin');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 // v5.11.99: IASZoneManager removed —SensorBase handles IAS enrollment+inversion
 // v5.12.0: FIX Lasse_K #802 — IEEEAddressManager (7 methods) for CIE write + warn devices
 
@@ -196,7 +197,7 @@ class ContactSensorDevice extends SensorBase {
       '_TZ3000_yxqnffam',  // Known inverted (forum reports)
       '_TZ3000_996rpfy6',  // v5.5.908: blutch32 forum - TS0203 always "no" fix
       '_TZE200_pay2byax',  // v5.12.2: ZG-102ZL reversed
-    ].some(id => mfr.toLowerCase().includes(id.toLowerCase()));
+    ].some(id => containsCI(mfr, id));
     // v5.12.3: XOR — default inversion + user invert cancel each other out
     this._invertedByDefault = invertedByDefault;
     if (invertedByDefault) {

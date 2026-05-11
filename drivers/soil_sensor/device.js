@@ -4,6 +4,7 @@ const TuyaHybridDevice = require('../../lib/devices/TuyaHybridDevice');
 const BatteryCalculator = require('../../lib/battery/BatteryCalculator');
 const { getAppVersionPrefixed } = require('../../lib/utils/AppVersion');
 const { SoilMoistureInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -483,7 +484,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
       const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData?.()?.manufacturerName || this.getStore?.()?.manufacturerName || '';
       // v5.9.9: DutchDuke F3 fix — QT-07S sends raw °C (18→18°C, not 1.8°C)
       // Added getData()/getStore() fallback — getSetting may be empty at init
-      const rawCelsius = mfr.toLowerCase().includes('_tze284_oitavov2') || mfr.toLowerCase().includes('_tze200_oitavov2');
+      const rawCelsius = containsCI(mfr, '_tze284_oitavov2') || containsCI(mfr, '_tze200_oitavov2');
       if (rawCelsius) { /* already °C */ }
       else if (temp > 1000) temp = temp / 100;
       else if (temp > 100) temp = temp / 10;

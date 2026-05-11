@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * v5.5.568: CRITICAL FIX - Jolink forum report: flow cards give error
@@ -121,7 +122,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
       this.log(`[PAIR] 📋 Device: ${manufacturerName} ${productId}`);
       
       // Check if this is the problematic TZE284 device
-      const isTZE284 = (manufacturerName || '').toLowerCase().includes('_tze284_');
+      const isTZE284 = containsCI(manufacturerName, '_tze284_');
       if (isTZE284) {
         this.log('[PAIR] 🚨 TZE284 device detected - applying enhanced pairing logic');
       }

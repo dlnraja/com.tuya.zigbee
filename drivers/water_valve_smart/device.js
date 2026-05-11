@@ -1,5 +1,6 @@
 'use strict';
-constPlugBase = require('../../lib/devices/HybridPlugBase');
+const PlugBase = require('../../lib/devices/HybridPlugBase');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb','_tze200_fphxkxue','_tze204_sh1btabb','_tze204_fphxkxue'];
 
@@ -8,8 +9,8 @@ class WaterValveSmartDevice extends PlugBase {
 
   get isGardenTimer() {
     if (this._gtCached !== undefined) return this._gtCached;
-    const mfr = (this.getSetting('zb_manufacturer_name') || '').toLowerCase();
-    this._gtCached = GARDEN_TIMER_MFRS.some(m => mfr.includes(m));
+    const mfr = this.getSetting('zb_manufacturer_name') || '';
+    this._gtCached = GARDEN_TIMER_MFRS.some(m => containsCI(mfr, m));
     return this._gtCached;
   }
 
