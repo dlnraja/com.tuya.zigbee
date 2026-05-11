@@ -22,9 +22,10 @@ jobs:
         
       - name: Run fetch script
         env:
-          GMAIL_EMAIL: ${{ secrets.GMAIL_EMAIL }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-        run: node .github/scripts/fetch-target.js
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+        run: node .github/scripts/fetch-via-oauth.js
         
       - name: Commit and push changes
         run: |
