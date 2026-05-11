@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (May 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v7.5.14** | v7.5.14: Fixed radiator valve and smart radiator valve device initialization ... |
+| **v7.5.13** | v7.5.13: . Added new fingerprints for motion sensor, illuminance sensor, 3-ga... |
+| **v7.5.12** | v7.5.12: . Fixed sensor fallback logic for unknown models. Added new fingerpr... |
+| **v7.5.11** | v7.5.11: Fixed ReferenceError crashes in HybridSensorBase, HybridCoverBase, H... |
+| **v7.5.10** | Fixed a crash in HybridSensorBase that caused a ReferenceError on _safeSetCap... |
+| **v7.5.9** | v7.5.9: . Fixed ProtocolArbitrator crash, _TZE608 opener reclassification, SD... |
+| **v5.11.212** | Implement Rule 24 caseless resolver and dynamic O(1) matching system for high... |
+| **v5.11.211** | Universal Tuya Zigbee v5.11.211: Fixed DeviceIdentificationDatabase crash on ... |
+| **v5.11.210** | Universal Tuya Zigbee v5.11.210: Stability release - verified syntax integrit... |
+| **v5.11.209** | Universal Tuya Zigbee app v5.11.208: Fixed app ID. |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
