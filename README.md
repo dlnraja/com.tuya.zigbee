@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.15 |
+| **App Version** | v7.5.16 |
 | **Device Fingerprints** | 10,911+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 225 (175 Zigbee + 50 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.15** | v7.5.15: Virtual Telemetry Compensation Engine, Button Device (TS0041/TS0044), Device Fingerprint Database, Case-Inse... |
+| **v7.5.16** | v7.5.15: Virtual Telemetry Compensation Engine, Button Device (TS0041/TS0044), Device Fingerprint Database, Case-Inse... |
+| **v7.5.15** | v7.5.15: Fixed siren sensor driver crashes, added 3,202 new fingerprints, and improved device detection reliability. |
 | **v7.5.14** | v7.5.14: . Bug fixes for wireless buttons, climate sensors, radiator valves, and energy meters. Improved device initi... |
 | **v7.5.13** | v7.5.13: . Added new fingerprints for motion sensor, illuminance sensor, 3-gang switch, energy meter, and DIN rail. F... |
 | **v7.5.12** | v7.5.12: . Fixed sensor fallback logic for unknown models. Added new fingerprints for radiator valve (_TZE284_ne4pikw... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.208** | Universal Tuya Zigbee app v5.11.208: Fixed app ID. |
 | **v5.11.207** | Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers. |
 | **v5.11.206** | Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers. |
-| **v5.11.205** | Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers. |
 
 <!-- CHANGELOG_END -->
 

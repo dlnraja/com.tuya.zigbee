@@ -1,6 +1,6 @@
 {
   "7.5.15": {
-    "en": "v7.5.15: Virtual Telemetry Compensation Engine, Button Device (TS0041/TS0044), Device Fingerprint Database, Case-Insensitive Matching, Diagnostic Collection"
+    "en": "v7.5.15: Fixed siren sensor driver crashes, added 3,202 new fingerprints, and improved device detection reliability."
   },
   "7.5.14": {
     "en": "v7.5.14: . Bug fixes for wireless buttons, climate sensors, radiator valves, and energy meters. Improved device initialization and diagnostics."
@@ -58,5 +58,8 @@
   },
   "5.11.200": {
     "en": "Added support for ZG-204ZM and WiFi water sensor. Stabilized sleepy devices."
+  },
+  "7.5.16": {
+    "en": "v7.5.15: Virtual Telemetry Compensation Engine, Button Device (TS0041/TS0044), Device Fingerprint Database, Case-Insensitive Matching, Diagnostic Collection"
   }
 }
