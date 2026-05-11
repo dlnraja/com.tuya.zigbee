@@ -1,5 +1,5 @@
 {
-  "ts": "2026-05-11T04:22:38.140Z",
+  "ts": "2026-05-11T16:01:50.949Z",
   "ghCalls": 120,
   "totalFPs": 99,
   "newFPs": 10,
@@ -7,22 +7,17 @@
   "implemented": 0,
   "results": [
     {
-      "fp": "_TZ3040_o4mkahkc",
-      "driver": "motion_sensor",
+      "fp": "_TZ3000_hyarhbyx",
+      "driver": "switch_1gang",
       "confidence": 0,
       "pidsFromIssue": [
-        "TS0202"
+        "TS0001"
       ],
-      "discoveredPIDs": [
-        {
-          "pid": "TS0601",
-          "src": "z2m-context"
-        }
-      ],
-      "variants": 0,
+      "discoveredPIDs": [],
+      "variants": 2,
       "actions": [],
       "sources": [
-        "JohanBendz/com.tuya.zigbee#1392 (issue)"
+        "JohanBendz/com.tuya.zigbee#1395 (issue)"
       ]
     }
   ]

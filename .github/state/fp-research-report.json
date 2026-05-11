@@ -1,15 +1,64 @@
 {
-  "timestamp": "2026-05-11T04:11:29.341Z",
-  "total": 221,
-  "resolved": 148,
-  "unknown": 48,
+  "timestamp": "2026-05-11T15:50:11.836Z",
+  "total": 251,
+  "resolved": 169,
+  "unknown": 57,
   "falsePositives": 0,
   "results": [
     {
-      "fp": "_TZE200_u6x1zyv2",
+      "fp": "_TYZB01_4lwqwyqn",
       "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "rain_sensor",
+      "prefix": "legacy",
+      "driver": null,
+      "pid": null,
+      "confidence": 0,
+      "sources": [],
+      "method": null,
+      "falsePositive": {
+        "isFP": false,
+        "reason": "unknown_not_false"
+      }
+    },
+    {
+      "fp": "_TYZB01_zqvwka4k",
+      "valid": true,
+      "prefix": "legacy",
+      "driver": null,
+      "pid": null,
+      "confidence": 0,
+      "sources": [],
+      "method": null,
+      "falsePositive": {
+        "isFP": false,
+        "reason": "unknown_not_false"
+      }
+    },
+    {
+      "fp": "_TZ3040_o4mkahkc",
+      "valid": true,
+      "prefix": "unknown",
+      "driver": "motion_sensor",
+      "pid": "TS0601",
+      "confidence": 0,
+      "sources": [
+        "z2m-context"
+      ],
+      "method": "z2m-context",
+      "z2mContext": {
+        "driver": "motion_sensor",
+        "score": 3,
+        "source": "z2m-context"
+      },
+      "falsePositive": {
+        "isFP": false,
+        "reason": "unknown_not_false"
+      }
+    },
+    {
+      "fp": "_TZ3000_baeiitad",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "switch_1gang",
       "pid": null,
       "confidence": 100,
       "sources": [
@@ -17,6 +66,76 @@
       ],
       "method": null,
       "driverExists": true
+    },
+    {
+      "fp": "_TZE284_aaeasoll",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": null,
+      "pid": null,
+      "confidence": 0,
+      "sources": [],
+      "method": null,
+      "falsePositive": {
+        "isFP": false,
+        "reason": "unknown_not_false"
+      }
+    },
+    {
+      "fp": "_TZ3000_an5jiwd",
+      "valid": true,
+      "prefix": "standard",
+      "driver": null,
+      "pid": null,
+      "confidence": 0,
+      "sources": [],
+      "method": null,
+      "falsePositive": {
+        "isFP": false,
+        "reason": "unknown_not_false"
+      }
+    },
+    {
+      "fp": "_TZ3000_qxqcxxs",
+      "valid": true,
+      "prefix": "standard",
+      "driver": null,
+      "pid": null,
+      "confidence": 0,
+      "sources": [],
+      "method": null,
+      "falsePositive": {
+        "isFP": false,
+        "reason": "unknown_not_false"
+      }
+    },
+    {
+      "fp": "_TZ3000_j6kfv0r",
+      "valid": true,
+      "prefix": "standard",
+      "driver": null,
+      "pid": null,
+      "confidence": 0,
+      "sources": [],
+      "method": null,
+      "falsePositive": {
+        "isFP": false,
+        "reason": "unknown_not_false"
+      }
+    },
+    {
+      "fp": "_TZ3000_enmfaave",
+      "valid": true,
+      "prefix": "standard",
+      "driver": null,
+      "pid": null,
+      "confidence": 0,
+      "sources": [],
+      "method": null,
+      "falsePositive": {
+        "isFP": false,
+        "reason": "unknown_not_false"
+      }
     },
     {
       "fp": "_TZ3000_5bpeda8u",
@@ -357,6 +476,462 @@
       "driverExists": true
     },
     {
+      "fp": "_TZ3000_tzvbimpq",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "switch_2gang",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3000_bgsigers",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "lcdtemphumidsensor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE284_bquwrqh1",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "presence_sensor_radar",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE284_9ern5sfh",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "climate_sensor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE284_hdml1aav",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "soil_sensor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE284_aao3yzhs",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "soil_sensor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE200_npj9bug3",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "soil_sensor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3290_7v1k4vufotpowp9z",
+      "valid": true,
+      "prefix": "special",
+      "driver": "ir_remote",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3290_7v1k4vuf",
+      "valid": true,
+      "prefix": "special",
+      "driver": "ir_blaster",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3000_ja5osu5g",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "button_wireless_1",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3000_fa9mlvja",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "button_wireless_smart",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3000_tk3Styg",
+      "valid": true,
+      "prefix": "standard",
+      "driver": null,
+      "pid": null,
+      "confidence": 0,
+      "sources": [],
+      "method": null,
+      "falsePositive": {
+        "isFP": false,
+        "reason": "unknown_not_false"
+      }
+    },
+    {
+      "fp": "_TZE284_fhvpaltk",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "valve_irrigation",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE200_ka8l86iu",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "climate_sensor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE200_kb5noeto",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "motion_sensor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3000_akqdg6g7",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "climate_sensor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3000_kaflzta4",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "button_wireless_4",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3000_b4awzgct",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "button_wireless_1",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3000_fllyghyj",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "climate_sensor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE204_81yrt3lo",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "din_rail_meter",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3000_qja6nq5z",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "button_wireless_4",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3210_5ct6e7ye",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "plug_energy_monitor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE284_rqcuwlsa",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "climate_sensor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE608_c75zqghm",
+      "valid": true,
+      "prefix": "unknown",
+      "driver": "garage_door_opener",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3290_yyax9ajf",
+      "valid": true,
+      "prefix": "special",
+      "driver": "button_wireless_4",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE200_crq3r3la",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "presence_sensor_radar",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE204_xalsoe3m",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "climate_sensor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3000_gjrubzje",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "switch_1gang",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3000_aetquff4",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "switch_1gang",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE204_r0jdjrvi",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "curtain_motor_tilt",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE200_r0jdjrvi",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "curtain_motor_tilt",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3000_wpueorev",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "switch_1gang",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3000_hafsqare",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "switch_1gang",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZ3000_e98krvvk",
+      "valid": true,
+      "prefix": "standard",
+      "driver": "switch_1gang",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE200_mgxy2d9f",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "climate_sensor",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
       "fp": "_TZ3000_xwh1e22x",
       "valid": true,
       "prefix": "standard",
@@ -448,19 +1023,6 @@
       "driverExists": true
     },
     {
-      "fp": "_TZE284_bquwrqh1",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "presence_sensor_radar",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
       "fp": "_TZ3002_jn2x20tg",
       "valid": true,
       "prefix": "unknown",
@@ -526,10 +1088,10 @@
       "driverExists": true
     },
     {
-      "fp": "_TZE284_hdml1aav",
+      "fp": "_TZE200_u6x1zyv2",
       "valid": true,
       "prefix": "tuya_dp",
-      "driver": "soil_sensor",
+      "driver": "rain_sensor",
       "pid": null,
       "confidence": 100,
       "sources": [
@@ -621,19 +1183,6 @@
       "valid": true,
       "prefix": "standard",
       "driver": "button_wireless_1",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE200_crq3r3la",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "presence_sensor_radar",
       "pid": null,
       "confidence": 100,
       "sources": [
@@ -747,19 +1296,6 @@
       "driverExists": true
     },
     {
-      "fp": "_TZ3290_7v1k4vuf",
-      "valid": true,
-      "prefix": "special",
-      "driver": "ir_blaster",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
       "fp": "_TZ3290_rlkmy85q",
       "valid": true,
       "prefix": "special",
@@ -777,526 +1313,6 @@
       "valid": true,
       "prefix": "special",
       "driver": "ir_blaster",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3290_lypnqvle",
-      "valid": true,
-      "prefix": "special",
-      "driver": "ir_blaster",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3290_nba3knps",
-      "valid": true,
-      "prefix": "special",
-      "driver": "ir_blaster",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3290_yac64inu",
-      "valid": true,
-      "prefix": "special",
-      "driver": "ir_blaster",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE204_2jnoy8dj",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "fan_controller",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3210_iymfxdis",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "switch_4gang",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3002_xkxgfxsg",
-      "valid": true,
-      "prefix": "unknown",
-      "driver": "switch_4gang",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3002_tlsvxhxc",
-      "valid": true,
-      "prefix": "unknown",
-      "driver": "switch_4gang",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE200_seq9cm6u",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "climate_sensor",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3000_itb0omhv",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "remote_button_wireless_wall",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE204_sxm7l9xa",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "presence_sensor_radar",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE204_hlx9tnzb",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "dimmer_wall_1gang",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZB210_rkgngb5o",
-      "valid": true,
-      "prefix": "unknown",
-      "driver": "bulb_dimmable",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE200_3towulqd",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "motion_sensor_2",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3210_iystcadi",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "bulb_rgb_led",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3210_0zabbfax",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "bulb_rgb",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3210_3lbtuxgp",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "dimmer_wall_1gang",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE200_myd45weu",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "soil_sensor",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3000_qeuvnohg",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "plug_energy_monitor",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3000_wkr3jqmr",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "switch_1gang",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE200_p0gzbqct",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "climate_sensor",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3210_xzhnra8x",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "plug_energy_monitor",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE284_aao3yzhs",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "soil_sensor",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE200_8ygsuhe1",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "air_quality_comprehensive",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE204_9mjy74mp",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "radiator_valve",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE284_c8ipbljq",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "switch_3gang",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3000_pjb1ua0m",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "contact_sensor",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3000_ww6drja5",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "plug_energy_monitor",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE284_tgeqdjgk",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "scene_switch_4",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3000_tzvbimpq",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "switch_2gang",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3000_5iixzdo7",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "curtain_motor",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE284_6ycgarab",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "smoke_detector_advanced",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE204_gkfbdvyx",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "presence_sensor_radar",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE204_dwcarsat",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "climate_sensor",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE284_xnbkhhdr",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "thermostat_tuya_dp",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE200_rhgsbacq",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "presence_sensor_radar",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE284_aa03yzhs",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "soil_sensor",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3000_ja5osu5g",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "button_wireless_1",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZE200_znbl8dj5",
-      "valid": true,
-      "prefix": "tuya_dp",
-      "driver": "curtain_motor",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3290_ot6ewjvmejq5ekhl",
-      "valid": true,
-      "prefix": "special",
-      "driver": "ir_remote",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3210_j4pdtz9v",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "fingerbot",
       "pid": null,
       "confidence": 100,
       "sources": [

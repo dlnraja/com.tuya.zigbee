@@ -73,7 +73,11 @@
   ],
   "discovery": "ewelink_mdns",
   "name": {
-    "en": "SONOFF POW Elite / POWR320D"
+    "en": "SONOFF POW Elite / POWR320D",
+    "fr": "SONOFF POW Elite / POWR320D",
+    "nl": "SONOFF POW Elite / POWR320D",
+    "de": "SONOFF POW Elite / POWR320D",
+    "es": "SONOFF POW Elite / POWR320D"
   },
   "class": "socket",
   "capabilities": [

@@ -1,15 +1,63 @@
 {
-  "timestamp": "2026-05-11T04:22:38.334Z",
-  "appVer": "7.5.13",
-  "total": 5,
+  "timestamp": "2026-05-11T16:01:51.155Z",
+  "appVer": "7.5.14",
+  "total": 9,
   "added": [],
-  "aiAnalyzed": [],
+  "aiAnalyzed": [
+    {
+      "fp": "_TZ3000_0t4zjtia",
+      "driver": "switch_1gang",
+      "pid": "TS0001",
+      "type": "1-Gang Switch",
+      "caps": [
+        "onoff"
+      ],
+      "dps": [],
+      "quirks": [
+        "Standard ZCL On/Off switch. No Tuya DP protocol."
+      ],
+      "confidence": 90
+    },
+    {
+      "fp": "_TZ3000_enmfaave",
+      "driver": "switch_4gang",
+      "pid": "TS0004",
+      "type": "4-Gang Switch",
+      "caps": [
+        "onoff.gang1",
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4"
+      ],
+      "dps": [],
+      "quirks": [
+        "Standard ZCL On/Off switch. No Tuya DP protocol. May require binding for all endpoints to report correctly."
+      ],
+      "confidence": 90
+    },
+    {
+      "fp": "_TZ3040_o4mkahkc",
+      "driver": "motion_sensor",
+      "pid": "TS0202",
+      "type": "PIR Motion Sensor",
+      "caps": [
+        "alarm_motion",
+        "measure_battery"
+      ],
+      "dps": [],
+      "quirks": [
+        "Sleepy device: first report may take up to 24 hours. Uses IAS Zone cluster for motion detection. May require explicit binding."
+      ],
+      "confidence": 85
+    }
+  ],
   "skipped": [
     "_TYZB01_4lwqwyqn",
     "_TYZB01_zqvwka4k",
-    "_TZ3040_o4mkahkc",
-    "_TZ3000_baeiitad",
-    "_TZE284_aaeasoll"
+    "_TS3000_gwkzibhs",
+    "_TYST11_jeaxp72v",
+    "_TZE284_aaeasoll",
+    "_TZ3000_hyarhbyx"
   ],
   "researched": []
 }

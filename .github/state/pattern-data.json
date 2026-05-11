@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-11T04:51:47.006Z",
+  "timestamp": "2026-05-11T16:24:43.637Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
@@ -56,12 +56,16 @@
     {
       "pattern": "Pairing Failure",
       "id": "pairing",
-      "count": 17,
+      "count": 18,
       "priority": "high",
       "topFPs": [
         [
           "vision",
           13
+        ],
+        [
+          "router",
+          6
         ],
         [
           "_TZE",
@@ -72,15 +76,15 @@
           5
         ],
         [
-          "router",
-          5
-        ],
-        [
           "example",
           3
         ],
         [
           "generic",
+          3
+        ],
+        [
+          "TS0001",
           3
         ],
         [
@@ -93,10 +97,6 @@
         ],
         [
           "_TZ3000_o4mkahk",
-          2
-        ],
-        [
-          "TS0202",
           2
         ]
       ],
@@ -158,7 +158,7 @@
     {
       "pattern": "Device Shows Unknown",
       "id": "unknown",
-      "count": 6,
+      "count": 7,
       "priority": "high",
       "topFPs": [
         [
@@ -190,15 +190,15 @@
           2
         ],
         [
+          "router",
+          2
+        ],
+        [
+          "TS0001",
+          2
+        ],
+        [
           "dlnraja",
-          1
-        ],
-        [
-          "example",
-          1
-        ],
-        [
-          "_TZ3000_wpueorev",
           1
         ]
       ],
@@ -441,8 +441,8 @@
     "inversion": 1,
     "battery": 36,
     "double_div": 2,
-    "pairing": 17,
-    "unknown": 6,
+    "pairing": 18,
+    "unknown": 7,
     "flow_dup": 0,
     "no_response": 9,
     "voltage_wrong": 1,

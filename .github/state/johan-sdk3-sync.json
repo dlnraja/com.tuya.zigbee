@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-11T04:09:27.674Z",
+  "timestamp": "2026-05-11T15:47:49.291Z",
   "added": [
     {
       "fp": "_TYZB01_qezuin6k",
@@ -8,13 +8,6 @@
         "TS110F",
         "TS110E",
         "TS0052"
-      ]
-    },
-    {
-      "fp": "_TZE200_4mh6tyyo",
-      "driver": "air_purifier",
-      "pids": [
-        "TS0601"
       ]
     },
     {
@@ -162,15 +155,8 @@
       ]
     },
     {
-      "fp": "zbeacon",
-      "driver": "contact_sensor",
-      "pids": [
-        "DS01"
-      ]
-    },
-    {
       "fp": "_TYZB01_hlla45kx",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS011F"
       ]
@@ -217,7 +203,7 @@
     },
     {
       "fp": "_TYZB01_iuepbmpv",
-      "driver": "plug_energy_monitor",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0121",
         "TSO121",
@@ -339,27 +325,6 @@
       ]
     },
     {
-      "fp": "_TZ3000_4fjiwweb",
-      "driver": "button_wireless_4",
-      "pids": [
-        "TS004F"
-      ]
-    },
-    {
-      "fp": "_TZ3000_qja6nq5z",
-      "driver": "button_wireless_4",
-      "pids": [
-        "TS004F"
-      ]
-    },
-    {
-      "fp": "_TZ3000_kjfzuycl",
-      "driver": "button_wireless_4",
-      "pids": [
-        "TS004F"
-      ]
-    },
-    {
       "fp": "_TYZB01_qm6djpta",
       "driver": "button_emergency_sos",
       "pids": [
@@ -368,7 +333,7 @@
     },
     {
       "fp": "_TYZB01_phjeraqq",
-      "driver": "fingerbot",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0001"
       ]
@@ -396,7 +361,7 @@
     },
     {
       "fp": "_TYZB01_ncutbjdi",
-      "driver": "fingerbot",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0003",
         "TS011F",
@@ -407,7 +372,7 @@
     },
     {
       "fp": "_TYZB01_aneiicmq",
-      "driver": "fingerbot",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0003",
         "TS011F",
@@ -568,16 +533,9 @@
     },
     {
       "fp": "_TYZB02_key8kk7r",
-      "driver": "button_wireless_3",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0043"
-      ]
-    },
-    {
-      "fp": "_TZ3000_b3mgfu0d",
-      "driver": "button_wireless_4",
-      "pids": [
-        "TS004F"
       ]
     },
     {
@@ -1135,9 +1093,9 @@
   },
   "summary": {
     "totalJohanFPs": 636,
-    "totalOurFPs": 10186,
-    "missingFPs": 88,
-    "addedFPs": 88,
+    "totalOurFPs": 10206,
+    "missingFPs": 82,
+    "addedFPs": 82,
     "skippedFPs": 0,
     "dpGaps": 0,
     "newDrivers": 89,
