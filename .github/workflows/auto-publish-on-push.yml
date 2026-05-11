@@ -73,11 +73,28 @@ jobs:
           CL=$(node -e "const r=JSON.parse(require('child_process').execSync('node .github/scripts/extract-changelog.js '+process.argv[1],{encoding:'utf8'}).trim());process.stdout.write(r.homeyText)" "$VER" 2>/dev/null || echo "v${VER}: Bug fixes and improvements")
           echo "text=$CL" >> $GITHUB_OUTPUT
 
-      - name: Auto bump patch version
+      - name: Determine Version Bump Level
+        id: bump_level
+        shell: bash
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          echo "Commit message: $COMMIT_MSG"
+          if [[ "$COMMIT_MSG" == *"[major]"* ]]; then
+            echo "level=major" >> $GITHUB_OUTPUT
+            echo "Determined level: major"
+          elif [[ "$COMMIT_MSG" == *"[minor]"* ]]; then
+            echo "level=minor" >> $GITHUB_OUTPUT
+            echo "Determined level: minor"
+          else
+            echo "level=patch" >> $GITHUB_OUTPUT
+            echo "Determined level: patch (default)"
+          fi
+
+      - name: Auto bump version
         id: bump
         uses: athombv/github-action-homey-app-version@986685b4903efabc9531248b2fdc9734223ff9f3 # v1
         with:
-          version: patch
+          version: ${{ steps.bump_level.outputs.level }}
           changelog: ${{ steps.cl.outputs.text }}
 
       - name: Sync package.json version

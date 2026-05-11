@@ -1,0 +1,2404 @@
+{
+  "auditedAt": "2026-05-11T20:04:28.915Z",
+  "totalDrivers": 225,
+  "fullyHACompatible": 160,
+  "needsCustomYaml": 65,
+  "report": [
+    {
+      "driver": "air_purifier",
+      "class": "fan",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"fan\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "air_quality_co2",
+      "class": "sensor",
+      "capabilitiesCount": 9,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "air_quality_comprehensive",
+      "class": "sensor",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "bulb_dimmable",
+      "class": "light",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "bulb_dimmable_dimmer",
+      "class": "light",
+      "capabilitiesCount": 10,
+      "subCapabilities": [
+        "onoff.channel2",
+        "dim.channel2"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"onoff.channel2\" declared but endpoint \"channel2\" is missing in zigbee.endpoints",
+        "Sub-capability \"dim.channel2\" declared but endpoint \"channel2\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "bulb_rgb",
+      "class": "light",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "bulb_rgbw",
+      "class": "light",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "bulb_rgb_led",
+      "class": "light",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "bulb_tunable_white",
+      "class": "light",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "bulb_white",
+      "class": "light",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "button_emergency_sos",
+      "class": "sensor",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "button_wireless",
+      "class": "button",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"button\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "button_wireless_1",
+      "class": "sensor",
+      "capabilitiesCount": 3,
+      "subCapabilities": [
+        "button.1"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "button_wireless_2",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [
+        "button.1",
+        "button.2"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "button_wireless_3",
+      "class": "sensor",
+      "capabilitiesCount": 5,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "button_wireless_4",
+      "class": "sensor",
+      "capabilitiesCount": 6,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "button_wireless_6",
+      "class": "sensor",
+      "capabilitiesCount": 8,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "button_wireless_8",
+      "class": "sensor",
+      "capabilitiesCount": 10,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6",
+        "button.7",
+        "button.8"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "button_wireless_smart",
+      "class": "sensor",
+      "capabilitiesCount": 3,
+      "subCapabilities": [
+        "button.1"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "ceiling_fan",
+      "class": "fan",
+      "capabilitiesCount": 3,
+      "subCapabilities": [
+        "dim.speed"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Non-standard Homey class \"fan\" — requires manual MQTT mapping in Home Assistant",
+        "Sub-capability \"dim.speed\" declared but endpoint \"speed\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "climate_sensor",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "climate_sensor_device",
+      "class": "thermostat",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "climate_sensor_energy",
+      "class": "sensor",
+      "capabilitiesCount": 11,
+      "subCapabilities": [
+        "measure_power.phase1",
+        "measure_power.phase2",
+        "measure_power.phase3"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_power.phase1\" declared but endpoint \"phase1\" is missing in zigbee.endpoints",
+        "Sub-capability \"measure_power.phase2\" declared but endpoint \"phase2\" is missing in zigbee.endpoints",
+        "Sub-capability \"measure_power.phase3\" declared but endpoint \"phase3\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "contact_sensor",
+      "class": "sensor",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "co_sensor",
+      "class": "sensor",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "curtain_motor",
+      "class": "windowcoverings",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"windowcoverings\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "curtain_motor_shutter",
+      "class": "windowcoverings",
+      "capabilitiesCount": 7,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"windowcoverings\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "curtain_motor_tilt",
+      "class": "windowcoverings",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"windowcoverings\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "curtain_motor_wall",
+      "class": "windowcoverings",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"windowcoverings\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "device_din_rail",
+      "class": "doorbell",
+      "capabilitiesCount": 11,
+      "subCapabilities": [
+        "meter_power.exported"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"meter_power.exported\" declared but endpoint \"exported\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "device_din_rail_meter",
+      "class": "doorbell",
+      "capabilitiesCount": 11,
+      "subCapabilities": [
+        "meter_power.exported"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"meter_power.exported\" declared but endpoint \"exported\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "device_floor_heating",
+      "class": "thermostat",
+      "capabilitiesCount": 7,
+      "subCapabilities": [
+        "measure_temperature.floor"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_temperature.floor\" declared but endpoint \"floor\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "device_floor_heating_thermostat",
+      "class": "thermostat",
+      "capabilitiesCount": 7,
+      "subCapabilities": [
+        "measure_temperature.floor"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_temperature.floor\" declared but endpoint \"floor\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "device_generic_tuya_universal",
+      "class": "other",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "device_radiator_valve",
+      "class": "thermostat",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "device_radiator_valve_smart",
+      "class": "thermostat",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "dimmer_3gang",
+      "class": "light",
+      "capabilitiesCount": 6,
+      "subCapabilities": [
+        "onoff.channel2",
+        "dim.channel2",
+        "onoff.channel3",
+        "dim.channel3"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"onoff.channel2\" declared but endpoint \"channel2\" is missing in zigbee.endpoints",
+        "Sub-capability \"dim.channel2\" declared but endpoint \"channel2\" is missing in zigbee.endpoints",
+        "Sub-capability \"onoff.channel3\" declared but endpoint \"channel3\" is missing in zigbee.endpoints",
+        "Sub-capability \"dim.channel3\" declared but endpoint \"channel3\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "dimmer_dual_channel",
+      "class": "light",
+      "capabilitiesCount": 4,
+      "subCapabilities": [
+        "onoff.channel2",
+        "dim.channel2"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"onoff.channel2\" declared but endpoint \"channel2\" is missing in zigbee.endpoints",
+        "Sub-capability \"dim.channel2\" declared but endpoint \"channel2\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "dimmer_wall_1gang",
+      "class": "light",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "din_rail_meter",
+      "class": "sensor",
+      "capabilitiesCount": 5,
+      "subCapabilities": [
+        "meter_power.exported"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"meter_power.exported\" declared but endpoint \"exported\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "din_rail_switch",
+      "class": "socket",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "diy_custom_zigbee",
+      "class": "other",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "doorbell",
+      "class": "doorbell",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "door_controller",
+      "class": "lock",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "energy_meter_3phase",
+      "class": "sensor",
+      "capabilitiesCount": 9,
+      "subCapabilities": [
+        "measure_power.phase1",
+        "measure_power.phase2",
+        "measure_power.phase3"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_power.phase1\" declared but endpoint \"phase1\" is missing in zigbee.endpoints",
+        "Sub-capability \"measure_power.phase2\" declared but endpoint \"phase2\" is missing in zigbee.endpoints",
+        "Sub-capability \"measure_power.phase3\" declared but endpoint \"phase3\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "fan_controller",
+      "class": "fan",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"fan\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "fingerbot",
+      "class": "button",
+      "capabilitiesCount": 5,
+      "subCapabilities": [
+        "button.push"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Non-standard Homey class \"button\" — requires manual MQTT mapping in Home Assistant",
+        "Sub-capability \"button.push\" declared but endpoint \"push\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "fingerprint_lock",
+      "class": "lock",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "floor_heating_thermostat",
+      "class": "thermostat",
+      "capabilitiesCount": 5,
+      "subCapabilities": [
+        "measure_temperature.floor"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_temperature.floor\" declared but endpoint \"floor\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "formaldehyde_sensor",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "garage_door",
+      "class": "garagedoor",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"garagedoor\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "garage_door_opener",
+      "class": "garagedoor",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"garagedoor\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "gas_detector",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "gas_sensor",
+      "class": "sensor",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "gateway_zigbee_bridge",
+      "class": "other",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "generic_diy",
+      "class": "other",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "generic_tuya",
+      "class": "other",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "handheld_remote_4_buttons",
+      "class": "remote",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "humidifier",
+      "class": "fan",
+      "capabilitiesCount": 4,
+      "subCapabilities": [
+        "dim.humidity"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Non-standard Homey class \"fan\" — requires manual MQTT mapping in Home Assistant",
+        "Sub-capability \"dim.humidity\" declared but endpoint \"humidity\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "hvac_air_conditioner",
+      "class": "thermostat",
+      "capabilitiesCount": 5,
+      "subCapabilities": [
+        "dim.speed"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"dim.speed\" declared but endpoint \"speed\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "hvac_controller",
+      "class": "thermostat",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "hvac_dehumidifier",
+      "class": "fan",
+      "capabilitiesCount": 8,
+      "subCapabilities": [
+        "dim.humidity",
+        "dim.speed"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Non-standard Homey class \"fan\" — requires manual MQTT mapping in Home Assistant",
+        "Sub-capability \"dim.humidity\" declared but endpoint \"humidity\" is missing in zigbee.endpoints",
+        "Sub-capability \"dim.speed\" declared but endpoint \"speed\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "illuminance_sensor",
+      "class": "sensor",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "ir_blaster",
+      "class": "remote",
+      "capabilitiesCount": 2,
+      "subCapabilities": [
+        "button.learn_ir"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant",
+        "Sub-capability \"button.learn_ir\" declared but endpoint \"learn_ir\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "ir_remote",
+      "class": "remote",
+      "capabilitiesCount": 3,
+      "subCapabilities": [
+        "button.learn_ir"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant",
+        "Sub-capability \"button.learn_ir\" declared but endpoint \"learn_ir\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "lcdtemphumidsensor",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "lcdtemphumidsensor_plug_energy",
+      "class": "socket",
+      "capabilitiesCount": 9,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "led_controller_cct",
+      "class": "light",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "led_controller_dimmable",
+      "class": "light",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "led_controller_rgb",
+      "class": "light",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "led_strip",
+      "class": "light",
+      "capabilitiesCount": 7,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "led_strip_advanced",
+      "class": "light",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "led_strip_rgbw",
+      "class": "light",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "light_bulb_rgb_rgbw",
+      "class": "light",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "light_sensor_outdoor",
+      "class": "sensor",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "lock_smart",
+      "class": "lock",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "module_mini_switch",
+      "class": "socket",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "motion_sensor",
+      "class": "sensor",
+      "capabilitiesCount": 7,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "motion_sensor_2",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "motion_sensor_radar_mmwave",
+      "class": "sensor",
+      "capabilitiesCount": 7,
+      "subCapabilities": [
+        "measure_luminance.distance"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_luminance.distance\" declared but endpoint \"distance\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "pet_feeder",
+      "class": "other",
+      "capabilitiesCount": 2,
+      "subCapabilities": [
+        "button.feed"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant",
+        "Sub-capability \"button.feed\" declared but endpoint \"feed\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "pet_feeder_zigbee",
+      "class": "other",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "plug_energy_monitor",
+      "class": "socket",
+      "capabilitiesCount": 7,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "plug_smart",
+      "class": "socket",
+      "capabilitiesCount": 7,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "pool_pump",
+      "class": "socket",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "power_clamp_meter",
+      "class": "sensor",
+      "capabilitiesCount": 7,
+      "subCapabilities": [
+        "measure_power.phase1",
+        "measure_power.phase2",
+        "measure_power.phase3"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_power.phase1\" declared but endpoint \"phase1\" is missing in zigbee.endpoints",
+        "Sub-capability \"measure_power.phase2\" declared but endpoint \"phase2\" is missing in zigbee.endpoints",
+        "Sub-capability \"measure_power.phase3\" declared but endpoint \"phase3\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "power_meter",
+      "class": "sensor",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "presence_sensor_ceiling",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [
+        "measure_luminance.distance"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_luminance.distance\" declared but endpoint \"distance\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "presence_sensor_radar",
+      "class": "sensor",
+      "capabilitiesCount": 8,
+      "subCapabilities": [
+        "measure_luminance.distance"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_luminance.distance\" declared but endpoint \"distance\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "radiator_controller",
+      "class": "heater",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"heater\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "radiator_valve",
+      "class": "thermostat",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "radiator_valve_zigbee",
+      "class": "thermostat",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "radiator_wifi_tuya",
+      "class": "thermostat",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "rain_sensor",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "remote_button_emergency_sos",
+      "class": "remote",
+      "capabilitiesCount": 7,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant",
+        "Sub-capability \"button.2\" declared but endpoint \"2\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.3\" declared but endpoint \"3\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.4\" declared but endpoint \"4\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "remote_button_wireless_handheld",
+      "class": "sensor",
+      "capabilitiesCount": 7,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "remote_button_wireless_wall",
+      "class": "sensor",
+      "capabilitiesCount": 3,
+      "subCapabilities": [
+        "button.1"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "remote_dimmer",
+      "class": "remote",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "scene_switch_1",
+      "class": "sensor",
+      "capabilitiesCount": 3,
+      "subCapabilities": [
+        "button.1"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "scene_switch_2",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [
+        "button.1",
+        "button.2"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"button.2\" declared but endpoint \"2\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "scene_switch_3",
+      "class": "sensor",
+      "capabilitiesCount": 5,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"button.2\" declared but endpoint \"2\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.3\" declared but endpoint \"3\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "scene_switch_4",
+      "class": "sensor",
+      "capabilitiesCount": 6,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"button.2\" declared but endpoint \"2\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.3\" declared but endpoint \"3\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.4\" declared but endpoint \"4\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "scene_switch_6",
+      "class": "sensor",
+      "capabilitiesCount": 8,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"button.2\" declared but endpoint \"2\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.3\" declared but endpoint \"3\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.4\" declared but endpoint \"4\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.5\" declared but endpoint \"5\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.6\" declared but endpoint \"6\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "scene_switch_wall",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [
+        "button.1",
+        "button.2"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"button.2\" declared but endpoint \"2\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "sensor_climate_contact",
+      "class": "sensor",
+      "capabilitiesCount": 9,
+      "subCapabilities": [
+        "measure_temperature.probe"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_temperature.probe\" declared but endpoint \"probe\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "sensor_contact_motion",
+      "class": "sensor",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "sensor_contact_presence",
+      "class": "sensor",
+      "capabilitiesCount": 10,
+      "subCapabilities": [
+        "measure_luminance.distance"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_luminance.distance\" declared but endpoint \"distance\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "sensor_contact_water",
+      "class": "sensor",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "sensor_illuminance_presence",
+      "class": "sensor",
+      "capabilitiesCount": 8,
+      "subCapabilities": [
+        "measure_luminance.distance"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_luminance.distance\" declared but endpoint \"distance\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "sensor_motion_presence",
+      "class": "sensor",
+      "capabilitiesCount": 9,
+      "subCapabilities": [
+        "measure_luminance.distance"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_luminance.distance\" declared but endpoint \"distance\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "sensor_motion_radar",
+      "class": "sensor",
+      "capabilitiesCount": 7,
+      "subCapabilities": [
+        "measure_luminance.distance"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_luminance.distance\" declared but endpoint \"distance\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "sensor_presence_radar",
+      "class": "sensor",
+      "capabilitiesCount": 10,
+      "subCapabilities": [
+        "measure_luminance.distance"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_luminance.distance\" declared but endpoint \"distance\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "shutter_roller_controller",
+      "class": "windowcoverings",
+      "capabilitiesCount": 7,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"windowcoverings\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "siren",
+      "class": "other",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "sirentemphumidsensor",
+      "class": "other",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "siren_sirentemphumidsensor",
+      "class": "other",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "smart_breaker",
+      "class": "socket",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "smart_button_switch",
+      "class": "remote",
+      "capabilitiesCount": 3,
+      "subCapabilities": [
+        "button.1"
+      ],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "smart_heater",
+      "class": "heater",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"heater\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "smart_heater_controller",
+      "class": "heater",
+      "capabilitiesCount": 7,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"heater\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "smart_knob",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "smart_knob_rotary",
+      "class": "sensor",
+      "capabilitiesCount": 6,
+      "subCapabilities": [
+        "button.rotate_left",
+        "button.rotate_right",
+        "button.press"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"button.rotate_left\" declared but endpoint \"rotate_left\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.rotate_right\" declared but endpoint \"rotate_right\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.press\" declared but endpoint \"press\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "smart_knob_switch",
+      "class": "remote",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "smart_lcd_thermostat",
+      "class": "thermostat",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "smart_rcbo",
+      "class": "other",
+      "capabilitiesCount": 8,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "smart_remote_1_button",
+      "class": "remote",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "smart_remote_1_button_2",
+      "class": "remote",
+      "capabilitiesCount": 3,
+      "subCapabilities": [
+        "button.1"
+      ],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "smart_remote_4_buttons",
+      "class": "remote",
+      "capabilitiesCount": 6,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant",
+        "Sub-capability \"button.2\" declared but endpoint \"2\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.3\" declared but endpoint \"3\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.4\" declared but endpoint \"4\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "smart_scene_panel",
+      "class": "socket",
+      "capabilitiesCount": 4,
+      "subCapabilities": [
+        "onoff.gang1",
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"onoff.gang2\" declared but endpoint \"2\" is missing in zigbee.endpoints",
+        "Sub-capability \"onoff.gang3\" declared but endpoint \"3\" is missing in zigbee.endpoints",
+        "Sub-capability \"onoff.gang4\" declared but endpoint \"4\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "smoke_detector_advanced",
+      "class": "sensor",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "soil_sensor",
+      "class": "sensor",
+      "capabilitiesCount": 9,
+      "subCapabilities": [
+        "measure_humidity.soil"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"measure_humidity.soil\" declared but endpoint \"soil\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "switch",
+      "class": "socket",
+      "capabilitiesCount": 12,
+      "subCapabilities": [
+        "onoff.gang2",
+        "button.toggle_1",
+        "button.toggle_2",
+        "button.identify",
+        "button.toggle"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"button.toggle_1\" declared but endpoint \"toggle_1\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.toggle_2\" declared but endpoint \"toggle_2\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.identify\" declared but endpoint \"identify\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.toggle\" declared but endpoint \"toggle\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "switch_1gang",
+      "class": "socket",
+      "capabilitiesCount": 9,
+      "subCapabilities": [
+        "button.toggle",
+        "button.identify"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"button.toggle\" declared but endpoint \"toggle\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.identify\" declared but endpoint \"identify\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "switch_2gang",
+      "class": "socket",
+      "capabilitiesCount": 11,
+      "subCapabilities": [
+        "onoff.gang2",
+        "button.toggle_1",
+        "button.toggle_2",
+        "button.identify"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"button.toggle_1\" declared but endpoint \"toggle_1\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.toggle_2\" declared but endpoint \"toggle_2\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.identify\" declared but endpoint \"identify\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "switch_3gang",
+      "class": "socket",
+      "capabilitiesCount": 11,
+      "subCapabilities": [
+        "onoff.gang2",
+        "onoff.gang3",
+        "button.toggle_1",
+        "button.toggle_2",
+        "button.toggle_3",
+        "button.identify"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"button.toggle_1\" declared but endpoint \"toggle_1\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.toggle_2\" declared but endpoint \"toggle_2\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.toggle_3\" declared but endpoint \"toggle_3\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.identify\" declared but endpoint \"identify\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "switch_4gang",
+      "class": "socket",
+      "capabilitiesCount": 12,
+      "subCapabilities": [
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4",
+        "button.toggle_1",
+        "button.toggle_2",
+        "button.toggle_3",
+        "button.toggle_4",
+        "button.identify"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"button.toggle_1\" declared but endpoint \"toggle_1\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.toggle_2\" declared but endpoint \"toggle_2\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.toggle_3\" declared but endpoint \"toggle_3\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.toggle_4\" declared but endpoint \"toggle_4\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.identify\" declared but endpoint \"identify\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "switch_dimmer_1gang",
+      "class": "light",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "switch_plug_1",
+      "class": "socket",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "switch_plug_2",
+      "class": "socket",
+      "capabilitiesCount": 6,
+      "subCapabilities": [
+        "onoff.outlet2"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"onoff.outlet2\" declared but endpoint \"outlet2\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "switch_temp_sensor",
+      "class": "socket",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "switch_usb_dongle",
+      "class": "socket",
+      "capabilitiesCount": 15,
+      "subCapabilities": [
+        "onoff.gang2",
+        "onoff.gang3",
+        "button.toggle_1",
+        "button.toggle_2",
+        "button.toggle_3",
+        "button.identify",
+        "onoff.usb2",
+        "onoff.usb3"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"button.toggle_1\" declared but endpoint \"toggle_1\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.toggle_2\" declared but endpoint \"toggle_2\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.toggle_3\" declared but endpoint \"toggle_3\" is missing in zigbee.endpoints",
+        "Sub-capability \"button.identify\" declared but endpoint \"identify\" is missing in zigbee.endpoints",
+        "Sub-capability \"onoff.usb2\" declared but endpoint \"usb2\" is missing in zigbee.endpoints",
+        "Sub-capability \"onoff.usb3\" declared but endpoint \"usb3\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "switch_wall_5gang",
+      "class": "socket",
+      "capabilitiesCount": 7,
+      "subCapabilities": [
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4",
+        "onoff.gang5"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "switch_wall_6gang",
+      "class": "socket",
+      "capabilitiesCount": 8,
+      "subCapabilities": [
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4",
+        "onoff.gang5",
+        "onoff.gang6"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "switch_wall_7gang",
+      "class": "socket",
+      "capabilitiesCount": 9,
+      "subCapabilities": [
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4",
+        "onoff.gang5",
+        "onoff.gang6",
+        "onoff.gang7"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "switch_wall_8gang",
+      "class": "socket",
+      "capabilitiesCount": 10,
+      "subCapabilities": [
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4",
+        "onoff.gang5",
+        "onoff.gang6",
+        "onoff.gang7",
+        "onoff.gang8"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "switch_wireless",
+      "class": "sensor",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "temphumidsensor",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "thermostat_4ch",
+      "class": "thermostat",
+      "capabilitiesCount": 13,
+      "subCapabilities": [
+        "onoff.ch2",
+        "onoff.ch3",
+        "onoff.ch4",
+        "target_temperature.ch2",
+        "target_temperature.ch3",
+        "target_temperature.ch4",
+        "measure_temperature.ch2",
+        "measure_temperature.ch3",
+        "measure_temperature.ch4"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"onoff.ch2\" declared but endpoint \"ch2\" is missing in zigbee.endpoints",
+        "Sub-capability \"onoff.ch3\" declared but endpoint \"ch3\" is missing in zigbee.endpoints",
+        "Sub-capability \"onoff.ch4\" declared but endpoint \"ch4\" is missing in zigbee.endpoints",
+        "Sub-capability \"target_temperature.ch2\" declared but endpoint \"ch2\" is missing in zigbee.endpoints",
+        "Sub-capability \"target_temperature.ch3\" declared but endpoint \"ch3\" is missing in zigbee.endpoints",
+        "Sub-capability \"target_temperature.ch4\" declared but endpoint \"ch4\" is missing in zigbee.endpoints",
+        "Sub-capability \"measure_temperature.ch2\" declared but endpoint \"ch2\" is missing in zigbee.endpoints",
+        "Sub-capability \"measure_temperature.ch3\" declared but endpoint \"ch3\" is missing in zigbee.endpoints",
+        "Sub-capability \"measure_temperature.ch4\" declared but endpoint \"ch4\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "thermostat_tuya_dp",
+      "class": "thermostat",
+      "capabilitiesCount": 7,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "universal_fallback",
+      "class": "other",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "usb_dongle_dual_repeater",
+      "class": "socket",
+      "capabilitiesCount": 8,
+      "subCapabilities": [
+        "onoff.usb2"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"onoff.usb2\" declared but endpoint \"usb2\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "usb_dongle_triple",
+      "class": "socket",
+      "capabilitiesCount": 7,
+      "subCapabilities": [
+        "onoff.usb2",
+        "onoff.usb3"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"onoff.usb2\" declared but endpoint \"usb2\" is missing in zigbee.endpoints",
+        "Sub-capability \"onoff.usb3\" declared but endpoint \"usb3\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "usb_outlet_advanced",
+      "class": "socket",
+      "capabilitiesCount": 11,
+      "subCapabilities": [
+        "onoff.socket2",
+        "onoff.usb1",
+        "onoff.usb2",
+        "onoff.led"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"onoff.socket2\" declared but endpoint \"socket2\" is missing in zigbee.endpoints",
+        "Sub-capability \"onoff.usb1\" declared but endpoint \"usb1\" is missing in zigbee.endpoints",
+        "Sub-capability \"onoff.usb2\" declared but endpoint \"usb2\" is missing in zigbee.endpoints",
+        "Sub-capability \"onoff.led\" declared but endpoint \"led\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "valve_irrigation",
+      "class": "thermostat",
+      "capabilitiesCount": 7,
+      "subCapabilities": [
+        "dim.valve_1",
+        "dim.valve_2",
+        "dim.valve_3",
+        "dim.valve_4"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"dim.valve_1\" declared but endpoint \"valve_1\" is missing in zigbee.endpoints",
+        "Sub-capability \"dim.valve_2\" declared but endpoint \"valve_2\" is missing in zigbee.endpoints",
+        "Sub-capability \"dim.valve_3\" declared but endpoint \"valve_3\" is missing in zigbee.endpoints",
+        "Sub-capability \"dim.valve_4\" declared but endpoint \"valve_4\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "valve_single",
+      "class": "thermostat",
+      "capabilitiesCount": 4,
+      "subCapabilities": [
+        "dim.valve"
+      ],
+      "status": "WARNING",
+      "warnings": [
+        "Sub-capability \"dim.valve\" declared but endpoint \"valve\" is missing in zigbee.endpoints"
+      ]
+    },
+    {
+      "driver": "vibration_sensor",
+      "class": "sensor",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wall_curtain_switch",
+      "class": "curtain",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"curtain\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wall_dimmer_1gang_1way",
+      "class": "socket",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wall_remote_1_gang",
+      "class": "remote",
+      "capabilitiesCount": 3,
+      "subCapabilities": [
+        "button.1"
+      ],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wall_remote_2_gang",
+      "class": "remote",
+      "capabilitiesCount": 4,
+      "subCapabilities": [
+        "button.1",
+        "button.2"
+      ],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wall_remote_3_gang",
+      "class": "remote",
+      "capabilitiesCount": 5,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3"
+      ],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wall_remote_4_gang",
+      "class": "remote",
+      "capabilitiesCount": 6,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4"
+      ],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wall_remote_4_gang_2",
+      "class": "remote",
+      "capabilitiesCount": 6,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4"
+      ],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wall_remote_4_gang_3",
+      "class": "remote",
+      "capabilitiesCount": 6,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4"
+      ],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wall_remote_6_gang",
+      "class": "remote",
+      "capabilitiesCount": 8,
+      "subCapabilities": [
+        "button.1",
+        "button.2",
+        "button.3",
+        "button.4",
+        "button.5",
+        "button.6"
+      ],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wall_switch_1gang_1way",
+      "class": "socket",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wall_switch_2gang_1way",
+      "class": "socket",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wall_switch_3gang_1way",
+      "class": "socket",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wall_switch_4gang_1way",
+      "class": "socket",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "water_leak_sensor",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "water_tank_monitor",
+      "class": "sensor",
+      "capabilitiesCount": 7,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "water_valve_garden",
+      "class": "other",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "water_valve_smart",
+      "class": "other",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "weather_station_outdoor",
+      "class": "sensor",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_air_purifier",
+      "class": "fan",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"fan\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wifi_air_quality",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_camera",
+      "class": "camera",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"camera\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wifi_cover",
+      "class": "curtain",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"curtain\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wifi_dehumidifier",
+      "class": "fan",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"fan\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wifi_dimmer",
+      "class": "light",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_doorbell",
+      "class": "doorbell",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_door_lock",
+      "class": "lock",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_ewelink_bulb",
+      "class": "light",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_ewelink_dimmer",
+      "class": "light",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_ewelink_fan",
+      "class": "fan",
+      "capabilitiesCount": 3,
+      "subCapabilities": [
+        "onoff.2"
+      ],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"fan\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wifi_ewelink_led",
+      "class": "light",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_ewelink_plug",
+      "class": "socket",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_ewelink_pow",
+      "class": "socket",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_ewelink_switch",
+      "class": "socket",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_ewelink_switch_2ch",
+      "class": "socket",
+      "capabilitiesCount": 2,
+      "subCapabilities": [
+        "onoff.2"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_ewelink_switch_4ch",
+      "class": "socket",
+      "capabilitiesCount": 4,
+      "subCapabilities": [
+        "onoff.2",
+        "onoff.3",
+        "onoff.4"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_ewelink_th",
+      "class": "socket",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_fan",
+      "class": "fan",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"fan\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wifi_garage_door",
+      "class": "garagedoor",
+      "capabilitiesCount": 2,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"garagedoor\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wifi_generic",
+      "class": "other",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wifi_heater",
+      "class": "heater",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"heater\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wifi_humidifier",
+      "class": "fan",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"fan\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wifi_ir_remote",
+      "class": "remote",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"remote\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wifi_led_strip",
+      "class": "light",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_light",
+      "class": "light",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_pet_feeder",
+      "class": "other",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wifi_plug",
+      "class": "socket",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_power_strip",
+      "class": "socket",
+      "capabilitiesCount": 6,
+      "subCapabilities": [
+        "onoff.socket2",
+        "onoff.socket3",
+        "onoff.socket4"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_robot_vacuum",
+      "class": "vacuumcleaner",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"vacuumcleaner\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wifi_sensor",
+      "class": "sensor",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_siren",
+      "class": "speaker",
+      "capabilitiesCount": 6,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"speaker\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "wifi_sonoff_basicr4",
+      "class": "socket",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_sonoff_dualr3",
+      "class": "socket",
+      "capabilitiesCount": 5,
+      "subCapabilities": [
+        "onoff.2"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_sonoff_micro",
+      "class": "socket",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_sonoff_minir3",
+      "class": "socket",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_sonoff_minir4",
+      "class": "socket",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_sonoff_pow_elite",
+      "class": "socket",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_sonoff_smate2",
+      "class": "socket",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_sonoff_thr316d",
+      "class": "thermostat",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_sonoff_tx_1ch",
+      "class": "socket",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_sonoff_tx_2ch",
+      "class": "socket",
+      "capabilitiesCount": 2,
+      "subCapabilities": [
+        "onoff.2"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_sonoff_tx_3ch",
+      "class": "socket",
+      "capabilitiesCount": 3,
+      "subCapabilities": [
+        "onoff.2",
+        "onoff.3"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_switch",
+      "class": "socket",
+      "capabilitiesCount": 1,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_switch_2gang",
+      "class": "socket",
+      "capabilitiesCount": 2,
+      "subCapabilities": [
+        "onoff.gang2"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_switch_3gang",
+      "class": "socket",
+      "capabilitiesCount": 3,
+      "subCapabilities": [
+        "onoff.gang2",
+        "onoff.gang3"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_switch_4gang",
+      "class": "socket",
+      "capabilitiesCount": 4,
+      "subCapabilities": [
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4"
+      ],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_thermostat",
+      "class": "thermostat",
+      "capabilitiesCount": 4,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_water_tank_monitor",
+      "class": "sensor",
+      "capabilitiesCount": 5,
+      "subCapabilities": [],
+      "status": "COMPATIBLE",
+      "warnings": []
+    },
+    {
+      "driver": "wifi_water_valve",
+      "class": "other",
+      "capabilitiesCount": 3,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    },
+    {
+      "driver": "zigbee_repeater",
+      "class": "other",
+      "capabilitiesCount": 0,
+      "subCapabilities": [],
+      "status": "CUSTOM_YAML_REQUIRED",
+      "warnings": [
+        "Non-standard Homey class \"other\" — requires manual MQTT mapping in Home Assistant"
+      ]
+    }
+  ]
+}
