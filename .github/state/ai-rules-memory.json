@@ -4,10 +4,18 @@
       "id": "sdk3-await-capability",
       "desc": "setCapabilityValue() calls should be awaited.",
       "severity": "info",
-      "count": 3,
+      "count": 10,
       "firstSeen": "2026-04-04T17:57:49.240Z",
-      "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["air_purifier", "air_quality_co2", "bulb_rgb"]
+      "lastSeen": "2026-05-11T03:53:21.029Z",
+      "files": [
+        "air_purifier",
+        "air_quality_co2",
+        "bulb_rgb",
+        "bulb_rgb_led",
+        "bulb_rgbw",
+        "button_emergency_sos",
+        "climate_sensor"
+      ]
     },
     {
       "id": "sdk3-ondeleted-cleanup",
@@ -16,16 +24,37 @@
       "count": 1,
       "firstSeen": "2026-04-04T17:57:49.253Z",
       "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["bulb_rgb"]
+      "files": [
+        "bulb_rgb"
+      ]
     },
     {
       "id": "sdk3-battery-conflict",
       "desc": "NEVER combine measure_battery + alarm_battery. SDK v3 creates duplicate UI/Flow Cards. Use runtime adaptation via UnifiedBatteryHandler.",
       "severity": "error",
-      "count": 108,
+      "count": 125,
       "firstSeen": "2026-04-04T21:17:00.000Z",
-      "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["RESOLVED: 108 drivers had both caps, reverted to measure_battery only"]
+      "lastSeen": "2026-05-11T03:53:21.029Z",
+      "files": [
+        "RESOLVED: 108 drivers had both caps, reverted to measure_battery only",
+        "air_quality_co2",
+        "bulb_dimmable",
+        "bulb_rgb",
+        "bulb_rgb_led",
+        "bulb_rgbw",
+        "bulb_tunable_white",
+        "bulb_white",
+        "button_emergency_sos",
+        "button_wireless",
+        "button_wireless_1",
+        "button_wireless_2",
+        "button_wireless_3",
+        "button_wireless_4",
+        "button_wireless_6",
+        "button_wireless_8",
+        "button_wireless_smart",
+        "climate_sensor"
+      ]
     },
     {
       "id": "sdk3-flow-card-unsafe",
@@ -34,7 +63,9 @@
       "count": 23,
       "firstSeen": "2026-04-04T17:46:00.000Z",
       "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["RESOLVED: 23+ drivers wrapped in try-catch by fix-unsafe-flow-cards.js"]
+      "files": [
+        "RESOLVED: 23+ drivers wrapped in try-catch by fix-unsafe-flow-cards.js"
+      ]
     },
     {
       "id": "runtime-energy-adaptation",
@@ -43,7 +74,9 @@
       "count": 193,
       "firstSeen": "2026-04-04T21:30:00.000Z",
       "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["lib/battery/UnifiedBatteryHandler.js"]
+      "files": [
+        "lib/battery/UnifiedBatteryHandler.js"
+      ]
     },
     {
       "id": "battery-dp-mapping",
@@ -52,7 +85,9 @@
       "count": 1,
       "firstSeen": "2026-04-04T21:30:00.000Z",
       "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["lib/battery/UnifiedBatteryHandler.js"]
+      "files": [
+        "lib/battery/UnifiedBatteryHandler.js"
+      ]
     },
     {
       "id": "power-source-types",
@@ -61,7 +96,9 @@
       "count": 1,
       "firstSeen": "2026-04-04T21:30:00.000Z",
       "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["lib/battery/UnifiedBatteryHandler.js"]
+      "files": [
+        "lib/battery/UnifiedBatteryHandler.js"
+      ]
     },
     {
       "id": "zigbee-protocol-types",
@@ -70,7 +107,9 @@
       "count": 1,
       "firstSeen": "2026-04-04T21:30:00.000Z",
       "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["drivers/*/device.js"]
+      "files": [
+        "drivers/*/device.js"
+      ]
     },
     {
       "id": "variant-intelligence",
@@ -79,10 +118,42 @@
       "count": 982,
       "firstSeen": "2026-04-04T21:07:00.000Z",
       "lastSeen": "2026-04-04T21:47:00.000Z",
-      "files": ["982 fork FPs analyzed"]
+      "files": [
+        "982 fork FPs analyzed"
+      ]
+    },
+    {
+      "id": "sdk3-case-sensitive-fingerprint",
+      "desc": "Fingerprint in enrichment data uses UPPERCASE (e.g., _TZE200_PAY2BYAX). Tuya fingerprints must be lowercase to match correctly.",
+      "severity": "warn",
+      "count": 20,
+      "firstSeen": "2026-05-11T03:53:21.008Z",
+      "lastSeen": "2026-05-11T03:53:21.029Z",
+      "files": [
+        "air_purifier",
+        "air_quality_co2",
+        "air_quality_comprehensive",
+        "bulb_dimmable",
+        "bulb_rgb",
+        "bulb_rgb_led",
+        "bulb_rgbw",
+        "bulb_tunable_white",
+        "bulb_white",
+        "button_emergency_sos",
+        "button_wireless",
+        "button_wireless_1",
+        "button_wireless_2",
+        "button_wireless_3",
+        "button_wireless_4",
+        "button_wireless_6",
+        "button_wireless_8",
+        "button_wireless_smart",
+        "ceiling_fan",
+        "climate_sensor"
+      ]
     }
   ],
-  "lastRun": "2026-04-04T21:47:00.000Z",
-  "totalRuns": 6,
-  "totalIssues": 135
+  "lastRun": "2026-05-11T03:53:20.999Z",
+  "totalRuns": 7,
+  "totalIssues": 179
 }

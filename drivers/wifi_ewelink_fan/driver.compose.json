@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "eWeLink Fan Controller (SONOFF iFan)"
+    "en": "eWeLink Fan Controller (SONOFF iFan)",
+    "fr": "Contrôleur de ventilateur eWeLink (SONOFF iFan)",
+    "nl": "eWeLink Ventilatorcontroller (SONOFF iFan)",
+    "de": "eWeLink Lüftersteuerung (SONOFF iFan)",
+    "es": "Controlador de ventilador eWeLink (SONOFF iFan)"
   },
   "class": "fan",
   "capabilities": [

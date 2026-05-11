@@ -1,8 +1,10 @@
 {
   "name": {
     "en": "Sensor Motion Radar",
-    "nl": "Sensor Motion Radar",
-    "fr": "Sensor Motion Radar"
+    "nl": "Radar bewegingssensor",
+    "fr": "Capteur de mouvement radar",
+    "de": "Radar-Bewegungssensor",
+    "es": "Sensor de movimiento por radar"
   },
   "class": "sensor",
   "capabilities": [

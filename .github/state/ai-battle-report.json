@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-04-05T08:22:22.392Z",
+  "timestamp": "2026-05-11T05:02:25.167Z",
   "dryRun": false,
   "sources": {
     "external": 1607,
-    "github": 10,
+    "github": 25,
     "forks": 0,
-    "johan": 0,
+    "johan": 45,
     "gmail": 0,
     "forum": 0,
     "diagnostics": 0,
@@ -16,14 +16,197 @@
     "details": []
   },
   "classified": {
-    "total": 0,
-    "byMethod": {},
-    "details": []
+    "total": 20,
+    "byMethod": {
+      "ai-single": 19,
+      "ai-consensus(2/2)": 1
+    },
+    "details": [
+      {
+        "fp": "_TZ3040_o4mkahkc",
+        "driver": "switch_1gang",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TZ3000_baeiitad",
+        "driver": "switch_1gang",
+        "method": "ai-consensus(2/2)",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TZE284_aaeasoll",
+        "driver": "motion_sensor",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TYST11_jeaxp72v",
+        "driver": "smoke_detector_advanced",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TZ3000_enmfaave",
+        "driver": "switch_1gang",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TZ3000_0t4zjtia",
+        "driver": "switch_1gang",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TS3000_gwkzibhs",
+        "driver": "switch_1gang",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TYZB01_zqvwka4k",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TYZB01_4lwqwyqn",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TYZB01_kvwjujy9",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TYZB01_o7m83470",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TYZB01_tob46aoq",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TYZB01_0w3d5uw3",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TYZB01_0aps0h1r",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TYZB01_bngwdjsr",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TYZB01_ftdkanlj",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TYZB01_yr95mpib",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TYZB01_b6eaxdlh",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TYZB01_gr6rozze",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      },
+      {
+        "fp": "_TYZB01_ncutbjdi",
+        "driver": "bulb_dimmable",
+        "method": "ai-single",
+        "pids": [],
+        "sources": [
+          "johan"
+        ]
+      }
+    ]
   },
   "implemented": {
-    "added": 0,
+    "added": 1,
     "skipped": 0
   },
-  "ghApiCalls": 100,
-  "aiSummary": "```json\n{\n  \"summary\": {\n    \"total_sources_scanned\": 1607,\n    \"confirmed_variants\": 0,\n    \"top_patterns\": [\n      {\n        \"pattern\": \"False Battery Alert / Missing Battery\",\n        \"count\": 34,\n        \"priority\": \"high\"\n      },\n      {\n        \"pattern\": \"Pairing Failure\",\n        \"count\": 9,\n        \"priority\": \"high\"\n      }\n    ]\n  }\n}\n```"
+  "ghApiCalls": 100
 }

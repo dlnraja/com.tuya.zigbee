@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "WiFi Doorbell / Camera (Tuya Local)"
+    "en": "WiFi Doorbell / Camera (Tuya Local)",
+    "fr": "Sonnette WiFi / Caméra (Tuya Local)",
+    "nl": "WiFi Deurbel / Camera (Tuya Lokaal)",
+    "de": "WiFi Türklingel / Kamera (Tuya Lokal)",
+    "es": "Timbre WiFi / Cámara (Tuya Local)"
   },
   "class": "doorbell",
   "capabilities": [

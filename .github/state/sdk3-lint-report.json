@@ -1,39 +1,158 @@
 {
-  "timestamp": "2026-04-04T17:57:49.258Z",
-  "driversScanned": 5,
-  "staticIssues": 4,
+  "timestamp": "2026-05-11T03:55:55.474Z",
+  "driversScanned": 20,
+  "staticIssues": 44,
   "autoFixed": 0,
-  "aiSuggestions": 0,
+  "aiSuggestions": 12,
   "aiApplied": 0,
-  "dryRun": true,
+  "dryRun": false,
   "results": [
     {
       "driver": "air_purifier",
       "issues": [
-        "sdk3-await-capability"
+        "sdk3-await-capability",
+        "sdk3-case-sensitive-fingerprint"
       ]
     },
     {
       "driver": "air_quality_co2",
       "issues": [
-        "sdk3-await-capability"
+        "sdk3-await-capability",
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
       ]
     },
     {
       "driver": "air_quality_comprehensive",
-      "issues": []
+      "issues": [
+        "sdk3-case-sensitive-fingerprint"
+      ]
     },
     {
       "driver": "bulb_dimmable",
-      "issues": []
+      "issues": [
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ],
+      "aiModel": "openrouter"
     },
     {
       "driver": "bulb_rgb",
       "issues": [
         "sdk3-await-capability",
-        "sdk3-ondeleted-cleanup"
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ],
+      "aiModel": "openrouter"
+    },
+    {
+      "driver": "bulb_rgb_led",
+      "issues": [
+        "sdk3-await-capability",
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "bulb_rgbw",
+      "issues": [
+        "sdk3-await-capability",
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "bulb_tunable_white",
+      "issues": [
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "bulb_white",
+      "issues": [
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "button_emergency_sos",
+      "issues": [
+        "sdk3-await-capability",
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "button_wireless",
+      "issues": [
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "button_wireless_1",
+      "issues": [
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "button_wireless_2",
+      "issues": [
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "button_wireless_3",
+      "issues": [
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "button_wireless_4",
+      "issues": [
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "button_wireless_6",
+      "issues": [
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "button_wireless_8",
+      "issues": [
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "button_wireless_smart",
+      "issues": [
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "ceiling_fan",
+      "issues": [
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "climate_sensor",
+      "issues": [
+        "sdk3-await-capability",
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint"
       ]
     }
   ],
-  "memoryPatterns": 2
+  "memoryPatterns": 10
 }

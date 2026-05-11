@@ -1,7 +1,11 @@
 {
   "id": "smart_remote_1_button_2",
   "name": {
-    "en": "1 button Smart Remote Controller"
+    "en": "1 button Smart Remote Controller",
+    "fr": "Télécommande intelligente à 1 bouton",
+    "nl": "1 knops slimme afstandsbediening",
+    "de": "1-Tasten-Fernbedienung",
+    "es": "Control remoto inteligente de 1 botón"
   },
   "class": "remote",
   "platforms": [

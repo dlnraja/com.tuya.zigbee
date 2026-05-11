@@ -1,7 +1,10 @@
 {
   "name": {
     "en": "Scene Switch 1-Gang",
-    "fr": "Interrupteur Scène 1 Bouton"
+    "fr": "Interrupteur de scène 1 bouton",
+    "nl": "Scèneschakelaar 1-gang",
+    "de": "Szenenschalter 1-fach",
+    "es": "Interruptor de escena 1 botón"
   },
   "class": "sensor",
   "capabilities": [
