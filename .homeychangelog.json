@@ -1,4 +1,7 @@
 {
+  "7.5.14": {
+    "en": "v7.5.14: Fixed radiator valve and smart radiator valve device initialization issues, Resolved energy meter 3-phase and power clamp meter reporting problems, Corrected presence sensor radar and motion sensor behavior, Fixed climate sensor and climate sensor device recognition, Addressed wireless button (1-gang, 4-gang, smart) pairing and response issues"
+  },
   "7.5.13": {
     "en": "v7.5.13: . Added new fingerprints for motion sensor, illuminance sensor, 3-gang switch, energy meter, and DIN rail. Fixed INSOMA dual irrigation valve and smart wireless button detection. Improved climate sensor recognition."
   },
@@ -55,11 +58,5 @@
   },
   "5.11.199": {
     "en": "Added support for 3 new device fingerprints, including the Nedis SmartLife Radiator Control (_TZE284_ne4pikwm)."
-  },
-  "5.11.198": {
-    "en": "Added support for 3 new Tuya device fingerprints, including the Nedis SmartLife Radiator Control. Driver matrix updated with validated mappings."
-  },
-  "7.5.14": {
-    "en": "Added support for new devices:\n- r_purifier (_TZE200_4mh6tyyo, _TYST11_d0yu2xgi / TS0601_r_purifier,TS0601)\n- bulb_dimmable (_TYZB01_qezuin6k, _TYZB01_v8gtiaed / TS0501A,TS0501B,TS110E,TS110F,LED1623G12,LED1649C5,LED1836G9,LWB004,LWB006,LWB010,LWB014,Plug 01,A19 W 10 year,BR30 W 10 year,PAR38 W 10 year,GL-B-001Z,RS 125,RB 165,RB 175 W,ZBT-DimmableLight,TS0052,TS1101)\n- bulb_rgb (eWeLight / TS0503A,TS0503B,LCT001,LCT002,LCT003,LCT007,LCT010,LCT011,LCT012,LCT014,LCT015,LCT0... and more."
   }
 }
