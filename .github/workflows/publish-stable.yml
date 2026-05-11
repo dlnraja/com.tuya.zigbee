@@ -46,13 +46,58 @@ jobs:
     steps:
       - uses: actions/checkout@v5
         with:
-          fetch-depth: 1
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v5
         with:
           node-version: '22'
           cache: 'npm'
       - name: Install Dependencies
         run: npm ci --prefer-offline --no-audit || npm install
+
+      - name: Determine Version Bump Level
+        id: bump_level
+        shell: bash
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          echo "Commit message: $COMMIT_MSG"
+          if [[ "$COMMIT_MSG" == *"[major]"* ]]; then
+            echo "level=major" >> $GITHUB_OUTPUT
+            echo "Determined level: major"
+          elif [[ "$COMMIT_MSG" == *"[minor]"* ]]; then
+            echo "level=minor" >> $GITHUB_OUTPUT
+            echo "Determined level: minor"
+          else
+            echo "level=patch" >> $GITHUB_OUTPUT
+            echo "Determined level: patch (default)"
+          fi
+
+      - name: Extract Changelog
+        id: cl
+        shell: bash
+        run: |
+          VER=$(node -p "require('./app.json').version")
+          echo "text=v${VER}: Bug fixes and stable improvements" >> $GITHUB_OUTPUT
+
+      - name: Auto bump version
+        id: bump
+        uses: athombv/github-action-homey-app-version@v1
+        with:
+          version: ${{ steps.bump_level.outputs.level }}
+          changelog: ${{ steps.cl.outputs.text }}
+
+      - name: Sync package.json version
+        run: node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');console.log('Synced package.json to v'+a.version);"
+
+      - name: Commit & Push Version Bump
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app.json package.json
+          git commit -m "chore(release): bump version to v$(node -p \"require('./app.json').version\") [skip ci]" || true
+          git push || true
+
       - name: Publish to Draft
         uses: athombv/github-action-homey-app-publish@v1
         with:
