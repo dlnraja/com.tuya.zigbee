@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "7.5.13",
+  "version": "7.5.14",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -45912,7 +45912,9 @@
           "_TZE204_QPN5Q17M",
           "_tze20x_xxxxxxxx",
           "_TZE20X_xxxxxxxx",
-          "_TZE20X_XXXXXXXX"
+          "_TZE20X_XXXXXXXX",
+          "_TZE200_4mh6tyyo",
+          "_TYST11_d0yu2xgi"
         ],
         "productId": [
           "TS0601_air_purifier",
@@ -46748,7 +46750,9 @@
           "_TZ3210_DBILPFQK",
           "_tz3210_dxroobu3",
           "_TZ3210_dxroobu3",
-          "_TZ3210_DXROOBU3"
+          "_TZ3210_DXROOBU3",
+          "_TYZB01_qezuin6k",
+          "_TYZB01_v8gtiaed"
         ],
         "productId": [
           "TS0501A",
@@ -46770,7 +46774,9 @@
           "RS 125",
           "RB 165",
           "RB 175 W",
-          "ZBT-DimmableLight"
+          "ZBT-DimmableLight",
+          "TS0052",
+          "TS1101"
         ],
         "endpoints": {
           "1": {
@@ -47150,7 +47156,8 @@
           "_TZ3000_12SXJAP4",
           "_tz3000_hlijwsai",
           "_TZ3000_hlijwsai",
-          "_TZ3000_HLIJWSAI"
+          "_TZ3000_HLIJWSAI",
+          "eWeLight"
         ],
         "endpoints": {
           "1": {
@@ -47601,8 +47608,10 @@
     {
       "name": {
         "en": "Bulb Rgb Led",
-        "nl": "Bulb Rgb Led",
-        "fr": "Bulb Rgb Led"
+        "nl": "Rgb Led-lamp",
+        "fr": "Ampoule Rgb Led",
+        "de": "Rgb Led-Lampe",
+        "es": "Bombilla Rgb Led"
       },
       "class": "light",
       "capabilities": [
@@ -49614,7 +49623,8 @@
           "_TZ3000_U2BBAGU4",
           "_tz3000_nxdziqzc",
           "_TZ3000_nxdziqzc",
-          "_TZ3000_NXDZIQZC"
+          "_TZ3000_NXDZIQZC",
+          "_TYZB01_qm6djpta"
         ],
         "productId": [
           "ZBPB10BK",
@@ -50499,7 +50509,8 @@
           "_TYZB01_4QW4RL1U",
           "_tz3000_22ugzkme",
           "_TZ3000_22ugzkme",
-          "_TZ3000_22UGZKME"
+          "_TZ3000_22UGZKME",
+          "_TYZB02_keyjqthh"
         ],
         "productId": [
           "TS0041",
@@ -50946,12 +50957,37 @@
           "tuyatec-o6sncwd6",
           "TUYATEC-O6SNCWD6",
           "tuyatec-nzrrvgco",
-          "TUYATEC-NZRRVGCO"
+          "TUYATEC-NZRRVGCO",
+          "_TYZB01_zsl6z0pw",
+          "_TYZB01_digziiav",
+          "_TYZB01_ymcdbl3u",
+          "_TYZB01_4tlksk8a",
+          "_TYZB02_keyjhapk",
+          "_TYZB01_xfpdrwvc",
+          "_TYZB01_qeqvmvti",
+          "_TYZB01_seqwasot",
+          "_TYZB01_mtlhqn48",
+          "_TYZB01_6sadkhcy",
+          "TUYATEC-O6SNCwd6",
+          "_TYZB01_vzrytttn",
+          "_TYZB01_2athzhfr",
+          "_TYZB01_6g8b7at8",
+          "TUYATEC-nzrrvgco",
+          "_TYZB01_xiuox57i",
+          "_TYZB01_b8cr31hp",
+          "_TYZB01_mqel1whf"
         ],
         "productId": [
           "TS0042",
           "TS0002",
-          "TS0012"
+          "TS0012",
+          "TS0003",
+          "TS011F",
+          "TS0013",
+          "TS0111",
+          "TS0001",
+          "TS0011",
+          "TS0043"
         ],
         "endpoints": {
           "1": {
@@ -51395,7 +51431,8 @@
           "_TZ3000_W3C7OURU",
           "_tz3000_famkxci2",
           "_TZ3000_famkxci2",
-          "_TZ3000_FAMKXCI2"
+          "_TZ3000_FAMKXCI2",
+          "_TYZB02_key8kk7r"
         ],
         "productId": [
           "TS0043"
@@ -51964,12 +52001,18 @@
           "_TZ3000_EE8NRT2L",
           "_tz3000_abrsvsou",
           "_TZ3000_abrsvsou",
-          "_TZ3000_ABRSVSOU"
+          "_TZ3000_ABRSVSOU",
+          "_TZ3000_4fjiwweb",
+          "_TZ3000_qja6nq5z",
+          "_TZ3000_kjfzuycl",
+          "_TZ3000_b3mgfu0d",
+          "_TYZB01_bagt1e4o"
         ],
         "productId": [
           "TS0044",
           "TS004F",
-          "SNZB-01M"
+          "SNZB-01M",
+          "TS0014"
         ],
         "learnmode": {
           "image": "/drivers/button_wireless_4/assets/learnmode.svg",
@@ -53365,8 +53408,10 @@
     {
       "name": {
         "en": "Button Wireless Smart",
-        "nl": "Button Wireless Smart",
-        "fr": "Button Wireless Smart"
+        "nl": "Draadloze slimme knop",
+        "fr": "Bouton sans fil intelligent",
+        "de": "Intelligenter Funk-Taster",
+        "es": "Botón inalámbrico inteligente"
       },
       "class": "sensor",
       "capabilities": [
@@ -56105,7 +56150,8 @@
           "_TZ3290_RLKMY85Q4PZOXOBL",
           "_tz3000_qaaysllp",
           "_TZ3000_qaaysllp",
-          "_TZ3000_QAAYSLLP"
+          "_TZ3000_QAAYSLLP",
+          "_TYZB01_cbiezpds"
         ],
         "productId": [
           "TS0201",
@@ -56587,8 +56633,10 @@
     {
       "name": {
         "en": "Device Radiator Valve Smart",
-        "nl": "Device Radiator Valve Smart",
-        "fr": "Device Radiator Valve Smart"
+        "nl": "Slimme radiatorkraan",
+        "fr": "Vanne de radiateur intelligente",
+        "de": "Intelligentes Heizkörperventil",
+        "es": "Válvula de radiador inteligente"
       },
       "class": "thermostat",
       "capabilities": [
@@ -56898,8 +56946,10 @@
     {
       "name": {
         "en": "Climate Sensor Energy",
-        "nl": "Climate Sensor Energy",
-        "fr": "Climate Sensor Energy"
+        "nl": "Klimaatsensor energie",
+        "fr": "Capteur climatique énergétique",
+        "de": "Klimasensor Energie",
+        "es": "Sensor climático energético"
       },
       "class": "sensor",
       "capabilities": [
@@ -57327,7 +57377,23 @@
           "_TZE200_N8DLJORX",
           "_tz3000_ox0is7yv",
           "_TZ3000_ox0is7yv",
-          "_TZ3000_OX0IS7YV"
+          "_TZ3000_OX0IS7YV",
+          "TUYATEC-sb6t7ett",
+          "TUYATEC-rkqiqvcs",
+          "TUYATEC-crr8qb0p",
+          "TUYATEC-kbqf60nt",
+          "TUYATEC-r9hgssol",
+          "TUYATEC-trhrga6p",
+          "TUYATEC-ip9ganvw",
+          "_TYZB01_xph99wvr",
+          "TUYATEC-7qunn4gq",
+          "TUYATEC-0l6xaqmi",
+          "Immax",
+          "Visonic",
+          "zbeacon",
+          "TUYATEC-3tipnsrx",
+          "_TYZB01_sqmd19i1",
+          "_TYST11_qq9mpfhw"
         ],
         "productId": [
           "TS0203",
@@ -57355,7 +57421,9 @@
           "SNZB-04R2",
           "TS0021",
           "DoorWindow-Sensor-ZB3.0",
-          "MCT-340 E"
+          "MCT-340 E",
+          "TS0207",
+          "q9mpfhw"
         ],
         "learnmode": {
           "image": "/drivers/contact_sensor/assets/learnmode.svg",
@@ -58478,8 +58546,10 @@
     {
       "name": {
         "en": "Curtain Motor Shutter",
-        "nl": "Curtain Motor Shutter",
-        "fr": "Curtain Motor Shutter"
+        "nl": "Gordijnmotor rolluik",
+        "fr": "Moteur de rideau volet",
+        "de": "Vorhängemotor Rollladen",
+        "es": "Motor de cortina persiana"
       },
       "class": "windowcoverings",
       "capabilities": [
@@ -59120,8 +59190,10 @@
     {
       "name": {
         "en": "Curtain Motor Wall",
-        "nl": "Curtain Motor Wall",
-        "fr": "Curtain Motor Wall"
+        "nl": "Gordijnmotor muur",
+        "fr": "Moteur de rideau mural",
+        "de": "Vorhängermotor Wand",
+        "es": "Motor de cortina de pared"
       },
       "class": "windowcoverings",
       "capabilities": [
@@ -59558,8 +59630,10 @@
     {
       "name": {
         "en": "Device Din Rail",
-        "nl": "Device Din Rail",
-        "fr": "Device Din Rail"
+        "nl": "Apparaat DIN-rail",
+        "fr": "Appareil sur rail DIN",
+        "de": "Gerät Hutschiene",
+        "es": "Dispositivo carril DIN"
       },
       "class": "doorbell",
       "capabilities": [
@@ -59583,6 +59657,8 @@
       },
       "zigbee": {
         "manufacturerName": [
+          "_tz3210_emqmwtym",
+          "_TZ3210_emqmwtym",
           "_TZ3210_EMQMWTYM"
         ],
         "productId": [
@@ -59875,8 +59951,10 @@
     {
       "name": {
         "en": "Device Din Rail Meter",
-        "nl": "Device Din Rail Meter",
-        "fr": "Device Din Rail Meter"
+        "nl": "DIN-rail meter",
+        "fr": "Compteur Din Rail",
+        "de": "DIN-Schienen-Zähler",
+        "es": "Contador Din Rail"
       },
       "class": "doorbell",
       "capabilities": [
@@ -60190,8 +60268,10 @@
     {
       "name": {
         "en": "Device Floor Heating",
-        "nl": "Device Floor Heating",
-        "fr": "Device Floor Heating"
+        "nl": "Apparaat vloerverwarming",
+        "fr": "Chauffage au sol de l'appareil",
+        "de": "Gerät Fußbodenheizung",
+        "es": "Calefacción por suelo del dispositivo"
       },
       "class": "thermostat",
       "capabilities": [
@@ -60290,8 +60370,10 @@
     {
       "name": {
         "en": "Device Floor Heating Thermostat",
-        "nl": "Device Floor Heating Thermostat",
-        "fr": "Device Floor Heating Thermostat"
+        "nl": "Apparaat vloerverwarming thermostaat",
+        "fr": "Thermostat de chauffage au sol de l'appareil",
+        "de": "Gerät Fußbodenheizung Thermostat",
+        "es": "Termostato de calefacción por suelo radiante del dispositivo"
       },
       "class": "thermostat",
       "capabilities": [
@@ -60386,8 +60468,10 @@
     {
       "name": {
         "en": "Device Generic Tuya Universal",
-        "nl": "Device Generic Tuya Universal",
-        "fr": "Device Generic Tuya Universal"
+        "nl": "Apparaat generiek Tuya universeel",
+        "fr": "Appareil générique Tuya universel",
+        "de": "Gerät generisch Tuya universell",
+        "es": "Dispositivo genérico Tuya universal"
       },
       "class": "other",
       "images": {
@@ -60564,8 +60648,10 @@
     {
       "name": {
         "en": "Device Radiator Valve",
-        "nl": "Device Radiator Valve",
-        "fr": "Device Radiator Valve"
+        "nl": "Radiatorkraan",
+        "fr": "Vanne de radiateur",
+        "de": "Heizkörperventil",
+        "es": "Válvula de radiador"
       },
       "class": "thermostat",
       "capabilities": [
@@ -60882,8 +60968,10 @@
     {
       "name": {
         "en": "Device Radiator Valve Smart",
-        "nl": "Device Radiator Valve Smart",
-        "fr": "Device Radiator Valve Smart"
+        "nl": "Slimme radiatorkraan",
+        "fr": "Vanne de radiateur intelligente",
+        "de": "Intelligentes Heizkörperventil",
+        "es": "Válvula de radiador inteligente"
       },
       "class": "thermostat",
       "capabilities": [
@@ -63880,8 +63968,9 @@
           "_tze284_x8diwkqb",
           "_TZE284_x8diwkqb",
           "_TZE284_X8DIWKQB",
+          "_tze284_6ocnqlhn",
           "_TZE284_6ocnqlhn",
-          "_tze284_6ocnqlhn"
+          "_TZE284_6OCNQLHN"
         ],
         "productId": [
           "TS0601",
@@ -64055,7 +64144,11 @@
     {
       "id": "fingerbot",
       "name": {
-        "en": "Finger Bot"
+        "en": "Finger Bot",
+        "fr": "Robot à doigt",
+        "nl": "Vingerbot",
+        "de": "Fingerbot",
+        "es": "Robot de dedo"
       },
       "class": "button",
       "platforms": [
@@ -64097,7 +64190,11 @@
         ],
         "productId": [
           "TS0001",
-          "TS0001_fingerbot"
+          "TS0001_fingerbot",
+          "TS0003",
+          "TS011F",
+          "TS0011",
+          "TS000F"
         ],
         "endpoints": {
           "1": {
@@ -66414,7 +66511,11 @@
     {
       "id": "handheld_remote_4_buttons",
       "name": {
-        "en": "4 Button Remote"
+        "en": "4 Button Remote",
+        "fr": "Télécommande 4 boutons",
+        "nl": "4-knops afstandsbediening",
+        "de": "4-Tasten-Fernbedienung",
+        "es": "Mando a distancia de 4 botones"
       },
       "class": "remote",
       "platforms": [
@@ -67528,7 +67629,10 @@
     {
       "name": {
         "en": "Illuminance Sensor",
-        "fr": "Capteur de Luminosité"
+        "fr": "Capteur d'éclairement",
+        "nl": "Verlichtingssensor",
+        "de": "Beleuchtungssensor",
+        "es": "Sensor de iluminancia"
       },
       "class": "sensor",
       "capabilities": [
@@ -67556,8 +67660,9 @@
           "_TZ3000_DO6TXRCW",
           "zg-106z",
           "ZG-106Z",
+          "_tze200_hl0ss9oa",
           "_TZE200_hl0ss9oa",
-          "_tze200_hl0ss9oa"
+          "_TZE200_HL0SS9OA"
         ],
         "productId": [
           "TS0222",
@@ -69313,8 +69418,10 @@
     {
       "name": {
         "en": "Light Bulb Rgb Rgbw",
-        "nl": "Light Bulb Rgb Rgbw",
-        "fr": "Light Bulb Rgb Rgbw"
+        "nl": "Lamp RGB RGBW",
+        "fr": "Ampoule RVB RVB",
+        "de": "Glühbirne RGB RGBW",
+        "es": "Bombilla RGB RGBW"
       },
       "class": "light",
       "capabilities": [
@@ -71039,8 +71146,22 @@
           "_tze200_gjldowol",
           "_TZE200_gjldowol",
           "_TZE200_GJLDOWOL",
+          "_tze200_4pm4pekt",
           "_TZE200_4pm4pekt",
-          "_tze200_4pm4pekt"
+          "_TZE200_4PM4PEKT",
+          "TUYATEC-bd5faf9p",
+          "TUYATEC-zw6hxafz",
+          "_TYZB01_jytabjkb",
+          "_TYZB01_dl7cejts",
+          "_TYZB01_dr6sduka",
+          "_TYZB01_geepvxsy",
+          "TUYATEC-lha8pbwd",
+          "TUYATEC-zn9wyqtr",
+          "TUYATEC-53o41joc",
+          "TUYATEC-deetibst",
+          "TUYATEC-dgtxmihe",
+          "TUYATEC-b5g40alm",
+          "TUYATEC-dxnohkpd"
         ],
         "productId": [
           "TS0202",
@@ -71465,7 +71586,11 @@
     {
       "id": "motion_sensor_2",
       "name": {
-        "en": "Motion Sensor"
+        "en": "Motion Sensor",
+        "fr": "Capteur de mouvement",
+        "nl": "Bewegingssensor",
+        "de": "Bewegungssensor",
+        "es": "Sensor de movimiento"
       },
       "class": "sensor",
       "platforms": [
@@ -72767,7 +72892,9 @@
           "_TZ3000_ZRM3OXSH",
           "_tz3000_cehuw1lw",
           "_TZ3000_cehuw1lw",
-          "_TZ3000_CEHUW1LW"
+          "_TZ3000_CEHUW1LW",
+          "_TYZB01_hlla45kx",
+          "_TYZB01_iuepbmpv"
         ],
         "productId": [
           "TS0121",
@@ -72807,7 +72934,8 @@
           "SPMZBR2",
           "S40ZBTPF",
           "S40ZBTPG",
-          "S60ZBTPF-R2"
+          "S60ZBTPF-R2",
+          "TSO121"
         ],
         "learnmode": {
           "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
@@ -77196,7 +77324,10 @@
     {
       "name": {
         "en": "Radiator Valve (TRV) Zigbee",
-        "fr": "Vanne Thermostatique Zigbee"
+        "fr": "Vanne de radiateur (TRV) Zigbee",
+        "nl": "Radiatorkraan (TRV) Zigbee",
+        "de": "Heizkörperventil (TRV) Zigbee",
+        "es": "Válvula de radiador (TRV) Zigbee"
       },
       "class": "thermostat",
       "capabilities": [
@@ -77268,7 +77399,10 @@
     {
       "name": {
         "en": "Radiator WiFi Tuya (Local)",
-        "fr": "Radiateur WiFi Tuya (Local)"
+        "fr": "Radiateur WiFi Tuya (Local)",
+        "nl": "Radiator WiFi Tuya (Lokaal)",
+        "de": "Heizkörper WiFi Tuya (Lokal)",
+        "es": "Radiador WiFi Tuya (Local)"
       },
       "class": "thermostat",
       "capabilities": [
@@ -77532,8 +77666,10 @@
     {
       "name": {
         "en": "Remote Button Wireless Handheld",
-        "nl": "Remote Button Wireless Handheld",
-        "fr": "Remote Button Wireless Handheld"
+        "nl": "Draadloze handbediende afstandsbedieningsknop",
+        "fr": "Bouton télécommande sans fil portable",
+        "de": "Funk-Fernbedienungstaste handgehalten",
+        "es": "Botón remoto inalámbrico de mano"
       },
       "class": "sensor",
       "capabilities": [
@@ -77992,8 +78128,10 @@
     {
       "name": {
         "en": "Remote Button Wireless Wall",
-        "nl": "Remote Button Wireless Wall",
-        "fr": "Remote Button Wireless Wall"
+        "nl": "Draadloze wandknop op afstand",
+        "fr": "Bouton mural sans fil à distance",
+        "de": "Funk-Wandtaster",
+        "es": "Botón inalámbrico de pared"
       },
       "class": "sensor",
       "capabilities": [
@@ -78036,8 +78174,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tyzb02_keyjqthh",
-          "_TYZB02_KEYJQTHH",
           "_tz3000_4upl1fcj",
           "_TZ3000_4upl1fcj",
           "_TZ3000_4UPL1FCJ",
@@ -78062,8 +78198,6 @@
           "_tz3000_itb0omhv",
           "_TZ3000_itb0omhv",
           "_TZ3000_ITB0OMHV",
-          "_tyzb02_key8kk7r",
-          "_TYZB02_KEY8KK7R",
           "_tz3000_a7ouggvs",
           "_TZ3000_a7ouggvs",
           "_TZ3000_A7OUGGVS",
@@ -78522,7 +78656,10 @@
     {
       "name": {
         "en": "Scene Switch 1-Gang",
-        "fr": "Interrupteur Scène 1 Bouton"
+        "fr": "Interrupteur de scène 1 bouton",
+        "nl": "Scèneschakelaar 1-gang",
+        "de": "Szenenschalter 1-fach",
+        "es": "Interruptor de escena 1 botón"
       },
       "class": "sensor",
       "capabilities": [
@@ -78639,7 +78776,10 @@
     {
       "name": {
         "en": "Scene Switch 2-Gang",
-        "fr": "Interrupteur Scène 2 Boutons"
+        "fr": "Interrupteur de scène 2 gangs",
+        "nl": "Scèneschakelaar 2-groeps",
+        "de": "Szenenschalter 2-fach",
+        "es": "Interruptor de escena 2 grupos"
       },
       "class": "sensor",
       "capabilities": [
@@ -78765,7 +78905,10 @@
     {
       "name": {
         "en": "Scene Switch 3-Gang",
-        "fr": "Interrupteur Scène 3 Boutons"
+        "fr": "Interrupteur de scène 3 gangs",
+        "nl": "Scèneschakelaar 3-groeps",
+        "de": "Szenenschalter 3-fach",
+        "es": "Interruptor de escena 3 grupos"
       },
       "class": "sensor",
       "capabilities": [
@@ -78900,7 +79043,10 @@
     {
       "name": {
         "en": "Scene Switch 4-Gang",
-        "fr": "Interrupteur Scène 4 Boutons"
+        "fr": "Interrupteur de scène 4 boutons",
+        "nl": "Scèneschakelaar 4-voudig",
+        "de": "Szenenschalter 4-fach",
+        "es": "Interruptor de escena 4 botones"
       },
       "class": "sensor",
       "capabilities": [
@@ -79087,7 +79233,10 @@
     {
       "name": {
         "en": "Scene Switch 6-Gang",
-        "fr": "Interrupteur Scène 6 Boutons"
+        "fr": "Interrupteur de scène 6 boutons",
+        "nl": "Scèneschakelaar 6-voudig",
+        "de": "Szenenschalter 6-fach",
+        "es": "Interruptor de escena 6 botones"
       },
       "class": "sensor",
       "capabilities": [
@@ -79244,8 +79393,10 @@
     {
       "name": {
         "en": "Scene Switch Wall",
-        "nl": "Scene Switch Wall",
-        "fr": "Scene Switch Wall"
+        "nl": "Scène schakelaar wand",
+        "fr": "Interrupteur de scène mural",
+        "de": "Szenenschalter Wand",
+        "es": "Interruptor de escena de pared"
       },
       "class": "sensor",
       "capabilities": [
@@ -79370,8 +79521,10 @@
     {
       "name": {
         "en": "Sensor Climate Contact",
-        "nl": "Sensor Climate Contact",
-        "fr": "Sensor Climate Contact"
+        "nl": "Sensor Klimaat Contact",
+        "fr": "Capteur Climat Contact",
+        "de": "Sensor Klima Kontakt",
+        "es": "Sensor Clima Contacto"
       },
       "class": "sensor",
       "capabilities": [
@@ -79864,8 +80017,10 @@
     {
       "name": {
         "en": "Sensor Contact Motion",
-        "nl": "Sensor Contact Motion",
-        "fr": "Sensor Contact Motion"
+        "nl": "Sensor Contact Beweging",
+        "fr": "Capteur Contact Mouvement",
+        "de": "Sensor Kontakt Bewegung",
+        "es": "Sensor Contacto Movimiento"
       },
       "class": "sensor",
       "capabilities": [
@@ -80288,8 +80443,10 @@
     {
       "name": {
         "en": "Sensor Contact Presence",
-        "nl": "Sensor Contact Presence",
-        "fr": "Sensor Contact Presence"
+        "nl": "Sensor contact aanwezigheid",
+        "fr": "Capteur de contact de présence",
+        "de": "Sensor Kontakt Präsenz",
+        "es": "Sensor de contacto de presencia"
       },
       "class": "sensor",
       "capabilities": [
@@ -80908,8 +81065,10 @@
     {
       "name": {
         "en": "Sensor Illuminance Presence",
-        "nl": "Sensor Illuminance Presence",
-        "fr": "Sensor Illuminance Presence"
+        "nl": "Aanwezigheidssensor met verlichtingssterkte",
+        "fr": "Capteur de présence avec luminosité",
+        "de": "Anwesenheitssensor mit Beleuchtungsstärke",
+        "es": "Sensor de presencia con iluminancia"
       },
       "class": "sensor",
       "capabilities": [
@@ -81522,8 +81681,10 @@
     {
       "name": {
         "en": "Sensor Motion Presence",
-        "nl": "Sensor Motion Presence",
-        "fr": "Sensor Motion Presence"
+        "nl": "Sensor Bewegingsaanwezigheid",
+        "fr": "Capteur de présence de mouvement",
+        "de": "Bewegungspräsenzsensor",
+        "es": "Sensor de presencia de movimiento"
       },
       "class": "sensor",
       "capabilities": [
@@ -82138,8 +82299,10 @@
     {
       "name": {
         "en": "Sensor Motion Radar",
-        "nl": "Sensor Motion Radar",
-        "fr": "Sensor Motion Radar"
+        "nl": "Radar bewegingssensor",
+        "fr": "Capteur de mouvement radar",
+        "de": "Radar-Bewegungssensor",
+        "es": "Sensor de movimiento por radar"
       },
       "class": "sensor",
       "capabilities": [
@@ -82593,8 +82756,10 @@
     {
       "name": {
         "en": "Sensor Presence Radar",
-        "nl": "Sensor Presence Radar",
-        "fr": "Sensor Presence Radar"
+        "nl": "Radar aanwezigheidssensor",
+        "fr": "Capteur de présence radar",
+        "de": "Radar-Präsenzsensor",
+        "es": "Sensor de presencia por radar"
       },
       "class": "sensor",
       "capabilities": [
@@ -83937,8 +84102,10 @@
       "id": "siren_sirentemphumidsensor",
       "name": {
         "en": "Siren Sirentemphumidsensor",
-        "nl": "Siren Sirentemphumidsensor",
-        "fr": "Siren Sirentemphumidsensor"
+        "nl": "Sirene Sirenetemphumidsensor",
+        "fr": "Sirène Sirènetemphumidsensor",
+        "de": "Sirene Sirenetemphumidsensor",
+        "es": "Sirena Sirenetemphumidsensor"
       },
       "class": "other",
       "capabilities": [
@@ -83974,8 +84141,6 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tyst11_d0yu2xgi",
-          "_TYST11_D0YU2XGI",
           "_tze200_d0yu2xgi",
           "_TZE200_d0yu2xgi",
           "_TZE200_D0YU2XGI"
@@ -84018,7 +84183,11 @@
     {
       "id": "sirentemphumidsensor",
       "name": {
-        "en": "Siren, Temperature & Humidity Sensor"
+        "en": "Siren, Temperature & Humidity Sensor",
+        "fr": "Sirène, capteur de température et d'humidité",
+        "nl": "Sirene, temperatuur- en vochtigheidssensor",
+        "de": "Sirene, Temperatur- und Feuchtigkeitssensor",
+        "es": "Sirena, sensor de temperatura y humedad"
       },
       "class": "other",
       "capabilities": [
@@ -84180,7 +84349,11 @@
     {
       "id": "smart_button_switch",
       "name": {
-        "en": "Smart Button Switch"
+        "en": "Smart Button Switch",
+        "fr": "Interrupteur à bouton intelligent",
+        "nl": "Slimme drukknopschakelaar",
+        "de": "Intelligenter Tastschalter",
+        "es": "Interruptor de botón inteligente"
       },
       "class": "remote",
       "platforms": [
@@ -84827,7 +85000,11 @@
       "id": "smart_knob_switch",
       "name": {
         "en": "Smart Knob Switch",
-        "sv": "Smart knappdimmer"
+        "sv": "Smart knappdimmer",
+        "fr": "Interrupteur à bouton intelligent",
+        "nl": "Slimme knopschakelaar",
+        "de": "Intelligenter Knopfschalter",
+        "es": "Interruptor de perilla inteligente"
       },
       "class": "remote",
       "platforms": [
@@ -85098,7 +85275,11 @@
     {
       "id": "smart_remote_1_button",
       "name": {
-        "en": "1 button Smart Remote Controller"
+        "en": "1 button Smart Remote Controller",
+        "fr": "Télécommande intelligente à 1 bouton",
+        "nl": "1 knops slimme afstandsbediening",
+        "de": "Intelligenter Fernbedienung mit 1 Taste",
+        "es": "Control remoto inteligente de 1 botón"
       },
       "class": "remote",
       "platforms": [
@@ -85205,7 +85386,11 @@
     {
       "id": "smart_remote_1_button_2",
       "name": {
-        "en": "1 button Smart Remote Controller"
+        "en": "1 button Smart Remote Controller",
+        "fr": "Télécommande intelligente à 1 bouton",
+        "nl": "1 knops slimme afstandsbediening",
+        "de": "1-Tasten-Fernbedienung",
+        "es": "Control remoto inteligente de 1 botón"
       },
       "class": "remote",
       "platforms": [
@@ -85328,7 +85513,11 @@
     {
       "id": "smart_remote_4_buttons",
       "name": {
-        "en": "4 button Smart Remote Controller"
+        "en": "4 button Smart Remote Controller",
+        "fr": "Télécommande intelligente à 4 boutons",
+        "nl": "4-knops slimme afstandsbediening",
+        "de": "Intelligenter Fernbedienung mit 4 Tasten",
+        "es": "Control remoto inteligente de 4 botones"
       },
       "class": "remote",
       "platforms": [
@@ -85474,7 +85663,10 @@
     {
       "name": {
         "en": "Smart Scene Panel",
-        "fr": "Panneau Scène Intelligent"
+        "fr": "Panneau de scène intelligent",
+        "nl": "Slim scène paneel",
+        "de": "Intelligentes Szenenpanel",
+        "es": "Panel de escena inteligente"
       },
       "class": "socket",
       "capabilities": [
@@ -85740,7 +85932,9 @@
           "_TZ3210_up3pngle",
           "_TZ3210_UP3PNGLE",
           "_tyzb01_wqcac7lo",
-          "_TYZB01_WQCAC7LO"
+          "_TYZB01_WQCAC7LO",
+          "_TYZB01_dsjszp0x",
+          "_TYZB01_wqcac7lo"
         ],
         "endpoints": {
           "1": {
@@ -86428,10 +86622,6 @@
           }
         },
         "manufacturerName": [
-          "_tyzb01_digziiav",
-          "_TYZB01_DIGZIIAV",
-          "_tyzb01_zsl6z0pw",
-          "_TYZB01_ZSL6Z0PW",
           "_tz3000_qkixdnon",
           "_TZ3000_qkixdnon",
           "_TZ3000_QKIXDNON"
@@ -86957,8 +87147,10 @@
       ],
       "name": {
         "en": "Switch",
-        "nl": "Switch",
-        "fr": "Switch"
+        "nl": "Schakelaar",
+        "fr": "Interrupteur",
+        "de": "Schalter",
+        "es": "Interruptor"
       },
       "platforms": [
         "local"
@@ -87076,990 +87268,976 @@
           }
         },
         "manufacturerName": [
-          "_tyzb01_4mdqxxnn",
           "_TYZB01_4MDQXXNN",
-          "_tyzb01_4tlksk8a",
-          "_TYZB01_4TLKSK8A",
-          "_tyzb01_4vgantdz",
           "_TYZB01_4VGANTDZ",
-          "_tyzb01_7yidyqxd",
           "_TYZB01_7YIDYQXD",
-          "_tyzb01_aneiicmq",
           "_TYZB01_ANEIICMQ",
-          "_tyzb01_dr6sduka",
-          "_TYZB01_DR6SDUKA",
-          "_tyzb01_gr6rozze",
           "_TYZB01_GR6ROZZE",
-          "_tyzb01_ijihzffk",
           "_TYZB01_IJIHZFFK",
-          "_tyzb01_m6ec2pgj",
           "_TYZB01_M6EC2PGJ",
-          "_tyzb01_ncutbjdi",
           "_TYZB01_NCUTBJDI",
-          "_tyzb01_phjeraqq",
           "_TYZB01_PHJERAQQ",
-          "_tyzb01_qeqvmvti",
-          "_TYZB01_QEQVMVTI",
-          "_tyzb01_reyozfcg",
           "_TYZB01_REYOZFCG",
-          "_tyzb01_rifa0wlb",
           "_TYZB01_RIFA0WLB",
-          "_tyzb01_sbpc1zrb",
           "_TYZB01_SBPC1ZRB",
-          "_tyzb01_seqwasot",
-          "_TYZB01_SEQWASOT",
-          "_tyzb01_uqkphoed",
           "_TYZB01_UQKPHOED",
-          "_tyzb01_v8gtiaed",
           "_TYZB01_V8GTIAED",
-          "_tyzb01_xfpdrwvc",
-          "_TYZB01_XFPDRWVC",
-          "_tyzb01_ymcdbl3u",
-          "_TYZB01_YMCDBL3U",
-          "_tyzb01_yr95mpib",
           "_TYZB01_YR95MPIB",
-          "_tyzb01_z2umiwvq",
           "_TYZB01_Z2UMIWVQ",
-          "_tyzb02_keyjqthh",
           "_TYZB02_KEYJQTHH",
-          "_tz3000_0ausfos0",
-          "_TZ3000_0ausfos0",
           "_TZ3000_0AUSFOS0",
-          "_tz3000_0ghwhypc",
-          "_TZ3000_0ghwhypc",
           "_TZ3000_0GHWHYPC",
-          "_tz3000_18ejxrzk",
-          "_TZ3000_18ejxrzk",
+          "_TZ3000_0ausfos0",
+          "_TZ3000_0ghwhypc",
           "_TZ3000_18EJXRZK",
-          "_tz3000_1adss9de",
-          "_TZ3000_1adss9de",
+          "_TZ3000_18ejxrzk",
           "_TZ3000_1ADSS9DE",
-          "_tz3000_1obmmd8k",
-          "_TZ3000_1obmmd8k",
           "_TZ3000_1OBMMD8K",
-          "_tz3000_2ac",
-          "_TZ3000_2ac",
+          "_TZ3000_1adss9de",
+          "_TZ3000_1obmmd8k",
           "_TZ3000_2AC",
-          "_tz3000_2jxgpoqh",
-          "_TZ3000_2jxgpoqh",
           "_TZ3000_2JXGPOQH",
-          "_tz3000_2mccw9py",
-          "_TZ3000_2mccw9py",
           "_TZ3000_2MCCW9PY",
-          "_tz3000_3a9beq8a",
-          "_TZ3000_3a9beq8a",
+          "_TZ3000_2ac",
+          "_TZ3000_2jxgpoqh",
+          "_TZ3000_2mccw9py",
           "_TZ3000_3A9BEQ8A",
-          "_tz3000_3wkqni6o",
-          "_TZ3000_3wkqni6o",
           "_TZ3000_3WKQNI6O",
-          "_tz3000_41ki5xyq",
-          "_TZ3000_41ki5xyq",
+          "_TZ3000_3a9beq8a",
+          "_TZ3000_3wkqni6o",
           "_TZ3000_41KI5XYQ",
-          "_tz3000_46t1rvdu",
-          "_TZ3000_46t1rvdu",
+          "_TZ3000_41ki5xyq",
           "_TZ3000_46T1RVDU",
-          "_tz3000_4hbrrn7e",
-          "_TZ3000_4hbrrn7e",
+          "_TZ3000_46t1rvdu",
           "_TZ3000_4HBRRN7E",
-          "_tz3000_4js9lo5d",
-          "_TZ3000_4js9lo5d",
           "_TZ3000_4JS9LO5D",
-          "_tz3000_4rbqgcuv",
-          "_TZ3000_4rbqgcuv",
           "_TZ3000_4RBQGCUV",
-          "_tz3000_4uf3d0ax",
-          "_TZ3000_4uf3d0ax",
           "_TZ3000_4UF3D0AX",
-          "_tz3000_4whigl8i",
-          "_TZ3000_4whigl8i",
           "_TZ3000_4WHIGL8I",
-          "_tz3000_56bdyj21",
-          "_TZ3000_56bdyj21",
+          "_TZ3000_4hbrrn7e",
+          "_TZ3000_4js9lo5d",
+          "_TZ3000_4rbqgcuv",
+          "_TZ3000_4uf3d0ax",
+          "_TZ3000_4whigl8i",
           "_TZ3000_56BDYJ21",
-          "_tz3000_5e5ptb24",
-          "_TZ3000_5e5ptb24",
+          "_TZ3000_56bdyj21",
           "_TZ3000_5E5PTB24",
-          "_tz3000_5ng23zjs",
-          "_TZ3000_5ng23zjs",
           "_TZ3000_5NG23ZJS",
-          "_tz3000_5nrcorgu",
-          "_TZ3000_5nrcorgu",
           "_TZ3000_5NRCORGU",
-          "_tz3000_5ucujjts",
-          "_TZ3000_5ucujjts",
           "_TZ3000_5UCUJJTS",
-          "_tz3000_5vujyute",
-          "_TZ3000_5vujyute",
           "_TZ3000_5VUJYUTE",
-          "_tz3000_65ajyxua",
-          "_TZ3000_65ajyxua",
+          "_TZ3000_5e5ptb24",
+          "_TZ3000_5ng23zjs",
+          "_TZ3000_5nrcorgu",
+          "_TZ3000_5ucujjts",
+          "_TZ3000_5vujyute",
           "_TZ3000_65AJYXUA",
-          "_tz3000_6axxqqi2",
-          "_TZ3000_6axxqqi2",
+          "_TZ3000_65ajyxua",
           "_TZ3000_6AXXQQI2",
-          "_tz3000_6eyydfyg",
-          "_TZ3000_6eyydfyg",
           "_TZ3000_6EYYDFYG",
-          "_tz3000_6oabgtzv",
-          "_TZ3000_6oabgtzv",
           "_TZ3000_6OABGTZV",
-          "_tz3000_7dbxxwkt",
-          "_TZ3000_7dbxxwkt",
+          "_TZ3000_6axxqqi2",
+          "_TZ3000_6eyydfyg",
+          "_TZ3000_6oabgtzv",
           "_TZ3000_7DBXXWKT",
-          "_tz3000_7hp93xpr",
-          "_TZ3000_7hp93xpr",
           "_TZ3000_7HP93XPR",
-          "_tz3000_7jsk6lxz",
-          "_TZ3000_7jsk6lxz",
           "_TZ3000_7JSK6LXZ",
-          "_tz3000_87654321",
+          "_TZ3000_7dbxxwkt",
+          "_TZ3000_7hp93xpr",
+          "_TZ3000_7jsk6lxz",
           "_TZ3000_87654321",
-          "_tz3000_8n7lqbm0",
-          "_TZ3000_8n7lqbm0",
           "_TZ3000_8N7LQBM0",
-          "_tz3000_8rppvwda",
-          "_TZ3000_8rppvwda",
           "_TZ3000_8RPPVWDA",
-          "_tz3000_9djocypn",
-          "_TZ3000_9djocypn",
+          "_TZ3000_8n7lqbm0",
+          "_TZ3000_8rppvwda",
           "_TZ3000_9DJOCYPN",
-          "_tz3000_9evm3otq",
-          "_TZ3000_9evm3otq",
           "_TZ3000_9EVM3OTQ",
-          "_tz3000_abc123",
-          "_TZ3000_abc123",
+          "_TZ3000_9djocypn",
+          "_TZ3000_9evm3otq",
           "_TZ3000_ABC123",
-          "_tz3000_abjodzas",
-          "_TZ3000_abjodzas",
           "_TZ3000_ABJODZAS",
-          "_tz3000_adkvzooy",
-          "_TZ3000_adkvzooy",
-          "_TZ3000_ADKVZOOY",
-          "_tz3000_aetquff4",
-          "_TZ3000_aetquff4",
           "_TZ3000_AETQUFF4",
-          "_tz3000_aezbqpcu",
-          "_TZ3000_aezbqpcu",
           "_TZ3000_AEZBQPCU",
-          "_tz3000_afgzktgb",
-          "_TZ3000_afgzktgb",
           "_TZ3000_AFGZKTGB",
-          "_tz3000_aghwaexm",
-          "_TZ3000_aghwaexm",
           "_TZ3000_AGHWAEXM",
-          "_tz3000_ajkq2isy",
-          "_TZ3000_ajkq2isy",
           "_TZ3000_AJKQ2ISY",
-          "_tz3000_amal63is",
-          "_TZ3000_amal63is",
           "_TZ3000_AMAL63IS",
-          "_tz3000_ark8nv4y",
-          "_TZ3000_ark8nv4y",
           "_TZ3000_ARK8NV4Y",
-          "_tz3000_arw23zcs",
-          "_TZ3000_arw23zcs",
           "_TZ3000_ARW23ZCS",
-          "_tz3000_b7bxojrg",
-          "_TZ3000_b7bxojrg",
           "_TZ3000_B7BXOJRG",
-          "_tz3000_b9vanmes",
-          "_TZ3000_b9vanmes",
           "_TZ3000_B9VANMES",
-          "_tz3000_bb6xaihh",
-          "_TZ3000_bb6xaihh",
           "_TZ3000_BB6XAIHH",
-          "_tz3000_bezfthwc",
-          "_TZ3000_bezfthwc",
           "_TZ3000_BEZFTHWC",
-          "_tz3000_bhcpnvud",
-          "_TZ3000_bhcpnvud",
           "_TZ3000_BHCPNVUD",
-          "_tz3000_blhvsaqf",
-          "_TZ3000_blhvsaqf",
           "_TZ3000_BLHVSAQF",
-          "_tz3000_bmqxalil",
-          "_TZ3000_bmqxalil",
           "_TZ3000_BMQXALIL",
-          "_tz3000_bmzfjnbp",
-          "_TZ3000_bmzfjnbp",
           "_TZ3000_BMZFJNBP",
-          "_tz3000_bppxj3sf",
-          "_TZ3000_bppxj3sf",
           "_TZ3000_BPPXJ3SF",
-          "_tz3000_bzczr4e1",
-          "_TZ3000_bzczr4e1",
           "_TZ3000_BZCZR4E1",
-          "_tz3000_c7nc9w3c",
-          "_TZ3000_c7nc9w3c",
           "_TZ3000_C7NC9W3C",
-          "_tz3000_cdamjqm9",
-          "_TZ3000_cdamjqm9",
           "_TZ3000_CDAMJQM9",
-          "_tz3000_cipibmnp",
-          "_TZ3000_cipibmnp",
           "_TZ3000_CIPIBMNP",
-          "_tz3000_cmcjbqup",
-          "_TZ3000_cmcjbqup",
           "_TZ3000_CMCJBQUP",
-          "_tz3000_cpozgbrx",
-          "_TZ3000_cpozgbrx",
           "_TZ3000_CPOZGBRX",
-          "_tz3000_ctftgjwb",
-          "_TZ3000_ctftgjwb",
           "_TZ3000_CTFTGJWB",
-          "_tz3000_d16y6col",
-          "_TZ3000_d16y6col",
           "_TZ3000_D16Y6COL",
-          "_tz3000_dku2cfsc",
-          "_TZ3000_dku2cfsc",
           "_TZ3000_DKU2CFSC",
-          "_tz3000_dov0a3p1",
-          "_TZ3000_dov0a3p1",
           "_TZ3000_DOV0A3P1",
-          "_tz3000_drc9tuqb",
-          "_TZ3000_drc9tuqb",
           "_TZ3000_DRC9TUQB",
-          "_tz3000_e8cquwdk",
-          "_TZ3000_e8cquwdk",
           "_TZ3000_E8CQUWDK",
-          "_tz3000_e98krvvk",
-          "_TZ3000_e98krvvk",
           "_TZ3000_E98KRVVK",
-          "_tz3000_ejwkn2h2",
-          "_TZ3000_ejwkn2h2",
           "_TZ3000_EJWKN2H2",
-          "_tz3000_ena8vgqb",
-          "_TZ3000_ena8vgqb",
           "_TZ3000_ENA8VGQB",
-          "_tz3000_etx8inrk",
-          "_TZ3000_etx8inrk",
           "_TZ3000_ETX8INRK",
-          "_tz3000_ew31dmgx",
-          "_TZ3000_ew31dmgx",
           "_TZ3000_EW31DMGX",
-          "_tz3000_f8tmviy0",
-          "_TZ3000_f8tmviy0",
           "_TZ3000_F8TMVIY0",
-          "_tz3000_fdxihpp7",
-          "_TZ3000_fdxihpp7",
           "_TZ3000_FDXIHPP7",
-          "_tz3000_fjt5218m",
-          "_TZ3000_fjt5218m",
           "_TZ3000_FJT5218M",
-          "_tz3000_g",
-          "_TZ3000_g",
           "_TZ3000_G",
-          "_tz3000_g8n1n7lg",
-          "_TZ3000_g8n1n7lg",
           "_TZ3000_G8N1N7LG",
-          "_tz3000_g92baclx",
-          "_TZ3000_g92baclx",
           "_TZ3000_G92BACLX",
-          "_tz3000_gbshwgag",
-          "_TZ3000_gbshwgag",
           "_TZ3000_GBSHWGAG",
-          "_tz3000_gdsvhfao",
-          "_TZ3000_gdsvhfao",
           "_TZ3000_GDSVHFAO",
-          "_tz3000_ghi789",
-          "_TZ3000_ghi789",
           "_TZ3000_GHI789",
-          "_tz3000_gidy6sjs",
-          "_TZ3000_gidy6sjs",
           "_TZ3000_GIDY6SJS",
-          "_tz3000_gjrubzje",
-          "_TZ3000_gjrubzje",
           "_TZ3000_GJRUBZJE",
-          "_tz3000_go9rahj5",
-          "_TZ3000_go9rahj5",
           "_TZ3000_GO9RAHJ5",
-          "_tz3000_gtdswg8k",
-          "_TZ3000_gtdswg8k",
           "_TZ3000_GTDSWG8K",
-          "_tz3000_gzvniqjb",
-          "_TZ3000_gzvniqjb",
           "_TZ3000_GZVNIQJB",
-          "_tz3000_h1c2eamp",
-          "_TZ3000_h1c2eamp",
           "_TZ3000_H1C2EAMP",
-          "_tz3000_h1jnz6l8",
-          "_TZ3000_h1jnz6l8",
           "_TZ3000_H1JNZ6L8",
-          "_tz3000_h3noz0a5",
-          "_TZ3000_h3noz0a5",
           "_TZ3000_H3NOZ0A5",
-          "_tz3000_h8ngtlxy",
-          "_TZ3000_h8ngtlxy",
           "_TZ3000_H8NGTLXY",
-          "_tz3000_hafsqare",
-          "_TZ3000_hafsqare",
           "_TZ3000_HAFSQARE",
-          "_tz3000_hauznfgh",
-          "_TZ3000_hauznfgh",
           "_TZ3000_HAUZNFGH",
-          "_tz3000_hbdzfqjl",
-          "_TZ3000_hbdzfqjl",
           "_TZ3000_HBDZFQJL",
-          "_tz3000_hbxsdd6k",
-          "_TZ3000_hbxsdd6k",
           "_TZ3000_HBXSDD6K",
-          "_tz3000_hdc8bbha",
-          "_TZ3000_hdc8bbha",
           "_TZ3000_HDC8BBHA",
-          "_tz3000_hdlpifbk",
-          "_TZ3000_hdlpifbk",
           "_TZ3000_HDLPIFBK",
-          "_tz3000_hjhbbyxt",
-          "_TZ3000_hjhbbyxt",
           "_TZ3000_HJHBBYXT",
-          "_tz3000_hkkkuk7k",
-          "_TZ3000_hkkkuk7k",
           "_TZ3000_HKKKUK7K",
-          "_tz3000_hktqahrq",
-          "_TZ3000_hktqahrq",
           "_TZ3000_HKTQAHRQ",
-          "_tz3000_hkyordpv",
-          "_TZ3000_hkyordpv",
           "_TZ3000_HKYORDPV",
-          "_tz3000_hlwm8e96",
-          "_TZ3000_hlwm8e96",
           "_TZ3000_HLWM8E96",
-          "_tz3000_ho0cjoi2",
-          "_TZ3000_ho0cjoi2",
           "_TZ3000_HO0CJOI2",
-          "_tz3000_hzlsaltw",
-          "_TZ3000_hzlsaltw",
           "_TZ3000_HZLSALTW",
-          "_tz3000_i3k4zrp0",
-          "_TZ3000_i3k4zrp0",
           "_TZ3000_I3K4ZRP0",
-          "_tz3000_i3rjdrwu",
-          "_TZ3000_i3rjdrwu",
           "_TZ3000_I3RJDRWU",
-          "_tz3000_i8jfiezr",
-          "_TZ3000_i8jfiezr",
           "_TZ3000_I8JFIEZR",
-          "_tz3000_i9oy2rdq",
-          "_TZ3000_i9oy2rdq",
           "_TZ3000_I9OY2RDQ",
-          "_tz3000_iaxvag8w",
-          "_TZ3000_iaxvag8w",
           "_TZ3000_IAXVAG8W",
-          "_tz3000_ibpqrvcy",
-          "_TZ3000_ibpqrvcy",
           "_TZ3000_IBPQRVCY",
-          "_tz3000_iedbgyxt",
-          "_TZ3000_iedbgyxt",
           "_TZ3000_IEDBGYXT",
-          "_tz3000_iktiy8ue",
-          "_TZ3000_iktiy8ue",
           "_TZ3000_IKTIY8UE",
-          "_tz3000_ikuxinvo",
-          "_TZ3000_ikuxinvo",
           "_TZ3000_IKUXINVO",
-          "_tz3000_it1hm1cr",
-          "_TZ3000_it1hm1cr",
           "_TZ3000_IT1HM1CR",
-          "_tz3000_itb0omhv",
-          "_TZ3000_itb0omhv",
           "_TZ3000_ITB0OMHV",
-          "_tz3000_iwhuhzdo",
-          "_TZ3000_iwhuhzdo",
           "_TZ3000_IWHUHZDO",
-          "_tz3000_j8dbnrgx",
-          "_TZ3000_j8dbnrgx",
           "_TZ3000_J8DBNRGX",
-          "_tz3000_jcqs2mrv",
-          "_TZ3000_jcqs2mrv",
           "_TZ3000_JCQS2MRV",
-          "_tz3000_jd4qb8ux",
-          "_TZ3000_jd4qb8ux",
           "_TZ3000_JD4QB8UX",
-          "_tz3000_ji4araar",
-          "_TZ3000_ji4araar",
           "_TZ3000_JI4ARAAR",
-          "_tz3000_jihobqcz",
-          "_TZ3000_jihobqcz",
           "_TZ3000_JIHOBQCZ",
-          "_tz3000_jrpdaujd",
-          "_TZ3000_jrpdaujd",
           "_TZ3000_JRPDAUJD",
-          "_tz3000_jsfzkftc",
-          "_TZ3000_jsfzkftc",
           "_TZ3000_JSFZKFTC",
-          "_tz3000_keabpigb",
-          "_TZ3000_keabpigb",
           "_TZ3000_KEABPIGB",
-          "_tz3000_kj0nwdz6",
-          "_TZ3000_kj0nwdz6",
           "_TZ3000_KJ0NWDZ6",
-          "_tz3000_kqvb5akv",
-          "_TZ3000_kqvb5akv",
           "_TZ3000_KQVB5AKV",
-          "_tz3000_ktxqiyra",
-          "_TZ3000_ktxqiyra",
           "_TZ3000_KTXQIYRA",
-          "_tz3000_kybmsyjz",
-          "_TZ3000_kybmsyjz",
           "_TZ3000_KYBMSYJZ",
-          "_tz3000_kycczpw8",
-          "_TZ3000_kycczpw8",
           "_TZ3000_KYCCZPW8",
-          "_tz3000_l8fsgo6p",
-          "_TZ3000_l8fsgo6p",
           "_TZ3000_L8FSGO6P",
-          "_tz3000_lbtpiody",
-          "_TZ3000_lbtpiody",
           "_TZ3000_LBTPIODY",
-          "_tz3000_lfa05ajd",
-          "_TZ3000_lfa05ajd",
           "_TZ3000_LFA05AJD",
-          "_tz3000_llfaquvp",
-          "_TZ3000_llfaquvp",
           "_TZ3000_LLFAQUVP",
-          "_tz3000_lrgccsxm",
-          "_TZ3000_lrgccsxm",
           "_TZ3000_LRGCCSXM",
-          "_tz3000_lupfd8bq",
-          "_TZ3000_lupfd8bq",
           "_TZ3000_LUPFD8BQ",
-          "_tz3000_lupfd8zu",
-          "_TZ3000_lupfd8zu",
           "_TZ3000_LUPFD8ZU",
-          "_tz3000_lwlhprgx",
-          "_TZ3000_lwlhprgx",
           "_TZ3000_LWLHPRGX",
-          "_tz3000_lxw3zcdk",
-          "_TZ3000_lxw3zcdk",
           "_TZ3000_LXW3ZCDK",
-          "_tz3000_m8f3z8ju",
-          "_TZ3000_m8f3z8ju",
           "_TZ3000_M8F3Z8JU",
-          "_tz3000_m9af2l6g",
-          "_TZ3000_m9af2l6g",
           "_TZ3000_M9AF2L6G",
-          "_tz3000_ma3mhpx2",
-          "_TZ3000_ma3mhpx2",
           "_TZ3000_MA3MHPX2",
-          "_tz3000_majwnphg",
-          "_TZ3000_majwnphg",
           "_TZ3000_MAJWNPHG",
-          "_tz3000_mkhkxx1p",
-          "_TZ3000_mkhkxx1p",
           "_TZ3000_MKHKXX1P",
-          "_tz3000_mkmb4sms",
-          "_TZ3000_mkmb4sms",
           "_TZ3000_MKMB4SMS",
-          "_tz3000_mtmtljo4",
-          "_TZ3000_mtmtljo4",
           "_TZ3000_MTMTLJO4",
-          "_tz3000_mx3vgyea",
-          "_TZ3000_mx3vgyea",
           "_TZ3000_MX3VGYEA",
-          "_tz3000_myaaknbq",
-          "_TZ3000_myaaknbq",
           "_TZ3000_MYAAKNBQ",
-          "_tz3000_n0lphcok",
-          "_TZ3000_n0lphcok",
           "_TZ3000_N0LPHCOK",
-          "_tz3000_n6fqajob",
-          "_TZ3000_n6fqajob",
           "_TZ3000_N6FQAJOB",
-          "_tz3000_nahxzcpz",
-          "_TZ3000_nahxzcpz",
           "_TZ3000_NAHXZCPZ",
-          "_tz3000_neo2aqj4",
-          "_TZ3000_neo2aqj4",
           "_TZ3000_NEO2AQJ4",
-          "_tz3000_njintbl6",
-          "_TZ3000_njintbl6",
           "_TZ3000_NJINTBL6",
-          "_tz3000_npzfdcof",
-          "_TZ3000_npzfdcof",
           "_TZ3000_NPZFDCOF",
-          "_tz3000_npzfdzhq",
-          "_TZ3000_npzfdzhq",
           "_TZ3000_NPZFDZHQ",
-          "_tz3000_nrfkrgf4",
-          "_TZ3000_nrfkrgf4",
           "_TZ3000_NRFKRGF4",
-          "_tz3000_nta0gb8h",
-          "_TZ3000_nta0gb8h",
           "_TZ3000_NTA0GB8H",
-          "_tz3000_nz98vdvj",
-          "_TZ3000_nz98vdvj",
           "_TZ3000_NZ98VDVJ",
-          "_tz3000_o4cjetlm",
-          "_TZ3000_o4cjetlm",
           "_TZ3000_O4CJETLM",
-          "_tz3000_oaq83gqc",
-          "_TZ3000_oaq83gqc",
           "_TZ3000_OAQ83GQC",
-          "_tz3000_oex7egmt",
-          "_TZ3000_oex7egmt",
           "_TZ3000_OEX7EGMT",
-          "_tz3000_oikiyf3b",
-          "_TZ3000_oikiyf3b",
           "_TZ3000_OIKIYF3B",
-          "_tz3000_olo5jhjk",
-          "_TZ3000_olo5jhjk",
           "_TZ3000_OLO5JHJK",
-          "_tz3000_oysiif07",
-          "_TZ3000_oysiif07",
           "_TZ3000_OYSIIF07",
-          "_tz3000_oz4zgdny",
-          "_TZ3000_oz4zgdny",
           "_TZ3000_OZ4ZGDNY",
-          "_tz3000_oznonj5q",
-          "_TZ3000_oznonj5q",
           "_TZ3000_OZNONJ5Q",
-          "_tz3000_pccqzgdc",
-          "_TZ3000_pccqzgdc",
           "_TZ3000_PCCQZGDC",
-          "_tz3000_pdevogdj",
-          "_TZ3000_pdevogdj",
           "_TZ3000_PDEVOGDJ",
-          "_tz3000_pgq7ormg",
-          "_TZ3000_pgq7ormg",
           "_TZ3000_PGQ7ORMG",
-          "_tz3000_pkeqinnt",
-          "_TZ3000_pkeqinnt",
           "_TZ3000_PKEQINNT",
-          "_tz3000_pmvbt5hh",
-          "_TZ3000_pmvbt5hh",
           "_TZ3000_PMVBT5HH",
-          "_tz3000_pmz6mjyu",
-          "_TZ3000_pmz6mjyu",
           "_TZ3000_PMZ6MJYU",
-          "_tz3000_pnzfdr9y",
-          "_TZ3000_pnzfdr9y",
           "_TZ3000_PNZFDR9Y",
-          "_tz3000_prd023wy",
-          "_TZ3000_prd023wy",
           "_TZ3000_PRD023WY",
-          "_tz3000_prits6g4",
-          "_TZ3000_prits6g4",
           "_TZ3000_PRITS6G4",
-          "_tz3000_ptjcjise",
-          "_TZ3000_ptjcjise",
           "_TZ3000_PTJCJISE",
-          "_tz3000_q68478x7",
-          "_TZ3000_q68478x7",
           "_TZ3000_Q68478X7",
-          "_tz3000_q6a3tepg",
-          "_TZ3000_q6a3tepg",
           "_TZ3000_Q6A3TEPG",
-          "_tz3000_q8r0bbvy",
-          "_TZ3000_q8r0bbvy",
           "_TZ3000_Q8R0BBVY",
-          "_tz3000_qaabwu5c",
-          "_TZ3000_qaabwu5c",
           "_TZ3000_QAABWU5C",
-          "_tz3000_qamj2vnn",
-          "_TZ3000_qamj2vnn",
           "_TZ3000_QAMJ2VNN",
-          "_tz3000_qewo8dlz",
-          "_TZ3000_qewo8dlz",
           "_TZ3000_QEWO8DLZ",
-          "_tz3000_qh6qjuan",
-          "_TZ3000_qh6qjuan",
           "_TZ3000_QH6QJUAN",
-          "_tz3000_qlai3277",
-          "_TZ3000_qlai3277",
           "_TZ3000_QLAI3277",
-          "_tz3000_qmi1cfuq",
-          "_TZ3000_qmi1cfuq",
           "_TZ3000_QMI1CFUQ",
-          "_tz3000_qnejhcsu",
-          "_TZ3000_qnejhcsu",
           "_TZ3000_QNEJHCSU",
-          "_tz3000_qorepo2x",
-          "_TZ3000_qorepo2x",
           "_TZ3000_QOREPO2X",
-          "_tz3000_qq9ahj6z",
-          "_TZ3000_qq9ahj6z",
           "_TZ3000_QQ9AHJ6Z",
-          "_tz3000_qsp2pwtf",
-          "_TZ3000_qsp2pwtf",
           "_TZ3000_QSP2PWTF",
-          "_tz3000_qspxxfqf",
-          "_TZ3000_qspxxfqf",
           "_TZ3000_QSPXXFQF",
-          "_tz3000_qvmiyxuk",
-          "_TZ3000_qvmiyxuk",
           "_TZ3000_QVMIYXUK",
-          "_tz3000_r0pmi2p3",
-          "_TZ3000_r0pmi2p3",
           "_TZ3000_R0PMI2P3",
-          "_tz3000_rae2pvwy",
-          "_TZ3000_rae2pvwy",
           "_TZ3000_RAE2PVWY",
-          "_tz3000_rco7azbz",
-          "_TZ3000_rco7azbz",
           "_TZ3000_RCO7AZBZ",
-          "_tz3000_rdfh8cfs",
-          "_TZ3000_rdfh8cfs",
           "_TZ3000_RDFH8CFS",
-          "_tz3000_rfctjdxr",
-          "_TZ3000_rfctjdxr",
           "_TZ3000_RFCTJDXR",
-          "_tz3000_rmjr4ufz",
-          "_TZ3000_rmjr4ufz",
           "_TZ3000_RMJR4UFZ",
-          "_tz3000_rxisxokz",
-          "_TZ3000_rxisxokz",
           "_TZ3000_RXISXOKZ",
-          "_tz3000_s0i14ubi",
-          "_TZ3000_s0i14ubi",
           "_TZ3000_S0I14UBI",
-          "_tz3000_sfc7y1t8",
-          "_TZ3000_sfc7y1t8",
           "_TZ3000_SFC7Y1T8",
-          "_tz3000_sj7jbgks",
-          "_TZ3000_sj7jbgks",
           "_TZ3000_SJ7JBGKS",
-          "_tz3000_sjpl9eg3",
-          "_TZ3000_sjpl9eg3",
           "_TZ3000_SJPL9EG3",
-          "_tz3000_skueekg3",
-          "_TZ3000_skueekg3",
           "_TZ3000_SKUEEKG3",
-          "_tz3000_skueezt3",
-          "_TZ3000_skueezt3",
           "_TZ3000_SKUEEZT3",
-          "_tz3000_sskgpxfo",
-          "_TZ3000_sskgpxfo",
           "_TZ3000_SSKGPXFO",
-          "_tz3000_svoqrno4",
-          "_TZ3000_svoqrno4",
           "_TZ3000_SVOQRNO4",
-          "_tz3000_syoxtjf0",
-          "_TZ3000_syoxtjf0",
           "_TZ3000_SYOXTJF0",
-          "_tz3000_t8hzpgnd",
-          "_TZ3000_t8hzpgnd",
           "_TZ3000_T8HZPGND",
-          "_tz3000_tgddllx4",
-          "_TZ3000_tgddllx4",
           "_TZ3000_TGDDLLX4",
-          "_tz3000_thhxrept",
-          "_TZ3000_thhxrept",
           "_TZ3000_THHXREPT",
-          "_tz3000_tk3s5tya",
-          "_TZ3000_tk3s5tya",
           "_TZ3000_TK3S5TYA",
-          "_tz3000_tkusjmue",
-          "_TZ3000_tkusjmue",
           "_TZ3000_TKUSJMUE",
-          "_tz3000_tqlv4ez4",
-          "_TZ3000_tqlv4ez4",
           "_TZ3000_TQLV4EZ4",
-          "_tz3000_tqlv4ug4",
-          "_TZ3000_tqlv4ug4",
           "_TZ3000_TQLV4UG4",
-          "_tz3000_trdx8uxs",
-          "_TZ3000_trdx8uxs",
           "_TZ3000_TRDX8UXS",
-          "_tz3000_ts004f",
-          "_TZ3000_ts004f",
           "_TZ3000_TS004F",
-          "_tz3000_ts6nmrse",
-          "_TZ3000_ts6nmrse",
           "_TZ3000_TS6NMRSE",
-          "_tz3000_tw4ztbp4",
-          "_TZ3000_tw4ztbp4",
           "_TZ3000_TW4ZTBP4",
-          "_tz3000_txpirhfq",
-          "_TZ3000_txpirhfq",
           "_TZ3000_TXPIRHFQ",
-          "_tz3000_txpitre5",
-          "_TZ3000_txpitre5",
           "_TZ3000_TXPITRE5",
-          "_tz3000_tygpud44",
-          "_TZ3000_tygpud44",
           "_TZ3000_TYGPUD44",
-          "_tz3000_tygpxwqa",
-          "_TZ3000_tygpxwqa",
           "_TZ3000_TYGPXWQA",
-          "_tz3000_uaa34g7v",
-          "_TZ3000_uaa34g7v",
           "_TZ3000_UAA34G7V",
-          "_tz3000_udl7uyd2",
-          "_TZ3000_udl7uyd2",
           "_TZ3000_UDL7UYD2",
-          "_tz3000_uxuxkcvd",
-          "_TZ3000_uxuxkcvd",
           "_TZ3000_UXUXKCVD",
-          "_tz3000_v7fkcekx",
-          "_TZ3000_v7fkcekx",
           "_TZ3000_V7FKCEKX",
-          "_tz3000_v7gnj3ad",
-          "_TZ3000_v7gnj3ad",
           "_TZ3000_V7GNJ3AD",
-          "_tz3000_v7sopte0",
-          "_TZ3000_v7sopte0",
           "_TZ3000_V7SOPTE0",
-          "_tz3000_veu2v775",
-          "_TZ3000_veu2v775",
           "_TZ3000_VEU2V775",
-          "_tz3000_vjhcenzw",
-          "_TZ3000_vjhcenzw",
           "_TZ3000_VJHCENZW",
-          "_tz3000_vvlivusi",
-          "_TZ3000_vvlivusi",
           "_TZ3000_VVLIVUSI",
-          "_tz3000_w0ypwa1f",
-          "_TZ3000_w0ypwa1f",
           "_TZ3000_W0YPWA1F",
-          "_tz3000_w1tcofu8",
-          "_TZ3000_w1tcofu8",
           "_TZ3000_W1TCOFU8",
-          "_tz3000_w3c7ouru",
-          "_TZ3000_w3c7ouru",
           "_TZ3000_W3C7OURU",
-          "_tz3000_wbfgbpxq",
-          "_TZ3000_wbfgbpxq",
           "_TZ3000_WBFGBPXQ",
-          "_tz3000_wijoqjk1",
-          "_TZ3000_wijoqjk1",
           "_TZ3000_WIJOQJK1",
-          "_tz3000_wkr3jqmr",
-          "_TZ3000_wkr3jqmr",
           "_TZ3000_WKR3JQMR",
-          "_tz3000_wn65ixz9",
-          "_TZ3000_wn65ixz9",
           "_TZ3000_WN65IXZ9",
-          "_tz3000_wpueorev",
-          "_TZ3000_wpueorev",
           "_TZ3000_WPUEOREV",
-          "_tz3000_wqcbzbae",
-          "_TZ3000_wqcbzbae",
           "_TZ3000_WQCBZBAE",
-          "_tz3000_wrhhi5h2",
-          "_TZ3000_wrhhi5h2",
           "_TZ3000_WRHHI5H2",
-          "_tz3000_wzauvbcs",
-          "_TZ3000_wzauvbcs",
           "_TZ3000_WZAUVBCS",
-          "_tz3000_x3ewpzyr",
-          "_TZ3000_x3ewpzyr",
           "_TZ3000_X3EWPZYR",
-          "_tz3000_x8mbwtsz",
-          "_TZ3000_x8mbwtsz",
           "_TZ3000_X8MBWTSZ",
-          "_tz3000_xfxpoxe0",
-          "_TZ3000_xfxpoxe0",
           "_TZ3000_XFXPOXE0",
-          "_tz3000_xiuox57i",
-          "_TZ3000_xiuox57i",
           "_TZ3000_XIUOX57I",
-          "_tz3000_xkap8wtb",
-          "_TZ3000_xkap8wtb",
           "_TZ3000_XKAP8WTB",
-          "_tz3000_xrqsdxq6",
-          "_TZ3000_xrqsdxq6",
           "_TZ3000_XRQSDXQ6",
-          "_tz3000_xwuveizv",
-          "_TZ3000_xwuveizv",
           "_TZ3000_XWUVEIZV",
-          "_tz3000_y4che4dc",
-          "_TZ3000_y4che4dc",
           "_TZ3000_Y4CHE4DC",
-          "_tz3000_ygvf9xzp",
-          "_TZ3000_ygvf9xzp",
           "_TZ3000_YGVF9XZP",
-          "_tz3000_yhagrqmd",
-          "_TZ3000_yhagrqmd",
           "_TZ3000_YHAGRQMD",
-          "_tz3000_yirp2pgd",
-          "_TZ3000_yirp2pgd",
           "_TZ3000_YIRP2PGD",
-          "_tz3000_yl3zuyaw",
-          "_TZ3000_yl3zuyaw",
           "_TZ3000_YL3ZUYAW",
-          "_tz3000_ysdv91bk",
-          "_TZ3000_ysdv91bk",
           "_TZ3000_YSDV91BK",
-          "_tz3000_yw5tvzsk",
-          "_TZ3000_yw5tvzsk",
           "_TZ3000_YW5TVZSK",
-          "_tz3000_zfmxvprs",
-          "_TZ3000_zfmxvprs",
           "_TZ3000_ZFMXVPRS",
-          "_tz3000_zmy1waw6",
-          "_TZ3000_zmy1waw6",
           "_TZ3000_ZMY1WAW6",
-          "_tz3000_zw7yf6yk",
-          "_TZ3000_zw7yf6yk",
           "_TZ3000_ZW7YF6YK",
-          "_tz3002_fdxihpp7",
-          "_TZ3002_fdxihpp7",
+          "_TZ3000_abc123",
+          "_TZ3000_abjodzas",
+          "_TZ3000_aetquff4",
+          "_TZ3000_aezbqpcu",
+          "_TZ3000_afgzktgb",
+          "_TZ3000_aghwaexm",
+          "_TZ3000_ajkq2isy",
+          "_TZ3000_amal63is",
+          "_TZ3000_ark8nv4y",
+          "_TZ3000_arw23zcs",
+          "_TZ3000_b7bxojrg",
+          "_TZ3000_b9vanmes",
+          "_TZ3000_baeiitad",
+          "_TZ3000_bb6xaihh",
+          "_TZ3000_bezfthwc",
+          "_TZ3000_bhcpnvud",
+          "_TZ3000_blhvsaqf",
+          "_TZ3000_bmqxalil",
+          "_TZ3000_bmzfjnbp",
+          "_TZ3000_bppxj3sf",
+          "_TZ3000_bzczr4e1",
+          "_TZ3000_c7nc9w3c",
+          "_TZ3000_cdamjqm9",
+          "_TZ3000_cipibmnp",
+          "_TZ3000_cmcjbqup",
+          "_TZ3000_cpozgbrx",
+          "_TZ3000_ctftgjwb",
+          "_TZ3000_d16y6col",
+          "_TZ3000_dku2cfsc",
+          "_TZ3000_dov0a3p1",
+          "_TZ3000_drc9tuqb",
+          "_TZ3000_e8cquwdk",
+          "_TZ3000_e98krvvk",
+          "_TZ3000_ejwkn2h2",
+          "_TZ3000_ena8vgqb",
+          "_TZ3000_etx8inrk",
+          "_TZ3000_ew31dmgx",
+          "_TZ3000_f8tmviy0",
+          "_TZ3000_fdxihpp7",
+          "_TZ3000_fjt5218m",
+          "_TZ3000_g",
+          "_TZ3000_g8n1n7lg",
+          "_TZ3000_g92baclx",
+          "_TZ3000_gbshwgag",
+          "_TZ3000_gdsvhfao",
+          "_TZ3000_ghi789",
+          "_TZ3000_gidy6sjs",
+          "_TZ3000_gjrubzje",
+          "_TZ3000_go9rahj5",
+          "_TZ3000_gtdswg8k",
+          "_TZ3000_gzvniqjb",
+          "_TZ3000_h1c2eamp",
+          "_TZ3000_h1jnz6l8",
+          "_TZ3000_h3noz0a5",
+          "_TZ3000_h8ngtlxy",
+          "_TZ3000_hafsqare",
+          "_TZ3000_hauznfgh",
+          "_TZ3000_hbdzfqjl",
+          "_TZ3000_hbxsdd6k",
+          "_TZ3000_hdc8bbha",
+          "_TZ3000_hdlpifbk",
+          "_TZ3000_hjhbbyxt",
+          "_TZ3000_hkkkuk7k",
+          "_TZ3000_hktqahrq",
+          "_TZ3000_hkyordpv",
+          "_TZ3000_hlwm8e96",
+          "_TZ3000_ho0cjoi2",
+          "_TZ3000_hzlsaltw",
+          "_TZ3000_i3k4zrp0",
+          "_TZ3000_i3rjdrwu",
+          "_TZ3000_i8jfiezr",
+          "_TZ3000_i9oy2rdq",
+          "_TZ3000_iaxvag8w",
+          "_TZ3000_ibpqrvcy",
+          "_TZ3000_iedbgyxt",
+          "_TZ3000_iktiy8ue",
+          "_TZ3000_ikuxinvo",
+          "_TZ3000_it1hm1cr",
+          "_TZ3000_itb0omhv",
+          "_TZ3000_iwhuhzdo",
+          "_TZ3000_j8dbnrgx",
+          "_TZ3000_jcqs2mrv",
+          "_TZ3000_jd4qb8ux",
+          "_TZ3000_ji4araar",
+          "_TZ3000_jihobqcz",
+          "_TZ3000_jrpdaujd",
+          "_TZ3000_jsfzkftc",
+          "_TZ3000_keabpigb",
+          "_TZ3000_kj0nwdz6",
+          "_TZ3000_kqvb5akv",
+          "_TZ3000_ktxqiyra",
+          "_TZ3000_kybmsyjz",
+          "_TZ3000_kycczpw8",
+          "_TZ3000_l8fsgo6p",
+          "_TZ3000_lbtpiody",
+          "_TZ3000_lfa05ajd",
+          "_TZ3000_llfaquvp",
+          "_TZ3000_lrgccsxm",
+          "_TZ3000_lupfd8bq",
+          "_TZ3000_lupfd8zu",
+          "_TZ3000_lwlhprgx",
+          "_TZ3000_lxw3zcdk",
+          "_TZ3000_m8f3z8ju",
+          "_TZ3000_m9af2l6g",
+          "_TZ3000_ma3mhpx2",
+          "_TZ3000_majwnphg",
+          "_TZ3000_mkhkxx1p",
+          "_TZ3000_mkmb4sms",
+          "_TZ3000_mtmtljo4",
+          "_TZ3000_mx3vgyea",
+          "_TZ3000_myaaknbq",
+          "_TZ3000_n0lphcok",
+          "_TZ3000_n6fqajob",
+          "_TZ3000_nahxzcpz",
+          "_TZ3000_neo2aqj4",
+          "_TZ3000_njintbl6",
+          "_TZ3000_npzfdcof",
+          "_TZ3000_npzfdzhq",
+          "_TZ3000_nrfkrgf4",
+          "_TZ3000_nta0gb8h",
+          "_TZ3000_nz98vdvj",
+          "_TZ3000_o4cjetlm",
+          "_TZ3000_oaq83gqc",
+          "_TZ3000_oex7egmt",
+          "_TZ3000_oikiyf3b",
+          "_TZ3000_olo5jhjk",
+          "_TZ3000_oysiif07",
+          "_TZ3000_oz4zgdny",
+          "_TZ3000_oznonj5q",
+          "_TZ3000_pccqzgdc",
+          "_TZ3000_pdevogdj",
+          "_TZ3000_pgq7ormg",
+          "_TZ3000_pkeqinnt",
+          "_TZ3000_pmvbt5hh",
+          "_TZ3000_pmz6mjyu",
+          "_TZ3000_pnzfdr9y",
+          "_TZ3000_prd023wy",
+          "_TZ3000_prits6g4",
+          "_TZ3000_ptjcjise",
+          "_TZ3000_q68478x7",
+          "_TZ3000_q6a3tepg",
+          "_TZ3000_q8r0bbvy",
+          "_TZ3000_qaabwu5c",
+          "_TZ3000_qamj2vnn",
+          "_TZ3000_qewo8dlz",
+          "_TZ3000_qh6qjuan",
+          "_TZ3000_qlai3277",
+          "_TZ3000_qmi1cfuq",
+          "_TZ3000_qnejhcsu",
+          "_TZ3000_qorepo2x",
+          "_TZ3000_qq9ahj6z",
+          "_TZ3000_qsp2pwtf",
+          "_TZ3000_qspxxfqf",
+          "_TZ3000_qvmiyxuk",
+          "_TZ3000_r0pmi2p3",
+          "_TZ3000_rae2pvwy",
+          "_TZ3000_rco7azbz",
+          "_TZ3000_rdfh8cfs",
+          "_TZ3000_rfctjdxr",
+          "_TZ3000_rmjr4ufz",
+          "_TZ3000_rxisxokz",
+          "_TZ3000_s0i14ubi",
+          "_TZ3000_sfc7y1t8",
+          "_TZ3000_sj7jbgks",
+          "_TZ3000_sjpl9eg3",
+          "_TZ3000_skueekg3",
+          "_TZ3000_skueezt3",
+          "_TZ3000_sskgpxfo",
+          "_TZ3000_svoqrno4",
+          "_TZ3000_syoxtjf0",
+          "_TZ3000_t8hzpgnd",
+          "_TZ3000_tgddllx4",
+          "_TZ3000_thhxrept",
+          "_TZ3000_tk3s5tya",
+          "_TZ3000_tkusjmue",
+          "_TZ3000_tqlv4ez4",
+          "_TZ3000_tqlv4ug4",
+          "_TZ3000_trdx8uxs",
+          "_TZ3000_ts004f",
+          "_TZ3000_ts6nmrse",
+          "_TZ3000_tw4ztbp4",
+          "_TZ3000_txpirhfq",
+          "_TZ3000_txpitre5",
+          "_TZ3000_tygpud44",
+          "_TZ3000_tygpxwqa",
+          "_TZ3000_uaa34g7v",
+          "_TZ3000_udl7uyd2",
+          "_TZ3000_uxuxkcvd",
+          "_TZ3000_v7fkcekx",
+          "_TZ3000_v7gnj3ad",
+          "_TZ3000_v7sopte0",
+          "_TZ3000_veu2v775",
+          "_TZ3000_vjhcenzw",
+          "_TZ3000_vvlivusi",
+          "_TZ3000_w0ypwa1f",
+          "_TZ3000_w1tcofu8",
+          "_TZ3000_w3c7ouru",
+          "_TZ3000_wbfgbpxq",
+          "_TZ3000_wijoqjk1",
+          "_TZ3000_wkr3jqmr",
+          "_TZ3000_wn65ixz9",
+          "_TZ3000_wpueorev",
+          "_TZ3000_wqcbzbae",
+          "_TZ3000_wrhhi5h2",
+          "_TZ3000_wzauvbcs",
+          "_TZ3000_x3ewpzyr",
+          "_TZ3000_x8mbwtsz",
+          "_TZ3000_xfxpoxe0",
+          "_TZ3000_xiuox57i",
+          "_TZ3000_xkap8wtb",
+          "_TZ3000_xrqsdxq6",
+          "_TZ3000_xwuveizv",
+          "_TZ3000_y4che4dc",
+          "_TZ3000_ygvf9xzp",
+          "_TZ3000_yhagrqmd",
+          "_TZ3000_yirp2pgd",
+          "_TZ3000_yl3zuyaw",
+          "_TZ3000_ysdv91bk",
+          "_TZ3000_yw5tvzsk",
+          "_TZ3000_zfmxvprs",
+          "_TZ3000_zmy1waw6",
+          "_TZ3000_zw7yf6yk",
           "_TZ3002_FDXIHPP7",
-          "_tz3002_jn2x20tg",
-          "_TZ3002_jn2x20tg",
           "_TZ3002_JN2X20TG",
-          "_tz3002_svdy5tte",
-          "_TZ3002_svdy5tte",
           "_TZ3002_SVDY5TTE",
-          "_tz3210_2dfy6tol",
-          "_TZ3210_2dfy6tol",
+          "_TZ3002_fdxihpp7",
+          "_TZ3002_jn2x20tg",
+          "_TZ3002_svdy5tte",
           "_TZ3210_2DFY6TOL",
-          "_tz3210_a2erlvb8",
-          "_TZ3210_a2erlvb8",
+          "_TZ3210_2dfy6tol",
           "_TZ3210_A2ERLVB8",
-          "_tz3210_fhx7lk3d",
-          "_TZ3210_fhx7lk3d",
           "_TZ3210_FHX7LK3D",
-          "_tz3210_tfxwxklq",
-          "_TZ3210_tfxwxklq",
           "_TZ3210_TFXWXKLQ",
-          "_tz3210_tqlv4ug4",
-          "_TZ3210_tqlv4ug4",
           "_TZ3210_TQLV4UG4",
-          "_tz3218_7fiyo3kv",
-          "_TZ3218_7fiyo3kv",
+          "_TZ3210_a2erlvb8",
+          "_TZ3210_fhx7lk3d",
+          "_TZ3210_tfxwxklq",
+          "_TZ3210_tqlv4ug4",
           "_TZ3218_7FIYO3KV",
-          "_tz3218_hdc8bbha",
-          "_TZ3218_hdc8bbha",
+          "_TZ3218_7fiyo3kv",
           "_TZ3218_HDC8BBHA",
-          "_tz3218_ya5d6wth",
-          "_TZ3218_ya5d6wth",
           "_TZ3218_YA5D6WTH",
-          "_tze200_7a5ob7xq",
-          "_TZE200_7a5ob7xq",
+          "_TZ3218_hdc8bbha",
+          "_TZ3218_ya5d6wth",
           "_TZE200_7A5OB7XQ",
-          "_tze200_abatw3kj",
-          "_TZE200_abatw3kj",
+          "_TZE200_7a5ob7xq",
           "_TZE200_ABATW3KJ",
-          "_tze200_gbagoilo",
-          "_TZE200_gbagoilo",
           "_TZE200_GBAGOILO",
-          "_tze200_hewlydpz",
-          "_TZE200_hewlydpz",
           "_TZE200_HEWLYDPZ",
-          "_tze200_htj3hcpl",
-          "_TZE200_htj3hcpl",
           "_TZE200_HTJ3HCPL",
-          "_tze200_lhpnrfmy",
-          "_TZE200_lhpnrfmy",
           "_TZE200_LHPNRFMY",
-          "_tze200_ojtqawav",
-          "_TZE200_ojtqawav",
           "_TZE200_OJTQAWAV",
-          "_tze200_pcg0rykt",
-          "_TZE200_pcg0rykt",
           "_TZE200_PCG0RYKT",
-          "_tze200_wnp4d4va",
-          "_TZE200_wnp4d4va",
           "_TZE200_WNP4D4VA",
-          "_tze200_xo3vpoah",
-          "_TZE200_xo3vpoah",
           "_TZE200_XO3VPOAH",
-          "_tze204_4cl0dzt4",
-          "_TZE204_4cl0dzt4",
+          "_TZE200_abatw3kj",
+          "_TZE200_gbagoilo",
+          "_TZE200_hewlydpz",
+          "_TZE200_htj3hcpl",
+          "_TZE200_lhpnrfmy",
+          "_TZE200_ojtqawav",
+          "_TZE200_pcg0rykt",
+          "_TZE200_wnp4d4va",
+          "_TZE200_xo3vpoah",
           "_TZE204_4CL0DZT4",
-          "_tze204_f5efvtbv",
-          "_TZE204_f5efvtbv",
-          "_TZE204_F5EFVTBV",
-          "_tze204_gbagoilo",
-          "_TZE204_gbagoilo",
-          "_TZE204_GBAGOILO",
-          "_tze204_gxbdnfrh",
-          "_TZE204_gxbdnfrh",
-          "_TZE204_GXBDNFRH",
-          "_tze204_iik0pquw",
-          "_TZE204_iik0pquw",
-          "_TZE204_IIK0PQUW",
-          "_tze204_kyzjsjo3",
-          "_TZE204_kyzjsjo3",
-          "_TZE204_KYZJSJO3",
-          "_tze204_lbhh5o6z",
-          "_TZE204_lbhh5o6z",
-          "_TZE204_LBHH5O6Z",
-          "_tze204_lmgrbuwf",
-          "_TZE204_lmgrbuwf",
-          "_TZE204_LMGRBUWF",
-          "_tze204_mexisfik",
-          "_TZE204_mexisfik",
-          "_TZE204_MEXISFIK",
-          "_tze204_nvxorhcj",
-          "_TZE204_nvxorhcj",
-          "_TZE204_NVXORHCJ",
-          "_tze204_ojtqawav",
-          "_TZE204_ojtqawav",
-          "_TZE204_OJTQAWAV",
-          "_tze204_wskr3up8",
-          "_TZE204_wskr3up8",
-          "_TZE204_WSKR3UP8",
-          "_tze21c_dohbhb5k",
-          "_TZE21C_dohbhb5k",
-          "_TZE21C_DOHBHB5K",
-          "_tze284_1aqlsquf",
-          "_TZE284_1aqlsquf",
-          "_TZE284_1AQLSQUF",
-          "_tze284_6fk3gewc",
-          "_TZE284_6fk3gewc",
-          "_TZE284_6FK3GEWC",
-          "_tze284_7a5ob7xq",
-          "_TZE284_7a5ob7xq",
-          "_TZE284_7A5OB7XQ",
-          "_tze284_9qhuzgo0",
-          "_TZE284_9qhuzgo0",
-          "_TZE284_9QHUZGO0",
-          "_tze284_a2teqi5u",
-          "_TZE284_a2teqi5u",
-          "_TZE284_A2TEQI5U",
-          "_tze284_dmckrsxg",
-          "_TZE284_dmckrsxg",
-          "_TZE284_DMCKRSXG",
-          "_tze284_f5efvtbv",
-          "_TZE284_f5efvtbv",
-          "_TZE284_F5EFVTBV",
-          "_tze284_gt5al3bl",
-          "_TZE284_gt5al3bl",
-          "_TZE284_GT5AL3BL",
-          "_tze284_hlx9tnzb",
-          "_TZE284_hlx9tnzb",
-          "_TZE284_HLX9TNZB",
-          "_tze284_lbhh5o6z",
-          "_TZE284_lbhh5o6z",
-          "_TZE284_LBHH5O6Z",
-          "_tze284_ms97nkyy",
-          "_TZE284_ms97nkyy",
-          "_TZE284_MS97NKYY",
-          "_tze284_n9ctkb6j",
-          "_TZE284_n9ctkb6j",
-          "_TZE284_N9CTKB6J",
-          "_tze284_pgxndxp4",
-          "_TZE284_pgxndxp4",
-          "_TZE284_PGXNDXP4",
-          "_tze284_tdhnhhiy",
-          "_TZE284_tdhnhhiy",
-          "_TZE284_TDHNHHIY",
-          "_tze284_xnwxmj8z",
-          "_TZE284_xnwxmj8z",
-          "_TZE284_XNWXMJ8Z",
-          "_tze204_gm8h14wy",
-          "_TZE204_gm8h14wy",
-          "_TZE204_GM8H14WY",
-          "_tze204_ccgyhbvd",
-          "_TZE204_ccgyhbvd",
-          "_TZE204_CCGYHBVD",
-          "_tze204_y8ficeai",
-          "_TZE204_y8ficeai",
-          "_TZE204_Y8FICEAI",
-          "_tze284_7e6v8u9f",
-          "_TZE284_7e6v8u9f",
-          "_TZE284_7E6V8U9F",
-          "_tze204_apiu8k13",
-          "_TZE204_apiu8k13",
+          "_TZE204_4cl0dzt4",
           "_TZE204_APIU8K13",
-          "_tze204_he9apaui",
-          "_TZE204_he9apaui",
+          "_TZE204_CCGYHBVD",
+          "_TZE204_F5EFVTBV",
+          "_TZE204_FHV95PF1",
+          "_TZE204_GBAGOILO",
+          "_TZE204_GM8H14WY",
+          "_TZE204_GXBDNFRH",
           "_TZE204_HE9APAUI",
-          "_tze204_fhv95pf1",
+          "_TZE204_IIK0PQUW",
+          "_TZE204_KYZJSJO3",
+          "_TZE204_LBHH5O6Z",
+          "_TZE204_LMGRBUWF",
+          "_TZE204_MEXISFIK",
+          "_TZE204_NVXORHCJ",
+          "_TZE204_OJTQAWAV",
+          "_TZE204_WSKR3UP8",
+          "_TZE204_Y8FICEAI",
+          "_TZE204_apiu8k13",
+          "_TZE204_ccgyhbvd",
+          "_TZE204_f5efvtbv",
           "_TZE204_fhv95pf1",
-          "_TZE204_FHV95PF1"
+          "_TZE204_gbagoilo",
+          "_TZE204_gm8h14wy",
+          "_TZE204_gxbdnfrh",
+          "_TZE204_he9apaui",
+          "_TZE204_iik0pquw",
+          "_TZE204_kyzjsjo3",
+          "_TZE204_lbhh5o6z",
+          "_TZE204_lmgrbuwf",
+          "_TZE204_mexisfik",
+          "_TZE204_nvxorhcj",
+          "_TZE204_ojtqawav",
+          "_TZE204_wskr3up8",
+          "_TZE204_y8ficeai",
+          "_TZE21C_DOHBHB5K",
+          "_TZE21C_dohbhb5k",
+          "_TZE284_1AQLSQUF",
+          "_TZE284_1aqlsquf",
+          "_TZE284_6FK3GEWC",
+          "_TZE284_6fk3gewc",
+          "_TZE284_7A5OB7XQ",
+          "_TZE284_7E6V8U9F",
+          "_TZE284_7a5ob7xq",
+          "_TZE284_7e6v8u9f",
+          "_TZE284_9QHUZGO0",
+          "_TZE284_9qhuzgo0",
+          "_TZE284_A2TEQI5U",
+          "_TZE284_DMCKRSXG",
+          "_TZE284_F5EFVTBV",
+          "_TZE284_GT5AL3BL",
+          "_TZE284_HLX9TNZB",
+          "_TZE284_LBHH5O6Z",
+          "_TZE284_MS97NKYY",
+          "_TZE284_N9CTKB6J",
+          "_TZE284_PGXNDXP4",
+          "_TZE284_TDHNHHIY",
+          "_TZE284_XNWXMJ8Z",
+          "_TZE284_a2teqi5u",
+          "_TZE284_dmckrsxg",
+          "_TZE284_f5efvtbv",
+          "_TZE284_gt5al3bl",
+          "_TZE284_hlx9tnzb",
+          "_TZE284_lbhh5o6z",
+          "_TZE284_ms97nkyy",
+          "_TZE284_n9ctkb6j",
+          "_TZE284_pgxndxp4",
+          "_TZE284_tdhnhhiy",
+          "_TZE284_xnwxmj8z",
+          "_tyzb01_4mdqxxnn",
+          "_tyzb01_4vgantdz",
+          "_tyzb01_7yidyqxd",
+          "_tyzb01_aneiicmq",
+          "_tyzb01_gr6rozze",
+          "_tyzb01_ijihzffk",
+          "_tyzb01_m6ec2pgj",
+          "_tyzb01_ncutbjdi",
+          "_tyzb01_phjeraqq",
+          "_tyzb01_reyozfcg",
+          "_tyzb01_rifa0wlb",
+          "_tyzb01_sbpc1zrb",
+          "_tyzb01_uqkphoed",
+          "_tyzb01_v8gtiaed",
+          "_tyzb01_yr95mpib",
+          "_tyzb01_z2umiwvq",
+          "_tyzb02_keyjqthh",
+          "_tz3000_0ausfos0",
+          "_tz3000_0ghwhypc",
+          "_tz3000_18ejxrzk",
+          "_tz3000_1adss9de",
+          "_tz3000_1obmmd8k",
+          "_tz3000_2ac",
+          "_tz3000_2jxgpoqh",
+          "_tz3000_2mccw9py",
+          "_tz3000_3a9beq8a",
+          "_tz3000_3wkqni6o",
+          "_tz3000_41ki5xyq",
+          "_tz3000_46t1rvdu",
+          "_tz3000_4hbrrn7e",
+          "_tz3000_4js9lo5d",
+          "_tz3000_4rbqgcuv",
+          "_tz3000_4uf3d0ax",
+          "_tz3000_4whigl8i",
+          "_tz3000_56bdyj21",
+          "_tz3000_5e5ptb24",
+          "_tz3000_5ng23zjs",
+          "_tz3000_5nrcorgu",
+          "_tz3000_5ucujjts",
+          "_tz3000_5vujyute",
+          "_tz3000_65ajyxua",
+          "_tz3000_6axxqqi2",
+          "_tz3000_6eyydfyg",
+          "_tz3000_6oabgtzv",
+          "_tz3000_7dbxxwkt",
+          "_tz3000_7hp93xpr",
+          "_tz3000_7jsk6lxz",
+          "_tz3000_87654321",
+          "_tz3000_8n7lqbm0",
+          "_tz3000_8rppvwda",
+          "_tz3000_9djocypn",
+          "_tz3000_9evm3otq",
+          "_tz3000_abc123",
+          "_tz3000_abjodzas",
+          "_tz3000_aetquff4",
+          "_tz3000_aezbqpcu",
+          "_tz3000_afgzktgb",
+          "_tz3000_aghwaexm",
+          "_tz3000_ajkq2isy",
+          "_tz3000_amal63is",
+          "_tz3000_ark8nv4y",
+          "_tz3000_arw23zcs",
+          "_tz3000_b7bxojrg",
+          "_tz3000_b9vanmes",
+          "_tz3000_bb6xaihh",
+          "_tz3000_bezfthwc",
+          "_tz3000_bhcpnvud",
+          "_tz3000_blhvsaqf",
+          "_tz3000_bmqxalil",
+          "_tz3000_bmzfjnbp",
+          "_tz3000_bppxj3sf",
+          "_tz3000_bzczr4e1",
+          "_tz3000_c7nc9w3c",
+          "_tz3000_cdamjqm9",
+          "_tz3000_cipibmnp",
+          "_tz3000_cmcjbqup",
+          "_tz3000_cpozgbrx",
+          "_tz3000_ctftgjwb",
+          "_tz3000_d16y6col",
+          "_tz3000_dku2cfsc",
+          "_tz3000_dov0a3p1",
+          "_tz3000_drc9tuqb",
+          "_tz3000_e8cquwdk",
+          "_tz3000_e98krvvk",
+          "_tz3000_ejwkn2h2",
+          "_tz3000_ena8vgqb",
+          "_tz3000_etx8inrk",
+          "_tz3000_ew31dmgx",
+          "_tz3000_f8tmviy0",
+          "_tz3000_fdxihpp7",
+          "_tz3000_fjt5218m",
+          "_tz3000_g",
+          "_tz3000_g8n1n7lg",
+          "_tz3000_g92baclx",
+          "_tz3000_gbshwgag",
+          "_tz3000_gdsvhfao",
+          "_tz3000_ghi789",
+          "_tz3000_gidy6sjs",
+          "_tz3000_gjrubzje",
+          "_tz3000_go9rahj5",
+          "_tz3000_gtdswg8k",
+          "_tz3000_gzvniqjb",
+          "_tz3000_h1c2eamp",
+          "_tz3000_h1jnz6l8",
+          "_tz3000_h3noz0a5",
+          "_tz3000_h8ngtlxy",
+          "_tz3000_hafsqare",
+          "_tz3000_hauznfgh",
+          "_tz3000_hbdzfqjl",
+          "_tz3000_hbxsdd6k",
+          "_tz3000_hdc8bbha",
+          "_tz3000_hdlpifbk",
+          "_tz3000_hjhbbyxt",
+          "_tz3000_hkkkuk7k",
+          "_tz3000_hktqahrq",
+          "_tz3000_hkyordpv",
+          "_tz3000_hlwm8e96",
+          "_tz3000_ho0cjoi2",
+          "_tz3000_hzlsaltw",
+          "_tz3000_i3k4zrp0",
+          "_tz3000_i3rjdrwu",
+          "_tz3000_i8jfiezr",
+          "_tz3000_i9oy2rdq",
+          "_tz3000_iaxvag8w",
+          "_tz3000_ibpqrvcy",
+          "_tz3000_iedbgyxt",
+          "_tz3000_iktiy8ue",
+          "_tz3000_ikuxinvo",
+          "_tz3000_it1hm1cr",
+          "_tz3000_itb0omhv",
+          "_tz3000_iwhuhzdo",
+          "_tz3000_j8dbnrgx",
+          "_tz3000_jcqs2mrv",
+          "_tz3000_jd4qb8ux",
+          "_tz3000_ji4araar",
+          "_tz3000_jihobqcz",
+          "_tz3000_jrpdaujd",
+          "_tz3000_jsfzkftc",
+          "_tz3000_keabpigb",
+          "_tz3000_kj0nwdz6",
+          "_tz3000_kqvb5akv",
+          "_tz3000_ktxqiyra",
+          "_tz3000_kybmsyjz",
+          "_tz3000_kycczpw8",
+          "_tz3000_l8fsgo6p",
+          "_tz3000_lbtpiody",
+          "_tz3000_lfa05ajd",
+          "_tz3000_llfaquvp",
+          "_tz3000_lrgccsxm",
+          "_tz3000_lupfd8bq",
+          "_tz3000_lupfd8zu",
+          "_tz3000_lwlhprgx",
+          "_tz3000_lxw3zcdk",
+          "_tz3000_m8f3z8ju",
+          "_tz3000_m9af2l6g",
+          "_tz3000_ma3mhpx2",
+          "_tz3000_majwnphg",
+          "_tz3000_mkhkxx1p",
+          "_tz3000_mkmb4sms",
+          "_tz3000_mtmtljo4",
+          "_tz3000_mx3vgyea",
+          "_tz3000_myaaknbq",
+          "_tz3000_n0lphcok",
+          "_tz3000_n6fqajob",
+          "_tz3000_nahxzcpz",
+          "_tz3000_neo2aqj4",
+          "_tz3000_njintbl6",
+          "_tz3000_npzfdcof",
+          "_tz3000_npzfdzhq",
+          "_tz3000_nrfkrgf4",
+          "_tz3000_nta0gb8h",
+          "_tz3000_nz98vdvj",
+          "_tz3000_o4cjetlm",
+          "_tz3000_oaq83gqc",
+          "_tz3000_oex7egmt",
+          "_tz3000_oikiyf3b",
+          "_tz3000_olo5jhjk",
+          "_tz3000_oysiif07",
+          "_tz3000_oz4zgdny",
+          "_tz3000_oznonj5q",
+          "_tz3000_pccqzgdc",
+          "_tz3000_pdevogdj",
+          "_tz3000_pgq7ormg",
+          "_tz3000_pkeqinnt",
+          "_tz3000_pmvbt5hh",
+          "_tz3000_pmz6mjyu",
+          "_tz3000_pnzfdr9y",
+          "_tz3000_prd023wy",
+          "_tz3000_prits6g4",
+          "_tz3000_ptjcjise",
+          "_tz3000_q68478x7",
+          "_tz3000_q6a3tepg",
+          "_tz3000_q8r0bbvy",
+          "_tz3000_qaabwu5c",
+          "_tz3000_qamj2vnn",
+          "_tz3000_qewo8dlz",
+          "_tz3000_qh6qjuan",
+          "_tz3000_qlai3277",
+          "_tz3000_qmi1cfuq",
+          "_tz3000_qnejhcsu",
+          "_tz3000_qorepo2x",
+          "_tz3000_qq9ahj6z",
+          "_tz3000_qsp2pwtf",
+          "_tz3000_qspxxfqf",
+          "_tz3000_qvmiyxuk",
+          "_tz3000_r0pmi2p3",
+          "_tz3000_rae2pvwy",
+          "_tz3000_rco7azbz",
+          "_tz3000_rdfh8cfs",
+          "_tz3000_rfctjdxr",
+          "_tz3000_rmjr4ufz",
+          "_tz3000_rxisxokz",
+          "_tz3000_s0i14ubi",
+          "_tz3000_sfc7y1t8",
+          "_tz3000_sj7jbgks",
+          "_tz3000_sjpl9eg3",
+          "_tz3000_skueekg3",
+          "_tz3000_skueezt3",
+          "_tz3000_sskgpxfo",
+          "_tz3000_svoqrno4",
+          "_tz3000_syoxtjf0",
+          "_tz3000_t8hzpgnd",
+          "_tz3000_tgddllx4",
+          "_tz3000_thhxrept",
+          "_tz3000_tk3s5tya",
+          "_tz3000_tkusjmue",
+          "_tz3000_tqlv4ez4",
+          "_tz3000_tqlv4ug4",
+          "_tz3000_trdx8uxs",
+          "_tz3000_ts004f",
+          "_tz3000_ts6nmrse",
+          "_tz3000_tw4ztbp4",
+          "_tz3000_txpirhfq",
+          "_tz3000_txpitre5",
+          "_tz3000_tygpud44",
+          "_tz3000_tygpxwqa",
+          "_tz3000_uaa34g7v",
+          "_tz3000_udl7uyd2",
+          "_tz3000_uxuxkcvd",
+          "_tz3000_v7fkcekx",
+          "_tz3000_v7gnj3ad",
+          "_tz3000_v7sopte0",
+          "_tz3000_veu2v775",
+          "_tz3000_vjhcenzw",
+          "_tz3000_vvlivusi",
+          "_tz3000_w0ypwa1f",
+          "_tz3000_w1tcofu8",
+          "_tz3000_w3c7ouru",
+          "_tz3000_wbfgbpxq",
+          "_tz3000_wijoqjk1",
+          "_tz3000_wkr3jqmr",
+          "_tz3000_wn65ixz9",
+          "_tz3000_wpueorev",
+          "_tz3000_wqcbzbae",
+          "_tz3000_wrhhi5h2",
+          "_tz3000_wzauvbcs",
+          "_tz3000_x3ewpzyr",
+          "_tz3000_x8mbwtsz",
+          "_tz3000_xfxpoxe0",
+          "_tz3000_xiuox57i",
+          "_tz3000_xkap8wtb",
+          "_tz3000_xrqsdxq6",
+          "_tz3000_xwuveizv",
+          "_tz3000_y4che4dc",
+          "_tz3000_ygvf9xzp",
+          "_tz3000_yhagrqmd",
+          "_tz3000_yirp2pgd",
+          "_tz3000_yl3zuyaw",
+          "_tz3000_ysdv91bk",
+          "_tz3000_yw5tvzsk",
+          "_tz3000_zfmxvprs",
+          "_tz3000_zmy1waw6",
+          "_tz3000_zw7yf6yk",
+          "_tz3002_fdxihpp7",
+          "_tz3002_jn2x20tg",
+          "_tz3002_svdy5tte",
+          "_tz3210_2dfy6tol",
+          "_tz3210_a2erlvb8",
+          "_tz3210_fhx7lk3d",
+          "_tz3210_tfxwxklq",
+          "_tz3210_tqlv4ug4",
+          "_tz3218_7fiyo3kv",
+          "_tz3218_hdc8bbha",
+          "_tz3218_ya5d6wth",
+          "_tze200_7a5ob7xq",
+          "_tze200_abatw3kj",
+          "_tze200_gbagoilo",
+          "_tze200_hewlydpz",
+          "_tze200_htj3hcpl",
+          "_tze200_lhpnrfmy",
+          "_tze200_ojtqawav",
+          "_tze200_pcg0rykt",
+          "_tze200_wnp4d4va",
+          "_tze200_xo3vpoah",
+          "_tze204_4cl0dzt4",
+          "_tze204_apiu8k13",
+          "_tze204_ccgyhbvd",
+          "_tze204_f5efvtbv",
+          "_tze204_fhv95pf1",
+          "_tze204_gbagoilo",
+          "_tze204_gm8h14wy",
+          "_tze204_gxbdnfrh",
+          "_tze204_he9apaui",
+          "_tze204_iik0pquw",
+          "_tze204_kyzjsjo3",
+          "_tze204_lbhh5o6z",
+          "_tze204_lmgrbuwf",
+          "_tze204_mexisfik",
+          "_tze204_nvxorhcj",
+          "_tze204_ojtqawav",
+          "_tze204_wskr3up8",
+          "_tze204_y8ficeai",
+          "_tze21c_dohbhb5k",
+          "_tze284_1aqlsquf",
+          "_tze284_6fk3gewc",
+          "_tze284_7a5ob7xq",
+          "_tze284_7e6v8u9f",
+          "_tze284_9qhuzgo0",
+          "_tze284_a2teqi5u",
+          "_tze284_dmckrsxg",
+          "_tze284_f5efvtbv",
+          "_tze284_gt5al3bl",
+          "_tze284_hlx9tnzb",
+          "_tze284_lbhh5o6z",
+          "_tze284_ms97nkyy",
+          "_tze284_n9ctkb6j",
+          "_tze284_pgxndxp4",
+          "_tze284_tdhnhhiy",
+          "_tze284_xnwxmj8z"
         ],
         "endpoints": {
           "1": {
@@ -88785,16 +88963,6 @@
           }
         },
         "manufacturerName": [
-          "_tyzb01_2athzhfr",
-          "_TYZB01_2ATHZHFR",
-          "_tyzb01_6g8b7at8",
-          "_TYZB01_6G8B7AT8",
-          "_tyzb01_6sadkhcy",
-          "_TYZB01_6SADKHCY",
-          "_tyzb01_mtlhqn48",
-          "_TYZB01_MTLHQN48",
-          "_tyzb01_vzrytttn",
-          "_TYZB01_VZRYTTTN",
           "_tz3000_01gpyda5",
           "_TZ3000_01gpyda5",
           "_TZ3000_01GPYDA5",
@@ -89697,12 +89865,6 @@
         "manufacturerName": [
           "_tyzb01_4lwqwyqn",
           "_TYZB01_4LWQWYQN",
-          "_tyzb01_b8cr31hp",
-          "_TYZB01_B8CR31HP",
-          "_tyzb01_mqel1whf",
-          "_TYZB01_MQEL1WHF",
-          "_tyzb01_xiuox57i",
-          "_TYZB01_XIUOX57I",
           "_tz3000_34zbimxh",
           "_TZ3000_34zbimxh",
           "_TZ3000_34ZBIMXH",
@@ -89882,8 +90044,9 @@
           "_tz3000_avotanj3",
           "_TZ3000_avotanj3",
           "_TZ3000_AVOTANJ3",
+          "_tz3000_mw1pqqqt",
           "_TZ3000_mw1pqqqt",
-          "_tz3000_mw1pqqqt"
+          "_TZ3000_MW1PQQQT"
         ]
       },
       "images": {
@@ -90530,8 +90693,6 @@
           }
         },
         "manufacturerName": [
-          "_tyzb01_bagt1e4o",
-          "_TYZB01_BAGT1E4O",
           "_tz3000_3n2minvf",
           "_TZ3000_3n2minvf",
           "_TZ3000_3N2MINVF",
@@ -92744,8 +92905,10 @@
       ],
       "name": {
         "en": "Switch Usb Dongle",
-        "nl": "Switch Usb Dongle",
-        "fr": "Switch Usb Dongle"
+        "nl": "Schakelaar USB-dongle",
+        "fr": "Interrupteur Dongle USB",
+        "de": "Schalter USB-Dongle",
+        "es": "Interruptor Dongle USB"
       },
       "platforms": [
         "local"
@@ -96496,8 +96659,10 @@
     {
       "name": {
         "en": "USB Dongle Triple (3-Port)",
-        "fr": "Dongle USB Triple (3 Ports)",
-        "nl": "USB Dongle Triple (3 Poorten)"
+        "fr": "Dongle USB Triple (3 ports)",
+        "nl": "USB-dongle Triple (3-poorts)",
+        "de": "USB-Dongle Triple (3-Port)",
+        "es": "Dongle USB Triple (3 puertos)"
       },
       "class": "socket",
       "capabilities": [
@@ -96801,7 +96966,8 @@
           "_TZE204_BSEED3G",
           "_tze204_mvtclclq",
           "_TZE204_mvtclclq",
-          "_TZE204_MVTCLCLQ"
+          "_TZE204_MVTCLCLQ",
+          "_TYZB01_vkwryfdr"
         ],
         "productId": [
           "TS0115",
@@ -97683,7 +97849,11 @@
     {
       "id": "wall_curtain_switch",
       "name": {
-        "en": "Wall mounted Curtain Switch"
+        "en": "Wall mounted Curtain Switch",
+        "fr": "Interrupteur mural pour rideaux",
+        "nl": "Wandgordijnschakelaar",
+        "de": "Wandmontierter Vorhangschalter",
+        "es": "Interruptor de cortina de pared"
       },
       "class": "curtain",
       "platforms": [
@@ -97970,7 +98140,11 @@
     {
       "id": "wall_remote_1_gang",
       "name": {
-        "en": "1 Gang Wall Remote"
+        "en": "1 Gang Wall Remote",
+        "fr": "Télécommande murale 1 gang",
+        "nl": "1-gangs wandafstandsbediening",
+        "de": "1-fach Wandfernbedienung",
+        "es": "Mando a distancia de pared 1 gang"
       },
       "class": "remote",
       "platforms": [
@@ -98088,7 +98262,11 @@
     {
       "id": "wall_remote_2_gang",
       "name": {
-        "en": "2 Gang Wall Remote"
+        "en": "2 Gang Wall Remote",
+        "fr": "Télécommande murale 2 gangs",
+        "nl": "2-vaks wandafstandsbediening",
+        "de": "2-fach Wandfernbedienung",
+        "es": "Mando a distancia de pared de 2 grupos"
       },
       "class": "remote",
       "platforms": [
@@ -98240,7 +98418,11 @@
     {
       "id": "wall_remote_3_gang",
       "name": {
-        "en": "3 Gang Wall Remote"
+        "en": "3 Gang Wall Remote",
+        "fr": "Télécommande murale 3 gangs",
+        "nl": "3-voudige wandafstandsbediening",
+        "de": "3-fach Wandfernbedienung",
+        "es": "Mando de pared de 3 grupos"
       },
       "class": "remote",
       "platforms": [
@@ -98389,7 +98571,11 @@
     {
       "id": "wall_remote_4_gang",
       "name": {
-        "en": "4 Gang Wall Remote"
+        "en": "4 Gang Wall Remote",
+        "fr": "Télécommande murale 4 gangs",
+        "nl": "4-vaks wandafstandsbediening",
+        "de": "4-fach Wandfernbedienung",
+        "es": "Mando a distancia de pared de 4 grupos"
       },
       "class": "remote",
       "platforms": [
@@ -98545,7 +98731,11 @@
     {
       "id": "wall_remote_4_gang_2",
       "name": {
-        "en": "4 Gang Wall Remote"
+        "en": "4 Gang Wall Remote",
+        "fr": "Télécommande murale 4 gangs",
+        "nl": "4-vaks wandafstandsbediening",
+        "de": "4-fach Wandfernbedienung",
+        "es": "Mando a distancia de pared de 4 grupos"
       },
       "class": "remote",
       "platforms": [
@@ -98684,7 +98874,11 @@
     {
       "id": "wall_remote_4_gang_3",
       "name": {
-        "en": "4 Gang Wall Remote"
+        "en": "4 Gang Wall Remote",
+        "fr": "Télécommande murale 4 gangs",
+        "nl": "4-vaks wandafstandsbediening",
+        "de": "4-fach Wandfernbedienung",
+        "es": "Mando a distancia de pared de 4 grupos"
       },
       "class": "remote",
       "platforms": [
@@ -98840,7 +99034,11 @@
     {
       "id": "wall_remote_6_gang",
       "name": {
-        "en": "6 Gang Wall Remote"
+        "en": "6 Gang Wall Remote",
+        "fr": "Télécommande murale 6 boutons",
+        "nl": "6-vaks wandafstandsbediening",
+        "de": "6-fach Wandfernbedienung",
+        "es": "Mando a distancia de pared de 6 botones"
       },
       "class": "remote",
       "platforms": [
@@ -99159,7 +99357,10 @@
     {
       "name": {
         "en": "Wall Switch 2-Gang 1-Way (BSEED)",
-        "nl": "Muurschakelaar 2-Gang 1-Weg (BSEED)"
+        "nl": "Wandschakelaar 2-groeps 1-weg (BSEED)",
+        "fr": "Interrupteur mural 2 gangs 1 voie (BSEED)",
+        "de": "Wandschalter 2-fach 1-weg (BSEED)",
+        "es": "Interruptor de pared 2 grupos 1 vía (BSEED)"
       },
       "class": "socket",
       "capabilities": [
@@ -99484,7 +99685,10 @@
     {
       "name": {
         "en": "Wall Switch 3-Gang 1-Way (BSEED)",
-        "nl": "Muurschakelaar 3-Gang 1-Weg (BSEED)"
+        "nl": "Wandschakelaar 3-groep 1-weg (BSEED)",
+        "fr": "Interrupteur mural 3-gang 1-voie (BSEED)",
+        "de": "Wandschalter 3-fach 1-weg (BSEED)",
+        "es": "Interruptor de pared 3-gang 1-vía (BSEED)"
       },
       "class": "socket",
       "capabilities": [
@@ -99846,7 +100050,10 @@
     {
       "name": {
         "en": "Wall Switch 4-Gang 1-Way (BSEED)",
-        "nl": "Muurschakelaar 4-Gang 1-Weg (BSEED)"
+        "nl": "Wandschakelaar 4-groep 1-weg (BSEED)",
+        "fr": "Interrupteur mural 4-gang 1-voie (BSEED)",
+        "de": "Wandschalter 4-fach 1-Wege (BSEED)",
+        "es": "Interruptor de pared 4-gang 1-vía (BSEED)"
       },
       "class": "socket",
       "capabilities": [
@@ -101516,7 +101723,11 @@
     },
     {
       "name": {
-        "en": "WiFi Air Purifier (Tuya Local)"
+        "en": "WiFi Air Purifier (Tuya Local)",
+        "fr": "Purificateur d'air WiFi (Tuya Local)",
+        "nl": "WiFi Luchtreiniger (Tuya Lokaal)",
+        "de": "WiFi Luftreiniger (Tuya Lokal)",
+        "es": "Purificador de aire WiFi (Tuya Local)"
       },
       "class": "fan",
       "capabilities": [
@@ -101643,7 +101854,11 @@
     },
     {
       "name": {
-        "en": "WiFi Air Quality Monitor (Tuya Local)"
+        "en": "WiFi Air Quality Monitor (Tuya Local)",
+        "fr": "Moniteur de qualité d'air WiFi (Tuya Local)",
+        "nl": "WiFi Luchtkwaliteitsmonitor (Tuya Lokaal)",
+        "de": "WiFi Luftqualitätsmonitor (Tuya Lokal)",
+        "es": "Monitor de calidad del aire WiFi (Tuya Local)"
       },
       "class": "sensor",
       "capabilities": [
@@ -101769,7 +101984,11 @@
     },
     {
       "name": {
-        "en": "WiFi Camera (Tuya Local)"
+        "en": "WiFi Camera (Tuya Local)",
+        "fr": "Caméra WiFi (Tuya Local)",
+        "nl": "WiFi-camera (Tuya Lokaal)",
+        "de": "WiFi-Kamera (Tuya Lokal)",
+        "es": "Cámara WiFi (Tuya Local)"
       },
       "class": "camera",
       "capabilities": [
@@ -102069,7 +102288,11 @@
     },
     {
       "name": {
-        "en": "WiFi Curtain Motor (Tuya Local)"
+        "en": "WiFi Curtain Motor (Tuya Local)",
+        "fr": "Moteur de rideau WiFi (Tuya Local)",
+        "nl": "WiFi Gordijnmotor (Tuya Lokaal)",
+        "de": "WiFi-Vorhangmotor (Tuya Lokal)",
+        "es": "Motor de cortina WiFi (Tuya Local)"
       },
       "class": "curtain",
       "capabilities": [
@@ -102193,7 +102416,11 @@
     },
     {
       "name": {
-        "en": "WiFi Dehumidifier (Tuya Local)"
+        "en": "WiFi Dehumidifier (Tuya Local)",
+        "fr": "Déshumidificateur WiFi (Tuya Local)",
+        "nl": "WiFi Luchtontvochtiger (Tuya Lokaal)",
+        "de": "WiFi-Luftentfeuchter (Tuya Lokal)",
+        "es": "Deshumidificador WiFi (Tuya Local)"
       },
       "class": "fan",
       "capabilities": [
@@ -102320,7 +102547,11 @@
     },
     {
       "name": {
-        "en": "WiFi Dimmer (Tuya Local)"
+        "en": "WiFi Dimmer (Tuya Local)",
+        "fr": "Variateur WiFi (Tuya Local)",
+        "nl": "WiFi Dimmer (Tuya Lokaal)",
+        "de": "WiFi-Dimmer (Tuya Lokal)",
+        "es": "Regulador WiFi (Tuya Local)"
       },
       "class": "light",
       "capabilities": [
@@ -102444,7 +102675,11 @@
     },
     {
       "name": {
-        "en": "WiFi Door Lock (Tuya Local)"
+        "en": "WiFi Door Lock (Tuya Local)",
+        "fr": "Serrure de porte WiFi (Tuya Local)",
+        "nl": "WiFi deurslot (Tuya Local)",
+        "de": "WiFi-Türschloss (Tuya Local)",
+        "es": "Cerradura de puerta WiFi (Tuya Local)"
       },
       "class": "lock",
       "capabilities": [
@@ -102576,7 +102811,11 @@
     },
     {
       "name": {
-        "en": "WiFi Doorbell / Camera (Tuya Local)"
+        "en": "WiFi Doorbell / Camera (Tuya Local)",
+        "fr": "Sonnette WiFi / Caméra (Tuya Local)",
+        "nl": "WiFi Deurbel / Camera (Tuya Lokaal)",
+        "de": "WiFi Türklingel / Kamera (Tuya Lokal)",
+        "es": "Timbre WiFi / Cámara (Tuya Local)"
       },
       "class": "doorbell",
       "capabilities": [
@@ -102700,7 +102939,11 @@
     },
     {
       "name": {
-        "en": "eWeLink Bulb (SONOFF B02/B05)"
+        "en": "eWeLink Bulb (SONOFF B02/B05)",
+        "fr": "Ampoule eWeLink (SONOFF B02/B05)",
+        "nl": "eWeLink Lamp (SONOFF B02/B05)",
+        "de": "eWeLink Glühbirne (SONOFF B02/B05)",
+        "es": "Bombilla eWeLink (SONOFF B02/B05)"
       },
       "class": "light",
       "capabilities": [
@@ -102800,7 +103043,11 @@
     },
     {
       "name": {
-        "en": "eWeLink Dimmer (SONOFF D1)"
+        "en": "eWeLink Dimmer (SONOFF D1)",
+        "fr": "Variateur eWeLink (SONOFF D1)",
+        "nl": "eWeLink Dimmer (SONOFF D1)",
+        "de": "eWeLink Dimmer (SONOFF D1)",
+        "es": "Regulador eWeLink (SONOFF D1)"
       },
       "class": "light",
       "capabilities": [
@@ -102899,7 +103146,11 @@
     },
     {
       "name": {
-        "en": "eWeLink Fan Controller (SONOFF iFan)"
+        "en": "eWeLink Fan Controller (SONOFF iFan)",
+        "fr": "Contrôleur de ventilateur eWeLink (SONOFF iFan)",
+        "nl": "eWeLink Ventilatorcontroller (SONOFF iFan)",
+        "de": "eWeLink Lüftersteuerung (SONOFF iFan)",
+        "es": "Controlador de ventilador eWeLink (SONOFF iFan)"
       },
       "class": "fan",
       "capabilities": [
@@ -103016,7 +103267,11 @@
     },
     {
       "name": {
-        "en": "eWeLink LED Strip (SONOFF L1/L2)"
+        "en": "eWeLink LED Strip (SONOFF L1/L2)",
+        "fr": "Ruban LED eWeLink (SONOFF L1/L2)",
+        "nl": "eWeLink LED-strip (SONOFF L1/L2)",
+        "de": "eWeLink LED-Streifen (SONOFF L1/L2)",
+        "es": "Tira LED eWeLink (SONOFF L1/L2)"
       },
       "class": "light",
       "capabilities": [
@@ -103115,7 +103370,11 @@
     },
     {
       "name": {
-        "en": "eWeLink Plug (SONOFF)"
+        "en": "eWeLink Plug (SONOFF)",
+        "fr": "Prise eWeLink (SONOFF)",
+        "nl": "eWeLink Stekker (SONOFF)",
+        "de": "eWeLink Steckdose (SONOFF)",
+        "es": "Enchufe eWeLink (SONOFF)"
       },
       "class": "socket",
       "capabilities": [
@@ -103213,7 +103472,11 @@
     },
     {
       "name": {
-        "en": "eWeLink Power Monitor (SONOFF)"
+        "en": "eWeLink Power Monitor (SONOFF)",
+        "fr": "Moniteur de puissance eWeLink (SONOFF)",
+        "nl": "eWeLink Stroommonitor (SONOFF)",
+        "de": "eWeLink Leistungsmonitor (SONOFF)",
+        "es": "Monitor de potencia eWeLink (SONOFF)"
       },
       "class": "socket",
       "capabilities": [
@@ -103314,7 +103577,11 @@
     },
     {
       "name": {
-        "en": "eWeLink Switch (SONOFF)"
+        "en": "eWeLink Switch (SONOFF)",
+        "fr": "Interrupteur eWeLink (SONOFF)",
+        "nl": "eWeLink Schakelaar (SONOFF)",
+        "de": "eWeLink Schalter (SONOFF)",
+        "es": "Interruptor eWeLink (SONOFF)"
       },
       "class": "socket",
       "capabilities": [
@@ -103412,7 +103679,11 @@
     },
     {
       "name": {
-        "en": "eWeLink Switch 2-Channel (SONOFF)"
+        "en": "eWeLink Switch 2-Channel (SONOFF)",
+        "fr": "Interrupteur eWeLink 2 canaux (SONOFF)",
+        "nl": "eWeLink Schakelaar 2-kanaals (SONOFF)",
+        "de": "eWeLink Schalter 2-Kanal (SONOFF)",
+        "es": "Interruptor eWeLink 2 canales (SONOFF)"
       },
       "class": "socket",
       "capabilities": [
@@ -103523,7 +103794,11 @@
     },
     {
       "name": {
-        "en": "eWeLink Switch 4-Channel (SONOFF)"
+        "en": "eWeLink Switch 4-Channel (SONOFF)",
+        "fr": "Interrupteur eWeLink 4 canaux (SONOFF)",
+        "nl": "eWeLink Schakelaar 4-kanaals (SONOFF)",
+        "de": "eWeLink Schalter 4-Kanal (SONOFF)",
+        "es": "Interruptor eWeLink 4 canales (SONOFF)"
       },
       "class": "socket",
       "capabilities": [
@@ -103646,7 +103921,11 @@
     },
     {
       "name": {
-        "en": "eWeLink TH Sensor Switch (SONOFF)"
+        "en": "eWeLink TH Sensor Switch (SONOFF)",
+        "fr": "Interrupteur capteur TH eWeLink (SONOFF)",
+        "nl": "eWeLink TH-sensorswitch (SONOFF)",
+        "de": "eWeLink TH-Sensor-Schalter (SONOFF)",
+        "es": "Interruptor sensor TH eWeLink (SONOFF)"
       },
       "class": "socket",
       "capabilities": [
@@ -103746,7 +104025,11 @@
     },
     {
       "name": {
-        "en": "WiFi Fan (Tuya Local)"
+        "en": "WiFi Fan (Tuya Local)",
+        "fr": "Ventilateur WiFi (Tuya Local)",
+        "nl": "WiFi Ventilator (Tuya Lokaal)",
+        "de": "WiFi Ventilator (Tuya Lokal)",
+        "es": "Ventilador WiFi (Tuya Local)"
       },
       "class": "fan",
       "capabilities": [
@@ -103870,7 +104153,11 @@
     },
     {
       "name": {
-        "en": "WiFi Garage Door (Tuya Local)"
+        "en": "WiFi Garage Door (Tuya Local)",
+        "fr": "Porte de garage WiFi (Tuya Local)",
+        "nl": "WiFi Garagedeur (Tuya Lokaal)",
+        "de": "WiFi Garagentor (Tuya Lokal)",
+        "es": "Puerta de garaje WiFi (Tuya Local)"
       },
       "class": "garagedoor",
       "capabilities": [
@@ -104290,7 +104577,11 @@
     },
     {
       "name": {
-        "en": "WiFi Humidifier (Tuya Local)"
+        "en": "WiFi Humidifier (Tuya Local)",
+        "fr": "Humidificateur WiFi (Tuya Local)",
+        "nl": "WiFi Luchtbevochtiger (Tuya Lokaal)",
+        "de": "WiFi-Luftbefeuchter (Tuya Lokal)",
+        "es": "Humidificador WiFi (Tuya Local)"
       },
       "class": "fan",
       "capabilities": [
@@ -104416,7 +104707,11 @@
     },
     {
       "name": {
-        "en": "WiFi IR Remote (Tuya Local)"
+        "en": "WiFi IR Remote (Tuya Local)",
+        "fr": "Télécommande IR WiFi (Tuya Local)",
+        "nl": "WiFi IR-afstandsbediening (Tuya Lokaal)",
+        "de": "WiFi IR-Fernbedienung (Tuya Lokal)",
+        "es": "Control remoto IR WiFi (Tuya Local)"
       },
       "class": "remote",
       "capabilities": [
@@ -104539,7 +104834,11 @@
     },
     {
       "name": {
-        "en": "WiFi LED Strip RGBCW (Tuya Local)"
+        "en": "WiFi LED Strip RGBCW (Tuya Local)",
+        "fr": "Ruban LED WiFi RGBCW (Tuya Local)",
+        "nl": "WiFi LED Strip RGBCW (Tuya Lokaal)",
+        "de": "WiFi LED-Streifen RGBCW (Tuya Lokal)",
+        "es": "Tira LED WiFi RGBCW (Tuya Local)"
       },
       "class": "light",
       "capabilities": [
@@ -104667,7 +104966,11 @@
     },
     {
       "name": {
-        "en": "WiFi Light RGBCW (Tuya Local)"
+        "en": "WiFi Light RGBCW (Tuya Local)",
+        "fr": "Lumière WiFi RGBCW (Tuya Local)",
+        "nl": "WiFi-lamp RGBCW (Tuya Lokaal)",
+        "de": "WiFi-Licht RGBCW (Tuya Lokal)",
+        "es": "Luz WiFi RGBCW (Tuya Local)"
       },
       "class": "light",
       "capabilities": [
@@ -104795,7 +105098,11 @@
     },
     {
       "name": {
-        "en": "WiFi Pet Feeder (Tuya Local)"
+        "en": "WiFi Pet Feeder (Tuya Local)",
+        "fr": "Distributeur de nourriture pour animaux WiFi (Tuya Local)",
+        "nl": "WiFi Dierenvoederautomaat (Tuya Lokaal)",
+        "de": "WiFi-Tierfutterautomat (Tuya Lokal)",
+        "es": "Dispensador de comida para mascotas WiFi (Tuya Local)"
       },
       "class": "other",
       "capabilities": [
@@ -104925,7 +105232,11 @@
     },
     {
       "name": {
-        "en": "WiFi Smart Plug (Tuya Local)"
+        "en": "WiFi Smart Plug (Tuya Local)",
+        "fr": "Prise intelligente WiFi (Tuya Local)",
+        "nl": "WiFi slimme stekker (Tuya Local)",
+        "de": "WiFi Smart Plug (Tuya Local)",
+        "es": "Enchufe inteligente WiFi (Tuya Local)"
       },
       "class": "socket",
       "capabilities": [
@@ -105052,7 +105363,11 @@
     },
     {
       "name": {
-        "en": "WiFi Power Strip (Tuya Local)"
+        "en": "WiFi Power Strip (Tuya Local)",
+        "fr": "Multiprise WiFi (Tuya Local)",
+        "nl": "WiFi-stekkerdoos (Tuya Lokaal)",
+        "de": "WiFi-Steckdosenleiste (Tuya Lokal)",
+        "es": "Regleta WiFi (Tuya Local)"
       },
       "class": "socket",
       "capabilities": [
@@ -105202,7 +105517,11 @@
     },
     {
       "name": {
-        "en": "WiFi Robot Vacuum (Tuya Local)"
+        "en": "WiFi Robot Vacuum (Tuya Local)",
+        "fr": "Aspirateur robot WiFi (Tuya Local)",
+        "nl": "WiFi Robotstofzuiger (Tuya Lokaal)",
+        "de": "WiFi-Saugroboter (Tuya Lokal)",
+        "es": "Aspiradora robot WiFi (Tuya Local)"
       },
       "class": "vacuumcleaner",
       "capabilities": [
@@ -105333,7 +105652,11 @@
     },
     {
       "name": {
-        "en": "WiFi Sensor (Tuya Local)"
+        "en": "WiFi Sensor (Tuya Local)",
+        "fr": "Capteur WiFi (Tuya Local)",
+        "nl": "WiFi-sensor (Tuya Lokaal)",
+        "de": "WiFi-Sensor (Tuya Lokal)",
+        "es": "Sensor WiFi (Tuya Local)"
       },
       "class": "sensor",
       "capabilities": [
