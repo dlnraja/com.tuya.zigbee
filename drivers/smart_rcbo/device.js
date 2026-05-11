@@ -1,5 +1,5 @@
 'use strict';
-constPlugBase = require('../../lib/devices/HybridPlugBase');
+const PlugBase = require('../../lib/devices/HybridPlugBase');
 
 class SmartRCBODevice extends PlugBase {
   get plugCapabilities() { return ['onoff', 'measure_power', 'meter_power']; }

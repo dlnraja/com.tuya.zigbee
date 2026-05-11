@@ -1,6 +1,7 @@
 'use strict';
 
 const {SensorBase } = require('../../lib/devices/HybridSensorBase');
+const { containsCI, normalize } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
@@ -1522,7 +1523,7 @@ const SENSOR_CONFIGS = {
 const MANUFACTURER_CONFIG_MAP = {};
 for (const [configName, config] of Object.entries(SENSOR_CONFIGS)) {
   for (const mfr of config.sensors) {
-    MANUFACTURER_CONFIG_MAP[mfr.toLowerCase()] = { ...config, configName };
+    MANUFACTURER_CONFIG_MAP[normalize(mfr)] = { ...config, configName };
   }
 }
 
@@ -1573,7 +1574,7 @@ function getSensorConfig(manufacturerName, modelId = null) {
 
   // Try exact match first (case-insensitive)
   // v5.7.41: FIX - Device reports _TZ3000_8BXRZYXZ but config has _TZ3000_8bxrzyxz
-  const mfrKey = manufacturerName?.toLowerCase() || '';
+  const mfrKey = normalize(manufacturerName);
   if (MANUFACTURER_CONFIG_MAP[mfrKey]) {
     return MANUFACTURER_CONFIG_MAP[mfrKey];
   }
@@ -1581,11 +1582,9 @@ function getSensorConfig(manufacturerName, modelId = null) {
   // v5.5.286: Pattern matching for TZE284_iadro9bf variants
   // Ronny report: manufacturerName can be empty or slightly different
   if (manufacturerName) {
-    const mfrLower = manufacturerName.toLowerCase();
-
     // Match TZE284/TZE204 iadro9bf variants (presence inversion needed)
-    if (mfrLower.includes('iadro9bf') || mfrLower.includes('qasjif9e') ||
-      mfrLower.includes('ztqnh5cg') || mfrLower.includes('sbyx0lm6')) {
+    if (containsCI(manufacturerName, 'iadro9bf') || containsCI(manufacturerName, 'qasjif9e') ||
+      containsCI(manufacturerName, 'ztqnh5cg') || containsCI(manufacturerName, 'sbyx0lm6')) {
       console.log(`[RADAR] 🔍 Pattern match: ${manufacturerName} → TZE284_IADRO9BF config`);
       return { ...SENSOR_CONFIGS.TZE284_IADRO9BF, configName: 'TZE284_IADRO9BF' };
     }
@@ -1665,7 +1664,7 @@ function transformPresence(value, type, invertPresence = false, configName = '')
 // Solution: Require 3 consecutive same-state reports AND minimum time gap
 // Also add hysteresis: harder to turn ON than to turn OFF
 function debouncePresence(presence, manufacturerName, deviceId) {
-  if (!deviceId || !(manufacturerName || '').toLowerCase().includes('gkfbdvyx')) {
+  if (!deviceId || !containsCI(manufacturerName, 'gkfbdvyx')) {
     return presence;  // No debouncing for other devices
   }
 
@@ -1829,11 +1828,10 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
   let maxLux = 10000;  // Default high limit - don't clamp unless really needed
 
   // v5.5.316: Only apply strict 2000 limit for KNOWN ZY-M100 series sensors
-  const mfrLower = (manufacturerName || '').toLowerCase();
-  const isZYM100Series = mfrLower.includes('iadro9bf') ||
-    mfrLower.includes('gkfbdvyx') ||
-    mfrLower.includes('qasjif9e') ||
-    mfrLower.includes('sxm7l9xa');
+  const isZYM100Series = containsCI(manufacturerName, 'iadro9bf') ||
+    containsCI(manufacturerName, 'gkfbdvyx') ||
+    containsCI(manufacturerName, 'qasjif9e') ||
+    containsCI(manufacturerName, 'sxm7l9xa');
   if (isZYM100Series) {
     maxLux = 2000;  // ZY-M100 confirmed 0-2000 lux range
   }
@@ -1894,7 +1892,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
 
         if (state.extremeCount >= 1) {
           // v5.5.326: RONNY #760 - Ultra-aggressive lock for iadro9bf (2 minutes)
-          const isIadro9bf = (manufacturerName || '').toLowerCase().includes('iadro9bf');
+          const isIadro9bf = containsCI(manufacturerName, 'iadro9bf');
           const lockDuration = isIadro9bf ? 120000 : 60000;  // 2min for iadro9bf, 1min for others
           state.stableLux = Math.min(state.lastLux, lux);
           state.lockedUntil = now + lockDuration;
@@ -2076,7 +2074,6 @@ class PresenceSensorRadarDevice extends SensorBase {
     // v5.8.77: Added zclNode.modelId + _cachedModelId — fixes HOBEIAN ZG-204ZM wrong config
     const settings = this.getSettings() || {};
     const modelId = settings.zb_model_id 
-      || settings.zb_modelId 
       || this.getData()?.modelId
       || this.getData()?.productId
       || this.getStoreValue?.('modelId')

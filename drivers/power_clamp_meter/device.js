@@ -1,6 +1,8 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { parsePhaseVariant2WithPhase } = require('../../lib/tuya/TuyaDataPointsZ2M');
 
 /**
  * CT Clamp Power Meter Device
@@ -179,7 +181,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       '_TZE200_81yrt3lo',                       // Older variant (Z2M #18432)
       '_TZE204_cjbofhxw', '_TZE284_cjbofhxw'   // Matsee Plus variant (Z2M #15359)
     ];
-    return pj1203aIds.some(id => mfr.toLowerCase().includes(id.toLowerCase())) ? 'pj1203a' : '3phase';
+    return pj1203aIds.some(id => containsCI(mfr, id)) ? 'pj1203a' : '3phase';
   }
 
   _handleDP(dp, value) {
@@ -198,6 +200,39 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     }
     const profile = this.meterProfile;
     this.log(`[DP${dp}] = ${value} (profile: ${profile})`);
+
+    // Intercept Base64 encoded telemetry on DP 115, 116, 117 (Owon PC311-Z-TY / bidirectional variants)
+    if ((dp === 115 || dp === 116 || dp === 117) && (typeof value === 'string' || Buffer.isBuffer(value))) {
+      const base64Str = Buffer.isBuffer(value) ? value.toString('base64') : value;
+      if (base64Str && !/^\d+$/.test(base64Str)) {
+        try {
+          const phaseLabel = dp === 115 ? 'a' : (dp === 116 ? 'b' : 'c');
+          const phaseNum = dp === 115 ? '1' : (dp === 116 ? '2' : '3');
+          const decoded = parsePhaseVariant2WithPhase(base64Str, phaseLabel);
+          
+          const voltage = decoded[`voltage_${phaseLabel}`];
+          const current = decoded[`current_${phaseLabel}`];
+          const power = decoded[`power_${phaseLabel}`];
+          
+          this.log(`[DECODER] Decoded DP ${dp} (Phase ${phaseLabel.toUpperCase()}): Power=${power}W, Voltage=${voltage}V, Current=${current}A`);
+          
+          if (this.hasCapability(`measure_power.phase${phaseNum}`)) {
+            this.setCapabilityValue(`measure_power.phase${phaseNum}`, power).catch(this.error);
+          }
+          
+          // Re-calculate and set total power
+          this._updateTotalPower().catch(this.error);
+          
+          if (dp === 115) {
+            this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
+            this.setCapabilityValue('measure_current', current).catch(this.error);
+          }
+          return; // Skip normal DP processing for this packet
+        } catch (err) {
+          this.error(`[DECODER] Failed to decode DP ${dp} base64 telemetry:`, err.message);
+        }
+      }
+    }
 
     // ═══════════════════════════════════════════════════════════════════
     // v5.7.5: PJ-1203A 2-CHANNEL BIDIRECTIONAL (FIXED per Z2M #18419)

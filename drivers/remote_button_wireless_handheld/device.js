@@ -613,10 +613,8 @@ class Button4GangDevice extends ButtonDevice {
       ];
       
       // Check if this is TS0044 product (uses 4 endpoints with cluster 57344)
-      const pidLower = (productId || '').toLowerCase();
-      const mfrLower = (manufacturerName || '').toLowerCase();
-      const isTS0044 = pidLower.includes('ts0044') || pidLower.includes('ts004f');
-      const usesE000ByManufacturer = knownE000Devices.some(id => mfrLower.includes(id.toLowerCase()));
+      const isTS0044 = containsCI(productId, 'ts0044') || containsCI(productId, 'ts004f');
+      const usesE000ByManufacturer = knownE000Devices.some(id => containsCI(manufacturerName, id));
 
       // v5.7.35: FREDDYBOY FIX - ALWAYS setup E000 BoundCluster for ALL 4-button devices
       // Many MOES/Tuya variants use cluster 57344 but aren't in the known list

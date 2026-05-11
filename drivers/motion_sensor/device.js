@@ -3,6 +3,7 @@
 const {SensorBase } = require('../../lib/devices/HybridSensorBase');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const { MotionLuxInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
+const { containsCI, startsWithCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
@@ -171,19 +172,15 @@ class MotionSensorDevice extends SensorBase {
     // Root cause (diag e2148e06): getData()?.manufacturerName was undefined for _TZE200_3towulqd
     // v5.8.77: Added zclNode + cached sources — fixes DEFAULT profile on first init
     const mfr = this.getSetting?.('zb_manufacturer_name')
-      || this.getSetting?.('zb_manufacturerName')
       || this.getStoreValue?.('manufacturerName')
       || this.getData()?.manufacturerName
       || this.zclNode?.manufacturerName
       || this._cachedManufacturerName
       || '';
-    const mfrLower = mfr.toLowerCase();
     
-    // v5.5.992: CRITICAL FIX - Check for VARIANT manufacturers FIRST
-    // These have multiple hardware variants with same manufacturerName
-    // Return PERMISSIVE profile that accepts all DP types
+    // v5.5.992: Check for VARIANT manufacturers FIRST
     const isVariant = MotionSensorDevice.VARIANT_MANUFACTURERS.some(v => 
-      mfrLower.includes(v.toLowerCase())
+      containsCI(mfr, v)
     );
     
     if (isVariant) {
@@ -217,7 +214,7 @@ class MotionSensorDevice extends SensorBase {
     
     for (const [profileName, profile] of Object.entries(MotionSensorDevice.MANUFACTURER_DP_PROFILES)) {
       for (const pattern of profile.patterns) {
-        if (mfrLower.includes(pattern.toLowerCase()) || mfr.includes(pattern)) {
+        if (containsCI(mfr, pattern)) {
           if (!this._profileMatchLogged) {
             this.log(`[MOTION-DP] 🎯 Matched profile: ${profileName} (pattern: ${pattern})`);
             this._profileMatchLogged = true;
@@ -802,11 +799,10 @@ class MotionSensorDevice extends SensorBase {
     // v5.5.925: Check if this is a variant manufacturer (may have temp/humidity)
     // v5.8.53: Use comprehensive fallback chain (matching _getManufacturerProfile fix)
     const manufacturerName = this.getSetting?.('zb_manufacturer_name')
-      || this.getSetting?.('zb_manufacturerName')
       || this.getStoreValue?.('manufacturerName')
       || this.getData()?.manufacturerName || '';
     const isVariant = MotionSensorDevice.VARIANT_MANUFACTURERS.some(v => 
-      manufacturerName.toLowerCase().includes(v.toLowerCase())
+      containsCI(manufacturerName, v)
     );
     const isPirOnly = MotionSensorDevice.PIR_ONLY_MANUFACTURERS.includes(manufacturerName);
 
@@ -1175,16 +1171,14 @@ class MotionSensorDevice extends SensorBase {
   async _setupTuyaDPPolling(zclNode) {
     // v5.8.53: Use comprehensive fallback chain
     const mfr = this.getSetting?.('zb_manufacturer_name')
-      || this.getSetting?.('zb_manufacturerName')
       || this.getStoreValue?.('manufacturerName')
       || this.getData()?.manufacturerName || '';
     const modelId = this.getSetting?.('zb_model_id')
-      || this.getSetting?.('zb_modelId')
       || this.getStoreValue?.('modelId')
       || this.getData()?.modelId || '';
     
     // Only for TS0601 Tuya DP devices (variants that may have temp/humidity)
-    const isTuyaDP = modelId === 'TS0601' || mfr.toLowerCase().startsWith('_tze');
+    const isTuyaDP = modelId === 'TS0601' || startsWithCI(mfr, '_tze');
     if (!isTuyaDP) {
       this.log('[MOTION-DP] Not a Tuya DP device, skipping DP polling');
       return;
@@ -1192,7 +1186,7 @@ class MotionSensorDevice extends SensorBase {
 
     // Check if this is a variant manufacturer (may have temp/humidity)
     const isVariant = MotionSensorDevice.VARIANT_MANUFACTURERS.some(v => 
-      mfr.toLowerCase().includes(v.toLowerCase())
+      containsCI(mfr, v)
     );
     
     this.log(`[MOTION-DP] 🔄 Setting up DP polling for ${mfr} (variant=${isVariant})`);

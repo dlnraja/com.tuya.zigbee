@@ -1,5 +1,6 @@
 'use strict';
-constPlugBase = require('../../lib/devices/HybridPlugBase');
+const PlugBase = require('../../lib/devices/HybridPlugBase');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -22,13 +23,13 @@ class ValveIrrigationDevice extends PlugBase {
    * v5.11.210: Detect Insoma 2-way irrigation valve for dual-valve DP mapping
    */
   get isInsoma() {
-    const mfr = (this.getSetting('zb_manufacturer_name') || '').toLowerCase();
-    return INSOMA_MFRS.some(m => mfr.includes(m));
+    const mfr = this.getSetting('zb_manufacturer_name') || '';
+    return INSOMA_MFRS.some(m => containsCI(mfr, m));
   }
 
   get dpMappings() {
-    const mfr = (this.getSetting('zb_manufacturer_name') || '').toLowerCase();
-    const isImmax = IMMAX_MFRS.some(m => mfr.includes(m));
+    const mfr = this.getSetting('zb_manufacturer_name') || '';
+    const isImmax = IMMAX_MFRS.some(m => containsCI(mfr, m));
 
     // v5.11.210: Insoma 2-way valve uses DP 1 (valve1) + DP 2 (valve2) + DP 13 (battery)
     if (this.isInsoma) {

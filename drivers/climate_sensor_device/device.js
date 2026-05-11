@@ -1,8 +1,9 @@
 'use strict';
-constThermostatBase = require('../../lib/devices/HybridThermostatBase');
+const ThermostatBase = require('../../lib/devices/HybridThermostatBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const setupSonoffTRVZB = require('../../lib/mixins/SonoffTRVZBMixin');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -26,15 +27,15 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridT
   get dpProfile() {
     const mfr = this.getSetting('zb_manufacturer_name') || this.getStoreValue('manufacturerName') || '';
     const me167Ids = [
-      '_TZE284_o3x45p96', '_tze284_o3x45p96',
-      '_TZE284_p3dbf6qs', '_tze284_p3dbf6qs',
-      '_TZE200_p3dbf6qs', '_tze200_p3dbf6qs',
-      '_TZE284_rv6iuyxb', '_tze284_rv6iuyxb',
-      '_TZE284_c6wv4xyo', '_tze284_c6wv4xyo',
-      '_TZE284_hvaxb2tc', '_tze284_hvaxb2tc',
-      '_TZE204_o3x45p96', '_tze204_o3x45p96'
+      '_TZE284_o3x45p96',
+      '_TZE284_p3dbf6qs',
+      '_TZE200_p3dbf6qs',
+      '_TZE284_rv6iuyxb',
+      '_TZE284_c6wv4xyo',
+      '_TZE284_hvaxb2tc',
+      '_TZE204_o3x45p96'
     ];
-    return me167Ids.some(id => mfr.toLowerCase().includes(id.toLowerCase())) ? 'me167' : 'standard';
+    return me167Ids.some(id => containsCI(mfr, id)) ? 'me167' : 'standard';
   }
 
   get dpMappings() {

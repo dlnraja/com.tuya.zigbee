@@ -1,6 +1,7 @@
 'use strict';
 
 const {SensorBase } = require('../../lib/devices/HybridSensorBase');
+const { startsWithCI, normalize } = require('../../lib/utils/CaseInsensitiveMatcher');
 const IASAlarmFallback = require('../../lib/IASAlarmFallback');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const { getModelId, getManufacturer } = require('../../lib/helpers/DeviceDataHelper');
@@ -177,15 +178,15 @@ class WaterLeakSensorDevice extends SensorBase {
     }
 
     // Try lowercase match
-    const mfrLower = mfr.toLowerCase();
+    const mfrNorm = normalize(mfr);
     for (const [key, profile] of Object.entries(WATER_SENSOR_PROFILES)) {
-      if (key.toLowerCase() === mfrLower) {
+      if (normalize(key) === mfrNorm) {
         return { ...profile, matchedBy: 'manufacturerName_lowercase', mfr };
       }
     }
 
     // Try partial match for _TZ3000_* pattern (case-insensitive)
-    if (mfr.toLowerCase().startsWith('_tz3000_')) {
+    if (startsWithCI(mfr, '_tz3000_')) {
       return {
         ...WATER_SENSOR_PROFILES['default'],
         type: 'ias_zone',
@@ -195,7 +196,7 @@ class WaterLeakSensorDevice extends SensorBase {
     }
 
     // Try partial match for _TZE* pattern (Tuya DP, case-insensitive)
-    if (mfr.toLowerCase().startsWith('_tze')) {
+    if (startsWithCI(mfr, '_tze')) {
       return {
         ...WATER_SENSOR_PROFILES['default'],
         type: 'tuya_dp',

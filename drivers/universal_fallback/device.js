@@ -38,7 +38,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
     this.log('[UNIVERSAL] 🔧 Universal Fallback Device v5.8.6 (Z2M Enhanced)');
     
     const mfr = this.getSetting('zb_manufacturer_name') || 'Unknown';
-    const model = this.getSetting('zb_model_id') || this.getSetting('zb_modelId') || 'Unknown';
+    const model = this.getSetting('zb_model_id') || 'Unknown';
     this.log('[UNIVERSAL] Device: ' + mfr + ' / ' + model);
 
     this._detectedCaps = [];

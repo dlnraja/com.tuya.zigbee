@@ -1,5 +1,5 @@
 'use strict';
-constPlugBase = require('../../lib/devices/HybridPlugBase');
+const PlugBase = require('../../lib/devices/HybridPlugBase');
 
 class DoorControllerDevice extends PlugBase {
   get plugCapabilities() { return ['onoff', 'garagedoor_closed']; }

@@ -1,6 +1,6 @@
 'use strict';
 
-constPlugBase = require('../../lib/devices/HybridPlugBase');
+const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
 const { setupSonoffEnergy } = require('../../lib/mixins/SonoffEnergyMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
