@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "eWeLink TH Sensor Switch (SONOFF)"
+    "en": "eWeLink TH Sensor Switch (SONOFF)",
+    "fr": "Interrupteur capteur TH eWeLink (SONOFF)",
+    "nl": "eWeLink TH-sensorswitch (SONOFF)",
+    "de": "eWeLink TH-Sensor-Schalter (SONOFF)",
+    "es": "Interruptor sensor TH eWeLink (SONOFF)"
   },
   "class": "socket",
   "capabilities": [

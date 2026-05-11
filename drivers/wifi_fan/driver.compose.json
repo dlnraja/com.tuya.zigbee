@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "WiFi Fan (Tuya Local)"
+    "en": "WiFi Fan (Tuya Local)",
+    "fr": "Ventilateur WiFi (Tuya Local)",
+    "nl": "WiFi Ventilator (Tuya Lokaal)",
+    "de": "WiFi Ventilator (Tuya Lokal)",
+    "es": "Ventilador WiFi (Tuya Local)"
   },
   "class": "fan",
   "capabilities": [

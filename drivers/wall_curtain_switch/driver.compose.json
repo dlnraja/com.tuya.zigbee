@@ -1,7 +1,11 @@
 {
   "id": "wallcurtainswitch",
   "name": {
-    "en": "Wall mounted Curtain Switch"
+    "en": "Wall mounted Curtain Switch",
+    "fr": "Interrupteur mural pour rideaux",
+    "nl": "Wandgordijnschakelaar",
+    "de": "Wandmontierter Vorhangschalter",
+    "es": "Interruptor de cortina de pared"
   },
   "class": "curtain",
   "platforms": [

@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "eWeLink Switch (SONOFF)"
+    "en": "eWeLink Switch (SONOFF)",
+    "fr": "Interrupteur eWeLink (SONOFF)",
+    "nl": "eWeLink Schakelaar (SONOFF)",
+    "de": "eWeLink Schalter (SONOFF)",
+    "es": "Interruptor eWeLink (SONOFF)"
   },
   "class": "socket",
   "capabilities": [

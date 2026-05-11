@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "eWeLink Power Monitor (SONOFF)"
+    "en": "eWeLink Power Monitor (SONOFF)",
+    "fr": "Moniteur de puissance eWeLink (SONOFF)",
+    "nl": "eWeLink Stroommonitor (SONOFF)",
+    "de": "eWeLink Leistungsmonitor (SONOFF)",
+    "es": "Monitor de potencia eWeLink (SONOFF)"
   },
   "class": "socket",
   "capabilities": [

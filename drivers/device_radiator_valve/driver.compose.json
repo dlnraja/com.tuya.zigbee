@@ -1,8 +1,10 @@
 {
   "name": {
     "en": "Device Radiator Valve",
-    "nl": "Device Radiator Valve",
-    "fr": "Device Radiator Valve"
+    "nl": "Radiatorkraan",
+    "fr": "Vanne de radiateur",
+    "de": "Heizkörperventil",
+    "es": "Válvula de radiador"
   },
   "class": "thermostat",
   "capabilities": [

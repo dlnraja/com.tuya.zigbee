@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-04T06:30:05.787Z",
+  "ts": "2026-05-11T04:51:47.083Z",
   "correlations": [],
   "actionable": [
     {
@@ -94,17 +94,7 @@
     }
   ],
   "mainsBatteryIssues": [
-    "air_quality_comprehensive",
-    "ceiling_fan",
-    "climate_sensor",
-    "formaldehyde_sensor",
-    "gas_detector",
-    "gas_sensor",
-    "hvac_air_conditioner",
-    "hvac_dehumidifier",
-    "ir_blaster",
-    "ir_remote",
-    "smart_heater",
+    "sensor_climate_contact",
     "smoke_detector_advanced",
     "soil_sensor"
   ]

@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "eWeLink Plug (SONOFF)"
+    "en": "eWeLink Plug (SONOFF)",
+    "fr": "Prise eWeLink (SONOFF)",
+    "nl": "eWeLink Stekker (SONOFF)",
+    "de": "eWeLink Steckdose (SONOFF)",
+    "es": "Enchufe eWeLink (SONOFF)"
   },
   "class": "socket",
   "capabilities": [

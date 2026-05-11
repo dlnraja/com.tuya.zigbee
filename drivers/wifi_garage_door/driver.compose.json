@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "WiFi Garage Door (Tuya Local)"
+    "en": "WiFi Garage Door (Tuya Local)",
+    "fr": "Porte de garage WiFi (Tuya Local)",
+    "nl": "WiFi Garagedeur (Tuya Lokaal)",
+    "de": "WiFi Garagentor (Tuya Lokal)",
+    "es": "Puerta de garaje WiFi (Tuya Local)"
   },
   "class": "garagedoor",
   "capabilities": [

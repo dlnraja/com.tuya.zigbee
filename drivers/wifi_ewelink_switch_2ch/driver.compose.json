@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "eWeLink Switch 2-Channel (SONOFF)"
+    "en": "eWeLink Switch 2-Channel (SONOFF)",
+    "fr": "Interrupteur eWeLink 2 canaux (SONOFF)",
+    "nl": "eWeLink Schakelaar 2-kanaals (SONOFF)",
+    "de": "eWeLink Schalter 2-Kanal (SONOFF)",
+    "es": "Interruptor eWeLink 2 canales (SONOFF)"
   },
   "class": "socket",
   "capabilities": [

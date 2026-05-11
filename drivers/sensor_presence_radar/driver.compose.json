@@ -1,8 +1,10 @@
 {
   "name": {
     "en": "Sensor Presence Radar",
-    "nl": "Sensor Presence Radar",
-    "fr": "Sensor Presence Radar"
+    "nl": "Radar aanwezigheidssensor",
+    "fr": "Capteur de présence radar",
+    "de": "Radar-Präsenzsensor",
+    "es": "Sensor de presencia por radar"
   },
   "class": "sensor",
   "capabilities": [

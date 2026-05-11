@@ -1,8 +1,8 @@
 {
-  "version": "5.11.179",
-  "date": "2026-04-04",
-  "drivers": 193,
-  "fingerprints": 4328,
+  "version": "7.5.13",
+  "date": "2026-05-11",
+  "drivers": 221,
+  "fingerprints": 10844,
   "decisions": [
     {
       "device": "USB Zigbee Dongle (USB-powered relay)",
@@ -307,25 +307,25 @@
     {
       "id": "battery",
       "pattern": "False Battery Alert / Missing Battery",
-      "count": 32,
+      "count": 36,
       "priority": "high"
     },
     {
       "id": "pairing",
       "pattern": "Pairing Failure",
+      "count": 17,
+      "priority": "high"
+    },
+    {
+      "id": "no_response",
+      "pattern": "Device Not Responding",
       "count": 9,
       "priority": "high"
     },
     {
       "id": "unknown",
       "pattern": "Device Shows Unknown",
-      "count": 5,
-      "priority": "high"
-    },
-    {
-      "id": "no_response",
-      "pattern": "Device Not Responding",
-      "count": 5,
+      "count": 6,
       "priority": "high"
     },
     {
@@ -366,8 +366,8 @@
     }
   ],
   "interviews": {
-    "total": 170,
-    "fps": 131
+    "total": 210,
+    "fps": 156
   },
   "invertedMfrs": [
     "_TZ3000_26fmupbb",

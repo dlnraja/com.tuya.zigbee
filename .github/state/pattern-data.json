@@ -1,18 +1,22 @@
 {
-  "timestamp": "2026-04-05T07:48:45.712Z",
+  "timestamp": "2026-05-11T04:51:47.006Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
       "id": "battery",
-      "count": 34,
+      "count": 36,
       "priority": "high",
       "topFPs": [
         [
           "vision",
-          25
+          27
         ],
         [
           "TS0601",
+          17
+        ],
+        [
+          "_TZE",
           16
         ],
         [
@@ -40,11 +44,7 @@
           3
         ],
         [
-          "TS0044",
-          3
-        ],
-        [
-          "lumi",
+          "_TZ3000_b4awzgct",
           3
         ]
       ],
@@ -56,15 +56,23 @@
     {
       "pattern": "Pairing Failure",
       "id": "pairing",
-      "count": 9,
+      "count": 17,
       "priority": "high",
       "topFPs": [
+        [
+          "vision",
+          13
+        ],
+        [
+          "_TZE",
+          5
+        ],
         [
           "TS0601",
           5
         ],
         [
-          "vision",
+          "router",
           5
         ],
         [
@@ -90,14 +98,6 @@
         [
           "TS0202",
           2
-        ],
-        [
-          "_TZE284_hdml1aav",
-          2
-        ],
-        [
-          "_TZE204_ahwvlkpy",
-          1
         ]
       ],
       "fix": "Check driver.compose.json fingerprints, verify manufacturerName + productId",
@@ -108,20 +108,28 @@
     {
       "pattern": "Device Not Responding",
       "id": "no_response",
-      "count": 6,
+      "count": 9,
       "priority": "high",
       "topFPs": [
         [
-          "vision",
-          3
-        ],
-        [
           "test",
-          3
+          5
         ],
         [
           "TS0601",
+          5
+        ],
+        [
+          "vision",
+          4
+        ],
+        [
+          "_TZE",
           3
+        ],
+        [
+          "_TZE284_fhvpaltk",
+          2
         ],
         [
           "_TZ3210_w0qqde0g",
@@ -142,14 +150,6 @@
         [
           "_TZ3000_tsgqxdb4",
           1
-        ],
-        [
-          "sonoff",
-          1
-        ],
-        [
-          "debug",
-          1
         ]
       ],
       "fix": "Check Zigbee mesh, device routing, and cluster bindings",
@@ -158,11 +158,19 @@
     {
       "pattern": "Device Shows Unknown",
       "id": "unknown",
-      "count": 5,
+      "count": 6,
       "priority": "high",
       "topFPs": [
         [
+          "_TZE",
+          3
+        ],
+        [
           "TS0601",
+          3
+        ],
+        [
+          "vision",
           3
         ],
         [
@@ -170,19 +178,15 @@
           2
         ],
         [
-          "test",
-          2
-        ],
-        [
           "tuya",
           2
         ],
         [
-          "generic",
+          "test",
           2
         ],
         [
-          "vision",
+          "generic",
           2
         ],
         [
@@ -194,11 +198,7 @@
           1
         ],
         [
-          "_TZE200_3p5ydos3",
-          1
-        ],
-        [
-          "_TZE204_n9ctkb6j",
+          "_TZ3000_wpueorev",
           1
         ]
       ],
@@ -230,6 +230,10 @@
           1
         ],
         [
+          "_TZE",
+          1
+        ],
+        [
           "router",
           1
         ],
@@ -248,10 +252,6 @@
         [
           "_TZ3000_g",
           1
-        ],
-        [
-          "_TZ3210_ol1uhvza",
-          1
         ]
       ],
       "fix": "Check alarm DP map",
@@ -263,6 +263,10 @@
       "count": 2,
       "priority": "medium",
       "topFPs": [
+        [
+          "_TZE",
+          2
+        ],
         [
           "vision",
           2
@@ -276,11 +280,15 @@
           1
         ],
         [
-          "test",
+          "MOES",
           1
         ],
         [
           "tuya",
+          1
+        ],
+        [
+          "test",
           1
         ],
         [
@@ -309,6 +317,10 @@
       "topFPs": [
         [
           "_TZE200_wfxuhoea",
+          1
+        ],
+        [
+          "_TZE",
           1
         ],
         [
@@ -401,6 +413,10 @@
           1
         ],
         [
+          "_TZE",
+          1
+        ],
+        [
           "router",
           1
         ],
@@ -423,12 +439,12 @@
   ],
   "detections": {
     "inversion": 1,
-    "battery": 34,
+    "battery": 36,
     "double_div": 2,
-    "pairing": 9,
-    "unknown": 5,
+    "pairing": 17,
+    "unknown": 6,
     "flow_dup": 0,
-    "no_response": 6,
+    "no_response": 9,
     "voltage_wrong": 1,
     "no_temperature": 1,
     "ring_value": 5,
