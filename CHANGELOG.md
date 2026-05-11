@@ -4,7 +4,21 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.14] - 2026-05-11
+## [7.5.15] - 2026-05-11
+
+### New Features
+- **Virtual Telemetry Compensation Engine**: New system that automatically corrects sensor readings (temperature, humidity, battery) based on device-specific calibration curves. This improves accuracy for devices known to report slightly off values.
+
+### Bug Fixes
+- **Button Device (TS0041/TS0044)**: Fixed an issue where rapid button presses could be missed or incorrectly detected as a different press type. Single, double, and long presses now work reliably.
+- **Device Fingerprint Database**: Updated to include 14 new device fingerprints, improving out-of-box support for recently released Tuya Zigbee devices.
+
+### Improvements
+- **Case-Insensitive Matching**: The fingerprint database now handles manufacturer names with inconsistent casing (e.g., `_TZ3000_` vs `_tz3000_`), reducing pairing failures for devices with non-standard firmware.
+- **Diagnostic Collection**: Enhanced email-based diagnostic fetching to capture more detailed device reports, helping us identify and fix issues faster.
+---
+
+ [7.5.14] - 2026-05-11
 
 ### Bug Fixes
 - Fixed radiator valve and smart radiator valve device initialization issues

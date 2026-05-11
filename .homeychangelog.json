@@ -1,4 +1,7 @@
 {
+  "7.5.15": {
+    "en": "v7.5.15: Virtual Telemetry Compensation Engine, Button Device (TS0041/TS0044), Device Fingerprint Database, Case-Insensitive Matching, Diagnostic Collection"
+  },
   "7.5.14": {
     "en": "v7.5.14: . Bug fixes for wireless buttons, climate sensors, radiator valves, and energy meters. Improved device initialization and diagnostics."
   },
@@ -55,11 +58,5 @@
   },
   "5.11.200": {
     "en": "Added support for ZG-204ZM and WiFi water sensor. Stabilized sleepy devices."
-  },
-  "5.11.199": {
-    "en": "Added support for 3 new device fingerprints, including the Nedis SmartLife Radiator Control (_TZE284_ne4pikwm)."
-  },
-  "7.5.15": {
-    "en": "Added support for new devices:\n- r_purifier (_tze200_4mh6tyyo, _TZE200_4MH6TYYO, _tyst11_d0yu2xgi, _TYST11_D0YU2XGI / TS0601_r_purifier,TS0601)\n- bulb_dimmable (_tyzb01_qezuin6k, _TYZB01_QEZUIN6K, _tyzb01_v8gtiaed, _TYZB01_V8GTIAED / TS0501A,TS0501B,TS110E,TS110F,LED1623G12,LED1649C5,LED1836G9,LWB004,LWB006,LWB010,LWB014,Plug 01,A19 W 10 year,BR30 W 10 year,PAR38 W 10 year,GL-B-001Z,RS 125,RB 165,RB 175 W,ZBT-DimmableLight,TS0052,TS1101)\n- button_emergency_sos (_tyzb01_qm... and more."
   }
 }
