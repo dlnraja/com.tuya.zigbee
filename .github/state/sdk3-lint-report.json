@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-05-11T15:34:27.437Z",
+  "timestamp": "2026-05-12T03:43:09.380Z",
   "driversScanned": 20,
-  "staticIssues": 43,
+  "staticIssues": 46,
   "autoFixed": 0,
-  "aiSuggestions": 34,
-  "aiApplied": 6,
+  "aiSuggestions": 21,
+  "aiApplied": 1,
   "dryRun": false,
   "results": [
     {
@@ -21,23 +21,20 @@
         "sdk3-await-capability",
         "sdk3-battery-conflict",
         "sdk3-case-sensitive-fingerprint"
-      ],
-      "aiModel": "deepseek"
+      ]
     },
     {
       "driver": "air_quality_comprehensive",
       "issues": [
         "sdk3-case-sensitive-fingerprint"
-      ],
-      "aiModel": "deepseek"
+      ]
     },
     {
       "driver": "bulb_dimmable",
       "issues": [
         "sdk3-battery-conflict",
         "sdk3-case-sensitive-fingerprint"
-      ],
-      "aiModel": "deepseek"
+      ]
     },
     {
       "driver": "bulb_dimmable_dimmer",
@@ -143,18 +140,21 @@
       ]
     },
     {
+      "driver": "button_wireless_plug",
+      "issues": [
+        "sdk3-await-capability",
+        "sdk3-battery-conflict",
+        "sdk3-case-sensitive-fingerprint",
+        "sdk3-dp-variant-awareness"
+      ]
+    },
+    {
       "driver": "button_wireless_smart",
       "issues": [
         "sdk3-battery-conflict",
         "sdk3-case-sensitive-fingerprint"
       ]
-    },
-    {
-      "driver": "ceiling_fan",
-      "issues": [
-        "sdk3-case-sensitive-fingerprint"
-      ]
     }
   ],
-  "memoryPatterns": 11
+  "memoryPatterns": 12
 }

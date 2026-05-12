@@ -1,57 +1,11 @@
 {
-  "timestamp": "2026-05-11T15:32:44.438Z",
-  "appVersion": "7.5.14",
-  "forum": 3,
-  "github": 1,
+  "timestamp": "2026-05-12T03:38:11.818Z",
+  "appVersion": "7.5.16",
+  "forum": 0,
+  "github": 0,
   "diagnostics": 56,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [
-    {
-      "topic": 140352,
-      "post": 2032,
-      "user": "dzsandzsee",
-      "fps": [
-        "_TZE200_crq3r3la",
-        "_TZE",
-        "router"
-      ],
-      "reply": "This device is already supported! The **CK-BL702-MWS-01(7016)** presence sensor with manufacturer `_TZE200_crq3r3la` is handled by the **presence_sensor_radar** driver.\n\n## How to Pair\n1. Install the ",
-      "model": "deepseek"
-    },
-    {
-      "topic": 146735,
-      "post": 232,
-      "user": "bert69",
-      "fps": [
-        "thread"
-      ],
-      "reply": "Thanks for the report, @bert69. You're right that Carole needs to follow the proper process.\n\n@Carole_C - To help you properly, I need specific device information. Please:\n\n1. **Pair the device** to H",
-      "model": "deepseek"
-    },
-    {
-      "topic": 146735,
-      "post": 236,
-      "user": "Jan-Feijen",
-      "fps": [
-        "example"
-      ],
-      "reply": "Hi Jan-Feijen,\n\nGreat questions! Let me address both:\n\n**1. Tuya Smart scenes in Universal Tuya Zigbee:**\nNo, this app doesn't import scenes from the Tuya Smart app. The old Tuya app used cloud API in",
-      "model": "deepseek"
-    }
-  ],
-  "githubDetails": [
-    {
-      "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1395,
-      "user": "Kennybarroz",
-      "fps": [
-        "_TZ3000_hyarhbyx",
-        "router"
-      ],
-      "title": "Device Request - [1-Gang Zigbee Switch] - [TZ3000_hyarhbyx] / [TS0001]",
-      "response": "## Device Analysis: `_TZ3000_hyarhbyx` / `TS0001` (CR-MINI2Z1)\n\nThank you for the detailed interview data. This is a **ZCL-only** (non-Tuya DP) 1-gang switch module, which is already supported.\n\n### ✅ Supported Driver: `switch_1gang`\n\nThe fingerprint `_TZ3000_hyarhbyx` + `TS0001` is **already presen",
-      "model": "deepseek"
-    }
-  ]
+  "forumDetails": [],
+  "githubDetails": []
 }

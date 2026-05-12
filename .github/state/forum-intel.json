@@ -1,11 +1,13 @@
 {
-  "timestamp": "2026-05-11T15:09:10.988Z",
+  "timestamp": "2026-05-12T03:16:18.234Z",
   "topicsScanned": 259,
-  "totalPosts": 3,
+  "totalPosts": 4,
   "categories": {
     "wifi_request": 3
   },
-  "missingFPs": [],
+  "missingFPs": [
+    "Aqara"
+  ],
   "wifiRequests": [
     {
       "user": "Roger_Gorissen",
@@ -89,6 +91,19 @@
         "wifi_request"
       ],
       "text": " I downloaded the code from Github, version 7.5.8 and installed it using CLI. Opposite to previous versions, only a small number of devices is showing a red exclamation mark. \n The settings page does show a page to enter logon figures for the iot.tuya.con website, used for Tuya cloud devices. Should"
+    },
+    {
+      "user": "Wim_van_Bezouw",
+      "date": "2026-05-10",
+      "topicId": 156,
+      "postNum": 7133,
+      "postId": 738806,
+      "missing": [
+        "Aqara"
+      ],
+      "found": [],
+      "issues": [],
+      "text": " Hi there, I have 4 Aqara Curtain motor E1 modules. I can set percentages in flows and so on but is there a way to make the motor stop, with the press of a button? (any button; aqara or philips or anything) I miss the flowcard STOP "
     }
   ]
 }

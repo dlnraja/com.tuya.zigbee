@@ -1,23 +1,12 @@
 {
-  "timestamp": "2026-05-11T15:09:11.139Z",
-  "appVersion": "7.5.14",
+  "timestamp": "2026-05-12T03:16:18.378Z",
+  "appVersion": "7.5.16",
   "responded": 0,
-  "closed": 1,
+  "closed": 0,
   "labeled": 0,
-  "issuesProcessed": 107,
+  "issuesProcessed": 106,
   "prsProcessed": 36,
   "skipped": 106,
-  "newFingerprints": [
-    {
-      "fp": "_TZ3000_hyarhbyx + TS0001",
-      "source": "JohanBendz/com.tuya.zigbee#1395",
-      "type": "device_request"
-    },
-    {
-      "fp": "router + TS0001",
-      "source": "JohanBendz/com.tuya.zigbee#1395",
-      "type": "device_request"
-    }
-  ],
-  "evolutionSummary": "## Project Evolution Summary\n\n**Cycle Results:** 107 issues + 36 PRs processed, 1 closed, 2 new fingerprints discovered.\n\n**New Devices:**\n- `_TZ3000_hyarhbyx + TS0001` — 1-gang switch variant (requested via JohanBendz#1395)\n- `router + TS0001` — Router-capable switch variant (same source)\n\n**Resolved:** One issue closed this cycle.\n\n**Action Items:**\n- Add `_TZ3000_hyarhbyx` fingerprint to `switch_1gang` driver\n- Investigate router-capable TS0001 variant for potential routing configuration\n- Continue monitoring JohanBendz fork for additional fingerprint discoveries\n\n**Health:** Stable cycle with targeted fingerprint additions. No regressions reported."
+  "newFingerprints": [],
+  "evolutionSummary": null
 }
