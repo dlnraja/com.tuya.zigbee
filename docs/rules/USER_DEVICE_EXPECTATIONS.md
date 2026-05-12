@@ -2887,3 +2887,13 @@ _TZ3000_l9brjwau, _TZ3000_blhvsaqf, _TZ3000_ysdv91bk, _TZ3000_hafsqare, _TZ3000_
 ---
 
 *Auto-generated on 2026-05-12 from v7.5.16 — 10,915+ fingerprints across 227 drivers*
+
+
+## Auto-discovered from GitHub (2026-05-12)
+
+| Fingerprint | Source | Type |
+|---|---|---|
+| _TZ3000_402vrq2i + TS0601 | dlnraja/com.tuya.zigbee#319 | device_request |
+| zigbee2mqtt + TS004F | dlnraja/com.tuya.zigbee#319 | device_request |
+| _TZE204_81yrt3l + TS0601 | dlnraja/com.tuya.zigbee#318 | bug_report |
+| router + TS0601 | dlnraja/com.tuya.zigbee#318 | bug_report |
