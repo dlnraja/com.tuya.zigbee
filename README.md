@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (May 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v7.5.17** | Added support for new devices: - bulb_dimmable (_TYZB01_bngwdjsr / TS0501A,TS... |
+| **v7.5.16** | Fixed broken require paths in siren sensor driver. Added Virtual Telemetry Co... |
+| **v7.5.15** | v7.5.15: Fixed siren sensor driver crashes, added 3,202 new fingerprints, and... |
+| **v7.5.14** | v7.5.14: . Bug fixes for wireless buttons, climate sensors, radiator valves, ... |
+| **v7.5.13** | v7.5.13: . Added new fingerprints for motion sensor, illuminance sensor, 3-ga... |
+| **v7.5.12** | v7.5.12: . Fixed sensor fallback logic for unknown models. Added new fingerpr... |
+| **v7.5.11** | v7.5.11: Fixed ReferenceError crashes in HybridSensorBase, HybridCoverBase, H... |
+| **v7.5.10** | Fixed a crash in HybridSensorBase that caused a ReferenceError on _safeSetCap... |
+| **v7.5.9** | v7.5.9: . Fixed ProtocolArbitrator crash, _TZE608 opener reclassification, SD... |
+| **v5.11.212** | Implement Rule 24 caseless resolver and dynamic O(1) matching system for high... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
