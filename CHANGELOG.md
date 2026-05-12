@@ -4,7 +4,20 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.15] - 2026-05-11
+## [7.5.17] - 2026-05-12
+
+## v7.5.17
+
+### Bug Fixes
+- **Backlight mode alignment**: Fixed backlight value mapping across multi-gang switch drivers — backlight modes (`off`/`normal`/`inverted`) are now consistently aligned with DP integer values, resolving incorrect backlight state reporting on several switch variants.
+- **Fingerprint case self-heal**: Completed case-insensitive fingerprint conflict resolution across 356 driver-conflict audit entries. Devices with variant `manufacturerName` casing (e.g. `_TZ3000_` vs `_tz3000_`) now correctly match their intended driver regardless of firmware reporting.
+
+### Improvements
+- Added 2 new device interview profiles (interviews #318, #319) for recently analyzed devices.
+- Refreshed fingerprint database from 72 updated driver files, improving device recognition coverage.
+---
+
+ [7.5.15] - 2026-05-11
 
 ### New Features
 - **Virtual Telemetry Compensation Engine**: New system that automatically corrects sensor readings (temperature, humidity, battery) based on device-specific calibration curves. This improves accuracy for devices known to report slightly off values.

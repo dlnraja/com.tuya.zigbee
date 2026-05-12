@@ -1,6 +1,6 @@
 {
   "7.5.17": {
-    "en": "Added support for new devices:\n- bulb_dimmable (_tyzb01_bngwdjsr, _TYZB01_BNGWDJSR / TS0501A,TS0501B,TS110E,TS110F,LED1623G12,LED1649C5,LED1836G9,LWB004,LWB006,LWB010,LWB014,Plug 01,A19 W 10 year,BR30 W 10 year,PAR38 W 10 year,GL-B-001Z,RS 125,RB 165,RB 175 W,ZBT-DimmableLight,TS0052,TS1101)\n- button_wireless_plug (_tyzb01_hlla45kx, _TYZB01_HLLA45KX / TS011F,TS0121,TSO121)\n- climate_sensor (_tze284_aaeasoll, _TZE284_AAEASOLL / TS0201,TS0222,TH01,WSDCGQ01LM,WSDCGQ11LM,WSDCGQ12... and more."
+    "en": "Fixed backlight mode alignment across multi-gang switch drivers and completed fingerprint case-insensitive self-heal for 356 conflict entries. Added 2 new device interview profiles."
   },
   "7.5.16": {
     "en": "v7.5.16 — . Maintenance release with updated device expectations, diagnostics, and internal state."
