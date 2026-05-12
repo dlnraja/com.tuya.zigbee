@@ -1,8 +1,8 @@
 {
   "version": "7.5.16",
   "date": "2026-05-12",
-  "drivers": 227,
-  "fingerprints": 10915,
+  "drivers": 228,
+  "fingerprints": 10919,
   "decisions": [
     {
       "device": "USB Zigbee Dongle (USB-powered relay)",
@@ -307,7 +307,7 @@
     {
       "id": "battery",
       "pattern": "False Battery Alert / Missing Battery",
-      "count": 36,
+      "count": 37,
       "priority": "high"
     },
     {
@@ -341,6 +341,12 @@
       "priority": "medium"
     },
     {
+      "id": "no_temperature",
+      "pattern": "No Temperature",
+      "count": 2,
+      "priority": "medium"
+    },
+    {
       "id": "inversion",
       "pattern": "Inverted Sensor State",
       "count": 1,
@@ -353,12 +359,6 @@
       "priority": "low"
     },
     {
-      "id": "no_temperature",
-      "pattern": "No Temperature",
-      "count": 1,
-      "priority": "low"
-    },
-    {
       "id": "energy_wrong",
       "pattern": "Wrong Energy",
       "count": 1,
@@ -366,8 +366,8 @@
     }
   ],
   "interviews": {
-    "total": 211,
-    "fps": 157
+    "total": 213,
+    "fps": 159
   },
   "invertedMfrs": [
     "_TZ3000_26fmupbb",

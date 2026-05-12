@@ -686,3 +686,7 @@ All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
 - **Topic 146735 #227** @Andi: `test` (deepseek)
 - **Topic 146735 #229** @zhivauk: `tuya` (deepseek)
 - **Topic 146735 #231** @Carole_C: `tuya` (deepseek)
+
+
+## Nightly Forum Scan (2026-05-12 v7.5.17)
+- **Topic 146735 #237** @Willi_Budeus: `LIDL` (openrouter)

@@ -116,7 +116,7 @@
 **Topic 140352 #140** (@F3006)
 - MISSED: Post contains `_TZ3000_fqoynhku` (supported in plug_energy_monitor) but reply doesn't mention it
 - MISSED: Post contains `vision` (supported in generic_tuya) but reply doesn't mention it
-- MISSED: Post contains `TS0121` (supported in button_wireless_2,button_wireless_plug,plug_energy_monitor,universal_fallback) but reply doesn't mention it
+- MISSED: Post contains `TS0121` (supported in button_wireless_2,button_wireless_plug,plug_energy_monitor,remote_button_wireless_plug,universal_fallback) but reply doesn't mention it
 - **Correction needed**: Reply should mention supported device
 
 **Topic 140352 #155** (@DutchDuke)
@@ -267,7 +267,7 @@
 - **Correction needed**: Reply should mention supported device
 
 **Topic 140352 #264** (@)
-- SUSPICIOUS: Mentioned driver "type_xgang" not found in 227 drivers
+- SUSPICIOUS: Mentioned driver "type_xgang" not found in 228 drivers
 
 **Topic 140352 #265** (@dlnraja)
 - MISSED: Post contains `_TZE200_2aaelwxk` (supported in presence_sensor_radar) but reply doesn't mention it
@@ -465,7 +465,7 @@
 - WRONG: Reply says "not found" but `test` IS supported in: diy_custom_zigbee
 - WRONG: Reply says "not found" but `TS0601` IS supported in: air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ceiling_fan, climate_sensor, climate_sensor_device, climate_sensor_energy, co_sensor, contact_sensor, curtain_motor, curtain_motor_shutter, curtain_motor_tilt, device_din_rail, device_din_rail_meter, device_floor_heating, device_floor_heating_thermostat, device_generic_tuya_universal, device_radiator_valve, device_radiator_valve_smart, dimmer_3gang, dimmer_dual_channel, dimmer_wall_1gang, din_rail_meter, din_rail_switch, door_controller, doorbell, energy_meter_3phase, fan_controller, fingerprint_lock, floor_heating_thermostat, formaldehyde_sensor, garage_door, garage_door_opener, gas_detector, gas_sensor, generic_tuya, humidifier, hvac_air_conditioner, hvac_controller, hvac_dehumidifier, ir_blaster, lcdtemphumidsensor, lcdtemphumidsensor_plug_energy, light_sensor_outdoor, lock_smart, motion_sensor, motion_sensor_2, motion_sensor_radar_mmwave, pet_feeder, pet_feeder_zigbee, plug_energy_monitor, plug_smart, pool_pump, power_clamp_meter, power_meter, presence_sensor_ceiling, presence_sensor_radar, radiator_controller, radiator_valve, radiator_valve_zigbee, rain_sensor, scene_switch_4, sensor_climate_contact, sensor_contact_motion, sensor_contact_water, sensor_motion_presence, sensor_motion_radar, sensor_presence_radar, shutter_roller_controller, siren, siren_sirentemphumidsensor, sirentemphumidsensor, smart_breaker, smart_heater, smart_heater_controller, smart_lcd_thermostat, smart_rcbo, smart_scene_panel, smoke_detector_advanced, soil_sensor, switch, switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_dimmer_1gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang, thermostat_4ch, thermostat_tuya_dp, universal_fallback, usb_outlet_advanced, valve_irrigation, valve_single, vibration_sensor, water_leak_sensor, water_tank_monitor, water_valve_smart, weather_station_outdoor
 - WRONG: Reply says "not found" but `generic` IS supported in: bulb_rgbw
-- SUSPICIOUS: Mentioned driver "temp_humid_sensor" not found in 227 drivers
+- SUSPICIOUS: Mentioned driver "temp_humid_sensor" not found in 228 drivers
 
 **Topic 140352 #391** (@ugrbnk)
 - WRONG: Reply says "not found" but `_TZE204_yojqa8xn` IS supported in: gas_sensor
@@ -674,12 +674,12 @@
 - WRONG: Reply says "not found" but `TS0601` IS supported in: air_purifier, air_quality_co2, air_quality_comprehensive, button_emergency_sos, button_wireless_6, ceiling_fan, climate_sensor, climate_sensor_device, climate_sensor_energy, co_sensor, contact_sensor, curtain_motor, curtain_motor_shutter, curtain_motor_tilt, device_din_rail, device_din_rail_meter, device_floor_heating, device_floor_heating_thermostat, device_generic_tuya_universal, device_radiator_valve, device_radiator_valve_smart, dimmer_3gang, dimmer_dual_channel, dimmer_wall_1gang, din_rail_meter, din_rail_switch, door_controller, doorbell, energy_meter_3phase, fan_controller, fingerprint_lock, floor_heating_thermostat, formaldehyde_sensor, garage_door, garage_door_opener, gas_detector, gas_sensor, generic_tuya, humidifier, hvac_air_conditioner, hvac_controller, hvac_dehumidifier, ir_blaster, lcdtemphumidsensor, lcdtemphumidsensor_plug_energy, light_sensor_outdoor, lock_smart, motion_sensor, motion_sensor_2, motion_sensor_radar_mmwave, pet_feeder, pet_feeder_zigbee, plug_energy_monitor, plug_smart, pool_pump, power_clamp_meter, power_meter, presence_sensor_ceiling, presence_sensor_radar, radiator_controller, radiator_valve, radiator_valve_zigbee, rain_sensor, scene_switch_4, sensor_climate_contact, sensor_contact_motion, sensor_contact_water, sensor_motion_presence, sensor_motion_radar, sensor_presence_radar, shutter_roller_controller, siren, siren_sirentemphumidsensor, sirentemphumidsensor, smart_breaker, smart_heater, smart_heater_controller, smart_lcd_thermostat, smart_rcbo, smart_scene_panel, smoke_detector_advanced, soil_sensor, switch, switch_1gang, switch_2gang, switch_3gang, switch_4gang, switch_dimmer_1gang, switch_wall_5gang, switch_wall_6gang, switch_wall_8gang, thermostat_4ch, thermostat_tuya_dp, universal_fallback, usb_outlet_advanced, valve_irrigation, valve_single, vibration_sensor, water_leak_sensor, water_tank_monitor, water_valve_smart, weather_station_outdoor
 - WRONG: Reply says "not found" but `TS0001` IS supported in: button_wireless_2, fingerbot, switch_1gang, universal_fallback, valve_single, wall_switch_1gang_1way
 - WRONG: Reply says "not found" but `TS0004` IS supported in: switch_4gang, universal_fallback
-- WRONG: Reply says "not found" but `TS0121` IS supported in: button_wireless_2, button_wireless_plug, plug_energy_monitor, universal_fallback
+- WRONG: Reply says "not found" but `TS0121` IS supported in: button_wireless_2, button_wireless_plug, plug_energy_monitor, remote_button_wireless_plug, universal_fallback
 - WRONG: Reply says "not found" but `TS0203` IS supported in: contact_sensor, device_generic_tuya_universal, generic_tuya, presence_sensor_radar, sensor_presence_radar, universal_fallback
 - WRONG: Reply says "not found" but `TS0202` IS supported in: motion_sensor
 - WRONG: Reply says "not found" but `TS0201` IS supported in: climate_sensor, lcdtemphumidsensor, temphumidsensor, universal_fallback
 - WRONG: Reply says "not found" but `TS004F` IS supported in: button_wireless_4, remote_button_wireless_wall, smart_knob, smart_knob_rotary, smart_knob_switch, smart_remote_1_button, smart_remote_1_button_2, universal_fallback, wall_dimmer_1gang_1way, wall_remote_4_gang_2
-- WRONG: Reply says "not found" but `TS011F` IS supported in: button_wireless_2, button_wireless_plug, fingerbot, plug_energy_monitor, plug_smart, switch, switch_1gang, switch_2gang, universal_fallback
+- WRONG: Reply says "not found" but `TS011F` IS supported in: button_wireless_2, button_wireless_plug, fingerbot, plug_energy_monitor, plug_smart, remote_button_wireless_plug, switch, switch_1gang, switch_2gang, universal_fallback
 - WRONG: Reply says "not found" but `TS110F` IS supported in: bulb_dimmable, bulb_dimmable_dimmer, dimmer_wall_1gang, universal_fallback
 - WRONG: Reply says "not found" but `TS130F` IS supported in: curtain_motor, curtain_motor_wall, universal_fallback, wall_curtain_switch
 - WRONG: Reply says "not found" but `TS0501` IS supported in: bulb_white, universal_fallback
@@ -917,6 +917,7 @@
 - MISSED: Post contains `_TZE` (supported in universal_fallback) but reply doesn't mention it
 - MISSED: Post contains `router` (supported in diy_custom_zigbee) but reply doesn't mention it
 - MISSED: Post contains `vision` (supported in generic_tuya) but reply doesn't mention it
+- MISSED: Post contains `_TZE284_81yrt3l` (supported in power_meter) but reply doesn't mention it
 - MISSED: Post contains `TS0601` (supported in air_purifier,air_quality_co2,air_quality_comprehensive,button_emergency_sos,button_wireless_6,ceiling_fan,climate_sensor,climate_sensor_device,climate_sensor_energy,co_sensor,contact_sensor,curtain_motor,curtain_motor_shutter,curtain_motor_tilt,device_din_rail,device_din_rail_meter,device_floor_heating,device_floor_heating_thermostat,device_generic_tuya_universal,device_radiator_valve,device_radiator_valve_smart,dimmer_3gang,dimmer_dual_channel,dimmer_wall_1gang,din_rail_meter,din_rail_switch,door_controller,doorbell,energy_meter_3phase,fan_controller,fingerprint_lock,floor_heating_thermostat,formaldehyde_sensor,garage_door,garage_door_opener,gas_detector,gas_sensor,generic_tuya,humidifier,hvac_air_conditioner,hvac_controller,hvac_dehumidifier,ir_blaster,lcdtemphumidsensor,lcdtemphumidsensor_plug_energy,light_sensor_outdoor,lock_smart,motion_sensor,motion_sensor_2,motion_sensor_radar_mmwave,pet_feeder,pet_feeder_zigbee,plug_energy_monitor,plug_smart,pool_pump,power_clamp_meter,power_meter,presence_sensor_ceiling,presence_sensor_radar,radiator_controller,radiator_valve,radiator_valve_zigbee,rain_sensor,scene_switch_4,sensor_climate_contact,sensor_contact_motion,sensor_contact_water,sensor_motion_presence,sensor_motion_radar,sensor_presence_radar,shutter_roller_controller,siren,siren_sirentemphumidsensor,sirentemphumidsensor,smart_breaker,smart_heater,smart_heater_controller,smart_lcd_thermostat,smart_rcbo,smart_scene_panel,smoke_detector_advanced,soil_sensor,switch,switch_1gang,switch_2gang,switch_3gang,switch_4gang,switch_dimmer_1gang,switch_wall_5gang,switch_wall_6gang,switch_wall_8gang,thermostat_4ch,thermostat_tuya_dp,universal_fallback,usb_outlet_advanced,valve_irrigation,valve_single,vibration_sensor,water_leak_sensor,water_tank_monitor,water_valve_smart,weather_station_outdoor) but reply doesn't mention it
 - **Correction needed**: Reply should mention supported device
 
@@ -969,7 +970,7 @@
 - MISSED: Post contains `router` (supported in diy_custom_zigbee) but reply doesn't mention it
 - MISSED: Post contains `vision` (supported in generic_tuya) but reply doesn't mention it
 - MISSED: Post contains `BSEED` (supported in device_generic_tuya_universal) but reply doesn't mention it
-- MISSED: Post contains `TS011F` (supported in button_wireless_2,button_wireless_plug,fingerbot,plug_energy_monitor,plug_smart,switch,switch_1gang,switch_2gang,universal_fallback) but reply doesn't mention it
+- MISSED: Post contains `TS011F` (supported in button_wireless_2,button_wireless_plug,fingerbot,plug_energy_monitor,plug_smart,remote_button_wireless_plug,switch,switch_1gang,switch_2gang,universal_fallback) but reply doesn't mention it
 - **Correction needed**: Reply should mention supported device
 
 **Topic 140352 #907** (@Ronny_M)

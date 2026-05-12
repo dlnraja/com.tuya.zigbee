@@ -1,8 +1,46 @@
 {
-  "timestamp": "2026-05-12T03:37:56.112Z",
-  "appVersion": "7.5.16",
+  "timestamp": "2026-05-12T15:23:39.550Z",
+  "appVersion": "7.5.17",
   "findings": {
     "issues": [
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 318,
+        "title": "Tuya PJ-1203A Incorrect measurement values",
+        "user": "macmonty",
+        "newFPs": [
+          "_TZE204_81yrt3l"
+        ],
+        "existingFPs": [
+          {
+            "fp": "_TZE204_81yrt3lo",
+            "drivers": [
+              "din_rail_meter"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/318",
+        "state": "open",
+        "imageAnalysis": null
+      },
+      {
+        "repo": "dlnraja/com.tuya.zigbee",
+        "number": 319,
+        "title": "Add support for device Tuya ZG-101Z_D_1",
+        "user": "macmonty",
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_402vrq2i",
+            "drivers": [
+              "smart_knob"
+            ]
+          }
+        ],
+        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/319",
+        "state": "open",
+        "imageAnalysis": null
+      },
       {
         "repo": "dlnraja/com.tuya.zigbee",
         "number": 316,
@@ -26,10 +64,15 @@
         "number": 1395,
         "title": "Device Request - [1-Gang Zigbee Switch] - [TZ3000_hyarhbyx] / [TS0001]",
         "user": "Kennybarroz",
-        "newFPs": [
-          "_TZ3000_hyarhbyx"
+        "newFPs": [],
+        "existingFPs": [
+          {
+            "fp": "_TZ3000_hyarhbyx",
+            "drivers": [
+              "switch_1gang"
+            ]
+          }
         ],
-        "existingFPs": [],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1395",
         "state": "open",
         "imageAnalysis": null
@@ -114,5 +157,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "## Universal Tuya Zigbee — GitHub Activity Summary for #140352\n\n### 🔍 Issues (2)\n\n| # | Status | FP | Notes |\n|---|--------|----|-------|\n| **#316** | ✅ Closed | `_TZ3000_fllyghyj` (TS0201) | Climate sensor misidentified — FP already exists in `climate_sensor` driver. User needed re-pair after v5.11.25+ update. |\n| **#1395** | 🟡 Open | `_TZ3000_hyarhbyx` (TS0001) | 1-gang Zigbee switch request by @Kennybarroz. Standard on/off — maps to `switch_1gang`. Needs FP addition + driver assignment. |\n\n### 📋 Open PRs — FPs Pending Integration (6 PRs, 8 new FPs)\n\n| PR | Author | FP(s) | Target Driver | Status |\n|----|--------|-------|---------------|--------|\n| **#1372** | oskarirauta | `_TZE200_mgxy2d9f` | `motion_sensor` | Open |\n| **#1350** | PiTRiS87 | `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab` | `thermostat` (TS110E series) | Open |\n| **#1166** | chernals | `_TZ3000_c8ozah8n` (TS0202 PIR) | `motion_sensor` | Closed (unmerged) — needs re-evaluation against current `HybridSensorBase` passive DP listener |\n| **#1253** | Peter-Celica | `_TZE200_pay2byax`, `_TZ3000_mrpevh8p` | `valve_irrigation` / TBD | Open — `_TZE200_pay2byax` already tracked in USER_DEVICE_EXPECTATIONS.md as fixed for `valve_irrigation` (GH#135) |\n| **#1219** | Melectro1 | `_TZ3000_gjrubzje` | TBD — needs interview | Open |\n| **#1218** | Melectro1 | `_TZE204_dapwryy7` | TBD — needs interview | Open |\n\n### ✅ Already Supported (no action needed)\n- `_TZ3000_fllyghyj` → `climate_sensor` driver (issue #316 confirmed existing)\n- `_TZE200_pay2byax` → `valve_irrigation` (fixed in v5.12.0 per USER_DEVICE_EXPECTATIONS.md)\n\n### 🔧 Action Items\n1. **Merge candidates**: PRs #1372, #1350, #1253 contain valid new FPs — verify against current driver fingerprints DB (`DeviceFingerprintDB.js`) to avoid collisions before merging.\n2. **Needs device interview**: `_TZ3000_gjrubzje`, `_TZE204_dapwryy7`, `_TZ3000_mrpevh8p` — request ZCL interview dumps from users via `tools.developer.homey.app/tools/zigbee`.\n3. **Re-evaluate #1166**: `_TZ3000_c8ozah8n` (TS0202 PIR) — with the passive DP listener (v5.11.170+), TS0202 devices should now auto-enroll without explicit cluster probing. Confirm if this FP is already covered by existing `motion_sensor` fingerprints.\n4. **#1395**: Add `_TZ3000_hyarhbyx` to `switch_1gang` driver — straightforward TS0001 mapping.\n\n### ⚠️ Notes\n- All PRs originate from `JohanBendz/com.tuya.zigbee` fork — standard upstream merge workflow applies.\n- No new **fork-specific fingerprints** requiring separate driver entries detected — all map to existing driver categories.\n- Recommend closing #1166 and #1253 as duplicates if their FPs are already present in the DB post-v5.12.0."
+  "aiSummary": "## GitHub Activity Summary — Universal Tuya Zigbee (v7.5.x)\n\n### 🔴 New Device Requests (Action Needed)\n\n| Issue | Device | FP | Status |\n|-------|--------|----|--------|\n| [#318](https://github.com/dlnraja/com.tuya.zigbee/issues/318) | PJ-1203A (energy meter) | `_TZE204_81yrt3l` | **Open** — Incorrect measurement values. New FP variant alongside existing `_TZE204_81yrt3lo` (`din_rail_meter`). Likely needs DP mapping review or divisor fix for power/energy registers. Users on v5.11.25+ should re-pair and submit diagnostics. |\n| [#319](https://github.com/dlnraja/com.tuya.zigbee/issues/319) | ZG-101Z_D_1 | `_TZ3000_402vrq2i` | **Open** — FP already exists in `smart_knob`. Probable mispairing; user may need to force correct driver or FP needs reassignment to a dedicated driver. |\n\n### ✅ Already Supported (No Action)\n\n| Issue | FP | Driver | Note |\n|-------|----|--------|------|\n| [#316](https://github.com/dlnraja/com.tuya.zigbee/issues/316) | `_TZ3000_fllyghyj` | `climate_sensor` | Closed — wrong-device recognition resolved via re-pair. |\n| [#1395](https://github.com/JohanBendz/com.tuya.zigbee/issues/1395) | `_TZ3000_hyarhbyx` | `switch_1gang` | Already in fingerprint DB. Duplicate request. |\n\n### 🔀 Open PRs — Candidate FPs for Integration\n\n| PR | FPs | Description | Action |\n|----|-----|-------------|--------|\n| [#1372](https://github.com/JohanBendz/com.tuya.zigbee/pull/1372) | `_TZE200_mgxy2d9f` | Motion sensor (TS0202 variant) | Review + merge into main |\n| [#1350](https://github.com/JohanBendz/com.tuya.zigbee/pull/1350) | `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab` | TS110E driver (new driver) | Needs testing — new driver category |\n| [#1253](https://github.com/JohanBendz/com.tuya.zigbee/pull/1253) | `_TZE200_pay2byax`, `_TZ3000_mrpevh8p` + 1 unnamed | 3 new devices | Verify FPs against existing drivers |\n| [#1219](https://github.com/JohanBendz/com.tuya.zigbee/pull/1219) | `_TZ3000_gjrubzje` | `driver.compose.json` update | FP addition — review target driver |\n| [#1218](https://github.com/JohanBendz/com.tuya.zigbee/pull/1218) | `_TZE204_dapwryy7` | `driver.compose.json` update | FP addition — verify DP compatibility |\n| [#1166](https://github.com/JohanBendz/com.tuya.zigbee/pull/1166) | `_TZ3000_c8ozah8n` | PIR sensor (TS0202) | Closed but **not merged** — needs rework for sleepy-device passive DP listener. |\n\n### 📋 Recommended Next Steps\n\n1. **#318 (PJ-1203A)**: Compare DP table between `_TZE204_81yrt3l` and `_TZE204_81yrt3lo`. If DPs differ, add as separate FP or adjust divisor in `din_rail_meter` device.js.\n2. **#1350 (TS110E)**: New driver — requires `driver.compose.json`, `driver.js`, `device.js`, flow cards, and asset images before merge.\n3. **#1166 (PIR)**: Re-evaluate against v5.11.170+ passive DP listener fix for sleepy TS0202 devices.\n4. **Fork FPs (#1219, #1218, #1253)**: Validate each FP against `DeviceFingerprintDB.js` to avoid cross-driver collisions before merging to main.\n\n---\n*Auto-generated from GitHub activity scan. Review and merge candidates via GitHub Actions workflow.*"
 }

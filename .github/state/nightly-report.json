@@ -1,11 +1,22 @@
 {
-  "timestamp": "2026-05-12T03:38:11.818Z",
-  "appVersion": "7.5.16",
-  "forum": 0,
+  "timestamp": "2026-05-12T15:24:59.022Z",
+  "appVersion": "7.5.17",
+  "forum": 1,
   "github": 0,
   "diagnostics": 56,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [],
+  "forumDetails": [
+    {
+      "topic": 146735,
+      "post": 237,
+      "user": "Willi_Budeus",
+      "fps": [
+        "LIDL"
+      ],
+      "reply": "Glad to hear the Silvercrest SAPM 1 A1 plugs are working with energy monitoring! They're matched to the **device_generic_tuya_universal** driver under the `LIDL` manufacturer.\n\nThese plugs use the sta",
+      "model": "openrouter"
+    }
+  ],
   "githubDetails": []
 }

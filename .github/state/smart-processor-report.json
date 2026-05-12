@@ -1,52 +1,9 @@
 {
-  "timestamp": "2026-05-12T04:09:53.513Z",
+  "timestamp": "2026-05-12T15:53:40.377Z",
   "appVer": "7.5.16",
-  "total": 6,
+  "total": 4,
   "added": [],
-  "aiAnalyzed": [
-    {
-      "fp": "_TZE284_aaeasoll",
-      "driver": "climate_sensor",
-      "pid": "TS0601",
-      "type": "Light Sensor / Lux Meter",
-      "caps": [
-        "measure_luminance"
-      ],
-      "dps": [
-        {
-          "dp": 1,
-          "capability": "measure_luminance",
-          "type": "value",
-          "divisor": 1
-        }
-      ],
-      "quirks": [
-        "Based on the interview hint 'Solar Lux Sensor', this is likely a TS0601 device that reports illuminance via DP 1. The `climate_sensor` driver can handle this if the fingerprint is added. It may also report temperature/humidity on other DPs."
-      ],
-      "confidence": 70
-    },
-    {
-      "fp": "_TZ3000_hyarhbyx",
-      "driver": "switch_1gang",
-      "pid": "TS0001",
-      "type": "1-Gang Switch",
-      "caps": [
-        "onoff"
-      ],
-      "dps": [
-        {
-          "dp": 1,
-          "capability": "onoff",
-          "type": "boolean",
-          "divisor": 1
-        }
-      ],
-      "quirks": [
-        "TS0001 is a standard 1-gang switch. It may use ZCL On/Off cluster (0x0006) or Tuya DPs. The `switch_1gang` driver should handle this."
-      ],
-      "confidence": 95
-    }
-  ],
+  "aiAnalyzed": [],
   "skipped": [
     "_TYZB01_4lwqwyqn",
     "_TYZB01_zqvwka4k",
