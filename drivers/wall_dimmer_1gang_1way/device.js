@@ -123,31 +123,34 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
           break;
 
         case 'backlight_mode':
-          const backlightValue = parseInt(newSettings.backlight_mode, 10);
-          this.log(`Setting backlight_mode: ${backlightValue} (0=off, 1=normal, 2=inverted)`);
+          const backlightMode = newSettings.backlight_mode; // "off", "normal", "inverted"
+          this.log(`Setting backlight_mode: ${backlightMode}`);
 
-          // Try alternative datapoints DP36+DP37 (from issue #26578)
-          if (backlightValue === 0) {
-            // Always off: Set DP36=0 (backlight disabled)
-            this.log('Trying DP36=0 (backlight off)');
+          if (backlightMode === 'off') {
+            // Always off: Set DP36=false (backlight disabled)
+            this.log('Trying DP36=false (backlight off)');
             await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(err =>
               this.log('DP36 not supported:', err.message));
+            
+            // Also try original DP15 as fallback
+            await this.sendTuyaCommand(dataPoints.backlightMode, 0, 'enum').catch(err =>
+              this.log('DP15 failed:', err.message));
           } else {
-            // Normal or inverted: Enable backlight (DP36=1) and set mode (DP37)
-            this.log('Trying DP36=1 (backlight on)');
+            // Normal or inverted: Enable backlight (DP36=true) and set mode (DP37)
+            this.log('Trying DP36=true (backlight on)');
             await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(err =>
               this.log('DP36 not supported:', err.message));
 
-            // DP37: 0=none, 1=relay/normal, 2=pos/inverted
-            const lightMode = backlightValue; // 1=normal(relay), 2=inverted(pos)
+            const lightMode = backlightMode === 'normal' ? 1 : 2; // 1=normal, 2=inverted
             this.log(`Trying DP37=${lightMode} (light mode)`);
             await this.sendTuyaCommand(dataPoints.backlightLightMode, lightMode, 'enum').catch(err =>
               this.log('DP37 not supported:', err.message));
-          }
 
-          // Also try original DP15 as fallback
-          await this.sendTuyaCommand(dataPoints.backlightMode, backlightValue, 'enum').catch(err =>
-            this.log('DP15 failed (expected):', err.message));
+            // Also try original DP15 as fallback
+            const dp15Value = backlightMode === 'normal' ? 1 : 2;
+            await this.sendTuyaCommand(dataPoints.backlightMode, dp15Value, 'enum').catch(err =>
+              this.log('DP15 failed:', err.message));
+          }
           break;
 
         default:
@@ -196,16 +199,18 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       }
 
       // Apply backlight_mode if not default
-      if (settings.backlight_mode && settings.backlight_mode !== '1') {
-        const backlightValue = parseInt(settings.backlight_mode, 10);
-        this.log(`Applying initial backlight_mode: ${backlightValue}`);
+      if (settings.backlight_mode && settings.backlight_mode !== 'normal') {
+        const backlightMode = settings.backlight_mode; // "off", "normal", "inverted"
+        this.log(`Applying initial backlight_mode: ${backlightMode}`);
 
         // Try alternative datapoints DP36+DP37
-        if (backlightValue === 0) {
+        if (backlightMode === 'off') {
           await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(() => {});
-        } else {
+          await this.sendTuyaCommand(dataPoints.backlightMode, 0, 'enum').catch(() => {});
+        } else if (backlightMode === 'inverted') {
           await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(() => {});
-          await this.sendTuyaCommand(dataPoints.backlightLightMode, backlightValue, 'enum').catch(() => {});
+          await this.sendTuyaCommand(dataPoints.backlightLightMode, 2, 'enum').catch(() => {});
+          await this.sendTuyaCommand(dataPoints.backlightMode, 2, 'enum').catch(() => {});
         }
       }
 
