@@ -116,8 +116,8 @@ class LCDTempHumidSensorDevice extends SensorBase {
     await super.onNodeInit({ zclNode });
     const settings = this.getSettings() || {};
     this.log('[LCD] ✅ LCD Temperature/Humidity Sensor ready');
-    this.log('[LCD] Model:', settings.zb_model_id || settings.zb_modelId || 'TS0201');
-    this.log('[LCD] Manufacturer:', settings.zb_manufacturer_name || settings.zb_manufacturerName || 'unknown');
+    this.log('[LCD] Model:', settings.zb_model_id || settings.zb_model_id || 'TS0201');
+    this.log('[LCD] Manufacturer:', settings.zb_manufacturer_name || settings.zb_manufacturer_name || 'unknown');
   }
 
   onTuyaStatus(status) {
