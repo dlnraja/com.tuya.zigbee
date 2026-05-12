@@ -49,7 +49,7 @@ let found118 = false;
 fs.readdirSync(d).forEach(dr => {
   try {
     const c = fs.readFileSync(path.join(d, dr, 'driver.compose.json'), 'utf8');
-    if (c.includes('_TZ3000_ysdv91bk')) {
+    if (c.toLowerCase().includes('_tz3000_ysdv91bk')) {
       found118 = true;
       checks.push(`✅ PR#118 OK: Exact target manufacturer _TZ3000_ysdv91bk is registered in ${dr}.`);
     }
@@ -64,7 +64,7 @@ let found116 = false;
 fs.readdirSync(d).forEach(dr => {
   try {
     const c = fs.readFileSync(path.join(d, dr, 'driver.compose.json'), 'utf8');
-    if (c.includes('_TZ3000_blhvsaqf')) {
+    if (c.toLowerCase().includes('_tz3000_blhvsaqf')) {
       found116 = true;
       checks.push(`✅ PR#116 OK: Exact target manufacturer _TZ3000_blhvsaqf is registered in ${dr}.`);
     }
@@ -150,6 +150,45 @@ fs.readdirSync(d).forEach(dr => {
 });
 if (tuyapiBypasses === 0) {
   checks.push('✅ BYPASS OK: No drivers directly import "tuyapi", maintaining command queue and socket pool integrity.');
+}
+
+// ─── Layer 10: Settings Keys CamelCase Deprecation Check ───
+let camelCaseSettingsViolations = 0;
+fs.readdirSync(d).forEach(dr => {
+  const deviceFile = path.join(d, dr, 'device.js');
+  if (!fs.existsSync(deviceFile)) return;
+  try {
+    const content = fs.readFileSync(deviceFile, 'utf8');
+    if (content.includes('zb_modelId') || content.includes('zb_manufacturerName')) {
+      camelCaseSettingsViolations++;
+      checks.push(`❌ DEPRECATED SETTING KEY: ${dr}/device.js uses deprecated camelCase settings keys (zb_modelId or zb_manufacturerName). Mandated snake_case keys are zb_model_id and zb_manufacturer_name.`);
+    }
+  } catch (e) {}
+});
+if (camelCaseSettingsViolations === 0) {
+  checks.push('✅ SETTINGS KEYS OK: No drivers use deprecated camelCase settings keys (zb_modelId or zb_manufacturerName).');
+}
+
+// ─── Layer 11: Backlight Value Representation Check ───
+let backlightNumericViolations = 0;
+fs.readdirSync(d).forEach(dr => {
+  const deviceFile = path.join(d, dr, 'device.js');
+  if (!fs.existsSync(deviceFile)) return;
+  try {
+    const content = fs.readFileSync(deviceFile, 'utf8');
+    if (content.includes('backlight') && (content.includes('=== 0') || content.includes('=== 1') || content.includes('=== 2') || content.includes('== 0') || content.includes('== 1') || content.includes('== 2') || content.includes("=== '0'") || content.includes("=== '1'") || content.includes("=== '2'") || content.includes("== '0'") || content.includes("== '1'") || content.includes("== '2'"))) {
+      const lines = content.split('\n');
+      lines.forEach((line, index) => {
+        if (line.includes('backlight') && (line.includes('=== 0') || line.includes('=== 1') || line.includes('=== 2') || line.includes('== 0') || line.includes('== 1') || line.includes('== 2') || line.includes("=== '0'") || line.includes("=== '1'") || line.includes("=== '2'") || line.includes("== '0'") || line.includes("== '1'") || line.includes("== '2'"))) {
+          backlightNumericViolations++;
+          checks.push(`❌ BACKLIGHT REPRESENTATION VIOLATION: ${dr}/device.js (line ${index + 1}) uses numeric comparisons for backlight settings. Must use string values ("off", "normal", "inverted").`);
+        }
+      });
+    }
+  } catch (e) {}
+});
+if (backlightNumericViolations === 0) {
+  checks.push('✅ BACKLIGHT CONFIG OK: Backlight setting comparisons are string-only compliant ("off", "normal", "inverted").');
 }
 
 // Also check app.json for titleFormatted and [[device]] compile results
