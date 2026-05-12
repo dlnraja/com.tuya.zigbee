@@ -1,63 +1,57 @@
 {
-  "timestamp": "2026-05-11T16:01:51.155Z",
-  "appVer": "7.5.14",
-  "total": 9,
+  "timestamp": "2026-05-12T04:09:53.513Z",
+  "appVer": "7.5.16",
+  "total": 6,
   "added": [],
   "aiAnalyzed": [
     {
-      "fp": "_TZ3000_0t4zjtia",
+      "fp": "_TZE284_aaeasoll",
+      "driver": "climate_sensor",
+      "pid": "TS0601",
+      "type": "Light Sensor / Lux Meter",
+      "caps": [
+        "measure_luminance"
+      ],
+      "dps": [
+        {
+          "dp": 1,
+          "capability": "measure_luminance",
+          "type": "value",
+          "divisor": 1
+        }
+      ],
+      "quirks": [
+        "Based on the interview hint 'Solar Lux Sensor', this is likely a TS0601 device that reports illuminance via DP 1. The `climate_sensor` driver can handle this if the fingerprint is added. It may also report temperature/humidity on other DPs."
+      ],
+      "confidence": 70
+    },
+    {
+      "fp": "_TZ3000_hyarhbyx",
       "driver": "switch_1gang",
       "pid": "TS0001",
       "type": "1-Gang Switch",
       "caps": [
         "onoff"
       ],
-      "dps": [],
+      "dps": [
+        {
+          "dp": 1,
+          "capability": "onoff",
+          "type": "boolean",
+          "divisor": 1
+        }
+      ],
       "quirks": [
-        "Standard ZCL On/Off switch. No Tuya DP protocol."
+        "TS0001 is a standard 1-gang switch. It may use ZCL On/Off cluster (0x0006) or Tuya DPs. The `switch_1gang` driver should handle this."
       ],
-      "confidence": 90
-    },
-    {
-      "fp": "_TZ3000_enmfaave",
-      "driver": "switch_4gang",
-      "pid": "TS0004",
-      "type": "4-Gang Switch",
-      "caps": [
-        "onoff.gang1",
-        "onoff.gang2",
-        "onoff.gang3",
-        "onoff.gang4"
-      ],
-      "dps": [],
-      "quirks": [
-        "Standard ZCL On/Off switch. No Tuya DP protocol. May require binding for all endpoints to report correctly."
-      ],
-      "confidence": 90
-    },
-    {
-      "fp": "_TZ3040_o4mkahkc",
-      "driver": "motion_sensor",
-      "pid": "TS0202",
-      "type": "PIR Motion Sensor",
-      "caps": [
-        "alarm_motion",
-        "measure_battery"
-      ],
-      "dps": [],
-      "quirks": [
-        "Sleepy device: first report may take up to 24 hours. Uses IAS Zone cluster for motion detection. May require explicit binding."
-      ],
-      "confidence": 85
+      "confidence": 95
     }
   ],
   "skipped": [
     "_TYZB01_4lwqwyqn",
     "_TYZB01_zqvwka4k",
     "_TS3000_gwkzibhs",
-    "_TYST11_jeaxp72v",
-    "_TZE284_aaeasoll",
-    "_TZ3000_hyarhbyx"
+    "_TYST11_jeaxp72v"
   ],
   "researched": []
 }

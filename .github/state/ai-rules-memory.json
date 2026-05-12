@@ -4,9 +4,9 @@
       "id": "sdk3-await-capability",
       "desc": "setCapabilityValue() calls should be awaited.",
       "severity": "info",
-      "count": 16,
+      "count": 23,
       "firstSeen": "2026-04-04T17:57:49.240Z",
-      "lastSeen": "2026-05-11T15:33:07.366Z",
+      "lastSeen": "2026-05-12T03:38:35.450Z",
       "files": [
         "air_purifier",
         "air_quality_co2",
@@ -14,7 +14,8 @@
         "bulb_rgb_led",
         "bulb_rgbw",
         "button_emergency_sos",
-        "climate_sensor"
+        "climate_sensor",
+        "button_wireless_plug"
       ]
     },
     {
@@ -32,9 +33,9 @@
       "id": "sdk3-battery-conflict",
       "desc": "NEVER combine measure_battery + alarm_battery. SDK v3 creates duplicate UI/Flow Cards. Use runtime adaptation via UnifiedBatteryHandler.",
       "severity": "error",
-      "count": 142,
+      "count": 160,
       "firstSeen": "2026-04-04T21:17:00.000Z",
-      "lastSeen": "2026-05-11T15:33:07.373Z",
+      "lastSeen": "2026-05-12T03:38:35.451Z",
       "files": [
         "RESOLVED: 108 drivers had both caps, reverted to measure_battery only",
         "air_quality_co2",
@@ -54,7 +55,8 @@
         "button_wireless_8",
         "button_wireless_smart",
         "climate_sensor",
-        "bulb_dimmable_dimmer"
+        "bulb_dimmable_dimmer",
+        "button_wireless_plug"
       ]
     },
     {
@@ -127,10 +129,12 @@
       "id": "sdk3-case-sensitive-fingerprint",
       "desc": "Fingerprint in enrichment data uses UPPERCASE (e.g., _TZE200_PAY2BYAX). Tuya fingerprints must be lowercase to match correctly.",
       "severity": "warn",
-      "count": 40,
+      "count": 60,
       "firstSeen": "2026-05-11T03:53:21.008Z",
-      "lastSeen": "2026-05-11T15:33:07.374Z",
+      "lastSeen": "2026-05-12T03:38:35.451Z",
       "files": [
+        "bulb_dimmable_dimmer",
+        "air_purifier",
         "air_quality_co2",
         "air_quality_comprehensive",
         "bulb_dimmable",
@@ -147,26 +151,35 @@
         "button_wireless_4",
         "button_wireless_6",
         "button_wireless_8",
-        "button_wireless_smart",
-        "ceiling_fan",
-        "climate_sensor",
-        "bulb_dimmable_dimmer"
+        "button_wireless_plug",
+        "button_wireless_smart"
       ]
     },
     {
       "id": "ai-fix-fix",
       "desc": "Missing removeAllListeners() cleanup to prevent memory leaks (sdk3-ondeleted-cleanup).",
       "severity": "info",
-      "count": 6,
+      "count": 7,
       "firstSeen": "2026-05-11T15:33:24.378Z",
-      "lastSeen": "2026-05-11T15:34:06.013Z",
+      "lastSeen": "2026-05-12T03:39:45.988Z",
       "files": [
         "air_purifier",
         "air_quality_comprehensive"
       ]
+    },
+    {
+      "id": "sdk3-dp-variant-awareness",
+      "desc": "DP mapping has no variant-awareness comment. Same DP can serve different functions across _TZE200/_TZE204/_TZE284 variants. Consider adding variant notes.",
+      "severity": "info",
+      "count": 1,
+      "firstSeen": "2026-05-12T03:38:35.450Z",
+      "lastSeen": "2026-05-12T03:38:35.450Z",
+      "files": [
+        "button_wireless_plug"
+      ]
     }
   ],
-  "lastRun": "2026-05-11T15:33:07.347Z",
-  "totalRuns": 8,
-  "totalIssues": 222
+  "lastRun": "2026-05-12T03:38:35.419Z",
+  "totalRuns": 9,
+  "totalIssues": 268
 }

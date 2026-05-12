@@ -1,19 +1,42 @@
 {
-  "timestamp": "2026-05-11T16:08:46.168Z",
+  "timestamp": "2026-05-12T04:16:41.980Z",
   "stats": {
-    "ghCalls": 59,
+    "ghCalls": 60,
     "codeResults": 169,
     "issueResults": 0,
-    "targetedResults": 59,
+    "targetedResults": 63,
     "newRepos": 3,
-    "totalFPs": 302,
+    "totalFPs": 303,
     "supported": 286,
-    "unsupported": 16,
+    "unsupported": 17,
     "withDPs": 0,
     "withIssues": 0,
-    "duration": 351
+    "duration": 343
   },
   "topUnsupported": [
+    {
+      "fp": "_TYST11_8daqwrsj",
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "repos": [
+        "wintechis/legacy-integration-wot",
+        "Koenkk/zigbee-herdsman-converters",
+        "blakadder/zigbee",
+        "jacekk015/zha_quirks",
+        "dresden-elektronik/deconz-rest-plugin"
+      ],
+      "sources": [
+        "code_search",
+        "targeted_search"
+      ],
+      "issueCount": 0,
+      "codeRefCount": 11,
+      "confidence": 230,
+      "topIssue": null,
+      "topCode": "https://github.com/wintechis/legacy-integration-wot/blob/7326261472b882b98296a082d96e2d0fcf446759/evaluation/effectiveness-evaluation/zigbee-herdsmann-analysis/zigbee-herdsman-converters/src/devices/alecto.ts"
+    },
     {
       "fp": "_TYST11_yw7cahqs",
       "pids": [
@@ -35,30 +58,7 @@
       "codeRefCount": 12,
       "confidence": 220,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/9a70d3e21f82932dc3d598634274a25bad6f4bab/src/devices/saswell.ts"
-    },
-    {
-      "fp": "_TYST11_8daqwrsj",
-      "pids": [
-        "TS0601"
-      ],
-      "dps": [],
-      "repos": [
-        "Koenkk/zigbee-herdsman-converters",
-        "blakadder/zigbee",
-        "jacekk015/zha_quirks",
-        "dresden-elektronik/deconz-rest-plugin",
-        "pcpgjanssen/zigbee-herdsman-converters"
-      ],
-      "sources": [
-        "code_search",
-        "targeted_search"
-      ],
-      "issueCount": 0,
-      "codeRefCount": 11,
-      "confidence": 215,
-      "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/9a70d3e21f82932dc3d598634274a25bad6f4bab/src/devices/alecto.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/1a55d6c6b7cd7b1885d41bc733a2fc63fee318a7/src/devices/saswell.ts"
     },
     {
       "fp": "_TYST11_c88teujp",
@@ -113,10 +113,10 @@
       ],
       "dps": [],
       "repos": [
+        "wintechis/legacy-integration-wot",
         "Koenkk/zigbee-herdsman-converters",
         "blakadder/zigbee",
         "dotnetpro100888/Koenkk-zigbee-herdsman-converters",
-        "wintechis/legacy-integration-wot",
         "brantmacga/zigbee-herdsman-converters"
       ],
       "sources": [
@@ -127,7 +127,29 @@
       "codeRefCount": 6,
       "confidence": 115,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/9a70d3e21f82932dc3d598634274a25bad6f4bab/src/devices/alecto.ts"
+      "topCode": "https://github.com/wintechis/legacy-integration-wot/blob/7326261472b882b98296a082d96e2d0fcf446759/evaluation/effectiveness-evaluation/zigbee-herdsmann-analysis/zigbee-herdsman-converters/src/devices/alecto.ts"
+    },
+    {
+      "fp": "_TZE200_b0ihkhxh",
+      "pids": [
+        "TS0601"
+      ],
+      "dps": [],
+      "repos": [
+        "Koenkk/zigbee-herdsman-converters",
+        "Koenkk/zigbee2mqtt.io",
+        "itavero/homebridge-z2m",
+        "Nerivec/zigbee-faker"
+      ],
+      "sources": [
+        "code_search",
+        "targeted_search"
+      ],
+      "issueCount": 0,
+      "codeRefCount": 5,
+      "confidence": 95,
+      "topIssue": null,
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/1a55d6c6b7cd7b1885d41bc733a2fc63fee318a7/src/devices/orztech.ts"
     },
     {
       "fp": "_TS0601_humidity",
@@ -207,7 +229,7 @@
       "codeRefCount": 3,
       "confidence": 40,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/9a70d3e21f82932dc3d598634274a25bad6f4bab/src/devices/rtx.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/1a55d6c6b7cd7b1885d41bc733a2fc63fee318a7/src/devices/rtx.ts"
     },
     {
       "fp": "_TZE284_xdtnpp1a",
@@ -226,7 +248,7 @@
       "codeRefCount": 3,
       "confidence": 40,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/9a70d3e21f82932dc3d598634274a25bad6f4bab/src/devices/avatto.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/1a55d6c6b7cd7b1885d41bc733a2fc63fee318a7/src/devices/avatto.ts"
     },
     {
       "fp": "_TZE200_rt5dklro",
@@ -245,7 +267,7 @@
       "codeRefCount": 2,
       "confidence": 35,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/9a70d3e21f82932dc3d598634274a25bad6f4bab/src/devices/daewoo.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/1a55d6c6b7cd7b1885d41bc733a2fc63fee318a7/src/devices/daewoo.ts"
     },
     {
       "fp": "_TZE284_sndkanfr",
@@ -264,7 +286,7 @@
       "codeRefCount": 2,
       "confidence": 35,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/9a70d3e21f82932dc3d598634274a25bad6f4bab/src/devices/lincukoo.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/1a55d6c6b7cd7b1885d41bc733a2fc63fee318a7/src/devices/lincukoo.ts"
     },
     {
       "fp": "_TZE284_nthhgkd6",
@@ -283,10 +305,10 @@
       "codeRefCount": 2,
       "confidence": 35,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/9a70d3e21f82932dc3d598634274a25bad6f4bab/src/devices/qa.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/1a55d6c6b7cd7b1885d41bc733a2fc63fee318a7/src/devices/qa.ts"
     },
     {
-      "fp": "_TZE284_vbgmewta",
+      "fp": "_TZE284_iunyuzwe",
       "pids": [
         "TS0601"
       ],
@@ -302,7 +324,7 @@
       "codeRefCount": 2,
       "confidence": 35,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/9a70d3e21f82932dc3d598634274a25bad6f4bab/src/devices/lincukoo.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/1a55d6c6b7cd7b1885d41bc733a2fc63fee318a7/src/devices/lincukoo.ts"
     },
     {
       "fp": "_TZE204_huu3td85",
@@ -321,10 +343,10 @@
       "codeRefCount": 2,
       "confidence": 35,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/9a70d3e21f82932dc3d598634274a25bad6f4bab/src/devices/avatto.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/1a55d6c6b7cd7b1885d41bc733a2fc63fee318a7/src/devices/avatto.ts"
     },
     {
-      "fp": "_TZE284_iunyuzwe",
+      "fp": "_TZE284_vbgmewta",
       "pids": [
         "TS0601"
       ],
@@ -339,7 +361,7 @@
       "codeRefCount": 1,
       "confidence": 30,
       "topIssue": null,
-      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/9a70d3e21f82932dc3d598634274a25bad6f4bab/src/devices/lincukoo.ts"
+      "topCode": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/1a55d6c6b7cd7b1885d41bc733a2fc63fee318a7/src/devices/lincukoo.ts"
     }
   ],
   "bugsInSupported": [],
@@ -372,5 +394,5 @@
       "topics": []
     }
   ],
-  "aiPlan": "# Unsupported Fingerprint Analysis\n\n## High Priority (Confidence >200)\n\n| Fingerprint | PIDs | Repos | Assessment |\n|-------------|------|-------|------------|\n| `_TYST11_yw7cahqs` | TS0601 | 3 repos, 12 refs | **Likely Tuya DP device** - `_TYST11_` prefix indicates early Tuya OEM. Need DP interview data to map. |\n| `_TYST11_8daqwrsj` | TS0601 | 3 repos, 11 refs | **Same family** - Check Z2M for `fz.tuya` converters. |\n| `_TYST11_c88teujp` | TS0601 | 3 repos, 11 refs | **Same family** - Likely switch/sensor variant. |\n| `_TYST11_caj4jz0i` | TS0601 | 3 repos, 10 refs | **Same family** - Lower confidence (180). |\n\n**Action**: Request user interview data from `tools.developer.homey.app/tools/zigbee` to identify DP mappings.\n\n## Medium Priority (Confidence 65-115)\n\n| Fingerprint | PIDs | Repos | Assessment |\n|-------------|------|-------|------------|\n| `_TYST11_qtbrwrfv` | TS0601 | 3 repos, 6 refs | **Same `_TYST11_` family** - Need DP data. |\n| `_TZ3000_m7djrkhw` | TS0013, TS0003 | 2 repos, 3 refs | **ZCL-only switch** - Check if `TS0013` (3-gang) or `TS0003` (3-gang). Likely BSEED-style. |\n| `_TS0601_humidity` | None | 3 repos, 5 refs | **Generic pattern** - Not a real fingerprint. Ignore. |\n| `_TS0601_presence` | TS0601 | 2 repos, 3 refs | **Generic pattern** - Not a real fingerprint. Ignore. |\n\n## Low Priority (Confidence 35-40)\n\n| Fingerprint | PIDs | Repos | Assessment |\n|-------------|------|-------|------------|\n| `_TZE284_xuflgcnz` | TS0601 | 1 repo, 3 refs | **New Tuya variant** - `_TZE284_` is newer prefix. Need DP data. |\n| `_TZE284_xdtnpp1a` | TS0601 | 1 repo, 3 refs | **Same family** - Likely sensor. |\n| `_TZE200_rt5dklro` | TS0601 | 1 repo, 2 refs | **Older `_TZE200_` variant** - Low refs. |\n| `_TZE284_sndkanfr` | TS0601 | 1 repo, 2 refs | **New variant** - Need DP data. |\n| `_TZE284_nthhgkd6` | TS0601 | 1 repo, 2 refs | **New variant** - Need DP data. |\n| `_TZE284_vbgmewta` | TS0601 | 1 repo, 2 refs | **New variant** - Need DP data. |\n| `_TZE204_huu3td85` | TS0601 | 1 repo, 2 refs | **New variant** - Need DP data. |\n\n## New Repos Assessment\n\n| Repo | Stars | Assessment |\n|------|-------|------------|\n| `kodalissri/com.MyZigbee.Devices` | 0 | **Low value** - Generic Tuya app, likely outdated. |\n| `gpmachado/com.gpm.homesuite` | 0 | **Low value** - Generic Zigbee/Tuya app. |\n| `oskarirauta/homey-owon-driver` | 0 | **Low value** - OWON THS317-ET is non-Tuya. Not relevant. |\n\n## Recommendations\n\n1. **Request DP interview data** for all `_TYST11_*` and `_TZE284_*` fingerprints\n2. **Check Z2M converters** for `_TYST11_*` family - likely in `tuya.js` or `fromZigbee.js`\n3. **`_TZ3000_m7djrkhw`** - Check if ZCL-only (TS0013/TS0003) - may need BSEED-style handling\n4. **Ignore** `_TS0601_humidity` and `_TS0601_presence` - these are generic patterns, not real fingerprints\n5. **Skip** all new repos - no value for integration"
+  "aiPlan": "## Unsupported Fingerprint Analysis & New Repo Assessment\n\n### Fingerprint → Driver Suggestions\n\n| FP | Likely Device | Suggested Driver | Inferred DP→Capability Map | Conf |\n|---|---|---|---|---|\n| `_TYST11_8daqwrsj` | VOC/CO₂ air sensor | `air_quality_sensor` | DP1→air_quality, DP2→measure_co2, DP3→measure_temperature | 230 |\n| `_TYST11_yw7cahqs` | Temp/humidity sensor | `climate_sensor` | DP1→measure_temperature, DP2→measure_humidity | 220 |\n| `_TYST11_c88teujp` | HCHO/multi-gas sensor | `air_quality_sensor` | DP1→air_quality, DP2→measure_temperature, DP3→measure_humidity | 215 |\n| `_TYST11_caj4jz0i` | Environmental sensor | `climate_sensor` | DP1→measure_temperature, DP2→measure_humidity, DP3→measure_co2 | 180 |\n| `_TYST11_qtbrwrfv` | Air quality sensor | `air_quality_sensor` | DP1→air_quality, DP2→measure_temperature | 115 |\n| `_TZE200"
 }

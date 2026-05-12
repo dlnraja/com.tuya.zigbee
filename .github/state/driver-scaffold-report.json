@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-11T15:47:50.691Z",
+  "timestamp": "2026-05-12T03:56:34.097Z",
   "conflicts": [
     {
       "pid": "TS0501B",
@@ -219,6 +219,7 @@
       "pid": "TS011F",
       "drivers": [
         "button_wireless_2",
+        "button_wireless_plug",
         "fingerbot",
         "plug_energy_monitor",
         "plug_smart",
@@ -228,8 +229,8 @@
       ],
       "classes": [
         "sensor",
-        "button",
-        "socket"
+        "socket",
+        "button"
       ],
       "crossClass": true
     },
@@ -296,6 +297,7 @@
       "drivers": [
         "button_wireless_2",
         "button_wireless_3",
+        "remote_button_wireless",
         "remote_button_wireless_wall",
         "scene_switch_3",
         "scene_switch_wall",
@@ -313,6 +315,7 @@
       "pid": "TS0121",
       "drivers": [
         "button_wireless_2",
+        "button_wireless_plug",
         "plug_energy_monitor"
       ],
       "classes": [
@@ -325,6 +328,7 @@
       "pid": "TSO121",
       "drivers": [
         "button_wireless_2",
+        "button_wireless_plug",
         "plug_energy_monitor"
       ],
       "classes": [
@@ -891,7 +895,7 @@
   "scaffolded": [],
   "errors": [],
   "summary": {
-    "ourDrivers": 225,
+    "ourDrivers": 227,
     "johanDrivers": 113,
     "pidConflicts": 69,
     "crossClassConflicts": 33,

@@ -1,5 +1,5 @@
 {
-  "ts": "2026-05-11T16:24:43.728Z",
+  "ts": "2026-05-12T04:32:59.102Z",
   "correlations": [],
   "actionable": [
     {
@@ -49,7 +49,7 @@
     {
       "id": "pairing",
       "pattern": "Pairing Failure",
-      "count": 17,
+      "count": 18,
       "priority": "high"
     },
     {
@@ -61,7 +61,7 @@
     {
       "id": "unknown",
       "pattern": "Device Shows Unknown",
-      "count": 6,
+      "count": 7,
       "priority": "high"
     },
     {

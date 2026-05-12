@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-05-11T15:31:06.201Z",
-  "appVersion": "7.5.14",
+  "timestamp": "2026-05-12T03:37:56.112Z",
+  "appVersion": "7.5.16",
   "findings": {
     "issues": [
       {
@@ -22,60 +22,6 @@
         "imageAnalysis": null
       },
       {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 314,
-        "title": "Smart Wireless Button (1), unknown device",
-        "user": "Lalla80111",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZ3000_b4awzgct",
-            "drivers": [
-              "button_wireless_1"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/314",
-        "state": "open",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 276,
-        "title": "Smart Solar Soil Sensor",
-        "user": "vikinos",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE284_rqcuwlsa",
-            "drivers": [
-              "climate_sensor"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/276",
-        "state": "open",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "dlnraja/com.tuya.zigbee",
-        "number": 305,
-        "title": "Zigbee Gate Opener Module / QS-Zigbee-C03 / TS0603",
-        "user": "PDominikPL",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE608_c75zqghm",
-            "drivers": [
-              "garage_door_opener"
-            ]
-          }
-        ],
-        "url": "https://github.com/dlnraja/com.tuya.zigbee/issues/305",
-        "state": "open",
-        "imageAnalysis": null
-      },
-      {
         "repo": "JohanBendz/com.tuya.zigbee",
         "number": 1395,
         "title": "Device Request - [1-Gang Zigbee Switch] - [TZ3000_hyarhbyx] / [TS0001]",
@@ -85,24 +31,6 @@
         ],
         "existingFPs": [],
         "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1395",
-        "state": "open",
-        "imageAnalysis": null
-      },
-      {
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "number": 1393,
-        "title": "Device Request - Tuya - PJ-1203A Bidirectional Energy Meter - _TZE204_81yrt3lo / TS0601",
-        "user": "macmonty",
-        "newFPs": [],
-        "existingFPs": [
-          {
-            "fp": "_TZE204_81yrt3lo",
-            "drivers": [
-              "din_rail_meter"
-            ]
-          }
-        ],
-        "url": "https://github.com/JohanBendz/com.tuya.zigbee/issues/1393",
         "state": "open",
         "imageAnalysis": null
       }
@@ -186,5 +114,5 @@
     "newFPs": [],
     "forkFPs": []
   },
-  "aiSummary": "## GitHub Activity Summary — Universal Tuya Zigbee\n\n### Issues\n\n**Closed:**\n- **#316** — Climate sensor `_TZ3000_fllyghyj` already supported in `climate_sensor` driver. Resolved.\n\n**Open (existing support):**\n- **#314** — Wireless button `_TZ3000_b4awzgct` → `button_wireless_1` driver. User needs re-pair.\n- **#276** — Solar soil sensor `_TZE284_rqcuwlsa` → `climate_sensor` driver. Re-pair advised.\n- **#305** — Gate opener `_TZE608_c75zqghm` → `garage_door_opener` driver. Re-pair advised.\n- **#1393 (JohanBendz)** — Energy meter `_TZE204_81yrt3lo` → `din_rail_meter` driver. Already supported.\n\n**New fingerprint request:**\n- **#1395 (JohanBendz)** — `_TZ3000_hyarhbyx` / TS0001 1-gang switch. Not yet in any driver. Needs integration.\n\n### PRs (JohanBendz fork — candidates for integration)\n\n| PR | Fingerprint(s) | Driver | Status |\n|----|----------------|--------|--------|\n| #1372 | `_TZE200_mgxy2d9f` | motion_sensor | Open, unmerged |\n| #1350 | `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab` | TS110E dimmer | Open, unmerged |\n| #1253 | `_TZE200_pay2byax`, `_TZ3000_mrpevh8p` | motion_sensor + switch | Open, unmerged |\n| #1219 | `_TZ3000_gjrubzje` | switch_1gang | Open, unmerged |\n| #1218 | `_TZE204_dapwryy7` | climate_sensor | Open, unmerged |\n| #1166 | `_TZ3000_c8ozah8n` | motion_sensor | Closed, unmerged |\n\n### Action Items\n1. **Integrate** `_TZ3000_hyarhbyx` into `switch_1gang` driver\n2. **Review & merge** PRs #1372, #1350, #1253, #1219, #1218 from JohanBendz fork\n3. **Notify users** on #314, #276, #305 to re-pair after next update"
+  "aiSummary": "## Universal Tuya Zigbee — GitHub Activity Summary for #140352\n\n### 🔍 Issues (2)\n\n| # | Status | FP | Notes |\n|---|--------|----|-------|\n| **#316** | ✅ Closed | `_TZ3000_fllyghyj` (TS0201) | Climate sensor misidentified — FP already exists in `climate_sensor` driver. User needed re-pair after v5.11.25+ update. |\n| **#1395** | 🟡 Open | `_TZ3000_hyarhbyx` (TS0001) | 1-gang Zigbee switch request by @Kennybarroz. Standard on/off — maps to `switch_1gang`. Needs FP addition + driver assignment. |\n\n### 📋 Open PRs — FPs Pending Integration (6 PRs, 8 new FPs)\n\n| PR | Author | FP(s) | Target Driver | Status |\n|----|--------|-------|---------------|--------|\n| **#1372** | oskarirauta | `_TZE200_mgxy2d9f` | `motion_sensor` | Open |\n| **#1350** | PiTRiS87 | `_TZ3210_ngqk6jia`, `_TZ3210_weaqkhab` | `thermostat` (TS110E series) | Open |\n| **#1166** | chernals | `_TZ3000_c8ozah8n` (TS0202 PIR) | `motion_sensor` | Closed (unmerged) — needs re-evaluation against current `HybridSensorBase` passive DP listener |\n| **#1253** | Peter-Celica | `_TZE200_pay2byax`, `_TZ3000_mrpevh8p` | `valve_irrigation` / TBD | Open — `_TZE200_pay2byax` already tracked in USER_DEVICE_EXPECTATIONS.md as fixed for `valve_irrigation` (GH#135) |\n| **#1219** | Melectro1 | `_TZ3000_gjrubzje` | TBD — needs interview | Open |\n| **#1218** | Melectro1 | `_TZE204_dapwryy7` | TBD — needs interview | Open |\n\n### ✅ Already Supported (no action needed)\n- `_TZ3000_fllyghyj` → `climate_sensor` driver (issue #316 confirmed existing)\n- `_TZE200_pay2byax` → `valve_irrigation` (fixed in v5.12.0 per USER_DEVICE_EXPECTATIONS.md)\n\n### 🔧 Action Items\n1. **Merge candidates**: PRs #1372, #1350, #1253 contain valid new FPs — verify against current driver fingerprints DB (`DeviceFingerprintDB.js`) to avoid collisions before merging.\n2. **Needs device interview**: `_TZ3000_gjrubzje`, `_TZE204_dapwryy7`, `_TZ3000_mrpevh8p` — request ZCL interview dumps from users via `tools.developer.homey.app/tools/zigbee`.\n3. **Re-evaluate #1166**: `_TZ3000_c8ozah8n` (TS0202 PIR) — with the passive DP listener (v5.11.170+), TS0202 devices should now auto-enroll without explicit cluster probing. Confirm if this FP is already covered by existing `motion_sensor` fingerprints.\n4. **#1395**: Add `_TZ3000_hyarhbyx` to `switch_1gang` driver — straightforward TS0001 mapping.\n\n### ⚠️ Notes\n- All PRs originate from `JohanBendz/com.tuya.zigbee` fork — standard upstream merge workflow applies.\n- No new **fork-specific fingerprints** requiring separate driver entries detected — all map to existing driver categories.\n- Recommend closing #1166 and #1253 as duplicates if their FPs are already present in the DB post-v5.12.0."
 }
