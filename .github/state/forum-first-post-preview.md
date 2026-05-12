@@ -1,6 +1,6 @@
 # 🏠 Universal Tuya Zigbee v7.5.16
 
-> **227 drivers** · **10858+ fingerprints** · Updated 2026-05-12
+> **228 drivers** · **10854+ fingerprints** · Updated 2026-05-12
 
 Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehensive Tuya app available.
 
@@ -10,15 +10,15 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 ## What's New (v7.5.16)
 
-Virtual Telemetry Compensation Engine, Button Device (TS0041/TS0044), Device Fingerprint Database, Case-Insensitive Matching, Diagnostic Collection
+Fixed broken require paths in siren sensor driver. Added Virtual Telemetry Compensation Engine for dynamic device calibration. Enhanced ButtonDevice handling. Added new device fingerprints. Now .
 
 ## Supported Devices
 
 | Category | Drivers | FPs |
 |---|---|---|
-| 🔌 Socket | 52 | 2533 |
+| 🔌 Socket | 53 | 2536 |
 | 💡 Light | 24 | 1191 |
-| 📡 Sensor | 60 | 4405 |
+| 📡 Sensor | 60 | 4398 |
 | 🌡️ Thermostat | 18 | 900 |
 | 🪟 Windowcoverings | 5 | 478 |
 | 🔐 Lock | 4 | 66 |
@@ -45,13 +45,15 @@ Virtual Telemetry Compensation Engine, Button Device (TS0041/TS0044), Device Fin
 
 <details><summary>Previous versions</summary>
 
+**v7.5.17:** Added support for new devices:
+- bulb_dimmable (_TYZB01_bngwdjsr / TS0501A,TS0501B,TS110E,TS110F,LED1623G12,LED1649C5,LED1836G9,LWB004,LWB006,LWB010,LWB014,Plug 01,A19 W 10 year,BR30 W 10 year,PAR38 W 10 year,GL-B-001Z,RS 125,RB 165,RB 175 W,ZBT-DimmableLight,TS0052,TS1101)
+- button_wireless_2 (_tyzb01_hlla45kx, _TYZB01_HLLA45KX, _tyzb01_iuepbmpv, _TYZB01_IUEPBMPV, _tyzb01_phjeraqq, _TYZB01_PHJERAQQ, _tyzb01_ncutbjdi, _TYZB01_NCUTBJDI, _tyzb01_aneiicmq, _TYZB01_ANEIICMQ, _tyz... and more.
+
 **v7.5.15:** Fixed siren sensor driver crashes, added 3,202 new fingerprints, and improved device detection reliability.
 
 **v7.5.14:** . Bug fixes for wireless buttons, climate sensors, radiator valves, and energy meters. Improved device initialization and diagnostics.
 
 **v7.5.13:** . Added new fingerprints for motion sensor, illuminance sensor, 3-gang switch, energy meter, and DIN rail. Fixed INSOMA dual irrigation valve and smart wireless button detection. Improved climate sensor recognition.
-
-**v7.5.12:** . Fixed sensor fallback logic for unknown models. Added new fingerprints for radiator valve (_TZE284_ne4pikwm). Updated documentation and project rules.
 
 </details>
 

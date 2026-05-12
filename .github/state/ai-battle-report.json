@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-05-12T04:43:27.653Z",
+  "timestamp": "2026-05-12T16:27:18.028Z",
   "dryRun": false,
   "sources": {
     "external": 1607,
-    "github": 6,
+    "github": 8,
     "forks": 0,
-    "johan": 38,
+    "johan": 36,
     "gmail": 0,
     "forum": 0,
     "diagnostics": 0,
@@ -18,8 +18,8 @@
   "classified": {
     "total": 14,
     "byMethod": {
-      "ai-single": 12,
-      "ai-consensus(2/2)": 2
+      "ai-single": 13,
+      "ai-consensus(2/2)": 1
     },
     "details": [
       {
@@ -42,7 +42,7 @@
       },
       {
         "fp": "_TYZB01_zqvwka4k",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -51,7 +51,7 @@
       },
       {
         "fp": "_TYZB01_4lwqwyqn",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -60,7 +60,7 @@
       },
       {
         "fp": "_TYZB01_kvwjujy9",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -69,7 +69,7 @@
       },
       {
         "fp": "_TYZB01_o7m83470",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -78,7 +78,7 @@
       },
       {
         "fp": "_TYZB01_tob46aoq",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -87,7 +87,7 @@
       },
       {
         "fp": "_TYZB01_0w3d5uw3",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -96,7 +96,7 @@
       },
       {
         "fp": "_TYZB01_0aps0h1r",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -105,8 +105,8 @@
       },
       {
         "fp": "_TYZB01_bngwdjsr",
-        "driver": "bulb_dimmable",
-        "method": "ai-consensus(2/2)",
+        "driver": "switch_1gang",
+        "method": "ai-single",
         "pids": [],
         "sources": [
           "johan"
@@ -114,7 +114,7 @@
       },
       {
         "fp": "_TYZB01_ftdkanlj",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -123,7 +123,7 @@
       },
       {
         "fp": "_TYZB01_yr95mpib",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -132,7 +132,7 @@
       },
       {
         "fp": "_TYZB01_b6eaxdlh",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -141,7 +141,7 @@
       },
       {
         "fp": "_TYZB01_gr6rozze",
-        "driver": "bulb_dimmable",
+        "driver": "switch_1gang",
         "method": "ai-single",
         "pids": [],
         "sources": [
@@ -151,9 +151,9 @@
     ]
   },
   "implemented": {
-    "added": 2,
+    "added": 1,
     "skipped": 0
   },
   "ghApiCalls": 100,
-  "aiSummary": "The report scanned 1,607 external sources and 38 internal ones, classifying 14 new fingerprints with 2 auto-implemented. No confirmed variants were found. Top issues include 36 false battery alerts (high priority) and 18 pairing failures."
+  "aiSummary": "The report scanned 1,607 external sources and 36 Johan sources, classifying 14 new fingerprints with 1 auto-implemented. It identified 37 high-priority false battery alerts and 18 pairing failures as top patterns. No confirmed variants were found."
 }

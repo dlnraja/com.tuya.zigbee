@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-05-12T03:38:18.841Z",
+  "timestamp": "2026-05-12T15:25:05.542Z",
   "totalFiles": 0,
-  "totalFixes": 263,
+  "totalFixes": 250,
   "rules": {
     "fingerprint-case": {
-      "count": 146,
+      "count": 145,
       "files": [
         {
           "file": "drivers/air_purifier/driver.compose.json",
@@ -20,7 +20,7 @@
         },
         {
           "file": "drivers/bulb_dimmable/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+          "detail": "Expanded fingerprints with robust casing variants (added -2)"
         },
         {
           "file": "drivers/bulb_dimmable_dimmer/driver.compose.json",
@@ -48,7 +48,7 @@
         },
         {
           "file": "drivers/button_emergency_sos/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+          "detail": "Expanded fingerprints with robust casing variants (added -1)"
         },
         {
           "file": "drivers/button_wireless/driver.compose.json",
@@ -60,11 +60,11 @@
         },
         {
           "file": "drivers/button_wireless_2/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -13)"
+          "detail": "Expanded fingerprints with robust casing variants (added -18)"
         },
         {
           "file": "drivers/button_wireless_3/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
           "file": "drivers/button_wireless_4/driver.compose.json",
@@ -80,7 +80,7 @@
         },
         {
           "file": "drivers/button_wireless_plug/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
           "file": "drivers/button_wireless_smart/driver.compose.json",
@@ -92,7 +92,7 @@
         },
         {
           "file": "drivers/climate_sensor/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
           "file": "drivers/co_sensor/driver.compose.json",
@@ -100,7 +100,7 @@
         },
         {
           "file": "drivers/contact_sensor/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -9)"
+          "detail": "Expanded fingerprints with robust casing variants (added -13)"
         },
         {
           "file": "drivers/curtain_motor/driver.compose.json",
@@ -280,7 +280,7 @@
         },
         {
           "file": "drivers/motion_sensor/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -12)"
+          "detail": "Expanded fingerprints with robust casing variants (added -13)"
         },
         {
           "file": "drivers/motion_sensor_2/driver.compose.json",
@@ -343,11 +343,11 @@
           "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers/remote_button_wireless/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+          "file": "drivers/remote_button_wireless_handheld/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers/remote_button_wireless_handheld/driver.compose.json",
+          "file": "drivers/remote_button_wireless_plug/driver.compose.json",
           "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
@@ -380,10 +380,6 @@
         },
         {
           "file": "drivers/scene_switch_wall/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
-        },
-        {
-          "file": "drivers/sensor_contact_water/driver.compose.json",
           "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
@@ -468,7 +464,7 @@
         },
         {
           "file": "drivers/switch_4gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
           "file": "drivers/switch_dimmer_1gang/driver.compose.json",
@@ -851,7 +847,7 @@
       ]
     },
     "dp-variant-docs": {
-      "count": 11,
+      "count": 12,
       "files": [
         {
           "file": "drivers/button_wireless_plug/device.js",
@@ -883,6 +879,10 @@
         },
         {
           "file": "drivers/radiator_valve/device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
+          "file": "drivers/remote_button_wireless_plug/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
@@ -1001,83 +1001,31 @@
       ]
     },
     "duplicate-fingerprints": {
-      "count": 19,
+      "count": 6,
       "files": [
         {
           "file": "drivers",
-          "detail": "_tyzb01_qezuin6k|ts110e found in: bulb_dimmable, bulb_dimmable_dimmer"
+          "detail": "_tyzb01_hlla45kx|ts011f found in: button_wireless_2, button_wireless_plug"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_qezuin6k|ts110f found in: bulb_dimmable, bulb_dimmable_dimmer"
+          "detail": "_tyzb01_hlla45kx|ts0121 found in: button_wireless_2, button_wireless_plug"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_qezuin6k|ts0052 found in: bulb_dimmable, bulb_dimmable_dimmer"
+          "detail": "_tyzb01_hlla45kx|tso121 found in: button_wireless_2, button_wireless_plug"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_qezuin6k|ts1101 found in: bulb_dimmable, bulb_dimmable_dimmer"
+          "detail": "_tyzb01_iuepbmpv|ts011f found in: button_wireless_2, remote_button_wireless_plug"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_hlla45kx|ts011f found in: button_wireless_2, button_wireless_plug, plug_energy_monitor"
+          "detail": "_tyzb01_iuepbmpv|ts0121 found in: button_wireless_2, remote_button_wireless_plug"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_hlla45kx|ts0121 found in: button_wireless_2, button_wireless_plug, plug_energy_monitor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_hlla45kx|tso121 found in: button_wireless_2, button_wireless_plug, plug_energy_monitor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_iuepbmpv|ts011f found in: button_wireless_2, button_wireless_plug"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_iuepbmpv|ts0121 found in: button_wireless_2, button_wireless_plug"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_iuepbmpv|tso121 found in: button_wireless_2, button_wireless_plug"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb02_keyjhapk|ts0042 found in: button_wireless_2, remote_button_wireless_wall"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb02_keyjhapk|ts0043 found in: button_wireless_2, remote_button_wireless_wall"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb02_key8kk7r|ts0043 found in: button_wireless_2, button_wireless_3, remote_button_wireless"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-3tipnsrx|ts0601 found in: contact_sensor, sensor_contact_water"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-3tipnsrx|ts0207 found in: contact_sensor, sensor_contact_water"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-3tipnsrx|q9mpfhw found in: contact_sensor, sensor_contact_water"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_sqmd19i1|ts0601 found in: contact_sensor, sensor_contact_water"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_sqmd19i1|ts0207 found in: contact_sensor, sensor_contact_water"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_sqmd19i1|q9mpfhw found in: contact_sensor, sensor_contact_water"
+          "detail": "_tyzb01_iuepbmpv|tso121 found in: button_wireless_2, remote_button_wireless_plug"
         }
       ]
     },

@@ -95,7 +95,7 @@ class AirQualityComprehensiveDevice extends SensorBase {
   async onDeleted() {
     this.log('[AIR-QUALITY] 🗑️ Device deleted, cleaning up');
     // Clean up all event listeners to prevent memory leaks
-    this.removeAllListeners();
+    this.removeAllListeners(); if (this._batteryHandler) { this._batteryHandler.destroy(); };
     // Clean up any intervals/timeouts
     if (this._batteryPollInterval) {
       clearInterval(this._batteryPollInterval);

@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-05-12T03:43:09.380Z",
+  "timestamp": "2026-05-12T15:26:25.682Z",
   "driversScanned": 20,
   "staticIssues": 46,
   "autoFixed": 0,
-  "aiSuggestions": 21,
+  "aiSuggestions": 34,
   "aiApplied": 1,
   "dryRun": false,
   "results": [
@@ -27,14 +27,16 @@
       "driver": "air_quality_comprehensive",
       "issues": [
         "sdk3-case-sensitive-fingerprint"
-      ]
+      ],
+      "aiModel": "deepseek"
     },
     {
       "driver": "bulb_dimmable",
       "issues": [
         "sdk3-battery-conflict",
         "sdk3-case-sensitive-fingerprint"
-      ]
+      ],
+      "aiModel": "deepseek"
     },
     {
       "driver": "bulb_dimmable_dimmer",

@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-05-12T04:32:59.011Z",
+  "timestamp": "2026-05-12T16:16:20.464Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
       "id": "battery",
-      "count": 36,
+      "count": 37,
       "priority": "high",
       "topFPs": [
         [
@@ -13,7 +13,7 @@
         ],
         [
           "TS0601",
-          17
+          18
         ],
         [
           "_TZE",
@@ -310,6 +310,52 @@
       ]
     },
     {
+      "pattern": "No Temperature",
+      "id": "no_temperature",
+      "count": 2,
+      "priority": "medium",
+      "topFPs": [
+        [
+          "TS0601",
+          2
+        ],
+        [
+          "_TZ3000_tsgqxdb4",
+          1
+        ],
+        [
+          "sonoff",
+          1
+        ],
+        [
+          "debug",
+          1
+        ],
+        [
+          "test",
+          1
+        ],
+        [
+          "TS0201",
+          1
+        ],
+        [
+          "_TZ3000_402vrq2i",
+          1
+        ],
+        [
+          "zigbee2mqtt",
+          1
+        ],
+        [
+          "TS004F",
+          1
+        ]
+      ],
+      "fix": "Check DP18 divisor",
+      "files": []
+    },
+    {
       "pattern": "Inverted Sensor State",
       "id": "inversion",
       "count": 1,
@@ -369,40 +415,6 @@
       "files": []
     },
     {
-      "pattern": "No Temperature",
-      "id": "no_temperature",
-      "count": 1,
-      "priority": "low",
-      "topFPs": [
-        [
-          "_TZ3000_tsgqxdb4",
-          1
-        ],
-        [
-          "sonoff",
-          1
-        ],
-        [
-          "debug",
-          1
-        ],
-        [
-          "test",
-          1
-        ],
-        [
-          "TS0201",
-          1
-        ],
-        [
-          "TS0601",
-          1
-        ]
-      ],
-      "fix": "Check DP18 divisor",
-      "files": []
-    },
-    {
       "pattern": "Wrong Energy",
       "id": "energy_wrong",
       "count": 1,
@@ -439,14 +451,14 @@
   ],
   "detections": {
     "inversion": 1,
-    "battery": 36,
+    "battery": 37,
     "double_div": 2,
     "pairing": 18,
     "unknown": 7,
     "flow_dup": 0,
     "no_response": 9,
     "voltage_wrong": 1,
-    "no_temperature": 1,
+    "no_temperature": 2,
     "ring_value": 5,
     "energy_wrong": 1,
     "sensor_zero": 0

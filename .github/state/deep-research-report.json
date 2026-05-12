@@ -1,23 +1,26 @@
 {
-  "ts": "2026-05-12T04:09:53.320Z",
+  "ts": "2026-05-12T15:53:40.159Z",
   "ghCalls": 120,
-  "totalFPs": 99,
-  "newFPs": 7,
+  "totalFPs": 98,
+  "newFPs": 6,
   "researched": 1,
-  "implemented": 0,
+  "implemented": 2,
   "results": [
     {
-      "fp": "_TZ3000_hyarhbyx",
-      "driver": "switch_1gang",
+      "fp": "_TZE204_81yrt3l",
+      "driver": "power_meter",
       "confidence": 0,
       "pidsFromIssue": [
-        "TS0001"
+        "TS0601"
       ],
       "discoveredPIDs": [],
       "variants": 2,
-      "actions": [],
+      "actions": [
+        "added_variant:_TZE200_81yrt3l",
+        "added_variant:_TZE284_81yrt3l"
+      ],
       "sources": [
-        "JohanBendz/com.tuya.zigbee#1395 (issue)"
+        "dlnraja/com.tuya.zigbee#318 (issue)"
       ]
     }
   ]

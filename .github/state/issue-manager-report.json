@@ -1,35 +1,12 @@
 {
-  "timestamp": "2026-05-12T10:23:37.124Z",
+  "timestamp": "2026-05-12T15:02:16.774Z",
   "appVersion": "7.5.17",
-  "responded": 2,
+  "responded": 0,
   "closed": 0,
   "labeled": 0,
   "issuesProcessed": 108,
   "prsProcessed": 36,
-  "skipped": 106,
-  "newFingerprints": [
-    {
-      "fp": "_TZ3000_402vrq2i + TS0601",
-      "source": "dlnraja/com.tuya.zigbee#319",
-      "type": "device_request"
-    },
-    {
-      "fp": "zigbee2mqtt + TS004F",
-      "source": "dlnraja/com.tuya.zigbee#319",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE204_81yrt3l + TS0601",
-      "source": "dlnraja/com.tuya.zigbee#318",
-      "type": "bug_report"
-    },
-    {
-      "fp": "router + TS0601",
-      "source": "dlnraja/com.tuya.zigbee#318",
-      "type": "bug_report"
-    }
-  ],
-  "evolutionSummary": "**Project Evolution Summary**\n\nThis cycle processed **108 issues** and **36 PRs**, with **4 new fingerprints** identified. Key discoveries include **_TZ3000_402vrq2i** (TS0601) and **_TZE204_81yrt3l** (TS0601), both sourced from active issue threads (#319, #318), expanding the supported device catalog. A **TS004F** button device request and a **router** device report were also logged for investigation.\n\nOf 2 responded items, none have been closed yet, indicating pending triage or awaiting user diagnostics. The high issue-to-PR ratio (3:1) suggests strong community engagement but a need for more contributor-driven fixes.\n\n**Action Items:**\n- Investigate _TZ3000_402vrq2i and _TZE204_81yrt3l for driver assignment or new driver creation.\n- Follow up on open issue threads #318 and #319 for diagnostic data completion.\n- Prioritize closing the 2 responded-but-unresolved items.\n- Review pending PRs for merge readiness to accelerate fingerprint integration.",
-  "crossPosts": 2,
-  "bugInvestigations": 4
+  "skipped": 108,
+  "newFingerprints": [],
+  "evolutionSummary": null
 }
