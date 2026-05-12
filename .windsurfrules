@@ -54,6 +54,9 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
 ```
 
 ### Backlight values: `"off"`, `"normal"`, `"inverted"` (strings, not numbers)
+- Must NOT use numeric comparisons (e.g., `=== 0`, `=== 1`, `'0'`, `'1'`).
+- Always use ternary statements to map string states to DP integers when sending commands: `const lightMode = backlightMode === 'normal' ? 1 : 2;`
+- Strictly enforced and verified by Layer 11 of the Multi-Layer Quality Gateway.
 
 ### Physical button detection (2000ms timeout):
 ```javascript

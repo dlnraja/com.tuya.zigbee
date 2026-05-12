@@ -12,6 +12,7 @@
    - **NO WILDCARDS** in `manufacturerName` (e.g., `_TZE284_*` is strictly forbidden).
    - All comparisons must be case-insensitive using the custom utility [CaseInsensitiveMatcher.js](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/lib/CaseInsensitiveMatcher.js). Manual `.toLowerCase()` is forbidden.
    - Setting keys must be `zb_model_id` (not `zb_modelId`) and `zb_manufacturer_name` (not `zb_manufacturerName`).
+   - **Layer 11: Backlight Value Representation Check**: Backlight settings must use string representation (`"off"`, `"normal"`, `"inverted"`) instead of numeric comparisons. Direct comparisons against numbers (e.g., `=== 0`, `=== 1`, `=== 2` or as strings `'0'`, `'1'`, `'2'`) are strictly forbidden. Use ternary operators to map string states to DP integers when sending commands.
    - **BSEED 3-Gang ZCL Routing (Issue #170)**: Ensure `_TZ3000_v4l4b0lp` is registered inside the `ZCL_ONLY_MANUFACTURERS_3G` array in `drivers/switch_3gang/device.js` to force routing over standard ZCL Clusters (OnOff) instead of Tuya custom DP (0xEF00) mode, ensuring sub-capability flow cards are bound correctly.
 
 2. **Energy & Hybrid Drivers Rule**:
