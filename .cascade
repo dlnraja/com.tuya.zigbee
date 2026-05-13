@@ -42,3 +42,6 @@ this._appCommandPending = false;
 - lib/devices/HybridSwitchBase.js
 - lib/mixins/PhysicalButtonMixin.js
 - drivers/{type}/driver.flow.compose.json
+
+## PLAYBOOKS & SKILLS
+- Always consult `.agents/skills/` playbooks and draw inspiration from `https://github.com/sickn33/antigravity-awesome-skills` for high-fidelity audits and systematic troubleshooting.
