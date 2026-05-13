@@ -180,6 +180,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     // PJ-1203A 2-channel bidirectional variants (Z2M #18419, #22248, #25809)
     const pj1203aIds = [
       '_TZE284_81yrt3lo', '_TZE204_81yrt3lo',  // Original PJ-1203A
+      '_TZE284_81yrt3l', '_TZE204_81yrt3l',    // Variant without trailing o
       '_TZE200_81yrt3lo',                       // Older variant (Z2M #18432)
       '_TZE204_cjbofhxw', '_TZE284_cjbofhxw'   // Matsee Plus variant (Z2M #15359)
     ];
