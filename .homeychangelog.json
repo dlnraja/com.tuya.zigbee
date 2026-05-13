@@ -1,4 +1,7 @@
 {
+  "7.5.28": {
+    "en": "Added 3,208 new fingerprints, improved driver matching for soil sensors, and fixed various device initialization issues."
+  },
   "7.5.27": {
     "en": "v7.5.27: . New IR pairing wizard, improved power clamp meter, and various bug fixes."
   },
@@ -56,10 +59,7 @@
   "7.5.9": {
     "en": "v7.5.9: . Fixed ProtocolArbitrator crash, _TZE608 opener reclassification, SDK3 validation errors, duplicate fingerprints, case-insensitive matching, and MODULE_NOT_FOUND crash. Added 5 new fingerprints, Z2M enriched mappings, rain/soil sensor fixes."
   },
-  "5.11.212": {
-    "en": "Implement Rule 24 caseless resolver and dynamic O(1) matching system for high-performance pairing."
-  },
-  "7.5.28": {
-    "en": "v7.5.27: IR Blaster Pairing Wizard, Power Clamp Meter, Fixed IR button remote manager to prevent duplicate commands., Corrected IAS device initialization for certain motion sensors., Resolved data handler edge case for multi-DP reports."
+  "7.5.29": {
+    "en": "v7.5.28: Added 3,208 new device fingerprints, expanding support for more Tuya Zigbee devices., Improved driver matching for soil sensors (including _TZE284_0ints6wl)., Fixed device initialization issues in HybridDriverSystem., Resolved various stability improvements for sensor devices., Updated app metadata and documentation."
   }
 }
