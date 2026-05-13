@@ -1,7 +1,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const B = path.resolve(__dirname, '..', 'drivers');
+const B = path.resolve(__dirname, '..', '..', 'drivers');
 const SRC = path.join(B, 'wifi_heater');
 const ids = [
   'wifi_switch','wifi_switch_2gang','wifi_switch_3gang','wifi_switch_4gang',
