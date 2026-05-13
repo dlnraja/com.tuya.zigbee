@@ -16,7 +16,8 @@
     "meter_power",
     "measure_voltage",
     "measure_current",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -94,8 +95,7 @@
       "_TZE204_BSEED3G",
       "_tze204_mvtclclq",
       "_TZE204_mvtclclq",
-      "_TZE204_MVTCLCLQ",
-      "_TYZB01_vkwryfdr"
+      "_TZE204_MVTCLCLQ"
     ],
     "productId": [
       "TS0115",

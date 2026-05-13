@@ -11,7 +11,8 @@
     "measure_battery",
     "measure_temperature",
     "measure_humidity",
-    "alarm_tamper"
+    "alarm_tamper",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -133,9 +134,7 @@
       "_TZ3210_up3pngle",
       "_TZ3210_UP3PNGLE",
       "_tyzb01_wqcac7lo",
-      "_TYZB01_WQCAC7LO",
-      "_TYZB01_dsjszp0x",
-      "_TYZB01_wqcac7lo"
+      "_TYZB01_WQCAC7LO"
     ],
     "endpoints": {
       "1": {

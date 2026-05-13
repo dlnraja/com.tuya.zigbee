@@ -9,7 +9,8 @@
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [
@@ -2026,8 +2027,7 @@
       "_TZE284_AAEASOLL",
       "_tze600_wxq8dpha",
       "_TZE600_wxq8dpha",
-      "_TZE600_WXQ8DPHA",
-      "_TYZB01_cbiezpds"
+      "_TZE600_WXQ8DPHA"
     ],
     "productId": [
       "TS0201",
