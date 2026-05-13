@@ -34,6 +34,8 @@ const BUTTON_PRESS = { SINGLE: 1, DOUBLE: 2, LONG: 3 };
 class GenericDIYDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.log('[DIY] ═══════════════════════════════════════');
     this.log('[DIY] GENERIC DIY ZIGBEE v5.7.2');
     this.log('[DIY] ESP32 / PTVO / CC253x / Custom ZCL');
@@ -81,7 +83,7 @@ class GenericDIYDevice extends ZigBeeDevice {
   // ═══════════════════════════════════════════════════════════
 
   _triggerFlow(flowId, tokens = {}) {
-    const card = this.homey.flow.getDeviceTriggerCard(flowId);
+    const card = this.homey.flow.getTriggerCard(flowId);
     if (card) {
       card.trigger(this, tokens, {}).catch(e => this.error(`[DIY] Flow ${flowId}: ${e.message}`));
       this.log(`[DIY] 🔔 Flow: ${flowId}`, tokens);

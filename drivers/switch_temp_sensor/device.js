@@ -31,6 +31,8 @@ const CLUSTER_HUMIDITY = 1029;    // 0x0405 - ZCL Humidity
 class SwitchTempSensorDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.log('═══════════════════════════════════════════════════════════');
     this.log('Switch with Temperature Sensor v5.5.402 (Rolp forum fix)');
     this.log('═══════════════════════════════════════════════════════════');

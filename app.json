@@ -934,7 +934,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_smart_bulb_dimmer_turned_on",
+        "id": "bulb_dimmable_dimmer_smart_bulb_dimmer_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -948,7 +948,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_smart_bulb_dimmer_turned_off",
+        "id": "bulb_dimmable_dimmer_smart_bulb_dimmer_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -962,7 +962,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_smart_bulb_dimmer_dim_changed",
+        "id": "bulb_dimmable_dimmer_smart_bulb_dimmer_dim_changed",
         "title": {
           "en": "Brightness changed",
           "fr": "Luminosité changée"
@@ -987,7 +987,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_turned_on",
+        "id": "bulb_dimmable_dimmer_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé",
@@ -1003,7 +1003,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_turned_off",
+        "id": "bulb_dimmable_dimmer_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint",
@@ -1019,7 +1019,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_battery_low",
+        "id": "bulb_dimmable_dimmer_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -4264,7 +4264,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_turned_on",
+        "id": "button_wireless_plug_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -4278,7 +4278,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_turned_off",
+        "id": "button_wireless_plug_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -4292,7 +4292,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_measure_power_changed",
+        "id": "button_wireless_plug_measure_power_changed",
         "title": {
           "en": "Power changed",
           "fr": "Puissance changée"
@@ -4317,7 +4317,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_measure_voltage_changed",
+        "id": "button_wireless_plug_measure_voltage_changed",
         "title": {
           "en": "Voltage changed",
           "fr": "Tension changée"
@@ -4342,7 +4342,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_measure_current_changed",
+        "id": "button_wireless_plug_measure_current_changed",
         "title": {
           "en": "Current changed",
           "fr": "Courant changé"
@@ -4367,7 +4367,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_meter_power_changed",
+        "id": "button_wireless_plug_meter_power_changed",
         "title": {
           "en": "Energy consumption changed",
           "fr": "Consommation énergétique changée"
@@ -4392,7 +4392,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_power_changed",
+        "id": "button_wireless_plug_power_changed",
         "title": {
           "en": "Power changed",
           "fr": "Puissance changée",
@@ -4408,7 +4408,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_battery_low",
+        "id": "button_wireless_plug_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -9591,7 +9591,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_turned_on",
+        "id": "lcdtemphumidsensor_plug_energy_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -9605,7 +9605,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_turned_off",
+        "id": "lcdtemphumidsensor_plug_energy_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -9619,7 +9619,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_measure_power_changed",
+        "id": "lcdtemphumidsensor_plug_energy_measure_power_changed",
         "title": {
           "en": "Power changed",
           "fr": "Puissance changée"
@@ -9644,7 +9644,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_measure_voltage_changed",
+        "id": "lcdtemphumidsensor_plug_energy_measure_voltage_changed",
         "title": {
           "en": "Voltage changed",
           "fr": "Tension changée"
@@ -9669,7 +9669,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_measure_current_changed",
+        "id": "lcdtemphumidsensor_plug_energy_measure_current_changed",
         "title": {
           "en": "Current changed",
           "fr": "Courant changé"
@@ -9694,7 +9694,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_meter_power_changed",
+        "id": "lcdtemphumidsensor_plug_energy_meter_power_changed",
         "title": {
           "en": "Energy consumption changed",
           "fr": "Consommation énergétique changée"
@@ -9719,7 +9719,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_power_changed",
+        "id": "lcdtemphumidsensor_plug_energy_power_changed",
         "title": {
           "en": "Power changed",
           "fr": "Puissance changée",
@@ -9735,7 +9735,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_battery_low",
+        "id": "lcdtemphumidsensor_plug_energy_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -11712,7 +11712,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_1_pressed",
+        "id": "remote_button_emergency_sos_button_4gang_button_1_pressed",
         "title": {
           "fr": "Bouton 1 appuyé",
           "en": "Button 1 pressed"
@@ -11726,7 +11726,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_1_double",
+        "id": "remote_button_emergency_sos_button_4gang_button_1_double",
         "title": {
           "fr": "Bouton 1 double-appui",
           "en": "Button 1 double-pressed"
@@ -11740,7 +11740,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_1_long",
+        "id": "remote_button_emergency_sos_button_4gang_button_1_long",
         "title": {
           "fr": "Bouton 1 appui long",
           "en": "Button 1 long-pressed"
@@ -11754,7 +11754,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_1_triple",
+        "id": "remote_button_emergency_sos_button_4gang_button_1_triple",
         "title": {
           "fr": "Bouton 1 triple-appui",
           "en": "Button 1 triple-pressed"
@@ -11768,7 +11768,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_1_release",
+        "id": "remote_button_emergency_sos_button_4gang_button_1_release",
         "title": {
           "fr": "Bouton 1 relâché",
           "en": "Button 1 released"
@@ -11782,7 +11782,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_2_pressed",
+        "id": "remote_button_emergency_sos_button_4gang_button_2_pressed",
         "title": {
           "fr": "Bouton 2 appuyé",
           "en": "Button 2 pressed"
@@ -11796,7 +11796,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_2_double",
+        "id": "remote_button_emergency_sos_button_4gang_button_2_double",
         "title": {
           "fr": "Bouton 2 double-appui",
           "en": "Button 2 double-pressed"
@@ -11810,7 +11810,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_2_long",
+        "id": "remote_button_emergency_sos_button_4gang_button_2_long",
         "title": {
           "fr": "Bouton 2 appui long",
           "en": "Button 2 long-pressed"
@@ -11824,7 +11824,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_2_triple",
+        "id": "remote_button_emergency_sos_button_4gang_button_2_triple",
         "title": {
           "fr": "Bouton 2 triple-appui",
           "en": "Button 2 triple-pressed"
@@ -11838,7 +11838,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_2_release",
+        "id": "remote_button_emergency_sos_button_4gang_button_2_release",
         "title": {
           "fr": "Bouton 2 relâché",
           "en": "Button 2 released"
@@ -11852,7 +11852,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_3_pressed",
+        "id": "remote_button_emergency_sos_button_4gang_button_3_pressed",
         "title": {
           "fr": "Bouton 3 appuyé",
           "en": "Button 3 pressed"
@@ -11866,7 +11866,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_3_double",
+        "id": "remote_button_emergency_sos_button_4gang_button_3_double",
         "title": {
           "fr": "Bouton 3 double-appui",
           "en": "Button 3 double-pressed"
@@ -11880,7 +11880,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_3_long",
+        "id": "remote_button_emergency_sos_button_4gang_button_3_long",
         "title": {
           "fr": "Bouton 3 appui long",
           "en": "Button 3 long-pressed"
@@ -11894,7 +11894,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_3_triple",
+        "id": "remote_button_emergency_sos_button_4gang_button_3_triple",
         "title": {
           "fr": "Bouton 3 triple-appui",
           "en": "Button 3 triple-pressed"
@@ -11908,7 +11908,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_3_release",
+        "id": "remote_button_emergency_sos_button_4gang_button_3_release",
         "title": {
           "fr": "Bouton 3 relâché",
           "en": "Button 3 released"
@@ -11922,7 +11922,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_4_pressed",
+        "id": "remote_button_emergency_sos_button_4gang_button_4_pressed",
         "title": {
           "fr": "Bouton 4 appuyé",
           "en": "Button 4 pressed"
@@ -11936,7 +11936,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_4_double",
+        "id": "remote_button_emergency_sos_button_4gang_button_4_double",
         "title": {
           "fr": "Bouton 4 double-appui",
           "en": "Button 4 double-pressed"
@@ -11950,7 +11950,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_4_long",
+        "id": "remote_button_emergency_sos_button_4gang_button_4_long",
         "title": {
           "fr": "Bouton 4 appui long",
           "en": "Button 4 long-pressed"
@@ -11964,7 +11964,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_4_triple",
+        "id": "remote_button_emergency_sos_button_4gang_button_4_triple",
         "title": {
           "fr": "Bouton 4 triple-appui",
           "en": "Button 4 triple-pressed"
@@ -11978,7 +11978,7 @@
         ]
       },
       {
-        "id": "smart_remote_4_buttons_button_4gang_button_4_release",
+        "id": "remote_button_emergency_sos_button_4gang_button_4_release",
         "title": {
           "fr": "Bouton 4 relâché",
           "en": "Button 4 released"
@@ -11992,7 +11992,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_pressed",
+        "id": "remote_button_wireless_button_3gang_button_pressed",
         "highlight": true,
         "title": {
           "en": "Button pressed",
@@ -12032,7 +12032,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_double_press",
+        "id": "remote_button_wireless_button_3gang_button_double_press",
         "title": {
           "en": "Button double-pressed",
           "fr": "Bouton double-cliqué",
@@ -12071,7 +12071,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_long_press",
+        "id": "remote_button_wireless_button_3gang_button_long_press",
         "title": {
           "en": "Button long-pressed",
           "fr": "Bouton pressé longtemps",
@@ -12110,7 +12110,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_multi_press",
+        "id": "remote_button_wireless_button_3gang_button_multi_press",
         "title": {
           "en": "Button multi-pressed",
           "fr": "Bouton multi-cliqué",
@@ -12165,7 +12165,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_1_pressed",
+        "id": "remote_button_wireless_button_3gang_button_1_pressed",
         "title": {
           "en": "Button 1 pressed",
           "fr": "Bouton 1 appuyé",
@@ -12186,7 +12186,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_2_pressed",
+        "id": "remote_button_wireless_button_3gang_button_2_pressed",
         "title": {
           "en": "Button 2 pressed",
           "fr": "Bouton 2 appuyé",
@@ -12207,7 +12207,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_3_pressed",
+        "id": "remote_button_wireless_button_3gang_button_3_pressed",
         "title": {
           "en": "Button 3 pressed",
           "fr": "Bouton 3 appuyé",
@@ -12228,7 +12228,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_1_double",
+        "id": "remote_button_wireless_button_3gang_button_1_double",
         "title": {
           "en": "Button 1 double-pressed",
           "fr": "Bouton 1 double-cliqué",
@@ -12249,7 +12249,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_2_double",
+        "id": "remote_button_wireless_button_3gang_button_2_double",
         "title": {
           "en": "Button 2 double-pressed",
           "fr": "Bouton 2 double-cliqué",
@@ -12270,7 +12270,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_3_double",
+        "id": "remote_button_wireless_button_3gang_button_3_double",
         "title": {
           "en": "Button 3 double-pressed",
           "fr": "Bouton 3 double-cliqué",
@@ -12291,7 +12291,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_1_long",
+        "id": "remote_button_wireless_button_3gang_button_1_long",
         "title": {
           "en": "Button 1 long-pressed",
           "fr": "Bouton 1 pressé longtemps",
@@ -12312,7 +12312,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_2_long",
+        "id": "remote_button_wireless_button_3gang_button_2_long",
         "title": {
           "en": "Button 2 long-pressed",
           "fr": "Bouton 2 pressé longtemps",
@@ -12333,7 +12333,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_3_long",
+        "id": "remote_button_wireless_button_3gang_button_3_long",
         "title": {
           "en": "Button 3 long-pressed",
           "fr": "Bouton 3 pressé longtemps",
@@ -12354,7 +12354,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_1_triple",
+        "id": "remote_button_wireless_button_3gang_button_1_triple",
         "title": {
           "en": "Button 1 triple-pressed",
           "fr": "Bouton 1 triple-cliqué"
@@ -12368,7 +12368,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_2_triple",
+        "id": "remote_button_wireless_button_3gang_button_2_triple",
         "title": {
           "en": "Button 2 triple-pressed",
           "fr": "Bouton 2 triple-cliqué"
@@ -12382,7 +12382,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_3_triple",
+        "id": "remote_button_wireless_button_3gang_button_3_triple",
         "title": {
           "en": "Button 3 triple-pressed",
           "fr": "Bouton 3 triple-cliqué"
@@ -12396,7 +12396,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_1_release",
+        "id": "remote_button_wireless_button_3gang_button_1_release",
         "title": {
           "en": "Button 1 released - after hold",
           "fr": "Bouton 1 relâché - après maintien"
@@ -12410,7 +12410,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_2_release",
+        "id": "remote_button_wireless_button_3gang_button_2_release",
         "title": {
           "en": "Button 2 released - after hold",
           "fr": "Bouton 2 relâché - après maintien"
@@ -12424,7 +12424,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_button_3gang_button_3_release",
+        "id": "remote_button_wireless_button_3gang_button_3_release",
         "title": {
           "en": "Button 3 released - after hold",
           "fr": "Bouton 3 relâché - après maintien"
@@ -12438,7 +12438,7 @@
         ]
       },
       {
-        "id": "button_wireless_3_battery_low",
+        "id": "remote_button_wireless_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -12875,7 +12875,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_turned_on",
+        "id": "remote_button_wireless_plug_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -12889,7 +12889,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_turned_off",
+        "id": "remote_button_wireless_plug_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -12903,7 +12903,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_measure_power_changed",
+        "id": "remote_button_wireless_plug_measure_power_changed",
         "title": {
           "en": "Power changed",
           "fr": "Puissance changée"
@@ -12928,7 +12928,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_measure_voltage_changed",
+        "id": "remote_button_wireless_plug_measure_voltage_changed",
         "title": {
           "en": "Voltage changed",
           "fr": "Tension changée"
@@ -12953,7 +12953,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_measure_current_changed",
+        "id": "remote_button_wireless_plug_measure_current_changed",
         "title": {
           "en": "Current changed",
           "fr": "Courant changé"
@@ -12978,7 +12978,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_meter_power_changed",
+        "id": "remote_button_wireless_plug_meter_power_changed",
         "title": {
           "en": "Energy consumption changed",
           "fr": "Consommation énergétique changée"
@@ -13003,7 +13003,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_power_changed",
+        "id": "remote_button_wireless_plug_power_changed",
         "title": {
           "en": "Power changed",
           "fr": "Puissance changée",
@@ -13019,7 +13019,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_battery_low",
+        "id": "remote_button_wireless_plug_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -16548,7 +16548,7 @@
         ]
       },
       {
-        "id": "contact_sensor_opened",
+        "id": "sensor_contact_water_opened",
         "highlight": true,
         "title": {
           "en": "Door/window opened",
@@ -16571,7 +16571,7 @@
         ]
       },
       {
-        "id": "contact_sensor_closed",
+        "id": "sensor_contact_water_closed",
         "title": {
           "en": "Door/window closed",
           "nl": "Deur/raam gesloten",
@@ -16593,7 +16593,7 @@
         ]
       },
       {
-        "id": "contact_sensor_tamper_true",
+        "id": "sensor_contact_water_tamper_true",
         "title": {
           "en": "Tamper alert",
           "nl": "Sabotage alarm",
@@ -16615,7 +16615,7 @@
         ]
       },
       {
-        "id": "contact_sensor_battery_changed",
+        "id": "sensor_contact_water_battery_changed",
         "title": {
           "en": "Battery level changed",
           "nl": "Batterijniveau veranderd",
@@ -16644,7 +16644,7 @@
         ]
       },
       {
-        "id": "contact_sensor_battery_low",
+        "id": "sensor_contact_water_battery_low",
         "title": {
           "en": "Battery is low",
           "nl": "Batterij is bijna leeg",
@@ -16666,7 +16666,7 @@
         ]
       },
       {
-        "id": "contact_sensor_left_open",
+        "id": "sensor_contact_water_left_open",
         "title": {
           "en": "Left open for duration",
           "nl": "Te lang open gelaten",
@@ -16701,7 +16701,7 @@
         ]
       },
       {
-        "id": "contact_sensor_contact_alarm",
+        "id": "sensor_contact_water_contact_alarm",
         "title": {
           "en": "Contact changed",
           "fr": "Contact changé",
@@ -16717,7 +16717,7 @@
         ]
       },
       {
-        "id": "contact_sensor_tamper_alarm",
+        "id": "sensor_contact_water_tamper_alarm",
         "title": {
           "en": "Tamper alarm",
           "fr": "Alarme sabotage",
@@ -29300,7 +29300,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_smart_bulb_dimmer_is_on",
+        "id": "bulb_dimmable_dimmer_smart_bulb_dimmer_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
@@ -29314,7 +29314,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_is_on",
+        "id": "bulb_dimmable_dimmer_is_on",
         "title": {
           "en": "Is !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}",
@@ -29501,7 +29501,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_is_on",
+        "id": "button_wireless_plug_is_on",
         "title": {
           "en": "Plug !{{is|is not}} on",
           "nl": "Stekker !{{is|is niet}} aan",
@@ -29517,7 +29517,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_power_above",
+        "id": "button_wireless_plug_power_above",
         "title": {
           "en": "Power !{{is|is not}} above",
           "nl": "Vermogen !{{is|is niet}} boven",
@@ -29543,7 +29543,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_energy_above",
+        "id": "button_wireless_plug_energy_above",
         "title": {
           "en": "Energy !{{is|is not}} above",
           "nl": "Energie !{{is|is niet}} boven",
@@ -31001,7 +31001,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_is_on",
+        "id": "lcdtemphumidsensor_plug_energy_is_on",
         "title": {
           "en": "Plug !{{is|is not}} on",
           "nl": "Stekker !{{is|is niet}} aan",
@@ -31017,7 +31017,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_power_above",
+        "id": "lcdtemphumidsensor_plug_energy_power_above",
         "title": {
           "en": "Power !{{is|is not}} above",
           "nl": "Vermogen !{{is|is niet}} boven",
@@ -31043,7 +31043,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_energy_above",
+        "id": "lcdtemphumidsensor_plug_energy_energy_above",
         "title": {
           "en": "Energy !{{is|is not}} above",
           "nl": "Energie !{{is|is niet}} boven",
@@ -31760,7 +31760,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_is_on",
+        "id": "remote_button_wireless_plug_is_on",
         "title": {
           "en": "Plug !{{is|is not}} on",
           "nl": "Stekker !{{is|is niet}} aan",
@@ -31776,7 +31776,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_power_above",
+        "id": "remote_button_wireless_plug_power_above",
         "title": {
           "en": "Power !{{is|is not}} above",
           "nl": "Vermogen !{{is|is niet}} boven",
@@ -31802,7 +31802,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_energy_above",
+        "id": "remote_button_wireless_plug_energy_above",
         "title": {
           "en": "Energy !{{is|is not}} above",
           "nl": "Energie !{{is|is niet}} boven",
@@ -32042,7 +32042,7 @@
         ]
       },
       {
-        "id": "contact_sensor_is_open",
+        "id": "sensor_contact_water_is_open",
         "title": {
           "en": "Door/window !{{is|is not}} open",
           "nl": "Deur/raam !{{is|is niet}} open",
@@ -32058,7 +32058,7 @@
         ]
       },
       {
-        "id": "contact_sensor_battery_above",
+        "id": "sensor_contact_water_battery_above",
         "title": {
           "en": "Battery !{{is|is not}} above",
           "nl": "Batterij !{{is|is niet}} boven",
@@ -32084,7 +32084,7 @@
         ]
       },
       {
-        "id": "contact_sensor_contact_open",
+        "id": "sensor_contact_water_contact_open",
         "title": {
           "en": "Contact !{{is|is not}} open",
           "fr": "Contact !{{est|n'est pas}} ouvert",
@@ -32100,7 +32100,7 @@
         ]
       },
       {
-        "id": "contact_sensor_tamper_active",
+        "id": "sensor_contact_water_tamper_active",
         "title": {
           "en": "Tamper !{{is|is not}} active",
           "fr": "Sabotage !{{est|n'est pas}} actif",
@@ -34929,7 +34929,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_smart_bulb_dimmer_turn_on",
+        "id": "bulb_dimmable_dimmer_smart_bulb_dimmer_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer"
@@ -34943,7 +34943,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_smart_bulb_dimmer_turn_off",
+        "id": "bulb_dimmable_dimmer_smart_bulb_dimmer_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre"
@@ -34957,7 +34957,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_smart_bulb_dimmer_toggle",
+        "id": "bulb_dimmable_dimmer_smart_bulb_dimmer_toggle",
         "title": {
           "en": "Toggle on or off",
           "fr": "Basculer"
@@ -34971,7 +34971,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_smart_bulb_dimmer_set_dim",
+        "id": "bulb_dimmable_dimmer_smart_bulb_dimmer_set_dim",
         "title": {
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
@@ -34998,7 +34998,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_turn_on",
+        "id": "bulb_dimmable_dimmer_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer",
@@ -35014,7 +35014,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_turn_off",
+        "id": "bulb_dimmable_dimmer_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre",
@@ -35030,7 +35030,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_toggle",
+        "id": "bulb_dimmable_dimmer_toggle",
         "title": {
           "en": "Toggle",
           "fr": "Basculer",
@@ -35046,7 +35046,7 @@
         ]
       },
       {
-        "id": "bulb_dimmable_set_brightness",
+        "id": "bulb_dimmable_dimmer_set_brightness",
         "title": {
           "en": "Set brightness",
           "fr": "Régler luminosité",
@@ -35754,7 +35754,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_turn_on",
+        "id": "button_wireless_plug_turn_on",
         "title": {
           "en": "Turn on",
           "nl": "Inschakelen",
@@ -35770,7 +35770,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_turn_off",
+        "id": "button_wireless_plug_turn_off",
         "title": {
           "en": "Turn off",
           "nl": "Uitschakelen",
@@ -35786,7 +35786,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_toggle",
+        "id": "button_wireless_plug_toggle",
         "title": {
           "en": "Toggle",
           "nl": "Schakelen",
@@ -35802,7 +35802,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_reset_meter",
+        "id": "button_wireless_plug_reset_meter",
         "title": {
           "en": "Reset energy meter",
           "nl": "Energiemeter resetten",
@@ -39002,7 +39002,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_turn_on",
+        "id": "lcdtemphumidsensor_plug_energy_turn_on",
         "title": {
           "en": "Turn on",
           "nl": "Inschakelen",
@@ -39018,7 +39018,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_turn_off",
+        "id": "lcdtemphumidsensor_plug_energy_turn_off",
         "title": {
           "en": "Turn off",
           "nl": "Uitschakelen",
@@ -39034,7 +39034,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_toggle",
+        "id": "lcdtemphumidsensor_plug_energy_toggle",
         "title": {
           "en": "Toggle",
           "nl": "Schakelen",
@@ -39050,7 +39050,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_reset_meter",
+        "id": "lcdtemphumidsensor_plug_energy_reset_meter",
         "title": {
           "en": "Reset energy meter",
           "nl": "Energiemeter resetten",
@@ -40452,7 +40452,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_turn_on",
+        "id": "remote_button_wireless_plug_turn_on",
         "title": {
           "en": "Turn on",
           "nl": "Inschakelen",
@@ -40468,7 +40468,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_turn_off",
+        "id": "remote_button_wireless_plug_turn_off",
         "title": {
           "en": "Turn off",
           "nl": "Uitschakelen",
@@ -40484,7 +40484,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_toggle",
+        "id": "remote_button_wireless_plug_toggle",
         "title": {
           "en": "Toggle",
           "nl": "Schakelen",
@@ -40500,7 +40500,7 @@
         ]
       },
       {
-        "id": "plug_energy_monitor_reset_meter",
+        "id": "remote_button_wireless_plug_reset_meter",
         "title": {
           "en": "Reset energy meter",
           "nl": "Energiemeter resetten",
@@ -81431,10 +81431,7 @@
         }
       },
       "zigbee": {
-        "manufacturerName": [
-          "_tyzb01_iuepbmpv",
-          "_TYZB01_IUEPBMPV"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS0043",
           "TS011F",
@@ -82330,10 +82327,7 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [
-          "_tyzb01_hlla45kx",
-          "_TYZB01_HLLA45KX"
-        ],
+        "manufacturerName": [],
         "productId": [
           "TS011F",
           "TS0121",

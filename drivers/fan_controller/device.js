@@ -15,6 +15,8 @@ const { CLUSTER } = require('zigbee-clusters');
 class FanControllerDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.log('Fan Controller initializing...');
 
     // Store zclNode for later use
@@ -162,9 +164,9 @@ class FanControllerDevice extends ZigBeeDevice {
       // Trigger flow cards
       try {
         if (!!value && !wasOn) {
-          this.homey.flow.getDeviceTriggerCard('fan_controller_turned_on').trigger(this).catch(this.error);
+          this.homey.flow.getTriggerCard('fan_controller_turned_on').trigger(this).catch(this.error);
         } else if (!value && wasOn) {
-          this.homey.flow.getDeviceTriggerCard('fan_controller_turned_off').trigger(this).catch(this.error);
+          this.homey.flow.getTriggerCard('fan_controller_turned_off').trigger(this).catch(this.error);
         }
       } catch (e) { /* Card may not exist */ }
       break;
@@ -174,7 +176,7 @@ class FanControllerDevice extends ZigBeeDevice {
       this.setCapabilityValue('dim', dim).catch(this.error);
       // Trigger speed changed flow card
       try {
-        this.homey.flow.getDeviceTriggerCard('fan_controller_speed_changed')
+        this.homey.flow.getTriggerCard('fan_controller_speed_changed')
           .trigger(this, { speed: Math.round(dim * 100) }).catch(this.error);
       } catch (e) { /* Card may not exist */ }
       break;

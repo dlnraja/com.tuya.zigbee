@@ -34,6 +34,8 @@ const VALUE_RANGES = {
 class UniversalFallbackDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.log('[UNIVERSAL] ═══════════════════════════════════════════════════');
     this.log('[UNIVERSAL] 🔧 Universal Fallback Device v5.8.6 (Z2M Enhanced)');
     

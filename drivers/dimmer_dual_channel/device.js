@@ -14,6 +14,8 @@ const { CLUSTER } = require('zigbee-clusters');
 class DimmerDualChannelDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.log('╔══════════════════════════════════════════════════════════════╗');
     this.log('║         DUAL CHANNEL DIMMER v5.3.90                          ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');

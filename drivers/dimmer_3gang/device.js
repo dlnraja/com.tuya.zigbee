@@ -37,6 +37,8 @@ class Dimmer3GangDevice extends ZigBeeDevice {
   }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.log('╔══════════════════════════════════════════════════════════════╗');
     this.log('║         3-GANG DIMMER v5.5.829 (Tuya DP)                     ║');
     this.log('╚══════════════════════════════════════════════════════════════╝');
@@ -134,14 +136,14 @@ class Dimmer3GangDevice extends ZigBeeDevice {
         const id = value
           ? `dimmer_3gang_physical_gang${gang}_on`
           : `dimmer_3gang_physical_gang${gang}_off`;
-        (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+        (() => { try { return this.homey.flow.getTriggerCard(id); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
       } else if (dimMap[dp]) {
         const gang = dimMap[dp];
         const up = lastValue !== undefined && value > lastValue;
         const id = up
           ? `dimmer_3gang_physical_gang${gang}_brightness_increased`
           : `dimmer_3gang_physical_gang${gang}_brightness_decreased`;
-        (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch(e) { return null; } })()?.trigger(this, { brightness: Math.round(value * 100) }, {}).catch(() => {});
+        (() => { try { return this.homey.flow.getTriggerCard(id); } catch(e) { return null; } })()?.trigger(this, { brightness: Math.round(value * 100) }, {}).catch(() => {});
       }
     } catch (err) {
       this.error('[DIMMER-3G] Flow trigger error:', err.message);

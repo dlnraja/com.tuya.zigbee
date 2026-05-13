@@ -15,6 +15,8 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 class HumidifierDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.log('Smart Humidifier initializing...');
 
     await this._setupTuyaDP(zclNode);

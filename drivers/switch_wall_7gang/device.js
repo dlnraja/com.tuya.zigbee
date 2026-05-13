@@ -29,6 +29,8 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     if (this.isZclOnlyDevice) {
       this.log('[SWITCH-7G] 🔵 ZCL-ONLY MODE');
       await this._initZclOnlyMode(zclNode);
@@ -89,11 +91,11 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_wall_7gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch(e) { return null; } })()?.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+            (() => { try { return this.homey.flow.getTriggerCard(flowId); } catch(e) { return null; } })()?.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
             this.log(`[SWITCH-7G] Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            (() => { try { return this.homey.flow.getDeviceTriggerCard(`switch_wall_7gang_gang${epNum}_scene`); } catch(e) { return null; } })()?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+            (() => { try { return this.homey.flow.getTriggerCard(`switch_wall_7gang_gang${epNum}_scene`); } catch(e) { return null; } })()?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
             this.log(`[SWITCH-7G] Scene G${epNum} ${value ? 'on' : 'off'}`);
           }
         }

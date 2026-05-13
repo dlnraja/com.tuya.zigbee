@@ -8,6 +8,8 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
  */
 class PetFeederZigbeeDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
 
     if (this._tuyaEF00Manager) {
       this._tuyaEF00Manager.dpMappings = {

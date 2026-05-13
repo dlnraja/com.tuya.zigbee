@@ -3367,12 +3367,12 @@ class PresenceSensorRadarDevice extends SensorBase {
       if (detected) {
         // v5.5.926: Fixed flow card IDs - must match driver.flow.compose.json
         // Trigger: presence_sensor_radar_presence_detected
-        await (() => { try { return this.homey.flow.getDeviceTriggerCard('presence_sensor_radar_presence_detected'); } catch(e) { return null; } })()?.trigger(this).catch(() => { });
+        await (() => { try { return this.homey.flow.getTriggerCard('presence_sensor_radar_presence_detected'); } catch(e) { return null; } })()?.trigger(this).catch(() => { });
         this.log('[RADAR-FLOW] ✅ Triggered: presence_sensor_radar_presence_detected');
       } else {
         // v5.5.926: Fixed flow card IDs - must match driver.flow.compose.json
         // Trigger: presence_sensor_radar_presence_cleared
-        await (() => { try { return this.homey.flow.getDeviceTriggerCard('presence_sensor_radar_presence_cleared'); } catch(e) { return null; } })()?.trigger(this).catch(() => { });
+        await (() => { try { return this.homey.flow.getTriggerCard('presence_sensor_radar_presence_cleared'); } catch(e) { return null; } })()?.trigger(this).catch(() => { });
         this.log('[RADAR-FLOW] ✅ Triggered: presence_sensor_radar_presence_cleared');
       }
     } catch (err) {

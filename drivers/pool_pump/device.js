@@ -11,6 +11,8 @@ const { CLUSTER } = require('zigbee-clusters');
 class PoolPumpDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.log('Pool Pump Controller initializing...');
 
     if (this.hasCapability('onoff')) {

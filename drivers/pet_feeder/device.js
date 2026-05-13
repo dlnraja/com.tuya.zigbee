@@ -14,6 +14,8 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 class PetFeederDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.log('Smart Pet Feeder initializing...');
 
     // Register feed button
