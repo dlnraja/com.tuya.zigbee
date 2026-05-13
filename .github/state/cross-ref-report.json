@@ -1,5 +1,5 @@
 {
-  "ts": "2026-05-12T16:16:20.543Z",
+  "ts": "2026-05-13T04:34:45.846Z",
   "correlations": [],
   "actionable": [
     {
@@ -43,7 +43,7 @@
     {
       "id": "battery",
       "pattern": "False Battery Alert / Missing Battery",
-      "count": 36,
+      "count": 37,
       "priority": "high"
     },
     {

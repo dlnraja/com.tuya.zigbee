@@ -58,7 +58,7 @@ class AirQualityComprehensiveDevice extends SensorBase {
     
     // Register flow card triggers with try-catch to prevent crashes
     try {
-      const triggerCard = this.homey.flow.getDeviceTriggerCard('air_quality_comprehensive_measure_co2_high');
+      const triggerCard = this.homey.flow.getDeviceTriggerCard('air_quality_comprehensive_measure_co2_high').catch(() => null);
       if (triggerCard) {
         this._triggerCO2High = triggerCard;
       }
@@ -95,7 +95,7 @@ class AirQualityComprehensiveDevice extends SensorBase {
   async onDeleted() {
     this.log('[AIR-QUALITY] 🗑️ Device deleted, cleaning up');
     // Clean up all event listeners to prevent memory leaks
-    this.removeAllListeners(); if (this._batteryHandler) { this._batteryHandler.destroy(); };
+    if (this._batteryHandler) { this._batteryHandler.destroy(); this._batteryHandler = null; } this.removeAllListeners();
     // Clean up any intervals/timeouts
     if (this._batteryPollInterval) {
       clearInterval(this._batteryPollInterval);

@@ -1,22 +1,26 @@
 {
-  "timestamp": "2026-05-12T15:24:59.022Z",
+  "timestamp": "2026-05-13T03:39:28.372Z",
   "appVersion": "7.5.17",
-  "forum": 1,
-  "github": 0,
+  "forum": 0,
+  "github": 1,
   "diagnostics": 56,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [
+  "forumDetails": [],
+  "githubDetails": [
     {
-      "topic": 146735,
-      "post": 237,
-      "user": "Willi_Budeus",
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "number": 1396,
+      "user": "sondregjessing-blip",
       "fps": [
-        "LIDL"
+        "_TZE284_0ints6wl",
+        "_TZE",
+        "example",
+        "vision"
       ],
-      "reply": "Glad to hear the Silvercrest SAPM 1 A1 plugs are working with energy monitoring! They're matched to the **device_generic_tuya_universal** driver under the `LIDL` manufacturer.\n\nThese plugs use the sta",
+      "title": "Device Request - [Soil Sensor] - [_TZE284_0ints6wl] / [TS0601]",
+      "response": "## Re: Device Request — Soil Sensor `_TZE284_0ints6wl` / `TS0601`\n\nThanks for the detailed interview, @sondregjessing-blip.\n\n### Current Fingerprint Status\n\nThe fingerprint **`_TZE284_0ints6wl`** is already registered in the **`climate_sensor`** driver (matched by manufacturerName). The **`soil_sens",
       "model": "openrouter"
     }
-  ],
-  "githubDetails": []
+  ]
 }
