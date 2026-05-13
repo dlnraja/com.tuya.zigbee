@@ -1,5 +1,5 @@
 'use strict';
-const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
@@ -44,7 +44,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  *
  * ═══════════════════════════════════════════════════════════════════════════
  */
-class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugBase)) {
+class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
   get plugCapabilities() {
     return ['onoff', 'onoff.socket2', 'onoff.usb1', 'onoff.usb2', 'onoff.led'];
@@ -175,7 +175,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Hyb
         ep2.clusters.onOff.on('attr.onOff', (value) => {
           this.log(`[USB-ADV] EP2 ZCL onOff=${value}`);
           if (this.hasCapability('onoff.socket2')) {
-            this.setCapabilityValue('onoff.socket2', value).catch(this.error);
+            await this.setCapabilityValue('onoff.socket2', value).catch(this.error);
           }
         });
       }
@@ -194,7 +194,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Hyb
         ep3.clusters.onOff.on('attr.onOff', (value) => {
           this.log(`[USB-ADV] EP3 ZCL onOff=${value}`);
           if (this.hasCapability('onoff.usb1')) {
-            this.setCapabilityValue('onoff.usb1', value).catch(this.error);
+            await this.setCapabilityValue('onoff.usb1', value).catch(this.error);
           }
         });
       }

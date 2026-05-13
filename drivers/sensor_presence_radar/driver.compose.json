@@ -16,7 +16,8 @@
     "measure_battery",
     "measure_luminance.distance",
     "alarm_contact",
-    "alarm_tamper"
+    "alarm_tamper",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {

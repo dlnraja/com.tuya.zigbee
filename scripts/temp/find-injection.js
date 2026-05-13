@@ -1,9 +1,9 @@
 const fs = require('fs');
 
-const targetFile = 'lib/devices/TuyaHybridDevice.js';
+const targetFile = 'lib/devices/TuyaUnifiedDevice.js';
 let content = fs.readFileSync(targetFile, 'utf8');
 
-// Look for a good injection point in TuyaHybridDevice.js
+// Look for a good injection point in TuyaUnifiedDevice.js
 const lines = content.split('\n');
 for (let i = 0; i < lines.length; i++) {
   if (lines[i].includes('this.log(\'\');') && lines[i+1]?.includes('this.log(\'🔄 STEP ')) {

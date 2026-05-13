@@ -18,7 +18,7 @@ Diagnostic ID: 9f8e7d6c
 Crash Log:
 Error: Missing DP mapping for battery
     at TuyaEF00Manager.processDP (/app/lib/tuya/TuyaEF00Manager.js:450:15)
-    at ZigBeeDevice.onDPReport (/app/lib/devices/TuyaHybridDevice.js:200:10)
+    at ZigBeeDevice.onDPReport (/app/lib/devices/TuyaUnifiedDevice.js:200:10)
     
 App Version: 5.11.143
 Homey Version: 10.0.0

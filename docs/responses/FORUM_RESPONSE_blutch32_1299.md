@@ -23,7 +23,7 @@ Le cluster IAS Zone n'est pas correctement enrollé. C'est pour ça que `alarm_c
 
 **Action requise :**
 1. **Supprimer** le capteur de Homey
-2. **Redémarrer** l'app Universal Tuya Zigbee
+2. **Redémarrer** l'app Tuya Unified Zigbee
 3. **Re-pairer** le capteur en appuyant sur le bouton reset
 
 **Si toujours "no" après re-pairing :**
@@ -56,7 +56,7 @@ Tu as confirmé que ça fonctionne maintenant.
 
 **Action requise :**
 1. **Supprimer** le device de Homey
-2. **Redémarrer** l'app Universal Tuya Zigbee  
+2. **Redémarrer** l'app Tuya Unified Zigbee  
 3. **Re-pairer** le device
 
 Il devrait maintenant apparaître comme "Power Clamp Meter" avec les capabilities :

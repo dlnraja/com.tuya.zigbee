@@ -2,7 +2,7 @@
   "version": "5.11.212",
   "generated": "2026-05-08T17:12:40.000Z",
   "status": "VALIDATED",
-  "title": "VERSION 2: FUSION COMPLETE - Universal Tuya Zigbee",
+  "title": "VERSION 2: FUSION COMPLETE - Tuya Unified Zigbee",
   
   "sources_consolidated": {
     "github_issues": {
@@ -134,7 +134,7 @@
       "validated": true
     },
     "mixin_order": {
-      "correct_order": "PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))",
+      "correct_order": "PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))",
       "status": "COMPLIANT",
       "validated": true
     },

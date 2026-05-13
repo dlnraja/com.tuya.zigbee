@@ -31,7 +31,7 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
       const g = dp - 23;
       const cap = `onoff.gang${g}`;
       if (this.hasCapability(cap)) {
-        this.setCapabilityValue(cap, !!value).catch(this.error);
+        await this.setCapabilityValue(cap, !!value).catch(this.error);
       }
       (() => { try { return this.homey.flow.getDeviceTriggerCard(`smart_scene_panel_switch_${g}_changed`); } catch(e) { return null; } })()?.trigger(this, { state: !!value }, {}).catch(() => {});
     } else if (dp >= 5 && dp <= 8) {

@@ -6,7 +6,7 @@ const path = require('path');
 const DRIVERS_DIR = path.join(__dirname, '..', 'drivers');
 const LIB_DIR = path.join(__dirname, '..', 'lib');
 
-describe('Universal Tuya Zigbee - Driver Integrity', function() {
+describe('Tuya Unified Zigbee - Driver Integrity', function() {
   this.timeout(10000);
 
   const driverDirs = fs.readdirSync(DRIVERS_DIR)
@@ -88,7 +88,7 @@ describe('Universal Tuya Zigbee - Driver Integrity', function() {
   });
 });
 
-describe('Universal Tuya Zigbee - SDK v3 Compliance', function() {
+describe('Tuya Unified Zigbee - SDK v3 Compliance', function() {
   this.timeout(5000);
 
   const driverDirs = fs.readdirSync(DRIVERS_DIR)
@@ -118,7 +118,7 @@ describe('Universal Tuya Zigbee - SDK v3 Compliance', function() {
   });
 });
 
-describe('Universal Tuya Zigbee - App Configuration', function() {
+describe('Tuya Unified Zigbee - App Configuration', function() {
   it('app.json should be valid JSON', () => {
     const app = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'app.json'), 'utf8'));
     assert.strictEqual(app.sdk, 3);

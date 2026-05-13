@@ -28,7 +28,7 @@ tuya-repair-stable-v5/
 │   ├── devices/
 │   │   ├──SwitchBase.js      (DP statique)
 │   │   ├──SensorBase.js      (DP statique)
-│   │   └── BaseHybridDevice.js      (182KB)
+│   │   └── BaseUnifiedDevice.js      (182KB)
 │   ├── mixins/
 │   │   ├── PhysicalButtonMixin.js   (2000ms timeout)
 │   │   └── VirtualButtonMixin.js
@@ -97,7 +97,7 @@ tuya-repair-stable-v5/
 
 ```javascript
 // drivers/switch_1gang/device.js
-class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
+class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
   
   get mainsPowered() { return true; }  // Wall switch = mains
   

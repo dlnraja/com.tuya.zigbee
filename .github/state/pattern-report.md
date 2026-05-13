@@ -46,8 +46,8 @@
 **Most affected:** `TS0601` (2x), `_TZ3000_tsgqxdb4` (1x), `sonoff` (1x), `debug` (1x), `test` (1x), `TS0201` (1x), `_TZ3000_402vrq2i` (1x), `zigbee2mqtt` (1x), `TS004F` (1x)
 
 ### Inverted Sensor State (1 reports)
-**Fix:** Add manufacturerName to invertedByDefault in HybridSensorBase.js + device.js
-**Files:** `lib/devices/HybridSensorBase.js`, `drivers/{driver}/device.js`
+**Fix:** Add manufacturerName to invertedByDefault in UnifiedSensorBase.js + device.js
+**Files:** `lib/devices/UnifiedSensorBase.js`, `drivers/{driver}/device.js`
 **Most affected:** `_TZE200_wfxuhoea` (1x), `_TZE` (1x), `deconz` (1x), `vision` (1x), `tuya` (1x), `TS0601` (1x)
 
 ### Wrong Voltage (1 reports)

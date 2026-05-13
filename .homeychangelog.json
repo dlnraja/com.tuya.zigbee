@@ -51,10 +51,10 @@
     "en": "v7.5.12: . Fixed sensor fallback logic for unknown models. Added new fingerprints for radiator valve (_TZE284_ne4pikwm). Updated documentation and project rules."
   },
   "7.5.11": {
-    "en": "v7.5.11: Fixed ReferenceError crashes in HybridSensorBase, HybridCoverBase, HybridLightBase, HybridPlugBase, HybridSwitchBase, and HybridThermostatBase during dynamic capability updates."
+    "en": "v7.5.11: Fixed ReferenceError crashes in UnifiedSensorBase, UnifiedCoverBase, UnifiedLightBase, UnifiedPlugBase, UnifiedSwitchBase, and UnifiedThermostatBase during dynamic capability updates."
   },
   "7.5.10": {
-    "en": "Fixed a crash in HybridSensorBase that caused a ReferenceError on _safeSetCapability. Added support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm)."
+    "en": "Fixed a crash in UnifiedSensorBase that caused a ReferenceError on _safeSetCapability. Added support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm)."
   },
   "7.5.9": {
     "en": "v7.5.9: . Fixed ProtocolArbitrator crash, _TZE608 opener reclassification, SDK3 validation errors, duplicate fingerprints, case-insensitive matching, and MODULE_NOT_FOUND crash. Added 5 new fingerprints, Z2M enriched mappings, rain/soil sensor fixes."

@@ -3,7 +3,7 @@ const { getModelId } = require('../../lib/utils/tuyaUtils');
 const { TuyaDPParser } = require('../../lib/tuya/TuyaDPParser');
 const AdvancedAnalytics = require('../../lib/analytics/AdvancedAnalytics');
 
-describe('Universal Tuya Zigbee - Core Unit Tests', () => {
+describe('Tuya Unified Zigbee - Core Unit Tests', () => {
 
     describe('tuyaUtils.getModelId', () => {
         it('should return modelId when present in zclNode', () => {

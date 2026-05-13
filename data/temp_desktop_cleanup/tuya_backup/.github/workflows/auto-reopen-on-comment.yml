@@ -1,4 +1,4 @@
-# Universal Tuya Zigbee - Auto-Reopen on User Comment
+# Tuya Unified Zigbee - Auto-Reopen on User Comment
 # When a real user comments on a closed issue or PR, reopen it automatically
 # so that daily/nightly/upstream workflows re-process it.
 # The auto-respond.yml workflow will then trigger on the 'reopened' event.

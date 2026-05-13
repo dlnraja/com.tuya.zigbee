@@ -449,7 +449,7 @@
   },
   {
     "file": "scripts\\maintenance\\ALIGN_ALL_VERSIONS.js",
-    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\ALIGN_ALL_VERSIONS.js:77\r\n    readme = readme.replace(/# Universal Tuya Unified Engine \\(v.*? \\)/, `# Universal Tuya Unified Engine (v${TARGET_VERSION})`)       ;\r\n                                                                                                                            ^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
+    "error": "C:\\Users\\HP\\Desktop\\homey app\\tuya_repair\\scripts\\maintenance\\ALIGN_ALL_VERSIONS.js:77\r\n    readme = readme.replace(/# Tuya Unified Unified Engine \\(v.*? \\)/, `# Tuya Unified Unified Engine (v${TARGET_VERSION})`)       ;\r\n                                                                                                                            ^^^\r\n\r\nSyntaxError: missing ) after argument list\r\n    at wrapSafe (node:internal/modules/cjs/loader:1637:18)\r\n    at checkSyntax (node:internal/main/check_syntax:78:3)\r\n\r\nNode.js v22.22.2"
   },
   {
     "file": "scripts\\maintenance\\autonomous-caseless-fixer.js",

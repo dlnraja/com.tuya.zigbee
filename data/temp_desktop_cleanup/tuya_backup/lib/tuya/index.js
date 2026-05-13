@@ -42,7 +42,7 @@ module.exports = {
   TuyaProfiles: require('./TuyaProfiles'),
   
   // Parsing
-  UniversalTuyaParser: require('./UniversalTuyaParser'),
+  TuyaUnifiedParser: require('./TuyaUnifiedParser'),
   TuyaEF00Parser: require('./TuyaEF00Parser'),
   TuyaDataQuery: require('./TuyaDataQuery'),
   

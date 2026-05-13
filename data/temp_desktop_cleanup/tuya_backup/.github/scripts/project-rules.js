@@ -24,7 +24,7 @@ try {
 } catch (e) { /* Architecture doc not available in CI - that's OK */ }
 
 const PROJECT_RULES = [
-'## Universal Tuya Zigbee - Project Rules for AI',
+'## Tuya Unified Zigbee - Project Rules for AI',
 '',
 '### IDENTITY',
 '- App: com.dlnraja.tuya.zigbee | SDK3 | Repo: dlnraja/com.tuya.zigbee',
@@ -42,7 +42,7 @@ const PROJECT_RULES = [
 '- Settings keys: zb_model_id NOT zb_modelId, zb_manufacturer_name NOT zb_manufacturerName',
 '- Flow triggers: NO titleFormatted with [[device]] - use title field',
 '- Import: require(../../lib/tuya/TuyaZigbeeDevice) NOT require(../../lib/TuyaZigbeeDevice)',
-'- Mixin order: PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))',
+'- Mixin order: PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))',
 '- Flow IDs: {driver}_physical_gang{N}_{on|off}',
 '- Backlight values: off, normal, inverted (strings not numbers)',
 '- Press type 0-indexed: 0=single 1=double 2=hold',

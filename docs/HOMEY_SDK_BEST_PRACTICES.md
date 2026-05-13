@@ -199,7 +199,7 @@ For Matter bridges (e.g., Zigbee hub exposing devices via Matter):
 Based on official documentation, the following improvements have been verified/applied:
 
 ### ✅ Already Implemented
-- [x] IAS Zone enrollment in `HybridSensorBase.js` (v5.5.601)
+- [x] IAS Zone enrollment in `UnifiedSensorBase.js` (v5.5.601)
 - [x] Promise catching in all `onNodeInit` calls
 - [x] Attribute reporting configuration for sleepy devices
 - [x] Sub-device support for multi-gang switches

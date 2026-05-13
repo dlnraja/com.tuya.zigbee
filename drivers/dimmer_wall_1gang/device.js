@@ -1,5 +1,5 @@
 'use strict';
-constLightBase = require('../../lib/devices/HybridLightBase');
+constLightBase = require('../../lib/devices/UnifiedLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
@@ -11,7 +11,7 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
  * ║  DPs: 1-5,7,9,14,101,102 | ZCL: 6,8,EF00                                   ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class DimmerWall1GangDevice extends VirtualButtonMixin(HybridLightBase) {
+class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
 
   // v5.8.97: Physical button detection state (PR #112 packetninja pattern)
   _appCommandPending = false;
@@ -80,7 +80,7 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(HybridLightBase) {
       this._lastOnoffState = v;
       if (isPhysical) {
         const id = v ? 'dimmer_wall_1gang_physical_on' : 'dimmer_wall_1gang_physical_off';
-        (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+        (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch(e) { return null; } })()?
       }
     } else if (dpId === 2 || dpId === 101) {
       const dim = this.getCapabilityValue('dim');

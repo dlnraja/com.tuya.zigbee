@@ -83,7 +83,7 @@
 ### ✅ CAS 1: Modification de Code
 ```bash
 # Modifications
-git add lib/devices/BaseHybridDevice.js
+git add lib/devices/BaseUnifiedDevice.js
 git add drivers/climate_monitor/device.js
 git commit -m "fix: cluster registration"
 git push origin master

@@ -1,4 +1,4 @@
-# RAPPORT DE CONSOLIDATION ET RÉPARATION - Universal Tuya Zigbee
+# RAPPORT DE CONSOLIDATION ET RÉPARATION - Tuya Unified Zigbee
 **Version 2.0** | **Date: 2026-05-08** | **Source: multi-canal fusionné + dump JS en temps réel**
 
 ---

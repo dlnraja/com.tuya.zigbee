@@ -104,7 +104,7 @@ Notable forks with recent activity:
 
 **✅ Most requested devices are already supported in dlnraja fork v5.11.11**
 
-The dlnraja fork has integrated most of the device requests and PR contributions from the JohanBendz repository. The current Universal Tuya Zigbee app supports:
+The dlnraja fork has integrated most of the device requests and PR contributions from the JohanBendz repository. The current Tuya Unified Zigbee app supports:
 
 - 116 Zigbee drivers
 - 5,586 manufacturer fingerprints (deduped)
@@ -130,6 +130,6 @@ The dlnraja fork has integrated most of the device requests and PR contributions
 
 ---
 
-*This analysis is part of the Universal Tuya Zigbee documentation.*
-*Universal Tuya Zigbee App v5.11.11 — 116 drivers | 5,586 fingerprints*
+*This analysis is part of the Tuya Unified Zigbee documentation.*
+*Tuya Unified Zigbee App v5.11.11 — 116 drivers | 5,586 fingerprints*
 *Repository: https://github.com/dlnraja/com.tuya.zigbee*

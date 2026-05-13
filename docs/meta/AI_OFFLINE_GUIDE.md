@@ -1,6 +1,6 @@
 # 🛡️ AI OFFLINE GUIDANCE SPEC & ARCHITECTURAL REFERENCE MAP
 > **Target Audience**: AI Coding Assistants, LLMs, and Developers scanning the repository without internet access.  
-> **Repository Context**: Universal Tuya Zigbee Homey SDK3 Application.
+> **Repository Context**: Tuya Unified Zigbee Homey SDK3 Application.
 > **Last Upgraded**: May 2026 (v7.5.9+) by Antigravity (Google DeepMind Team)
 
 ---
@@ -35,7 +35,7 @@ graph TD
 | Dimension | Innovative Track (`master`) | Stable Track (`stable-v5`) |
 | :--- | :--- | :--- |
 | **Application ID** | `com.dlnraja.tuya.zigbee` | `com.dlnraja.tuya.zigbee.stable` |
-| **App Name** | `Universal Tuya` | `Universal Tuya Stable` |
+| **App Name** | `Tuya Unified` | `Tuya Unified Stable` |
 | **Version Scope** | `v7.x.x` (Currently `7.5.9`) | `v5.11.x` |
 | **Target Audience** | Power users, testers, early-adopters | General public, zero-hassle home setups |
 | **Driver Volume** | **323+ drivers** (Experimental fleet) | **50 drivers** (Highly audited Core fleet) |

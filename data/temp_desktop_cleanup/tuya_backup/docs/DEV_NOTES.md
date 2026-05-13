@@ -1,4 +1,4 @@
-# Universal Tuya Zigbee - Developer Notes
+# Tuya Unified Zigbee - Developer Notes
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@
 
 # 1. Overview
 
-**Universal Tuya Zigbee** is a Homey SDK3 app that supports 3743+ Tuya-compatible Zigbee devices.
+**Tuya Unified Zigbee** is a Homey SDK3 app that supports 3743+ Tuya-compatible Zigbee devices.
 
 ### Key Stats
 - **Manufacturers**: 3,743 unique

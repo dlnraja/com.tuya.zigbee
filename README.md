@@ -1,4 +1,4 @@
-# Universal Tuya Zigbee App for Homey
+# Tuya Unified Zigbee App for Homey
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
@@ -8,12 +8,15 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Antigravity Skills](https://img.shields.io/badge/AI--Powered-Antigravity%20Skills-black?logo=google-gemini&logoColor=white)](https://github.com/sickn33/antigravity-awesome-skills)
 
 A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **228 drivers** and **10,950+ device fingerprints**.
 
+**Powered by Antigravity Agentic Skills** — This repository is maintained with the help of a specialized fleet of AI-driven tools that ensure code quality, security, and architectural integrity.
+
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
-- **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
+- **Unified mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** — voltage-based fallback when devices don't report percentage
 - **2,540+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** — built on the latest Homey platform
@@ -173,7 +176,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ```
 Homey Pro
-  └─ Universal Tuya Zigbee App (SDK3)
+  └─ Tuya Unified Zigbee App (SDK3)
        ├─ Hybrid Protocol Engine
        │    ├─ Tuya DP (Cluster 0xEF00) ─ DP1-DP255 data points
        │    └─ Standard ZCL ─ onOff, levelControl, colorControl, etc.
@@ -182,6 +185,14 @@ Homey Pro
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
        └─ 228 Drivers ─ 10,950+ fingerprints
+
+### Advanced Agentic Quality Assurance
+We use the **Antigravity Skills** fleet to enforce a **14-Layer Quality Gateway**:
+- **`@logic-lens`**: Deep reasoning review for SDK3 race conditions and unawaited promises.
+- **`@codebase-audit-pre-push`**: Systematic line-by-line cleanup of dead code, junk, and secrets.
+- **`@technical-change-tracker`**: Structured session handoffs for consistent AI agent performance.
+- **`@squirrel`**: Full-cycle development pipeline for zero-defect driver creation.
+- **`@security-auditor`**: Automated PII masking and secret detection in all diagnostic dumps.
 ```
 
 ---
@@ -252,7 +263,7 @@ homey app run
 
 | | |
 |---|---|
-| **App Store** | [Universal Tuya Zigbee](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
+| **App Store** | [Tuya Unified Zigbee](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
 | **Test Version** | [Install Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
 | **Forum** | [Community Thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) |
 | **Device Finder** | [Smart Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) |
@@ -311,7 +322,7 @@ Install from: [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) 
 4. Open an [issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=01_device_request.yml) with: **manufacturerName**, **modelId**, and **interview data**
 
 ### Report a Bug
-1. Go to **Settings > Apps > Universal Tuya Zigbee > Send Diagnostics**
+1. Go to **Settings > Apps > Tuya Unified Zigbee > Send Diagnostics**
 2. Open a [bug report](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=02_bug_report.yml) with: device model, error messages, and diagnostics code
 
 ---

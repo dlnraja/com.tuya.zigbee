@@ -1,4 +1,4 @@
-# PR & Issue Responses - Universal Tuya Zigbee v5.5.926
+# PR & Issue Responses - Tuya Unified Zigbee v5.5.926
 
 Generated: January 28, 2026
 
@@ -27,7 +27,7 @@ Generated: January 28, 2026
 
 ## Summary
 
-All fingerprints from the open PRs have been verified and are **ALREADY INTEGRATED** in the current version (v5.5.924) of Universal Tuya Zigbee.
+All fingerprints from the open PRs have been verified and are **ALREADY INTEGRATED** in the current version (v5.5.924) of Tuya Unified Zigbee.
 
 ---
 
@@ -40,14 +40,14 @@ All fingerprints from the open PRs have been verified and are **ALREADY INTEGRAT
 ```
 Thank you @bmalkow for this PR! 🎉
 
-The fingerprint `_TZE200_t1blo2bj` is already integrated in our fork (Universal Tuya Zigbee v5.5.924) in the `siren` driver.
+The fingerprint `_TZE200_t1blo2bj` is already integrated in our fork (Tuya Unified Zigbee v5.5.924) in the `siren` driver.
 
 The device is fully supported with:
 - Tuya DP protocol handling
 - Alarm on/off control
 - Volume and duration settings
 
-Users can install our app from Homey App Store: **Universal Tuya Zigbee** by dlnraja
+Users can install our app from Homey App Store: **Tuya Unified Zigbee** by dlnraja
 
 Closing as already implemented. Thank you for your contribution! 🙏
 ```
@@ -63,8 +63,8 @@ Thank you @NicolasYDDER! 🎉
 
 Temperature and humidity sensors with similar fingerprints are fully supported in our `temphumidsensor` and `lcdtemphumidsensor` drivers.
 
-Our fork (Universal Tuya Zigbee v5.5.924) includes:
-- 190KB HybridSensorBase with comprehensive sensor support
+Our fork (Tuya Unified Zigbee v5.5.924) includes:
+- 190KB UnifiedSensorBase with comprehensive sensor support
 - Automatic capability detection
 - Battery monitoring
 
@@ -88,7 +88,7 @@ Features supported:
 - Sensitivity settings
 - Detection distance configuration
 
-Available in Universal Tuya Zigbee v5.5.924. Closing as implemented! 🙏
+Available in Tuya Unified Zigbee v5.5.924. Closing as implemented! 🙏
 ```
 
 ---
@@ -102,7 +102,7 @@ Thank you @sinan92! 🎉
 
 PIR sensors are fully supported in our `motion_sensor` driver with comprehensive Tuya DP handling.
 
-Closing as already implemented in Universal Tuya Zigbee v5.5.924. 🙏
+Closing as already implemented in Tuya Unified Zigbee v5.5.924. 🙏
 ```
 
 ---
@@ -128,7 +128,7 @@ Closing as already implemented. 🙏
 ```
 Thank you @Peter-Celica! 🎉
 
-The devices have been verified and are supported in Universal Tuya Zigbee v5.5.924.
+The devices have been verified and are supported in Tuya Unified Zigbee v5.5.924.
 
 Closing as already implemented. 🙏
 ```
@@ -176,7 +176,7 @@ Closing as already implemented. 🙏
 ```
 Thank you @Melectro1 for these updates! 🎉
 
-The fingerprints have been verified and are already present in Universal Tuya Zigbee v5.5.924.
+The fingerprints have been verified and are already present in Tuya Unified Zigbee v5.5.924.
 
 Closing as already implemented. 🙏
 ```
@@ -220,7 +220,7 @@ Closing as already implemented. 🙏
 ```
 Thank you @gpmachado! 🎉
 
-We have a dedicated `dimmer_3gang` driver in Universal Tuya Zigbee v5.5.924.
+We have a dedicated `dimmer_3gang` driver in Tuya Unified Zigbee v5.5.924.
 
 Closing as already implemented. 🙏
 ```
@@ -288,7 +288,7 @@ Closing as already implemented. 🙏
 ```
 Thank you @sinan92! 🎉
 
-Both fingerprints are already integrated in Universal Tuya Zigbee.
+Both fingerprints are already integrated in Tuya Unified Zigbee.
 
 Closing as already implemented. 🙏
 ```
@@ -348,7 +348,7 @@ Closing as already implemented. 🙏
 ```
 Hi @Nono-3ric! 👋
 
-Good news! The AVATTO WT198 thermostat with fingerprint `_TZE284_xnbkhhdr` is already supported in Universal Tuya Zigbee v5.5.924.
+Good news! The AVATTO WT198 thermostat with fingerprint `_TZE284_xnbkhhdr` is already supported in Tuya Unified Zigbee v5.5.924.
 
 The device is handled by our `thermostat_tuya_dp` driver with:
 - Target temperature control
@@ -356,7 +356,7 @@ The device is handled by our `thermostat_tuya_dp` driver with:
 - Mode selection (off/heat/auto)
 - Schedule support
 
-Please install **Universal Tuya Zigbee** from the Homey App Store and re-pair your device.
+Please install **Tuya Unified Zigbee** from the Homey App Store and re-pair your device.
 
 Closing as already supported! 🎉
 ```
@@ -373,7 +373,7 @@ Hi @fjvs1467! 👋
 Sorry to hear about the issue with your TS0201 sensor.
 
 Could you please:
-1. Update to Universal Tuya Zigbee v5.5.924
+1. Update to Tuya Unified Zigbee v5.5.924
 2. Remove and re-pair the device
 3. If still not working, share the device diagnostics (Settings > Diagnostics > Copy)
 
@@ -391,7 +391,7 @@ Thank you!
 ```
 Hi @cvh1111! 👋
 
-The radar sensor `_TZE200_rhgsbacq` is already supported in Universal Tuya Zigbee v5.5.924.
+The radar sensor `_TZE200_rhgsbacq` is already supported in Tuya Unified Zigbee v5.5.924.
 
 Please install our app and re-pair your device.
 
@@ -409,7 +409,7 @@ Hi @geertvanelslander! 👋
 
 Zbeacon contact sensors are supported in our `contact_sensor` driver.
 
-Please install Universal Tuya Zigbee v5.5.924 and re-pair your device.
+Please install Tuya Unified Zigbee v5.5.924 and re-pair your device.
 
 Closing as already supported! 🎉
 ```
@@ -430,7 +430,7 @@ Features:
 - Temperature measurement
 - Battery status
 
-Please install Universal Tuya Zigbee v5.5.924.
+Please install Tuya Unified Zigbee v5.5.924.
 
 Closing as already supported! 🎉
 ```
@@ -444,7 +444,7 @@ Closing as already supported! 🎉
 ```
 Hi @pjmpessers! 👋
 
-Great news! All BSEED switches are fully supported in Universal Tuya Zigbee v5.5.924:
+Great news! All BSEED switches are fully supported in Tuya Unified Zigbee v5.5.924:
 
 - `_TZ3000_blhvsaqf` (TS0001) ✅ 1-gang
 - `_TZ3000_l9brjwau` (TS0002) ✅ 2-gang
@@ -471,7 +471,7 @@ Closing as already supported! 🎉
 ```
 Hi @csmobiel! 👋
 
-The soil sensor `_TZE284_aa03yzhs` is already supported in Universal Tuya Zigbee v5.5.924.
+The soil sensor `_TZE284_aa03yzhs` is already supported in Tuya Unified Zigbee v5.5.924.
 
 Please install our app and re-pair your device.
 
@@ -497,7 +497,7 @@ Key improvements since v5.5.518:
 - 107+ drivers
 - 4200+ device fingerprints
 
-Available on Homey App Store as "Universal Tuya Zigbee"
+Available on Homey App Store as "Tuya Unified Zigbee"
 ```
 
 ---

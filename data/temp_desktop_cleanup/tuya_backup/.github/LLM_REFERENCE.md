@@ -8,9 +8,9 @@
 - Backlight values: `"off"`, `"normal"`, `"inverted"` (strings)
 
 ## Key Base Classes
-- `HybridSwitchBase.js` - Switches
-- `HybridSensorBase.js` - Sensors  
-- `HybridPlugBase.js` - Plugs
+- `UnifiedSwitchBase.js` - Switches
+- `UnifiedSensorBase.js` - Sensors  
+- `UnifiedPlugBase.js` - Plugs
 - `ButtonDevice.js` - Buttons
 
 ## Tuya DP Protocol

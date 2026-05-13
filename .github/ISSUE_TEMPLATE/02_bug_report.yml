@@ -60,7 +60,7 @@ body:
     id: app_version
     attributes:
       label: "App Version"
-      description: "Which version of Universal Tuya Zigbee?"
+      description: "Which version of Tuya Unified Zigbee?"
       placeholder: "ex: v3.0.2"
     validations:
       required: true
@@ -94,7 +94,7 @@ body:
       description: |
         Homey logs showing the issue
         
-        Get from: Settings → Apps → Universal Tuya Zigbee → View Logs
+        Get from: Settings → Apps → Tuya Unified Zigbee → View Logs
       render: shell
     validations:
       required: false

@@ -1,6 +1,6 @@
 'use strict';
 
-const {SensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { startsWithCI, normalize } = require('../../lib/utils/CaseInsensitiveMatcher');
 const IASAlarmFallback = require('../../lib/IASAlarmFallback');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');

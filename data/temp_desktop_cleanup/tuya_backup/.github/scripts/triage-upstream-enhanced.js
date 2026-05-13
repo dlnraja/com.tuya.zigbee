@@ -33,7 +33,7 @@ function post(n,body){
 function supportedMsg(found){
   const lines=found.map(([m,d])=>`| \`${m}\` | **${[].concat(d).join(', ')}** |`).join('\n');
   return [
-    `Hi! This device is **already supported** in [Universal Tuya Zigbee](${GH}) **v${VER}**.`,
+    `Hi! This device is **already supported** in [Tuya Unified Zigbee](${GH}) **v${VER}**.`,
     '',
     '| Fingerprint | Driver(s) |',
     '|---|---|',
@@ -70,7 +70,7 @@ function unsupportedMsg(missing){
 }
 
 function prMsg(found,missing){
-  let msg=`Hi! Thanks for this PR. It has been tracked in [Universal Tuya Zigbee](${GH}) **v${VER}**.\n\n`;
+  let msg=`Hi! Thanks for this PR. It has been tracked in [Tuya Unified Zigbee](${GH}) **v${VER}**.\n\n`;
   if(found.length){
     msg+=`**Already in our fork:**\n`;
     msg+=found.map(([m,d])=>`- \`${m}\` -> **${[].concat(d).join(', ')}**`).join('\n')+'\n\n';
@@ -179,7 +179,7 @@ if(SCAN_FORKS){
         if(found.length||missing.length){
           const ORIG_REPO=REPO;
           // Post redirect comment on fork
-          const msg=`Hi! This device request has been tracked in [Universal Tuya Zigbee](${GH}) **v${VER}**.\n\nPlease install from [Homey App Store](${APP}) and report issues on our [Forum](${FORUM}) or [GitHub](${GH}/issues).`;
+          const msg=`Hi! This device request has been tracked in [Tuya Unified Zigbee](${GH}) **v${VER}**.\n\nPlease install from [Homey App Store](${APP}) and report issues on our [Forum](${FORUM}) or [GitHub](${GH}/issues).`;
           if(!DRY){
             try{
               const f=path.join(os.tmpdir(),'_triage_fork.md');

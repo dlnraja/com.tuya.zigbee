@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Universal Tuya Zigbee - Full Fingerprint Sync Pipeline
+ * Tuya Unified Zigbee - Full Fingerprint Sync Pipeline
  * Crawls: Z2M (all files), ZHA (all dirs), Blakadder, deCONZ
  * Run: node scripts/sync/run.js
  */

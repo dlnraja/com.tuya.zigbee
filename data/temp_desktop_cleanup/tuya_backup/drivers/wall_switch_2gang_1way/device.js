@@ -1,9 +1,9 @@
 'use strict';
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
-class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
+class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
   get gangCount() { return 1; } // Each sub-device controls 1 gang
 
   get sceneMode() {

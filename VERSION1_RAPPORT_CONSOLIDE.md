@@ -1,5 +1,5 @@
-# 📊 VERSION 1: RAPPORT CONSOLIDÉ - Universal Tuya Zigbee
-## Universal Tuya Zigbee App - v5.11.212+
+# 📊 VERSION 1: RAPPORT CONSOLIDÉ - Tuya Unified Zigbee
+## Tuya Unified Zigbee App - v5.11.212+
 *Generated: 2026-05-08 | Status: ✅ VALIDATED*
 
 ---

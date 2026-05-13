@@ -86,7 +86,7 @@ class DynamicCapabilityManager {
   }
 
   /**
-   * Process incoming Tuya DP (called from TuyaEF00Manager or BaseHybridDevice)
+   * Process incoming Tuya DP (called from TuyaEF00Manager or BaseUnifiedDevice)
    * Only does DP-based enrichment for fallback drivers
    */
   async processDP(dpId, value, dpType) {

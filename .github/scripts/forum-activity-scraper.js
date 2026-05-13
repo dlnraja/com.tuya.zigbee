@@ -240,7 +240,7 @@ async function main(){
     userDevices:Object.fromEntries(Object.entries(data.deviceInfo.userDevices||{}).slice(0,10).map(([u,d])=>[u,{fps:d.fps.slice(0,5),posts:d.posts}])),
     threadExcerpts:(data.fullThreads||[]).slice(0,5).map(t=>({title:t.title,posts:t.posts?.length,first:(t.posts?.[0]?.text||'').substring(0,150)})),
     recentActivity:(data.activity||[]).slice(0,15).map(a=>a.title+' ('+a.excerpt?.slice(0,80)+')')};
-  const aiPrompt='Analyze this Homey forum data for the Universal Tuya Zigbee app. For each unsupported fingerprint: identify device type (switch/sensor/TRV/cover/dimmer/etc), likely productId (TS0001-TS0601), suggested driver, and any DPs/clusters mentioned in thread context. Group by user to show their device history. Output: 1) Per-device analysis with driver suggestion, 2) Per-user request summary, 3) Top issues to fix, 4) Priority action items. Use project rules for driver matching logic. Max 500 words.';
+  const aiPrompt='Analyze this Homey forum data for the Tuya Unified Zigbee app. For each unsupported fingerprint: identify device type (switch/sensor/TRV/cover/dimmer/etc), likely productId (TS0001-TS0601), suggested driver, and any DPs/clusters mentioned in thread context. Group by user to show their device history. Output: 1) Per-device analysis with driver suggestion, 2) Per-user request summary, 3) Top issues to fix, 4) Priority action items. Use project rules for driver matching logic. Max 500 words.';
   const ai=await callAI(JSON.stringify(aiInput,null,2),aiPrompt,{maxTokens:1024});
   data.aiAnalysis=ai?ai.text:null;
   if(data.aiAnalysis)console.log('  AI analysis:',data.aiAnalysis.length,'chars');

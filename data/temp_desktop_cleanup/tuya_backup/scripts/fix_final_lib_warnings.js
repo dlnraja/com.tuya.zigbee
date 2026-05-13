@@ -18,7 +18,7 @@ let stats = {
 const FIXES = [
   // Valeurs littérales (déjà numériques, mais ajout parseFloat pour conformité)
   {
-    file: 'lib/devices/BaseHybridDevice.js',
+    file: 'lib/devices/BaseUnifiedDevice.js',
     old: "await this.setCapabilityValue('measure_battery', 50)",
     new: "await this.setCapabilityValue('measure_battery', 50)" // Littéral OK
   },

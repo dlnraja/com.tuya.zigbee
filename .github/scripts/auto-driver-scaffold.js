@@ -9,8 +9,8 @@ fs.mkdirSync(STATE,{recursive:true});
 
 function run(cmd,cwd){try{return ex(cmd,{encoding:'utf8',cwd:cwd||ROOT,timeout:60000}).trim();}catch{return '';}}
 
-const CLASS_MAP={light:'HybridLightBase',socket:'HybridSwitchBase',sensor:'HybridSensorBase',thermostat:'HybridSensorBase',fan:'BaseHybridDevice',windowcoverings:'HybridCoverBase',other:'BaseHybridDevice'};
-const CLASS_IMPORTS={HybridLightBase:"const HybridLightBase=require('../../lib/devices/HybridLightBase');",HybridSwitchBase:"const HybridSwitchBase=require('../../lib/devices/HybridSwitchBase');",HybridSensorBase:"const HybridSensorBase=require('../../lib/devices/HybridSensorBase');",HybridCoverBase:"const HybridCoverBase=require('../../lib/devices/HybridCoverBase');",BaseHybridDevice:"const {ZigBeeDevice}=require('homey-zigbeedriver');"};
+const CLASS_MAP={light:'UnifiedLightBase',socket:'UnifiedSwitchBase',sensor:'UnifiedSensorBase',thermostat:'UnifiedSensorBase',fan:'BaseUnifiedDevice',windowcoverings:'UnifiedCoverBase',other:'BaseUnifiedDevice'};
+const CLASS_IMPORTS={UnifiedLightBase:"const UnifiedLightBase=require('../../lib/devices/UnifiedLightBase');",UnifiedSwitchBase:"const UnifiedSwitchBase=require('../../lib/devices/UnifiedSwitchBase');",UnifiedSensorBase:"const UnifiedSensorBase=require('../../lib/devices/UnifiedSensorBase');",UnifiedCoverBase:"const UnifiedCoverBase=require('../../lib/devices/UnifiedCoverBase');",BaseUnifiedDevice:"const {ZigBeeDevice}=require('homey-zigbeedriver');"};
 
 function loadDrivers(dir){
   const map=new Map();
@@ -79,11 +79,11 @@ function scaffoldDriver(name,info,johanCompose){
   fs.mkdirSync(path.join(driverDir,'assets','images'),{recursive:true});
   const compose=johanCompose||{name:{en:name.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase())},class:info.class||'other',capabilities:['onoff'],zigbee:{manufacturerName:info.mfrs||[],productId:info.pids||[],deviceJoinedTriggerFlowId:'_triggerFlowDeviceAdded',learnmode:{instruction:{en:'Put device in pairing mode'}}},images:{small:'{{driverAssetsPath}}/images/small.png',large:'{{driverAssetsPath}}/images/large.png',xlarge:'{{driverAssetsPath}}/images/xlarge.png'}};
   fs.writeFileSync(path.join(driverDir,'driver.compose.json'),JSON.stringify(compose,null,2)+'\n');
-  const base=CLASS_MAP[info.class]||'BaseHybridDevice';
-  const imp=CLASS_IMPORTS[base]||CLASS_IMPORTS.BaseHybridDevice;
+  const base=CLASS_MAP[info.class]||'BaseUnifiedDevice';
+  const imp=CLASS_IMPORTS[base]||CLASS_IMPORTS.BaseUnifiedDevice;
   const cn=name.split('_').map(w=>w[0].toUpperCase()+w.slice(1)).join('');
   const isTuya=info.pids?.some(p=>p==='TS0601');
-  let devJs="'use strict';\n\n"+imp+"\n\nclass "+cn+"Device extends "+(base==='BaseHybridDevice'?'ZigBeeDevice':base)+" {\n  async onNodeInit({zclNode}){\n    this.log('["+name.toUpperCase()+"] init');\n    await super.onNodeInit({zclNode});\n    this.log('["+name.toUpperCase()+"] ready');\n  }\n";
+  let devJs="'use strict';\n\n"+imp+"\n\nclass "+cn+"Device extends "+(base==='BaseUnifiedDevice'?'ZigBeeDevice':base)+" {\n  async onNodeInit({zclNode}){\n    this.log('["+name.toUpperCase()+"] init');\n    await super.onNodeInit({zclNode});\n    this.log('["+name.toUpperCase()+"] ready');\n  }\n";
   if(isTuya)devJs+="\n  get dpMappings(){\n    return {\n      // TODO: add DP mappings from device logs\n    };\n  }\n";
   devJs+="}\n\nmodule.exports="+cn+"Device;\n";
   fs.writeFileSync(path.join(driverDir,'device.js'),devJs);

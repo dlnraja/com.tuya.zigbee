@@ -1,6 +1,6 @@
 'use strict';
 
-const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
 const { setupSonoffEnergy } = require('../../lib/mixins/SonoffEnergyMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -151,7 +151,7 @@ function getEnergyConfig(manufacturerName) {
   return ENERGY_CONFIG_MAP[manufacturerName] || ENERGY_DEVICE_CONFIGS.TUYA_DP_STANDARD;
 }
 
-class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugBase)) {
+class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
   // v5.11.25: Override ZCL energy divisors for devices that report in actual units
   get zclEnergyDivisors() {
@@ -355,7 +355,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Hyb
           elecCluster.on('attr.activePower', (value) => {
             const power = value / pDiv;
             this.log(`[ENERGY-ZCL] Power: ${power}W (raw=${value} div=${pDiv})`);
-            this.setCapabilityValue('measure_power', parseFloat(Math.max(0, power))).catch(() => { });
+            await this.setCapabilityValue('measure_power', parseFloat(Math.max(0, power))).catch(() => { });
           });
         }
 
@@ -365,7 +365,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Hyb
           elecCluster.on('attr.rmsVoltage', (value) => {
             const voltage = value / vDiv;
             this.log(`[ENERGY-ZCL] Voltage: ${voltage}V (raw=${value} div=${vDiv})`);
-            this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(() => { });
+            await this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(() => { });
           });
         }
 
@@ -375,7 +375,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Hyb
           elecCluster.on('attr.rmsCurrent', (value) => {
             const current = value / cDiv;
             this.log(`[ENERGY-ZCL] Current: ${current}A (raw=${value} div=${cDiv})`);
-            this.setCapabilityValue('measure_current', parseFloat(current)).catch(() => { });
+            await this.setCapabilityValue('measure_current', parseFloat(current)).catch(() => { });
           });
         }
 
@@ -413,7 +413,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Hyb
           mc.on('attr.currentSummDelivered', (v) => {
             const e = parseE(v);
             this.log(`[ENERGY-ZCL] Energy: ${e}kWh`);
-            this.setCapabilityValue('meter_power', parseFloat(e)).catch(() => {});
+            await this.setCapabilityValue('meter_power', parseFloat(e)).catch(() => {});
           });
         }
         // v5.11.26: Poll metering — many TS011F don't auto-report energy

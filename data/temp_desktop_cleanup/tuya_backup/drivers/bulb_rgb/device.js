@@ -1,12 +1,12 @@
 'use strict';
 
-const HybridLightBase = require('../../lib/devices/HybridLightBase');
+const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║      RGB BULB - v5.5.238 FULL FEATURES (TS0505B Complete)                   ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  HybridLightBase handles: onoff, dim, light_temperature, protocol learning  ║
+ * ║  UnifiedLightBase handles: onoff, dim, light_temperature, protocol learning  ║
  * ║  This class EXTENDS with: light_hue, light_saturation, HSV parsing          ║
  * ║                                                                              ║
  * ║  TUYA DPs (from Zigbee2MQTT TS0505B):                                       ║
@@ -42,7 +42,7 @@ const LIGHT_EFFECTS = {
   party: '060e0d0000000000000003e803e80b4003e803e8', // Party mode
 };
 
-class RGBBulbDevice extends HybridLightBase {
+class RGBBulbDevice extends UnifiedLightBase {
 
   get lightCapabilities() {
     return ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature', 'light_mode'];

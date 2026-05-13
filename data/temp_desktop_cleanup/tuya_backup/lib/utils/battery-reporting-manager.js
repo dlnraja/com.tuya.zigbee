@@ -9,7 +9,7 @@
  * Based on Athom best practices and Homey SDK3 standards
  *
  * @description Auto-detects device type and uses appropriate battery reporting method
- * @author Universal Tuya Zigbee Team
+ * @author Tuya Unified Zigbee Team
  * @version 2.0.0 - HYBRID (Standard + Tuya DP)
  */
 

@@ -1,4 +1,4 @@
-# 📊 Historical Analysis - Universal Tuya Zigbee
+# 📊 Historical Analysis - Tuya Unified Zigbee
 Generated: 2026-05-13T11:53:15.398Z | Version: v5.11.212+
 
 ## 🔄 Evolution Timeline
@@ -45,7 +45,7 @@ v5.11.212 (2026-05-08) → Phase 0-1 complete, context preservation, drivers
 - 57f64dbd5 feat(wifi): add getSavedCredentials and Easy Login support for seamless Tuya pairing
 - 32577b6ad feat(dimmer): port TS110E custom level control cluster and wifi automatic brand/type badges [skip ci]
 - 655f982d5 feat(wifi): add automatic device type classification and format pairing names with brand/type badges [skip ci]
-- 626cf9e51 feat(dimmer): port TS110E custom level control cluster to HybridLightBase and fix battery capability conflicts [skip ci]
+- 626cf9e51 feat(dimmer): port TS110E custom level control cluster to UnifiedLightBase and fix battery capability conflicts [skip ci]
 - 3767dab52 chore(master): apply master-self-heal optimizations and resolve battery capability representation mappings [skip ci]
 - e8768d2ee chore(master): enrich rules files and implement Tuya local WiFi brand-classification for Moes, Lidl, Legrand, Somfy, and Avatto [skip ci]
 - 0ee99311f auto: sync Johan SDK3 FPs (19 added) [skip ci]

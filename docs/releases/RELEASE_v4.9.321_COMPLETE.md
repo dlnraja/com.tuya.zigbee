@@ -186,9 +186,9 @@ DP103 → onoff.usb2          // USB port 2
 
 ## ⏳ **TODO RESTANT (Manuel - 10-15 min)**
 
-### **A. BaseHybridDevice.js - Zigbee Retry (12 occurrences)**
+### **A. BaseUnifiedDevice.js - Zigbee Retry (12 occurrences)**
 
-**Fichier:** `lib/devices/BaseHybridDevice.js`
+**Fichier:** `lib/devices/BaseUnifiedDevice.js`
 
 **Lignes à modifier:** 822, 847, 882, 907, 932, 965, 1022, 1278, 1332, 1386, 1614
 

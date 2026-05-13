@@ -41,9 +41,9 @@ git push
 
 ## 🔧 TODO MANUEL RESTANT (10 min)
 
-### A. BaseHybridDevice.js - configureReporting retry
+### A. BaseUnifiedDevice.js - configureReporting retry
 
-**Fichier:** `lib/devices/BaseHybridDevice.js`
+**Fichier:** `lib/devices/BaseUnifiedDevice.js`
 
 **Chercher/Remplacer (12 occurrences):**
 
@@ -165,7 +165,7 @@ Si le fichier est incomplet, copier le contenu depuis `.github/PATCH_APPLIED_v4.
 ## 📊 APRÈS LES CORRECTIONS A-D:
 
 ```bash
-git add lib/devices/BaseHybridDevice.js
+git add lib/devices/BaseUnifiedDevice.js
 git add lib/SmartDriverAdaptation.js
 git add lib/utils/capability-safe-create.js
 git add lib/utils/migration-queue.js
@@ -225,7 +225,7 @@ Surveiller: https://github.com/YOUR_REPO/actions
 ## ✅ CHECKLIST FINALE
 
 - [ ] Commit correctifs actuels (A)
-- [ ] Appliquer TODO A: BaseHybridDevice.js retry (12 lignes)
+- [ ] Appliquer TODO A: BaseUnifiedDevice.js retry (12 lignes)
 - [ ] Appliquer TODO B: SmartDriverAdaptation safe guards
 - [ ] Appliquer TODO C: capability-safe-create final
 - [ ] Vérifier TODO D: migration-queue complete

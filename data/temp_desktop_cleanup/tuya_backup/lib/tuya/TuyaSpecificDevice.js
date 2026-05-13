@@ -33,7 +33,7 @@ class TuyaSpecificDevice extends AutoAdaptiveDevice {
       await this.setupTuyaDataPoints();
     } else {
       this.log('[TUYA-SPECIFIC] 📡 Standard Zigbee protocol detected');
-      // BaseHybridDevice handles standard Zigbee automatically
+      // BaseUnifiedDevice handles standard Zigbee automatically
     }
 
     this.log('[TUYA-SPECIFIC] ✅ Initialized!');

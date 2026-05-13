@@ -7,7 +7,7 @@ return page(drivers,t,v,R);
 };
 function page(D,t,v,R){return`<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Device Finder - Universal Tuya Zigbee v${v}</title>
+<title>Device Finder - Tuya Unified Zigbee v${v}</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2/dist/tailwind.min.css" rel="stylesheet">
 <style>
 :root{--bg:#0f172a;--card:#1e293b;--accent:#3b82f6;--green:#10b981;--text:#e2e8f0;--muted:#94a3b8}
@@ -43,7 +43,7 @@ function page(D,t,v,R){return`<!DOCTYPE html>
 .footer a{color:var(--accent);text-decoration:none}
 </style></head><body>
 <div class="hero"><h1>🔍 Device Finder</h1>
-<p>Universal Tuya Zigbee v${v} — Find your device instantly</p>
+<p>Tuya Unified Zigbee v${v} — Find your device instantly</p>
 <div class="stats">
 <div class="stat"><b>${D.length}</b>Drivers</div>
 <div class="stat"><b>${t.toLocaleString()}</b>Fingerprints</div>

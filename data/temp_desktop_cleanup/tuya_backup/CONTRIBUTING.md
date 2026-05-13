@@ -1,4 +1,4 @@
-# Contributing to Universal Tuya Zigbee
+# Contributing to Tuya Unified Zigbee
 
 ## Critical Rules
 
@@ -30,7 +30,7 @@ this.getSetting('zb_manufacturerName')
 
 ### Switch Mixin Order
 ```javascript
-class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
+class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 ```
 
 ### Backlight Values

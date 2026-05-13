@@ -1,8 +1,8 @@
 # 🔧 APPLY ZIGBEE RETRY FIX - Instructions
 
-## ⚠️ BaseHybridDevice.js - Édition Manuelle Requise
+## ⚠️ BaseUnifiedDevice.js - Édition Manuelle Requise
 
-Le fichier `lib/devices/BaseHybridDevice.js` contient **12 occurrences** de `cluster.configureReporting` qui doivent être remplacées par `configureReportingWithRetry`.
+Le fichier `lib/devices/BaseUnifiedDevice.js` contient **12 occurrences** de `cluster.configureReporting` qui doivent être remplacées par `configureReportingWithRetry`.
 
 ### **Pourquoi manuel?**
 - Le fichier est complexe (2500+ lignes)
@@ -15,7 +15,7 @@ Le fichier `lib/devices/BaseHybridDevice.js` contient **12 occurrences** de `clu
 
 ### **Étape 1: Ouvrir le fichier**
 ```
-Ouvrir: lib/devices/BaseHybridDevice.js
+Ouvrir: lib/devices/BaseUnifiedDevice.js
 ```
 
 ### **Étape 2: Utiliser Find & Replace (Ctrl+H)**
@@ -110,10 +110,10 @@ Après chaque remplacement, vérifier:
 Après modifications:
 ```bash
 # Vérifier syntaxe
-node -c lib/devices/BaseHybridDevice.js
+node -c lib/devices/BaseUnifiedDevice.js
 
 # Si OK, commit
-git add lib/devices/BaseHybridDevice.js
+git add lib/devices/BaseUnifiedDevice.js
 git commit -m "fix: replace all configureReporting with retry mechanism (12 occurrences)"
 ```
 

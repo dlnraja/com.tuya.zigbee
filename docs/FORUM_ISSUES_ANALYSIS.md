@@ -56,18 +56,18 @@
 - ✅ Contact sensor driver has extensive v5.5.344 fixes for IAS Zone keep-alive
 - ✅ Debouncing implemented (500ms-3000ms depending on problematic sensor detection)
 - ✅ Invert contact setting available for inverted sensors
-- ✅ HybridSensorBase handles IAS Zone + Tuya DP + ZCL listeners
+- ✅ UnifiedSensorBase handles IAS Zone + Tuya DP + ZCL listeners
 - ⚠️ No IAS Zone listener code visible in contact_sensor/device.js
 
 **Hypothesis**:
 - User may have inverted sensor (needs invert_contact setting)
 - Debounce timeout too long blocking legitimate state changes
-- IAS Zone listener may not be properly initialized in HybridSensorBase
+- IAS Zone listener may not be properly initialized in UnifiedSensorBase
 - Need diagnostic report to see actual DP/ZCL traffic
 
 **Fix Strategy**:
 1. Request diagnostic report from Lasse_K
-2. Check if HybridSensorBase properly registers IAS Zone listeners
+2. Check if UnifiedSensorBase properly registers IAS Zone listeners
 3. Add logging to contact sensor for all state changes
 4. Verify debounce is not blocking all updates
 
@@ -248,7 +248,7 @@
 - This explains why Lasse_K sees "no indication" from the sensor
 
 **Code Analysis**:
-- ✅ HybridSensorBase has CIE enrollment code (v5.5.646)
+- ✅ UnifiedSensorBase has CIE enrollment code (v5.5.646)
 - ✅ Handles zoneEnrollRequest and attempts CIE write
 - ⚠️ CIE write may be failing silently
 - ⚠️ May need explicit enrollment trigger on wake
@@ -288,7 +288,7 @@
    - Forum issue #267
    - DP4=temp, DP5=humidity mapping broken
 
-3. **v5.5.750 - HybridSwitchBase Constructor Crash** (bb504e4e1c)
+3. **v5.5.750 - UnifiedSwitchBase Constructor Crash** (bb504e4e1c)
    - Hartmut_Dunker report
    - Constructor crash affecting switches
 

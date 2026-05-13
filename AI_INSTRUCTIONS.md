@@ -15,7 +15,7 @@ All AI agents are encouraged to draw inspiration from and utilize the skill patt
 
 ## 🏗️ Architectural Guardrails
 1. **Hybrid Driver System**: NEVER create a standalone driver if a device can be handled by `HybridDriverSystem.js`.
-2. **Tuya DP Protocol**: Always prefer the `UniversalTuyaParser.js` and DP-mapping logic for Tuya-specific devices.
+2. **Tuya DP Protocol**: Always prefer the `TuyaUnifiedParser.js` and DP-mapping logic for Tuya-specific devices.
 3. **IR Engine**: Use `lib/ir/IRCodeLibrary.js` for all IR-related code generation. Follow the Zosung Base64 format.
 4. **SDK3 Compliance**: Strictly follow Homey SDK3 standards. No deprecated `registerAttrReportListener`. Use cluster events.
 
@@ -26,4 +26,4 @@ All AI agents are encouraged to draw inspiration from and utilize the skill patt
 4. **Document**: Update `PROJECT_INDEX.md` and `SYSTEM_CHANGELOG.md` after every major implementation.
 
 ---
-*This file serves as the primary behavioral directive for all AI agents interacting with the Universal Tuya Zigbee project.*
+*This file serves as the primary behavioral directive for all AI agents interacting with the Tuya Unified Zigbee project.*

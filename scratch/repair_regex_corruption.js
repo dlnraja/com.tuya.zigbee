@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const files = [
     'lib/utils/data/TypedDataReader.js',
-    'lib/tuya/UniversalTuyaParser.js',
+    'lib/tuya/TuyaUnifiedParser.js',
     'lib/quirks/QuirksDatabase.js',
     'lib/ota/TuyaXiaomiOTAProvider.js'
 ];

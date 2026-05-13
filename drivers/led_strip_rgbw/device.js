@@ -1,5 +1,5 @@
 'use strict';
-constLightBase = require('../../lib/devices/HybridLightBase');
+constLightBase = require('../../lib/devices/UnifiedLightBase');
 
 class LEDStripRGBWDevice extends LightBase {
   get lightCapabilities() { return ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature']; }

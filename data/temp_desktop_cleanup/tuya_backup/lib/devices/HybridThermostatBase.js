@@ -14,7 +14,7 @@ const { ensureManufacturerSettings } = require('../helpers/ManufacturerNameHelpe
  * ║  Source: https://www.zigbee2mqtt.io/devices/TS0601_thermostat.html          ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class HybridThermostatBase extends ZigBeeDevice {
+class UnifiedThermostatBase extends ZigBeeDevice {
 
   get mainsPowered() { return false; } // Most are battery
   get maxListeners() { return 50; }
@@ -291,7 +291,7 @@ class HybridThermostatBase extends ZigBeeDevice {
    */
   async _safeSetCapability(capability, value) {
     if (!this.hasCapability(capability)) {
-      if (HybridThermostatBase.DYNAMIC_CAPABILITIES.includes(capability)) {
+      if (UnifiedThermostatBase.DYNAMIC_CAPABILITIES.includes(capability)) {
         try {
           await this.addCapability(capability);
           this.log(`[CAP] ✨ DYNAMIC ADD: ${capability} (detected from DP/ZCL data)`);
@@ -325,4 +325,4 @@ class HybridThermostatBase extends ZigBeeDevice {
   }
 }
 
-module.exports = HybridThermostatBase;
+module.exports = UnifiedThermostatBase;

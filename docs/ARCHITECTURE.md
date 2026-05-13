@@ -1,4 +1,4 @@
-# Universal Tuya Zigbee - Architecture Reference
+# Tuya Unified Zigbee - Architecture Reference
 
 > **App**: `com.dlnraja.tuya.zigbee` | **SDK**: Homey SDK3 | **Entry**: `app.js`
 > **193+ drivers** | **4390+ fingerprints** | Zigbee + WiFi
@@ -32,7 +32,7 @@
 
 ## 1. App Entry Point (app.js)
 
-`UniversalTuyaZigbeeApp extends Homey.App` initializes in order:
+`TuyaUnifiedZigbeeApp extends Homey.App` initializes in order:
 
 1. **registerCustomClusters** - Tuya 0xEF00, 0xE000/E001, Zosung IR clusters
 2. **FlowCardManager** - Global action/condition/trigger cards
@@ -68,17 +68,17 @@ Each driver lives in `drivers/{type}/` with:
 
 | Category | Drivers | Base Class |
 |----------|---------|------------|
-| **Switches** | switch_1gang..8gang, wall_switch_*, module_mini_switch | HybridSwitchBase |
-| **Dimmers** | dimmer_*, bulb_dimmable, wall_dimmer_* | HybridSwitchBase / HybridLightBase |
-| **Lights** | bulb_rgb, bulb_rgbw, bulb_tunable_white, led_strip* | HybridLightBase |
-| **Covers** | curtain_motor, curtain_motor_tilt, shutter_roller_controller | HybridCoverBase |
-| **Sensors** | motion_sensor, contact_sensor, climate_sensor, soil_sensor, presence_sensor_* | HybridSensorBase |
-| **Plugs/Energy** | plug_smart, plug_energy_monitor, din_rail_*, power_meter | HybridPlugBase |
-| **Climate** | thermostat_*, radiator_valve, smart_heater* | HybridThermostatBase |
-| **Security** | lock_smart, siren, smoke_detector*, gas_sensor | HybridSensorBase |
+| **Switches** | switch_1gang..8gang, wall_switch_*, module_mini_switch | UnifiedSwitchBase |
+| **Dimmers** | dimmer_*, bulb_dimmable, wall_dimmer_* | UnifiedSwitchBase / UnifiedLightBase |
+| **Lights** | bulb_rgb, bulb_rgbw, bulb_tunable_white, led_strip* | UnifiedLightBase |
+| **Covers** | curtain_motor, curtain_motor_tilt, shutter_roller_controller | UnifiedCoverBase |
+| **Sensors** | motion_sensor, contact_sensor, climate_sensor, soil_sensor, presence_sensor_* | UnifiedSensorBase |
+| **Plugs/Energy** | plug_smart, plug_energy_monitor, din_rail_*, power_meter | UnifiedPlugBase |
+| **Climate** | thermostat_*, radiator_valve, smart_heater* | UnifiedThermostatBase |
+| **Security** | lock_smart, siren, smoke_detector*, gas_sensor | UnifiedSensorBase |
 | **Buttons** | button_wireless_*, scene_switch_* | ButtonDevice |
 | **IR** | ir_blaster, wifi_ir_remote | TuyaZigbeeDevice |
-| **WiFi** | wifi_plug, wifi_switch*, wifi_light, wifi_thermostat... | TuyaHybridDevice |
+| **WiFi** | wifi_plug, wifi_switch*, wifi_light, wifi_thermostat... | TuyaUnifiedDevice |
 | **Special** | fingerbot, pet_feeder, garage_door, valve_*, pool_pump | Various |
 
 ---
@@ -89,26 +89,26 @@ Each driver lives in `drivers/{type}/` with:
 Homey.Device (SDK3)
   └── ZigBeeDevice (homey-zigbeedriver)
         └── TuyaZigbeeDevice (lib/tuya/TuyaZigbeeDevice.js)
-              └── TuyaHybridDevice (lib/devices/TuyaHybridDevice.js)
-                    └── BaseHybridDevice (lib/devices/BaseHybridDevice.js) [182KB - master base]
-                          ├── HybridSwitchBase (lib/devices/HybridSwitchBase.js)
+              └── TuyaUnifiedDevice (lib/devices/TuyaUnifiedDevice.js)
+                    └── BaseUnifiedDevice (lib/devices/BaseUnifiedDevice.js) [182KB - master base]
+                          ├── UnifiedSwitchBase (lib/devices/UnifiedSwitchBase.js)
                           │     └── + PhysicalButtonMixin + VirtualButtonMixin
-                          ├── HybridSensorBase (lib/devices/HybridSensorBase.js) [207KB - largest]
-                          ├── HybridCoverBase (lib/devices/HybridCoverBase.js)
-                          ├── HybridLightBase (lib/devices/HybridLightBase.js)
-                          ├── HybridPlugBase (lib/devices/HybridPlugBase.js)
-                          ├── HybridThermostatBase (lib/devices/HybridThermostatBase.js)
+                          ├── UnifiedSensorBase (lib/devices/UnifiedSensorBase.js) [207KB - largest]
+                          ├── UnifiedCoverBase (lib/devices/UnifiedCoverBase.js)
+                          ├── UnifiedLightBase (lib/devices/UnifiedLightBase.js)
+                          ├── UnifiedPlugBase (lib/devices/UnifiedPlugBase.js)
+                          ├── UnifiedThermostatBase (lib/devices/UnifiedThermostatBase.js)
                           └── ButtonDevice (lib/devices/ButtonDevice.js) [80KB]
 `
 
 ### Key Base Classes
 
-- **BaseHybridDevice** (182KB): Master base - DP handling, capability management, settings, diagnostics, health monitoring, manufacturer variation handling
-- **HybridSensorBase** (207KB): Biggest file - all sensor types, IAS Zone, Tuya DP sensors, dynamic dpMappings builder, compound frame parsing, inference engines
-- **HybridSwitchBase** (40KB): Multi-gang on/off, power-on behavior, backlight, child lock
-- **HybridCoverBase** (35KB): Position control, tilt, curtain motor DPs
-- **HybridPlugBase** (37KB): Energy monitoring, power metering, USB outlets
-- **HybridLightBase** (29KB): RGB, RGBW, CCT, dimming, color temperature, scenes
+- **BaseUnifiedDevice** (182KB): Master base - DP handling, capability management, settings, diagnostics, health monitoring, manufacturer variation handling
+- **UnifiedSensorBase** (207KB): Biggest file - all sensor types, IAS Zone, Tuya DP sensors, dynamic dpMappings builder, compound frame parsing, inference engines
+- **UnifiedSwitchBase** (40KB): Multi-gang on/off, power-on behavior, backlight, child lock
+- **UnifiedCoverBase** (35KB): Position control, tilt, curtain motor DPs
+- **UnifiedPlugBase** (37KB): Energy monitoring, power metering, USB outlets
+- **UnifiedLightBase** (29KB): RGB, RGBW, CCT, dimming, color temperature, scenes
 - **ButtonDevice** (80KB): Wireless buttons, scene switches, press types
 
 ---
@@ -141,7 +141,7 @@ Common DPs: DP1-8=gang states, DP14=power-on, DP15=backlight, DP101=child_lock
 | File | Size | Role |
 |------|------|------|
 | **TuyaEF00Manager.js** | 93KB | Main DP report handler, AdaptiveDataParser, compound frames |
-| **UniversalTuyaParser.js** | 71KB | Frame parsing, ZCL header routing, MCU version handling |
+| **TuyaUnifiedParser.js** | 71KB | Frame parsing, ZCL header routing, MCU version handling |
 | **DeviceFingerprintDB.js** | 215KB | Complete fingerprint database (all mfr+pid combos) |
 | **EnrichedDPMappings.js** | 51KB | DP-to-capability enriched mappings |
 | **TuyaDataPointsZ2M.js** | 43KB | DP definitions from Zigbee2MQTT |
@@ -190,7 +190,7 @@ Device receives ZCL frame on cluster 0xEF00
 ### PeriodicAutoEnricherMixin (lib/mixins/PeriodicAutoEnricherMixin.js - 4KB)
 - Periodic device data enrichment
 
-Mixin order: `PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))`
+Mixin order: `PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))`
 
 ---
 
@@ -485,7 +485,7 @@ Strings: `"off"`, `"normal"`, `"inverted"` (NOT numbers)
 `javascript
 // CORRECT:
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
 // WRONG:
@@ -551,12 +551,12 @@ Utility and maintenance scripts:
 | File | Size | Notes |
 |------|------|-------|
 | `lib/tuya/DeviceFingerprintDB.js` | 215KB | Fingerprint database |
-| `lib/devices/HybridSensorBase.js` | 207KB | All sensor logic |
-| `lib/devices/BaseHybridDevice.js` | 182KB | Master base device |
+| `lib/devices/UnifiedSensorBase.js` | 207KB | All sensor logic |
+| `lib/devices/BaseUnifiedDevice.js` | 182KB | Master base device |
 | `lib/tuya/TuyaEF00Manager.js` | 93KB | DP protocol handler |
 | `lib/devices/ButtonDevice.js` | 80KB | Button/scene device |
-| `lib/devices/TuyaHybridDevice.js` | 79KB | Hybrid device base |
-| `lib/tuya/UniversalTuyaParser.js` | 71KB | Frame parser |
+| `lib/devices/TuyaUnifiedDevice.js` | 79KB | Hybrid device base |
+| `lib/tuya/TuyaUnifiedParser.js` | 71KB | Frame parser |
 | `lib/tuya/EnrichedDPMappings.js` | 51KB | DP enrichment DB |
 | `lib/managers/SmartDriverAdaptation.js` | 48KB | Runtime adaptation |
 | `app.js` | 43KB | App entry point |

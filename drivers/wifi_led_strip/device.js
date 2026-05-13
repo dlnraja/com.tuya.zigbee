@@ -57,8 +57,8 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
         const s = parseInt(hex.substring(4, 8), 16);
         const v = parseInt(hex.substring(8, 12), 16);
         if (h >= 0 && h <= 360 && s >= 0 && s <= 1000 && v >= 0 && v <= 1000) {
-          this.setCapabilityValue('light_hue', h / 360).catch(this.error);
-          this.setCapabilityValue('light_saturation', s / 1000).catch(this.error);
+          await this.setCapabilityValue('light_hue', h / 360).catch(this.error);
+          await this.setCapabilityValue('light_saturation', s / 1000).catch(this.error);
           this.log('[WIFI-LED] DP24 color H=' + h + ' S=' + s + ' V=' + v);
         }
       } catch (e) { /* ignore */ }

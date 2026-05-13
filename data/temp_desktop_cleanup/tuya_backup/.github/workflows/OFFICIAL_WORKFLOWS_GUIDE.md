@@ -221,7 +221,7 @@ Après publication GitHub Actions:
 
 1. **App créée en Draft** dans votre dashboard
 2. **Promouvoir vers Test:**
-   - Dashboard → My Apps → Universal Tuya Zigbee
+   - Dashboard → My Apps → Tuya Unified Zigbee
    - Choose "Release to Test"
    - App disponible via Test URL uniquement
 
@@ -235,7 +235,7 @@ https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 Après tests concluants:
 
 1. **Soumettre pour certification:**
-   - Dashboard → My Apps → Universal Tuya Zigbee
+   - Dashboard → My Apps → Tuya Unified Zigbee
    - Choose "Submit for certification"
    - ⚠️ **Décocher** "publish directly after approval" si vous voulez vérifier d'abord
 

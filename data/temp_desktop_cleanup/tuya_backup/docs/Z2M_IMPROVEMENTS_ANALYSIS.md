@@ -1,4 +1,4 @@
-# Z2M / Hubitat / Fork Analysis - Improvements for Universal Tuya Zigbee
+# Z2M / Hubitat / Fork Analysis - Improvements for Tuya Unified Zigbee
 
 **Generated**: January 28, 2026  
 **Sources**: Zigbee2MQTT tuya.ts, kkossev Hubitat drivers, JohanBendz forks
@@ -156,7 +156,7 @@ Based on analysis, the following Z2M patterns are **already present** in our cod
 
 1. **EnrichedDPMappings.js** - Comprehensive DP mappings
 2. **TuyaE000BoundCluster.js** - MOES button cluster handling
-3. **HybridSwitchBase.js** - Packetninja physical button detection
+3. **UnifiedSwitchBase.js** - Packetninja physical button detection
 4. **presence_sensor_radar/device.js** - Full radar DP support
 5. **Permissive variant mode** - Dynamic capability detection
 
@@ -164,7 +164,7 @@ Based on analysis, the following Z2M patterns are **already present** in our cod
 
 ## 🎯 Conclusion
 
-The current Universal Tuya Zigbee v5.5.926 is **well-aligned** with Z2M and Hubitat patterns. Key areas for future enhancement:
+The current Tuya Unified Zigbee v5.5.926 is **well-aligned** with Z2M and Hubitat patterns. Key areas for future enhancement:
 
 1. **3-phase energy monitoring** - Per-phase capabilities
 2. **Cover calibration UI** - Border/limit settings

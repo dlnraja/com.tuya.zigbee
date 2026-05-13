@@ -1,4 +1,4 @@
-# Universal Tuya Zigbee - Validation Workflow
+# Tuya Unified Zigbee - Validation Workflow
 # v5.8.88 - Updated 2026-02-10
 # Runs on pull requests to validate app before merge
 
@@ -189,7 +189,7 @@ jobs:
             console.log('Switch/socket drivers: '+switchDrivers+', with TX fallback: '+withFallback);
           "
 
-      - name: 🧪 Run Universal Tuya Multi-Layer Quality Gate
+      - name: 🧪 Run Tuya Unified Multi-Layer Quality Gate
         run: node scripts/_verify_prs.js
 
       - name: 🔍 Validate (npx primary)

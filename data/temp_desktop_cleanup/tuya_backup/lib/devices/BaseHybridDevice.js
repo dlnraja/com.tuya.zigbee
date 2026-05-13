@@ -171,12 +171,12 @@ try {
 }
 
 /**
- * BaseHybridDevice - Universal base class for hybrid power devices
+ * BaseUnifiedDevice - Universal base class for hybrid power devices
  * Supports AC, DC, and Battery power sources with auto-detection
  * SDK3 Compliant - NO alarm_battery, uses measure_battery only
  * Enhanced with intelligent battery management and accurate calculations
  */
-class BaseHybridDevice extends ZigBeeDevice {
+class BaseUnifiedDevice extends ZigBeeDevice {
 
   constructor(...args) {
     super(...args);
@@ -618,7 +618,7 @@ class BaseHybridDevice extends ZigBeeDevice {
       this.log('════════════════════════════════════════════════════════════════════════════════');
       this.log('🔧 DIAGNOSTIC MODE - Detailed Device Information');
       this.log('════════════════════════════════════════════════════════════════════════════════');
-      this.log('BaseHybridDevice initializing...');
+      this.log('BaseUnifiedDevice initializing...');
 
       // Log device identity FIRST for diagnostics
       await this.logDeviceIdentity();
@@ -777,7 +777,7 @@ class BaseHybridDevice extends ZigBeeDevice {
     }
 
     try {
-      this.log('BaseHybridDevice initialized immediately with safe defaults');
+      this.log('BaseUnifiedDevice initialized immediately with safe defaults');
       this.log('Background detection started for intelligent power management');
       console.log('✅ [COMPLETE] onNodeInit complete - device ready');
 
@@ -4456,6 +4456,6 @@ class BaseHybridDevice extends ZigBeeDevice {
 }
 
 // v5.5.855: Apply PeriodicAutoEnricherMixin for dynamic capability detection
-Object.assign(BaseHybridDevice.prototype, PeriodicAutoEnricherMixin);
+Object.assign(BaseUnifiedDevice.prototype, PeriodicAutoEnricherMixin);
 
-module.exports = BaseHybridDevice;
+module.exports = BaseUnifiedDevice;

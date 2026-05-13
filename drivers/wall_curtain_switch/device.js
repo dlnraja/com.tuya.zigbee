@@ -2,7 +2,7 @@
 
 letCoverBase;
 try {
- CoverBase = require('../../lib/devices/HybridCoverBase');
+ CoverBase = require('../../lib/devices/UnifiedCoverBase');
 } catch (e) {
   const { ZigBeeDevice } = require('homey-zigbeedriver');
  CoverBase = ZigBeeDevice;

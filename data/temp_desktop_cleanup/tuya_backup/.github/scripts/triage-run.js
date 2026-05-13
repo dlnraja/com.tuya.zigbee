@@ -37,7 +37,7 @@ function buildSupportedMsg(found){
     return '`'+m+'` → **'+drivers[0]+'**';
   });
   const fpList=parts.length===1?parts[0]:parts.join(', ');
-  return `Already in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v${VER}: ${fpList}.\n\nGrab it here: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nRemove and re-pair after installing. If something's off, drop a diagnostic report ID on the [forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).`;
+  return `Already in the [Tuya Unified Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v${VER}: ${fpList}.\n\nGrab it here: https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nRemove and re-pair after installing. If something's off, drop a diagnostic report ID on the [forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).`;
 }
 
 function buildUnsupportedMsg(missing){

@@ -1,5 +1,5 @@
 'use strict';
-constSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap');
 
 class SwitchWirelessDevice extends SwitchBase {
@@ -36,9 +36,9 @@ class SwitchWirelessDevice extends SwitchBase {
   _handleDP(dp, value) {
     if (dp === 1) {
       const boolVal = value === 1 || value === true;
-      this.setCapabilityValue('onoff', boolVal).catch(() => {});
+      await this.setCapabilityValue('onoff', boolVal).catch(() => {});
       const cardId = boolVal ? 'switch_wireless_onoff_true' : 'switch_wireless_onoff_false';
-      try { (() => { try { return this.homey.flow.getDeviceTriggerCard(cardId); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {}); } catch (e) { /* */ }
+      try { (() => { try { return this.homey.flow.getDeviceTriggerCard(cardId); } catch(e) { return null; } })()? } catch (e) { /* */ }
       return;
     }
     if (dp === 2) {
@@ -49,7 +49,7 @@ class SwitchWirelessDevice extends SwitchBase {
       this.log(`[WIRELESS-SWITCH] DP2 press=${pt}`);
       try { (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_wireless_button_pressed'); } catch(e) { return null; } })()?.trigger(this, { press_type: pt }, {}).catch(() => {}); } catch (e) { /* */ }
       const c = { single: 'switch_wireless_single_press', double: 'switch_wireless_double_press', long: 'switch_wireless_long_press' }[pt];
-      if (c) { try { (() => { try { return this.homey.flow.getDeviceTriggerCard(c); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {}); } catch (e) { /* */ } }
+      if (c) { try { (() => { try { return this.homey.flow.getDeviceTriggerCard(c); } catch(e) { return null; } })()? } catch (e) { /* */ } }
       return;
     }
     if (typeof super._handleDP === 'function') super._handleDP(dp, value);

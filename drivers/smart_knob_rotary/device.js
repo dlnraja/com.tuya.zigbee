@@ -395,7 +395,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     this._simulatedBrightness = Math.max(0, Math.min(1, this._simulatedBrightness + delta));
     
     if (this.hasCapability('dim')) {
-      this.setCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
+      await this.setCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
     }
     
     this.log('Simulated brightness:', Math.round(this._simulatedBrightness * 100), '%');
@@ -407,7 +407,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     if (this.hasCapability('button.rotate_left')) {
       await this.setCapabilityValue('button.rotate_left', true).catch(this.error);
       this.homey.setTimeout(() => {
-        this.setCapabilityValue('button.rotate_left', false).catch(this.error);
+        await this.setCapabilityValue('button.rotate_left', false).catch(this.error);
       }, 100);
     }
 
@@ -426,7 +426,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     if (this.hasCapability('button.rotate_right')) {
       await this.setCapabilityValue('button.rotate_right', true).catch(this.error);
       this.homey.setTimeout(() => {
-        this.setCapabilityValue('button.rotate_right', false).catch(this.error);
+        await this.setCapabilityValue('button.rotate_right', false).catch(this.error);
       }, 100);
     }
 
@@ -445,7 +445,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     if (this.hasCapability('button.press')) {
       await this.setCapabilityValue('button.press', true).catch(this.error);
       this.homey.setTimeout(() => {
-        this.setCapabilityValue('button.press', false).catch(this.error);
+        await this.setCapabilityValue('button.press', false).catch(this.error);
       }, 100);
     }
 
@@ -466,7 +466,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     
     if (specificCardId) {
       try {
-        await (() => { try { return this.homey.flow.getDeviceTriggerCard(specificCardId); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+        await (() => { try { return this.homey.flow.getDeviceTriggerCard(specificCardId); } catch(e) { return null; } })()?
         this.log(`[FLOW] ✅ Triggered ${specificCardId}`);
       } catch (e) { /* ignore */ }
     }

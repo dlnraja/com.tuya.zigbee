@@ -146,7 +146,7 @@
 > Update v5.9.23, re-pair, press buttons, submit diag.
 
 ## GH#110 Pollepa — TS011F metering FIXED v5.8.91
-> ZCL plug _TZ3210_w0qqde0g. Root cause: configureReporting only had activePower, missing rmsVoltage+rmsCurrent. Also no initial readAttributes. Fixed in HybridPlugBase. Update v5.8.91, remove+re-pair.
+> ZCL plug _TZ3210_w0qqde0g. Root cause: configureReporting only had activePower, missing rmsVoltage+rmsCurrent. Also no initial readAttributes. Fixed in UnifiedPlugBase. Update v5.8.91, remove+re-pair.
 
 ## FORUM: JJ10 — Presence sensor v5.8.66→v5.8.77
 > v5.8.66: Found correctly, motion 1sec only, lux/distance not updating, battery '?'. Diag 17c03ea7.

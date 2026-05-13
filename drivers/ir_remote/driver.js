@@ -1,25 +1,51 @@
 'use strict';
 
-const { Driver } = require('homey');
+const Homey = require('homey');
 
-class IRRemoteDriver extends Driver {
+/**
+ * Virtual IR Remote Driver
+ * v5.13.0: Manages virtual remote devices and their association with IR Blasters.
+ */
+class IrRemoteDriver extends Homey.Driver {
+
   async onInit() {
-    this.log('Zigbee IR Remote driver initialized');
+    this.log('Virtual IR Remote Driver initialized');
+    this._registerFlowCards();
+  }
 
-    // Action: Send IR code
-    (() => { try { return this.homey.flow.getActionCard('ir_remote_send_code'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) throw new Error('No device');
-        await device._sendIR(args.ir_code);
+  _registerFlowCards() {
+    this.homey.flow.getActionCard('ir_remote_send_command')
+      .registerRunListener(async (args) => {
+        return args.device.onCapabilityOnOff(true); // Reuses logic for sending command
       });
 
-    // Action: Start learning
-    (() => { try { return this.homey.flow.getActionCard('ir_remote_start_learning'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-        const device = args.device;
-        if (!device) throw new Error('No device');
-        await device._startLearn();
+    this.homey.flow.getActionCard('ir_remote_send_custom')
+      .registerRunListener(async (args) => {
+        const brand = args.device.getSetting('ir_brand');
+        const category = args.device.getSetting('ir_category');
+        return args.device._sendRemoteCommand(brand, category, args.key);
       });
   }
+
+  /**
+   * Custom Pairing Logic
+   */
+  async onPair(session) {
+    session.setHandler('list_devices', async () => {
+      const blasters = this.homey.drivers.getDriver('ir_blaster').getDevices();
+      return blasters.map(d => ({
+        name: d.getName(),
+        data: { id: d.getData().id },
+        settings: { blaster_id: d.getData().id }
+      }));
+    });
+
+    session.setHandler('add_device', async (data) => {
+      this.log('Adding virtual remote:', data);
+      return data;
+    });
+  }
+
 }
 
-module.exports = IRRemoteDriver;
+module.exports = IrRemoteDriver;

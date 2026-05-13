@@ -1,4 +1,4 @@
-# CONTRIBUTING.md - Universal Tuya Zigbee
+# CONTRIBUTING.md - Tuya Unified Zigbee
 
 ## 🎯 Principes Directeurs
 

@@ -1,5 +1,5 @@
 # WiFi vs Zigbee Separation Standard & Architectural Guidelines
-**Universal Tuya Engine for Homey Pro**
+**Tuya Unified Engine for Homey Pro**
 
 To prevent protocol amalgamation, architectural mix-ups, or regressions during development, this document defines the absolute boundaries, structures, and coding standards separating **WiFi (Local TuyAPI)** and **Zigbee (ZCL/EF00)** devices in the `com.tuya.zigbee` ecosystem.
 
@@ -27,7 +27,7 @@ To prevent protocol amalgamation, architectural mix-ups, or regressions during d
   * *Examples*: `wifi_switch`, `wifi_plug`, `wifi_heater`, `wifi_cover`, `wifi_camera`, `wifi_air_purifier`.
 
 ### B. Library Files Isolation
-* **Zigbee Libs**: Located under `lib/tuya/` (e.g., `TuyaZigbeeDevice.js`, `TuyaHybridDevice.js`).
+* **Zigbee Libs**: Located under `lib/tuya/` (e.g., `TuyaZigbeeDevice.js`, `TuyaUnifiedDevice.js`).
 * **WiFi Libs**: Located under `lib/tuya-local/` (e.g., `TuyaLocalDevice.js`, `TuyaLocalClient.js`, `TuyaDeviceDiscovery.js`).
 
 **CRITICAL RULE**: Never import or mix libraries across these two domains. Under no circumstances should a `wifi_` driver reference `TuyaZigbeeDevice` or use a ZCL cluster listener.
@@ -39,7 +39,7 @@ To prevent protocol amalgamation, architectural mix-ups, or regressions during d
 ### A. Zigbee Programming Guidelines (ZCL & Tuya Cluster 0xEF00)
 1. **Endpoint Routing**: Use `registerCapability` with explicit endpoints where necessary.
 2. **Raw Frame Fallback**: Rely on the standardized `onZigBeeMessage` (uppercase B) to intercept frames from clusters `6` (OnOff) and `8` (LevelControl) before SDK routing.
-3. **Tuya DP over Zigbee**: Handle via `0xEF00` custom cluster bindings using classes like `TuyaHybridDevice`.
+3. **Tuya DP over Zigbee**: Handle via `0xEF00` custom cluster bindings using classes like `TuyaUnifiedDevice`.
 4. **Settings keys**: Must use `zb_manufacturer_name` and `zb_model_id` for matching.
 
 ### B. WiFi Programming Guidelines (TuyAPI LAN Protocol)

@@ -155,19 +155,19 @@ class WiFiCameraDevice extends Homey.Device {
       const now = Date.now();
       if (motion && now - this._lastMotionTime > 5000) {
         this._lastMotionTime = now;
-        this.setCapabilityValue('alarm_motion', true).catch(() => {});
+        await this.setCapabilityValue('alarm_motion', true).catch(() => {});
         // Auto-clear after 30s
         setTimeout(() => {
-          this.setCapabilityValue('alarm_motion', false).catch(() => {});
+          await this.setCapabilityValue('alarm_motion', false).catch(() => {});
         }, 30000);
       }
     }
 
     // Privacy mode (inverted)
     if (dps[DP.PRIVACY_MODE] !== undefined) {
-      this.setCapabilityValue('onoff', !dps[DP.PRIVACY_MODE]).catch(() => {});
+      await this.setCapabilityValue('onoff', !dps[DP.PRIVACY_MODE]).catch(() => {});
     } else if (dps[DP_ALT.PRIVACY_MODE] !== undefined) {
-      this.setCapabilityValue('onoff', !dps[DP_ALT.PRIVACY_MODE]).catch(() => {});
+      await this.setCapabilityValue('onoff', !dps[DP_ALT.PRIVACY_MODE]).catch(() => {});
     }
   }
 

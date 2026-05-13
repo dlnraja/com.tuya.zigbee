@@ -1,6 +1,6 @@
 'use strict';
 
-const {SensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const TuyaTimeManager = require('../../lib/TuyaTimeManager');
 const TuyaDeviceClassifier = require('../../lib/TuyaDeviceClassifier');
 const TuyaEpochDetector = require('../../lib/TuyaEpochDetector');
@@ -379,7 +379,7 @@ class ClimateSensorDevice extends SensorBase {
             const temp = this._applyTempOffset(rawTemp);
             this.log(`[ZCL] 🌡️ Temperature: ${temp}°C (confidence: ${this._climateInference?.getConfidence() || 'N/A'}%)`);
             this._registerZclData?.(); // v5.5.108: Track for learning
-            this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+            await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
       },
@@ -408,7 +408,7 @@ class ClimateSensorDevice extends SensorBase {
             const humidity = this._applyHumOffset(rawHum);
             this.log(`[ZCL] 💧 Humidity: ${humidity}% (confidence: ${this._climateInference?.getConfidence() || 'N/A'}%)`);
             this._registerZclData?.(); // v5.5.108: Track for learning
-            this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
+            await this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
           }
         }
       },
@@ -436,7 +436,7 @@ class ClimateSensorDevice extends SensorBase {
             
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
             this._registerZclData?.(); // v5.5.108: Track for learning
-            this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
       }
@@ -495,7 +495,7 @@ class ClimateSensorDevice extends SensorBase {
     });
     this._batteryInference = new BatteryInference(this);
 
-    // Call parent initialization (HybridSensorBase sets up ALL listeners)
+    // Call parent initialization (UnifiedSensorBase sets up ALL listeners)
     await super.onNodeInit({ zclNode });
 
     // v5.13.4: INTELLIGENT PROBE DEDUP — Variant-aware dual-temperature handling
@@ -1092,7 +1092,7 @@ class ClimateSensorDevice extends SensorBase {
           powerCfg.on('attr.batteryPercentageRemaining', (value) => {
             const battery = Math.round(value / 2);
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
-            this.setCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
+            await this.setCapabilityValue('measure_battery', parseFloat(Math.max(0, Math.min(100, battery)))).catch(() => { });
           });
           this.log('[ZCL-SETUP] ✅ Battery listener active');
         }
@@ -1133,7 +1133,7 @@ class ClimateSensorDevice extends SensorBase {
               // v5.5.793: Apply calibration offset
               const calibratedTemp = this._applyTempOffset(temp);
               this.log(`[ZCL] 🌡️ Temperature: ${calibratedTemp}°C`);
-              this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp)).catch(() => { });
+              await this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp)).catch(() => { });
             }
           });
           this.log('[ZCL-SETUP] ✅ Temperature listener active');
@@ -1179,7 +1179,7 @@ class ClimateSensorDevice extends SensorBase {
               // v5.5.793: Apply calibration offset
               const calibratedHum = this._applyHumOffset(hum);
               this.log(`[ZCL] 💧 Humidity: ${calibratedHum}%`);
-              this.setCapabilityValue('measure_humidity', parseFloat(calibratedHum)).catch(() => { });
+              await this.setCapabilityValue('measure_humidity', parseFloat(calibratedHum)).catch(() => { });
             }
           });
           this.log('[ZCL-SETUP] ✅ Humidity listener active');

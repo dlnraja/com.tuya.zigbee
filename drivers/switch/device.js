@@ -1,5 +1,5 @@
 'use strict';
-constSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { CLUSTER } = require('zigbee-clusters');
@@ -25,7 +25,7 @@ const ZCL_ONLY_MANUFACTURERS_2G = [
   '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt'
 ];
 
-class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
+class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
   get gangCount() { return 2; }
 
   get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }
@@ -123,7 +123,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           const watts = value / 10; // Typically in 0.1W units
           this.log(`[ZCL-DATA] switch.power raw=${value} → ${watts}W`);
           if (this.hasCapability('measure_power')) {
-            this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
+            await this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
           }
         });
 
@@ -132,7 +132,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           const volts = value / 10; // Typically in 0.1V units
           this.log(`[ZCL-DATA] switch.voltage raw=${value} → ${volts}V`);
           if (this.hasCapability('measure_voltage')) {
-            this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
+            await this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
           }
         });
 
@@ -141,7 +141,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           const amps = value / 1000; // Typically in mA
           this.log(`[ZCL-DATA] switch.current raw=${value} → ${amps}A`);
           if (this.hasCapability('measure_current')) {
-            this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
+            await this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
           }
         });
       }
@@ -170,7 +170,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           const kwh = value / 1000; // Typically in Wh
           this.log(`[ZCL-DATA] switch.energy raw=${value} → ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
-            this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
+            await this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
           }
         });
       }
@@ -265,13 +265,13 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       ]).catch(() => ({}));
 
       if (attrs.activePower != null && this.hasCapability('measure_power')) {
-        this.setCapabilityValue('measure_power', parseFloat(attrs.activePower) / 10).catch(() => { });
+        await this.setCapabilityValue('measure_power', parseFloat(attrs.activePower) / 10).catch(() => { });
       }
       if (attrs.rmsVoltage != null && this.hasCapability('measure_voltage')) {
-        this.setCapabilityValue('measure_voltage', parseFloat(attrs.rmsVoltage) / 10).catch(() => { });
+        await this.setCapabilityValue('measure_voltage', parseFloat(attrs.rmsVoltage) / 10).catch(() => { });
       }
       if (attrs.rmsCurrent != null && this.hasCapability('measure_current')) {
-        this.setCapabilityValue('measure_current', parseFloat(attrs.rmsCurrent) / 1000).catch(() => { });
+        await this.setCapabilityValue('measure_current', parseFloat(attrs.rmsCurrent) / 1000).catch(() => { });
       }
       this.log('[SWITCH-2G] Initial electrical values read');
     } catch (e) {
@@ -289,7 +289,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
       ]).catch(() => ({}));
 
       if (attrs.currentSummationDelivered != null && this.hasCapability('meter_power')) {
-        this.setCapabilityValue('meter_power', attrs.currentSummationDelivered / 1000).catch(() => { });
+        await this.setCapabilityValue('meter_power', attrs.currentSummationDelivered / 1000).catch(() => { });
       }
       this.log('[SWITCH-2G] Initial metering values read');
     } catch (e) {
@@ -386,12 +386,12 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
         
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
-          this.setCapabilityValue(capName, value).catch(() => {});
+          await this.setCapabilityValue(capName, value).catch(() => {});
           
           // v5.12.5: Scene mode support
           const mode = this.sceneMode;
           if (mode === 'magic') {
-            this.setCapabilityValue(capName, !value).catch(() => {});
+            await this.setCapabilityValue(capName, !value).catch(() => {});
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;

@@ -1,4 +1,4 @@
-# Button Capability Guide - Universal Tuya Zigbee App
+# Button Capability Guide - Tuya Unified Zigbee App
 
 ## Understanding Button Capabilities in Homey
 

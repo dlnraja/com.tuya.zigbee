@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const targetFile = 'lib/devices/TuyaHybridDevice.js';
+const targetFile = 'lib/devices/TuyaUnifiedDevice.js';
 let content = fs.readFileSync(targetFile, 'utf8');
 
 // Print onNodeInit lines

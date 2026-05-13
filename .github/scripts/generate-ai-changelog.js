@@ -12,7 +12,7 @@ async function gatherContext(){
   const ctx={};
   // 1. App version + stats
   try{const a=JSON.parse(fs.readFileSync(path.join(ROOT,'app.json'),'utf8'));
-    ctx.version=a.version;ctx.appName=a.name?.en||'Universal Tuya Zigbee';}catch{}
+    ctx.version=a.version;ctx.appName=a.name?.en||'Tuya Unified Zigbee';}catch{}
   // Driver count + fingerprint count
   try{const dirs=fs.readdirSync(DDIR).filter(d=>fs.existsSync(path.join(DDIR,d,'driver.compose.json')));
     ctx.driverCount=dirs.length;
@@ -62,7 +62,7 @@ async function gatherContext(){
 // Generate AI-powered changelog using Gemini
 async function generateChangelog(ctx){
   const commitList=ctx.commits.map(c=>c.hash+' '+c.msg).join('\n');
-  const prompt='Generate a professional, user-friendly changelog entry for Universal Tuya Zigbee app v'+ctx.version+'.\n\n'+
+  const prompt='Generate a professional, user-friendly changelog entry for Tuya Unified Zigbee app v'+ctx.version+'.\n\n'+
     'CONTEXT:\n'+
     '- App: '+ctx.driverCount+' drivers, '+ctx.fpCount+' fingerprints\n'+
     '- Git commits since last release:\n'+commitList+'\n'+

@@ -1,4 +1,4 @@
-# Audit Report - Universal Tuya Zigbee
+# Audit Report - Tuya Unified Zigbee
 # Date: 2025-03-21 | App: v5.12.0 | Sessions: 9
 
 ---
@@ -8,7 +8,7 @@
 ### Crash 1: VibrationSensor (CRITICAL — FIXED)
 - **Date:** March 18, 2025 | **App:** v5.11.118 | **Homey:** v13.0.0
 - **Error:** `Error: Not Found: Device with ID 749b13e8-f3a4-4dcd-8b83-53d192f72b33`
-- **Stack:** `VibrationSensorDevice.setWarning` → `HybridSensorBase._setupIASZoneListeners:1445`
+- **Stack:** `VibrationSensorDevice.setWarning` → `UnifiedSensorBase._setupIASZoneListeners:1445`
 - **Root cause:** `setWarning()` returns a Promise. When a device is deleted during `onNodeInit()`, the SDK throws `Not Found` from `Device.js:315`. Without `.catch()`, this becomes an unhandled rejection that crashes the entire app.
 - **Call chain:** `vibration_sensor/device.js:40` → `super.onNodeInit()` → `Promise.all([..._setupIASZoneListeners()])` → `setWarning()` → CRASH
 - **Fix applied:** Added `.catch(() => {})` to all 3 calls:
@@ -32,16 +32,16 @@
 
 | # | Fix | File | Severity |
 |---|-----|------|----------|
-| 1 | setWarning/unsetWarning `.catch(() => {})` | `lib/devices/HybridSensorBase.js:1433,1445,1450` | CRITICAL |
+| 1 | setWarning/unsetWarning `.catch(() => {})` | `lib/devices/UnifiedSensorBase.js:1433,1445,1450` | CRITICAL |
 | 2 | gmail-diagnostics.yml newline corruption | `.github/workflows/gmail-diagnostics.yml:89` | CRITICAL |
 | 3 | security-config.json v4→v5 | `.github/security-config.json` | MEDIUM |
-| 4 | Auto-remove measure_battery for mains-powered | `lib/devices/HybridSensorBase.js:310-314` | HIGH |
+| 4 | Auto-remove measure_battery for mains-powered | `lib/devices/UnifiedSensorBase.js:310-314` | HIGH |
 | 5 | PhysicalButtonMixin null guards | `lib/mixins/PhysicalButtonMixin.js:580,655` | HIGH |
-| 6 | HybridSwitchBase missing super.onDeleted() | `lib/devices/HybridSwitchBase.js:1104` | HIGH |
+| 6 | UnifiedSwitchBase missing super.onDeleted() | `lib/devices/UnifiedSwitchBase.js:1104` | HIGH |
 | 7 | diagnostic-auto-resolver double-commenting | `.github/scripts/diagnostic-auto-resolver.js` | MEDIUM |
 | 8 | Contact sensor inversion XOR bug | `drivers/contact_sensor/device.js:170-176,199-205` | HIGH |
 | 9 | LCD sensor: DP3 battery enum + fastInitMode | `drivers/lcdtemphumidsensor/device.js:19-23,42` | HIGH |
-| 10 | ProtocolAutoOptimizer try/catch guard | lib/devices/HybridSensorBase.js:322-333 | MEDIUM |
+| 10 | ProtocolAutoOptimizer try/catch guard | lib/devices/UnifiedSensorBase.js:322-333 | MEDIUM |
 | 11 | 4-gang BSEED fingerprint collision fix | drivers/switch_4gang/driver.compose.json + device.js | HIGH |
 | 12 | Fingerbot capability listeners before super | drivers/fingerbot/device.js:19-44 | HIGH |
 | 13 | Scene switch 4 missing fingerprints | drivers/scene_switch_4/driver.compose.json | MEDIUM |
@@ -121,12 +121,12 @@ All JavaScript files in `lib/` and `drivers/` pass `node -c` syntax check.
 | Scan | Result |
 |------|--------|
 | Settings keys (`zb_model_id`, `zb_manufacturer_name`) | ✅ All correct, no camelCase |
-| Import paths (HybridSwitchBase, TuyaZigbeeDevice) | ✅ All correct |
+| Import paths (UnifiedSwitchBase, TuyaZigbeeDevice) | ✅ All correct |
 | `setCapabilityValue` promise handling | ✅ All caught (try/catch, return, .catch) |
 | VirtualButtonMixin review | ✅ Solid, no bugs |
 | PhysicalButtonMixin review | ✅ Fixed null guards |
-| HybridSwitchBase review | ✅ Fixed super.onDeleted() |
-| HybridSensorBase review | ✅ Fixed setWarning + battery removal |
+| UnifiedSwitchBase review | ✅ Fixed super.onDeleted() |
+| UnifiedSensorBase review | ✅ Fixed setWarning + battery removal |
 
 ---
 
@@ -165,7 +165,7 @@ Runs the entire automation suite 2x/day, overlapping with nightly, weekly, and m
 1. ✅ VibrationSensor crash fix (setWarning .catch)
 2. ✅ Auto-remove battery for mains sensors
 3. ✅ Null guards in PhysicalButtonMixin
-4. ✅ super.onDeleted() in HybridSwitchBase
+4. ✅ super.onDeleted() in UnifiedSwitchBase
 5. ✅ Double-commenting fix in diagnostic-auto-resolver
 6. ✅ gmail-diagnostics.yml corruption fix
 7. ✅ security-config.json v4→v5
@@ -189,7 +189,7 @@ Runs the entire automation suite 2x/day, overlapping with nightly, weekly, and m
 ### Low Priority (Pending)
 22. **enrichment-scanner dedup** — Add state-based skip if already ran today
 23. **Stagger monthly crons** — Currently 5 workflows between 00:00-05:00 on 1st
-24. **Block scoping** — Add `{}` blocks in HybridSwitchBase onSettings switch/case
+24. **Block scoping** — Add `{}` blocks in UnifiedSwitchBase onSettings switch/case
 
 ---
 
@@ -243,7 +243,7 @@ Runs the entire automation suite 2x/day, overlapping with nightly, weekly, and m
 
 #### Issue F: Ronald #1641 - Soil Moisture Sensor Init Failure
 - **Symptom:** Battery soil sensor fails to initialize, no data reported
-- **Root cause:** TuyaHybridDevice.onNodeInit() too heavy for battery device (basic cluster read, Z2M magic packet, 5-fallback handler setup, IntelligentDeviceLearner)
+- **Root cause:** TuyaUnifiedDevice.onNodeInit() too heavy for battery device (basic cluster read, Z2M magic packet, 5-fallback handler setup, IntelligentDeviceLearner)
 - **Fix:** Wrapped super.onNodeInit() in try/catch so soil-specific init still runs
 - **File:** drivers/soil_sensor/device.js:228-234
 

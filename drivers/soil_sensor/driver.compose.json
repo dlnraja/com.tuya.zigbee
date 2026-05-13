@@ -14,7 +14,8 @@
     "measure_battery",
     "alarm_water",
     "measure_ec",
-    "measure_conductivity"
+    "measure_conductivity",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_humidity.soil": {

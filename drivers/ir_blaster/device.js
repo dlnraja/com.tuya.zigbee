@@ -144,7 +144,7 @@ class IrBlasterDevice extends ZigBeeDevice {
         }
         this.log(`Learn mode attr: ${value ? 'ON' : 'OFF'}`);
         this._learningState = value ? LEARNING_STATES.LEARNING : LEARNING_STATES.IDLE;
-        this.setCapabilityValue('onoff', value).catch(this.error);
+        await this.setCapabilityValue('onoff', value).catch(this.error);
         this._triggerLearningStateChanged(this._learningState);
       });
     }
@@ -380,6 +380,16 @@ class IrBlasterDevice extends ZigBeeDevice {
    */
   async onRepair(session) {
     this.log(`[REPAIR] Opened session for IR Setup`);
+    this._repairSession = session;
+    
+    session.on('disconnect', () => {
+      this.log('[REPAIR] Session disconnected');
+      this._repairSession = null;
+    });
+
+    session.setHandler('get_brands', async () => {
+      return IRCodeLibrary.getBrands();
+    });
 
     session.setHandler('test_ir_code', async (data) => {
       const { brand, category, command } = data;
@@ -389,13 +399,27 @@ class IrBlasterDevice extends ZigBeeDevice {
         await this.sendIRCode(irData.code);
         return true;
       }
-      throw new Error('Code not found');
+      throw new Error('Code not found in database. Try learning the code instead.');
     });
 
     session.setHandler('save_ir_config', async (data) => {
       const { brand, category } = data;
       this.log(`[REPAIR] Saving config: ${brand} - ${category}`);
       await this.setSettings({ ir_brand: brand, ir_category: category });
+      return true;
+    });
+
+    session.setHandler('start_learning', async (data) => {
+      this.log('[REPAIR] Starting manual learning session...');
+      await this._enableAdvancedLearnMode(30, { codeName: data.name });
+      return true;
+    });
+
+    session.setHandler('save_learned_code', async (data) => {
+      const { name, code } = data;
+      this.log(`[REPAIR] Saving learned code: ${name}`);
+      this._learnedCodes[name] = code;
+      await this.setStoreValue('learned_codes', this._learnedCodes);
       return true;
     });
   }
@@ -569,7 +593,7 @@ class IrBlasterDevice extends ZigBeeDevice {
         await zclNode.endpoints[1].clusters.onOff?.setOn();
       }
 
-      this.setCapabilityValue('onoff', true).catch(() => { });
+      await this.setCapabilityValue('onoff', true).catch(() => { });
       this.log('Learn mode enabled - point remote at device and press button');
 
       // Initialize receive buffer for learned code
@@ -642,7 +666,7 @@ class IrBlasterDevice extends ZigBeeDevice {
         await zclNode.endpoints[1].clusters.onOff?.setOff();
       }
 
-      this.setCapabilityValue('onoff', false).catch(() => { });
+      await this.setCapabilityValue('onoff', false).catch(() => { });
       this.log('Learn mode disabled');
 
       // Check if we received a code
@@ -650,7 +674,7 @@ class IrBlasterDevice extends ZigBeeDevice {
         this.log(`Last learned code: ${this._lastLearnedCode.substring(0, 50)}...`);
         // Update capability if available
         if (this.hasCapability('ir_blaster_code_received')) {
-          this.setCapabilityValue('ir_blaster_code_received', this._lastLearnedCode).catch(() => { });
+          await this.setCapabilityValue('ir_blaster_code_received', this._lastLearnedCode).catch(() => { });
         }
         // Trigger flow
         this.driver.codeLearnedTrigger?.trigger(this, { ir_code: this._lastLearnedCode }, {}).catch(() => { });
@@ -926,6 +950,11 @@ class IrBlasterDevice extends ZigBeeDevice {
       // Trigger success state
       this._learningState = LEARNING_STATES.SUCCESS;
       this._triggerLearningStateChanged(LEARNING_STATES.SUCCESS);
+
+      // v5.13.0: Notify active repair session
+      if (this._repairSession) {
+        this._repairSession.emit('ir_code_learned', { code: code }).catch(this.error);
+      }
     }
   }
 

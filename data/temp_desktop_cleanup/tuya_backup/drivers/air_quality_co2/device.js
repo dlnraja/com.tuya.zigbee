@@ -1,5 +1,5 @@
 'use strict';
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { AirQualityInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
 /**
@@ -7,13 +7,13 @@ const { AirQualityInference, BatteryInference } = require('../../lib/Intelligent
  * ║      AIR QUALITY CO2 SENSOR - v5.5.317 INTELLIGENT INFERENCE                ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  🧠 v5.5.317: Cross-validates CO2/VOC readings for accuracy                  ║
- * ║  HybridSensorBase handles: Tuya DP, battery                                 ║
+ * ║  UnifiedSensorBase handles: Tuya DP, battery                                 ║
  * ║  This class: dpMappings + ZCL temp/humidity listeners (specific to CO2)     ║
  * ║  DPs: 1,2,14,15,18,19,21-23 | ZCL: 1026,1029,1,EF00                        ║
  * ║  Variants: _TZE200_ywagc4rj, _TZE200_zl1kmjqx                               ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class AirQualityCO2Device extends HybridSensorBase {
+class AirQualityCO2Device extends UnifiedSensorBase {
 
   get mainsPowered() { return false; }
 

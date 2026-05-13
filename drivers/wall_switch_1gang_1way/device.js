@@ -1,5 +1,5 @@
 'use strict';
-constSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
@@ -8,7 +8,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  *SwitchBase._setGangOnOff() now calls markAppCommand() centrally.
  * Compatible with BSEED devices: _TZ3000_blhvsaqf, _TZ3000_ysdv91bk
  */
-class WallSwitch1Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
+class WallSwitch1Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
 
   get gangCount() { return 1; }
 

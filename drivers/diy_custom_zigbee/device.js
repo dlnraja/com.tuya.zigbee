@@ -359,21 +359,21 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
     if (clusterId === '6' || clusterId === 'genOnOff') {
       if (attrName === 'onOff') {
         const isOn = value === true || value === 1 || value === 'on';
-        this.setCapabilityValue('onoff', isOn).catch(() => {});
+        await this.setCapabilityValue('onoff', isOn).catch(() => {});
       }
     }
 
     if (clusterId === '1026' || clusterId === 'msTemperatureMeasurement') {
       if (attrName === 'measuredValue' && value !== -32768) {
         const temp = Math.round(value / 100 * 10) / 10;
-        this.setCapabilityValue('measure_temperature', temp).catch(() => {});
+        await this.setCapabilityValue('measure_temperature', temp).catch(() => {});
       }
     }
 
     if (clusterId === '1029' || clusterId === 'msRelativeHumidity') {
       if (attrName === 'measuredValue') {
         const humidity = Math.round(value / 100);
-        this.setCapabilityValue('measure_humidity', humidity).catch(() => {});
+        await this.setCapabilityValue('measure_humidity', humidity).catch(() => {});
       }
     }
   }

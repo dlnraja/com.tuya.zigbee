@@ -10,7 +10,7 @@
 
 ## Current State
 
-### What Universal Tuya Zigbee Already Does
+### What Tuya Unified Zigbee Already Does
 
 This app already leverages Z2M research extensively:
 
@@ -157,7 +157,7 @@ const DEVICE_CONFIGS = {
 2. Config loaded from JSON based on manufacturerName
 3. DP mappings applied dynamically
 
-**This is exactly what Universal Tuya Zigbee does!**
+**This is exactly what Tuya Unified Zigbee does!**
 
 ---
 
@@ -217,9 +217,9 @@ drivers/
 
 ---
 
-## Comparison: Z2M vs Universal Tuya Zigbee
+## Comparison: Z2M vs Tuya Unified Zigbee
 
-| Feature | Z2M | Universal Tuya Zigbee |
+| Feature | Z2M | Tuya Unified Zigbee |
 |---------|-----|----------------------|
 | Device support | 4,000+ | 4,000+ (via sync) |
 | Dynamic device add | ✅ External converter | ❌ Needs app update |
@@ -243,7 +243,7 @@ drivers/
 - Improve universal fallback driver
 - Request Athom for better dynamic device support
 
-**The Universal Tuya Zigbee app already implements the best possible approach given Homey's architectural constraints.**
+**The Tuya Unified Zigbee app already implements the best possible approach given Homey's architectural constraints.**
 
 ---
 

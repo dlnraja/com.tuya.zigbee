@@ -86,7 +86,7 @@ async function generateResponse(issue,fpResults,classification,variants,bugs,ima
     forumUrl:'https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352',
     devTools:'https://tools.developer.homey.app',githubUrl:'https://github.com/dlnraja/com.tuya.zigbee'};
   const isUpstream=repo&&repo!==OWN;
-  let prompt='You are Dylan, French dev of Universal Tuya Zigbee (v'+appVer+'). Write a short GitHub comment. Casual tone, say "I" naturally ("I added", "I\'ll check"). If device supported, say which driver. If not, ask for device interview. If bug, acknowledge and explain. If missing sensor readings (fertilizer, EC, VOC, formaldehyde), ask for app logs showing DP numbers. Max 200 words. NO bot/automated/AI/scanning/pipeline/workflow references, NO signature footer, NO version line at end, NO exact driver/FP counts. Just stop when done.';
+  let prompt='You are Dylan, French dev of Tuya Unified Zigbee (v'+appVer+'). Write a short GitHub comment. Casual tone, say "I" naturally ("I added", "I\'ll check"). If device supported, say which driver. If not, ask for device interview. If bug, acknowledge and explain. If missing sensor readings (fertilizer, EC, VOC, formaldehyde), ask for app logs showing DP numbers. Max 200 words. NO bot/automated/AI/scanning/pipeline/workflow references, NO signature footer, NO version line at end, NO exact driver/FP counts. Just stop when done.';
   if(isUpstream)prompt+='\nCRITICAL: This issue is on the JohanBendz/com.tuya.zigbee upstream repo. You MUST clearly redirect the user to our actively maintained fork at [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee). Explain this fork supports way more devices than upstream. ALWAYS include the test install link: '+ctx.installUrl+' and community forum: '+ctx.forumUrl+'. Tell the user to install, then remove and re-pair their device. Report any issues on the forum thread or the dlnraja GitHub repo.';
   prompt+='\\nContext: '+JSON.stringify(ctx);
   let text='Issue: '+issue.title+'\nBy: @'+(issue.user?.login||'?')+'\nBody: '+(issue.body||'').slice(0,2000)+'\nFP results: '+JSON.stringify(fpResults)+'\nClassification: '+JSON.stringify(classification)+'\nVariants from Z2M/ZHA/Blakadder: '+JSON.stringify(variants||[])+'\nAssociated bugs: '+JSON.stringify(bugs||[]);
@@ -311,7 +311,7 @@ async function processPR(repo,pr,state,report,extData){
     let msg=TAG+'\n';
     if(isUp){
       msg+='Hi! 👋 Thanks for this contribution.\n\n';
-      msg+='These fingerprints have been **integrated into [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee)** — the actively maintained Universal Tuya Zigbee fork (v'+appVer+', '+fps.size+'+ fingerprints).\n\n';
+      msg+='These fingerprints have been **integrated into [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee)** — the actively maintained Tuya Unified Zigbee fork (v'+appVer+', '+fps.size+'+ fingerprints).\n\n';
     }else{
       msg+='Thanks for the PR!\n\n';
     }

@@ -10,8 +10,8 @@ for (const file of filesToUpdate) {
   if (!fs.existsSync(file)) continue;
   let content = fs.readFileSync(file, 'utf8');
 
-  // Remove "Already in the Universal Tuya Zigbee fork"
-  content = content.replace(/Already in the \[Universal Tuya Zigbee fork\]/g, "I see these fingerprints are mapped in the Universal Tuya Zigbee app");
+  // Remove "Already in the Tuya Unified Zigbee fork"
+  content = content.replace(/Already in the \[Tuya Unified Zigbee fork\]/g, "I see these fingerprints are mapped in the Tuya Unified Zigbee app");
   content = content.replace(/Already in/gi, "Mapped in");
 
   // Modify closing logic: Never auto-close if the user reopened or complained

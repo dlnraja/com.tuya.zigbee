@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║          DRIVER IMAGES FIXER - Universal Tuya Zigbee                        ║
+ * ║          DRIVER IMAGES FIXER - Tuya Unified Zigbee                        ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  v1.0.0 - Janvier 2026                                                       ║
  * ║  Corrige automatiquement les images des drivers selon Homey SDK Guidelines  ║
@@ -420,7 +420,7 @@ function checkImageConsistency() {
  */
 async function main() {
   console.log('╔══════════════════════════════════════════════════════════════════╗');
-  console.log('║         DRIVER IMAGES FIXER - Universal Tuya Zigbee             ║');
+  console.log('║         DRIVER IMAGES FIXER - Tuya Unified Zigbee             ║');
   console.log('║                      v1.0.0 - Janvier 2026                       ║');
   console.log('╚══════════════════════════════════════════════════════════════════╝');
   console.log('');

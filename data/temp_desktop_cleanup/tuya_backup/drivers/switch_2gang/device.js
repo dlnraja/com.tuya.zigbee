@@ -1,5 +1,5 @@
 'use strict';
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { CLUSTER } = require('zigbee-clusters');
@@ -25,7 +25,7 @@ const ZCL_ONLY_MANUFACTURERS_2G = [
   '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt'
 ];
 
-class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
+class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
   get gangCount() { return 2; }
 
   get isZclOnlyDevice() {

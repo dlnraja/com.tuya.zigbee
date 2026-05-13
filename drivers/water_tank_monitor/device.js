@@ -1,6 +1,6 @@
 'use strict';
 
-const {SensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * Liquid Level Sensor - TLC2206-ZB / ME201WZ Zigbee

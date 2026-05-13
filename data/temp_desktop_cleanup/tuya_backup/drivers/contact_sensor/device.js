@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
 
 // ═══════════════════════════════════════════════════════════════════════════════
@@ -36,7 +36,7 @@ const DEBOUNCE = {
  * ║  - Solution: Filter repeated states + longer debounce + state validation    ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ContactSensorDevice extends HybridSensorBase {
+class ContactSensorDevice extends UnifiedSensorBase {
 
   get mainsPowered() { return false; }
 
@@ -244,7 +244,7 @@ class ContactSensorDevice extends HybridSensorBase {
    */
   async setCapabilityValue(capability, value) {
     if (capability === 'alarm_contact') {
-      // v5.11.5: For IAS events, HybridSensorBase already applied correct inversion
+      // v5.11.5: For IAS events, UnifiedSensorBase already applied correct inversion
       // (manufacturer defaults XOR user settings including reverse_alarm)
       // Only apply device-level inversion for non-IAS events (Tuya DP)
       const isIAS = this._iasOriginatedAlarm;

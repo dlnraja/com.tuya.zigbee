@@ -1,5 +1,5 @@
 'use strict';
-const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 /**
  * USB Outlet Advanced Device - v5.5.35 ENHANCED DP COVERAGE
@@ -42,7 +42,7 @@ const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
  *
  * ═══════════════════════════════════════════════════════════════════════════
  */
-class USBOutletAdvancedDevice extends HybridPlugBase {
+class USBOutletAdvancedDevice extends UnifiedPlugBase {
 
   get plugCapabilities() {
     return ['onoff', 'onoff.socket2', 'onoff.usb1', 'onoff.usb2', 'onoff.led'];

@@ -1,6 +1,6 @@
 'use strict';
 
-constLightBase = require('../../lib/devices/HybridLightBase');
+constLightBase = require('../../lib/devices/UnifiedLightBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -66,9 +66,9 @@ class RGBWBulbDevice extends LightBase {
       const h = parseInt(raw.substring(0, 4), 16);
       const s = parseInt(raw.substring(4, 8), 16);
       const v = parseInt(raw.substring(8, 12), 16);
-      this.setCapabilityValue('light_hue', h / 360).catch(() => { });
-      this.setCapabilityValue('light_saturation', s / 1000).catch(() => { });
-      this.setCapabilityValue('dim', Math.max(0.01, v / 1000)).catch(() => { });
+      await this.setCapabilityValue('light_hue', h / 360).catch(() => { });
+      await this.setCapabilityValue('light_saturation', s / 1000).catch(() => { });
+      await this.setCapabilityValue('dim', Math.max(0.01, v / 1000)).catch(() => { });
       return { h, s, v };
     } catch (e) { return null; }
   }
@@ -79,8 +79,8 @@ class RGBWBulbDevice extends LightBase {
     try {
       const colorCluster = ep1.clusters?.lightingColorCtrl || ep1.clusters?.colorControl;
       if (colorCluster?.on) {
-        colorCluster.on('attr.currentHue', (v) => this.setCapabilityValue('light_hue', v / 254).catch(() => { }));
-        colorCluster.on('attr.currentSaturation', (v) => this.setCapabilityValue('light_saturation', v / 254).catch(() => { }));
+        colorCluster.on('attr.currentHue', (v) => await this.setCapabilityValue('light_hue', v / 254).catch(() => { }));
+        colorCluster.on('attr.currentSaturation', (v) => await this.setCapabilityValue('light_saturation', v / 254).catch(() => { }));
         this.log('[RGBW] ✅ Color cluster listeners added');
       }
     } catch (e) { /* ignore */ }

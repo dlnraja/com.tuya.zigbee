@@ -1,5 +1,5 @@
 'use strict';
-constSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixins/SonoffEwelinkMixin');
@@ -18,7 +18,7 @@ const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixin
  * ║  (PR #118 by packetninja/Attilla)                                            ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
+class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
 
   get gangCount() { return 1; }
 

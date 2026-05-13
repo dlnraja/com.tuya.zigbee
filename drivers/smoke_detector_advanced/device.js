@@ -1,5 +1,5 @@
 'use strict';
-const {SensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -269,15 +269,15 @@ class SmokeDetectorAdvancedDevice extends SensorBase {
           const smokeTriggerId = smokeAlarm ? 'smoke_detector_advanced_alarm_smoke_true' : 'smoke_detector_advanced_alarm_smoke_false';
           this.driver?.homey?.flow?.getDeviceTriggerCard?.(smokeTriggerId)?.trigger(this, {}).catch(() => {});
           
-          this.setCapabilityValue('alarm_smoke', smokeAlarm).catch(e => this.error('Failed to set alarm_smoke', e));
+          await this.setCapabilityValue('alarm_smoke', smokeAlarm).catch(e => this.error('Failed to set alarm_smoke', e));
           if (this.hasCapability('alarm_tamper')) {
-            this.setCapabilityValue('alarm_tamper', tamperAlarm).catch(e => this.error('Failed to set alarm_tamper', e));
+            await this.setCapabilityValue('alarm_tamper', tamperAlarm).catch(e => this.error('Failed to set alarm_tamper', e));
             if (tamperAlarm) {
               this.driver?.homey?.flow?.getDeviceTriggerCard?.('smoke_detector_advanced_alarm_tamper_true')?.trigger(this, {}).catch(() => {});
             }
           }
           if (batteryLow && this.hasCapability('measure_battery')) {
-            this.setCapabilityValue('measure_battery', 10).catch(() => {});
+            await this.setCapabilityValue('measure_battery', 10).catch(() => {});
             this.driver?.homey?.flow?.getDeviceTriggerCard?.('smoke_detector_advanced_battery_low')?.trigger(this, {}).catch(() => {});
           }
         });

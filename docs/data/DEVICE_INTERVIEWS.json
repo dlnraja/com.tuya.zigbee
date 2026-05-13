@@ -283,7 +283,7 @@
         "rootCause": "Possible IAS Zone CIE enrollment failure or debounce issue",
         "fix": {
           "applied": false,
-          "strategy": "Request diagnostic, check HybridSensorBase IAS Zone listeners"
+          "strategy": "Request diagnostic, check UnifiedSensorBase IAS Zone listeners"
         }
       },
       {
@@ -378,7 +378,7 @@
         "fix": {
           "applied": true,
           "version": "5.5.840",
-          "description": "Added invert_presence check to motion_sensor IAS Zone handlers and HybridSensorBase Tuya DP1 handler"
+          "description": "Added invert_presence check to motion_sensor IAS Zone handlers and UnifiedSensorBase Tuya DP1 handler"
         }
       },
       {
@@ -1255,9 +1255,9 @@
         "fix": {
           "applied": true,
           "version": "5.6.0",
-          "description": "Fixed settings keys in BaseHybridDevice.js, HybridThermostatBase.js, HybridLightBase.js, TuyaHybridDevice.js - now uses zb_model_id and zb_manufacturer_name with fallbacks"
+          "description": "Fixed settings keys in BaseUnifiedDevice.js, UnifiedThermostatBase.js, UnifiedLightBase.js, TuyaUnifiedDevice.js - now uses zb_model_id and zb_manufacturer_name with fallbacks"
         },
-        "affectedFiles": ["BaseHybridDevice.js", "HybridThermostatBase.js", "HybridLightBase.js", "TuyaHybridDevice.js"],
+        "affectedFiles": ["BaseUnifiedDevice.js", "UnifiedThermostatBase.js", "UnifiedLightBase.js", "TuyaUnifiedDevice.js"],
         "driver": "button_wireless_1"
       },
       {
@@ -1276,7 +1276,7 @@
         "fix": {
           "applied": true,
           "version": "5.5.118",
-          "description": "HybridCoverBase.js: Added MOES roller blind DPs (101-105), tilt support, and _safeSetCapability for dynamic capability addition"
+          "description": "UnifiedCoverBase.js: Added MOES roller blind DPs (101-105), tilt support, and _safeSetCapability for dynamic capability addition"
         },
         "dpMappings": {
           "101": "opening_mode (tilt=0, lift=1)",
@@ -1874,7 +1874,7 @@
     {
       "version": "5.5.750",
       "commit": "bb504e4e1c",
-      "issue": "HybridSwitchBase Constructor Crash",
+      "issue": "UnifiedSwitchBase Constructor Crash",
       "user": "Hartmut_Dunker",
       "status": "fixed"
     },
@@ -1958,7 +1958,7 @@
       "type": "PR contributions",
       "contributions": [
         "PR #118: BSEED ZCL-only switch support",
-        "PR #119: HybridSwitchBase refactor",
+        "PR #119: UnifiedSwitchBase refactor",
         "PR #120: Physical button flow card fix (titleFormatted)",
         "PhysicalButtonMixin: 2000ms app command window",
         "Physical button detection via attr.onOff reports"

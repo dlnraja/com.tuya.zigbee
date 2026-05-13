@@ -1,4 +1,4 @@
-# Universal Tuya Engine - Hardening & Enrichment Changelog
+# Tuya Unified Engine - Hardening & Enrichment Changelog
 
 **Document Objective**: To log the major architectural milestones achieved by Antigravity AI to ensure a "Zero-Defect" runtime environment and maximum interoperability.
 

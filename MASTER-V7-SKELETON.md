@@ -25,7 +25,7 @@ tuya-repair-master-v7/
 │       └── CapabilityAutoRegistry.js
 ├── lib/
 │   ├── devices/
-│   │   ├── BaseHybridDevice.js      (182KB, enrichi)
+│   │   ├── BaseUnifiedDevice.js      (182KB, enrichi)
 │   │   ├── DynamicSwitchDevice.js   (DP mapping auto)
 │   │   └── DynamicSensorDevice.js   (capabilities auto)
 │   ├── mixins/
@@ -34,7 +34,7 @@ tuya-repair-master-v7/
 │   │   └── DynamicCapabilityMixin.js (NOUVEAU)
 │   ├── protocol/
 │   │   ├── DynamicDriverMatcher.js  (Map O(1))
-│   │   ├── UniversalTuyaParser.js   (DP parsing adaptatif)
+│   │   ├── TuyaUnifiedParser.js   (DP parsing adaptatif)
 │   │   └── Rule24Resolver.js        (Manufacturer normalization)
 │   ├── utils/
 │   │   ├── ManufacturerResolver.js  (Rule 24)
@@ -111,8 +111,8 @@ class DynamicFlowGenerator {
 
 ### DP Mapping Adaptatif
 ```javascript
-// UniversalTuyaParser.js
-class UniversalTuyaParser {
+// TuyaUnifiedParser.js
+class TuyaUnifiedParser {
   
   parseDP(dp, data, manufacturer) {
     // Rule 24: Manufacturer-specific DP mapping

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains utility functions for comprehensive data collection, energy KPI tracking, and safe driver management in the Universal Tuya Zigbee app.
+This directory contains utility functions for comprehensive data collection, energy KPI tracking, and safe driver management in the Tuya Unified Zigbee app.
 
 **Inspired by:**
 - ✅ Homey SDK3 Documentation

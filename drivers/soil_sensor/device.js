@@ -1,6 +1,6 @@
 'use strict';
 
-const TuyaHybridDevice = require('../../lib/devices/TuyaHybridDevice');
+const TuyaUnifiedDevice = require('../../lib/devices/TuyaUnifiedDevice');
 const BatteryCalculator = require('../../lib/battery/BatteryCalculator');
 const { getAppVersionPrefixed } = require('../../lib/utils/AppVersion');
 const { SoilMoistureInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
@@ -18,7 +18,7 @@ const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * ║                                                                              ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
- * ║  Uses TuyaHybridDevice base class with proper:                               ║
+ * ║  Uses TuyaUnifiedDevice base class with proper:                               ║
  * ║  - tuyaCluster handlers (Tuya DP reception via 0xEF00)                       ║
  * ║  - cluster handlers (Zigbee standard reception)                              ║
  * ║  - tuyaBoundCluster (Tuya DP commands to device)                             ║
@@ -40,7 +40,7 @@ const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SoilSensorDevice extends TuyaHybridDevice {
+class SoilSensorDevice extends TuyaUnifiedDevice {
 
   /** Battery powered */
   get mainsPowered() { return false; }
@@ -195,7 +195,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
             const temp = data.measuredValue / 100;
             this.log(`[ZCL] 🌡️ Temperature: ${temp}°C`);
             this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+            await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
           }
         }
       },
@@ -214,7 +214,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
             this._registerZigbeeHit?.();
             // v5.11.16: ZCL humidity = AIR humidity. Soil moisture comes via Tuya DP3.
             if (this.hasCapability('measure_humidity')) {
-              this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
+              await this.setCapabilityValue('measure_humidity', parseFloat(humidity)).catch(() => { });
             }
           }
         }
@@ -231,7 +231,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
             const battery = Math.round(data.batteryPercentageRemaining / 2);
             this.log(`[ZCL] 🔋 Battery: ${battery}%`);
             this._registerZigbeeHit?.();
-            this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
       }
@@ -327,7 +327,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
     const moisture = this.getCapabilityValue('measure_humidity.soil');
     if (moisture !== null && this.hasCapability('alarm_water')) {
       const alarm = moisture < this._soilWarningThreshold;
-      this.setCapabilityValue('alarm_water', alarm).catch(() => { });
+      await this.setCapabilityValue('alarm_water', alarm).catch(() => { });
       this.log(`[SOIL] 💧 Water alarm updated: moisture=${moisture}%, threshold=${this._soilWarningThreshold}%, alarm=${alarm}`);
     }
   }
@@ -390,7 +390,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
     if (dp === 112) {
       this.log('[SOIL] 🧪 SOIL FERTILITY DP112 = ' + parsedValue + ' μS/cm');
       if (this.hasCapability('measure_conductivity')) {
-        this.setCapabilityValue('measure_conductivity', parseFloat(parsedValue)).catch(()=>{});
+        await this.setCapabilityValue('measure_conductivity', parseFloat(parsedValue)).catch(()=>{});
       }
       return;
     }
@@ -398,7 +398,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
     if (dp === 101) {
       this.log('[SOIL] ☁️ AIR HUMIDITY DP101 = ' + parsedValue + '%');
       if (this.hasCapability('measure_humidity')) {
-        this.setCapabilityValue('measure_humidity', parseFloat(parsedValue)).catch(()=>{});
+        await this.setCapabilityValue('measure_humidity', parseFloat(parsedValue)).catch(()=>{});
       }
       return;
     }
@@ -409,7 +409,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
       this.log('[SOIL] 🌱 SOIL MOISTURE DP109 = ' + parsedValue + '% -> ' + calibratedMoisture + '%');
       let cap = this.hasCapability('measure_humidity.soil') ? 'measure_humidity.soil' : 'measure_humidity';
       if (this.hasCapability(cap)) {
-        this.setCapabilityValue(cap, parseFloat(calibratedMoisture)).catch(()=>{});
+        await this.setCapabilityValue(cap, parseFloat(calibratedMoisture)).catch(()=>{});
       }
       return;
     }
@@ -447,12 +447,12 @@ class SoilSensorDevice extends TuyaHybridDevice {
 
       // DIRECT SET - bypass parent handler potential issues
       if (this.hasCapability('measure_humidity.soil')) {
-        this.setCapabilityValue('measure_humidity.soil', parseFloat(validatedMoisture))
+        await this.setCapabilityValue('measure_humidity.soil', parseFloat(validatedMoisture))
           .then(() => this.log(`[SOIL] ✅ measure_humidity.soil SET to ${validatedMoisture}%`))
           .catch(err => this.log(`[SOIL] ❌ measure_humidity.soil FAILED: ${err.message}`));
       } else if (this.hasCapability('measure_humidity')) {
         // Fallback for devices without measure_humidity.soil
-        this.setCapabilityValue('measure_humidity', parseFloat(validatedMoisture))
+        await this.setCapabilityValue('measure_humidity', parseFloat(validatedMoisture))
           .then(() => this.log(`[SOIL] ✅ measure_humidity SET to ${validatedMoisture}%`))
           .catch(err => this.log(`[SOIL] ❌ measure_humidity FAILED: ${err.message}`));
       } else {
@@ -463,7 +463,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
       if (this.hasCapability('alarm_water')) {
         const threshold = this._soilWarningThreshold || 30;
         const alarm = validatedMoisture < threshold;
-        this.setCapabilityValue('alarm_water', alarm).catch(() => { });
+        await this.setCapabilityValue('alarm_water', alarm).catch(() => { });
         if (alarm) {
           this.log(`[SOIL] ⚠️ WATER ALARM: Moisture ${validatedMoisture}% < threshold ${threshold}%`);
         }
@@ -496,7 +496,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
       this.log(`[SOIL] 🌡️ TEMPERATURE DP5 = ${parsedValue} → ${temp}°C (calibration: ${this._temperatureCalibration || 0})`);
 
       if (this.hasCapability('measure_temperature')) {
-        this.setCapabilityValue('measure_temperature', parseFloat(temp))
+        await this.setCapabilityValue('measure_temperature', parseFloat(temp))
           .then(() => this.log(`[SOIL] ✅ measure_temperature SET to ${temp}°C`))
           .catch(err => this.log(`[SOIL] ❌ measure_temperature FAILED: ${err.message}`));
       }
@@ -515,7 +515,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
       this.log(`[SOIL] 🔋 BATTERY STATE DP14 = ${parsedValue} → ${battery}%`);
 
       if (this.hasCapability('measure_battery')) {
-        this.setCapabilityValue('measure_battery', parseFloat(battery))
+        await this.setCapabilityValue('measure_battery', parseFloat(battery))
           .then(() => this.log(`[SOIL] ✅ measure_battery SET to ${battery}%`))
           .catch(err => this.log(`[SOIL] ❌ measure_battery FAILED: ${err.message}`));
       }
@@ -527,7 +527,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
       this.log(`[SOIL] 🔋 BATTERY % DP15 = ${parsedValue}%`);
 
       if (this.hasCapability('measure_battery')) {
-        this.setCapabilityValue('measure_battery', parseFloat(parsedValue))
+        await this.setCapabilityValue('measure_battery', parseFloat(parsedValue))
           .then(() => this.log(`[SOIL] ✅ measure_battery SET to ${parsedValue}%`))
           .catch(err => this.log(`[SOIL] ❌ measure_battery FAILED: ${err.message}`));
       }
@@ -635,7 +635,7 @@ class SoilSensorDevice extends TuyaHybridDevice {
 
   /**
    * Request DPs when device wakes up
-   * Called automatically by TuyaHybridDevice when data is received
+   * Called automatically by TuyaUnifiedDevice when data is received
    */
   async onWakeUp() {
     this.log('[SOIL] Device woke up - requesting all DPs');

@@ -25,7 +25,7 @@ function generateHistoryAnalysis() {
   const commits = git('git log --all --oneline -50').split('\n');
   const branches = git('git branch -a').split('\n').filter(b => b.trim());
   
-  const analysis = '# 📊 Historical Analysis - Universal Tuya Zigbee\n' +
+  const analysis = '# 📊 Historical Analysis - Tuya Unified Zigbee\n' +
 'Generated: ' + new Date().toISOString() + ' | Version: v5.11.212+\n\n' +
 '## 🔄 Evolution Timeline\n' +
 '```\n' +
@@ -69,7 +69,7 @@ branches.slice(0, 15).map(b => '- ' + b.trim()).join('\n') + '\n\n' +
 
 // Generate CONTRIBUTING guide with anti-patterns
 function generateContributingGuide() {
-  const guide = '# CONTRIBUTING.md - Universal Tuya Zigbee\n\n' +
+  const guide = '# CONTRIBUTING.md - Tuya Unified Zigbee\n\n' +
 '## 🎯 Principes Directeurs\n\n' +
 '1. **Shadow Implementation** : Aucune publication publique\n' +
 '2. **Zero Defect** : Chaque module validé syntaxiquement + testé\n' +

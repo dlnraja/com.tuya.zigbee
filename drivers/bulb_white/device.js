@@ -1,6 +1,6 @@
 'use strict';
 
-constLightBase = require('../../lib/devices/HybridLightBase');
+constLightBase = require('../../lib/devices/UnifiedLightBase');
 
 /**
  * White Bulb Device - v5.3.64 SIMPLIFIED

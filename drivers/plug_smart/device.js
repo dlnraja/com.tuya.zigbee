@@ -1,6 +1,6 @@
 'use strict';
 
-const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
@@ -14,7 +14,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ║  v5.6.0: Added bidirectional physical/virtual button support                ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugBase)) {
+class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
   get plugCapabilities() {
     return ['onoff', 'measure_power', 'meter_power', 'measure_voltage', 'measure_current'];
@@ -130,7 +130,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugB
             this._lastOnoffState = state;
             if (isPhysical) {
               const flowId = state ? 'plug_smart_physical_on' : 'plug_smart_physical_off';
-              (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+              (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch(e) { return null; } })()?
             }
           }
         }
@@ -157,15 +157,15 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugB
       if (elec?.on) {
         elec.on('attr.activePower', (v) => {
           const scaled = this._applyScale(v / 10, 'measure_power');
-          this.setCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
+          await this.setCapabilityValue('measure_power', parseFloat(scaled)).catch(() => { });
         });
         elec.on('attr.rmsVoltage', (v) => {
           const scaled = this._applyScale(v / 10, 'measure_voltage');
-          this.setCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
+          await this.setCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
         });
         elec.on('attr.rmsCurrent', (v) => {
           const scaled = this._applyScale(v / 1000, 'measure_current');
-          this.setCapabilityValue('measure_current', parseFloat(scaled)).catch(() => { });
+          await this.setCapabilityValue('measure_current', parseFloat(scaled)).catch(() => { });
         });
         this.log('[PLUG] ✅ ZCL Electrical Measurement configured (with scale support)');
       }
@@ -177,7 +177,7 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugB
       if (meter?.on) {
         meter.on('attr.currentSummationDelivered', (v) => {
           const scaled = this._applyScale(v / 1000, 'meter_power');
-          this.setCapabilityValue('meter_power', parseFloat(scaled)).catch(() => { });
+          await this.setCapabilityValue('meter_power', parseFloat(scaled)).catch(() => { });
         });
         this.log('[PLUG] ✅ ZCL Metering configured (with scale support)');
       }

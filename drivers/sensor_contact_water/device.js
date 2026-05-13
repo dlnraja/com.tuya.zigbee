@@ -1,6 +1,6 @@
 'use strict';
 
-const {SensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { setupSonoffSensor, handleSonoffSensorSettings } = require('../../lib/mixins/SonoffSensorMixin');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 // v5.11.99: IASZoneManager removed —SensorBase handles IAS enrollment+inversion

@@ -168,7 +168,7 @@
 |---------|--------|-------|--------|
 | 5.5.752 | 68b908001f | SOS Button DP13 broken | ✅ Fixed |
 | 5.5.751 | 7be02f9aff | ZG-204ZV Temp/Humidity | ✅ Fixed |
-| 5.5.750 | bb504e4e1c | HybridSwitchBase crash | ✅ Fixed |
+| 5.5.750 | bb504e4e1c | UnifiedSwitchBase crash | ✅ Fixed |
 | 5.5.718 | eeaaefe479 | TS0726 4-gang bindings | ✅ Fixed |
 
 ---
@@ -177,7 +177,7 @@
 
 ### Immediate
 - [x] Fix `_TZE284_iadro9bf` motion alarm stuck issue (v5.5.903 - stuck pattern detection)
-- [x] Fix HOBEIAN ZG-102Z CIE enrollment (already in HybridSensorBase v5.5.807+)
+- [x] Fix HOBEIAN ZG-102Z CIE enrollment (already in UnifiedSensorBase v5.5.807+)
 - [ ] Request diagnostic from Lasse_K for contact sensor
 
 ### Short Term
@@ -230,6 +230,6 @@
 - JJ10: Presence distance=humidity; WiFi settings blank. Diag:32709eaf
 - H_van_Barneveld: WiFi liquid level sensor request
 
-*Universal Tuya Zigbee + WiFi App v5.11.13*
+*Tuya Unified Zigbee + WiFi App v5.11.13*
 *138 drivers | 5,579 fingerprints (deduped)*
 *Repository: https://github.com/dlnraja/com.tuya.zigbee*

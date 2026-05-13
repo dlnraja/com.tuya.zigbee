@@ -108,7 +108,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
           this._lastStates[stateKey] = transformedValue;
           this.log(`[DIMMER-3G] DP${dp} = ${transformedValue} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
           
-          this.setCapabilityValue(mapping.capability, transformedValue).catch(err => {
+          await this.setCapabilityValue(mapping.capability, transformedValue).catch(err => {
             this.error(`[DIMMER-3G] Error setting ${mapping.capability}:`, err.message);
           });
 
@@ -136,7 +136,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
         const id = value
           ? `dimmer_3gang_physical_gang${gang}_on`
           : `dimmer_3gang_physical_gang${gang}_off`;
-        (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+        (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch(e) { return null; } })()?
       } else if (dimMap[dp]) {
         const gang = dimMap[dp];
         const up = lastValue !== undefined && value > lastValue;

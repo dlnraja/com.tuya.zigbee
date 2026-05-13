@@ -120,7 +120,7 @@ if(protocol==="hybrid")protocolNote="\n> **Protocol:** Hybrid device (IAS Zone +
 else if(protocol==="tuya_dp")protocolNote="\n> **Protocol:** Tuya DP (cluster 0xEF00). Ensure DP listeners active.\n";
 else if(protocol==="ias")protocolNote="\n> **Protocol:** IAS Zone. Enrollment and zone listeners required.\n";
 return TAG+"\n### Auto-resolved by Diagnostic Resolver\n\n"+profileNote+
-"All fingerprints in this "+(isPR?"PR":"issue")+" found in **Universal Tuya Zigbee v"+appVer+"**:\n- "+drvList+"\n\n"+
+"All fingerprints in this "+(isPR?"PR":"issue")+" found in **Tuya Unified Zigbee v"+appVer+"**:\n- "+drvList+"\n\n"+
 "**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n"+
 "Remove and re-pair your device after installing.\n\n"+
 protocolNote+

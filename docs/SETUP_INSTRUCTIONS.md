@@ -144,7 +144,7 @@ Version 4.9.294 is now available
 
 - Attendre **15-30 minutes**
 - Aller dans l'app Homey → **Settings** → **Apps**
-- Chercher **Universal Tuya Zigbee**
+- Chercher **Tuya Unified Zigbee**
 - Une mise à jour devrait être disponible!
 
 ---

@@ -62,7 +62,7 @@ class motion_sensor_2 extends ZigBeeDevice {
   // Handle motion status alarms
   onZoneStatusChangeNotification({ zoneStatus }) {
     this.log('Motion status: ', zoneStatus.alarm1);
-    this.setCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this.error);
+    await this.setCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this.error);
   }
 
   // Handle battery status attribute reports
@@ -70,15 +70,15 @@ class motion_sensor_2 extends ZigBeeDevice {
     const batteryThreshold = this.getSetting('batteryThreshold') || 20;
     const batteryLevel = batteryPercentageRemaining / 2; // Convert to percentage
     this.log('measure_battery | Battery level (%):', batteryLevel);
-    this.setCapabilityValue('measure_battery', batteryLevel).catch(this.error);
-    this.setCapabilityValue('alarm_battery', batteryLevel < batteryThreshold).catch(this.error);
+    await this.setCapabilityValue('measure_battery', batteryLevel).catch(this.error);
+    await this.setCapabilityValue('alarm_battery', batteryLevel < batteryThreshold).catch(this.error);
   }
 	
   // Handle illuminance attribute reports
   onIlluminanceMeasuredAttributeReport(measuredValue) {
     const luxValue = Math.round(Math.pow(10, ((measuredValue - 1) / 10000))); // Convert measured value to lux
     this.log('measure_luminance | Illuminance (lux):', luxValue);
-    this.setCapabilityValue('measure_luminance', luxValue).catch(this.error);
+    await this.setCapabilityValue('measure_luminance', luxValue).catch(this.error);
   }
 
   // Process Tuya-specific data

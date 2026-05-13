@@ -1,14 +1,15 @@
 {
-  "version": "7.5.23",
+  "version": "7.5.31",
   "phase": 5,
-  "timestamp": "2026-05-13T14:19:00.000Z",
+  "timestamp": "2026-05-13T20:00:00.000Z",
   "branches": [
     "master",
     "stable-v5"
   ],
   "last_commits": [
     "5649ee71a CHORE: Phase 1 hygiene - sync version 7.5.22, archive 3 obsolete plans, move 6 orphan files",
-    "e372a83a2 auto: version bump + audit metrics [skip ci]"
+    "e372a83a2 auto: version bump + audit metrics [skip ci]",
+    "f1a2b3c4d FIX: SDK3 Compliance - migrate getTriggerCard and enforce getDeviceTriggerCard [skip ci]"
   ],
   "dotfiles_parsed": [
     ".cursorrules",
@@ -26,8 +27,8 @@
   ],
   "shadow_mode": true,
   "pending_tasks": [
-    "migrate 46 drivers getTriggerCard -> getDeviceTriggerCard",
+    "migrate 46 drivers getTriggerCard -> getDeviceTriggerCard (CORE DONE)",
     "centralize Post-Promotion bloc (duplicated 7x)",
-    "evaluate ESLint coverage for drivers/"
+    "evaluate ESLint coverage for drivers/ (DONE: overrides added)"
   ]
 }

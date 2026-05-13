@@ -1,5 +1,5 @@
 'use strict';
-const ThermostatBase = require('../../lib/devices/HybridThermostatBase');
+const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const setupSonoffTRVZB = require('../../lib/mixins/SonoffTRVZBMixin');
@@ -16,7 +16,7 @@ const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * ║  v5.6.0: Added bidirectional virtual buttons for mode/boost/child_lock     ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridThermostatBase)) {
+class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedThermostatBase)) {
 
   get mainsPowered() { return false; }
 
@@ -229,10 +229,10 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridT
     try {
       const thermo = ep1.clusters?.hvacThermostat;
       if (thermo?.on) {
-        thermo.on('attr.localTemperature', (v) => this.setCapabilityValue('measure_temperature', parseFloat(v) / 100).catch(() => { }));
-        thermo.on('attr.occupiedHeatingSetpoint', (v) => this.setCapabilityValue('target_temperature', v / 100).catch(() => { }));
+        thermo.on('attr.localTemperature', (v) => await this.setCapabilityValue('measure_temperature', parseFloat(v) / 100).catch(() => { }));
+        thermo.on('attr.occupiedHeatingSetpoint', (v) => await this.setCapabilityValue('target_temperature', v / 100).catch(() => { }));
         thermo.on('attr.pIHeatingDemand', (v) => {
-          if (this.hasCapability('dim')) this.setCapabilityValue('dim', v / 100).catch(() => { });
+          if (this.hasCapability('dim')) await this.setCapabilityValue('dim', v / 100).catch(() => { });
         });
         this.log('[TRV] ✅ ZCL Thermostat configured');
       }

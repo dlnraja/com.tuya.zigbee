@@ -3,7 +3,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { ensureManufacturerSettings } = require('../../lib/helpers/ManufacturerNameHelper');
 const ManufacturerVariationManager = require('../../lib/ManufacturerVariationManager');
 const TuyaCommandSender = require('../../lib/tuya/TuyaCommandSender');
-const { parseTuyaFrame } = require('../../lib/tuya/UniversalTuyaParser');
+const { parseTuyaFrame } = require('../../lib/tuya/TuyaUnifiedParser');
 const { BoundCluster } = require('zigbee-clusters');
 
 class WaterValveGardenDevice extends ZigBeeDevice {
@@ -195,7 +195,7 @@ class WaterValveGardenDevice extends ZigBeeDevice {
     this.log(`[VALVE-GARDEN] DP${dpId} → ${mapping.capability || mapping.internal || 'unknown'} = ${value}`);
 
     if (mapping.capability) {
-      this.setCapabilityValue(mapping.capability, value).catch(e => this.error(e));
+      await this.setCapabilityValue(mapping.capability, value).catch(e => this.error(e));
       
       // If it's battery, also save to store and emit event
       if (mapping.capability === 'measure_battery') {
@@ -235,7 +235,7 @@ class WaterValveGardenDevice extends ZigBeeDevice {
     if (onOff) {
       onOff.on('attr.onOff', (v) => {
         this.log('[VALVE-GARDEN] onOff report: ' + v);
-        this.setCapabilityValue('onoff', !!v).catch(this.error);
+        await this.setCapabilityValue('onoff', !!v).catch(this.error);
       });
     }
 
@@ -249,7 +249,7 @@ class WaterValveGardenDevice extends ZigBeeDevice {
       pwrCfg.on('attr.batteryPercentageRemaining', (v) => {
         const pct = Math.min(100, Math.round(v / 2));
         this.log('[VALVE-GARDEN] battery: ' + pct + '%');
-        this.setCapabilityValue('measure_battery', pct).catch(this.error);
+        await this.setCapabilityValue('measure_battery', pct).catch(this.error);
       });
     }
   }

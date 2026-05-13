@@ -1,4 +1,4 @@
-# 🚀 GitHub Actions Workflows - Universal Tuya Zigbee
+# 🚀 GitHub Actions Workflows - Tuya Unified Zigbee
 
 **Last Updated:** 2025-11-04 17:00  
 **Status:** ✅ Fully Optimized with Official Athom Actions  

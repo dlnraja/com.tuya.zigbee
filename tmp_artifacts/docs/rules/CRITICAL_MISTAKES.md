@@ -8,7 +8,7 @@ A3. Press type 0-indexed: 0=single 1=double 2=hold (1-indexed broke TS0044)
 A4. Battery check order: test <=100 FIRST then <=200 (wrong order = unreachable branch)
 A5. Double-inversion: IAS+alarm_contact both invert = back to original. Invert ONCE only
 A6. Imports: require('../../lib/tuya/TuyaZigbeeDevice') NOT require('../../lib/TuyaZigbeeDevice')
-A7. Mixin order: PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
+A7. Mixin order: PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 
 ## B. BSEED ZCL-ONLY RULES
 
@@ -77,7 +77,7 @@ I6. zb_ prefix warning in settings is cosmetic (app still validates)
 I7. Post-Promotion Documentation & Registry Sync: On every app promotion (draft-to-test / production / branch synchronization), it is mandatory to recursively audit, normalize, and update all markdown documentation files (.md), technical registries/reference databases (like app.json, package.json, fingerprint matrices, and cross-references), dotfiles (.eslintignore, .homeyignore, etc.), rules configuration files (such as .clinerule, .cursorrules, etc.), architectural maps, and cartography/index files (like PROJECT_INDEX.md, FINGERPRINT-CROSSREF.md) to maintain perfect structural alignment with active codebase updates and prevent documentation rot.
 I8. Comment robustness in CI/CD pipeline checks: When grep'ing for banned words, comment lines (// or *) must be ignored (using grep -v '^[[:space:]]*//' | grep -v '^[[:space:]]*\*') to prevent false-positive failures during code-quality validations.
 I9. Draft script isolation in STRICT_SYNTAX_GUARD: The temporary draft or development scripts directory (temp) must be explicitly ignored by the syntax checker so only active production, lib, drivers, and standard CI/CD files are validated, keeping the repository's build green.
-I10. Hybrid-Compatible Base Class Exports: Base classes exported from lib/devices/ (like SensorBase / HybridSensorBase.js) must use direct exports together with self-referential class properties (SensorBase.SensorBase = SensorBase; module.exports = SensorBase;) to ensure absolute compatibility with both direct destructured requires (used by driver implementations) and index-based requires.
+I10. Hybrid-Compatible Base Class Exports: Base classes exported from lib/devices/ (like SensorBase / UnifiedSensorBase.js) must use direct exports together with self-referential class properties (SensorBase.SensorBase = SensorBase; module.exports = SensorBase;) to ensure absolute compatibility with both direct destructured requires (used by driver implementations) and index-based requires.
 I11. Universal Evolution & Continuous Enrichment Loop (MANDATORY): On *every* single prompt execution or task processed, the developer agent MUST execute a comprehensive, full-scope repository sweep. This loop comprises: scanning and triaging latest community PRs/issues/images (`scan-prs-issues.js`), auto-learning newly found fingerprints (`auto-learn-fingerprints.js`), running self-heals and automated code-fixes (`auto-fix-common-issues.js`), verifying drivers, and collectively enriching ALL yml files, javascript source codes, base classes, rules configs (`.clinerule`, `.cursorrules`, `.windsurfrules`), automations, cartographies, indexes, and reference databases. No element of the ecosystem must be left stagnant.
 
 

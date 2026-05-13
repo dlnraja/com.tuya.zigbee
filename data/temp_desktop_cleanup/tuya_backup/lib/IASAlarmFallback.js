@@ -76,7 +76,7 @@ class IASAlarmFallback {
             this.device.log(`[IAS-FALLBACK] 📖 Initial read attempt ${attempt}:`, attrs);
             
             if (attrs?.zoneStatus !== undefined) {
-              // v5.11.16 FIX Lasse_K: Route through HybridSensorBase for proper inversion
+              // v5.11.16 FIX Lasse_K: Route through UnifiedSensorBase for proper inversion
               if (typeof this.device._handleIASZoneStatus === 'function') {
                 this.device._handleIASZoneStatus(attrs.zoneStatus);
               } else {
@@ -124,7 +124,7 @@ class IASAlarmFallback {
       if (ias && typeof ias.on === 'function') {
         ias.on('attr', (attrs) => {
           this._onDeviceWake('ias_attr');
-          // v5.11.16 FIX Lasse_K: Route through HybridSensorBase for proper inversion
+          // v5.11.16 FIX Lasse_K: Route through UnifiedSensorBase for proper inversion
           if (attrs?.zoneStatus !== undefined) {
             if (typeof this.device._handleIASZoneStatus === 'function') {
               this.device._handleIASZoneStatus(attrs.zoneStatus);
@@ -135,7 +135,7 @@ class IASAlarmFallback {
         });
         ias.on('zoneStatusChangeNotification', (data) => {
           this._onDeviceWake('ias_notification');
-          // v5.11.16 FIX Lasse_K: Route through HybridSensorBase handler when available
+          // v5.11.16 FIX Lasse_K: Route through UnifiedSensorBase handler when available
           // to use proper XOR inversion logic instead of duplicating with wrong flags
           const status = data?.zoneStatus ?? data?.payload?.zoneStatus ?? data;
           if (status !== undefined && status !== null) {
@@ -248,7 +248,7 @@ class IASAlarmFallback {
         const status = this._parseZoneStatus(attrs.zoneStatus);
         if (status !== this.lastStatus) {
           this.lastStatus = status;
-          // v5.11.16 FIX Lasse_K: Route through HybridSensorBase for proper inversion
+          // v5.11.16 FIX Lasse_K: Route through UnifiedSensorBase for proper inversion
           if (typeof this.device._handleIASZoneStatus === 'function') {
             this.device._handleIASZoneStatus(status);
           } else {

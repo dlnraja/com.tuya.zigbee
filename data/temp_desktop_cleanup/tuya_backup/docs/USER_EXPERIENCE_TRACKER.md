@@ -1,4 +1,4 @@
-# User Experience Tracker - Universal Tuya Zigbee
+# User Experience Tracker - Tuya Unified Zigbee
 
 > ⚠️ **IMPORTANT**: This file MUST be read and updated at EVERY Windsurf AI session.
 > It tracks user feedback, known issues, and fixes for each driver.
@@ -148,7 +148,7 @@ When users report issues, ask for:
 
 1. **Manufacturer ID**: `_TZ3000_xxxxx`
 2. **Product ID**: `TS0044`, `TS0215A`, etc.
-3. **App Version**: Settings > Apps > Universal Tuya Zigbee
+3. **App Version**: Settings > Apps > Tuya Unified Zigbee
 4. **Diagnostic Report**: Settings > Experimental > Diagnostics
 5. **LED Behavior**: Does it blink when pressed?
 6. **Pairing Date**: Before or after recent update?
@@ -179,7 +179,7 @@ When users report issues, ask for:
 7. **Home Assistant Community**: ZHA Tuya quirks posts
 8. **deCONZ**: Tuya cluster documentation
 9. **Tuya Developer Portal**: Zigbee Generic Interfaces
-10. **Homey Community Forum**: Universal Tuya Zigbee thread
+10. **Homey Community Forum**: Tuya Unified Zigbee thread
 
 ---
 

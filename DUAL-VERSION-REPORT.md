@@ -1,5 +1,5 @@
 # 📊 RAPPORT FINAL: DEUX VERSIONS CORRIGÉES ET VALIDÉES
-## Universal Tuya Zigbee - Stratégie Dual-Track
+## Tuya Unified Zigbee - Stratégie Dual-Track
 
 **Date**: 2026-05-08 | **Version**: STABLE-V5 + MASTER-V7+ | **Author**: dlnraja
 
@@ -95,8 +95,8 @@ drivers/                         (50 drivers prioritaires)
 
 lib/
 ├── devices/
-│   ├── HybridSwitchBase.js      (40KB, DP statique)
-│   └── HybridSensorBase.js      (207KB, DP statique)
+│   ├── UnifiedSwitchBase.js      (40KB, DP statique)
+│   └── UnifiedSensorBase.js      (207KB, DP statique)
 └── mixins/
     └── PhysicalButtonMixin.js  (2000ms timeout)
 ```
@@ -111,7 +111,7 @@ drivers/unified_driver/
 
 lib/
 ├── devices/
-│   ├── BaseHybridDevice.js      (182KB, enrichi)
+│   ├── BaseUnifiedDevice.js      (182KB, enrichi)
 │   ├── DynamicSwitchDevice.js   (DP auto)
 │   └── DynamicSensorDevice.js   (cap auto)
 ├── mixins/
@@ -119,7 +119,7 @@ lib/
 │   └── DynamicCapabilityMixin.js (NOUVEAU)
 ├── protocol/
 │   ├── DynamicDriverMatcher.js  (Map O(1))
-│   ├── UniversalTuyaParser.js   (DP adaptatif)
+│   ├── TuyaUnifiedParser.js   (DP adaptatif)
 │   └── Rule24Resolver.js       (Manufacturer normalization)
 └── battery/
     └── UnifiedBatteryHandler.js (runtime detection)
@@ -148,10 +148,10 @@ this.settings.get('zb_manufacturerName')
 ### Mixin Order
 ```javascript
 // ✅ CORRECT:
-class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
+class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 
 // ❌ WRONG:
-class Device extends VirtualButtonMixin(PhysicalButtonMixin(HybridSwitchBase))
+class Device extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedSwitchBase))
 ```
 
 ### Physical Button Detection

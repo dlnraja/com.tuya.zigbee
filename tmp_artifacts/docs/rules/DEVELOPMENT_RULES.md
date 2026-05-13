@@ -1,4 +1,4 @@
-# Development Rules - Universal Tuya Zigbee
+# Development Rules - Tuya Unified Zigbee
 
 ##  CRITICAL RULES
 
@@ -57,7 +57,7 @@ TS0601 battery devices use **passive mode**:
 Modern Tuya devices (TZE284 series) require precise timing responses:
 - **Payload Format**: `[seq:2][UTC:4][Local:4]` (10 bytes total).
 - **Sequence Number**: The GW MUST extract and echo the `seqNum` from the device's request frame (Cmd 0x24).
-- **Implementation**: Use the unified `_respondToTimeSync(sequenceNumber)` method in `BaseHybridDevice` which delegates to `TuyaTimeSync.js`.
+- **Implementation**: Use the unified `_respondToTimeSync(sequenceNumber)` method in `BaseUnifiedDevice` which delegates to `TuyaTimeSync.js`.
 - **Warning**: Sending only 8 bytes or an incorrect sequence number will cause time sync to fail and the device to remain in an unconfigured state.
 
 ---
@@ -123,7 +123,7 @@ For battery devices, bindings must be in `driver.compose.json`:
 On every app promotion (draft-to-test / production / branch synchronization), it is mandatory to recursively audit, normalize, and update all markdown documentation files (`.md`), technical registries/reference databases (like `app.json`, `package.json`, fingerprint matrices, and cross-references), dotfiles (`.eslintignore`, `.homeyignore`, etc.), rules configuration files (such as `.clinerule`, `.cursorrules`, etc.), architectural maps, and cartography/index files (like `PROJECT_INDEX.md`, `FINGERPRINT-CROSSREF.md`) to maintain perfect structural alignment with active codebase updates and prevent documentation rot.
 - **Comment robustness in CI/CD pipeline checks**: When grep'ing for banned words, comment lines (`//` or `*`) must be ignored (using `grep -v '^[[:space:]]*//' | grep -v '^[[:space:]]*\*'`) to prevent false-positive failures during code-quality validations.
 - **Draft script isolation in STRICT_SYNTAX_GUARD**: The temporary draft or development scripts directory (`temp`) must be explicitly ignored by the syntax checker so only active production, lib, drivers, and standard CI/CD files are validated, keeping the repository's build green.
-- **Hybrid-Compatible Base Class Exports**: Base classes exported from `lib/devices/` (like `SensorBase` / `HybridSensorBase.js`) must use direct exports together with self-referential class properties (`SensorBase.SensorBase = SensorBase; module.exports = SensorBase;`) to ensure absolute compatibility with both direct destructured requires (used by driver implementations) and index-based requires.
+- **Hybrid-Compatible Base Class Exports**: Base classes exported from `lib/devices/` (like `SensorBase` / `UnifiedSensorBase.js`) must use direct exports together with self-referential class properties (`SensorBase.SensorBase = SensorBase; module.exports = SensorBase;`) to ensure absolute compatibility with both direct destructured requires (used by driver implementations) and index-based requires.
 - **Universal Evolution & Continuous Enrichment Loop (MANDATORY)**: On *every* single prompt execution or task processed, the developer agent MUST execute a comprehensive, full-scope repository sweep. This loop comprises: scanning and triaging latest community PRs/issues/images (`scan-prs-issues.js`), auto-learning newly found fingerprints (`auto-learn-fingerprints.js`), running self-heals and automated code-fixes (`auto-fix-common-issues.js`), verifying drivers, and collectively enriching ALL yml files, javascript source codes, base classes, rules configs (`.clinerule`, `.cursorrules`, `.windsurfrules`), automations, cartographies, indexes, and reference databases. No element of the ecosystem must be left stagnant.
 
 
@@ -147,7 +147,7 @@ On every app promotion (draft-to-test / production / branch synchronization), it
 
 ### Key Directories
 - `drivers/` - All device drivers (organized by FUNCTION, not brand)
-- `lib/devices/` - Base classes (HybridSensorBase, HybridPlugBase, etc.)
+- `lib/devices/` - Base classes (UnifiedSensorBase, UnifiedPlugBase, etc.)
 - `lib/tuya/` - Tuya EF00 cluster handling
 - `docs/rules/` - This rules documentation
 - `docs/fixes/` - Fix documentation

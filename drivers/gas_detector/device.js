@@ -1,5 +1,5 @@
 'use strict';
-const {SensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * Gas Detector Device - TS0601 Tuya DP Protocol

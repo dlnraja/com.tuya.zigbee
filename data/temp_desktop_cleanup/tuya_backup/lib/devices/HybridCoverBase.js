@@ -6,13 +6,13 @@ const { UniversalDPSender } = require('../tuya/UniversalDPSender');
 const { ensureManufacturerSettings } = require('../helpers/ManufacturerNameHelper');
 
 /**
- * HybridCoverBase - Base class for curtains, blinds, shutters
+ * UnifiedCoverBase - Base class for curtains, blinds, shutters
  * v5.7.21 - Uses UniversalDPSender for consistent DP communication
  * v5.7.20 - Fixed DP format regression (elgato7) - try OLD+NEW formats
  * v5.5.107 - Added tilt support for MOES roller blinds (Sharif's bug)
  * v5.3.66 - Fixed capability migration order + listener guards
  */
-class HybridCoverBase extends ZigBeeDevice {
+class UnifiedCoverBase extends ZigBeeDevice {
 
   get mainsPowered() { return true; }
   get maxListeners() { return 50; }
@@ -96,7 +96,7 @@ class HybridCoverBase extends ZigBeeDevice {
   }
 
   async onNodeInit({ zclNode }) {
-    this.log('[COVER] 🏠 HybridCoverBase initializing...');
+    this.log('[COVER] 🏠 UnifiedCoverBase initializing...');
     this.log('[COVER] 📦 App version:', this.homey.manifest.version);
 
     // v5.8.57: Ensure zb_manufacturer_name / zb_model_id settings populated
@@ -445,7 +445,7 @@ class HybridCoverBase extends ZigBeeDevice {
    */
   async _safeSetCapability(capability, value) {
     if (!this.hasCapability(capability)) {
-      if (HybridCoverBase.DYNAMIC_CAPABILITIES.includes(capability)) {
+      if (UnifiedCoverBase.DYNAMIC_CAPABILITIES.includes(capability)) {
         try {
           await this.addCapability(capability);
           this.log(`[CAP] ✨ DYNAMIC ADD: ${capability} (detected from DP/ZCL data)`);
@@ -837,4 +837,4 @@ class HybridCoverBase extends ZigBeeDevice {
   }
 }
 
-module.exports = HybridCoverBase;
+module.exports = UnifiedCoverBase;

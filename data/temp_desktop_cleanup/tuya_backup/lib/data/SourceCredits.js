@@ -4,7 +4,7 @@
  * SourceCredits.js - Attribution des sources et contributeurs
  *
  * Ce fichier liste toutes les sources de données utilisées pour enrichir
- * la base de données de l'application Universal Tuya Zigbee.
+ * la base de données de l'application Tuya Unified Zigbee.
  *
  * IMPORTANT: Respecter les licences de chaque source
  */
