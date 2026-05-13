@@ -30,33 +30,11 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
-## 🚀 Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### ✨ Recent Changes (May 2026)
-
-| Version | Feature |
-|---------|---------|
-| **v7.5.22** | FIX: Resolve critical startup crash by packaging fingerprints DB, resolve _TZ... |
-| **v7.5.21** | v7.5.20: Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving c... |
-| **v7.5.20** | v7.5.20: . Fixed WiFi socket port reuse, cleanly separated WiFi/Zigbee protoc... |
-| **v7.5.19** | Added Android native Intent magic URL pairing for all 20 WiFi drivers. Update... |
-| **v7.5.18** | Easy Login with saved credentials, auto device classification with brand badg... |
-| **v7.5.17** | v7.5.17 — 3,207 new fingerprints, backlight mode alignment fix, and fingerpri... |
-| **v7.5.16** | v7.5.16 — . Maintenance release with updated device expectations, diagnostics... |
-| **v7.5.15** | v7.5.15: Fixed siren sensor driver crashes, added 3,202 new fingerprints, and... |
-| **v7.5.14** | v7.5.14: . Bug fixes for wireless buttons, climate sensors, radiator valves, ... |
-| **v7.5.13** | v7.5.13: . Added new fingerprints for motion sensor, illuminance sensor, 3-ga... |
-<!-- CHANGELOG_END -->
-
-
-
-
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.23 |
+| **App Version** | v7.5.24 |
 | **Device Fingerprints** | 10,941+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 228 (178 Zigbee + 50 WiFi) |
@@ -123,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.23** | Version 7.5.22 — App metadata and store listing update. No new drivers or fingerprints added in this release. |
+| **v7.5.24** | Maintenance release v7.5.23 — . Internal data cleanup and archive of obsolete planning files. No new drivers or finge... |
+| **v7.5.23** | Maintenance release v7.5.23 — . Internal data cleanup and archive of obsolete planning files. No new drivers or finge... |
 | **v7.5.22** | Version 7.5.22 — App metadata and store listing update. No new drivers or fingerprints added in this release. |
 | **v7.5.21** | v7.5.20: Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving connection drops and repeated reconnectio... |
 | **v7.5.20** | v7.5.20: . Fixed WiFi socket port reuse, cleanly separated WiFi/Zigbee protocols, improved 4-gang switch support, and... |
@@ -137,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v7.5.12** | v7.5.12: . Fixed sensor fallback logic for unknown models. Added new fingerprints for radiator valve (_TZE284_ne4pikw... |
 | **v7.5.11** | v7.5.11: Fixed ReferenceError crashes in HybridSensorBase, HybridCoverBase, HybridLightBase, HybridPlugBase, HybridSw... |
 | **v7.5.10** | Fixed a crash in HybridSensorBase that caused a ReferenceError on _safeSetCapability. Added support for Nedis SmartLi... |
-| **v7.5.9** | v7.5.9: . Fixed ProtocolArbitrator crash, _TZE608 opener reclassification, SDK3 validation errors, duplicate fingerpr... |
 
 <!-- CHANGELOG_END -->
 

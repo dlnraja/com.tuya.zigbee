@@ -4,7 +4,20 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.22] - 2026-05-13
+## [7.5.23] - 2026-05-13
+
+## v7.5.23
+
+No new drivers, fingerprints, or user-facing bug fixes in this release.
+
+### Maintenance
+- Archived 3 obsolete planning documents
+- Cleaned up collision and invalid asset data
+- Removed ~14MB of orphan files
+- Updated project index and metadata
+---
+
+ [7.5.22] - 2026-05-13
 
 ## Version 7.5.22
 
