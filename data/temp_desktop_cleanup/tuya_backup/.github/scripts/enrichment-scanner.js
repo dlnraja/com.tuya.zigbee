@@ -181,7 +181,7 @@ async function main(){
   let aiPlan=null;
   if(uniqueNew.length>0){
     const withDPs=uniqueNew.filter(f=>f.dps?.length>0);
-    const sysPrompt='Tuya Zigbee expert for Universal Tuya Zigbee Homey app. For each new device:\n'+
+    const sysPrompt='Tuya Zigbee expert for Tuya Unified Zigbee Homey app. For each new device:\n'+
       '1. Classify device type (switch, sensor, thermostat, cover, dimmer, etc.)\n'+
       '2. Suggest existing Homey driver to add fingerprint to\n'+
       '3. If DPs available: map each DP to Homey capability (e.g. DP1→onoff, DP2→measure_temperature/10, DP3→target_temperature)\n'+

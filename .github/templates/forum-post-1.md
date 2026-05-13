@@ -1,4 +1,4 @@
-# Universal Tuya Zigbee — v{{VERSION}}
+# Tuya Unified Zigbee — v{{VERSION}}
 
 > **The largest Tuya Zigbee app for Homey Pro** — {{DRIVERS}} drivers, {{FINGERPRINTS}}+ fingerprints, {{FLOW_CARDS}} flow cards.
 > 100% local. No cloud. No internet needed. Updated {{DATE}}.

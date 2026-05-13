@@ -1,5 +1,5 @@
 'use strict';
-const PlugBase = require('../../lib/devices/HybridPlugBase');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb','_tze200_fphxkxue','_tze204_sh1btabb','_tze204_fphxkxue'];

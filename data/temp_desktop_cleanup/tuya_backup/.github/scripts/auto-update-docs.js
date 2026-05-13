@@ -20,7 +20,7 @@ function updateContributing(stats){
   const f=path.join(DOCS,'CONTRIBUTING.md');
   let md;
   if(fs.existsSync(f)){md=fs.readFileSync(f,'utf8');}
-  else{md='# Contributing to Universal Tuya Zigbee\n\n';}
+  else{md='# Contributing to Tuya Unified Zigbee\n\n';}
   // Update stats section
   const statsBlock='## Project Stats\n\n'
     +'| Metric | Value |\n|--------|-------|\n'

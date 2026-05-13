@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Community Sync - Universal Tuya Zigbee
+ * Community Sync - Tuya Unified Zigbee
  * v5.7.46: Enhanced with productId extraction and device type mapping
  */
 const fs = require('fs');

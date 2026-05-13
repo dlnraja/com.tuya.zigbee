@@ -1,0 +1,48 @@
+name: 🛡️ Secure Fleet Diagnostics (Gmail)
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'dlnraja'
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 📦 Install Dependencies
+        run: |
+          npm install imapflow mailparser
+
+      - name: 🔍 Run Secure Extraction
+        env:
+          GMAIL_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD || secrets.HOMEY_PASSWORD }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          DRY_RUN: false
+        run: |
+          # Use a wrapper to mask output just in case
+          node .github/scripts/fetch-gmail-diagnostics.js | sed 's/${{ secrets.HOMEY_EMAIL }}/[REDACTED_EMAIL]/g'
+
+      - name: 📝 Commit State & Reports
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Fleet Diagnostics Bot"
+          git add .github/state/*.json .github/state/*.yml
+          git commit -m "chore(diag): update fleet diagnostics [skip ci]" || echo "No changes to commit"
+          git push || echo "Push failed (ignoring)"

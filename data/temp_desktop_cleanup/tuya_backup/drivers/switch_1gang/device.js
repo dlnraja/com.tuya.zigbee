@@ -1,5 +1,5 @@
 'use strict';
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
@@ -7,7 +7,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║      1-GANG SWITCH - v5.5.940 SIMPLIFIED (PR #118 rollback)                 ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Uses HybridSwitchBase which provides:                                       ║
+ * ║  Uses UnifiedSwitchBase which provides:                                       ║
  * ║  - dpMappings for DP 1-8 (gang switches) + DP 14-15 (settings)              ║
  * ║  - _setupTuyaDPMode() + _setupZCLMode()                                      ║
  * ║  - _registerCapabilityListeners() for all gangs                              ║
@@ -17,7 +17,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ║  (PR #118 by packetninja/Attilla)                                            ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
+class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
 
   get gangCount() { return 1; }
 
@@ -37,7 +37,7 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
 
   async onNodeInit({ zclNode }) {
     // v5.8.95: Removed redundant _markAppCommand + broken _handleTuyaDatapoint wrapper.
-    // HybridSwitchBase._setGangOnOff() now calls PhysicalButtonMixin.markAppCommand() centrally.
+    // UnifiedSwitchBase._setGangOnOff() now calls PhysicalButtonMixin.markAppCommand() centrally.
     await super.onNodeInit({ zclNode });
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();

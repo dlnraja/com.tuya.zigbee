@@ -1,5 +1,5 @@
 'use strict';
-const {SensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { AirQualityInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
 /**
@@ -139,11 +139,11 @@ class AirQualityCO2Device extends SensorBase {
     try {
       const temp = ep1.clusters?.msTemperatureMeasurement;
       if (temp?.on) {
-        temp.on('attr.measuredValue', (v) => { const t=parseFloat(v)/100; if(t>=-40&&t<=80) this.setCapabilityValue('measure_temperature',t).catch(()=>{}); else this.log('[CO2] ZCL temp rejected:',t); });
+        temp.on('attr.measuredValue', (v) => { const t=parseFloat(v)/100; if(t>=-40&&t<=80) await this.setCapabilityValue('measure_temperature',t).catch(()=>{}); else this.log('[CO2] ZCL temp rejected:',t); });
       }
       const hum = ep1.clusters?.msRelativeHumidity;
       if (hum?.on) {
-        hum.on('attr.measuredValue', (v) => { const h=parseFloat(v)/100; if(h>=0&&h<=100) this.setCapabilityValue('measure_humidity',h).catch(()=>{}); else this.log('[CO2] ZCL hum rejected:',h); });
+        hum.on('attr.measuredValue', (v) => { const h=parseFloat(v)/100; if(h>=0&&h<=100) await this.setCapabilityValue('measure_humidity',h).catch(()=>{}); else this.log('[CO2] ZCL hum rejected:',h); });
       }
     } catch (e) { /* ignore */ }
   }

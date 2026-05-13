@@ -1,7 +1,7 @@
 'use strict';
-const HybridThermostatBase = require('../../lib/devices/HybridThermostatBase');
+const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 
-class HVACDehumidifierDevice extends HybridThermostatBase {
+class HVACDehumidifierDevice extends UnifiedThermostatBase {
   get mainsPowered() { return true; }
   get thermostatCapabilities() { return ['onoff', 'dim.humidity', 'measure_humidity']; }
   async onNodeInit({ zclNode }) {

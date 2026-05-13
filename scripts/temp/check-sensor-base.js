@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Extract battery related code fromSensorBase.js
-const file = 'lib/devices/HybridSensorBase.js';
+const file = 'lib/devices/UnifiedSensorBase.js';
 let content = fs.readFileSync(file, 'utf8');
 
 // Print lines around measure_battery removal

@@ -17,7 +17,7 @@ class D extends E{
   _processState(data){
     super._processState(data);
     if(data.oneKwh!==undefined&&this.hasCapability('meter_power')){
-      this.setCapabilityValue('meter_power',parseFloat(data.oneKwh)/100).catch(()=>{});
+      await this.setCapabilityValue('meter_power',parseFloat(data.oneKwh)/100).catch(()=>{});
     }
   }
 

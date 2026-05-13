@@ -214,7 +214,7 @@ async function processForumPosts(state,idx,pidx,auth,appVersion,dryRun){
 
       const hasImages=imgs.length>0;
 
-      const sysPrompt='You are the maintainer of Universal Tuya Zigbee v'+appVersion+' (com.dlnraja.tuya.zigbee) on Homey. Write as a developer helping users. Include:\n- If fingerprints found: check support status and explain which driver\n- If images: incorporate image analysis\n- If links to Z2M/ZHA/GitHub: cross-reference\n- If device interview: analyze clusters and suggest driver\n- If question/bug report: provide troubleshooting steps\n- If not device-related or just a thank you: return NULL\nUse Discourse markdown. Max 400 words. NEVER mention bot/automated. No signature or footer.';
+      const sysPrompt='You are the maintainer of Tuya Unified Zigbee v'+appVersion+' (com.dlnraja.tuya.zigbee) on Homey. Write as a developer helping users. Include:\n- If fingerprints found: check support status and explain which driver\n- If images: incorporate image analysis\n- If links to Z2M/ZHA/GitHub: cross-reference\n- If device interview: analyze clusters and suggest driver\n- If question/bug report: provide troubleshooting steps\n- If not device-related or just a thank you: return NULL\nUse Discourse markdown. Max 400 words. NEVER mention bot/automated. No signature or footer.';
 
       const userMsg='Post #'+post.post_number+' by @'+post.username+':\n'+text+(imageAnalysis?'\n\nImage analysis: '+imageAnalysis:'')+(linkContext?'\n'+linkContext:'')+'\n\nFingerprint lookup:\n'+JSON.stringify(fpResults,null,2)+'\n\nGenerate reply or NULL:';
 
@@ -338,7 +338,7 @@ async function processGitHub(state,idx,pidx,appVersion,dryRun){
 
       const hasInterview=(iss.body||'').includes('zclNode')||(iss.body||'').includes('clusters')||(iss.body||'').includes('endpoint');
 
-      const sysPrompt='You are the maintainer of Universal Tuya Zigbee v'+appVersion+'. Respond to this GitHub issue with a detailed, technical explanation:\n- If fingerprint supported: tell exactly which driver handles it, how to pair\n- If not supported: explain what info is needed (device interview from tools.developer.homey.app)\n- If interview data present: analyze clusters, endpoints, identify device type and suggest driver\n- If image present: incorporate image analysis\n- Cross-reference with Z2M/ZHA if links provided\nUse GitHub markdown. Max 400 words. NEVER mention bot/automated. No signature or footer.';
+      const sysPrompt='You are the maintainer of Tuya Unified Zigbee v'+appVersion+'. Respond to this GitHub issue with a detailed, technical explanation:\n- If fingerprint supported: tell exactly which driver handles it, how to pair\n- If not supported: explain what info is needed (device interview from tools.developer.homey.app)\n- If interview data present: analyze clusters, endpoints, identify device type and suggest driver\n- If image present: incorporate image analysis\n- Cross-reference with Z2M/ZHA if links provided\nUse GitHub markdown. Max 400 words. NEVER mention bot/automated. No signature or footer.';
 
       const userMsg='Issue #'+iss.number+' by @'+(iss.user?.login||'?')+':\n'+text+imageInfo+linkInfo+(hasInterview?'\n[Contains device interview data]':'')+'\n\nFingerprint lookup:\n'+JSON.stringify(fpResults,null,2);
 
@@ -430,7 +430,7 @@ async function processGitHub(state,idx,pidx,appVersion,dryRun){
 
       }
 
-      const sysPrompt='You are reviewing a PR for Universal Tuya Zigbee v'+appVersion+'. Analyze the changes:\n- Check fingerprint correctness\n- Verify driver assignment\n- Check for common bugs (wrong import paths, wrong settings keys)\n- Suggest improvements\nUse GitHub markdown. Max 300 words.';
+      const sysPrompt='You are reviewing a PR for Tuya Unified Zigbee v'+appVersion+'. Analyze the changes:\n- Check fingerprint correctness\n- Verify driver assignment\n- Check for common bugs (wrong import paths, wrong settings keys)\n- Suggest improvements\nUse GitHub markdown. Max 300 words.';
 
       const userMsg='PR #'+pr.number+' by @'+(pr.user?.login||'?')+': '+pr.title+'\n'+text+'\nFingerprints: '+JSON.stringify(fpResults)+'\nChanged files:'+diffInfo;
 

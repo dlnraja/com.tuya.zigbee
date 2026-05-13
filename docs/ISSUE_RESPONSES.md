@@ -15,7 +15,7 @@ This document contains prepared responses for all open issues. All devices have 
 ```
 ✅ **Supported in v5.5.684**
 
-The Universal Tuya Zigbee app supports multiple air quality monitors including:
+The Tuya Unified Zigbee app supports multiple air quality monitors including:
 - CO2 sensors (`air_quality_co2` driver)
 - VOC sensors
 - Formaldehyde sensors (`formaldehyde_sensor` driver)
@@ -26,7 +26,7 @@ The Universal Tuya Zigbee app supports multiple air quality monitors including:
 - `_TZE200_dwcarsat`, `_TZE200_ryfmq5rl` and 50+ others
 
 **To pair your device:**
-1. Install Universal Tuya Zigbee from Homey App Store
+1. Install Tuya Unified Zigbee from Homey App Store
 2. Add device → Select "Air Quality CO2" or "Air Quality Comprehensive"
 3. Put device in pairing mode
 
@@ -324,5 +324,5 @@ Closing as supported.
 
 ---
 
-*Universal Tuya Zigbee App v5.5.684*
+*Tuya Unified Zigbee App v5.5.684*
 *164 drivers | 4200+ devices supported*

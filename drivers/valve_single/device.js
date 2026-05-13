@@ -1,5 +1,5 @@
 'use strict';
-const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
@@ -10,7 +10,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ║  Smart valve with bidirectional physical/virtual button support             ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ValveSingleDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugBase)) {
+class ValveSingleDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
   get plugCapabilities() { return ['onoff']; }
   get gangCount() { return 1; }
 

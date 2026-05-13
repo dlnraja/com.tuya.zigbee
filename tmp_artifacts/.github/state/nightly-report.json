@@ -329,7 +329,7 @@
         "vision"
       ],
       "title": "Device Request - Tuya RGB e27 Bulb Zigbee - Zbeacon / TS0505B",
-      "response": "## Device Request: Tuya RGB E27 Bulb (Zbeacon / TS0505B)\n\n**Status: Already Supported** ✅\n\nThe fingerprint `Zbeacon` + `TS0505B` is already present in the Universal Tuya Zigbee app. This device is handled by multiple drivers due to the common Tuya product ID:\n\n| Driver | Path |\n|--------|------|\n| `",
+      "response": "## Device Request: Tuya RGB E27 Bulb (Zbeacon / TS0505B)\n\n**Status: Already Supported** ✅\n\nThe fingerprint `Zbeacon` + `TS0505B` is already present in the Tuya Unified Zigbee app. This device is handled by multiple drivers due to the common Tuya product ID:\n\n| Driver | Path |\n|--------|------|\n| `",
       "model": "openrouter"
     },
     {
@@ -379,7 +379,7 @@
         "ZG-106Z"
       ],
       "title": "Device request- Tuya Light sensor",
-      "response": "## Device Request: Tuya Light Sensor (ZG-106Z)\n\nThank you for your request, @KasvanD. The ZG-106Z light sensor is already supported in Universal Tuya Zigbee v5.11.179+ under the **illuminance_sensor** driver.\n\n### ✅ Supported Device\n\n| Detail | Value |\n|--------|-------|\n| **Driver** | `illuminance_",
+      "response": "## Device Request: Tuya Light Sensor (ZG-106Z)\n\nThank you for your request, @KasvanD. The ZG-106Z light sensor is already supported in Tuya Unified Zigbee v5.11.179+ under the **illuminance_sensor** driver.\n\n### ✅ Supported Device\n\n| Detail | Value |\n|--------|-------|\n| **Driver** | `illuminance_",
       "model": "deepseek"
     },
     {
@@ -422,7 +422,7 @@
         "test"
       ],
       "title": "Device Request - Zigbee Smart IR Remote - _TZ3290_yyax9ajf / TS1201",
-      "response": "Thank you for the detailed device interview, @johbiraus.\n\nBased on the interview data, your device `_TZ3290_yyax9ajf` / `TS1201` is **already supported** by the **`ir_blaster`** driver in Universal Tuya Zigbee.\n\n### Analysis\n\n- **Fingerprint Match**: The combination `_TZ3290_yyax9ajf` + `TS1201` is ",
+      "response": "Thank you for the detailed device interview, @johbiraus.\n\nBased on the interview data, your device `_TZ3290_yyax9ajf` / `TS1201` is **already supported** by the **`ir_blaster`** driver in Tuya Unified Zigbee.\n\n### Analysis\n\n- **Fingerprint Match**: The combination `_TZ3290_yyax9ajf` + `TS1201` is ",
       "model": "deepseek"
     },
     {
@@ -439,7 +439,7 @@
         "tuya"
       ],
       "title": "Device Request - Presense sensor - tuya / _TZE200_crq3r3la",
-      "response": "Thank you for the detailed device request and interview data, @dzsandzsee.\n\nThis device is **already supported** in the Universal Tuya Zigbee app.\n\n**Driver:** `presence_sensor_radar`\n\nThe fingerprint `_TZE200_crq3r3la` (manufacturerName) combined with model ID `CK-BL702-MWS-01(7016)` is already reg",
+      "response": "Thank you for the detailed device request and interview data, @dzsandzsee.\n\nThis device is **already supported** in the Tuya Unified Zigbee app.\n\n**Driver:** `presence_sensor_radar`\n\nThe fingerprint `_TZE200_crq3r3la` (manufacturerName) combined with model ID `CK-BL702-MWS-01(7016)` is already reg",
       "model": "deepseek"
     },
     {
@@ -455,7 +455,7 @@
         "moes"
       ],
       "title": "Device Request Moes Smart thermostat Zigbeee _TZE204_xalsoe3m TS0601",
-      "response": "This is a Moes Smart Thermostat for heated floors, model `_TZE204_xalsoe3m` (TS0601). The device is **already supported** in the Universal Tuya Zigbee app.\n\n## ✅ Supported Device\n\nYour device fingerprint `_TZE204_xalsoe3m` + `TS0601` is handled by the **`climate_sensor`** driver. This driver support",
+      "response": "This is a Moes Smart Thermostat for heated floors, model `_TZE204_xalsoe3m` (TS0601). The device is **already supported** in the Tuya Unified Zigbee app.\n\n## ✅ Supported Device\n\nYour device fingerprint `_TZE204_xalsoe3m` + `TS0601` is handled by the **`climate_sensor`** driver. This driver support",
       "model": "deepseek"
     },
     {

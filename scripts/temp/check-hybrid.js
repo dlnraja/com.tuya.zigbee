@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const targetFile = 'lib/devices/TuyaHybridDevice.js';
+const targetFile = 'lib/devices/TuyaUnifiedDevice.js';
 const content = fs.readFileSync(targetFile, 'utf8');
 
 // We need to implement an intelligent battery/mains logic that:
@@ -9,4 +9,4 @@ const content = fs.readFileSync(targetFile, 'utf8');
 // 2. Checks if the device has a battery DP mapped
 // 3. Handles user settings or hardcoded class properties
 
-console.log('TuyaHybridDevice.js exists and is ready for modification.');
+console.log('TuyaUnifiedDevice.js exists and is ready for modification.');

@@ -51,7 +51,7 @@ try {
 }
 const TuyaUDPDiscovery = require('./lib/tuya-local/TuyaUDPDiscovery');
 
-class UniversalTuyaZigbeeApp extends Homey.App {
+class TuyaUnifiedZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
   flowCardManager = null;
   capabilityManager = null;
@@ -96,7 +96,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
     this._flowCardsRegistered = true;
 
-    this.log('Universal Tuya Zigbee App is initializing...');
+    this.log('Tuya Unified Zigbee App is initializing...');
     this.log(`📊 Mode: ${this.developerDebugMode ? 'DEVELOPER (verbose)' : 'PRODUCTION (minimal logs)'}`);
     this.log(`🤖 Smart-Adapt: ${this.experimentalSmartAdapt ? 'EXPERIMENTAL (modifies)' : 'READ-ONLY (safe)'}`);
     this.log(`🔧 MaxListeners: ${EventEmitter.defaultMaxListeners} (prevents warnings with many devices)`);
@@ -272,7 +272,7 @@ class UniversalTuyaZigbeeApp extends Homey.App {
       await this.initializeInsights();
     } catch (err) { this.error('⚠️ Insights failed:', err.message); }
 
-    this.log('✅ Universal Tuya Zigbee App has been initialized');
+    this.log('✅ Tuya Unified Zigbee App has been initialized');
     this.log('🚀 Advanced systems: Analytics, Discovery, Performance, OTA, Quirks, System Logs, Intelligent ID Database');
 
     // Log capability stats
@@ -1221,5 +1221,5 @@ class UniversalTuyaZigbeeApp extends Homey.App {
 
 }
 
-module.exports = UniversalTuyaZigbeeApp;
+module.exports = TuyaUnifiedZigbeeApp;
 

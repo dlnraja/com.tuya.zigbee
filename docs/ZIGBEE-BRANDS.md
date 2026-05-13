@@ -1,6 +1,6 @@
 # 🌍 Zigbee Brands Database
 
-> Complete worldwide list of Zigbee-compliant brands supported by Universal Tuya Zigbee
+> Complete worldwide list of Zigbee-compliant brands supported by Tuya Unified Zigbee
 
 **Last Updated:** 2025-12-02
 **Total Brands:** 50+

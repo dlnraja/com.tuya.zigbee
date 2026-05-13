@@ -227,7 +227,7 @@ async onNodeInit({ zclNode }) {
 
 ```cpp
 // ESP32-C6 Zigbee Sensor Example
-// Compatible with Universal Tuya Zigbee (dlnraja)
+// Compatible with Tuya Unified Zigbee (dlnraja)
 
 #include "esp_zigbee_core.h"
 
@@ -314,4 +314,4 @@ void app_main() {
 ---
 
 *Design document created: 2026-01-31*
-*Project: Universal Tuya Zigbee (dlnraja)*
+*Project: Tuya Unified Zigbee (dlnraja)*

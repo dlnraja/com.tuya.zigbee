@@ -67,7 +67,7 @@ Le fichier existe déjà - VÉRIFIER qu'il contient bien:
 - `processMigrationQueue(homey)` 
 - Validation avec `driverExists()`
 
-### C. Remplacer les `cluster.configureReporting` dans `BaseHybridDevice.js`
+### C. Remplacer les `cluster.configureReporting` dans `BaseUnifiedDevice.js`
 TROUVER/REMPLACER (12+ occurrences):
 
 **AVANT:**

@@ -179,7 +179,7 @@ Exemple pour 2026-01-19 13:00:00 CET (UTC+1):
 
 ---
 
-## 7. Implémentation Homey (Universal Tuya Zigbee)
+## 7. Implémentation Homey (Tuya Unified Zigbee)
 
 ### 7.1 Driver: `climate_sensor`
 
@@ -241,5 +241,5 @@ const utcTimestamp = needsTuyaEpoch
 
 ---
 
-*Document généré pour Universal Tuya Zigbee App v5.5.687*
+*Document généré pour Tuya Unified Zigbee App v5.5.687*
 *https://github.com/dlnraja/com.tuya.zigbee*

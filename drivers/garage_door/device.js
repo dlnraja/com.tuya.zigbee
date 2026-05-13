@@ -39,9 +39,9 @@ class GarageDoorDevice extends TuyaSpecificClusterDevice {
       break;
     case 2: {
       const closed = value === 0 || value === false;
-      this.setCapabilityValue('garagedoor_closed', closed).catch(this.error);
+      await this.setCapabilityValue('garagedoor_closed', closed).catch(this.error);
       if (this.hasCapability('alarm_contact')) {
-        this.setCapabilityValue('alarm_contact', !closed).catch(this.error);
+        await this.setCapabilityValue('alarm_contact', !closed).catch(this.error);
       }
       break;
     }
@@ -51,9 +51,9 @@ class GarageDoorDevice extends TuyaSpecificClusterDevice {
     case 12: {
       const open = value === 1 || value === true;
       if (this.hasCapability('alarm_contact')) {
-        this.setCapabilityValue('alarm_contact', open).catch(this.error);
+        await this.setCapabilityValue('alarm_contact', open).catch(this.error);
       }
-      this.setCapabilityValue('garagedoor_closed', !open).catch(this.error);
+      await this.setCapabilityValue('garagedoor_closed', !open).catch(this.error);
       break;
     }
     default:

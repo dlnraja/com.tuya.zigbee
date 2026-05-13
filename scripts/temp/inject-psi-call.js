@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const file = 'lib/devices/TuyaHybridDevice.js';
+const file = 'lib/devices/TuyaUnifiedDevice.js';
 let content = fs.readFileSync(file, 'utf8');
 
 // Find where to inject PowerSourceIntelligence.applyCapabilities
@@ -22,7 +22,7 @@ if (content.includes('PowerSourceIntelligence.applyCapabilities')) {
 } else if (content.includes(searchString)) {
   content = content.replace(searchString, replaceString);
   fs.writeFileSync(file, content);
-  console.log('✅ Added PowerSourceIntelligence.applyCapabilities to TuyaHybridDevice.js');
+  console.log('✅ Added PowerSourceIntelligence.applyCapabilities to TuyaUnifiedDevice.js');
 } else {
   console.log('❌ Could not find injection point');
 }

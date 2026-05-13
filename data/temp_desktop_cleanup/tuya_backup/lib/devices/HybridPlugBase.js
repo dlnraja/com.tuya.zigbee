@@ -14,10 +14,10 @@ const {
   parseTuyaFrame,
   getUniversalDPMapping,
   setupUniversalZCLListeners,
-} = require('../tuya/UniversalTuyaParser');
+} = require('../tuya/TuyaUnifiedParser');
 
 /**
- * HybridPlugBase - Base class for ALL Tuya smart plugs
+ * UnifiedPlugBase - Base class for ALL Tuya smart plugs
  *
  * v5.5.63: TRUE HYBRID - Listens to BOTH Tuya DP AND ZCL simultaneously
  *          After 15 min, pauses unused protocol methods
@@ -42,7 +42,7 @@ const {
  * - USB outlets
  * - Power strips (single device, not multi-gang)
  */
-class HybridPlugBase extends ZigBeeDevice {
+class UnifiedPlugBase extends ZigBeeDevice {
 
   get mainsPowered() { return true; }
   get maxListeners() { return 50; }
@@ -569,7 +569,7 @@ class HybridPlugBase extends ZigBeeDevice {
 
   /**
    * v5.5.84: Parse raw Tuya frame with multi-format support
-   * Uses UniversalTuyaParser for intelligent parsing
+   * Uses TuyaUnifiedParser for intelligent parsing
    */
   _parseTuyaRawFrame(buffer) {
     try {
@@ -758,7 +758,7 @@ class HybridPlugBase extends ZigBeeDevice {
    */
   async _safeSetCapability(capability, value) {
     if (!this.hasCapability(capability)) {
-      if (HybridPlugBase.DYNAMIC_CAPABILITIES.includes(capability)) {
+      if (UnifiedPlugBase.DYNAMIC_CAPABILITIES.includes(capability)) {
         try {
           await this.addCapability(capability);
           this.log(`[CAP] ✨ DYNAMIC ADD: ${capability} (detected from DP/ZCL data)`);
@@ -934,4 +934,4 @@ class HybridPlugBase extends ZigBeeDevice {
   }
 }
 
-module.exports = HybridPlugBase;
+module.exports = UnifiedPlugBase;

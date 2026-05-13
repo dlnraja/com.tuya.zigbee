@@ -28,9 +28,9 @@ const { fetchWithRetry, sleep } = require('./retry-helper');
 // Patterns that indicate bot/auto-generated content
 const BOT_PATTERNS = [
   /Auto-response by dlnraja/i,
-  /Bot Universal Tuya/i,
+  /Bot Tuya Unified/i,
   /Install test version\s*$/i,
-  /Universal Tuya Zigbee v\d+\.\d+\.\d+/i,
+  /Tuya Unified Zigbee v\d+\.\d+\.\d+/i,
   /already supported in.*v\d+/i,
   /fingerprint.*already.*supported/i,
   /re-pair.*device/i,

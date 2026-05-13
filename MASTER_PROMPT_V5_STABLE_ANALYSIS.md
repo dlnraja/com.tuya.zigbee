@@ -151,7 +151,7 @@ app/
 │   ├── climate_sensor/ (+ _TZE284_8se38w3c, + _TZ3000_tsgqxdb4)
 │   └── [50 top drivers only]
 ├── lib/
-│   ├── devices/HybridSwitchBase.js (statique)
+│   ├── devices/UnifiedSwitchBase.js (statique)
 │   └── mixins/PhysicalButtonMixin.js (PR #120 pattern)
 └── package.json (SDK3 stable)
 ```
@@ -205,7 +205,7 @@ app/
 | Règle | Description | Fichier |
 |-------|-------------|---------|
 | `zb_model_id` NOT `zb_modelId` | Settings keys snake_case | Partout |
-| Mixin: PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) | Order critique | device.js |
+| Mixin: PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) | Order critique | device.js |
 | Backlight: strings only ("off", "normal", "inverted") | Pas numbers | switch drivers |
 | Physical button: 2000ms timeout PR #120 | Detection pattern | PhysicalButtonMixin.js |
 | BSEED ZCL-only: _TZ3000_l9brjwau, etc. | No cluster 0xEF00 | switch_1gang |

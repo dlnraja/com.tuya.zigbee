@@ -1,5 +1,5 @@
 'use strict';
-constCoverBase = require('../../lib/devices/HybridCoverBase');
+constCoverBase = require('../../lib/devices/UnifiedCoverBase');
 
 class CurtainMotorTiltDevice extends CoverBase {
   get coverCapabilities() { return ['windowcoverings_state', 'windowcoverings_set', 'windowcoverings_tilt_set']; }

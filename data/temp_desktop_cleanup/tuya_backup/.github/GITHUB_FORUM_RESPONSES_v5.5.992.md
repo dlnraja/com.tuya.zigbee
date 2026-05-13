@@ -1,4 +1,4 @@
-# GitHub & Forum Responses - Universal Tuya Zigbee v5.5.993+
+# GitHub & Forum Responses - Tuya Unified Zigbee v5.5.993+
 
 ## 🔧 FIXES IMPLEMENTED IN v5.5.993+
 
@@ -138,7 +138,7 @@ Hi Tbao,
 **Root Cause:** TS130F devices use **ZCL windowCovering cluster (0x0102)**, NOT Tuya DP protocol. The driver was incorrectly detecting Tuya DP due to cached settings.
 
 **Fix in v5.5.992:**
-- Added explicit TS130F detection in `HybridCoverBase._detectProtocol()`
+- Added explicit TS130F detection in `UnifiedCoverBase._detectProtocol()`
 - TS130F now forces ZCL protocol regardless of cached settings
 
 ```javascript
@@ -272,7 +272,7 @@ If still not pairing, please provide device interview data.
 | File | Change |
 |------|--------|
 | `drivers/switch_2gang/driver.compose.json` | Added TS0003 to productId |
-| `lib/devices/HybridCoverBase.js` | Added TS130F ZCL-only detection |
+| `lib/devices/UnifiedCoverBase.js` | Added TS130F ZCL-only detection |
 | `drivers/motion_sensor/device.js` | Added ZG204ZV_MULTISENSOR profile with humidity *10 |
 | `lib/mixins/VirtualButtonMixin.js` | Added _zclNode fallback for ZCL-only devices |
 | `drivers/button_wireless_4/device.js` | Added _TZ3000_an5rjiwd to E000 list |

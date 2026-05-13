@@ -8,7 +8,7 @@ A3. Press type 0-indexed: 0=single 1=double 2=hold (1-indexed broke TS0044)
 A4. Battery check order: test <=100 FIRST then <=200 (wrong order = unreachable branch)
 A5. Double-inversion: IAS+alarm_contact both invert = back to original. Invert ONCE only
 A6. Imports: require('../../lib/tuya/TuyaZigbeeDevice') NOT require('../../lib/TuyaZigbeeDevice')
-A7. Mixin order: PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
+A7. Mixin order: PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 
 ## B. BSEED ZCL-ONLY RULES
 

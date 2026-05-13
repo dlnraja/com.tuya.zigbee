@@ -16,7 +16,7 @@
    - **Cause:** `configureReportingWithRetry` importé mais JAMAIS appelé
    - **Impact:** Tous les `cluster.configureReporting()` crashent au démarrage
    - **Fix:** 🚧 EN COURS - Remplacer 12+ appels directs par retry
-   - **Fichiers à modifier:** `lib/devices/BaseHybridDevice.js`
+   - **Fichiers à modifier:** `lib/devices/BaseUnifiedDevice.js`
 
 ### 🟠 PROBLÈMES FONCTIONNELS
 
@@ -124,7 +124,7 @@ await configureReportingWithRetry(cluster, 'onOff', {
 ```
 
 **Fichiers identifiés:**
-- `lib/devices/BaseHybridDevice.js` - 12+ appels directs à corriger
+- `lib/devices/BaseUnifiedDevice.js` - 12+ appels directs à corriger
 
 ---
 

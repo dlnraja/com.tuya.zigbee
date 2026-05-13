@@ -227,7 +227,7 @@ async function main(){
   const aiInput={username:USERNAME,appVersion:appVer,summary:data.summary,topicCount:data.topics?.length,activityCount:data.activity?.length,
     pmCount:data.pms?.length,refCount:data.references?.length,bookmarkCount:data.bookmarks?.length,
     unsupportedFPs:data.deviceInfo.unsupported.slice(0,20),recentActivity:(data.activity||[]).slice(0,15).map(a=>a.title+' ('+a.excerpt?.slice(0,80)+')')};
-  const aiPrompt='Analyze this Homey community forum activity for the Universal Tuya Zigbee app maintainer. Summarize: 1) Key user requests, 2) Devices people need, 3) Issues to fix, 4) Action items. Max 300 words. Focus on actionable insights.';
+  const aiPrompt='Analyze this Homey community forum activity for the Tuya Unified Zigbee app maintainer. Summarize: 1) Key user requests, 2) Devices people need, 3) Issues to fix, 4) Action items. Max 300 words. Focus on actionable insights.';
   const ai=await callAI(JSON.stringify(aiInput,null,2),aiPrompt,{maxTokens:1024});
   data.aiAnalysis=ai?ai.text:null;
   if(data.aiAnalysis)console.log('  AI analysis:',data.aiAnalysis.length,'chars');

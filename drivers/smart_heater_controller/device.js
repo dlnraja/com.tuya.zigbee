@@ -1,6 +1,6 @@
 'use strict';
 
-constThermostatBase = require('../../lib/devices/HybridThermostatBase');
+constThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 
 /**
  * Smart Heater Controller - Zigbee Equivalent of WiFi Heater Modules

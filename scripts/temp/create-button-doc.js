@@ -5,7 +5,7 @@ const doc = `# Bidirectional Button System - Implementation Guide
 
 ## Overview
 
-The Universal Tuya Zigbee app implements a **bidirectional button system** that prevents double-triggering and maintains state synchronization between physical button presses and virtual app button presses.
+The Tuya Unified Zigbee app implements a **bidirectional button system** that prevents double-triggering and maintains state synchronization between physical button presses and virtual app button presses.
 
 ## Architecture
 

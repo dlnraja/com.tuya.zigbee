@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * TUYATEC Temperature & Humidity Sensor Device - v5.4.3
@@ -8,10 +8,10 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
  * For TUYATEC branded temperature/humidity sensors
  * Manufacturers: TUYATEC-*
  *
- * Uses HybridSensorBase for full ZCL + Tuya DP support
+ * Uses UnifiedSensorBase for full ZCL + Tuya DP support
  * Supports: Temperature, Humidity, Battery
  */
-class TuyatecTempHumidSensorDevice extends HybridSensorBase {
+class TuyatecTempHumidSensorDevice extends UnifiedSensorBase {
 
   /** Battery powered */
   get mainsPowered() { return false; }

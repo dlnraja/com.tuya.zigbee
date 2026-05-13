@@ -1,4 +1,4 @@
-# Universal Tuya Architectural Rules (v7.5.23)
+# Tuya Unified Architectural Rules (v7.5.31)
 
 ## R1: Universal Interpretation
 - EVERY incoming frame must pass through `IntelligentFrameAnalyzer`.
@@ -39,7 +39,7 @@
 - **Mandatory Registry Sync:** On every app promotion (draft-to-test / production / branch synchronization), it is mandatory to recursively audit, normalize, and update all markdown documentation files (`.md`), technical registries/reference databases (like `app.json`, `package.json`, fingerprint matrices, and cross-references), dotfiles (`.eslintignore`, `.homeyignore`, etc.), rules configuration files (such as `.clinerule`, `.cursorrules`, etc.), architectural maps, and cartography/index files (like `PROJECT_INDEX.md`, `FINGERPRINT-CROSSREF.md`) to maintain perfect structural alignment with active codebase updates and prevent documentation rot.
 - **CI/CD Comment Robustness:** When grep'ing for banned words, comment lines (`//` or `*`) must be ignored (using `grep -v '^[[:space:]]*//' | grep -v '^[[:space:]]*\*'`) to prevent false-positive failures during code-quality validations.
 - **Strict Syntax Guard Isolation:** The temporary draft or development scripts directory (`temp`) must be explicitly ignored by the syntax checker so only active production, lib, drivers, and standard CI/CD files are validated, keeping the repository's build green.
-- **Hybrid-Compatible Base Exports:** Base classes exported from `lib/devices/` (like `SensorBase` / `HybridSensorBase.js`) must use direct exports together with self-referential class properties (`SensorBase.SensorBase = SensorBase; module.exports = SensorBase;`) to ensure absolute compatibility with both direct destructured requires (used by driver implementations) and index-based requires.
+- **Hybrid-Compatible Base Exports:** Base classes exported from `lib/devices/` (like `SensorBase` / `UnifiedSensorBase.js`) must use direct exports together with self-referential class properties (`SensorBase.SensorBase = SensorBase; module.exports = SensorBase;`) to ensure absolute compatibility with both direct destructured requires (used by driver implementations) and index-based requires.
 
 ## R26: Universal Evolution & Continuous Enrichment Loop (Rule 26)
 - **Continuous Lifecycle Sweep:** On *every* single prompt execution or task processed, the developer agent MUST execute a comprehensive, full-scope repository sweep.

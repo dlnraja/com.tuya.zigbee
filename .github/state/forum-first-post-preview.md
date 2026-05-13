@@ -1,4 +1,4 @@
-# 🏠 Universal Tuya Zigbee v7.5.17
+# 🏠 Tuya Unified Zigbee v7.5.17
 
 > **228 drivers** · **10856+ fingerprints** · Updated 2026-05-13
 

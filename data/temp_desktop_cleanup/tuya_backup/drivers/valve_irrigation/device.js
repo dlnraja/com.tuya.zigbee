@@ -1,17 +1,17 @@
 'use strict';
-const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      IRRIGATION VALVE - v5.5.129 FIXED (extends HybridPlugBase properly)    ║
+ * ║      IRRIGATION VALVE - v5.5.129 FIXED (extends UnifiedPlugBase properly)    ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  HybridPlugBase handles: onoff listener, Tuya DP, ZCL On/Off                ║
+ * ║  UnifiedPlugBase handles: onoff listener, Tuya DP, ZCL On/Off                ║
  * ║  This class: dpMappings + startWatering action                              ║
  * ║  DPs: 1,5-7,11,13-15,101-104 | ZCL: 6,1,EF00                               ║
  * ║  Models: TS0601, _TZE200_*, Smart irrigation controller                     ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ValveIrrigationDevice extends HybridPlugBase {
+class ValveIrrigationDevice extends UnifiedPlugBase {
 
   get plugCapabilities() { return ['onoff', 'measure_battery']; }
 

@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseHybridDevice = require('../devices/BaseHybridDevice');
+const BaseUnifiedDevice = require('../devices/BaseUnifiedDevice');
 const DynamicCapabilityManager = require('./DynamicCapabilityManager');
 const DynamicFlowCardManager = require('./DynamicFlowCardManager');
 const DynamicEnergyManager = require('./DynamicEnergyManager');
@@ -25,7 +25,7 @@ const SmartFlowManager = require('./SmartFlowManager');
  *   }
  * }
  */
-class AutoAdaptiveDevice extends BaseHybridDevice {
+class AutoAdaptiveDevice extends BaseUnifiedDevice {
 
   /**
    * Initialize the auto-adaptive system
@@ -273,7 +273,7 @@ class AutoAdaptiveDevice extends BaseHybridDevice {
 
   /**
    * Handle incoming DP - route to ALL managers
-   * v5.3.62: Uses adaptive parsing from BaseHybridDevice
+   * v5.3.62: Uses adaptive parsing from BaseUnifiedDevice
    */
   async _onDPReceived(dpId, value, dpType = null) {
     // v5.3.62: Use adaptive parsing for universal data handling

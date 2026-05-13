@@ -15,6 +15,6 @@
   "fix": {
     "applied": true,
     "version": "5.5.840",
-    "description": "Added invert_presence check to motion_sensor IAS Zone handlers and HybridSensorBase Tuya DP1 handler"
+    "description": "Added invert_presence check to motion_sensor IAS Zone handlers and UnifiedSensorBase Tuya DP1 handler"
   }
 }

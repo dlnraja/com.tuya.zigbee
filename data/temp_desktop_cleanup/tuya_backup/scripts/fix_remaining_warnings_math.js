@@ -137,7 +137,7 @@ const FIXES = [
     new: "await this.setCapabilityValue('measure_water_level', parseFloat(Math.round(levelM * 100) / 100))"
   },
   {
-    file: 'lib/devices/BaseHybridDevice.js',
+    file: 'lib/devices/BaseUnifiedDevice.js',
     line: 3198,
     old: "await this.setCapabilityValue('measure_battery', 50)",
     new: "await this.setCapabilityValue('measure_battery', 50)" // Déjà numérique, OK
@@ -149,13 +149,13 @@ const FIXES = [
     new: "await this.setCapabilityValue('measure_battery', 100)" // Déjà numérique, OK
   },
   {
-    file: 'lib/devices/HybridSensorBase.js',
+    file: 'lib/devices/UnifiedSensorBase.js',
     line: 2372,
     old: "this.setCapabilityValue('measure_distance', distance)",
     new: "this.setCapabilityValue('measure_distance', parseFloat(distance))"
   },
   {
-    file: 'lib/devices/HybridThermostatBase.js',
+    file: 'lib/devices/UnifiedThermostatBase.js',
     line: 204,
     old: "this.setCapabilityValue('measure_temperature', v / 100)",
     new: "this.setCapabilityValue('measure_temperature', parseFloat(v) / 100)"

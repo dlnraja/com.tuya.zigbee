@@ -1,9 +1,9 @@
 'use strict';
-const HybridPlugBase = require('../../lib/devices/HybridPlugBase');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
-class SwitchPlug2Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridPlugBase)) {
+class SwitchPlug2Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {

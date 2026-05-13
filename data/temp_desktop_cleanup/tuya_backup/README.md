@@ -1,4 +1,4 @@
-# Universal Tuya Zigbee App for Homey
+# Tuya Unified Zigbee App for Homey
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
@@ -99,12 +99,12 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Version | Changes |
 |---------|---------|
-| **v5.11.32** | Updated Universal Tuya Zigbee app to v5.11.32 with 143 drivers and 3057 fingerprints. |
-| **v5.11.31** | Universal Tuya Zigbee app v5.11.31: Updated drivers and improved documentation. |
-| **v5.11.30** | Universal Tuya Zigbee app v5.11.30: Re-enabled read-only forum intel, fixed driver misplacement, and updated 143 driv... |
-| **v5.11.29** | Universal Tuya Zigbee app v5.11.29: Cleanup of scripts and workflows. |
+| **v5.11.32** | Updated Tuya Unified Zigbee app to v5.11.32 with 143 drivers and 3057 fingerprints. |
+| **v5.11.31** | Tuya Unified Zigbee app v5.11.31: Updated drivers and improved documentation. |
+| **v5.11.30** | Tuya Unified Zigbee app v5.11.30: Re-enabled read-only forum intel, fixed driver misplacement, and updated 143 driv... |
+| **v5.11.29** | Tuya Unified Zigbee app v5.11.29: Cleanup of scripts and workflows. |
 | **v5.11.28** | Updated to v5.11.28 with 143 drivers and 3062 fingerprints. Includes script fixes for forum post editing. |
-| **v5.11.27** | Universal Tuya Zigbee app v5.11.27: Added new AI providers and improved forum management. |
+| **v5.11.27** | Tuya Unified Zigbee app v5.11.27: Added new AI providers and improved forum management. |
 | **v5.11.26** | Fixed forum duplication issues and improved AI ensemble routing for better task classification. |
 | **v5.11.25** | v5.11.25: Fixed voltage divisor in driver #137 — readings were off by a factor of 10 on some plug variants., Dashboar... |
 | **v5.11.24** | v5.11.24: Fixed a workflow trigger race condition. Forum scanner now covers 12 topics. Better diagnostics tracking be... |
@@ -171,7 +171,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ```
 Homey Pro
-  └─ Universal Tuya Zigbee App (SDK3)
+  └─ Tuya Unified Zigbee App (SDK3)
        ├─ Hybrid Protocol Engine
        │    ├─ Tuya DP (Cluster 0xEF00) ─ DP1-DP255 data points
        │    └─ Standard ZCL ─ onOff, levelControl, colorControl, etc.
@@ -252,7 +252,7 @@ homey app run
 
 | | |
 |---|---|
-| **App Store** | [Universal Tuya Zigbee](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
+| **App Store** | [Tuya Unified Zigbee](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
 | **Test Version** | [Install Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
 | **Forum** | [Community Thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) |
 | **Device Finder** | [Smart Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) |
@@ -311,7 +311,7 @@ Install from: [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) 
 4. Open an [issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=01_device_request.yml) with: **manufacturerName**, **modelId**, and **interview data**
 
 ### Report a Bug
-1. Go to **Settings > Apps > Universal Tuya Zigbee > Send Diagnostics**
+1. Go to **Settings > Apps > Tuya Unified Zigbee > Send Diagnostics**
 2. Open a [bug report](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=02_bug_report.yml) with: device model, error messages, and diagnostics code
 
 ---

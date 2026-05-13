@@ -1,7 +1,7 @@
 /**
  * COMPREHENSIVE FORUM + GITHUB SYNC SCRIPT
  * Sources analyzed:
- * - Homey Forum: Universal Tuya Zigbee (pages 1-50)
+ * - Homey Forum: Tuya Unified Zigbee (pages 1-50)
  * - Homey Forum: Johan Bendz Tuya Zigbee App
  * - Homey Forum: Device Request Archive (pages 1-40)
  * - GitHub Issues: #50-#1331 (closed + open)

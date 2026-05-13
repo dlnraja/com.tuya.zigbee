@@ -44,7 +44,7 @@ const TUYA_DP_TYPE = {
   BITMAP: 0x05,
 };
 
-class TuyaHybridDevice extends ZigBeeDevice {
+class TuyaUnifiedDevice extends ZigBeeDevice {
 
   /**
    * Override in subclass: DP mappings for Tuya
@@ -1883,6 +1883,6 @@ class TuyaHybridDevice extends ZigBeeDevice {
 }
 
 // Export with DP types and constants
-TuyaHybridDevice.TUYA_DP_TYPE = TUYA_DP_TYPE;
+TuyaUnifiedDevice.TUYA_DP_TYPE = TUYA_DP_TYPE;
 
-module.exports = TuyaHybridDevice;
+module.exports = TuyaUnifiedDevice;

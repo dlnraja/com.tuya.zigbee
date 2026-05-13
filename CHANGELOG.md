@@ -1,10 +1,25 @@
 # Changelog
 
-All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
+All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.27] - 2026-05-13
+## [7.5.28] - 2026-05-13
+
+### New Features
+- Added 3,208 new device fingerprints, expanding support for more Tuya Zigbee devices.
+- Improved driver matching for soil sensors (including _TZE284_0ints6wl).
+
+### Bug Fixes
+- Fixed device initialization issues in HybridDriverSystem.
+- Resolved various stability improvements for sensor devices.
+
+### Improvements
+- Updated app metadata and documentation.
+- Enhanced project status tracking.
+---
+
+ [7.5.27] - 2026-05-13
 
 ### New Features
 - **IR Blaster Pairing Wizard**: New guided setup for IR devices with improved code library and repair flow.
@@ -180,7 +195,7 @@ No new drivers, fingerprints, or bug fixes in this release.
 
 ### Bug Fixes
 - Fixed sensor fallback check for unknown model IDs to prevent incorrect capability assignments
-- Cleaned up HybridSensorBase exports to remove unused draft scripts
+- Cleaned up UnifiedSensorBase exports to remove unused draft scripts
 
 ### Improvements
 - Updated documentation, project rules, and configuration files for better developer experience
@@ -194,7 +209,7 @@ No new drivers, fingerprints, or bug fixes in this release.
 
 ### Bug Fixes
 - Fixed ReferenceError crashes across all Hybrid Base classes (Sensor, Cover, Light, Plug, Switch, Thermostat) during dynamic capability updates. This resolves rare crashes when capabilities are added or removed at runtime.
-- Fixed `_safeSetCapability` ReferenceError in HybridSensorBase.
+- Fixed `_safeSetCapability` ReferenceError in UnifiedSensorBase.
 
 ### Improvements
 - Updated to 221 drivers and 6636 fingerprints.
@@ -204,7 +219,7 @@ No new drivers, fingerprints, or bug fixes in this release.
  [7.5.10] - 2026-05-10
 
 ### Bug Fixes
-- Fixed a ReferenceError in HybridSensorBase when calling _safeSetCapability, which could cause sensor devices to crash on startup or during capability updates.
+- Fixed a ReferenceError in UnifiedSensorBase when calling _safeSetCapability, which could cause sensor devices to crash on startup or during capability updates.
 
 ### New Devices
 - Added support for Nedis SmartLife Radiator Control (fingerprint: _TZE284_ne4pikwm).
@@ -216,7 +231,7 @@ No new drivers, fingerprints, or bug fixes in this release.
  [7.5.9] - 2026-05-10
 
 ### Bug Fixes
-- Fix ProtocolArbitrator reference error in BaseHybridDevice initialization (crash on startup)
+- Fix ProtocolArbitrator reference error in BaseUnifiedDevice initialization (crash on startup)
 - Reclassify _TZE608 openers from contact_sensor to garage_door_opener (#305)
 - Resolve fleet-wide extends syntax crash across 59 driver files
 - Remove duplicate driver.flow.compose.json in hybrid drivers (SDK3 validation fix)
@@ -262,7 +277,7 @@ No new drivers, fingerprints, or bug fixes in this release.
 
 ## v5.11.209 (2026-04-29)
 
-Universal Tuya Zigbee app v5.11.208: Fixed app ID.
+Tuya Unified Zigbee app v5.11.208: Fixed app ID.
 
 ---
 
@@ -274,25 +289,25 @@ Universal Tuya Zigbee app v5.11.208: Fixed app ID.
 
  v5.11.208 (2026-04-29)
 
-Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers.
+Tuya Unified Zigbee app v5.11.205: Fixed app ID and updated drivers.
 
 ---
 
 ## v5.11.207 (2026-04-29)
 
-Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers.
+Tuya Unified Zigbee app v5.11.205: Fixed app ID and updated drivers.
 
 ---
 
 ## v5.11.206 (2026-04-29)
 
-Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers.
+Tuya Unified Zigbee app v5.11.205: Fixed app ID and updated drivers.
 
 ---
 
 ## v5.11.205 (2026-04-29)
 
-Universal Tuya Zigbee app v5.11.205 adds new device support and fixes bugs affecting users.
+Tuya Unified Zigbee app v5.11.205 adds new device support and fixes bugs affecting users.
 
 ---
 
@@ -2054,10 +2069,10 @@ Universal Tuya Zigbee app v5.11.205 adds new device support and fixes bugs affec
 
 ## [5.5.791] - 2026-01-25
 
-- **HybridSensorBase Presence Inversion**: Centralized inversion logic for all IAS Zone and ZCL occupancy sensors
+- **UnifiedSensorBase Presence Inversion**: Centralized inversion logic for all IAS Zone and ZCL occupancy sensors
   - `_handleIASZoneStatus()` now checks `invert_presence` / `invert_contact` settings
   - ZCL occupancy cluster setup respects `invert_presence` setting
-  - Benefits all sensors extending HybridSensorBase
+  - Benefits all sensors extending UnifiedSensorBase
 
 - **New Driver Settings**: Added `invert_presence` checkbox to:
   - `motion_sensor` driver
@@ -2224,7 +2239,7 @@ Universal Tuya Zigbee app v5.11.205 adds new device support and fixes bugs affec
   - Reports Anti-Generic Score percentage
 
   - PermissiveMatchingEngine: `areClustersRequired()` returns false - never blocks on clusters
-  - TuyaTimeSyncManager: Hybrid mode - responds to device requests, never blocks pring
+  - TuyaTimeSyncManager: Unified mode - responds to device requests, never blocks pring
   - All 105 drivers pass anti-generic audit (100% score)
   - No blocking throws in any driver's onNodeInit
 
@@ -2275,7 +2290,7 @@ Universal Tuya Zigbee app v5.11.205 adds new device support and fixes bugs affec
   - Flow triggers now have Button 1-4 dropdown selector (Eftychis issue)
   - Matches scene_switch_4 flow card behavior
 
-- **HybridSensorBase IAS Zone**: Enhanced enrollment diagnostics
+- **UnifiedSensorBase IAS Zone**: Enhanced enrollment diagnostics
   - Shows user warning if enrollment may need re-pring
   - Better error messages for troubleshooting
 
@@ -2313,7 +2328,7 @@ Universal Tuya Zigbee app v5.11.205 adds new device support and fixes bugs affec
   - Battery reports on wake (press button or wt 4h heartbeat)
 
 **Contact Sensor (Lasse_K)**: Needs diagnostic report
-  - IAS Zone listeners verified in HybridSensorBase
+  - IAS Zone listeners verified in UnifiedSensorBase
   - May need invert_contact setting adjustment
   - Or debounce timeout blocking legitimate changes
 
@@ -2920,7 +2935,7 @@ Old: fan_is_on → New: fan_controller_is_on
 ## [5.5.735] - 2026-01-22
 
 **Critical Fix - DeviceDataHelper Integration:**
-- **Root Cause Identified**: `HybridSwitchBase` and `HybridSensorBase` were using inconsistent methods to retrieve manufacturer/model data
+- **Root Cause Identified**: `UnifiedSwitchBase` and `UnifiedSensorBase` were using inconsistent methods to retrieve manufacturer/model data
 - Devices showed "unknown / unknown" because `getData().manufacturerName` doesn't match Homey's actual property names
 - Integrated `DeviceDataHelper` which tries ALL possible data sources in order of reliability:
   - `data.manufacturerName`, `data.manufacturer`, `data.zb_manufacturer_name`
@@ -2928,8 +2943,8 @@ Old: fan_is_on → New: fan_controller_is_on
   - `zclNode.manufacturerName`
 
 **Files Fixed:**
-- `lib/devices/HybridSwitchBase.js`: `_applyManufacturerConfig()` and `_detectProtocol()` now use DeviceDataHelper
-- `lib/devices/HybridSensorBase.js`: `_detectProtocol()` now uses DeviceDataHelper
+- `lib/devices/UnifiedSwitchBase.js`: `_applyManufacturerConfig()` and `_detectProtocol()` now use DeviceDataHelper
+- `lib/devices/UnifiedSensorBase.js`: `_detectProtocol()` now uses DeviceDataHelper
 - `drivers/water_leak_sensor/device.js`: `_getDeviceProfile()` now uses DeviceDataHelper
 
 **Impact:**
@@ -3917,12 +3932,12 @@ Propagated innovations to ALL base classes:
 
 #### Dynamic Capability Addition
 When DP/ZCL data is received for a capability the device doesn't have, it's now automatically added!
-- **HybridSensorBase** - temp, humidity, battery, luminance, pressure, CO2, PM2.5, VOC, alarms
-- **HybridPlugBase** - power, voltage, current, energy
-- **HybridCoverBase** - position, tilt, state
-- **HybridLightBase** - dim, color temp, hue, saturation
-- **HybridThermostatBase** - target temp, mode, humidity
-- **HybridSwitchBase** - onoff per gang, power monitoring
+- **UnifiedSensorBase** - temp, humidity, battery, luminance, pressure, CO2, PM2.5, VOC, alarms
+- **UnifiedPlugBase** - power, voltage, current, energy
+- **UnifiedCoverBase** - position, tilt, state
+- **UnifiedLightBase** - dim, color temp, hue, saturation
+- **UnifiedThermostatBase** - target temp, mode, humidity
+- **UnifiedSwitchBase** - onoff per gang, power monitoring
 
 #### Smart Battery (improved)
 - Clear logging: `Battery UPDATED: 85% → 82%` or `KEEPING: 85%`
@@ -3965,7 +3980,7 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 - **FIX:** `button_emergency_sos` - Using FlowCardHelper
 
 #### Battery Reading (Already in v5.5.111)
-- All sensors auto-read battery on wake via `HybridSensorBase.updateRadioActivity()`
+- All sensors auto-read battery on wake via `UnifiedSensorBase.updateRadioActivity()`
 - All buttons auto-read battery after press via `ButtonDevice.triggerButtonPress()`
 
 ---
@@ -4004,7 +4019,7 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 - **NEW:** `sos_button_pressed` - Generic SOS button trigger
 
 #### Universal Battery Fix (ALL Sensors)
-- **FIX:** Automatic battery read when ANY sensor wakes up (HybridSensorBase)
+- **FIX:** Automatic battery read when ANY sensor wakes up (UnifiedSensorBase)
 - **FIX:** Battery reading in `updateRadioActivity()` with 5-min debounce
 - **FIX:** Timeout protection (3s) for sleepy devices
 
@@ -4060,11 +4075,11 @@ When DP/ZCL data is received for a capability the device doesn't have, it's now 
 - **Sharif** - MOES Roller Blind tilt/dim support added
 
 #### Universal Sanity Checks (ALL drivers benefit)
-- **HybridSensorBase** - Temperature (-40°C to 80°C), Humidity (0-100%), Luminance (0-100000 lux), Pressure (300-1100 hPa), CO2 (0-10000 ppm)
-- **HybridPlugBase** - Power (0-50000W), Voltage (50-300V), Current (0-100A), Energy (0-1000000 kWh)
-- **HybridLightBase** - Dim (0-1), Color temperature (0-1)
-- **HybridCoverBase** - Position (0-1), Tilt (0-1)
-- **HybridThermostatBase** - Target temperature (-40°C to 80°C), Humidity (0-100%)
+- **UnifiedSensorBase** - Temperature (-40°C to 80°C), Humidity (0-100%), Luminance (0-100000 lux), Pressure (300-1100 hPa), CO2 (0-10000 ppm)
+- **UnifiedPlugBase** - Power (0-50000W), Voltage (50-300V), Current (0-100A), Energy (0-1000000 kWh)
+- **UnifiedLightBase** - Dim (0-1), Color temperature (0-1)
+- **UnifiedCoverBase** - Position (0-1), Tilt (0-1)
+- **UnifiedThermostatBase** - Target temperature (-40°C to 80°C), Humidity (0-100%)
 
 #### 3-Phase Time Sync
 - **Phase 1** - Immediate sync at init
@@ -4156,12 +4171,12 @@ LiFePO4: 3.60V=100% → 3.30V=70% (plateau!) → 2.50V=0%
 
 #### New Architecture
 ```
-TuyaHybridDevice
+TuyaUnifiedDevice
 ├── get dpMappings()       → Tuya DP reception
 ├── get batteryConfig()    → Battery settings
 ├── get clusterHandlers()  → ZCL standard handlers
 ├── sendTuyaDP()          → Send commands to device
-└── Hybrid mode (auto 15 min)
+└── Unified mode (auto 15 min)
 ```
 
 #### Features
@@ -4624,7 +4639,7 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
 
 #### Developer Tools
 
-##### BaseHybridDevice Methods
+##### BaseUnifiedDevice Methods
 - `runDiagnostics()` - Full device analysis
 - `getKPIs()` - Device monitoring data
 
@@ -4713,7 +4728,7 @@ All open device requests from JohanBendz/com.tuya.zigbee repository have been pr
   - Zigbee files → `lib/zigbee/`
   - Helper files → `lib/helpers/`
 - Removed backup files (*.backup-*)
-- Updated all imports in BaseHybridDevice.js
+- Updated all imports in BaseUnifiedDevice.js
 - Added TEST_MATRIX.md for tracking issues/devices
 
 ---
@@ -5187,7 +5202,7 @@ Error: Tuya cluster not avlable
 
 #### Architecture Improvements:
 
-**BaseHybridDevice Integration:**
+**BaseUnifiedDevice Integration:**
 - Enhanced initialization sequence
 - Intelligent manager orchestration
 - Multi-endpoint support refined
@@ -5602,14 +5617,14 @@ After app update and device re-pring:
 **Why Previous Fixes Didn't Work:**
 - v4.9.332 fixed IAS Zone cluster for SOS button ✅
 - v4.9.332 fixed USB outlet driver recommendation ✅
-- BaseHybridDevice was working (battery reported) ✅
+- BaseUnifiedDevice was working (battery reported) ✅
 - BUT custom device.js logic was BLOCKED by empty driver.js files ❌
 - Result: Only base functionality worked, custom features (Tuya DP, climate) didn't run
 
 **Execution Flow After v4.9.333:**
 1. Device initialization → Homey looks for driver.js
 2. driver.js NOT found → Falls back to device.js ✅
-3. device.js extends BaseHybridDevice ✅
+3. device.js extends BaseUnifiedDevice ✅
 4. Custom onNodeInit() executes ✅
 5. Tuya DP detection activates ✅
 6. Climate/soil/radar monitoring starts ✅
@@ -5673,7 +5688,7 @@ After app restart, check diagnostic logs for:
 **Pourquoi v4.9.331 n'a PAS résolu le problème:**
 
 **Flow d'execution correct après v4.9.332:**
-1. Device pr → BaseHybridDevice.onNodeInit()
+1. Device pr → BaseUnifiedDevice.onNodeInit()
 2. Détection: `this.zclNode.endpoints[1].clusters.iasZone` existe (cluster 1280) ✅
 3. Log: `[CRITICAL] 🔒 IAS Zone detected - enrolling...` ✅
 4. Enrollment: `this.iasZoneManager.enrollIASZone()` s'exécute ✅
@@ -5715,7 +5730,7 @@ After app restart, check diagnostic logs for:
 
 1. ✅ **MODULE_NOT_FOUND: TS0601_EMERGENCY_FIX** - CRASH APP
    - **Impact**: Crash au démarrage pour `climate_sensor_soil`, `presence_sensor_radar`, `switch_basic_1gang`
-   - **Fix**: Déplacé vers `lib/TS0601_EMERGENCY_FIX.js` + import corrigé dans `BaseHybridDevice.js`
+   - **Fix**: Déplacé vers `lib/TS0601_EMERGENCY_FIX.js` + import corrigé dans `BaseUnifiedDevice.js`
    - **Résultat**: App ne crash plus, TS0601 emergency fix réactivé
 
 2. ✅ **BATTERIES NE REMONTENT PLUS** - SOS Button + Autres
@@ -5739,7 +5754,7 @@ After app restart, check diagnostic logs for:
 
 #### Fichiers Modifiés:
 - `lib/TS0601_EMERGENCY_FIX.js` - Déplacé et réactivé
-- `lib/devices/BaseHybridDevice.js` - Import corrigé ligne 14
+- `lib/devices/BaseUnifiedDevice.js` - Import corrigé ligne 14
 - `lib/IASZoneManager.js` - Enrollment synchrone + proactif
 - `app.json` - Version 4.9.331
 - `.homeychangelog.json` - Changelog FR/EN ajouté
@@ -6314,7 +6329,7 @@ dps.forEach(dp => {
 
 **Integration Status:**
 - ✅ Utilities created and documented
-- ⏱️ Integration into BaseHybridDevice (v4.9.327)
+- ⏱️ Integration into BaseUnifiedDevice (v4.9.327)
 - ⏱️ Integration into SmartDriverAdaptation (v4.9.327)
 - ⏱️ Integration into TuyaEF00Manager (v4.9.327)
 - ⏱️ Multi-gang driver templates (v4.9.327-328)

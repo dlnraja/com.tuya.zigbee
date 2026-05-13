@@ -12,7 +12,7 @@ for (const file of files) {
 
   // Replace dismissive language
   content = content.replace(/already supported/gi, "mapped in our database");
-  content = content.replace(/Already in the Universal Tuya Zigbee app/gi, "Mapped in the Universal Tuya Zigbee app");
+  content = content.replace(/Already in the Tuya Unified Zigbee app/gi, "Mapped in the Tuya Unified Zigbee app");
   content = content.replace(/Already in/gi, "Mapped in");
 
   fs.writeFileSync(file, content);

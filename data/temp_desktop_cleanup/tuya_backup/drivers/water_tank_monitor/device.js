@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * Liquid Level Sensor - TLC2206-ZB / ME201WZ Zigbee
@@ -27,7 +27,7 @@ const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
 
 const LIQUID_STATE = { 0: 'normal', 1: 'low', 2: 'high' };
 
-class WaterTankMonitorDevice extends HybridSensorBase {
+class WaterTankMonitorDevice extends UnifiedSensorBase {
 
   async onNodeInit({ zclNode }) {
     this.log('[LIQUID] Initializing liquid level sensor...');

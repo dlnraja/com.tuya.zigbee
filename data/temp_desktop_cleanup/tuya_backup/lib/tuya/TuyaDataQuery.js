@@ -13,7 +13,7 @@
  *
  * Usage:
  *   const { TuyaDataQueryMixin } = require('../../lib/tuya/TuyaDataQuery');
- *   class MyDevice extends TuyaDataQueryMixin(HybridSensorBase) { ... }
+ *   class MyDevice extends TuyaDataQueryMixin(UnifiedSensorBase) { ... }
  *
  * Or standalone:
  *   const { tuyaDataQuery } = require('../../lib/tuya/TuyaDataQuery');
@@ -268,7 +268,7 @@ function updateRadioActivity(device) {
  * Mixin that adds TuyaDataQuery methods to a device class
  *
  * Usage:
- *   class MyDevice extends TuyaDataQueryMixin(HybridSensorBase) {
+ *   class MyDevice extends TuyaDataQueryMixin(UnifiedSensorBase) {
  *     async refreshAll() {
  *       await this.tuyaDataQuery([1, 2, 3]);
  *     }

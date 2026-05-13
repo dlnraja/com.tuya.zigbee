@@ -1,64 +1,74 @@
-# Zigbee & Tuya Protocol Rules
+# ZIGBEE_TUYA_RULES.md — Tuya Zigbee Protocol Reference
+## Version: 7.5.31 | AI-Boosted Smart Edition
 
-> **Version**: 7.5.23 | **Last Updated**: May 2026
-> This file is referenced by `.clinerules` as a canonical reference for Zigbee/Tuya protocol rules.
-
----
-
-## 1. Fingerprint Matching
-
-- **Fingerprint = manufacturerName + productId** (combined). Both must match.
-- Same `manufacturerName` in multiple drivers is NORMAL (different productIds).
-- **TRUE collision** = same mfr + same productId in incompatible drivers.
-- **No wildcards** in SDK3 (e.g., `_TZE284_*` is INVALID).
-- Case-insensitive comparisons ONLY via `lib/CaseInsensitiveMatcher.js`.
-- Settings keys: `zb_model_id` (NOT `zb_modelId`), `zb_manufacturer_name` (NOT `zb_manufacturerName`).
-
-## 2. Tuya DP Protocol (Cluster 0xEF00)
-
-- Cluster: `0xEF00` (61184 decimal)
-- DP Types: 0=Raw, 1=Bool, 2=Value, 3=String, 4=Enum, 5=Bitmap
-- DP1-8: gang states | DP14: power-on | DP15: backlight | DP101: child_lock
-- DP values may need division: temp/10, hum/10, battery/2
-- Multi-DP frames: single report contains multiple DPs, parse ALL of them
-
-## 3. Standard ZCL Protocol
-
-- productId = TS0001-TS0504, TS011F, TS0121, etc.
-- Uses standard clusters: onOff(6), levelControl(8), colorControl(768)
-- `configureAttributeReporting()` for periodic updates (not just listeners)
-
-## 4. Hybrid Protocol (ZCL + Tuya extensions)
-
-- productId = TS0001-TS0044, TS011F
-- Standard ZCL clusters PLUS Tuya-specific attributes
-- May have cluster 0xE000 (57344) for button press types
-- May have cluster 0xE001 (57345) for Tuya-specific settings
-
-## 5. Battery & Energy Classification
-
-- Battery: `measure_battery` OR `alarm_battery` — **NEVER both**
-- Mains: `get mainsPowered() { return true; }` + remove battery caps
-- Kinetic: TS004x without batteries — no battery caps
-- Hybrid: runtime detection via `UnifiedBatteryHandler`
-
-## 6. Physical Button Detection
-
-- 2000ms timeout for `_appCommandPending` window (PR #120 pattern)
-- `isPhysical = reportingEvent && !this._appCommandPending`
-- Deduplication: skip if same capability+value within 500ms
-
-## 7. Flow Card Rules
-
-- ID pattern: `{driver}_physical_gang{N}_{on|off}`
-- NO `titleFormatted` with `[[device]]` — causes manual selection bug
-- Virtual buttons MUST use `this._safeSetCapability()`
-
-## 8. Backlight Values
-
-- Strings only: `"off"`, `"normal"`, `"inverted"` — NOT numbers
-- Enforced by Layer 11 of the Quality Gateway
+This document is the official technical reference for implementing Tuya Zigbee devices in the Tuya Unified Engine. It covers Data Points (DP), Manufacturer-specific Clusters, and the Anti-Generic Matching Strategy.
 
 ---
 
-*See also: [CRITICAL_MISTAKES.md](./CRITICAL_MISTAKES.md) | [BYPASS_ELITE_LAYERS.md](./BYPASS_ELITE_LAYERS.md)*
+## 1. THE TUYA DP PROTOCOL (0xEF00)
+
+Most Tuya Zigbee devices (especially sensors and climate controllers) use the manufacturer-specific cluster `0xEF00` to communicate via Data Points (DP).
+
+### Frame Structure
+A Tuya DP frame consists of:
+- `status` (1 byte)
+- `transId` (1 byte)
+- `dp` (1 byte) - The Data Point ID
+- `type` (1 byte) - Data type (Raw, Bool, Value, String, Enum, Bitmap)
+- `length` (2 bytes)
+- `data` (N bytes)
+
+### DP Types Table
+| Type | ID | Description | Example |
+|------|----|-------------|---------|
+| Raw | 0x00 | Binary data | IR codes, fingerprints |
+| Bool | 0x01 | 1-byte (0 or 1) | On/Off, Alarm state |
+| Value | 0x02 | 4-byte big-endian | Temp, Humidity, Power |
+| String | 0x03 | UTF-8 String | Error codes, Names |
+| Enum | 0x04 | 1-byte discrete | Mode (Auto/Manual) |
+| Bitmap | 0x05 | Bit flags | Status flags |
+
+### The Double-Division Bug
+**CRITICAL**: If you use a `divisor` in `dpMappings`, ensure the `TuyaEF00Manager` doesn't apply its own auto-conversion. In v7.5.15+, the manager skips auto-convert if a manual divisor is present.
+
+---
+
+## 2. MANUFACTURER CLUSTERS
+
+Beyond `0xEF00`, Tuya uses other custom clusters:
+- `0xE000` / `0xE001`: Used by BSEED and some touch switches for custom backlight/state control.
+- `0x0000` (Basic): Tuya often hides model/manufacturer info here. Use `DeviceFingerprintDB.js` to match them.
+
+---
+
+## 3. ANTI-GENERIC MATCHING STRATEGY
+
+To prevent devices from pairing as "Zigbee Generic Device", follow these rules:
+
+1. **Permissive Matching**: Drivers should match by `manufacturerName` OR `productId` whenever safe.
+2. **Fallback Chain**: 
+   - Specific Driver (e.g., `switch_1gang`)
+   - Family Driver (e.g., `TS0601_sensor`)
+   - `universal_fallback` (The safety net)
+3. **No Halting**: Never block `onNodeInit` if a cluster is missing. Use `safeRegisterCapability` to handle partial failures gracefully.
+
+---
+
+## 4. FLOW CARD BEST PRACTICES (SDK3)
+
+1. **Device Scoped**: Always use `this.homey.flow.getDeviceTriggerCard()` instead of the deprecated `getTriggerCard()`.
+2. **Naming Convention**: 
+   - Trigger: `{driverId}_{capability}_changed`
+   - Action: `{driverId}_set_{capability}`
+3. **Try-Catch Wrapper**: Register cards inside a try-catch to prevent a single missing card from crashing the entire driver.
+
+---
+
+## 5. BATTERY & ENERGY RULES
+
+1. **Conflict Prevention**: Never allow `measure_battery` and `alarm_battery` to be active simultaneously.
+2. **Mains Detection**: If a device is mains-powered, use `SDK3BestPractices.ensureBatteryBestPractices()` to strip battery capabilities at runtime.
+
+---
+
+*Generated by Antigravity AI — 13 May 2026*

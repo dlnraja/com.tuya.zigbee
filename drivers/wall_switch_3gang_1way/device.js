@@ -1,9 +1,9 @@
 'use strict';
-constSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
-class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
+class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
   get gangCount() { return 1; }
 
   get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }
@@ -43,12 +43,12 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
       if (this._zclState.lastState !== value) {
         this._zclState.lastState = value;
         const mode = this.sceneMode;
-        if (mode !== 'magic') this.setCapabilityValue('onoff', value).catch(() => {});
+        if (mode !== 'magic') await this.setCapabilityValue('onoff', value).catch(() => {});
         if (isPhys && (mode === 'auto' || mode === 'both')) {
           const fid = 'wall_switch_3gang_1way_turned_' + (value ? 'on' : 'off');
-          (() => { try { return this.homey.flow.getDeviceTriggerCard(fid); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+          (() => { try { return this.homey.flow.getDeviceTriggerCard(fid); } catch(e) { return null; } })()?
           const pgid = `wall_switch_3gang_1way_physical_gang${gn}_` + (value ? 'on' : 'off');
-          (() => { try { return this.homey.flow.getDeviceTriggerCard(pgid); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+          (() => { try { return this.homey.flow.getDeviceTriggerCard(pgid); } catch(e) { return null; } })()?
         }
         if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
           (() => { try { return this.homey.flow.getDeviceTriggerCard(`wall_switch_3gang_1way_gang${gn}_scene`); } catch(e) { return null; } })()?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
@@ -117,7 +117,7 @@ class WallSwitch3Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
       const isPhys = !this._appCommandPending?.gang1;
       if (isPhys && (mode === 'auto' || mode === 'both')) {
         const pgid = 'wall_switch_3gang_1way_physical_gang1_' + (value ? 'on' : 'off');
-        (() => { try { return this.homey.flow.getDeviceTriggerCard(pgid); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+        (() => { try { return this.homey.flow.getDeviceTriggerCard(pgid); } catch(e) { return null; } })()?
       }
       if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
         (() => { try { return this.homey.flow.getDeviceTriggerCard('wall_switch_3gang_1way_gang1_scene'); } catch(e) { return null; } })()?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});

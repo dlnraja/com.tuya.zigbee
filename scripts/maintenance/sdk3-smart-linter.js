@@ -321,7 +321,7 @@ async function aiEnrichDriver(filePath, code, staticResults, memory) {
   const fps = compose?.zigbee?.manufacturerName || [];
 
   // Build context-aware Ultimate Prompt
-  let prompt = `You are an Expert Software Architect for Homey Pro SDK v3 and Universal Tuya Zigbee.
+  let prompt = `You are an Expert Software Architect for Homey Pro SDK v3 and Tuya Unified Zigbee.
 You operate inside a CI/CD GitHub Actions pipeline. Your mission is to ENRICH and FIX driver source code.
 You generate Node.js code that will run on Homey Pro boxes — you DO NOT run on the box yourself.
 

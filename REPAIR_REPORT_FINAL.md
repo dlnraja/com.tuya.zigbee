@@ -1,4 +1,4 @@
-# RAPPORT DE RÉPARATION FINAL — Universal Tuya Zigbee
+# RAPPORT DE RÉPARATION FINAL — Tuya Unified Zigbee
 **Date :** 2026-05-09 | **Projet :** com.dlnraja.tuya.zigbee
 
 ---

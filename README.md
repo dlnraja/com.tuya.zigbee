@@ -1,4 +1,4 @@
-# Universal Tuya Zigbee App for Homey
+# Tuya Unified Zigbee App for Homey
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
@@ -8,12 +8,15 @@
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Antigravity Skills](https://img.shields.io/badge/AI--Powered-Antigravity%20Skills-black?logo=google-gemini&logoColor=white)](https://github.com/sickn33/antigravity-awesome-skills)
 
 A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **228 drivers** and **10,950+ device fingerprints**.
 
+**Powered by Antigravity Agentic Skills** — This repository is maintained with the help of a specialized fleet of AI-driven tools that ensure code quality, security, and architectural integrity.
+
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
-- **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
+- **Unified mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** — voltage-based fallback when devices don't report percentage
 - **2,540+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** — built on the latest Homey platform
@@ -30,31 +33,11 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
-## 🚀 Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### ✨ Recent Changes (May 2026)
-
-| Version | Feature |
-|---------|---------|
-| **v7.5.27** | v7.5.26: Fixed SDK3 deprecation warnings across all 45 drivers by migrating f... |
-| **v7.5.26** | Fixed SDK3 deprecation warnings across all 45 drivers by migrating from depre... |
-| **v7.5.25** | v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2,... |
-| **v7.5.24** | v7.5.24: . Fix: gate opener DP3 contact sensor (issue #305). Migrated depreca... |
-| **v7.5.23** | Maintenance release v7.5.23 — . Internal data cleanup and archive of obsolete... |
-| **v7.5.22** | Version 7.5.22 — App metadata and store listing update. No new drivers or fin... |
-| **v7.5.21** | v7.5.20: Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving c... |
-| **v7.5.20** | v7.5.20: . Fixed WiFi socket port reuse, cleanly separated WiFi/Zigbee protoc... |
-| **v7.5.19** | Added Android native Intent magic URL pairing for all 20 WiFi drivers. Update... |
-| **v7.5.18** | Easy Login with saved credentials, auto device classification with brand badg... |
-<!-- CHANGELOG_END -->
-
-
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.28 |
+| **App Version** | v7.5.29 |
 | **Device Fingerprints** | 10,950+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 228 (178 Zigbee + 50 WiFi) |
@@ -121,7 +104,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.28** | v7.5.27: IR Blaster Pairing Wizard, Power Clamp Meter, Fixed IR button remote manager to prevent duplicate commands.,... |
+| **v7.5.29** | v7.5.28: Added 3,208 new device fingerprints, expanding support for more Tuya Zigbee devices., Improved driver matchi... |
+| **v7.5.28** | Added 3,208 new fingerprints, improved driver matching for soil sensors, and fixed various device initialization issues. |
 | **v7.5.27** | v7.5.27: . New IR pairing wizard, improved power clamp meter, and various bug fixes. |
 | **v7.5.26** | Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated getTriggerCard to getDeviceTrigger... |
 | **v7.5.25** | v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor. Added PJ-1203... |
@@ -135,7 +119,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v7.5.17** | v7.5.17 — 3,207 new fingerprints, backlight mode alignment fix, and fingerprint case normalization for more reliable ... |
 | **v7.5.16** | v7.5.16 — . Maintenance release with updated device expectations, diagnostics, and internal state. |
 | **v7.5.15** | v7.5.15: Fixed siren sensor driver crashes, added 3,202 new fingerprints, and improved device detection reliability. |
-| **v7.5.14** | v7.5.14: . Bug fixes for wireless buttons, climate sensors, radiator valves, and energy meters. Improved device initi... |
 
 <!-- CHANGELOG_END -->
 
@@ -193,7 +176,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ```
 Homey Pro
-  └─ Universal Tuya Zigbee App (SDK3)
+  └─ Tuya Unified Zigbee App (SDK3)
        ├─ Hybrid Protocol Engine
        │    ├─ Tuya DP (Cluster 0xEF00) ─ DP1-DP255 data points
        │    └─ Standard ZCL ─ onOff, levelControl, colorControl, etc.
@@ -202,6 +185,16 @@ Homey Pro
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
        └─ 228 Drivers ─ 10,950+ fingerprints
+
+### Advanced Agentic Quality Assurance
+We use the **Antigravity Skills** fleet to enforce a **14-Layer Quality Gateway**:
+- **`@logic-lens`**: Deep reasoning review for SDK3 race conditions and unawaited promises.
+- **`@codebase-audit-pre-push`**: Systematic line-by-line cleanup of dead code, junk, and secrets.
+- **`@technical-change-tracker`**: Structured session handoffs for consistent AI agent performance.
+- **`@squirrel`**: Full-cycle development pipeline for zero-defect driver creation.
+- **`@security-auditor`**: Automated PII masking and secret detection in all diagnostic dumps.
+
+> **🦾 View the complete agentic tool catalog in [.ai/SKILL_REGISTRY.md](file:///.ai/SKILL_REGISTRY.md)**
 ```
 
 ---
@@ -272,7 +265,7 @@ homey app run
 
 | | |
 |---|---|
-| **App Store** | [Universal Tuya Zigbee](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
+| **App Store** | [Tuya Unified Zigbee](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
 | **Test Version** | [Install Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
 | **Forum** | [Community Thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) |
 | **Device Finder** | [Smart Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) |
@@ -331,7 +324,7 @@ Install from: [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) 
 4. Open an [issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=01_device_request.yml) with: **manufacturerName**, **modelId**, and **interview data**
 
 ### Report a Bug
-1. Go to **Settings > Apps > Universal Tuya Zigbee > Send Diagnostics**
+1. Go to **Settings > Apps > Tuya Unified Zigbee > Send Diagnostics**
 2. Open a [bug report](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=02_bug_report.yml) with: device model, error messages, and diagnostics code
 
 ---

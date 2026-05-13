@@ -39,7 +39,7 @@
 ## Standard Response Template
 
 ```
-✅ Already integrated in Universal Tuya Zigbee v5.5.929!
+✅ Already integrated in Tuya Unified Zigbee v5.5.929!
 
 Your device fingerprint is supported. Install from:
 https://homey.app/a/com.dlnraja.tuya.zigbee/

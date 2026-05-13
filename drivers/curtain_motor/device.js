@@ -4,7 +4,7 @@
 // Use try-catch to handle potential circular dependency issues
 letCoverBase;
 try {
- CoverBase = require('../../lib/devices/HybridCoverBase');
+ CoverBase = require('../../lib/devices/UnifiedCoverBase');
 } catch (error) {
   // Fallback to direct ZigBeeDevice ifCoverBase fails
   console.error('[CURTAIN_MOTOR] Failed to loadCoverBase, using ZigBeeDevice fallback:', error.message);
@@ -25,7 +25,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ║  Variants: GIRIER, Lonsonho, Zemismart, MOES, Longsam                      ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCoverBase)) {
+class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedCoverBase)) {
 
   // v5.5.322: Auto-detect power source - battery curtain robots use 3xAA
   get mainsPowered() {
@@ -203,14 +203,14 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
     // Luminance (lux) - DP14 or DP104
     if ((dp === 14 || dp === 104) && this.hasCapability('measure_luminance')) {
       const lux = typeof value === 'number' ? value : parseInt(value, 10) || 0;
-      this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
+      await this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
       this.log(`[CURTAIN] 💡 Lux: ${lux}`);
     }
 
     // Battery - DP13
     if (dp === 13 && this.hasCapability('measure_battery')) {
       const battery = typeof value === 'number' ? value : parseInt(value, 10) || 0;
-      this.setCapabilityValue('measure_battery', parseFloat(Math.min(100, Math.max(0, battery)))).catch(() => { });
+      await this.setCapabilityValue('measure_battery', parseFloat(Math.min(100, Math.max(0, battery)))).catch(() => { });
       this.log(`[CURTAIN] 🔋 Battery: ${battery}%`);
     }
 
@@ -230,7 +230,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
       await this.setCapabilityValue('button', true).catch(() => { });
       // Reset after short delay
       setTimeout(() => {
-        this.setCapabilityValue('button', false).catch(() => { });
+        await this.setCapabilityValue('button', false).catch(() => { });
       }, 500);
 
       // Trigger flow card if available

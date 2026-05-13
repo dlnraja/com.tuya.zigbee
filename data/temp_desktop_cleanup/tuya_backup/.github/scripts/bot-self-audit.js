@@ -40,12 +40,12 @@ async function fetchBotReplies(topicIds){
           consecutivePosts.push({topic:tid,post:p.post_number,id:p.id,date:p.created_at});
         }
         // Detect old bot signatures still present
-        if(p.username==='dlnraja'&&/Auto-response by dlnraja|Bot Universal Tuya|Install test version\s*$/i.test(stripHtml(p.cooked))){
+        if(p.username==='dlnraja'&&/Auto-response by dlnraja|Bot Tuya Unified|Install test version\s*$/i.test(stripHtml(p.cooked))){
           botSignaturePosts.push({topic:tid,post:p.post_number,id:p.id,date:p.created_at});
         }
         prevUser=p.username;
         // Find our replies
-        if(p.username==='dlnraja'||/Bot Universal Tuya Zigbee|Universal Tuya Zigbee v/i.test(p.cooked)){
+        if(p.username==='dlnraja'||/Bot Tuya Unified Zigbee|Tuya Unified Zigbee v/i.test(p.cooked)){
           const replyTo=posts.find(rp=>rp.post_number===p.reply_to_post_number);
           replies.push({
             topic:tid,

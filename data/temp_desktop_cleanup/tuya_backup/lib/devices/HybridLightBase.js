@@ -10,7 +10,7 @@ const {
   parseTuyaFrame,
   getUniversalDPMapping,
   setupUniversalZCLListeners,
-} = require('../tuya/UniversalTuyaParser');
+} = require('../tuya/TuyaUnifiedParser');
 const { ensureManufacturerSettings } = require('../helpers/ManufacturerNameHelper');
 
 // Learning period: 15 minutes
@@ -33,7 +33,7 @@ const LEARNING_PERIOD_MS = 15 * 60 * 1000;
  * ║  - RGB/RGBW bulbs, LED strips, LED controllers                               ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class HybridLightBase extends ZigBeeDevice {
+class UnifiedLightBase extends ZigBeeDevice {
 
   get mainsPowered() { return true; }
   get maxListeners() { return 50; }
@@ -430,7 +430,7 @@ class HybridLightBase extends ZigBeeDevice {
    */
   async _safeSetCapability(capability, value) {
     if (!this.hasCapability(capability)) {
-      if (HybridLightBase.DYNAMIC_CAPABILITIES.includes(capability)) {
+      if (UnifiedLightBase.DYNAMIC_CAPABILITIES.includes(capability)) {
         try {
           await this.addCapability(capability);
           this.log(`[CAP] ✨ DYNAMIC ADD: ${capability} (detected from DP/ZCL data)`);
@@ -651,4 +651,4 @@ class HybridLightBase extends ZigBeeDevice {
   }
 }
 
-module.exports = HybridLightBase;
+module.exports = UnifiedLightBase;

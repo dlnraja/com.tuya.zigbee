@@ -340,9 +340,9 @@
           1
         ]
       ],
-      "fix": "Add manufacturerName to invertedByDefault in HybridSensorBase.js + device.js",
+      "fix": "Add manufacturerName to invertedByDefault in UnifiedSensorBase.js + device.js",
       "files": [
-        "lib/devices/HybridSensorBase.js",
+        "lib/devices/UnifiedSensorBase.js",
         "drivers/{driver}/device.js"
       ]
     },

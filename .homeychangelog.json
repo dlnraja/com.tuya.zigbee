@@ -1,4 +1,7 @@
 {
+  "7.5.28": {
+    "en": "Added 3,208 new fingerprints, improved driver matching for soil sensors, and fixed various device initialization issues."
+  },
   "7.5.27": {
     "en": "v7.5.27: . New IR pairing wizard, improved power clamp meter, and various bug fixes."
   },
@@ -48,18 +51,15 @@
     "en": "v7.5.12: . Fixed sensor fallback logic for unknown models. Added new fingerprints for radiator valve (_TZE284_ne4pikwm). Updated documentation and project rules."
   },
   "7.5.11": {
-    "en": "v7.5.11: Fixed ReferenceError crashes in HybridSensorBase, HybridCoverBase, HybridLightBase, HybridPlugBase, HybridSwitchBase, and HybridThermostatBase during dynamic capability updates."
+    "en": "v7.5.11: Fixed ReferenceError crashes in UnifiedSensorBase, UnifiedCoverBase, UnifiedLightBase, UnifiedPlugBase, UnifiedSwitchBase, and UnifiedThermostatBase during dynamic capability updates."
   },
   "7.5.10": {
-    "en": "Fixed a crash in HybridSensorBase that caused a ReferenceError on _safeSetCapability. Added support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm)."
+    "en": "Fixed a crash in UnifiedSensorBase that caused a ReferenceError on _safeSetCapability. Added support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm)."
   },
   "7.5.9": {
     "en": "v7.5.9: . Fixed ProtocolArbitrator crash, _TZE608 opener reclassification, SDK3 validation errors, duplicate fingerprints, case-insensitive matching, and MODULE_NOT_FOUND crash. Added 5 new fingerprints, Z2M enriched mappings, rain/soil sensor fixes."
   },
-  "5.11.212": {
-    "en": "Implement Rule 24 caseless resolver and dynamic O(1) matching system for high-performance pairing."
-  },
-  "7.5.28": {
-    "en": "v7.5.27: IR Blaster Pairing Wizard, Power Clamp Meter, Fixed IR button remote manager to prevent duplicate commands., Corrected IAS device initialization for certain motion sensors., Resolved data handler edge case for multi-DP reports."
+  "7.5.29": {
+    "en": "v7.5.28: Added 3,208 new device fingerprints, expanding support for more Tuya Zigbee devices., Improved driver matching for soil sensors (including _TZE284_0ints6wl)., Fixed device initialization issues in HybridDriverSystem., Resolved various stability improvements for sensor devices., Updated app metadata and documentation."
   }
 }

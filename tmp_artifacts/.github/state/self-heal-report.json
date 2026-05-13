@@ -780,19 +780,19 @@
           "detail": "Line 182: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "lib/devices/BaseHybridDevice.js",
+          "file": "lib/devices/BaseUnifiedDevice.js",
           "detail": "Line 2586: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "lib/devices/BaseHybridDevice.js",
+          "file": "lib/devices/BaseUnifiedDevice.js",
           "detail": "Line 2600: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "lib/devices/BaseHybridDevice.js",
+          "file": "lib/devices/BaseUnifiedDevice.js",
           "detail": "Line 2634: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "lib/devices/BaseHybridDevice.js",
+          "file": "lib/devices/BaseUnifiedDevice.js",
           "detail": "Line 2764: getDeviceTriggerCard without try-catch"
         },
         {
@@ -800,11 +800,11 @@
           "detail": "Line 1783: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "lib/devices/HybridSensorBase.js",
+          "file": "lib/devices/UnifiedSensorBase.js",
           "detail": "Line 3363: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "lib/devices/HybridSwitchBase.js",
+          "file": "lib/devices/UnifiedSwitchBase.js",
           "detail": "Line 813: getDeviceTriggerCard without try-catch"
         },
         {

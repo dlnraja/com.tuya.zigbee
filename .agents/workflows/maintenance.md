@@ -1,6 +1,6 @@
 # Workflow: Autonomous Maintenance & Repair
 
-This workflow defines the steps for the periodic "Self-Healing" loop of the Universal Tuya app.
+This workflow defines the steps for the periodic "Self-Healing" loop of the Tuya Unified app.
 
 ## Steps
 

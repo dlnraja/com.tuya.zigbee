@@ -1,4 +1,4 @@
-# :house: Universal Tuya Zigbee v5.11.138
+# :house: Tuya Unified Zigbee v5.11.138
 
 > **188+ drivers** · **4,700+ fingerprints** · SDK3 · Updated 2026-03-25
 
@@ -34,11 +34,11 @@ v5.11.29: Removed one-shot fix-post-now script and workflow to streamline the de
 
 <details><summary>:scroll: Previous versions</summary>
 
-**v5.11.29**: Universal Tuya Zigbee app v5.11.29: Cleanup of scripts and workflows.
+**v5.11.29**: Tuya Unified Zigbee app v5.11.29: Cleanup of scripts and workflows.
 
 **v5.11.28**: Updated to v5.11.28 with 143 drivers and 3062 fingerprints. Includes script fixes for forum post editing.
 
-**v5.11.27**: Universal Tuya Zigbee app v5.11.27: Added new AI providers and improved forum management.
+**v5.11.27**: Tuya Unified Zigbee app v5.11.27: Added new AI providers and improved forum management.
 
 **v5.11.26**: Fixed forum duplication issues and improved AI ensemble routing for better task classification.
 

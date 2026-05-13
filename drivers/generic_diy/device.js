@@ -227,7 +227,7 @@ class GenericDIYDevice extends ZigBeeDevice {
           v ? await cluster.setOn() : await cluster.setOff();
         });
         cluster.on('attr.onOff', (v) => {
-          this.setCapabilityValue(cap, v).catch(() => {});
+          await this.setCapabilityValue(cap, v).catch(() => {});
           this._triggerSwitch(epId, v);
         });
       }
@@ -236,13 +236,13 @@ class GenericDIYDevice extends ZigBeeDevice {
         this.registerCapabilityListener(cap, async (v) => {
           await cluster.moveToLevel({ level: Math.round(v * 254), transitionTime: 0 });
         });
-        cluster.on('attr.currentLevel', (v) => this.setCapabilityValue(cap, v / 254).catch(() => {}));
+        cluster.on('attr.currentLevel', (v) => await this.setCapabilityValue(cap, v / 254).catch(() => {}));
       }
       // Temperature
       else if (clusterId === 0x0402) {
         cluster.on(`attr.${map.attr}`, (v) => {
           const val = v / 100;
-          this.setCapabilityValue(cap, val).catch(() => {});
+          await this.setCapabilityValue(cap, val).catch(() => {});
           this._triggerTemperatureChanged(val);
         });
       }
@@ -250,14 +250,14 @@ class GenericDIYDevice extends ZigBeeDevice {
       else if (clusterId === 0x0405) {
         cluster.on(`attr.${map.attr}`, (v) => {
           const val = v / 100;
-          this.setCapabilityValue(cap, val).catch(() => {});
+          await this.setCapabilityValue(cap, val).catch(() => {});
           this._triggerHumidityChanged(val);
         });
       }
       // Illuminance
       else if (clusterId === 0x0400) {
         cluster.on(`attr.${map.attr}`, (v) => {
-          this.setCapabilityValue(cap, v).catch(() => {});
+          await this.setCapabilityValue(cap, v).catch(() => {});
           this._triggerIlluminance(v);
         });
       }
@@ -265,7 +265,7 @@ class GenericDIYDevice extends ZigBeeDevice {
       else if (clusterId === 0x0406) {
         cluster.on(`attr.${map.attr}`, (v) => {
           const detected = v > 0;
-          this.setCapabilityValue(cap, detected).catch(() => {});
+          await this.setCapabilityValue(cap, detected).catch(() => {});
           this._triggerMotion(detected);
         });
       }
@@ -273,7 +273,7 @@ class GenericDIYDevice extends ZigBeeDevice {
       else if (clusterId === 0x0001) {
         cluster.on(`attr.${map.attr}`, (v) => {
           const val = v / 2;
-          this.setCapabilityValue(cap, val).catch(() => {});
+          await this.setCapabilityValue(cap, val).catch(() => {});
           this._triggerBatteryLow(val);
         });
       }
@@ -281,7 +281,7 @@ class GenericDIYDevice extends ZigBeeDevice {
       else if (clusterId === 0x0500) {
         cluster.on(`attr.${map.attr}`, (v) => {
           const open = (v & 1) > 0;
-          this.setCapabilityValue(cap, open).catch(() => {});
+          await this.setCapabilityValue(cap, open).catch(() => {});
           this._triggerContact(open);
         });
       }
@@ -289,14 +289,14 @@ class GenericDIYDevice extends ZigBeeDevice {
       else if (clusterId === 0x0403) {
         cluster.on(`attr.${map.attr}`, (v) => {
           const val = v / 10;
-          this.setCapabilityValue(cap, val).catch(() => {});
+          await this.setCapabilityValue(cap, val).catch(() => {});
           this._triggerPressure(val);
         });
       }
       // Analog input
       else if (clusterId === 0x000C) {
         cluster.on(`attr.${map.attr}`, (v) => {
-          this.setCapabilityValue(cap, v).catch(() => {});
+          await this.setCapabilityValue(cap, v).catch(() => {});
           this._triggerAnalog(epId, v);
         });
       }
@@ -306,17 +306,17 @@ class GenericDIYDevice extends ZigBeeDevice {
           await cluster.write({ occupiedHeatingSetpoint: Math.round(v * 100) });
         });
         cluster.on('attr.occupiedHeatingSetpoint', (v) => {
-          this.setCapabilityValue(cap, v / 100).catch(() => {});
+          await this.setCapabilityValue(cap, v / 100).catch(() => {});
         });
         cluster.on('attr.localTemperature', (v) => {
-          if (v !== -32768) this.setCapabilityValue('measure_temperature', v / 100).catch(() => {});
+          if (v !== -32768) await this.setCapabilityValue('measure_temperature', v / 100).catch(() => {});
         });
       }
       // Other measurement clusters
       else if (map.attr) {
         cluster.on(`attr.${map.attr}`, (v) => {
           const val = map.div ? v / map.div : v;
-          this.setCapabilityValue(cap, val).catch(() => {});
+          await this.setCapabilityValue(cap, val).catch(() => {});
         });
       }
     } catch (e) {

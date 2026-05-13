@@ -1,6 +1,6 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { WakeStrategies } = require('../../lib/tuya/TuyaGatewayEmulator');
 
 /**
@@ -65,7 +65,7 @@ function getModelConfig(manufacturerName) {
   // Default to ADVANCED for unknown models
   return { type: 'ADVANCED', ...MODEL_CONFIGS.ADVANCED };
 }
-class MotionSensorRadarDevice extends HybridSensorBase {
+class MotionSensorRadarDevice extends UnifiedSensorBase {
 
   // v5.5.69: Most radars are battery-powered, but RELAY models are mains-powered
   get mainsPowered() {
@@ -526,7 +526,7 @@ class MotionSensorRadarDevice extends HybridSensorBase {
 
         iasCluster.onZoneStatusChangeNotification = (payload) => {
           this._updateLastEventTime(); // v5.5.69: Track activity
-          // v5.5.17: Use universal parser from HybridSensorBase
+          // v5.5.17: Use universal parser from UnifiedSensorBase
           const parsed = this._parseIASZoneStatus(payload?.zoneStatus);
           const motion = parsed.alarm1 || parsed.alarm2;
 

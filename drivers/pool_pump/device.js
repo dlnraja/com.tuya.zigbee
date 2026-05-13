@@ -32,7 +32,7 @@ class PoolPumpDevice extends ZigBeeDevice {
     const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
     if (emCluster && this.hasCapability('measure_power')) {
       emCluster.on('attr.activePower', (value) => {
-        this.setCapabilityValue('measure_power', value / 10).catch(this.error);
+        await this.setCapabilityValue('measure_power', value / 10).catch(this.error);
       });
     }
   }
@@ -55,16 +55,16 @@ class PoolPumpDevice extends ZigBeeDevice {
     switch (dp) {
     case 1:
     case 16:
-      this.setCapabilityValue('onoff', !!value).catch(this.error);
+      await this.setCapabilityValue('onoff', !!value).catch(this.error);
       break;
     case 18:
       if (this.hasCapability('measure_power')) {
-        this.setCapabilityValue('measure_power', value).catch(this.error);
+        await this.setCapabilityValue('measure_power', value).catch(this.error);
       }
       break;
     case 101:
       if (this.hasCapability('meter_power')) {
-        this.setCapabilityValue('meter_power', value / 100).catch(this.error);
+        await this.setCapabilityValue('meter_power', value / 100).catch(this.error);
       }
       break;
     }

@@ -12,7 +12,8 @@
     "dim.valve_3",
     "dim.valve_4",
     "measure_battery",
-    "onoff"
+    "onoff",
+    "alarm_battery"
   ],
   "zigbee": {
     "manufacturerName": [
