@@ -88,29 +88,29 @@ class WaterValveSmartDevice extends PlugBase {
       switch (capability) {
       case 'onoff': {
         const id = value ? 'water_valve_smart_opened' : 'water_valve_smart_closed';
-        (() => { try { return this.homey.flow.getTriggerCard(id); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+        this.triggerFlowCard(id).catch(() => {});
         break;
       }
       case 'alarm_water': {
         const id = value ? 'water_valve_smart_leak_detected' : 'water_valve_smart_leak_cleared';
-        (() => { try { return this.homey.flow.getTriggerCard(id); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+        this.triggerFlowCard(id).catch(() => {});
         break;
       }
       case 'measure_temperature': {
-        (() => { try { return this.homey.flow.getTriggerCard('water_valve_smart_temperature_changed'); } catch(e) { return null; } })()?.trigger(this, { temperature: value }, {}).catch(() => {});
+        this.triggerFlowCard('water_valve_smart_temperature_changed', { temperature: value }).catch(() => {});
         if (value <= 2 && (prev === undefined || prev === null || prev > 2)) {
-          (() => { try { return this.homey.flow.getTriggerCard('water_valve_smart_frost_warning'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+          this.triggerFlowCard('water_valve_smart_frost_warning').catch(() => {});
         }
         break;
       }
       case 'measure_battery': {
         if (value <= 15 && (prev === undefined || prev === null || prev > 15)) {
-          (() => { try { return this.homey.flow.getTriggerCard('water_valve_smart_battery_low'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+          this.triggerFlowCard('water_valve_smart_battery_low').catch(() => {});
         }
         break;
       }
       case 'meter_water': {
-        (() => { try { return this.homey.flow.getTriggerCard('water_valve_smart_water_consumed'); } catch(e) { return null; } })()?.trigger(this, { liters: value }, {}).catch(() => {});
+        this.triggerFlowCard('water_valve_smart_water_consumed', { liters: value }).catch(() => {});
         break;
       }
       }
