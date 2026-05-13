@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "button_wireless_3_button_3gang_button_pressed",
+      "id": "remote_button_wireless_button_3gang_button_pressed",
       "highlight": true,
       "title": {
         "en": "Button pressed",
@@ -35,7 +35,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_double_press",
+      "id": "remote_button_wireless_button_3gang_button_double_press",
       "title": {
         "en": "Button double-pressed",
         "fr": "Bouton double-cliqué",
@@ -68,7 +68,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_long_press",
+      "id": "remote_button_wireless_button_3gang_button_long_press",
       "title": {
         "en": "Button long-pressed",
         "fr": "Bouton pressé longtemps",
@@ -101,7 +101,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_multi_press",
+      "id": "remote_button_wireless_button_3gang_button_multi_press",
       "title": {
         "en": "Button multi-pressed",
         "fr": "Bouton multi-cliqué",
@@ -150,7 +150,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_1_pressed",
+      "id": "remote_button_wireless_button_3gang_button_1_pressed",
       "title": {
         "en": "Button 1 pressed",
         "fr": "Bouton 1 appuyé",
@@ -165,7 +165,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_2_pressed",
+      "id": "remote_button_wireless_button_3gang_button_2_pressed",
       "title": {
         "en": "Button 2 pressed",
         "fr": "Bouton 2 appuyé",
@@ -180,7 +180,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_3_pressed",
+      "id": "remote_button_wireless_button_3gang_button_3_pressed",
       "title": {
         "en": "Button 3 pressed",
         "fr": "Bouton 3 appuyé",
@@ -195,7 +195,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_1_double",
+      "id": "remote_button_wireless_button_3gang_button_1_double",
       "title": {
         "en": "Button 1 double-pressed",
         "fr": "Bouton 1 double-cliqué",
@@ -210,7 +210,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_2_double",
+      "id": "remote_button_wireless_button_3gang_button_2_double",
       "title": {
         "en": "Button 2 double-pressed",
         "fr": "Bouton 2 double-cliqué",
@@ -225,7 +225,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_3_double",
+      "id": "remote_button_wireless_button_3gang_button_3_double",
       "title": {
         "en": "Button 3 double-pressed",
         "fr": "Bouton 3 double-cliqué",
@@ -240,7 +240,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_1_long",
+      "id": "remote_button_wireless_button_3gang_button_1_long",
       "title": {
         "en": "Button 1 long-pressed",
         "fr": "Bouton 1 pressé longtemps",
@@ -255,7 +255,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_2_long",
+      "id": "remote_button_wireless_button_3gang_button_2_long",
       "title": {
         "en": "Button 2 long-pressed",
         "fr": "Bouton 2 pressé longtemps",
@@ -270,7 +270,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_3_long",
+      "id": "remote_button_wireless_button_3gang_button_3_long",
       "title": {
         "en": "Button 3 long-pressed",
         "fr": "Bouton 3 pressé longtemps",
@@ -285,7 +285,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_1_triple",
+      "id": "remote_button_wireless_button_3gang_button_1_triple",
       "title": {
         "en": "Button 1 triple-pressed",
         "fr": "Bouton 1 triple-cliqué"
@@ -293,7 +293,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_2_triple",
+      "id": "remote_button_wireless_button_3gang_button_2_triple",
       "title": {
         "en": "Button 2 triple-pressed",
         "fr": "Bouton 2 triple-cliqué"
@@ -301,7 +301,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_3_triple",
+      "id": "remote_button_wireless_button_3gang_button_3_triple",
       "title": {
         "en": "Button 3 triple-pressed",
         "fr": "Bouton 3 triple-cliqué"
@@ -309,7 +309,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_1_release",
+      "id": "remote_button_wireless_button_3gang_button_1_release",
       "title": {
         "en": "Button 1 released - after hold",
         "fr": "Bouton 1 relâché - après maintien"
@@ -317,7 +317,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_2_release",
+      "id": "remote_button_wireless_button_3gang_button_2_release",
       "title": {
         "en": "Button 2 released - after hold",
         "fr": "Bouton 2 relâché - après maintien"
@@ -325,7 +325,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_button_3gang_button_3_release",
+      "id": "remote_button_wireless_button_3gang_button_3_release",
       "title": {
         "en": "Button 3 released - after hold",
         "fr": "Bouton 3 relâché - après maintien"
@@ -333,7 +333,7 @@
       "args": []
     },
     {
-      "id": "button_wireless_3_battery_low",
+      "id": "remote_button_wireless_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
