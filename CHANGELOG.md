@@ -4,7 +4,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.24] - 2026-05-13
+## [7.5.25] - 2026-05-13
+
+### Bug Fixes
+- Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor devices
+- Corrected require paths in fingerbot, motion_sensor_2, and sirentemphumidsensor drivers
+- Added PJ-1203A mapping for improved device compatibility
+
+### New Features
+- Added new fingerprints for power_clamp_meter driver
+
+### Improvements
+- Updated to 228 drivers with 6713 total fingerprints
+- General stability and performance improvements
+---
+
+ [7.5.24] - 2026-05-13
 
 ### Bug Fixes
 - **Gate Opener**: Fixed DP3 contact sensor not reporting correctly (resolves issue #305)

@@ -1,4 +1,7 @@
 {
+  "7.5.25": {
+    "en": "v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor. Added PJ-1203A mapping. New fingerprints for power_clamp_meter."
+  },
   "7.5.24": {
     "en": "v7.5.24: . Fix: gate opener DP3 contact sensor (issue #305). Migrated deprecated flow triggers to modern triggerFlowCard helper. Added missing fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.210": {
     "en": "Universal Tuya Zigbee v5.11.210: Stability release - verified syntax integrity on all lib/ files, confirmed SDK3 compliance, 213 drivers operational."
   },
-  "5.11.209": {
-    "en": "Universal Tuya Zigbee app v5.11.208: Fixed app ID."
-  },
-  "7.5.25": {
-    "en": "v7.5.24: Gate Opener, Flow Triggers, Added missing fingerprints across multiple drivers, Updated driver count to 228 with 6713 total fingerprints, Added support for `_TZE284_0ints6wl` soil sensor (TS0601)"
+  "7.5.26": {
+    "en": "v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor devices, Corrected require paths in fingerbot, motion_sensor_2, and sirentemphumidsensor drivers, Added PJ-1203A mapping for improved device compatibility, Added new fingerprints for power_clamp_meter driver, Updated to 228 drivers with 6713 total fingerprints"
   }
 }

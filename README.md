@@ -54,7 +54,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.25 |
+| **App Version** | v7.5.26 |
 | **Device Fingerprints** | 10,950+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 228 (178 Zigbee + 50 WiFi) |
@@ -121,7 +121,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.25** | v7.5.24: Gate Opener, Flow Triggers, Added missing fingerprints across multiple drivers, Updated driver count to 228 ... |
+| **v7.5.26** | v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor devices, Corre... |
+| **v7.5.25** | v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor. Added PJ-1203... |
 | **v7.5.24** | v7.5.24: . Fix: gate opener DP3 contact sensor (issue #305). Migrated deprecated flow triggers to modern triggerFlowC... |
 | **v7.5.23** | Maintenance release v7.5.23 â€” . Internal data cleanup and archive of obsolete planning files. No new drivers or finge... |
 | **v7.5.22** | Version 7.5.22 â€” App metadata and store listing update. No new drivers or fingerprints added in this release. |
@@ -135,7 +136,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.14** | v7.5.14: . Bug fixes for wireless buttons, climate sensors, radiator valves, and energy meters. Improved device initi... |
 | **v7.5.13** | v7.5.13: . Added new fingerprints for motion sensor, illuminance sensor, 3-gang switch, energy meter, and DIN rail. F... |
 | **v7.5.12** | v7.5.12: . Fixed sensor fallback logic for unknown models. Added new fingerprints for radiator valve (_TZE284_ne4pikw... |
-| **v7.5.11** | v7.5.11: Fixed ReferenceError crashes in HybridSensorBase, HybridCoverBase, HybridLightBase, HybridPlugBase, HybridSw... |
 
 <!-- CHANGELOG_END -->
 
