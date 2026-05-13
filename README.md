@@ -193,6 +193,8 @@ We use the **Antigravity Skills** fleet to enforce a **14-Layer Quality Gateway*
 - **`@technical-change-tracker`**: Structured session handoffs for consistent AI agent performance.
 - **`@squirrel`**: Full-cycle development pipeline for zero-defect driver creation.
 - **`@security-auditor`**: Automated PII masking and secret detection in all diagnostic dumps.
+
+> **🦾 View the complete agentic tool catalog in [.ai/SKILL_REGISTRY.md](file:///.ai/SKILL_REGISTRY.md)**
 ```
 
 ---

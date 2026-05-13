@@ -801,14 +801,18 @@ If you need to understand *how* the engine works before modifying it, read these
 - **`MEGA_PROMPT_UNIVERSAL_TUYA_ZIGBEE.md`**: The supreme "Opus 4.6" directive for driver enrichment and zero-defect coding.
 - **`MASTER-V7-SKELETON.md` / `STABLE-V5-SKELETON.md`**: Architectural skeleton maps outlining structural differences between major versions.
 - **`docs/PROJECT_STATUS.md`**: Real-time tracker for the number of drivers, devices, and current build.
+- **`.ai/SKILL_REGISTRY.md`**: **MASTER CATALOG** of all Antigravity Advanced Agentic Skills available in the project.
 
 ### 3. Antigravity AI Skills Mastery (The Boost Engine)
 This repository is optimized for autonomous agents using the **Antigravity Awesome Skills** fleet.
-- **`@logic-lens`**: Used for deep review of `HybridDriverSystem` to prevent race conditions and logical gaps.
-- **`@performance-optimizer`**: Drives the `ENERGY_STRATEGIES` logic, ensuring battery devices remain efficient.
-- **`@codebase-audit-pre-push`**: Integrated into `scripts/maintenance/master-self-heal.js` to strip junk and ensure production readiness.
-- **`@squirrel`**: The primary full-cycle AI agent pattern for implementing new drivers from scratch.
-- **`@technical-change-tracker`**: Powering the `SYSTEM_CHANGELOG.md` for seamless session handoffs.
+> **🔗 See the full catalog in: [.ai/SKILL_REGISTRY.md](file:///.ai/SKILL_REGISTRY.md)**
+
+Key skills frequently used in this engine:
+- **`@logic-lens`**: Used for deep review of `HybridDriverSystem` to prevent race conditions.
+- **`@performance-optimizer`**: Drives the `ENERGY_STRATEGIES` logic.
+- **`@codebase-audit-pre-push`**: Strips junk and ensures production readiness.
+- **`@squirrel`**: Primary full-cycle AI agent pattern for new drivers.
+- **`@technical-change-tracker`**: Powering the `SYSTEM_CHANGELOG.md` for session handoffs.
 - **`@bug-hunter`**: Methodical root-cause analysis for Zosung IR trame corruption.
 
 
