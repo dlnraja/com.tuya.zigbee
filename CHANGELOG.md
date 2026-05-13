@@ -4,7 +4,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.19] - 2026-05-13
+## [7.5.20] - 2026-05-13
+
+### Bug Fixes
+- Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving connection drops and repeated reconnections
+- Resolved diagnostic crashes caused by mixed WiFi/Zigbee protocol handling
+
+### New Devices & Fingerprints
+- Added new device fingerprints across the driver library (3,208 total across 228 drivers)
+- Updated `switch_4gang` driver with new manufacturer fingerprints and capability mappings
+
+### Improvements
+- Cleanly separated WiFi (TuyAPI/LAN) and Zigbee (ZCL/EF00) protocol stacks to prevent device misclassification and unexpected behavior
+- Documented button press detection heuristics, improving physical switch reliability and preventing false toggle triggers
+---
+
+ [7.5.19] - 2026-05-13
 
 ## v7.5.19
 
