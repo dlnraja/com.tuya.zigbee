@@ -1,4 +1,4 @@
-# Universal Tuya Architectural Rules (v7.5.0)
+# Universal Tuya Architectural Rules (v7.5.23)
 
 ## R1: Universal Interpretation
 - EVERY incoming frame must pass through `IntelligentFrameAnalyzer`.
