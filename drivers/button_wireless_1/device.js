@@ -89,21 +89,41 @@ class Button1GangDevice extends ButtonDevice {
 
     // v5.5.715: HOBEIAN FIX - Explicit onOff binding for command reception
     // The device sends onOff commands (outputCluster 6) which need binding
-    await this._setupOnOffBinding(zclNode);
+    try {
+      await this._setupOnOffBinding(zclNode);
+    } catch (err) {
+      this.error('[INIT] Error setting up onOff binding:', err.message);
+    }
 
     // v5.5.823: TS004F Smart Knob FIX (GitHub #113) - LevelControl for rotary dimmer
-    await this._setupLevelControlBinding(zclNode);
+    try {
+      await this._setupLevelControlBinding(zclNode);
+    } catch (err) {
+      this.error('[INIT] Error setting up level control binding:', err.message);
+    }
 
     // v5.5.371: FORUM FIX - Enhanced physical button detection
     // Based on research from Zigbee2MQTT, ZHA, SmartThings patterns
-    await this._setupEnhancedPhysicalButtonDetection(zclNode);
+    try {
+      await this._setupEnhancedPhysicalButtonDetection(zclNode);
+    } catch (err) {
+      this.error('[INIT] Error setting up enhanced physical button detection:', err.message);
+    }
 
     // v5.5.371: Setup battery reporting listener
-    await this._setupBatteryReporting(zclNode);
+    try {
+      await this._setupBatteryReporting(zclNode);
+    } catch (err) {
+      this.error('[INIT] Error setting up battery reporting:', err.message);
+    }
 
     // v5.9.8: Raw frame interceptor — SDK drops unknown cluster frames like E000
     // Fix: GH#124 Lalla80111 _TZ3000_b4awzgct TS0041 buttons not working
-    await this._setupRawFrameInterceptor(zclNode);
+    try {
+      await this._setupRawFrameInterceptor(zclNode);
+    } catch (err) {
+      this.error('[INIT] Error setting up raw frame interceptor:', err.message);
+    }
 
     this.log('[BUTTON1] ✅ Button1GangDevice initialized - 1 button ready');
     this.log('═══════════════════════════════════════════════════════════════');

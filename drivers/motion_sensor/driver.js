@@ -1,12 +1,12 @@
 'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
 /**
  * v5.5.564: COMPLETE FLOW CARDS with safe device validation
  * Fixes "Cannot get device by id" error - returns false instead of throwing
  */
-class MotionSensorDriver extends ZigBeeDriver {
+class MotionSensorDriver extends BaseZigBeeDriver {
 
   async onInit() {
     await super.onInit();

@@ -4,7 +4,7 @@
 
 1. **Shadow Implementation** : Aucune publication publique
 2. **Zero Defect** : Chaque module validé syntaxiquement + testé
-3. **Permissivité Native** : Drivers adaptatifs sans suffixe _hybrid
+3. **Permissivité Native** : Drivers adaptatifs sans suffixe 
 4. **Rules IA** : Conformité Rules 21, 24, 25
 
 ## 🔒 Anti-Patterns à Éviter
@@ -16,7 +16,7 @@ return Math.round(safeDivide(uptime*10))), 10);
 // ✅ CORRECT
 return Math.round(safeDivide(uptime*10), 10);
 
-// ❌ WRONG - Hybrid if/ternary
+// ❌ WRONG - if/ternary
 if (device.zclNode?.modelId) return device.zclNode.modelId : null;
 
 // ✅ CORRECT
@@ -41,7 +41,7 @@ this.settings.get('zb_model_id')
 - [ ] ESLint sans erreur critique
 - [ ] lint-collisions.js: 0 collisions
 - [ ] Version synchronisée (package.json + .homeychangelog.json)
-- [ ] Pas de _hybrid dans les noms de drivers
+- [ ] Pas de  dans les noms de drivers
 
 ## 🔧 Scripts Utilitaires
 ```bash
@@ -59,4 +59,4 @@ node scripts/automation/fix-duplicate-fingerprints.js
 ```
 
 ---
-Last Updated: 2026-05-08T17:03:52.687Z
+Last Updated: 2026-05-13T11:53:15.401Z

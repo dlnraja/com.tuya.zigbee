@@ -20,9 +20,21 @@ class Button2GangDevice extends ButtonDevice {
 
     this.buttonCount = 2;
     await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
-    await this._setupE000Detection(zclNode);
-    await this._setupExtraDetection(zclNode);
-    await this._setupRawFrameInterceptor(zclNode);
+    try {
+      await this._setupE000Detection(zclNode);
+    } catch (err) {
+      this.error('[INIT] Error setting up E000 detection:', err.message);
+    }
+    try {
+      await this._setupExtraDetection(zclNode);
+    } catch (err) {
+      this.error('[INIT] Error setting up extra detection:', err.message);
+    }
+    try {
+      await this._setupRawFrameInterceptor(zclNode);
+    } catch (err) {
+      this.error('[INIT] Error setting up raw frame interceptor:', err.message);
+    }
     this.log('[INIT] ✅ Button2GangDevice initialized - 2 buttons ready');
   }
 
