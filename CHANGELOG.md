@@ -4,7 +4,18 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.17] - 2026-05-12
+## [7.5.18] - 2026-05-13
+
+## v7.5.18
+
+### Bug Fixes
+- Removed `alarm_battery` capability from 136 drivers that also have `measure_battery`. The dual battery capabilities caused SDK3 conflicts, resulting in device initialization errors and missing battery readings. Affected drivers include: bulb_dimmable, bulb_rgb, bulb_rgbw, bulb_tunable_white, bulb_white, button_wireless (all variants), climate_sensor, co_sensor, contact_sensor, curtain_motor_tilt, DIN rail devices, floor heating thermostats, air quality CO2 sensor, and others.
+
+### New Devices
+- Added fingerprint `_TZE204_81yrt3l` (TS0601 soil sensor) as a recognized variant for the existing soil/irrigation sensor driver, resolving device request #318.
+---
+
+ [7.5.17] - 2026-05-12
 
 ## v7.5.17
 
