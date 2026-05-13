@@ -1,4 +1,7 @@
 {
+  "7.5.27": {
+    "en": "v7.5.27: . New IR pairing wizard, improved power clamp meter, and various bug fixes."
+  },
   "7.5.26": {
     "en": "Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated getTriggerCard to getDeviceTriggerCard. Improved stability and compatibility with latest Homey firmware."
   },
@@ -56,10 +59,7 @@
   "5.11.212": {
     "en": "Implement Rule 24 caseless resolver and dynamic O(1) matching system for high-performance pairing."
   },
-  "5.11.211": {
-    "en": "Universal Tuya Zigbee v5.11.211: Fixed DeviceIdentificationDatabase crash on startup (ReferenceError: lastUpdate is not defined). Added crash-proof constructor with try/catch fallback."
-  },
-  "7.5.27": {
-    "en": "v7.5.26: Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated `getTriggerCard` to `getDeviceTriggerCard`. This eliminates all deprecation warnings and ensures full compatibility with the latest Homey firmware., Updated driver count to 228 with 6,713 fingerprints., General stability improvements and code cleanup."
+  "7.5.28": {
+    "en": "v7.5.27: IR Blaster Pairing Wizard, Power Clamp Meter, Fixed IR button remote manager to prevent duplicate commands., Corrected IAS device initialization for certain motion sensors., Resolved data handler edge case for multi-DP reports."
   }
 }

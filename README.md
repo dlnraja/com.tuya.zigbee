@@ -54,12 +54,12 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.27 |
+| **App Version** | v7.5.28 |
 | **Device Fingerprints** | 10,950+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 228 (178 Zigbee + 50 WiFi) |
 | **Flow Cards** | 2,540 |
-| **Unique Capabilities** | 126 |
+| **Unique Capabilities** | 134 |
 | **SVG Icons** | 383 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
@@ -121,7 +121,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.27** | v7.5.26: Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated `getTriggerCard` to `getD... |
+| **v7.5.28** | v7.5.27: IR Blaster Pairing Wizard, Power Clamp Meter, Fixed IR button remote manager to prevent duplicate commands.,... |
+| **v7.5.27** | v7.5.27: . New IR pairing wizard, improved power clamp meter, and various bug fixes. |
 | **v7.5.26** | Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated getTriggerCard to getDeviceTrigger... |
 | **v7.5.25** | v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor. Added PJ-1203... |
 | **v7.5.24** | v7.5.24: . Fix: gate opener DP3 contact sensor (issue #305). Migrated deprecated flow triggers to modern triggerFlowC... |
@@ -135,7 +136,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.16** | v7.5.16 â€” . Maintenance release with updated device expectations, diagnostics, and internal state. |
 | **v7.5.15** | v7.5.15: Fixed siren sensor driver crashes, added 3,202 new fingerprints, and improved device detection reliability. |
 | **v7.5.14** | v7.5.14: . Bug fixes for wireless buttons, climate sensors, radiator valves, and energy meters. Improved device initi... |
-| **v7.5.13** | v7.5.13: . Added new fingerprints for motion sensor, illuminance sensor, 3-gang switch, energy meter, and DIN rail. F... |
 
 <!-- CHANGELOG_END -->
 
