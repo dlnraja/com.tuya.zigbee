@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-13T03:54:13.526Z",
+  "timestamp": "2026-05-13T06:11:45.410Z",
   "pidConflicts": [
     {
       "pid": "TS011F",
@@ -1030,6 +1030,25 @@
       ]
     },
     {
+      "driver": "remote_button_wireless",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0043",
+        "TS011F",
+        "TS0121",
+        "TSO121"
+      ]
+    },
+    {
+      "driver": "remote_button_wireless_plug",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS011F",
+        "TS0121",
+        "TSO121"
+      ]
+    },
+    {
       "driver": "sensor_contact_motion",
       "reason": "no_manufacturer_names",
       "pids": [
@@ -1825,7 +1844,7 @@
     "pidConflicts": 69,
     "highSeverity": 33,
     "mfrConflicts": 0,
-    "orphans": 73,
+    "orphans": 75,
     "splitSuggestions": 33
   }
 }
