@@ -33,6 +33,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (May 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v7.5.29** | v7.5.28: Added 3,208 new device fingerprints, expanding support for more Tuya... |
+| **v7.5.28** | Added 3,208 new fingerprints, improved driver matching for soil sensors, and ... |
+| **v7.5.27** | v7.5.27: . New IR pairing wizard, improved power clamp meter, and various bug... |
+| **v7.5.26** | Fixed SDK3 deprecation warnings across all 45 drivers by migrating from depre... |
+| **v7.5.25** | v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2,... |
+| **v7.5.24** | v7.5.24: . Fix: gate opener DP3 contact sensor (issue #305). Migrated depreca... |
+| **v7.5.23** | Maintenance release v7.5.23 — . Internal data cleanup and archive of obsolete... |
+| **v7.5.22** | Version 7.5.22 — App metadata and store listing update. No new drivers or fin... |
+| **v7.5.21** | v7.5.20: Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving c... |
+| **v7.5.20** | v7.5.20: . Fixed WiFi socket port reuse, cleanly separated WiFi/Zigbee protoc... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
