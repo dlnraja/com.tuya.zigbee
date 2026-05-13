@@ -1,4 +1,7 @@
 {
+  "7.5.26": {
+    "en": "Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated getTriggerCard to getDeviceTriggerCard. Improved stability and compatibility with latest Homey firmware."
+  },
   "7.5.25": {
     "en": "v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor. Added PJ-1203A mapping. New fingerprints for power_clamp_meter."
   },
@@ -56,10 +59,7 @@
   "5.11.211": {
     "en": "Universal Tuya Zigbee v5.11.211: Fixed DeviceIdentificationDatabase crash on startup (ReferenceError: lastUpdate is not defined). Added crash-proof constructor with try/catch fallback."
   },
-  "5.11.210": {
-    "en": "Universal Tuya Zigbee v5.11.210: Stability release - verified syntax integrity on all lib/ files, confirmed SDK3 compliance, 213 drivers operational."
-  },
-  "7.5.26": {
-    "en": "v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor devices, Corrected require paths in fingerbot, motion_sensor_2, and sirentemphumidsensor drivers, Added PJ-1203A mapping for improved device compatibility, Added new fingerprints for power_clamp_meter driver, Updated to 228 drivers with 6713 total fingerprints"
+  "7.5.27": {
+    "en": "v7.5.26: Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated `getTriggerCard` to `getDeviceTriggerCard`. This eliminates all deprecation warnings and ensures full compatibility with the latest Homey firmware., Updated driver count to 228 with 6,713 fingerprints., General stability improvements and code cleanup."
   }
 }
