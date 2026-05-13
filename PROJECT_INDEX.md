@@ -28,6 +28,8 @@
 19. [Known Issues](#19-known-issues)
 20. [Quality Gate System (9 Layers)](#20-quality-gate-system-9-layers)
 21. [Local Tuya WiFi Architecture](#21-local-tuya-wifi-architecture)
+22. [Crash Resolutions History](#22-crash-resolutions-history)
+23. [AI Navigation & Cartography Map](#23-ai-navigation--cartography-map)
 
 ---
 
@@ -777,3 +779,64 @@ Local Tuya WiFi connectivity is designed with an **Enterprise-grade Connection a
 | #276 | Smart Solar Soil Sensor | ✅ Déjà supporté, fermé |
 | #162 | Fingerbot capability listeners | ✅ Fixed v7.5.26 |
 | #305 | Gate Opener DP3 contact | ✅ Fixed v7.5.25 |
+
+---
+
+## 23. AI NAVIGATION & CARTOGRAPHY MAP
+
+> **🚨 CRITICAL NOTICE FOR ALL AI AGENTS (Claude, Gemini, Windsurf, Cursor, etc.)**
+> *Before taking any action on this repository, you MUST read this section. It contains the operational blueprint of the Universal Tuya Engine.*
+
+### 1. Dotfiles & Rules Context (Where to find AI Instructions)
+The project behavior is governed by multiple rule files and dotfiles. If you need to understand project rules, coding standards, or ignored files, look here:
+- **`.windsurfrules` / `.cursorrules` / `.clinerules` / `.clinerule` / `.cascade`**: Core behavioral prompts, Anti-Generic Strategy rules, and strict instructions for all agents. *Read these to avoid breaking the 9-Layer Quality Gate.*
+- **`.github/WORKFLOW_GUIDELINES.md`**: Strict instructions on how to handle YML files and GitHub Actions limits.
+- **`.homeyignore`**: Controls what goes into the Homey bundle. *WARNING: Do not ignore `data/fingerprints.json` or you will cause a `MODULE_NOT_FOUND` runtime crash!*
+- **`.gitignore`**: Standard Git ignores.
+- **`.context_memory.json` / `.context_checkpoint.md`**: Short-term AI agent memory storage.
+
+### 2. Architecture & Cartography (Where to find Deep Knowledge)
+If you need to understand *how* the engine works before modifying it, read these mapping files:
+- **`PROJECT_INDEX.md`**: (This file) The master entry point.
+- **`docs/ARCHITECTURE.md`**: In-depth explanation of the Zigbee SDK3 implementation and Tuya protocol structures.
+- **`MEGA_PROMPT_UNIVERSAL_TUYA_ZIGBEE.md`**: The supreme "Opus 4.6" directive for driver enrichment and zero-defect coding.
+- **`MASTER-V7-SKELETON.md` / `STABLE-V5-SKELETON.md`**: Architectural skeleton maps outlining structural differences between major versions.
+- **`docs/PROJECT_STATUS.md`**: Real-time tracker for the number of drivers, devices, and current build.
+
+### 3. Dual App & Dual Branch Architecture
+The repository deploys **two separate applications** to the Homey store. You must understand the split:
+1. **App 1: "Universal Tuya Zigbee"** (Test/Production channel)
+   - **Branch**: `master`
+   - **App ID**: `com.dlnraja.tuya.zigbee`
+   - **CI/CD Auto-Publish**: `auto-publish-on-push.yml` (on push to master) and `daily-promote-to-test.yml`
+2. **App 2: "Universal Tuya Zigbee (Stable)"** (Parallel stable fallback)
+   - **Branch**: `stable-v5`
+   - **App ID**: `com.dlnraja.tuya.zigbee.stable`
+   - **CI/CD Auto-Publish**: `publish-stable.yml` (on push to stable-v5)
+
+*Rule: If a fix is made on `master`, it MUST often be ported to `stable-v5` (via `git cherry-pick` or manual patch) and pushed to both branches to ensure both apps are synced.*
+
+### 4. Data Collection & Orchestration Scripts (How to fetch updates)
+This repository contains a massive suite of Node.js scripts to pull external data. If you are asked to "fetch latest issues", "check emails", or "sync the forum", **DO NOT WRITE NEW SCRIPTS**. Execute the existing ones:
+
+| Action Required | Execute this script | Purpose |
+|-----------------|---------------------|---------|
+| **Fetch Diagnostic Emails** | `node .github/scripts/fetch-gmail-diagnostics.js` | Connects to Gmail via IMAP, pulls crash reports and diagnostic IDs (`54888ee1...`), and generates a local report. |
+| **Scan Forum Topics** | `node .github/scripts/scan-forum.js` (or `forum-activity-scraper.js`) | Scrapes the Homey Community Forum (T140352) for new user requests and bugs. |
+| **Fetch GitHub PRs/Issues** | `node .github/scripts/github-scanner.js` (or `comprehensive-github-scan.js`) | Scans all open/closed issues and PRs across the current repository and upstream forks. |
+| **Auto-Heal / Triage Bugs** | `node .github/scripts/diagnostic-auto-resolver.js` | Uses AI to automatically map crash logs to codebase fixes. |
+| **Auto-Learn Fingerprints** | `node .github/scripts/auto-learn-fingerprints.js` | Parses forum/email dumps to map new `_TZE200...` fingerprints into the `data/` registry. |
+| **Sync with Upstream (Johan)** | `node .github/scripts/sync-johan-sdk3.js` | Pulls SDK3 fixes from upstream forks without destroying local Tuya structures. |
+
+### 5. Automated CI/CD Workflows (`.github/workflows/`)
+To trigger operations without running local scripts, you can use the `gh` CLI to trigger workflows:
+- `gh workflow run daily-promote-to-test.yml` -> Forces Draft to Test promotion (using Puppeteer/OAuth).
+- `gh workflow run collect-diagnostics.yml` -> Runs email extraction via GitHub Actions.
+- `gh workflow run forum-auto-responder.yml` -> Runs forum logic.
+- `gh workflow run validate.yml` -> Comprehensive project validation (npx homey app validate).
+
+### 6. Operational Limits & Automation Bounds
+- **Never modify `tuyapi` logic directly**: We use a queue-throttle (`TuyaLocalClient`) on top of it.
+- **Never touch `node_modules`**: Always run `npm ci` if dependencies are missing.
+- **Never respond to other forum threads**: Hardcoded rule limits responses ONLY to thread `140352`. Do not bypass this limit in the scripts.
+- **Never use generic Zigbee profiles**: Always enforce the *Anti-Generic Strategy* detailed above.
