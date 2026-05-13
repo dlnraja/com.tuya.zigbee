@@ -14,7 +14,8 @@
     "onoff.usb2",
     "onoff.usb3",
     "measure_voltage",
-    "measure_current"
+    "measure_current",
+    "alarm_battery"
   ],
   "zigbee": {
     "productId": [
