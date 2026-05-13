@@ -30,31 +30,11 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
-## 🚀 Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### ✨ Recent Changes (May 2026)
-
-| Version | Feature |
-|---------|---------|
-| **v7.5.25** | v7.5.24: Gate Opener, Flow Triggers, Added missing fingerprints across multip... |
-| **v7.5.24** | v7.5.24: . Fix: gate opener DP3 contact sensor (issue #305). Migrated depreca... |
-| **v7.5.23** | Maintenance release v7.5.23 — . Internal data cleanup and archive of obsolete... |
-| **v7.5.22** | Version 7.5.22 — App metadata and store listing update. No new drivers or fin... |
-| **v7.5.21** | v7.5.20: Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving c... |
-| **v7.5.20** | v7.5.20: . Fixed WiFi socket port reuse, cleanly separated WiFi/Zigbee protoc... |
-| **v7.5.19** | Added Android native Intent magic URL pairing for all 20 WiFi drivers. Update... |
-| **v7.5.18** | Easy Login with saved credentials, auto device classification with brand badg... |
-| **v7.5.17** | v7.5.17 — 3,207 new fingerprints, backlight mode alignment fix, and fingerpri... |
-| **v7.5.16** | v7.5.16 — . Maintenance release with updated device expectations, diagnostics... |
-<!-- CHANGELOG_END -->
-
-
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.26 |
+| **App Version** | v7.5.27 |
 | **Device Fingerprints** | 10,950+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 228 (178 Zigbee + 50 WiFi) |
@@ -121,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.26** | v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor devices, Corre... |
+| **v7.5.27** | v7.5.26: Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated `getTriggerCard` to `getD... |
+| **v7.5.26** | Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated getTriggerCard to getDeviceTrigger... |
 | **v7.5.25** | v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor. Added PJ-1203... |
 | **v7.5.24** | v7.5.24: . Fix: gate opener DP3 contact sensor (issue #305). Migrated deprecated flow triggers to modern triggerFlowC... |
 | **v7.5.23** | Maintenance release v7.5.23 — . Internal data cleanup and archive of obsolete planning files. No new drivers or finge... |
@@ -135,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v7.5.15** | v7.5.15: Fixed siren sensor driver crashes, added 3,202 new fingerprints, and improved device detection reliability. |
 | **v7.5.14** | v7.5.14: . Bug fixes for wireless buttons, climate sensors, radiator valves, and energy meters. Improved device initi... |
 | **v7.5.13** | v7.5.13: . Added new fingerprints for motion sensor, illuminance sensor, 3-gang switch, energy meter, and DIN rail. F... |
-| **v7.5.12** | v7.5.12: . Fixed sensor fallback logic for unknown models. Added new fingerprints for radiator valve (_TZE284_ne4pikw... |
 
 <!-- CHANGELOG_END -->
 

@@ -4,7 +4,17 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.25] - 2026-05-13
+## [7.5.26] - 2026-05-13
+
+### Bug Fixes
+- Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated `getTriggerCard` to `getDeviceTriggerCard`. This eliminates all deprecation warnings and ensures full compatibility with the latest Homey firmware.
+
+### Improvements
+- Updated driver count to 228 with 6,713 fingerprints.
+- General stability improvements and code cleanup.
+---
+
+ [7.5.25] - 2026-05-13
 
 ### Bug Fixes
 - Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor devices
