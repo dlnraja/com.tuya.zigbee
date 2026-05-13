@@ -12,6 +12,8 @@ const { CLUSTER } = require('zigbee-clusters');
 class SmartBreakerDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.log('Smart Breaker initializing...');
 
     // Register on/off

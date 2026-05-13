@@ -43,6 +43,12 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      - name: 🛡️ Run STRICT_SYNTAX_GUARD
+        run: node scripts/ci/STRICT_SYNTAX_GUARD.js
+
+      - name: 🛡️ Run Zero-Defect Control
+        run: node scripts/ci/zero-defect-control.js
+
       - name: 🔍 Validate Homey App (publish)
         id: homey_validate
         env:

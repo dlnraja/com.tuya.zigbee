@@ -36,6 +36,8 @@ const POWER_ON_BEHAVIOR = {
 class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 
   async onNodeInit({zclNode}) {
+    await super.onNodeInit({ zclNode });
+
 
     this.log('════════════════════════════════════════');
     this.log('WallDimmer1Gang1Way onNodeInit STARTING');
@@ -278,7 +280,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         if (isPhysicalPress) {
           const flowCardId = state ? 'wall_dimmer_1gang_1way_turned_on' : 'wall_dimmer_1gang_1way_turned_off';
           this.log(`Triggering: ${flowCardId}`);
-          (() => { try { return this.homey.flow.getDeviceTriggerCard(flowCardId); } catch(e) { return null; } })()?.trigger(this, {}, {})
+          (() => { try { return this.homey.flow.getTriggerCard(flowCardId); } catch(e) { return null; } })()?.trigger(this, {}, {})
             .catch(err => this.error(`Flow trigger failed: ${err.message}`));
         }
       }
@@ -312,11 +314,11 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         if (isPhysicalPress) {
           if (brightnessIncreased) {
             this.log('Triggering: wall_dimmer_1gang_1way_brightness_increased (PHYSICAL)');
-            (() => { try { return this.homey.flow.getDeviceTriggerCard('wall_dimmer_1gang_1way_brightness_increased'); } catch(e) { return null; } })()?.trigger(this, { brightness })
+            (() => { try { return this.homey.flow.getTriggerCard('wall_dimmer_1gang_1way_brightness_increased'); } catch(e) { return null; } })()?.trigger(this, { brightness })
               .catch(this.error);
           } else if (brightnessDecreased) {
             this.log('Triggering: wall_dimmer_1gang_1way_brightness_decreased (PHYSICAL)');
-            (() => { try { return this.homey.flow.getDeviceTriggerCard('wall_dimmer_1gang_1way_brightness_decreased'); } catch(e) { return null; } })()?.trigger(this, { brightness })
+            (() => { try { return this.homey.flow.getTriggerCard('wall_dimmer_1gang_1way_brightness_decreased'); } catch(e) { return null; } })()?.trigger(this, { brightness })
               .catch(this.error);
           }
         }

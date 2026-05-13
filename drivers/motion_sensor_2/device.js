@@ -9,6 +9,8 @@ Cluster.addCluster(TuyaSpecificCluster);
 class motion_sensor_2 extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.printNode();
 
     if (this.isFirstInit()){

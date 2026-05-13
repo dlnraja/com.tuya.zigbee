@@ -50,6 +50,8 @@ try {
 class SosEmergencyButtonDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.log('');
     this.log('╔══════════════════════════════════════════════════════════════╗');
     this.log('║     SOS EMERGENCY BUTTON v5.5.146 - UNIVERSAL                ║');
@@ -225,9 +227,9 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
       // v5.12.0: Trigger specific press type flow cards
       if (value === 1) {
-        try { (() => { try { return this.homey.flow.getDeviceTriggerCard('button_emergency_sos_double_pressed'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {}); } catch(e) {}
+        try { (() => { try { return this.homey.flow.getTriggerCard('button_emergency_sos_double_pressed'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {}); } catch(e) {}
       } else if (value === 2) {
-        try { (() => { try { return this.homey.flow.getDeviceTriggerCard('button_emergency_sos_long_pressed'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {}); } catch(e) {}
+        try { (() => { try { return this.homey.flow.getTriggerCard('button_emergency_sos_long_pressed'); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {}); } catch(e) {}
       }
 
       return;
@@ -858,7 +860,7 @@ class SosEmergencyButtonDevice extends ZigBeeDevice {
 
       // Fallback: direct trigger
       try {
-        const card = this.homey.flow.getDeviceTriggerCard('button_emergency_sos_pressed');
+        const card = this.homey.flow.getTriggerCard('button_emergency_sos_pressed');
         if (card) {
           card.trigger(this, {}, {}).catch(e => this.log('[SOS] trigger error:', e.message));
           this.log('[SOS] ✅ button_emergency_sos_pressed triggered (direct)');

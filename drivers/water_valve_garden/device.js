@@ -8,6 +8,8 @@ const { BoundCluster } = require('zigbee-clusters');
 
 class WaterValveGardenDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.log('[VALVE-GARDEN] Initializing...');
 
     // 1. Ensure manufacturer and model settings are populated

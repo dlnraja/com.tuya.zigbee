@@ -247,7 +247,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       // Emit event for flow triggers
       try {
         const triggerId = `generic_tuya_${capability}_changed`;
-        const trigger = this.homey.flow.getDeviceTriggerCard(triggerId);
+        const trigger = this.homey.flow.getTriggerCard(triggerId);
         if (trigger) {
           trigger.trigger(this, {
             [capability.replace('measure_', '').replace('alarm_', '')]: parsedValue
