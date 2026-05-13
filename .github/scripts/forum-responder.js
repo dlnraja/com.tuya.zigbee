@@ -115,8 +115,9 @@ function getHeaders(auth,json){
 const ALLOWED_POST_TOPICS=new Set([140352]);
 async function postReply(tid,replyTo,content,auth){
   if(!ALLOWED_POST_TOPICS.has(tid)){console.error('BLOCKED: refusing to post on T'+tid+' (not in whitelist)');return{id:null,blocked:true}}
-  const r=await fetchWithRetry(FORUM+'/posts',{method:'POST',headers:getHeaders(auth,true),
-    body:JSON.stringify({topic_id:tid,raw:content,reply_to_post_number:replyTo})},{retries:3,label:'reply'});
+  console.log('READ ONLY MODE: Suppressing POST request for reply'); return {id:null, blocked:true};
+  /* const r=await fetchWithRetry(FORUM+'/posts',{method:'GET',headers:getHeaders(auth,true),
+    body:JSON.stringify({topic_id:tid,raw:content,reply_to_post_number:replyTo})},{retries:3,label:'reply'}); */
   const d=await r.json().catch(()=>({}));
   if(!r.ok)throw new Error('Post:'+r.status+' '+JSON.stringify(d).substring(0,200));
   return d;
@@ -124,8 +125,9 @@ async function postReply(tid,replyTo,content,auth){
 
 // EDIT existing post instead of creating new one (prevents consecutive messages)
 async function editPost(postId,newContent,auth){
-  const r=await fetchWithRetry(FORUM+'/posts/'+postId,{method:'PUT',headers:getHeaders(auth,true),
-    body:JSON.stringify({post:{raw:newContent}})},{retries:3,label:'editPost'});
+  console.log('READ ONLY MODE: Suppressing PUT request for editPost'); return null;
+  /* const r=await fetchWithRetry(FORUM+'/posts/'+postId,{method:'GET',headers:getHeaders(auth,true),
+    body:JSON.stringify({post:{raw:newContent}})},{retries:3,label:'editPost'}); */
   const d=await r.json().catch(()=>({}));
   if(!r.ok)throw new Error('Edit:'+r.status+' '+JSON.stringify(d).substring(0,200));
   return d;
