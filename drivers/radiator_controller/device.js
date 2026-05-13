@@ -146,7 +146,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     // Safe flow card getter to prevent crashes on missing cards
     const safeGetCard = (type, id) => {
       try {
-        if (type === 'trigger') return this.homey.flow.getTriggerCard(id);
+        if (type === 'trigger') return this.homey.flow.getDeviceTriggerCard(id);
         if (type === 'condition') return this.homey.flow.getConditionCard(id);
         if (type === 'action') return this.homey.flow.getActionCard(id);
       } catch (e) {

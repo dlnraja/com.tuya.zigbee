@@ -126,11 +126,11 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_wall_8gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            (() => { try { return this.homey.flow.getTriggerCard(flowId); } catch(e) { return null; } })()?.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+            (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch(e) { return null; } })()?.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
             this.log(`[SWITCH-8G] Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            (() => { try { return this.homey.flow.getTriggerCard(`switch_wall_8gang_gang${epNum}_scene`); } catch(e) { return null; } })()?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+            (() => { try { return this.homey.flow.getDeviceTriggerCard(`switch_wall_8gang_gang${epNum}_scene`); } catch(e) { return null; } })()?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
             this.log(`[SWITCH-8G] Scene G${epNum} ${value ? 'on' : 'off'}`);
           }
         }
