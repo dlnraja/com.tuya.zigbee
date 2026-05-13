@@ -798,6 +798,8 @@ The project behavior is governed by multiple rule files and dotfiles. If you nee
 ### 2. Architecture & Cartography (Where to find Deep Knowledge)
 If you need to understand *how* the engine works before modifying it, read these mapping files:
 - **`PROJECT_INDEX.md`**: (This file) The master entry point.
+- **`.ai/IR_UI_UX_PAIRING.md`**: Documentation for implementing HTML/JS pairing wizards for Universal Remotes (Xiaomi Mi Remote / SmartIR emulation).
+- **`.ai/SYSTEM_CHANGELOG.md`**: A living record of deep engine hardening (e.g. ButtonRemoteManager multi-endpoint logic, Universal Protocol base64 translations).
 - **`docs/ARCHITECTURE.md`**: In-depth explanation of the Zigbee SDK3 implementation and Tuya protocol structures.
 - **`MEGA_PROMPT_UNIVERSAL_TUYA_ZIGBEE.md`**: The supreme "Opus 4.6" directive for driver enrichment and zero-defect coding.
 - **`MASTER-V7-SKELETON.md` / `STABLE-V5-SKELETON.md`**: Architectural skeleton maps outlining structural differences between major versions.

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 20px; background: #f7f7f7; color: #333; }
+        .container { background: #fff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); max-width: 400px; margin: 0 auto; text-align: center; }
+        h2 { font-size: 1.2rem; margin-bottom: 15px; color: #111; }
+        p { font-size: 0.9rem; color: #666; margin-bottom: 20px; }
+        .form-group { text-align: left; margin-bottom: 15px; }
+        label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 5px; color: #555; }
+        select, input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; box-sizing: border-box; }
+        input:focus, select:focus { border-color: #007aff; outline: none; }
+        .btn { display: block; width: 100%; padding: 12px; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.2s; margin-bottom: 10px; }
+        .btn-primary { background: #007aff; color: white; }
+        .btn-primary:active { background: #005bb5; }
+        .btn-danger { background: #ff3b30; color: white; margin-top: 20px; border-radius: 50%; width: 80px; height: 80px; margin-left: auto; margin-right: auto; box-shadow: 0 4px 10px rgba(255, 59, 48, 0.4); }
+        .btn-danger:active { background: #cc2f26; transform: scale(0.95); }
+        .test-area { display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
+        .icon-power { font-size: 2rem; line-height: 80px; }
+        .success-text { color: #34c759; font-weight: 600; display: none; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<div class="container" id="step1">
+    <h2>Universal Remote Setup</h2>
+    <p>Configure your Tuya IR Blaster to control your TV or Air Conditioner.</p>
+
+    <div class="form-group">
+        <label for="category">Device Category</label>
+        <select id="category">
+            <option value="TV">TV</option>
+            <option value="AC">Air Conditioner</option>
+            <option value="Audio">Audio / Soundbar</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="brand">Brand</label>
+        <input type="text" id="brand" placeholder="e.g. Samsung, LG, Daikin" autocomplete="off" />
+    </div>
+
+    <button class="btn btn-primary" onclick="startTest()">Start Pairing</button>
+</div>
+
+<div class="container test-area" id="step2">
+    <h2>Testing Code</h2>
+    <p>Point the IR Blaster towards your device and tap the Power button below.</p>
+    
+    <button class="btn btn-danger" onclick="testPower()">
+        <span class="icon-power">⏻</span>
+    </button>
+    
+    <p style="margin-top:20px;">Did the device turn on/off?</p>
+    <button class="btn btn-primary" onclick="saveConfig()">Yes, Save It!</button>
+    
+    <p class="success-text" id="successMsg">Configuration Saved!</p>
+</div>
+
+<script type="text/javascript">
+    var selectedBrand = '';
+    var selectedCategory = '';
+
+    function onHomeyReady(Homey) {
+        window.Homey = Homey;
+        Homey.ready();
+    }
+
+    function startTest() {
+        selectedBrand = document.getElementById('brand').value.trim();
+        selectedCategory = document.getElementById('category').value;
+        if (!selectedBrand) {
+            Homey.alert('Please enter a brand name.');
+            return;
+        }
+        document.getElementById('step1').style.display = 'none';
+        document.getElementById('step2').style.display = 'block';
+    }
+
+    function testPower() {
+        if (!window.Homey) return;
+        window.Homey.emit('test_ir_code', {
+            brand: selectedBrand,
+            category: selectedCategory,
+            command: 'Power'
+        }, function(err, result) {
+            if (err) {
+                window.Homey.alert('Error sending code: ' + err);
+            }
+        });
+    }
+
+    function saveConfig() {
+        if (!window.Homey) return;
+        window.Homey.emit('save_ir_config', {
+            brand: selectedBrand,
+            category: selectedCategory
+        }, function(err, result) {
+            if (err) {
+                window.Homey.alert('Failed to save settings: ' + err);
+            } else {
+                document.getElementById('successMsg').style.display = 'block';
+                setTimeout(function() {
+                    window.Homey.done();
+                }, 1500);
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

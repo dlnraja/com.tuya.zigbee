@@ -295,11 +295,22 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 110: // Power factor A (÷100)
-        this.log(`[PJ1203A] 📈 Power Factor A: ${value / 100}`);
+        const pfa = value / 100;
+        if (this.hasCapability('measure_power_factor')) {
+          this.setCapabilityValue('measure_power_factor', pfa).catch(this.error);
+        }
+        if (this.hasCapability('measure_power_factor.phase1')) {
+          this.setCapabilityValue('measure_power_factor.phase1', pfa).catch(this.error);
+        }
+        this.log(`[PJ1203A] 📈 Power Factor A: ${pfa}`);
         break;
 
       case 111: // AC frequency (Hz ÷100)
-        this.log(`[PJ1203A] ⚡ AC Frequency: ${value / 100} Hz`);
+        const freq = value / 100;
+        if (this.hasCapability('measure_frequency')) {
+          this.setCapabilityValue('measure_frequency', freq).catch(this.error);
+        }
+        this.log(`[PJ1203A] ⚡ AC Frequency: ${freq} Hz`);
         break;
 
       case 112: // Voltage (V ÷10)
@@ -313,7 +324,11 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 114: // Current B (A ÷1000)
-        this.log(`[PJ1203A] ⚡ Current B: ${value / 1000} A`);
+        const currentB = (value / 1000) * this._ctRatio;
+        if (this.hasCapability('measure_current.phase2')) {
+          this.setCapabilityValue('measure_current.phase2', currentB).catch(this.error);
+        }
+        this.log(`[PJ1203A] ⚡ Current B: ${currentB} A`);
         break;
 
       case 115: // Power AB Total (W ÷10)
@@ -323,7 +338,11 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 121: // Power factor B (÷100)
-        this.log(`[PJ1203A] 📈 Power Factor B: ${value / 100}`);
+        const pfb = value / 100;
+        if (this.hasCapability('measure_power_factor.phase2')) {
+          this.setCapabilityValue('measure_power_factor.phase2', pfb).catch(this.error);
+        }
+        this.log(`[PJ1203A] 📈 Power Factor B: ${pfb}`);
         break;
 
       case 129: // Update frequency (seconds)
@@ -399,8 +418,12 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       break;
 
     case 111: // PJ-1203A AC Frequency (Hz ÷100)
-      this.log(`[FALLBACK] ⚡ AC Frequency: ${value / 100} Hz`);
-      break;
+        const fallbackFreq = value / 100;
+        if (this.hasCapability('measure_frequency')) {
+          this.setCapabilityValue('measure_frequency', fallbackFreq).catch(this.error);
+        }
+        this.log(`[FALLBACK] ⚡ AC Frequency: ${fallbackFreq} Hz`);
+        break;
 
     case 112: // PJ-1203A Voltage (V ÷10)
       this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
@@ -413,8 +436,12 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       break;
 
     case 114: // PJ-1203A Current B (A ÷1000)
-      this.log(`[FALLBACK] ⚡ Current B: ${value / 1000} A`);
-      break;
+        const fallbackCurrentB = (value / 1000) * this._ctRatio;
+        if (this.hasCapability('measure_current.phase2')) {
+          this.setCapabilityValue('measure_current.phase2', fallbackCurrentB).catch(this.error);
+        }
+        this.log(`[FALLBACK] ⚡ Current B: ${fallbackCurrentB} A`);
+        break;
 
     case 115: // PJ-1203A Total Power (W ÷10)
       this.setCapabilityValue('measure_power', value / 10).catch(this.error);
@@ -422,8 +449,12 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       break;
 
     case 121: // PJ-1203A Power Factor B
-      this.log(`[FALLBACK] 📈 Power Factor B: ${value / 100}`);
-      break;
+        const fallbackPfb = value / 100;
+        if (this.hasCapability('measure_power_factor.phase2')) {
+          this.setCapabilityValue('measure_power_factor.phase2', fallbackPfb).catch(this.error);
+        }
+        this.log(`[FALLBACK] 📈 Power Factor B: ${fallbackPfb}`);
+        break;
 
     default:
       this.log(`[DP${dp}] Unhandled DP value: ${value}`);
