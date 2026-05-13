@@ -58,7 +58,7 @@ class AirQualityComprehensiveDevice extends SensorBase {
     
     // Register flow card triggers with try-catch to prevent crashes
     try {
-      const triggerCard = this.homey.flow.getTriggerCard('air_quality_comprehensive_measure_co2_high').catch(() => null);
+      const triggerCard = this.homey.flow.getDeviceTriggerCard('air_quality_comprehensive_measure_co2_high').catch(() => null);
       if (triggerCard) {
         this._triggerCO2High = triggerCard;
       }

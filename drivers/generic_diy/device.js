@@ -83,7 +83,7 @@ class GenericDIYDevice extends ZigBeeDevice {
   // ═══════════════════════════════════════════════════════════
 
   _triggerFlow(flowId, tokens = {}) {
-    const card = this.homey.flow.getTriggerCard(flowId);
+    const card = this.homey.flow.getDeviceTriggerCard(flowId);
     if (card) {
       card.trigger(this, tokens, {}).catch(e => this.error(`[DIY] Flow ${flowId}: ${e.message}`));
       this.log(`[DIY] 🔔 Flow: ${flowId}`, tokens);
