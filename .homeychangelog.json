@@ -1,4 +1,7 @@
 {
+  "7.5.29": {
+    "en": "Bug fixes and improvements for Tuya Zigbee devices. Added support for new soil sensor fingerprint. Updated diagnostics and security."
+  },
   "7.5.28": {
     "en": "Added 3,208 new fingerprints, improved driver matching for soil sensors, and fixed various device initialization issues."
   },
@@ -56,10 +59,7 @@
   "7.5.10": {
     "en": "Fixed a crash in UnifiedSensorBase that caused a ReferenceError on _safeSetCapability. Added support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm)."
   },
-  "7.5.9": {
-    "en": "v7.5.9: . Fixed ProtocolArbitrator crash, _TZE608 opener reclassification, SDK3 validation errors, duplicate fingerprints, case-insensitive matching, and MODULE_NOT_FOUND crash. Added 5 new fingerprints, Z2M enriched mappings, rain/soil sensor fixes."
-  },
-  "7.5.29": {
-    "en": "v7.5.28: Added 3,208 new device fingerprints, expanding support for more Tuya Zigbee devices., Improved driver matching for soil sensors (including _TZE284_0ints6wl)., Fixed device initialization issues in HybridDriverSystem., Resolved various stability improvements for sensor devices., Updated app metadata and documentation."
+  "7.5.30": {
+    "en": "v7.5.29: Fixed an issue where some devices would not pair correctly due to security updates., Improved diagnostic data collection for better troubleshooting., Added support for new soil sensor fingerprint (_TZE284_0ints6wl)., Updated app.json with latest security patches., Enhanced AI navigation maps for internal development tools."
   }
 }
