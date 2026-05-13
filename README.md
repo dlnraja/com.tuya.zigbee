@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (May 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v7.5.20** | Added Android native Intent magic URL pairing for all 20 WiFi drivers. Update... |
+| **v7.5.19** | Added Android native Intent magic URL pairing for all 20 WiFi drivers. Update... |
+| **v7.5.18** | Easy Login with saved credentials, auto device classification with brand badg... |
+| **v7.5.17** | v7.5.17 — 3,207 new fingerprints, backlight mode alignment fix, and fingerpri... |
+| **v7.5.16** | v7.5.16 — . Maintenance release with updated device expectations, diagnostics... |
+| **v7.5.15** | v7.5.15: Fixed siren sensor driver crashes, added 3,202 new fingerprints, and... |
+| **v7.5.14** | v7.5.14: . Bug fixes for wireless buttons, climate sensors, radiator valves, ... |
+| **v7.5.13** | v7.5.13: . Added new fingerprints for motion sensor, illuminance sensor, 3-ga... |
+| **v7.5.12** | v7.5.12: . Fixed sensor fallback logic for unknown models. Added new fingerpr... |
+| **v7.5.11** | v7.5.11: Fixed ReferenceError crashes in HybridSensorBase, HybridCoverBase, H... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
