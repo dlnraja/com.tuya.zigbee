@@ -1,4 +1,7 @@
 {
+  "7.5.20": {
+    "en": "v7.5.20: . Fixed WiFi socket port reuse, cleanly separated WiFi/Zigbee protocols, improved 4-gang switch support, and resolved diagnostic crashes."
+  },
   "7.5.19": {
     "en": "Added Android native Intent magic URL pairing for all 20 WiFi drivers. Updated pairing configuration UI."
   },
@@ -56,10 +59,7 @@
   "5.11.205": {
     "en": "Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers."
   },
-  "5.11.204": {
-    "en": "v5.11.203: Emergency SOS Buttons:, Device Support:, Expanded compatibility for wireless emergency buttons and panic switches., Total driver count increased to 213."
-  },
-  "7.5.20": {
-    "en": "Added Android native Intent magic URL pairing for all 20 WiFi drivers. Updated pairing configuration UI."
+  "7.5.21": {
+    "en": "v7.5.20: Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving connection drops and repeated reconnections, Resolved diagnostic crashes caused by mixed WiFi/Zigbee protocol handling, Added new device fingerprints across the driver library (3,208 total across 228 drivers), Updated `switch_4gang` driver with new manufacturer fingerprints and capability mappings, Cleanly separated WiFi ("
   }
 }
