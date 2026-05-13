@@ -4,7 +4,20 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.20] - 2026-05-13
+## [7.5.22] - 2026-05-13
+
+## Version 7.5.22
+
+### Changes
+- App metadata and store listing updated.
+
+No new drivers, fingerprints, or bug fixes in this release.
+
+---
+**228 drivers** | **6,707 fingerprints**
+---
+
+ [7.5.20] - 2026-05-13
 
 ### Bug Fixes
 - Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving connection drops and repeated reconnections

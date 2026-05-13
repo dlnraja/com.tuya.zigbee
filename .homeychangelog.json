@@ -1,4 +1,10 @@
 {
+  "7.5.22": {
+    "en": "Version 7.5.22 — App metadata and store listing update. No new drivers or fingerprints added in this release."
+  },
+  "7.5.21": {
+    "en": "v7.5.20: Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving connection drops and repeated reconnections, Resolved diagnostic crashes caused by mixed WiFi/Zigbee protocol handling, Added new device fingerprints across the driver library (3,208 total across 228 drivers), Updated `switch_4gang` driver with new manufacturer fingerprints and capability mappings, Cleanly separated WiFi ("
+  },
   "7.5.20": {
     "en": "v7.5.20: . Fixed WiFi socket port reuse, cleanly separated WiFi/Zigbee protocols, improved 4-gang switch support, and resolved diagnostic crashes."
   },
@@ -53,16 +59,7 @@
   "5.11.207": {
     "en": "Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers."
   },
-  "5.11.206": {
-    "en": "Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers."
-  },
-  "5.11.205": {
-    "en": "Universal Tuya Zigbee app v5.11.205: Fixed app ID and updated drivers."
-  },
-  "7.5.21": {
-    "en": "v7.5.20: Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving connection drops and repeated reconnections, Resolved diagnostic crashes caused by mixed WiFi/Zigbee protocol handling, Added new device fingerprints across the driver library (3,208 total across 228 drivers), Updated `switch_4gang` driver with new manufacturer fingerprints and capability mappings, Cleanly separated WiFi ("
-  },
-  "7.5.22": {
-    "en": "FIX: Resolve critical startup crash by packaging fingerprints DB, resolve _TZE204_ex3rcdha collision, fix Epoch 0 on IAS status updates, and fix button/motion flow-card registry crashes"
+  "7.5.23": {
+    "en": "Version 7.5.22 — App metadata and store listing update. No new drivers or fingerprints added in this release."
   }
 }
