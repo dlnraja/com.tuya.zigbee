@@ -1,6 +1,6 @@
 'use strict';
 
-const {SensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const { MotionLuxInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 const { containsCI, startsWithCI } = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -168,7 +168,7 @@ class MotionSensorDevice extends SensorBase {
    * Solution: Return PERMISSIVE profile for variants - let DPs determine capabilities
    */
   _getManufacturerProfile() {
-    // v5.8.53: Use comprehensive fallback chain (matching BaseHybridDevice._detectProtocol)
+    // v5.8.53: Use comprehensive fallback chain (matching BaseUnifiedDevice._detectProtocol)
     // Root cause (diag e2148e06): getData()?.manufacturerName was undefined for _TZE200_3towulqd
     // v5.8.77: Added zclNode + cached sources — fixes DEFAULT profile on first init
     const mfr = this.getSetting?.('zb_manufacturer_name')
@@ -511,7 +511,7 @@ class MotionSensorDevice extends SensorBase {
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_temperature'))
                 this.addCapability('measure_temperature').catch(() => {});
-              this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
+              await this.setCapabilityValue('measure_temperature', parseFloat(temp)).catch(() => { });
             } else {
               this.log(`[ZCL] ⚠️ Temperature out of range: ${temp}°C (raw: ${data.measuredValue})`);
             }
@@ -539,7 +539,7 @@ class MotionSensorDevice extends SensorBase {
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_humidity'))
                 this.addCapability('measure_humidity').catch(() => {});
-              this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
+              await this.setCapabilityValue('measure_humidity', parseFloat(hum)).catch(() => { });
             } else {
               this.log(`[ZCL] ⚠️ Humidity out of range: ${hum}% (raw: ${data.measuredValue})`);
             }
@@ -559,7 +559,7 @@ class MotionSensorDevice extends SensorBase {
               // v5.8.7: Permissive - auto-add capability from ZCL data
               if (!this.hasCapability('measure_luminance'))
                 this.addCapability('measure_luminance').catch(() => {});
-              this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
+              await this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
 
               // v5.5.317: Feed lux to motion inference engine
               this._handleLuxForMotionInference(lux);
@@ -594,7 +594,7 @@ class MotionSensorDevice extends SensorBase {
             // v5.8.7: Permissive - auto-add capability from ZCL data
             if (!this.hasCapability('measure_battery'))
               this.addCapability('measure_battery').catch(() => {});
-            this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
+            await this.setCapabilityValue('measure_battery', parseFloat(battery)).catch(() => { });
           }
         }
       }
@@ -1104,7 +1104,7 @@ class MotionSensorDevice extends SensorBase {
         this.log(`[ZCL-DATA] motion_sensor.ias_zone raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2} → motion=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
-          this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
         }
 
         // v5.5.18: Trigger flow card
@@ -1136,7 +1136,7 @@ class MotionSensorDevice extends SensorBase {
         this.log(`[ZCL-DATA] motion_sensor.zone_status raw=${status} → alarm_motion=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
-          this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
         }
 
         // v5.5.104: Also read temp/humidity on this event
@@ -1540,7 +1540,7 @@ class MotionSensorDevice extends SensorBase {
 
       // Only update if confidence is high enough
       if (confidence >= 50) {
-        this.setCapabilityValue('alarm_motion', inferredMotion).catch(() => { });
+        await this.setCapabilityValue('alarm_motion', inferredMotion).catch(() => { });
 
         // Trigger flow if motion detected
         if (inferredMotion && this.driver?.motionTrigger) {
@@ -1695,7 +1695,7 @@ class MotionSensorDevice extends SensorBase {
 
     if (shouldReport) {
       this.log(`[LUX-SMART] 💡 Smart lux update: ${luxValue} lux (${reason})`);
-      this.setCapabilityValue('measure_luminance', parseFloat(luxValue)).catch(() => { });
+      await this.setCapabilityValue('measure_luminance', parseFloat(luxValue)).catch(() => { });
 
       config.lastLuxValue = luxValue;
       config.lastLuxTime = now;

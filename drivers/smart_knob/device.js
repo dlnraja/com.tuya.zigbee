@@ -64,7 +64,7 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
       level.on('commandMoveToLevel', ({ level: lvl }) => {
         const dim = Math.max(0, Math.min(1, lvl / 254));
         const pct = Math.round(dim * 100);
-        this.setCapabilityValue('dim', dim).catch(() => {});
+        await this.setCapabilityValue('dim', dim).catch(() => {});
         this.log('[KNOB] Level:', pct + '%');
         (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_level_changed'); } catch(e) { return null; } })()?.trigger(this, { level: pct }, {}).catch(() => {});
       });
@@ -78,7 +78,7 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
         const step = (stepSize / 254) * (stepMode === 0 ? 1 : -1);
         const newDim = Math.max(0, Math.min(1, curDim + step));
         const pct = Math.round(newDim * 100);
-        this.setCapabilityValue('dim', newDim).catch(() => {});
+        await this.setCapabilityValue('dim', newDim).catch(() => {});
         this.log('[KNOB] Step to:', pct + '%');
         const direction = stepMode === 0 ? 'up' : 'down';
         (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotated'); } catch(e) { return null; } })()?.trigger(this, { direction, level: pct }, {}).catch(() => {});
@@ -91,7 +91,7 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
     if (power?.on) {
       power.on('attr.batteryPercentageRemaining', (val) => {
         const pct = Math.min(100, Math.round(val / 2));
-        this.setCapabilityValue('measure_battery', pct).catch(() => {});
+        await this.setCapabilityValue('measure_battery', pct).catch(() => {});
       });
     }
 
@@ -103,12 +103,12 @@ class SmartKnobDevice extends TuyaZigbeeDevice {
     if (now - this._lastPressTime < 300 && this._lastPressType === pressType) return;
     this._lastPressTime = now;
     this._lastPressType = pressType;
-    this.setCapabilityValue('button', true).catch(() => {});
+    await this.setCapabilityValue('button', true).catch(() => {});
     this.log(`[KNOB] 🔘 ${pressType.toUpperCase()} press`);
     (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_button_pressed'); } catch(e) { return null; } })()?.trigger(this, { press_type: pressType }, {}).catch(() => {});
     const card = { single: 'smart_knob_single_press', double: 'smart_knob_double_press', long: 'smart_knob_long_press' }[pressType];
     if (card) {
-      (() => { try { return this.homey.flow.getDeviceTriggerCard(card); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+      (() => { try { return this.homey.flow.getDeviceTriggerCard(card); } catch(e) { return null; } })()?
     }
   }
 

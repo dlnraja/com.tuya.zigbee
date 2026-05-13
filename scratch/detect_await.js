@@ -35,6 +35,6 @@ function findAwaitOutsideAsync(filePath) {
     });
 }
 
-findAwaitOutsideAsync('lib/devices/HybridSensorBase.js');
-findAwaitOutsideAsync('lib/devices/BaseHybridDevice.js');
+findAwaitOutsideAsync('lib/devices/UnifiedSensorBase.js');
+findAwaitOutsideAsync('lib/devices/BaseUnifiedDevice.js');
 findAwaitOutsideAsync('app.js');

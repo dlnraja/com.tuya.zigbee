@@ -1,97 +1,87 @@
 {
   "name": {
-    "en": "Zigbee IR Remote (Moes/Tuya)",
-    "fr": "Télécommande IR Zigbee (Moes/Tuya)",
-    "nl": "Zigbee IR Afstandsbediening (Moes/Tuya)",
-    "de": "Zigbee IR Fernbedienung (Moes/Tuya)"
+    "en": "Virtual IR Remote",
+    "fr": "Télécommande IR Virtuelle"
   },
-  "class": "remote",
-  "connectivity": [
-    "zigbee"
-  ],
+  "class": "other",
   "capabilities": [
-    "button.learn_ir",
-    "ir_learned_code",
-    "ir_send_code"
+    "onoff",
+    "onoff.ir_learn",
+    "button.ir_test"
   ],
   "capabilitiesOptions": {
-    "button.learn_ir": {
+    "onoff": {
       "title": {
-        "en": "Learn IR Code",
-        "fr": "Apprendre Code IR"
-      }
-    }
-  },
-  "energy": {
-    "batteries": [
-      "CR2450",
-      "CR2032",
-      "AAA"
-    ],
-    "approximation": {
-      "usageConstant": 0.3
-    }
-  },
-  "subDevices": [],
-  "zigbee": {
-    "manufacturerName": [
-      "_tz3290_7v1k4vufotpowp9z",
-      "_TZ3290_7v1k4vufotpowp9z",
-      "_TZ3290_7V1K4VUFOTPOWP9Z",
-      "_tz3290_acv1iuslxi3shaaj",
-      "_TZ3290_acv1iuslxi3shaaj",
-      "_TZ3290_ACV1IUSLXI3SHAAJ",
-      "_tz3290_j37rooaxrcdcqo5n",
-      "_TZ3290_j37rooaxrcdcqo5n",
-      "_TZ3290_J37ROOAXRCDCQO5N",
-      "_tz3290_ot6ewjvmejq5ekhl",
-      "_TZ3290_ot6ewjvmejq5ekhl",
-      "_TZ3290_OT6EWJVMEJQ5EKHL",
-      "_tz3290_u9xac5rv",
-      "_TZ3290_u9xac5rv",
-      "_TZ3290_U9XAC5RV",
-      "_tz3290_xjpbcxn92aaxvmlz",
-      "_TZ3290_xjpbcxn92aaxvmlz",
-      "_TZ3290_XJPBCXN92AAXVMLZ"
-    ],
-    "productId": [
-      "TS1201"
-    ],
-    "endpoints": {
-      "1": {
-        "clusters": [
-          0,
-          1,
-          3,
-          4,
-          5,
-          6,
-          57348,
-          60672
-        ]
+        "en": "Power",
+        "fr": "Alimentation"
       }
     },
-    "learnmode": {
-      "image": "/drivers/ir_remote/assets/learnmode.svg",
-      "instruction": {
-        "en": "Press and hold the pairing button for 5 seconds until the LED flashes.",
-        "fr": "Appuyez et maintenez le bouton d'appairage pendant 5 secondes jusqu'à ce que la LED clignote."
-      }
-    }
-  },
-  "images": {
-    "large": "drivers/ir_remote/assets/images/large.png",
-    "small": "drivers/ir_remote/assets/images/small.png",
-    "xlarge": "drivers/ir_remote/assets/images/xlarge.png"
-  },
-  "maintenanceActions": [
-    {
-      "id": "ota_check",
+    "onoff.ir_learn": {
       "title": {
-        "en": "Check Zigbee OTA Update",
-        "fr": "Vérifier MàJ OTA",
-        "nl": "Controleer op OTA-updates"
+        "en": "Learning Mode",
+        "fr": "Mode Apprentissage"
+      },
+      "icon": "/assets/icons/learn.svg"
+    }
+  },
+  "settings": [
+    {
+      "id": "blaster_id",
+      "type": "text",
+      "label": {
+        "en": "Associated IR Blaster ID",
+        "fr": "ID du Blaster IR associé"
+      },
+      "hint": {
+        "en": "Internal ID of the physical IR Blaster device",
+        "fr": "ID interne du module IR Blaster physique"
+      },
+      "value": ""
+    },
+    {
+      "id": "ir_brand",
+      "type": "text",
+      "label": {
+        "en": "Brand",
+        "fr": "Marque"
+      },
+      "value": "Samsung"
+    },
+    {
+      "id": "ir_category",
+      "type": "dropdown",
+      "label": {
+        "en": "Device Category",
+        "fr": "Catégorie d'appareil"
+      },
+      "values": [
+        { "id": "TV", "label": { "en": "TV", "fr": "TV" } },
+        { "id": "AC", "label": { "en": "AC", "fr": "Climatiseur" } },
+        { "id": "Fan", "label": { "en": "Fan", "fr": "Ventilateur" } },
+        { "id": "Audio", "label": { "en": "Audio", "fr": "Audio" } },
+        { "id": "Light", "label": { "en": "Light", "fr": "Lumière" } }
+      ],
+      "value": "TV"
+    }
+  ],
+  "pair": [
+    {
+      "id": "list_blasters",
+      "template": "list_devices",
+      "options": {
+        "driverId": "ir_blaster"
+      }
+    },
+    {
+      "id": "select_brand",
+      "template": "repair",
+      "options": {
+        "view": "ir_setup"
       }
     }
-  ]
+  ],
+  "images": {
+    "large": "/drivers/ir_remote/assets/images/large.png",
+    "small": "/drivers/ir_remote/assets/images/small.png"
+  }
 }

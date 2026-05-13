@@ -21,7 +21,7 @@ PROTOCOL_PATTERNS:[
 {protocol:"fingerbot",rx:/fingerbot|_TZ3210_dse8ogfy|button.push/i,drivers:["fingerbot"],requires:["tuya_cluster_61184","registerCapabilityListener"]}
 ],
 DRIVER_SPECIFIC:[
-{type:"switch",patterns:["physical_gang","virtual_button","backlight","power_on_behavior"],timing:["2000ms_app_command_timeout"],mixins:["PhysicalButtonMixin","VirtualButtonMixin","HybridSwitchBase"]},
+{type:"switch",patterns:["physical_gang","virtual_button","backlight","power_on_behavior"],timing:["2000ms_app_command_timeout"],mixins:["PhysicalButtonMixin","VirtualButtonMixin","UnifiedSwitchBase"]},
 {type:"sensor",patterns:["dpMappings","divisor","ProductValueValidator","mainsPowered"],validation:["CO2:0-5000","temp:-40-80","humidity:0-100"]},
 {type:"radar",patterns:["magic_packet","DP_listeners_first","forced_poll","IAS_enrollment"],timing:["3000ms_after_magic","periodic_enrollment_check"]},
 {type:"thermostat",patterns:["TRV","valve_position","heating_setpoint","local_temperature"],clusters:[513,516]},

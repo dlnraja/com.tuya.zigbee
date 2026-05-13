@@ -8,9 +8,9 @@
 
 module.exports = {
   // Core Base Classes
-  BaseHybridDevice: require('./BaseHybridDevice'),
+  BaseUnifiedDevice: require('./BaseUnifiedDevice'),
   BaseTuyaDPDevice: require('./BaseTuyaDPDevice'),
-  TuyaHybridDevice: require('./TuyaHybridDevice'),
+  TuyaUnifiedDevice: require('./TuyaUnifiedDevice'),
   
   // Device Types
   ButtonDevice: require('./ButtonDevice'),
@@ -20,12 +20,12 @@ module.exports = {
   WallTouchDevice: require('./WallTouchDevice'),
 
   // Hybrid Bases (EF00/ZCL compatible)
-  HybridSensorBase: require('./HybridSensorBase'),
-  HybridPlugBase: require('./HybridPlugBase'),
-  HybridLightBase: require('./HybridLightBase'),
-  HybridSwitchBase: require('./HybridSwitchBase'),
-  HybridCoverBase: require('./HybridCoverBase'),
-  HybridThermostatBase: require('./HybridThermostatBase'),
+  UnifiedSensorBase: require('./UnifiedSensorBase'),
+  UnifiedPlugBase: require('./UnifiedPlugBase'),
+  UnifiedLightBase: require('./UnifiedLightBase'),
+  UnifiedSwitchBase: require('./UnifiedSwitchBase'),
+  UnifiedCoverBase: require('./UnifiedCoverBase'),
+  UnifiedThermostatBase: require('./UnifiedThermostatBase'),
   
   // Device Type Detection
   DeviceTypeManager: require('./DeviceTypeManager')

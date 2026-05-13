@@ -1,6 +1,6 @@
 'use strict';
 
-const {SensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { WakeStrategies } = require('../../lib/tuya/TuyaGatewayEmulator');
 
 /**
@@ -527,7 +527,7 @@ async _setupOccupancyCluster(zclNode) {
         const motion = value > 0;
         this.log(`[ZCL-DATA] mmwave.occupancy raw=${value} converted=${motion}`);
         if (this.hasCapability('alarm_motion')) {
-          this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
         }
       });
 
@@ -538,7 +538,7 @@ async _setupOccupancyCluster(zclNode) {
           const motion = attrs.occupancy > 0;
           this.log(`[MMWAVE] Initial occupancy: ${motion}`);
           if (this.hasCapability('alarm_motion')) {
-            this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+            await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
           }
         }
       } catch (e) {
@@ -570,7 +570,7 @@ async _setupIASMotionListener(zclNode) {
         this.log(`[ZCL-DATA] mmwave.ias_zone raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2} → motion=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
-          this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
         }
       };
 
@@ -581,7 +581,7 @@ async _setupIASMotionListener(zclNode) {
         this.log(`[ZCL-DATA] mmwave.zone_status raw=${status} converted=${motion}`);
 
         if (this.hasCapability('alarm_motion')) {
-          this.setCapabilityValue('alarm_motion', motion).catch(this.error);
+          await this.setCapabilityValue('alarm_motion', motion).catch(this.error);
         }
       });
     }
@@ -614,14 +614,14 @@ onTuyaStatus(status) {
     this.log(`[ZCL-DATA] mmwave.presence_time raw=${rawValue}s → measure_presence_time=${rawValue}, alarm_motion=${rawValue > 0}`);
     // v5.5.17: Intelligent presence - if presence_time > 0, someone IS present
     if (rawValue > 0 && this.hasCapability('alarm_motion')) {
-      this.setCapabilityValue('alarm_motion', true).catch(this.error);
+      await this.setCapabilityValue('alarm_motion', true).catch(this.error);
     }
     break;
   case 102: // Distance to target (cm)
     this.log(`[ZCL-DATA] mmwave.distance raw=${rawValue}cm → measure_luminance.distance=${rawValue}`);
     // v5.5.17: If distance reported, someone is detected
     if (rawValue > 0 && this.hasCapability('alarm_motion')) {
-      this.setCapabilityValue('alarm_motion', true).catch(this.error);
+      await this.setCapabilityValue('alarm_motion', true).catch(this.error);
     }
     break;
   case 2: // Humidity

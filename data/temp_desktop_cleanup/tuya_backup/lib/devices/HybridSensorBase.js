@@ -85,11 +85,11 @@ const {
   usesIasAceCluster,
   DEVICE_PROFILES,
   ZCL_DEVICE_PROFILES
-} = require('../tuya/UniversalTuyaParser');
+} = require('../tuya/TuyaUnifiedParser');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║           HybridSensorBase - Dynamic version from app.json                  ║
+ * ║           UnifiedSensorBase - Dynamic version from app.json                  ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║                                                                              ║
  * ║  THE ULTIMATE SENSOR BASE CLASS                                              ║
@@ -117,7 +117,7 @@ const {
  * ║  - Air quality (PM2.5, VOC, CO2, formaldehyde)                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class HybridSensorBase extends ZigBeeDevice {
+class UnifiedSensorBase extends ZigBeeDevice {
 
   // ═══════════════════════════════════════════════════════════════════════════
   // CONFIGURATION (override in subclasses if needed)
@@ -194,7 +194,7 @@ class HybridSensorBase extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
     // DIAGNOSTIC MASSIF - TOUS LES DEVICES
     this.log('🔍 [DIAGNOSTIC-MASSIF] ═══════════════════════════════════════');
-    this.log('🔍 [DIAGNOSTIC-MASSIF] HybridSensorBase.onNodeInit() APPELÉ');
+    this.log('🔍 [DIAGNOSTIC-MASSIF] UnifiedSensorBase.onNodeInit() APPELÉ');
     this.log(`🔍 [DIAGNOSTIC-MASSIF] Device: ${this.getName()} (${this.driver ? this.driver.id : 'unknown-driver'})`);
     this.log(`🔍 [DIAGNOSTIC-MASSIF] Data: ${JSON.stringify(this.getData())}`);
     this.log(`🔍 [DIAGNOSTIC-MASSIF] Settings: ${JSON.stringify(this.getSettings())}`);
@@ -248,7 +248,7 @@ class HybridSensorBase extends ZigBeeDevice {
     // ─────────────────────────────────────────────────────────────────────────
     // v5.5.825: CRITICAL FIX - Configure reporting after updates too!
     // Previously only ran on isFirstInit(), causing sensors to stop working after updates
-    // Now uses version tracking like BaseHybridDevice
+    // Now uses version tracking like BaseUnifiedDevice
     // ─────────────────────────────────────────────────────────────────────────
     const needsReportingConfig = this._shouldConfigureReportingSensor();
     if (needsReportingConfig) {
@@ -646,7 +646,7 @@ class HybridSensorBase extends ZigBeeDevice {
 
   /**
    * v5.5.825: CRITICAL FIX - Check if reporting needs to be configured
-   * Same logic as BaseHybridDevice to fix "sensors not working after update"
+   * Same logic as BaseUnifiedDevice to fix "sensors not working after update"
    */
   _shouldConfigureReportingSensor() {
     // Always configure on first init
@@ -2821,7 +2821,7 @@ class HybridSensorBase extends ZigBeeDevice {
     }
     this._dpDedup[dedupKey] = now;
 
-    // v5.5.904: Enhanced diagnostic logging (same as HybridSwitchBase)
+    // v5.5.904: Enhanced diagnostic logging (same as UnifiedSwitchBase)
     const dataType = this._detectDataType(rawValue);
     const rawDisplay = Buffer.isBuffer(rawValue) ? rawValue.toString('hex') : rawValue;
     
@@ -3139,7 +3139,7 @@ class HybridSensorBase extends ZigBeeDevice {
   // ═══════════════════════════════════════════════════════════════════════════
 
   /**
-   * v5.5.904: Detect data type for diagnostic logging (same as HybridSwitchBase)
+   * v5.5.904: Detect data type for diagnostic logging (same as UnifiedSwitchBase)
    */
   _detectDataType(value) {
     if (value === null || value === undefined) return 'null';
@@ -3547,7 +3547,7 @@ class HybridSensorBase extends ZigBeeDevice {
 
     // ─────────────────────────────────────────────────────────────────────────
     // v5.5.84: UNIVERSAL ZCL LISTENERS - Auto-discover ALL other clusters
-    // Uses UniversalTuyaParser for maximum coverage
+    // Uses TuyaUnifiedParser for maximum coverage
     // ─────────────────────────────────────────────────────────────────────────
     this.log('[ZCL-UNIVERSAL] Setting up universal listeners for all endpoints...');
     try {
@@ -3869,7 +3869,7 @@ class HybridSensorBase extends ZigBeeDevice {
 
     // v5.5.118: Dynamic capability addition - if missing but known, add it!
     if (!this.hasCapability(capability)) {
-      if (HybridSensorBase.DYNAMIC_CAPABILITIES.includes(capability)) {
+      if (UnifiedSensorBase.DYNAMIC_CAPABILITIES.includes(capability)) {
         try {
           await this.addCapability(capability);
           this.log(`[CAP] ✨ DYNAMIC ADD: ${capability} (detected from DP/ZCL data)`);
@@ -4652,5 +4652,5 @@ class HybridSensorBase extends ZigBeeDevice {
 }
 
 module.exports = {
-  HybridSensorBase
+  UnifiedSensorBase
 };

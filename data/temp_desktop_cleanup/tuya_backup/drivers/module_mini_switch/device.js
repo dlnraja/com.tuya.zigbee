@@ -1,7 +1,7 @@
 'use strict';
-const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 
-class ModuleMiniSwitchDevice extends HybridSwitchBase {
+class ModuleMiniSwitchDevice extends UnifiedSwitchBase {
   get gangCount() { return 1; }
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });

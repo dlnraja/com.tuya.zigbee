@@ -237,7 +237,7 @@
     "setCapabilityValue": [
       {
         "severity": "WARNING",
-        "file": "lib\\devices\\BaseHybridDevice.js",
+        "file": "lib\\devices\\BaseUnifiedDevice.js",
         "line": 3198,
         "code": "await this.setCapabilityValue('measure_battery', 50).catch(() => { });",
         "message": "setCapabilityValue sans conversion type explicite"
@@ -1100,13 +1100,13 @@
       },
       {
         "severity": "WARNING",
-        "file": "lib\\devices\\TuyaHybridDevice.js",
+        "file": "lib\\devices\\TuyaUnifiedDevice.js",
         "event": "report",
         "message": "Event listener 'report' sans removeListener"
       },
       {
         "severity": "WARNING",
-        "file": "lib\\tuya\\UniversalTuyaParser.js",
+        "file": "lib\\tuya\\TuyaUnifiedParser.js",
         "event": "report",
         "message": "Event listener 'report' sans removeListener"
       }

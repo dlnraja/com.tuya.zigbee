@@ -34,7 +34,7 @@ class GarageDoorOpenerDevice extends TuyaZigbeeDevice {
           capability: 'alarm_contact',
           converter: (v) => {
             const isClosed = !!v;
-            this.setCapabilityValue('garagedoor_closed', isClosed).catch(() => {});
+            await this.setCapabilityValue('garagedoor_closed', isClosed).catch(() => {});
             return !isClosed;
           },
         },

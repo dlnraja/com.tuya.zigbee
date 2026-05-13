@@ -1,5 +1,5 @@
 'use strict';
-const PlugBase = require('../../lib/devices/HybridPlugBase');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**

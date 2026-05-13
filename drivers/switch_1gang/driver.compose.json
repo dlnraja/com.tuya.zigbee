@@ -8,7 +8,8 @@
     "measure_voltage",
     "measure_current",
     "button.toggle",
-    "button.identify"
+    "button.identify",
+    "alarm_battery"
   ],
   "zigbee": {
     "productId": [
@@ -1663,7 +1664,7 @@
   "metadata": {
     "app": {
       "id": "com.dlnraja.tuya.zigbee",
-      "name": "Universal Tuya Zigbee",
+      "name": "Tuya Unified Zigbee",
       "version": "4.1.3",
       "api": {
         "min": 3,

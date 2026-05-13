@@ -1,7 +1,7 @@
 'use strict';
-const HybridCoverBase = require('../../lib/devices/HybridCoverBase');
+const UnifiedCoverBase = require('../../lib/devices/UnifiedCoverBase');
 
-class ShutterRollerDevice extends HybridCoverBase {
+class ShutterRollerDevice extends UnifiedCoverBase {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     this.log('[SHUTTER] ✅ Ready');

@@ -1,6 +1,6 @@
 # Unsupported Devices & Categories
 
-This document lists devices that are NOT compatible with Universal Tuya Zigbee and why.
+This document lists devices that are NOT compatible with Tuya Unified Zigbee and why.
 
 ---
 

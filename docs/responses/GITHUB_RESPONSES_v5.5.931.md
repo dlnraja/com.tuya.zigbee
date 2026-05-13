@@ -34,7 +34,7 @@ Looking at your diagnostics, I can see the device IS paired and has capabilities
 3. **If controls don't work**, please enable debug logging and send the Tuya DP logs:
    - Go to device settings → Advanced → Enable Debug Logging
    - Press the physical button on the curtain motor
-   - Copy the logs from Homey Developer Tools → App → Universal Tuya Zigbee → Logs
+   - Copy the logs from Homey Developer Tools → App → Tuya Unified Zigbee → Logs
 
 4. **Check position direction:**
    - If position is inverted (100% = closed instead of open), try enabling "Reverse Direction" in device settings

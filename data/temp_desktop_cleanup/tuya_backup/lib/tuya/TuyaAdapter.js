@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * TuyaAdapter - Universal Tuya EF00 send adapter
+ * TuyaAdapter - Tuya Unified EF00 send adapter
  * Handles multiple API variations across Homey SDK versions
  * Feature-detects available methods and uses appropriate fallback
  */

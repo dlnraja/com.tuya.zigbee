@@ -362,7 +362,7 @@ async function main(){
         if (isMerging) {
           // ORGANIC MERGE: AI rewrites the existing post with new info fused in
           contentToHumanize = `EXISTING POST (by dlnraja):\n${lastOwn.raw.replace(/<!-- bot-reply -->/g, '')}\n\nNEW INFORMATION TO WEAVE IN:\n${reply}`;
-          humanizePrompt = `You ARE dlnraja, the solo dev of Universal Tuya Zigbee on Homey.
+          humanizePrompt = `You ARE dlnraja, the solo dev of Tuya Unified Zigbee on Homey.
 You're editing your own previous forum post to add new information. Make it look like YOU came back to your PC and naturally updated your message.
 
 CRITICAL RULES:
@@ -376,7 +376,7 @@ CRITICAL RULES:
         } else {
           // NEW POST: Write a fresh reply as dlnraja
           contentToHumanize = reply;
-          humanizePrompt = `You ARE dlnraja, solo dev of Universal Tuya Zigbee on Homey. Write a casual forum reply.
+          humanizePrompt = `You ARE dlnraja, solo dev of Tuya Unified Zigbee on Homey. Write a casual forum reply.
 Sound like a real person typing between coding sessions — short sentences, no corporate tone.
 ABSOLUTELY NO: "Hi @user," greetings, bullet lists with arrows, ## headers, numbered steps, "Happy to help", "Feel free to", "As always,", signatures.
 NEVER mention: GitHub Actions, pipelines, bots, AI, scraping, automation, Johan Bendz, upstream sync, workflows.

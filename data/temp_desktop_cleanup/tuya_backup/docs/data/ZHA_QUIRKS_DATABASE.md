@@ -248,15 +248,15 @@ const NeoBatteryLevel = {
 
 ---
 
-## 🔧 Integration Notes for Universal Tuya Zigbee
+## 🔧 Integration Notes for Tuya Unified Zigbee
 
 ### Already Implemented in Project
 
 | Feature | File | Status |
 |---------|------|--------|
 | Tuya DP cluster 0xEF00 | lib/tuya/TuyaCluster.js | ✅ |
-| OnOff attributes 0x8001-0x8004 | lib/devices/HybridSwitchBase.js | ✅ |
-| Cover DPs 1-6 | lib/devices/HybridCoverBase.js | ✅ |
+| OnOff attributes 0x8001-0x8004 | lib/devices/UnifiedSwitchBase.js | ✅ |
+| Cover DPs 1-6 | lib/devices/UnifiedCoverBase.js | ✅ |
 | TRV DPs | drivers/radiator_valve/device.js | ✅ |
 | Radar sensors | drivers/presence_sensor_radar/device.js | ✅ |
 

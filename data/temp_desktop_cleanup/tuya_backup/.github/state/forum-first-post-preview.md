@@ -1,4 +1,4 @@
-# 🏠 Universal Tuya Zigbee v5.11.89
+# 🏠 Tuya Unified Zigbee v5.11.89
 
 > **145 drivers** · **5399+ fingerprints** · Updated 2026-03-04
 
@@ -10,7 +10,7 @@ Local-first Zigbee control for Tuya devices on Homey Pro — the most comprehens
 
 ## What's New (v5.11.89)
 
-Universal Tuya Zigbee app v5.11.89: 145 drivers, 3093 fingerprints supported.
+Tuya Unified Zigbee app v5.11.89: 145 drivers, 3093 fingerprints supported.
 
 ## Supported Devices
 
@@ -44,11 +44,11 @@ Universal Tuya Zigbee app v5.11.89: 145 drivers, 3093 fingerprints supported.
 
 <details><summary>Previous versions</summary>
 
-**v5.11.88:** Universal Tuya Zigbee app v5.11.88: Added 145 drivers and 3093 fingerprints.
+**v5.11.88:** Tuya Unified Zigbee app v5.11.88: Added 145 drivers and 3093 fingerprints.
 
-**v5.11.87:** Universal Tuya Zigbee app v5.11.87: Improved driver stability and updated fingerprints.
+**v5.11.87:** Tuya Unified Zigbee app v5.11.87: Improved driver stability and updated fingerprints.
 
-**v5.11.86:** Universal Tuya Zigbee app v5.11.86: Updated driver fingerprints and device support.
+**v5.11.86:** Tuya Unified Zigbee app v5.11.86: Updated driver fingerprints and device support.
 
 **v5.11.85:** Fixed garage door driver issues and improved device pairing.
 

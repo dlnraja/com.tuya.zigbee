@@ -93,7 +93,7 @@ DP 3 = temperature
 
 If your sensor pairs but is **missing a reading** (e.g., fertilizer, EC, VOC, formaldehyde):
 - **Diagnostic report ID**: (Settings → Homey → Send diagnostic report)
-- **App logs**: (Settings → Apps → Universal Tuya Zigbee → View Log)
+- **App logs**: (Settings → Apps → Tuya Unified Zigbee → View Log)
   - Look for lines like `[SOIL] DP105 received` — these show unknown data points
 - **Which readings are missing**: 
 - **Which readings work**: 

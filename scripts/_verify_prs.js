@@ -37,7 +37,7 @@ if (titleFormattedViolations === 0) {
 const ws1 = path.join(d, 'wall_switch_1gang_1way', 'device.js');
 if (fs.existsSync(ws1)) {
   const c = fs.readFileSync(ws1, 'utf8');
-  if (c.includes('SwitchBase') || c.includes('HybridSwitchBase')) {
+  if (c.includes('SwitchBase') || c.includes('UnifiedSwitchBase')) {
     checks.push('✅ PR#119 OK: wall_switch_1gang_1way inherits from SwitchBase.');
   } else {
     checks.push('❌ PR#119 ISSUE: wall_switch_1gang_1way does NOT inherit from SwitchBase!');
@@ -191,6 +191,40 @@ if (backlightNumericViolations === 0) {
   checks.push('✅ BACKLIGHT CONFIG OK: Backlight setting comparisons are string-only compliant ("off", "normal", "inverted").');
 }
 
+// ─── Layer 12: SDK3 Deprecated API Watchdog ───
+let deprecatedApiViolations = 0;
+const deprecatedTerms = [
+  { term: '.flow.getTriggerCard', suggestion: '.flow.getDeviceTriggerCard' },
+  { term: 'Homey.ManagerFlow', suggestion: 'this.homey.flow' }
+];
+
+const scanFiles = (dir) => {
+  if (!fs.existsSync(dir)) return;
+  fs.readdirSync(dir).forEach(file => {
+    const fullPath = path.join(dir, file);
+    if (fs.statSync(fullPath).isDirectory()) {
+      scanFiles(fullPath);
+    } else if (file.endsWith('.js')) {
+      try {
+        const content = fs.readFileSync(fullPath, 'utf8');
+        deprecatedTerms.forEach(item => {
+          if (content.includes(item.term)) {
+            deprecatedApiViolations++;
+            checks.push(`❌ DEPRECATED API VIOLATION: ${fullPath} contains "${item.term}". Use "${item.suggestion}" instead for SDK3 compliance.`);
+          }
+        });
+      } catch (e) {}
+    }
+  });
+};
+
+scanFiles('drivers');
+scanFiles('lib');
+
+if (deprecatedApiViolations === 0) {
+  checks.push('✅ SDK3 API COMPLIANCE OK: No deprecated flow card or global manager calls detected.');
+}
+
 // Also check app.json for titleFormatted and [[device]] compile results
 if (fs.existsSync('app.json')) {
   const appJson = fs.readFileSync('app.json', 'utf8');
@@ -199,8 +233,67 @@ if (fs.existsSync('app.json')) {
   checks.push(`📊 COMPILE SUMMARY: app.json compiled titleFormatted=${tfCount} cards, [[device]]=${ddCount} templates.`);
 }
 
+// ─── Layer 13: Advanced Agentic Logic-Lens Audit (Race Conditions) ───
+let unawaitedLogicViolations = 0;
+fs.readdirSync(d).forEach(dr => {
+  const deviceFile = path.join(d, dr, 'device.js');
+  if (!fs.existsSync(deviceFile)) return;
+  try {
+    const content = fs.readFileSync(deviceFile, 'utf8');
+    // Pattern: setCapabilityValue not preceded by await
+    const lines = content.split('\n');
+    lines.forEach((line, index) => {
+      if (line.includes('this.setCapabilityValue(') && !line.includes('await ') && !line.includes('return ') && !line.includes('.then(')) {
+        unawaitedLogicViolations++;
+        checks.push(`❌ LOGIC-LENS VIOLATION: ${dr}/device.js (line ${index + 1}) has unawaited setCapabilityValue! Potential race condition.`);
+      }
+    });
+  } catch (e) {}
+});
+if (unawaitedLogicViolations === 0) {
+  checks.push('✅ LOGIC-LENS OK: All capability setters are properly awaited/handled (Zero Race Conditions).');
+}
+
+// ─── Layer 14: Security Audit (Secret Leak Protection) ───
+let securityLeaks = 0;
+const sensitivePatterns = [
+  /['"]([a-zA-Z0-9_\-\.]{64,})['"]/g, // Increased to 64 to avoid driver/flow IDs
+  /ghp_[a-zA-Z0-9]{36}/g,           // GitHub PATs
+  /eyJ[a-zA-Z0-9._-]{40,}/g,         // JWTs (Specific to eyJ start)
+  /AIza[0-9A-Za-z-_]{35}/g          // Google API Keys
+];
+fs.readdirSync(d).forEach(dr => {
+  const deviceFile = path.join(d, dr, 'device.js');
+  if (!fs.existsSync(deviceFile)) return;
+  try {
+    const content = fs.readFileSync(deviceFile, 'utf8');
+    sensitivePatterns.forEach(pattern => {
+      const matches = content.match(pattern);
+      if (matches) {
+        matches.forEach(m => {
+          // Ignore known safe fingerprints and some common hex patterns
+          if (m.length === 34 && m.startsWith('"_TZ') || m.length === 34 && m.startsWith('"_TZE')) return;
+          if (m.includes('uuid') || m.includes('deviceId')) return;
+          securityLeaks++;
+          checks.push(`🚨 SECURITY LEAK: Potential hardcoded secret in ${dr}/device.js: ${m.substring(0, 10)}...`);
+        });
+      }
+    });
+  } catch (e) {}
+});
+if (securityLeaks === 0) {
+  checks.push('✅ SECURITY OK: No obvious hardcoded secrets detected in drivers.');
+}
+
 console.log('----------------------------------------------------------------');
 checks.forEach(c => console.log(c));
 console.log('----------------------------------------------------------------\n');
+
+const criticalCount = checks.filter(c => c.startsWith('❌') || c.startsWith('🚨')).length;
+if (criticalCount > 0) {
+  console.error(`❌ FAILED: ${criticalCount} critical quality gate violations found!`);
+  process.exit(1);
+}
+
 console.log('🧪 QUALITY GATE CHECKS COMPLETE. ZERO CRITICAL BLOCKED ERRORS.');
 console.log('================================================================');

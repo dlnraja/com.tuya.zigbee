@@ -16,7 +16,7 @@
       "user": "dlnraja",
       "date": "2026-02-18T13:04:31Z",
       "fps": [],
-      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Universal Tuya Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\n**Community forum for support:**\nhttps://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352\n\nAfter installing, delete and re-pair your device. If it still doesn't work, please share a **diagnostic report ID** (device Settings > Create diagnostic report) and a **Homey Developer Tools interview** (https://tools.developer.homey.app)."
+      "excerpt": "Hi! 👋\n\nThis device is **already supported** in [dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) (Tuya Unified Zigbee fork) — **v5.11.14** with 138 drivers and 5,579+ fingerprints.\n\n**Install the latest test version:**\nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\n**Community forum for support:**\nhttps://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352\n\nAfter installing, delete and re-pair your device. If it still doesn't work, please share a **diagnostic report ID** (device Settings > Create diagnostic report) and a **Homey Developer Tools interview** (https://tools.developer.homey.app)."
     },
     {
       "user": "dlnraja",
@@ -24,7 +24,7 @@
       "fps": [
         "_TZ3000_bgsigers"
       ],
-      "excerpt": "<!-- tuya-triage-bot -->\nHi! This device is **already supported** in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v5.11.13 (102 drivers, 29000+ fingerprints).\n\n- `_TZ3000_bgsigers` -> **climate_sensor** driver\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nAfter installing, delete and re-pair your device. If issues persist, share a diagnostic report ID on the [test forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)."
+      "excerpt": "<!-- tuya-triage-bot -->\nHi! This device is **already supported** in the [Tuya Unified Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v5.11.13 (102 drivers, 29000+ fingerprints).\n\n- `_TZ3000_bgsigers` -> **climate_sensor** driver\n\n**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\nAfter installing, delete and re-pair your device. If issues persist, share a diagnostic report ID on the [test forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)."
     }
   ],
   "aiAnalysis": "```json\n{\n    \"manufacturerName\": \"TZ3000\",\n    \"productId\": \"TS0201\",\n    \"deviceType\": \"Temperature & Humidity Sensor\",\n    \"deviceDescription\": \"A device that measures temperature and humidity levels.\",\n    \"linkToDeviceImage\": \"https://www.url-to-images.com\",\n    \"systemInformation\": {\n        \"channel\": 20,\n        \"panId\": \"84BB\",\n        \"extendedPanId\": \"c1:54:2a:15:3e:ae:57:1f\",\n        \"ieeeAddress\": \"b0:c7:de:ff:fe:56:3f:a5\",\n        \"networkKey\": \"00:00:00:00:69:10:bb:30:1f:71:5c:e2:b3:d4:6d:b9\",\n        \"currentCommand\": \"IDLE\",\n        \"firmwareVersion\": \"7.4.2-0\"\n    },\n    \"additionalComments\": \"Link to where you bought the device can be of help.\"\n}\n```",

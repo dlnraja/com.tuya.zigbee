@@ -1,5 +1,5 @@
 'use strict';
-constThermostatBase = require('../../lib/devices/HybridThermostatBase');
+constThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 
 class Thermostat4ChDevice extends ThermostatBase {
   get mainsPowered() { return true; }

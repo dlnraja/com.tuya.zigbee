@@ -1,6 +1,6 @@
-# MEGA PROMPT WINDSURF AI - Universal Tuya Zigbee
+# MEGA PROMPT WINDSURF AI - Tuya Unified Zigbee
 
-You are working on the Homey SDK v3 app "Universal Tuya Zigbee".
+You are working on the Homey SDK v3 app "Tuya Unified Zigbee".
 
 ## GOAL
 Ensure that NO Zigbee device ever pairs as "zigbee generic" if it can possibly belong to this app.

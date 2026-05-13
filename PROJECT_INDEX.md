@@ -1,4 +1,4 @@
-# PROJECT_INDEX.md - Universal Tuya Zigbee AI Reference Guide
+# PROJECT_INDEX.md - Tuya Unified Zigbee AI Reference Guide
 
 > **Version**: 7.5.26+ | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
 > **228 drivers** | **Zigbee + WiFi** | **4200+ devices** | **SDK v3** | **SDK Deprecations: 0**
@@ -30,6 +30,7 @@
 21. [Local Tuya WiFi Architecture](#21-local-tuya-wifi-architecture)
 22. [Crash Resolutions History](#22-crash-resolutions-history)
 23. [AI Navigation & Cartography Map](#23-ai-navigation--cartography-map)
+24. [Advanced Agentic Skills Integration](#24-advanced-agentic-skills-integration)
 
 ---
 
@@ -71,7 +72,7 @@
 | **0xEF00** | Tuya DP cluster (61184 decimal) |
 | **0xE000** | BSEED custom cluster for buttons |
 | **ZCL** | Zigbee Cluster Library (standard clusters) |
-| **Hybrid** | Device using BOTH ZCL + Tuya DP |
+| **Unified** | Device using BOTH ZCL + Tuya DP |
 
 ### Terminologie Homey
 | Term | Definition |
@@ -90,7 +91,7 @@
 | **Variant** | Device variant with different features (same mfr) |
 | **Enrichment** | Post-pairing capability detection |
 | **Fallback** | `universal_fallback` driver for unknown devices |
-| **Hybrid Driver** | Driver supporting multiple protocol types |
+| **Unified Driver** | Driver supporting multiple protocol types |
 
 ---
 
@@ -119,7 +120,7 @@
 │                        lib/ (core library)                      │
 │  ├── devices/ (Base classes:Switch, Sensor, Cover...)   │
 │  ├── mixins/ (PhysicalButton, VirtualButton, TuyaDevice)        │
-│  ├── tuya/ (TuyaEF00Manager, UniversalTuyaParser, fingerprints) │
+│  ├── tuya/ (TuyaEF00Manager, TuyaUnifiedParser, fingerprints) │
 │  ├── battery/ (UnifiedBatteryHandler, BatteryCalculator)     │
 │  └── managers/ (SmartDriverAdaptation, IASZoneManager)          │
 └─────────────────────────────────────────────────────────────────┘
@@ -215,15 +216,15 @@ DP Payload: [status:1][transId:1][dp:1][type:1][lenHi:1][lenLo:1][data:N]
 Homey.Device (SDK3)
   └── ZigBeeDevice (homey-zigbeedriver)
         └── TuyaZigbeeDevice (lib/tuya/TuyaZigbeeDevice.js)
-              └── TuyaHybridDevice (lib/devices/TuyaHybridDevice.js)
-                    └── BaseHybridDevice (lib/devices/BaseHybridDevice.js) [182KB]
-                          ├──SwitchBase (40KB)
+              └── TuyaUnifiedDevice (lib/devices/TuyaUnifiedDevice.js)
+                    └── BaseUnifiedDevice (lib/devices/BaseUnifiedDevice.js) [182KB]
+                          ├──UnifiedSwitchBase (40KB)
                           │     └── + PhysicalButtonMixin + VirtualButtonMixin
-                          ├──SensorBase (207KB)
-                          ├──CoverBase (35KB)
-                          ├──LightBase (29KB)
-                          ├──PlugBase (37KB)
-                          ├──ThermostatBase
+                          ├──UnifiedSensorBase (207KB)
+                          ├──UnifiedCoverBase (35KB)
+                          ├──UnifiedLightBase (29KB)
+                          ├──UnifiedPlugBase (37KB)
+                          ├──UnifiedThermostatBase
                           └── ButtonDevice (80KB)
 ```
 
@@ -232,7 +233,7 @@ Homey.Device (SDK3)
 |------|------|---------|
 | DeviceFingerprintDB.js | 215KB | Complete fingerprint database |
 |SensorBase.js | 207KB | All sensor logic |
-| BaseHybridDevice.js | 182KB | Master base device |
+| BaseUnifiedDevice.js | 182KB | Master base device |
 | TuyaEF00Manager.js | 93KB | DP protocol handler |
 | ButtonDevice.js | 80KB | Button/scene device |
 
@@ -240,7 +241,7 @@ Homey.Device (SDK3)
 ```javascript
 // CORRECT:
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-constSwitchBase = require('../../lib/devices/HybridSwitchBase');
+constSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 // WRONG (missing ../../):
@@ -359,7 +360,7 @@ if (isPhysical && previousState !== value) {
 
 ### Mixin Order
 ```javascript
-class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
+class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 ```
 
 ### Backlight Values (Strings Only)
@@ -373,7 +374,7 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
 - On every app promotion (draft-to-test / production / branch synchronization), it is mandatory to recursively audit, normalize, and update all markdown documentation files (`.md`), technical registries/reference databases (like `app.json`, `package.json`, fingerprint matrices, and cross-references), dotfiles (`.eslintignore`, `.homeyignore`, etc.), rules configuration files (such as `.clinerule`, `.cursorrules`, etc.), architectural maps, and cartography/index files (like `PROJECT_INDEX.md`, `FINGERPRINT-CROSSREF.md`) to maintain perfect structural alignment with active codebase updates and prevent documentation rot.
 - **Comment robustness in CI/CD pipeline checks**: When grep'ing for banned words, comment lines (`//` or `*`) must be ignored (using `grep -v '^[[:space:]]*//' | grep -v '^[[:space:]]*\*'`) to prevent false-positive failures during code-quality validations.
 - **Draft script isolation in STRICT_SYNTAX_GUARD**: The temporary draft or development scripts directory (`temp`) must be explicitly ignored by the syntax checker so only active production, lib, drivers, and standard CI/CD files are validated, keeping the repository's build green.
-- **Hybrid-Compatible Base Class Exports**: Base classes exported from `lib/devices/` (like `SensorBase` / `HybridSensorBase.js`) must use direct exports together with self-referential class properties (`SensorBase.SensorBase = SensorBase; module.exports = SensorBase;`) to ensure absolute compatibility with both direct destructured requires (used by driver implementations) and index-based requires.
+- **Hybrid-Compatible Base Class Exports**: Base classes exported from `lib/devices/` (like `SensorBase` / `UnifiedSensorBase.js`) must use direct exports together with self-referential class properties (`SensorBase.SensorBase = SensorBase; module.exports = SensorBase;`) to ensure absolute compatibility with both direct destructured requires (used by driver implementations) and index-based requires.
 - **Universal Evolution & Continuous Enrichment Loop (MANDATORY)**: On *every* single prompt execution or task processed, the developer agent MUST execute a comprehensive, full-scope repository sweep. This loop comprises: scanning and triaging latest community PRs/issues/images (`scan-prs-issues.js`), auto-learning newly found fingerprints (`auto-learn-fingerprints.js`), running self-heals and automated code-fixes (`auto-fix-common-issues.js`), verifying drivers, and collectively enriching ALL yml files, javascript source codes, base classes, rules configs (`.clinerule`, `.cursorrules`, `.windsurfrules`), automations, cartographies, indexes, and reference databases. No element of the ecosystem must be left stagnant.
 
 
@@ -402,7 +403,7 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
 |------|-------|---------|
 | lib/devices/ |SwitchBase,SensorBase, etc. | Device base classes |
 | lib/mixins/ | PhysicalButton, VirtualButton, TuyaDevice | Mixins |
-| lib/tuya/ | TuyaEF00Manager, UniversalTuyaParser, etc. | Tuya protocol |
+| lib/tuya/ | TuyaEF00Manager, TuyaUnifiedParser, etc. | Tuya protocol |
 | lib/battery/ | UnifiedBatteryHandler, BatteryCalculator | Battery management |
 | lib/managers/ | SmartDriverAdaptation, IASZoneManager | Managers |
 
@@ -474,7 +475,8 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
 | Climate | 20+ | thermostat_*, radiator_valve, smart_heater* |
 | Security | 15+ | lock_smart, siren, smoke_detector* |
 | Buttons | 25+ | button_wireless_*, scene_switch_* |
-| Special | 10+ | fingerbot, pet_feeder, garage_door, valve_* |
+| Remote | 5+ | ir_remote (virtual), zigbee_remote_*, scene_switch_* |
+| Special | 10+ | fingerbot, pet_feeder, garage_door, valve_*, ir_blaster |
 
 ### WiFi Drivers (50)
 | Category | Examples |
@@ -675,7 +677,7 @@ zb_model_id, zb_manufacturer_name  // NOT camelCase
 
 ### Import Paths
 ```javascript
-'../../lib/devices/HybridSwitchBase'  // NOT relative to root
+'../../lib/devices/UnifiedSwitchBase'  // NOT relative to root
 '../../lib/tuya/TuyaZigbeeDevice'
 'homey-zigbeedriver'
 ```
@@ -687,7 +689,7 @@ zb_model_id, zb_manufacturer_name  // NOT camelCase
 
 ### Mixin Order
 ```javascript
-PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
+PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 ```
 
 ### Battery Rule
@@ -755,11 +757,6 @@ Local Tuya WiFi connectivity is designed with an **Enterprise-grade Connection a
 
 ---
 
-**Last Updated**: 2026-05-13 | **Version**: 7.5.26
-**Generated by**: Antigravity AI | **Author**: dlnraja
-
----
-
 ## 22. CRASH RESOLUTIONS HISTORY
 
 | Version | Crash | Root Cause | Fix |
@@ -785,7 +782,7 @@ Local Tuya WiFi connectivity is designed with an **Enterprise-grade Connection a
 ## 23. AI NAVIGATION & CARTOGRAPHY MAP
 
 > **🚨 CRITICAL NOTICE FOR ALL AI AGENTS (Claude, Gemini, Windsurf, Cursor, etc.)**
-> *Before taking any action on this repository, you MUST read this section. It contains the operational blueprint of the Universal Tuya Engine.*
+> *Before taking any action on this repository, you MUST read this section. It contains the operational blueprint of the Tuya Unified Engine.*
 
 ### 1. Dotfiles & Rules Context (Where to find AI Instructions)
 The project behavior is governed by multiple rule files and dotfiles. If you need to understand project rules, coding standards, or ignored files, look here:
@@ -817,11 +814,11 @@ This repository is optimized for autonomous agents using the **Antigravity Aweso
 
 ### 3. Dual App & Dual Branch Architecture
 The repository deploys **two separate applications** to the Homey store. You must understand the split:
-1. **App 1: "Universal Tuya Zigbee"** (Test/Production channel)
+1. **App 1: "Tuya Unified Zigbee"** (Test/Production channel)
    - **Branch**: `master`
    - **App ID**: `com.dlnraja.tuya.zigbee`
    - **CI/CD Auto-Publish**: `auto-publish-on-push.yml` (on push to master) and `daily-promote-to-test.yml`
-2. **App 2: "Universal Tuya Zigbee (Stable)"** (Parallel stable fallback)
+2. **App 2: "Tuya Unified Zigbee (Stable)"** (Parallel stable fallback)
    - **Branch**: `stable-v5`
    - **App ID**: `com.dlnraja.tuya.zigbee.stable`
    - **CI/CD Auto-Publish**: `publish-stable.yml` (on push to stable-v5)
@@ -847,8 +844,13 @@ To trigger operations without running local scripts, you can use the `gh` CLI to
 - `gh workflow run forum-auto-responder.yml` -> Runs forum logic.
 - `gh workflow run validate.yml` -> Comprehensive project validation (npx homey app validate).
 
-### 6. Operational Limits & Automation Bounds
-- **Never modify `tuyapi` logic directly**: We use a queue-throttle (`TuyaLocalClient`) on top of it.
-- **Never touch `node_modules`**: Always run `npm ci` if dependencies are missing.
-- **FORUM POLICY - STRICT READ ONLY**: All forum scraping/scanning MUST be strictly **READ ONLY**. You are forbidden to post replies, even on our own thread 140352. The forum scripts must only collect data, never push.
-- **Never use generic Zigbee profiles**: Always enforce the *Anti-Generic Strategy* detailed above.
+**Last Updated**: 2026-05-13 | **Version**: 7.5.32
+**Generated by**: Antigravity AI | **Author**: dlnraja
+
+---
+
+*This project index is a living document, auto-maintained by the Antigravity Skills fleet.*
+
+---
+
+**END OF PROJECT_INDEX.md**

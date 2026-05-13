@@ -1,17 +1,17 @@
 'use strict';
-const HybridLightBase = require('../../lib/devices/HybridLightBase');
+const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║      1-GANG DIMMER - v5.5.412 + Virtual Buttons                             ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  HybridLightBase handles: onoff, dim listeners and ZCL setup                ║
+ * ║  UnifiedLightBase handles: onoff, dim listeners and ZCL setup                ║
  * ║  v5.5.412: Added virtual toggle/dim up/dim down buttons                     ║
  * ║  DPs: 1-5,7,9,14,101,102 | ZCL: 6,8,EF00                                   ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class DimmerWall1GangDevice extends VirtualButtonMixin(HybridLightBase) {
+class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
 
   // v5.8.97: Physical button detection state (PR #112 packetninja pattern)
   _appCommandPending = false;

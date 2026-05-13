@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-// Extract battery related code from TuyaHybridDevice.js
-const file = 'lib/devices/TuyaHybridDevice.js';
+// Extract battery related code from TuyaUnifiedDevice.js
+const file = 'lib/devices/TuyaUnifiedDevice.js';
 let content = fs.readFileSync(file, 'utf8');
 
 // Look for mainsPowered getter

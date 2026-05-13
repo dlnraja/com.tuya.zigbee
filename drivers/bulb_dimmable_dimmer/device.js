@@ -1,6 +1,6 @@
 'use strict';
 
-constLightBase = require('../../lib/devices/HybridLightBase');
+constLightBase = require('../../lib/devices/UnifiedLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
@@ -14,7 +14,7 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
  * ║  Models: TS0501B, TS0502B, _TZ3210_*, _TZ3000_*                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class DimmableBulbDevice extends VirtualButtonMixin(HybridLightBase) {
+class DimmableBulbDevice extends VirtualButtonMixin(UnifiedLightBase) {
 
   get lightCapabilities() { return ['onoff', 'dim']; }
 

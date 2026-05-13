@@ -77,7 +77,7 @@ async function fetchOpen(repo,type){
 function buildComment(fpResults,isPR){
   const drvList=fpResults.map(f=>'`'+f.fp+'` -> **'+f.drivers.join(', ')+'**').join('\n- ');
   return TAG+'\n### Auto-resolved by Diagnostic Resolver\n\n'+
-    'All fingerprints in this '+(isPR?'PR':'issue')+' are already supported in **Universal Tuya Zigbee v'+appVer+'**:\n- '+drvList+'\n\n'+
+    'All fingerprints in this '+(isPR?'PR':'issue')+' are already supported in **Tuya Unified Zigbee v'+appVer+'**:\n- '+drvList+'\n\n'+
     '**Install:** https://homey.app/a/com.dlnraja.tuya.zigbee/test/\n'+
     'Remove and re-pair your device after installing.\n\n'+
     'Forum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352';
@@ -86,7 +86,7 @@ function buildComment(fpResults,isPR){
 // Build forum response draft
 function buildForumDraft(user,fps,drivers){
   const drvList=fps.map(f=>'`'+f+'` -> **'+(drivers.get(f)||[]).join(', ')+'**').join(', ');
-  return 'Hi @'+user+',\n\nYour device(s) are already supported in Universal Tuya Zigbee v'+appVer+': '+drvList+'.\n\n'+
+  return 'Hi @'+user+',\n\nYour device(s) are already supported in Tuya Unified Zigbee v'+appVer+': '+drvList+'.\n\n'+
     'Please install the latest test version and re-pair your device:\nhttps://homey.app/a/com.dlnraja.tuya.zigbee/test/\n\n'+
     'If you still have issues after re-pairing, please submit a diagnostic report from the device settings.';
 }

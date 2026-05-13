@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const targetFile = 'lib/devices/TuyaHybridDevice.js';
+const targetFile = 'lib/devices/TuyaUnifiedDevice.js';
 let content = fs.readFileSync(targetFile, 'utf8');
 
 if (!content.includes('PowerSourceIntelligence')) {
@@ -16,9 +16,9 @@ if (!content.includes('PowerSourceIntelligence')) {
   if (content.includes(searchString)) {
     content = content.replace(searchString, replaceString);
     fs.writeFileSync(targetFile, content);
-    console.log('✅ Updated TuyaHybridDevice.js with PowerSourceIntelligence');
+    console.log('✅ Updated TuyaUnifiedDevice.js with PowerSourceIntelligence');
   } else {
-    console.log('❌ Could not find search string in TuyaHybridDevice.js');
+    console.log('❌ Could not find search string in TuyaUnifiedDevice.js');
     
     // Alternative location
     const altSearchString = "this.log('🔄 STEP 2: Pre-initializing capabilities...');";
@@ -27,9 +27,9 @@ if (!content.includes('PowerSourceIntelligence')) {
     if (content.includes(altSearchString)) {
       content = content.replace(altSearchString, altReplaceString);
       fs.writeFileSync(targetFile, content);
-      console.log('✅ Updated TuyaHybridDevice.js with PowerSourceIntelligence (Alt location)');
+      console.log('✅ Updated TuyaUnifiedDevice.js with PowerSourceIntelligence (Alt location)');
     }
   }
 } else {
-  console.log('TuyaHybridDevice.js already contains PowerSourceIntelligence');
+  console.log('TuyaUnifiedDevice.js already contains PowerSourceIntelligence');
 }

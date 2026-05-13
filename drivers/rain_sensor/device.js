@@ -1,6 +1,6 @@
 'use strict';
 
-const {SensorBase } = require('../../lib/devices/HybridSensorBase');
+const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * Rain Sensor Device
@@ -106,7 +106,7 @@ class RainSensorDevice extends SensorBase {
         this.log(`[RAIN-IAS] 🌧️ Zone status: raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2} → raining=${raining}`);
 
         if (this.hasCapability('alarm_water')) {
-          this.setCapabilityValue('alarm_water', raining).catch(this.error);
+          await this.setCapabilityValue('alarm_water', raining).catch(this.error);
         }
       };
 
@@ -116,7 +116,7 @@ class RainSensorDevice extends SensorBase {
         this.log(`[RAIN-IAS] 🌧️ Zone attr status: ${status} → raining=${raining}`);
         
         if (this.hasCapability('alarm_water')) {
-          this.setCapabilityValue('alarm_water', raining).catch(this.error);
+          await this.setCapabilityValue('alarm_water', raining).catch(this.error);
         }
       });
 

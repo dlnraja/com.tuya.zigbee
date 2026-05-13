@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const file = 'lib/devices/TuyaHybridDevice.js';
+const file = 'lib/devices/TuyaUnifiedDevice.js';
 let content = fs.readFileSync(file, 'utf8');
 
 // Add PowerSourceIntelligence require after other helpers
@@ -11,7 +11,7 @@ if (!content.includes('PowerSourceIntelligence')) {
   content = content.replace(insertAfter, insertAfter + '\n' + requireLine);
   
   fs.writeFileSync(file, content);
-  console.log('✅ Added PowerSourceIntelligence require to TuyaHybridDevice.js');
+  console.log('✅ Added PowerSourceIntelligence require to TuyaUnifiedDevice.js');
 } else {
   console.log('Already has PowerSourceIntelligence require');
 }

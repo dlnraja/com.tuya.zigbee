@@ -1,13 +1,13 @@
 'use strict';
 
-const { HybridSensorBase } = require('../../lib/devices/HybridSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * Rain Sensor Device
  * v5.5.889: Added IAS Zone support for TS0207 devices (Dominique_C forum report)
  * v5.3.64: SIMPLIFIED base implementation
  */
-class RainSensorDevice extends HybridSensorBase {
+class RainSensorDevice extends UnifiedSensorBase {
 
   get mainsPowered() { return false; }
 

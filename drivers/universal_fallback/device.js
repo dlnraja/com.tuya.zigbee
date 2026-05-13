@@ -315,7 +315,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
     if (temp > 1000) temp = temp / 100;
     else if (temp > 100) temp = temp / 10;
     if (temp >= -40 && temp <= 100) {
-      this.setCapabilityValue('measure_temperature', temp).catch(() => {});
+      await this.setCapabilityValue('measure_temperature', temp).catch(() => {});
     }
   }
 
@@ -324,7 +324,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
     let hum = value;
     if (hum > 100) hum = hum / 10;
     if (hum >= 0 && hum <= 100) {
-      this.setCapabilityValue('measure_humidity', Math.round(hum)).catch(() => {});
+      await this.setCapabilityValue('measure_humidity', Math.round(hum)).catch(() => {});
     }
   }
 
@@ -333,7 +333,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
     let dim = value;
     if (dim > 1) dim = dim / 1000; // Tuya uses 0-1000
     if (dim >= 0 && dim <= 1) {
-      this.setCapabilityValue('dim', dim).catch(() => {});
+      await this.setCapabilityValue('dim', dim).catch(() => {});
     }
   }
 
@@ -342,7 +342,7 @@ class UniversalFallbackDevice extends ZigBeeDevice {
     let bat = value;
     if (bat > 100) bat = bat / 2; // Some use 0-200
     if (bat >= 0 && bat <= 100) {
-      this.setCapabilityValue('measure_battery', Math.round(bat)).catch(() => {});
+      await this.setCapabilityValue('measure_battery', Math.round(bat)).catch(() => {});
     }
   }
 
@@ -350,13 +350,13 @@ class UniversalFallbackDevice extends ZigBeeDevice {
     if (!this.hasCapability('windowcoverings_set')) return;
     let pos = value / 100;
     if (pos >= 0 && pos <= 1) {
-      this.setCapabilityValue('windowcoverings_set', pos).catch(() => {});
+      await this.setCapabilityValue('windowcoverings_set', pos).catch(() => {});
     }
   }
 
   _setCapSafe(cap, value) {
     if (this.hasCapability(cap)) {
-      this.setCapabilityValue(cap, value).catch(() => {});
+      await this.setCapabilityValue(cap, value).catch(() => {});
       return true;
     }
     return false;

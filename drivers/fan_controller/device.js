@@ -160,7 +160,7 @@ class FanControllerDevice extends ZigBeeDevice {
     switch (dp) {
     case 1: // On/Off
       const wasOn = this.getCapabilityValue('onoff');
-      this.setCapabilityValue('onoff', !!value).catch(this.error);
+      await this.setCapabilityValue('onoff', !!value).catch(this.error);
       // Trigger flow cards
       try {
         if (!!value && !wasOn) {
@@ -173,7 +173,7 @@ class FanControllerDevice extends ZigBeeDevice {
 
     case 3: // Speed (0-4)
       const dim = value / 4; // Convert to 0-1 range
-      this.setCapabilityValue('dim', dim).catch(this.error);
+      await this.setCapabilityValue('dim', dim).catch(this.error);
       // Trigger speed changed flow card
       try {
         this.homey.flow.getDeviceTriggerCard('fan_controller_speed_changed')

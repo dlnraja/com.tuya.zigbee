@@ -1,4 +1,4 @@
-# Development Rules - Universal Tuya Zigbee
+# Development Rules - Tuya Unified Zigbee
 
 ##  CRITICAL RULES
 
@@ -57,7 +57,7 @@ TS0601 battery devices use **passive mode**:
 Modern Tuya devices (TZE284 series) require precise timing responses:
 - **Payload Format**: `[seq:2][UTC:4][Local:4]` (10 bytes total).
 - **Sequence Number**: The GW MUST extract and echo the `seqNum` from the device's request frame (Cmd 0x24).
-- **Implementation**: Use the unified `_respondToTimeSync(sequenceNumber)` method in `BaseHybridDevice` which delegates to `TuyaTimeSync.js`.
+- **Implementation**: Use the unified `_respondToTimeSync(sequenceNumber)` method in `BaseUnifiedDevice` which delegates to `TuyaTimeSync.js`.
 - **Warning**: Sending only 8 bytes or an incorrect sequence number will cause time sync to fail and the device to remain in an unconfigured state.
 
 ---
@@ -103,7 +103,7 @@ For battery devices, bindings must be in `driver.compose.json`:
 "bindings": [1, 1280, 1281]  // powerConfiguration, iasZone, iasAce
 ```
 
-### Hybrid Energy & Battery Handling
+### Unified Energy & Battery Handling
 **CRITICAL RULE**: Tuya manufacturers frequently mix hardware cases! A device seemingly designed for wall installation might be battery-powered, mains-powered, self-kinetic (mechanical push force), or hybrid.
 1. **Never assume static power sources.** Drivers must handle all variants regardless of the driver's name.
 2. **UnifiedBatteryHandler & SmartBatteryManager**: Drivers leverage the bidirectional sync engine in `SmartBatteryManager.js` for energy management. It dynamically adapts at runtime to:
@@ -120,11 +120,7 @@ For battery devices, bindings must be in `driver.compose.json`:
 2. **Auto-divisors**: This automatically repairs out-of-bounds metrics (such as scaling temperature tenths vs hundredths or voltage millivolts vs volts) based on physiological ranges, keeping code clean and eliminating ad-hoc divisor bugs.
 
 ### 8. Post-Promotion Documentation & Registry Synchronization (MANDATORY)
-On every app promotion (draft-to-test / production / branch synchronization), it is mandatory to recursively audit, normalize, and update all markdown documentation files (`.md`), technical registries/reference databases (like `app.json`, `package.json`, fingerprint matrices, and cross-references), dotfiles (`.eslintignore`, `.homeyignore`, etc.), rules configuration files (such as `.clinerule`, `.cursorrules`, etc.), architectural maps, and cartography/index files (like `PROJECT_INDEX.md`, `FINGERPRINT-CROSSREF.md`) to maintain perfect structural alignment with active codebase updates and prevent documentation rot.
-- **Comment robustness in CI/CD pipeline checks**: When grep'ing for banned words, comment lines (`//` or `*`) must be ignored (using `grep -v '^[[:space:]]*//' | grep -v '^[[:space:]]*\*'`) to prevent false-positive failures during code-quality validations.
-- **Draft script isolation in STRICT_SYNTAX_GUARD**: The temporary draft or development scripts directory (`temp`) must be explicitly ignored by the syntax checker so only active production, lib, drivers, and standard CI/CD files are validated, keeping the repository's build green.
-- **Hybrid-Compatible Base Class Exports**: Base classes exported from `lib/devices/` (like `SensorBase` / `HybridSensorBase.js`) must use direct exports together with self-referential class properties (`SensorBase.SensorBase = SensorBase; module.exports = SensorBase;`) to ensure absolute compatibility with both direct destructured requires (used by driver implementations) and index-based requires.
-- **Universal Evolution & Continuous Enrichment Loop (MANDATORY)**: On *every* single prompt execution or task processed, the developer agent MUST execute a comprehensive, full-scope repository sweep. This loop comprises: scanning and triaging latest community PRs/issues/images (`scan-prs-issues.js`), auto-learning newly found fingerprints (`auto-learn-fingerprints.js`), running self-heals and automated code-fixes (`auto-fix-common-issues.js`), verifying drivers, and collectively enriching ALL yml files, javascript source codes, base classes, rules configs (`.clinerule`, `.cursorrules`, `.windsurfrules`), automations, cartographies, indexes, and reference databases. No element of the ecosystem must be left stagnant.
+- **Mandatory Protocol**: Refer to [POST_PROMOTION_PROTOCOL.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/POST_PROMOTION_PROTOCOL.md) for the mandatory recursive audit, enrichment loop, and technical safeguards (Layer 12 compliance).
 
 
 ---
@@ -147,7 +143,7 @@ On every app promotion (draft-to-test / production / branch synchronization), it
 
 ### Key Directories
 - `drivers/` - All device drivers (organized by FUNCTION, not brand)
-- `lib/devices/` - Base classes (HybridSensorBase, HybridPlugBase, etc.)
+- `lib/devices/` - Base classes (UnifiedSensorBase, UnifiedPlugBase, etc.)
 - `lib/tuya/` - Tuya EF00 cluster handling
 - `docs/rules/` - This rules documentation
 - `docs/fixes/` - Fix documentation

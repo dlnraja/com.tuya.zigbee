@@ -1,14 +1,14 @@
 'use strict';
 
 // v5.5.530: Fix "Class extends value undefined" error
-letSwitchBase;
+let UnifiedSwitchBase;
 try {
- SwitchBase = require('../../lib/devices/HybridSwitchBase');
-  if (!HybridSwitchBase) throw new Error('HybridSwitchBase is undefined');
+ UnifiedUnifiedSensorBase = require('../../lib/devices/UnifiedSwitchBase');
+  if (!UnifiedSensorBase) throw new Error('UnifiedSwitchBase is undefined');
 } catch (e) {
   console.error('[switch_4gang]SwitchBase load failed:', e.message);
   const { ZigBeeDevice } = require('homey-zigbeedriver');
- SwitchBase = ZigBeeDevice;
+ UnifiedUnifiedSensorBase = ZigBeeDevice;
 }
 
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -47,9 +47,9 @@ const ZCL_ONLY_MANUFACTURERS_4G = [
 // Tuya DP was ignored (device is ZCL-only), breaking virtual buttons completely
 const FORCE_TUYA_DP_4G = [];
 
-const BaseClass = typeofSwitchBase === 'function' 
-  ? PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) 
-  :SwitchBase;
+const BaseClass = typeof UnifiedSwitchBase === 'function' 
+  ? PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) 
+  :UnifiedSwitchBase;
 
 class Switch4GangDevice extends BaseClass {
   get gangCount() { return 4; }
@@ -291,14 +291,14 @@ class Switch4GangDevice extends BaseClass {
         this.log(`[BSEED-4G] EP${gangNum} attr: ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
 
         this._zclState.lastState[gangNum] = value;
-        this.setCapabilityValue(capName, value).catch(() => {});
+        await this.setCapabilityValue(capName, value).catch(() => {});
 
         // v5.12.5: Scene mode support (ported from wall_switch_4gang_1way)
         const mode = this.sceneMode;
         if (mode === 'magic') {
           // Magic mode: don't update capability, only fire scene trigger
           // Revert the capability change made above
-          this.setCapabilityValue(capName, !value).catch(() => {});
+          await this.setCapabilityValue(capName, !value).catch(() => {});
         }
 
         if (isPhysical && (mode === 'auto' || mode === 'both')) {
@@ -367,12 +367,12 @@ class Switch4GangDevice extends BaseClass {
       this.log(`[BSEED-4G] Tuya DP${dpId} report: ${boolVal} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
 
       this._zclState.lastState[dpId] = boolVal;
-      this.setCapabilityValue(capName, boolVal).catch(() => {});
+      await this.setCapabilityValue(capName, boolVal).catch(() => {});
 
       // v5.12.5: Scene mode support (Tuya DP path)
       const mode = this.sceneMode;
       if (mode === 'magic') {
-        this.setCapabilityValue(capName, !boolVal).catch(() => {});
+        await this.setCapabilityValue(capName, !boolVal).catch(() => {});
       }
 
       if (isPhysical && (mode === 'auto' || mode === 'both')) {

@@ -1,5 +1,5 @@
 # Session Stability & Heuristic Rules Specification
-**Universal Tuya Engine for Homey Pro**
+**Tuya Unified Engine for Homey Pro**
 
 ---
 

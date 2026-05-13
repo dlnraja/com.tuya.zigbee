@@ -3,7 +3,7 @@
 **Last Updated:** 2025-10-11  
 **Based on:** [Official Homey Documentation](https://apps.developer.homey.app/app-store/publishing)
 
-This directory contains GitHub Actions workflows for automating the validation, versioning, and publication of the Universal Tuya Zigbee Homey App.
+This directory contains GitHub Actions workflows for automating the validation, versioning, and publication of the Tuya Unified Zigbee Homey App.
 
 ---
 

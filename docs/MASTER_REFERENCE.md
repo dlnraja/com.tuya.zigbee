@@ -1,4 +1,4 @@
-# MASTER REFERENCE — Universal Tuya Zigbee
+# MASTER REFERENCE — Tuya Unified Zigbee
 **v7.5.17** | **2026-05-13** | com.dlnraja.tuya.zigbee
 **v5.11.153** | **2026-04-03** | com.dlnraja.tuya.zigbee
 
@@ -78,7 +78,7 @@ Classic Outlook .ost at AppData/Local/Microsoft/Outlook/ (binary, not readable).
 
 ## 6. v5.8.88 FIXES
 
-- **GH#122**: HybridCoverBase missing tuyaEF00Manager → direct cluster fallback
+- **GH#122**: UnifiedCoverBase missing tuyaEF00Manager → direct cluster fallback
 - **IAS**: noIasMotion override + enrollment + ZCL-only noTemp/noHum
 - **HOBEIAN**: Added to water_leak + contact fingerprints
 

@@ -146,7 +146,7 @@ async function main(){
   }
 
   // 3. Generate summary with Gemini
-  const sysPrompt='You are the automation bot for Universal Tuya Zigbee (com.dlnraja.tuya.zigbee). Analyze GitHub activity findings and produce a concise Markdown summary for posting on the Homey forum topic #140352. Include: new device requests found, fingerprints already supported, fingerprints from forks to integrate, and PRs with useful changes. Be technical and concise. Max 500 words.';
+  const sysPrompt='You are the automation bot for Tuya Unified Zigbee (com.dlnraja.tuya.zigbee). Analyze GitHub activity findings and produce a concise Markdown summary for posting on the Homey forum topic #140352. Include: new device requests found, fingerprints already supported, fingerprints from forks to integrate, and PRs with useful changes. Be technical and concise. Max 500 words.';
   let summary=null;
   if(findings.issues.length||findings.forkFPs.length||findings.prs.length){
     console.log('\n-- Generating AI summary --');

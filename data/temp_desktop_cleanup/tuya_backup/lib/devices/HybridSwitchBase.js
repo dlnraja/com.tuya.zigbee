@@ -13,7 +13,7 @@ let OnOffBoundCluster = null;
 try {
   OnOffBoundCluster = require('../clusters/OnOffBoundCluster');
 } catch (e) {
-  console.log('[HybridSwitchBase] OnOffBoundCluster not available:', e.message);
+  console.log('[UnifiedSwitchBase] OnOffBoundCluster not available:', e.message);
 }
 
 // v5.8.18: Universal unknown cluster support
@@ -21,11 +21,11 @@ let UnknownClusterHandler = null;
 try {
   UnknownClusterHandler = require('../clusters/UnknownClusterHandler');
 } catch (e) {
-  console.log('[HybridSwitchBase] UnknownClusterHandler not available:', e.message);
+  console.log('[UnifiedSwitchBase] UnknownClusterHandler not available:', e.message);
 }
 
 /**
- * HybridSwitchBase - Base class for Tuya wall switches
+ * UnifiedSwitchBase - Base class for Tuya wall switches
  *
  * v5.5.63: TRUE HYBRID - Listens to BOTH Tuya DP AND ZCL simultaneously
  *          After 15 min, pauses unused protocol methods
@@ -42,7 +42,7 @@ try {
  * - Dimmer switches
  * - Scene switches
  */
-class HybridSwitchBase extends ZigBeeDevice {
+class UnifiedSwitchBase extends ZigBeeDevice {
 
   get mainsPowered() { return true; }
   get maxListeners() { return 50; }
@@ -53,7 +53,7 @@ class HybridSwitchBase extends ZigBeeDevice {
     try {
       this.deviceTypeManager = new DeviceTypeManager();
     } catch (e) {
-      console.error('[HybridSwitchBase] DeviceTypeManager init error:', e.message);
+      console.error('[UnifiedSwitchBase] DeviceTypeManager init error:', e.message);
       this.deviceTypeManager = null;
     }
   }
@@ -105,7 +105,7 @@ class HybridSwitchBase extends ZigBeeDevice {
     // v5.11.80: CRITICAL - Override _isPureTuyaDP based on actual protocol detection
     // ManufacturerVariationManager defaults 'mixed' to _isPureTuyaDP=true which breaks
     // ZCL switches (e.g. _TZ3002_pzao9ls1/TS0726) — virtual buttons sent Tuya DP instead of ZCL
-    // Same fix as HybridCoverBase v5.8.52 (diag cf2e5ebe)
+    // Same fix as UnifiedCoverBase v5.8.52 (diag cf2e5ebe)
     this._isPureTuyaDP = this._protocolInfo.isTuyaDP;
 
     // v5.8.18: Scan and bind unknown clusters
@@ -615,7 +615,7 @@ class HybridSwitchBase extends ZigBeeDevice {
    */
   async _safeSetCapability(capability, value) {
     if (!this.hasCapability(capability)) {
-      if (HybridSwitchBase.DYNAMIC_CAPABILITIES.includes(capability)) {
+      if (UnifiedSwitchBase.DYNAMIC_CAPABILITIES.includes(capability)) {
         try {
           await this.addCapability(capability);
           this.log(`[CAP] ✨ DYNAMIC ADD: ${capability} (detected from DP/ZCL data)`);
@@ -1105,4 +1105,4 @@ class HybridSwitchBase extends ZigBeeDevice {
   }
 }
 
-module.exports = HybridSwitchBase;
+module.exports = UnifiedSwitchBase;

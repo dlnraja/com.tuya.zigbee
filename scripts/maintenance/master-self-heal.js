@@ -2,7 +2,7 @@
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║  MASTER SELF-HEAL ENGINE v1.0                                              ║
- * ║  Orchestrates ALL discovered fixes across the Universal Tuya Zigbee App     ║
+ * ║  Orchestrates ALL discovered fixes across the Tuya Unified Zigbee App     ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
  * ║  Run:  node scripts/maintenance/master-self-heal.js                        ║
  * ║  CI:   Integrated into daily-everything.yml Step 6a-ter                     ║
@@ -544,7 +544,7 @@ function rule_energyApproximationCleanup() {
 
 async function main() {
   log('╔══════════════════════════════════════════════════════════════════════════════╗');
-  log('║  MASTER SELF-HEAL ENGINE v1.0 — Universal Tuya Zigbee                      ║');
+  log('║  MASTER SELF-HEAL ENGINE v1.0 — Tuya Unified Zigbee                      ║');
   log('║  Encoding all session discoveries into automated self-repair               ║');
   log(`║  Mode: ${DRY ? 'DRY RUN (preview)' : 'LIVE (applying fixes)'}${' '.repeat(54 - (DRY ? 21 : 22))}║`);
   log('╚══════════════════════════════════════════════════════════════════════════════╝');

@@ -13,7 +13,7 @@ function fetch(url, options = {}) {
   return new Promise((resolve, reject) => {
     const attempt = (n) => {
       const req = https.get(url, {
-        headers: { 'User-Agent': 'UniversalTuyaSync/1.0' },
+        headers: { 'User-Agent': 'TuyaUnifiedSync/1.0' },
         timeout,
       }, (res) => {
         if (res.statusCode === 301 || res.statusCode === 302) {

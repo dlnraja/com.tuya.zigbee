@@ -1,9 +1,9 @@
 'use strict';
-constSwitchBase = require('../../lib/devices/HybridSwitchBase');
+const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
-class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
+class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
   get gangCount() { return 1; } // Each sub-device controls 1 gang
 
   get sceneMode() {
@@ -46,15 +46,15 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
         this._zclState.lastState = value;
         // In magic mode, don't update capability (load stays unchanged)
         if (mode !== 'magic') {
-          this.setCapabilityValue('onoff', value).catch(() => {});
+          await this.setCapabilityValue('onoff', value).catch(() => {});
         }
         if (isPhys) {
           // Auto/Both: trigger physical button flow (general + per-gang)
           if (mode === 'auto' || mode === 'both') {
             const fid = 'wall_switch_2gang_1way_turned_' + (value ? 'on' : 'off');
-            (() => { try { return this.homey.flow.getDeviceTriggerCard(fid); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+            (() => { try { return this.homey.flow.getDeviceTriggerCard(fid); } catch(e) { return null; } })()?
             const pgid = 'wall_switch_2gang_1way_physical_gang2_' + (value ? 'on' : 'off');
-            (() => { try { return this.homey.flow.getDeviceTriggerCard(pgid); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+            (() => { try { return this.homey.flow.getDeviceTriggerCard(pgid); } catch(e) { return null; } })()?
           }
           // Magic/Both: trigger scene flow
           if (mode === 'auto' || mode === 'magic' || mode === 'both') {
@@ -142,7 +142,7 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(H
       const isPhys = !this._appCommandPending?.gang1;
       if (isPhys && (mode === 'auto' || mode === 'both')) {
         const pgid = 'wall_switch_2gang_1way_physical_gang1_' + (value ? 'on' : 'off');
-        (() => { try { return this.homey.flow.getDeviceTriggerCard(pgid); } catch(e) { return null; } })()?.trigger(this, {}, {}).catch(() => {});
+        (() => { try { return this.homey.flow.getDeviceTriggerCard(pgid); } catch(e) { return null; } })()?
       }
       if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
         const action = value ? 'on' : 'off';

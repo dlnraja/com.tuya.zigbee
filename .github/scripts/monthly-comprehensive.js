@@ -211,7 +211,7 @@ async function respondToIssue(repo,issue,idx,pidx,state,appVersion){
   for(const fp of fps){const d=idx.get(fp)||[];results[fp]={found:d.length>0,drivers:d}}
   for(const pid of pids){const d=pidx.get(pid)||[];results[pid]={found:d.length>0,drivers:d,type:'productId'}}
 
-  const sysPrompt='You are Dylan, French dev of Universal Tuya Zigbee (v'+appVersion+'). Reply to this GitHub issue concisely. If FP supported, say which driver. If not, ask for device interview. Short casual tone, say "I". Max 200 words. NO bot references, NO signature.';
+  const sysPrompt='You are Dylan, French dev of Tuya Unified Zigbee (v'+appVersion+'). Reply to this GitHub issue concisely. If FP supported, say which driver. If not, ask for device interview. Short casual tone, say "I". Max 200 words. NO bot references, NO signature.';
   const ai=await callAI('Issue #'+issue.number+' by @'+issue.user?.login+':\n'+text+'\n\nFingerprint results:\n'+JSON.stringify(results,null,2),sysPrompt,{complexity:'medium'});
   if(!ai)return null;
   if(ai.text.toUpperCase()==='NULL')return null;
@@ -349,7 +349,7 @@ async function main(){
   const allNewFPs=[...uniqueNewFork,...uniqueNewEnrich];
   const summaryData={report,newFingerprints:allNewFPs.slice(0,30),topIssues:issuesWithFP.slice(0,10).map(i=>({repo:i._repo,number:i.number,title:i.title,user:i.user?.login}))};
 
-  const sysPrompt='You are Dylan, French dev of Universal Tuya Zigbee (v'+appVersion+'). Write a short monthly update for the forum. Plain text, no ## headers, no tables, no emoji walls. Short casual sentences, say "I" naturally. Cover new devices, fixes, what needs testing. Max 250 words. NO signature, NO footer links, NO bot references.';
+  const sysPrompt='You are Dylan, French dev of Tuya Unified Zigbee (v'+appVersion+'). Write a short monthly update for the forum. Plain text, no ## headers, no tables, no emoji walls. Short casual sentences, say "I" naturally. Cover new devices, fixes, what needs testing. Max 250 words. NO signature, NO footer links, NO bot references.';
   const aiSummary=await callAI(JSON.stringify(summaryData,null,2),sysPrompt,{complexity:'high'});
 
   if(aiSummary){

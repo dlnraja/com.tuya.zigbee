@@ -234,7 +234,7 @@ Tuya provides a platform that enables OEMs to create smart home devices. These b
 
 ## 💡 COMMENT INTÉGRER CES SOURCES
 
-Pour l'application Universal Tuya Zigbee :
+Pour l'application Tuya Unified Zigbee :
 
 1. **Consulter régulièrement les dépôts** : Les listes de Zigbee2MQTT et Blakadder sont constamment mises à jour avec de nouveaux appareils et correctifs.
 

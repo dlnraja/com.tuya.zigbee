@@ -1,4 +1,4 @@
-# 🔧 Guide de Dépannage Zigbee - Universal Tuya Zigbee
+# 🔧 Guide de Dépannage Zigbee - Tuya Unified Zigbee
 
 ## Table des Matières
 1. [Problèmes de Pairing](#1-problèmes-de-pairing)
@@ -57,7 +57,7 @@
 
 **Ce que fait l'app :**
 ```javascript
-// Dans BaseHybridDevice.js - onNodeInit()
+// Dans BaseUnifiedDevice.js - onNodeInit()
 // 1. Lecture Basic cluster pour "réveiller" le device
 await this.zclNode.endpoints[1].clusters.basic.readAttributes(['modelId', 'manufacturerName']);
 
@@ -69,7 +69,7 @@ await this.tuyaEF00Manager?.queryAllDPs();
 ```
 
 **Fichiers concernés :**
-- `lib/devices/BaseHybridDevice.js` - Initialisation universelle
+- `lib/devices/BaseUnifiedDevice.js` - Initialisation universelle
 - `lib/tuya/TuyaEF00Manager.js` - Time sync et DP queries
 - `lib/tuya/TuyaSyncManager.js` - Synchronisation périodique
 
@@ -104,7 +104,7 @@ await this.tuyaEF00Manager?.queryAllDPs();
 
 **Ce que fait l'app :**
 ```javascript
-// Dans HybridSensorBase.js
+// Dans UnifiedSensorBase.js
 async _configureAttributeReportingSDK3(zclNode) {
   // Configure reporting pour TOUS les clusters disponibles
   const reportingConfigs = [
@@ -171,7 +171,7 @@ async configureAllEndpoints() {
 
 **Ce que fait l'app :**
 ```javascript
-// Dans BaseHybridDevice.js
+// Dans BaseUnifiedDevice.js
 async _registerUniversalCapabilityListeners() {
   // Enregistre AUTOMATIQUEMENT les listeners pour toutes les capabilities
   const capabilities = this.getCapabilities();
@@ -285,7 +285,7 @@ L'app utilise une architecture hybride intelligente :
 
 | Fichier | Rôle |
 |---------|------|
-| `lib/devices/BaseHybridDevice.js` | Base class universelle |
+| `lib/devices/BaseUnifiedDevice.js` | Base class universelle |
 | `lib/tuya/TuyaEF00Manager.js` | Gestion cluster Tuya |
 | `lib/managers/MultiEndpointManager.js` | Multi-gang/multi-endpoint |
 | `lib/utils/ReportingConfig.js` | Configuration reporting |

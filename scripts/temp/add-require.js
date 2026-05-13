@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 // Add PowerSourceIntelligence toSensorBase.js
-const file = 'lib/devices/HybridSensorBase.js';
+const file = 'lib/devices/UnifiedSensorBase.js';
 let content = fs.readFileSync(file, 'utf8');
 
 if (!content.includes('PowerSourceIntelligence')) {

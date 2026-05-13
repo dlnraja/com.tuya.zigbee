@@ -4,7 +4,7 @@ const filesToUpdate = [
   '.github/scripts/intelligent-bug-detector.js'
 ];
 
-// Let's ensure the bot never says "Already in Universal Tuya Zigbee app" but instead gives an empathetic response.
+// Let's ensure the bot never says "Already in Tuya Unified Zigbee app" but instead gives an empathetic response.
 // I'll scan these files and replace any hardcoded instances.
 
 for (const file of filesToUpdate) {
@@ -13,7 +13,7 @@ for (const file of filesToUpdate) {
 
   // Let's check for any remaining instances of "Already" or similar dismissive language
   if (content.includes('I see these fingerprints are mapped')) {
-    content = content.replace(/I see these fingerprints are mapped in the Universal Tuya Zigbee app/g, "I've checked our database, and these fingerprints are technically mapped in the Universal Tuya Zigbee app");
+    content = content.replace(/I see these fingerprints are mapped in the Tuya Unified Zigbee app/g, "I've checked our database, and these fingerprints are technically mapped in the Tuya Unified Zigbee app");
     fs.writeFileSync(file, content);
   }
 }

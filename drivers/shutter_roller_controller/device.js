@@ -1,5 +1,5 @@
 'use strict';
-constCoverBase = require('../../lib/devices/HybridCoverBase');
+constCoverBase = require('../../lib/devices/UnifiedCoverBase');
 
 class ShutterRollerDevice extends CoverBase {
   async onNodeInit({ zclNode }) {

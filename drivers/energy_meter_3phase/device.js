@@ -1,5 +1,5 @@
 'use strict';
-const PlugBase = require('../../lib/devices/HybridPlugBase');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { parsePhaseVariant2WithPhase } = require('../../lib/tuya/TuyaDataPointsZ2M');
 
 class EnergyMeter3PhaseDevice extends PlugBase {
@@ -64,13 +64,13 @@ class EnergyMeter3PhaseDevice extends PlugBase {
             this.log(`[ENERGY-3PH-DECODER] Decoded DP ${dp} (Phase ${phaseLabel.toUpperCase()}): Power=${power}W, Voltage=${voltage}V, Current=${current}A`);
             
             if (this.hasCapability(`measure_power.phase${phaseNum}`)) {
-              this.setCapabilityValue(`measure_power.phase${phaseNum}`, power).catch(this.error);
+              await this.setCapabilityValue(`measure_power.phase${phaseNum}`, power).catch(this.error);
             }
             
             // Set total/default voltage and current based on Phase 1
             if (dp === 115) {
-              this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
-              this.setCapabilityValue('measure_current', current).catch(this.error);
+              await this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
+              await this.setCapabilityValue('measure_current', current).catch(this.error);
             }
             
             // Re-calculate and set total power
@@ -91,7 +91,7 @@ class EnergyMeter3PhaseDevice extends PlugBase {
     const p1 = this.getCapabilityValue('measure_power.phase1') || 0;
     const p2 = this.getCapabilityValue('measure_power.phase2') || 0;
     const p3 = this.getCapabilityValue('measure_power.phase3') || 0;
-    this.setCapabilityValue('measure_power', p1 + p2 + p3).catch(this.error);
+    await this.setCapabilityValue('measure_power', p1 + p2 + p3).catch(this.error);
   }
 
   async onDeleted() {

@@ -1,4 +1,4 @@
-# ZHA & Z2M Quirks Analysis for Universal Tuya Zigbee
+# ZHA & Z2M Quirks Analysis for Tuya Unified Zigbee
 > Generated: February 2, 2026 | Version: 5.8.1
 
 ## Sources Analyzed

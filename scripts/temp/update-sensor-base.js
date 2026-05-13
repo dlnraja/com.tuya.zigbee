@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const targetFile = 'lib/devices/HybridSensorBase.js';
+const targetFile = 'lib/devices/UnifiedSensorBase.js';
 let content = fs.readFileSync(targetFile, 'utf8');
 
 if (!content.includes('PowerSourceIntelligence')) {
@@ -20,5 +20,5 @@ if (!content.includes('PowerSourceIntelligence')) {
     console.log('❌ Could not find exact string to replace inSensorBase.js');
   }
 } else {
-  console.log('HybridSensorBase.js already contains PowerSourceIntelligence');
+  console.log('UnifiedSensorBase.js already contains PowerSourceIntelligence');
 }

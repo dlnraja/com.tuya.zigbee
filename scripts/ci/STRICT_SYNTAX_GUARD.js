@@ -2,7 +2,7 @@
 /**
  * 🛡️ STRICT_SYNTAX_GUARD.js - v1.1.0
  * 
- * Formal gatekeeper for Universal Tuya Zigbee.
+ * Formal gatekeeper for Tuya Unified Zigbee.
  * Recursively validates syntax of all JavaScript files in the repository.
  * Detects malformed 'extends' keywords (e.g., extends SensorBase or classextends).
  * Returns exit code 1 if any syntax error or formatting issue is found.

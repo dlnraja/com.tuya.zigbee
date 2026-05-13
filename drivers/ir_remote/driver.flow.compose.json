@@ -1,50 +1,53 @@
 {
-  "triggers": [
-    {
-      "id": "ir_remote_code_learned",
-      "title": {
-        "en": "An IR code was learned",
-        "fr": "Un code IR a été appris"
-      },
-      "tokens": [
-        {
-          "name": "ir_code",
-          "type": "string",
-          "title": {
-            "en": "IR Code",
-            "fr": "Code IR"
-          }
-        }
-      ]
-    }
-  ],
   "actions": [
     {
-      "id": "ir_remote_send_code",
+      "id": "ir_remote_send_command",
       "title": {
-        "en": "Send an IR code",
-        "fr": "Envoyer un code IR"
+        "en": "Send IR Command",
+        "fr": "Envoyer commande IR"
       },
       "args": [
         {
-          "name": "ir_code",
+          "name": "command",
           "type": "text",
-          "title": {
-            "en": "IR Code (base64)",
-            "fr": "Code IR (base64)"
+          "label": {
+            "en": "Command Name",
+            "fr": "Nom de la commande"
           },
           "placeholder": {
-            "en": "Paste the learned IR code here"
+            "en": "Power, Volume Up, OK...",
+            "fr": "Alimentation, Volume +, OK..."
           }
         }
       ]
     },
     {
-      "id": "ir_remote_start_learning",
+      "id": "ir_remote_send_custom",
       "title": {
-        "en": "Start learning an IR code",
-        "fr": "Commencer l'apprentissage d'un code IR"
-      }
+        "en": "Send Custom Key",
+        "fr": "Envoyer touche personnalisée"
+      },
+      "args": [
+        {
+          "name": "key",
+          "type": "dropdown",
+          "label": {
+            "en": "Key",
+            "fr": "Touche"
+          },
+          "values": [
+            { "id": "Power", "label": { "en": "Power", "fr": "Alimentation" } },
+            { "id": "Mute", "label": { "en": "Mute", "fr": "Sourdine" } },
+            { "id": "Volume Up", "label": { "en": "Volume Up", "fr": "Volume +" } },
+            { "id": "Volume Down", "label": { "en": "Volume Down", "fr": "Volume -" } },
+            { "id": "Channel Up", "label": { "en": "Channel Up", "fr": "Chaîne +" } },
+            { "id": "Channel Down", "label": { "en": "Channel Down", "fr": "Chaîne -" } },
+            { "id": "Source", "label": { "en": "Source", "fr": "Source" } },
+            { "id": "Menu", "label": { "en": "Menu", "fr": "Menu" } },
+            { "id": "OK", "label": { "en": "OK", "fr": "OK" } }
+          ]
+        }
+      ]
     }
   ]
 }

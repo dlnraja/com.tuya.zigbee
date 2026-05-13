@@ -19,16 +19,29 @@ const save=s=>{fs.mkdirSync(SD,{recursive:true});fs.writeFileSync(SF,JSON.string
 function sanitize(text){
   if(!text)return'';
   let t=text;
+  // Standard PII
   t=t.replace(/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g,'[email]');
   t=t.replace(/([0-9A-Fa-f]{2}[:-]){5}[0-9A-Fa-f]{2}/g,'[mac]');
   t=t.replace(/\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b/g,'[ip]');
   t=t.replace(/([0-9a-fA-F]{1,4}:){2,7}[0-9a-fA-F]{1,4}/g,'[ipv6]');
   t=t.replace(/\b[a-f0-9]{32,}\b/gi,function(m){if(m.length===16)return m;return'[token]'});
   t=t.replace(/\+?\d[\d\s\-().]{8,}\d/g,'[phone]');
-  t=t.replace(/\/(?:home|Users|user)\/[^\s/]+/gi,'[path]');
-  t=t.replace(/C:\\Users\\[^\s\\]+/gi,'[path]');
-  t=t.replace(/(?:dear|hi|hello|hey)\s+[A-Z][a-z]+/gi,'[greeting]');
+  
+  // Sensitive identifiers and tokens (Generic patterns)
+  t=t.replace(/(?:key|token|password|secret|auth|bearer|pat|sid|api_key)[:\s\="']+([a-zA-Z0-9_\-\.]{12,})/gi,'$1: [scrubbed]');
+  t=t.replace(/ghp_[a-zA-Z0-9]{36}/g,'[github_token]');
+  t=t.replace(/ey[a-zA-Z0-9._-]{20,}/g,'[jwt_token]');
+
+  // Paths and Names
+  t=t.replace(/\/(?:home|Users|user|data|mnt|root)\/[^\s/]+/gi,'[path]');
+  t=t.replace(/[A-Z]:\\Users\\[^\s\\]+/gi,'[path]');
+  t=t.replace(/(?:dear|hi|hello|hey|regards|thanks|best)\s+([A-Z][a-z]+)/gi,'[greeting] [name]');
+  
+  // Clean trailing signatures/footers
   t=t.replace(/\n---+\n[\s\S]{0,500}$/,'');
+  t=t.replace(/\nBest regards,[\s\S]*$/i,'');
+  t=t.replace(/\nSent from my .*$/i,'');
+  
   return t;
 }
 function sanitizeFrom(from){
@@ -348,7 +361,7 @@ async function main(){
       bodyLength:em.bodyLength||0,contentType:em.contentType||'unknown'};
     res.push(entry);
     done.add(em.id);
-    console.log(' ['+type+'] '+em.subj.substring(0,60)+(d.fps.mfr.length?' FP:'+d.fps.mfr.join(','):'')+
+    console.log(' ['+type+'] '+safeSubj.substring(0,60)+(d.fps.mfr.length?' FP:'+d.fps.mfr.join(','):'')+
       (safePseudo.username?' @'+safePseudo.username:''));
 
     if(ai&&(ai.severity==='critical'||ai.severity==='high')){

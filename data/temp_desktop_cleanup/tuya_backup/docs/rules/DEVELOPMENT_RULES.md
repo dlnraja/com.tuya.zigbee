@@ -1,4 +1,4 @@
-# Development Rules - Universal Tuya Zigbee
+# Development Rules - Tuya Unified Zigbee
 
 ## 🚨 CRITICAL RULES
 
@@ -115,7 +115,7 @@ For battery devices, bindings must be in `driver.compose.json`:
 
 ### Key Directories
 - `drivers/` - All device drivers (organized by FUNCTION, not brand)
-- `lib/devices/` - Base classes (HybridSensorBase, HybridPlugBase, etc.)
+- `lib/devices/` - Base classes (UnifiedSensorBase, UnifiedPlugBase, etc.)
 - `lib/tuya/` - Tuya EF00 cluster handling
 - `docs/rules/` - This rules documentation
 - `docs/fixes/` - Fix documentation

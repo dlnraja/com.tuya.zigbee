@@ -1,4 +1,4 @@
-# Lib - Universal Tuya Zigbee Library
+# Lib - Tuya Unified Zigbee Library
 
 > **Version**: See `app.json` for current version (single source of truth)
 
@@ -23,13 +23,13 @@ lib/
 
 ## 🔧 devices/ - Classes de Base
 
-### TuyaHybridDevice.js (v5.5.46)
+### TuyaUnifiedDevice.js (v5.5.46)
 **Classe de base pour TOUS les deviceses Tuya/Zigbee**
 
 ```javascript
-const TuyaHybridDevice = require('../../lib/devices/TuyaHybridDevice');
+const TuyaUnifiedDevice = require('../../lib/devices/TuyaUnifiedDevice');
 
-class MyDevice extends TuyaHybridDevice {
+class MyDevice extends TuyaUnifiedDevice {
   // Mappings Tuya DP
   get dpMappings() {
     return {
@@ -140,10 +140,10 @@ Auto-détection avec fallback après 15 minutes.
 
 ```javascript
 // Pour un nouveau driver capteur:
-const TuyaHybridDevice = require('../../lib/devices/TuyaHybridDevice');
+const TuyaUnifiedDevice = require('../../lib/devices/TuyaUnifiedDevice');
 const BatteryCalculator = require('../../lib/battery/BatteryCalculator');
 
-class MySensor extends TuyaHybridDevice {
+class MySensor extends TuyaUnifiedDevice {
   get mainsPowered() { return false; }
 
   get dpMappings() { return { ... }; }

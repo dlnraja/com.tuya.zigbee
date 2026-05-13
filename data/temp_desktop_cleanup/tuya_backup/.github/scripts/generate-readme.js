@@ -53,7 +53,7 @@ const clTable=clKeys.slice(0,15).map(v=>{
 
 const classTable=Object.entries(classes).sort((a,b)=>b[1]-a[1]).map(([c,n])=>`| ${c} | ${n} |`).join('\n');
 
-const readme = `# Universal Tuya Zigbee App for Homey
+const readme = `# Tuya Unified Zigbee App for Homey
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
@@ -178,7 +178,7 @@ ${clTable}
 
 \`\`\`
 Homey Pro
-  \u2514\u2500 Universal Tuya Zigbee App (SDK3)
+  \u2514\u2500 Tuya Unified Zigbee App (SDK3)
        \u251c\u2500 Hybrid Protocol Engine
        \u2502    \u251c\u2500 Tuya DP (Cluster 0xEF00) \u2500 DP1-DP255 data points
        \u2502    \u2514\u2500 Standard ZCL \u2500 onOff, levelControl, colorControl, etc.
@@ -257,7 +257,7 @@ homey app run
 
 | | |
 |---|---|
-| **App Store** | [Universal Tuya Zigbee](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
+| **App Store** | [Tuya Unified Zigbee](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
 | **Test Version** | [Install Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
 | **Forum** | [Community Thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) |
 | **Device Finder** | [Smart Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) |
@@ -316,7 +316,7 @@ Install from: [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) 
 4. Open an [issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=01_device_request.yml) with: **manufacturerName**, **modelId**, and **interview data**
 
 ### Report a Bug
-1. Go to **Settings > Apps > Universal Tuya Zigbee > Send Diagnostics**
+1. Go to **Settings > Apps > Tuya Unified Zigbee > Send Diagnostics**
 2. Open a [bug report](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=02_bug_report.yml) with: device model, error messages, and diagnostics code
 
 ---
