@@ -1,4 +1,4 @@
-# CRITICAL MISTAKES - Never Repeat (v5.9.23)
+# CRITICAL MISTAKES - Never Repeat (v7.5.23)
 
 ## A. CODE BUGS ENCOUNTERED
 
