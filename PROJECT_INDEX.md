@@ -697,8 +697,8 @@ PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
 
 ### REPLY_TOPICS
 ```javascript
-// ONLY: 140352 (our forum thread)
-// NEVER: 26439 (Johan), 146735 (Tuya)
+// STRICT READ ONLY POLICY: ALL THREADS ARE READ ONLY
+// DO NOT POST ANY REPLIES ON 140352 OR ANY OTHER FORUM THREAD
 ```
 
 ## 20. QUALITY GATE SYSTEM (9 LAYERS)
@@ -838,5 +838,5 @@ To trigger operations without running local scripts, you can use the `gh` CLI to
 ### 6. Operational Limits & Automation Bounds
 - **Never modify `tuyapi` logic directly**: We use a queue-throttle (`TuyaLocalClient`) on top of it.
 - **Never touch `node_modules`**: Always run `npm ci` if dependencies are missing.
-- **Never respond to other forum threads**: Hardcoded rule limits responses ONLY to thread `140352`. Do not bypass this limit in the scripts.
+- **FORUM POLICY - STRICT READ ONLY**: All forum scraping/scanning MUST be strictly **READ ONLY**. You are forbidden to post replies, even on our own thread 140352. The forum scripts must only collect data, never push.
 - **Never use generic Zigbee profiles**: Always enforce the *Anti-Generic Strategy* detailed above.
