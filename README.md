@@ -37,6 +37,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
+| **v7.5.22** | FIX: Resolve critical startup crash by packaging fingerprints DB, resolve _TZ... |
 | **v7.5.21** | v7.5.20: Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving c... |
 | **v7.5.20** | v7.5.20: . Fixed WiFi socket port reuse, cleanly separated WiFi/Zigbee protoc... |
 | **v7.5.19** | Added Android native Intent magic URL pairing for all 20 WiFi drivers. Update... |
@@ -46,8 +47,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.15** | v7.5.15: Fixed siren sensor driver crashes, added 3,202 new fingerprints, and... |
 | **v7.5.14** | v7.5.14: . Bug fixes for wireless buttons, climate sensors, radiator valves, ... |
 | **v7.5.13** | v7.5.13: . Added new fingerprints for motion sensor, illuminance sensor, 3-ga... |
-| **v7.5.12** | v7.5.12: . Fixed sensor fallback logic for unknown models. Added new fingerpr... |
 <!-- CHANGELOG_END -->
+
 
 
 
