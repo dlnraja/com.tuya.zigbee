@@ -109,58 +109,38 @@ class WiFiCameraDevice extends Homey.Device {
       return;
     }
     try {
-      const TuyAPI = require('tuyapi');
-      this._tuyaDevice = new TuyAPI({
+      const TuyaLocalClient = require('../../lib/tuya-local/TuyaLocalClient');
+      this._tuyaDevice = new TuyaLocalClient({
         id: s.device_id,
         key: s.local_key,
         ip: s.ip || undefined,
         version: s.protocol_version || '3.4',
-        issueRefreshOnConnect: true,
+        autoDetectProtocol: false,
+        log: (...args) => this.log('[WIFI-CAM-TCP]', ...args),
       });
+
       this._tuyaDevice.on('connected', () => {
         this.log('[WIFI-CAM] TCP connected');
         this._connected = true;
         this.setAvailable().catch(() => {});
       });
+
       this._tuyaDevice.on('disconnected', () => {
         this.log('[WIFI-CAM] TCP disconnected');
         this._connected = false;
-        this._scheduleReconnect();
       });
+
       this._tuyaDevice.on('error', (err) => {
         this.error('[WIFI-CAM] TCP error:', err.message);
       });
-      this._tuyaDevice.on('data', (data) => this._onDPData(data));
-      this._tuyaDevice.on('dp-refresh', (data) => this._onDPData(data));
-      // Connect
-      try {
-        if (s.ip) {
-          await this._tuyaDevice.connect();
-        } else {
-          await this._tuyaDevice.find({ timeout: 10000 });
-          await this._tuyaDevice.connect();
-        }
-      } catch (err) {
-        this.log('[WIFI-CAM] Initial connect failed:', err.message);
-        this._scheduleReconnect();
-      }
-    } catch (err) {
-      this.error('[WIFI-CAM] TuyAPI init failed:', err.message);
-    }
-  }
 
-  _scheduleReconnect() {
-    if (this._reconnectTimer) clearTimeout(this._reconnectTimer);
-    this._reconnectTimer = setTimeout(async () => {
-      if (this._tuyaDevice && !this._tuyaDevice.isConnected()) {
-        try {
-          await this._tuyaDevice.find({ timeout: 10000 });
-          await this._tuyaDevice.connect();
-        } catch (e) {
-          this._scheduleReconnect();
-        }
-      }
-    }, 15000);
+      this._tuyaDevice.on('dp-update', (dps) => this._onDPData({ dps }));
+
+      // Connect using TuyaLocalClient
+      await this._tuyaDevice.connect();
+    } catch (err) {
+      this.error('[WIFI-CAM] TuyaLocalClient init failed:', err.message);
+    }
   }
 
   // ─── DP Data Handler ───
@@ -314,7 +294,7 @@ class WiFiCameraDevice extends Homey.Device {
       }
       throw new Error('Camera not connected');
     }
-    await this._tuyaDevice.set({ dps: parseInt(dp, 10), set: value });
+    await this._tuyaDevice.setDP(isNaN(dp) ? dp : parseInt(dp, 10), value);
   }
 
   _dpToCode(dp) {
@@ -363,11 +343,9 @@ class WiFiCameraDevice extends Homey.Device {
   }
 
   _destroyLocalConnection() {
-    if (this._reconnectTimer) clearTimeout(this._reconnectTimer);
     if (this._tuyaDevice) {
       try {
-        this._tuyaDevice.removeAllListeners();
-        if (this._tuyaDevice.isConnected()) this._tuyaDevice.disconnect();
+        this._tuyaDevice.destroy();
       } catch (e) { /* ignore */ }
       this._tuyaDevice = null;
     }

@@ -1,8 +1,10 @@
 {
   "name": {
     "en": "Sensor Illuminance Presence",
-    "nl": "Sensor Illuminance Presence",
-    "fr": "Sensor Illuminance Presence"
+    "nl": "Aanwezigheidssensor met verlichtingssterkte",
+    "fr": "Capteur de présence avec luminosité",
+    "de": "Anwesenheitssensor mit Beleuchtungsstärke",
+    "es": "Sensor de presencia con iluminancia"
   },
   "class": "sensor",
   "capabilities": [

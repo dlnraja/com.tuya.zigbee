@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "WiFi IR Remote (Tuya Local)"
+    "en": "WiFi IR Remote (Tuya Local)",
+    "fr": "Télécommande IR WiFi (Tuya Local)",
+    "nl": "WiFi IR-afstandsbediening (Tuya Lokaal)",
+    "de": "WiFi IR-Fernbedienung (Tuya Lokal)",
+    "es": "Control remoto IR WiFi (Tuya Local)"
   },
   "class": "remote",
   "capabilities": [

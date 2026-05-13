@@ -1,4 +1,4 @@
-# Universal Tuya Architectural Rules (v7.5.0)
+# Universal Tuya Architectural Rules (v7.5.23)
 
 ## R1: Universal Interpretation
 - EVERY incoming frame must pass through `IntelligentFrameAnalyzer`.
@@ -34,3 +34,15 @@
 - **Lowercase Snake-Case Keying:** All resolution is keyed in standard lowercase snake_case to avoid mismatching variants (e.g., `_TZE200_kb5noeto`, `_tze200_KB5NOETO`, `_Tze200_Kb5noeto` are mapped to the same entry).
 - **O(1) Dynamic Matcher Indexing:** Pair matching must construct an index memory hash map upon launch for high performance lookups rather than linear array sweeps.
 - **Global Variant Resolvers:** Custom manufacturer maps (like `data/manufacturers.json`) are checked to link exotic variants (e.g., `_TZE200_1234abcd`) back to their canonical brand drivers.
+
+## R25: Promotion-Time Documentation & Registry Sync (Rule 25)
+- **Mandatory Registry Sync:** On every app promotion (draft-to-test / production / branch synchronization), it is mandatory to recursively audit, normalize, and update all markdown documentation files (`.md`), technical registries/reference databases (like `app.json`, `package.json`, fingerprint matrices, and cross-references), dotfiles (`.eslintignore`, `.homeyignore`, etc.), rules configuration files (such as `.clinerule`, `.cursorrules`, etc.), architectural maps, and cartography/index files (like `PROJECT_INDEX.md`, `FINGERPRINT-CROSSREF.md`) to maintain perfect structural alignment with active codebase updates and prevent documentation rot.
+- **CI/CD Comment Robustness:** When grep'ing for banned words, comment lines (`//` or `*`) must be ignored (using `grep -v '^[[:space:]]*//' | grep -v '^[[:space:]]*\*'`) to prevent false-positive failures during code-quality validations.
+- **Strict Syntax Guard Isolation:** The temporary draft or development scripts directory (`temp`) must be explicitly ignored by the syntax checker so only active production, lib, drivers, and standard CI/CD files are validated, keeping the repository's build green.
+- **Hybrid-Compatible Base Exports:** Base classes exported from `lib/devices/` (like `SensorBase` / `HybridSensorBase.js`) must use direct exports together with self-referential class properties (`SensorBase.SensorBase = SensorBase; module.exports = SensorBase;`) to ensure absolute compatibility with both direct destructured requires (used by driver implementations) and index-based requires.
+
+## R26: Universal Evolution & Continuous Enrichment Loop (Rule 26)
+- **Continuous Lifecycle Sweep:** On *every* single prompt execution or task processed, the developer agent MUST execute a comprehensive, full-scope repository sweep.
+- **Components of the Loop:** This loop comprises: scanning and triaging latest community PRs/issues/images (`scan-prs-issues.js`), auto-learning newly found fingerprints (`auto-learn-fingerprints.js`), running self-heals and automated code-fixes (`auto-fix-common-issues.js`), verifying drivers, and collectively enriching ALL yml files, javascript source codes, base classes, rules configs (`.clinerule`, `.cursorrules`, `.windsurfrules`), automations, cartographies, indexes, and reference databases. No element of the ecosystem must be left stagnant.
+
+

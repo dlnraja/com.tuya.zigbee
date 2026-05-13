@@ -1,41 +1,26 @@
 {
-  "timestamp": "2026-04-03T08:40:42.207Z",
-  "appVersion": "5.11.153",
-  "forum": 2,
+  "timestamp": "2026-05-13T03:39:28.372Z",
+  "appVersion": "7.5.17",
+  "forum": 0,
   "github": 1,
-  "diagnostics": 70,
+  "diagnostics": 56,
   "diagNewFPs": 0,
   "diagCritical": 0,
-  "forumDetails": [
-    {
-      "topic": 140352,
-      "post": 1684,
-      "user": "robertklep",
-      "fps": [],
-      "reply": "**Fingerprint check** (v5.11.153):\n✅ Supported: `generic` → **bulb_rgbw**\n",
-      "model": "template"
-    },
-    {
-      "topic": 140352,
-      "post": 1686,
-      "user": "smarthomesven",
-      "fps": [],
-      "reply": "**Fingerprint check** (v5.11.153):\n✅ Supported: `generic` → **bulb_rgbw**\n",
-      "model": "template"
-    }
-  ],
+  "forumDetails": [],
   "githubDetails": [
     {
       "repo": "JohanBendz/com.tuya.zigbee",
-      "number": 1360,
-      "user": "gitebk",
+      "number": 1396,
+      "user": "sondregjessing-blip",
       "fps": [
-        "_TZE284_ne4pikwm",
+        "_TZE284_0ints6wl",
+        "_TZE",
+        "example",
         "vision"
       ],
-      "title": "Device Request - [Nedis SmartLife Radiator Control] - [_TZE284_ne4pikwm] / [TS0601]",
-      "response": "Fingerprints found: `_TZE284_ne4pikwm`\nProduct IDs: `TS0601`",
-      "model": "local-regex"
+      "title": "Device Request - [Soil Sensor] - [_TZE284_0ints6wl] / [TS0601]",
+      "response": "## Re: Device Request — Soil Sensor `_TZE284_0ints6wl` / `TS0601`\n\nThanks for the detailed interview, @sondregjessing-blip.\n\n### Current Fingerprint Status\n\nThe fingerprint **`_TZE284_0ints6wl`** is already registered in the **`climate_sensor`** driver (matched by manufacturerName). The **`soil_sens",
+      "model": "openrouter"
     }
   ]
 }

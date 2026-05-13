@@ -49,10 +49,26 @@ class Button3GangDevice extends ButtonDevice {
     await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT]', err.message));
 
     // v5.8.39: Comprehensive button detection (GitHub #98)
-    await this._setupOnOffCommands(zclNode);
-    await this._setupMultistateInput(zclNode);
-    await this._setupE000BoundCluster(zclNode);
-    await this._setupRawFrameInterceptor(zclNode);
+    try {
+      await this._setupOnOffCommands(zclNode);
+    } catch (err) {
+      this.error('[INIT] Error setting up onOff commands:', err.message);
+    }
+    try {
+      await this._setupMultistateInput(zclNode);
+    } catch (err) {
+      this.error('[INIT] Error setting up multistate input:', err.message);
+    }
+    try {
+      await this._setupE000BoundCluster(zclNode);
+    } catch (err) {
+      this.error('[INIT] Error setting up E000 BoundCluster:', err.message);
+    }
+    try {
+      await this._setupRawFrameInterceptor(zclNode);
+    } catch (err) {
+      this.error('[INIT] Error setting up Raw Frame Interceptor:', err.message);
+    }
 
     this.log('[BUTTON3] ✅ initialized - OnOff + MultiState + E000 + Raw interceptor');
   }

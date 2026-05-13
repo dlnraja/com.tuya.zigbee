@@ -1,6 +1,7 @@
 'use strict';
 
 const {SensorBase } = require('../../lib/devices/HybridSensorBase');
+const { startsWithCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * LCD Temperature & Humidity Sensor Device - v5.4.3
@@ -19,7 +20,7 @@ class LCDTempHumidSensorDevice extends SensorBase {
   /** v5.12.3: Fast init for _TZE200_* TS0601 variants (battery sleepy devices) */
   get fastInitMode() {
     const mfr = this.getSetting?.('zb_manufacturer_name') || '';
-    return mfr.toUpperCase().startsWith('_TZE');
+    return startsWithCI(mfr, '_TZE');
   }
 
   /** Capabilities for LCD temp/humidity sensors */
@@ -116,8 +117,8 @@ class LCDTempHumidSensorDevice extends SensorBase {
     await super.onNodeInit({ zclNode });
     const settings = this.getSettings() || {};
     this.log('[LCD] ✅ LCD Temperature/Humidity Sensor ready');
-    this.log('[LCD] Model:', settings.zb_model_id || settings.zb_model_id || 'TS0201');
-    this.log('[LCD] Manufacturer:', settings.zb_manufacturer_name || settings.zb_manufacturer_name || 'unknown');
+    this.log('[LCD] Model:', settings.zb_model_id || 'TS0201');
+    this.log('[LCD] Manufacturer:', settings.zb_manufacturer_name || 'unknown');
   }
 
   onTuyaStatus(status) {

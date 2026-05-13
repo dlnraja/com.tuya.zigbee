@@ -1,6 +1,8 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { parsePhaseVariant2WithPhase } = require('../../lib/tuya/TuyaDataPointsZ2M');
 
 /**
  * CT Clamp Power Meter Device
@@ -178,10 +180,11 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     // PJ-1203A 2-channel bidirectional variants (Z2M #18419, #22248, #25809)
     const pj1203aIds = [
       '_TZE284_81yrt3lo', '_TZE204_81yrt3lo',  // Original PJ-1203A
+      '_TZE284_81yrt3l', '_TZE204_81yrt3l',    // Variant without trailing o
       '_TZE200_81yrt3lo',                       // Older variant (Z2M #18432)
       '_TZE204_cjbofhxw', '_TZE284_cjbofhxw'   // Matsee Plus variant (Z2M #15359)
     ];
-    return pj1203aIds.some(id => mfr.toLowerCase().includes(id.toLowerCase())) ? 'pj1203a' : '3phase';
+    return pj1203aIds.some(id => containsCI(mfr, id)) ? 'pj1203a' : '3phase';
   }
 
   _handleDP(dp, value) {
@@ -200,6 +203,39 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     }
     const profile = this.meterProfile;
     this.log(`[DP${dp}] = ${value} (profile: ${profile})`);
+
+    // Intercept Base64 encoded telemetry on DP 115, 116, 117 (Owon PC311-Z-TY / bidirectional variants)
+    if ((dp === 115 || dp === 116 || dp === 117) && (typeof value === 'string' || Buffer.isBuffer(value))) {
+      const base64Str = Buffer.isBuffer(value) ? value.toString('base64') : value;
+      if (base64Str && !/^\d+$/.test(base64Str)) {
+        try {
+          const phaseLabel = dp === 115 ? 'a' : (dp === 116 ? 'b' : 'c');
+          const phaseNum = dp === 115 ? '1' : (dp === 116 ? '2' : '3');
+          const decoded = parsePhaseVariant2WithPhase(base64Str, phaseLabel);
+          
+          const voltage = decoded[`voltage_${phaseLabel}`];
+          const current = decoded[`current_${phaseLabel}`];
+          const power = decoded[`power_${phaseLabel}`];
+          
+          this.log(`[DECODER] Decoded DP ${dp} (Phase ${phaseLabel.toUpperCase()}): Power=${power}W, Voltage=${voltage}V, Current=${current}A`);
+          
+          if (this.hasCapability(`measure_power.phase${phaseNum}`)) {
+            this.setCapabilityValue(`measure_power.phase${phaseNum}`, power).catch(this.error);
+          }
+          
+          // Re-calculate and set total power
+          this._updateTotalPower().catch(this.error);
+          
+          if (dp === 115) {
+            this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
+            this.setCapabilityValue('measure_current', current).catch(this.error);
+          }
+          return; // Skip normal DP processing for this packet
+        } catch (err) {
+          this.error(`[DECODER] Failed to decode DP ${dp} base64 telemetry:`, err.message);
+        }
+      }
+    }
 
     // ═══════════════════════════════════════════════════════════════════
     // v5.7.5: PJ-1203A 2-CHANNEL BIDIRECTIONAL (FIXED per Z2M #18419)
@@ -259,11 +295,22 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 110: // Power factor A (÷100)
-        this.log(`[PJ1203A] 📈 Power Factor A: ${value / 100}`);
+        const pfa = value / 100;
+        if (this.hasCapability('measure_power_factor')) {
+          this.setCapabilityValue('measure_power_factor', pfa).catch(this.error);
+        }
+        if (this.hasCapability('measure_power_factor.phase1')) {
+          this.setCapabilityValue('measure_power_factor.phase1', pfa).catch(this.error);
+        }
+        this.log(`[PJ1203A] 📈 Power Factor A: ${pfa}`);
         break;
 
       case 111: // AC frequency (Hz ÷100)
-        this.log(`[PJ1203A] ⚡ AC Frequency: ${value / 100} Hz`);
+        const freq = value / 100;
+        if (this.hasCapability('measure_frequency')) {
+          this.setCapabilityValue('measure_frequency', freq).catch(this.error);
+        }
+        this.log(`[PJ1203A] ⚡ AC Frequency: ${freq} Hz`);
         break;
 
       case 112: // Voltage (V ÷10)
@@ -277,7 +324,11 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 114: // Current B (A ÷1000)
-        this.log(`[PJ1203A] ⚡ Current B: ${value / 1000} A`);
+        const currentB = (value / 1000) * this._ctRatio;
+        if (this.hasCapability('measure_current.phase2')) {
+          this.setCapabilityValue('measure_current.phase2', currentB).catch(this.error);
+        }
+        this.log(`[PJ1203A] ⚡ Current B: ${currentB} A`);
         break;
 
       case 115: // Power AB Total (W ÷10)
@@ -287,7 +338,11 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 121: // Power factor B (÷100)
-        this.log(`[PJ1203A] 📈 Power Factor B: ${value / 100}`);
+        const pfb = value / 100;
+        if (this.hasCapability('measure_power_factor.phase2')) {
+          this.setCapabilityValue('measure_power_factor.phase2', pfb).catch(this.error);
+        }
+        this.log(`[PJ1203A] 📈 Power Factor B: ${pfb}`);
         break;
 
       case 129: // Update frequency (seconds)
@@ -363,8 +418,12 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       break;
 
     case 111: // PJ-1203A AC Frequency (Hz ÷100)
-      this.log(`[FALLBACK] ⚡ AC Frequency: ${value / 100} Hz`);
-      break;
+        const fallbackFreq = value / 100;
+        if (this.hasCapability('measure_frequency')) {
+          this.setCapabilityValue('measure_frequency', fallbackFreq).catch(this.error);
+        }
+        this.log(`[FALLBACK] ⚡ AC Frequency: ${fallbackFreq} Hz`);
+        break;
 
     case 112: // PJ-1203A Voltage (V ÷10)
       this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
@@ -377,8 +436,12 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       break;
 
     case 114: // PJ-1203A Current B (A ÷1000)
-      this.log(`[FALLBACK] ⚡ Current B: ${value / 1000} A`);
-      break;
+        const fallbackCurrentB = (value / 1000) * this._ctRatio;
+        if (this.hasCapability('measure_current.phase2')) {
+          this.setCapabilityValue('measure_current.phase2', fallbackCurrentB).catch(this.error);
+        }
+        this.log(`[FALLBACK] ⚡ Current B: ${fallbackCurrentB} A`);
+        break;
 
     case 115: // PJ-1203A Total Power (W ÷10)
       this.setCapabilityValue('measure_power', value / 10).catch(this.error);
@@ -386,8 +449,12 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       break;
 
     case 121: // PJ-1203A Power Factor B
-      this.log(`[FALLBACK] 📈 Power Factor B: ${value / 100}`);
-      break;
+        const fallbackPfb = value / 100;
+        if (this.hasCapability('measure_power_factor.phase2')) {
+          this.setCapabilityValue('measure_power_factor.phase2', fallbackPfb).catch(this.error);
+        }
+        this.log(`[FALLBACK] 📈 Power Factor B: ${fallbackPfb}`);
+        break;
 
     default:
       this.log(`[DP${dp}] Unhandled DP value: ${value}`);

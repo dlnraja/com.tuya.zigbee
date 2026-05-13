@@ -42,7 +42,11 @@ class AirPurifierDevice extends TuyaSpecificClusterDevice {
     }
   }
 
-  onDeleted() { super.onDeleted?.(); }
+  onDeleted() {
+  this.removeAllListeners();
+this._batteryHandler?.destroy();
+  super.onDeleted?.();
+}
 }
 
 module.exports = AirPurifierDevice;

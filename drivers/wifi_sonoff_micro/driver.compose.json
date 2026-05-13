@@ -73,7 +73,11 @@
   ],
   "discovery": "ewelink_mdns",
   "name": {
-    "en": "SONOFF Micro USB"
+    "en": "SONOFF Micro USB",
+    "fr": "SONOFF Micro USB",
+    "nl": "SONOFF Micro USB",
+    "de": "SONOFF Micro USB",
+    "es": "SONOFF Micro USB"
   },
   "class": "socket",
   "capabilities": [

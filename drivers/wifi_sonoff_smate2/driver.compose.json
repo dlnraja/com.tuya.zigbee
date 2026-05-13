@@ -73,7 +73,11 @@
   ],
   "discovery": "ewelink_mdns",
   "name": {
-    "en": "SONOFF S-MATE2 Extreme"
+    "en": "SONOFF S-MATE2 Extreme",
+    "fr": "SONOFF S-MATE2 Extrême",
+    "nl": "SONOFF S-MATE2 Extreem",
+    "de": "SONOFF S-MATE2 Extrem",
+    "es": "SONOFF S-MATE2 Extremo"
   },
   "class": "socket",
   "capabilities": [

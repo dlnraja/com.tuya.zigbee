@@ -1,8 +1,10 @@
 {
   "name": {
     "en": "Sensor Contact Motion",
-    "nl": "Sensor Contact Motion",
-    "fr": "Sensor Contact Motion"
+    "nl": "Sensor Contact Beweging",
+    "fr": "Capteur Contact Mouvement",
+    "de": "Sensor Kontakt Bewegung",
+    "es": "Sensor Contacto Movimiento"
   },
   "class": "sensor",
   "capabilities": [

@@ -1,23 +1,23 @@
 # 📊 Historical Analysis - Universal Tuya Zigbee
-Generated: 2026-05-08T17:03:52.685Z | Version: v5.11.212+
+Generated: 2026-05-13T11:53:15.398Z | Version: v5.11.212+
 
 ## 🔄 Evolution Timeline
 ```
 v5.x (2024-Q1) → Stable base, drivers séparés
 v7.0.0 (2024-Q3) → Migration unified driver, complexité accrue
 v5.11.x (2025-2026) → Community-driven improvements
-v5.11.212 (2026-05-08) → Phase 0-1 complete, context preservation, hybrid drivers
+v5.11.212 (2026-05-08) → Phase 0-1 complete, context preservation, drivers
 ```
 
 ## 🐛 Regression Patterns Identified
 | Pattern | Files Affected | Root Cause | Prevention |
 |---------|---------------|------------|------------|
 | Unmatched parentheses | AdvancedAnalytics.js | Copy-paste refactor | ESLint: no-unmatched-parens |
-| Hybrid if/ternary | tuyaUtils.js | Optimization without test | ESLint: no-hybrid-if-ternary |
+| if/ternary | tuyaUtils.js | Optimization without test | ESLint: no-hybrid-if-ternary |
 
 ## 🤝 Community-Driven Improvements (v5.11.212)
 - **3784 duplicate fingerprints removed** from 146 drivers
-- **4 new hybrid drivers** added (floor_heating, radiator_valve, dimmer_dual, presence_radar)
+- **4 new drivers** added (floor_heating, radiator_valve, dimmer_dual, presence_radar)
 - **1531 new Z2M fingerprints** synced via community-sync
 - **Rule 24 variants handling** implemented
 - **Context preservation** via .context_* files
@@ -27,47 +27,47 @@ v5.11.212 (2026-05-08) → Phase 0-1 complete, context preservation, hybrid driv
 |--------|-----------|-------------------|
 | Fingerprint count | ~3,500 | 5,000+ (with sync) |
 | Duplicate MFRs removed | 0 | 3,784 |
-| Hybrid drivers | 0 | 4 |
+| drivers | 0 | 4 |
 | True collisions | 54,373 | 0 |
 
 ## 🔍 Recent Commits
-- 2108078a7 feat: add context-ingestion.js - Phase 0 context preservation
-- 232b95a33 feat: add PROJECT_INDEX.md - AI reference guide with glossary and architecture
-- ab2097ed0 fix: removed 3784 duplicate fingerprints, added 4 hybrid drivers, clean collisions
-- 4b71bb49d Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- 8bbda4c60 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- 3aca30958 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- e8a4e5989 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- 99cc9d8b5 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- 7290f37cf Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- e4967e976 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- eef1d1518 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- 85cd10cef Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- 48f5a18e4 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- dc259d56f Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- aff93ddd0 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- 2ef51d32d Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- 266476791 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- 915921449 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- 250f6a8e8 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
-- cf4ac4b35 Community sync v7.5.8 2026-05: 200 new FPs from Z2M/ZHA/community/JohanBendz [skip ci]
+- 6dd540312 Diagnostics update 2026-05-13 [skip ci]
+- 0013b8bb5 chore: GitHub auto-manage state update [skip ci]
+- c79e2053d v: 228 drivers, 3208 FPs [skip ci]
+- a609b3aee feat(sync): integrate 82 missing Johan SDK3 fingerprints, activate Smart PR Auto-Merge workflow
+- c1c375df8 Changelog sync v7.5.20: updated README with latest release notes [skip ci]
+- 37ca65c5a feat(standards): cleanly separate WiFi vs Zigbee, fix local socket port reuse, document button heuristics, and resolve diagnostic crashes
+- 4a4f795b5 v7.5.20: 228 drivers, 3208 FPs [skip ci]
+- 28b641a04 feat(pair): add Android native Intent magic URL and propagate to all 20 WiFi drivers
+- 222d31bcc feat(pair): add Android native Intent magic URL and propagate to all 20 WiFi drivers
+- 2b0f5d2bf v7.5.19: 228 drivers, 3208 FPs [skip ci]
+- 4b34a827b feat(wifi): add getSavedCredentials and Easy Login support for seamless Tuya pairing
+- 57f64dbd5 feat(wifi): add getSavedCredentials and Easy Login support for seamless Tuya pairing
+- 32577b6ad feat(dimmer): port TS110E custom level control cluster and wifi automatic brand/type badges [skip ci]
+- 655f982d5 feat(wifi): add automatic device type classification and format pairing names with brand/type badges [skip ci]
+- 626cf9e51 feat(dimmer): port TS110E custom level control cluster to HybridLightBase and fix battery capability conflicts [skip ci]
+- 3767dab52 chore(master): apply master-self-heal optimizations and resolve battery capability representation mappings [skip ci]
+- e8768d2ee chore(master): enrich rules files and implement Tuya local WiFi brand-classification for Moes, Lidl, Legrand, Somfy, and Avatto [skip ci]
+- 0ee99311f auto: sync Johan SDK3 FPs (19 added) [skip ci]
+- b7df59e38 chore(stable-v5): synchronize L1-L9 bypass docs, deploy zero-defect-control automated checks, externalize DeviceFingerprintDB, resolve 130 battery conflicts and 46 deprecated calls [skip ci]
+- 41cb3c0c6 chore(quality): integrate L1-L9 elite bypass docs, fix 46 deprecated getDeviceTriggerCard calls, externalize DeviceFingerprintDB, and deploy zero-defect-control script to GitHub CI/CD [skip ci]
 
 ## 📂 Branches
 - #1139-add_TZ3000_o4mkahkc
 - add-_TZE200_kb5noeto
 - antonhagg/SDK3
+- auto-sync-johan-enhanced
 - feature/accept-upstream-prs
 - fix/motion_sensor_2
-- master
+- * master
 - moes_6_gang
 - new_device_issue_1059_rgb_led_strip_controller
 - patch-1
 - pr-1137
 - sinan92/SDK3
-- * stable-v5
+- stable-v5
 - remotes/origin/HEAD -> origin/master
 - remotes/origin/auto-sync-johan-enhanced
-- remotes/origin/auto/johan-sdk3-sync
 
 ## ✅ Validation Status
 - lint-collisions.js: 0 collisions, 0 critical

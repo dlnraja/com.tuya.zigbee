@@ -10,6 +10,7 @@ const ZosungIRTransmitCluster = require('../../lib/clusters/ZosungIRTransmitClus
 const ZosungIRTransmitBoundCluster = require('../../lib/clusters/ZosungIRTransmitBoundCluster');
 const ZosungIRControlBoundCluster = require('../../lib/clusters/ZosungIRControlBoundCluster');
 const irBlasterInit = require('./irBlasterInit');
+const IRCodeLibrary = require('../../lib/ir/IRCodeLibrary');
 
 // IR Blaster cluster IDs
 const ZOSUNG_IR_CONTROL_CLUSTER_ID = 0xE004;    // 57348 - ZosungIRControl
@@ -122,24 +123,10 @@ class IrBlasterDevice extends ZigBeeDevice {
     // v5.5.356: Setup enhanced IR clusters first
     await this._setupAdvancedIRClusters(zclNode);
 
-    // v5.8.2: ALWAYS register onoff capability listener (Forum #1349 FrankP)
-    // Previously only registered if onOff cluster existed, causing "Missing Capability Listener: onoff" error
-    if (this.hasCapability('onoff')) {
-      this.registerCapabilityListener('onoff', async (value) => {
-        this.log(`Setting learn mode: ${value}`);
-        try {
-          if (value) {
-            await this._enableAdvancedLearnMode();
-          } else {
-            await this._disableLearnMode();
-          }
-        } catch (err) {
-          this.error('Failed to set learn mode:', err);
-          throw err;
-        }
-      });
-      this.log('[IR-INIT] ✅ onoff capability listener registered');
-    }
+    // v5.8.2: onoff capability listener is now handled in _setupEnhancedCapabilities
+    // so it can send Power IR codes rather than triggering Learn Mode.
+    // Learn mode is strictly tied to 'button.learn_ir'.
+    this.log('[IR-INIT] onoff capability delegated to Universal Remote features');
 
     // Setup OnOff cluster for learn mode attribute reports (if available)
     if (zclNode.endpoints[1]?.clusters?.onOff) {
@@ -292,6 +279,125 @@ class IrBlasterDevice extends ZigBeeDevice {
         await this._setCarrierFrequency(frequency);
       });
     }
+
+    // --- Universal Remote Capabilities ---
+    const registerRemoteBtn = (cap, fnName) => {
+      if (this.hasCapability(cap)) {
+        this.registerCapabilityListener(cap, async () => {
+          this.log(`[REMOTE] Button pressed: ${fnName}`);
+          try {
+            const brand = this.getSetting('ir_brand') || 'Samsung';
+            const category = this.getSetting('ir_category') || 'TV';
+            const irData = IRCodeLibrary.getCode(brand, category, fnName);
+            
+            if (irData && irData.code) {
+              this.log(`[REMOTE] Found code for ${brand} ${category} ${fnName}`);
+              await this.sendIRCode(irData.code);
+            } else {
+              this.log(`[REMOTE] ⚠️ No code found for ${brand} ${category} ${fnName} in database.`);
+              throw new Error(`IR Code not found for ${brand} ${fnName}`);
+            }
+          } catch (e) {
+            this.error(`[REMOTE] Error sending ${fnName}:`, e.message);
+            throw e;
+          }
+        });
+      }
+    };
+
+    registerRemoteBtn('volume_up', 'Volume Up');
+    registerRemoteBtn('volume_down', 'Volume Down');
+    registerRemoteBtn('channel_up', 'Channel Up');
+    registerRemoteBtn('channel_down', 'Channel Down');
+    registerRemoteBtn('button.mute', 'Mute');
+    registerRemoteBtn('button.source', 'Source');
+    registerRemoteBtn('button.menu', 'Menu');
+    registerRemoteBtn('button.enter', 'OK/Enter');
+    
+    // Power button mapping (override default onoff listener which does learn mode)
+    if (this.hasCapability('onoff')) {
+      this.registerCapabilityListener('onoff', async (value) => {
+        // Only send power command, do NOT trigger learn mode from onoff anymore.
+        // Users should use "button.learn_ir" for learning.
+        this.log(`[REMOTE] Power button toggled: ${value}`);
+        try {
+          const brand = this.getSetting('ir_brand') || 'Samsung';
+          const category = this.getSetting('ir_category') || 'TV';
+          // ACs have Power On / Power Off, TVs often have toggle 'Power'
+          let fnName = category === 'AC' ? (value ? 'Power On' : 'Power Off') : 'Power';
+          const irData = IRCodeLibrary.getCode(brand, category, fnName);
+          
+          if (irData && irData.code) {
+             await this.sendIRCode(irData.code);
+          } else {
+             // Fallback for AC if explicit On/Off is missing but 'Power' exists
+             const fbData = IRCodeLibrary.getCode(brand, category, 'Power');
+             if (fbData && fbData.code) {
+                await this.sendIRCode(fbData.code);
+             } else {
+                throw new Error(`Power code missing for ${brand}`);
+             }
+          }
+        } catch (e) {
+          this.error('[REMOTE] Power send failed:', e.message);
+          throw e;
+        }
+      });
+    }
+
+    // --- Flow Card Action Handlers ---
+    const tvAction = this.homey.flow.getActionCard('ir_blaster_send_tv_command');
+    if (tvAction) {
+      tvAction.registerRunListener(async (args, state) => {
+        const { brand, command } = args;
+        this.log(`[FLOW] Send TV Command: Brand=${brand}, Cmd=${command}`);
+        const irData = IRCodeLibrary.getCode(brand, 'TV', command);
+        if (irData && irData.code) {
+          await this.sendIRCode(irData.code);
+          return true;
+        }
+        throw new Error(`IR Code not found for TV: ${brand} - ${command}`);
+      });
+    }
+
+    const acAction = this.homey.flow.getActionCard('ir_blaster_send_ac_command');
+    if (acAction) {
+      acAction.registerRunListener(async (args, state) => {
+        const { brand, command } = args;
+        this.log(`[FLOW] Send AC Command: Brand=${brand}, Cmd=${command}`);
+        const irData = IRCodeLibrary.getCode(brand, 'AC', command);
+        if (irData && irData.code) {
+          await this.sendIRCode(irData.code);
+          return true;
+        }
+        throw new Error(`IR Code not found for AC: ${brand} - ${command}`);
+      });
+    }
+  }
+
+  /**
+   * Called when a repair view is opened
+   */
+  async onRepair(session) {
+    this.log(`[REPAIR] Opened session for IR Setup`);
+
+    session.setHandler('test_ir_code', async (data) => {
+      const { brand, category, command } = data;
+      this.log(`[REPAIR] Testing IR Code: ${brand} - ${category} - ${command}`);
+      const irData = IRCodeLibrary.getCode(brand, category, command);
+      if (irData && irData.code) {
+        await this.sendIRCode(irData.code);
+        return true;
+      }
+      throw new Error('Code not found');
+    });
+
+    session.setHandler('save_ir_config', async (data) => {
+      const { brand, category } = data;
+      this.log(`[REPAIR] Saving config: ${brand} - ${category}`);
+      await this.setSettings({ ir_brand: brand, ir_category: category });
+      return true;
+    });
   }
 
   /**

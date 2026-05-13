@@ -1,21 +1,23 @@
 {
-  "ts": "2026-04-04T03:45:15.714Z",
+  "ts": "2026-05-13T04:07:28.490Z",
   "ghCalls": 120,
-  "totalFPs": 113,
-  "newFPs": 23,
+  "totalFPs": 99,
+  "newFPs": 6,
   "researched": 1,
   "implemented": 0,
   "results": [
     {
-      "fp": "_TZ3000_dojqjapa",
-      "driver": null,
+      "fp": "_TZE204_81yrt3l",
+      "driver": "power_meter",
       "confidence": 0,
-      "pidsFromIssue": [],
+      "pidsFromIssue": [
+        "TS0601"
+      ],
       "discoveredPIDs": [],
       "variants": 2,
       "actions": [],
       "sources": [
-        "dlnraja/com.tuya.zigbee#182 (issue)"
+        "dlnraja/com.tuya.zigbee#318 (issue)"
       ]
     }
   ]

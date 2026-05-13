@@ -2,6 +2,7 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -106,18 +107,15 @@ class DiyCustomZigbeeDevice extends ZigBeeDevice {
   }
 
   _detectFirmwareType(manufacturerName = '', productId = '') {
-    const mfr = manufacturerName.toLowerCase();
-    const pid = productId.toLowerCase();
-
-    if (mfr.includes('ptvo') || pid.includes('ptvo')) return 'PTVO';
-    if (mfr.includes('esp32') || mfr.includes('espressif')) return 'ESP32';
-    if (mfr.includes('diyruz') || pid.includes('diyruz')) return 'DIYRuZ';
-    if (mfr.includes('tasmota') || pid.includes('z2t') || pid.includes('zbbridge')) return 'Tasmota';
-    if (mfr.includes('cc2530') || mfr.includes('cc2531') || mfr.includes('cc2652')) return 'TI_ZStack';
-    if (mfr.includes('efr32') || mfr.includes('silabs') || mfr.includes('silicon')) return 'SiLabs';
-    if (mfr.includes('nrf') || mfr.includes('nordic')) return 'Nordic';
-    if (mfr.includes('conbee') || mfr.includes('raspbee') || mfr.includes('deconz')) return 'deCONZ';
-    if (mfr.includes('zigstar') || mfr.includes('zzh') || mfr.includes('tube')) return 'Coordinator';
+    if (containsCI(manufacturerName, 'ptvo') || containsCI(productId, 'ptvo')) return 'PTVO';
+    if (containsCI(manufacturerName, 'esp32') || containsCI(manufacturerName, 'espressif')) return 'ESP32';
+    if (containsCI(manufacturerName, 'diyruz') || containsCI(productId, 'diyruz')) return 'DIYRuZ';
+    if (containsCI(manufacturerName, 'tasmota') || containsCI(productId, 'z2t') || containsCI(productId, 'zbbridge')) return 'Tasmota';
+    if (containsCI(manufacturerName, 'cc2530') || containsCI(manufacturerName, 'cc2531') || containsCI(manufacturerName, 'cc2652')) return 'TI_ZStack';
+    if (containsCI(manufacturerName, 'efr32') || containsCI(manufacturerName, 'silabs') || containsCI(manufacturerName, 'silicon')) return 'SiLabs';
+    if (containsCI(manufacturerName, 'nrf') || containsCI(manufacturerName, 'nordic')) return 'Nordic';
+    if (containsCI(manufacturerName, 'conbee') || containsCI(manufacturerName, 'raspbee') || containsCI(manufacturerName, 'deconz')) return 'deCONZ';
+    if (containsCI(manufacturerName, 'zigstar') || containsCI(manufacturerName, 'zzh') || containsCI(manufacturerName, 'tube')) return 'Coordinator';
     
     return 'Unknown_DIY';
   }

@@ -1,5 +1,5 @@
 # KNOWLEDGE BASE & AI HEURISTICS (Local BDD)
-*Updated: April 2026*
+*Updated: May 2026*
 
 This document serves as the central intelligence repository (Local BDD) for AI automated agents, GitHub Actions, and maintenance scripts.
 It lists external references, state trackers, and new integrations for Universal Tuya Zigbee.

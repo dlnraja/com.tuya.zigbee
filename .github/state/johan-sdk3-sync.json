@@ -1,12 +1,679 @@
 {
-  "timestamp": "2026-04-04T03:34:17.988Z",
+  "timestamp": "2026-05-13T07:56:45.874Z",
   "added": [
+    {
+      "fp": "_TYZB01_qezuin6k",
+      "driver": "bulb_dimmable",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS0052"
+      ]
+    },
+    {
+      "fp": "_TYZB01_v8gtiaed",
+      "driver": "bulb_dimmable",
+      "pids": [
+        "TS110F",
+        "TS110E",
+        "TS1101"
+      ]
+    },
+    {
+      "fp": "TUYATEC-g3gl6cgy",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-Bfq2i2Sy",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-abkehqus",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-sb6t7ett",
+      "driver": "contact_sensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-rkqiqvcs",
+      "driver": "contact_sensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-crr8qb0p",
+      "driver": "contact_sensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-kbqf60nt",
+      "driver": "contact_sensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-r9hgssol",
+      "driver": "contact_sensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-trhrga6p",
+      "driver": "contact_sensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-ip9ganvw",
+      "driver": "contact_sensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "_TYZB01_xph99wvr",
+      "driver": "contact_sensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-7qunn4gq",
+      "driver": "contact_sensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "SNZB-04"
+      ]
+    },
+    {
+      "fp": "TUYATEC-0l6xaqmi",
+      "driver": "contact_sensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "DoorWindow-Sensor-ZB3.0",
+        "MCT-340 E"
+      ]
+    },
+    {
+      "fp": "Immax",
+      "driver": "contact_sensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "DoorWindow-Sensor-ZB3.0",
+        "MCT-340 E"
+      ]
+    },
+    {
+      "fp": "Visonic",
+      "driver": "contact_sensor",
+      "pids": [
+        "RH3001",
+        "TS0203",
+        "DoorWindow-Sensor-ZB3.0",
+        "MCT-340 E"
+      ]
+    },
+    {
+      "fp": "_TYZB01_hlla45kx",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "TUYATEC-3tipnsrx",
+      "driver": "contact_sensor",
+      "pids": [
+        "RH3001",
+        "TS0207"
+      ]
+    },
+    {
+      "fp": "_TYZB01_ftdkanlj",
+      "driver": "climate_sensor",
+      "pids": [
+        "TS0201",
+        "TS0222"
+      ]
+    },
+    {
+      "fp": "_TYZB01_kvwjujy9",
+      "driver": "climate_sensor",
+      "pids": [
+        "TS0201",
+        "TS0222"
+      ]
+    },
+    {
+      "fp": "_TYZB01_a476raq2",
+      "driver": "climate_sensor",
+      "pids": [
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "fp": "_TYZB01_hjsgdkfl",
+      "driver": "climate_sensor",
+      "pids": [
+        "TS0201",
+        "TY0201"
+      ]
+    },
+    {
+      "fp": "_TYZB01_iuepbmpv",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0121",
+        "TSO121",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TYZB01_cbiezpds",
+      "driver": "climate_sensor",
+      "pids": [
+        "SM0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-bd5faf9p",
+      "driver": "motion_sensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-zw6hxafz",
+      "driver": "motion_sensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-lha8pbwd",
+      "driver": "motion_sensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-zn9wyqtr",
+      "driver": "motion_sensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-53o41joc",
+      "driver": "motion_sensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-deetibst",
+      "driver": "motion_sensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-dgtxmihe",
+      "driver": "motion_sensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-b5g40alm",
+      "driver": "motion_sensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "TUYATEC-dxnohkpd",
+      "driver": "motion_sensor",
+      "pids": [
+        "RH3040"
+      ]
+    },
+    {
+      "fp": "_TYZB01_jytabjkb",
+      "driver": "motion_sensor",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TYZB01_dl7cejts",
+      "driver": "motion_sensor",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TYZB01_dr6sduka",
+      "driver": "motion_sensor",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TYZB01_geepvxsy",
+      "driver": "motion_sensor",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "eWeLight",
+      "driver": "bulb_rgb",
+      "pids": [
+        "TS0505A",
+        "TS0505B",
+        "ZB-CL01"
+      ]
+    },
+    {
+      "fp": "_TYST11_d0yu2xgi",
+      "driver": "air_purifier",
+      "pids": [
+        "TS0601"
+      ]
+    },
+    {
+      "fp": "_TYZB01_qm6djpta",
+      "driver": "button_emergency_sos",
+      "pids": [
+        "TS0215A"
+      ]
+    },
+    {
+      "fp": "_TYZB01_phjeraqq",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TYZB01_dsjszp0x",
+      "driver": "smoke_detector_advanced",
+      "pids": [
+        "TS0205"
+      ]
+    },
+    {
+      "fp": "_TYZB01_wqcac7lo",
+      "driver": "smoke_detector_advanced",
+      "pids": [
+        "TS0205"
+      ]
+    },
+    {
+      "fp": "_TYZB01_vkwryfdr",
+      "driver": "usb_outlet_advanced",
+      "pids": [
+        "TS0115"
+      ]
+    },
+    {
+      "fp": "_TYZB01_ncutbjdi",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TYZB01_aneiicmq",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0003",
+        "TS011F",
+        "TS0011",
+        "TS000F",
+        "TS0001"
+      ]
+    },
+    {
+      "fp": "_TYZB01_zsl6z0pw",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "_TYZB01_digziiav",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0003",
+        "TS0012",
+        "TS011F",
+        "TS0002",
+        "TS0013"
+      ]
+    },
+    {
+      "fp": "TUYATEC-yg5dcbfu",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-prhs1rsd",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-gqhxixyk",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-vmgh3fxd",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-ojmxeikg",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-ojmxeikq",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-1g3tawnp",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-v3uxbuxy",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-riuj5xzs",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-1uxx9cci",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
+    {
+      "fp": "TUYATEC-HaoiuWzy",
+      "driver": "climate_sensor",
+      "pids": [
+        "RH3052",
+        "TS0201"
+      ]
+    },
     {
       "fp": "TUYATEC-qun7vq14",
       "driver": "climate_sensor",
       "pids": [
         "RH3052",
         "TS0201"
+      ]
+    },
+    {
+      "fp": "_TYZB01_ymcdbl3u",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TYZB01_4tlksk8a",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0111",
+        "TS0001",
+        "TS011F"
+      ]
+    },
+    {
+      "fp": "_TYZB02_keyjqthh",
+      "driver": "button_wireless_1",
+      "pids": [
+        "TS0041"
+      ]
+    },
+    {
+      "fp": "_TYZB02_keyjhapk",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TYZB02_key8kk7r",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TYZB01_xfpdrwvc",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TYZB01_qeqvmvti",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TYZB01_seqwasot",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0001",
+        "TS0011"
+      ]
+    },
+    {
+      "fp": "_TYZB01_mtlhqn48",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TYZB01_6sadkhcy",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "TUYATEC-O6SNCwd6",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TYZB01_vzrytttn",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TYZB01_2athzhfr",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TYZB01_6g8b7at8",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "TUYATEC-nzrrvgco",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0002",
+        "TS0012",
+        "TS0042"
+      ]
+    },
+    {
+      "fp": "_TYZB01_xiuox57i",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TYZB01_b8cr31hp",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TYZB01_mqel1whf",
+      "driver": "button_wireless_2",
+      "pids": [
+        "TS0003",
+        "TS0013",
+        "TS0043"
+      ]
+    },
+    {
+      "fp": "_TYZB01_bagt1e4o",
+      "driver": "button_wireless_4",
+      "pids": [
+        "TS0014",
+        "TS0044"
+      ]
+    },
+    {
+      "fp": "_TYZB01_sqmd19i1",
+      "driver": "contact_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
+      ]
+    },
+    {
+      "fp": "_TYST11_qq9mpfhw",
+      "driver": "contact_sensor",
+      "pids": [
+        "TS0207",
+        "q9mpfhw"
       ]
     }
   ],
@@ -36,8 +703,8 @@
     "lcdtemphumidsensor_3",
     "outdoor_2_socket",
     "outdoor_plug",
-    "pir_sensor_2",
     "pirsensor",
+    "pir_sensor_2",
     "plug",
     "radar_sensor",
     "radar_sensor_2",
@@ -53,18 +720,18 @@
     "rgb_led_strip",
     "rgb_led_strip_controller",
     "rgb_mood_light",
-    "rgb_spot_GU10",
     "rgb_spot_GardenLight",
+    "rgb_spot_GU10",
     "rgb_wall_led_light",
     "slim_motion_sensor",
+    "smartplug",
+    "smartplug_2_socket",
     "smartPlug_DinRail",
     "smart_air_detection_box",
     "smart_door_window_sensor",
     "smart_garden_irrigation_control",
     "smart_motion_sensor",
     "smart_switch",
-    "smartplug",
-    "smartplug_2_socket",
     "smoke_sensor",
     "smoke_sensor2",
     "smoke_sensor3",
@@ -268,7 +935,7 @@
           }
         ],
         "commands": [],
-        "existsInOurs": false
+        "existsInOurs": true
       },
       {
         "file": "TuyaPowerOnStateCluster.js",
@@ -426,9 +1093,9 @@
   },
   "summary": {
     "totalJohanFPs": 636,
-    "totalOurFPs": 3994,
-    "missingFPs": 1,
-    "addedFPs": 1,
+    "totalOurFPs": 10232,
+    "missingFPs": 82,
+    "addedFPs": 82,
     "skippedFPs": 0,
     "dpGaps": 0,
     "newDrivers": 89,

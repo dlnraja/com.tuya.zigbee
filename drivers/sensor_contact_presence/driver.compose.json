@@ -1,8 +1,10 @@
 {
   "name": {
     "en": "Sensor Contact Presence",
-    "nl": "Sensor Contact Presence",
-    "fr": "Sensor Contact Presence"
+    "nl": "Sensor contact aanwezigheid",
+    "fr": "Capteur de contact de présence",
+    "de": "Sensor Kontakt Präsenz",
+    "es": "Sensor de contacto de presencia"
   },
   "class": "sensor",
   "capabilities": [

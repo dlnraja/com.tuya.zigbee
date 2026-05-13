@@ -1,8 +1,8 @@
 'use strict';
 
 const { Cluster, BoundCluster } = require('zigbee-clusters');
-const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
-const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
+const TuyaSpecificCluster = require('../../lib/clusters/TuyaSpecificCluster');
+const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 
 Cluster.addCluster(TuyaSpecificCluster);
 

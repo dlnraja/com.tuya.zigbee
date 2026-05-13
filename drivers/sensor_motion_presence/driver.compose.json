@@ -1,8 +1,10 @@
 {
   "name": {
     "en": "Sensor Motion Presence",
-    "nl": "Sensor Motion Presence",
-    "fr": "Sensor Motion Presence"
+    "nl": "Sensor Bewegingsaanwezigheid",
+    "fr": "Capteur de présence de mouvement",
+    "de": "Bewegungspräsenzsensor",
+    "es": "Sensor de presencia de movimiento"
   },
   "class": "sensor",
   "capabilities": [

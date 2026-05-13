@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "eWeLink Switch 4-Channel (SONOFF)"
+    "en": "eWeLink Switch 4-Channel (SONOFF)",
+    "fr": "Interrupteur eWeLink 4 canaux (SONOFF)",
+    "nl": "eWeLink Schakelaar 4-kanaals (SONOFF)",
+    "de": "eWeLink Schalter 4-Kanal (SONOFF)",
+    "es": "Interruptor eWeLink 4 canales (SONOFF)"
   },
   "class": "socket",
   "capabilities": [

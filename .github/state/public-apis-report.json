@@ -1,7 +1,7 @@
 {
   "source": "davemachado/public-api",
-  "timestamp": "2026-04-05T18:55:04.922Z",
-  "total": 1426,
+  "timestamp": "2026-05-13T04:07:58.931Z",
+  "total": 1483,
   "ai": [
     {
       "name": "Gitter",
@@ -46,6 +46,12 @@
       "auth": "apiKey"
     },
     {
+      "name": "DeepAI",
+      "url": "https://deepai.org/",
+      "desc": "Provides AI-powered APIs for text generation, image processing, and more",
+      "auth": "apiKey"
+    },
+    {
       "name": "Deepcode",
       "url": "https://www.deepcode.ai",
       "desc": "AI for code review",
@@ -64,9 +70,21 @@
       "auth": "No"
     },
     {
+      "name": "Groq",
+      "url": "https://console.groq.com/docs/quickstart",
+      "desc": "Fast AI inference API with free tier, supports Llama, Mixtral, Gemma models",
+      "auth": "apiKey"
+    },
+    {
       "name": "Hirak FaceAPI",
       "url": "https://faceapi.hirak.site/",
       "desc": "Face detection, face recognition with age estimation/gender estimation, accurate, no quota limits",
+      "auth": "apiKey"
+    },
+    {
+      "name": "Hugging Face",
+      "url": "https://huggingface.co",
+      "desc": "AI model hub with inference API for NLP, computer vision, and audio",
       "auth": "apiKey"
     },
     {
@@ -142,6 +160,12 @@
       "auth": "apiKey"
     },
     {
+      "name": "TensorFeed",
+      "url": "https://tensorfeed.ai/developers",
+      "desc": "Real-time AI news, model pricing, service status, and agent activity feeds",
+      "auth": "No"
+    },
+    {
       "name": "Time Door",
       "url": "https://timedoor.io",
       "desc": "A time series analysis API",
@@ -194,7 +218,12 @@
       "name": "OpenVisionAPI",
       "url": "https://openvisionapi.com",
       "desc": "Open source computer vision API based on open source models"
+    },
+    {
+      "name": "TensorFeed",
+      "url": "https://tensorfeed.ai/developers",
+      "desc": "Real-time AI news, model pricing, service status, and agent activity feeds"
     }
   ],
-  "dev_count": 151
+  "dev_count": 160
 }

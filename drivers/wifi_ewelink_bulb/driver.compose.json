@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "eWeLink Bulb (SONOFF B02/B05)"
+    "en": "eWeLink Bulb (SONOFF B02/B05)",
+    "fr": "Ampoule eWeLink (SONOFF B02/B05)",
+    "nl": "eWeLink Lamp (SONOFF B02/B05)",
+    "de": "eWeLink Glühbirne (SONOFF B02/B05)",
+    "es": "Bombilla eWeLink (SONOFF B02/B05)"
   },
   "class": "light",
   "capabilities": [

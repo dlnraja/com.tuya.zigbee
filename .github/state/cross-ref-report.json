@@ -1,5 +1,5 @@
 {
-  "ts": "2026-04-04T06:30:05.787Z",
+  "ts": "2026-05-13T04:34:45.846Z",
   "correlations": [],
   "actionable": [
     {
@@ -43,25 +43,25 @@
     {
       "id": "battery",
       "pattern": "False Battery Alert / Missing Battery",
-      "count": 32,
+      "count": 37,
       "priority": "high"
     },
     {
       "id": "pairing",
       "pattern": "Pairing Failure",
+      "count": 18,
+      "priority": "high"
+    },
+    {
+      "id": "no_response",
+      "pattern": "Device Not Responding",
       "count": 9,
       "priority": "high"
     },
     {
       "id": "unknown",
       "pattern": "Device Shows Unknown",
-      "count": 5,
-      "priority": "high"
-    },
-    {
-      "id": "no_response",
-      "pattern": "Device Not Responding",
-      "count": 5,
+      "count": 7,
       "priority": "high"
     },
     {
@@ -94,17 +94,7 @@
     }
   ],
   "mainsBatteryIssues": [
-    "air_quality_comprehensive",
-    "ceiling_fan",
-    "climate_sensor",
-    "formaldehyde_sensor",
-    "gas_detector",
-    "gas_sensor",
-    "hvac_air_conditioner",
-    "hvac_dehumidifier",
-    "ir_blaster",
-    "ir_remote",
-    "smart_heater",
+    "sensor_climate_contact",
     "smoke_detector_advanced",
     "soil_sensor"
   ]

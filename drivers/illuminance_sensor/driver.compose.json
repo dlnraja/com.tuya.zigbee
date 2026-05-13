@@ -1,7 +1,10 @@
 {
   "name": {
     "en": "Illuminance Sensor",
-    "fr": "Capteur de Luminosité"
+    "fr": "Capteur d'éclairement",
+    "nl": "Verlichtingssensor",
+    "de": "Beleuchtungssensor",
+    "es": "Sensor de iluminancia"
   },
   "class": "sensor",
   "capabilities": [
@@ -27,7 +30,10 @@
       "_TZ3000_do6txrcw",
       "_TZ3000_DO6TXRCW",
       "zg-106z",
-      "ZG-106Z"
+      "ZG-106Z",
+      "_tze200_hl0ss9oa",
+      "_TZE200_hl0ss9oa",
+      "_TZE200_HL0SS9OA"
     ],
     "productId": [
       "TS0222",

@@ -1,8 +1,8 @@
 {
-  "version": "5.11.179",
-  "date": "2026-04-04",
-  "drivers": 193,
-  "fingerprints": 4328,
+  "version": "7.5.17",
+  "date": "2026-05-13",
+  "drivers": 228,
+  "fingerprints": 10919,
   "decisions": [
     {
       "device": "USB Zigbee Dongle (USB-powered relay)",
@@ -307,25 +307,25 @@
     {
       "id": "battery",
       "pattern": "False Battery Alert / Missing Battery",
-      "count": 32,
+      "count": 37,
       "priority": "high"
     },
     {
       "id": "pairing",
       "pattern": "Pairing Failure",
+      "count": 18,
+      "priority": "high"
+    },
+    {
+      "id": "no_response",
+      "pattern": "Device Not Responding",
       "count": 9,
       "priority": "high"
     },
     {
       "id": "unknown",
       "pattern": "Device Shows Unknown",
-      "count": 5,
-      "priority": "high"
-    },
-    {
-      "id": "no_response",
-      "pattern": "Device Not Responding",
-      "count": 5,
+      "count": 7,
       "priority": "high"
     },
     {
@@ -337,6 +337,12 @@
     {
       "id": "double_div",
       "pattern": "Double Division (wrong sensor values)",
+      "count": 2,
+      "priority": "medium"
+    },
+    {
+      "id": "no_temperature",
+      "pattern": "No Temperature",
       "count": 2,
       "priority": "medium"
     },
@@ -353,12 +359,6 @@
       "priority": "low"
     },
     {
-      "id": "no_temperature",
-      "pattern": "No Temperature",
-      "count": 1,
-      "priority": "low"
-    },
-    {
       "id": "energy_wrong",
       "pattern": "Wrong Energy",
       "count": 1,
@@ -366,8 +366,8 @@
     }
   ],
   "interviews": {
-    "total": 170,
-    "fps": 131
+    "total": 214,
+    "fps": 160
   },
   "invertedMfrs": [
     "_TZ3000_26fmupbb",

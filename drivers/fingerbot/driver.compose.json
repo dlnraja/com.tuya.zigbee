@@ -1,7 +1,11 @@
 {
   "id": "FingerBot",
   "name": {
-    "en": "Finger Bot"
+    "en": "Finger Bot",
+    "fr": "Robot à doigt",
+    "nl": "Vingerbot",
+    "de": "Fingerbot",
+    "es": "Robot de dedo"
   },
   "class": "button",
   "platforms": [
@@ -42,7 +46,11 @@
     ],
     "productId": [
       "TS0001",
-      "TS0001_fingerbot"
+      "TS0001_fingerbot",
+      "TS0003",
+      "TS011F",
+      "TS0011",
+      "TS000F"
     ],
     "endpoints": {
       "1": {

@@ -1,6 +1,10 @@
 {
   "name": {
-    "en": "WiFi Thermostat (Tuya Local)"
+    "en": "WiFi Thermostat (Tuya Local)",
+    "fr": "Thermostat WiFi (Tuya Local)",
+    "nl": "WiFi Thermostaat (Tuya Lokaal)",
+    "de": "WiFi Thermostat (Tuya Lokal)",
+    "es": "Termostato WiFi (Tuya Local)"
   },
   "class": "thermostat",
   "capabilities": [

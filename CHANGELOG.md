@@ -4,7 +4,224 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## v5.11.211 (2026-05-03)
+## [7.5.26] - 2026-05-13
+
+### Bug Fixes
+- Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated `getTriggerCard` to `getDeviceTriggerCard`. This eliminates all deprecation warnings and ensures full compatibility with the latest Homey firmware.
+
+### Improvements
+- Updated driver count to 228 with 6,713 fingerprints.
+- General stability improvements and code cleanup.
+---
+
+ [7.5.25] - 2026-05-13
+
+### Bug Fixes
+- Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor devices
+- Corrected require paths in fingerbot, motion_sensor_2, and sirentemphumidsensor drivers
+- Added PJ-1203A mapping for improved device compatibility
+
+### New Features
+- Added new fingerprints for power_clamp_meter driver
+
+### Improvements
+- Updated to 228 drivers with 6713 total fingerprints
+- General stability and performance improvements
+---
+
+ [7.5.24] - 2026-05-13
+
+### Bug Fixes
+- **Gate Opener**: Fixed DP3 contact sensor not reporting correctly (resolves issue #305)
+- **Flow Triggers**: Migrated all deprecated flow triggers to modern `triggerFlowCard` helper for improved reliability
+
+### Improvements
+- Added missing fingerprints across multiple drivers
+- Updated driver count to 228 with 6713 total fingerprints
+
+### New Devices
+- Added support for `_TZE284_0ints6wl` soil sensor (TS0601)
+---
+
+ [7.5.23] - 2026-05-13
+
+## v7.5.23
+
+No new drivers, fingerprints, or user-facing bug fixes in this release.
+
+### Maintenance
+- Archived 3 obsolete planning documents
+- Cleaned up collision and invalid asset data
+- Removed ~14MB of orphan files
+- Updated project index and metadata
+---
+
+ [7.5.22] - 2026-05-13
+
+## Version 7.5.22
+
+### Changes
+- App metadata and store listing updated.
+
+No new drivers, fingerprints, or bug fixes in this release.
+
+---
+**228 drivers** | **6,707 fingerprints**
+---
+
+ [7.5.20] - 2026-05-13
+
+### Bug Fixes
+- Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving connection drops and repeated reconnections
+- Resolved diagnostic crashes caused by mixed WiFi/Zigbee protocol handling
+
+### New Devices & Fingerprints
+- Added new device fingerprints across the driver library (3,208 total across 228 drivers)
+- Updated `switch_4gang` driver with new manufacturer fingerprints and capability mappings
+
+### Improvements
+- Cleanly separated WiFi (TuyAPI/LAN) and Zigbee (ZCL/EF00) protocol stacks to prevent device misclassification and unexpected behavior
+- Documented button press detection heuristics, improving physical switch reliability and preventing false toggle triggers
+---
+
+ [7.5.19] - 2026-05-13
+
+## v7.5.19
+
+### New Features
+- **Android native pairing**: Added Android Intent magic URL support across all 20 WiFi drivers (wifi_air_purifier, wifi_cover, wifi_dimmer, wifi_door_lock, wifi_fan, wifi_garage_door, wifi_heater, wifi_humidifier, and others). Android users can now pair WiFi devices directly through the native Android pairing flow instead of manual IP/port entry.
+
+### Improvements
+- Updated pairing configuration UI (`configure.html`) across all WiFi device drivers to support the new Android magic URL flow.
+- Updated app metadata and version information.
+---
+
+ [7.5.18] - 2026-05-13
+
+## v7.5.18
+
+### Bug Fixes
+- Removed `alarm_battery` capability from 136 drivers that also have `measure_battery`. The dual battery capabilities caused SDK3 conflicts, resulting in device initialization errors and missing battery readings. Affected drivers include: bulb_dimmable, bulb_rgb, bulb_rgbw, bulb_tunable_white, bulb_white, button_wireless (all variants), climate_sensor, co_sensor, contact_sensor, curtain_motor_tilt, DIN rail devices, floor heating thermostats, air quality CO2 sensor, and others.
+
+### New Devices
+- Added fingerprint `_TZE204_81yrt3l` (TS0601 soil sensor) as a recognized variant for the existing soil/irrigation sensor driver, resolving device request #318.
+---
+
+ [7.5.17] - 2026-05-12
+
+## v7.5.17
+
+### Bug Fixes
+- **Backlight mode alignment**: Fixed backlight value mapping across multi-gang switch drivers — backlight modes (`off`/`normal`/`inverted`) are now consistently aligned with DP integer values, resolving incorrect backlight state reporting on several switch variants.
+- **Fingerprint case self-heal**: Completed case-insensitive fingerprint conflict resolution across 356 driver-conflict audit entries. Devices with variant `manufacturerName` casing (e.g. `_TZ3000_` vs `_tz3000_`) now correctly match their intended driver regardless of firmware reporting.
+
+### Improvements
+- Added 2 new device interview profiles (interviews #318, #319) for recently analyzed devices.
+- Refreshed fingerprint database from 72 updated driver files, improving device recognition coverage.
+---
+
+ [7.5.15] - 2026-05-11
+
+### New Features
+- **Virtual Telemetry Compensation Engine**: New system that automatically corrects sensor readings (temperature, humidity, battery) based on device-specific calibration curves. This improves accuracy for devices known to report slightly off values.
+
+### Bug Fixes
+- **Button Device (TS0041/TS0044)**: Fixed an issue where rapid button presses could be missed or incorrectly detected as a different press type. Single, double, and long presses now work reliably.
+- **Device Fingerprint Database**: Updated to include 14 new device fingerprints, improving out-of-box support for recently released Tuya Zigbee devices.
+
+### Improvements
+- **Case-Insensitive Matching**: The fingerprint database now handles manufacturer names with inconsistent casing (e.g., `_TZ3000_` vs `_tz3000_`), reducing pairing failures for devices with non-standard firmware.
+- **Diagnostic Collection**: Enhanced email-based diagnostic fetching to capture more detailed device reports, helping us identify and fix issues faster.
+---
+
+ [7.5.14] - 2026-05-11
+
+### Bug Fixes
+- Fixed radiator valve and smart radiator valve device initialization issues
+- Resolved energy meter 3-phase and power clamp meter reporting problems
+- Corrected presence sensor radar and motion sensor behavior
+- Fixed climate sensor and climate sensor device recognition
+- Addressed wireless button (1-gang, 4-gang, smart) pairing and response issues
+- Fixed contact sensor and door controller device handling
+- Resolved plug smart and plug energy monitor device issues
+- Corrected generic Tuya and DIY custom Zigbee device initialization
+- Fixed LED controller dimmable device behavior
+- Resolved LCD temperature/humidity sensor device issues
+
+### Improvements
+- Enhanced device detection for climate sensors and wireless buttons
+- Improved radiator WiFi Tuya device support
+- Updated power meter and energy monitoring device handling
+
+### New Fingerprints
+- Added support for INSOMA DUAL IRRIGATION VALVE (_TZE284_fhvpaltk)
+- Added support for Smart Wireless Button 1 (_TZ3000_b4awzgct)
+- Added support for climate sensor (_TZ3000_fllyghyj)
+---
+
+ [7.5.12] - 2026-05-10
+
+### Bug Fixes
+- Fixed sensor fallback check for unknown model IDs to prevent incorrect capability assignments
+- Cleaned up HybridSensorBase exports to remove unused draft scripts
+
+### Improvements
+- Updated documentation, project rules, and configuration files for better developer experience
+- Refreshed fingerprint cross-reference and project status docs
+
+### New Fingerprints
+- Added support for Nedis SmartLife Radiator Control (_TZE284_ne4pikwm / TS0601)
+---
+
+ [7.5.11] - 2026-05-10
+
+### Bug Fixes
+- Fixed ReferenceError crashes across all Hybrid Base classes (Sensor, Cover, Light, Plug, Switch, Thermostat) during dynamic capability updates. This resolves rare crashes when capabilities are added or removed at runtime.
+- Fixed `_safeSetCapability` ReferenceError in HybridSensorBase.
+
+### Improvements
+- Updated to 221 drivers and 6636 fingerprints.
+- Improved internal error handling for capability updates.
+---
+
+ [7.5.10] - 2026-05-10
+
+### Bug Fixes
+- Fixed a ReferenceError in HybridSensorBase when calling _safeSetCapability, which could cause sensor devices to crash on startup or during capability updates.
+
+### New Devices
+- Added support for Nedis SmartLife Radiator Control (fingerprint: _TZE284_ne4pikwm).
+
+### Improvements
+- Updated device interview database with 8 new entries for better compatibility.
+---
+
+ [7.5.9] - 2026-05-10
+
+### Bug Fixes
+- Fix ProtocolArbitrator reference error in BaseHybridDevice initialization (crash on startup)
+- Reclassify _TZE608 openers from contact_sensor to garage_door_opener (#305)
+- Resolve fleet-wide extends syntax crash across 59 driver files
+- Remove duplicate driver.flow.compose.json in hybrid drivers (SDK3 validation fix)
+- Remove SDK3 deprecated getTriggerCard references (runtime crash)
+- Implement case-insensitive driver profile and DP lookup matching
+- Clean 3,784 duplicate fingerprints and resolve driver collisions
+- Fix SourceCredits MODULE_NOT_FOUND crash on all Homey firmware versions (#302)
+- Make DeviceIdentificationDatabase crash-proof
+- Implement O(1) DynamicDriverMatcher with caseless resolver
+
+### New Features
+- Add 5 missing fingerprints: Loratap, Wall Remote, Climate Sensors
+- Add Z2M enriched fingerprints with anti-generic audit fix
+- Add rain and soil sensor pairing casing fixes and custom settings handler
+- Add uppercase manufacturer name variants for soil and rain sensors
+- Add 4 new hybrid drivers
+
+### Stats
+- 221 drivers, 6636 fingerprints
+---
+
+ v5.11.211 (2026-05-03)
 
 ### Critical Fixes
 - Fixed SourceCredits crash on startup (MODULE_NOT_FOUND)

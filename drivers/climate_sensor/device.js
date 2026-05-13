@@ -10,6 +10,7 @@ const TuyaRtcDetector = require('../../lib/TuyaRtcDetector');
 const { syncDeviceTimeTuya } = require('../../lib/tuya/TuyaTimeSync');
 const { ClimateInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 const { setupSonoffSensor, handleSonoffSensorSettings } = require('../../lib/mixins/SonoffSensorMixin');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // v5.5.793: VALIDATION CONSTANTS - Centralized thresholds for data validation
@@ -540,8 +541,8 @@ class ClimateSensorDevice extends SensorBase {
     // Fallback to settings
     if (mfr === 'unknown') {
       const settings = this.getSettings() || {};
-      mfr = settings.zb_manufacturer_name || settings.zb_manufacturer_name || 'unknown';
-      modelId = settings.zb_model_id || settings.zb_model_id || 'unknown';
+      mfr = settings.zb_manufacturer_name || 'unknown';
+      modelId = settings.zb_model_id || 'unknown';
     }
 
     this._manufacturerName = mfr;
@@ -1472,7 +1473,7 @@ class ClimateSensorDevice extends SensorBase {
    */
   async _handleDP(dp, value, dataType) {
     // Device is awake! Trigger time sync for LCD displays
-    if ((this._manufacturerName || '').toLowerCase().includes('_tze284')) {
+    if (containsCI(this._manufacturerName, '_tze284')) {
       this._sendTimeSync().catch(() => { });
     }
 
@@ -1521,10 +1522,10 @@ class ClimateSensorDevice extends SensorBase {
 
   // v5.8.98: Soil sensor profile (ZHA #4282, Z2M #27501)
   _isSoilSensor() {
-    const mfr = (this._manufacturerName || '').toLowerCase();
+    const mfr = this._manufacturerName || '';
     return ['_tze284_oitavov2', '_tze200_myd45weu', '_tze200_ga1maeof',
       '_tze200_9cqcpkgb', '_tze204_myd45weu', '_tze284_myd45weu',
-      '_tze200_2se8efxh'].some(s => mfr.includes(s));
+      '_tze200_2se8efxh'].some(s => containsCI(mfr, s));
   }
 
   /**

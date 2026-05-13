@@ -17,11 +17,11 @@
  *  5. energy-batteries       — Add energy.batteries if measure_battery is declared
  *  6. multigang-flow-routing — Replace raw ZCL onOff.setOn() with triggerCapabilityListener
  *  7. dp-variant-doc         — Flag DP mappings missing variant comments
- *  8. case-insensitive-matching — Ensure all manufacturer comparisons use .toLowerCase()
+ *  8. case-insensitive-matching — Ensure all manufacturer comparisons use CaseInsensitiveMatcher (containsCI)
  *  9. duplicate-fingerprints — Flag pairing ambiguity across drivers
- * 10. punycode-deprecation  — Replace deprecated punycode module
- * 11. dual-battery-cleanup  — Ensure both battery capabilities are declared statically
- * 12. energy-approximation-cleanup — Remove redundant energy.approximation on measuring devices
+ *  10. punycode-deprecation  — Replace deprecated punycode module
+ *  11. dual-battery-cleanup  — Ensure both battery capabilities are declared statically
+ *  12. energy-approximation-cleanup — Remove redundant energy.approximation on measuring devices
  */
 'use strict';
 
@@ -355,7 +355,7 @@ function rule_dpVariantDocs() {
 
 // ═══════════════════════════════════════════════════════════════════════════════
 // RULE 8: CASE-INSENSITIVE MANUFACTURER MATCHING
-// Ensure all manufacturer comparisons use .toLowerCase()
+// Ensure all manufacturer comparisons use CaseInsensitiveMatcher (containsCI/includesCI)
 // Prevents case mismatches between device reports and our fingerprints
 // ═══════════════════════════════════════════════════════════════════════════════
 
@@ -370,11 +370,16 @@ function rule_caseInsensitiveMatching() {
 
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
-      // Detect direct string comparisons with manufacturer names without toLowerCase
-      if (/manufacturerName\s*===?\s*['"]_T/i.test(line) && !/toLowerCase/.test(line)) {
+      // Detect direct string comparisons with manufacturer/product fields or raw .toLowerCase() on them,
+      // flagging if they don't use CaseInsensitiveMatcher helpers
+      if (/(manufacturerName|productId|mfr|modelId)\s*===?\s*['"]_T/i.test(line) && !/containsCI|includesCI|startsWithCI/i.test(line)) {
         warnings++;
-        addFix('case-insensitive-matching', file, `Line ${i + 1}: manufacturer comparison without toLowerCase()`);
+        addFix('case-insensitive-matching', file, `Line ${i + 1}: manufacturer comparison without CaseInsensitiveMatcher (containsCI)`);
         if (VERBOSE) warn(`${path.relative(ROOT, file)}:${i + 1}: direct manufacturer comparison`);
+      } else if (/(manufacturerName|productId|mfr|modelId)\.toLowerCase\(\)/i.test(line) && !/containsCI|includesCI|startsWithCI/i.test(line)) {
+        warnings++;
+        addFix('case-insensitive-matching', file, `Line ${i + 1}: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead`);
+        if (VERBOSE) warn(`${path.relative(ROOT, file)}:${i + 1}: manual .toLowerCase() on pairing field`);
       }
     }
   }

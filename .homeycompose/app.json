@@ -1,22 +1,22 @@
 {
   "id": "com.dlnraja.tuya.zigbee.stable",
-  "version": "5.11.213",
+  "version": "5.11.214",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
     "local"
   ],
   "name": {
-    "en": "Universal Tuya Stable",
-    "nl": "Universal Tuya Stable",
-    "de": "Universal Tuya Stable",
-    "fr": "Universal Tuya Stable"
+    "en": "Universal Tuya",
+    "nl": "Universal Tuya",
+    "de": "Universal Tuya",
+    "fr": "Universal Tuya"
   },
   "description": {
-    "en": "Every Tuya device under one roof, 100% local",
-    "nl": "Elk Tuya-apparaat onder één dak, 100% lokaal",
-    "de": "Jedes Tuya-Gerät unter einem Dach, 100% lokal",
-    "fr": "Chaque appareil Tuya sous un même toit, 100% local"
+    "en": "Universal Tuya Unified Engine: High-performance local-first control, self-healing fleet stability & adaptive lighting",
+    "nl": "Universele Tuya Unified Engine: Hoogwaardige lokale bediening, zelfherstellende vlootstabiliteit & adaptieve verlichting",
+    "de": "Universelle Tuya Unified Engine: Leistungsstarke lokale Steuerung, selbstheilende Flottenstabilität & adaptive Beleuchtung",
+    "fr": "Moteur Tuya Unified Engine : Contrôle local haute performance, auto-réparation de la flotte & éclairage adaptatif"
   },
   "tags": {
     "en": [

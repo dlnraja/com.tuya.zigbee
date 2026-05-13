@@ -1,6 +1,7 @@
 'use strict';
 
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const { resolve: resolvePressType, PRESS_MAP } = require('../../lib/utils/TuyaPressTypeMap');
 
 // v5.5.733: HOBEIAN ZG-101ZL FIX - Import OnOffBoundCluster for outputCluster command reception
@@ -829,8 +830,8 @@ class Button1GangDevice extends ButtonDevice {
     const manufacturerName = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
     
     // Only setup for TS004F Smart Knob devices
-    const isSmartKnob = modelId.toUpperCase().includes('TS004F') || 
-                        manufacturerName.toLowerCase().includes('gwkzibhs');
+    const isSmartKnob = containsCI(modelId, 'TS004F') || 
+                        containsCI(manufacturerName, 'gwkzibhs');
     
     if (!isSmartKnob) {
       this.log('[BUTTON1-LEVEL] Not a Smart Knob device, skipping levelControl setup');

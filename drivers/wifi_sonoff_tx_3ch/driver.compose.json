@@ -73,7 +73,11 @@
   ],
   "discovery": "ewelink_mdns",
   "name": {
-    "en": "SONOFF TX Touch 3-Gang"
+    "en": "SONOFF TX Touch 3-Gang",
+    "fr": "SONOFF TX Tactile 3-Gang",
+    "nl": "SONOFF TX Aanraking 3-Groep",
+    "de": "SONOFF TX Berührung 3-Gang",
+    "es": "SONOFF TX Táctil 3-Gang"
   },
   "class": "socket",
   "capabilities": [

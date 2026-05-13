@@ -75,8 +75,8 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
     // Log device info
     const settings = this.getSettings() || {};
     const store = this.getStore() || {};
-    this.log(`[LED] Model: ${settings.zb_model_id || settings.zb_model_id || store.modelId || 'unknown'}`);
-    this.log(`[LED] Manufacturer: ${settings.zb_manufacturer_name || settings.zb_manufacturer_name || store.manufacturerName || 'unknown'}`);
+    this.log(`[LED] Model: ${settings.zb_model_id || store.modelId || 'unknown'}`);
+    this.log(`[LED] Manufacturer: ${settings.zb_manufacturer_name || store.manufacturerName || 'unknown'}`);
 
     // Setup Tuya DP listener
     await this._setupTuyaListener();

@@ -2,8 +2,10 @@
   "id": "sirentemphumidsensor",
   "name": {
     "en": "Siren Sirentemphumidsensor",
-    "nl": "Siren Sirentemphumidsensor",
-    "fr": "Siren Sirentemphumidsensor"
+    "nl": "Sirene Sirenetemphumidsensor",
+    "fr": "Sirène Sirènetemphumidsensor",
+    "de": "Sirene Sirenetemphumidsensor",
+    "es": "Sirena Sirenetemphumidsensor"
   },
   "class": "other",
   "capabilities": [
@@ -38,8 +40,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tyst11_d0yu2xgi",
-      "_TYST11_D0YU2XGI",
       "_tze200_d0yu2xgi",
       "_TZE200_d0yu2xgi",
       "_TZE200_D0YU2XGI"

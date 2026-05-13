@@ -1,17 +1,21 @@
 {
-  "timestamp": "2026-04-04T06:14:30.567Z",
-  "mode": "dry",
+  "timestamp": "2026-05-13T03:16:48.946Z",
+  "mode": "live",
   "fpStats": {
-    "known": 3994,
-    "missing": 0,
+    "known": 10229,
+    "missing": 1,
     "added": 0,
-    "skipped": 0,
+    "skipped": 1,
     "needsReview": 0
   },
-  "issueCategories": {},
+  "issueCategories": {
+    "wifi_request": 3
+  },
   "added": [],
   "suggestions": [],
-  "topPainPoints": [],
-  "wifiRequestCount": 0,
+  "topPainPoints": [
+    "wifi_request: 3"
+  ],
+  "wifiRequestCount": 3,
   "pairingIssueCount": 0
 }
