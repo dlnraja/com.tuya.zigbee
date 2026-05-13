@@ -4,7 +4,21 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.23] - 2026-05-13
+## [7.5.24] - 2026-05-13
+
+### Bug Fixes
+- **Gate Opener**: Fixed DP3 contact sensor not reporting correctly (resolves issue #305)
+- **Flow Triggers**: Migrated all deprecated flow triggers to modern `triggerFlowCard` helper for improved reliability
+
+### Improvements
+- Added missing fingerprints across multiple drivers
+- Updated driver count to 228 with 6713 total fingerprints
+
+### New Devices
+- Added support for `_TZE284_0ints6wl` soil sensor (TS0601)
+---
+
+ [7.5.23] - 2026-05-13
 
 ## v7.5.23
 

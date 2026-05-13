@@ -1,4 +1,7 @@
 {
+  "7.5.24": {
+    "en": "v7.5.24: . Fix: gate opener DP3 contact sensor (issue #305). Migrated deprecated flow triggers to modern triggerFlowCard helper. Added missing fingerprints."
+  },
   "7.5.23": {
     "en": "Maintenance release v7.5.23 — . Internal data cleanup and archive of obsolete planning files. No new drivers or fingerprints."
   },
@@ -56,10 +59,7 @@
   "5.11.209": {
     "en": "Universal Tuya Zigbee app v5.11.208: Fixed app ID."
   },
-  "5.11.208": {
-    "en": "Universal Tuya Zigbee app v5.11.208: Fixed app ID."
-  },
-  "7.5.24": {
-    "en": "Maintenance release v7.5.23 — . Internal data cleanup and archive of obsolete planning files. No new drivers or fingerprints."
+  "7.5.25": {
+    "en": "v7.5.24: Gate Opener, Flow Triggers, Added missing fingerprints across multiple drivers, Updated driver count to 228 with 6713 total fingerprints, Added support for `_TZE284_0ints6wl` soil sensor (TS0601)"
   }
 }
