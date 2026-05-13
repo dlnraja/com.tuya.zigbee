@@ -4,7 +4,22 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.27] - 2026-05-13
+## [7.5.28] - 2026-05-13
+
+### New Features
+- Added 3,208 new device fingerprints, expanding support for more Tuya Zigbee devices.
+- Improved driver matching for soil sensors (including _TZE284_0ints6wl).
+
+### Bug Fixes
+- Fixed device initialization issues in HybridDriverSystem.
+- Resolved various stability improvements for sensor devices.
+
+### Improvements
+- Updated app metadata and documentation.
+- Enhanced project status tracking.
+---
+
+ [7.5.27] - 2026-05-13
 
 ### New Features
 - **IR Blaster Pairing Wizard**: New guided setup for IR devices with improved code library and repair flow.
