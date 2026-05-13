@@ -2,23 +2,20 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-10,950+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-10,882+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-228-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Flow Cards](https://img.shields.io/badge/flow%20cards-2,540-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-2,539-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Antigravity Skills](https://img.shields.io/badge/AI--Powered-Antigravity%20Skills-black?logo=google-gemini&logoColor=white)](https://github.com/sickn33/antigravity-awesome-skills)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **228 drivers** and **10,950+ device fingerprints**.
-
-**Powered by Antigravity Agentic Skills** — This repository is maintained with the help of a specialized fleet of AI-driven tools that ensure code quality, security, and architectural integrity.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **228 drivers** and **10,882+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
-- **Unified mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
+- **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** — voltage-based fallback when devices don't report percentage
-- **2,540+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
+- **2,539+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** — built on the latest Homey platform
 
 ---
@@ -57,12 +54,12 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.29 |
-| **Device Fingerprints** | 10,950+ |
+| **App Version** | v7.5.30 |
+| **Device Fingerprints** | 10,882+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 228 (178 Zigbee + 50 WiFi) |
-| **Flow Cards** | 2,540 |
-| **Unique Capabilities** | 134 |
+| **Flow Cards** | 2,539 |
+| **Unique Capabilities** | 135 |
 | **SVG Icons** | 383 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
@@ -73,7 +70,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,019 |
+| 1 | `climate_sensor` | 2,031 |
 | 2 | `switch_1gang` | 972 |
 | 3 | `radiator_valve` | 524 |
 | 4 | `plug_energy_monitor` | 442 |
@@ -81,18 +78,18 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | 6 | `curtain_motor` | 361 |
 | 7 | `generic_tuya` | 352 |
 | 8 | `presence_sensor_radar` | 292 |
-| 9 | `contact_sensor` | 285 |
-| 10 | `motion_sensor` | 258 |
-| 11 | `bulb_rgbw` | 256 |
-| 12 | `switch_2gang` | 255 |
+| 9 | `contact_sensor` | 270 |
+| 10 | `bulb_rgbw` | 256 |
+| 11 | `switch_2gang` | 255 |
+| 12 | `motion_sensor` | 245 |
 | 13 | `switch_4gang` | 236 |
 | 14 | `diy_custom_zigbee` | 206 |
 | 15 | `thermostat_tuya_dp` | 201 |
 | 16 | `switch_3gang` | 184 |
 | 17 | `bulb_tunable_white` | 138 |
 | 18 | `water_leak_sensor` | 136 |
-| 19 | `bulb_dimmable` | 122 |
-| 20 | `button_emergency_sos` | 116 |
+| 19 | `bulb_dimmable` | 120 |
+| 20 | `button_emergency_sos` | 115 |
 
 ### Drivers by Device Class
 
@@ -101,9 +98,9 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | sensor | 60 |
 | socket | 53 |
 | light | 24 |
+| other | 19 |
 | thermostat | 18 |
-| other | 18 |
-| remote | 18 |
+| remote | 17 |
 | fan | 10 |
 | windowcoverings | 5 |
 | doorbell | 4 |
@@ -124,7 +121,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.29** | v7.5.28: Added 3,208 new device fingerprints, expanding support for more Tuya Zigbee devices., Improved driver matchi... |
+| **v7.5.30** | v7.5.29: Fixed an issue where some devices would not pair correctly due to security updates., Improved diagnostic dat... |
+| **v7.5.29** | Bug fixes and improvements for Tuya Zigbee devices. Added support for new soil sensor fingerprint. Updated diagnostic... |
 | **v7.5.28** | Added 3,208 new fingerprints, improved driver matching for soil sensors, and fixed various device initialization issues. |
 | **v7.5.27** | v7.5.27: . New IR pairing wizard, improved power clamp meter, and various bug fixes. |
 | **v7.5.26** | Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated getTriggerCard to getDeviceTrigger... |
@@ -138,7 +136,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v7.5.18** | Easy Login with saved credentials, auto device classification with brand badges, TS110E level control fix, alarm_batt... |
 | **v7.5.17** | v7.5.17 — 3,207 new fingerprints, backlight mode alignment fix, and fingerprint case normalization for more reliable ... |
 | **v7.5.16** | v7.5.16 — . Maintenance release with updated device expectations, diagnostics, and internal state. |
-| **v7.5.15** | v7.5.15: Fixed siren sensor driver crashes, added 3,202 new fingerprints, and improved device detection reliability. |
 
 <!-- CHANGELOG_END -->
 
@@ -204,17 +201,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 228 Drivers ─ 10,950+ fingerprints
-
-### Advanced Agentic Quality Assurance
-We use the **Antigravity Skills** fleet to enforce a **14-Layer Quality Gateway**:
-- **`@logic-lens`**: Deep reasoning review for SDK3 race conditions and unawaited promises.
-- **`@codebase-audit-pre-push`**: Systematic line-by-line cleanup of dead code, junk, and secrets.
-- **`@technical-change-tracker`**: Structured session handoffs for consistent AI agent performance.
-- **`@squirrel`**: Full-cycle development pipeline for zero-defect driver creation.
-- **`@security-auditor`**: Automated PII masking and secret detection in all diagnostic dumps.
-
-> **🦾 View the complete agentic tool catalog in [.ai/SKILL_REGISTRY.md](file:///.ai/SKILL_REGISTRY.md)**
+       └─ 228 Drivers ─ 10,882+ fingerprints
 ```
 
 ---
