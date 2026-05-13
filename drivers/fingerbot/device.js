@@ -1,10 +1,10 @@
 'use strict';
 
 const { Cluster, BoundCluster } = require('zigbee-clusters');
-const TuyaSpecificCluster = require('../../lib/TuyaSpecificCluster');
-const TuyaOnOffCluster = require('../../lib/TuyaOnOffCluster');
-const TuyaSpecificClusterDevice = require('../../lib/TuyaSpecificClusterDevice');
-const { getDataValue } = require('../../lib/TuyaHelpers');
+const TuyaSpecificCluster = require('../../lib/clusters/TuyaSpecificCluster');
+const TuyaOnOffCluster = require('../../lib/clusters/TuyaOnOffCluster');
+const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
+const { getDataValue } = require('../../lib/tuya/TuyaHelpersJohan');
 const { V1_FINGER_BOT_DATA_POINTS } = require('../../lib/tuya/TuyaDataPointsJohan');
 
 Cluster.addCluster(TuyaSpecificCluster);
