@@ -70,5 +70,8 @@
   },
   "5.11.212": {
     "en": "Implement Rule 24 caseless resolver and dynamic O(1) matching system for high-performance pairing."
+  },
+  "5.11.213": {
+    "en": "FIX: Resolve critical startup crash by Correcting .homeyignore to package fingerprints DB"
   }
 }
