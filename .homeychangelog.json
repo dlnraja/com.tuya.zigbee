@@ -1,4 +1,7 @@
 {
+  "7.5.32": {
+    "en": "v7.5.32: . Harmonized driver icons, updated app store assets, and restored draft-to-test  fixes."
+  },
   "7.5.31": {
     "en": "v7.5.31: Harmonized 228 driver icons with new SVG assets. Updated app store images. Fixed various device icon inconsistencies. Added draft-to-test promotion  for faster testing."
   },
@@ -56,10 +59,7 @@
   "7.5.13": {
     "en": "v7.5.13: . Added new fingerprints for motion sensor, illuminance sensor, 3-gang switch, energy meter, and DIN rail. Fixed INSOMA dual irrigation valve and smart wireless button detection. Improved climate sensor recognition."
   },
-  "7.5.12": {
-    "en": "v7.5.12: . Fixed sensor fallback logic for unknown models. Added new fingerprints for radiator valve (_TZE284_ne4pikwm). Updated documentation and project rules."
-  },
-  "7.5.32": {
-    "en": "v7.5.31: Added dedicated draft-to-test promotion , Harmonized all 228 driver icons with new SVG assets for consistent visual appearance, Updated app store images (large, small, xlarge) with higher quality assets, Updated app.json description and version metadata, Fixed various device icon inconsistencies across multiple drivers"
+  "7.5.33": {
+    "en": "v7.5.32: Restored draft-to-test ., Harmonized icons across all 228 drivers for a consistent visual experience., Updated app store assets (large, small, xlarge images) for better presentation., Added support for new soil sensor fingerprint: _TZE284_0ints6wl (TS0601)."
   }
 }

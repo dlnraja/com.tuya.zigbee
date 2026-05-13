@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.32 |
+| **App Version** | v7.5.33 |
 | **Device Fingerprints** | 10,882+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 228 (178 Zigbee + 50 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.32** | v7.5.31: Added dedicated draft-to-test promotion , Harmonized all 228 driver icons with new SVG assets for consistent... |
+| **v7.5.33** | v7.5.32: Restored draft-to-test ., Harmonized icons across all 228 drivers for a consistent visual experience., Updat... |
+| **v7.5.32** | v7.5.32: . Harmonized driver icons, updated app store assets, and restored draft-to-test  fixes. |
 | **v7.5.31** | v7.5.31: Harmonized 228 driver icons with new SVG assets. Updated app store images. Fixed various device icon inconsi... |
 | **v7.5.30** | Harmonized icons across all 228 drivers, updated app store assets, and added support for new soil sensor fingerprint ... |
 | **v7.5.29** | Bug fixes and improvements for Tuya Zigbee devices. Added support for new soil sensor fingerprint. Updated diagnostic... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.21** | v7.5.20: Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving connection drops and repeated reconnectio... |
 | **v7.5.20** | v7.5.20: . Fixed WiFi socket port reuse, cleanly separated WiFi/Zigbee protocols, improved 4-gang switch support, and... |
 | **v7.5.19** | Added Android native Intent magic URL pairing for all 20 WiFi drivers. Updated pairing configuration UI. |
-| **v7.5.18** | Easy Login with saved credentials, auto device classification with brand badges, TS110E level control fix, alarm_batt... |
 
 <!-- CHANGELOG_END -->
 

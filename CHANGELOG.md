@@ -4,7 +4,20 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.31] - 2026-05-13
+## [7.5.32] - 2026-05-13
+
+### Bug Fixes
+- Restored draft-to-test workflow fixes from stable branch for reliable testing.
+
+### Improvements
+- Harmonized icons across all 228 drivers for a consistent visual experience.
+- Updated app store assets (large, small, xlarge images) for better presentation.
+
+### New Devices & Fingerprints
+- Added support for new soil sensor fingerprint: _TZE284_0ints6wl (TS0601).
+---
+
+ [7.5.31] - 2026-05-13
 
 ### New Features
 - Added dedicated draft-to-test promotion workflow for faster testing cycles
