@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-13T03:54:12.370Z",
+  "timestamp": "2026-05-13T07:56:45.874Z",
   "added": [
     {
       "fp": "_TYZB01_qezuin6k",
@@ -232,34 +232,6 @@
       ]
     },
     {
-      "fp": "_TYZB01_jytabjkb",
-      "driver": "motion_sensor",
-      "pids": [
-        "TS0202"
-      ]
-    },
-    {
-      "fp": "_TYZB01_dl7cejts",
-      "driver": "motion_sensor",
-      "pids": [
-        "TS0202"
-      ]
-    },
-    {
-      "fp": "_TYZB01_dr6sduka",
-      "driver": "motion_sensor",
-      "pids": [
-        "TS0202"
-      ]
-    },
-    {
-      "fp": "_TYZB01_geepvxsy",
-      "driver": "motion_sensor",
-      "pids": [
-        "TS0202"
-      ]
-    },
-    {
       "fp": "TUYATEC-lha8pbwd",
       "driver": "motion_sensor",
       "pids": [
@@ -306,6 +278,34 @@
       "driver": "motion_sensor",
       "pids": [
         "RH3040"
+      ]
+    },
+    {
+      "fp": "_TYZB01_jytabjkb",
+      "driver": "motion_sensor",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TYZB01_dl7cejts",
+      "driver": "motion_sensor",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TYZB01_dr6sduka",
+      "driver": "motion_sensor",
+      "pids": [
+        "TS0202"
+      ]
+    },
+    {
+      "fp": "_TYZB01_geepvxsy",
+      "driver": "motion_sensor",
+      "pids": [
+        "TS0202"
       ]
     },
     {
@@ -703,8 +703,8 @@
     "lcdtemphumidsensor_3",
     "outdoor_2_socket",
     "outdoor_plug",
-    "pir_sensor_2",
     "pirsensor",
+    "pir_sensor_2",
     "plug",
     "radar_sensor",
     "radar_sensor_2",
@@ -720,18 +720,18 @@
     "rgb_led_strip",
     "rgb_led_strip_controller",
     "rgb_mood_light",
-    "rgb_spot_GU10",
     "rgb_spot_GardenLight",
+    "rgb_spot_GU10",
     "rgb_wall_led_light",
     "slim_motion_sensor",
+    "smartplug",
+    "smartplug_2_socket",
     "smartPlug_DinRail",
     "smart_air_detection_box",
     "smart_door_window_sensor",
     "smart_garden_irrigation_control",
     "smart_motion_sensor",
     "smart_switch",
-    "smartplug",
-    "smartplug_2_socket",
     "smoke_sensor",
     "smoke_sensor2",
     "smoke_sensor3",
@@ -1093,7 +1093,7 @@
   },
   "summary": {
     "totalJohanFPs": 636,
-    "totalOurFPs": 10229,
+    "totalOurFPs": 10232,
     "missingFPs": 82,
     "addedFPs": 82,
     "skippedFPs": 0,
