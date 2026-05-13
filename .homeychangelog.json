@@ -61,5 +61,8 @@
   },
   "7.5.21": {
     "en": "v7.5.20: Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving connection drops and repeated reconnections, Resolved diagnostic crashes caused by mixed WiFi/Zigbee protocol handling, Added new device fingerprints across the driver library (3,208 total across 228 drivers), Updated `switch_4gang` driver with new manufacturer fingerprints and capability mappings, Cleanly separated WiFi ("
+  },
+  "7.5.22": {
+    "en": "FIX: Resolve critical startup crash by packaging fingerprints DB, resolve _TZE204_ex3rcdha collision, fix Epoch 0 on IAS status updates, and fix button/motion flow-card registry crashes"
   }
 }
