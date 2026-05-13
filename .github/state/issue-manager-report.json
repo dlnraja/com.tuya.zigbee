@@ -1,38 +1,12 @@
 {
-  "timestamp": "2026-05-13T03:16:49.032Z",
-  "appVersion": "7.5.17",
+  "timestamp": "2026-05-13T05:36:49.914Z",
+  "appVersion": "7.5.18",
   "responded": 0,
   "closed": 0,
   "labeled": 0,
-  "issuesProcessed": 108,
+  "issuesProcessed": 200,
   "prsProcessed": 36,
-  "skipped": 107,
-  "newFingerprints": [
-    {
-      "fp": "_TZE284_0ints6wl + generic",
-      "source": "JohanBendz/com.tuya.zigbee#1396",
-      "type": "device_request"
-    },
-    {
-      "fp": "_TZE + generic",
-      "source": "JohanBendz/com.tuya.zigbee#1396",
-      "type": "device_request"
-    },
-    {
-      "fp": "example + TS0601",
-      "source": "JohanBendz/com.tuya.zigbee#1396",
-      "type": "device_request"
-    },
-    {
-      "fp": "example + generic",
-      "source": "JohanBendz/com.tuya.zigbee#1396",
-      "type": "device_request"
-    },
-    {
-      "fp": "vision + generic",
-      "source": "JohanBendz/com.tuya.zigbee#1396",
-      "type": "device_request"
-    }
-  ],
-  "evolutionSummary": "## Project Evolution Summary\n\n**Period Results:** 108 issues processed, 36 PRs reviewed. No new responses or closures recorded in this batch.\n\n**New Devices Discovered (5 fingerprint requests):** All five requests originate from a single thread — JohanBendz/com.tuya.zigbee#1396. The sole actionable fingerprint is `_TZE284_0ints6wl`, which requires driver identification and pairing validation. The remaining four entries (`_TZE + generic`, `example + TS0601`, `example + generic`, `vision + generic`) appear to be placeholder or test submissions rather than genuine device fingerprints and should be triaged accordingly.\n\n**Action Items:**\n1. **Investigate #1396** — Review the full thread context to extract legitimate device requests from test/placeholder entries.\n2. **Fingerprint `_T"
+  "skipped": 200,
+  "newFingerprints": [],
+  "evolutionSummary": null
 }
