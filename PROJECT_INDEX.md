@@ -805,6 +805,16 @@ If you need to understand *how* the engine works before modifying it, read these
 - **`MASTER-V7-SKELETON.md` / `STABLE-V5-SKELETON.md`**: Architectural skeleton maps outlining structural differences between major versions.
 - **`docs/PROJECT_STATUS.md`**: Real-time tracker for the number of drivers, devices, and current build.
 
+### 3. Antigravity AI Skills Mastery (The Boost Engine)
+This repository is optimized for autonomous agents using the **Antigravity Awesome Skills** fleet.
+- **`@logic-lens`**: Used for deep review of `HybridDriverSystem` to prevent race conditions and logical gaps.
+- **`@performance-optimizer`**: Drives the `ENERGY_STRATEGIES` logic, ensuring battery devices remain efficient.
+- **`@codebase-audit-pre-push`**: Integrated into `scripts/maintenance/master-self-heal.js` to strip junk and ensure production readiness.
+- **`@squirrel`**: The primary full-cycle AI agent pattern for implementing new drivers from scratch.
+- **`@technical-change-tracker`**: Powering the `SYSTEM_CHANGELOG.md` for seamless session handoffs.
+- **`@bug-hunter`**: Methodical root-cause analysis for Zosung IR trame corruption.
+
+
 ### 3. Dual App & Dual Branch Architecture
 The repository deploys **two separate applications** to the Homey store. You must understand the split:
 1. **App 1: "Universal Tuya Zigbee"** (Test/Production channel)
