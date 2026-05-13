@@ -4,6 +4,8 @@ const { ensureManufacturerSettings } = require('../../lib/helpers/ManufacturerNa
 
 class WaterValveGardenDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([

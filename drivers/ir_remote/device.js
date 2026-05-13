@@ -37,6 +37,8 @@ class IRRemoteDevice extends ZigBeeDevice {
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([
@@ -309,7 +311,7 @@ class IRRemoteDevice extends ZigBeeDevice {
       this.setCapabilityValue('ir_learned_code', keyCode).catch(this.error);
 
       // Trigger flow
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('ir_remote_code_learned'); } catch(e) { return null; } })()?.trigger(this, { ir_code: keyCode }, {})
+      (() => { try { return this.homey.flow.getTriggerCard('ir_remote_code_learned'); } catch(e) { return null; } })()?.trigger(this, { ir_code: keyCode }, {})
         .catch(err => this.error('[IR-RX] Flow trigger err:', err.message));
 
       if (this._learnBuffer.resolve) this._learnBuffer.resolve(keyCode);

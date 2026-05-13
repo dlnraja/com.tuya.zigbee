@@ -7,6 +7,8 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
  */
 class GarageDoorOpenerDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([

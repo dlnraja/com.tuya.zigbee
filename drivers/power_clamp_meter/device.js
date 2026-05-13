@@ -49,6 +49,8 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 class PowerClampMeterDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.log('[METER] v5.7.9 - CT Clamp Power Meter initializing...');
 
     // v5.7.9: Initialize internal state for PJ-1203A channels

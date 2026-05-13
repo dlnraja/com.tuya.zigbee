@@ -19,6 +19,8 @@ class RadiatorControllerDevice extends ZigBeeDevice {
   get mainsPowered() { return true; }
 
   async onNodeInit() {
+    await super.onNodeInit();
+
     // --- Homey Time Sync for TRV/LCD/Thermostat devices ---
     // Syncs the device clock with the Homey box time every 6 hours.
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
@@ -144,7 +146,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     // Safe flow card getter to prevent crashes on missing cards
     const safeGetCard = (type, id) => {
       try {
-        if (type === 'trigger') return this.homey.flow.getDeviceTriggerCard(id);
+        if (type === 'trigger') return this.homey.flow.getTriggerCard(id);
         if (type === 'condition') return this.homey.flow.getConditionCard(id);
         if (type === 'action') return this.homey.flow.getActionCard(id);
       } catch (e) {

@@ -43,6 +43,12 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
+      - name: 🛡️ Run STRICT_SYNTAX_GUARD
+        run: node scripts/ci/STRICT_SYNTAX_GUARD.js
+
+      - name: 🛡️ Run Zero-Defect Control
+        run: node scripts/ci/zero-defect-control.js
+
       - name: 🔍 Validate Homey App (publish)
         id: homey_validate
         env:
@@ -162,7 +168,12 @@ jobs:
       - name: 🛡️ Sensor Fallback Safety Check
         run: |
           echo "### Fallbacks Strategy Check" >> $GITHUB_STEP_SUMMARY
-          grep -rq "HOBEIAN_10G_MULTI_FALLBACK" drivers/ 2>/dev/null && { echo "❌ Dangerous HOBEIAN_10G_MULTI_FALLBACK fallback detected. Use ZG204ZM instead." >> $GITHUB_STEP_SUMMARY; exit 1; } || echo "✅ Fallback safety verified" >> $GITHUB_STEP_SUMMARY
+          if grep -r "HOBEIAN_10G_MULTI_FALLBACK" drivers/ 2>/dev/null | grep -v '^[[:space:]]*//' | grep -v '^[[:space:]]*\*' | grep -q .; then
+            echo "❌ Dangerous HOBEIAN_10G_MULTI_FALLBACK fallback detected. Use ZG204ZM instead." >> $GITHUB_STEP_SUMMARY
+            exit 1
+          else
+            echo "✅ Fallback safety verified" >> $GITHUB_STEP_SUMMARY
+          fi
 
       - name: 🔑 Empty Fingerprint Check
         run: |

@@ -23,6 +23,8 @@ const { CLUSTER } = require('zigbee-clusters');
 class DinRailMeterDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     this.log('DIN Rail Meter initializing...');
 
     // Settings

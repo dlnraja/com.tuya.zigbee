@@ -80,6 +80,8 @@ class RGBBulbDevice extends LightBase {
   }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     try {
       // v5.5.288: Enhanced error handling for TS0505B "Could not get device by id" issue
       this.log('[RGB] v5.5.288 - Starting initialization...');

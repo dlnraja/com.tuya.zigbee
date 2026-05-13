@@ -103,6 +103,8 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Hyb
   }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
+
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([
@@ -224,7 +226,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Hyb
    */
   _registerButtonFlowTrigger() {
     try {
-      this._buttonTrigger = this.homey.flow.getDeviceTriggerCard('usb_outlet_button_pressed');
+      this._buttonTrigger = this.homey.flow.getTriggerCard('usb_outlet_button_pressed');
       this.log('[USB-ADV] Button flow trigger registered');
     } catch (err) {
       this.log('[USB-ADV] Button flow trigger not available:', err.message);
