@@ -1,66 +1,590 @@
 {
-  "timestamp": "2026-05-12T22:02:52.694Z",
+  "timestamp": "2026-05-13T03:39:34.116Z",
   "totalFiles": 0,
-  "totalFixes": 119,
+  "totalFixes": 244,
   "rules": {
     "fingerprint-case": {
-      "count": 14,
+      "count": 145,
       "files": [
         {
-          "file": "drivers\\air_purifier\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+          "file": "drivers/air_purifier/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers\\bulb_dimmable\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -2)"
+          "file": "drivers/air_quality_co2/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers\\bulb_rgb\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+          "file": "drivers/air_quality_comprehensive/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers\\button_emergency_sos\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+          "file": "drivers/bulb_dimmable/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers\\button_wireless_1\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+          "file": "drivers/bulb_dimmable_dimmer/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers\\button_wireless_2\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -24)"
+          "file": "drivers/bulb_rgb/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers\\button_wireless_4\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+          "file": "drivers/bulb_rgb_led/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers\\climate_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+          "file": "drivers/bulb_rgbw/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers\\contact_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -15)"
+          "file": "drivers/bulb_tunable_white/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers\\motion_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -13)"
+          "file": "drivers/bulb_white/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers\\plug_energy_monitor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+          "file": "drivers/button_emergency_sos/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers\\power_meter\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+          "file": "drivers/button_wireless/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers\\smoke_detector_advanced\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -2)"
+          "file": "drivers/button_wireless_1/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         },
         {
-          "file": "drivers\\usb_outlet_advanced\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+          "file": "drivers/button_wireless_2/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/button_wireless_3/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/button_wireless_4/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/button_wireless_6/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/button_wireless_8/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/button_wireless_smart/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/ceiling_fan/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/climate_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/co_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/contact_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/curtain_motor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/curtain_motor_shutter/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/curtain_motor_tilt/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/curtain_motor_wall/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/device_din_rail/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/device_floor_heating/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/device_radiator_valve/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/device_radiator_valve_smart/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/dimmer_3gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/dimmer_dual_channel/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/dimmer_wall_1gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/din_rail_meter/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/din_rail_switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/door_controller/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/doorbell/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/energy_meter_3phase/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/fan_controller/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/fingerbot/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/fingerprint_lock/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/floor_heating_thermostat/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/formaldehyde_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/garage_door/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/garage_door_opener/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/gas_detector/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/gas_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/gateway_zigbee_bridge/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/humidifier/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/hvac_air_conditioner/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/hvac_controller/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/hvac_dehumidifier/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/illuminance_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/ir_blaster/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/ir_remote/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/lcdtemphumidsensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/led_controller_cct/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/led_controller_dimmable/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/led_controller_rgb/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/led_strip/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/led_strip_advanced/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/led_strip_rgbw/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/light_bulb_rgb_rgbw/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/light_sensor_outdoor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/lock_smart/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/module_mini_switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/motion_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/motion_sensor_2/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/motion_sensor_radar_mmwave/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/pet_feeder/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/pet_feeder_zigbee/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/plug_energy_monitor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/plug_smart/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/pool_pump/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/power_clamp_meter/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/power_meter/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/presence_sensor_ceiling/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/presence_sensor_radar/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/radiator_controller/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/radiator_valve/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/radiator_valve_zigbee/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/rain_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/remote_button_wireless/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/remote_button_wireless_handheld/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/remote_button_wireless_plug/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/remote_button_wireless_wall/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/remote_dimmer/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/scene_switch_1/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/scene_switch_2/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/scene_switch_3/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/scene_switch_4/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/scene_switch_6/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/scene_switch_wall/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/sensor_motion_radar/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/shutter_roller_controller/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/siren/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/siren_sirentemphumidsensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/smart_breaker/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/smart_heater/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/smart_heater_controller/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/smart_knob/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/smart_knob_rotary/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/smart_lcd_thermostat/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/smart_rcbo/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/smart_remote_1_button/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/smart_remote_1_button_2/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/smart_scene_panel/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/smoke_detector_advanced/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/soil_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_1gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_2gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_3gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_4gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_dimmer_1gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_plug_1/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_plug_2/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_wall_5gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_wall_6gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_wall_8gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/switch_wireless/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/temphumidsensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/thermostat_4ch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/thermostat_tuya_dp/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/usb_dongle_dual_repeater/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/usb_outlet_advanced/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/valve_irrigation/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/valve_single/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/vibration_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/wall_curtain_switch/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/wall_dimmer_1gang_1way/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/wall_remote_1_gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/wall_remote_2_gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/wall_remote_3_gang/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/wall_switch_1gang_1way/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/wall_switch_2gang_1way/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/wall_switch_3gang_1way/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/wall_switch_4gang_1way/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/water_leak_sensor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/water_tank_monitor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/water_valve_garden/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/water_valve_smart/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/weather_station_outdoor/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
+        },
+        {
+          "file": "drivers/zigbee_repeater/driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 0)"
         }
       ]
     },
@@ -68,248 +592,248 @@
       "count": 61,
       "files": [
         {
-          "file": "drivers\\climate_sensor\\driver.js",
+          "file": "drivers/climate_sensor/driver.js",
           "detail": "Line 31: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor\\driver.js",
+          "file": "drivers/climate_sensor/driver.js",
           "detail": "Line 32: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor\\driver.js",
+          "file": "drivers/climate_sensor/driver.js",
           "detail": "Line 33: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor\\driver.js",
+          "file": "drivers/climate_sensor/driver.js",
           "detail": "Line 34: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\climate_sensor\\driver.js",
+          "file": "drivers/climate_sensor/driver.js",
           "detail": "Line 35: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\curtain_motor\\device.js",
+          "file": "drivers/curtain_motor/device.js",
           "detail": "Line 237: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\curtain_motor_shutter\\device.js",
+          "file": "drivers/curtain_motor_shutter/device.js",
           "detail": "Line 237: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\curtain_motor_wall\\device.js",
+          "file": "drivers/curtain_motor_wall/device.js",
           "detail": "Line 237: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\generic_diy\\device.js",
+          "file": "drivers/generic_diy/device.js",
           "detail": "Line 84: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\motion_sensor\\driver.js",
+          "file": "drivers/motion_sensor/driver.js",
           "detail": "Line 21: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\motion_sensor\\driver.js",
+          "file": "drivers/motion_sensor/driver.js",
           "detail": "Line 22: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\motion_sensor\\driver.js",
+          "file": "drivers/motion_sensor/driver.js",
           "detail": "Line 23: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_1\\driver.js",
+          "file": "drivers/scene_switch_1/driver.js",
           "detail": "Line 11: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_1\\driver.js",
+          "file": "drivers/scene_switch_1/driver.js",
           "detail": "Line 12: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_1\\driver.js",
+          "file": "drivers/scene_switch_1/driver.js",
           "detail": "Line 13: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_1\\driver.js",
+          "file": "drivers/scene_switch_1/driver.js",
           "detail": "Line 14: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_2\\driver.js",
+          "file": "drivers/scene_switch_2/driver.js",
           "detail": "Line 11: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_2\\driver.js",
+          "file": "drivers/scene_switch_2/driver.js",
           "detail": "Line 12: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_2\\driver.js",
+          "file": "drivers/scene_switch_2/driver.js",
           "detail": "Line 13: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_3\\driver.js",
+          "file": "drivers/scene_switch_3/driver.js",
           "detail": "Line 11: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_3\\driver.js",
+          "file": "drivers/scene_switch_3/driver.js",
           "detail": "Line 12: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_3\\driver.js",
+          "file": "drivers/scene_switch_3/driver.js",
           "detail": "Line 13: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_6\\driver.js",
+          "file": "drivers/scene_switch_6/driver.js",
           "detail": "Line 11: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_6\\driver.js",
+          "file": "drivers/scene_switch_6/driver.js",
           "detail": "Line 12: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_6\\driver.js",
+          "file": "drivers/scene_switch_6/driver.js",
           "detail": "Line 13: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_wall\\driver.js",
+          "file": "drivers/scene_switch_wall/driver.js",
           "detail": "Line 11: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_wall\\driver.js",
+          "file": "drivers/scene_switch_wall/driver.js",
           "detail": "Line 12: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\scene_switch_wall\\driver.js",
+          "file": "drivers/scene_switch_wall/driver.js",
           "detail": "Line 13: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_contact\\driver.js",
+          "file": "drivers/sensor_climate_contact/driver.js",
           "detail": "Line 31: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_contact\\driver.js",
+          "file": "drivers/sensor_climate_contact/driver.js",
           "detail": "Line 32: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_contact\\driver.js",
+          "file": "drivers/sensor_climate_contact/driver.js",
           "detail": "Line 33: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_contact\\driver.js",
+          "file": "drivers/sensor_climate_contact/driver.js",
           "detail": "Line 34: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_climate_contact\\driver.js",
+          "file": "drivers/sensor_climate_contact/driver.js",
           "detail": "Line 35: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_contact_motion\\driver.js",
+          "file": "drivers/sensor_contact_motion/driver.js",
           "detail": "Line 21: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_contact_motion\\driver.js",
+          "file": "drivers/sensor_contact_motion/driver.js",
           "detail": "Line 22: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\sensor_contact_motion\\driver.js",
+          "file": "drivers/sensor_contact_motion/driver.js",
           "detail": "Line 23: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary\\device.js",
+          "file": "drivers/smart_knob_rotary/device.js",
           "detail": "Line 413: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_knob_rotary\\device.js",
+          "file": "drivers/smart_knob_rotary/device.js",
           "detail": "Line 432: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_scene_panel\\driver.js",
+          "file": "drivers/smart_scene_panel/driver.js",
           "detail": "Line 10: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\smart_scene_panel\\driver.js",
+          "file": "drivers/smart_scene_panel/driver.js",
           "detail": "Line 17: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_4gang\\driver.js",
+          "file": "drivers/switch_4gang/driver.js",
           "detail": "Line 60: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_4gang\\driver.js",
+          "file": "drivers/switch_4gang/driver.js",
           "detail": "Line 61: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_4gang\\driver.js",
+          "file": "drivers/switch_4gang/driver.js",
           "detail": "Line 62: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_4gang\\driver.js",
+          "file": "drivers/switch_4gang/driver.js",
           "detail": "Line 63: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wall_remote_4_gang_2\\device.js",
+          "file": "drivers/wall_remote_4_gang_2/device.js",
           "detail": "Line 17: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\wifi_heater\\device.js",
+          "file": "drivers/wifi_heater/device.js",
           "detail": "Line 35: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "lib\\ButtonRemoteManager.js",
+          "file": "lib/ButtonRemoteManager.js",
           "detail": "Line 195: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "lib\\devices\\BaseHybridDevice.js",
-          "detail": "Line 2586: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\BaseHybridDevice.js",
-          "detail": "Line 2600: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\BaseHybridDevice.js",
-          "detail": "Line 2634: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\BaseHybridDevice.js",
-          "detail": "Line 2764: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\ButtonDevice.js",
-          "detail": "Line 1783: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\HybridSensorBase.js",
-          "detail": "Line 3363: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\HybridSwitchBase.js",
-          "detail": "Line 813: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\WallTouchDevice.js",
-          "detail": "Line 184: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\devices\\WallTouchDevice.js",
-          "detail": "Line 201: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\flow\\AdvancedFlowCardManager.js",
-          "detail": "Line 53: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\flow\\FlowTriggerHelpers.js",
-          "detail": "Line 84: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\mixins\\PhysicalButtonMixin.js",
-          "detail": "Line 716: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "lib\\SonoffZclDevice.js",
+          "file": "lib/SonoffZclDevice.js",
           "detail": "Line 701: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "lib\\TuyaUniversalBridge.js",
+          "file": "lib/TuyaUniversalBridge.js",
           "detail": "Line 182: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/BaseHybridDevice.js",
+          "detail": "Line 2586: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/BaseHybridDevice.js",
+          "detail": "Line 2600: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/BaseHybridDevice.js",
+          "detail": "Line 2634: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/BaseHybridDevice.js",
+          "detail": "Line 2764: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/ButtonDevice.js",
+          "detail": "Line 1783: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/HybridSensorBase.js",
+          "detail": "Line 3363: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/HybridSwitchBase.js",
+          "detail": "Line 813: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/WallTouchDevice.js",
+          "detail": "Line 184: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/devices/WallTouchDevice.js",
+          "detail": "Line 201: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/flow/AdvancedFlowCardManager.js",
+          "detail": "Line 53: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/flow/FlowTriggerHelpers.js",
+          "detail": "Line 84: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib/mixins/PhysicalButtonMixin.js",
+          "detail": "Line 716: getDeviceTriggerCard without try-catch"
         }
       ]
     },
@@ -317,7 +841,7 @@
       "count": 1,
       "files": [
         {
-          "file": "drivers\\radiator_controller\\device.js",
+          "file": "drivers/radiator_controller/device.js",
           "detail": "5 raw ZCL calls in flow handlers — should use triggerCapabilityListener"
         }
       ]
@@ -326,51 +850,51 @@
       "count": 12,
       "files": [
         {
-          "file": "drivers\\button_wireless_plug\\device.js",
+          "file": "drivers/button_wireless_plug/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\climate_sensor_device\\device.js",
+          "file": "drivers/climate_sensor_device/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\device_radiator_valve\\device.js",
+          "file": "drivers/device_radiator_valve/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\device_radiator_valve_smart\\device.js",
+          "file": "drivers/device_radiator_valve_smart/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\lcdtemphumidsensor_plug_energy\\device.js",
+          "file": "drivers/lcdtemphumidsensor_plug_energy/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\motion_sensor_radar_mmwave\\device.js",
+          "file": "drivers/motion_sensor_radar_mmwave/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\plug_energy_monitor\\device.js",
+          "file": "drivers/plug_energy_monitor/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\radiator_valve\\device.js",
+          "file": "drivers/radiator_valve/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\remote_button_wireless_plug\\device.js",
+          "file": "drivers/remote_button_wireless_plug/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\sensor_motion_radar\\device.js",
+          "file": "drivers/sensor_motion_radar/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\valve_irrigation\\device.js",
+          "file": "drivers/valve_irrigation/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
-          "file": "drivers\\water_valve_smart\\device.js",
+          "file": "drivers/water_valve_smart/device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         }
       ]
@@ -379,129 +903,100 @@
       "count": 24,
       "files": [
         {
-          "file": "lib\\clusters\\TuyaSpecificCluster.js",
-          "detail": "Line 410: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib\\devices\\ButtonDevice.js",
-          "detail": "Line 478: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib\\devices\\HybridSensorBase.js",
-          "detail": "Line 1667: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib\\devices\\HybridSensorBase.js",
-          "detail": "Line 1696: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib\\devices\\HybridThermostatBase.js",
-          "detail": "Line 174: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib\\helpers\\BatteryRouter.js",
-          "detail": "Line 265: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib\\helpers\\DeviceHintsDatabase.js",
-          "detail": "Line 479: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib\\helpers\\DeviceHintsDatabase.js",
-          "detail": "Line 481: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib\\helpers\\device_helpers.js",
-          "detail": "Line 302: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib\\managers\\PowerSourceDetector.js",
-          "detail": "Line 63: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib\\managers\\PowerSourceDetector.js",
-          "detail": "Line 64: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib\\managers\\SmartDriverAdaptation.js",
-          "detail": "Line 636: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib\\mixins\\PhysicalButtonMixin.js",
-          "detail": "Line 340: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib\\NewDevices2025.js",
+          "file": "lib/NewDevices2025.js",
           "detail": "Line 247: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
-          "file": "lib\\protocol\\IntelligentProtocolRouter.js",
+          "file": "lib/TuyaRtcDetector.js",
+          "detail": "Line 85: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/clusters/TuyaSpecificCluster.js",
+          "detail": "Line 410: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/devices/ButtonDevice.js",
+          "detail": "Line 478: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/devices/HybridSensorBase.js",
+          "detail": "Line 1667: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/devices/HybridSensorBase.js",
+          "detail": "Line 1696: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/devices/HybridThermostatBase.js",
+          "detail": "Line 174: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/helpers/BatteryRouter.js",
+          "detail": "Line 265: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/helpers/DeviceHintsDatabase.js",
+          "detail": "Line 479: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/helpers/DeviceHintsDatabase.js",
+          "detail": "Line 481: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/helpers/device_helpers.js",
+          "detail": "Line 302: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/managers/PowerSourceDetector.js",
+          "detail": "Line 63: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/managers/PowerSourceDetector.js",
+          "detail": "Line 64: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/managers/SmartDriverAdaptation.js",
+          "detail": "Line 636: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/mixins/PhysicalButtonMixin.js",
+          "detail": "Line 340: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/protocol/IntelligentProtocolRouter.js",
           "detail": "Line 13: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
-          "file": "lib\\tuya\\TuyaDataPointsZ2M.js",
+          "file": "lib/tuya/TuyaDataPointsZ2M.js",
           "detail": "Line 1329: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
-          "file": "lib\\tuya\\TuyaDataPointsZ2M.js",
+          "file": "lib/tuya/TuyaDataPointsZ2M.js",
           "detail": "Line 1351: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
-          "file": "lib\\tuya\\TuyaTimeSyncFormats.js",
+          "file": "lib/tuya/TuyaTimeSyncFormats.js",
           "detail": "Line 377: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
-          "file": "lib\\TuyaRtcDetector.js",
-          "detail": "Line 85: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        },
-        {
-          "file": "lib\\utils\\DriverMappingLoader.js",
+          "file": "lib/utils/DriverMappingLoader.js",
           "detail": "Line 1028: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
-          "file": "lib\\utils\\DriverMappingLoader.js",
+          "file": "lib/utils/DriverMappingLoader.js",
           "detail": "Line 1036: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
-          "file": "lib\\utils\\tuyaUtils.js",
+          "file": "lib/utils/tuyaUtils.js",
           "detail": "Line 70: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
-          "file": "lib\\utils\\tuyaUtils.js",
+          "file": "lib/utils/tuyaUtils.js",
           "detail": "Line 76: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
-          "file": "lib\\utils\\tuyaUtils.js",
+          "file": "lib/utils/tuyaUtils.js",
           "detail": "Line 85: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        }
-      ]
-    },
-    "duplicate-fingerprints": {
-      "count": 6,
-      "files": [
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_hlla45kx|ts011f found in: button_wireless_2, button_wireless_plug"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_hlla45kx|ts0121 found in: button_wireless_2, button_wireless_plug"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_hlla45kx|tso121 found in: button_wireless_2, button_wireless_plug"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_iuepbmpv|ts011f found in: button_wireless_2, remote_button_wireless_plug"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_iuepbmpv|ts0121 found in: button_wireless_2, remote_button_wireless_plug"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_iuepbmpv|tso121 found in: button_wireless_2, remote_button_wireless_plug"
         }
       ]
     },
@@ -509,7 +1004,7 @@
       "count": 1,
       "files": [
         {
-          "file": "lib\\suppress-punycode.js",
+          "file": "lib/suppress-punycode.js",
           "detail": "Uses deprecated punycode module"
         }
       ]

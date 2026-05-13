@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-05-12T15:42:18.628Z",
-  "total": 254,
-  "resolved": 173,
+  "timestamp": "2026-05-13T03:56:22.877Z",
+  "total": 255,
+  "resolved": 174,
   "unknown": 55,
   "falsePositives": 0,
   "results": [
@@ -440,6 +440,19 @@
       "valid": true,
       "prefix": "standard",
       "driver": "button_wireless_1",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
+    },
+    {
+      "fp": "_TZE284_0ints6wl",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "climate_sensor",
       "pid": null,
       "confidence": 100,
       "sources": [
@@ -1299,19 +1312,6 @@
       "valid": true,
       "prefix": "standard",
       "driver": "switch_1gang",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3000_avotanj3",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "switch_3gang",
       "pid": null,
       "confidence": 100,
       "sources": [

@@ -64,9 +64,15 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [],
+    "manufacturerName": [
+      "_tyzb01_iuepbmpv",
+      "_TYZB01_IUEPBMPV"
+    ],
     "productId": [
-      "TS0043"
+      "TS0043",
+      "TS011F",
+      "TS0121",
+      "TSO121"
     ],
     "learnmode": {
       "image": "/drivers/button_wireless_3/assets/learnmode.svg",

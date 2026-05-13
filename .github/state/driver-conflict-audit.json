@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-12T15:40:01.890Z",
+  "timestamp": "2026-05-13T03:54:13.526Z",
   "pidConflicts": [
     {
       "pid": "TS011F",
@@ -9,6 +9,7 @@
         "fingerbot",
         "plug_energy_monitor",
         "plug_smart",
+        "remote_button_wireless",
         "remote_button_wireless_plug",
         "switch",
         "switch_1gang",
@@ -220,6 +221,38 @@
       "severity": "high"
     },
     {
+      "pid": "TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug",
+        "plug_energy_monitor",
+        "remote_button_wireless",
+        "remote_button_wireless_plug"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TSO121",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug",
+        "plug_energy_monitor",
+        "remote_button_wireless",
+        "remote_button_wireless_plug"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
       "pid": "TS1101",
       "drivers": [
         "bulb_dimmable",
@@ -274,36 +307,6 @@
       "classes": [
         "sensor",
         "button",
-        "socket"
-      ],
-      "crossClass": true,
-      "severity": "high"
-    },
-    {
-      "pid": "TS0121",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug",
-        "plug_energy_monitor",
-        "remote_button_wireless_plug"
-      ],
-      "classes": [
-        "sensor",
-        "socket"
-      ],
-      "crossClass": true,
-      "severity": "high"
-    },
-    {
-      "pid": "TSO121",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug",
-        "plug_energy_monitor",
-        "remote_button_wireless_plug"
-      ],
-      "classes": [
-        "sensor",
         "socket"
       ],
       "crossClass": true,
@@ -962,61 +965,17 @@
       "severity": "high"
     }
   ],
-  "mfrConflicts": [
-    {
-      "mfr": "_tyzb01_hlla45kx",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ],
-      "sharedPids": [
-        "TS011F",
-        "TS0121",
-        "TSO121"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TYZB01_HLLA45KX",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ],
-      "sharedPids": [
-        "TS011F",
-        "TS0121",
-        "TSO121"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_tyzb01_iuepbmpv",
-      "drivers": [
-        "button_wireless_2",
-        "remote_button_wireless_plug"
-      ],
-      "sharedPids": [
-        "TS011F",
-        "TS0121",
-        "TSO121"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TYZB01_IUEPBMPV",
-      "drivers": [
-        "button_wireless_2",
-        "remote_button_wireless_plug"
-      ],
-      "sharedPids": [
-        "TS011F",
-        "TS0121",
-        "TSO121"
-      ],
-      "risk": "high"
-    }
-  ],
+  "mfrConflicts": [],
   "orphans": [
+    {
+      "driver": "button_wireless_plug",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS011F",
+        "TS0121",
+        "TSO121"
+      ]
+    },
     {
       "driver": "climate_sensor_device",
       "reason": "no_manufacturer_names",
@@ -1068,13 +1027,6 @@
       "reason": "no_manufacturer_names",
       "pids": [
         "TS0215A"
-      ]
-    },
-    {
-      "driver": "remote_button_wireless",
-      "reason": "no_manufacturer_names",
-      "pids": [
-        "TS0043"
       ]
     },
     {
@@ -1384,7 +1336,8 @@
       "pid": "TS011F",
       "splitBy": {
         "sensor": [
-          "button_wireless_2"
+          "button_wireless_2",
+          "remote_button_wireless"
         ],
         "socket": [
           "button_wireless_plug",
@@ -1566,6 +1519,36 @@
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
     },
     {
+      "pid": "TS0121",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2",
+          "remote_button_wireless"
+        ],
+        "socket": [
+          "button_wireless_plug",
+          "plug_energy_monitor",
+          "remote_button_wireless_plug"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TSO121",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2",
+          "remote_button_wireless"
+        ],
+        "socket": [
+          "button_wireless_plug",
+          "plug_energy_monitor",
+          "remote_button_wireless_plug"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
       "pid": "TS0002",
       "splitBy": {
         "sensor": [
@@ -1605,34 +1588,6 @@
         "socket": [
           "switch_1gang",
           "wall_switch_1gang_1way"
-        ]
-      },
-      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
-    },
-    {
-      "pid": "TS0121",
-      "splitBy": {
-        "sensor": [
-          "button_wireless_2"
-        ],
-        "socket": [
-          "button_wireless_plug",
-          "plug_energy_monitor",
-          "remote_button_wireless_plug"
-        ]
-      },
-      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
-    },
-    {
-      "pid": "TSO121",
-      "splitBy": {
-        "sensor": [
-          "button_wireless_2"
-        ],
-        "socket": [
-          "button_wireless_plug",
-          "plug_energy_monitor",
-          "remote_button_wireless_plug"
         ]
       },
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
@@ -1869,7 +1824,7 @@
     "totalDrivers": 228,
     "pidConflicts": 69,
     "highSeverity": 33,
-    "mfrConflicts": 4,
+    "mfrConflicts": 0,
     "orphans": 73,
     "splitSuggestions": 33
   }

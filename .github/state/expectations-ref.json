@@ -1,6 +1,6 @@
 {
-  "version": "7.5.16",
-  "date": "2026-05-12",
+  "version": "7.5.17",
+  "date": "2026-05-13",
   "drivers": 228,
   "fingerprints": 10919,
   "decisions": [
@@ -366,8 +366,8 @@
     }
   ],
   "interviews": {
-    "total": 213,
-    "fps": 159
+    "total": 214,
+    "fps": 160
   },
   "invertedMfrs": [
     "_TZ3000_26fmupbb",

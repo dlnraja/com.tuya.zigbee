@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-05-12T15:26:25.682Z",
+  "timestamp": "2026-05-13T03:41:45.383Z",
   "driversScanned": 20,
-  "staticIssues": 46,
+  "staticIssues": 45,
   "autoFixed": 0,
-  "aiSuggestions": 34,
-  "aiApplied": 1,
+  "aiSuggestions": 18,
+  "aiApplied": 2,
   "dryRun": false,
   "results": [
     {
@@ -12,8 +12,7 @@
       "issues": [
         "sdk3-await-capability",
         "sdk3-case-sensitive-fingerprint"
-      ],
-      "aiModel": "deepseek"
+      ]
     },
     {
       "driver": "air_quality_co2",
@@ -43,8 +42,7 @@
       "issues": [
         "sdk3-battery-conflict",
         "sdk3-case-sensitive-fingerprint"
-      ],
-      "aiModel": "deepseek"
+      ]
     },
     {
       "driver": "bulb_rgb",
@@ -146,7 +144,6 @@
       "issues": [
         "sdk3-await-capability",
         "sdk3-battery-conflict",
-        "sdk3-case-sensitive-fingerprint",
         "sdk3-dp-variant-awareness"
       ]
     },

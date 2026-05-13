@@ -310,3 +310,7 @@
 - **JohanBendz/com.tuya.zigbee#1369** @migueleap: `_TZ3000_e98krvvk`, `vision` (deepseek)
 - **JohanBendz/com.tuya.zigbee#1368** @migueleap: `_TZ3000_enmfaave`, `router`, `vision` (deepseek)
 - **JohanBendz/com.tuya.zigbee#1372** @oskarirauta: `_TZE200_mgxy2d9f`, `_TZE` (deepseek)
+
+
+## Nightly Auto-Responses (2026-05-13 v7.5.17)
+- **JohanBendz/com.tuya.zigbee#1396** @sondregjessing-blip: `_TZE284_0ints6wl`, `_TZE`, `example`, `vision` (openrouter)

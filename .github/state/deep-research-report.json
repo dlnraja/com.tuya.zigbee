@@ -1,10 +1,10 @@
 {
-  "ts": "2026-05-12T15:53:40.159Z",
+  "ts": "2026-05-13T04:07:28.490Z",
   "ghCalls": 120,
-  "totalFPs": 98,
+  "totalFPs": 99,
   "newFPs": 6,
   "researched": 1,
-  "implemented": 2,
+  "implemented": 0,
   "results": [
     {
       "fp": "_TZE204_81yrt3l",
@@ -15,10 +15,7 @@
       ],
       "discoveredPIDs": [],
       "variants": 2,
-      "actions": [
-        "added_variant:_TZE200_81yrt3l",
-        "added_variant:_TZE284_81yrt3l"
-      ],
+      "actions": [],
       "sources": [
         "dlnraja/com.tuya.zigbee#318 (issue)"
       ]

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-12T15:40:01.809Z",
+  "timestamp": "2026-05-13T03:54:13.431Z",
   "conflicts": [
     {
       "pid": "TS0501B",
@@ -223,6 +223,7 @@
         "fingerbot",
         "plug_energy_monitor",
         "plug_smart",
+        "remote_button_wireless",
         "remote_button_wireless_plug",
         "switch",
         "switch_1gang",
@@ -318,6 +319,7 @@
         "button_wireless_2",
         "button_wireless_plug",
         "plug_energy_monitor",
+        "remote_button_wireless",
         "remote_button_wireless_plug"
       ],
       "classes": [
@@ -332,6 +334,7 @@
         "button_wireless_2",
         "button_wireless_plug",
         "plug_energy_monitor",
+        "remote_button_wireless",
         "remote_button_wireless_plug"
       ],
       "classes": [
