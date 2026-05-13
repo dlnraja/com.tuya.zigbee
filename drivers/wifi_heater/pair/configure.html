@@ -156,12 +156,24 @@ function doSmartLife(){
         unspin('btn-sl');
         if(err){show('sl-err',err.message||String(err));return}
         var qrUrl = schema + '://qrLogin?token=' + r.qrCode;
-        var msg = '<b>Scan this or click the link!</b><br>';
+        
+        // Android Intent magic URL to force open app from sandboxed webview
+        var androidIntent = '';
+        if (schema === 'smartlife') {
+          androidIntent = 'intent://qrLogin?token=' + r.qrCode + '#Intent;scheme=smartlife;package=com.tuya.smartlife;end';
+        } else {
+          androidIntent = 'intent://qrLogin?token=' + r.qrCode + '#Intent;scheme=tuyaSmart;package=com.tuya.smart;end';
+        }
+
+        var msg = '<b>Scan this or click a link below!</b><br>';
         if (r.localQrImage) {
           msg += '<img src="'+r.localQrImage+'" style="margin:10px auto;display:block;" /><br>';
         }
-        msg += '<a href="'+qrUrl+'" target="_blank" style="display:inline-block;padding:10px;background:#00a870;color:white;text-decoration:none;border-radius:5px;margin:5px 0;">Click to Open App (Phone only)</a>';
-        msg += '<br><i>(Wait here after authorizing)</i>';
+        msg += '<div style="display:flex;gap:6px;margin:5px 0;">';
+        msg += '<a href="'+qrUrl+'" target="_blank" style="flex:1;display:inline-block;padding:9px;background:#00a870;color:white;text-decoration:none;border-radius:5px;font-weight:bold;text-align:center;">Launch App</a>';
+        msg += '<a href="'+androidIntent+'" target="_blank" style="flex:1;display:inline-block;padding:9px;background:#007aff;color:white;text-decoration:none;border-radius:5px;font-weight:bold;text-align:center;">Android Magic Link</a>';
+        msg += '</div>';
+        msg += '<i style="font-size:10px;color:#666;">(Wait here after authorizing in the app)</i>';
         show('sl-ok',msg);
         
         // Start polling!
