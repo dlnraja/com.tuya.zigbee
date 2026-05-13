@@ -30,16 +30,20 @@ class GarageDoorOpenerDevice extends TuyaZigbeeDevice {
     if (this._tuyaEF00Manager) {
       this._tuyaEF00Manager.dpMappings = {
         1: { capability: 'garagedoor_closed', converter: v => !v },
-        2: { capability: 'alarm_contact', converter: v => !!v },
-        3: { capability: 'measure_battery', divisor: 1 },
+        3: {
+          capability: 'alarm_contact',
+          converter: (v) => {
+            const isClosed = !!v;
+            this.setCapabilityValue('garagedoor_closed', isClosed).catch(() => {});
+            return !isClosed;
+          },
+        },
       };
     }
 
     this.registerCapabilityListener('garagedoor_closed', async (value) => {
       this._markAppCommand?.();
-      if 
-
-      (this._tuyaEF00Manager) {
+      if (this._tuyaEF00Manager) {
         await this._tuyaEF00Manager.sendTuyaDP(1, 1, !value ? 1 : 0);
       }
     });
