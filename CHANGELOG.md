@@ -4,7 +4,19 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.18] - 2026-05-13
+## [7.5.19] - 2026-05-13
+
+## v7.5.19
+
+### New Features
+- **Android native pairing**: Added Android Intent magic URL support across all 20 WiFi drivers (wifi_air_purifier, wifi_cover, wifi_dimmer, wifi_door_lock, wifi_fan, wifi_garage_door, wifi_heater, wifi_humidifier, and others). Android users can now pair WiFi devices directly through the native Android pairing flow instead of manual IP/port entry.
+
+### Improvements
+- Updated pairing configuration UI (`configure.html`) across all WiFi device drivers to support the new Android magic URL flow.
+- Updated app metadata and version information.
+---
+
+ [7.5.18] - 2026-05-13
 
 ## v7.5.18
 

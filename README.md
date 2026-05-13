@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.19 |
+| **App Version** | v7.5.20 |
 | **Device Fingerprints** | 10,862+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 228 (178 Zigbee + 50 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.19** | Easy Login with saved credentials, auto device classification with brand badges, TS110E level control fix, alarm_batt... |
+| **v7.5.20** | Added Android native Intent magic URL pairing for all 20 WiFi drivers. Updated pairing configuration UI. |
+| **v7.5.19** | Added Android native Intent magic URL pairing for all 20 WiFi drivers. Updated pairing configuration UI. |
 | **v7.5.18** | Easy Login with saved credentials, auto device classification with brand badges, TS110E level control fix, alarm_batt... |
 | **v7.5.17** | v7.5.17 â€” 3,207 new fingerprints, backlight mode alignment fix, and fingerprint case normalization for more reliable ... |
 | **v7.5.16** | v7.5.16 â€” . Maintenance release with updated device expectations, diagnostics, and internal state. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v5.11.212** | Implement Rule 24 caseless resolver and dynamic O(1) matching system for high-performance pairing. |
 | **v5.11.211** | Universal Tuya Zigbee v5.11.211: Fixed DeviceIdentificationDatabase crash on startup (ReferenceError: lastUpdate is n... |
 | **v5.11.210** | Universal Tuya Zigbee v5.11.210: Stability release - verified syntax integrity on all lib/ files, confirmed SDK3 comp... |
-| **v5.11.209** | Universal Tuya Zigbee app v5.11.208: Fixed app ID. |
 
 <!-- CHANGELOG_END -->
 

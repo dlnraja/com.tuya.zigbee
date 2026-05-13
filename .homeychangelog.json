@@ -1,4 +1,7 @@
 {
+  "7.5.19": {
+    "en": "Added Android native Intent magic URL pairing for all 20 WiFi drivers. Updated pairing configuration UI."
+  },
   "7.5.18": {
     "en": "Easy Login with saved credentials, auto device classification with brand badges, TS110E level control fix, alarm_battery removed from 136 drivers (SDK3 conflict), 7 FP collisions resolved, duplicate flow cards fixed across driver fleet."
   },
@@ -56,10 +59,7 @@
   "5.11.204": {
     "en": "v5.11.203: Emergency SOS Buttons:, Device Support:, Expanded compatibility for wireless emergency buttons and panic switches., Total driver count increased to 213."
   },
-  "5.11.203": {
-    "en": "Added universal support for all 4 Zigbee SOS reporting standards to emergency buttons, improving cross-brand compatibility. Added 3 new device fingerprints. Now supports 213 drivers."
-  },
-  "7.5.19": {
-    "en": "Easy Login with saved credentials, auto device classification with brand badges, TS110E level control fix, alarm_battery removed from 136 drivers (SDK3 conflict), 7 FP collisions resolved, duplicate flow cards fixed across driver fleet."
+  "7.5.20": {
+    "en": "Added Android native Intent magic URL pairing for all 20 WiFi drivers. Updated pairing configuration UI."
   }
 }
