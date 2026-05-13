@@ -1,6 +1,6 @@
 {
   "7.5.17": {
-    "en": "Fixed backlight mode alignment across multi-gang switch drivers and completed fingerprint case-insensitive self-heal for 356 conflict entries. Added 2 new device interview profiles."
+    "en": "v7.5.17 — 3,207 new fingerprints, backlight mode alignment fix, and fingerprint case normalization for more reliable pairing."
   },
   "7.5.16": {
     "en": "v7.5.16 — . Maintenance release with updated device expectations, diagnostics, and internal state."
@@ -58,5 +58,8 @@
   },
   "5.11.202": {
     "en": "Added support for new Tuya devices and improved pairing instructions."
+  },
+  "7.5.18": {
+    "en": "Added support for new devices:\n- r_purifier (_TYST11_d0yu2xgi / TS0601_r_purifier,TS0601)\n- bulb_dimmable (_TYZB01_qezuin6k, _TYZB01_v8gtiaed / TS0501A,TS0501B,TS110E,TS110F,LED1623G12,LED1649C5,LED1836G9,LWB004,LWB006,LWB010,LWB014,Plug 01,A19 W 10 year,BR30 W 10 year,PAR38 W 10 year,GL-B-001Z,RS 125,RB 165,RB 175 W,ZBT-DimmableLight,TS0052,TS1101)\n- bulb_rgb (eWeLight / TS0503A,TS0503B,LCT001,LCT002,LCT003,LCT007,LCT010,LCT011,LCT012,LCT014,LCT015,LCT016,GL-C-006,RB 185... and more."
   }
 }
