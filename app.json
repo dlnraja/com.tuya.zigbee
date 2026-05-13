@@ -70787,8 +70787,16 @@
       },
       "class": "remote",
       "capabilities": [
-        "button.learn_ir",
-        "onoff"
+        "onoff",
+        "volume_up",
+        "volume_down",
+        "channel_up",
+        "channel_down",
+        "button.mute",
+        "button.source",
+        "button.menu",
+        "button.enter",
+        "button.learn_ir"
       ],
       "capabilitiesOptions": {
         "button.learn_ir": {
@@ -70804,8 +70812,77 @@
             "nl": "Aan/Uit",
             "de": "Ein/Aus"
           }
+        },
+        "button.mute": {
+          "title": {
+            "en": "Mute"
+          }
+        },
+        "button.source": {
+          "title": {
+            "en": "Source/Input"
+          }
+        },
+        "button.menu": {
+          "title": {
+            "en": "Menu"
+          }
+        },
+        "button.enter": {
+          "title": {
+            "en": "OK/Enter"
+          }
         }
       },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Universal Remote Config"
+          },
+          "children": [
+            {
+              "id": "ir_brand",
+              "type": "text",
+              "value": "Samsung",
+              "label": {
+                "en": "Remote Brand (e.g. Samsung, LG, Sony)"
+              },
+              "hint": {
+                "en": "Type the brand of your TV or AC (must match IR database)."
+              }
+            },
+            {
+              "id": "ir_category",
+              "type": "dropdown",
+              "value": "TV",
+              "label": {
+                "en": "Device Category"
+              },
+              "values": [
+                {
+                  "id": "TV",
+                  "label": {
+                    "en": "TV"
+                  }
+                },
+                {
+                  "id": "Audio",
+                  "label": {
+                    "en": "Audio/Soundbar"
+                  }
+                },
+                {
+                  "id": "AC",
+                  "label": {
+                    "en": "Air Conditioner"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ],
       "platforms": [
         "local"
       ],
@@ -70949,6 +71026,193 @@
           }
         }
       ],
+      "repair": [
+        {
+          "id": "ir_setup"
+        }
+      ],
+      "flow": {
+        "actions": [
+          {
+            "id": "ir_blaster_send_tv_command",
+            "title": {
+              "en": "Send TV Command",
+              "fr": "Envoyer une commande TV"
+            },
+            "args": [
+              {
+                "name": "brand",
+                "type": "text",
+                "placeholder": "Samsung"
+              },
+              {
+                "name": "command",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "Power",
+                    "title": {
+                      "en": "Power"
+                    }
+                  },
+                  {
+                    "id": "Volume Up",
+                    "title": {
+                      "en": "Volume Up"
+                    }
+                  },
+                  {
+                    "id": "Volume Down",
+                    "title": {
+                      "en": "Volume Down"
+                    }
+                  },
+                  {
+                    "id": "Mute",
+                    "title": {
+                      "en": "Mute"
+                    }
+                  },
+                  {
+                    "id": "Channel Up",
+                    "title": {
+                      "en": "Channel Up"
+                    }
+                  },
+                  {
+                    "id": "Channel Down",
+                    "title": {
+                      "en": "Channel Down"
+                    }
+                  },
+                  {
+                    "id": "Source",
+                    "title": {
+                      "en": "Source"
+                    }
+                  },
+                  {
+                    "id": "Menu",
+                    "title": {
+                      "en": "Menu"
+                    }
+                  },
+                  {
+                    "id": "OK/Enter",
+                    "title": {
+                      "en": "OK/Enter"
+                    }
+                  },
+                  {
+                    "id": "Up",
+                    "title": {
+                      "en": "Up"
+                    }
+                  },
+                  {
+                    "id": "Down",
+                    "title": {
+                      "en": "Down"
+                    }
+                  },
+                  {
+                    "id": "Left",
+                    "title": {
+                      "en": "Left"
+                    }
+                  },
+                  {
+                    "id": "Right",
+                    "title": {
+                      "en": "Right"
+                    }
+                  },
+                  {
+                    "id": "Back",
+                    "title": {
+                      "en": "Back"
+                    }
+                  },
+                  {
+                    "id": "Home",
+                    "title": {
+                      "en": "Home"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ir_blaster_send_ac_command",
+            "title": {
+              "en": "Send AC Command",
+              "fr": "Envoyer une commande Clim"
+            },
+            "args": [
+              {
+                "name": "brand",
+                "type": "text",
+                "placeholder": "Daikin"
+              },
+              {
+                "name": "command",
+                "type": "dropdown",
+                "values": [
+                  {
+                    "id": "Power On",
+                    "title": {
+                      "en": "Power On"
+                    }
+                  },
+                  {
+                    "id": "Power Off",
+                    "title": {
+                      "en": "Power Off"
+                    }
+                  },
+                  {
+                    "id": "Cool 20",
+                    "title": {
+                      "en": "Cool 20°C"
+                    }
+                  },
+                  {
+                    "id": "Cool 22",
+                    "title": {
+                      "en": "Cool 22°C"
+                    }
+                  },
+                  {
+                    "id": "Cool 24",
+                    "title": {
+                      "en": "Cool 24°C"
+                    }
+                  },
+                  {
+                    "id": "Heat 20",
+                    "title": {
+                      "en": "Heat 20°C"
+                    }
+                  },
+                  {
+                    "id": "Heat 22",
+                    "title": {
+                      "en": "Heat 22°C"
+                    }
+                  },
+                  {
+                    "id": "Heat 24",
+                    "title": {
+                      "en": "Heat 24°C"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       "id": "ir_blaster"
     },
     {
