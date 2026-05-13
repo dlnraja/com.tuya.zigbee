@@ -4,7 +4,24 @@ All notable changes to the **Universal Tuya Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.26] - 2026-05-13
+## [7.5.27] - 2026-05-13
+
+### New Features
+- **IR Blaster Pairing Wizard**: New guided setup for IR devices with improved code library and repair flow.
+- **Power Clamp Meter**: Enhanced device handling and stability.
+
+### Bug Fixes
+- Fixed IR button remote manager to prevent duplicate commands.
+- Corrected IAS device initialization for certain motion sensors.
+- Resolved data handler edge case for multi-DP reports.
+
+### Improvements
+- Updated driver system for better fingerprint matching.
+- Refined IR code library with additional device profiles.
+- General stability and performance enhancements.
+---
+
+ [7.5.26] - 2026-05-13
 
 ### Bug Fixes
 - Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated `getTriggerCard` to `getDeviceTriggerCard`. This eliminates all deprecation warnings and ensures full compatibility with the latest Homey firmware.
