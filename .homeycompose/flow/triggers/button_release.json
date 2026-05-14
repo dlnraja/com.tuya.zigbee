@@ -1,0 +1,33 @@
+{
+  "id": "button_release",
+  "title": {
+    "en": "Button released",
+    "fr": "Bouton relâché",
+    "nl": "Knop losgelaten",
+    "de": "Taste losgelassen"
+  },
+  "titleFormatted": {
+    "en": "[[device]] button [[button]] was released",
+    "fr": "Bouton [[button]] de [[device]] relâché",
+    "nl": "[[device]] knop [[button]] was losgelaten",
+    "de": "[[device]] Taste [[button]] war losgelassen"
+  },
+  "tokens": [
+    {
+      "name": "button",
+      "type": "string",
+      "title": {
+        "en": "Button",
+        "fr": "Bouton"
+      },
+      "example": "1"
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=button.1,capabilities=button"
+    }
+  ]
+}

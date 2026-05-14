@@ -501,6 +501,122 @@
         ]
       },
       {
+        "id": "button_pressed",
+        "title": {
+          "en": "Button pressed (Global)",
+          "fr": "Bouton appuyé (Global)"
+        },
+        "titleFormatted": {
+          "en": "Button [[button]] pressed on [[device]]",
+          "fr": "Bouton [[button]] appuyé sur [[device]]"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": { "en": "Button ID" },
+            "example": "1"
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "title": { "en": "Press Type" },
+            "example": "single"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=onoff"
+          }
+        ]
+      },
+      {
+        "id": "button_double_press",
+        "title": {
+          "en": "Button double pressed (Global)",
+          "fr": "Bouton double appui (Global)"
+        },
+        "titleFormatted": {
+          "en": "Button [[button]] double pressed on [[device]]",
+          "fr": "Bouton [[button]] double appui sur [[device]]"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": { "en": "Button ID" },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=onoff"
+          }
+        ]
+      },
+      {
+        "id": "button_long_press",
+        "title": {
+          "en": "Button long pressed (Global)",
+          "fr": "Bouton appui long (Global)"
+        },
+        "titleFormatted": {
+          "en": "Button [[button]] long pressed on [[device]]",
+          "fr": "Bouton [[button]] appui long sur [[device]]"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": { "en": "Button ID" },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=onoff"
+          }
+        ]
+      },
+      {
+        "id": "knob_rotated",
+        "title": {
+          "en": "Knob rotated (Global)",
+          "fr": "Bouton rotatif tourné (Global)"
+        },
+        "titleFormatted": {
+          "en": "Knob on [[device]] rotated [[direction]]",
+          "fr": "Bouton rotatif sur [[device]] tourné [[direction]]"
+        },
+        "tokens": [
+          {
+            "name": "direction",
+            "type": "string",
+            "title": { "en": "Direction" },
+            "example": "up"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "title": { "en": "Level (%)" },
+            "example": 50
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=dim"
+          }
+        ]
+      },
+      {
         "id": "air_purifier_turned_on",
         "title": {
           "en": "Turned on",
@@ -1577,116 +1693,18 @@
         ]
       },
       {
-        "id": "button_wireless_button_pressed",
-        "title": {
-          "en": "Button pressed",
-          "fr": "Bouton appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_button_double_press",
-        "title": {
-          "en": "Button double pressed",
-          "fr": "Double appui bouton"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_button_long_press",
-        "title": {
-          "en": "Button long pressed",
-          "fr": "Appui long bouton"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_button_release",
-        "title": {
-          "en": "Button released",
-          "fr": "Bouton relâché"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_battery_low",
+        "id": "air_quality_co2_battery_low",
         "title": {
           "en": "Battery low",
-          "fr": "Batterie faible"
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=button_wireless"
+            "filter": "driver_id=air_quality_co2"
           }
         ]
       },

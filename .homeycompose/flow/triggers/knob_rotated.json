@@ -1,0 +1,42 @@
+{
+  "id": "knob_rotated",
+  "title": {
+    "en": "Knob rotated",
+    "fr": "Molette tournée",
+    "nl": "Draaiknop gedraaid",
+    "de": "Drehknopf gedreht"
+  },
+  "titleFormatted": {
+    "en": "[[device]] rotated [[direction]] to [[level]]%",
+    "fr": "[[device]] tournée vers le [[direction]] ([[level]]%)",
+    "nl": "[[device]] [[direction]] gedraaid naar [[level]]%",
+    "de": "[[device]] [[direction]] gedreht auf [[level]]%"
+  },
+  "tokens": [
+    {
+      "name": "direction",
+      "type": "string",
+      "title": {
+        "en": "Direction",
+        "fr": "Direction"
+      },
+      "example": "up"
+    },
+    {
+      "name": "level",
+      "type": "number",
+      "title": {
+        "en": "Level",
+        "fr": "Niveau"
+      },
+      "example": 75
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=smart_knob,capabilities=dim"
+    }
+  ]
+}
