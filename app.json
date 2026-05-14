@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "7.5.33",
+  "version": "7.5.34",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -102,6 +102,189 @@
   "source": "https://github.com/dlnraja/com.tuya.zigbee",
   "flow": {
     "triggers": [
+      {
+        "id": "button_double_press",
+        "title": {
+          "en": "Button double-pressed",
+          "fr": "Bouton double-cliqué",
+          "nl": "Knop dubbel ingedrukt",
+          "de": "Taste doppelt gedrückt"
+        },
+        "titleFormatted": {
+          "en": "[[device]] button [[button]] was double-pressed",
+          "fr": "Bouton [[button]] de [[device]] double-cliqué",
+          "nl": "[[device]] knop [[button]] was dubbel ingedrukt",
+          "de": "[[device]] Taste [[button]] war doppelt gedrückt"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=button.1,capabilities=button"
+          }
+        ]
+      },
+      {
+        "id": "button_long_press",
+        "title": {
+          "en": "Button long-pressed",
+          "fr": "Bouton pressé longtemps",
+          "nl": "Knop lang ingedrukt",
+          "de": "Taste lange gedrückt"
+        },
+        "titleFormatted": {
+          "en": "[[device]] button [[button]] was long-pressed",
+          "fr": "Bouton [[button]] de [[device]] pressé longtemps",
+          "nl": "[[device]] knop [[button]] was lang ingedrukt",
+          "de": "[[device]] Taste [[button]] war lange gedrückt"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=button.1,capabilities=button"
+          }
+        ]
+      },
+      {
+        "id": "button_pressed",
+        "title": {
+          "en": "Button pressed",
+          "fr": "Bouton appuyé",
+          "nl": "Knop ingedrukt",
+          "de": "Taste gedrückt"
+        },
+        "titleFormatted": {
+          "en": "[[device]] button [[button]] was [[type]]",
+          "fr": "Bouton [[button]] de [[device]] : [[type]]",
+          "nl": "[[device]] knop [[button]] was [[type]]",
+          "de": "[[device]] Taste [[button]] war [[type]]"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          },
+          {
+            "name": "type",
+            "type": "string",
+            "title": {
+              "en": "Press Type",
+              "fr": "Type de pression"
+            },
+            "example": "single"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=button.1,capabilities=button"
+          }
+        ]
+      },
+      {
+        "id": "button_release",
+        "title": {
+          "en": "Button released",
+          "fr": "Bouton relâché",
+          "nl": "Knop losgelaten",
+          "de": "Taste losgelassen"
+        },
+        "titleFormatted": {
+          "en": "[[device]] button [[button]] was released",
+          "fr": "Bouton [[button]] de [[device]] relâché",
+          "nl": "[[device]] knop [[button]] was losgelaten",
+          "de": "[[device]] Taste [[button]] war losgelassen"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "string",
+            "title": {
+              "en": "Button",
+              "fr": "Bouton"
+            },
+            "example": "1"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "capabilities=button.1,capabilities=button"
+          }
+        ]
+      },
+      {
+        "id": "knob_rotated",
+        "title": {
+          "en": "Knob rotated",
+          "fr": "Molette tournée",
+          "nl": "Draaiknop gedraaid",
+          "de": "Drehknopf gedreht"
+        },
+        "titleFormatted": {
+          "en": "[[device]] rotated [[direction]] to [[level]]%",
+          "fr": "[[device]] tournée vers le [[direction]] ([[level]]%)",
+          "nl": "[[device]] [[direction]] gedraaid naar [[level]]%",
+          "de": "[[device]] [[direction]] gedreht auf [[level]]%"
+        },
+        "tokens": [
+          {
+            "name": "direction",
+            "type": "string",
+            "title": {
+              "en": "Direction",
+              "fr": "Direction"
+            },
+            "example": "up"
+          },
+          {
+            "name": "level",
+            "type": "number",
+            "title": {
+              "en": "Level",
+              "fr": "Niveau"
+            },
+            "example": 75
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_knob,capabilities=dim"
+          }
+        ]
+      },
       {
         "id": "sub_capability_changed",
         "title": {
@@ -497,122 +680,6 @@
             },
             "min": 0,
             "max": 255
-          }
-        ]
-      },
-      {
-        "id": "button_pressed",
-        "title": {
-          "en": "Button pressed (Global)",
-          "fr": "Bouton appuyé (Global)"
-        },
-        "titleFormatted": {
-          "en": "Button [[button]] pressed on [[device]]",
-          "fr": "Bouton [[button]] appuyé sur [[device]]"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": { "en": "Button ID" },
-            "example": "1"
-          },
-          {
-            "name": "type",
-            "type": "string",
-            "title": { "en": "Press Type" },
-            "example": "single"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "capabilities=onoff"
-          }
-        ]
-      },
-      {
-        "id": "button_double_press",
-        "title": {
-          "en": "Button double pressed (Global)",
-          "fr": "Bouton double appui (Global)"
-        },
-        "titleFormatted": {
-          "en": "Button [[button]] double pressed on [[device]]",
-          "fr": "Bouton [[button]] double appui sur [[device]]"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": { "en": "Button ID" },
-            "example": "1"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "capabilities=onoff"
-          }
-        ]
-      },
-      {
-        "id": "button_long_press",
-        "title": {
-          "en": "Button long pressed (Global)",
-          "fr": "Bouton appui long (Global)"
-        },
-        "titleFormatted": {
-          "en": "Button [[button]] long pressed on [[device]]",
-          "fr": "Bouton [[button]] appui long sur [[device]]"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": { "en": "Button ID" },
-            "example": "1"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "capabilities=onoff"
-          }
-        ]
-      },
-      {
-        "id": "knob_rotated",
-        "title": {
-          "en": "Knob rotated (Global)",
-          "fr": "Bouton rotatif tourné (Global)"
-        },
-        "titleFormatted": {
-          "en": "Knob on [[device]] rotated [[direction]]",
-          "fr": "Bouton rotatif sur [[device]] tourné [[direction]]"
-        },
-        "tokens": [
-          {
-            "name": "direction",
-            "type": "string",
-            "title": { "en": "Direction" },
-            "example": "up"
-          },
-          {
-            "name": "level",
-            "type": "number",
-            "title": { "en": "Level (%)" },
-            "example": 50
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "capabilities=dim"
           }
         ]
       },
@@ -1693,23 +1760,7 @@
         ]
       },
       {
-        "id": "air_quality_co2_battery_low",
-        "title": {
-          "en": "Battery low",
-          "fr": "Batterie faible",
-          "nl": "Batterij laag",
-          "de": "Batterie schwach"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=air_quality_co2"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_1_button_1gang_button_pressed",
+        "id": "button_wireless_button_pressed",
         "title": {
           "en": "Button pressed",
           "fr": "Bouton appuyé"
@@ -1729,15 +1780,15 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=button_wireless_1"
+            "filter": "driver_id=button_wireless"
           }
         ]
       },
       {
-        "id": "button_wireless_1_button_1gang_button_double_press",
+        "id": "button_wireless_button_double_press",
         "title": {
-          "en": "Button double-pressed",
-          "fr": "Bouton double-cliqué"
+          "en": "Button double pressed",
+          "fr": "Double appui bouton"
         },
         "tokens": [
           {
@@ -1754,15 +1805,15 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=button_wireless_1"
+            "filter": "driver_id=button_wireless"
           }
         ]
       },
       {
-        "id": "button_wireless_1_button_1gang_button_long_press",
+        "id": "button_wireless_button_long_press",
         "title": {
-          "en": "Button long-pressed",
-          "fr": "Bouton pressé longtemps"
+          "en": "Button long pressed",
+          "fr": "Appui long bouton"
         },
         "tokens": [
           {
@@ -1779,15 +1830,15 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=button_wireless_1"
+            "filter": "driver_id=button_wireless"
           }
         ]
       },
       {
-        "id": "button_wireless_1_button_1gang_button_multi_press",
+        "id": "button_wireless_button_release",
         "title": {
-          "en": "Button multi-pressed",
-          "fr": "Bouton multi-cliqué"
+          "en": "Button released",
+          "fr": "Bouton relâché"
         },
         "tokens": [
           {
@@ -1798,92 +1849,27 @@
               "fr": "Bouton"
             },
             "example": "1"
-          },
-          {
-            "name": "count",
-            "type": "number",
-            "title": {
-              "en": "Press count",
-              "fr": "Nombre de pressions"
-            },
-            "example": 3
           }
         ],
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=button_wireless_1"
+            "filter": "driver_id=button_wireless"
           }
         ]
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_pressed",
+        "id": "button_wireless_battery_low",
         "title": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
+          "en": "Battery low",
+          "fr": "Batterie faible"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=button_wireless_1"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_1_button_1gang_button_1_double",
-        "title": {
-          "en": "Button 1 double-pressed",
-          "fr": "Bouton 1 double-cliqué"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_1"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_1_button_1gang_button_1_long",
-        "title": {
-          "en": "Button 1 long-pressed",
-          "fr": "Bouton 1 pressé longtemps"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_1"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_1_button_1gang_button_1_triple",
-        "title": {
-          "en": "Button 1 triple-pressed",
-          "fr": "Bouton 1 triple-cliqué"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_1"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_1_button_1gang_button_1_release",
-        "title": {
-          "en": "Button 1 released - after hold",
-          "fr": "Bouton 1 relâché - après maintien"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_1"
+            "filter": "driver_id=button_wireless"
           }
         ]
       },
@@ -1900,255 +1886,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=button_wireless_1"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_2_button_2gang_button_pressed",
-        "title": {
-          "en": "Button pressed",
-          "fr": "Bouton appuyé"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_2"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_2_button_2gang_button_double_press",
-        "title": {
-          "en": "Button double-pressed",
-          "fr": "Bouton double-cliqué"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_2"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_2_button_2gang_button_long_press",
-        "title": {
-          "en": "Button long-pressed",
-          "fr": "Bouton pressé longtemps"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_2"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_2_button_2gang_button_multi_press",
-        "title": {
-          "en": "Button multi-pressed",
-          "fr": "Bouton multi-cliqué"
-        },
-        "tokens": [
-          {
-            "name": "button",
-            "type": "string",
-            "title": {
-              "en": "Button",
-              "fr": "Bouton"
-            },
-            "example": "1"
-          },
-          {
-            "name": "count",
-            "type": "number",
-            "title": {
-              "en": "Press count",
-              "fr": "Nombre de pressions"
-            },
-            "example": 3
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_2"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_2_button_2gang_button_1_pressed",
-        "title": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuyé"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_2"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_2_button_2gang_button_1_double",
-        "title": {
-          "en": "Button 1 double-pressed",
-          "fr": "Bouton 1 double-cliqué"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_2"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_2_button_2gang_button_1_long",
-        "title": {
-          "en": "Button 1 long-pressed",
-          "fr": "Bouton 1 pressé longtemps"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_2"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_2_button_2gang_button_2_pressed",
-        "title": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuyé"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_2"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_2_button_2gang_button_2_double",
-        "title": {
-          "en": "Button 2 double-pressed",
-          "fr": "Bouton 2 double-cliqué"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_2"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_2_button_2gang_button_2_long",
-        "title": {
-          "en": "Button 2 long-pressed",
-          "fr": "Bouton 2 pressé longtemps"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_2"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_2_button_2gang_button_1_triple",
-        "title": {
-          "en": "Button 1 triple-pressed",
-          "fr": "Bouton 1 triple-cliqué"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_2"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_2_button_2gang_button_2_triple",
-        "title": {
-          "en": "Button 2 triple-pressed",
-          "fr": "Bouton 2 triple-cliqué"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_2"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_2_button_2gang_button_1_release",
-        "title": {
-          "en": "Button 1 released - after hold",
-          "fr": "Bouton 1 relâché - après maintien"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_2"
-          }
-        ]
-      },
-      {
-        "id": "button_wireless_2_button_2gang_button_2_release",
-        "title": {
-          "en": "Button 2 released - after hold",
-          "fr": "Bouton 2 relâché - après maintien"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=button_wireless_2"
           }
         ]
       },
@@ -17591,132 +17328,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=smart_heater_controller"
-          }
-        ]
-      },
-      {
-        "id": "smart_knob_button_pressed",
-        "title": {
-          "en": "Knob button pressed",
-          "fr": "Bouton du variateur appuyé"
-        },
-        "tokens": [
-          {
-            "name": "press_type",
-            "type": "string",
-            "title": {
-              "en": "Press type",
-              "fr": "Type d'appui"
-            },
-            "example": "single"
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=smart_knob"
-          }
-        ]
-      },
-      {
-        "id": "smart_knob_single_press",
-        "title": {
-          "en": "Knob single press",
-          "fr": "Appui simple"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=smart_knob"
-          }
-        ]
-      },
-      {
-        "id": "smart_knob_double_press",
-        "title": {
-          "en": "Knob double press",
-          "fr": "Double appui"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=smart_knob"
-          }
-        ]
-      },
-      {
-        "id": "smart_knob_long_press",
-        "title": {
-          "en": "Knob long press",
-          "fr": "Appui long"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=smart_knob"
-          }
-        ]
-      },
-      {
-        "id": "smart_knob_rotated",
-        "title": {
-          "en": "Knob rotated",
-          "fr": "Variateur tourné"
-        },
-        "tokens": [
-          {
-            "name": "direction",
-            "type": "string",
-            "title": {
-              "en": "Direction",
-              "fr": "Direction"
-            },
-            "example": "up"
-          },
-          {
-            "name": "level",
-            "type": "number",
-            "title": {
-              "en": "Level (%)",
-              "fr": "Niveau (%)"
-            },
-            "example": 50
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=smart_knob"
-          }
-        ]
-      },
-      {
-        "id": "smart_knob_level_changed",
-        "title": {
-          "en": "Brightness level changed",
-          "fr": "Niveau de luminosité changé"
-        },
-        "tokens": [
-          {
-            "name": "level",
-            "type": "number",
-            "title": {
-              "en": "Level (%)",
-              "fr": "Niveau (%)"
-            },
-            "example": 75
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=smart_knob"
           }
         ]
       },
@@ -48153,7 +47764,8 @@
           "_TZE200_4mh6tyyo",
           "_TZE200_4MH6TYYO",
           "_tyst11_d0yu2xgi",
-          "_TYST11_D0YU2XGI"
+          "_TYST11_D0YU2XGI",
+          "_TYST11_d0yu2xgi"
         ],
         "productId": [
           "TS0601_air_purifier",
@@ -48989,7 +48601,9 @@
           "_TZ3210_WUHEYHVM",
           "_tz3210_yluvwhjc",
           "_TZ3210_yluvwhjc",
-          "_TZ3210_YLUVWHJC"
+          "_TZ3210_YLUVWHJC",
+          "_TYZB01_qezuin6k",
+          "_TYZB01_v8gtiaed"
         ],
         "productId": [
           "TS0501A",
@@ -49729,7 +49343,8 @@
           "_TZ3000_12SXJAP4",
           "_tz3000_hlijwsai",
           "_TZ3000_hlijwsai",
-          "_TZ3000_HLIJWSAI"
+          "_TZ3000_HLIJWSAI",
+          "eWeLight"
         ],
         "endpoints": {
           "1": {
@@ -52197,7 +51812,8 @@
           "_TZ3000_nxdziqzc",
           "_TZ3000_NXDZIQZC",
           "_tyzb01_qm6djpta",
-          "_TYZB01_QM6DJPTA"
+          "_TYZB01_QM6DJPTA",
+          "_TYZB01_qm6djpta"
         ],
         "productId": [
           "ZBPB10BK",
@@ -53084,7 +52700,8 @@
           "_TZ3000_22ugzkme",
           "_TZ3000_22UGZKME",
           "_tyzb02_keyjqthh",
-          "_TYZB02_KEYJQTHH"
+          "_TYZB02_KEYJQTHH",
+          "_TYZB02_keyjqthh"
         ],
         "productId": [
           "TS0041",
@@ -53578,7 +53195,31 @@
           "_tyzb01_hlla45kx",
           "_TYZB01_HLLA45KX",
           "_tyzb01_iuepbmpv",
-          "_TYZB01_IUEPBMPV"
+          "_TYZB01_IUEPBMPV",
+          "_TYZB01_hlla45kx",
+          "_TYZB01_iuepbmpv",
+          "_TYZB01_phjeraqq",
+          "_TYZB01_ncutbjdi",
+          "_TYZB01_aneiicmq",
+          "_TYZB01_zsl6z0pw",
+          "_TYZB01_digziiav",
+          "_TYZB01_ymcdbl3u",
+          "_TYZB01_4tlksk8a",
+          "_TYZB02_keyjhapk",
+          "_TYZB02_key8kk7r",
+          "_TYZB01_xfpdrwvc",
+          "_TYZB01_qeqvmvti",
+          "_TYZB01_seqwasot",
+          "_TYZB01_mtlhqn48",
+          "_TYZB01_6sadkhcy",
+          "TUYATEC-O6SNCwd6",
+          "_TYZB01_vzrytttn",
+          "_TYZB01_2athzhfr",
+          "_TYZB01_6g8b7at8",
+          "TUYATEC-nzrrvgco",
+          "_TYZB01_xiuox57i",
+          "_TYZB01_b8cr31hp",
+          "_TYZB01_mqel1whf"
         ],
         "productId": [
           "TS0042",
@@ -54620,7 +54261,8 @@
           "_TZ3000_b3mgfu0d",
           "_TZ3000_B3MGFU0D",
           "_tyzb01_bagt1e4o",
-          "_TYZB01_BAGT1E4O"
+          "_TYZB01_BAGT1E4O",
+          "_TYZB01_bagt1e4o"
         ],
         "productId": [
           "TS0044",
@@ -59322,7 +58964,27 @@
           "tuyatec-haoiuwzy",
           "TUYATEC-HAOIUWZY",
           "tuyatec-qun7vq14",
-          "TUYATEC-QUN7VQ14"
+          "TUYATEC-QUN7VQ14",
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus",
+          "_TYZB01_ftdkanlj",
+          "_TYZB01_kvwjujy9",
+          "_TYZB01_a476raq2",
+          "_TYZB01_hjsgdkfl",
+          "_TYZB01_cbiezpds",
+          "TUYATEC-yg5dcbfu",
+          "TUYATEC-prhs1rsd",
+          "TUYATEC-gqhxixyk",
+          "TUYATEC-vmgh3fxd",
+          "TUYATEC-ojmxeikg",
+          "TUYATEC-ojmxeikq",
+          "TUYATEC-1g3tawnp",
+          "TUYATEC-v3uxbuxy",
+          "TUYATEC-riuj5xzs",
+          "TUYATEC-1uxx9cci",
+          "TUYATEC-HaoiuWzy",
+          "TUYATEC-qun7vq14"
         ],
         "productId": [
           "TS0201",
@@ -60556,7 +60218,22 @@
           "_tyst11_qq9mpfhw",
           "_TYST11_QQ9MPFHW",
           "_tyzb01_sqmd19i1",
-          "_TYZB01_SQMD19I1"
+          "_TYZB01_SQMD19I1",
+          "TUYATEC-sb6t7ett",
+          "TUYATEC-rkqiqvcs",
+          "TUYATEC-crr8qb0p",
+          "TUYATEC-kbqf60nt",
+          "TUYATEC-r9hgssol",
+          "TUYATEC-trhrga6p",
+          "TUYATEC-ip9ganvw",
+          "_TYZB01_xph99wvr",
+          "TUYATEC-7qunn4gq",
+          "TUYATEC-0l6xaqmi",
+          "Immax",
+          "Visonic",
+          "TUYATEC-3tipnsrx",
+          "_TYZB01_sqmd19i1",
+          "_TYST11_qq9mpfhw"
         ],
         "productId": [
           "TS0203",
@@ -75099,7 +74776,20 @@
           "_TZE284_MRF6VTUA",
           "_tze284_tre6haif",
           "_TZE284_tre6haif",
-          "_TZE284_TRE6HAIF"
+          "_TZE284_TRE6HAIF",
+          "TUYATEC-bd5faf9p",
+          "TUYATEC-zw6hxafz",
+          "_TYZB01_jytabjkb",
+          "_TYZB01_dl7cejts",
+          "_TYZB01_dr6sduka",
+          "_TYZB01_geepvxsy",
+          "TUYATEC-lha8pbwd",
+          "TUYATEC-zn9wyqtr",
+          "TUYATEC-53o41joc",
+          "TUYATEC-deetibst",
+          "TUYATEC-dgtxmihe",
+          "TUYATEC-b5g40alm",
+          "TUYATEC-dxnohkpd"
         ],
         "productId": [
           "TS0202",
@@ -91390,7 +91080,9 @@
           "_TZ3210_up3pngle",
           "_TZ3210_UP3PNGLE",
           "_tyzb01_wqcac7lo",
-          "_TYZB01_WQCAC7LO"
+          "_TYZB01_WQCAC7LO",
+          "_TYZB01_dsjszp0x",
+          "_TYZB01_wqcac7lo"
         ],
         "endpoints": {
           "1": {
@@ -102424,7 +102116,8 @@
           "_TZE204_BSEED3G",
           "_tze204_mvtclclq",
           "_TZE204_mvtclclq",
-          "_TZE204_MVTCLCLQ"
+          "_TZE204_MVTCLCLQ",
+          "_TYZB01_vkwryfdr"
         ],
         "productId": [
           "TS0115",

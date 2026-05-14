@@ -1,4 +1,7 @@
 {
+  "7.5.33": {
+    "en": "Fixed condition cards in air quality & DIN rail meter drivers. Added standardized button flow triggers (press, double press, long press, release, knob rotation). Synced upstream driver improvements and updated app assets."
+  },
   "7.5.32": {
     "en": "v7.5.32: . Harmonized driver icons, updated app store assets, and restored draft-to-test  fixes."
   },
@@ -56,10 +59,7 @@
   "7.5.14": {
     "en": "v7.5.14: . Bug fixes for wireless buttons, climate sensors, radiator valves, and energy meters. Improved device initialization and diagnostics."
   },
-  "7.5.13": {
-    "en": "v7.5.13: . Added new fingerprints for motion sensor, illuminance sensor, 3-gang switch, energy meter, and DIN rail. Fixed INSOMA dual irrigation valve and smart wireless button detection. Improved climate sensor recognition."
-  },
-  "7.5.33": {
-    "en": "v7.5.32: Restored draft-to-test ., Harmonized icons across all 228 drivers for a consistent visual experience., Updated app store assets (large, small, xlarge images) for better presentation., Added support for new soil sensor fingerprint: _TZE284_0ints6wl (TS0601)."
+  "7.5.34": {
+    "en": "Fixed condition cards in air quality & DIN rail meter drivers. Added standardized button flow triggers (press, double press, long press, release, knob rotation). Synced upstream driver improvements and updated app assets."
   }
 }
