@@ -4,7 +4,28 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.32] - 2026-05-13
+## [7.5.33] - 2026-05-14
+
+## v7.5.33
+
+### Bug Fixes
+- **Air Quality Comprehensive & DIN Rail Meter**: Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers. Flow conditions on these devices now trigger correctly.
+
+### New Features
+- **Standardized Button Flow Cards**: New flow triggers added for all button-type devices:
+  - `button_pressed` — single press detected
+  - `button_double_press` — double press detected
+  - `button_long_press` — hold detected
+  - `button_release` — button release detected
+  - `knob_rotated` — rotary knob rotation detected
+  These replace previously inconsistent button trigger definitions across drivers.
+
+### Improvements
+- Synced upstream driver improvements from Johan Benz (Enhanced), including updated device fingerprints and capability mappings.
+- Harmonized icons across all 228 drivers and updated app store listing assets.
+---
+
+ [7.5.32] - 2026-05-13
 
 ### Bug Fixes
 - Restored draft-to-test workflow fixes from stable branch for reliable testing.
