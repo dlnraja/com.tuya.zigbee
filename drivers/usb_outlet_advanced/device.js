@@ -46,6 +46,8 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  */
 class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
+  get mainsPowered() { return true; }
+
   get plugCapabilities() {
     return ['onoff', 'onoff.socket2', 'onoff.usb1', 'onoff.usb2', 'onoff.led'];
   }
@@ -103,56 +105,50 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'activePower',
-          minInterval: 10,
-          maxInterval: 300,
-          minChange: 5,
-        },
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'rmsVoltage',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 1,
-        },
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'rmsCurrent',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 10,
-        }
+      {
+      cluster: 'haElectricalMeasurement',
+      attributeName: 'activePower',
+      minInterval: 10,
+      maxInterval: 300,
+      minChange: 5,
+      },
+      {
+      cluster: 'haElectricalMeasurement',
+      attributeName: 'rmsVoltage',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 1,
+      },
+      {
+      cluster: 'haElectricalMeasurement',
+      attributeName: 'rmsCurrent',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 10,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-
-    // Register capability listeners for control
-    await this._registerCapabilityListeners();
-
-    // v5.5.19: Register flow trigger for button press
-    this._registerButtonFlowTrigger();
-
-    // v5.5.35: Request initial state of all switches/USBs
-    this._requestInitialStates();
-
-    // v5.5.54: Setup ZCL listeners for endpoints 2 and 3 (non-Tuya devices)
-    await this._setupMultiEndpointZCL(zclNode);
-
-    // Initialize physical and virtual buttons
-    await this.initPhysicalButtonDetection(zclNode);
-    await this.initVirtualButtons();
-
-    this.log('[USB-ADV] ✅ Ready - Full power monitoring enabled (v5.13.1 + Bidirectional Buttons)');
+      }
+      // Register capability listeners for control
+      await this._registerCapabilityListeners();
+      // v5.5.19: Register flow trigger for button press
+      this._registerButtonFlowTrigger();
+      // v5.5.35: Request initial state of all switches/USBs
+      this._requestInitialStates();
+      // v5.5.54: Setup ZCL listeners for endpoints 2 and 3 (non-Tuya devices)
+      await this._setupMultiEndpointZCL(zclNode);
+      // Initialize physical and virtual buttons
+      await this.initPhysicalButtonDetection(zclNode);
+      await this.initVirtualButtons();
+      this.log('[USB-ADV] ✅ Ready - Full power monitoring enabled (v5.13.1 + Bidirectional Buttons)');
+    }, 'onNodeInit');
   }
 
   /**
@@ -250,15 +246,21 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
   async _registerCapabilityListeners() {
     // LED control
     if (this.hasCapability('onoff.led')) {
-      this.registerCapabilityListener('onoff.led', async (value) => {
+      this.registerCapabilityListener('onoff.led', async (value) => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
+await this._safeInvoke(async () => {
+
         this.log('[USB-ADV] LED →', value);
         await this._sendDP(13, value);
-      });
+      
+}, 'onoff.ledListener');
+});
     }
 
     // Socket 2 control - v5.5.54: Try both Tuya DP AND ZCL
     if (this.hasCapability('onoff.socket2')) {
-      this.registerCapabilityListener('onoff.socket2', async (value) => {
+      this.registerCapabilityListener('onoff.socket2', async (value) => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
+await this._safeInvoke(async () => {
+
         this.log('[USB-ADV] Socket 2 →', value);
         await this._sendDP(2, value);
         // v5.5.54: Also try ZCL endpoint 2 for non-Tuya devices
@@ -268,12 +270,16 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
             this.log('[USB-ADV] Socket 2 ZCL command sent');
           } catch (e) { /* Tuya DP probably worked */ }
         }
-      });
+      
+}, 'onoff.socket2Listener');
+});
     }
 
     // USB 1 control - v5.5.54: Try both Tuya DP AND ZCL
     if (this.hasCapability('onoff.usb1')) {
-      this.registerCapabilityListener('onoff.usb1', async (value) => {
+      this.registerCapabilityListener('onoff.usb1', async (value) => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
+await this._safeInvoke(async () => {
+
         this.log('[USB-ADV] USB 1 →', value);
         // v5.5.35: Try common USB1 DPs
         await this._sendDP(9, value);   // Primary
@@ -286,18 +292,24 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
             this.log('[USB-ADV] USB 1 ZCL command sent');
           } catch (e) { /* Tuya DP probably worked */ }
         }
-      });
+      
+}, 'onoff.usb1Listener');
+});
     }
 
     // USB 2 control - try multiple DPs
     if (this.hasCapability('onoff.usb2')) {
-      this.registerCapabilityListener('onoff.usb2', async (value) => {
+      this.registerCapabilityListener('onoff.usb2', async (value) => { if (typeof this.markAppCommand === 'function') this.markAppCommand(2, value);
+await this._safeInvoke(async () => {
+
         this.log('[USB-ADV] USB 2 →', value);
         // v5.5.35: Try common USB2 DPs
         await this._sendDP(10, value);  // Primary
         await this._sendDP(4, value);   // Alt
         await this._sendDP(12, value);  // Alt
-      });
+      
+}, 'onoff.usb2Listener');
+});
     }
   }
 

@@ -26,6 +26,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 ---
 
  [7.5.32] - 2026-05-13
+## [5.13.6] - 2026-05-14
+
+### Hardening & Stabilization (Zero-Defect Mandate)
+- **Fleet-Wide Telemetry Hardening**: Successfully migrated the entire driver fleet to the `TuyaZigbeeDevice` base class.
+- **L14 Compliance**: Enforced L14 sanity filtering (EMA/ROC) and anti-flood throttling across all sensors and switches.
+- **Structural Integrity**: Resolved pervasive JavaScript syntax corruption, including bracket mismatches and fragmented IIFE closures in legacy drivers.
+- **Flow Registry Repair**: Fixed "Invalid Flow Card" registration errors by standardizing trigger IDs and removing redundant suffixes in `driver.flow.compose.json` files.
+- **Unified Reporting**: All capability updates now route through the hardened `setCapabilityValue` tunnel for guaranteed runtime stability.
+
+### Documentation & Governance
+- **New Architecture Guide**: Created `docs/architecture/ARCHITECTURE_TELEMETRY_V5.md` documenting the hardened pipeline.
+- **AI Instructions**: Updated `AI_INSTRUCTIONS.md` and `MEGA_PROMPT` with "Zero-Defect" implementation mandates.
+
+---
+
+## [7.5.32] - 2026-05-13
 
 ### Bug Fixes
 - Restored draft-to-test workflow fixes from stable branch for reliable testing.

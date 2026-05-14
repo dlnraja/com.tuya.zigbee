@@ -1,53 +1,77 @@
 'use strict';
-const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
-const DP = { state: 1, pm25: 2, mode: 3, speed: 4, filter: 5, childLock: 7, brightness: 8 };
 
-class AirPurifierDevice extends TuyaSpecificClusterDevice {
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+
+const DP = {
+  state: 1,
+  pm25: 2,
+  mode: 3,
+  speed: 4,
+  filter: 5,
+  childLock: 7,
+  brightness: 8,
+};
+
+/**
+ * AirPurifierDevice - v5.13.6 Hardened Architecture
+ */
+class AirPurifierDevice extends TuyaZigbeeDevice {
+
   async onNodeInit({ zclNode }) {
+    this.log('[AirPurifier] 🚀 Initializing hardened driver...');
     await super.onNodeInit({ zclNode });
 
-    this.log('Air Purifier init...');
-    this._lastOnoff = null;
-    this._lastPm25 = null;
-    this.registerCapabilityListener('onoff', async (v) => {
-      await this.sendTuyaCommand(DP.state, v, 'bool');
+    // 1. Capability Listeners
+    this.registerCapabilityListener('onoff', async (value) => {
+      this.log(`[AirPurifier] Setting state to: ${value}`);
+      return this.sendTuyaCommand(DP.state, value, 'bool');
     });
-    this.registerCapabilityListener('dim', async (v) => {
-      await this.sendTuyaCommand(DP.speed, Math.round(v * 100), 'value');
+
+    this.registerCapabilityListener('dim', async (value) => {
+      const speed = Math.round(value * 100);
+      this.log(`[AirPurifier] Setting speed to: ${speed}`);
+      return this.sendTuyaCommand(DP.speed, speed, 'value');
     });
-    this.log('Air Purifier ready');
+
+    this.log('[AirPurifier] ✅ Ready');
   }
 
-  handleTuyaDataReport(data) {
+  /**
+   * handleTuyaDataReport - Hardened DP Processing
+   */
+  async handleTuyaDataReport(data) {
     if (!data || data.dp == null) return;
-    const v = data.data ?? data.value;
-    if (data.dp === DP.state) {
-      const s = Boolean(v);
-      if (this._lastOnoff !== s) {
-        this._lastOnoff = s;
-        await this.setCapabilityValue('onoff', s).catch(() => {});
-        const id = s ? 'air_purifier_turned_on' : 'air_purifier_turned_off';
-        (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch(e) { return null; } })()?
+    
+    const value = data.data ?? data.value;
+    const dpId = data.dp;
+
+    switch (dpId) {
+      case DP.state: {
+        const state = Boolean(value);
+        this.log(`[AirPurifier] 📥 State: ${state}`);
+        await this.setCapabilityValue('onoff', state);
+        break;
       }
-    } else if (data.dp === DP.pm25) {
-      const pm = typeof v === 'number' ? v : parseInt(v);
-      if (this._lastPm25 !== pm) {
-        this._lastPm25 = pm;
-        await this.setCapabilityValue('measure_pm25', pm).catch(() => {});
-        (() => { try { return this.homey.flow.getDeviceTriggerCard('air_purifier_pm25_changed'); } catch(e) { return null; } })()?.trigger(this, { pm25: pm }, {}).catch(() => {});
+
+      case DP.pm25: {
+        const pm25 = typeof value === 'number' ? value : parseInt(value);
+        this.log(`[AirPurifier] 📥 PM2.5: ${pm25}`);
+        await this.setCapabilityValue('measure_pm25', pm25);
+        break;
       }
-    } else if (data.dp === DP.speed) {
-      const spd = typeof v === 'number' ? v : parseInt(v);
-      await this.setCapabilityValue('dim', spd / 100).catch(() => {});
+
+      case DP.speed: {
+        const speed = typeof value === 'number' ? value : parseInt(value);
+        this.log(`[AirPurifier] 📥 Speed: ${speed}`);
+        await this.setCapabilityValue('dim', Math.min(1, Math.max(0, speed / 100)));
+        break;
+      }
+
+      default:
+        this.log(`[AirPurifier] 📥 Unhandled DP ${dpId}:`, value);
     }
   }
 
-  onDeleted() {
-  this.removeAllListeners();
-this._batteryHandler?.destroy();
-  super.onDeleted?.();
-}
 }
 
 module.exports = AirPurifierDevice;
-

@@ -1,4 +1,7 @@
 'use strict';
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+
 
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 const TuyaLocalClient = require('../../lib/tuya-local/TuyaLocalClient');
@@ -7,7 +10,7 @@ const TuyaLocalClient = require('../../lib/tuya-local/TuyaLocalClient');
  * RADIATOR WiFi TUYA - v6.1
  * Local WiFi control for Tuya/Besterm radiators via queue-safe TuyaLocalDevice base class.
  */
-class RadiatorWifiTuyaDevice extends TuyaLocalDevice {
+class RadiatorWifiTuyaDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaLocalDevice)) {
 
   // Dynamic bidirectional DP-to-capability mappings
   get capabilityMap() {

@@ -1,7 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const PhysicalButtonMixin = require('../../lib/tuya/PhysicalButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 /**
@@ -10,13 +10,16 @@ const BatteryMixin = require('../../lib/tuya/BatteryMixin');
  * Migrated to PhysicalButtonMixin for 8-layer detection stack.
  * Standardized battery management via BatteryMixin.
  */
-class SmartButtonSwitchDevice extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
+class SmartButtonSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryMixin(ZigBeeDevice))) {
+
+  get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    this.buttonCount = 1;
-    await super.onNodeInit({ zclNode });
-    
-    this.log('[SmartButtonSwitch] ✅ Initialized with Mixin architecture');
+    await this._safeInvoke(async () => {
+      this.buttonCount = 1;
+      await super.onNodeInit({ zclNode });
+      this.log('[SmartButtonSwitch] ✅ Initialized with Mixin architecture');
+    }, 'onNodeInit');
   }
 
 }

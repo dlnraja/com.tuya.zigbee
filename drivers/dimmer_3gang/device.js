@@ -1,4 +1,7 @@
 'use strict';
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
@@ -15,7 +18,9 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
  * ║  - DP15: Switch 3 (bool)     - DP16: Dimmer 3 (0-1000)                       ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class Dimmer3GangDevice extends ZigBeeDevice {
+class Dimmer3GangDevice extends VirtualButtonMixin(PhysicalButtonMixin(ZigBeeDevice)) {
+
+  get mainsPowered() { return true; }
 
   // v5.5.829: Physical button detection (inspired by Attilla/packetninja PR #112)
   _appCommandPending = false;
@@ -37,21 +42,18 @@ class Dimmer3GangDevice extends ZigBeeDevice {
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║         3-GANG DIMMER v5.5.829 (Tuya DP)                     ║');
-    this.log('╚══════════════════════════════════════════════════════════════╝');
-
-    this.zclNode = zclNode;
-
-    // Setup Tuya cluster listener
-    await this._setupTuyaCluster(zclNode);
-
-    // Register capability listeners
-    await this._registerCapabilityListeners();
-
-    this.log('[DIMMER-3G] ✅ 3-Gang Dimmer Ready');
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      this.log('╔══════════════════════════════════════════════════════════════╗');
+      this.log('║         3-GANG DIMMER v5.5.829 (Tuya DP)                     ║');
+      this.log('╚══════════════════════════════════════════════════════════════╝');
+      this.zclNode = zclNode;
+      // Setup Tuya cluster listener
+      await this._setupTuyaCluster(zclNode);
+      // Register capability listeners
+      await this._registerCapabilityListeners();
+      this.log('[DIMMER-3G] ✅ 3-Gang Dimmer Ready');
+    }, 'onNodeInit');
   }
 
   async _setupTuyaCluster(zclNode) {
@@ -154,46 +156,70 @@ class Dimmer3GangDevice extends ZigBeeDevice {
     // Gang 1
     if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (value) => {
+await this._safeInvoke(async () => {
+
         this._markAppCommand(); // v5.5.829
         await this._sendTuyaDP(1, value ? 1 : 0, 'bool');
-      });
+      
+}, 'onoffListener');
+});
     }
 
     if (this.hasCapability('dim')) {
       this.registerCapabilityListener('dim', async (value) => {
+await this._safeInvoke(async () => {
+
         this._markAppCommand(); // v5.5.829
         await this._sendTuyaDP(2, Math.round(value * 1000), 'value');
-      });
+      
+}, 'dimListener');
+});
     }
 
     // Gang 2
     if (this.hasCapability('onoff.channel2')) {
       this.registerCapabilityListener('onoff.channel2', async (value) => {
+await this._safeInvoke(async () => {
+
         this._markAppCommand(); // v5.5.829
         await this._sendTuyaDP(7, value ? 1 : 0, 'bool');
-      });
+      
+}, 'onoff.channel2Listener');
+});
     }
 
     if (this.hasCapability('dim.channel2')) {
       this.registerCapabilityListener('dim.channel2', async (value) => {
+await this._safeInvoke(async () => {
+
         this._markAppCommand(); // v5.5.829
         await this._sendTuyaDP(8, Math.round(value * 1000), 'value');
-      });
+      
+}, 'dim.channel2Listener');
+});
     }
 
     // Gang 3
     if (this.hasCapability('onoff.channel3')) {
       this.registerCapabilityListener('onoff.channel3', async (value) => {
+await this._safeInvoke(async () => {
+
         this._markAppCommand(); // v5.5.829
         await this._sendTuyaDP(15, value ? 1 : 0, 'bool');
-      });
+      
+}, 'onoff.channel3Listener');
+});
     }
 
     if (this.hasCapability('dim.channel3')) {
       this.registerCapabilityListener('dim.channel3', async (value) => {
+await this._safeInvoke(async () => {
+
         this._markAppCommand(); // v5.5.829
         await this._sendTuyaDP(16, Math.round(value * 1000), 'value');
-      });
+      
+}, 'dim.channel3Listener');
+});
     }
   }
 

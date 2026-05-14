@@ -1,4 +1,7 @@
 'use strict';
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+
 
 const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 const {CLUSTER} = require('zigbee-clusters');
@@ -33,66 +36,66 @@ const POWER_ON_BEHAVIOR = {
   LAST_STATE: 2
 };
 
-class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
+class WallDimmer1Gang1Way extends VirtualButtonMixin(PhysicalButtonMixin(TuyaSpecificClusterDevice)) {
+
+  get mainsPowered() { return true; }
 
   async onNodeInit({zclNode}) {
-    await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      this.log('════════════════════════════════════════');
+      this.log('WallDimmer1Gang1Way onNodeInit STARTING');
+      this.log('════════════════════════════════════════');
+      this.printNode();
+      
+      // v5.5.755: PR #112 (packetninja) - Track state for detecting physical button presses
+      this._lastOnoffState = null;
+      this._lastBrightnessValue = null;
+      
+      // v5.5.799: Track settings to avoid unnecessary writes
+      this._settingsApplied = false;
 
+      // Register Tuya datapoint mappings
+      this.log('Registering Tuya datapoint mappings...');
+      this.registerTuyaDatapoint(dataPoints.state, 'onoff', {
+        type: 'bool',
+      });
+      this.registerTuyaDatapoint(dataPoints.brightness, 'dim', {
+        type: 'value',
+        scale: 990,
+        offset: -0.0101,
+      });
 
-    this.log('════════════════════════════════════════');
-    this.log('WallDimmer1Gang1Way onNodeInit STARTING');
-    this.log('════════════════════════════════════════');
-    
-    this.printNode();
+      // Register capability listeners
+      this.log('Registering capability listeners...');
+      this.registerCapabilityListener('onoff', async (value) => {
+        await this._safeInvoke(async () => {
+          this.log('onoff capability changed to:', value, '(APP)');
+          if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
+          await this.sendTuyaCommand(dataPoints.state, value, 'bool');
+        }, 'onoffListener');
+      });
 
-    // v5.5.755: PR #112 (packetninja) - Track state for detecting physical button presses
-    this._lastOnoffState = null;
-    this._lastBrightnessValue = null;
-    this._appCommandPending = false;  // Track if app sent command recently
-    this._appCommandTimeout = null;
-    
-    // v5.5.799: Track settings to avoid unnecessary writes
-    this._settingsApplied = false;
+      this.registerCapabilityListener('dim', async (value) => {
+        await this._safeInvoke(async () => {
+          this.log('Dim capability changed to:', value, '(APP)');
+          if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
+          const brightness = Math.round(10 + (value * 990));
+          this.log('Converted to Tuya brightness:', brightness);
+          await this.sendTuyaCommand(dataPoints.brightness, brightness, 'value');
+        }, 'dimListener');
+      });
 
-    // Register Tuya datapoint mappings
-    this.log('Registering Tuya datapoint mappings...');
-    
-    this.registerTuyaDatapoint(dataPoints.state, 'onoff', {
-      type: 'bool',
-    });
-    
-    this.registerTuyaDatapoint(dataPoints.brightness, 'dim', {
-      type: 'value',
-      scale: 990,
-      offset: -0.0101,
-    });
+      // v5.6.0: Initialize bidirectional button support
+      await this.initPhysicalButtonDetection(zclNode);
 
-    // Register capability listeners
-    this.log('Registering capability listeners...');
-    
-    this.registerCapabilityListener('onoff', async (value) => {
-      this.log('onoff capability changed to:', value, '(APP)');
-      this._markAppCommand();  // v5.5.755: PR #112 - Mark as app command
-      await this.sendTuyaCommand(dataPoints.state, value, 'bool');
-    });
-    
-    this.registerCapabilityListener('dim', async (value) => {
-      this.log('Dim capability changed to:', value, '(APP)');
-      this._markAppCommand();  // v5.5.755: PR #112 - Mark as app command
-      const brightness = Math.round(10 + (value * 990));
-      this.log('Converted to Tuya brightness:', brightness);
-      await this.sendTuyaCommand(dataPoints.brightness, brightness, 'value');
-    });
+      // v5.5.799: Apply saved settings after init (with delay for device stability)
+      setTimeout(() => this._applyInitialSettings(), 3000);
 
-    // v5.5.854: Parent class TuyaSpecificClusterDevice sets up Tuya listeners
-    // We override handleTuyaResponse() and handleTuyaDataReport() for physical button detection
-    
-    // v5.5.799: Apply saved settings after init (with delay for device stability)
-    setTimeout(() => this._applyInitialSettings(), 3000);
-
-    this.log('════════════════════════════════════════');
-    this.log('SwitchDimmer1Gang onNodeInit COMPLETE');
-    this.log('════════════════════════════════════════');
+      this.log('════════════════════════════════════════');
+      this.log('SwitchDimmer1Gang onNodeInit COMPLETE');
+      this.log('════════════════════════════════════════');
+    }, 'onNodeInit');
   }
   
   /**
@@ -227,7 +230,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
    * Physical button presses come as 'response' events when no app command is pending
    */
   handleTuyaResponse(data) {
-    const isPhysical = !this._appCommandPending;
+    const isPhysical = typeof this.isAppCommandPending === 'function' ? !this.isAppCommandPending(1) : true;
     this.log(`>>> Tuya response (dp: ${data?.dp}) - ${isPhysical ? 'PHYSICAL' : 'APP'}`);
     this.handleTuyaDataReport(data, isPhysical);
   }
@@ -256,7 +259,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     }
 
     // v5.5.854: Physical = reporting event AND no pending app command
-    const isPhysicalPress = isReportingEvent && !this._appCommandPending;
+    const isPhysicalPress = isReportingEvent && (typeof this.isAppCommandPending === 'function' ? !this.isAppCommandPending(1) : true);
 
     // Handle state (onoff)
     if (data.dp === dataPoints.state) {
@@ -274,7 +277,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         this.log(`State changed: ${this._lastOnoffState} → ${state} (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
         
         this._lastOnoffState = state;
-        await this.setCapabilityValue('onoff', state).catch(this.error);
+        this.setCapabilityValue('onoff', state).catch(this.error);
         
         // Trigger flow cards ONLY if this is a physical button press
         if (isPhysicalPress) {
@@ -308,7 +311,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         const brightnessDecreased = this._lastBrightnessValue !== null && brightnessRaw < this._lastBrightnessValue;
         
         this._lastBrightnessValue = brightnessRaw;
-        await this.setCapabilityValue('dim', brightness).catch(this.error);
+        this.setCapabilityValue('dim', brightness).catch(this.error);
         
         // Trigger flow cards ONLY if this is a physical button press
         if (isPhysicalPress) {
@@ -397,21 +400,6 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     }
   }
 
-  /**
-   * v5.5.755: PR #112 (packetninja) - Mark that an app command was sent
-   * Used to distinguish physical button presses from app commands
-   */
-  _markAppCommand() {
-    this._appCommandPending = true;
-    if (this._appCommandTimeout) {
-      clearTimeout(this._appCommandTimeout);
-    }
-    // Clear after 2 seconds - device should respond within this time
-    this._appCommandTimeout = setTimeout(() => {
-      this._appCommandPending = false;
-    }, 2000);
-  }
-
   onDeleted() {
     this.log('Switch Touch Dimmer (1 Gang) removed');
   }
@@ -419,7 +407,3 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 }
 
 module.exports = WallDimmer1Gang1Way;
-
-
-
-

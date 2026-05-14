@@ -28,35 +28,33 @@ const CLUSTER_TUYA_E002 = 57346;  // 0xE002 - Temperature/Humidity
 const CLUSTER_TEMP = 1026;        // 0x0402 - ZCL Temperature
 const CLUSTER_HUMIDITY = 1029;    // 0x0405 - ZCL Humidity
 
-class SwitchTempSensorDevice extends ZigBeeDevice {
+class SwitchTempSensorDevice extends BatteryMixin(VirtualButtonMixin(PhysicalButtonMixin(ZigBeeDevice))) {
+
+  get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    this.log('═══════════════════════════════════════════════════════════');
-    this.log('Switch with Temperature Sensor v5.5.402 (Rolp forum fix)');
-    this.log('═══════════════════════════════════════════════════════════');
-    this.log('ManufacturerName:', this.getSetting('zb_manufacturer_name'));
-    this.log('ModelId:', this.getSetting('zb_model_id'));
-
-    // Store zclNode reference
-    this.zclNode = zclNode;
-
-    // Log available clusters for debugging
-    this._logAvailableClusters(zclNode);
-
-    // Register OnOff capability
-    if (this.hasCapability('onoff')) {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      this.log('═══════════════════════════════════════════════════════════');
+      this.log('Switch with Temperature Sensor v5.5.402 (Rolp forum fix)');
+      this.log('═══════════════════════════════════════════════════════════');
+      this.log('ManufacturerName:', this.getSetting('zb_manufacturer_name'));
+      this.log('ModelId:', this.getSetting('zb_model_id'));
+      // Store zclNode reference
+      this.zclNode = zclNode;
+      // Log available clusters for debugging
+      this._logAvailableClusters(zclNode);
+      // Register OnOff capability
+      if (this.hasCapability('onoff')) {
       this.registerCapability('onoff', CLUSTER.ON_OFF, {
-        endpoint: 1,
+      endpoint: 1,
       });
       this.log('✅ OnOff capability registered');
-    }
-
-    // Try ALL methods to get temperature/humidity data
-    await this._setupTemperatureListeners(zclNode);
-
-    this.log('✅ Initialization complete');
+      }
+      // Try ALL methods to get temperature/humidity data
+      await this._setupTemperatureListeners(zclNode);
+      this.log('✅ Initialization complete');
+    }, 'onNodeInit');
   }
 
   /**

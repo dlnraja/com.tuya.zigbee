@@ -1,7 +1,9 @@
 'use strict';
+const BatteryMixin = require('../../lib/tuya/BatteryMixin');
+
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
-class WiFiAirQualityDevice extends TuyaLocalDevice {
+class WiFiAirQualityDevice extends BatteryMixin(TuyaLocalDevice) {
   get dpMappings() {
     return {
       '2':  { capability: 'measure_co2' },

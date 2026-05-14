@@ -1,75 +1,26 @@
-'use strict';
-
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER } = require('zigbee-clusters');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
 /**
  * Pool/Spa Pump Controller Device
- *
- * High-power relay for pool equipment control
+ * v9.7.3: Unified high-power relay control with energy monitoring
  */
-class PoolPumpDevice extends ZigBeeDevice {
+class PoolPumpDevice extends UnifiedPlugBase {
+
+  get dpMappings() {
+    return {
+      1: { capability: 'onoff', transform: (v) => !!v },
+      16: { capability: 'onoff', transform: (v) => !!v },
+      18: { capability: 'measure_power', divisor: 1 },
+      101: { capability: 'meter_power', divisor: 100 }
+    };
+  }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    this.log('Pool Pump Controller initializing...');
-
-    if (this.hasCapability('onoff')) {
-      this.registerCapability('onoff', CLUSTER.ON_OFF);
-    }
-
-    await this._setupElectricalMeasurement(zclNode);
-    await this._setupTuyaDP(zclNode);
-
-    this.log('Pool Pump Controller initialized');
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      this.log('Pool Pump Controller ✅ v9.7.3 Ready');
+    }, 'onNodeInit');
   }
-
-  async _setupElectricalMeasurement(zclNode) {
-    const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
-
-    const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
-    if (emCluster && this.hasCapability('measure_power')) {
-      emCluster.on('attr.activePower', (value) => {
-        await this.setCapabilityValue('measure_power', value / 10).catch(this.error);
-      });
-    }
-  }
-
-  async _setupTuyaDP(zclNode) {
-    const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
-
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
-    if (!tuyaCluster) return;
-
-    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value));
-    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value));
-  }
-
-  _handleDP(dp, value) {
-    if (dp === undefined) return;
-    this.log(`[DP${dp}] = ${value}`);
-
-    switch (dp) {
-    case 1:
-    case 16:
-      await this.setCapabilityValue('onoff', !!value).catch(this.error);
-      break;
-    case 18:
-      if (this.hasCapability('measure_power')) {
-        await this.setCapabilityValue('measure_power', value).catch(this.error);
-      }
-      break;
-    case 101:
-      if (this.hasCapability('meter_power')) {
-        await this.setCapabilityValue('meter_power', value / 100).catch(this.error);
-      }
-      break;
-    }
-  }
-
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');

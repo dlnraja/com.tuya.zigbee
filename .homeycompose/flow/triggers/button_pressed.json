@@ -6,12 +6,6 @@
     "nl": "Knop ingedrukt",
     "de": "Taste gedrückt"
   },
-  "titleFormatted": {
-    "en": "[[device]] button [[button]] was [[type]]",
-    "fr": "Bouton [[button]] de [[device]] : [[type]]",
-    "nl": "[[device]] knop [[button]] was [[type]]",
-    "de": "[[device]] Taste [[button]] war [[type]]"
-  },
   "tokens": [
     {
       "name": "button",

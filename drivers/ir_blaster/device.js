@@ -85,84 +85,72 @@ class IrBlasterDevice extends ZigBeeDevice {
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    // v5.13.3: IR blasters are USB-powered
-    this.log('IR Blaster initializing...');
-
-    // v5.5.356: Initialize enhanced IR storage system
-    this._learnedCodes = this.getStoreValue('learned_codes') || {};
-    this._codeCategories = this.getStoreValue('code_categories') || {};
-    this._codeMetadata = this.getStoreValue('code_metadata') || {};
-    this._codeNames = Object.keys(this._learnedCodes);
-    this._learningState = LEARNING_STATES.IDLE;
-    this._protocolAnalysis = {};
-    this._deviceCapabilities = null;
-
-    // Store zclNode reference
-    this._zclNode = zclNode;
-
-    // Get device info
-    await irBlasterInit.init(this);
-
-    // v5.5.356: Setup enhanced IR clusters first
-    await this._setupAdvancedIRClusters(zclNode);
-
-    // v5.8.2: onoff capability listener is now handled in _setupEnhancedCapabilities
-    // so it can send Power IR codes rather than triggering Learn Mode.
-    // Learn mode is strictly tied to 'button.learn_ir'.
-    this.log('[IR-INIT] onoff capability delegated to Universal Remote features');
-
-    // Setup OnOff cluster for learn mode attribute reports (if available)
-    if (zclNode.endpoints[1]?.clusters?.onOff) {
+      }
+      // v5.13.3: IR blasters are USB-powered
+      this.log('IR Blaster initializing...');
+      // v5.5.356: Initialize enhanced IR storage system
+      this._learnedCodes = this.getStoreValue('learned_codes') || {};
+      this._codeCategories = this.getStoreValue('code_categories') || {};
+      this._codeMetadata = this.getStoreValue('code_metadata') || {};
+      this._codeNames = Object.keys(this._learnedCodes);
+      this._learningState = LEARNING_STATES.IDLE;
+      this._protocolAnalysis = {};
+      this._deviceCapabilities = null;
+      // Store zclNode reference
+      this._zclNode = zclNode;
+      // Get device info
+      await irBlasterInit.init(this);
+      // v5.5.356: Setup enhanced IR clusters first
+      await this._setupAdvancedIRClusters(zclNode);
+      // v5.8.2: onoff capability listener is now handled in _setupEnhancedCapabilities
+      // so it can send Power IR codes rather than triggering Learn Mode.
+      // Learn mode is strictly tied to 'button.learn_ir'.
+      this.log('[IR-INIT] onoff capability delegated to Universal Remote features');
+      // Setup OnOff cluster for learn mode attribute reports (if available)
+      if (zclNode.endpoints[1]?.clusters?.onOff) {
       this.log('Setting up OnOff cluster for learn mode...');
-
       zclNode.endpoints[1].clusters.onOff.on('attr.onOff', (value) => {
-        // v5.11.16: FIX (FrankP #1443) - Guard against device sending onOff=false
-        // immediately after IRLearn command, which kills learn mode prematurely
-        if (!value && this._learnModeActive) {
-          const elapsed = Date.now() - (this._learnModeStartTime || 0);
-          if (elapsed < 5000) {
-            this.log(`[IR] ⚠️ Ignoring onOff=false during learn mode (${elapsed}ms after start)`);
-            return;
-          }
-        }
-        this.log(`Learn mode attr: ${value ? 'ON' : 'OFF'}`);
-        this._learningState = value ? LEARNING_STATES.LEARNING : LEARNING_STATES.IDLE;
-        await this.setCapabilityValue('onoff', value).catch(this.error);
-        this._triggerLearningStateChanged(this._learningState);
+      // v5.11.16: FIX (FrankP #1443) - Guard against device sending onOff=false
+      // immediately after IRLearn command, which kills learn mode prematurely
+      if (!value && this._learnModeActive) {
+      const elapsed = Date.now() - (this._learnModeStartTime || 0);
+      if (elapsed < 5000) {
+      this.log(`[IR] ⚠️ Ignoring onOff=false during learn mode (${elapsed}ms after start)`);
+      return;
+      }
+      }
+      this.log(`Learn mode attr: ${value ? 'ON' : 'OFF'}`);
+      this._learningState = value ? LEARNING_STATES.LEARNING : LEARNING_STATES.IDLE;
+      await this.setCapabilityValue('onoff', value).catch(this.error);
+      this._triggerLearningStateChanged(this._learningState);
       });
-    }
-
-    // v5.5.356: Setup enhanced capability listeners
-    await this._setupEnhancedCapabilities();
-
-    // Setup flow card actions
-    this.registerFlowCardActions();
-
-    // v5.5.356: Initialize protocol detection
-    await this._initializeProtocolDetection();
-
-    // v5.5.356: Setup advanced cluster listeners
-    await this._setupAdvancedClusterListeners(zclNode);
-
-    this.log('IR Blaster initialized successfully with enhanced features');
+      }
+      // v5.5.356: Setup enhanced capability listeners
+      await this._setupEnhancedCapabilities();
+      // Setup flow card actions
+      this.registerFlowCardActions();
+      // v5.5.356: Initialize protocol detection
+      await this._initializeProtocolDetection();
+      // v5.5.356: Setup advanced cluster listeners
+      await this._setupAdvancedClusterListeners(zclNode);
+      this.log('IR Blaster initialized successfully with enhanced features');
+    }, 'onNodeInit');
   }
 
   /**
@@ -263,22 +251,34 @@ class IrBlasterDevice extends ZigBeeDevice {
     // Setup learn IR button with advanced options
     if (this.hasCapability('button.learn_ir')) {
       this.registerCapabilityListener('button.learn_ir', async () => {
+await this._safeInvoke(async () => {
+
         await this._enableAdvancedLearnMode();
-      });
+      
+}, 'button.learn_irListener');
+});
     }
 
     // Setup protocol selection capability if available
     if (this.hasCapability('ir_protocol')) {
       this.registerCapabilityListener('ir_protocol', async (protocol) => {
+await this._safeInvoke(async () => {
+
         await this._setIRProtocol(protocol);
-      });
+      
+}, 'ir_protocolListener');
+});
     }
 
     // Setup frequency capability
     if (this.hasCapability('ir_frequency')) {
       this.registerCapabilityListener('ir_frequency', async (frequency) => {
+await this._safeInvoke(async () => {
+
         await this._setCarrierFrequency(frequency);
-      });
+      
+}, 'ir_frequencyListener');
+});
     }
 
     // --- Universal Remote Capabilities ---
@@ -318,6 +318,9 @@ class IrBlasterDevice extends ZigBeeDevice {
     // Power button mapping (override default onoff listener which does learn mode)
     if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
+await this._safeInvoke(async () => {
+
         // Only send power command, do NOT trigger learn mode from onoff anymore.
         // Users should use "button.learn_ir" for learning.
         this.log(`[REMOTE] Power button toggled: ${value}`);
@@ -343,7 +346,9 @@ class IrBlasterDevice extends ZigBeeDevice {
           this.error('[REMOTE] Power send failed:', e.message);
           throw e;
         }
-      });
+      
+}, 'onoffListener');
+});
     }
 
     // --- Flow Card Action Handlers ---

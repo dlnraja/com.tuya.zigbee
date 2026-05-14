@@ -1,7 +1,12 @@
 'use strict';
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
-class WiFiLightDevice extends TuyaLocalDevice {
+class WiFiLightDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaLocalDevice)) {
+
+  get mainsPowered() { return true; }
   get dpMappings() {
     return {
       '20': { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
@@ -26,7 +31,8 @@ class WiFiLightDevice extends TuyaLocalDevice {
     // HSV color: Tuya format = "HHHHSSSSVVVV" (hex, H=0-360, S=0-1000, V=0-1000)
     for (const cap of ['light_hue', 'light_saturation']) {
       if (this.hasCapability(cap)) {
-        this.registerCapabilityListener(cap, async () => {
+        this.registerCapabilityListener(cap, async (value) => {
+          if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
           await this._sendColor();
         });
       }
@@ -52,8 +58,8 @@ class WiFiLightDevice extends TuyaLocalDevice {
         const s = parseInt(hex.substring(4, 8), 16);
         const v = parseInt(hex.substring(8, 12), 16);
         if (h >= 0 && h <= 360 && s >= 0 && s <= 1000 && v >= 0 && v <= 1000) {
-          await this.setCapabilityValue('light_hue', h / 360).catch(this.error);
-          await this.setCapabilityValue('light_saturation', s / 1000).catch(this.error);
+          this.setCapabilityValue('light_hue', h / 360).catch(this.error);
+          this.setCapabilityValue('light_saturation', s / 1000).catch(this.error);
           this.log('[WIFI-LIGHT] DP24 color H=' + h + ' S=' + s + ' V=' + v);
         }
       } catch (e) { /* ignore malformed */ }
@@ -65,7 +71,6 @@ class WiFiLightDevice extends TuyaLocalDevice {
     await super.onInit();
     this.log('[WIFI-LIGHT] Ready (RGBCW with HSV color)');
   }
-
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');

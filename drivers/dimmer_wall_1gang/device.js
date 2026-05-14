@@ -1,4 +1,6 @@
 'use strict';
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+
 constLightBase = require('../../lib/devices/UnifiedLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
@@ -11,7 +13,9 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
  * ║  DPs: 1-5,7,9,14,101,102 | ZCL: 6,8,EF00                                   ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
+class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedLightBase)) {
+
+  get mainsPowered() { return true; }
 
   // v5.8.97: Physical button detection state (PR #112 packetninja pattern)
   _appCommandPending = false;
@@ -37,27 +41,29 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'activePower',
-          minInterval: 10,
-          maxInterval: 300,
-          minChange: 5,
-        }
+      {
+      cluster: 'haElectricalMeasurement',
+      attributeName: 'activePower',
+      minInterval: 10,
+      maxInterval: 300,
+      minChange: 5,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    // Parent handles ALL: onoff/dim listeners, ZCL setup
-    await super.onNodeInit({ zclNode });
-    // v5.5.412: Initialize virtual buttons
-    await this.initVirtualButtons();
-    this.log('[DIMMER-1G] v5.8.97 ✅ Ready + physical detection');
+      }
+      // Parent handles ALL: onoff/dim listeners, ZCL setup
+      await super.onNodeInit({ zclNode });
+      // v5.5.412: Initialize virtual buttons
+      await this.initVirtualButtons();
+      this.log('[DIMMER-1G] v5.8.97 ✅ Ready + physical detection');
+    }, 'onNodeInit');
   }
 
   _markAppCommand() {

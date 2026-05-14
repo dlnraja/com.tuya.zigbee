@@ -7,7 +7,7 @@ class D extends EweLinkLocalDevice{
     speed:{capability:'dim',transform:v=>v/3}
   };}
   _registerCapListeners(){
-    this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v,0);});
+    this.registerCapabilityListener('onoff',async v=>{ if (typeof this.markAppCommand === 'function') this.markAppCommand(1, v);await this._client.setSwitch(v,0);});
     if(this.hasCapability('onoff.2'))this.registerCapabilityListener('onoff.2',async v=>{await this._client.setSwitch(v,1);});
     if(this.hasCapability('dim'))this.registerCapabilityListener('dim',async v=>{const spd=Math.max(1,Math.min(3,Math.round(v*3)));await this._client._send('/zeroconf/fan',{fan:'on',speed:spd});});
   }

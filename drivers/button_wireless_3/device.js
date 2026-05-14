@@ -1,18 +1,23 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const PhysicalButtonMixin = require('../../lib/tuya/PhysicalButtonMixin');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
- * Button 3 Gang - Universal Driver (v9.5.0)
+ * Button 3 Gang - Universal Hardened Driver (v10.0.0)
  */
-class Button3GangDevice extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
+class Button3GangDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 
-  async onNodeInit({ zclNode }) {
+  async onNodeInit() {
+    await super.onNodeInit();
+    
     this.buttonCount = 3;
-    await super.onNodeInit({ zclNode });
-    this.log('[BUTTON3] 🔘 Initialized via Universal Mixin System');
+    this.gangCount = 3; // Needed for PhysicalButtonMixin
+    
+    // Initialize physical button detection v5.13.6
+    await this.initPhysicalButtonDetection(this.zclNode);
+    
+    this.log('[BUTTON3] 🔘 Hardened via TuyaZigbeeDevice + PhysicalButtonMixin');
   }
 
 }

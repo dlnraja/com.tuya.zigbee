@@ -4,27 +4,31 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 class SwitchPlug2Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
+
+  get mainsPowered() { return true; }
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'activePower',
-          minInterval: 10,
-          maxInterval: 300,
-          minChange: 5,
-        }
+      {
+      cluster: 'haElectricalMeasurement',
+      attributeName: 'activePower',
+      minInterval: 10,
+      maxInterval: 300,
+      minChange: 5,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    await super.onNodeInit({ zclNode });
-    await this.initPhysicalButtonDetection(zclNode);
-    await this.initVirtualButtons();
-    this.log('[SWITCH-PLUG-2] ✅ Ready (v5.13.1 + Bidirectional Buttons)');
+      }
+      await super.onNodeInit({ zclNode });
+      await this.initPhysicalButtonDetection(zclNode);
+      await this.initVirtualButtons();
+      this.log('[SWITCH-PLUG-2] ✅ Ready (v5.13.1 + Bidirectional Buttons)');
+    }, 'onNodeInit');
   }
 
 

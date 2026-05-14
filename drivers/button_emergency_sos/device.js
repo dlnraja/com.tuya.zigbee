@@ -50,71 +50,58 @@ try {
 class SosEmergencyButtonDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    this.log('');
-    this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║     SOS EMERGENCY BUTTON v5.5.146 - UNIVERSAL                ║');
-    this.log('║   Supports: IAS ACE + IAS Zone + Tuya DP + genOnOff          ║');
-    this.log('╚══════════════════════════════════════════════════════════════╝');
-
-    this.zclNode = zclNode;
-
-    // v5.5.120: Debug - show ALL available endpoints and clusters
-    this._debugShowAllClusters();
-
-    // v5.5.804: Check for missing clusters and warn user
-    await this._checkClustersAndWarn();
-
-    // v5.5.120: Setup GLOBAL listener for ALL traffic
-    this._setupGlobalListeners();
-
-    // Ensure capabilities
-    await this._ensureCapabilities();
-
-    // v5.5.121: Setup IAS ACE cluster - THIS IS THE MAIN FIX!
-    // The TS0215A sends commandEmergency on ssIasAce (cluster 1281), NOT iasZone!
-    await this._setupIasAce();
-
-    // Initialize alarm_generic to false
-    if (this.hasCapability('alarm_generic')) {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      this.log('');
+      this.log('╔══════════════════════════════════════════════════════════════╗');
+      this.log('║     SOS EMERGENCY BUTTON v5.5.146 - UNIVERSAL                ║');
+      this.log('║   Supports: IAS ACE + IAS Zone + Tuya DP + genOnOff          ║');
+      this.log('╚══════════════════════════════════════════════════════════════╝');
+      this.zclNode = zclNode;
+      // v5.5.120: Debug - show ALL available endpoints and clusters
+      this._debugShowAllClusters();
+      // v5.5.804: Check for missing clusters and warn user
+      await this._checkClustersAndWarn();
+      // v5.5.120: Setup GLOBAL listener for ALL traffic
+      this._setupGlobalListeners();
+      // Ensure capabilities
+      await this._ensureCapabilities();
+      // v5.5.121: Setup IAS ACE cluster - THIS IS THE MAIN FIX!
+      // The TS0215A sends commandEmergency on ssIasAce (cluster 1281), NOT iasZone!
+      await this._setupIasAce();
+      // Initialize alarm_generic to false
+      if (this.hasCapability('alarm_generic')) {
       await this.setCapabilityValue('alarm_generic', false).catch(() => { });
-    }
-
-    // v5.5.64: Register capability with CLUSTER.IAS_ZONE for automatic flow triggers
-    try {
+      }
+      // v5.5.64: Register capability with CLUSTER.IAS_ZONE for automatic flow triggers
+      try {
       this.registerCapability('alarm_generic', 'iasZone', {
-        report: 'zoneStatus',
-        reportParser: (zoneStatus) => {
-          this.log('[SOS] 🆘 registerCapability zoneStatus:', zoneStatus);
-          const alarm = (zoneStatus & 0x01) !== 0 || (zoneStatus & 0x02) !== 0;
-          if (alarm) {
-            this._handleAlarm({ zoneStatus });
-          }
-          return alarm;
-        }
+      report: 'zoneStatus',
+      reportParser: (zoneStatus) => {
+      this.log('[SOS] 🆘 registerCapability zoneStatus:', zoneStatus);
+      const alarm = (zoneStatus & 0x01) !== 0 || (zoneStatus & 0x02) !== 0;
+      if (alarm) {
+      this._handleAlarm({ zoneStatus });
+      }
+      return alarm;
+      }
       });
       this.log('[SOS] ✅ Registered alarm_generic with iasZone cluster');
-    } catch (e) {
+      } catch (e) {
       this.log('[SOS] registerCapability skipped:', e.message);
-    }
-
-    // Setup IAS Zone for button press (additional listeners)
-    await this._setupIasZone();
-
-    // v5.5.112: Setup alternative clusters (some SOS use genOnOff or scenes)
-    await this._setupAlternativeClusters();
-
-    // v5.5.122: Setup Tuya DP for TS0601 SOS buttons
-    await this._setupTuyaDP();
-
-    // Setup battery via ZCL powerConfiguration (passive only)
-    await this._setupBattery();
-
-    // v5.5.121: Setup heartbeat monitoring - detect "dead" device
-    this._setupHeartbeatMonitor();
-
-    this.log('[SOS] ✅ Device ready - Press button to test');
+      }
+      // Setup IAS Zone for button press (additional listeners)
+      await this._setupIasZone();
+      // v5.5.112: Setup alternative clusters (some SOS use genOnOff or scenes)
+      await this._setupAlternativeClusters();
+      // v5.5.122: Setup Tuya DP for TS0601 SOS buttons
+      await this._setupTuyaDP();
+      // Setup battery via ZCL powerConfiguration (passive only)
+      await this._setupBattery();
+      // v5.5.121: Setup heartbeat monitoring - detect "dead" device
+      this._setupHeartbeatMonitor();
+      this.log('[SOS] ✅ Device ready - Press button to test');
+    }, 'onNodeInit');
   }
 
   /**

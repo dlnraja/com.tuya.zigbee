@@ -92,100 +92,89 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    // --- Homey Time Sync for TRV/LCD/Thermostat devices ---
-    // Syncs the device clock with the Homey box time every 6 hours.
-    // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Homey Time Sync for TRV/LCD/Thermostat devices ---
+      // Syncs the device clock with the Homey box time every 6 hours.
+      // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
+      try {
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
       this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000 });
-      
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
-        try {
-          const result = await this._timeSync.sync({ force: true });
-          if (result.success) {
-            this.log('[TimeSync] Initial time sync successful');
-          } else if (result.reason === 'no_rtc') {
-            // Try Tuya EF00 DP 0x24 fallback for non-ZCL devices
-            await this._tuyaTimeSyncFallback();
-          }
-        } catch (e) {
-          this.log('[TimeSync] Initial sync failed (non-critical):', e.message);
-        }
+      try {
+      const result = await this._timeSync.sync({ force: true });
+      if (result.success) {
+      this.log('[TimeSync] Initial time sync successful');
+      } else if (result.reason === 'no_rtc') {
+      // Try Tuya EF00 DP 0x24 fallback for non-ZCL devices
+      await this._tuyaTimeSyncFallback();
+      }
+      } catch (e) {
+      this.log('[TimeSync] Initial sync failed (non-critical):', e.message);
+      }
       }, 10000);
-      
       // Periodic sync every 6 hours
       this._timeSyncInterval = this.homey.setInterval(async () => {
-        try {
-          const result = await this._timeSync.sync();
-          if (!result.success && result.reason === 'no_rtc') {
-            await this._tuyaTimeSyncFallback();
-          }
-        } catch (e) {
-          this.log('[TimeSync] Periodic sync failed:', e.message);
-        }
+      try {
+      const result = await this._timeSync.sync();
+      if (!result.success && result.reason === 'no_rtc') {
+      await this._tuyaTimeSyncFallback();
+      }
+      } catch (e) {
+      this.log('[TimeSync] Periodic sync failed:', e.message);
+      }
       }, 6 * 60 * 60 * 1000);
-    } catch (e) {
+      } catch (e) {
       this.log('[TimeSync] Time sync init failed (non-critical):', e.message);
-    }
-
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+      }
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
+      {
+      cluster: 'msTemperatureMeasurement',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 50,
+      },
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    // v5.6.0: Track state for physical button detection
-    this._lastModeState = null;
-    this._appCommandPending = false;
-    this._appCommandTimeout = null;
-    const profile = this.dpProfile;
-    this.log(`[TRV] v5.6.0 - Profile: ${profile} | ${profile === 'me167' ? 'ME167 DPs: 2-5,7,35,36,39,47' : 'Standard DPs: 1-10,13-15,101-109'}`);
-
-    // Store manufacturerName for profile detection
-    try {
+      }
+      // v5.6.0: Track state for physical button detection
+      this._lastModeState = null;
+      const profile = this.dpProfile;
+      this.log(`[TRV] v5.6.0 - Profile: ${profile} | ${profile === 'me167' ? 'ME167 DPs: 2-5,7,35,36,39,47' : 'Standard DPs: 1-10,13-15,101-109'}`);
+      // Store manufacturerName for profile detection
+      try {
       const mfr = this.getStoreValue('manufacturerName') || zclNode?.endpoints?.[1]?.clusters?.basic?.attributes?.manufacturerName?.value;
       if (mfr) {
-        this.setStoreValue('manufacturerName', mfr).catch(() => {});
-        // v5.6.0: Also set in settings for recognition
-        this.setSettings({ zb_manufacturer_name: mfr }).catch(() => {});
+      this.setStoreValue('manufacturerName', mfr).catch(() => {});
+      // v5.6.0: Also set in settings for recognition
+      this.setSettings({ zb_manufacturer_name: mfr }).catch(() => {});
       }
-    } catch (e) { /* ignore */ }
-
-    // Setup ZCL thermostat (parent doesn't do this)
-    await this._setupThermostatCluster(zclNode);
-
-    // Register onoff/mode listeners (parent only handles target_temperature)
-    this._setupTRVListeners();
-
-    // v5.11.105: SONOFF TRVZB ZCL features (child_lock, open_window, frost_protection, valve)
-    await this._setupSonoffTRVZB(zclNode);
-
-    // v5.6.0: Initialize bidirectional button support
-    await this.initPhysicalButtonDetection(zclNode);
-    await this.initVirtualButtons();
-    this._setupTRVVirtualActions();
-
-    this.log(`[TRV] v5.11.105 ✅ Ready (${profile} profile) with bidirectional buttons`);
+      } catch (e) { /* ignore */ }
+      // Setup ZCL thermostat (parent doesn't do this)
+      await this._setupThermostatCluster(zclNode);
+      // Register onoff/mode listeners (parent only handles target_temperature)
+      this._setupTRVListeners();
+      // v5.11.105: SONOFF TRVZB ZCL features (child_lock, open_window, frost_protection, valve)
+      await this._setupSonoffTRVZB(zclNode);
+      // v5.6.0: Initialize bidirectional button support
+      await this.initPhysicalButtonDetection(zclNode);
+      await this.initVirtualButtons();
+      this._setupTRVVirtualActions();
+      this.log(`[TRV] v5.11.105 ✅ Ready (${profile} profile) with bidirectional buttons`);
+    }, 'onNodeInit');
   }
 
   /**
@@ -195,32 +184,34 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // Virtual boost toggle
     if (this.hasCapability('button_boost')) {
       this.registerCapabilityListener('button_boost', async () => {
-        this._markAppCommand();
+await this._safeInvoke(async () => {
+
+        if (typeof this.markAppCommand === 'function') this.markAppCommand(1, true);
         const dp = this.dpProfile === 'me167' ? 103 : 103;
         await this._sendTuyaDP(dp, true, 'bool');
         this.log('[TRV] Boost mode activated via virtual button');
-      });
+      
+}, 'button_boostListener');
+});
     }
 
     // Virtual child lock toggle
     if (this.hasCapability('button_child_lock')) {
       this.registerCapabilityListener('button_child_lock', async () => {
-        this._markAppCommand();
+await this._safeInvoke(async () => {
+
+        if (typeof this.markAppCommand === 'function') this.markAppCommand(1, true);
         const currentLock = this.getStoreValue('child_lock') || false;
         await this._sendTuyaDP(7, !currentLock, 'bool');
-        this.setStoreValue('child_lock', !currentLock).catch(() => {});
+        this.setStoreValue('child_lock', !currentLock).catch(() => {
+}, 'button_child_lockListener');
+});
         this.log(`[TRV] Child lock ${!currentLock ? 'enabled' : 'disabled'} via virtual button`);
       });
     }
   }
 
-  _markAppCommand() {
-    this._appCommandPending = true;
-    clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = setTimeout(() => {
-      this._appCommandPending = false;
-    }, 2000);
-  }
+
 
   async _setupThermostatCluster(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
@@ -229,9 +220,9 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     try {
       const thermo = ep1.clusters?.hvacThermostat;
       if (thermo?.on) {
-        thermo.on('attr.localTemperature', (v) => await this.setCapabilityValue('measure_temperature', parseFloat(v) / 100).catch(() => { }));
-        thermo.on('attr.occupiedHeatingSetpoint', (v) => await this.setCapabilityValue('target_temperature', v / 100).catch(() => { }));
-        thermo.on('attr.pIHeatingDemand', (v) => {
+        thermo.on('attr.localTemperature', async (v) => await this.setCapabilityValue('measure_temperature', parseFloat(v) / 100).catch(() => { }));
+        thermo.on('attr.occupiedHeatingSetpoint', async (v) => await this.setCapabilityValue('target_temperature', v / 100).catch(() => { }));
+        thermo.on('attr.pIHeatingDemand', async (v) => {
           if (this.hasCapability('dim')) await this.setCapabilityValue('dim', v / 100).catch(() => { });
         });
         this.log('[TRV] ✅ ZCL Thermostat configured');
@@ -245,13 +236,19 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     // On/Off - NOT handled by parent (standard profile only)
     if (this.hasCapability('onoff') && profile === 'standard') {
       this.registerCapabilityListener('onoff', async (v) => {
+await this._safeInvoke(async () => {
+
         await this._sendTuyaDP(1, v, 'bool');
-      });
+      
+}, 'onoffListener');
+});
     }
 
     // Mode - different mapping per profile
     if (this.hasCapability('thermostat_mode')) {
       this.registerCapabilityListener('thermostat_mode', async (v) => {
+await this._safeInvoke(async () => {
+
         if (profile === 'me167') {
           // ME167: 0=auto, 1=heat, 2=off
           await this._sendTuyaDP(2, { 'auto': 0, 'heat': 1, 'off': 2 }[v] ?? 1, 'enum');
@@ -259,15 +256,21 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
           // Standard: 0=heat, 1=auto, 2=off
           await this._sendTuyaDP(2, { 'heat': 0, 'auto': 1, 'off': 2 }[v] ?? 0, 'enum');
         }
-      });
+      
+}, 'thermostat_modeListener');
+});
     }
 
     // Target temperature - different DP per profile
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
+await this._safeInvoke(async () => {
+
         const dp = profile === 'me167' ? 4 : 3;
         await this._sendTuyaDP(dp, Math.round(v * 10), 'value');
-      });
+      
+}, 'target_temperatureListener');
+});
     }
   }
 

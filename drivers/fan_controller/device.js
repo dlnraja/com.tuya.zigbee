@@ -15,29 +15,24 @@ const { CLUSTER } = require('zigbee-clusters');
 class FanControllerDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    this.log('Fan Controller initializing...');
-
-    // Store zclNode for later use
-    this._zclNode = zclNode;
-
-    // Try standard ZCL clusters first
-    if (this.hasCapability('onoff')) {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      this.log('Fan Controller initializing...');
+      // Store zclNode for later use
+      this._zclNode = zclNode;
+      // Try standard ZCL clusters first
+      if (this.hasCapability('onoff')) {
       this.registerCapability('onoff', CLUSTER.ON_OFF);
-    }
-
-    if (this.hasCapability('dim')) {
+      }
+      if (this.hasCapability('dim')) {
       this.registerCapability('dim', CLUSTER.LEVEL_CONTROL);
-    }
-
-    // Setup Tuya DP for TS0601 devices
-    await this._setupTuyaDP(zclNode);
-
-    // Register flow cards
-    await this._registerFlowCards();
-
-    this.log('Fan Controller initialized');
+      }
+      // Setup Tuya DP for TS0601 devices
+      await this._setupTuyaDP(zclNode);
+      // Register flow cards
+      await this._registerFlowCards();
+      this.log('Fan Controller initialized');
+    }, 'onNodeInit');
   }
 
   async _registerFlowCards() {
@@ -130,19 +125,28 @@ class FanControllerDevice extends ZigBeeDevice {
 
     // Register capability listener for dim via Tuya DP
     this.registerCapabilityListener('dim', async (value) => {
+await this._safeInvoke(async () => {
+
       const speed = Math.round(value * 4); // 0-4 speed levels
       this.log(`Setting fan speed to: ${speed}`);
       try {
-        await tuyaCluster.datapoint({ dp: 3, datatype: 2, value: speed });
+        await tuyaCluster.datapoint({ dp: 3, datatype: 2, value: speed 
+}, 'dimListener');
+});
       } catch (e) {
         this.error('Failed to set speed:', e);
       }
     });
 
     this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
+await this._safeInvoke(async () => {
+
       this.log(`Setting fan on/off: ${value}`);
       try {
-        await tuyaCluster.datapoint({ dp: 1, datatype: 1, value: value });
+        await tuyaCluster.datapoint({ dp: 1, datatype: 1, value: value 
+}, 'onoffListener');
+});
       } catch (e) {
         this.error('Failed to set on/off:', e);
       }

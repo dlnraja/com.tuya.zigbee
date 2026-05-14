@@ -1,61 +1,40 @@
 'use strict';
+
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const BatteryMixin = require('../../lib/tuya/BatteryMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      VALVE SINGLE - v5.6.0 + Bidirectional Buttons                          ║
+ * ║      VALVE SINGLE - v9.7.3 UNIVERSAL                                         ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Smart valve with bidirectional physical/virtual button support             ║
+ * ║  Standardized via Unified Architecture:                                       ║
+ * ║  - PhysicalButtonMixin (tuya/v9.7.3) for physical button sync & dedup        ║
+ * ║  - BatteryMixin (tuya/v9.6.0) for battery monitoring (genPowerCfg)           ║
+ * ║  - VirtualButtonMixin (mixins/v1.2) for flow-based button triggers           ║
+ * ║  - UnifiedPlugBase for core relay logic and Tuya DP/ZCL hybrid support       ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ValveSingleDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
+class ValveSingleDevice extends PhysicalButtonMixin(BatteryMixin(VirtualButtonMixin(UnifiedPlugBase))) {
+  
   get plugCapabilities() { return ['onoff']; }
+  
   get gangCount() { return 1; }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    // v5.6.0: Track state for physical button detection
-    this._lastOnoffState = null;
-    this._appCommandPending = false;
-    this._appCommandTimeout = null;
-
-    await super.onNodeInit({ zclNode });
-
-    // v5.6.0: Initialize bidirectional button support
-    await this.initPhysicalButtonDetection(zclNode);
-    await this.initVirtualButtons();
-
-    this.log('[VALVE] v5.6.0 ✅ Ready with bidirectional buttons');
+    await this._safeInvoke(async () => {
+      // v9.7.3: Initialization is orchestrated by the mixin hierarchy.
+      // Handles battery reporting, physical button detection, and virtual buttons.
+      await super.onNodeInit({ zclNode });
+      await this.initVirtualButtons();
+      this.log('[VALVE] ✅ Universal initialization complete (v9.7.3)');
+    }, 'onNodeInit');
   }
-
-  _markAppCommand() {
-    this._appCommandPending = true;
-    clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = setTimeout(() => {
-      this._appCommandPending = false;
-    }, 2000);
-  }
-
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }
+
 module.exports = ValveSingleDevice;

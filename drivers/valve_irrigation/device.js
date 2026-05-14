@@ -1,23 +1,30 @@
 'use strict';
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+
+
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
+const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      IRRIGATION VALVE - v5.5.129 FIXED (extends PlugBase properly)    ║
+ * ║      IRRIGATION VALVE - v9.7.3 UNIFIED (extends UnifiedPlugBase properly)     ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║ PlugBase handles: onoff listener, Tuya DP, ZCL On/Off                ║
- * ║  This class: dpMappings + startWatering action                              ║
- * ║  DPs: 1,5-7,11,13-15,101-104 | ZCL: 6,1,EF00                               ║
+ * ║ UnifiedPlugBase handles: onoff listener, Tuya DP, ZCL On/Off                ║
+ * ║  BatteryMixin handles: battery reporting and measurement                    ║
+ * ║  DPs: 1,2,5-7,11,13-15,101-104 | ZCL: 6,1,EF00                              ║
  * ║  Models: TS0601, _TZE200_*, Smart irrigation controller                     ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
 const INSOMA_MFRS = ['_tze284_fhvpaltk'];
 const IMMAX_MFRS = ['_tze200_xlppj4f5'];
 
-class ValveIrrigationDevice extends PlugBase {
+class ValveIrrigationDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryMixin(UnifiedPlugBase))) {
 
-  get plugCapabilities() { return ['onoff', 'measure_battery']; }
+  get plugCapabilities() { 
+    return ['onoff', 'measure_battery', 'meter_water']; 
+  }
 
   /**
    * v5.11.210: Detect Insoma 2-way irrigation valve for dual-valve DP mapping
@@ -60,34 +67,18 @@ class ValveIrrigationDevice extends PlugBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    // Parent handles onoff listener - DO NOT re-register
-    await super.onNodeInit({ zclNode });
-    this.log('[VALVE-IRR] v5.5.129 - DPs: 1,5-7,11,13-15,101-104 | ZCL: 6,1,EF00');
-
-    // Add meter_water capability if not present
-    if (!this.hasCapability('meter_water')) {
-      try { await this.addCapability('meter_water'); } catch (e) { /* ignore */ }
-    }
-
-    this.log('[VALVE-IRR] ✅ Ready');
+    await this._safeInvoke(async () => {
+      // v9.7.3: Unified initialization handles reporting and protocol setup
+      await super.onNodeInit({ zclNode });
+      this.log('[VALVE-IRR] v9.7.3 - DPs: 1,5-7,11,13-15,101-104 | ZCL: 6,1,EF00');
+      this.log('[VALVE-IRR] ✅ Ready');
+    }, 'onNodeInit');
   }
 
+  /**
+   * Custom action for flow cards
+   * @param {number} minutes 
+   */
   async startWatering(minutes) {
     this.log(`[VALVE-IRR] 💧 Starting watering for ${minutes} minutes`);
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
@@ -97,14 +88,15 @@ class ValveIrrigationDevice extends PlugBase {
     }
   }
 
-
   async onDeleted() {
-    // Clean up timers to prevent memory leaks
+    // Clean up timers to prevent memory leaks (inherited from UnifiedPlugBase if needed, but keeping for safety)
     if (this._interval) { clearInterval(this._interval); this._interval = null; }
     if (this._timer) { clearTimeout(this._timer); this._timer = null; }
     if (this._pollInterval) { clearInterval(this._pollInterval); this._pollInterval = null; }
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }
 
 module.exports = ValveIrrigationDevice;
+

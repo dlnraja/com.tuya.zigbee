@@ -34,37 +34,33 @@ const VALUE_RANGES = {
 class UniversalFallbackDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    this.log('[UNIVERSAL] ═══════════════════════════════════════════════════');
-    this.log('[UNIVERSAL] 🔧 Universal Fallback Device v5.8.6 (Z2M Enhanced)');
-    
-    const mfr = this.getSetting('zb_manufacturer_name') || 'Unknown';
-    const model = this.getSetting('zb_model_id') || 'Unknown';
-    this.log('[UNIVERSAL] Device: ' + mfr + ' / ' + model);
-
-    this._detectedCaps = [];
-    this._dpLog = {};
-    this.zclNode = zclNode;
-    this._manufacturerName = mfr;
-    this._modelId = model;
-
-    // v5.8.6: Z2M Integration - Load config from DeviceFingerprintDB
-    this._z2mConfig = DeviceFingerprintDB.getFingerprint(mfr);
-    this._z2mDpMap = DeviceFingerprintDB.getDPMapping(mfr);
-    if (this._z2mConfig) {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      this.log('[UNIVERSAL] ═══════════════════════════════════════════════════');
+      this.log('[UNIVERSAL] 🔧 Universal Fallback Device v5.8.6 (Z2M Enhanced)');
+      const mfr = this.getSetting('zb_manufacturer_name') || 'Unknown';
+      const model = this.getSetting('zb_model_id') || 'Unknown';
+      this.log('[UNIVERSAL] Device: ' + mfr + ' / ' + model);
+      this._detectedCaps = [];
+      this._dpLog = {};
+      this.zclNode = zclNode;
+      this._manufacturerName = mfr;
+      this._modelId = model;
+      // v5.8.6: Z2M Integration - Load config from DeviceFingerprintDB
+      this._z2mConfig = DeviceFingerprintDB.getFingerprint(mfr);
+      this._z2mDpMap = DeviceFingerprintDB.getDPMapping(mfr);
+      if (this._z2mConfig) {
       this.log('[UNIVERSAL] 📚 Z2M Config found: ' + (this._z2mConfig.type || 'unknown'));
       this.log('[UNIVERSAL] 📚 DP mappings: ' + Object.keys(this._z2mDpMap).length);
-    }
-
-    await this._detectCapabilities(zclNode);
-    await this._registerSDK3Capabilities(zclNode);  // v5.5.631: SDK3 pattern
-    await this._setupTuyaDP(zclNode);
-    await this._setupZCLListeners(zclNode);
-    await this._setupTimeSync(zclNode);
-    
-    this.log('[UNIVERSAL] ✅ Ready - Caps: ' + this._detectedCaps.join(', '));
-    this.log('[UNIVERSAL] ═══════════════════════════════════════════════════');
+      }
+      await this._detectCapabilities(zclNode);
+      await this._registerSDK3Capabilities(zclNode);  // v5.5.631: SDK3 pattern
+      await this._setupTuyaDP(zclNode);
+      await this._setupZCLListeners(zclNode);
+      await this._setupTimeSync(zclNode);
+      this.log('[UNIVERSAL] ✅ Ready - Caps: ' + this._detectedCaps.join(', '));
+      this.log('[UNIVERSAL] ═══════════════════════════════════════════════════');
+    }, 'onNodeInit');
   }
 
   async _detectCapabilities(zclNode) {

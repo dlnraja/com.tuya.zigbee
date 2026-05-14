@@ -6,12 +6,6 @@
     "nl": "Draaiknop gedraaid",
     "de": "Drehknopf gedreht"
   },
-  "titleFormatted": {
-    "en": "[[device]] rotated [[direction]] to [[level]]%",
-    "fr": "[[device]] tournée vers le [[direction]] ([[level]]%)",
-    "nl": "[[device]] [[direction]] gedraaid naar [[level]]%",
-    "de": "[[device]] [[direction]] gedreht auf [[level]]%"
-  },
   "tokens": [
     {
       "name": "direction",
@@ -30,6 +24,15 @@
         "fr": "Niveau"
       },
       "example": 75
+    },
+    {
+      "name": "steps",
+      "type": "number",
+      "title": {
+        "en": "Steps",
+        "fr": "Pas"
+      },
+      "example": 1
     }
   ],
   "args": [

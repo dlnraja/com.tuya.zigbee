@@ -40,7 +40,7 @@ const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SoilSensorDevice extends TuyaUnifiedDevice {
+class SoilSensorDevice extends BatteryMixin(TuyaUnifiedDevice) {
 
   /** Battery powered */
   get mainsPowered() { return false; }
@@ -239,47 +239,43 @@ class SoilSensorDevice extends TuyaUnifiedDevice {
   }
 
   async onNodeInit({ zclNode }) {
-    // v5.12.3: Wrap super in try/catch for battery device timeout
-    try {
+    await this._safeInvoke(async () => {
+      // v5.12.3: Wrap super in try/catch for battery device timeout
+      try {
       await super.onNodeInit({ zclNode });
-    } catch (err) {
+      } catch (err) {
       this.log('[SOIL] Base init error:', err.message);
-    }
-
-    this.log('[SOIL] ════════════════════════════════════════════════════════════');
-    this.log(`[SOIL] Soil Sensor ${getAppVersionPrefixed()} INTELLIGENT INFERENCE`);
-    this.log('[SOIL] ════════════════════════════════════════════════════════════');
-    this.log('[SOIL] ⚠️ BATTERY DEVICE - Data comes when device wakes up');
-    this.log('[SOIL] ℹ️ First data may take 10-60 minutes after pairing');
-    this.log('[SOIL] 📋 DP Mappings: DP3=soil_moisture, DP5=temp, DP14=battery_state, DP15=battery%, DP101=air_humidity, DP102=lux');
-    this.log('[SOIL] 🔧 forceActiveTuyaMode:', this.forceActiveTuyaMode);
-    this.log('[SOIL] 🔧ModeEnabled:', this.hybridModeEnabled);
-
-    // v5.5.334: Load settings for calibration and thresholds (Hobeian PR#6)
-    this._temperatureCalibration = this.getSetting('temperature_calibration') || 0;
-    this._humidityCalibration = this.getSetting('humidity_calibration') || 0;
-    this._moistureCalibration = this.getSetting('moisture_calibration') || 0;
-    this._soilWarningThreshold = this.getSetting('soil_warning_threshold') || 30;
-    this._temperatureUnit = this.getSetting('temperature_unit') || 'celsius';
-
-    this.log(`[SOIL] 🔧 Calibration: temp=${this._temperatureCalibration}, hum=${this._humidityCalibration}, moist=${this._moistureCalibration}`);
-    this.log(`[SOIL] 🔧 Warning threshold: ${this._soilWarningThreshold}%, Unit: ${this._temperatureUnit}`);
-
-    // v5.5.317: Initialize intelligent inference engines
-    this._soilInference = new SoilMoistureInference(this, {
+      }
+      this.log('[SOIL] ════════════════════════════════════════════════════════════');
+      this.log(`[SOIL] Soil Sensor ${getAppVersionPrefixed()} INTELLIGENT INFERENCE`);
+      this.log('[SOIL] ════════════════════════════════════════════════════════════');
+      this.log('[SOIL] ⚠️ BATTERY DEVICE - Data comes when device wakes up');
+      this.log('[SOIL] ℹ️ First data may take 10-60 minutes after pairing');
+      this.log('[SOIL] 📋 DP Mappings: DP3=soil_moisture, DP5=temp, DP14=battery_state, DP15=battery%, DP101=air_humidity, DP102=lux');
+      this.log('[SOIL] 🔧 forceActiveTuyaMode:', this.forceActiveTuyaMode);
+      this.log('[SOIL] 🔧ModeEnabled:', this.hybridModeEnabled);
+      // v5.5.334: Load settings for calibration and thresholds (Hobeian PR#6)
+      this._temperatureCalibration = this.getSetting('temperature_calibration') || 0;
+      this._humidityCalibration = this.getSetting('humidity_calibration') || 0;
+      this._moistureCalibration = this.getSetting('moisture_calibration') || 0;
+      this._soilWarningThreshold = this.getSetting('soil_warning_threshold') || 30;
+      this._temperatureUnit = this.getSetting('temperature_unit') || 'celsius';
+      this.log(`[SOIL] 🔧 Calibration: temp=${this._temperatureCalibration}, hum=${this._humidityCalibration}, moist=${this._moistureCalibration}`);
+      this.log(`[SOIL] 🔧 Warning threshold: ${this._soilWarningThreshold}%, Unit: ${this._temperatureUnit}`);
+      // v5.5.317: Initialize intelligent inference engines
+      this._soilInference = new SoilMoistureInference(this, {
       maxMoistureJump: 25,    // Max 25% moisture change per reading
       dryThreshold: 20,       // Alert when below 20%
       wetThreshold: 80        // Alert when above 80%
-    });
-    this._batteryInference = new BatteryInference(this);
-
-    // Initialize flow triggers
-    this._initFlowTriggers();
-
-    // Track previous values for threshold triggers
-    this._previousMoisture = null;
-    this._previousTemperature = null;
-    this._previousBattery = null;
+      });
+      this._batteryInference = new BatteryInference(this);
+      // Initialize flow triggers
+      this._initFlowTriggers();
+      // Track previous values for threshold triggers
+      this._previousMoisture = null;
+      this._previousTemperature = null;
+      this._previousBattery = null;
+    }, 'onNodeInit');
   }
 
   /**

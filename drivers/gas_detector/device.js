@@ -1,4 +1,6 @@
 'use strict';
+const BatteryMixin = require('../../lib/tuya/BatteryMixin');
+
 const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
@@ -17,7 +19,7 @@ const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
  * - DP16: silence (bool) - mute alarm
  * - DP21: alarm_ringtone (enum: 0-4 = melody_1 to melody_5)
  */
-class GasDetectorDevice extends SensorBase {
+class GasDetectorDevice extends BatteryMixin(SensorBase) {
   get mainsPowered() { return true; }
   get sensorCapabilities() { return ['alarm_gas']; }
   
@@ -106,24 +108,26 @@ class GasDetectorDevice extends SensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    await super.onNodeInit({ zclNode });this.log('[GAS-DETECTOR] v5.5.932 ✅ Ready');
-    this.log('[GAS-DETECTOR] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
+      }
+      await super.onNodeInit({ zclNode });this.log('[GAS-DETECTOR] v5.5.932 ✅ Ready');
+      this.log('[GAS-DETECTOR] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
+    }, 'onNodeInit');
   }
 
 

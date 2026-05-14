@@ -1,158 +1,50 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER } = require('zigbee-clusters');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      DIN RAIL SWITCH - v5.6.0 + Bidirectional Buttons                       ║
+ * ║      DIN RAIL SWITCH - v9.7.3 UNIFIED (extends UnifiedPlugBase properly)     ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Smart circuit breaker / DIN rail switch with energy monitoring             ║
- * ║  v5.6.0: Added bidirectional physical/virtual button support                ║
+ * ║ UnifiedPlugBase handles: onoff, electrical measurement, Tuya DP               ║
+ * ║  PhysicalButtonMixin handles: bidirectional physical/virtual button sync      ║
+ * ║  v9.7.3: purged manual listeners in favor of centralized dpMappings         ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class DinRailSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(ZigBeeDevice)) {
+class DinRailSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
+
+  get mainsPowered() { return true; }
 
   get gangCount() { return 1; }
 
+  get dpMappings() {
+    return {
+      ...super.dpMappings,
+      1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      16: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      17: { capability: 'measure_current', divisor: 1000 }, // A * 1000
+      18: { capability: 'measure_power', divisor: 1 },      // W
+      19: { capability: 'measure_voltage', divisor: 10 },    // V * 10
+      20: { capability: 'measure_current', divisor: 1000 }, // A * 1000
+      101: { capability: 'meter_power', divisor: 100 }     // kWh * 100
+    };
+  }
+
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    this.log('DIN Rail Switch v5.6.0 initializing...');
-
-    // v5.6.0: Track state for physical button detection
-    this._lastOnoffState = null;
-    this._appCommandPending = false;
-    this._appCommandTimeout = null;
-
-    // Register on/off capability
-    if (this.hasCapability('onoff')) {
-      this.registerCapability('onoff', CLUSTER.ON_OFF);
-    }
-
-    // Setup electrical measurement
-    await this._setupElectricalMeasurement(zclNode);
-
-    // Setup Tuya DP cluster for TS0601 devices
-    await this._setupTuyaDP(zclNode);
-
-    // v5.6.0: Initialize bidirectional button support
-    await this.initPhysicalButtonDetection(zclNode);
-    await this.initVirtualButtons();
-
-    this.log('DIN Rail Switch v5.6.0 initialized with bidirectional buttons');
+    await this._safeInvoke(async () => {
+      // v9.7.3: Initialization handled by parent and mixins
+      await super.onNodeInit({ zclNode });
+      this.log('DIN Rail Switch v9.7.3 initialized with bidirectional buttons');
+      this.log('[DIN-RAIL] ✅ Ready');
+    }, 'onNodeInit');
   }
-
-  _markAppCommand() {
-    this._appCommandPending = true;
-    clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = setTimeout(() => {
-      this._appCommandPending = false;
-    }, 2000);
-  }
-
-  async _setupElectricalMeasurement(zclNode) {
-    const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
-
-    const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
-    if (emCluster) {
-      this.log('[EM] Electrical Measurement cluster found');
-
-      if (this.hasCapability('measure_power')) {
-        emCluster.on('attr.activePower', (value) => {
-          const power = value / 10;
-          await this.setCapabilityValue('measure_power', power).catch(this.error);
-        });
-      }
-
-      if (this.hasCapability('measure_voltage')) {
-        emCluster.on('attr.rmsVoltage', (value) => {
-          const voltage = value / 10;
-          await this.setCapabilityValue('measure_voltage', voltage).catch(this.error);
-        });
-      }
-
-      if (this.hasCapability('measure_current')) {
-        emCluster.on('attr.rmsCurrent', (value) => {
-          const current = value / 1000;
-          await this.setCapabilityValue('measure_current', current).catch(this.error);
-        });
-      }
-    }
-
-    const meteringCluster = ep1.clusters?.metering || ep1.clusters?.[1794];
-    if (meteringCluster && this.hasCapability('meter_power')) {
-      meteringCluster.on('attr.currentSummationDelivered', (value) => {
-        const energy = value / 1000;
-        await this.setCapabilityValue('meter_power', energy).catch(this.error);
-      });
-    }
-  }
-
-  async _setupTuyaDP(zclNode) {
-    const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
-
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
-    if (!tuyaCluster) return;
-
-    this.log('[TUYA] Tuya DP cluster found');
-
-    tuyaCluster.on('response', (response) => {
-      this._handleTuyaDP(response);
-    });
-
-    tuyaCluster.on('reporting', (report) => {
-      this._handleTuyaDP(report);
-    });
-  }
-
-  _handleTuyaDP(data) {
-    if (!data || !data.dp) return;
-    const { dp, value } = data;
-
-    this.log(`[DP${dp}] Value: ${value}`);
-
-    switch (dp) {
-    case 1: // On/Off state
-    case 16:
-      await this.setCapabilityValue('onoff', !!value).catch(this.error);
-      break;
-
-    case 17: // Total current (A * 1000)
-    case 20:
-      if (this.hasCapability('measure_current')) {
-        await this.setCapabilityValue('measure_current', value / 1000).catch(this.error);
-      }
-      break;
-
-    case 18: // Power (W)
-      if (this.hasCapability('measure_power')) {
-        await this.setCapabilityValue('measure_power', value).catch(this.error);
-      }
-      break;
-
-    case 19: // Voltage (V * 10)
-      if (this.hasCapability('measure_voltage')) {
-        await this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
-      }
-      break;
-
-    case 101: // Energy (kWh * 100)
-      if (this.hasCapability('meter_power')) {
-        await this.setCapabilityValue('meter_power', value / 100).catch(this.error);
-      }
-      break;
-    }
-  }
-
 
   async onDeleted() {
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }
 
 module.exports = DinRailSwitchDevice;
+

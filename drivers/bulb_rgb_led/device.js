@@ -1,12 +1,13 @@
 'use strict';
-
-constLightBase = require('../../lib/devices/UnifiedLightBase');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const LightBase = require('../../lib/devices/UnifiedLightBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
  * ║      RGB BULB - v5.5.238 FULL FEATURES (TS0505B Complete)                   ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║ LightBase handles: onoff, dim, light_temperature, protocol learning  ║
+ * ║ LightBase handles: onoff, dim, light_temperature, protocol learning          ║
  * ║  This class EXTENDS with: light_hue, light_saturation, HSV parsing          ║
  * ║                                                                              ║
  * ║  TUYA DPs (from Zigbee2MQTT TS0505B):                                       ║
@@ -42,7 +43,9 @@ const LIGHT_EFFECTS = {
   party: '060e0d0000000000000003e803e80b4003e803e8', // Party mode
 };
 
-class RGBBulbDevice extends LightBase {
+class RGBBulbDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) {
+
+  get mainsPowered() { return true; }
 
   get lightCapabilities() {
     return ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature', 'light_mode'];
@@ -80,46 +83,41 @@ class RGBBulbDevice extends LightBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    try {
-      // v5.5.288: Enhanced error handling for TS0505B "Could not get device by id" issue
-      this.log('[RGB] v5.5.288 - Starting initialization...');
-      this.log(`[RGB] Device ID: ${this.getData()?.id || 'unknown'}`);
-      this.log(`[RGB] ManufacturerName: ${this.getData()?.manufacturerName || 'unknown'}`);
-
-      // Let parent initialize first (handles onoff, dim listeners)
-
-      this.log('[RGB] DPs: 1-7,21,24-26,101 | ZCL: 6,8,300,EF00');
-
-      // Add ZCL color listeners (parent doesn't handle hue/sat)
-      await this._setupColorCluster(zclNode);
-
-      // Add ONLY hue/saturation listeners (parent handles onoff, dim)
-      this._setupHueListeners();
-
-      // v5.5.288: Verify device is properly initialized
-      if (!this.zclNode) {
-        this.error('[RGB] ⚠️ zclNode not set after parent init - device may not work properly');
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      try {
+        // v5.5.288: Enhanced error handling for TS0505B "Could not get device by id" issue
+        this.log('[RGB] v5.5.288 - Starting initialization...');
+        this.log(`[RGB] Device ID: ${this.getData()?.id || 'unknown'}`);
+        this.log(`[RGB] ManufacturerName: ${this.getData()?.manufacturerName || 'unknown'}`);
+        // Let parent initialize first (handles onoff, dim listeners)
+        this.log('[RGB] DPs: 1-7,21,24-26,101 | ZCL: 6,8,300,EF00');
+        // Add ZCL color listeners (parent doesn't handle hue/sat)
+        await this._setupColorCluster(zclNode);
+        // Add ONLY hue/saturation listeners (parent handles onoff, dim)
+        this._setupHueListeners();
+        // v5.5.288: Verify device is properly initialized
+        if (!this.zclNode) {
+          this.error('[RGB] ⚠️ zclNode not set after parent init - device may not work properly');
+        }
+        this.log('[RGB] ✅ RGB bulb ready');
+      } catch (err) {
+        this.error(`[RGB] ❌ Initialization failed: ${err.message}`);
+        this.error('[RGB] ❌ Stack:', err.stack);
+        // Don't throw - let device be available but log the error
       }
-
-      this.log('[RGB] ✅ RGB bulb ready');
-    } catch (err) {
-      this.error(`[RGB] ❌ Initialization failed: ${err.message}`);
-      this.error('[RGB] ❌ Stack:', err.stack);
-      // Don't throw - let device be available but log the error
-    }
+    }, 'onNodeInit');
   }
 
-  _parseHSV(raw) {
+  async _parseHSV(raw) {
     if (!raw || typeof raw !== 'string' || raw.length < 12) return null;
     try {
       const h = parseInt(raw.substring(0, 4), 16);
       const s = parseInt(raw.substring(4, 8), 16);
       const v = parseInt(raw.substring(8, 12), 16);
-      await this.setCapabilityValue('light_hue', h / 360).catch(() => { });
-      await this.setCapabilityValue('light_saturation', s / 1000).catch(() => { });
-      await this.setCapabilityValue('dim', Math.max(0.01, v / 1000)).catch(() => { });
+      this.setCapabilityValue('light_hue', h / 360).catch(() => { });
+      this.setCapabilityValue('light_saturation', s / 1000).catch(() => { });
+      this.setCapabilityValue('dim', Math.max(0.01, v / 1000)).catch(() => { });
       return { h, s, v };
     } catch (e) { return null; }
   }
@@ -130,8 +128,8 @@ class RGBBulbDevice extends LightBase {
     try {
       const colorCluster = ep1.clusters?.lightingColorCtrl || ep1.clusters?.colorControl;
       if (colorCluster?.on) {
-        colorCluster.on('attr.currentHue', (v) => await this.setCapabilityValue('light_hue', v / 254).catch(() => { }));
-        colorCluster.on('attr.currentSaturation', (v) => await this.setCapabilityValue('light_saturation', v / 254).catch(() => { }));
+        colorCluster.on('attr.currentHue', async (v) => await this.setCapabilityValue('light_hue', v / 254).catch(() => { }));
+        colorCluster.on('attr.currentSaturation', async (v) => await this.setCapabilityValue('light_saturation', v / 254).catch(() => { }));
         this.log('[RGB] ✅ Color cluster listeners added');
       }
     } catch (e) { /* ignore */ }
@@ -140,10 +138,16 @@ class RGBBulbDevice extends LightBase {
   _setupHueListeners() {
     // ONLY register hue/saturation (parent handles onoff, dim)
     if (this.hasCapability('light_hue')) {
-      this.registerCapabilityListener('light_hue', async () => await this._sendHSV());
+      this.registerCapabilityListener('light_hue', async (value) => {
+        if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
+        return this._sendHSV();
+      });
     }
     if (this.hasCapability('light_saturation')) {
-      this.registerCapabilityListener('light_saturation', async () => await this._sendHSV());
+      this.registerCapabilityListener('light_saturation', async (value) => {
+        if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
+        return this._sendHSV();
+      });
     }
   }
 
@@ -270,11 +274,9 @@ class RGBBulbDevice extends LightBase {
     return this._transitionTime ?? this.getSetting('transition_time') ?? 0.4;
   }
 
-
   async onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }
 
 module.exports = RGBBulbDevice;
-

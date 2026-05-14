@@ -1,9 +1,11 @@
 'use strict';
+const BatteryMixin = require('../../lib/tuya/BatteryMixin');
+
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
 const LIQUID_STATE = { 0: 'normal', 1: 'low', 2: 'high' };
 
-class WiFiWaterTankMonitorDevice extends TuyaLocalDevice {
+class WiFiWaterTankMonitorDevice extends BatteryMixin(TuyaLocalDevice) {
   get dpMappings() {
     return {
       '1':  { capability: null }, // liquid_state handled manually

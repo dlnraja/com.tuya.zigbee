@@ -1,4 +1,6 @@
 'use strict';
+const BatteryMixin = require('../../lib/tuya/BatteryMixin');
+
 
 const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
@@ -27,16 +29,17 @@ const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 const LIQUID_STATE = { 0: 'normal', 1: 'low', 2: 'high' };
 
-class WaterTankMonitorDevice extends SensorBase {
+class WaterTankMonitorDevice extends BatteryMixin(SensorBase) {
 
   async onNodeInit({ zclNode }) {
-    this.log('[LIQUID] Initializing liquid level sensor...');
-    this._lastState = null;
-    this._lastDepth = null;
-    this._lastPercent = null;
-
-    await super.onNodeInit({ zclNode });
-    this.log('[LIQUID] Liquid level sensor initialized');
+    await this._safeInvoke(async () => {
+      this.log('[LIQUID] Initializing liquid level sensor...');
+      this._lastState = null;
+      this._lastDepth = null;
+      this._lastPercent = null;
+      await super.onNodeInit({ zclNode });
+      this.log('[LIQUID] Liquid level sensor initialized');
+    }, 'onNodeInit');
   }
 
   /**

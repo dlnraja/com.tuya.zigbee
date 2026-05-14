@@ -1,12 +1,14 @@
 'use strict';
 const EweLinkLocalDevice=require('../../lib/ewelink-local/EweLinkLocalDevice');
 class D extends EweLinkLocalDevice{
+
+  get mainsPowered() { return true; }
   get stateMappings(){return{
     switch:{capability:'onoff',transform:v=>v==='on'},
     brightness:{capability:'dim',transform:v=>v/100}
   };}
   _registerCapListeners(){
-    this.registerCapabilityListener('onoff',async v=>{await this._client.setDimmer(this._lastBrightness||100,v);});
+    this.registerCapabilityListener('onoff',async v=>{ if (typeof this.markAppCommand === 'function') this.markAppCommand(1, v);await this._client.setDimmer(this._lastBrightness||100,v);});
     this.registerCapabilityListener('dim',async v=>{this._lastBrightness=Math.round(v*100);await this._client.setDimmer(this._lastBrightness,true);});
   }
   async onInit(){

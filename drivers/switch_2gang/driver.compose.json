@@ -10,8 +10,7 @@
     "button.toggle_1",
     "button.toggle_2",
     "button.identify",
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "zigbee": {
     "productId": [
@@ -58,9 +57,10 @@
       "_tz3000_cauq1okq",
       "_TZ3000_cauq1okq",
       "_TZ3000_CAUQ1OKQ",
+      "_tz3000_h1ipgkwn",
+      "_TZ3000_h1ipgkwn",
+      "_TZ3000_H1IPGKWN",
       "_tz3000_h1lpgkwn",
-      "_TZ3000_h1lpgkwn",
-      "_TZ3000_H1LPGKWN",
       "_tz3000_hznzbl0x",
       "_TZ3000_hznzbl0x",
       "_TZ3000_HZNZBL0X",
@@ -288,7 +288,10 @@
       "_TZ3000_L9BRJWAU",
       "_tz3002_ovsw7u2p",
       "_TZ3002_ovsw7u2p",
-      "_TZ3002_OVSW7U2P"
+      "_TZ3002_OVSW7U2P",
+      "_tz3000_tzvbimpq",
+      "_TZ3000_tzvbimpq",
+      "_TZ3000_TZVBIMPQ"
     ],
     "endpoints": {
       "1": {
@@ -870,6 +873,38 @@
       "template": "add_devices"
     }
   ],
+  "flow": {
+    "triggers": [
+      {
+        "id": "switch_2gang_physical_on",
+        "title": {
+          "en": "Physical button pressed (On)",
+          "fr": "Bouton physique pressé (On)"
+        }
+      },
+      {
+        "id": "switch_2gang_physical_off",
+        "title": {
+          "en": "Physical button pressed (Off)",
+          "fr": "Bouton physique pressé (Off)"
+        }
+      },
+      {
+        "id": "switch_2gang_physical_gang2_on",
+        "title": {
+          "en": "Gang 2 physical button (On)",
+          "fr": "Bouton physique Gang 2 (On)"
+        }
+      },
+      {
+        "id": "switch_2gang_physical_gang2_off",
+        "title": {
+          "en": "Gang 2 physical button (Off)",
+          "fr": "Bouton physique Gang 2 (Off)"
+        }
+      }
+    ]
+  },
   "maintenanceActions": [
     {
       "id": "ota_check",

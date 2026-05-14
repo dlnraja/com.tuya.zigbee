@@ -1,11 +1,13 @@
 'use strict';
 
-const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 /**
- * Vibration Sensor Device - v5.3.64 SIMPLIFIED
+ * Vibration Sensor Device - v8.0.0 MODERNIZED
+ * Specialized for vibration, tilt, and tamper detection.
  */
-class VibrationSensorDevice extends SensorBase {
+class VibrationSensorDevice extends BatteryMixin(SensorBase) {
 
   get mainsPowered() { return false; }
 
@@ -25,48 +27,36 @@ class VibrationSensorDevice extends SensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    if (this.hasCapability('alarm_generic.vibration')) {
-      const v = this.getCapabilityValue('alarm_generic.vibration');
-      await this.removeCapability('alarm_generic.vibration').catch(() => {});
-      if (!this.hasCapability('alarm_vibration')) await this.addCapability('alarm_vibration').catch(() => {});
-      if (v != null) await this.setCapabilityValue('alarm_vibration', v).catch(() => {});
-      this.log('[VIBRATION] Migrated alarm_generic.vibration → alarm_vibration');
-    }
-    await this.removeCapability('alarm_motion').catch(() => {});
-    await this.removeCapability('alarm_generic').catch(() => {});
-    if (!this.hasCapability('alarm_vibration')) await this.addCapability('alarm_vibration').catch(() => {});
-    if (!this.hasCapability('measure_temperature')) await this.addCapability('measure_temperature').catch(() => {});
-
+    this.log('[VIBRATION] 🚀 v8.0.0 Modernizing...');
+    
+    // Parent handles standard sensor logic and discovery initialization (v8)
     await super.onNodeInit({ zclNode });
-    this.log('[VIBRATION] ✅ Vibration sensor v5.11.47 ready');
+
+    // Ensure all capabilities are present
+    for (const cap of this.sensorCapabilities) {
+      if (!this.hasCapability(cap)) {
+        await this.addCapability(cap).catch(() => {});
+      }
+    }
+
+    this.log('[VIBRATION] ✅ Ready');
   }
 
+  /**
+   * Override onTuyaDP to leverage base discovery for unknown DPs
+   */
+  async onTuyaDP(dpId, value, dpType) {
+    // 1. Process via static mappings first
+    const mapping = this.dpMappings[dpId];
+    if (mapping) {
+      const val = mapping.transform ? mapping.transform(value) : (mapping.divisor ? value / mapping.divisor : value);
+      if (mapping.capability) {
+        return this.setCapabilityValue(mapping.capability, val).catch(() => {});
+      }
+    }
 
-  async onDeleted() {
-    this.log('Device deleted, cleaning up');
+    // 2. Fallback: Base handles heuristic discovery via this._discovery
+    return super.onTuyaDP(dpId, value, dpType);
   }
 }
 

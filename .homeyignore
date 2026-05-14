@@ -86,11 +86,15 @@ lib/data/z2m_devices_full.json
 lib/tuya-dp-engine/
 
 # === Documentation (not needed at runtime) ===
-**/*.md
-*.md
+# === Documentation (mostly excluded, but keeping driver docs for CI) ===
+# **/*.md (Un-ignored per Rule R25)
+# *.md (Un-ignored per Rule R25)
+# drivers/**/*.md (Un-ignored per Rule R25)
 CHANGELOG.md
 CONTRIBUTING.md
 LICENSE
+README.txt
+drivers/**/README.txt
 
 # === File types not needed ===
 *.ps1

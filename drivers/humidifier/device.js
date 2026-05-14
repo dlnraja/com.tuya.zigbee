@@ -15,13 +15,12 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 class HumidifierDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    this.log('Smart Humidifier initializing...');
-
-    await this._setupTuyaDP(zclNode);
-
-    this.log('Smart Humidifier initialized');
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      this.log('Smart Humidifier initializing...');
+      await this._setupTuyaDP(zclNode);
+      this.log('Smart Humidifier initialized');
+    }, 'onNodeInit');
   }
 
   async _setupTuyaDP(zclNode) {
@@ -35,17 +34,30 @@ class HumidifierDevice extends ZigBeeDevice {
 
     // Register capability listeners
     this.registerCapabilityListener('onoff', async (value) => {
-      await tuyaCluster.datapoint({ dp: 1, datatype: 1, value: value });
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
+await this._safeInvoke(async () => {
+
+      await tuyaCluster.datapoint({ dp: 1, datatype: 1, value: value 
+}, 'onoffListener');
+});
     });
 
     this.registerCapabilityListener('dim', async (value) => {
+await this._safeInvoke(async () => {
+
       const level = Math.round(value * 3); // 0=off, 1=low, 2=medium, 3=high
-      await tuyaCluster.datapoint({ dp: 5, datatype: 4, value: level });
+      await tuyaCluster.datapoint({ dp: 5, datatype: 4, value: level 
+}, 'dimListener');
+});
     });
 
     if (this.hasCapability('dim.humidity')) {
       this.registerCapabilityListener('dim.humidity', async (value) => {
-        await tuyaCluster.datapoint({ dp: 2, datatype: 2, value: Math.round(value) });
+await this._safeInvoke(async () => {
+
+        await tuyaCluster.datapoint({ dp: 2, datatype: 2, value: Math.round(value) 
+}, 'dim.humidityListener');
+});
       });
     }
 

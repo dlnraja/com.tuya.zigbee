@@ -1,35 +1,38 @@
-#  HOMEY SDK 3 EXPERT SKILL
+#  HOMEY SDK 3 EXPERT SKILL (Antigravity v6.0.0)
 
-> Optimized for v7.2.14 stabilization.
+> Optimized for v8.0.0 production release and beyond.
 
 ##  Core Patterns
 
 ### 1. Idempotent Initialization
 ```javascript
-async onInit() {
-  if (this._flowCardsRegistered) return;
-  this._flowCardsRegistered = true;
-  // ... init logic
+async onNodeInit() {
+  if (this._initialized) return;
+  this._initialized = true;
+  await super.onNodeInit();
+  // ... init logic wrapped in _safeInvoke
 }
 ```
 
-### 2. Flow Card Triggers (MANDATORY)
-Every flow card MUST be triggered. Never just retrieve it.
+### 2. Bidirectional Sync (Zero-Latency)
+Always mark app commands to prevent feedback loops with physical detection.
 ```javascript
-//  Correct
-this._myCard = this.homey.flow.getDeviceTriggerCard('my_card');
-this._myCard.trigger(this, { value: 1 }).catch(this.error);
-```
-
-### 3. Capability Guards
-Always check if a capability exists before setting it.
-```javascript
-if (this.hasCapability('measure_temperature')) {
-  await this.setCapabilityValue('measure_temperature', val);
+async onCapabilityOnOff(value, opts) {
+  this.markAppCommand(1, value); // Mark for Gang 1
+  return this.sendOnOffCommand(value);
 }
 ```
 
-##  Critical Anti-Patterns to Avoid
-- `getDeviceActionCard` (Deprecated in SDK 3)
-- Returning `false` in `onInit` (Can cause boot-loops)
-- Missing `super.onInit()` in inherited classes.
+### 3. Asymmetric Button Mapping
+Support devices with mixed gang capabilities using the `VirtualButtonMixin` v6.0.0 logic.
+- `button.toggle_1` -> `onoff`
+- `button.toggle_2` -> `onoff.gang2`
+- `button.3` -> Custom scene trigger
+
+##  Critical Anti-Patterns
+- `getDeviceTriggerCard` without `.trigger()` (Incomplete flow execution)
+- Hardcoded endpoint IDs (Use `gang` variable or `getEndpoint(gang)`)
+- Missing `_safeInvoke` in async listeners.
+
+##  Self-Healing Strategy
+All drivers must implement a retry mechanism for critical ZCL/DP commands, switching between protocols if the primary fails.

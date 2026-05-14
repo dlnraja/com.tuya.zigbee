@@ -156,7 +156,7 @@ const WATER_SENSOR_PROFILES = {
   }
 };
 
-class WaterLeakSensorDevice extends SensorBase {
+class WaterLeakSensorDevice extends BatteryMixin(SensorBase) {
 
   get mainsPowered() { return false; }
 
@@ -246,75 +246,68 @@ class WaterLeakSensorDevice extends SensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // Get device profile before parent init
-    this._deviceProfile = this._getDeviceProfile();
-
-    // v5.5.713: Check for invert_alarm setting (Lasse_K forum fix)
-    this._invertAlarm = this.getSetting('invert_alarm') || false;
-
-    await super.onNodeInit({ zclNode });
-
-    // v5.8.28: CRITICAL FIX - IAS Zone enrollment (Lasse_K forum 'inactivated' fix)
-    // IASZoneManager.enrollIASZone() was defined but NEVER called, causing sensors to stay notEnrolled
-    try {
+    await this._safeInvoke(async () => {
+      // Get device profile before parent init
+      this._deviceProfile = this._getDeviceProfile();
+      // v5.5.713: Check for invert_alarm setting (Lasse_K forum fix)
+      this._invertAlarm = this.getSetting('invert_alarm') || false;
+      await super.onNodeInit({ zclNode });
+      // v5.8.28: CRITICAL FIX - IAS Zone enrollment (Lasse_K forum 'inactivated' fix)
+      // IASZoneManager.enrollIASZone() was defined but NEVER called, causing sensors to stay notEnrolled
+      try {
       const iasManager = new IASZoneManager(this);
       await iasManager.enrollIASZone();
-    } catch (e) {
+      } catch (e) {
       this.log(`[WATER] ⚠️ IAS enrollment error (non-critical): ${e.message}`);
-    }
-
-    // Log device-specific info
-    const profile = this._deviceProfile;
-    this.log('');
-    this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║          WATER LEAK SENSOR v5.5.550                          ║');
-    this.log('╠══════════════════════════════════════════════════════════════╣');
-    this.log(`║ Manufacturer: ${profile.mfr || 'unknown'}`);
-    this.log(`║ Profile Type: ${profile.type || 'hybrid'}`);
-    this.log(`║ Matched By:   ${profile.matchedBy || 'default'}`);
-    this.log(`║ IAS Alarm:    ${profile.iasAlarmBit || 'both'}`);
-    this.log(`║ Has Tamper:   ${profile.hasTamper ? 'YES' : 'NO'}`);
-    if (profile.knownIssues) {
+      }
+      // Log device-specific info
+      const profile = this._deviceProfile;
+      this.log('');
+      this.log('╔══════════════════════════════════════════════════════════════╗');
+      this.log('║          WATER LEAK SENSOR v5.5.550                          ║');
+      this.log('╠══════════════════════════════════════════════════════════════╣');
+      this.log(`║ Manufacturer: ${profile.mfr || 'unknown'}`);
+      this.log(`║ Profile Type: ${profile.type || 'hybrid'}`);
+      this.log(`║ Matched By:   ${profile.matchedBy || 'default'}`);
+      this.log(`║ IAS Alarm:    ${profile.iasAlarmBit || 'both'}`);
+      this.log(`║ Has Tamper:   ${profile.hasTamper ? 'YES' : 'NO'}`);
+      if (profile.knownIssues) {
       this.log(`║ Known Issues: ${profile.knownIssues.join(', ')}`);
-    }
-    if (profile.notes) {
+      }
+      if (profile.notes) {
       this.log(`║ Notes:        ${profile.notes}`);
-    }
-    this.log('╚══════════════════════════════════════════════════════════════╝');
-    this.log('');
-
-    // Warn about known problematic devices
-    if (profile.knownIssues && profile.knownIssues.length > 0) {
+      }
+      this.log('╚══════════════════════════════════════════════════════════════╝');
+      this.log('');
+      // Warn about known problematic devices
+      if (profile.knownIssues && profile.knownIssues.length > 0) {
       this.log(`[WATER] ⚠️ Known issues for this device: ${profile.knownIssues.join(', ')}`);
-    }
-
-    // v5.5.803: FORUM #1166 FIX - Initialize IAS Alarm Fallback for ALL water leak sensors
-    // Previously only enabled for IAS Zone type devices, but many sensors need this fallback
-    // to ensure alarms are properly detected via polling when notifications fail
-    this._iasFallback = new IASAlarmFallback(this, {
+      }
+      // v5.5.803: FORUM #1166 FIX - Initialize IAS Alarm Fallback for ALL water leak sensors
+      // Previously only enabled for IAS Zone type devices, but many sensors need this fallback
+      // to ensure alarms are properly detected via polling when notifications fail
+      this._iasFallback = new IASAlarmFallback(this, {
       pollInterval: 30000, // Poll every 30s for water leak detection
       useTuyaMirror: true
-    });
-    await this._iasFallback.init().catch(e => {
+      });
+      await this._iasFallback.init().catch(e => {
       this.log(`[WATER] ⚠️ IAS Fallback init failed: ${e.message}`);
-    });
-    this.log('[WATER] ✅ IAS Alarm Fallback enabled for ALL water sensors (v5.5.803)');
-    
-    // v5.5.918: FORUM FIX - Delayed secondary read for sleepy sensors
-    // Some water sensors need extra time after pairing before they respond
-    this.homey.setTimeout(async () => {
+      });
+      this.log('[WATER] ✅ IAS Alarm Fallback enabled for ALL water sensors (v5.5.803)');
+      // v5.5.918: FORUM FIX - Delayed secondary read for sleepy sensors
+      // Some water sensors need extra time after pairing before they respond
+      this.homey.setTimeout(async () => {
       try {
-        this.log('[WATER] 📖 Delayed secondary alarm read (5s post-init)...');
-        await this._forceInitialAlarmRead(zclNode);
+      this.log('[WATER] 📖 Delayed secondary alarm read (5s post-init)...');
+      await this._forceInitialAlarmRead(zclNode);
       } catch (e) {
-        this.log(`[WATER] ⚠️ Secondary read failed: ${e.message}`);
+      this.log(`[WATER] ⚠️ Secondary read failed: ${e.message}`);
       }
-    }, 5000);
-
-    // v5.5.803: FORUM #1166 FIX - Force initial alarm state read
-    await this._forceInitialAlarmRead(zclNode);
-
-    this.log(`[WATER] ✅ Water leak sensor ready (invert: ${this._invertAlarm})`);
+      }, 5000);
+      // v5.5.803: FORUM #1166 FIX - Force initial alarm state read
+      await this._forceInitialAlarmRead(zclNode);
+      this.log(`[WATER] ✅ Water leak sensor ready (invert: ${this._invertAlarm})`);
+    }, 'onNodeInit');
   }
 
   /**

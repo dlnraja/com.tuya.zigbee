@@ -34,48 +34,42 @@ const BUTTON_PRESS = { SINGLE: 1, DOUBLE: 2, LONG: 3 };
 class GenericDIYDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    this.log('[DIY] ═══════════════════════════════════════');
-    this.log('[DIY] GENERIC DIY ZIGBEE v5.7.2');
-    this.log('[DIY] ESP32 / PTVO / CC253x / Custom ZCL');
-    this.log('[DIY] With comprehensive flow cards');
-    this.log('[DIY] ═══════════════════════════════════════');
-
-    this.zclNode = zclNode;
-    this._caps = [];
-    this._lastValues = {};
-
-    // v5.7.3: Apply ecosystem-specific bug patches
-    if (ZigbeeProtocolPatchManager) {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      this.log('[DIY] ═══════════════════════════════════════');
+      this.log('[DIY] GENERIC DIY ZIGBEE v5.7.2');
+      this.log('[DIY] ESP32 / PTVO / CC253x / Custom ZCL');
+      this.log('[DIY] With comprehensive flow cards');
+      this.log('[DIY] ═══════════════════════════════════════');
+      this.zclNode = zclNode;
+      this._caps = [];
+      this._lastValues = {};
+      // v5.7.3: Apply ecosystem-specific bug patches
+      if (ZigbeeProtocolPatchManager) {
       try {
-        this._patchMgr = new ZigbeeProtocolPatchManager(this);
-        await this._patchMgr.applyPatches();
+      this._patchMgr = new ZigbeeProtocolPatchManager(this);
+      await this._patchMgr.applyPatches();
       } catch (e) { this.log('[DIY] Patch error:', e.message); }
-    }
-
-    // Scan endpoints
-    for (const [epId, ep] of Object.entries(zclNode.endpoints || {})) {
+      }
+      // Scan endpoints
+      for (const [epId, ep] of Object.entries(zclNode.endpoints || {})) {
       if (epId === '242') continue;
       for (const cId of Object.keys(ep.clusters || {})) {
-        const clusterId = parseInt(cId);
-        const map = CLUSTER_MAP[clusterId];
-        if (map) await this._addCap(parseInt(epId), clusterId, map, ep.clusters[cId]);
+      const clusterId = parseInt(cId);
+      const map = CLUSTER_MAP[clusterId];
+      if (map) await this._addCap(parseInt(epId), clusterId, map, ep.clusters[cId]);
       }
-    }
-
-    // Setup listeners
-    for (const c of this._caps) {
+      }
+      // Setup listeners
+      for (const c of this._caps) {
       await this._setupListener(c);
-    }
-
-    // Setup button detection for scenes/multistate clusters
-    await this._setupButtonDetection(zclNode);
-
-    // Register flow card actions
-    this._registerFlowActions();
-
-    this.log(`[DIY] ✅ Done: ${this._caps.length} capabilities`);
+      }
+      // Setup button detection for scenes/multistate clusters
+      await this._setupButtonDetection(zclNode);
+      // Register flow card actions
+      this._registerFlowActions();
+      this.log(`[DIY] ✅ Done: ${this._caps.length} capabilities`);
+    }, 'onNodeInit');
   }
 
   // ═══════════════════════════════════════════════════════════
@@ -223,24 +217,24 @@ class GenericDIYDevice extends ZigBeeDevice {
     try {
       // OnOff cluster
       if (clusterId === 0x0006) {
-        this.registerCapabilityListener(cap, async (v) => {
+        this.registerCapabilityListener(cap, async (v) => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, v);
           v ? await cluster.setOn() : await cluster.setOff();
         });
-        cluster.on('attr.onOff', (v) => {
+        cluster.on('attr.onOff', async (v) => {
           await this.setCapabilityValue(cap, v).catch(() => {});
           this._triggerSwitch(epId, v);
         });
       }
       // Level cluster
       else if (clusterId === 0x0008) {
-        this.registerCapabilityListener(cap, async (v) => {
+        this.registerCapabilityListener(cap, async (v) => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, v);
           await cluster.moveToLevel({ level: Math.round(v * 254), transitionTime: 0 });
         });
-        cluster.on('attr.currentLevel', (v) => await this.setCapabilityValue(cap, v / 254).catch(() => {}));
+        cluster.on('attr.currentLevel', async (v) => await this.setCapabilityValue(cap, v / 254).catch(() => {}));
       }
       // Temperature
       else if (clusterId === 0x0402) {
-        cluster.on(`attr.${map.attr}`, (v) => {
+        cluster.on(`attr.${map.attr}`, async (v) => {
           const val = v / 100;
           await this.setCapabilityValue(cap, val).catch(() => {});
           this._triggerTemperatureChanged(val);
@@ -248,7 +242,7 @@ class GenericDIYDevice extends ZigBeeDevice {
       }
       // Humidity
       else if (clusterId === 0x0405) {
-        cluster.on(`attr.${map.attr}`, (v) => {
+        cluster.on(`attr.${map.attr}`, async (v) => {
           const val = v / 100;
           await this.setCapabilityValue(cap, val).catch(() => {});
           this._triggerHumidityChanged(val);
@@ -256,14 +250,14 @@ class GenericDIYDevice extends ZigBeeDevice {
       }
       // Illuminance
       else if (clusterId === 0x0400) {
-        cluster.on(`attr.${map.attr}`, (v) => {
+        cluster.on(`attr.${map.attr}`, async (v) => {
           await this.setCapabilityValue(cap, v).catch(() => {});
           this._triggerIlluminance(v);
         });
       }
       // Motion/Occupancy
       else if (clusterId === 0x0406) {
-        cluster.on(`attr.${map.attr}`, (v) => {
+        cluster.on(`attr.${map.attr}`, async (v) => {
           const detected = v > 0;
           await this.setCapabilityValue(cap, detected).catch(() => {});
           this._triggerMotion(detected);
@@ -271,7 +265,7 @@ class GenericDIYDevice extends ZigBeeDevice {
       }
       // Battery
       else if (clusterId === 0x0001) {
-        cluster.on(`attr.${map.attr}`, (v) => {
+        cluster.on(`attr.${map.attr}`, async (v) => {
           const val = v / 2;
           await this.setCapabilityValue(cap, val).catch(() => {});
           this._triggerBatteryLow(val);
@@ -279,7 +273,7 @@ class GenericDIYDevice extends ZigBeeDevice {
       }
       // Contact/IAS Zone
       else if (clusterId === 0x0500) {
-        cluster.on(`attr.${map.attr}`, (v) => {
+        cluster.on(`attr.${map.attr}`, async (v) => {
           const open = (v & 1) > 0;
           await this.setCapabilityValue(cap, open).catch(() => {});
           this._triggerContact(open);
@@ -287,7 +281,7 @@ class GenericDIYDevice extends ZigBeeDevice {
       }
       // Pressure
       else if (clusterId === 0x0403) {
-        cluster.on(`attr.${map.attr}`, (v) => {
+        cluster.on(`attr.${map.attr}`, async (v) => {
           const val = v / 10;
           await this.setCapabilityValue(cap, val).catch(() => {});
           this._triggerPressure(val);
@@ -295,26 +289,26 @@ class GenericDIYDevice extends ZigBeeDevice {
       }
       // Analog input
       else if (clusterId === 0x000C) {
-        cluster.on(`attr.${map.attr}`, (v) => {
+        cluster.on(`attr.${map.attr}`, async (v) => {
           await this.setCapabilityValue(cap, v).catch(() => {});
           this._triggerAnalog(epId, v);
         });
       }
       // Thermostat (Danfoss, etc.) - needs write capability
       else if (clusterId === 0x0201) {
-        this.registerCapabilityListener(cap, async (v) => {
+        this.registerCapabilityListener(cap, async (v) => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, v);
           await cluster.write({ occupiedHeatingSetpoint: Math.round(v * 100) });
         });
-        cluster.on('attr.occupiedHeatingSetpoint', (v) => {
+        cluster.on('attr.occupiedHeatingSetpoint', async (v) => {
           await this.setCapabilityValue(cap, v / 100).catch(() => {});
         });
-        cluster.on('attr.localTemperature', (v) => {
+        cluster.on('attr.localTemperature', async (v) => {
           if (v !== -32768) await this.setCapabilityValue('measure_temperature', v / 100).catch(() => {});
         });
       }
       // Other measurement clusters
       else if (map.attr) {
-        cluster.on(`attr.${map.attr}`, (v) => {
+        cluster.on(`attr.${map.attr}`, async (v) => {
           const val = map.div ? v / map.div : v;
           await this.setCapabilityValue(cap, val).catch(() => {});
         });

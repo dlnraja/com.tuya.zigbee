@@ -1988,7 +1988,7 @@ function transformDistance(value, divisor = 100, manufacturerName = '', deviceId
   return result;
 }
 
-class PresenceSensorRadarDevice extends SensorBase {
+class PresenceSensorRadarDevice extends BatteryMixin(SensorBase) {
 
   /**
    * v5.5.277: Get manufacturerName with multiple fallback methods
@@ -2244,75 +2244,73 @@ class PresenceSensorRadarDevice extends SensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'ssIasZone',
-          attributeName: 'zoneStatus',
-          minInterval: 0,
-          maxInterval: 3600,
-          minChange: 1,
-        },
-        {
-          cluster: 'msIlluminanceMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'msRelativeHumidity',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 100,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
+      {
+      cluster: 'ssIasZone',
+      attributeName: 'zoneStatus',
+      minInterval: 0,
+      maxInterval: 3600,
+      minChange: 1,
+      },
+      {
+      cluster: 'msIlluminanceMeasurement',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 50,
+      },
+      {
+      cluster: 'msTemperatureMeasurement',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 50,
+      },
+      {
+      cluster: 'msRelativeHumidity',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 100,
+      },
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    // v5.7.34: Use _getManufacturerName() for consistent multi-source retrieval
-    const mfr = this._getManufacturerName();
-    const config = this._getSensorConfig();
-
-    this.log('[RADAR] ═══════════════════════════════════════════════════════════');
-    this.log('[RADAR] v5.5.315 INTELLIGENT PRESENCE INFERENCE');
-    this.log(`[RADAR] ManufacturerName: ${mfr}`);
-    this.log(`[RADAR] Config: ${config.configName || 'ZY_M100_STANDARD (default)'}`);
-    this.log(`[RADAR] Power: ${config.battery ? 'BATTERY (EndDevice)' : 'MAINS (Router)'}`);
-    this.log(`[RADAR] Illuminance: ${config.hasIlluminance !== false ? 'YES' : 'NO'}`);
-    this.log(`[RADAR] Polling: ${config.needsPolling ? 'ENABLED (30s interval)' : 'DISABLED'}`);
-    this.log(`[RADAR] DPs: ${Object.keys(config.dpMap || {}).join(', ') || 'ZCL only'}`);
-    this.log(`[RADAR] 🧠 Intelligent Inference: ${config.useIntelligentInference ? 'ENABLED' : 'DISABLED'}`);
-    this.log('[RADAR] ═══════════════════════════════════════════════════════════');
-
-    // v5.5.268: Track received DPs for debugging
-    this._receivedDPs = new Set();
-    this._lastPresenceUpdate = 0;
-
-    // v5.8.65: Detect Tuya DP cluster availability (Pete's _TZE200_3towulqd has NO cluster 61184!)
-    // If no Tuya DP cluster → noIasMotion MUST be overridden, IAS Zone is the ONLY motion source
-    const ep1Check = zclNode?.endpoints?.[1];
-    this._hasTuyaDPCluster = !!(ep1Check?.clusters?.tuya || ep1Check?.clusters?.[61184] ||
+      }
+      // v5.7.34: Use _getManufacturerName() for consistent multi-source retrieval
+      const mfr = this._getManufacturerName();
+      const config = this._getSensorConfig();
+      this.log('[RADAR] ═══════════════════════════════════════════════════════════');
+      this.log('[RADAR] v5.5.315 INTELLIGENT PRESENCE INFERENCE');
+      this.log(`[RADAR] ManufacturerName: ${mfr}`);
+      this.log(`[RADAR] Config: ${config.configName || 'ZY_M100_STANDARD (default)'}`);
+      this.log(`[RADAR] Power: ${config.battery ? 'BATTERY (EndDevice)' : 'MAINS (Router)'}`);
+      this.log(`[RADAR] Illuminance: ${config.hasIlluminance !== false ? 'YES' : 'NO'}`);
+      this.log(`[RADAR] Polling: ${config.needsPolling ? 'ENABLED (30s interval)' : 'DISABLED'}`);
+      this.log(`[RADAR] DPs: ${Object.keys(config.dpMap || {}).join(', ') || 'ZCL only'}`);
+      this.log(`[RADAR] 🧠 Intelligent Inference: ${config.useIntelligentInference ? 'ENABLED' : 'DISABLED'}`);
+      this.log('[RADAR] ═══════════════════════════════════════════════════════════');
+      // v5.5.268: Track received DPs for debugging
+      this._receivedDPs = new Set();
+      this._lastPresenceUpdate = 0;
+      // v5.8.65: Detect Tuya DP cluster availability (Pete's _TZE200_3towulqd has NO cluster 61184!)
+      // If no Tuya DP cluster → noIasMotion MUST be overridden, IAS Zone is the ONLY motion source
+      const ep1Check = zclNode?.endpoints?.[1];
+      this._hasTuyaDPCluster = !!(ep1Check?.clusters?.tuya || ep1Check?.clusters?.[61184] ||
       ep1Check?.clusters?.['tuya'] || ep1Check?.clusters?.['61184'] || ep1Check?.clusters?.manuSpecificTuya);
-    if (!this._hasTuyaDPCluster && config.noIasMotion) {
+      if (!this._hasTuyaDPCluster && config.noIasMotion) {
       this.log('[RADAR] ⚠️ v5.8.65: Device has NO Tuya DP cluster (61184) but noIasMotion=true!');
       this.log('[RADAR] ⚠️ Overriding noIasMotion→false: IAS Zone is the ONLY motion source');
       config.noIasMotion = false;
@@ -2320,245 +2318,217 @@ class PresenceSensorRadarDevice extends SensorBase {
       // v5.8.88: ZCL-only variant has no temp/humidity clusters either (Pete's _TZE200_3towulqd interview)
       // Override multisensor config flags to prevent orphan capabilities
       if (!config.noTemperature || !config.noHumidity) {
-        this.log('[RADAR] ⚠️ v5.8.88: ZCL-only device → forcing noTemperature=true, noHumidity=true');
-        config.noTemperature = true;
-        config.noHumidity = true;
+      this.log('[RADAR] ⚠️ v5.8.88: ZCL-only device → forcing noTemperature=true, noHumidity=true');
+      config.noTemperature = true;
+      config.noHumidity = true;
       }
-    }
-    this.log(`[RADAR] Tuya DP cluster: ${this._hasTuyaDPCluster ? 'YES' : 'NO (ZCL-only)'}`);
-
-    // v5.5.315: Initialize Intelligent Presence Inference Engine
-    if (config.useIntelligentInference) {
+      }
+      this.log(`[RADAR] Tuya DP cluster: ${this._hasTuyaDPCluster ? 'YES' : 'NO (ZCL-only)'}`);
+      // v5.5.315: Initialize Intelligent Presence Inference Engine
+      if (config.useIntelligentInference) {
       this._presenceInference = new IntelligentPresenceInference(this);
       this.log('[RADAR] 🧠 Inference engine initialized for presence=null workaround');
-
       // Try to get firmware version for firmware-specific handling
       this._detectFirmwareVersion(zclNode);
-    }
-
-    // v5.5.990: Permissive mode for ZCL-only variants (Patrick_Van_Deursen #1297)
-    // These devices don't have Tuya DP cluster but work fine with ZCL
-    if (config.permissiveMode) {
+      }
+      // v5.5.990: Permissive mode for ZCL-only variants (Patrick_Van_Deursen #1297)
+      // These devices don't have Tuya DP cluster but work fine with ZCL
+      if (config.permissiveMode) {
       this.log('[RADAR] 🔓 PERMISSIVE MODE: ZCL-only variant (no Tuya DP required)');
       this.log('[RADAR] Using ZCL clusters: IAS Zone (motion), illuminanceMeasurement (lux), powerConfiguration (battery)');
-    }
-
-    // Battery sensors: minimal init to avoid timeouts
-    if (config.battery) {
+      }
+      // Battery sensors: minimal init to avoid timeouts
+      if (config.battery) {
       this.log('[RADAR] ⚡ BATTERY MODE: Using minimal init (passive listeners only)');
-
       this.zclNode = zclNode;
-
       // Add battery capability
       if (!this.hasCapability('measure_battery')) {
-        try {
-          await this.addCapability('measure_battery');
-          this.log('[RADAR] ✅ Added measure_battery');
-        } catch (e) { /* ignore */ }
+      try {
+      await this.addCapability('measure_battery');
+      this.log('[RADAR] ✅ Added measure_battery');
+      } catch (e) { /* ignore */ }
       }
-
       // v5.8.7: ALWAYS set up ZCL clusters permissively for battery devices
       // Regardless of config, try to listen on ALL available ZCL clusters
       // This handles HOBEIAN variants that may use ZCL, Tuya DP, or both
       this.log('[RADAR] 📡 Setting up ZCL clusters (permissive - all available)');
       await this._setupZclClusters(zclNode).catch(e => {
-        this.log('[RADAR] ⚠️ ZCL cluster setup partial failure (non-critical):', e.message);
+      this.log('[RADAR] ⚠️ ZCL cluster setup partial failure (non-critical):', e.message);
       });
-
       // v5.8.7: Non-blocking cluster binding so sleepy device sends reports to Homey
       const ep1 = zclNode?.endpoints?.[1];
       if (ep1) {
-        for (const cName of ['iasZone', 'ssIasZone', 'genPowerCfg', 'powerConfiguration',
-          'msIlluminanceMeasurement', 'msOccupancySensing', 'msTemperatureMeasurement', 'msRelativeHumidity']) {
-          const cl = ep1.clusters?.[cName];
-          if (cl?.bind) { cl.bind().catch(() => {}); }
-        }
-        this.log('[RADAR] 📡 Non-blocking cluster binding initiated');
+      for (const cName of ['iasZone', 'ssIasZone', 'genPowerCfg', 'powerConfiguration',
+      'msIlluminanceMeasurement', 'msOccupancySensing', 'msTemperatureMeasurement', 'msRelativeHumidity']) {
+      const cl = ep1.clusters?.[cName];
+      if (cl?.bind) { cl.bind().catch(() => {}); }
       }
-
+      this.log('[RADAR] 📡 Non-blocking cluster binding initiated');
+      }
       // Setup passive listeners only (no queries)
       this._setupPassiveListeners(zclNode);
-
       // Mark as available immediately
       await this.setAvailable().catch(() => { });
-
       // v5.8.43: PR#125 michelhelsdingen - One-time battery + DP refresh after device wakes up
       setTimeout(async () => {
-        try {
-          const ep1 = zclNode?.endpoints?.[1];
-          // Try ZCL PowerConfiguration read
-          const powerCluster = ep1?.clusters?.genPowerCfg || ep1?.clusters?.powerConfiguration;
-          if (powerCluster?.readAttributes) {
-            const attrs = await powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
-            if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
-              const battery = Math.min(100, Math.round(attrs.batteryPercentageRemaining / 2));
-              this.log(`[RADAR] 🔋 Battery read: ${attrs.batteryPercentageRemaining} -> ${battery}%`);
-              await this.setCapabilityValue('measure_battery', battery).catch(() => {});
-            } else if (attrs?.batteryVoltage && !this.getCapabilityValue('measure_battery')) {
-              const battery = Math.min(100, Math.max(0, Math.round((attrs.batteryVoltage - 20) * 10)));
-              this.log(`[RADAR] 🔋 Battery voltage: ${attrs.batteryVoltage / 10}V -> ${battery}%`);
-              await this.setCapabilityValue('measure_battery', battery).catch(() => {});
-            }
-          }
-          // Also try Tuya dataQuery to get all DPs including DP110
-          const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
-          if (tuyaCluster?.dataQuery) {
-            await tuyaCluster.dataQuery({});
-            this.log('[RADAR] 📡 Battery: Tuya DP query sent');
-          }
-        } catch (e) {
-          this.log('[RADAR] ℹ️ Battery read deferred (device may be asleep)');
-        }
+      try {
+      const ep1 = zclNode?.endpoints?.[1];
+      // Try ZCL PowerConfiguration read
+      const powerCluster = ep1?.clusters?.genPowerCfg || ep1?.clusters?.powerConfiguration;
+      if (powerCluster?.readAttributes) {
+      const attrs = await powerCluster.readAttributes(['batteryPercentageRemaining', 'batteryVoltage']);
+      if (attrs?.batteryPercentageRemaining !== undefined && attrs.batteryPercentageRemaining !== 255) {
+      const battery = Math.min(100, Math.round(attrs.batteryPercentageRemaining / 2));
+      this.log(`[RADAR] 🔋 Battery read: ${attrs.batteryPercentageRemaining} -> ${battery}%`);
+      await this.setCapabilityValue('measure_battery', battery).catch(() => {});
+      } else if (attrs?.batteryVoltage && !this.getCapabilityValue('measure_battery')) {
+      const battery = Math.min(100, Math.max(0, Math.round((attrs.batteryVoltage - 20) * 10)));
+      this.log(`[RADAR] 🔋 Battery voltage: ${attrs.batteryVoltage / 10}V -> ${battery}%`);
+      await this.setCapabilityValue('measure_battery', battery).catch(() => {});
+      }
+      }
+      // Also try Tuya dataQuery to get all DPs including DP110
+      const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
+      if (tuyaCluster?.dataQuery) {
+      await tuyaCluster.dataQuery({});
+      this.log('[RADAR] 📡 Battery: Tuya DP query sent');
+      }
+      } catch (e) {
+      this.log('[RADAR] ℹ️ Battery read deferred (device may be asleep)');
+      }
       }, 5000);
-
       this.log('[RADAR] ✅ Battery sensor ready (passive mode)');
       return;
-    }
-
-    // PIR sensors: use ZCL primarily
-    if (config.useZcl) {
+      }
+      // PIR sensors: use ZCL primarily
+      if (config.useZcl) {
       this.log('[RADAR] 📡 ZCL MODE: Using ZCL occupancy cluster');
       await super.onNodeInit({ zclNode });
       await this._setupZclClusters(zclNode);
       this.log('[RADAR] ✅ PIR sensor ready (ZCL mode)');
       return;
-    }    await super.onNodeInit({ zclNode });
-    await this._setupZclClusters(zclNode);    // This was missing and caused presence not to work on TZE284 devices
-    await this._setupTuyaDPListeners(zclNode);
-
-    // v5.5.518: Send Tuya magic packet for devices that need it (LeapMMW 5.8G)
-    // These devices don't show cluster 61184 in interview but still use Tuya DPs
-    if (config.needsMagicPacket) {
+      }    await super.onNodeInit({ zclNode });
+      await this._setupZclClusters(zclNode);    // This was missing and caused presence not to work on TZE284 devices
+      await this._setupTuyaDPListeners(zclNode);
+      // v5.5.518: Send Tuya magic packet for devices that need it (LeapMMW 5.8G)
+      // These devices don't show cluster 61184 in interview but still use Tuya DPs
+      if (config.needsMagicPacket) {
       await this._sendTuyaMagicPacket(zclNode);
-    }
-
-    await new Promise(r => setTimeout(r, 3000));
-    this.log('[RADAR] Force DP poll after magic packet');
-    await this._requestDPRefresh(zclNode);    // noBatteryCapability flag ensures battery is NEVER shown for these devices
-    if ((config.noBatteryCapability || config.mainsPowered || !config.battery) && this.hasCapability('measure_battery')) {
+      }
+      await new Promise(r => setTimeout(r, 3000));
+      this.log('[RADAR] Force DP poll after magic packet');
+      await this._requestDPRefresh(zclNode);    // noBatteryCapability flag ensures battery is NEVER shown for these devices
+      if ((config.noBatteryCapability || config.mainsPowered || !config.battery) && this.hasCapability('measure_battery')) {
       try {this.log('[RADAR] 🔋 Removed measure_battery (mains-powered, no battery spam)');
       } catch (e) { /* ignore */ }
-    }
-
-    // v5.5.325: Also disable battery monitoring completely for gkfbdvyx
-    if (config.noBatteryCapability) {
+      }
+      // v5.5.325: Also disable battery monitoring completely for gkfbdvyx
+      if (config.noBatteryCapability) {
       this._batteryMonitoringDisabled = true;
       this.log('[RADAR] 🔋 Battery monitoring DISABLED for this device');
-    }
-
-    // v5.5.374: INTELLIGENT ADAPTIVE CAPABILITY MANAGEMENT
-    // Pass config flags to intelligent adapter - it will handle removal/addition based on real data
-    if (this.intelligentAdapter) {
+      }
+      // v5.5.374: INTELLIGENT ADAPTIVE CAPABILITY MANAGEMENT
+      // Pass config flags to intelligent adapter - it will handle removal/addition based on real data
+      if (this.intelligentAdapter) {
       this.intelligentAdapter.setStaticConfigFlags({
-        noTemperature: config.noTemperature || false,
-        noHumidity: config.noHumidity || false,
-        noBatteryCapability: config.noBatteryCapability || false,
-        noIlluminance: !config.hasIlluminance,
+      noTemperature: config.noTemperature || false,
+      noHumidity: config.noHumidity || false,
+      noBatteryCapability: config.noBatteryCapability || false,
+      noIlluminance: !config.hasIlluminance,
       });
       this.log('[RADAR] 🧠 Intelligent adapter configured with sensor flags');
-
       // Let intelligent adapter decide based on real data instead of immediate removal
       // It will remove after learning phase if no data, or keep if data detected
-    } else {
+      } else {
       // Fallback to static removal if intelligent adapter not available
       // v5.5.329: Remove temperature capability for PIR-only sensors (forum #788)
       if (config.noTemperature && this.hasCapability('measure_temperature')) {
-        try {
-          await this.removeCapability('measure_temperature');
-          this.log('[RADAR] 🌡️ Removed measure_temperature (not supported by this device)');
-        } catch (e) { /* ignore */ }
+      try {
+      await this.removeCapability('measure_temperature');
+      this.log('[RADAR] 🌡️ Removed measure_temperature (not supported by this device)');
+      } catch (e) { /* ignore */ }
       }
-
       // v5.5.329: Remove humidity capability for PIR-only sensors (forum #788)
       if (config.noHumidity && this.hasCapability('measure_humidity')) {
-        try {
-          await this.removeCapability('measure_humidity');
-          this.log('[RADAR] 💧 Removed measure_humidity (not supported by this device)');
-        } catch (e) { /* ignore */ }
+      try {
+      await this.removeCapability('measure_humidity');
+      this.log('[RADAR] 💧 Removed measure_humidity (not supported by this device)');
+      } catch (e) { /* ignore */ }
       }
-    }
-
-    // v5.5.903: CAPABILITY MANAGEMENT - Add/remove based on device config
-    // Z2M research: ZG-204ZV does NOT have measure_luminance.distance (static_detection_distance is a SETTING, not measurement)
-    const hasDistanceDP = config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_luminance.distance');
-    const hasLuxDP = config.hasIlluminance || (config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_luminance'));
-    
-    // Add capabilities that ARE supported
-    if (hasLuxDP && !this.hasCapability('measure_luminance')) {
+      }
+      // v5.5.903: CAPABILITY MANAGEMENT - Add/remove based on device config
+      // Z2M research: ZG-204ZV does NOT have measure_luminance.distance (static_detection_distance is a SETTING, not measurement)
+      const hasDistanceDP = config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_luminance.distance');
+      const hasLuxDP = config.hasIlluminance || (config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_luminance'));
+      // Add capabilities that ARE supported
+      if (hasLuxDP && !this.hasCapability('measure_luminance')) {
       try {
-        await this.addCapability('measure_luminance');
-        this.log('[RADAR] ✅ Added measure_luminance (config supports it)');
+      await this.addCapability('measure_luminance');
+      this.log('[RADAR] ✅ Added measure_luminance (config supports it)');
       } catch (e) { /* ignore */ }
-    }
-    
-    if (hasDistanceDP && !this.hasCapability('measure_luminance.distance')) {
+      }
+      if (hasDistanceDP && !this.hasCapability('measure_luminance.distance')) {
       try {
-        await this.addCapability('measure_luminance.distance');
-        this.log('[RADAR] ✅ Added measure_luminance.distance (config supports it)');
+      await this.addCapability('measure_luminance.distance');
+      this.log('[RADAR] ✅ Added measure_luminance.distance (config supports it)');
       } catch (e) { /* ignore */ }
-    }
-    
-    // v5.5.903: REMOVE orphan capabilities that are NOT supported by this device
-    // Fixes Peter's ZG-204ZV showing "Distance" from previous pairing
-    if (!hasDistanceDP && this.hasCapability('measure_luminance.distance')) {
+      }
+      // v5.5.903: REMOVE orphan capabilities that are NOT supported by this device
+      // Fixes Peter's ZG-204ZV showing "Distance" from previous pairing
+      if (!hasDistanceDP && this.hasCapability('measure_luminance.distance')) {
       try {
-        await this.removeCapability('measure_luminance.distance');
-        this.log('[RADAR] 🧹 Removed orphan measure_luminance.distance (not supported by this sensor)');
+      await this.removeCapability('measure_luminance.distance');
+      this.log('[RADAR] 🧹 Removed orphan measure_luminance.distance (not supported by this sensor)');
       } catch (e) { /* ignore */ }
-    }
-
-    // v5.11.3: Remove orphan measure_luminance if not supported (e.g. _TZE200_crq3r3la)
-    if (!hasLuxDP && this.hasCapability('measure_luminance')) {
+      }
+      // v5.11.3: Remove orphan measure_luminance if not supported (e.g. _TZE200_crq3r3la)
+      if (!hasLuxDP && this.hasCapability('measure_luminance')) {
       try {
-        await this.removeCapability('measure_luminance');
-        this.log('[RADAR] 🧹 Removed orphan measure_luminance (not supported by this sensor)');
+      await this.removeCapability('measure_luminance');
+      this.log('[RADAR] 🧹 Removed orphan measure_luminance (not supported by this sensor)');
       } catch (e) { /* ignore */ }
-    }
-
-    // v5.5.852: ADD temperature/humidity for sensors that support them (ZG-204ZV fix)
-    // Peter_van_Werkhoven forum #1203: ZG-204ZV should have temp+humidity
-    if (!config.noTemperature && !this.hasCapability('measure_temperature')) {
+      }
+      // v5.5.852: ADD temperature/humidity for sensors that support them (ZG-204ZV fix)
+      // Peter_van_Werkhoven forum #1203: ZG-204ZV should have temp+humidity
+      if (!config.noTemperature && !this.hasCapability('measure_temperature')) {
       try {
-        await this.addCapability('measure_temperature');
-        this.log('[RADAR] 🌡️ Added measure_temperature (sensor supports it)');
+      await this.addCapability('measure_temperature');
+      this.log('[RADAR] 🌡️ Added measure_temperature (sensor supports it)');
       } catch (e) { /* ignore */ }
-    }
-    if (!config.noHumidity && !this.hasCapability('measure_humidity')) {
+      }
+      if (!config.noHumidity && !this.hasCapability('measure_humidity')) {
       try {
-        await this.addCapability('measure_humidity');
-        this.log('[RADAR] 💧 Added measure_humidity (sensor supports it)');
+      await this.addCapability('measure_humidity');
+      this.log('[RADAR] 💧 Added measure_humidity (sensor supports it)');
       } catch (e) { /* ignore */ }
-    }
-    
-    // v5.5.903: Remove orphan temp/humidity if config says device doesn't have them
-    if (config.noTemperature && this.hasCapability('measure_temperature')) {
+      }
+      // v5.5.903: Remove orphan temp/humidity if config says device doesn't have them
+      if (config.noTemperature && this.hasCapability('measure_temperature')) {
       try {
-        await this.removeCapability('measure_temperature');
-        this.log('[RADAR] 🧹 Removed orphan measure_temperature (not supported)');
+      await this.removeCapability('measure_temperature');
+      this.log('[RADAR] 🧹 Removed orphan measure_temperature (not supported)');
       } catch (e) { /* ignore */ }
-    }
-    if (config.noHumidity && this.hasCapability('measure_humidity')) {
+      }
+      if (config.noHumidity && this.hasCapability('measure_humidity')) {
       try {
-        await this.removeCapability('measure_humidity');
-        this.log('[RADAR] 🧹 Removed orphan measure_humidity (not supported)');
+      await this.removeCapability('measure_humidity');
+      this.log('[RADAR] 🧹 Removed orphan measure_humidity (not supported)');
       } catch (e) { /* ignore */ }
-    }
-
-    // v5.5.907: ADD battery capability for sensors with battery DP (Peter ZG-204ZV fix)
-    const hasBatteryDP = config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_battery');
-    if ((config.battery || hasBatteryDP) && !config.noBatteryCapability && !this.hasCapability('measure_battery')) {
+      }
+      // v5.5.907: ADD battery capability for sensors with battery DP (Peter ZG-204ZV fix)
+      const hasBatteryDP = config.dpMap && Object.values(config.dpMap).some(dp => dp.cap === 'measure_battery');
+      if ((config.battery || hasBatteryDP) && !config.noBatteryCapability && !this.hasCapability('measure_battery')) {
       try {
-        await this.addCapability('measure_battery');
-        this.log('[RADAR] 🔋 Added measure_battery (sensor supports it)');
+      await this.addCapability('measure_battery');
+      this.log('[RADAR] 🔋 Added measure_battery (sensor supports it)');
       } catch (e) { /* ignore */ }
-    }
-
-    // v5.5.268: Start periodic polling for TZE284 devices that need it
-    if (config.needsPolling) {
+      }
+      // v5.5.268: Start periodic polling for TZE284 devices that need it
+      if (config.needsPolling) {
       this._startPresencePolling(zclNode);
-    }
-
-    this.log('[RADAR] ✅ Radar presence sensor ready (full mode)');
+      }
+      this.log('[RADAR] ✅ Radar presence sensor ready (full mode)');
+    }, 'onNodeInit');
   }
 
   /**

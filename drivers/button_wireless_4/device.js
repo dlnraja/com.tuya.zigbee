@@ -1,24 +1,23 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const PhysicalButtonMixin = require('../../lib/tuya/PhysicalButtonMixin');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
- * Button 4 Gang - Universal Driver (v9.5.0)
- * Rebuilt using PhysicalButtonMixin for robust 8-layer detection.
- * Supports TS0044, TS004F, MOES E000, and Tuya DP variants.
+ * Button 4 Gang - Universal Hardened Driver (v10.0.0)
  */
-class Button4GangDevice extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
+class Button4GangDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 
-  async onNodeInit({ zclNode }) {
-    this.buttonCount = 4;
+  async onNodeInit() {
+    await super.onNodeInit();
     
-    // Initialize base systems (Mixins automatically hook in via super)
-    await super.onNodeInit({ zclNode });
-
-    this.log('[BUTTON4] 🔘 Initialized via Universal Mixin System');
-    this.log('[BUTTON4] 📡 8-Layer Detection Active: Scenes, OnOff, Multi, Level, E000, DP, Raw');
+    this.buttonCount = 4;
+    this.gangCount = 4; // Needed for PhysicalButtonMixin
+    
+    // Initialize physical button detection v5.13.6
+    await this.initPhysicalButtonDetection(this.zclNode);
+    
+    this.log('[BUTTON4] 🔘 Hardened via TuyaZigbeeDevice + PhysicalButtonMixin');
   }
 
 }

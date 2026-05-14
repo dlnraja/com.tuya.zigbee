@@ -78,7 +78,7 @@ const BATTERY_THROTTLE_MS = 300000; // 5 minutes minimum between updates
  * ║                                                                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ClimateSensorDevice extends SensorBase {
+class ClimateSensorDevice extends BatteryMixin(SensorBase) {
 
   /** Battery powered */
   get mainsPowered() { return false; }
@@ -448,248 +448,219 @@ class ClimateSensorDevice extends SensorBase {
   // ═══════════════════════════════════════════════════════════════════════════
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'msRelativeHumidity',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 100,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
+      {
+      cluster: 'msTemperatureMeasurement',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 50,
+      },
+      {
+      cluster: 'msRelativeHumidity',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 100,
+      },
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    this.log('');
-    this.log('╔══════════════════════════════════════════════════════════════════════════════╗');
-    this.log('║  CLIMATE SENSOR ULTIMATE - v5.5.317 INTELLIGENT INFERENCE                   ║');
-    this.log('║  ZCL + Tuya DP + Battery + Time sync + Validation + Cross-correlation      ║');
-    this.log('╚══════════════════════════════════════════════════════════════════════════════╝');
-    this.log('');
-
-    // Store zclNode for time sync
-    this._zclNode = zclNode;
-
-    // v5.5.317: Initialize intelligent inference engines
-    this._climateInference = new ClimateInference(this, {
+      }
+      this.log('');
+      this.log('╔══════════════════════════════════════════════════════════════════════════════╗');
+      this.log('║  CLIMATE SENSOR ULTIMATE - v5.5.317 INTELLIGENT INFERENCE                   ║');
+      this.log('║  ZCL + Tuya DP + Battery + Time sync + Validation + Cross-correlation      ║');
+      this.log('╚══════════════════════════════════════════════════════════════════════════════╝');
+      this.log('');
+      // Store zclNode for time sync
+      this._zclNode = zclNode;
+      // v5.5.317: Initialize intelligent inference engines
+      this._climateInference = new ClimateInference(this, {
       maxTempJump: 5,       // Max 5°C change per reading
       maxHumidityJump: 15,  // Max 15% humidity change per reading
-    });
-    this._batteryInference = new BatteryInference(this);
-
-    // Call parent initialization (UnifiedSensorBase sets up ALL listeners)
-    await super.onNodeInit({ zclNode });
-
-    // ═══════════════════════════════════════════════════════════════════════
-    // Read device info from basic cluster
-    // ═══════════════════════════════════════════════════════════════════════
-    let mfr = 'unknown';
-    let modelId = 'unknown';
-
-    try {
+      });
+      this._batteryInference = new BatteryInference(this);
+      // Call parent initialization (UnifiedSensorBase sets up ALL listeners)
+      await super.onNodeInit({ zclNode });
+      // ═══════════════════════════════════════════════════════════════════════
+      // Read device info from basic cluster
+      // ═══════════════════════════════════════════════════════════════════════
+      let mfr = 'unknown';
+      let modelId = 'unknown';
+      try {
       const endpoint = zclNode?.endpoints?.[1];
       const basicCluster = endpoint?.clusters?.basic;
       if (basicCluster && typeof basicCluster.readAttributes === 'function') {
-        const attrs = await basicCluster.readAttributes(['manufacturerName', 'modelId']).catch(() => ({}));
-        mfr = attrs.manufacturerName || 'unknown';
-        modelId = attrs.modelId || 'unknown';
+      const attrs = await basicCluster.readAttributes(['manufacturerName', 'modelId']).catch(() => ({}));
+      mfr = attrs.manufacturerName || 'unknown';
+      modelId = attrs.modelId || 'unknown';
       }
-    } catch (e) {
+      } catch (e) {
       this.log('[CLIMATE] Basic cluster read failed:', e.message);
-    }
-
-    // Fallback to settings
-    if (mfr === 'unknown') {
+      }
+      // Fallback to settings
+      if (mfr === 'unknown') {
       const settings = this.getSettings() || {};
       mfr = settings.zb_manufacturer_name || 'unknown';
       modelId = settings.zb_model_id || 'unknown';
-    }
-
-    this._manufacturerName = mfr;
-    this._modelId = modelId;
-
-    // v5.5.190: Log device protocol detection
-    const protocol = this.deviceProtocol;
-    const needsEpoch = this.needsTuyaEpoch;
-    const batteryEnum = this.usesBatteryStateEnum;
-
-    this.log(`[CLIMATE] Device: ${mfr} / ${modelId}`);
-    this.log(`[CLIMATE] Protocol: ${protocol} | Tuya Epoch: ${needsEpoch} | Battery Enum: ${batteryEnum}`);
-
-    // ═══════════════════════════════════════════════════════════════════════
-    // Detect available clusters
-    // ═══════════════════════════════════════════════════════════════════════
-    const ep1 = zclNode?.endpoints?.[1];
-    const clusters = ep1?.clusters || {};
-
-    this._hasTuyaCluster = !!(
+      }
+      this._manufacturerName = mfr;
+      this._modelId = modelId;
+      // v5.5.190: Log device protocol detection
+      const protocol = this.deviceProtocol;
+      const needsEpoch = this.needsTuyaEpoch;
+      const batteryEnum = this.usesBatteryStateEnum;
+      this.log(`[CLIMATE] Device: ${mfr} / ${modelId}`);
+      this.log(`[CLIMATE] Protocol: ${protocol} | Tuya Epoch: ${needsEpoch} | Battery Enum: ${batteryEnum}`);
+      // ═══════════════════════════════════════════════════════════════════════
+      // Detect available clusters
+      // ═══════════════════════════════════════════════════════════════════════
+      const ep1 = zclNode?.endpoints?.[1];
+      const clusters = ep1?.clusters || {};
+      this._hasTuyaCluster = !!(
       clusters.tuya || clusters.tuyaSpecific ||
       clusters[0xEF00] || clusters['61184']
-    );
-
-    this.log(`[CLIMATE] Tuya cluster: ${this._hasTuyaCluster ? '✅' : '❌'}`);
-
-    // ═══════════════════════════════════════════════════════════════════════
-    // v5.5.208: ZCL TIME CLUSTER SYNC - CORRECT METHOD FOR TS0601 RTC DEVICES
-    // Using ZCL Time Cluster 0x000A with Zigbee Epoch 2000 (NOT EF00!)
-    // ═══════════════════════════════════════════════════════════════════════
-
-    // DIAGNOSTIC FORCÉ pour _TZE284_vvmbj46n
-    const diagnosticMfr = this._manufacturerName || '';
-    const diagnosticModelId = this._modelId || '';
-    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Device: ${diagnosticMfr} / ${diagnosticModelId}`);
-    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Protocol: ${typeof this.getProtocol === 'function' ? this.getProtocol() : 'N/A'}`);
-    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - isLCDClimateDevice: ${typeof this.isLCDClimateDevice === 'function' ? this.isLCDClimateDevice() : 'N/A'}`);
-    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - needsTuyaEpoch: ${this.needsTuyaEpoch || 'N/A'}`);
-
-    // Détection RTC via outCluster 0x000A (méthode fiable)
-    const rtcDetection = TuyaRtcDetector.hasRtc(this, { useHeuristics: true });
-    this.log(`[CLIMATE] 🔍 RTC Detection: ${JSON.stringify(rtcDetection)}`);
-
-    if (rtcDetection.hasRtc) {
+      );
+      this.log(`[CLIMATE] Tuya cluster: ${this._hasTuyaCluster ? '✅' : '❌'}`);
+      // ═══════════════════════════════════════════════════════════════════════
+      // v5.5.208: ZCL TIME CLUSTER SYNC - CORRECT METHOD FOR TS0601 RTC DEVICES
+      // Using ZCL Time Cluster 0x000A with Zigbee Epoch 2000 (NOT EF00!)
+      // ═══════════════════════════════════════════════════════════════════════
+      // DIAGNOSTIC FORCÉ pour _TZE284_vvmbj46n
+      const diagnosticMfr = this._manufacturerName || '';
+      const diagnosticModelId = this._modelId || '';
+      this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Device: ${diagnosticMfr} / ${diagnosticModelId}`);
+      this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Protocol: ${typeof this.getProtocol === 'function' ? this.getProtocol() : 'N/A'}`);
+      this.log(`[CLIMATE] 🔍 DIAGNOSTIC - isLCDClimateDevice: ${typeof this.isLCDClimateDevice === 'function' ? this.isLCDClimateDevice() : 'N/A'}`);
+      this.log(`[CLIMATE] 🔍 DIAGNOSTIC - needsTuyaEpoch: ${this.needsTuyaEpoch || 'N/A'}`);
+      // Détection RTC via outCluster 0x000A (méthode fiable)
+      const rtcDetection = TuyaRtcDetector.hasRtc(this, { useHeuristics: true });
+      this.log(`[CLIMATE] 🔍 RTC Detection: ${JSON.stringify(rtcDetection)}`);
+      if (rtcDetection.hasRtc) {
       this.log('[CLIMATE] 🔥 RTC DEVICE DETECTED - Setting up ZCL Time Cluster sync');
-
       // ─────────────────────────────────────────────────────────────────────
       // ZCL TIME SYNC: Production-ready avec bind + writeAttributes + throttle
       // ─────────────────────────────────────────────────────────────────────
       this.zigbeeTimeSync = new ZigbeeTimeSync(this, {
-        throttleMs: 24 * 60 * 60 * 1000, // 24h throttle (battery safe)
-        maxRetries: 3,
-        retryDelayMs: 2000
+      throttleMs: 24 * 60 * 60 * 1000, // 24h throttle (battery safe)
+      maxRetries: 3,
+      retryDelayMs: 2000
       });
-
       // One-shot sync immediate
       const syncResult = await this.zigbeeTimeSync.sync({ force: true });
       if (syncResult.success) {
-        this.log('[CLIMATE] ✅ Initial ZCL Time sync successful - LCD should show correct time!');
+      this.log('[CLIMATE] ✅ Initial ZCL Time sync successful - LCD should show correct time!');
       } else {
-        this.log(`[CLIMATE] ⚠️ Initial sync failed: ${syncResult.reason}`);
+      this.log(`[CLIMATE] ⚠️ Initial sync failed: ${syncResult.reason}`);
       }
-
       // Daily sync (ultra battery-safe)
       this._dailyZclSyncInterval = this.homey.setInterval(async () => {
-        this.log('[CLIMATE] 🕐 Daily ZCL Time sync...');
-        const result = await this.zigbeeTimeSync.sync();
-        this.log(`[CLIMATE] Daily sync result: ${result.success ? 'success' : result.reason}`);
+      this.log('[CLIMATE] 🕐 Daily ZCL Time sync...');
+      const result = await this.zigbeeTimeSync.sync();
+      this.log(`[CLIMATE] Daily sync result: ${result.success ? 'success' : result.reason}`);
       }, 24 * 60 * 60 * 1000);
-
       // ─────────────────────────────────────────────────────────────────────
       // DEBUG MODE: Test toutes les méthodes ZCL (si activé)
       // ─────────────────────────────────────────────────────────────────────
       if (this.getSettings().zigbee_time_debug === true) {
-        this.log('[CLIMATE] 🧪 ZCL DEBUG MODE: Testing all Time cluster methods...');
-        const debugResults = await this.zigbeeTimeSync.debugSync();
-        this.log('[CLIMATE] 🧪 Debug complete:', JSON.stringify(debugResults, null, 2));
+      this.log('[CLIMATE] 🧪 ZCL DEBUG MODE: Testing all Time cluster methods...');
+      const debugResults = await this.zigbeeTimeSync.debugSync();
+      this.log('[CLIMATE] 🧪 Debug complete:', JSON.stringify(debugResults, null, 2));
       }
-
       this.log('[CLIMATE] 🎯 ZCL Time Cluster sync setup complete (method: bind + writeAttributes)');
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════
-    // v5.5.469: DUAL TIME SYNC FOR LCD CLIMATE SENSORS
-    // Some LCD devices need Tuya EF00 time sync IN ADDITION to ZCL Time Cluster
-    // v5.5.469: Removed _hasTuyaCluster check - device receives EF00 frames even
-    // when cluster object isn't exposed (passive mode). Try sync anyway!
-    // ═══════════════════════════════════════════════════════════════════════
-    if (this.isLCDClimateDevice()) {
+      }
+      // ═══════════════════════════════════════════════════════════════════════
+      // v5.5.469: DUAL TIME SYNC FOR LCD CLIMATE SENSORS
+      // Some LCD devices need Tuya EF00 time sync IN ADDITION to ZCL Time Cluster
+      // v5.5.469: Removed _hasTuyaCluster check - device receives EF00 frames even
+      // when cluster object isn't exposed (passive mode). Try sync anyway!
+      // ═══════════════════════════════════════════════════════════════════════
+      if (this.isLCDClimateDevice()) {
       this.log('[CLIMATE] 🔥 LCD DEVICE - Sending DUAL time sync (ZCL + Tuya EF00)...');
-
       // v5.5.375: AGGRESSIVE LCD TIME SYNC - Send multiple times to ensure delivery
       // LCD devices are passive and may miss the first sync attempts
       const lcdSyncDelays = [3000, 10000, 30000, 60000, 120000]; // 3s, 10s, 30s, 1m, 2m
       lcdSyncDelays.forEach((delay, index) => {
-        setTimeout(async () => {
-          try {
-            this.log(`[CLIMATE] 🔥 LCD time sync attempt ${index + 1}/${lcdSyncDelays.length}...`);
-            await this._sendForcedTimeSync();
-            this.log(`[CLIMATE] 🔥 ✅ LCD time sync attempt ${index + 1} sent`);
-          } catch (e) {
-            this.log(`[CLIMATE] 🔥 ⚠️ LCD sync attempt ${index + 1} failed:`, e.message);
-          }
-        }, delay);
+      setTimeout(async () => {
+      try {
+      this.log(`[CLIMATE] 🔥 LCD time sync attempt ${index + 1}/${lcdSyncDelays.length}...`);
+      await this._sendForcedTimeSync();
+      this.log(`[CLIMATE] 🔥 ✅ LCD time sync attempt ${index + 1} sent`);
+      } catch (e) {
+      this.log(`[CLIMATE] 🔥 ⚠️ LCD sync attempt ${index + 1} failed:`, e.message);
+      }
+      }, delay);
       });
-
       // Schedule hourly Tuya EF00 sync for LCD devices (in addition to ZCL daily)
       this._hourlyLcdSyncInterval = this.homey.setInterval(async () => {
-        this.log('[CLIMATE] 🔥 Hourly LCD Tuya EF00 time sync...');
-        await this._sendForcedTimeSync().catch(e =>
-          this.log('[CLIMATE] LCD sync failed:', e.message)
-        );
+      this.log('[CLIMATE] 🔥 Hourly LCD Tuya EF00 time sync...');
+      await this._sendForcedTimeSync().catch(e =>
+      this.log('[CLIMATE] LCD sync failed:', e.message)
+      );
       }, 60 * 60 * 1000); // 1 hour
-    }
-
-    // Legacy time sync for non-RTC devices (keep existing behavior)
-    if (!TuyaDeviceClassifier.hasRtcScreen(this) && !this.isLCDClimateDevice()) {
+      }
+      // Legacy time sync for non-RTC devices (keep existing behavior)
+      if (!TuyaDeviceClassifier.hasRtcScreen(this) && !this.isLCDClimateDevice()) {
       this._hourlySyncInterval = this.homey.setInterval(async () => {
-        this.log('[CLIMATE] 🕐 Hourly time sync (non-RTC device)...');
-        await this._sendTimeSync().catch(e => this.log('[CLIMATE] Time sync failed:', e.message));
+      this.log('[CLIMATE] 🕐 Hourly time sync (non-RTC device)...');
+      await this._sendTimeSync().catch(e => this.log('[CLIMATE] Time sync failed:', e.message));
       }, 60 * 60 * 1000); // 1 hour
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════
-    // v5.5.188: EXPLICIT ZCL CLUSTER SETUP (like v5.5.165)
-    // Bind + configure reporting for temperature, humidity, battery
-    // ═══════════════════════════════════════════════════════════════════════
-    await this._setupExplicitZCLClusters(zclNode);
-
-    // DIAGNOSTIC FORCÉ - Vérifier état clusters et données
-    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Available clusters: ${JSON.stringify(Object.keys(clusters || {}))}`);
-    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Available capabilities: ${JSON.stringify(this.getCapabilities())}`);
-    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Current values: temp=${this.getCapabilityValue('measure_temperature')}, hum=${this.getCapabilityValue('measure_humidity')}, bat=${this.getCapabilityValue('measure_battery')}`);
-    this.log(`[CLIMATE] 🔍 DIAGNOSTIC - _hasTuyaCluster: ${this._hasTuyaCluster}`);
-
-    // ═══════════════════════════════════════════════════════════════════════
-    // Send Tuya Magic Packet to wake up device
-    // ═══════════════════════════════════════════════════════════════════════
-    if (this._hasTuyaCluster) {
+      }
+      // ═══════════════════════════════════════════════════════════════════════
+      // v5.5.188: EXPLICIT ZCL CLUSTER SETUP (like v5.5.165)
+      // Bind + configure reporting for temperature, humidity, battery
+      // ═══════════════════════════════════════════════════════════════════════
+      await this._setupExplicitZCLClusters(zclNode);
+      // DIAGNOSTIC FORCÉ - Vérifier état clusters et données
+      this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Available clusters: ${JSON.stringify(Object.keys(clusters || {}))}`);
+      this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Available capabilities: ${JSON.stringify(this.getCapabilities())}`);
+      this.log(`[CLIMATE] 🔍 DIAGNOSTIC - Current values: temp=${this.getCapabilityValue('measure_temperature')}, hum=${this.getCapabilityValue('measure_humidity')}, bat=${this.getCapabilityValue('measure_battery')}`);
+      this.log(`[CLIMATE] 🔍 DIAGNOSTIC - _hasTuyaCluster: ${this._hasTuyaCluster}`);
+      // ═══════════════════════════════════════════════════════════════════════
+      // Send Tuya Magic Packet to wake up device
+      // ═══════════════════════════════════════════════════════════════════════
+      if (this._hasTuyaCluster) {
       this.log('[CLIMATE] 🔮 Sending Tuya Magic Packet...');
       await this._sendTuyaMagicPacket(zclNode).catch(e => {
-        this.log('[CLIMATE] Magic packet failed:', e.message);
+      this.log('[CLIMATE] Magic packet failed:', e.message);
       });
-    } else {
+      } else {
       this.log('[CLIMATE] ❌ NO TUYA CLUSTER - Device might not be pairing correctly');
-    }
-
-    // ═══════════════════════════════════════════════════════════════════════
-    // Schedule initial DP requests for sleepy device
-    // ═══════════════════════════════════════════════════════════════════════
-    this._scheduleInitialDPRequests();
-
-    // ═══════════════════════════════════════════════════════════════════════
-    // v5.5.188: Read ZCL attributes immediately (battery, temp, humidity)
-    // ═══════════════════════════════════════════════════════════════════════
-    await this._readZCLAttributesNow(zclNode);
-    await setupSonoffSensor(this, zclNode);
-
-    this.log('[CLIMATE] ✅ Climate sensor ready - INTELLIGENT v5.11.106 + SONOFF cal');
-    this.log('[CLIMATE] ════════════════════════════════════════════════════════════');
-    this.log('[CLIMATE] ⚠️ BATTERY DEVICE - This is a sleepy sensor!');
-    this.log('[CLIMATE] ⚠️ First data may take 10-60 minutes after pairing');
-    this.log('[CLIMATE] ⚠️ Device only wakes up periodically to save battery');
-    this.log('[CLIMATE] ⚠️ All DP/ZCL requests sent - waiting for device to wake up');
-    if (this.isLCDClimateDevice()) {
+      }
+      // ═══════════════════════════════════════════════════════════════════════
+      // Schedule initial DP requests for sleepy device
+      // ═══════════════════════════════════════════════════════════════════════
+      this._scheduleInitialDPRequests();
+      // ═══════════════════════════════════════════════════════════════════════
+      // v5.5.188: Read ZCL attributes immediately (battery, temp, humidity)
+      // ═══════════════════════════════════════════════════════════════════════
+      await this._readZCLAttributesNow(zclNode);
+      await setupSonoffSensor(this, zclNode);
+      this.log('[CLIMATE] ✅ Climate sensor ready - INTELLIGENT v5.11.106 + SONOFF cal');
+      this.log('[CLIMATE] ════════════════════════════════════════════════════════════');
+      this.log('[CLIMATE] ⚠️ BATTERY DEVICE - This is a sleepy sensor!');
+      this.log('[CLIMATE] ⚠️ First data may take 10-60 minutes after pairing');
+      this.log('[CLIMATE] ⚠️ Device only wakes up periodically to save battery');
+      this.log('[CLIMATE] ⚠️ All DP/ZCL requests sent - waiting for device to wake up');
+      if (this.isLCDClimateDevice()) {
       this.log('[CLIMATE] 🔥 LCD DEVICE - FORCED time sync enabled for display');
-    }
-    this.log('[CLIMATE] ════════════════════════════════════════════════════════════');
-    this.log('');
+      }
+      this.log('[CLIMATE] ════════════════════════════════════════════════════════════');
+      this.log('');
+    }, 'onNodeInit');
   }
 
   // ═══════════════════════════════════════════════════════════════════════════

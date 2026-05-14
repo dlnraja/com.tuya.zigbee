@@ -10,7 +10,7 @@ const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
  * ║  Features: gas, gas_value, self_test, silence, alarm_ringtone, alarm_time   ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class GasSensorDevice extends SensorBase {
+class GasSensorDevice extends BatteryMixin(SensorBase) {
 
   get mainsPowered() { return true; }
 
@@ -60,32 +60,35 @@ class GasSensorDevice extends SensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        },
-        {
-          cluster: 'ssIasZone',
-          attributeName: 'zoneStatus',
-          minInterval: 0,
-          maxInterval: 3600,
-          minChange: 1,
-        }
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      },
+      {
+      cluster: 'ssIasZone',
+      attributeName: 'zoneStatus',
+      minInterval: 0,
+      maxInterval: 3600,
+      minChange: 1,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-    await super.onNodeInit({ zclNode });
-    this.log('[GAS] v5.5.292 - DPs: 1,2,3,4,9-11,13,14,16 | ZCL: IAS,PWR,EF00');
-    this.log('[GAS] ✅ Ready');
-    // v5.5.292: Flow triggers now handled bySensorBase._triggerCustomFlowsIfNeeded()
+      }
+      await super.onNodeInit({ zclNode });
+      this.log('[GAS] v5.5.292 - DPs: 1,2,3,4,9-11,13,14,16 | ZCL: IAS,PWR,EF00');
+      this.log('[GAS] ✅ Ready');
+      // v5.5.292: Flow triggers now handled bySensorBase._triggerCustomFlowsIfNeeded()
+    }, 'onNodeInit');
   }
 
   async silenceAlarm() {

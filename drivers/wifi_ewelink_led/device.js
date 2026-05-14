@@ -8,7 +8,7 @@ class D extends EweLinkLocalDevice{
     mode:{capability:null}
   };}
   _registerCapListeners(){
-    this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v);});
+    this.registerCapabilityListener('onoff',async v=>{ if (typeof this.markAppCommand === 'function') this.markAppCommand(1, v);await this._client.setSwitch(v);});
     this.registerCapabilityListener('dim',async v=>{await this._client._send('/zeroconf/dimmable',{brightness:Math.round(v*100)});});
   }
   async onInit(){
