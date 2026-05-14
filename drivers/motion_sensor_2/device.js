@@ -6,7 +6,10 @@ const TuyaSpecificCluster = require('../../lib/clusters/TuyaSpecificCluster');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
-class motion_sensor_2 extends ZigBeeDevice {
+const BatteryMixin = require('../../lib/tuya/BatteryMixin');
+const PhysicalButtonMixin = require('../../lib/tuya/PhysicalButtonMixin');
+
+class motion_sensor_2 extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
@@ -40,22 +43,23 @@ class motion_sensor_2 extends ZigBeeDevice {
       ]).catch(this.error);
     }
 
+    // v5.13.0: Battery and Button logic is now handled by Mixins
+    // Mixins automatically hook into onNodeInit via super.onNodeInit
+
     // alarm_motion handler
     zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME]
       .onZoneStatusChangeNotification = payload => {
 		  this.onZoneStatusChangeNotification(payload);
       };
   
-    // measure_battery and alarm_battery handler
-    zclNode.endpoints[1].clusters[CLUSTER.POWER_CONFIGURATION.NAME]
-      .on('attr.batteryPercentageRemaining', this.onBatteryPercentageRemainingAttributeReport.bind(this));
-		
     // measure_illuminance handler
     zclNode.endpoints[1].clusters[CLUSTER.ILLUMINANCE_MEASUREMENT.NAME]
       .on('attr.measuredValue', this.onIlluminanceMeasuredAttributeReport.bind(this));
 
     // Tuya specific cluster handler
-    zclNode.endpoints[1].clusters.tuya.on('reporting', value => this.processResponse(value));
+    if (zclNode.endpoints[1].clusters.tuya) {
+      zclNode.endpoints[1].clusters.tuya.on('reporting', value => this.processResponse(value));
+    }
 
   }
 
@@ -65,14 +69,6 @@ class motion_sensor_2 extends ZigBeeDevice {
     await this.setCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this.error);
   }
 
-  // Handle battery status attribute reports
-  onBatteryPercentageRemainingAttributeReport(batteryPercentageRemaining) {
-    const batteryThreshold = this.getSetting('batteryThreshold') || 20;
-    const batteryLevel = batteryPercentageRemaining / 2; // Convert to percentage
-    this.log('measure_battery | Battery level (%):', batteryLevel);
-    await this.setCapabilityValue('measure_battery', batteryLevel).catch(this.error);
-    await this.setCapabilityValue('alarm_battery', batteryLevel < batteryThreshold).catch(this.error);
-  }
 	
   // Handle illuminance attribute reports
   onIlluminanceMeasuredAttributeReport(measuredValue) {

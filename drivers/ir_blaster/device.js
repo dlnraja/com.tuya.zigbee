@@ -103,7 +103,8 @@ class IrBlasterDevice extends ZigBeeDevice {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    // v5.13.3: IR blasters are USB-powered, remove battery capthis.log('IR Blaster initializing...');
+    // v5.13.3: IR blasters are USB-powered
+    this.log('IR Blaster initializing...');
 
     // v5.5.356: Initialize enhanced IR storage system
     this._learnedCodes = this.getStoreValue('learned_codes') || {};
@@ -784,16 +785,29 @@ class IrBlasterDevice extends ZigBeeDevice {
       unk4: 0x0000
     });
 
+    // v5.13.5: Ensure coordinator is bound to Transmit cluster so we receive data requests
+    try {
+      await transmitCluster.bind();
+      this.log('[IR-CHUNK] ✅ ZosungIRTransmit bound successfully');
+    } catch (e) {
+      this.log('[IR-CHUNK] ⚠️ Bind failed (non-critical):', e.message);
+    }
+
     // Wait for acknowledgment and data requests
     // The device will request chunks via codeDataRequest events
     return new Promise((resolve, reject) => {
+      let attempts = 0;
+      const MAX_ATTEMPTS = 3;
+
       const timeout = this.homey.setTimeout(() => {
+        this.log(`[IR-CHUNK] ❌ Transmission timeout after 10s (seq=${seq})`);
         delete this._pendingIRMessage;
         delete this._pendingIRSeq;
-        reject(new Error('IR transmission timeout'));
+        reject(new Error('IR transmission timeout - device did not request chunks'));
       }, 10000);
 
       this._irTransmitResolve = () => {
+        this.log(`[IR-CHUNK] ✅ Transmission complete (seq=${seq})`);
         this.homey.clearTimeout(timeout);
         delete this._pendingIRMessage;
         delete this._pendingIRSeq;

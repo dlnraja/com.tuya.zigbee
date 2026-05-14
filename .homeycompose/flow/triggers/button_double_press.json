@@ -1,0 +1,33 @@
+{
+  "id": "button_double_press",
+  "title": {
+    "en": "Button double-pressed",
+    "fr": "Bouton double-cliqué",
+    "nl": "Knop dubbel ingedrukt",
+    "de": "Taste doppelt gedrückt"
+  },
+  "titleFormatted": {
+    "en": "[[device]] button [[button]] was double-pressed",
+    "fr": "Bouton [[button]] de [[device]] double-cliqué",
+    "nl": "[[device]] knop [[button]] was dubbel ingedrukt",
+    "de": "[[device]] Taste [[button]] war doppelt gedrückt"
+  },
+  "tokens": [
+    {
+      "name": "button",
+      "type": "string",
+      "title": {
+        "en": "Button",
+        "fr": "Bouton"
+      },
+      "example": "1"
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=button.1,capabilities=button"
+    }
+  ]
+}
