@@ -46,7 +46,7 @@ const VALIDATION = {
  * Supports: Fantem ZB003-x, Immax 07502L, Generic Tuya Multisensor
  * Source: https://community.home-assistant.io/t/tuya-zigbee-multi-sensor-4-in-1/409780
  */
-class MotionSensorDevice extends SensorBase {
+class MotionSensorDevice extends BatteryMixin(SensorBase) {
 
   get mainsPowered() { return false; }
 
@@ -602,139 +602,128 @@ class MotionSensorDevice extends SensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'ssIasZone',
-          attributeName: 'zoneStatus',
-          minInterval: 0,
-          maxInterval: 3600,
-          minChange: 1,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        },
-        {
-          cluster: 'msIlluminanceMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'msRelativeHumidity',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 100,
-        }
+      {
+      cluster: 'ssIasZone',
+      attributeName: 'zoneStatus',
+      minInterval: 0,
+      maxInterval: 3600,
+      minChange: 1,
+      },
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      },
+      {
+      cluster: 'msIlluminanceMeasurement',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 50,
+      },
+      {
+      cluster: 'msTemperatureMeasurement',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 50,
+      },
+      {
+      cluster: 'msRelativeHumidity',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 100,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    // v5.5.228: Remove alarm_contact if wrongly added (motion sensors use alarm_motion only)
-    if (this.hasCapability('alarm_contact')) {
+      }
+      // v5.5.228: Remove alarm_contact if wrongly added (motion sensors use alarm_motion only)
+      if (this.hasCapability('alarm_contact')) {
       await this.removeCapability('alarm_contact').catch(() => { });
       this.log('[MOTION] ⚠️ Removed incorrect alarm_contact capability');
-    }
-
-    // v5.5.892: FORUM FIX (Peter_van_Werkhoven #1211)
-    // Remove "distance" capability that was incorrectly showing on ZG-204ZV
-    // Distance is only for radar sensors (ZG-204ZM), not PIR multisensors
-    const orphanCaps = ['measure_distance', 'measure_luminance.distance', 'distance', 'internal_distance', 'detection_distance'];
-    for (const cap of orphanCaps) {
-      if (this.hasCapability(cap)) {
-        await this.removeCapability(cap).catch(() => { });
-        this.log(`[MOTION] ⚠️ Removed orphan capability: ${cap}`);
       }
-    }
-
-    // v5.5.113: Detect available clusters BEFORE super.onNodeInit
-    // This adds temp/humidity capabilities only if clusters exist
-    await this._detectAvailableClusters(zclNode);
-
-    // v5.5.919: FORUM FIX (Peter_van_Werkhoven #1225)
-    // For TS0601 Tuya DP multisensors like ZG-204ZV, add capabilities based on profile
-    // These don't have ZCL clusters but send temp/humidity via Tuya DPs
-    await this._ensureTuyaDPCapabilities();
-
-    await super.onNodeInit({ zclNode });
-
-    // v5.8.28: CRITICAL FIX - IAS Zone enrollment (Lasse_K forum 'inactivated' fix)
-    try {
+      // v5.5.892: FORUM FIX (Peter_van_Werkhoven #1211)
+      // Remove "distance" capability that was incorrectly showing on ZG-204ZV
+      // Distance is only for radar sensors (ZG-204ZM), not PIR multisensors
+      const orphanCaps = ['measure_distance', 'measure_luminance.distance', 'distance', 'internal_distance', 'detection_distance'];
+      for (const cap of orphanCaps) {
+      if (this.hasCapability(cap)) {
+      await this.removeCapability(cap).catch(() => { });
+      this.log(`[MOTION] ⚠️ Removed orphan capability: ${cap}`);
+      }
+      }
+      // v5.5.113: Detect available clusters BEFORE super.onNodeInit
+      // This adds temp/humidity capabilities only if clusters exist
+      await this._detectAvailableClusters(zclNode);
+      // v5.5.919: FORUM FIX (Peter_van_Werkhoven #1225)
+      // For TS0601 Tuya DP multisensors like ZG-204ZV, add capabilities based on profile
+      // These don't have ZCL clusters but send temp/humidity via Tuya DPs
+      await this._ensureTuyaDPCapabilities();
+      await super.onNodeInit({ zclNode });
+      // v5.8.28: CRITICAL FIX - IAS Zone enrollment (Lasse_K forum 'inactivated' fix)
+      try {
       const iasManager = new IASZoneManager(this);
       await iasManager.enrollIASZone();
-    } catch (e) {
+      } catch (e) {
       this.log(`[MOTION] ⚠️ IAS enrollment error (non-critical): ${e.message}`);
-    }
-
-    // v5.5.299: Initialize sleepy device state tracking
-    this._isDeviceAwake = false;
-    this._lastWakeTime = 0;
-    this._pendingZclReads = new Set();
-
-    // v5.5.317: Initialize intelligent inference engines
-    this._motionLuxInference = new MotionLuxInference(this, {
+      }
+      // v5.5.299: Initialize sleepy device state tracking
+      this._isDeviceAwake = false;
+      this._lastWakeTime = 0;
+      this._pendingZclReads = new Set();
+      // v5.5.317: Initialize intelligent inference engines
+      this._motionLuxInference = new MotionLuxInference(this, {
       luxChangeThreshold: 8,      // 8% change triggers motion inference
       motionHoldTime: 60000,      // Hold motion for 60s
       luxActivityWindow: 5000     // 5s window for activity detection
-    });
-    this._batteryInference = new BatteryInference(this);
-    this._useMotionInference = false; // Enable after detecting PIR issues
-    this._pirFailCount = 0;
-
-    // v5.5.355: SMART LUX REPORTING - Independent luminance updates
-    this._luxSmartReporting = {
+      });
+      this._batteryInference = new BatteryInference(this);
+      this._useMotionInference = false; // Enable after detecting PIR issues
+      this._pirFailCount = 0;
+      // v5.5.355: SMART LUX REPORTING - Independent luminance updates
+      this._luxSmartReporting = {
       lastLuxValue: null,
       lastLuxTime: 0,
       luxReportInterval: 5 * 60 * 1000, // 5 minutes base interval
       luxChangeThreshold: 10, // 10% change threshold
       forceReportInterval: 30 * 60 * 1000, // Force report every 30 minutes
       enabled: this.getSetting('smart_lux_reporting') !== false
-    };
-
-    // Start smart lux reporting timer
-    this._startSmartLuxReporting();
-
-    // v5.5.18: Explicit IAS Zone setup for HOBEIAN and other non-Tuya motion sensors
-    await this._setupMotionIASZone(zclNode);
-
-    // v5.5.930: DP POLLING for HOBEIAN Multisensor (Peter_van_Werkhoven #1253)
-    // Request temp/humidity/battery DPs for TS0601 devices that don't send automatically
-    await this._setupTuyaDPPolling(zclNode);
-
-    // v5.5.292: Flow triggers now handled bySensorBase._triggerCustomFlowsIfNeeded()
-    // v5.8.8: For ZCL-only variants, bind clusters so device sends reports to Homey
-    if (this._isZclOnlyVariant) {
+      };
+      // Start smart lux reporting timer
+      this._startSmartLuxReporting();
+      // v5.5.18: Explicit IAS Zone setup for HOBEIAN and other non-Tuya motion sensors
+      await this._setupMotionIASZone(zclNode);
+      // v5.5.930: DP POLLING for HOBEIAN Multisensor (Peter_van_Werkhoven #1253)
+      // Request temp/humidity/battery DPs for TS0601 devices that don't send automatically
+      await this._setupTuyaDPPolling(zclNode);
+      // v5.5.292: Flow triggers now handled bySensorBase._triggerCustomFlowsIfNeeded()
+      // v5.8.8: For ZCL-only variants, bind clusters so device sends reports to Homey
+      if (this._isZclOnlyVariant) {
       const ep1 = zclNode?.endpoints?.[1];
       if (ep1) {
-        for (const cName of ['iasZone', 'ssIasZone', 'powerConfiguration', 'genPowerCfg',
-          'illuminanceMeasurement', 'msIlluminanceMeasurement']) {
-          const cl = ep1.clusters?.[cName];
-          if (cl?.bind) { cl.bind().catch(() => {}); }
-        }
-        this.log('[MOTION] 📡 ZCL-only variant: non-blocking cluster binding initiated');
+      for (const cName of ['iasZone', 'ssIasZone', 'powerConfiguration', 'genPowerCfg',
+      'illuminanceMeasurement', 'msIlluminanceMeasurement']) {
+      const cl = ep1.clusters?.[cName];
+      if (cl?.bind) { cl.bind().catch(() => {}); }
       }
-    }
-
-    this.log('[MOTION] v5.8.8 ✅ Motion sensor ready');
-    this.log('[MOTION] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
-    this.log(`[MOTION] Clusters: temp=${this._hasTemperatureCluster}, hum=${this._hasHumidityCluster}, lux=${this._hasIlluminanceCluster}, batt=${this._hasPowerConfigCluster}`);
-    if (this._isZclOnlyVariant) this.log('[MOTION] ⚡ ZCL-only variant active');
+      this.log('[MOTION] 📡 ZCL-only variant: non-blocking cluster binding initiated');
+      }
+      }
+      this.log('[MOTION] v5.8.8 ✅ Motion sensor ready');
+      this.log('[MOTION] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
+      this.log(`[MOTION] Clusters: temp=${this._hasTemperatureCluster}, hum=${this._hasHumidityCluster}, lux=${this._hasIlluminanceCluster}, batt=${this._hasPowerConfigCluster}`);
+      if (this._isZclOnlyVariant) this.log('[MOTION] ⚡ ZCL-only variant active');
+    }, 'onNodeInit');
   }
 
   /**

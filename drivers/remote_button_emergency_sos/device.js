@@ -9,10 +9,12 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
  */
 class SmartRemote4ButtonsDevice extends ButtonDevice {
   async onNodeInit({ zclNode }) {
-    this.buttonCount = 4;
-    this.log('[SMART_REMOTE_4_BUTTONS] v5.12.0 init - 4 buttons');
-    await super.onNodeInit({ zclNode }).catch(err => this.error('[SMART_REMOTE_4_BUTTONS] init err:', err.message));
-    this.log('[SMART_REMOTE_4_BUTTONS] ready');
+    await this._safeInvoke(async () => {
+      this.buttonCount = 4;
+      this.log('[SMART_REMOTE_4_BUTTONS] v5.12.0 init - 4 buttons');
+      await super.onNodeInit({ zclNode })).catch(err => this.error('[SMART_REMOTE_4_BUTTONS] init err:', err.message));
+      this.log('[SMART_REMOTE_4_BUTTONS] ready');
+    }, 'onNodeInit');
   }
 
 

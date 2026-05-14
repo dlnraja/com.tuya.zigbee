@@ -13,8 +13,7 @@
     "measure_humidity",
     "alarm_human",
     "measure_battery",
-    "measure_luminance.distance",
-    "alarm_battery"
+    "measure_luminance.distance"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {
@@ -32,6 +31,7 @@
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [
+      "HOBEIAN",
       "zg-204ze",
       "ZG-204ZE",
       "zgaf-205l",

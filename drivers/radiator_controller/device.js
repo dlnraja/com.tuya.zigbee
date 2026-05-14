@@ -1,4 +1,7 @@
 'use strict';
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const { CLUSTER } = require('zigbee-clusters');
@@ -14,71 +17,68 @@ const { CLUSTER } = require('zigbee-clusters');
  * - Désactivation monitoring énergétique
  * - Flow cards spécialisés radiateur
  */
-class RadiatorControllerDevice extends ZigBeeDevice {
+class RadiatorControllerDevice extends VirtualButtonMixin(PhysicalButtonMixin(ZigBeeDevice)) {
 
   get mainsPowered() { return true; }
 
   async onNodeInit() {
-    await super.onNodeInit();
-
-    // --- Homey Time Sync for TRV/LCD/Thermostat devices ---
-    // Syncs the device clock with the Homey box time every 6 hours.
-    // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit();
+      // --- Homey Time Sync for TRV/LCD/Thermostat devices ---
+      // Syncs the device clock with the Homey box time every 6 hours.
+      // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
+      try {
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
-      this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000 });
-      
+      this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000
+      });
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
-        try {
-          const result = await this._timeSync.sync({ force: true });
-          if (result.success) {
-            this.log('[TimeSync] Initial time sync successful');
-          } else if (result.reason === 'no_rtc') {
-            // Try Tuya EF00 DP 0x24 fallback for non-ZCL devices
-            await this._tuyaTimeSyncFallback();
-          }
-        } catch (e) {
-          this.log('[TimeSync] Initial sync failed (non-critical):', e.message);
-        }
+      try {
+      const result = await this._timeSync.sync({ force: true });
+      if (result.success) {
+      this.log('[TimeSync] Initial time sync successful');
+      } else if (result.reason === 'no_rtc') {
+      // Try Tuya EF00 DP 0x24 fallback for non-ZCL devices
+      await this._tuyaTimeSyncFallback();
+      }
+      } catch (e) {
+      this.log('[TimeSync] Initial sync failed (non-critical):', e.message);
+      }
       }, 10000);
-      
       // Periodic sync every 6 hours
       this._timeSyncInterval = this.homey.setInterval(async () => {
-        try {
-          const result = await this._timeSync.sync();
-          if (!result.success && result.reason === 'no_rtc') {
-            await this._tuyaTimeSyncFallback();
-          }
-        } catch (e) {
-          this.log('[TimeSync] Periodic sync failed:', e.message);
-        }
+      try {
+      const result = await this._timeSync.sync();
+      if (!result.success && result.reason === 'no_rtc') {
+      await this._tuyaTimeSyncFallback();
+      }
+      } catch (e) {
+      this.log('[TimeSync] Periodic sync failed:', e.message);
+      }
       }, 6 * 60 * 60 * 1000);
-    } catch (e) {
+      } catch (e) {
       this.log('[TimeSync] Time sync init failed (non-critical):', e.message);
-    }
-
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+      }
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        }
+      {
+      cluster: 'msTemperatureMeasurement',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 50,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    await this.initializeRadiatorController();
-    await this.setupCapabilities();
-    await this.setupFlowCards();
-
-    this.log('🔥 Radiator Controller initialized successfully');
+      }
+      await this.initializeRadiatorController();
+      await this.setupCapabilities();
+      await this.setupFlowCards();
+      this.log('🔥 Radiator Controller initialized successfully');
+    }, 'onNodeInit');
   }
 
   async initializeRadiatorController() {
@@ -108,15 +108,24 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     // Capability onoff - contrôle marche/arrêt radiateur
     if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
+await this._safeInvoke(async () => {
+
         return this._setRadiatorPower(value);
-      });
+      
+}, 'onoffListener');
+});
     }
 
     // Capability target_temperature - température cible
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (value) => {
+await this._safeInvoke(async () => {
+
         return this._setTargetTemperature(value);
-      });
+      
+}, 'target_temperatureListener');
+});
 
       // Température initiale 20°C
       await this.setCapabilityValue('target_temperature', 20).catch(() => {});
@@ -125,8 +134,12 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     // Capability thermostat_mode - modes fil pilote
     if (this.hasCapability('thermostat_mode')) {
       this.registerCapabilityListener('thermostat_mode', async (value) => {
+await this._safeInvoke(async () => {
+
         return this._setHeatingMode(value);
-      });
+      
+}, 'thermostat_modeListener');
+});
 
       // Mode initial depuis settings
       await this.setCapabilityValue('thermostat_mode', this.currentMode).catch(() => {});

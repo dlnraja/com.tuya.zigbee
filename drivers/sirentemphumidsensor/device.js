@@ -104,7 +104,7 @@ const getDataValue = dpValue => {
   }
 };
 
-class SirenTimeBoundCluster extends BoundCluster {
+class SirenTimeBoundCluster extends BatteryMixin(BoundCluster) {
 
   async readAttributes({ attributes }) {
     const chunks = [];
@@ -178,56 +178,51 @@ class SirenTimeBoundCluster extends BoundCluster {
 class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'msRelativeHumidity',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 100,
-        }
+      {
+      cluster: 'msTemperatureMeasurement',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 50,
+      },
+      {
+      cluster: 'msRelativeHumidity',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 100,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    this.printNode();
-
-    this._timeBoundCluster = null;
-
-    await this.ensureCapability('measure_temperature');
-    await this.ensureCapability('measure_humidity');
-    // await this.ensureCapability('measure_battery');
-    await this.ensureCapability('alarm_battery');
-    await this.ensureCapability('alarm_siren');
-
-    this._registerTimeBoundCluster(zclNode);
-    this._registerTuyaListeners(zclNode);
-
-    this.registerCapabilityListener('onoff', async value => {
+      }
+      this.printNode();
+      this._timeBoundCluster = null;
+      await this.ensureCapability('measure_temperature');
+      await this.ensureCapability('measure_humidity');
+      // await this.ensureCapability('measure_battery');
+      await this.ensureCapability('alarm_battery');
+      await this.ensureCapability('alarm_siren');
+      this._registerTimeBoundCluster(zclNode);
+      this._registerTuyaListeners(zclNode);
+      this.registerCapabilityListener('onoff', async value => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
       this.log('onoff:', value);
       await this.writeBool(dataPoints.ALARM, value);
-
       this.homey.setTimeout(() => {
-        this.queryAll().catch(this.error);
+      this.queryAll().catch(this.error);
       }, 1200);
-    });
-
-    this.homey.setTimeout(() => {
+      });
+      this.homey.setTimeout(() => {
       this.bootstrap().catch(this.error);
-    }, 5000);
+      }, 5000);
+    }, 'onNodeInit');
   }
 
   _registerTimeBoundCluster(zclNode) {

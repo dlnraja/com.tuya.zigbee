@@ -50,6 +50,9 @@ try {
   };
 }
 const TuyaUDPDiscovery = require('./lib/tuya-local/TuyaUDPDiscovery');
+const SessionManager = require('./lib/session/SessionManager');
+const HealthMonitor = require('./lib/health/HealthMonitor');
+const SanityFilter = require('./lib/filter/SanityFilter');
 
 class TuyaUnifiedZigbeeApp extends Homey.App {
   _flowCardsRegistered = false;
@@ -70,6 +73,11 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
   // NOTE: Database updates handled by GitHub Actions, not at runtime
   developerDebugMode = false; // 🔍 AUDIT V2: Contrôle verbosity logs
   experimentalSmartAdapt = false; // ⚠️ AUDIT V2: Modifications capabilities opt-in
+
+  // 🏗️ L12-L14 ARCHITECTURAL LAYERS (Hardened)
+  sessionManager = null; // L12: IR & Data Assembly
+  healthMonitor = null;  // L13: Device Vitality
+  sanityFilter = null;   // L14: Data Coherence
 
 
   /**
@@ -226,6 +234,31 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
       this.log('✅ Tuya WiFi UDP Discovery started (ports 6666/6667)');
     } catch (err) {
       this.log('⚠️ Tuya UDP Discovery failed (non-critical):', err.message);
+    }
+
+    // 🏗️ Initialize L12-L14 Hardened Architecture
+    try {
+      this.sessionManager = new SessionManager();
+      this.healthMonitor = new HealthMonitor(this.homey);
+      this.sanityFilter = new SanityFilter({ maxDeviation: 0.60 }); // 60% tolerance for noisy sensors
+
+      // L14: Data Coherence Event Handlers
+      this.sanityFilter.on('discard', ({ deviceId, capability, value, fallback, reason }) => {
+        if (this.developerDebugMode) {
+          this.log(`🛡️ [SANITY] Discarded ${capability} spike: ${value} (Fallback: ${fallback}, Reason: ${reason}) for ${deviceId}`);
+        }
+      });
+
+      // L13: Device Vitality Event Handlers
+      this.healthMonitor.on('checkIn', ({ deviceId, status }) => {
+        if (status === HealthMonitor.STATUS.DEAD || status === HealthMonitor.STATUS.SILENT) {
+          this.log(`💓 [HEALTH] Device ${deviceId} is back online (Previous status: ${status})`);
+        }
+      });
+
+      this.log('✅ L12-L14 Architectural Layers (Session, Health, Sanity) initialized');
+    } catch (err) {
+      this.error('❌ Failed to initialize architectural layers:', err.message);
     }
 
     // DISABLED: SDK3 doesn't allow overriding this.log (read-only property)

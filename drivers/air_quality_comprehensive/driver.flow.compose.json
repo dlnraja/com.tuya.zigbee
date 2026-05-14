@@ -67,6 +67,27 @@
         "de": "Batterie schwach"
       },
       "args": []
+    },
+    {
+      "id": "air_quality_comprehensive_measure_co2_high",
+      "title": {
+        "en": "CO₂ is high",
+        "fr": "CO₂ est élevé",
+        "nl": "CO₂ is hoog",
+        "de": "CO₂ ist hoch"
+      },
+      "tokens": [
+        {
+          "name": "co2",
+          "type": "number",
+          "title": {
+            "en": "CO₂ Level",
+            "fr": "Niveau de CO₂"
+          },
+          "example": 1200
+        }
+      ],
+      "args": []
     }
   ],
   "conditions": [

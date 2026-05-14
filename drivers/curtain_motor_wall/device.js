@@ -65,60 +65,56 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   get gangCount() { return 1; }
 
   async onNodeInit({ zclNode }) {
-    // v5.6.0: Track state for physical button detection
-    this._lastCoverState = null;
-    this._appCommandPending = false;
-    this._appCommandTimeout = null;
-
-    // Parent handles ALL: cover listeners, Tuya DP, ZCL
-    await super.onNodeInit({ zclNode });
-    this.log('[CURTAIN] v5.6.0 - DPs: 1-15,101-105 | ZCL: 258,6,8,EF00');
-
-    // v5.5.322: Add luminance + button for Tuya DP curtains (Eftychis #779)
-    // v5.8.40: Skip for TS130F ZCL curtains (Tbao forum: _TZ3000_bs93npae)
-    const { protocol } = this._detectProtocol?.() || {};
-    if (protocol !== 'ZCL') {
+    await this._safeInvoke(async () => {
+      // v5.6.0: Track state for physical button detection
+      this._lastCoverState = null;
+      this._appCommandPending = false;
+      this._appCommandTimeout = null;
+      // Parent handles ALL: cover listeners, Tuya DP, ZCL
+      await super.onNodeInit({ zclNode });
+      this.log('[CURTAIN] v5.6.0 - DPs: 1-15,101-105 | ZCL: 258,6,8,EF00');
+      // v5.5.322: Add luminance + button for Tuya DP curtains (Eftychis #779)
+      // v5.8.40: Skip for TS130F ZCL curtains (Tbao forum: _TZ3000_bs93npae)
+      const { protocol } = this._detectProtocol?.() || {};
+      if (protocol !== 'ZCL') {
       if (!this.hasCapability('measure_luminance')) {
-        try {
-          await this.addCapability('measure_luminance');
-          this.log('[CURTAIN] ✅ Added measure_luminance capability');
-        } catch (e) { /* ignore */ }
+      try {
+      await this.addCapability('measure_luminance');
+      this.log('[CURTAIN] ✅ Added measure_luminance capability');
+      } catch (e) { /* ignore */ }
       }
       if (!this.hasCapability('button')) {
-        try {
-          await this.addCapability('button');
-          this.log('[CURTAIN] ✅ Added button capability');
-        } catch (e) { /* ignore */ }
+      try {
+      await this.addCapability('button');
+      this.log('[CURTAIN] ✅ Added button capability');
+      } catch (e) { /* ignore */ }
       }
-    } else {
+      } else {
       // v5.8.40: Remove wrong capabilities from TS130F ZCL curtains
       for (const cap of ['measure_luminance', 'button', 'measure_battery']) {
-        if (this.hasCapability(cap)) {
-          this.removeCapability(cap).catch(() => {});
-          this.log(`[CURTAIN] 🗑️ Removed incorrect ${cap} from ZCL curtain`);
-        }
+      if (this.hasCapability(cap)) {
+      this.removeCapability(cap).catch(() => {});
+      this.log(`[CURTAIN] 🗑️ Removed incorrect ${cap} from ZCL curtain`);
       }
-    }
-
-    // v5.8.79: Only setup Tuya DP listener and calibration for Tuya DP devices
-    // Root cause (Tbao TS130F): _setupTuyaDPListener on ZCL devices registers
-    // unused listeners and _applyCalibrationSettings sends Tuya DP commands that
-    // fail silently on ZCL devices (TS130F uses windowCovering cluster 258)
-    if (protocol !== 'ZCL') {
+      }
+      }
+      // v5.8.79: Only setup Tuya DP listener and calibration for Tuya DP devices
+      // Root cause (Tbao TS130F): _setupTuyaDPListener on ZCL devices registers
+      // unused listeners and _applyCalibrationSettings sends Tuya DP commands that
+      // fail silently on ZCL devices (TS130F uses windowCovering cluster 258)
+      if (protocol !== 'ZCL') {
       await this._setupTuyaDPListener();
       await this._applyCalibrationSettings();
-    } else {
+      } else {
       this.log('[CURTAIN] ℹ️ ZCL device - skipping Tuya DP listener and calibration');
-    }
-
-    // v5.6.0: Initialize bidirectional button support
-    await this.initPhysicalButtonDetection(zclNode);
-    await this.initVirtualButtons();
-
-    // v5.7.9: Start connection health monitor
-    this._startHealthMonitor();
-
-    this.log('[CURTAIN] v5.7.9 ✅ Ready with enhanced communication');
+      }
+      // v5.6.0: Initialize bidirectional button support
+      await this.initPhysicalButtonDetection(zclNode);
+      await this.initVirtualButtons();
+      // v5.7.9: Start connection health monitor
+      this._startHealthMonitor();
+      this.log('[CURTAIN] v5.7.9 ✅ Ready with enhanced communication');
+    }, 'onNodeInit');
   }
 
   /**

@@ -6,10 +6,6 @@
     "nl": "Tuya DP verzenden",
     "de": "Tuya DP senden"
   },
-  "titleFormatted": {
-    "en": "Send DP [[dp]] with value [[value]] to [[device]]",
-    "fr": "Envoyer DP [[dp]] avec valeur [[value]] à [[device]]"
-  },
   "hint": {
     "en": "Send a raw Tuya datapoint value to the device",
     "fr": "Envoie une valeur brute de datapoint Tuya à l'appareil"

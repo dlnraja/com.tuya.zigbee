@@ -9,19 +9,18 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('🎨 Initializing 4 Gang Wall Remote (Type 2)...');
-    
-    // Call parent to setup raw frame fallbacks
-    await super.onNodeInit({ zclNode });
-
-    this._buttonPressedTriggerDevice = this.homey.flow.getDeviceTriggerCard('wall_remote_4_gang_buttons_2');
-    if (this._buttonPressedTriggerDevice) {
+    await this._safeInvoke(async () => {
+      this.log('🎨 Initializing 4 Gang Wall Remote (Type 2)...');
+      // Call parent to setup raw frame fallbacks
+      await super.onNodeInit({ zclNode });
+      this._buttonPressedTriggerDevice = this.homey.flow.getDeviceTriggerCard('wall_remote_4_gang_buttons_2');
+      if (this._buttonPressedTriggerDevice) {
       this._buttonPressedTriggerDevice.registerRunListener(async (args, state) => {
-        return args.button === state.button;
+      return args.button === state.button;
       });
-    }
-    
-    this.log('✅ Remote Initialized');
+      }
+      this.log('✅ Remote Initialized');
+    }, 'onNodeInit');
   }
 
   /**

@@ -55,9 +55,14 @@ class WiFiCameraDevice extends Homey.Device {
 
     // Privacy mode = onoff (inverted: on=camera active, off=privacy/covered)
     this.registerCapabilityListener('onoff', async (value) => {
+      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
+await this._safeInvoke(async () => {
+
       // value=true means camera ON (privacy OFF), value=false means camera OFF (privacy ON)
       await this._setDP(DP.PRIVACY_MODE, !value);
-    });
+    
+}, 'onoffListener');
+});
 
     // Initialize cloud client for RTSP
     await this._initCloudClient();

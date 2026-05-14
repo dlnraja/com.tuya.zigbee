@@ -2,34 +2,36 @@
 
 const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
-class IlluminanceSensorDevice extends SensorBase {
+class IlluminanceSensorDevice extends BatteryMixin(SensorBase) {
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'msIlluminanceMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
+      {
+      cluster: 'msIlluminanceMeasurement',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 50,
+      },
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    this.log('[ILLUMINANCE] Initializing illuminance sensor');
-    await super.onNodeInit({ zclNode });
-    await this._setupIlluminanceCluster(zclNode);
+      }
+      this.log('[ILLUMINANCE] Initializing illuminance sensor');
+      await super.onNodeInit({ zclNode });
+      await this._setupIlluminanceCluster(zclNode);
+    }, 'onNodeInit');
   }
 
   async _setupIlluminanceCluster(zclNode) {

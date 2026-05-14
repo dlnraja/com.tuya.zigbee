@@ -1,156 +1,73 @@
 'use strict';
+
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
+/**
+ * WALL SWITCH 4-GANG 1-WAY (BSEED) - v9.7.3 Unified Architecture
+ * v9.7.3: Migrated to unified mixin architecture with sub-device support.
+ * Each gang can be a separate Homey device (Sub-device architecture).
+ */
 class WallSwitch4Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
+
+  get mainsPowered() { return true; }
+
   get gangCount() { return 1; }
-
-  get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }
-
-  async setSceneMode(mode) {
-    this.log(`[SCENE] Setting scene mode to: ${mode}`);
-    await this.setSettings({ scene_mode: mode }).catch(() => {});
-  }
 
   get dpMappings() {
     const { subDeviceId } = this.getData();
-    const p = Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(this))).dpMappings || {};
-    if (subDeviceId === 'secondSwitch') return { ...p, 2: { capability: 'onoff', transform: (v) => v === 1 || v === true } };
-    if (subDeviceId === 'thirdSwitch') return { ...p, 3: { capability: 'onoff', transform: (v) => v === 1 || v === true } };
-    if (subDeviceId === 'fourthSwitch') return { ...p, 4: { capability: 'onoff', transform: (v) => v === 1 || v === true } };
-    return { ...p, 1: { capability: 'onoff', transform: (v) => v === 1 || v === true } };
+    const mappings = { ...super.dpMappings };
+    
+    // v9.7.3: For sub-devices, map the specific Tuya DP to the 'onoff' capability
+    if (subDeviceId === 'secondSwitch') {
+      mappings[2] = { capability: 'onoff', transform: (v) => v === 1 || v === true };
+    } else if (subDeviceId === 'thirdSwitch') {
+      mappings[3] = { capability: 'onoff', transform: (v) => v === 1 || v === true };
+    } else if (subDeviceId === 'fourthSwitch') {
+      mappings[4] = { capability: 'onoff', transform: (v) => v === 1 || v === true };
+    }
+    return mappings;
   }
 
   async onNodeInit({ zclNode }) {
-    const { subDeviceId } = this.getData();
-    if (subDeviceId !== undefined) await this._initSubDevice(zclNode, subDeviceId);
-    else await this._initPrimaryDevice(zclNode);
-  }
-
-  async _initSubDevice(zclNode, subDeviceId) {
-    const gn = subDeviceId === 'secondSwitch' ? 2 : subDeviceId === 'thirdSwitch' ? 3 : 4;
-    this.log('[SUB-DEVICE] Gang ' + gn + ' initializing...');
-    this._gangNumber = gn;
-    this.zclNode = zclNode;
-    this._zclState = { lastState: null, pending: false, timeout: null };
-    const ep = zclNode?.endpoints?.[gn];
-    const onOff = ep?.clusters?.onOff;
-    if (!onOff) { this.error('[SUB-DEVICE] No onOff on EP' + gn); return; }
-
-    onOff.on('attr.onOff', (value) => {
-      const isPhys = !this._zclState.pending;
-      this.log('[SUB-DEVICE] EP' + gn + ' attr=' + value + ' (' + (isPhys ? 'PHYSICAL' : 'APP') + ')');
-      if (this._zclState.lastState !== value) {
-        this._zclState.lastState = value;
-        const mode = this.sceneMode;
-        if (mode !== 'magic') await this.setCapabilityValue('onoff', value).catch(() => {});
-        if (isPhys && (mode === 'auto' || mode === 'both')) {
-          const fid = 'wall_switch_4gang_1way_turned_' + (value ? 'on' : 'off');
-          (() => { try { return this.homey.flow.getDeviceTriggerCard(fid); } catch(e) { return null; } })()?
-          const pgid = `wall_switch_4gang_1way_physical_gang${gn}_` + (value ? 'on' : 'off');
-          (() => { try { return this.homey.flow.getDeviceTriggerCard(pgid); } catch(e) { return null; } })()?
-        }
-        if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-          (() => { try { return this.homey.flow.getDeviceTriggerCard(`wall_switch_4gang_1way_gang${gn}_scene`); } catch(e) { return null; } })()?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-        }
-      }
-    });
-
-    // Fix Issue #170: Handle ZCL Commands (Physical buttons that don't send attr.onOff)
-    if (typeof onOff.on === 'function') {
-      const fakeAttr = (val) => {
-        if (val === 'toggle') val = !this.getCapabilityValue('onoff');
-        onOff.emit('attr.onOff', val);
-      };
-      onOff.on('commandOn', () => fakeAttr(true));
-      onOff.on('commandOff', () => fakeAttr(false));
-      onOff.on('commandToggle', () => fakeAttr('toggle'));
-      onOff.on('setOn', () => fakeAttr(true));
-      onOff.on('setOff', () => fakeAttr(false));
-      onOff.on('toggle', () => fakeAttr('toggle'));
-    }
-
-    this.registerCapabilityListener('onoff', async (value) => {
-      this.log('[SUB-DEVICE] Gang ' + gn + ' app cmd: ' + value);
-      this._zclState.pending = true;
-      clearTimeout(this._zclState.timeout);
-      this._zclState.timeout = setTimeout(() => { this._zclState.pending = false; }, 2000);
-      // v5.13.2: Use writeAttributes for per-EP control (Z2M #27167, ZHA #2443)
-      if (typeof onOff.writeAttributes === 'function') {
-        await onOff.writeAttributes({ onOff: value ? true : false });
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      const { subDeviceId
+      } = this.getData();
+      if (subDeviceId === 'secondSwitch') {
+      this._gangNumber = 2;
+      } else if (subDeviceId === 'thirdSwitch') {
+      this._gangNumber = 3;
+      } else if (subDeviceId === 'fourthSwitch') {
+      this._gangNumber = 4;
       } else {
-        await onOff[value ? 'setOn' : 'setOff']();
+      this._gangNumber = 1;
       }
-      return true;
-    });
-
-    try {
-      await onOff.configureReporting({ onOff: { minInterval: 0, maxInterval: 300, minChange: 1 } });
-      this.log('[SUB-DEVICE] EP' + gn + ' reporting configured');
-    } catch (e) { this.log('[SUB-DEVICE] reporting failed: ' + e.message); }
-
-    try {
-      const st = await onOff.readAttributes(['onOff']);
-      if (st.onOff !== undefined) {
-        this._zclState.lastState = st.onOff;
-        await this.setCapabilityValue('onoff', st.onOff).catch(() => {});
-        this.log('[SUB-DEVICE] Initial: ' + (st.onOff ? 'ON' : 'OFF'));
-      }
-    } catch (e) { this.log('[SUB-DEVICE] initial read failed: ' + e.message); }
-    this.log('[SUB-DEVICE] Gang ' + gn + ' ready');
+      this.log(`[WALL-4G] Initializing ${this._gangNumber > 1 ? 'Sub' : 'Primary'} Device (Gang ${this._gangNumber})`);
+      await super.onNodeInit({ zclNode });
+      this.log(`[WALL-4G] v9.7.3 - Unified initialization complete for Gang ${this._gangNumber}`);
+    }, 'onNodeInit');
   }
 
-  async _initPrimaryDevice(zclNode) {
-    this.log('[PRIMARY] Gang 1 initializing...');
-    if (this.hasCapability('onoff.gang2')) await this.removeCapability('onoff.gang2').catch(() => {});
-    if (this.hasCapability('onoff.gang3')) await this.removeCapability('onoff.gang3').catch(() => {});
-    if (this.hasCapability('onoff.gang4')) await this.removeCapability('onoff.gang4').catch(() => {});
-    this._lastOnoffState = { gang1: null };
-    this._appCommandPending = { gang1: false };
-    this._appCommandTimeout = { gang1: null };
-    await super.onNodeInit({ zclNode });
-    await this.initPhysicalButtonDetection(zclNode);
-    this._setupGang1SceneDetection(zclNode);
-    this.log('[PRIMARY] Gang 1 ready');
-  }
-
-  _setupGang1SceneDetection(zclNode) {
-    const onOff = zclNode?.endpoints?.[1]?.clusters?.onOff;
-    if (!onOff) return;
-    
-    const triggerFlows = (value) => {
-      const mode = this.sceneMode;
-      const isPhys = !this._appCommandPending?.gang1;
-      // v5.12.4: Removed 'auto' physical gang trigger - PhysicalButtonMixin handles it (fixes BSEED double-trigger)
-      if (isPhys && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-        (() => { try { return this.homey.flow.getDeviceTriggerCard('wall_switch_4gang_1way_gang1_scene'); } catch(e) { return null; } })()?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-        this.log(`[SCENE] Gang 1 scene: ${value ? 'on' : 'off'}`);
-      }
-    };
-
-    onOff.on('attr.onOff', triggerFlows);
-
-    if (typeof onOff.on === 'function') {
-      const fakeAttr = (val) => {
-        if (val === 'toggle') val = !this.getCapabilityValue('onoff');
-        triggerFlows(val);
-      };
-      onOff.on('commandOn', () => fakeAttr(true));
-      onOff.on('commandOff', () => fakeAttr(false));
-      onOff.on('commandToggle', () => fakeAttr('toggle'));
-      onOff.on('setOn', () => fakeAttr(true));
-      onOff.on('setOff', () => fakeAttr(false));
-      onOff.on('toggle', () => fakeAttr('toggle'));
+  /**
+   * Filter physical button triggers to only process the gang assigned to this device.
+   */
+  async triggerButtonPress(button, type = 'single', options = {}) {
+    if (this._gangNumber !== undefined && button !== this._gangNumber) {
+      return; // Ignore events for other gangs
     }
-
-    this.log(`[SCENE] Gang 1 scene detection setup, mode=${this.sceneMode}`);
+    return super.triggerButtonPress(button, type, options);
   }
 
-  onDeleted() {
-    if (this._zclState?.timeout) clearTimeout(this._zclState.timeout);
-    super.onDeleted?.();
+  /**
+   * Map UI commands to the correct Zigbee/Tuya gang.
+   */
+  async _setGangOnOff(gang, value) {
+    const targetGang = this._gangNumber || gang;
+    return super._setGangOnOff(targetGang, value);
   }
+
 }
 
 module.exports = WallSwitch4Gang1WayDevice;

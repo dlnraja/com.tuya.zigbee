@@ -23,77 +23,70 @@ const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 class GenericTuyaDevice extends AutoAdaptiveDevice {
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        },
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'msRelativeHumidity',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 100,
-        }
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      },
+      {
+      cluster: 'msTemperatureMeasurement',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 50,
+      },
+      {
+      cluster: 'msRelativeHumidity',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 100,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    this.log('');
-    this.log('╔═══════════════════════════════════════════════════════════════════╗');
-    this.log('║      GENERIC TUYA TS0601 - AUTO-ADAPTIVE v5.3.57                  ║');
-    this.log('║      🔄 Dynamic Capability + Flow Card System                     ║');
-    this.log('╚═══════════════════════════════════════════════════════════════════╝');
-
-    // Mark as unknown device for special handling
-    await this.setStoreValue('tuya_unknown', true).catch(() => { });
-    await this.setStoreValue('discovery_mode', true).catch(() => { });
-
-    // Initialize AutoAdaptiveDevice (handles Tuya EF00 + dynamic discovery)
-    try {
+      }
+      this.log('');
+      this.log('╔═══════════════════════════════════════════════════════════════════╗');
+      this.log('║      GENERIC TUYA TS0601 - AUTO-ADAPTIVE v5.3.57                  ║');
+      this.log('║      🔄 Dynamic Capability + Flow Card System                     ║');
+      this.log('╚═══════════════════════════════════════════════════════════════════╝');
+      // Mark as unknown device for special handling
+      await this.setStoreValue('tuya_unknown', true).catch(() => { });
+      await this.setStoreValue('discovery_mode', true).catch(() => { });
+      // Initialize AutoAdaptiveDevice (handles Tuya EF00 + dynamic discovery)
+      try {
       await super.onNodeInit({ zclNode }).catch(err => this.error('[GENERIC] Parent init error:', err));
-    } catch (err) {
+      } catch (err) {
       this.error('[GENERIC] Await error:', err);
-    }
-
-    // Get device info
-    const settings = this.getSettings() || {};
-    const manufacturer = settings.zb_manufacturer_name || 'unknown';
-    const model = settings.zb_model_id || 'TS0601';
-
-    this.log(`[GENERIC] Device: ${manufacturer} / ${model}`);
-    this.log('[GENERIC] Mode: AUTO-ADAPTIVE + Dynamic Discovery');
-
-    // Set default values to avoid null KPIs
-    await this._setDefaultValues();
-
-    // Legacy DP discovery (now handled by AutoAdaptiveDevice, but keep for compatibility)
-    this._setupDPDiscovery();
-
-    // Request common DPs after delay (for mains-powered devices)
-    setTimeout(() => this._requestCommonDPs(), 5000);
-
-    // Log auto-adaptive status
-    const status = this.getAutoAdaptiveStatus();
-    this.log('[GENERIC] 🔄 Auto-Adaptive Status:');
-    this.log(`[GENERIC]    Discovered DPs: ${status.discoveries.length}`);
-    this.log(`[GENERIC]    Capabilities: ${status.capabilities.join(', ')}`);
-
-    this.log('[GENERIC] ✅ Initialization complete - auto-adapting to device data');
+      }
+      // Get device info
+      const settings = this.getSettings() || {};
+      const manufacturer = settings.zb_manufacturer_name || 'unknown';
+      const model = settings.zb_model_id || 'TS0601';
+      this.log(`[GENERIC] Device: ${manufacturer} / ${model}`);
+      this.log('[GENERIC] Mode: AUTO-ADAPTIVE + Dynamic Discovery');
+      // Set default values to avoid null KPIs
+      await this._setDefaultValues();
+      // Legacy DP discovery (now handled by AutoAdaptiveDevice, but keep for compatibility)
+      this._setupDPDiscovery();
+      // Request common DPs after delay (for mains-powered devices)
+      setTimeout(() => this._requestCommonDPs(), 5000);
+      // Log auto-adaptive status
+      const status = this.getAutoAdaptiveStatus();
+      this.log('[GENERIC] 🔄 Auto-Adaptive Status:');
+      this.log(`[GENERIC]    Discovered DPs: ${status.discoveries.length}`);
+      this.log(`[GENERIC]    Capabilities: ${status.capabilities.join(', ')}`);
+      this.log('[GENERIC] ✅ Initialization complete - auto-adapting to device data');
+    }, 'onNodeInit');
   }
 
   /**

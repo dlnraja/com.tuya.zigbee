@@ -1,4 +1,6 @@
 'use strict';
+const BatteryMixin = require('../../lib/tuya/BatteryMixin');
+
 const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
@@ -21,7 +23,7 @@ const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
  * ║  Supported: _TZE284_rccxox8p, _TZE200_rccxox8p, _TZE204_rccxox8p, etc.      ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SmokeDetectorAdvancedDevice extends SensorBase {
+class SmokeDetectorAdvancedDevice extends BatteryMixin(SensorBase) {
   get mainsPowered() { return false; }
   get sensorCapabilities() { return ['alarm_smoke', 'measure_battery', 'measure_temperature', 'measure_humidity', 'alarm_tamper']; }
 
@@ -204,90 +206,80 @@ class SmokeDetectorAdvancedDevice extends SensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    // v5.5.503: DIAGNOSTIC LOGGING for Martijn report
-    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || 'UNKNOWN';
-    const modelId = this.getSetting?.('zb_model_id') || this.getData()?.modelId || 'UNKNOWN';
-    const deviceId = this.getData()?.id || 'UNKNOWN';
-
-    this.log('[SMOKE-ADV] ════════════════════════════════════════════════════════════');
-    this.log('[SMOKE-ADV] ✅ Smart Smoke Detector Advanced v5.5.503 Ready');
-    this.log(`[SMOKE-ADV] 📋 ManufacturerName: "${mfr}"`);
-    this.log(`[SMOKE-ADV] 📋 ModelId: "${modelId}"`);
-    this.log(`[SMOKE-ADV] 📋 DeviceId: "${deviceId}"`);
-    this.log('[SMOKE-ADV] DP Mappings: smoke(1), temp(2), humidity(3), tamper/battery(4), battery(14,15)');
-    this.log('[SMOKE-ADV] ⚠️ NOTE: This is a SLEEPY battery device');
-    this.log('[SMOKE-ADV] ⚠️ Smoke alarm will only report when triggered or during wake cycle');
-    this.log('[SMOKE-ADV] ════════════════════════════════════════════════════════════');
-
-    // v5.5.503: Log available clusters for diagnostics
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // v5.5.503: DIAGNOSTIC LOGGING for Martijn report
+      const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || 'UNKNOWN';
+      const modelId = this.getSetting?.('zb_model_id') || this.getData()?.modelId || 'UNKNOWN';
+      const deviceId = this.getData()?.id || 'UNKNOWN';
+      this.log('[SMOKE-ADV] ════════════════════════════════════════════════════════════');
+      this.log('[SMOKE-ADV] ✅ Smart Smoke Detector Advanced v5.5.503 Ready');
+      this.log(`[SMOKE-ADV] 📋 ManufacturerName: "${mfr}"`);
+      this.log(`[SMOKE-ADV] 📋 ModelId: "${modelId}"`);
+      this.log(`[SMOKE-ADV] 📋 DeviceId: "${deviceId}"`);
+      this.log('[SMOKE-ADV] DP Mappings: smoke(1), temp(2), humidity(3), tamper/battery(4), battery(14,15)');
+      this.log('[SMOKE-ADV] ⚠️ NOTE: This is a SLEEPY battery device');
+      this.log('[SMOKE-ADV] ⚠️ Smoke alarm will only report when triggered or during wake cycle');
+      this.log('[SMOKE-ADV] ════════════════════════════════════════════════════════════');
+      // v5.5.503: Log available clusters for diagnostics
+      try {
       const ep1 = zclNode?.endpoints?.[1];
       if (ep1) {
-        const clusterIds = Object.keys(ep1.clusters || {});
-        this.log(`[SMOKE-ADV] 📡 Endpoint 1 clusters: ${clusterIds.join(', ') || 'none'}`);
-
-        // Check for Tuya cluster (0xEF00 = 61184)
-        if (ep1.clusters?.tuya || ep1.clusters?.[61184]) {
-          this.log('[SMOKE-ADV] ✅ Tuya cluster 0xEF00 (61184) FOUND - DP communication available');
-        } else {
-          this.log('[SMOKE-ADV] ⚠️ Tuya cluster 0xEF00 NOT found - may use IAS Zone instead');
-        }
-
-        // Check for IAS Zone (0x0500 = 1280)
-        if (ep1.clusters?.iasZone || ep1.clusters?.[1280]) {
-          this.log('[SMOKE-ADV] ✅ IAS Zone cluster 0x0500 (1280) FOUND');
-        }
+      const clusterIds = Object.keys(ep1.clusters || {});
+      this.log(`[SMOKE-ADV] 📡 Endpoint 1 clusters: ${clusterIds.join(', ') || 'none'}`);
+      // Check for Tuya cluster (0xEF00 = 61184)
+      if (ep1.clusters?.tuya || ep1.clusters?.[61184]) {
+      this.log('[SMOKE-ADV] ✅ Tuya cluster 0xEF00 (61184) FOUND - DP communication available');
+      } else {
+      this.log('[SMOKE-ADV] ⚠️ Tuya cluster 0xEF00 NOT found - may use IAS Zone instead');
       }
-    } catch (e) {
+      // Check for IAS Zone (0x0500 = 1280)
+      if (ep1.clusters?.iasZone || ep1.clusters?.[1280]) {
+      this.log('[SMOKE-ADV] ✅ IAS Zone cluster 0x0500 (1280) FOUND');
+      }
+      }
+      } catch (e) {
       this.log(`[SMOKE-ADV] ⚠️ Could not enumerate clusters: ${e.message}`);
-    }
-
-    // v5.5.503: Store manufacturer for DP transform logic
-    this._manufacturerName = mfr;
-
-    // v5.5.725: IAS Zone enrollment for smoke alarm capability (Jolink forum fix)
-    try {
+      }
+      // v5.5.503: Store manufacturer for DP transform logic
+      this._manufacturerName = mfr;
+      // v5.5.725: IAS Zone enrollment for smoke alarm capability (Jolink forum fix)
+      try {
       const iasZoneCluster = zclNode?.endpoints?.[1]?.clusters?.iasZone || zclNode?.endpoints?.[1]?.clusters?.[1280];
       if (iasZoneCluster) {
-        this.log('[SMOKE-ADV] 🔥 Setting up IAS Zone for smoke alarm...');
-        
-        // Register for zone status changes (smoke alarm)
-        iasZoneCluster.on('attr.zoneStatus', (zoneStatus) => {
-          this.log(`[SMOKE-ADV] 🚨 IAS Zone status: ${zoneStatus}`);
-          // Bit 0 = Alarm1 (smoke detected)
-          const smokeAlarm = !!(zoneStatus & 0x0001);
-          // Bit 2 = Tamper
-          const tamperAlarm = !!(zoneStatus & 0x0004);
-          // Bit 3 = Battery low
-          const batteryLow = !!(zoneStatus & 0x0008);
-          
-          this.log(`[SMOKE-ADV] smoke: ${smokeAlarm}, tamper: ${tamperAlarm}, batteryLow: ${batteryLow}`);
-          
-          // v5.5.955: Trigger flow cards for IAS Zone events (Jolink forum fix)
-          const smokeTriggerId = smokeAlarm ? 'smoke_detector_advanced_alarm_smoke_true' : 'smoke_detector_advanced_alarm_smoke_false';
-          this.driver?.homey?.flow?.getDeviceTriggerCard?.(smokeTriggerId)?.trigger(this, {}).catch(() => {});
-          
-          await this.setCapabilityValue('alarm_smoke', smokeAlarm).catch(e => this.error('Failed to set alarm_smoke', e));
-          if (this.hasCapability('alarm_tamper')) {
-            await this.setCapabilityValue('alarm_tamper', tamperAlarm).catch(e => this.error('Failed to set alarm_tamper', e));
-            if (tamperAlarm) {
-              this.driver?.homey?.flow?.getDeviceTriggerCard?.('smoke_detector_advanced_alarm_tamper_true')?.trigger(this, {}).catch(() => {});
-            }
-          }
-          if (batteryLow && this.hasCapability('measure_battery')) {
-            await this.setCapabilityValue('measure_battery', 10).catch(() => {});
-            this.driver?.homey?.flow?.getDeviceTriggerCard?.('smoke_detector_advanced_battery_low')?.trigger(this, {}).catch(() => {});
-          }
-        });
-
-        // Zone enrollment
-        this._performIASZoneEnrollment(zclNode);
+      this.log('[SMOKE-ADV] 🔥 Setting up IAS Zone for smoke alarm...');
+      // Register for zone status changes (smoke alarm)
+      iasZoneCluster.on('attr.zoneStatus', (zoneStatus) => {
+      this.log(`[SMOKE-ADV] 🚨 IAS Zone status: ${zoneStatus}`);
+      // Bit 0 = Alarm1 (smoke detected)
+      const smokeAlarm = !!(zoneStatus & 0x0001);
+      // Bit 2 = Tamper
+      const tamperAlarm = !!(zoneStatus & 0x0004);
+      // Bit 3 = Battery low
+      const batteryLow = !!(zoneStatus & 0x0008);
+      this.log(`[SMOKE-ADV] smoke: ${smokeAlarm}, tamper: ${tamperAlarm}, batteryLow: ${batteryLow}`);
+      // v5.5.955: Trigger flow cards for IAS Zone events (Jolink forum fix)
+      const smokeTriggerId = smokeAlarm ? 'smoke_detector_advanced_alarm_smoke_true' : 'smoke_detector_advanced_alarm_smoke_false';
+      this.driver?.homey?.flow?.getDeviceTriggerCard?.(smokeTriggerId)?.trigger(this, {}).catch(() => {});
+      await this.setCapabilityValue('alarm_smoke', smokeAlarm).catch(e => this.error('Failed to set alarm_smoke', e));
+      if (this.hasCapability('alarm_tamper')) {
+      await this.setCapabilityValue('alarm_tamper', tamperAlarm).catch(e => this.error('Failed to set alarm_tamper', e));
+      if (tamperAlarm) {
+      this.driver?.homey?.flow?.getDeviceTriggerCard?.('smoke_detector_advanced_alarm_tamper_true')?.trigger(this, {}).catch(() => {});
       }
-    } catch (e) {
+      }
+      if (batteryLow && this.hasCapability('measure_battery')) {
+      await this.setCapabilityValue('measure_battery', 10).catch(() => {});
+      this.driver?.homey?.flow?.getDeviceTriggerCard?.('smoke_detector_advanced_battery_low')?.trigger(this, {}).catch(() => {});
+      }
+      });
+      // Zone enrollment
+      this._performIASZoneEnrollment(zclNode);
+      }
+      } catch (e) {
       this.log(`[SMOKE-ADV] ⚠️ IAS Zone setup error: ${e.message}`);
-    }
+      }
+    }, 'onNodeInit');
   }
 
   /**

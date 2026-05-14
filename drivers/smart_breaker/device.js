@@ -1,117 +1,48 @@
 'use strict';
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER } = require('zigbee-clusters');
+
+const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
+const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 /**
- * Smart Circuit Breaker Device (MCB/RCBO)
- *
- * Features: On/Off, Trip alarm, Energy monitoring
- * DP mappings vary by manufacturer
+ * ╔══════════════════════════════════════════════════════════════════════════════╗
+ * ║      SMART CIRCUIT BREAKER - v9.7.3 UNIVERSAL                                ║
+ * ╠══════════════════════════════════════════════════════════════════════════════╣
+ * ║  Standardized via Unified Architecture:                                       ║
+ * ║  - BatteryMixin (tuya/v9.6.0) for standard battery monitoring                ║
+ * ║  - UnifiedPlugBase for core relay logic, energy monitoring, and              ║
+ * ║    Tuya DP/ZCL hybrid support.                                               ║
+ * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SmartBreakerDevice extends ZigBeeDevice {
+class SmartBreakerDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryMixin(UnifiedPlugBase))) {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    this.log('Smart Breaker initializing...');
-
-    // Register on/off
-    if (this.hasCapability('onoff')) {
-      this.registerCapability('onoff', CLUSTER.ON_OFF);
-    }
-
-    // Setup Tuya DP cluster
-    await this._setupTuyaDP(zclNode);
-
-    // Setup electrical measurement
-    await this._setupElectricalMeasurement(zclNode);
-
-    this.log('Smart Breaker initialized');
+    await this._safeInvoke(async () => {
+      // v9.7.3: Initialization is orchestrated by the mixin hierarchy.
+      // Handles relay control, energy monitoring, and battery status.
+      await super.onNodeInit({ zclNode });
+      this.log('[BREAKER] ✅ v9.7.3 Universal initialization complete');
+    }, 'onNodeInit');
   }
 
-  async _setupElectricalMeasurement(zclNode) {
-    const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
-
-    const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
-    if (emCluster) {
-      if (this.hasCapability('measure_power')) {
-        emCluster.on('attr.activePower', (value) => {
-          await this.setCapabilityValue('measure_power', value / 10).catch(this.error);
-        });
-      }
-      if (this.hasCapability('measure_voltage')) {
-        emCluster.on('attr.rmsVoltage', (value) => {
-          await this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
-        });
-      }
-      if (this.hasCapability('measure_current')) {
-        emCluster.on('attr.rmsCurrent', (value) => {
-          await this.setCapabilityValue('measure_current', value / 1000).catch(this.error);
-        });
-      }
-    }
+  // v9.7.3: Enhanced DP mappings for circuit breaker specific functions
+  get dpMappings() {
+    const parentMappings = super.dpMappings || {};
+    return {
+      ...parentMappings,
+      1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      16: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+      9: { capability: 'alarm_generic', transform: (v) => !!v },  // Trip alarm
+      26: { capability: 'alarm_generic', transform: (v) => !!v }, // Alternative trip alarm
+      17: { capability: 'measure_current', divisor: 1000 },
+      20: { capability: 'measure_current', divisor: 1000 },
+      18: { capability: 'measure_power', divisor: 1 },
+      19: { capability: 'measure_voltage', divisor: 10 },
+      101: { capability: 'meter_power', divisor: 100 }
+    };
   }
-
-  async _setupTuyaDP(zclNode) {
-    const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
-
-    const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
-    if (!tuyaCluster) return;
-
-    this.log('[TUYA] DP cluster found');
-
-    tuyaCluster.on('response', (r) => this._handleDP(r?.dp, r?.value));
-    tuyaCluster.on('reporting', (r) => this._handleDP(r?.dp, r?.value));
-    tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
-  }
-
-  _handleDP(dp, value) {
-    if (dp === undefined) return;
-    this.log(`[DP${dp}] = ${value}`);
-
-    switch (dp) {
-    case 1: // On/Off
-    case 16:
-      await this.setCapabilityValue('onoff', !!value).catch(this.error);
-      break;
-
-    case 9: // Fault/Trip alarm
-    case 26:
-      if (this.hasCapability('alarm_generic')) {
-        await this.setCapabilityValue('alarm_generic', !!value).catch(this.error);
-      }
-      break;
-
-    case 17: // Current (mA)
-    case 20:
-      if (this.hasCapability('measure_current')) {
-        await this.setCapabilityValue('measure_current', value / 1000).catch(this.error);
-      }
-      break;
-
-    case 18: // Power (W)
-      if (this.hasCapability('measure_power')) {
-        await this.setCapabilityValue('measure_power', value).catch(this.error);
-      }
-      break;
-
-    case 19: // Voltage (V * 10)
-      if (this.hasCapability('measure_voltage')) {
-        await this.setCapabilityValue('measure_voltage', value / 10).catch(this.error);
-      }
-      break;
-
-    case 101: // Energy (kWh * 100)
-      if (this.hasCapability('meter_power')) {
-        await this.setCapabilityValue('meter_power', value / 100).catch(this.error);
-      }
-      break;
-    }
-  }
-
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');

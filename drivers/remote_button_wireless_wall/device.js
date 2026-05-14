@@ -55,58 +55,51 @@ class Button1GangDevice extends ButtonDevice {
   _zclNode = null;
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    this._zclNode = zclNode;
-    this.log('═══════════════════════════════════════════════════════════════');
-    this.log('[BUTTON1] 🔘 Button1GangDevice v5.5.823 initializing...');
-    this.log('[BUTTON1] FIX: TS004F Smart Knob + Forum fixes');
-    this.log('═══════════════════════════════════════════════════════════════');
-
-    // Set button count BEFORE calling super
-    this.buttonCount = 1;
-
-    // Log available endpoints for debugging
-    const availableEndpoints = Object.keys(zclNode?.endpoints || {});
-    this.log(`[BUTTON1] 📡 Available endpoints: ${availableEndpoints.join(', ')}`);
-
-    // Initialize ButtonDevice (handles basic button detection + battery)
-    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
-
-    // v5.5.715: HOBEIAN FIX - Explicit onOff binding for command reception
-    // The device sends onOff commands (outputCluster 6) which need binding
-    await this._setupOnOffBinding(zclNode);
-
-    // v5.5.823: TS004F Smart Knob FIX (GitHub #113) - LevelControl for rotary dimmer
-    await this._setupLevelControlBinding(zclNode);
-
-    // v5.5.371: FORUM FIX - Enhanced physical button detection
-    // Based on research from Zigbee2MQTT, ZHA, SmartThings patterns
-    await this._setupEnhancedPhysicalButtonDetection(zclNode);
-
-    // v5.5.371: Setup battery reporting listener
-    await this._setupBatteryReporting(zclNode);
-
-    // v5.9.8: Raw frame interceptor — SDK drops unknown cluster frames like E000
-    // Fix: GH#124 Lalla80111 _TZ3000_b4awzgct TS0041 buttons not working
-    await this._setupRawFrameInterceptor(zclNode);
-
-    this.log('[BUTTON1] ✅ Button1GangDevice initialized - 1 button ready');
-    this.log('═══════════════════════════════════════════════════════════════');
+      }
+      this._zclNode = zclNode;
+      this.log('═══════════════════════════════════════════════════════════════');
+      this.log('[BUTTON1] 🔘 Button1GangDevice v5.5.823 initializing...');
+      this.log('[BUTTON1] FIX: TS004F Smart Knob + Forum fixes');
+      this.log('═══════════════════════════════════════════════════════════════');
+      // Set button count BEFORE calling super
+      this.buttonCount = 1;
+      // Log available endpoints for debugging
+      const availableEndpoints = Object.keys(zclNode?.endpoints || {});
+      this.log(`[BUTTON1] 📡 Available endpoints: ${availableEndpoints.join(', ')}`);
+      // Initialize ButtonDevice (handles basic button detection + battery)
+      await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+      // v5.5.715: HOBEIAN FIX - Explicit onOff binding for command reception
+      // The device sends onOff commands (outputCluster 6) which need binding
+      await this._setupOnOffBinding(zclNode);
+      // v5.5.823: TS004F Smart Knob FIX (GitHub #113) - LevelControl for rotary dimmer
+      await this._setupLevelControlBinding(zclNode);
+      // v5.5.371: FORUM FIX - Enhanced physical button detection
+      // Based on research from Zigbee2MQTT, ZHA, SmartThings patterns
+      await this._setupEnhancedPhysicalButtonDetection(zclNode);
+      // v5.5.371: Setup battery reporting listener
+      await this._setupBatteryReporting(zclNode);
+      // v5.9.8: Raw frame interceptor — SDK drops unknown cluster frames like E000
+      // Fix: GH#124 Lalla80111 _TZ3000_b4awzgct TS0041 buttons not working
+      await this._setupRawFrameInterceptor(zclNode);
+      this.log('[BUTTON1] ✅ Button1GangDevice initialized - 1 button ready');
+      this.log('═══════════════════════════════════════════════════════════════');
+    }, 'onNodeInit');
   }
 
   /**

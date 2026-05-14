@@ -18,6 +18,7 @@ All AI agents are encouraged to draw inspiration from and utilize the skill patt
 2. **Tuya DP Protocol**: Always prefer the `TuyaUnifiedParser.js` and DP-mapping logic for Tuya-specific devices.
 3. **IR Engine**: Use `lib/ir/IRCodeLibrary.js` for all IR-related code generation. Follow the Zosung Base64 format.
 4. **SDK3 Compliance**: Strictly follow Homey SDK3 standards. No deprecated `registerAttrReportListener`. Use cluster events.
+5. **Telemetry & L14 Hardening**: NEVER use legacy `_safeSetCapability`. Always route through `this.setCapabilityValue` hardened in `TuyaZigbeeDevice.js`. Enforce L14 SanityFilter and Case-Insensitivity.
 
 ## 🛠️ Maintenance Cycle
 1. **Audit**: Check for junk files and secret leaks.

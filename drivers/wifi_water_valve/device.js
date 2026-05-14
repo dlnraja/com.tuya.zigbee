@@ -1,7 +1,10 @@
 'use strict';
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
-class WiFiWaterValveDevice extends TuyaLocalDevice {
+class WiFiWaterValveDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaLocalDevice)) {
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },

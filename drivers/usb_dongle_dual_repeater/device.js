@@ -1,4 +1,7 @@
 'use strict';
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
@@ -12,68 +15,62 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
  * - Energy monitoring on endpoint 1 (metering 0x0702 + electricalMeasurement 0x0B04)
  * - Power-on behavior via moesStartUpOnOff attribute
  */
-class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
+class UsbDongleDualRepeaterDevice extends VirtualButtonMixin(PhysicalButtonMixin(ZigBeeDevice)) {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'activePower',
-          minInterval: 10,
-          maxInterval: 300,
-          minChange: 5,
-        },
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'rmsVoltage',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 1,
-        },
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'rmsCurrent',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 10,
-        }
+      {
+      cluster: 'haElectricalMeasurement',
+      attributeName: 'activePower',
+      minInterval: 10,
+      maxInterval: 300,
+      minChange: 5,
+      },
+      {
+      cluster: 'haElectricalMeasurement',
+      attributeName: 'rmsVoltage',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 1,
+      },
+      {
+      cluster: 'haElectricalMeasurement',
+      attributeName: 'rmsCurrent',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 10,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    this.log('[USB_DONGLE] onNodeInit');
-
-    if (!zclNode || !zclNode.endpoints) {
+      }
+      this.log('[USB_DONGLE] onNodeInit');
+      if (!zclNode || !zclNode.endpoints) {
       this.error('[USB_DONGLE] zclNode or endpoints missing');
       return;
-    }
-
-    this.zclNode = zclNode;
-
-    // Gang 1 = USB Port 1 (endpoint 1)
-    if (this.hasCapability('onoff')) {
+      }
+      this.zclNode = zclNode;
+      // Gang 1 = USB Port 1 (endpoint 1)
+      if (this.hasCapability('onoff')) {
       this._bindOnOffChannel(zclNode, 1, 'onoff');
-    }
-
-    // Gang 2 = USB Port 2 (endpoint 2)
-    if (this.hasCapability('onoff.usb2')) {
+      }
+      // Gang 2 = USB Port 2 (endpoint 2)
+      if (this.hasCapability('onoff.usb2')) {
       this._bindOnOffChannel(zclNode, 2, 'onoff.usb2');
-    }
-
-    // Mesure d'énergie sur endpoint 1
-    try {
+      }
+      // Mesure d'énergie sur endpoint 1
+      try {
       await this._configureEnergyReporting(zclNode);
-    } catch (err) {
+      } catch (err) {
       this.error('[USB_DONGLE] _configureEnergyReporting failed:', err.message);
-    }
-
-    this.log('[USB_DONGLE] ✅ Device ready');
+      }
+      this.log('[USB_DONGLE] ✅ Device ready');
+    }, 'onNodeInit');
   }
 
   /**
@@ -95,7 +92,7 @@ class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
     });
 
     // Capability → ZCL command
-    this.registerCapabilityListener(capabilityId, async value => {
+    this.registerCapabilityListener(capabilityId, async value => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
       this.log('[USB_DONGLE] Set', capabilityId, '→', value);
       if (value) {
         await onOffCluster.setOn();

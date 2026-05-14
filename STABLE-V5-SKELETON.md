@@ -106,12 +106,13 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) 
     await this.removeCapability('measure_battery').catch(() => {});
     await this.removeCapability('alarm_battery').catch(() => {});
     
-    // Standard DP mapping
     this.dpMappings = {
       1: { capability: 'onoff' },
       14: { capability: 'onoff' },  // Power-on behavior
       15: { capability: 'dim' }      // Backlight
     };
+    
+    // v5.13.6: All state updates via this.setCapabilityValue are now L14 hardened
   }
 }
 ```

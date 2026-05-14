@@ -6,12 +6,6 @@
     "nl": "Tuya Data Point ontvangen",
     "de": "Tuya Datenpunkt empfangen"
   },
-  "titleFormatted": {
-    "en": "Tuya DP [[dp]] received on [[device]]",
-    "fr": "DP Tuya [[dp]] reçu sur [[device]]",
-    "nl": "Tuya DP [[dp]] ontvangen op [[device]]",
-    "de": "Tuya DP [[dp]] empfangen auf [[device]]"
-  },
   "hint": {
     "en": "Triggers when a raw Tuya DP is received. Use DP 0 to match any DP.",
     "fr": "Se déclenche quand un DP Tuya brut est reçu. Utilisez DP 0 pour tous les DP."

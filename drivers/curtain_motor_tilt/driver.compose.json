@@ -11,8 +11,7 @@
     "windowcoverings_set",
     "windowcoverings_tilt_set",
     "alarm_generic",
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "zigbee": {
     "manufacturerName": [
@@ -142,10 +141,6 @@
           "en": "Calibrate curtain motor",
           "nl": "Kalibreer gordijnmotor"
         },
-        "titleFormatted": {
-          "en": "Calibrate [[device]]",
-          "nl": "Kalibreer [[device]]"
-        },
         "hint": {
           "en": "Run full open/close cycle for position calibration",
           "nl": "Voer volledige open/sluit cyclus uit voor positie kalibratie"
@@ -156,10 +151,6 @@
         "title": {
           "en": "Reset position to 0%",
           "nl": "Reset positie naar 0%"
-        },
-        "titleFormatted": {
-          "en": "Reset [[device]] position",
-          "nl": "Reset [[device]] positie"
         },
         "hint": {
           "en": "Reset current position to fully closed",
@@ -173,10 +164,6 @@
           "nl": "Gordijn positie vasthouden",
           "fr": "Maintenir position rideau"
         },
-        "titleFormatted": {
-          "en": "Hold [[device]] at current position",
-          "nl": "Houd [[device]] op huidige positie"
-        },
         "hint": {
           "en": "Stop curtain movement and hold at current position",
           "nl": "Stop gordijn beweging en houd huidige positie vast"
@@ -188,10 +175,6 @@
           "en": "Open curtain partially",
           "nl": "Gordijn gedeeltelijk openen",
           "fr": "Ouvrir rideau partiellement"
-        },
-        "titleFormatted": {
-          "en": "Open [[device]] to [[position]]%",
-          "nl": "Open [[device]] naar [[position]]%"
         },
         "args": [
           {

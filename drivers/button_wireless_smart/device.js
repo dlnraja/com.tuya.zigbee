@@ -1,7 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
-const PhysicalButtonMixin = require('../../lib/tuya/PhysicalButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 /**
@@ -14,10 +14,11 @@ const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 class Button1GangDevice extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
 
   async onNodeInit({ zclNode }) {
-    this.buttonCount = 1;
-    await super.onNodeInit({ zclNode });
-    
-    this.log('[ButtonSmart] ✅ Initialized with Mixin architecture');
+    await this._safeInvoke(async () => {
+      this.buttonCount = 1;
+      await super.onNodeInit({ zclNode });
+      this.log('[ButtonSmart] ✅ Initialized with Mixin architecture');
+    }, 'onNodeInit');
   }
 
 }

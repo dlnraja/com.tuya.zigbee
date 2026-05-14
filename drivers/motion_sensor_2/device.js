@@ -7,71 +7,66 @@ const TuyaSpecificCluster = require('../../lib/clusters/TuyaSpecificCluster');
 Cluster.addCluster(TuyaSpecificCluster);
 
 const BatteryMixin = require('../../lib/tuya/BatteryMixin');
-const PhysicalButtonMixin = require('../../lib/tuya/PhysicalButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 class motion_sensor_2 extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    this.printNode();
-
-    if (this.isFirstInit()){
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      this.printNode();
+      if (this.isFirstInit()){
       await this.configureAttributeReporting([
-        {
-          endpointId: 1,
-          cluster: CLUSTER.IAS_ZONE,
-          attributeName: 'zoneStatus',
-          minInterval: 5, // Minimum interval between reports (seconds)
-          maxInterval: 3600, // Maximum interval (1 hour)
-          minChange: 0, // Report any change
-        },{
-          endpointId: 1,
-          cluster: CLUSTER.POWER_CONFIGURATION,
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 60, // Minimum interval (1 minute)
-          maxInterval: 21600, // Maximum interval (6 hours)
-          minChange: 1, // Report changes greater than 1%
-        },{
-          endpointId: 1,
-          cluster: CLUSTER.ILLUMINANCE_MEASUREMENT,
-          attributeName: 'measuredValue',
-          minInterval: 60, // Minimum interval (1 minute)
-          maxInterval: 3600, // Maximum interval (1 hour)
-          minChange: 10, // Report changes above 10 lux
-        }
+      {
+      endpointId: 1,
+      cluster: CLUSTER.IAS_ZONE,
+      attributeName: 'zoneStatus',
+      minInterval: 5, // Minimum interval between reports (seconds)
+      maxInterval: 3600, // Maximum interval (1 hour)
+      minChange: 0, // Report any change
+      },{
+      endpointId: 1,
+      cluster: CLUSTER.POWER_CONFIGURATION,
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 60, // Minimum interval (1 minute)
+      maxInterval: 21600, // Maximum interval (6 hours)
+      minChange: 1, // Report changes greater than 1%
+      },{
+      endpointId: 1,
+      cluster: CLUSTER.ILLUMINANCE_MEASUREMENT,
+      attributeName: 'measuredValue',
+      minInterval: 60, // Minimum interval (1 minute)
+      maxInterval: 3600, // Maximum interval (1 hour)
+      minChange: 10, // Report changes above 10 lux
+      }
       ]).catch(this.error);
-    }
-
-    // v5.13.0: Battery and Button logic is now handled by Mixins
-    // Mixins automatically hook into onNodeInit via super.onNodeInit
-
-    // alarm_motion handler
-    zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME]
+      }
+      // v5.13.0: Battery and Button logic is now handled by Mixins
+      // Mixins automatically hook into onNodeInit via super.onNodeInit
+      // alarm_motion handler
+      zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME]
       .onZoneStatusChangeNotification = payload => {
-		  this.onZoneStatusChangeNotification(payload);
+      this.onZoneStatusChangeNotification(payload);
       };
-  
-    // measure_illuminance handler
-    zclNode.endpoints[1].clusters[CLUSTER.ILLUMINANCE_MEASUREMENT.NAME]
+      // measure_illuminance handler
+      zclNode.endpoints[1].clusters[CLUSTER.ILLUMINANCE_MEASUREMENT.NAME]
       .on('attr.measuredValue', this.onIlluminanceMeasuredAttributeReport.bind(this));
-
-    // Tuya specific cluster handler
-    if (zclNode.endpoints[1].clusters.tuya) {
+      // Tuya specific cluster handler
+      if (zclNode.endpoints[1].clusters.tuya) {
       zclNode.endpoints[1].clusters.tuya.on('reporting', value => this.processResponse(value));
-    }
-
+      }
+    }, 'onNodeInit');
   }
 
   // Handle motion status alarms
-  onZoneStatusChangeNotification({ zoneStatus }) {
+  async onZoneStatusChangeNotification({ zoneStatus }) {
     this.log('Motion status: ', zoneStatus.alarm1);
     await this.setCapabilityValue('alarm_motion', zoneStatus.alarm1).catch(this.error);
   }
 
 	
   // Handle illuminance attribute reports
-  onIlluminanceMeasuredAttributeReport(measuredValue) {
+  async onIlluminanceMeasuredAttributeReport(measuredValue) {
     const luxValue = Math.round(Math.pow(10, ((measuredValue - 1) / 10000))); // Convert measured value to lux
     this.log('measure_luminance | Illuminance (lux):', luxValue);
     await this.setCapabilityValue('measure_luminance', luxValue).catch(this.error);

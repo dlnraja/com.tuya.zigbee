@@ -1,7 +1,11 @@
 'use strict';
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
-class WiFiSwitch2GangDevice extends TuyaLocalDevice {
+class WiFiSwitch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaLocalDevice)) {
+
+  get mainsPowered() { return true; }
 
   get dpMappings() {
     return {

@@ -6,12 +6,6 @@
     "nl": "Knop losgelaten",
     "de": "Taste losgelassen"
   },
-  "titleFormatted": {
-    "en": "[[device]] button [[button]] was released",
-    "fr": "Bouton [[button]] de [[device]] relâché",
-    "nl": "[[device]] knop [[button]] was losgelaten",
-    "de": "[[device]] Taste [[button]] war losgelassen"
-  },
   "tokens": [
     {
       "name": "button",

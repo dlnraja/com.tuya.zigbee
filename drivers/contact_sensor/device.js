@@ -39,7 +39,7 @@ const DEBOUNCE = {
  * ║  - Solution: Filter repeated states + longer debounce + state validation    ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ContactSensorDevice extends SensorBase {
+class ContactSensorDevice extends BatteryMixin(SensorBase) {
 
   get mainsPowered() { return false; }
 
@@ -120,72 +120,70 @@ class ContactSensorDevice extends SensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'ssIasZone',
-          attributeName: 'zoneStatus',
-          minInterval: 0,
-          maxInterval: 3600,
-          minChange: 1,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        },
-        {
-          cluster: 'msIlluminanceMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        }
+      {
+      cluster: 'ssIasZone',
+      attributeName: 'zoneStatus',
+      minInterval: 0,
+      maxInterval: 3600,
+      minChange: 1,
+      },
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      },
+      {
+      cluster: 'msIlluminanceMeasurement',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 50,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    // v5.5.344: Initialize state tracking BEFORE parent init
-    this._contactState = {
+      }
+      // v5.5.344: Initialize state tracking BEFORE parent init
+      this._contactState = {
       lastValue: null,           // Last confirmed value
       lastChangeTime: 0,         // Time of last REAL change
       lastIASTime: 0,            // Time of last IAS message
       iasMessageCount: 0,        // Count of IAS messages for keep-alive detection
       timer: null,               // Debounce timer
       confirmedValue: null       // Value confirmed after debounce
-    };
-
-    // v5.5.344: Check for invert setting and debounce time
-    // v5.5.793: Use constants for defaults
-    // v5.8.98: Wire up reverse_alarm (was dead) + track user-explicit invert
-    const userInvert = this.getSetting('invert_contact') || false;
-    const userReverse = this.getSetting('reverse_alarm') || false;
-    this._invertContact = userInvert || userReverse;
-    this._userExplicitInvert = this._invertContact;
-    this._debounceMs = (this.getSetting('debounce_time') || DEBOUNCE.DEFAULT_MS / 1000) * 1000;
-    this._lastBatteryReportTime = 0; // v5.5.793: Battery throttling
-
-    // v5.5.344: Get manufacturer for problematic device detection
-    const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
-    this._isProblematicSensor = [
+      };
+      // v5.5.344: Check for invert setting and debounce time
+      // v5.5.793: Use constants for defaults
+      // v5.8.98: Wire up reverse_alarm (was dead) + track user-explicit invert
+      const userInvert = this.getSetting('invert_contact') || false;
+      const userReverse = this.getSetting('reverse_alarm') || false;
+      this._invertContact = userInvert || userReverse;
+      this._userExplicitInvert = this._invertContact;
+      this._debounceMs = (this.getSetting('debounce_time') || DEBOUNCE.DEFAULT_MS / 1000) * 1000;
+      this._lastBatteryReportTime = 0; // v5.5.793: Battery throttling
+      // v5.5.344: Get manufacturer for problematic device detection
+      const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
+      this._isProblematicSensor = [
       '_TZ3000_bpkijo14',
       '_TZ3000_x8q36xwf',
       '_TZ3000_402jjyro',
       '_TZ3000_n2egfsli'
-    ].includes(mfr);
-
-    // v5.5.506: Forum fix Lasse_K - HOBEIAN ZG-102Z reports inverted by default
-    // v5.5.713: Expanded list of sensors that report inverted by default
-    // v5.5.776: REMOVED HOBEIAN - Lasse_K forum Jan 2026 confirms ZG-102Z works correctly WITHOUT inversion
-    // These sensors report closed=alarm, open=no alarm (inverted from standard)
-    // v5.5.908: Added _TZ3000_996rpfy6 (blutch32 forum - always shows no)
-    // v5.12.2: Added _TZE200_pay2byax (ZG-102ZL reversed contact)
-    const invertedByDefault = [
+      ].includes(mfr);
+      // v5.5.506: Forum fix Lasse_K - HOBEIAN ZG-102Z reports inverted by default
+      // v5.5.713: Expanded list of sensors that report inverted by default
+      // v5.5.776: REMOVED HOBEIAN - Lasse_K forum Jan 2026 confirms ZG-102Z works correctly WITHOUT inversion
+      // These sensors report closed=alarm, open=no alarm (inverted from standard)
+      // v5.5.908: Added _TZ3000_996rpfy6 (blutch32 forum - always shows no)
+      // v5.12.2: Added _TZE200_pay2byax (ZG-102ZL reversed contact)
+      const invertedByDefault = [
       // v5.12.1: REMOVED HOBEIAN — Lasse_K #1592 'always ja': standard TS0203 IAS bit0=1=open maps directly to alarm_contact=true, no inversion needed
       // 'HOBEIAN',  // DO NOT INVERT — causes stuck alarm_contact=true when closed
       '_TZ3000_26fmupbb',  // Known inverted
@@ -197,26 +195,24 @@ class ContactSensorDevice extends SensorBase {
       '_TZ3000_yxqnffam',  // Known inverted (forum reports)
       '_TZ3000_996rpfy6',  // v5.5.908: blutch32 forum - TS0203 always "no" fix
       '_TZE200_pay2byax',  // v5.12.2: ZG-102ZL reversed
-    ].some(id => containsCI(mfr, id));
-    // v5.12.3: XOR — default inversion + user invert cancel each other out
-    this._invertedByDefault = invertedByDefault;
-    if (invertedByDefault) {
+      ].some(id => containsCI(mfr, id));
+      // v5.12.3: XOR — default inversion + user invert cancel each other out
+      this._invertedByDefault = invertedByDefault;
+      if (invertedByDefault) {
       this._invertContact = !(userInvert || userReverse);
       this._userExplicitInvert = false;
       this.log(`[CONTACT] Sensor ${mfr} invertedByDefault=true userInvert=${userInvert} => _invertContact=${this._invertContact}`);
-    }
-
-    if (this._isProblematicSensor) {
+      }
+      if (this._isProblematicSensor) {
       this.log(`[CONTACT] ⚠️ Problematic sensor detected (${mfr}) - extended debounce enabled`);
       this._debounceMs = Math.max(this._debounceMs, DEBOUNCE.PROBLEMATIC_MIN_MS);
-    }
-
-    // Parent handles EVERYTHING: Tuya DP, ZCL, IAS Zone, battery
-    await super.onNodeInit({ zclNode });
-
-    await setupSonoffSensor(this, zclNode);
-    this.log('[CONTACT] v5.11.106 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00 | SONOFF: tamper');
-    this.log(`[CONTACT] ✅ Ready (debounce: ${this._debounceMs}ms, invert: ${this._invertContact}, problematic: ${this._isProblematicSensor})`);
+      }
+      // Parent handles EVERYTHING: Tuya DP, ZCL, IAS Zone, battery
+      await super.onNodeInit({ zclNode });
+      await setupSonoffSensor(this, zclNode);
+      this.log('[CONTACT] v5.11.106 - DPs: 1,2,3,4,5,15,101 | ZCL: IAS,PWR,EF00 | SONOFF: tamper');
+      this.log(`[CONTACT] ✅ Ready (debounce: ${this._debounceMs}ms, invert: ${this._invertContact}, problematic: ${this._isProblematicSensor})`);
+    }, 'onNodeInit');
   }
 
   /**

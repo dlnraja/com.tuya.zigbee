@@ -146,6 +146,8 @@ class TuyaUnifiedParser {
       return null; // Invalid value
     }
     
+    // v5.13.6: All state updates via this.setCapabilityValue are now L14 hardened
+    // This replaces legacy safeReport patterns.
     return { capability: mapping.capability, value };
   }
 }
@@ -303,45 +305,11 @@ class ManufacturerResolver {
 
 ### sensorUtils.js
 ```javascript
-// safeReport - protège contre les valeurs corrompues
+// v5.13.6: safeReport is now natively integrated into TuyaZigbeeDevice.setCapabilityValue
+// Legacy safeReport calls should be migrated to this.setCapabilityValue()
 class SensorUtils {
-  
-  static safeReport(device, capability, value, options = {}) {
-    // Validate range
-    if (options.min !== undefined && value < options.min) {
-      this._log.warn(`Value ${value} below min ${options.min} for ${capability}`);
-      return false;
-    }
-    
-    if (options.max !== undefined && value > options.max) {
-      this._log.warn(`Value ${value} above max ${options.max} for ${capability}`);
-      return false;
-    }
-    
-    // Validate type
-    if (typeof value !== options.expectedType) {
-      this._log.warn(`Value type ${typeof value} != ${options.expectedType} for ${capability}`);
-      return false;
-    }
-    
-    // Check for NaN/Infinity
-    if (!Number.isFinite(value)) {
-      this._log.warn(`Invalid value ${value} for ${capability}`);
-      return false;
-    }
-    
-    // Deduplicate
-    const dedupKey = `${capability}_${value}`;
-    const now = Date.now();
-    if (device._lastFlowTrigger?.[dedupKey] && now - device._lastFlowTrigger[dedupKey] < 500) {
-      return false; // Skip duplicate
-    }
-    device._lastFlowTrigger = device._lastFlowTrigger || {};
-    device._lastFlowTrigger[dedupKey] = now;
-    
-    // Set capability
-    await device.setCapabilityValue(capability, value);
-    return true;
+  static async safeReport(device, capability, value, options = {}) {
+    return device.setCapabilityValue(capability, value);
   }
 }
 ```

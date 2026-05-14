@@ -42,68 +42,60 @@ const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 class DiyCustomZigbeeDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'msRelativeHumidity',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 100,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
+      {
+      cluster: 'msTemperatureMeasurement',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 50,
+      },
+      {
+      cluster: 'msRelativeHumidity',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 100,
+      },
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    this.log('');
-    this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║     DIY CUSTOM ZIGBEE DEVICE v5.5.719                        ║');
-    this.log('║   PTVO | ESP32-H2 | CC2530 | DIYRuZ | Custom ZCL             ║');
-    this.log('╚══════════════════════════════════════════════════════════════╝');
-
-    this.zclNode = zclNode;
-
-    // Get device info
-    const { manufacturerName, productId } = this.getData() || {};
-    this.log(`[DIY] Manufacturer: ${manufacturerName}`);
-    this.log(`[DIY] Product ID: ${productId}`);
-
-    // Detect firmware type
-    this._firmwareType = this._detectFirmwareType(manufacturerName, productId);
-    this.log(`[DIY] Detected firmware type: ${this._firmwareType}`);
-
-    // Update settings with device info
-    await this._updateDeviceSettings();
-
-    // Scan all endpoints and clusters
-    await this._scanEndpointsAndClusters();
-
-    // Setup capabilities based on detected clusters
-    await this._setupCapabilities();
-
-    // Setup cluster listeners
-    await this._setupClusterListeners();
-
-    this.log('[DIY] ✅ Device initialized successfully');
+      }
+      this.log('');
+      this.log('╔══════════════════════════════════════════════════════════════╗');
+      this.log('║     DIY CUSTOM ZIGBEE DEVICE v5.5.719                        ║');
+      this.log('║   PTVO | ESP32-H2 | CC2530 | DIYRuZ | Custom ZCL             ║');
+      this.log('╚══════════════════════════════════════════════════════════════╝');
+      this.zclNode = zclNode;
+      // Get device info
+      const { manufacturerName, productId } = this.getData() || {};
+      this.log(`[DIY] Manufacturer: ${manufacturerName}`);
+      this.log(`[DIY] Product ID: ${productId}`);
+      // Detect firmware type
+      this._firmwareType = this._detectFirmwareType(manufacturerName, productId);
+      this.log(`[DIY] Detected firmware type: ${this._firmwareType}`);
+      // Update settings with device info
+      await this._updateDeviceSettings();
+      // Scan all endpoints and clusters
+      await this._scanEndpointsAndClusters();
+      // Setup capabilities based on detected clusters
+      await this._setupCapabilities();
+      // Setup cluster listeners
+      await this._setupClusterListeners();
+      this.log('[DIY] ✅ Device initialized successfully');
+    }, 'onNodeInit');
   }
 
   _detectFirmwareType(manufacturerName = '', productId = '') {

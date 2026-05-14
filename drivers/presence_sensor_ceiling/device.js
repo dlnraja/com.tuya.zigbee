@@ -1,83 +1,37 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const { CLUSTER } = require('zigbee-clusters');
+const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
+const IntelligentDPAutoDiscovery = require('../../lib/sensors/IntelligentDPAutoDiscovery');
 
-// Tuya DP IDs for ceiling presence sensors with relay
-const TUYA_DP = {
-  PRESENCE: 1,           // Presence state (bool)
-  RELAY: 101,            // Relay control (bool) - some devices use 101
-  RELAY_ALT: 16,         // Relay control alternative
-  SENSITIVITY: 2,        // Radar sensitivity (0-9)
-  MINIMUM_RANGE: 3,      // Minimum detection range
-  MAXIMUM_RANGE: 4,      // Maximum detection range
-  DETECTION_DELAY: 101,  // Detection delay
-  FADING_TIME: 102,      // Fading time / absence delay
-  ILLUMINANCE: 104,      // Illuminance value
-  TARGET_DISTANCE: 9,    // Target distance
-  INDICATOR_MODE: 105,   // LED indicator mode
-};
-
-class CeilingPresenceSensorDevice extends ZigBeeDevice {
+/**
+ * CeilingPresenceSensorDevice - v8.0.0 MODERNIZED
+ * Ceiling-mounted presence sensor (mmWave) with relay control.
+ */
+class CeilingPresenceSensorDevice extends SensorBase {
 
   async onNodeInit({ zclNode }) {
+    this.log('[CEILING] 🚀 v8.0.0 Modernizing...');
+    
+    // Initialize v8 components
+    this._inference = new IntelligentPresenceInference(this);
+    this._discovery = new IntelligentDPAutoDiscovery(this);
+    
+    // Parent handles standard sensor logic and discovery initialization
     await super.onNodeInit({ zclNode });
 
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'ssIasZone',
-          attributeName: 'zoneStatus',
-          minInterval: 0,
-          maxInterval: 3600,
-          minChange: 1,
-        },
-        {
-          cluster: 'msIlluminanceMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    this.log('[CEILING] Initializing Ceiling Presence Sensor (230V)');
-
-    // Store manufacturer info
-    this._manufacturerName = this.getSetting('zb_manufacturer_name') || '';
-    this._modelId = this.getSetting('zb_product_id') || '';
-    
-    this.log(`[CEILING] Device: ${this._manufacturerName} / ${this._modelId}`);
-
-    // Initialize capabilities
+    // Setup capabilities and listeners
     await this._initCapabilities();
-
-    // Setup Tuya cluster reporting
-    await this._setupTuyaReporting(zclNode);
-
-    // Setup OnOff cluster for relay control if available
+    
+    // Relay control initialization
     await this._setupRelayControl(zclNode);
 
-    this.log('[CEILING] Initialization complete');
+    this.log('[CEILING] ✅ Ready');
   }
 
   async _initCapabilities() {
-    // Ensure required capabilities exist
-    const requiredCaps = ['alarm_motion', 'onoff'];
-    for (const cap of requiredCaps) {
-      if (!this.hasCapability(cap)) {
-        await this.addCapability(cap).catch(this.error);
-      }
-    }
-
-    // Add optional capabilities if not present
-    const optionalCaps = ['measure_luminance', 'measure_luminance.distance'];
-    for (const cap of optionalCaps) {
+    const caps = ['alarm_motion', 'onoff', 'measure_luminance', 'measure_luminance.distance'];
+    for (const cap of caps) {
       if (!this.hasCapability(cap)) {
         await this.addCapability(cap).catch(() => {});
       }
@@ -90,222 +44,106 @@ class CeilingPresenceSensorDevice extends ZigBeeDevice {
     });
   }
 
-  async _setupTuyaReporting(zclNode) {
-    try {
-      const tuyaCluster = zclNode.endpoints[1]?.clusters?.tuya;
-      if (!tuyaCluster) {
-        this.log('[CEILING] Tuya cluster not found, trying alternative setup');
+  /**
+   * Main Tuya DP processing entry point
+   */
+  async onTuyaDP(dpId, value, dpType) {
+    this.log(`[CEILING] 📥 DP${dpId} [type=${dpType}] = ${value}`);
+
+    // 1. Static Mappings
+    switch (dpId) {
+      case 1: // Presence
+        const presence = this._inference.updatePresenceDP(value);
+        await this.setCapabilityValue('alarm_motion', presence).catch(() => {});
+        
+        // Auto relay control
+        if (this.getSetting('relay_mode') === 'auto') {
+          await this._handleAutoRelay(presence);
+        }
         return;
+
+      case 9: // Target Distance
+        const distance = value / 100;
+        this._inference.updateDistance(distance);
+        return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => {});
+
+      case 104: // Illuminance
+        const lux = Math.max(0, value + (this.getSetting('illuminance_calibration') || 0));
+        this._inference.updateLux(lux);
+        return this.setCapabilityValue('measure_luminance', lux).catch(() => {});
+
+      case 101: // Relay / Detection Delay
+      case 16:  // Relay Alt
+        if (dpType === 'bool' || typeof value === 'boolean') {
+          return this.setCapabilityValue('onoff', value).catch(() => {});
+        }
+        break;
+    }
+
+    // 2. Fallback: Intelligent Auto-Discovery
+    if (this._discovery) {
+      this._discovery.analyzeDP(dpId, value);
+      const result = this._discovery.applyDiscoveredValue(dpId, value);
+      if (result && result.confidence >= 80) {
+        this.log(`[CEILING] 🧠 Discovery: DP${dpId} → ${result.capability}=${result.value}`);
+        return this.setCapabilityValue(result.capability, result.value).catch(() => {});
       }
-
-      // Listen for Tuya datapoint reports
-      tuyaCluster.on('reporting', async (data) => {
-        await this._handleTuyaReport(data);
-      });
-
-      tuyaCluster.on('response', async (data) => {
-        await this._handleTuyaReport(data);
-      });
-
-      this.log('[CEILING] Tuya cluster reporting configured');
-    } catch (err) {
-      this.error('[CEILING] Failed to setup Tuya reporting:', err.message);
     }
   }
 
   async _setupRelayControl(zclNode) {
-    try {
-      const onOffCluster = zclNode.endpoints[1]?.clusters?.onOff;
-      if (onOffCluster) {
-        this.log('[CEILING] OnOff cluster available for relay control');
-        
-        // Listen for relay state changes
-        onOffCluster.on('attr.onOff', async (value) => {
-          this.log(`[CEILING] Relay state changed: ${value}`);
-          await this.setCapabilityValue('onoff', value).catch(this.error);
-        });
-
-        // Store cluster reference
-        this._onOffCluster = onOffCluster;
-      }
-    } catch (err) {
-      this.log('[CEILING] OnOff cluster not available:', err.message);
-    }
-  }
-
-  async _handleTuyaReport(data) {
-    if (!data || !data.dp) return;
-
-    const dp = data.dp;
-    const value = data.value;
-
-    this.log(`[CEILING] DP${dp} = ${JSON.stringify(value)}`);
-
-    switch (dp) {
-    case TUYA_DP.PRESENCE:
-      // Presence detection
-      const presence = Boolean(value);
-      await this.setCapabilityValue('alarm_motion', presence).catch(this.error);
-      this.log(`[CEILING] Presence: ${presence}`);
-        
-      // Auto relay control if in auto mode
-      const relayMode = this.getSetting('relay_mode') || 'auto';
-      if (relayMode === 'auto') {
-        await this._handleAutoRelay(presence);
-      }
-      break;
-
-    case TUYA_DP.RELAY:
-    case TUYA_DP.RELAY_ALT:
-      // Relay state
-      const relayState = Boolean(value);
-      await this.setCapabilityValue('onoff', relayState).catch(this.error);
-      this.log(`[CEILING] Relay: ${relayState}`);
-      break;
-
-    case TUYA_DP.ILLUMINANCE:
-      // Illuminance
-      let lux = typeof value === 'number' ? value : 0;
-      const luxOffset = this.getSetting('illuminance_calibration') || 0;
-      lux = Math.max(0, lux + luxOffset);
-      await this.setCapabilityValue('measure_luminance', lux).catch(this.error);
-      this.log(`[CEILING] Illuminance: ${lux} lux`);
-      break;
-
-    case TUYA_DP.TARGET_DISTANCE:
-      // Target distance
-      let distance = typeof value === 'number' ? value / 100 : 0; // Convert cm to m
-      if (this.hasCapability('measure_luminance.distance')) {
-        await this.setCapabilityValue('measure_luminance.distance', distance).catch(this.error);
-        this.log(`[CEILING] Distance: ${distance}m`);
-      }
-      break;
-
-    case TUYA_DP.SENSITIVITY:
-      this.log(`[CEILING] Sensitivity: ${value}`);
-      break;
-
-    case TUYA_DP.FADING_TIME:
-      this.log(`[CEILING] Fading time: ${value}s`);
-      break;
-
-    default:
-      this.log(`[CEILING] Unknown DP${dp}: ${JSON.stringify(value)}`);
+    const onOffCluster = zclNode.endpoints[1]?.clusters?.onOff;
+    if (onOffCluster) {
+      onOffCluster.on('attr.onOff', async (value) => {
+        this.log(`[CEILING] Relay state (ZCL): ${value}`);
+        await this.setCapabilityValue('onoff', value).catch(() => {});
+      });
+      this._onOffCluster = onOffCluster;
     }
   }
 
   async _handleAutoRelay(presence) {
-    const delayOn = (this.getSetting('relay_delay_on') || 0) * 1000;
-    const delayOff = (this.getSetting('relay_delay_off') || 0) * 1000;
-
-    // Clear any existing timeout
-    if (this._relayTimeout) {
-      clearTimeout(this._relayTimeout);
-      this._relayTimeout = null;
-    }
-
-    if (presence) {
-      // Turn relay on with delay
-      if (delayOn > 0) {
-        this._relayTimeout = setTimeout(async () => {
-          await this._setRelay(true);
-        }, delayOn);
-      } else {
-        await this._setRelay(true);
-      }
-    } else {
-      // Turn relay off with delay
-      if (delayOff > 0) {
-        this._relayTimeout = setTimeout(async () => {
-          await this._setRelay(false);
-        }, delayOff);
-      } else {
-        await this._setRelay(false);
-      }
-    }
+    const delay = presence ? (this.getSetting('relay_delay_on') || 0) : (this.getSetting('relay_delay_off') || 0);
+    
+    if (this._relayTimeout) clearTimeout(this._relayTimeout);
+    
+    this._relayTimeout = setTimeout(async () => {
+      await this._setRelay(presence);
+    }, delay * 1000);
   }
 
   async _setRelay(value) {
     try {
-      // Try OnOff cluster first
       if (this._onOffCluster) {
-        if (value) {
-          await this._onOffCluster.setOn();
-        } else {
-          await this._onOffCluster.setOff();
-        }
-        await this.setCapabilityValue('onoff', value).catch(this.error);
-        return true;
+        if (value) await this._onOffCluster.setOn();
+        else await this._onOffCluster.setOff();
+      } else {
+        // Fallback to Tuya DP
+        await this.sendTuyaCommand(101, value, 'bool').catch(() => this.sendTuyaCommand(16, value, 'bool'));
       }
-
-      // Fallback to Tuya DP
-      await this._writeTuyaDP(TUYA_DP.RELAY, value);
-      await this.setCapabilityValue('onoff', value).catch(this.error);
+      await this.setCapabilityValue('onoff', value).catch(() => {});
       return true;
     } catch (err) {
-      this.error('[CEILING] Failed to set relay:', err.message);
-      throw err;
-    }
-  }
-
-  async _writeTuyaDP(dp, value) {
-    try {
-      const node = await this.getClusterEndpoint(null);
-      if (!node) {
-        throw new Error('No cluster endpoint available');
-      }
-
-      const data = {
-        dp: dp,
-        datatype: typeof value === 'boolean' ? 1 : 2,
-        value: value,
-      };
-
-      await node.clusters.tuya?.datapoint(data);
-      this.log(`[CEILING] Wrote DP${dp} = ${value}`);
-    } catch (err) {
-      this.error(`[CEILING] Failed to write DP${dp}:`, err.message);
-      throw err;
+      this.error('[CEILING] Relay set failed:', err.message);
+      return false;
     }
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('[CEILING] Settings changed:', changedKeys);
-
     for (const key of changedKeys) {
-      try {
-        switch (key) {
-        case 'radar_sensitivity':
-          await this._writeTuyaDP(TUYA_DP.SENSITIVITY, newSettings[key]);
-          break;
-        case 'minimum_range':
-          await this._writeTuyaDP(TUYA_DP.MINIMUM_RANGE, Math.round(newSettings[key] * 100));
-          break;
-        case 'maximum_range':
-          await this._writeTuyaDP(TUYA_DP.MAXIMUM_RANGE, Math.round(newSettings[key] * 100));
-          break;
-        case 'fading_time':
-          await this._writeTuyaDP(TUYA_DP.FADING_TIME, newSettings[key]);
-          break;
-        case 'relay_mode':
-          if (newSettings[key] === 'always_on') {
-            await this._setRelay(true);
-          } else if (newSettings[key] === 'always_off') {
-            await this._setRelay(false);
-          }
-          break;
-        }
-      } catch (err) {
-        this.error(`[CEILING] Failed to apply setting ${key}:`, err.message);
+      const val = newSettings[key];
+      switch (key) {
+        case 'radar_sensitivity': await this.sendTuyaCommand(2, val, 'value'); break;
+        case 'minimum_range': await this.sendTuyaCommand(3, Math.round(val * 100), 'value'); break;
+        case 'maximum_range': await this.sendTuyaCommand(4, Math.round(val * 100), 'value'); break;
+        case 'fading_time': await this.sendTuyaCommand(102, val, 'value'); break;
       }
     }
   }
 
   onDeleted() {
-    if (this._relayTimeout) {
-      clearTimeout(this._relayTimeout);
-    }
-    this.log('[CEILING] Device deleted');
+    if (this._relayTimeout) clearTimeout(this._relayTimeout);
+    super.onDeleted();
   }
 }
 

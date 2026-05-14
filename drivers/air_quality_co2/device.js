@@ -1,4 +1,6 @@
 'use strict';
+const BatteryMixin = require('../../lib/tuya/BatteryMixin');
+
 const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { AirQualityInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
@@ -13,7 +15,7 @@ const { AirQualityInference, BatteryInference } = require('../../lib/Intelligent
  * ║  Variants: _TZE200_ywagc4rj, _TZE200_zl1kmjqx                               ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class AirQualityCO2Device extends SensorBase {
+class AirQualityCO2Device extends BatteryMixin(SensorBase) {
 
   get mainsPowered() { return false; }
 
@@ -49,59 +51,56 @@ class AirQualityCO2Device extends SensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'msRelativeHumidity',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 100,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
+      {
+      cluster: 'msTemperatureMeasurement',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 50,
+      },
+      {
+      cluster: 'msRelativeHumidity',
+      attributeName: 'measuredValue',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 100,
+      },
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    await super.onNodeInit({ zclNode });
-
-    // v5.5.317: Initialize intelligent inference engines
-    this._airQualityInference = new AirQualityInference(this, {
+      }
+      await super.onNodeInit({ zclNode });
+      // v5.5.317: Initialize intelligent inference engines
+      this._airQualityInference = new AirQualityInference(this, {
       co2Baseline: 400,           // Outdoor CO2 baseline
       vocCorrelationFactor: 0.5   // CO2/VOC correlation factor
-    });
-    this._batteryInference = new BatteryInference(this);
-
-    // v5.12.2: Ensure VOC/HCHO/PM2.5 capabilities exist for devices that report them
-    for (const cap of ['measure_pm25', 'measure_voc', 'measure_formaldehyde']) {
+      });
+      this._batteryInference = new BatteryInference(this);
+      // v5.12.2: Ensure VOC/HCHO/PM2.5 capabilities exist for devices that report them
+      for (const cap of ['measure_pm25', 'measure_voc', 'measure_formaldehyde']) {
       if (!this.hasCapability(cap)) {
-        await this.addCapability(cap).catch(() => {});
-        this.log('[CO2] Added ' + cap);
+      await this.addCapability(cap).catch(() => {});
+      this.log('[CO2] Added ' + cap);
       }
-    }
-
-    this.log('[CO2] v5.5.317 INTELLIGENT INFERENCE - DPs: 1,2,14,15,18,19,20-22');
-
-    // Setup ZCL temp/humidity (specific to air quality sensors)
-    await this._setupAirQualityZCL(zclNode);
-
-    this.log('[CO2] ✅ Ready with cross-validation');
+      }
+      this.log('[CO2] v5.5.317 INTELLIGENT INFERENCE - DPs: 1,2,14,15,18,19,20-22');
+      // Setup ZCL temp/humidity (specific to air quality sensors)
+      await this._setupAirQualityZCL(zclNode);
+      this.log('[CO2] ✅ Ready with cross-validation');
+    }, 'onNodeInit');
   }
 
   /**

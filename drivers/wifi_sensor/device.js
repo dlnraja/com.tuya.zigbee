@@ -1,7 +1,7 @@
 'use strict';
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
-class WiFiSensorDevice extends TuyaLocalDevice {
+class WiFiSensorDevice extends BatteryMixin(TuyaLocalDevice) {
   get dpMappings() {
     return {
       '1':  { capability: 'measure_temperature', divisor: 10 },

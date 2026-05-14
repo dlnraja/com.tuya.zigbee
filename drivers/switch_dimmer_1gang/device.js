@@ -1,70 +1,88 @@
 'use strict';
-const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
-const DP = { state: 1, brightness: 2, minBright: 3, lightType: 4, powerOn: 14 };
 
-class SwitchDimmer1GangDevice extends TuyaSpecificClusterDevice {
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+
+const DP = {
+  state: 1,
+  brightness: 2,
+  minBright: 3,
+  lightType: 4,
+  powerOn: 14
+};
+
+/**
+ * SwitchDimmer1GangDevice - v5.13.6 Hardened Architecture
+ */
+class SwitchDimmer1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaZigbeeDevice)) {
+
+  get mainsPowered() { return true; }
+  get gangCount() { return 1; }
+
   async onNodeInit({ zclNode }) {
+    this.log('[Dimmer1G] 🚀 Initializing hardened driver...');
     await super.onNodeInit({ zclNode });
 
-    this.log('Switch Dimmer 1-Gang init...');
-    this._lastOnoffState = null;
-    this._lastBrightness = null;
-    this._appPending = false;
-    this._appTimeout = null;
-    this.registerCapabilityListener('onoff', async (v) => {
-      this._mark(); await this.sendTuyaCommand(DP.state, v, 'bool');
+    // 1. Capability Listeners
+    this.registerCapabilityListener('onoff', async (value) => {
+      this.log(`[Dimmer1G] Setting state: ${value}`);
+      return this.sendTuyaCommand(DP.state, value, 'bool');
     });
-    this.registerCapabilityListener('dim', async (v) => {
-      this._mark();
-      await this.sendTuyaCommand(DP.brightness, Math.round(10 + v * 990), 'value');
+
+    this.registerCapabilityListener('dim', async (value) => {
+      const brightness = Math.round(10 + value * 990);
+      this.log(`[Dimmer1G] Setting brightness: ${brightness}`);
+      return this.sendTuyaCommand(DP.brightness, brightness, 'value');
     });
-    this.log('Switch Dimmer 1-Gang ready');
+
+    this.log('[Dimmer1G] ✅ Ready');
   }
 
-  _mark() {
-    this._appPending = true;
-    clearTimeout(this._appTimeout);
-    this._appTimeout = setTimeout(() => { this._appPending = false; }, 2000);
-  }
-
-  handleTuyaDataReport(data, isReport = false) {
+  /**
+   * handleTuyaDataReport - Hardened DP Processing
+   */
+  async handleTuyaDataReport(data) {
     if (!data || data.dp == null) return;
-    const phys = isReport && !this._appPending;
-    const v = data.data ?? data.value;
-    if (data.dp === DP.state) {
-      const s = Boolean(v);
-      if (this._lastOnoffState === s) return;
-      this._lastOnoffState = s;
-      await this.setCapabilityValue('onoff', s).catch(() => {});
-      if (phys) {
-        const id = s ? 'switch_dimmer_1gang_turned_on' : 'switch_dimmer_1gang_turned_off';
-        (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch(e) { return null; } })()?
+    
+    const value = data.data ?? data.value;
+    const dpId = data.dp;
+
+    switch (dpId) {
+      case DP.state: {
+        const state = Boolean(value);
+        await this.setCapabilityValue('onoff', state);
+        break;
       }
-    } else if (data.dp === DP.brightness) {
-      const raw = typeof v === 'number' ? v : parseInt(v);
-      if (this._lastBrightness !== null && Math.abs(raw - this._lastBrightness) < 10) return;
-      const up = this._lastBrightness !== null && raw > this._lastBrightness;
-      const dn = this._lastBrightness !== null && raw < this._lastBrightness;
-      this._lastBrightness = raw;
-      const dim = Math.max(0, Math.min(1, (raw - 10) / 990));
-      await this.setCapabilityValue('dim', dim).catch(() => {});
-      if (phys && up) {
-        (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_brightness_increased'); } catch(e) { return null; } })()?.trigger(this, { brightness: dim }, {}).catch(() => {});
-      } else if (phys && dn) {
-        (() => { try { return this.homey.flow.getDeviceTriggerCard('switch_dimmer_1gang_brightness_decreased'); } catch(e) { return null; } })()?.trigger(this, { brightness: dim }, {}).catch(() => {});
+
+      case DP.brightness: {
+        const raw = typeof value === 'number' ? value : parseInt(value);
+        const dim = Math.max(0, Math.min(1, (raw - 10) / 990));
+        await this.setCapabilityValue('dim', dim);
+        break;
       }
+
+      default:
+        this.log(`[Dimmer1G] 📥 Unhandled DP ${dpId}:`, value);
     }
   }
 
   async onSettings({ newSettings, changedKeys }) {
-    for (const k of changedKeys) {
-      if (k === 'min_brightness') await this.sendTuyaCommand(DP.minBright, newSettings[k] * 10, 'value').catch(() => {});
-      if (k === 'power_on_behavior') await this.sendTuyaCommand(DP.powerOn, parseInt(newSettings[k]), 'enum').catch(() => {});
-      if (k === 'light_type') await this.sendTuyaCommand(DP.lightType, parseInt(newSettings[k]), 'enum').catch(() => {});
+    for (const key of changedKeys) {
+      switch (key) {
+        case 'min_brightness':
+          await this.sendTuyaCommand(DP.minBright, newSettings[key] * 10, 'value');
+          break;
+        case 'power_on_behavior':
+          await this.sendTuyaCommand(DP.powerOn, parseInt(newSettings[key]), 'enum');
+          break;
+        case 'light_type':
+          await this.sendTuyaCommand(DP.lightType, parseInt(newSettings[key]), 'enum');
+          break;
+      }
     }
   }
 
-  onDeleted() { clearTimeout(this._appTimeout); super.onDeleted?.(); }
 }
 
 module.exports = SwitchDimmer1GangDevice;

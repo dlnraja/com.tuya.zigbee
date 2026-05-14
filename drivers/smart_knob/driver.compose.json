@@ -9,8 +9,7 @@
   "capabilities": [
     "button",
     "dim",
-    "measure_battery",
-    "alarm_battery"
+    "measure_battery"
   ],
   "capabilitiesOptions": {
     "button": {

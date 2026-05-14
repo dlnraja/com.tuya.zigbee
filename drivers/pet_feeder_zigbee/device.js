@@ -1,16 +1,17 @@
 'use strict';
+
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 /**
  * Zigbee Pet Feeder - TS0601
- * DPs: DP3=feed_portion, DP4=manual_feed, DP6=food_low_alarm,
- *       DP13=feed_report, DP101=weight
  */
 class PetFeederZigbeeDevice extends TuyaZigbeeDevice {
+
   async onNodeInit({ zclNode }) {
+    this.log('[PetFeeder] 🚀 Initializing hardened driver...');
     await super.onNodeInit({ zclNode });
 
-
+    // 1. DP Mappings
     if (this._tuyaEF00Manager) {
       this._tuyaEF00Manager.dpMappings = {
         6: { capability: 'alarm_generic', converter: v => !!v },
@@ -18,21 +19,18 @@ class PetFeederZigbeeDevice extends TuyaZigbeeDevice {
       };
     }
 
-    this.registerCapabilityListener('button', async () => {
-      this._markAppCommand?.();
-      if (this._tuyaEF00Manager) {
+    // 2. Capability Listeners
+    if (this.hasCapability('button')) {
+      this.registerCapabilityListener('button', async () => {
+        this.log('[PetFeeder] 🥣 Manual feed triggered');
         // DP4: manual feed (1 portion)
-        await this._tuyaEF00Manager.sendTuyaDP(4, 2, 1);
-      }
-    });
+        return this.sendTuyaCommand(4, 1, 'value');
+      });
+    }
 
-    this.log('[PET-FEEDER] \u2705 Ready');
+    this.log('[PetFeeder] ✅ Ready');
   }
 
-
-  async onDeleted() {
-    this.log('Device deleted, cleaning up');
-  }
 }
-module.exports = PetFeederZigbeeDevice;
 
+module.exports = PetFeederZigbeeDevice;

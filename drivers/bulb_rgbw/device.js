@@ -1,4 +1,7 @@
 'use strict';
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+
 
 constLightBase = require('../../lib/devices/UnifiedLightBase');
 
@@ -13,7 +16,9 @@ constLightBase = require('../../lib/devices/UnifiedLightBase');
  * ║  Models: TS0505B, TS0504B, _TZ3210_*, _TZ3000_*                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class RGBWBulbDevice extends LightBase {
+class RGBWBulbDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) {
+
+  get mainsPowered() { return true; }
 
   get lightCapabilities() {
     return ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature', 'light_mode'];
@@ -36,28 +41,28 @@ class RGBWBulbDevice extends LightBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    this.log('[RGBW] v5.5.129 - DPs: 1-7,21,24-26 | ZCL: 6,8,300,EF00');
-    await this._setupColorCluster(zclNode);
-    this._setupRGBWListeners();
-    this.log('[RGBW] ✅ RGBW bulb ready');
+      }
+      this.log('[RGBW] v5.5.129 - DPs: 1-7,21,24-26 | ZCL: 6,8,300,EF00');
+      await this._setupColorCluster(zclNode);
+      this._setupRGBWListeners();
+      this.log('[RGBW] ✅ RGBW bulb ready');
+    }, 'onNodeInit');
   }
 
   _parseHSV(raw) {
@@ -79,8 +84,8 @@ class RGBWBulbDevice extends LightBase {
     try {
       const colorCluster = ep1.clusters?.lightingColorCtrl || ep1.clusters?.colorControl;
       if (colorCluster?.on) {
-        colorCluster.on('attr.currentHue', (v) => await this.setCapabilityValue('light_hue', v / 254).catch(() => { }));
-        colorCluster.on('attr.currentSaturation', (v) => await this.setCapabilityValue('light_saturation', v / 254).catch(() => { }));
+        colorCluster.on('attr.currentHue', async (v) => await this.setCapabilityValue('light_hue', v / 254).catch(() => { }));
+        colorCluster.on('attr.currentSaturation', async (v) => await this.setCapabilityValue('light_saturation', v / 254).catch(() => { }));
         this.log('[RGBW] ✅ Color cluster listeners added');
       }
     } catch (e) { /* ignore */ }
@@ -95,9 +100,13 @@ class RGBWBulbDevice extends LightBase {
       this.registerCapabilityListener('light_saturation', async () => await this._sendHSV());
     }
     if (this.hasCapability('light_mode')) {
-      this.registerCapabilityListener('light_mode', async (v) => {
+      this.registerCapabilityListener('light_mode', async (v) => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, v);
+await this._safeInvoke(async () => {
+
         await this._sendTuyaDP(2, v === 'color' ? 1 : 0, 'enum');
-      });
+      
+}, 'light_modeListener');
+});
     }
   }
 

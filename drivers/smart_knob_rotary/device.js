@@ -7,40 +7,32 @@ const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap'
 class SmartKnobRotaryDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    this.log('Smart Knob Rotary device initialized');
-    
-    // Store zclNode for later use
-    this._zclNode = zclNode;
-
-    // Initialize brightness simulation state
-    this._simulatedBrightness = 0.5;
-
-    // v5.5.990: Track OnOff state to filter heartbeat vs real button press (Ernst02507 fix)
-    this._lastOnOffValue = null;
-    this._lastOnOffTime = 0;
-    this._isTS004F = (this.getSetting('zb_model_id') || '').includes('TS004F');
-
-    // Set initial dim value
-    if (this.hasCapability('dim')) {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      this.log('Smart Knob Rotary device initialized');
+      // Store zclNode for later use
+      this._zclNode = zclNode;
+      // Initialize brightness simulation state
+      this._simulatedBrightness = 0.5;
+      // v5.5.990: Track OnOff state to filter heartbeat vs real button press (Ernst02507 fix)
+      this._lastOnOffValue = null;
+      this._lastOnOffTime = 0;
+      this._isTS004F = (this.getSetting('zb_model_id') || '').includes('TS004F');
+      // Set initial dim value
+      if (this.hasCapability('dim')) {
       await this.setCapabilityValue('dim', this._simulatedBrightness).catch(this.error);
-    }
-
-    // v5.5.976: Enable TS004F scene mode (critical for button events)
-    await this._enableTS004FSceneMode(zclNode);
-
-    // Setup battery reporting
-    await this._setupBatteryReporting(zclNode);
-
-    // Setup button/knob event handling
-    await this._setupKnobEventHandling(zclNode);
-
-    // v5.9.3: E000 + Tuya DP detection layers
-    await this._setupE000Detection(zclNode);
-    await this._setupTuyaDPDetection(zclNode);
-
-    this.log('Smart Knob Rotary initialization complete');
+      }
+      // v5.5.976: Enable TS004F scene mode (critical for button events)
+      await this._enableTS004FSceneMode(zclNode);
+      // Setup battery reporting
+      await this._setupBatteryReporting(zclNode);
+      // Setup button/knob event handling
+      await this._setupKnobEventHandling(zclNode);
+      // v5.9.3: E000 + Tuya DP detection layers
+      await this._setupE000Detection(zclNode);
+      await this._setupTuyaDPDetection(zclNode);
+      this.log('Smart Knob Rotary initialization complete');
+    }, 'onNodeInit');
   }
 
   /**
@@ -371,7 +363,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
   async _handleRotation(direction, rate) {
     const delta = direction === 'up' ? 0.1 : -0.1;
-    this._updateSimulatedBrightness(delta);
+    await this._updateSimulatedBrightness(delta);
 
     if (direction === 'up') {
       await this._triggerRotateRight();
@@ -382,7 +374,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
   async _handleRotationStep(direction, stepSize) {
     const delta = direction === 'up' ? (stepSize / 254) : -(stepSize / 254);
-    this._updateSimulatedBrightness(delta);
+    await this._updateSimulatedBrightness(delta);
 
     if (direction === 'up') {
       await this._triggerRotateRight();
@@ -391,7 +383,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     }
   }
 
-  _updateSimulatedBrightness(delta) {
+  async _updateSimulatedBrightness(delta) {
     this._simulatedBrightness = Math.max(0, Math.min(1, this._simulatedBrightness + delta));
     
     if (this.hasCapability('dim')) {
@@ -406,7 +398,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     
     if (this.hasCapability('button.rotate_left')) {
       await this.setCapabilityValue('button.rotate_left', true).catch(this.error);
-      this.homey.setTimeout(() => {
+      this.homey.setTimeout(async () => {
         await this.setCapabilityValue('button.rotate_left', false).catch(this.error);
       }, 100);
     }
@@ -425,7 +417,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     
     if (this.hasCapability('button.rotate_right')) {
       await this.setCapabilityValue('button.rotate_right', true).catch(this.error);
-      this.homey.setTimeout(() => {
+      this.homey.setTimeout(async () => {
         await this.setCapabilityValue('button.rotate_right', false).catch(this.error);
       }, 100);
     }
@@ -444,7 +436,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     
     if (this.hasCapability('button.press')) {
       await this.setCapabilityValue('button.press', true).catch(this.error);
-      this.homey.setTimeout(() => {
+      this.homey.setTimeout(async () => {
         await this.setCapabilityValue('button.press', false).catch(this.error);
       }, 100);
     }

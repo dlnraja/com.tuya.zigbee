@@ -3,7 +3,6 @@
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
 const { setupSonoffEnergy } = require('../../lib/mixins/SonoffEnergyMixin');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
@@ -151,7 +150,9 @@ function getEnergyConfig(manufacturerName) {
   return ENERGY_CONFIG_MAP[manufacturerName] || ENERGY_DEVICE_CONFIGS.TUYA_DP_STANDARD;
 }
 
-class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
+class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
+
+  get mainsPowered() { return true; }
 
   // v5.11.25: Override ZCL energy divisors for devices that report in actual units
   get zclEnergyDivisors() {
@@ -272,68 +273,63 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      // --- Attribute Reporting Configuration (auto-generated) ---
+      try {
       await this.configureAttributeReporting([
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'activePower',
-          minInterval: 10,
-          maxInterval: 300,
-          minChange: 5,
-        },
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'rmsVoltage',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 1,
-        },
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'rmsCurrent',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 10,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
+      {
+      cluster: 'haElectricalMeasurement',
+      attributeName: 'activePower',
+      minInterval: 10,
+      maxInterval: 300,
+      minChange: 5,
+      },
+      {
+      cluster: 'haElectricalMeasurement',
+      attributeName: 'rmsVoltage',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 1,
+      },
+      {
+      cluster: 'haElectricalMeasurement',
+      attributeName: 'rmsCurrent',
+      minInterval: 30,
+      maxInterval: 600,
+      minChange: 10,
+      },
+      {
+      cluster: 'genPowerCfg',
+      attributeName: 'batteryPercentageRemaining',
+      minInterval: 3600,
+      maxInterval: 43200,
+      minChange: 2,
+      }
       ]);
       this.log('Attribute reporting configured successfully');
-    } catch (err) {
+      } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
-    const config = this._getEnergyConfig();
-
-    this.log('[ENERGY] ═══════════════════════════════════════════════════════');
-    this.log('[ENERGY] v5.5.255 INTELLIGENT ENERGY MANAGEMENT');
-    this.log(`[ENERGY] ManufacturerName: ${mfr}`);
-    this.log(`[ENERGY] Config: ${config.configName || 'TUYA_DP_STANDARD (default)'}`);
-    this.log(`[ENERGY] Protocol: ${config.protocol || 'hybrid'}`);
-    this.log('[ENERGY] ═══════════════════════════════════════════════════════');
-
-    // Initialize base class
-    await super.onNodeInit({ zclNode });
-
-    // Setup protocol-specific listeners
-    if (config.protocol === 'zcl') {
+      }
+      const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
+      const config = this._getEnergyConfig();
+      this.log('[ENERGY] ═══════════════════════════════════════════════════════');
+      this.log('[ENERGY] v5.5.255 INTELLIGENT ENERGY MANAGEMENT');
+      this.log(`[ENERGY] ManufacturerName: ${mfr}`);
+      this.log(`[ENERGY] Config: ${config.configName || 'TUYA_DP_STANDARD (default)'}`);
+      this.log(`[ENERGY] Protocol: ${config.protocol || 'hybrid'}`);
+      this.log('[ENERGY] ═══════════════════════════════════════════════════════');
+      // Initialize base class
+      await super.onNodeInit({ zclNode });
+      // Setup protocol-specific listeners
+      if (config.protocol === 'zcl') {
       await this._setupZclEnergy(zclNode, config);
-    }
-
-    await setupSonoffEnergy(this, zclNode);
-
-    // Initialize physical and virtual buttons
-    await this.initPhysicalButtonDetection(zclNode);
-    await this.initVirtualButtons();
-
-    this.log('[ENERGY] ✅ Energy monitor plug ready (v5.13.1 + Bidirectional Buttons)');
+      }
+      await setupSonoffEnergy(this, zclNode);
+      // Initialize physical and virtual buttons
+      await this.initPhysicalButtonDetection(zclNode);
+      this.log('[ENERGY] ✅ Energy monitor plug ready (v5.13.1 + Bidirectional Buttons)');
+    }, 'onNodeInit');
   }
 
   /**

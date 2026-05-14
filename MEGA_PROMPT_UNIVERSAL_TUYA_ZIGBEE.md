@@ -1,7 +1,8 @@
-# 🚀 MEGA PROMPT ULTRA-COMPLET - UNIVERSAL TUYA ZIGBEE v5.11.212+
+# 🚀 MEGA PROMPT ULTRA-COMPLET - UNIVERSAL TUYA ZIGBEE v5.13.6+
 ## 📜 Plan d'Action, d'Investigation & de Maturation pour IA Avancée
+## 🛠️ ZERO-DEFECT FLEET STABILIZATION MANDATE
 
-> **📌 INSTRUCTION POUR L'IA AGENT (Cline / MiniMax / Gemini)** : Copie intégralement ce document dans ton contexte système. Tu dois l'ingérer comme protocole opérationnel absolu. Exécute chaque phase séquentiellement, respecte strictement les contraintes, préserve le contexte sans hallucination, et agis en architecte IoT senior spécialiste Homey Pro SDK3, Zigbee, WiFi, Matter et reverse engineering Tuya. Ne dévie jamais de ce plan. Ne publie rien sur le forum. Travaille silencieusement, étape par étape, avec vérification croisée permanente.
+> **📌 INSTRUCTION POUR L'IA AGENT (Cline / MiniMax / Gemini)** : Copie intégralement ce document dans ton contexte système. Tu dois l'ingérer comme protocole opérationnel absolu. Exécute chaque phase séquentiellement, respecte strictement les contraintes, préserve le contexte sans hallucination, et agis en architecte IoT senior spécialiste Homey Pro SDK3, Zigbee, WiFi, Matter et reverse engineering Tuya. Ne dévie jamais de ce plan. Ne publie rien sur le forum. Travaille silencieusement, étape par étape, avec vérification croisée permanente. Ce protocole intègre désormais le blindage v5.13.6 "Zero-Defect" pour la stabilisation de la flotte.
 
 ---
 
@@ -136,7 +137,8 @@
 
 7. **Flow Cards** :
    - NO `titleFormatted` with `[[device]]` — causes manual selection bug
-   - Virtual buttons MUST use `this._safeSetCapability()` not native setter
+   - Virtual buttons MUST use `this.setCapabilityValue()` to route through the v5 hardening pipeline. This ensures flow triggers are protected by L14 SanityFilter.
+   - **L14 Hardened Telemetry**: ALL state updates MUST use `this.setCapabilityValue()` inherited from `TuyaZigbeeDevice.js`. It provides automatic Anti-Flood and SanityFiltering.
 
 8. **Anti-Generic Strategy** :
    - Drivers must be permissive at pairing time
@@ -160,6 +162,8 @@
 | **ERR-01** | try/catch obligatoire autour ZCL/DP | Résilience |
 | **PERF-01** | Limiter setCapabilityValue à 1/5s | Performance |
 | **ANTI-GENERIC** | Permissif au pairing, enrichissement progressif | Compatibilité |
+| **Rule 26** | Télémétrie Blindée L14 (EMA/ROC + Anti-Flood) | Stabilité Absolue |
+| **Rule 27** | Case-Insensitive Matching (mfr/model) | Reconnaissance Fiable |
 
 ---
 
@@ -503,6 +507,10 @@ if [ -n "$ARCHIVE" ]; then
   echo "📦 ${SIZE_MB} Mo"
   [ $SIZE -gt 5242880 ] && echo "⚠️ Archive >5Mo"
 fi
+
+# 6. Vérification Télémétrie v5
+echo "🔍 Vérification Télémétrie L14..."
+grep -r "_safeSetCapability" lib/devices/ && echo "⚠️ Legacy _safeSetCapability found!"
 
 # 6. Vérification _hybrid
 echo "🔍 Vérification _hybrid..."

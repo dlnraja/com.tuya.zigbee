@@ -1,22 +1,23 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const PhysicalButtonMixin = require('../../lib/tuya/PhysicalButtonMixin');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
- * SceneSwitch3Device - v9.5.0 Universal Standard
- * 
- * Migrated to PhysicalButtonMixin for 8-layer detection stack.
- * Standardized battery management via BatteryMixin.
+ * Scene Switch 3 Gang - Universal Hardened Driver (v10.0.0)
  */
-class SceneSwitch3Device extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
+class SceneSwitch3Device extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 
-  async onNodeInit({ zclNode }) {
-    this.buttonCount = 3;
-    await super.onNodeInit({ zclNode });
+  async onNodeInit() {
+    await super.onNodeInit();
     
-    this.log('[SceneSwitch3] ✅ Initialized with Mixin architecture');
+    this.buttonCount = 3;
+    this.gangCount = 3;
+    
+    // Initialize hardened physical button detection
+    await this.initPhysicalButtonDetection(this.zclNode);
+    
+    this.log('[SceneSwitch3] 🔘 Hardened via TuyaZigbeeDevice + PhysicalButtonMixin');
   }
 
 }
