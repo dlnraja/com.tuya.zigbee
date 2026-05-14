@@ -1,4 +1,7 @@
 {
+  "7.5.34": {
+    "en": "v7.5.34: Fixed condition card registration in air_quality_comprehensive and din_rail_meter drivers. Standardized button flow cards. Synced upstream fixes from ."
+  },
   "7.5.33": {
     "en": "Fixed condition cards in air quality & DIN rail meter drivers. Added standardized button flow triggers (press, double press, long press, release, knob rotation). Synced upstream driver improvements and updated app assets."
   },
@@ -56,10 +59,7 @@
   "7.5.15": {
     "en": "v7.5.15: Fixed siren sensor driver crashes, added 3,202 new fingerprints, and improved device detection reliability."
   },
-  "7.5.14": {
-    "en": "v7.5.14: . Bug fixes for wireless buttons, climate sensors, radiator valves, and energy meters. Improved device initialization and diagnostics."
-  },
-  "7.5.34": {
-    "en": "Fixed condition cards in air quality & DIN rail meter drivers. Added standardized button flow triggers (press, double press, long press, release, knob rotation). Synced upstream driver improvements and updated app assets."
+  "7.5.35": {
+    "en": "v7.5.34: Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers (resolved runtime errors), Restored draft-to-test , Standardized button flow cards (button_pressed, button_double_press, button_long_press, button_multi_press, button_release, knob_rotated), Added OTA check updates action card, Added tuya_dp_send_typed and tuya_dp"
   }
 }

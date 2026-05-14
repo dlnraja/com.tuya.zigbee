@@ -4,7 +4,25 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.33] - 2026-05-14
+## [7.5.34] - 2026-05-14
+
+### Bug Fixes
+- Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers (resolved runtime errors)
+- Restored draft-to-test workflow fixes from stable branch
+
+### New Features
+- Standardized button flow cards (button_pressed, button_double_press, button_long_press, button_multi_press, button_release, knob_rotated)
+- Added OTA check updates action card
+- Added tuya_dp_send_typed and tuya_dp_type_is flow cards
+
+### Improvements
+- Synced upstream fixes from Johan Bendz (enhanced AI, stability improvements)
+- Harmonized 228 driver icons and updated app store assets
+- Updated fleet diagnostics and state tracking
+- 228 drivers, 6707 fingerprints total
+---
+
+ [7.5.33] - 2026-05-14
 
 ## v7.5.33
 
