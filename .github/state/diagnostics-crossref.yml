@@ -1,223 +1,104 @@
 # Diagnostics Cross-Reference (auto-generated)
-# Generated: 2026-05-15T13:07:00.243Z
-# Emails processed: 139
+# Generated: 2026-05-15T19:02:25.902Z
+# Emails processed: 141
 
 fingerprints:
+  TS0603:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [garage_door_opener]
+    mentions: 1
+    source_types: [crash_report]
+    sources:
+      - type: crash_report
+        date: 2026-05-15T13:46:30.000Z
 
 users:
-  github-actions[bot]:
-    activity_score: 97
-    emails: 48
+  pemikalsen-sudo:
+    activity_score: 9
+    emails: 3
     types: [github]
-    latest: 2026-05-14T03:51:24.000Z
-  T.L.:
-    activity_score: 20
-    emails: 7
-    types: [device_issue, general, changelog, bug_report]
     has_errors: true
-    latest: 2026-05-15T10:58:37.000Z
-  J.V.:
-    activity_score: 11
-    emails: 5
-    types: [device_issue]
-    latest: 2026-04-28T17:20:08.000Z
-  P.W.:
-    activity_score: 8
-    emails: 2
-    types: [bug_report, device_issue]
-    has_errors: true
-    latest: 2026-04-29T10:36:02.000Z
-  R.K.:
-    activity_score: 8
-    emails: 3
-    types: [device_issue, bug_report]
-    latest: 2026-04-28T14:53:24.000Z
-  J.W.:
-    activity_score: 7
-    emails: 3
-    types: [device_issue]
-    latest: 2026-04-29T11:38:53.000Z
+    latest: 2026-04-29T20:42:07.000Z
   R.U.:
     activity_score: 7
     emails: 3
     types: [general]
-    latest: 2026-04-28T20:11:50.000Z
-  4x4...:
-    activity_score: 7
-    emails: 3
+    latest: 2026-05-14T07:43:18.000Z
+  D.P.:
+    activity_score: 5
+    emails: 1
+    types: [crash_report]
+    has_errors: true
+    latest: 2026-05-15T14:24:21.000Z
+  Sun...:
+    activity_score: 3
+    emails: 1
     types: [device_issue]
-    latest: 2026-04-28T13:01:52.000Z
-  T.G.:
-    activity_score: 7
-    emails: 2
+    latest: 2026-04-29T18:02:49.000Z
+  J.V.:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-04-29T20:58:55.000Z
+  M.K.:
+    activity_score: 3
+    emails: 1
     types: [bug_report]
-    has_errors: true
-    latest: 2026-04-29T14:30:34.000Z
-  N.D.:
-    activity_score: 6
-    emails: 2
-    types: [general, changelog]
-    latest: 2026-04-28T18:13:26.000Z
-  J.H.:
-    activity_score: 5
-    emails: 2
-    types: [changelog]
-    latest: 2026-04-27T13:04:29.000Z
-  Mah...:
-    activity_score: 5
-    emails: 2
-    types: [device_issue]
-    latest: 2026-04-24T15:26:15.000Z
-  P.L.:
-    activity_score: 5
-    emails: 2
-    types: [general]
-    latest: 2026-04-28T16:13:52.000Z
-  ser...:
-    activity_score: 5
-    emails: 2
-    types: [general]
-    latest: 2026-04-24T06:57:02.000Z
-  E.C.:
-    activity_score: 5
-    emails: 1
-    types: [diagnostic]
-    has_errors: true
-    latest: 2026-04-27T10:36:20.000Z
-  C.I.:
-    activity_score: 5
-    emails: 2
-    types: [device_issue]
-    latest: 2026-04-28T17:29:00.000Z
-  L.i.:
+    latest: 2026-04-30T04:25:39.000Z
+  PDominikPL:
     activity_score: 3
     emails: 1
-    types: [general]
-    latest: 2026-04-23T08:05:14.000Z
-  R.C.:
+    types: [github]
+    latest: 2026-05-14T07:53:36.000Z
+  macmonty:
     activity_score: 3
     emails: 1
-    types: [general]
-    latest: 2026-04-23T08:50:34.000Z
-  Cro...:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-23T10:31:10.000Z
-  Homey:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-04-23T15:45:06.000Z
-  R.G.:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-04-23T21:59:27.000Z
-  Cam...:
-    activity_score: 3
-    emails: 1
-    types: [diagnostic]
-    latest: 2026-04-23T23:34:21.000Z
-  C.A.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-24T10:06:31.000Z
-  A.L.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-24T10:30:14.000Z
-  N.L.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-24T13:22:20.000Z
-  B.L.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-24T15:16:06.000Z
-  J.L.:
-    activity_score: 3
-    emails: 1
-    types: [interview]
-    latest: 2026-04-24T16:44:41.000Z
-  Spi...:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-27T03:45:05.000Z
-  S.(.:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-04-27T14:54:10.000Z
-  N.R.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-28T07:22:17.000Z
-  R.B.:
-    activity_score: 3
-    emails: 1
-    types: [diagnostic]
-    latest: 2026-04-28T08:44:50.000Z
-  Sve...:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-04-28T15:38:12.000Z
-  S.L.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-28T17:15:36.000Z
-  G.P.:
-    activity_score: 3
-    emails: 1
-    types: [changelog]
-    latest: 2026-05-15T07:24:17.000Z
+    types: [github]
+    latest: 2026-05-14T09:09:01.000Z
 
 error_patterns:
-  - count: 12
-    error: "Cannot access `this.homey.app` because the app instance has been destroyed."
-  - count: 12
-    error: "access `this.homey.app` because the app instance has been de"
-  - count: 10
+  - count: 97
     error: "Cannot find module './lib[path]"
-  - count: 10
+  - count: 97
+    error: "Cannot access `this.homey.app` because the app instance has been destroyed."
+  - count: 97
     error: "find module './lib[path]"
-  - count: 7
-    error: "Unexpected token ')'"
-  - count: 5
-    error: "Unexpected token ':' /app/lib/utils/tuyaUtils.js:118"
-  - count: 5
-    error: "Unexpected token ':'"
-  - count: 5
-    error: "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215"
+  - count: 97
+    error: "access `this.homey.app` because the app instance has been de"
+  - count: 3
+    error: "await is only valid in async functions and the top level bodies of modules"
   - count: 2
-    error: "=redirect,quality=80/uploads/asset/file/ba4bff58-4f[REDACTED_PHONE]b-f57f882458b"
-  - count: 1
-    error: "fully protect against vulnerabilities at the operating syste"
-  - count: 1
-    error: "add device, app hugs"
-  - count: 1
-    error: "that the new versions not show up anymore."
-  - count: 1
-    error: "even try to search a device using universal tuya app and eve"
-  - count: 1
-    error: "=redirect,quality=80/uploads/asset/file/252b8c6f-ed50-4f3c-bcdc-091dc895a114/Ide"
-  - count: 1
     error: "(`Cannot send '${e}' because the app instance has been destroyed.\n`+'This may i"
-  - count: 1
+  - count: 2
     error: "(`Cannot access \`this.homey.${t}\` because the app instance has been destroyed."
-  - count: 1
+  - count: 2
     error: "('Cannot access `this.homey.app` because the app instance has been destroyed.\nT"
-  - count: 1
+  - count: 2
     error: ");for(const e of Object.values(s.getDrivers())){Promise.resolve().then(()=>e.onU"
-  - count: 1
+  - count: 2
     error: ");for(const t of e.getDevices())Promise.resolve().then(()=>t.onUninit()).catch(t"
-  - count: 1
+  - count: 2
     error: ")}}}module.exports=Homey;"
+  - count: 2
+    error: "send '${e}' because the app instance has been destroyed.\n`+"
+  - count: 2
+    error: "access \`this.homey.${t}\` because the app instance has been"
+  - count: 2
+    error: "Could not get device by id"
+  - count: 2
+    error: "Initializing Device: /app/drivers/power_clamp_meter/device.js:88"
+  - count: 2
+    error: "Initializing Device: /app/drivers/smart_knob_rotary/device.js:398"
+  - count: 1
+    error: "message 'Chrashed during loading' shows up in the add new device dialog and all"
+  - count: 1
+    error: "Could not get device by ID."
+  - count: 1
+    error: "Initializing Device: /app/drivers/garage_door_opener/device.js:37"
+  - count: 1
+    error: "from last comment is back."
+
+protocol_distribution:
+  unknown: 1
