@@ -13,7 +13,8 @@
     "light_temperature",
     "light_mode",
     "onoff",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "energy": {
     "approximation": {
@@ -83,8 +84,7 @@
       "_TZ3000_12SXJAP4",
       "_tz3000_hlijwsai",
       "_TZ3000_hlijwsai",
-      "_TZ3000_HLIJWSAI",
-      "eWeLight"
+      "_TZ3000_HLIJWSAI"
     ],
     "endpoints": {
       "1": {

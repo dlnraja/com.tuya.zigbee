@@ -14,7 +14,8 @@
     "measure_battery",
     "onoff",
     "window_detection",
-    "child_lock"
+    "child_lock",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "target_temperature": {

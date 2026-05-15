@@ -14,7 +14,8 @@
   "capabilities": [
     "button.1",
     "button.2",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "maintenanceAction": true,
@@ -125,31 +126,7 @@
       "_tyzb01_hlla45kx",
       "_TYZB01_HLLA45KX",
       "_tyzb01_iuepbmpv",
-      "_TYZB01_IUEPBMPV",
-      "_TYZB01_hlla45kx",
-      "_TYZB01_iuepbmpv",
-      "_TYZB01_phjeraqq",
-      "_TYZB01_ncutbjdi",
-      "_TYZB01_aneiicmq",
-      "_TYZB01_zsl6z0pw",
-      "_TYZB01_digziiav",
-      "_TYZB01_ymcdbl3u",
-      "_TYZB01_4tlksk8a",
-      "_TYZB02_keyjhapk",
-      "_TYZB02_key8kk7r",
-      "_TYZB01_xfpdrwvc",
-      "_TYZB01_qeqvmvti",
-      "_TYZB01_seqwasot",
-      "_TYZB01_mtlhqn48",
-      "_TYZB01_6sadkhcy",
-      "TUYATEC-O6SNCwd6",
-      "_TYZB01_vzrytttn",
-      "_TYZB01_2athzhfr",
-      "_TYZB01_6g8b7at8",
-      "TUYATEC-nzrrvgco",
-      "_TYZB01_xiuox57i",
-      "_TYZB01_b8cr31hp",
-      "_TYZB01_mqel1whf"
+      "_TYZB01_IUEPBMPV"
     ],
     "productId": [
       "TS0042",

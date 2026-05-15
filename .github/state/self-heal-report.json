@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-05-13T20:18:33.104Z",
+  "timestamp": "2026-05-15T01:02:58.245Z",
   "totalFiles": 0,
-  "totalFixes": 347,
+  "totalFixes": 361,
   "rules": {
     "fingerprint-case": {
-      "count": 12,
+      "count": 14,
       "files": [
         {
           "file": "drivers\\air_purifier\\driver.compose.json",
@@ -36,7 +36,7 @@
         },
         {
           "file": "drivers\\climate_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 12)"
+          "detail": "Expanded fingerprints with robust casing variants (added -20)"
         },
         {
           "file": "drivers\\contact_sensor\\driver.compose.json",
@@ -47,8 +47,16 @@
           "detail": "Expanded fingerprints with robust casing variants (added -13)"
         },
         {
+          "file": "drivers\\presence_sensor_radar\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 1)"
+        },
+        {
           "file": "drivers\\smoke_detector_advanced\\driver.compose.json",
           "detail": "Expanded fingerprints with robust casing variants (added -2)"
+        },
+        {
+          "file": "drivers\\switch_2gang\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added -1)"
         },
         {
           "file": "drivers\\usb_outlet_advanced\\driver.compose.json",
@@ -610,7 +618,7 @@
       ]
     },
     "flow-card-try-catch": {
-      "count": 68,
+      "count": 69,
       "files": [
         {
           "file": "drivers\\climate_sensor\\driver.js",
@@ -634,19 +642,19 @@
         },
         {
           "file": "drivers\\curtain_motor\\device.js",
-          "detail": "Line 237: getDeviceTriggerCard without try-catch"
+          "detail": "Line 233: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\curtain_motor_shutter\\device.js",
-          "detail": "Line 237: getDeviceTriggerCard without try-catch"
+          "detail": "Line 233: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\curtain_motor_wall\\device.js",
-          "detail": "Line 237: getDeviceTriggerCard without try-catch"
+          "detail": "Line 233: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\generic_diy\\device.js",
-          "detail": "Line 86: getDeviceTriggerCard without try-catch"
+          "detail": "Line 80: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\motion_sensor\\driver.js",
@@ -659,6 +667,10 @@
         {
           "file": "drivers\\motion_sensor\\driver.js",
           "detail": "Line 23: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\plug_smart\\device.js",
+          "detail": "Line 75: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\scene_switch_1\\driver.js",
@@ -758,11 +770,11 @@
         },
         {
           "file": "drivers\\smart_knob_rotary\\device.js",
-          "detail": "Line 415: getDeviceTriggerCard without try-catch"
+          "detail": "Line 407: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\smart_knob_rotary\\device.js",
-          "detail": "Line 434: getDeviceTriggerCard without try-catch"
+          "detail": "Line 426: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\smart_scene_panel\\driver.js",
@@ -774,27 +786,27 @@
         },
         {
           "file": "drivers\\smoke_detector_advanced\\device.js",
-          "detail": "Line 76: getDeviceTriggerCard without try-catch"
+          "detail": "Line 78: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\smoke_detector_advanced\\device.js",
-          "detail": "Line 103: getDeviceTriggerCard without try-catch"
+          "detail": "Line 105: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\smoke_detector_advanced\\device.js",
-          "detail": "Line 115: getDeviceTriggerCard without try-catch"
+          "detail": "Line 117: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\smoke_detector_advanced\\device.js",
-          "detail": "Line 270: getDeviceTriggerCard without try-catch"
+          "detail": "Line 263: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\smoke_detector_advanced\\device.js",
-          "detail": "Line 276: getDeviceTriggerCard without try-catch"
+          "detail": "Line 268: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\smoke_detector_advanced\\device.js",
-          "detail": "Line 281: getDeviceTriggerCard without try-catch"
+          "detail": "Line 273: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\switch_4gang\\driver.js",
@@ -814,11 +826,11 @@
         },
         {
           "file": "drivers\\wall_remote_4_gang_2\\device.js",
-          "detail": "Line 17: getDeviceTriggerCard without try-catch"
+          "detail": "Line 16: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\wifi_heater\\device.js",
-          "detail": "Line 35: getDeviceTriggerCard without try-catch"
+          "detail": "Line 37: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\ButtonRemoteManager.js",
@@ -826,19 +838,19 @@
         },
         {
           "file": "lib\\devices\\BaseUnifiedDevice.js",
-          "detail": "Line 2586: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2645: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\devices\\BaseUnifiedDevice.js",
-          "detail": "Line 2600: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2659: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\devices\\BaseUnifiedDevice.js",
-          "detail": "Line 2634: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2693: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\devices\\BaseUnifiedDevice.js",
-          "detail": "Line 2764: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2823: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\devices\\ButtonDevice.js",
@@ -846,11 +858,11 @@
         },
         {
           "file": "lib\\devices\\UnifiedSensorBase.js",
-          "detail": "Line 3369: getDeviceTriggerCard without try-catch"
+          "detail": "Line 3393: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\devices\\UnifiedSwitchBase.js",
-          "detail": "Line 813: getDeviceTriggerCard without try-catch"
+          "detail": "Line 812: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\devices\\WallTouchDevice.js",
@@ -870,7 +882,7 @@
         },
         {
           "file": "lib\\mixins\\PhysicalButtonMixin.js",
-          "detail": "Line 716: getDeviceTriggerCard without try-catch"
+          "detail": "Line 844: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\SDK3BestPractices.js",
@@ -896,7 +908,7 @@
       ]
     },
     "dp-variant-docs": {
-      "count": 12,
+      "count": 11,
       "files": [
         {
           "file": "drivers\\button_wireless_plug\\device.js",
@@ -916,10 +928,6 @@
         },
         {
           "file": "drivers\\lcdtemphumidsensor_plug_energy\\device.js",
-          "detail": "Multiple TZE prefixes without variant documentation"
-        },
-        {
-          "file": "drivers\\motion_sensor_radar_mmwave\\device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
@@ -961,11 +969,11 @@
         },
         {
           "file": "lib\\devices\\UnifiedSensorBase.js",
-          "detail": "Line 1667: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 1679: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib\\devices\\UnifiedSensorBase.js",
-          "detail": "Line 1696: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 1708: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib\\devices\\UnifiedThermostatBase.js",
@@ -1001,7 +1009,7 @@
         },
         {
           "file": "lib\\mixins\\PhysicalButtonMixin.js",
-          "detail": "Line 340: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 458: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib\\NewDevices2025.js",
@@ -1050,11 +1058,35 @@
       ]
     },
     "duplicate-fingerprints": {
-      "count": 92,
+      "count": 104,
       "files": [
         {
           "file": "drivers",
           "detail": "_tz3000_tzvbimpq|ts0042 found in: button_wireless_2, wall_remote_2_gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tzvbimpq|ts0002 found in: button_wireless_2, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tzvbimpq|ts0012 found in: button_wireless_2, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tzvbimpq|ts0003 found in: button_wireless_2, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tzvbimpq|ts011f found in: button_wireless_2, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tzvbimpq|ts0013 found in: button_wireless_2, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_famkxci2|ts0043 found in: button_wireless_3, scene_switch_3"
         },
         {
           "file": "drivers",
@@ -1419,6 +1451,30 @@
         {
           "file": "drivers",
           "detail": "_tz3210_emqmwtym|ts0601 found in: device_din_rail, doorbell"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|ts0203 found in: presence_sensor_radar, sensor_presence_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|ts0601 found in: presence_sensor_radar, sensor_presence_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|zg-204zl found in: presence_sensor_radar, sensor_presence_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|zg-204zm found in: presence_sensor_radar, sensor_presence_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "hobeian|zg-204zv found in: presence_sensor_radar, sensor_presence_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_w8jwkczz|ts0043 found in: scene_switch_3, scene_switch_wall"
         }
       ]
     },

@@ -12,7 +12,8 @@
     "thermostat_mode",
     "measure_battery",
     "onoff",
-    "measure_humidity"
+    "measure_humidity",
+    "alarm_battery"
   ],
   "platforms": [
     "local"

@@ -10,7 +10,8 @@
     "button.toggle_1",
     "button.toggle_2",
     "button.identify",
-    "measure_battery"
+    "measure_battery",
+    "alarm_battery"
   ],
   "zigbee": {
     "productId": [
@@ -61,6 +62,8 @@
       "_TZ3000_h1ipgkwn",
       "_TZ3000_H1IPGKWN",
       "_tz3000_h1lpgkwn",
+      "_TZ3000_h1lpgkwn",
+      "_TZ3000_H1LPGKWN",
       "_tz3000_hznzbl0x",
       "_TZ3000_hznzbl0x",
       "_TZ3000_HZNZBL0X",
@@ -274,9 +277,6 @@
       "_tz3000_tas0zemd",
       "_TZ3000_tas0zemd",
       "_TZ3000_TAS0ZEMD",
-      "_tz3000_h1ipgkwn",
-      "_TZ3000_h1ipgkwn",
-      "_TZ3000_H1IPGKWN",
       "_tz3000_kpatq5pq",
       "_TZ3000_kpatq5pq",
       "_TZ3000_KPATQ5PQ",
