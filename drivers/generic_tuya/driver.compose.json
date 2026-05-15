@@ -14,7 +14,8 @@
   "capabilities": [
     "measure_battery",
     "measure_temperature",
-    "measure_humidity"
+    "measure_humidity",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_temperature": {

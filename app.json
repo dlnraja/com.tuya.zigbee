@@ -47735,8 +47735,7 @@
           "_TZE200_4mh6tyyo",
           "_TZE200_4MH6TYYO",
           "_tyst11_d0yu2xgi",
-          "_TYST11_D0YU2XGI",
-          "_TYST11_d0yu2xgi"
+          "_TYST11_D0YU2XGI"
         ],
         "productId": [
           "TS0601_air_purifier",
@@ -47801,7 +47800,8 @@
         "measure_voc",
         "measure_formaldehyde",
         "alarm_generic",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "subDevices": [],
       "capabilitiesOptions": {
@@ -48439,7 +48439,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -48570,9 +48571,7 @@
           "_TZ3210_WUHEYHVM",
           "_tz3210_yluvwhjc",
           "_TZ3210_yluvwhjc",
-          "_TZ3210_YLUVWHJC",
-          "_TYZB01_qezuin6k",
-          "_TYZB01_v8gtiaed"
+          "_TZ3210_YLUVWHJC"
         ],
         "productId": [
           "TS0501A",
@@ -48908,7 +48907,8 @@
         "onoff",
         "measure_battery",
         "onoff.channel2",
-        "dim.channel2"
+        "dim.channel2",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -49240,7 +49240,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -49310,8 +49311,7 @@
           "_TZ3000_12SXJAP4",
           "_tz3000_hlijwsai",
           "_TZ3000_hlijwsai",
-          "_TZ3000_HLIJWSAI",
-          "eWeLight"
+          "_TZ3000_HLIJWSAI"
         ],
         "endpoints": {
           "1": {
@@ -49775,7 +49775,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -50237,7 +50238,8 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -50829,7 +50831,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -51310,7 +51313,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -51634,7 +51638,8 @@
       "class": "sensor",
       "capabilities": [
         "alarm_generic",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "alarm_generic": {
@@ -51774,8 +51779,7 @@
           "_TZ3000_nxdziqzc",
           "_TZ3000_NXDZIQZC",
           "_tyzb01_qm6djpta",
-          "_TYZB01_QM6DJPTA",
-          "_TYZB01_qm6djpta"
+          "_TYZB01_QM6DJPTA"
         ],
         "productId": [
           "ZBPB10BK",
@@ -52154,7 +52158,8 @@
       },
       "class": "button",
       "capabilities": [
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_battery": {
@@ -52545,7 +52550,8 @@
       "class": "sensor",
       "capabilities": [
         "button.1",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -52660,8 +52666,7 @@
           "_TZ3000_22ugzkme",
           "_TZ3000_22UGZKME",
           "_tyzb02_keyjqthh",
-          "_TYZB02_KEYJQTHH",
-          "_TYZB02_keyjqthh"
+          "_TYZB02_KEYJQTHH"
         ],
         "productId": [
           "TS0041",
@@ -53043,7 +53048,8 @@
       "capabilities": [
         "button.1",
         "button.2",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -53154,31 +53160,7 @@
           "_tyzb01_hlla45kx",
           "_TYZB01_HLLA45KX",
           "_tyzb01_iuepbmpv",
-          "_TYZB01_IUEPBMPV",
-          "_TYZB01_hlla45kx",
-          "_TYZB01_iuepbmpv",
-          "_TYZB01_phjeraqq",
-          "_TYZB01_ncutbjdi",
-          "_TYZB01_aneiicmq",
-          "_TYZB01_zsl6z0pw",
-          "_TYZB01_digziiav",
-          "_TYZB01_ymcdbl3u",
-          "_TYZB01_4tlksk8a",
-          "_TYZB02_keyjhapk",
-          "_TYZB02_key8kk7r",
-          "_TYZB01_xfpdrwvc",
-          "_TYZB01_qeqvmvti",
-          "_TYZB01_seqwasot",
-          "_TYZB01_mtlhqn48",
-          "_TYZB01_6sadkhcy",
-          "TUYATEC-O6SNCwd6",
-          "_TYZB01_vzrytttn",
-          "_TYZB01_2athzhfr",
-          "_TYZB01_6g8b7at8",
-          "TUYATEC-nzrrvgco",
-          "_TYZB01_xiuox57i",
-          "_TYZB01_b8cr31hp",
-          "_TYZB01_mqel1whf"
+          "_TYZB01_IUEPBMPV"
         ],
         "productId": [
           "TS0042",
@@ -53557,7 +53539,8 @@
         "button.1",
         "button.2",
         "button.3",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -54062,7 +54045,8 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -54218,8 +54202,7 @@
           "_TZ3000_b3mgfu0d",
           "_TZ3000_B3MGFU0D",
           "_tyzb01_bagt1e4o",
-          "_TYZB01_BAGT1E4O",
-          "_TYZB01_bagt1e4o"
+          "_TYZB01_BAGT1E4O"
         ],
         "productId": [
           "TS0044",
@@ -54630,7 +54613,8 @@
         "button.4",
         "button.5",
         "button.6",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -55118,7 +55102,8 @@
         "button.6",
         "button.7",
         "button.8",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -55633,7 +55618,8 @@
         "onoff",
         "measure_battery",
         "button.1",
-        "button.2"
+        "button.2",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -56146,7 +56132,8 @@
       "class": "sensor",
       "capabilities": [
         "button.1",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -56864,7 +56851,8 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -58916,27 +58904,7 @@
           "tuyatec-haoiuwzy",
           "TUYATEC-HAOIUWZY",
           "tuyatec-qun7vq14",
-          "TUYATEC-QUN7VQ14",
-          "TUYATEC-g3gl6cgy",
-          "TUYATEC-Bfq2i2Sy",
-          "TUYATEC-abkehqus",
-          "_TYZB01_ftdkanlj",
-          "_TYZB01_kvwjujy9",
-          "_TYZB01_a476raq2",
-          "_TYZB01_hjsgdkfl",
-          "_TYZB01_cbiezpds",
-          "TUYATEC-yg5dcbfu",
-          "TUYATEC-prhs1rsd",
-          "TUYATEC-gqhxixyk",
-          "TUYATEC-vmgh3fxd",
-          "TUYATEC-ojmxeikg",
-          "TUYATEC-ojmxeikq",
-          "TUYATEC-1g3tawnp",
-          "TUYATEC-v3uxbuxy",
-          "TUYATEC-riuj5xzs",
-          "TUYATEC-1uxx9cci",
-          "TUYATEC-HaoiuWzy",
-          "TUYATEC-qun7vq14"
+          "TUYATEC-QUN7VQ14"
         ],
         "productId": [
           "TS0201",
@@ -59429,7 +59397,8 @@
         "measure_temperature",
         "thermostat_mode",
         "measure_battery",
-        "measure_humidity"
+        "measure_humidity",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -59746,7 +59715,8 @@
         "measure_power.phase3",
         "measure_battery",
         "measure_temperature",
-        "measure_humidity"
+        "measure_humidity",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -59809,7 +59779,8 @@
         "alarm_co",
         "measure_battery",
         "measure_co",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -59882,7 +59853,8 @@
         "alarm_contact",
         "measure_battery",
         "alarm_tamper",
-        "measure_luminance"
+        "measure_luminance",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -60166,22 +60138,7 @@
           "_tyst11_qq9mpfhw",
           "_TYST11_QQ9MPFHW",
           "_tyzb01_sqmd19i1",
-          "_TYZB01_SQMD19I1",
-          "TUYATEC-sb6t7ett",
-          "TUYATEC-rkqiqvcs",
-          "TUYATEC-crr8qb0p",
-          "TUYATEC-kbqf60nt",
-          "TUYATEC-r9hgssol",
-          "TUYATEC-trhrga6p",
-          "TUYATEC-ip9ganvw",
-          "_TYZB01_xph99wvr",
-          "TUYATEC-7qunn4gq",
-          "TUYATEC-0l6xaqmi",
-          "Immax",
-          "Visonic",
-          "TUYATEC-3tipnsrx",
-          "_TYZB01_sqmd19i1",
-          "_TYST11_qq9mpfhw"
+          "_TYZB01_SQMD19I1"
         ],
         "productId": [
           "TS0203",
@@ -61767,7 +61724,8 @@
         "windowcoverings_set",
         "windowcoverings_tilt_set",
         "alarm_generic",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -62417,7 +62375,8 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "meter_power.exported"
+        "meter_power.exported",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -62737,7 +62696,8 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "meter_power.exported"
+        "meter_power.exported",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -63049,7 +63009,8 @@
         "measure_temperature.floor",
         "thermostat_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "target_temperature": {
@@ -63150,7 +63111,8 @@
         "measure_temperature.floor",
         "thermostat_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "target_temperature": {
@@ -63249,7 +63211,8 @@
       "capabilities": [
         "measure_battery",
         "measure_temperature",
-        "measure_humidity"
+        "measure_humidity",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -63425,7 +63388,8 @@
         "measure_temperature",
         "thermostat_mode",
         "measure_battery",
-        "measure_humidity"
+        "measure_humidity",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -63744,7 +63708,8 @@
         "measure_temperature",
         "thermostat_mode",
         "measure_battery",
-        "measure_humidity"
+        "measure_humidity",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -64280,7 +64245,8 @@
         "dim",
         "onoff",
         "measure_power",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -65390,7 +65356,8 @@
         "onoff",
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -65995,7 +65962,8 @@
         "alarm_motion",
         "alarm_contact",
         "measure_battery",
-        "locked"
+        "locked",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -66316,7 +66284,8 @@
         "alarm_contact",
         "measure_battery",
         "alarm_generic",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -66661,7 +66630,8 @@
         "measure_power.phase1",
         "measure_power.phase2",
         "measure_power.phase3",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -66903,7 +66873,8 @@
         "onoff",
         "button.push",
         "finger_bot_mode",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "/drivers/fingerbot/assets/images/large.png",
@@ -66983,7 +66954,8 @@
       "capabilities": [
         "locked",
         "alarm_tamper",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -68216,7 +68188,8 @@
       "capabilities": [
         "alarm_generic",
         "measure_battery",
-        "onoff"
+        "onoff",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -68538,7 +68511,8 @@
         "xlarge": "drivers/generic_diy/assets/images/xlarge.png"
       },
       "capabilities": [
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -68778,7 +68752,8 @@
       "capabilities": [
         "measure_battery",
         "measure_temperature",
-        "measure_humidity"
+        "measure_humidity",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -69263,7 +69238,8 @@
       ],
       "capabilities": [
         "button",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/handheld_remote_4_buttons/assets/images/large.png",
@@ -70373,7 +70349,8 @@
       "class": "sensor",
       "capabilities": [
         "measure_luminance",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -71010,7 +70987,8 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -71139,7 +71117,8 @@
         "onoff",
         "measure_battery",
         "measure_temperature",
-        "measure_humidity"
+        "measure_humidity",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -71652,7 +71631,8 @@
         "dim",
         "light_temperature",
         "light_mode",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -71807,7 +71787,8 @@
         "light_saturation",
         "light_temperature",
         "light_mode",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -71880,7 +71861,8 @@
         "onoff",
         "light_hue",
         "light_saturation",
-        "light_mode"
+        "light_mode",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -72236,7 +72218,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -72566,7 +72549,8 @@
         "light_mode",
         "dim",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -72959,7 +72943,8 @@
         "light_temperature",
         "light_mode",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -73504,7 +73489,8 @@
       "class": "sensor",
       "capabilities": [
         "measure_luminance",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_luminance": {
@@ -73574,7 +73560,8 @@
         "locked",
         "lock_mode",
         "measure_battery",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -73926,7 +73913,8 @@
         "measure_voltage",
         "measure_current",
         "onoff",
-        "meter_power"
+        "meter_power",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -74417,7 +74405,8 @@
         "measure_luminance",
         "measure_temperature",
         "measure_humidity",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -74676,20 +74665,7 @@
           "_TZE284_MRF6VTUA",
           "_tze284_tre6haif",
           "_TZE284_tre6haif",
-          "_TZE284_TRE6HAIF",
-          "TUYATEC-bd5faf9p",
-          "TUYATEC-zw6hxafz",
-          "_TYZB01_jytabjkb",
-          "_TYZB01_dl7cejts",
-          "_TYZB01_dr6sduka",
-          "_TYZB01_geepvxsy",
-          "TUYATEC-lha8pbwd",
-          "TUYATEC-zn9wyqtr",
-          "TUYATEC-53o41joc",
-          "TUYATEC-deetibst",
-          "TUYATEC-dgtxmihe",
-          "TUYATEC-b5g40alm",
-          "TUYATEC-dxnohkpd"
+          "_TZE284_TRE6HAIF"
         ],
         "productId": [
           "TS0202",
@@ -75130,7 +75106,8 @@
       "capabilities": [
         "measure_battery",
         "measure_luminance",
-        "alarm_motion"
+        "alarm_motion",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -75219,7 +75196,8 @@
         "measure_temperature",
         "measure_humidity",
         "measure_luminance",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -75967,7 +75945,8 @@
         "measure_voltage",
         "measure_current",
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -76962,7 +76941,8 @@
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -78004,7 +77984,8 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_power": {
@@ -78539,7 +78520,8 @@
         "measure_humidity",
         "alarm_human",
         "measure_battery",
-        "measure_luminance.distance"
+        "measure_luminance.distance",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_luminance.distance": {
@@ -78557,6 +78539,7 @@
       "subDevices": [],
       "zigbee": {
         "manufacturerName": [
+          "hobeian",
           "HOBEIAN",
           "zg-204ze",
           "ZG-204ZE",
@@ -80021,7 +80004,8 @@
         "target_temperature",
         "measure_temperature",
         "thermostat_mode",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -80876,7 +80860,8 @@
         "measure_battery",
         "onoff",
         "window_detection",
-        "child_lock"
+        "child_lock",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "target_temperature": {
@@ -81065,7 +81050,8 @@
       "capabilities": [
         "alarm_water",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "alarm_water": {
@@ -81222,7 +81208,8 @@
         "button.3",
         "button.4",
         "measure_battery",
-        "alarm_generic"
+        "alarm_generic",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/smart_remote_4_buttons/assets/images/large.png",
@@ -81360,7 +81347,8 @@
         "button.1",
         "button.2",
         "button.3",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -81837,7 +81825,8 @@
         "button.3",
         "button.4",
         "measure_battery",
-        "button"
+        "button",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -82300,7 +82289,8 @@
         "onoff",
         "measure_battery",
         "button.1",
-        "button.2"
+        "button.2",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -82813,7 +82803,8 @@
       "class": "sensor",
       "capabilities": [
         "button.1",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -83272,7 +83263,8 @@
         "zigbee"
       ],
       "capabilities": [
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -83337,7 +83329,8 @@
       "class": "sensor",
       "capabilities": [
         "button.1",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -83457,7 +83450,8 @@
       "capabilities": [
         "button.1",
         "button.2",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -83586,7 +83580,8 @@
         "button.1",
         "button.2",
         "button.3",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -83730,7 +83725,8 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -83921,7 +83917,8 @@
         "button.4",
         "button.5",
         "button.6",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -84076,7 +84073,8 @@
       "capabilities": [
         "button.1",
         "button.2",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "maintenanceAction": true,
@@ -84208,7 +84206,8 @@
         "alarm_contact",
         "alarm_tamper",
         "measure_luminance",
-        "alarm_water"
+        "alarm_water",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -84702,7 +84701,8 @@
         "measure_temperature",
         "measure_humidity",
         "alarm_tamper",
-        "alarm_contact"
+        "alarm_contact",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -85129,7 +85129,8 @@
         "measure_battery",
         "measure_luminance.distance",
         "alarm_contact",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_luminance.distance": {
@@ -85746,7 +85747,8 @@
         "measure_battery",
         "alarm_tamper",
         "measure_luminance",
-        "alarm_water"
+        "alarm_water",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -86106,7 +86108,8 @@
         "measure_humidity",
         "alarm_human",
         "measure_battery",
-        "measure_luminance.distance"
+        "measure_luminance.distance",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_luminance.distance": {
@@ -86722,7 +86725,8 @@
         "alarm_human",
         "measure_battery",
         "measure_luminance.distance",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_luminance.distance": {
@@ -87337,7 +87341,8 @@
         "measure_temperature",
         "measure_humidity",
         "measure_luminance",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -87796,7 +87801,8 @@
         "measure_battery",
         "measure_luminance.distance",
         "alarm_contact",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_luminance.distance": {
@@ -88417,7 +88423,8 @@
         "measure_battery",
         "windowcoverings_set",
         "windowcoverings_tilt_set",
-        "dim"
+        "dim",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -88741,7 +88748,8 @@
         "alarm_motion",
         "measure_battery",
         "alarm_generic",
-        "onoff"
+        "onoff",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -89137,7 +89145,8 @@
         "alarm_siren",
         "alarm_motion",
         "measure_battery",
-        "alarm_generic"
+        "alarm_generic",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -89216,7 +89225,8 @@
         "measure_temperature",
         "measure_humidity",
         "alarm_siren",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -89384,7 +89394,8 @@
       ],
       "capabilities": [
         "button.1",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/smart_button_switch/assets/images/large.png",
@@ -89787,7 +89798,8 @@
       "capabilities": [
         "button",
         "dim",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button": {
@@ -89881,7 +89893,8 @@
         "button.rotate_right",
         "button.press",
         "dim",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.rotate_left": {
@@ -90032,7 +90045,8 @@
       ],
       "capabilities": [
         "dim",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/smart_knob_switch/assets/images/large.png",
@@ -90231,7 +90245,8 @@
         "meter_power",
         "measure_current",
         "measure_voltage",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -90304,7 +90319,8 @@
         "zigbee"
       ],
       "capabilities": [
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/smart_remote_1_button/assets/images/large.png",
@@ -90415,7 +90431,8 @@
       ],
       "capabilities": [
         "button.1",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/smart_remote_1_button_2/assets/images/large.png",
@@ -90544,7 +90561,8 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/smart_remote_4_buttons/assets/images/large.png",
@@ -90818,7 +90836,8 @@
         "measure_battery",
         "measure_temperature",
         "measure_humidity",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -90940,9 +90959,7 @@
           "_TZ3210_up3pngle",
           "_TZ3210_UP3PNGLE",
           "_tyzb01_wqcac7lo",
-          "_TYZB01_WQCAC7LO",
-          "_TYZB01_dsjszp0x",
-          "_TYZB01_wqcac7lo"
+          "_TYZB01_WQCAC7LO"
         ],
         "endpoints": {
           "1": {
@@ -91256,7 +91273,8 @@
         "measure_battery",
         "alarm_water",
         "measure_ec",
-        "measure_conductivity"
+        "measure_conductivity",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_humidity.soil": {
@@ -91613,7 +91631,8 @@
         "button.toggle_2",
         "button.identify",
         "measure_battery",
-        "button.toggle"
+        "button.toggle",
+        "alarm_battery"
       ],
       "zigbee": {
         "productId": [
@@ -92235,7 +92254,8 @@
         "measure_voltage",
         "measure_current",
         "button.toggle",
-        "button.identify"
+        "button.identify",
+        "alarm_battery"
       ],
       "zigbee": {
         "productId": [
@@ -93946,7 +93966,8 @@
         "button.toggle_1",
         "button.toggle_2",
         "button.identify",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "productId": [
@@ -93997,6 +94018,8 @@
           "_TZ3000_h1ipgkwn",
           "_TZ3000_H1IPGKWN",
           "_tz3000_h1lpgkwn",
+          "_TZ3000_h1lpgkwn",
+          "_TZ3000_H1LPGKWN",
           "_tz3000_hznzbl0x",
           "_TZ3000_hznzbl0x",
           "_TZ3000_HZNZBL0X",
@@ -94210,9 +94233,6 @@
           "_tz3000_tas0zemd",
           "_TZ3000_tas0zemd",
           "_TZ3000_TAS0ZEMD",
-          "_tz3000_h1ipgkwn",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_H1IPGKWN",
           "_tz3000_kpatq5pq",
           "_TZ3000_kpatq5pq",
           "_TZ3000_KPATQ5PQ",
@@ -94865,7 +94885,8 @@
         "button.toggle_2",
         "button.toggle_3",
         "button.identify",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "productId": [
@@ -95684,7 +95705,8 @@
         "button.toggle_3",
         "button.toggle_4",
         "button.identify",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "productId": [
@@ -96749,7 +96771,8 @@
         "onoff",
         "measure_power",
         "meter_power",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -97023,7 +97046,8 @@
         "onoff.outlet2",
         "measure_power",
         "meter_power",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -97403,7 +97427,8 @@
         "onoff.usb2",
         "onoff.usb3",
         "measure_voltage",
-        "measure_current"
+        "measure_current",
+        "alarm_battery"
       ],
       "zigbee": {
         "productId": [
@@ -98034,7 +98059,8 @@
         "onoff.gang3",
         "onoff.gang4",
         "onoff.gang5",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "approximation": {
@@ -98650,7 +98676,8 @@
         "onoff.gang4",
         "onoff.gang5",
         "onoff.gang6",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -99295,7 +99322,8 @@
         "onoff.gang5",
         "onoff.gang6",
         "onoff.gang7",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -99735,7 +99763,8 @@
         "onoff.gang6",
         "onoff.gang7",
         "onoff.gang8",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -100134,7 +100163,8 @@
       "class": "sensor",
       "capabilities": [
         "alarm_generic",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -100660,7 +100690,8 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -100899,7 +100930,8 @@
         "thermostat_mode",
         "measure_battery",
         "onoff",
-        "measure_humidity"
+        "measure_humidity",
+        "alarm_battery"
       ],
       "platforms": [
         "local"
@@ -101155,7 +101187,8 @@
       },
       "class": "other",
       "capabilities": [
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {},
       "energy": {
@@ -101473,7 +101506,8 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -101915,7 +101949,8 @@
         "meter_power",
         "measure_voltage",
         "measure_current",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -101993,8 +102028,7 @@
           "_TZE204_BSEED3G",
           "_tze204_mvtclclq",
           "_TZE204_mvtclclq",
-          "_TZE204_MVTCLCLQ",
-          "_TYZB01_vkwryfdr"
+          "_TZE204_MVTCLCLQ"
         ],
         "productId": [
           "TS0115",
@@ -102528,7 +102562,8 @@
         "dim.valve_3",
         "dim.valve_4",
         "measure_battery",
-        "onoff"
+        "onoff",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -102685,7 +102720,8 @@
       "capabilities": [
         "onoff",
         "dim.valve",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "zigbee": {
         "manufacturerName": [
@@ -102753,7 +102789,8 @@
         "alarm_vibration",
         "measure_temperature",
         "measure_battery",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "energy": {
         "batteries": [
@@ -103179,7 +103216,8 @@
       ],
       "capabilities": [
         "button.1",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_1_gang/assets/images/large.png",
@@ -103301,7 +103339,8 @@
       "capabilities": [
         "button.1",
         "button.2",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "button.1": {
@@ -103455,7 +103494,8 @@
         "button.1",
         "button.2",
         "button.3",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_3_gang/assets/images/large.png",
@@ -103608,7 +103648,8 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_4_gang/assets/images/large.png",
@@ -103767,7 +103808,8 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "/drivers/wall_remote_4_gang_2/assets/images/large.png",
@@ -103909,7 +103951,8 @@
         "button.2",
         "button.3",
         "button.4",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_4_gang_3/assets/images/large.png",
@@ -104070,7 +104113,8 @@
         "button.4",
         "button.5",
         "button.6",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "images": {
         "large": "drivers/wall_remote_6_gang/assets/images/large.png",
@@ -105399,7 +105443,8 @@
       "capabilities": [
         "alarm_water",
         "measure_battery",
-        "alarm_tamper"
+        "alarm_tamper",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "alarm_water": {
@@ -105893,7 +105938,8 @@
         "alarm_water_low",
         "alarm_water_high",
         "alarm_water",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_water_level": {
@@ -106135,7 +106181,8 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -106240,7 +106287,8 @@
         "meter_water",
         "measure_temperature",
         "alarm_water",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "onoff": {
@@ -106597,7 +106645,8 @@
         "measure_humidity",
         "measure_pressure",
         "measure_luminance",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "capabilitiesOptions": {
         "measure_temperature": {
@@ -107690,7 +107739,8 @@
         "locked",
         "measure_battery",
         "alarm_generic",
-        "alarm_contact"
+        "alarm_contact",
+        "alarm_battery"
       ],
       "pair": [
         {
@@ -110110,7 +110160,8 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "pair": [
         {
@@ -110529,7 +110580,8 @@
       "capabilities": [
         "onoff",
         "vacuumcleaner_state",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "pair": [
         {
@@ -110663,7 +110715,8 @@
       "capabilities": [
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "pair": [
         {
@@ -110799,7 +110852,8 @@
         "alarm_generic",
         "measure_temperature",
         "measure_humidity",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "pair": [
         {
@@ -113020,7 +113074,8 @@
       "class": "other",
       "capabilities": [
         "onoff",
-        "measure_battery"
+        "measure_battery",
+        "alarm_battery"
       ],
       "pair": [
         {
