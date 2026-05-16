@@ -1,227 +1,158 @@
 # Diagnostics Cross-Reference (auto-generated)
-# Generated: 2026-05-16T12:50:10.828Z
-# Emails processed: 129
+# Generated: 2026-05-16T18:48:48.909Z
+# Emails processed: 130
 
 fingerprints:
-  _TZE204_laokfqwu:
-    priority: NaN
-    supported: true
-    protocol: tuya_dp
-    drivers: [presence_sensor_radar]
-    requires: [TuyaEF00Manager, dpMappings]
-    mentions: 1
-    source_types: [crash_report]
-    sources:
-      - type: crash_report
-        date: 2026-05-13T23:35:05.000Z
 
 users:
   github-actions[bot]:
-    activity_score: 19
-    emails: 9
+    activity_score: 81
+    emails: 40
     types: [github]
-    latest: 2026-04-26T03:46:42.000Z
-  T.L.:
-    activity_score: 18
+    latest: 2026-05-14T03:51:24.000Z
+  J.V.:
+    activity_score: 13
     emails: 6
-    types: [device_issue, general, changelog, bug_report]
-    has_errors: true
-    latest: 2026-05-13T21:08:43.000Z
-  P.W.:
-    activity_score: 11
+    types: [device_issue]
+    latest: 2026-04-29T20:58:55.000Z
+  pemikalsen-sudo:
+    activity_score: 9
     emails: 3
-    types: [changelog, diagnostic, bug_report]
+    types: [github]
     has_errors: true
-    latest: 2026-04-26T17:11:34.000Z
-  B.L.:
-    activity_score: 6
-    emails: 2
-    types: [general, device_issue]
-    latest: 2026-05-13T09:44:02.000Z
-  G.P.:
-    activity_score: 6
-    emails: 2
-    types: [general, changelog]
-    latest: 2026-05-15T05:23:14.000Z
-  api...:
-    activity_score: 5
-    emails: 1
-    types: [crash_report]
-    has_errors: true
-    latest: 2026-04-21T15:02:45.000Z
-  R.U.:
-    activity_score: 5
-    emails: 2
-    types: [general]
-    latest: 2026-04-25T11:02:36.000Z
-  Mah...:
-    activity_score: 5
-    emails: 2
+    latest: 2026-04-29T20:42:07.000Z
+  R.K.:
+    activity_score: 8
+    emails: 3
+    types: [device_issue, bug_report]
+    latest: 2026-04-28T14:53:24.000Z
+  T.L.:
+    activity_score: 8
+    emails: 3
+    types: [changelog, general]
+    latest: 2026-05-16T14:41:20.000Z
+  4x4...:
+    activity_score: 7
+    emails: 3
     types: [device_issue]
-    latest: 2026-04-24T15:26:15.000Z
-  ser...:
-    activity_score: 5
-    emails: 2
-    types: [general]
-    latest: 2026-04-24T06:57:02.000Z
+    latest: 2026-04-28T13:01:52.000Z
   T.G.:
-    activity_score: 5
-    emails: 1
-    types: [crash_report]
+    activity_score: 7
+    emails: 2
+    types: [bug_report]
     has_errors: true
-    latest: 2026-05-13T18:42:46.000Z
-  L.R.:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-04-20T21:25:15.000Z
-  L.G.:
-    activity_score: 3
-    emails: 1
+    latest: 2026-04-29T14:30:34.000Z
+  R.U.:
+    activity_score: 7
+    emails: 3
     types: [general]
-    latest: 2026-04-21T03:07:51.000Z
-  M.P.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-21T09:48:49.000Z
-  S.L.:
-    activity_score: 3
+    latest: 2026-04-30T01:06:34.000Z
+  E.C.:
+    activity_score: 5
     emails: 1
     types: [diagnostic]
-    latest: 2026-04-21T12:05:42.000Z
-  N.D.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-21T17:19:47.000Z
+    has_errors: true
+    latest: 2026-04-27T10:36:20.000Z
   J.W.:
-    activity_score: 3
-    emails: 1
+    activity_score: 5
+    emails: 2
     types: [device_issue]
-    latest: 2026-04-22T06:05:22.000Z
+    latest: 2026-04-29T11:38:53.000Z
+  C.I.:
+    activity_score: 5
+    emails: 2
+    types: [device_issue]
+    latest: 2026-04-28T17:29:00.000Z
   J.H.:
     activity_score: 3
     emails: 1
     types: [changelog]
-    latest: 2026-04-22T13:08:19.000Z
-  L.i.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-23T08:05:14.000Z
-  R.C.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-23T08:50:34.000Z
-  Cro...:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-23T10:31:10.000Z
-  Homey:
+    latest: 2026-04-27T13:04:29.000Z
+  S.(.:
     activity_score: 3
     emails: 1
     types: [device_issue]
-    latest: 2026-04-23T15:45:06.000Z
+    latest: 2026-04-27T14:54:10.000Z
+  N.R.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-04-28T07:22:17.000Z
+  R.B.:
+    activity_score: 3
+    emails: 1
+    types: [diagnostic]
+    latest: 2026-04-28T08:44:50.000Z
+  Sve...:
+    activity_score: 3
+    emails: 1
+    types: [device_issue]
+    latest: 2026-04-28T15:38:12.000Z
   P.L.:
     activity_score: 3
     emails: 1
     types: [general]
-    latest: 2026-04-23T17:21:51.000Z
-  R.G.:
+    latest: 2026-04-28T16:13:52.000Z
+  S.L.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-04-28T17:15:36.000Z
+  N.D.:
+    activity_score: 3
+    emails: 1
+    types: [changelog]
+    latest: 2026-04-28T18:13:26.000Z
+  P.W.:
     activity_score: 3
     emails: 1
     types: [device_issue]
-    latest: 2026-04-23T21:59:27.000Z
-  Cam...:
+    latest: 2026-04-29T10:36:02.000Z
+  Sun...:
     activity_score: 3
     emails: 1
-    types: [diagnostic]
-    latest: 2026-04-23T23:34:21.000Z
-  C.A.:
+    types: [device_issue]
+    latest: 2026-04-29T18:02:49.000Z
+  G.P.:
     activity_score: 3
     emails: 1
-    types: [general]
-    latest: 2026-04-24T10:06:31.000Z
-  A.L.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-24T10:30:14.000Z
-  N.L.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-24T13:22:20.000Z
-  J.L.:
-    activity_score: 3
-    emails: 1
-    types: [interview]
-    latest: 2026-04-24T16:44:41.000Z
-  Spi...:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-27T03:45:05.000Z
-  Len...:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-05-13T14:40:50.000Z
-  Lalla80111:
-    activity_score: 3
-    emails: 1
-    types: [github]
-    latest: 2026-05-13T16:17:41.000Z
-  P.D.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-05-16T09:42:18.000Z
+    types: [changelog]
+    latest: 2026-05-15T07:24:17.000Z
 
 error_patterns:
-  - count: 11
+  - count: 22
+    error: "Cannot find module './lib[path]"
+  - count: 22
     error: "Cannot access `this.homey.app` because the app instance has been destroyed."
-  - count: 11
+  - count: 22
+    error: "find module './lib[path]"
+  - count: 22
     error: "access `this.homey.app` because the app instance has been de"
-  - count: 10
-    error: "Unexpected token ':'"
-  - count: 10
-    error: "Cannot find module '../..[path]"
-  - count: 10
-    error: "find module '../..[path]"
-  - count: 9
-    error: "Unexpected token ')'"
-  - count: 7
-    error: "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215"
-  - count: 7
-    error: "Unexpected token ':' /app/lib/utils/tuyaUtils.js:118"
-  - count: 3
+  - count: 2
+    error: "=redirect,quality=80/uploads/asset/file/ba4bff58-4f[REDACTED_PHONE]b-f57f882458b"
+  - count: 2
     error: "(`Cannot send '${e}' because the app instance has been destroyed.\n`+'This may i"
-  - count: 3
+  - count: 2
     error: "(`Cannot access \`this.homey.${t}\` because the app instance has been destroyed."
-  - count: 3
+  - count: 2
     error: "('Cannot access `this.homey.app` because the app instance has been destroyed.\nT"
-  - count: 3
+  - count: 2
     error: ");for(const e of Object.values(s.getDrivers())){Promise.resolve().then(()=>e.onU"
-  - count: 3
+  - count: 2
     error: ");for(const t of e.getDevices())Promise.resolve().then(()=>t.onUninit()).catch(t"
-  - count: 3
+  - count: 2
     error: ")}}}module.exports=Homey;"
-  - count: 3
+  - count: 2
     error: "send '${e}' because the app instance has been destroyed.\n`+"
-  - count: 3
+  - count: 2
     error: "access \`this.homey.${t}\` because the app instance has been"
   - count: 1
-    error: "=redirect,quality=80/uploads/asset/file/acbe8916-c007-4b8c-97eb-3e802a040ad3/hea"
+    error: "even try to search a device using universal tuya app and eve"
   - count: 1
-    error: "formats, pagination models, and validation rules also change. As a result, the d"
+    error: "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215"
   - count: 1
-    error: "=redirect,quality=80/uploads/asset/file/72cf3342-24b9-455d-b91f-8c5576e4c1ff/Scr"
+    error: "Unexpected token ')'"
   - count: 1
-    error: "fully protect against vulnerabilities at the operating syste"
-
-protocol_distribution:
-  tuya_dp: 1
+    error: "=redirect,quality=80/uploads/asset/file/252b8c6f-ed50-4f3c-bcdc-091dc895a114/Ide"
+  - count: 1
+    error: "message 'Chrashed during loading' shows up in the add new device dialog and all"
