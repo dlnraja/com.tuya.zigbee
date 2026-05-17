@@ -202,16 +202,7 @@
         }
       ]
     },
-    {
-      "id": "curtain_motor_stop",
-      "title": {
-        "en": "Stop",
-        "fr": "Arrêter",
-        "nl": "Stoppen",
-        "de": "Stoppen"
-      },
-      "args": []
-    },
+
     {
       "id": "curtain_motor_set_favorite",
       "title": {

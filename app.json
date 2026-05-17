@@ -34351,6 +34351,26 @@
     ],
     "actions": [
       {
+        "id": "curtain_motor_stop",
+        "title": {
+          "en": "Stop moving",
+          "fr": "Arrêter le mouvement",
+          "nl": "Stop beweging",
+          "de": "Bewegung stoppen"
+        },
+        "hint": {
+          "en": "Stops the curtain motor at its current position",
+          "fr": "Arrête le moteur du rideau à sa position actuelle"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=curtain_motor"
+          }
+        ]
+      },
+      {
         "id": "ota_check_updates",
         "title": {
           "en": "Check Device OTA Firmware Updates",
@@ -35994,22 +36014,6 @@
               "en": "Brightness",
               "fr": "Luminosité"
             }
-          }
-        ]
-      },
-      {
-        "id": "curtain_motor_stop",
-        "title": {
-          "en": "Stop",
-          "fr": "Arrêter",
-          "nl": "Stoppen",
-          "de": "Stoppen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=curtain_motor"
           }
         ]
       },
