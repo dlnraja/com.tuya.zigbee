@@ -30,38 +30,11 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 ---
 
-## ðŸš€ Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### âœ¨ Recent Changes (May 2026)
-
-| Version | Feature |
-|---------|---------|
-| **v7.5.39** | v7.5.38: None, None, None |
-| **v7.5.38** | No user-facing changes in this release. |
-| **v7.5.37** | Fix all runtime syntax errors, resolve unclosed braces, add support for wall_... |
-| **v7.5.35** | v7.5.34: Fixed condition card registration in `air_quality_comprehensive` and... |
-| **v7.5.34** | v7.5.34: Fixed condition card registration in air_quality_comprehensive and d... |
-| **v7.5.33** | Fixed condition cards in air quality & DIN rail meter drivers. Added standard... |
-| **v7.5.32** | v7.5.32: . Harmonized driver icons, updated app store assets, and restored dr... |
-| **v7.5.31** | v7.5.31: Harmonized 228 driver icons with new SVG assets. Updated app store i... |
-| **v7.5.30** | Harmonized icons across all 228 drivers, updated app store assets, and added ... |
-| **v7.5.29** | Bug fixes and improvements for Tuya Zigbee devices. Added support for new soi... |
-<!-- CHANGELOG_END -->
-
-
-
-
-
-
-
-
-
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.40 |
+| **App Version** | v7.5.41 |
 | **Device Fingerprints** | 10,875+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 228 (178 Zigbee + 50 WiFi) |
@@ -128,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.40** | v7.5.39: Fixed physical button detection on wall remote devices with improved debounce handling., Added new fingerpri... |
+| **v7.5.41** | v7.5.40: Fixed empty battery reports on sleepy Tuya devices by implementing greedy adaptive battery listeners with ZC... |
+| **v7.5.40** | Bug fix: Empty battery reports on sleepy devices resolved with adaptive battery listeners and ZCL/IAS fallbacks. |
 | **v7.5.39** | Updated 3202 fingerprints across 228 drivers. Added new device support and minor fixes. |
 | **v7.5.38** | No user-facing changes in this release. |
 | **v7.5.37** | Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 c... |
@@ -142,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.28** | Added 3,208 new fingerprints, improved driver matching for soil sensors, and fixed various device initialization issues. |
 | **v7.5.27** | v7.5.27: . New IR pairing wizard, improved power clamp meter, and various bug fixes. |
 | **v7.5.26** | Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated getTriggerCard to getDeviceTrigger... |
-| **v7.5.25** | v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor. Added PJ-1203... |
 
 <!-- CHANGELOG_END -->
 
@@ -222,7 +195,7 @@ Homey Pro
 | **[ZHA / zigpy](https://github.com/zigpy/zha-device-handlers)** | Device signatures, custom quirks |
 | **[deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin)** | REST plugin device data |
 | **[CSA](https://csa-iot.org)** | Zigbee 3.0 certified products |
-| **[Homey Community Forum](#)** | User reports, device interviews |
+| **[Homey Community Forum](https://community.homey.app)** | User reports, device interviews |
 | **[JohanBendz Fork](https://github.com/JohanBendz/com.tuya.zigbee)** | Community contributions |
 
 ---
@@ -281,10 +254,10 @@ homey app run
 |---|---|
 | **App Store** | [Tuya Unified Zigbee](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
 | **Test Version** | [Install Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
-| **Forum** | [Community Thread](#) |
+| **Forum** | [Community Thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) |
 | **Device Finder** | [Smart Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) |
 | **GitHub** | [github.com/dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
-| **Issues** | [Report a Bug](#) |
+| **Issues** | [Report a Bug](https://github.com/dlnraja/com.tuya.zigbee/issues) |
 
 ---
 
@@ -335,11 +308,11 @@ Install from: [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) 
 1. Get a **device interview** from [Homey Developer Tools](https://tools.developer.homey.app/tools/zigbee)
 2. Check [Zigbee2MQTT](https://www.zigbee2mqtt.io/supported-devices/) for DP mappings
 3. Check [Blakadder](https://zigbee.blakadder.com) for cross-references
-4. Open an [issue](#) with: **manufacturerName**, **modelId**, and **interview data**
+4. Open an [issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=01_device_request.yml) with: **manufacturerName**, **modelId**, and **interview data**
 
 ### Report a Bug
 1. Go to **Settings > Apps > Tuya Unified Zigbee > Send Diagnostics**
-2. Open a [bug report](#) with: device model, error messages, and diagnostics code
+2. Open a [bug report](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=02_bug_report.yml) with: device model, error messages, and diagnostics code
 
 ---
 
