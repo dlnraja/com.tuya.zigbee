@@ -59,7 +59,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.36 |
+| **App Version** | v7.5.39 |
 | **Device Fingerprints** | 10,869+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 228 (178 Zigbee + 50 WiFi) |
@@ -126,8 +126,10 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.36** | v7.5.35: Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers, resolving flo... |
-| **v7.5.35** | v7.5.35: Fixed condition card registration in air_quality_comprehensive and din_rail_meter drivers. Standardized butt... |
+| **v7.5.39** | v7.5.38: None, None, None |
+| **v7.5.38** | No user-facing changes in this release. |
+| **v7.5.37** | Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 c... |
+| **v7.5.35** | v7.5.34: Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers (resolved runt... |
 | **v7.5.34** | v7.5.34: Fixed condition card registration in air_quality_comprehensive and din_rail_meter drivers. Standardized butt... |
 | **v7.5.33** | Fixed condition cards in air quality & DIN rail meter drivers. Added standardized button flow triggers (press, double... |
 | **v7.5.32** | v7.5.32: . Harmonized driver icons, updated app store assets, and restored draft-to-test  fixes. |
@@ -139,8 +141,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.26** | Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated getTriggerCard to getDeviceTrigger... |
 | **v7.5.25** | v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor. Added PJ-1203... |
 | **v7.5.24** | v7.5.24: . Fix: gate opener DP3 contact sensor (issue #305). Migrated deprecated flow triggers to modern triggerFlowC... |
-| **v7.5.23** | Maintenance release v7.5.23 â€” . Internal data cleanup and archive of obsolete planning files. No new drivers or finge... |
-| **v7.5.22** | Version 7.5.22 â€” App metadata and store listing update. No new drivers or fingerprints added in this release. |
 
 <!-- CHANGELOG_END -->
 
