@@ -1,5 +1,8 @@
 # 🤖 Cline / Roo Code Project Rules
 
+> [!IMPORTANT]
+> **CRITICAL FIRST STEP:** You MUST read the [AI_CONTEXT_MANDATE.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/AI_CONTEXT_MANDATE.md) file at the very start of your session to fully digest the architecture, dual-app branch splits, and features.
+
 ## ⚠️ CRITICAL PROVIDER GUARD
 **CRITICAL: Always provide a brief explanation or thought process in plain text before using any tool or executing a command. Never send a message containing only a tool call. This is required to prevent API 400 errors with the Moonshot/Kimi provider.**
 
