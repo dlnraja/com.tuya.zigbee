@@ -1,158 +1,103 @@
 # Diagnostics Cross-Reference (auto-generated)
-# Generated: 2026-05-16T18:48:48.909Z
-# Emails processed: 130
+# Generated: 2026-05-17T01:08:22.179Z
+# Emails processed: 132
 
 fingerprints:
+  TS0603:
+    priority: NaN
+    supported: true
+    protocol: unknown
+    drivers: [garage_door_opener]
+    mentions: 1
+    source_types: [crash_report]
+    sources:
+      - type: crash_report
+        date: 2026-05-15T13:46:30.000Z
 
 users:
-  github-actions[bot]:
-    activity_score: 81
-    emails: 40
-    types: [github]
-    latest: 2026-05-14T03:51:24.000Z
-  J.V.:
-    activity_score: 13
-    emails: 6
-    types: [device_issue]
-    latest: 2026-04-29T20:58:55.000Z
-  pemikalsen-sudo:
-    activity_score: 9
-    emails: 3
-    types: [github]
-    has_errors: true
-    latest: 2026-04-29T20:42:07.000Z
-  R.K.:
-    activity_score: 8
-    emails: 3
-    types: [device_issue, bug_report]
-    latest: 2026-04-28T14:53:24.000Z
-  T.L.:
-    activity_score: 8
-    emails: 3
-    types: [changelog, general]
-    latest: 2026-05-16T14:41:20.000Z
-  4x4...:
-    activity_score: 7
-    emails: 3
-    types: [device_issue]
-    latest: 2026-04-28T13:01:52.000Z
-  T.G.:
-    activity_score: 7
-    emails: 2
-    types: [bug_report]
-    has_errors: true
-    latest: 2026-04-29T14:30:34.000Z
-  R.U.:
-    activity_score: 7
-    emails: 3
-    types: [general]
-    latest: 2026-04-30T01:06:34.000Z
-  E.C.:
-    activity_score: 5
-    emails: 1
-    types: [diagnostic]
-    has_errors: true
-    latest: 2026-04-27T10:36:20.000Z
-  J.W.:
-    activity_score: 5
-    emails: 2
-    types: [device_issue]
-    latest: 2026-04-29T11:38:53.000Z
-  C.I.:
-    activity_score: 5
-    emails: 2
-    types: [device_issue]
-    latest: 2026-04-28T17:29:00.000Z
-  J.H.:
-    activity_score: 3
-    emails: 1
-    types: [changelog]
-    latest: 2026-04-27T13:04:29.000Z
-  S.(.:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-04-27T14:54:10.000Z
-  N.R.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-28T07:22:17.000Z
-  R.B.:
-    activity_score: 3
-    emails: 1
-    types: [diagnostic]
-    latest: 2026-04-28T08:44:50.000Z
-  Sve...:
-    activity_score: 3
-    emails: 1
-    types: [device_issue]
-    latest: 2026-04-28T15:38:12.000Z
-  P.L.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-28T16:13:52.000Z
-  S.L.:
-    activity_score: 3
-    emails: 1
-    types: [general]
-    latest: 2026-04-28T17:15:36.000Z
-  N.D.:
-    activity_score: 3
-    emails: 1
-    types: [changelog]
-    latest: 2026-04-28T18:13:26.000Z
   P.W.:
+    activity_score: 6
+    emails: 2
+    types: [bug_report, device_issue]
+    latest: 2026-04-30T07:29:02.000Z
+  D.P.:
+    activity_score: 5
+    emails: 1
+    types: [crash_report]
+    has_errors: true
+    latest: 2026-05-15T14:24:21.000Z
+  M.K.:
     activity_score: 3
     emails: 1
-    types: [device_issue]
-    latest: 2026-04-29T10:36:02.000Z
-  Sun...:
+    types: [bug_report]
+    latest: 2026-04-30T04:25:39.000Z
+  L.L.:
     activity_score: 3
     emails: 1
-    types: [device_issue]
-    latest: 2026-04-29T18:02:49.000Z
-  G.P.:
+    types: [interview]
+    latest: 2026-04-30T08:30:39.000Z
+  T.L.:
     activity_score: 3
     emails: 1
-    types: [changelog]
-    latest: 2026-05-15T07:24:17.000Z
+    types: [general]
+    latest: 2026-04-30T12:11:28.000Z
+  R.U.:
+    activity_score: 3
+    emails: 1
+    types: [general]
+    latest: 2026-05-14T07:43:18.000Z
+  PDominikPL:
+    activity_score: 3
+    emails: 1
+    types: [github]
+    latest: 2026-05-14T07:53:36.000Z
+  macmonty:
+    activity_score: 3
+    emails: 1
+    types: [github]
+    latest: 2026-05-14T09:09:01.000Z
 
 error_patterns:
-  - count: 22
+  - count: 95
     error: "Cannot find module './lib[path]"
-  - count: 22
+  - count: 95
     error: "Cannot access `this.homey.app` because the app instance has been destroyed."
-  - count: 22
+  - count: 95
     error: "find module './lib[path]"
-  - count: 22
+  - count: 95
     error: "access `this.homey.app` because the app instance has been de"
+  - count: 5
+    error: "await is only valid in async functions and the top level bodies of modules"
   - count: 2
-    error: "=redirect,quality=80/uploads/asset/file/ba4bff58-4f[REDACTED_PHONE]b-f57f882458b"
+    error: "Could not get device by id"
   - count: 2
+    error: "Initializing Device: /app/drivers/power_clamp_meter/device.js:88"
+  - count: 2
+    error: "Initializing Device: /app/drivers/smart_knob_rotary/device.js:398"
+  - count: 2
+    error: "Initializing Device: /app/drivers/presence_sensor_radar/device.js:2606"
+  - count: 1
     error: "(`Cannot send '${e}' because the app instance has been destroyed.\n`+'This may i"
-  - count: 2
+  - count: 1
     error: "(`Cannot access \`this.homey.${t}\` because the app instance has been destroyed."
-  - count: 2
+  - count: 1
     error: "('Cannot access `this.homey.app` because the app instance has been destroyed.\nT"
-  - count: 2
+  - count: 1
     error: ");for(const e of Object.values(s.getDrivers())){Promise.resolve().then(()=>e.onU"
-  - count: 2
+  - count: 1
     error: ");for(const t of e.getDevices())Promise.resolve().then(()=>t.onUninit()).catch(t"
-  - count: 2
+  - count: 1
     error: ")}}}module.exports=Homey;"
-  - count: 2
+  - count: 1
     error: "send '${e}' because the app instance has been destroyed.\n`+"
-  - count: 2
+  - count: 1
     error: "access \`this.homey.${t}\` because the app instance has been"
   - count: 1
-    error: "even try to search a device using universal tuya app and eve"
+    error: "Could not get device by ID."
   - count: 1
-    error: "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215"
+    error: "Initializing Device: /app/drivers/garage_door_opener/device.js:37"
   - count: 1
-    error: "Unexpected token ')'"
-  - count: 1
-    error: "=redirect,quality=80/uploads/asset/file/252b8c6f-ed50-4f3c-bcdc-091dc895a114/Ide"
-  - count: 1
-    error: "message 'Chrashed during loading' shows up in the add new device dialog and all"
+    error: "from last comment is back."
+
+protocol_distribution:
+  unknown: 1
