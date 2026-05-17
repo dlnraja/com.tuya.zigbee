@@ -12,8 +12,8 @@ const child = spawn('npx', ['homey', 'app', 'publish'], {
   shell: true
 });
 
-let step = 0;
 let output = '';
+const answered = {};
 
 child.stdout.on('data', (data) => {
   const text = data.toString();
@@ -21,36 +21,44 @@ child.stdout.on('data', (data) => {
   process.stdout.write(text);
 
   // Step 1: uncommitted changes
-  if (text.includes('uncommitted changes') && step === 0) {
+  if (text.includes('uncommitted changes') && !answered.uncommitted) {
     child.stdin.write('y\n');
-    step = 1;
+    answered.uncommitted = true;
   }
   // Step 2: guidelines
-  if (text.includes('App Store guidelines') && step <= 1) {
+  if (text.includes('App Store guidelines') && !answered.guidelines) {
     child.stdin.write('y\n');
-    step = 2;
+    answered.guidelines = true;
   }
   // Step 3: version number update - say NO to keep current version
-  if (text.includes('update your app') && step <= 2) {
+  if (text.includes('update your app') && !answered.updateApp) {
     child.stdin.write('n\n');
-    step = 3;
+    answered.updateApp = true;
   }
   // Step 4: version selection (arrow keys) - send Enter to select Patch
-  if (text.includes('Select the desired version') && step <= 3) {
+  if (text.includes('Select the desired version') && !answered.selectVersion) {
     // Send Enter to select the first option (Patch)
     setTimeout(() => child.stdin.write('\n'), 500);
-    step = 4;
+    answered.selectVersion = true;
   }
   // Step 5: changelog prompt
-  if (text.includes("What's new in Tuya Unified")) {
+  if (text.includes("What's new in Tuya Unified") && !answered.changelog) {
     child.stdin.write('Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 compliance\n');
+    answered.changelog = true;
   }
-  // Step 6: any remaining y/N
-  if (text.match(/\(y\/N\)/i) && step >= 3) {
+  // Step 6: push to origin prompt
+  if (text.includes('push the local changes to') && !answered.pushChanges) {
     child.stdin.write('y\n');
+    answered.pushChanges = true;
   }
-  if (text.match(/\(Y\/n\)/i) && step >= 3) {
+  // Step 7: any remaining y/N
+  if (text.match(/\(y\/N\)/i) && !answered.genericYesNo) {
     child.stdin.write('y\n');
+    answered.genericYesNo = true;
+  }
+  if (text.match(/\(Y\/n\)/i) && !answered.genericYesNo2) {
+    child.stdin.write('y\n');
+    answered.genericYesNo2 = true;
   }
 });
 
