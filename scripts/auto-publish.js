@@ -14,38 +14,42 @@ const child = spawn('npx', ['homey', 'app', 'publish'], {
 });
 
 let output = '';
-let promptCount = 0;
+const answered = {};
 
 child.stdout.on('data', (data) => {
   const text = data.toString();
   output += text;
   process.stdout.write(text);
   
-  // Auto-answer interactive prompts
-  if (text.includes("What's new in Tuya Unified")) {
+  // State-machine auto-answer interactive prompts (exactly once each)
+  if (text.includes("What's new in Tuya Unified") && !answered.changelog) {
     child.stdin.write('Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 compliance\n');
-    promptCount++;
+    answered.changelog = true;
   }
-  if (text.includes('Are you sure you want to continue')) {
+  if (text.includes('Are you sure you want to continue') && !answered.continue) {
     child.stdin.write('y\n');
-    promptCount++;
+    answered.continue = true;
   }
-  if (text.includes('I have read the Homey App Store guidelines')) {
+  if (text.includes('I have read the Homey App Store guidelines') && !answered.guidelines) {
     child.stdin.write('y\n');
-    promptCount++;
+    answered.guidelines = true;
   }
-  if (text.includes('publish directly after approval')) {
+  if (text.includes('publish directly after approval') && !answered.publishDirectly) {
     child.stdin.write('n\n');
-    promptCount++;
+    answered.publishDirectly = true;
   }
-  if (text.includes('certification')) {
+  if (text.includes('certification') && !answered.certification) {
     child.stdin.write('y\n');
-    promptCount++;
+    answered.certification = true;
   }
-  // Generic y/N prompts
-  if (text.match(/\?\s+.*\(y\/N\)/i) && promptCount < 10) {
+  if (text.includes('push the local changes to') && !answered.pushChanges) {
     child.stdin.write('y\n');
-    promptCount++;
+    answered.pushChanges = true;
+  }
+  // Generic y/N prompts (if any missed)
+  if (text.match(/\?\s+.*\(y\/N\)/i) && !answered.generic) {
+    child.stdin.write('y\n');
+    answered.generic = true;
   }
 });
 
