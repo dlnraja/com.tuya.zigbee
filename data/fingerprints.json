@@ -511269,5 +511269,9 @@
   "zbeacon|q9mpfhw": {
     "driver": "contact_sensor",
     "profile": "other"
+  },
+  "CK-BL702-SWP-01(7020)|": {
+    "driver": "plug_energy_monitor",
+    "profile": "other"
   }
 }

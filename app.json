@@ -33846,6 +33846,26 @@
     ],
     "actions": [
       {
+        "id": "curtain_motor_stop",
+        "title": {
+          "en": "Stop moving",
+          "fr": "Arrêter le mouvement",
+          "nl": "Stop beweging",
+          "de": "Bewegung stoppen"
+        },
+        "hint": {
+          "en": "Stops the curtain motor at its current position",
+          "fr": "Arrête le moteur du rideau à sa position actuelle"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=curtain_motor"
+          }
+        ]
+      },
+      {
         "id": "ota_check_updates",
         "title": {
           "en": "Check Device OTA Firmware Updates",
@@ -102358,8 +102378,14 @@
       "zigbee": {
         "manufacturerName": [
           "_TZ3000_wd7pvcs3",
+          "_tz3000_wd7pvcs3",
+          "_TZ3000_WD7PVCS3",
           "_TZ3000_ab9pba9q",
-          "_TZ3000_df6005om"
+          "_tz3000_ab9pba9q",
+          "_TZ3000_AB9PBA9Q",
+          "_TZ3000_df6005om",
+          "_tz3000_df6005om",
+          "_TZ3000_DF6005OM"
         ],
         "productId": [
           "TS0042"

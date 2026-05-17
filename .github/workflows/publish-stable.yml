@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+defaults:
+  run:
+    shell: bash
+
 env:
   NODE_VERSION: "22"
   APP_ID: "com.dlnraja.tuya.zigbee.stable"
