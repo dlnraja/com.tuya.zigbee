@@ -15,6 +15,10 @@ permissions:
   pull-requests: write
   issues: write
 
+defaults:
+  run:
+    shell: bash
+
 concurrency:
   group: sync-johan-upstream
   cancel-in-progress: true
@@ -30,12 +34,12 @@ jobs:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
 
