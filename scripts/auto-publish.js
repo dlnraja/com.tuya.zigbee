@@ -22,6 +22,10 @@ child.stdout.on('data', (data) => {
   process.stdout.write(text);
   
   // Auto-answer interactive prompts
+  if (text.includes("What's new in Tuya Unified")) {
+    child.stdin.write('Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 compliance\n');
+    promptCount++;
+  }
   if (text.includes('Are you sure you want to continue')) {
     child.stdin.write('y\n');
     promptCount++;

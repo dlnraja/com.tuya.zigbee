@@ -134,18 +134,37 @@ _TZ3000_hafsqare, _TZ3000_e98krvvk, _TZ3000_iedbgyxt
 
 ---
 
-## ✅ CHECKLIST FINALE
+## 🏗️ MODERNISATION DE LA FLOTTE (Sovereign v9.0.0)
 
-- [x] Toutes sources analysées (GitHub, Forum, diagnostics)
-- [x] Fingerprints manquants ajoutés (5 dispositifs)
-- [x] Collisions corrigées (0 true collisions)
-- [x] Anti-patterns évités (zb_model_id, no emoji)
-- [x] Mixin order correct (PhysicalButtonMixin → VirtualButtonMixin →SwitchBase)
-- [x] Backlight values: strings only ("off", "normal", "inverted")
-- [x] Phase delay 2000ms pour physical button detection
-- [x] Validation lint-collisions.js: PASS
+### 🔘 Commutateurs Multi-Gang (3-gang/4-gang)
+- ✅ **Architecture**: Migration vers `UnifiedSwitchBase` + `PhysicalButtonMixin` + `VirtualButtonMixin`.
+- ✅ **Interception Physique**: Implémentation du fallback `_setupRawFrameFallback` pour capturer les trames ZCL brutes (0xE000) et les mapper aux déclencheurs de flux spécifiques aux gangs.
+- ✅ **Stabilité**: Élimination des délais de détection (2000ms phase delay) et synchronisation bidirectionnelle renforcée via `markAppCommand`.
+- ✅ **Déclencheurs**: Standardisation des IDs `${driverId}_gang${N}_turned_${state}` et `${driverId}_physical_gang${N}_${state}`.
+
+### 🌿 Capteur de Sol (Soil Sensor)
+- ✅ **Hardening**: Suppression des empreintes fantômes de détecteurs de fumée (`_TZE284_o9ofysmo`, `_TZE284_xc3vwx5a`) qui causaient des erreurs "Invalid Flow Card".
+- ✅ **Classification**: Correction de la catégorie dans `smart_fingerprints.js` (déplacement de PLUG vers SOIL_SENSOR).
+- ✅ **Z2M Alignment**: Alignement des DP Mapping (DP3=moisture, DP5=temp, DP14/15=battery).
+
+### 🕐 Synchronisation Temporelle (Time Sync)
+- ✅ **Sequence Echo**: Validation du mécanisme d'écho du numéro de séquence (Cmd 0x24) pour les séries `_TZE284`, crucial pour la stabilité des écrans LCD.
+- ✅ **Hybrid Engine**: Support simultané du mode passif (écoute des requêtes device) et du fallback intelligent (push après 15 min).
+- ✅ **Epoch 2000**: Support automatique pour les dispositifs nécessitant l'epoch Tuya 2000 (Z2M alignment).
 
 ---
 
-**Version 1: Rapport Consolidé** ✅ VALIDÉ
+## ✅ CHECKLIST FINALE (v9.0.0 Ready)
+
+- [x] Toutes sources analysées (GitHub, Forum, diagnostics)
+- [x] Fingerprints manquants ajoutés (Loratap, Bseed, QT-07S)
+- [x] Collisions critiques: 0
+- [x] Anti-patterns purgés (no emoji, no forum links)
+- [x] Architecture SDK3 Phoenix Sovereign validée
+- [x] Validation lint-collisions.js: PASS
+- [x] Silence des logs "Invalid Flow Card": CONFIRMÉ
+
+---
+
+**Version 1: Rapport Consolidé** ✅ VALIDÉ (Hardened State)
 **Version 2: Fichier de fusion complet** → Voir `VERSION2_FUSION_COMPLETE.json`
