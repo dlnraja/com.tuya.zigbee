@@ -1,9 +1,8 @@
 'use strict';
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  require('../../lib/tuya-local/TuyaLocalDevice');
 
-const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
-
-class WiFiAirQualityDevice extends BatteryMixin(TuyaLocalDevice) {
+class WiFiAirQualityDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '2':  { capability: 'measure_co2' },

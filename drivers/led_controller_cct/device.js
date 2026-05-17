@@ -1,38 +1,37 @@
 'use strict';
 
-constLightBase = require('../../lib/devices/UnifiedLightBase');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  require('../../lib/devices/UnifiedLightBase');
 
 /**
  * LED Controller CCT Device - v5.3.64 SIMPLIFIED
  * Fixes issue #83: TS0501B dimming
  */
-class LEDControllerCCTDevice extends LightBase {
+class LEDControllerCCTDevice extends UnifiedLightBase {
 
   get lightCapabilities() {
     return ['onoff', 'dim', 'light_temperature'];
   }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
-      // --- Attribute Reporting Configuration (auto-generated) ---
-      try {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
       await this.configureAttributeReporting([
-      {
-      cluster: 'genPowerCfg',
-      attributeName: 'batteryPercentageRemaining',
-      minInterval: 3600,
-      maxInterval: 43200,
-      minChange: 2,
-      }
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        }
       ]);
       this.log('Attribute reporting configured successfully');
-      } catch (err) {
+    } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-      }
-      await super.onNodeInit({ zclNode });
-      this.log('[LED-CCT] ✅ LED controller CCT ready');
-    }, 'onNodeInit');
+    }
+
+    await super.onNodeInit({ zclNode });
+    this.log('[LED-CCT]  LED controller CCT ready');
   }
 
 

@@ -1,7 +1,6 @@
 'use strict';
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const ThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
+
+const HybridThermostatBase = require('../../lib/devices/HybridThermostatBase');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
@@ -15,7 +14,7 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * - Multi-manufacturer support (Tuya, Moes, Saswell, etc.)
  */
 
-class RadiatorValveZigbeeDevice extends VirtualButtonMixin(PhysicalButtonMixin(ThermostatBase)) {
+class RadiatorValveZigbeeDevice extends HybridThermostatBase {
   get supportsScheduler() { return true; }
   get supportsBoost() { return true; }
   get supportsEcoMode() { return true; }
@@ -23,111 +22,112 @@ class RadiatorValveZigbeeDevice extends VirtualButtonMixin(PhysicalButtonMixin(T
   get supportsWindowDetection() { return true; }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
-      // --- Homey Time Sync for TRV/LCD/Thermostat devices ---
-      // Syncs the device clock with the Homey box time every 6 hours.
-      // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
-      try {
-        const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
-        this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000 });
-        // Initial sync after 10 seconds (let device settle)
-        this.homey.setTimeout(async () => {
-          try {
-            const result = await this._timeSync.sync({ force: true });
-            if (result.success) {
-              this.log('[TimeSync] Initial time sync successful');
-            } else if (result.reason === 'no_rtc') {
-              // Try Tuya EF00 DP 0x24 fallback for non-ZCL devices
-              await this._tuyaTimeSyncFallback();
-            }
-          } catch (e) {
-            this.log('[TimeSync] Initial sync failed (non-critical):', e.message);
+    // --- Homey Time Sync for TRV/LCD/Thermostat devices ---
+    // Syncs the device clock with the Homey box time every 6 hours.
+    // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
+    try {
+      const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
+      this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000 });
+      
+      // Initial sync after 10 seconds (let device settle)
+      this.homey.setTimeout(async () => {
+        try {
+          const result = await this._timeSync.sync({ force: true });
+          if (result.success) {
+            this.log('[TimeSync] Initial time sync successful');
+          } else if (result.reason === 'no_rtc') {
+            // Try Tuya EF00 DP 0x24 fallback for non-ZCL devices
+            await this._tuyaTimeSyncFallback();
           }
-        }, 10000);
-        // Periodic sync every 6 hours
-        this._timeSyncInterval = this.homey.setInterval(async () => {
-          try {
-            const result = await this._timeSync.sync();
-            if (!result.success && result.reason === 'no_rtc') {
-              await this._tuyaTimeSyncFallback();
-            }
-          } catch (e) {
-            this.log('[TimeSync] Periodic sync failed:', e.message);
+        } catch (e) {
+          this.log('[TimeSync] Initial sync failed (non-critical):', e.message);
+        }
+      }, 10000);
+      
+      // Periodic sync every 6 hours
+      this._timeSyncInterval = this.homey.setInterval(async () => {
+        try {
+          const result = await this._timeSync.sync();
+          if (!result.success && result.reason === 'no_rtc') {
+            await this._tuyaTimeSyncFallback();
           }
-        }, 6 * 60 * 60 * 1000);
-      } catch (e) {
-        this.log('[TimeSync] Time sync init failed (non-critical):', e.message);
-      }
-      // --- Attribute Reporting Configuration (auto-generated) ---
-      try {
-        await this.configureAttributeReporting([
-          {
-            cluster: 'msTemperatureMeasurement',
-            attributeName: 'measuredValue',
-            minInterval: 30,
-            maxInterval: 600,
-            minChange: 50,
-          },
-          {
-            cluster: 'genPowerCfg',
-            attributeName: 'batteryPercentageRemaining',
-            minInterval: 3600,
-            maxInterval: 43200,
-            minChange: 2,
-          }
-        ]);
-        this.log('Attribute reporting configured successfully');
-      } catch (err) {
-        this.log('Attribute reporting config failed (device may not support it):', err.message);
-      }
-      this.log('[TRV-ZIGBEE] 🔥 Initializing comprehensive TRV driver...');
-      // TRV-specific DP mappings
-      this.dpMappings = {
-        1: { capability: 'target_temperature', divisor: 10, dataType: 2 },
-        2: { capability: 'measure_temperature', divisor: 10, dataType: 2 },
-        3: { capability: 'onoff', dataType: 1 }, // Valve open/close
-        4: { capability: 'thermostat_mode', dataType: 4 }, // manual/auto/eco/boost
-        5: { capability: 'measure_battery', divisor: 1, dataType: 2 },
-        7: { capability: 'child_lock', dataType: 1 },
-        8: { capability: 'window_detection', dataType: 1 },
-        10: { capability: 'frost_protection_temperature', divisor: 10, dataType: 2 },
-        16: { capability: 'target_temperature', divisor: 10, dataType: 2 }, // Some variants
-        19: { capability: 'boost_mode', dataType: 1 },
-        24: { capability: 'measure_temperature', divisor: 10, dataType: 2 }, // Alt local temp
-        27: { capability: 'temperature_calibration', divisor: 10, dataType: 2 },
-        28: { capability: 'eco_temperature', divisor: 10, dataType: 2 },
-        31: { capability: 'valve_position', divisor: 1, dataType: 2 }, // 0-100%
-        36: { capability: 'schedule_monday', dataType: 3 },
-        37: { capability: 'schedule_tuesday', dataType: 3 },
-        38: { capability: 'schedule_wednesday', dataType: 3 },
-        39: { capability: 'schedule_thursday', dataType: 3 },
-        40: { capability: 'schedule_friday', dataType: 3 },
-        41: { capability: 'schedule_saturday', dataType: 3 },
-        42: { capability: 'schedule_sunday', dataType: 3 },
-        101: { capability: 'child_lock', dataType: 1 }, // Alt
-        104: { capability: 'thermostat_mode', dataType: 4 } // Alt
-      };
-      // Setup capability listeners
-      this.registerCapabilityListener('target_temperature', async (value) => {
-        if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
-        return this.onTargetTemperatureChange(value);
-      });
-      this.registerCapabilityListener('thermostat_mode', async (value) => {
-        if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
-        return this.onModeChange(value);
-      });
-      if (this.hasCapability('boost_mode')) {
-        this.registerCapabilityListener('boost_mode', this.onBoostModeChange.bind(this));
-      }
-      if (this.hasCapability('window_detection')) {
-        this.registerCapabilityListener('window_detection', this.onWindowDetectionChange.bind(this));
-      }
-      if (this.hasCapability('child_lock')) {
-        this.registerCapabilityListener('child_lock', this.onChildLockChange.bind(this));
-      }
-      this.log('[TRV-ZIGBEE] ✅ Comprehensive TRV initialized');
-    }, 'onNodeInit');
+        } catch (e) {
+          this.log('[TimeSync] Periodic sync failed:', e.message);
+        }
+      }, 6 * 60 * 60 * 1000);
+    } catch (e) {
+      this.log('[TimeSync] Time sync init failed (non-critical):', e.message);
+    }
+
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
+      await this.configureAttributeReporting([
+        {
+          cluster: 'msTemperatureMeasurement',
+          attributeName: 'measuredValue',
+          minInterval: 30,
+          maxInterval: 600,
+          minChange: 50,
+        },
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        }
+      ]);
+      this.log('Attribute reporting configured successfully');
+    } catch (err) {
+      this.log('Attribute reporting config failed (device may not support it):', err.message);
+    }
+
+    this.log('[TRV-ZIGBEE] 🔥 Initializing comprehensive TRV driver...');
+
+    // TRV-specific DP mappings
+    this.dpMappings = {
+      1: { capability: 'target_temperature', divisor: 10, dataType: 2 },
+      2: { capability: 'measure_temperature', divisor: 10, dataType: 2 },
+      3: { capability: 'onoff', dataType: 1 }, // Valve open/close
+      4: { capability: 'thermostat_mode', dataType: 4 }, // manual/auto/eco/boost
+      5: { capability: 'measure_battery', divisor: 1, dataType: 2 },
+      7: { capability: 'child_lock', dataType: 1 },
+      8: { capability: 'window_detection', dataType: 1 },
+      10: { capability: 'frost_protection_temperature', divisor: 10, dataType: 2 },
+      16: { capability: 'target_temperature', divisor: 10, dataType: 2 }, // Some variants
+      19: { capability: 'boost_mode', dataType: 1 },
+      24: { capability: 'measure_temperature', divisor: 10, dataType: 2 }, // Alt local temp
+      27: { capability: 'temperature_calibration', divisor: 10, dataType: 2 },
+      28: { capability: 'eco_temperature', divisor: 10, dataType: 2 },
+      31: { capability: 'valve_position', divisor: 1, dataType: 2 }, // 0-100%
+      36: { capability: 'schedule_monday', dataType: 3 },
+      37: { capability: 'schedule_tuesday', dataType: 3 },
+      38: { capability: 'schedule_wednesday', dataType: 3 },
+      39: { capability: 'schedule_thursday', dataType: 3 },
+      40: { capability: 'schedule_friday', dataType: 3 },
+      41: { capability: 'schedule_saturday', dataType: 3 },
+      42: { capability: 'schedule_sunday', dataType: 3 },
+      101: { capability: 'child_lock', dataType: 1 }, // Alt
+      104: { capability: 'thermostat_mode', dataType: 4 } // Alt
+    };
+
+    // Setup capability listeners
+    this.registerCapabilityListener('target_temperature', this.onTargetTemperatureChange.bind(this));
+    this.registerCapabilityListener('thermostat_mode', this.onModeChange.bind(this));
+    
+    if (this.hasCapability('boost_mode')) {
+      this.registerCapabilityListener('boost_mode', this.onBoostModeChange.bind(this));
+    }
+    
+    if (this.hasCapability('window_detection')) {
+      this.registerCapabilityListener('window_detection', this.onWindowDetectionChange.bind(this));
+    }
+    
+    if (this.hasCapability('child_lock')) {
+      this.registerCapabilityListener('child_lock', this.onChildLockChange.bind(this));
+    }
+
+    this.log('[TRV-ZIGBEE] ✅ Comprehensive TRV initialized');
   }
 
   async onTargetTemperatureChange(value) {
@@ -260,3 +260,4 @@ class RadiatorValveZigbeeDevice extends VirtualButtonMixin(PhysicalButtonMixin(T
 }
 
 module.exports = RadiatorValveZigbeeDevice;
+

@@ -10,7 +10,6 @@ const ZosungIRTransmitCluster = require('../../lib/clusters/ZosungIRTransmitClus
 const ZosungIRTransmitBoundCluster = require('../../lib/clusters/ZosungIRTransmitBoundCluster');
 const ZosungIRControlBoundCluster = require('../../lib/clusters/ZosungIRControlBoundCluster');
 const irBlasterInit = require('./irBlasterInit');
-const IRCodeLibrary = require('../../lib/ir/IRCodeLibrary');
 
 // IR Blaster cluster IDs
 const ZOSUNG_IR_CONTROL_CLUSTER_ID = 0xE004;    // 57348 - ZosungIRControl
@@ -85,72 +84,95 @@ class IrBlasterDevice extends ZigBeeDevice {
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
-      // --- Attribute Reporting Configuration (auto-generated) ---
-      try {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
       await this.configureAttributeReporting([
-      {
-      cluster: 'genPowerCfg',
-      attributeName: 'batteryPercentageRemaining',
-      minInterval: 3600,
-      maxInterval: 43200,
-      minChange: 2,
-      }
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        }
       ]);
       this.log('Attribute reporting configured successfully');
-      } catch (err) {
+    } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-      }
-      // v5.13.3: IR blasters are USB-powered
-      this.log('IR Blaster initializing...');
-      // v5.5.356: Initialize enhanced IR storage system
-      this._learnedCodes = this.getStoreValue('learned_codes') || {};
-      this._codeCategories = this.getStoreValue('code_categories') || {};
-      this._codeMetadata = this.getStoreValue('code_metadata') || {};
-      this._codeNames = Object.keys(this._learnedCodes);
-      this._learningState = LEARNING_STATES.IDLE;
-      this._protocolAnalysis = {};
-      this._deviceCapabilities = null;
-      // Store zclNode reference
-      this._zclNode = zclNode;
-      // Get device info
-      await irBlasterInit.init(this);
-      // v5.5.356: Setup enhanced IR clusters first
-      await this._setupAdvancedIRClusters(zclNode);
-      // v5.8.2: onoff capability listener is now handled in _setupEnhancedCapabilities
-      // so it can send Power IR codes rather than triggering Learn Mode.
-      // Learn mode is strictly tied to 'button.learn_ir'.
-      this.log('[IR-INIT] onoff capability delegated to Universal Remote features');
-      // Setup OnOff cluster for learn mode attribute reports (if available)
-      if (zclNode.endpoints[1]?.clusters?.onOff) {
-      this.log('Setting up OnOff cluster for learn mode...');
-      zclNode.endpoints[1].clusters.onOff.on('attr.onOff', (value) => {
-      // v5.11.16: FIX (FrankP #1443) - Guard against device sending onOff=false
-      // immediately after IRLearn command, which kills learn mode prematurely
-      if (!value && this._learnModeActive) {
-      const elapsed = Date.now() - (this._learnModeStartTime || 0);
-      if (elapsed < 5000) {
-      this.log(`[IR] ⚠️ Ignoring onOff=false during learn mode (${elapsed}ms after start)`);
-      return;
-      }
-      }
-      this.log(`Learn mode attr: ${value ? 'ON' : 'OFF'}`);
-      this._learningState = value ? LEARNING_STATES.LEARNING : LEARNING_STATES.IDLE;
-      await this.setCapabilityValue('onoff', value).catch(this.error);
-      this._triggerLearningStateChanged(this._learningState);
+    }
+
+    // v5.13.3: IR blasters are USB-powered, remove battery capthis.log('IR Blaster initializing...');
+
+    // v5.5.356: Initialize enhanced IR storage system
+    this._learnedCodes = this.getStoreValue('learned_codes') || {};
+    this._codeCategories = this.getStoreValue('code_categories') || {};
+    this._codeMetadata = this.getStoreValue('code_metadata') || {};
+    this._codeNames = Object.keys(this._learnedCodes);
+    this._learningState = LEARNING_STATES.IDLE;
+    this._protocolAnalysis = {};
+    this._deviceCapabilities = null;
+
+    // Store zclNode reference
+    this._zclNode = zclNode;
+
+    // Get device info
+    await irBlasterInit.init(this);
+
+    // v5.5.356: Setup enhanced IR clusters first
+    await this._setupAdvancedIRClusters(zclNode);
+
+    // v5.8.2: ALWAYS register onoff capability listener (Forum #1349 FrankP)
+    // Previously only registered if onOff cluster existed, causing "Missing Capability Listener: onoff" error
+    if (this.hasCapability('onoff')) {
+      this.registerCapabilityListener('onoff', async (value) => {
+        this.log(`Setting learn mode: ${value}`);
+        try {
+          if (value) {
+            await this._enableAdvancedLearnMode();
+          } else {
+            await this._disableLearnMode();
+          }
+        } catch (err) {
+          this.error('Failed to set learn mode:', err);
+          throw err;
+        }
       });
-      }
-      // v5.5.356: Setup enhanced capability listeners
-      await this._setupEnhancedCapabilities();
-      // Setup flow card actions
-      this.registerFlowCardActions();
-      // v5.5.356: Initialize protocol detection
-      await this._initializeProtocolDetection();
-      // v5.5.356: Setup advanced cluster listeners
-      await this._setupAdvancedClusterListeners(zclNode);
-      this.log('IR Blaster initialized successfully with enhanced features');
-    }, 'onNodeInit');
+      this.log('[IR-INIT] ✅ onoff capability listener registered');
+    }
+
+    // Setup OnOff cluster for learn mode attribute reports (if available)
+    if (zclNode.endpoints[1]?.clusters?.onOff) {
+      this.log('Setting up OnOff cluster for learn mode...');
+
+      zclNode.endpoints[1].clusters.onOff.on('attr.onOff', (value) => {
+        // v5.11.16: FIX (FrankP #1443) - Guard against device sending onOff=false
+        // immediately after IRLearn command, which kills learn mode prematurely
+        if (!value && this._learnModeActive) {
+          const elapsed = Date.now() - (this._learnModeStartTime || 0);
+          if (elapsed < 5000) {
+            this.log(`[IR] ⚠️ Ignoring onOff=false during learn mode (${elapsed}ms after start)`);
+            return;
+          }
+        }
+        this.log(`Learn mode attr: ${value ? 'ON' : 'OFF'}`);
+        this._learningState = value ? LEARNING_STATES.LEARNING : LEARNING_STATES.IDLE;
+        this.setCapabilityValue('onoff', value).catch(this.error);
+        this._triggerLearningStateChanged(this._learningState);
+      });
+    }
+
+    // v5.5.356: Setup enhanced capability listeners
+    await this._setupEnhancedCapabilities();
+
+    // Setup flow card actions
+    this.registerFlowCardActions();
+
+    // v5.5.356: Initialize protocol detection
+    await this._initializeProtocolDetection();
+
+    // v5.5.356: Setup advanced cluster listeners
+    await this._setupAdvancedClusterListeners(zclNode);
+
+    this.log('IR Blaster initialized successfully with enhanced features');
   }
 
   /**
@@ -251,183 +273,23 @@ class IrBlasterDevice extends ZigBeeDevice {
     // Setup learn IR button with advanced options
     if (this.hasCapability('button.learn_ir')) {
       this.registerCapabilityListener('button.learn_ir', async () => {
-await this._safeInvoke(async () => {
-
         await this._enableAdvancedLearnMode();
-      
-}, 'button.learn_irListener');
-});
+      });
     }
 
     // Setup protocol selection capability if available
     if (this.hasCapability('ir_protocol')) {
       this.registerCapabilityListener('ir_protocol', async (protocol) => {
-await this._safeInvoke(async () => {
-
         await this._setIRProtocol(protocol);
-      
-}, 'ir_protocolListener');
-});
+      });
     }
 
     // Setup frequency capability
     if (this.hasCapability('ir_frequency')) {
       this.registerCapabilityListener('ir_frequency', async (frequency) => {
-await this._safeInvoke(async () => {
-
         await this._setCarrierFrequency(frequency);
-      
-}, 'ir_frequencyListener');
-});
-    }
-
-    // --- Universal Remote Capabilities ---
-    const registerRemoteBtn = (cap, fnName) => {
-      if (this.hasCapability(cap)) {
-        this.registerCapabilityListener(cap, async () => {
-          this.log(`[REMOTE] Button pressed: ${fnName}`);
-          try {
-            const brand = this.getSetting('ir_brand') || 'Samsung';
-            const category = this.getSetting('ir_category') || 'TV';
-            const irData = IRCodeLibrary.getCode(brand, category, fnName);
-            
-            if (irData && irData.code) {
-              this.log(`[REMOTE] Found code for ${brand} ${category} ${fnName}`);
-              await this.sendIRCode(irData.code);
-            } else {
-              this.log(`[REMOTE] ⚠️ No code found for ${brand} ${category} ${fnName} in database.`);
-              throw new Error(`IR Code not found for ${brand} ${fnName}`);
-            }
-          } catch (e) {
-            this.error(`[REMOTE] Error sending ${fnName}:`, e.message);
-            throw e;
-          }
-        });
-      }
-    };
-
-    registerRemoteBtn('volume_up', 'Volume Up');
-    registerRemoteBtn('volume_down', 'Volume Down');
-    registerRemoteBtn('channel_up', 'Channel Up');
-    registerRemoteBtn('channel_down', 'Channel Down');
-    registerRemoteBtn('button.mute', 'Mute');
-    registerRemoteBtn('button.source', 'Source');
-    registerRemoteBtn('button.menu', 'Menu');
-    registerRemoteBtn('button.enter', 'OK/Enter');
-    
-    // Power button mapping (override default onoff listener which does learn mode)
-    if (this.hasCapability('onoff')) {
-      this.registerCapabilityListener('onoff', async (value) => {
-      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
-await this._safeInvoke(async () => {
-
-        // Only send power command, do NOT trigger learn mode from onoff anymore.
-        // Users should use "button.learn_ir" for learning.
-        this.log(`[REMOTE] Power button toggled: ${value}`);
-        try {
-          const brand = this.getSetting('ir_brand') || 'Samsung';
-          const category = this.getSetting('ir_category') || 'TV';
-          // ACs have Power On / Power Off, TVs often have toggle 'Power'
-          let fnName = category === 'AC' ? (value ? 'Power On' : 'Power Off') : 'Power';
-          const irData = IRCodeLibrary.getCode(brand, category, fnName);
-          
-          if (irData && irData.code) {
-             await this.sendIRCode(irData.code);
-          } else {
-             // Fallback for AC if explicit On/Off is missing but 'Power' exists
-             const fbData = IRCodeLibrary.getCode(brand, category, 'Power');
-             if (fbData && fbData.code) {
-                await this.sendIRCode(fbData.code);
-             } else {
-                throw new Error(`Power code missing for ${brand}`);
-             }
-          }
-        } catch (e) {
-          this.error('[REMOTE] Power send failed:', e.message);
-          throw e;
-        }
-      
-}, 'onoffListener');
-});
-    }
-
-    // --- Flow Card Action Handlers ---
-    const tvAction = this.homey.flow.getActionCard('ir_blaster_send_tv_command');
-    if (tvAction) {
-      tvAction.registerRunListener(async (args, state) => {
-        const { brand, command } = args;
-        this.log(`[FLOW] Send TV Command: Brand=${brand}, Cmd=${command}`);
-        const irData = IRCodeLibrary.getCode(brand, 'TV', command);
-        if (irData && irData.code) {
-          await this.sendIRCode(irData.code);
-          return true;
-        }
-        throw new Error(`IR Code not found for TV: ${brand} - ${command}`);
       });
     }
-
-    const acAction = this.homey.flow.getActionCard('ir_blaster_send_ac_command');
-    if (acAction) {
-      acAction.registerRunListener(async (args, state) => {
-        const { brand, command } = args;
-        this.log(`[FLOW] Send AC Command: Brand=${brand}, Cmd=${command}`);
-        const irData = IRCodeLibrary.getCode(brand, 'AC', command);
-        if (irData && irData.code) {
-          await this.sendIRCode(irData.code);
-          return true;
-        }
-        throw new Error(`IR Code not found for AC: ${brand} - ${command}`);
-      });
-    }
-  }
-
-  /**
-   * Called when a repair view is opened
-   */
-  async onRepair(session) {
-    this.log(`[REPAIR] Opened session for IR Setup`);
-    this._repairSession = session;
-    
-    session.on('disconnect', () => {
-      this.log('[REPAIR] Session disconnected');
-      this._repairSession = null;
-    });
-
-    session.setHandler('get_brands', async () => {
-      return IRCodeLibrary.getBrands();
-    });
-
-    session.setHandler('test_ir_code', async (data) => {
-      const { brand, category, command } = data;
-      this.log(`[REPAIR] Testing IR Code: ${brand} - ${category} - ${command}`);
-      const irData = IRCodeLibrary.getCode(brand, category, command);
-      if (irData && irData.code) {
-        await this.sendIRCode(irData.code);
-        return true;
-      }
-      throw new Error('Code not found in database. Try learning the code instead.');
-    });
-
-    session.setHandler('save_ir_config', async (data) => {
-      const { brand, category } = data;
-      this.log(`[REPAIR] Saving config: ${brand} - ${category}`);
-      await this.setSettings({ ir_brand: brand, ir_category: category });
-      return true;
-    });
-
-    session.setHandler('start_learning', async (data) => {
-      this.log('[REPAIR] Starting manual learning session...');
-      await this._enableAdvancedLearnMode(30, { codeName: data.name });
-      return true;
-    });
-
-    session.setHandler('save_learned_code', async (data) => {
-      const { name, code } = data;
-      this.log(`[REPAIR] Saving learned code: ${name}`);
-      this._learnedCodes[name] = code;
-      await this.setStoreValue('learned_codes', this._learnedCodes);
-      return true;
-    });
   }
 
   /**
@@ -599,7 +461,7 @@ await this._safeInvoke(async () => {
         await zclNode.endpoints[1].clusters.onOff?.setOn();
       }
 
-      await this.setCapabilityValue('onoff', true).catch(() => { });
+      this.setCapabilityValue('onoff', true).catch(() => { });
       this.log('Learn mode enabled - point remote at device and press button');
 
       // Initialize receive buffer for learned code
@@ -672,7 +534,7 @@ await this._safeInvoke(async () => {
         await zclNode.endpoints[1].clusters.onOff?.setOff();
       }
 
-      await this.setCapabilityValue('onoff', false).catch(() => { });
+      this.setCapabilityValue('onoff', false).catch(() => { });
       this.log('Learn mode disabled');
 
       // Check if we received a code
@@ -680,7 +542,7 @@ await this._safeInvoke(async () => {
         this.log(`Last learned code: ${this._lastLearnedCode.substring(0, 50)}...`);
         // Update capability if available
         if (this.hasCapability('ir_blaster_code_received')) {
-          await this.setCapabilityValue('ir_blaster_code_received', this._lastLearnedCode).catch(() => { });
+          this.setCapabilityValue('ir_blaster_code_received', this._lastLearnedCode).catch(() => { });
         }
         // Trigger flow
         this.driver.codeLearnedTrigger?.trigger(this, { ir_code: this._lastLearnedCode }, {}).catch(() => { });
@@ -790,29 +652,16 @@ await this._safeInvoke(async () => {
       unk4: 0x0000
     });
 
-    // v5.13.5: Ensure coordinator is bound to Transmit cluster so we receive data requests
-    try {
-      await transmitCluster.bind();
-      this.log('[IR-CHUNK] ✅ ZosungIRTransmit bound successfully');
-    } catch (e) {
-      this.log('[IR-CHUNK] ⚠️ Bind failed (non-critical):', e.message);
-    }
-
     // Wait for acknowledgment and data requests
     // The device will request chunks via codeDataRequest events
     return new Promise((resolve, reject) => {
-      let attempts = 0;
-      const MAX_ATTEMPTS = 3;
-
       const timeout = this.homey.setTimeout(() => {
-        this.log(`[IR-CHUNK] ❌ Transmission timeout after 10s (seq=${seq})`);
         delete this._pendingIRMessage;
         delete this._pendingIRSeq;
-        reject(new Error('IR transmission timeout - device did not request chunks'));
+        reject(new Error('IR transmission timeout'));
       }, 10000);
 
       this._irTransmitResolve = () => {
-        this.log(`[IR-CHUNK] ✅ Transmission complete (seq=${seq})`);
         this.homey.clearTimeout(timeout);
         delete this._pendingIRMessage;
         delete this._pendingIRSeq;
@@ -969,11 +818,6 @@ await this._safeInvoke(async () => {
       // Trigger success state
       this._learningState = LEARNING_STATES.SUCCESS;
       this._triggerLearningStateChanged(LEARNING_STATES.SUCCESS);
-
-      // v5.13.0: Notify active repair session
-      if (this._repairSession) {
-        this._repairSession.emit('ir_code_learned', { code: code }).catch(this.error);
-      }
     }
   }
 

@@ -15,9 +15,8 @@ class SceneSwitchWallDevice extends VirtualButtonMixin(PhysicalButtonMixin(Batte
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      this.buttonCount = 2;
-      await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => { this.buttonCount = 2;
+      await super.onNodeInit({ zclNode  });
       this.log('[SceneSwitchWall] ✅ Initialized with Mixin architecture');
     }, 'onNodeInit');
   }

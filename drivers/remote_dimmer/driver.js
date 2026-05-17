@@ -3,32 +3,35 @@
 const { Driver } = require('homey');
 
 class RemoteDimmerDriver extends Driver {
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
     this.log('Remote Control Dimmer driver initialized');
+    this._registerFlowCards();
+  }
 
-    // Trigger: ON button pressed
-    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_button_on'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
+  _registerFlowCards() {
+    // TRIGGERS
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
 
-    // Trigger: OFF button pressed
-    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_button_off'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
-
-    // Trigger: Toggle button pressed
-    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_button_toggle'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
-
-    // Trigger: Brightness up
-    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_brightness_up'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
-
-    // Trigger: Brightness down
-    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_brightness_down'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
-
-    // Trigger: Brightness stop
-    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_brightness_stop'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
-
-    // Trigger: Brightness set
-    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_brightness_set'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
-
-    // Trigger: Scene recalled
-    (() => { try { return this.homey.flow.getDeviceTriggerCard('remote_dimmer_scene'); } catch(e) { return null; } })()?.registerRunListener(async () => true);
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

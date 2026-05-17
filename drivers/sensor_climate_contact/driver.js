@@ -14,41 +14,69 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * 4. Prevents phantom sub-device creation
  */
 class ClimateSensorDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
     this.log('ClimateSensorDriver v5.5.564 initializing...');
 
     // Track IEEE addresses to prevent duplicates
     this._registeredIeeeAddresses = new Set();
 
     try {
-      // ═══════════════════════════════════════════════════════════════
+      // 
       // TRIGGER CARDS - IDs must match driver.flow.compose.json
-      // ═══════════════════════════════════════════════════════════════
-      this.temperatureChangedTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_temperature_changed');
-      this.humidityChangedTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_humidity_changed');
-      this.batteryLowTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_battery_low');
-      this.tempAlarmHighTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_temperature_alarm_high');
-      this.tempAlarmLowTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_temperature_alarm_low');
-      this.humidityAlarmHighTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_humidity_alarm_high');
-      this.humidityAlarmLowTrigger = this.homey.flow.getDeviceTriggerCard('climate_sensor_humidity_alarm_low');
+      // 
 
-      // ═══════════════════════════════════════════════════════════════
+
+
+
+
+
+
+
+      // 
       // CONDITION CARDS - with device validation
-      // ═══════════════════════════════════════════════════════════════
-      this.tempAboveCondition = this.homey.flow.getConditionCard('climate_sensor_temperature_above');
-      this.tempAboveCondition?.registerRunListener(async (args) => {
+      // 
+
+      this.tempAboveCondition?.registerRunListener(async (args ) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
           return false;
-        }
-        const temp = args.device.getCapabilityValue('measure_temperature');
+        
+  
+  
+  
+  
+  
+  
+  }
+        // A8: NaN Safety - use safeDivide/safeMultiply
+  const val = args.device.getCapabilityValue('measure_temperature');
         return temp !== null && temp > args.temp;
       });
 
-      this.tempBelowCondition = this.homey.flow.getConditionCard('climate_sensor_temperature_below');
-      this.tempBelowCondition?.registerRunListener(async (args) => {
+      this.tempBelowCondition?.registerRunListener(async (args ) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
           return false;
@@ -57,8 +85,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         return temp !== null && temp < args.temp;
       });
 
-      this.humidityAboveCondition = this.homey.flow.getConditionCard('climate_sensor_humidity_above');
-      this.humidityAboveCondition?.registerRunListener(async (args) => {
+      this.humidityAboveCondition?.registerRunListener(async (args ) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
           return false;
@@ -67,8 +94,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         return humidity !== null && humidity > args.humidity;
       });
 
-      this.humidityBelowCondition = this.homey.flow.getConditionCard('climate_sensor_humidity_below');
-      this.humidityBelowCondition?.registerRunListener(async (args) => {
+      this.humidityBelowCondition?.registerRunListener(async (args ) => {
         if (!args?.device || typeof args.device.getCapabilityValue !== 'function') {
           this.log('[FLOW] Condition: Device not available');
           return false;
@@ -77,7 +103,7 @@ class ClimateSensorDriver extends ZigBeeDriver {
         return humidity !== null && humidity < args.humidity;
       });
 
-      this.log('ClimateSensorDriver v5.5.564 ✅ All flow cards registered');
+      this.log('ClimateSensorDriver v5.5.564  All flow cards registered');
     } catch (err) {
       this.error('ClimateSensorDriver flow card registration failed:', err.message);
     }
@@ -102,19 +128,19 @@ class ClimateSensorDriver extends ZigBeeDriver {
 
       // CRITICAL: Skip ANY device with subDeviceId
       if (device.data?.subDeviceId !== undefined) {
-        this.log(`[PAIR] 🚫 BLOCKING sub-device: subDeviceId=${device.data.subDeviceId}`);
+        this.log(`[PAIR]  BLOCKING sub-device: subDeviceId=${device.data.subDeviceId}`);
         continue;
       }
 
       // Skip if we've already seen this IEEE address
       if (ieee && seenIeeeAddresses.has(ieee)) {
-        this.log(`[PAIR] 🚫 Skipping duplicate device for IEEE ${ieee}`);
+        this.log(`[PAIR]  Skipping duplicate device for IEEE ${ieee}`);
         continue;
       }
 
       // Skip if already registered in this driver
       if (ieee && this._registeredIeeeAddresses?.has(ieee)) {
-        this.log(`[PAIR] 🚫 Device already registered: IEEE ${ieee}`);
+        this.log(`[PAIR]  Device already registered: IEEE ${ieee}`);
         continue;
       }
 
@@ -123,10 +149,10 @@ class ClimateSensorDriver extends ZigBeeDriver {
       }
 
       filteredDevices.push(device);
-      this.log(`[PAIR] ✅ Added device: ${device.name || 'Climate Sensor'} (IEEE: ${ieee || 'unknown'})`);
+      this.log(`[PAIR]  Added device: ${device.name || 'Climate Sensor'} (IEEE: ${ieee || 'unknown'})`);
     }
 
-    this.log(`[PAIR] Filtered: ${devices.length} → ${filteredDevices.length} devices`);
+    this.log(`[PAIR] Filtered: ${devices.length}  ${filteredDevices.length} devices`);
     return filteredDevices;
   }
 
@@ -137,3 +163,5 @@ class ClimateSensorDriver extends ZigBeeDriver {
 // The default ZigBeeDriver behavior is sufficient.
 
 module.exports = ClimateSensorDriver;
+
+

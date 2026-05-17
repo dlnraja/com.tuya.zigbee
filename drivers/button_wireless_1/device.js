@@ -13,14 +13,14 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  */
 class Button1GangDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 
-  async onNodeInit() {
-    await super.onNodeInit();
+  async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     
     this.buttonCount = 1;
     this.gangCount = 1;
     
     // Initialize hardened physical button detection
-    await this.initPhysicalButtonDetection(this.zclNode);
+    await this.initPhysicalButtonDetection(zclNode);
     
     this.log('[BUTTON1] 🔘 Hardened via TuyaZigbeeDevice + PhysicalButtonMixin');
   }

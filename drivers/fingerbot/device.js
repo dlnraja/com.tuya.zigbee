@@ -1,10 +1,12 @@
 'use strict';
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-const { Cluster } = require('zigbee-clusters');
-const TuyaSpecificCluster = require('../../lib/clusters/TuyaSpecificCluster');
+
+const { Cluster, BoundCluster } = require('zigbee-clusters');
+const TuyaSpecificCluster = require('../../lib/tuya/TuyaSpecificCluster');
 const TuyaOnOffCluster = require('../../lib/clusters/TuyaOnOffCluster');
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
-const TuyaTimeSyncManager = require('../../lib/tuya/TuyaTimeSyncManager');
+const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
+const { getDataValue } = require('../../lib/TuyaHelpers');
 const { V1_FINGER_BOT_DATA_POINTS } = require('../../lib/tuya/TuyaDataPointsJohan');
 
 Cluster.addCluster(TuyaSpecificCluster);
@@ -22,114 +24,160 @@ const LOCAL_REPORT_IGNORE_MS = 3500;
 const LOCAL_UI_RESET_DELAY_MS = 100;
 const REMOTE_PRESS_DEBOUNCE_MS = 800;
 const MOMENTARY_GUI_PULSE_MS = 700;
+const BATTERY_LOW_THRESHOLD = 20;
+const ZIGBEE_EPOCH_MS = Date.UTC(2000, 0, 1, 0, 0, 0);
+
+const ZCL_STATUS_SUCCESS = 0x00;
+const ZCL_STATUS_UNSUPPORTED_ATTRIBUTE = 0x01;
+const ZCL_TYPE_UTC_TIME = 0xE2;
+const ZCL_TYPE_BITMAP8 = 0x18;
+const ZCL_TYPE_INT32 = 0x2B;
 
 /**
- * FingerBot - Refactored for TuyaZigbeeDevice architecture
- * v6.2.0: Antigravity Hardened
- * - Inherits from TuyaZigbeeDevice for centralized management
- * - Integrates TuyaTimeSyncManager for standardized time synchronization
- * - Integrates SmartBatteryManager for intelligent battery reporting
- * - Uses TuyaUniversalBridge for DP communication
+ * Bound Time cluster responder.
+ * The device binds cluster 10 (time) and periodically reads attribute 0x0007 (localTime).
+ * We return a raw readAttributes response buffer to avoid the built-in parser issues.
  */
-class FingerBot extends TuyaZigbeeDevice {
+class FingerBotTimeBoundCluster extends BoundCluster {
 
-  async onNodeInit() {
-    await super.onNodeInit();
+  async readAttributes({ attributes }) {
+    const chunks = [];
 
-    this.log('Initializing FingerBot (v6.2.0)...');
+    for (const attributeId of attributes) {
+      switch (attributeId) {
+      case 0x0007: { // localTime
+        const localTime =
+            Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000) +
+(-new Date().getTimezoneOffset() * 60);
 
-    // --- State Initialization ---
+        const buf = Buffer.alloc(8);
+        buf.writeUInt16LE(0x0007, 0);
+        buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
+        buf.writeUInt8(ZCL_TYPE_UTC_TIME, 3);
+        buf.writeUInt32LE(localTime >>> 0, 4);
+        chunks.push(buf);
+        break;
+      }
+
+      case 0x0000: { // time
+        const utcTime = Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000);
+
+        const buf = Buffer.alloc(8);
+        buf.writeUInt16LE(0x0000, 0);
+        buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
+        buf.writeUInt8(ZCL_TYPE_UTC_TIME, 3);
+        buf.writeUInt32LE(utcTime >>> 0, 4);
+        chunks.push(buf);
+        break;
+      }
+
+      case 0x0001: { // timeStatus
+        const buf = Buffer.alloc(5);
+        buf.writeUInt16LE(0x0001, 0);
+        buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
+        buf.writeUInt8(ZCL_TYPE_BITMAP8, 3);
+        buf.writeUInt8(0x02, 4); // synchronized
+        chunks.push(buf);
+        break;
+      }
+
+      case 0x0002: { // timeZone
+        const timeZone =-new Date().getTimezoneOffset() * 60;
+
+        const buf = Buffer.alloc(8);
+        buf.writeUInt16LE(0x0002, 0);
+        buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
+        buf.writeUInt8(ZCL_TYPE_INT32, 3);
+        safeMultiply(buf.writeInt32LE(timeZone, 4));
+        chunks.push(buf);
+        break;
+      }
+
+      default: {
+        const buf = Buffer.alloc(3);
+        buf.writeUInt16LE(attributeId, 0);
+        buf.writeUInt8(ZCL_STATUS_UNSUPPORTED_ATTRIBUTE, 2);
+        chunks.push(buf);
+        break;
+      }
+      }
+    }
+
+    return {
+      attributes: Buffer.concat(chunks),
+    };
+  }
+}
+
+class FingerBot extends TuyaSpecificClusterDevice {
+
+  async onNodeInit({ zclNode }) {
+    this.log('Initializing FingerBot device...');
+    
+    // v7.2.4: CRITICAL  Register listeners BEFORE super.onNodeInit()
+    // This ensures capability listeners are active even if initialization timeouts
     this._suppressUntil = 0;
     this._ignoreOnOffReportsUntil = 0;
+    this._lastBatteryLowState = false;
     this._lastRemotePressAt = 0;
     this._guiPulseTimeout = null;
+    this._timeBoundCluster = null;
 
-    // --- Manager Integration ---
-    // Initialize Time Sync Manager
-    this.timeSyncManager = new TuyaTimeSyncManager(this);
-    await this.timeSyncManager.initialize(this.zclNode);
+    this._registerOnOffHandling(zclNode);
+    this._registerTuyaListeners(zclNode);
+    this._registerTimeBoundCluster(zclNode);
 
-    // --- Tuya Cluster Setup ---
-    // Setup listener for manufacturer-specific Tuya cluster (0xEF00)
-    this._setupTuyaClusterListener();
+    try {
+      // --- Attribute Reporting Configuration ---
+      await this.configureAttributeReporting([
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        }
+      ]).catch(err => this.log('Attribute reporting config failed:', err.message));
 
-    // --- Capability Listeners ---
-    this._registerCapabilities();
+      await super.onNodeInit({ zclNode });
 
-    // --- Attribute Listeners ---
-    this._registerAttributeListeners();
+      this.printNode();
 
-    // --- Initialization ---
-    // Apply current settings once on init
-    await this.applyConfiguredSettings({ includeMode: true });
+      await zclNode.endpoints[1].clusters.basic.readAttributes([
+        'manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus',
+      ]).catch(err => this.error('Error reading attributes:', err));
+
+      // Apply current settings once on init.
+      await this.applyConfiguredSettings({ includeMode: true });
+
+    } catch (err) {
+      this.error('FingerBot initialization error:', err.message);
+    }
 
     this.log('FingerBot initialization complete.');
   }
 
-  /**
-   * Setup listener for Tuya manufacturer cluster (0xEF00)
-   */
-  _setupTuyaClusterListener() {
-    const endpoint = this.zclNode?.endpoints?.[1];
-    const tuyaCluster = endpoint?.clusters?.tuya 
-      || endpoint?.clusters?.manuSpecificTuya 
-      || endpoint?.clusters?.tuyaSpecific
-      || endpoint?.clusters?.[0xEF00]
-      || endpoint?.clusters?.[61184];
-
-    if (tuyaCluster) {
-      this.log('✅ Tuya cluster detected, registering DP listeners');
-      
-      const handleData = async (data) => {
-        if (data && data.dp !== undefined) {
-          await this.onTuyaDataPoint(data.dp, data.value || data.data);
-          
-          // Also forward to Universal Bridge for flow card support
-          if (this._universalBridge) {
-            // Map Zigbee-Cluster types to Tuya DP types (simplified)
-            let dpType = 0; // Raw
-            if (typeof (data.value || data.data) === 'boolean') dpType = 1;
-            else if (typeof (data.value || data.data) === 'number') dpType = 2; // Value or Enum
-            
-            this._universalBridge.onDP(data.dp, data.value || data.data, dpType);
-          }
-        }
-      };
-
-      tuyaCluster.on('dataReport', handleData);
-      tuyaCluster.on('reporting', handleData);
-      tuyaCluster.on('datapoint', handleData);
-    } else {
-      this.error('❌ Tuya cluster NOT found! Fingerbot features may be limited.');
-    }
-  }
-
-  /**
-   * Register Homey capability listeners
-   */
-  _registerCapabilities() {
+  _registerOnOffHandling(zclNode) {
     if (this.hasCapability('onoff')) {
-      this.registerCapabilityListener('onoff', async (value) => {
+      this.registerCapabilityListener('onoff', async value => {
         this.log('FingerBot onoff triggered:', value);
 
         const mode = this._getConfiguredMode();
 
         if (mode === 'click') {
           // In click mode only "true" should trigger a physical press.
+          // "false" is only the GUI reset and must not send a command.
           if (value !== true) return;
-          await this.triggerPush();
+          await this.triggerFingerBotPress();
           return;
         }
 
-        // In switch/program mode, use ZCL OnOff cluster
+        // In switch/program mode, pass through both states.
         try {
-          const onOffCluster = this.zclNode?.endpoints?.[1]?.clusters?.onOff;
-          if (onOffCluster) {
-            if (value) await onOffCluster.setOn();
-            else await onOffCluster.setOff();
+          if (value) {
+            await zclNode.endpoints[1].clusters.onOff.setOn();
           } else {
-            // Fallback to DP1 via bridge
-            await this.writeBool(V1_FINGER_BOT_DATA_POINTS.onOff || 1, value);
+            await zclNode.endpoints[1].clusters.onOff.setOff();
           }
         } catch (err) {
           this.error(`Failed to set FingerBot onoff (${value})`, err);
@@ -141,122 +189,143 @@ class FingerBot extends TuyaZigbeeDevice {
     if (this.hasCapability('button.push')) {
       this.registerCapabilityListener('button.push', async () => {
         this.log('FingerBot button.push triggered');
-        await this.triggerPush();
+        await this.triggerFingerBotPress();
       });
     }
 
-    if (this.hasCapability('finger_bot_mode')) {
-      this.registerCapabilityListener('finger_bot_mode', async (value) => {
-        this.log(`FingerBot mode change requested: ${value}`);
-        const modeEnum = MODE[value] !== undefined ? MODE[value] : 0;
-        await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.mode || 101, modeEnum).catch(() => {});
-      });
-    }
-  }
-
-  /**
-   * Register ZCL attribute listeners (Standard OnOff)
-   */
-  _registerAttributeListeners() {
-    const onOffCluster = this.zclNode?.endpoints?.[1]?.clusters?.onOff;
-    if (onOffCluster) {
-      onOffCluster.on('attr.onOff', (value) => {
+    if (zclNode?.endpoints?.[1]?.clusters?.onOff) {
+      zclNode.endpoints[1].clusters.onOff.on('attr.onOff', value => {
         const now = Date.now();
         const mode = this._getConfiguredMode();
 
         if (mode === 'click') {
-          if (now < this._ignoreOnOffReportsUntil) return;
-          if (now - this._lastRemotePressAt < REMOTE_PRESS_DEBOUNCE_MS) return;
+          // Ignore echo reports from our own local press.
+          if (now < this._ignoreOnOffReportsUntil) {
+            this.log('Ignoring onOff attr report during local press window:', value);
+            return;
+          }
+
+          // In click mode, treat both true and false from the physical device
+          // as a momentary button press, not as persistent state.
+          if (now - this._lastRemotePressAt < REMOTE_PRESS_DEBOUNCE_MS) {
+            this.log('Ignoring duplicated remote press report:', value);
+            return;
+          }
 
           this._lastRemotePressAt = now;
-          this.log('Remote FingerBot press detected (OnOff report)');
+          this.log('Remote FingerBot press detected from onOff attr report:', value);
 
           this._pulseMomentaryGui();
-          this.triggerFlowCard('fingerbot_button_pressed').catch(() => {});
+          this._triggerFlowCard('fingerbot_button_pressed');
           return;
         }
 
-        this.safeSetCapabilityValue('onoff', value).catch(() => {});
+        // In switch/program mode, use real persistent state.
+        this.log('onOff attr report:', value);
+        this._setCapabilitySafe('onoff', value, 'Failed to update onoff from onOff cluster');
+      });
+    }
+
+    if (this.hasCapability('finger_bot_mode')) {
+      this.registerCapabilityListener('finger_bot_mode', async value => {
+        this.log(`FingerBot mode change requested: ${value}`);
+        // Mode: 0=click, 1=switch, 2=program
+        const modeEnum = MODE[value] !== undefined ? MODE[value] : 0;
+        
+        // Write to BOTH standard DP101 and alternative DP8 to cover all variants
+        try {
+          if (this.zclNode && this.zclNode.endpoints[1]) {
+            await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.mode || 101, modeEnum).catch(() => {});
+            await this.writeEnum(8, modeEnum).catch(() => {}); // Fallback for alternative devices
+          }
+        } catch (e) {
+          this.log('Could not write mode DP:', e.message);
+        }
       });
     }
   }
 
-  /**
-   * Handle incoming Tuya DataPoints
-   */
-  async onTuyaDataPoint(dpId, value) {
-    this.log(`FingerBot DP ${dpId} report:`, value);
-
-    // 1. Let SmartManagers (Battery/Energy) handle it first
-    if (await this.handleSmartDP(dpId, value)) {
-      // If it was a battery report, check for low battery trigger
-      if (dpId === V1_FINGER_BOT_DATA_POINTS.battery || dpId === 105) {
-        if (typeof value === 'number' && value <= 20) {
-          this.triggerFlowCard('fingerbot_battery_low').catch(() => {});
-        }
-      }
+  _registerTuyaListeners(zclNode) {
+    const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya;
+    if (!tuyaCluster) {
+      this.error('FingerBot: Tuya cluster not available on endpoint 1');
       return;
     }
 
-    // 2. Fingerbot-specific DP handling
-    switch (dpId) {
-      case V1_FINGER_BOT_DATA_POINTS.onOff:
-        if (this._getConfiguredMode() !== 'click') {
-          const previousValue = this.getCapabilityValue('onoff');
-          await this.safeSetCapabilityValue('onoff', !!value).catch(() => {});
-          
-          if (previousValue !== !!value) {
-            this.triggerFlowCard(value ? 'fingerbot_turned_on' : 'fingerbot_turned_off').catch(() => {});
-          }
-        }
-        break;
+    if (this._tuyaListenersAttached) return;
 
-      case V1_FINGER_BOT_DATA_POINTS.mode:
-        const modes = ['click', 'switch', 'program'];
-        const modeString = modes[value] || 'click';
-        if (this.hasCapability('finger_bot_mode')) {
-          this.safeSetCapabilityValue('finger_bot_mode', modeString).catch(() => {});
-        }
-        break;
+    tuyaCluster.on('reporting', async data => {
+      try {
+        await this.processDatapoint(data);
+      } catch (err) {
+        this.error('Error processing Tuya reporting frame:', err);
+      }
+    });
 
-      case V1_FINGER_BOT_DATA_POINTS.battery:
-        // Already handled by SmartBatteryManager via handleSmartDP
-        break;
+    tuyaCluster.on('response', async data => {
+      try {
+        await this.processDatapoint(data);
+      } catch (err) {
+        this.error('Error processing Tuya response frame:', err);
+      }
+    });
 
-      // Other DPs (lowerLimit, upperLimit, etc.) are usually for settings,
-      // but we log them for diagnostics.
-      default:
-        this.log(`Diagnostic: Fingerbot reported DP${dpId} = ${value}`);
+    tuyaCluster.on('dataReport', async data => {
+      try {
+        await this.processDatapoint(data);
+      } catch (err) {
+        this.error('Error processing Tuya dataReport frame:', err);
+      }
+    });
+
+    tuyaCluster.on('reportingConfiguration', async data => {
+      try {
+        await this.processDatapoint(data);
+      } catch (err) {
+        this.error('Error processing Tuya reportingConfiguration frame:', err);
+      }
+    });
+
+    this._tuyaListenersAttached = true;
+  }
+
+  _registerTimeBoundCluster(zclNode) {
+    try {
+      if (typeof zclNode?.endpoints?.[1]?.bind === 'function') {
+        this._timeBoundCluster = new FingerBotTimeBoundCluster();
+        zclNode.endpoints[1].bind('time', this._timeBoundCluster);
+      }
+    } catch (err) {
+      this.error('Failed to register Time bound cluster', err);
     }
   }
 
-  /**
-   * Trigger a physical press (Click mode)
-   */
-  async triggerPush() {
-    if (Date.now() < this._suppressUntil) return;
+  async triggerFingerBotPress() {
+    if (Date.now() < this._suppressUntil) {
+      this.log('FingerBot press suppressed');
+      return;
+    }
 
     this._suppressUntil = Date.now() + LOCAL_PRESS_SUPPRESS_MS;
     this._ignoreOnOffReportsUntil = Date.now() + LOCAL_REPORT_IGNORE_MS;
 
     try {
-      // Force click mode if necessary before pressing
+      // For app-triggered presses we ensure click mode.
       if (this._getConfiguredMode() !== 'click') {
-        await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.mode || 101, MODE.click);
+        await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.mode, MODE.click);
       }
 
-      const onOffCluster = this.zclNode?.endpoints?.[1]?.clusters?.onOff;
-      if (onOffCluster) {
-        await onOffCluster.setOn();
-      } else {
-        await this.writeBool(V1_FINGER_BOT_DATA_POINTS.onOff || 1, true);
-      }
+      await this.zclNode.endpoints[1].clusters.onOff.setOn();
 
-      this.triggerFlowCard('fingerbot_button_pressed').catch(() => {});
+      this._triggerFlowCard('fingerbot_button_pressed');
 
-      // Reset GUI state for click feedback
+      // Reset GUI shortly after success.
       this.homey.setTimeout(() => {
-        this.safeSetCapabilityValue('onoff', false).catch(() => {});
+        this._setCapabilitySafe(
+          'onoff',
+          false,
+          'Failed to reset onoff after successful press',
+        );
       }, LOCAL_UI_RESET_DELAY_MS);
     } catch (err) {
       this.error('Failed to trigger FingerBot press', err);
@@ -265,54 +334,161 @@ class FingerBot extends TuyaZigbeeDevice {
   }
 
   _pulseMomentaryGui() {
-    this.safeSetCapabilityValue('onoff', true).catch(() => {});
-    if (this._guiPulseTimeout) this.homey.clearTimeout(this._guiPulseTimeout);
+    this._setCapabilitySafe('onoff', true, 'Failed to set momentary GUI state');
+
+    if (this._guiPulseTimeout) {
+      this.homey.clearTimeout(this._guiPulseTimeout);
+    }
+
     this._guiPulseTimeout = this.homey.setTimeout(() => {
-      this.safeSetCapabilityValue('onoff', false).catch(() => {});
+      this._setCapabilitySafe('onoff', false, 'Failed to reset momentary GUI state' );
     }, MOMENTARY_GUI_PULSE_MS);
   }
 
+  async processDatapoint(data) {
+    const dp = data.dp;
+    const parsedValue = getDataValue(data);
+
+    this.log(`FingerBot DP ${dp}:`, parsedValue);
+
+    switch (dp) {
+    case V1_FINGER_BOT_DATA_POINTS.battery:
+    case 12: { // Alternative DP12 for Battery
+      if (this.hasCapability('measure_battery')) {
+        await this._setCapabilitySafe(
+          'measure_battery',
+          parsedValue,
+          'Failed to update battery',
+        );
+      }
+
+      const isLow =
+          typeof parsedValue === 'number' && parsedValue <= BATTERY_LOW_THRESHOLD;
+
+      if (isLow && !this._lastBatteryLowState) {
+        this._triggerFlowCard('fingerbot_battery_low');
+      }
+
+      this._lastBatteryLowState = isLow;
+      break;
+    }
+
+    case V1_FINGER_BOT_DATA_POINTS.mode:
+    case 8: { // Alternative DP8 for Mode
+      this.log('FingerBot mode DP report:', parsedValue);
+      // Map 0 -> click, 1 -> switch, 2 -> program
+      const modes = ['click', 'switch', 'program'];
+      const modeString = modes[parsedValue] || 'click';
+      if (this.hasCapability('finger_bot_mode')) {
+        await this._setCapabilitySafe('finger_bot_mode', modeString, 'Failed to update mode');
+      }
+      break;
+    }
+
+    case V1_FINGER_BOT_DATA_POINTS.lower:
+      this.log('FingerBot lower limit DP report:', parsedValue);
+      break;
+
+    case V1_FINGER_BOT_DATA_POINTS.delay:
+      this.log('FingerBot delay DP report:', parsedValue);
+      break;
+
+    case V1_FINGER_BOT_DATA_POINTS.reverse:
+      this.log('FingerBot reverse DP report:', parsedValue);
+      break;
+
+    case V1_FINGER_BOT_DATA_POINTS.upper:
+      this.log('FingerBot upper limit DP report:', parsedValue);
+      break;
+
+    case V1_FINGER_BOT_DATA_POINTS.touch:
+      this.log('FingerBot touch DP report:', parsedValue);
+      break;
+
+    default:
+      this.log('Unhandled FingerBot DP:', dp, 'value:', parsedValue);
+    }
+  }
+
   async applyConfiguredSettings({ includeMode = false } = {}) {
+    const mode = this._getConfiguredMode();
+    const lower = this.getSetting('lower_limit');
+    const upper = this.getSetting('upper_limit');
+    const delay = this.getSetting('sustain_time');
+    const reverse = this.getSetting('reverse_direction');
+
     try {
       if (includeMode) {
-        await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.mode || 101, MODE[this._getConfiguredMode()]);
+        await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.mode, MODE[mode]);
       }
-      
-      const lowerLimit = this.getSetting('lower_limit');
-      if (lowerLimit !== undefined) await this.writeData32(V1_FINGER_BOT_DATA_POINTS.lowerLimit || 102, lowerLimit);
-      
-      const upperLimit = this.getSetting('upper_limit');
-      if (upperLimit !== undefined) await this.writeData32(V1_FINGER_BOT_DATA_POINTS.upperLimit || 106, upperLimit);
-      
-      const sustainTime = this.getSetting('sustain_time');
-      if (sustainTime !== undefined) await this.writeData32(V1_FINGER_BOT_DATA_POINTS.delay || 103, sustainTime);
-      
-      const reverse = this.getSetting('reverse_direction');
-      if (reverse !== undefined) await this.writeBool(V1_FINGER_BOT_DATA_POINTS.reverse || 104, reverse);
-      
+
+      if (typeof lower === 'number') {
+        await this.writeData32(V1_FINGER_BOT_DATA_POINTS.lower, lower);
+      }
+
+      if (typeof upper === 'number') {
+        await this.writeData32(V1_FINGER_BOT_DATA_POINTS.upper, upper);
+      }
+
+      if (typeof delay === 'number') {
+        await this.writeData32(V1_FINGER_BOT_DATA_POINTS.delay, delay);
+      }
+
+      if (typeof reverse === 'boolean') {
+        await this.writeEnum(
+          V1_FINGER_BOT_DATA_POINTS.reverse,
+          reverse ? 1 : 0,
+        );
+      }
     } catch (err) {
-      this.error('Failed to apply settings:', err);
+      this.error('Failed to apply FingerBot settings', err);
     }
   }
 
   async onSettings({ newSettings, changedKeys }) {
+    this.log('FingerBot settings changed:', changedKeys);
+
     for (const key of changedKeys) {
       switch (key) {
-        case 'fingerbot_mode':
-          await this.writeEnum(V1_FINGER_BOT_DATA_POINTS.mode || 101, MODE[this._normalizeMode(newSettings.fingerbot_mode)]);
-          break;
-        case 'lower_limit':
-          await this.writeData32(V1_FINGER_BOT_DATA_POINTS.lowerLimit || 102, newSettings.lower_limit);
-          break;
-        case 'upper_limit':
-          await this.writeData32(V1_FINGER_BOT_DATA_POINTS.upperLimit || 106, newSettings.upper_limit);
-          break;
-        case 'sustain_time':
-          await this.writeData32(V1_FINGER_BOT_DATA_POINTS.delay || 103, newSettings.sustain_time);
-          break;
-        case 'reverse_direction':
-          await this.writeBool(V1_FINGER_BOT_DATA_POINTS.reverse || 104, newSettings.reverse_direction);
-          break;
+      case 'fingerbot_mode':
+        await this.writeEnum(
+          V1_FINGER_BOT_DATA_POINTS.mode,
+          MODE[this._normalizeMode(newSettings.fingerbot_mode)],
+        );
+        break;
+
+      case 'lower_limit':
+        await this.writeData32(
+          V1_FINGER_BOT_DATA_POINTS.lower,
+          newSettings.lower_limit,
+        );
+        break;
+
+      case 'upper_limit':
+        await this.writeData32(
+          V1_FINGER_BOT_DATA_POINTS.upper,
+          newSettings.upper_limit,
+        );
+        break;
+
+      case 'sustain_time':
+        await this.writeData32(
+          V1_FINGER_BOT_DATA_POINTS.delay,
+          newSettings.sustain_time,
+        );
+        break;
+
+      case 'reverse_direction':
+        if (typeof newSettings.reverse_direction === 'boolean') {
+          await this.writeEnum(
+            V1_FINGER_BOT_DATA_POINTS.reverse,
+            newSettings.reverse_direction ? 1 : 0,
+          );
+        }
+        break;
+
+      default:
+        this.log('Unhandled FingerBot setting change:', key);
       }
     }
   }
@@ -326,28 +502,59 @@ class FingerBot extends TuyaZigbeeDevice {
     return DEFAULT_MODE;
   }
 
-  // --- DP Writing Helpers (via Universal Bridge) ---
-  
-  async writeEnum(dp, value) {
-    if (this._universalBridge) return this._universalBridge.sendDP(dp, value, 'enum');
-    return false;
+  async _setCapabilitySafe(capabilityId, value, errorMessage) {
+    try {
+      await this.setCapabilityValue(capabilityId, value);
+    } catch (err) {
+      this.error(errorMessage, err);
+    }
   }
 
-  async writeData32(dp, value) {
-    if (this._universalBridge) return this._universalBridge.sendDP(dp, value, 'value');
-    return false;
+  /**
+   * Helper to safely trigger flow cards without crashing the driver.
+   */
+  _triggerFlowCard(id, tokens = {}, state = {}) {
+    try {
+      const card = this.homey.flow.getTriggerCard(id);
+      if (card) {
+        card.trigger(this, tokens, state)
+          .catch(err => this.error(`Failed to trigger flow card "${id}"`, err));
+      }
+    } catch (err) {
+      this.error(`Flow card "${id}" is not available`, err);
+    }
   }
 
-  async writeBool(dp, value) {
-    if (this._universalBridge) return this._universalBridge.sendDP(dp, value, 'bool');
-    return false;
+  _getFlowCard(id, type = 'trigger') {
+    try {
+      if (type === 'action') return this.homey.flow.getActionCard(id);
+      if (type === 'condition') return this.homey.flow.getConditionCard(id);
+      return this.homey.flow.getTriggerCard(id);
+    } catch (err) {
+      return null;
+    }
   }
 
   onDeleted() {
-    if (this._guiPulseTimeout) this.homey.clearTimeout(this._guiPulseTimeout);
-    if (this.timeSyncManager) this.timeSyncManager.cleanup();
-    super.onDeleted();
+    if (this._guiPulseTimeout) {
+      this.homey.clearTimeout(this._guiPulseTimeout);
+    }
+
+    this.log('FingerBot device removed from Homey.');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 
 module.exports = FingerBot;
+

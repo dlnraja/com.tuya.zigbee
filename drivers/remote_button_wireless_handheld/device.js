@@ -16,10 +16,9 @@ const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 class Button4GangHandheldDevice extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      this.buttonCount = 4;
+    await this._safeInvoke(async () => { this.buttonCount = 4;
       // Initialize standard mixins
-      await super.onNodeInit({ zclNode });
+      await super.onNodeInit({ zclNode  });
       this.log('[BUTTON4-HANDHELD] 🔘 Universal Driver initialization complete');
     }, 'onNodeInit');
   }

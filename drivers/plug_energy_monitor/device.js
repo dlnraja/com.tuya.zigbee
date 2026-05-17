@@ -263,9 +263,8 @@ class EnergyMonitorPlugDevice extends BatteryMixin(PhysicalButtonMixin(VirtualBu
   }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      // v9.7.3: Unified initialization chain
-      await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => { // v9.7.3: Unified initialization chain
+      await super.onNodeInit({ zclNode  });
       const mfr = this.getSetting?.('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
       const config = this._getEnergyConfig();
       this.log(`[ENERGY] Specialized Config: ${config.configName || 'TUYA_DP_STANDARD'}`);
@@ -276,7 +275,7 @@ class EnergyMonitorPlugDevice extends BatteryMixin(PhysicalButtonMixin(VirtualBu
     }, 'onNodeInit');
   }
 
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }

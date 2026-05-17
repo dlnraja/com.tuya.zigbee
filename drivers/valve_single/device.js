@@ -23,16 +23,15 @@ class ValveSingleDevice extends PhysicalButtonMixin(BatteryMixin(VirtualButtonMi
   get gangCount() { return 1; }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      // v9.7.3: Initialization is orchestrated by the mixin hierarchy.
+    await this._safeInvoke(async () => { // v9.7.3: Initialization is orchestrated by the mixin hierarchy.
       // Handles battery reporting, physical button detection, and virtual buttons.
-      await super.onNodeInit({ zclNode });
+      await super.onNodeInit({ zclNode  });
       await this.initVirtualButtons();
       this.log('[VALVE] ✅ Universal initialization complete (v9.7.3)');
     }, 'onNodeInit');
   }
 
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }

@@ -13,37 +13,45 @@ class AirQualityCO2Driver extends ZigBeeDriver {
   }
 
   _registerFlowCards() {
-    // CONDITION: CO2 above
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('air_quality_co2_co2_above'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
+    const conditionCards = [
+      {
+        id: 'air_quality_co2_co2_above',
+        fn: async (args) => {
           const co2 = args.device.getCapabilityValue('measure_co2') || 0;
           return co2 > (args.co2 || 1000);
-        });
-      this.log('[FLOW] ✅ air_quality_co2_co2_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // CONDITION: CO2 below
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('air_quality_co2_co2_below'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
+        }
+      },
+      {
+        id: 'air_quality_co2_co2_below',
+        fn: async (args) => {
           const co2 = args.device.getCapabilityValue('measure_co2') || 0;
           return co2 < (args.co2 || 1000);
-        });
-      this.log('[FLOW] ✅ air_quality_co2_co2_below');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // CONDITION: Air quality good
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('air_quality_co2_air_quality_good'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
+        }
+      },
+      {
+        id: 'air_quality_co2_air_quality_good',
+        fn: async (args) => {
           const co2 = args.device.getCapabilityValue('measure_co2') || 0;
-          return co2 < 1000; // Good air quality threshold
-        });
-      this.log('[FLOW] ✅ air_quality_co2_air_quality_good');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+          return co2 < 1000;
+        }
+      }
+    ];
 
-    this.log('[FLOW]  Air quality CO2 flow cards registered');
+    for (const { id, fn } of conditionCards) {
+      try {
+        const card = this.homey.flow.getConditionCard(id);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            return fn(args);
+          });
+        }
+      } catch (err) {
+        this.error(`Condition card ${id} registration error: ${err.message}`);
+      }
+    }
+
+    this.log('[FLOW] Air quality CO2 flow cards registered');
   }
 }
 

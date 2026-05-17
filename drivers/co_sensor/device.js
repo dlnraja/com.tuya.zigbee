@@ -1,54 +1,57 @@
 'use strict';
 
-const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
- * CO Sensor Device - v5.3.64 SIMPLIFIED
+ * COSensorDevice - v8.0.0
+ * Carbon Monoxide sensor implementation using UnifiedSensorBase.
+ * Handles alarm_co, measure_co, and battery reporting.
  */
-class COSensorDevice extends BatteryMixin(SensorBase) {
+class COSensorDevice extends UnifiedSensorBase {
 
-  get mainsPowered() { return false; }
-
+  /** @override */
   get sensorCapabilities() {
-    return ['alarm_co', 'measure_co', 'measure_battery'];
+    return ['alarm_co', 'measure_co', 'measure_battery', 'alarm_tamper'];
   }
 
+  /** @override */
   get dpMappings() {
     return {
-      1: { capability: 'alarm_co', transform: (v) => v === 1 || v === true },
-      2: { capability: 'measure_co', divisor: 1 }, // CO concentration ppm
+      1: { capability: 'alarm_co', type: 'bool' },
+      2: { capability: 'measure_co', divisor: 1 },
       4: { capability: 'measure_battery', divisor: 1 },
-      15: { capability: 'measure_battery', divisor: 1 }
+      15: { capability: 'measure_battery', divisor: 1 },
+      9: { capability: 'alarm_tamper', type: 'bool' }
     };
   }
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
+      this.log('[CO] Initializing Carbon Monoxide Sensor...');
+      
+      // Parent init handles DP listeners, battery handler, and reporting config
       await super.onNodeInit({ zclNode });
-      // --- Attribute Reporting Configuration (auto-generated) ---
-      try {
-      await this.configureAttributeReporting([
-      {
-      cluster: 'genPowerCfg',
-      attributeName: 'batteryPercentageRemaining',
-      minInterval: 3600,
-      maxInterval: 43200,
-      minChange: 2,
-      }
-      ]);
-      this.log('Attribute reporting configured successfully');
-      } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-      }
-      await super.onNodeInit({ zclNode });
-      this.log('[CO] ✅ CO sensor ready');
+
+      this.log('[CO] ✅ Device ready');
     }, 'onNodeInit');
   }
 
-
-  async onDeleted() {
-    this.log('Device deleted, cleaning up');
+  /**
+   * Handle Tuya DP updates (legacy fallback if UDH fails)
+   */
+  onTuyaDP(dpId, value, dpType) {
+    const mapping = this.dpMappings[dpId];
+    if (mapping && mapping.capability) {
+      let finalValue = value;
+      if (mapping.divisor) finalValue = value / mapping.divisor;
+      
+      this.log(`[CO] DP${dpId} → ${mapping.capability}: ${finalValue}`);
+      return this.setCapabilityValue(mapping.capability, finalValue).catch(() => {});
+    }
+    
+    this.log(`[CO] Unhandled DP${dpId} [${dpType}] = ${value}`);
   }
+
 }
 
 module.exports = COSensorDevice;

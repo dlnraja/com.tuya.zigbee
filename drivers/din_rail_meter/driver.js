@@ -1,17 +1,50 @@
 'use strict';
 
-const { Driver } = require('homey');
+const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
-class DinRailMeterDriver extends Driver {
-  async onInit() {
-    this.log('Din Rail Meter driver v5.13.6 initialized');
-    
-    // v5.13.6: Fix "getDeviceConditionCard is not a function" crash
-    // Register condition cards from driver.flow.compose.json
-    
-    // Action: Reset meter
+class DinRailMeterDriver extends BaseZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
     try {
-      const actionCard = this.homey.flow.getActionCard('din_rail_meter_reset_meter');
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
+  async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    this.log('Din Rail Meter driver initialized');
+    
+    // Register triggers from driver.flow.compose.json
+    try {
+      this._powerChangedTrigger = this._getFlowCard('din_rail_meter_power_changed', 'trigger');
+      this._voltageChangedTrigger = this._getFlowCard('din_rail_meter_voltage_changed', 'trigger');
+      this._currentChangedTrigger = this._getFlowCard('din_rail_meter_current_changed', 'trigger');
+      this._energyChangedTrigger = this._getFlowCard('din_rail_meter_energy_changed', 'trigger');
+      
+      // Register condition
+      this._powerAboveCondition = this._getFlowCard('din_rail_meter_power_above', 'condition');
+      if (this._powerAboveCondition) {
+        this._powerAboveCondition.registerRunListener(async (args, state) => {
+          if (args.device && typeof args.device.getCapabilityValue === 'function') {
+            const power = args.device.getCapabilityValue('measure_power') || 0;
+            const isAbove = power > args.power;
+            return args.is ? isAbove : !isAbove;
+          }
+          return false;
+        });
+      }
+      
+      // Register action (already present but keep for consistency)
+      const actionCard = (() => { try { return this._getFlowCard('din_rail_meter_reset_meter', 'action'); } catch(e) { return null; } })();
       if (actionCard) {
         actionCard.registerRunListener(async (args, state) => {
           if (args.device && typeof args.device.resetMeter === 'function') {
@@ -20,24 +53,10 @@ class DinRailMeterDriver extends Driver {
           return true;
         });
       }
+      
+      this.log('Din Rail Meter flow cards registered successfully');
     } catch(e) {
-      this.log('[Flow] reset_meter error:', e.message);
-    }
-    
-    // Condition: Power above
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('din_rail_meter_power_above'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-        if (!args.device) return false;
-        try {
-          const power = await args.device.getCapabilityValue('measure_power');
-          return power !== null && power > args.power;
-        } catch (e) {
-          this.log('[Condition] power_above error:', e.message);
-          return false;
-        }
-      });
-    } catch(e) {
-      this.log('[Flow] power_above condition error:', e.message);
+      this.log('[Flow]', e.message);
     }
   }
 }

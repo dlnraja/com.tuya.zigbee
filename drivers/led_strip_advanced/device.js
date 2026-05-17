@@ -1,29 +1,28 @@
 'use strict';
-constLightBase = require('../../lib/devices/UnifiedLightBase');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  require('../../lib/devices/UnifiedLightBase');
 
-class LEDStripAdvancedDevice extends LightBase {
+class LEDStripAdvancedDevice extends UnifiedLightBase {
   get lightCapabilities() { return ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature']; }
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
-      // --- Attribute Reporting Configuration (auto-generated) ---
-      try {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
       await this.configureAttributeReporting([
-      {
-      cluster: 'genPowerCfg',
-      attributeName: 'batteryPercentageRemaining',
-      minInterval: 3600,
-      maxInterval: 43200,
-      minChange: 2,
-      }
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        }
       ]);
       this.log('Attribute reporting configured successfully');
-      } catch (err) {
+    } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-      }
-      await super.onNodeInit({ zclNode });
-      this.log('[LED-ADV] ✅ Ready');
-    }, 'onNodeInit');
+    }
+
+    await super.onNodeInit({ zclNode });
+    this.log('[LED-ADV]  Ready');
   }
 
 

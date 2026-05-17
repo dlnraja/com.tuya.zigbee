@@ -1,10 +1,36 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class SwitchDimmer1GangDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
     this.log('Switch Dimmer 1-Gang Driver initialized');
     this._registerFlowCards();
+  
+  
+  
+  
+  
+  
+  
   }
 
   _registerFlowCards() {
@@ -17,7 +43,7 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
     ];
     for (const id of triggers) {
       try {
-        this.homey.flow.getDeviceTriggerCard(id);
+
         this.log(`Trigger: ${id}`);
       } catch (err) {
         this.error(`Failed trigger ${id}: ${err.message}`);
@@ -26,9 +52,10 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
 
     // Action: set brightness
     try {
-      (() => { try { return this.homey.flow.getActionCard('switch_dimmer_1gang_set_brightness'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('Action set_brightness failed:');
+      if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const dim = args.brightness / 100;
+          const dim = safeParse(args.brightness, 100);
           await args.device.triggerCapabilityListener('dim', dim);
           return true;
         });
@@ -39,7 +66,8 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
 
     // Action: turn on
     try {
-      (() => { try { return this.homey.flow.getActionCard('switch_dimmer_1gang_turn_on'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('Action set_brightness failed:');
+      if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, true).catch(() => {});
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
@@ -49,7 +77,8 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
 
     // Action: turn off
     try {
-      (() => { try { return this.homey.flow.getActionCard('switch_dimmer_1gang_turn_off'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('Action set_brightness failed:');
+      if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           await args.device._setGangOnOff(1, false).catch(() => {});
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
@@ -59,7 +88,8 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
 
     // Action: toggle
     try {
-      (() => { try { return this.homey.flow.getActionCard('switch_dimmer_1gang_toggle'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('Action set_brightness failed:');
+      if (card) card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const cur = args.device.getCapabilityValue('onoff');
           await args.device.triggerCapabilityListener('onoff', !cur);
@@ -70,3 +100,4 @@ class SwitchDimmer1GangDriver extends ZigBeeDriver {
 }
 
 module.exports = SwitchDimmer1GangDriver;
+

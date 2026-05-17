@@ -19,10 +19,9 @@ const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 class SmartBreakerDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryMixin(UnifiedPlugBase))) {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      // v9.7.3: Initialization is orchestrated by the mixin hierarchy.
+    await this._safeInvoke(async () => { // v9.7.3: Initialization is orchestrated by the mixin hierarchy.
       // Handles relay control, energy monitoring, and battery status.
-      await super.onNodeInit({ zclNode });
+      await super.onNodeInit({ zclNode  });
       this.log('[BREAKER] ✅ v9.7.3 Universal initialization complete');
     }, 'onNodeInit');
   }
@@ -44,7 +43,7 @@ class SmartBreakerDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryM
     };
   }
 
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }

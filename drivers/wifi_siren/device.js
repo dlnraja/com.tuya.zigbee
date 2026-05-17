@@ -1,22 +1,23 @@
 'use strict';
-const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiSirenDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':   { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '4':   { capability: null },
-      '5':   { capability: null },
+      '4':   { capability: 'unknown' },
+      '5':   { capability: 'unknown' },
       '6':   { capability: 'alarm_generic', transform: (v) => !!v },
-      '7':   { capability: null },
+      '7':   { capability: 'unknown' },
       '9':   { capability: 'measure_temperature', divisor: 10 },
       '10':  { capability: 'measure_humidity' },
       '13':  { capability: 'measure_battery' },
-      '15':  { capability: null },
-      '101': { capability: null },
-      '102': { capability: null },
-      '103': { capability: null },
-      '104': { capability: null },
+      '15':  { capability: 'unknown' },
+      '101': { capability: 'unknown' },
+      '102': { capability: 'unknown' },
+      '103': { capability: 'unknown' },
+      '104': { capability: 'unknown' },
     };
   }
 
@@ -33,6 +34,18 @@ class WiFiSirenDevice extends TuyaLocalDevice {
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 

@@ -22,8 +22,7 @@ class AirPurifierDevice extends TuyaZigbeeDevice {
     await super.onNodeInit({ zclNode });
 
     // 1. Capability Listeners
-    this.registerCapabilityListener('onoff', async (value) => {
-      this.log(`[AirPurifier] Setting state to: ${value}`);
+    this.registerCapabilityListener ('onoff', async (value) => { this.log(`[AirPurifier] Setting state to: ${value}`);
       return this.sendTuyaCommand(DP.state, value, 'bool');
     });
 
@@ -50,8 +49,7 @@ class AirPurifierDevice extends TuyaZigbeeDevice {
         const state = Boolean(value);
         this.log(`[AirPurifier] 📥 State: ${state}`);
         await this.setCapabilityValue('onoff', state);
-        break;
-      }
+        break; }
 
       case DP.pm25: {
         const pm25 = typeof value === 'number' ? value : parseInt(value);

@@ -9,7 +9,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 class Button2GangDevice extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 
   async onNodeInit() {
-    await super.onNodeInit();
+    await super.on();
     
     this.buttonCount = 2;
     this.gangCount = 2;

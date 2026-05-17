@@ -1,6 +1,6 @@
 'use strict';
 
-const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
 const IntelligentDPAutoDiscovery = require('../../lib/sensors/IntelligentDPAutoDiscovery');
 
@@ -8,32 +8,34 @@ const IntelligentDPAutoDiscovery = require('../../lib/sensors/IntelligentDPAutoD
  * CeilingPresenceSensorDevice - v8.0.0 MODERNIZED
  * Ceiling-mounted presence sensor (mmWave) with relay control.
  */
-class CeilingPresenceSensorDevice extends SensorBase {
+class CeilingPresenceSensorDevice extends UnifiedSensorBase {
 
   async onNodeInit({ zclNode }) {
-    this.log('[CEILING] 🚀 v8.0.0 Modernizing...');
-    
-    // Initialize v8 components
-    this._inference = new IntelligentPresenceInference(this);
-    this._discovery = new IntelligentDPAutoDiscovery(this);
-    
-    // Parent handles standard sensor logic and discovery initialization
-    await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => {
+      this.log('[CEILING] 🚀 v8.0.0 Modernizing...');
+      
+      // Initialize v8 components
+      this._inference = new IntelligentPresenceInference(this);
+      this._discovery = new IntelligentDPAutoDiscovery(this);
+      
+      // Parent handles standard sensor logic
+      await super.onNodeInit({ zclNode });
 
-    // Setup capabilities and listeners
-    await this._initCapabilities();
-    
-    // Relay control initialization
-    await this._setupRelayControl(zclNode);
+      // Setup capabilities and listeners
+      await this._initCapabilities();
+      
+      // Relay control initialization
+      await this._setupRelayControl(zclNode);
 
-    this.log('[CEILING] ✅ Ready');
+      this.log('[CEILING] ✅ Ready');
+    }, 'onNodeInit');
   }
 
   async _initCapabilities() {
     const caps = ['alarm_motion', 'onoff', 'measure_luminance', 'measure_luminance.distance'];
     for (const cap of caps) {
       if (!this.hasCapability(cap)) {
-        await this.addCapability(cap).catch(() => {});
+        await this.addCapability(cap).catch(() => { });
       }
     }
 
@@ -54,7 +56,7 @@ class CeilingPresenceSensorDevice extends SensorBase {
     switch (dpId) {
       case 1: // Presence
         const presence = this._inference.updatePresenceDP(value);
-        await this.setCapabilityValue('alarm_motion', presence).catch(() => {});
+        await this.setCapabilityValue('alarm_motion', presence).catch(() => { });
         
         // Auto relay control
         if (this.getSetting('relay_mode') === 'auto') {
@@ -65,7 +67,7 @@ class CeilingPresenceSensorDevice extends SensorBase {
       case 9: // Target Distance
         const distance = value / 100;
         this._inference.updateDistance(distance);
-        return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => {});
+        return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => { });
 
       case 104: // Illuminance
         const lux = Math.max(0, value + (this.getSetting('illuminance_calibration') || 0));
@@ -82,8 +84,7 @@ class CeilingPresenceSensorDevice extends SensorBase {
 
     // 2. Fallback: Intelligent Auto-Discovery
     if (this._discovery) {
-      this._discovery.analyzeDP(dpId, value);
-      const result = this._discovery.applyDiscoveredValue(dpId, value);
+      const result = this._discovery.analyzeDP(dpId, value);
       if (result && result.confidence >= 80) {
         this.log(`[CEILING] 🧠 Discovery: DP${dpId} → ${result.capability}=${result.value}`);
         return this.setCapabilityValue(result.capability, result.value).catch(() => {});
@@ -96,7 +97,7 @@ class CeilingPresenceSensorDevice extends SensorBase {
     if (onOffCluster) {
       onOffCluster.on('attr.onOff', async (value) => {
         this.log(`[CEILING] Relay state (ZCL): ${value}`);
-        await this.setCapabilityValue('onoff', value).catch(() => {});
+        await this.setCapabilityValue('onoff', value).catch(() => { });
       });
       this._onOffCluster = onOffCluster;
     }
@@ -105,10 +106,10 @@ class CeilingPresenceSensorDevice extends SensorBase {
   async _handleAutoRelay(presence) {
     const delay = presence ? (this.getSetting('relay_delay_on') || 0) : (this.getSetting('relay_delay_off') || 0);
     
-    if (this._relayTimeout) clearTimeout(this._relayTimeout);
+    if (this._relayTimeout) this.homey.clearTimeout(this._relayTimeout);
     
-    this._relayTimeout = setTimeout(async () => {
-      await this._setRelay(presence);
+    this._relayTimeout = this.homey.setTimeout(async () => { 
+      await this._setRelay(presence);  
     }, delay * 1000);
   }
 
@@ -119,9 +120,11 @@ class CeilingPresenceSensorDevice extends SensorBase {
         else await this._onOffCluster.setOff();
       } else {
         // Fallback to Tuya DP
-        await this.sendTuyaCommand(101, value, 'bool').catch(() => this.sendTuyaCommand(16, value, 'bool'));
+        if (this.sendTuyaCommand) {
+          await this.sendTuyaCommand(101, value, 'bool').catch(() => this.sendTuyaCommand(16, value, 'bool'));
+        }
       }
-      await this.setCapabilityValue('onoff', value).catch(() => {});
+      await this.setCapabilityValue('onoff', value).catch(() => { });
       return true;
     } catch (err) {
       this.error('[CEILING] Relay set failed:', err.message);
@@ -130,20 +133,27 @@ class CeilingPresenceSensorDevice extends SensorBase {
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
+    if (super.onSettings) await super.onSettings({ oldSettings, newSettings, changedKeys });
+
     for (const key of changedKeys) {
       const val = newSettings[key];
       switch (key) {
-        case 'radar_sensitivity': await this.sendTuyaCommand(2, val, 'value'); break;
-        case 'minimum_range': await this.sendTuyaCommand(3, Math.round(val * 100), 'value'); break;
-        case 'maximum_range': await this.sendTuyaCommand(4, Math.round(val * 100), 'value'); break;
-        case 'fading_time': await this.sendTuyaCommand(102, val, 'value'); break;
+        case 'radar_sensitivity': await this.sendTuyaCommand(2, val, 'value').catch(() => {}); break;
+        case 'minimum_range': await this.sendTuyaCommand(3, Math.round(val * 100), 'value').catch(() => {}); break;
+        case 'maximum_range': await this.sendTuyaCommand(4, Math.round(val * 100), 'value').catch(() => {}); break;
+        case 'fading_time': await this.sendTuyaCommand(102, val, 'value').catch(() => {}); break; 
       }
     }
   }
 
+  onUninit() {
+    if (this._relayTimeout) this.homey.clearTimeout(this._relayTimeout);
+    if (super.onUninit) super.onUninit();
+  }
+
   onDeleted() {
-    if (this._relayTimeout) clearTimeout(this._relayTimeout);
-    super.onDeleted();
+    this.log('[CEILING] Device deleted');
+    if (super.onDeleted) super.onDeleted();
   }
 }
 

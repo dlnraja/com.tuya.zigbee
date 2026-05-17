@@ -3,26 +3,67 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class CeilingPresenceSensorDriver extends ZigBeeDriver {
+
   async onInit() {
     await super.onInit();
     this.log('Ceiling Presence Sensor Driver v5.13.3 initialized');
+    this._registerFlowCards();
+  }
 
-    // v5.13.3: Register flow card action handlers
-    const reg = (id, fn) => {
-      try { (() => { try { return this.homey.flow.getActionCard(id); } catch(e) { return null; } })()?.registerRunListener(fn); }
-      catch (e) { this.log('[Flow]', id, e.message); }
-    };
-    reg('presence_sensor_ceiling_turn_on', async ({ device }) => { await device.triggerCapabilityListener('onoff', true); return true; });
-    reg('presence_sensor_ceiling_turn_off', async ({ device }) => { await device.triggerCapabilityListener('onoff', false); return true; });
-    reg('presence_sensor_ceiling_toggle', async ({ device }) => { const v = device.getCapabilityValue('onoff'); await device.triggerCapabilityListener('onoff', !v); return true; });
+  _registerFlowCards() {
+    const actionCards = [
+      {
+        id: 'presence_sensor_ceiling_turn_on',
+        fn: async ({ device }) => { await device.triggerCapabilityListener('onoff', true); return true; }
+      },
+      {
+        id: 'presence_sensor_ceiling_turn_off',
+        fn: async ({ device }) => { await device.triggerCapabilityListener('onoff', false); return true; }
+      },
+      {
+        id: 'presence_sensor_ceiling_toggle',
+        fn: async ({ device }) => { 
+          const v = device.getCapabilityValue('onoff'); 
+          await device.triggerCapabilityListener('onoff', !v); 
+          return true; 
+        }
+      }
+    ];
 
-    // Condition cards
-    const cond = (id, fn) => {
-      try { (() => { try { return this.homey.flow.getConditionCard(id); } catch(e) { return null; } })()?.registerRunListener(fn); }
-      catch (e) { this.log('[Flow]', id, e.message); }
-    };
-    cond('presence_sensor_ceiling_is_on', async ({ device }) => device.getCapabilityValue('onoff') === true);
-    cond('presence_sensor_ceiling_motion_active', async ({ device }) => device.getCapabilityValue('alarm_motion') === true);
+    for (const { id, fn } of actionCards) {
+      try {
+        const card = this.homey.flow.getActionCard(id);
+        if (card) {
+          card.registerRunListener(fn);
+          this.log(`[FLOW] ✅ Action ${id} registered`);
+        }
+      } catch (err) {
+        this.error(`[FLOW] ⚠️ Action ${id} registration error: ${err.message}`);
+      }
+    }
+
+    const conditionCards = [
+      {
+        id: 'presence_sensor_ceiling_is_on',
+        fn: async ({ device }) => device.getCapabilityValue('onoff') === true
+      },
+      {
+        id: 'presence_sensor_ceiling_motion_active',
+        fn: async ({ device }) => device.getCapabilityValue('alarm_motion') === true
+      }
+    ];
+
+    for (const { id, fn } of conditionCards) {
+      try {
+        const card = this.homey.flow.getConditionCard(id);
+        if (card) {
+          card.registerRunListener(fn);
+          this.log(`[FLOW] ✅ Condition ${id} registered`);
+        }
+      } catch (err) {
+        this.error(`[FLOW] ⚠️ Condition ${id} registration error: ${err.message}`);
+      }
+    }
   }
 }
 

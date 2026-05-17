@@ -1,13 +1,13 @@
 'use strict';
 
-const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * Rain Sensor Device
  * v5.5.889: Added IAS Zone support for TS0207 devices (Dominique_C forum report)
  * v5.3.64: SIMPLIFIED base implementation
  */
-class RainSensorDevice extends BatteryMixin(SensorBase) {
+class RainSensorDevice extends UnifiedSensorBase {
 
   get mainsPowered() { return false; }
 
@@ -26,35 +26,36 @@ class RainSensorDevice extends BatteryMixin(SensorBase) {
   }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
-      // --- Attribute Reporting Configuration (auto-generated) ---
-      try {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
       await this.configureAttributeReporting([
-      {
-      cluster: 'msRelativeHumidity',
-      attributeName: 'measuredValue',
-      minInterval: 30,
-      maxInterval: 600,
-      minChange: 100,
-      },
-      {
-      cluster: 'genPowerCfg',
-      attributeName: 'batteryPercentageRemaining',
-      minInterval: 3600,
-      maxInterval: 43200,
-      minChange: 2,
-      }
+        {
+          cluster: 'msRelativeHumidity',
+          attributeName: 'measuredValue',
+          minInterval: 30,
+          maxInterval: 600,
+          minChange: 100,
+        },
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        }
       ]);
       this.log('Attribute reporting configured successfully');
-      } catch (err) {
+    } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-      }
-      await super.onNodeInit({ zclNode });
-      // v5.5.889: IAS Zone support for TS0207 rain sensors
-      await this._setupIASZone(zclNode);
-      this.log('[RAIN] ✅ Rain sensor ready');
-    }, 'onNodeInit');
+    }
+
+    await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
+    
+    // v5.5.889: IAS Zone support for TS0207 rain sensors
+    await this._setupIASZone(zclNode);
+    
+    this.log('[RAIN]  Rain sensor ready');
   }
 
   /**
@@ -71,17 +72,17 @@ class RainSensorDevice extends BatteryMixin(SensorBase) {
         return;
       }
 
-      this.log('[RAIN-IAS] IAS Zone cluster found - setting up rain detection');
+      this.log('[RAIN-IAS] IAS Zone cluster found - setting up rain detection' );
 
       // Handle Zone Enroll Request
       iasCluster.onZoneEnrollRequest = async (payload) => {
-        this.log('[RAIN-IAS] 📥 Zone Enroll Request received:', payload);
+        this.log('[RAIN-IAS]  Zone Enroll Request received:', payload);
         try {
           await iasCluster.zoneEnrollResponse({
             enrollResponseCode: 0, // Success
             zoneId: 23
           });
-          this.log('[RAIN-IAS] ✅ Zone Enroll Response sent');
+          this.log('[RAIN-IAS]  Zone Enroll Response sent');
         } catch (err) {
           this.log('[RAIN-IAS] Zone enroll response error:', err.message);
         }
@@ -92,7 +93,7 @@ class RainSensorDevice extends BatteryMixin(SensorBase) {
         const homeyIeeeAddress = this.homey.zigbee?.getNetwork?.()?.ieeeAddress;
         if (homeyIeeeAddress) {
           await iasCluster.writeAttributes({ iasCieAddress: homeyIeeeAddress });
-          this.log('[RAIN-IAS] ✅ CIE address written:', homeyIeeeAddress);
+          this.log('[RAIN-IAS]  CIE address written:', homeyIeeeAddress);
         }
       } catch (cieErr) {
         this.log('[RAIN-IAS] CIE address write (normal if already set):', cieErr.message);
@@ -100,62 +101,48 @@ class RainSensorDevice extends BatteryMixin(SensorBase) {
 
       // Zone Status Change Notification (rain detected)
       iasCluster.onZoneStatusChangeNotification = (payload) => {
-        const parsed = this._parseIASZoneStatus(payload?.zoneStatus);
-        const raining = parsed.alarm1 || parsed.alarm2;
+        const parsed = this._parseIASZoneStatus(payload?.zoneStatus);const raining = parsed.alarm1 || parsed.alarm2;
         
-        this.log(`[RAIN-IAS] 🌧️ Zone status: raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2} → raining=${raining}`);
+        this.log(`[RAIN-IAS]  Zone status: raw=${parsed.raw} alarm1=${parsed.alarm1} alarm2=${parsed.alarm2}  raining=${raining}`);
 
         if (this.hasCapability('alarm_water')) {
-          await this.setCapabilityValue('alarm_water', raining).catch(this.error);
+          this.setCapabilityValue('alarm_water', raining).catch(this.error);
         }
       };
 
       // Attribute listener for zone status
       iasCluster.on('attr.zoneStatus', (status) => {
         const raining = (status & 0x01) !== 0 || (status & 0x02) !== 0;
-        this.log(`[RAIN-IAS] 🌧️ Zone attr status: ${status} → raining=${raining}`);
+        this.log(`[RAIN-IAS]  Zone attr status: ${status}  raining=${raining}`);
         
         if (this.hasCapability('alarm_water')) {
-          await this.setCapabilityValue('alarm_water', raining).catch(this.error);
+          this.setCapabilityValue('alarm_water', raining).catch(this.error);
         }
       });
 
-      this.log('[RAIN-IAS] ✅ IAS Zone listeners configured');
+      this.log('[RAIN-IAS]  IAS Zone listeners configured');
     } catch (err) {
       this.log('[RAIN-IAS] Setup error:', err.message);
     }
   }
 
 
-  async onSettings({ oldSettings, newSettings, changedKeys }) {
-    await super.onSettings({ oldSettings, newSettings, changedKeys }).catch(e => this.error('[RAIN] super.onSettings error:', e.message));
-
-    this.log(`[RAIN] [SETTINGS] Changed keys: ${changedKeys.join(', ')}`);
-
-    const RAIN_SETTING_DP_MAP = {
-      sensitivity: { dp: 102, type: 'value' },
-      illuminance_sampling: { dp: 103, type: 'value' }
-    };
-
-    for (const key of changedKeys) {
-      try {
-        const mapping = RAIN_SETTING_DP_MAP[key];
-        if (mapping && this.tuyaEF00Manager) {
-          const val = parseInt(newSettings[key]);
-          if (!isNaN(val)) {
-            await this.tuyaEF00Manager.sendDP(mapping.dp, val, mapping.type);
-            this.log(`[RAIN] [SETTINGS] Applied ${key}=${val} (DP${mapping.dp})`);
-          }
-        }
-      } catch (err) {
-        this.log(`[RAIN] [SETTINGS] Error applying ${key}: ${err.message}`);
-      }
-    }
-  }
-
   async onDeleted() {
     this.log('Device deleted, cleaning up');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 
 module.exports = RainSensorDevice;
+

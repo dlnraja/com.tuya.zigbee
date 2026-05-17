@@ -2,92 +2,73 @@
 
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
-/**
- * SmartScenePanelDevice - v5.13.6 Hardened Architecture
- */
 class SmartScenePanelDevice extends TuyaZigbeeDevice {
-
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    this.log('[ScenePanel] 🚀 Initializing hardened driver...');
-    await super.onNodeInit({ zclNode });
-
-    // 1. Gang Capabilities Setup
-    for (let g = 1; g <= 4; g++) {
+    this.log('[SCENE-PANEL] v5.13.5 init');for (let g = 1; g <= 4; g++) {
       const cap = `onoff.gang${g}`;
+      const dp = 23 + g;
       if (this.hasCapability(cap)) {
         this.registerCapabilityListener(cap, async (value) => {
-          this.log(`[ScenePanel] Setting gang ${g}: ${value}`);
-          return this.sendTuyaCommand(23 + g, value, 'bool');
-        });
+          await this.sendDP(dp, 1, value ? 1 : 0);
+      });
       }
     }
-
-    this.log('[ScenePanel] ✅ Ready');
+    this._setupDPReporting();
   }
 
-  /**
-   * handleTuyaDataReport - Hardened DP Processing
-   */
-  async handleTuyaDataReport(data) {
-    if (!data || data.dp == null) return;
-    
-    const value = data.data ?? data.value;
-    const dpId = data.dp;
+  _setupDPReporting() {
+    if (this.ef00Manager) {
+      this.ef00Manager.on('dp', ({ dp, value }) => this._handleDP(dp, value));
+    }
+  }
 
-    // 1. Gang Status (DP 24-27)
-    if (dpId >= 24 && dpId <= 27) {
-      const g = dpId - 23;
+  _handleDP(dp, value) {
+    if (dp >= 24 && dp <= 27) {
+      const g = dp - 23;
       const cap = `onoff.gang${g}`;
-      const state = !!value;
-      
-      await this.setCapabilityValue(cap, state);
-      
-      // Trigger Flow Card
-      try {
-        const trigger = this.homey.flow.getDeviceTriggerCard(`smart_scene_panel_switch_${g}_changed`);
-        if (trigger) {
-          await trigger.trigger(this, { state }, {});
-        }
-      } catch (e) {}
-    } 
-    // 2. Scene Buttons (DP 5-8)
-    else if (dpId >= 5 && dpId <= 8) {
-      this.log(`[ScenePanel] 🔘 Button ${dpId} activated`);
-      try {
-        const trigger = this.homey.flow.getDeviceTriggerCard('smart_scene_panel_scene_activated');
-        if (trigger) {
-          await trigger.trigger(this, { scene: String(dpId) }, { scene: String(dpId) });
-        }
-      } catch (e) {}
-    }
-    // 3. System DPs
-    else if (dpId === 38) {
-      this.log(`[ScenePanel] Relay status report: ${value}`);
-    } else if (dpId === 106) {
-      this.log(`[ScenePanel] PIR delay report: ${value}`);
-    }
-  }
-
-  async onSettings({ newSettings, changedKeys }) {
-    for (const key of changedKeys) {
-      switch (key) {
-        case 'power_on_behavior': {
-          const map = { off: 0, on: 1, memory: 2 };
-          await this.sendTuyaCommand(38, map[newSettings[key]] ?? 2, 'enum');
-          break;
-        }
-        case 'backlight':
-          await this.sendTuyaCommand(36, newSettings[key], 'bool');
-          break;
-        case 'pir_delay':
-          await this.sendTuyaCommand(106, newSettings[key], 'value');
-          break;
+      if (this.hasCapability(cap)) {
+        this.setCapabilityValue(cap, !!value).catch(this.error);
       }
+      const flowCardId = `smart_scene_panel_switch_${g}_changed`;
+      this.homey.flow.getTriggerCard(flowCardId).trigger(this, { state: !!value }, {}).catch(() => {})
+    } else if (dp >= 5 && dp <= 8) {
+      this.homey.flow.getTriggerCard('smart_scene_panel_scene_activated').trigger(this, { scene: String(dp) }, { scene: String(dp) }).catch(() => {})
+    } else if (dp === 38) {
+      this.log(`[SCENE-PANEL] relay_status=${value}`);
+    } else if (dp === 106) {
+      this.log(`[SCENE-PANEL] pir_delay=${value}`);
     }
   }
 
+  async onSettings({ oldSettings, newSettings, changedKeys }) {
+    if (changedKeys.includes('power_on_behavior')) {
+      const map = { off: 0, on: 1, memory: 2 };
+      await this.sendDP(38, 4, map[newSettings.power_on_behavior] || 2);
+    }
+    if (changedKeys.includes('backlight')) {
+      await this.sendDP(36, 1, newSettings.backlight ? 1 : 0);
+    }
+    if (changedKeys.includes('pir_delay')) {
+      await this.sendDP(106, 2, newSettings.pir_delay);
+    }
+  }
+
+  async sendDP(dp, type, value) {
+    if (this.ef00Manager) {
+      await this.ef00Manager.sendDP(dp, type, value);
+    }
+  }
+
+
+  async onDeleted() {
+    this.log('Device deleted, cleaning up');
+  }
 }
 
 module.exports = SmartScenePanelDevice;
+
+
+
+

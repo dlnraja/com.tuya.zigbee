@@ -9,10 +9,10 @@
   "capabilities": [
     "onoff",
     "dim",
-    "onoff.channel2",
-    "dim.channel2",
-    "onoff.channel3",
-    "dim.channel3"
+    "onoff.gang2",
+    "dim.gang2",
+    "onoff.gang3",
+    "dim.gang3"
   ],
   "platforms": [
     "local"
@@ -60,25 +60,25 @@
         "fr": "Luminosité 1"
       }
     },
-    "onoff.channel2": {
+    "onoff.gang2": {
       "title": {
         "en": "Channel 2",
         "fr": "Canal 2"
       }
     },
-    "dim.channel2": {
+    "dim.gang2": {
       "title": {
         "en": "Brightness 2",
         "fr": "Luminosité 2"
       }
     },
-    "onoff.channel3": {
+    "onoff.gang3": {
       "title": {
         "en": "Channel 3",
         "fr": "Canal 3"
       }
     },
-    "dim.channel3": {
+    "dim.gang3": {
       "title": {
         "en": "Brightness 3",
         "fr": "Luminosité 3"

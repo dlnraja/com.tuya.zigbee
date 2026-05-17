@@ -8,7 +8,8 @@ class D extends EweLinkLocalDevice{
     current:{capability:'measure_current',transform:v=>parseFloat(v)||0}
   };}
   _registerCapListeners(){
-    this.registerCapabilityListener('onoff',async v=>{ if (typeof this.markAppCommand === 'function') this.markAppCommand(1, v);await this._client.setSwitch(v);});
+    this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v);
+      });
   }
   async onInit(){
     for(const c of['measure_power','measure_voltage','measure_current'])if(!this.hasCapability(c))try{await this.addCapability(c);}catch(e){}
@@ -21,4 +22,4 @@ class D extends EweLinkLocalDevice{
     this.log('Device deleted, cleaning up');
   }
 }
-module.exports = D;
+module.exports=D;

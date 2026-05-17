@@ -13,11 +13,28 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * - Soil sensors: temperature + humidity + soil moisture
  */
 class SoilSensorDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
-    this.log('╔══════════════════════════════════════════════════════════════╗');
-    this.log('║    SOIL SENSOR DRIVER v5.5.564 - SAFE FLOW REGISTRATION     ║');
-    this.log('╚══════════════════════════════════════════════════════════════╝');
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    this.log('');
+    this.log('    SOIL SENSOR DRIVER v5.5.564 - SAFE FLOW REGISTRATION     ');
+    this.log('');
 
     // Track IEEE addresses to prevent duplicates
     this._registeredIeeeAddresses = new Set();
@@ -25,8 +42,15 @@ class SoilSensorDriver extends ZigBeeDriver {
     // v5.5.556: Safe flow card registration helper (no stderr on missing cards)
     const safeGetTrigger = (id) => {
       try {
-        return this.homey.flow.getDeviceTriggerCard(id);
-      } catch (e) {
+        return this.homey.flow.getTriggerCard(id) ;
+      
+  
+  
+  
+  
+  
+  
+  } catch (e) {
         this.log(`[FLOW] Trigger '${id}' not defined - skipping`);
         return null;
       }
@@ -34,7 +58,7 @@ class SoilSensorDriver extends ZigBeeDriver {
 
     const safeGetCondition = (id) => {
       try {
-        return this.homey.flow.getConditionCard(id);
+        return this.homey.flow.getConditionCard(id) ;
       } catch (e) {
         this.log(`[FLOW] Condition '${id}' not defined - skipping`);
         return null;
@@ -118,7 +142,7 @@ class SoilSensorDriver extends ZigBeeDriver {
       this._tempChangedTrigger, this._batteryLowTrigger].filter(Boolean).length;
     const conditions = [moistureBelowCondition, moistureAboveCondition, tempAboveCondition, 
       needsWaterCondition, batteryAboveCondition].filter(Boolean).length;
-    this.log(`Soil Sensor ✅ ${triggers} triggers + ${conditions} conditions registered`);
+    this.log(`Soil Sensor  ${triggers} triggers + ${conditions} conditions registered`);
   }
 
   /**
@@ -141,19 +165,19 @@ class SoilSensorDriver extends ZigBeeDriver {
 
       // CRITICAL: Skip ANY device with subDeviceId
       if (device.data?.subDeviceId !== undefined) {
-        this.log(`[PAIR] 🚫 BLOCKING sub-device: subDeviceId=${device.data.subDeviceId}`);
+        this.log(`[PAIR]  BLOCKING sub-device: subDeviceId=${device.data.subDeviceId}`);
         continue;
       }
 
       // Skip if we've already seen this IEEE address
       if (ieee && seenIeeeAddresses.has(ieee)) {
-        this.log(`[PAIR] 🚫 Skipping duplicate device for IEEE ${ieee}`);
+        this.log(`[PAIR]  Skipping duplicate device for IEEE ${ieee}`);
         continue;
       }
 
       // Skip if already registered in this driver
       if (ieee && this._registeredIeeeAddresses?.has(ieee)) {
-        this.log(`[PAIR] 🚫 Device already registered: IEEE ${ieee}`);
+        this.log(`[PAIR]  Device already registered: IEEE ${ieee}`);
         continue;
       }
 
@@ -162,13 +186,14 @@ class SoilSensorDriver extends ZigBeeDriver {
       }
 
       filteredDevices.push(device);
-      this.log(`[PAIR] ✅ Added device: ${device.name || 'Soil Sensor'} (IEEE: ${ieee || 'unknown'})`);
+      this.log(`[PAIR]  Added device: ${device.name || 'Soil Sensor'} (IEEE: ${ieee || 'unknown'})`);
     }
 
-    this.log(`[PAIR] Filtered: ${devices.length} → ${filteredDevices.length} devices`);
+    this.log(`[PAIR] Filtered: ${devices.length}  ${filteredDevices.length} devices`);
     return filteredDevices;
   }
 
 }
 
 module.exports = SoilSensorDriver;
+

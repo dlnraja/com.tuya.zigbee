@@ -87,6 +87,10 @@
         "en": "Set brightness to...",
         "fr": "Régler la luminosité à..."
       },
+      "titleFormatted": {
+        "en": "Set brightness to [[brightness]]%",
+        "fr": "Régler la luminosité à [[brightness]]%"
+      },
       "args": [
         {
           "name": "brightness",
@@ -110,6 +114,12 @@
         "fr": "Régler luminosité",
         "nl": "Helderheid instellen",
         "de": "Helligkeit einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set brightness to [[brightness]]%",
+        "fr": "Régler la luminosité à [[brightness]]%",
+        "nl": "Helderheid instellen op [[brightness]]%",
+        "de": "Helligkeit einstellen auf [[brightness]]%"
       },
       "args": [
         {

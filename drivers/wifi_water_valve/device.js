@@ -1,7 +1,6 @@
 'use strict';
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiWaterValveDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaLocalDevice)) {
@@ -24,14 +23,18 @@ class WiFiWaterValveDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaLo
   async onInit() {
     await super.onInit();
     if (!this.hasCapability('measure_battery')) {
-      try { await this.addCapability('measure_battery'); } catch (e) { /* optional */ }
+      try {
+        await this.addCapability('measure_battery').catch(() => { });
+      } catch (e) {
+        // optional
+      }
     }
     this.log('[WIFI-WATER-VALVE] Ready');
   }
 
-
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
+    if (super.onDeleted) super.onDeleted();
   }
 }
 
