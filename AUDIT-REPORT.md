@@ -26,6 +26,17 @@
 - **Note:** Occurred on old version v5.8.93 with Homey RC firmware. May be fixed in Homey v13.0.0.
 - **Status:** ❌ SDK bug — reported to Athom, no app-side fix possible
 
+### Crash 3: BaseUnifiedDevice (CRITICAL — FIXED)
+- **Date:** May 16, 2026 | **App:** v7.0.8 / v7.5.35 | **Homey:** v13.1.1
+- **Error:** `ReferenceError: setCapabilityValue is not defined`
+- **Stack:** `BaseUnifiedDevice.handleEndpointCommand` and `_setupUniversalHybridMode`
+- **Root cause:** Missing `this.` prefix on core capability methods and non-async callbacks using `await`.
+- **Fix applied:**
+  - Prepended `this.` to `setCapabilityValue`, `getCapabilityValue`, and `addCapability` calls.
+  - Converted all affected cluster listener callbacks to `async`.
+  - Fixed `const Capabilities` syntax error.
+- **Status:** ✅ FIXED in v7.5.36
+
 ---
 
 ## 2. ALL FIXES APPLIED (Sessions 1-3)

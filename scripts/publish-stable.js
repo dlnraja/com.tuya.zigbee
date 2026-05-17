@@ -41,7 +41,11 @@ child.stdout.on('data', (data) => {
     setTimeout(() => child.stdin.write('\n'), 500);
     step = 4;
   }
-  // Step 5: any remaining y/N
+  // Step 5: changelog prompt
+  if (text.includes("What's new in Tuya Unified")) {
+    child.stdin.write('Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 compliance\n');
+  }
+  // Step 6: any remaining y/N
   if (text.match(/\(y\/N\)/i) && step >= 3) {
     child.stdin.write('y\n');
   }

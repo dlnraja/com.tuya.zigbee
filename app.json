@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "7.5.35",
+  "version": "7.5.36",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -5121,7 +5121,7 @@
         ]
       },
       {
-        "id": "button_pressed",
+        "id": "curtain_motor_shutter_button_pressed",
         "title": {
           "en": "Button pressed",
           "fr": "Bouton pressé"
@@ -5325,7 +5325,7 @@
         ]
       },
       {
-        "id": "button_pressed",
+        "id": "curtain_motor_wall_button_pressed",
         "title": {
           "en": "Button pressed",
           "fr": "Bouton pressé"
@@ -11073,6 +11073,12 @@
           "fr": "Présence détectée",
           "de": "Anwesenheit erkannt"
         },
+        "titleFormatted": {
+          "en": "Presence detected",
+          "nl": "Aanwezigheid gedetecteerd",
+          "fr": "Présence détectée",
+          "de": "Anwesenheit erkannt"
+        },
         "hint": {
           "en": "Triggers when the mmWave radar detects human presence (even stationary)",
           "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
@@ -11095,6 +11101,12 @@
           "fr": "Présence terminée",
           "de": "Anwesenheit beendet"
         },
+        "titleFormatted": {
+          "en": "Presence cleared",
+          "nl": "Aanwezigheid opgeheven",
+          "fr": "Présence terminée",
+          "de": "Anwesenheit beendet"
+        },
         "hint": {
           "en": "Triggers when no human presence is detected for the configured timeout",
           "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
@@ -11112,6 +11124,12 @@
       {
         "id": "presence_sensor_radar_motion_detected",
         "title": {
+          "en": "Motion detected",
+          "nl": "Beweging gedetecteerd",
+          "fr": "Mouvement détecté",
+          "de": "Bewegung erkannt"
+        },
+        "titleFormatted": {
           "en": "Motion detected",
           "nl": "Beweging gedetecteerd",
           "fr": "Mouvement détecté",
@@ -16130,9 +16148,15 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_presence_detected",
+        "id": "sensor_contact_presence_presence_detected",
         "highlight": true,
         "title": {
+          "en": "Presence detected",
+          "nl": "Aanwezigheid gedetecteerd",
+          "fr": "Présence détectée",
+          "de": "Anwesenheit erkannt"
+        },
+        "titleFormatted": {
           "en": "Presence detected",
           "nl": "Aanwezigheid gedetecteerd",
           "fr": "Présence détectée",
@@ -16153,8 +16177,14 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_presence_cleared",
+        "id": "sensor_contact_presence_presence_cleared",
         "title": {
+          "en": "Presence cleared",
+          "nl": "Aanwezigheid opgeheven",
+          "fr": "Présence terminée",
+          "de": "Anwesenheit beendet"
+        },
+        "titleFormatted": {
           "en": "Presence cleared",
           "nl": "Aanwezigheid opgeheven",
           "fr": "Présence terminée",
@@ -16175,8 +16205,14 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_motion_detected",
+        "id": "sensor_contact_presence_motion_detected",
         "title": {
+          "en": "Motion detected",
+          "nl": "Beweging gedetecteerd",
+          "fr": "Mouvement détecté",
+          "de": "Bewegung erkannt"
+        },
+        "titleFormatted": {
           "en": "Motion detected",
           "nl": "Beweging gedetecteerd",
           "fr": "Mouvement détecté",
@@ -16197,7 +16233,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_illuminance_changed",
+        "id": "sensor_contact_presence_illuminance_changed",
         "title": {
           "en": "Illuminance changed",
           "nl": "Lichtsterkte veranderd",
@@ -16226,7 +16262,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_distance_changed",
+        "id": "sensor_contact_presence_distance_changed",
         "title": {
           "en": "Detection distance changed",
           "nl": "Detectieafstand veranderd",
@@ -16255,7 +16291,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_lux_changed",
+        "id": "sensor_contact_presence_lux_changed",
         "title": {
           "en": "Luminance changed",
           "fr": "Luminance changée",
@@ -16271,7 +16307,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_battery_low",
+        "id": "sensor_contact_presence_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -16468,6 +16504,356 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=sensor_contact_water"
+          }
+        ]
+      },
+      {
+        "id": "sensor_illuminance_presence_presence_detected",
+        "highlight": true,
+        "title": {
+          "en": "Presence detected",
+          "nl": "Aanwezigheid gedetecteerd",
+          "fr": "Présence détectée",
+          "de": "Anwesenheit erkannt"
+        },
+        "titleFormatted": {
+          "en": "Presence detected",
+          "nl": "Aanwezigheid gedetecteerd",
+          "fr": "Présence détectée",
+          "de": "Anwesenheit erkannt"
+        },
+        "hint": {
+          "en": "Triggers when the mmWave radar detects human presence (even stationary)",
+          "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
+          "fr": "Se déclenche quand le radar mmWave détecte une présence humaine (même immobile)",
+          "de": "Wird ausgelöst, wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationär)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_illuminance_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_illuminance_presence_presence_cleared",
+        "title": {
+          "en": "Presence cleared",
+          "nl": "Aanwezigheid opgeheven",
+          "fr": "Présence terminée",
+          "de": "Anwesenheit beendet"
+        },
+        "titleFormatted": {
+          "en": "Presence cleared",
+          "nl": "Aanwezigheid opgeheven",
+          "fr": "Présence terminée",
+          "de": "Anwesenheit beendet"
+        },
+        "hint": {
+          "en": "Triggers when no human presence is detected for the configured timeout",
+          "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
+          "fr": "Se déclenche quand aucune présence humaine n'est détectée pendant le délai configuré",
+          "de": "Wird ausgelöst, wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_illuminance_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_illuminance_presence_motion_detected",
+        "title": {
+          "en": "Motion detected",
+          "nl": "Beweging gedetecteerd",
+          "fr": "Mouvement détecté",
+          "de": "Bewegung erkannt"
+        },
+        "titleFormatted": {
+          "en": "Motion detected",
+          "nl": "Beweging gedetecteerd",
+          "fr": "Mouvement détecté",
+          "de": "Bewegung erkannt"
+        },
+        "hint": {
+          "en": "Triggers when active motion is detected (walking, moving)",
+          "nl": "Triggert wanneer actieve beweging wordt gedetecteerd (lopen, bewegen)",
+          "fr": "Se déclenche quand un mouvement actif est détecté (marche, mouvement)",
+          "de": "Wird ausgelöst, wenn aktive Bewegung erkannt wordt (Gehen, Bewegen)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_illuminance_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_illuminance_presence_illuminance_changed",
+        "title": {
+          "en": "Illuminance changed",
+          "nl": "Lichtsterkte veranderd",
+          "fr": "Luminosité changée",
+          "de": "Helligkeit geändert"
+        },
+        "tokens": [
+          {
+            "name": "lux",
+            "type": "number",
+            "title": {
+              "en": "Illuminance (lux)",
+              "nl": "Lichtsterkte (lux)",
+              "fr": "Luminosité (lux)",
+              "de": "Helligkeit (lux)"
+            },
+            "example": 150
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_illuminance_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_illuminance_presence_distance_changed",
+        "title": {
+          "en": "Detection distance changed",
+          "nl": "Detectieafstand veranderd",
+          "fr": "Distance de détection changée",
+          "de": "Erkennungsabstand geändert"
+        },
+        "tokens": [
+          {
+            "name": "distance",
+            "type": "number",
+            "title": {
+              "en": "Distance (cm)",
+              "nl": "Afstand (cm)",
+              "fr": "Distance (cm)",
+              "de": "Abstand (cm)"
+            },
+            "example": 200
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_illuminance_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_illuminance_presence_lux_changed",
+        "title": {
+          "en": "Luminance changed",
+          "fr": "Luminance changée",
+          "nl": "Lichtsterkte gewijzigd",
+          "de": "Helligkeit geändert"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_illuminance_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_illuminance_presence_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_illuminance_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_motion_presence_presence_detected",
+        "highlight": true,
+        "title": {
+          "en": "Presence detected",
+          "nl": "Aanwezigheid gedetecteerd",
+          "fr": "Présence détectée",
+          "de": "Anwesenheit erkannt"
+        },
+        "titleFormatted": {
+          "en": "Presence detected",
+          "nl": "Aanwezigheid gedetecteerd",
+          "fr": "Présence détectée",
+          "de": "Anwesenheit erkannt"
+        },
+        "hint": {
+          "en": "Triggers when the mmWave radar detects human presence (even stationary)",
+          "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
+          "fr": "Se déclenche quand le radar mmWave détecte une présence humaine (même immobile)",
+          "de": "Wird ausgelöst, wenn der mmWave-Radar menschliche Anwesenheit erkennt (auch stationär)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_motion_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_motion_presence_presence_cleared",
+        "title": {
+          "en": "Presence cleared",
+          "nl": "Aanwezigheid opgeheven",
+          "fr": "Présence terminée",
+          "de": "Anwesenheit beendet"
+        },
+        "titleFormatted": {
+          "en": "Presence cleared",
+          "nl": "Aanwezigheid opgeheven",
+          "fr": "Présence terminée",
+          "de": "Anwesenheit beendet"
+        },
+        "hint": {
+          "en": "Triggers when no human presence is detected for the configured timeout",
+          "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
+          "fr": "Se déclenche quand aucune présence humaine n'est détectée pendant le délai configuré",
+          "de": "Wird ausgelöst, wenn für die konfigurierte Zeitüberschreitung keine menschliche Anwesenheit erkannt wird"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_motion_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_motion_presence_motion_detected",
+        "title": {
+          "en": "Motion detected",
+          "nl": "Beweging gedetecteerd",
+          "fr": "Mouvement détecté",
+          "de": "Bewegung erkannt"
+        },
+        "titleFormatted": {
+          "en": "Motion detected",
+          "nl": "Beweging gedetecteerd",
+          "fr": "Mouvement détecté",
+          "de": "Bewegung erkannt"
+        },
+        "hint": {
+          "en": "Triggers when active motion is detected (walking, moving)",
+          "nl": "Triggert wanneer actieve beweging wordt gedetecteerd (lopen, bewegen)",
+          "fr": "Se déclenche quand un mouvement actif est détecté (marche, mouvement)",
+          "de": "Wird ausgelöst, wenn aktive Bewegung erkannt wird (Gehen, Bewegen)"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_motion_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_motion_presence_illuminance_changed",
+        "title": {
+          "en": "Illuminance changed",
+          "nl": "Lichtsterkte veranderd",
+          "fr": "Luminosité changée",
+          "de": "Helligkeit geändert"
+        },
+        "tokens": [
+          {
+            "name": "lux",
+            "type": "number",
+            "title": {
+              "en": "Illuminance (lux)",
+              "nl": "Lichtsterkte (lux)",
+              "fr": "Luminosité (lux)",
+              "de": "Helligkeit (lux)"
+            },
+            "example": 150
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_motion_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_motion_presence_distance_changed",
+        "title": {
+          "en": "Detection distance changed",
+          "nl": "Detectieafstand veranderd",
+          "fr": "Distance de détection changée",
+          "de": "Erkennungsabstand geändert"
+        },
+        "tokens": [
+          {
+            "name": "distance",
+            "type": "number",
+            "title": {
+              "en": "Distance (cm)",
+              "nl": "Afstand (cm)",
+              "fr": "Distance (cm)",
+              "de": "Abstand (cm)"
+            },
+            "example": 200
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_motion_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_motion_presence_lux_changed",
+        "title": {
+          "en": "Luminance changed",
+          "fr": "Luminance changée",
+          "nl": "Lichtsterkte gewijzigd",
+          "de": "Helligkeit geändert"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_motion_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_motion_presence_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_motion_presence"
           }
         ]
       },
@@ -16715,7 +17101,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_presence_detected",
+        "id": "sensor_presence_radar_presence_detected",
         "highlight": true,
         "title": {
           "en": "Presence detected",
@@ -16738,7 +17124,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_presence_cleared",
+        "id": "sensor_presence_radar_presence_cleared",
         "title": {
           "en": "Presence cleared",
           "nl": "Aanwezigheid opgeheven",
@@ -16760,7 +17146,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_motion_detected",
+        "id": "sensor_presence_radar_motion_detected",
         "title": {
           "en": "Motion detected",
           "nl": "Beweging gedetecteerd",
@@ -16782,7 +17168,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_illuminance_changed",
+        "id": "sensor_presence_radar_illuminance_changed",
         "title": {
           "en": "Illuminance changed",
           "nl": "Lichtsterkte veranderd",
@@ -16811,7 +17197,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_distance_changed",
+        "id": "sensor_presence_radar_distance_changed",
         "title": {
           "en": "Detection distance changed",
           "nl": "Detectieafstand veranderd",
@@ -16840,7 +17226,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_lux_changed",
+        "id": "sensor_presence_radar_lux_changed",
         "title": {
           "en": "Luminance changed",
           "fr": "Luminance changée",
@@ -16856,7 +17242,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_battery_low",
+        "id": "sensor_presence_radar_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -18576,6 +18962,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_1gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_1gang"
           }
         ]
       },
@@ -18592,6 +18983,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_1gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_1gang"
           }
         ]
       },
@@ -18603,16 +18999,15 @@
           "nl": "Fysiek AAN",
           "de": "Physisch EIN"
         },
-        "hint": {
-          "en": "Physical button turns ON",
-          "fr": "Bouton physique allume",
-          "nl": "Fysieke knop schakelt in",
-          "de": "Physische Taste schaltet ein"
-        },
         "args": [
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_1gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_1gang"
           }
         ]
@@ -18630,171 +19025,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_1gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_1gang_physical_single",
-        "title": {
-          "en": "Single press",
-          "fr": "Simple pression",
-          "nl": "Enkele druk",
-          "de": "Einfacher Druck"
-        },
-        "hint": {
-          "en": "Physical button single press",
-          "fr": "Simple pression du bouton physique",
-          "nl": "Enkele druk op fysieke knop",
-          "de": "Einfacher Druck auf physische Taste"
-        },
-        "args": [
+          },
           {
-            "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_1gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_1gang_physical_double",
-        "title": {
-          "en": "Double press",
-          "fr": "Double pression",
-          "nl": "Dubbele druk",
-          "de": "Doppelter Druck"
-        },
-        "hint": {
-          "en": "Physical button double press",
-          "fr": "Double pression du bouton physique",
-          "nl": "Dubbele druk op fysieke knop",
-          "de": "Doppelter Druck auf physische Taste"
-        },
-        "args": [
-          {
             "type": "device",
-            "name": "device",
             "filter": "driver_id=switch_1gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_1gang_physical_long_press",
-        "title": {
-          "en": "Long press",
-          "fr": "Pression longue",
-          "nl": "Lange druk",
-          "de": "Langer Druck"
-        },
-        "hint": {
-          "en": "Physical button held >600ms",
-          "fr": "Bouton physique maintenu >600ms",
-          "nl": "Fysieke knop ingedrukt >600ms",
-          "de": "Physische Taste gehalten >600ms"
-        },
-        "tokens": [
-          {
-            "name": "duration",
-            "type": "number",
-            "title": {
-              "en": "Duration (ms)"
-            },
-            "example": 1200
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_1gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_1gang_physical_triple",
-        "title": {
-          "en": "Triple press",
-          "fr": "Triple pression",
-          "nl": "Drievoudige druk",
-          "de": "Dreifacher Druck"
-        },
-        "hint": {
-          "en": "Physical button triple press or more",
-          "fr": "Triple pression ou plus",
-          "nl": "Drievoudige druk of meer",
-          "de": "Dreifacher Druck oder mehr"
-        },
-        "tokens": [
-          {
-            "name": "clicks",
-            "type": "number",
-            "title": {
-              "en": "Click count"
-            },
-            "example": 3
-          }
-        ],
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_1gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_1gang_battery_low",
-        "title": {
-          "en": "Battery low",
-          "fr": "Batterie faible",
-          "nl": "Batterij laag",
-          "de": "Batterie schwach"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_1gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_1gang_power_changed",
-        "title": {
-          "en": "Power changed",
-          "fr": "Puissance changée",
-          "nl": "Vermogen gewijzigd",
-          "de": "Leistung geändert"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_1gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_1gang_gang1_scene",
-        "title": {
-          "en": "Gang 1 scene triggered"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_1gang"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action"
-            },
-            "example": {
-              "en": "on"
-            }
           }
         ]
       },
@@ -18810,6 +19045,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_2gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ]
@@ -18827,6 +19067,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_2gang"
           }
         ]
       },
@@ -18842,6 +19087,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_2gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ]
@@ -18859,27 +19109,31 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_2gang"
           }
         ]
       },
       {
         "id": "switch_2gang_physical_gang1_on",
         "title": {
-          "en": "Physical button gang 1 ON",
-          "fr": "Bouton physique gang 1 ON",
-          "nl": "Fysieke knop gang 1 AAN",
-          "de": "Physische Taste gang 1 EIN"
-        },
-        "hint": {
-          "en": "Triggers only when physical button turns ON gang 1",
-          "fr": "Se déclenche uniquement quand le bouton physique allume gang 1",
-          "nl": "Triggert alleen wanneer fysieke knop gang 1 inschakelt",
-          "de": "Wird nur ausgelöst, wenn physische Taste gang 1 einschaltet"
+          "en": "Physical gang 1 ON",
+          "fr": "Physique gang 1 ON",
+          "nl": "Fysiek gang 1 AAN",
+          "de": "Physisch gang 1 EIN"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_2gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ]
@@ -18887,15 +19141,20 @@
       {
         "id": "switch_2gang_physical_gang1_off",
         "title": {
-          "en": "Physical button gang 1 OFF",
-          "fr": "Bouton physique gang 1 OFF",
-          "nl": "Fysieke knop gang 1 UIT",
-          "de": "Physische Taste gang 1 AUS"
+          "en": "Physical gang 1 OFF",
+          "fr": "Physique gang 1 OFF",
+          "nl": "Fysiek gang 1 UIT",
+          "de": "Physisch gang 1 AUS"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_2gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ]
@@ -18903,15 +19162,20 @@
       {
         "id": "switch_2gang_physical_gang2_on",
         "title": {
-          "en": "Physical button gang 2 ON",
-          "fr": "Bouton physique gang 2 ON",
-          "nl": "Fysieke knop gang 2 AAN",
-          "de": "Physische Taste gang 2 EIN"
+          "en": "Physical gang 2 ON",
+          "fr": "Physique gang 2 ON",
+          "nl": "Fysiek gang 2 AAN",
+          "de": "Physisch gang 2 EIN"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_2gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ]
@@ -18919,114 +19183,21 @@
       {
         "id": "switch_2gang_physical_gang2_off",
         "title": {
-          "en": "Physical button gang 2 OFF",
-          "fr": "Bouton physique gang 2 OFF",
-          "nl": "Fysieke knop gang 2 UIT",
-          "de": "Physische Taste gang 2 AUS"
+          "en": "Physical gang 2 OFF",
+          "fr": "Physique gang 2 OFF",
+          "nl": "Fysiek gang 2 UIT",
+          "de": "Physisch gang 2 AUS"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turned_on",
-        "title": {
-          "en": "Turned on",
-          "fr": "Allumé",
-          "nl": "Aangezet",
-          "de": "Eingeschaltet"
-        },
-        "args": [
+          },
           {
-            "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_2gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turned_off",
-        "title": {
-          "en": "Turned off",
-          "fr": "Éteint",
-          "nl": "Uitgezet",
-          "de": "Ausgeschaltet"
-        },
-        "args": [
-          {
             "type": "device",
-            "name": "device",
             "filter": "driver_id=switch_2gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_power_changed",
-        "title": {
-          "en": "Power changed",
-          "fr": "Puissance changée",
-          "nl": "Vermogen gewijzigd",
-          "de": "Leistung geändert"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_2gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_gang1_scene",
-        "title": {
-          "en": "Gang 1 scene triggered"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_2gang"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action"
-            },
-            "example": {
-              "en": "on"
-            }
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_gang2_scene",
-        "title": {
-          "en": "Gang 2 scene triggered"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_2gang"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action"
-            },
-            "example": {
-              "en": "on"
-            }
           }
         ]
       },
@@ -19042,6 +19213,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ]
@@ -19059,6 +19235,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
@@ -19074,6 +19255,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ]
@@ -19091,6 +19277,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
@@ -19107,6 +19298,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
@@ -19122,6 +19318,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ]
@@ -19145,6 +19346,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
@@ -19160,6 +19366,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ]
@@ -19177,6 +19388,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
@@ -19192,6 +19408,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ]
@@ -19209,6 +19430,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
@@ -19225,129 +19451,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_turned_on",
-        "title": {
-          "en": "Turned on",
-          "fr": "Allumé",
-          "nl": "Aangezet",
-          "de": "Eingeschaltet"
-        },
-        "args": [
+          },
           {
-            "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_turned_off",
-        "title": {
-          "en": "Turned off",
-          "fr": "Éteint",
-          "nl": "Uitgezet",
-          "de": "Ausgeschaltet"
-        },
-        "args": [
-          {
             "type": "device",
-            "name": "device",
             "filter": "driver_id=switch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_power_changed",
-        "title": {
-          "en": "Power changed",
-          "fr": "Puissance changée",
-          "nl": "Vermogen gewijzigd",
-          "de": "Leistung geändert"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_gang1_scene",
-        "title": {
-          "en": "Gang 1 scene triggered"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_3gang"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action"
-            },
-            "example": {
-              "en": "on"
-            }
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_gang2_scene",
-        "title": {
-          "en": "Gang 2 scene triggered"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_3gang"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action"
-            },
-            "example": {
-              "en": "on"
-            }
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_gang3_scene",
-        "title": {
-          "en": "Gang 3 scene triggered"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_3gang"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action"
-            },
-            "example": {
-              "en": "on"
-            }
           }
         ]
       },
@@ -19363,6 +19471,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -19380,6 +19493,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -19395,6 +19513,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -19412,6 +19535,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -19427,6 +19555,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -19444,6 +19577,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -19459,6 +19597,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -19476,6 +19619,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -19491,6 +19639,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -19508,6 +19661,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -19523,6 +19681,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -19540,6 +19703,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -19555,6 +19723,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -19572,6 +19745,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -19587,6 +19765,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -19604,378 +19787,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang1_single",
-        "title": {
-          "en": "Gang 1 single press - physical",
-          "fr": "Gang 1 appui simple - physique"
-        },
-        "args": [
+          },
           {
-            "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang1_double",
-        "title": {
-          "en": "Gang 1 double press - physical",
-          "fr": "Gang 1 double appui - physique"
-        },
-        "args": [
-          {
             "type": "device",
-            "name": "device",
             "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang1_triple",
-        "title": {
-          "en": "Gang 1 triple press - physical",
-          "fr": "Gang 1 triple appui - physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang1_long_press",
-        "title": {
-          "en": "Gang 1 long press - physical",
-          "fr": "Gang 1 appui long - physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang2_single",
-        "title": {
-          "en": "Gang 2 single press - physical",
-          "fr": "Gang 2 appui simple - physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang2_double",
-        "title": {
-          "en": "Gang 2 double press - physical",
-          "fr": "Gang 2 double appui - physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang2_triple",
-        "title": {
-          "en": "Gang 2 triple press - physical",
-          "fr": "Gang 2 triple appui - physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang2_long_press",
-        "title": {
-          "en": "Gang 2 long press - physical",
-          "fr": "Gang 2 appui long - physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang3_single",
-        "title": {
-          "en": "Gang 3 single press - physical",
-          "fr": "Gang 3 appui simple - physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang3_double",
-        "title": {
-          "en": "Gang 3 double press - physical",
-          "fr": "Gang 3 double appui - physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang3_triple",
-        "title": {
-          "en": "Gang 3 triple press - physical",
-          "fr": "Gang 3 triple appui - physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang3_long_press",
-        "title": {
-          "en": "Gang 3 long press - physical",
-          "fr": "Gang 3 appui long - physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang4_single",
-        "title": {
-          "en": "Gang 4 single press - physical",
-          "fr": "Gang 4 appui simple - physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang4_double",
-        "title": {
-          "en": "Gang 4 double press - physical",
-          "fr": "Gang 4 double appui - physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang4_triple",
-        "title": {
-          "en": "Gang 4 triple press - physical",
-          "fr": "Gang 4 triple appui - physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_physical_gang4_long_press",
-        "title": {
-          "en": "Gang 4 long press - physical",
-          "fr": "Gang 4 appui long - physique"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_turned_on",
-        "title": {
-          "en": "Turned on",
-          "fr": "Allumé",
-          "nl": "Aangezet",
-          "de": "Eingeschaltet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_turned_off",
-        "title": {
-          "en": "Turned off",
-          "fr": "Éteint",
-          "nl": "Uitgezet",
-          "de": "Ausgeschaltet"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_power_changed",
-        "title": {
-          "en": "Power changed",
-          "fr": "Puissance changée",
-          "nl": "Vermogen gewijzigd",
-          "de": "Leistung geändert"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_gang1_scene",
-        "title": {
-          "en": "Gang 1 scene triggered"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action"
-            },
-            "example": {
-              "en": "on"
-            }
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_gang2_scene",
-        "title": {
-          "en": "Gang 2 scene triggered"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action"
-            },
-            "example": {
-              "en": "on"
-            }
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_gang3_scene",
-        "title": {
-          "en": "Gang 3 scene triggered"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action"
-            },
-            "example": {
-              "en": "on"
-            }
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_gang4_scene",
-        "title": {
-          "en": "Gang 4 scene triggered"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ],
-        "tokens": [
-          {
-            "name": "action",
-            "type": "string",
-            "title": {
-              "en": "Action"
-            },
-            "example": {
-              "en": "on"
-            }
           }
         ]
       },
@@ -25232,146 +25048,6 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wall_remote_1_gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_2_gang_button_2gang_button_1_pressed",
-        "title": {
-          "fr": "Bouton 1 appuyé",
-          "en": "Button 1 pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_2_gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_2_gang_button_2gang_button_1_double",
-        "title": {
-          "fr": "Bouton 1 double-appui",
-          "en": "Button 1 double-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_2_gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_2_gang_button_2gang_button_1_long",
-        "title": {
-          "fr": "Bouton 1 appui long",
-          "en": "Button 1 long-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_2_gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_2_gang_button_2gang_button_1_triple",
-        "title": {
-          "fr": "Bouton 1 triple-appui",
-          "en": "Button 1 triple-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_2_gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_2_gang_button_2gang_button_1_release",
-        "title": {
-          "fr": "Bouton 1 relâché",
-          "en": "Button 1 released"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_2_gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_2_gang_button_2gang_button_2_pressed",
-        "title": {
-          "fr": "Bouton 2 appuyé",
-          "en": "Button 2 pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_2_gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_2_gang_button_2gang_button_2_double",
-        "title": {
-          "fr": "Bouton 2 double-appui",
-          "en": "Button 2 double-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_2_gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_2_gang_button_2gang_button_2_long",
-        "title": {
-          "fr": "Bouton 2 appui long",
-          "en": "Button 2 long-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_2_gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_2_gang_button_2gang_button_2_triple",
-        "title": {
-          "fr": "Bouton 2 triple-appui",
-          "en": "Button 2 triple-pressed"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_2_gang"
-          }
-        ]
-      },
-      {
-        "id": "wall_remote_2_gang_button_2gang_button_2_release",
-        "title": {
-          "fr": "Bouton 2 relâché",
-          "en": "Button 2 released"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=wall_remote_2_gang"
           }
         ]
       },
@@ -31212,6 +30888,12 @@
       {
         "id": "presence_sensor_radar_is_present",
         "title": {
+          "en": "Someone is present",
+          "nl": "Iemand is aanwezig",
+          "fr": "Quelqu'un est présent",
+          "de": "Jemand ist anwesend"
+        },
+        "titleFormatted": {
           "en": "Someone !{{is|is not}} present",
           "nl": "Iemand !{{is|is niet}} aanwezig",
           "fr": "Quelqu'un !{{est|n'est pas}} présent",
@@ -31559,8 +31241,14 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_is_present",
+        "id": "sensor_contact_presence_is_present",
         "title": {
+          "en": "Someone is present",
+          "nl": "Iemand is aanwezig",
+          "fr": "Quelqu'un est présent",
+          "de": "Jemand ist anwesend"
+        },
+        "titleFormatted": {
           "en": "Someone !{{is|is not}} present",
           "nl": "Iemand !{{is|is niet}} aanwezig",
           "fr": "Quelqu'un !{{est|n'est pas}} présent",
@@ -31575,7 +31263,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_illuminance_above",
+        "id": "sensor_contact_presence_illuminance_above",
         "title": {
           "en": "Illuminance !{{is|is not}} above",
           "nl": "Lichtsterkte !{{is|is niet}} boven",
@@ -31601,7 +31289,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_distance_within",
+        "id": "sensor_contact_presence_distance_within",
         "title": {
           "en": "Target !{{is|is not}} within distance",
           "nl": "Doel !{{is|is niet}} binnen afstand",
@@ -31627,7 +31315,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_motion_active",
+        "id": "sensor_contact_presence_motion_active",
         "title": {
           "en": "Motion !{{is|is not}} detected",
           "fr": "Mouvement !{{est|n'est pas}} détecté",
@@ -31713,6 +31401,186 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=sensor_contact_water"
+          }
+        ]
+      },
+      {
+        "id": "sensor_illuminance_presence_is_present",
+        "title": {
+          "en": "Someone is present",
+          "nl": "Iemand is aanwezig",
+          "fr": "Quelqu'un est présent",
+          "de": "Jemand ist anwesend"
+        },
+        "titleFormatted": {
+          "en": "Someone !{{is|is not}} present",
+          "nl": "Iemand !{{is|is niet}} aanwezig",
+          "fr": "Quelqu'un !{{est|n'est pas}} présent",
+          "de": "Jemand !{{ist|ist nicht}} anwesend"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_illuminance_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_illuminance_presence_illuminance_above",
+        "title": {
+          "en": "Illuminance !{{is|is not}} above",
+          "nl": "Lichtsterkte !{{is|is niet}} boven",
+          "fr": "Luminosité !{{est|n'est pas}} au-dessus de",
+          "de": "Helligkeit !{{ist|ist nicht}} über"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_illuminance_presence"
+          },
+          {
+            "name": "lux",
+            "type": "number",
+            "min": 0,
+            "max": 10000,
+            "step": 10,
+            "placeholder": {
+              "en": "100"
+            }
+          }
+        ]
+      },
+      {
+        "id": "sensor_illuminance_presence_distance_within",
+        "title": {
+          "en": "Target !{{is|is not}} within distance",
+          "nl": "Doel !{{is|is niet}} binnen afstand",
+          "fr": "Cible !{{est|n'est pas}} dans la distance",
+          "de": "Ziel !{{ist|ist nicht}} innerhalb der Entfernung"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_illuminance_presence"
+          },
+          {
+            "name": "distance",
+            "type": "number",
+            "min": 0,
+            "max": 800,
+            "step": 10,
+            "placeholder": {
+              "en": "300"
+            }
+          }
+        ]
+      },
+      {
+        "id": "sensor_illuminance_presence_motion_active",
+        "title": {
+          "en": "Motion !{{is|is not}} detected",
+          "fr": "Mouvement !{{est|n'est pas}} détecté",
+          "nl": "Beweging !{{is|is niet}} gedetecteerd",
+          "de": "Bewegung !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_illuminance_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_motion_presence_is_present",
+        "title": {
+          "en": "Someone is present",
+          "nl": "Iemand is aanwezig",
+          "fr": "Quelqu'un est présent",
+          "de": "Jemand ist anwesend"
+        },
+        "titleFormatted": {
+          "en": "Someone !{{is|is not}} present",
+          "nl": "Iemand !{{is|is niet}} aanwezig",
+          "fr": "Quelqu'un !{{est|n'est pas}} présent",
+          "de": "Jemand !{{ist|ist nicht}} anwesend"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_motion_presence"
+          }
+        ]
+      },
+      {
+        "id": "sensor_motion_presence_illuminance_above",
+        "title": {
+          "en": "Illuminance !{{is|is not}} above",
+          "nl": "Lichtsterkte !{{is|is niet}} boven",
+          "fr": "Luminosité !{{est|n'est pas}} au-dessus de",
+          "de": "Helligkeit !{{ist|ist nicht}} über"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_motion_presence"
+          },
+          {
+            "name": "lux",
+            "type": "number",
+            "min": 0,
+            "max": 10000,
+            "step": 10,
+            "placeholder": {
+              "en": "100"
+            }
+          }
+        ]
+      },
+      {
+        "id": "sensor_motion_presence_distance_within",
+        "title": {
+          "en": "Target !{{is|is not}} within distance",
+          "nl": "Doel !{{is|is niet}} binnen afstand",
+          "fr": "Cible !{{est|n'est pas}} dans la distance",
+          "de": "Ziel !{{ist|ist nicht}} innerhalb der Entfernung"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_motion_presence"
+          },
+          {
+            "name": "distance",
+            "type": "number",
+            "min": 0,
+            "max": 800,
+            "step": 10,
+            "placeholder": {
+              "en": "300"
+            }
+          }
+        ]
+      },
+      {
+        "id": "sensor_motion_presence_motion_active",
+        "title": {
+          "en": "Motion !{{is|is not}} detected",
+          "fr": "Mouvement !{{est|n'est pas}} détecté",
+          "nl": "Beweging !{{is|is niet}} gedetecteerd",
+          "de": "Bewegung !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sensor_motion_presence"
           }
         ]
       },
@@ -31847,7 +31715,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_is_present",
+        "id": "sensor_presence_radar_is_present",
         "title": {
           "en": "Someone !{{is|is not}} present",
           "nl": "Iemand !{{is|is niet}} aanwezig",
@@ -31863,7 +31731,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_illuminance_above",
+        "id": "sensor_presence_radar_illuminance_above",
         "title": {
           "en": "Illuminance !{{is|is not}} above",
           "nl": "Lichtsterkte !{{is|is niet}} boven",
@@ -31889,7 +31757,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_distance_within",
+        "id": "sensor_presence_radar_distance_within",
         "title": {
           "en": "Target !{{is|is not}} within distance",
           "nl": "Doel !{{is|is niet}} binnen afstand",
@@ -31915,7 +31783,7 @@
         ]
       },
       {
-        "id": "presence_sensor_radar_motion_active",
+        "id": "sensor_presence_radar_motion_active",
         "title": {
           "en": "Motion !{{is|is not}} detected",
           "fr": "Mouvement !{{est|n'est pas}} détecté",
@@ -32339,6 +32207,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_1gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_1gang"
           }
         ]
       },
@@ -32354,6 +32227,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_2gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ]
@@ -32371,21 +32249,10 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_is_on",
-        "title": {
-          "en": "Is !{{on|off}}",
-          "fr": "Est !{{allumé|éteint}}",
-          "nl": "Is !{{aan|uit}}",
-          "de": "Ist !{{ein|aus}}"
-        },
-        "args": [
+          },
           {
-            "type": "device",
             "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ]
@@ -32403,6 +32270,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
@@ -32418,6 +32290,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ]
@@ -32435,21 +32312,10 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_is_on",
-        "title": {
-          "en": "Is !{{on|off}}",
-          "fr": "Est !{{allumé|éteint}}",
-          "nl": "Is !{{aan|uit}}",
-          "de": "Ist !{{ein|aus}}"
-        },
-        "args": [
+          },
           {
-            "type": "device",
             "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ]
@@ -32467,6 +32333,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -32482,6 +32353,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -32499,6 +32375,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -32515,21 +32396,10 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_is_on",
-        "title": {
-          "en": "Is !{{on|off}}",
-          "fr": "Est !{{allumé|éteint}}",
-          "nl": "Is !{{aan|uit}}",
-          "de": "Ist !{{ein|aus}}"
-        },
-        "args": [
+          },
           {
-            "type": "device",
             "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -33976,6 +33846,26 @@
     ],
     "actions": [
       {
+        "id": "curtain_motor_stop",
+        "title": {
+          "en": "Stop moving",
+          "fr": "Arrêter le mouvement",
+          "nl": "Stop beweging",
+          "de": "Bewegung stoppen"
+        },
+        "hint": {
+          "en": "Stops the curtain motor at its current position",
+          "fr": "Arrête le moteur du rideau à sa position actuelle"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=curtain_motor"
+          }
+        ]
+      },
+      {
         "id": "ota_check_updates",
         "title": {
           "en": "Check Device OTA Firmware Updates",
@@ -35312,6 +35202,12 @@
           "nl": "Helderheid instellen",
           "de": "Helligkeit einstellen"
         },
+        "titleFormatted": {
+          "en": "Set brightness to [[brightness]]%",
+          "fr": "Régler la luminosité à [[brightness]]%",
+          "nl": "Helderheid instellen op [[brightness]]%",
+          "de": "Helligkeit einstellen auf [[brightness]]%"
+        },
         "args": [
           {
             "type": "device",
@@ -35447,6 +35343,10 @@
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
         },
+        "titleFormatted": {
+          "en": "Set brightness to [[brightness]]%",
+          "fr": "Régler la luminosité à [[brightness]]%"
+        },
         "args": [
           {
             "type": "device",
@@ -35475,6 +35375,12 @@
           "fr": "Régler luminosité",
           "nl": "Helderheid instellen",
           "de": "Helligkeit einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set brightness to [[brightness]]%",
+          "fr": "Régler la luminosité à [[brightness]]%",
+          "nl": "Helderheid instellen op [[brightness]]%",
+          "de": "Helligkeit einstellen auf [[brightness]]%"
         },
         "args": [
           {
@@ -35520,6 +35426,10 @@
         "title": {
           "en": "Set position to...",
           "fr": "Régler la position à..."
+        },
+        "titleFormatted": {
+          "en": "Set position to [[position]]%",
+          "fr": "Régler la position à [[position]]%"
         },
         "args": [
           {
@@ -35576,6 +35486,10 @@
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
         },
+        "titleFormatted": {
+          "en": "Set brightness to [[brightness]]%",
+          "fr": "Régler la luminosité à [[brightness]]%"
+        },
         "args": [
           {
             "type": "device",
@@ -35594,22 +35508,6 @@
               "en": "Brightness",
               "fr": "Luminosité"
             }
-          }
-        ]
-      },
-      {
-        "id": "curtain_motor_stop",
-        "title": {
-          "en": "Stop",
-          "fr": "Arrêter",
-          "nl": "Stoppen",
-          "de": "Stoppen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=curtain_motor"
           }
         ]
       },
@@ -35665,6 +35563,12 @@
           "fr": "Régler position",
           "nl": "Positie instellen",
           "de": "Position einstellen"
+        },
+        "titleFormatted": {
+          "en": "Set position to [[position]]%",
+          "fr": "Régler la position à [[position]]%",
+          "nl": "Positie instellen op [[position]]%",
+          "de": "Position einstellen auf [[position]]%"
         },
         "args": [
           {
@@ -41003,6 +40907,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_1gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_1gang"
           }
         ]
       },
@@ -41019,6 +40928,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_1gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_1gang"
           }
         ]
       },
@@ -41030,34 +40944,6 @@
           "nl": "Wisselen",
           "de": "Umschalten"
         },
-        "hint": {
-          "en": "Toggle the switch state (on→off, off→on)",
-          "fr": "Basculer l'état (on→off, off→on)",
-          "nl": "Wissel de status (aan→uit, uit→aan)",
-          "de": "Status umschalten (ein→aus, aus→ein)"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_1gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_1gang_set_backlight",
-        "title": {
-          "en": "Set LED backlight mode",
-          "fr": "Définir le mode rétroéclairage LED",
-          "nl": "LED achtergrondverlichting instellen",
-          "de": "LED-Hintergrundbeleuchtung einstellen"
-        },
-        "hint": {
-          "en": "Control the switch LED indicator (DP15)",
-          "fr": "Contrôle l'indicateur LED (DP15)",
-          "nl": "Beheer de LED indicator (DP15)",
-          "de": "Steuert die LED-Anzeige (DP15)"
-        },
         "args": [
           {
             "type": "device",
@@ -41065,328 +40951,9 @@
             "filter": "driver_id=switch_1gang"
           },
           {
-            "type": "dropdown",
-            "name": "mode",
-            "title": {
-              "en": "Mode"
-            },
-            "values": [
-              {
-                "id": "off",
-                "label": {
-                  "en": "Off",
-                  "fr": "Éteint",
-                  "nl": "Uit",
-                  "de": "Aus"
-                }
-              },
-              {
-                "id": "normal",
-                "label": {
-                  "en": "Normal (LED when ON)",
-                  "fr": "Normal (LED quand allumé)",
-                  "nl": "Normaal (LED bij AAN)",
-                  "de": "Normal (LED bei EIN)"
-                }
-              },
-              {
-                "id": "inverted",
-                "label": {
-                  "en": "Inverted (LED when OFF)",
-                  "fr": "Inversé (LED quand éteint)",
-                  "nl": "Omgekeerd (LED bij UIT)",
-                  "de": "Invertiert (LED bei AUS)"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "switch_1gang_set_backlight_color",
-        "title": {
-          "en": "Set LED color",
-          "fr": "Définir la couleur LED",
-          "nl": "LED kleur instellen",
-          "de": "LED-Farbe einstellen"
-        },
-        "hint": {
-          "en": "Set LED color for ON or OFF state (DP103/104, requires colored backlight)",
-          "fr": "Définir couleur LED pour état ON/OFF (DP103/104)",
-          "nl": "Stel LED kleur in voor AAN/UIT (DP103/104)",
-          "de": "LED-Farbe für EIN/AUS setzen (DP103/104)"
-        },
-        "args": [
-          {
-            "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_1gang"
-          },
-          {
-            "type": "dropdown",
-            "name": "state",
-            "title": {
-              "en": "State"
-            },
-            "values": [
-              {
-                "id": "on",
-                "label": {
-                  "en": "ON state",
-                  "fr": "État ON",
-                  "nl": "AAN staat",
-                  "de": "EIN-Zustand"
-                }
-              },
-              {
-                "id": "off",
-                "label": {
-                  "en": "OFF state",
-                  "fr": "État OFF",
-                  "nl": "UIT staat",
-                  "de": "AUS-Zustand"
-                }
-              }
-            ]
-          },
-          {
-            "type": "dropdown",
-            "name": "color",
-            "title": {
-              "en": "Color"
-            },
-            "values": [
-              {
-                "id": "red",
-                "label": {
-                  "en": "Red",
-                  "fr": "Rouge",
-                  "nl": "Rood",
-                  "de": "Rot"
-                }
-              },
-              {
-                "id": "blue",
-                "label": {
-                  "en": "Blue",
-                  "fr": "Bleu",
-                  "nl": "Blauw",
-                  "de": "Blau"
-                }
-              },
-              {
-                "id": "green",
-                "label": {
-                  "en": "Green",
-                  "fr": "Vert",
-                  "nl": "Groen",
-                  "de": "Grün"
-                }
-              },
-              {
-                "id": "white",
-                "label": {
-                  "en": "White",
-                  "fr": "Blanc",
-                  "nl": "Wit",
-                  "de": "Weiß"
-                }
-              },
-              {
-                "id": "yellow",
-                "label": {
-                  "en": "Yellow",
-                  "fr": "Jaune",
-                  "nl": "Geel",
-                  "de": "Gelb"
-                }
-              },
-              {
-                "id": "magenta",
-                "label": {
-                  "en": "Magenta",
-                  "fr": "Magenta",
-                  "nl": "Magenta",
-                  "de": "Magenta"
-                }
-              },
-              {
-                "id": "cyan",
-                "label": {
-                  "en": "Cyan",
-                  "fr": "Cyan",
-                  "nl": "Cyaan",
-                  "de": "Cyan"
-                }
-              },
-              {
-                "id": "warm_white",
-                "label": {
-                  "en": "Warm White",
-                  "fr": "Blanc Chaud",
-                  "nl": "Warm Wit",
-                  "de": "Warmweiß"
-                }
-              },
-              {
-                "id": "warm_yellow",
-                "label": {
-                  "en": "Warm Yellow",
-                  "fr": "Jaune Chaud",
-                  "nl": "Warm Geel",
-                  "de": "Warmgelb"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "switch_1gang_set_backlight_brightness",
-        "title": {
-          "en": "Set LED brightness",
-          "fr": "Définir luminosité LED",
-          "nl": "LED helderheid instellen",
-          "de": "LED-Helligkeit einstellen"
-        },
-        "hint": {
-          "en": "Set LED backlight brightness 0-100% (DP102)",
-          "fr": "Luminosité rétroéclairage 0-100% (DP102)",
-          "nl": "LED helderheid 0-100% (DP102)",
-          "de": "LED-Helligkeit 0-100% (DP102)"
-        },
-        "args": [
-          {
             "type": "device",
-            "name": "device",
             "filter": "driver_id=switch_1gang"
-          },
-          {
-            "type": "range",
-            "name": "brightness",
-            "min": 0,
-            "max": 100,
-            "step": 5,
-            "label": "%",
-            "labelDecimals": 0
-          }
-        ]
-      },
-      {
-        "id": "switch_1gang_set_countdown",
-        "title": {
-          "en": "Set countdown timer",
-          "fr": "Définir minuterie",
-          "nl": "Afteltimer instellen",
-          "de": "Countdown-Timer setzen"
-        },
-        "hint": {
-          "en": "Auto turn off after countdown (DP7, max 86400s = 24h)",
-          "fr": "Extinction auto après compte à rebours (DP7, max 86400s)",
-          "nl": "Auto uit na aftellen (DP7, max 86400s)",
-          "de": "Auto-Aus nach Countdown (DP7, max 86400s)"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_1gang"
-          },
-          {
-            "type": "number",
-            "name": "seconds",
-            "min": 0,
-            "max": 86400,
-            "step": 1,
-            "placeholder": {
-              "en": "60"
-            }
-          }
-        ]
-      },
-      {
-        "id": "switch_1gang_set_child_lock",
-        "title": {
-          "en": "Set child lock",
-          "fr": "Définir verrouillage enfant",
-          "nl": "Kinderslot instellen",
-          "de": "Kindersicherung setzen"
-        },
-        "hint": {
-          "en": "Lock/unlock physical buttons (DP101)",
-          "fr": "Verrouiller/déverrouiller boutons (DP101)",
-          "nl": "Vergrendel/ontgrendel knoppen (DP101)",
-          "de": "Tasten sperren/entsperren (DP101)"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_1gang"
-          },
-          {
-            "type": "dropdown",
-            "name": "locked",
-            "title": {
-              "en": "Lock"
-            },
-            "values": [
-              {
-                "id": "true",
-                "label": {
-                  "en": "Locked",
-                  "fr": "Verrouillé",
-                  "nl": "Vergrendeld",
-                  "de": "Gesperrt"
-                }
-              },
-              {
-                "id": "false",
-                "label": {
-                  "en": "Unlocked",
-                  "fr": "Déverrouillé",
-                  "nl": "Ontgrendeld",
-                  "de": "Entsperrt"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "switch_1gang_set_scene_mode",
-        "title": {
-          "en": "Set scene mode"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_1gang"
-          },
-          {
-            "name": "mode",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "auto",
-                "label": {
-                  "en": "Auto (Normal + flows)"
-                }
-              },
-              {
-                "id": "magic",
-                "label": {
-                  "en": "Magic (Scene only)"
-                }
-              },
-              {
-                "id": "both",
-                "label": {
-                  "en": "Both (Load + scene)"
-                }
-              }
-            ]
           }
         ]
       },
@@ -41402,6 +40969,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_2gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ]
@@ -41419,6 +40991,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_2gang"
           }
         ]
       },
@@ -41434,6 +41011,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_2gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ]
@@ -41451,6 +41033,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_2gang"
           }
         ]
       },
@@ -41462,16 +41049,15 @@
           "nl": "Gang 1 wisselen",
           "de": "Gang 1 umschalten"
         },
-        "hint": {
-          "en": "Toggle the state of gang 1 (on→off, off→on)",
-          "fr": "Basculer l'état du gang 1",
-          "nl": "Wissel de status van gang 1",
-          "de": "Status von Gang 1 umschalten"
-        },
         "args": [
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_2gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_2gang"
           }
         ]
@@ -41489,190 +41075,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_2gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turn_on_all",
-        "title": {
-          "en": "Turn on all gangs",
-          "fr": "Allumer tous les gangs",
-          "nl": "Alle gangs aanzetten",
-          "de": "Alle Gangs einschalten"
-        },
-        "hint": {
-          "en": "Turn on both gang 1 and gang 2",
-          "fr": "Allumer gang 1 et gang 2",
-          "nl": "Gang 1 en gang 2 aanzetten",
-          "de": "Gang 1 und Gang 2 einschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_2gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turn_off_all",
-        "title": {
-          "en": "Turn off all gangs",
-          "fr": "Éteindre tous les gangs",
-          "nl": "Alle gangs uitzetten",
-          "de": "Alle Gangs ausschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_2gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_set_backlight",
-        "title": {
-          "en": "Set LED backlight mode",
-          "fr": "Définir le mode rétroéclairage LED",
-          "nl": "LED achtergrondverlichting instellen",
-          "de": "LED-Hintergrundbeleuchtung einstellen"
-        },
-        "hint": {
-          "en": "Control the switch LED indicator (requires Tuya DP15 support)",
-          "fr": "Contrôle l'indicateur LED (nécessite Tuya DP15)",
-          "nl": "Beheer de schakelaar LED indicator (vereist Tuya DP15)",
-          "de": "Steuert die Schalter-LED-Anzeige (erfordert Tuya DP15)"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_2gang"
           },
           {
-            "type": "dropdown",
-            "name": "mode",
-            "title": {
-              "en": "Mode",
-              "fr": "Mode",
-              "nl": "Modus",
-              "de": "Modus"
-            },
-            "values": [
-              {
-                "id": "off",
-                "label": {
-                  "en": "Off",
-                  "fr": "Éteint",
-                  "nl": "Uit",
-                  "de": "Aus"
-                }
-              },
-              {
-                "id": "normal",
-                "label": {
-                  "en": "Normal (LED when ON)",
-                  "fr": "Normal (LED quand allumé)",
-                  "nl": "Normaal (LED bij AAN)",
-                  "de": "Normal (LED bei EIN)"
-                }
-              },
-              {
-                "id": "inverted",
-                "label": {
-                  "en": "Inverted (LED when OFF)",
-                  "fr": "Inversé (LED quand éteint)",
-                  "nl": "Omgekeerd (LED bij UIT)",
-                  "de": "Invertiert (LED bei AUS)"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turn_on",
-        "title": {
-          "en": "Turn on",
-          "fr": "Allumer",
-          "nl": "Aanzetten",
-          "de": "Einschalten"
-        },
-        "args": [
-          {
-            "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_2gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_turn_off",
-        "title": {
-          "en": "Turn off",
-          "fr": "Éteindre",
-          "nl": "Uitzetten",
-          "de": "Ausschalten"
-        },
-        "args": [
-          {
             "type": "device",
-            "name": "device",
             "filter": "driver_id=switch_2gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_toggle",
-        "title": {
-          "en": "Toggle",
-          "fr": "Basculer",
-          "nl": "Wisselen",
-          "de": "Umschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_2gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_2gang_set_scene_mode",
-        "title": {
-          "en": "Set scene mode"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_2gang"
-          },
-          {
-            "name": "mode",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "auto",
-                "label": {
-                  "en": "Auto (Normal + flows)"
-                }
-              },
-              {
-                "id": "magic",
-                "label": {
-                  "en": "Magic (Scene only)"
-                }
-              },
-              {
-                "id": "both",
-                "label": {
-                  "en": "Both (Load + scene)"
-                }
-              }
-            ]
           }
         ]
       },
@@ -41688,6 +41095,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ]
@@ -41705,6 +41117,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
@@ -41720,6 +41137,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ]
@@ -41737,6 +41159,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
@@ -41752,6 +41179,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ]
@@ -41769,6 +41201,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_3gang"
           }
         ]
       },
@@ -41776,12 +41213,19 @@
         "id": "switch_3gang_toggle_gang1",
         "title": {
           "en": "Toggle gang 1",
-          "nl": "Gang 1 wisselen"
+          "fr": "Basculer gang 1",
+          "nl": "Gang 1 wisselen",
+          "de": "Gang 1 umschalten"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ]
@@ -41790,12 +41234,19 @@
         "id": "switch_3gang_toggle_gang2",
         "title": {
           "en": "Toggle gang 2",
-          "nl": "Gang 2 wisselen"
+          "fr": "Basculer gang 2",
+          "nl": "Gang 2 wisselen",
+          "de": "Gang 2 umschalten"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_3gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_3gang"
           }
         ]
@@ -41804,52 +41255,9 @@
         "id": "switch_3gang_toggle_gang3",
         "title": {
           "en": "Toggle gang 3",
-          "nl": "Gang 3 wisselen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_turn_on_all",
-        "title": {
-          "en": "Turn on all gangs",
-          "nl": "Alle gangs aanzetten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_turn_off_all",
-        "title": {
-          "en": "Turn off all gangs",
-          "nl": "Alle gangs uitzetten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_set_backlight",
-        "title": {
-          "en": "Set LED backlight mode",
-          "fr": "Mode rétroéclairage LED"
-        },
-        "hint": {
-          "en": "Control the switch LED indicator (requires Tuya DP15 support)"
+          "fr": "Basculer gang 3",
+          "nl": "Gang 3 wisselen",
+          "de": "Gang 3 umschalten"
         },
         "args": [
           {
@@ -41858,202 +41266,9 @@
             "filter": "driver_id=switch_3gang"
           },
           {
-            "type": "dropdown",
-            "name": "mode",
-            "title": {
-              "en": "Mode"
-            },
-            "values": [
-              {
-                "id": "off",
-                "label": {
-                  "en": "Off"
-                }
-              },
-              {
-                "id": "normal",
-                "label": {
-                  "en": "Normal (LED when ON)"
-                }
-              },
-              {
-                "id": "inverted",
-                "label": {
-                  "en": "Inverted (LED when OFF)"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_set_backlight_color",
-        "title": {
-          "en": "Set LED color",
-          "fr": "Couleur LED"
-        },
-        "args": [
-          {
-            "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "type": "dropdown",
-            "name": "state",
-            "title": {
-              "en": "State"
-            },
-            "values": [
-              {
-                "id": "on",
-                "label": {
-                  "en": "When ON"
-                }
-              },
-              {
-                "id": "off",
-                "label": {
-                  "en": "When OFF"
-                }
-              }
-            ]
-          },
-          {
-            "type": "dropdown",
-            "name": "color",
-            "title": {
-              "en": "Color"
-            },
-            "values": [
-              {
-                "id": "blue",
-                "label": {
-                  "en": "Blue"
-                }
-              },
-              {
-                "id": "red",
-                "label": {
-                  "en": "Red"
-                }
-              },
-              {
-                "id": "green",
-                "label": {
-                  "en": "Green"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_set_backlight_brightness",
-        "title": {
-          "en": "Set LED brightness",
-          "fr": "Luminosité LED"
-        },
-        "args": [
-          {
             "type": "device",
-            "name": "device",
             "filter": "driver_id=switch_3gang"
-          },
-          {
-            "type": "range",
-            "name": "brightness",
-            "min": 0,
-            "max": 100,
-            "step": 10,
-            "title": {
-              "en": "Brightness %"
-            }
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_turn_on",
-        "title": {
-          "en": "Turn on",
-          "fr": "Allumer",
-          "nl": "Aanzetten",
-          "de": "Einschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_turn_off",
-        "title": {
-          "en": "Turn off",
-          "fr": "Éteindre",
-          "nl": "Uitzetten",
-          "de": "Ausschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_toggle",
-        "title": {
-          "en": "Toggle",
-          "fr": "Basculer",
-          "nl": "Wisselen",
-          "de": "Umschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_3gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_3gang_set_scene_mode",
-        "title": {
-          "en": "Set scene mode"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_3gang"
-          },
-          {
-            "name": "mode",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "auto",
-                "label": {
-                  "en": "Auto (Normal + flows)"
-                }
-              },
-              {
-                "id": "magic",
-                "label": {
-                  "en": "Magic (Scene only)"
-                }
-              },
-              {
-                "id": "both",
-                "label": {
-                  "en": "Both (Load + scene)"
-                }
-              }
-            ]
           }
         ]
       },
@@ -42069,6 +41284,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -42086,6 +41306,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -42101,6 +41326,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -42118,6 +41348,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -42133,6 +41368,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -42150,6 +41390,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -42165,6 +41410,11 @@
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -42182,6 +41432,11 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=switch_4gang"
           }
         ]
       },
@@ -42189,12 +41444,19 @@
         "id": "switch_4gang_toggle_gang1",
         "title": {
           "en": "Toggle gang 1",
-          "nl": "Gang 1 wisselen"
+          "fr": "Basculer gang 1",
+          "nl": "Gang 1 wisselen",
+          "de": "Gang 1 umschalten"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -42203,12 +41465,19 @@
         "id": "switch_4gang_toggle_gang2",
         "title": {
           "en": "Toggle gang 2",
-          "nl": "Gang 2 wisselen"
+          "fr": "Basculer gang 2",
+          "nl": "Gang 2 wisselen",
+          "de": "Gang 2 umschalten"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -42217,12 +41486,19 @@
         "id": "switch_4gang_toggle_gang3",
         "title": {
           "en": "Toggle gang 3",
-          "nl": "Gang 3 wisselen"
+          "fr": "Basculer gang 3",
+          "nl": "Gang 3 wisselen",
+          "de": "Gang 3 umschalten"
         },
         "args": [
           {
             "type": "device",
             "name": "device",
+            "filter": "driver_id=switch_4gang"
+          },
+          {
+            "name": "device",
+            "type": "device",
             "filter": "driver_id=switch_4gang"
           }
         ]
@@ -42231,52 +41507,9 @@
         "id": "switch_4gang_toggle_gang4",
         "title": {
           "en": "Toggle gang 4",
-          "nl": "Gang 4 wisselen"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_turn_on_all",
-        "title": {
-          "en": "Turn on all gangs",
-          "nl": "Alle gangs aanzetten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_turn_off_all",
-        "title": {
-          "en": "Turn off all gangs",
-          "nl": "Alle gangs uitzetten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_set_backlight",
-        "title": {
-          "en": "Set LED backlight mode",
-          "fr": "Mode rétroéclairage LED"
-        },
-        "hint": {
-          "en": "Control the switch LED indicator (requires Tuya DP15 support)"
+          "fr": "Basculer gang 4",
+          "nl": "Gang 4 wisselen",
+          "de": "Gang 4 umschalten"
         },
         "args": [
           {
@@ -42285,203 +41518,9 @@
             "filter": "driver_id=switch_4gang"
           },
           {
-            "type": "dropdown",
-            "name": "mode",
-            "title": {
-              "en": "Mode"
-            },
-            "values": [
-              {
-                "id": "off",
-                "label": {
-                  "en": "Off"
-                }
-              },
-              {
-                "id": "normal",
-                "label": {
-                  "en": "Normal (LED when ON)"
-                }
-              },
-              {
-                "id": "inverted",
-                "label": {
-                  "en": "Inverted (LED when OFF)"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_set_backlight_color",
-        "title": {
-          "en": "Set LED color",
-          "fr": "Couleur LED"
-        },
-        "args": [
-          {
-            "type": "device",
             "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "type": "dropdown",
-            "name": "state",
-            "title": {
-              "en": "State"
-            },
-            "values": [
-              {
-                "id": "on",
-                "label": {
-                  "en": "When ON"
-                }
-              },
-              {
-                "id": "off",
-                "label": {
-                  "en": "When OFF"
-                }
-              }
-            ]
-          },
-          {
-            "type": "dropdown",
-            "name": "color",
-            "title": {
-              "en": "Color"
-            },
-            "values": [
-              {
-                "id": "blue",
-                "label": {
-                  "en": "Blue"
-                }
-              },
-              {
-                "id": "red",
-                "label": {
-                  "en": "Red"
-                }
-              },
-              {
-                "id": "green",
-                "label": {
-                  "en": "Green"
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_set_backlight_brightness",
-        "title": {
-          "en": "Set LED brightness",
-          "fr": "Luminosité LED"
-        },
-        "args": [
-          {
             "type": "device",
-            "name": "device",
             "filter": "driver_id=switch_4gang"
-          },
-          {
-            "type": "range",
-            "name": "brightness",
-            "min": 0,
-            "max": 100,
-            "step": 10,
-            "title": {
-              "en": "Brightness %"
-            }
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_turn_on",
-        "title": {
-          "en": "Turn on",
-          "fr": "Allumer",
-          "nl": "Aanzetten",
-          "de": "Einschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_turn_off",
-        "title": {
-          "en": "Turn off",
-          "fr": "Éteindre",
-          "nl": "Uitzetten",
-          "de": "Ausschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_toggle",
-        "title": {
-          "en": "Toggle",
-          "fr": "Basculer",
-          "nl": "Wisselen",
-          "de": "Umschalten"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          }
-        ]
-      },
-      {
-        "id": "switch_4gang_set_scene_mode",
-        "title": {
-          "en": "Set scene mode",
-          "fr": "Definir le mode scene"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=switch_4gang"
-          },
-          {
-            "name": "mode",
-            "type": "dropdown",
-            "values": [
-              {
-                "id": "auto",
-                "label": {
-                  "en": "Auto (Normal + flows)"
-                }
-              },
-              {
-                "id": "magic",
-                "label": {
-                  "en": "Magic (Scene only)"
-                }
-              },
-              {
-                "id": "both",
-                "label": {
-                  "en": "Both (Load + scene)"
-                }
-              }
-            ]
           }
         ]
       },
@@ -48594,8 +47633,7 @@
           "RB 165",
           "RB 175 W",
           "ZBT-DimmableLight",
-          "TS0052",
-          "TS1101"
+          "TS0052"
         ],
         "endpoints": {
           "1": {
@@ -53164,18 +52202,9 @@
         ],
         "productId": [
           "TS0042",
-          "TS0002",
-          "TS0012",
-          "TS0003",
-          "TS011F",
-          "TS0013",
-          "TS0111",
-          "TS0001",
-          "TS0011",
           "TS0043",
-          "TS0121",
-          "TSO121",
-          "TS000F"
+          "TS0044",
+          "TS0041"
         ],
         "endpoints": {
           "1": {
@@ -64025,10 +63054,10 @@
       "capabilities": [
         "onoff",
         "dim",
-        "onoff.channel2",
-        "dim.channel2",
-        "onoff.channel3",
-        "dim.channel3"
+        "onoff.gang2",
+        "dim.gang2",
+        "onoff.gang3",
+        "dim.gang3"
       ],
       "platforms": [
         "local"
@@ -64076,25 +63105,25 @@
             "fr": "Luminosité 1"
           }
         },
-        "onoff.channel2": {
+        "onoff.gang2": {
           "title": {
             "en": "Channel 2",
             "fr": "Canal 2"
           }
         },
-        "dim.channel2": {
+        "dim.gang2": {
           "title": {
             "en": "Brightness 2",
             "fr": "Luminosité 2"
           }
         },
-        "onoff.channel3": {
+        "onoff.gang3": {
           "title": {
             "en": "Channel 3",
             "fr": "Canal 3"
           }
         },
-        "dim.channel3": {
+        "dim.gang3": {
           "title": {
             "en": "Brightness 3",
             "fr": "Luminosité 3"
@@ -91409,18 +90438,12 @@
           "_tze284_oitavov2",
           "_TZE284_oitavov2",
           "_TZE284_OITAVOV2",
-          "_tze284_o9ofysmo",
-          "_TZE284_o9ofysmo",
-          "_TZE284_O9OFYSMO",
           "_tze284_sgabhwa6",
           "_TZE284_sgabhwa6",
           "_TZE284_SGABHWA6",
           "_tze284_hdml1aav",
           "_TZE284_hdml1aav",
           "_TZE284_HDML1AAV",
-          "_tze284_xc3vwx5a",
-          "_TZE284_xc3vwx5a",
-          "_TZE284_XC3VWX5A",
           "_tze200_fqytfmyk",
           "_TZE200_fqytfmyk",
           "_TZE200_FQYTFMYK",
@@ -103325,9 +102348,9 @@
       "name": {
         "en": "2 Gang Wall Remote",
         "fr": "Télécommande murale 2 gangs",
-        "nl": "2-vaks wandafstandsbediening",
+        "nl": "2-gangs wandafstandsbediening",
         "de": "2-fach Wandfernbedienung",
-        "es": "Mando a distancia de pared de 2 grupos"
+        "es": "Mando a distancia de pared 2 gangs"
       },
       "class": "remote",
       "platforms": [
@@ -103342,32 +102365,6 @@
         "measure_battery",
         "alarm_battery"
       ],
-      "capabilitiesOptions": {
-        "button.1": {
-          "title": {
-            "en": "Button 1",
-            "fr": "Bouton 1",
-            "nl": "Knop 1",
-            "de": "Taste 1"
-          }
-        },
-        "button.2": {
-          "title": {
-            "en": "Button 2",
-            "fr": "Bouton 2",
-            "nl": "Knop 2",
-            "de": "Taste 2"
-          }
-        },
-        "measure_battery": {
-          "title": {
-            "en": "Battery",
-            "fr": "Batterie",
-            "nl": "Batterij",
-            "de": "Batterie"
-          }
-        }
-      },
       "images": {
         "large": "drivers/wall_remote_2_gang/assets/images/large.png",
         "small": "drivers/wall_remote_2_gang/assets/images/small.png",
@@ -103380,27 +102377,9 @@
       },
       "zigbee": {
         "manufacturerName": [
-          "_tz3000_owgcnkrh",
-          "_TZ3000_owgcnkrh",
-          "_TZ3000_OWGCNKRH",
-          "_tz3000_oikiyf3b",
-          "_TZ3000_oikiyf3b",
-          "_TZ3000_OIKIYF3B",
-          "_tz3000_h1c2eamp",
-          "_TZ3000_h1c2eamp",
-          "_TZ3000_H1C2EAMP",
-          "_tz3400_keyjhapk",
-          "_TZ3400_keyjhapk",
-          "_TZ3400_KEYJHAPK",
-          "_tz3000_5e235jpa",
-          "_TZ3000_5e235jpa",
-          "_TZ3000_5E235JPA",
-          "_tz3000_fkvaniuu",
-          "_TZ3000_fkvaniuu",
-          "_TZ3000_FKVANIUU",
-          "_tz3000_tzvbimpq",
-          "_TZ3000_tzvbimpq",
-          "_TZ3000_TZVBIMPQ"
+          "_TZ3000_wd7pvcs3",
+          "_TZ3000_ab9pba9q",
+          "_TZ3000_df6005om"
         ],
         "productId": [
           "TS0042"
@@ -103421,7 +102400,7 @@
         "learnmode": {
           "image": "/drivers/wall_remote_2_gang/assets/icon.svg",
           "instruction": {
-            "en": "Press the left button for aprox 10 seconds (the LED should start blinking). A tile for each button will be created. "
+            "en": "Press any button for approx 10 seconds (the LED should start blinking)."
           }
         }
       },
@@ -103472,7 +102451,33 @@
             "nl": "Controleer op OTA-updates"
           }
         }
-      ]
+      ],
+      "capabilitiesOptions": {
+        "button.1": {
+          "title": {
+            "en": "Button 1",
+            "fr": "Bouton 1",
+            "nl": "Knop 1",
+            "de": "Taste 1"
+          }
+        },
+        "button.2": {
+          "title": {
+            "en": "Button 2",
+            "fr": "Bouton 2",
+            "nl": "Knop 2",
+            "de": "Taste 2"
+          }
+        },
+        "measure_battery": {
+          "title": {
+            "en": "Battery",
+            "fr": "Batterie",
+            "nl": "Batterij",
+            "de": "Batterie"
+          }
+        }
+      }
     },
     {
       "id": "wall_remote_3_gang",
@@ -104423,7 +103428,8 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2"
       ],
       "energy": {
         "approximation": {
@@ -104751,7 +103757,9 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2",
+        "onoff.gang3"
       ],
       "energy": {
         "approximation": {
@@ -105116,7 +104124,10 @@
       },
       "class": "socket",
       "capabilities": [
-        "onoff"
+        "onoff",
+        "onoff.gang2",
+        "onoff.gang3",
+        "onoff.gang4"
       ],
       "energy": {
         "approximation": {

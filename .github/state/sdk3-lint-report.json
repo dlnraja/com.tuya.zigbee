@@ -1,23 +1,22 @@
 {
-  "timestamp": "2026-05-13T03:41:45.383Z",
+  "timestamp": "2026-05-15T05:22:55.669Z",
   "driversScanned": 20,
-  "staticIssues": 45,
+  "staticIssues": 49,
   "autoFixed": 0,
-  "aiSuggestions": 18,
-  "aiApplied": 2,
+  "aiSuggestions": 0,
+  "aiApplied": 0,
   "dryRun": false,
   "results": [
     {
       "driver": "air_purifier",
       "issues": [
-        "sdk3-await-capability",
+        "sdk3-ondeleted-cleanup",
         "sdk3-case-sensitive-fingerprint"
       ]
     },
     {
       "driver": "air_quality_co2",
       "issues": [
-        "sdk3-await-capability",
         "sdk3-battery-conflict",
         "sdk3-case-sensitive-fingerprint"
       ]
@@ -26,21 +25,21 @@
       "driver": "air_quality_comprehensive",
       "issues": [
         "sdk3-case-sensitive-fingerprint"
-      ],
-      "aiModel": "deepseek"
+      ]
     },
     {
       "driver": "bulb_dimmable",
       "issues": [
         "sdk3-battery-conflict",
+        "sdk3-mains-has-battery",
         "sdk3-case-sensitive-fingerprint"
-      ],
-      "aiModel": "deepseek"
+      ]
     },
     {
       "driver": "bulb_dimmable_dimmer",
       "issues": [
         "sdk3-battery-conflict",
+        "sdk3-mains-has-battery",
         "sdk3-case-sensitive-fingerprint"
       ]
     },
@@ -49,6 +48,15 @@
       "issues": [
         "sdk3-await-capability",
         "sdk3-battery-conflict",
+        "sdk3-mains-has-battery",
+        "sdk3-case-sensitive-fingerprint"
+      ]
+    },
+    {
+      "driver": "bulb_rgbw",
+      "issues": [
+        "sdk3-battery-conflict",
+        "sdk3-mains-has-battery",
         "sdk3-case-sensitive-fingerprint"
       ]
     },
@@ -57,14 +65,7 @@
       "issues": [
         "sdk3-await-capability",
         "sdk3-battery-conflict",
-        "sdk3-case-sensitive-fingerprint"
-      ]
-    },
-    {
-      "driver": "bulb_rgbw",
-      "issues": [
-        "sdk3-await-capability",
-        "sdk3-battery-conflict",
+        "sdk3-mains-has-battery",
         "sdk3-case-sensitive-fingerprint"
       ]
     },
@@ -72,6 +73,7 @@
       "driver": "bulb_tunable_white",
       "issues": [
         "sdk3-battery-conflict",
+        "sdk3-mains-has-battery",
         "sdk3-case-sensitive-fingerprint"
       ]
     },
@@ -79,13 +81,13 @@
       "driver": "bulb_white",
       "issues": [
         "sdk3-battery-conflict",
+        "sdk3-mains-has-battery",
         "sdk3-case-sensitive-fingerprint"
       ]
     },
     {
       "driver": "button_emergency_sos",
       "issues": [
-        "sdk3-await-capability",
         "sdk3-battery-conflict",
         "sdk3-case-sensitive-fingerprint"
       ]
@@ -142,8 +144,8 @@
     {
       "driver": "button_wireless_plug",
       "issues": [
-        "sdk3-await-capability",
         "sdk3-battery-conflict",
+        "sdk3-mains-has-battery",
         "sdk3-dp-variant-awareness"
       ]
     },
@@ -155,5 +157,5 @@
       ]
     }
   ],
-  "memoryPatterns": 12
+  "memoryPatterns": 13
 }

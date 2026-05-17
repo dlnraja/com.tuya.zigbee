@@ -23,3 +23,11 @@
 ## 5. Telemetry & Energy Metering
 - Mapped secondary phase metrics (Phase B Current, Active Power Phase B, Power Factor Phase B) on the PJ-1203A power meter (`power_clamp_meter`) ensuring professional-grade data extraction.
 - Validated all fixes using strict `npm run validate` ensuring perfect SDK v3 compliance.
+
+## 6. Universal Hybrid Mode Stabilization
+- **Problem**: `BaseUnifiedDevice.js` contained critical syntax errors (merged variable names, missing `this.` context, and `await` usage in non-async functions) causing runtime crashes when devices attempted to initialize standard ZCL clusters alongside Tuya DP.
+- **Solution**: Systematically audited and repaired `BaseUnifiedDevice.js`:
+  1. Corrected `const Capabilities` merged declaration.
+  2. Added `this.` scope to all native capability manager calls.
+  3. Promoted all cluster listener and promise-based callbacks to `async`.
+- **Result**: Restored runtime stability for hybrid Zigbee devices and eliminated `ReferenceError` crashes.

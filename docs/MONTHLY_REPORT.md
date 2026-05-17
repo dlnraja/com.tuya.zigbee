@@ -1,37 +1,41 @@
-# Monthly Tuya Zigbee Report - 2026-04
+# Monthly Tuya Zigbee Report - 2026-05
 
-*Generated: 2026-04-05T18:54:51.008Z*
+*Generated: 2026-05-16T10:26:47.296Z*
 
 ## 📊 Summary
 
 | Metric | Value |
 |--------|-------|
-| Total Drivers | 212 |
-| Manufacturer IDs | 65332 |
-| Collisions | 18 |
+| Total Drivers | 225 |
+| Manufacturer IDs | 182410 |
+| Collisions | 199 |
 
 ## ⚠️ Collisions Detected
 
 | ID | Drivers |
 |----|--------|
-| `tuyatec-qun7vq14|TS0201` | climate_sensor, temphumidsensor |
-| `tuyatec-qun7vq14|ZG-227Z` | climate_sensor, temphumidsensor |
-| `tuyatec-qun7vq14|CK-TLSR8656-SS5-01(7014)` | climate_sensor, temphumidsensor |
-| `tuyatec-qun7vq14|TY0201` | climate_sensor, temphumidsensor |
-| `tuyatec-qun7vq14|RH3052` | climate_sensor, temphumidsensor |
-| `zbeacon|TS0601` | contact_sensor, sensor_contact_motion_hybrid |
-| `_tze200_rufdtfyv|TS0601` | device_floor_heating_thermostat_hybrid, radiator_valve |
-| `_tze200_p3dbf6qs|TS0601` | device_radiator_valve_smart_hybrid, radiator_valve |
-| `_tze200_rxq4iti9|TS0601` | device_radiator_valve_smart_hybrid, radiator_valve |
-| `_tze200_0hb4rdnp|TS1101` | dimmer_dual_channel, dimmer_wall_1gang |
-| `_tze200_0hb4rdnp|TS0601` | dimmer_dual_channel, dimmer_wall_1gang |
-| `_tze200_4mh6tyyo|TS1101` | dimmer_dual_channel, dimmer_wall_1gang |
-| `_tze200_4mh6tyyo|TS0601` | dimmer_dual_channel, dimmer_wall_1gang |
-| `_tze200_gne0e6mk|TS1101` | dimmer_dual_channel, dimmer_wall_1gang |
-| `_tze200_gne0e6mk|TS0601` | dimmer_dual_channel, dimmer_wall_1gang |
-| `hobeian|TS0203` | presence_sensor_radar, sensor_contact_presence_hybrid |
-| `hobeian|TS0601` | presence_sensor_radar, sensor_contact_presence_hybrid |
-| `_tz3000_pzui3skt|TS004F` | remote_button_wireless_wall_hybrid, smart_knob_rotary |
+| `_tz3000_famkxci2|TS0043` | button_wireless_3, scene_switch_3 |
+| `_TZ3000_famkxci2|TS0043` | button_wireless_3, scene_switch_3 |
+| `_TZ3000_FAMKXCI2|TS0043` | button_wireless_3, scene_switch_3 |
+| `tuyatec-g3gl6cgy|TS0201` | climate_sensor, temphumidsensor |
+| `tuyatec-g3gl6cgy|TS0601` | climate_sensor, contact_sensor |
+| `tuyatec-g3gl6cgy|ZG-227Z` | climate_sensor, temphumidsensor |
+| `tuyatec-g3gl6cgy|CK-TLSR8656-SS5-01(7014)` | climate_sensor, temphumidsensor |
+| `tuyatec-g3gl6cgy|TY0201` | climate_sensor, temphumidsensor |
+| `tuyatec-g3gl6cgy|RH3052` | climate_sensor, temphumidsensor |
+| `TUYATEC-G3GL6CGY|TS0201` | climate_sensor, temphumidsensor |
+| `TUYATEC-G3GL6CGY|TS0601` | climate_sensor, contact_sensor |
+| `TUYATEC-G3GL6CGY|ZG-227Z` | climate_sensor, temphumidsensor |
+| `TUYATEC-G3GL6CGY|CK-TLSR8656-SS5-01(7014)` | climate_sensor, temphumidsensor |
+| `TUYATEC-G3GL6CGY|TY0201` | climate_sensor, temphumidsensor |
+| `TUYATEC-G3GL6CGY|RH3052` | climate_sensor, temphumidsensor |
+| `tuyatec-bfq2i2sy|TS0201` | climate_sensor, temphumidsensor |
+| `tuyatec-bfq2i2sy|TS0601` | climate_sensor, contact_sensor |
+| `tuyatec-bfq2i2sy|ZG-227Z` | climate_sensor, temphumidsensor |
+| `tuyatec-bfq2i2sy|CK-TLSR8656-SS5-01(7014)` | climate_sensor, temphumidsensor |
+| `tuyatec-bfq2i2sy|TY0201` | climate_sensor, temphumidsensor |
+
+*...and 179 more*
 
 ## 📋 Action Items
 
