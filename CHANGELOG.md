@@ -4,7 +4,16 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.39] - 2026-05-17
+## [7.5.40] - 2026-05-17
+
+### Bug Fixes
+- Fixed empty battery reports on sleepy Tuya devices by implementing greedy adaptive battery listeners with ZCL and IAS fallbacks.
+
+### Improvements
+- Updated fingerprint database to 6652 fingerprints across 228 drivers.
+---
+
+ [7.5.39] - 2026-05-17
 
 ### Bug Fixes
 - Fixed physical button detection on wall remote devices with improved debounce handling.

@@ -6,7 +6,7 @@
 
 | Metric | Value |
 |--------|-------|
-| Version | v7.5.40 |
+| Version | v7.5.41 |
 | Drivers | 228 |
 | Fingerprints | 10,875 |
 | Last Updated | 2026-05-17 |
@@ -37,5 +37,4 @@
 
 - [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)
 - [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)
-- [Forum](#)
 - [GitHub](https://github.com/dlnraja/com.tuya.zigbee)
