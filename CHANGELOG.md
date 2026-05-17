@@ -4,7 +4,24 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.34] - 2026-05-14
+## [7.5.35] - 2026-05-17
+
+### Bug Fixes
+- Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers, resolving flow editor errors.
+- Restored runtime integrity with SDK3 compliance fixes.
+
+### New Features
+- Standardized button flow cards across all button drivers for consistent behavior.
+- Synced upstream enhancements from Johan Benz, including improved AI-assisted device matching.
+
+### Improvements
+- Harmonized driver icons and updated app store assets.
+- General stability and compatibility improvements.
+
+**Drivers:** 228 | **Fingerprints:** 6,649
+---
+
+ [7.5.34] - 2026-05-14
 
 ### Bug Fixes
 - Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers (resolved runtime errors)
