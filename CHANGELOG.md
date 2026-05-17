@@ -4,7 +4,19 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.35] - 2026-05-17
+## [7.5.38] - 2026-05-17
+
+### Bug Fixes
+- None
+
+### New Features
+- None
+
+### Improvements
+- None
+---
+
+ [7.5.35] - 2026-05-17
 
 ### Bug Fixes
 - Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers, resolving flow editor errors.

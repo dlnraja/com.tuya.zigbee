@@ -1,4 +1,10 @@
 {
+  "7.5.38": {
+    "en": "No user-facing changes in this release."
+  },
+  "7.5.37": {
+    "en": "Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 compliance"
+  },
   "7.5.35": {
     "en": "v7.5.34: Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers (resolved runtime errors), Restored draft-to-test , Standardized button flow cards (button_pressed, button_double_press, button_long_press, button_multi_press, button_release, knob_rotated), Added OTA check updates action card, Added tuya_dp_send_typed and tuya_dp"
   },
@@ -53,19 +59,7 @@
   "7.5.18": {
     "en": "Easy Login with saved credentials, auto device classification with brand badges, TS110E level control fix, alarm_battery removed from 136 drivers (SDK3 conflict), 7 FP collisions resolved, duplicate flow cards fixed across driver fleet."
   },
-  "7.5.17": {
-    "en": "v7.5.17 — 3,207 new fingerprints, backlight mode alignment fix, and fingerprint case normalization for more reliable pairing."
-  },
-  "7.5.16": {
-    "en": "v7.5.16 — . Maintenance release with updated device expectations, diagnostics, and internal state."
-  },
-  "7.5.15": {
-    "en": "v7.5.15: Fixed siren sensor driver crashes, added 3,202 new fingerprints, and improved device detection reliability."
-  },
-  "7.5.37": {
-    "en": "Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 compliance"
-  },
-  "7.5.38": {
-    "en": "Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 compliance"
+  "7.5.39": {
+    "en": "v7.5.38: None, None, None"
   }
 }
