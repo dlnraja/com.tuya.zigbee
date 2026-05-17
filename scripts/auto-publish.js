@@ -34,6 +34,14 @@ child.stdout.on('data', (data) => {
     child.stdin.write('y\n');
     answered.guidelines = true;
   }
+  if (text.includes('update your app') && !answered.updateApp) {
+    child.stdin.write('n\n');
+    answered.updateApp = true;
+  }
+  if (text.includes('Select the desired version') && !answered.selectVersion) {
+    setTimeout(() => child.stdin.write('\n'), 500);
+    answered.selectVersion = true;
+  }
   if (text.includes('publish directly after approval') && !answered.publishDirectly) {
     child.stdin.write('n\n');
     answered.publishDirectly = true;
