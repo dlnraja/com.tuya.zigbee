@@ -4,7 +4,20 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.38] - 2026-05-17
+## [7.5.39] - 2026-05-17
+
+### Bug Fixes
+- Fixed physical button detection on wall remote devices with improved debounce handling.
+
+### New Features
+- Added new fingerprints for wall_remote_2_gang driver.
+- Added 4 new device fingerprints.
+
+### Improvements
+- Updated driver and fingerprint counts to 228 drivers, 3202 fingerprints.
+---
+
+ [7.5.38] - 2026-05-17
 
 ### Bug Fixes
 - None
