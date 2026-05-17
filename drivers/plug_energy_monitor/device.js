@@ -1,5 +1,4 @@
 'use strict';
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
@@ -153,7 +152,7 @@ function getEnergyConfig(manufacturerName) {
   return ENERGY_CONFIG_MAP[manufacturerName] || ENERGY_DEVICE_CONFIGS.TUYA_DP_STANDARD;
 }
 
-class EnergyMonitorPlugDevice extends BatteryMixin(PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase))) {
+class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
   get mainsPowered() { return true; }
   // v9.7.3: Specialized Energy Monitoring Plug

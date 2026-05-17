@@ -63,6 +63,6 @@ This app builds on work from many open-source projects and contributors:
 - **[ZHA / zigpy](https://github.com/zigpy/zha-device-handlers)** — Quirks & signatures
 - **[kkossev / Hubitat](https://github.com/kkossev/Hubitat)** — Tuya DP research
 - **[Blakadder](https://zigbee.blakadder.com)** — Device cross-reference
-- **[Homey Community Forum](https://community.homey.app/t/140352)** — Bug reports & testing
+- **[Homey Community Forum](#)** — Bug reports & testing
 
 Full credits: [docs/CREDITS.md](./docs/CREDITS.md)

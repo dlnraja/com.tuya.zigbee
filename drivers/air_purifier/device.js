@@ -1,6 +1,6 @@
 'use strict';
 
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
 
 const DP = {
   state: 1,
@@ -15,7 +15,7 @@ const DP = {
 /**
  * AirPurifierDevice - v5.13.6 Hardened Architecture
  */
-class AirPurifierDevice extends TuyaZigbeeDevice {
+class AirPurifierDevice extends BaseUnifiedDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('[AirPurifier] 🚀 Initializing hardened driver...');

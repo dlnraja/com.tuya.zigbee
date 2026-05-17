@@ -21,7 +21,7 @@
         {"number": 164, "title": "[DEVICE]", "status": "CLOSED", "action": "no_data"}
       ]
     },
-    "forum_t140352": {
+    "forum_tINTERNAL_TRACKER": {
       "posts_analyzed": 1634,
       "recent_posts": 12,
       "resolved": 3,
@@ -52,7 +52,7 @@
       "productId": "TS0043",
       "driver": "button_wireless_3",
       "device_name": "Loratap 3-Button Remote",
-      "source": "forum_t140352_1679",
+      "source": "forum_tINTERNAL_TRACKER_1679",
       "issue": "not working"
     },
     {
@@ -60,7 +60,7 @@
       "productId": "TS0044",
       "driver": "button_wireless_4",
       "device_name": "Loratap 4-Button Remote",
-      "source": "forum_t140352_1679",
+      "source": "forum_tINTERNAL_TRACKER_1679",
       "issue": "not working"
     },
     {
@@ -68,7 +68,7 @@
       "productId": "TS0003",
       "driver": "switch_2gang",
       "device_name": "2-Gang Wall Remote",
-      "source": "forum_t140352_1689",
+      "source": "forum_tINTERNAL_TRACKER_1689",
       "issue": "could not get device by ID"
     },
     {

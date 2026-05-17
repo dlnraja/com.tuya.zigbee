@@ -4,7 +4,6 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -16,7 +15,7 @@ const BatteryMixin = require('../../lib/tuya/BatteryMixin');
  * ║  - UnifiedPlugBase for core relay logic and Tuya DP/ZCL hybrid support       ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class WaterValveGardenDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryMixin(UnifiedPlugBase))) {
+class WaterValveGardenDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
   
   get plugCapabilities() { return ['onoff', 'measure_battery']; }
 

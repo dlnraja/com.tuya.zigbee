@@ -2,7 +2,6 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 /**
  * SmartKnobDevice - v9.5.0 Universal Standard
@@ -10,7 +9,7 @@ const BatteryMixin = require('../../lib/tuya/BatteryMixin');
  * Migrated to PhysicalButtonMixin for 8-layer detection stack including Rotary support.
  * Standardized battery management via BatteryMixin.
  */
-class SmartKnobDevice extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
+class SmartKnobDevice extends PhysicalButtonMixin(ZigBeeDevice) {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { this.buttonCount = 1;

@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-05-13T03:56:22.877Z",
+  "timestamp": "2026-05-17T20:51:34.741Z",
   "total": 255,
-  "resolved": 174,
-  "unknown": 55,
+  "resolved": 173,
+  "unknown": 57,
   "falsePositives": 0,
   "results": [
     {
@@ -67,6 +67,19 @@
         "isFP": false,
         "reason": "unknown_not_false"
       }
+    },
+    {
+      "fp": "_TZE204_81yrt3l",
+      "valid": true,
+      "prefix": "tuya_dp",
+      "driver": "power_clamp_meter",
+      "pid": null,
+      "confidence": 100,
+      "sources": [
+        "local"
+      ],
+      "method": null,
+      "driverExists": true
     },
     {
       "fp": "_TZ3000_an5jiwd",
@@ -465,7 +478,7 @@
       "fp": "_TZ3000_tzvbimpq",
       "valid": true,
       "prefix": "standard",
-      "driver": "switch_2gang",
+      "driver": "button_wireless_2",
       "pid": null,
       "confidence": 100,
       "sources": [
@@ -556,14 +569,15 @@
       "fp": "_TZ3290_7v1k4vufotpowp9z",
       "valid": true,
       "prefix": "special",
-      "driver": "ir_remote",
+      "driver": null,
       "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
+      "confidence": 0,
+      "sources": [],
       "method": null,
-      "driverExists": true
+      "falsePositive": {
+        "isFP": false,
+        "reason": "unknown_not_false"
+      }
     },
     {
       "fp": "_TZ3290_7v1k4vuf",
@@ -726,7 +740,7 @@
       "fp": "_TZE204_81yrt3lo",
       "valid": true,
       "prefix": "tuya_dp",
-      "driver": "din_rail_meter",
+      "driver": "power_clamp_meter",
       "pid": null,
       "confidence": 100,
       "sources": [
@@ -1296,19 +1310,6 @@
     },
     {
       "fp": "_TZ3000_qamj2vnn",
-      "valid": true,
-      "prefix": "standard",
-      "driver": "switch_1gang",
-      "pid": null,
-      "confidence": 100,
-      "sources": [
-        "local"
-      ],
-      "method": null,
-      "driverExists": true
-    },
-    {
-      "fp": "_TZ3000_tw4ztbp4",
       "valid": true,
       "prefix": "standard",
       "driver": "switch_1gang",

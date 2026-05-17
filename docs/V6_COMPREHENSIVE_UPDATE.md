@@ -186,7 +186,7 @@ All changes tested against:
 - Z2M TS004F: https://github.com/Koenkk/zigbee2mqtt/discussions/7158
 - ZHA Scene Mode: https://github.com/zigpy/zha-device-handlers/issues/1372
 - Hubitat Driver: https://github.com/kkossev/Hubitat/.../TS004F.groovy
-- Forum Thread: https://community.homey.app/t/.../140352
+- Forum Thread: #
 
 ---
 

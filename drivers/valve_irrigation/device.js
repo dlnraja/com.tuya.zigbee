@@ -4,7 +4,6 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 /**
@@ -20,7 +19,7 @@ const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const INSOMA_MFRS = ['_tze284_fhvpaltk'];
 const IMMAX_MFRS = ['_tze200_xlppj4f5'];
 
-class ValveIrrigationDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryMixin(UnifiedPlugBase))) {
+class ValveIrrigationDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
 
   get plugCapabilities() { 
     return ['onoff', 'measure_battery', 'meter_water']; 

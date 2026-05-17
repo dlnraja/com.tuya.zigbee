@@ -10,7 +10,7 @@
 | Source | Items | Status |
 |--------|-------|--------|
 | GitHub Issues (#171-184) | 8 issues | ✅ Analysés |
-| Forum T140352 (posts 1679-1690) | 12 posts récents | ✅ Analysés |
+| Forum TINTERNAL_TRACKER (posts 1679-1690) | 12 posts récents | ✅ Analysés |
 | collisions.json | 54,373 entrées | ✅ Corrigées (0 true collisions) |
 | diag_forum.json | 1634 posts | ✅ Parsés |
 | fingerprint DB | 4200+ devices | ✅ Cross-reférencés |
@@ -25,7 +25,7 @@
 
 ---
 
-## 💬 FORUM T140352 - ÉTAT ACTUEL
+## 💬 FORUM TINTERNAL_TRACKER - ÉTAT ACTUEL
 
 ### Posts Récents Non Résolus
 

@@ -4,7 +4,6 @@ const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib/configs/IntelligentDeviceConfig');
 const { setupSonoffEnergy } = require('../../lib/mixins/SonoffEnergyMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -152,7 +151,7 @@ function getEnergyConfig(manufacturerName) {
 }
 
 
-class RemoteButtonWirelessPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryMixin(UnifiedPlugBase))) {
+class RemoteButtonWirelessPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
 
   get mainsPowered() { return true; }
   // v9.7.3: Specialized Energy Monitoring Plug

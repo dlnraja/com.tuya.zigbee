@@ -1,14 +1,13 @@
 'use strict';
 
 const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 const { ClimateInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
 /**
  * Climate Sensor Device - v8.0.0 MODERNIZED
  * High-precision temperature and humidity tracking with psychrometric validation.
  */
-class ClimateSensorDevice extends BatteryMixin(SensorBase) {
+class ClimateSensorDevice extends SensorBase {
 
   async onNodeInit({ zclNode }) {
     this.log('[CLIMATE] 🚀 v8.0.0 Modernizing...');

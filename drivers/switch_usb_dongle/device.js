@@ -2,7 +2,6 @@
 
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
@@ -15,7 +14,7 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
  * ║  - UnifiedSwitchBase for core relay logic                                    ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SwitchUsbDongleDevice extends PhysicalButtonMixin(BatteryMixin(VirtualButtonMixin(UnifiedSwitchBase))) {
+class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
 
   get mainsPowered() { return true; }
   

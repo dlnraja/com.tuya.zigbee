@@ -180,7 +180,7 @@
 ## Nightly Auto-Scan (2026-03-04)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
-| Hartmut_Dunker | `_TZ3002_pzao9ls1`, `dlnraja` | Forum #140352 post #1579 | Auto-scanned 2026-03-04 |
+| Hartmut_Dunker | `_TZ3002_pzao9ls1`, `dlnraja` | Forum #INTERNAL_TRACKER post #1579 | Auto-scanned 2026-03-04 |
 
 
 
@@ -188,10 +188,10 @@
 ## Nightly Auto-Scan (2026-03-03)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
-| Nicolas | `dlnraja` | Forum #140352 post #1563 | Auto-scanned 2026-03-03 |
-| Peter_van_Werkhoven | `_TZE200_vvmbj46n`, `development` | Forum #140352 post #1566 | Auto-scanned 2026-03-03 |
-| Peter_van_Werkhoven | `_TZE200_pay2byax`, `_TZ3000_0dumfk2z`, `HOBEIAN` | Forum #140352 post #1567 | Auto-scanned 2026-03-03 |
-| Peter_van_Werkhoven | `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`, `test` | Forum #140352 post #1568 | Auto-scanned 2026-03-03 |
+| Nicolas | `dlnraja` | Forum #INTERNAL_TRACKER post #1563 | Auto-scanned 2026-03-03 |
+| Peter_van_Werkhoven | `_TZE200_vvmbj46n`, `development` | Forum #INTERNAL_TRACKER post #1566 | Auto-scanned 2026-03-03 |
+| Peter_van_Werkhoven | `_TZE200_pay2byax`, `_TZ3000_0dumfk2z`, `HOBEIAN` | Forum #INTERNAL_TRACKER post #1567 | Auto-scanned 2026-03-03 |
+| Peter_van_Werkhoven | `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`, `test` | Forum #INTERNAL_TRACKER post #1568 | Auto-scanned 2026-03-03 |
 
 
 
@@ -200,7 +200,7 @@
 ## Nightly Auto-Scan (2026-03-02)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
-| Nicolas | `dlnraja` | Forum #140352 post #1559 | Auto-scanned 2026-03-02 |
+| Nicolas | `dlnraja` | Forum #INTERNAL_TRACKER post #1559 | Auto-scanned 2026-03-02 |
 | github-actions[bot] | `danfoss`, `legrand`, `sonoff`, `xiaomi`, `test`, `bosch`, `ikea`, `tuya` | dlnraja/com.tuya.zigbee#152 | Auto-scanned 2026-03-02 |
 
 
@@ -221,7 +221,7 @@
 ## Nightly Auto-Scan (2026-02-28)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
-| OH2TH | `dlnraja` | Forum #140352 post #1551 | Auto-scanned 2026-02-28 |
+| OH2TH | `dlnraja` | Forum #INTERNAL_TRACKER post #1551 | Auto-scanned 2026-02-28 |
 
 
 
@@ -234,7 +234,7 @@
 ## Nightly Auto-Scan (2026-02-27)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
-| Hartmut_Dunker | `_TZ3002_pzao9ls1` | Forum #140352 post #1520 | Auto-scanned 2026-02-27 |
+| Hartmut_Dunker | `_TZ3002_pzao9ls1` | Forum #INTERNAL_TRACKER post #1520 | Auto-scanned 2026-02-27 |
 
 
 
@@ -251,8 +251,8 @@
 ## Nightly Auto-Scan (2026-02-26)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
-| JJ10 | `_TZE200_crq3r3la`, `_TZE200_gkfbdvyx` | Forum #140352 post #1481 | Auto-scanned 2026-02-26 |
-| 7Hills | `_TZE204_clrdrnya` | Forum #140352 post #1482 | Auto-scanned 2026-02-26 |
+| JJ10 | `_TZE200_crq3r3la`, `_TZE200_gkfbdvyx` | Forum #INTERNAL_TRACKER post #1481 | Auto-scanned 2026-02-26 |
+| 7Hills | `_TZE204_clrdrnya` | Forum #INTERNAL_TRACKER post #1482 | Auto-scanned 2026-02-26 |
 | dmz-86 | `_TZE204_clrdrnya` | JohanBendz/com.tuya.zigbee#1142 | Auto-scanned 2026-02-26 |
 
 
@@ -274,7 +274,7 @@
 ## Nightly Auto-Scan (2026-02-25)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
-| Jocke_Wallen | `_TZ3000_u3nv1jwk` | Forum #140352 post #1479 | Auto-scanned 2026-02-25 |
+| Jocke_Wallen | `_TZ3000_u3nv1jwk` | Forum #INTERNAL_TRACKER post #1479 | Auto-scanned 2026-02-25 |
 | github-actions[bot] | `_TZE200_jt50ea5d`, `_TZ3210_jaap6jeb`, `_TZE284_g1enhdsi`, `_TZ3000_qamj2vnn`, `_TZ3000_tw4ztbp4`, `_TZ3000_avotanj3`, `_TZ3290_7v1k4vuf`, `_TZ3290_rlkmy85q`, `_TZ3290_jxvzqatw`, `_TZ3290_lypnqvle`, `_TZ3290_nba3knps`, `_TZ3290_yac64inu`, `_TZE204_2jnoy8dj`, `_TZ3210_iymfxdis`, `_TZ3002_xkxgfxsg`, `_TZ3002_tlsvxhxc`, `_TZE200_seq9cm6u` | dlnraja/com.tuya.zigbee#136 | Auto-scanned 2026-02-25 |
 
 
@@ -298,7 +298,7 @@
 ## Nightly Auto-Scan (2026-02-24)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
-| FrankP | `_TZ3000_itb0omhv` | Forum #140352 post #1477 | Auto-scanned 2026-02-24 |
+| FrankP | `_TZ3000_itb0omhv` | Forum #INTERNAL_TRACKER post #1477 | Auto-scanned 2026-02-24 |
 | Domingoso | `_TZE200_xlppj4f5` | dlnraja/com.tuya.zigbee#135 | Auto-scanned 2026-02-24 |
 
 
@@ -357,7 +357,7 @@
 ## Nightly Auto-Scan (2026-02-22)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
-| Slawek_Pe | `_TZ3210_xzhnra8x` | Forum #140352 post #1467 | Auto-scanned 2026-02-22 |
+| Slawek_Pe | `_TZ3210_xzhnra8x` | Forum #INTERNAL_TRACKER post #1467 | Auto-scanned 2026-02-22 |
 
 
 
@@ -380,7 +380,7 @@
 ## Nightly Auto-Scan (2026-02-21)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
-| ManuelKugler | `_TZE284_aao3yzhs` | Forum #140352 post #1465 | Auto-scanned 2026-02-21 |
+| ManuelKugler | `_TZE284_aao3yzhs` | Forum #INTERNAL_TRACKER post #1465 | Auto-scanned 2026-02-21 |
 | eeckelaertyannick | `_TZE200_8ygsuhe1` | JohanBendz/com.tuya.zigbee#1229 | Auto-scanned 2026-02-21 |
 
 
@@ -404,8 +404,8 @@
 ## Nightly Auto-Scan (2026-02-20)
 | User | Fingerprint(s) | Source | Date |
 |------|---------------|--------|------|
-| Hartmut_Dunker | `_TZ3002_pzao9ls1` | Forum #140352 post #1450 | Auto-scanned 2026-02-20 |
-| SkiMattie | `_TZ3000_mrpevh8p`, `_TZE204_9mjy74mp` | Forum #140352 post #1462 | Auto-scanned 2026-02-20 |
+| Hartmut_Dunker | `_TZ3002_pzao9ls1` | Forum #INTERNAL_TRACKER post #1450 | Auto-scanned 2026-02-20 |
+| SkiMattie | `_TZ3000_mrpevh8p`, `_TZE204_9mjy74mp` | Forum #INTERNAL_TRACKER post #1462 | Auto-scanned 2026-02-20 |
 | Trey_Rogerson | `_TZE284_c8ipbljq` | Forum #26439 post #5388 | Auto-scanned 2026-02-20 |
 | Willy | `_TZ3000_pjb1ua0m` | Forum #26439 post #5389 | Auto-scanned 2026-02-20 |
 | Ons | `_TZ3000_ww6drja5` | Forum #26439 post #5391 | Auto-scanned 2026-02-20 |

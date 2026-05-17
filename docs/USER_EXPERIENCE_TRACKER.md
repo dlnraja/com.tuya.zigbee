@@ -185,11 +185,11 @@ When users report issues, ask for:
 
 ## 📌 IMPORTANT LINKS
 
-- **Forum (dlnraja)**: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
-- **Forum (JohanBendz)**: https://community.homey.app/t/app-pro-tuya-zigbee-app/26439
-- **Forum (Smart Life)**: https://community.homey.app/t/app-tuya-smart-life-smart-living/146735
-- **Forum (Archive)**: https://community.homey.app/t/app-pro-tuya-zigbee-app-device-request-archive/89271
-- **Forum (WiFi)**: https://community.homey.app/t/tuya-wifi-devices/54018
+- **Forum (dlnraja)**: #
+- **Forum (JohanBendz)**: #
+- **Forum (Smart Life)**: #
+- **Forum (Archive)**: #
+- **Forum (WiFi)**: #
 - **GitHub**: https://github.com/dlnraja/com.tuya.zigbee
 - **Z2M Devices**: https://www.zigbee2mqtt.io/supported-devices/
 - **Tuya DP Docs**: https://developer.tuya.com/en/docs/iot/

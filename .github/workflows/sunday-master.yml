@@ -82,12 +82,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-          TARGET_REPO: JohanBendz/com.tuya.zigbee
           APP_VERSION: ${{ needs.stats.outputs.version }}
           DRIVER_COUNT: ${{ needs.stats.outputs.drivers }}
           FP_COUNT: ${{ needs.stats.outputs.fps }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
-        run: node .github/scripts/triage-run.js
+        run: |
+          # Follows GLOBAL_INVESTIGATION_PLAN.md Section 8 (Forum & GitHub Investigation Protocol)
+          # Cross-references JohanBendz issues against our fingerprint matrix
+          node .github/scripts/triage-run.js
 
   triage-dlnraja:
     name: "Triage dlnraja"
@@ -127,6 +129,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
         run: |
+          # Follows GLOBAL_INVESTIGATION_PLAN.md Section 4 (Source Matrix: forks, Z2M, community)
+          # Section 6: Variant generation for cross-fork discovery
           node .github/scripts/full-fork-verifier.js
           node .github/scripts/deep-fork-integrator.js || true
           node .github/scripts/scan-forks-recursive.js || true
@@ -489,7 +493,10 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-        run: node .github/scripts/enrichment-scanner.js
+        run: |
+          # Follows GLOBAL_INVESTIGATION_PLAN.md Section 14 (Documentation & Resource Enrichment Protocol)
+          # Section 10: Z2M/ZHA cross-reference for missing device profiles
+          node .github/scripts/enrichment-scanner.js
 
   fp-research:
     name: "FP Research Engine (Deep Classify)"
@@ -634,7 +641,11 @@ jobs:
           # Not yet configured — see .github/SECRETS.md
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
           MAX_GH_CALLS: "100"
-        run: node .github/scripts/master-ai-battle.js
+        run: |
+          # Follows GLOBAL_INVESTIGATION_PLAN.md Section 11 (Antigravity Skills & AI Integration)
+          # Uses 10-provider AI chain (ai-helper.js) with GLOBAL_INVESTIGATION_PLAN.md injected via project-rules.js
+          # Variant generation from Section 6 + Section 5 Script Catalog
+          node .github/scripts/master-ai-battle.js
       - name: Commit AI battle changes
         run: |
           git config user.name "github-actions[bot]"
@@ -666,7 +677,10 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node .github/scripts/generate-ai-changelog.js
+        run: |
+          # Follows GLOBAL_INVESTIGATION_PLAN.md Section 15 (Workflow Improvement Protocol)
+          # All changes are attributed per Section 16 (Shadow Mode & Attribution Rules)
+          node .github/scripts/generate-ai-changelog.js
       - name: Commit changelog updates
         run: |
           git config user.name "github-actions[bot]"

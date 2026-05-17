@@ -1,5 +1,4 @@
 'use strict';
-const { BatteryMixin } = require('../../lib/mixins/BatteryMixin');
 const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { AirQualityInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
@@ -14,7 +13,7 @@ const { AirQualityInference, BatteryInference } = require('../../lib/Intelligent
  * ║  Variants: _TZE200_ywagc4rj, _TZE200_zl1kmjqx                               ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class AirQualityCO2Device extends BatteryMixin(SensorBase) {
+class AirQualityCO2Device extends SensorBase {
 
   get mainsPowered() { return false; }
 

@@ -123,10 +123,10 @@
 
 ## 🔗 LIENS FORUM RÉFÉRENCÉS
 
-1. https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/955
-2. https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352?page=48
-3. https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352?page=47
-4. https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352?page=46
+1. #
+2. #
+3. #
+4. #
 
 **NEXT**: Implémenter corrections identifiées
 

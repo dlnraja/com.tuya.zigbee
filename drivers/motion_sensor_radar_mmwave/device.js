@@ -1,14 +1,13 @@
 'use strict';
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
 
 /**
  * Motion Sensor Radar mmWave Device - v8.0.0 MODERNIZED
  * Advanced mmWave radar driver with decoupled inference and autonomous discovery.
  */
-class MotionSensorRadarDevice extends BatteryMixin(UnifiedSensorBase) {
+class MotionSensorRadarDevice extends UnifiedSensorBase {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {

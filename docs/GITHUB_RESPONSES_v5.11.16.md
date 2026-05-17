@@ -36,17 +36,17 @@ Note: Despite the "5.8G Radar" marketing name, your device interview confirms it
 It is mains-powered (router device) with IAS enrollment fixes applied (v5.5.538).
 Install: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 Remove and re-pair after installing.
-Forum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
+Forum: #
 
 ### #1331 MF-ITuser — _TZ3290_ot6ewjvmejq5ekhl / TS1201 → ir_blaster (Moes UFO-R11)
 Response:
 Hi! Your Moes UFO-R11 (`_TZ3290_ot6ewjvmejq5ekhl` / `TS1201`) is already supported in the dlnraja fork (v5.11.16) as an **ir_blaster** driver.
 Install: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 Remove and re-pair after installing.
-Forum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
+Forum: #
 
 ## Template for all "Supported" issues:
 Hi! 👋 Your device is already supported in the dlnraja fork.
 Install: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
 Remove and re-pair after installing.
-Forum: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
+Forum: #

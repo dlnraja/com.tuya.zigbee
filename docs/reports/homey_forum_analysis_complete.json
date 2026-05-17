@@ -1,14 +1,14 @@
 {
   "timestamp": "2025-12-29T02:17:12.267Z",
   "forums": [
-    "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439/5377",
-    "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/744"
+    "#
+    "#
   ],
   "issues": [
     {
       "id": "door_sensor_tz3000_n2egfsli",
       "title": "Door Sensor _TZ3000_n2egfsli Unknown Device",
-      "forum": "https://community.homey.app/t/app-pro-tuya-zigbee-app/26439/5377",
+      "forum": "#
       "user": "ruijssantos",
       "description": "Door sensor _TZ3000_n2egfsli présent dans liste supportée mais détecté comme \"Unknown Zigbee Device\" au lieu de contact sensor",
       "severity": "high",
@@ -22,7 +22,7 @@
     {
       "id": "buttons_4gang_physical_issue",
       "title": "Boutons 4-Gang Physiques Non Fonctionnels",
-      "forum": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/744",
+      "forum": "#
       "user": "Eftychis_Georgilas",
       "description": "Boutons icônes dans app fonctionnent parfaitement, boutons physiques du device ne répondent pas. Fonctionnait dans app Johan Bendz précédente",
       "severity": "high",
@@ -36,7 +36,7 @@
     {
       "id": "motion_luminance_continuous_update",
       "title": "Motion Sensor Luminance Update Discontinu",
-      "forum": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/744",
+      "forum": "#
       "user": "Eftychis_Georgilas",
       "description": "Luminance motion sensor se met à jour seulement lors détection mouvement, devrait être mise à jour continue",
       "severity": "medium",
@@ -129,7 +129,7 @@
         },
         {
           "name": "Homey Community Issues",
-          "url": "https://community.homey.app/t/4-gang-wall-switch-tz3000-xabckqv1-idts004f-not-yet-working-properly/59527",
+          "url": "#
           "findings": "Multiple reports of _TZ3000_xabckqv1 IDTS004F not working properly",
           "solution": "Driver-specific fixes needed for multi-gang button handling"
         },

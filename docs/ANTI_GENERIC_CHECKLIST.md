@@ -74,7 +74,7 @@ homey app validate --level=publish
 
 ## Monthly Automation Sources
 
-1. **Homey Forum**: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/
+1. **Homey Forum**: #
 2. **GitHub Issues**: dlnraja/com.tuya.zigbee
 3. **Zigbee2MQTT**: https://github.com/Koenkk/zigbee2mqtt
 4. **ZHA**: https://github.com/zigpy/zha-device-handlers

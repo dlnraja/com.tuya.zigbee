@@ -7,7 +7,7 @@ description: Sunday automation - triage GitHub, scan forks, scan forum
 2. Triage dlnraja issues/PRs
 3. Scan all forks for new fingerprints
 4. Cross-driver gap detection (sensors, switches - flags FPs in 2+ drivers but missing from sibling)
-5. Scan forum for device requests (topics: 140352 dlnraja test, 26439 JohanBendz main, 146735 Tuya Smart Life, 89271 Device Request Archive)
+5. Scan forum for device requests (topics: INTERNAL_TRACKER dlnraja test, 26439 JohanBendz main, 146735 Tuya Smart Life, 89271 Device Request Archive)
 6. Forum auto-respond: replies to forum posts with device support status (requires DISCOURSE_API_KEY secret)
 ## Auto-respond on new issues/PRs via auto-respond.yml
 ## Auto-post release notes on forum via publish.yml (requires DISCOURSE_API_KEY secret)

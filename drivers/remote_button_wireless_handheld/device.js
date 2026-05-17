@@ -2,7 +2,6 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 /**
  * Button 4 Gang - Handheld Remote / Wall Switch (v9.7.0)
@@ -13,7 +12,7 @@ const BatteryMixin = require('../../lib/tuya/BatteryMixin');
  * - Autonomous Mode Switching (0x8004)
  * - Precision Battery Monitoring
  */
-class Button4GangHandheldDevice extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
+class Button4GangHandheldDevice extends PhysicalButtonMixin(ZigBeeDevice) {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { this.buttonCount = 4;

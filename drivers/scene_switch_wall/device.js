@@ -2,7 +2,6 @@
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 /**
  * SceneSwitchWallDevice - v9.5.0 Universal Standard
@@ -10,7 +9,7 @@ const BatteryMixin = require('../../lib/tuya/BatteryMixin');
  * Migrated to PhysicalButtonMixin for 8-layer detection stack.
  * Standardized battery management via BatteryMixin.
  */
-class SceneSwitchWallDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryMixin(ZigBeeDevice))) {
+class SceneSwitchWallDevice extends VirtualButtonMixin(PhysicalButtonMixin(ZigBeeDevice)) {
 
   get mainsPowered() { return true; }
 

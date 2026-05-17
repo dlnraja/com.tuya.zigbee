@@ -228,7 +228,7 @@ Tuya provides a platform that enables OEMs to create smart home devices. These b
 ### Communities
 - https://community.home-assistant.io/
 - https://community.smartthings.com/
-- https://community.homey.app/
+- #
 
 ---
 

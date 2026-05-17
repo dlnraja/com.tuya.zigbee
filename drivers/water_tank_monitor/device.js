@@ -1,5 +1,4 @@
 'use strict';
-const { BatteryMixin } = require('../../lib/mixins/BatteryMixin');
 const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
@@ -8,7 +7,7 @@ const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
  */
 const LIQUID_STATE = { 0: 'normal', 1: 'low', 2: 'high' };
 
-class WaterTankMonitorDevice extends BatteryMixin(SensorBase) {
+class WaterTankMonitorDevice extends SensorBase {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {

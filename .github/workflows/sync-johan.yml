@@ -43,13 +43,24 @@ jobs:
         with:
           node-version: 22
 
+      - name: 📖 Load Investigation Plan Context (GLOBAL_INVESTIGATION_PLAN.md)
+        run: |
+          echo "## Investigation Framework Active" >> $GITHUB_STEP_SUMMARY
+          echo "Using [GLOBAL_INVESTIGATION_PLAN.md](../../docs/GLOBAL_INVESTIGATION_PLAN.md) — 22-section methodology for:" >> $GITHUB_STEP_SUMMARY
+          echo "- Deep cross-referencing manufacturerName × productId" >> $GITHUB_STEP_SUMMARY
+          echo "- Z2M/ZHA/Blakadder device verification" >> $GITHUB_STEP_SUMMARY
+          echo "- Forum/email diagnostic correlation" >> $GITHUB_STEP_SUMMARY
+          echo "- Variant generation (TZE200↔TZE204↔TZE284)" >> $GITHUB_STEP_SUMMARY
+          echo "This plan is injected into all AI engine calls via project-rules.js" >> $GITHUB_STEP_SUMMARY
+
       - name: Scrap & Sync Johan Benz commits (SDK3 & FPs)
         id: sync
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           npm ci || npm install
-          # Uses the advanced AI sync script to detect new Device IDs and variants
+          # Uses the advanced AI sync script + GLOBAL_INVESTIGATION_PLAN.md methodology
+          # Cross-references Johan's fingerprints against our architecture
           node .github/scripts/sync-johan-sdk3.js
 
       - name: Validate Multi-Gang Endpoints & Driver Conflicts
@@ -83,6 +94,7 @@ jobs:
             - [x] `homey app validate` passed
             
             **Protocol followed:** [SYNC_PROTOCOL.md](.github/skills/SYNC_PROTOCOL.md)
+            **Investigation framework:** [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — 22-section deep diagnostic methodology for cross-referencing forums/emails/GitHub/Z2M/ZHA
             
             *Please review carefully before merging. This PR is AI-ready for auto-merge if risk is low.*
           branch: auto-sync-johan-enhanced

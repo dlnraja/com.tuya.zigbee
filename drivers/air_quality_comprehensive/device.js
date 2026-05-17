@@ -1,8 +1,7 @@
 'use strict';
-const { BatteryMixin } = require('../../lib/mixins/BatteryMixin');
 const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
-class AirQualityComprehensiveDevice extends BatteryMixin(SensorBase) {
+class AirQualityComprehensiveDevice extends SensorBase {
 
   get mainsPowered() { return true; }
 

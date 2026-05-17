@@ -222,7 +222,7 @@ Homey Pro
 | **[ZHA / zigpy](https://github.com/zigpy/zha-device-handlers)** | Device signatures, custom quirks |
 | **[deCONZ](https://github.com/dresden-elektronik/deconz-rest-plugin)** | REST plugin device data |
 | **[CSA](https://csa-iot.org)** | Zigbee 3.0 certified products |
-| **[Homey Community Forum](https://community.homey.app)** | User reports, device interviews |
+| **[Homey Community Forum](#)** | User reports, device interviews |
 | **[JohanBendz Fork](https://github.com/JohanBendz/com.tuya.zigbee)** | Community contributions |
 
 ---
@@ -281,10 +281,10 @@ homey app run
 |---|---|
 | **App Store** | [Tuya Unified Zigbee](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
 | **Test Version** | [Install Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
-| **Forum** | [Community Thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) |
+| **Forum** | [Community Thread](#) |
 | **Device Finder** | [Smart Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) |
 | **GitHub** | [github.com/dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
-| **Issues** | [Report a Bug](https://github.com/dlnraja/com.tuya.zigbee/issues) |
+| **Issues** | [Report a Bug](#) |
 
 ---
 
@@ -335,11 +335,11 @@ Install from: [Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) 
 1. Get a **device interview** from [Homey Developer Tools](https://tools.developer.homey.app/tools/zigbee)
 2. Check [Zigbee2MQTT](https://www.zigbee2mqtt.io/supported-devices/) for DP mappings
 3. Check [Blakadder](https://zigbee.blakadder.com) for cross-references
-4. Open an [issue](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=01_device_request.yml) with: **manufacturerName**, **modelId**, and **interview data**
+4. Open an [issue](#) with: **manufacturerName**, **modelId**, and **interview data**
 
 ### Report a Bug
 1. Go to **Settings > Apps > Tuya Unified Zigbee > Send Diagnostics**
-2. Open a [bug report](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=02_bug_report.yml) with: device model, error messages, and diagnostics code
+2. Open a [bug report](#) with: device model, error messages, and diagnostics code
 
 ---
 
