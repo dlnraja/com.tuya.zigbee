@@ -1,7 +1,7 @@
 'use strict';
-constCoverBase = require('../../lib/devices/UnifiedCoverBase');
+const UnifiedCoverBase = require('../../lib/devices/UnifiedCoverBase');
 
-class CurtainMotorTiltDevice extends CoverBase {
+class CurtainMotorTiltDevice extends UnifiedCoverBase {
   get coverCapabilities() { return ['windowcoverings_state', 'windowcoverings_set', 'windowcoverings_tilt_set']; }
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---
@@ -21,7 +21,7 @@ class CurtainMotorTiltDevice extends CoverBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[CURTAIN-TILT] ✅ Ready');
+    this.log('[CURTAIN-TILT]  Ready');
   }
 
 

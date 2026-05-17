@@ -1,11 +1,11 @@
 'use strict';
 
-constLightBase = require('../../lib/devices/UnifiedLightBase');
+const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 
 /**
  * LED Controller RGB Device - v5.3.64 SIMPLIFIED
  */
-class LEDControllerRGBDevice extends LightBase {
+class LEDControllerRGBDevice extends UnifiedLightBase {
 
   get lightCapabilities() {
     return ['onoff', 'dim', 'light_hue', 'light_saturation'];
@@ -29,7 +29,7 @@ class LEDControllerRGBDevice extends LightBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[LED-RGB] ✅ LED controller RGB ready');
+    this.log('[LED-RGB]  LED controller RGB ready');
   }
 
 

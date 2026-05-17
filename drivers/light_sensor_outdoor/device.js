@@ -1,4 +1,6 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 /**
@@ -38,34 +40,45 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
     const illum = ep1?.clusters?.illuminanceMeasurement || ep1?.clusters?.[1024];
     if (illum?.on) {
       illum.on('attr.measuredValue', (val) => {
-        const lux = Math.pow(10, (val - 1) / 10000);
-        await this.setCapabilityValue('measure_luminance', Math.round(lux)).catch(() => {});
+        const lux = Math.pow(10, val - 1 * 10000 );
+        this.setCapabilityValue('measure_luminance', Math.round(lux));
       });
     }
 
-    // Tuya DP fallback
-    if (this._tuyaEF00Manager) {
-      this._tuyaEF00Manager.dpMappings = {
-        1: { capability: 'measure_luminance', divisor: 1 },
-        4: { capability: 'measure_battery', divisor: 1 },
-      };
-    }
+    // v5.13.20: Assign dpMappings directly to device for EF00Manager visibility
+    this.dpMappings = {
+      1: { capability: 'measure_luminance', divisor: 1 },
+      4: { capability: 'measure_battery', divisor: 1 },
+    };
 
     // Battery via power configuration
     const power = ep1?.clusters?.powerConfiguration || ep1?.clusters?.[1];
     if (power?.on) {
       power.on('attr.batteryPercentageRemaining', (val) => {
-        const pct = Math.min(100, Math.round(val / 2));
-        await this.setCapabilityValue('measure_battery', pct).catch(() => {});
+        const pct = Math.min(100, Math.round(val));
+        this.setCapabilityValue('measure_battery', pct).catch(() => {});
       });
     }
 
-    this.log('[LIGHT-OUT] \u2705 Ready');
+    this.log('[LIGHT-OUT] \u2705 Ready' );
   }
 
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');
   }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
+  }
 }
 module.exports = LightSensorOutdoorDevice;
+

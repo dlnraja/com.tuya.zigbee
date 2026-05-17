@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-13T03:54:13.526Z",
+  "timestamp": "2026-05-14T03:50:50.904Z",
   "pidConflicts": [
     {
       "pid": "TS011F",
@@ -503,20 +503,6 @@
       "severity": "low"
     },
     {
-      "pid": "TS1201",
-      "drivers": [
-        "climate_sensor",
-        "ir_blaster",
-        "ir_remote"
-      ],
-      "classes": [
-        "sensor",
-        "remote"
-      ],
-      "crossClass": true,
-      "severity": "high"
-    },
-    {
       "pid": "q9mpfhw",
       "drivers": [
         "contact_sensor",
@@ -670,6 +656,19 @@
       ],
       "crossClass": false,
       "severity": "low"
+    },
+    {
+      "pid": "TS1201",
+      "drivers": [
+        "climate_sensor",
+        "ir_blaster"
+      ],
+      "classes": [
+        "sensor",
+        "remote"
+      ],
+      "crossClass": true,
+      "severity": "high"
     },
     {
       "pid": "RH3052",
@@ -965,7 +964,505 @@
       "severity": "high"
     }
   ],
-  "mfrConflicts": [],
+  "mfrConflicts": [
+    {
+      "mfr": "_tz3000_tzvbimpq",
+      "drivers": [
+        "button_wireless_2",
+        "wall_remote_2_gang"
+      ],
+      "sharedPids": [
+        "TS0042"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZ3000_tzvbimpq",
+      "drivers": [
+        "button_wireless_2",
+        "wall_remote_2_gang"
+      ],
+      "sharedPids": [
+        "TS0042"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TZ3000_TZVBIMPQ",
+      "drivers": [
+        "button_wireless_2",
+        "wall_remote_2_gang"
+      ],
+      "sharedPids": [
+        "TS0042"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_tyzb01_ftdkanlj",
+      "drivers": [
+        "climate_sensor",
+        "lcdtemphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "TS0601",
+        "TY0201"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TYZB01_FTDKANLJ",
+      "drivers": [
+        "climate_sensor",
+        "lcdtemphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "TS0601",
+        "TY0201"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_tyzb01_kvwjujy9",
+      "drivers": [
+        "climate_sensor",
+        "lcdtemphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "TS0601",
+        "TY0201"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TYZB01_KVWJUJY9",
+      "drivers": [
+        "climate_sensor",
+        "lcdtemphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "TS0601",
+        "TY0201"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_tyzb01_a476raq2",
+      "drivers": [
+        "climate_sensor",
+        "lcdtemphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "TS0601",
+        "TY0201"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TYZB01_A476RAQ2",
+      "drivers": [
+        "climate_sensor",
+        "lcdtemphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "TS0601",
+        "TY0201"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_tyzb01_hjsgdkfl",
+      "drivers": [
+        "climate_sensor",
+        "lcdtemphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "TS0601",
+        "TY0201"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "_TYZB01_HJSGDKFL",
+      "drivers": [
+        "climate_sensor",
+        "lcdtemphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "TS0601",
+        "TY0201"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "tuyatec-yg5dcbfu",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "TUYATEC-YG5DCBFU",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "tuyatec-prhs1rsd",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "TUYATEC-PRHS1RSD",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "tuyatec-gqhxixyk",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "TUYATEC-GQHXIXYK",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "tuyatec-vmgh3fxd",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "TUYATEC-VMGH3FXD",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "tuyatec-ojmxeikg",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "TUYATEC-OJMXEIKG",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "tuyatec-ojmxeikq",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "TUYATEC-OJMXEIKQ",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "tuyatec-1g3tawnp",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "TUYATEC-1G3TAWNP",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "tuyatec-v3uxbuxy",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "TUYATEC-V3UXBUXY",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "tuyatec-riuj5xzs",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "TUYATEC-RIUJ5XZS",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "tuyatec-1uxx9cci",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "TUYATEC-1UXX9CCI",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "tuyatec-haoiuwzy",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "TUYATEC-HAOIUWZY",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "tuyatec-qun7vq14",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    },
+    {
+      "mfr": "TUYATEC-QUN7VQ14",
+      "drivers": [
+        "climate_sensor",
+        "temphumidsensor"
+      ],
+      "sharedPids": [
+        "TS0201",
+        "ZG-227Z",
+        "CK-TLSR8656-SS5-01(7014)",
+        "TY0201",
+        "RH3052"
+      ],
+      "risk": "high"
+    }
+  ],
   "orphans": [
     {
       "driver": "button_wireless_plug",
@@ -1012,6 +1509,10 @@
       ]
     },
     {
+      "driver": "ir_remote",
+      "reason": "no_fingerprints"
+    },
+    {
       "driver": "lcdtemphumidsensor_plug_energy",
       "reason": "no_manufacturer_names",
       "pids": [
@@ -1027,6 +1528,25 @@
       "reason": "no_manufacturer_names",
       "pids": [
         "TS0215A"
+      ]
+    },
+    {
+      "driver": "remote_button_wireless",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0043",
+        "TS011F",
+        "TS0121",
+        "TSO121"
+      ]
+    },
+    {
+      "driver": "remote_button_wireless_plug",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS011F",
+        "TS0121",
+        "TSO121"
       ]
     },
     {
@@ -1674,19 +2194,6 @@
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
     },
     {
-      "pid": "TS1201",
-      "splitBy": {
-        "sensor": [
-          "climate_sensor"
-        ],
-        "remote": [
-          "ir_blaster",
-          "ir_remote"
-        ]
-      },
-      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
-    },
-    {
       "pid": "TS130F",
       "splitBy": {
         "windowcoverings": [
@@ -1760,6 +2267,18 @@
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
     },
     {
+      "pid": "TS1201",
+      "splitBy": {
+        "sensor": [
+          "climate_sensor"
+        ],
+        "remote": [
+          "ir_blaster"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
       "pid": "TS0301",
       "splitBy": {
         "windowcoverings": [
@@ -1824,8 +2343,8 @@
     "totalDrivers": 228,
     "pidConflicts": 69,
     "highSeverity": 33,
-    "mfrConflicts": 0,
-    "orphans": 73,
+    "mfrConflicts": 35,
+    "orphans": 76,
     "splitSuggestions": 33
   }
 }

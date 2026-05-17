@@ -1,9 +1,15 @@
 {
   "triggers": [
     {
-      "id": "contact_presence_presence_detected",
+      "id": "sensor_contact_presence_presence_detected",
       "highlight": true,
       "title": {
+        "en": "Presence detected",
+        "nl": "Aanwezigheid gedetecteerd",
+        "fr": "Présence détectée",
+        "de": "Anwesenheit erkannt"
+      },
+      "titleFormatted": {
         "en": "Presence detected",
         "nl": "Aanwezigheid gedetecteerd",
         "fr": "Présence détectée",
@@ -18,8 +24,14 @@
       "args": []
     },
     {
-      "id": "contact_presence_presence_cleared",
+      "id": "sensor_contact_presence_presence_cleared",
       "title": {
+        "en": "Presence cleared",
+        "nl": "Aanwezigheid opgeheven",
+        "fr": "Présence terminée",
+        "de": "Anwesenheit beendet"
+      },
+      "titleFormatted": {
         "en": "Presence cleared",
         "nl": "Aanwezigheid opgeheven",
         "fr": "Présence terminée",
@@ -34,8 +46,14 @@
       "args": []
     },
     {
-      "id": "contact_presence_motion_detected",
+      "id": "sensor_contact_presence_motion_detected",
       "title": {
+        "en": "Motion detected",
+        "nl": "Beweging gedetecteerd",
+        "fr": "Mouvement détecté",
+        "de": "Bewegung erkannt"
+      },
+      "titleFormatted": {
         "en": "Motion detected",
         "nl": "Beweging gedetecteerd",
         "fr": "Mouvement détecté",
@@ -50,7 +68,7 @@
       "args": []
     },
     {
-      "id": "contact_presence_illuminance_changed",
+      "id": "sensor_contact_presence_illuminance_changed",
       "title": {
         "en": "Illuminance changed",
         "nl": "Lichtsterkte veranderd",
@@ -73,7 +91,7 @@
       "args": []
     },
     {
-      "id": "contact_presence_distance_changed",
+      "id": "sensor_contact_presence_distance_changed",
       "title": {
         "en": "Detection distance changed",
         "nl": "Detectieafstand veranderd",
@@ -96,7 +114,7 @@
       "args": []
     },
     {
-      "id": "contact_presence_lux_changed",
+      "id": "sensor_contact_presence_lux_changed",
       "title": {
         "en": "Luminance changed",
         "fr": "Luminance changée",
@@ -106,7 +124,7 @@
       "args": []
     },
     {
-      "id": "contact_presence_battery_low",
+      "id": "sensor_contact_presence_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -118,8 +136,14 @@
   ],
   "conditions": [
     {
-      "id": "contact_presence_is_present",
+      "id": "sensor_contact_presence_is_present",
       "title": {
+        "en": "Someone is present",
+        "nl": "Iemand is aanwezig",
+        "fr": "Quelqu'un est présent",
+        "de": "Jemand ist anwesend"
+      },
+      "titleFormatted": {
         "en": "Someone !{{is|is not}} present",
         "nl": "Iemand !{{is|is niet}} aanwezig",
         "fr": "Quelqu'un !{{est|n'est pas}} présent",
@@ -128,7 +152,7 @@
       "args": []
     },
     {
-      "id": "contact_presence_illuminance_above",
+      "id": "sensor_contact_presence_illuminance_above",
       "title": {
         "en": "Illuminance !{{is|is not}} above",
         "nl": "Lichtsterkte !{{is|is niet}} boven",
@@ -149,7 +173,7 @@
       ]
     },
     {
-      "id": "contact_presence_distance_within",
+      "id": "sensor_contact_presence_distance_within",
       "title": {
         "en": "Target !{{is|is not}} within distance",
         "nl": "Doel !{{is|is niet}} binnen afstand",
@@ -170,7 +194,7 @@
       ]
     },
     {
-      "id": "contact_presence_motion_active",
+      "id": "sensor_contact_presence_motion_active",
       "title": {
         "en": "Motion !{{is|is not}} detected",
         "fr": "Mouvement !{{est|n'est pas}} détecté",

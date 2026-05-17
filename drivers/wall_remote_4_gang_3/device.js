@@ -1,24 +1,24 @@
 'use strict';
 
-const ButtonDevice = require('../../lib/devices/ButtonDevice');
+const { ZigBeeDevice } = require('homey-zigbeedriver');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 /**
- * Wall Remote 4 Gang 3 - TS0044 variant
- * 4-button battery wall remote using ZCL scenes/onOff clusters
- * v5.12.0: Converted from log-only stub to full ButtonDevice
+ * WallRemote4Gang3Device - v9.5.0 Universal Standard
+ * 
+ * Migrated to PhysicalButtonMixin for 8-layer detection stack.
+ * Standardized battery management via BatteryMixin.
  */
-class WallRemote4Gang3Device extends ButtonDevice {
+class WallRemote4Gang3Device extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
+
   async onNodeInit({ zclNode }) {
-    this.buttonCount = 4;
-    this.log('[WALL_REMOTE_4_GANG_3] v5.12.0 init - 4 buttons');
-    await super.onNodeInit({ zclNode }).catch(err => this.error('[WALL_REMOTE_4_GANG_3] init err:', err.message));
-    this.log('[WALL_REMOTE_4_GANG_3] ready');
+    await this._safeInvoke(async () => { this.buttonCount = 4;
+      await super.onNodeInit({ zclNode  });
+      this.log('[WallRemote4Gang3] ✅ Initialized with Mixin architecture');
+    }, 'onNodeInit');
   }
 
-
-  async onDeleted() {
-    this.log('Device deleted, cleaning up');
-  }
 }
 
 module.exports = WallRemote4Gang3Device;

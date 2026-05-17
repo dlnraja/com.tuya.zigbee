@@ -1,7 +1,8 @@
 'use strict';
-constLightBase = require('../../lib/devices/UnifiedLightBase');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  require('../../lib/devices/UnifiedLightBase');
 
-class LEDStripRGBWDevice extends LightBase {
+class LEDStripRGBWDevice extends UnifiedLightBase {
   get lightCapabilities() { return ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature']; }
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---
@@ -21,7 +22,7 @@ class LEDStripRGBWDevice extends LightBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[LED-RGBW] ✅ Ready');
+    this.log('[LED-RGBW]  Ready');
   }
 
 

@@ -1,51 +1,51 @@
 'use strict';
 
-letCoverBase;
-try {
- CoverBase = require('../../lib/devices/UnifiedCoverBase');
-} catch (e) {
-  const { ZigBeeDevice } = require('homey-zigbeedriver');
- CoverBase = ZigBeeDevice;
-}
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
-class WallCurtainSwitchDevice extends CoverBase {
+/**
+ * WallCurtainSwitchDevice - v5.13.6 Hardened Architecture
+ */
+class WallCurtainSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaZigbeeDevice)) {
+
+  get mainsPowered() { return true; }
+  get gangCount() { return 1; }
+
   async onNodeInit({ zclNode }) {
-    this.log('[WALL_CURTAIN_SWITCH] init');
+    this.log('[WallCurtain] 🚀 Initializing hardened driver...');
+    await super.onNodeInit({ zclNode });
 
-    // v5.13.1: CRITICAL FIX — must call super to initialize protocol detection,
-    // Tuya DP, capability migration, and ZCL fallbacks fromCoverBase
-    await super.onNodeInit({ zclNode }).catch(e =>
-      this.log('[WALL_CURTAIN_SWITCH] super.onNodeInit warn:', e.message)
-    );
-
+    // 1. Capability Listeners
     if (this.hasCapability('windowcoverings_set')) {
       this.registerCapabilityListener('windowcoverings_set', async (value) => {
-        this.log('[WALL_CURTAIN_SWITCH] set position:', value);
-        const ep = zclNode.endpoints[1];
-        if (ep && ep.clusters && ep.clusters.windowCovering) {
-          await ep.clusters.windowCovering.goToLiftPercentage({ percentageLiftValue: Math.round(value * 100) });
+        this.log(`[WallCurtain] Setting position: ${value}`);
+        const endpoint = this.zclNode.endpoints[1];
+        if (endpoint?.clusters?.windowCovering) {
+          return endpoint.clusters.windowCovering.goToLiftPercentage({
+            percentageLiftValue: Math.round(value * 100)
+          });
         }
       });
     }
 
     if (this.hasCapability('windowcoverings_state')) {
       this.registerCapabilityListener('windowcoverings_state', async (value) => {
-        this.log('[WALL_CURTAIN_SWITCH] state:', value);
-        const ep = zclNode.endpoints[1];
-        if (!ep || !ep.clusters || !ep.clusters.windowCovering) return;
-        if (value === 'up') await ep.clusters.windowCovering.upOpen();
-        else if (value === 'down') await ep.clusters.windowCovering.downClose();
-        else await ep.clusters.windowCovering.stop();
+        this.log(`[WallCurtain] Setting state: ${value}`);
+        const endpoint = this.zclNode.endpoints[1];
+        if (!endpoint?.clusters?.windowCovering) return;
+
+        switch (value) {
+          case 'up': return endpoint.clusters.windowCovering.upOpen();
+          case 'down': return endpoint.clusters.windowCovering.downClose();
+          default: return endpoint.clusters.windowCovering.stop();
+        }
       });
     }
 
-    this.log('[WALL_CURTAIN_SWITCH] ready');
+    this.log('[WallCurtain] ✅ Ready');
   }
 
-
-  async onDeleted() {
-    this.log('Device deleted, cleaning up');
-  }
 }
 
 module.exports = WallCurtainSwitchDevice;

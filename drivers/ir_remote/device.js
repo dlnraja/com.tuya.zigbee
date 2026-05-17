@@ -9,7 +9,7 @@ const IRCodeLibrary = require('../../lib/ir/IRCodeLibrary');
  */
 class IrRemoteDevice extends Homey.Device {
 
-  async onInit() {
+  onInit() {
     this.log('Virtual IR Remote initialized');
     
     // Register capability listeners
@@ -19,7 +19,7 @@ class IrRemoteDevice extends Homey.Device {
     this._initializeExtraCapabilities();
   }
 
-  async onCapabilityOnOff(value) {
+  onCapabilityOnOff(value) {
     const brand = this.getSetting('ir_brand');
     const category = this.getSetting('ir_category');
     const command = value ? 'Power' : 'Power'; // Many remotes use same toggle
@@ -31,7 +31,7 @@ class IrRemoteDevice extends Homey.Device {
   /**
    * Send command via associated blaster
    */
-  async _sendRemoteCommand(brand, category, command) {
+  _sendRemoteCommand(brand, category, command) {
     const blasterId = this.getSetting('blaster_id');
     const blaster = this.homey.drivers.getDriver('ir_blaster').getDevices().find(d => d.getData().id === blasterId);
     

@@ -15,13 +15,11 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 class HumidifierDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
-    this.log('Smart Humidifier initializing...');
-
-    await this._setupTuyaDP(zclNode);
-
-    this.log('Smart Humidifier initialized');
+    await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
+      this.log('Smart Humidifier initializing...');
+      await this._setupTuyaDP(zclNode);
+      this.log('Smart Humidifier initialized');
+    }, 'onNodeInit');
   }
 
   async _setupTuyaDP(zclNode) {
@@ -34,18 +32,25 @@ class HumidifierDevice extends ZigBeeDevice {
     this.log('[TUYA] DP cluster found');
 
     // Register capability listeners
-    this.registerCapabilityListener('onoff', async (value) => {
-      await tuyaCluster.datapoint({ dp: 1, datatype: 1, value: value });
+    this._safeInvoke(async (value) => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
+await this._safeInvoke(async () => {
+
+      await tuyaCluster.datapoint({ dp: 1, datatype: 1, value: value  }, 'onoffListener');
+});
     });
 
-    this.registerCapabilityListener('dim', async (value) => {
+    this._safeInvoke(async (value) => { await this._safeInvoke(async () => {
+
       const level = Math.round(value * 3); // 0=off, 1=low, 2=medium, 3=high
-      await tuyaCluster.datapoint({ dp: 5, datatype: 4, value: level });
+      await tuyaCluster.datapoint({ dp: 5, datatype: 4, value: level  }, 'dimListener');
+});
     });
 
     if (this.hasCapability('dim.humidity')) {
-      this.registerCapabilityListener('dim.humidity', async (value) => {
-        await tuyaCluster.datapoint({ dp: 2, datatype: 2, value: Math.round(value) });
+      this._safeInvoke(async (value) => { await this._safeInvoke(async () => {
+
+        await tuyaCluster.datapoint({ dp: 2, datatype: 2, value: Math.round(value)  }, 'dim.humidityListener');
+});
       });
     }
 
@@ -54,7 +59,7 @@ class HumidifierDevice extends ZigBeeDevice {
     tuyaCluster.on('datapoint', (dp, value) => this._handleDP(dp, value));
   }
 
-  _handleDP(dp, value) {
+  async _handleDP(dp, value) {
     if (dp === undefined) return;
     this.log(`[DP${dp}] = ${value}`);
 
@@ -87,7 +92,7 @@ class HumidifierDevice extends ZigBeeDevice {
   }
 
 
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }

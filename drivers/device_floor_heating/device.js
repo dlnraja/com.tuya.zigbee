@@ -1,4 +1,5 @@
 'use strict';
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 /**
@@ -9,14 +10,12 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
  */
 class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
     // --- Homey Time Sync for TRV/LCD/Thermostat devices ---
     // Syncs the device clock with the Homey box time every 6 hours.
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
     try {
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
-      this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000 });
+      this._timeSync = new ZigbeeTimeSync(this, { throttleMs:6 * 60 * 60 * 1000 });
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
@@ -43,7 +42,7 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
         } catch (e) {
           this.log('[TimeSync] Periodic sync failed:', e.message);
         }
-      }, 6 * 60 * 60 * 1000);
+      },6 * 60 * 60 * 1000);
     } catch (e) {
       this.log('[TimeSync] Time sync init failed (non-critical):', e.message);
     }
@@ -68,27 +67,26 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
     const MODE_MAP = { 0: 'auto', 1: 'heat', 2: 'off' };
     const MODE_MAP_REV = { 'auto': 0, 'heat': 1, 'off': 2 };
 
-    if (this._tuyaEF00Manager) {
-      this._tuyaEF00Manager.dpMappings = {
-        1: { capability: 'onoff', converter: v => !!v },
-        2: { capability: 'thermostat_mode', converter: v => MODE_MAP[v] || 'auto' },
-        16: { capability: 'target_temperature', divisor: 10 },
-        24: { capability: 'measure_temperature', divisor: 10 },
-        101: { capability: 'measure_temperature.floor', divisor: 10 },
-      };
-    }
+    // v5.13.20: Assign dpMappings directly to device for EF00Manager visibility
+    this.dpMappings = {
+      1: { capability: 'onoff', converter: v => !!v },
+      2: { capability: 'thermostat_mode', converter: v => MODE_MAP[v] || 'auto' },
+      16: { capability: 'target_temperature', divisor: 10 },
+      24: { capability: 'measure_temperature', divisor: 10 },
+      101: { capability: 'measure_temperature.floor', divisor: 10 },
+    };
 
     this.registerCapabilityListener('onoff', async (value) => {
       this._markAppCommand?.();
-      if (this._tuyaEF00Manager) {
-        await this._tuyaEF00Manager.sendTuyaDP(1, 1, value ? 1 : 0);
+      if (this.tuyaEF00Manager) {
+        await this.tuyaEF00Manager.sendTuyaDP(1, 1 , value ? 1 : 0);
       }
     });
 
     this.registerCapabilityListener('target_temperature', async (value) => {
       this._markAppCommand?.();
-      if (this._tuyaEF00Manager) {
-        await this._tuyaEF00Manager.sendTuyaDP(16, 2, Math.round(value * 10));
+      if (this.tuyaEF00Manager) {
+        await this.tuyaEF00Manager.sendTuyaDP(16, 2, Math.round(value));
       }
     });
 
@@ -96,12 +94,12 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
       this._markAppCommand?.();
       if 
 
-      (this._tuyaEF00Manager) {
-        await this._tuyaEF00Manager.sendTuyaDP(2, 4, MODE_MAP_REV[value] ?? 0);
+      (this.tuyaEF00Manager) {
+        await this.tuyaEF00Manager.sendTuyaDP(2, 4, MODE_MAP_REV[value] ?? 0);
       }
     });
 
-    this.log('[FLOOR-HEAT] \u2705 Ready');
+    this.log('[FLOOR-HEAT] \u2705 Ready' );
   }
 
 
@@ -110,8 +108,8 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
   }
 
   /**
-   * Tuya EF00 time sync fallback (DP 0x24 / decimal 36)
-   * Sends current time with timezone offset for Tuya-native thermostat/TRV devices.
+   * Tuya EF00 time sync fallback (DP (0x24 / decimal) 36)
+   * Sends current time with timezone offset for Tuya-native (thermostat / TRV) devices.
    */
   async _tuyaTimeSyncFallback() {
     try {
@@ -124,7 +122,7 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate - now) / 3600000);
+        utcOffset = Math.round((tzDate - safeDivide(now), 3600000));
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]
@@ -147,5 +145,6 @@ class FloorHeatingThermostatDevice extends TuyaZigbeeDevice {
 
 }
 module.exports = FloorHeatingThermostatDevice;
+
 
 

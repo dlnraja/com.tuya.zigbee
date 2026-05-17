@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "presence_sensor_radar_presence_detected_dup_0htxz",
+      "id": "sensor_presence_radar_presence_detected",
       "highlight": true,
       "title": {
         "en": "Presence detected",
@@ -18,7 +18,7 @@
       "args": []
     },
     {
-      "id": "presence_sensor_radar_presence_cleared_dup_z03jd",
+      "id": "sensor_presence_radar_presence_cleared",
       "title": {
         "en": "Presence cleared",
         "nl": "Aanwezigheid opgeheven",
@@ -34,7 +34,7 @@
       "args": []
     },
     {
-      "id": "presence_sensor_radar_motion_detected_dup_tcrzg",
+      "id": "sensor_presence_radar_motion_detected",
       "title": {
         "en": "Motion detected",
         "nl": "Beweging gedetecteerd",
@@ -50,7 +50,7 @@
       "args": []
     },
     {
-      "id": "presence_sensor_radar_illuminance_changed_dup_u6kdv",
+      "id": "sensor_presence_radar_illuminance_changed",
       "title": {
         "en": "Illuminance changed",
         "nl": "Lichtsterkte veranderd",
@@ -73,7 +73,7 @@
       "args": []
     },
     {
-      "id": "presence_sensor_radar_distance_changed_dup_cqh01",
+      "id": "sensor_presence_radar_distance_changed",
       "title": {
         "en": "Detection distance changed",
         "nl": "Detectieafstand veranderd",
@@ -96,7 +96,7 @@
       "args": []
     },
     {
-      "id": "presence_sensor_radar_lux_changed_dup_n5dl7",
+      "id": "sensor_presence_radar_lux_changed",
       "title": {
         "en": "Luminance changed",
         "fr": "Luminance changée",
@@ -106,7 +106,7 @@
       "args": []
     },
     {
-      "id": "presence_sensor_radar_battery_low_dup_dsz9d",
+      "id": "sensor_presence_radar_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -118,7 +118,7 @@
   ],
   "conditions": [
     {
-      "id": "presence_sensor_radar_is_present_dup_36v72",
+      "id": "sensor_presence_radar_is_present",
       "title": {
         "en": "Someone !{{is|is not}} present",
         "nl": "Iemand !{{is|is niet}} aanwezig",
@@ -128,7 +128,7 @@
       "args": []
     },
     {
-      "id": "presence_sensor_radar_illuminance_above_dup_cm6qq",
+      "id": "sensor_presence_radar_illuminance_above",
       "title": {
         "en": "Illuminance !{{is|is not}} above",
         "nl": "Lichtsterkte !{{is|is niet}} boven",
@@ -149,7 +149,7 @@
       ]
     },
     {
-      "id": "presence_sensor_radar_distance_within_dup_rlo06",
+      "id": "sensor_presence_radar_distance_within",
       "title": {
         "en": "Target !{{is|is not}} within distance",
         "nl": "Doel !{{is|is niet}} binnen afstand",
@@ -170,7 +170,7 @@
       ]
     },
     {
-      "id": "presence_sensor_radar_motion_active_dup_9nqh2",
+      "id": "sensor_presence_radar_motion_active",
       "title": {
         "en": "Motion !{{is|is not}} detected",
         "fr": "Mouvement !{{est|n'est pas}} détecté",

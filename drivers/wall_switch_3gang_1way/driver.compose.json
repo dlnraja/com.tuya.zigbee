@@ -8,7 +8,9 @@
   },
   "class": "socket",
   "capabilities": [
-    "onoff"
+    "onoff",
+    "onoff.gang2",
+    "onoff.gang3"
   ],
   "energy": {
     "approximation": {

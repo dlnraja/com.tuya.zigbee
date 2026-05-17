@@ -7,14 +7,13 @@ class D extends E{
     voltage:{capability:'measure_voltage',divisor:100},
     current:{capability:'measure_current',divisor:1000}
   };}
-  _registerCapListeners(){
-    this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v);});
+  async _registerCapListeners(){
+    this.registerCapabilityListener('onoff',async v=>{ if (typeof this.markAppCommand === 'function') this.markAppCommand(1, v);await this._client.setSwitch(v);});
   }
   async onInit(){
-    for(const c of['measure_power','measure_voltage','measure_current','meter_power'])if(!this.hasCapability(c))await this.addCapability(c).catch(()=>{});
-    await super.onInit();
-  }
-  _processState(data){
+    for(const c of['measure_power','measure_voltage','measure_current','meter_power'])if(!this.hasCapability(c))await this.addCapability(c).catch(() => { });
+    await super.on(); }
+  async _processState(data){
     super._processState(data);
     if(data.oneKwh!==undefined&&this.hasCapability('meter_power')){
       await this.setCapabilityValue('meter_power',parseFloat(data.oneKwh)/100).catch(()=>{});
@@ -22,7 +21,7 @@ class D extends E{
   }
 
 
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }

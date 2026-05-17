@@ -5,18 +5,18 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { setupSonoffEwelink, handleSonoffEwlSettings } = require('../../lib/mixins/SonoffEwelinkMixin');
 
 /**
- * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      1-GANG SWITCH - v5.5.940 SIMPLIFIED (PR #118 rollback)                 ║
- * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  UsesSwitchBase which provides:                                       ║
- * ║  - dpMappings for DP 1-8 (gang switches) + DP 14-15 (settings)              ║
- * ║  - _setupTuyaDPMode() + _setupZCLMode()                                      ║
- * ║  - _registerCapabilityListeners() for all gangs                              ║
- * ║  - ProtocolAutoOptimizer for automatic detection                             ║
- * ║                                                                               ║
- * ║  NOTE: BSEED devices should use wall_switch_1gang_1way driver instead       ║
- * ║  (PR #118 by packetninja/Attilla)                                            ║
- * ╚══════════════════════════════════════════════════════════════════════════════╝
+ * 
+ *       1-GANG SWITCH - v5.5.940 SIMPLIFIED (PR #118 rollback)                 
+ * 
+ *   Uses UnifiedSwitchBase which provides:                                       
+ *   - dpMappings for DP 1-8 (gang switches) + DP 14-15 (settings)              
+ *   - _setupTuyaDPMode() + _setupZCLMode()                                      
+ *   - _registerCapabilityListeners() for all gangs                              
+ *   - ProtocolAutoOptimizer for automatic detection                             
+ *                                                                                
+ *   NOTE: BSEED devices should use wall_switch_1gang_1way driver instead       
+ *   (PR #118 by packetninja/Attilla)                                            
+ * 
  */
 class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
 
@@ -82,8 +82,10 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     }
 
     // v5.8.95: Removed redundant _markAppCommand + broken _handleTuyaDatapoint wrapper.
-    //SwitchBase._setGangOnOff() now calls PhysicalButtonMixin.markAppCommand() centrally.
+    // UnifiedSwitchBase._setGangOnOff() now calls PhysicalButtonMixin.markAppCommand() centrally.
     await super.onNodeInit({ zclNode });
+    this.initPhysicalButtonDetection(); // rule-19 injected
+    
     await this.initPhysicalButtonDetection(zclNode);
     await this.initVirtualButtons();
     await setupSonoffEwelink(this, zclNode);

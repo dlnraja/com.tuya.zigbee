@@ -4,10 +4,15 @@ on:
   schedule:
     - cron: '0 0 * * 0' # Weekly on Sunday
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   test-apis:
     name: Check AI API Keys
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     env:
       GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
@@ -22,10 +27,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: 22
 

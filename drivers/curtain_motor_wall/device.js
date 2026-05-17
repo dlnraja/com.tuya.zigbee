@@ -2,14 +2,14 @@
 
 // v5.5.295: Fix "Class extends value undefined" stderr error
 // Use try-catch to handle potential circular dependency issues
-letCoverBase;
+let HybridCoverBase;
 try {
- CoverBase = require('../../lib/devices/UnifiedCoverBase');
+  HybridCoverBase = require('../../lib/devices/HybridCoverBase');
 } catch (error) {
-  // Fallback to direct ZigBeeDevice ifCoverBase fails
-  console.error('[CURTAIN_MOTOR] Failed to loadCoverBase, using ZigBeeDevice fallback:', error.message);
+  // Fallback to direct ZigBeeDevice if HybridCoverBase fails
+  console.error('[CURTAIN_MOTOR] Failed to load HybridCoverBase, using ZigBeeDevice fallback:', error.message);
   const { ZigBeeDevice } = require('homey-zigbeedriver');
- CoverBase = ZigBeeDevice;
+  HybridCoverBase = ZigBeeDevice;
 }
 
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -25,7 +25,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ║  Variants: GIRIER, Lonsonho, Zemismart, MOES, Longsam                      ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedCoverBase)) {
+class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCoverBase)) {
 
   // v5.5.322: Auto-detect power source - battery curtain robots use 3xAA
   get mainsPowered() {
@@ -203,14 +203,14 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     // Luminance (lux) - DP14 or DP104
     if ((dp === 14 || dp === 104) && this.hasCapability('measure_luminance')) {
       const lux = typeof value === 'number' ? value : parseInt(value, 10) || 0;
-      await this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
+      this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
       this.log(`[CURTAIN] 💡 Lux: ${lux}`);
     }
 
     // Battery - DP13
     if (dp === 13 && this.hasCapability('measure_battery')) {
       const battery = typeof value === 'number' ? value : parseInt(value, 10) || 0;
-      await this.setCapabilityValue('measure_battery', parseFloat(Math.min(100, Math.max(0, battery)))).catch(() => { });
+      this.setCapabilityValue('measure_battery', parseFloat(Math.min(100, Math.max(0, battery)))).catch(() => { });
       this.log(`[CURTAIN] 🔋 Battery: ${battery}%`);
     }
 
@@ -230,7 +230,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       await this.setCapabilityValue('button', true).catch(() => { });
       // Reset after short delay
       setTimeout(() => {
-        await this.setCapabilityValue('button', false).catch(() => { });
+        this.setCapabilityValue('button', false).catch(() => { });
       }, 500);
 
       // Trigger flow card if available
@@ -308,7 +308,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   }
 
   // v5.5.935: REMOVED broken _sendTuyaDP override
-  // ParentCoverBase._sendTuyaDP() handles all DP communication correctly
+  // Parent HybridCoverBase._sendTuyaDP() handles all DP communication correctly
   // The override was causing "tuya.datapoint: value is an unexpected property" errors
 }
 

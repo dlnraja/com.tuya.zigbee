@@ -9,19 +9,17 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
-    this.log('🎨 Initializing 4 Gang Wall Remote (Type 2)...');
-    
-    // Call parent to setup raw frame fallbacks
-    await super.onNodeInit({ zclNode });
-
-    this._buttonPressedTriggerDevice = this.homey.flow.getDeviceTriggerCard('wall_remote_4_gang_buttons_2');
-    if (this._buttonPressedTriggerDevice) {
+    await this._safeInvoke(async () => { this.log('🎨 Initializing 4 Gang Wall Remote (Type 2)...');
+      // Call parent to setup raw frame fallbacks
+      await super.onNodeInit({ zclNode  });
+      this._buttonPressedTriggerDevice = this.homey.flow.getDeviceTriggerCard('wall_remote_4_gang_buttons_2');
+      if (this._buttonPressedTriggerDevice) {
       this._buttonPressedTriggerDevice.registerRunListener(async (args, state) => {
-        return args.button === state.button;
+      return args.button === state.button;
       });
-    }
-    
-    this.log('✅ Remote Initialized');
+      }
+      this.log('✅ Remote Initialized');
+    }, 'onNodeInit');
   }
 
   /**
@@ -53,14 +51,13 @@ class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
     
     if (this._buttonPressedTriggerDevice) {
       return this._buttonPressedTriggerDevice.trigger(this, {}, { button: `${button}` })
-        .then(() => this.log(`[BUTTON] Triggered flow: ${button}`))
-        .catch(err => this.error('[BUTTON] Trigger error:', err.message));
+        .then(() => this.log(`[BUTTON] Triggered flow: ${button}`)).catch(err => this.error('[BUTTON] Trigger error:', err.message));
     }
   }
 
   onDeleted() {
     this.log('4 Gang Wall Remote removed');
-    if (typeof super.onDeleted === 'function') super.onDeleted();
+    if (typeof super.onDeleted === 'function') super.onNodeInit({ zclNode });
   }
 
 }

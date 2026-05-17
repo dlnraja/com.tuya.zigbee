@@ -9,6 +9,12 @@
         "fr": "Présence détectée",
         "de": "Anwesenheit erkannt"
       },
+      "titleFormatted": {
+        "en": "Presence detected",
+        "nl": "Aanwezigheid gedetecteerd",
+        "fr": "Présence détectée",
+        "de": "Anwesenheit erkannt"
+      },
       "hint": {
         "en": "Triggers when the mmWave radar detects human presence (even stationary)",
         "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
@@ -25,6 +31,12 @@
         "fr": "Présence terminée",
         "de": "Anwesenheit beendet"
       },
+      "titleFormatted": {
+        "en": "Presence cleared",
+        "nl": "Aanwezigheid opgeheven",
+        "fr": "Présence terminée",
+        "de": "Anwesenheit beendet"
+      },
       "hint": {
         "en": "Triggers when no human presence is detected for the configured timeout",
         "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
@@ -36,6 +48,12 @@
     {
       "id": "presence_sensor_radar_motion_detected",
       "title": {
+        "en": "Motion detected",
+        "nl": "Beweging gedetecteerd",
+        "fr": "Mouvement détecté",
+        "de": "Bewegung erkannt"
+      },
+      "titleFormatted": {
         "en": "Motion detected",
         "nl": "Beweging gedetecteerd",
         "fr": "Mouvement détecté",
@@ -120,6 +138,12 @@
     {
       "id": "presence_sensor_radar_is_present",
       "title": {
+        "en": "Someone is present",
+        "nl": "Iemand is aanwezig",
+        "fr": "Quelqu'un est présent",
+        "de": "Jemand ist anwesend"
+      },
+      "titleFormatted": {
         "en": "Someone !{{is|is not}} present",
         "nl": "Iemand !{{is|is niet}} aanwezig",
         "fr": "Quelqu'un !{{est|n'est pas}} présent",

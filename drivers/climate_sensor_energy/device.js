@@ -1,7 +1,7 @@
 'use strict';
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
-class EnergyMeter3PhaseDevice extends PlugBase {
+class EnergyMeter3PhaseDevice extends UnifiedPlugBase {
   get plugCapabilities() { return ['measure_power', 'meter_power', 'measure_voltage', 'measure_current']; }
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---
@@ -42,7 +42,7 @@ class EnergyMeter3PhaseDevice extends PlugBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[ENERGY-3PH] ✅ Ready');
+    this.log('[ENERGY-3PH]  Ready');
   }
 
 

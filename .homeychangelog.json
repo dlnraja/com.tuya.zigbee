@@ -1,4 +1,25 @@
 {
+  "7.5.38": {
+    "en": "No user-facing changes in this release."
+  },
+  "7.5.37": {
+    "en": "Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 compliance"
+  },
+  "7.5.35": {
+    "en": "v7.5.34: Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers (resolved runtime errors), Restored draft-to-test , Standardized button flow cards (button_pressed, button_double_press, button_long_press, button_multi_press, button_release, knob_rotated), Added OTA check updates action card, Added tuya_dp_send_typed and tuya_dp"
+  },
+  "7.5.34": {
+    "en": "v7.5.34: Fixed condition card registration in air_quality_comprehensive and din_rail_meter drivers. Standardized button flow cards. Synced upstream fixes from ."
+  },
+  "7.5.33": {
+    "en": "Fixed condition cards in air quality & DIN rail meter drivers. Added standardized button flow triggers (press, double press, long press, release, knob rotation). Synced upstream driver improvements and updated app assets."
+  },
+  "7.5.32": {
+    "en": "v7.5.32: . Harmonized driver icons, updated app store assets, and restored draft-to-test  fixes."
+  },
+  "7.5.31": {
+    "en": "v7.5.31: Harmonized 228 driver icons with new SVG assets. Updated app store images. Fixed various device icon inconsistencies. Added draft-to-test promotion  for faster testing."
+  },
   "7.5.30": {
     "en": "Harmonized icons across all 228 drivers, updated app store assets, and added support for new soil sensor fingerprint (_TZE284_0ints6wl)."
   },
@@ -38,28 +59,7 @@
   "7.5.18": {
     "en": "Easy Login with saved credentials, auto device classification with brand badges, TS110E level control fix, alarm_battery removed from 136 drivers (SDK3 conflict), 7 FP collisions resolved, duplicate flow cards fixed across driver fleet."
   },
-  "7.5.17": {
-    "en": "v7.5.17 — 3,207 new fingerprints, backlight mode alignment fix, and fingerprint case normalization for more reliable pairing."
-  },
-  "7.5.16": {
-    "en": "v7.5.16 — . Maintenance release with updated device expectations, diagnostics, and internal state."
-  },
-  "7.5.15": {
-    "en": "v7.5.15: Fixed siren sensor driver crashes, added 3,202 new fingerprints, and improved device detection reliability."
-  },
-  "7.5.14": {
-    "en": "v7.5.14: . Bug fixes for wireless buttons, climate sensors, radiator valves, and energy meters. Improved device initialization and diagnostics."
-  },
-  "7.5.13": {
-    "en": "v7.5.13: . Added new fingerprints for motion sensor, illuminance sensor, 3-gang switch, energy meter, and DIN rail. Fixed INSOMA dual irrigation valve and smart wireless button detection. Improved climate sensor recognition."
-  },
-  "7.5.12": {
-    "en": "v7.5.12: . Fixed sensor fallback logic for unknown models. Added new fingerprints for radiator valve (_TZE284_ne4pikwm). Updated documentation and project rules."
-  },
-  "7.5.11": {
-    "en": "v7.5.11: Fixed ReferenceError crashes in UnifiedSensorBase, UnifiedCoverBase, UnifiedLightBase, UnifiedPlugBase, UnifiedSwitchBase, and UnifiedThermostatBase during dynamic capability updates."
-  },
-  "7.5.31": {
-    "en": "v7.5.30: Added support for soil sensor _TZE284_0ints6wl (TS0601), Harmonized icons across all 228 drivers for consistent visual experience, Updated app store assets (large, small, xlarge images), Updated app.json and README with latest driver and fingerprint counts"
+  "7.5.39": {
+    "en": "v7.5.38: None, None, None"
   }
 }

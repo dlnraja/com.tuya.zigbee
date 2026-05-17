@@ -1,7 +1,7 @@
 'use strict';
-constCoverBase = require('../../lib/devices/UnifiedCoverBase');
+const UnifiedCoverBase = require('../../lib/devices/UnifiedCoverBase');
 
-class ShutterRollerDevice extends CoverBase {
+class ShutterRollerDevice extends UnifiedCoverBase {
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
@@ -20,7 +20,7 @@ class ShutterRollerDevice extends CoverBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[SHUTTER] ✅ Ready');
+    this.log('[SHUTTER]  Ready');
   }
 
 

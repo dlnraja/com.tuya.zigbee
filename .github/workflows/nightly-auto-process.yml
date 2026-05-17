@@ -1,0 +1,82 @@
+# Nightly Auto Process — v8.0.0 ULTIMATE
+# Automated maintenance, architectural enforcement, and bug hunting.
+# Runs nightly (02:00 UTC) to ensure the Zero-Defect promise.
+
+name: "🌙 Nightly Auto Process"
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  maintenance:
+    name: "Architectural Hardening"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v5
+      
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          
+      - run: npm ci || npm install
+      
+      - name: 🔍 Community Intake (Scan PRs/Issues)
+        run: node .github/scripts/scan-prs-issues.js
+        continue-on-error: true
+
+      - name: 🛡️ Run Skill Check
+        run: node scripts/ci/skill-check.js
+        
+      - name: ⚖️ Run Zero-Defect Control
+        run: node scripts/ci/zero-defect-control.js
+        
+      - name: 🛰️ Run Antigravity Deep Audit
+        run: node scripts/ci/antigravity-controls.js
+        
+      - name: 🌌 Execute Antigravity Mega-Audit
+        run: node scripts/automation/mega-audit.js
+        continue-on-error: false
+
+      - name: 🛠️ Execute Antigravity Mega-Fixer (Self-Healing)
+        if: failure()
+        run: |
+          node scripts/automation/mega-fixer.js
+          node scripts/automation/mega-audit.js
+        
+      - name: 🔍 Run Bug Hunter
+        run: node scripts/ci/bug-hunter.js
+        
+      - name: 🔧 Apply Antigravity Patterns
+        run: node scripts/automation/apply-antigravity.js
+        
+      - name: 📦 Validate Homey App
+        run: npx homey app validate --level publish
+
+      - name: 🎯 Zero-Defect Ultimate Validation (v8.0.0)
+        run: node scripts/_validate_all.js
+        
+      - name: 🚀 Publish to Homey Store (Optional)
+        if: env.HOMEY_TOKEN != ''
+        run: npx homey app publish
+        env:
+          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+        
+      - name: 🔄 Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(auto): nightly architectural hardening and stabilization [skip ci]"
+          branch: master
+          file_pattern: 'drivers/**/*.js lib/**/*.js app.json .cursorrules AI_INSTRUCTIONS.md docs/**/*.md'

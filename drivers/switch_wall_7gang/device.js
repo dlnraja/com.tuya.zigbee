@@ -23,22 +23,24 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   }
 
   get isZclOnlyDevice() {
-    const mfr = this.getSetting?.('zb_manufacturer_name') ||
-                this.getStoreValue?.('manufacturerName') || '';
+    const mfr = this.getSetting?.('zb_manufacturer_name' ) ||
+                this.getStoreValue?.('manufacturerName' ) || '';
     return includesCI(ZCL_ONLY_MANUFACTURERS_7G, mfr);
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
+    this.initPhysicalButtonDetection(); // rule-19 injected
+    
+    this._registerCapabilityListeners(); // rule-12a injected
     if (this.isZclOnlyDevice) {
-      this.log('[SWITCH-7G] 🔵 ZCL-ONLY MODE');
+      this.log('[SWITCH-7G]  ZCL-ONLY MODE');
+      this.zclNode = zclNode; // v5.13.2: CRITICAL - set for base class use
       await this._initZclOnlyMode(zclNode);
       return;
     }
-    await this.initPhysicalButtonDetection?.(zclNode);
+    await this.initPhysicalButtonDetection?.(zclNode );
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-7G] v5.5.922 ✅ Ready');
+    this.log('[SWITCH-7G] v5.5.922  Ready' );
   }
 
   /**
@@ -55,7 +57,7 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
     const getOnOffCluster = (epNum) => {
       const ep = this._zclNode?.endpoints?.[epNum];
-      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6] || null;
     };
 
     // Register capability listeners FIRST
@@ -79,39 +81,50 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       if (!onOff || typeof onOff.on !== 'function') continue;
 
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
-      onOff.on('attr.onOff', (value) => {
+      onOff.on('attr.onOff', async (value) => {
         const isPhysical = !this._zclState.pending[epNum];
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
-          await this.setCapabilityValue(capName, value).catch(() => {});
+          this.setCapabilityValue(capName, value).catch(() => {});
           // v5.12.5: Scene mode support
           const mode = this.sceneMode;
           if (mode === 'magic') {
-            await this.setCapabilityValue(capName, !value).catch(() => {});
+            this.setCapabilityValue(capName, !value).catch(() => {});
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_wall_7gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch(e) { return null; } })()?.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
-            this.log(`[SWITCH-7G] Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            try {
+              const card =
+      this.homey.flow.getTriggerCard(flowId)?.trigger(this, {}, {}).catch(this.error || console.error)
+              if (card ) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+              this.log(`[SWITCH-7G]  Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            } catch (e) { }
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            (() => { try { return this.homey.flow.getDeviceTriggerCard(`switch_wall_7gang_gang${epNum}_scene`); } catch(e) { return null; } })()?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-            this.log(`[SWITCH-7G] Scene G${epNum} ${value ? 'on' : 'off'}`);
+            const sceneFlowId = `switch_wall_7gang_gang${epNum}_scene`;
+            try {
+              const card =
+      this.homey.flow.getTriggerCard(sceneFlowId)?.trigger(this, {}, {}).catch(this.error || console.error)
+              if (card ) await card.trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {});
+              this.log(`[SWITCH-7G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
+            } catch (e) { }
           }
         }
       });
     }
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-7G] ✅ ZCL-only mode ready (packetninja v990)');
+    this.log('[SWITCH-7G]  ZCL-only mode ready (packetninja v990)');
   }
 
   onDeleted() {
     if (this._zclState?.timeout) {
       for (let i = 1; i <= 7; i++) {
-        if (this._zclState.timeout[i]) clearTimeout(this._zclState.timeout[i]);
+        if (this._zclState.timeout[i]) clearTimeout(this._zclState.timeout[i] );
       }
     }
     super.onDeleted?.();
   }
 }
 module.exports = Switch7GangDevice;
+
+

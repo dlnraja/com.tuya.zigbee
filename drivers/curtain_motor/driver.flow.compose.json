@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "button_pressed",
+      "id": "curtain_motor_button_pressed",
       "title": {
         "en": "Button pressed",
         "fr": "Bouton pressé"
@@ -148,6 +148,10 @@
         "en": "Set position to...",
         "fr": "Régler la position à..."
       },
+      "titleFormatted": {
+        "en": "Set position to [[position]]%",
+        "fr": "Régler la position à [[position]]%"
+      },
       "args": [
         {
           "name": "position",
@@ -185,6 +189,10 @@
       "title": {
         "en": "Set brightness to...",
         "fr": "Régler la luminosité à..."
+      },
+      "titleFormatted": {
+        "en": "Set brightness to [[brightness]]%",
+        "fr": "Régler la luminosité à [[brightness]]%"
       },
       "args": [
         {
@@ -244,6 +252,12 @@
         "fr": "Régler position",
         "nl": "Positie instellen",
         "de": "Position einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set position to [[position]]%",
+        "fr": "Régler la position à [[position]]%",
+        "nl": "Positie instellen op [[position]]%",
+        "de": "Position einstellen auf [[position]]%"
       },
       "args": [
         {

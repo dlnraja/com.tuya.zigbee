@@ -19,6 +19,10 @@ concurrency:
 env:
   NODE_VERSION: "22"
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   fleet-audit:
     name: 🛡️ Fleet Audit & Validation
@@ -26,10 +30,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: 📥 Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: 📦 Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
@@ -59,3 +63,6 @@ jobs:
 
       - name: 🔍 Homey Publish-Level Validation
         run: npx homey app validate --level publish
+
+      - name: 🎯 Zero-Defect Master Validation (v5.13.6)
+        run: node scripts/_validate_all.js

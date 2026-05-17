@@ -1,7 +1,8 @@
 'use strict';
-constThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 
-class HVACDehumidifierDevice extends ThermostatBase {
+class HVACDehumidifierDevice extends UnifiedThermostatBase {
   get mainsPowered() { return true; }
   get thermostatCapabilities() { return ['onoff', 'dim.humidity', 'measure_humidity']; }
   async onNodeInit({ zclNode }) {
@@ -10,7 +11,7 @@ class HVACDehumidifierDevice extends ThermostatBase {
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
     try {
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
-      this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000 });
+      this._timeSync = new ZigbeeTimeSync(this, { throttleMs:6 * 60 * 60 * 1000 });
       
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
@@ -37,7 +38,7 @@ class HVACDehumidifierDevice extends ThermostatBase {
         } catch (e) {
           this.log('[TimeSync] Periodic sync failed:', e.message);
         }
-      }, 6 * 60 * 60 * 1000);
+      },6 * 60 * 60 * 1000);
     } catch (e) {
       this.log('[TimeSync] Time sync init failed (non-critical):', e.message);
     }
@@ -79,7 +80,7 @@ class HVACDehumidifierDevice extends ThermostatBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    await super.onNodeInit({ zclNode });this.log('[DEHUMIDIFIER] ✅ Ready');
+    await super.onNodeInit({ zclNode });this.log('[DEHUMIDIFIER]  Ready');
   }
 
 
@@ -88,8 +89,8 @@ class HVACDehumidifierDevice extends ThermostatBase {
   }
 
   /**
-   * Tuya EF00 time sync fallback (DP 0x24 / decimal 36)
-   * Sends current time with timezone offset for Tuya-native thermostat/TRV devices.
+   * Tuya EF00 time sync fallback (DP (0x24 / decimal) 36)
+   * Sends current time with timezone offset for Tuya-native (thermostat / TRV) devices.
    */
   async _tuyaTimeSyncFallback() {
     try {
@@ -102,7 +103,7 @@ class HVACDehumidifierDevice extends ThermostatBase {
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate - now) / 3600000);
+        utcOffset = Math.round((tzDate - safeDivide(now), 3600000));
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]
@@ -125,3 +126,4 @@ class HVACDehumidifierDevice extends ThermostatBase {
 
 }
 module.exports = HVACDehumidifierDevice;
+

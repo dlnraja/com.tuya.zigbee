@@ -1,5 +1,6 @@
 'use strict';
-const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { BatteryMixin } = require('../../lib/mixins/BatteryMixin');
+const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { AirQualityInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
 /**
@@ -13,7 +14,7 @@ const { AirQualityInference, BatteryInference } = require('../../lib/Intelligent
  * ║  Variants: _TZE200_ywagc4rj, _TZE200_zl1kmjqx                               ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class AirQualityCO2Device extends SensorBase {
+class AirQualityCO2Device extends BatteryMixin(SensorBase) {
 
   get mainsPowered() { return false; }
 
@@ -49,59 +50,60 @@ class AirQualityCO2Device extends SensorBase {
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'msTemperatureMeasurement',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 50,
-        },
-        {
-          cluster: 'msRelativeHumidity',
-          attributeName: 'measuredValue',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 100,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
 
-    await super.onNodeInit({ zclNode });
-
-    // v5.5.317: Initialize intelligent inference engines
-    this._airQualityInference = new AirQualityInference(this, {
-      co2Baseline: 400,           // Outdoor CO2 baseline
-      vocCorrelationFactor: 0.5   // CO2/VOC correlation factor
-    });
-    this._batteryInference = new BatteryInference(this);
-
-    // v5.12.2: Ensure VOC/HCHO/PM2.5 capabilities exist for devices that report them
-    for (const cap of ['measure_pm25', 'measure_voc', 'measure_formaldehyde']) {
-      if (!this.hasCapability(cap)) {
-        await this.addCapability(cap).catch(() => {});
-        this.log('[CO2] Added ' + cap);
+      // --- Attribute Reporting Configuration ---
+      try {
+        await this.configureAttributeReporting([
+          {
+            cluster: 'msTemperatureMeasurement',
+            attributeName: 'measuredValue',
+            minInterval: 30,
+            maxInterval: 600,
+            minChange: 50,
+          },
+          {
+            cluster: 'msRelativeHumidity',
+            attributeName: 'measuredValue',
+            minInterval: 30,
+            maxInterval: 600,
+            minChange: 100,
+          },
+          {
+            cluster: 'genPowerCfg',
+            attributeName: 'batteryPercentageRemaining',
+            minInterval: 3600,
+            maxInterval: 43200,
+            minChange: 2,
+          }
+        ]);
+        this.log('Attribute reporting configured successfully');
+      } catch (err) {
+        this.log('Attribute reporting config failed (device may not support it):', err.message);
       }
-    }
 
-    this.log('[CO2] v5.5.317 INTELLIGENT INFERENCE - DPs: 1,2,14,15,18,19,20-22');
+      // v5.5.317: Initialize intelligent inference engines
+      this._airQualityInference = new AirQualityInference(this, {
+        co2Baseline: 400,           // Outdoor CO2 baseline
+        vocCorrelationFactor: 0.5   // CO2/VOC correlation factor
+      });
+      this._batteryInference = new BatteryInference(this);
 
-    // Setup ZCL temp/humidity (specific to air quality sensors)
-    await this._setupAirQualityZCL(zclNode);
+      // v5.12.2: Ensure VOC/HCHO/PM2.5 capabilities exist for devices that report them
+      for (const cap of ['measure_pm25', 'measure_voc', 'measure_formaldehyde']) {
+        if (!this.hasCapability(cap)) {
+          await this.addCapability(cap).catch(() => { });
+          this.log('[CO2] Added ' + cap);
+        }
+      }
 
-    this.log('[CO2] ✅ Ready with cross-validation');
+      this.log('[CO2] v5.5.317 INTELLIGENT INFERENCE - DPs: 1,2,14,15,18,19,20-22');
+      
+      // Setup ZCL temp/humidity (specific to air quality sensors)
+      await this._setupAirQualityZCL(zclNode);
+      this.log('[CO2] ✅ Ready with cross-validation');
+    }, 'onNodeInit');
   }
 
   /**
@@ -138,21 +140,36 @@ class AirQualityCO2Device extends SensorBase {
 
     try {
       const temp = ep1.clusters?.msTemperatureMeasurement;
-      if (temp?.on) {
-        temp.on('attr.measuredValue', (v) => { const t=parseFloat(v)/100; if(t>=-40&&t<=80) await this.setCapabilityValue('measure_temperature',t).catch(()=>{}); else this.log('[CO2] ZCL temp rejected:',t); });
+      if (temp) {
+        temp.on('attr.measuredValue', (v) => {
+          const t = parseFloat(v) / 100;
+          if (t >= -40 && t <= 80) {
+            this.setCapabilityValue('measure_temperature', t).catch(() => { });
+          } else {
+            this.log('[CO2] ZCL temp rejected:', t);
+          }
+        });
       }
       const hum = ep1.clusters?.msRelativeHumidity;
-      if (hum?.on) {
-        hum.on('attr.measuredValue', (v) => { const h=parseFloat(v)/100; if(h>=0&&h<=100) await this.setCapabilityValue('measure_humidity',h).catch(()=>{}); else this.log('[CO2] ZCL hum rejected:',h); });
+      if (hum) {
+        hum.on('attr.measuredValue', (v) => {
+          const h = parseFloat(v) / 100;
+          if (h >= 0 && h <= 100) {
+            this.setCapabilityValue('measure_humidity', h).catch(() => { });
+          } else {
+            this.log('[CO2] ZCL hum rejected:', h);
+          }
+        });
       }
-    } catch (e) { /* ignore */ }
+    } catch (e) {
+      this.error('[CO2] ZCL setup error:', e.message);
+    }
   }
 
-
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
+    if (super.onDeleted) super.onDeleted();
   }
 }
 
 module.exports = AirQualityCO2Device;
-

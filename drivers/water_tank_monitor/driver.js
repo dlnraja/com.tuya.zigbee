@@ -12,8 +12,12 @@ class WaterTankMonitorDriver extends Homey.Driver {
     this.log('Liquid Level Sensor driver initializing...');
 
     const safeGetTrigger = (id) => {
-      try { return this.homey.flow.getDeviceTriggerCard(id); }
-      catch (e) { this.log(`[FLOW] Trigger '${id}' not defined`); return null; }
+      try {
+        return this.homey.flow.getTriggerCard(id);
+      } catch (err) {
+        this.log(`[FLOW] Trigger '${id}' not defined: ${err.message}`);
+        return null;
+      }
     };
 
     this.stateChangedTrigger = safeGetTrigger('water_tank_monitor_state_changed');
@@ -23,26 +27,34 @@ class WaterTankMonitorDriver extends Homey.Driver {
 
     // Condition: fill level above threshold
     try {
-      this.homey.flow.getConditionCard('water_tank_monitor_level_above')
-        .registerRunListener(async (args) => {
+      const levelAboveCard = this.homey.flow.getConditionCard('water_tank_monitor_level_above');
+      if (levelAboveCard) {
+        levelAboveCard.registerRunListener(async (args) => {
           if (!args.device) return false;
           const pct = args.device.getCapabilityValue('measure_water_percentage') || 0;
           return pct > (args.level || 20);
         });
-    } catch (err) { this.log(`[FLOW] level_above: ${err.message}`); }
+      }
+    } catch (err) {
+      this.log(`[FLOW] level_above error: ${err.message}`);
+    }
 
     // Condition: liquid state is
     try {
-      this.homey.flow.getConditionCard('water_tank_monitor_state_is')
-        .registerRunListener(async (args) => {
+      const stateIsCard = this.homey.flow.getConditionCard('water_tank_monitor_state_is');
+      if (stateIsCard) {
+        stateIsCard.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device._lastState === args.state;
         });
-    } catch (err) { this.log(`[FLOW] state_is: ${err.message}`); }
+      }
+    } catch (err) {
+      this.log(`[FLOW] state_is error: ${err.message}`);
+    }
 
-    const triggers = [this.stateChangedTrigger, this.levelChangedTrigger,
+    const triggerCount = [this.stateChangedTrigger, this.levelChangedTrigger,
       this.lowLevelTrigger, this.highLevelTrigger].filter(Boolean).length;
-    this.log(`Liquid Level Sensor: ${triggers}/4 triggers + 2 conditions registered`);
+    this.log(`Liquid Level Sensor: ${triggerCount}/4 triggers + 2 conditions registered`);
   }
 
   async onPairListDevices() { return []; }

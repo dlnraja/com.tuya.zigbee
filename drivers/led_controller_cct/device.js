@@ -1,12 +1,13 @@
 'use strict';
 
-constLightBase = require('../../lib/devices/UnifiedLightBase');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  require('../../lib/devices/UnifiedLightBase');
 
 /**
  * LED Controller CCT Device - v5.3.64 SIMPLIFIED
  * Fixes issue #83: TS0501B dimming
  */
-class LEDControllerCCTDevice extends LightBase {
+class LEDControllerCCTDevice extends UnifiedLightBase {
 
   get lightCapabilities() {
     return ['onoff', 'dim', 'light_temperature'];
@@ -30,7 +31,7 @@ class LEDControllerCCTDevice extends LightBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[LED-CCT] ✅ LED controller CCT ready');
+    this.log('[LED-CCT]  LED controller CCT ready');
   }
 
 

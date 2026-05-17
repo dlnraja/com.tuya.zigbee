@@ -1,10 +1,12 @@
 'use strict';
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const { Cluster, BoundCluster } = require('zigbee-clusters');
-const TuyaSpecificCluster = require('../../lib/clusters/TuyaSpecificCluster');
+const TuyaSpecificCluster = require('../../lib/tuya/TuyaSpecificCluster');
 const TuyaOnOffCluster = require('../../lib/clusters/TuyaOnOffCluster');
 const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
-const { getDataValue } = require('../../lib/tuya/TuyaHelpersJohan');
+const { getDataValue } = require('../../lib/TuyaHelpers');
 const { V1_FINGER_BOT_DATA_POINTS } = require('../../lib/tuya/TuyaDataPointsJohan');
 
 Cluster.addCluster(TuyaSpecificCluster);
@@ -46,7 +48,7 @@ class FingerBotTimeBoundCluster extends BoundCluster {
       case 0x0007: { // localTime
         const localTime =
             Math.floor((Date.now() - ZIGBEE_EPOCH_MS) / 1000) +
-            (-new Date().getTimezoneOffset() * 60);
+(-new Date().getTimezoneOffset() * 60);
 
         const buf = Buffer.alloc(8);
         buf.writeUInt16LE(0x0007, 0);
@@ -80,13 +82,13 @@ class FingerBotTimeBoundCluster extends BoundCluster {
       }
 
       case 0x0002: { // timeZone
-        const timeZone = -new Date().getTimezoneOffset() * 60;
+        const timeZone =-new Date().getTimezoneOffset() * 60;
 
         const buf = Buffer.alloc(8);
         buf.writeUInt16LE(0x0002, 0);
         buf.writeUInt8(ZCL_STATUS_SUCCESS, 2);
         buf.writeUInt8(ZCL_TYPE_INT32, 3);
-        buf.writeInt32LE(timeZone, 4);
+        safeMultiply(buf.writeInt32LE(timeZone, 4));
         chunks.push(buf);
         break;
       }
@@ -110,8 +112,23 @@ class FingerBotTimeBoundCluster extends BoundCluster {
 class FingerBot extends TuyaSpecificClusterDevice {
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
+    this.log('Initializing FingerBot device...');
+    
+    // v7.2.4: CRITICAL  Register listeners BEFORE super.onNodeInit()
+    // This ensures capability listeners are active even if initialization timeouts
+    this._suppressUntil = 0;
+    this._ignoreOnOffReportsUntil = 0;
+    this._lastBatteryLowState = false;
+    this._lastRemotePressAt = 0;
+    this._guiPulseTimeout = null;
+    this._timeBoundCluster = null;
+
+    this._registerOnOffHandling(zclNode);
+    this._registerTuyaListeners(zclNode);
+    this._registerTimeBoundCluster(zclNode);
+
     try {
+      // --- Attribute Reporting Configuration ---
       await this.configureAttributeReporting([
         {
           cluster: 'genPowerCfg',
@@ -120,43 +137,22 @@ class FingerBot extends TuyaSpecificClusterDevice {
           maxInterval: 43200,
           minChange: 2,
         }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
+      ]).catch(err => this.log('Attribute reporting config failed:', err.message));
 
-    await super.onNodeInit({ zclNode });
+      await super.onNodeInit({ zclNode });
 
-    this.log('Initializing FingerBot device...');
-    this.printNode();
+      this.printNode();
 
-    this._suppressUntil = 0;
-    this._ignoreOnOffReportsUntil = 0;
-    this._lastBatteryLowState = false;
-    this._lastRemotePressAt = 0;
-    this._guiPulseTimeout = null;
-    this._timeBoundCluster = null;
-
-    try {
       await zclNode.endpoints[1].clusters.basic.readAttributes([
-        'manufacturerName',
-        'zclVersion',
-        'appVersion',
-        'modelId',
-        'powerSource',
-        'attributeReportingStatus',
-      ]);
+        'manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource', 'attributeReportingStatus',
+      ]).catch(err => this.error('Error reading attributes:', err));
+
+      // Apply current settings once on init.
+      await this.applyConfiguredSettings({ includeMode: true });
+
     } catch (err) {
-      this.error('Error when reading device attributes:', err);
+      this.error('FingerBot initialization error:', err.message);
     }
-
-    this._registerOnOffHandling(zclNode);
-    this._registerTuyaListeners(zclNode);
-    this._registerTimeBoundCluster(zclNode);
-
-    // Apply current settings once on init.
-    await this.applyConfiguredSettings({ includeMode: true });
 
     this.log('FingerBot initialization complete.');
   }
@@ -345,7 +341,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
     }
 
     this._guiPulseTimeout = this.homey.setTimeout(() => {
-      this._setCapabilitySafe('onoff', false, 'Failed to reset momentary GUI state');
+      this._setCapabilitySafe('onoff', false, 'Failed to reset momentary GUI state' );
     }, MOMENTARY_GUI_PULSE_MS);
   }
 
@@ -514,14 +510,28 @@ class FingerBot extends TuyaSpecificClusterDevice {
     }
   }
 
+  /**
+   * Helper to safely trigger flow cards without crashing the driver.
+   */
   _triggerFlowCard(id, tokens = {}, state = {}) {
     try {
-      this.homey.flow
-        (id)
-        .trigger(this, tokens, state)
-        .catch(err => this.error(`Failed to trigger flow card "${id}"`, err));
+      const card = this.homey.flow.getTriggerCard(id);
+      if (card) {
+        card.trigger(this, tokens, state)
+          .catch(err => this.error(`Failed to trigger flow card "${id}"`, err));
+      }
     } catch (err) {
       this.error(`Flow card "${id}" is not available`, err);
+    }
+  }
+
+  _getFlowCard(id, type = 'trigger') {
+    try {
+      if (type === 'action') return this.homey.flow.getActionCard(id);
+      if (type === 'condition') return this.homey.flow.getConditionCard(id);
+      return this.homey.flow.getTriggerCard(id);
+    } catch (err) {
+      return null;
     }
   }
 
@@ -532,6 +542,19 @@ class FingerBot extends TuyaSpecificClusterDevice {
 
     this.log('FingerBot device removed from Homey.');
   }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
+  }
 }
 
 module.exports = FingerBot;
+

@@ -1,7 +1,7 @@
 'use strict';
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
-class DoorControllerDevice extends PlugBase {
+class DoorControllerDevice extends UnifiedPlugBase {
   get plugCapabilities() { return ['onoff', 'garagedoor_closed']; }
   async onNodeInit({ zclNode }) {
     // --- Attribute Reporting Configuration (auto-generated) ---
@@ -28,7 +28,7 @@ class DoorControllerDevice extends PlugBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[DOOR-CTRL] ✅ Ready');
+    this.log('[DOOR-CTRL]  Ready');
   }
 
 

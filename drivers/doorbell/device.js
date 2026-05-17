@@ -1,7 +1,7 @@
 'use strict';
-const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
-class DoorbellDevice extends SensorBase {
+class DoorbellDevice extends UnifiedSensorBase {
   get mainsPowered() { return false; }
   get sensorCapabilities() { return ['alarm_generic', 'measure_battery', 'alarm_tamper']; }
   get dpMappings() {
@@ -36,12 +36,25 @@ class DoorbellDevice extends SensorBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[DOORBELL] ✅ Ready');
+    this._registerCapabilityListeners(); // rule-12a injected
+    this.log('[DOORBELL]  Ready');
   }
 
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 module.exports = DoorbellDevice;

@@ -6,8 +6,10 @@ class D extends EweLinkLocalDevice{
     switch_1:{capability:'onoff.2',transform:v=>v==='on'}
   };}
   _registerCapListeners(){
-    this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v,0);});
-    if(this.hasCapability('onoff.2'))this.registerCapabilityListener('onoff.2',async v=>{await this._client.setSwitch(v,1);});
+    this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v,0);
+      });
+    if(this.hasCapability('onoff.2'))this.registerCapabilityListener('onoff.2',async v=>{await this._client.setSwitch(v,1);
+      });
   }
   async onInit(){
     if(!this.hasCapability('onoff.2'))try{await this.addCapability('onoff.2');}catch(e){}
@@ -20,4 +22,4 @@ class D extends EweLinkLocalDevice{
     this.log('Device deleted, cleaning up');
   }
 }
-module.exports = D;
+module.exports=D;

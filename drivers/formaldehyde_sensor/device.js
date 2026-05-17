@@ -1,11 +1,11 @@
 'use strict';
 
-const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * Formaldehyde Sensor Device - v5.3.64 SIMPLIFIED
  */
-class FormaldehydeSensorDevice extends SensorBase {
+class FormaldehydeSensorDevice extends UnifiedSensorBase {
 
   get mainsPowered() { return true; }
 
@@ -20,7 +20,7 @@ class FormaldehydeSensorDevice extends SensorBase {
       18: { capability: 'measure_pm25', divisor: 1 },      // PM2.5
       19: { capability: 'measure_co2', divisor: 1 },       // CO2 ppm
       20: { capability: 'measure_voc', divisor: 1 },       // VOC
-      21: { capability: null }                              // Formaldehyde (custom)
+      21: { capability: 'unknown' }                              // Formaldehyde (custom)
     };
   }
 
@@ -55,7 +55,8 @@ class FormaldehydeSensorDevice extends SensorBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    await super.onNodeInit({ zclNode });this.log('[FORMALDEHYDE] ✅ Formaldehyde sensor ready');
+    await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injectedthis.log('[FORMALDEHYDE]  Formaldehyde sensor ready');
   }
 
 

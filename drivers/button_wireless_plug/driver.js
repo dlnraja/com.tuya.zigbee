@@ -13,80 +13,93 @@ class PlugEnergyMonitorDriver extends ZigBeeDriver {
   }
 
   _registerFlowCards() {
-    // CONDITION: Plug is on/off
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('button_wireless_plug_is_on'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          return args.device.getCapabilityValue('onoff') === true;
-        });
-      this.log('[FLOW] ✅ plug_energy_monitor_is_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // CONDITION: Power above threshold
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('button_wireless_plug_power_above'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
+    const conditionCards = [
+      {
+        id: 'button_wireless_plug_is_on',
+        fn: async (args) => args.device.getCapabilityValue('onoff') === true
+      },
+      {
+        id: 'button_wireless_plug_power_above',
+        fn: async (args) => {
           const power = args.device.getCapabilityValue('measure_power') || 0;
           return power > (args.power || 100);
-        });
-      this.log('[FLOW] ✅ plug_energy_monitor_power_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // CONDITION: Energy above threshold
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('button_wireless_plug_energy_above'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
+        }
+      },
+      {
+        id: 'button_wireless_plug_energy_above',
+        fn: async (args) => {
           const energy = args.device.getCapabilityValue('meter_power') || 0;
           return energy > (args.energy || 10);
-        });
-      this.log('[FLOW] ✅ plug_energy_monitor_energy_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        }
+      }
+    ];
 
-    // ACTION: Turn on
-    try {
-      (() => { try { return this.homey.flow.getActionCard('button_wireless_plug_turn_on'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
+    for (const { id, fn } of conditionCards) {
+      try {
+        const card = this.homey.flow.getConditionCard(id);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            return fn(args);
+          });
+          this.log(`[FLOW] ✅ Condition ${id} registered`);
+        }
+      } catch (err) {
+        this.error(`[FLOW] ⚠️ Condition ${id} registration error: ${err.message}`);
+      }
+    }
+
+    const actionCards = [
+      {
+        id: 'button_wireless_plug_turn_on',
+        fn: async (args) => {
+          await args.device._setGangOnOff(1, true).catch(() => { });
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
           return true;
-        });
-      this.log('[FLOW] ✅ plug_energy_monitor_turn_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // ACTION: Turn off
-    try {
-      (() => { try { return this.homey.flow.getActionCard('button_wireless_plug_turn_off'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
+        }
+      },
+      {
+        id: 'button_wireless_plug_turn_off',
+        fn: async (args) => {
+          await args.device._setGangOnOff(1, false).catch(() => { });
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
           return true;
-        });
-      this.log('[FLOW] ✅ plug_energy_monitor_turn_off');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // ACTION: Toggle
-    try {
-      (() => { try { return this.homey.flow.getActionCard('button_wireless_plug_toggle'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
+        }
+      },
+      {
+        id: 'button_wireless_plug_toggle',
+        fn: async (args) => {
           const current = args.device.getCapabilityValue('onoff');
-          await args.device._setGangOnOff(1, !current).catch(() => {});
+          await args.device._setGangOnOff(1, !current).catch(() => { });
           await args.device.setCapabilityValue('onoff', !current).catch(() => {});
           return true;
-        });
-      this.log('[FLOW] ✅ plug_energy_monitor_toggle');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // ACTION: Reset energy meter
-    try {
-      (() => { try { return this.homey.flow.getActionCard('button_wireless_plug_reset_meter'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
+        }
+      },
+      {
+        id: 'button_wireless_plug_reset_meter',
+        fn: async (args) => {
           await args.device.triggerCapabilityListener('meter_power', 0);
           return true;
-        });
-      this.log('[FLOW] ✅ plug_energy_monitor_reset_meter');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        }
+      }
+    ];
 
-    this.log('[FLOW]  Energy monitor plug flow cards registered');
+    for (const { id, fn } of actionCards) {
+      try {
+        const card = this.homey.flow.getActionCard(id);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            return fn(args);
+          });
+          this.log(`[FLOW] ✅ Action ${id} registered`);
+        }
+      } catch (err) {
+        this.error(`[FLOW] ⚠️ Action ${id} registration error: ${err.message}`);
+      }
+    }
+
+    this.log('[FLOW] Energy monitor plug flow cards registered');
   }
 }
 

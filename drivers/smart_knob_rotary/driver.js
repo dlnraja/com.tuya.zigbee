@@ -1,49 +1,62 @@
 'use strict';
 
+const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const Homey = require('homey');
 
-class SmartKnobRotaryDriver extends Homey.Driver {
+class SmartKnobRotaryDriver extends Homey {
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
     this.log('Smart Knob Rotary driver initialized');
-
-    // Register flow cards
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // Rotate left trigger
-    (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_left'); } catch(e) { return null; } })()?.registerRunListener(async (args, state) => true);
+    // TRIGGERS
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
 
-    // Rotate right trigger
-    (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_rotate_right'); } catch(e) { return null; } })()?.registerRunListener(async (args, state) => true);
-
-    // Button pressed trigger
-    (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_pressed'); } catch(e) { return null; } })()?.registerRunListener(async (args, state) => true);
-
-    // Single press trigger
-    (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_single_press'); } catch(e) { return null; } })()?.registerRunListener(async (args, state) => true);
-
-    // Double press trigger
-    (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_double_press'); } catch(e) { return null; } })()?.registerRunListener(async (args, state) => true);
-
-    // Long press trigger
-    (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_knob_rotary_long_press'); } catch(e) { return null; } })()?.registerRunListener(async (args, state) => true);
-
-    // Brightness condition
-    (() => { try { return this.homey.flow.getConditionCard('smart_knob_rotary_brightness_above'); } catch(e) { return null; } })()?.registerRunListener(async (args, state) => {
-        const device = args.device;
-        if (device && device.hasCapability('dim')) {
-          const brightness = await device.getCapabilityValue('dim');
-          return (brightness * 100) > args.level;
-        }
-        return false;
+    // CONDITIONS
+    try {
+      const card = this.homey.flow.getConditionCard('smart_knob_rotary_brightness_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const val = args.device.getCapabilityValue('measure_co2') || 0;
+          return val > (args.threshold || 400);
       });
+      }
+    } catch (err) { this.error(`Condition smart_knob_rotary_brightness_above: ${err.message}`); }
 
-    this.log('Flow cards registered');
+    // ACTIONS
+    try {
+      const card = this.homey.flow.getActionCard('smart_knob_rotary_set_brightness');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('dim', args.brightness || args.value || 1).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action smart_knob_rotary_set_brightness: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
-
 }
 
 module.exports = SmartKnobRotaryDriver;
-

@@ -1,0 +1,27 @@
+{
+  "id": "button_long_press",
+  "title": {
+    "en": "Button long-pressed",
+    "fr": "Bouton pressé longtemps",
+    "nl": "Knop lang ingedrukt",
+    "de": "Taste lange gedrückt"
+  },
+  "tokens": [
+    {
+      "name": "button",
+      "type": "string",
+      "title": {
+        "en": "Button",
+        "fr": "Bouton"
+      },
+      "example": "1"
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=button.1,capabilities=button"
+    }
+  ]
+}

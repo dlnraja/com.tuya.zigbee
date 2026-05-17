@@ -6,15 +6,13 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
     this.log('[SCENE-PANEL] v5.13.5 init');for (let g = 1; g <= 4; g++) {
       const cap = `onoff.gang${g}`;
       const dp = 23 + g;
       if (this.hasCapability(cap)) {
         this.registerCapabilityListener(cap, async (value) => {
           await this.sendDP(dp, 1, value ? 1 : 0);
-        });
+      });
       }
     }
     this._setupDPReporting();
@@ -31,11 +29,12 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
       const g = dp - 23;
       const cap = `onoff.gang${g}`;
       if (this.hasCapability(cap)) {
-        await this.setCapabilityValue(cap, !!value).catch(this.error);
+        this.setCapabilityValue(cap, !!value).catch(this.error);
       }
-      (() => { try { return this.homey.flow.getDeviceTriggerCard(`smart_scene_panel_switch_${g}_changed`); } catch(e) { return null; } })()?.trigger(this, { state: !!value }, {}).catch(() => {});
+      const flowCardId = `smart_scene_panel_switch_${g}_changed`;
+      this.homey.flow.getTriggerCard(flowCardId).trigger(this, { state: !!value }, {}).catch(() => {})
     } else if (dp >= 5 && dp <= 8) {
-      (() => { try { return this.homey.flow.getDeviceTriggerCard('smart_scene_panel_scene_activated'); } catch(e) { return null; } })()?.trigger(this, { scene: String(dp) }, { scene: String(dp) }).catch(() => {});
+      this.homey.flow.getTriggerCard('smart_scene_panel_scene_activated').trigger(this, { scene: String(dp) }, { scene: String(dp) }).catch(() => {})
     } else if (dp === 38) {
       this.log(`[SCENE-PANEL] relay_status=${value}`);
     } else if (dp === 106) {
@@ -69,6 +68,7 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
 }
 
 module.exports = SmartScenePanelDevice;
+
 
 
 

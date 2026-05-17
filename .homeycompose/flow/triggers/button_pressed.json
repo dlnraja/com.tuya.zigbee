@@ -1,0 +1,36 @@
+{
+  "id": "button_pressed",
+  "title": {
+    "en": "Button pressed",
+    "fr": "Bouton appuyé",
+    "nl": "Knop ingedrukt",
+    "de": "Taste gedrückt"
+  },
+  "tokens": [
+    {
+      "name": "button",
+      "type": "string",
+      "title": {
+        "en": "Button",
+        "fr": "Bouton"
+      },
+      "example": "1"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "title": {
+        "en": "Press Type",
+        "fr": "Type de pression"
+      },
+      "example": "single"
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "capabilities=button.1,capabilities=button"
+    }
+  ]
+}

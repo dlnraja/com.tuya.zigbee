@@ -1,13 +1,15 @@
 {
-  "timestamp": "2026-04-04T06:14:30.305Z",
-  "count": 56,
+  "timestamp": "2026-05-17T12:50:03.167Z",
+  "count": 149,
   "byType": {
-    "crash_report": 2,
-    "device_issue": 6,
-    "bug_report": 5,
-    "general": 5,
-    "github": 34,
-    "diagnostic": 4
+    "github": 17,
+    "diagnostic": 5,
+    "general": 69,
+    "bug_report": 7,
+    "crash_report": 27,
+    "changelog": 9,
+    "interview": 1,
+    "device_issue": 14
   },
   "newFingerprints": [],
   "deepResearch": {
@@ -17,11 +19,51 @@
   },
   "diagnostics": [
     {
-      "id": "imap_499568",
-      "type": "crash_report",
+      "id": "imap_506533",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] 🔄 Universal Maintenance: Device Variants Synchronisation (PR #274)",
+      "from": "github",
+      "date": "2026-04-19T03:46:15.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "variants"
+      ],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "274",
+        "action": "pushed",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "@github-actions[bot] pushed 1 commit.\r\n\r\n26104dd4d287987b9de658c4518b5bb907bffbab  improved: added support for new device variants [skip ci]\r\n\r\n-- \r\nView it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/274/changes/75a66e0c2289d2e92196e[REDACTED_PHONE]a811cfff2..26104dd4d287987b9de658c4518b5bb907bffbab\r\nYou are receiving this because you are subscribed to this thread.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/274/before/75a66e0c2289d2e92196e[REDACTED_PHONE]a811cfff2/after/[REDAC"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 515,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506598",
+      "type": "diagnostic",
       "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
       "from": "homey_system",
-      "date": "2026-03-08T09:47:15.000Z",
+      "date": "2026-04-19T14:38:10.000Z",
       "pseudo": {
         "source": "homey_system",
         "username": null
@@ -31,53 +73,920 @@
         "pid": []
       },
       "errs": [
-        "IAS Zone enrollment incomplete. Remove and re-add device if sensor not respondin",
-        "this.homey.flow.getDeviceConditionCard is not a function",
-        "Initializing Driver air_quality_comprehensive: TypeError: this.homey.flow.getDev",
-        "Initializing Driver din_rail_meter: TypeError: this.homey.flow.getDeviceConditio"
+        "access 'smokeDetectedCondition' before initialization",
+        "access 'batteryAboveCondition' before initialization",
+        "access 'testAlarmAction' before initialization",
+        "access 'sirenCondition' before initialization",
+        "access 'turnOnAction' before initialization",
+        "access 'turnOffAction' before initialization",
+        "access 'setVolumeAction' before initialization",
+        "access 'setDurationAction' before initialization",
+        "access 'setMelodyAction' before initialization",
+        "curtain_motor_tilt_turn_on",
+        "curtain_motor_tilt_turn_off",
+        "curtain_motor_tilt_toggle"
       ],
       "devices": [
-        "soil_sensor",
-        "dd5a",
-        "rain_sensor",
-        "f393b439-79e9-457b-ad",
+        "Ts0201",
+        "Discovery",
+        "air_purifier_curtain_hybrid",
+        "initialized",
+        "air_purifier_din_hybrid",
         "air_quality_comprehensive",
-        "din_rail_meter",
-        "energy_meter_3phase"
+        "air_purifier_soil_hybrid",
+        "air_quality_comprehensive_hybr",
+        "button_emergency_sos",
+        "climate_sensor_smart_hybrid",
+        "flow",
+        "curtain_motor_tilt",
+        "device_air_purifier_humidifier",
+        "device_air_purifier_quality_hy",
+        "device_air_purifier_smoke_hybr",
+        "device_air_purifier_soil_hybri",
+        "device_air_purifier_siren_hybr",
+        "diy_custom_zigbee",
+        "din_rail_switch",
+        "energy_meter_3phase",
+        "fan_controller",
+        "fingerbot",
+        "fingerprint_lock",
+        "garage_door",
+        "handheld_remote_4_buttons",
+        "init",
+        "generic_diy",
+        "humidifier",
+        "lcdtemphumidsensor",
+        "ir_remote",
+        "illuminance_sensor",
+        "led_controller_rgb",
+        "led_controller_cct",
+        "led_controller_dimmable",
+        "pet_feeder",
+        "power_clamp_meter",
+        "pool_pump",
+        "power_meter",
+        "radiator_wifi_tuya",
+        "remote_button_emergency_sos_hy",
+        "remote_button_wireless_hybrid",
+        "scene_switch_1",
+        "scene_switch_3",
+        "scene_switch_2",
+        "scene_switch_wall_hybrid",
+        "scene_switch_6",
+        "sensor_lcdtemphumidsensor_temp",
+        "siren",
+        "smart_breaker",
+        "sensor_lcdtemphumidsensor_soil"
       ],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 16648,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506599",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] [Device Request] Climate Sensor Model TS0201 ID _TZ3000_tsgqxdb4 (Issue #183)",
+      "from": "github",
+      "date": "2026-04-19T14:39:37.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "Snacker80"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "and",
+        "again"
+      ],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "183",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "Snacker80",
+        "bodyExcerpt": "Snacker80 left a comment (dlnraja/com.tuya.zigbee#183)\r\n\r\nStops showing measurements, so i remove device and connected again.. AND now its unknown Zigbee device again, not working anymore.\r\nSended Daignostic report\r\n\r\n9000dcb1-c8ed-4671-8d9f-2e388cb651be\r\n\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/183#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you modified the open/close state.\r\n\r\nMessage ID: <dlnraja/com.tuya."
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 537,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506625",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] 🔄 Universal Maintenance: Device Variants Synchronisation (PR #278)",
+      "from": "github",
+      "date": "2026-04-20T03:46:31.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "Variants"
+      ],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "278",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "@github-actions[bot] requested your review on: dlnraja/com.tuya.zigbee#278 ð Universal Maintenance: Device Variants Synchronisation as a code owner.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/278#event[REDACTED_PHONE]\r\nYou are receiving this because your review was requested.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/278/issue_event/[REDACTED_EMAIL]>\r\n"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 425,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506626",
+      "type": "github",
+      "subj": "[dlnraja/com.tuya.zigbee] 🔄 Universal Maintenance: Device Variants Synchronisation (PR #278)",
+      "from": "github",
+      "date": "2026-04-20T03:46:32.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "variants",
+        "IDs"
+      ],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "278",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "## ð Maintenance Report\r\nThis PR automatically synchronizes new device variants and improves compatibility.\r\n\r\n**Checks performed:**\r\n- [x] New device IDs detected using heuristics script\r\n- [x] Endpoint routing validated for multi-gang devices\r\n- [x] Tuya raw frame handlers adapted\r\n\r\n*Please review carefully before merging.*\r\nYou can view, comment on, or merge this pull request online at:\r\n\r\n  https://github.com/dlnraja/com.tuya.zigbee/pull/278?email_source=notifications&amp;email_token=ACK"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 1684,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506641",
+      "type": "general",
+      "subj": "Avez-vous pensé à l'assurance vie pour réaliser vos projets ?",
+      "from": "user",
+      "date": "2026-04-20T06:33:14.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 9463,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506663",
+      "type": "bug_report",
+      "subj": "personal",
+      "from": "user",
+      "date": "2026-04-20T09:06:58.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        ", please notify the sender and delete this message and its attachments."
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [],
+        "crashApp": null,
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 1529,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506664",
+      "type": "bug_report",
+      "subj": "TR: personal",
+      "from": "user",
+      "date": "2026-04-20T09:19:40.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        ", please notify the sender and delete this message and its attachments."
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [],
+        "crashApp": null,
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 2873,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506677",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2087 has been created",
+      "from": "homey_system",
+      "date": "2026-04-20T10:25:43.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 508,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506678",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-04-20T10:26:09.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 564,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506689",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2088 has been created",
+      "from": "homey_system",
+      "date": "2026-04-20T11:09:08.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 508,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506690",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-04-20T11:09:29.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 564,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506692",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2088 is now testing",
+      "from": "homey_system",
+      "date": "2026-04-20T11:14:58.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 559,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506693",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
+      "from": "homey_system",
+      "date": "2026-04-20T11:20:43.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ')'",
+        "Cannot access `this.homey.app` because the app instance has been destroyed.",
+        "access `this.homey.app` because the app instance has been de"
+      ],
+      "devices": [],
       "xref": [],
       "ghInfo": null,
       "forumInfo": null,
       "crashInfo": {
         "stackTraces": [
-          "Error:IAS Zone enrollment incomplete. Remove and re-add device if sensor not responding.\r",
-          "TypeError: this.homey.flow.getDeviceConditionCard is not a function\r",
-          "Error Initializing Driver air_quality_comprehensive: TypeError: this.homey.flow.getDeviceConditionCard is not a function\r",
-          "TypeError: this.homey.flow.getDeviceConditionCard is not a function\r",
-          "Error Initializing Driver din_rail_meter: TypeError: this.homey.flow.getDeviceConditionCard is not a function\r"
+          "Error: Unexpected token ')'\r",
+          "Error: Cannot access `this.homey.app` because the app instance has been destroyed.\r"
         ],
         "crashApp": "has",
-        "capabilities": [
-          "measure_humidity",
-          "measure_battery"
-        ],
-        "clusters": [
-          "0xef00",
-          "0xEF00"
-        ]
+        "capabilities": [],
+        "clusters": []
       },
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 16809,
+      "bodyLength": 2826,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_499570",
+      "id": "imap_506694",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
+      "from": "homey_system",
+      "date": "2026-04-20T11:26:12.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ')'",
+        "Cannot access `this.homey.app` because the app instance has been destroyed.",
+        "access `this.homey.app` because the app instance has been de"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ')'\r",
+          "Error: Cannot access `this.homey.app` because the app instance has been destroyed.\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 2828,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506699",
+      "type": "general",
+      "subj": "Découvrez votre IONIS Inside n°682 du lundi 20 avril 2026",
+      "from": "user",
+      "date": "2026-04-20T12:00:22.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "I.I."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 16030,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506702",
+      "type": "bug_report",
+      "subj": "🤠 The Monday Morning 5: Your Pre-Week IT Survival Checklist",
+      "from": "user",
+      "date": "2026-04-20T12:01:27.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "T.G."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "=redirect,quality=80/uploads/asset/file/ba4bff58-4f[REDACTED_PHONE]b-f57f882458b",
+        "=redirect,quality=80/uploads/asset/file/65c36b80-276c-453c-9eb0-8c7035b98c21/Cou"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [],
+        "crashApp": null,
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 7502,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506703",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
+      "from": "homey_system",
+      "date": "2026-04-20T12:05:39.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ')'",
+        "(`Cannot send \"${e}\" because the app instance has been destroyed.\\n`+\"This may i",
+        "(`Cannot access \\`this.homey.${t}\\` because the app instance has been destroyed.",
+        "(\"Cannot access `this.homey.app` because the app instance has been destroyed.\\nT",
+        ");for(const e of Object.values(s.getDrivers())){Promise.resolve().then(()=>e.onU",
+        ");for(const t of e.getDevices())Promise.resolve().then(()=>t.onUninit()).catch(t",
+        ")}}}module.exports=Homey;",
+        "Cannot access `this.homey.app` because the app instance has been destroyed.",
+        "send \"${e}\" because the app instance has been destroyed.\\n`+",
+        "access \\`this.homey.${t}\\` because the app instance has been",
+        "access `this.homey.app` because the app instance has been de"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ')'\r",
+          "Error: Cannot access `this.homey.app` because the app instance has been destroyed.\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 5357,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506729",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-04-20T14:31:17.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+        "Unexpected token ')'"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 6149,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506748",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-04-20T16:02:13.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+        "Unexpected token ')'"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 6146,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506771",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-04-20T18:14:43.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+        "Unexpected token ')'"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 6141,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506774",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-04-20T18:50:26.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+        "Unexpected token ')'"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 6155,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506775",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-04-20T18:50:47.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+        "Unexpected token ')'"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 6158,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506777",
+      "type": "changelog",
+      "subj": "WARNING: Threat Actors Exploit Microsoft Teams In Helpdesk Impersonation Attacks",
+      "from": "user",
+      "date": "2026-04-20T19:06:17.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "T.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "incidents",
+        "requirements"
+      ],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 15997,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506781",
+      "type": "interview",
+      "subj": "4/20: The Budding Entrepreneurs And Innovators On The Cannabis 42.0 List",
+      "from": "user",
+      "date": "2026-04-20T20:18:14.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "F.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 4120,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506782",
+      "type": "diagnostic",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-04-20T20:33:57.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "V.J."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 400,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506783",
+      "type": "changelog",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-04-20T20:44:27.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "P.W."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 560,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506784",
       "type": "device_issue",
       "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
       "from": "user",
-      "date": "2026-03-08T09:55:47.000Z",
+      "date": "2026-04-20T21:25:15.000Z",
       "pseudo": {
         "source": "user",
         "username": "L.R."
@@ -95,164 +1004,1451 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 380,
+      "bodyLength": 475,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_499571",
-      "type": "bug_report",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-08T09:59:20.000Z",
+      "id": "imap_506785",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2089 has been created",
+      "from": "homey_system",
+      "date": "2026-04-20T21:44:19.000Z",
       "pseudo": {
-        "source": "user",
-        "username": "M.K."
+        "source": "homey_system",
+        "username": null
       },
       "fps": {
-        "mfr": [
-          "_TZE200_u6x1zyv2"
-        ],
-        "pid": [
-          "TS0601"
-        ]
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 508,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506786",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build has failed processing",
+      "from": "homey_system",
+      "date": "2026-04-20T21:45:04.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 540,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506787",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2090 has been created",
+      "from": "homey_system",
+      "date": "2026-04-20T22:17:42.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 508,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506788",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-04-20T22:18:22.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 564,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506791",
+      "type": "general",
+      "subj": "La pire projection climatique gagne du terrain : l’enfer dont nous pourrions ne pas nous relever",
+      "from": "user",
+      "date": "2026-04-21T03:07:51.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "L.G."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 16023,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506794",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] 🔄 Universal Maintenance: Device Variants Synchronisation (PR #278)",
+      "from": "github",
+      "date": "2026-04-21T03:44:46.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "variants"
+      ],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "278",
+        "action": "pushed",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "@github-actions[bot] pushed 1 commit.\r\n\r\n15a59f187c6b2b382f8c6e44256ea7228cac0aee  improved: added support for new device variants [skip ci]\r\n\r\n-- \r\nView it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/278/changes/7040d8838a3cf87778f0a72d196e334eb59a9c3f..15a59f187c6b2b382f8c6e44256ea7228cac0aee\r\nYou are receiving this because you are subscribed to this thread.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/278/before/7040d8838a3cf87778f0a72d196e334eb59a9c3f/after/[REDACTED_EMAIL]>\r"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 503,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506800",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-04-21T04:51:12.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
       },
       "errs": [
-        "message for rain sensor:"
+        "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+        "Unexpected token ')'"
       ],
       "devices": [],
-      "xref": [
-        {
-          "fingerprint": "_TZE200_u6x1zyv2",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "rain_sensor"
-          ],
-          "protocol": "tuya_dp",
-          "requires": [
-            "TuyaEF00Manager",
-            "dpMappings"
-          ]
-        },
-        {
-          "fingerprint": "TS0601",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "air_purifier",
-            "air_quality_co2",
-            "air_quality_comprehensive",
-            "button_emergency_sos",
-            "button_wireless_6",
-            "ceiling_fan",
-            "climate_sensor",
-            "co_sensor",
-            "contact_sensor",
-            "curtain_motor",
-            "curtain_motor_tilt",
-            "dimmer_3gang",
-            "dimmer_dual_channel",
-            "dimmer_wall_1gang",
-            "din_rail_meter",
-            "din_rail_switch",
-            "door_controller",
-            "doorbell",
-            "energy_meter_3phase",
-            "fan_controller",
-            "fingerprint_lock",
-            "floor_heating_thermostat",
-            "formaldehyde_sensor",
-            "garage_door",
-            "garage_door_opener",
-            "gas_detector",
-            "gas_sensor",
-            "generic_tuya",
-            "humidifier",
-            "hvac_air_conditioner",
-            "hvac_controller",
-            "hvac_dehumidifier",
-            "ir_blaster",
-            "lcdtemphumidsensor",
-            "light_sensor_outdoor",
-            "lock_smart",
-            "motion_sensor",
-            "motion_sensor_2",
-            "motion_sensor_radar_mmwave",
-            "pet_feeder",
-            "pet_feeder_zigbee",
-            "plug_energy_monitor",
-            "plug_smart",
-            "pool_pump",
-            "power_clamp_meter",
-            "power_meter",
-            "presence_sensor_ceiling",
-            "presence_sensor_radar",
-            "radiator_controller",
-            "radiator_valve",
-            "radiator_valve_zigbee",
-            "rain_sensor",
-            "scene_switch_4",
-            "shutter_roller_controller",
-            "siren",
-            "sirentemphumidsensor",
-            "smart_breaker",
-            "smart_heater",
-            "smart_heater_controller",
-            "smart_lcd_thermostat",
-            "smart_rcbo",
-            "smart_scene_panel",
-            "smoke_detector_advanced",
-            "soil_sensor",
-            "switch_1gang",
-            "switch_2gang",
-            "switch_3gang",
-            "switch_4gang",
-            "switch_dimmer_1gang",
-            "switch_wall_5gang",
-            "switch_wall_6gang",
-            "switch_wall_8gang",
-            "thermostat_4ch",
-            "thermostat_tuya_dp",
-            "universal_fallback",
-            "usb_outlet_advanced",
-            "valve_irrigation",
-            "valve_single",
-            "vibration_sensor",
-            "water_leak_sensor",
-            "water_tank_monitor",
-            "water_valve_smart",
-            "weather_station_outdoor"
-          ],
-          "multiDriver": true
-        }
-      ],
+      "xref": [],
       "ghInfo": null,
       "forumInfo": null,
       "crashInfo": {
-        "stackTraces": [],
-        "crashApp": null,
+        "stackTraces": [
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r"
+        ],
+        "crashApp": "has",
         "capabilities": [],
         "clusters": []
       },
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 541,
+      "bodyLength": 6155,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506804",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2090 is now testing",
+      "from": "homey_system",
+      "date": "2026-04-21T05:56:25.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 559,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506809",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
+      "from": "homey_system",
+      "date": "2026-04-21T06:02:22.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ':'",
+        "Cannot access `this.homey.app` because the app instance has been destroyed.",
+        "access `this.homey.app` because the app instance has been de"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ':'\r",
+          "Error: Cannot access `this.homey.app` because the app instance has been destroyed.\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 2782,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506813",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
+      "from": "homey_system",
+      "date": "2026-04-21T06:09:34.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ':'",
+        "Cannot access `this.homey.app` because the app instance has been destroyed.",
+        "access `this.homey.app` because the app instance has been de"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ':'\r",
+          "Error: Cannot access `this.homey.app` because the app instance has been destroyed.\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 2789,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506821",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-04-21T06:46:43.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ':' /app/lib/utils/tuyaUtils.js:118",
+        "Unexpected token ':'"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r",
+          "Error: Unexpected token ':'\r",
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r",
+          "Error: Unexpected token ':'\r",
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 5625,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506822",
+      "type": "diagnostic",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-04-21T06:59:02.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "P.W."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 528,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_499576",
+      "id": "imap_506827",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
+      "from": "homey_system",
+      "date": "2026-04-21T07:04:40.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ':'",
+        "(`Cannot send \"${e}\" because the app instance has been destroyed.\\n`+\"This may i",
+        "(`Cannot access \\`this.homey.${t}\\` because the app instance has been destroyed.",
+        "(\"Cannot access `this.homey.app` because the app instance has been destroyed.\\nT",
+        ");for(const e of Object.values(s.getDrivers())){Promise.resolve().then(()=>e.onU",
+        ");for(const t of e.getDevices())Promise.resolve().then(()=>t.onUninit()).catch(t",
+        ")}}}module.exports=Homey;",
+        "Cannot access `this.homey.app` because the app instance has been destroyed.",
+        "send \"${e}\" because the app instance has been destroyed.\\n`+",
+        "access \\`this.homey.${t}\\` because the app instance has been",
+        "access `this.homey.app` because the app instance has been de"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ':'\r",
+          "Error: Cannot access `this.homey.app` because the app instance has been destroyed.\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 5312,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506832",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-04-21T07:22:28.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+        "Unexpected token ')'"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 6136,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506861",
+      "type": "general",
+      "subj": "L'espace, ça vous parle ? On a quelque chose pour vous 🚀",
+      "from": "user",
+      "date": "2026-04-21T09:48:49.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "M.P."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 11486,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506865",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2087 is now testing",
+      "from": "homey_system",
+      "date": "2026-04-21T10:11:15.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 559,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506874",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-04-21T10:48:33.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+        "Unexpected token ')'"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 1998,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506887",
+      "type": "diagnostic",
+      "subj": "Greater control over test ordering choices is top of mind for patients",
+      "from": "user",
+      "date": "2026-04-21T12:05:42.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "S.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 11052,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506888",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-04-21T12:20:36.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ':' /app/lib/utils/tuyaUtils.js:118",
+        "Unexpected token ':'"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r",
+          "Error: Unexpected token ':'\r",
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r",
+          "Error: Unexpected token ':'\r",
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 6168,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506913",
+      "type": "crash_report",
+      "subj": "Cloud-Native APIs in Financial Services",
+      "from": "user",
+      "date": "2026-04-21T15:02:45.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "api..."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "=redirect,quality=80/uploads/asset/file/acbe8916-c007-4b8c-97eb-3e802a040ad3/hea",
+        "formats, pagination models, and validation rules also change. As a result, the d",
+        "=redirect,quality=80/uploads/asset/file/72cf3342-24b9-455d-b91f-8c5576e4c1ff/Scr"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error formats, pagination models, and validation rules also change. As a result, the documented contract no longer reflects actual behavior in production. This divergence is often not visible during development and only becomes apparent later when integrations return incorrect responses or fail under specific conditions.\r"
+        ],
+        "crashApp": "Innovation",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 14691,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506923",
+      "type": "device_issue",
+      "subj": "CISA Warns of Actively Exploited Cisco SD-WAN Flaw - Orders Urgent Federal Patching",
+      "from": "user",
+      "date": "2026-04-21T15:48:04.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "T.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 9672,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506942",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-04-21T16:44:01.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ':' /app/lib/utils/tuyaUtils.js:118",
+        "Unexpected token ':'"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r",
+          "Error: Unexpected token ':'\r",
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r",
+          "Error: Unexpected token ':'\r",
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 6163,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506951",
+      "type": "general",
+      "subj": "Is Bitcoin ready for takeoff?",
+      "from": "user",
+      "date": "2026-04-21T17:19:47.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "N.D."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 15990,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506962",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-04-21T20:50:24.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ':' /app/lib/utils/tuyaUtils.js:118",
+        "Unexpected token ':'"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r",
+          "Error: Unexpected token ':'\r",
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r",
+          "Error: Unexpected token ':'\r",
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 6174,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506973",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
+      "from": "homey_system",
+      "date": "2026-04-22T02:41:07.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ')'",
+        "Cannot access `this.homey.app` because the app instance has been destroyed.",
+        "access `this.homey.app` because the app instance has been de"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ')'\r",
+          "Error: Cannot access `this.homey.app` because the app instance has been destroyed.\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 2828,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506976",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] 🔄 Universal Maintenance: Device Variants Synchronisation (PR #283)",
+      "from": "github",
+      "date": "2026-04-22T03:43:01.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "Variants"
+      ],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "283",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "@github-actions[bot] requested your review on: dlnraja/com.tuya.zigbee#283 ð Universal Maintenance: Device Variants Synchronisation as a code owner.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/283#event[REDACTED_PHONE]\r\nYou are receiving this because your review was requested.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/283/issue_event/[REDACTED_EMAIL]>\r\n"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 425,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506977",
+      "type": "github",
+      "subj": "[dlnraja/com.tuya.zigbee] 🔄 Universal Maintenance: Device Variants Synchronisation (PR #283)",
+      "from": "github",
+      "date": "2026-04-22T03:43:02.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "variants",
+        "IDs"
+      ],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "283",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "## ð Maintenance Report\r\nThis PR automatically synchronizes new device variants and improves compatibility.\r\n\r\n**Checks performed:**\r\n- [x] New device IDs detected using heuristics script\r\n- [x] Endpoint routing validated for multi-gang devices\r\n- [x] Tuya raw frame handlers adapted\r\n\r\n*Please review carefully before merging.*\r\nYou can view, comment on, or merge this pull request online at:\r\n\r\n  https://github.com/dlnraja/com.tuya.zigbee/pull/283?email_source=notifications&amp;email_token=ACK"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 2570,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506987",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Johan SDK3 Sync — 198 FPs added, 0 DP gaps (PR #284)",
+      "from": "github",
+      "date": "2026-04-22T05:48:14.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "284",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "@github-actions[bot] requested your review on: dlnraja/com.tuya.zigbee#284 Johan SDK3 Sync â 198 FPs added, 0 DP gaps as a code owner.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/284#event[REDACTED_PHONE]\r\nYou are receiving this because your review was requested.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/284/issue_event/[REDACTED_EMAIL]>\r\n"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 410,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506988",
+      "type": "github",
+      "subj": "[dlnraja/com.tuya.zigbee] Johan SDK3 Sync — 198 FPs added, 0 DP gaps (PR #284)",
+      "from": "github",
+      "date": "2026-04-22T05:48:16.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "284",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "## Automated Johan SDK3 Sync\r\n\r\n### Fingerprints\r\n- **Added**: 198 new FPs auto-matched to existing drivers\r\n- **DP gaps**: 0 drivers with missing Tuya DP mappings\r\n- **New Johan drivers**: 89 (not in our codebase)\r\n\r\n### Auto-Scaffold\r\n- **Scaffolded**: 0 new drivers created\r\n- **FPs added**: 0 uncovered FPs added to existing drivers\r\n- **Conflicts**: 79 cross-class PID conflicts\r\n\r\n### Conflict Audit\r\n- **High severity**: 79 cross-class PID conflicts\r\n- **MFR conflicts**: 0 real risk duplicate"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 3249,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506989",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-04-22T05:54:32.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ':' /app/lib/utils/tuyaUtils.js:118",
+        "Unexpected token ':'"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r",
+          "Error: Unexpected token ':'\r",
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r",
+          "Error: Unexpected token ':'\r",
+          "Error: Unexpected token ':' /app/lib/utils/tuyaUtils.js:118\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 6165,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_506994",
       "type": "device_issue",
       "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
       "from": "user",
-      "date": "2026-03-08T10:17:38.000Z",
+      "date": "2026-04-22T06:05:22.000Z",
       "pseudo": {
         "source": "user",
-        "username": "M.K."
+        "username": "J.W."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 447,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_506995",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
+      "from": "homey_system",
+      "date": "2026-04-22T06:07:48.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ')'",
+        "Cannot access `this.homey.app` because the app instance has been destroyed.",
+        "access `this.homey.app` because the app instance has been de"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ')'\r",
+          "Error: Cannot access `this.homey.app` because the app instance has been destroyed.\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 2822,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_507017",
+      "type": "general",
+      "subj": "Vote now! VARONIS SYSTEMS, INC. Annual Meeting",
+      "from": "user",
+      "date": "2026-04-22T07:15:56.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "R.U."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 13893,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_507061",
+      "type": "general",
+      "subj": "2026 Cloud Threats Report",
+      "from": "user",
+      "date": "2026-04-22T11:07:04.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "T.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 3700,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_507083",
+      "type": "changelog",
+      "subj": "Is your ‘from’ address killing your replies?",
+      "from": "user",
+      "date": "2026-04-22T13:08:19.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "J.H."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 4193,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_507163",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] 🔄 Universal Maintenance: Device Variants Synchronisation (PR #283)",
+      "from": "github",
+      "date": "2026-04-23T03:45:01.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "github-actions[bot]"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "variants"
+      ],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "283",
+        "action": "pushed",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "@github-actions[bot] pushed 1 commit.\r\n\r\nee039d4db1394a85b504bf6a2bafac7ff5b1d5bf  improved: added support for new device variants [skip ci]\r\n\r\n-- \r\nView it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/283/changes/8522e425e6a723381f59fc3b2a317ae2da50e204..ee039d4db1394a85b504bf6a2bafac7ff5b1d5bf\r\nYou are receiving this because you are subscribed to this thread.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/283/before/8522e425e6a723381f59fc3b2a317ae2da50e204/after/[REDACTED_EMAIL]>\r"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 503,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_507165",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-04-23T04:40:43.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+        "Unexpected token ')'"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r",
+          "Error: Unexpected token ')'\r",
+          "Error: Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 6171,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509689",
+      "type": "general",
+      "subj": "No, Ivermectin Is Not Proven To Treat Hantavirus",
+      "from": "user",
+      "date": "2026-05-07T21:30:51.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "F.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "treat hantavirus. The outbreak of the disease has killed thr"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 3778,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509691",
+      "type": "general",
+      "subj": "Delve into Quantum Computing in the CODE Magazine 2026 - May/June Issue!",
+      "from": "user",
+      "date": "2026-05-08T01:45:27.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "C.M."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 9975,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509722",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-05-08T06:33:51.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "xer..."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 1109,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509736",
+      "type": "general",
+      "subj": "Women With Impact: May Issue",
+      "from": "user",
+      "date": "2026-05-08T08:18:20.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "E.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 8685,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509747",
+      "type": "general",
+      "subj": "The optimal way to send emails in 2026, revealed",
+      "from": "user",
+      "date": "2026-05-08T09:20:41.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "T.H."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 2481,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509760",
+      "type": "general",
+      "subj": "Cybersecurity Is Now a Leadership Decision",
+      "from": "user",
+      "date": "2026-05-08T10:16:19.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "V.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 4748,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509764",
+      "type": "general",
+      "subj": "Stop Chasing CVSS - Prioritize Remediation That Matters",
+      "from": "user",
+      "date": "2026-05-08T10:34:02.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "T.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 4588,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509766",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-05-08T10:38:32.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "R.B."
       },
       "fps": {
         "mfr": [
-          "_TZE284_hdml1aav"
+          "_TZE284_oitavov2"
         ],
         "pid": [
           "TS0601"
@@ -262,7 +2458,7 @@
       "devices": [],
       "xref": [
         {
-          "fingerprint": "_TZE284_hdml1aav",
+          "fingerprint": "_TZE284_oitavov2",
           "type": "mfr",
           "supported": true,
           "drivers": [
@@ -286,10 +2482,20 @@
             "button_wireless_6",
             "ceiling_fan",
             "climate_sensor",
+            "climate_sensor_device",
+            "climate_sensor_energy",
             "co_sensor",
             "contact_sensor",
             "curtain_motor",
+            "curtain_motor_shutter",
             "curtain_motor_tilt",
+            "device_din_rail",
+            "device_din_rail_meter",
+            "device_floor_heating",
+            "device_floor_heating_thermostat",
+            "device_generic_tuya_universal",
+            "device_radiator_valve",
+            "device_radiator_valve_smart",
             "dimmer_3gang",
             "dimmer_dual_channel",
             "dimmer_wall_1gang",
@@ -313,6 +2519,7 @@
             "hvac_dehumidifier",
             "ir_blaster",
             "lcdtemphumidsensor",
+            "lcdtemphumidsensor_plug_energy",
             "light_sensor_outdoor",
             "lock_smart",
             "motion_sensor",
@@ -332,8 +2539,15 @@
             "radiator_valve_zigbee",
             "rain_sensor",
             "scene_switch_4",
+            "sensor_climate_contact",
+            "sensor_contact_motion",
+            "sensor_contact_water",
+            "sensor_motion_presence",
+            "sensor_motion_radar",
+            "sensor_presence_radar",
             "shutter_roller_controller",
             "siren",
+            "siren_sirentemphumidsensor",
             "sirentemphumidsensor",
             "smart_breaker",
             "smart_heater",
@@ -343,6 +2557,7 @@
             "smart_scene_panel",
             "smoke_detector_advanced",
             "soil_sensor",
+            "switch",
             "switch_1gang",
             "switch_2gang",
             "switch_3gang",
@@ -372,18 +2587,290 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 8437,
+      "bodyLength": 806,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_499604",
+      "id": "imap_509768",
       "type": "general",
-      "subj": "Aménagez votre chambre selon vos envies ❤️",
+      "subj": "The Foundation of GenAI: Why Your Data Platform is the Secret to AI Success",
       "from": "user",
-      "date": "2026-03-08T13:10:00.000Z",
+      "date": "2026-05-08T11:00:00.000Z",
       "pseudo": {
         "source": "user",
-        "username": "L.R."
+        "username": "A.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 5499,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509770",
+      "type": "general",
+      "subj": "Vote now! GITLAB INC. Annual Meeting",
+      "from": "user",
+      "date": "2026-05-08T11:02:35.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "R.U."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 13898,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509772",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-05-08T11:29:43.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "R.G."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 1175,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509774",
+      "type": "general",
+      "subj": "Vote now! META PLATFORMS, INC. Annual Meeting",
+      "from": "user",
+      "date": "2026-05-08T11:38:28.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "R.U."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 13904,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509789",
+      "type": "changelog",
+      "subj": "Tech-savvy used to mean mastering tools. Not anymore.",
+      "from": "user",
+      "date": "2026-05-08T13:40:30.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "N.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 11463,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509828",
+      "type": "bug_report",
+      "subj": "🤠 Dirty Frag, Ivanti, and AI Agents With Desktops",
+      "from": "user",
+      "date": "2026-05-08T18:51:14.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "T.G."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "=redirect,quality=80/uploads/asset/file/ba4bff58-4f[REDACTED_PHONE]b-f57f882458b"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [],
+        "crashApp": "nobody",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 10429,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509834",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-05-08T20:56:59.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "Sve..."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 463,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509874",
+      "type": "general",
+      "subj": "Vote now! MASTERCARD INCORPORATED Annual Meeting",
+      "from": "user",
+      "date": "2026-05-09T09:30:46.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "R.U."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 13888,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509885",
+      "type": "general",
+      "subj": "Vote now! SHOPIFY INC. Annual Meeting",
+      "from": "user",
+      "date": "2026-05-09T10:26:02.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "R.U."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 13952,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509886",
+      "type": "bug_report",
+      "subj": "WARNING: New Critical Linux Vulnerability \"Dirty Frag\" Enables Root Access Across Every Major Linux Distribution",
+      "from": "user",
+      "date": "2026-05-09T11:05:06.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "T.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [],
+        "crashApp": null,
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 13480,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509901",
+      "type": "general",
+      "subj": "🟠 The other side of this rally, Dylan",
+      "from": "user",
+      "date": "2026-05-09T14:14:27.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "Inv..."
       },
       "fps": {
         "mfr": [],
@@ -402,44 +2889,119 @@
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_499607",
-      "type": "bug_report",
+      "id": "imap_509911",
+      "type": "changelog",
       "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
       "from": "user",
-      "date": "2026-03-08T13:24:59.000Z",
+      "date": "2026-05-09T17:42:38.000Z",
       "pseudo": {
         "source": "user",
-        "username": "L.R."
+        "username": "Y.E."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 529,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509920",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] NOT WORK FOR HIST SERVER VERSION (Issue #317)",
+      "from": "github",
+      "date": "2026-05-09T20:54:05.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "vladivdv-bot"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "317",
+        "action": "Assigned",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "vladivdv-bot",
+        "bodyExcerpt": "Assigned #317 to @dlnraja.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/issues/317#event[REDACTED_PHONE]\r\nYou are receiving this because you were assigned.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/issue/317/issue_event/[REDACTED_EMAIL]>\r\n"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 295,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509921",
+      "type": "github",
+      "subj": "[dlnraja/com.tuya.zigbee] NOT WORK FOR HIST SERVER VERSION (Issue #317)",
+      "from": "github",
+      "date": "2026-05-09T20:54:05.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "vladivdv-bot"
       },
       "fps": {
         "mfr": [],
         "pid": []
       },
       "errs": [
-        "on contact sensor for me !"
+        "message is shown.",
+        "be completed because of this white screen issue."
       ],
-      "devices": [],
+      "devices": [
+        "pairing",
+        "improvement"
+      ],
       "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [],
-        "crashApp": null,
-        "capabilities": [],
-        "clusters": []
+      "ghInfo": {
+        "issueNum": "317",
+        "action": "assigned",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "vladivdv-bot",
+        "bodyExcerpt": "vladivdv-bot created an issue (dlnraja/com.tuya.zigbee#317)\r\n\r\n### What Feature / Enhancement?\r\n\r\nHello,\r\n\r\nFirst of all, thank you for your work on this application.\r\n\r\nI would like to report an issue with adding IR WiFi Tuya devices on the Homey Self-Hosted Server version.\r\n\r\nThe pairing process starts normally, and after entering the Tuya account login credentials, the application gets stuck on a white screen and never continues. No error message is shown.\r\n\r\nThe issue appears specifically on"
       },
+      "forumInfo": null,
+      "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 362,
+      "bodyLength": 2774,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_499651",
+      "id": "imap_509922",
       "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] Weekly Fingerprint Sync (0 new lines) (PR #157)",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] NOT WORK FOR HIST SERVER VERSION (Issue #317)",
       "from": "github",
-      "date": "2026-03-09T06:20:57.000Z",
+      "date": "2026-05-09T20:54:27.000Z",
       "pseudo": {
         "source": "github",
         "username": "github-actions[bot]"
@@ -449,247 +3011,37 @@
         "pid": []
       },
       "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "157",
-        "action": null,
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "github-actions[bot]",
-        "bodyExcerpt": "@github-actions[bot] requested your review on: dlnraja/com.tuya.zigbee#157 Weekly Fingerprint Sync (0 new lines) as a code owner.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/157#event[REDACTED_PHONE]\r\nYou are receiving this because your review was requested.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/157/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 403,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499652",
-      "type": "github",
-      "subj": "[dlnraja/com.tuya.zigbee] Weekly Fingerprint Sync (0 new lines) (PR #157)",
-      "from": "github",
-      "date": "2026-03-09T06:20:57.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "github-actions[bot]"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "157",
-        "action": null,
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "dlnraja/com.tuya.zigbee",
-        "labels": null,
-        "author": "github-actions[bot]",
-        "bodyExcerpt": "## Automated Weekly Fingerprint Sync\r\n\r\nThis PR was auto-generated by the weekly fingerprint sync workflow.\r\n\r\n### What changed\r\n- Fetched latest fingerprints from Z2M (tuya, sonoff, danfoss, schneider, legrand, bosch, ikea, xiaomi)\r\n- Auto-added safe Tuya _T* manufacturer patterns to appropriate drivers\r\n- All JSON validated\r\n\r\n### Reports\r\nSee data/community-sync/sync-report.md for full details.\r\nSee data/community-sync/missing-fingerprints.json for non-Tuya items needing manual review.\r\n\r\n###"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 1593,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499667",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-09T07:31:32.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "D.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": [
-          "SNZB-03"
-        ]
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [
-        {
-          "fingerprint": "SNZB-03",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "generic_diy",
-            "motion_sensor"
-          ],
-          "multiDriver": true
-        }
+      "devices": [
+        "pairing"
       ],
-      "ghInfo": null,
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "317",
+        "action": "assigned",
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "github-actions[bot]",
+        "bodyExcerpt": "github-actions[bot] left a comment (dlnraja/com.tuya.zigbee#317)\r\n\r\n<!-- tuya-issue-manager -->\r\nHi @vladivdv-bot,\r\n\r\nThank you for your detailed report and for your kind words about the application! I really appreciate it.\r\n\r\nI understand that you're experiencing an issue with adding IR WiFi Tuya devices on the Homey Self-Hosted Server version, where the pairing process gets stuck on a white screen after entering your Tuya account credentials. That sounds frustrating, and I want to help you wit"
+      },
       "forumInfo": null,
       "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 444,
+      "bodyLength": 1398,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_499685",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-09T09:23:51.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "P.W."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 421,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499706",
-      "type": "bug_report",
-      "subj": "[Xpeng] Re: Type:Product",
-      "from": "user",
-      "date": "2026-03-09T11:03:44.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "M.S."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [],
-        "crashApp": null,
-        "capabilities": [],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2576,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499726",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-09T13:04:34.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "R.B."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 553,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499734",
-      "type": "device_issue",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-03-09T13:54:38.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "J.W."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 697,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499738",
+      "id": "imap_509925",
       "type": "general",
-      "subj": "Elle ne se destinait pas à ce métier… 🚆",
-      "from": "user",
-      "date": "2026-03-09T07:10:13.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "T.V."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 10751,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_499739",
-      "type": "diagnostic",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "subj": "[com.dlnraja.tuya.zigbee.stable] Build #3 has been created",
       "from": "homey_system",
-      "date": "2026-03-09T14:16:55.000Z",
+      "date": "2026-05-10T02:43:14.000Z",
       "pseudo": {
         "source": "homey_system",
         "username": null
@@ -699,9 +3051,7 @@
         "pid": []
       },
       "errs": [],
-      "devices": [
-        "soil_sensor"
-      ],
+      "devices": [],
       "xref": [],
       "ghInfo": null,
       "forumInfo": null,
@@ -709,1327 +3059,531 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 17130,
+      "bodyLength": 520,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_499748",
-      "type": "bug_report",
-      "subj": "[Xpeng] Re: Type:Product",
-      "from": "user",
-      "date": "2026-03-09T15:17:45.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "M.S."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": {
-        "stackTraces": [],
-        "crashApp": "have",
-        "capabilities": [],
-        "clusters": []
-      },
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 4643,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499769",
+      "id": "imap_509926",
       "type": "general",
-      "subj": "Elle ne se destinait pas à ce métier… 🚆",
-      "from": "user",
-      "date": "2026-03-09T07:18:03.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "T.V."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 10733,
-      "contentType": "text/html->text"
-    },
-    {
-      "id": "imap_499771",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Device name] - [manufacturerName] / [modelId] (Issue #1324)",
-      "from": "github",
-      "date": "2026-03-09T18:05:11.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1324",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #1324 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1324#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issue/1324/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 299,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499772",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Device name] - [manufacturerName] / [modelId] (Issue #1324)",
-      "from": "github",
-      "date": "2026-03-09T18:05:13.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1324",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#1324)\r\n\r\nAdded to test version\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1324#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issues/1324/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 353,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499773",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - PIR Sensor - Tuya / TS0202_TZ3000_o4mkahkc (Issue #1130)",
-      "from": "github",
-      "date": "2026-03-09T18:19:27.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1130",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#1130)\r\n\r\nAdded\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1130#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issues/1130/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 337,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499774",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - PIR Sensor - Tuya / TS0202_TZ3000_o4mkahkc (Issue #1130)",
-      "from": "github",
-      "date": "2026-03-09T18:19:28.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1130",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #1130 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1130#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issue/1130/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 299,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499775",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Tuya Zigbee PIR Bewegingssensor (Issue #1139)",
-      "from": "github",
-      "date": "2026-03-09T18:19:50.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1139",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#1139)\r\n\r\nAdded\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1139#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issues/1139/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 337,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499776",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Tuya Zigbee PIR Bewegingssensor (Issue #1139)",
-      "from": "github",
-      "date": "2026-03-09T18:19:51.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1139",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #1139 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1139#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issue/1139/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 299,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499777",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Tuya Motion Sensor (2x AAA battery) - TZ3000_c8ozah8n / TS0202 (Issue #1154)",
-      "from": "github",
-      "date": "2026-03-09T18:20:23.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1154",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #1154 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1154#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issue/1154/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 299,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499778",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Tuya Motion Sensor (2x AAA battery) - TZ3000_c8ozah8n / TS0202 (Issue #1154)",
-      "from": "github",
-      "date": "2026-03-09T18:20:24.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1154",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#1154)\r\n\r\nAdded\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1154#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issues/1154/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 337,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499779",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - PIR Sensor PIR1-ZB - MiBoxer, Mi-Light, LIGHTEU / TS0202 (Issue #1193)",
-      "from": "github",
-      "date": "2026-03-09T18:22:31.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1193",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #1193 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1193#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issue/1193/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 299,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499780",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - PIR Sensor PIR1-ZB - MiBoxer, Mi-Light, LIGHTEU / TS0202 (Issue #1193)",
-      "from": "github",
-      "date": "2026-03-09T18:22:33.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1193",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#1193)\r\n\r\nAdded\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1193#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issues/1193/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 337,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499781",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Device name] - [manufacturerName] / [modelId] (Issue #1242)",
-      "from": "github",
-      "date": "2026-03-09T18:23:03.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1242",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #1242 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1242#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issue/1242/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 299,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499782",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Device name] - [manufacturerName] / [modelId] (Issue #1242)",
-      "from": "github",
-      "date": "2026-03-09T18:23:04.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1242",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#1242)\r\n\r\nAdded\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1242#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issues/1242/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 337,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499783",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request – Motion Sensor – _TZ3000_o4mkahkc / TS0202 (Issue #1243)",
-      "from": "github",
-      "date": "2026-03-09T18:23:26.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1243",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #1243 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1243#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issue/1243/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 299,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499784",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request – Motion Sensor – _TZ3000_o4mkahkc / TS0202 (Issue #1243)",
-      "from": "github",
-      "date": "2026-03-09T18:23:28.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1243",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#1243)\r\n\r\nAdded\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1243#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issues/1243/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 337,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499785",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Device name] - [manufacturerName] / [modelId] (Issue #1308)",
-      "from": "github",
-      "date": "2026-03-09T18:23:48.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1308",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #1308 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1308#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issue/1308/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 299,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499786",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Device name] - [manufacturerName] / [modelId] (Issue #1308)",
-      "from": "github",
-      "date": "2026-03-09T18:23:50.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1308",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#1308)\r\n\r\nAdded\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/1308#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issues/1308/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 337,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499787",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [PIR Sensor] - [MiBoxer] / [PIR1-ZB] (Issue #982)",
-      "from": "github",
-      "date": "2026-03-09T18:25:26.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "982",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #982 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/982#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issue/982/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 296,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499788",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [PIR Sensor] - [MiBoxer] / [PIR1-ZB] (Issue #982)",
-      "from": "github",
-      "date": "2026-03-09T18:25:27.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "982",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#982)\r\n\r\nAdded\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/982#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issues/982/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 334,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499789",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Add support for Tuya PIR sensor TS0202 / \"_TZ3000_c8ozah8n\" (PR #1166)",
-      "from": "github",
-      "date": "2026-03-09T18:26:53.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1166",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #1166.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/pull/1166#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/pull/1166/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 283,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499790",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Add support for Tuya PIR sensor TS0202 / \"_TZ3000_c8ozah8n\" (PR #1166)",
-      "from": "github",
-      "date": "2026-03-09T18:26:54.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "1166",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#1166)\r\n\r\nAdded\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/pull/1166#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/pull/1166/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 333,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499791",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Motion sensor] - [_TZ3000_mg4dy6z6] / [TS0202] (Issue #484)",
-      "from": "github",
-      "date": "2026-03-09T18:28:25.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "484",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #484 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/484#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issue/484/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 296,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499792",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - [Motion sensor] - [_TZ3000_mg4dy6z6] / [TS0202] (Issue #484)",
-      "from": "github",
-      "date": "2026-03-09T18:28:27.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "484",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#484)\r\n\r\nAdded\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/484#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issues/484/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 334,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499793",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Smart PIR Motion Sensor - _TZ3000_bsvqrxru/TS0202 (Issue #620)",
-      "from": "github",
-      "date": "2026-03-09T18:29:08.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "620",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #620 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/620#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issue/620/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 296,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499794",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Smart PIR Motion Sensor - _TZ3000_bsvqrxru/TS0202 (Issue #620)",
-      "from": "github",
-      "date": "2026-03-09T18:29:09.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "620",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#620)\r\n\r\nAdded\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/620#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issues/620/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 334,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499796",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Tuya PIR motion sensor - _TZ3000_mg4dy6z6 / TS0202 (Issue #787)",
-      "from": "github",
-      "date": "2026-03-09T18:30:32.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "787",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #787 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/787#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issue/787/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 296,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499797",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Tuya PIR motion sensor - _TZ3000_mg4dy6z6 / TS0202 (Issue #787)",
-      "from": "github",
-      "date": "2026-03-09T18:30:33.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "787",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#787)\r\n\r\nAdded\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/787#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issues/787/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 334,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499798",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Zigbee PIR Motion Sensor - _TZ3000_y56pgpgs / TS0202 (Issue #693)",
-      "from": "github",
-      "date": "2026-03-09T18:31:14.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "693",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #693 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/693#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issue/693/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 296,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499799",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - Zigbee PIR Motion Sensor - _TZ3000_y56pgpgs / TS0202 (Issue #693)",
-      "from": "github",
-      "date": "2026-03-09T18:31:14.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "693",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#693)\r\n\r\nAdded\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/693#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issues/693/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 334,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499801",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - ZigBee Smart PIR Motion Sensor Human Sensor - Moes / ZSS-X-PIRL-C-MS / _TYZB01_geepvxsy (Issue #814)",
-      "from": "github",
-      "date": "2026-03-09T18:32:20.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "814",
-        "action": "Closed",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "Closed #814 as completed.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/814#event[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issue/814/issue_event/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 296,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_499802",
-      "type": "github",
-      "subj": "Re: [JohanBendz/com.tuya.zigbee] Device Request - ZigBee Smart PIR Motion Sensor Human Sensor - Moes / ZSS-X-PIRL-C-MS / _TYZB01_geepvxsy (Issue #814)",
-      "from": "github",
-      "date": "2026-03-09T18:32:22.000Z",
-      "pseudo": {
-        "source": "github",
-        "username": "Johan Bendz"
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": {
-        "issueNum": "814",
-        "action": "commented",
-        "fps": {
-          "mfr": [],
-          "pid": []
-        },
-        "isNew": false,
-        "repo": "JohanBendz/com.tuya.zigbee",
-        "labels": null,
-        "author": "Johan Bendz",
-        "bodyExcerpt": "JohanBendz left a comment (JohanBendz/com.tuya.zigbee#814)\r\n\r\nAdded\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/JohanBendz/com.tuya.zigbee/issues/814#issuecomment[REDACTED_PHONE]\r\nYou are receiving this because you commented.\r\n\r\nMessage ID: <JohanBendz/com.tuya.zigbee/issues/814/[REDACTED_EMAIL]>\r\n"
-      },
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 334,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_503968",
-      "type": "diagnostic",
-      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "subj": "[com.dlnraja.tuya.zigbee.stable] Your build is now draft",
       "from": "homey_system",
-      "date": "2026-04-03T15:15:15.000Z",
+      "date": "2026-05-10T02:43:52.000Z",
       "pseudo": {
         "source": "homey_system",
         "username": null
       },
       "fps": {
-        "mfr": [
-          "_TZB000_yqjaollc"
-        ],
-        "pid": [
-          "TS0121"
-        ]
+        "mfr": [],
+        "pid": []
       },
       "errs": [],
-      "devices": [
-        "ir_blaster",
-        "initialized",
-        "wifi_thermostat",
-        "init",
-        "zigbee_repeater",
-        "wifi_water_valve",
-        "ir_remote",
-        "plug_energy_monitor",
-        "92f77c3b-e800-45cd-a3a4-8957b7",
-        "has",
-        "false",
-        "7b2ce174-ba45-4f6f-ba76-1dde5c"
-      ],
-      "xref": [
-        {
-          "fingerprint": "_TZB000_yqjaollc",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "plug_energy_monitor"
-          ],
-          "protocol": "unknown",
-          "requires": []
-        },
-        {
-          "fingerprint": "TS0121",
-          "type": "pid",
-          "supported": true,
-          "drivers": [
-            "plug_energy_monitor",
-            "universal_fallback"
-          ],
-          "multiDriver": true
-        }
-      ],
+      "devices": [],
+      "xref": [],
       "ghInfo": null,
       "forumInfo": null,
       "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 16570,
+      "bodyLength": 579,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_503970",
+      "id": "imap_509943",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee.stable] Build #4 has been created",
+      "from": "homey_system",
+      "date": "2026-05-10T06:36:05.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 520,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509944",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee.stable] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-05-10T06:36:20.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 579,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509948",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2112 has been created",
+      "from": "homey_system",
+      "date": "2026-05-10T07:22:01.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 508,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509949",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-05-10T07:22:16.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 564,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509950",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2113 has been created",
+      "from": "homey_system",
+      "date": "2026-05-10T07:25:02.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 508,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509951",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-05-10T07:25:14.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 564,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509952",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2113 is now testing",
+      "from": "homey_system",
+      "date": "2026-05-10T07:26:28.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 559,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509969",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee.stable] Build #5 has been created",
+      "from": "homey_system",
+      "date": "2026-05-10T09:02:22.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 520,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509970",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee.stable] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-05-10T09:02:36.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 579,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509975",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee.stable] Build #6 has been created",
+      "from": "homey_system",
+      "date": "2026-05-10T09:28:32.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 520,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509976",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee.stable] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-05-10T09:28:46.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 579,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509977",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee.stable] Build #5 is now testing",
+      "from": "homey_system",
+      "date": "2026-05-10T09:31:40.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 575,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509983",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-05-10T11:38:30.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "D.P."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "and"
+      ],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 519,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509984",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Zigbee Gate Opener Module / QS-Zigbee-C03 / TS0603 (Issue #305)",
+      "from": "github",
+      "date": "2026-05-10T11:38:33.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "PDominikPL"
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "when i try re-pair. Where is the problem - Device or software or other?"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": {
+        "issueNum": "305",
+        "action": null,
+        "fps": {
+          "mfr": [],
+          "pid": []
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "PDominikPL",
+        "bodyExcerpt": "PDominikPL left a comment (dlnraja/com.tuya.zigbee#305)\r\n\r\nHello @dlnraja. I see new version Universal Tuya Zigbee v7.5.9. I try remove App, delete device, add again and re-pair device. And I receive this error when i try re-pair. Where is the problem - Device or software or other? \r\n\r\n<img width=\"667\" height=\"851\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/4d37dade-10b7-42c3-8dc4-5901ede93405\" />\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dln"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 683,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_509993",
       "type": "crash_report",
-      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
-      "from": "user",
-      "date": "2026-04-03T15:28:42.000Z",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
+      "from": "homey_system",
+      "date": "2026-05-10T13:27:59.000Z",
       "pseudo": {
-        "source": "user",
-        "username": "Fra..."
+        "source": "homey_system",
+        "username": null
       },
       "fps": {
-        "mfr": [
-          "_TZ3000_tzvbimpq"
-        ],
+        "mfr": [],
         "pid": []
       },
       "errs": [
-        "could not get device by ID."
+        "Initializing Driver remote_button_wireless: TypeError: Class extends value # is",
+        "Class extends value # is not a constructor or null",
+        "plug_smart_switch_hybrid_switch_1gang_set_backlight_color",
+        "plug_smart_switch_hybrid_switch_1gang_set_backlight_brightne",
+        "plug_smart_switch_hybrid_switch_1gang_set_countdown",
+        "plug_smart_switch_hybrid_switch_1gang_set_child_lock",
+        "plug_smart_switch_hybrid_switch_1gang_set_scene_mode",
+        "remote_button_wireless_fingerbot_hybrid_button_wireless_fing"
       ],
-      "devices": [],
-      "xref": [
-        {
-          "fingerprint": "_TZ3000_tzvbimpq",
-          "type": "mfr",
-          "supported": true,
-          "drivers": [
-            "button_wireless_2"
-          ],
-          "protocol": "unknown",
-          "requires": []
-        }
+      "devices": [
+        "wall_switch_2gang_1way",
+        "wall_switch_3gang_1way",
+        "wall_switch_4gang_1way",
+        "initialized",
+        "water_leak_sensor",
+        "water_tank_monitor",
+        "initializing",
+        "water_valve_garden",
+        "water_valve_smart",
+        "weather_station_outdoor",
+        "wifi_air_purifier",
+        "init",
+        "wifi_air_quality",
+        "wifi_camera",
+        "wifi_cover",
+        "wifi_dehumidifier",
+        "wifi_dimmer",
+        "wifi_door_lock",
+        "wifi_doorbell",
+        "wifi_ewelink_bulb",
+        "wifi_ewelink_dimmer",
+        "wifi_ewelink_fan",
+        "wifi_ewelink_led",
+        "wifi_ewelink_plug",
+        "wifi_ewelink_pow",
+        "wifi_ewelink_switch",
+        "wifi_ewelink_switch_2ch",
+        "wifi_ewelink_switch_4ch",
+        "wifi_ewelink_th",
+        "wifi_fan",
+        "wifi_garage_door",
+        "wifi_generic",
+        "wifi_heater",
+        "wifi_humidifier",
+        "wifi_ir_remote",
+        "wifi_led_strip",
+        "wifi_light",
+        "wifi_pet_feeder",
+        "wifi_plug",
+        "wifi_power_strip",
+        "wifi_robot_vacuum",
+        "wifi_sensor",
+        "wifi_sonoff_basicr4",
+        "wifi_siren",
+        "wifi_sonoff_dualr3",
+        "wifi_sonoff_micro",
+        "wifi_sonoff_minir3",
+        "wifi_sonoff_minir4",
+        "wifi_sonoff_pow_elite",
+        "wifi_sonoff_smate2",
+        "wifi_sonoff_thr316d",
+        "wifi_sonoff_tx_1ch",
+        "wifi_sonoff_tx_2ch",
+        "wifi_sonoff_tx_3ch",
+        "wifi_switch",
+        "wifi_switch_2gang",
+        "wifi_switch_3gang",
+        "wifi_switch_4gang",
+        "wifi_thermostat",
+        "wifi_water_valve",
+        "zigbee_repeater",
+        "plug_smart_switch",
+        "remote_button_wireless",
+        "remote_button_wireless_fingerb"
       ],
+      "xref": [],
       "ghInfo": null,
       "forumInfo": null,
       "crashInfo": {
         "stackTraces": [
-          "Error: could not get device by ID.\r"
+          "Error Initializing Driver remote_button_wireless: TypeError: Class extends value # is not a constructor or null\r"
         ],
-        "crashApp": null,
+        "crashApp": "has",
         "capabilities": [],
         "clusters": []
       },
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 495,
-      "contentType": "text/plain"
+      "bodyLength": 16679,
+      "contentType": "text/html->text"
     },
     {
-      "id": "imap_503977",
+      "id": "imap_509994",
       "type": "general",
-      "subj": "Confirmation de votre commande Google Play du 3 avr. 2026",
-      "from": "user",
-      "date": "2026-04-03T15:41:01.000Z",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2114 has been created",
+      "from": "homey_system",
+      "date": "2026-05-10T13:40:07.000Z",
       "pseudo": {
-        "source": "user",
-        "username": "G.P."
+        "source": "homey_system",
+        "username": null
       },
       "fps": {
         "mfr": [],
@@ -2044,15 +3598,666 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 3647,
+      "bodyLength": 508,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509995",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-05-10T13:40:21.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 564,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509996",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2114 is now testing",
+      "from": "homey_system",
+      "date": "2026-05-10T13:43:53.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 559,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_509997",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2112 is now testing",
+      "from": "homey_system",
+      "date": "2026-05-10T13:48:29.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 559,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510005",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2115 has been created",
+      "from": "homey_system",
+      "date": "2026-05-10T16:34:12.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 508,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510006",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-05-10T16:34:26.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 564,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510008",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2115 is now testing",
+      "from": "homey_system",
+      "date": "2026-05-10T16:38:15.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 559,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510018",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
+      "from": "user",
+      "date": "2026-05-10T19:06:54.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "Dut..."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 386,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_503995",
+      "id": "imap_510022",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
+      "from": "homey_system",
+      "date": "2026-05-10T22:40:06.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "HybridSensorBase is not defined"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "ReferenceError: HybridSensorBase is not defined\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 1746,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510025",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2116 has been created",
+      "from": "homey_system",
+      "date": "2026-05-10T23:16:36.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 508,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510026",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-05-10T23:16:50.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 564,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510027",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2116 is now testing",
+      "from": "homey_system",
+      "date": "2026-05-10T23:24:09.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 559,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510028",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2117 has been created",
+      "from": "homey_system",
+      "date": "2026-05-10T23:33:20.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 508,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510029",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-05-10T23:33:34.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 564,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510030",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2117 is now testing",
+      "from": "homey_system",
+      "date": "2026-05-10T23:41:44.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 559,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510035",
+      "type": "github",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Smart Solar Soil Sensor (Issue #276)",
+      "from": "github",
+      "date": "2026-05-11T04:59:00.000Z",
+      "pseudo": {
+        "source": "github",
+        "username": "vikinos"
+      },
+      "fps": {
+        "mfr": [
+          "_TZE284_rqcuwlsa"
+        ],
+        "pid": [
+          "TS0601"
+        ]
+      },
+      "errs": [],
+      "devices": [
+        "homey"
+      ],
+      "xref": [
+        {
+          "fingerprint": "_TZE284_rqcuwlsa",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "climate_sensor"
+          ],
+          "protocol": "tuya_dp",
+          "requires": [
+            "TuyaEF00Manager",
+            "dpMappings"
+          ]
+        },
+        {
+          "fingerprint": "TS0601",
+          "type": "pid",
+          "supported": true,
+          "drivers": [
+            "air_purifier",
+            "air_quality_co2",
+            "air_quality_comprehensive",
+            "button_emergency_sos",
+            "button_wireless_6",
+            "ceiling_fan",
+            "climate_sensor",
+            "climate_sensor_device",
+            "climate_sensor_energy",
+            "co_sensor",
+            "contact_sensor",
+            "curtain_motor",
+            "curtain_motor_shutter",
+            "curtain_motor_tilt",
+            "device_din_rail",
+            "device_din_rail_meter",
+            "device_floor_heating",
+            "device_floor_heating_thermostat",
+            "device_generic_tuya_universal",
+            "device_radiator_valve",
+            "device_radiator_valve_smart",
+            "dimmer_3gang",
+            "dimmer_dual_channel",
+            "dimmer_wall_1gang",
+            "din_rail_meter",
+            "din_rail_switch",
+            "door_controller",
+            "doorbell",
+            "energy_meter_3phase",
+            "fan_controller",
+            "fingerprint_lock",
+            "floor_heating_thermostat",
+            "formaldehyde_sensor",
+            "garage_door",
+            "garage_door_opener",
+            "gas_detector",
+            "gas_sensor",
+            "generic_tuya",
+            "humidifier",
+            "hvac_air_conditioner",
+            "hvac_controller",
+            "hvac_dehumidifier",
+            "ir_blaster",
+            "lcdtemphumidsensor",
+            "lcdtemphumidsensor_plug_energy",
+            "light_sensor_outdoor",
+            "lock_smart",
+            "motion_sensor",
+            "motion_sensor_2",
+            "motion_sensor_radar_mmwave",
+            "pet_feeder",
+            "pet_feeder_zigbee",
+            "plug_energy_monitor",
+            "plug_smart",
+            "pool_pump",
+            "power_clamp_meter",
+            "power_meter",
+            "presence_sensor_ceiling",
+            "presence_sensor_radar",
+            "radiator_controller",
+            "radiator_valve",
+            "radiator_valve_zigbee",
+            "rain_sensor",
+            "scene_switch_4",
+            "sensor_climate_contact",
+            "sensor_contact_motion",
+            "sensor_contact_water",
+            "sensor_motion_presence",
+            "sensor_motion_radar",
+            "sensor_presence_radar",
+            "shutter_roller_controller",
+            "siren",
+            "siren_sirentemphumidsensor",
+            "sirentemphumidsensor",
+            "smart_breaker",
+            "smart_heater",
+            "smart_heater_controller",
+            "smart_lcd_thermostat",
+            "smart_rcbo",
+            "smart_scene_panel",
+            "smoke_detector_advanced",
+            "soil_sensor",
+            "switch",
+            "switch_1gang",
+            "switch_2gang",
+            "switch_3gang",
+            "switch_4gang",
+            "switch_dimmer_1gang",
+            "switch_wall_5gang",
+            "switch_wall_6gang",
+            "switch_wall_8gang",
+            "thermostat_4ch",
+            "thermostat_tuya_dp",
+            "universal_fallback",
+            "usb_outlet_advanced",
+            "valve_irrigation",
+            "valve_single",
+            "vibration_sensor",
+            "water_leak_sensor",
+            "water_tank_monitor",
+            "water_valve_smart",
+            "weather_station_outdoor"
+          ],
+          "multiDriver": true
+        }
+      ],
+      "ghInfo": {
+        "issueNum": "276",
+        "action": "commented",
+        "fps": {
+          "mfr": [
+            "_TZE284_rqcuwlsa"
+          ],
+          "pid": [
+            "TS0601"
+          ]
+        },
+        "isNew": false,
+        "repo": "dlnraja/com.tuya.zigbee",
+        "labels": null,
+        "author": "vikinos",
+        "bodyExcerpt": "vikinos left a comment (dlnraja/com.tuya.zigbee#276)\r\n\r\nIt seems that Temp and humidity are wrongly mapped...im getting temp 50C and outside is around 10C....\r\nProperty\tValue\r\nID\t0b92d0e5-abe6-4132-87bf-b28944e64625\r\nName\tVlhkomÄr\r\nClass\tsensor\r\nDriver\thomey:app:com.dlnraja.tuya.zigbee:climate_sensor\r\nReady\tYes\r\nAvailable\tYes\r\nWarning\tNo\r\nCustom icon\tNo\r\n\r\nData\r\nKey\tValue\r\ntoken\t\"659bb162-262a-41cb-864f-7026bafa7973\"\r\n\r\nSettings\r\nKey\tValue\r\nzb_product_id\t\"TS0601\"\r\nzb_manufacturer_name\t\"_TZE284_"
+      },
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 1771,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_510038",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2118 has been created",
+      "from": "homey_system",
+      "date": "2026-05-11T05:13:32.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 508,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510039",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-05-11T05:13:46.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 564,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510041",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2118 is now testing",
+      "from": "homey_system",
+      "date": "2026-05-11T05:17:46.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 559,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510105",
+      "type": "changelog",
+      "subj": "⚡ Weekly Recap: Linux Rootkit, macOS Crypto Stealer, WebSocket Skimmers and More",
+      "from": "user",
+      "date": "2026-05-11T12:39:42.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "T.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "operate on foreign-hosted infrastructure due to jurisdiction"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 16255,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_510106",
       "type": "diagnostic",
       "subj": "[com.dlnraja.tuya.zigbee] Your app has received a Diagnostics Report",
       "from": "homey_system",
-      "date": "2026-04-03T16:41:00.000Z",
+      "date": "2026-05-11T12:49:34.000Z",
       "pseudo": {
         "source": "homey_system",
         "username": null
@@ -2063,15 +4268,61 @@
       },
       "errs": [],
       "devices": [
-        "presence_sensor_radar",
-        "c9b2b7e9-eb08-4f41-b89c-1c4375",
-        "should",
-        "button_emergency_sos",
-        "4aee9f",
-        "has",
-        "may",
-        "609d0c35-5eed-4e20-a32c-958c99",
-        "presence_s"
+        "water_valve_garden",
+        "water_valve_smart",
+        "weather_station_outdoor",
+        "wifi_air_purifier",
+        "init",
+        "initialized",
+        "wifi_air_quality",
+        "wifi_camera",
+        "wifi_cover",
+        "wifi_dehumidifier",
+        "wifi_dimmer",
+        "wifi_doorbell",
+        "wifi_door_lock",
+        "wifi_ewelink_bulb",
+        "wifi_ewelink_dimmer",
+        "wifi_ewelink_fan",
+        "wifi_ewelink_led",
+        "wifi_ewelink_plug",
+        "wifi_ewelink_pow",
+        "wifi_ewelink_switch",
+        "wifi_ewelink_switch_4ch",
+        "wifi_ewelink_switch_2ch",
+        "wifi_ewelink_th",
+        "wifi_fan",
+        "wifi_garage_door",
+        "wifi_generic",
+        "wifi_heater",
+        "wifi_humidifier",
+        "wifi_ir_remote",
+        "wifi_led_strip",
+        "wifi_light",
+        "wifi_pet_feeder",
+        "wifi_plug",
+        "wifi_power_strip",
+        "wifi_robot_vacuum",
+        "wifi_sensor",
+        "wifi_siren",
+        "wifi_sonoff_basicr4",
+        "wifi_sonoff_dualr3",
+        "wifi_sonoff_micro",
+        "wifi_sonoff_minir3",
+        "wifi_sonoff_minir4",
+        "wifi_sonoff_pow_elite",
+        "wifi_sonoff_smate2",
+        "wifi_sonoff_thr316d",
+        "wifi_sonoff_tx_1ch",
+        "wifi_sonoff_tx_2ch",
+        "wifi_sonoff_tx_3ch",
+        "wifi_switch",
+        "wifi_switch_2gang",
+        "wifi_switch_3gang",
+        "wifi_switch_4gang",
+        "wifi_thermostat",
+        "wifi_water_valve",
+        "zigbee_repeater"
       ],
       "xref": [],
       "ghInfo": null,
@@ -2080,78 +4331,42 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 16338,
+      "bodyLength": 12005,
       "contentType": "text/html->text"
     },
     {
-      "id": "imap_503996",
-      "type": "diagnostic",
+      "id": "imap_510110",
+      "type": "bug_report",
       "subj": "[Homey Community Forum] [Apps] [APP][Pro] Universal TUYA Zigbee Device App - test",
       "from": "user",
-      "date": "2026-04-03T16:57:17.000Z",
+      "date": "2026-05-11T13:23:06.000Z",
       "pseudo": {
         "source": "user",
-        "username": "P.W."
+        "username": "J.K."
       },
       "fps": {
-        "mfr": [],
+        "mfr": [
+          "_TZE200_crq3r3la"
+        ],
         "pid": []
       },
       "errs": [],
       "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 901,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_504002",
-      "type": "general",
-      "subj": "Confirmation de votre commande Google Play du 3 avr. 2026",
-      "from": "user",
-      "date": "2026-04-03T18:20:06.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "G.P."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
-      "ghInfo": null,
-      "forumInfo": null,
-      "crashInfo": null,
-      "ai": null,
-      "homeyVersion": null,
-      "appVersion": null,
-      "bodyLength": 2950,
-      "contentType": "text/plain"
-    },
-    {
-      "id": "imap_504012",
-      "type": "bug_report",
-      "subj": "Big Beautiful Bill Brings New Tax Scams—Red Flags To Watch For",
-      "from": "user",
-      "date": "2026-04-03T21:25:59.000Z",
-      "pseudo": {
-        "source": "user",
-        "username": "F.L."
-      },
-      "fps": {
-        "mfr": [],
-        "pid": []
-      },
-      "errs": [],
-      "devices": [],
-      "xref": [],
+      "xref": [
+        {
+          "fingerprint": "_TZE200_crq3r3la",
+          "type": "mfr",
+          "supported": true,
+          "drivers": [
+            "presence_sensor_radar"
+          ],
+          "protocol": "tuya_dp",
+          "requires": [
+            "TuyaEF00Manager",
+            "dpMappings"
+          ]
+        }
+      ],
       "ghInfo": null,
       "forumInfo": null,
       "crashInfo": {
@@ -2163,15 +4378,303 @@
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 3962,
+      "bodyLength": 1433,
       "contentType": "text/plain"
     },
     {
-      "id": "imap_504016",
+      "id": "imap_510114",
+      "type": "device_issue",
+      "subj": "Alerte de sécurité",
+      "from": "user",
+      "date": "2026-05-11T13:46:58.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "Goo..."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 805,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_510115",
+      "type": "device_issue",
+      "subj": "Alerte de sécurité pour [email]",
+      "from": "user",
+      "date": "2026-05-11T13:46:58.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "Goo..."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 1132,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_510150",
+      "type": "general",
+      "subj": "For The First Time Ever Hackers Use AI To Develop Zero-Day Exploits, Marking A Historic Moment In Cybersecurity",
+      "from": "user",
+      "date": "2026-05-11T20:58:00.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "T.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 11843,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_510152",
+      "type": "changelog",
+      "subj": "OpenAI Dev News: Realtime 2.0, Codex for Chrome, and beyond",
+      "from": "user",
+      "date": "2026-05-11T23:47:01.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "Ope..."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 11022,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_510166",
+      "type": "general",
+      "subj": "Building the Infrastructure for Enterprise AI",
+      "from": "user",
+      "date": "2026-05-12T05:31:19.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "B.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 11158,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_510181",
+      "type": "device_issue",
+      "subj": "Le sauveur de Lissy",
+      "from": "user",
+      "date": "2026-05-12T06:32:53.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "L.7."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 9724,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510204",
+      "type": "device_issue",
+      "subj": "De la route au rail : le transport de marchandises européen en cours de décarbonation",
+      "from": "user",
+      "date": "2026-05-12T08:16:05.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "V.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 6488,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_510334",
+      "type": "general",
+      "subj": "It’s Trust or Bust",
+      "from": "user",
+      "date": "2026-05-12T17:43:14.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "S.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 4988,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_510338",
+      "type": "changelog",
+      "subj": "Microsoft May 2026 Patch Tuesday Fixes 120+ Vulnerabilities",
+      "from": "user",
+      "date": "2026-05-12T18:50:15.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "T.L."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [
+        "Interface"
+      ],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 11633,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_510347",
+      "type": "changelog",
+      "subj": "Above $80,000: BTC’s next challenge",
+      "from": "user",
+      "date": "2026-05-12T19:13:49.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "N.D."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 15990,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_510366",
+      "type": "general",
+      "subj": "Pourquoi je fais l’inverse de ce que je vous dis (et j’assume)",
+      "from": "user",
+      "date": "2026-05-13T06:01:50.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "J.P."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 6844,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_510368",
       "type": "github",
-      "subj": "Re: [dlnraja/com.tuya.zigbee] 🔄 Synchronisation Automatique Johan Benz (PR #185)",
+      "subj": "Re: [dlnraja/com.tuya.zigbee] Johan SDK3 Sync — 19 FPs added, 0 DP gaps (PR #320)",
       "from": "github",
-      "date": "2026-04-04T03:27:36.000Z",
+      "date": "2026-05-13T06:12:25.000Z",
       "pseudo": {
         "source": "github",
         "username": "github-actions[bot]"
@@ -2184,7 +4687,7 @@
       "devices": [],
       "xref": [],
       "ghInfo": {
-        "issueNum": "185",
+        "issueNum": "320",
         "action": null,
         "fps": {
           "mfr": [],
@@ -2194,7 +4697,7 @@
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
         "author": "github-actions[bot]",
-        "bodyExcerpt": "@github-actions[bot] requested your review on: dlnraja/com.tuya.zigbee#185 ð Synchronisation Automatique Johan Benz as a code owner.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/185#event[REDACTED_PHONE]\r\nYou are receiving this because your review was requested.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/185/issue_event/[REDACTED_EMAIL]>\r\n"
+        "bodyExcerpt": "@github-actions[bot] requested your review on: dlnraja/com.tuya.zigbee#320 Johan SDK3 Sync â 19 FPs added, 0 DP gaps as a code owner.\r\n\r\n-- \r\nReply to this email directly or view it on GitHub:\r\nhttps://github.com/dlnraja/com.tuya.zigbee/pull/320#event[REDACTED_PHONE]\r\nYou are receiving this because your review was requested.\r\n\r\nMessage ID: <dlnraja/com.tuya.zigbee/pull/320/issue_event/[REDACTED_EMAIL]>\r\n"
       },
       "forumInfo": null,
       "crashInfo": null,
@@ -2205,11 +4708,11 @@
       "contentType": "text/plain"
     },
     {
-      "id": "imap_504017",
+      "id": "imap_510369",
       "type": "github",
-      "subj": "[dlnraja/com.tuya.zigbee] 🔄 Synchronisation Automatique Johan Benz (PR #185)",
+      "subj": "[dlnraja/com.tuya.zigbee] Johan SDK3 Sync — 19 FPs added, 0 DP gaps (PR #320)",
       "from": "github",
-      "date": "2026-04-04T03:27:36.000Z",
+      "date": "2026-05-13T06:12:26.000Z",
       "pseudo": {
         "source": "github",
         "username": "github-actions[bot]"
@@ -2219,13 +4722,10 @@
         "pid": []
       },
       "errs": [],
-      "devices": [
-        "variants",
-        "IDs"
-      ],
+      "devices": [],
       "xref": [],
       "ghInfo": {
-        "issueNum": "185",
+        "issueNum": "320",
         "action": null,
         "fps": {
           "mfr": [],
@@ -2235,15 +4735,276 @@
         "repo": "dlnraja/com.tuya.zigbee",
         "labels": null,
         "author": "github-actions[bot]",
-        "bodyExcerpt": "## ð Auto-Sync report\r\nThis PR automatically cherry-picks changes and new device variants from Johan Benz&#39;s repository.\r\n\r\n**Checks performed:**\r\n- [x] New device IDs detected using heuristics script\r\n- [x] Endpoint routing validated for multi-gang devices\r\n- [x] Tuya raw frame handlers adapted\r\n\r\n*Please review carefully before merging.*\r\nYou can view, comment on, or merge this pull request online at:\r\n\r\n  https://github.com/dlnraja/com.tuya.zigbee/pull/185\r\n\r\n-- Commit Summary --\r\n\r\n  *"
+        "bodyExcerpt": "## Automated Johan SDK3 Sync\r\n\r\n### Fingerprints\r\n- **Added**: 19 new FPs auto-matched to existing drivers\r\n- **DP gaps**: 0 drivers with missing Tuya DP mappings\r\n- **New Johan drivers**: 89 (not in our codebase)\r\n\r\n### Auto-Scaffold\r\n- **Scaffolded**: 0 new drivers created\r\n- **FPs added**: 0 uncovered FPs added to existing drivers\r\n- **Conflicts**: 33 cross-class PID conflicts\r\n\r\n### Conflict Audit\r\n- **High severity**: 33 cross-class PID conflicts\r\n- **MFR conflicts**: 0 real risk duplicates"
       },
       "forumInfo": null,
       "crashInfo": null,
       "ai": null,
       "homeyVersion": null,
       "appVersion": null,
-      "bodyLength": 1103,
+      "bodyLength": 1772,
       "contentType": "text/plain"
+    },
+    {
+      "id": "imap_510372",
+      "type": "bug_report",
+      "subj": "Un crash et des questions",
+      "from": "user",
+      "date": "2026-05-13T06:31:02.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "L.7."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [],
+        "crashApp": null,
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 10049,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510377",
+      "type": "device_issue",
+      "subj": "[Homey Community Forum] [PM] Zemismart Device Testing Collaboration Invitation( smart home)",
+      "from": "user",
+      "date": "2026-05-13T06:49:51.000Z",
+      "pseudo": {
+        "source": "user",
+        "username": "Zem..."
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 1003,
+      "contentType": "text/plain"
+    },
+    {
+      "id": "imap_510381",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2119 has been created",
+      "from": "homey_system",
+      "date": "2026-05-13T07:10:26.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 508,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510382",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-05-13T07:10:40.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 564,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510383",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2119 is now testing",
+      "from": "homey_system",
+      "date": "2026-05-13T07:11:59.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 559,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510385",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Build #2120 has been created",
+      "from": "homey_system",
+      "date": "2026-05-13T07:21:45.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 508,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510386",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
+      "from": "homey_system",
+      "date": "2026-05-13T07:21:50.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "Cannot find module '../..[path]",
+        "Cannot access `this.homey.app` because the app instance has been destroyed.",
+        "find module '../..[path]",
+        "access `this.homey.app` because the app instance has been de"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "Error: Cannot find module '../..[path]\r",
+          "Error: Cannot access `this.homey.app` because the app instance has been destroyed.\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 4040,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_510387",
+      "type": "general",
+      "subj": "[com.dlnraja.tuya.zigbee] Your build is now draft",
+      "from": "homey_system",
+      "date": "2026-05-13T07:22:03.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": null,
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 564,
+      "contentType": "text/html->text"
+    },
+    {
+      "id": "imap_511042",
+      "type": "crash_report",
+      "subj": "[com.dlnraja.tuya.zigbee] Your app has crashed",
+      "from": "homey_system",
+      "date": "2026-05-17T07:44:14.000Z",
+      "pseudo": {
+        "source": "homey_system",
+        "username": null
+      },
+      "fps": {
+        "mfr": [],
+        "pid": []
+      },
+      "errs": [
+        "this._dataRecoveryManager.triggerRecovery is not a function"
+      ],
+      "devices": [],
+      "xref": [],
+      "ghInfo": null,
+      "forumInfo": null,
+      "crashInfo": {
+        "stackTraces": [
+          "TypeError: this._dataRecoveryManager.triggerRecovery is not a function\r"
+        ],
+        "crashApp": "has",
+        "capabilities": [],
+        "clusters": []
+      },
+      "ai": null,
+      "homeyVersion": null,
+      "appVersion": null,
+      "bodyLength": 1709,
+      "contentType": "text/html->text"
     }
   ]
 }

@@ -2,20 +2,20 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-10,882+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-10,869+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-228-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Flow Cards](https://img.shields.io/badge/flow%20cards-2,539-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-2,453-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **228 drivers** and **10,882+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **228 drivers** and **10,869+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
 - **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** — voltage-based fallback when devices don't report percentage
-- **2,539+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
+- **2,453+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** — built on the latest Homey platform
 
 ---
@@ -30,21 +30,47 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (May 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v7.5.39** | v7.5.38: None, None, None |
+| **v7.5.38** | No user-facing changes in this release. |
+| **v7.5.37** | Fix all runtime syntax errors, resolve unclosed braces, add support for wall_... |
+| **v7.5.35** | v7.5.34: Fixed condition card registration in `air_quality_comprehensive` and... |
+| **v7.5.34** | v7.5.34: Fixed condition card registration in air_quality_comprehensive and d... |
+| **v7.5.33** | Fixed condition cards in air quality & DIN rail meter drivers. Added standard... |
+| **v7.5.32** | v7.5.32: . Harmonized driver icons, updated app store assets, and restored dr... |
+| **v7.5.31** | v7.5.31: Harmonized 228 driver icons with new SVG assets. Updated app store i... |
+| **v7.5.30** | Harmonized icons across all 228 drivers, updated app store assets, and added ... |
+| **v7.5.29** | Bug fixes and improvements for Tuya Zigbee devices. Added support for new soi... |
+<!-- CHANGELOG_END -->
+
+
+
+
+
+
+
+
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.31 |
-| **Device Fingerprints** | 10,882+ |
+| **App Version** | v7.5.39 |
+| **Device Fingerprints** | 10,869+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 228 (178 Zigbee + 50 WiFi) |
-| **Flow Cards** | 2,539 |
+| **Flow Cards** | 2,453 |
 | **Unique Capabilities** | 135 |
 | **SVG Icons** | 388 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-05-13 |
+| **Last Updated** | 2026-05-17 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -57,10 +83,10 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | 5 | `dimmer_wall_1gang` | 384 |
 | 6 | `curtain_motor` | 361 |
 | 7 | `generic_tuya` | 352 |
-| 8 | `presence_sensor_radar` | 292 |
+| 8 | `presence_sensor_radar` | 294 |
 | 9 | `contact_sensor` | 270 |
-| 10 | `bulb_rgbw` | 256 |
-| 11 | `switch_2gang` | 255 |
+| 10 | `switch_2gang` | 258 |
+| 11 | `bulb_rgbw` | 256 |
 | 12 | `motion_sensor` | 245 |
 | 13 | `switch_4gang` | 236 |
 | 14 | `diy_custom_zigbee` | 206 |
@@ -101,7 +127,14 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.31** | v7.5.30: Added support for soil sensor _TZE284_0ints6wl (TS0601), Harmonized icons across all 228 drivers for consist... |
+| **v7.5.39** | v7.5.38: None, None, None |
+| **v7.5.38** | No user-facing changes in this release. |
+| **v7.5.37** | Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 c... |
+| **v7.5.35** | v7.5.34: Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers (resolved runt... |
+| **v7.5.34** | v7.5.34: Fixed condition card registration in air_quality_comprehensive and din_rail_meter drivers. Standardized butt... |
+| **v7.5.33** | Fixed condition cards in air quality & DIN rail meter drivers. Added standardized button flow triggers (press, double... |
+| **v7.5.32** | v7.5.32: . Harmonized driver icons, updated app store assets, and restored draft-to-test  fixes. |
+| **v7.5.31** | v7.5.31: Harmonized 228 driver icons with new SVG assets. Updated app store images. Fixed various device icon inconsi... |
 | **v7.5.30** | Harmonized icons across all 228 drivers, updated app store assets, and added support for new soil sensor fingerprint ... |
 | **v7.5.29** | Bug fixes and improvements for Tuya Zigbee devices. Added support for new soil sensor fingerprint. Updated diagnostic... |
 | **v7.5.28** | Added 3,208 new fingerprints, improved driver matching for soil sensors, and fixed various device initialization issues. |
@@ -109,13 +142,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v7.5.26** | Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated getTriggerCard to getDeviceTrigger... |
 | **v7.5.25** | v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor. Added PJ-1203... |
 | **v7.5.24** | v7.5.24: . Fix: gate opener DP3 contact sensor (issue #305). Migrated deprecated flow triggers to modern triggerFlowC... |
-| **v7.5.23** | Maintenance release v7.5.23 — . Internal data cleanup and archive of obsolete planning files. No new drivers or finge... |
-| **v7.5.22** | Version 7.5.22 — App metadata and store listing update. No new drivers or fingerprints added in this release. |
-| **v7.5.21** | v7.5.20: Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving connection drops and repeated reconnectio... |
-| **v7.5.20** | v7.5.20: . Fixed WiFi socket port reuse, cleanly separated WiFi/Zigbee protocols, improved 4-gang switch support, and... |
-| **v7.5.19** | Added Android native Intent magic URL pairing for all 20 WiFi drivers. Updated pairing configuration UI. |
-| **v7.5.18** | Easy Login with saved credentials, auto device classification with brand badges, TS110E level control fix, alarm_batt... |
-| **v7.5.17** | v7.5.17 — 3,207 new fingerprints, backlight mode alignment fix, and fingerprint case normalization for more reliable ... |
 
 <!-- CHANGELOG_END -->
 
@@ -181,7 +207,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 228 Drivers ─ 10,882+ fingerprints
+       └─ 228 Drivers ─ 10,869+ fingerprints
 ```
 
 ---
@@ -355,4 +381,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-05-13*
+*Last updated: 2026-05-17*

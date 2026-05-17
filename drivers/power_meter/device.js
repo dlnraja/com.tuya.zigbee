@@ -1,8 +1,14 @@
 'use strict';
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 
-class PowerMeterDevice extends PlugBase {
-  get plugCapabilities() { return ['measure_power', 'meter_power', 'measure_voltage', 'measure_current']; }
+class PowerMeterDevice extends UnifiedPlugBase {
+  // v9.7.3: Standardized Power Meter
+  // Inherits hybrid ZCL/Tuya support from UnifiedPlugBase.
+
+  get plugCapabilities() {
+    return ['measure_power', 'meter_power', 'measure_voltage', 'measure_current'];
+  }
+
   get dpMappings() {
     return {
       17: { capability: 'measure_current', divisor: 1000 },
@@ -11,51 +17,17 @@ class PowerMeterDevice extends PlugBase {
       20: { capability: 'meter_power', divisor: 100 }
     };
   }
-  async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'activePower',
-          minInterval: 10,
-          maxInterval: 300,
-          minChange: 5,
-        },
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'rmsVoltage',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 1,
-        },
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'rmsCurrent',
-          minInterval: 30,
-          maxInterval: 600,
-          minChange: 10,
-        },
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
 
-    await super.onNodeInit({ zclNode });
-    this.log('[POWER-METER] ✅ Ready');
+  async onNodeInit({ zclNode }) {
+    await this._safeInvoke(async () => { // v9.7.3: Unified initialization
+      await super.onNodeInit({ zclNode  });
+      this.log('[POWER-METER] ✅ v9.7.3 Standardized initialization complete');
+    }, 'onNodeInit');
   }
 
-
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }
+
 module.exports = PowerMeterDevice;

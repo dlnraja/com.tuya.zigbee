@@ -1,7 +1,7 @@
 'use strict';
-const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
-class WeatherStationOutdoorDevice extends SensorBase {
+class WeatherStationOutdoorDevice extends UnifiedSensorBase {
   get mainsPowered() { return false; }
   get sensorCapabilities() { return ['measure_temperature', 'measure_humidity', 'measure_battery']; }
   async onNodeInit({ zclNode }) {
@@ -50,7 +50,8 @@ class WeatherStationOutdoorDevice extends SensorBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this.log('[WEATHER] ✅ Weather Station Outdoor v5.8.31 Ready');
+    this._registerCapabilityListeners(); // rule-12a injected
+    this.log('[WEATHER]  Weather Station Outdoor v5.8.31 Ready');
   }
 
   /**
@@ -58,20 +59,21 @@ class WeatherStationOutdoorDevice extends SensorBase {
    * Fixes: 4 trigger cards defined in compose but never fired
    */
   async setCapabilityValue(capability, value) {
-    const prev = this.getCapabilityValue(capability);
+    // A8: NaN Safety - use safeDivide/safeMultiply
+  this.getCapabilityValue(capability);
     await super.setCapabilityValue(capability, value);
     if (prev === value) return;
 
     try {
       switch (capability) {
       case 'measure_temperature':
-        this.triggerFlowCard('weather_station_outdoor_outdoor_temperature_changed', { temperature: value }).catch(() => {});
+        this.homey.flow.getTriggerCard('weather_station_outdoor_outdoor_temperature_changed')?.trigger(this, { temperature: value }, {}).catch(() => {})
         break;
       case 'measure_humidity':
-        this.triggerFlowCard('weather_station_outdoor_outdoor_humidity_changed', { humidity: value }).catch(() => {});
+        this.homey.flow.getTriggerCard('weather_station_outdoor_outdoor_humidity_changed')?.trigger(this, { humidity: value }, {}).catch(() => {})
         break;
       case 'measure_pressure': {
-        this.triggerFlowCard('weather_station_outdoor_pressure_changed', { pressure: value }).catch(() => {});
+        this.homey.flow.getTriggerCard('weather_station_outdoor_pressure_changed')?.trigger(this, { pressure: value }, {}).catch(() => {})
         // Track pressure trend for condition cards
         if (prev != null && typeof prev === 'number') {
           const trend = value > prev ? 'rising' : value < prev ? 'falling' : 'stable';
@@ -81,8 +83,7 @@ class WeatherStationOutdoorDevice extends SensorBase {
       }
       case 'measure_battery':
         if (value <= 15 && (prev === undefined || prev === null || prev > 15)) {
-          this.triggerFlowCard('weather_station_outdoor_weather_battery_low').catch(() => {});
-        }
+          this.homey.flow.getTriggerCard('weather_station_outdoor_battery_low')?.trigger(this, {}, {}).catch(() => {});}
         break;
       }
     } catch (e) { /* flow card may not exist */ }
@@ -92,5 +93,19 @@ class WeatherStationOutdoorDevice extends SensorBase {
   async onDeleted() {
     this.log('Device deleted, cleaning up');
   }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
+  }
 }
 module.exports = WeatherStationOutdoorDevice;
+
+

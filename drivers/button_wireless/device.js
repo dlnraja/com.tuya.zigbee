@@ -18,46 +18,31 @@ const ButtonDevice = require('../../lib/devices/ButtonDevice');
 class UniversalWirelessButtonDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    this.log('[BUTTON-WIRELESS] 🔘 v5.5.796 Initializing (Cam forum fix)...');
-
-    // Detect button count for this device
-    this.buttonCount = await this._detectButtonCount(zclNode);
-    
-    // v5.5.796: FORUM FIX - Ensure at least 1 button (Cam: no GUI issue)
-    if (!this.buttonCount || this.buttonCount < 1) {
-      this.log('[BUTTON-WIRELESS] ⚠️ Detection returned 0, defaulting to 1 button');
-      this.buttonCount = 1;
-    }
-    this.log(`[BUTTON-WIRELESS] Detected ${this.buttonCount} button(s)`);
-
-    // Initialize ButtonDevice base (handles all press detection!)
-    await super.onNodeInit({ zclNode });
-
-    // v5.5.796: Force battery read on init (Cam: no battery issue)
-    await this._forceInitialBatteryRead(zclNode);
-
-    this.log('[BUTTON-WIRELESS] ✅ Ready - supports single/double/long press');
+    await this._safeInvoke(async () => {
+      this.log('[BUTTON-WIRELESS] 🔘 v5.5.796 Initializing (Cam forum fix)...');
+      
+      // Detect button count for this device
+      this.buttonCount = await this._detectButtonCount(zclNode);
+      
+      // v5.5.796: FORUM FIX - Ensure at least 1 button
+      if (!this.buttonCount || this.buttonCount < 1) {
+        this.log('[BUTTON-WIRELESS] ⚠️ Detection returned 0, defaulting to 1 button');
+        this.buttonCount = 1;
+      }
+      this.log(`[BUTTON-WIRELESS] Detected ${this.buttonCount} button(s)`);
+      
+      // Initialize ButtonDevice base (handles all press detection!)
+      await super.onNodeInit({ zclNode });
+      
+      // v5.5.796: Force battery read on init
+      await this._forceInitialBatteryRead(zclNode);
+      
+      this.log('[BUTTON-WIRELESS] ✅ Ready - supports single/double/long press');
+    }, 'onNodeInit');
   }
 
   /**
    * v5.5.796: FORUM FIX - Force initial battery read (Cam)
-   * Some buttons show no battery because they sleep before first read
    */
   async _forceInitialBatteryRead(zclNode) {
     try {
@@ -75,7 +60,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
           const battery = Math.round(attrs.batteryPercentageRemaining / 2);
           this.log(`[BUTTON-WIRELESS] 🔋 Battery: ${battery}%`);
           if (this.hasCapability('measure_battery')) {
-            await this.setCapabilityValue('measure_battery', battery).catch(() => {});
+            await this.setCapabilityValue('measure_battery', battery).catch(() => { });
           }
         }
       }
@@ -96,10 +81,12 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
 
     // Auto-detect: count endpoints with onOff or scenes cluster
     let count = 0;
-    for (let i = 1; i <= 8; i++) {
-      const ep = zclNode.endpoints[i];
-      if (ep?.clusters?.onOff || ep?.clusters?.scenes) {
-        count++;
+    if (zclNode?.endpoints) {
+      for (let i = 1; i <= 8; i++) {
+        const ep = zclNode.endpoints[i];
+        if (ep?.clusters?.onOff || ep?.clusters?.scenes) {
+          count++;
+        }
       }
     }
 
@@ -119,15 +106,14 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
           : parseInt(newSettings.button_count);
         this.log(`[BUTTON-WIRELESS] Button count updated to: ${this.buttonCount}`);
       }
-    } catch (err) {
-      this.error('[BUTTON-WIRELESS] Failed to apply settings:', err.message);
+    } catch (e) {
+      this.error('[BUTTON-WIRELESS] Settings update failed:', e.message);
     }
   }
 
-
-
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
+    if (super.onDeleted) super.onDeleted();
   }
 }
 

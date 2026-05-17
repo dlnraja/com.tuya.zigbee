@@ -9,9 +9,9 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * 
  * IMPORTANT: 8-gang Tuya switches use special DP mapping!
  * Per Zigbee2MQTT research (issue #26001):
- * - DP 1-6 → Gang 1-6
- * - DP 101 (0x65) → Gang 7
- * - DP 102 (0x66) → Gang 8
+ * - DP 1-6  Gang 1-6
+ * - DP 101 (0x65)  Gang 7
+ * - DP 102 (0x66)  Gang 8
  * 
  * ManufacturerName: _TZE204_nvxorhcj, etc.
  * ProductId: TS0601
@@ -31,9 +31,9 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   }
 
   get isZclOnlyDevice() {
-    const mfr = this.getSetting?.('zb_manufacturer_name') ||
+    const mfr = this.getSetting?.('zb_manufacturer_name' ) ||
                 this.getStoreValue?.('manufacturerName') || '';
-    return includesCI(ZCL_ONLY_MANUFACTURERS_8G, mfr);
+    return includesCI(ZCL_ONLY_MANUFACTURERS_8G, mfr );
   }
 
   /**
@@ -51,8 +51,8 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       6: { capability: 'onoff.gang6', transform: (v) => v === 1 || v === true },
       101: { capability: 'onoff.gang7', transform: (v) => v === 1 || v === true },
       102: { capability: 'onoff.gang8', transform: (v) => v === 1 || v === true },
-      14: { capability: null, setting: 'power_on_behavior' },
-      15: { capability: null, setting: 'led_indicator' }
+      14: { setting: 'power_on_behavior' },
+      15: { setting: 'led_indicator' }
     };
   }
 
@@ -64,16 +64,18 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
+    this.initPhysicalButtonDetection(); // rule-19 injected
+    
+    this._registerCapabilityListeners(); // rule-12a injected
     if (this.isZclOnlyDevice) {
-      this.log('[SWITCH-8G] 🔵 ZCL-ONLY MODE');
+      this.log('[SWITCH-8G]  ZCL-ONLY MODE');
+      this.zclNode = zclNode; // v5.13.2: CRITICAL - set for base class use
       await this._initZclOnlyMode(zclNode);
       return;
     }
-    await this.initPhysicalButtonDetection?.(zclNode);
+    await this.initPhysicalButtonDetection?.(zclNode );
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-8G] v5.5.922 ✅ Ready (DP 1-6 + DP 101/102)');
+    this.log('[SWITCH-8G] v5.5.922  Ready (DP 1-6 + DP 101/102)');
   }
 
   /**
@@ -90,7 +92,7 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
     const getOnOffCluster = (epNum) => {
       const ep = this._zclNode?.endpoints?.[epNum];
-      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6] || null;
     };
 
     // Register capability listeners FIRST
@@ -114,39 +116,50 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       if (!onOff || typeof onOff.on !== 'function') continue;
 
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
-      onOff.on('attr.onOff', (value) => {
+      onOff.on('attr.onOff', async (value) => {
         const isPhysical = !this._zclState.pending[epNum];
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
-          await this.setCapabilityValue(capName, value).catch(() => {});
+          this.setCapabilityValue(capName, value).catch(() => {});
           // v5.12.5: Scene mode support
           const mode = this.sceneMode;
           if (mode === 'magic') {
-            await this.setCapabilityValue(capName, !value).catch(() => {});
+            this.setCapabilityValue(capName, !value).catch(() => {});
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_wall_8gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch(e) { return null; } })()?.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
-            this.log(`[SWITCH-8G] Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            try {
+              const card =
+      this.homey.flow.getTriggerCard(flowId)?.trigger(this, {}, {}).catch(this.error || console.error)
+              if (card ) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+              this.log(`[SWITCH-8G]  Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+            } catch (e) { }
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            (() => { try { return this.homey.flow.getDeviceTriggerCard(`switch_wall_8gang_gang${epNum}_scene`); } catch(e) { return null; } })()?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
-            this.log(`[SWITCH-8G] Scene G${epNum} ${value ? 'on' : 'off'}`);
+            const sceneId = `switch_wall_8gang_gang${epNum}_scene`;
+            try {
+              const card =
+      this.homey.flow.getTriggerCard(sceneId)?.trigger(this, {}, {}).catch(this.error || console.error)
+              if (card ) await card.trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {});
+              this.log(`[SWITCH-8G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
+            } catch (e) { }
           }
         }
       });
     }
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-8G] ✅ ZCL-only mode ready (packetninja v990)');
+    this.log('[SWITCH-8G]  ZCL-only mode ready (packetninja v990)');
   }
 
   onDeleted() {
     if (this._zclState?.timeout) {
       for (let i = 1; i <= 8; i++) {
-        if (this._zclState.timeout[i]) clearTimeout(this._zclState.timeout[i]);
+        if (this._zclState.timeout[i]) clearTimeout(this._zclState.timeout[i] );
       }
     }
     super.onDeleted?.();
   }
 }
 module.exports = Switch8GangDevice;
+
+

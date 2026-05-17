@@ -1,6 +1,7 @@
 'use strict';
-
-constLightBase = require('../../lib/devices/UnifiedLightBase');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const LightBase = require('../../lib/devices/UnifiedLightBase');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -13,7 +14,9 @@ constLightBase = require('../../lib/devices/UnifiedLightBase');
  * ║  Models: TS0505B, TS0504B, _TZ3210_*, _TZ3000_*                              ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class RGBWBulbDevice extends LightBase {
+class RGBWBulbDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) {
+
+  get mainsPowered() { return true; }
 
   get lightCapabilities() {
     return ['onoff', 'dim', 'light_hue', 'light_saturation', 'light_temperature', 'light_mode'];
@@ -36,41 +39,45 @@ class RGBWBulbDevice extends LightBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
+      
+      // --- Attribute Reporting Configuration ---
+      try {
+        await this.configureAttributeReporting([
+          {
+            cluster: 'genPowerCfg',
+            attributeName: 'batteryPercentageRemaining',
+            minInterval: 3600,
+            maxInterval: 43200,
+            minChange: 2,
+          }
+        ]);
+        this.log('Attribute reporting configured successfully');
+      } catch (err) {
+        this.log('Attribute reporting config failed (device may not support it):', err.message);
+      }
 
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'genPowerCfg',
-          attributeName: 'batteryPercentageRemaining',
-          minInterval: 3600,
-          maxInterval: 43200,
-          minChange: 2,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
-
-    this.log('[RGBW] v5.5.129 - DPs: 1-7,21,24-26 | ZCL: 6,8,300,EF00');
-    await this._setupColorCluster(zclNode);
-    this._setupRGBWListeners();
-    this.log('[RGBW] ✅ RGBW bulb ready');
+      this.log('[RGBW] v5.5.129 - DPs: 1-7,21,24-26 | ZCL: 6,8,300,EF00');
+      await this._setupColorCluster(zclNode);
+      this._setupRGBWListeners();
+      this.log('[RGBW] ✅ RGBW bulb ready');
+    }, 'onNodeInit');
   }
 
-  _parseHSV(raw) {
+  async _parseHSV(raw) {
     if (!raw || typeof raw !== 'string' || raw.length < 12) return null;
     try {
       const h = parseInt(raw.substring(0, 4), 16);
       const s = parseInt(raw.substring(4, 8), 16);
       const v = parseInt(raw.substring(8, 12), 16);
-      await this.setCapabilityValue('light_hue', h / 360).catch(() => { });
-      await this.setCapabilityValue('light_saturation', s / 1000).catch(() => { });
-      await this.setCapabilityValue('dim', Math.max(0.01, v / 1000)).catch(() => { });
+      this.setCapabilityValue('light_hue', h / 360).catch(() => { });
+      this.setCapabilityValue('light_saturation', s / 1000).catch(() => { });
+      this.setCapabilityValue('dim', Math.max(0.01, v / 1000)).catch(() => { });
       return { h, s, v };
-    } catch (e) { return null; }
+    } catch (e) {
+      return null;
+    }
   }
 
   async _setupColorCluster(zclNode) {
@@ -79,8 +86,8 @@ class RGBWBulbDevice extends LightBase {
     try {
       const colorCluster = ep1.clusters?.lightingColorCtrl || ep1.clusters?.colorControl;
       if (colorCluster?.on) {
-        colorCluster.on('attr.currentHue', (v) => await this.setCapabilityValue('light_hue', v / 254).catch(() => { }));
-        colorCluster.on('attr.currentSaturation', (v) => await this.setCapabilityValue('light_saturation', v / 254).catch(() => { }));
+        colorCluster.on('attr.currentHue', async (v) => await this.setCapabilityValue('light_hue', v / 254).catch(() => { }));
+        colorCluster.on('attr.currentSaturation', async (v) => await this.setCapabilityValue('light_saturation', v / 254).catch(() => { }));
         this.log('[RGBW] ✅ Color cluster listeners added');
       }
     } catch (e) { /* ignore */ }
@@ -89,13 +96,18 @@ class RGBWBulbDevice extends LightBase {
   _setupRGBWListeners() {
     // ONLY register hue/saturation/mode (parent handles onoff, dim, light_temperature)
     if (this.hasCapability('light_hue')) {
-      this.registerCapabilityListener('light_hue', async () => await this._sendHSV());
+      this.registerCapabilityListener('light_hue', async (v) => {
+        return this._sendHSV();
+      });
     }
     if (this.hasCapability('light_saturation')) {
-      this.registerCapabilityListener('light_saturation', async () => await this._sendHSV());
+      this.registerCapabilityListener('light_saturation', async (v) => {
+        return this._sendHSV();
+      });
     }
     if (this.hasCapability('light_mode')) {
       this.registerCapabilityListener('light_mode', async (v) => {
+        if (typeof this.markAppCommand === 'function') this.markAppCommand(1, v);
         await this._sendTuyaDP(2, v === 'color' ? 1 : 0, 'enum');
       });
     }
@@ -103,7 +115,7 @@ class RGBWBulbDevice extends LightBase {
 
   async _sendHSV() {
     // v5.12.5: Enable RGB mode via ZCL (Johan SDK3 pattern)
-    await this._tryTuyaRgbMode?.(1)?.catch(() => {});
+    await this._tryTuyaRgbMode?.(1)?.catch(() => { });
     const h = Math.round((this.getCapabilityValue('light_hue') || 0) * 360);
     const s = Math.round((this.getCapabilityValue('light_saturation') || 1) * 1000);
     const v = Math.round((this.getCapabilityValue('dim') || 1) * 1000);
@@ -117,11 +129,9 @@ class RGBWBulbDevice extends LightBase {
     if (tuya?.datapoint) await tuya.datapoint({ dp, value, type });
   }
 
-
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }
 
 module.exports = RGBWBulbDevice;
-

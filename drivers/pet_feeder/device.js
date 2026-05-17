@@ -14,20 +14,18 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 class PetFeederDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
+      this.log('Smart Pet Feeder initializing...');
 
-    this.log('Smart Pet Feeder initializing...');
+      // Register feed button
+      if (this.hasCapability('button.feed')) {
+        this._safeInvoke(async () => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, true);
+          await this._triggerFeed();  });
+      }
 
-    // Register feed button
-    if (this.hasCapability('button.feed')) {
-      this.registerCapabilityListener('button.feed', async () => {
-        await this._triggerFeed();
-      });
-    }
-
-    await this._setupTuyaDP(zclNode);
-
-    this.log('Smart Pet Feeder initialized');
+      await this._setupTuyaDP(zclNode);
+      this.log('Smart Pet Feeder initialized');
+    }, 'onNodeInit');
   }
 
   async _triggerFeed() {
@@ -40,7 +38,7 @@ class PetFeederDevice extends ZigBeeDevice {
     }
   }
 
-  async _setupTuyaDP(zclNode) {
+  _setupTuyaDP(zclNode) {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
@@ -61,7 +59,7 @@ class PetFeederDevice extends ZigBeeDevice {
     switch (dp) {
     case 6: // Food level alarm
       if (this.hasCapability('alarm_generic')) {
-        await this.setCapabilityValue('alarm_generic', !!value).catch(this.error);
+        this.setCapabilityValue('alarm_generic', !!value).catch(this.error);
       }
       break;
 
@@ -71,8 +69,7 @@ class PetFeederDevice extends ZigBeeDevice {
     }
   }
 
-
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }

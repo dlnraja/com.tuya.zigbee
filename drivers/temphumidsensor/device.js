@@ -1,6 +1,7 @@
 'use strict';
+const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
-const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * TUYATEC Temperature & Humidity Sensor Device - v5.4.3
@@ -8,10 +9,10 @@ const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
  * For TUYATEC branded temperature/humidity sensors
  * Manufacturers: TUYATEC-*
  *
- * UsesSensorBase for full ZCL + Tuya DP support
+ * Uses UnifiedSensorBase for full ZCL + Tuya DP support
  * Supports: Temperature, Humidity, Battery
  */
-class TuyatecTempHumidSensorDevice extends SensorBase {
+class TuyatecTempHumidSensorDevice extends UnifiedSensorBase {
 
   /** Battery powered */
   get mainsPowered() { return false; }
@@ -32,7 +33,7 @@ class TuyatecTempHumidSensorDevice extends SensorBase {
       2: { capability: 'measure_humidity', divisor: 1 },
 
       // Battery
-      4: { capability: 'measure_battery', divisor: 1, transform: (v) => Math.min(v * 2, 100) },
+      4: { capability: 'measure_battery', divisor: 1, transform: (v) =>Math.min(100, safeMultiply(v, 2)) },
     };
   }
 
@@ -68,27 +69,41 @@ class TuyatecTempHumidSensorDevice extends SensorBase {
     }
 
     await super.onNodeInit({ zclNode });
-    const settings = this.getSettings() || {};
-    this.log('[TUYATEC] ✅ TUYATEC Temperature/Humidity Sensor ready');
-    this.log('[TUYATEC] Model:', settings.zb_model_id || 'TUYATEC_TempHumid');
-    this.log('[TUYATEC] Manufacturer:', settings.zb_manufacturer_name || 'unknown');
+    this._registerCapabilityListeners(); // rule-12a injected
+    // A8: NaN Safety - use safeDivide/safeMultiply
+  this.getSettings() || {};
+    this.log('[TUYATEC]  TUYATEC Temperature/Humidity Sensor ready');
+    this.log('[TUYATEC] Model:', settings.zb_model_id || settings.zb_model_id || 'TUYATEC_TempHumid');
+    this.log('[TUYATEC] Manufacturer:', settings.zb_manufacturer_name || settings.zb_manufacturer_name || 'unknown');
   }
 
   onTuyaStatus(status) {
-    this.log('[TUYATEC] 📥 Data received:', JSON.stringify(status));
+    this.log('[TUYATEC]  Data received:', JSON.stringify(status));
     super.onTuyaStatus(status);
 
     setTimeout(() => {
       const temp = this.getCapabilityValue('measure_temperature');
       const hum = this.getCapabilityValue('measure_humidity');
       const bat = this.getCapabilityValue('measure_battery');
-      this.log('[TUYATEC] 📊 T:', temp, '°C H:', hum, '% B:', bat, '%');
+      this.log('[TUYATEC]  T:', temp, 'Â°C H:', hum, '% B:', bat, '%');
     }, 100);
   }
 
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 

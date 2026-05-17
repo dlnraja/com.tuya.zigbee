@@ -5,8 +5,7 @@ class WiFiCoverDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1': { capability: 'windowcoverings_state', writable: true,
-        transform: (v) => {
-          if (v === 'open' || v === '0' || v === 0) return 'up';
+        transform: async (v) => { if (v === 'open' || v === '0' || v === 0) return 'up';
           if (v === 'close' || v === '2' || v === 2) return 'down';
           return 'idle';
         },
@@ -27,12 +26,11 @@ class WiFiCoverDevice extends TuyaLocalDevice {
   }
 
   async onInit() {
-    await super.onInit();
-    this.log('[WIFI-COVER] Ready');
-  }
+    await super.on();
+    this.log('[WIFI-COVER] Ready'); }
 
 
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }

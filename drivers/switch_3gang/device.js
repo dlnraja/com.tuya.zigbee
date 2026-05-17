@@ -1,5 +1,5 @@
 'use strict';
-const UnifiedUnifiedUnifiedSensorBase = require('../../lib/devices/UnifiedSwitchBase');
+const HybridSwitchBase = require('../../lib/devices/HybridSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -14,11 +14,9 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 // ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 3-gang
 const ZCL_ONLY_MANUFACTURERS_3G = [
   '_TZ3000_qkixdnon', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
-  '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt',
-  '_TZ3000_v4l4b0lp' // Issue #170 - Flow cards broken for multi-gang BSEED
-];
+  '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt'  ];
 
-class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase)) {
+class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
   get gangCount() { return 3; }
 
   get sceneMode() { return this.getSetting('scene_mode') || 'auto'; }
@@ -168,21 +166,23 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
-          await this.setCapabilityValue(capName, value).catch(() => {});
+          this.setCapabilityValue(capName, value).catch(() => {});
           
           // v5.12.5: Scene mode support
           const mode = this.sceneMode;
           if (mode === 'magic') {
-            await this.setCapabilityValue(capName, !value).catch(() => {});
+            this.setCapabilityValue(capName, !value).catch(() => {});
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_3gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            (() => { try { return this.homey.flow.getDeviceTriggerCard(flowId); } catch(e) { return null; } })()?.trigger(this, { gang: epNum, state: value }, {})
+            this.homey.flow.getDeviceTriggerCard(flowId)
+              .trigger(this, { gang: epNum, state: value }, {})
               .catch(() => {});
             this.log(`[BSEED-3G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            (() => { try { return this.homey.flow.getDeviceTriggerCard(`switch_3gang_gang${epNum}_scene`); } catch(e) { return null; } })()?.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+            this.homey.flow.getDeviceTriggerCard(`switch_3gang_gang${epNum}_scene`)
+              .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
             this.log(`[BSEED-3G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
           }
         }

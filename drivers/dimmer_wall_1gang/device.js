@@ -1,5 +1,7 @@
 'use strict';
-constLightBase = require('../../lib/devices/UnifiedLightBase');
+
+const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const LightBase = require('../../lib/devices/UnifiedLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
@@ -11,7 +13,9 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
  * ║  DPs: 1-5,7,9,14,101,102 | ZCL: 6,8,EF00                                   ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
+class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(LightBase)) {
+
+  get mainsPowered() { return true; }
 
   // v5.8.97: Physical button detection state (PR #112 packetninja pattern)
   _appCommandPending = false;
@@ -37,27 +41,29 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
   }
 
   async onNodeInit({ zclNode }) {
-    // --- Attribute Reporting Configuration (auto-generated) ---
-    try {
-      await this.configureAttributeReporting([
-        {
-          cluster: 'haElectricalMeasurement',
-          attributeName: 'activePower',
-          minInterval: 10,
-          maxInterval: 300,
-          minChange: 5,
-        }
-      ]);
-      this.log('Attribute reporting configured successfully');
-    } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
-    }
+    await this._safeInvoke(async () => {
+      await super.onNodeInit({ zclNode });
 
-    // Parent handles ALL: onoff/dim listeners, ZCL setup
-    await super.onNodeInit({ zclNode });
-    // v5.5.412: Initialize virtual buttons
-    await this.initVirtualButtons();
-    this.log('[DIMMER-1G] v5.8.97 ✅ Ready + physical detection');
+      // --- Attribute Reporting Configuration ---
+      try {
+        await this.configureAttributeReporting([
+          {
+            cluster: 'haElectricalMeasurement',
+            attributeName: 'activePower',
+            minInterval: 10,
+            maxInterval: 300,
+            minChange: 5,
+          }
+        ]);
+        this.log('Attribute reporting configured successfully');
+      } catch (err) {
+        this.log('Attribute reporting config failed (device may not support it):', err.message);
+      }
+
+      // v5.5.412: Initialize virtual buttons
+      await this.initVirtualButtons();
+      this.log('[DIMMER-1G] v5.8.97 ✅ Ready + physical detection');
+    }, 'onNodeInit');
   }
 
   _markAppCommand() {
@@ -66,21 +72,23 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
     this._appCommandTimeout = setTimeout(() => { this._appCommandPending = false; }, 2000);
   }
 
-  async _setOnOff(value) { this._markAppCommand(); return super._setOnOff(value); }
-  async _setDim(value) { this._markAppCommand(); return super._setDim(value); }
+  _setOnOff(value) { this._markAppCommand(); return super._setOnOff(value); }
+  _setDim(value) { this._markAppCommand(); return super._setDim(value); }
 
   _handleDP(dpId, rawValue) {
     const oldOnoff = this._lastOnoffState;
     const oldDim = this._lastDimValue;
     super._handleDP(dpId, rawValue);
     const isPhysical = !this._appCommandPending;
+    
     if (dpId === 1) {
       const v = rawValue === 1 || rawValue === true;
       if (this._lastOnoffState === v) return;
       this._lastOnoffState = v;
       if (isPhysical) {
         const id = v ? 'dimmer_wall_1gang_physical_on' : 'dimmer_wall_1gang_physical_off';
-        (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch(e) { return null; } })()?
+        const trigger = this.homey.flow.getDeviceTriggerCard(id);
+        if (trigger) trigger.trigger(this).catch(this.error);
       }
     } else if (dpId === 2 || dpId === 101) {
       const dim = this.getCapabilityValue('dim');
@@ -89,12 +97,16 @@ class DimmerWall1GangDevice extends VirtualButtonMixin(UnifiedLightBase) {
       this._lastDimValue = dim;
       if (isPhysical && oldDim !== null) {
         const id = increased ? 'dimmer_wall_1gang_physical_brightness_up' : 'dimmer_wall_1gang_physical_brightness_down';
-        (() => { try { return this.homey.flow.getDeviceTriggerCard(id); } catch(e) { return null; } })()?.trigger(this, { brightness: Math.round(dim * 100) }, {}).catch(() => {});
+        const trigger = this.homey.flow.getDeviceTriggerCard(id);
+        if (trigger) trigger.trigger(this, { brightness: Math.round(dim * 100) }).catch(this.error);
       }
     }
   }
 
-  onDeleted() { clearTimeout(this._appCommandTimeout); super.onDeleted?.(); }
+  onDeleted() { 
+    clearTimeout(this._appCommandTimeout); 
+    if (super.onDeleted) super.onDeleted(); 
+  }
 }
 
 module.exports = DimmerWall1GangDevice;

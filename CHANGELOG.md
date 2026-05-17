@@ -4,7 +4,122 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.30] - 2026-05-13
+## [7.5.38] - 2026-05-17
+
+### Bug Fixes
+- None
+
+### New Features
+- None
+
+### Improvements
+- None
+---
+
+ [7.5.35] - 2026-05-17
+
+### Bug Fixes
+- Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers, resolving flow editor errors.
+- Restored runtime integrity with SDK3 compliance fixes.
+
+### New Features
+- Standardized button flow cards across all button drivers for consistent behavior.
+- Synced upstream enhancements from Johan Benz, including improved AI-assisted device matching.
+
+### Improvements
+- Harmonized driver icons and updated app store assets.
+- General stability and compatibility improvements.
+
+**Drivers:** 228 | **Fingerprints:** 6,649
+---
+
+ [7.5.34] - 2026-05-14
+
+### Bug Fixes
+- Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers (resolved runtime errors)
+- Restored draft-to-test workflow fixes from stable branch
+
+### New Features
+- Standardized button flow cards (button_pressed, button_double_press, button_long_press, button_multi_press, button_release, knob_rotated)
+- Added OTA check updates action card
+- Added tuya_dp_send_typed and tuya_dp_type_is flow cards
+
+### Improvements
+- Synced upstream fixes from Johan Bendz (enhanced AI, stability improvements)
+- Harmonized 228 driver icons and updated app store assets
+- Updated fleet diagnostics and state tracking
+- 228 drivers, 6707 fingerprints total
+---
+
+ [7.5.33] - 2026-05-14
+
+## v7.5.33
+
+### Bug Fixes
+- **Air Quality Comprehensive & DIN Rail Meter**: Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers. Flow conditions on these devices now trigger correctly.
+
+### New Features
+- **Standardized Button Flow Cards**: New flow triggers added for all button-type devices:
+  - `button_pressed` — single press detected
+  - `button_double_press` — double press detected
+  - `button_long_press` — hold detected
+  - `button_release` — button release detected
+  - `knob_rotated` — rotary knob rotation detected
+  These replace previously inconsistent button trigger definitions across drivers.
+
+### Improvements
+- Synced upstream driver improvements from Johan Benz (Enhanced), including updated device fingerprints and capability mappings.
+- Harmonized icons across all 228 drivers and updated app store listing assets.
+---
+
+ [7.5.32] - 2026-05-13
+## [5.13.6] - 2026-05-14
+
+### Hardening & Stabilization (Zero-Defect Mandate)
+- **Fleet-Wide Telemetry Hardening**: Successfully migrated the entire driver fleet to the `TuyaZigbeeDevice` base class.
+- **L14 Compliance**: Enforced L14 sanity filtering (EMA/ROC) and anti-flood throttling across all sensors and switches.
+- **Structural Integrity**: Resolved pervasive JavaScript syntax corruption, including bracket mismatches and fragmented IIFE closures in legacy drivers.
+- **Flow Registry Repair**: Fixed "Invalid Flow Card" registration errors by standardizing trigger IDs and removing redundant suffixes in `driver.flow.compose.json` files.
+- **Unified Reporting**: All capability updates now route through the hardened `setCapabilityValue` tunnel for guaranteed runtime stability.
+
+### Documentation & Governance
+- **New Architecture Guide**: Created `docs/architecture/ARCHITECTURE_TELEMETRY_V5.md` documenting the hardened pipeline.
+- **AI Instructions**: Updated `AI_INSTRUCTIONS.md` and `MEGA_PROMPT` with "Zero-Defect" implementation mandates.
+
+---
+
+## [7.5.32] - 2026-05-13
+
+### Bug Fixes
+- Restored draft-to-test workflow fixes from stable branch for reliable testing.
+
+### Improvements
+- Harmonized icons across all 228 drivers for a consistent visual experience.
+- Updated app store assets (large, small, xlarge images) for better presentation.
+
+### New Devices & Fingerprints
+- Added support for new soil sensor fingerprint: _TZE284_0ints6wl (TS0601).
+---
+
+ [7.5.31] - 2026-05-13
+
+### New Features
+- Added dedicated draft-to-test promotion workflow for faster testing cycles
+
+### Improvements
+- Harmonized all 228 driver icons with new SVG assets for consistent visual appearance
+- Updated app store images (large, small, xlarge) with higher quality assets
+- Updated app.json description and version metadata
+
+### Bug Fixes
+- Fixed various device icon inconsistencies across multiple drivers
+- Updated README and contributing documentation
+
+### Notes
+- App now supports 228 drivers with 3,202 fingerprints
+---
+
+ [7.5.30] - 2026-05-13
 
 ### New Features
 - Added support for soil sensor _TZE284_0ints6wl (TS0601)

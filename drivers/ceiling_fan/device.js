@@ -1,7 +1,7 @@
 'use strict';
-constLightBase = require('../../lib/devices/UnifiedLightBase');
+const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 
-class CeilingFanDevice extends LightBase {
+class CeilingFanDevice extends UnifiedLightBase {
   get mainsPowered() { return true; }
   get lightCapabilities() { return ['onoff', 'dim']; }
 
@@ -30,7 +30,7 @@ class CeilingFanDevice extends LightBase {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
     }
 
-    await super.onNodeInit({ zclNode });this.log('[FAN] ✅ Ready');
+    await super.onNodeInit({ zclNode });this.log('[FAN]  Ready');
   }
 
 

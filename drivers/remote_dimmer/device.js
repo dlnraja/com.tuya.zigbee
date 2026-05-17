@@ -20,8 +20,6 @@ const ScenesBoundCluster = require('../../lib/clusters/ScenesBoundCluster');
 class RemoteDimmerDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([
@@ -88,8 +86,8 @@ class RemoteDimmerDevice extends ZigBeeDevice {
         powerCfg.on('attr.batteryPercentageRemaining', (value) => {
           const pct = Math.round(value / 2);
           this.log('[RemoteDimmer] Battery:', pct, '%');
-          await this.setCapabilityValue('measure_battery', pct).catch(this.error);
-          await this.setCapabilityValue('alarm_battery', pct < 20).catch(this.error);
+          this.setCapabilityValue('measure_battery', pct).catch(this.error);
+          this.setCapabilityValue('alarm_battery', pct < 20).catch(this.error);
         });
 
         // Try to configure reporting
@@ -137,7 +135,8 @@ class RemoteDimmerDevice extends ZigBeeDevice {
       if (payload.rate !== undefined) tokens.rate = payload.rate;
       if (payload.sceneId !== undefined) tokens.scene_id = payload.sceneId;
 
-      (() => { try { return this.homey.flow.getDeviceTriggerCard(cardId); } catch(e) { return null; } })()?.trigger(this, tokens, {})
+      this.homey.flow.getDeviceTriggerCard(cardId)
+        .trigger(this, tokens, {})
         .catch(err => this.error('[RemoteDimmer] Flow trigger error:', err.message));
     }
   }

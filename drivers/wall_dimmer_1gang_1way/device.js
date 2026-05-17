@@ -36,8 +36,6 @@ const POWER_ON_BEHAVIOR = {
 class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 
   async onNodeInit({zclNode}) {
-    await super.onNodeInit({ zclNode });
-
 
     this.log('════════════════════════════════════════');
     this.log('WallDimmer1Gang1Way onNodeInit STARTING');
@@ -125,34 +123,31 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
           break;
 
         case 'backlight_mode':
-          const backlightMode = newSettings.backlight_mode; // "off", "normal", "inverted"
-          this.log(`Setting backlight_mode: ${backlightMode}`);
+          const backlightValue = parseInt(newSettings.backlight_mode, 10);
+          this.log(`Setting backlight_mode: ${backlightValue} (0=off, 1=normal, 2=inverted)`);
 
-          if (backlightMode === 'off') {
-            // Always off: Set DP36=false (backlight disabled)
-            this.log('Trying DP36=false (backlight off)');
+          // Try alternative datapoints DP36+DP37 (from issue #26578)
+          if (backlightValue === 0) {
+            // Always off: Set DP36=0 (backlight disabled)
+            this.log('Trying DP36=0 (backlight off)');
             await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(err =>
               this.log('DP36 not supported:', err.message));
-            
-            // Also try original DP15 as fallback
-            await this.sendTuyaCommand(dataPoints.backlightMode, 0, 'enum').catch(err =>
-              this.log('DP15 failed:', err.message));
           } else {
-            // Normal or inverted: Enable backlight (DP36=true) and set mode (DP37)
-            this.log('Trying DP36=true (backlight on)');
+            // Normal or inverted: Enable backlight (DP36=1) and set mode (DP37)
+            this.log('Trying DP36=1 (backlight on)');
             await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(err =>
               this.log('DP36 not supported:', err.message));
 
-            const lightMode = backlightMode === 'normal' ? 1 : 2; // 1=normal, 2=inverted
+            // DP37: 0=none, 1=relay/normal, 2=pos/inverted
+            const lightMode = backlightValue; // 1=normal(relay), 2=inverted(pos)
             this.log(`Trying DP37=${lightMode} (light mode)`);
             await this.sendTuyaCommand(dataPoints.backlightLightMode, lightMode, 'enum').catch(err =>
               this.log('DP37 not supported:', err.message));
-
-            // Also try original DP15 as fallback
-            const dp15Value = backlightMode === 'normal' ? 1 : 2;
-            await this.sendTuyaCommand(dataPoints.backlightMode, dp15Value, 'enum').catch(err =>
-              this.log('DP15 failed:', err.message));
           }
+
+          // Also try original DP15 as fallback
+          await this.sendTuyaCommand(dataPoints.backlightMode, backlightValue, 'enum').catch(err =>
+            this.log('DP15 failed (expected):', err.message));
           break;
 
         default:
@@ -201,18 +196,16 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       }
 
       // Apply backlight_mode if not default
-      if (settings.backlight_mode && settings.backlight_mode !== 'normal') {
-        const backlightMode = settings.backlight_mode; // "off", "normal", "inverted"
-        this.log(`Applying initial backlight_mode: ${backlightMode}`);
+      if (settings.backlight_mode && settings.backlight_mode !== '1') {
+        const backlightValue = parseInt(settings.backlight_mode, 10);
+        this.log(`Applying initial backlight_mode: ${backlightValue}`);
 
         // Try alternative datapoints DP36+DP37
-        if (backlightMode === 'off') {
+        if (backlightValue === 0) {
           await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(() => {});
-          await this.sendTuyaCommand(dataPoints.backlightMode, 0, 'enum').catch(() => {});
-        } else if (backlightMode === 'inverted') {
+        } else {
           await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(() => {});
-          await this.sendTuyaCommand(dataPoints.backlightLightMode, 2, 'enum').catch(() => {});
-          await this.sendTuyaCommand(dataPoints.backlightMode, 2, 'enum').catch(() => {});
+          await this.sendTuyaCommand(dataPoints.backlightLightMode, backlightValue, 'enum').catch(() => {});
         }
       }
 
@@ -274,13 +267,14 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         this.log(`State changed: ${this._lastOnoffState} → ${state} (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
         
         this._lastOnoffState = state;
-        await this.setCapabilityValue('onoff', state).catch(this.error);
+        this.setCapabilityValue('onoff', state).catch(this.error);
         
         // Trigger flow cards ONLY if this is a physical button press
         if (isPhysicalPress) {
           const flowCardId = state ? 'wall_dimmer_1gang_1way_turned_on' : 'wall_dimmer_1gang_1way_turned_off';
           this.log(`Triggering: ${flowCardId}`);
-          (() => { try { return this.homey.flow.getDeviceTriggerCard(flowCardId); } catch(e) { return null; } })()?.trigger(this, {}, {})
+          this.homey.flow.getDeviceTriggerCard(flowCardId)
+            .trigger(this, {}, {})
             .catch(err => this.error(`Flow trigger failed: ${err.message}`));
         }
       }
@@ -308,17 +302,19 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         const brightnessDecreased = this._lastBrightnessValue !== null && brightnessRaw < this._lastBrightnessValue;
         
         this._lastBrightnessValue = brightnessRaw;
-        await this.setCapabilityValue('dim', brightness).catch(this.error);
+        this.setCapabilityValue('dim', brightness).catch(this.error);
         
         // Trigger flow cards ONLY if this is a physical button press
         if (isPhysicalPress) {
           if (brightnessIncreased) {
             this.log('Triggering: wall_dimmer_1gang_1way_brightness_increased (PHYSICAL)');
-            (() => { try { return this.homey.flow.getDeviceTriggerCard('wall_dimmer_1gang_1way_brightness_increased'); } catch(e) { return null; } })()?.trigger(this, { brightness })
+            this.homey.flow.getDeviceTriggerCard('wall_dimmer_1gang_1way_brightness_increased')
+              .trigger(this, { brightness })
               .catch(this.error);
           } else if (brightnessDecreased) {
             this.log('Triggering: wall_dimmer_1gang_1way_brightness_decreased (PHYSICAL)');
-            (() => { try { return this.homey.flow.getDeviceTriggerCard('wall_dimmer_1gang_1way_brightness_decreased'); } catch(e) { return null; } })()?.trigger(this, { brightness })
+            this.homey.flow.getDeviceTriggerCard('wall_dimmer_1gang_1way_brightness_decreased')
+              .trigger(this, { brightness })
               .catch(this.error);
           }
         }
