@@ -1,4 +1,7 @@
 {
+  "7.5.41": {
+    "en": "v7.5.41: Fixed multi-endpoint battery scanning in UnifiedBatteryHandler.js for ZCL/IAS Zone detection. Improved kinetic device classification (TS0044/TS0046 only). Added ARCHITECTURE_AI.md documenting 3 AI layers (IDE, GitHub Actions, Homey Runtime). Created BATTERY_ANALYSIS.md comprehensive documentation."
+  },
   "7.5.40": {
     "en": "Bug fix: Empty battery reports on sleepy devices resolved with adaptive battery listeners and ZCL/IAS fallbacks."
   },
@@ -59,7 +62,7 @@
   "7.5.20": {
     "en": "v7.5.20: . Fixed WiFi socket port reuse, cleanly separated WiFi/Zigbee protocols, improved 4-gang switch support, and resolved diagnostic crashes."
   },
-  "7.5.41": {
-    "en": "v7.5.40: Fixed empty battery reports on sleepy Tuya devices by implementing greedy adaptive battery listeners with ZCL and IAS fallbacks., Updated fingerprint database to 6652 fingerprints across 228 drivers."
+  "7.5.19": {
+    "en": "Added Android native Intent magic URL pairing for all 20 WiFi drivers. Updated pairing configuration UI."
   }
 }
