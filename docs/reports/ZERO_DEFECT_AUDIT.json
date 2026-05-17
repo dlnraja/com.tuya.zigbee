@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-17T21:56:08.801Z",
+  "timestamp": "2026-05-17T23:42:22.922Z",
   "driversChecked": 228,
   "collisions": [
     {
@@ -3814,8 +3814,9 @@
     "lib\\adapters\\ZHAQuirkAdapter.js:164: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\adapters\\ZHAQuirkAdapter.js:266: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\battery\\BatteryProfileDatabase.js:396: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    "lib\\battery\\UnifiedBatteryHandler.js:173: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    "lib\\battery\\UnifiedBatteryHandler.js:281: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\battery\\UnifiedBatteryHandler.js:196: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\battery\\UnifiedBatteryHandler.js:213: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\battery\\UnifiedBatteryHandler.js:319: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\converters\\TuyaDeviceDefinitions.js:329: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\converters\\TuyaDeviceDefinitions.js:333: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\detectors\\BseedDetector.js:36: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
