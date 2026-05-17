@@ -188,4 +188,4 @@ If your button still doesn't work after following this guide:
 ---
 
 **Last Updated**: v5.5.775
-**Forum Thread**: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
+**Forum Thread**: #

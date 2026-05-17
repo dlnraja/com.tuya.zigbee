@@ -280,7 +280,7 @@
 
 ## Nightly Auto-Responses (2026-05-11 v7.5.13)
 - **dlnraja/com.tuya.zigbee#317** @vladivdv-bot: `test` (deepseek)
-- **dlnraja/com.tuya.zigbee#312** @tjoepatjoep: `_TZE284_fhvpaltk`, `_TZE`, `vision` (openrouter)
+- **dlnraja/com.tuya.zigbee#ISSUE_INTERNAL** @tjoepatjoep: `_TZE284_fhvpaltk`, `_TZE`, `vision` (openrouter)
 - **dlnraja/com.tuya.zigbee#314** @Lalla80111: `_TZ3000_b4awzgct`, `vision` (openrouter)
 - **dlnraja/com.tuya.zigbee#316** @Lalla80111: `_TZ3000_fllyghyj` (openrouter)
 - **JohanBendz/com.tuya.zigbee#1394** @4576ggv4536: `example`, `router`, `vision` (openrouter)

@@ -320,7 +320,7 @@ publish:
 
 ### Community
 
-- **Forum Thread:** https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-lite-version/140352
+- **Forum Thread:** #
 - **GitHub Issues:** https://github.com/dlnraja/com.tuya.zigbee/issues
 
 ---

@@ -5,7 +5,7 @@
 ## 📊 PATTERNS IDENTIFIÉS
 
 ### 1. **TUYA SMART LIFE - SCALING FACTORS**
-**Source:** https://community.homey.app/t/app-tuya-smart-life-smart-living/146735/150
+**Source:** #
 
 **Problème:**
 - Energy monitoring values incorrects (voltage, current, power)
@@ -51,7 +51,7 @@ _parseVoltage(value, scaleFactor = 1) {
 ---
 
 ### 2. **DEVICE CAPABILITIES - UX FLOW CARDS**
-**Source:** https://community.homey.app/t/app-pro-device-capabilities-enhance-the-capabilities-of-devices/43287/12
+**Source:** #
 
 **Problème:**
 - Device name entered 2x on same flow card
@@ -87,7 +87,7 @@ _parseVoltage(value, scaleFactor = 1) {
 ---
 
 ### 3. **IKEA TRADFRI - MATTER BRIDGE & DIMMING**
-**Source:** https://community.homey.app/t/app-ikea-tradfri-create-the-right-atmosphere-for-every-mood-by-athom/111676/23
+**Source:** #
 
 **Pattern:**
 - IKEA Dirigera Matter support
@@ -118,7 +118,7 @@ onCapabilityOnoff(value, opts) {
 ---
 
 ### 4. **AQARA/XIAOMI - LIFELINE REPORTING**
-**Source:** https://community.homey.app/t/app-aqara-xiaomi-smart-home-simplify-your-life-with-a-smarter-home/156
+**Source:** #
 
 **Key Features:**
 1. **Lifeline Reporting** - Device-dependent interval
@@ -186,7 +186,7 @@ configureReporting() {
 ---
 
 ### 5. **ECODIM - DIMMING FLOWS SANS TIMER**
-**Source:** https://community.homey.app/t/app-ecodim-affordable-reliable-led-dimmers-for-everyone/17632
+**Source:** #
 
 **Innovation:**
 - Dimming flows SANS app timer externe
@@ -262,7 +262,7 @@ async onCapabilityDim(value, opts) {
 ---
 
 ### 6. **SONOFF - ANTI-PATTERN (ÉVITER)**
-**Source:** https://community.homey.app/t/app-pro-sonoff-zigbee/36418/453
+**Source:** #
 
 **Problème:**
 - App non mise à jour depuis 1+ an
@@ -278,7 +278,7 @@ async onCapabilityDim(value, opts) {
 ---
 
 ### 7. **AQARA CURTAINS - MAINTENANCE ACTIONS**
-**Source:** https://community.homey.app/t/aqara-qurtains-stopped-working/148804
+**Source:** #
 
 **Pattern identifié:**
 - Curtain motors need maintenance actions

@@ -37,5 +37,5 @@
 
 - [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)
 - [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)
-- [Forum](https://community.homey.app/t/140352)
+- [Forum](#)
 - [GitHub](https://github.com/dlnraja/com.tuya.zigbee)

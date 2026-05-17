@@ -2,6 +2,8 @@
 
 > [!IMPORTANT]
 > **CRITICAL FIRST STEP:** You MUST read the [AI_CONTEXT_MANDATE.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/AI_CONTEXT_MANDATE.md) file at the very start of your session to fully digest the architecture, dual-app branch splits, and features.
+> 
+> **MANDATORY SECOND STEP:** Then read [GLOBAL_INVESTIGATION_PLAN.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/GLOBAL_INVESTIGATION_PLAN.md) — the complete 22-section investigation methodology for deep diagnostic, cross-referencing forums/emails/GitHub/Z2M/ZHA, bug hunting, and prevention scripting. Every AI agent MUST follow this framework before making any code changes.
 
 ## ⚠️ CRITICAL PROVIDER GUARD
 **CRITICAL: Always provide a brief explanation or thought process in plain text before using any tool or executing a command. Never send a message containing only a tool call. This is required to prevent API 400 errors with the Moonshot/Kimi provider.**
@@ -56,3 +58,4 @@
 - **Development Rules**: [DEVELOPMENT_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/DEVELOPMENT_RULES.md)
 - **Zigbee/Tuya Specifics**: [ZIGBEE_TUYA_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/ZIGBEE_TUYA_RULES.md)
 - **Critical Mistakes to Avoid**: [CRITICAL_MISTAKES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/CRITICAL_MISTAKES.md)
+- **Global Investigation Plan (22 sections)**: [GLOBAL_INVESTIGATION_PLAN.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/GLOBAL_INVESTIGATION_PLAN.md) — Mandatory deep diagnostic methodology for cross-referencing manufacturers, DP mappings, forums, emails, Z2M/ZHA, GitHub PRs/Issues, and Antigravity skills integration.

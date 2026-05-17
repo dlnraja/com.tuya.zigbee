@@ -33,10 +33,10 @@ Search each source for Tuya `_TZ*` / `_TZE*` manufacturerName + `TS0*` productId
 - dlnraja forks: https://github.com/dlnraja/com.tuya.zigbee/network/members
 
 **Community Sources (Homey Forum threads):**
-- dlnraja test: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
-- JohanBendz main: https://community.homey.app/t/app-pro-tuya-zigbee-app/26439
-- Tuya Smart Life: https://community.homey.app/t/app-tuya-smart-life-smart-living/146735
-- Device Request Archive: https://community.homey.app/t/app-pro-tuya-zigbee-app-device-request-archive/89271
+- dlnraja test: #
+- JohanBendz main: #
+- Tuya Smart Life: #
+- Device Request Archive: #
 - Reddit r/homeassistant: search "Tuya Zigbee new device"
 - Reddit r/Homey: search "Tuya Zigbee"
 - deCONZ supported: https://github.com/dresden-elektronik/deconz-rest-plugin/wiki/Supported-Devices

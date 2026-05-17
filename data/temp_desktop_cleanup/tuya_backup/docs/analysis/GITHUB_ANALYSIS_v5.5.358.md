@@ -145,7 +145,7 @@ LOG CRITIQUE:
 
 ## 💬 FORUM HOMEY COMMUNITY - POST #844 (4x4_Pete)
 
-**URL:** https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352/844
+**URL:** #
 
 ### DEVICE: Tuya ZG-204ZM (PIR + 24GHz Presence)
 **Zigbee2MQTT:** https://www.zigbee2mqtt.io/devices/ZG-204ZM.html

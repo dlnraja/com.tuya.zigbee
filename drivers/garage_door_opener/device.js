@@ -1,11 +1,11 @@
 'use strict';
 
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
 
 /**
  * Garage Door Opener - TS0601/TS0603
  */
-class GarageDoorOpenerDevice extends TuyaZigbeeDevice {
+class GarageDoorOpenerDevice extends BaseUnifiedDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('[GarageOpener] 🚀 Initializing hardened driver...');

@@ -1,5 +1,5 @@
 {
-  "ts": "2026-05-13T04:34:45.846Z",
+  "ts": "2026-05-17T21:43:35.326Z",
   "correlations": [],
   "actionable": [
     {
@@ -73,12 +73,24 @@
   ],
   "flowAudit": [
     {
+      "driver": "energy_meter_3phase",
+      "actions": 1
+    },
+    {
       "driver": "fan_controller",
       "actions": 7
     },
     {
       "driver": "generic_diy",
       "actions": 7
+    },
+    {
+      "driver": "power_clamp_meter",
+      "actions": 1
+    },
+    {
+      "driver": "power_meter",
+      "actions": 1
     },
     {
       "driver": "radiator_controller",
@@ -89,13 +101,51 @@
       "actions": 3
     },
     {
+      "driver": "wifi_generic",
+      "actions": 1
+    },
+    {
       "driver": "wifi_heater",
       "actions": 2
+    },
+    {
+      "driver": "wifi_led_strip",
+      "actions": 1
+    },
+    {
+      "driver": "wifi_power_strip",
+      "actions": 1
+    },
+    {
+      "driver": "wifi_switch",
+      "actions": 1
+    },
+    {
+      "driver": "wifi_thermostat",
+      "actions": 1
     }
   ],
   "mainsBatteryIssues": [
+    "bulb_dimmable",
+    "bulb_dimmable_dimmer",
+    "bulb_rgbw",
+    "bulb_rgb_led",
+    "bulb_tunable_white",
+    "bulb_white",
+    "button_wireless_plug",
+    "device_din_rail_meter",
+    "dimmer_wall_1gang",
+    "generic_diy",
+    "lcdtemphumidsensor_plug_energy",
+    "plug_energy_monitor",
+    "remote_button_wireless_plug",
+    "scene_switch_wall",
     "sensor_climate_contact",
+    "smart_button_switch",
+    "smart_knob_switch",
     "smoke_detector_advanced",
-    "soil_sensor"
+    "soil_sensor",
+    "switch_usb_dongle",
+    "switch_wireless"
   ]
 }

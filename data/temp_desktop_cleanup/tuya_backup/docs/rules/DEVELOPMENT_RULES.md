@@ -105,7 +105,7 @@ For battery devices, bindings must be in `driver.compose.json`:
 3. **Blakadder**: https://zigbee.blakadder.com/
 
 ### Secondary Sources
-4. **Homey Community Forum**: https://community.homey.app/
+4. **Homey Community Forum**: #
 5. **GitHub Issues**: Search for manufacturerName patterns
 6. **AliExpress**: Product descriptions often contain model info
 

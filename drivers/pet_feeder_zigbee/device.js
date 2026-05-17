@@ -1,11 +1,11 @@
 'use strict';
 
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
 
 /**
  * Zigbee Pet Feeder - TS0601
  */
-class PetFeederZigbeeDevice extends TuyaZigbeeDevice {
+class PetFeederZigbeeDevice extends BaseUnifiedDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('[PetFeeder] 🚀 Initializing hardened driver...');

@@ -560,3 +560,8 @@ Utility and maintenance scripts:
 | `lib/tuya/EnrichedDPMappings.js` | 51KB | DP enrichment DB |
 | `lib/managers/SmartDriverAdaptation.js` | 48KB | Runtime adaptation |
 | `app.js` | 43KB | App entry point |
+
+
+### DEPRECATION_WARNINGS
+1. **BatteryMixin is Dead:** Do not require BatteryMixin. It was causing MODULE_NOT_FOUND initialization crashes on the ir_quality_comprehensive sensor. Use UnifiedBatteryHandler instead.
+2. **Direct TuyaZigbeeDevice Extension:** Devices using sendTuyaCommand must extend BaseUnifiedDevice. Direct extension from TuyaZigbeeDevice causes TypeError crashes (like the 45e56d7 crash in garage_door_opener).

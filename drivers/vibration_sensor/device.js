@@ -1,13 +1,12 @@
 'use strict';
 
 const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 /**
  * Vibration Sensor Device - v8.0.0 MODERNIZED
  * Specialized for vibration, tilt, and tamper detection.
  */
-class VibrationSensorDevice extends BatteryMixin(SensorBase) {
+class VibrationSensorDevice extends SensorBase {
 
   get mainsPowered() { return false; }
 

@@ -2,7 +2,6 @@
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
@@ -16,7 +15,7 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
  * ║  - UnifiedPlugBase for core relay logic and Tuya DP/ZCL hybrid support       ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class ValveSingleDevice extends PhysicalButtonMixin(BatteryMixin(VirtualButtonMixin(UnifiedPlugBase))) {
+class ValveSingleDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
   
   get plugCapabilities() { return ['onoff']; }
   

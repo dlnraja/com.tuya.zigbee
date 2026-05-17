@@ -1,15 +1,17 @@
 /**
  * Project Rules + Architecture - Condensed context for AI automation
  * Sources: ARCHITECTURE.md, CRITICAL_MISTAKES.md, DEVELOPMENT_RULES.md, Windsurf workflows, memory rules
+ * v2.0.0 - Now includes GLOBAL_INVESTIGATION_PLAN.md for deep diagnostic methodology
  */
 const fs = require('fs');
 const path = require('path');
 
-// Load .windsurfrules + docs/rules/*.md for comprehensive AI context
+// Load .windsurfrules + docs/rules/*.md + GLOBAL_INVESTIGATION_PLAN.md for comprehensive AI context
 let LOADED_RULES = '';
 try {
   const rulesDir = path.join(__dirname, '../../docs/rules');
   const wsRulesPath = path.join(__dirname, '../../.windsurfrules');
+  const gipPath = path.join(__dirname, '../../docs/GLOBAL_INVESTIGATION_PLAN.md');
   const parts = [];
   // Load .windsurfrules (primary condensed rules)
   if (fs.existsSync(wsRulesPath)) {
@@ -24,6 +26,13 @@ try {
       // Cap each file at 2000 chars to stay within token budgets
       parts.push('### ' + f + '\n' + content.substring(0, 2000));
     }
+  }
+  // Load GLOBAL_INVESTIGATION_PLAN.md (investigation framework - 22 sections)
+  if (fs.existsSync(gipPath)) {
+    const gip = fs.readFileSync(gipPath, 'utf8');
+    // Extract condensed investigation methodology (first 4000 chars for key sections)
+    const gipContext = gip.substring(0, 4000);
+    parts.push('### GLOBAL_INVESTIGATION_PLAN.md (condensed - 22 sections)\n' + gipContext);
   }
   LOADED_RULES = parts.join('\n\n');
 } catch (e) { /* Rules not available in CI - that's OK */ }
@@ -53,6 +62,7 @@ const PROJECT_RULES = [
 '- Homey SDK Docs: apps.developer.homey.app (MUST consult for SDK, capabilities, flows, and pairing rules)',
 '- Internal Rules: docs/rules/DEVELOPMENT_RULES.md, docs/rules/CRITICAL_MISTAKES.md',
 '- Tuya Specs: docs/devices/* (for TS0601 DP definitions)',
+'- GLOBAL_INVESTIGATION_PLAN.md: 22-section investigation framework (cross-ref, Z2M/ZHA, forum/email, scripts)',
 '',
 '### IDENTITY',
 '- App: com.dlnraja.tuya.zigbee | SDK3 | Repo: dlnraja/com.tuya.zigbee',

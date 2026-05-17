@@ -205,7 +205,7 @@ Homey Pro
 | Workflow | Schedule | Description |
 |----------|----------|-------------|
 | **Daily Everything** | Daily 2 AM UTC | Forum + GitHub auto-response with AI |
-| **Forum Responder** | Every 6h | Monitors topics 140352, 26439 |
+| **Forum Responder** | Every 6h | Monitors topics INTERNAL_TRACKER, 26439 |
 | **GitHub Scanner** | Mon/Thu | Issues, PRs, forks analysis |
 | **Enrichment Scanner** | Mon/Thu | Z2M, ZHA, deCONZ, Blakadder sync |
 | **Sunday Master** | Sunday 7 AM | Full triage, fork scan, forum scan |
@@ -254,7 +254,7 @@ homey app run
 |---|---|
 | **App Store** | [Tuya Unified Zigbee](https://homey.app/a/com.dlnraja.tuya.zigbee/) |
 | **Test Version** | [Install Test](https://homey.app/a/com.dlnraja.tuya.zigbee/test/) |
-| **Forum** | [Community Thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352) |
+| **Forum** | [Community Thread](#) |
 | **Device Finder** | [Smart Device Finder](https://dlnraja.github.io/com.tuya.zigbee/) |
 | **GitHub** | [github.com/dlnraja/com.tuya.zigbee](https://github.com/dlnraja/com.tuya.zigbee) |
 | **Issues** | [Report a Bug](https://github.com/dlnraja/com.tuya.zigbee/issues) |
@@ -350,7 +350,7 @@ A massive thank you to everyone who makes this possible:
 ### Homey Community Forum
 Lasse_K, Rudy_De_Vylder, Peter_van_Werkhoven, Karsten_Hille, FrankP, ManuelKugler, Nicolas, blutch32, PacketNinja — bug reports, diagnostics, testing & fixes that directly improved the app
 
-All users on the **[Homey Community Forum](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352)** who share device logs, diagnostics, and fingerprints — you are the backbone of this project
+All users on the **[Homey Community Forum](#)** who share device logs, diagnostics, and fingerprints — you are the backbone of this project
 
 > Full credits with all contributor fingerprints: [docs/CREDITS.md](./docs/CREDITS.md)
 

@@ -3,6 +3,14 @@
 > **Version**: 9.0.0+ | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
 > **227 drivers** | **Zigbee + WiFi** | **4500+ devices** | **SDK v3** | **SDK Deprecations: 0**
 
+⚠️ **ATTENTION AI AGENTS, LOCAL CLAUDE CODE, & ANTIGRAVITY SKILLS** ⚠️
+Before making ANY changes to this repository, you **MUST** execute the mandatory entry procedure:
+1. **Read [AI_GLOBAL_ACTION_PLAN.md](AI_GLOBAL_ACTION_PLAN.md)** — immediate plan of action and token-saving offline intelligence aggregator methodology.
+2. **Read [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md)** — 22-section deep diagnostic methodology covering forums, logs, emails, and external Z2M/ZHA/Domoticz cross-references.
+3. **Understand the Single-MFR Multi-Variant Rule** — A single `manufacturerName` can map to dozens of different product variants (PIDs). Check `productId` combinations!
+4. **Leverage the Local Arsenal** — Use Antigravity Skills in `.agents/skills/` and local Claude Code tools for automated audits.
+5. **Enrich Iteratively** — Update documentation, dotfiles (`.*`), and workflows (`nightly-auto-process.yml`, `driver-maintenance.yml`) with your findings to elevate overall project performance.
+
 ---
 
 ## 📑 TABLE DES MATIÈRES
@@ -793,6 +801,19 @@ The project behavior is governed by multiple rule files and dotfiles. If you nee
 - **`.gitignore`**: Standard Git ignores.
 - **`.context_memory.json` / `.context_checkpoint.md`**: Short-term AI agent memory storage.
 
+### 1.5. Global Investigation Plan (MANDATORY READ)
+
+> **🌐 COMPLETE INVESTIGATION METHODOLOGY** — For deep diagnostic and cross-referencing when investigating bugs, missing fingerprints, or device issues, you MUST consult:
+> - **[GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md)** — The authoritative AI investigation framework
+>   - Phase-by-phase investigation flow (Context → Cross-Reference → Variant → Implementation → Documentation → Quality Gate)
+>   - Source matrix (forums, GitHub, emails, Z2M/ZHA, Blakadder)
+>   - Investigation scripts catalog (internet-research-tool.js, github-scanner.js, fetch-gmail-diagnostics.js)
+>   - Cross-reference patterns (manufacturerName × productId matrix)
+>   - Shadow Mode Protocol rules
+>   - Quality Gate compliance checklist
+
+*This document is the master reference for all AI agents performing device investigation, bug hunting, and diagnostic analysis.*
+
 ### 2. Architecture & Cartography (Where to find Deep Knowledge)
 If you need to understand *how* the engine works before modifying it, read these mapping files:
 - **`PROJECT_INDEX.md`**: (This file) The master entry point.
@@ -875,3 +896,17 @@ Status of the fleet transition to v8.1.0 architectural standards.
 ---
 
 **END OF PROJECT_INDEX.md**
+---
+
+## 25. DEEP DIAGNOSTIC & CROSS-REFERENCING MANDATE (AI AGENTS)
+
+When a user reports "it doesn't work well" or an "unknown device" issue, **DO NOT** immediately assume it's just a missing fingerprint. You must perform a **Deep Diagnostic Investigation** using cross-referencing:
+
+1. **Analyze Multiple Sources**: Use the repository's JS scraper scripts to fetch and analyze Homey emails, community forum discussions, diagnostic logs, PRs, and issues.
+2. **Cross-Reference Domotic Projects**: Check Z2M (Zigbee2MQTT), ZHA, and Domoticz registries for the exact same `manufacturerName` to understand its real DP mappings or cluster behavior.
+3. **Manufacturer Identity Variants**: Remember that a single `manufacturerName` (e.g., `_TZ3000_...`) can be used across *multiple* device IDs and hardware variants. Do not blindly map it without checking the `productId` and capability set.
+4. **Architecture Context**: Always read documents relating to **Architecture 7+ and 8.0** for clues on SDK3 compliance, TuyaEF00Manager handling, and new cluster rules.
+5. **Update Resources**: Enrich documentation, workflows, and GitHub actions with your findings. Do not just patch the code; update the knowledge base.
+6. **Agentic Skills & Local Code**: Leverage the local AI tools! Be fully aware of the `Antigravity skills` (located in `.agents/skills/`) and the local `Claude Code` implementations within the project. These serve as major sources of inspiration and diagnostic power.
+7. **Dotfile Reading Mandate**: Always read configuration files starting with a dot (e.g., `.windsurfrules`, `.clinerules`, `.github/workflows/*`) to understand the strict project boundaries before applying any cross-referenced fix.
+8. **MANDATORY Investigation Plan**: Before any bug investigation or deep diagnostic, you MUST read [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — the complete 22-section methodology for cross-referencing manufacturers, DP mappings, forums, emails, Z2M/ZHA, GitHub PRs/Issues, and Antigravity skills integration.

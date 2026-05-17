@@ -4,7 +4,6 @@ const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 
 const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb', '_tze200_fphxkxue', '_tze204_sh1btabb', '_tze204_fphxkxue'];
@@ -19,7 +18,7 @@ const GARDEN_TIMER_MFRS = ['_tze200_sh1btabb', '_tze200_fphxkxue', '_tze204_sh1b
  * ║  - UnifiedPlugBase for core relay logic and Tuya DP/ZCL hybrid support       ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class WaterValveSmartDevice extends VirtualButtonMixin(PhysicalButtonMixin(BatteryMixin(UnifiedPlugBase))) {
+class WaterValveSmartDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedPlugBase)) {
   
   get plugCapabilities() { return ['onoff', 'measure_battery', 'measure_temperature', 'meter_water']; }
 

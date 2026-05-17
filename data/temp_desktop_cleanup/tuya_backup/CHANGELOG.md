@@ -1002,7 +1002,7 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
  [5.11.27] - 2026-03-01
 
 ### Bug Fixes
-- Restricted bot activity to T140352 only.
+- Restricted bot activity to TINTERNAL_TRACKER only.
 - Fixed missing functions in AI helper.
 - Removed 3 duplicate forum-posting sources.
 - Reduced bot spam by disabling cross-posting and implementing a 12-hour cooldown.

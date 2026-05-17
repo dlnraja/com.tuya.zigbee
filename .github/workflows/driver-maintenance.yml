@@ -61,6 +61,31 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
 
+      - name: 📖 Load Investigation Framework (GLOBAL_INVESTIGATION_PLAN.md)
+        run: |
+          echo "## Investigation Framework Active" >> $GITHUB_STEP_SUMMARY
+          echo "Using [GLOBAL_INVESTIGATION_PLAN.md](../../docs/GLOBAL_INVESTIGATION_PLAN.md)" >> $GITHUB_STEP_SUMMARY
+          echo "22-section methodology applied to driver maintenance:" >> $GITHUB_STEP_SUMMARY
+          echo "- Section 4: Complete Source Matrix (15 sources: Z2M, ZHA, Blakadder, Domoticz, Forums...)" >> $GITHUB_STEP_SUMMARY
+          echo "- Section 6: Cross-Reference Patterns (mfr × pid × power × protocol)" >> $GITHUB_STEP_SUMMARY
+          echo "- Section 10: Z2M/ZHA Cross-Reference Protocol" >> $GITHUB_STEP_SUMMARY
+          echo "- Section 13: Quality Gate System (9-Layer)" >> $GITHUB_STEP_SUMMARY
+          echo "Plan injected into all AI engine calls via project-rules.js → ai-helper.js" >> $GITHUB_STEP_SUMMARY
+
+      - name: 🌐 Cross-Reference External Intelligence (Z2M, Domoticz, Forums)
+        run: |
+          # Follows GLOBAL_INVESTIGATION_PLAN.md Section 4 (Source Matrix) + Section 10 (Z2M/ZHA Protocol)
+          node .github/scripts/cross-ref-intelligence.js || true
+          node .github/scripts/sync-external-sources.js || true
+          node .github/scripts/scan-tuya-ecosystem.js || true
+        continue-on-error: true
+
+      - name: 🕵️ Deep Issue & Variant Researcher
+        run: |
+          # Follows GLOBAL_INVESTIGATION_PLAN.md Section 6 (Variant Generation TZE200↔TZE204↔TZE284)
+          node .github/scripts/issue-deep-researcher.js || true
+        continue-on-error: true
+
       - name: Auto-scaffold missing drivers
         id: scaffold
         run: node .github/scripts/auto-driver-scaffold.js

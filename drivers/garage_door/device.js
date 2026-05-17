@@ -1,12 +1,12 @@
 'use strict';
 
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
 
 /**
  * GarageDoorDevice - v5.13.6 Hardened Architecture
  * Supports DP1 (Command), DP2 (State), DP12 (Status)
  */
-class GarageDoorDevice extends TuyaZigbeeDevice {
+class GarageDoorDevice extends BaseUnifiedDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('[Garage] 🚀 Initializing hardened driver...');

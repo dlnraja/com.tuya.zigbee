@@ -7,7 +7,7 @@ description: Cross-reference all sources at each prompt
 1. Read docs/rules/CRITICAL_MISTAKES.md + docs/MASTER_REFERENCE.md + docs/rules/USER_DEVICE_EXPECTATIONS.md
 2. Check all data sources:
    - **GitHub**: issues + PRs from dlnraja/com.tuya.zigbee + JohanBendz/com.tuya.zigbee
-   - **Forum**: Homey Community topics (140352, 26439, 146735, 89271, 54018, 12758, 85498)
+   - **Forum**: Homey Community topics (INTERNAL_TRACKER, 26439, 146735, 89271, 54018, 12758, 85498)
    - **Gmail**: diagnostics from .github/state/diagnostics-report.json
    - **Device interviews**: docs/data/DEVICE_INTERVIEWS.json + Desktop/interview/
    - **Images**: Gemini Vision analysis of forum/GitHub screenshots

@@ -5,7 +5,6 @@ const { getDeviceConfig, transformDpValue, ENERGY_CONFIGS } = require('../../lib
 const { setupSonoffEnergy } = require('../../lib/mixins/SonoffEnergyMixin');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -173,7 +172,7 @@ function getEnergyConfig(manufacturerName) {
   return ENERGY_CONFIG_MAP[manufacturerName] || ENERGY_DEVICE_CONFIGS.HYBRID_SENSOR_PLUG;
 }
 
-class LcdTempHumidSensorPlugDevice extends BatteryMixin(PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase))) {
+class LcdTempHumidSensorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
 
   get mainsPowered() { return true; }
   // v9.7.3: Specialized Energy Monitoring Plug

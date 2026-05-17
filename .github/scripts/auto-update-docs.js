@@ -42,7 +42,6 @@ function updateContributing(stats){
   }
   if(!md.includes('## Bug Reports')){
     md+='\n## Bug Reports\n\n'
-      +'- Use the [Bug Report template](https://github.com/dlnraja/com.tuya.zigbee/issues/new?template=02_bug_report.yml)\n'
       +'- Include your device fingerprint (`_TZxxxx_xxxxx`)\n'
       +'- Include Homey developer tools diagnostic report\n'
       +'- Issues are auto-triaged and responses generated daily\n\n';
@@ -94,7 +93,6 @@ function updateProjectStatus(stats){
   md+='\n## Links\n\n';
   md+='- [Device Finder](https://dlnraja.github.io/com.tuya.zigbee/)\n';
   md+='- [Install Test Version](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)\n';
-  md+='- [Forum](https://community.homey.app/t/140352)\n';
   md+='- [GitHub](https://github.com/dlnraja/com.tuya.zigbee)\n';
   fs.mkdirSync(DOCS,{recursive:true});
   fs.writeFileSync(f,md);

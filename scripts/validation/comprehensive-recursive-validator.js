@@ -101,6 +101,16 @@ function runValidation() {
           driverIssues.push({ level: 'error', rule: 'phantom-flow-methods', message: 'Uses phantom flow card methods (getDeviceConditionCard / getDeviceActionCard)' });
           driverHasError = true;
         }
+        
+        // v5.13.7: Deprecation Guard for Crash Prevention
+        if (code.includes("require('../../lib/tuya/BatteryMixin')") || code.includes("require('../../lib/mixins/BatteryMixin')") || code.includes('BatteryMixin(')) {
+          driverIssues.push({ level: 'error', rule: 'deprecated-battery-mixin', message: 'Uses DEPRECATED BatteryMixin (Causes MODULE_NOT_FOUND). Use UnifiedBatteryHandler or BaseUnifiedDevice.' });
+          driverHasError = true;
+        }
+        if (code.includes('extends TuyaZigbeeDevice') && (code.includes('sendTuyaCommand') || code.includes('_tuyaEF00Manager'))) {
+          driverIssues.push({ level: 'error', rule: 'invalid-device-extension', message: 'Extends TuyaZigbeeDevice but uses DP commands. Must extend BaseUnifiedDevice or TuyaSpecificClusterDevice.' });
+          driverHasError = true;
+        }
       }
     }
 

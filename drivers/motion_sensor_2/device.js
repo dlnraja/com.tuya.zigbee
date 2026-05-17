@@ -6,10 +6,9 @@ const TuyaSpecificCluster = require('../../lib/clusters/TuyaSpecificCluster');
 
 Cluster.addCluster(TuyaSpecificCluster);
 
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
-class motion_sensor_2 extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
+class motion_sensor_2 extends PhysicalButtonMixin(ZigBeeDevice) {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });

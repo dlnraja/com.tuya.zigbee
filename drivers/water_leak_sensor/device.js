@@ -1,7 +1,6 @@
 'use strict';
 
 const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
-const { BatteryMixin } = require('../../lib/mixins/BatteryMixin');
 const { startsWithCI, normalize } = require('../../lib/utils/CaseInsensitiveMatcher');
 const IASAlarmFallback = require('../../lib/IASAlarmFallback');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
@@ -133,7 +132,7 @@ const WATER_SENSOR_PROFILES = {
   }
 };
 
-class WaterLeakSensorDevice extends BatteryMixin(SensorBase) {
+class WaterLeakSensorDevice extends SensorBase {
 
   get mainsPowered() { return false; }
 

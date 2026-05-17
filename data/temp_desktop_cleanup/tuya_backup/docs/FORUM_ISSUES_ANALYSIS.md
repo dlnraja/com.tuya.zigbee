@@ -1,7 +1,7 @@
 # Forum Issues Analysis - Comprehensive Report
 
 **Analysis Date**: 2026-02-17 (Updated v5.11.13)
-**Forum Thread**: https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
+**Forum Thread**: #
 **Messages Analyzed**: p1-72 (latest scan: p70-72 on 2026-02-17)
 **Git Commits Analyzed**: 2025-01-15 to present
 
@@ -362,8 +362,8 @@ JohanBendz PRs: #1346 time sync LCD, #1333 siren, #1332 HOBEIAN — all already 
 
 
 ## Nightly Forum Scan (2026-02-20 v5.11.17)
-- **Topic 140352 #1450** @Hartmut_Dunker: `_TZ3002_pzao9ls1` (template)
-- **Topic 140352 #1462** @SkiMattie: `_TZ3000_mrpevh8p`, `_TZE204_9mjy74mp` (template)
+- **Topic INTERNAL_TRACKER #1450** @Hartmut_Dunker: `_TZ3002_pzao9ls1` (template)
+- **Topic INTERNAL_TRACKER #1462** @SkiMattie: `_TZ3000_mrpevh8p`, `_TZE204_9mjy74mp` (template)
 - **Topic 26439 #5388** @Trey_Rogerson: `_TZE284_c8ipbljq` (template)
 - **Topic 26439 #5389** @Willy: `_TZ3000_pjb1ua0m` (template)
 - **Topic 26439 #5391** @Ons: `_TZ3000_ww6drja5` (template)
@@ -371,11 +371,11 @@ JohanBendz PRs: #1346 time sync LCD, #1333 siren, #1332 HOBEIAN — all already 
 
 
 ## Nightly Forum Scan (2026-02-21 v5.11.19)
-- **Topic 140352 #1465** @ManuelKugler: `_TZE284_aao3yzhs` (template)
+- **Topic INTERNAL_TRACKER #1465** @ManuelKugler: `_TZE284_aao3yzhs` (template)
 
 
 ## Nightly Forum Scan (2026-02-22 v5.11.19)
-- **Topic 140352 #1467** @Slawek_Pe: `_TZ3210_xzhnra8x` (template)
+- **Topic INTERNAL_TRACKER #1467** @Slawek_Pe: `_TZ3210_xzhnra8x` (template)
 
 ## JohanBendz Issues Triage (2026-02-22)
 
@@ -396,7 +396,7 @@ All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
 | 1326 | _TZ3210_4ux0ondb | plug_energy_monitor |
 | 1325 | _TZ3210_s8lvbbu | bulb_rgbw |
 
-**Forum topics now scanned**: 140352, 26439, 146735, 89271, 54018
+**Forum topics now scanned**: INTERNAL_TRACKER, 26439, 146735, 89271, 54018
 
 
 ## Nightly Forum Scan (2026-02-23 v5.11.22)
@@ -416,38 +416,38 @@ All 12 fingerprints from 20 open issues **already supported** in v5.11.19:
 
 
 ## Nightly Forum Scan (2026-02-24 v5.11.22)
-- **Topic 140352 #1477** @FrankP: `_TZ3000_itb0omhv` (gh-gpt-4o-mini)
+- **Topic INTERNAL_TRACKER #1477** @FrankP: `_TZ3000_itb0omhv` (gh-gpt-4o-mini)
 
 
 ## Nightly Forum Scan (2026-02-25 v5.11.24)
-- **Topic 140352 #1479** @Jocke_Wallen: `_TZ3000_u3nv1jwk` (gh-gpt-4o-mini)
+- **Topic INTERNAL_TRACKER #1479** @Jocke_Wallen: `_TZ3000_u3nv1jwk` (gh-gpt-4o-mini)
 
 
 ## Nightly Forum Scan (2026-02-26 v5.11.25)
-- **Topic 140352 #1481** @JJ10: `_TZE200_crq3r3la`, `_TZE200_gkfbdvyx` (gh-gpt-4o-mini)
-- **Topic 140352 #1482** @7Hills: `_TZE204_clrdrnya` (gh-gpt-4o-mini)
+- **Topic INTERNAL_TRACKER #1481** @JJ10: `_TZE200_crq3r3la`, `_TZE200_gkfbdvyx` (gh-gpt-4o-mini)
+- **Topic INTERNAL_TRACKER #1482** @7Hills: `_TZE204_clrdrnya` (gh-gpt-4o-mini)
 
 
 ## Nightly Forum Scan (2026-02-27 v5.11.25)
-- **Topic 140352 #1520** @Hartmut_Dunker: `_TZ3002_pzao9ls1` (gh-Mistral-small-2503)
+- **Topic INTERNAL_TRACKER #1520** @Hartmut_Dunker: `_TZ3002_pzao9ls1` (gh-Mistral-small-2503)
 
 
 ## Nightly Forum Scan (2026-02-28 v5.11.26)
-- **Topic 140352 #1551** @OH2TH: `dlnraja` (template)
+- **Topic INTERNAL_TRACKER #1551** @OH2TH: `dlnraja` (template)
 
 
 ## Nightly Forum Scan (2026-03-02 v5.11.46)
-- **Topic 140352 #1559** @Nicolas: `dlnraja` (gh-gpt-4o-mini)
-- **Topic 140352 #1561** @Nicolas: no FPs (gh-Mistral-small-2503)
+- **Topic INTERNAL_TRACKER #1559** @Nicolas: `dlnraja` (gh-gpt-4o-mini)
+- **Topic INTERNAL_TRACKER #1561** @Nicolas: no FPs (gh-Mistral-small-2503)
 
 
 ## Nightly Forum Scan (2026-03-03 v5.11.57)
-- **Topic 140352 #1563** @Nicolas: `dlnraja` (gh-Mistral-small-2503)
-- **Topic 140352 #1566** @Peter_van_Werkhoven: `_TZE200_vvmbj46n`, `development` (gh-Mistral-small-2503)
-- **Topic 140352 #1567** @Peter_van_Werkhoven: `_TZE200_pay2byax`, `_TZ3000_0dumfk2z`, `HOBEIAN` (gh-Mistral-small-2503)
-- **Topic 140352 #1568** @Peter_van_Werkhoven: `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`, `test` (gh-Mistral-small-2503)
+- **Topic INTERNAL_TRACKER #1563** @Nicolas: `dlnraja` (gh-Mistral-small-2503)
+- **Topic INTERNAL_TRACKER #1566** @Peter_van_Werkhoven: `_TZE200_vvmbj46n`, `development` (gh-Mistral-small-2503)
+- **Topic INTERNAL_TRACKER #1567** @Peter_van_Werkhoven: `_TZE200_pay2byax`, `_TZ3000_0dumfk2z`, `HOBEIAN` (gh-Mistral-small-2503)
+- **Topic INTERNAL_TRACKER #1568** @Peter_van_Werkhoven: `_TZE200_pay2byax`, `_TZ3000_mrpevh8p`, `test` (gh-Mistral-small-2503)
 
 
 ## Nightly Forum Scan (2026-03-04 v5.11.87)
-- **Topic 140352 #1579** @Hartmut_Dunker: `_TZ3002_pzao9ls1`, `dlnraja` (gh-gpt-4o-mini)
-- **Topic 140352 #1580** @Peter_Kawa: no FPs (gh-gpt-4o-mini)
+- **Topic INTERNAL_TRACKER #1579** @Hartmut_Dunker: `_TZ3002_pzao9ls1`, `dlnraja` (gh-gpt-4o-mini)
+- **Topic INTERNAL_TRACKER #1580** @Peter_Kawa: no FPs (gh-gpt-4o-mini)

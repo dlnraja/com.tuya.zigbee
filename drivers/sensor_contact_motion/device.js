@@ -46,7 +46,7 @@ const VALIDATION = {
  * Supports: Fantem ZB003-x, Immax 07502L, Generic Tuya Multisensor
  * Source: https://community.home-assistant.io/t/tuya-zigbee-multi-sensor-4-in-1/409780
  */
-class MotionSensorDevice extends BatteryMixin(SensorBase) {
+class MotionSensorDevice extends SensorBase {
 
   get mainsPowered() { return false; }
 
