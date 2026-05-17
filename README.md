@@ -37,6 +37,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
+| **v7.5.37** | Fix all runtime syntax errors, resolve unclosed braces, add support for wall_... |
 | **v7.5.35** | v7.5.34: Fixed condition card registration in `air_quality_comprehensive` and... |
 | **v7.5.34** | v7.5.34: Fixed condition card registration in air_quality_comprehensive and d... |
 | **v7.5.33** | Fixed condition cards in air quality & DIN rail meter drivers. Added standard... |
@@ -46,8 +47,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.29** | Bug fixes and improvements for Tuya Zigbee devices. Added support for new soi... |
 | **v7.5.28** | Added 3,208 new fingerprints, improved driver matching for soil sensors, and ... |
 | **v7.5.27** | v7.5.27: . New IR pairing wizard, improved power clamp meter, and various bug... |
-| **v7.5.26** | Fixed SDK3 deprecation warnings across all 45 drivers by migrating from depre... |
 <!-- CHANGELOG_END -->
+
 
 
 
