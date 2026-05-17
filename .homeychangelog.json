@@ -1,4 +1,7 @@
 {
+  "7.5.39": {
+    "en": "Updated 3202 fingerprints across 228 drivers. Added new device support and minor fixes."
+  },
   "7.5.38": {
     "en": "No user-facing changes in this release."
   },
@@ -56,10 +59,7 @@
   "7.5.19": {
     "en": "Added Android native Intent magic URL pairing for all 20 WiFi drivers. Updated pairing configuration UI."
   },
-  "7.5.18": {
-    "en": "Easy Login with saved credentials, auto device classification with brand badges, TS110E level control fix, alarm_battery removed from 136 drivers (SDK3 conflict), 7 FP collisions resolved, duplicate flow cards fixed across driver fleet."
-  },
-  "7.5.39": {
-    "en": "v7.5.38: None, None, None"
+  "7.5.40": {
+    "en": "v7.5.39: Fixed physical button detection on wall remote devices with improved debounce handling., Added new fingerprints for wall_remote_2_gang driver., Added 4 new device fingerprints., Updated driver and fingerprint counts to 228 drivers, 3202 fingerprints."
   }
 }
