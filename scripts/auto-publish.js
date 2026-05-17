@@ -50,12 +50,16 @@ child.stdout.on('data', (data) => {
     child.stdin.write('y\n');
     answered.certification = true;
   }
+  if (text.includes('commit the version bump') && !answered.commitBump) {
+    child.stdin.write('y\n');
+    answered.commitBump = true;
+  }
   if (text.includes('push the local changes to') && !answered.pushChanges) {
     child.stdin.write('y\n');
     answered.pushChanges = true;
   }
   // Generic y/N prompts (if any missed)
-  if (text.match(/\?\s+.*\(y\/N\)/i) && !answered.generic) {
+  if (text.match(/\([yY]\/[nN]\)/) && !answered.generic) {
     child.stdin.write('y\n');
     answered.generic = true;
   }
