@@ -61,4 +61,4 @@ child.on('close', (code) => {
   process.exit(code || 0);
 });
 
-setTimeout(() => { child.kill(); process.exit(1); }, 300000);
+setTimeout(() => { child.kill(); process.exit(1); }, 900000);
