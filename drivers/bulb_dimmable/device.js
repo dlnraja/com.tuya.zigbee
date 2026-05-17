@@ -1,6 +1,5 @@
 'use strict';
-
-constLightBase = require('../../lib/devices/UnifiedLightBase');
+const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
@@ -34,32 +33,32 @@ class DimmableBulbDevice extends VirtualButtonMixin(UnifiedLightBase) {
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
       await super.onNodeInit({ zclNode });
-      // --- Attribute Reporting Configuration (auto-generated) ---
+
+      // --- Attribute Reporting Configuration ---
       try {
-      await this.configureAttributeReporting([
-      {
-      cluster: 'genPowerCfg',
-      attributeName: 'batteryPercentageRemaining',
-      minInterval: 3600,
-      maxInterval: 43200,
-      minChange: 2,
-      }
-      ]);
-      this.log('Attribute reporting configured successfully');
+        await this.configureAttributeReporting([
+          {
+            cluster: 'genPowerCfg',
+            attributeName: 'batteryPercentageRemaining',
+            minInterval: 3600,
+            maxInterval: 43200,
+            minChange: 2,
+          }
+        ]);
+        this.log('Attribute reporting configured successfully');
       } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
+        this.log('Attribute reporting config failed (device may not support it):', err.message);
       }
-      // Parent handles EVERYTHING: ZCL setup, capability listeners
-      await super.onNodeInit({ zclNode });
+
       // v5.5.992: Initialize virtual buttons
       await this.initVirtualButtons();
       this.log('[DIM-BULB] v5.5.992 ✅ Ready + virtual buttons');
     }, 'onNodeInit');
   }
 
-
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
+    if (super.onDeleted) super.onDeleted();
   }
 }
 

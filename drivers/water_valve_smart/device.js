@@ -51,8 +51,7 @@ class WaterValveSmartDevice extends VirtualButtonMixin(PhysicalButtonMixin(Batte
       7: { capability: null, internal: 'daily_consumption' },
       9: { capability: null, internal: 'flow_rate' },
       10: { capability: 'measure_temperature', divisor: 10 },
-      11: { capability: 'measure_battery', transform: (v) => {
-        if (v > 3000) return 100;
+      11: { capability: 'measure_battery', transform: async (v) => { if (v > 3000) return 100;
         if (v < 2700) return 0;
         return Math.round(((v - 2700) / 300) * 100);
       }},
@@ -62,19 +61,18 @@ class WaterValveSmartDevice extends VirtualButtonMixin(PhysicalButtonMixin(Batte
   }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      // v9.7.3: Initialization is orchestrated by the mixin hierarchy.
+    await this._safeInvoke(async () => { // v9.7.3: Initialization is orchestrated by the mixin hierarchy.
       // Handles battery reporting, physical button detection, and relay logic.
-      await super.onNodeInit({ zclNode });
+      await super.onNodeInit({ zclNode  });
       // Ensure capabilities exist
-      if (!this.hasCapability('meter_water')) await this.addCapability('meter_water').catch(() => {});
-      if (!this.hasCapability('measure_temperature')) await this.addCapability('measure_temperature').catch(() => {});
+      if (!this.hasCapability('meter_water')) await this.addCapability('meter_water').catch (() => { });
+      if (!this.hasCapability('measure_temperature')) await this.addCapability('measure_temperature').catch(() => { });
       if (this.hasCapability('alarm_motion')) await this.removeCapability('alarm_motion').catch(() => {});
       this.log(`[WATER-VALVE] ✅ v9.7.3 Ready (${this.isGardenTimer ? 'GARDEN' : 'METERED'})`);
     }, 'onNodeInit');
   }
 
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }

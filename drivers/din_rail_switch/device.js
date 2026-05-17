@@ -32,16 +32,15 @@ class DinRailSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unified
   }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      // v9.7.3: Initialization handled by parent and mixins
-      await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => { // v9.7.3: Initialization handled by parent and mixins
+      await super.onNodeInit({ zclNode  });
       this.log('DIN Rail Switch v9.7.3 initialized with bidirectional buttons');
       this.log('[DIN-RAIL] ✅ Ready');
     }, 'onNodeInit');
   }
 
   async onDeleted() {
-    await super.onDeleted();
+    await super.onNodeInit({ zclNode });
     this.log('Device deleted, cleaning up');
   }
 }

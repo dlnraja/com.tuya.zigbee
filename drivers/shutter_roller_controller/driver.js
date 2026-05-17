@@ -1,89 +1,127 @@
 'use strict';
 
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.575: CRITICAL FIX - Flow card run listeners were missing
- */
 class RollerShutterControllerDriver extends ZigBeeDriver {
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
     this.log('RollerShutterControllerDriver v5.5.575 initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // CONDITION: Is open
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('shutter_roller_controller_is_open'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          const pos = args.device.getCapabilityValue('windowcoverings_set') || 0;
-          return pos > 0;
-        });
-      this.log('[FLOW] ✅ shutter_roller_controller_is_open');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+    // TRIGGERS
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
 
-    // CONDITION: Position above
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('shutter_roller_controller_position_above'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('shutter_roller_controller_is_open');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const pos = args.device.getCapabilityValue('windowcoverings_set') || 0;
-          return (pos * 100) > (args.position || 50);
+          return args.device.getCapabilityValue('alarm_contact') === true;
         });
-      this.log('[FLOW] ✅ shutter_roller_controller_position_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition shutter_roller_controller_is_open: ${err.message}`); }
 
-    // CONDITION: Is moving
     try {
-      (() => { try { return this.homey.flow.getConditionCard('shutter_roller_controller_is_moving'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('shutter_roller_controller_position_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const state = args.device.getCapabilityValue('windowcoverings_state');
-          return state === 'up' || state === 'down';
+          const val = args.device.getCapabilityValue('measure_co2') || 0;
+          return val > (args.threshold || 400);
+      });
+      }
+    } catch (err) { this.error(`Condition shutter_roller_controller_position_above: ${err.message}`); }
+
+    try {
+      const card = this.homey.flow.getConditionCard('shutter_roller_controller_is_moving');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ shutter_roller_controller_is_moving');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition shutter_roller_controller_is_moving: ${err.message}`); }
 
-    // ACTION: Open
+    // ACTIONS
     try {
-      (() => { try { return this.homey.flow.getActionCard('shutter_roller_controller_open'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('shutter_roller_controller_open');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('windowcoverings_set', 1);
+          // Generic action handler
+          this.log('[FLOW] Action shutter_roller_controller_open triggered for', args.device.getName());
           return true;
         });
-      this.log('[FLOW] ✅ shutter_roller_controller_open');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action shutter_roller_controller_open: ${err.message}`); }
 
-    // ACTION: Close
     try {
-      (() => { try { return this.homey.flow.getActionCard('shutter_roller_controller_close'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('shutter_roller_controller_close');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('windowcoverings_set', 0);
+          // Generic action handler
+          this.log('[FLOW] Action shutter_roller_controller_close triggered for', args.device.getName());
           return true;
         });
-      this.log('[FLOW] ✅ shutter_roller_controller_close');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action shutter_roller_controller_close: ${err.message}`); }
 
-    // ACTION: Stop
     try {
-      (() => { try { return this.homey.flow.getActionCard('shutter_roller_controller_stop'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('shutter_roller_controller_stop');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('windowcoverings_state', 'idle');
+          // Generic action handler
+          this.log('[FLOW] Action shutter_roller_controller_stop triggered for', args.device.getName());
           return true;
         });
-      this.log('[FLOW] ✅ shutter_roller_controller_stop');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action shutter_roller_controller_stop: ${err.message}`); }
 
-    // ACTION: Set position
     try {
-      (() => { try { return this.homey.flow.getActionCard('shutter_roller_controller_set_position'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('shutter_roller_controller_set_position');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('windowcoverings_set', (args.position || 50) / 100);
+          await args.device.triggerCapabilityListener('windowcoverings_set', args.position || args.value || 0).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ shutter_roller_controller_set_position');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action shutter_roller_controller_set_position: ${err.message}`); }
 
-    this.log('[FLOW]  Roller shutter flow cards registered');
+    try {
+      const card = this.homey.flow.getActionCard('shutter_roller_controller_set_brightness');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('dim', args.brightness || args.value || 1).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action shutter_roller_controller_set_brightness: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

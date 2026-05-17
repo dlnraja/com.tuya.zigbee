@@ -45,7 +45,7 @@ class VibrationSensorDevice extends BatteryMixin(SensorBase) {
   /**
    * Override onTuyaDP to leverage base discovery for unknown DPs
    */
-  async onTuyaDP(dpId, value, dpType) {
+  onTuyaDP(dpId, value, dpType) {
     // 1. Process via static mappings first
     const mapping = this.dpMappings[dpId];
     if (mapping) {
@@ -56,7 +56,7 @@ class VibrationSensorDevice extends BatteryMixin(SensorBase) {
     }
 
     // 2. Fallback: Base handles heuristic discovery via this._discovery
-    return super.onTuyaDP(dpId, value, dpType);
+    return super.on(dpId, value, dpType);
   }
 }
 

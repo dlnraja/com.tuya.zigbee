@@ -3,11 +3,39 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class SceneSwitch4Driver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
 
   async onInit() {
     await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    
     this.log('SceneSwitch4Driver v5.5.696 initialized');
     this._registerFlowCards();
+  
+  
+  
+  
+  
+  
+  
   }
 
   _registerFlowCards() {
@@ -22,7 +50,8 @@ class SceneSwitch4Driver extends ZigBeeDriver {
 
     for (const triggerId of mainTriggers) {
       try {
-        const card = homey.flow.getDeviceTriggerCard(triggerId);
+        const card = homey.flow.getTriggerCard(triggerId);
+
         if (card) {
           card.registerRunListener(async (args, state) => {
             if (!args.device) return false;
@@ -31,7 +60,7 @@ class SceneSwitch4Driver extends ZigBeeDriver {
             }
             return true;
           });
-          this.log(`[FLOW] ✅ ${triggerId}`);
+          this.log(`[FLOW]  ${triggerId}`);
         }
       } catch (e) {
         // Card may not exist
@@ -43,13 +72,14 @@ class SceneSwitch4Driver extends ZigBeeDriver {
       for (const pressType of buttonPressTypes) {
         const buttonTriggerId = `${driverId}_button_${i}_${pressType}`;
         try {
-          const card = homey.flow.getDeviceTriggerCard(buttonTriggerId);
+          const card = homey.flow.getTriggerCard(buttonTriggerId);
+
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) return false;
               return true;
             });
-            this.log(`[FLOW] ✅ ${buttonTriggerId}`);
+            this.log(`[FLOW]  ${buttonTriggerId}`);
           }
         } catch (e) {
           // Card may not exist
@@ -58,10 +88,11 @@ class SceneSwitch4Driver extends ZigBeeDriver {
     }
 
     try {
-      const batteryCard = homey.flow.getDeviceTriggerCard('scene_switch_4_battery_changed');
+      const batteryCard = homey.flow.getTriggerCard('scene_switch_4_battery_changed');
+
       if (batteryCard) {
         batteryCard.registerRunListener(async (args, state) => true);
-        this.log('[FLOW] ✅ scene_switch_4_battery_changed');
+        this.log('[FLOW]  scene_switch_4_battery_changed');
       }
     } catch (e) {
       // Card may not exist
@@ -73,3 +104,4 @@ class SceneSwitch4Driver extends ZigBeeDriver {
 }
 
 module.exports = SceneSwitch4Driver;
+

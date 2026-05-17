@@ -4,47 +4,72 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
 class AirPurifierDriver extends ZigBeeDriver {
   async onInit() {
     this.log('Air Purifier Driver initialized');
+    this._registerFlowCards();
+  }
+
+  _registerFlowCards() {
     const triggers = ['air_purifier_turned_on', 'air_purifier_turned_off', 'air_purifier_pm25_changed'];
     for (const id of triggers) {
-      try { this.homey.flow.getDeviceTriggerCard(id); } catch (e) { this.error(`Trigger ${id}: ${e.message}`); }
+      try {
+        this.homey.flow.getTriggerCard(id);
+      } catch (e) {
+        this.error(`Trigger ${id} registration error: ${e.message}`);
+      }
     }
-    try {
-      (() => { try { return this.homey.flow.getActionCard('air_purifier_set_fan_speed'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
+
+    const actions = [
+      {
+        id: 'air_purifier_set_fan_speed',
+        fn: async (args) => {
           await args.device.triggerCapabilityListener('dim', args.speed / 100);
           return true;
-        });
-    } catch (e) { this.error('Action set_fan_speed:', e.message); }
-    try {
-      (() => { try { return this.homey.flow.getActionCard('air_purifier_turn_on'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
+        }
+      },
+      {
+        id: 'air_purifier_turn_on',
+        fn: async (args) => {
+          await args.device._setGangOnOff(1, true).catch(() => { });
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
           return true;
-        });
-    } catch (e) { this.error('Action turn_on:', e.message); }
-    try {
-      (() => { try { return this.homey.flow.getActionCard('air_purifier_turn_off'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
+        }
+      },
+      {
+        id: 'air_purifier_turn_off',
+        fn: async (args) => {
+          await args.device._setGangOnOff(1, false).catch(() => { });
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
           return true;
-        });
-    } catch (e) { this.error('Action turn_off:', e.message); }
-    try {
-      (() => { try { return this.homey.flow.getActionCard('air_purifier_toggle'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
+        }
+      },
+      {
+        id: 'air_purifier_toggle',
+        fn: async (args) => {
           await args.device.triggerCapabilityListener('onoff', !args.device.getCapabilityValue('onoff'));
           return true;
-        });
-    } catch (e) { this.error('Action toggle:', e.message); }
-    try {
-      (() => { try { return this.homey.flow.getActionCard('air_purifier_set_brightness'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
+        }
+      },
+      {
+        id: 'air_purifier_set_brightness',
+        fn: async (args) => {
           await args.device.triggerCapabilityListener('dim', args.brightness / 100);
           return true;
-        });
-    } catch (e) { this.error('Action set_brightness:', e.message); }
+        }
+      }
+    ];
+
+    for (const { id, fn } of actions) {
+      try {
+        const card = this.homey.flow.getActionCard(id);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            return fn(args);
+          });
+        }
+      } catch (e) {
+        this.error(`Action ${id} registration error: ${e.message}`);
+      }
+    }
   }
 }
 

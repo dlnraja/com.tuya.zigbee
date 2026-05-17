@@ -3,9 +3,9 @@
   "name": {
     "en": "2 Gang Wall Remote",
     "fr": "Télécommande murale 2 gangs",
-    "nl": "2-vaks wandafstandsbediening",
+    "nl": "2-gangs wandafstandsbediening",
     "de": "2-fach Wandfernbedienung",
-    "es": "Mando a distancia de pared de 2 grupos"
+    "es": "Mando a distancia de pared 2 gangs"
   },
   "class": "remote",
   "platforms": [
@@ -20,32 +20,6 @@
     "measure_battery",
     "alarm_battery"
   ],
-  "capabilitiesOptions": {
-    "button.1": {
-      "title": {
-        "en": "Button 1",
-        "fr": "Bouton 1",
-        "nl": "Knop 1",
-        "de": "Taste 1"
-      }
-    },
-    "button.2": {
-      "title": {
-        "en": "Button 2",
-        "fr": "Bouton 2",
-        "nl": "Knop 2",
-        "de": "Taste 2"
-      }
-    },
-    "measure_battery": {
-      "title": {
-        "en": "Battery",
-        "fr": "Batterie",
-        "nl": "Batterij",
-        "de": "Batterie"
-      }
-    }
-  },
   "images": {
     "large": "drivers/wall_remote_2_gang/assets/images/large.png",
     "small": "drivers/wall_remote_2_gang/assets/images/small.png",
@@ -58,27 +32,9 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_owgcnkrh",
-      "_TZ3000_owgcnkrh",
-      "_TZ3000_OWGCNKRH",
-      "_tz3000_oikiyf3b",
-      "_TZ3000_oikiyf3b",
-      "_TZ3000_OIKIYF3B",
-      "_tz3000_h1c2eamp",
-      "_TZ3000_h1c2eamp",
-      "_TZ3000_H1C2EAMP",
-      "_tz3400_keyjhapk",
-      "_TZ3400_keyjhapk",
-      "_TZ3400_KEYJHAPK",
-      "_tz3000_5e235jpa",
-      "_TZ3000_5e235jpa",
-      "_TZ3000_5E235JPA",
-      "_tz3000_fkvaniuu",
-      "_TZ3000_fkvaniuu",
-      "_TZ3000_FKVANIUU",
-      "_tz3000_tzvbimpq",
-      "_TZ3000_tzvbimpq",
-      "_TZ3000_TZVBIMPQ"
+      "_TZ3000_wd7pvcs3",
+      "_TZ3000_ab9pba9q",
+      "_TZ3000_df6005om"
     ],
     "productId": [
       "TS0042"
@@ -99,7 +55,7 @@
     "learnmode": {
       "image": "{{driverAssetsPath}}/icon.svg",
       "instruction": {
-        "en": "Press the left button for aprox 10 seconds (the LED should start blinking). A tile for each button will be created. "
+        "en": "Press any button for approx 10 seconds (the LED should start blinking)."
       }
     }
   },
@@ -150,5 +106,31 @@
         "nl": "Controleer op OTA-updates"
       }
     }
-  ]
+  ],
+  "capabilitiesOptions": {
+    "button.1": {
+      "title": {
+        "en": "Button 1",
+        "fr": "Bouton 1",
+        "nl": "Knop 1",
+        "de": "Taste 1"
+      }
+    },
+    "button.2": {
+      "title": {
+        "en": "Button 2",
+        "fr": "Bouton 2",
+        "nl": "Knop 2",
+        "de": "Taste 2"
+      }
+    },
+    "measure_battery": {
+      "title": {
+        "en": "Battery",
+        "fr": "Batterie",
+        "nl": "Batterij",
+        "de": "Batterie"
+      }
+    }
+  }
 }

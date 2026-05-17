@@ -14,8 +14,7 @@ class GarageDoorDevice extends TuyaZigbeeDevice {
 
     // 1. Capability Listeners
     if (this.hasCapability('garagedoor_closed')) {
-      this.registerCapabilityListener('garagedoor_closed', async (value) => {
-        this.log(`[Garage] Door command: ${value ? 'CLOSE' : 'OPEN'}`);
+      this.registerCapabilityListener ('garagedoor_closed', async (value) => { this.log(`[Garage] Door command: ${value ? 'CLOSE' : 'OPEN'}`);
         // Typically DP1 is a toggle or command pulse
         return this.sendTuyaCommand(1, true, 'bool');
       });
@@ -40,8 +39,7 @@ class GarageDoorDevice extends TuyaZigbeeDevice {
         const closed = value === 0 || value === false;
         await this.setCapabilityValue('garagedoor_closed', closed);
         if (this.hasCapability('alarm_contact')) {
-          await this.setCapabilityValue('alarm_contact', !closed);
-        }
+          await this.setCapabilityValue('alarm_contact', !closed); }
         break;
       }
 

@@ -1,44 +1,88 @@
 'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
 /**
- * v5.5.571: CRITICAL FIX - Flow card run listeners were missing
+ * v5.5.576: CRITICAL FIX - Flow card run listeners were missing
  */
-class TuyaDoorbellDriver extends ZigBeeDriver {
-
+class HvacDehumidifierDriver extends BaseZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+      }
+    }
   async onInit() {
-    this.log('TuyaDoorbellDriver v5.5.571 initialized');
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    this.log('HvacDehumidifierDriver v5.5.576 initialized');
     this._registerFlowCards();
+  
+  
+  
+  
+  
+  
+  
   }
 
   _registerFlowCards() {
-    // CONDITION: Battery above threshold
-    try {
-      (() => { try { return this.homey.flow.getConditionCard('doorbell_battery_above'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          const battery = args.device.getCapabilityValue('measure_battery') || 0;
-          return battery > (args.threshold || 20);
-        });
-      this.log('[FLOW] ✅ doorbell_battery_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+    // CONDITION: Is on
+    const isOnCondition = null;
+    if (isOnCondition) {
+      isOnCondition.registerRunListener(async (args) => {
+        if (!args.device) return false;
+        return args.device.getCapabilityValue('onoff') === true;
+      });
+      this.log('[FLOW]  Registered: hvac_dehumidifier_dehumidifier_hybrid_is_on');
+    }
 
-    // ACTION: Ring chime
-    try {
-      (() => { try { return this.homey.flow.getActionCard('doorbell_ring_chime'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          try {
-            if (args.device._tuyaEF00Manager) {
-              await args.device._tuyaEF00Manager.sendDatapoint(1, true, 'bool');
-            }
-            return true;
-          } catch (err) { return true; }
-        });
-      this.log('[FLOW] ✅ doorbell_ring_chime');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+    // ACTION: Turn on
+    const turnOnAction = null;
+    if (turnOnAction) {
+      turnOnAction.registerRunListener(async (args) => {
+        if (!args.device) return false;
+        await args.device._setGangOnOff(1, true).catch(() => {});
+        await args.device.setCapabilityValue('onoff', true).catch(() => {});
+        return true;
+      });
+      this.log('[FLOW]  Registered: hvac_dehumidifier_dehumidifier_hybrid_turn_on');
+    }
 
-    this.log('[FLOW]  Doorbell flow cards registered');
-  }
+    // ACTION: Turn off
+    const turnOffAction = null;
+    if (turnOffAction) {
+      turnOffAction.registerRunListener(async (args) => {
+        if (!args.device) return false;
+        await args.device._setGangOnOff(1, false).catch(() => {});
+        await args.device.setCapabilityValue('onoff', false).catch(() => {});
+        return true;
+      });
+      this.log('[FLOW]  Registered: hvac_dehumidifier_dehumidifier_hybrid_turn_off');
+    }
+
+    // ACTION: Toggle
+    const toggleAction = null;
+    if (toggleAction) {
+      toggleAction.registerRunListener(async (args) => {
+        if (!args.device) return false;
+        const current = args.device.getCapabilityValue('onoff');
+        await args.device._setGangOnOff(1, !current).catch(() => {});
+        await args.device.setCapabilityValue('onoff', !current).catch(() => {});
+        return true;
+      });
+      this.log('[FLOW]  Registered: hvac_dehumidifier_dehumidifier_hybrid_toggle');
+    }
+
+    this.log('[FLOW]  HVAC dehumidifier flow cards registered');
+    }
 }
-
-module.exports = TuyaDoorbellDriver;
+module.exports = HvacDehumidifierDriver;

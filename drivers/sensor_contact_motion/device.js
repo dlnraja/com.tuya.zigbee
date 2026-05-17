@@ -497,7 +497,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
     return {
       // Temperature cluster (0x0402) - v5.5.107: Add sanity check
       temperatureMeasurement: {
-        attributeReport: (data) => {
+        attributeReport: async (data) => {
           if (data.measuredValue !== undefined && data.measuredValue !== -32768) {
             let temp = Math.round((data.measuredValue / 100) * 10) / 10;
             // v5.5.793: Use validation constants
@@ -521,7 +521,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
 
       // Humidity cluster (0x0405) - v5.5.107: Add sanity check
       relativeHumidity: {
-        attributeReport: (data) => {
+        attributeReport: async (data) => {
           if (data.measuredValue !== undefined && data.measuredValue !== 65535) {
             let hum = Math.round(data.measuredValue / 100);
             // v5.5.793: Auto-detect divisor for devices reporting 0-1000 scale
@@ -549,7 +549,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
 
       // Illuminance cluster (0x0400)
       illuminanceMeasurement: {
-        attributeReport: (data) => {
+        attributeReport: async (data) => {
           if (data.measuredValue !== undefined) {
             let lux = Math.round(Math.pow(10, (data.measuredValue - 1) / 10000));
             // v5.5.793: Validate lux range
@@ -564,7 +564,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
               // v5.5.317: Feed lux to motion inference engine
               this._handleLuxForMotionInference(lux);
             } else {
-              this.log(`[ZCL] ⚠️ Luminance out of range: ${lux} lux`);
+              this.log(`[ZCL] ⚠️ Illuminance out of range: ${lux} lux`);
             }
           }
         }
@@ -573,7 +573,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
       // Battery cluster (0x0001)
       // v5.5.366: Added throttling to prevent battery spam (4x4_Pete forum #851)
       powerConfiguration: {
-        attributeReport: (data) => {
+        attributeReport: async (data) => {
           if (data.batteryPercentageRemaining !== undefined) {
             // v5.5.366: Throttle battery reports to prevent spam
             const now = Date.now();
@@ -1074,7 +1074,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
       }
 
       // Zone Status Change Notification (motion detected)
-      iasCluster.onZoneStatusChangeNotification = (payload) => {
+      iasCluster.onZoneStatusChangeNotification = async (payload) => {
         // v5.5.299: Mark device as awake on ANY motion event
         this._markDeviceAwake();
 
@@ -1109,7 +1109,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
       };
 
       // Attribute listener for zone status
-      iasCluster.on('attr.zoneStatus', (status) => {
+      iasCluster.on('attr.zoneStatus', async (status) => {
         // v5.5.299: Mark device as awake on zone status changes
         this._markDeviceAwake();
 
@@ -1512,7 +1512,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
    * Handle lux updates for motion inference
    * When PIR is unreliable, use lux changes to infer motion
    */
-  _handleLuxForMotionInference(lux) {
+  async _handleLuxForMotionInference(lux) {
     if (!this._motionLuxInference) return;
 
     // Feed lux to inference engine
@@ -1642,7 +1642,7 @@ class MotionSensorDevice extends BatteryMixin(SensorBase) {
   /**
    * Process smart lux update with intelligent reporting logic
    */
-  _processSmartLuxUpdate(luxValue) {
+  async _processSmartLuxUpdate(luxValue) {
     const now = Date.now();
     const config = this._luxSmartReporting;
 

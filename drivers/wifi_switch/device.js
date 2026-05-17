@@ -1,23 +1,20 @@
 'use strict';
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
-class WiFiSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(TuyaLocalDevice)) {
-
-  get mainsPowered() { return true; }
+class WiFiSwitchDevice extends TuyaLocalDevice {
 
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '7':  { capability: null }, // countdown_1 (seconds)
-      '13': { capability: null }, // master switch
-      '14': { capability: null }, // power-on status: off/on/memory
-      '15': { capability: null }, // indicator: none/relay/pos
-      '16': { capability: null }, // backlight switch
-      '17': { capability: null }, // cycle timing
-      '18': { capability: null }, // random timing
-      '19': { capability: null }, // inching switch
+      '7':  { capability: 'unknown' }, // countdown_1 (seconds)
+      '13': { capability: 'unknown' }, // master switch
+      '14': { capability: 'unknown' }, // power-on status: off/on/memory
+      '15': { capability: 'unknown' }, // indicator: none/relay/pos
+      '16': { capability: 'unknown' }, // backlight switch
+      '17': { capability: 'unknown' }, // cycle timing
+      '18': { capability: 'unknown' }, // random timing
+      '19': { capability: 'unknown' }, // inching switch
       '20': { capability: 'measure_power', divisor: 10 },
       '21': { capability: 'measure_current', divisor: 1000 },
       '22': { capability: 'measure_voltage', divisor: 10 },

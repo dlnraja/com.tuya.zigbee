@@ -1,21 +1,22 @@
 'use strict';
-const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
+// A8: NaN Safety - use safeDivide/safeMultiply
+  require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiHumidifierDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '2':  { capability: null },
-      '3':  { capability: null },
-      '4':  { capability: null },
+      '2':  { capability: 'unknown' },
+      '3':  { capability: 'unknown' },
+      '4':  { capability: 'unknown' },
       '6':  { capability: 'measure_humidity' },
       '7':  { capability: 'measure_temperature', divisor: 10 },
-      '11': { capability: null },
-      '12': { capability: null },
-      '13': { capability: null },
+      '11': { capability: 'unknown' },
+      '12': { capability: 'unknown' },
+      '13': { capability: 'unknown' },
       '14': { capability: 'alarm_water' },
-      '15': { capability: null },
-      '101': { capability: null },
+      '15': { capability: 'unknown' },
+      '101': { capability: 'unknown' },
     };
   }
 

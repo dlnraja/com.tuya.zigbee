@@ -2,47 +2,76 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.580: CRITICAL FIX - Flow card run listeners were missing
- */
 class PresenceSensorRadarDriver extends ZigBeeDriver {
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
     this.log('PresenceSensorRadarDriver v5.5.580 initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // CONDITION: Is present
+    // TRIGGERS
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('presence_sensor_radar_is_present'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('sensor_motion_presence_hybrid_is_present');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
-      this.log('[FLOW] ✅ presence_sensor_radar_is_present');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition sensor_motion_presence_hybrid_is_present: ${err.message}`); }
 
-    // CONDITION: Illuminance above
     try {
-      (() => { try { return this.homey.flow.getConditionCard('presence_sensor_radar_illuminance_above'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('sensor_motion_presence_hybrid_illuminance_above');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const lux = args.device.getCapabilityValue('measure_luminance') || 0;
-          return lux > (args.lux || 100);
+          return args.device.getCapabilityValue('alarm_motion') === true;
         });
-      this.log('[FLOW] ✅ presence_sensor_radar_illuminance_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition sensor_motion_presence_hybrid_illuminance_above: ${err.message}`); }
 
-    // CONDITION: Distance within
     try {
-      (() => { try { return this.homey.flow.getConditionCard('presence_sensor_radar_distance_within'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('sensor_motion_presence_hybrid_distance_within');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const distance = args.device.getCapabilityValue('measure_luminance.distance') || 0;
-          return distance <= (args.distance || 300);
+          return args.device.getCapabilityValue('alarm_motion') === true;
         });
-      this.log('[FLOW] ✅ presence_sensor_radar_distance_within');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition sensor_motion_presence_hybrid_distance_within: ${err.message}`); }
 
-    this.log('[FLOW] Presence sensor radar flow cards registered');
+    try {
+      const card = this.homey.flow.getConditionCard('sensor_motion_presence_hybrid_motion_active');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('alarm_motion') === true;
+        });
+      }
+    } catch (err) { this.error(`Condition sensor_motion_presence_hybrid_motion_active: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

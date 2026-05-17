@@ -2,14 +2,14 @@
 
 // v5.5.295: Fix "Class extends value undefined" stderr error
 // Use try-catch to handle potential circular dependency issues
-letCoverBase;
+let HybridCoverBase;
 try {
- CoverBase = require('../../lib/devices/UnifiedCoverBase');
+  HybridCoverBase = require('../../lib/devices/HybridCoverBase');
 } catch (error) {
-  // Fallback to direct ZigBeeDevice ifCoverBase fails
-  console.error('[CURTAIN_MOTOR] Failed to loadCoverBase, using ZigBeeDevice fallback:', error.message);
+  // Fallback to direct ZigBeeDevice if HybridCoverBase fails
+  console.error('[CURTAIN_MOTOR] Failed to load HybridCoverBase, using ZigBeeDevice fallback:', error.message);
   const { ZigBeeDevice } = require('homey-zigbeedriver');
- CoverBase = ZigBeeDevice;
+  HybridCoverBase = ZigBeeDevice;
 }
 
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -25,7 +25,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * ║  Variants: GIRIER, Lonsonho, Zemismart, MOES, Longsam                      ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedCoverBase)) {
+class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCoverBase)) {
 
   // v5.5.322: Auto-detect power source - battery curtain robots use 3xAA
   get mainsPowered() {
@@ -65,56 +65,60 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   get gangCount() { return 1; }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      // v5.6.0: Track state for physical button detection
-      this._lastCoverState = null;
-      this._appCommandPending = false;
-      this._appCommandTimeout = null;
-      // Parent handles ALL: cover listeners, Tuya DP, ZCL
-      await super.onNodeInit({ zclNode });
-      this.log('[CURTAIN] v5.6.0 - DPs: 1-15,101-105 | ZCL: 258,6,8,EF00');
-      // v5.5.322: Add luminance + button for Tuya DP curtains (Eftychis #779)
-      // v5.8.40: Skip for TS130F ZCL curtains (Tbao forum: _TZ3000_bs93npae)
-      const { protocol } = this._detectProtocol?.() || {};
-      if (protocol !== 'ZCL') {
+    // v5.6.0: Track state for physical button detection
+    this._lastCoverState = null;
+    this._appCommandPending = false;
+    this._appCommandTimeout = null;
+
+    // Parent handles ALL: cover listeners, Tuya DP, ZCL
+    await super.onNodeInit({ zclNode });
+    this.log('[CURTAIN] v5.6.0 - DPs: 1-15,101-105 | ZCL: 258,6,8,EF00');
+
+    // v5.5.322: Add luminance + button for Tuya DP curtains (Eftychis #779)
+    // v5.8.40: Skip for TS130F ZCL curtains (Tbao forum: _TZ3000_bs93npae)
+    const { protocol } = this._detectProtocol?.() || {};
+    if (protocol !== 'ZCL') {
       if (!this.hasCapability('measure_luminance')) {
-      try {
-      await this.addCapability('measure_luminance');
-      this.log('[CURTAIN] ✅ Added measure_luminance capability');
-      } catch (e) { /* ignore */ }
+        try {
+          await this.addCapability('measure_luminance');
+          this.log('[CURTAIN] ✅ Added measure_luminance capability');
+        } catch (e) { /* ignore */ }
       }
       if (!this.hasCapability('button')) {
-      try {
-      await this.addCapability('button');
-      this.log('[CURTAIN] ✅ Added button capability');
-      } catch (e) { /* ignore */ }
+        try {
+          await this.addCapability('button');
+          this.log('[CURTAIN] ✅ Added button capability');
+        } catch (e) { /* ignore */ }
       }
-      } else {
+    } else {
       // v5.8.40: Remove wrong capabilities from TS130F ZCL curtains
       for (const cap of ['measure_luminance', 'button', 'measure_battery']) {
-      if (this.hasCapability(cap)) {
-      this.removeCapability(cap).catch(() => {});
-      this.log(`[CURTAIN] 🗑️ Removed incorrect ${cap} from ZCL curtain`);
+        if (this.hasCapability(cap)) {
+          this.removeCapability(cap).catch(() => {});
+          this.log(`[CURTAIN] 🗑️ Removed incorrect ${cap} from ZCL curtain`);
+        }
       }
-      }
-      }
-      // v5.8.79: Only setup Tuya DP listener and calibration for Tuya DP devices
-      // Root cause (Tbao TS130F): _setupTuyaDPListener on ZCL devices registers
-      // unused listeners and _applyCalibrationSettings sends Tuya DP commands that
-      // fail silently on ZCL devices (TS130F uses windowCovering cluster 258)
-      if (protocol !== 'ZCL') {
+    }
+
+    // v5.8.79: Only setup Tuya DP listener and calibration for Tuya DP devices
+    // Root cause (Tbao TS130F): _setupTuyaDPListener on ZCL devices registers
+    // unused listeners and _applyCalibrationSettings sends Tuya DP commands that
+    // fail silently on ZCL devices (TS130F uses windowCovering cluster 258)
+    if (protocol !== 'ZCL') {
       await this._setupTuyaDPListener();
       await this._applyCalibrationSettings();
-      } else {
+    } else {
       this.log('[CURTAIN] ℹ️ ZCL device - skipping Tuya DP listener and calibration');
-      }
-      // v5.6.0: Initialize bidirectional button support
-      await this.initPhysicalButtonDetection(zclNode);
-      await this.initVirtualButtons();
-      // v5.7.9: Start connection health monitor
-      this._startHealthMonitor();
-      this.log('[CURTAIN] v5.7.9 ✅ Ready with enhanced communication');
-    }, 'onNodeInit');
+    }
+
+    // v5.6.0: Initialize bidirectional button support
+    await this.initPhysicalButtonDetection(zclNode);
+    await this.initVirtualButtons();
+
+    // v5.7.9: Start connection health monitor
+    this._startHealthMonitor();
+
+    this.log('[CURTAIN] v5.7.9 ✅ Ready with enhanced communication');
   }
 
   /**
@@ -199,14 +203,14 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     // Luminance (lux) - DP14 or DP104
     if ((dp === 14 || dp === 104) && this.hasCapability('measure_luminance')) {
       const lux = typeof value === 'number' ? value : parseInt(value, 10) || 0;
-      await this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
+      this.setCapabilityValue('measure_luminance', parseFloat(lux)).catch(() => { });
       this.log(`[CURTAIN] 💡 Lux: ${lux}`);
     }
 
     // Battery - DP13
     if (dp === 13 && this.hasCapability('measure_battery')) {
       const battery = typeof value === 'number' ? value : parseInt(value, 10) || 0;
-      await this.setCapabilityValue('measure_battery', parseFloat(Math.min(100, Math.max(0, battery)))).catch(() => { });
+      this.setCapabilityValue('measure_battery', parseFloat(Math.min(100, Math.max(0, battery)))).catch(() => { });
       this.log(`[CURTAIN] 🔋 Battery: ${battery}%`);
     }
 
@@ -226,11 +230,11 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
       await this.setCapabilityValue('button', true).catch(() => { });
       // Reset after short delay
       setTimeout(() => {
-        await this.setCapabilityValue('button', false).catch(() => { });
+        this.setCapabilityValue('button', false).catch(() => { });
       }, 500);
 
       // Trigger flow card if available
-      const triggerCard = this.homey.flow.getDeviceTriggerCard('curtain_motor_button_pressed');
+      const triggerCard = this.homey.flow.getDeviceTriggerCard('button_pressed');
       if (triggerCard) {
         await triggerCard.trigger(this, { button: 1, scene: 'pressed' }).catch(() => { });
       }
@@ -304,7 +308,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   }
 
   // v5.5.935: REMOVED broken _sendTuyaDP override
-  // ParentCoverBase._sendTuyaDP() handles all DP communication correctly
+  // Parent HybridCoverBase._sendTuyaDP() handles all DP communication correctly
   // The override was causing "tuya.datapoint: value is an unexpected property" errors
 }
 

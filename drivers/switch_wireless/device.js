@@ -15,11 +15,10 @@ class SwitchWirelessDevice extends VirtualButtonMixin(PhysicalButtonMixin(Batter
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      this.buttonCount = 1;
+    await this._safeInvoke(async () => { this.buttonCount = 1;
       // v9.7.3: Initialization is now orchestrated by Mixins.
       // Handles battery reporting and physical button detection (Single/Double/Long).
-      await super.onNodeInit({ zclNode });
+      await super.onNodeInit({ zclNode  });
       this.log('[WIRELESS-SWITCH] ✅ Universal initialization complete');
     }, 'onNodeInit');
   }

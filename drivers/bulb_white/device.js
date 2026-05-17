@@ -1,6 +1,5 @@
 'use strict';
-
-constLightBase = require('../../lib/devices/UnifiedLightBase');
+const LightBase = require('../../lib/devices/UnifiedLightBase');
 
 /**
  * White Bulb Device - v5.3.64 SIMPLIFIED
@@ -16,29 +15,30 @@ class WhiteBulbDevice extends LightBase {
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
       await super.onNodeInit({ zclNode });
-      // --- Attribute Reporting Configuration (auto-generated) ---
+
+      // --- Attribute Reporting Configuration ---
       try {
-      await this.configureAttributeReporting([
-      {
-      cluster: 'genPowerCfg',
-      attributeName: 'batteryPercentageRemaining',
-      minInterval: 3600,
-      maxInterval: 43200,
-      minChange: 2,
-      }
-      ]);
-      this.log('Attribute reporting configured successfully');
+        await this.configureAttributeReporting([
+          {
+            cluster: 'genPowerCfg',
+            attributeName: 'batteryPercentageRemaining',
+            minInterval: 3600,
+            maxInterval: 43200,
+            minChange: 2,
+          }
+        ]);
+        this.log('Attribute reporting configured successfully');
       } catch (err) {
-      this.log('Attribute reporting config failed (device may not support it):', err.message);
+        this.log('Attribute reporting config failed (device may not support it):', err.message);
       }
-      await super.onNodeInit({ zclNode });
+
       this.log('[BULB] ✅ White bulb ready');
     }, 'onNodeInit');
   }
 
-
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
+    if (super.onDeleted) super.onDeleted();
   }
 }
 

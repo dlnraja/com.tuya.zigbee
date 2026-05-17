@@ -8,7 +8,13 @@
         "nl": "Gang 1 aangezet",
         "de": "Gang 1 eingeschaltet"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_gang1_turned_off",
@@ -18,7 +24,13 @@
         "nl": "Gang 1 uitgezet",
         "de": "Gang 1 ausgeschaltet"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_gang2_turned_on",
@@ -28,7 +40,13 @@
         "nl": "Gang 2 aangezet",
         "de": "Gang 2 eingeschaltet"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_gang2_turned_off",
@@ -38,7 +56,13 @@
         "nl": "Gang 2 uitgezet",
         "de": "Gang 2 ausgeschaltet"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_gang3_turned_on",
@@ -48,7 +72,13 @@
         "nl": "Gang 3 aangezet",
         "de": "Gang 3 eingeschaltet"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_gang3_turned_off",
@@ -58,7 +88,13 @@
         "nl": "Gang 3 uitgezet",
         "de": "Gang 3 ausgeschaltet"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_physical_gang1_on",
@@ -74,7 +110,13 @@
         "nl": "Fysieke knop schakelt gang 1 in",
         "de": "Physische Taste schaltet gang 1 ein"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_physical_gang1_off",
@@ -84,7 +126,13 @@
         "nl": "Fysiek gang 1 UIT",
         "de": "Physisch gang 1 AUS"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_physical_gang2_on",
@@ -94,7 +142,13 @@
         "nl": "Fysiek gang 2 AAN",
         "de": "Physisch gang 2 EIN"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_physical_gang2_off",
@@ -104,7 +158,13 @@
         "nl": "Fysiek gang 2 UIT",
         "de": "Physisch gang 2 AUS"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_physical_gang3_on",
@@ -114,7 +174,13 @@
         "nl": "Fysiek gang 3 AAN",
         "de": "Physisch gang 3 EIN"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_physical_gang3_off",
@@ -124,92 +190,11 @@
         "nl": "Fysiek gang 3 UIT",
         "de": "Physisch gang 3 AUS"
       },
-      "args": []
-    },
-    {
-      "id": "switch_3gang_turned_on",
-      "title": {
-        "en": "Turned on",
-        "fr": "Allumé",
-        "nl": "Aangezet",
-        "de": "Eingeschaltet"
-      },
-      "args": []
-    },
-    {
-      "id": "switch_3gang_turned_off",
-      "title": {
-        "en": "Turned off",
-        "fr": "Éteint",
-        "nl": "Uitgezet",
-        "de": "Ausgeschaltet"
-      },
-      "args": []
-    },
-    {
-      "id": "switch_3gang_power_changed",
-      "title": {
-        "en": "Power changed",
-        "fr": "Puissance changée",
-        "nl": "Vermogen gewijzigd",
-        "de": "Leistung geändert"
-      },
-      "args": []
-    },
-    {
-      "id": "switch_3gang_gang1_scene",
-      "title": {
-        "en": "Gang 1 scene triggered"
-      },
-      "args": [],
-      "tokens": [
+      "args": [
         {
-          "name": "action",
-          "type": "string",
-          "title": {
-            "en": "Action"
-          },
-          "example": {
-            "en": "on"
-          }
-        }
-      ]
-    },
-    {
-      "id": "switch_3gang_gang2_scene",
-      "title": {
-        "en": "Gang 2 scene triggered"
-      },
-      "args": [],
-      "tokens": [
-        {
-          "name": "action",
-          "type": "string",
-          "title": {
-            "en": "Action"
-          },
-          "example": {
-            "en": "on"
-          }
-        }
-      ]
-    },
-    {
-      "id": "switch_3gang_gang3_scene",
-      "title": {
-        "en": "Gang 3 scene triggered"
-      },
-      "args": [],
-      "tokens": [
-        {
-          "name": "action",
-          "type": "string",
-          "title": {
-            "en": "Action"
-          },
-          "example": {
-            "en": "on"
-          }
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
         }
       ]
     }
@@ -223,7 +208,13 @@
         "nl": "Gang 1 is !{{aan|uit}}",
         "de": "Gang 1 ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_gang2_is_on",
@@ -233,7 +224,13 @@
         "nl": "Gang 2 is !{{aan|uit}}",
         "de": "Gang 2 ist !{{ein|aus}}"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_gang3_is_on",
@@ -243,17 +240,13 @@
         "nl": "Gang 3 is !{{aan|uit}}",
         "de": "Gang 3 ist !{{ein|aus}}"
       },
-      "args": []
-    },
-    {
-      "id": "switch_3gang_is_on",
-      "title": {
-        "en": "Is !{{on|off}}",
-        "fr": "Est !{{allumé|éteint}}",
-        "nl": "Is !{{aan|uit}}",
-        "de": "Ist !{{ein|aus}}"
-      },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     }
   ],
   "actions": [
@@ -265,7 +258,13 @@
         "nl": "Gang 1 aanzetten",
         "de": "Gang 1 einschalten"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_turn_off_gang1",
@@ -275,7 +274,13 @@
         "nl": "Gang 1 uitzetten",
         "de": "Gang 1 ausschalten"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_turn_on_gang2",
@@ -285,7 +290,13 @@
         "nl": "Gang 2 aanzetten",
         "de": "Gang 2 einschalten"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_turn_off_gang2",
@@ -295,7 +306,13 @@
         "nl": "Gang 2 uitzetten",
         "de": "Gang 2 ausschalten"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_turn_on_gang3",
@@ -305,7 +322,13 @@
         "nl": "Gang 3 aanzetten",
         "de": "Gang 3 einschalten"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_turn_off_gang3",
@@ -315,222 +338,59 @@
         "nl": "Gang 3 uitzetten",
         "de": "Gang 3 ausschalten"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_toggle_gang1",
       "title": {
         "en": "Toggle gang 1",
-        "nl": "Gang 1 wisselen"
+        "fr": "Basculer gang 1",
+        "nl": "Gang 1 wisselen",
+        "de": "Gang 1 umschalten"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_toggle_gang2",
       "title": {
         "en": "Toggle gang 2",
-        "nl": "Gang 2 wisselen"
+        "fr": "Basculer gang 2",
+        "nl": "Gang 2 wisselen",
+        "de": "Gang 2 umschalten"
       },
-      "args": []
+      "args": [
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
+        }
+      ]
     },
     {
       "id": "switch_3gang_toggle_gang3",
       "title": {
         "en": "Toggle gang 3",
-        "nl": "Gang 3 wisselen"
-      },
-      "args": []
-    },
-    {
-      "id": "switch_3gang_turn_on_all",
-      "title": {
-        "en": "Turn on all gangs",
-        "nl": "Alle gangs aanzetten"
-      },
-      "args": []
-    },
-    {
-      "id": "switch_3gang_turn_off_all",
-      "title": {
-        "en": "Turn off all gangs",
-        "nl": "Alle gangs uitzetten"
-      },
-      "args": []
-    },
-    {
-      "id": "switch_3gang_set_backlight",
-      "title": {
-        "en": "Set LED backlight mode",
-        "fr": "Mode rétroéclairage LED"
-      },
-      "hint": {
-        "en": "Control the switch LED indicator (requires Tuya DP15 support)"
+        "fr": "Basculer gang 3",
+        "nl": "Gang 3 wisselen",
+        "de": "Gang 3 umschalten"
       },
       "args": [
         {
-          "type": "dropdown",
-          "name": "mode",
-          "title": {
-            "en": "Mode"
-          },
-          "values": [
-            {
-              "id": "off",
-              "label": {
-                "en": "Off"
-              }
-            },
-            {
-              "id": "normal",
-              "label": {
-                "en": "Normal (LED when ON)"
-              }
-            },
-            {
-              "id": "inverted",
-              "label": {
-                "en": "Inverted (LED when OFF)"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "switch_3gang_set_backlight_color",
-      "title": {
-        "en": "Set LED color",
-        "fr": "Couleur LED"
-      },
-      "args": [
-        {
-          "type": "dropdown",
-          "name": "state",
-          "title": {
-            "en": "State"
-          },
-          "values": [
-            {
-              "id": "on",
-              "label": {
-                "en": "When ON"
-              }
-            },
-            {
-              "id": "off",
-              "label": {
-                "en": "When OFF"
-              }
-            }
-          ]
-        },
-        {
-          "type": "dropdown",
-          "name": "color",
-          "title": {
-            "en": "Color"
-          },
-          "values": [
-            {
-              "id": "blue",
-              "label": {
-                "en": "Blue"
-              }
-            },
-            {
-              "id": "red",
-              "label": {
-                "en": "Red"
-              }
-            },
-            {
-              "id": "green",
-              "label": {
-                "en": "Green"
-              }
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "switch_3gang_set_backlight_brightness",
-      "title": {
-        "en": "Set LED brightness",
-        "fr": "Luminosité LED"
-      },
-      "args": [
-        {
-          "type": "range",
-          "name": "brightness",
-          "min": 0,
-          "max": 100,
-          "step": 10,
-          "title": {
-            "en": "Brightness %"
-          }
-        }
-      ]
-    },
-    {
-      "id": "switch_3gang_turn_on",
-      "title": {
-        "en": "Turn on",
-        "fr": "Allumer",
-        "nl": "Aanzetten",
-        "de": "Einschalten"
-      },
-      "args": []
-    },
-    {
-      "id": "switch_3gang_turn_off",
-      "title": {
-        "en": "Turn off",
-        "fr": "Éteindre",
-        "nl": "Uitzetten",
-        "de": "Ausschalten"
-      },
-      "args": []
-    },
-    {
-      "id": "switch_3gang_toggle",
-      "title": {
-        "en": "Toggle",
-        "fr": "Basculer",
-        "nl": "Wisselen",
-        "de": "Umschalten"
-      },
-      "args": []
-    },
-    {
-      "id": "switch_3gang_set_scene_mode",
-      "title": {
-        "en": "Set scene mode"
-      },
-      "args": [
-        {
-          "name": "mode",
-          "type": "dropdown",
-          "values": [
-            {
-              "id": "auto",
-              "label": {
-                "en": "Auto (Normal + flows)"
-              }
-            },
-            {
-              "id": "magic",
-              "label": {
-                "en": "Magic (Scene only)"
-              }
-            },
-            {
-              "id": "both",
-              "label": {
-                "en": "Both (Load + scene)"
-              }
-            }
-          ]
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_3gang"
         }
       ]
     }

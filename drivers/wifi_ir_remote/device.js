@@ -5,9 +5,9 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':   { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '2':   { capability: null },
-      '201': { capability: null },
-      '202': { capability: null },
+      '2':   { capability: 'unknown' },
+      '201': { capability: 'unknown' },
+      '202': { capability: 'unknown' },
     };
   }
 

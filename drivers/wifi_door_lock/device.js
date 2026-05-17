@@ -7,23 +7,23 @@ class WiFiDoorLockDevice extends TuyaLocalDevice {
       '1':  { capability: 'locked', writable: true,
         transform: (v) => !!v,
         reverseTransform: (v) => !!v },
-      '2':  { capability: null },
-      '3':  { capability: null },
+      '2':  { capability: 'unknown' },
+      '3':  { capability: 'unknown' },
       '4':  { capability: 'measure_battery' },
       '8':  { capability: 'locked',
         transform: (v) => v === 'locked' || v === true },
-      '10': { capability: null },
+      '10': { capability: 'unknown' },
       '12': { capability: 'alarm_generic',
         transform: (v) => v !== 0 && v !== 'normal' },
       '15': { capability: 'alarm_contact',
         transform: (v) => !!v },
-      '16': { capability: null },
-      '19': { capability: null },
-      '20': { capability: null },
-      '21': { capability: null },
-      '25': { capability: null },
-      '36': { capability: null },
-      '46': { capability: null },
+      '16': { capability: 'unknown' },
+      '19': { capability: 'unknown' },
+      '20': { capability: 'unknown' },
+      '21': { capability: 'unknown' },
+      '25': { capability: 'unknown' },
+      '36': { capability: 'unknown' },
+      '46': { capability: 'unknown' },
     };
   }
 
@@ -40,6 +40,18 @@ class WiFiDoorLockDevice extends TuyaLocalDevice {
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 

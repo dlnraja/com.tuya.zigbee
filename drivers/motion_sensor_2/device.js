@@ -12,8 +12,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 class motion_sensor_2 extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
       this.printNode();
       if (this.isFirstInit()){
       await this.configureAttributeReporting([
@@ -46,7 +45,7 @@ class motion_sensor_2 extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
       // alarm_motion handler
       zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME]
       .onZoneStatusChangeNotification = payload => {
-      this.onZoneStatusChangeNotification(payload);
+      this.on(payload);
       };
       // measure_illuminance handler
       zclNode.endpoints[1].clusters[CLUSTER.ILLUMINANCE_MEASUREMENT.NAME]

@@ -1,4 +1,6 @@
 'use strict';
+const { safeDivide, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
@@ -9,13 +11,13 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * Supports: TS011F, TS0115, TS0601 USB outlets with power monitoring
  * Features: Multiple sockets, USB ports, LED control, button detection, power measurement
  *
- * ═══════════════════════════════════════════════════════════════════════════
+ * 
  * KNOWN ISSUES & MODEL VARIATIONS (v5.4.7 Documentation)
- * ═══════════════════════════════════════════════════════════════════════════
+ * 
  *
  * 1. POWER MEASUREMENT DIVISORS:
- *    - Most models: Power /10, Current /1000, Voltage /10, Energy /100
- *    - Some models may use different divisors (e.g., Power /100 or direct values)
+ *    - Most models: Power * 10, Current * 1000, Voltage * 10, Energy * 100
+ *    - Some models may use different divisors (e.g., Power * 100 or direct values)
  *    - If power readings seem incorrect (10x or 100x off), check device firmware
  *    - Alternative DPs: 104 (power), 105 (current), 106 (voltage)
  *
@@ -42,11 +44,9 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  *    - The device shows "batteries: OTHER" but is actually AC-powered
  *    - This is due to auto-detection fallback and does not affect functionality
  *
- * ═══════════════════════════════════════════════════════════════════════════
+ * 
  */
 class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
-
-  get mainsPowered() { return true; }
 
   get plugCapabilities() {
     return ['onoff', 'onoff.socket2', 'onoff.usb1', 'onoff.usb2', 'onoff.led'];
@@ -58,16 +58,16 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
    */
   get dpMappings() {
     return {
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // SOCKET/RELAY CONTROL
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       2: { capability: 'onoff.socket2', transform: (v) => v === 1 || v === true },
       7: { capability: 'onoff', transform: (v) => v === 1 || v === true }, // Alt DP for some models
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // USB PORTS CONTROL - Multiple possible DPs depending on model
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       9: { capability: 'onoff.usb1', transform: (v) => v === 1 || v === true },
       10: { capability: 'onoff.usb2', transform: (v) => v === 1 || v === true },
       // v5.5.35: Additional USB DPs found in some models
@@ -76,15 +76,15 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       11: { capability: 'onoff.usb1', transform: (v) => v === 1 || v === true }, // Alt USB1 DP
       12: { capability: 'onoff.usb2', transform: (v) => v === 1 || v === true }, // Alt USB2 DP
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // LED INDICATOR CONTROL
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       13: { capability: 'onoff.led', transform: (v) => v === 1 || v === true },
       101: { capability: 'onoff.led', transform: (v) => v === 1 || v === true }, // Alt DP
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // POWER MEASUREMENT (Z2M: value in 0.1W or 0.01W depending on model)
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       16: { capability: 'measure_power', divisor: 10 },      // Power W (value/10)
       17: { capability: 'measure_current', divisor: 1000 },  // Current A (value/1000)
       18: { capability: 'measure_voltage', divisor: 10 },    // Voltage V (value/10)
@@ -95,60 +95,65 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       105: { capability: 'measure_current', divisor: 1000 }, // Alt current DP
       106: { capability: 'measure_voltage', divisor: 10 },   // Alt voltage DP
 
-      // ═══════════════════════════════════════════════════════════════════
+      // 
       // BUTTON PRESS DETECTION - v5.5.19: Uses flow trigger instead of capability
-      // ═══════════════════════════════════════════════════════════════════
-      102: { capability: null, flowTrigger: 'button_pressed' },
-      103: { capability: null, flowTrigger: 'button_pressed' },
-      121: { capability: null, flowTrigger: 'button_pressed' },
+      // 
+      102: { flowTrigger: 'button_pressed' },
+      103: { flowTrigger: 'button_pressed' },
+      121: { flowTrigger: 'button_pressed' },
     };
   }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
-      // --- Attribute Reporting Configuration (auto-generated) ---
-      try {
+    this.initPhysicalButtonDetection(); // rule-19 injected
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
       await this.configureAttributeReporting([
-      {
-      cluster: 'haElectricalMeasurement',
-      attributeName: 'activePower',
-      minInterval: 10,
-      maxInterval: 300,
-      minChange: 5,
-      },
-      {
-      cluster: 'haElectricalMeasurement',
-      attributeName: 'rmsVoltage',
-      minInterval: 30,
-      maxInterval: 600,
-      minChange: 1,
-      },
-      {
-      cluster: 'haElectricalMeasurement',
-      attributeName: 'rmsCurrent',
-      minInterval: 30,
-      maxInterval: 600,
-      minChange: 10,
-      }
+        {
+          cluster: 'haElectricalMeasurement',
+          attributeName: 'activePower',
+          minInterval: 10,
+          maxInterval: 300,
+          minChange: 5,
+        },
+        {
+          cluster: 'haElectricalMeasurement',
+          attributeName: 'rmsVoltage',
+          minInterval: 30,
+          maxInterval: 600,
+          minChange: 1,
+        },
+        {
+          cluster: 'haElectricalMeasurement',
+          attributeName: 'rmsCurrent',
+          minInterval: 30,
+          maxInterval: 600,
+          minChange: 10,
+        }
       ]);
       this.log('Attribute reporting configured successfully');
-      } catch (err) {
+    } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-      }
-      // Register capability listeners for control
-      await this._registerCapabilityListeners();
-      // v5.5.19: Register flow trigger for button press
-      this._registerButtonFlowTrigger();
-      // v5.5.35: Request initial state of all switches/USBs
-      this._requestInitialStates();
-      // v5.5.54: Setup ZCL listeners for endpoints 2 and 3 (non-Tuya devices)
-      await this._setupMultiEndpointZCL(zclNode);
-      // Initialize physical and virtual buttons
-      await this.initPhysicalButtonDetection(zclNode);
-      await this.initVirtualButtons();
-      this.log('[USB-ADV] ✅ Ready - Full power monitoring enabled (v5.13.1 + Bidirectional Buttons)');
-    }, 'onNodeInit');
+    }
+
+
+    // Register capability listeners for control
+    await this._registerCapabilityListeners();
+
+    // v5.5.19: Register flow trigger for button press
+    this._registerButtonFlowTrigger();
+
+    // v5.5.35: Request initial state of all switches/USBs
+    this._requestInitialStates();
+
+    // v5.5.54: Setup ZCL listeners for endpoints 2 and 3 (non-Tuya devices)
+    await this._setupMultiEndpointZCL(zclNode);
+
+    // Initialize physical and virtual buttons
+    await this.initPhysicalButtonDetection(zclNode);
+    await this.initVirtualButtons();
+
+    this.log('[USB-ADV]  Ready - Full power monitoring enabled (v5.13.1 + Bidirectional Buttons)');
   }
 
   /**
@@ -162,16 +167,15 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
     // Endpoint 2 - Socket 2 (listen only)
     try {
-      const ep2 = zclNode.endpoints?.[2];
-      if (ep2?.clusters?.onOff) {
+      const ep2 = zclNode.endpoints?.[2];if (ep2?.clusters?.onOff) {
         this.log('[USB-ADV] Endpoint 2 found - setting up ZCL listener');
         this._ep2 = ep2;
 
         // Listen for on/off changes from device
         ep2.clusters.onOff.on('attr.onOff', (value) => {
-          this.log(`[USB-ADV] EP2 ZCL onOff=${value}`);
+          this.log(`[USB-ADV] EP2 ZCL onOff=${value}` );
           if (this.hasCapability('onoff.socket2')) {
-            await this.setCapabilityValue('onoff.socket2', value).catch(this.error);
+            this.setCapabilityValue('onoff.socket2', value).catch(this.error);
           }
         });
       }
@@ -181,16 +185,15 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
 
     // Endpoint 3 - USB or Socket 3 (listen only)
     try {
-      const ep3 = zclNode.endpoints?.[3];
-      if (ep3?.clusters?.onOff) {
+      const ep3 = zclNode.endpoints?.[3];if (ep3?.clusters?.onOff) {
         this.log('[USB-ADV] Endpoint 3 found - setting up ZCL listener');
         this._ep3 = ep3;
 
         // Listen for on/off changes from device
         ep3.clusters.onOff.on('attr.onOff', (value) => {
-          this.log(`[USB-ADV] EP3 ZCL onOff=${value}`);
+          this.log(`[USB-ADV] EP3 ZCL onOff=${value}` );
           if (this.hasCapability('onoff.usb1')) {
-            await this.setCapabilityValue('onoff.usb1', value).catch(this.error);
+            this.setCapabilityValue('onoff.usb1', value).catch(this.error);
           }
         });
       }
@@ -208,11 +211,11 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
       if (this.safeTuyaDataQuery) {
         // All relevant control DPs
         const controlDPs = [1, 2, 3, 4, 7, 9, 10, 11, 12, 13, 101];
-        this.log('[USB-ADV] 📤 Requesting initial states...');
+        this.log('[USB-ADV]  Requesting initial states...');
         await this.safeTuyaDataQuery(controlDPs, {
           logPrefix: '[USB-INIT]',
           delayBetweenQueries: 50
-        }).catch(() => { });
+        }).catch(() => {});
       }
     }, 2000);
   }
@@ -222,7 +225,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
    */
   _registerButtonFlowTrigger() {
     try {
-      this._buttonTrigger = this.homey.flow.getDeviceTriggerCard('usb_outlet_button_pressed');
+      this.homey.flow.getTriggerCard('usb_outlet_button_pressed')?.trigger(this, {}, {}).catch(this.error || console.error)
       this.log('[USB-ADV] Button flow trigger registered');
     } catch (err) {
       this.log('[USB-ADV] Button flow trigger not available:', err.message);
@@ -246,22 +249,16 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
   async _registerCapabilityListeners() {
     // LED control
     if (this.hasCapability('onoff.led')) {
-      this.registerCapabilityListener('onoff.led', async (value) => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
-await this._safeInvoke(async () => {
-
-        this.log('[USB-ADV] LED →', value);
+      this.registerCapabilityListener('onoff.led', async (value) => {
+        this.log('[USB-ADV] LED ', value);
         await this._sendDP(13, value);
-      
-}, 'onoff.ledListener');
-});
+      });
     }
 
     // Socket 2 control - v5.5.54: Try both Tuya DP AND ZCL
     if (this.hasCapability('onoff.socket2')) {
-      this.registerCapabilityListener('onoff.socket2', async (value) => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
-await this._safeInvoke(async () => {
-
-        this.log('[USB-ADV] Socket 2 →', value);
+      this.registerCapabilityListener('onoff.socket2', async (value) => {
+        this.log('[USB-ADV] Socket 2 ', value);
         await this._sendDP(2, value);
         // v5.5.54: Also try ZCL endpoint 2 for non-Tuya devices
         if (this._ep2?.clusters?.onOff) {
@@ -270,17 +267,13 @@ await this._safeInvoke(async () => {
             this.log('[USB-ADV] Socket 2 ZCL command sent');
           } catch (e) { /* Tuya DP probably worked */ }
         }
-      
-}, 'onoff.socket2Listener');
-});
+      });
     }
 
     // USB 1 control - v5.5.54: Try both Tuya DP AND ZCL
     if (this.hasCapability('onoff.usb1')) {
-      this.registerCapabilityListener('onoff.usb1', async (value) => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
-await this._safeInvoke(async () => {
-
-        this.log('[USB-ADV] USB 1 →', value);
+      this.registerCapabilityListener('onoff.usb1', async (value) => {
+        this.log('[USB-ADV] USB 1 ', value);
         // v5.5.35: Try common USB1 DPs
         await this._sendDP(9, value);   // Primary
         await this._sendDP(3, value);   // Alt
@@ -292,24 +285,18 @@ await this._safeInvoke(async () => {
             this.log('[USB-ADV] USB 1 ZCL command sent');
           } catch (e) { /* Tuya DP probably worked */ }
         }
-      
-}, 'onoff.usb1Listener');
-});
+      });
     }
 
     // USB 2 control - try multiple DPs
     if (this.hasCapability('onoff.usb2')) {
-      this.registerCapabilityListener('onoff.usb2', async (value) => { if (typeof this.markAppCommand === 'function') this.markAppCommand(2, value);
-await this._safeInvoke(async () => {
-
-        this.log('[USB-ADV] USB 2 →', value);
+      this.registerCapabilityListener('onoff.usb2', async (value) => {
+        this.log('[USB-ADV] USB 2 ', value);
         // v5.5.35: Try common USB2 DPs
         await this._sendDP(10, value);  // Primary
         await this._sendDP(4, value);   // Alt
         await this._sendDP(12, value);  // Alt
-      
-}, 'onoff.usb2Listener');
-});
+      });
     }
   }
 
@@ -355,18 +342,18 @@ await this._safeInvoke(async () => {
       break;
     case 16:
     case 104: // Power (W)
-      this.log(`[ZCL-DATA] USB_outlet.power raw=${rawValue} converted=${rawValue / 10}W`);
+      this.log(`[ZCL-DATA] USB_outlet.power raw=${rawValue} converted=${rawValue/10}W`);
       break;
     case 17:
     case 105: // Current (A)
-      this.log(`[ZCL-DATA] USB_outlet.current raw=${rawValue} converted=${rawValue / 1000}A`);
+      this.log(`[ZCL-DATA] USB_outlet.current raw=${rawValue} converted=${rawValue/1000}A`);
       break;
     case 18:
     case 106: // Voltage (V)
-      this.log(`[ZCL-DATA] USB_outlet.voltage raw=${rawValue} converted=${rawValue / 10}V`);
+      this.log(`[ZCL-DATA] USB_outlet.voltage raw=${rawValue} converted=${rawValue/10}V`);
       break;
     case 19: // Energy (kWh)
-      this.log(`[ZCL-DATA] USB_outlet.energy raw=${rawValue} converted=${rawValue / 100}kWh`);
+      this.log(`[ZCL-DATA] USB_outlet.energy raw=${rawValue} converted=${rawValue/100}kWh`);
       break;
     case 102:
     case 103:
@@ -390,4 +377,6 @@ await this._safeInvoke(async () => {
 }
 
 module.exports = USBOutletAdvancedDevice;
+
+
 

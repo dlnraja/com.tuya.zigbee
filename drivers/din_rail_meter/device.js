@@ -49,9 +49,8 @@ class DinRailMeterDevice extends UnifiedPlugBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      // v9.7.3: Initialization handled by parent
-      await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => { // v9.7.3: Initialization handled by parent
+      await super.onNodeInit({ zclNode  });
       this.log('DIN Rail Meter v9.7.3 initialized');
       this.log('[DIN-METER] ✅ Ready');
     }, 'onNodeInit');
@@ -59,7 +58,7 @@ class DinRailMeterDevice extends UnifiedPlugBase {
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     // No need for manual state updates here as dpMappings getter uses current settings
-    await super.onSettings({ oldSettings, newSettings, changedKeys });
+    await super.on({ oldSettings, newSettings, changedKeys });
     
     if (changedKeys.includes('power_scale') || changedKeys.includes('bidirectional')) {
       this.log(`[DIN-METER] Settings changed, DP mappings will adapt: scale=${newSettings.power_scale}, bidi=${newSettings.bidirectional}`);
@@ -67,7 +66,7 @@ class DinRailMeterDevice extends UnifiedPlugBase {
   }
 
   async onDeleted() {
-    await super.onDeleted();
+    await super.onNodeInit({ zclNode });
     this.log('Device deleted, cleaning up');
   }
 }

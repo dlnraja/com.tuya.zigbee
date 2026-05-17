@@ -17,14 +17,13 @@ class SmartRCBODevice extends UnifiedPlugBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
       this.log('[RCBO] v9.7.3 ✅ Ready');
     }, 'onNodeInit');
   }
 
   async onDeleted() {
-    await super.onDeleted();
+    await super.onNodeInit({ zclNode });
     this.log('Device deleted, cleaning up');
   }
 }

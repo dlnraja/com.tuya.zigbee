@@ -1,6 +1,8 @@
 'use strict';
+const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-constThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
+
+const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 
 /**
  * Smart Heater Controller - Zigbee Equivalent of WiFi Heater Modules
@@ -18,9 +20,9 @@ constThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
  * - Energy usage tracking
  *
  * Tuya DPs:
- * - DP 1: Power on/off
- * - DP 2: Target temperature (°C)
- * - DP 3: Current temperature (°C)
+ * - DP 1: Power (on / off)
+ * - DP 2: Target temperature (Â°C)
+ * - DP 3: Current temperature (Â°C)
  * - DP 4: Thermostat mode (manual/auto/schedule)
  * - DP 6: Power consumption (W)
  * - DP 7: Energy consumed (kWh)
@@ -28,86 +30,90 @@ constThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
  * - DP 102: Overheat protection
  * - DP 103: Temperature calibration
  */
-class SmartHeaterControllerDevice extends ThermostatBase {
-
-  get mainsPowered() { return true; }
+class SmartHeaterControllerDevice extends UnifiedThermostatBase {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
-      // --- Homey Time Sync for TRV/LCD/Thermostat devices ---
-      // Syncs the device clock with the Homey box time every 6 hours.
-      // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
-      try {
+    // --- Homey Time Sync for TRV/LCD/Thermostat devices ---
+    // Syncs the device clock with the Homey box time every 6 hours.
+    // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.
+    try {
       const ZigbeeTimeSync = require('../../lib/ZigbeeTimeSync');
-      this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000
-      });
+      this._timeSync = new ZigbeeTimeSync(this, { throttleMs:6 * 60 * 60 * 1000 });
+      
       // Initial sync after 10 seconds (let device settle)
       this.homey.setTimeout(async () => {
-      try {
-      const result = await this._timeSync.sync({ force: true });
-      if (result.success) {
-      this.log('[TimeSync] Initial time sync successful');
-      } else if (result.reason === 'no_rtc') {
-      // Try Tuya EF00 DP 0x24 fallback for non-ZCL devices
-      await this._tuyaTimeSyncFallback();
-      }
-      } catch (e) {
-      this.log('[TimeSync] Initial sync failed (non-critical):', e.message);
-      }
+        try {
+          const result = await this._timeSync.sync({ force: true });
+          if (result.success) {
+            this.log('[TimeSync] Initial time sync successful');
+          } else if (result.reason === 'no_rtc') {
+            // Try Tuya EF00 DP 0x24 fallback for non-ZCL devices
+            await this._tuyaTimeSyncFallback();
+          }
+        } catch (e) {
+          this.log('[TimeSync] Initial sync failed (non-critical):', e.message);
+        }
       }, 10000);
+      
       // Periodic sync every 6 hours
       this._timeSyncInterval = this.homey.setInterval(async () => {
-      try {
-      const result = await this._timeSync.sync();
-      if (!result.success && result.reason === 'no_rtc') {
-      await this._tuyaTimeSyncFallback();
-      }
-      } catch (e) {
-      this.log('[TimeSync] Periodic sync failed:', e.message);
-      }
-      }, 6 * 60 * 60 * 1000);
-      } catch (e) {
+        try {
+          const result = await this._timeSync.sync();
+          if (!result.success && result.reason === 'no_rtc') {
+            await this._tuyaTimeSyncFallback();
+          }
+        } catch (e) {
+          this.log('[TimeSync] Periodic sync failed:', e.message);
+        }
+      },6 * 60 * 60 * 1000);
+    } catch (e) {
       this.log('[TimeSync] Time sync init failed (non-critical):', e.message);
-      }
-      // --- Attribute Reporting Configuration (auto-generated) ---
-      try {
+    }
+
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
       await this.configureAttributeReporting([
-      {
-      cluster: 'msTemperatureMeasurement',
-      attributeName: 'measuredValue',
-      minInterval: 30,
-      maxInterval: 600,
-      minChange: 50,
-      },
-      {
-      cluster: 'haElectricalMeasurement',
-      attributeName: 'activePower',
-      minInterval: 10,
-      maxInterval: 300,
-      minChange: 5,
-      }
+        {
+          cluster: 'msTemperatureMeasurement',
+          attributeName: 'measuredValue',
+          minInterval: 30,
+          maxInterval: 600,
+          minChange: 50,
+        },
+        {
+          cluster: 'haElectricalMeasurement',
+          attributeName: 'activePower',
+          minInterval: 10,
+          maxInterval: 300,
+          minChange: 5,
+        }
       ]);
       this.log('Attribute reporting configured successfully');
-      } catch (err) {
+    } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-      }
-      this.log('[HEATER] 🔥 Initializing smart heater controller...');
-      // Initialize settings with defaults
-      this._temperatureCalibration = this.getSetting('temperature_calibration') || 0;
-      this._heatingHysteresis = this.getSetting('heating_hysteresis') || 1.0;
-      this._overheatProtection = this.getSetting('overheat_protection') || 40;
-      this._powerLimit = this.getSetting('power_limit') || 2000;
-      this._childLock = this.getSetting('child_lock') || false;
-      this.log(`[HEATER] ⚙️ Configuration: Calibration=${this._temperatureCalibration}°C, Hysteresis=${this._heatingHysteresis}°C, Overheat=${this._overheatProtection}°C`);
-      // Call parent initialization
-      await super.onNodeInit({ zclNode });
-      // Register setting listeners
-      this.registerSettings();
-      // Setup thermostat mode mapping
-      this.setupThermostatModes();
-      this.log('[HEATER] ✅ Smart heater controller initialized successfully');
-    }, 'onNodeInit');
+    }
+
+    this.log('[HEATER]  Initializing smart heater controller...');
+
+    // Initialize settings with defaults
+    this._temperatureCalibration = this.getSetting('temperature_calibration') || 0;
+    this._heatingHysteresis = this.getSetting('heating_hysteresis') || 1.0;
+    this._overheatProtection = this.getSetting('overheat_protection') || 40;
+    this._powerLimit = this.getSetting('power_limit') || 2000;
+    this._childLock = this.getSetting('child_lock') || false;
+
+    this.log(`[HEATER]  Configuration: Calibration=${this._temperatureCalibration}Â°C, Hysteresis=${this._heatingHysteresis}Â°C, Overheat=${this._overheatProtection}Â°C`);
+
+    // Call parent initialization
+    await super.onNodeInit({ zclNode });
+
+    // Register setting listeners
+    this.registerSettings();
+
+    // Setup thermostat mode mapping
+    this.setupThermostatModes();
+
+    this.log('[HEATER]  Smart heater controller initialized successfully');
   }
 
   /**
@@ -137,42 +143,42 @@ class SmartHeaterControllerDevice extends ThermostatBase {
   registerSettings() {
     this.registerSetting('temperature_calibration', (newValue) => {
       this._temperatureCalibration = newValue;
-      this.log(`[HEATER] ⚙️ Temperature calibration updated: ${newValue}°C`);
+      this.log(`[HEATER]  Temperature calibration updated: ${newValue}Â°C`);
       // Send calibration to device
       this._sendCalibration(newValue);
-    });
+      });
 
     this.registerSetting('heating_hysteresis', (newValue) => {
       this._heatingHysteresis = newValue;
-      this.log(`[HEATER] ⚙️ Heating hysteresis updated: ${newValue}°C`);
-    });
+      this.log(`[HEATER]  Heating hysteresis updated: ${newValue}Â°C`);
+      });
 
     this.registerSetting('overheat_protection', (newValue) => {
       this._overheatProtection = newValue;
-      this.log(`[HEATER] ⚙️ Overheat protection updated: ${newValue}°C`);
+      this.log(`[HEATER]  Overheat protection updated: ${newValue}Â°C`);
       this._sendOverheatProtection(newValue);
-    });
+      });
 
     this.registerSetting('power_limit', (newValue) => {
       this._powerLimit = newValue;
-      this.log(`[HEATER] ⚙️ Power limit updated: ${newValue}W`);
-    });
+      this.log(`[HEATER]  Power limit updated: ${newValue}W`);
+      });
 
     this.registerSetting('child_lock', (newValue) => {
       this._childLock = newValue;
-      this.log(`[HEATER] ⚙️ Child lock ${newValue ? 'ENABLED' : 'DISABLED'}`);
+      this.log(`[HEATER]  Child lock ${newValue ? 'ENABLED' : 'DISABLED'}`);
       this._sendChildLock(newValue);
-    });
+      });
   }
 
   /**
    * Handle Tuya datapoints specific to heater control
    */
   async _handleDP(dp, value) {
-    this.log(`[HEATER] 📡 Received DP ${dp}: ${value}`);
+    this.log(`[HEATER]  Received DP ${dp}: ${value}`);
 
     switch (dp) {
-    case 1: // Power on/off
+    case 1: //Power on/off
       await this._handlePowerState(value);
       break;
 
@@ -205,7 +211,7 @@ class SmartHeaterControllerDevice extends ThermostatBase {
       break;
 
     case 103: // Temperature calibration response
-      this.log(`[HEATER] 🌡️ Temperature calibration confirmed: ${value}°C`);
+      this.log(`[HEATER]  Temperature calibration confirmed: ${value}Â°C`);
       break;
 
     default:
@@ -221,7 +227,7 @@ class SmartHeaterControllerDevice extends ThermostatBase {
   async _handlePowerState(powerOn) {
     const isOn = Boolean(powerOn);
     await this.setCapabilityValue('onoff', isOn);
-    this.log(`[HEATER] 🔥 Power: ${isOn ? 'ON' : 'OFF'}`);
+    this.log(`[HEATER]  Power: ${isOn ? 'ON' : 'OFF'}`);
 
     // Update thermostat mode if turned off
     if (!isOn) {
@@ -237,9 +243,9 @@ class SmartHeaterControllerDevice extends ThermostatBase {
       // Apply calibration
       const calibratedTemp = temperature + this._temperatureCalibration;
       await this.setCapabilityValue('target_temperature', parseFloat(calibratedTemp));
-      this.log(`[HEATER] 🎯 Target temperature: ${temperature}°C (calibrated: ${calibratedTemp}°C)`);
+      this.log(`[HEATER]  Target temperature: ${temperature}Â°C (calibrated: ${calibratedTemp}Â°C)`);
     } else {
-      this.log(`[HEATER] ⚠️ Invalid target temperature: ${temperature}`);
+      this.log(`[HEATER]  Invalid target temperature: ${temperature}`);
     }
   }
 
@@ -251,11 +257,11 @@ class SmartHeaterControllerDevice extends ThermostatBase {
       // Apply calibration
       const calibratedTemp = temperature + this._temperatureCalibration;
       await this.setCapabilityValue('measure_temperature', parseFloat(calibratedTemp));
-      this.log(`[HEATER] 🌡️ Current temperature: ${temperature}°C (calibrated: ${calibratedTemp}°C)`);
+      this.log(`[HEATER]  Current temperature: ${temperature}Â°C (calibrated: ${calibratedTemp}Â°C)`);
 
       // Check overheat protection
       if (temperature >= this._overheatProtection) {
-        this.log(`[HEATER] 🚨 OVERHEAT DETECTED: ${temperature}°C >= ${this._overheatProtection}°C`);
+        this.log(`[HEATER]  OVERHEAT DETECTED: ${temperature}Â°C >= ${this._overheatProtection}Â°C`);
         await this.setCapabilityValue('alarm_generic', true);
         // Trigger emergency shutdown
         await this._emergencyShutdown();
@@ -263,7 +269,7 @@ class SmartHeaterControllerDevice extends ThermostatBase {
         await this.setCapabilityValue('alarm_generic', false);
       }
     } else {
-      this.log(`[HEATER] ⚠️ Invalid temperature reading: ${temperature}`);
+      this.log(`[HEATER]  Invalid temperature reading: ${temperature}`);
     }
   }
 
@@ -273,7 +279,7 @@ class SmartHeaterControllerDevice extends ThermostatBase {
   async _handleThermostatMode(modeValue) {
     const modeName = this._thermostatModeNames[modeValue] || 'manual';
     await this.setCapabilityValue('thermostat_mode', modeName);
-    this.log(`[HEATER] 🎛️ Thermostat mode: ${modeName} (${modeValue})`);
+    this.log(`[HEATER]  Thermostat mode: ${modeName} (${modeValue})`);
   }
 
   /**
@@ -282,15 +288,15 @@ class SmartHeaterControllerDevice extends ThermostatBase {
   async _handlePowerConsumption(power) {
     if (typeof power === 'number' && power >= 0 && power <= 5000) {
       await this.setCapabilityValue('measure_power', parseFloat(power));
-      this.log(`[HEATER] ⚡ Power consumption: ${power}W`);
+      this.log(`[HEATER]  Power consumption: ${power}W`);
 
       // Check power limit
       if (power > this._powerLimit) {
-        this.log(`[HEATER] 🚨 POWER LIMIT EXCEEDED: ${power}W > ${this._powerLimit}W`);
+        this.log(`[HEATER]  POWER LIMIT EXCEEDED: ${power}W > ${this._powerLimit}W`);
         await this.setCapabilityValue('alarm_generic', true);
       }
     } else {
-      this.log(`[HEATER] ⚠️ Invalid power reading: ${power}`);
+      this.log(`[HEATER]  Invalid power reading: ${power}`);
     }
   }
 
@@ -300,9 +306,9 @@ class SmartHeaterControllerDevice extends ThermostatBase {
   async _handleEnergyConsumption(energy) {
     if (typeof energy === 'number' && energy >= 0) {
       // Convert to kWh if needed
-      const energyKwh = energy > 1000 ? energy / 1000 : energy;
+      const energyKwh = energy > 1000 ? energy * 1000 : energy;
       await this.setCapabilityValue('meter_power', parseFloat(energyKwh));
-      this.log(`[HEATER] 📊 Energy consumed: ${energyKwh} kWh`);
+      this.log(`[HEATER]  Energy consumed: ${energyKwh} kWh`);
     }
   }
 
@@ -312,7 +318,7 @@ class SmartHeaterControllerDevice extends ThermostatBase {
   async _handleChildLockStatus(locked) {
     const isLocked = Boolean(locked);
     this._childLock = isLocked;
-    this.log(`[HEATER] 🔒 Child lock: ${isLocked ? 'LOCKED' : 'UNLOCKED'}`);
+    this.log(`[HEATER]  Child lock: ${isLocked ? 'LOCKED' : 'UNLOCKED'}`);
   }
 
   /**
@@ -321,7 +327,7 @@ class SmartHeaterControllerDevice extends ThermostatBase {
   async _handleOverheatProtection(triggered) {
     const isTriggered = Boolean(triggered);
     await this.setCapabilityValue('alarm_generic', isTriggered);
-    this.log(`[HEATER] 🚨 Overheat protection: ${isTriggered ? 'TRIGGERED' : 'NORMAL'}`);
+    this.log(`[HEATER]  Overheat protection: ${isTriggered ? 'TRIGGERED' : 'NORMAL'}`);
 
     if (isTriggered) {
       // Force shutdown
@@ -331,7 +337,7 @@ class SmartHeaterControllerDevice extends ThermostatBase {
       this.driver.overheatAlarmTrigger?.trigger(this, {
         temperature: this.getCapabilityValue('measure_temperature') || 0,
         power: this.getCapabilityValue('measure_power') || 0
-      }, {}).catch(() => { });
+      }, {}).catch(() => {});
     }
   }
 
@@ -339,7 +345,7 @@ class SmartHeaterControllerDevice extends ThermostatBase {
    * Emergency shutdown procedure
    */
   async _emergencyShutdown() {
-    this.log('[HEATER] 🚨 EMERGENCY SHUTDOWN ACTIVATED');
+    this.log('[HEATER]  EMERGENCY SHUTDOWN ACTIVATED');
 
     try {
       // Turn off heater immediately
@@ -353,9 +359,9 @@ class SmartHeaterControllerDevice extends ThermostatBase {
         data: Buffer.from([0]) // false
       });
 
-      this.log('[HEATER] ✅ Emergency shutdown completed');
+      this.log('[HEATER]  Emergency shutdown completed');
     } catch (err) {
-      this.error('[HEATER] ❌ Emergency shutdown failed:', err);
+      this.error('[HEATER]  Emergency shutdown failed:', err);
     }
   }
 
@@ -367,7 +373,7 @@ class SmartHeaterControllerDevice extends ThermostatBase {
       await this.zclNode?.endpoints?.[1]?.clusters?.tuya?.datapoint({
         dp: 103,
         datatype: 2, // value (int)
-        data: Buffer.from([Math.round(calibration * 10)]) // Send in 0.1°C units
+        data: Buffer.from([Math.round(calibration)])
       });
     } catch (err) {
       this.log('[HEATER] Failed to send calibration:', err.message);
@@ -405,7 +411,7 @@ class SmartHeaterControllerDevice extends ThermostatBase {
   }
 
   /**
-   * Get heater status for flows/apps
+   * Get heater status for (flows / apps)
    */
   getHeaterStatus() {
     return {
@@ -421,12 +427,12 @@ class SmartHeaterControllerDevice extends ThermostatBase {
   }
 
   onDeleted() {
-    this.log('[HEATER] 🔥 Smart heater controller device deleted');
+    this.log('[HEATER]  Smart heater controller device deleted');
   }
 
   /**
-   * Tuya EF00 time sync fallback (DP 0x24 / decimal 36)
-   * Sends current time with timezone offset for Tuya-native thermostat/TRV devices.
+   * Tuya EF00 time sync fallback (DP (0x24 / decimal) 36)
+   * Sends current time with timezone offset for Tuya-native (thermostat / TRV) devices.
    */
   async _tuyaTimeSyncFallback() {
     try {
@@ -439,7 +445,7 @@ class SmartHeaterControllerDevice extends ThermostatBase {
       try {
         const tz = this.homey.clock.getTimezone();
         const tzDate = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-        utcOffset = Math.round((tzDate - now) / 3600000);
+        utcOffset = Math.round((tzDate - safeDivide(now), 3600000));
       } catch (e) { /* use UTC */ }
 
       // Tuya time format: [year-2000, month, day, hour, minute, second, weekday(0=Mon)]
@@ -463,3 +469,4 @@ class SmartHeaterControllerDevice extends ThermostatBase {
 }
 
 module.exports = SmartHeaterControllerDevice;
+

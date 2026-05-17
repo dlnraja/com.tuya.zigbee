@@ -13,9 +13,8 @@ const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 class Button8GangDevice extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      this.buttonCount = 8;
-      await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => { this.buttonCount = 8;
+      await super.onNodeInit({ zclNode  });
       this.log('[Button8Gang] ✅ Initialized with Mixin architecture');
     }, 'onNodeInit');
   }

@@ -1,21 +1,22 @@
 'use strict';
+const { safeDivide } = require('../../lib/utils/tuyaUtils.js');
 const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
 class WiFiDehumidifierDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '2':  { capability: null }, // mode: auto/manual/dry_clothes/sleep
-      '4':  { capability: null }, // fan speed: low/mid/high
+      '2':  { capability: 'unknown' }, // mode: auto/manual/dry_clothes/sleep
+      '4':  { capability: 'unknown' }, // fan speed: low/mid/high
       '5':  { capability: 'target_humidity', writable: true },
       '6':  { capability: 'measure_humidity' },
       '7':  { capability: 'measure_temperature' },
       '11': { capability: 'alarm_water', transform: (v) => !!v },
-      '12': { capability: null }, // child_lock
-      '13': { capability: null }, // anion (ionizer)
-      '14': { capability: null }, // countdown
-      '101': { capability: null }, // defrost
-      '102': { capability: null }, // filter_reset
+      '12': { capability: 'unknown' }, // child_lock
+      '13': { capability: 'unknown' }, // anion (ionizer)
+      '14': { capability: 'unknown' }, // countdown
+      '101': { capability: 'unknown' }, // defrost
+      '102': { capability: 'unknown' }, // filter_reset
     };
   }
 

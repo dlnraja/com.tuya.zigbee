@@ -1,7 +1,5 @@
 'use strict';
-const BatteryMixin = require('../../lib/tuya/BatteryMixin');
-
-const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * Gas Detector Device - TS0601 Tuya DP Protocol
@@ -19,7 +17,7 @@ const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
  * - DP16: silence (bool) - mute alarm
  * - DP21: alarm_ringtone (enum: 0-4 = melody_1 to melody_5)
  */
-class GasDetectorDevice extends BatteryMixin(SensorBase) {
+class GasDetectorDevice extends UnifiedSensorBase {
   get mainsPowered() { return true; }
   get sensorCapabilities() { return ['alarm_gas']; }
   
@@ -32,11 +30,9 @@ class GasDetectorDevice extends BatteryMixin(SensorBase) {
         transform: (v) => v === 1 || v === true || v === 'alarm'
       },
       // DP2: Gas concentration value (LEL %)
-      2: {
-        capability: null,
-        internal: 'gas_value',
+      2: { internal: true, type: 'gas_value',
         transform: (v) => {
-          device.log(`[GAS] 📊 Gas concentration: ${v} LEL%`);
+          device.log(`[GAS]  Gas concentration: ${v} LEL%`);
           // Store for diagnostics, trigger alarm if high
           device._gasValue = v;
           if (v > 10) { // High gas level threshold
@@ -46,61 +42,49 @@ class GasDetectorDevice extends BatteryMixin(SensorBase) {
         }
       },
       // DP7: Alarm duration time (seconds)
-      7: {
-        capability: null,
-        internal: 'alarm_time',
+      7: { internal: true, type: 'alarm_time',
         transform: (v) => {
-          device.log(`[GAS] ⏱️ Alarm time: ${v}s`);
+          device.log(`[GAS]  Alarm time: ${v}s`);
           return v;
         }
       },
       // DP8: Self-test trigger
-      8: {
-        capability: null,
-        internal: 'self_test',
+      8: { internal: true, type: 'self_test',
         transform: (v) => {
-          device.log(`[GAS] 🔬 Self-test: ${v ? 'active' : 'inactive'}`);
+          device.log(`[GAS]  Self-test: ${v ? 'active' : 'inactive'}`);
           return v === 1 || v === true;
         }
       },
       // DP9: Self-test result
-      9: {
-        capability: null,
-        internal: 'self_test_result',
+      9: { internal: true, type: 'self_test_result',
         transform: (v) => {
           const results = ['checking', 'success', 'failure', 'others'];
           const result = results[v] || 'unknown';
-          device.log(`[GAS] 🔬 Self-test result: ${result}`);
+          device.log(`[GAS]  Self-test result: ${result}`);
           return result;
         }
       },
       // DP10: Preheat status (sensor warming up)
-      10: {
-        capability: null,
-        internal: 'preheat',
+      10: { internal: true, type: 'preheat',
         transform: (v) => {
           const preheating = v === 1 || v === true;
-          device.log(`[GAS] 🔥 Preheat: ${preheating ? 'warming up' : 'ready'}`);
+          device.log(`[GAS]  Preheat: ${preheating ? 'warming up' : 'ready'}`);
           return preheating;
         }
       },
       // DP16: Silence alarm
-      16: {
-        capability: null,
-        internal: 'silence',
+      16: { internal: true, type: 'silence',
         transform: (v) => {
-          device.log(`[GAS] 🔇 Silence: ${v ? 'muted' : 'unmuted'}`);
+          device.log(`[GAS]  Silence: ${v ? 'muted' : 'unmuted'}`);
           return v === 1 || v === true;
         }
       },
       // DP21: Alarm ringtone selection
-      21: {
-        capability: null,
-        internal: 'alarm_ringtone',
+      21: { internal: true, type: 'alarm_ringtone',
         transform: (v) => {
           const melodies = ['melody_1', 'melody_2', 'melody_3', 'melody_4', 'melody_5'];
           const melody = melodies[v] || 'melody_1';
-          device.log(`[GAS] 🎵 Ringtone: ${melody}`);
+          device.log(`[GAS]  Ringtone: ${melody}`);
           return melody;
         }
       }
@@ -108,26 +92,25 @@ class GasDetectorDevice extends BatteryMixin(SensorBase) {
   }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
-      // --- Attribute Reporting Configuration (auto-generated) ---
-      try {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
       await this.configureAttributeReporting([
-      {
-      cluster: 'genPowerCfg',
-      attributeName: 'batteryPercentageRemaining',
-      minInterval: 3600,
-      maxInterval: 43200,
-      minChange: 2,
-      }
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        }
       ]);
       this.log('Attribute reporting configured successfully');
-      } catch (err) {
+    } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-      }
-      await super.onNodeInit({ zclNode });this.log('[GAS-DETECTOR] v5.5.932 ✅ Ready');
-      this.log('[GAS-DETECTOR] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
-    }, 'onNodeInit');
+    }
+
+    await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injectedthis.log('[GAS-DETECTOR] v5.5.932  Ready');
+    this.log('[GAS-DETECTOR] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
   }
 
 

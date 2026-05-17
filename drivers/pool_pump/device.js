@@ -16,13 +16,12 @@ class PoolPumpDevice extends UnifiedPlugBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
       this.log('Pool Pump Controller ✅ v9.7.3 Ready');
     }, 'onNodeInit');
   }
 
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }

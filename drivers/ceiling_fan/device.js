@@ -1,7 +1,7 @@
 'use strict';
-constLightBase = require('../../lib/devices/UnifiedLightBase');
+const UnifiedLightBase = require('../../lib/devices/UnifiedLightBase');
 
-class CeilingFanDevice extends LightBase {
+class CeilingFanDevice extends UnifiedLightBase {
   get mainsPowered() { return true; }
   get lightCapabilities() { return ['onoff', 'dim']; }
 
@@ -14,25 +14,23 @@ class CeilingFanDevice extends LightBase {
   }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
-      // --- Attribute Reporting Configuration (auto-generated) ---
-      try {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
       await this.configureAttributeReporting([
-      {
-      cluster: 'genPowerCfg',
-      attributeName: 'batteryPercentageRemaining',
-      minInterval: 3600,
-      maxInterval: 43200,
-      minChange: 2,
-      }
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        }
       ]);
       this.log('Attribute reporting configured successfully');
-      } catch (err) {
+    } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-      }
-      await super.onNodeInit({ zclNode });this.log('[FAN] ✅ Ready');
-    }, 'onNodeInit');
+    }
+
+    await super.onNodeInit({ zclNode });this.log('[FAN]  Ready');
   }
 
 

@@ -2,71 +2,100 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.576: CRITICAL FIX - Flow card run listeners were missing
- */
 class LedStripAdvancedDriver extends ZigBeeDriver {
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
 
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
     this.log('LedStripAdvancedDriver v5.5.576 initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // CONDITION: Is on
+    // TRIGGERS
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
+
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('led_strip_advanced_is_on'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('led_strip_advanced_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ led_strip_advanced_is_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition led_strip_advanced_is_on: ${err.message}`); }
 
-    // ACTION: Turn on
+    // ACTIONS
     try {
-      (() => { try { return this.homey.flow.getActionCard('led_strip_advanced_turn_on'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('led_strip_advanced_turn_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
-          await args.device.setCapabilityValue('onoff', true).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ led_strip_advanced_turn_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action led_strip_advanced_turn_on: ${err.message}`); }
 
-    // ACTION: Turn off
     try {
-      (() => { try { return this.homey.flow.getActionCard('led_strip_advanced_turn_off'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('led_strip_advanced_turn_off');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
-          await args.device.setCapabilityValue('onoff', false).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ led_strip_advanced_turn_off');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action led_strip_advanced_turn_off: ${err.message}`); }
 
-    // ACTION: Toggle
     try {
-      (() => { try { return this.homey.flow.getActionCard('led_strip_advanced_toggle'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('led_strip_advanced_toggle');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device._setGangOnOff(1, !current).catch(() => {});
-          await args.device.setCapabilityValue('onoff', !current).catch(() => {});
+          await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ led_strip_advanced_toggle');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action led_strip_advanced_toggle: ${err.message}`); }
 
-    // ACTION: Set brightness
     try {
-      (() => { try { return this.homey.flow.getActionCard('led_strip_advanced_set_dim'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('led_strip_advanced_set_dim');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.triggerCapabilityListener('dim', args.brightness);
+          await args.device.triggerCapabilityListener('dim', args.brightness || args.value || 1).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ led_strip_advanced_set_dim');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action led_strip_advanced_set_dim: ${err.message}`); }
 
-    this.log('[FLOW]  LED strip advanced flow cards registered');
+    try {
+      const card = this.homey.flow.getActionCard('led_strip_advanced_set_brightness');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.triggerCapabilityListener('dim', args.brightness || args.value || 1).catch(() => {});
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action led_strip_advanced_set_brightness: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
   }
 }
 

@@ -1,6 +1,6 @@
 'use strict';
 
-const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 const { getSensorConfig, transformPresence } = require('./configs');
 const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
 const IntelligentDPAutoDiscovery = require('../../lib/sensors/IntelligentDPAutoDiscovery');
@@ -8,42 +8,35 @@ const IntelligentDPAutoDiscovery = require('../../lib/sensors/IntelligentDPAutoD
 /**
  * PresenceSensorRadarDevice - v8.0.0 ULTIMATE
  * Universal Radar/mmWave sensor driver with intelligent inference and auto-discovery.
- * 
- * Features:
- * - Decoupled inference logic (v8 library)
- * - Autonomous DP discovery for unknown variants
- * - Smart ZCL/Tuya DP hybrid processing
- * - Zero-Defect reliability architecture
  */
-class PresenceSensorRadarDevice extends SensorBase {
+class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
   async onNodeInit({ zclNode }) {
-    this.log('[RADAR] 🚀 v8.0.0 Ultimate Initializing...');
-    
-    // Initialize v8 components
-    this._inference = new IntelligentPresenceInference(this);
-    this._discovery = new IntelligentDPAutoDiscovery(this);
-    
-    // Parent init handles standard sensor logic
-    await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => {
+      this.log('[RADAR] 🚀 v8.0.0 Ultimate Initializing...');
+      
+      // Initialize v8 components
+      this._inference = new IntelligentPresenceInference(this);
+      this._discovery = new IntelligentDPAutoDiscovery(this);
+      
+      // Parent init handles standard sensor logic
+      await super.onNodeInit({ zclNode });
 
-    // Detect firmware version for inference tuning
-    const appVersion = this.getStoreValue('appVersion') || this.zclNode.endpoints[1]?.clusters?.basic?.appVersion;
-    if (appVersion) this._inference.setFirmwareInfo(appVersion);
+      // Detect firmware version for inference tuning
+      const appVersion = this.getStoreValue('appVersion') || this.zclNode.endpoints[1]?.clusters?.basic?.appVersion;
+      if (appVersion) this._inference.setFirmwareInfo(appVersion);
 
-    // Setup Tuya EF00 cluster handling
-    this._setupTuyaHandling(zclNode);
-    
-    // Start polling/refresh cycle
-    this._startInitializationCycle(zclNode);
+      // Start polling/refresh cycle
+      this._startInitializationCycle(zclNode);
 
-    this.log('[RADAR] ✅ Ready');
+      this.log('[RADAR] ✅ Ready');
+    }, 'onNodeInit');
   }
 
   /**
    * Main Tuya DP processing entry point
    */
-  async onTuyaDP(dpId, value, dpType) {
+  onTuyaDP(dpId, value, dpType) {
     const config = getSensorConfig(this.getManufacturerName(), this.getStoreValue('modelId'));
     const mapping = config.dpMap?.[dpId];
 
@@ -58,7 +51,7 @@ class PresenceSensorRadarDevice extends SensorBase {
       const result = this._discovery.applyDiscoveredValue(dpId, value);
       if (result) {
         this.log(`[RADAR] 🧠 Auto-Discovery: DP${dpId} → ${result.capability}=${result.value} (${result.confidence}%)`);
-        return this.setCapabilityValue(result.capability, result.value).catch(() => {});
+        return this.setCapabilityValue(result.capability, result.value).catch(() => { });
       }
     }
 
@@ -69,7 +62,7 @@ class PresenceSensorRadarDevice extends SensorBase {
   /**
    * Handle DPs defined in the SENSOR_CONFIGS
    */
-  async _handleStaticDP(dpId, value, mapping, config) {
+  _handleStaticDP(dpId, value, mapping, config) {
     // A. Handle presence DPs
     if (mapping.cap === 'alarm_motion') {
       let presence = transformPresence(value, mapping.type, config.invertPresence, config.configName);
@@ -109,25 +102,20 @@ class PresenceSensorRadarDevice extends SensorBase {
       const battery = value / (mapping.divisor || 1);
       return this.setCapabilityValue('measure_battery', Math.min(100, battery)).catch(() => {});
     }
-
-    // E. Handle internal settings/settings
-    if (mapping.setting) {
-      // Logic for syncing device DPs back to Homey settings if needed
-    }
   }
 
   /**
    * Initialize polling and time sync
    */
   _startInitializationCycle(zclNode) {
-    // 1. Time Sync (some sensors require it to start reporting)
-    setTimeout(() => this._sendTimeSync(zclNode), 2000);
+    // 1. Time Sync
+    this.homey.setTimeout(() => this._sendTimeSync(zclNode), 2000);
 
     // 2. DP Refresh
-    setTimeout(() => this._requestDPRefresh(zclNode), 3000);
+    this.homey.setTimeout(() => this._requestDPRefresh(zclNode), 3000);
 
     // 3. Periodic polling (60s)
-    this._pollingInterval = setInterval(() => {
+    this._pollingInterval = this.homey.setInterval(() => {
       this._requestDPRefresh(zclNode);
     }, 60000);
   }
@@ -151,22 +139,28 @@ class PresenceSensorRadarDevice extends SensorBase {
 
       await tuya.command('mcuSyncTime', { payloadSize: 8, payload }).catch(() => {});
       this.log('[RADAR] ⏰ Time sync sent');
-    } catch (e) { /* ignore */ }
+    } catch (e) {
+      this.error('[RADAR] Time sync failed:', e.message);
+    }
   }
 
   async _requestDPRefresh(zclNode) {
     try {
       const ep1 = zclNode?.endpoints?.[1];
       const tuya = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
-      if (tuya?.dataQuery) await tuya.dataQuery().catch(() => {});
-    } catch (e) { /* ignore */ }
+      if (tuya?.dataQuery) {
+        await tuya.dataQuery().catch(() => {});
+      }
+    } catch (e) {
+      this.error('[RADAR] DP refresh failed:', e.message);
+    }
   }
 
   /**
    * Handle settings changes
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    await super.onSettings({ oldSettings, newSettings, changedKeys });
+    if (super.onSettings) await super.onSettings({ oldSettings, newSettings, changedKeys });
     
     const config = getSensorConfig(this.getManufacturerName(), this.getStoreValue('modelId'));
     if (!config.dpMap) return;
@@ -179,14 +173,21 @@ class PresenceSensorRadarDevice extends SensorBase {
         if (dpConfig.divisor) value = Math.round(value * dpConfig.divisor);
         
         this.log(`[RADAR] ⚙️ Syncing ${key} → DP${dpId} value=${value}`);
-        await this.tuyaEF00Manager?.sendDP(parseInt(dpId), value, 'value').catch(e => this.error(e));
+        if (this.sendTuyaCommand) {
+          await this.sendTuyaCommand(parseInt(dpId), value, 'value').catch(e => this.error(e));
+        }
       }
     }
   }
 
+  onUninit() {
+    if (this._pollingInterval) this.homey.clearInterval(this._pollingInterval);
+    if (super.onUninit) super.onUninit();
+  }
+
   onDeleted() {
-    if (this._pollingInterval) clearInterval(this._pollingInterval);
-    super.onDeleted();
+    this.log('[RADAR] Device deleted');
+    if (super.onDeleted) super.onDeleted();
   }
 }
 

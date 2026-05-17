@@ -13,60 +13,71 @@ class BulbTunableDriver extends ZigBeeDriver {
   }
 
   _registerFlowCards() {
+    const P = 'bulb_tunable_white_bulb_tunable';
+    
     // CONDITION: Is on
     try {
-      (() => { try { return this.homey.flow.getConditionCard('bulb_tunable_white_bulb_tunable_is_on'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const isOnCard = this.homey.flow.getConditionCard(`${P}_is_on`);
+      if (isOnCard) {
+        isOnCard.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ bulb_tunable_white_bulb_tunable_is_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) {
+      this.error(`Condition card ${P}_is_on registration error: ${err.message}`);
+    }
 
-    // ACTION: Turn on
-    try {
-      (() => { try { return this.homey.flow.getActionCard('bulb_tunable_white_bulb_tunable_turn_on'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
+    const actions = [
+      {
+        id: `${P}_turn_on`,
+        fn: async (args) => {
+          await args.device._setGangOnOff(1, true).catch(() => { });
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
           return true;
-        });
-      this.log('[FLOW] ✅ bulb_tunable_white_bulb_tunable_turn_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // ACTION: Turn off
-    try {
-      (() => { try { return this.homey.flow.getActionCard('bulb_tunable_white_bulb_tunable_turn_off'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
+        }
+      },
+      {
+        id: `${P}_turn_off`,
+        fn: async (args) => {
+          await args.device._setGangOnOff(1, false).catch(() => { });
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
           return true;
-        });
-      this.log('[FLOW] ✅ bulb_tunable_white_bulb_tunable_turn_off');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // ACTION: Toggle
-    try {
-      (() => { try { return this.homey.flow.getActionCard('bulb_tunable_white_bulb_tunable_toggle'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
+        }
+      },
+      {
+        id: `${P}_toggle`,
+        fn: async (args) => {
           const current = args.device.getCapabilityValue('onoff');
-          await args.device._setGangOnOff(1, !current).catch(() => {});
+          await args.device._setGangOnOff(1, !current).catch(() => { });
           await args.device.setCapabilityValue('onoff', !current).catch(() => {});
           return true;
-        });
-      this.log('[FLOW] ✅ bulb_tunable_white_bulb_tunable_toggle');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
-
-    // ACTION: Set brightness
-    try {
-      (() => { try { return this.homey.flow.getActionCard('bulb_tunable_white_bulb_tunable_set_dim'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
+        }
+      },
+      {
+        id: `${P}_set_dim`,
+        fn: async (args) => {
           await args.device.triggerCapabilityListener('dim', args.brightness);
           return true;
-        });
-      this.log('[FLOW] ✅ bulb_tunable_white_bulb_tunable_set_dim');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+        }
+      }
+    ];
 
-    this.log('[FLOW]  Tunable white bulb flow cards registered');
+    for (const { id, fn } of actions) {
+      try {
+        const card = this.homey.flow.getActionCard(id);
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            return fn(args);
+          });
+        }
+      } catch (err) {
+        this.error(`Action card ${id} registration error: ${err.message}`);
+      }
+    }
+
+    this.log('[FLOW] Tunable white bulb flow cards registered');
   }
 }
 

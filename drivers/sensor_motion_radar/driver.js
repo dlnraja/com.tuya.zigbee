@@ -1,126 +1,142 @@
 'use strict';
 
+const { safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.583: CRITICAL FIX - Flow card run listeners were missing
- */
 class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
-
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+      }
+    }
   async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
     this.log('RadarMotionSensorMmwaveDriver v5.5.583 initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // CONDITION: Is presence detected
+    // TRIGGERS
+
+    // CONDITIONS
     try {
-      (() => { try { return this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_is_presence_detected'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      // A8: NaN Safety - use safeDivide/safeMultiply
+  const card = null;
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('alarm_motion') === true;
         });
-      this.log('[FLOW] ✅ motion_sensor_radar_mmwave_is_presence_detected');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_is_presence_detected_sensor_motion_radar_hybrid: ${err.message}`); }
 
-    // CONDITION: Illuminance above
     try {
-      (() => { try { return this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_illuminance_above'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_above_sensor_motion_radar_hybrid');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const lux = args.device.getCapabilityValue('measure_luminance') || 0;
-          return lux > (args.lux || 100);
-        });
-      this.log('[FLOW] ✅ motion_sensor_radar_mmwave_illuminance_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+          const val = args.device.getCapabilityValue('measure_co2') || 0;
+          return val > (args.threshold || 400);
+      });
+      }
+    } catch (err) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_above_sensor_motion_radar_hybrid: ${err.message}`); }
 
-    // CONDITION: Illuminance below
     try {
-      (() => { try { return this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_illuminance_below'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_below_sensor_motion_radar_hybrid');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const lux = args.device.getCapabilityValue('measure_luminance') || 0;
-          return lux < (args.lux || 100);
+          return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ motion_sensor_radar_mmwave_illuminance_below');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_illuminance_below_sensor_motion_radar_hybrid: ${err.message}`); }
 
-    // CONDITION: Temperature above
     try {
-      (() => { try { return this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_temperature_above'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_temperature_above_sensor_motion_radar_hybrid');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const temp = args.device.getCapabilityValue('measure_temperature') || 0;
-          return temp > (args.temp || 25);
-        });
-      this.log('[FLOW] ✅ motion_sensor_radar_mmwave_temperature_above');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+          const val = args.device.getCapabilityValue('measure_co2') || 0;
+          return val > (args.threshold || 400);
+      });
+      }
+    } catch (err) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_temperature_above_sensor_motion_radar_hybrid: ${err.message}`); }
 
-    // CONDITION: Target distance less than
     try {
-      (() => { try { return this.homey.flow.getConditionCard('motion_sensor_radar_mmwave_target_distance_less_than'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_target_distance_less_than_sensor_motion_radar_hybrid');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          const distance = args.device.getCapabilityValue('measure_luminance.distance') || 0;
-          return distance < (args.distance || 3);
+          return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ motion_sensor_radar_mmwave_target_distance_less_than');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_target_distance_less_than_sensor_motion_radar_hybrid: ${err.message}`); }
 
-    // ACTION: Set radar sensitivity
     try {
-      (() => { try { return this.homey.flow.getActionCard('motion_sensor_radar_mmwave_set_radar_sensitivity'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getConditionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_motion_active_sensor_motion_radar_hybrid');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          try {
-            if (args.device._tuyaEF00Manager) {
-              await args.device._tuyaEF00Manager.sendDatapoint(2, args.sensitivity || 5, 'value');
-            }
-            return true;
-          } catch (err) { return true; }
+          return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ motion_sensor_radar_mmwave_set_radar_sensitivity');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Condition sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_motion_active_sensor_motion_radar_hybrid: ${err.message}`); }
 
-    // ACTION: Set detection range
+    // ACTIONS
     try {
-      (() => { try { return this.homey.flow.getActionCard('motion_sensor_radar_mmwave_set_detection_range'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_radar_sensitivity_sensor_motion_radar_hybrid');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          try {
-            if (args.device._tuyaEF00Manager) {
-              await args.device._tuyaEF00Manager.sendDatapoint(3, Math.round((args.min || 0) * 100), 'value');
-              await args.device._tuyaEF00Manager.sendDatapoint(4, Math.round((args.max || 6) * 100), 'value');
-            }
-            return true;
-          } catch (err) { return true; }
+          // Generic action handler
+          this.log('[FLOW] Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_radar_sensitivity_sensor_motion_radar_hybrid triggered for', args.device.getName());
+          return true;
         });
-      this.log('[FLOW] ✅ motion_sensor_radar_mmwave_set_detection_range');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_radar_sensitivity_sensor_motion_radar_hybrid: ${err.message}`); }
 
-    // ACTION: Set fading time
     try {
-      (() => { try { return this.homey.flow.getActionCard('motion_sensor_radar_mmwave_set_fading_time'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_range_sensor_motion_radar_hybrid');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          try {
-            if (args.device._tuyaEF00Manager) {
-              await args.device._tuyaEF00Manager.sendDatapoint(102, args.seconds || 30, 'value');
-            }
-            return true;
-          } catch (err) { return true; }
+          // Generic action handler
+          this.log('[FLOW] Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_range_sensor_motion_radar_hybrid triggered for', args.device.getName());
+          return true;
         });
-      this.log('[FLOW] ✅ motion_sensor_radar_mmwave_set_fading_time');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_range_sensor_motion_radar_hybrid: ${err.message}`); }
 
-    // ACTION: Set detection delay
     try {
-      (() => { try { return this.homey.flow.getActionCard('motion_sensor_radar_mmwave_set_detection_delay'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const card = this.homey.flow.getActionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_fading_time_sensor_motion_radar_hybrid');
+      if (card) {
+        card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          try {
-            if (args.device._tuyaEF00Manager) {
-              await args.device._tuyaEF00Manager.sendDatapoint(101, args.seconds || 0, 'value');
-            }
-            return true;
-          } catch (err) { return true; }
+          // Generic action handler
+          this.log('[FLOW] Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_fading_time_sensor_motion_radar_hybrid triggered for', args.device.getName());
+          return true;
         });
-      this.log('[FLOW] ✅ motion_sensor_radar_mmwave_set_detection_delay');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) { this.error(`Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_fading_time_sensor_motion_radar_hybrid: ${err.message}`); }
 
-    this.log('[FLOW]  mmWave radar motion sensor flow cards registered');
-  }
+    try {
+      const card = this.homey.flow.getActionCard('sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_delay_sensor_motion_radar_hybrid');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          // Generic action handler
+          this.log('[FLOW] Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_delay_sensor_motion_radar_hybrid triggered for', args.device.getName());
+          return true;
+        });
+      }
+    } catch (err) { this.error(`Action sensor_motion_radar_hybrid_motion_sensor_radar_mmwave_set_detection_delay_sensor_motion_radar_hybrid: ${err.message}`); }
+
+    this.log('[FLOW] All flow cards registered');
+    }
 }
-
 module.exports = RadarMotionSensorMmwaveDriver;

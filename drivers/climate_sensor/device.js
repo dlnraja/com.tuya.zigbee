@@ -45,7 +45,7 @@ class ClimateSensorDevice extends BatteryMixin(SensorBase) {
   /**
    * Main DP handler using v8 libraries
    */
-  async onTuyaDP(dpId, value, dpType) {
+  onTuyaDP(dpId, value, dpType) {
     this.log(`[CLIMATE] 📥 DP${dpId} = ${value}`);
 
     const mapping = this.dpMappings[dpId];
@@ -67,7 +67,7 @@ class ClimateSensorDevice extends BatteryMixin(SensorBase) {
     }
 
     // Fallback to heuristic discovery
-    return super.onTuyaDP(dpId, value, dpType);
+    return super.on(dpId, value, dpType);
   }
 }
 

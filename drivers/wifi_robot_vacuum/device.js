@@ -5,7 +5,7 @@ class WiFiRobotVacuumDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1':  { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
-      '2':  { capability: null },
+      '2':  { capability: 'unknown' },
       '3':  { capability: 'vacuumcleaner_state',
         transform: (v) => {
           const map = { standby: 'stopped', cleaning: 'cleaning', paused: 'stopped',
@@ -13,18 +13,18 @@ class WiFiRobotVacuumDevice extends TuyaLocalDevice {
             sleep: 'stopped', fault: 'stopped' };
           return map[v] || 'stopped';
         } },
-      '4':  { capability: null },
-      '5':  { capability: null },
+      '4':  { capability: 'unknown' },
+      '5':  { capability: 'unknown' },
       '6':  { capability: 'measure_battery' },
-      '11': { capability: null },
-      '14': { capability: null },
-      '15': { capability: null },
-      '16': { capability: null },
-      '17': { capability: null },
-      '25': { capability: null },
-      '26': { capability: null },
-      '27': { capability: null },
-      '28': { capability: null },
+      '11': { capability: 'unknown' },
+      '14': { capability: 'unknown' },
+      '15': { capability: 'unknown' },
+      '16': { capability: 'unknown' },
+      '17': { capability: 'unknown' },
+      '25': { capability: 'unknown' },
+      '26': { capability: 'unknown' },
+      '27': { capability: 'unknown' },
+      '28': { capability: 'unknown' },
     };
   }
 
@@ -39,6 +39,18 @@ class WiFiRobotVacuumDevice extends TuyaLocalDevice {
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 

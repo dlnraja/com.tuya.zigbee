@@ -1,4 +1,6 @@
 'use strict';
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+
 
 const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 
@@ -23,70 +25,80 @@ const { AutoAdaptiveDevice } = require('../../lib/dynamic');
 class GenericTuyaDevice extends AutoAdaptiveDevice {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
-      // --- Attribute Reporting Configuration (auto-generated) ---
-      try {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
       await this.configureAttributeReporting([
-      {
-      cluster: 'genPowerCfg',
-      attributeName: 'batteryPercentageRemaining',
-      minInterval: 3600,
-      maxInterval: 43200,
-      minChange: 2,
-      },
-      {
-      cluster: 'msTemperatureMeasurement',
-      attributeName: 'measuredValue',
-      minInterval: 30,
-      maxInterval: 600,
-      minChange: 50,
-      },
-      {
-      cluster: 'msRelativeHumidity',
-      attributeName: 'measuredValue',
-      minInterval: 30,
-      maxInterval: 600,
-      minChange: 100,
-      }
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        },
+        {
+          cluster: 'msTemperatureMeasurement',
+          attributeName: 'measuredValue',
+          minInterval: 30,
+          maxInterval: 600,
+          minChange: 50,
+        },
+        {
+          cluster: 'msRelativeHumidity',
+          attributeName: 'measuredValue',
+          minInterval: 30,
+          maxInterval: 600,
+          minChange: 100,
+        }
       ]);
       this.log('Attribute reporting configured successfully');
-      } catch (err) {
+    } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-      }
-      this.log('');
-      this.log('╔═══════════════════════════════════════════════════════════════════╗');
-      this.log('║      GENERIC TUYA TS0601 - AUTO-ADAPTIVE v5.3.57                  ║');
-      this.log('║      🔄 Dynamic Capability + Flow Card System                     ║');
-      this.log('╚═══════════════════════════════════════════════════════════════════╝');
-      // Mark as unknown device for special handling
-      await this.setStoreValue('tuya_unknown', true).catch(() => { });
-      await this.setStoreValue('discovery_mode', true).catch(() => { });
-      // Initialize AutoAdaptiveDevice (handles Tuya EF00 + dynamic discovery)
-      try {
+    }
+
+    this.log('');
+    this.log('');
+    this.log('      GENERIC TUYA TS0601 - AUTO-ADAPTIVE v5.3.57                  ');
+    this.log('       Dynamic Capability + Flow Card System                     ');
+    this.log('');
+
+    // Mark as unknown device for special handling
+    await this.setStoreValue('tuya_unknown', true).catch(() => { });
+    await this.setStoreValue('discovery_mode', true).catch(() => { });
+
+    // Initialize AutoAdaptiveDevice (handles Tuya EF00 + dynamic discovery)
+    try {
       await super.onNodeInit({ zclNode }).catch(err => this.error('[GENERIC] Parent init error:', err));
-      } catch (err) {
+    } catch (err) {
       this.error('[GENERIC] Await error:', err);
-      }
-      // Get device info
-      const settings = this.getSettings() || {};
-      const manufacturer = settings.zb_manufacturer_name || 'unknown';
-      const model = settings.zb_model_id || 'TS0601';
-      this.log(`[GENERIC] Device: ${manufacturer} / ${model}`);
-      this.log('[GENERIC] Mode: AUTO-ADAPTIVE + Dynamic Discovery');
-      // Set default values to avoid null KPIs
-      await this._setDefaultValues();
-      // Legacy DP discovery (now handled by AutoAdaptiveDevice, but keep for compatibility)
-      this._setupDPDiscovery();
-      // Request common DPs after delay (for mains-powered devices)
-      setTimeout(() => this._requestCommonDPs(), 5000);
-      // Log auto-adaptive status
-      const status = this.getAutoAdaptiveStatus();
-      this.log('[GENERIC] 🔄 Auto-Adaptive Status:');
-      this.log(`[GENERIC]    Discovered DPs: ${status.discoveries.length}`);
-      this.log(`[GENERIC]    Capabilities: ${status.capabilities.join(', ')}`);
-      this.log('[GENERIC] ✅ Initialization complete - auto-adapting to device data');
-    }, 'onNodeInit');
+    }
+
+    // Get device info
+    // A8: NaN Safety - use safeDivide/safeMultiply
+    const settings = this.getSettings() || {};
+    const manufacturer = settings.zb_manufacturer_name || settings.zb_manufacturer_name || 'unknown';
+    const model = settings.zb_model_id || settings.zb_model_id || 'TS0601';
+
+    this.log(`[GENERIC] Device: ${manufacturer} / ${model}`);
+    this.log('[GENERIC] Mode: AUTO-ADAPTIVE + Dynamic Discovery');
+
+    // Set default values to avoid null KPIs
+    await this._setDefaultValues();
+
+    // Legacy DP discovery (now handled by AutoAdaptiveDevice, but keep for compatibility)
+    this._setupDPDiscovery();
+
+    // Request common DPs after delay (for mains-powered devices)
+    this.homey.setTimeout(() => {
+      this._requestCommonDPs().catch(() => {});
+    }, 5000);
+
+    // Log auto-adaptive status
+    const status = this.getAutoAdaptiveStatus();
+    this.log('[GENERIC]  Auto-Adaptive Status:');
+    this.log(`[GENERIC]    Discovered DPs: ${status.discoveries.length}`);
+    this.log(`[GENERIC]    Capabilities: ${status.capabilities.join(', ')}`);
+
+    this.log('[GENERIC]  Initialization complete - auto-adapting to device data');
   }
 
   /**
@@ -94,7 +106,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
    */
   async _handleDeviceSpecificDP(dpId, value, mapping) {
     // Log discovery for unknown devices
-    this.log(`[GENERIC] 📊 DP${dpId} → ${mapping.capability} = ${value}`);
+    this.log(`[GENERIC]  DP${dpId}  ${mapping.capability} = ${value}`);
 
     // Store discovery timestamp
     await this.setStoreValue(`dp_${dpId}_discovered`, Date.now()).catch(() => { });
@@ -107,9 +119,9 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     this.log('[GENERIC] Setting default values for KPI...');
 
     const defaults = {
-      'measure_battery': 100,  // Assume full until first report
-      'measure_temperature': null,
-      'measure_humidity': null,
+      'measure_battery': 100, // Assume full until first report
+      'measure_temperature': 20, // Default to a sensible room temperature
+      'measure_humidity': 50, // Default to a sensible humidity
       // SDK3: alarm_battery obsolète - utiliser measure_battery avec seuil
     };
 
@@ -133,21 +145,20 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     // Track discovered DPs
     this._discoveredDPs = new Map();
 
-    this._tuyaDPHandler = (data) => this._handleDiscoveredDP(data);
-    this._ef00DPHandler = (data) => {
-      this._handleDiscoveredDP({
-        dp: data.dpId,
-        value: data.value,
-        type: data.dpType
-      });
-    };
-
     // Listen for Tuya DP reports
-    this.on('tuya_dp', this._tuyaDPHandler);
+    this.on('tuya_dp', (data) => {
+      this._handleDiscoveredDP(data);
+      });
 
     // Also listen via dpReport event from TuyaEF00Manager
     if (this.tuyaEF00Manager) {
-      this.tuyaEF00Manager.on('dpReport', this._ef00DPHandler);
+      this.tuyaEF00Manager.on('dpReport', (data) => {
+        this._handleDiscoveredDP({
+          dp: data.dpId,
+          value: data.value,
+          type: data.dpType
+        });
+      });
     }
   }
 
@@ -157,7 +168,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
   async _handleDiscoveredDP(data) {
     const { dp, value, type } = data;
 
-    this.log(`[GENERIC] 📦 Discovered DP${dp} = ${JSON.stringify(value)} (type: ${type})`);
+    this.log(`[GENERIC]  Discovered DP${dp} = ${JSON.stringify(value)} (type: ${type})`);
 
     // Track the DP
     this._discoveredDPs.set(dp, {
@@ -171,7 +182,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     const dpList = Array.from(this._discoveredDPs.keys()).sort((a, b) => a - b);
     await this.setSettings({
       discovered_dps: dpList.length > 0 ? `DPs: ${dpList.join(', ')}` : 'None'
-    }).catch(() => { });
+    }).catch(() => {});
 
     // Auto-map DP to capability using heuristics
     await this._autoMapDP(dp, value, type);
@@ -192,14 +203,14 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       // Battery (CONFIDENCE: 0 - Official)
       4: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 0 },
       10: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
-      14: { capability: null, internal: 'battery_low', parser: v => !!v, confidence: 0 }, // SDK3: alarm_battery obsolète
+      14: { internal: true, type: 'battery_low', parser: v => !!v, confidence: 0 }, // SDK3: alarm_battery obsolÃ¨te
       15: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 0 },
       101: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
       105: { capability: 'measure_battery', parser: v => Math.min(100, Math.max(0, v)), confidence: 1 },
 
       // Temperature (CONFIDENCE: 0)
-      1: { capability: 'measure_temperature', parser: v => v / 10, confidence: 1 }, // Some devices
-      3: { capability: 'measure_temperature', parser: v => v / 10, confidence: 0 }, // Soil sensor
+      1: { capability: 'measure_temperature', parser: v => safeMultiply(v, 10), confidence: 1 }, // Some devices
+      3: { capability: 'measure_temperature', parser: v => safeMultiply(v, 10), confidence: 0 }, // Soil sensor
 
       // Humidity (CONFIDENCE: 0)
       2: { capability: 'measure_humidity', parser: v => v, confidence: 0 },
@@ -209,22 +220,22 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       1: { capability: 'alarm_motion', parser: v => !!v, confidence: 0 },
 
       // Voltage (CONFIDENCE: 1 - USB/Mains devices)
-      247: { capability: 'measure_voltage', parser: v => v / 1000, confidence: 1 },
+      247: { capability: 'measure_voltage', parser: v => v * 1000, confidence: 1 },
     };
 
     const mapping = DP_MAP[dp];
     if (!mapping) {
-      this.log(`[GENERIC] ℹ️ Unknown DP${dp} - stored for analysis (CONFIDENCE: 2)`);
+      this.log(`[GENERIC]  Unknown DP${dp} - stored for analysis (CONFIDENCE: 2)`);
       await this.setStoreValue(`unknown_dp_${dp}`, { value, type, timestamp: Date.now() }).catch(() => { });
       return;
     }
 
-    const { capability, parser, confidence } = mapping;
+    const { parser, confidence } = mapping;
     const confidenceLabel = ['Official', 'Community', 'Heuristic'][confidence];
 
     // Add capability if missing
     if (!this.hasCapability(capability)) {
-      this.log(`[GENERIC] ➕ Adding capability ${capability} (CONFIDENCE: ${confidence} - ${confidenceLabel})`);
+      this.log(`[GENERIC]  Adding capability ${capability} (CONFIDENCE: ${confidence} - ${confidenceLabel})`);
       await this.addCapability(capability).catch(err => {
         this.error(`[GENERIC] Cannot add ${capability}:`, err.message);
         return;
@@ -235,20 +246,12 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     try {
       const parsedValue = parser(value);
       await this.setCapabilityValue(capability, parsedValue);
-      this.log(`[GENERIC] ✅ DP${dp} → ${capability} = ${parsedValue} (CONFIDENCE: ${confidence})`);
+      this.log(`[GENERIC]  DP${dp}  ${capability} = ${parsedValue} (CONFIDENCE: ${confidence})`);
 
       // Emit event for flow triggers
-      try {
-        const triggerId = `generic_tuya_${capability}_changed`;
-        const trigger = this.homey.flow.getDeviceTriggerCard(triggerId);
-        if (trigger) {
-          trigger.trigger(this, {
-            [capability.replace('measure_', '').replace('alarm_', '')]: parsedValue
-          }).catch(err => this.error(`[FLOW-ERROR] Trigger fail for ${triggerId}:`, err.message));
-        }
-      } catch (err) {
-        this.error(`[FLOW-WARNING] Could not get trigger card generic_tuya_${capability}_changed:`, err.message);
-      }
+      this.homey.flow.getTriggerCard(`generic_tuya_${capability}_changed`) ?.trigger(this, {
+        [capability.replace('measure_', '' ).replace('alarm_', '')]: parsedValue
+      }).catch(() => {});
 
     } catch (err) {
       this.error(`[GENERIC] Failed to set ${capability}:`, err.message);
@@ -268,7 +271,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
     // Common DPs to query
     const commonDPs = [1, 2, 3, 4, 5, 10, 14, 15, 101, 102, 247];
 
-    this.log(`[GENERIC] 🔍 Requesting common DPs: [${commonDPs.join(', ')}]`);
+    this.log(`[GENERIC]  Requesting common DPs: [${commonDPs.join(', ')}]`);
 
     for (const dp of commonDPs) {
       try {
@@ -280,7 +283,7 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
       }
     }
 
-    this.log('[GENERIC] ✅ DP discovery requests sent');
+    this.log('[GENERIC]  DP discovery requests sent');
   }
 
   /**
@@ -289,12 +292,21 @@ class GenericTuyaDevice extends AutoAdaptiveDevice {
   async onDeleted() {
     this.log('[GENERIC] Device deleted, cleaning up...');
     this._discoveredDPs?.clear();
-    if (this._tuyaDPHandler) this.removeListener('tuya_dp', this._tuyaDPHandler);
-    if (this.tuyaEF00Manager && this._ef00DPHandler) {
-      this.tuyaEF00Manager.removeListener('dpReport', this._ef00DPHandler);
-    }
     await super.onDeleted();
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 
 module.exports = GenericTuyaDevice;
+

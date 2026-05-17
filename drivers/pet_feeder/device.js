@@ -14,16 +14,13 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 class PetFeederDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
       this.log('Smart Pet Feeder initializing...');
 
       // Register feed button
       if (this.hasCapability('button.feed')) {
-        this.registerCapabilityListener('button.feed', async () => {
-          if (typeof this.markAppCommand === 'function') this.markAppCommand(1, true);
-          await this._triggerFeed();
-        });
+        this._safeInvoke(async () => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, true);
+          await this._triggerFeed();  });
       }
 
       await this._setupTuyaDP(zclNode);
@@ -41,7 +38,7 @@ class PetFeederDevice extends ZigBeeDevice {
     }
   }
 
-  async _setupTuyaDP(zclNode) {
+  _setupTuyaDP(zclNode) {
     const ep1 = zclNode.endpoints[1];
     if (!ep1) return;
 
@@ -72,7 +69,7 @@ class PetFeederDevice extends ZigBeeDevice {
     }
   }
 
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }

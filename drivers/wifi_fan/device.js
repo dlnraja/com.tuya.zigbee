@@ -20,12 +20,12 @@ class WiFiFanDevice extends TuyaLocalDevice {
   }
 
   async onInit() {
-    await super.onInit();
+    await super.on();
     this.log('[WIFI-FAN] Ready');
   }
 
 
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }

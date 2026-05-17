@@ -21,10 +21,9 @@ class WaterValveGardenDevice extends VirtualButtonMixin(PhysicalButtonMixin(Batt
   get plugCapabilities() { return ['onoff', 'measure_battery']; }
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      // v9.7.3: Initialization is orchestrated by the mixin hierarchy.
+    await this._safeInvoke(async () => { // v9.7.3: Initialization is orchestrated by the mixin hierarchy.
       // Handles battery reporting, physical button detection, and relay logic.
-      await super.onNodeInit({ zclNode });
+      await super.onNodeInit({ zclNode  });
       this.log('[VALVE-GARDEN] ✅ v9.7.3 Universal initialization complete');
     }, 'onNodeInit');
   }
@@ -55,7 +54,7 @@ class WaterValveGardenDevice extends VirtualButtonMixin(PhysicalButtonMixin(Batt
     }
   }
 
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }

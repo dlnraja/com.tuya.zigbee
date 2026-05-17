@@ -1,6 +1,8 @@
 'use strict';
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+
+
+const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
@@ -27,62 +29,71 @@ const TUYA_DP = {
  * Fixes Issue #83: xSondreBx - WoodUpp LED Driver
  *
  * v5.3.77 CHANGES:
- * - CRITICAL: Added TUYA DP support (cluster 0xEF00)
+ * - CRITICAL: Added TUYA DP support (cluster CLUSTERS.TUYA_EF00)
  * - Device uses Tuya DataPoints for dimming, NOT standard ZCL!
  * - DP 1 = On/Off, DP 2 = Brightness (0-1000)
  * - 10 dimming strategies including Tuya DP
  * - Ultra-verbose logging for diagnostics
  */
-class LEDControllerDimmableDevice extends VirtualButtonMixin(PhysicalButtonMixin(ZigBeeDevice)) {
+class LEDControllerDimmableDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
-      // Prevent double init
-      if (this._ledControllerInited) return;
-      this._ledControllerInited = true;
-      this.zclNode = zclNode;
-      this.log('');
-      this.log('╔══════════════════════════════════════════════════════════════╗');
-      this.log('║    LED CONTROLLER DIMMABLE (Single Channel) - v5.3.77       ║');
-      this.log('║    Fixes Issue #83: WoodUpp 24V LED Driver                  ║');
-      this.log('╠══════════════════════════════════════════════════════════════╣');
-      this.log('║ ✅ TUYA DP support (cluster 0xEF00) - CRITICAL FIX          ║');
-      this.log('║ ✅ 10 dimming strategies for maximum compatibility          ║');
-      this.log('║ ✅ Ultra-verbose logging for diagnostics                    ║');
-      this.log('╚══════════════════════════════════════════════════════════════╝');
-      // Ensure capabilities exist
-      if (!this.hasCapability('onoff')) await this.addCapability('onoff').catch(() => { });
-      if (!this.hasCapability('dim')) await this.addCapability('dim').catch(() => { });
-      // Get clusters
-      const endpoint = zclNode.endpoints[1];
-      this._onOffCluster = endpoint?.clusters?.onOff;
-      this._levelCluster = endpoint?.clusters?.levelControl;
-      this._tuyaCluster = endpoint?.clusters?.tuya;
-      // Log cluster availability with detailed info
-      this.log(`[LED] onOff cluster: ${this._onOffCluster ? '✅' : '❌'}`);
-      this.log(`[LED] levelControl cluster: ${this._levelCluster ? '✅' : '❌'}`);
-      this.log(`[LED] TUYA cluster (0xEF00): ${this._tuyaCluster ? '✅ FOUND!' : '❌'}`);
-      // Log available methods on levelControl cluster
-      if (this._levelCluster) {
+    // Prevent double init
+    if (this._ledControllerInited) return;
+    this._ledControllerInited = true;
+
+    this.zclNode = zclNode;
+
+    this.log('');
+    this.log('');
+    this.log('    LED CONTROLLER DIMMABLE (Single Channel) - v5.3.77       ');
+    this.log('    Fixes Issue #83: WoodUpp 24V LED Driver                  ');
+    this.log('');
+    this.log('  TUYA DP support (cluster CLUSTERS.TUYA_EF00) - CRITICAL FIX          ');
+    this.log('  10 dimming strategies for maximum compatibility          ');
+    this.log('  Ultra-verbose logging for diagnostics                    ');
+    this.log('');
+
+    // Ensure capabilities exist
+    if (!this.hasCapability('onoff')) await this.addCapability('onoff').catch(() => { });
+    if (!this.hasCapability('dim')) await this.addCapability('dim').catch(() => { });
+
+    // Get clusters
+    const endpoint = zclNode.endpoints[1];
+    this._onOffCluster = endpoint?.clusters?.onOff;
+    this._levelCluster = endpoint?.clusters?.levelControl;
+    this._tuyaCluster = endpoint?.clusters?.tuya;
+
+    // Log cluster availability with detailed info
+    this.log(`[LED] onOff cluster: ${this._onOffCluster ? '' : ''}`);
+    this.log(`[LED] levelControl cluster: ${this._levelCluster ? '' : ''}`);
+    this.log(`[LED] TUYA cluster (CLUSTERS.TUYA_EF00): ${this._tuyaCluster ? ' FOUND!' : ''}`);
+
+    // Log available methods on levelControl cluster
+    if (this._levelCluster) {
       const methods = Object.keys(this._levelCluster).filter(k => typeof this._levelCluster[k] === 'function');
       this.log(`[LED] levelControl methods: ${methods.join(', ')}`);
-      }
-      // Log device info
-      const settings = this.getSettings() || {};
-      const store = this.getStore() || {};
-      this.log(`[LED] Model: ${settings.zb_model_id || store.modelId || 'unknown'}`);
-      this.log(`[LED] Manufacturer: ${settings.zb_manufacturer_name || store.manufacturerName || 'unknown'}`);
-      // Setup Tuya DP listener
-      await this._setupTuyaListener();
-      // Setup attribute listeners
-      this._setupAttributeListeners();
-      // Register capability listeners
-      this._registerCapabilityListeners();
-      // Try to read initial values
-      await this._readInitialValues();
-      this.log('[LED] ✅ Initialization complete');
-    }, 'onNodeInit');
+    }
+
+    // Log device info
+    const settings = this.getSettings() || {};
+    const store = this.getStore() || {};
+    this.log(`[LED] Model: ${settings.zb_model_id || settings.zb_model_id || store.modelId || 'unknown'}`);
+    this.log(`[LED] Manufacturer: ${settings.zb_manufacturer_name || settings.zb_manufacturer_name || store.manufacturerName || 'unknown'}`);
+
+    // Setup Tuya DP listener
+    await this._setupTuyaListener();
+
+    // Setup attribute listeners
+    this._setupAttributeListeners();
+
+    // Register capability listeners
+    this._registerCapabilityListeners();
+
+    // Try to read initial values
+    await this._readInitialValues();
+
+    this.log('[LED]  Initialization complete');
   }
 
   async _setupTuyaListener() {
@@ -91,10 +102,10 @@ class LEDControllerDimmableDevice extends VirtualButtonMixin(PhysicalButtonMixin
       if (!endpoint) return;
 
       // Try to get Tuya cluster
-      const tuyaCluster = endpoint.clusters['tuya'] || endpoint.clusters[61184];
+      const tuyaCluster = endpoint.clusters['tuya'] || endpoint.clusters[CLUSTERS.TUYA_EF00];
       if (tuyaCluster) {
         this._tuyaCluster = tuyaCluster;
-        this.log('[LED] ✅ Tuya cluster found, setting up DP listener...');
+        this.log('[LED]  Tuya cluster found, setting up DP listener...');
 
         // Listen for Tuya datapoint reports
         tuyaCluster.on('response', this._onTuyaResponse.bind(this));
@@ -117,11 +128,11 @@ class LEDControllerDimmableDevice extends VirtualButtonMixin(PhysicalButtonMixin
       const value = data.value;
 
       if (dp === TUYA_DP.ON_OFF) {
-        await this.setCapabilityValue('onoff', !!value).catch(this.error);
+        this.setCapabilityValue('onoff', !!value).catch(this.error);
       } else if (dp === TUYA_DP.BRIGHTNESS) {
         // Tuya brightness is typically 0-1000
-        const dim = Math.max(0, Math.min(1, value / 1000));
-        await this.setCapabilityValue('dim', parseFloat(dim)).catch(this.error);
+        const dim = Math.max(0, Math.min(1, value * 1000));
+        this.setCapabilityValue('dim', parseFloat(dim)).catch(this.error);
       }
     }
   }
@@ -131,16 +142,16 @@ class LEDControllerDimmableDevice extends VirtualButtonMixin(PhysicalButtonMixin
     if (this._onOffCluster) {
       this._onOffCluster.on('attr.onOff', (value) => {
         this.log(`[LED] onOff attribute changed: ${value}`);
-        await this.setCapabilityValue('onoff', !!value).catch(this.error);
+        this.setCapabilityValue('onoff', !!value).catch(this.error);
       });
     }
 
     // Level attribute listener
     if (this._levelCluster) {
       this._levelCluster.on('attr.currentLevel', (value) => {
-        const dim = Math.max(0, Math.min(1, value / 254));
-        this.log(`[LED] currentLevel attribute changed: ${value} → dim=${dim}`);
-        await this.setCapabilityValue('dim', parseFloat(dim)).catch(this.error);
+        const dim = Math.max(0, Math.min(1, safeMultiply(value, 254)));
+        this.log(`[LED] currentLevel attribute changed: ${value}  dim=${dim}`);
+        this.setCapabilityValue('dim', parseFloat(dim)).catch(this.error);
       });
     }
   }
@@ -148,9 +159,6 @@ class LEDControllerDimmableDevice extends VirtualButtonMixin(PhysicalButtonMixin
   _registerCapabilityListeners() {
     // On/Off capability
     this.registerCapabilityListener('onoff', async (value) => {
-      if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
-await this._safeInvoke(async () => {
-
       this.log(`[LED] Setting onoff: ${value}`);
 
       if (!this._onOffCluster) {
@@ -164,32 +172,28 @@ await this._safeInvoke(async () => {
         } else {
           await this._onOffCluster.setOff();
         }
-        this.log('[LED] ✅ onoff command sent');
+        this.log('[LED]  onoff command sent');
       } catch (err) {
         this.error(`[LED] onoff error: ${err.message}`);
         throw err;
       }
-    
-}, 'onoffListener');
-});
+    });
 
     // Dim capability - v5.3.77: 10 STRATEGIES including TUYA DP
     this.registerCapabilityListener('dim', async (value, opts) => {
-await this._safeInvoke(async () => {
-
       this.log('');
-      this.log('┌─────────────────────────────────────────────────────────────┐');
-      this.log(`│ 💡 DIM COMMAND: ${Math.round(value * 100)}%`);
-      this.log('└─────────────────────────────────────────────────────────────┘');
+      this.log('');
+      this.log(`  DIM COMMAND: ${Math.round(value*100)}%`);
+      this.log('');
 
-      const level = Math.max(1, Math.min(254, Math.round(value * 254)));
-      const tuyaBrightness = Math.max(10, Math.min(1000, Math.round(value * 1000))); // Tuya uses 0-1000
+      const level = Math.max(1, Math.min(254, Math.round(value)));
+      const tuyaBrightness = Math.max(10, Math.min(1000, Math.round(value))); // Tuya uses 0-1000
       this.log(`[LED] Target level: ${level} (ZCL 0-254) / ${tuyaBrightness} (Tuya 0-1000)`);
 
-      // Build strategies array - TUYA DP FIRST since device has cluster 0xEF00
+      // Build strategies array - TUYA DP FIRST since device has cluster CLUSTERS.TUYA_EF00
       const strategies = [];
 
-      // TUYA DP strategies (PRIORITY - device has 0xEF00 cluster!)
+      // TUYA DP strategies (PRIORITY - device has CLUSTERS.TUYA_EF00 cluster!)
       if (this._tuyaCluster) {
         // Strategy 1: Tuya DP brightness (0-1000)
         strategies.push({
@@ -197,9 +201,7 @@ await this._safeInvoke(async () => {
           fn: async () => {
             await this._sendTuyaDP(TUYA_DP.BRIGHTNESS, tuyaBrightness, 'value');
           }
-        
-}, 'dimListener');
-});
+        });
 
         // Strategy 2: Tuya DP brightness (0-255)
         strategies.push({
@@ -247,26 +249,26 @@ await this._safeInvoke(async () => {
 
       for (const strategy of strategies) {
         try {
-          this.log(`[LED] 🔄 Trying: ${strategy.name}...`);
+          this.log(`[LED]  Trying: ${strategy.name}...`);
           const result = strategy.fn();
           if (result && typeof result.then === 'function') {
             await result;
           }
-          this.log(`[LED] ✅ SUCCESS via ${strategy.name}`);
+          this.log(`[LED]  SUCCESS via ${strategy.name}`);
           successStrategy = strategy.name;
           break;
         } catch (err) {
-          this.log(`[LED] ❌ ${strategy.name} failed: ${err.message}`);
+          this.log(`[LED]  ${strategy.name} failed: ${err.message}`);
         }
       }
 
       if (!successStrategy) {
-        this.error('[LED] ❌ ALL dimming strategies failed!');
+        this.error('[LED]  ALL dimming strategies failed!');
         throw new Error('All dimming strategies failed');
       }
 
       this.log('');
-    });
+      });
   }
 
   // Send Tuya DataPoint command
@@ -350,9 +352,9 @@ await this._safeInvoke(async () => {
       if (this._levelCluster) {
         const levelAttrs = await this._levelCluster.readAttributes(['currentLevel']).catch(() => ({}));
         if (levelAttrs.currentLevel !== undefined) {
-          const dim = Math.max(0, Math.min(1, levelAttrs.currentLevel / 254));
+          const dim = Math.max(0, Math.min(1, safeMultiply(levelAttrs.currentLevel, 254)));
           await this.setCapabilityValue('dim', parseFloat(dim)).catch(() => { });
-          this.log(`[LED] Initial level: ${levelAttrs.currentLevel} → dim=${dim}`);
+          this.log(`[LED] Initial level: ${levelAttrs.currentLevel}  dim=${dim}`);
         }
       }
     } catch (err) {
@@ -367,3 +369,4 @@ await this._safeInvoke(async () => {
 }
 
 module.exports = LEDControllerDimmableDevice;
+

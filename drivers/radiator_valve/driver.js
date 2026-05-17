@@ -2,28 +2,43 @@
 
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
-/**
- * v5.5.572: CRITICAL FIX - Flow card run listeners were missing
- */
 class RadiatorValveDriver extends ZigBeeDriver {
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
 
   async onInit() {
-    this.log('RadiatorValveDriver v5.5.572 initialized');
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+    this.log('RadiatorValveDriver initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // ACTION: Set target temperature
-    try {
-      (() => { try { return this.homey.flow.getActionCard('radiator_valve_set_target_temperature'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          await args.device.triggerCapabilityListener('target_temperature', args.temperature);
-          return true;
-        });
-      this.log('[FLOW] ✅ radiator_valve_set_target_temperature');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+    const P = 'radiator_valve';
+    const actions = ['set_target_temperature', 'set_temperature'];
 
-    this.log('[FLOW]  Radiator valve flow cards registered');
+    actions.forEach(act => {
+      try {
+        const id = `${P}_${act}`;
+        const card = this._getFlowCard(id, 'action');
+        if (card) {
+          card.registerRunListener(async (args) => {
+            if (!args.device) return false;
+            const val = args.temperature || args.target_temperature || args.value;
+            await args.device.triggerCapabilityListener('target_temperature', val);
+            return true;
+          });
+          this.log(`[FLOW] Registered: ${id}`);
+        }
+      } catch (err) { this.error(`Action ${act} failed:`, err.message); }
+    });
   }
 }
 

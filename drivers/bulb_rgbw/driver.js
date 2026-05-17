@@ -12,51 +12,67 @@ class BulbRgbwDriver extends ZigBeeDriver {
     this._registerFlowCards();
   }
 
-  _registerFlowCards() {
+  async _registerFlowCards() {
     // CONDITION: Is on/off
     try {
-      (() => { try { return this.homey.flow.getConditionCard('bulb_rgbw_bulb_rgbw_is_on'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const conditionCard = this.homey.flow.getConditionCard('bulb_rgbw_bulb_rgbw_is_on');
+      if (conditionCard) {
+        conditionCard.registerRunListener(async (args) => {
           if (!args.device) return false;
           return args.device.getCapabilityValue('onoff') === true;
         });
-      this.log('[FLOW] ✅ bulb_rgbw_bulb_rgbw_is_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) {
+      this.log(`[FLOW] bulb_rgbw_bulb_rgbw_is_on error: ${err.message}`);
+    }
 
     // ACTION: Turn on
     try {
-      (() => { try { return this.homey.flow.getActionCard('bulb_rgbw_bulb_rgbw_turn_on'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const turnOnCard = this.homey.flow.getActionCard('bulb_rgbw_bulb_rgbw_turn_on');
+      if (turnOnCard) {
+        turnOnCard.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
+          await args.device._setGangOnOff(1, true).catch(() => { });
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ bulb_rgbw_bulb_rgbw_turn_on');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) {
+      this.log(`[FLOW] bulb_rgbw_bulb_rgbw_turn_on error: ${err.message}`);
+    }
 
     // ACTION: Turn off
     try {
-      (() => { try { return this.homey.flow.getActionCard('bulb_rgbw_bulb_rgbw_turn_off'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const turnOffCard = this.homey.flow.getActionCard('bulb_rgbw_bulb_rgbw_turn_off');
+      if (turnOffCard) {
+        turnOffCard.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
+          await args.device._setGangOnOff(1, false).catch(() => { });
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ bulb_rgbw_bulb_rgbw_turn_off');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) {
+      this.log(`[FLOW] bulb_rgbw_bulb_rgbw_turn_off error: ${err.message}`);
+    }
 
     // ACTION: Toggle
     try {
-      (() => { try { return this.homey.flow.getActionCard('bulb_rgbw_bulb_rgbw_toggle'); } catch(e) { return null; } })()?.registerRunListener(async (args) => {
+      const toggleCard = this.homey.flow.getActionCard('bulb_rgbw_bulb_rgbw_toggle');
+      if (toggleCard) {
+        toggleCard.registerRunListener(async (args) => {
           if (!args.device) return false;
           const current = args.device.getCapabilityValue('onoff');
-          await args.device._setGangOnOff(1, !current).catch(() => {});
+          await args.device._setGangOnOff(1, !current).catch(() => { });
           await args.device.setCapabilityValue('onoff', !current).catch(() => {});
           return true;
         });
-      this.log('[FLOW] ✅ bulb_rgbw_bulb_rgbw_toggle');
-    } catch (err) { this.log(`[FLOW] ⚠️ ${err.message}`); }
+      }
+    } catch (err) {
+      this.log(`[FLOW] bulb_rgbw_bulb_rgbw_toggle error: ${err.message}`);
+    }
 
-    this.log('[FLOW]  RGBW bulb flow cards registered');
+    this.log('[FLOW] RGBW bulb flow cards registered');
   }
 }
 

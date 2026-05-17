@@ -13,9 +13,8 @@ const BatteryMixin = require('../../lib/tuya/BatteryMixin');
 class SmartRemote4ButtonsDevice extends PhysicalButtonMixin(BatteryMixin(ZigBeeDevice)) {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      this.buttonCount = 4;
-      await super.onNodeInit({ zclNode });
+    await this._safeInvoke(async () => { this.buttonCount = 4;
+      await super.onNodeInit({ zclNode  });
       this.log('[SmartRemote4Buttons] ✅ Initialized with Mixin architecture');
     }, 'onNodeInit');
   }

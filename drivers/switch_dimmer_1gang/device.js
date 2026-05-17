@@ -25,8 +25,7 @@ class SwitchDimmer1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
     await super.onNodeInit({ zclNode });
 
     // 1. Capability Listeners
-    this.registerCapabilityListener('onoff', async (value) => {
-      this.log(`[Dimmer1G] Setting state: ${value}`);
+    this.registerCapabilityListener ('onoff', async (value) => { this.log(`[Dimmer1G] Setting state: ${value}`);
       return this.sendTuyaCommand(DP.state, value, 'bool');
     });
 
@@ -52,8 +51,7 @@ class SwitchDimmer1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
       case DP.state: {
         const state = Boolean(value);
         await this.setCapabilityValue('onoff', state);
-        break;
-      }
+        break; }
 
       case DP.brightness: {
         const raw = typeof value === 'number' ? value : parseInt(value);

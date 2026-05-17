@@ -8,17 +8,16 @@ class D extends E{
     voltage:{capability:'measure_voltage',divisor:100},
     actPow:{capability:'measure_power',divisor:100}
   };}
-  _registerCapListeners(){
+  async _registerCapListeners(){
     this.registerCapabilityListener('onoff',async v=>{ if (typeof this.markAppCommand === 'function') this.markAppCommand(1, v);await this._client.setSwitch(v,0);});
     if(this.hasCapability('onoff.2'))this.registerCapabilityListener('onoff.2',async v=>{await this._client.setSwitch(v,1);});
   }
   async onInit(){
-    for(const c of['onoff.2','measure_power','measure_voltage','measure_current'])if(!this.hasCapability(c))await this.addCapability(c).catch(()=>{});
-    await super.onInit();
-  }
+    for(const c of['onoff.2','measure_power','measure_voltage','measure_current'])if(!this.hasCapability(c))await this.addCapability(c).catch(() => { });
+    await super.on(); }
 
 
-  async onDeleted() {
+  onDeleted() {
     this.log('Device deleted, cleaning up');
   }
 }

@@ -1,7 +1,7 @@
 'use strict';
-const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
-class FingerprintLockDevice extends SensorBase {
+class FingerprintLockDevice extends UnifiedSensorBase {
   get mainsPowered() { return false; }
   get sensorCapabilities() { return ['locked', 'measure_battery', 'alarm_tamper']; }
   get dpMappings() {
@@ -16,31 +16,42 @@ class FingerprintLockDevice extends SensorBase {
     };
   }
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      await super.onNodeInit({ zclNode });
-      // --- Attribute Reporting Configuration (auto-generated) ---
-      try {
+    // --- Attribute Reporting Configuration (auto-generated) ---
+    try {
       await this.configureAttributeReporting([
-      {
-      cluster: 'genPowerCfg',
-      attributeName: 'batteryPercentageRemaining',
-      minInterval: 3600,
-      maxInterval: 43200,
-      minChange: 2,
-      }
+        {
+          cluster: 'genPowerCfg',
+          attributeName: 'batteryPercentageRemaining',
+          minInterval: 3600,
+          maxInterval: 43200,
+          minChange: 2,
+        }
       ]);
       this.log('Attribute reporting configured successfully');
-      } catch (err) {
+    } catch (err) {
       this.log('Attribute reporting config failed (device may not support it):', err.message);
-      }
-      await super.onNodeInit({ zclNode });
-      this.log('[FINGERPRINT_LOCK] Ready');
-    }, 'onNodeInit');
+    }
+
+    await super.onNodeInit({ zclNode });
+    this._registerCapabilityListeners(); // rule-12a injected
+    this.log('[FINGERPRINT_LOCK] Ready');
   }
 
 
   async onDeleted() {
     this.log('Device deleted, cleaning up');
+  }
+
+  /**
+   * v7.4.6: Refresh state when device announces itself (rejoin/wakeup)
+   */
+  async onEndDeviceAnnounce() {
+    this.log('[REJOIN] Device announced itself, refreshing state...');
+    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    // Proactive data recovery if supported
+    if (this._dataRecoveryManager) {
+       this._dataRecoveryManager.triggerRecovery();
+    }
   }
 }
 module.exports = FingerprintLockDevice;
