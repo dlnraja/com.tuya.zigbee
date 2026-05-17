@@ -1,6 +1,9 @@
 # Universal Tuya Zigbee - AI Rules
 # Project: com.dlnraja.tuya.zigbee | SDK: Homey SDK3 Zigbee
 
+> [!IMPORTANT]
+> **CRITICAL FIRST STEP:** You MUST read the [AI_CONTEXT_MANDATE.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/AI_CONTEXT_MANDATE.md) file at the very start of your session to fully digest the architecture, dual-app branch splits, and features.
+
 ## CRITICAL BUGS TO AVOID
 
 ### Settings Keys (ALWAYS use these exact keys):
