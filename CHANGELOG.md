@@ -4,7 +4,25 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.42] - 2026-05-18
+## [7.5.43] - 2026-05-18
+
+### Bug Fixes
+- Fixed wall flow triggers on multi-gang switches (button_wireless_2/3/4, switch_*). Flow cards now fire correctly for physical button presses.
+- Fixed wireless button reliability issues (#322, #325, #326) - button press detection and flow trigger behavior corrected.
+- Fixed climate_sensor battery reporting and added measure_pressure capability.
+- Partial fix for battery sensor timestamp issue (#323).
+
+### New Features
+- Added _TZE284_0ints6wl soil sensor driver (TS0601) with measure_soil_moisture.
+- Updated button_wireless_plug driver with new fingerprints and capabilities.
+
+### Improvements
+- Updated climate_sensor_device driver compose and contact_sensor fingerprint list.
+- Updated curtain_motor, curtain_motor_shutter, curtain_motor_wall drivers.
+- Updated device_floor_heating driver.
+---
+
+ [7.5.42] - 2026-05-18
 
 ### Bug Fixes
 - Fixed fingerprint matching for devices with mixed-case manufacturer/product IDs across bulb_dimmable, button_wireless_2, button_wireless_plug, and fingerbot drivers.
