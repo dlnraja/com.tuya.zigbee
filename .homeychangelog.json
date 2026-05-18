@@ -1,4 +1,7 @@
 {
+  "7.5.46": {
+    "en": "v7.5.46 - Maintenance release. No new devices or fixes."
+  },
   "7.5.45": {
     "en": "Bug fixes across 7 drivers including humidifier, motion_sensor_2, dimmer_dual_channel, smart_button_switch, and pet_feeder. Updated 8 device interviews. 6755 fingerprints."
   },
@@ -56,10 +59,7 @@
   "7.5.26": {
     "en": "Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated getTriggerCard to getDeviceTriggerCard. Improved stability and compatibility with latest Homey firmware."
   },
-  "7.5.25": {
-    "en": "v7.5.25: Fixed critical MODULE_NOT_FOUND crash on fingerbot, motion_sensor_2, and sirentemphumidsensor. Added PJ-1203A mapping. New fingerprints for power_clamp_meter."
-  },
-  "7.5.46": {
-    "en": "v7.5.45: Fixed 7 driver and script bugs affecting humidifier, motion_sensor_2, dimmer_dual_channel, smart_button_switch, and pet_feeder devices., Resolved remaining driver-level issues to pass publish validation., Updated humidifier driver with improved DP handling and capability management., Updated motion_sensor_2 driver with corrected sensor reporting and capability mappings., Updated dimmer_du"
+  "7.5.47": {
+    "en": "v7.5.46: No changes."
   }
 }
