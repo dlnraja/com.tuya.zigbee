@@ -4,7 +4,21 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.40] - 2026-05-17
+## [7.5.41] - 2026-05-18
+
+### Bug Fixes
+- Fixed battery endpoint scan handling for better battery device detection
+- Fixed Fingerbot capability registration timing (Issue #162)
+
+### New Features
+- Added 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT sources
+
+### Improvements
+- Improved kinetic detection for soil sensors
+- Added fingerprint support to soil_sensor, bulb_rgbw, climate_sensor, switch_1gang, wall_remote_2_gang, and wall_switch_1gang_1way drivers
+---
+
+ [7.5.40] - 2026-05-17
 
 ### Bug Fixes
 - Fixed empty battery reports on sleepy Tuya devices by implementing greedy adaptive battery listeners with ZCL and IAS fallbacks.
