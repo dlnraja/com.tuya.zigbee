@@ -37,6 +37,7 @@ class WallSwitch2Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
         this.log('[WALL-2G] Initializing Primary Device (Gang 1)');
       }
       await super.onNodeInit({ zclNode });
+      await this.initVirtualButtons();
       this.log(`[WALL-2G] v9.7.3 - Unified initialization complete for Gang ${this._gangNumber}`);
     }, 'onNodeInit');
   }

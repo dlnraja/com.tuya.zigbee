@@ -1,21 +1,20 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
- * SmartKnobDevice - v9.5.0 Universal Standard
- * 
- * Migrated to PhysicalButtonMixin for 8-layer detection stack including Rotary support.
- * Standardized battery management via BatteryMixin.
+ * SmartKnobDevice - v10.0.0 Universal Standard
+ * Automatically adapts and registers physical & virtual button events
+ * Inherits all features from ButtonDevice base class
  */
-class SmartKnobDevice extends PhysicalButtonMixin(ZigBeeDevice) {
+class SmartKnobDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => { this.buttonCount = 1;
-      await super.onNodeInit({ zclNode  });
-      this.log('[SmartKnob] ✅ Initialized with Mixin architecture (Rotary enabled)');
-    }, 'onNodeInit');
+    this.buttonCount = 1;
+    
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    
+    this.log('[SMART_KNOB] 🔘 v10.0.0 initialized via ButtonDevice');
   }
 
 }

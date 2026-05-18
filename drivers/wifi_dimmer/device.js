@@ -22,6 +22,7 @@ class WiFiDimmerDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaLocalD
 
   async onInit() {
     await super.onInit();
+    await this.initVirtualButtons();
     this.log('[WIFI-DIMMER] Ready');
   }
 

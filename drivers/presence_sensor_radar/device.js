@@ -12,15 +12,15 @@ const IntelligentDPAutoDiscovery = require('../../lib/sensors/IntelligentDPAutoD
 class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      this.log('[RADAR] 🚀 v8.0.0 Ultimate Initializing...');
-      
-      // Initialize v8 components
-      this._inference = new IntelligentPresenceInference(this);
-      this._discovery = new IntelligentDPAutoDiscovery(this);
-      
-      // Parent init handles standard sensor logic
-      await super.onNodeInit({ zclNode });
+    // v5.11.139: Call super.onNodeInit() FIRST to initialize TuyaZigbeeDevice base class
+    // which provides _safeInvoke and other L14 features
+    await super.onNodeInit({ zclNode });
+    
+    this.log('[RADAR] 🚀 v8.0.0 Ultimate Initializing...');
+    
+    // Initialize v8 components
+    this._inference = new IntelligentPresenceInference(this);
+    this._discovery = new IntelligentDPAutoDiscovery(this);
 
       // Detect firmware version for inference tuning
       const appVersion = this.getStoreValue('appVersion') || this.zclNode.endpoints[1]?.clusters?.basic?.appVersion;
@@ -30,7 +30,6 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       this._startInitializationCycle(zclNode);
 
       this.log('[RADAR] ✅ Ready');
-    }, 'onNodeInit');
   }
 
   /**

@@ -23,6 +23,7 @@ class WaterValveGardenDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unif
     await this._safeInvoke(async () => { // v9.7.3: Initialization is orchestrated by the mixin hierarchy.
       // Handles battery reporting, physical button detection, and relay logic.
       await super.onNodeInit({ zclNode  });
+      await this.initVirtualButtons();
       this.log('[VALVE-GARDEN] ✅ v9.7.3 Universal initialization complete');
     }, 'onNodeInit');
   }

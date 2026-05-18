@@ -20,6 +20,7 @@ class DimmerDualChannelDevice extends VirtualButtonMixin(PhysicalButtonMixin(Zig
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
+    await this.initVirtualButtons();
       this.log('╔══════════════════════════════════════════════════════════════╗');
       this.log('║         DUAL CHANNEL DIMMER v5.3.90                          ║');
       this.log('╚══════════════════════════════════════════════════════════════╝');

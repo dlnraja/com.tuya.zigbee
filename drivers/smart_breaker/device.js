@@ -21,6 +21,7 @@ class SmartBreakerDevice extends VirtualButtonMixin(PhysicalButtonMixin(UnifiedP
     await this._safeInvoke(async () => { // v9.7.3: Initialization is orchestrated by the mixin hierarchy.
       // Handles relay control, energy monitoring, and battery status.
       await super.onNodeInit({ zclNode  });
+      await this.initVirtualButtons();
       this.log('[BREAKER] ✅ v9.7.3 Universal initialization complete');
     }, 'onNodeInit');
   }

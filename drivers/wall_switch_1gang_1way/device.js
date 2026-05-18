@@ -17,6 +17,7 @@ class WallSwitch1Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
+    await this.initVirtualButtons();
       // v9.7.3: Initialization is now orchestrated by UnifiedSwitchBase and Mixins.
       // Physical button detection, virtual buttons, and capability sync are handled automatically.
       this.log('[WALL-1G] v9.7.3 - Unified initialization complete');

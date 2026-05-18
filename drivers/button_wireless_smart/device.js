@@ -1,23 +1,20 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
- * Button1GangDevice - v9.5.0 Universal Standard
- * (Formerly button_wireless_smart)
- * 
- * Migrated to PhysicalButtonMixin for 8-layer detection stack.
- * Supports Smart Knobs (rotary), HOBEIAN (OnOff Bound), and 0xFD multi-press.
+ * Button1GangDevice - v10.0.0 Universal Standard
+ * Automatically adapts and registers physical & virtual button events
+ * Inherits all features from ButtonDevice base class
  */
-class Button1GangDevice extends PhysicalButtonMixin(ZigBeeDevice) {
+class Button1GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => {
-      this.buttonCount = 1;
-      await super.onNodeInit({ zclNode });
-      this.log('[ButtonSmart] ✅ Initialized with Mixin architecture');
-    }, 'onNodeInit');
+    this.buttonCount = 1;
+    
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    
+    this.log('[BUTTON_WIRELESS_SMART] 🔘 v10.0.0 initialized via ButtonDevice');
   }
 
 }
