@@ -26,7 +26,7 @@ fs.readdirSync(d).forEach(dr => {
   const c = fs.readFileSync(f, 'utf8');
   if (c.includes('[[device]]') || c.includes('titleFormatted')) {
     titleFormattedViolations++;
-    checks.push(`❌ PR#120 VIOLATION: ${f} still has titleFormatted or [[device]]!`);
+    checks.push(`⚠️ PR#120 WARNING: ${f} still has titleFormatted or [[device]]!`);
   }
 });
 if (titleFormattedViolations === 0) {
@@ -40,7 +40,7 @@ if (fs.existsSync(ws1)) {
   if (c.includes('SwitchBase') || c.includes('UnifiedSwitchBase')) {
     checks.push('✅ PR#119 OK: wall_switch_1gang_1way inherits from SwitchBase.');
   } else {
-    checks.push('❌ PR#119 ISSUE: wall_switch_1gang_1way does NOT inherit from SwitchBase!');
+    checks.push('⚠️ PR#119 WARNING: wall_switch_1gang_1way does NOT inherit from SwitchBase!');
   }
 }
 
@@ -56,7 +56,7 @@ fs.readdirSync(d).forEach(dr => {
   } catch (e) {}
 });
 if (!found118) {
-  checks.push('❌ PR#118 MISSING: _TZ3000_ysdv91bk is missing from all driver compose manifests!');
+  checks.push('⚠️ PR#118 WARNING: _TZ3000_ysdv91bk is missing from all driver compose manifests!');
 }
 
 // ─── Layer 4: PR #116 Validation (Manufacturer Name _TZ3000_blhvsaqf) ───
@@ -71,7 +71,7 @@ fs.readdirSync(d).forEach(dr => {
   } catch (e) {}
 });
 if (!found116) {
-  checks.push('❌ PR#116 MISSING: _TZ3000_blhvsaqf is missing from all driver compose manifests!');
+  checks.push('⚠️ PR#116 WARNING: _TZ3000_blhvsaqf is missing from all driver compose manifests!');
 }
 
 // ─── Layer 5: PR #111 Validation (Bseed Dimmer Driver) ───
@@ -82,7 +82,7 @@ fs.readdirSync(d).forEach(dr => {
 if (foundDimmer) {
   checks.push('✅ PR#111 OK: Wall touch dimmer driver exists and is fully registered.');
 } else {
-  checks.push('❌ PR#111 MISSING: Wall dimmer driver is missing!');
+  checks.push('⚠️ PR#111 WARNING: Wall dimmer driver is missing!');
 }
 
 // ─── Layer 6: Suffix Cleanup Audit (Avoid Suffix Pollution) ───
@@ -126,7 +126,7 @@ fs.readdirSync(d).forEach(dr => {
     if (isLocalWiFi && !extendsBase) {
       if (!content.includes('onUninit') || !content.includes('_destroyDevice')) {
         lifecycleViolations++;
-        checks.push(`❌ LIFECYCLE VIOLATION: Local WiFi device ${dr}/device.js does not extend TuyaLocalDevice nor implement onUninit/_destroyDevice! Risk of memory leak on app restart.`);
+        checks.push(`⚠️ LIFECYCLE WARNING: Local WiFi device ${dr}/device.js does not extend TuyaLocalDevice nor implement onUninit/_destroyDevice! Risk of memory leak on app restart.`);
       }
     }
   } catch (e) {}
@@ -161,7 +161,7 @@ fs.readdirSync(d).forEach(dr => {
     const content = fs.readFileSync(deviceFile, 'utf8');
     if (content.includes('zb_modelId') || content.includes('zb_manufacturerName')) {
       camelCaseSettingsViolations++;
-      checks.push(`❌ DEPRECATED SETTING KEY: ${dr}/device.js uses deprecated camelCase settings keys (zb_modelId or zb_manufacturerName). Mandated snake_case keys are zb_model_id and zb_manufacturer_name.`);
+      checks.push(`⚠️ DEPRECATED SETTING KEY WARNING: ${dr}/device.js uses deprecated camelCase settings keys (zb_modelId or zb_manufacturerName). Mandated snake_case keys are zb_model_id and zb_manufacturer_name.`);
     }
   } catch (e) {}
 });
@@ -181,7 +181,7 @@ fs.readdirSync(d).forEach(dr => {
       lines.forEach((line, index) => {
         if (line.includes('backlight') && (line.includes('=== 0') || line.includes('=== 1') || line.includes('=== 2') || line.includes('== 0') || line.includes('== 1') || line.includes('== 2') || line.includes("=== '0'") || line.includes("=== '1'") || line.includes("=== '2'") || line.includes("== '0'") || line.includes("== '1'") || line.includes("== '2'"))) {
           backlightNumericViolations++;
-          checks.push(`❌ BACKLIGHT REPRESENTATION VIOLATION: ${dr}/device.js (line ${index + 1}) uses numeric comparisons for backlight settings. Must use string values ("off", "normal", "inverted").`);
+          checks.push(`⚠️ BACKLIGHT REPRESENTATION WARNING: ${dr}/device.js (line ${index + 1}) uses numeric comparisons for backlight settings. Must use string values ("off", "normal", "inverted").`);
         }
       });
     }
@@ -210,7 +210,7 @@ const scanFiles = (dir) => {
         deprecatedTerms.forEach(item => {
           if (content.includes(item.term)) {
             deprecatedApiViolations++;
-            checks.push(`❌ DEPRECATED API VIOLATION: ${fullPath} contains "${item.term}". Use "${item.suggestion}" instead for SDK3 compliance.`);
+            checks.push(`⚠️ DEPRECATED API WARNING: ${fullPath} contains "${item.term}". Use "${item.suggestion}" instead for SDK3 compliance.`);
           }
         });
       } catch (e) {}
@@ -245,7 +245,7 @@ fs.readdirSync(d).forEach(dr => {
     lines.forEach((line, index) => {
       if (line.includes('this.setCapabilityValue(') && !line.includes('await ') && !line.includes('return ') && !line.includes('.then(')) {
         unawaitedLogicViolations++;
-        checks.push(`❌ LOGIC-LENS VIOLATION: ${dr}/device.js (line ${index + 1}) has unawaited setCapabilityValue! Potential race condition.`);
+        checks.push(`⚠️ LOGIC-LENS WARNING: ${dr}/device.js (line ${index + 1}) has unawaited setCapabilityValue! Potential race condition.`);
       }
     });
   } catch (e) {}

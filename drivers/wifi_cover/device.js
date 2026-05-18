@@ -26,7 +26,7 @@ class WiFiCoverDevice extends TuyaLocalDevice {
   }
 
   async onInit() {
-    await super.on();
+    await super.onInit();
     this.log('[WIFI-COVER] Ready'); }
 
 

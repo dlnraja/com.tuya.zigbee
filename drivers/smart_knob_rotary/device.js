@@ -10,6 +10,7 @@ const { resolve: resolvePressType } = require('../../lib/utils/TuyaPressTypeMap'
 class SmartKnobRotaryDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     this.log('Smart Knob Rotary device initialized');
     
     // Store zclNode for later use

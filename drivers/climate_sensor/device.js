@@ -66,7 +66,7 @@ class ClimateSensorDevice extends SensorBase {
     }
 
     // Fallback to heuristic discovery
-    return super.on(dpId, value, dpType);
+    return super.onTuyaDP(dpId, value, dpType);
   }
 }
 

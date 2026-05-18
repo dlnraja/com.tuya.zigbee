@@ -29,6 +29,7 @@ class Switch5GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     this.initPhysicalButtonDetection(); // rule-19 injected
     
     this._registerCapabilityListeners(); // rule-12a injected

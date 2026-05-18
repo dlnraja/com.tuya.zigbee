@@ -8,8 +8,8 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  */
 class SceneSwitch6Device extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 
-  async onNodeInit() {
-    await super.on();
+  async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     
     this.buttonCount = 6;
     this.gangCount = 6;

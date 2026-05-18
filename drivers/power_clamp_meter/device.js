@@ -50,6 +50,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 class PowerClampMeterDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     this.log('[METER] v5.7.9 - CT Clamp Power Meter initializing...');
 
     // v5.7.9: Initialize internal state for PJ-1203A channels
@@ -88,7 +89,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       });
 
       emCluster.on('attr.rmsCurrent', (value) => {
-        this.setCapabilityValue('measure_current', safeParse(value, 1000)._ctRatio).catch(this.error);
+        this.setCapabilityValue('measure_current', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this.error);
       });
     }
   }
@@ -269,7 +270,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 113: // Current A (A Ã·1000)
-        this.setCapabilityValue('measure_current', safeParse(value, 1000)._ctRatio).catch(this.error);
+        this.setCapabilityValue('measure_current', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this.error);
         this.log(`[PJ1203A]  Current A: ${value/1000} A`);
         break;
 
@@ -331,7 +332,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     case 20: //Current phase 1 (A*1000)
     case 21: // Current phase 2
     case 22: // Current phase 3
-      this.setCapabilityValue('measure_current', safeParse(value, 1000)._ctRatio).catch(this.error);
+      this.setCapabilityValue('measure_current', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this.error);
       break;
 
       // v5.8.9: FALLBACK - Handle PJ-1203A DPs even when profile detection fails
@@ -369,7 +370,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       break;
 
     case 113: // PJ-1203A Current A (A Ã·1000)
-      this.setCapabilityValue('measure_current', safeParse(value, 1000)._ctRatio).catch(this.error);
+      this.setCapabilityValue('measure_current', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this.error);
       this.log(`[FALLBACK]  Current A: ${value/1000} A`);
       break;
 

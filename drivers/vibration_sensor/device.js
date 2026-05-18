@@ -55,7 +55,7 @@ class VibrationSensorDevice extends SensorBase {
     }
 
     // 2. Fallback: Base handles heuristic discovery via this._discovery
-    return super.on(dpId, value, dpType);
+    return super.onTuyaDP(dpId, value, dpType);
   }
 }
 

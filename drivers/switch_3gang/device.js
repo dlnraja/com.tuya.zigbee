@@ -9,12 +9,16 @@ const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
  * Physical button detection: single/double/long/triple per gang
  * BSEED ZCL-only mode: _TZ3000_qkixdnon (Pieter_Pessers forum)
  * v5.9.23: GROUP ISOLATION FIX — remove group memberships + broadcast filter
+ * v7.5.43: Added _TZ3000_v4l4b0lp to ZCL_ONLY manufacturers (Issue #170)
  */
 
 // ZCL-Only manufacturers (no Tuya DP) - forum: Pieter_Pessers BSEED 3-gang
+// Issue #170: _TZ3000_v4l4b0lp TS0003 confirmed ZCL-only (OnOff per EP, no Tuya DP 0xEF00)
 const ZCL_ONLY_MANUFACTURERS_3G = [
   '_TZ3000_qkixdnon', '_TZ3000_blhvsaqf', '_TZ3000_ysdv91bk',
-  '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt'  ];
+  '_TZ3000_hafsqare', '_TZ3000_e98krvvk', '_TZ3000_iedbgyxt',
+  '_TZ3000_v4l4b0lp'
+];
 
 class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase)) {
   get gangCount() { return 3; }
@@ -174,15 +178,19 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
             this.setCapabilityValue(capName, !value).catch(() => {});
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
-            const flowId = `switch_3gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
-            this.homey.flow.getDeviceTriggerCard(flowId)
-              .trigger(this, { gang: epNum, state: value }, {})
-              .catch(() => {});
+            const flowId = 'switch_3gang_physical_gang' + epNum + '_' + (value ? 'on' : 'off');
+            try {
+              this.homey.flow.getDeviceTriggerCard(flowId)
+                .trigger(this, { gang: epNum, state: value }, {})
+                .catch(() => {});
+            } catch(e) {}
             this.log(`[BSEED-3G] 🔘 Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
-            this.homey.flow.getDeviceTriggerCard(`switch_3gang_gang${epNum}_scene`)
-              .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+            try {
+              this.homey.flow.getDeviceTriggerCard('switch_3gang_gang' + epNum + '_scene')
+                .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+            } catch(e) {}
             this.log(`[BSEED-3G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
           }
         }

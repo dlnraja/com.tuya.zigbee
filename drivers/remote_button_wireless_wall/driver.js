@@ -41,27 +41,19 @@ class Button1GangDriver extends ZigBeeDriver {
     try {
       // Main triggers with button token
       const mainTriggers = [
-        'button_wireless_1_button_1gang_button_pressed',
-        'button_wireless_1_button_1gang_button_double_press',
-        'button_wireless_1_button_1gang_button_long_press',
-        'button_wireless_1_button_1gang_button_multi_press'
+        'remote_button_wireless_wall_button_1gang_button_pressed',
+        'remote_button_wireless_wall_button_1gang_button_double_press',
+        'remote_button_wireless_wall_button_1gang_button_long_press',
+        'remote_button_wireless_wall_button_1gang_button_multi_press'
       ];
 
       for (const triggerId of mainTriggers) {
         try {
-          const card =
-      this._getFlowCard(triggerId, 'trigger');
+          const card = this._getFlowCard(triggerId, 'trigger');
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {
-                this.error(`[FLOW] Device not found for ${triggerId
-  
-  
-  
-  
-  
-  
-  }`);
+                this.error(`[FLOW] Device not found for ${triggerId}`);
                 return false;
               }
               return true;
@@ -75,15 +67,14 @@ class Button1GangDriver extends ZigBeeDriver {
 
       // Button 1 specific triggers (no token needed)
       const button1Triggers = [
-        'button_wireless_1_button_1gang_button_1_pressed',
-        'button_wireless_1_button_1gang_button_1_double',
-        'button_wireless_1_button_1gang_button_1_long'
+        'remote_button_wireless_wall_button_1gang_button_1_pressed',
+        'remote_button_wireless_wall_button_1gang_button_1_double',
+        'remote_button_wireless_wall_button_1gang_button_1_long'
       ];
 
       for (const triggerId of button1Triggers) {
         try {
-          const card =
-      this._getFlowCard(triggerId, 'trigger');
+          const card = this._getFlowCard(triggerId, 'trigger');
           if (card) {
             card.registerRunListener(async (args, state) => {
               if (!args.device) {

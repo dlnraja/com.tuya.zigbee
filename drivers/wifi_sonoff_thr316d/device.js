@@ -15,7 +15,7 @@ class D extends E{
   }
   async onInit(){
     for(const c of['measure_temperature','measure_humidity','target_temperature'])if(!this.hasCapability(c))await this.addCapability(c).catch(() => { });
-    await super.on(); }
+    await super.onInit(); }
 
 
   onDeleted() {

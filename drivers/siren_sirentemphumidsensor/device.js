@@ -146,6 +146,7 @@ class SirenTimeBoundCluster extends BoundCluster {
 
 class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     try {
       await this.configureAttributeReporting([
         { cluster: 'msTemperatureMeasurement', attributeName: 'measuredValue', minInterval: 30, maxInterval: 600, minChange: 50 },

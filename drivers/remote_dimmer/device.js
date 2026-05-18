@@ -20,6 +20,7 @@ const ScenesBoundCluster = require('../../lib/clusters/ScenesBoundCluster');
 class RemoteDimmerDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([

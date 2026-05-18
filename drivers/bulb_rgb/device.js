@@ -42,6 +42,7 @@ class RGBBulbDevice extends UnifiedLightBase {
     return modes[v] || 'color';
   }
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     try {
       this.log('[RGB] Initialization...');
       await this._setupColorCluster(zclNode);
