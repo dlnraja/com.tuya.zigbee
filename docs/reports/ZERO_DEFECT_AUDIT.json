@@ -1,1062 +1,369 @@
 {
-  "timestamp": "2026-05-18T07:30:10.808Z",
+  "timestamp": "2026-05-18T14:18:43.352Z",
   "driversChecked": 228,
   "collisions": [
     {
-      "id": "_TZ3000_TZVBIMPQ|TS0002",
+      "id": "_TZ3000_WW6DRJA5TS011F|TS0601",
       "drivers": [
-        "button_wireless_2",
-        "switch_2gang"
-      ]
-    },
-    {
-      "id": "_TZ3000_TZVBIMPQ|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2gang"
-      ]
-    },
-    {
-      "id": "_TZ3000_TZVBIMPQ|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2gang"
-      ]
-    },
-    {
-      "id": "_TZ3000_TZVBIMPQ|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2gang"
-      ]
-    },
-    {
-      "id": "_TYZB01_ZSL6Z0PW|TS0002",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_ZSL6Z0PW|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_ZSL6Z0PW|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_ZSL6Z0PW|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_DIGZIIAV|TS0002",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_DIGZIIAV|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_DIGZIIAV|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_DIGZIIAV|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_YMCDBL3U|TS0002",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_YMCDBL3U|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_YMCDBL3U|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_YMCDBL3U|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_4TLKSK8A|TS0002",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_4TLKSK8A|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_4TLKSK8A|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_4TLKSK8A|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_XFPDRWVC|TS0002",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_XFPDRWVC|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_XFPDRWVC|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_XFPDRWVC|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_QEQVMVTI|TS0002",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_QEQVMVTI|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_QEQVMVTI|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_QEQVMVTI|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_SEQWASOT|TS0002",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_SEQWASOT|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_SEQWASOT|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_SEQWASOT|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_PHJERAQQ|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "fingerbot"
-      ]
-    },
-    {
-      "id": "_TYZB01_NCUTBJDI|TS0002",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_NCUTBJDI|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_NCUTBJDI|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_NCUTBJDI|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_ANEIICMQ|TS0002",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_ANEIICMQ|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_ANEIICMQ|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_ANEIICMQ|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_HLLA45KX|TS0002",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_HLLA45KX|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_HLLA45KX|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_HLLA45KX|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_IUEPBMPV|TS0002",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_IUEPBMPV|TS0012",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_IUEPBMPV|TS0003",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_IUEPBMPV|TS0013",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_plug"
-      ]
-    },
-    {
-      "id": "_TYZB01_BAGT1E4O|TS0044",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_4"
-      ]
-    },
-    {
-      "id": "_TYZB01_BAGT1E4O|TS0014",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_4"
-      ]
-    },
-    {
-      "id": "_TZ3000_FAMKXCI2|TS0043",
-      "drivers": [
-        "button_wireless_3",
-        "scene_switch_3"
-      ]
-    },
-    {
-      "id": "TUYATEC-G3GL6CGY|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-G3GL6CGY|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "contact_sensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-G3GL6CGY|ZG-227Z",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-G3GL6CGY|CK-TLSR8656-SS5-01(7014)",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-G3GL6CGY|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-G3GL6CGY|RH3052",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-BFQ2I2SY|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-BFQ2I2SY|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "contact_sensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-BFQ2I2SY|ZG-227Z",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-BFQ2I2SY|CK-TLSR8656-SS5-01(7014)",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-BFQ2I2SY|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-BFQ2I2SY|RH3052",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-ABKEHQUS|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-ABKEHQUS|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "contact_sensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-ABKEHQUS|ZG-227Z",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-ABKEHQUS|CK-TLSR8656-SS5-01(7014)",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-ABKEHQUS|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-ABKEHQUS|RH3052",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "_TYZB01_FTDKANLJ|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "id": "_TYZB01_FTDKANLJ|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "id": "_TYZB01_FTDKANLJ|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "id": "_TYZB01_KVWJUJY9|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "id": "_TYZB01_KVWJUJY9|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "id": "_TYZB01_KVWJUJY9|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "id": "_TYZB01_A476RAQ2|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "id": "_TYZB01_A476RAQ2|TS0601",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ]
-    },
-    {
-      "id": "_TYZB01_A476RAQ2|TY0201",
-      "drivers": [
         "climate_sensor",
-        "lcdtemphumidsensor"
+        "plug_energy_monitor"
       ]
     },
     {
-      "id": "_TYZB01_HJSGDKFL|TS0201",
+      "id": "_TZE200_01FVXAMO|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "lcdtemphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "_TYZB01_HJSGDKFL|TS0601",
+      "id": "_TZE200_01FVXAMO|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "lcdtemphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "_TYZB01_HJSGDKFL|TY0201",
+      "id": "_TZE200_0U3BJ3RC|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "lcdtemphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-YG5DCBFU|TS0201",
+      "id": "_TZE200_0U3BJ3RC|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-YG5DCBFU|ZG-227Z",
+      "id": "_TZE200_1DRR8TAB|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-YG5DCBFU|CK-TLSR8656-SS5-01(7014)",
+      "id": "_TZE200_1DRR8TAB|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-YG5DCBFU|TY0201",
+      "id": "_TZE200_2VFXWENG|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-YG5DCBFU|RH3052",
+      "id": "_TZE200_2VFXWENG|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-PRHS1RSD|TS0201",
+      "id": "_TZE200_3EJWXPMU|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-PRHS1RSD|ZG-227Z",
+      "id": "_TZE200_3EJWXPMU|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-PRHS1RSD|CK-TLSR8656-SS5-01(7014)",
+      "id": "_TZE200_3XFJP0AG|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-PRHS1RSD|TY0201",
+      "id": "_TZE200_3XFJP0AG|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-PRHS1RSD|RH3052",
+      "id": "_TZE200_44AF8VYI|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-GQHXIXYK|TS0201",
+      "id": "_TZE200_44AF8VYI|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-GQHXIXYK|ZG-227Z",
+      "id": "_TZE200_4EEYEBRT|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-GQHXIXYK|CK-TLSR8656-SS5-01(7014)",
+      "id": "_TZE200_4EEYEBRT|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-GQHXIXYK|TY0201",
+      "id": "_TZE200_5D3VHJRO|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-GQHXIXYK|RH3052",
+      "id": "_TZE200_5D3VHJRO|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-VMGH3FXD|TS0201",
+      "id": "_TZE200_6WI2MOPE|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-VMGH3FXD|ZG-227Z",
+      "id": "_TZE200_6WI2MOPE|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-VMGH3FXD|CK-TLSR8656-SS5-01(7014)",
+      "id": "_TZE200_78IOIAML|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-VMGH3FXD|TY0201",
+      "id": "_TZE200_78IOIAML|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-VMGH3FXD|RH3052",
+      "id": "_TZE200_7DEQ70B8|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-OJMXEIKG|TS0201",
+      "id": "_TZE200_7DEQ70B8|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-OJMXEIKG|ZG-227Z",
+      "id": "_TZE200_7FQKPHOQ|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-OJMXEIKG|CK-TLSR8656-SS5-01(7014)",
+      "id": "_TZE200_7FQKPHOQ|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-OJMXEIKG|TY0201",
+      "id": "_TZE200_86NBEW0J|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-OJMXEIKG|RH3052",
+      "id": "_TZE200_86NBEW0J|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-OJMXEIKQ|TS0201",
+      "id": "_TZE200_8EAZVZO6|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-OJMXEIKQ|ZG-227Z",
+      "id": "_TZE200_8EAZVZO6|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-OJMXEIKQ|CK-TLSR8656-SS5-01(7014)",
+      "id": "_TZE200_8PLY8MJJ|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-OJMXEIKQ|TY0201",
+      "id": "_TZE200_8PLY8MJJ|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-OJMXEIKQ|RH3052",
+      "id": "_TZE200_8THWKZXL|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-1G3TAWNP|TS0201",
+      "id": "_TZE200_8THWKZXL|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-1G3TAWNP|ZG-227Z",
+      "id": "_TZE200_9YAPGBUV|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-1G3TAWNP|CK-TLSR8656-SS5-01(7014)",
+      "id": "_TZE200_9YAPGBUV|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-1G3TAWNP|TY0201",
+      "id": "_TZE200_A8Z0G46U|SNZB-02",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-1G3TAWNP|RH3052",
+      "id": "_TZE200_A8Z0G46U|SNZB-02P",
       "drivers": [
         "climate_sensor",
-        "temphumidsensor"
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-V3UXBUXY|TS0201",
+      "id": "_TZE200_9P5XMJ5R|TS0105",
       "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-V3UXBUXY|ZG-227Z",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-V3UXBUXY|CK-TLSR8656-SS5-01(7014)",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-V3UXBUXY|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-V3UXBUXY|RH3052",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-RIUJ5XZS|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-RIUJ5XZS|ZG-227Z",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-RIUJ5XZS|CK-TLSR8656-SS5-01(7014)",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-RIUJ5XZS|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-RIUJ5XZS|RH3052",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-1UXX9CCI|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-1UXX9CCI|ZG-227Z",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
+        "curtain_motor",
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-1UXX9CCI|CK-TLSR8656-SS5-01(7014)",
+      "id": "_TZE200_2IMWYIGP|TS0105",
       "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-1UXX9CCI|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-1UXX9CCI|RH3052",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-HAOIUWZY|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-HAOIUWZY|ZG-227Z",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-HAOIUWZY|CK-TLSR8656-SS5-01(7014)",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-HAOIUWZY|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-HAOIUWZY|RH3052",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-QUN7VQ14|TS0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-QUN7VQ14|ZG-227Z",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-QUN7VQ14|CK-TLSR8656-SS5-01(7014)",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ]
-    },
-    {
-      "id": "TUYATEC-QUN7VQ14|TY0201",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
+        "curtain_motor",
+        "generic_diy"
       ]
     },
     {
-      "id": "TUYATEC-QUN7VQ14|RH3052",
+      "id": "_TZE200_A8SDABTG|TS0105",
       "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
+        "curtain_motor",
+        "generic_diy"
       ]
     },
     {
-      "id": "_TZ3210_EMQMWTYM|TS0601",
+      "id": "_TZE200_1AGWNEMS|TS0052",
       "drivers": [
-        "device_din_rail",
-        "doorbell"
+        "dimmer_wall_1gang",
+        "generic_diy"
       ]
     },
     {
-      "id": "HOBEIAN|TS0203",
+      "id": "_TZE200_3P5YDOS3|TS0052",
       "drivers": [
-        "presence_sensor_radar",
-        "sensor_presence_radar"
+        "dimmer_wall_1gang",
+        "generic_diy"
       ]
     },
     {
-      "id": "HOBEIAN|TS0601",
+      "id": "_TZE200_579LGUH2|TS0052",
       "drivers": [
-        "presence_sensor_radar",
-        "sensor_presence_radar"
+        "dimmer_wall_1gang",
+        "generic_diy"
       ]
     },
     {
-      "id": "HOBEIAN|ZG-204ZL",
+      "id": "_TZE200_9I9DT8IS|TS0052",
       "drivers": [
-        "presence_sensor_radar",
-        "sensor_presence_radar"
+        "dimmer_wall_1gang",
+        "generic_diy"
       ]
     },
     {
-      "id": "HOBEIAN|ZG-204ZM",
+      "id": "_TZE200_0HG58WYK|ETRV0100",
       "drivers": [
-        "presence_sensor_radar",
-        "sensor_presence_radar"
+        "generic_diy",
+        "radiator_valve"
       ]
     },
     {
-      "id": "HOBEIAN|ZG-204ZV",
+      "id": "_TZE200_0J5JMA9B|ETRV0100",
       "drivers": [
-        "presence_sensor_radar",
-        "sensor_presence_radar"
+        "generic_diy",
+        "radiator_valve"
       ]
     },
     {
-      "id": "_TZ3000_W8JWKCZZ|TS0043",
+      "id": "_TZE200_2AAELWXK|SNZB-06P",
       "drivers": [
-        "scene_switch_3",
-        "scene_switch_wall"
+        "generic_diy",
+        "presence_sensor_radar"
       ]
     },
     {
-      "id": "_TZ3000_C7XSIEXW|TS0001",
+      "id": "_TZ3000_ITGNGNQZ|TS0601",
       "drivers": [
         "switch_1gang",
-        "wall_switch_1gang_1way"
+        "switch_2gang"
       ]
     },
     {
-      "id": "_TZ3000_C7XSIEXW|TS0011",
+      "id": "_TZ3000_ITGNGNQZ|TS011F",
       "drivers": [
         "switch_1gang",
-        "wall_switch_1gang_1way"
+        "switch_2gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_ITGNGNQZ|TS0726",
+      "drivers": [
+        "switch_1gang",
+        "switch_2gang"
       ]
     }
   ],
@@ -1807,8 +1114,8 @@
     ".homeybuild\\drivers\\fan_controller\\device.js:175: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\humidifier\\device.js:44: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\humidifier\\device.js:84: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\drivers\\ir_blaster\\device.js:1122: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\drivers\\ir_blaster\\device.js:1171: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\drivers\\ir_blaster\\device.js:1123: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\drivers\\ir_blaster\\device.js:1172: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\lcdtemphumidsensor_plug_energy\\device.js:198: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\lcdtemphumidsensor_plug_energy\\device.js:199: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\lcdtemphumidsensor_plug_energy\\device.js:200: Potential unchecked division/multiplication (NaN risk)",
@@ -1817,9 +1124,9 @@
     ".homeybuild\\drivers\\plug_energy_monitor\\device.js:180: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\presence_sensor_radar\\device.js:94: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\presence_sensor_radar\\device.js:173: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\drivers\\radiator_valve_zigbee\\device.js:138: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\drivers\\radiator_valve_zigbee\\device.js:143: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\drivers\\radiator_valve_zigbee\\device.js:239: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\drivers\\radiator_valve_zigbee\\device.js:139: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\drivers\\radiator_valve_zigbee\\device.js:144: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\drivers\\radiator_valve_zigbee\\device.js:240: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\remote_button_wireless_plug\\device.js:177: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\remote_button_wireless_plug\\device.js:178: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\remote_button_wireless_plug\\device.js:179: Potential unchecked division/multiplication (NaN risk)",
@@ -1833,8 +1140,8 @@
     ".homeybuild\\drivers\\thermostat_4ch\\driver.js:17: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\universal_fallback\\device.js:119: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\vibration_sensor\\device.js:51: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\drivers\\wall_dimmer_1gang_1way\\device.js:80: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\drivers\\wall_dimmer_1gang_1way\\device.js:294: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\drivers\\wall_dimmer_1gang_1way\\device.js:81: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\drivers\\wall_dimmer_1gang_1way\\device.js:295: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\wifi_dimmer\\device.js:14: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\wifi_dimmer\\device.js:15: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\adapters\\ExternalDeviceAdapter.js:164: Potential unchecked division/multiplication (NaN risk)",
@@ -2115,7 +1422,7 @@
     ".homeybuild\\lib\\tuya\\TuyaTimeSyncManager.js:151: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\tuya\\TuyaUnifiedParser.js:855: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\tuya\\TuyaUniversalMapper.js:64: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\lib\\tuya\\TuyaZigbeeDevice.js:614: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\lib\\tuya\\TuyaZigbeeDevice.js:676: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\tuya\\UniversalDPReceiver.js:192: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\tuya\\UniversalDPReceiver.js:317: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\tuya\\UniversalDPSender.js:40: Potential unchecked division/multiplication (NaN risk)",
@@ -2568,8 +1875,8 @@
     "drivers\\fan_controller\\device.js:175: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\humidifier\\device.js:44: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\humidifier\\device.js:84: Potential unchecked division/multiplication (NaN risk)",
-    "drivers\\ir_blaster\\device.js:1122: Potential unchecked division/multiplication (NaN risk)",
-    "drivers\\ir_blaster\\device.js:1171: Potential unchecked division/multiplication (NaN risk)",
+    "drivers\\ir_blaster\\device.js:1123: Potential unchecked division/multiplication (NaN risk)",
+    "drivers\\ir_blaster\\device.js:1172: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\lcdtemphumidsensor_plug_energy\\device.js:198: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\lcdtemphumidsensor_plug_energy\\device.js:199: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\lcdtemphumidsensor_plug_energy\\device.js:200: Potential unchecked division/multiplication (NaN risk)",
@@ -2578,9 +1885,9 @@
     "drivers\\plug_energy_monitor\\device.js:180: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\presence_sensor_radar\\device.js:94: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\presence_sensor_radar\\device.js:173: Potential unchecked division/multiplication (NaN risk)",
-    "drivers\\radiator_valve_zigbee\\device.js:138: Potential unchecked division/multiplication (NaN risk)",
-    "drivers\\radiator_valve_zigbee\\device.js:143: Potential unchecked division/multiplication (NaN risk)",
-    "drivers\\radiator_valve_zigbee\\device.js:239: Potential unchecked division/multiplication (NaN risk)",
+    "drivers\\radiator_valve_zigbee\\device.js:139: Potential unchecked division/multiplication (NaN risk)",
+    "drivers\\radiator_valve_zigbee\\device.js:144: Potential unchecked division/multiplication (NaN risk)",
+    "drivers\\radiator_valve_zigbee\\device.js:240: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\remote_button_wireless_plug\\device.js:177: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\remote_button_wireless_plug\\device.js:178: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\remote_button_wireless_plug\\device.js:179: Potential unchecked division/multiplication (NaN risk)",
@@ -2594,8 +1901,8 @@
     "drivers\\thermostat_4ch\\driver.js:17: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\universal_fallback\\device.js:119: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\vibration_sensor\\device.js:51: Potential unchecked division/multiplication (NaN risk)",
-    "drivers\\wall_dimmer_1gang_1way\\device.js:80: Potential unchecked division/multiplication (NaN risk)",
-    "drivers\\wall_dimmer_1gang_1way\\device.js:294: Potential unchecked division/multiplication (NaN risk)",
+    "drivers\\wall_dimmer_1gang_1way\\device.js:81: Potential unchecked division/multiplication (NaN risk)",
+    "drivers\\wall_dimmer_1gang_1way\\device.js:295: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\wifi_dimmer\\device.js:14: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\wifi_dimmer\\device.js:15: Potential unchecked division/multiplication (NaN risk)",
     "lib\\adapters\\ExternalDeviceAdapter.js:164: Potential unchecked division/multiplication (NaN risk)",
@@ -2876,7 +2183,7 @@
     "lib\\tuya\\TuyaTimeSyncManager.js:151: Potential unchecked division/multiplication (NaN risk)",
     "lib\\tuya\\TuyaUnifiedParser.js:855: Potential unchecked division/multiplication (NaN risk)",
     "lib\\tuya\\TuyaUniversalMapper.js:64: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\tuya\\TuyaZigbeeDevice.js:614: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\tuya\\TuyaZigbeeDevice.js:676: Potential unchecked division/multiplication (NaN risk)",
     "lib\\tuya\\UniversalDPReceiver.js:192: Potential unchecked division/multiplication (NaN risk)",
     "lib\\tuya\\UniversalDPReceiver.js:317: Potential unchecked division/multiplication (NaN risk)",
     "lib\\tuya\\UniversalDPSender.js:40: Potential unchecked division/multiplication (NaN risk)",
@@ -3813,7 +3120,7 @@
     ".github\\state\\interviews\\JohanBendz-com.tuya.zigbee_1327.json:35: Forbidden invisible character (char code 8203) detected.",
     ".github\\state\\interviews\\JohanBendz-com.tuya.zigbee_1360.json:13: Forbidden invisible character (char code 160) detected.",
     ".github\\state\\pr-issue-scan.json:3111: Forbidden invisible character (char code 8203) detected.",
-    ".github\\state\\pr-issue-scan.json:29865: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\pr-issue-scan.json:29857: Forbidden invisible character (char code 160) detected.",
     ".homeybuild\\drivers\\lcdtemphumidsensor_plug_energy\\device.js:169: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\drivers\\presence_sensor_radar\\configs.js:253: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\drivers\\presence_sensor_radar\\configs.js:254: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",

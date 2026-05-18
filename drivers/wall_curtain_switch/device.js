@@ -15,6 +15,7 @@ class WallCurtainSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
   async onNodeInit({ zclNode }) {
     this.log('[WallCurtain] 🚀 Initializing hardened driver...');
     await super.onNodeInit({ zclNode });
+    await this.initVirtualButtons();
 
     // 1. Capability Listeners
     if (this.hasCapability('windowcoverings_set')) {

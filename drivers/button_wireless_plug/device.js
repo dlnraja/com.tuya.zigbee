@@ -182,6 +182,7 @@ class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(Uni
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
       await super.onNodeInit({ zclNode });
+      await this.initVirtualButtons();
 
       // --- Attribute Reporting Configuration ---
       try {

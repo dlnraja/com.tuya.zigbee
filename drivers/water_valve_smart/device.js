@@ -63,6 +63,7 @@ class WaterValveSmartDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unifi
     await this._safeInvoke(async () => { // v9.7.3: Initialization is orchestrated by the mixin hierarchy.
       // Handles battery reporting, physical button detection, and relay logic.
       await super.onNodeInit({ zclNode  });
+      await this.initVirtualButtons();
       // Ensure capabilities exist
       if (!this.hasCapability('meter_water')) await this.addCapability('meter_water').catch (() => { });
       if (!this.hasCapability('measure_temperature')) await this.addCapability('measure_temperature').catch(() => { });

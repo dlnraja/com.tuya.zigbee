@@ -53,7 +53,6 @@ class motion_sensor_2 extends PhysicalButtonMixin(ZigBeeDevice) {
       if (zclNode.endpoints[1].clusters.tuya) {
       zclNode.endpoints[1].clusters.tuya.on('reporting', value => this.processResponse(value));
       }
-    }, 'onNodeInit');
   }
 
   // Handle motion status alarms

@@ -41,6 +41,7 @@ class RGBWBulbDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
       await super.onNodeInit({ zclNode });
+      await this.initVirtualButtons();
       
       // --- Attribute Reporting Configuration ---
       try {

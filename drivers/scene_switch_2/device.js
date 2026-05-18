@@ -1,23 +1,20 @@
 'use strict';
 
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
- * Scene Switch 2 Gang - Universal Hardened Driver (v10.0.0)
+ * SceneSwitch2Device - v10.0.0 Universal Standard
+ * Automatically adapts and registers physical & virtual button events
+ * Inherits all features from ButtonDevice base class
  */
-class SceneSwitch2Device extends PhysicalButtonMixin(TuyaZigbeeDevice) {
+class SceneSwitch2Device extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-    
     this.buttonCount = 2;
-    this.gangCount = 2;
     
-    // Initialize hardened physical button detection
-    await this.initPhysicalButtonDetection(this.zclNode);
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
     
-    this.log('[SceneSwitch2] 🔘 Hardened via TuyaZigbeeDevice + PhysicalButtonMixin');
+    this.log('[SCENE_SWITCH_2] 🔘 v10.0.0 initialized via ButtonDevice');
   }
 
 }

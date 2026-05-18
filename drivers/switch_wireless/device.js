@@ -18,6 +18,7 @@ class SwitchWirelessDevice extends VirtualButtonMixin(PhysicalButtonMixin(ZigBee
       // v9.7.3: Initialization is now orchestrated by Mixins.
       // Handles battery reporting and physical button detection (Single/Double/Long).
       await super.onNodeInit({ zclNode  });
+      await this.initVirtualButtons();
       this.log('[WIRELESS-SWITCH] ✅ Universal initialization complete');
     }, 'onNodeInit');
   }

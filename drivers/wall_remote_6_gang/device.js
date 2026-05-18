@@ -1,21 +1,20 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
- * WallRemote6GangDevice - v9.5.0 Universal Standard
- * 
- * Migrated to PhysicalButtonMixin for 8-layer detection stack.
- * Standardized battery management via BatteryMixin.
+ * WallRemote6GangDevice - v10.0.0 Universal Standard
+ * Automatically adapts and registers physical & virtual button events
+ * Inherits all features from ButtonDevice base class
  */
-class WallRemote6GangDevice extends PhysicalButtonMixin(ZigBeeDevice) {
+class WallRemote6GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => { this.buttonCount = 6;
-      await super.onNodeInit({ zclNode  });
-      this.log('[WallRemote6Gang] ✅ Initialized with Mixin architecture');
-    }, 'onNodeInit');
+    this.buttonCount = 6;
+    
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    
+    this.log('[WALL_REMOTE_6_GANG] 🔘 v10.0.0 initialized via ButtonDevice');
   }
 
 }

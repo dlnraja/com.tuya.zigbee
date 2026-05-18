@@ -22,6 +22,7 @@ class WiFiWaterValveDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaLo
 
   async onInit() {
     await super.onInit();
+    await this.initVirtualButtons();
     if (!this.hasCapability('measure_battery')) {
       try {
         await this.addCapability('measure_battery').catch(() => { });

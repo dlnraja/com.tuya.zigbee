@@ -16,6 +16,7 @@ class SmartButtonSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(Zig
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { this.buttonCount = 1;
       await super.onNodeInit({ zclNode  });
+      await this.initVirtualButtons();
       this.log('[SmartButtonSwitch] ✅ Initialized with Mixin architecture');
     }, 'onNodeInit');
   }

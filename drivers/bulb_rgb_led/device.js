@@ -29,6 +29,7 @@ class RGBBulbLedDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
       await super.onNodeInit({ zclNode });
+      await this.initVirtualButtons();
       await this._setupColorCluster(zclNode);
       this._setupRGBListeners();
       this.log('[RGB-LED] ✅ Ready');

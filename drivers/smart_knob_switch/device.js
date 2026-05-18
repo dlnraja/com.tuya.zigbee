@@ -3,25 +3,20 @@
 const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
- * Smart Knob Switch - TS004F
- * 1-button battery knob switch using ZCL scenes/onOff clusters
- * v5.12.0: Converted from log-only stub to full ButtonDevice
+ * SmartKnobSwitchDevice - v10.0.0 Universal Standard
+ * Automatically adapts and registers physical & virtual button events
+ * Inherits all features from ButtonDevice base class
  */
-class SmartKnobSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(ButtonDevice)) {
+class SmartKnobSwitchDevice extends ButtonDevice {
 
-  get mainsPowered() { return true; }
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => { this.buttonCount = 1;
-      this.log('[SMART_KNOB_SWITCH] v5.12.0 init - 1 button');
-      await super.onNodeInit({ zclNode }).catch(err => this.error('[SMART_KNOB_SWITCH] init err:', err.message));
-      this.log('[SMART_KNOB_SWITCH] ready');
-     }, 'onNodeInit');
+    this.buttonCount = 1;
+    
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    
+    this.log('[SMART_KNOB_SWITCH] 🔘 v10.0.0 initialized via ButtonDevice');
   }
 
-
-  onDeleted() {
-    this.log('Device deleted, cleaning up');
-  }
 }
 
 module.exports = SmartKnobSwitchDevice;

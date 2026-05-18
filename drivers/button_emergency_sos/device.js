@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 let IEEEAddressManager = null;
 try {
@@ -24,7 +24,7 @@ try {
  * ║  Supports: IAS ACE, IAS Zone, Tuya DP, and genOnOff                          ║
  * ╚══════════════════════════════════════════════════════════════════════════════╝
  */
-class SosEmergencyButtonDevice extends ZigBeeDevice {
+class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {

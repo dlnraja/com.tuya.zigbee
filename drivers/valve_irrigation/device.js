@@ -68,6 +68,7 @@ class ValveIrrigationDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unifi
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { // v9.7.3: Unified initialization handles reporting and protocol setup
       await super.onNodeInit({ zclNode  });
+      await this.initVirtualButtons();
       this.log('[VALVE-IRR] v9.7.3 - DPs: 1,5-7,11,13-15,101-104 | ZCL: 6,1,EF00');
       this.log('[VALVE-IRR] ✅ Ready');
     }, 'onNodeInit');

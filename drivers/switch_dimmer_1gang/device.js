@@ -23,6 +23,7 @@ class SwitchDimmer1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
   async onNodeInit({ zclNode }) {
     this.log('[Dimmer1G] 🚀 Initializing hardened driver...');
     await super.onNodeInit({ zclNode });
+    await this.initVirtualButtons();
 
     // 1. Capability Listeners
     this.registerCapabilityListener ('onoff', async (value) => { this.log(`[Dimmer1G] Setting state: ${value}`);

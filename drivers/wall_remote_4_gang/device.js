@@ -1,18 +1,20 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const ButtonDevice = require('../../lib/devices/ButtonDevice');
 
 /**
- * Wall Remote 4 Gang - Universal Driver (v9.5.0)
+ * WallRemote4GangDevice - v10.0.0 Universal Standard
+ * Automatically adapts and registers physical & virtual button events
+ * Inherits all features from ButtonDevice base class
  */
-class WallRemote4GangDevice extends PhysicalButtonMixin(ZigBeeDevice) {
+class WallRemote4GangDevice extends ButtonDevice {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => { this.buttonCount = 4;
-      await super.onNodeInit({ zclNode  });
-      this.log('[WALL4] 🔘 Initialized via Universal Mixin System');
-    }, 'onNodeInit');
+    this.buttonCount = 4;
+    
+    await super.onNodeInit({ zclNode }).catch(err => this.error('[INIT] Error:', err.message));
+    
+    this.log('[WALL_REMOTE_4_GANG] 🔘 v10.0.0 initialized via ButtonDevice');
   }
 
 }
