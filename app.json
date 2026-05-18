@@ -46754,7 +46754,8 @@
           "_TZE200_4mh6tyyo",
           "_TZE200_4MH6TYYO",
           "_tyst11_d0yu2xgi",
-          "_TYST11_D0YU2XGI"
+          "_TYST11_D0YU2XGI",
+          "_TYST11_d0yu2xgi"
         ],
         "productId": [
           "TS0601_air_purifier",
@@ -47590,7 +47591,9 @@
           "_TZ3210_WUHEYHVM",
           "_tz3210_yluvwhjc",
           "_TZ3210_yluvwhjc",
-          "_TZ3210_YLUVWHJC"
+          "_TZ3210_YLUVWHJC",
+          "_TYZB01_qezuin6k",
+          "_TYZB01_v8gtiaed"
         ],
         "productId": [
           "TS0501A",
@@ -47613,7 +47616,8 @@
           "RB 165",
           "RB 175 W",
           "ZBT-DimmableLight",
-          "TS0052"
+          "TS0052",
+          "TS1101"
         ],
         "endpoints": {
           "1": {
@@ -48329,7 +48333,8 @@
           "_TZ3000_12SXJAP4",
           "_tz3000_hlijwsai",
           "_TZ3000_hlijwsai",
-          "_TZ3000_HLIJWSAI"
+          "_TZ3000_HLIJWSAI",
+          "eWeLight"
         ],
         "endpoints": {
           "1": {
@@ -50797,7 +50802,8 @@
           "_TZ3000_nxdziqzc",
           "_TZ3000_NXDZIQZC",
           "_tyzb01_qm6djpta",
-          "_TYZB01_QM6DJPTA"
+          "_TYZB01_QM6DJPTA",
+          "_TYZB01_qm6djpta"
         ],
         "productId": [
           "ZBPB10BK",
@@ -51684,7 +51690,8 @@
           "_TZ3000_22ugzkme",
           "_TZ3000_22UGZKME",
           "_tyzb02_keyjqthh",
-          "_TYZB02_KEYJQTHH"
+          "_TYZB02_KEYJQTHH",
+          "_TYZB02_keyjqthh"
         ],
         "productId": [
           "TS0041",
@@ -52178,13 +52185,32 @@
           "_tyzb01_hlla45kx",
           "_TYZB01_HLLA45KX",
           "_tyzb01_iuepbmpv",
-          "_TYZB01_IUEPBMPV"
+          "_TYZB01_IUEPBMPV",
+          "_TYZB02_keyjhapk",
+          "_TZ3000_5e235jpa",
+          "_TYZB02_key8kk7r",
+          "_TYZB01_mtlhqn48",
+          "_TYZB01_6sadkhcy",
+          "TUYATEC-O6SNCwd6",
+          "_TYZB01_vzrytttn",
+          "_TYZB01_2athzhfr",
+          "_TYZB01_6g8b7at8",
+          "TUYATEC-nzrrvgco",
+          "_TYZB01_xiuox57i",
+          "_TYZB01_b8cr31hp",
+          "_TYZB01_mqel1whf",
+          "_TYZB01_bagt1e4o"
         ],
         "productId": [
           "TS0042",
           "TS0043",
           "TS0044",
-          "TS0041"
+          "TS0041",
+          "TS0002",
+          "TS0012",
+          "TS0003",
+          "TS0013",
+          "TS0014"
         ],
         "endpoints": {
           "1": {
@@ -54636,11 +54662,31 @@
         ]
       },
       "zigbee": {
-        "manufacturerName": [],
+        "manufacturerName": [
+          "_TYZB01_hlla45kx",
+          "_TYZB01_iuepbmpv",
+          "_TYZB01_ncutbjdi",
+          "_TYZB01_aneiicmq",
+          "_TYZB01_zsl6z0pw",
+          "_TYZB01_digziiav",
+          "_TYZB01_ymcdbl3u",
+          "_TYZB01_4tlksk8a",
+          "_TYZB01_xfpdrwvc",
+          "_TYZB01_qeqvmvti",
+          "_TYZB01_seqwasot"
+        ],
         "productId": [
           "TS011F",
           "TS0121",
-          "TSO121"
+          "TSO121",
+          "TS0003",
+          "TS0011",
+          "TS000F",
+          "TS0001",
+          "TS0012",
+          "TS0002",
+          "TS0013",
+          "TS0111"
         ],
         "learnmode": {
           "image": "/drivers/plug_energy_monitor/assets/learnmode.svg",
@@ -57913,7 +57959,27 @@
           "tuyatec-haoiuwzy",
           "TUYATEC-HAOIUWZY",
           "tuyatec-qun7vq14",
-          "TUYATEC-QUN7VQ14"
+          "TUYATEC-QUN7VQ14",
+          "TUYATEC-g3gl6cgy",
+          "TUYATEC-Bfq2i2Sy",
+          "TUYATEC-abkehqus",
+          "_TYZB01_ftdkanlj",
+          "_TYZB01_kvwjujy9",
+          "_TYZB01_a476raq2",
+          "_TYZB01_hjsgdkfl",
+          "_TYZB01_cbiezpds",
+          "TUYATEC-yg5dcbfu",
+          "TUYATEC-prhs1rsd",
+          "TUYATEC-gqhxixyk",
+          "TUYATEC-vmgh3fxd",
+          "TUYATEC-ojmxeikg",
+          "TUYATEC-ojmxeikq",
+          "TUYATEC-1g3tawnp",
+          "TUYATEC-v3uxbuxy",
+          "TUYATEC-riuj5xzs",
+          "TUYATEC-1uxx9cci",
+          "TUYATEC-HaoiuWzy",
+          "TUYATEC-qun7vq14"
         ],
         "productId": [
           "TS0201",
@@ -59147,7 +59213,22 @@
           "_tyst11_qq9mpfhw",
           "_TYST11_QQ9MPFHW",
           "_tyzb01_sqmd19i1",
-          "_TYZB01_SQMD19I1"
+          "_TYZB01_SQMD19I1",
+          "TUYATEC-sb6t7ett",
+          "TUYATEC-rkqiqvcs",
+          "TUYATEC-crr8qb0p",
+          "TUYATEC-kbqf60nt",
+          "TUYATEC-r9hgssol",
+          "TUYATEC-trhrga6p",
+          "TUYATEC-ip9ganvw",
+          "_TYZB01_xph99wvr",
+          "TUYATEC-7qunn4gq",
+          "TUYATEC-0l6xaqmi",
+          "Immax",
+          "Visonic",
+          "TUYATEC-3tipnsrx",
+          "_TYZB01_sqmd19i1",
+          "_TYST11_qq9mpfhw"
         ],
         "productId": [
           "TS0203",
@@ -65907,7 +65988,8 @@
           "_TZ3210_232NRYQH",
           "_tz3210_okbss9dy",
           "_TZ3210_okbss9dy",
-          "_TZ3210_OKBSS9DY"
+          "_TZ3210_OKBSS9DY",
+          "_TYZB01_phjeraqq"
         ],
         "productId": [
           "TS0001",
@@ -73674,7 +73756,20 @@
           "_TZE284_MRF6VTUA",
           "_tze284_tre6haif",
           "_TZE284_tre6haif",
-          "_TZE284_TRE6HAIF"
+          "_TZE284_TRE6HAIF",
+          "TUYATEC-bd5faf9p",
+          "TUYATEC-zw6hxafz",
+          "_TYZB01_jytabjkb",
+          "_TYZB01_dl7cejts",
+          "_TYZB01_dr6sduka",
+          "_TYZB01_geepvxsy",
+          "TUYATEC-lha8pbwd",
+          "TUYATEC-zn9wyqtr",
+          "TUYATEC-53o41joc",
+          "TUYATEC-deetibst",
+          "TUYATEC-dgtxmihe",
+          "TUYATEC-b5g40alm",
+          "TUYATEC-dxnohkpd"
         ],
         "productId": [
           "TS0202",
@@ -89968,7 +90063,9 @@
           "_TZ3210_up3pngle",
           "_TZ3210_UP3PNGLE",
           "_tyzb01_wqcac7lo",
-          "_TYZB01_WQCAC7LO"
+          "_TYZB01_WQCAC7LO",
+          "_TYZB01_dsjszp0x",
+          "_TYZB01_wqcac7lo"
         ],
         "endpoints": {
           "1": {
@@ -101031,7 +101128,8 @@
           "_TZE204_BSEED3G",
           "_tze204_mvtclclq",
           "_TZE204_mvtclclq",
-          "_TZE204_MVTCLCLQ"
+          "_TZE204_MVTCLCLQ",
+          "_TYZB01_vkwryfdr"
         ],
         "productId": [
           "TS0115",
