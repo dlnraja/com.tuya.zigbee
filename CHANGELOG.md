@@ -4,7 +4,13 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.45] - 2026-05-18
+## [7.5.46] - 2026-05-18
+
+### v7.5.46
+- No changes.
+---
+
+ [7.5.45] - 2026-05-18
 
 ### Bug Fixes
 - Fixed 7 driver and script bugs affecting humidifier, motion_sensor_2, dimmer_dual_channel, smart_button_switch, and pet_feeder devices.
