@@ -1,4 +1,7 @@
 {
+  "7.5.44": {
+    "en": "Bug fixes for wireless buttons, remote buttons, and scene switches. Critical runtime errors resolved in button devices."
+  },
   "7.5.43": {
     "en": "Bug fixes: wall flow cards on multi-gang switches, wireless button reliability, climate sensor battery/pressure, partial battery sensor fix. Driver updates for soil sensor, button wireless plug, curtain motors, floor heating."
   },
@@ -56,10 +59,7 @@
   "7.5.24": {
     "en": "v7.5.24: . Fix: gate opener DP3 contact sensor (issue #305). Migrated deprecated flow triggers to modern triggerFlowCard helper. Added missing fingerprints."
   },
-  "7.5.23": {
-    "en": "Maintenance release v7.5.23 — . Internal data cleanup and archive of obsolete planning files. No new drivers or fingerprints."
-  },
-  "7.5.44": {
-    "en": "v7.5.43: Fixed wall flow triggers on multi-gang switches (button_wireless_2/3/4, switch_*). Flow cards now fire correctly for physical button presses., Fixed wireless button reliability issues (#322, #325, #326) - button press detection and flow trigger behavior corrected., Fixed climate_sensor battery reporting and added measure_pressure capability., Partial fix for battery sensor timestamp issue"
+  "7.5.45": {
+    "en": "v7.5.44: Fixed 4 critical runtime errors in button device drivers (Issue #312), Resolved button_wireless_1, 2, 3, 4, 6, 8 press detection and flow trigger issues, Fixed remote_button_wireless and remote_button_wireless_handheld command handling, Corrected scene_switch_1, 2, 3, 4, 6 virtual button flow card registration, Fixed button_emergency_sos device class initialization"
   }
 }

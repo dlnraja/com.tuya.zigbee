@@ -30,32 +30,11 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 ---
 
-## ðŸš€ Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### âœ¨ Recent Changes (May 2026)
-
-| Version | Feature |
-|---------|---------|
-| **v7.5.43** | v7.5.43: Fixed BSEED 3-gang ZCL routing for _TZ3000_v4l4b0lp (Issue #170). Fi... |
-| **v7.5.42** | v7.5.41: Fixed battery endpoint scan handling for better battery device detec... |
-| **v7.5.41** | v7.5.41 - 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT. Battery endpo... |
-| **v7.5.40** | Bug fix: Empty battery reports on sleepy devices resolved with adaptive batte... |
-| **v7.5.39** | Updated 3202 fingerprints across 228 drivers. Added new device support and mi... |
-| **v7.5.38** | No user-facing changes in this release. |
-| **v7.5.37** | Fix all runtime syntax errors, resolve unclosed braces, add support for wall_... |
-| **v7.5.35** | v7.5.34: Fixed condition card registration in `air_quality_comprehensive` and... |
-| **v7.5.34** | v7.5.34: Fixed condition card registration in air_quality_comprehensive and d... |
-| **v7.5.33** | Fixed condition cards in air quality & DIN rail meter drivers. Added standard... |
-<!-- CHANGELOG_END -->
-
-
-
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.44 |
+| **App Version** | v7.5.45 |
 | **Device Fingerprints** | 10,940+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 228 (178 Zigbee + 50 WiFi) |
@@ -122,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.44** | v7.5.43: Fixed wall flow triggers on multi-gang switches (button_wireless_2/3/4, switch_*). Flow cards now fire corre... |
+| **v7.5.45** | v7.5.44: Fixed 4 critical runtime errors in button device drivers (Issue #312), Resolved button_wireless_1, 2, 3, 4, ... |
+| **v7.5.44** | Bug fixes for wireless buttons, remote buttons, and scene switches. Critical runtime errors resolved in button devices. |
 | **v7.5.43** | Bug fixes: wall flow cards on multi-gang switches, wireless button reliability, climate sensor battery/pressure, part... |
 | **v7.5.42** | v7.5.41: Fixed battery endpoint scan handling for better battery device detection, Fixed Fingerbot capability registr... |
 | **v7.5.41** | v7.5.41 - 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT. Battery endpoint scan fix, Fingerbot capability timin... |
@@ -136,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.32** | v7.5.32: . Harmonized driver icons, updated app store assets, and restored draft-to-test  fixes. |
 | **v7.5.31** | v7.5.31: Harmonized 228 driver icons with new SVG assets. Updated app store images. Fixed various device icon inconsi... |
 | **v7.5.30** | Harmonized icons across all 228 drivers, updated app store assets, and added support for new soil sensor fingerprint ... |
-| **v7.5.29** | Bug fixes and improvements for Tuya Zigbee devices. Added support for new soil sensor fingerprint. Updated diagnostic... |
 
 <!-- CHANGELOG_END -->
 
