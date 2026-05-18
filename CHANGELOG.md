@@ -4,7 +4,24 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.43] - 2026-05-18
+## [7.5.44] - 2026-05-18
+
+### Bug Fixes
+- Fixed 4 critical runtime errors in button device drivers (Issue #312)
+- Resolved button_wireless_1, 2, 3, 4, 6, 8 press detection and flow trigger issues
+- Fixed remote_button_wireless and remote_button_wireless_handheld command handling
+- Corrected scene_switch_1, 2, 3, 4, 6 virtual button flow card registration
+- Fixed button_emergency_sos device class initialization
+
+### Improvements
+- Improved press type detection across button_wireless drivers
+- Enhanced remote_button_wireless_plug binding support
+- Updated motion_sensor_2 and presence_sensor_radar DP mappings
+- Added missing capability support to bulb_rgb_led and bulb_rgbw
+- Minor improvements to dimmer_dual_channel and din_rail_switch
+---
+
+ [7.5.43] - 2026-05-18
 
 ### Bug Fixes
 - Fixed wall flow triggers on multi-gang switches (button_wireless_2/3/4, switch_*). Flow cards now fire correctly for physical button presses.
