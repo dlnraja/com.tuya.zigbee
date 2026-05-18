@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 /**
  * Smart Pet Feeder Device
@@ -11,7 +11,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
  * DP6: Food level alarm
  * DP12: Feed schedule
  */
-class PetFeederDevice extends ZigBeeDevice {
+class PetFeederDevice extends TuyaZigbeeDevice {
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
@@ -19,8 +19,10 @@ class PetFeederDevice extends ZigBeeDevice {
 
       // Register feed button
       if (this.hasCapability('button.feed')) {
-        this._safeInvoke(async () => { if (typeof this.markAppCommand === 'function') this.markAppCommand(1, true);
-          await this._triggerFeed();  });
+        this.registerCapabilityListener('button.feed', async () => {
+          if (typeof this.markAppCommand === 'function') this.markAppCommand(1, true);
+          await this._triggerFeed();
+        });
       }
 
       await this._setupTuyaDP(zclNode);

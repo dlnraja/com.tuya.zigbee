@@ -1,7 +1,8 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 
 /**
  * SmartButtonSwitchDevice - v9.5.0 Universal Standard
@@ -9,7 +10,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
  * Migrated to PhysicalButtonMixin for 8-layer detection stack.
  * Standardized battery management via BatteryMixin.
  */
-class SmartButtonSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(ZigBeeDevice)) {
+class SmartButtonSwitchDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaZigbeeDevice)) {
 
   get mainsPowered() { return true; }
 
