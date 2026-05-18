@@ -14,7 +14,7 @@ class D extends E{
   }
   async onInit(){
     for(const c of['onoff.2','measure_power','measure_voltage','measure_current'])if(!this.hasCapability(c))await this.addCapability(c).catch(() => { });
-    await super.on(); }
+    await super.onInit(); }
 
 
   onDeleted() {

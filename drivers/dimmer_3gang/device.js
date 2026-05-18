@@ -8,6 +8,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
   _lastStates = {};
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     this.log('3-Gang Dimmer Ready');
     await this._registerCapabilityListeners();
   }

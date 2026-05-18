@@ -97,8 +97,8 @@ jobs:
           version: ${{ steps.bump_level.outputs.level }}
           changelog: ${{ steps.cl.outputs.text }}
 
-      - name: Sync package.json version
-        run: node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');console.log('Synced package.json to v'+a.version);"
+      - name: Sync package.json and .homeycompose version
+        run: node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');if(f.existsSync('.homeycompose/app.json')){const hc=JSON.parse(f.readFileSync('.homeycompose/app.json','utf8'));hc.version=a.version;f.writeFileSync('.homeycompose/app.json',JSON.stringify(hc,null,2)+'\n');}console.log('Synced package.json and .homeycompose to v'+a.version);"
 
       - name: Bumped version
         id: info
@@ -110,6 +110,9 @@ jobs:
       - name: Validate driver images
         run: node scripts/regen-images.js --check 2>&1 || echo "::warning::Image check skipped"
         continue-on-error: true
+
+      - name: 🔍 Resolve Fingerprint Collisions Automatically
+        run: node scripts/ci/resolve-collisions.js
 
       - name: Validate (npx)
         run: npx homey app validate --level publish

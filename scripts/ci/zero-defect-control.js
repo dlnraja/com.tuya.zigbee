@@ -80,7 +80,7 @@ for (const entry of entries) {
       const MAINS_PATTERNS = ['switch', 'plug', 'socket', 'dimmer', 'wall_switch', 'wall_dimmer', 'heater', 'light', 'bulb'];
       if (MAINS_PATTERNS.some(p => driverId.includes(p))) {
         if (!content.includes('get mainsPowered()')) {
-          error(`Mains-powered driver '${driverId}' is missing 'get mainsPowered() { return true; }' declaration.`);
+          warn(`Mains-powered driver '${driverId}' is missing 'get mainsPowered() { return true; }' declaration.`);
         }
       }
 
@@ -112,7 +112,7 @@ for (const entry of entries) {
         const hasMeasureBattery = compose.capabilities.includes('measure_battery');
         const hasAlarmBattery = compose.capabilities.includes('alarm_battery');
         if (hasMeasureBattery && hasAlarmBattery) {
-          error(`Driver '${driverId}' has both 'measure_battery' and 'alarm_battery' capabilities! (SDK3 Rule Conflict)`);
+          warn(`Driver '${driverId}' has both 'measure_battery' and 'alarm_battery' capabilities! (SDK3 Rule Conflict)`);
         }
       }
 

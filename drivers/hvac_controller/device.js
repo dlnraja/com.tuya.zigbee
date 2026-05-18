@@ -10,6 +10,7 @@ const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
  */
 class HVACControllerDevice extends TuyaZigbeeDevice {
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     // --- Homey Time Sync for TRV/LCD/Thermostat devices ---
     // Syncs the device clock with the Homey box time every 6 hours.
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.

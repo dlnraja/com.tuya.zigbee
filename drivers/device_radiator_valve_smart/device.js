@@ -93,6 +93,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     this.initPhysicalButtonDetection(); // rule-19 injected
     // --- Homey Time Sync for TRV / LCD/Thermostat devices ---
     // Syncs the device clock with the Homey box time every 6 hours.

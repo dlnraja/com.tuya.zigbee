@@ -1,7 +1,7 @@
 'use strict';
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
+const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin.js');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 const { setupSonoffEnergy } = require('../../lib/mixins/SonoffEnergyMixin');
 

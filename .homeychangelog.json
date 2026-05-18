@@ -1,6 +1,9 @@
 {
+  "7.5.43": {
+    "en": "v7.5.43: Fixed BSEED 3-gang ZCL routing for _TZ3000_v4l4b0lp (Issue #170). Fixed LORATAP TS0043 fingerprint conflict between scene_switch_3 and button_wireless_3 (Issue #322). Added _TZE200_ka8l86iu / _TZE284_ka8l86iu PIR motion sensor support to motion_sensor driver (Issue #325). Fixed rain_sensor endpoints for _TZE200_u6x1zyv2 TS0601 devices (Issue #326). Analyzed PJ-1203A wrong values (Issue #323): fixed safeParse syntax bug, partial fix applied pending user DP logs."
+  },
   "7.5.42": {
-    "en": "New fingerprints added across bulb_dimmable, button_wireless_2, button_wireless_plug, fingerbot via case normalization."
+    "en": "v7.5.41: Fixed battery endpoint scan handling for better battery device detection, Fixed Fingerbot capability registration timing (Issue #162), Added 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT sources, Improved kinetic detection for soil sensors, Added fingerprint support to soil_sensor, bulb_rgbw, climate_sensor, switch_1gang, wall_remote_2_gang, and wall_switch_1gang_1way drivers"
   },
   "7.5.41": {
     "en": "v7.5.41 - 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT. Battery endpoint scan fix, Fingerbot capability timing fix, and kinetic detection improvement for soil sensors."
@@ -59,7 +62,7 @@
   "7.5.22": {
     "en": "Version 7.5.22 — App metadata and store listing update. No new drivers or fingerprints added in this release."
   },
-  "7.5.43": {
-    "en": "v7.5.42: Fixed fingerprint matching for devices with mixed-case manufacturer/product IDs across bulb_dimmable, button_wireless_2, button_wireless_plug, and fingerbot drivers., Added case-normalized fingerprint variants from Johan Benz upstream sync, improving device pairing reliability., Expanded fingerprint database with normalized casings to handle firmware variability."
+  "7.5.21": {
+    "en": "v7.5.20: Fixed local socket port reuse for WiFi (TuyAPI) devices, resolving connection drops and repeated reconnections, Resolved diagnostic crashes caused by mixed WiFi/Zigbee protocol handling, Added new device fingerprints across the driver library (3,208 total across 228 drivers), Updated `switch_4gang` driver with new manufacturer fingerprints and capability mappings, Cleanly separated WiFi ("
   }
 }

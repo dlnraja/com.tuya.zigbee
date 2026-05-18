@@ -58,7 +58,7 @@ class DinRailMeterDevice extends UnifiedPlugBase {
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     // No need for manual state updates here as dpMappings getter uses current settings
-    await super.on({ oldSettings, newSettings, changedKeys });
+    await super.onSettings({ oldSettings, newSettings, changedKeys });
     
     if (changedKeys.includes('power_scale') || changedKeys.includes('bidirectional')) {
       this.log(`[DIN-METER] Settings changed, DP mappings will adapt: scale=${newSettings.power_scale}, bidi=${newSettings.bidirectional}`);
@@ -66,7 +66,7 @@ class DinRailMeterDevice extends UnifiedPlugBase {
   }
 
   async onDeleted() {
-    await super.onNodeInit({ zclNode });
+    if (super.onDeleted) await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }

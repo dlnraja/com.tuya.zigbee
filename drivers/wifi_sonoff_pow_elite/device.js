@@ -12,7 +12,7 @@ class D extends E{
   }
   async onInit(){
     for(const c of['measure_power','measure_voltage','measure_current','meter_power'])if(!this.hasCapability(c))await this.addCapability(c).catch(() => { });
-    await super.on(); }
+    await super.onInit(); }
   async _processState(data){
     super._processState(data);
     if(data.oneKwh!==undefined&&this.hasCapability('meter_power')){

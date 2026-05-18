@@ -36,6 +36,7 @@ const POWER_ON_BEHAVIOR = {
 class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 
   async onNodeInit({zclNode}) {
+    await super.onNodeInit({ zclNode });
 
     this.log('════════════════════════════════════════');
     this.log('WallDimmer1Gang1Way onNodeInit STARTING');

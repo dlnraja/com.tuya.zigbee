@@ -12,7 +12,8 @@ class RadiatorControllerDevice extends ZigBeeDevice {
 
   get mainsPowered() { return true; }
 
-  async onNodeInit() {
+  async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     this.log('Radiator Controller initializing...');
 
     try {

@@ -51,6 +51,7 @@ class GenericDIYDevice extends ZigBeeDevice {
   }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     this.log('[DIY] ');
     this.log('[DIY] UNIVERSAL GENERIC ENGINE v7.4.5' );
     this.log(`[DIY] Identity: ${this.getName()}`);

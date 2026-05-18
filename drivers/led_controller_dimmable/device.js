@@ -38,6 +38,7 @@ const TUYA_DP = {
 class LEDControllerDimmableDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     // Prevent double init
     if (this._ledControllerInited) return;
     this._ledControllerInited = true;

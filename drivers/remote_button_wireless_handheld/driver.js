@@ -12,7 +12,7 @@ class ButtonWireless4Driver extends ZigBeeDriver {
   async onInit() {
     await super.onInit(); // v5.5.533: SDK3 CRITICAL
     this.log('ButtonWireless4Driver v5.5.533 initialized');
-    registerButtonFlowCards(this, 'button_wireless_4', 4);
+    registerButtonFlowCards(this, 'remote_button_wireless_handheld', 4);
   }
 }
 

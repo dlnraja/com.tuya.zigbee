@@ -49,6 +49,9 @@ jobs:
       - name: 🛡️ Run Zero-Defect Control
         run: node scripts/ci/zero-defect-control.js
 
+      - name: 🔍 Resolve Fingerprint Collisions Automatically
+        run: node scripts/ci/resolve-collisions.js
+
       - name: 🔍 Validate Homey App (publish)
         id: homey_validate
         env:

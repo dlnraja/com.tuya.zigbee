@@ -61,6 +61,9 @@ jobs:
             echo "✅ No hybrid folders found."
           fi
 
+      - name: 🔍 Resolve Fingerprint Collisions Automatically
+        run: node scripts/ci/resolve-collisions.js
+
       - name: 🔍 Homey Publish-Level Validation
         run: npx homey app validate --level publish
 

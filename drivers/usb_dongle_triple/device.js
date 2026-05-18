@@ -11,6 +11,7 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
 class UsbDongleTripleDevice extends ZigBeeDevice {
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode });
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([
