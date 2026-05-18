@@ -4,7 +4,19 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.41] - 2026-05-18
+## [7.5.42] - 2026-05-18
+
+### Bug Fixes
+- Fixed fingerprint matching for devices with mixed-case manufacturer/product IDs across bulb_dimmable, button_wireless_2, button_wireless_plug, and fingerbot drivers.
+
+### New Features
+- Added case-normalized fingerprint variants from Johan Benz upstream sync, improving device pairing reliability.
+
+### Improvements
+- Expanded fingerprint database with normalized casings to handle firmware variability.
+---
+
+ [7.5.41] - 2026-05-18
 
 ### Bug Fixes
 - Fixed battery endpoint scan handling for better battery device detection
