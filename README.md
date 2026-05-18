@@ -37,7 +37,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
-| **v7.5.41** | v7.5.41: Fixed multi-endpoint battery scanning in UnifiedBatteryHandler.js fo... |
+| **v7.5.42** | v7.5.41: Fixed battery endpoint scan handling for better battery device detec... |
+| **v7.5.41** | v7.5.41 - 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT. Battery endpo... |
 | **v7.5.40** | Bug fix: Empty battery reports on sleepy devices resolved with adaptive batte... |
 | **v7.5.39** | Updated 3202 fingerprints across 228 drivers. Added new device support and mi... |
 | **v7.5.38** | No user-facing changes in this release. |
@@ -46,8 +47,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.34** | v7.5.34: Fixed condition card registration in air_quality_comprehensive and d... |
 | **v7.5.33** | Fixed condition cards in air quality & DIN rail meter drivers. Added standard... |
 | **v7.5.32** | v7.5.32: . Harmonized driver icons, updated app store assets, and restored dr... |
-| **v7.5.31** | v7.5.31: Harmonized 228 driver icons with new SVG assets. Updated app store i... |
 <!-- CHANGELOG_END -->
+
 
 
 ## Statistics
