@@ -1,7 +1,364 @@
 {
-  "timestamp": "2026-05-17T23:44:32.902Z",
+  "timestamp": "2026-05-18T07:28:21.437Z",
   "driversChecked": 228,
   "collisions": [
+    {
+      "id": "_TZ3000_TZVBIMPQ|TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "switch_2gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TZVBIMPQ|TS0012",
+      "drivers": [
+        "button_wireless_2",
+        "switch_2gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TZVBIMPQ|TS0003",
+      "drivers": [
+        "button_wireless_2",
+        "switch_2gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TZVBIMPQ|TS0013",
+      "drivers": [
+        "button_wireless_2",
+        "switch_2gang"
+      ]
+    },
+    {
+      "id": "_TYZB01_ZSL6Z0PW|TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_ZSL6Z0PW|TS0012",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_ZSL6Z0PW|TS0003",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_ZSL6Z0PW|TS0013",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_DIGZIIAV|TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_DIGZIIAV|TS0012",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_DIGZIIAV|TS0003",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_DIGZIIAV|TS0013",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_YMCDBL3U|TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_YMCDBL3U|TS0012",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_YMCDBL3U|TS0003",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_YMCDBL3U|TS0013",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_4TLKSK8A|TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_4TLKSK8A|TS0012",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_4TLKSK8A|TS0003",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_4TLKSK8A|TS0013",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_XFPDRWVC|TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_XFPDRWVC|TS0012",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_XFPDRWVC|TS0003",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_XFPDRWVC|TS0013",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_QEQVMVTI|TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_QEQVMVTI|TS0012",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_QEQVMVTI|TS0003",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_QEQVMVTI|TS0013",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_SEQWASOT|TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_SEQWASOT|TS0012",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_SEQWASOT|TS0003",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_SEQWASOT|TS0013",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_PHJERAQQ|TS0003",
+      "drivers": [
+        "button_wireless_2",
+        "fingerbot"
+      ]
+    },
+    {
+      "id": "_TYZB01_NCUTBJDI|TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_NCUTBJDI|TS0012",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_NCUTBJDI|TS0003",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_NCUTBJDI|TS0013",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_ANEIICMQ|TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_ANEIICMQ|TS0012",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_ANEIICMQ|TS0003",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_ANEIICMQ|TS0013",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_HLLA45KX|TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_HLLA45KX|TS0012",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_HLLA45KX|TS0003",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_HLLA45KX|TS0013",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_IUEPBMPV|TS0002",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_IUEPBMPV|TS0012",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_IUEPBMPV|TS0003",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_IUEPBMPV|TS0013",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TYZB01_BAGT1E4O|TS0044",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ]
+    },
+    {
+      "id": "_TYZB01_BAGT1E4O|TS0014",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_4"
+      ]
+    },
     {
       "id": "_TZ3000_FAMKXCI2|TS0043",
       "drivers": [
@@ -686,6 +1043,20 @@
       "drivers": [
         "scene_switch_3",
         "scene_switch_wall"
+      ]
+    },
+    {
+      "id": "_TZ3000_C7XSIEXW|TS0001",
+      "drivers": [
+        "switch_1gang",
+        "wall_switch_1gang_1way"
+      ]
+    },
+    {
+      "id": "_TZ3000_C7XSIEXW|TS0011",
+      "drivers": [
+        "switch_1gang",
+        "wall_switch_1gang_1way"
       ]
     }
   ],
@@ -3461,8 +3832,9 @@
     ".homeybuild\\lib\\adapters\\ZHAQuirkAdapter.js:164: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\adapters\\ZHAQuirkAdapter.js:266: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\battery\\BatteryProfileDatabase.js:396: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    ".homeybuild\\lib\\battery\\UnifiedBatteryHandler.js:173: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    ".homeybuild\\lib\\battery\\UnifiedBatteryHandler.js:281: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\lib\\battery\\UnifiedBatteryHandler.js:196: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\lib\\battery\\UnifiedBatteryHandler.js:213: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\lib\\battery\\UnifiedBatteryHandler.js:319: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\converters\\TuyaDeviceDefinitions.js:329: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\converters\\TuyaDeviceDefinitions.js:333: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\detectors\\BseedDetector.js:36: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
