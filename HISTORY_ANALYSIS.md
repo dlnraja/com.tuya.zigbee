@@ -1,5 +1,5 @@
 # 📊 Historical Analysis - Tuya Unified Zigbee
-Generated: 2026-05-13T11:53:15.398Z | Version: v5.11.212+
+Generated: 2026-05-18T07:15:56.117Z | Version: v5.11.212+
 
 ## 🔄 Evolution Timeline
 ```
@@ -31,26 +31,26 @@ v5.11.212 (2026-05-08) → Phase 0-1 complete, context preservation, drivers
 | True collisions | 54,373 | 0 |
 
 ## 🔍 Recent Commits
-- 6dd540312 Diagnostics update 2026-05-13 [skip ci]
-- 0013b8bb5 chore: GitHub auto-manage state update [skip ci]
-- c79e2053d v: 228 drivers, 3208 FPs [skip ci]
-- a609b3aee feat(sync): integrate 82 missing Johan SDK3 fingerprints, activate Smart PR Auto-Merge workflow
-- c1c375df8 Changelog sync v7.5.20: updated README with latest release notes [skip ci]
-- 37ca65c5a feat(standards): cleanly separate WiFi vs Zigbee, fix local socket port reuse, document button heuristics, and resolve diagnostic crashes
-- 4a4f795b5 v7.5.20: 228 drivers, 3208 FPs [skip ci]
-- 28b641a04 feat(pair): add Android native Intent magic URL and propagate to all 20 WiFi drivers
-- 222d31bcc feat(pair): add Android native Intent magic URL and propagate to all 20 WiFi drivers
-- 2b0f5d2bf v7.5.19: 228 drivers, 3208 FPs [skip ci]
-- 4b34a827b feat(wifi): add getSavedCredentials and Easy Login support for seamless Tuya pairing
-- 57f64dbd5 feat(wifi): add getSavedCredentials and Easy Login support for seamless Tuya pairing
-- 32577b6ad feat(dimmer): port TS110E custom level control cluster and wifi automatic brand/type badges [skip ci]
-- 655f982d5 feat(wifi): add automatic device type classification and format pairing names with brand/type badges [skip ci]
-- 626cf9e51 feat(dimmer): port TS110E custom level control cluster to UnifiedLightBase and fix battery capability conflicts [skip ci]
-- 3767dab52 chore(master): apply master-self-heal optimizations and resolve battery capability representation mappings [skip ci]
-- e8768d2ee chore(master): enrich rules files and implement Tuya local WiFi brand-classification for Moes, Lidl, Legrand, Somfy, and Avatto [skip ci]
-- 0ee99311f auto: sync Johan SDK3 FPs (19 added) [skip ci]
-- b7df59e38 chore(stable-v5): synchronize L1-L9 bypass docs, deploy zero-defect-control automated checks, externalize DeviceFingerprintDB, resolve 130 battery conflicts and 46 deprecated calls [skip ci]
-- 41cb3c0c6 chore(quality): integrate L1-L9 elite bypass docs, fix 46 deprecated getDeviceTriggerCard calls, externalize DeviceFingerprintDB, and deploy zero-defect-control script to GitHub CI/CD [skip ci]
+- 63d38d050 feat: sync from Johan Benz upstream (Enhanced AI) [skip ci]
+- f99b86794 Update ZERO_DEFECT_AUDIT.json after push audit [skip ci]
+- 96e390e75 v7.5.41: Battery endpoint scan fix, ARCHITECTURE_AI.md integration, kinetic detection improvement [skip ci]
+- 45cd569e9 v7.5.41: 228 drivers, 3202 FPs [skip ci]
+- 626141ad8 feat(battery/workflow): implement greedy adaptive battery listeners & ZCL/IAS fallbacks to solve empty battery reports, integrate deep-crossref-scraper into nightly workflow
+- 317ed35a6 chore: increase stable publishing timeout to 15 minutes for robust fleet packaging
+- e241471b6 v7.5.40: 228 drivers, 3202 FPs [skip ci]
+- 3765a15a0 Changelog sync v7.5.39: updated README with latest release notes [skip ci]
+- d846536b5 Merge master into stable-v5: pull in complete syntax fixes, debounce, and wakeup recovery
+- 8b31f6e0d WIP on stable-v5: 545f7f58c chore: refine publish-stable script to use precise context-specific prompt handlers
+- 6f2f5dbef index on stable-v5: 545f7f58c chore: refine publish-stable script to use precise context-specific prompt handlers
+- efcbdd5b4 untracked files on stable-v5: 545f7f58c chore: refine publish-stable script to use precise context-specific prompt handlers
+- f9e5c9cb1 chore: integrate debounce engine, recovery helper, secure workflows, and smart precommit checks
+- eda0507c5 Changelog sync v7.5.39: updated README with latest release notes [skip ci]
+- 8a21e2aa1 chore(diag): update fleet diagnostics [skip ci]
+- 1ac3e6cdd docs: add AI_CONTEXT_MANDATE.md and update AI rules for unified session context [skip ci]
+- bb38ff5c0 chore(diag): update fleet diagnostics [skip ci]
+- 545f7f58c chore: refine publish-stable script to use precise context-specific prompt handlers
+- f95d540d3 fix: remove duplicate curtain_motor_stop action and regenerate root app images with correct aspect ratios
+- 60d77972a v7.5.39: 228 drivers, 3202 FPs [skip ci]
 
 ## 📂 Branches
 - #1139-add_TZ3000_o4mkahkc

@@ -123,7 +123,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
     this._guiPulseTimeout = null;
     this._timeBoundCluster = null;
 
-    this._registerOnOffHandling(zclNode);
+    // this._registerOnOffHandling(zclNode); // Moved below after super.onNodeInit
     this._registerTuyaListeners(zclNode);
     this._registerTimeBoundCluster(zclNode);
 
@@ -140,6 +140,8 @@ class FingerBot extends TuyaSpecificClusterDevice {
       ]).catch(err => this.log('Attribute reporting config failed:', err.message));
 
       await super.onNodeInit({ zclNode });
+
+      this._registerOnOffHandling(zclNode);
 
       this.printNode();
 
