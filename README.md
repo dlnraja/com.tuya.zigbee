@@ -37,8 +37,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
-| **v7.5.43** | v7.5.42: Fixed fingerprint matching for devices with mixed-case manufacturer/... |
-| **v7.5.42** | New fingerprints added across bulb_dimmable, button_wireless_2, button_wirele... |
+| **v7.5.43** | v7.5.43: Fixed BSEED 3-gang ZCL routing for _TZ3000_v4l4b0lp (Issue #170). Fi... |
+| **v7.5.42** | v7.5.41: Fixed battery endpoint scan handling for better battery device detec... |
 | **v7.5.41** | v7.5.41 - 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT. Battery endpo... |
 | **v7.5.40** | Bug fix: Empty battery reports on sleepy devices resolved with adaptive batte... |
 | **v7.5.39** | Updated 3202 fingerprints across 228 drivers. Added new device support and mi... |
@@ -48,6 +48,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.34** | v7.5.34: Fixed condition card registration in air_quality_comprehensive and d... |
 | **v7.5.33** | Fixed condition cards in air quality & DIN rail meter drivers. Added standard... |
 <!-- CHANGELOG_END -->
+
 
 
 ## Statistics
