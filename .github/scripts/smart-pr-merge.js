@@ -524,7 +524,7 @@ async function processPR(prNumber) {
   }
 
   // No conflicts — validate and merge
-  if (prData.mergeable === 'MERGEABLE' || !prData.mergeable) {
+  if (prData.mergeable === 'MERGEABLE' || prData.mergeable === 'UNKNOWN' || !prData.mergeable) {
     // For low-risk changes, auto-merge
     if (risk <= 4) {
       log('  Low risk, auto-merging...');
