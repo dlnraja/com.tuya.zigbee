@@ -11,7 +11,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 class motion_sensor_2 extends PhysicalButtonMixin(ZigBeeDevice) {
 
   async onNodeInit({ zclNode }) {
-    await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
+    await super.onNodeInit({ zclNode });
       this.printNode();
       if (this.isFirstInit()){
       await this.configureAttributeReporting([

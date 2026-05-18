@@ -1,6 +1,6 @@
 'use strict';
 
-const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const { getSensorConfig, transformPresence } = require('./configs');
 const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
 const IntelligentDPAutoDiscovery = require('../../lib/sensors/IntelligentDPAutoDiscovery');
