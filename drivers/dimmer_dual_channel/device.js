@@ -2,8 +2,7 @@
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
-
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
@@ -14,7 +13,7 @@ const { CLUSTER } = require('zigbee-clusters');
  * Channel 1: Endpoint 1 (onoff, dim)
  * Channel 2: Endpoint 2 (onoff.channel2, dim.channel2)
  */
-class DimmerDualChannelDevice extends VirtualButtonMixin(PhysicalButtonMixin(ZigBeeDevice)) {
+class DimmerDualChannelDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaZigbeeDevice)) {
 
   get mainsPowered() { return true; }
 

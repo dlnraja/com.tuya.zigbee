@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 const { Cluster, CLUSTER } = require('zigbee-clusters');
 const TuyaSpecificCluster = require('../../lib/clusters/TuyaSpecificCluster');
 
@@ -8,7 +8,7 @@ Cluster.addCluster(TuyaSpecificCluster);
 
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
-class motion_sensor_2 extends PhysicalButtonMixin(ZigBeeDevice) {
+class motion_sensor_2 extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
@@ -44,7 +44,7 @@ class motion_sensor_2 extends PhysicalButtonMixin(ZigBeeDevice) {
       // alarm_motion handler
       zclNode.endpoints[1].clusters[CLUSTER.IAS_ZONE.NAME]
       .onZoneStatusChangeNotification = payload => {
-      this.on(payload);
+      this.onZoneStatusChangeNotification(payload);
       };
       // measure_illuminance handler
       zclNode.endpoints[1].clusters[CLUSTER.ILLUMINANCE_MEASUREMENT.NAME]
