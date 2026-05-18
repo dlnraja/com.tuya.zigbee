@@ -1,60 +1,115 @@
 {
-  "timestamp": "2026-05-16T21:11:19.773Z",
+  "timestamp": "2026-05-18T07:14:25.716Z",
   "totalFiles": 0,
-  "totalFixes": 154,
+  "totalFixes": 184,
   "rules": {
     "fingerprint-case": {
-      "count": 3,
+      "count": 5,
       "files": [
         {
-          "file": "drivers\\button_wireless_1\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 51)"
-        },
-        {
-          "file": "drivers\\button_wireless_smart\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 6)"
+          "file": "drivers\\bulb_rgbw\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
         },
         {
           "file": "drivers\\climate_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -6)"
-        }
-      ]
-    },
-    "dual-battery-cleanup": {
-      "count": 2,
-      "files": [
-        {
-          "file": "drivers\\button_wireless_1\\driver.compose.json",
-          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
         },
         {
-          "file": "drivers\\button_wireless_smart\\driver.compose.json",
-          "detail": "Ensured both measure_battery and alarm_battery are declared for dynamic runtime adaptation"
+          "file": "drivers\\soil_sensor\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
+        },
+        {
+          "file": "drivers\\switch_1gang\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+        },
+        {
+          "file": "drivers\\wall_switch_1gang_1way\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
         }
       ]
     },
     "flow-card-try-catch": {
-      "count": 15,
+      "count": 31,
       "files": [
+        {
+          "file": "drivers\\curtain_motor\\device.js",
+          "detail": "Line 237: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\curtain_motor_shutter\\device.js",
+          "detail": "Line 237: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\curtain_motor_wall\\device.js",
+          "detail": "Line 237: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\dimmer_wall_1gang\\device.js",
+          "detail": "Line 90: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\dimmer_wall_1gang\\device.js",
+          "detail": "Line 100: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\fan_controller\\device.js",
+          "detail": "Line 165: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\fan_controller\\device.js",
+          "detail": "Line 168: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\fan_controller\\device.js",
+          "detail": "Line 177: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\remote_dimmer\\device.js",
+          "detail": "Line 138: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\switch_3gang\\device.js",
+          "detail": "Line 178: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\switch_3gang\\device.js",
+          "detail": "Line 184: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\wall_dimmer_1gang_1way\\device.js",
+          "detail": "Line 276: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\wall_dimmer_1gang_1way\\device.js",
+          "detail": "Line 311: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\wall_dimmer_1gang_1way\\device.js",
+          "detail": "Line 316: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\wall_remote_4_gang_2\\device.js",
+          "detail": "Line 15: getDeviceTriggerCard without try-catch"
+        },
         {
           "file": "lib\\ButtonRemoteManager.js",
           "detail": "Line 202: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\devices\\BaseUnifiedDevice.js",
-          "detail": "Line 2645: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2653: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\devices\\BaseUnifiedDevice.js",
-          "detail": "Line 2659: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2667: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\devices\\BaseUnifiedDevice.js",
-          "detail": "Line 2693: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2701: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\devices\\BaseUnifiedDevice.js",
-          "detail": "Line 2823: getDeviceTriggerCard without try-catch"
+          "detail": "Line 2831: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\devices\\ButtonDevice.js",
@@ -62,7 +117,11 @@
         },
         {
           "file": "lib\\devices\\UnifiedSensorBase.js",
-          "detail": "Line 3393: getDeviceTriggerCard without try-catch"
+          "detail": "Line 3401: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "lib\\devices\\UnifiedSwitchBase.js",
+          "detail": "Line 812: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\devices\\WallTouchDevice.js",
@@ -82,7 +141,7 @@
         },
         {
           "file": "lib\\mixins\\PhysicalButtonMixin.js",
-          "detail": "Line 912: getDeviceTriggerCard without try-catch"
+          "detail": "Line 869: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\SDK3BestPractices.js",
@@ -98,17 +157,8 @@
         }
       ]
     },
-    "multigang-flow-routing": {
-      "count": 1,
-      "files": [
-        {
-          "file": "drivers\\radiator_controller\\device.js",
-          "detail": "5 raw ZCL calls in flow handlers — should use triggerCapabilityListener"
-        }
-      ]
-    },
     "dp-variant-docs": {
-      "count": 10,
+      "count": 11,
       "files": [
         {
           "file": "drivers\\button_wireless_plug\\device.js",
@@ -147,14 +197,66 @@
           "detail": "Multiple TZE prefixes without variant documentation"
         },
         {
+          "file": "drivers\\water_leak_sensor\\device.js",
+          "detail": "Multiple TZE prefixes without variant documentation"
+        },
+        {
           "file": "drivers\\water_valve_smart\\device.js",
           "detail": "Multiple TZE prefixes without variant documentation"
         }
       ]
     },
     "case-insensitive-matching": {
-      "count": 24,
+      "count": 36,
       "files": [
+        {
+          "file": "drivers\\climate_sensor_device\\device.js",
+          "detail": "Line 39: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "drivers\\contact_sensor\\device.js",
+          "detail": "Line 200: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "drivers\\device_radiator_valve\\device.js",
+          "detail": "Line 39: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "drivers\\device_radiator_valve_smart\\device.js",
+          "detail": "Line 39: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "drivers\\power_clamp_meter\\device.js",
+          "detail": "Line 181: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "drivers\\radiator_valve\\device.js",
+          "detail": "Line 40: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "drivers\\radiator_valve\\device.js",
+          "detail": "Line 43: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "drivers\\sensor_contact_presence\\device.js",
+          "detail": "Line 14: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "drivers\\sensor_contact_water\\device.js",
+          "detail": "Line 200: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "drivers\\sensor_motion_presence\\device.js",
+          "detail": "Line 14: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "drivers\\sensor_motion_radar\\device.js",
+          "detail": "Line 21: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "drivers\\sensor_presence_radar\\device.js",
+          "detail": "Line 75: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
         {
           "file": "lib\\clusters\\TuyaSpecificCluster.js",
           "detail": "Line 410: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
@@ -165,11 +267,11 @@
         },
         {
           "file": "lib\\devices\\UnifiedSensorBase.js",
-          "detail": "Line 1679: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 1687: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib\\devices\\UnifiedSensorBase.js",
-          "detail": "Line 1708: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 1716: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib\\devices\\UnifiedThermostatBase.js",
@@ -205,7 +307,7 @@
         },
         {
           "file": "lib\\mixins\\PhysicalButtonMixin.js",
-          "detail": "Line 469: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 476: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib\\NewDevices2025.js",
@@ -254,7 +356,7 @@
       ]
     },
     "duplicate-fingerprints": {
-      "count": 98,
+      "count": 100,
       "files": [
         {
           "file": "drivers",
@@ -647,6 +749,14 @@
         {
           "file": "drivers",
           "detail": "_tz3000_w8jwkczz|ts0043 found in: scene_switch_3, scene_switch_wall"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_c7xsiexw|ts0001 found in: switch_1gang, wall_switch_1gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_c7xsiexw|ts0011 found in: switch_1gang, wall_switch_1gang_1way"
         }
       ]
     },

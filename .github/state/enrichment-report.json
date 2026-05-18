@@ -1,10 +1,73 @@
 {
-  "timestamp": "2026-05-13T03:51:12.670Z",
-  "totalNew": 0,
+  "timestamp": "2026-05-18T07:12:09.219Z",
+  "totalNew": 5,
   "withDPs": 0,
   "withPid": 0,
   "multiSource": 0,
-  "sourceBreakdown": {},
-  "newFingerprints": [],
-  "aiPlan": null
+  "sourceBreakdown": {
+    "zha-issue": 5
+  },
+  "newFingerprints": [
+    {
+      "fp": "_TZ3000_c7xsiexw",
+      "source": "zha-issue",
+      "issue": 5007,
+      "title": "Add Tuya TS000x backlight mode select",
+      "url": "https://github.com/zigpy/zha-device-handlers/pull/5007",
+      "sources": [
+        "zha-issue"
+      ],
+      "allPids": [],
+      "reporters": []
+    },
+    {
+      "fp": "_TZB210_nfzrlz29",
+      "source": "zha-issue",
+      "issue": 5005,
+      "title": "Add quirk for _TZB210_nfzrlz29 TS0502B (RGB+CCT misidentified as CCT-only)",
+      "url": "https://github.com/zigpy/zha-device-handlers/pull/5005",
+      "sources": [
+        "zha-issue"
+      ],
+      "allPids": [],
+      "reporters": []
+    },
+    {
+      "fp": "_TZE284_7gy9mqca",
+      "source": "zha-issue",
+      "issue": 5000,
+      "title": "[Device Support Request] Tuya external probe temperature sensor TS0601 by _TZE28",
+      "url": "https://github.com/zigpy/zha-device-handlers/issues/5000",
+      "sources": [
+        "zha-issue"
+      ],
+      "allPids": [],
+      "reporters": []
+    },
+    {
+      "fp": "_TZE284_0ints6w",
+      "source": "zha-issue",
+      "issue": 4987,
+      "title": "Add Tuya soil sensor _TZE284_0ints6w variant",
+      "url": "https://github.com/zigpy/zha-device-handlers/pull/4987",
+      "sources": [
+        "zha-issue"
+      ],
+      "allPids": [],
+      "reporters": []
+    },
+    {
+      "fp": "_TZE284_2nhqasjh",
+      "source": "zha-issue",
+      "issue": 4965,
+      "title": "Add Tuya soil sensor model _TZE284_2nhqasjh",
+      "url": "https://github.com/zigpy/zha-device-handlers/pull/4965",
+      "sources": [
+        "zha-issue"
+      ],
+      "allPids": [],
+      "reporters": []
+    }
+  ],
+  "aiPlan": "AI_OFFLINE_OR_LIMIT_REACHED"
 }
