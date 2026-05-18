@@ -4,7 +4,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.44] - 2026-05-18
+## [7.5.45] - 2026-05-18
+
+### Bug Fixes
+- Fixed 7 driver and script bugs affecting humidifier, motion_sensor_2, dimmer_dual_channel, smart_button_switch, and pet_feeder devices.
+- Resolved remaining driver-level issues to pass publish validation.
+
+### Improvements
+- Updated humidifier driver with improved DP handling and capability management.
+- Updated motion_sensor_2 driver with corrected sensor reporting and capability mappings.
+- Updated dimmer_dual_channel driver with refined dual-channel control logic.
+- Updated smart_button_switch driver with improved button press detection.
+- Added 8 new device interviews to the fingerprint database.
+- Maintained 228 drivers and 6755 fingerprints.
+---
+
+ [7.5.44] - 2026-05-18
 
 ### Bug Fixes
 - Fixed 4 critical runtime errors in button device drivers (Issue #312)
