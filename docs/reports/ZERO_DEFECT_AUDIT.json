@@ -1,7 +1,28 @@
 {
-  "timestamp": "2026-05-18T19:56:09.623Z",
+  "timestamp": "2026-05-19T15:42:42.365Z",
   "driversChecked": 228,
   "collisions": [
+    {
+      "id": "SONOFF|SNZB-01",
+      "drivers": [
+        "button_wireless",
+        "button_wireless_1"
+      ]
+    },
+    {
+      "id": "SONOFF|SNZB-01P",
+      "drivers": [
+        "button_wireless",
+        "button_wireless_1"
+      ]
+    },
+    {
+      "id": "SONOFF|SNZB-01M",
+      "drivers": [
+        "button_wireless",
+        "button_wireless_4"
+      ]
+    },
     {
       "id": "_TZ3000_WW6DRJA5TS011F|TS0601",
       "drivers": [
@@ -346,6 +367,1420 @@
       ]
     },
     {
+      "id": "HOBEIAN|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "HOBEIAN|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "ZG-204ZE|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "ZG-204ZE|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "ZGAF-205L|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "ZGAF-205L|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZ3000_AIGDDB2B|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZ3000_AIGDDB2B|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZ3210_FKZIHAX8|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZ3210_FKZIHAX8|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZ3218_EWRXIRNG|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZ3218_EWRXIRNG|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZ321C_4SLREUNP|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZ321C_4SLREUNP|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZ321C_FKZIHAX8|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZ321C_FKZIHAX8|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZ321C_FKZIHAXE8|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZ321C_FKZIHAXE8|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_2AAELWXK|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_2AAELWXK|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_7GCLUKJS|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_7GCLUKJS|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_CQ8LU23I|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_CQ8LU23I|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_CRQ3R3LA|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_CRQ3R3LA|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_F1PVDGOH|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_F1PVDGOH|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_GES7H5MJ|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_GES7H5MJ|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_GKFB|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_GKFB|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_GKFBDVYX|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_GKFBDVYX|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_HL0SS9OA|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_HL0SS9OA|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_HYHL5Y36|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_HYHL5Y36|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_IKVNCLUO|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_IKVNCLUO|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_JUZAGO6I|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_JUZAGO6I|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_LAOKFQWU|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_LAOKFQWU|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_NBKSHS6K|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_NBKSHS6K|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_P9ZBDQGS|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_P9ZBDQGS|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_PNYZ5QPY|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_PNYZ5QPY|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_PPUJ1VEM|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_PPUJ1VEM|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_QASJIF9E|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_QASJIF9E|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_QOMXLRYD|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_QOMXLRYD|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_RHGSBACQ|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_RHGSBACQ|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_SFIY8PUU|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_SFIY8PUU|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_SGFMFPIY|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_SGFMFPIY|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_SGPEACQP|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_SGPEACQP|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_TYFFVOIJ|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_TYFFVOIJ|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_XPQ2RBER|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_XPQ2RBER|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_Y4MDOP0B|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_Y4MDOP0B|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_Y8JIJHBA|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_Y8JIJHBA|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_YA4FT0W4|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_YA4FT0W4|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_YBWA4X5A|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_YBWA4X5A|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_ZTC6GGYL|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_ZTC6GGYL|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_ZTQNH5CG|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE200_ZTQNH5CG|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_7GCLUKJS|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_7GCLUKJS|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_AUIN8MZR|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_AUIN8MZR|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_B8VXCT9L|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_B8VXCT9L|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_BMDSP6BS|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_BMDSP6BS|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_BVFLD3XC|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_BVFLD3XC|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_E5M9C5HL|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_E5M9C5HL|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_EX3RCDHA|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_EX3RCDHA|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_GES7H5MJ|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_GES7H5MJ|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_GKFBDVYX|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_GKFBDVYX|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_HL0SS9OA|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_HL0SS9OA|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_HOLEL4DK|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_HOLEL4DK|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_HYT4IUCB|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_HYT4IUCB|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_IAEEJHVF|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_IAEEJHVF|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_IJXVKHD0|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_IJXVKHD0|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_JVA8INK8|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_JVA8INK8|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_KYHBRFYL|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_KYHBRFYL|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_LAOKFQWU|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_LAOKFQWU|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_LYETPPRM|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_LYETPPRM|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_MRF6VTUA|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_MRF6VTUA|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_MTOARYRE|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_MTOARYRE|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_NBKSHS6K|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_NBKSHS6K|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_NO6QTGTL|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_NO6QTGTL|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_PNYZ5QPY|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_PNYZ5QPY|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_QASJIF9E|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_QASJIF9E|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_QOMXLRYD|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_QOMXLRYD|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_RHGSBACQ|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_RHGSBACQ|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_SBKGEILO|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_SBKGEILO|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_SFIY5TFS|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_SFIY5TFS|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_SFIY8PUU|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_SFIY8PUU|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_SGFMFPIY|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_SGFMFPIY|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_SXM7L9XA|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_SXM7L9XA|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_WUKB7RHC|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_WUKB7RHC|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_XPQ2RBER|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_XPQ2RBER|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_YA4FT0W4|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_YA4FT0W4|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_YBWA4X5A|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_YBWA4X5A|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_ZTC6GGYL|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_ZTC6GGYL|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_ZTQNH5CG|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_ZTQNH5CG|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_4QZNLKBU|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_4QZNLKBU|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_9OVSKA9W|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_9OVSKA9W|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_AR5PRZMW|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_AR5PRZMW|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_BQUWRQH1|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_BQUWRQH1|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_CHCNJ5ST|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_CHCNJ5ST|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_DEBCZECI|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_DEBCZECI|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_FWONDBZY|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_FWONDBZY|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_GKFB|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_GKFB|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_GW05GRPH|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_GW05GRPH|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_HGEQEYUV|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_HGEQEYUV|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_IADRO9BF|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_IADRO9BF|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_IJXVKHD0|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_IJXVKHD0|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_N5Q2T8NA|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_N5Q2T8NA|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_OZF4E02O|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_OZF4E02O|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_PZM3WAB5|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_PZM3WAB5|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_QASJIF9E|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_QASJIF9E|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_SXM7L9XA|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_SXM7L9XA|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_TWYBXDZL|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_TWYBXDZL|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_VCEQNCHO|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_VCEQNCHO|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_WHO1JXWD|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_WHO1JXWD|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_XSM7L9XA|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_XSM7L9XA|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_YRWMNYA3|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_YRWMNYA3|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_ZTC6GGYL|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE284_ZTC6GGYL|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_GKFB|TS0225",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
+      "id": "_TZE204_GKFB|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "sensor_motion_presence"
+      ]
+    },
+    {
       "id": "_TZ3000_ITGNGNQZ|TS0601",
       "drivers": [
         "switch_1gang",
@@ -425,8 +1860,8 @@
     ".homeybuild\\lib\\HybridDriverSystem.js:363: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\interpreters\\UniversalRawInterpreter.js:75: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\managers\\IntelligentDataManager.js:228: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
-    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:598: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
-    ".homeybuild\\lib\\mixins\\TuyaDeviceMixin.js:102: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
+    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:605: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
+    ".homeybuild\\lib\\mixins\\TuyaDeviceMixin.js:115: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\pairing\\TuyaTimeSyncEngine.js:26: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\pairing\\UniversalPairingManager.js:100: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\pairing\\UniversalPairingManager.js:139: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
@@ -709,8 +2144,8 @@
     "lib\\HybridDriverSystem.js:363: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\interpreters\\UniversalRawInterpreter.js:75: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\managers\\IntelligentDataManager.js:228: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
-    "lib\\mixins\\PhysicalButtonMixin.js:598: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
-    "lib\\mixins\\TuyaDeviceMixin.js:102: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
+    "lib\\mixins\\PhysicalButtonMixin.js:605: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
+    "lib\\mixins\\TuyaDeviceMixin.js:115: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\pairing\\TuyaTimeSyncEngine.js:26: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\pairing\\UniversalPairingManager.js:100: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\pairing\\UniversalPairingManager.js:139: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
@@ -1256,13 +2691,13 @@
     ".homeybuild\\lib\\filter\\SanityFilter.js:97: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\filter\\SanityFilter.js:102: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\filter\\SanityFilter.js:110: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\lib\\flow\\AdvancedFlowCardManager.js:111: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\lib\\flow\\AdvancedFlowCardManager.js:133: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\lib\\flow\\AdvancedFlowCardManager.js:170: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\lib\\flow\\AdvancedFlowCardManager.js:350: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\lib\\flow\\AdvancedFlowCardManager.js:378: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\lib\\flow\\AdvancedFlowCardManager.js:381: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\lib\\flow\\AdvancedFlowCardManager.js:387: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\lib\\flow\\AdvancedFlowCardManager.js:146: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\lib\\flow\\AdvancedFlowCardManager.js:168: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\lib\\flow\\AdvancedFlowCardManager.js:205: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\lib\\flow\\AdvancedFlowCardManager.js:385: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\lib\\flow\\AdvancedFlowCardManager.js:413: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\lib\\flow\\AdvancedFlowCardManager.js:416: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\lib\\flow\\AdvancedFlowCardManager.js:422: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\helpers\\FallbackSystem.js:112: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\helpers\\FallbackSystem.js:240: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\helpers\\FallbackSystem.js:241: Potential unchecked division/multiplication (NaN risk)",
@@ -1335,6 +2770,7 @@
     ".homeybuild\\lib\\managers\\SmartDriverAdaptation.js:1138: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\managers\\SmartEnergyManager.js:75: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\managers\\UniversalVariantManager.js:80: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\lib\\managers\\VirtualEnergyEstimator.js:227: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\mixins\\SonoffEwelinkMixin.js:31: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\pairing\\EnrichmentScheduler.js:43: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\pairing\\PermissiveMatchingEngine.js:95: Potential unchecked division/multiplication (NaN risk)",
@@ -2017,13 +3453,13 @@
     "lib\\filter\\SanityFilter.js:97: Potential unchecked division/multiplication (NaN risk)",
     "lib\\filter\\SanityFilter.js:102: Potential unchecked division/multiplication (NaN risk)",
     "lib\\filter\\SanityFilter.js:110: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\flow\\AdvancedFlowCardManager.js:111: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\flow\\AdvancedFlowCardManager.js:133: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\flow\\AdvancedFlowCardManager.js:170: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\flow\\AdvancedFlowCardManager.js:350: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\flow\\AdvancedFlowCardManager.js:378: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\flow\\AdvancedFlowCardManager.js:381: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\flow\\AdvancedFlowCardManager.js:387: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\flow\\AdvancedFlowCardManager.js:146: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\flow\\AdvancedFlowCardManager.js:168: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\flow\\AdvancedFlowCardManager.js:205: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\flow\\AdvancedFlowCardManager.js:385: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\flow\\AdvancedFlowCardManager.js:413: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\flow\\AdvancedFlowCardManager.js:416: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\flow\\AdvancedFlowCardManager.js:422: Potential unchecked division/multiplication (NaN risk)",
     "lib\\helpers\\FallbackSystem.js:112: Potential unchecked division/multiplication (NaN risk)",
     "lib\\helpers\\FallbackSystem.js:240: Potential unchecked division/multiplication (NaN risk)",
     "lib\\helpers\\FallbackSystem.js:241: Potential unchecked division/multiplication (NaN risk)",
@@ -2096,6 +3532,7 @@
     "lib\\managers\\SmartDriverAdaptation.js:1138: Potential unchecked division/multiplication (NaN risk)",
     "lib\\managers\\SmartEnergyManager.js:75: Potential unchecked division/multiplication (NaN risk)",
     "lib\\managers\\UniversalVariantManager.js:80: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\managers\\VirtualEnergyEstimator.js:227: Potential unchecked division/multiplication (NaN risk)",
     "lib\\mixins\\SonoffEwelinkMixin.js:31: Potential unchecked division/multiplication (NaN risk)",
     "lib\\pairing\\EnrichmentScheduler.js:43: Potential unchecked division/multiplication (NaN risk)",
     "lib\\pairing\\PermissiveMatchingEngine.js:95: Potential unchecked division/multiplication (NaN risk)",
@@ -3119,8 +4556,8 @@
     ".github\\state\\interviews\\JohanBendz-com.tuya.zigbee_1327.json:21: Forbidden invisible character (char code 8203) detected.",
     ".github\\state\\interviews\\JohanBendz-com.tuya.zigbee_1327.json:35: Forbidden invisible character (char code 8203) detected.",
     ".github\\state\\interviews\\JohanBendz-com.tuya.zigbee_1360.json:13: Forbidden invisible character (char code 160) detected.",
-    ".github\\state\\pr-issue-scan.json:3111: Forbidden invisible character (char code 8203) detected.",
-    ".github\\state\\pr-issue-scan.json:29857: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\pr-issue-scan.json:3107: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\pr-issue-scan.json:29425: Forbidden invisible character (char code 160) detected.",
     ".homeybuild\\drivers\\lcdtemphumidsensor_plug_energy\\device.js:169: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\drivers\\presence_sensor_radar\\configs.js:253: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\drivers\\presence_sensor_radar\\configs.js:254: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
