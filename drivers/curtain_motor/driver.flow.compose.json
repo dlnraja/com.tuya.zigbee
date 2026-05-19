@@ -148,10 +148,6 @@
         "en": "Set position to...",
         "fr": "Régler la position à..."
       },
-      "titleFormatted": {
-        "en": "Set position to [[position]]%",
-        "fr": "Régler la position à [[position]]%"
-      },
       "args": [
         {
           "name": "position",
@@ -190,10 +186,6 @@
         "en": "Set brightness to...",
         "fr": "Régler la luminosité à..."
       },
-      "titleFormatted": {
-        "en": "Set brightness to [[brightness]]%",
-        "fr": "Régler la luminosité à [[brightness]]%"
-      },
       "args": [
         {
           "name": "brightness",
@@ -210,7 +202,6 @@
         }
       ]
     },
-
     {
       "id": "curtain_motor_set_favorite",
       "title": {
@@ -252,12 +243,6 @@
         "fr": "Régler position",
         "nl": "Positie instellen",
         "de": "Position einstellen"
-      },
-      "titleFormatted": {
-        "en": "Set position to [[position]]%",
-        "fr": "Régler la position à [[position]]%",
-        "nl": "Positie instellen op [[position]]%",
-        "de": "Position einstellen auf [[position]]%"
       },
       "args": [
         {

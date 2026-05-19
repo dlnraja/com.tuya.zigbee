@@ -11089,12 +11089,6 @@
           "fr": "Présence détectée",
           "de": "Anwesenheit erkannt"
         },
-        "titleFormatted": {
-          "en": "Presence detected",
-          "nl": "Aanwezigheid gedetecteerd",
-          "fr": "Présence détectée",
-          "de": "Anwesenheit erkannt"
-        },
         "hint": {
           "en": "Triggers when the mmWave radar detects human presence (even stationary)",
           "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
@@ -11117,12 +11111,6 @@
           "fr": "Présence terminée",
           "de": "Anwesenheit beendet"
         },
-        "titleFormatted": {
-          "en": "Presence cleared",
-          "nl": "Aanwezigheid opgeheven",
-          "fr": "Présence terminée",
-          "de": "Anwesenheit beendet"
-        },
         "hint": {
           "en": "Triggers when no human presence is detected for the configured timeout",
           "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
@@ -11140,12 +11128,6 @@
       {
         "id": "presence_sensor_radar_motion_detected",
         "title": {
-          "en": "Motion detected",
-          "nl": "Beweging gedetecteerd",
-          "fr": "Mouvement détecté",
-          "de": "Bewegung erkannt"
-        },
-        "titleFormatted": {
           "en": "Motion detected",
           "nl": "Beweging gedetecteerd",
           "fr": "Mouvement détecté",
@@ -16172,12 +16154,6 @@
           "fr": "Présence détectée",
           "de": "Anwesenheit erkannt"
         },
-        "titleFormatted": {
-          "en": "Presence detected",
-          "nl": "Aanwezigheid gedetecteerd",
-          "fr": "Présence détectée",
-          "de": "Anwesenheit erkannt"
-        },
         "hint": {
           "en": "Triggers when the mmWave radar detects human presence (even stationary)",
           "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
@@ -16200,12 +16176,6 @@
           "fr": "Présence terminée",
           "de": "Anwesenheit beendet"
         },
-        "titleFormatted": {
-          "en": "Presence cleared",
-          "nl": "Aanwezigheid opgeheven",
-          "fr": "Présence terminée",
-          "de": "Anwesenheit beendet"
-        },
         "hint": {
           "en": "Triggers when no human presence is detected for the configured timeout",
           "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
@@ -16223,12 +16193,6 @@
       {
         "id": "sensor_contact_presence_motion_detected",
         "title": {
-          "en": "Motion detected",
-          "nl": "Beweging gedetecteerd",
-          "fr": "Mouvement détecté",
-          "de": "Bewegung erkannt"
-        },
-        "titleFormatted": {
           "en": "Motion detected",
           "nl": "Beweging gedetecteerd",
           "fr": "Mouvement détecté",
@@ -16532,12 +16496,6 @@
           "fr": "Présence détectée",
           "de": "Anwesenheit erkannt"
         },
-        "titleFormatted": {
-          "en": "Presence detected",
-          "nl": "Aanwezigheid gedetecteerd",
-          "fr": "Présence détectée",
-          "de": "Anwesenheit erkannt"
-        },
         "hint": {
           "en": "Triggers when the mmWave radar detects human presence (even stationary)",
           "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
@@ -16560,12 +16518,6 @@
           "fr": "Présence terminée",
           "de": "Anwesenheit beendet"
         },
-        "titleFormatted": {
-          "en": "Presence cleared",
-          "nl": "Aanwezigheid opgeheven",
-          "fr": "Présence terminée",
-          "de": "Anwesenheit beendet"
-        },
         "hint": {
           "en": "Triggers when no human presence is detected for the configured timeout",
           "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
@@ -16583,12 +16535,6 @@
       {
         "id": "sensor_illuminance_presence_motion_detected",
         "title": {
-          "en": "Motion detected",
-          "nl": "Beweging gedetecteerd",
-          "fr": "Mouvement détecté",
-          "de": "Bewegung erkannt"
-        },
-        "titleFormatted": {
           "en": "Motion detected",
           "nl": "Beweging gedetecteerd",
           "fr": "Mouvement détecté",
@@ -16707,12 +16653,6 @@
           "fr": "Présence détectée",
           "de": "Anwesenheit erkannt"
         },
-        "titleFormatted": {
-          "en": "Presence detected",
-          "nl": "Aanwezigheid gedetecteerd",
-          "fr": "Présence détectée",
-          "de": "Anwesenheit erkannt"
-        },
         "hint": {
           "en": "Triggers when the mmWave radar detects human presence (even stationary)",
           "nl": "Triggert wanneer de mmWave radar menselijke aanwezigheid detecteert (zelfs stilstaand)",
@@ -16735,12 +16675,6 @@
           "fr": "Présence terminée",
           "de": "Anwesenheit beendet"
         },
-        "titleFormatted": {
-          "en": "Presence cleared",
-          "nl": "Aanwezigheid opgeheven",
-          "fr": "Présence terminée",
-          "de": "Anwesenheit beendet"
-        },
         "hint": {
           "en": "Triggers when no human presence is detected for the configured timeout",
           "nl": "Triggert wanneer geen menselijke aanwezigheid wordt gedetecteerd gedurende de geconfigureerde timeout",
@@ -16758,12 +16692,6 @@
       {
         "id": "sensor_motion_presence_motion_detected",
         "title": {
-          "en": "Motion detected",
-          "nl": "Beweging gedetecteerd",
-          "fr": "Mouvement détecté",
-          "de": "Bewegung erkannt"
-        },
-        "titleFormatted": {
           "en": "Motion detected",
           "nl": "Beweging gedetecteerd",
           "fr": "Mouvement détecté",
@@ -30909,12 +30837,6 @@
           "fr": "Quelqu'un est présent",
           "de": "Jemand ist anwesend"
         },
-        "titleFormatted": {
-          "en": "Someone !{{is|is not}} present",
-          "nl": "Iemand !{{is|is niet}} aanwezig",
-          "fr": "Quelqu'un !{{est|n'est pas}} présent",
-          "de": "Jemand !{{ist|ist nicht}} anwesend"
-        },
         "args": [
           {
             "type": "device",
@@ -31264,12 +31186,6 @@
           "fr": "Quelqu'un est présent",
           "de": "Jemand ist anwesend"
         },
-        "titleFormatted": {
-          "en": "Someone !{{is|is not}} present",
-          "nl": "Iemand !{{is|is niet}} aanwezig",
-          "fr": "Quelqu'un !{{est|n'est pas}} présent",
-          "de": "Jemand !{{ist|ist nicht}} anwesend"
-        },
         "args": [
           {
             "type": "device",
@@ -31428,12 +31344,6 @@
           "fr": "Quelqu'un est présent",
           "de": "Jemand ist anwesend"
         },
-        "titleFormatted": {
-          "en": "Someone !{{is|is not}} present",
-          "nl": "Iemand !{{is|is niet}} aanwezig",
-          "fr": "Quelqu'un !{{est|n'est pas}} présent",
-          "de": "Jemand !{{ist|ist nicht}} anwesend"
-        },
         "args": [
           {
             "type": "device",
@@ -31517,12 +31427,6 @@
           "nl": "Iemand is aanwezig",
           "fr": "Quelqu'un est présent",
           "de": "Jemand ist anwesend"
-        },
-        "titleFormatted": {
-          "en": "Someone !{{is|is not}} present",
-          "nl": "Iemand !{{is|is niet}} aanwezig",
-          "fr": "Quelqu'un !{{est|n'est pas}} présent",
-          "de": "Jemand !{{ist|ist nicht}} anwesend"
         },
         "args": [
           {
@@ -35198,12 +35102,6 @@
           "nl": "Helderheid instellen",
           "de": "Helligkeit einstellen"
         },
-        "titleFormatted": {
-          "en": "Set brightness to [[brightness]]%",
-          "fr": "Régler la luminosité à [[brightness]]%",
-          "nl": "Helderheid instellen op [[brightness]]%",
-          "de": "Helligkeit einstellen auf [[brightness]]%"
-        },
         "args": [
           {
             "type": "device",
@@ -35339,10 +35237,6 @@
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
         },
-        "titleFormatted": {
-          "en": "Set brightness to [[brightness]]%",
-          "fr": "Régler la luminosité à [[brightness]]%"
-        },
         "args": [
           {
             "type": "device",
@@ -35371,12 +35265,6 @@
           "fr": "Régler luminosité",
           "nl": "Helderheid instellen",
           "de": "Helligkeit einstellen"
-        },
-        "titleFormatted": {
-          "en": "Set brightness to [[brightness]]%",
-          "fr": "Régler la luminosité à [[brightness]]%",
-          "nl": "Helderheid instellen op [[brightness]]%",
-          "de": "Helligkeit einstellen auf [[brightness]]%"
         },
         "args": [
           {
@@ -35422,10 +35310,6 @@
         "title": {
           "en": "Set position to...",
           "fr": "Régler la position à..."
-        },
-        "titleFormatted": {
-          "en": "Set position to [[position]]%",
-          "fr": "Régler la position à [[position]]%"
         },
         "args": [
           {
@@ -35481,10 +35365,6 @@
         "title": {
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
-        },
-        "titleFormatted": {
-          "en": "Set brightness to [[brightness]]%",
-          "fr": "Régler la luminosité à [[brightness]]%"
         },
         "args": [
           {
@@ -35559,12 +35439,6 @@
           "fr": "Régler position",
           "nl": "Positie instellen",
           "de": "Position einstellen"
-        },
-        "titleFormatted": {
-          "en": "Set position to [[position]]%",
-          "fr": "Régler la position à [[position]]%",
-          "nl": "Positie instellen op [[position]]%",
-          "de": "Position einstellen auf [[position]]%"
         },
         "args": [
           {
