@@ -1,13 +1,13 @@
 'use strict';
 
-const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const { ClimateInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 
 /**
  * Climate Sensor Device - v8.0.0 MODERNIZED
  * High-precision temperature and humidity tracking with psychrometric validation.
  */
-class ClimateSensorDevice extends SensorBase {
+class ClimateSensorDevice extends UnifiedSensorBase {
 
   async onNodeInit({ zclNode }) {
     this.log('[CLIMATE] 🚀 v8.0.0 Modernizing...');
@@ -37,7 +37,8 @@ class ClimateSensorDevice extends SensorBase {
       3: { capability: 'measure_battery', divisor: 1 },
       4: { capability: 'measure_battery', divisor: 1 },
       5: { capability: 'measure_luminance', divisor: 1 },
-      12: { capability: 'measure_luminance', divisor: 1 }
+      12: { capability: 'measure_luminance', divisor: 1 },
+      38: { capability: 'measure_temperature.probe', divisor: 10, dynamicAdd: true }
     };
   }
 
@@ -51,7 +52,7 @@ class ClimateSensorDevice extends SensorBase {
     if (mapping) {
       let val = value / (mapping.divisor || 1);
 
-      if (mapping.capability === 'measure_temperature') {
+      if (mapping.capability === 'measure_temperature' || mapping.capability === 'measure_temperature.probe') {
         val = this._climateInference.validateTemperature(val);
       } else if (mapping.capability === 'measure_humidity') {
         val = this._climateInference.validateHumidity(val);

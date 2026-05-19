@@ -3219,9 +3219,9 @@
     ]
   },
   "_TZE284_0ints6wl": {
-    "driverId": "cover_motor",
-    "type": "cover",
-    "powerSource": "mains",
+    "driverId": "soil_sensor",
+    "type": "soil_sensor",
+    "powerSource": "battery",
     "modelIds": [
       "TS0601"
     ]

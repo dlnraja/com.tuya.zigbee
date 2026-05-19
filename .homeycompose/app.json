@@ -66,7 +66,23 @@
     ]
   },
   "category": "appliances",
-  "permissions": [],
+  "permissions": [
+    "homey:manager:api"
+  ],
+  "api": {
+    "getDevices": {
+      "method": "get",
+      "path": "/devices",
+      "public": false,
+      "role": "owner"
+    },
+    "replaceDevice": {
+      "method": "post",
+      "path": "/replace",
+      "public": false,
+      "role": "owner"
+    }
+  },
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png",

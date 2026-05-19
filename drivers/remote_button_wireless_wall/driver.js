@@ -1,6 +1,6 @@
 'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
 /**
  * v5.5.533: Button 1-Gang Driver - FIXED flow card IDs to match driver.flow.compose.json
@@ -10,7 +10,7 @@ const { ZigBeeDriver } = require('homey-zigbeedriver');
  * - Correct: button_wireless_1_button_1gang_button_pressed
  * - Wrong:   button_wireless_1_button_pressed (what FlowCardHelper generated)
  */
-class Button1GangDriver extends ZigBeeDriver {
+class Button1GangDriver extends BaseZigBeeDriver {
   /**
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
    * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
