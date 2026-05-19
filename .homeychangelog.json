@@ -61,5 +61,8 @@
   },
   "7.5.47": {
     "en": "v7.5.46: No changes."
+  },
+  "7.5.48": {
+    "en": "Fix clamp ammeter incoherent watt/voltage scaling, add SONOFF wireless button matching, and ensure SDK3 compliance"
   }
 }
