@@ -96,6 +96,14 @@ for (const entry of entries) {
         // curtain_motor fix was already applied, but general check remains
         warn(`Driver '${driverId}' uses deprecated getDeviceTriggerCard()! Consider migration.`);
       }
+
+      // 5. Check if driver blocks passive telemetry monitor info broadcasts
+      if (content.includes('onFrame') || content.includes('handleFrame') || content.includes('handleDatapoint') || content.includes('parseTuyaFrame')) {
+        const initCheckPattern = /(?:if\s*\(\s*!this\.(?:initialized|ready)\b|if\s*\(\s*this\.(?:initialized|ready)\s*===\s*false)/;
+        if (initCheckPattern.test(content)) {
+          warn(`Driver '${driverId}' has strict initialization checks inside parsing flows. Ensure it does not block passive/unannounced monitor info broadcasts!`);
+        }
+      }
     } catch (e) {
       error(`Failed to read ${deviceJsPath}: ${e.message}`);
     }
@@ -125,6 +133,22 @@ for (const entry of entries) {
           if (fp.productId && fp.productId.includes('*')) {
             error(`Driver '${driverId}' fingerprint contains wildcard '*' in productId: ${fp.productId}`);
           }
+        }
+      }
+
+      // Check for empty manufacturerName array (Antigravity v5.13.7)
+      if (compose.zigbee && Array.isArray(compose.zigbee.manufacturerName) && compose.zigbee.manufacturerName.length === 0) {
+        const EXEMPT_DRIVERS = [
+          'wall_remote_6_gang', 'wall_remote_4_gang_2', 'wall_remote_4_gang_3', 'wall_remote_4_gang',
+          'usb_dongle_triple', 'switch_usb_dongle', 'smart_remote_4_buttons', 'smart_knob_switch',
+          'smart_button_switch', 'sirentemphumidsensor', 'sensor_presence_radar',
+          'sensor_illuminance_presence', 'sensor_contact_water', 'sensor_contact_motion', 'remote_button_wireless_plug',
+          'remote_button_wireless', 'remote_button_emergency_sos', 'lcdtemphumidsensor_plug_energy',
+          'handheld_remote_4_buttons', 'device_floor_heating_thermostat', 'device_din_rail_meter',
+          'climate_sensor_energy', 'climate_sensor_device', 'button_wireless_plug'
+        ];
+        if (!EXEMPT_DRIVERS.includes(driverId)) {
+          error(`Driver '${driverId}' has empty manufacturerName array in driver.compose.json!`);
         }
       }
     } catch (e) {

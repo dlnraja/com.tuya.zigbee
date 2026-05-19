@@ -1,6 +1,6 @@
 'use strict';
 
-const {SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const IASZoneManager = require('../../lib/managers/IASZoneManager');
 const { MotionLuxInference, BatteryInference } = require('../../lib/IntelligentSensorInference');
 const { containsCI, startsWithCI } = require('../../lib/utils/CaseInsensitiveMatcher');
@@ -46,7 +46,7 @@ const VALIDATION = {
  * Supports: Fantem ZB003-x, Immax 07502L, Generic Tuya Multisensor
  * Source: https://community.home-assistant.io/t/tuya-zigbee-multi-sensor-4-in-1/409780
  */
-class MotionSensorDevice extends SensorBase {
+class MotionSensorDevice extends UnifiedSensorBase {
 
   get mainsPowered() { return false; }
 

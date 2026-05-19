@@ -96,3 +96,11 @@ K2. Types: 0=Raw 1=Bool 2=Value 3=String 4=Enum 5=Bitmap
 K3. DP values may need division: temp/10, hum/10, battery/2
 K4. Some manufacturers send raw C (no division needed) - check per fingerprint
 K5. Multi-DP frames: single report contains multiple DPs, parse ALL of them
+
+## L. PASSIVE / UNANNOUNCED MONITOR INFO BROADCASTS
+
+L1. Unannounced Telemetry Handling: Sleepy or battery-powered devices often broadcast telemetry data on random intervals ("monitor info") prior to completing ZCL pairing/interview or without announcing themselves.
+L2. No Initialization Blocks: Drivers must NEVER block or discard incoming cluster or raw frame reports due to strict "device initialized" status checks. Raw frames (cluster 0xEF00 or ZCL attributes) must be accepted, parsed, and mapped dynamically even if standard pairing interviews are in progress.
+L3. Passive Mode Decoupling: Ensure that `TuyaEF00Manager` passive listening mode (`_setupPassiveMode` & raw frame listener on cluster 0xEF00/61184) remains intact and is never bypassable or disabled by unannounced data transmissions.
+L4. Persistent Telemetry Logging: Gracefully log unannounced passive frames as `[TUYA] 📥 Passive frame received` to ensure visibility for diagnostics and debugging.
+

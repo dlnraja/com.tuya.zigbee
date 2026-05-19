@@ -103,6 +103,10 @@ To maintain a "Zero-Defect" environment, you must adhere strictly to these highl
 - **Context:** Radar presence sensors or micro-climate sensors are prone to quick signal bounces or temporary spikes (e.g. temperature jumping from 21°C to 75°C for one frame due to static interference).
 - **Rule:** Environmental and radar drivers on `master` integrate `SanityFilter.js` using Exponential Moving Average (EMA) and Rate of Change (ROC) checking to filter out noisy sensor values before they trigger home automations.
 
+### 6. Support for Passive/Unannounced Broadcasts ("monitor info")
+- **Context:** Sleepy or battery-powered devices often broadcast telemetry data on random intervals ("monitor info") prior to completing ZCL pairing/interview or without announcing themselves.
+- **Rule:** Drivers must NEVER block or discard incoming cluster or raw frame reports due to strict "device initialized" status checks. Raw frames (cluster 0xEF00 or ZCL attributes) must be accepted, parsed, and mapped dynamically even if standard pairing interviews are in progress. The passive listener mode (`_setupPassiveMode` & raw frame listener on cluster 0xEF00/61184) inside `TuyaEF00Manager` must always remain active to intercept these random broadcasts.
+
 ---
 
 ## 🔧 5. Diagnostic & Issue Resolution History

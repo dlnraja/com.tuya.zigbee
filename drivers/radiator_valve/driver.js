@@ -1,8 +1,8 @@
 'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
-class RadiatorValveDriver extends ZigBeeDriver {
+class RadiatorValveDriver extends BaseZigBeeDriver {
   getDeviceById(id) {
     try {
       return super.getDeviceById(id);

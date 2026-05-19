@@ -162,6 +162,21 @@ function validateJSFile(filePath) {
         }
       }
     }
+
+    // 1d-iii. Passive Broadcast Blocker checks
+    if (code.includes('class ') && code.includes('extends ')) {
+      const initCheckPattern = /(?:if\s*\(\s*!this\.(?:initialized|ready)\b|if\s*\(\s*this\.(?:initialized|ready)\s*===\s*false)/;
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        if (initCheckPattern.test(line) && (code.includes('onFrame') || code.includes('handleFrame') || code.includes('handleDatapoint') || code.includes('parseTuyaFrame'))) {
+          report.warnings.push({
+            file: filePath,
+            type: 'PASSIVE_TELEMETRY_BLOCK',
+            message: `Line ${i + 1}: Strict initialization check detected. Ensure this does not block unannounced/passive monitor broadcasts from sleepy/uninitialized devices!`,
+          });
+        }
+      }
+    }
   } catch (err) {
     // optional fail
   }

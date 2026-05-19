@@ -1,7 +1,5 @@
 'use strict';
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-
-
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
@@ -35,10 +33,65 @@ class WaterValveGardenDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unif
       ...parentMappings,
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       2: { capability: null, internal: 'work_state' },
-      7: { capability: 'measure_battery' },
+      7: { capability: 'measure_battery', transform: (v) => {
+        if (v > 100) return Math.min(100, Math.round(((v - 2000) / 1000) * 100)); // raw mV conversion fallback
+        return v;
+      }},
       11: { capability: null, internal: 'countdown', writable: true },
-      15: { capability: 'measure_battery' }
+      15: { capability: 'measure_battery', transform: (v) => {
+        if (v > 100) return Math.min(100, Math.round(((v - 2000) / 1000) * 100)); // raw mV conversion fallback
+        return v;
+      }}
     };
+  }
+
+  /**
+   * v9.8.0: DEFENSIVE - Safe flow card trigger with null checks
+   * Prevents "getDeviceTriggerCard is not a function" runtime errors
+   */
+  async safeSetCapabilityValue(capability, value) {
+    const oldValue = this.getCapabilityValue(capability);
+    const res = await super.safeSetCapabilityValue(capability, value);
+
+    if (oldValue !== value) {
+      if (capability === 'onoff') {
+        const triggerId = value ? 'water_valve_garden_opened' : 'water_valve_garden_closed';
+        this.log(`[VALVE-GARDEN] onoff: ${oldValue} -> ${value}, flow: ${triggerId}`);
+        this._safeTriggerFlow(triggerId, {}, { capability, oldValue, value });
+      } else if (capability === 'measure_battery') {
+        this.log(`[VALVE-GARDEN] Battery: ${oldValue} -> ${value}`);
+        const lowThreshold = this.getSetting('battery_low_threshold') || 20;
+        if (typeof value === 'number' && value < lowThreshold && (oldValue === null || oldValue >= lowThreshold)) {
+          this.log(`[VALVE-GARDEN] ⚠️ Low battery (${value}%), triggering alert`);
+          this._safeTriggerFlow('water_valve_garden_battery_low', {}, { capability, value, threshold: lowThreshold });
+        }
+      }
+    }
+    return res;
+  }
+
+  /**
+   * v9.8.0: DEFENSIVE - Safe flow card trigger helper
+   * Guards against missing homey.flow or triggerCard
+   */
+  _safeTriggerFlow(triggerId, tokens = {}, debug = {}) {
+    try {
+      if (!this.homey?.flow) {
+        this.log(`[VALVE-GARDEN] ⚠️ Cannot trigger flow '${triggerId}': homey.flow unavailable`);
+        return Promise.resolve();
+      }
+      const triggerCard = this.homey.flow.getDeviceTriggerCard(triggerId);
+      if (typeof triggerCard?.trigger !== 'function') {
+        this.log(`[VALVE-GARDEN] ⚠️ Flow '${triggerId}' trigger method unavailable`);
+        return Promise.resolve();
+      }
+      return triggerCard.trigger(this, tokens, {}).catch(err => {
+        this.error(`[VALVE-GARDEN] Flow '${triggerId}' failed: ${err.message}`);
+      });
+    } catch (err) {
+      this.error(`[VALVE-GARDEN] _safeTriggerFlow('${triggerId}') exception: ${err.message}`);
+      return Promise.resolve();
+    }
   }
 
   /**

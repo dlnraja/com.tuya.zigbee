@@ -1,12 +1,12 @@
 'use strict';
 
-const { SensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * Vibration Sensor Device - v8.0.0 MODERNIZED
  * Specialized for vibration, tilt, and tamper detection.
  */
-class VibrationSensorDevice extends SensorBase {
+class VibrationSensorDevice extends UnifiedSensorBase {
 
   get mainsPowered() { return false; }
 
