@@ -1,4 +1,10 @@
 {
+  "7.5.48": {
+    "en": "Bug fix: clamp meter watt/voltage scaling corrected. New fingerprints added across multiple drivers. Flow repair tool integrated for device/flow replacement."
+  },
+  "7.5.47": {
+    "en": "v7.5.46: No changes."
+  },
   "7.5.46": {
     "en": "v7.5.46 - Maintenance release. No new devices or fixes."
   },
@@ -53,16 +59,7 @@
   "7.5.28": {
     "en": "Added 3,208 new fingerprints, improved driver matching for soil sensors, and fixed various device initialization issues."
   },
-  "7.5.27": {
-    "en": "v7.5.27: . New IR pairing wizard, improved power clamp meter, and various bug fixes."
-  },
-  "7.5.26": {
-    "en": "Fixed SDK3 deprecation warnings across all 45 drivers by migrating from deprecated getTriggerCard to getDeviceTriggerCard. Improved stability and compatibility with latest Homey firmware."
-  },
-  "7.5.47": {
-    "en": "v7.5.46: No changes."
-  },
-  "7.5.48": {
-    "en": "Fix clamp ammeter incoherent watt/voltage scaling, add SONOFF wireless button matching, and ensure SDK3 compliance"
+  "7.5.49": {
+    "en": "v7.5.48: clamp_meter: corrected incoherent watt/voltage scaling using safeDivide instead of safeMultiply, Integrated flow repair tool for device/flow replacement (Martijn Poppen), New fingerprints added across drivers (switch, climate_sensor, soil_sensor, button_wireless, sensor_motion_presence, smart_knob_rotary, vibration_sensor), sensor_motion_presence: updated driver fingerprint configuration,"
   }
 }

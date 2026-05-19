@@ -4,7 +4,24 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.46] - 2026-05-18
+## [7.5.48] - 2026-05-19
+
+### Bug Fixes
+- clamp_meter: corrected incoherent watt/voltage scaling using safeDivide instead of safeMultiply
+
+### New Features
+- Integrated flow repair tool for device/flow replacement (Martijn Poppen)
+- New fingerprints added across drivers (switch, climate_sensor, soil_sensor, button_wireless, sensor_motion_presence, smart_knob_rotary, vibration_sensor)
+
+### Improvements
+- sensor_motion_presence: updated driver fingerprint configuration
+- soil_sensor: added new fingerprints
+- button_wireless: updated driver compose with new fingerprints
+- switch_dimmer_1gang: driver improvements
+- radiator_valve, remote_button_wireless_wall, sensor_contact_motion: minor driver updates
+---
+
+ [7.5.46] - 2026-05-18
 
 ### v7.5.46
 - No changes.
