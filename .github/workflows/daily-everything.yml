@@ -64,6 +64,10 @@ jobs:
           node .github/scripts/github-scanner.js || true
       - name: "Community Intel Ingestion"
         run: node scripts/maintenance/fetch-community-intel.js || true
+      - name: "🌐 Universal URL Audit"
+        run: node .github/scripts/challenge-all-urls.js || true
+      - name: "🧠 Intelligent Enrichment"
+        run: node .github/scripts/ai-enrichment-engine.js || true
 
   repair_and_stabilize:
     name: "🛠️ REPAIR & STABILIZE"

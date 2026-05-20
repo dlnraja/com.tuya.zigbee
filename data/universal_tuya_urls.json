@@ -1,0 +1,128 @@
+{
+  "categories": [
+    {
+      "name": "CATÉGORIE 1 : CŒUR DU PROJET & REPOS GITHUB",
+      "urls": [
+        { "id": 1, "url": "https://github.com/dlnraja/com.tuya.zigbee", "scope": "Repo principal — Développement actif, branches master/stable-v5, PR, issues, CI/CD", "priority": "🔴 Critique" },
+        { "id": 2, "url": "https://github.com/JohanBendz/com.tuya.zigbee", "scope": "Repo source historique — Extraction patterns originaux, crédits, licence MIT", "priority": "🔴 Critique" },
+        { "id": 3, "url": "https://github.com/AreAArseth/com.hobeian", "scope": "Inspiration HOBEIAN — Patterns de mapping DP, gestion clusters exotiques", "priority": "🟠 Haute" },
+        { "id": 4, "url": "https://github.com/dlnraja/com.tuya.zigbee/issues", "scope": "Suivi bugs/features — Triage #302 (crash), #305 (gate opener), #260 (Insoma)", "priority": "🔴 Critique" },
+        { "id": 5, "url": "https://github.com/dlnraja/com.tuya.zigbee/pulls", "scope": "Revue de code — Validation PR, merge stable-v5 ↔ master", "priority": "🟠 Haute" },
+        { "id": 6, "url": "https://github.com/dlnraja/com.tuya.zigbee/actions", "scope": "Workflows CI/CD — Monitoring syntax-validation, enrich-drivers, deploy", "priority": "🟠 Haute" },
+        { "id": 7, "url": "https://github.com/dlnraja/com.tuya.zigbee/settings/secrets", "scope": "Gestion secrets — XIAOMI_MIMO_API_KEY, HOMEY_PAT, fallbacks IA", "priority": "🔴 Critique" },
+        { "id": 8, "url": "https://github.com/dlnraja/com.tuya.zigbee/blob/master/.homeyignore", "scope": "Isolation runtime — Exclusion scripts CI du bundle Homey (<7MB)", "priority": "🔴 Critique" },
+        { "id": 9, "url": "https://github.com/dlnraja/com.tuya.zigbee/blob/master/app.json", "scope": "Manifeste SDK 3.0 — ID app, drivers, capabilities, permissions", "priority": "🔴 Critique" },
+        { "id": 10, "url": "https://github.com/dlnraja/com.tuya.zigbee/blob/master/app.js", "scope": "Point d'entrée runtime — Initialisation app, gestion lifecycle", "priority": "🔴 Critique" },
+        { "id": 11, "url": "https://github.com/dlnraja/com.tuya.zigbee/tree/master/lib", "scope": "Bibliothèques partagées — tuya/, utils/, mixins/, clusters personnalisés", "priority": "🟠 Haute" },
+        { "id": 12, "url": "https://github.com/dlnraja/com.tuya.zigbee/tree/master/drivers", "scope": "Drivers devices — 323+ drivers, fingerprints, dpMappings", "priority": "🔴 Critique" }
+      ]
+    },
+    {
+      "name": "CATÉGORIE 2 : ÉCOSYSTÈME HOMEY & SDK",
+      "urls": [
+        { "id": 13, "url": "https://developers.homey.app/", "scope": "Portail développeur — Documentation SDK 3.0, guides, best practices", "priority": "🔴 Critique" },
+        { "id": 14, "url": "https://developers.homey.app/sdk/", "scope": "Référence SDK — Classes Homey, Device, Driver, FlowCard", "priority": "🔴 Critique" },
+        { "id": 15, "url": "https://developers.homey.app/cli/", "scope": "CLI Homey — homey app validate, build, publish, install", "priority": "🟠 Haute" },
+        { "id": 16, "url": "https://developers.homey.app/app-store/guidelines", "scope": "Guidelines Store — Conformité publication, screenshots, changelog", "priority": "🟠 Haute" },
+        { "id": 17, "url": "https://developers.homey.app/the-basics/app-manifest", "scope": "Manifeste app.json — Structure, permissions, capabilities requises", "priority": "🔴 Critique" },
+        { "id": 18, "url": "https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352", "scope": "Thread officiel forum — Retours utilisateurs, bugs, demandes features", "priority": "🔴 Critique" },
+        { "id": 19, "url": "https://community.homey.app/c/fr/24", "scope": "Communauté FR — Support francophone, documentation locale", "priority": "🟡 Moyenne" },
+        { "id": 20, "url": "https://homey.app/a/com.dlnraja.tuya.zigbee/", "scope": "Page app expérimentale — Test Channel v7+, téléchargement manuel", "priority": "🟠 Haute" },
+        { "id": 21, "url": "https://homey.app/a/com.dlnraja.tuya.zigbee.stable/", "scope": "Page app stable — Test/Live Channel v5.x, production", "priority": "🔴 Critique" },
+        { "id": 22, "url": "https://homey.app/a/com.dlnraja.tuya.zigbee/test/", "scope": "Lien direct Test Channel (master) — Installation développeurs/testeurs", "priority": "🟠 Haute" }
+      ]
+    },
+    {
+      "name": "CATÉGORIE 3 : BASES DE DONNÉES ZIGBEE & SCRAPING",
+      "urls": [
+        { "id": 23, "url": "https://zigbee.blakadder.com/index.html", "scope": "Index devices Zigbee — 2693+ appareils, fingerprints, clusters, Z2M/ZHA compat", "priority": "🔴 Critique" },
+        { "id": 24, "url": "https://zigbee.blakadder.com/all.html", "scope": "Liste complète devices — Scraping batch pour enrichissement automatique", "priority": "🔴 Critique" },
+        { "id": 25, "url": "https://zigbee.blakadder.com/sensors.html", "scope": "Catégorie capteurs — Temp, hum, mouvement, qualité d'air, sol", "priority": "🟠 Haute" },
+        { "id": 26, "url": "https://zigbee.blakadder.com/switches.html", "scope": "Catégorie interrupteurs — 1-4 gangs, dimmers, scénarios", "priority": "🟠 Haute" },
+        { "id": 27, "url": "https://zigbee.blakadder.com/plugs.html", "scope": "Catégorie prises — Suivi énergétique, multi-gang, USB", "priority": "🟠 Haute" },
+        { "id": 28, "url": "https://zigbee.blakadder.com/covers.html", "scope": "Catégorie volets — Moteurs, calibration, position %", "priority": "🟡 Moyenne" },
+        { "id": 29, "url": "https://zigbee.blakadder.com/hvac.html", "scope": "Catégorie climatisation — Thermostats, TRV, IR hubs", "priority": "🟠 Haute" },
+        { "id": 30, "url": "https://github.com/Koenkk/zigbee2mqtt", "scope": "Repo Z2M principal — Converters, quirks, documentation devices", "priority": "🔴 Critique" },
+        { "id": 31, "url": "https://github.com/Koenkk/zigbee-herdsman-converters/tree/master/src/devices", "scope": "Dossier converters Z2M — Mappings DP Tuya, patterns composites", "priority": "🔴 Critique" },
+        { "id": 32, "url": "https://github.com/Koenkk/zigbee-herdsman-converters/blob/master/src/devices/tuya.ts", "scope": "Fichier tuya.ts Z2M — Référence majeure pour DP Tuya, clusters propriétaires", "priority": "🔴 Critique" },
+        { "id": 33, "url": "https://www.zigbee2mqtt.io/supported-devices/", "scope": "Liste devices Z2M — Filtre par fabricant/modèle, features, DP docs", "priority": "🟠 Haute" },
+        { "id": 34, "url": "https://github.com/zigpy/zha-device-handlers", "scope": "Repo ZHA quirks — Handlers Python pour Home Assistant, patterns alternatifs", "priority": "🟠 Haute" },
+        { "id": 35, "url": "https://github.com/zigpy/zha-device-handlers/tree/master/zhaquirks/tuya", "scope": "Quirks Tuya ZHA — Implémentations spécifiques Tuya, clusters exotiques", "priority": "🟠 Haute" },
+        { "id": 36, "url": "https://github.com/blakadder/zigbee/blob/master/devices.json", "scope": "DB JSON Blakadder — Scraping automatisé, extraction fingerprints bruts", "priority": "🔴 Critique" },
+        { "id": 37, "url": "https://zigbee.blakadder.com/search.html?query=Tuya", "scope": "Page dédiée Tuya — Tous devices Tuya listés, modèles TS0601/TS004x", "priority": "🔴 Critique" }
+      ]
+    },
+    {
+      "name": "CATÉGORIE 4 : FORUMS RÉGIONAUX & COMMUNAUTÉS",
+      "urls": [
+        { "id": 38, "url": "https://tieba.baidu.com/f?kw=zigbee", "scope": "Forum Baidu — Discussions techniques, partages drivers CN", "lang": "CN" },
+        { "id": 39, "url": "https://www.zhihu.com/search?q=zigbee", "scope": "Q/R Zhihu — Analyses approfondies, comparatifs fabricants", "lang": "CN" },
+        { "id": 40, "url": "https://so.csdn.net/so/search?q=zigbee", "scope": "Blog CSDN — Tutorials dev, reverse engineering, code samples", "lang": "CN" },
+        { "id": 41, "url": "https://developer.tuya.com/cn/", "scope": "Portail dev Tuya CN — Docs API, specs clusters, firmware", "lang": "CN" },
+        { "id": 42, "url": "https://gitee.com/search?q=zigbee2mqtt", "scope": "Forks CN Z2M — Adaptations marché local, drivers spécifiques", "lang": "CN" },
+        { "id": 43, "url": "https://detail.chiebukuro.yahoo.co.jp/tag/zigbee", "scope": "Yahoo Chiebukuro — Q/R utilisateurs, problèmes pairing", "lang": "JP" },
+        { "id": 44, "url": "https://qiita.com/tags/zigbee", "scope": "Qiita — Articles techniques développeurs, snippets code", "lang": "JP" },
+        { "id": 45, "url": "https://panasonic.com/jp/developer", "scope": "Dev Portal Panasonic — Modules industriels Zigbee, specs", "lang": "JP" },
+        { "id": 46, "url": "https://blog.naver.com/search?q=zigbee", "scope": "Naver Blog KR — Communauté coréenne, tests devices", "lang": "KR" },
+        { "id": 47, "url": "https://habr.com/ru/search/?q=zigbee", "scope": "Habr — Analyses techniques, reverse engineering, scripts", "lang": "RU" },
+        { "id": 48, "url": "https://4pda.to/forum/index.php?showforum=612", "scope": "4PDA — Communauté active, drivers custom, firmwares moddés", "lang": "RU" },
+        { "id": 49, "url": "https://reddit.com/r/ru_homeassistant", "scope": "Reddit RU — Partages configs, quirks locaux, troubleshooting", "lang": "RU/EN" },
+        { "id": 50, "url": "https://forum.domoovore.com", "scope": "Domoovore — Communauté Homey FR, retours utilisateurs, tests", "lang": "FR" },
+        { "id": 51, "url": "https://community.homey.app/c/fr/24", "scope": "Homey Community FR — Support technique, demandes features", "lang": "FR" },
+        { "id": 52, "url": "https://github.com/Koenkk/zigbee2mqtt/discussions/categories/français", "scope": "Discussions FR Z2M — Traductions docs, adaptations locales", "lang": "FR/EN" },
+        { "id": 53, "url": "https://homematic-forum.de", "scope": "HomeMatic Forum — Intégrations Zigbee, comparatifs matériels", "lang": "DE" },
+        { "id": 54, "url": "https://forum.iobroker.net", "scope": "IoBroker Forum — Drivers custom, quirks ZHA, scripts JS", "lang": "DE" },
+        { "id": 55, "url": "https://heise.de/ratgeber/Zigbee", "scope": "Heise Online — Tests sécurité, analyses techniques, news", "lang": "DE" },
+        { "id": 56, "url": "https://reddit.com/r/homeassistant", "scope": "Reddit HA — Troubleshooting global, quirks partagés, news", "lang": "EN" },
+        { "id": 57, "url": "https://reddit.com/r/smarthome", "scope": "Reddit SmartHome — Discussions grand public, compatibilité", "lang": "EN" },
+        { "id": 58, "url": "https://community.smartthings.com", "scope": "SmartThings Community — Intégrations Zigbee, edge drivers", "lang": "EN" },
+        { "id": 59, "url": "https://community.hubitat.com", "scope": "Hubitat Forum — Drivers custom, patterns Zigbee avancés", "lang": "EN" }
+      ]
+    },
+    {
+      "name": "CATÉGORIE 5 : SPÉCIFICATIONS FABRICANTS & CLUSTERS PROPRIÉTAIRES",
+      "urls": [
+        { "id": 60, "url": "https://developer.tuya.com/en/docs/iot/", "fabricant": "Tuya", "clusters": "0xEF00 (DP), 0xE000 (boutons)", "scope": "Docs API, mappings DP génériques, specs TS0601" },
+        { "id": 61, "url": "https://developer.legrand.com/local-interoperability/", "fabricant": "Legrand", "clusters": "0xFC40 (remote), 0xFC41 (dimmer)", "scope": "Pairing, modes Confort/Éco, LED feedback, quirks Homey" },
+        { "id": 62, "url": "https://developers.meethue.com/", "fabricant": "Philips Hue", "clusters": "0xFC01 (Entertainment), 0xFC03 (temp)", "scope": "Mireds conversion, température Kelvin, sync lumineuse" },
+        { "id": 63, "url": "https://home.miot-spec.com/", "fabricant": "Xiaomi/Aqara", "clusters": "0xFCC0 (propriétaire), 0xFF01 (heartbeat)", "scope": "Parsing buffer composite, détection devices dormants" },
+        { "id": 64, "url": "https://docs.iteadstudio.com/", "fabricant": "Sonoff/eWeLink", "clusters": "0x0B04 (Electrical Measurement)", "scope": "Suivi énergie, reporting puissance/tension, quirks ZHA" },
+        { "id": 65, "url": "https://developers.ikea.com/", "fabricant": "IKEA Trådfri", "clusters": "0xFC7C (IKEA specific)", "scope": "Répétition trames, télécommandes, scènes, binding" },
+        { "id": 66, "url": "https://panasonic.com/jp/developer", "fabricant": "Panasonic", "clusters": "Industriel", "scope": "Modules industriels JP, clusters personnalisés B2B" },
+        { "id": 67, "url": "https://www.zemismart.com/pages/support", "fabricant": "Zemismart", "clusters": "0xE000/0xE001 (boutons)", "scope": "Timings spécifiques, per-endpoint control, quirks" },
+        { "id": 68, "url": "https://moeshouse.com/pages/support", "fabricant": "Moes", "clusters": "Hybride 0xE000 + DP", "scope": "Patterns hybrides, gestion multi-gang, calibration" },
+        { "id": 69, "url": "https://www.bseed.com/pages/support", "fabricant": "BSEED", "clusters": "0xE000/0xE001", "scope": "Timings longs (2000ms appCommand), zcl_only protocol" },
+        { "id": 70, "url": "https://www.konke.com/support", "fabricant": "Konke", "clusters": "ZCL standard + extensions", "scope": "Timings spécifiques, capteurs environnementaux" },
+        { "id": 71, "url": "https://www.orvibo.com/support", "fabricant": "Orvibo", "clusters": "Propriétaire", "scope": "Interrupteurs, prises, quirks Z2M/ZHA" }
+      ]
+    },
+    {
+      "name": "CATÉGORIE 6 : APIs IA & SERVICES EXTERNES (SHADOW ENGINE)",
+      "urls": [
+        { "id": 72, "url": "https://token-plan-ams.xiaomimimo.com/v1", "service": "XiaomiMimo v2.5 Pro", "role": "Primary : Génération drivers, auto-fix, mapping DP", "secret": "XIAOMI_MIMO_API_KEY" },
+        { "id": 73, "url": "https://api.openai.com/v1", "service": "OpenAI GPT-4", "role": "Fallback : Validation syntaxique, génération secours", "secret": "OPENAI_API_KEY" },
+        { "id": 74, "url": "https://api.anthropic.com/v1", "service": "Anthropic Claude", "role": "Sémantique : Analyse quirks, docs multilingues", "secret": "ANTHROPIC_API_KEY" },
+        { "id": 75, "url": "https://generativelanguage.googleapis.com/v1", "service": "Gemini Pro", "role": "Multilingue : Traduction FR/EN/CN/JP, scraping docs", "secret": "GEMINI_API_KEY" },
+        { "id": 76, "url": "https://api.github.com", "service": "GitHub API v3", "role": "Scraping repos Z2M/ZHA, gestion PR/issues auto", "secret": "GITHUB_TOKEN" },
+        { "id": 77, "url": "https://discord.com/api/webhooks/...", "service": "Discord Webhook", "role": "Notifications CI/CD équipe interne (silent mode)", "secret": "DISCORD_WEBHOOK" },
+        { "id": 78, "url": "https://hooks.slack.com/services/...", "service": "Slack Webhook", "role": "Alertes critiques (bricking, validation échouée)", "secret": "SLACK_WEBHOOK" },
+        { "id": 79, "url": "https://api.sentry.io/...", "service": "Sentry", "role": "Tracking erreurs runtime pseudonymisées (opt-in)", "secret": "SENTRY_DSN" }
+      ]
+    },
+    {
+      "name": "CATÉGORIE 7 : SPÉCIFICATIONS ZIGBEE & STANDARDS",
+      "urls": [
+        { "id": 80, "url": "https://csa-iot.org/all-solutions/zigbee/", "doc": "Zigbee Cluster Library (ZCL) Spec", "utility": "Compréhension clusters standards 0x0000, 0x0006, 0x0402, etc." },
+        { "id": 81, "url": "https://csa-iot.org/developer-resource/specifications-download-request/", "doc": "CSA IoT Specs Portal", "utility": "Accès documents officiels Zigbee 3.0, Matter bridge" },
+        { "id": 82, "url": "https://en.wikipedia.org/wiki/Zigbee", "doc": "Wikipedia Zigbee (EN)", "utility": "Vue d'ensemble protocole, historique, couches réseau" },
+        { "id": 83, "url": "https://fr.wikipedia.org/wiki/Zigbee", "doc": "Wikipedia Zigbee (FR)", "utility": "Documentation francophone, vulgarisation technique" },
+        { "id": 84, "url": "https://csa-iot.org/all-solutions/zigbee/", "doc": "Zigbee Alliance Official", "utility": "Définitions officielles, certifications, compliance" },
+        { "id": 85, "url": "https://github.com/Koenkk/zigbee-herdsman", "doc": "zigbee-herdsman (Z2M core)", "utility": "Compréhension bas niveau clusters, binding, reporting" },
+        { "id": 86, "url": "https://github.com/athombv/node-homey-apps-sdk-v3-types", "doc": "Homey Apps SDK v3 Types", "utility": "TypeScript Definitions, SDK v3 reference structure" },
+        { "id": 87, "url": "https://github.com/athombv/homey-apps-sdk-issues", "doc": "Homey SDK Issues", "utility": "Tracking bugs SDK, SDK v3 maintenance reports" },
+        { "id": 88, "url": "https://zigbee2mqtt.io/advanced/support-new-devices/01_support_new_devices.html", "doc": "Guide ajout device Z2M", "utility": "Méthodologie reverse engineering, extraction DP" },
+        { "id": 89, "url": "https://www.zigbee2mqtt.io/guide/configuration/", "doc": "Config Z2M", "utility": "Paramètres avancés reporting, binding, OTA — inspiration" }
+      ]
+    }
+  ]
+}

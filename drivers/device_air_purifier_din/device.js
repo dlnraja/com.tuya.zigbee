@@ -128,7 +128,7 @@ class DinRailMeterDevice extends ZigBeeDevice {
       break;
 
     case 18: // Power (W)
-      const power =safeMultiply((value, this))._powerScale;
+      const power =safeMultiply(value, this)._powerScale;
       this.log(`[DP18] Power: ${power}W`);
       this.setCapabilityValue('measure_power', power).catch(this.error);
       break;

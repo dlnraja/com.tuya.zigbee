@@ -1,6 +1,5 @@
 'use strict';
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
-
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class AirPurifierDriver extends ZigBeeDriver {
@@ -14,7 +13,6 @@ class AirPurifierDriver extends ZigBeeDriver {
     } catch (err) {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
-      }
     }
   async onInit() {
     await super.onInit();
@@ -78,5 +76,5 @@ class AirPurifierDriver extends ZigBeeDriver {
 }
 
 }
-module.exports = AirPurifierDriver;
 
+module.exports = AirPurifierDriver;
