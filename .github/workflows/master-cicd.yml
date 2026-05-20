@@ -1,0 +1,255 @@
+name: "🌌 UNIFIED AWAKENING — Master CI/CD"
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 'Version bump'
+        required: true
+        default: 'patch'
+        type: choice
+        options: [patch, minor, major, none]
+      promote:
+        description: 'Promote to test channel'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: homey-app-store-delivery-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: "22"
+  APP_ID: "com.dlnraja.tuya.zigbee"
+  SHADOW_MODE: "false"
+  DEBUG: "false"
+
+jobs:
+  validate:
+    name: 🛡️ Validate
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, '[skip ci]')
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: 📦 Install dependencies
+        run: npm ci --prefer-offline --no-audit || npm install
+      
+      - name: 🛡️ ULTIMATE INTEGRITY GATE
+        run: node scripts/ULTIMATE_CHECK.js
+      
+      - name: 🛡️ STRICT SYNTAX PURITY GUARD
+        run: node scripts/maintenance/STRICT_SYNTAX_GUARD.js
+      
+      - name: 🛡️ ARITHMETIC INTEGRITY GUARD
+        run: node scripts/maintenance/ARITHMETIC_INTEGRITY_CHECK.js
+
+      - name: 📦 Setup Unified
+        uses: ./.github/actions/setup-unified
+      
+      - name: "0a. Intelligence Mode Selector"
+        id: intelligence_selector
+        run: |
+          if [ -n "${{ secrets.GOOGLE_API_KEY }}" ]; then
+          if [ -n "${{ secrets.NVIDIA_API_KEY }}" ]; then
+            echo "PIPELINE_MODE=AI_ORCHESTRATED" >> $GITHUB_ENV
+            echo "::notice::Pipeline intelligence: AI_ORCHESTRATED"
+          else
+            echo "PIPELINE_MODE=RULE_BASED" >> $GITHUB_ENV
+            echo "::warning::Pipeline intelligence: RULE_BASED (CloudlessFallback active)"
+          fi
+
+      - name: "0b. 🧠 AI Risk Assessment"
+        if: env.PIPELINE_MODE == 'AI_ORCHESTRATED'
+        id: risk_assessment
+        run: |
+          echo "Analyzing commit delta for architectural risks..."
+          # Analyze the last few commits for critical patterns
+          node .github/scripts/ai-helper.js --action assess_risk --commits 10
+
+      
+      - name: ⚙️ Run Auto-Ganger
+        run: node scripts/automation/generate-subdevices.js
+
+      - name: 🖼️ FLEET-WIDE IMAGE STABILIZATION
+        run: node scripts/maintenance/ensure-500x500-images.js
+      
+      - name: 📉 IMAGE MINIMIZATION (App Store Compliance)
+        run: node scripts/maintenance/clean-images.js
+
+      - name: 🕵️ SUPERIOR ARCHITECTURAL AUDIT
+        run: |
+          node scripts/maintenance/superior-audit.js
+          if [ -f SUPERIOR_AUDIT_REPORT.md ]; then
+            cat SUPERIOR_AUDIT_REPORT.md >> $GITHUB_STEP_SUMMARY
+          fi
+      
+      - name: 🛡️ STRING INTEGRITY & INVISIBLE CHARACTER AUDIT
+        run: node scripts/maintenance/string-integrity-gate.js
+      
+      - name: 🌌 ZERO DEFECT ARCHITECT AUDIT
+        run: |
+          node scripts/maintenance/zero-defect-architect-audit.js
+          if [ -f docs/reports/ZERO_DEFECT_AUDIT.json ]; then
+            echo "### 🛡️ Zero Defect Audit Summary" >> $GITHUB_STEP_SUMMARY
+            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); console.log('| Metric | Count | \n| --- | --- | \n| Drivers Checked | ' + r.driversChecked + ' | \n| NaN Safety Warnings | ' + r.naNSafetyCheck.length + ' | \n| ID Collisions | ' + r.collisions.length + ' | \n| SDK Deprecations | ' + r.sdkDeprecations.length + ' | \n| Button Logic Issues | ' + r.buttonLogicFailures.length + ' |');" >> $GITHUB_STEP_SUMMARY
+            
+            # Fail if there are critical violations
+            node -e "const r=require('./docs/reports/ZERO_DEFECT_AUDIT.json'); if(r.naNSafetyCheck.length > 0 || r.collisions.length > 0 || r.errors.length > 0 || r.sdkDeprecations.length > 0 || r.buttonLogicFailures.length > 0) { console.error('FAILED: Architectural violations detected!'); process.exit(1); }"
+          fi
+
+      - name: 🔄 Case Variant Detection (Z2M/ZHA)
+        run: |
+          echo "=== Detecting missing case variants ==="
+          node scripts/automation/detect-missing-variants.js
+          MISSING=$(node -e "const d=JSON.parse(require('fs').readFileSync('data/community-sync/missing-variants-detected.json','utf8'));console.log(d.total||0)")
+          echo "Found $MISSING missing case variants"
+          if [ "$MISSING" -gt 0 ]; then
+            node scripts/automation/fix-detected-variants.js
+          fi
+
+      - name: 🔍 Fingerprint Collision Analysis
+        run: node scripts/automation/analyze-collisions.js
+
+      - name: 🛡️ FINAL FINGERPRINT DISAMBIGUATION
+        run: node scripts/automation/fix-fingerprint-conflicts.js
+
+      - name: 🧹 EMERGENCY CORRUPTION REPAIR
+        run: node scripts/remediation/emergency-repair-hardener-corruption.js
+
+      - name: Homey Validate (Recursive Auto-Fix)
+        run: node scripts/maintenance/recursive-validator.js
+
+      - name: "🧪 Autonomous Maintenance & Stabilization"
+        continue-on-error: true
+        env:
+          DRY_RUN: 'false'
+        run: |
+          echo "### 🌌 Unified Engine Intelligence" >> $GITHUB_STEP_SUMMARY
+          echo "Running fleet-wide stabilization via Orchestrator..." >> $GITHUB_STEP_SUMMARY
+          node scripts/maintenance/autonomous-maintenance-orchestrator.js
+
+
+  publish-and-promote:
+    name: 🚀 Publish & Promote
+    needs: validate
+    runs-on: ubuntu-latest
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'push' && !contains(github.event.head_commit.message, '[skip ci]'))
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      
+      - name: 📦 Setup Unified
+        uses: ./.github/actions/setup-unified
+
+      - name: 🏷️ Version Bump
+        id: bump
+        if: github.event.inputs.bump != 'none'
+        uses: athombv/github-action-homey-app-version@v1
+        with:
+          version: ${{ github.event.inputs.bump || 'patch' }}
+          changelog: "v${{ github.event.inputs.bump || 'patch' }}: 🌌 UNIFIED ENGINE v7.4.7 - Full Rules-Based Remediation & Syntax Purity Stabilization."
+
+      - name: 🔄 Sync Version
+        if: steps.bump.outcome == 'success'
+        run: |
+          node -e "const f=require('fs'),a=require('./app.json'),p=JSON.parse(f.readFileSync('package.json','utf8'));p.version=a.version;f.writeFileSync('package.json',JSON.stringify(p,null,2)+'\n');"
+          echo "NEW_VERSION=$(node -p 'require(\"./app.json\").version')" >> $GITHUB_ENV
+
+      - name: 💾 Commit & Push Version
+        if: steps.bump.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add app.json package.json .homeychangelog.json
+          
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "v${{ env.NEW_VERSION }}: automatic version bump [skip ci]"
+            git pull --rebase origin ${{ github.ref_name }}
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+
+      - name: 🏗️ Pre-build (Fix Bug #366)
+        run: |
+          npm ci
+          node scripts/shadow_sanitizer.js
+          node scripts/maintenance/STRIP_XLARGE_IMAGES.js
+          npx homey app build
+
+      - name: 📤 Silent Publish (Shadow Mode)
+        id: publish
+        if: env.NEW_VERSION != ''
+        uses: athombv/github-action-homey-app-publish@v1
+        with:
+          personal_access_token: ${{ secrets.HOMEY_PAT }}
+
+      - name: 🎯 Promote to Test (Puppeteer)
+        if: steps.publish.outcome == 'success' && (github.event.inputs.promote != 'false')
+        id: promote_puppeteer
+        continue-on-error: true
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: |
+          echo "Waiting for build processing..."
+          sleep 150
+          npm install puppeteer --no-save
+          node .github/scripts/auto-promote-puppeteer.js
+
+      - name: 🎯 Promote to Test (API Fallback)
+        if: steps.publish.outcome == 'success' && (github.event.inputs.promote != 'false') && steps.promote_puppeteer.outcome != 'success'
+        id: promote_api
+        env:
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
+        run: node .github/scripts/auto-publish-draft.js
+
+      - name: 🐙 Create Release
+        if: steps.publish.outcome == 'success'
+        continue-on-error: true
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.NEW_VERSION }}
+          name: v${{ env.NEW_VERSION }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      # All forum updates must be done manually via https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352
+
+      - name: 📝 Final Summary
+        if: always()
+        run: |
+          echo "## 🚀 Deployment Results" >> $GITHUB_STEP_SUMMARY
+          echo "Metric | Outcome" >> $GITHUB_STEP_SUMMARY
+          echo "--- | ---" >> $GITHUB_STEP_SUMMARY
+          echo "Version | v${{ env.NEW_VERSION || 'N/A' }}" >> $GITHUB_STEP_SUMMARY
+          echo "Validation | ${{ needs.validate.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "Publish | ${{ steps.publish.outcome }}" >> $GITHUB_STEP_SUMMARY
+          echo "Promotion (Puppeteer) | ${{ steps.promote_puppeteer.outcome || 'skipped' }}" >> $GITHUB_STEP_SUMMARY
+          echo "Promotion (API) | ${{ steps.promote_api.outcome || 'skipped' }}" >> $GITHUB_STEP_SUMMARY

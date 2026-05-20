@@ -1,0 +1,23 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Valve 1",
+    "fr": "Vanne 1",
+    "nl": "Klep 1",
+    "de": "Ventil 1"
+  },
+  "desc": {
+    "en": "Control valve 1 opening percentage",
+    "fr": "Contrôle du pourcentage d'ouverture de la vanne 1"
+  },
+  "units": {
+    "en": "%"
+  },
+  "min": 0,
+  "max": 100,
+  "step": 1,
+  "getable": true,
+  "setable": true,
+  "uiComponent": "slider",
+  "insights": true
+}

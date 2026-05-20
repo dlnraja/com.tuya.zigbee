@@ -1,0 +1,89 @@
+author:	dlnraja
+association:	owner
+edited:	false
+status:	none
+--
+<!-- tuya-issue-manager -->
+Hey @john1v,
+
+Thanks for the follow-up! I see that the CK-BL702-SWP-01(7020) is still showing as unknown after the update. It looks like the manufacturer eWeLink isn't currently supported in the app, which could definitely be the issue.
+
+To help troubleshoot this, I recommend completely deleting the device from Homey, then re-pairing it with the latest app version (5.11.197). After that, you'll need to recreate any flow cards associated with this device, as Homey caches capabilities during pairing.
+
+If it still doesn't work after that, could you please share the app logs showing the DP numbers? That'll help me investigate further.
+
+Let me know how it goes!
+--
+author:	john1v
+association:	none
+edited:	false
+status:	none
+--
+After updating and repairing, the plus is still unknown.
+How to "could you please share the app logs showing the DP numbers? "
+Is that from The Homey app? or the Unversal Tuya app? 
+What means 'DP'?
+Thanks.
+--
+author:	dlnraja
+association:	owner
+edited:	false
+status:	none
+--
+I have added support for manufacturer \^[WeLink\ and \SONOFF\ in the \plug_energy_monitor\ driver! Please wait for the next test update (v5.11.207+) to install, then remove and re-pair your plug to pick up the fix. Thanks for the report!
+--
+author:	dlnraja
+association:	owner
+edited:	false
+status:	none
+--
+Support has been integrated in v5.12.0. Closing this as resolved.
+--
+author:	john1v
+association:	none
+edited:	false
+status:	none
+--
+I am sorry to say that the issue is not resolved for energy plug EweLink  CK-BL702-SWP-01(7020) .
+When scrolling through 
+https://github.com/dlnraja/com.tuya.zigbee/blob/bc3968839f655c74b2b9d8202f85c6ada6790f95/drivers/plug_energy_monitor/driver.compose.json#L27
+I see that  not 'eWeLink' is added, but 'EWELINK'. In my oponion, both Product ID and ManufacturerName are case-sensitive.
+
+I think I t would be  a good idea to sort and de-duplicate both alfabetically (in all drivers), and check if the case-sensitivity is a problem.  For example,  "_tz3000_amdymr71", is mentioned twice in row 364, 365. 
+ 
+Also, it seems to me that ManufacturerName and ProductID are reversed in all drivers, when comparing to the labels in the Homey Device advanced settings.
+
+
+--
+author:	github-actions
+association:	none
+edited:	false
+status:	none
+--
+<!-- tuya-reopen-bot -->
+This issue has been **automatically reopened** because @john1v posted a new comment.
+It will be reviewed in the next automation cycle.
+
+> If your device is still not working, please share:
+> 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)
+> 2. **Diagnostic Report ID** from device settings
+--
+author:	john1v
+association:	none
+edited:	false
+status:	none
+--
+I create report 9152fd7d-795c-4395-8fc4-e0d97eb25c5b
+--
+author:	github-actions
+association:	none
+edited:	false
+status:	none
+--
+<!-- tuya-triage-bot -->
+I see these fingerprints are mapped in the Universal Tuya Zigbee app(https://github.com/dlnraja/com.tuya.zigbee) v7.2.12: `dlnraja` → **generic_diy**, `eWeLink+CK-BL702-SWP-01(7020)` → **plug_energy_monitor**, `CK-BL702-SWP-01(7020)+CK-BL702-SWP-01(7020)` → **plug_energy_monitor**.
+
+Grab it here: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
+
+Remove and re-pair after installing. If something's off, drop a diagnostic report ID on the [forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).
+--

@@ -1,0 +1,417 @@
+{
+  "example": [
+    "diy_custom_zigbee"
+  ],
+  "trust": [
+    "generic_tuya"
+  ],
+  "dlnraja": [
+    "generic_diy"
+  ],
+  "development": [
+    "diy_custom_zigbee"
+  ],
+  "generic": [
+    "bulb_rgbw"
+  ],
+  "keen": [
+    "generic_tuya"
+  ],
+  "test": [
+    "diy_custom_zigbee"
+  ],
+  "tuya": [
+    "generic_tuya",
+    "universal_fallback"
+  ],
+  "_TZ3000_wkai4ga5": [
+    "button_wireless_4",
+    "scene_switch_4",
+    "wall_remote_4_gang_3"
+  ],
+  "_TZ3000_dfgbtub0": [
+    "scene_switch_2",
+    "switch_wireless",
+    "wall_remote_2_gang"
+  ],
+  "TS0044": [
+    "button_wireless_4",
+    "handheld_remote_4_buttons",
+    "universal_fallback",
+    "wall_remote_4_gang",
+    "wall_remote_4_gang_3"
+  ],
+  "TS0042": [
+    "button_wireless_2",
+    "scene_switch_2",
+    "universal_fallback",
+    "wall_remote_2_gang",
+    "wall_switch_2gang_1way"
+  ],
+  "HOBEIAN": [
+    "presence_sensor_radar"
+  ],
+  "TS0601": [
+    "air_purifier",
+    "air_quality_co2",
+    "air_quality_comprehensive",
+    "button_emergency_sos",
+    "button_wireless_6",
+    "ceiling_fan",
+    "climate_sensor",
+    "co_sensor",
+    "contact_sensor",
+    "curtain_motor",
+    "curtain_motor_tilt",
+    "dimmer_3gang",
+    "dimmer_dual_channel",
+    "dimmer_wall_1gang",
+    "din_rail_meter",
+    "din_rail_switch",
+    "door_controller",
+    "doorbell",
+    "energy_meter_3phase",
+    "fan_controller",
+    "fingerprint_lock",
+    "floor_heating_thermostat",
+    "formaldehyde_sensor",
+    "garage_door",
+    "garage_door_opener",
+    "gas_detector",
+    "gas_sensor",
+    "generic_tuya",
+    "humidifier",
+    "hvac_air_conditioner",
+    "hvac_controller",
+    "hvac_dehumidifier",
+    "ir_blaster",
+    "lcdtemphumidsensor",
+    "light_sensor_outdoor",
+    "lock_smart",
+    "motion_sensor",
+    "motion_sensor_2",
+    "motion_sensor_radar_mmwave",
+    "pet_feeder",
+    "pet_feeder_zigbee",
+    "plug_energy_monitor",
+    "plug_smart",
+    "pool_pump",
+    "power_clamp_meter",
+    "power_meter",
+    "presence_sensor_ceiling",
+    "presence_sensor_radar",
+    "radiator_controller",
+    "radiator_valve",
+    "radiator_valve_zigbee",
+    "rain_sensor",
+    "scene_switch_4",
+    "shutter_roller_controller",
+    "siren",
+    "sirentemphumidsensor",
+    "smart_breaker",
+    "smart_heater",
+    "smart_heater_controller",
+    "smart_lcd_thermostat",
+    "smart_rcbo",
+    "smart_scene_panel",
+    "smoke_detector_advanced",
+    "soil_sensor",
+    "switch_1gang",
+    "switch_2gang",
+    "switch_3gang",
+    "switch_4gang",
+    "switch_dimmer_1gang",
+    "switch_wall_5gang",
+    "switch_wall_6gang",
+    "switch_wall_8gang",
+    "thermostat_4ch",
+    "thermostat_tuya_dp",
+    "universal_fallback",
+    "usb_outlet_advanced",
+    "valve_irrigation",
+    "valve_single",
+    "vibration_sensor",
+    "water_leak_sensor",
+    "water_tank_monitor",
+    "water_valve_smart",
+    "weather_station_outdoor"
+  ],
+  "_TZ3000_fqoynhku": [
+    "plug_energy_monitor"
+  ],
+  "vision": [
+    "generic_tuya"
+  ],
+  "TS0121": [
+    "plug_energy_monitor",
+    "universal_fallback"
+  ],
+  "_TZ3000_akqdg6g7": [
+    "climate_sensor"
+  ],
+  "_TZE284_oitavov2": [
+    "soil_sensor"
+  ],
+  "TS0201": [
+    "climate_sensor",
+    "lcdtemphumidsensor",
+    "temphumidsensor",
+    "universal_fallback"
+  ],
+  "_TZE204_mvtclclq": [
+    "usb_outlet_advanced"
+  ],
+  "SONOFF": [
+    "bulb_rgbw",
+    "button_wireless_1",
+    "button_wireless_4",
+    "module_mini_switch"
+  ],
+  "router": [
+    "diy_custom_zigbee"
+  ],
+  "S60ZBTPG": [
+    "plug_energy_monitor",
+    "plug_smart"
+  ],
+  "TS0210": [
+    "universal_fallback",
+    "vibration_sensor"
+  ],
+  "ZG-204Z": [
+    "motion_sensor"
+  ],
+  "ZG-204ZV": [
+    "presence_sensor_radar"
+  ],
+  "ZG-204ZM": [
+    "presence_sensor_radar"
+  ],
+  "_TZE200_2aaelwxk": [
+    "presence_sensor_radar"
+  ],
+  "_TZE200_kb5noeto": [
+    "motion_sensor"
+  ],
+  "_TZE200_tyffvoij": [
+    "presence_sensor_radar"
+  ],
+  "_TZE200_uli8wasj": [
+    "climate_sensor"
+  ],
+  "_TZE200_grgol3xp": [
+    "climate_sensor"
+  ],
+  "_TZE200_rhgsbacq": [
+    "presence_sensor_radar"
+  ],
+  "_TZE200_y8jijhba": [
+    "presence_sensor_radar"
+  ],
+  "Hobeian": [
+    "presence_sensor_radar"
+  ],
+  "zigbee2mqtt": [
+    "diy_custom_zigbee",
+    "generic_tuya"
+  ],
+  "lumi": [
+    "generic_tuya",
+    "universal_fallback"
+  ],
+  "matter": [
+    "generic_tuya"
+  ],
+  "_TZ3000_kmh5qpmb": [
+    "climate_sensor"
+  ],
+  "_TZ3000_mmtwjmaq": [
+    "motion_sensor"
+  ],
+  "TS0202": [
+    "motion_sensor"
+  ],
+  "SENSOR": [
+    "diy_custom_zigbee",
+    "generic_diy"
+  ],
+  "_TZE204_yojqa8xn": [
+    "gas_sensor"
+  ],
+  "_TZ3000_0dumfk2z": [
+    "button_emergency_sos"
+  ],
+  "TS0215A": [
+    "button_emergency_sos",
+    "smart_remote_4_buttons",
+    "universal_fallback"
+  ],
+  "TS0215": [
+    "button_emergency_sos",
+    "universal_fallback"
+  ],
+  "debug": [
+    "diy_custom_zigbee"
+  ],
+  "_TZ3000_u3nv1jwk": [
+    "button_wireless_4",
+    "handheld_remote_4_buttons"
+  ],
+  "ZG-204ZL": [
+    "presence_sensor_radar"
+  ],
+  "_TZ3000_ja5osu5g": [
+    "button_wireless_1",
+    "smart_remote_1_button_2"
+  ],
+  "moes": [
+    "generic_tuya",
+    "universal_fallback"
+  ],
+  "TS004F": [
+    "button_wireless_4",
+    "smart_knob",
+    "smart_knob_rotary",
+    "smart_knob_switch",
+    "smart_remote_1_button",
+    "smart_remote_1_button_2",
+    "universal_fallback",
+    "wall_dimmer_1gang_1way",
+    "wall_remote_4_gang_2"
+  ],
+  "_TZE200_uj3f4wr5": [
+    "curtain_motor"
+  ],
+  "_TZ3000_7ysdnebc": [
+    "dimmer_wall_1gang"
+  ],
+  "TS1101": [
+    "dimmer_dual_channel",
+    "dimmer_wall_1gang"
+  ],
+  "_TZ3000_cauq1okq": [
+    "switch_2gang"
+  ],
+  "TS0002": [
+    "button_wireless_2",
+    "switch_2gang",
+    "universal_fallback",
+    "usb_dongle_dual_repeater",
+    "wall_switch_2gang_1way"
+  ],
+  "_TZE204_chbyv06": [
+    "gas_detector"
+  ],
+  "TS0041": [
+    "button_wireless_1",
+    "smart_button_switch",
+    "universal_fallback",
+    "wall_remote_1_gang"
+  ],
+  "_TZE204_chbyv06x": [
+    "gas_detector"
+  ],
+  "_TZ3000_zgyzgdua": [
+    "button_wireless_4",
+    "scene_switch_4"
+  ],
+  "_TZE204_gkfbdvyx": [
+    "presence_sensor_radar"
+  ],
+  "_TZE284_iadro9bf": [
+    "presence_sensor_radar"
+  ],
+  "custom": [
+    "diy_custom_zigbee"
+  ],
+  "_TZ3000_5tqxpine": [
+    "button_wireless_4",
+    "scene_switch_4"
+  ],
+  "_TZ3210_up3pngle": [
+    "smoke_detector_advanced"
+  ],
+  "_TZE200_3towulqd": [
+    "motion_sensor_2"
+  ],
+  "TS0205": [
+    "smoke_detector_advanced",
+    "universal_fallback"
+  ],
+  "_TZ3290_7v1k4vufotpowp9z": [
+    "ir_remote"
+  ],
+  "_TZ3290_7v1k4vuf": [
+    "ir_blaster"
+  ],
+  "TS1201": [
+    "climate_sensor",
+    "ir_blaster",
+    "ir_remote"
+  ],
+  "_TZ3000_5bpeda8u": [
+    "button_wireless_1"
+  ],
+  "ZG-102Z": [
+    "contact_sensor"
+  ],
+  "ZG-102ZL": [
+    "contact_sensor"
+  ],
+  "ZG-227Z": [
+    "climate_sensor",
+    "temphumidsensor"
+  ],
+  "eWeLink": [
+    "bulb_rgbw",
+    "button_wireless_1",
+    "button_wireless_4",
+    "climate_sensor",
+    "contact_sensor",
+    "module_mini_switch",
+    "water_leak_sensor"
+  ],
+  "CK-TLSR8656-SS5-01(7014)": [
+    "climate_sensor",
+    "temphumidsensor"
+  ],
+  "_TZE284_81yrt3lo": [
+    "power_clamp_meter"
+  ],
+  "_TZE204_81yrt3lo": [
+    "din_rail_meter"
+  ],
+  "_TZE284_c8ipbljq": [
+    "switch_3gang"
+  ],
+  "_TZE204_ztqnh5cg": [
+    "presence_sensor_radar"
+  ],
+  "aqara": [
+    "generic_tuya",
+    "universal_fallback"
+  ],
+  "_TZ3210_2uollq9d": [
+    "plug_energy_monitor"
+  ],
+  "_TZ3000_4ux0ondb": [
+    "plug_energy_monitor"
+  ],
+  "TS011F": [
+    "plug_energy_monitor",
+    "plug_smart",
+    "switch_1gang",
+    "switch_2gang",
+    "universal_fallback"
+  ],
+  "_TZ3000_qgwcxxws": [
+    "button_wireless_1",
+    "smart_button_switch"
+  ],
+  "CS-201Z": [
+    "soil_sensor"
+  ],
+  "THS317-ET": [
+    "climate_sensor"
+  ]
+}

@@ -1,0 +1,625 @@
+﻿ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ
+  TUYA ZIGBEE DRIVER VALIDATOR v5.11.182
+  Based on forum reports + debugging discoveries
+ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ
+
+­ƒôï Check 1: Valid JSON...
+
+­ƒôï Check 2: super.onNodeInit() in HybridSwitchBase subclasses...
+
+­ƒôï Check 3: Multi-gang capability declarations...
+node : ÔÜá´©Å  [dimmer_3gang] Missing capability 'onoff.gang2' in driver.compose.json for 3-gang device
+Au caractère Ligne:1 : 1
++ node .github/scripts/validate-drivers.js 2>&1 | Out-File -Encoding ut ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ÔÜá´©Å  [dimmer...r 3-gang device:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ÔÜá´©Å  [dimmer_3gang] Missing capability 'onoff.gang3' in driver.compose.json for 3-gang device
+ÔÜá´©Å  [wall_switch_2gang_1way] Missing capability 'onoff.gang2' in driver.compose.json for 2-gang device
+ÔÜá´©Å  [wall_switch_3gang_1way] Missing capability 'onoff.gang2' in driver.compose.json for 3-gang device
+ÔÜá´©Å  [wall_switch_3gang_1way] Missing capability 'onoff.gang3' in driver.compose.json for 3-gang device
+ÔÜá´©Å  [wall_switch_4gang_1way] Missing capability 'onoff.gang2' in driver.compose.json for 4-gang device
+ÔÜá´©Å  [wall_switch_4gang_1way] Missing capability 'onoff.gang3' in driver.compose.json for 4-gang device
+ÔÜá´©Å  [wall_switch_4gang_1way] Missing capability 'onoff.gang4' in driver.compose.json for 4-gang device
+
+­ƒôï Check 4: TRUE Fingerprint Collisions (mfr + pid)...
+  No true FP collisions found (mfr+pid).
+
+­ƒôï Check 5: Flow card consistency...
+ÔÜá´©Å  [air_purifier] Flow condition 'air_purifier_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [air_quality_comprehensive] Flow condition 'air_quality_comprehensive_co2_above' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [air_quality_comprehensive] Flow condition 'air_quality_comprehensive_temp_above' defined but not referenced 
+in driver.js
+ÔÜá´©Å  [air_quality_comprehensive] Flow condition 'air_quality_comprehensive_humidity_above' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [bulb_dimmable] Flow action 'bulb_dimmable_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_dimmable] Flow action 'bulb_dimmable_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_dimmable] Flow action 'bulb_dimmable_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_dimmable] Flow action 'bulb_dimmable_set_brightness' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_dimmable] Flow condition 'bulb_dimmable_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_rgb] Flow action 'bulb_rgb_set_brightness' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_rgbw] Flow action 'bulb_rgbw_set_brightness' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_rgb_led] Flow action 'bulb_rgb_smart_bulb_rgb_turn_on_dup_k8w5o' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_rgb_led] Flow action 'bulb_rgb_smart_bulb_rgb_turn_off_dup_0wbi0' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_rgb_led] Flow action 'bulb_rgb_smart_bulb_rgb_toggle_dup_7gj82' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_rgb_led] Flow action 'bulb_rgb_smart_bulb_rgb_set_dim_dup_7p03i' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_rgb_led] Flow action 'bulb_rgb_turn_on_dup_rsqdj' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_rgb_led] Flow action 'bulb_rgb_turn_off_dup_ndqug' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_rgb_led] Flow action 'bulb_rgb_toggle_dup_p33lg' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_rgb_led] Flow action 'bulb_rgb_set_brightness_dup_hywwp' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_rgb_led] Flow condition 'bulb_rgb_smart_bulb_rgb_is_on_dup_t4rvf' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_rgb_led] Flow condition 'bulb_rgb_is_on_dup_f65xq' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_tunable_white] Flow action 'bulb_tunable_white_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_tunable_white] Flow action 'bulb_tunable_white_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_tunable_white] Flow action 'bulb_tunable_white_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_tunable_white] Flow action 'bulb_tunable_white_set_brightness' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_tunable_white] Flow condition 'bulb_tunable_white_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [bulb_white] Flow action 'bulb_white_set_brightness' defined but not referenced in driver.js
+ÔÜá´©Å  [ceiling_fan] Flow action 'ceiling_fan_set_brightness' defined but not referenced in driver.js
+ÔÜá´©Å  [contact_sensor] Flow condition 'contact_sensor_contact_open' defined but not referenced in driver.js
+ÔÜá´©Å  [contact_sensor] Flow condition 'contact_sensor_tamper_active' defined but not referenced in driver.js
+ÔÜá´©Å  [co_sensor] Flow condition 'co_sensor_co_active' defined but not referenced in driver.js
+ÔÜá´©Å  [co_sensor] Flow condition 'co_sensor_tamper_active' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor] Flow action 'curtain_motor_stop' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor] Flow action 'curtain_motor_set_favorite' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor] Flow action 'curtain_motor_set_brightness' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor] Flow action 'curtain_motor_set_position' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor] Flow action 'curtain_motor_open' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor] Flow action 'curtain_motor_close' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor_shutter] Flow action 'curtain_motor_set_windowcoverings_set_dup_ja05a' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [curtain_motor_shutter] Flow action 'curtain_motor_windowcoverings_open_dup_cakc1' defined but not referenced 
+in driver.js
+ÔÜá´©Å  [curtain_motor_shutter] Flow action 'curtain_motor_windowcoverings_close_dup_l6aqq' defined but not referenced 
+in driver.js
+ÔÜá´©Å  [curtain_motor_shutter] Flow action 'curtain_motor_set_dim_dup_l3o2p' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor_shutter] Flow action 'curtain_motor_stop_dup_q2bsi' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor_shutter] Flow action 'curtain_motor_set_favorite_dup_ekit5' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [curtain_motor_shutter] Flow action 'curtain_motor_set_brightness_dup_9a2kn' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [curtain_motor_shutter] Flow action 'curtain_motor_set_position_dup_igcdt' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [curtain_motor_shutter] Flow action 'curtain_motor_open_dup_5r00r' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor_shutter] Flow action 'curtain_motor_close_dup_usinn' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor_tilt] Flow action 'curtain_motor_tilt_set_position' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor_tilt] Flow action 'curtain_motor_tilt_open' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor_tilt] Flow action 'curtain_motor_tilt_close' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor_tilt] Flow action 'curtain_motor_tilt_stop' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor_wall] Flow action 'curtain_motor_set_windowcoverings_set_dup_gdler' defined but not referenced 
+in driver.js
+ÔÜá´©Å  [curtain_motor_wall] Flow action 'curtain_motor_windowcoverings_open_dup_ibodj' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [curtain_motor_wall] Flow action 'curtain_motor_windowcoverings_close_dup_g969g' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [curtain_motor_wall] Flow action 'curtain_motor_set_dim_dup_anfqm' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor_wall] Flow action 'curtain_motor_stop_dup_6m8w2' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor_wall] Flow action 'curtain_motor_set_favorite_dup_irsyf' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor_wall] Flow action 'curtain_motor_set_brightness_dup_1pq5y' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [curtain_motor_wall] Flow action 'curtain_motor_set_position_dup_07kqd' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor_wall] Flow action 'curtain_motor_open_dup_tbh0l' defined but not referenced in driver.js
+ÔÜá´©Å  [curtain_motor_wall] Flow action 'curtain_motor_close_dup_m0jyy' defined but not referenced in driver.js
+ÔÜá´©Å  [device_generic_tuya_universal] Flow action 'generic_tuya_request_dp_dup_09qf3' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [device_generic_tuya_universal] Flow condition 'generic_tuya_battery_above_dup_w7eyh' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [device_radiator_valve] Flow action 
+'device_radiator_valve_radiator_valve_set_target_temperature_device_radiator_valve' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [device_radiator_valve] Flow action 
+'device_radiator_valve_radiator_valve_set_temperature_device_radiator_valve' defined but not referenced in driver.js
+ÔÜá´©Å  [device_radiator_valve_smart] Flow action 'device_radiator_valve_smart_set_target_temperature' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [device_radiator_valve_smart] Flow action 'device_radiator_valve_smart_set_temperature' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [dimmer_dual_channel] Flow action 'dimmer_dual_channel_set_brightness' defined but not referenced in driver.js
+ÔÜá´©Å  [dimmer_wall_1gang] Flow action 'dimmer_wall_1gang_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [dimmer_wall_1gang] Flow action 'dimmer_wall_1gang_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [dimmer_wall_1gang] Flow action 'dimmer_wall_1gang_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [dimmer_wall_1gang] Flow action 'dimmer_wall_1gang_set_brightness' defined but not referenced in driver.js
+ÔÜá´©Å  [dimmer_wall_1gang] Flow condition 'dimmer_wall_1gang_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [din_rail_meter] Flow condition 'din_rail_meter_power_above' defined but not referenced in driver.js
+ÔÜá´©Å  [din_rail_switch] Flow condition 'din_rail_switch_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [diy_custom_zigbee] Flow condition 'diy_custom_zigbee_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [doorbell] Flow condition 'doorbell_motion_active' defined but not referenced in driver.js
+ÔÜá´©Å  [doorbell] Flow condition 'doorbell_contact_open' defined but not referenced in driver.js
+ÔÜá´©Å  [doorbell] Flow condition 'doorbell_tamper_active' defined but not referenced in driver.js
+ÔÜá´©Å  [door_controller] Flow condition 'door_controller_motion_active' defined but not referenced in driver.js
+ÔÜá´©Å  [door_controller] Flow condition 'door_controller_contact_open' defined but not referenced in driver.js
+ÔÜá´©Å  [energy_meter_3phase] Flow condition 'energy_meter_3phase_power_above' defined but not referenced in driver.js
+ÔÜá´©Å  [fan_controller] Flow action 'fan_controller_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [fan_controller] Flow action 'fan_controller_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [fan_controller] Flow action 'fan_controller_set_speed' defined but not referenced in driver.js
+ÔÜá´©Å  [fan_controller] Flow action 'fan_controller_speed_up' defined but not referenced in driver.js
+ÔÜá´©Å  [fan_controller] Flow action 'fan_controller_speed_down' defined but not referenced in driver.js
+ÔÜá´©Å  [fan_controller] Flow action 'fan_controller_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [fan_controller] Flow action 'fan_controller_set_brightness' defined but not referenced in driver.js
+ÔÜá´©Å  [fan_controller] Flow condition 'fan_controller_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [fan_controller] Flow condition 'fan_controller_speed_is' defined but not referenced in driver.js
+ÔÜá´©Å  [fingerprint_lock] Flow condition 'fingerprint_lock_is_locked' defined but not referenced in driver.js
+ÔÜá´©Å  [fingerprint_lock] Flow condition 'fingerprint_lock_tamper_active' defined but not referenced in driver.js
+ÔÜá´©Å  [garage_door] Flow condition 'garage_door_contact_open' defined but not referenced in driver.js
+ÔÜá´©Å  [gas_detector] Flow condition 'gas_detector_co_active' defined but not referenced in driver.js
+ÔÜá´©Å  [gas_detector] Flow condition 'gas_detector_gas_active' defined but not referenced in driver.js
+ÔÜá´©Å  [gas_sensor] Flow condition 'gas_sensor_co_active' defined but not referenced in driver.js
+ÔÜá´©Å  [gas_sensor] Flow condition 'gas_sensor_contact_open' defined but not referenced in driver.js
+ÔÜá´©Å  [gas_sensor] Flow condition 'gas_sensor_gas_active' defined but not referenced in driver.js
+ÔÜá´©Å  [gas_sensor] Flow condition 'gas_sensor_tamper_active' defined but not referenced in driver.js
+ÔÜá´©Å  [gateway_zigbee_bridge] Flow action 'gateway_zigbee_bridge_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [gateway_zigbee_bridge] Flow action 'gateway_zigbee_bridge_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [gateway_zigbee_bridge] Flow action 'gateway_zigbee_bridge_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [gateway_zigbee_bridge] Flow condition 'gateway_zigbee_bridge_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [generic_diy] Flow action 'generic_diy_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [generic_diy] Flow action 'generic_diy_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [generic_diy] Flow action 'generic_diy_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [generic_diy] Flow action 'generic_diy_set_dim' defined but not referenced in driver.js
+ÔÜá´©Å  [generic_diy] Flow action 'generic_diy_identify' defined but not referenced in driver.js
+ÔÜá´©Å  [generic_diy] Flow action 'generic_diy_turn_on_endpoint' defined but not referenced in driver.js
+ÔÜá´©Å  [generic_diy] Flow action 'generic_diy_turn_off_endpoint' defined but not referenced in driver.js
+ÔÜá´©Å  [generic_diy] Flow condition 'generic_diy_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [generic_diy] Flow condition 'generic_diy_motion_active' defined but not referenced in driver.js
+ÔÜá´©Å  [generic_diy] Flow condition 'generic_diy_contact_open' defined but not referenced in driver.js
+ÔÜá´©Å  [generic_diy] Flow condition 'generic_diy_temperature_above' defined but not referenced in driver.js
+ÔÜá´©Å  [generic_diy] Flow condition 'generic_diy_humidity_above' defined but not referenced in driver.js
+ÔÜá´©Å  [generic_diy] Flow condition 'generic_diy_battery_below' defined but not referenced in driver.js
+ÔÜá´©Å  [hvac_air_conditioner] Flow action 'hvac_air_conditioner_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [hvac_air_conditioner] Flow action 'hvac_air_conditioner_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [hvac_air_conditioner] Flow action 'hvac_air_conditioner_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [hvac_air_conditioner] Flow action 'hvac_air_conditioner_set_temperature' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [hvac_air_conditioner] Flow condition 'hvac_air_conditioner_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [hvac_dehumidifier] Flow action 'hvac_dehumidifier_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [hvac_dehumidifier] Flow action 'hvac_dehumidifier_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [hvac_dehumidifier] Flow action 'hvac_dehumidifier_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [hvac_dehumidifier] Flow action 'hvac_dehumidifier_set_temperature' defined but not referenced in driver.js
+ÔÜá´©Å  [hvac_dehumidifier] Flow condition 'hvac_dehumidifier_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [hvac_dehumidifier] Flow condition 'hvac_dehumidifier_water_detected' defined but not referenced in driver.js
+ÔÜá´©Å  [illuminance_sensor] Flow condition 'illuminance_sensor_lux_above' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow action 'ir_blaster_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow action 'ir_blaster_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow action 'ir_blaster_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow action 'ir_blaster_tv_power' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow action 'ir_blaster_tv_vol_up' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow action 'ir_blaster_tv_vol_down' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow action 'ir_blaster_tv_mute' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow action 'ir_blaster_tv_ch_up' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow action 'ir_blaster_tv_ch_down' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow action 'ir_blaster_tv_input' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow action 'ir_blaster_tv_menu' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow action 'ir_blaster_tv_ok' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow action 'ir_blaster_tv_back' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow action 'ir_blaster_tv_play' defined but not referenced in driver.js
+ÔÜá´©Å  [ir_blaster] Flow condition 'ir_blaster_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [lcdtemphumidsensor] Flow condition 'lcdtemphumidsensor_temp_above' defined but not referenced in driver.js
+ÔÜá´©Å  [lcdtemphumidsensor] Flow condition 'lcdtemphumidsensor_humidity_above' defined but not referenced in driver.js
+ÔÜá´©Å  [led_strip] Flow action 'led_strip_set_brightness' defined but not referenced in driver.js
+ÔÜá´©Å  [led_strip_advanced] Flow action 'led_strip_advanced_set_brightness' defined but not referenced in driver.js
+ÔÜá´©Å  [led_strip_rgbw] Flow action 'led_strip_rgbw_set_brightness' defined but not referenced in driver.js
+ÔÜá´©Å  [light_bulb_rgb_rgbw] Flow action 'bulb_rgb_smart_bulb_rgb_turn_on_dup_ytyzf' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [light_bulb_rgb_rgbw] Flow action 'bulb_rgb_smart_bulb_rgb_turn_off_dup_ezcri' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [light_bulb_rgb_rgbw] Flow action 'bulb_rgb_smart_bulb_rgb_toggle_dup_jdf8u' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [light_bulb_rgb_rgbw] Flow action 'bulb_rgb_smart_bulb_rgb_set_dim_dup_dyblc' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [light_bulb_rgb_rgbw] Flow action 'bulb_rgb_turn_on_dup_yusve' defined but not referenced in driver.js
+ÔÜá´©Å  [light_bulb_rgb_rgbw] Flow action 'bulb_rgb_turn_off_dup_2vkqa' defined but not referenced in driver.js
+ÔÜá´©Å  [light_bulb_rgb_rgbw] Flow action 'bulb_rgb_toggle_dup_3z7px' defined but not referenced in driver.js
+ÔÜá´©Å  [light_bulb_rgb_rgbw] Flow action 'bulb_rgb_set_brightness_dup_trzt4' defined but not referenced in driver.js
+ÔÜá´©Å  [light_bulb_rgb_rgbw] Flow condition 'bulb_rgb_smart_bulb_rgb_is_on_dup_mgtko' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [light_bulb_rgb_rgbw] Flow condition 'bulb_rgb_is_on_dup_81ok2' defined but not referenced in driver.js
+ÔÜá´©Å  [lock_smart] Flow condition 'lock_smart_tamper_active' defined but not referenced in driver.js
+ÔÜá´©Å  [motion_sensor] Flow condition 'motion_sensor_tamper_active' defined but not referenced in driver.js
+ÔÜá´©Å  [motion_sensor_radar_mmwave] Flow condition 'motion_sensor_radar_mmwave_motion_active' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [pet_feeder] Flow condition 'pet_feeder_food_ok' defined but not referenced in driver.js
+ÔÜá´©Å  [plug_smart] Flow action 'plug_smart_set_indicator' defined but not referenced in driver.js
+ÔÜá´©Å  [plug_smart] Flow action 'plug_smart_set_power_on' defined but not referenced in driver.js
+ÔÜá´©Å  [pool_pump] Flow condition 'pool_pump_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [power_clamp_meter] Flow condition 'power_clamp_meter_power_above' defined but not referenced in driver.js
+ÔÜá´©Å  [power_meter] Flow condition 'power_meter_power_above' defined but not referenced in driver.js
+ÔÜá´©Å  [presence_sensor_radar] Flow condition 'presence_sensor_radar_motion_active' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [radiator_controller] Flow action 'radiator_controller_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [radiator_controller] Flow action 'radiator_controller_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [radiator_controller] Flow action 'radiator_controller_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [radiator_controller] Flow action 'radiator_controller_set_temperature' defined but not referenced in driver.js
+ÔÜá´©Å  [radiator_controller] Flow condition 'radiator_controller_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [radiator_valve] Flow action 'radiator_valve_set_temperature' defined but not referenced in driver.js
+ÔÜá´©Å  [rain_sensor] Flow condition 'rain_sensor_water_detected' defined but not referenced in driver.js
+ÔÜá´©Å  [sensor_climate_contact] Flow condition 'climate_sensor_temperature_above_dup_hzgys' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [sensor_climate_contact] Flow condition 'climate_sensor_temperature_below_dup_j90ir' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [sensor_climate_contact] Flow condition 'climate_sensor_humidity_above_dup_efp2y' defined but not referenced 
+in driver.js
+ÔÜá´©Å  [sensor_climate_contact] Flow condition 'climate_sensor_humidity_below_dup_d3ynt' defined but not referenced 
+in driver.js
+ÔÜá´©Å  [sensor_contact_motion] Flow condition 'motion_sensor_motion_active_dup_h8b3y' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [sensor_contact_motion] Flow condition 'motion_sensor_tamper_active_dup_xixm5' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [sensor_contact_presence] Flow condition 'contact_presence_is_present' defined but not referenced in driver.js
+ÔÜá´©Å  [sensor_contact_presence] Flow condition 'contact_presence_illuminance_above' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [sensor_contact_presence] Flow condition 'contact_presence_distance_within' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [sensor_contact_presence] Flow condition 'contact_presence_motion_active' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [sensor_motion_radar] Flow action 'motion_sensor_radar_mmwave_set_radar_sensitivity_dup_95fva' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [sensor_motion_radar] Flow action 'motion_sensor_radar_mmwave_set_detection_range_dup_g73sq' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [sensor_motion_radar] Flow action 'motion_sensor_radar_mmwave_set_fading_time_dup_5w6kd' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [sensor_motion_radar] Flow action 'motion_sensor_radar_mmwave_set_detection_delay_dup_x4fyy' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [sensor_motion_radar] Flow condition 'motion_sensor_radar_mmwave_is_presence_detected_dup_e5u47' defined but 
+not referenced in driver.js
+ÔÜá´©Å  [sensor_motion_radar] Flow condition 'motion_sensor_radar_mmwave_illuminance_above_dup_fhhem' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [sensor_motion_radar] Flow condition 'motion_sensor_radar_mmwave_illuminance_below_dup_06hs3' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [sensor_motion_radar] Flow condition 'motion_sensor_radar_mmwave_temperature_above_dup_f4110' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [sensor_motion_radar] Flow condition 'motion_sensor_radar_mmwave_target_distance_less_than_dup_89l79' defined 
+but not referenced in driver.js
+ÔÜá´©Å  [sensor_motion_radar] Flow condition 'motion_sensor_radar_mmwave_motion_active_dup_v1cak' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [sensor_presence_radar] Flow condition 'presence_sensor_radar_is_present_dup_36v72' defined but not referenced 
+in driver.js
+ÔÜá´©Å  [sensor_presence_radar] Flow condition 'presence_sensor_radar_illuminance_above_dup_cm6qq' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [sensor_presence_radar] Flow condition 'presence_sensor_radar_distance_within_dup_rlo06' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [sensor_presence_radar] Flow condition 'presence_sensor_radar_motion_active_dup_9nqh2' defined but not 
+referenced in driver.js
+ÔÜá´©Å  [shutter_roller_controller] Flow action 'shutter_roller_controller_set_brightness' defined but not referenced 
+in driver.js
+ÔÜá´©Å  [siren] Flow action 'siren_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [siren] Flow condition 'siren_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [siren] Flow condition 'siren_motion_active' defined but not referenced in driver.js
+ÔÜá´©Å  [smart_breaker] Flow condition 'smart_breaker_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [smart_knob_rotary] Flow action 'smart_knob_rotary_set_brightness' defined but not referenced in driver.js
+ÔÜá´©Å  [smart_scene_panel] Flow action 'smart_scene_panel_set_switch_1' defined but not referenced in driver.js
+ÔÜá´©Å  [smart_scene_panel] Flow action 'smart_scene_panel_set_switch_2' defined but not referenced in driver.js
+ÔÜá´©Å  [smart_scene_panel] Flow action 'smart_scene_panel_set_switch_3' defined but not referenced in driver.js
+ÔÜá´©Å  [smart_scene_panel] Flow action 'smart_scene_panel_set_switch_4' defined but not referenced in driver.js
+ÔÜá´©Å  [smoke_detector_advanced] Flow condition 'smoke_detector_advanced_smoke_active' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [smoke_detector_advanced] Flow condition 'smoke_detector_advanced_tamper_active' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [soil_sensor] Flow condition 'soil_sensor_water_detected' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_1gang] Flow action 'switch_1gang_set_countdown' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_1gang] Flow action 'switch_1gang_set_child_lock' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_2gang] Flow action 'switch_2gang_turn_on_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_2gang] Flow action 'switch_2gang_turn_off_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_2gang] Flow action 'switch_2gang_turn_on_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_2gang] Flow action 'switch_2gang_turn_off_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_2gang] Flow action 'switch_2gang_toggle_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_2gang] Flow action 'switch_2gang_toggle_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_2gang] Flow condition 'switch_2gang_gang1_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_2gang] Flow condition 'switch_2gang_gang2_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_2gang] Flow condition 'switch_2gang_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_3gang] Flow action 'switch_3gang_turn_on_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_3gang] Flow action 'switch_3gang_turn_off_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_3gang] Flow action 'switch_3gang_turn_on_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_3gang] Flow action 'switch_3gang_turn_off_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_3gang] Flow action 'switch_3gang_turn_on_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_3gang] Flow action 'switch_3gang_turn_off_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_3gang] Flow action 'switch_3gang_toggle_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_3gang] Flow action 'switch_3gang_toggle_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_3gang] Flow action 'switch_3gang_toggle_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_3gang] Flow condition 'switch_3gang_gang1_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_3gang] Flow condition 'switch_3gang_gang2_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_3gang] Flow condition 'switch_3gang_gang3_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_3gang] Flow condition 'switch_3gang_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_4gang] Flow action 'switch_4gang_toggle_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_4gang] Flow action 'switch_4gang_toggle_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_4gang] Flow action 'switch_4gang_toggle_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_4gang] Flow action 'switch_4gang_toggle_gang4' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_4gang] Flow condition 'switch_4gang_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_dimmer_1gang] Flow condition 'switch_dimmer_1gang_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_plug_1] Flow condition 'switch_plug_1_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_plug_2] Flow condition 'switch_plug_2_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_temp_sensor] Flow condition 'switch_temp_sensor_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_turn_on_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_turn_off_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_turn_on_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_turn_off_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_turn_on_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_turn_off_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_turn_on_gang4' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_turn_off_gang4' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_turn_on_gang5' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_turn_off_gang5' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_toggle_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_toggle_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_toggle_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_toggle_gang4' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow action 'switch_wall_5gang_toggle_gang5' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow condition 'switch_wall_5gang_gang1_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow condition 'switch_wall_5gang_gang2_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow condition 'switch_wall_5gang_gang3_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow condition 'switch_wall_5gang_gang4_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow condition 'switch_wall_5gang_gang5_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_5gang] Flow condition 'switch_wall_5gang_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_turn_on_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_turn_off_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_turn_on_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_turn_off_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_turn_on_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_turn_off_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_turn_on_gang4' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_turn_off_gang4' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_turn_on_gang5' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_turn_off_gang5' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_turn_on_gang6' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_turn_off_gang6' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_toggle_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_toggle_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_toggle_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_toggle_gang4' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_toggle_gang5' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow action 'switch_wall_6gang_toggle_gang6' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow condition 'switch_wall_6gang_gang1_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow condition 'switch_wall_6gang_gang2_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow condition 'switch_wall_6gang_gang3_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow condition 'switch_wall_6gang_gang4_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow condition 'switch_wall_6gang_gang5_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow condition 'switch_wall_6gang_gang6_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_6gang] Flow condition 'switch_wall_6gang_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_turn_on_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_turn_off_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_turn_on_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_turn_off_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_turn_on_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_turn_off_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_turn_on_gang4' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_turn_off_gang4' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_turn_on_gang5' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_turn_off_gang5' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_turn_on_gang6' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_turn_off_gang6' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_turn_on_gang7' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_turn_off_gang7' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_toggle_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_toggle_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_toggle_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_toggle_gang4' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_toggle_gang5' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_toggle_gang6' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow action 'switch_wall_7gang_toggle_gang7' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow condition 'switch_wall_7gang_gang1_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow condition 'switch_wall_7gang_gang2_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow condition 'switch_wall_7gang_gang3_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow condition 'switch_wall_7gang_gang4_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow condition 'switch_wall_7gang_gang5_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow condition 'switch_wall_7gang_gang6_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow condition 'switch_wall_7gang_gang7_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_7gang] Flow condition 'switch_wall_7gang_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_on_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_off_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_on_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_off_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_on_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_off_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_on_gang4' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_off_gang4' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_on_gang5' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_off_gang5' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_on_gang6' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_off_gang6' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_on_gang7' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_off_gang7' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_on_gang8' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_turn_off_gang8' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_toggle_gang1' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_toggle_gang2' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_toggle_gang3' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_toggle_gang4' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_toggle_gang5' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_toggle_gang6' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_toggle_gang7' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow action 'switch_wall_8gang_toggle_gang8' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow condition 'switch_wall_8gang_gang1_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow condition 'switch_wall_8gang_gang2_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow condition 'switch_wall_8gang_gang3_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow condition 'switch_wall_8gang_gang4_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow condition 'switch_wall_8gang_gang5_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow condition 'switch_wall_8gang_gang6_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow condition 'switch_wall_8gang_gang7_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow condition 'switch_wall_8gang_gang8_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [switch_wall_8gang] Flow condition 'switch_wall_8gang_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [temphumidsensor] Flow condition 'temphumidsensor_temp_above' defined but not referenced in driver.js
+ÔÜá´©Å  [temphumidsensor] Flow condition 'temphumidsensor_humidity_above' defined but not referenced in driver.js
+ÔÜá´©Å  [thermostat_4ch] Flow condition 'thermostat_4ch_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [thermostat_tuya_dp] Flow action 'thermostat_tuya_dp_set_child_lock' defined but not referenced in driver.js
+ÔÜá´©Å  [thermostat_tuya_dp] Flow action 'thermostat_tuya_dp_set_comfort_preset' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [thermostat_tuya_dp] Flow action 'thermostat_tuya_dp_schedule_on' defined but not referenced in driver.js
+ÔÜá´©Å  [thermostat_tuya_dp] Flow action 'thermostat_tuya_dp_schedule_off' defined but not referenced in driver.js
+ÔÜá´©Å  [thermostat_tuya_dp] Flow action 'thermostat_tuya_dp_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [thermostat_tuya_dp] Flow action 'thermostat_tuya_dp_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [thermostat_tuya_dp] Flow action 'thermostat_tuya_dp_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [thermostat_tuya_dp] Flow action 'thermostat_tuya_dp_set_temperature' defined but not referenced in driver.js
+ÔÜá´©Å  [thermostat_tuya_dp] Flow condition 'thermostat_tuya_dp_child_lock_is' defined but not referenced in driver.js
+ÔÜá´©Å  [thermostat_tuya_dp] Flow condition 'thermostat_tuya_dp_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [usb_dongle_dual_repeater] Flow condition 'usb_dongle_dual_repeater_is_on' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [usb_dongle_triple] Flow condition 'usb_dongle_triple_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [usb_dongle_triple] Flow condition 'usb_dongle_triple_power_above' defined but not referenced in driver.js
+ÔÜá´©Å  [valve_irrigation] Flow condition 'valve_irrigation_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [valve_single] Flow condition 'valve_single_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_dimmer_1gang_1way] Flow action 'wall_dimmer_1gang_1way_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_dimmer_1gang_1way] Flow action 'wall_dimmer_1gang_1way_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_dimmer_1gang_1way] Flow action 'wall_dimmer_1gang_1way_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_dimmer_1gang_1way] Flow action 'wall_dimmer_1gang_1way_set_brightness' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_dimmer_1gang_1way] Flow condition 'wall_dimmer_1gang_1way_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_1gang_1way] Flow action 'wall_switch_1gang_1way_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_1gang_1way] Flow action 'wall_switch_1gang_1way_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_1gang_1way] Flow action 'wall_switch_1gang_1way_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_1gang_1way] Flow condition 'wall_switch_1gang_1way_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_set_backlight' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_set_power_on_behavior' defined but not referenced 
+in driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_set_switch_mode' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_set_scene_mode' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_turn_on_gang1' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_turn_off_gang1' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_toggle_gang1' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_turn_on_gang2' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_turn_off_gang2' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_toggle_gang2' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_turn_on_all' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow action 'wall_switch_2gang_1way_turn_off_all' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_2gang_1way] Flow condition 'wall_switch_2gang_1way_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_set_backlight' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_set_power_on_behavior' defined but not referenced 
+in driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_set_switch_mode' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_set_scene_mode' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_turn_on_gang1' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_turn_off_gang1' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_toggle_gang1' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_turn_on_gang2' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_turn_off_gang2' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_toggle_gang2' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_turn_on_gang3' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_turn_off_gang3' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_toggle_gang3' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_turn_on_all' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow action 'wall_switch_3gang_1way_turn_off_all' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_3gang_1way] Flow condition 'wall_switch_3gang_1way_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_set_backlight' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_set_power_on_behavior' defined but not referenced 
+in driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_set_switch_mode' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_set_scene_mode' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_turn_on' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_turn_off' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_toggle' defined but not referenced in driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_turn_on_gang1' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_turn_off_gang1' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_toggle_gang1' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_turn_on_gang2' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_turn_off_gang2' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_toggle_gang2' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_turn_on_gang3' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_turn_off_gang3' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_toggle_gang3' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_turn_on_gang4' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_turn_off_gang4' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_toggle_gang4' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_turn_on_all' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow action 'wall_switch_4gang_1way_turn_off_all' defined but not referenced in 
+driver.js
+ÔÜá´©Å  [wall_switch_4gang_1way] Flow condition 'wall_switch_4gang_1way_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [water_leak_sensor] Flow condition 'water_leak_sensor_tamper_active' defined but not referenced in driver.js
+ÔÜá´©Å  [wifi_camera] Flow action 'wifi_camera_set_privacy' defined but not referenced in driver.js
+ÔÜá´©Å  [wifi_camera] Flow action 'wifi_camera_set_night_vision' defined but not referenced in driver.js
+ÔÜá´©Å  [wifi_camera] Flow action 'wifi_camera_ptz_move' defined but not referenced in driver.js
+ÔÜá´©Å  [wifi_door_lock] Flow condition 'wifi_lock_is_locked' defined but not referenced in driver.js
+ÔÜá´©Å  [wifi_garage_door] Flow condition 'wifi_garage_is_open' defined but not referenced in driver.js
+ÔÜá´©Å  [wifi_heater] Flow action 'wifi_heater_set_mode' defined but not referenced in driver.js
+ÔÜá´©Å  [wifi_heater] Flow action 'wifi_heater_set_temperature' defined but not referenced in driver.js
+ÔÜá´©Å  [wifi_heater] Flow condition 'wifi_heater_is_heating' defined but not referenced in driver.js
+ÔÜá´©Å  [wifi_heater] Flow condition 'wifi_heater_mode_is' defined but not referenced in driver.js
+ÔÜá´©Å  [wifi_plug] Flow condition 'wifi_plug_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [wifi_switch] Flow condition 'wifi_switch_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [wifi_switch_2gang] Flow condition 'wifi_switch_2gang_g1_is_on' defined but not referenced in driver.js
+ÔÜá´©Å  [wifi_switch_2gang] Flow condition 'wifi_switch_2gang_g2_is_on' defined but not referenced in driver.js
+
+­ƒôï Check 6: Defensive init wrapping (register listeners on error)...
+
+­ƒôï Check 7: Endpoint-capability alignment...
+ÔÜá´©Å  [scene_switch_2] Capability 'button.2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [scene_switch_3] Capability 'button.2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [scene_switch_3] Capability 'button.3' implies EP3 but no endpoint 3 defined in zigbee.endpoints
+ÔÜá´©Å  [scene_switch_4] Capability 'button.2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [scene_switch_4] Capability 'button.3' implies EP3 but no endpoint 3 defined in zigbee.endpoints
+ÔÜá´©Å  [scene_switch_4] Capability 'button.4' implies EP4 but no endpoint 4 defined in zigbee.endpoints
+ÔÜá´©Å  [scene_switch_6] Capability 'button.2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [scene_switch_6] Capability 'button.3' implies EP3 but no endpoint 3 defined in zigbee.endpoints
+ÔÜá´©Å  [scene_switch_6] Capability 'button.4' implies EP4 but no endpoint 4 defined in zigbee.endpoints
+ÔÜá´©Å  [scene_switch_6] Capability 'button.5' implies EP5 but no endpoint 5 defined in zigbee.endpoints
+ÔÜá´©Å  [scene_switch_6] Capability 'button.6' implies EP6 but no endpoint 6 defined in zigbee.endpoints
+ÔÜá´©Å  [scene_switch_wall] Capability 'button.2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [smart_remote_4_buttons] Capability 'button.2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [smart_remote_4_buttons] Capability 'button.3' implies EP3 but no endpoint 3 defined in zigbee.endpoints
+ÔÜá´©Å  [smart_remote_4_buttons] Capability 'button.4' implies EP4 but no endpoint 4 defined in zigbee.endpoints
+ÔÜá´©Å  [smart_scene_panel] Capability 'onoff.gang2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [smart_scene_panel] Capability 'onoff.gang3' implies EP3 but no endpoint 3 defined in zigbee.endpoints
+ÔÜá´©Å  [smart_scene_panel] Capability 'onoff.gang4' implies EP4 but no endpoint 4 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_ewelink_fan] Capability 'onoff.2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_ewelink_switch_2ch] Capability 'onoff.2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_ewelink_switch_4ch] Capability 'onoff.2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_ewelink_switch_4ch] Capability 'onoff.3' implies EP3 but no endpoint 3 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_ewelink_switch_4ch] Capability 'onoff.4' implies EP4 but no endpoint 4 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_sonoff_dualr3] Capability 'onoff.2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_sonoff_tx_2ch] Capability 'onoff.2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_sonoff_tx_3ch] Capability 'onoff.2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_sonoff_tx_3ch] Capability 'onoff.3' implies EP3 but no endpoint 3 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_switch_2gang] Capability 'onoff.gang2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_switch_3gang] Capability 'onoff.gang2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_switch_3gang] Capability 'onoff.gang3' implies EP3 but no endpoint 3 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_switch_4gang] Capability 'onoff.gang2' implies EP2 but no endpoint 2 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_switch_4gang] Capability 'onoff.gang3' implies EP3 but no endpoint 3 defined in zigbee.endpoints
+ÔÜá´©Å  [wifi_switch_4gang] Capability 'onoff.gang4' implies EP4 but no endpoint 4 defined in zigbee.endpoints
+
+ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ
+  RESULTS: 0 errors, 494 warnings
+ÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉÔòÉ

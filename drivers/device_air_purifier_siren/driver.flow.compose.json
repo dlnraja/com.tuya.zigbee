@@ -1,0 +1,455 @@
+{
+  "triggers": [
+    {
+      "id": "device_air_purifier_siren_siren_alarm_triggered",
+      "highlight": true,
+      "title": {
+        "en": "Siren started",
+        "nl": "Sirene gestart",
+        "fr": "SirÃ¨ne dÃ©marrÃ©e",
+        "de": "Sirene gestartet"
+      },
+      "hint": {
+        "en": "Triggers when the siren starts sounding",
+        "nl": "Triggert wanneer de sirene begint te loeien",
+        "fr": "Se dÃ©clenche quand la sirÃ¨ne commence Ã sonner",
+        "de": "Wird ausgelÃ¶st, wenn die Sirene zu tÃ¶nen beginnt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Siren started",
+        "nl": "Sirene gestart",
+        "fr": "SirÃ¨ne dÃ©marrÃ©e",
+        "de": "Sirene gestartet"
+      }
+    },
+    {
+      "id": "device_air_purifier_siren_siren_alarm_stopped",
+      "title": {
+        "en": "Siren stopped",
+        "nl": "Sirene gestopt",
+        "fr": "SirÃ¨ne arrÃªtÃ©e",
+        "de": "Sirene gestoppt"
+      },
+      "hint": {
+        "en": "Triggers when the siren stops sounding",
+        "nl": "Triggert wanneer de sirene stopt met loeien",
+        "fr": "Se dÃ©clenche quand la sirÃ¨ne arrÃªte de sonner",
+        "de": "Wird ausgelÃ¶st, wenn die Sirene aufhÃ¶rt zu tÃ¶nen"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Siren stopped",
+        "nl": "Sirene gestopt",
+        "fr": "SirÃ¨ne arrÃªtÃ©e",
+        "de": "Sirene gestoppt"
+      }
+    },
+    {
+      "id": "device_air_purifier_siren_siren_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
+    },
+    {
+      "id": "device_air_purifier_siren_siren_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "AllumÃ©",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "AllumÃ©",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
+    },
+    {
+      "id": "device_air_purifier_siren_siren_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Ã‰teint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Ã‰teint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
+    },
+    {
+      "id": "device_air_purifier_siren_siren_motion_detected",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement dÃ©tectÃ©",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement dÃ©tectÃ©",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "device_air_purifier_siren_siren_is_sounding",
+      "title": {
+        "en": "Siren !{{is|is not}} sounding",
+        "nl": "Sirene !{{loeit|loeit niet}}",
+        "fr": "SirÃ¨ne !{{sonne|ne sonne pas}}",
+        "de": "Sirene !{{tÃ¶nt|tÃ¶nt nicht}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Siren !{{is|is not}} sounding",
+        "nl": "Sirene !{{loeit|loeit niet}}",
+        "fr": "SirÃ¨ne !{{sonne|ne sonne pas}}",
+        "de": "Sirene !{{tÃ¶nt|tÃ¶nt nicht}}"
+      }
+    },
+    {
+      "id": "device_air_purifier_siren_siren_is_on",
+      "title": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
+    },
+    {
+      "id": "device_air_purifier_siren_siren_motion_active",
+      "title": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion !{{is|is not}} detected",
+        "fr": "Mouvement !{{est|n'est pas}} dÃ©tectÃ©",
+        "nl": "Beweging !{{is|is niet}} gedetecteerd",
+        "de": "Bewegung !{{ist|ist nicht}} erkannt"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "device_air_purifier_siren_siren_turn_on",
+      "title": {
+        "en": "Turn on siren",
+        "nl": "Sirene aanzetten",
+        "fr": "Activer la sirÃ¨ne",
+        "de": "Sirene einschalten"
+      },
+      "titleFormatted": {
+        "en": "Turn on the siren",
+        "nl": "Zet de sirene aan",
+        "fr": "Activer la sirÃ¨ne",
+        "de": "Sirene einschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "device_air_purifier_siren_siren_turn_off",
+      "title": {
+        "en": "Turn off siren",
+        "nl": "Sirene uitzetten",
+        "fr": "DÃ©sactiver la sirÃ¨ne",
+        "de": "Sirene ausschalten"
+      },
+      "titleFormatted": {
+        "en": "Turn off the siren",
+        "nl": "Zet de sirene uit",
+        "fr": "DÃ©sactiver la sirÃ¨ne",
+        "de": "Sirene ausschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "device_air_purifier_siren_siren_set_volume",
+      "title": {
+        "en": "Set volume",
+        "nl": "Volume instellen",
+        "fr": "RÃ©gler le volume",
+        "de": "LautstÃ¤rke einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set siren volume to [[volume]]",
+        "nl": "Stel sirene volume in op [[volume]]",
+        "fr": "RÃ©gler le volume de la sirÃ¨ne Ã [[volume]]",
+        "de": "SirenenlautstÃ¤rke auf [[volume]] einstellen"
+      },
+      "args": [
+        {
+          "name": "volume",
+          "type": "dropdown",
+          "title": {
+            "en": "Volume level",
+            "nl": "Volumeniveau",
+            "fr": "Niveau de volume",
+            "de": "LautstÃ¤rkestufe"
+          },
+          "values": [
+            {
+              "id": "low",
+              "label": {
+                "en": "Low",
+                "nl": "Laag",
+                "fr": "Bas",
+                "de": "Niedrig"
+              }
+            },
+            {
+              "id": "medium",
+              "label": {
+                "en": "Medium",
+                "nl": "Gemiddeld",
+                "fr": "Moyen",
+                "de": "Mittel"
+              }
+            },
+            {
+              "id": "high",
+              "label": {
+                "en": "High",
+                "nl": "Hoog",
+                "fr": "Haut",
+                "de": "Hoch"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "device_air_purifier_siren_siren_set_duration",
+      "title": {
+        "en": "Set alarm duration",
+        "nl": "Alarmduur instellen",
+        "fr": "DÃ©finir la durÃ©e de l'alarme",
+        "de": "Alarmdauer einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set alarm duration to [[duration]] seconds",
+        "nl": "Stel alarmduur in op [[duration]] seconden",
+        "fr": "DÃ©finir la durÃ©e de l'alarme Ã [[duration]] secondes",
+        "de": "Alarmdauer auf [[duration]] Sekunden einstellen"
+      },
+      "args": [
+        {
+          "name": "duration",
+          "type": "number",
+          "min": 1,
+          "max": 300,
+          "step": 1,
+          "placeholder": {
+            "en": "30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "device_air_purifier_siren_siren_set_melody",
+      "title": {
+        "en": "Set alarm melody",
+        "nl": "Alarm melodie instellen",
+        "fr": "DÃ©finir la mÃ©lodie d'alarme",
+        "de": "Alarmmelodie einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set alarm melody to [[melody]]",
+        "nl": "Stel alarm melodie in op [[melody]]",
+        "fr": "DÃ©finir la mÃ©lodie d'alarme Ã [[melody]]",
+        "de": "Alarmmelodie auf [[melody]] einstellen"
+      },
+      "hint": {
+        "en": "Select the melody/ringtone for the siren alarm",
+        "fr": "SÃ©lectionner la mÃ©lodie/sonnerie pour l'alarme sirÃ¨ne"
+      },
+      "args": [
+        {
+          "name": "melody",
+          "type": "dropdown",
+          "title": {
+            "en": "Melody",
+            "nl": "Melodie",
+            "fr": "MÃ©lodie",
+            "de": "Melodie"
+          },
+          "values": [
+            {
+              "id": "0",
+              "label": {
+                "en": "Doorbell Chime",
+                "fr": "Sonnette"
+              }
+            },
+            {
+              "id": "1",
+              "label": {
+                "en": "FÃ¼r Elise",
+                "fr": "Pour Ã‰lise"
+              }
+            },
+            {
+              "id": "2",
+              "label": {
+                "en": "Westminster Chimes",
+                "fr": "Carillon Westminster"
+              }
+            },
+            {
+              "id": "3",
+              "label": {
+                "en": "4-Key Chime",
+                "fr": "Carillon 4 notes"
+              }
+            },
+            {
+              "id": "4",
+              "label": {
+                "en": "William Tell Overture",
+                "fr": "Guillaume Tell"
+              }
+            },
+            {
+              "id": "5",
+              "label": {
+                "en": "Mozart Piano",
+                "fr": "Mozart Piano"
+              }
+            },
+            {
+              "id": "6",
+              "label": {
+                "en": "Space Alarm",
+                "fr": "Alarme Spatiale"
+              }
+            },
+            {
+              "id": "7",
+              "label": {
+                "en": "Klaxon",
+                "fr": "Klaxon"
+              }
+            },
+            {
+              "id": "8",
+              "label": {
+                "en": "Meep Meep",
+                "fr": "Bip Bip"
+              }
+            },
+            {
+              "id": "9",
+              "label": {
+                "en": "Wheep",
+                "fr": "Sifflement"
+              }
+            },
+            {
+              "id": "10",
+              "label": {
+                "en": "Barking Dog",
+                "fr": "Chien qui aboie"
+              }
+            },
+            {
+              "id": "11",
+              "label": {
+                "en": "Alarm Siren",
+                "fr": "SirÃ¨ne d'alarme"
+              }
+            },
+            {
+              "id": "12",
+              "label": {
+                "en": "Doorbell 2",
+                "fr": "Sonnette 2"
+              }
+            },
+            {
+              "id": "13",
+              "label": {
+                "en": "Old Phone",
+                "fr": "Vieux tÃ©lÃ©phone"
+              }
+            },
+            {
+              "id": "14",
+              "label": {
+                "en": "Police Siren",
+                "fr": "SirÃ¨ne Police"
+              }
+            },
+            {
+              "id": "15",
+              "label": {
+                "en": "Evacuation Bell",
+                "fr": "Cloche Ã‰vacuation"
+              }
+            },
+            {
+              "id": "16",
+              "label": {
+                "en": "Clock Alarm",
+                "fr": "RÃ©veil"
+              }
+            },
+            {
+              "id": "17",
+              "label": {
+                "en": "Fire Alarm",
+                "fr": "Alarme Incendie"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "device_air_purifier_siren_siren_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
+    }
+  ]
+}

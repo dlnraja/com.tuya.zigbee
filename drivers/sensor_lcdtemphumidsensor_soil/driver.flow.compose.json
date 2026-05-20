@@ -1,0 +1,386 @@
+{
+  "triggers": [
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_moisture_changed",
+      "title": {
+        "en": "Soil moisture changed",
+        "nl": "Bodemvochtigheid veranderd",
+        "fr": "HumiditÃ© sol changÃ©e",
+        "de": "Bodenfeuchtigkeit geÃ¤ndert"
+      },
+      "titleFormatted": {
+        "en": "Soil moisture changed to [[moisture]]%",
+        "nl": "Bodemvochtigheid veranderd naar [[moisture]]%",
+        "fr": "HumiditÃ© sol changÃ©e Ã [[moisture]]%",
+        "de": "Bodenfeuchtigkeit geÃ¤ndert zu [[moisture]]%"
+      },
+      "tokens": [
+        {
+          "name": "moisture",
+          "type": "number",
+          "title": {
+            "en": "Moisture (%)",
+            "nl": "Vochtigheid (%)",
+            "fr": "HumiditÃ© (%)",
+            "de": "Feuchtigkeit (%)"
+          },
+          "example": 45
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_temperature_changed",
+      "title": {
+        "en": "Soil temperature changed",
+        "nl": "Bodemtemperatuur veranderd",
+        "fr": "TempÃ©rature sol changÃ©e",
+        "de": "Bodentemperatur geÃ¤ndert"
+      },
+      "titleFormatted": {
+        "en": "Soil temperature changed to [[temperature]]Â°C",
+        "nl": "Bodemtemperatuur veranderd naar [[temperature]]Â°C",
+        "fr": "TempÃ©rature sol changÃ©e Ã [[temperature]]Â°C",
+        "de": "Bodentemperatur geÃ¤ndert zu [[temperature]]Â°C"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (Â°C)",
+            "nl": "Temperatuur (Â°C)",
+            "fr": "TempÃ©rature (Â°C)",
+            "de": "Temperatur (Â°C)"
+          },
+          "example": 18
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_soil_dry",
+      "highlight": true,
+      "title": {
+        "en": "Soil is dry - needs water",
+        "nl": "Grond is droog - heeft water nodig",
+        "fr": "Sol sec - besoin d'eau",
+        "de": "Boden ist trocken - braucht Wasser"
+      },
+      "hint": {
+        "en": "Triggers when soil moisture drops below the configured dry threshold",
+        "nl": "Triggert wanneer de bodemvochtigheid onder de droge drempel zakt",
+        "fr": "Se dÃ©clenche quand l'humiditÃ© du sol passe sous le seuil de sÃ©cheresse",
+        "de": "Wird ausgelÃ¶st, wenn die Bodenfeuchtigkeit unter den Trockenschwellenwert fÃ¤llt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Soil is dry - needs water",
+        "nl": "Grond is droog - heeft water nodig",
+        "fr": "Sol sec - besoin d'eau",
+        "de": "Boden ist trocken - braucht Wasser"
+      }
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_soil_wet",
+      "title": {
+        "en": "Soil is wet",
+        "nl": "Grond is nat",
+        "fr": "Sol humide",
+        "de": "Boden ist nass"
+      },
+      "hint": {
+        "en": "Triggers when soil moisture rises above the configured wet threshold",
+        "nl": "Triggert wanneer de bodemvochtigheid boven de natte drempel stijgt",
+        "fr": "Se dÃ©clenche quand l'humiditÃ© du sol dÃ©passe le seuil d'humiditÃ©",
+        "de": "Wird ausgelÃ¶st, wenn die Bodenfeuchtigkeit Ã¼ber den NÃ¤sseschwellenwert steigt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Soil is wet",
+        "nl": "Grond is nat",
+        "fr": "Sol humide",
+        "de": "Boden ist nass"
+      }
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_soil_optimal",
+      "title": {
+        "en": "Soil moisture is optimal",
+        "nl": "Bodemvochtigheid is optimaal",
+        "fr": "HumiditÃ© du sol optimale",
+        "de": "Bodenfeuchtigkeit ist optimal"
+      },
+      "hint": {
+        "en": "Triggers when soil moisture is in the optimal range for plant growth",
+        "nl": "Triggert wanneer de bodemvochtigheid in het optimale bereik voor plantengroei is",
+        "fr": "Se dÃ©clenche quand l'humiditÃ© du sol est dans la plage optimale pour la croissance des plantes",
+        "de": "Wird ausgelÃ¶st, wenn die Bodenfeuchtigkeit im optimalen Bereich fÃ¼r Pflanzenwachstum liegt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Soil moisture is optimal",
+        "nl": "Bodemvochtigheid is optimaal",
+        "fr": "HumiditÃ© du sol optimale",
+        "de": "Bodenfeuchtigkeit ist optimal"
+      }
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_frost_warning",
+      "title": {
+        "en": "Frost warning",
+        "nl": "Vorstwaarschwing",
+        "fr": "Alerte gel",
+        "de": "Frostwarnung"
+      },
+      "hint": {
+        "en": "Triggers when soil temperature drops below 2Â°C - protect your plants!",
+        "nl": "Triggert wanneer de bodemtemperatuur onder 2Â°C zakt - bescherm je planten!",
+        "fr": "Se dÃ©clenche quand la tempÃ©rature du sol passe sous 2Â°C - protÃ©gez vos plantes !",
+        "de": "Wird ausgelÃ¶st, wenn die Bodentemperatur unter 2Â°C fÃ¤llt - schÃ¼tzen Sie Ihre Pflanzen!"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Frost warning",
+        "nl": "Vorstwaarschwing",
+        "fr": "Alerte gel",
+        "de": "Frostwarnung"
+      }
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_battery_changed",
+      "title": {
+        "en": "Battery level changed",
+        "nl": "Batterijniveau veranderd",
+        "fr": "Niveau batterie changÃ©",
+        "de": "Batteriestand geÃ¤ndert"
+      },
+      "titleFormatted": {
+        "en": "Battery level changed to [[battery]]%",
+        "nl": "Batterijniveau veranderd naar [[battery]]%",
+        "fr": "Niveau batterie changÃ© Ã [[battery]]%",
+        "de": "Batteriestand geÃ¤ndert zu [[battery]]%"
+      },
+      "tokens": [
+        {
+          "name": "battery",
+          "type": "number",
+          "title": {
+            "en": "Battery (%)",
+            "nl": "Batterij (%)",
+            "fr": "Batterie (%)",
+            "de": "Batterie (%)"
+          },
+          "example": 75
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geÃ¤ndert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geÃ¤ndert"
+      }
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "HumiditÃ© changÃ©e",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geÃ¤ndert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "HumiditÃ© changÃ©e",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geÃ¤ndert"
+      }
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_water_alarm",
+      "title": {
+        "en": "Water alarm",
+        "fr": "Alarme eau",
+        "nl": "Wateralarm",
+        "de": "Wasseralarm"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Water alarm",
+        "fr": "Alarme eau",
+        "nl": "Wateralarm",
+        "de": "Wasseralarm"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_moisture_below",
+      "title": {
+        "en": "Soil moisture !{{is|is not}} below",
+        "nl": "Bodemvochtigheid !{{is|is niet}} onder",
+        "fr": "HumiditÃ© sol !{{est|n'est pas}} en dessous de",
+        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} unter"
+      },
+      "titleFormatted": {
+        "en": "Soil moisture !{{is|is not}} below [[moisture]]%",
+        "nl": "Bodemvochtigheid !{{is|is niet}} onder [[moisture]]%",
+        "fr": "HumiditÃ© sol !{{est|n'est pas}} en dessous de [[moisture]]%",
+        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} unter [[moisture]]%"
+      },
+      "args": [
+        {
+          "name": "moisture",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "30"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_moisture_above",
+      "title": {
+        "en": "Soil moisture !{{is|is not}} above",
+        "nl": "Bodemvochtigheid !{{is|is niet}} boven",
+        "fr": "HumiditÃ© sol !{{est|n'est pas}} au-dessus de",
+        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} Ã¼ber"
+      },
+      "titleFormatted": {
+        "en": "Soil moisture !{{is|is not}} above [[moisture]]%",
+        "nl": "Bodemvochtigheid !{{is|is niet}} boven [[moisture]]%",
+        "fr": "HumiditÃ© sol !{{est|n'est pas}} au-dessus de [[moisture]]%",
+        "de": "Bodenfeuchtigkeit !{{ist|ist nicht}} Ã¼ber [[moisture]]%"
+      },
+      "args": [
+        {
+          "name": "moisture",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "40"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_temperature_above",
+      "title": {
+        "en": "Soil temperature !{{is|is not}} above",
+        "nl": "Bodemtemperatuur !{{is|is niet}} boven",
+        "fr": "TempÃ©rature sol !{{est|n'est pas}} au-dessus de",
+        "de": "Bodentemperatur !{{ist|ist nicht}} Ã¼ber"
+      },
+      "titleFormatted": {
+        "en": "Soil temperature !{{is|is not}} above [[temp]]Â°C",
+        "nl": "Bodemtemperatuur !{{is|is niet}} boven [[temp]]Â°C",
+        "fr": "TempÃ©rature sol !{{est|n'est pas}} au-dessus de [[temp]]Â°C",
+        "de": "Bodentemperatur !{{ist|ist nicht}} Ã¼ber [[temp]]Â°C"
+      },
+      "args": [
+        {
+          "name": "temp",
+          "type": "number",
+          "min": -20,
+          "max": 60,
+          "step": 1,
+          "placeholder": {
+            "en": "5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_needs_water",
+      "title": {
+        "en": "Soil !{{needs|does not need}} water",
+        "nl": "Grond !{{heeft|heeft geen}} water nodig",
+        "fr": "Sol !{{a besoin|n'a pas besoin}} d'eau",
+        "de": "Boden !{{braucht|braucht kein}} Wasser"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Soil !{{needs|does not need}} water",
+        "nl": "Grond !{{heeft|heeft geen}} water nodig",
+        "fr": "Sol !{{a besoin|n'a pas besoin}} d'eau",
+        "de": "Boden !{{braucht|braucht kein}} Wasser"
+      }
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_battery_above",
+      "title": {
+        "en": "Battery !{{is|is not}} above",
+        "nl": "Batterij !{{is|is niet}} boven",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+        "de": "Batterie !{{ist|ist nicht}} Ã¼ber"
+      },
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} above [[threshold]]%",
+        "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+        "de": "Batterie !{{ist|ist nicht}} Ã¼ber [[threshold]]%"
+      },
+      "args": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "20"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_soil_soil_sensor_water_detected",
+      "title": {
+        "en": "Water !{{is|is not}} detected",
+        "fr": "Eau !{{est|n'est pas}} dÃ©tectÃ©e",
+        "nl": "Water !{{is|is niet}} gedetecteerd",
+        "de": "Wasser !{{ist|ist nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Water !{{is|is not}} detected",
+        "fr": "Eau !{{est|n'est pas}} dÃ©tectÃ©e",
+        "nl": "Water !{{is|is niet}} gedetecteerd",
+        "de": "Wasser !{{ist|ist nicht}} erkannt"
+      }
+    }
+  ]
+}
