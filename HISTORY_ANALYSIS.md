@@ -1,5 +1,5 @@
 # 📊 Historical Analysis - Tuya Unified Zigbee
-Generated: 2026-05-20T10:39:36.316Z | Version: v5.11.212+
+Generated: 2026-05-20T12:01:26.914Z | Version: v5.11.212+
 
 ## 🔄 Evolution Timeline
 ```
@@ -31,6 +31,9 @@ v5.11.212 (2026-05-08) → Phase 0-1 complete, context preservation, drivers
 | True collisions | 54,373 | 0 |
 
 ## 🔍 Recent Commits
+- 11dbe363e feat: Phoenix Sovereign v8.1.0 fingerprint enrichment and zero-warning casing certification
+- 7513678fd auto: sync Johan SDK3 FPs (82 added) [skip ci]
+- fcabe38f0 feat: sync from Johan Benz upstream (Enhanced AI) [skip ci]
 - 23cff3b42 Removed titleFormatted from flow cards - PR#120 compliance [skip ci]
 - 63d13fffa fix(button_wireless): add SONOFF and sonoff case variations to manufacturerName (#198) [skip ci]
 - 938d7ff8b Power clamp meter - improved watt tracking + GitHub automation [skip ci]
@@ -41,7 +44,6 @@ v5.11.212 (2026-05-08) → Phase 0-1 complete, context preservation, drivers
 - 8d75ce659 feat(flow_repair): integrate Martijn Poppen device/flow replacement tool and update fingerprints
 - d27302a0b fix(clamp_meter): correct incoherent watt/voltage scaling using safeDivide instead of safeMultiply
 - bc2e791ce Changelog sync v7.5.47: updated README with latest release notes [skip ci]
-- d7d65b5d9 feat: sync from Johan Benz upstream (Enhanced AI) [skip ci]
 - 7d544be49 v7.5.47: 228 drivers, 3261 FPs [skip ci]
 - 02e272ea3 chore: update ZERO_DEFECT_AUDIT report
 - 2cceae7e2 v7.5.46: 228 drivers, 3261 FPs [skip ci]
@@ -49,8 +51,6 @@ v5.11.212 (2026-05-08) → Phase 0-1 complete, context preservation, drivers
 - d5d251511 v7.5.45: 228 drivers, 3261 FPs [skip ci]
 - ee8c0a087 fix(#312): Correct 4 critical runtime errors
 - 05070e491 fix: resolve 4 critical runtime errors (Issue #312)
-- ade8ce340 v7.5.44: 228 drivers, 3261 FPs [skip ci]
-- 9af55ccf7 Changelog sync v7.5.43: updated README with latest release notes [skip ci]
 
 ## 📂 Branches
 - #1139-add_TZ3000_o4mkahkc
