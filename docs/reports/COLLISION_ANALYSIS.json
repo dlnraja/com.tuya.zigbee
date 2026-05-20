@@ -1,0 +1,7635 @@
+{
+  "timestamp": "2026-04-20T09:04:15.742Z",
+  "stats": {
+    "totalFingerprints": 100425,
+    "collisionGroups": 381,
+    "totalCollisionInstances": 381,
+    "critical": 0,
+    "high": 381
+  },
+  "criticalCollisions": [],
+  "highCollisions": [
+    {
+      "mfr": "_TZE200_5zbp6j0u",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_5ZBP6J0U|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_bjzrowv2",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_BJZROWV2|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_nkoabg8w",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_NKOABG8W|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_xuzcvlku",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_XUZCVLKU|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_4vobcgd3",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_4VOBCGD3|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_nogaemzt",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_NOGAEMZT|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_r0jdjrvi",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_R0JDJRVI|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_pk0sfzvr",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_PK0SFZVR|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_fdtjuw7u",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_FDTJUW7U|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_zpzndjez",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_ZPZNDJEZ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_wmcdj3aq",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_WMCDJ3AQ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_cowvfni3",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_COWVFNI3|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_rddyvrci",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_RDDYVRCI|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_nueqqe6k",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_NUEQQE6K|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_xaabybja",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_XAABYBJA|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_rmymn92d",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_RMYMN92D|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_3i3exuay",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_3I3EXUAY|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_hsgrhjpf",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_HSGRHJPF|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_uj3f4wr5",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_UJ3F4WR5|TS0601",
+      "drivers": [
+        "air_purifier",
+        "curtain_motor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_1fuxihti",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE204_1FUXIHTI|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_axgvo9jh",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_AXGVO9JH|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_gaj531w3",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_GAJ531W3|TS0601",
+      "drivers": [
+        "air_purifier",
+        "contact_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_yia0p3tr",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_YIA0P3TR|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_ip2akl4w",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_IP2AKL4W|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_1agwnems",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_1AGWNEMS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_579lguh2",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_579LGUH2|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_vucankjx",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_VUCANKJX|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_n9ctkb6j",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE204_N9CTKB6J|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_dimmer_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_9qhuzgo0",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE204_9QHUZGO0|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_qaaysllp",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_QAAYSLLP|TS0601",
+      "drivers": [
+        "air_purifier",
+        "contact_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_yd2e749y",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_YD2E749Y|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_yd2e749y",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_YD2E749Y|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_yd2e749y",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_YD2E749Y|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_yd2e749y",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_YD2E749Y|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_yd2e749y",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_YD2E749Y|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_itnrsufe",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_ITNRSUFE|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_BJAWZODF|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_BJAWZODF|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_BJAWZODF|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_BJAWZODF|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_BJAWZODF|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_bjawzodf",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_BJAWZODF|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_zl1kmjqx",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_ZL1KMJQX|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_bq5c8xfe",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_BQ5C8XFE|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_qyflbnbj",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE200_QYFLBNBJ|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_qyflbnbj",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE200_QYFLBNBJ|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_qyflbnbj",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE200_QYFLBNBJ|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_qyflbnbj",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_QYFLBNBJ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_qyflbnbj",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE200_QYFLBNBJ|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_vs0skpuc",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE200_VS0SKPUC|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_vs0skpuc",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE200_VS0SKPUC|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_vs0skpuc",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE200_VS0SKPUC|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_vs0skpuc",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_VS0SKPUC|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_vs0skpuc",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE200_VS0SKPUC|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_44af8vyi",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_44AF8VYI|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_ttcovulf",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_TTCOVULF|TS0601",
+      "drivers": [
+        "air_purifier",
+        "gas_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE201_ztc6ggyl",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE201_ZTC6GGYL|TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE202_ztc6ggyl",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE202_ZTC6GGYL|TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE203_ztc6ggyl",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE203_ZTC6GGYL|TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_ztc6ggyl",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE204_ZTC6GGYL|TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_7gclukjs",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE204_7GCLUKJS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_sxm7l9xa",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE204_SXM7L9XA|TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_ijxvkhd0",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE204_IJXVKHD0|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_yvx5lh6k",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE200_YVX5LH6K|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_yvx5lh6k",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE200_YVX5LH6K|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_yvx5lh6k",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE200_YVX5LH6K|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_yvx5lh6k",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_YVX5LH6K|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_yvx5lh6k",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE200_YVX5LH6K|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_8ygsuhe1",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE200_8YGSUHE1|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_8ygsuhe1",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE200_8YGSUHE1|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_8ygsuhe1",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE200_8YGSUHE1|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_8ygsuhe1",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_8YGSUHE1|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_8ygsuhe1",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE200_8YGSUHE1|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_mja3fuja",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE200_MJA3FUJA|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_mja3fuja",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE200_MJA3FUJA|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_mja3fuja",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE200_MJA3FUJA|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_mja3fuja",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_MJA3FUJA|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_mja3fuja",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE200_MJA3FUJA|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_ryfmq5rl",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE200_RYFMQ5RL|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_ryfmq5rl",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE200_RYFMQ5RL|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_ryfmq5rl",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE200_RYFMQ5RL|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_ryfmq5rl",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_RYFMQ5RL|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_ryfmq5rl",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE200_RYFMQ5RL|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_c2fmom5z",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE200_C2FMOM5Z|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_c2fmom5z",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE200_C2FMOM5Z|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_c2fmom5z",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE200_C2FMOM5Z|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_c2fmom5z",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_C2FMOM5Z|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_c2fmom5z",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE200_C2FMOM5Z|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_ntcy3xu1",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_NTCY3XU1|TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_m9skfctm",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_M9SKFCTM|TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_rccxox8p",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_RCCXOX8P|TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_vzekyi4c",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_VZEKYI4C|TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_t5p1vj8r",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_T5P1VJ8R|TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_uebojraa",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_UEBOJRAA|TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_yh7aoahi",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_YH7AOAHI|TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE284_aao3yzhs",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE284_AAO3YZHS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE284_sgabhwa6",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE284_SGABHWA6|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE284_g2e6cpnw",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE284_G2E6CPNW|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_i8jfiezr",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_I8JFIEZR|RH3052",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_i8jfiezr",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_I8JFIEZR|TS0201",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_i8jfiezr",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_I8JFIEZR|TS0222",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_i8jfiezr",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_I8JFIEZR|TS0601",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_i8jfiezr",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_I8JFIEZR|TY0201",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_bguser20",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_BGUSER20|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_bguser20",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_BGUSER20|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_bguser20",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_BGUSER20|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_bguser20",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_BGUSER20|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_bguser20",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_BGUSER20|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_8ybe88nf",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_8YBE88NF|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_8ybe88nf",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_8YBE88NF|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_8ybe88nf",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_8YBE88NF|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_8ybe88nf",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_8YBE88NF|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_8ybe88nf",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_8YBE88NF|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fie1dpkm",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_FIE1DPKM|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fie1dpkm",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_FIE1DPKM|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fie1dpkm",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_FIE1DPKM|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fie1dpkm",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_FIE1DPKM|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fie1dpkm",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_FIE1DPKM|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_f2bw0b6k",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_F2BW0B6K|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_f2bw0b6k",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_F2BW0B6K|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_f2bw0b6k",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_F2BW0B6K|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_f2bw0b6k",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_F2BW0B6K|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_f2bw0b6k",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_F2BW0B6K|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_dowj6gyi",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_DOWJ6GYI|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_dowj6gyi",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_DOWJ6GYI|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_dowj6gyi",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_DOWJ6GYI|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_dowj6gyi",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_DOWJ6GYI|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_dowj6gyi",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_DOWJ6GYI|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_0s1izerx",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_0S1IZERX|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_0s1izerx",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_0S1IZERX|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_0s1izerx",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_0S1IZERX|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_0s1izerx",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_0S1IZERX|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_0s1izerx",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_0S1IZERX|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_akqdg6g7",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_AKQDG6G7|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_akqdg6g7",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_AKQDG6G7|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_akqdg6g7",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_AKQDG6G7|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_akqdg6g7",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_AKQDG6G7|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_akqdg6g7",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_AKQDG6G7|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fllyghyj",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_FLLYGHYJ|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fllyghyj",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_FLLYGHYJ|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fllyghyj",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_FLLYGHYJ|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fllyghyj",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_FLLYGHYJ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fllyghyj",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_FLLYGHYJ|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_xr3htd96",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_XR3HTD96|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_xr3htd96",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_XR3HTD96|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_xr3htd96",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_XR3HTD96|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_xr3htd96",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_XR3HTD96|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_xr3htd96",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_XR3HTD96|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_saiqcn0y",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_SAIQCN0Y|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_saiqcn0y",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_SAIQCN0Y|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_saiqcn0y",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_SAIQCN0Y|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_saiqcn0y",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_SAIQCN0Y|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_saiqcn0y",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_SAIQCN0Y|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE200_A8SDABTG|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE200_A8SDABTG|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE200_A8SDABTG|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_A8SDABTG|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE200_A8SDABTG|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_zl1kmjqx",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_ZL1KMJQX|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_zl1kmjqx",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_ZL1KMJQX|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_zl1kmjqx",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_ZL1KMJQX|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_zl1kmjqx",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_ZL1KMJQX|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_zl1kmjqx",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_ZL1KMJQX|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_6uzkisv2",
+      "pid": "RH3052",
+      "normalizedKey": "_TZ3000_6UZKISV2|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_6uzkisv2",
+      "pid": "TS0201",
+      "normalizedKey": "_TZ3000_6UZKISV2|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_6uzkisv2",
+      "pid": "TS0222",
+      "normalizedKey": "_TZ3000_6UZKISV2|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_6uzkisv2",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_6UZKISV2|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_6uzkisv2",
+      "pid": "TY0201",
+      "normalizedKey": "_TZ3000_6UZKISV2|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_yjjdcqsq",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE204_YJJDCQSQ|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_yjjdcqsq",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE204_YJJDCQSQ|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_yjjdcqsq",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE204_YJJDCQSQ|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_yjjdcqsq",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE204_YJJDCQSQ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_yjjdcqsq",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE204_YJJDCQSQ|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE200_VVMBJ46N|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE200_VVMBJ46N|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE200_VVMBJ46N|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_VVMBJ46N|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_vvmbj46n",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE200_VVMBJ46N|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE200_YJJDCQSQ|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE200_YJJDCQSQ|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE200_YJJDCQSQ|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_YJJDCQSQ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE200_YJJDCQSQ|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE200_UTKEMKBS|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE200_UTKEMKBS|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE200_UTKEMKBS|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_UTKEMKBS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE200_UTKEMKBS|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_upagmta9",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE204_UPAGMTA9|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_upagmta9",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE204_UPAGMTA9|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_upagmta9",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE204_UPAGMTA9|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_upagmta9",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE204_UPAGMTA9|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_upagmta9",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE204_UPAGMTA9|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_utkemkbs",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE204_UTKEMKBS|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_utkemkbs",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE204_UTKEMKBS|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_utkemkbs",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE204_UTKEMKBS|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_utkemkbs",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE204_UTKEMKBS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_utkemkbs",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE204_UTKEMKBS|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_9yapgbuv",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE204_9YAPGBUV|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_9yapgbuv",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE204_9YAPGBUV|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_9yapgbuv",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE204_9YAPGBUV|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_9yapgbuv",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE204_9YAPGBUV|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_9yapgbuv",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE204_9YAPGBUV|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_cirvgep4",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE200_CIRVGEP4|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_cirvgep4",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE200_CIRVGEP4|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_cirvgep4",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE200_CIRVGEP4|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_cirvgep4",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_CIRVGEP4|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_cirvgep4",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE200_CIRVGEP4|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_cirvgep4",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE204_CIRVGEP4|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_cirvgep4",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE204_CIRVGEP4|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_cirvgep4",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE204_CIRVGEP4|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_cirvgep4",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE204_CIRVGEP4|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_cirvgep4",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE204_CIRVGEP4|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "RH3052",
+      "normalizedKey": "_TZE200_9YAPGBUV|RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0201",
+      "normalizedKey": "_TZE200_9YAPGBUV|TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0222",
+      "normalizedKey": "_TZE200_9YAPGBUV|TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_9YAPGBUV|TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TY0201",
+      "normalizedKey": "_TZE200_9YAPGBUV|TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_3P5YDOS3|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_dimmer_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_ebwgzdqq",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_EBWGZDQQ|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_ctq0k47x",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_CTQ0K47X|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_9i9dt8is",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_9I9DT8IS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_dfxkcots",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_DFXKCOTS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_w4cryh2i",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_W4CRYH2I|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_ojzhk75b",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_OJZHK75B|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_swaamsoy",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_SWAAMSOY|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE204_vevc4c6g",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE204_VEVC4C6G|TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_gbagoilo",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_GBAGOILO|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_jwsjbxjs",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_JWSJBXJS|TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_jthf7vb6",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_JTHF7VB6|TS0601",
+      "drivers": [
+        "air_purifier",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_invesber",
+      "pid": "TS0052",
+      "normalizedKey": "_TZ3210_INVESBER|TS0052",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_invesber",
+      "pid": "TS1101",
+      "normalizedKey": "_TZ3210_INVESBER|TS1101",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_invesber",
+      "pid": "TS110E",
+      "normalizedKey": "_TZ3210_INVESBER|TS110E",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_invesber",
+      "pid": "TS110F",
+      "normalizedKey": "_TZ3210_INVESBER|TS110F",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_zdrhqmo0",
+      "pid": "TS0052",
+      "normalizedKey": "_TZ3210_ZDRHQMO0|TS0052",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_zdrhqmo0",
+      "pid": "TS1101",
+      "normalizedKey": "_TZ3210_ZDRHQMO0|TS1101",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_zdrhqmo0",
+      "pid": "TS110E",
+      "normalizedKey": "_TZ3210_ZDRHQMO0|TS110E",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_zdrhqmo0",
+      "pid": "TS110F",
+      "normalizedKey": "_TZ3210_ZDRHQMO0|TS110F",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fsiepnrh",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_FSIEPNRH|TS0601",
+      "drivers": [
+        "button_emergency_sos",
+        "switch_wireless"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_p6ju8myv",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_P6JU8MYV|TS0601",
+      "drivers": [
+        "button_emergency_sos",
+        "switch_wireless"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_eo3dttwe",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_EO3DTTWE|TS0601",
+      "drivers": [
+        "button_emergency_sos",
+        "switch_wireless"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_kdi2o9m6",
+      "pid": "TS0111",
+      "normalizedKey": "_TZ3000_KDI2O9M6|TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_kdi2o9m6",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_KDI2O9M6|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_kdi2o9m6",
+      "pid": "TS0121",
+      "normalizedKey": "_TZ3000_KDI2O9M6|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_ew31dmgx",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_EW31DMGX|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor_hybrid"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_wamqdr3f",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_WAMQDR3F|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_wamqdr3f",
+      "pid": "TS0121",
+      "normalizedKey": "_TZ3000_WAMQDR3F|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_wamqdr3f",
+      "pid": "TSO121",
+      "normalizedKey": "_TZ3000_WAMQDR3F|TSO121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_cayepv1a",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3000_CAYEPV1A|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_cayepv1a",
+      "pid": "TS000F",
+      "normalizedKey": "_TZ3000_CAYEPV1A|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_cayepv1a",
+      "pid": "TS0011",
+      "normalizedKey": "_TZ3000_CAYEPV1A|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_cayepv1a",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_CAYEPV1A|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_lepzuhto",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3000_LEPZUHTO|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_lepzuhto",
+      "pid": "TS000F",
+      "normalizedKey": "_TZ3000_LEPZUHTO|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_lepzuhto",
+      "pid": "TS0011",
+      "normalizedKey": "_TZ3000_LEPZUHTO|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_lepzuhto",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_LEPZUHTO|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_qystbcjg",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3000_QYSTBCJG|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_qystbcjg",
+      "pid": "TS000F",
+      "normalizedKey": "_TZ3000_QYSTBCJG|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_qystbcjg",
+      "pid": "TS0011",
+      "normalizedKey": "_TZ3000_QYSTBCJG|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_qystbcjg",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_QYSTBCJG|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_g5xawfcq",
+      "pid": "TS0111",
+      "normalizedKey": "_TZ3000_G5XAWFCQ|TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_g5xawfcq",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_G5XAWFCQ|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_g5xawfcq",
+      "pid": "TS0121",
+      "normalizedKey": "_TZ3000_G5XAWFCQ|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_rdtixbnu",
+      "pid": "TS0111",
+      "normalizedKey": "_TZ3000_RDTIXBNU|TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_rdtixbnu",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_RDTIXBNU|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_rdtixbnu",
+      "pid": "TS0121",
+      "normalizedKey": "_TZ3000_RDTIXBNU|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_cphmq0q7",
+      "pid": "TS0111",
+      "normalizedKey": "_TZ3000_CPHMQ0Q7|TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_cphmq0q7",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_CPHMQ0Q7|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_cphmq0q7",
+      "pid": "TS0121",
+      "normalizedKey": "_TZ3000_CPHMQ0Q7|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_w0qqde0g",
+      "pid": "TS0111",
+      "normalizedKey": "_TZ3000_W0QQDE0G|TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_w0qqde0g",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_W0QQDE0G|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_w0qqde0g",
+      "pid": "TS0121",
+      "normalizedKey": "_TZ3000_W0QQDE0G|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_typdpdpg",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_TYPDPDPG|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "usb_outlet_advanced"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_1obwwnmq",
+      "pid": "TS0111",
+      "normalizedKey": "_TZ3000_1OBWWNMQ|TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_1obwwnmq",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_1OBWWNMQ|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_1obwwnmq",
+      "pid": "TS0121",
+      "normalizedKey": "_TZ3000_1OBWWNMQ|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_vzopcetz",
+      "pid": "TS0111",
+      "normalizedKey": "_TZ3000_VZOPCETZ|TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_vzopcetz",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_VZOPCETZ|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_vzopcetz",
+      "pid": "TS0121",
+      "normalizedKey": "_TZ3000_VZOPCETZ|TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_ji4araar",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3000_JI4ARAAR|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_ji4araar",
+      "pid": "TS000F",
+      "normalizedKey": "_TZ3000_JI4ARAAR|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_ji4araar",
+      "pid": "TS0011",
+      "normalizedKey": "_TZ3000_JI4ARAAR|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_ji4araar",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_JI4ARAAR|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_qmi1cfuq",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3000_QMI1CFUQ|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_qmi1cfuq",
+      "pid": "TS000F",
+      "normalizedKey": "_TZ3000_QMI1CFUQ|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_qmi1cfuq",
+      "pid": "TS0011",
+      "normalizedKey": "_TZ3000_QMI1CFUQ|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_qmi1cfuq",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_QMI1CFUQ|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_tqlv4ug4",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3000_TQLV4UG4|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_tqlv4ug4",
+      "pid": "TS000F",
+      "normalizedKey": "_TZ3000_TQLV4UG4|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_tqlv4ug4",
+      "pid": "TS0011",
+      "normalizedKey": "_TZ3000_TQLV4UG4|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_tqlv4ug4",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_TQLV4UG4|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_prits6g4",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3000_PRITS6G4|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_prits6g4",
+      "pid": "TS000F",
+      "normalizedKey": "_TZ3000_PRITS6G4|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_prits6g4",
+      "pid": "TS0011",
+      "normalizedKey": "_TZ3000_PRITS6G4|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_prits6g4",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_PRITS6G4|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fisb3ajo",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3000_FISB3AJO|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fisb3ajo",
+      "pid": "TS000F",
+      "normalizedKey": "_TZ3000_FISB3AJO|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fisb3ajo",
+      "pid": "TS0011",
+      "normalizedKey": "_TZ3000_FISB3AJO|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_fisb3ajo",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_FISB3AJO|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_odzoiovu",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3000_ODZOIOVU|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_odzoiovu",
+      "pid": "TS000F",
+      "normalizedKey": "_TZ3000_ODZOIOVU|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_odzoiovu",
+      "pid": "TS0011",
+      "normalizedKey": "_TZ3000_ODZOIOVU|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_odzoiovu",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_ODZOIOVU|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_lvhy15ix",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3000_LVHY15IX|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_lvhy15ix",
+      "pid": "TS000F",
+      "normalizedKey": "_TZ3000_LVHY15IX|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_lvhy15ix",
+      "pid": "TS0011",
+      "normalizedKey": "_TZ3000_LVHY15IX|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_lvhy15ix",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_LVHY15IX|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_4o16jdca",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3000_4O16JDCA|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_4o16jdca",
+      "pid": "TS000F",
+      "normalizedKey": "_TZ3000_4O16JDCA|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_4o16jdca",
+      "pid": "TS0011",
+      "normalizedKey": "_TZ3000_4O16JDCA|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_4o16jdca",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_4O16JDCA|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_tvuarksa",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3000_TVUARKSA|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_tvuarksa",
+      "pid": "TS000F",
+      "normalizedKey": "_TZ3000_TVUARKSA|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_tvuarksa",
+      "pid": "TS0011",
+      "normalizedKey": "_TZ3000_TVUARKSA|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_tvuarksa",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_TVUARKSA|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3000_DFGBTUB0|TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS000F",
+      "normalizedKey": "_TZ3000_DFGBTUB0|TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS0011",
+      "normalizedKey": "_TZ3000_DFGBTUB0|TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS011F",
+      "normalizedKey": "_TZ3000_DFGBTUB0|TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_w8jwkczz",
+      "pid": "TS0043",
+      "normalizedKey": "_TZ3000_W8JWKCZZ|TS0043",
+      "drivers": [
+        "button_wireless_2",
+        "wall_remote_3_gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_D3M9V8P6",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3210_D3M9V8P6|TS0001",
+      "drivers": [
+        "button_wireless_fingerbot_hybrid",
+        "fingerbot"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_D3M9V8P6",
+      "pid": "TS0001_FINGERBOT",
+      "normalizedKey": "_TZ3210_D3M9V8P6|TS0001_FINGERBOT",
+      "drivers": [
+        "button_wireless_fingerbot_hybrid",
+        "fingerbot"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_PWJ6VUJ9",
+      "pid": "TS0001",
+      "normalizedKey": "_TZ3210_PWJ6VUJ9|TS0001",
+      "drivers": [
+        "button_wireless_fingerbot_hybrid",
+        "fingerbot"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_PWJ6VUJ9",
+      "pid": "TS0001_FINGERBOT",
+      "normalizedKey": "_TZ3210_PWJ6VUJ9|TS0001_FINGERBOT",
+      "drivers": [
+        "button_wireless_fingerbot_hybrid",
+        "fingerbot"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE284_rqcuwlsa",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE284_RQCUWLSA|TS0601",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE284_rqcuwlsa",
+      "pid": "ZG-303Z",
+      "normalizedKey": "_TZE284_RQCUWLSA|ZG-303Z",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_tgvtvdoc",
+      "pid": "Q9MPFHW",
+      "normalizedKey": "_TZ3210_TGVTVDOC|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_tgvtvdoc",
+      "pid": "TS0207",
+      "normalizedKey": "_TZ3210_TGVTVDOC|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3210_tgvtvdoc",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3210_TGVTVDOC|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_t6jriawg",
+      "pid": "Q9MPFHW",
+      "normalizedKey": "_TZ3000_T6JRIAWG|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_t6jriawg",
+      "pid": "TS0207",
+      "normalizedKey": "_TZ3000_T6JRIAWG|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_t6jriawg",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_T6JRIAWG|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_kyb656no",
+      "pid": "Q9MPFHW",
+      "normalizedKey": "_TZ3000_KYB656NO|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_kyb656no",
+      "pid": "TS0207",
+      "normalizedKey": "_TZ3000_KYB656NO|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_kyb656no",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_KYB656NO|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_0s9gukzt",
+      "pid": "Q9MPFHW",
+      "normalizedKey": "_TZ3000_0S9GUKZT|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_0s9gukzt",
+      "pid": "TS0207",
+      "normalizedKey": "_TZ3000_0S9GUKZT|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_0s9gukzt",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_0S9GUKZT|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_kstbkt6a",
+      "pid": "Q9MPFHW",
+      "normalizedKey": "_TZ3000_KSTBKT6A|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_kstbkt6a",
+      "pid": "TS0207",
+      "normalizedKey": "_TZ3000_KSTBKT6A|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_kstbkt6a",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_KSTBKT6A|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_mugyhz0q",
+      "pid": "Q9MPFHW",
+      "normalizedKey": "_TZ3000_MUGYHZ0Q|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_mugyhz0q",
+      "pid": "TS0207",
+      "normalizedKey": "_TZ3000_MUGYHZ0Q|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_mugyhz0q",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_MUGYHZ0Q|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_upgcbody",
+      "pid": "Q9MPFHW",
+      "normalizedKey": "_TZ3000_UPGCBODY|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_upgcbody",
+      "pid": "TS0207",
+      "normalizedKey": "_TZ3000_UPGCBODY|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_upgcbody",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_UPGCBODY|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_k4ej3ww2",
+      "pid": "Q9MPFHW",
+      "normalizedKey": "_TZ3000_K4EJ3WW2|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_k4ej3ww2",
+      "pid": "TS0207",
+      "normalizedKey": "_TZ3000_K4EJ3WW2|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_k4ej3ww2",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_K4EJ3WW2|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_ocjlo4ea",
+      "pid": "Q9MPFHW",
+      "normalizedKey": "_TZ3000_OCJLO4EA|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_ocjlo4ea",
+      "pid": "TS0207",
+      "normalizedKey": "_TZ3000_OCJLO4EA|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_ocjlo4ea",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_OCJLO4EA|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_awvmkayh",
+      "pid": "Q9MPFHW",
+      "normalizedKey": "_TZ3000_AWVMKAYH|Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_awvmkayh",
+      "pid": "TS0207",
+      "normalizedKey": "_TZ3000_AWVMKAYH|TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_awvmkayh",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_AWVMKAYH|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_m0vaazab",
+      "pid": "EXCELLUX",
+      "normalizedKey": "_TZ3000_M0VAAZAB|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_m0vaazab",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_M0VAAZAB|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_5k5vh43t",
+      "pid": "EXCELLUX",
+      "normalizedKey": "_TZ3000_5K5VH43T|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_5k5vh43t",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_5K5VH43T|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_ufttklsz",
+      "pid": "EXCELLUX",
+      "normalizedKey": "_TZ3000_UFTTKLSZ|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_ufttklsz",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_UFTTKLSZ|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_gszjt2xx",
+      "pid": "EXCELLUX",
+      "normalizedKey": "_TZ3000_GSZJT2XX|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_gszjt2xx",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_GSZJT2XX|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_nkkl7uzv",
+      "pid": "EXCELLUX",
+      "normalizedKey": "_TZ3000_NKKL7UZV|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_nkkl7uzv",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_NKKL7UZV|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_nlsszmzl",
+      "pid": "EXCELLUX",
+      "normalizedKey": "_TZ3000_NLSSZMZL|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_nlsszmzl",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_NLSSZMZL|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_misw04hq",
+      "pid": "EXCELLUX",
+      "normalizedKey": "_TZ3000_MISW04HQ|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_misw04hq",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_MISW04HQ|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_wlquqiiz",
+      "pid": "EXCELLUX",
+      "normalizedKey": "_TZ3000_WLQUQIIZ|EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_wlquqiiz",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_WLQUQIIZ|TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_pnzfdr9y",
+      "pid": "TS0049",
+      "normalizedKey": "_TZ3000_PNZFDR9Y|TS0049",
+      "drivers": [
+        "device_plug_smart_hybrid",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_pnzfdr9y",
+      "pid": "TS0101",
+      "normalizedKey": "_TZ3000_PNZFDR9Y|TS0101",
+      "drivers": [
+        "device_plug_smart_hybrid",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_br3laukf",
+      "pid": "TS0049",
+      "normalizedKey": "_TZ3000_BR3LAUKF|TS0049",
+      "drivers": [
+        "device_plug_smart_hybrid",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_br3laukf",
+      "pid": "TS0101",
+      "normalizedKey": "_TZ3000_BR3LAUKF|TS0101",
+      "drivers": [
+        "device_plug_smart_hybrid",
+        "plug_smart"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_2aaelwxk",
+      "pid": "TS0225",
+      "normalizedKey": "_TZE200_2AAELWXK|TS0225",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE200_2aaelwxk",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE200_2AAELWXK|TS0601",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_mmkbptmx",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_MMKBPTMX|TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZ3000_wkr3jqmr",
+      "pid": "TS0601",
+      "normalizedKey": "_TZ3000_WKR3JQMR|TS0601",
+      "drivers": [
+        "switch_4gang",
+        "switch_hybrid"
+      ],
+      "driverCount": 2
+    },
+    {
+      "mfr": "_TZE284_fhvpaltk",
+      "pid": "TS0601",
+      "normalizedKey": "_TZE284_FHVPALTK|TS0601",
+      "drivers": [
+        "valve_dual_irrigation",
+        "valve_irrigation"
+      ],
+      "driverCount": 2
+    }
+  ],
+  "actionPlan": [
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_5zbp6j0u",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_bjzrowv2",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_nkoabg8w",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_xuzcvlku",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_4vobcgd3",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_nogaemzt",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_r0jdjrvi",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_pk0sfzvr",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_fdtjuw7u",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_zpzndjez",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_wmcdj3aq",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_cowvfni3",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_rddyvrci",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_nueqqe6k",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_xaabybja",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_rmymn92d",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_3i3exuay",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_hsgrhjpf",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_uj3f4wr5",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "curtain_motor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_1fuxihti",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_axgvo9jh",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_gaj531w3",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "contact_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_yia0p3tr",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_ip2akl4w",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_1agwnems",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_579lguh2",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_vucankjx",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_n9ctkb6j",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_dimmer_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_9qhuzgo0",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_qaaysllp",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "contact_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_yd2e749y",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_yd2e749y",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_yd2e749y",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_yd2e749y",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_yd2e749y",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_itnrsufe",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_bjawzodf",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_bjawzodf",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_zl1kmjqx",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_bq5c8xfe",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_qyflbnbj",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_qyflbnbj",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_qyflbnbj",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_qyflbnbj",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_qyflbnbj",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_vs0skpuc",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_vs0skpuc",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_vs0skpuc",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_vs0skpuc",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_vs0skpuc",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_44af8vyi",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_wireless"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_ttcovulf",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "gas_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE201_ztc6ggyl",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE202_ztc6ggyl",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE203_ztc6ggyl",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_ztc6ggyl",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_7gclukjs",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_sxm7l9xa",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "presence_sensor_radar"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_ijxvkhd0",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_yvx5lh6k",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_yvx5lh6k",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_yvx5lh6k",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_yvx5lh6k",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_yvx5lh6k",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_8ygsuhe1",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_8ygsuhe1",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_8ygsuhe1",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_8ygsuhe1",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_8ygsuhe1",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_mja3fuja",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_mja3fuja",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_mja3fuja",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_mja3fuja",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_mja3fuja",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_ryfmq5rl",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_ryfmq5rl",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_ryfmq5rl",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_ryfmq5rl",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_ryfmq5rl",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_c2fmom5z",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_c2fmom5z",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_c2fmom5z",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_c2fmom5z",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_c2fmom5z",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_ntcy3xu1",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_m9skfctm",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_rccxox8p",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_vzekyi4c",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_t5p1vj8r",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_uebojraa",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_yh7aoahi",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "smoke_detector_advanced"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE284_aao3yzhs",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE284_sgabhwa6",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE284_g2e6cpnw",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_i8jfiezr",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_i8jfiezr",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_i8jfiezr",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_i8jfiezr",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_i8jfiezr",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "air_purifier_climate_hybrid"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_bguser20",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_bguser20",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_bguser20",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_bguser20",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_bguser20",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_8ybe88nf",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_8ybe88nf",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_8ybe88nf",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_8ybe88nf",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_8ybe88nf",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fie1dpkm",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fie1dpkm",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fie1dpkm",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fie1dpkm",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fie1dpkm",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_f2bw0b6k",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_f2bw0b6k",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_f2bw0b6k",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_f2bw0b6k",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_f2bw0b6k",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_dowj6gyi",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_dowj6gyi",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_dowj6gyi",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_dowj6gyi",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_dowj6gyi",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_0s1izerx",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_0s1izerx",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_0s1izerx",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_0s1izerx",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_0s1izerx",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_akqdg6g7",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_akqdg6g7",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_akqdg6g7",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_akqdg6g7",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_akqdg6g7",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fllyghyj",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fllyghyj",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fllyghyj",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fllyghyj",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fllyghyj",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_xr3htd96",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_xr3htd96",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_xr3htd96",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_xr3htd96",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_xr3htd96",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_saiqcn0y",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_saiqcn0y",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_saiqcn0y",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_saiqcn0y",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_saiqcn0y",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_a8sdabtg",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_zl1kmjqx",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_zl1kmjqx",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_zl1kmjqx",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_zl1kmjqx",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_zl1kmjqx",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_6uzkisv2",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_6uzkisv2",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_6uzkisv2",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_6uzkisv2",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_6uzkisv2",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_yjjdcqsq",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_yjjdcqsq",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_yjjdcqsq",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_yjjdcqsq",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_yjjdcqsq",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_vvmbj46n",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_vvmbj46n",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_vvmbj46n",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_vvmbj46n",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_vvmbj46n",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_yjjdcqsq",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_utkemkbs",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_upagmta9",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_upagmta9",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_upagmta9",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_upagmta9",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_upagmta9",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_utkemkbs",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_utkemkbs",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_utkemkbs",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_utkemkbs",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_utkemkbs",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_9yapgbuv",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_9yapgbuv",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_9yapgbuv",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_9yapgbuv",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_9yapgbuv",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_cirvgep4",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_cirvgep4",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_cirvgep4",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_cirvgep4",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_cirvgep4",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_cirvgep4",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_cirvgep4",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_cirvgep4",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_cirvgep4",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_cirvgep4",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "RH3052",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0222",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_9yapgbuv",
+      "pid": "TY0201",
+      "drivers": [
+        "air_purifier",
+        "climate_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_3p5ydos3",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_dimmer_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_ebwgzdqq",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_ctq0k47x",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_9i9dt8is",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_dfxkcots",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_w4cryh2i",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_ojzhk75b",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_swaamsoy",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE204_vevc4c6g",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_gbagoilo",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_jwsjbxjs",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_jthf7vb6",
+      "pid": "TS0601",
+      "drivers": [
+        "air_purifier",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_invesber",
+      "pid": "TS0052",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_invesber",
+      "pid": "TS1101",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_invesber",
+      "pid": "TS110E",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_invesber",
+      "pid": "TS110F",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_zdrhqmo0",
+      "pid": "TS0052",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_zdrhqmo0",
+      "pid": "TS1101",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_zdrhqmo0",
+      "pid": "TS110E",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_zdrhqmo0",
+      "pid": "TS110F",
+      "drivers": [
+        "bulb_dimmable",
+        "dimmer_wall_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fsiepnrh",
+      "pid": "TS0601",
+      "drivers": [
+        "button_emergency_sos",
+        "switch_wireless"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_p6ju8myv",
+      "pid": "TS0601",
+      "drivers": [
+        "button_emergency_sos",
+        "switch_wireless"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_eo3dttwe",
+      "pid": "TS0601",
+      "drivers": [
+        "button_emergency_sos",
+        "switch_wireless"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_kdi2o9m6",
+      "pid": "TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_kdi2o9m6",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_kdi2o9m6",
+      "pid": "TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_ew31dmgx",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor_hybrid"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_wamqdr3f",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_wamqdr3f",
+      "pid": "TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_wamqdr3f",
+      "pid": "TSO121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_energy_monitor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_cayepv1a",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_cayepv1a",
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_cayepv1a",
+      "pid": "TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_cayepv1a",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_lepzuhto",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_lepzuhto",
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_lepzuhto",
+      "pid": "TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_lepzuhto",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_qystbcjg",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_qystbcjg",
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_qystbcjg",
+      "pid": "TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_qystbcjg",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_g5xawfcq",
+      "pid": "TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_g5xawfcq",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_g5xawfcq",
+      "pid": "TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_rdtixbnu",
+      "pid": "TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_rdtixbnu",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_rdtixbnu",
+      "pid": "TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_cphmq0q7",
+      "pid": "TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_cphmq0q7",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_cphmq0q7",
+      "pid": "TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_w0qqde0g",
+      "pid": "TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_w0qqde0g",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_w0qqde0g",
+      "pid": "TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_typdpdpg",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "usb_outlet_advanced"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_1obwwnmq",
+      "pid": "TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_1obwwnmq",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_1obwwnmq",
+      "pid": "TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_vzopcetz",
+      "pid": "TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_vzopcetz",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_vzopcetz",
+      "pid": "TS0121",
+      "drivers": [
+        "button_wireless_2",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_ji4araar",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_ji4araar",
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_ji4araar",
+      "pid": "TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_ji4araar",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_qmi1cfuq",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_qmi1cfuq",
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_qmi1cfuq",
+      "pid": "TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_qmi1cfuq",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_tqlv4ug4",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_tqlv4ug4",
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_tqlv4ug4",
+      "pid": "TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_tqlv4ug4",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_prits6g4",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_prits6g4",
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_prits6g4",
+      "pid": "TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_prits6g4",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fisb3ajo",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fisb3ajo",
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fisb3ajo",
+      "pid": "TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_fisb3ajo",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_odzoiovu",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_odzoiovu",
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_odzoiovu",
+      "pid": "TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_odzoiovu",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_lvhy15ix",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_lvhy15ix",
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_lvhy15ix",
+      "pid": "TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_lvhy15ix",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_4o16jdca",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_4o16jdca",
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_4o16jdca",
+      "pid": "TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_4o16jdca",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_tvuarksa",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_tvuarksa",
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_tvuarksa",
+      "pid": "TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_tvuarksa",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS0011",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_dfgbtub0",
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "switch_1gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_w8jwkczz",
+      "pid": "TS0043",
+      "drivers": [
+        "button_wireless_2",
+        "wall_remote_3_gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_D3M9V8P6",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_fingerbot_hybrid",
+        "fingerbot"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_D3M9V8P6",
+      "pid": "TS0001_FINGERBOT",
+      "drivers": [
+        "button_wireless_fingerbot_hybrid",
+        "fingerbot"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_PWJ6VUJ9",
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_fingerbot_hybrid",
+        "fingerbot"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_PWJ6VUJ9",
+      "pid": "TS0001_FINGERBOT",
+      "drivers": [
+        "button_wireless_fingerbot_hybrid",
+        "fingerbot"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE284_rqcuwlsa",
+      "pid": "TS0601",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE284_rqcuwlsa",
+      "pid": "ZG-303Z",
+      "drivers": [
+        "climate_sensor",
+        "soil_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_tgvtvdoc",
+      "pid": "Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_tgvtvdoc",
+      "pid": "TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3210_tgvtvdoc",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_t6jriawg",
+      "pid": "Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_t6jriawg",
+      "pid": "TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_t6jriawg",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_kyb656no",
+      "pid": "Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_kyb656no",
+      "pid": "TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_kyb656no",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_0s9gukzt",
+      "pid": "Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_0s9gukzt",
+      "pid": "TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_0s9gukzt",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_kstbkt6a",
+      "pid": "Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_kstbkt6a",
+      "pid": "TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_kstbkt6a",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_mugyhz0q",
+      "pid": "Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_mugyhz0q",
+      "pid": "TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_mugyhz0q",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_upgcbody",
+      "pid": "Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_upgcbody",
+      "pid": "TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_upgcbody",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_k4ej3ww2",
+      "pid": "Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_k4ej3ww2",
+      "pid": "TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_k4ej3ww2",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_ocjlo4ea",
+      "pid": "Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_ocjlo4ea",
+      "pid": "TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_ocjlo4ea",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_awvmkayh",
+      "pid": "Q9MPFHW",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_awvmkayh",
+      "pid": "TS0207",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_awvmkayh",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "water_leak_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_m0vaazab",
+      "pid": "EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_m0vaazab",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_5k5vh43t",
+      "pid": "EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_5k5vh43t",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_ufttklsz",
+      "pid": "EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_ufttklsz",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_gszjt2xx",
+      "pid": "EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_gszjt2xx",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_nkkl7uzv",
+      "pid": "EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_nkkl7uzv",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_nlsszmzl",
+      "pid": "EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_nlsszmzl",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_misw04hq",
+      "pid": "EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_misw04hq",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_wlquqiiz",
+      "pid": "EXCELLUX",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_wlquqiiz",
+      "pid": "TS0601",
+      "drivers": [
+        "contact_sensor",
+        "motion_sensor"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_pnzfdr9y",
+      "pid": "TS0049",
+      "drivers": [
+        "device_plug_smart_hybrid",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_pnzfdr9y",
+      "pid": "TS0101",
+      "drivers": [
+        "device_plug_smart_hybrid",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_br3laukf",
+      "pid": "TS0049",
+      "drivers": [
+        "device_plug_smart_hybrid",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_br3laukf",
+      "pid": "TS0101",
+      "drivers": [
+        "device_plug_smart_hybrid",
+        "plug_smart"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_2aaelwxk",
+      "pid": "TS0225",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE200_2aaelwxk",
+      "pid": "TS0601",
+      "drivers": [
+        "gas_sensor",
+        "presence_sensor_radar"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_mmkbptmx",
+      "pid": "TS0601",
+      "drivers": [
+        "switch_1gang",
+        "switch_4gang"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZ3000_wkr3jqmr",
+      "pid": "TS0601",
+      "drivers": [
+        "switch_4gang",
+        "switch_hybrid"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    },
+    {
+      "type": "REVIEW_NEEDED",
+      "mfr": "_TZE284_fhvpaltk",
+      "pid": "TS0601",
+      "drivers": [
+        "valve_dual_irrigation",
+        "valve_irrigation"
+      ],
+      "recommendation": "Review if drivers serve different device types or can be merged"
+    }
+  ]
+}

@@ -1,0 +1,812 @@
+{
+  "class": "socket",
+  "capabilities": [
+    "onoff",
+    "onoff.gang2",
+    "measure_power",
+    "measure_voltage",
+    "measure_current",
+    "meter_power",
+    "button.toggle_1",
+    "button.toggle_2",
+    "button.identify",
+    "measure_battery",
+    "dim"
+  ],
+  "zigbee": {
+    "productId": [],
+    "learnmode": {
+      "image": "/drivers/switch_2gang/assets/learnmode.svg",
+      "instruction": {
+        "en": "Turn the switch on/off 3 times quickly"
+      }
+    },
+    "manufacturerName": [],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          6
+        ]
+      },
+      "2": {
+        "clusters": [
+          6
+        ]
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/switch_2gang/assets/images/small.png",
+    "large": "drivers/switch_2gang/assets/images/large.png"
+  },
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Device Type Configuration",
+        "fr": "Configuration Type d'Appareil"
+      },
+      "children": [
+        {
+          "id": "device_type",
+          "type": "dropdown",
+          "label": {
+            "en": "Connected Device Type",
+            "fr": "Type d'Appareil ConnectÃ©"
+          },
+          "hint": {
+            "en": "Select the type of device connected to this module. Radiator will invert the ON/OFF logic.",
+            "fr": "SÃ©lectionnez le type d'appareil connectÃ© Ã ce module. Radiateur inversera la logique MARCHE/ARRÃŠT."
+          },
+          "value": "light",
+          "values": [
+            {
+              "id": "light",
+              "label": {
+                "en": " Ã‰clairage",
+                "fr": " Ã‰clairage"
+              }
+            },
+            {
+              "id": "outdoor_light",
+              "label": {
+                "en": " Ã‰clairage extÃ©rieur",
+                "fr": " Ã‰clairage extÃ©rieur"
+              }
+            },
+            {
+              "id": "radiator",
+              "label": {
+                "en": " Radiateur (fil pilote)",
+                "fr": " Radiateur (fil pilote)"
+              }
+            },
+            {
+              "id": "water_heater",
+              "label": {
+                "en": " Chauffe-eau / Cumulus",
+                "fr": " Chauffe-eau / Cumulus"
+              }
+            },
+            {
+              "id": "boiler",
+              "label": {
+                "en": " ChaudiÃ¨re",
+                "fr": " ChaudiÃ¨re"
+              }
+            },
+            {
+              "id": "underfloor_heating",
+              "label": {
+                "en": " Plancher chauffant",
+                "fr": " Plancher chauffant"
+              }
+            },
+            {
+              "id": "fan",
+              "label": {
+                "en": " Ventilateur / VMC",
+                "fr": " Ventilateur / VMC"
+              }
+            },
+            {
+              "id": "ac",
+              "label": {
+                "en": " Climatisation",
+                "fr": " Climatisation"
+              }
+            },
+            {
+              "id": "extractor",
+              "label": {
+                "en": " Extracteur / Hotte",
+                "fr": " Extracteur / Hotte"
+              }
+            },
+            {
+              "id": "shutter",
+              "label": {
+                "en": " Volet roulant / Store",
+                "fr": " Volet roulant / Store"
+              }
+            },
+            {
+              "id": "gate",
+              "label": {
+                "en": " Portail / Garage",
+                "fr": " Portail / Garage"
+              }
+            },
+            {
+              "id": "door_lock",
+              "label": {
+                "en": " GÃ¢che / Serrure",
+                "fr": " GÃ¢che / Serrure"
+              }
+            },
+            {
+              "id": "pump",
+              "label": {
+                "en": " Pompe",
+                "fr": " Pompe"
+              }
+            },
+            {
+              "id": "irrigation",
+              "label": {
+                "en": " Arrosage",
+                "fr": " Arrosage"
+              }
+            },
+            {
+              "id": "pool",
+              "label": {
+                "en": " Ã‰quipement piscine",
+                "fr": " Ã‰quipement piscine"
+              }
+            },
+            {
+              "id": "socket",
+              "label": {
+                "en": " Prise commandÃ©e",
+                "fr": " Prise commandÃ©e"
+              }
+            },
+            {
+              "id": "appliance",
+              "label": {
+                "en": " Ã‰lectromÃ©nager",
+                "fr": " Ã‰lectromÃ©nager"
+              }
+            },
+            {
+              "id": "coffee_machine",
+              "label": {
+                "en": " Machine Ã cafÃ©",
+                "fr": " Machine Ã cafÃ©"
+              }
+            },
+            {
+              "id": "alarm",
+              "label": {
+                "en": " Alarme / SirÃ¨ne",
+                "fr": " Alarme / SirÃ¨ne"
+              }
+            },
+            {
+              "id": "camera",
+              "label": {
+                "en": " CamÃ©ra",
+                "fr": " CamÃ©ra"
+              }
+            },
+            {
+              "id": "tv",
+              "label": {
+                "en": " TV / Ã‰cran",
+                "fr": " TV / Ã‰cran"
+              }
+            },
+            {
+              "id": "audio",
+              "label": {
+                "en": " Audio / Hifi",
+                "fr": " Audio / Hifi"
+              }
+            },
+            {
+              "id": "fountain",
+              "label": {
+                "en": " Fontaine",
+                "fr": " Fontaine"
+              }
+            },
+            {
+              "id": "CR2450",
+              "label": {
+                "en": " Autre appareil",
+                "fr": " Autre appareil"
+              }
+            }
+          ]
+        },
+        {
+          "id": "invert_logic_manual",
+          "type": "checkbox",
+          "label": {
+            "en": "Manual Logic Inversion",
+            "fr": "Inversion Logique Manuelle"
+          },
+          "hint": {
+            "en": "Force invert ON/OFF logic regardless of device type (advanced users only)",
+            "fr": "Forcer l'inversion de la logique MARCHE/ARRÃŠT indÃ©pendamment du type (utilisateurs avancÃ©s uniquement)"
+          },
+          "value": false
+        }
+      ]
+    },
+    {
+      "id": "power_source",
+      "type": "dropdown",
+      "label": {
+        "en": "Power Source",
+        "fr": "Source d'Alimentation"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "DÃ©tection Automatique"
+          }
+        },
+        {
+          "id": "ac",
+          "label": {
+            "en": "AC Powered",
+            "fr": "Alimentation Secteur"
+          }
+        },
+        {
+          "id": "dc",
+          "label": {
+            "en": "DC Powered",
+            "fr": "Alimentation DC"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery Powered",
+            "fr": "Sur Batterie"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select power source manually or use auto-detection",
+        "fr": "SÃ©lectionnez la source d'alimentation manuellement ou utilisez la dÃ©tection automatique"
+      }
+    },
+    {
+      "id": "battery_type",
+      "type": "dropdown",
+      "label": {
+        "en": "Battery Type",
+        "fr": "Type de Batterie"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto Detect",
+            "fr": "DÃ©tection Automatique"
+          }
+        },
+        {
+          "id": "CR2032",
+          "label": {
+            "en": "CR2032",
+            "fr": "CR2032 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "CR2450",
+          "label": {
+            "en": "CR2450",
+            "fr": "CR2450 (Pile Bouton 3V)"
+          }
+        },
+        {
+          "id": "AAA",
+          "label": {
+            "en": "AAA",
+            "fr": "AAA"
+          }
+        },
+        {
+          "id": "AA",
+          "label": {
+            "en": "AA",
+            "fr": "AA"
+          }
+        },
+        {
+          "id": "CR123A",
+          "label": {
+            "en": "CR123A",
+            "fr": "CR123A"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Select battery type manually or use auto-detection based on voltage",
+        "fr": "SÃ©lectionnez le type de batterie manuellement ou utilisez la dÃ©tection automatique basÃ©e sur la tension"
+      }
+    },
+    {
+      "id": "battery_low_threshold",
+      "type": "number",
+      "label": {
+        "en": "Low Battery Threshold",
+        "fr": "Seuil Batterie Faible (%)"
+      },
+      "value": 20,
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "hint": {
+        "en": "Trigger low battery warning when below this percentage",
+        "fr": "DÃ©clencher l'alerte batterie faible en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "battery_critical_threshold",
+      "type": "number",
+      "label": {
+        "en": "Critical Battery Threshold",
+        "fr": "Seuil Batterie Critique (%)"
+      },
+      "value": 10,
+      "min": 0,
+      "max": 30,
+      "step": 5,
+      "hint": {
+        "en": "Trigger critical battery warning when below this percentage",
+        "fr": "DÃ©clencher l'alerte batterie critique en dessous de ce pourcentage"
+      }
+    },
+    {
+      "id": "enable_battery_notifications",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Battery Notifications",
+        "fr": "Activer Notifications Batterie"
+      },
+      "value": true,
+      "hint": {
+        "en": "Send flow notifications for battery events",
+        "fr": "Envoyer des notifications de flow pour les Ã©vÃ©nements de batterie"
+      }
+    },
+    {
+      "id": "battery_report_interval",
+      "type": "number",
+      "label": {
+        "en": "Battery Report Interval",
+        "fr": "Intervalle Rapport Batterie (heures)"
+      },
+      "value": 24,
+      "min": 1,
+      "max": 168,
+      "step": 1,
+      "hint": {
+        "en": "How often to request battery status updates",
+        "fr": "FrÃ©quence de demande des mises Ã jour d'Ã©tat de batterie"
+      }
+    },
+    {
+      "id": "optimization_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Energy Optimization Mode",
+        "fr": "Mode Optimisation Ã‰nergÃ©tique"
+      },
+      "value": "balanced",
+      "values": [
+        {
+          "id": "performance",
+          "label": {
+            "en": "Performance (More responsive)",
+            "fr": "Performance (Plus rÃ©actif)"
+          }
+        },
+        {
+          "id": "balanced",
+          "label": {
+            "en": "Balanced",
+            "fr": "Ã‰quilibrÃ©"
+          }
+        },
+        {
+          "id": "power_saving",
+          "label": {
+            "en": "Power Saving (Longer battery)",
+            "fr": "Ã‰conomie d'Ã©nergie (Batterie plus longue)"
+          }
+        }
+      ],
+      "hint": {
+        "en": "Balance between responsiveness and battery life",
+        "fr": "Ã‰quilibre entre rÃ©activitÃ© et durÃ©e de vie de la batterie"
+      }
+    },
+    {
+      "id": "show_voltage",
+      "type": "checkbox",
+      "label": {
+        "en": "Show Battery Voltage",
+        "fr": "Afficher Tension Batterie"
+      },
+      "value": false,
+      "hint": {
+        "en": "Display raw battery voltage in device settings",
+        "fr": "Afficher la tension brute de la batterie dans les paramÃ¨tres du pÃ©riphÃ©rique"
+      }
+    },
+    {
+      "id": "power_on_behavior",
+      "type": "dropdown",
+      "label": {
+        "en": "Power-On Behavior",
+        "nl": "Gedrag bij inschakelen",
+        "de": "Einschaltverhalten",
+        "fr": "Comportement Ã la mise sous tension"
+      },
+      "hint": {
+        "en": "What happens when power is restored after an outage (DP14)",
+        "nl": "Wat er gebeurt als de stroom terugkeert na een stroomstoring"
+      },
+      "value": "memory",
+      "values": [
+        {
+          "id": "off",
+          "label": {
+            "en": "Always Off",
+            "nl": "Altijd Uit"
+          }
+        },
+        {
+          "id": "on",
+          "label": {
+            "en": "Always On",
+            "nl": "Altijd Aan"
+          }
+        },
+        {
+          "id": "memory",
+          "label": {
+            "en": "Last State",
+            "nl": "Laatste status"
+          }
+        }
+      ]
+    },
+    {
+      "id": "enable_power_estimation",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Power Estimation",
+        "fr": "Activer Estimation Puissance"
+      },
+      "value": true,
+      "hint": {
+        "en": "Estimate power consumption when real measurement is not available (AC/DC devices only)",
+        "fr": "Estimer la consommation quand la mesure rÃ©elle n'est pas disponible (appareils AC/DC seulement)"
+      }
+    },
+    {
+      "id": "scene_mode",
+      "type": "dropdown",
+      "label": {
+        "en": "Scene Mode",
+        "fr": "Mode Scene"
+      },
+      "hint": {
+        "en": "Auto=normal+triggers, Magic=scene-only, Both=load+scene"
+      },
+      "value": "auto",
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto (Normal + flows)"
+          }
+        },
+        {
+          "id": "magic",
+          "label": {
+            "en": "Magic (Scene only)"
+          }
+        },
+        {
+          "id": "both",
+          "label": {
+            "en": "Both (Load + scene)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "enable_radio_sensing",
+      "type": "checkbox",
+      "label": {
+        "en": "Enable Radio Presence Sensing",
+        "fr": "Activer la DÃ©tection de PrÃ©sence Radio"
+      },
+      "value": false,
+      "hint": {
+        "en": "Infer presence from Zigbee signal fluctuations (BETA)",
+        "fr": "DÃ©duit la prÃ©sence des fluctuations du signal Zigbee (BETA)"
+      }
+    },
+    {
+      "id": "radio_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radio Presence Sensitivity",
+        "fr": "SensibilitÃ© PrÃ©sence Radio"
+      },
+      "value": 15,
+      "min": 5,
+      "max": 50,
+      "hint": {
+        "en": "LQI variance threshold (higher = less sensitive)",
+        "fr": "Seuil de variance LQI (plus haut = moins sensible)"
+      }
+    },
+    {
+      "id": "enable_software_child_lock",
+      "type": "checkbox",
+      "label": {
+        "en": "Software Child Lock",
+        "fr": "SÃ©curitÃ© Enfant Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Prevents manual state changes on the device",
+        "fr": "EmpÃªche les changements d'Ã©tat manuels sur l'appareil"
+      }
+    },
+    {
+      "id": "auto_off_duration",
+      "type": "number",
+      "label": {
+        "en": "Auto-Off Timer (Minutes)",
+        "fr": "Minuterie Auto-Off (Minutes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 1440,
+      "hint": {
+        "en": "Turn off automatically after X minutes (0 = disabled)",
+        "fr": "S'Ã©teint aprÃ¨s X minutes (0 = dÃ©sactivÃ©)"
+      }
+    },
+    {
+      "id": "enable_vacation_mode",
+      "type": "checkbox",
+      "label": {
+        "en": "Vacation Mode (Presence Sim)",
+        "fr": "Mode Vacances (Simulation PrÃ©sence)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Randomly toggle device during evenings to simulate presence",
+        "fr": "Actionne l'appareil alÃ©atoirement le soir pour simuler une prÃ©sence"
+      }
+    },
+    {
+      "id": "emulated_motion_hold",
+      "type": "number",
+      "label": {
+        "en": "Emulated Motion Hold (Seconds)",
+        "fr": "Maintien Mouvement Ã‰mulÃ© (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 3600,
+      "hint": {
+        "en": "Keep motion 'ON' for X seconds after hardware clears",
+        "fr": "Garde le mouvement 'ON' pendant X secondes aprÃ¨s le reset matÃ©riel"
+      }
+    },
+    {
+      "id": "double_click_interval",
+      "type": "number",
+      "label": {
+        "en": "Double Click Interval (ms)",
+        "fr": "Intervalle Double-Clic (ms)"
+      },
+      "value": 400,
+      "min": 100,
+      "max": 1000,
+      "hint": {
+        "en": "Software emulation for single-action buttons",
+        "fr": "Ã‰mulation logicielle pour boutons Ã action unique"
+      }
+    },
+    {
+      "id": "overload_threshold",
+      "type": "number",
+      "label": {
+        "en": "Overload Protection (Watts)",
+        "fr": "Protection Surcharge (Watts)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 4000,
+      "hint": {
+        "en": "Cut power if consumption exceeds this value (0 = disabled)",
+        "fr": "Coupure si la consommation dÃ©passe cette valeur (0 = dÃ©sactivÃ©)"
+      }
+    },
+    {
+      "id": "inching_duration",
+      "type": "number",
+      "label": {
+        "en": "Inching Duration (Secs)",
+        "fr": "DurÃ©e Inching (Secondes)"
+      },
+      "value": 0,
+      "min": 0,
+      "max": 60,
+      "step": 0.1,
+      "hint": {
+        "en": "Automatically turn off after X seconds (Pulse mode)",
+        "fr": "S'Ã©teint automatiquement aprÃ¨s X secondes (mode Impulsion)"
+      }
+    },
+    {
+      "id": "enable_state_recovery",
+      "type": "checkbox",
+      "label": {
+        "en": "Software State Recovery",
+        "fr": "RÃ©cupÃ©ration d'Ã‰tat Logicielle"
+      },
+      "value": false,
+      "hint": {
+        "en": "Restore previous ON/OFF state after power failure",
+        "fr": "Restore l'Ã©tat prÃ©cÃ©dent aprÃ¨s une coupure de courant"
+      }
+    },
+    {
+      "id": "enable_soft_transitions",
+      "type": "checkbox",
+      "label": {
+        "en": "Soft transitions (Fade)",
+        "fr": "Transitions douces (Fade)"
+      },
+      "value": false,
+      "hint": {
+        "en": "Enable software-simulated smooth transitions (Lights/Dim)",
+        "fr": "Active les transitions douces simulÃ©es (LumiÃ¨res/Variateurs)"
+      }
+    },
+    {
+      "id": "maintenance_threshold",
+      "type": "number",
+      "label": {
+        "en": "Maintenance Alert Threshold",
+        "fr": "Seuil Alerte Maintenance"
+      },
+      "value": 30,
+      "min": 0,
+      "max": 100,
+      "hint": {
+        "en": "Alert if health score drops below this value",
+        "fr": "Alerte si le score de santÃ© descend sous cette valeur"
+      }
+    }
+  ],
+  "name": {
+    "en": "Dimmer Wall Switch",
+    "nl": "dimmer wandschakelaar",
+    "fr": "Interrupteur mural dimmable",
+    "de": "Hybrider Dimmer-Wandschalter",
+    "es": "Interruptor de pared regulable"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Gang 1",
+        "fr": "Gang 1"
+      }
+    },
+    "onoff.gang2": {
+      "title": {
+        "en": "Gang 2",
+        "fr": "Gang 2"
+      }
+    },
+    "button.toggle_1": {
+      "title": {
+        "en": "1"
+      }
+    },
+    "button.toggle_2": {
+      "title": {
+        "en": "2"
+      }
+    },
+    "button.identify": {
+      "title": {
+        "en": "identify"
+      }
+    }
+  },
+  "metadata": {
+    "app": {
+      "id": "com.dlnraja.tuya.zigbee",
+      "name": "Universal Tuya Zigbee",
+      "version": "4.1.3",
+      "api": {
+        "min": 3,
+        "max": 3
+      }
+    }
+  },
+  "energy": {
+    "approximation": {
+      "usageOff": 0.2,
+      "usageOn": 100
+    },
+    "batteries": [
+      "CR2450"
+    ],
+    "mains": true
+  },
+  "pair": [
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "select_driver"
+      }
+    },
+    {
+      "id": "select_driver",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "fr": "VÃ©rifier MÃJ OTA",
+        "nl": "Controleer op OTA-updates"
+      }
+    }
+  ],
+  "flow": {
+    "triggers": [],
+    "conditions": [],
+    "actions": []
+  },
+  "id": "dimmer_wall_switch"
+}

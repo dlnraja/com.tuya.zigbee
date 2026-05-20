@@ -1,0 +1,91 @@
+{
+  "triggers": [
+    {
+      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lcdtemphumidsensor_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geÃ¤ndert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geÃ¤ndert"
+      }
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lcdtemphumidsensor_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "HumiditÃ© changÃ©e",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geÃ¤ndert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "HumiditÃ© changÃ©e",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geÃ¤ndert"
+      }
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lcdtemphumidsensor_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lcdtemphumidsensor_temp_above",
+      "title": {
+        "en": "Temperature !{{is|is not}} above"
+      },
+      "titleFormatted": {
+        "en": "Temperature !{{is|is not}} above [[temperature]] Â°C"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "min": -40,
+          "max": 80,
+          "step": 0.5
+        }
+      ]
+    },
+    {
+      "id": "sensor_lcdtemphumidsensor_temphumidsensor_lcdtemphumidsensor_humidity_above",
+      "title": {
+        "en": "Humidity !{{is|is not}} above"
+      },
+      "titleFormatted": {
+        "en": "Humidity !{{is|is not}} above [[humidity]] %"
+      },
+      "args": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 1
+        }
+      ]
+    }
+  ],
+  "actions": []
+}

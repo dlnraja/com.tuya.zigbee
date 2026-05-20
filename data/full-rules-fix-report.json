@@ -1,0 +1,182 @@
+{
+  "timestamp": "2026-04-20T13:59:49.082Z",
+  "version": "7.4.7",
+  "stats": {
+    "scanned": 723,
+    "errors": 0,
+    "fixed": 0
+  },
+  "fixed": 251,
+  "warnings": [],
+  "errors": [
+    {
+      "file": "drivers\\air_purifier_contact_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 184 open, 185 close"
+      ]
+    },
+    {
+      "file": "drivers\\air_purifier_presence_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 1495 open, 1498 close"
+      ]
+    },
+    {
+      "file": "drivers\\air_purifier_sensor_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 291 open, 292 close"
+      ]
+    },
+    {
+      "file": "drivers\\climate_sensor_presence_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 1525 open, 1528 close"
+      ]
+    },
+    {
+      "file": "drivers\\contact_sensor\\device.js",
+      "errors": [
+        "Mismatched parens: 184 open, 185 close"
+      ]
+    },
+    {
+      "file": "drivers\\contact_sensor_dimmer_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 184 open, 185 close"
+      ]
+    },
+    {
+      "file": "drivers\\contact_sensor_zigbee_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 184 open, 185 close"
+      ]
+    },
+    {
+      "file": "drivers\\device_air_purifier_presence_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 1495 open, 1498 close"
+      ]
+    },
+    {
+      "file": "drivers\\fan_controller\\device.js",
+      "errors": [
+        "Mismatched parens: 125 open, 123 close"
+      ]
+    },
+    {
+      "file": "drivers\\motion_sensor_radar_mmwave\\device.js",
+      "errors": [
+        "Mismatched parens: 313 open, 314 close"
+      ]
+    },
+    {
+      "file": "drivers\\presence_sensor_radar\\device.js",
+      "errors": [
+        "Mismatched parens: 1434 open, 1437 close"
+      ]
+    },
+    {
+      "file": "drivers\\sensor_climate_motion_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 1039 open, 1045 close"
+      ]
+    },
+    {
+      "file": "drivers\\sensor_climate_presence_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 1495 open, 1498 close"
+      ]
+    },
+    {
+      "file": "drivers\\sensor_contact_motion_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 1039 open, 1045 close"
+      ]
+    },
+    {
+      "file": "drivers\\sensor_contact_presence_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 1496 open, 1499 close"
+      ]
+    },
+    {
+      "file": "drivers\\sensor_contact_rain_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 184 open, 185 close"
+      ]
+    },
+    {
+      "file": "drivers\\sensor_contact_water_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 184 open, 185 close"
+      ]
+    },
+    {
+      "file": "drivers\\sensor_contact_zigbee_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 184 open, 185 close"
+      ]
+    },
+    {
+      "file": "drivers\\sensor_gas_presence_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 1494 open, 1497 close"
+      ]
+    },
+    {
+      "file": "drivers\\sensor_motion_presence_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 1489 open, 1494 close"
+      ]
+    },
+    {
+      "file": "drivers\\sensor_motion_radar_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 291 open, 292 close"
+      ]
+    },
+    {
+      "file": "drivers\\sensor_presence_radar_hybrid\\device.js",
+      "errors": [
+        "Mismatched parens: 1421 open, 1426 close"
+      ]
+    },
+    {
+      "file": "drivers\\thermostat_4ch\\driver.js",
+      "errors": [
+        "Mismatched parens: 34 open, 33 close"
+      ]
+    },
+    {
+      "file": "drivers\\wall_switch_2gang_1way\\driver.js",
+      "errors": [
+        "Invalid escape sequences: 1"
+      ]
+    },
+    {
+      "file": "drivers\\wifi_camera\\device.js",
+      "errors": [
+        "Mismatched parens: 276 open, 275 close",
+        "Invalid escape sequences: 4"
+      ]
+    },
+    {
+      "file": "drivers\\wifi_dimmer\\device.js",
+      "errors": [
+        "Mismatched parens: 17 open, 18 close"
+      ]
+    },
+    {
+      "file": "drivers\\wifi_led_strip\\device.js",
+      "errors": [
+        "Mismatched parens: 76 open, 77 close"
+      ]
+    },
+    {
+      "file": "drivers\\wifi_light\\device.js",
+      "errors": [
+        "Mismatched parens: 77 open, 78 close"
+      ]
+    }
+  ]
+}
