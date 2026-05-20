@@ -37,7 +37,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
-| **v7.5.48** | Fix clamp ammeter incoherent watt/voltage scaling, add SONOFF wireless button... |
+| **v7.5.49** | v7.5.48: clamp_meter: corrected incoherent watt/voltage scaling using safeDiv... |
+| **v7.5.48** | Bug fix: clamp meter watt/voltage scaling corrected. New fingerprints added a... |
 | **v7.5.47** | v7.5.46: No changes. |
 | **v7.5.46** | v7.5.46 - Maintenance release. No new devices or fixes. |
 | **v7.5.45** | Bug fixes across 7 drivers including humidifier, motion_sensor_2, dimmer_dual... |
@@ -46,8 +47,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.42** | v7.5.41: Fixed battery endpoint scan handling for better battery device detec... |
 | **v7.5.41** | v7.5.41 - 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT. Battery endpo... |
 | **v7.5.40** | Bug fix: Empty battery reports on sleepy devices resolved with adaptive batte... |
-| **v7.5.39** | Updated 3202 fingerprints across 228 drivers. Added new device support and mi... |
 <!-- CHANGELOG_END -->
+
 
 
 
