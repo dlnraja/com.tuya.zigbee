@@ -427,6 +427,7 @@ jobs:
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
+        run: node .github/scripts/forum-spam-scan.js || true
       - name: Cleanup (edit-based)
         continue-on-error: true
         env:

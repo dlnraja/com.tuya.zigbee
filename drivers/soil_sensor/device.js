@@ -1,7 +1,6 @@
 'use strict';
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
-const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
 const TuyaUnifiedDevice = require('../../lib/devices/TuyaUnifiedDevice');
 const BatteryCalculator = require('../../lib/battery/BatteryCalculator');
 const { getAppVersionPrefixed } = require('../../lib/utils/AppVersion');

@@ -528,11 +528,19 @@ class IrBlasterDevice extends ZigBeeDevice {
           this.log('IR stop learn command sent via ZosungIRControl cluster');
         } catch (clusterErr) {
           this.log('ZosungIRControl.IRLearn stop failed:', clusterErr.message);
-          await zclNode.endpoints[1].clusters.onOff?.setOff();
+          try {
+            await zclNode.endpoints[1].clusters.onOff?.setOff();
+          } catch (e) {
+            this.log('Fallback OnOff setOff also failed:', e.message);
+          }
         }
       } else {
         // Fallback: use OnOff cluster
-        await zclNode.endpoints[1].clusters.onOff?.setOff();
+        try {
+          await zclNode.endpoints[1].clusters.onOff?.setOff();
+        } catch (e) {
+          this.log('Fallback OnOff setOff failed:', e.message);
+        }
       }
 
       this.setCapabilityValue('onoff', false).catch(() => { });
