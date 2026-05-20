@@ -1,4 +1,7 @@
 {
+  "7.5.49": {
+    "en": "New driver: presence sensor microwave (pir_mmwave_sensor). New fingerprints via Phoenix Sovereign v8.1.0. SONOFF case variations in button_wireless. Power clamp meter watt tracking improved. Flow card cleanup per PR#120."
+  },
   "7.5.48": {
     "en": "Bug fix: clamp meter watt/voltage scaling corrected. New fingerprints added across multiple drivers. Flow repair tool integrated for device/flow replacement."
   },
@@ -56,10 +59,7 @@
   "7.5.29": {
     "en": "Bug fixes and improvements for Tuya Zigbee devices. Added support for new soil sensor fingerprint. Updated diagnostics and security."
   },
-  "7.5.28": {
-    "en": "Added 3,208 new fingerprints, improved driver matching for soil sensors, and fixed various device initialization issues."
-  },
-  "7.5.49": {
-    "en": "v7.5.48: clamp_meter: corrected incoherent watt/voltage scaling using safeDivide instead of safeMultiply, Integrated flow repair tool for device/flow replacement (Martijn Poppen), New fingerprints added across drivers (switch, climate_sensor, soil_sensor, button_wireless, sensor_motion_presence, smart_knob_rotary, vibration_sensor), sensor_motion_presence: updated driver fingerprint configuration,"
+  "7.5.50": {
+    "en": "v7.5.49: Added `pir_mmwave_sensor` driver for microwave motion sensors (presence_sensor_radar alternative)., Phoenix Sovereign v8.1.0 fingerprint enrichment: new manufacturer/productId combinations across multiple drivers., `button_wireless`: added SONOFF and sonoff case variations to manufacturerName matching., `plug_energy_monitor`: improved watt tracking on power clamp meter devices., `generic_"
   }
 }
