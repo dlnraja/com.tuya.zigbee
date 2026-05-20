@@ -1,67 +1,23 @@
 {
-  "timestamp": "2026-05-18T07:28:46.487Z",
+  "timestamp": "2026-05-20T10:46:08.490Z",
   "totalFiles": 0,
-  "totalFixes": 243,
+  "totalFixes": 143,
   "rules": {
     "fingerprint-case": {
-      "count": 13,
+      "count": 2,
       "files": [
         {
-          "file": "drivers\\air_purifier\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+          "file": "drivers\\doorbell\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
         },
         {
-          "file": "drivers\\bulb_dimmable\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -2)"
-        },
-        {
-          "file": "drivers\\bulb_rgb\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
-        },
-        {
-          "file": "drivers\\button_emergency_sos\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
-        },
-        {
-          "file": "drivers\\button_wireless_1\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
-        },
-        {
-          "file": "drivers\\button_wireless_2\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -9)"
-        },
-        {
-          "file": "drivers\\button_wireless_plug\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 11)"
-        },
-        {
-          "file": "drivers\\climate_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -20)"
-        },
-        {
-          "file": "drivers\\contact_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -15)"
-        },
-        {
-          "file": "drivers\\fingerbot\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
-        },
-        {
-          "file": "drivers\\motion_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -13)"
-        },
-        {
-          "file": "drivers\\smoke_detector_advanced\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -2)"
-        },
-        {
-          "file": "drivers\\usb_outlet_advanced\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+          "file": "drivers\\illuminance_sensor\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 2)"
         }
       ]
     },
     "flow-card-try-catch": {
-      "count": 31,
+      "count": 33,
       "files": [
         {
           "file": "drivers\\curtain_motor\\device.js",
@@ -97,31 +53,39 @@
         },
         {
           "file": "drivers\\remote_dimmer\\device.js",
-          "detail": "Line 138: getDeviceTriggerCard without try-catch"
+          "detail": "Line 139: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_3gang\\device.js",
-          "detail": "Line 178: getDeviceTriggerCard without try-catch"
+          "file": "drivers\\sr_zs_switch\\device.js",
+          "detail": "Line 297: getDeviceTriggerCard without try-catch"
         },
         {
-          "file": "drivers\\switch_3gang\\device.js",
-          "detail": "Line 184: getDeviceTriggerCard without try-catch"
-        },
-        {
-          "file": "drivers\\wall_dimmer_1gang_1way\\device.js",
-          "detail": "Line 276: getDeviceTriggerCard without try-catch"
+          "file": "drivers\\sr_zs_switch\\device.js",
+          "detail": "Line 303: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\wall_dimmer_1gang_1way\\device.js",
-          "detail": "Line 311: getDeviceTriggerCard without try-catch"
+          "detail": "Line 277: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\wall_dimmer_1gang_1way\\device.js",
-          "detail": "Line 316: getDeviceTriggerCard without try-catch"
+          "detail": "Line 312: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\wall_dimmer_1gang_1way\\device.js",
+          "detail": "Line 317: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\wall_remote_4_gang_2\\device.js",
           "detail": "Line 15: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\water_valve_garden\\device.js",
+          "detail": "Line 50: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\water_valve_smart\\device.js",
+          "detail": "Line 90: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\ButtonRemoteManager.js",
@@ -145,7 +109,7 @@
         },
         {
           "file": "lib\\devices\\ButtonDevice.js",
-          "detail": "Line 1783: getDeviceTriggerCard without try-catch"
+          "detail": "Line 1789: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\devices\\UnifiedSensorBase.js",
@@ -173,7 +137,7 @@
         },
         {
           "file": "lib\\mixins\\PhysicalButtonMixin.js",
-          "detail": "Line 869: getDeviceTriggerCard without try-catch"
+          "detail": "Line 541: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\SDK3BestPractices.js",
@@ -186,6 +150,15 @@
         {
           "file": "lib\\TuyaUniversalBridge.js",
           "detail": "Line 182: getDeviceTriggerCard without try-catch"
+        }
+      ]
+    },
+    "multigang-flow-routing": {
+      "count": 1,
+      "files": [
+        {
+          "file": "drivers\\sr_zs_switch\\device.js",
+          "detail": "2 raw ZCL calls in flow handlers — should use triggerCapabilityListener"
         }
       ]
     },
@@ -259,7 +232,7 @@
         },
         {
           "file": "drivers\\power_clamp_meter\\device.js",
-          "detail": "Line 181: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 182: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "drivers\\radiator_valve\\device.js",
@@ -388,575 +361,187 @@
       ]
     },
     "duplicate-fingerprints": {
-      "count": 151,
+      "count": 59,
       "files": [
         {
           "file": "drivers",
-          "detail": "_tz3000_tzvbimpq|ts0002 found in: button_wireless_2, switch_2gang"
+          "detail": "sonoff|snzb-01 found in: button_wireless, button_wireless_1"
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_tzvbimpq|ts0012 found in: button_wireless_2, switch_2gang"
+          "detail": "sonoff|snzb-01p found in: button_wireless, button_wireless_1"
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_tzvbimpq|ts0003 found in: button_wireless_2, switch_2gang"
+          "detail": "sonoff|snzb-01m found in: button_wireless, button_wireless_4"
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_tzvbimpq|ts0013 found in: button_wireless_2, switch_2gang"
+          "detail": "_tz3000_ww6drja5ts011f|ts0601 found in: climate_sensor, plug_energy_monitor"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_zsl6z0pw|ts0002 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_01fvxamo|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_zsl6z0pw|ts0012 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_01fvxamo|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_zsl6z0pw|ts0003 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_0u3bj3rc|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_zsl6z0pw|ts0013 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_0u3bj3rc|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_digziiav|ts0002 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_1drr8tab|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_digziiav|ts0012 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_1drr8tab|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_digziiav|ts0003 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_2vfxweng|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_digziiav|ts0013 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_2vfxweng|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_ymcdbl3u|ts0002 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_3ejwxpmu|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_ymcdbl3u|ts0012 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_3ejwxpmu|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_ymcdbl3u|ts0003 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_3xfjp0ag|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_ymcdbl3u|ts0013 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_3xfjp0ag|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_4tlksk8a|ts0002 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_44af8vyi|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_4tlksk8a|ts0012 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_44af8vyi|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_4tlksk8a|ts0003 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_4eeyebrt|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_4tlksk8a|ts0013 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_4eeyebrt|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_xfpdrwvc|ts0002 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_5d3vhjro|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_xfpdrwvc|ts0012 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_5d3vhjro|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_xfpdrwvc|ts0003 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_6wi2mope|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_xfpdrwvc|ts0013 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_6wi2mope|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_qeqvmvti|ts0002 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_78ioiaml|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_qeqvmvti|ts0012 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_78ioiaml|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_qeqvmvti|ts0003 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_7deq70b8|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_qeqvmvti|ts0013 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_7deq70b8|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_seqwasot|ts0002 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_7fqkphoq|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_seqwasot|ts0012 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_7fqkphoq|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_seqwasot|ts0003 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_86nbew0j|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_seqwasot|ts0013 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_86nbew0j|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_phjeraqq|ts0003 found in: button_wireless_2, fingerbot"
+          "detail": "_tze200_8eazvzo6|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_ncutbjdi|ts0002 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_8eazvzo6|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_ncutbjdi|ts0012 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_8ply8mjj|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_ncutbjdi|ts0003 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_8ply8mjj|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_ncutbjdi|ts0013 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_8thwkzxl|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_aneiicmq|ts0002 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_8thwkzxl|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_aneiicmq|ts0012 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_9yapgbuv|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_aneiicmq|ts0003 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_9yapgbuv|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_aneiicmq|ts0013 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_a8z0g46u|snzb-02 found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_hlla45kx|ts0002 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_a8z0g46u|snzb-02p found in: climate_sensor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_hlla45kx|ts0012 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_9p5xmj5r|ts0105 found in: curtain_motor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_hlla45kx|ts0003 found in: button_wireless_2, button_wireless_plug"
+          "detail": "_tze200_2imwyigp|ts0105 found in: curtain_motor, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "_tyzb01_hlla45kx|ts0013 found in: button_wireless_2, button_wireless_plug"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_iuepbmpv|ts0002 found in: button_wireless_2, button_wireless_plug"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_iuepbmpv|ts0012 found in: button_wireless_2, button_wireless_plug"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_iuepbmpv|ts0003 found in: button_wireless_2, button_wireless_plug"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_iuepbmpv|ts0013 found in: button_wireless_2, button_wireless_plug"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_bagt1e4o|ts0044 found in: button_wireless_2, button_wireless_4"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_bagt1e4o|ts0014 found in: button_wireless_2, button_wireless_4"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_famkxci2|ts0043 found in: button_wireless_3, scene_switch_3"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-g3gl6cgy|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-g3gl6cgy|ts0601 found in: climate_sensor, contact_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-g3gl6cgy|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-g3gl6cgy|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-g3gl6cgy|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-g3gl6cgy|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-bfq2i2sy|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-bfq2i2sy|ts0601 found in: climate_sensor, contact_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-bfq2i2sy|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-bfq2i2sy|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-bfq2i2sy|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-bfq2i2sy|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-abkehqus|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-abkehqus|ts0601 found in: climate_sensor, contact_sensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-abkehqus|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-abkehqus|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-abkehqus|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-abkehqus|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_ftdkanlj|ts0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_ftdkanlj|ts0601 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_ftdkanlj|ty0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_kvwjujy9|ts0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_kvwjujy9|ts0601 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_kvwjujy9|ty0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_a476raq2|ts0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_a476raq2|ts0601 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_a476raq2|ty0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_hjsgdkfl|ts0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_hjsgdkfl|ts0601 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tyzb01_hjsgdkfl|ty0201 found in: climate_sensor, lcdtemphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-yg5dcbfu|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-yg5dcbfu|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-yg5dcbfu|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-yg5dcbfu|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-yg5dcbfu|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-prhs1rsd|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-prhs1rsd|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-prhs1rsd|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-prhs1rsd|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-prhs1rsd|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-gqhxixyk|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-gqhxixyk|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-gqhxixyk|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-gqhxixyk|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-gqhxixyk|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-vmgh3fxd|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-vmgh3fxd|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-vmgh3fxd|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-vmgh3fxd|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-vmgh3fxd|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikg|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikg|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikg|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikg|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikg|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikq|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikq|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikq|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikq|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-ojmxeikq|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1g3tawnp|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1g3tawnp|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1g3tawnp|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1g3tawnp|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1g3tawnp|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-v3uxbuxy|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-v3uxbuxy|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-v3uxbuxy|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-v3uxbuxy|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-v3uxbuxy|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-riuj5xzs|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-riuj5xzs|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-riuj5xzs|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-riuj5xzs|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-riuj5xzs|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1uxx9cci|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1uxx9cci|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1uxx9cci|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1uxx9cci|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-1uxx9cci|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-haoiuwzy|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-haoiuwzy|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-haoiuwzy|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-haoiuwzy|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-haoiuwzy|rh3052 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-qun7vq14|ts0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-qun7vq14|zg-227z found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-qun7vq14|ck-tlsr8656-ss5-01(7014) found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-qun7vq14|ty0201 found in: climate_sensor, temphumidsensor"
-        },
-        {
-          "file": "drivers",
-          "detail": "tuyatec-qun7vq14|rh3052 found in: climate_sensor, temphumidsensor"
+          "detail": "_tze200_a8sdabtg|ts0105 found in: curtain_motor, generic_diy"
         },
         {
           "file": "drivers",
@@ -964,35 +549,55 @@
         },
         {
           "file": "drivers",
-          "detail": "hobeian|ts0203 found in: presence_sensor_radar, sensor_presence_radar"
+          "detail": "_tze200_1agwnems|ts0052 found in: dimmer_wall_1gang, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "hobeian|ts0601 found in: presence_sensor_radar, sensor_presence_radar"
+          "detail": "_tze200_3p5ydos3|ts0052 found in: dimmer_wall_1gang, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "hobeian|zg-204zl found in: presence_sensor_radar, sensor_presence_radar"
+          "detail": "_tze200_579lguh2|ts0052 found in: dimmer_wall_1gang, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "hobeian|zg-204zm found in: presence_sensor_radar, sensor_presence_radar"
+          "detail": "_tze200_9i9dt8is|ts0052 found in: dimmer_wall_1gang, generic_diy"
         },
         {
           "file": "drivers",
-          "detail": "hobeian|zg-204zv found in: presence_sensor_radar, sensor_presence_radar"
+          "detail": "_tze200_0hg58wyk|etrv0100 found in: generic_diy, radiator_valve"
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_w8jwkczz|ts0043 found in: scene_switch_3, scene_switch_wall"
+          "detail": "_tze200_0j5jma9b|etrv0100 found in: generic_diy, radiator_valve"
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_c7xsiexw|ts0001 found in: switch_1gang, wall_switch_1gang_1way"
+          "detail": "_tze200_2aaelwxk|snzb-06p found in: generic_diy, presence_sensor_radar"
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_c7xsiexw|ts0011 found in: switch_1gang, wall_switch_1gang_1way"
+          "detail": "_tze200_hl0ss9oa|ts0225 found in: illuminance_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_y8jijhba|ts0601 found in: pir_mmwave_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3002_vaq2bfcu|ts0726 found in: sr_zs_switch, wall_switch_4gang_1way"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_itgngnqz|ts0601 found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_itgngnqz|ts011f found in: switch_1gang, switch_2gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_itgngnqz|ts0726 found in: switch_1gang, switch_2gang"
         }
       ]
     },
