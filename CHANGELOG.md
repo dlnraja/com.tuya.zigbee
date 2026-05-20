@@ -4,7 +4,23 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.48] - 2026-05-19
+## [7.5.49] - 2026-05-20
+
+### New Features
+- Added `pir_mmwave_sensor` driver for microwave motion sensors (presence_sensor_radar alternative).
+- Phoenix Sovereign v8.1.0 fingerprint enrichment: new manufacturer/productId combinations across multiple drivers.
+
+### Improvements
+- `button_wireless`: added SONOFF and sonoff case variations to manufacturerName matching.
+- `plug_energy_monitor`: improved watt tracking on power clamp meter devices.
+- `generic_diy`: expanded driver configuration with additional device profiles.
+- Removed titleFormatted from flow cards across bulb_white, ceiling_fan, climate_sensor, contact_sensor, curtain_motor, doorbell — PR#120 compliance.
+
+### Bug Fixes
+- `contact_sensor`: corrected manufacturerName casing in driver.compose.json.
+---
+
+ [7.5.48] - 2026-05-19
 
 ### Bug Fixes
 - clamp_meter: corrected incoherent watt/voltage scaling using safeDivide instead of safeMultiply
