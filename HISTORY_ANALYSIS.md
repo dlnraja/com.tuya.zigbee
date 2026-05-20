@@ -1,5 +1,5 @@
 # 📊 Historical Analysis - Tuya Unified Zigbee
-Generated: 2026-05-18T07:15:56.117Z | Version: v5.11.212+
+Generated: 2026-05-20T10:39:36.316Z | Version: v5.11.212+
 
 ## 🔄 Evolution Timeline
 ```
@@ -31,26 +31,26 @@ v5.11.212 (2026-05-08) → Phase 0-1 complete, context preservation, drivers
 | True collisions | 54,373 | 0 |
 
 ## 🔍 Recent Commits
-- 63d38d050 feat: sync from Johan Benz upstream (Enhanced AI) [skip ci]
-- f99b86794 Update ZERO_DEFECT_AUDIT.json after push audit [skip ci]
-- 96e390e75 v7.5.41: Battery endpoint scan fix, ARCHITECTURE_AI.md integration, kinetic detection improvement [skip ci]
-- 45cd569e9 v7.5.41: 228 drivers, 3202 FPs [skip ci]
-- 626141ad8 feat(battery/workflow): implement greedy adaptive battery listeners & ZCL/IAS fallbacks to solve empty battery reports, integrate deep-crossref-scraper into nightly workflow
-- 317ed35a6 chore: increase stable publishing timeout to 15 minutes for robust fleet packaging
-- e241471b6 v7.5.40: 228 drivers, 3202 FPs [skip ci]
-- 3765a15a0 Changelog sync v7.5.39: updated README with latest release notes [skip ci]
-- d846536b5 Merge master into stable-v5: pull in complete syntax fixes, debounce, and wakeup recovery
-- 8b31f6e0d WIP on stable-v5: 545f7f58c chore: refine publish-stable script to use precise context-specific prompt handlers
-- 6f2f5dbef index on stable-v5: 545f7f58c chore: refine publish-stable script to use precise context-specific prompt handlers
-- efcbdd5b4 untracked files on stable-v5: 545f7f58c chore: refine publish-stable script to use precise context-specific prompt handlers
-- f9e5c9cb1 chore: integrate debounce engine, recovery helper, secure workflows, and smart precommit checks
-- eda0507c5 Changelog sync v7.5.39: updated README with latest release notes [skip ci]
-- 8a21e2aa1 chore(diag): update fleet diagnostics [skip ci]
-- 1ac3e6cdd docs: add AI_CONTEXT_MANDATE.md and update AI rules for unified session context [skip ci]
-- bb38ff5c0 chore(diag): update fleet diagnostics [skip ci]
-- 545f7f58c chore: refine publish-stable script to use precise context-specific prompt handlers
-- f95d540d3 fix: remove duplicate curtain_motor_stop action and regenerate root app images with correct aspect ratios
-- 60d77972a v7.5.39: 228 drivers, 3202 FPs [skip ci]
+- 23cff3b42 Removed titleFormatted from flow cards - PR#120 compliance [skip ci]
+- 63d13fffa fix(button_wireless): add SONOFF and sonoff case variations to manufacturerName (#198) [skip ci]
+- 938d7ff8b Power clamp meter - improved watt tracking + GitHub automation [skip ci]
+- 00267f7ca v7.5.49: 228 drivers, 3260 FPs [skip ci]
+- cf2fba61d Changelog sync v7.5.48: updated README with latest release notes [skip ci]
+- 68a58eaf3 chore(changelog): update changelog for 7.5.48
+- 74f6c6cf7 bump(version): 7.5.48
+- 8d75ce659 feat(flow_repair): integrate Martijn Poppen device/flow replacement tool and update fingerprints
+- d27302a0b fix(clamp_meter): correct incoherent watt/voltage scaling using safeDivide instead of safeMultiply
+- bc2e791ce Changelog sync v7.5.47: updated README with latest release notes [skip ci]
+- d7d65b5d9 feat: sync from Johan Benz upstream (Enhanced AI) [skip ci]
+- 7d544be49 v7.5.47: 228 drivers, 3261 FPs [skip ci]
+- 02e272ea3 chore: update ZERO_DEFECT_AUDIT report
+- 2cceae7e2 v7.5.46: 228 drivers, 3261 FPs [skip ci]
+- 6ca1800d3 fix: resolve remaining 7 driver and script bugs and pass publish level validation
+- d5d251511 v7.5.45: 228 drivers, 3261 FPs [skip ci]
+- ee8c0a087 fix(#312): Correct 4 critical runtime errors
+- 05070e491 fix: resolve 4 critical runtime errors (Issue #312)
+- ade8ce340 v7.5.44: 228 drivers, 3261 FPs [skip ci]
+- 9af55ccf7 Changelog sync v7.5.43: updated README with latest release notes [skip ci]
 
 ## 📂 Branches
 - #1139-add_TZ3000_o4mkahkc
@@ -59,15 +59,15 @@ v5.11.212 (2026-05-08) → Phase 0-1 complete, context preservation, drivers
 - auto-sync-johan-enhanced
 - feature/accept-upstream-prs
 - fix/motion_sensor_2
-- * master
+- + master
+- * merge-branches-project-context
 - moes_6_gang
 - new_device_issue_1059_rgb_led_strip_controller
 - patch-1
 - pr-1137
+- pr-321
 - sinan92/SDK3
 - stable-v5
-- remotes/origin/HEAD -> origin/master
-- remotes/origin/auto-sync-johan-enhanced
 
 ## ✅ Validation Status
 - lint-collisions.js: 0 collisions, 0 critical

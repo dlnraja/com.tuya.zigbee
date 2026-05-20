@@ -18894,6 +18894,137 @@
         ]
       },
       {
+        "id": "switch_state_changed",
+        "title": {
+          "en": "Switch state changed",
+          "pl": "Stan przełącznika zmienił się"
+        },
+        "titleFormatted": {
+          "en": "[[switch]] was [[state]]",
+          "pl": "[[switch]] został [[state]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sr_zs_switch"
+          },
+          {
+            "name": "switch",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "Switch 1",
+                  "pl": "Przełącznik 1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "Switch 2",
+                  "pl": "Przełącznik 2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "Switch 3",
+                  "pl": "Przełącznik 3"
+                }
+              }
+            ]
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "true",
+                "title": {
+                  "en": "Turned on",
+                  "pl": "Włączony"
+                }
+              },
+              {
+                "id": "false",
+                "title": {
+                  "en": "Turned off",
+                  "pl": "Wyłączony"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "scene_triggered_configurable",
+        "title": {
+          "en": "Scene triggered",
+          "pl": "Uruchomiono scenę"
+        },
+        "titleFormatted": {
+          "en": "[[scene]] was triggered",
+          "pl": "[[scene]] została uruchomiona"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sr_zs_switch"
+          },
+          {
+            "name": "scene",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "Scene 1",
+                  "pl": "Scena 1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "Scene 2",
+                  "pl": "Scena 2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "Scene 3",
+                  "pl": "Scena 3"
+                }
+              },
+              {
+                "id": "4",
+                "title": {
+                  "en": "Scene 4",
+                  "pl": "Scena 4"
+                }
+              },
+              {
+                "id": "5",
+                "title": {
+                  "en": "Scene 5",
+                  "pl": "Scena 5"
+                }
+              },
+              {
+                "id": "6",
+                "title": {
+                  "en": "Scene 6",
+                  "pl": "Scena 6"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "switch_1gang_turned_on",
         "title": {
           "en": "Turned on",
@@ -32115,6 +32246,51 @@
         ]
       },
       {
+        "id": "switch_is",
+        "title": {
+          "en": "Switch # is !{{on|off}}",
+          "pl": "Przełącznik # jest !{{włączony|wyłączony}}"
+        },
+        "titleFormatted": {
+          "en": "[[switch]] is !{{on|off}}",
+          "pl": "[[switch]] jest !{{włączony|wyłączony}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sr_zs_switch"
+          },
+          {
+            "name": "switch",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "Switch 1",
+                  "pl": "Przełącznik 1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "Switch 2",
+                  "pl": "Przełącznik 2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "Switch 3",
+                  "pl": "Przełącznik 3"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "switch_1gang_is_on",
         "title": {
           "en": "Is !{{on|off}}",
@@ -40761,6 +40937,71 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=smoke_detector_advanced"
+          }
+        ]
+      },
+      {
+        "id": "set_switch_state",
+        "title": {
+          "en": "Set switch state",
+          "pl": "Ustaw stan przełącznika"
+        },
+        "titleFormatted": {
+          "en": "Set [[switch]] to [[state]]",
+          "pl": "Ustaw [[switch]] na [[state]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sr_zs_switch"
+          },
+          {
+            "name": "switch",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "Switch 1",
+                  "pl": "Przełącznik 1"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "Switch 2",
+                  "pl": "Przełącznik 2"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "Switch 3",
+                  "pl": "Przełącznik 3"
+                }
+              }
+            ]
+          },
+          {
+            "name": "state",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "true",
+                "title": {
+                  "en": "Turned on",
+                  "pl": "Włączony"
+                }
+              },
+              {
+                "id": "false",
+                "title": {
+                  "en": "Turned off",
+                  "pl": "Wyłączony"
+                }
+              }
+            ]
           }
         ]
       },
@@ -51099,9 +51340,8 @@
           "_tz3400_keyjhapk",
           "_TZ3400_keyjhapk",
           "_TZ3400_KEYJHAPK",
-          "Sonoff",
-          "SONOFF",
-          "sonoff"
+          "sonoff",
+          "SONOFF"
         ],
         "productId": [
           "TS0040",
@@ -55902,9 +56142,6 @@
           "_tz3000_bzzgvet0",
           "_TZ3000_bzzgvet0",
           "_TZ3000_BZZGVET0",
-          "_tz3000_c8zfad4a",
-          "_TZ3000_c8zfad4a",
-          "_TZ3000_C8ZFAD4A",
           "_tz3000_ceplrhnu",
           "_TZ3000_ceplrhnu",
           "_TZ3000_CEPLRHNU",
@@ -57824,7 +58061,9 @@
           "TUYATEC-HAOIUWZY",
           "tuyatec-qun7vq14",
           "TUYATEC-QUN7VQ14",
-          "_TZE284_qf5mzewi"
+          "_tze284_qf5mzewi",
+          "_TZE284_qf5mzewi",
+          "_TZE284_QF5MZEWI"
         ],
         "productId": [
           "TS0201",
@@ -59047,6 +59286,9 @@
           "_TZ3000_OX0IS7YV",
           "zbeacon",
           "ZBEACON",
+          "_tz3000_c8zfad4a",
+          "_TZ3000_c8zfad4a",
+          "_TZ3000_C8ZFAD4A",
           "tuyatec-3tipnsrx",
           "TUYATEC-3TIPNSRX",
           "_tyst11_qq9mpfhw",
@@ -65235,7 +65477,10 @@
           "_TZE200_2WG5RJGR",
           "_tze284_9qhgsdta",
           "_TZE284_9qhgsdta",
-          "_TZE284_9QHGSDTA"
+          "_TZE284_9QHGSDTA",
+          "_tz3210_emqmwtym",
+          "_TZ3210_emqmwtym",
+          "_TZ3210_EMQMWTYM"
         ],
         "productId": [
           "TS0211",
@@ -67486,87 +67731,249 @@
           "ZIG-A-ZIG-AH",
           "zigfred",
           "ZIGFRED",
+          "_tze284_uo8qcagc",
           "_TZE284_uo8qcagc",
+          "_TZE284_UO8QCAGC",
+          "_tz3290_ot6ewjvmejq5ekhl",
           "_TZ3290_ot6ewjvmejq5ekhl",
+          "_TZ3290_OT6EWJVMEJQ5EKHL",
+          "_tz3290_j37rooaxrcdcqo5n",
           "_TZ3290_j37rooaxrcdcqo5n",
+          "_TZ3290_J37ROOAXRCDCQO5N",
+          "_tz3002_eda6eitk",
           "_TZ3002_eda6eitk",
+          "_TZ3002_EDA6EITK",
+          "_tz3002_vsom92pp",
           "_TZ3002_vsom92pp",
+          "_TZ3002_VSOM92PP",
+          "_tz3008_reatplte",
           "_TZ3008_reatplte",
+          "_TZ3008_REATPLTE",
+          "_tz3210_2putqrmw",
           "_TZ3210_2putqrmw",
+          "_TZ3210_2PUTQRMW",
+          "_tz3210_6smingw0",
           "_TZ3210_6smingw0",
+          "_TZ3210_6SMINGW0",
+          "_tz3210_7vgttna6",
           "_TZ3210_7vgttna6",
+          "_TZ3210_7VGTTNA6",
+          "_tz3210_a04acm9s",
           "_TZ3210_a04acm9s",
+          "_TZ3210_A04ACM9S",
+          "_tz3210_cm9mbpr1",
           "_TZ3210_cm9mbpr1",
+          "_TZ3210_CM9MBPR1",
+          "_tz3210_imaccztn",
           "_TZ3210_imaccztn",
+          "_TZ3210_IMACCZTN",
+          "_tz3210_ok0ggpk7",
           "_TZ3210_ok0ggpk7",
+          "_TZ3210_OK0GGPK7",
+          "_tz3210_vbfp8eyv",
           "_TZ3210_vbfp8eyv",
+          "_TZ3210_VBFP8EYV",
+          "_tz3210_zifx0xoj",
           "_TZ3210_zifx0xoj",
+          "_TZ3210_ZIFX0XOJ",
+          "_tz3290_7v1k4vufotpowp9z",
           "_TZ3290_7v1k4vufotpowp9z",
+          "_TZ3290_7V1K4VUFOTPOWP9Z",
+          "_tze200_0hb4rdnp",
           "_TZE200_0hb4rdnp",
+          "_TZE200_0HB4RDNP",
+          "_tze200_gne0e6mk",
           "_TZE200_gne0e6mk",
+          "_TZE200_GNE0E6MK",
+          "_tze200_hbnfokum",
           "_TZE200_hbnfokum",
+          "_TZE200_HBNFOKUM",
+          "_tze200_m6lwazh9",
           "_TZE200_m6lwazh9",
+          "_TZE200_M6LWAZH9",
+          "_tze200_w0ap83qu",
           "_TZE200_w0ap83qu",
+          "_TZE200_W0AP83QU",
+          "_tze204_ai4rqhky",
           "_TZE204_ai4rqhky",
+          "_TZE204_AI4RQHKY",
+          "_tze204_cduqh1l0",
           "_TZE204_cduqh1l0",
+          "_TZE204_CDUQH1L0",
+          "_tze204_ouy7vpm1",
           "_TZE204_ouy7vpm1",
+          "_TZE204_OUY7VPM1",
+          "_tze284_3regm3h6",
           "_TZE284_3regm3h6",
+          "_TZE284_3REGM3H6",
+          "_tze284_4vbj3fxh",
           "_TZE284_4vbj3fxh",
+          "_TZE284_4VBJ3FXH",
+          "_tze284_4vobcgd3",
           "_TZE284_4vobcgd3",
+          "_TZE284_4VOBCGD3",
+          "_tze284_bw4ayyeh",
           "_TZE284_bw4ayyeh",
+          "_TZE284_BW4AYYEH",
+          "_tze284_kow4ok3t",
           "_TZE284_kow4ok3t",
+          "_TZE284_KOW4OK3T",
+          "_tze284_mul9abs3",
           "_TZE284_mul9abs3",
+          "_TZE284_MUL9ABS3",
+          "_tze284_mvtclclq",
           "_TZE284_mvtclclq",
+          "_TZE284_MVTCLCLQ",
+          "_tze284_nbv4tdaz",
           "_TZE284_nbv4tdaz",
+          "_TZE284_NBV4TDAZ",
+          "_tze284_o9ofysmo",
           "_TZE284_o9ofysmo",
+          "_TZE284_O9OFYSMO",
+          "_tze284_r731zlxk",
           "_TZE284_r731zlxk",
+          "_TZE284_R731ZLXK",
+          "_tze284_tgrzpqf4",
           "_TZE284_tgrzpqf4",
+          "_TZE284_TGRZPQF4",
+          "_tze284_xc3vwx5a",
           "_TZE284_xc3vwx5a",
-          "_TZe200_01fvxamo",
-          "_TZe200_0hg58wyk",
-          "_TZe200_0j5jma9b",
-          "_TZe200_0u3bj3rc",
-          "_TZe200_1agwnems",
-          "_TZe200_1drr8tab",
-          "_TZe200_1ibpyhdc",
-          "_TZe200_2aaelwxk",
-          "_TZe200_2atgpdho",
-          "_TZe200_2ekuz3dz",
-          "_TZe200_2hf7x9n3",
-          "_TZe200_2imwyigp",
-          "_TZe200_2m38mh6k",
-          "_TZe200_2pddnnrk",
-          "_TZe200_2se8efxh",
-          "_TZe200_2vfxweng",
-          "_TZe200_3ejwxpmu",
-          "_TZe200_3p5ydos3",
-          "_TZe200_3t91nb6k",
-          "_TZe200_3towulqd",
-          "_TZe200_3xfjp0ag",
-          "_TZe200_44af8vyi",
-          "_TZe200_4eeyebrt",
-          "_TZe200_579lguh2",
-          "_TZe200_5d3vhjro",
-          "_TZe200_6wi2mope",
-          "_TZe200_78ioiaml",
-          "_TZe200_7bztmfm1",
-          "_TZe200_7deq70b8",
-          "_TZe200_7fqkphoq",
-          "_TZe200_7sjncirf",
-          "_TZe200_86nbew0j",
-          "_TZe200_8eazvzo6",
-          "_TZe200_8ply8mjj",
-          "_TZe200_8thwkzxl",
-          "_TZe200_8whxpsiw",
-          "_TZe200_8ygsuhe1",
-          "_TZe200_9cqcpkgb",
-          "_TZe200_9i9dt8is",
-          "_TZe200_9p5xmj5r",
-          "_TZe200_9sfg7gm0",
-          "_TZe200_9yapgbuv",
-          "_TZe200_a4bpgplm",
-          "_TZe200_a8sdabtg",
-          "_TZe200_a8z0g46u"
+          "_TZE284_XC3VWX5A",
+          "_tze200_01fvxamo",
+          "_TZE200_01fvxamo",
+          "_TZE200_01FVXAMO",
+          "_tze200_0hg58wyk",
+          "_TZE200_0hg58wyk",
+          "_TZE200_0HG58WYK",
+          "_tze200_0j5jma9b",
+          "_TZE200_0j5jma9b",
+          "_TZE200_0J5JMA9B",
+          "_tze200_0u3bj3rc",
+          "_TZE200_0u3bj3rc",
+          "_TZE200_0U3BJ3RC",
+          "_tze200_1agwnems",
+          "_TZE200_1agwnems",
+          "_TZE200_1AGWNEMS",
+          "_tze200_1drr8tab",
+          "_TZE200_1drr8tab",
+          "_TZE200_1DRR8TAB",
+          "_tze200_1ibpyhdc",
+          "_TZE200_1ibpyhdc",
+          "_TZE200_1IBPYHDC",
+          "_tze200_2aaelwxk",
+          "_TZE200_2aaelwxk",
+          "_TZE200_2AAELWXK",
+          "_tze200_2atgpdho",
+          "_TZE200_2atgpdho",
+          "_TZE200_2ATGPDHO",
+          "_tze200_2ekuz3dz",
+          "_TZE200_2ekuz3dz",
+          "_TZE200_2EKUZ3DZ",
+          "_tze200_2hf7x9n3",
+          "_TZE200_2hf7x9n3",
+          "_TZE200_2HF7X9N3",
+          "_tze200_2imwyigp",
+          "_TZE200_2imwyigp",
+          "_TZE200_2IMWYIGP",
+          "_tze200_2m38mh6k",
+          "_TZE200_2m38mh6k",
+          "_TZE200_2M38MH6K",
+          "_tze200_2pddnnrk",
+          "_TZE200_2pddnnrk",
+          "_TZE200_2PDDNNRK",
+          "_tze200_2se8efxh",
+          "_TZE200_2se8efxh",
+          "_TZE200_2SE8EFXH",
+          "_tze200_2vfxweng",
+          "_TZE200_2vfxweng",
+          "_TZE200_2VFXWENG",
+          "_tze200_3ejwxpmu",
+          "_TZE200_3ejwxpmu",
+          "_TZE200_3EJWXPMU",
+          "_tze200_3p5ydos3",
+          "_TZE200_3p5ydos3",
+          "_TZE200_3P5YDOS3",
+          "_tze200_3t91nb6k",
+          "_TZE200_3t91nb6k",
+          "_TZE200_3T91NB6K",
+          "_tze200_3towulqd",
+          "_TZE200_3towulqd",
+          "_TZE200_3TOWULQD",
+          "_tze200_3xfjp0ag",
+          "_TZE200_3xfjp0ag",
+          "_TZE200_3XFJP0AG",
+          "_tze200_44af8vyi",
+          "_TZE200_44af8vyi",
+          "_TZE200_44AF8VYI",
+          "_tze200_4eeyebrt",
+          "_TZE200_4eeyebrt",
+          "_TZE200_4EEYEBRT",
+          "_tze200_579lguh2",
+          "_TZE200_579lguh2",
+          "_TZE200_579LGUH2",
+          "_tze200_5d3vhjro",
+          "_TZE200_5d3vhjro",
+          "_TZE200_5D3VHJRO",
+          "_tze200_6wi2mope",
+          "_TZE200_6wi2mope",
+          "_TZE200_6WI2MOPE",
+          "_tze200_78ioiaml",
+          "_TZE200_78ioiaml",
+          "_TZE200_78IOIAML",
+          "_tze200_7bztmfm1",
+          "_TZE200_7bztmfm1",
+          "_TZE200_7BZTMFM1",
+          "_tze200_7deq70b8",
+          "_TZE200_7deq70b8",
+          "_TZE200_7DEQ70B8",
+          "_tze200_7fqkphoq",
+          "_TZE200_7fqkphoq",
+          "_TZE200_7FQKPHOQ",
+          "_tze200_7sjncirf",
+          "_TZE200_7sjncirf",
+          "_TZE200_7SJNCIRF",
+          "_tze200_86nbew0j",
+          "_TZE200_86nbew0j",
+          "_TZE200_86NBEW0J",
+          "_tze200_8eazvzo6",
+          "_TZE200_8eazvzo6",
+          "_TZE200_8EAZVZO6",
+          "_tze200_8ply8mjj",
+          "_TZE200_8ply8mjj",
+          "_TZE200_8PLY8MJJ",
+          "_tze200_8thwkzxl",
+          "_TZE200_8thwkzxl",
+          "_TZE200_8THWKZXL",
+          "_tze200_8whxpsiw",
+          "_TZE200_8whxpsiw",
+          "_TZE200_8WHXPSIW",
+          "_tze200_8ygsuhe1",
+          "_TZE200_8ygsuhe1",
+          "_TZE200_8YGSUHE1",
+          "_tze200_9cqcpkgb",
+          "_TZE200_9cqcpkgb",
+          "_TZE200_9CQCPKGB",
+          "_tze200_9i9dt8is",
+          "_TZE200_9i9dt8is",
+          "_TZE200_9I9DT8IS",
+          "_tze200_9p5xmj5r",
+          "_TZE200_9p5xmj5r",
+          "_TZE200_9P5XMJ5R",
+          "_tze200_9sfg7gm0",
+          "_TZE200_9sfg7gm0",
+          "_TZE200_9SFG7GM0",
+          "_tze200_9yapgbuv",
+          "_TZE200_9yapgbuv",
+          "_TZE200_9YAPGBUV",
+          "_tze200_a4bpgplm",
+          "_TZE200_a4bpgplm",
+          "_TZE200_A4BPGPLM",
+          "_tze200_a8sdabtg",
+          "_TZE200_a8sdabtg",
+          "_TZE200_A8SDABTG",
+          "_tze200_a8z0g46u",
+          "_TZE200_a8z0g46u",
+          "_TZE200_A8Z0G46U"
         ],
         "productId": [
           "BUTTON",
@@ -69363,7 +69770,10 @@
           "_TZ3000_do6txrcw",
           "_TZ3000_DO6TXRCW",
           "zg-106z",
-          "ZG-106Z"
+          "ZG-106Z",
+          "_tze200_hl0ss9oa",
+          "_TZE200_hl0ss9oa",
+          "_TZE200_HL0SS9OA"
         ],
         "productId": [
           "TS0222",
@@ -74919,6 +75329,166 @@
       "id": "pet_feeder_zigbee"
     },
     {
+      "id": "pir_mmwave_sensor",
+      "name": {
+        "en": "PIR MMWave Sensor"
+      },
+      "class": "sensor",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "capabilities": [
+        "alarm_motion",
+        "measure_battery",
+        "alarm_battery",
+        "measure_luminance"
+      ],
+      "energy": {
+        "batteries": [
+          "CR2450"
+        ]
+      },
+      "images": {
+        "large": "/drivers/pir_mmwave_sensor/assets/images/large.png",
+        "small": "/drivers/pir_mmwave_sensor/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_tze200_y8jijhba",
+          "_TZE200_y8jijhba",
+          "_TZE200_Y8JIJHBA"
+        ],
+        "productId": [
+          "TS0601"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              1,
+              3,
+              1024,
+              1280,
+              61184
+            ],
+            "bindings": [
+              1,
+              1024,
+              1280,
+              61184
+            ]
+          }
+        },
+        "learnmode": {
+          "image": "/drivers/pir_mmwave_sensor/assets/icon.svg",
+          "instruction": {
+            "en": "Press the reset button for aprox 5 seconds until the LED blinks."
+          }
+        }
+      },
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Motion Settings"
+          },
+          "children": [
+            {
+              "id": "fading_time",
+              "type": "number",
+              "label": {
+                "en": "Motion keep time"
+              },
+              "hint": {
+                "en": "How long motion stays active after detection (seconds)"
+              },
+              "value": 60,
+              "min": 0,
+              "max": 28800,
+              "units": {
+                "en": "seconds"
+              }
+            },
+            {
+              "id": "motion_detection_sensitivity",
+              "type": "number",
+              "label": {
+                "en": "Motion detection sensitivity"
+              },
+              "hint": {
+                "en": "Higher value = more sensitive (0-19)"
+              },
+              "value": 7,
+              "min": 0,
+              "max": 19
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Light Settings"
+          },
+          "children": [
+            {
+              "id": "illuminance_interval",
+              "type": "number",
+              "label": {
+                "en": "Light sensing interval"
+              },
+              "hint": {
+                "en": "How often to update light level (minutes)"
+              },
+              "value": 5,
+              "min": 1,
+              "max": 720,
+              "units": {
+                "en": "minutes"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Settings"
+          },
+          "children": [
+            {
+              "id": "indicator",
+              "type": "checkbox",
+              "label": {
+                "en": "LED indicator"
+              },
+              "hint": {
+                "en": "Enable LED indicator light"
+              },
+              "value": true
+            },
+            {
+              "id": "batteryThreshold",
+              "type": "number",
+              "label": {
+                "en": "Battery alarm threshold"
+              },
+              "hint": {
+                "en": "Trigger low battery alarm at this percentage"
+              },
+              "value": 20,
+              "min": 5,
+              "max": 50,
+              "units": {
+                "en": "%"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": {
         "en": "Plug Energy Monitor",
         "fr": "Plug Energy Monitor",
@@ -75384,8 +75954,12 @@
           "_tzn3000_cfnprab5",
           "_TZN3000_cfnprab5",
           "_TZN3000_CFNPRAB5",
-          "_TZ3000_ww6drja5TS011F",
-          "_TZ3210_n0wbkysi"
+          "_tz3000_ww6drja5ts011f",
+          "_TZ3000_ww6drja5ts011f",
+          "_TZ3000_WW6DRJA5TS011F",
+          "_tz3210_n0wbkysi",
+          "_TZ3210_n0wbkysi",
+          "_TZ3210_N0WBKYSI"
         ],
         "productId": [
           "TS0121",
@@ -77825,7 +78399,9 @@
           "_tze284_ztc6ggyl",
           "_TZE284_ztc6ggyl",
           "_TZE284_ZTC6GGYL",
-          "_TZE204_gkfb"
+          "_tze204_gkfb",
+          "_TZE204_gkfb",
+          "_TZE204_GKFB"
         ],
         "productId": [
           "CK-BL702-MWS-01",
@@ -89944,9 +90520,15 @@
           "_TZ3210_UP3PNGLE",
           "_tyzb01_wqcac7lo",
           "_TYZB01_WQCAC7LO",
+          "_tz3000_ztc6ggyl",
           "_TZ3000_ztc6ggyl",
+          "_TZ3000_ZTC6GGYL",
+          "_tz3000_akwixq9i",
           "_TZ3000_akwixq9i",
-          "_TZ3000_hiqrjkxx"
+          "_TZ3000_AKWIXQ9I",
+          "_tz3000_hiqrjkxx",
+          "_TZ3000_hiqrjkxx",
+          "_TZ3000_HIQRJKXX"
         ],
         "endpoints": {
           "1": {
@@ -90604,6 +91186,176 @@
         }
       ],
       "id": "soil_sensor"
+    },
+    {
+      "id": "sr_zs_switch",
+      "name": {
+        "en": "SR-ZS Switch",
+        "pl": "Przełącznik SR-ZS"
+      },
+      "class": "socket",
+      "capabilities": [
+        "onoff_1",
+        "onoff_2",
+        "onoff_3"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "large": "/drivers/sr_zs_switch/assets/images/large.png",
+        "small": "/drivers/sr_zs_switch/assets/images/small.png"
+      },
+      "zigbee": {
+        "manufacturerName": [
+          "_tz3002_vaq2bfcu",
+          "_TZ3002_vaq2bfcu",
+          "_TZ3002_VAQ2BFCU"
+        ],
+        "productId": [
+          "TS0726"
+        ],
+        "endpoints": {
+          "1": {
+            "clusters": [
+              0,
+              4,
+              5,
+              6,
+              61184
+            ],
+            "bindings": [
+              5,
+              6,
+              61184
+            ]
+          },
+          "2": {
+            "clusters": [
+              5,
+              6
+            ],
+            "bindings": [
+              5,
+              6
+            ]
+          },
+          "3": {
+            "clusters": [
+              5,
+              6
+            ],
+            "bindings": [
+              5,
+              6
+            ]
+          },
+          "4": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "5": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          },
+          "6": {
+            "clusters": [
+              6
+            ],
+            "bindings": [
+              6
+            ]
+          }
+        }
+      },
+      "settings": [
+        {
+          "id": "mode_1",
+          "type": "dropdown",
+          "label": {
+            "en": "Button 1 Mode",
+            "pl": "Tryb przycisku 1"
+          },
+          "value": "switch_1",
+          "values": [
+            {
+              "id": "switch_1",
+              "label": {
+                "en": "Switch",
+                "pl": "Przełącznik"
+              }
+            },
+            {
+              "id": "scene_1",
+              "label": {
+                "en": "Scene",
+                "pl": "Scena"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mode_2",
+          "type": "dropdown",
+          "label": {
+            "en": "Button 2 Mode",
+            "pl": "Tryb przycisku 2"
+          },
+          "value": "switch_2",
+          "values": [
+            {
+              "id": "switch_2",
+              "label": {
+                "en": "Switch",
+                "pl": "Przełącznik"
+              }
+            },
+            {
+              "id": "scene_2",
+              "label": {
+                "en": "Scene",
+                "pl": "Scena"
+              }
+            }
+          ]
+        },
+        {
+          "id": "mode_3",
+          "type": "dropdown",
+          "label": {
+            "en": "Button 3 Mode",
+            "pl": "Tryb przycisku 3"
+          },
+          "value": "switch_3",
+          "values": [
+            {
+              "id": "switch_3",
+              "label": {
+                "en": "Switch",
+                "pl": "Przełącznik"
+              }
+            },
+            {
+              "id": "scene_3",
+              "label": {
+                "en": "Scene",
+                "pl": "Scena"
+              }
+            }
+          ]
+        }
+      ]
     },
     {
       "class": "socket",
@@ -92255,17 +93007,39 @@
           "_tze284_xnwxmj8z",
           "_TZE284_xnwxmj8z",
           "_TZE284_XNWXMJ8Z",
-          "_TZ3000_Itgngnqz",
-          "_TZ3000_zutizvykTS0203",
+          "_tz3000_itgngnqz",
+          "_TZ3000_itgngnqz",
+          "_TZ3000_ITGNGNQZ",
+          "_tz3000_zutizvykts0203",
+          "_TZ3000_zutizvykts0203",
+          "_TZ3000_ZUTIZVYKTS0203",
+          "_tz3000_46vasa5h",
           "_TZ3000_46vasa5h",
+          "_TZ3000_46VASA5H",
+          "_tz3000_dojqjapa",
           "_TZ3000_dojqjapa",
+          "_TZ3000_DOJQJAPA",
+          "_tz3000_icoxotza",
           "_TZ3000_icoxotza",
+          "_TZ3000_ICOXOTZA",
+          "_tz3000_iwtv2jwo",
           "_TZ3000_iwtv2jwo",
+          "_TZ3000_IWTV2JWO",
+          "_tz3000_qfhhb5y4",
           "_TZ3000_qfhhb5y4",
+          "_TZ3000_QFHHB5Y4",
+          "_tz3000_t7ugva7q",
           "_TZ3000_t7ugva7q",
+          "_TZ3000_T7UGVA7Q",
+          "_tz3000_uyrhiafs",
           "_TZ3000_uyrhiafs",
+          "_TZ3000_UYRHIAFS",
+          "_tz3000_viqwamhn",
           "_TZ3000_viqwamhn",
-          "_TZ3000_wol32olt"
+          "_TZ3000_VIQWAMHN",
+          "_tz3000_wol32olt",
+          "_TZ3000_wol32olt",
+          "_TZ3000_WOL32OLT"
         ],
         "endpoints": {
           "1": {
