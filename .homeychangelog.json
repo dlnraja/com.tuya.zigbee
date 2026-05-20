@@ -1,4 +1,7 @@
 {
+  "7.5.51": {
+    "en": "Bug fix: resolved fingerprint collision for _TZ3000_h1ipgkwn. Improved USB dongle switch driver with flow cards and multi-endpoint support. Added new fingerprints."
+  },
   "7.5.50": {
     "en": "166 new fingerprints added across 8 drivers. Fixed fingerprint collisions and removed incorrect matches. Generic DIY, PIR mmwave, SR_ZS_SWITCH, and valve_irrigation enriched."
   },
@@ -56,10 +59,7 @@
   "7.5.31": {
     "en": "v7.5.31: Harmonized 228 driver icons with new SVG assets. Updated app store images. Fixed various device icon inconsistencies. Added draft-to-test promotion  for faster testing."
   },
-  "7.5.30": {
-    "en": "Harmonized icons across all 228 drivers, updated app store assets, and added support for new soil sensor fingerprint (_TZE284_0ints6wl)."
-  },
-  "7.5.51": {
-    "en": "v7.5.50: Resolved fingerprint collision for _tz3000_ww6drja5ts011f preventing wrong driver matching, Removed incorrect fingerprints from climate_sensor, dimmer_wall_1gang, and switch_2gang drivers, Added 68 new fingerprints to generic_diy driver, Added 40 new fingerprints to sr_zs_switch driver, Added 36 new fingerprints to pir_mmwave_sensor driver"
+  "7.5.52": {
+    "en": "v7.5.51: Removed _TZ3000_h1ipgkwn fingerprint from switch_2gang and usb_dongle_dual_repeater to resolve driver collision., switch_usb_dongle: added flow trigger/action cards, per-endpoint control support, multi-gang configuration., Updated 14 fingerprints across multiple drivers., plug_smart: added support for new device variant., sr_zs_switch, pir_mmwave_sensor, curtain_motor, dimmer_wall_1gang:"
   }
 }

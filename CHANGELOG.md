@@ -4,7 +4,21 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.50] - 2026-05-20
+## [7.5.51] - 2026-05-20
+
+### Bug Fixes
+- Removed _TZ3000_h1ipgkwn fingerprint from switch_2gang and usb_dongle_dual_repeater to resolve driver collision.
+
+### New Features
+- switch_usb_dongle: added flow trigger/action cards, per-endpoint control support, multi-gang configuration.
+
+### Improvements
+- Updated 14 fingerprints across multiple drivers.
+- plug_smart: added support for new device variant.
+- sr_zs_switch, pir_mmwave_sensor, curtain_motor, dimmer_wall_1gang: driver composition updates.
+---
+
+ [7.5.50] - 2026-05-20
 
 ### Bug Fixes
 - Resolved fingerprint collision for _tz3000_ww6drja5ts011f preventing wrong driver matching
