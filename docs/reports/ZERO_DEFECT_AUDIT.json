@@ -1,7 +1,29 @@
 {
-  "timestamp": "2026-05-20T12:05:04.146Z",
+  "timestamp": "2026-05-20T16:30:26.488Z",
   "driversChecked": 230,
-  "collisions": [],
+  "collisions": [
+    {
+      "id": "_TZ3000_H1IPGKWN|TS0601",
+      "drivers": [
+        "plug_smart",
+        "switch_2gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_H1IPGKWN|TS011F",
+      "drivers": [
+        "plug_smart",
+        "switch_2gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_H1IPGKWN|TS0002",
+      "drivers": [
+        "switch_2gang",
+        "usb_dongle_dual_repeater"
+      ]
+    }
+  ],
   "buttonLogicFailures": [],
   "sdkDeprecations": [
     "data\\temp_desktop_cleanup\\tuya_backup\\lib\\utils\\migration-queue.js:267: const device = await homey.drivers.getDevice({ id: deviceId });",
@@ -60,7 +82,7 @@
     ".homeybuild\\lib\\HybridDriverSystem.js:363: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\interpreters\\UniversalRawInterpreter.js:75: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\managers\\IntelligentDataManager.js:228: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
-    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:605: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
+    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:622: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\mixins\\TuyaDeviceMixin.js:115: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\pairing\\TuyaTimeSyncEngine.js:26: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\pairing\\UniversalPairingManager.js:100: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
@@ -344,7 +366,7 @@
     "lib\\HybridDriverSystem.js:363: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\interpreters\\UniversalRawInterpreter.js:75: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\managers\\IntelligentDataManager.js:228: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
-    "lib\\mixins\\PhysicalButtonMixin.js:605: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
+    "lib\\mixins\\PhysicalButtonMixin.js:622: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\mixins\\TuyaDeviceMixin.js:115: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\pairing\\TuyaTimeSyncEngine.js:26: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\pairing\\UniversalPairingManager.js:100: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
@@ -2778,7 +2800,7 @@
     ".homeybuild\\lib\\battery\\BatteryProfileDatabase.js:396: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\battery\\UnifiedBatteryHandler.js:196: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\battery\\UnifiedBatteryHandler.js:213: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    ".homeybuild\\lib\\battery\\UnifiedBatteryHandler.js:319: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\lib\\battery\\UnifiedBatteryHandler.js:313: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\converters\\TuyaDeviceDefinitions.js:329: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\converters\\TuyaDeviceDefinitions.js:333: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\detectors\\BseedDetector.js:36: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
@@ -2838,12 +2860,12 @@
     ".homeybuild\\lib\\ManufacturerVariationManager.js:484: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\ManufacturerVariationManager.js:936: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\mixins\\PeriodicAutoEnricherMixin.js:1: Forbidden invisible character (char code 65279) detected.",
-    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:389: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:390: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:391: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:392: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:393: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:476: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:406: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:407: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:408: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:409: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:410: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:493: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\NewDevices2025.js:244: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\NewDevices2025.js:262: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\lib\\NewDevices2025.js:311: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
@@ -3132,7 +3154,7 @@
     "lib\\battery\\BatteryProfileDatabase.js:396: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\battery\\UnifiedBatteryHandler.js:196: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\battery\\UnifiedBatteryHandler.js:213: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    "lib\\battery\\UnifiedBatteryHandler.js:319: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\battery\\UnifiedBatteryHandler.js:313: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\converters\\TuyaDeviceDefinitions.js:329: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\converters\\TuyaDeviceDefinitions.js:333: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\detectors\\BseedDetector.js:36: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
@@ -3192,12 +3214,12 @@
     "lib\\ManufacturerVariationManager.js:484: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\ManufacturerVariationManager.js:936: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\mixins\\PeriodicAutoEnricherMixin.js:1: Forbidden invisible character (char code 65279) detected.",
-    "lib\\mixins\\PhysicalButtonMixin.js:389: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    "lib\\mixins\\PhysicalButtonMixin.js:390: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    "lib\\mixins\\PhysicalButtonMixin.js:391: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    "lib\\mixins\\PhysicalButtonMixin.js:392: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    "lib\\mixins\\PhysicalButtonMixin.js:393: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
-    "lib\\mixins\\PhysicalButtonMixin.js:476: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\mixins\\PhysicalButtonMixin.js:406: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\mixins\\PhysicalButtonMixin.js:407: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\mixins\\PhysicalButtonMixin.js:408: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\mixins\\PhysicalButtonMixin.js:409: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\mixins\\PhysicalButtonMixin.js:410: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "lib\\mixins\\PhysicalButtonMixin.js:493: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\NewDevices2025.js:244: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\NewDevices2025.js:262: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\NewDevices2025.js:311: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
