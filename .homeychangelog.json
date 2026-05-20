@@ -1,4 +1,7 @@
 {
+  "7.5.52": {
+    "en": "Bug fixes for button_wireless_3/4, ir_blaster, soil_sensor, plug_smart and switch drivers. Fixed diagnostic issues Log 99ead539."
+  },
   "7.5.51": {
     "en": "Bug fix: resolved fingerprint collision for _TZ3000_h1ipgkwn. Improved USB dongle switch driver with flow cards and multi-endpoint support. Added new fingerprints."
   },
@@ -56,10 +59,7 @@
   "7.5.32": {
     "en": "v7.5.32: . Harmonized driver icons, updated app store assets, and restored draft-to-test  fixes."
   },
-  "7.5.31": {
-    "en": "v7.5.31: Harmonized 228 driver icons with new SVG assets. Updated app store images. Fixed various device icon inconsistencies. Added draft-to-test promotion  for faster testing."
-  },
-  "7.5.52": {
-    "en": "v7.5.51: Removed _TZ3000_h1ipgkwn fingerprint from switch_2gang and usb_dongle_dual_repeater to resolve driver collision., switch_usb_dongle: added flow trigger/action cards, per-endpoint control support, multi-gang configuration., Updated 14 fingerprints across multiple drivers., plug_smart: added support for new device variant., sr_zs_switch, pir_mmwave_sensor, curtain_motor, dimmer_wall_1gang:"
+  "7.5.53": {
+    "en": "v7.5.52: Fixed button_wireless_3 and button_wireless_4 driver issues (diagnostic Log 99ead539), Fixed ir_blaster device capability handling, Fixed soil_sensor measure_soil_moisture capability, Fixed plug_smart driver compose, Fixed switch driver issues"
   }
 }
