@@ -2,14 +2,14 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-11,042+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-11,047+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-230-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Flow Cards](https://img.shields.io/badge/flow%20cards-2,457-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **230 drivers** and **11,042+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **230 drivers** and **11,047+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
@@ -30,34 +30,12 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
-## 🚀 Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### ✨ Recent Changes (May 2026)
-
-| Version | Feature |
-|---------|---------|
-| **v7.5.49** | v7.5.48: clamp_meter: corrected incoherent watt/voltage scaling using safeDiv... |
-| **v7.5.48** | Bug fix: clamp meter watt/voltage scaling corrected. New fingerprints added a... |
-| **v7.5.47** | v7.5.46: No changes. |
-| **v7.5.46** | v7.5.46 - Maintenance release. No new devices or fixes. |
-| **v7.5.45** | Bug fixes across 7 drivers including humidifier, motion_sensor_2, dimmer_dual... |
-| **v7.5.44** | Bug fixes for wireless buttons, remote buttons, and scene switches. Critical ... |
-| **v7.5.43** | Bug fixes: wall flow cards on multi-gang switches, wireless button reliabilit... |
-| **v7.5.42** | v7.5.41: Fixed battery endpoint scan handling for better battery device detec... |
-| **v7.5.41** | v7.5.41 - 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT. Battery endpo... |
-| **v7.5.40** | Bug fix: Empty battery reports on sleepy devices resolved with adaptive batte... |
-<!-- CHANGELOG_END -->
-
-
-
-
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.50 |
-| **Device Fingerprints** | 11,042+ |
+| **App Version** | v7.5.51 |
+| **Device Fingerprints** | 11,047+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 230 (180 Zigbee + 50 WiFi) |
 | **Flow Cards** | 2,457 |
@@ -72,12 +50,12 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,028 |
+| 1 | `climate_sensor` | 2,025 |
 | 2 | `switch_1gang` | 1,008 |
 | 3 | `radiator_valve` | 524 |
-| 4 | `plug_energy_monitor` | 445 |
+| 4 | `plug_energy_monitor` | 447 |
 | 5 | `dimmer_wall_1gang` | 372 |
-| 6 | `curtain_motor` | 352 |
+| 6 | `curtain_motor` | 355 |
 | 7 | `generic_tuya` | 352 |
 | 8 | `presence_sensor_radar` | 300 |
 | 9 | `contact_sensor` | 267 |
@@ -123,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Version | Changes |
 |---------|---------|
-| **v7.5.50** | v7.5.49: Added `pir_mmwave_sensor` driver for microwave motion sensors (presence_sensor_radar alternative)., Phoenix ... |
+| **v7.5.51** | v7.5.50: Resolved fingerprint collision for _tz3000_ww6drja5ts011f preventing wrong driver matching, Removed incorrec... |
+| **v7.5.50** | 166 new fingerprints added across 8 drivers. Fixed fingerprint collisions and removed incorrect matches. Generic DIY,... |
 | **v7.5.49** | New driver: presence sensor microwave (pir_mmwave_sensor). New fingerprints via Phoenix Sovereign v8.1.0. SONOFF case... |
 | **v7.5.48** | Bug fix: clamp meter watt/voltage scaling corrected. New fingerprints added across multiple drivers. Flow repair tool... |
 | **v7.5.47** | v7.5.46: No changes. |
@@ -137,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v7.5.39** | Updated 3202 fingerprints across 228 drivers. Added new device support and minor fixes. |
 | **v7.5.38** | No user-facing changes in this release. |
 | **v7.5.37** | Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 c... |
-| **v7.5.35** | v7.5.34: Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers (resolved runt... |
 
 <!-- CHANGELOG_END -->
 
@@ -203,7 +181,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 230 Drivers ─ 11,042+ fingerprints
+       └─ 230 Drivers ─ 11,047+ fingerprints
 ```
 
 ---
