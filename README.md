@@ -37,7 +37,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
-| **v7.5.49** | v7.5.48: clamp_meter: corrected incoherent watt/voltage scaling using safeDiv... |
+| **v7.5.50** | v7.5.49: Added `pir_mmwave_sensor` driver for microwave motion sensors (prese... |
+| **v7.5.49** | New driver: presence sensor microwave (pir_mmwave_sensor). New fingerprints v... |
 | **v7.5.48** | Bug fix: clamp meter watt/voltage scaling corrected. New fingerprints added a... |
 | **v7.5.47** | v7.5.46: No changes. |
 | **v7.5.46** | v7.5.46 - Maintenance release. No new devices or fixes. |
@@ -46,8 +47,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.43** | Bug fixes: wall flow cards on multi-gang switches, wireless button reliabilit... |
 | **v7.5.42** | v7.5.41: Fixed battery endpoint scan handling for better battery device detec... |
 | **v7.5.41** | v7.5.41 - 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT. Battery endpo... |
-| **v7.5.40** | Bug fix: Empty battery reports on sleepy devices resolved with adaptive batte... |
 <!-- CHANGELOG_END -->
+
 
 
 
