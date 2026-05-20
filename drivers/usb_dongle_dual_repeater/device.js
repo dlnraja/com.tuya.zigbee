@@ -2,7 +2,7 @@
 const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
 
 
-const { ZigBeeDevice } = require('homey-zigbeedriver');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 /**
  * USB Dongle Dual Repeater - v5.8.68
@@ -14,7 +14,11 @@ const { ZigBeeDevice } = require('homey-zigbeedriver');
  * - Energy monitoring on endpoint 1 (metering 0x0702 + electricalMeasurement 0x0B04)
  * - Power-on behavior via moesStartUpOnOff attribute
  */
-class UsbDongleDualRepeaterDevice extends ZigBeeDevice {
+class UsbDongleDualRepeaterDevice extends TuyaZigbeeDevice {
+
+  get mainsPowered() {
+    return true;
+  }
 
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
