@@ -3,186 +3,140 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 /**
- * v5.5.570: CRITICAL FIX - Flow card run listeners were missing
+ * v7.5.50: USB 2-Port Relay & Zigbee Repeater Driver
+ * Supports _TZ3000_h1ipgkwn / TS0002
+ * Flow cards are simple: on/off per USB port
  */
-class TuyaZigbeeDriver extends ZigBeeDriver {
+class SwitchUsbDongleDriver extends ZigBeeDriver {
 
   async onInit() {
-    this.log('Tuya Zigbee 3-Gang Switch Driver v5.5.570 initialized');
+    this.log('[USB-DONGLE] Driver v7.5.50 initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // CONDITIONS
-    ['gang1', 'gang2', 'gang3'].forEach((gang, idx) => {
-      try {
-        const card = this.homey.flow.getConditionCard(`switch_3gang_${gang}_is_on`);
-        if (card) {
-          card.registerRunListener(async (args) => {
-            if (!args.device) return false;
-            const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            return args.device.getCapabilityValue(cap) === true;
-          });
-          this.log(`[FLOW] ✅ switch_3gang_${gang}_is_on registered`);
-        }
-      } catch (err) {
-        this.error(`[FLOW] Failed to register switch_3gang_${gang}_is_on:`, err.message);
-      }
-    });
-
-    // ACTIONS - Turn On / Turn Off
-    ['gang1', 'gang2', 'gang3'].forEach((gang, idx) => {
-      try {
-        const cardOn = this.homey.flow.getActionCard(`switch_3gang_turn_on_${gang}`);
-        if (cardOn) {
-          cardOn.registerRunListener(async (args) => {
-            if (!args.device) return false;
-            const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            await args.device._setGangOnOff(idx + 1, true).catch(() => {});
-            await args.device.setCapabilityValue(cap, true).catch(() => {});
-            return true;
-          });
-          this.log(`[FLOW] ✅ switch_3gang_turn_on_${gang} registered`);
-        }
-      } catch (err) {
-        this.error(`[FLOW] Failed to register switch_3gang_turn_on_${gang}:`, err.message);
-      }
-
-      try {
-        const cardOff = this.homey.flow.getActionCard(`switch_3gang_turn_off_${gang}`);
-        if (cardOff) {
-          cardOff.registerRunListener(async (args) => {
-            if (!args.device) return false;
-            const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            await args.device._setGangOnOff(idx + 1, false).catch(() => {});
-            await args.device.setCapabilityValue(cap, false).catch(() => {});
-            return true;
-          });
-          this.log(`[FLOW] ✅ switch_3gang_turn_off_${gang} registered`);
-        }
-      } catch (err) {
-        this.error(`[FLOW] Failed to register switch_3gang_turn_off_${gang}:`, err.message);
-      }
-
-      try {
-        const cardToggle = this.homey.flow.getActionCard(`switch_3gang_toggle_${gang}`);
-        if (cardToggle) {
-          cardToggle.registerRunListener(async (args) => {
-            if (!args.device) return false;
-            const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
-            const v = args.device.getCapabilityValue(cap);
-            await args.device._setGangOnOff(idx + 1, !v).catch(() => {});
-            await args.device.setCapabilityValue(cap, !v).catch(() => {});
-            return true;
-          });
-          this.log(`[FLOW] ✅ switch_3gang_toggle_${gang} registered`);
-        }
-      } catch (err) {
-        this.error(`[FLOW] Failed to register switch_3gang_toggle_${gang}:`, err.message);
-      }
-    });
-
-    // Backlight controls
+    // CONDITION - USB Port 1 is on
     try {
-      const card = this.homey.flow.getActionCard('switch_3gang_set_backlight');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device || !args.mode) return false;
-          await args.device.setBacklightMode(args.mode);
-          return true;
-        });
-        this.log('[FLOW] ✅ switch_3gang_set_backlight registered');
-      }
-    } catch (err) {
-      this.error('[FLOW] Failed to register switch_3gang_set_backlight:', err.message);
-    }
-
-    try {
-      const card = this.homey.flow.getActionCard('switch_3gang_set_backlight_color');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device || !args.state || !args.color) return false;
-          await args.device.setBacklightColor(args.state, args.color);
-          return true;
-        });
-        this.log('[FLOW] ✅ switch_3gang_set_backlight_color registered');
-      }
-    } catch (err) {
-      this.error('[FLOW] Failed to register switch_3gang_set_backlight_color:', err.message);
-    }
-
-    try {
-      const card = this.homey.flow.getActionCard('switch_3gang_set_backlight_brightness');
-      if (card) {
-        card.registerRunListener(async (args) => {
-          if (!args.device || args.brightness === undefined) return false;
-          await args.device.setBacklightBrightness(args.brightness);
-          return true;
-        });
-        this.log('[FLOW] ✅ switch_3gang_set_backlight_brightness registered');
-      }
-    } catch (err) {
-      this.error('[FLOW] Failed to register switch_3gang_set_backlight_brightness:', err.message);
-    }
-
-    // Turn all on / off
-    try {
-      const card = this.homey.flow.getActionCard('switch_3gang_turn_on_all');
+      const card = this.homey.flow.getConditionCard('switch_usb_dongle_port1_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, true).catch(() => {});
+          return args.device.getCapabilityValue('onoff') === true;
+        });
+        this.log('[FLOW] ✅ switch_usb_dongle_port1_is_on');
+      }
+    } catch (err) {
+      this.error('[FLOW] switch_usb_dongle_port1_is_on:', err.message);
+    }
+
+    // CONDITION - USB Port 2 is on
+    try {
+      const card = this.homey.flow.getConditionCard('switch_usb_dongle_port2_is_on');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          return args.device.getCapabilityValue('onoff.l2') === true;
+        });
+        this.log('[FLOW] ✅ switch_usb_dongle_port2_is_on');
+      }
+    } catch (err) {
+      this.error('[FLOW] switch_usb_dongle_port2_is_on:', err.message);
+    }
+
+    // ACTION - Turn USB Port 1 On
+    try {
+      const card = this.homey.flow.getActionCard('switch_usb_dongle_turn_on_port1');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
-          for (let i = 2; i <= 3; i++) {
-            if (args.device.hasCapability(`onoff.gang${i}`)) {
-              await args.device.triggerCapabilityListener(`onoff.gang${i}`, true).catch(() => {});
-            }
-          }
           return true;
         });
-        this.log('[FLOW] ✅ switch_3gang_turn_on_all registered');
+        this.log('[FLOW] ✅ switch_usb_dongle_turn_on_port1');
       }
     } catch (err) {
-      this.error('[FLOW] Failed to register switch_3gang_turn_on_all:', err.message);
+      this.error('[FLOW] switch_usb_dongle_turn_on_port1:', err.message);
     }
 
+    // ACTION - Turn USB Port 1 Off
     try {
-      const card = this.homey.flow.getActionCard('switch_3gang_turn_off_all');
+      const card = this.homey.flow.getActionCard('switch_usb_dongle_turn_off_port1');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device._setGangOnOff(1, false).catch(() => {});
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
-          for (let i = 2; i <= 3; i++) {
-            if (args.device.hasCapability(`onoff.gang${i}`)) {
-              await args.device.triggerCapabilityListener(`onoff.gang${i}`, false).catch(() => {});
-            }
-          }
           return true;
         });
-        this.log('[FLOW] ✅ switch_3gang_turn_off_all registered');
+        this.log('[FLOW] ✅ switch_usb_dongle_turn_off_port1');
       }
     } catch (err) {
-      this.error('[FLOW] Failed to register switch_3gang_turn_off_all:', err.message);
+      this.error('[FLOW] switch_usb_dongle_turn_off_port1:', err.message);
     }
 
-    // Scene mode
+    // ACTION - Turn USB Port 2 On
     try {
-      const card = this.homey.flow.getActionCard('switch_3gang_set_scene_mode');
+      const card = this.homey.flow.getActionCard('switch_usb_dongle_turn_on_port2');
       if (card) {
         card.registerRunListener(async (args) => {
           if (!args.device) return false;
-          await args.device.setSceneMode(args.mode);
+          await args.device.setCapabilityValue('onoff.l2', true).catch(() => {});
           return true;
         });
-        this.log('[FLOW] ✅ switch_3gang_set_scene_mode registered');
+        this.log('[FLOW] ✅ switch_usb_dongle_turn_on_port2');
       }
     } catch (err) {
-      this.error('[FLOW] Failed to register switch_3gang_set_scene_mode:', err.message);
+      this.error('[FLOW] switch_usb_dongle_turn_on_port2:', err.message);
     }
 
-    this.log('[FLOW] 3-Gang switch flow cards registered (v5.12.0)');
+    // ACTION - Turn USB Port 2 Off
+    try {
+      const card = this.homey.flow.getActionCard('switch_usb_dongle_turn_off_port2');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          await args.device.setCapabilityValue('onoff.l2', false).catch(() => {});
+          return true;
+        });
+        this.log('[FLOW] ✅ switch_usb_dongle_turn_off_port2');
+      }
+    } catch (err) {
+      this.error('[FLOW] switch_usb_dongle_turn_off_port2:', err.message);
+    }
+
+    // ACTION - Toggle USB Port 1
+    try {
+      const card = this.homey.flow.getActionCard('switch_usb_dongle_toggle_port1');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const v = args.device.getCapabilityValue('onoff');
+          await args.device.setCapabilityValue('onoff', !v).catch(() => {});
+          return true;
+        });
+        this.log('[FLOW] ✅ switch_usb_dongle_toggle_port1');
+      }
+    } catch (err) {
+      this.error('[FLOW] switch_usb_dongle_toggle_port1:', err.message);
+    }
+
+    // ACTION - Toggle USB Port 2
+    try {
+      const card = this.homey.flow.getActionCard('switch_usb_dongle_toggle_port2');
+      if (card) {
+        card.registerRunListener(async (args) => {
+          if (!args.device) return false;
+          const v = args.device.getCapabilityValue('onoff.l2');
+          await args.device.setCapabilityValue('onoff.l2', !v).catch(() => {});
+          return true;
+        });
+        this.log('[FLOW] ✅ switch_usb_dongle_toggle_port2');
+      }
+    } catch (err) {
+      this.error('[FLOW] switch_usb_dongle_toggle_port2:', err.message);
+    }
+
+    this.log('[USB-DONGLE] ✅ Flow cards registered');
   }
 }
 
-module.exports = TuyaZigbeeDriver;
+module.exports = SwitchUsbDongleDriver;
