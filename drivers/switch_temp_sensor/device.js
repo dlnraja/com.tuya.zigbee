@@ -254,7 +254,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
    * Set temperature with sanity check
    */
   async _setTemperature(temp) {
-    if (typeof temp !== 'number' || isNaN(temp)) return;
+    if (typeof temp !== 'number' || isNaN(temp)) {return;}
 
     // Sanity check: -40°C to +80°C
     if (temp < -40 || temp > 80) {
@@ -274,7 +274,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
    * Set humidity with sanity check
    */
   async _setHumidity(hum) {
-    if (typeof hum !== 'number' || isNaN(hum)) return;
+    if (typeof hum !== 'number' || isNaN(hum)) {return;}
 
     // Sanity check: 0-100%
     if (hum < 0 || hum > 100) {

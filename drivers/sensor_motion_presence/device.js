@@ -22,16 +22,16 @@ function getSensorConfig(manufacturerName, modelId = null) {
 
   // 1. DUAL-KEY MATCH
   if (CI.equalsCI(mfr, 'HOBEIAN') || CI.equalsCI(mfr, 'hobeian')) {
-    if (CI.containsCI(model, 'ZG-204ZM')) return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
-    if (CI.containsCI(model, 'ZG-204ZV')) return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };
-    if (CI.containsCI(model, 'ZG-227Z')) return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI' };
-    if (CI.containsCI(model, 'ZG-204ZL')) return { ...SENSOR_CONFIGS.ZG_204ZL_PIR, configName: 'ZG_204ZL_PIR' };
+    if (CI.containsCI(model, 'ZG-204ZM')) {return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };}
+    if (CI.containsCI(model, 'ZG-204ZV')) {return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };}
+    if (CI.containsCI(model, 'ZG-227Z')) {return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI' };}
+    if (CI.containsCI(model, 'ZG-204ZL')) {return { ...SENSOR_CONFIGS.ZG_204ZL_PIR, configName: 'ZG_204ZL_PIR' };}
     return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM_FALLBACK' };
   }
 
   // 2. EXACT MATCH
   const config = MANUFACTURER_CONFIG_MAP[mfr];
-  if (config) return config;
+  if (config) {return config;}
 
   // 3. PATTERN MATCH
   if (manufacturerName) {
@@ -47,7 +47,7 @@ function getSensorConfig(manufacturerName, modelId = null) {
 
 function transformPresence(value, type, invertPresence = false) {
   let result;
-  if (value === null || value === undefined) return false;
+  if (value === null || value === undefined) {return false;}
   switch (type) {
     case 'presence_enum': result = value === 1 || value === 2; break;
     case 'presence_bool': result = value === 1 || value === true || value === 'presence'; break;
@@ -60,9 +60,9 @@ class MotionPresenceHybridDevice extends UnifiedSensorBase {
   _getManufacturerName() { return getManufacturer(this); }
   _getSensorConfig() {
     const mfr = this._getManufacturerName();
-    if (this._sensorConfig) return this._sensorConfig;
+    if (this._sensorConfig) {return this._sensorConfig;}
     this._sensorConfig = getSensorConfig(mfr, getModelId(this));
-    if (this._sensorConfig.configName === 'DEFAULT' && !this._dpAutoDiscovery) this._dpAutoDiscovery = new IntelligentDPAutoDiscovery(this);
+    if (this._sensorConfig.configName === 'DEFAULT' && !this._dpAutoDiscovery) {this._dpAutoDiscovery = new IntelligentDPAutoDiscovery(this);}
     return this._sensorConfig;
   }
   _getEffectiveDPMap() {
@@ -70,7 +70,7 @@ class MotionPresenceHybridDevice extends UnifiedSensorBase {
     if (this._dpAutoDiscovery && this._dpAutoDiscovery.isLearningComplete()) {
       const discoveredMap = this._dpAutoDiscovery.getDynamicDPMap();
       const mergedMap = { ...config.dpMap };
-      for (const [dpId, dpConfig] of Object.entries(discoveredMap)) { if (!mergedMap[dpId]) mergedMap[dpId] = dpConfig; }
+      for (const [dpId, dpConfig] of Object.entries(discoveredMap)) { if (!mergedMap[dpId]) {mergedMap[dpId] = dpConfig;} }
       return mergedMap;
     }
     return config.dpMap || {};
@@ -103,22 +103,22 @@ class MotionPresenceHybridDevice extends UnifiedSensorBase {
     this.log('[MOTION-HYBRID] ✅ Motion presence sensor ready');
   }
   _handleTuyaResponse(data) {
-    if (!data) return;
-    let dpId = data.dp || data.dpId || data.datapoint;
+    if (!data) {return;}
+    const dpId = data.dp || data.dpId || data.datapoint;
     const rawVal = this._parseBufferValue(data.value || data.data);
-    if (this._intelGate && dpId !== undefined) this._intelGate.process(dpId, rawVal);
+    if (this._intelGate && dpId !== undefined) {this._intelGate.process(dpId, rawVal);}
     const dpMap = this._getEffectiveDPMap();
     const PRESENCE_DPS = [1, 104, 105, 112];
     if (PRESENCE_DPS.includes(dpId)) {
-      const presenceValue = transformPresence(rawVal, dpMap[dpId]?.type, (this.getSettings().invert_presence ?? this._getSensorConfig().invertPresence ?? false));
-      if (presenceValue !== null) this._handlePresenceWithDebounce(presenceValue, dpId);
+      const presenceValue = transformPresence(rawVal, dpMap[dpId]?.type, this.getSettings().invert_presence ?? this._getSensorConfig().invertPresence ?? false);
+      if (presenceValue !== null) {this._handlePresenceWithDebounce(presenceValue, dpId);}
     }
   }
   _handlePresenceWithDebounce(presence, dpId) {
     const current = this.getCapabilityValue('alarm_motion');
-    if (presence === current) return;
+    if (presence === current) {return;}
     if (presence) {
-      if (this._intelGate) this._intelGate.process('alarm_motion', true);
+      if (this._intelGate) {this._intelGate.process('alarm_motion', true);}
       this.setCapabilityValue('alarm_motion', true).catch(() => {});
       this._triggerPresenceFlows(true);
     } else {
@@ -135,19 +135,19 @@ class MotionPresenceHybridDevice extends UnifiedSensorBase {
   }
   async _setupZclClusters(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
     const power = ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration;
-    if (power?.on) power.on('attr.batteryPercentageRemaining', (v) => this.setCapabilityValue('measure_battery', Math.round(v / 2)).catch(() => {}));
+    if (power?.on) {power.on('attr.batteryPercentageRemaining', (v) => this.setCapabilityValue('measure_battery', Math.round(v / 2)).catch(() => {}));}
   }
   _setupTuyaDPListeners(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
     const tuya = ep1?.clusters?.tuya || ep1?.clusters?.[CLUSTERS.TUYA_EF00];
-    if (tuya?.on) ['response', 'datapoint', 'dataReport'].forEach(ev => tuya.on(ev, (d) => this._handleTuyaResponse(d)));
+    if (tuya?.on) {['response', 'datapoint', 'dataReport'].forEach(ev => tuya.on(ev, (d) => this._handleTuyaResponse(d)));}
   }
   _parseBufferValue(data) {
-    if (typeof data === 'number') return data;
-    if (Buffer.isBuffer(data)) return data.readUIntBE(0, data.length);
-    if (data && typeof data === 'object' && data.type === 'Buffer') return Buffer.from(data.data).readUIntBE(0, data.data.length);
+    if (typeof data === 'number') {return data;}
+    if (Buffer.isBuffer(data)) {return data.readUIntBE(0, data.length);}
+    if (data && typeof data === 'object' && data.type === 'Buffer') {return Buffer.from(data.data).readUIntBE(0, data.data.length);}
     return safeParse(data);
   }
 }

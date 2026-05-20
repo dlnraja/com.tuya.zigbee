@@ -45,7 +45,7 @@ class GenericDIYDevice extends ZigBeeDevice {
 
   get mainsPowered() {
     // If router, it's mains powered. Also check model/mfr fallbacks.
-    if (this.zclNode?.role === 'router' || this.zclNode?.role === 'coordinator') return true;
+    if (this.zclNode?.role === 'router' || this.zclNode?.role === 'coordinator') {return true;}
     const model = ManufacturerNameHelper.getModelId(this);
     return model && model.includes('ROUTER');
   }
@@ -74,11 +74,11 @@ class GenericDIYDevice extends ZigBeeDevice {
 
     // Dynamic Cluster Scanning
     for (const [epId, ep] of Object.entries(zclNode.endpoints || {})) {
-      if (epId === '242') continue; // Skip Green Power
+      if (epId === '242') {continue;} // Skip Green Power
       for (const cId of Object.keys(ep.clusters || {})) {
         const clusterId = parseInt(cId);
         const map = CLUSTER_MAP[clusterId];
-        if (map) await this._addCap(parseInt(epId), clusterId, map, ep.clusters[cId]);
+        if (map) {await this._addCap(parseInt(epId), clusterId, map, ep.clusters[cId]);}
       }
     }
 
@@ -112,18 +112,18 @@ class GenericDIYDevice extends ZigBeeDevice {
    * Hook for CapabilityManagerMixin to trigger driver-specific flows
    */
   async _triggerCustomFlowsIfNeeded(capability, value, previousValue) {
-    if (capability === 'measure_temperature') this._triggerFlow('generic_diy_temperature_changed', { temperature: value });
-    if (capability === 'measure_humidity') this._triggerFlow('generic_diy_humidity_changed', { humidity: value });
-    if (capability === 'alarm_motion') this._triggerFlow(value ? 'generic_diy_motion_detected' : 'generic_diy_motion_cleared');
-    if (capability === 'alarm_contact') this._triggerFlow(value ? 'generic_diy_contact_opened' : 'generic_diy_contact_closed');
-    if (capability === 'measure_luminance') this._triggerFlow('generic_diy_illuminance_changed', { lux: value });
+    if (capability === 'measure_temperature') {this._triggerFlow('generic_diy_temperature_changed', { temperature: value });}
+    if (capability === 'measure_humidity') {this._triggerFlow('generic_diy_humidity_changed', { humidity: value });}
+    if (capability === 'alarm_motion') {this._triggerFlow(value ? 'generic_diy_motion_detected' : 'generic_diy_motion_cleared');}
+    if (capability === 'alarm_contact') {this._triggerFlow(value ? 'generic_diy_contact_opened' : 'generic_diy_contact_closed');}
+    if (capability === 'measure_luminance') {this._triggerFlow('generic_diy_illuminance_changed', { lux: value });}
     if (capability === 'measure_battery') {
         if (value < 20 && (!this._lastValues.batteryLowTriggered || value < this._lastValues.batteryLowTriggered - 5)) {
             this._triggerFlow('generic_diy_battery_low', { battery: value });
             this._lastValues.batteryLowTriggered = value;
         }
     }
-    if (capability === 'measure_pressure') this._triggerFlow('generic_diy_pressure_changed', { pressure: value });
+    if (capability === 'measure_pressure') {this._triggerFlow('generic_diy_pressure_changed', { pressure: value });}
   }
 
   _triggerGangFlows(capability, value) {
@@ -160,14 +160,14 @@ class GenericDIYDevice extends ZigBeeDevice {
     // Turn ON endpoint
     this.homey.flow.getTriggerCard('generic_diy_turn_on_endpoint')?.registerRunListener(async ({ endpoint } ) => {
       const ep = this.zclNode?.endpoints?.[endpoint];
-      if (ep?.clusters?.onOff) await ep.clusters.onOff.setOn();
+      if (ep?.clusters?.onOff) {await ep.clusters.onOff.setOn();}
       return true;
     });
 
     // Turn OFF endpoint
     this.homey.flow.getTriggerCard('generic_diy_turn_off_endpoint')?.registerRunListener(async ({ endpoint } ) => {
       const ep = this.zclNode?.endpoints?.[endpoint];
-      if (ep?.clusters?.onOff) await ep.clusters.onOff.setOff();
+      if (ep?.clusters?.onOff) {await ep.clusters.onOff.setOff();}
       return true;
     });
 
@@ -210,8 +210,8 @@ class GenericDIYDevice extends ZigBeeDevice {
   }
 
   async _addCap(epId, clusterId, map, cluster) {
-    const capName = (map.multi && epId > 1) ? `${map.cap}.${epId}` : map.cap;
-    if (this.hasCapability(capName)) return;
+    const capName = map.multi && epId > 1 ? `${map.cap}.${epId}` : map.cap;
+    if (this.hasCapability(capName)) {return;}
 
     try {
       // Use _safeSetCapability with noDynamicAddition: false to ensure capability is added
@@ -281,7 +281,7 @@ class GenericDIYDevice extends ZigBeeDevice {
         });
         cluster.on('attr.occupiedHeatingSetpoint', (v) => this._safeSetCapability(cap, v / 100).catch(() => { }));
         cluster.on('attr.localTemperature', (v) => {
-          if (v !== -32768) this._safeSetCapability('measure_temperature', v / 100).catch(() => {});
+          if (v !== -32768) {this._safeSetCapability('measure_temperature', v / 100).catch(() => {});}
         });
       }
       // Other measurement clusters
@@ -324,7 +324,7 @@ class GenericDIYDevice extends ZigBeeDevice {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

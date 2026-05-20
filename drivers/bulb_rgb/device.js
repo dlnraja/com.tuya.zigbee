@@ -53,7 +53,7 @@ class RGBBulbDevice extends UnifiedLightBase {
     }
   }
   _parseHSV(raw) {
-    if (!raw || typeof raw !== 'string' || raw.length < 12) return null;
+    if (!raw || typeof raw !== 'string' || raw.length < 12) {return null;}
     try {
       const h = parseInt(raw.substring(0, 4), 16);
       const s = parseInt(raw.substring(4, 8), 16);
@@ -66,7 +66,7 @@ class RGBBulbDevice extends UnifiedLightBase {
   }
   async _setupColorCluster(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
     const color = ep1.clusters?.lightingColorCtrl || ep1.clusters?.colorControl;
     if (color?.on) {
       color.on('attr.currentHue', (v) => this.setCapabilityValue('light_hue', safeDivide(v, 254)).catch(() => { }));
@@ -74,8 +74,8 @@ class RGBBulbDevice extends UnifiedLightBase {
     }
   }
   _setupHueListeners() {
-    if (this.hasCapability('light_hue')) this.registerCapabilityListener('light_hue', async () => await this._sendHSV());
-    if (this.hasCapability('light_saturation')) this.registerCapabilityListener('light_saturation', async () => await this._sendHSV());
+    if (this.hasCapability('light_hue')) {this.registerCapabilityListener('light_hue', async () => await this._sendHSV());}
+    if (this.hasCapability('light_saturation')) {this.registerCapabilityListener('light_saturation', async () => await this._sendHSV());}
   }
   async _sendHSV() {
     const h = Math.round(safeMultiply(this.getCapabilityValue('light_hue') || 0, 360));
@@ -87,11 +87,11 @@ class RGBBulbDevice extends UnifiedLightBase {
   }
   async _sendTuyaDP(dp, value, type) {
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-    if (tuya?.datapoint) await tuya.datapoint({ dp, value, type });
+    if (tuya?.datapoint) {await tuya.datapoint({ dp, value, type });}
   }
   async setLightEffect(effectName) {
     const sceneData = LIGHT_EFFECTS[effectName];
-    if (!sceneData) return;
+    if (!sceneData) {return;}
     await this._sendTuyaDP(2, 2, 'enum');
     await this._sendTuyaDP(6, sceneData, 'raw');
     await this.setCapabilityValue('onoff', true).catch(() => { });
@@ -107,8 +107,8 @@ class RGBBulbDevice extends UnifiedLightBase {
   }
   async onSettings({ newSettings, changedKeys }) {
     for (const key of changedKeys) {
-      if (key === 'power_on_behavior') await this._setPowerOnBehavior(newSettings.power_on_behavior);
-      if (key === 'do_not_disturb') await this._setDoNotDisturb(newSettings.do_not_disturb);
+      if (key === 'power_on_behavior') {await this._setPowerOnBehavior(newSettings.power_on_behavior);}
+      if (key === 'do_not_disturb') {await this._setDoNotDisturb(newSettings.do_not_disturb);}
     }
   }
   async _setPowerOnBehavior(behavior) {

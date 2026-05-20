@@ -93,7 +93,7 @@ class Switch1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   }
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     await super.onSettings({ oldSettings, newSettings, changedKeys });
-    for (var k of changedKeys) {
+    for (const k of changedKeys) {
       await handleSonoffEwlSettings(this, k, newSettings[k]);
     }
   }

@@ -154,7 +154,7 @@ class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(Uni
 
     const energyCaps = ['measure_power', 'meter_power', 'measure_voltage', 'measure_current'];
     for (const cap of energyCaps) {
-      if (!caps.includes(cap)) caps.push(cap);
+      if (!caps.includes(cap)) {caps.push(cap);}
     }
 
     return caps;
@@ -162,7 +162,7 @@ class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(Uni
 
   get dpMappings() {
     const config = this._getEnergyConfig();
-    if (config.protocol === 'zcl') return { 1: { capability: 'onoff', transform: (v) => v === 1 || v === true } };
+    if (config.protocol === 'zcl') {return { 1: { capability: 'onoff', transform: (v) => v === 1 || v === true } };}
 
     const mappings = {};
     const dpMap = config.dpMap || {};
@@ -212,7 +212,7 @@ class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(Uni
 
   async _setupZclEnergy(zclNode, config) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     const zclAttrs = config.zclAttrs || {};
     const elecCluster = ep1.clusters?.electricalMeasurement;
@@ -255,7 +255,7 @@ class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(Uni
   }
 
   _pollMetering(mc, parseE) {
-    if (!mc.readAttributes) return;
+    if (!mc.readAttributes) {return;}
     this._meterPoll = this.homey.setInterval(async () => {
       try {
         const a = await mc.readAttributes(['currentSummDelivered']).catch(() => null);
@@ -271,7 +271,7 @@ class EnergyMonitorPlugDevice extends VirtualButtonMixin(PhysicalButtonMixin(Uni
       this.homey.clearInterval(this._meterPoll);
       this._meterPoll = null;
     }
-    if (super.onDeleted) super.onDeleted();
+    if (super.onDeleted) {super.onDeleted();}
   }
 }
 

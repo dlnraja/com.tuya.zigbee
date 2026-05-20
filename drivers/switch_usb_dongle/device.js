@@ -106,7 +106,7 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
   async _setupPowerOnBehavior(zclNode) {
     const ep = zclNode?.endpoints?.[1];
     const cluster = ep?.clusters?.manuSpecificTuya3 || ep?.clusters?.[0xE001];
-    if (!cluster?.moesStartUpOnOff && !cluster?.readAttributes) return;
+    if (!cluster?.moesStartUpOnOff && !cluster?.readAttributes) {return;}
 
     try {
       const attrs = await cluster.readAttributes(['moesStartUpOnOff']).catch(() => ({}));
@@ -125,12 +125,12 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
    */
   async _setupPowerMeasurement(zclNode) {
     const endpoint = zclNode?.endpoints?.[1];
-    if (!endpoint?.clusters) return;
+    if (!endpoint?.clusters) {return;}
 
     const hasMetering = !!(endpoint.clusters.seMetering || endpoint.clusters.metering || endpoint.clusters[0x0702]);
     const hasElectrical = !!(endpoint.clusters.haElectricalMeasurement || endpoint.clusters.electricalMeasurement || endpoint.clusters[0x0B04]);
 
-    if (!hasMetering && !hasElectrical) return;
+    if (!hasMetering && !hasElectrical) {return;}
 
     try {
       const configs = [];

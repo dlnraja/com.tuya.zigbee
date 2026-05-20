@@ -92,7 +92,7 @@ class GasSensorDevice extends UnifiedSensorBase {
   async silenceAlarm() {
     try {
       const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-      if (tuya?.datapoint) await tuya.datapoint({ dp: 13, value: true, type: 'bool' });
+      if (tuya?.datapoint) {await tuya.datapoint({ dp: 13, value: true, type: 'bool' });}
       this.log('[GAS]  Alarm silenced');
     } catch (e) { this.log('[GAS] Silence failed:', e.message); }
   }
@@ -107,7 +107,7 @@ class GasSensorDevice extends UnifiedSensorBase {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

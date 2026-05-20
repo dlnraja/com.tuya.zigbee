@@ -20,7 +20,7 @@ class BulbTunableDriver extends ZigBeeDriver {
       const isOnCard = this.homey.flow.getConditionCard(`${P}_is_on`);
       if (isOnCard) {
         isOnCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -68,7 +68,7 @@ class BulbTunableDriver extends ZigBeeDriver {
         const card = this.homey.flow.getActionCard(id);
         if (card) {
           card.registerRunListener(async (args) => {
-            if (!args.device) return false;
+            if (!args.device) {return false;}
             return fn(args);
           });
         }

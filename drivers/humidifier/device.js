@@ -25,17 +25,17 @@ class HumidifierDevice extends TuyaZigbeeDevice {
 
   async _setupTuyaDP(zclNode) {
     const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
-    if (!tuyaCluster) return;
+    if (!tuyaCluster) {return;}
 
     this.log('[TUYA] DP cluster found');
 
     // Register capability listeners
     if (this.hasCapability('onoff')) {
       this.registerCapabilityListener('onoff', async (value) => {
-        if (typeof this.markAppCommand === 'function') this.markAppCommand(1, value);
+        if (typeof this.markAppCommand === 'function') {this.markAppCommand(1, value);}
         await tuyaCluster.datapoint({ dp: 1, datatype: 1, value: value });
       });
     }
@@ -59,7 +59,7 @@ class HumidifierDevice extends TuyaZigbeeDevice {
   }
 
   async _handleDP(dp, value) {
-    if (dp === undefined) return;
+    if (dp === undefined) {return;}
     this.log(`[DP${dp}] = ${value}`);
 
     switch (dp) {

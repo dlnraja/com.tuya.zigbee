@@ -3,39 +3,22 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class WirelessSwitchDriver extends ZigBeeDriver {
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-    }
-  }
-
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('WirelessSwitchDriver v5.5.581 initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // TRIGGERS
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-
+    // TRIGGERS
     // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('switch_wireless_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -46,7 +29,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wireless_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
@@ -57,7 +40,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wireless_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
@@ -68,7 +51,7 @@ class WirelessSwitchDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wireless_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = args.device.getCapabilityValue('onoff');
           await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;

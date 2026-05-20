@@ -3,18 +3,9 @@
 const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
 class VibrationSensorDriver extends BaseZigBeeDriver {
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-    }
-  }
-
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('VibrationSensorDriver initialized');
@@ -31,7 +22,7 @@ class VibrationSensorDriver extends BaseZigBeeDriver {
         const card = this._getFlowCard(id, 'condition');
         if (card) {
           card.registerRunListener(async (args) => {
-            if (!args.device) return false;
+            if (!args.device) {return false;}
             if (cond === 'battery_above') {
               const battery = args.device.getCapabilityValue('measure_battery') || 0;
               return battery > (args.threshold || 20);

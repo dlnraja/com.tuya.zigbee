@@ -18,7 +18,7 @@ class BulbRgbwDriver extends ZigBeeDriver {
       const conditionCard = this.homey.flow.getConditionCard('bulb_rgbw_bulb_rgbw_is_on');
       if (conditionCard) {
         conditionCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -31,7 +31,7 @@ class BulbRgbwDriver extends ZigBeeDriver {
       const turnOnCard = this.homey.flow.getActionCard('bulb_rgbw_bulb_rgbw_turn_on');
       if (turnOnCard) {
         turnOnCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device._setGangOnOff(1, true).catch(() => { });
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
           return true;
@@ -46,7 +46,7 @@ class BulbRgbwDriver extends ZigBeeDriver {
       const turnOffCard = this.homey.flow.getActionCard('bulb_rgbw_bulb_rgbw_turn_off');
       if (turnOffCard) {
         turnOffCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device._setGangOnOff(1, false).catch(() => { });
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
           return true;
@@ -61,7 +61,7 @@ class BulbRgbwDriver extends ZigBeeDriver {
       const toggleCard = this.homey.flow.getActionCard('bulb_rgbw_bulb_rgbw_toggle');
       if (toggleCard) {
         toggleCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = args.device.getCapabilityValue('onoff');
           await args.device._setGangOnOff(1, !current).catch(() => { });
           await args.device.setCapabilityValue('onoff', !current).catch(() => {});

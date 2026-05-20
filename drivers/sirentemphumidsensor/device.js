@@ -82,7 +82,7 @@ const convertMultiByteNumberPayloadToSingleDecimalNumber = chunks => {
 };
 
 const getDataValue = dpValue => {
-  if (!dpValue || !dpValue.data) return null;
+  if (!dpValue || !dpValue.data) {return null;}
 
   switch (dpValue.datatype) {
   case dataTypes.raw:
@@ -292,7 +292,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   async bootstrapBasicRead() {
     try {
       const basicCluster = this.zclNode?.endpoints?.[1]?.clusters?.basic;
-      if (!basicCluster ) return;
+      if (!basicCluster ) {return;}
 
       this.log('Bootstrap read: basic cluster');
 
@@ -577,7 +577,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

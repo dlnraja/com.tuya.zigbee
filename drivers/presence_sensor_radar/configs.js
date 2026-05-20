@@ -253,14 +253,14 @@ function getSensorConfig(manufacturerName, modelId = null) {
   if ((manufacturerName || '').toUpperCase() === 'HOBEIAN') {
     const validModelId = modelId && modelId !== 'null' && modelId.trim() !== '';
     if (validModelId) {
-      if (modelId === 'ZG-204ZM') return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
-      if (modelId === 'ZG-204ZV') return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };
+      if (modelId === 'ZG-204ZM') {return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };}
+      if (modelId === 'ZG-204ZV') {return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };}
     }
     return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM_FALLBACK' };
   }
 
   const mfrKey = normalize(manufacturerName);
-  if (MANUFACTURER_CONFIG_MAP[mfrKey]) return MANUFACTURER_CONFIG_MAP[mfrKey];
+  if (MANUFACTURER_CONFIG_MAP[mfrKey]) {return MANUFACTURER_CONFIG_MAP[mfrKey];}
 
   if (manufacturerName) {
     if (containsCI(manufacturerName, 'iadro9bf') || containsCI(manufacturerName, 'qasjif9e')) {

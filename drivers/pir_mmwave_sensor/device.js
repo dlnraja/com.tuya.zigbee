@@ -147,7 +147,7 @@ class pir_mmwave_sensor extends ZigBeeDevice {
 
     // Handle illuminance attribute reports
     onIlluminanceMeasuredAttributeReport(measuredValue) {
-        const luxValue = Math.round(Math.pow(10, ((measuredValue - 1) / 10000))); // Convert measured value to lux
+        const luxValue = Math.round(Math.pow(10, (measuredValue - 1) / 10000)); // Convert measured value to lux
         this.log('measure_luminance | Illuminance (lux):', luxValue);
         this.setCapabilityValue('measure_luminance', luxValue).catch(this.error);
     }

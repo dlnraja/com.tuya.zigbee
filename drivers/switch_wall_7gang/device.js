@@ -71,7 +71,7 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           this._zclState.pending[epNum] = false;
         }, 2000);
         const onOff = getOnOffCluster(epNum);
-        if (onOff) await onOff[value ? 'setOn' : 'setOff']();
+        if (onOff) {await onOff[value ? 'setOn' : 'setOff']();}
         return true;
       });
     }
@@ -79,7 +79,7 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     // Setup attribute listeners for physical button detection
     for (const epNum of [1, 2, 3, 4, 5, 6, 7]) {
       const onOff = getOnOffCluster(epNum);
-      if (!onOff || typeof onOff.on !== 'function') continue;
+      if (!onOff || typeof onOff.on !== 'function') {continue;}
 
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       onOff.on('attr.onOff', async (value) => {
@@ -97,7 +97,7 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
             try {
               const card =
       this.homey.flow.getTriggerCard(flowId)?.trigger(this, {}, {}).catch(this.error || console.error)
-              if (card ) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+              if (card ) {await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});}
               this.log(`[SWITCH-7G]  Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             } catch (e) { }
           }
@@ -106,7 +106,7 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
             try {
               const card =
       this.homey.flow.getTriggerCard(sceneFlowId)?.trigger(this, {}, {}).catch(this.error || console.error)
-              if (card ) await card.trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {});
+              if (card ) {await card.trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {});}
               this.log(`[SWITCH-7G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
             } catch (e) { }
           }
@@ -120,7 +120,7 @@ class Switch7GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   onDeleted() {
     if (this._zclState?.timeout) {
       for (let i = 1; i <= 7; i++) {
-        if (this._zclState.timeout[i]) clearTimeout(this._zclState.timeout[i] );
+        if (this._zclState.timeout[i]) {clearTimeout(this._zclState.timeout[i] );}
       }
     }
     super.onDeleted?.();

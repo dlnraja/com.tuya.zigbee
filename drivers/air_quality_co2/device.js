@@ -93,7 +93,7 @@ class AirQualityCO2Device extends SensorBase {
       for (const cap of ['measure_pm25', 'measure_voc', 'measure_formaldehyde']) {
         if (!this.hasCapability(cap)) {
           await this.addCapability(cap).catch(() => { });
-          this.log('[CO2] Added ' + cap);
+          this.log(`[CO2] Added ${  cap}`);
         }
       }
 
@@ -109,7 +109,7 @@ class AirQualityCO2Device extends SensorBase {
    * v5.5.317: Validate CO2 with inference engine
    */
   _validateCO2(rawCO2) {
-    if (!this._airQualityInference) return rawCO2;
+    if (!this._airQualityInference) {return rawCO2;}
 
     const vocValue = this.getCapabilityValue('measure_voc');
     const validatedCO2 = this._airQualityInference.validateCO2(rawCO2, vocValue);
@@ -135,7 +135,7 @@ class AirQualityCO2Device extends SensorBase {
 
   async _setupAirQualityZCL(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     try {
       const temp = ep1.clusters?.msTemperatureMeasurement;
@@ -167,7 +167,7 @@ class AirQualityCO2Device extends SensorBase {
 
   onDeleted() {
     this.log('Device deleted, cleaning up');
-    if (super.onDeleted) super.onDeleted();
+    if (super.onDeleted) {super.onDeleted();}
   }
 }
 

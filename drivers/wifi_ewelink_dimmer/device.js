@@ -14,7 +14,7 @@ class D extends EweLinkLocalDevice{
   }
   async onInit(){
     this._lastBrightness=100;
-    if(!this.hasCapability('dim'))try{await this.addCapability('dim');}catch(e){}
+    if(!this.hasCapability('dim')){try{await this.addCapability('dim');}catch(e){}}
     await super.onInit();
     this.log('[EWE-DIMMER] Ready - D1');
   }

@@ -92,7 +92,7 @@ class AirQualityComprehensiveDevice extends SensorBase {
       clearInterval(this._batteryPollInterval);
       this._batteryPollInterval = null;
     }
-    if (super.onDeleted) super.onDeleted();
+    if (super.onDeleted) {super.onDeleted();}
   }
 }
 

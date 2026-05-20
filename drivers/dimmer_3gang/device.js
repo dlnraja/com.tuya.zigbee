@@ -15,7 +15,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
 
   _markAppCommand() {
     this._appCommandPending = true;
-    if (this._appCommandTimeout) clearTimeout(this._appCommandTimeout);
+    if (this._appCommandTimeout) {clearTimeout(this._appCommandTimeout);}
     this._appCommandTimeout = setTimeout(() => { this._appCommandPending = false; }, 2000);
   }
 
@@ -33,7 +33,7 @@ class Dimmer3GangDevice extends ZigBeeDevice {
       if (this.hasCapability(item.cap)) {
         this.registerCapabilityListener(item.cap, async (value) => {
           this._markAppCommand();
-          const targetValue = (item.type === 'bool') ? (value ? 1 : 0) : Math.round(value      * 1000);
+          const targetValue = item.type === 'bool' ? value ? 1 : 0 : Math.round(value      * 1000);
           this.log(`Sending DP${item.dp} = ${targetValue}`);
       });
       }
@@ -41,8 +41,8 @@ class Dimmer3GangDevice extends ZigBeeDevice {
   }
 
   onDeleted() {
-    if (this._appCommandTimeout) clearTimeout(this._appCommandTimeout);
-    if (typeof super.onDeleted === 'function') super.onDeleted();
+    if (this._appCommandTimeout) {clearTimeout(this._appCommandTimeout);}
+    if (typeof super.onDeleted === 'function') {super.onDeleted();}
   }
 }
 

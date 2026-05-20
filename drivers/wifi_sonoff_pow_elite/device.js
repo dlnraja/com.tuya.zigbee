@@ -8,10 +8,10 @@ class D extends E{
     current:{capability:'measure_current',divisor:1000}
   };}
   async _registerCapListeners(){
-    this.registerCapabilityListener('onoff',async v=>{ if (typeof this.markAppCommand === 'function') this.markAppCommand(1, v);await this._client.setSwitch(v);});
+    this.registerCapabilityListener('onoff',async v=>{ if (typeof this.markAppCommand === 'function') {this.markAppCommand(1, v);}await this._client.setSwitch(v);});
   }
   async onInit(){
-    for(const c of['measure_power','measure_voltage','measure_current','meter_power'])if(!this.hasCapability(c))await this.addCapability(c).catch(() => { });
+    for(const c of['measure_power','measure_voltage','measure_current','meter_power']){if(!this.hasCapability(c)){await this.addCapability(c).catch(() => { });}}
     await super.onInit(); }
   async _processState(data){
     super._processState(data);

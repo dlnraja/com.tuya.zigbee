@@ -208,7 +208,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   _setupCommandListeners(zclNode) {
     try {
       const endpoint = zclNode.endpoints[1];
-      if (!endpoint) return;
+      if (!endpoint) {return;}
 
       endpoint.on('command', (clusterId, commandId, payload) => {
         if (clusterId === 18) { 
@@ -224,7 +224,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   async _setupScenesCluster(zclNode) {
     try {
       const ep = zclNode.endpoints[1];
-      if (!ep) return;
+      if (!ep) {return;}
 
       const sc = ep.clusters?.scenes || ep.clusters?.[5] || 
                  ep.bindings?.scenes || ep.bindings?.[5];
@@ -301,7 +301,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   }
 
   async _handleRotationStep(direction, stepSize) {
-    const delta = direction === 'up' ? (stepSize / 254) : -(stepSize / 254);
+    const delta = direction === 'up' ? stepSize / 254 : -(stepSize / 254);
     this._updateSimulatedBrightness(delta);
     if (direction === 'up') {
       await this._triggerRotateRight();
@@ -379,7 +379,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
   async _setupE000Detection(zclNode) {
     try {
-      const ep = zclNode?.endpoints?.[1]; if (!ep ) return;
+      const ep = zclNode?.endpoints?.[1]; if (!ep ) {return;}
       const e = ep.clusters?.tuyaE000 || ep.clusters?.[57344];
       if (e?.on) {
         e.on('buttonPress', async (d) => { this._triggerButtonPress(resolvePressType(d?.pressType, 'KNOB-E000')); });
@@ -393,7 +393,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
   async _setupTuyaDPDetection(zclNode) {
     try {
       const tc = zclNode?.endpoints?.[1]?.clusters?.tuya || zclNode?.endpoints?.[1]?.clusters?.[61184];
-      if (!tc?.on) return;
+      if (!tc?.on) {return;}
       tc.on('response', async (d) => { const v = d?.data ?? d?.value ?? 0; this._triggerButtonPress(resolvePressType(v, 'KNOB-DP')); });
       tc.on('datapoint', async (d) => { const v = d?.data?.[0] ?? 0; this._triggerButtonPress(resolvePressType(v, 'KNOB-DP')); });
     } catch (e) { this.log('[TUYA-DP] Error:', e.message); }
@@ -405,7 +405,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
 
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();
     }

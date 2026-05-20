@@ -73,7 +73,7 @@ class LightSensorOutdoorDevice extends TuyaZigbeeDevice {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

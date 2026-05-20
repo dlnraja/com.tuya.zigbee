@@ -247,7 +247,7 @@ class WaterLeakSensorDevice extends UnifiedSensorBase {
     try {
       this.log('[WATER] 📖 Forcing initial alarm state read...');
       const ep = zclNode?.endpoints?.[1];
-      if (!ep) return;
+      if (!ep) {return;}
 
       const iasCluster = ep.clusters?.iasZone || ep.clusters?.ssIasZone || ep.clusters?.[0x0500];
       if (iasCluster?.readAttributes) {

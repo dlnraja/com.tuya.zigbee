@@ -134,19 +134,19 @@ class WaterTankMonitorDevice extends UnifiedSensorBase {
         const val = newSettings[key];
         switch (key) {
           case 'installation_height': // DP19
-            if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(19, val, 'value');
+            if (this.tuyaEF00Manager) {await this.tuyaEF00Manager.sendDP(19, val, 'value');}
             this.log(`[LIQUID] Sent DP19 installation_height = ${val}mm`);
             break;
           case 'liquid_depth_max': // DP21
-            if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(21, val, 'value');
+            if (this.tuyaEF00Manager) {await this.tuyaEF00Manager.sendDP(21, val, 'value');}
             this.log(`[LIQUID] Sent DP21 liquid_depth_max = ${val}mm`);
             break;
           case 'max_set': // DP7
-            if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(7, val, 'value');
+            if (this.tuyaEF00Manager) {await this.tuyaEF00Manager.sendDP(7, val, 'value');}
             this.log(`[LIQUID] Sent DP7 max_set = ${val}%`);
             break;
           case 'min_set': // DP8
-            if (this.tuyaEF00Manager) await this.tuyaEF00Manager.sendDP(8, val, 'value');
+            if (this.tuyaEF00Manager) {await this.tuyaEF00Manager.sendDP(8, val, 'value');}
             this.log(`[LIQUID] Sent DP8 min_set = ${val}%`);
             break;
         }

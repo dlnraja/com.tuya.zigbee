@@ -18,14 +18,14 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
       1: {
         capability: 'alarm_smoke',
         transform: (v, device) => {
-          if (device) device.log(`[SMOKE] DP1 raw value: ${v} (type: ${typeof v})`);
+          if (device) {device.log(`[SMOKE] DP1 raw value: ${v} (type: ${typeof v})`);}
           
           let isAlarm = false;
           if (v === 'alarm' || v === true) {
             isAlarm = true;
           } else if (typeof v === 'number') {
             // For many Tuya smoke detectors, 0 = ALARM, 1 = NORMAL
-            isAlarm = (v === 0);
+            isAlarm = v === 0;
           }
 
           if (device) {
@@ -71,7 +71,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
         transform: (v, device) => {
           const batteryMap = { 0: 10, 1: 50, 2: 100 };
           const battery = batteryMap[v] ?? (v > 2 ? v : 50);
-          if (device) device.log(`[SMOKE] DP14 battery state: ${v} -> ${battery}%`);
+          if (device) {device.log(`[SMOKE] DP14 battery state: ${v} -> ${battery}%`);}
           return battery;
         }
       },
@@ -81,7 +81,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
         transform: (v, device) => {
           const volumeMap = { 0: 'low', 1: 'medium', 2: 'high' };
           const volume = volumeMap[v] ?? 'unknown';
-          if (device) device.log(`[SMOKE] DP5 alarm_volume: ${v} (${volume})`);
+          if (device) {device.log(`[SMOKE] DP5 alarm_volume: ${v} (${volume})`);}
           return v;
         }
       }
@@ -125,7 +125,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
   async _performIASZoneEnrollment(zclNode) {
     try {
       const iasZone = zclNode.endpoints[1]?.clusters.iasZone;
-      if (!iasZone) return;
+      if (!iasZone) {return;}
 
       const ieeeAddress = this.homey.zigbee?.ieeeAddress || await this.homey.zigbee?.getIeeeAddress?.();
 

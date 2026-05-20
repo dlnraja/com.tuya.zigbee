@@ -5,7 +5,7 @@ const Homey = require('homey');
 class SwitchTempSensorDriver extends Homey.Driver {
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('Switch Temp Sensor driver v7.4.11 initialized');
     
@@ -13,7 +13,7 @@ class SwitchTempSensorDriver extends Homey.Driver {
       const card = this.homey.flow.getActionCard('switch_temp_sensor_set_temperature');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.setCapabilityValue('target_temperature', args.temperature).catch(() => {});
           return true;
         });

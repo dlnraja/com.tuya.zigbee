@@ -3,18 +3,9 @@
 const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
 class RadiatorValveDriver extends BaseZigBeeDriver {
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-    }
-  }
-
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('RadiatorValveDriver initialized');
     this._registerFlowCards();
@@ -30,7 +21,7 @@ class RadiatorValveDriver extends BaseZigBeeDriver {
         const card = this._getFlowCard(id, 'action');
         if (card) {
           card.registerRunListener(async (args) => {
-            if (!args.device) return false;
+            if (!args.device) {return false;}
             const val = args.temperature || args.target_temperature || args.value;
             await args.device.triggerCapabilityListener('target_temperature', val);
             return true;

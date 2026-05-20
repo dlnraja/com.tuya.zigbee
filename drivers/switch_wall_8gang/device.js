@@ -41,7 +41,7 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
    * Gang 7 = DP 101, Gang 8 = DP 102 (not DP 7/8!)
    */
   get dpMappings() {
-    if (this.isZclOnlyDevice) return {};
+    if (this.isZclOnlyDevice) {return {};}
     return {
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       2: { capability: 'onoff.gang2', transform: (v) => v === 1 || v === true },
@@ -106,7 +106,7 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           this._zclState.pending[epNum] = false;
         }, 2000);
         const onOff = getOnOffCluster(epNum);
-        if (onOff) await onOff[value ? 'setOn' : 'setOff']();
+        if (onOff) {await onOff[value ? 'setOn' : 'setOff']();}
         return true;
       });
     }
@@ -114,7 +114,7 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     // Setup attribute listeners for physical button detection
     for (const epNum of [1, 2, 3, 4, 5, 6, 7, 8]) {
       const onOff = getOnOffCluster(epNum);
-      if (!onOff || typeof onOff.on !== 'function') continue;
+      if (!onOff || typeof onOff.on !== 'function') {continue;}
 
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       onOff.on('attr.onOff', async (value) => {
@@ -132,7 +132,7 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
             try {
               const card =
       this.homey.flow.getTriggerCard(flowId)?.trigger(this, {}, {}).catch(this.error || console.error)
-              if (card ) await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+              if (card ) {await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});}
               this.log(`[SWITCH-8G]  Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
             } catch (e) { }
           }
@@ -141,7 +141,7 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
             try {
               const card =
       this.homey.flow.getTriggerCard(sceneId)?.trigger(this, {}, {}).catch(this.error || console.error)
-              if (card ) await card.trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {});
+              if (card ) {await card.trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {});}
               this.log(`[SWITCH-8G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
             } catch (e) { }
           }
@@ -155,7 +155,7 @@ class Switch8GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   onDeleted() {
     if (this._zclState?.timeout) {
       for (let i = 1; i <= 8; i++) {
-        if (this._zclState.timeout[i]) clearTimeout(this._zclState.timeout[i] );
+        if (this._zclState.timeout[i]) {clearTimeout(this._zclState.timeout[i] );}
       }
     }
     super.onDeleted?.();

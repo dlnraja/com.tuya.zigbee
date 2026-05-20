@@ -18,7 +18,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
     this._pendingCodeName = null;
     try {
       const stored = await this.getStoreValue('learned_codes');
-      if (stored) this._learnedCodes = stored;
+      if (stored) {this._learnedCodes = stored;}
     } catch (e) { /* first run */ }
     this.log(`[WIFI-IR] Ready, ${Object.keys(this._learnedCodes).length} codes`);
   }
@@ -34,7 +34,7 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
     }
   }
   async startLearning(name, duration) {
-    if (!this._client || !this._client.connected) throw new Error('Not connected');
+    if (!this._client || !this._client.connected) {throw new Error('Not connected');}
     this._pendingCodeName = name || `code_${Date.now()}`;
     this._learningActive = true;
     await this._client.setDP('1', true);
@@ -42,14 +42,14 @@ class WiFiIRRemoteDevice extends TuyaLocalDevice {
   }
 
   async sendIRCode(code) {
-    if (!this._client || !this._client.connected) throw new Error('Not connected');
+    if (!this._client || !this._client.connected) {throw new Error('Not connected');}
     this.log(`[WIFI-IR] Sending IR (${code.length} chars)`);
     await this._client.setDP('201', code);
   }
 
   async sendLearnedCode(name) {
     const code = this._learnedCodes[name];
-    if (!code) throw new Error(`Code not found: ${name}`);
+    if (!code) {throw new Error(`Code not found: ${name}`);}
     await this.sendIRCode(code);
   }
 

@@ -170,19 +170,19 @@ class UsbDongleDualRepeaterDevice extends TuyaZigbeeDevice {
         electrical.on('attr.activePower', value => {
           const power = safeMultiply(value, 10);
           this.log('[USB_DONGLE] Power:', power, 'W');
-          if (this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', parseFloat(power)).catch(this.error);
+          if (this.hasCapability('measure_power')) {this.setCapabilityValue('measure_power', parseFloat(power)).catch(this.error);}
       });
 
         electrical.on('attr.rmsVoltage', value => {
           const voltage = safeMultiply(value, 10);
           this.log('[USB_DONGLE] Voltage:', voltage, 'V');
-          if (this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this.error);
+          if (this.hasCapability('measure_voltage')) {this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this.error);}
       });
 
         electrical.on('attr.rmsCurrent', value => {
           const current = value * 1000;
           this.log('[USB_DONGLE] Current:', current, 'A');
-          if (this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', parseFloat(current)).catch(this.error);
+          if (this.hasCapability('measure_current')) {this.setCapabilityValue('measure_current', parseFloat(current)).catch(this.error);}
       });
 
         // Configure reporting
@@ -194,15 +194,15 @@ class UsbDongleDualRepeaterDevice extends TuyaZigbeeDevice {
 
         electrical.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).then(data => {
           if (data?.activePower != null) {
-            const power = safeMultiply(data.activePower, 10);if (this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', parseFloat(power)).catch(this.error);
+            const power = safeMultiply(data.activePower, 10);if (this.hasCapability('measure_power')) {this.setCapabilityValue('measure_power', parseFloat(power)).catch(this.error);}
           }
           if (data?.rmsVoltage != null) {
             const voltage = safeMultiply(data.rmsVoltage, 10);
-            if (this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this.error);
+            if (this.hasCapability('measure_voltage')) {this.setCapabilityValue('measure_voltage', parseFloat(voltage)).catch(this.error);}
           }
           if (data?.rmsCurrent != null) {
             const current = data.rmsCurrent * 1000;
-            if (this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', parseFloat(current)).catch(this.error);
+            if (this.hasCapability('measure_current')) {this.setCapabilityValue('measure_current', parseFloat(current)).catch(this.error);}
           }
         }).catch(() => {});
       }
@@ -213,7 +213,7 @@ class UsbDongleDualRepeaterDevice extends TuyaZigbeeDevice {
         metering.on('attr.currentSummationDelivered', value => {
           const kWh = value * 1000;
           this.log('[USB_DONGLE] Energy:', kWh, 'kWh');
-          if (this.hasCapability('meter_power')) this.setCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);
+          if (this.hasCapability('meter_power')) {this.setCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);}
       });
 
         // Configure reporting
@@ -227,7 +227,7 @@ class UsbDongleDualRepeaterDevice extends TuyaZigbeeDevice {
 
         metering.readAttributes(['currentSummationDelivered']).then(data => {
           if (data?.currentSummationDelivered != null) {
-            const kWh = data.currentSummationDelivered * 1000;if (this.hasCapability('meter_power')) this.setCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);
+            const kWh = data.currentSummationDelivered * 1000;if (this.hasCapability('meter_power')) {this.setCapabilityValue('meter_power', parseFloat(kWh)).catch(this.error);}
           }
         }).catch(() => {});
       }

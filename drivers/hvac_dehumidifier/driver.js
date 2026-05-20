@@ -3,18 +3,9 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class HvacDehumidifierDriver extends ZigBeeDriver {
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-    }
-  }
-
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('HvacDehumidifierDriver v5.5.576 initialized');
     this._registerFlowCards();
@@ -42,7 +33,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('hvac_dehumidifier_dehumidifier_hybrid_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -52,7 +43,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('hvac_dehumidifier_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -62,7 +53,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('hvac_dehumidifier_water_detected');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_gas') === true;
         });
       }
@@ -73,7 +64,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('hvac_dehumidifier_dehumidifier_hybrid_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
@@ -84,7 +75,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('hvac_dehumidifier_dehumidifier_hybrid_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
@@ -95,7 +86,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('hvac_dehumidifier_dehumidifier_hybrid_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = args.device.getCapabilityValue('onoff');
           await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
@@ -107,7 +98,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('hvac_dehumidifier_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
@@ -118,7 +109,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('hvac_dehumidifier_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
@@ -129,7 +120,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('hvac_dehumidifier_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = args.device.getCapabilityValue('onoff');
           await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
@@ -141,7 +132,7 @@ class HvacDehumidifierDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('hvac_dehumidifier_set_temperature');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('target_temperature', args.temperature || args.value).catch(() => {});
           return true;
         });

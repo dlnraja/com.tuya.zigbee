@@ -29,7 +29,7 @@ class WiFiHeaterDevice extends TuyaLocalDevice {
     getCondition('wifi_heater_mode_is')?.registerRunListener(async (a) => this.getCapabilityValue('wifi_heater_mode') === a.mode);
     
     getAction('wifi_heater_set_mode')?.registerRunListener(async (a ) => { 
-      const val = ({ manual: 0, program: 1, eco: 2 })[a.mode] ?? 0;
+      const val = { manual: 0, program: 1, eco: 2 }[a.mode] ?? 0;
       await this._client?.setDP('4', val);
       });
     

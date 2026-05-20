@@ -84,17 +84,17 @@ function getSensorConfig(manufacturerName, modelId = null) {
 
   // 1. DUAL-KEY MATCH (Manufacturer + Model ID)
   if (CI.equalsCI(mfr, 'HOBEIAN') || CI.equalsCI(mfr, 'hobeian')) {
-    if (CI.containsCI(model, 'ZG-204ZM')) return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
-    if (CI.containsCI(model, 'ZG-204ZV')) return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };
-    if (CI.containsCI(model, 'ZG-227Z') || CI.containsCI(model, 'ZG-227')) return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI' };
-    if (CI.containsCI(model, 'ZG-204ZL')) return { ...SENSOR_CONFIGS.ZG_204ZL_PIR, configName: 'ZG_204ZL_PIR' };
+    if (CI.containsCI(model, 'ZG-204ZM')) {return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };}
+    if (CI.containsCI(model, 'ZG-204ZV')) {return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };}
+    if (CI.containsCI(model, 'ZG-227Z') || CI.containsCI(model, 'ZG-227')) {return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI' };}
+    if (CI.containsCI(model, 'ZG-204ZL')) {return { ...SENSOR_CONFIGS.ZG_204ZL_PIR, configName: 'ZG_204ZL_PIR' };}
     
     return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM_FALLBACK' };
   }
 
   // 2. EXACT MANUFACTURER MATCH
   const config = MANUFACTURER_CONFIG_MAP[mfr];
-  if (config) return config;
+  if (config) {return config;}
 
   // 3. PATTERN MATCHING
   if (manufacturerName) {
@@ -272,7 +272,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
 
   // Track recent values
   oscState.history.push({ value: lux, time: Date.now() });
-  if (oscState.history.length > 5) oscState.history.shift();
+  if (oscState.history.length > 5) {oscState.history.shift();}
 
   // Detect oscillation pattern: 30â†’2000â†’30 within 30 seconds
   if (oscState.history.length >= 3) {
@@ -312,7 +312,7 @@ function transformLux(rawValue, type, manufacturerName = '', deviceId = null) {
     return 0;
   }
 
-  let originalValue = lux;
+  const originalValue = lux;
 
   // v5.5.264: Handle different lux types
   if (type === 'lux_raw') {
@@ -485,7 +485,7 @@ function transformDistance(value, divisor = 100, manufacturerName = '', deviceId
   let distance = safeDivide(value, divisor);
 
   // v5.5.793: Use validation constants for range check
-  if (distance < VALIDATION.DISTANCE_MIN) distance = VALIDATION.DISTANCE_MIN;
+  if (distance < VALIDATION.DISTANCE_MIN) {distance = VALIDATION.DISTANCE_MIN;}
   if (distance > VALIDATION.DISTANCE_MAX) {
     console.log(`[DISTANCE-FIX] ðŸ“ Distance clamped for ${manufacturerName}: ${distance}m -> ${VALIDATION.DISTANCE_MAX}m`);
     distance = VALIDATION.DISTANCE_MAX;
@@ -1016,7 +1016,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   _setupPassiveListeners(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1 ) return;
+    if (!ep1 ) {return;}
 
     // Listen for Tuya DP reports (cluster CLUSTERS.TUYA_EF00)
     // v5.8.30: Enhanced with ALL event names (4x4_Pete battery sensor fix)
@@ -1064,7 +1064,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const iasZone = ep1.clusters?.iasZone || ep1.clusters?.ssIasZone || ep1.clusters?.[1280];
       const permissiveConfig = this._getSensorConfig?.() || {};if (iasZone?.on) {
         iasZone.on('attr.zoneStatus', (status) => {
-          const sn = typeof status === 'number' ? status : (status?.data?.[0] || 0);
+          const sn = typeof status === 'number' ? status : status?.data?.[0] || 0;
           const raw = (sn & 0x03) !== 0;
           const motion = this._applyPresenceInversion(raw );
           if (permissiveConfig.noIasMotion && this._hasTuyaDPCluster !== false) {
@@ -1101,36 +1101,36 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * Dynamically adds capabilities when ZCL data arrives from any cluster
    */
   _setupPermissiveZclListeners(ep1) {
-    if (!ep1) return;
+    if (!ep1) {return;}
     const self = this;
     const config = this._getSensorConfig?.() || {};const listen = (cluster, attr, cb) => {
-      try { if (cluster?.on) cluster.on(attr, cb);} catch (e) { /* ignore */ }
+      try { if (cluster?.on) {cluster.on(attr, cb);}} catch (e) { /* ignore */ }
     };
 
     // v5.8.86: JJ10 forum fix - respect noTemperature/noHumidity config flags
     // Previously, ZCL listeners would re-add capabilities that were removed by orphan cleanup
     listen(ep1.clusters?.msTemperatureMeasurement, 'attr.measuredValue', async (v) => {
-      if (config.noTemperature) return;
+      if (config.noTemperature) {return;}
       const t = v * 100;
-      if (t <= -40 || t >= 100) return;
+      if (t <= -40 || t >= 100) {return;}
       if (!self.hasCapability('measure_temperature'))
-        await self.addCapability('measure_temperature').catch(() => {});
+        {await self.addCapability('measure_temperature').catch(() => {});}
       self.setCapabilityValue('measure_temperature', t).catch(() => {});
       });
 
     listen(ep1.clusters?.msRelativeHumidity, 'attr.measuredValue', async (v) => {
-      if (config.noHumidity) return;
+      if (config.noHumidity) {return;}
       const h = v * 100;
-      if (h < 0 || h > 100) return;
+      if (h < 0 || h > 100) {return;}
       if (!self.hasCapability('measure_humidity'))
-        await self.addCapability('measure_humidity').catch(() => {});
+        {await self.addCapability('measure_humidity').catch(() => {});}
       self.setCapabilityValue('measure_humidity', h).catch(() => {});
       });
 
     listen(ep1.clusters?.msIlluminanceMeasurement, 'attr.measuredValue', async (v) => {
       const lux = parseFloat(Math.round(Math.pow(10, (v - 1) / 10000)));
       if (!self.hasCapability('measure_luminance'))
-        await self.addCapability('measure_luminance').catch(() => {});
+        {await self.addCapability('measure_luminance').catch(() => {});}
       self.setCapabilityValue('measure_luminance', lux).catch(() => {});
       });
 
@@ -1142,15 +1142,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     let lastPermBattValue = null;
     const battThrottleMs = config.batteryThrottleMs || 300000;
     listen(ep1.clusters?.genPowerCfg || ep1.clusters?.powerConfiguration, 'attr.batteryPercentageRemaining', async (v) => {
-      if (v === undefined || v === 255) return;
+      if (v === undefined || v === 255) {return;}
       const b = Math.min(100, Math.round(v));
       const now = Date.now();
-      if (now - lastPermBattUpdate < battThrottleMs) return;
-      if (lastPermBattValue !== null && Math.abs(b - lastPermBattValue) < 5) return;
+      if (now - lastPermBattUpdate < battThrottleMs) {return;}
+      if (lastPermBattValue !== null && Math.abs(b - lastPermBattValue) < 5) {return;}
       lastPermBattUpdate = now;
       lastPermBattValue = b;
       if (!self.hasCapability('measure_battery'))
-        await self.addCapability('measure_battery').catch(() => {});
+        {await self.addCapability('measure_battery').catch(() => {});}
       self.setCapabilityValue('measure_battery', b).catch(() => {});
       });
   }
@@ -1178,8 +1178,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   _parseBufferValue(data) {
     // Already a number
-    if (typeof data === 'number') return data;
-    if (typeof data === 'boolean') return data ? 1 : 0;
+    if (typeof data === 'number') {return data;}
+    if (typeof data === 'boolean') {return data ? 1 : 0;}
 
     // Buffer object: {type: "Buffer", data: [0,0,13,70]}
     if (data && typeof data === 'object') {
@@ -1227,7 +1227,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     const dpConfig = dpMap[dpId];
 
     // Track received DPs for diagnostics
-    if (!this._receivedDPs) this._receivedDPs = new Set();
+    if (!this._receivedDPs) {this._receivedDPs = new Set();}
     this._receivedDPs.add(dpId);
 
     // Enhanced diagnostic info
@@ -1269,7 +1269,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * - v5.5.364: AUTO-DISCOVERY integration for unknown devices
    */
   _handleTuyaResponse(data) {
-    if (!data) return;
+    if (!data) {return;}
 
     // Mark device as available when we receive data
     this.setAvailable().catch(() => { });
@@ -1298,7 +1298,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         const subDp = remaining.readUInt8(off);
         const subType = remaining.readUInt8(off + 1);
         const subLen = remaining.readUInt16BE(off + 2);
-        if (subDp === 0 || subDp > 200 || subLen > 64 || off + 4 + subLen > remaining.length) break;
+        if (subDp === 0 || subDp > 200 || subLen > 64 || off + 4 + subLen > remaining.length) {break;}
         const subData = remaining.slice(off + 4, off + 4 + subLen);
         off += 4 + subLen;
         this.log(`[RADAR] 🔄 Compound sub-DP${subDp}: type=${subType}, len=${subLen}, hex=${subData.toString('hex')}`);
@@ -1316,10 +1316,10 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         const dpType = bytes[3];
         const dpLen = (bytes[4] << 8) | bytes[5];
         let value;
-        if (dpType === 1 && dpLen === 1) value = bytes[6]; // Bool
-        else if (dpType === 2 && dpLen === 4) value = bytes.readUInt32BE(6); // Value
-        else if (dpType === 4 && dpLen === 1) value = bytes[6]; // Enum
-        else value = bytes[6];
+        if (dpType === 1 && dpLen === 1) {value = bytes[6];} // Bool
+        else if (dpType === 2 && dpLen === 4) {value = bytes.readUInt32BE(6);} // Value
+        else if (dpType === 4 && dpLen === 1) {value = bytes[6];} // Enum
+        else {value = bytes[6];}
         this.log(`[RADAR] 🔧 Parsed raw frame: DP${dp} type=${dpType} len=${dpLen} value=${value}`);
         dpId = dp;
         data = { dp, value, dpType, raw: true };
@@ -1380,7 +1380,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     if (dpMap[dpId]?.cap === 'measure_luminance') {
       const luxValue = this._parseBufferValue(data.value || data.data);
       const mfr = this._getManufacturerName();
-      const deviceId = this.getData()?.id;let finalLux = transformLux(luxValue, dpMap[dpId].type || 'lux_direct', mfr, deviceId);
+      const deviceId = this.getData()?.id;const finalLux = transformLux(luxValue, dpMap[dpId].type || 'lux_direct', mfr, deviceId);
 
       // v5.7.52: CRITICAL FIX - Shared throttle with ZCL to prevent fighting
       // Track Tuya DP updates and skip if ZCL updated recently
@@ -1395,13 +1395,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
       // v5.11.12: Same-value dedup â€” skip if lux hasn't changed
       const currentLux = this.getCapabilityValue('measure_luminance') || 0;
-      if (finalLux === currentLux) return;
+      if (finalLux === currentLux) {return;}
 
       // v5.5.985: Peter #1282 - Lux smoothing to prevent light flickering
       if (config.luxSmoothingEnabled) {
         const minChange = config.luxMinChangePercent || 10;
         // v5.11.12: Fix change calc when currentLux=0 (was always returning 100%)
-        const changePercent = currentLux > 0 ? (Math.abs(finalLux - currentLux) / currentLux) * 100 : (finalLux > 0 ? 100 : 0);
+        const changePercent = currentLux > 0 ? (Math.abs(finalLux - currentLux) / currentLux) * 100 : finalLux > 0 ? 100 : 0;
         
         if (changePercent < minChange) {
           // Ignore small changes to prevent flow triggers
@@ -1488,7 +1488,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
       const divisor = dpMap[dpId].divisor || 100;
       const dist = Math.round(rawDist/divisor * 100) * 100;
       if (dist >= 0 && dist <= 20) {
-        this.log('[RADAR] ðŸ“ DP' + dpId + ' distance=' + dist + 'm (raw:' + rawDist + ')');
+        this.log(`[RADAR] ðŸ“ DP${  dpId  } distance=${  dist  }m (raw:${  rawDist  })`);
         this.setCapabilityValue('measure_luminance.distance', dist).catch(() => {});
       }
       return;
@@ -1652,15 +1652,15 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   _parsePresenceValue(value) {
     // Boolean
-    if (typeof value === 'boolean') return value;
+    if (typeof value === 'boolean') {return value;}
     // Enum: 0=none, 1=presence, 2=motion
     if (typeof value === 'number') {
-      if (value === 0) return false;
-      if (value === 1 || value === 2) return true;
+      if (value === 0) {return false;}
+      if (value === 1 || value === 2) {return true;}
     }
     // String
-    if (value === 'presence' || value === 'motion' || value === 'true') return true;
-    if (value === 'none' || value === 'false') return false;
+    if (value === 'presence' || value === 'motion' || value === 'true') {return true;}
+    if (value === 'none' || value === 'false') {return false;}
     return null;
   }
 
@@ -1715,7 +1715,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   
   async _setupZclClusters(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1 ) return;
+    if (!ep1 ) {return;}
 
     // v5.5.512: Power Configuration cluster (0x0001) for battery
     // HOBEIAN ZG-204ZM uses ZCL battery reporting
@@ -1797,7 +1797,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           
           // MinChange: Skip if change < 15%
           if (lastLuxValue !== null && lastLuxValue > 0) {
-            const changePercent = (Math.abs(roundedLux - lastLuxValue / lastLuxValue) / 100);
+            const changePercent = Math.abs(roundedLux - lastLuxValue / lastLuxValue) / 100;
             if (changePercent < MIN_CHANGE_PERCENT) {
               return;
             }
@@ -1932,7 +1932,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           break;
         } catch (e) {
           this.log(`[RADAR] âšï¸ Could not write IAS CIE (attempt ${attempt}): ${e.message}`);
-          if (attempt < 3) await new Promise(r => setTimeout(r, 1000));
+          if (attempt < 3) {await new Promise(r => setTimeout(r, 1000));}
         }
       }
 
@@ -1950,7 +1950,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
           }
         } catch (e) {
           this.log(`[RADAR] âšï¸ IAS Zone enrollment failed (attempt ${attempt}): ${e.message}`);
-          if (attempt < 3) await new Promise(r => setTimeout(r, 1000));
+          if (attempt < 3) {await new Promise(r => setTimeout(r, 1000));}
         }
       }
 
@@ -2010,7 +2010,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * v5.5.538: Setup IAS Zone status listeners
    */
   async _setupIASZoneListeners(iasZone) {
-    if (!iasZone?.on) return;
+    if (!iasZone?.on) {return;}
 
     // v5.8.43: PR#125 michelhelsdingen - Skip IAS motion for sensors where DP is authoritative (e.g. HOBEIAN 10G)
     const config = this._getSensorConfig?.() || {};// v5.8.88: Respect runtime noIasMotion override (set when device has NO Tuya DP cluster)
@@ -2018,7 +2018,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // Attribute change listener - v5.5.790: Apply presence inversion
     iasZone.on('attr.zoneStatus', (status) => {
-      const statusNum = typeof status === 'object' ? (status?.data?.[0] || 0 ) : (typeof status === 'number' ? status : 0);
+      const statusNum = typeof status === 'object' ? status?.data?.[0] || 0  : typeof status === 'number' ? status : 0;
       const alarm1 = (statusNum & 0x01) !== 0;
       const alarm2 = (statusNum & 0x02) !== 0;
       const rawMotion = alarm1 || alarm2;
@@ -2049,7 +2049,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // v5.8.88: Opportunistic enrollment for sleepy battery devices
     let _enrollTried = false;
     iasZone.on('attr.zoneStatus', () => {
-      if (_enrollTried) return;
+      if (_enrollTried) {return;}
       _enrollTried = true;
       setTimeout(async () => {
         try {
@@ -2079,7 +2079,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * v5.5.538: Re-enroll IAS Zone if enrollment is lost
    */
   async _reEnrollIASZone() {
-    if (!this._iasZoneCluster) return;
+    if (!this._iasZoneCluster) {return;}
 
     try {
       this.log('[RADAR] ðŸ”„ Re-enrolling IAS Zone...');
@@ -2106,7 +2106,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
     // Check every 5 minutes if enrollment is still valid
     this._enrollmentCheckInterval = setInterval(async () => {
-      if (!this._iasZoneCluster) return;
+      if (!this._iasZoneCluster) {return;}
 
       try {
         const attrs = await this._iasZoneCluster.readAttributes(['zoneState', 'zoneId']);
@@ -2183,7 +2183,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   async _setupTuyaDPListeners(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     this.log('[RADAR] 🔧 Setting up Tuya DP listeners for mains-powered sensor...' );
 
@@ -2366,7 +2366,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     try {
       const ep1 = zclNode?.endpoints?.[1];
       const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[CLUSTERS.TUYA_EF00];
-      if (!tuyaCluster ) return;
+      if (!tuyaCluster ) {return;}
 
       // Zigbee epoch: 2000-01-01 00:00:00 UTC
       const ZIGBEE_EPOCH = new Date(Date.UTC(2000, 0, 1, 0, 0, 0)).getTime();
@@ -2396,7 +2396,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     try {
       const ep1 = zclNode?.endpoints?.[1];
       const tuyaCluster = ep1?.clusters?.tuya || ep1?.clusters?.[CLUSTERS.TUYA_EF00];
-      if (!tuyaCluster ) return;
+      if (!tuyaCluster ) {return;}
 
       // Method 1: dataRequest with specific DP
       if (tuyaCluster.dataRequest) {
@@ -2447,7 +2447,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * Logs ALL incoming DPs to help identify correct mappings
    */
   _logUnknownDP(dpId, value, rawData) {
-    if (!this._receivedDPs) this._receivedDPs = new Set();
+    if (!this._receivedDPs) {this._receivedDPs = new Set();}
 
     const isNew = !this._receivedDPs.has(dpId);
     this._receivedDPs.add(dpId);
@@ -2494,14 +2494,14 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
         if (mapping && this.tuyaEF00Manager) {
           let val = newSettings[key];
           // Convert boolean to 0/1
-          if (typeof val === 'boolean') val = val ? 1 : 0;
+          if (typeof val === 'boolean') {val = val ? 1 : 0;}
           // Parse string to number (parseFloat to preserve decimal steps like 0.5m)
           val = parseFloat(val) || 0;
           // Apply divisor in reverse (multiply) for distance values stored as meters
-          if (mapping.divisor && mapping.divisor > 1) val =safeMultiply(Math.round((val, mapping)).divisor);
+          if (mapping.divisor && mapping.divisor > 1) {val =safeMultiply(Math.round((val, mapping)).divisor);}
           // Clamp to min/max if defined
-          if (mapping.min !== undefined) val = Math.max(mapping.min, val);
-          if (mapping.max !== undefined) val = Math.min(mapping.max, val);
+          if (mapping.min !== undefined) {val = Math.max(mapping.min, val);}
+          if (mapping.max !== undefined) {val = Math.min(mapping.max, val);}
           await this.tuyaEF00Manager.sendDP(mapping.dp, val, 'value');
           this.log(`[RADAR] [SETTINGS] ✅ ${key}=${val} â†’ DP${mapping.dp}`);
         } else if (settingToDp[key] && !this.tuyaEF00Manager) {
@@ -2577,7 +2577,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

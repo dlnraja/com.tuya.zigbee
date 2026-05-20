@@ -44,7 +44,7 @@ class SensorIlluminancePresenceDriver extends ZigBeeDriver {
         const card = this.homey.flow.getConditionCard(id);
         if (card) {
           card.registerRunListener(async (args) => {
-            if (!args.device) return false;
+            if (!args.device) {return false;}
             return fn(args);
           });
           this.log(`[FLOW] ✅ Condition ${id} registered`);

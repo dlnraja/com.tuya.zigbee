@@ -3,17 +3,9 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class RadiatorValveDriver extends ZigBeeDriver {
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-      }
-    }
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('RadiatorValveDriver v5.5.572 initialized');
     this._registerFlowCards();
@@ -28,7 +20,7 @@ class RadiatorValveDriver extends ZigBeeDriver {
   const card = null;
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('target_temperature', args.temperature || args.value).catch(() => {});
           return true;
         });
@@ -39,7 +31,7 @@ class RadiatorValveDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('device_radiator_valve_smart_hybrid_set_temperature');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('target_temperature', args.temperature || args.value).catch(() => {});
           return true;
         });

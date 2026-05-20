@@ -12,7 +12,7 @@ class D extends EweLinkLocalDevice{
       });
   }
   async onInit(){
-    for(const c of['measure_temperature','measure_humidity'])if(!this.hasCapability(c))try{await this.addCapability(c);}catch(e){}
+    for(const c of['measure_temperature','measure_humidity']){if(!this.hasCapability(c)){try{await this.addCapability(c);}catch(e){}}}
     await super.onInit();
     this.log('[EWE-TH] Ready - TH10/TH16/THR316/THR320');
   }

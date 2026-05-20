@@ -3,79 +3,22 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class WallSwitch5gangDriver extends ZigBeeDriver {
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-    }
-  }
-
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('WallSwitch5gangDriver v5.5.587 initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // TRIGGERS
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-
+    // TRIGGERS
     // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('switch_wall_5gang_gang1_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -85,7 +28,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('switch_wall_5gang_gang2_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -95,7 +38,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('switch_wall_5gang_gang3_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -105,7 +48,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('switch_wall_5gang_gang4_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -115,7 +58,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('switch_wall_5gang_gang5_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -125,7 +68,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('switch_wall_5gang_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -136,7 +79,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_on_gang1');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
@@ -147,7 +90,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_off_gang1');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
@@ -158,7 +101,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_on_gang2');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
@@ -169,7 +112,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_off_gang2');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
@@ -180,7 +123,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_on_gang3');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
@@ -191,7 +134,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_off_gang3');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
@@ -202,7 +145,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_on_gang4');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
@@ -213,7 +156,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_off_gang4');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
@@ -224,7 +167,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_on_gang5');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
@@ -235,7 +178,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_off_gang5');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
@@ -246,7 +189,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_toggle_gang1');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = args.device.getCapabilityValue('onoff');
           await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
@@ -258,7 +201,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_toggle_gang2');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = args.device.getCapabilityValue('onoff');
           await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
@@ -270,7 +213,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_toggle_gang3');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = args.device.getCapabilityValue('onoff');
           await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
@@ -282,7 +225,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_toggle_gang4');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = args.device.getCapabilityValue('onoff');
           await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
@@ -294,7 +237,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_toggle_gang5');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = args.device.getCapabilityValue('onoff');
           await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
@@ -306,7 +249,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_on_all');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const caps = Object.keys(args.device.getCapabilities()).filter(c => c.startsWith('onoff'));
           for (const cap of caps) { await args.device.triggerCapabilityListener(cap, true).catch(() => {}); }
           return true;
@@ -318,7 +261,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_off_all');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const caps = Object.keys(args.device.getCapabilities()).filter(c => c.startsWith('onoff'));
           for (const cap of caps) { await args.device.triggerCapabilityListener(cap, false).catch(() => {}); }
           return true;
@@ -330,8 +273,8 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_set_backlight');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
+          if (!args.device) {return false;}
+          if (typeof args.device.setBacklightMode === 'function') {await args.device.setBacklightMode(args.mode || args.value);}
           return true;
         });
       }
@@ -341,8 +284,8 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_set_backlight_color');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
+          if (!args.device) {return false;}
+          if (typeof args.device.setBacklightMode === 'function') {await args.device.setBacklightMode(args.mode || args.value);}
           return true;
         });
       }
@@ -352,8 +295,8 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_set_backlight_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
+          if (!args.device) {return false;}
+          if (typeof args.device.setBacklightMode === 'function') {await args.device.setBacklightMode(args.mode || args.value);}
           return true;
         });
       }
@@ -363,7 +306,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
@@ -374,7 +317,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
@@ -385,7 +328,7 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = args.device.getCapabilityValue('onoff');
           await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
@@ -397,8 +340,8 @@ class WallSwitch5gangDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_wall_5gang_set_scene_mode');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          if (typeof args.device.setSceneMode === 'function') await args.device.setSceneMode(args.mode || args.value);
+          if (!args.device) {return false;}
+          if (typeof args.device.setSceneMode === 'function') {await args.device.setSceneMode(args.mode || args.value);}
           return true;
         });
       }

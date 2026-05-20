@@ -21,7 +21,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
 
       // Setup firmware info for inference tuning
       const appVersion = this.getStoreValue('appVersion') || this.zclNode.endpoints[1]?.clusters?.basic?.appVersion;
-      if (appVersion) this._inference.setFirmwareInfo(appVersion);
+      if (appVersion) {this._inference.setFirmwareInfo(appVersion);}
 
       this.log('[MMWAVE] ✅ Ready');
     }, 'onNodeInit');

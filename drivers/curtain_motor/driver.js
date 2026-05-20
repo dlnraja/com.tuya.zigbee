@@ -3,40 +3,22 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class TuyaZigbeeDriver extends ZigBeeDriver {
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-    }
-  }
-
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('curtain_motor driver v5.5.571 initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // TRIGGERS
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-
+    // TRIGGERS
     // ACTIONS
     try {
       const card = this.homey.flow.getActionCard('curtain_motor_set_windowcoverings_set');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('windowcoverings_set', args.position || args.value || 0).catch(() => {});
           return true;
         });
@@ -47,7 +29,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('curtain_motor_windowcoverings_open');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           // Generic action handler
           this.log('[FLOW] Action curtain_motor_windowcoverings_open triggered for', args.device.getName());
           return true;
@@ -59,7 +41,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('curtain_motor_windowcoverings_close');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           // Generic action handler
           this.log('[FLOW] Action curtain_motor_windowcoverings_close triggered for', args.device.getName());
           return true;
@@ -71,7 +53,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('curtain_motor_set_dim');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('dim', args.brightness || args.value || 1).catch(() => {});
           return true;
         });
@@ -82,7 +64,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('curtain_motor_stop');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           // Generic action handler
           this.log('[FLOW] Action curtain_motor_stop triggered for', args.device.getName());
           return true;
@@ -94,7 +76,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('curtain_motor_set_favorite');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           // Generic action handler
           this.log('[FLOW] Action curtain_motor_set_favorite triggered for', args.device.getName());
           return true;
@@ -106,7 +88,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('curtain_motor_set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('dim', args.brightness || args.value || 1).catch(() => {});
           return true;
         });
@@ -117,7 +99,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('curtain_motor_set_position');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('windowcoverings_set', args.position || args.value || 0).catch(() => {});
           return true;
         });
@@ -128,7 +110,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('curtain_motor_open');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           // Generic action handler
           this.log('[FLOW] Action curtain_motor_open triggered for', args.device.getName());
           return true;
@@ -140,7 +122,7 @@ class TuyaZigbeeDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('curtain_motor_close');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           // Generic action handler
           this.log('[FLOW] Action curtain_motor_close triggered for', args.device.getName());
           return true;

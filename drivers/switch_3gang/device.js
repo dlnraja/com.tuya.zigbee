@@ -178,7 +178,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
             this.setCapabilityValue(capName, !value).catch(() => {});
           }
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
-            const flowId = 'switch_3gang_physical_gang' + epNum + '_' + (value ? 'on' : 'off');
+            const flowId = `switch_3gang_physical_gang${  epNum  }_${  value ? 'on' : 'off'}`;
             try {
               this.homey.flow.getDeviceTriggerCard(flowId)
                 .trigger(this, { gang: epNum, state: value }, {})
@@ -188,7 +188,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
             try {
-              this.homey.flow.getDeviceTriggerCard('switch_3gang_gang' + epNum + '_scene')
+              this.homey.flow.getDeviceTriggerCard(`switch_3gang_gang${  epNum  }_scene`)
                 .trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
             } catch(e) {}
             this.log(`[BSEED-3G] 🎬 Scene G${epNum} ${value ? 'on' : 'off'}`);
@@ -242,7 +242,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
     for (const epNum of [1, 2, 3]) {
       try {
         const ep = zclNode?.endpoints?.[epNum];
-        if (!ep?.clusters) continue;
+        if (!ep?.clusters) {continue;}
         const g = ep.clusters.groups || ep.clusters.genGroups || ep.clusters[4] || ep.clusters['4'];
         if (!g) { this.log(`[BSEED-3G] EP${epNum} no groups cluster`); continue; }
         const fn = g.removeAll || g.removeAllGroups;
@@ -259,7 +259,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwi
   onDeleted() {
     if (this._zclState?.timeout) {
       for (const epNum of [1, 2, 3]) {
-        if (this._zclState.timeout[epNum]) clearTimeout(this._zclState.timeout[epNum]);
+        if (this._zclState.timeout[epNum]) {clearTimeout(this._zclState.timeout[epNum]);}
       }
     }
     super.onDeleted?.();

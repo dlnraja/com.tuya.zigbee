@@ -3,36 +3,22 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class CeilingFanDriver extends ZigBeeDriver {
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-    }
-  }
-
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('CeilingFanDriver v5.5.575 initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // TRIGGERS
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-
+    // TRIGGERS
     // CONDITIONS
     try {
       const card = this.homey.flow.getConditionCard('ceiling_fan_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -43,7 +29,7 @@ class CeilingFanDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('ceiling_fan_turn_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
@@ -54,7 +40,7 @@ class CeilingFanDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('ceiling_fan_turn_off');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
@@ -65,7 +51,7 @@ class CeilingFanDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('ceiling_fan_toggle');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = args.device.getCapabilityValue('onoff');
           await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
@@ -77,7 +63,7 @@ class CeilingFanDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('ceiling_fan_set_dim');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('dim', args.brightness || args.value || 1).catch(() => {});
           return true;
         });
@@ -88,7 +74,7 @@ class CeilingFanDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('ceiling_fan_set_brightness');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('dim', args.brightness || args.value || 1).catch(() => {});
           return true;
         });

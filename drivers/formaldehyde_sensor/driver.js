@@ -3,18 +3,9 @@
 const { ZigBeeDriver } = require('homey-zigbeedriver');
 
 class FormaldehydeSensorDriver extends ZigBeeDriver {
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-    }
-  }
-
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('FormaldehydeSensorDriver v5.5.582 initialized');
     this._registerFlowCards();
@@ -34,7 +25,7 @@ class FormaldehydeSensorDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('formaldehyde_sensor_formaldehyde_above');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const val = args.device.getCapabilityValue('measure_co2') || 0;
           return val > (args.threshold || 400);
         });
@@ -45,7 +36,7 @@ class FormaldehydeSensorDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('formaldehyde_sensor_air_quality_good');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }

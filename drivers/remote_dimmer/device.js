@@ -43,8 +43,8 @@ class RemoteDimmerDevice extends ZigBeeDevice {
     try {
       const mfr = this.getSetting('zb_manufacturer_name') || this.getData()?.manufacturerName || '';
       const mdl = this.getSetting('zb_model_id') || this.getData()?.modelId || '';
-      if (mfr) await this.setSettings({ zb_manufacturer_name: mfr }).catch(() => {});
-      if (mdl) await this.setSettings({ zb_model_id: mdl }).catch(() => {});
+      if (mfr) {await this.setSettings({ zb_manufacturer_name: mfr }).catch(() => {});}
+      if (mdl) {await this.setSettings({ zb_model_id: mdl }).catch(() => {});}
     } catch (e) { this.error('[RemoteDimmer] Settings error:', e.message); }
 
     // Last action tracking (for dedup)
@@ -108,7 +108,7 @@ class RemoteDimmerDevice extends ZigBeeDevice {
   _handleAction(action, payload = {}) {
     const now = Date.now();
     // Dedup: skip if same action within 200ms
-    if (action === this._lastAction && now - this._lastActionTime < 200) return;
+    if (action === this._lastAction && now - this._lastActionTime < 200) {return;}
     this._lastAction = action;
     this._lastActionTime = now;
 
@@ -131,10 +131,10 @@ class RemoteDimmerDevice extends ZigBeeDevice {
     const cardId = triggerMap[action];
     if (cardId) {
       const tokens = { action };
-      if (payload.stepSize !== undefined) tokens.step_size = payload.stepSize;
-      if (payload.level !== undefined) tokens.level = Math.round((payload.level / 254) * 100);
-      if (payload.rate !== undefined) tokens.rate = payload.rate;
-      if (payload.sceneId !== undefined) tokens.scene_id = payload.sceneId;
+      if (payload.stepSize !== undefined) {tokens.step_size = payload.stepSize;}
+      if (payload.level !== undefined) {tokens.level = Math.round((payload.level / 254) * 100);}
+      if (payload.rate !== undefined) {tokens.rate = payload.rate;}
+      if (payload.sceneId !== undefined) {tokens.scene_id = payload.sceneId;}
 
       this.homey.flow.getDeviceTriggerCard(cardId)
         .trigger(this, tokens, {})

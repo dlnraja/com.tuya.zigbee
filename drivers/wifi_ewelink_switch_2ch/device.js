@@ -8,11 +8,11 @@ class D extends EweLinkLocalDevice{
   _registerCapListeners(){
     this.registerCapabilityListener('onoff',async v=>{await this._client.setSwitch(v,0);
       });
-    if(this.hasCapability('onoff.2'))this.registerCapabilityListener('onoff.2',async v=>{await this._client.setSwitch(v,1);
-      });
+    if(this.hasCapability('onoff.2')){this.registerCapabilityListener('onoff.2',async v=>{await this._client.setSwitch(v,1);
+      });}
   }
   async onInit(){
-    if(!this.hasCapability('onoff.2'))try{await this.addCapability('onoff.2');}catch(e){}
+    if(!this.hasCapability('onoff.2')){try{await this.addCapability('onoff.2');}catch(e){}}
     await super.onInit();
     this.log('[EWE-SWITCH-2CH] Ready - DUAL R3/TX T2');
   }

@@ -7,23 +7,13 @@ class SceneSwitch4Driver extends ZigBeeDriver {
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
    * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
    */
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-    }
-  }
-
-
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     
@@ -54,7 +44,7 @@ class SceneSwitch4Driver extends ZigBeeDriver {
 
         if (card) {
           card.registerRunListener(async (args, state) => {
-            if (!args.device) return false;
+            if (!args.device) {return false;}
             if (args.button && state.button) {
               return String(args.button) === String(state.button);
             }
@@ -76,7 +66,7 @@ class SceneSwitch4Driver extends ZigBeeDriver {
 
           if (card) {
             card.registerRunListener(async (args, state) => {
-              if (!args.device) return false;
+              if (!args.device) {return false;}
               return true;
             });
             this.log(`[FLOW]  ${buttonTriggerId}`);

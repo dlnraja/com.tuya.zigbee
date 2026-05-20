@@ -48,7 +48,7 @@ class VibrationSensorDevice extends UnifiedSensorBase {
     // 1. Process via static mappings first
     const mapping = this.dpMappings[dpId];
     if (mapping) {
-      const val = mapping.transform ? mapping.transform(value) : (mapping.divisor ? value / mapping.divisor : value);
+      const val = mapping.transform ? mapping.transform(value) : mapping.divisor ? value / mapping.divisor : value;
       if (mapping.capability) {
         return this.setCapabilityValue(mapping.capability, val).catch(() => {});
       }

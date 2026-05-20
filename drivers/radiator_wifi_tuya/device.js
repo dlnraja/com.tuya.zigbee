@@ -91,7 +91,7 @@ class RadiatorWifiTuyaDevice extends Homey.Device {
   }
 
   _processData(data) {
-    if (!data || !data.dps) return;
+    if (!data || !data.dps) {return;}
 
     const dps = data.dps;
 
@@ -204,7 +204,7 @@ class RadiatorWifiTuyaDevice extends Homey.Device {
   }
 
   _scheduleReconnect() {
-    if (this._reconnectTimeout) return;
+    if (this._reconnectTimeout) {return;}
     
     this._reconnectTimeout = setTimeout(async () => {
       this._reconnectTimeout = null;

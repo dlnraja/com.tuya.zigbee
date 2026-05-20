@@ -64,8 +64,8 @@ class WiFiCameraDevice extends Homey.Device {
 
   async _initCloudClient() {
     const s = this.getSettings();
-    if (s.stream_method === 'lan_rtsp' || s.stream_method === 'snapshot_only') return;
-    if (!s.tuya_access_id || !s.tuya_access_key) return;
+    if (s.stream_method === 'lan_rtsp' || s.stream_method === 'snapshot_only') {return;}
+    if (!s.tuya_access_id || !s.tuya_access_key) {return;}
     try {
       this._cloudClient = new TuyaCameraClient({
         accessId: s.tuya_access_id,
@@ -80,7 +80,7 @@ class WiFiCameraDevice extends Homey.Device {
 
   async _initLocalConnection() {
     const s = this.getSettings();
-    if (!s.device_id || !s.local_key) return;
+    if (!s.device_id || !s.local_key) {return;}
     try {
       const TuyAPI = require('tuyapi');
       this._tuyaDevice = new TuyAPI({
@@ -116,7 +116,7 @@ class WiFiCameraDevice extends Homey.Device {
   }
 
   _scheduleReconnect() {
-    if (this._reconnectTimer) clearTimeout(this._reconnectTimer);
+    if (this._reconnectTimer) {clearTimeout(this._reconnectTimer);}
     this._reconnectTimer = setTimeout(async () => {
       if (this._tuyaDevice && !this._tuyaDevice.isConnected()) {
         try {
@@ -130,7 +130,7 @@ class WiFiCameraDevice extends Homey.Device {
   }
 
   _onDPData(data) {
-    if (!data || !data.dps) return;
+    if (!data || !data.dps) {return;}
     const dps = data.dps;
     
     if (dps[DP.MOTION_ALARM] !== undefined || dps[DP_ALT.MOTION_ALARM] !== undefined) {
@@ -163,11 +163,11 @@ class WiFiCameraDevice extends Homey.Device {
 
   async _allocateCloudRTSP() {
     const s = this.getSettings();
-    if (!this._cloudClient || !s.device_id) return;
+    if (!this._cloudClient || !s.device_id) {return;}
     try {
       const result = await this._cloudClient.allocateRTSP(s.device_id);
       if (result.success && result.result?.url) {
-        if (this._video) this._video.setUrl(result.result.url);
+        if (this._video) {this._video.setUrl(result.result.url);}
         else {
           this._video = await this.homey.videos.createVideoRTSP(result.result.url);
           await this.setCameraVideo('main', 'Camera', this._video);
@@ -175,7 +175,7 @@ class WiFiCameraDevice extends Homey.Device {
       } else {
         const hlsResult = await this._cloudClient.allocateHLS(s.device_id);
         if (hlsResult.success && hlsResult.result?.url) {
-          if (this._video) this._video.setUrl(hlsResult.result.url);
+          if (this._video) {this._video.setUrl(hlsResult.result.url);}
           else {
             this._video = await this.homey.videos.createVideoHLS(hlsResult.result.url);
             await this.setCameraVideo('main', 'Camera', this._video);
@@ -188,7 +188,7 @@ class WiFiCameraDevice extends Homey.Device {
   }
 
   _startRTSPRefresh() {
-    if (this._rtspRefreshTimer) clearInterval(this._rtspRefreshTimer);
+    if (this._rtspRefreshTimer) {clearInterval(this._rtspRefreshTimer);}
     this._rtspRefreshTimer = setInterval(() => {
       this._allocateCloudRTSP().catch(e => this.error(e));
     }, RTSP_REFRESH_INTERVAL);
@@ -236,7 +236,7 @@ class WiFiCameraDevice extends Homey.Device {
       if (this._cloudClient) {
         const s = this.getSettings();
         const code = this._dpToCode(dp);
-        if (code) return this._cloudClient.sendCameraCommand(s.device_id, code, value);
+        if (code) {return this._cloudClient.sendCameraCommand(s.device_id, code, value);}
       }
       throw new Error('Camera not connected');
     }
@@ -283,11 +283,11 @@ class WiFiCameraDevice extends Homey.Device {
   }
 
   _destroyLocalConnection() {
-    if (this._reconnectTimer) clearTimeout(this._reconnectTimer);
+    if (this._reconnectTimer) {clearTimeout(this._reconnectTimer);}
     if (this._tuyaDevice) {
       try {
         this._tuyaDevice.removeAllListeners();
-        if (this._tuyaDevice.isConnected()) this._tuyaDevice.disconnect();
+        if (this._tuyaDevice.isConnected()) {this._tuyaDevice.disconnect();}
       } catch (e) {}
       this._tuyaDevice = null;
     }
@@ -302,16 +302,16 @@ class WiFiCameraDevice extends Homey.Device {
   _registerFlowCards() {
     try {
       const privacyCard = (() => { try { return this.homey.flow.getActionCard('wifi_camera_set_privacy'); } catch (e) { return null; } })();
-      if (privacyCard) privacyCard.registerRunListener(async (args) => this._setDP(DP.PRIVACY_MODE, args.mode === 'on'));
+      if (privacyCard) {privacyCard.registerRunListener(async (args) => this._setDP(DP.PRIVACY_MODE, args.mode === 'on'));}
       
       const nvCard = (() => { try { return this.homey.flow.getActionCard('wifi_camera_set_night_vision'); } catch (e) { return null; } })();
-      if (nvCard) nvCard.registerRunListener(async (args) => this._setDP(DP.NIGHT_VISION, parseInt(args.mode, 10)));
+      if (nvCard) {nvCard.registerRunListener(async (args) => this._setDP(DP.NIGHT_VISION, parseInt(args.mode, 10)));}
       
       const ptzCard = (() => { try { return this.homey.flow.getActionCard('wifi_camera_ptz_move'); } catch (e) { return null; } })();
-      if (ptzCard) ptzCard.registerRunListener(async (args) => {
+      if (ptzCard) {ptzCard.registerRunListener(async (args) => {
         await this._setDP(DP.PTZ_CONTROL, args.direction);
         setTimeout(() => this._setDP(DP.PTZ_STOP, true).catch(() => {}), 1000);
-      });
+      });}
     } catch (e) { this.error('[WIFI-CAM] Flow card registration:', e.message); }
   }
 }

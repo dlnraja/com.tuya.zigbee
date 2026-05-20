@@ -3,18 +3,9 @@
 const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
 class TuyaZigbeeDriver extends BaseZigBeeDriver {
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-    }
-  }
-
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('Tuya Zigbee 3-Gang Switch Driver initialized');
     this._registerFlowCards();
@@ -41,7 +32,7 @@ class TuyaZigbeeDriver extends BaseZigBeeDriver {
         const card = this._getFlowCard(id, 'condition');
         if (card) {
           card.registerRunListener(async (args) => {
-            if (!args.device) return false;
+            if (!args.device) {return false;}
             const cap = idx === 0 ? 'onoff' : `onoff.gang${idx + 1}`;
             return args.device.getCapabilityValue(cap) === true;
           });
@@ -60,8 +51,8 @@ class TuyaZigbeeDriver extends BaseZigBeeDriver {
             const card = this._getFlowCard(id, 'action');
             if (card) {
               card.registerRunListener(async (args) => {
-                if (!args.device) return false;
-                let val = action === 'turn_on' ? true : (action === 'turn_off' ? false : !args.device.getCapabilityValue(cap));
+                if (!args.device) {return false;}
+                const val = action === 'turn_on' ? true : action === 'turn_off' ? false : !args.device.getCapabilityValue(cap);
                 await args.device.triggerCapabilityListener(cap, val);
                 return true;
               });
@@ -77,7 +68,7 @@ class TuyaZigbeeDriver extends BaseZigBeeDriver {
         const card = this._getFlowCard(`${P}_${act.id}`, 'action');
         if (card) {
           card.registerRunListener(async (args) => {
-            if (!args.device) return false;
+            if (!args.device) {return false;}
             if (typeof args.device[act.fn] === 'function') {
               await args.device[act.fn](args.mode || args.value);
               return true;

@@ -64,7 +64,7 @@ class motion_sensor_2 extends PhysicalButtonMixin(TuyaZigbeeDevice) {
 	
   // Handle illuminance attribute reports
   async onIlluminanceMeasuredAttributeReport(measuredValue) {
-    const luxValue = Math.round(Math.pow(10, ((measuredValue - 1) / 10000))); // Convert measured value to lux
+    const luxValue = Math.round(Math.pow(10, (measuredValue - 1) / 10000)); // Convert measured value to lux
     this.log('measure_luminance | Illuminance (lux):', luxValue);
     await this.setCapabilityValue('measure_luminance', luxValue).catch(this.error);
   }

@@ -59,7 +59,7 @@ class DimmableBulbDevice extends PhysicalButtonMixin(VirtualButtonMixin(LightBas
 
   onDeleted() {
     this.log('Device deleted, cleaning up');
-    if (super.onDeleted) super.onDeleted();
+    if (super.onDeleted) {super.onDeleted();}
   }
 }
 

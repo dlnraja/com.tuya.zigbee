@@ -33,7 +33,7 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
 
       // 2. Register capabilities found
       if (this._detectedCaps.length > 0) {
-        this.log('[UNIVERSAL] ✅ Registering ' + this._detectedCaps.length + ' detected capabilities');
+        this.log(`[UNIVERSAL] ✅ Registering ${  this._detectedCaps.length  } detected capabilities`);
         for (const cap of this._detectedCaps) {
           if (this.hasCapability(cap)) {
             // Register handlers for detected capabilities
@@ -43,7 +43,7 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
       }
 
       this.log('[UNIVERSAL] ════════════════════════════════════════════════════════════');
-      this.log('[UNIVERSAL] ✅ Ready - Caps: ' + this._detectedCaps.join(', '));
+      this.log(`[UNIVERSAL] ✅ Ready - Caps: ${  this._detectedCaps.join(', ')}`);
       this.log('[UNIVERSAL] ════════════════════════════════════════════════════════════');
     }, 'onNodeInit');
   }
@@ -61,7 +61,7 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
           }
         }
       }
-      this.log('[Z2M] Added caps from config: ' + this._z2mConfig.capabilities.join(', '));
+      this.log(`[Z2M] Added caps from config: ${  this._z2mConfig.capabilities.join(', ')}`);
     }
     
     this.log('[UNIVERSAL] 🔍 Detecting from clusters...');
@@ -70,11 +70,11 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
     for (const [epId, ep] of Object.entries(zclNode.endpoints || {})) {
       for (const clusterId of Object.keys(ep.clusters || {})) {
         const cid = parseInt(clusterId);
-        if (!isNaN(cid)) clusters.push(cid);
+        if (!isNaN(cid)) {clusters.push(cid);}
       }
     }
     
-    this.log('[UNIVERSAL] Clusters: ' + clusters.join(', '));
+    this.log(`[UNIVERSAL] Clusters: ${  clusters.join(', ')}`);
     await this.setSettings({ detected_clusters: clusters.slice(0, 10).join(', ') }).catch(() => { });
 
     for (const cid of clusters) {
@@ -85,7 +85,7 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
             try {
               await this.addCapability(cap);
               this._detectedCaps.push(cap);
-              this.log('[UNIVERSAL] ✅ +' + cap);
+              this.log(`[UNIVERSAL] ✅ +${  cap}`);
             } catch (e) { 
               /* ignore */ 
             }
@@ -98,7 +98,7 @@ class UniversalFallbackDevice extends TuyaUnifiedDevice {
   }
 
   _registerFallbackHandlers(cap) {
-    this.log('[UNIVERSAL] 🔧 Registering handler for ' + cap);
+    this.log(`[UNIVERSAL] 🔧 Registering handler for ${  cap}`);
     
     // Default handlers for common capabilities
     if (cap.startsWith('onoff')) {

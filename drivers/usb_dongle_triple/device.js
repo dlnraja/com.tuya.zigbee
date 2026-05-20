@@ -52,7 +52,7 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
     // Bind 3 USB ports
     const portMap = { 1: 'onoff', 2: 'onoff.usb2', 3: 'onoff.usb3' };
     for (const [ep, cap] of Object.entries(portMap)) {
-      if (this.hasCapability(cap)) this._bindOnOffChannel(zclNode, Number(ep), cap);
+      if (this.hasCapability(cap)) {this._bindOnOffChannel(zclNode, Number(ep), cap);}
     }
 
     // Energy monitoring on EP1
@@ -65,31 +65,31 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
   _bindOnOffChannel(zclNode, endpointId, capabilityId) {
     const ep = zclNode.endpoints[endpointId];
     if (!ep || !ep.clusters || !ep.clusters.onOff) {
-      this.log('[USB_TRIPLE] No onOff on EP' + endpointId);
+      this.log(`[USB_TRIPLE] No onOff on EP${  endpointId}`);
       return;
     }
     const onOff = ep.clusters.onOff;
 
     onOff.on('attr.onOff', value => {
-      this.log('[USB_TRIPLE] ' + capabilityId + ' attr=' + value);
+      this.log(`[USB_TRIPLE] ${  capabilityId  } attr=${  value}`);
       this.setCapabilityValue(capabilityId, !!value).catch(this.error);
     });
 
     this.registerCapabilityListener(capabilityId, async value => {
-      this.log('[USB_TRIPLE] Set ' + capabilityId + ' -> ' + value);
-      if (value) await onOff.setOn(); else await onOff.setOff();
+      this.log(`[USB_TRIPLE] Set ${  capabilityId  } -> ${  value}`);
+      if (value) {await onOff.setOn();} else {await onOff.setOff();}
     });
 
     onOff.readAttributes(['onOff']).then(data => {
       if (data?.onOff != null) {
-        this.log('[USB_TRIPLE] ' + capabilityId + ' initial=' + data.onOff);
+        this.log(`[USB_TRIPLE] ${  capabilityId  } initial=${  data.onOff}`);
         this.setCapabilityValue(capabilityId, !!data.onOff).catch(this.error);
       }
     }).catch(() => {});
 
     try {
       onOff.configureReporting({ onOff: { minInterval: 0, maxInterval: 300, minChange: 1 } })
-        .catch(e => this.log('[USB_TRIPLE] EP' + endpointId + ' reporting failed:', e.message));
+        .catch(e => this.log(`[USB_TRIPLE] EP${  endpointId  } reporting failed:`, e.message));
     } catch (e) {}
   }
 
@@ -99,12 +99,12 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
       if (changedKeys.includes('power_on_behavior')) {
         const map = { off: 0, on: 1, toggle: 3, previous: 2 };
         const val = map[newSettings.power_on_behavior] ?? 2;
-        if (ep1?.clusters?.onOff) await ep1.clusters.onOff.writeAttributes({ moesStartUpOnOff: val });
+        if (ep1?.clusters?.onOff) {await ep1.clusters.onOff.writeAttributes({ moesStartUpOnOff: val });}
       }
       if (changedKeys.includes('indicator_mode')) {
         const map = { off: 0, on_off: 1, inverted: 2 };
         const val = map[newSettings.indicator_mode] ?? 1;
-        if (ep1?.clusters?.onOff) await ep1.clusters.onOff.writeAttributes({ tuyaBacklightSwitch: val });
+        if (ep1?.clusters?.onOff) {await ep1.clusters.onOff.writeAttributes({ tuyaBacklightSwitch: val });}
       }
       if (changedKeys.includes('switch_mode')) {
         const map = { toggle: 0, state: 1, momentary: 2 };
@@ -122,20 +122,20 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
 
   async _configureEnergyReporting(zclNode) {
     const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     const electrical = ep1.clusters.electricalMeasurement || ep1.clusters.haElectricalMeasurement || ep1.clusters[0x0B04];
     const metering = ep1.clusters.metering || ep1.clusters.seMetering || ep1.clusters[0x0702];
 
     if (electrical) {
       electrical.on('attr.activePower', v => {
-        if (this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', v / 10).catch(this.error);
+        if (this.hasCapability('measure_power')) {this.setCapabilityValue('measure_power', v / 10).catch(this.error);}
       });
       electrical.on('attr.rmsVoltage', v => {
-        if (this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', v / 10).catch(this.error);
+        if (this.hasCapability('measure_voltage')) {this.setCapabilityValue('measure_voltage', v / 10).catch(this.error);}
       });
       electrical.on('attr.rmsCurrent', v => {
-        if (this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', v / 1000).catch(this.error);
+        if (this.hasCapability('measure_current')) {this.setCapabilityValue('measure_current', v / 1000).catch(this.error);}
       });
       await electrical.configureReporting({
         activePower: { minInterval: 10, maxInterval: 300, minChange: 1 },
@@ -143,21 +143,21 @@ class UsbDongleTripleDevice extends ZigBeeDevice {
         rmsCurrent: { minInterval: 10, maxInterval: 300, minChange: 10 },
       }).catch(e => this.log('[USB_TRIPLE] electrical reporting failed:', e.message));
       electrical.readAttributes(['activePower', 'rmsVoltage', 'rmsCurrent']).then(d => {
-        if (d?.activePower != null && this.hasCapability('measure_power')) this.setCapabilityValue('measure_power', d.activePower / 10).catch(this.error);
-        if (d?.rmsVoltage != null && this.hasCapability('measure_voltage')) this.setCapabilityValue('measure_voltage', d.rmsVoltage / 10).catch(this.error);
-        if (d?.rmsCurrent != null && this.hasCapability('measure_current')) this.setCapabilityValue('measure_current', d.rmsCurrent / 1000).catch(this.error);
+        if (d?.activePower != null && this.hasCapability('measure_power')) {this.setCapabilityValue('measure_power', d.activePower / 10).catch(this.error);}
+        if (d?.rmsVoltage != null && this.hasCapability('measure_voltage')) {this.setCapabilityValue('measure_voltage', d.rmsVoltage / 10).catch(this.error);}
+        if (d?.rmsCurrent != null && this.hasCapability('measure_current')) {this.setCapabilityValue('measure_current', d.rmsCurrent / 1000).catch(this.error);}
       }).catch(() => {});
     }
 
     if (metering) {
       metering.on('attr.currentSummationDelivered', v => {
-        if (this.hasCapability('meter_power')) this.setCapabilityValue('meter_power', v / 1000).catch(this.error);
+        if (this.hasCapability('meter_power')) {this.setCapabilityValue('meter_power', v / 1000).catch(this.error);}
       });
       await metering.configureReporting({
         currentSummationDelivered: { minInterval: 60, maxInterval: 3600, minChange: 1 }
       }).catch(e => this.log('[USB_TRIPLE] metering reporting failed:', e.message));
       metering.readAttributes(['currentSummationDelivered']).then(d => {
-        if (d?.currentSummationDelivered != null && this.hasCapability('meter_power')) this.setCapabilityValue('meter_power', d.currentSummationDelivered / 1000).catch(this.error);
+        if (d?.currentSummationDelivered != null && this.hasCapability('meter_power')) {this.setCapabilityValue('meter_power', d.currentSummationDelivered / 1000).catch(this.error);}
       }).catch(() => {});
     }
   }

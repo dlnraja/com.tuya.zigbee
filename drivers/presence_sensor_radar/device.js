@@ -24,7 +24,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
 
       // Detect firmware version for inference tuning
       const appVersion = this.getStoreValue('appVersion') || this.zclNode.endpoints[1]?.clusters?.basic?.appVersion;
-      if (appVersion) this._inference.setFirmwareInfo(appVersion);
+      if (appVersion) {this._inference.setFirmwareInfo(appVersion);}
 
       // Start polling/refresh cycle
       this._startInitializationCycle(zclNode);
@@ -89,8 +89,8 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     // C. Handle illuminance DPs
     if (mapping.cap === 'measure_luminance') {
       let lux = value;
-      if (mapping.type === 'lux_direct') lux = value;
-      else if (mapping.divisor) lux = value / mapping.divisor;
+      if (mapping.type === 'lux_direct') {lux = value;}
+      else if (mapping.divisor) {lux = value / mapping.divisor;}
       
       this._inference.updateLux(lux);
       return this.setCapabilityValue('measure_luminance', lux).catch(() => {});
@@ -126,7 +126,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
     try {
       const ep1 = zclNode?.endpoints?.[1];
       const tuya = ep1?.clusters?.tuya || ep1?.clusters?.[61184];
-      if (!tuya || !tuya.command) return;
+      if (!tuya || !tuya.command) {return;}
 
       const ZIGBEE_EPOCH = new Date(Date.UTC(2000, 0, 1, 0, 0, 0)).getTime();
       const utcSeconds = Math.floor((Date.now() - ZIGBEE_EPOCH) / 1000);
@@ -159,17 +159,17 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * Handle settings changes
    */
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    if (super.onSettings) await super.onSettings({ oldSettings, newSettings, changedKeys });
+    if (super.onSettings) {await super.onSettings({ oldSettings, newSettings, changedKeys });}
     
     const config = getSensorConfig(this.getManufacturerName(), this.getStoreValue('modelId'));
-    if (!config.dpMap) return;
+    if (!config.dpMap) {return;}
 
     for (const key of changedKeys) {
       const dpId = Object.keys(config.dpMap).find(id => config.dpMap[id].setting === key);
       if (dpId) {
         let value = newSettings[key];
         const dpConfig = config.dpMap[dpId];
-        if (dpConfig.divisor) value = Math.round(value * dpConfig.divisor);
+        if (dpConfig.divisor) {value = Math.round(value * dpConfig.divisor);}
         
         this.log(`[RADAR] ⚙️ Syncing ${key} → DP${dpId} value=${value}`);
         if (this.sendTuyaCommand) {
@@ -180,13 +180,13 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   }
 
   onUninit() {
-    if (this._pollingInterval) this.homey.clearInterval(this._pollingInterval);
-    if (super.onUninit) super.onUninit();
+    if (this._pollingInterval) {this.homey.clearInterval(this._pollingInterval);}
+    if (super.onUninit) {super.onUninit();}
   }
 
   onDeleted() {
     this.log('[RADAR] Device deleted');
-    if (super.onDeleted) super.onDeleted();
+    if (super.onDeleted) {super.onDeleted();}
   }
 }
 

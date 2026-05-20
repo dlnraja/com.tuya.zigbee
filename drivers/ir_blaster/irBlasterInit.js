@@ -8,9 +8,9 @@ async function init(dev) {
     const d = dev.getData() || {};
     mfr = d.manufacturerName || '';
     const mdl = d.modelId || '';
-    if (mfr) await dev.setSettings({ zb_manufacturer_name: mfr }).catch(() => {});
-    if (mdl) await dev.setSettings({ zb_model_id: mdl }).catch(() => {});
-    dev.log('[IR] ' + mfr + ' / ' + mdl);
+    if (mfr) {await dev.setSettings({ zb_manufacturer_name: mfr }).catch(() => {});}
+    if (mdl) {await dev.setSettings({ zb_model_id: mdl }).catch(() => {});}
+    dev.log(`[IR] ${  mfr  } / ${  mdl}`);
   } catch (e) {}
 
   if (mfr === MAINS) {

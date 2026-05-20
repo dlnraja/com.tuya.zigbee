@@ -169,7 +169,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
         if (mode === 'click') {
           // In click mode only "true" should trigger a physical press.
           // "false" is only the GUI reset and must not send a command.
-          if (value !== true) return;
+          if (value !== true) {return;}
           await this.triggerFingerBotPress();
           return;
         }
@@ -254,7 +254,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
       return;
     }
 
-    if (this._tuyaListenersAttached) return;
+    if (this._tuyaListenersAttached) {return;}
 
     tuyaCluster.on('reporting', async data => {
       try {
@@ -500,7 +500,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
   }
 
   _normalizeMode(mode) {
-    if (mode === 'switch' || mode === 'program') return mode;
+    if (mode === 'switch' || mode === 'program') {return mode;}
     return DEFAULT_MODE;
   }
 
@@ -529,8 +529,8 @@ class FingerBot extends TuyaSpecificClusterDevice {
 
   _getFlowCard(id, type = 'trigger') {
     try {
-      if (type === 'action') return this.homey.flow.getActionCard(id);
-      if (type === 'condition') return this.homey.flow.getConditionCard(id);
+      if (type === 'action') {return this.homey.flow.getActionCard(id);}
+      if (type === 'condition') {return this.homey.flow.getConditionCard(id);}
       return this.homey.flow.getTriggerCard(id);
     } catch (err) {
       return null;
@@ -550,7 +550,7 @@ class FingerBot extends TuyaSpecificClusterDevice {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

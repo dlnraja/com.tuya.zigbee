@@ -20,7 +20,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('switch_usb_dongle_port1_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
         this.log('[FLOW] ✅ switch_usb_dongle_port1_is_on');
@@ -34,7 +34,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
       const card = this.homey.flow.getConditionCard('switch_usb_dongle_port2_is_on');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff.l2') === true;
         });
         this.log('[FLOW] ✅ switch_usb_dongle_port2_is_on');
@@ -48,7 +48,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_usb_dongle_turn_on_port1');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.setCapabilityValue('onoff', true).catch(() => {});
           return true;
         });
@@ -63,7 +63,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_usb_dongle_turn_off_port1');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.setCapabilityValue('onoff', false).catch(() => {});
           return true;
         });
@@ -78,7 +78,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_usb_dongle_turn_on_port2');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.setCapabilityValue('onoff.l2', true).catch(() => {});
           return true;
         });
@@ -93,7 +93,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_usb_dongle_turn_off_port2');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.setCapabilityValue('onoff.l2', false).catch(() => {});
           return true;
         });
@@ -108,7 +108,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_usb_dongle_toggle_port1');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const v = args.device.getCapabilityValue('onoff');
           await args.device.setCapabilityValue('onoff', !v).catch(() => {});
           return true;
@@ -124,7 +124,7 @@ class SwitchUsbDongleDriver extends ZigBeeDriver {
       const card = this.homey.flow.getActionCard('switch_usb_dongle_toggle_port2');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const v = args.device.getCapabilityValue('onoff.l2');
           await args.device.setCapabilityValue('onoff.l2', !v).catch(() => {});
           return true;

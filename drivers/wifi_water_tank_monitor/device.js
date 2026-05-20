@@ -91,7 +91,7 @@ class WiFiWaterTankMonitorDevice extends TuyaLocalDevice {
 
   onDeleted() {
     this.log('[WIFI-TANK] Sensor deleted');
-    if (super.onDeleted) super.onDeleted();
+    if (super.onDeleted) {super.onDeleted();}
   }
 }
 

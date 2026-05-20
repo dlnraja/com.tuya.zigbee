@@ -35,7 +35,7 @@ class WiFiWaterValveDevice extends VirtualButtonMixin(PhysicalButtonMixin(TuyaLo
 
   onDeleted() {
     this.log('Device deleted, cleaning up');
-    if (super.onDeleted) super.onDeleted();
+    if (super.onDeleted) {super.onDeleted();}
   }
 }
 

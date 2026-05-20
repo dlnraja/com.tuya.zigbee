@@ -40,7 +40,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     // Prevent double init
-    if (this._ledControllerInited) return;
+    if (this._ledControllerInited) {return;}
     this._ledControllerInited = true;
 
     this.zclNode = zclNode;
@@ -56,8 +56,8 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
     this.log('');
 
     // Ensure capabilities exist
-    if (!this.hasCapability('onoff')) await this.addCapability('onoff').catch(() => { });
-    if (!this.hasCapability('dim')) await this.addCapability('dim').catch(() => { });
+    if (!this.hasCapability('onoff')) {await this.addCapability('onoff').catch(() => { });}
+    if (!this.hasCapability('dim')) {await this.addCapability('dim').catch(() => { });}
 
     // Get clusters
     const endpoint = zclNode.endpoints[1];
@@ -100,7 +100,7 @@ class LEDControllerDimmableDevice extends ZigBeeDevice {
   async _setupTuyaListener() {
     try {
       const endpoint = this.zclNode.endpoints[1];
-      if (!endpoint) return;
+      if (!endpoint) {return;}
 
       // Try to get Tuya cluster
       const tuyaCluster = endpoint.clusters['tuya'] || endpoint.clusters[CLUSTERS.TUYA_EF00];
