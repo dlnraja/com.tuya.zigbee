@@ -1,18 +1,24 @@
 'use strict';
 
 const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
-const { registerButtonFlowCards } = require('../../lib/FlowCardHelper');
 
 /**
- * v5.5.533: Button 4-Gang Driver - Added await super.onInit()
- * v5.5.114: Original
+ * ButtonWireless4 Driver - v7.5.52
+ * Provides crash-prevention device ID lookup + safe init
  */
 class ButtonWireless4Driver extends BaseZigBeeDriver {
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
 
   async onInit() {
-    await super.onInit(); // v5.5.533: SDK3 CRITICAL
-    this.log('ButtonWireless4Driver v5.5.533 initialized');
-    registerButtonFlowCards(this, 'button_wireless_4', 4);
+    await super.onInit();
+    this.log('Button Wireless 4 Driver initialized [v7.5.52]');
   }
 }
 

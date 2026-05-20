@@ -83,6 +83,31 @@ class IrBlasterDevice extends ZigBeeDevice {
 
   get mainsPowered() { return true; }
 
+  /**
+   * Safe OnOff with timeout - prevents 10000ms default timeout errors
+   * @param {object} zclNode - Zigbee node reference
+   * @param {boolean} value - true for setOn, false for setOff
+   * @param {number} timeoutMs - timeout in ms (default 3000)
+   */
+  async _safeSetOnOff(zclNode, value, timeoutMs = 3000) {
+    const cluster = zclNode?.endpoints?.[1]?.clusters?.onOff;
+    if (!cluster) {
+      this.log('[IR] No OnOff cluster available');
+      return;
+    }
+    try {
+      const method = value ? 'setOn' : 'setOff';
+      await Promise.race([
+        cluster[method](),
+        new Promise((_, reject) =>
+          this.homey.setTimeout(() => reject(new Error(`OnOff.${method} timed out after ${timeoutMs}ms`)), timeoutMs)
+        )
+      ]);
+    } catch (err) {
+      this.log(`[IR] OnOff fallback ${value ? 'ON' : 'OFF'} failed/skipped: ${err.message}`);
+    }
+  }
+
   async onNodeInit({ zclNode }) {
     await super.onNodeInit({ zclNode });
     // --- Attribute Reporting Configuration (auto-generated) ---
@@ -374,7 +399,7 @@ class IrBlasterDevice extends ZigBeeDevice {
           this.log('Advanced IR learning started via ZosungIRControl (Z2M protocol)');
         } catch (clusterErr) {
           this.log('ZosungIRControl failed, using fallback:', clusterErr.message);
-          await zclNode.endpoints[1].clusters.onOff?.setOn();
+          await this._safeSetOnOff(zclNode, true);
         }
       } else {
         // v5.8.1: Try Tuya DP for learn mode if no Zosung cluster
@@ -386,11 +411,11 @@ class IrBlasterDevice extends ZigBeeDevice {
             this.log('IR learn started via Tuya DP1');
           } catch (tuyaErr) {
             this.log('Tuya DP1 failed, trying OnOff:', tuyaErr.message);
-            await zclNode.endpoints[1].clusters.onOff?.setOn();
+            await this._safeSetOnOff(zclNode, true);
             this.log('IR learn started via OnOff fallback');
           }
         } else {
-          await zclNode.endpoints[1].clusters.onOff?.setOn();
+          await this._safeSetOnOff(zclNode, true);
           this.log('IR learn started via OnOff fallback');
         }
       }
@@ -454,12 +479,12 @@ class IrBlasterDevice extends ZigBeeDevice {
         } catch (clusterErr) {
           this.log('ZosungIRControl.IRLearn failed:', clusterErr.message);
           // Fallback to OnOff
-          await zclNode.endpoints[1].clusters.onOff?.setOn();
+          await this._safeSetOnOff(zclNode, true);
         }
       } else {
         // Fallback: use OnOff cluster
         this.log('ZosungIRControl cluster not available, using OnOff fallback');
-        await zclNode.endpoints[1].clusters.onOff?.setOn();
+        await this._safeSetOnOff(zclNode, true);
       }
 
       this.setCapabilityValue('onoff', true).catch(() => { });
@@ -529,7 +554,7 @@ class IrBlasterDevice extends ZigBeeDevice {
         } catch (clusterErr) {
           this.log('ZosungIRControl.IRLearn stop failed:', clusterErr.message);
           try {
-            await zclNode.endpoints[1].clusters.onOff?.setOff();
+            await this._safeSetOnOff(zclNode, false);
           } catch (e) {
             this.log('Fallback OnOff setOff also failed:', e.message);
           }
@@ -537,9 +562,9 @@ class IrBlasterDevice extends ZigBeeDevice {
       } else {
         // Fallback: use OnOff cluster
         try {
-          await zclNode.endpoints[1].clusters.onOff?.setOff();
+          await this._safeSetOnOff(zclNode, false);
         } catch (e) {
-          this.log('Fallback OnOff setOff failed:', e.message);
+          this.log('Fallback OnOff setOff also failed:', e.message);
         }
       }
 
