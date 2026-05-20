@@ -5,13 +5,13 @@ class WiFiCoverDevice extends TuyaLocalDevice {
   get dpMappings() {
     return {
       '1': { capability: 'windowcoverings_state', writable: true,
-        transform: async (v) => { if (v === 'open' || v === '0' || v === 0) return 'up';
-          if (v === 'close' || v === '2' || v === 2) return 'down';
+        transform: async (v) => { if (v === 'open' || v === '0' || v === 0) {return 'up';}
+          if (v === 'close' || v === '2' || v === 2) {return 'down';}
           return 'idle';
         },
         reverseTransform: (v) => {
-          if (v === 'up') return 'open';
-          if (v === 'down') return 'close';
+          if (v === 'up') {return 'open';}
+          if (v === 'down') {return 'close';}
           return 'stop';
         } },
       '2': { capability: 'windowcoverings_set', writable: true,

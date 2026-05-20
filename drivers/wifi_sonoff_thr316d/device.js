@@ -10,11 +10,11 @@ class D extends E{
     targets:{capability:null,internal:'targets'}
   };}
   async _registerCapListeners(){
-    this.registerCapabilityListener('onoff',async v=>{ if (typeof this.markAppCommand === 'function') this.markAppCommand(1, v);await this._client.setSwitch(v);});
-    if(this.hasCapability('target_temperature'))this.registerCapabilityListener('target_temperature',async v=>{await this._client._send('/zeroconf/deviceStatus',{targets:[{targetHigh:String(v)}]});});
+    this.registerCapabilityListener('onoff',async v=>{ if (typeof this.markAppCommand === 'function') {this.markAppCommand(1, v);}await this._client.setSwitch(v);});
+    if(this.hasCapability('target_temperature')){this.registerCapabilityListener('target_temperature',async v=>{await this._client._send('/zeroconf/deviceStatus',{targets:[{targetHigh:String(v)}]});});}
   }
   async onInit(){
-    for(const c of['measure_temperature','measure_humidity','target_temperature'])if(!this.hasCapability(c))await this.addCapability(c).catch(() => { });
+    for(const c of['measure_temperature','measure_humidity','target_temperature']){if(!this.hasCapability(c)){await this.addCapability(c).catch(() => { });}}
     await super.onInit(); }
 
 

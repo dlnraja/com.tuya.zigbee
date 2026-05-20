@@ -53,7 +53,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
         const card = this.homey.flow.getConditionCard(id);
         if (card) {
           card.registerRunListener(async (args) => {
-            if (!args.device) return false;
+            if (!args.device) {return false;}
             return fn(args);
           });
           this.log(`[FLOW] ✅ Condition ${id} registered`);
@@ -108,7 +108,7 @@ class RadarMotionSensorMmwaveDriver extends ZigBeeDriver {
         const card = this.homey.flow.getActionCard(id);
         if (card) {
           card.registerRunListener(async (args) => {
-            if (!args.device) return false;
+            if (!args.device) {return false;}
             return fn(args);
           });
           this.log(`[FLOW] ✅ Action ${id} registered`);

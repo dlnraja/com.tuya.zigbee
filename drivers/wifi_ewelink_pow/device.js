@@ -12,7 +12,7 @@ class D extends EweLinkLocalDevice{
       });
   }
   async onInit(){
-    for(const c of['measure_power','measure_voltage','measure_current'])if(!this.hasCapability(c))try{await this.addCapability(c);}catch(e){}
+    for(const c of['measure_power','measure_voltage','measure_current']){if(!this.hasCapability(c)){try{await this.addCapability(c);}catch(e){}}}
     await super.onInit();
     this.log('[EWE-POW] Ready - S31/S40/POW R2/R3/Elite');
   }

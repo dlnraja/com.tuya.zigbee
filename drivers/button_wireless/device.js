@@ -113,7 +113,7 @@ class UniversalWirelessButtonDevice extends ButtonDevice {
 
   onDeleted() {
     this.log('Device deleted, cleaning up');
-    if (super.onDeleted) super.onDeleted();
+    if (super.onDeleted) {super.onDeleted();}
   }
 }
 

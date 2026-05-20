@@ -30,8 +30,8 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
   // v5.5.322: Auto-detect power source - battery curtain robots use 3xAA
   get mainsPowered() {
     const powerSetting = this.getSetting('power_source');
-    if (powerSetting === 'battery') return false;
-    if (powerSetting === 'ac' || powerSetting === 'dc') return true;
+    if (powerSetting === 'battery') {return false;}
+    if (powerSetting === 'ac' || powerSetting === 'dc') {return true;}
     // Auto-detect: assume battery if measure_battery capability exists
     return !this.hasCapability('measure_battery');
   }
@@ -127,14 +127,14 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
    */
   _startHealthMonitor() {
     // Clear any existing interval
-    if (this._healthInterval) clearInterval(this._healthInterval);
+    if (this._healthInterval) {clearInterval(this._healthInterval);}
 
     this._healthInterval = setInterval(async () => {
       // Skip if device had recent successful communication
-      if (Date.now() - (this._lastCommSuccess || 0) < 300000) return;
+      if (Date.now() - (this._lastCommSuccess || 0) < 300000) {return;}
       
       // Skip if no failures tracked
-      if (!this._commFailures || this._commFailures < 1) return;
+      if (!this._commFailures || this._commFailures < 1) {return;}
 
       this.log('[CURTAIN] 🔍 Running health check...');
       try {
@@ -155,7 +155,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
    * v5.7.9: Cleanup on device removal
    */
   async onDeleted() {
-    if (this._healthInterval) clearInterval(this._healthInterval);
+    if (this._healthInterval) {clearInterval(this._healthInterval);}
     await super.onDeleted?.();
   }
 
@@ -193,7 +193,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(HybridCo
    * v5.5.322: Handle incoming Tuya DP reports
    */
   _handleTuyaDP(data) {
-    if (!data) return;
+    if (!data) {return;}
 
     const dp = data.dp || data.datapoint;
     const value = data.data?.[0] ?? data.value;

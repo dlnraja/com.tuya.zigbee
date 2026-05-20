@@ -71,14 +71,14 @@ const convertMultiByteNumberPayloadToSingleDecimalNumber = chunks => {
 };
 
 const getDataValue = dpValue => {
-  if (!dpValue || !dpValue.data) return null;
+  if (!dpValue || !dpValue.data) {return null;}
   switch (dpValue.datatype) {
   case dataTypes.raw: return dpValue.data;
   case dataTypes.bool: return dpValue.data[0] === 1;
   case dataTypes.value: return convertMultiByteNumberPayloadToSingleDecimalNumber(dpValue.data);
   case dataTypes.string: {
     let dataString = '';
-    for (let i = 0; i < dpValue.data.length; ++i) dataString += String.fromCharCode(dpValue.data[i]);
+    for (let i = 0; i < dpValue.data.length; ++i) {dataString += String.fromCharCode(dpValue.data[i]);}
     return dataString;
   }
   case dataTypes.enum: return dpValue.data[0];
@@ -181,7 +181,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
   _registerTuyaListeners(zclNode) {
     const tuyaCluster = zclNode?.endpoints?.[1]?.clusters?.tuya;
-    if (!tuyaCluster) return;
+    if (!tuyaCluster) {return;}
     tuyaCluster.on('response', data => this.processTuyaMessage('response', data).catch(this.error));
     tuyaCluster.on('reporting', data => this.processTuyaMessage('reporting', data).catch(this.error));
     tuyaCluster.on('datapoint', data => this.processTuyaMessage('datapoint', data).catch(this.error));
@@ -190,7 +190,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   }
 
   async ensureCapability(capabilityId) {
-    if (!this.hasCapability(capabilityId)) await this.addCapability(capabilityId);
+    if (!this.hasCapability(capabilityId)) {await this.addCapability(capabilityId);}
   }
 
   async bootstrap() {
@@ -203,7 +203,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   async bootstrapBasicRead() {
     try {
       const basicCluster = this.zclNode?.endpoints?.[1]?.clusters?.basic;
-      if (basicCluster) await basicCluster.readAttributes(['manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource']);
+      if (basicCluster) {await basicCluster.readAttributes(['manufacturerName', 'zclVersion', 'appVersion', 'modelId', 'powerSource']);}
     } catch (error) { this.error('Bootstrap read failed', error); }
   }
 
@@ -214,7 +214,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   async sendMcuVersionRequest() {
     try {
       const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-      if (!tuyaCluster || typeof tuyaCluster.mcuVersionRequest !== 'function') return;
+      if (!tuyaCluster || typeof tuyaCluster.mcuVersionRequest !== 'function') {return;}
       const payload = Buffer.from([0x00, 0x00]);
       await tuyaCluster.mcuVersionRequest({ payload });
     } catch (error) { this.error('Failed to send Tuya mcuVersionRequest', error); }
@@ -223,7 +223,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   async queryAll() {
     try {
       const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-      if (tuyaCluster && typeof tuyaCluster.dataQuery === 'function') await tuyaCluster.dataQuery({});
+      if (tuyaCluster && typeof tuyaCluster.dataQuery === 'function') {await tuyaCluster.dataQuery({});}
     } catch (error) { this.error('Failed to send Tuya dataQuery', error); }
   }
 
@@ -275,8 +275,8 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
   }
 
   async onEndDeviceAnnounce() {
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
-    if (this._dataRecoveryManager) this._dataRecoveryManager.triggerRecovery();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
+    if (this._dataRecoveryManager) {this._dataRecoveryManager.triggerRecovery();}
   }
 }
 

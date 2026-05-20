@@ -34,7 +34,7 @@ class WallCurtainSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
       this.registerCapabilityListener('windowcoverings_state', async (value) => {
         this.log(`[WallCurtain] Setting state: ${value}`);
         const endpoint = this.zclNode.endpoints[1];
-        if (!endpoint?.clusters?.windowCovering) return;
+        if (!endpoint?.clusters?.windowCovering) {return;}
 
         switch (value) {
           case 'up': return endpoint.clusters.windowCovering.upOpen();

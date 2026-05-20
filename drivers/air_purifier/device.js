@@ -39,7 +39,7 @@ class AirPurifierDevice extends BaseUnifiedDevice {
    * handleTuyaDataReport - Hardened DP Processing
    */
   async handleTuyaDataReport(data) {
-    if (!data || data.dp == null) return;
+    if (!data || data.dp == null) {return;}
     
     const value = data.data ?? data.value;
     const dpId = data.dp;

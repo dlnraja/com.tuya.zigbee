@@ -165,7 +165,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
    * v5.5.799: Apply initial settings after device init
    */
   async _applyInitialSettings() {
-    if (this._settingsApplied) return;
+    if (this._settingsApplied) {return;}
     this._settingsApplied = true;
     
     try {
@@ -245,7 +245,7 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     }
     
     if (!data || typeof data.dp === 'undefined') {
-      if (DEBUG_MODE) this.log('Invalid data format');
+      if (DEBUG_MODE) {this.log('Invalid data format');}
       return;
     }
 

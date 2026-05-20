@@ -20,7 +20,7 @@ class PetFeederDevice extends TuyaZigbeeDevice {
       // Register feed button
       if (this.hasCapability('button.feed')) {
         this.registerCapabilityListener('button.feed', async () => {
-          if (typeof this.markAppCommand === 'function') this.markAppCommand(1, true);
+          if (typeof this.markAppCommand === 'function') {this.markAppCommand(1, true);}
           await this._triggerFeed();
         });
       }
@@ -42,10 +42,10 @@ class PetFeederDevice extends TuyaZigbeeDevice {
 
   _setupTuyaDP(zclNode) {
     const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
-    if (!tuyaCluster) return;
+    if (!tuyaCluster) {return;}
 
     this.log('[TUYA] DP cluster found');
 
@@ -55,7 +55,7 @@ class PetFeederDevice extends TuyaZigbeeDevice {
   }
 
   _handleDP(dp, value) {
-    if (dp === undefined) return;
+    if (dp === undefined) {return;}
     this.log(`[DP${dp}] = ${value}`);
 
     switch (dp) {

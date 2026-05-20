@@ -101,7 +101,7 @@ class SirenDevice extends UnifiedPlugBase {
     // Register volume listener (send to BOTH standard DP5 + NEO DP116)
     if (this.hasCapability('volume_set')) {
       this.registerCapabilityListener('volume_set', async (v) => {
-        const volume = v < 0.4 ? 0 : (v < 0.7 ? 1 : 2);
+        const volume = v < 0.4 ? 0 : v < 0.7 ? 1 : 2;
         try { await this._sendTuyaDP(5, volume, 'enum'); } catch (e) {}
         try { await this._sendTuyaDP(116, volume, 'enum'); } catch (e) {}
       });
@@ -116,7 +116,7 @@ class SirenDevice extends UnifiedPlugBase {
     const ep1 = zclNode?.endpoints?.[1];
     try {
       this._iasWd = ep1?.clusters?.ssIasWd || ep1?.clusters?.iasWd;
-      if (this._iasWd) this.log('[SIREN]  IAS WD cluster available' );
+      if (this._iasWd) {this.log('[SIREN]  IAS WD cluster available' );}
     } catch (e) { /* ignore */ }
   }
 
@@ -168,7 +168,7 @@ class SirenDevice extends UnifiedPlugBase {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
   }
 }
 

@@ -67,7 +67,7 @@ class RGBWBulbDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) 
   }
 
   async _parseHSV(raw) {
-    if (!raw || typeof raw !== 'string' || raw.length < 12) return null;
+    if (!raw || typeof raw !== 'string' || raw.length < 12) {return null;}
     try {
       const h = parseInt(raw.substring(0, 4), 16);
       const s = parseInt(raw.substring(4, 8), 16);
@@ -83,7 +83,7 @@ class RGBWBulbDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) 
 
   async _setupColorCluster(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
     try {
       const colorCluster = ep1.clusters?.lightingColorCtrl || ep1.clusters?.colorControl;
       if (colorCluster?.on) {
@@ -108,7 +108,7 @@ class RGBWBulbDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) 
     }
     if (this.hasCapability('light_mode')) {
       this.registerCapabilityListener('light_mode', async (v) => {
-        if (typeof this.markAppCommand === 'function') this.markAppCommand(1, v);
+        if (typeof this.markAppCommand === 'function') {this.markAppCommand(1, v);}
         await this._sendTuyaDP(2, v === 'color' ? 1 : 0, 'enum');
       });
     }
@@ -127,7 +127,7 @@ class RGBWBulbDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) 
 
   async _sendTuyaDP(dp, value, type) {
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-    if (tuya?.datapoint) await tuya.datapoint({ dp, value, type });
+    if (tuya?.datapoint) {await tuya.datapoint({ dp, value, type });}
   }
 
   onDeleted() {

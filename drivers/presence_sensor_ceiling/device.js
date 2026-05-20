@@ -104,9 +104,9 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
   }
 
   async _handleAutoRelay(presence) {
-    const delay = presence ? (this.getSetting('relay_delay_on') || 0) : (this.getSetting('relay_delay_off') || 0);
+    const delay = presence ? this.getSetting('relay_delay_on') || 0 : this.getSetting('relay_delay_off') || 0;
     
-    if (this._relayTimeout) this.homey.clearTimeout(this._relayTimeout);
+    if (this._relayTimeout) {this.homey.clearTimeout(this._relayTimeout);}
     
     this._relayTimeout = this.homey.setTimeout(async () => { 
       await this._setRelay(presence);  
@@ -116,8 +116,8 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
   async _setRelay(value) {
     try {
       if (this._onOffCluster) {
-        if (value) await this._onOffCluster.setOn();
-        else await this._onOffCluster.setOff();
+        if (value) {await this._onOffCluster.setOn();}
+        else {await this._onOffCluster.setOff();}
       } else {
         // Fallback to Tuya DP
         if (this.sendTuyaCommand) {
@@ -133,7 +133,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
   }
 
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    if (super.onSettings) await super.onSettings({ oldSettings, newSettings, changedKeys });
+    if (super.onSettings) {await super.onSettings({ oldSettings, newSettings, changedKeys });}
 
     for (const key of changedKeys) {
       const val = newSettings[key];
@@ -147,13 +147,13 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
   }
 
   onUninit() {
-    if (this._relayTimeout) this.homey.clearTimeout(this._relayTimeout);
-    if (super.onUninit) super.onUninit();
+    if (this._relayTimeout) {this.homey.clearTimeout(this._relayTimeout);}
+    if (super.onUninit) {super.onUninit();}
   }
 
   onDeleted() {
     this.log('[CEILING] Device deleted');
-    if (super.onDeleted) super.onDeleted();
+    if (super.onDeleted) {super.onDeleted();}
   }
 }
 

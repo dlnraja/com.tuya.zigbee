@@ -142,7 +142,7 @@ const ENERGY_DEVICE_CONFIGS = {
 // Build manufacturer -> config lookup
 const ENERGY_CONFIG_MAP = {};
 for (const [configName, config] of Object.entries(ENERGY_DEVICE_CONFIGS)) {
-  for (const mfr of (config.sensors || [])) {
+  for (const mfr of config.sensors || []) {
     ENERGY_CONFIG_MAP[mfr] = { ...config, configName };
   }
 }
@@ -229,7 +229,7 @@ class EnergyMonitorPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
     // Ensure energy capabilities are present
     const energyCaps = ['measure_power', 'meter_power', 'measure_voltage', 'measure_current'];
     for (const cap of energyCaps) {
-      if (!caps.includes(cap)) caps.push(cap);
+      if (!caps.includes(cap)) {caps.push(cap);}
     }
 
     return caps;

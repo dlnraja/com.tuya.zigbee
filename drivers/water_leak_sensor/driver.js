@@ -18,7 +18,7 @@ class WaterLeakSensorDriver extends ZigBeeDriver {
       const waterDetectedCard = this.homey.flow.getConditionCard('water_leak_sensor_water_detected');
       if (waterDetectedCard) {
         waterDetectedCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('alarm_water') === true;
         });
       }
@@ -31,7 +31,7 @@ class WaterLeakSensorDriver extends ZigBeeDriver {
       const batteryAboveCard = this.homey.flow.getConditionCard('water_leak_sensor_battery_above');
       if (batteryAboveCard) {
         batteryAboveCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const battery = args.device.getCapabilityValue('measure_battery') || 0;
           return battery > (args.threshold || 20);
         });

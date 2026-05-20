@@ -66,7 +66,7 @@ class DinRailMeterDevice extends UnifiedPlugBase {
   }
 
   async onDeleted() {
-    if (super.onDeleted) await super.onDeleted();
+    if (super.onDeleted) {await super.onDeleted();}
     this.log('Device deleted, cleaning up');
   }
 }

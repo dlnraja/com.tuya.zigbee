@@ -317,7 +317,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
    */
   onTuyaStatus(status) {
     if (!status || status.dp === undefined) {
-      if (super.onTuyaStatus) super.onTuyaStatus(status);
+      if (super.onTuyaStatus) {super.onTuyaStatus(status);}
       return;
     }
 
@@ -368,7 +368,7 @@ class USBOutletAdvancedDevice extends PhysicalButtonMixin(VirtualButtonMixin(Uni
     }
 
     // Call parent handler
-    if (super.onTuyaStatus) super.onTuyaStatus(status);
+    if (super.onTuyaStatus) {super.onTuyaStatus(status);}
   }
 
 

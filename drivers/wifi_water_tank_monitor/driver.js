@@ -25,7 +25,7 @@ class WiFiWaterTankMonitorDriver extends TuyaLocalDriver {
       const levelAboveCard = this.homey.flow.getConditionCard('wifi_water_tank_monitor_level_above');
       if (levelAboveCard) {
         levelAboveCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const pct = args.device.getCapabilityValue('measure_water_percentage') || 0;
           return pct > (args.level || 20);
         });
@@ -39,7 +39,7 @@ class WiFiWaterTankMonitorDriver extends TuyaLocalDriver {
       const stateIsCard = this.homey.flow.getConditionCard('wifi_water_tank_monitor_state_is');
       if (stateIsCard) {
         stateIsCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           // Note: _lastState should be tracked on the device
           const LIQUID_STATE = { 0: 'normal', 1: 'low', 2: 'high' };
           let curr = 'normal';

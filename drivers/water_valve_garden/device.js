@@ -34,12 +34,12 @@ class WaterValveGardenDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unif
       1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
       2: { capability: null, internal: 'work_state' },
       7: { capability: 'measure_battery', transform: (v) => {
-        if (v > 100) return Math.min(100, Math.round(((v - 2000) / 1000) * 100)); // raw mV conversion fallback
+        if (v > 100) {return Math.min(100, Math.round(((v - 2000) / 1000) * 100));} // raw mV conversion fallback
         return v;
       }},
       11: { capability: null, internal: 'countdown', writable: true },
       15: { capability: 'measure_battery', transform: (v) => {
-        if (v > 100) return Math.min(100, Math.round(((v - 2000) / 1000) * 100)); // raw mV conversion fallback
+        if (v > 100) {return Math.min(100, Math.round(((v - 2000) / 1000) * 100));} // raw mV conversion fallback
         return v;
       }}
     };

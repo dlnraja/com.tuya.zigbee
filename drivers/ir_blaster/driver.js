@@ -16,19 +16,9 @@ class IrBlasterDriver extends ZigBeeDriver {
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
    * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
    */
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-    }
-  }
-
-
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('Enhanced IR Blaster driver v5.5.565 initializing...');
@@ -162,7 +152,7 @@ class IrBlasterDriver extends ZigBeeDriver {
         const card = (() => { try { return this.homey.flow.getActionCard('ir_blaster_send_by_brand'); } catch (e) { return null; } })();
         card.registerRunListener(async (args) => {
           const dev = args.device;
-          if (!dev) return false;
+          if (!dev) {return false;}
           const b = args.brand?.name || args.brand;
           const t = args.device_type?.name || args.device_type;
           const f = args.function_name?.name || args.function_name;
@@ -189,7 +179,7 @@ class IrBlasterDriver extends ZigBeeDriver {
       const card = (() => { try { return this.homey.flow.getActionCard('ir_blaster_send_learned'); } catch (e) { return null; } })();
       card.registerRunListener(async (args) => {
         const d = args.device;
-        if (!d || !d._learnedCodes) return false;
+        if (!d || !d._learnedCodes) {return false;}
         const n = args.code_name?.name || args.code_name;
         const c = d._learnedCodes[n];
         if (!c) { this.log('[FLOW] Code not found:', n); return false; }
@@ -198,7 +188,7 @@ class IrBlasterDriver extends ZigBeeDriver {
       });
       card.registerArgumentAutocompleteListener('code_name', async (q, a) => {
         const d = a.device;
-        if (!d || !d._learnedCodes) return [];
+        if (!d || !d._learnedCodes) {return [];}
         return Object.keys(d._learnedCodes)
           .filter(n => n.toLowerCase().includes(q.toLowerCase()))
           .map(n => ({ name: n }));
@@ -211,14 +201,14 @@ class IrBlasterDriver extends ZigBeeDriver {
       const card = (() => { try { return this.homey.flow.getActionCard('ir_blaster_delete_code'); } catch (e) { return null; } })();
       card.registerRunListener(async (args) => {
         const d = args.device;
-        if (!d || typeof d.deleteStoredCode !== 'function') return false;
+        if (!d || typeof d.deleteStoredCode !== 'function') {return false;}
         const n = args.code_name?.name || args.code_name;
         await d.deleteStoredCode(n);
         return true;
       });
       card.registerArgumentAutocompleteListener('code_name', async (q, a) => {
         const d = a.device;
-        if (!d || !d._learnedCodes) return [];
+        if (!d || !d._learnedCodes) {return [];}
         return Object.keys(d._learnedCodes)
           .filter(n => n.toLowerCase().includes(q.toLowerCase()))
           .map(n => ({ name: n }));
@@ -231,7 +221,7 @@ class IrBlasterDriver extends ZigBeeDriver {
       const card = (() => { try { return this.homey.flow.getActionCard('ir_blaster_send_raw'); } catch (e) { return null; } })();
       card.registerRunListener(async (args) => {
         const d = args.device;
-        if (!d || typeof d.sendEnhancedIRCode !== 'function') return false;
+        if (!d || typeof d.sendEnhancedIRCode !== 'function') {return false;}
         await d.sendEnhancedIRCode(args.raw_code, {
           frequency: args.frequency || null,
           repeat: args.repeat || 1
@@ -252,7 +242,7 @@ class IrBlasterDriver extends ZigBeeDriver {
         const card = (() => { try { return this.homey.flow.getActionCard(`ir_blaster_${btn}`); } catch (e) { return null; } })();
         card.registerRunListener(async (args) => {
           const d = args.device;
-          if (!d || !d._learnedCodes) return false;
+          if (!d || !d._learnedCodes) {return false;}
           const code = d._learnedCodes[btn];
           if (!code) {
             this.log(`[TV] No learned code for "${btn}" - teach it first`);
@@ -364,10 +354,10 @@ class IrBlasterDriver extends ZigBeeDriver {
         }
 
         const code = device._learnedCodes[code_name];
-        if (!code) return false;
+        if (!code) {return false;}
 
         const analysis = device._protocolAnalysis[code];
-        if (!analysis) return false;
+        if (!analysis) {return false;}
 
         const matches = analysis.protocol === protocol;
         this.log(`Protocol "${protocol}" detected for "${code_name}": ${matches}`);

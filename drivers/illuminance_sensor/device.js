@@ -35,7 +35,7 @@ class IlluminanceSensorDevice extends HybridSensorBase {
   async _setupIlluminanceCluster(zclNode) {
     try {
       const endpoint = zclNode.endpoints[1];
-      if (!endpoint) return;
+      if (!endpoint) {return;}
 
       const illuminanceCluster = endpoint.clusters?.illuminanceMeasurement ||
                                   endpoint.clusters?.['msIlluminanceMeasurement'] ||
@@ -68,7 +68,7 @@ class IlluminanceSensorDevice extends HybridSensorBase {
   }
 
   _convertToLux(value) {
-    if (value === 0 || value === 0xFFFF) return 0;
+    if (value === 0 || value === 0xFFFF) {return 0;}
     return Math.round(Math.pow(10, (value - 1) / 10000));
   }
 

@@ -76,7 +76,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
    */
   async _setupIasAce() {
     const ep1 = this.zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     // Method 1: Bound Cluster (receives commands from device)
     if (IasAceBoundCluster && typeof ep1.bind === 'function') {
@@ -112,7 +112,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   async _setupIasZone() {
     const ep1 = this.zclNode?.endpoints?.[1];
     const iasZone = ep1?.clusters?.iasZone;
-    if (!iasZone) return;
+    if (!iasZone) {return;}
 
     // Enrollment
     iasZone.onZoneEnrollRequest = async () => {
@@ -153,7 +153,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   async _setupTuyaDP() {
     const ep1 = this.zclNode?.endpoints?.[1];
     const tuya = ep1?.clusters?.tuya || ep1?.clusters?.manuSpecificTuya || ep1?.clusters?.['0xEF00'];
-    if (!tuya || typeof tuya.on !== 'function') return;
+    if (!tuya || typeof tuya.on !== 'function') {return;}
 
     tuya.on('datapoint', (dp, value) => {
       this.log(`[SOS] Tuya DP${dp} received:`, value);
@@ -196,7 +196,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
    */
   async _setupAlternativeClusters() {
     const ep1 = this.zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     // genOnOff
     const onOff = ep1.clusters?.onOff || ep1.clusters?.genOnOff;
@@ -215,12 +215,12 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
    * Global Listeners to catch anything missed
    */
   async _setupGlobalListeners() {
-    if (!this.zclNode?.endpoints) return;
+    if (!this.zclNode?.endpoints) {return;}
 
     for (const [epId, ep] of Object.entries(this.zclNode.endpoints)) {
-      if (!ep?.clusters) continue;
+      if (!ep?.clusters) {continue;}
       for (const [clusterName, cluster] of Object.entries(ep.clusters)) {
-        if (typeof cluster.on !== 'function') continue;
+        if (typeof cluster.on !== 'function') {continue;}
 
         cluster.on('attr', (name, value) => {
           const alarmClusters = ['iaszone', 'iasace', '1280', '1281'];
@@ -246,7 +246,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     this._updateActivity();
 
     const now = Date.now();
-    if (now - this._lastTrigger < 2000) return;
+    if (now - this._lastTrigger < 2000) {return;}
     this._lastTrigger = now;
 
     this.log('[SOS] 🆘 SOS BUTTON PRESSED!', JSON.stringify(payload));
@@ -262,7 +262,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     }
 
     // Auto-reset
-    if (this._resetTimeout) this.homey.clearTimeout(this._resetTimeout);
+    if (this._resetTimeout) {this.homey.clearTimeout(this._resetTimeout);}
     this._resetTimeout = this.homey.setTimeout(async () => {
       await this.setCapabilityValue('alarm_generic', false).catch(() => { });
       this.log('[SOS] alarm_generic reset');
@@ -275,18 +275,18 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   async _setupBattery() {
     const ep1 = this.zclNode?.endpoints?.[1];
     const powerCfg = ep1?.clusters?.powerConfiguration || ep1?.clusters?.genPowerCfg;
-    if (!powerCfg || typeof powerCfg.on !== 'function') return;
+    if (!powerCfg || typeof powerCfg.on !== 'function') {return;}
 
     powerCfg.on('attr.batteryPercentageRemaining', (v) => this._updateBattery(v, 'percentage'));
     powerCfg.on('attr.batteryVoltage', (v) => this._updateBattery(v, 'voltage'));
     powerCfg.on('report', (attrs) => {
-      if (attrs.batteryPercentageRemaining !== undefined) this._updateBattery(attrs.batteryPercentageRemaining, 'percentage');
-      if (attrs.batteryVoltage !== undefined) this._updateBattery(attrs.batteryVoltage, 'voltage');
+      if (attrs.batteryPercentageRemaining !== undefined) {this._updateBattery(attrs.batteryPercentageRemaining, 'percentage');}
+      if (attrs.batteryVoltage !== undefined) {this._updateBattery(attrs.batteryVoltage, 'voltage');}
     });
   }
 
   async _updateBattery(value, type) {
-    if (value === undefined || value === null || value === 255) return;
+    if (value === undefined || value === null || value === 255) {return;}
     
     let percent;
     if (type === 'percentage') {
@@ -305,7 +305,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   async _readBatteryNow() {
     const ep1 = this.zclNode?.endpoints?.[1];
     const powerCfg = ep1?.clusters?.powerConfiguration || ep1?.clusters?.genPowerCfg;
-    if (!powerCfg?.readAttributes) return;
+    if (!powerCfg?.readAttributes) {return;}
 
     try {
       const result = await Promise.race([
@@ -313,8 +313,8 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
         new Promise((_, r) => setTimeout(() => r(new Error('Timeout')), 1500))
       ]).catch(() => ({}));
 
-      if (result.batteryPercentageRemaining !== undefined) this._updateBattery(result.batteryPercentageRemaining, 'percentage');
-      else if (result.batteryVoltage !== undefined) this._updateBattery(result.batteryVoltage, 'voltage');
+      if (result.batteryPercentageRemaining !== undefined) {this._updateBattery(result.batteryPercentageRemaining, 'percentage');}
+      else if (result.batteryVoltage !== undefined) {this._updateBattery(result.batteryVoltage, 'voltage');}
     } catch (e) {
       this.error('[SOS] Battery read failed:', e.message);
     }
@@ -329,19 +329,19 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
       const hours = (Date.now() - this._lastActivity) / (1000 * 60 * 60);
       if (hours > 24) {
         this.log('[SOS] ⚠️ No activity for', Math.round(hours), 'hours');
-        if (hours > 48) this.setUnavailable('Device not responding').catch(() => { });
+        if (hours > 48) {this.setUnavailable('Device not responding').catch(() => { });}
       }
     }, 3600000);
   }
 
   _updateActivity() {
     this._lastActivity = Date.now();
-    if (!this.getAvailable()) this.setAvailable().catch(() => { });
+    if (!this.getAvailable()) {this.setAvailable().catch(() => { });}
   }
 
   async _checkClustersAndWarn() {
     const ep1 = this.zclNode?.endpoints?.[1];
-    if (!ep1?.clusters) return;
+    if (!ep1?.clusters) {return;}
     const clusterNames = Object.keys(ep1.clusters);
     const hasEssential = clusterNames.some(n => ['iasZone', 'iasAce', 'tuya', 'onOff'].some(e => n.toLowerCase().includes(e.toLowerCase())));
     if (!hasEssential && clusterNames.length <= 2) {
@@ -355,15 +355,15 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   async _verifyCieAddress() {
     const ep1 = this.zclNode?.endpoints?.[1];
     const iasZone = ep1?.clusters?.iasZone;
-    if (!iasZone?.writeAttributes) return;
+    if (!iasZone?.writeAttributes) {return;}
     const ieee = await this._getCoordinatorIeee();
-    if (ieee) await iasZone.writeAttributes({ iasCIEAddress: ieee }).catch(() => { });
+    if (ieee) {await iasZone.writeAttributes({ iasCIEAddress: ieee }).catch(() => { });}
   }
 
   async _getCoordinatorIeee() {
     if (IEEEAddressManager) {
       try {
-        if (!this._ieeeManager) this._ieeeManager = new IEEEAddressManager(this);
+        if (!this._ieeeManager) {this._ieeeManager = new IEEEAddressManager(this);}
         return await this._ieeeManager.getCoordinatorIeeeAddress();
       } catch (e) { }
     }
@@ -378,8 +378,8 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
   }
 
   onUninit() {
-    if (this._resetTimeout) this.homey.clearTimeout(this._resetTimeout);
-    if (this._heartbeatInterval) this.homey.clearInterval(this._heartbeatInterval);
+    if (this._resetTimeout) {this.homey.clearTimeout(this._resetTimeout);}
+    if (this._heartbeatInterval) {this.homey.clearInterval(this._heartbeatInterval);}
   }
 
   async onDeleted() {

@@ -19,19 +19,9 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
    * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
    */
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-    }
-  }
-
-
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('SmartSmokeDetectorAdvancedDriver v5.5.568 initialized');
@@ -149,7 +139,7 @@ class SmartSmokeDetectorAdvancedDriver extends ZigBeeDriver {
       this.log(`[PAIR]  Device: ${manufacturerName} ${productId}`);
       
       // Check if this is the problematic TZE284 device
-      const isTZE284 = CI.containsCI((manufacturerName || ''), '_tze284_');
+      const isTZE284 = CI.containsCI(manufacturerName || '', '_tze284_');
       if (isTZE284) {
         this.log('[PAIR]  TZE284 device detected - applying enhanced pairing logic');
       }

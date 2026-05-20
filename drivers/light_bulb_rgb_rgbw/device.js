@@ -116,7 +116,7 @@ class RGBBulbDevice extends UnifiedLightBase {
   }
 
   _parseHSV(raw) {
-    if (!raw || typeof raw !== 'string' || raw.length < 12) return null;
+    if (!raw || typeof raw !== 'string' || raw.length < 12) {return null;}
     try {
       const h = parseInt(raw.substring(0, safeMultiply(4), 16));
       const s = parseInt(raw.substring(4, safeMultiply(8), 16));
@@ -130,7 +130,7 @@ class RGBBulbDevice extends UnifiedLightBase {
 
   async _setupColorCluster(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1 ) return;
+    if (!ep1 ) {return;}
     try {
       const colorCluster = ep1.clusters?.lightingColorCtrl || ep1.clusters?.colorControl;
       if (colorCluster?.on) {
@@ -164,7 +164,7 @@ class RGBBulbDevice extends UnifiedLightBase {
 
   async _sendTuyaDP(dp, value, type) {
     const tuya = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-    if (tuya?.datapoint) await tuya.datapoint({ dp, value, type });
+    if (tuya?.datapoint) {await tuya.datapoint({ dp, value, type });}
   }
 
   // 

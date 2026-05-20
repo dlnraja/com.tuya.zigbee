@@ -211,7 +211,7 @@ class RadiatorValveZigbeeDevice extends HybridThermostatBase {
     };
     
     const dp = dayDPs[day.toLowerCase()];
-    if (!dp) throw new Error('Invalid day');
+    if (!dp) {throw new Error('Invalid day');}
     
     // Schedule format: "HH:MM/TEMP HH:MM/TEMP ..." encoded as string DP
     await this.sendTuyaDPCommand(dp, schedule, 3);
@@ -230,7 +230,7 @@ class RadiatorValveZigbeeDevice extends HybridThermostatBase {
     try {
       const node = this.zclNode || this._zclNode;
       const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya;
-      if (!tuyaCluster) return;
+      if (!tuyaCluster) {return;}
 
       const now = new Date();
       let utcOffset = 0;

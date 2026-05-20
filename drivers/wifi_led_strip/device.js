@@ -7,8 +7,8 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
     return {
       '20': { capability: 'onoff', writable: true, transform: (v) => !!v, reverseTransform: (v) => !!v },
       '21': { capability: 'light_mode', writable: true,
-        transform: (v) => (v === 'white' ? 'temperature' : 'color'),
-        reverseTransform: (v) => (v === 'temperature' ? 'white' : 'colour') },
+        transform: (v) => v === 'white' ? 'temperature' : 'color',
+        reverseTransform: (v) => v === 'temperature' ? 'white' : 'colour' },
       '22': { capability: 'dim', writable: true,
         transform: (v) => Math.max(0, v - safeMultiply(10, 990)),
         reverseTransform: (v) => safeMultiply(Math.round(v, 990)) + 10 },
@@ -45,7 +45,7 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
     const s = Math.round((this.getCapabilityValue('light_saturation') || 1) * 1000);
     const v = Math.round((this.getCapabilityValue('dim') || 1) * 1000);
     const hsv = h.toString(16).padStart(4, '0') + s.toString(16).padStart(4, '0') + v.toString(16).padStart(4, '0');
-    if (!this._client || !this._client.connected) throw new Error('Not connected');
+    if (!this._client || !this._client.connected) {throw new Error('Not connected');}
     this.log('[WIFI-LED] Set color HSV:', h, s, v, '->', hsv);
     await this._client.setDPs({ '21': 'colour', '24': hsv });
   }
@@ -60,7 +60,7 @@ class WiFiLedStripDevice extends TuyaLocalDevice {
         if (h >= 0 && h <= 360 && s >= 0 && s <= 1000 && v >= 0 && v <= 1000) {
           this.setCapabilityValue('light_hue', safeMultiply(h, 360)).catch(this.error);
           this.setCapabilityValue('light_saturation', s * 1000).catch(this.error);
-          this.log('[WIFI-LED] DP24 color H=' + h + ' S=' + s + ' V=' + v);
+          this.log(`[WIFI-LED] DP24 color H=${  h  } S=${  s  } V=${  v}`);
         }
       } catch (e) { /* ignore */ }
     }

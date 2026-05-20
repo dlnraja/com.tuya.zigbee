@@ -10,17 +10,9 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
    * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
    */
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-      }
-    }
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
 
     this.log('HvacDehumidifierDriver v5.5.576 initialized');
@@ -39,7 +31,7 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
     const isOnCondition = null;
     if (isOnCondition) {
       isOnCondition.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         return args.device.getCapabilityValue('onoff') === true;
       });
       this.log('[FLOW]  Registered: hvac_dehumidifier_dehumidifier_hybrid_is_on');
@@ -49,7 +41,7 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
     const turnOnAction = null;
     if (turnOnAction) {
       turnOnAction.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device._setGangOnOff(1, true).catch(() => {});
         await args.device.setCapabilityValue('onoff', true).catch(() => {});
         return true;
@@ -61,7 +53,7 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
     const turnOffAction = null;
     if (turnOffAction) {
       turnOffAction.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         await args.device._setGangOnOff(1, false).catch(() => {});
         await args.device.setCapabilityValue('onoff', false).catch(() => {});
         return true;
@@ -73,7 +65,7 @@ class HvacDehumidifierDriver extends BaseZigBeeDriver {
     const toggleAction = null;
     if (toggleAction) {
       toggleAction.registerRunListener(async (args) => {
-        if (!args.device) return false;
+        if (!args.device) {return false;}
         const current = args.device.getCapabilityValue('onoff');
         await args.device._setGangOnOff(1, !current).catch(() => {});
         await args.device.setCapabilityValue('onoff', !current).catch(() => {});

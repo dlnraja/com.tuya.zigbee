@@ -337,7 +337,7 @@ class IrBlasterDevice extends ZigBeeDevice {
    */
   async _setupAdvancedClusterListeners(zclNode) {
     const endpoint = zclNode.endpoints[1];
-    if (!endpoint) return;
+    if (!endpoint) {return;}
 
     // Listen for Tuya datapoints (alternative protocol)
     if (endpoint.clusters.tuya) {
@@ -1013,7 +1013,7 @@ class IrBlasterDevice extends ZigBeeDevice {
       const irCode = rcv.buf ? rcv.buf.toString('base64') : (() => {
         rcv.chunks.sort((a, b) => a.position - b.position);
         const b = Buffer.alloc(rcv.totalLength);
-        for (const c of rcv.chunks) { if (Buffer.isBuffer(c.data)) c.data.copy(b, c.position); }
+        for (const c of rcv.chunks) { if (Buffer.isBuffer(c.data)) {c.data.copy(b, c.position);} }
         return b.toString('base64');
       })();
       this.log(`[IR-RX] Assembled: ${irCode.length} chars`);
@@ -1027,7 +1027,7 @@ class IrBlasterDevice extends ZigBeeDevice {
    */
   async _assembleAndFinishLearning(seq) {
     const irCode = await this._assembleReceivedCode(seq);
-    if (!irCode) return;
+    if (!irCode) {return;}
     this.log(`[IR-RX] Learned IR code: ${irCode.substring(0, 80)}...`);
     this._handleLearnedCode(irCode);
     if (this.hasCapability('ir_blaster_code_received')) {
@@ -1049,7 +1049,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     // DP 201: IR code received (learning result)
     if (data.dp === 201 && data.datatype === 3) {
       const code = data.data.toString('base64');
-      this.log('[TUYA-IR] ✅ Learned code via DP201:', code.substring(0, 50) + '...');
+      this.log('[TUYA-IR] ✅ Learned code via DP201:', `${code.substring(0, 50)  }...`);
       this._handleLearnedCode(code);
     }
     // DP 202: Learning status (some devices)
@@ -1108,7 +1108,7 @@ class IrBlasterDevice extends ZigBeeDevice {
   // Set IR protocol
   async _setIRProtocol(protocol) {
     const zclNode = this._zclNode;
-    if (!zclNode?.endpoints?.[1]) return;
+    if (!zclNode?.endpoints?.[1]) {return;}
 
     const irControlCluster = this._irControlCluster;
     this.log(`IR protocol hint: ${protocol} (IRProtocolSet disabled - struct incompatible)`);
@@ -1144,7 +1144,7 @@ class IrBlasterDevice extends ZigBeeDevice {
   // Detect IR frequency from buffer
   _detectFrequency(buffer) {
     // Simple frequency detection heuristic
-    if (buffer.length < 10) return IR_FREQUENCIES.DEFAULT;
+    if (buffer.length < 10) {return IR_FREQUENCIES.DEFAULT;}
 
     const patterns = [];
     for (let i = 0; i < Math.min(buffer.length, 50); i += 2) {
@@ -1155,16 +1155,16 @@ class IrBlasterDevice extends ZigBeeDevice {
     // Find most common frequency indicators
     const avgPulse = patterns.reduce((a, b) => a + b, 0) / patterns.length;
 
-    if (avgPulse > 400 && avgPulse < 600) return 38000;
-    if (avgPulse > 350 && avgPulse < 450) return 40000;
-    if (avgPulse > 300 && avgPulse < 400) return 36000;
+    if (avgPulse > 400 && avgPulse < 600) {return 38000;}
+    if (avgPulse > 350 && avgPulse < 450) {return 40000;}
+    if (avgPulse > 300 && avgPulse < 400) {return 36000;}
 
     return IR_FREQUENCIES.DEFAULT;
   }
 
   // Detect IR protocol from buffer
   _detectProtocol(buffer) {
-    if (buffer.length < 20) return 'UNKNOWN';
+    if (buffer.length < 20) {return 'UNKNOWN';}
 
     // Simple protocol detection patterns
     const header = buffer.slice(0, 8);
@@ -1177,9 +1177,9 @@ class IrBlasterDevice extends ZigBeeDevice {
     // Look for repeating patterns (common in NEC, RC5)
     const patterns = this._findRepeatingPatterns(buffer);
     if (patterns.length > 0) {
-      if (patterns[0].length === 32) return 'NEC';
-      if (patterns[0].length === 14) return 'RC5';
-      if (patterns[0].length === 20) return 'RC6';
+      if (patterns[0].length === 32) {return 'NEC';}
+      if (patterns[0].length === 14) {return 'RC5';}
+      if (patterns[0].length === 20) {return 'RC6';}
     }
 
     return 'UNKNOWN';
@@ -1187,10 +1187,10 @@ class IrBlasterDevice extends ZigBeeDevice {
 
   // Helper: match buffer pattern
   _matchesPattern(buffer, pattern) {
-    if (buffer.length < pattern.length) return false;
+    if (buffer.length < pattern.length) {return false;}
 
     for (let i = 0; i < pattern.length; i++) {
-      if (buffer[i] !== pattern[i]) return false;
+      if (buffer[i] !== pattern[i]) {return false;}
     }
     return true;
   }
@@ -1229,7 +1229,7 @@ class IrBlasterDevice extends ZigBeeDevice {
 
   // v5.5.361: Handle code data request for chunked transmission
   async _handleCodeDataRequest(data) {
-    if (!this._pendingIRMessage) return;
+    if (!this._pendingIRMessage) {return;}
 
     // v5.9.14: Z2M-compatible field names
     const seq = data.seq ?? data.sequenceNumber;
@@ -1245,7 +1245,7 @@ class IrBlasterDevice extends ZigBeeDevice {
     const msgpart = Buffer.from(part);
     // Z2M calcStringCrc: sum of char codes % 256
     let crc = 0;
-    for (let i = 0; i < part.length; i++) crc = (crc + part.charCodeAt(i)) % 256;
+    for (let i = 0; i < part.length; i++) {crc = (crc + part.charCodeAt(i)) % 256;}
 
     this.log(`Sending IR chunk: pos=${position}, len=${part.length}, crc=${crc}`);
 

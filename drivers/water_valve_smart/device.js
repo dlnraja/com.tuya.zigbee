@@ -22,7 +22,7 @@ class WaterValveSmartDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unifi
   get plugCapabilities() { return ['onoff', 'measure_battery', 'measure_temperature', 'meter_water', 'alarm_water']; }
 
   get isGardenTimer() {
-    if (this._gtCached !== undefined) return this._gtCached;
+    if (this._gtCached !== undefined) {return this._gtCached;}
     const mfr = this.getSetting('zb_manufacturer_name') || '';
     this._gtCached = GARDEN_TIMER_MFRS.some(m => containsCI(mfr, m));
     return this._gtCached;
@@ -36,7 +36,7 @@ class WaterValveSmartDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unifi
         1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
         5: { capability: 'meter_water', divisor: 1000 },
         7: { capability: 'measure_battery', transform: (v) => {
-          if (v > 100) return Math.min(100, Math.round(((v - 2000) / 1000) * 100)); // raw mV conversion fallback
+          if (v > 100) {return Math.min(100, Math.round(((v - 2000) / 1000) * 100));} // raw mV conversion fallback
           return v;
         }},
         101: { capability: 'meter_water', divisor: 1000 },
@@ -53,8 +53,8 @@ class WaterValveSmartDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unifi
       9: { capability: null, internal: 'flow_rate' },
       10: { capability: 'measure_temperature', divisor: 10 },
       11: { capability: 'measure_battery', transform: (v) => { 
-        if (v > 3000) return 100;
-        if (v < 2700) return 0;
+        if (v > 3000) {return 100;}
+        if (v < 2700) {return 0;}
         return Math.round(((v - 2700) / 300) * 100);
       }},
       12: { capability: 'alarm_water', transform: (v) => v === 1 || v === true },
@@ -69,10 +69,10 @@ class WaterValveSmartDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unifi
       await super.onNodeInit({ zclNode  });
       await this.initVirtualButtons();
       // Ensure capabilities exist
-      if (!this.hasCapability('meter_water')) await this.addCapability('meter_water').catch (() => { });
-      if (!this.hasCapability('measure_temperature')) await this.addCapability('measure_temperature').catch(() => { });
-      if (!this.hasCapability('alarm_water')) await this.addCapability('alarm_water').catch(() => {});
-      if (this.hasCapability('alarm_motion')) await this.removeCapability('alarm_motion').catch(() => {});
+      if (!this.hasCapability('meter_water')) {await this.addCapability('meter_water').catch (() => { });}
+      if (!this.hasCapability('measure_temperature')) {await this.addCapability('measure_temperature').catch(() => { });}
+      if (!this.hasCapability('alarm_water')) {await this.addCapability('alarm_water').catch(() => {});}
+      if (this.hasCapability('alarm_motion')) {await this.removeCapability('alarm_motion').catch(() => {});}
       this.log(`[WATER-VALVE] ✅ v9.7.3 Ready (${this.isGardenTimer ? 'GARDEN' : 'METERED'})`);
     }, 'onNodeInit');
   }

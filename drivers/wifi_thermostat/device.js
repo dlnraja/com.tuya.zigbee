@@ -13,7 +13,7 @@ class WiFiThermostatDevice extends TuyaLocalDevice {
       '3':  { capability: 'measure_temperature', divisor: 10 },
       '4':  { capability: 'thermostat_mode', writable: true,
         transform: (v) => {
-          if (typeof v === 'string') return MODE_MAP[Object.keys(MODE_REV).indexOf(v)] || v;
+          if (typeof v === 'string') {return MODE_MAP[Object.keys(MODE_REV).indexOf(v)] || v;}
           return MODE_MAP[v] || 'heat';
         },
         reverseTransform: (v) => MODE_REV[v] !== undefined ? MODE_REV[v] : 1 },

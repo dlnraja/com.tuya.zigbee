@@ -40,8 +40,8 @@ class FanControllerDevice extends ZigBeeDevice {
   async _registerFlowCards() {
     const safeGetCard = (type, id) => {
       try {
-        if (type === 'action') return this.homey.flow.getActionCard(id);
-        if (type === 'condition') return this.homey.flow.getConditionCard(id);
+        if (type === 'action') {return this.homey.flow.getActionCard(id);}
+        if (type === 'condition') {return this.homey.flow.getConditionCard(id);}
         return null;
       } catch (e) {
         this.log(`[FLOW] Card '${id}' not available: ${e.message}`);
@@ -104,9 +104,9 @@ class FanControllerDevice extends ZigBeeDevice {
 
   async _setFanSpeed(value) {
     const ep1 = this._zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
     const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
-    if (!tuyaCluster) return;
+    if (!tuyaCluster) {return;}
 
     const speed = Math.round(value * 4);
     try {
@@ -118,10 +118,10 @@ class FanControllerDevice extends ZigBeeDevice {
 
   async _setupTuyaDP(zclNode) {
     const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
-    if (!tuyaCluster) return;
+    if (!tuyaCluster) {return;}
 
     this.log('[TUYA] DP cluster found');
 
@@ -154,7 +154,7 @@ class FanControllerDevice extends ZigBeeDevice {
   }
 
   async _handleDP(dp, value) {
-    if (dp === undefined) return;
+    if (dp === undefined) {return;}
     this.log(`[DP${dp}] = ${value}`);
 
     switch (dp) {
@@ -163,10 +163,10 @@ class FanControllerDevice extends ZigBeeDevice {
         await this.setCapabilityValue('onoff', !!value).catch(this.error);
         if (!!value && !wasOn) {
           const trigger = this.homey.flow.getDeviceTriggerCard('fan_controller_turned_on');
-          if (trigger) trigger.trigger(this).catch(this.error);
+          if (trigger) {trigger.trigger(this).catch(this.error);}
         } else if (!value && wasOn) {
           const trigger = this.homey.flow.getDeviceTriggerCard('fan_controller_turned_off');
-          if (trigger) trigger.trigger(this).catch(this.error);
+          if (trigger) {trigger.trigger(this).catch(this.error);}
         }
         break;
       }
@@ -175,7 +175,7 @@ class FanControllerDevice extends ZigBeeDevice {
         const dim = value / 4;
         await this.setCapabilityValue('dim', dim).catch(this.error);
         const trigger = this.homey.flow.getDeviceTriggerCard('fan_controller_speed_changed');
-        if (trigger) trigger.trigger(this, { speed: Math.round(dim * 100) }).catch(this.error);
+        if (trigger) {trigger.trigger(this, { speed: Math.round(dim * 100) }).catch(this.error);}
         break;
       }
 

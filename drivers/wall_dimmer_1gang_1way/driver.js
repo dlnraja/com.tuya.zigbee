@@ -3,36 +3,22 @@
 const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
 class WallDimmer1Gang1WayDriver extends BaseZigBeeDriver {
-  getDeviceById(id) {
-    try {
-      return super.getDeviceById(id);
-    } catch (err) {
-      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
-      return null;
-    }
-  }
-
-  async onInit() {
+async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) {return;}
     this._flowCardsRegistered = true;
     this.log('Wall Dimmer 1-Gang 1-Way Driver has been initialized');
     this._registerFlowCards();
   }
 
   _registerFlowCards() {
-    // TRIGGERS
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-    // Removed corrupted nested block } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) { return null; } })(); } catch (e) {}
-
+    // TRIGGERS
     // CONDITIONS
     try {
       const card = this._getFlowCard('wall_dimmer_1gang_1way_is_on', 'condition');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return args.device.getCapabilityValue('onoff') === true;
         });
       }
@@ -43,8 +29,8 @@ class WallDimmer1Gang1WayDriver extends BaseZigBeeDriver {
       const card = this._getFlowCard('wall_dimmer_1gang_1way_set_backlight', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
-          if (typeof args.device.setBacklightMode === 'function') await args.device.setBacklightMode(args.mode || args.value);
+          if (!args.device) {return false;}
+          if (typeof args.device.setBacklightMode === 'function') {await args.device.setBacklightMode(args.mode || args.value);}
           return true;
         });
       }
@@ -54,7 +40,7 @@ class WallDimmer1Gang1WayDriver extends BaseZigBeeDriver {
       const card = this._getFlowCard('wall_dimmer_1gang_1way_turn_on', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', true).catch(() => {});
           return true;
         });
@@ -65,7 +51,7 @@ class WallDimmer1Gang1WayDriver extends BaseZigBeeDriver {
       const card = this._getFlowCard('wall_dimmer_1gang_1way_turn_off', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('onoff', false).catch(() => {});
           return true;
         });
@@ -76,7 +62,7 @@ class WallDimmer1Gang1WayDriver extends BaseZigBeeDriver {
       const card = this._getFlowCard('wall_dimmer_1gang_1way_toggle', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           const current = args.device.getCapabilityValue('onoff');
           await args.device.triggerCapabilityListener('onoff', !current).catch(() => {});
           return true;
@@ -88,7 +74,7 @@ class WallDimmer1Gang1WayDriver extends BaseZigBeeDriver {
       const card = this._getFlowCard('wall_dimmer_1gang_1way_set_brightness', 'action');
       if (card) {
         card.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.triggerCapabilityListener('dim', args.brightness || args.value || 1).catch(() => {});
           return true;
         });

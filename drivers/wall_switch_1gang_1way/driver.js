@@ -43,7 +43,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
       const sceneModeCard = this.homey.flow.getActionCard('wall_switch_1gang_1way_set_scene_mode');
       if (sceneModeCard) {
         sceneModeCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.setSceneMode(args.mode);
           return true;
         });
@@ -57,7 +57,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
       const backlightCard = this.homey.flow.getActionCard('wall_switch_1gang_1way_set_backlight');
       if (backlightCard) {
         backlightCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           this.log(`Flow: Setting backlight mode to ${args.mode}`);
           await args.device.setBacklightMode(args.mode);
           await args.device.setSettings({ backlight_mode: args.mode }).catch(() => {});
@@ -73,7 +73,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
       const pobCard = this.homey.flow.getActionCard('wall_switch_1gang_1way_set_power_on_behavior');
       if (pobCard) {
         pobCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.setSettings({ power_on_behavior: args.mode });
           const pobValue = { off: 0, on: 1, memory: 2 }[args.mode] ?? 2;
           if (typeof args.device._writeE001Attribute === 'function') {
@@ -93,7 +93,7 @@ class WallSwitch1Gang1WayDriver extends ZigBeeDriver {
       const switchModeCard = this.homey.flow.getActionCard('wall_switch_1gang_1way_set_switch_mode');
       if (switchModeCard) {
         switchModeCard.registerRunListener(async (args) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           await args.device.setSettings({ switch_mode: args.mode });
           const smValue = { toggle: 0, state: 1, momentary: 2 }[args.mode] ?? 0;
           if (typeof args.device._writeE001Attribute === 'function') {

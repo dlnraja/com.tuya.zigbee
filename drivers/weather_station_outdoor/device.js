@@ -62,7 +62,7 @@ class WeatherStationOutdoorDevice extends UnifiedSensorBase {
     // A8: NaN Safety - use safeDivide/safeMultiply
   this.getCapabilityValue(capability);
     await super.setCapabilityValue(capability, value);
-    if (prev === value) return;
+    if (prev === value) {return;}
 
     try {
       switch (capability) {
@@ -99,7 +99,7 @@ class WeatherStationOutdoorDevice extends UnifiedSensorBase {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

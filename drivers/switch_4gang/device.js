@@ -3,7 +3,7 @@
 let UnifiedSwitchBase;
 try {
   UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
-  if (!UnifiedSwitchBase) throw new Error('UnifiedSwitchBase is undefined');
+  if (!UnifiedSwitchBase) {throw new Error('UnifiedSwitchBase is undefined');}
 } catch (e) {
   const { ZigBeeDevice } = require('homey-zigbeedriver');
   UnifiedSwitchBase = ZigBeeDevice;
@@ -85,7 +85,7 @@ class Switch4GangDevice extends BaseClass {
     for (const epNum of [1, 2, 3, 4]) {
       const ep = zclNode.endpoints[epNum];
       const onOff = ep?.clusters.onOff || ep?.clusters.genOnOff;
-      if (!onOff) continue;
+      if (!onOff) {continue;}
 
       const capName = epNum === 1 ? 'onoff' : `onoff.gang${epNum}`;
       onOff.on('attr.onOff', (value) => {
@@ -103,11 +103,11 @@ class Switch4GangDevice extends BaseClass {
     try {
       const { Cluster } = require('zigbee-clusters');
       const OnOffCluster = Cluster.getCluster('onOff') || Cluster.getCluster(6);
-      if (!OnOffCluster) return;
+      if (!OnOffCluster) {return;}
 
       for (const epNum of [1, 2, 3, 4]) {
         const ep = zclNode.endpoints[epNum];
-        if (!ep) continue;
+        if (!ep) {continue;}
         if (!ep.clusters.onOff && !ep.clusters.genOnOff && !ep.clusters[6]) {
           ep.clusters.onOff = new OnOffCluster(ep);
         }
@@ -120,7 +120,7 @@ class Switch4GangDevice extends BaseClass {
       try {
         const ep = zclNode.endpoints[epNum];
         const g = ep?.clusters.groups || ep?.clusters.genGroups;
-        if (typeof g?.removeAll === 'function') await g.removeAll().catch(() => {});
+        if (typeof g?.removeAll === 'function') {await g.removeAll().catch(() => {});}
       } catch (err) { }
     }
   }
@@ -130,7 +130,7 @@ class Switch4GangDevice extends BaseClass {
       try {
         const ep = zclNode.endpoints[epNum];
         const onOff = ep?.clusters.onOff || ep?.clusters.genOnOff;
-        if (onOff?.bind) await onOff.bind().catch(() => {});
+        if (onOff?.bind) {await onOff.bind().catch(() => {});}
         if (onOff?.configureReporting) {
           await onOff.configureReporting({
             onOff: { minInterval: 0, maxInterval: 300, minChange: 1 }
@@ -143,7 +143,7 @@ class Switch4GangDevice extends BaseClass {
   onDeleted() {
     if (this._zclState?.timeout) {
       for (const epNum in this._zclState.timeout) {
-        if (this._zclState.timeout[epNum]) clearTimeout(this._zclState.timeout[epNum]);
+        if (this._zclState.timeout[epNum]) {clearTimeout(this._zclState.timeout[epNum]);}
       }
     }
     super.onDeleted?.();

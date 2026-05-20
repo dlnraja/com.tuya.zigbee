@@ -74,7 +74,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
 
   async _setupElectricalMeasurement(zclNode) {
     const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     const emCluster = ep1.clusters?.electricalMeasurement || ep1.clusters?.[2820];
     if (emCluster) {
@@ -96,10 +96,10 @@ class PowerClampMeterDevice extends ZigBeeDevice {
 
   async _setupTuyaDP(zclNode) {
     const ep1 = zclNode.endpoints[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     const tuyaCluster = ep1.clusters?.tuya || ep1.clusters?.[61184];
-    if (!tuyaCluster) return;
+    if (!tuyaCluster) {return;}
 
     this.log('[TUYA] DP cluster found' );
 
@@ -107,7 +107,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     // Events have structure: { status, transid, dp, datatype, length, data }
     // data is a Buffer that needs to be parsed based on datatype
     const parseValue = (r) => {
-      if (!r || r.dp === undefined) return { dp: undefined, value: undefined };
+      if (!r || r.dp === undefined) {return { dp: undefined, value: undefined };}
       const dp = r.dp;
       const data = r.data;
       const datatype = r.datatype;
@@ -118,7 +118,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
       
       // Parse based on Tuya datatype
       let value;
-      const buf = Buffer.isBuffer(data) ? data : (data.data ? Buffer.from(data.data) : null);
+      const buf = Buffer.isBuffer(data) ? data : data.data ? Buffer.from(data.data) : null;
       
       if (buf && buf.length > 0) {
         switch (datatype) {
@@ -139,10 +139,10 @@ class PowerClampMeterDevice extends ZigBeeDevice {
           break;
         default:
           // Try to parse as big-endian integer
-          if (buf.length === 4) value = buf.readUInt32BE(0);
-          else if (buf.length === 2) value = buf.readUInt16BE(0);
-          else if (buf.length === 1) value = buf[0];
-          else value = buf;
+          if (buf.length === 4) {value = buf.readUInt32BE(0);}
+          else if (buf.length === 2) {value = buf.readUInt16BE(0);}
+          else if (buf.length === 1) {value = buf[0];}
+          else {value = buf;}
         }
       } else if (typeof data === 'number') {
         value = data;
@@ -184,7 +184,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
 
   _handleDP(dp, value) {
     // v5.7.7: Guard against undefined/null values (fixes crash from diagnostic report)
-    if (dp === undefined || dp === null) return;
+    if (dp === undefined || dp === null) {return;}
     if (value === undefined || value === null) {
       // v5.7.52: Throttle undefined logging - only log once per DP per minute
       const now = Date.now();

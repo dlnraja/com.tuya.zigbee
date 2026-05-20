@@ -207,14 +207,14 @@ class ClimateSensorDevice extends UnifiedSensorBase {
         transform: (v) => {
           // v5.5.792: Auto-detect divisor based on value range
           // If value > 100, it's likely Ã—10 scaled (e.g., 650  65.0%)
-          if (v > 100) return Math.round(v);
+          if (v > 100) {return Math.round(v);}
           return v;
         }
       },
       7: {
         capability: 'measure_humidity',
         transform: (v) => {
-          if (v > 100) return Math.round(v);
+          if (v > 100) {return Math.round(v);}
           return v;
         }
       },
@@ -228,9 +228,9 @@ class ClimateSensorDevice extends UnifiedSensorBase {
       3: {
         capability: 'measure_battery', transform: (v) => {
           // DP3 = battery_state enum (0=low, 1=medium, 2=high) for some _TZE200
-          if (v === 0) return 10;   // low
-          if (v === 1) return 50;   // medium
-          if (v === 2) return 100;  // high
+          if (v === 0) {return 10;}   // low
+          if (v === 1) {return 50;}   // medium
+          if (v === 2) {return 100;}  // high
 return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
         }
       },
@@ -273,16 +273,16 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
   get deviceProtocol() {
     const mfr = getManufacturer(this);
 
-    if (CI.startsWithCI(mfr, '_tze284')) return 'TUYA_DP_LCD';      // LCD with Tuya epoch
-    if (CI.startsWithCI(mfr, '_tze200')) return 'TUYA_DP';          // Standard Tuya DP
-    if (CI.startsWithCI(mfr, '_tze204')) return 'TUYA_DP_ENHANCED'; // Enhanced Tuya DP
-    if (CI.startsWithCI(mfr, '_tz3000')) return 'ZCL_STANDARD';     // Pure ZCL
-    if (CI.startsWithCI(mfr, '_tz3210')) return 'ZCL_STANDARD';     // Pure ZCL
+    if (CI.startsWithCI(mfr, '_tze284')) {return 'TUYA_DP_LCD';}      // LCD with Tuya epoch
+    if (CI.startsWithCI(mfr, '_tze200')) {return 'TUYA_DP';}          // Standard Tuya DP
+    if (CI.startsWithCI(mfr, '_tze204')) {return 'TUYA_DP_ENHANCED';} // Enhanced Tuya DP
+    if (CI.startsWithCI(mfr, '_tz3000')) {return 'ZCL_STANDARD';}     // Pure ZCL
+    if (CI.startsWithCI(mfr, '_tz3210')) {return 'ZCL_STANDARD';}     // Pure ZCL
 
     // Check modelId for protocol hints
     const modelId = getModelId(this);
-    if (CI.equalsCI(modelId, 'TS0201')) return 'ZCL_STANDARD';
-    if (CI.equalsCI(modelId, 'TS0601')) return 'TUYA_DP';
+    if (CI.equalsCI(modelId, 'TS0201')) {return 'ZCL_STANDARD';}
+    if (CI.equalsCI(modelId, 'TS0601')) {return 'TUYA_DP';}
 
     return 'HYBRID'; // Default: try both
   }
@@ -312,7 +312,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     const modelId = getModelId(this);
 
     // _TZE284_ series are LCD climate sensors with RTC displays
-    if (CI.startsWithCI(mfr, '_tze284_')) return true;
+    if (CI.startsWithCI(mfr, '_tze284_')) {return true;}
 
     // Known LCD climate sensor manufacturer IDs
     const lcdManufacturers = [
@@ -325,11 +325,11 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
     // Check if manufacturer matches known LCD devices
     for (const lcdMfr of lcdManufacturers) {
-      if (CI.containsCI(mfr, lcdMfr)) return true;
+      if (CI.containsCI(mfr, lcdMfr)) {return true;}
     }
 
     // TS0601 with LCD indicators (some have LCD displays)
-    if (CI.equalsCI(modelId, 'TS0601') && CI.startsWithCI(mfr, '_tze284_')) return true;
+    if (CI.equalsCI(modelId, 'TS0601') && CI.startsWithCI(mfr, '_tze284_')) {return true;}
 
     return false;
   }
@@ -1126,7 +1126,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
    */
   async _readZCLAttributesNow(zclNode) {
     const ep1 = zclNode?.endpoints?.[1];
-    if (!ep1) return;
+    if (!ep1) {return;}
 
     this.log('[ZCL-READ]  Reading ZCL attributes...' );
 
@@ -1199,7 +1199,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
         this.log(`[CLIMATE]  DP request attempt ${index + 1}/${intervals.length}`);
 
         const zclNode = this._zclNode;
-        if (!zclNode) return;
+        if (!zclNode) {return;}
 
         if (this._hasTuyaCluster) {
           await this._sendTuyaMagicPacket(zclNode).catch(() => { });
@@ -1435,7 +1435,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
     } else if (dp === 2 || dp === 7 || dp === 103) {
       // v5.11.26: FIX #1328 - auto-divisor before offset (raw value may be >100 e.g. 435=43.5%)
       let hum = value;
-      if (hum > 100) hum = Math.round(hum);
+      if (hum > 100) {hum = Math.round(hum);}
       processedValue = this._applyHumOffset(hum);
     }
 
@@ -1501,10 +1501,10 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
       break;
     case 3: // Battery state enum (some _TZE200 devices)
       let bat3 = rawValue;
-      if (rawValue === 0) bat3 = 10;      // low
-      else if (rawValue === 1) bat3 = 50; // medium
-      else if (rawValue === 2) bat3 = 100; // high
-      else bat3 =Math.min(100, safeMultiply(rawValue, 2));
+      if (rawValue === 0) {bat3 = 10;}      // low
+      else if (rawValue === 1) {bat3 = 50;} // medium
+      else if (rawValue === 2) {bat3 = 100;} // high
+      else {bat3 =Math.min(100, safeMultiply(rawValue, 2));}
       this.log(`[CLIMATE-DP] DP3 battery_state raw=${rawValue}  ${bat3}% (enum: 0=low, 1=med, 2=high)`);
       break;
     case 4: // Battery (standard with Ã—2 multiplier)
@@ -1576,7 +1576,7 @@ return Math.min(100, safeMultiply(v, 2)); // Fallback: treat as raw with x2
 
     const e002Keys = ['alarm_temp_max', 'alarm_temp_min', 'alarm_humidity_max', 'alarm_humidity_min'];
     const hasE002Change = changedKeys.some(k => e002Keys.includes(k));
-    if (!hasE002Change) return;
+    if (!hasE002Change) {return;}
 
     try {
       const ep = this._zclNode?.endpoints?.[1];

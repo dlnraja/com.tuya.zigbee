@@ -83,29 +83,29 @@ class DimmerWall1GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(Light
     
     if (dpId === 1) {
       const v = rawValue === 1 || rawValue === true;
-      if (this._lastOnoffState === v) return;
+      if (this._lastOnoffState === v) {return;}
       this._lastOnoffState = v;
       if (isPhysical) {
         const id = v ? 'dimmer_wall_1gang_physical_on' : 'dimmer_wall_1gang_physical_off';
         const trigger = this.homey.flow.getDeviceTriggerCard(id);
-        if (trigger) trigger.trigger(this).catch(this.error);
+        if (trigger) {trigger.trigger(this).catch(this.error);}
       }
     } else if (dpId === 2 || dpId === 101) {
       const dim = this.getCapabilityValue('dim');
-      if (this._lastDimValue === dim) return;
+      if (this._lastDimValue === dim) {return;}
       const increased = oldDim !== null && dim > oldDim;
       this._lastDimValue = dim;
       if (isPhysical && oldDim !== null) {
         const id = increased ? 'dimmer_wall_1gang_physical_brightness_up' : 'dimmer_wall_1gang_physical_brightness_down';
         const trigger = this.homey.flow.getDeviceTriggerCard(id);
-        if (trigger) trigger.trigger(this, { brightness: Math.round(dim * 100) }).catch(this.error);
+        if (trigger) {trigger.trigger(this, { brightness: Math.round(dim * 100) }).catch(this.error);}
       }
     }
   }
 
   onDeleted() { 
     clearTimeout(this._appCommandTimeout); 
-    if (super.onDeleted) super.onDeleted(); 
+    if (super.onDeleted) {super.onDeleted();} 
   }
 }
 

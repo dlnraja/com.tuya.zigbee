@@ -75,7 +75,7 @@ class Button1GangDriver extends ZigBeeDriver {
       const batteryCard = this.homey.flow.getTriggerCard('button_wireless_1_battery_low');
       if (batteryCard) {
         batteryCard.registerRunListener(async (args, state) => {
-          if (!args.device) return false;
+          if (!args.device) {return false;}
           return true;
         });
       }

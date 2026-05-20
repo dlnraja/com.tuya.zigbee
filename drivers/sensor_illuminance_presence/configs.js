@@ -495,10 +495,10 @@ function getSensorConfig(manufacturerName, modelId = null) {
   if ((manufacturerName || '').toUpperCase() === 'HOBEIAN') {
     const validModelId = modelId && modelId !== 'null' && modelId.trim() !== '';
     if (validModelId) {
-      if (modelId === 'ZG-204ZM') return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };
-      if (modelId === 'ZG-204ZV') return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };
-      if (modelId === 'ZG-227Z') return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI' };
-      if (modelId === 'ZG-204ZL') return { ...SENSOR_CONFIGS.ZG_204ZL_PIR, configName: 'ZG_204ZL_PIR' };
+      if (modelId === 'ZG-204ZM') {return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM' };}
+      if (modelId === 'ZG-204ZV') {return { ...SENSOR_CONFIGS.ZG_204ZV_MULTISENSOR, configName: 'ZG_204ZV_MULTISENSOR' };}
+      if (modelId === 'ZG-227Z') {return { ...SENSOR_CONFIGS.HOBEIAN_10G_MULTI, configName: 'HOBEIAN_10G_MULTI' };}
+      if (modelId === 'ZG-204ZL') {return { ...SENSOR_CONFIGS.ZG_204ZL_PIR, configName: 'ZG_204ZL_PIR' };}
     }
     return { ...SENSOR_CONFIGS.HOBEIAN_ZG204ZM, configName: 'HOBEIAN_ZG204ZM_FALLBACK' };
   }
@@ -520,7 +520,7 @@ function getSensorConfig(manufacturerName, modelId = null) {
 
 // Transform presence value based on type
 function transformPresence(value, type, invertPresence = false, configName = '') {
-  if (value === null || value === undefined) return false;
+  if (value === null || value === undefined) {return false;}
 
   let result;
   switch (type) {
@@ -528,10 +528,10 @@ function transformPresence(value, type, invertPresence = false, configName = '')
     result = value === 1 || value === 2;
     break;
   case 'presence_enum_gkfbdvyx':
-    if (value === 0) result = false;
-    else if (value === 1) result = true;
-    else if (value === 2) return null;
-    else result = false;
+    if (value === 0) {result = false;}
+    else if (value === 1) {result = true;}
+    else if (value === 2) {return null;}
+    else {result = false;}
     break;
   case 'presence_bool':
     result = value === 1 || value === true || value === 'presence';
@@ -546,7 +546,7 @@ function transformPresence(value, type, invertPresence = false, configName = '')
     result = !!value;
   }
 
-  if (invertPresence) return !result;
+  if (invertPresence) {return !result;}
   return result;
 }
 

@@ -37,10 +37,10 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       '_TZE204_o3x45p96', '_tze204_o3x45p96',
       '_tze200_ne4pikwm', '_TZE284_ne4pikwm'
     ];
-    if (me167Ids.some(id => mfr.toLowerCase().includes(id.toLowerCase()))) return 'me167';
+    if (me167Ids.some(id => mfr.toLowerCase().includes(id.toLowerCase()))) {return 'me167';}
     
     const nedisIds = ['_TZE284_ne4pikwm', '_tze284_ne4pikwm', 'ne4pikwm'];
-    if (nedisIds.some(id => mfr.toLowerCase().includes(id.toLowerCase()))) return 'nedis';
+    if (nedisIds.some(id => mfr.toLowerCase().includes(id.toLowerCase()))) {return 'nedis';}
     
     return 'standard';
   }
@@ -109,7 +109,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       this.homey.setTimeout(async () => {
         try {
           const result = await this._timeSync.sync({ force: true });
-          if (!result.success && result.reason === 'no_rtc') await this._tuyaTimeSyncFallback();
+          if (!result.success && result.reason === 'no_rtc') {await this._tuyaTimeSyncFallback();}
         } catch (e) { this.log('[TimeSync] Error:', e.message); }
       }, 10000);
     } catch (e) { this.log('[TimeSync] Init failed:', e.message); }
@@ -165,8 +165,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
     if (this.hasCapability('target_temperature')) {
       this.registerCapabilityListener('target_temperature', async (v) => {
         let dp = 3;
-        if (profile === 'me167') dp = 4;
-        if (profile === 'nedis') dp = 16;
+        if (profile === 'me167') {dp = 4;}
+        if (profile === 'nedis') {dp = 16;}
         await this._sendTuyaDP(dp, Math.round(safeMultiply(v, 10, 10), "value"));
       });
     }
@@ -188,7 +188,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
   async _tuyaTimeSyncFallback() {
     try {
       const tuyaCluster = this.zclNode?.endpoints?.[1]?.clusters?.tuya;
-      if (!tuyaCluster) return;
+      if (!tuyaCluster) {return;}
       const now = new Date();
       const payload = Buffer.from([now.getFullYear() - 2000, now.getMonth() + 1, now.getDate(), now.getHours(), now.getMinutes(), now.getSeconds() , now.getDay() === 0 ? 7 : now.getDay()]);
       await tuyaCluster.datapoint({ dp: 36, datatype: 4, data: payload });
@@ -201,7 +201,7 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

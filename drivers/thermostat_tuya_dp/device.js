@@ -127,7 +127,7 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
     try {
       const node = this.zclNode || this._zclNode;
       const tuyaCluster = node?.endpoints?.[1]?.clusters?.tuya;
-      if (!tuyaCluster) return;
+      if (!tuyaCluster) {return;}
 
       const now = new Date();
       let utcOffset = 0;
@@ -161,7 +161,7 @@ class ThermostatTuyaDPDevice extends UnifiedThermostatBase {
    */
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
-    if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
+    if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
        this._dataRecoveryManager.triggerRecovery();

@@ -25,7 +25,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
 
       // Detect firmware for inference tuning
       const appVersion = this.getStoreValue('appVersion') || this.zclNode.endpoints[1]?.clusters?.basic?.appVersion;
-      if (appVersion) this._inference.setFirmwareInfo(appVersion);
+      if (appVersion) {this._inference.setFirmwareInfo(appVersion);}
 
       // Start device-specific maintenance cycles
       this._startRadarCycle(zclNode);
@@ -126,7 +126,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
     try {
       const ep = zclNode?.endpoints?.[1];
       const cluster = ep?.clusters?.tuya || ep?.clusters?.[61184];
-      if (!cluster?.command) return;
+      if (!cluster?.command) {return;}
 
       const ZIGBEE_EPOCH = new Date(Date.UTC(2000, 0, 1, 0, 0, 0)).getTime();
       const utc = Math.floor((Date.now() - ZIGBEE_EPOCH) / 1000);
@@ -162,14 +162,14 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
     await super.onSettings({ oldSettings, newSettings, changedKeys });
     
     const config = getSensorConfig(this.getManufacturerName(), this.getStoreValue('modelId'));
-    if (!config.dpMap) return;
+    if (!config.dpMap) {return;}
 
     for (const key of changedKeys) {
       const dpId = Object.keys(config.dpMap).find(id => config.dpMap[id].setting === key);
       if (dpId) {
         let val = newSettings[key];
         const dpInfo = config.dpMap[dpId];
-        if (dpInfo.divisor) val = Math.round(val * dpInfo.divisor);
+        if (dpInfo.divisor) {val = Math.round(val * dpInfo.divisor);}
         
         this.log(`[RADAR] ⚙️ Sync Setting: ${key} → DP${dpId} (Value: ${val})`);
         if (this.tuyaEF00Manager) {
@@ -180,7 +180,7 @@ class SensorIlluminancePresenceDevice extends UnifiedSensorBase {
   }
 
   onUninit() {
-    if (this._maintenanceTimer) this.homey.clearInterval(this._maintenanceTimer);
+    if (this._maintenanceTimer) {this.homey.clearInterval(this._maintenanceTimer);}
     super.onUninit();
   }
 }

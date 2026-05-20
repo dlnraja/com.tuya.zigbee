@@ -43,9 +43,9 @@ class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
     
     // Logic from original implementation (data[2] is command/action index)
     // 0 = Down, 1 = Up
-    const button = data[2] === 0 ? side + 'Down' : 
-      data[2] === 1 ? side + 'Up' : 
-        data[3] === 1 ? side + 'Down' : side + 'Up';
+    const button = data[2] === 0 ? `${side  }Down` : 
+      data[2] === 1 ? `${side  }Up` : 
+        data[3] === 1 ? `${side  }Down` : `${side  }Up`;
                    
     this.log(`[BUTTON] Detected: ${button}`);
     
@@ -57,7 +57,7 @@ class wall_remote_4_gang_2 extends TuyaZigbeeDevice {
 
   onDeleted() {
     this.log('4 Gang Wall Remote removed');
-    if (typeof super.onDeleted === 'function') super.onNodeInit({ zclNode });
+    if (typeof super.onDeleted === 'function') {super.onNodeInit({ zclNode });}
   }
 
 }

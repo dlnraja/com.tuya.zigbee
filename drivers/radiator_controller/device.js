@@ -20,7 +20,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
       this._timeSync = new ZigbeeTimeSync(this, { throttleMs: 6 * 60 * 60 * 1000 });
       this.homey.setTimeout(async () => {
         const result = await this._timeSync.sync({ force: true }).catch(() => ({ success: false }));
-        if (result.success) this.log('[TimeSync] Initial sync successful');
+        if (result.success) {this.log('[TimeSync] Initial sync successful');}
       }, 10000);
     } catch (e) {
       this.log('[TimeSync] Init failed:', e.message);
@@ -89,7 +89,7 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     try {
       const onOff = this.getSafeCluster('onOff');
       if (onOff) {
-        if (value) await onOff.setOn(); else await onOff.setOff();
+        if (value) {await onOff.setOn();} else {await onOff.setOff();}
       }
       await this._setHeatingMode(value ? 'confort' : 'off');
       return true;
@@ -103,12 +103,12 @@ class RadiatorControllerDevice extends ZigBeeDevice {
     this.log(`Set target: ${temp}°C`);
     // Basic logic: if target > current, ensure Confort mode
     const current = this.getCapabilityValue('measure_temperature') || 20;
-    if (temp > current) await this._setHeatingMode('confort');
+    if (temp > current) {await this._setHeatingMode('confort');}
     return true;
   }
 
   async _setHeatingMode(mode) {
-    if (!this.heatingModes[mode]) return false;
+    if (!this.heatingModes[mode]) {return false;}
     this.log(`Set mode: ${mode}`);
     try {
       await this._sendPilotWireSignal(mode);
