@@ -4,7 +4,24 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.49] - 2026-05-20
+## [7.5.50] - 2026-05-20
+
+### Bug Fixes
+- Resolved fingerprint collision for _tz3000_ww6drja5ts011f preventing wrong driver matching
+- Removed incorrect fingerprints from climate_sensor, dimmer_wall_1gang, and switch_2gang drivers
+
+### New Features
+- Added 68 new fingerprints to generic_diy driver
+- Added 40 new fingerprints to sr_zs_switch driver
+- Added 36 new fingerprints to pir_mmwave_sensor driver
+- Added 5 new fingerprints to valve_irrigation driver
+- Added 5 new fingerprints each to button_wireless, illuminance_sensor, plug_energy_monitor, and doorbell drivers
+
+### Improvements
+- Updated fingerprint database across 8 drivers for better device matching
+---
+
+ [7.5.49] - 2026-05-20
 
 ### New Features
 - Added `pir_mmwave_sensor` driver for microwave motion sensors (presence_sensor_radar alternative).
