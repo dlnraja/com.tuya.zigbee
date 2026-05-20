@@ -1,18 +1,18 @@
 {
-  "timestamp": "2026-05-20T10:46:08.490Z",
+  "timestamp": "2026-05-20T17:31:04.127Z",
   "totalFiles": 0,
-  "totalFixes": 143,
+  "totalFixes": 84,
   "rules": {
     "fingerprint-case": {
       "count": 2,
       "files": [
         {
-          "file": "drivers\\doorbell\\driver.compose.json",
+          "file": "drivers\\plug_smart\\driver.compose.json",
           "detail": "Expanded fingerprints with robust casing variants (added 2)"
         },
         {
-          "file": "drivers\\illuminance_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
+          "file": "drivers\\switch_usb_dongle\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 4)"
         }
       ]
     },
@@ -137,7 +137,7 @@
         },
         {
           "file": "lib\\mixins\\PhysicalButtonMixin.js",
-          "detail": "Line 541: getDeviceTriggerCard without try-catch"
+          "detail": "Line 558: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "lib\\SDK3BestPractices.js",
@@ -312,7 +312,7 @@
         },
         {
           "file": "lib\\mixins\\PhysicalButtonMixin.js",
-          "detail": "Line 476: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 493: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib\\NewDevices2025.js",
@@ -357,247 +357,6 @@
         {
           "file": "lib\\utils\\tuyaUtils.js",
           "detail": "Line 85: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
-        }
-      ]
-    },
-    "duplicate-fingerprints": {
-      "count": 59,
-      "files": [
-        {
-          "file": "drivers",
-          "detail": "sonoff|snzb-01 found in: button_wireless, button_wireless_1"
-        },
-        {
-          "file": "drivers",
-          "detail": "sonoff|snzb-01p found in: button_wireless, button_wireless_1"
-        },
-        {
-          "file": "drivers",
-          "detail": "sonoff|snzb-01m found in: button_wireless, button_wireless_4"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_ww6drja5ts011f|ts0601 found in: climate_sensor, plug_energy_monitor"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_01fvxamo|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_01fvxamo|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_0u3bj3rc|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_0u3bj3rc|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_1drr8tab|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_1drr8tab|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_2vfxweng|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_2vfxweng|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_3ejwxpmu|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_3ejwxpmu|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_3xfjp0ag|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_3xfjp0ag|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_44af8vyi|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_44af8vyi|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_4eeyebrt|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_4eeyebrt|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_5d3vhjro|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_5d3vhjro|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_6wi2mope|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_6wi2mope|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_78ioiaml|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_78ioiaml|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_7deq70b8|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_7deq70b8|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_7fqkphoq|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_7fqkphoq|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_86nbew0j|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_86nbew0j|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_8eazvzo6|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_8eazvzo6|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_8ply8mjj|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_8ply8mjj|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_8thwkzxl|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_8thwkzxl|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_9yapgbuv|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_9yapgbuv|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_a8z0g46u|snzb-02 found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_a8z0g46u|snzb-02p found in: climate_sensor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_9p5xmj5r|ts0105 found in: curtain_motor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_2imwyigp|ts0105 found in: curtain_motor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_a8sdabtg|ts0105 found in: curtain_motor, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3210_emqmwtym|ts0601 found in: device_din_rail, doorbell"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_1agwnems|ts0052 found in: dimmer_wall_1gang, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_3p5ydos3|ts0052 found in: dimmer_wall_1gang, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_579lguh2|ts0052 found in: dimmer_wall_1gang, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_9i9dt8is|ts0052 found in: dimmer_wall_1gang, generic_diy"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_0hg58wyk|etrv0100 found in: generic_diy, radiator_valve"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_0j5jma9b|etrv0100 found in: generic_diy, radiator_valve"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_2aaelwxk|snzb-06p found in: generic_diy, presence_sensor_radar"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_hl0ss9oa|ts0225 found in: illuminance_sensor, presence_sensor_radar"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tze200_y8jijhba|ts0601 found in: pir_mmwave_sensor, presence_sensor_radar"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3002_vaq2bfcu|ts0726 found in: sr_zs_switch, wall_switch_4gang_1way"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_itgngnqz|ts0601 found in: switch_1gang, switch_2gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_itgngnqz|ts011f found in: switch_1gang, switch_2gang"
-        },
-        {
-          "file": "drivers",
-          "detail": "_tz3000_itgngnqz|ts0726 found in: switch_1gang, switch_2gang"
         }
       ]
     },

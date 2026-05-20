@@ -1,29 +1,7 @@
 {
-  "timestamp": "2026-05-20T16:30:26.488Z",
+  "timestamp": "2026-05-20T16:33:04.872Z",
   "driversChecked": 230,
-  "collisions": [
-    {
-      "id": "_TZ3000_H1IPGKWN|TS0601",
-      "drivers": [
-        "plug_smart",
-        "switch_2gang"
-      ]
-    },
-    {
-      "id": "_TZ3000_H1IPGKWN|TS011F",
-      "drivers": [
-        "plug_smart",
-        "switch_2gang"
-      ]
-    },
-    {
-      "id": "_TZ3000_H1IPGKWN|TS0002",
-      "drivers": [
-        "switch_2gang",
-        "usb_dongle_dual_repeater"
-      ]
-    }
-  ],
+  "collisions": [],
   "buttonLogicFailures": [],
   "sdkDeprecations": [
     "data\\temp_desktop_cleanup\\tuya_backup\\lib\\utils\\migration-queue.js:267: const device = await homey.drivers.getDevice({ id: deviceId });",

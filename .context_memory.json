@@ -1,24 +1,27 @@
 {
-  "version": "7.5.31",
-  "phase": 5,
-  "timestamp": "2026-05-13T20:00:00.000Z",
+  "version": "7.5.50",
+  "phase": 6,
+  "timestamp": "2026-05-20T19:30:00.000Z",
   "branches": [
     "master",
     "stable-v5"
   ],
   "last_commits": [
-    "5649ee71a CHORE: Phase 1 hygiene - sync version 7.5.22, archive 3 obsolete plans, move 6 orphan files",
-    "e372a83a2 auto: version bump + audit metrics [skip ci]",
-    "f1a2b3c4d FIX: SDK3 Compliance - migrate getTriggerCard and enforce getDeviceTriggerCard [skip ci]"
+    "FIX: switch_usb_dongle - complete ZCL-only rewrite (TS0002 2-port USB relay)",
+    "FIX: UnifiedBatteryHandler - Bug #3 checkMainsPowered (4-level priority logic)",
+    "FIX: VirtualButtonMixin v6.1.0 - Autonomous Protocol Detection (_isPureTuyaDP)",
+    "FIX: PhysicalButtonMixin - USB dongle profiles (_TZ3000_h1ipgkwn, _TZ3000_iwtv2jwo)",
+    "FIX: 7 workflows YAML - SHA-pinning, cache:npm, secret guards, concurrency",
+    "FIX: master-self-heal - 2 casing corrections applied (plug_smart, switch_usb_dongle)",
+    "FEAT: scripts/ci/ci-control-center.js - centralized 8-phase pre-flight checker"
   ],
   "dotfiles_parsed": [
     ".cursorrules",
-    ".windsurfrules",
+    ".windsurfrules", 
     ".clinerules",
     ".cascade",
-    ".gemini/rules/repository.md",
-    ".agents/rules/architectural.md",
-    ".agents/rules/security.md",
+    ".context_checkpoint.md",
+    ".context_memory.json",
     ".eslintrc.json",
     ".prettierrc",
     ".gitattributes",
@@ -26,9 +29,45 @@
     ".homeyignore"
   ],
   "shadow_mode": true,
+  "workflows_fixed": [
+    "secure-diagnostics.yml",
+    "sunday-master.yml",
+    "driver-maintenance.yml",
+    "nightly-auto-process.yml",
+    "sync-johan.yml",
+    "auto-publish-on-push.yml",
+    "code-quality.yml",
+    "comprehensive-auto-validation.yml",
+    "homey-app-cicd.yml.manual",
+    "publish-stable.yml",
+    "test-api-keys.yml",
+    "validate-drivers.yml"
+  ],
+  "workflows_ok_as_is": [
+    "daily-promote-to-test.yml",
+    "dependabot-auto-merge.yml",
+    "draft-to-test.yml",
+    "johan-sdk3-sync.yml",
+    "labeler.yml",
+    "publish.yml",
+    "smart-pr-merge.yml",
+    "stale.yml",
+    "sync-changelog-readme.yml",
+    "validate.yml"
+  ],
+  "lib_files_fixed": [
+    "lib/battery/UnifiedBatteryHandler.js",
+    "lib/mixins/PhysicalButtonMixin.js",
+    "lib/mixins/VirtualButtonMixin.js"
+  ],
+  "drivers_fixed": [
+    "drivers/switch_usb_dongle/ (complete rewrite)",
+    "drivers/plug_smart/ (casing normalization)"
+  ],
   "pending_tasks": [
-    "migrate 46 drivers getTriggerCard -> getDeviceTriggerCard (CORE DONE)",
-    "centralize Post-Promotion bloc (duplicated 7x)",
-    "evaluate ESLint coverage for drivers/ (DONE: overrides added)"
+    "Validate with npx homey app validate --level publish (running)",
+    "Push v5.11.212 on GitHub (branch stable-v5)",
+    "Push v7.5.50 on GitHub (branch master)",
+    "Publish on Homey Developer Tools (draft/test)"
   ]
 }
