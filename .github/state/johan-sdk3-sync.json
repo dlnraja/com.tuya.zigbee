@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-18T03:51:30.505Z",
+  "timestamp": "2026-05-20T03:51:11.222Z",
   "added": [
     {
       "fp": "_TYZB01_qezuin6k",
@@ -333,7 +333,7 @@
     },
     {
       "fp": "_TYZB01_phjeraqq",
-      "driver": "fingerbot",
+      "driver": "button_wireless_plug",
       "pids": [
         "TS0001"
       ]
@@ -361,7 +361,7 @@
     },
     {
       "fp": "_TYZB01_ncutbjdi",
-      "driver": "button_wireless_plug",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0003",
         "TS011F",
@@ -372,7 +372,7 @@
     },
     {
       "fp": "_TYZB01_aneiicmq",
-      "driver": "button_wireless_plug",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0003",
         "TS011F",
@@ -383,7 +383,7 @@
     },
     {
       "fp": "_TYZB01_zsl6z0pw",
-      "driver": "button_wireless_plug",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0003",
         "TS0012",
@@ -394,7 +394,7 @@
     },
     {
       "fp": "_TYZB01_digziiav",
-      "driver": "button_wireless_plug",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0003",
         "TS0012",
@@ -501,7 +501,7 @@
     },
     {
       "fp": "_TYZB01_ymcdbl3u",
-      "driver": "button_wireless_plug",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0111",
         "TS0001",
@@ -510,7 +510,7 @@
     },
     {
       "fp": "_TYZB01_4tlksk8a",
-      "driver": "button_wireless_plug",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0111",
         "TS0001",
@@ -532,13 +532,6 @@
       ]
     },
     {
-      "fp": "_TZ3000_5e235jpa",
-      "driver": "button_wireless_2",
-      "pids": [
-        "TS0042"
-      ]
-    },
-    {
       "fp": "_TYZB02_key8kk7r",
       "driver": "button_wireless_2",
       "pids": [
@@ -547,7 +540,7 @@
     },
     {
       "fp": "_TYZB01_xfpdrwvc",
-      "driver": "button_wireless_plug",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0001",
         "TS0011"
@@ -555,7 +548,7 @@
     },
     {
       "fp": "_TYZB01_qeqvmvti",
-      "driver": "button_wireless_plug",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0001",
         "TS0011"
@@ -563,7 +556,7 @@
     },
     {
       "fp": "_TYZB01_seqwasot",
-      "driver": "button_wireless_plug",
+      "driver": "button_wireless_2",
       "pids": [
         "TS0001",
         "TS0011"
@@ -1100,9 +1093,9 @@
   },
   "summary": {
     "totalJohanFPs": 636,
-    "totalOurFPs": 10214,
-    "missingFPs": 83,
-    "addedFPs": 83,
+    "totalOurFPs": 10332,
+    "missingFPs": 82,
+    "addedFPs": 82,
     "skippedFPs": 0,
     "dpGaps": 0,
     "newDrivers": 89,
