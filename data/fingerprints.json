@@ -775,11 +775,11 @@
     ]
   },
   "_TZ3000_h1ipgkwn": {
-    "driverId": "light_dimmable",
-    "type": "light",
+    "driverId": "plug_smart",
+    "type": "socket",
     "powerSource": "mains",
     "modelIds": [
-      "TS0601"
+      "TS0002"
     ]
   },
   "_TZ3000_01gpyda5": {
@@ -511273,5 +511273,13 @@
   "CK-BL702-SWP-01(7020)|": {
     "driver": "plug_energy_monitor",
     "profile": "other"
+  },
+  "_TZ3000_iwtv2jwo": {
+    "driverId": "switch_usb_dongle",
+    "type": "socket",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0002"
+    ]
   }
 }
