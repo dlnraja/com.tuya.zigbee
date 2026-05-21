@@ -1,7 +1,22 @@
 {
-  "timestamp": "2026-05-20T19:04:35.874Z",
+  "timestamp": "2026-05-21T06:57:55.322Z",
   "driversChecked": 230,
-  "collisions": [],
+  "collisions": [
+    {
+      "id": "_TZ3210_EMQMWTYM|TS0601",
+      "drivers": [
+        "device_din_rail",
+        "doorbell"
+      ]
+    },
+    {
+      "id": "_TZE200_HL0SS9OA|TS0225",
+      "drivers": [
+        "illuminance_sensor",
+        "presence_sensor_radar"
+      ]
+    }
+  ],
   "buttonLogicFailures": [],
   "sdkDeprecations": [
     "data\\temp_desktop_cleanup\\tuya_backup\\lib\\utils\\migration-queue.js:267: const device = await homey.drivers.getDevice({ id: deviceId });",
@@ -863,7 +878,6 @@
     ".homeybuild\\lib\\DiagnosticEngine.js:34: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\DiagnosticManager.js:300: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\DiagnosticManager.js:373: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\lib\\diagnostics\\DeviceDiagnostics.js:391: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\diagnostics\\DeviceDiagnostics.js:468: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\diagnostics\\DiagnosticAPI.js:155: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\diagnostics\\DiagnosticAPI.js:156: Potential unchecked division/multiplication (NaN risk)",
@@ -1074,6 +1088,7 @@
     ".homeybuild\\lib\\tuya-local\\TuyaLocalDevice.js:20: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\tuya-local\\TuyaLocalDevice.js:24: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\tuya-local\\TuyaLocalDevice.js:25: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\lib\\tuya-local\\TuyaSmartLifeAuth.js:210: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\tuya-local\\TuyaZigbeeBridge.js:68: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\UniversalDataHandler.js:550: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\UniversalZigbeeProtocol.js:188: Potential unchecked division/multiplication (NaN risk)",
@@ -1625,7 +1640,6 @@
     "lib\\DiagnosticEngine.js:34: Potential unchecked division/multiplication (NaN risk)",
     "lib\\DiagnosticManager.js:300: Potential unchecked division/multiplication (NaN risk)",
     "lib\\DiagnosticManager.js:373: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\diagnostics\\DeviceDiagnostics.js:391: Potential unchecked division/multiplication (NaN risk)",
     "lib\\diagnostics\\DeviceDiagnostics.js:468: Potential unchecked division/multiplication (NaN risk)",
     "lib\\diagnostics\\DiagnosticAPI.js:155: Potential unchecked division/multiplication (NaN risk)",
     "lib\\diagnostics\\DiagnosticAPI.js:156: Potential unchecked division/multiplication (NaN risk)",
@@ -1840,6 +1854,7 @@
     "lib\\tuya-local\\TuyaLocalDevice.js:20: Potential unchecked division/multiplication (NaN risk)",
     "lib\\tuya-local\\TuyaLocalDevice.js:24: Potential unchecked division/multiplication (NaN risk)",
     "lib\\tuya-local\\TuyaLocalDevice.js:25: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\tuya-local\\TuyaSmartLifeAuth.js:210: Potential unchecked division/multiplication (NaN risk)",
     "lib\\tuya-local\\TuyaZigbeeBridge.js:68: Potential unchecked division/multiplication (NaN risk)",
     "lib\\UniversalDataHandler.js:550: Potential unchecked division/multiplication (NaN risk)",
     "lib\\UniversalZigbeeProtocol.js:188: Potential unchecked division/multiplication (NaN risk)",
