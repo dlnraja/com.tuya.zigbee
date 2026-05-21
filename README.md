@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (May 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v7.5.53** | v7.5.52: Fixed button_wireless_3 and button_wireless_4 driver issues (diagnos... |
+| **v7.5.52** | Bug fixes for button_wireless_3/4, ir_blaster, soil_sensor, plug_smart and sw... |
+| **v7.5.51** | Bug fix: resolved fingerprint collision for _TZ3000_h1ipgkwn. Improved USB do... |
+| **v7.5.50** | 166 new fingerprints added across 8 drivers. Fixed fingerprint collisions and... |
+| **v7.5.49** | New driver: presence sensor microwave (pir_mmwave_sensor). New fingerprints v... |
+| **v7.5.48** | Bug fix: clamp meter watt/voltage scaling corrected. New fingerprints added a... |
+| **v7.5.47** | v7.5.46: No changes. |
+| **v7.5.46** | v7.5.46 - Maintenance release. No new devices or fixes. |
+| **v7.5.45** | Bug fixes across 7 drivers including humidifier, motion_sensor_2, dimmer_dual... |
+| **v7.5.44** | Bug fixes for wireless buttons, remote buttons, and scene switches. Critical ... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
