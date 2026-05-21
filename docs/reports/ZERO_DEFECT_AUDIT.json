@@ -1,7 +1,57 @@
 {
-  "timestamp": "2026-05-21T07:45:16.652Z",
-  "driversChecked": 230,
-  "collisions": [],
+  "timestamp": "2026-05-21T19:24:11.780Z",
+  "driversChecked": 231,
+  "collisions": [
+    {
+      "id": "_TZ3000_MRPEVH8P|TS0041",
+      "drivers": [
+        "button_wireless_1",
+        "button_wireless_smart"
+      ]
+    },
+    {
+      "id": "_TZ3210_EMQMWTYM|TS0601",
+      "drivers": [
+        "device_din_rail",
+        "doorbell"
+      ]
+    },
+    {
+      "id": "_TZ3000_TVUARKSA|TS011F",
+      "drivers": [
+        "plug_energy_monitor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TVUARKSA|S31ZB",
+      "drivers": [
+        "plug_energy_monitor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TVUARKSA|S26R2ZB",
+      "drivers": [
+        "plug_energy_monitor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TVUARKSA|ZBMINIL2",
+      "drivers": [
+        "plug_energy_monitor",
+        "switch_1gang"
+      ]
+    },
+    {
+      "id": "_TZ3000_TVUARKSA|TS0601",
+      "drivers": [
+        "plug_energy_monitor",
+        "switch_1gang"
+      ]
+    }
+  ],
   "buttonLogicFailures": [],
   "sdkDeprecations": [
     "data\\temp_desktop_cleanup\\tuya_backup\\lib\\utils\\migration-queue.js:267: const device = await homey.drivers.getDevice({ id: deviceId });",
@@ -2751,13 +2801,44 @@
     ".github\\state\\diagnostics-report.json:1117: Forbidden invisible character (char code 160) detected.",
     ".github\\state\\diagnostics-report.json:4465: Forbidden invisible character (char code 160) detected.",
     ".github\\state\\ecosystem-scan-report.json:140: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\forum-activity-data.json:11733: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\forum-activity-data.json:11915: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\forum-activity-data.json:11929: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\forum-activity-data.json:12552: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\forum-activity-data.json:12748: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\forum-activity-data.json:14617: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\forum-activity-data.json:26699: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\forum-activity-data.json:29254: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\forum-activity-data.json:32628: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\forum-activity-data.json:39649: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\forum-activity-data.json:44192: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\forum-activity-data.json:54580: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\forum-activity-data.json:55665: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:55672: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:55749: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:55770: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:55812: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:55952: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:55973: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:55994: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:56029: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:56043: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:56057: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:56092: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:56176: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:56435: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:56470: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:56582: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:56617: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:56666: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:56687: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:58430: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\forum-activity-data.json:58752: Forbidden invisible character (char code 160) detected.",
     ".github\\state\\interviews\\dlnraja-com.tuya.zigbee_97.json:5: Forbidden invisible character (char code 160) detected.",
     ".github\\state\\interviews\\JohanBendz-com.tuya.zigbee_1229.json:27: Forbidden invisible character (char code 8203) detected.",
     ".github\\state\\interviews\\JohanBendz-com.tuya.zigbee_1327.json:21: Forbidden invisible character (char code 8203) detected.",
     ".github\\state\\interviews\\JohanBendz-com.tuya.zigbee_1327.json:35: Forbidden invisible character (char code 8203) detected.",
     ".github\\state\\interviews\\JohanBendz-com.tuya.zigbee_1360.json:13: Forbidden invisible character (char code 160) detected.",
-    ".github\\state\\pr-issue-scan.json:3107: Forbidden invisible character (char code 8203) detected.",
-    ".github\\state\\pr-issue-scan.json:29425: Forbidden invisible character (char code 160) detected.",
     ".homeybuild\\drivers\\lcdtemphumidsensor_plug_energy\\device.js:169: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\drivers\\presence_sensor_radar\\configs.js:253: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\drivers\\presence_sensor_radar\\configs.js:254: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
