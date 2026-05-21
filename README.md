@@ -30,31 +30,11 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 ---
 
-## ðŸš€ Latest Updates
-
-<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
-### âœ¨ Recent Changes (May 2026)
-
-| Version | Feature |
-|---------|---------|
-| **v7.5.53** | v7.5.52: Fixed button_wireless_3 and button_wireless_4 driver issues (diagnos... |
-| **v7.5.52** | Bug fixes for button_wireless_3/4, ir_blaster, soil_sensor, plug_smart and sw... |
-| **v7.5.51** | Bug fix: resolved fingerprint collision for _TZ3000_h1ipgkwn. Improved USB do... |
-| **v7.5.50** | 166 new fingerprints added across 8 drivers. Fixed fingerprint collisions and... |
-| **v7.5.49** | New driver: presence sensor microwave (pir_mmwave_sensor). New fingerprints v... |
-| **v7.5.48** | Bug fix: clamp meter watt/voltage scaling corrected. New fingerprints added a... |
-| **v7.5.47** | v7.5.46: No changes. |
-| **v7.5.46** | v7.5.46 - Maintenance release. No new devices or fixes. |
-| **v7.5.45** | Bug fixes across 7 drivers including humidifier, motion_sensor_2, dimmer_dual... |
-| **v7.5.44** | Bug fixes for wireless buttons, remote buttons, and scene switches. Critical ... |
-<!-- CHANGELOG_END -->
-
-
 ## Statistics
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.1.1 |
+| **App Version** | v8.1.2 |
 | **Device Fingerprints** | 11,053+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 230 (180 Zigbee + 50 WiFi) |
@@ -121,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v8.1.1** | v8.1.0: Fixed color control on RGB bulbs for multiple fingerprints, Fixed air quality CO2 reporting on air_quality_co... |
+| **v8.1.2** | v8.1.1: Fixed duplicate button initialization in scene switch drivers (scene_switch_1, _2, _3, _6, _wall), Fixed unde... |
+| **v8.1.1** | Bug fixes: duplicate button init resolved, physical button detection improved, scene switch drivers fixed, import err... |
 | **v8.1.0** | New fingerprints for RGB bulbs, RGBW bulbs, air purifiers, and air quality sensors. Soil sensor driver added. Bug fix... |
 | **v7.5.53** | v7.5.52: Fixed button_wireless_3 and button_wireless_4 driver issues (diagnostic Log 99ead539), Fixed ir_blaster devi... |
 | **v7.5.52** | Bug fixes for button_wireless_3/4, ir_blaster, soil_sensor, plug_smart and switch drivers. Fixed diagnostic issues Lo... |
@@ -135,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.44** | Bug fixes for wireless buttons, remote buttons, and scene switches. Critical runtime errors resolved in button devices. |
 | **v7.5.43** | Bug fixes: wall flow cards on multi-gang switches, wireless button reliability, climate sensor battery/pressure, part... |
 | **v7.5.42** | v7.5.41: Fixed battery endpoint scan handling for better battery device detection, Fixed Fingerbot capability registr... |
-| **v7.5.41** | v7.5.41 - 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT. Battery endpoint scan fix, Fingerbot capability timin... |
 
 <!-- CHANGELOG_END -->
 
