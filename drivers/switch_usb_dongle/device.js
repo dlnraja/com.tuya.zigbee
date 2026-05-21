@@ -35,7 +35,7 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
       }
 
       // Setup end-to-end capability listeners for both USB ports
-      this._registerOnOffListeners(zclNode);
+      this._registerOnOffListeners();
 
       // Setup power-on behavior if moesStartUpOnOff is available
       await this._setupPowerOnBehavior(zclNode);
@@ -51,7 +51,7 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
    * Register OnOff listeners for both USB endpoints
    * Endpoint 1 → onoff (l1), Endpoint 2 → onoff.l2 (l2)
    */
-  _registerOnOffListeners(zclNode) {
+  _registerOnOffListeners() {
     // Endpoint 1 = l1 (primary USB port)
     this.registerCapabilityListener('onoff', async (value) => {
       await this._sendZCLCommand(1, value);
