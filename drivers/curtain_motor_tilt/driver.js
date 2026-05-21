@@ -33,6 +33,10 @@ async onInit() {
     reg('curtain_motor_tilt_turn_on', async ({ device }) => { await device.triggerCapabilityListener('onoff', true); return true; });
     reg('curtain_motor_tilt_turn_off', async ({ device }) => { await device.triggerCapabilityListener('onoff', false); return true; });
     reg('curtain_motor_tilt_toggle', async ({ device }) => { const v = device.getCapabilityValue('onoff'); await device.triggerCapabilityListener('onoff', !v); return true; });
+    reg('curtain_motor_tilt_set_position', async ({ device, position }) => { await device.triggerCapabilityListener('windowcoverings_set', position / 100); return true; });
+    reg('curtain_motor_tilt_open', async ({ device }) => { await device.triggerCapabilityListener('windowcoverings_set', 1); return true; });
+    reg('curtain_motor_tilt_close', async ({ device }) => { await device.triggerCapabilityListener('windowcoverings_set', 0); return true; });
+    reg('curtain_motor_tilt_stop', async ({ device }) => { await device.triggerCapabilityListener('windowcoverings_stop', true); return true; });
 
   }
 
