@@ -42,8 +42,8 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           DRY_RUN: false
         run: |
-          # Use a wrapper to mask output just in case
-          node .github/scripts/fetch-gmail-diagnostics.js | sed 's/${{ secrets.HOMEY_EMAIL }}/[REDACTED_EMAIL]/g'
+          # Use a wrapper to mask output
+          node .github/scripts/fetch-gmail-diagnostics.js | sed "s/$GMAIL_EMAIL/[REDACTED_EMAIL]/g"
 
       - name: 📝 Commit State & Reports
         env:

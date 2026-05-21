@@ -1,0 +1,38 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_ewelink_th_temperature_changed",
+      "title": {
+        "en": "Temperature changed"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (C)"
+          },
+          "example": 25.5
+        }
+      ]
+    },
+    {
+      "id": "wifi_ewelink_th_humidity_changed",
+      "title": {
+        "en": "Humidity changed"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)"
+          },
+          "example": 60
+        }
+      ]
+    }
+  ],
+  "conditions": [],
+  "actions": []
+}

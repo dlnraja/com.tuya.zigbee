@@ -198,19 +198,21 @@ jobs:
       - name: Run forum scan
         id: forum_scan
         env:
+          HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
+          HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
         run: |
           node .github/scripts/scan-forum.js
           if [ -s /tmp/forum_issues.json ]; then
             echo "has_issues=true" >> $GITHUB_OUTPUT
           fi
-      - if: steps.forum_scan.outputs.has_issues == 'true'
+      - name: Create Forum Issue
+        if: steps.forum_scan.outputs.has_issues == 'true'
         uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
         with:
           script: |
             const fs=require('fs');
             const issues=JSON.parse(fs.readFileSync('/tmp/forum_issues.json','utf8'));
             if(!issues.length)return;
-            // Dedup: check for existing open issue with same title pattern
             const dupTitle=`[Forum] ${issues.length} device request(s) from forum`;
             const {data:existing}=await github.rest.issues.listForRepo({
               owner:context.repo.owner,repo:context.repo.repo,
@@ -224,6 +226,7 @@ jobs:
             await github.rest.issues.create({
               owner:context.repo.owner,repo:context.repo.repo,
               title:dupTitle,
+              body:`## Forum device requests\n| User | Date | Post | Missing FPs |\n|---|---|---|---|\n${rows}`,
               labels:['enhancement','forum-request']
             });
 
@@ -353,6 +356,7 @@ jobs:
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           FORUM_USERNAME: dlnraja
+        run: node .github/scripts/forum-activity-scraper.js
 
   johanbendz-full:
     name: "JohanBendz Full Scanner"
@@ -704,10 +708,13 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - run: npm ci --prefer-offline --no-audit || npm install
+      - name: "Update forum thread #140352"
+        continue-on-error: true
         env:
           HOMEY_EMAIL: ${{ secrets.HOMEY_EMAIL }}
           HOMEY_PASSWORD: ${{ secrets.HOMEY_PASSWORD }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: node .github/scripts/forum-updater.js || node .github/scripts/post-forum-update.js || true
   promote-to-test:
     name: "Promote Draft to Test"
     needs: [generate-changelog, update-forum-thread]

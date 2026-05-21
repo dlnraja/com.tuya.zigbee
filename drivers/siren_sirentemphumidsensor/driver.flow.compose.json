@@ -1,0 +1,106 @@
+{
+  "triggers": [
+    {
+      "id": "siren_sirentemphumidsensor_alarm_triggered",
+      "highlight": true,
+      "title": {
+        "en": "Alarm triggered",
+        "fr": "Alarme déclenchée",
+        "nl": "Alarm geactiveerd",
+        "de": "Alarm ausgelöst"
+      },
+      "args": []
+    },
+    {
+      "id": "siren_sirentemphumidsensor_alarm_stopped",
+      "title": {
+        "en": "Alarm stopped",
+        "fr": "Alarme arrêtée",
+        "nl": "Alarm gestopt",
+        "de": "Alarm gestoppt"
+      },
+      "args": []
+    },
+    {
+      "id": "siren_sirentemphumidsensor_tamper_detected",
+      "title": {
+        "en": "Tamper alarm triggered",
+        "fr": "Alarme anti-sabotage déclenchée",
+        "nl": "Sabotage alarm geactiveerd",
+        "de": "Manipulationsalarm ausgelöst"
+      },
+      "args": []
+    },
+    {
+      "id": "siren_sirentemphumidsensor_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)",
+            "nl": "Temperatuur (°C)",
+            "de": "Temperatur (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "siren_sirentemphumidsensor_alarm_active",
+      "title": {
+        "en": "Alarm !{{is|is not}} active",
+        "fr": "Alarme !{{est|n'est pas}} active",
+        "nl": "Alarm !{{is|is niet}} actief",
+        "de": "Alarm !{{ist|ist nicht}} aktiv"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "siren_sirentemphumidsensor_trigger_alarm",
+      "title": {
+        "en": "Trigger alarm",
+        "fr": "Déclencher l'alarme",
+        "nl": "Alarm activeren",
+        "de": "Alarm auslösen"
+      },
+      "args": [
+        {
+          "name": "duration",
+          "type": "number",
+          "min": 1,
+          "max": 300,
+          "step": 1,
+          "title": {
+            "en": "Duration (seconds)",
+            "fr": "Durée (secondes)",
+            "nl": "Duur (seconden)",
+            "de": "Dauer (Sekunden)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "siren_sirentemphumidsensor_stop_alarm",
+      "title": {
+        "en": "Stop alarm",
+        "fr": "Arrêter l'alarme",
+        "nl": "Alarm stoppen",
+        "de": "Alarm stoppen"
+      },
+      "args": []
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "triggers": [
+    {
+      "id": "switch_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "switch_is_on",
+      "title": {
+        "en": "!{{Is|Is not}} on",
+        "fr": "!{{Est|N'est pas}} allumé",
+        "nl": "!{{Is|Is niet}} aan",
+        "de": "!{{Ist|Ist nicht}} eingeschaltet"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "switch_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "switch_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": []
+    }
+  ]
+}

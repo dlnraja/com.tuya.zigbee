@@ -1,0 +1,35 @@
+{
+  "triggers": [
+    {
+      "id": "light_sensor_outdoor_luminance_changed",
+      "title": {
+        "en": "Luminance changed",
+        "fr": "Luminosité changée"
+      },
+      "tokens": [
+        {
+          "name": "luminance",
+          "type": "number",
+          "title": {
+            "en": "Luminance (lux)",
+            "fr": "Luminosité (lux)"
+          },
+          "example": 500
+        }
+      ],
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "light_sensor_outdoor_battery_low",
+      "title": {
+        "en": "Battery !{{is|is not}} low",
+        "fr": "Batterie !{{est|n'est pas}} faible",
+        "nl": "Batterij !{{is|is niet}} laag",
+        "de": "Batterie !{{ist|ist nicht}} schwach"
+      },
+      "args": []
+    }
+  ]
+}

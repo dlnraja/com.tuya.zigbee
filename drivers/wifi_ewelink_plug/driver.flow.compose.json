@@ -1,0 +1,41 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_ewelink_plug_turned_on",
+      "title": {
+        "en": "Turned on"
+      }
+    },
+    {
+      "id": "wifi_ewelink_plug_turned_off",
+      "title": {
+        "en": "Turned off"
+      }
+    },
+    {
+      "id": "wifi_ewelink_plug_power_changed",
+      "title": {
+        "en": "Power changed"
+      },
+      "tokens": [
+        {
+          "name": "power",
+          "type": "number",
+          "title": {
+            "en": "Power (W)"
+          },
+          "example": 100
+        }
+      ]
+    }
+  ],
+  "conditions": [
+    {
+      "id": "wifi_ewelink_plug_is_on",
+      "title": {
+        "en": "Is on"
+      }
+    }
+  ],
+  "actions": []
+}

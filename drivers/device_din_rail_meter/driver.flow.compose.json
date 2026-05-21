@@ -1,0 +1,61 @@
+{
+  "triggers": [
+    {
+      "id": "device_din_rail_meter_power_changed",
+      "title": {
+        "en": "Power consumption changed",
+        "fr": "Consommation changée"
+      },
+      "tokens": [
+        {
+          "name": "power",
+          "type": "number",
+          "title": {
+            "en": "Power (W)",
+            "fr": "Puissance (W)"
+          },
+          "example": 150
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "device_din_rail_meter_voltage_changed",
+      "title": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      },
+      "tokens": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "title": {
+            "en": "Voltage (V)",
+            "fr": "Tension (V)"
+          },
+          "example": 230
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "device_din_rail_meter_current_changed",
+      "title": {
+        "en": "Current changed",
+        "fr": "Courant changé"
+      },
+      "tokens": [
+        {
+          "name": "current",
+          "type": "number",
+          "title": {
+            "en": "Current (A)",
+            "fr": "Courant (A)"
+          },
+          "example": 0.65
+        }
+      ],
+      "args": []
+    }
+  ]
+}
