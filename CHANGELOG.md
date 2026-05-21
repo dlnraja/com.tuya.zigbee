@@ -4,7 +4,25 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.1] - 2026-05-21
+## [8.1.2] - 2026-05-21
+
+### Bug Fixes
+- Fixed fingerprint collision: device_din_rail/EMQMWTYM now maps to doorbell driver
+- Fixed fingerprint collision: switch_1gang/TVUARKSA now maps to plug_energy_monitor driver
+- Fixed fingerprint collision: button_wireless_smart/MRPEVH8P now maps to button_wireless_1 driver
+- Fixed curtain_motor_tilt flow cards
+- Fixed valve_irrigation class
+- Fixed bed_sensor settings (Issue #331)
+
+### New Features
+- Added bed_sensor driver with images, flow cards, and device support
+
+### Improvements
+- Updated curtain_motor, curtain_motor_shutter, curtain_motor_wall device.js
+- Added curtain_motor_tilt flow card definitions
+---
+
+ [8.1.1] - 2026-05-21
 
 ### Bug Fixes
 - Fixed duplicate button initialization in scene switch drivers (scene_switch_1, _2, _3, _6, _wall)

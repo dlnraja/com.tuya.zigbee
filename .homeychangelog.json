@@ -1,6 +1,6 @@
 {
   "8.1.2": {
-    "en": "v8.1.2: Fixed duplicate button initialization in scene switch drivers, undefined variables, physical button detection (PhysicalButtonMixin), switch_usb_dongle and sensor_contact_motion configs. Updated scene_switch drivers."
+    "en": "bed_sensor driver added. Fixed 3 fingerprint collisions (device_din_rail/EMQMWTYM→doorbell, switch_1gang/TVUARKSA→plug_energy_monitor, button_wireless_smart/MRPEVH8P→button_wireless_1). Fixed curtain_motor_tilt flow cards, valve_irrigation class, bed_sensor settings."
   },
   "8.1.1": {
     "en": "v8.1.1: Fixed Issue #331 — Settings tab crash on 6 drivers (Hybrid*Base renamed to Unified*Base). Fixed curtain_motor_tilt missing flow cards (turn_on, turn_off, toggle). Fixed valve_irrigation device class (thermostat→socket). Added bed_sensor driver for _TZE200_seq9cm6u. Added CT Clamp _TZE28C1000000_81yrt3lo to power_clamp_meter. New fingerprints across 8 drivers."
@@ -59,13 +59,7 @@
   "7.5.37": {
     "en": "Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 compliance"
   },
-  "7.5.36": {
-    "en": "v7.5.35: Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 compliance"
-  },
-  "7.5.35": {
-    "en": "v7.5.34: Fixed condition card registration in `air_quality_comprehensive` and `din_rail_meter` drivers (resolved runtime errors), Restored draft-to-test, Standardized button flow cards (button_pressed, button_double_press, button_long_press, button_multi_press, button_release, knob_rotated), Added OTA check updates action card, Added tuya_dp_send_typed and tuya_dp"
-  },
-  "7.5.34": {
-    "en": "v7.5.34: Fixed condition card registration in air_quality_comprehensive and din_rail_meter drivers. Standardized button flow cards. Synced upstream fixes from upstream."
+  "8.1.3": {
+    "en": "v8.1.2: Fixed fingerprint collision: device_din_rail/EMQMWTYM now maps to doorbell driver, Fixed fingerprint collision: switch_1gang/TVUARKSA now maps to plug_energy_monitor driver, Fixed fingerprint collision: button_wireless_smart/MRPEVH8P now maps to button_wireless_1 driver, Fixed curtain_motor_tilt flow cards, Fixed valve_irrigation class"
   }
 }
