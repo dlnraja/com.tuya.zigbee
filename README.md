@@ -54,12 +54,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v7.5.53 |
+| **App Version** | v8.1.1 |
 | **Device Fingerprints** | 11,053+ |
-| **App Version** | v7.5.53 |
-| **Device Fingerprints** | 11,053+ |
-| **App Version** | v8.1.0 |
-| **Device Fingerprints** | 11,046+ |
 | **Unique Product IDs** | 560 |
 | **Drivers** | 230 (180 Zigbee + 50 WiFi) |
 | **Flow Cards** | 2,469 |
@@ -68,7 +64,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
-| **Last Updated** | 2026-05-20 |
+| **Last Updated** | 2026-05-21 |
 
 ### Top 20 Drivers by Fingerprint Count
 
@@ -125,12 +121,10 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
+| **v8.1.1** | v8.1.0: Fixed color control on RGB bulbs for multiple fingerprints, Fixed air quality CO2 reporting on air_quality_co... |
+| **v8.1.0** | New fingerprints for RGB bulbs, RGBW bulbs, air purifiers, and air quality sensors. Soil sensor driver added. Bug fix... |
 | **v7.5.53** | v7.5.52: Fixed button_wireless_3 and button_wireless_4 driver issues (diagnostic Log 99ead539), Fixed ir_blaster devi... |
 | **v7.5.52** | Bug fixes for button_wireless_3/4, ir_blaster, soil_sensor, plug_smart and switch drivers. Fixed diagnostic issues Lo... |
-| **v7.5.53** | v7.5.52: Fixed button_wireless_3 and button_wireless_4 driver issues (diagnostic Log 99ead539), Fixed ir_blaster devi... |
-| **v7.5.52** | Bug fixes for button_wireless_3/4, ir_blaster, soil_sensor, plug_smart and switch drivers. Fixed diagnostic issues Lo... |
-| **v8.1.0** | Phoenix Sovereign Protocol v8.1.0: Full system refactoring. Added robust battery management, self-healing virtual buttons, fixed `Class extends value undefined` null crashes. Cleaned up corrupt driver files. Upgraded Tuya mapping engine. |
-| **v7.5.52** | v7.5.51: Removed _TZ3000_h1ipgkwn fingerprint from switch_2gang and usb_dongle_dual_repeater to resolve driver collis... |
 | **v7.5.51** | Bug fix: resolved fingerprint collision for _TZ3000_h1ipgkwn. Improved USB dongle switch driver with flow cards and m... |
 | **v7.5.50** | 166 new fingerprints added across 8 drivers. Fixed fingerprint collisions and removed incorrect matches. Generic DIY,... |
 | **v7.5.49** | New driver: presence sensor microwave (pir_mmwave_sensor). New fingerprints via Phoenix Sovereign v8.1.0. SONOFF case... |
@@ -142,8 +136,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.43** | Bug fixes: wall flow cards on multi-gang switches, wireless button reliability, climate sensor battery/pressure, part... |
 | **v7.5.42** | v7.5.41: Fixed battery endpoint scan handling for better battery device detection, Fixed Fingerbot capability registr... |
 | **v7.5.41** | v7.5.41 - 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT. Battery endpoint scan fix, Fingerbot capability timin... |
-| **v7.5.40** | Bug fix: Empty battery reports on sleepy devices resolved with adaptive battery listeners and ZCL/IAS fallbacks. |
-| **v7.5.39** | Updated 3202 fingerprints across 228 drivers. Added new device support and minor fixes. |
 
 <!-- CHANGELOG_END -->
 
@@ -383,4 +375,4 @@ A massive thank you to the maintainers and contributors of:
 
 **Made with love by Dylan Rajasekaram & the Zigbee community**
 
-*Last updated: 2026-05-20*
+*Last updated: 2026-05-21*
