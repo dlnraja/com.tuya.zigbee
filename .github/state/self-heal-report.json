@@ -1,23 +1,10 @@
 {
-  "timestamp": "2026-05-20T17:31:04.127Z",
+  "timestamp": "2026-05-21T16:08:12.988Z",
   "totalFiles": 0,
-  "totalFixes": 84,
+  "totalFixes": 105,
   "rules": {
-    "fingerprint-case": {
-      "count": 2,
-      "files": [
-        {
-          "file": "drivers\\plug_smart\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
-        },
-        {
-          "file": "drivers\\switch_usb_dongle\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 4)"
-        }
-      ]
-    },
     "flow-card-try-catch": {
-      "count": 33,
+      "count": 49,
       "files": [
         {
           "file": "drivers\\curtain_motor\\device.js",
@@ -54,6 +41,70 @@
         {
           "file": "drivers\\remote_dimmer\\device.js",
           "detail": "Line 139: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_1\\driver.js",
+          "detail": "Line 15: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_1\\driver.js",
+          "detail": "Line 16: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_1\\driver.js",
+          "detail": "Line 17: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_1\\driver.js",
+          "detail": "Line 18: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_2\\driver.js",
+          "detail": "Line 15: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_2\\driver.js",
+          "detail": "Line 16: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_2\\driver.js",
+          "detail": "Line 17: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_3\\driver.js",
+          "detail": "Line 15: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_3\\driver.js",
+          "detail": "Line 16: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_3\\driver.js",
+          "detail": "Line 17: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_6\\driver.js",
+          "detail": "Line 15: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_6\\driver.js",
+          "detail": "Line 16: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_6\\driver.js",
+          "detail": "Line 17: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_wall\\driver.js",
+          "detail": "Line 15: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_wall\\driver.js",
+          "detail": "Line 16: getDeviceTriggerCard without try-catch"
+        },
+        {
+          "file": "drivers\\scene_switch_wall\\driver.js",
+          "detail": "Line 17: getDeviceTriggerCard without try-catch"
         },
         {
           "file": "drivers\\sr_zs_switch\\device.js",
@@ -357,6 +408,39 @@
         {
           "file": "lib\\utils\\tuyaUtils.js",
           "detail": "Line 85: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        }
+      ]
+    },
+    "duplicate-fingerprints": {
+      "count": 7,
+      "files": [
+        {
+          "file": "drivers",
+          "detail": "_tz3210_emqmwtym|ts0601 found in: device_din_rail, doorbell"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tze200_hl0ss9oa|ts0225 found in: illuminance_sensor, presence_sensor_radar"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tvuarksa|ts011f found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tvuarksa|s31zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tvuarksa|s26r2zb found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tvuarksa|zbminil2 found in: plug_energy_monitor, switch_1gang"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tz3000_tvuarksa|ts0601 found in: plug_energy_monitor, switch_1gang"
         }
       ]
     },

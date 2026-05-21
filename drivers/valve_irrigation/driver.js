@@ -1,8 +1,6 @@
-'use strict';
+const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
-
-class ValveIrrigationDriver extends ZigBeeDriver {
+class ValveIrrigationDriver extends BaseZigBeeDriver {
   /**
    * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
    * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.

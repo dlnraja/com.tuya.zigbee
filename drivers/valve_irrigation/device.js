@@ -5,6 +5,7 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
 const { containsCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { ensureManufacturerSettings } = require('../../lib/helpers/ManufacturerNameHelper');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -41,7 +42,7 @@ class ValveIrrigationDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unifi
     if (this.isInsoma) {
       return {
         1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-        2: { capability: 'onoff', transform: (v) => v === 1 || v === true },
+        2: { capability: 'onoff.gang2', transform: (v) => v === 1 || v === true },
         5: { capability: null, internal: 'countdown_timer', writable: true },
         6: { capability: null, internal: 'remaining_time' },
         13: { capability: 'measure_battery', divisor: 1 },
@@ -67,8 +68,50 @@ class ValveIrrigationDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unifi
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => { // v9.7.3: Unified initialization handles reporting and protocol setup
+      // v9.8.0: Ensure manufacturer settings populated BEFORE isInsoma check
+      await ensureManufacturerSettings(this).catch(err => this.error('[VALVE-IRR] ensureManufacturerSettings failed:', err.message));
+
+      // Dynamic capabilities setup based on Insoma model detection
+      if (this.isInsoma) {
+        this.log('[VALVE-IRR] Insoma Dual Valve detected. Stripping dimming levels, ensuring dual on/off switches.');
+        // Remove 4-way dim levels
+        for (const cap of ['dim.valve_1', 'dim.valve_2', 'dim.valve_3', 'dim.valve_4']) {
+          if (this.hasCapability(cap)) {
+            await this.removeCapability(cap).catch(err => this.error(`Failed to remove ${cap}:`, err.message));
+          }
+        }
+        // Add dual gang onoff
+        if (!this.hasCapability('onoff.gang2')) {
+          await this.addCapability('onoff.gang2').catch(err => this.error(`Failed to add onoff.gang2:`, err.message));
+        }
+      } else {
+        // Non-Insoma 4-way valve: ensure dim levels, remove gang2 onoff
+        this.log('[VALVE-IRR] Standard 4-Way Valve detected.');
+        if (this.hasCapability('onoff.gang2')) {
+          await this.removeCapability('onoff.gang2').catch(err => this.error(`Failed to remove onoff.gang2:`, err.message));
+        }
+        for (const cap of ['dim.valve_1', 'dim.valve_2', 'dim.valve_3', 'dim.valve_4']) {
+          if (!this.hasCapability(cap)) {
+            await this.addCapability(cap).catch(err => this.error(`Failed to add ${cap}:`, err.message));
+          }
+        }
+      }
+
       await super.onNodeInit({ zclNode  });
       await this.initVirtualButtons();
+
+      // Register capability listener for gang2 if present
+      if (this.hasCapability('onoff.gang2')) {
+        this.registerCapabilityListener('onoff.gang2', async (value) => {
+          this.log(`[VALVE-IRR] UI Toggle Gang 2: ${value}`);
+          if (this.tuyaEF00Manager) {
+            await this.tuyaEF00Manager.sendDP(2, value ? 1 : 0, 'bool');
+          } else {
+            this.log('[VALVE-IRR] ⚠️ tuyaEF00Manager not ready for gang 2');
+          }
+        });
+      }
+
       this.log('[VALVE-IRR] v9.7.3 - DPs: 1,5-7,11,13-15,101-104 | ZCL: 6,1,EF00');
       this.log('[VALVE-IRR] ✅ Ready');
     }, 'onNodeInit');
@@ -92,10 +135,9 @@ class ValveIrrigationDevice extends VirtualButtonMixin(PhysicalButtonMixin(Unifi
     if (this._interval) { clearInterval(this._interval); this._interval = null; }
     if (this._timer) { clearTimeout(this._timer); this._timer = null; }
     if (this._pollInterval) { clearInterval(this._pollInterval); this._pollInterval = null; }
-    await super.onNodeInit({ zclNode });
+    await super.onDeleted();
     this.log('Device deleted, cleaning up');
   }
 }
 
 module.exports = ValveIrrigationDevice;
-

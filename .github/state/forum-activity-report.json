@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-13T03:41:58.934Z",
+  "timestamp": "2026-05-21T16:08:06.710Z",
   "username": "dlnraja",
   "topicCount": 1,
   "activityCount": 300,
@@ -7,19 +7,16 @@
   "refCount": 151,
   "bookmarkCount": 0,
   "fullThreads": 30,
-  "totalFPs": 784,
+  "totalFPs": 790,
   "unsupportedFPs": [
-    "_TZ3002_pzao9l",
-    "_TZ3000_ztc6ggyl",
-    "_TZ3000_akwixq9i",
-    "_TZ3000_hiqrjkxx",
-    "_TYST11_d0yu2xgi",
-    "_TZ3000_sqcn0y",
     "_TYZB01_a476raq2",
     "_TYZB01_ftdkanlj",
     "_TYZB01_hjsgdkfl",
     "_TYZB01_kvwjujy9",
-    "_TZE284_4vobcgd3",
+    "_TZ3000_bjawzod",
+    "_TYST11_d0yu2xgi",
+    "_TZ3000_sqcn0y",
+    "_TZ3000_zgyzgd",
     "_TYZB01_iuepbmpv",
     "_TYZB01_cbiezpds",
     "_TYZB01_jytabjkb",
@@ -64,10 +61,9 @@
     "_TYZB01_bngwdjsr",
     "_TYST11_jeaxp72v",
     "_TYZB01_gr6rozze",
-    "_TZ3000_tvuarska",
     "_TYZB01_b6eaxdlh",
     "_TZ3000_amdymr7",
     "_TZ3000_ksw8qtm"
   ],
-  "aiAnalysis": "Based on the forum data for the Tuya Unified Zigbee app, here is the analysis:\n\n## Per-Device Analysis & Driver Suggestions\n\n| Fingerprint | Likely ProductId | Device Type | Suggested Driver | Notes |\n|-------------|------------------|-------------|------------------|-------|\n| `_TZ3002_pzao9l` | TS0001 | Switch | `switch_1gang` | Newer Tuya chipset variant |\n| `_TZ3000_ztc6ggyl` | TS0001 | Switch | `switch_1gang` | Standard ZCL switch |\n| `_TZ3000_akwixq9i` | TS0001 | Switch | `switch_1gang` | Common switch FP |\n| `_TZ3000_hiqrjkxx` | TS0001 | Switch | `switch_1gang` | Standard switch |\n| `_TYST11_d0yu2xgi` | TS0001 | Switch | `switch_1gang` | Older Tuya variant |\n| `_TZ3000_sqcn0y` | TS0001 | Switch | `switch_1gang` | Likely switch |\n| `_TYZB01_a476raq2` | TS0001 | Switch | `switch_1gang` | ZCL-only variant |\n| `_TYZB01_ftdkanlj` | TS0001 | Switch | `switch_1gang` | ZCL-only |\n| `_TYZB01_hjsgdkfl` | TS0001 | Switch | `switch_1gang` | ZCL-only |\n| `_TYZB01_kvwjujy9` | TS0001 | Switch | `switch_1gang` | ZCL-only |\n| `_TZE284_4vobcgd3` | TS0601 | Sensor/Climate | `climate_sensor` | Tuya DP device |\n| `_TYZB01_iuepbmpv` | TS0001 | Switch | `switch_1gang` | ZCL-only |\n| `_TYZB01_cbiezpds` | TS0001 | Switch | `switch_1gang` | ZCL-only |\n| `_TYZB01_jytabjkb` | TS0001 | Switch | `switch_1gang` | ZCL-only |\n| `_TYZB01_dl7cejts` | TS0001 | Switch | `switch_1gang` | ZCL-only |\n| `_TYZB01_dr6sduka` | TS0001 | Switch | `switch_1gang` | ZCL-only |\n| `_TYZB01_xph99wvr` | TS0001 | Switch | `switch_1gang` | ZCL-only |\n| `_TYZB01_sqmd19i1` | TS0001 | Switch | `switch_1gang` | ZCL-only |\n| `_TYST11_qq9mpfhw` | TS0001 | Switch | `switch_1gang` | Older variant |\n| `_TYZB01_dsjszp0x` | TS0001 | Switch | `switch_1gang` | ZCL-only |\n\n## Per-User Request Summary\n\n**dlnraja** (64 posts): Has 5 devices including `_TZ3000_ztc6ggyl` (unsupported). Active developer with 693 posts total.\n\n**Peter_van_Werkhoven** (18 posts): 5 devices including `_TZE200_pay2byax` (sleepy sensor) and `_TZ3000_e98krvvk` (BSEED ZCL-only). Likely needs BSEED group toggle fix.\n\n**Rudy_De_Vylder** (2 posts): `_TZE200_kb5noeto` - likely a climate sensor or TRV.\n\n**SunBeech** (4 posts): 4 devices including `_TZ3000_wkai4ga5` and `_TZ3000_dfgbtub0` - likely switches.\n\n**F3006** (2 posts): `_TZ3000_fqoynhku` and `_TZE204_qasjif9e` - mixed ZCL and Tuya DP.\n\n**DutchDuke** (8 posts): `_TZ3000_akqdg6g7` and `_TZE284_oitavov2` - switch + sensor combo.\n\n**xcaosx** (1 post): `_TZE200_kb5noeto` - same as Rudy.\n\n**David_Piper** (2 posts): `_TZE204_mvtclclq` - Tuya DP device.\n\n**Karsten_Hille** (3 posts): `_TZE284_vvmbj46n`"
+  "aiAnalysis": "AI_OFFLINE_OR_LIMIT_REACHED"
 }

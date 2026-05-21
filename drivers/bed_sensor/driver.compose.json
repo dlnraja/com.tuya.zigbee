@@ -1,0 +1,75 @@
+{
+  "name": {
+    "en": "Bed Sensor",
+    "fr": "Capteur de Lit",
+    "nl": "Bed Sensor",
+    "de": "Bettsensor",
+    "it": "Sensore Letto",
+    "sv": "Sängsensor",
+    "no": "Sengesensor",
+    "es": "Sensor de Cama",
+    "da": "Sengesensor"
+  },
+  "class": "sensor",
+  "capabilities": [
+    "alarm_contact",
+    "measure_battery",
+    "alarm_battery"
+  ],
+  "energy": {
+    "batteries": [
+      "CR2032"
+    ],
+    "approximation": {
+      "usageConstant": 0.3
+    }
+  },
+  "subDevices": [],
+  "zigbee": {
+    "manufacturerName": [
+      "_tze200_seq9cm6u",
+      "_TZE200_seq9cm6u",
+      "_TZE200_SEQ9CM6U"
+    ],
+    "productId": [
+      "TS0601"
+    ],
+    "endpoints": {
+      "1": {
+        "clusters": [
+          0,
+          61184
+        ]
+      }
+    },
+    "learnmode": {
+      "instruction": {
+        "en": "Press the pairing button for 5 seconds until LED blinks",
+        "fr": "Appuyez sur le bouton d'appairage pendant 5 secondes",
+        "nl": "Houd de koppelknop 5 seconden ingedrukt tot LED knippert",
+        "de": "Halten Sie die Pairing-Taste 5 Sekunden gedrückt, bis die LED blinkt"
+      }
+    }
+  },
+  "images": {
+    "small": "drivers/bed_sensor/assets/images/small.png",
+    "large": "drivers/bed_sensor/assets/images/large.png",
+    "xlarge": "drivers/bed_sensor/assets/images/xlarge.png"
+  },
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "maintenanceActions": [
+    {
+      "id": "ota_check",
+      "title": {
+        "en": "Check Zigbee OTA Update",
+        "nl": "Controleer op OTA-updates",
+        "fr": "Vérifier MàJ OTA"
+      }
+    }
+  ]
+}
