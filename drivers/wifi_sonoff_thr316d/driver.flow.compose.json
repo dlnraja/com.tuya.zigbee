@@ -1,0 +1,43 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_sonoff_thr316d_measure_temperature_changed",
+      "highlight": true,
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "wifi_sonoff_thr316d_measure_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": []
+    }
+  ],
+  "conditions": [],
+  "actions": []
+}

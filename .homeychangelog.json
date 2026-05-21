@@ -1,4 +1,7 @@
 {
+  "8.1.3": {
+    "en": "v8.1.3: 41 new driver.flow.compose.json files created for all previously missing drivers (10 eWeLink, 11 Sonoff, 20 non-WiFi). Flow cards with triggers, conditions, and actions for thermostats, sensors, sockets, switches, garage doors, hvac, mmWave, pet feeders, sirens, and wall remotes. Partie WiFi complétée avec flow cards pour tous les drivers eWeLink et Sonoff. Bug fix: wifi_ewelink_th/device.js fixed constrequire typo."
+  },
   "8.1.2": {
     "en": "bed_sensor driver added. Fixed 3 fingerprint collisions (device_din_rail/EMQMWTYM→doorbell, switch_1gang/TVUARKSA→plug_energy_monitor, button_wireless_smart/MRPEVH8P→button_wireless_1). Fixed curtain_motor_tilt flow cards, valve_irrigation class, bed_sensor settings."
   },

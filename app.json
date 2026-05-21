@@ -4649,6 +4649,133 @@
         ]
       },
       {
+        "id": "climate_sensor_device_temperature_changed",
+        "highlight": true,
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)"
+            },
+            "example": 22.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor_device"
+          }
+        ]
+      },
+      {
+        "id": "climate_sensor_device_humidity_changed",
+        "title": {
+          "en": "Humidity changed",
+          "fr": "Humidité changée"
+        },
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity (%)",
+              "fr": "Humidité (%)"
+            },
+            "example": 55
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor_device"
+          }
+        ]
+      },
+      {
+        "id": "climate_sensor_energy_temperature_changed",
+        "highlight": true,
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)"
+            },
+            "example": 22.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor_energy"
+          }
+        ]
+      },
+      {
+        "id": "climate_sensor_energy_humidity_changed",
+        "title": {
+          "en": "Humidity changed",
+          "fr": "Humidité changée"
+        },
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity (%)",
+              "fr": "Humidité (%)"
+            },
+            "example": 55
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor_energy"
+          }
+        ]
+      },
+      {
+        "id": "climate_sensor_energy_power_changed",
+        "title": {
+          "en": "Power consumption changed",
+          "fr": "Consommation changée"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)",
+              "fr": "Puissance (W)"
+            },
+            "example": 150
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=climate_sensor_energy"
+          }
+        ]
+      },
+      {
         "id": "co_sensor_alarm_co_true",
         "highlight": true,
         "title": {
@@ -5570,6 +5697,388 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=curtain_motor_wall"
+          }
+        ]
+      },
+      {
+        "id": "device_din_rail_turned_on",
+        "highlight": true,
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Ingeschakeld",
+          "de": "Eingeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the device is turned on",
+          "fr": "Se déclenche quand l'appareil est allumé"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_din_rail"
+          }
+        ]
+      },
+      {
+        "id": "device_din_rail_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgeschakeld",
+          "de": "Ausgeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the device is turned off",
+          "fr": "Se déclenche quand l'appareil est éteint"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_din_rail"
+          }
+        ]
+      },
+      {
+        "id": "device_din_rail_power_changed",
+        "title": {
+          "en": "Power consumption changed",
+          "fr": "Consommation changée"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)",
+              "fr": "Puissance (W)"
+            },
+            "example": 150
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_din_rail"
+          }
+        ]
+      },
+      {
+        "id": "device_din_rail_voltage_changed",
+        "title": {
+          "en": "Voltage changed",
+          "fr": "Tension changée"
+        },
+        "tokens": [
+          {
+            "name": "voltage",
+            "type": "number",
+            "title": {
+              "en": "Voltage (V)",
+              "fr": "Tension (V)"
+            },
+            "example": 230
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_din_rail"
+          }
+        ]
+      },
+      {
+        "id": "device_din_rail_current_changed",
+        "title": {
+          "en": "Current changed",
+          "fr": "Courant changé"
+        },
+        "tokens": [
+          {
+            "name": "current",
+            "type": "number",
+            "title": {
+              "en": "Current (A)",
+              "fr": "Courant (A)"
+            },
+            "example": 0.65
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_din_rail"
+          }
+        ]
+      },
+      {
+        "id": "device_din_rail_meter_power_changed",
+        "title": {
+          "en": "Power consumption changed",
+          "fr": "Consommation changée"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)",
+              "fr": "Puissance (W)"
+            },
+            "example": 150
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_din_rail_meter"
+          }
+        ]
+      },
+      {
+        "id": "device_din_rail_meter_voltage_changed",
+        "title": {
+          "en": "Voltage changed",
+          "fr": "Tension changée"
+        },
+        "tokens": [
+          {
+            "name": "voltage",
+            "type": "number",
+            "title": {
+              "en": "Voltage (V)",
+              "fr": "Tension (V)"
+            },
+            "example": 230
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_din_rail_meter"
+          }
+        ]
+      },
+      {
+        "id": "device_din_rail_meter_current_changed",
+        "title": {
+          "en": "Current changed",
+          "fr": "Courant changé"
+        },
+        "tokens": [
+          {
+            "name": "current",
+            "type": "number",
+            "title": {
+              "en": "Current (A)",
+              "fr": "Courant (A)"
+            },
+            "example": 0.65
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_din_rail_meter"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)"
+            },
+            "example": 22.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_target_temperature_changed",
+        "title": {
+          "en": "Target temperature changed",
+          "fr": "Température cible changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            },
+            "example": 21
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_turned_on",
+        "highlight": true,
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Ingeschakeld",
+          "de": "Eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgeschakeld",
+          "de": "Ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_thermostat_temperature_changed",
+        "highlight": true,
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)"
+            },
+            "example": 22.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_thermostat_target_temperature_changed",
+        "title": {
+          "en": "Target temperature changed",
+          "fr": "Température cible changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            },
+            "example": 21
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_thermostat_floor_temperature_changed",
+        "title": {
+          "en": "Floor temperature changed",
+          "fr": "Température au sol changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Floor temperature (°C)",
+              "fr": "Température sol (°C)"
+            },
+            "example": 18
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_thermostat_turned_on",
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Ingeschakeld",
+          "de": "Eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_thermostat_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgeschakeld",
+          "de": "Ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating_thermostat"
           }
         ]
       },
@@ -7233,6 +7742,88 @@
         ]
       },
       {
+        "id": "floor_heating_thermostat_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)"
+            },
+            "example": 22.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=floor_heating_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "floor_heating_thermostat_target_temperature_changed",
+        "title": {
+          "en": "Target temperature changed",
+          "fr": "Température cible changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            },
+            "example": 21
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=floor_heating_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "floor_heating_thermostat_turned_on",
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Ingeschakeld",
+          "de": "Eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=floor_heating_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "floor_heating_thermostat_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgeschakeld",
+          "de": "Ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=floor_heating_thermostat"
+          }
+        ]
+      },
+      {
         "id": "formaldehyde_sensor_formaldehyde_changed",
         "title": {
           "en": "Formaldehyde level changed",
@@ -7355,6 +7946,38 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=garage_door"
+          }
+        ]
+      },
+      {
+        "id": "garage_door_opener_opened",
+        "title": {
+          "en": "Opened",
+          "fr": "Ouvert",
+          "nl": "Geopend",
+          "de": "Geöffnet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=garage_door_opener"
+          }
+        ]
+      },
+      {
+        "id": "garage_door_opener_closed",
+        "title": {
+          "en": "Closed",
+          "fr": "Fermé",
+          "nl": "Gesloten",
+          "de": "Geschlossen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=garage_door_opener"
           }
         ]
       },
@@ -8864,6 +9487,114 @@
         ]
       },
       {
+        "id": "hvac_controller_temperature_changed",
+        "highlight": true,
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)"
+            },
+            "example": 22.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hvac_controller"
+          }
+        ]
+      },
+      {
+        "id": "hvac_controller_target_temperature_changed",
+        "title": {
+          "en": "Target temperature changed",
+          "fr": "Température cible changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            },
+            "example": 21
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hvac_controller"
+          }
+        ]
+      },
+      {
+        "id": "hvac_controller_turned_on",
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Ingeschakeld",
+          "de": "Eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hvac_controller"
+          }
+        ]
+      },
+      {
+        "id": "hvac_controller_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgeschakeld",
+          "de": "Ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hvac_controller"
+          }
+        ]
+      },
+      {
+        "id": "hvac_controller_fan_speed_changed",
+        "title": {
+          "en": "Fan speed changed",
+          "fr": "Vitesse de ventilateur changée"
+        },
+        "tokens": [
+          {
+            "name": "fan_speed",
+            "type": "string",
+            "title": {
+              "en": "Fan speed",
+              "fr": "Vitesse ventilateur"
+            },
+            "example": "auto"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hvac_controller"
+          }
+        ]
+      },
+      {
         "id": "hvac_dehumidifier_dehumidifier_turned_on",
         "title": {
           "en": "Turned on",
@@ -10001,6 +10732,31 @@
         ]
       },
       {
+        "id": "light_sensor_outdoor_luminance_changed",
+        "title": {
+          "en": "Luminance changed",
+          "fr": "Luminosité changée"
+        },
+        "tokens": [
+          {
+            "name": "luminance",
+            "type": "number",
+            "title": {
+              "en": "Luminance (lux)",
+              "fr": "Luminosité (lux)"
+            },
+            "example": 500
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=light_sensor_outdoor"
+          }
+        ]
+      },
+      {
         "id": "lock_smart_locked",
         "title": {
           "en": "Locked",
@@ -10351,6 +11107,55 @@
         ]
       },
       {
+        "id": "motion_sensor_2_motion_detected",
+        "highlight": true,
+        "title": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté",
+          "nl": "Beweging gedetecteerd",
+          "de": "Bewegung erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=motion_sensor_2"
+          }
+        ]
+      },
+      {
+        "id": "motion_sensor_2_motion_cleared",
+        "title": {
+          "en": "Motion cleared",
+          "fr": "Mouvement terminé",
+          "nl": "Beweging voorbij",
+          "de": "Bewegung beendet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=motion_sensor_2"
+          }
+        ]
+      },
+      {
+        "id": "motion_sensor_2_tamper_detected",
+        "title": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme anti-sabotage déclenchée",
+          "nl": "Sabotage alarm geactiveerd",
+          "de": "Manipulationsalarm ausgelöst"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=motion_sensor_2"
+          }
+        ]
+      },
+      {
         "id": "motion_sensor_radar_mmwave_presence_detected",
         "title": {
           "en": "Presence detected",
@@ -10616,6 +11421,132 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=pet_feeder"
+          }
+        ]
+      },
+      {
+        "id": "pet_feeder_zigbee_feeding_completed",
+        "title": {
+          "en": "Feeding completed",
+          "fr": "Distribution terminée",
+          "nl": "Voeding voltooid",
+          "de": "Fütterung abgeschlossen"
+        },
+        "tokens": [
+          {
+            "name": "amount",
+            "type": "number",
+            "title": {
+              "en": "Amount",
+              "fr": "Quantité",
+              "nl": "Hoeveelheid",
+              "de": "Menge"
+            },
+            "example": 5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pet_feeder_zigbee"
+          }
+        ]
+      },
+      {
+        "id": "pet_feeder_zigbee_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pet_feeder_zigbee"
+          }
+        ]
+      },
+      {
+        "id": "pir_mmwave_sensor_motion_detected",
+        "highlight": true,
+        "title": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté",
+          "nl": "Beweging gedetecteerd",
+          "de": "Bewegung erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pir_mmwave_sensor"
+          }
+        ]
+      },
+      {
+        "id": "pir_mmwave_sensor_motion_cleared",
+        "title": {
+          "en": "Motion cleared",
+          "fr": "Mouvement terminé",
+          "nl": "Beweging voorbij",
+          "de": "Bewegung beendet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pir_mmwave_sensor"
+          }
+        ]
+      },
+      {
+        "id": "pir_mmwave_sensor_presence_detected",
+        "title": {
+          "en": "Presence detected",
+          "fr": "Présence détectée",
+          "nl": "Aanwezigheid gedetecteerd",
+          "de": "Anwesenheit erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pir_mmwave_sensor"
+          }
+        ]
+      },
+      {
+        "id": "pir_mmwave_sensor_presence_cleared",
+        "title": {
+          "en": "Presence cleared",
+          "fr": "Présence disparue",
+          "nl": "Aanwezigheid verdwenen",
+          "de": "Anwesenheit beendet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pir_mmwave_sensor"
+          }
+        ]
+      },
+      {
+        "id": "pir_mmwave_sensor_tamper_detected",
+        "title": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme anti-sabotage déclenchée",
+          "nl": "Sabotage alarm geactiveerd",
+          "de": "Manipulationsalarm ausgelöst"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pir_mmwave_sensor"
           }
         ]
       },
@@ -11409,6 +12340,215 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=radiator_valve"
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée",
+          "nl": "Temperatuur gewijzigd",
+          "de": "Temperatur geändert"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)",
+              "nl": "Temperatuur (°C)",
+              "de": "Temperatur (°C)"
+            },
+            "example": 21
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_target_temperature_changed",
+        "title": {
+          "en": "Target temperature changed",
+          "fr": "Température cible changée",
+          "nl": "Doeltemperatuur gewijzigd",
+          "de": "Zieltemperatur geändert"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Target temperature (°C)",
+              "fr": "Température cible (°C)",
+              "nl": "Doeltemperatuur (°C)",
+              "de": "Zieltemperatur (°C)"
+            },
+            "example": 22
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_mode_changed",
+        "title": {
+          "en": "Mode changed",
+          "fr": "Mode changé",
+          "nl": "Modus gewijzigd",
+          "de": "Modus geändert"
+        },
+        "tokens": [
+          {
+            "name": "mode",
+            "type": "string",
+            "title": {
+              "en": "Mode",
+              "fr": "Mode",
+              "nl": "Modus",
+              "de": "Modus"
+            },
+            "example": "auto"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_turned_on",
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Aangezet",
+          "de": "Eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgezet",
+          "de": "Ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          }
+        ]
+      },
+      {
+        "id": "radiator_wifi_tuya_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée",
+          "nl": "Temperatuur gewijzigd",
+          "de": "Temperatur geändert"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)",
+              "nl": "Temperatuur (°C)",
+              "de": "Temperatur (°C)"
+            },
+            "example": 21
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_wifi_tuya"
+          }
+        ]
+      },
+      {
+        "id": "radiator_wifi_tuya_target_temperature_changed",
+        "title": {
+          "en": "Target temperature changed",
+          "fr": "Température cible changée",
+          "nl": "Doeltemperatuur gewijzigd",
+          "de": "Zieltemperatur geändert"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Target temperature (°C)",
+              "fr": "Température cible (°C)",
+              "nl": "Doeltemperatuur (°C)",
+              "de": "Zieltemperatur (°C)"
+            },
+            "example": 22
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_wifi_tuya"
+          }
+        ]
+      },
+      {
+        "id": "radiator_wifi_tuya_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_wifi_tuya"
           }
         ]
       },
@@ -17453,6 +18593,171 @@
         ]
       },
       {
+        "id": "siren_sirentemphumidsensor_alarm_triggered",
+        "highlight": true,
+        "title": {
+          "en": "Alarm triggered",
+          "fr": "Alarme déclenchée",
+          "nl": "Alarm geactiveerd",
+          "de": "Alarm ausgelöst"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=siren_sirentemphumidsensor"
+          }
+        ]
+      },
+      {
+        "id": "siren_sirentemphumidsensor_alarm_stopped",
+        "title": {
+          "en": "Alarm stopped",
+          "fr": "Alarme arrêtée",
+          "nl": "Alarm gestopt",
+          "de": "Alarm gestoppt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=siren_sirentemphumidsensor"
+          }
+        ]
+      },
+      {
+        "id": "siren_sirentemphumidsensor_tamper_detected",
+        "title": {
+          "en": "Tamper alarm triggered",
+          "fr": "Alarme anti-sabotage déclenchée",
+          "nl": "Sabotage alarm geactiveerd",
+          "de": "Manipulationsalarm ausgelöst"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=siren_sirentemphumidsensor"
+          }
+        ]
+      },
+      {
+        "id": "siren_sirentemphumidsensor_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée",
+          "nl": "Temperatuur gewijzigd",
+          "de": "Temperatur geändert"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)",
+              "nl": "Temperatuur (°C)",
+              "de": "Temperatur (°C)"
+            },
+            "example": 22.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=siren_sirentemphumidsensor"
+          }
+        ]
+      },
+      {
+        "id": "sirentemphumidsensor_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée",
+          "nl": "Temperatuur gewijzigd",
+          "de": "Temperatur geändert"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)",
+              "nl": "Temperatuur (°C)",
+              "de": "Temperatur (°C)"
+            },
+            "example": 22.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sirentemphumidsensor"
+          }
+        ]
+      },
+      {
+        "id": "sirentemphumidsensor_humidity_changed",
+        "title": {
+          "en": "Humidity changed",
+          "fr": "Humidité changée",
+          "nl": "Luchtvochtigheid gewijzigd",
+          "de": "Luftfeuchtigkeit geändert"
+        },
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity (%)",
+              "fr": "Humidité (%)",
+              "nl": "Luchtvochtigheid (%)",
+              "de": "Luftfeuchtigkeit (%)"
+            },
+            "example": 55
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sirentemphumidsensor"
+          }
+        ]
+      },
+      {
+        "id": "sirentemphumidsensor_alarm_triggered",
+        "title": {
+          "en": "Alarm triggered",
+          "fr": "Alarme déclenchée",
+          "nl": "Alarm geactiveerd",
+          "de": "Alarm ausgelöst"
+        },
+        "tokens": [
+          {
+            "name": "type",
+            "type": "string",
+            "title": {
+              "en": "Type",
+              "fr": "Type",
+              "nl": "Type",
+              "de": "Typ"
+            },
+            "example": "contact"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sirentemphumidsensor"
+          }
+        ]
+      },
+      {
         "id": "smart_breaker_turned_on",
         "title": {
           "en": "Turned on",
@@ -17941,6 +19246,170 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=smart_knob_switch"
+          }
+        ]
+      },
+      {
+        "id": "smart_lcd_thermostat_temperature_changed",
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée",
+          "nl": "Temperatuur gewijzigd",
+          "de": "Temperatur geändert"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)",
+              "nl": "Temperatuur (°C)",
+              "de": "Temperatur (°C)"
+            },
+            "example": 21
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "smart_lcd_thermostat_target_temperature_changed",
+        "title": {
+          "en": "Target temperature changed",
+          "fr": "Température cible changée",
+          "nl": "Doeltemperatuur gewijzigd",
+          "de": "Zieltemperatur geändert"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Target temperature (°C)",
+              "fr": "Température cible (°C)",
+              "nl": "Doeltemperatuur (°C)",
+              "de": "Zieltemperatur (°C)"
+            },
+            "example": 22
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "smart_lcd_thermostat_mode_changed",
+        "title": {
+          "en": "Mode changed",
+          "fr": "Mode changé",
+          "nl": "Modus gewijzigd",
+          "de": "Modus geändert"
+        },
+        "tokens": [
+          {
+            "name": "mode",
+            "type": "string",
+            "title": {
+              "en": "Mode",
+              "fr": "Mode",
+              "nl": "Modus",
+              "de": "Modus"
+            },
+            "example": "auto"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "smart_lcd_thermostat_humidity_changed",
+        "title": {
+          "en": "Humidity changed",
+          "fr": "Humidité changée",
+          "nl": "Luchtvochtigheid gewijzigd",
+          "de": "Luftfeuchtigkeit geändert"
+        },
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity (%)",
+              "fr": "Humidité (%)",
+              "nl": "Luchtvochtigheid (%)",
+              "de": "Luftfeuchtigkeit (%)"
+            },
+            "example": 55
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "smart_lcd_thermostat_turned_on",
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Aangezet",
+          "de": "Eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "smart_lcd_thermostat_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgezet",
+          "de": "Ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "smart_lcd_thermostat_battery_low",
+        "title": {
+          "en": "Battery low",
+          "fr": "Batterie faible",
+          "nl": "Batterij laag",
+          "de": "Batterie schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
           }
         ]
       },
@@ -19066,6 +20535,38 @@
                 }
               }
             ]
+          }
+        ]
+      },
+      {
+        "id": "switch_turned_on",
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Aangezet",
+          "de": "Eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch"
+          }
+        ]
+      },
+      {
+        "id": "switch_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgezet",
+          "de": "Ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch"
           }
         ]
       },
@@ -25252,6 +26753,103 @@
         ]
       },
       {
+        "id": "wall_remote_2_gang_button_1_pressed",
+        "highlight": true,
+        "title": {
+          "en": "Button 1 pressed",
+          "fr": "Bouton 1 pressé",
+          "nl": "Knop 1 ingedrukt",
+          "de": "Taste 1 gedrückt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_remote_2_gang"
+          }
+        ]
+      },
+      {
+        "id": "wall_remote_2_gang_button_2_pressed",
+        "title": {
+          "en": "Button 2 pressed",
+          "fr": "Bouton 2 pressé",
+          "nl": "Knop 2 ingedrukt",
+          "de": "Taste 2 gedrückt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_remote_2_gang"
+          }
+        ]
+      },
+      {
+        "id": "wall_remote_2_gang_button_1_held",
+        "title": {
+          "en": "Button 1 held",
+          "fr": "Bouton 1 maintenu",
+          "nl": "Knop 1 ingedrukt houden",
+          "de": "Taste 1 gehalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_remote_2_gang"
+          }
+        ]
+      },
+      {
+        "id": "wall_remote_2_gang_button_2_held",
+        "title": {
+          "en": "Button 2 held",
+          "fr": "Bouton 2 maintenu",
+          "nl": "Knop 2 ingedrukt houden",
+          "de": "Taste 2 gehalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_remote_2_gang"
+          }
+        ]
+      },
+      {
+        "id": "wall_remote_2_gang_both_pressed",
+        "title": {
+          "en": "Both pressed",
+          "fr": "Les deux pressés",
+          "nl": "Beide ingedrukt",
+          "de": "Beide gedrückt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_remote_2_gang"
+          }
+        ]
+      },
+      {
+        "id": "wall_remote_2_gang_motion_detected",
+        "title": {
+          "en": "Motion detected",
+          "fr": "Mouvement détecté",
+          "nl": "Beweging gedetecteerd",
+          "de": "Bewegung erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_remote_2_gang"
+          }
+        ]
+      },
+      {
         "id": "wall_remote_3_gang_button_3gang_button_1_pressed",
         "title": {
           "fr": "Bouton 1 appuyé",
@@ -27997,6 +29595,482 @@
         ]
       },
       {
+        "id": "wifi_ewelink_bulb_turned_on",
+        "title": {
+          "en": "Turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_bulb"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_bulb_turned_off",
+        "title": {
+          "en": "Turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_bulb"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_dimmer_turned_on",
+        "title": {
+          "en": "Turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_dimmer"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_dimmer_turned_off",
+        "title": {
+          "en": "Turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_dimmer"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_fan_turned_on",
+        "title": {
+          "en": "Turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_fan"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_fan_turned_off",
+        "title": {
+          "en": "Turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_fan"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_led_turned_on",
+        "title": {
+          "en": "Turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_led"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_led_turned_off",
+        "title": {
+          "en": "Turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_led"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_plug_turned_on",
+        "title": {
+          "en": "Turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_plug"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_plug_turned_off",
+        "title": {
+          "en": "Turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_plug"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_plug_power_changed",
+        "title": {
+          "en": "Power changed"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)"
+            },
+            "example": 100
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_plug"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_pow_turned_on",
+        "title": {
+          "en": "Turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_pow"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_pow_turned_off",
+        "title": {
+          "en": "Turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_pow"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_pow_power_changed",
+        "title": {
+          "en": "Power changed"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)"
+            },
+            "example": 100
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_pow"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_pow_voltage_changed",
+        "title": {
+          "en": "Voltage changed"
+        },
+        "tokens": [
+          {
+            "name": "voltage",
+            "type": "number",
+            "title": {
+              "en": "Voltage (V)"
+            },
+            "example": 230
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_pow"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_pow_current_changed",
+        "title": {
+          "en": "Current changed"
+        },
+        "tokens": [
+          {
+            "name": "current",
+            "type": "number",
+            "title": {
+              "en": "Current (A)"
+            },
+            "example": 0.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_pow"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_turned_on",
+        "title": {
+          "en": "Turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_turned_off",
+        "title": {
+          "en": "Turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_2ch_gang1_turned_on",
+        "title": {
+          "en": "Gang 1 turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_2ch_gang1_turned_off",
+        "title": {
+          "en": "Gang 1 turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_2ch_gang2_turned_on",
+        "title": {
+          "en": "Gang 2 turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_2ch_gang2_turned_off",
+        "title": {
+          "en": "Gang 2 turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_4ch_gang1_turned_on",
+        "title": {
+          "en": "Gang 1 turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_4ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_4ch_gang1_turned_off",
+        "title": {
+          "en": "Gang 1 turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_4ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_4ch_gang2_turned_on",
+        "title": {
+          "en": "Gang 2 turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_4ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_4ch_gang2_turned_off",
+        "title": {
+          "en": "Gang 2 turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_4ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_4ch_gang3_turned_on",
+        "title": {
+          "en": "Gang 3 turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_4ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_4ch_gang3_turned_off",
+        "title": {
+          "en": "Gang 3 turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_4ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_4ch_gang4_turned_on",
+        "title": {
+          "en": "Gang 4 turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_4ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_4ch_gang4_turned_off",
+        "title": {
+          "en": "Gang 4 turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_4ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_th_temperature_changed",
+        "title": {
+          "en": "Temperature changed"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (C)"
+            },
+            "example": 25.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_th"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_th_humidity_changed",
+        "title": {
+          "en": "Humidity changed"
+        },
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity (%)"
+            },
+            "example": 60
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_th"
+          }
+        ]
+      },
+      {
         "id": "wifi_garage_opened",
         "title": {
           "en": "Garage opened"
@@ -28282,6 +30356,795 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wifi_siren"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_basicr4_turned_on",
+        "highlight": true,
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Aangezet",
+          "de": "Eingeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the socket is turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_basicr4"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_basicr4_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgezet",
+          "de": "Ausgeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the socket is turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_basicr4"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_gang1_turned_on",
+        "highlight": true,
+        "title": {
+          "en": "Gang 1 turned on",
+          "fr": "Gang 1 allumé",
+          "nl": "Gang 1 aangezet",
+          "de": "Gang 1 eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_gang1_turned_off",
+        "title": {
+          "en": "Gang 1 turned off",
+          "fr": "Gang 1 éteint",
+          "nl": "Gang 1 uitgezet",
+          "de": "Gang 1 ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_gang2_turned_on",
+        "title": {
+          "en": "Gang 2 turned on",
+          "fr": "Gang 2 allumé",
+          "nl": "Gang 2 aangezet",
+          "de": "Gang 2 eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_gang2_turned_off",
+        "title": {
+          "en": "Gang 2 turned off",
+          "fr": "Gang 2 éteint",
+          "nl": "Gang 2 uitgezet",
+          "de": "Gang 2 ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_measure_power_changed",
+        "title": {
+          "en": "Power changed",
+          "fr": "Puissance changée"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)"
+            },
+            "example": 100
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_measure_voltage_changed",
+        "title": {
+          "en": "Voltage changed",
+          "fr": "Tension changée"
+        },
+        "tokens": [
+          {
+            "name": "voltage",
+            "type": "number",
+            "title": {
+              "en": "Voltage (V)"
+            },
+            "example": 230
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_measure_current_changed",
+        "title": {
+          "en": "Current changed",
+          "fr": "Courant changé"
+        },
+        "tokens": [
+          {
+            "name": "current",
+            "type": "number",
+            "title": {
+              "en": "Current (A)"
+            },
+            "example": 0.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_micro_turned_on",
+        "highlight": true,
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Aangezet",
+          "de": "Eingeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the socket is turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_micro"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_micro_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgezet",
+          "de": "Ausgeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the socket is turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_micro"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_minir3_turned_on",
+        "highlight": true,
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Aangezet",
+          "de": "Eingeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the socket is turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_minir3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_minir3_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgezet",
+          "de": "Ausgeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the socket is turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_minir3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_minir3_measure_power_changed",
+        "title": {
+          "en": "Power changed",
+          "fr": "Puissance changée"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)"
+            },
+            "example": 100
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_minir3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_minir4_turned_on",
+        "highlight": true,
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Aangezet",
+          "de": "Eingeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the socket is turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_minir4"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_minir4_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgezet",
+          "de": "Ausgeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the socket is turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_minir4"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_pow_elite_turned_on",
+        "highlight": true,
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Aangezet",
+          "de": "Eingeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the socket is turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_pow_elite"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_pow_elite_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgezet",
+          "de": "Ausgeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the socket is turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_pow_elite"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_pow_elite_measure_power_changed",
+        "title": {
+          "en": "Power changed",
+          "fr": "Puissance changée"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)"
+            },
+            "example": 100
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_pow_elite"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_pow_elite_measure_voltage_changed",
+        "title": {
+          "en": "Voltage changed",
+          "fr": "Tension changée"
+        },
+        "tokens": [
+          {
+            "name": "voltage",
+            "type": "number",
+            "title": {
+              "en": "Voltage (V)"
+            },
+            "example": 230
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_pow_elite"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_pow_elite_measure_current_changed",
+        "title": {
+          "en": "Current changed",
+          "fr": "Courant changé"
+        },
+        "tokens": [
+          {
+            "name": "current",
+            "type": "number",
+            "title": {
+              "en": "Current (A)"
+            },
+            "example": 0.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_pow_elite"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_smate2_turned_on",
+        "highlight": true,
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Aangezet",
+          "de": "Eingeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the socket is turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_smate2"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_smate2_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgezet",
+          "de": "Ausgeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the socket is turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_smate2"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_smate2_measure_power_changed",
+        "title": {
+          "en": "Power changed",
+          "fr": "Puissance changée"
+        },
+        "tokens": [
+          {
+            "name": "power",
+            "type": "number",
+            "title": {
+              "en": "Power (W)"
+            },
+            "example": 100
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_smate2"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_smate2_measure_voltage_changed",
+        "title": {
+          "en": "Voltage changed",
+          "fr": "Tension changée"
+        },
+        "tokens": [
+          {
+            "name": "voltage",
+            "type": "number",
+            "title": {
+              "en": "Voltage (V)"
+            },
+            "example": 230
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_smate2"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_smate2_measure_current_changed",
+        "title": {
+          "en": "Current changed",
+          "fr": "Courant changé"
+        },
+        "tokens": [
+          {
+            "name": "current",
+            "type": "number",
+            "title": {
+              "en": "Current (A)"
+            },
+            "example": 0.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_smate2"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_thr316d_measure_temperature_changed",
+        "highlight": true,
+        "title": {
+          "en": "Temperature changed",
+          "fr": "Température changée"
+        },
+        "tokens": [
+          {
+            "name": "temperature",
+            "type": "number",
+            "title": {
+              "en": "Temperature (°C)"
+            },
+            "example": 22.5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_thr316d"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_thr316d_measure_humidity_changed",
+        "title": {
+          "en": "Humidity changed",
+          "fr": "Humidité changée"
+        },
+        "tokens": [
+          {
+            "name": "humidity",
+            "type": "number",
+            "title": {
+              "en": "Humidity (%)"
+            },
+            "example": 55
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_thr316d"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_1ch_turned_on",
+        "highlight": true,
+        "title": {
+          "en": "Turned on",
+          "fr": "Allumé",
+          "nl": "Aangezet",
+          "de": "Eingeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the socket is turned on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_1ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_1ch_turned_off",
+        "title": {
+          "en": "Turned off",
+          "fr": "Éteint",
+          "nl": "Uitgezet",
+          "de": "Ausgeschaltet"
+        },
+        "hint": {
+          "en": "Triggers when the socket is turned off"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_1ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_2ch_gang1_turned_on",
+        "highlight": true,
+        "title": {
+          "en": "Gang 1 turned on",
+          "fr": "Gang 1 allumé",
+          "nl": "Gang 1 aangezet",
+          "de": "Gang 1 eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_2ch_gang1_turned_off",
+        "title": {
+          "en": "Gang 1 turned off",
+          "fr": "Gang 1 éteint",
+          "nl": "Gang 1 uitgezet",
+          "de": "Gang 1 ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_2ch_gang2_turned_on",
+        "title": {
+          "en": "Gang 2 turned on",
+          "fr": "Gang 2 allumé",
+          "nl": "Gang 2 aangezet",
+          "de": "Gang 2 eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_2ch_gang2_turned_off",
+        "title": {
+          "en": "Gang 2 turned off",
+          "fr": "Gang 2 éteint",
+          "nl": "Gang 2 uitgezet",
+          "de": "Gang 2 ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_gang1_turned_on",
+        "highlight": true,
+        "title": {
+          "en": "Gang 1 turned on",
+          "fr": "Gang 1 allumé",
+          "nl": "Gang 1 aangezet",
+          "de": "Gang 1 eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_gang1_turned_off",
+        "title": {
+          "en": "Gang 1 turned off",
+          "fr": "Gang 1 éteint",
+          "nl": "Gang 1 uitgezet",
+          "de": "Gang 1 ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_gang2_turned_on",
+        "title": {
+          "en": "Gang 2 turned on",
+          "fr": "Gang 2 allumé",
+          "nl": "Gang 2 aangezet",
+          "de": "Gang 2 eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_gang2_turned_off",
+        "title": {
+          "en": "Gang 2 turned off",
+          "fr": "Gang 2 éteint",
+          "nl": "Gang 2 uitgezet",
+          "de": "Gang 2 ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_gang3_turned_on",
+        "title": {
+          "en": "Gang 3 turned on",
+          "fr": "Gang 3 allumé",
+          "nl": "Gang 3 aangezet",
+          "de": "Gang 3 eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_gang3_turned_off",
+        "title": {
+          "en": "Gang 3 turned off",
+          "fr": "Gang 3 éteint",
+          "nl": "Gang 3 uitgezet",
+          "de": "Gang 3 ausgeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
           }
         ]
       },
@@ -29361,6 +32224,54 @@
         ]
       },
       {
+        "id": "device_din_rail_is_on",
+        "title": {
+          "en": "Device !{{is|is not}} on",
+          "fr": "Appareil !{{est|n'est pas}} allumé",
+          "nl": "Apparaat !{{is|is niet}} aan",
+          "de": "Gerät !{{ist|ist nicht}} an"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_din_rail"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}",
+          "nl": "Is !{{aan|uit}}",
+          "de": "Ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_thermostat_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}",
+          "nl": "Is !{{aan|uit}}",
+          "de": "Ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating_thermostat"
+          }
+        ]
+      },
+      {
         "id": "generic_tuya_battery_above_dup_w7eyh",
         "title": {
           "en": "Battery is above...",
@@ -29766,6 +32677,22 @@
         ]
       },
       {
+        "id": "floor_heating_thermostat_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}",
+          "nl": "Is !{{aan|uit}}",
+          "de": "Ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=floor_heating_thermostat"
+          }
+        ]
+      },
+      {
         "id": "formaldehyde_sensor_formaldehyde_above",
         "title": {
           "en": "Formaldehyde is above",
@@ -29813,6 +32740,22 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=garage_door"
+          }
+        ]
+      },
+      {
+        "id": "garage_door_opener_is_closed",
+        "title": {
+          "en": "Garage door !{{is|is not}} closed",
+          "fr": "Porte de garage !{{est|n'est pas}} fermée",
+          "nl": "Garagedeur !{{is|is niet}} gesloten",
+          "de": "Garagentor !{{ist|ist nicht}} geschlossen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=garage_door_opener"
           }
         ]
       },
@@ -30244,6 +33187,22 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=hvac_air_conditioner"
+          }
+        ]
+      },
+      {
+        "id": "hvac_controller_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}",
+          "nl": "Is !{{aan|uit}}",
+          "de": "Ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hvac_controller"
           }
         ]
       },
@@ -30725,6 +33684,22 @@
         ]
       },
       {
+        "id": "light_sensor_outdoor_battery_low",
+        "title": {
+          "en": "Battery !{{is|is not}} low",
+          "fr": "Batterie !{{est|n'est pas}} faible",
+          "nl": "Batterij !{{is|is niet}} laag",
+          "de": "Batterie !{{ist|ist nicht}} schwach"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=light_sensor_outdoor"
+          }
+        ]
+      },
+      {
         "id": "lock_smart_is_locked",
         "title": {
           "en": "Is !{{locked|unlocked}}",
@@ -30794,6 +33769,22 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=motion_sensor"
+          }
+        ]
+      },
+      {
+        "id": "motion_sensor_2_has_motion",
+        "title": {
+          "en": "Motion !{{is|is not}} detected",
+          "fr": "Mouvement !{{est|n'est pas}} détecté",
+          "nl": "Beweging !{{is|is niet}} gedetecteerd",
+          "de": "Bewegung !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=motion_sensor_2"
           }
         ]
       },
@@ -30937,6 +33928,54 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=pet_feeder"
+          }
+        ]
+      },
+      {
+        "id": "pet_feeder_zigbee_is_on",
+        "title": {
+          "en": "!{{Is|Is not}} on",
+          "fr": "!{{Est|N'est pas}} allumé",
+          "nl": "!{{Is|Is niet}} aan",
+          "de": "!{{Ist|Ist nicht}} eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pet_feeder_zigbee"
+          }
+        ]
+      },
+      {
+        "id": "pir_mmwave_sensor_has_motion",
+        "title": {
+          "en": "Motion !{{is|is not}} detected",
+          "fr": "Mouvement !{{est|n'est pas}} détecté",
+          "nl": "Beweging !{{is|is niet}} gedetecteerd",
+          "de": "Bewegung !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pir_mmwave_sensor"
+          }
+        ]
+      },
+      {
+        "id": "pir_mmwave_sensor_has_presence",
+        "title": {
+          "en": "Presence !{{is|is not}} detected",
+          "fr": "Présence !{{est|n'est pas}} détectée",
+          "nl": "Aanwezigheid !{{is|is niet}} gedetecteerd",
+          "de": "Anwesenheit !{{ist|ist nicht}} erkannt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pir_mmwave_sensor"
           }
         ]
       },
@@ -31209,6 +34248,120 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=radiator_controller"
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_is_on",
+        "title": {
+          "en": "!{{Is|Is not}} on",
+          "fr": "!{{Est|N'est pas}} allumé",
+          "nl": "!{{Is|Is niet}} aan",
+          "de": "!{{Ist|Ist nicht}} eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_mode_is",
+        "title": {
+          "en": "Mode !{{is|is not}}",
+          "fr": "Mode !{{est|n'est pas}}",
+          "nl": "Modus !{{is|is niet}}",
+          "de": "Modus !{{ist|ist nicht}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "title": {
+              "en": "Mode",
+              "fr": "Mode",
+              "nl": "Modus",
+              "de": "Modus"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "fr": "Auto",
+                  "nl": "Auto",
+                  "de": "Auto"
+                }
+              },
+              {
+                "id": "manual",
+                "label": {
+                  "en": "Manual",
+                  "fr": "Manuel",
+                  "nl": "Handmatig",
+                  "de": "Manuell"
+                }
+              },
+              {
+                "id": "eco",
+                "label": {
+                  "en": "Eco",
+                  "fr": "Éco",
+                  "nl": "Eco",
+                  "de": "Eco"
+                }
+              },
+              {
+                "id": "boost",
+                "label": {
+                  "en": "Boost",
+                  "fr": "Boost",
+                  "nl": "Boost",
+                  "de": "Boost"
+                }
+              },
+              {
+                "id": "away",
+                "label": {
+                  "en": "Away",
+                  "fr": "Absent",
+                  "nl": "Afwezig",
+                  "de": "Abwesend"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Arrêt",
+                  "nl": "Uit",
+                  "de": "Aus"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_is_heating",
+        "title": {
+          "en": "!{{Is|Is not}} heating",
+          "fr": "!{{Chauffe|Ne chauffe pas}}",
+          "nl": "!{{Verwarmt|Verwarmt niet}}",
+          "de": "!{{Heizt|Heizt nicht}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
           }
         ]
       },
@@ -32099,6 +35252,38 @@
         ]
       },
       {
+        "id": "siren_sirentemphumidsensor_alarm_active",
+        "title": {
+          "en": "Alarm !{{is|is not}} active",
+          "fr": "Alarme !{{est|n'est pas}} active",
+          "nl": "Alarm !{{is|is niet}} actief",
+          "de": "Alarm !{{ist|ist nicht}} aktiv"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=siren_sirentemphumidsensor"
+          }
+        ]
+      },
+      {
+        "id": "sirentemphumidsensor_alarm_active",
+        "title": {
+          "en": "Alarm !{{is|is not}} active",
+          "fr": "Alarme !{{est|n'est pas}} active",
+          "nl": "Alarm !{{is|is niet}} actief",
+          "de": "Alarm !{{ist|ist nicht}} aktiv"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=sirentemphumidsensor"
+          }
+        ]
+      },
+      {
         "id": "smart_breaker_is_on",
         "title": {
           "en": "Is !{{on|off}}",
@@ -32168,6 +35353,104 @@
               "en": "Level",
               "fr": "Niveau"
             }
+          }
+        ]
+      },
+      {
+        "id": "smart_lcd_thermostat_is_on",
+        "title": {
+          "en": "!{{Is|Is not}} on",
+          "fr": "!{{Est|N'est pas}} allumé",
+          "nl": "!{{Is|Is niet}} aan",
+          "de": "!{{Ist|Ist nicht}} eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "smart_lcd_thermostat_mode_is",
+        "title": {
+          "en": "Mode !{{is|is not}}",
+          "fr": "Mode !{{est|n'est pas}}",
+          "nl": "Modus !{{is|is niet}}",
+          "de": "Modus !{{ist|ist nicht}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "title": {
+              "en": "Mode",
+              "fr": "Mode",
+              "nl": "Modus",
+              "de": "Modus"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "fr": "Auto",
+                  "nl": "Auto",
+                  "de": "Auto"
+                }
+              },
+              {
+                "id": "manual",
+                "label": {
+                  "en": "Manual",
+                  "fr": "Manuel",
+                  "nl": "Handmatig",
+                  "de": "Manuell"
+                }
+              },
+              {
+                "id": "eco",
+                "label": {
+                  "en": "Eco",
+                  "fr": "Éco",
+                  "nl": "Eco",
+                  "de": "Eco"
+                }
+              },
+              {
+                "id": "boost",
+                "label": {
+                  "en": "Boost",
+                  "fr": "Boost",
+                  "nl": "Boost",
+                  "de": "Boost"
+                }
+              },
+              {
+                "id": "away",
+                "label": {
+                  "en": "Away",
+                  "fr": "Absent",
+                  "nl": "Afwezig",
+                  "de": "Abwesend"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Arrêt",
+                  "nl": "Uit",
+                  "de": "Aus"
+                }
+              }
+            ]
           }
         ]
       },
@@ -32439,6 +35722,22 @@
                 }
               }
             ]
+          }
+        ]
+      },
+      {
+        "id": "switch_is_on",
+        "title": {
+          "en": "!{{Is|Is not}} on",
+          "fr": "!{{Est|N'est pas}} allumé",
+          "nl": "!{{Is|Is niet}} aan",
+          "de": "!{{Ist|Ist nicht}} eingeschaltet"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch"
           }
         ]
       },
@@ -33943,6 +37242,175 @@
         ]
       },
       {
+        "id": "wifi_ewelink_bulb_is_on",
+        "title": {
+          "en": "Is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_bulb"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_dimmer_is_on",
+        "title": {
+          "en": "Is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_dimmer"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_fan_is_on",
+        "title": {
+          "en": "Is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_fan"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_led_is_on",
+        "title": {
+          "en": "Is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_led"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_plug_is_on",
+        "title": {
+          "en": "Is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_plug"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_pow_is_on",
+        "title": {
+          "en": "Is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_pow"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_is_on",
+        "title": {
+          "en": "Is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_2ch_gang1_is_on",
+        "title": {
+          "en": "Gang 1 is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_2ch_gang2_is_on",
+        "title": {
+          "en": "Gang 2 is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_4ch_gang1_is_on",
+        "title": {
+          "en": "Gang 1 is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_4ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_4ch_gang2_is_on",
+        "title": {
+          "en": "Gang 2 is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_4ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_4ch_gang3_is_on",
+        "title": {
+          "en": "Gang 3 is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_4ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_switch_4ch_gang4_is_on",
+        "title": {
+          "en": "Gang 4 is on"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_switch_4ch"
+          }
+        ]
+      },
+      {
         "id": "wifi_garage_is_open",
         "title": {
           "en": "Garage is open"
@@ -34021,6 +37489,230 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wifi_plug"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_basicr4_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}",
+          "nl": "Is !{{aan|uit}}",
+          "de": "Ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_basicr4"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_gang1_is_on",
+        "title": {
+          "en": "Gang 1 is !{{on|off}}",
+          "fr": "Gang 1 est !{{allumé|éteint}}",
+          "nl": "Gang 1 is !{{aan|uit}}",
+          "de": "Gang 1 ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_gang2_is_on",
+        "title": {
+          "en": "Gang 2 is !{{on|off}}",
+          "fr": "Gang 2 est !{{allumé|éteint}}",
+          "nl": "Gang 2 is !{{aan|uit}}",
+          "de": "Gang 2 ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_micro_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}",
+          "nl": "Is !{{aan|uit}}",
+          "de": "Ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_micro"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_minir3_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}",
+          "nl": "Is !{{aan|uit}}",
+          "de": "Ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_minir3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_minir4_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}",
+          "nl": "Is !{{aan|uit}}",
+          "de": "Ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_minir4"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_pow_elite_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}",
+          "nl": "Is !{{aan|uit}}",
+          "de": "Ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_pow_elite"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_smate2_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}",
+          "nl": "Is !{{aan|uit}}",
+          "de": "Ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_smate2"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_1ch_is_on",
+        "title": {
+          "en": "Is !{{on|off}}",
+          "fr": "Est !{{allumé|éteint}}",
+          "nl": "Is !{{aan|uit}}",
+          "de": "Ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_1ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_2ch_gang1_is_on",
+        "title": {
+          "en": "Gang 1 is !{{on|off}}",
+          "fr": "Gang 1 est !{{allumé|éteint}}",
+          "nl": "Gang 1 is !{{aan|uit}}",
+          "de": "Gang 1 ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_2ch_gang2_is_on",
+        "title": {
+          "en": "Gang 2 is !{{on|off}}",
+          "fr": "Gang 2 est !{{allumé|éteint}}",
+          "nl": "Gang 2 is !{{aan|uit}}",
+          "de": "Gang 2 ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_gang1_is_on",
+        "title": {
+          "en": "Gang 1 is !{{on|off}}",
+          "fr": "Gang 1 est !{{allumé|éteint}}",
+          "nl": "Gang 1 is !{{aan|uit}}",
+          "de": "Gang 1 ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_gang2_is_on",
+        "title": {
+          "en": "Gang 2 is !{{on|off}}",
+          "fr": "Gang 2 est !{{allumé|éteint}}",
+          "nl": "Gang 2 is !{{aan|uit}}",
+          "de": "Gang 2 ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_gang3_is_on",
+        "title": {
+          "en": "Gang 3 is !{{on|off}}",
+          "fr": "Gang 3 est !{{allumé|éteint}}",
+          "nl": "Gang 3 is !{{aan|uit}}",
+          "de": "Gang 3 ist !{{ein|aus}}"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
           }
         ]
       },
@@ -36377,6 +40069,338 @@
         ]
       },
       {
+        "id": "device_din_rail_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Inschakelen",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_din_rail"
+          }
+        ]
+      },
+      {
+        "id": "device_din_rail_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitschakelen",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_din_rail"
+          }
+        ]
+      },
+      {
+        "id": "device_din_rail_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_din_rail"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_set_target_temperature",
+        "title": {
+          "en": "Set temperature to...",
+          "fr": "Régler la température à..."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": 5,
+            "max": 35,
+            "step": 0.5,
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            }
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_set_temperature",
+        "title": {
+          "en": "Set temperature",
+          "fr": "Régler température",
+          "nl": "Temperatuur instellen",
+          "de": "Temperatur einstellen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating"
+          },
+          {
+            "name": "temperature",
+            "type": "range",
+            "min": 5,
+            "max": 35,
+            "step": 0.5,
+            "label": "°C",
+            "labelDecimals": 1
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_set_mode",
+        "title": {
+          "en": "Set mode",
+          "fr": "Définir mode"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Schedule",
+                  "fr": "Programme"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Manual",
+                  "fr": "Manuel"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Arrêt"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Inschakelen",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitschakelen",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_thermostat_set_target_temperature",
+        "title": {
+          "en": "Set temperature to...",
+          "fr": "Régler la température à..."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating_thermostat"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": 5,
+            "max": 35,
+            "step": 0.5,
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            }
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_thermostat_set_temperature",
+        "title": {
+          "en": "Set temperature",
+          "fr": "Régler température",
+          "nl": "Temperatuur instellen",
+          "de": "Temperatur einstellen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating_thermostat"
+          },
+          {
+            "name": "temperature",
+            "type": "range",
+            "min": 5,
+            "max": 35,
+            "step": 0.5,
+            "label": "°C",
+            "labelDecimals": 1
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_thermostat_set_mode",
+        "title": {
+          "en": "Set mode",
+          "fr": "Définir mode"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating_thermostat"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Schedule",
+                  "fr": "Programme"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Manual",
+                  "fr": "Manuel"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Arrêt"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_thermostat_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Inschakelen",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_thermostat_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitschakelen",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "device_floor_heating_thermostat_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=device_floor_heating_thermostat"
+          }
+        ]
+      },
+      {
         "id": "generic_tuya_request_dp_dup_09qf3",
         "title": {
           "en": "Request Data Point",
@@ -37261,6 +41285,120 @@
         ]
       },
       {
+        "id": "floor_heating_thermostat_set_target_temperature",
+        "title": {
+          "en": "Set temperature to...",
+          "fr": "Régler la température à..."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=floor_heating_thermostat"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": 5,
+            "max": 35,
+            "step": 0.5,
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            }
+          }
+        ]
+      },
+      {
+        "id": "floor_heating_thermostat_set_temperature",
+        "title": {
+          "en": "Set temperature",
+          "fr": "Régler température",
+          "nl": "Temperatuur instellen",
+          "de": "Temperatur einstellen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=floor_heating_thermostat"
+          },
+          {
+            "name": "temperature",
+            "type": "range",
+            "min": 5,
+            "max": 35,
+            "step": 0.5,
+            "label": "°C",
+            "labelDecimals": 1
+          }
+        ]
+      },
+      {
+        "id": "floor_heating_thermostat_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Inschakelen",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=floor_heating_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "floor_heating_thermostat_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitschakelen",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=floor_heating_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "garage_door_opener_open",
+        "title": {
+          "en": "Open",
+          "fr": "Ouvrir",
+          "nl": "Openen",
+          "de": "Öffnen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=garage_door_opener"
+          }
+        ]
+      },
+      {
+        "id": "garage_door_opener_close",
+        "title": {
+          "en": "Close",
+          "fr": "Fermer",
+          "nl": "Sluiten",
+          "de": "Schließen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=garage_door_opener"
+          }
+        ]
+      },
+      {
         "id": "gas_detector_test",
         "title": {
           "en": "Test the detector",
@@ -37798,6 +41936,206 @@
             "step": 0.5,
             "label": "°C",
             "labelDecimals": 1
+          }
+        ]
+      },
+      {
+        "id": "hvac_controller_set_target_temperature",
+        "title": {
+          "en": "Set temperature to...",
+          "fr": "Régler la température à..."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hvac_controller"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": 16,
+            "max": 30,
+            "step": 0.5,
+            "title": {
+              "en": "Temperature",
+              "fr": "Température"
+            }
+          }
+        ]
+      },
+      {
+        "id": "hvac_controller_set_temperature",
+        "title": {
+          "en": "Set temperature",
+          "fr": "Régler température",
+          "nl": "Temperatuur instellen",
+          "de": "Temperatur einstellen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hvac_controller"
+          },
+          {
+            "name": "temperature",
+            "type": "range",
+            "min": 16,
+            "max": 30,
+            "step": 0.5,
+            "label": "°C",
+            "labelDecimals": 1
+          }
+        ]
+      },
+      {
+        "id": "hvac_controller_set_mode",
+        "title": {
+          "en": "Set mode",
+          "fr": "Définir mode"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hvac_controller"
+          },
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "title": {
+              "en": "Mode"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "fr": "Auto"
+                }
+              },
+              {
+                "id": "cool",
+                "label": {
+                  "en": "Cool",
+                  "fr": "Froid"
+                }
+              },
+              {
+                "id": "heat",
+                "label": {
+                  "en": "Heat",
+                  "fr": "Chaud"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Arrêt"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hvac_controller_set_fan_speed",
+        "title": {
+          "en": "Set fan speed",
+          "fr": "Définir vitesse ventilateur"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hvac_controller"
+          },
+          {
+            "type": "dropdown",
+            "name": "fan_speed",
+            "title": {
+              "en": "Fan speed"
+            },
+            "values": [
+              {
+                "id": "low",
+                "label": {
+                  "en": "Low",
+                  "fr": "Faible"
+                }
+              },
+              {
+                "id": "medium",
+                "label": {
+                  "en": "Medium",
+                  "fr": "Moyen"
+                }
+              },
+              {
+                "id": "high",
+                "label": {
+                  "en": "High",
+                  "fr": "Élevé"
+                }
+              },
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "fr": "Auto"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "hvac_controller_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Inschakelen",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hvac_controller"
+          }
+        ]
+      },
+      {
+        "id": "hvac_controller_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitschakelen",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hvac_controller"
+          }
+        ]
+      },
+      {
+        "id": "hvac_controller_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=hvac_controller"
           }
         ]
       },
@@ -39644,6 +43982,22 @@
         ]
       },
       {
+        "id": "motion_sensor_2_reset_alarm",
+        "title": {
+          "en": "Reset alarm",
+          "fr": "Réinitialiser l'alarme",
+          "nl": "Alarm resetten",
+          "de": "Alarm zurücksetzen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=motion_sensor_2"
+          }
+        ]
+      },
+      {
         "id": "motion_sensor_radar_mmwave_set_radar_sensitivity",
         "title": {
           "en": "Set radar sensitivity",
@@ -39764,6 +44118,35 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=pet_feeder"
+          }
+        ]
+      },
+      {
+        "id": "pet_feeder_zigbee_feed",
+        "title": {
+          "en": "Feed",
+          "fr": "Nourrir",
+          "nl": "Voeden",
+          "de": "Füttern"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=pet_feeder_zigbee"
+          },
+          {
+            "name": "amount",
+            "type": "number",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "title": {
+              "en": "Amount",
+              "fr": "Quantité",
+              "nl": "Hoeveelheid",
+              "de": "Menge"
+            }
           }
         ]
       },
@@ -40286,6 +44669,246 @@
             "step": 0.5,
             "label": "°C",
             "labelDecimals": 1
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_set_target_temperature",
+        "title": {
+          "en": "Set target temperature to...",
+          "fr": "Régler la température cible à...",
+          "nl": "Doeltemperatuur instellen op...",
+          "de": "Zieltemperatur einstellen auf..."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": 5,
+            "max": 35,
+            "step": 0.5,
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)",
+              "nl": "Temperatuur (°C)",
+              "de": "Temperatur (°C)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_set_mode",
+        "title": {
+          "en": "Set mode to...",
+          "fr": "Régler le mode sur...",
+          "nl": "Modus instellen op...",
+          "de": "Modus einstellen auf..."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "title": {
+              "en": "Mode",
+              "fr": "Mode",
+              "nl": "Modus",
+              "de": "Modus"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "fr": "Auto",
+                  "nl": "Auto",
+                  "de": "Auto"
+                }
+              },
+              {
+                "id": "manual",
+                "label": {
+                  "en": "Manual",
+                  "fr": "Manuel",
+                  "nl": "Handmatig",
+                  "de": "Manuell"
+                }
+              },
+              {
+                "id": "eco",
+                "label": {
+                  "en": "Eco",
+                  "fr": "Éco",
+                  "nl": "Eco",
+                  "de": "Eco"
+                }
+              },
+              {
+                "id": "boost",
+                "label": {
+                  "en": "Boost",
+                  "fr": "Boost",
+                  "nl": "Boost",
+                  "de": "Boost"
+                }
+              },
+              {
+                "id": "away",
+                "label": {
+                  "en": "Away",
+                  "fr": "Absent",
+                  "nl": "Afwezig",
+                  "de": "Abwesend"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Arrêt",
+                  "nl": "Uit",
+                  "de": "Aus"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Aanzetten",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitzetten",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_set_child_lock",
+        "title": {
+          "en": "Set child lock",
+          "fr": "Activer verrouillage enfant",
+          "nl": "Kinderslot instellen",
+          "de": "Kindersicherung einstellen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          },
+          {
+            "name": "enabled",
+            "type": "checkbox",
+            "title": {
+              "en": "Enabled",
+              "fr": "Activé",
+              "nl": "Ingeschakeld",
+              "de": "Aktiviert"
+            }
+          }
+        ]
+      },
+      {
+        "id": "radiator_valve_zigbee_set_window_detection",
+        "title": {
+          "en": "Set window detection",
+          "fr": "Activer détection fenêtre",
+          "nl": "Raamdetectie instellen",
+          "de": "Fenstererkennung einstellen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_valve_zigbee"
+          },
+          {
+            "name": "enabled",
+            "type": "checkbox",
+            "title": {
+              "en": "Enabled",
+              "fr": "Activé",
+              "nl": "Ingeschakeld",
+              "de": "Aktiviert"
+            }
+          }
+        ]
+      },
+      {
+        "id": "radiator_wifi_tuya_set_target_temperature",
+        "title": {
+          "en": "Set target temperature to...",
+          "fr": "Régler la température cible à...",
+          "nl": "Doeltemperatuur instellen op...",
+          "de": "Zieltemperatur einstellen auf..."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=radiator_wifi_tuya"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": 5,
+            "max": 35,
+            "step": 0.5,
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)",
+              "nl": "Temperatuur (°C)",
+              "de": "Temperatur (°C)"
+            }
           }
         ]
       },
@@ -40846,6 +45469,51 @@
         ]
       },
       {
+        "id": "siren_sirentemphumidsensor_trigger_alarm",
+        "title": {
+          "en": "Trigger alarm",
+          "fr": "Déclencher l'alarme",
+          "nl": "Alarm activeren",
+          "de": "Alarm auslösen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=siren_sirentemphumidsensor"
+          },
+          {
+            "name": "duration",
+            "type": "number",
+            "min": 1,
+            "max": 300,
+            "step": 1,
+            "title": {
+              "en": "Duration (seconds)",
+              "fr": "Durée (secondes)",
+              "nl": "Duur (seconden)",
+              "de": "Dauer (Sekunden)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "siren_sirentemphumidsensor_stop_alarm",
+        "title": {
+          "en": "Stop alarm",
+          "fr": "Arrêter l'alarme",
+          "nl": "Alarm stoppen",
+          "de": "Alarm stoppen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=siren_sirentemphumidsensor"
+          }
+        ]
+      },
+      {
         "id": "smart_breaker_turn_on",
         "title": {
           "en": "Turn on"
@@ -41047,6 +45715,191 @@
         ]
       },
       {
+        "id": "smart_lcd_thermostat_set_target_temperature",
+        "title": {
+          "en": "Set target temperature to...",
+          "fr": "Régler la température cible à...",
+          "nl": "Doeltemperatuur instellen op...",
+          "de": "Zieltemperatur einstellen auf..."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": 5,
+            "max": 35,
+            "step": 0.5,
+            "title": {
+              "en": "Temperature (°C)",
+              "fr": "Température (°C)",
+              "nl": "Temperatuur (°C)",
+              "de": "Temperatur (°C)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "smart_lcd_thermostat_set_mode",
+        "title": {
+          "en": "Set mode to...",
+          "fr": "Régler le mode sur...",
+          "nl": "Modus instellen op...",
+          "de": "Modus einstellen auf..."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
+          },
+          {
+            "name": "mode",
+            "type": "dropdown",
+            "title": {
+              "en": "Mode",
+              "fr": "Mode",
+              "nl": "Modus",
+              "de": "Modus"
+            },
+            "values": [
+              {
+                "id": "auto",
+                "label": {
+                  "en": "Auto",
+                  "fr": "Auto",
+                  "nl": "Auto",
+                  "de": "Auto"
+                }
+              },
+              {
+                "id": "manual",
+                "label": {
+                  "en": "Manual",
+                  "fr": "Manuel",
+                  "nl": "Handmatig",
+                  "de": "Manuell"
+                }
+              },
+              {
+                "id": "eco",
+                "label": {
+                  "en": "Eco",
+                  "fr": "Éco",
+                  "nl": "Eco",
+                  "de": "Eco"
+                }
+              },
+              {
+                "id": "boost",
+                "label": {
+                  "en": "Boost",
+                  "fr": "Boost",
+                  "nl": "Boost",
+                  "de": "Boost"
+                }
+              },
+              {
+                "id": "away",
+                "label": {
+                  "en": "Away",
+                  "fr": "Absent",
+                  "nl": "Afwezig",
+                  "de": "Abwesend"
+                }
+              },
+              {
+                "id": "off",
+                "label": {
+                  "en": "Off",
+                  "fr": "Arrêt",
+                  "nl": "Uit",
+                  "de": "Aus"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "smart_lcd_thermostat_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Aanzetten",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "smart_lcd_thermostat_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitzetten",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "smart_lcd_thermostat_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
+          }
+        ]
+      },
+      {
+        "id": "smart_lcd_thermostat_set_child_lock",
+        "title": {
+          "en": "Set child lock",
+          "fr": "Activer verrouillage enfant",
+          "nl": "Kinderslot instellen",
+          "de": "Kindersicherung einstellen"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=smart_lcd_thermostat"
+          },
+          {
+            "name": "enabled",
+            "type": "checkbox",
+            "title": {
+              "en": "Enabled",
+              "fr": "Activé",
+              "nl": "Ingeschakeld",
+              "de": "Aktiviert"
+            }
+          }
+        ]
+      },
+      {
         "id": "smart_rcbo_turn_on",
         "title": {
           "en": "Turn on"
@@ -41240,6 +46093,54 @@
                 }
               }
             ]
+          }
+        ]
+      },
+      {
+        "id": "switch_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Aanzetten",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch"
+          }
+        ]
+      },
+      {
+        "id": "switch_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitzetten",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch"
+          }
+        ]
+      },
+      {
+        "id": "switch_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch"
           }
         ]
       },
@@ -46907,6 +51808,132 @@
         ]
       },
       {
+        "id": "wifi_ewelink_bulb_set_dim",
+        "title": {
+          "en": "Set dim level"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_bulb"
+          },
+          {
+            "name": "dim",
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "label": "%"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_bulb_set_light_temperature",
+        "title": {
+          "en": "Set light temperature"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_bulb"
+          },
+          {
+            "name": "light_temperature",
+            "type": "range",
+            "min": 2000,
+            "max": 6500,
+            "step": 100,
+            "label": "K"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_dimmer_set_dim",
+        "title": {
+          "en": "Set dim level"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_dimmer"
+          },
+          {
+            "name": "dim",
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "label": "%"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_fan_set_dim",
+        "title": {
+          "en": "Set fan speed"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_fan"
+          },
+          {
+            "name": "dim",
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "label": "%"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_led_set_dim",
+        "title": {
+          "en": "Set dim level"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_led"
+          },
+          {
+            "name": "dim",
+            "type": "range",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "label": "%"
+          }
+        ]
+      },
+      {
+        "id": "wifi_ewelink_led_set_light_temperature",
+        "title": {
+          "en": "Set light temperature"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_ewelink_led"
+          },
+          {
+            "name": "light_temperature",
+            "type": "range",
+            "min": 2000,
+            "max": 6500,
+            "step": 100,
+            "label": "K"
+          }
+        ]
+      },
+      {
         "id": "wifi_generic_set_dp",
         "title": {
           "en": "Set a DP value"
@@ -47144,6 +52171,678 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=wifi_siren"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_basicr4_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Aanzetten",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_basicr4"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_basicr4_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitzetten",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_basicr4"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_basicr4_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_basicr4"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_turn_on_gang1",
+        "title": {
+          "en": "Turn on gang 1",
+          "fr": "Allumer gang 1",
+          "nl": "Gang 1 aanzetten",
+          "de": "Gang 1 einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_turn_off_gang1",
+        "title": {
+          "en": "Turn off gang 1",
+          "fr": "Éteindre gang 1",
+          "nl": "Gang 1 uitzetten",
+          "de": "Gang 1 ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_turn_on_gang2",
+        "title": {
+          "en": "Turn on gang 2",
+          "fr": "Allumer gang 2",
+          "nl": "Gang 2 aanzetten",
+          "de": "Gang 2 einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_turn_off_gang2",
+        "title": {
+          "en": "Turn off gang 2",
+          "fr": "Éteindre gang 2",
+          "nl": "Gang 2 uitzetten",
+          "de": "Gang 2 ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_toggle_gang1",
+        "title": {
+          "en": "Toggle gang 1",
+          "fr": "Basculer gang 1",
+          "nl": "Gang 1 wisselen",
+          "de": "Gang 1 umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_dualr3_toggle_gang2",
+        "title": {
+          "en": "Toggle gang 2",
+          "fr": "Basculer gang 2",
+          "nl": "Gang 2 wisselen",
+          "de": "Gang 2 umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_dualr3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_micro_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Aanzetten",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_micro"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_micro_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitzetten",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_micro"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_micro_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_micro"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_minir3_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Aanzetten",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_minir3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_minir3_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitzetten",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_minir3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_minir3_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_minir3"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_minir4_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Aanzetten",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_minir4"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_minir4_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitzetten",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_minir4"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_minir4_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_minir4"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_pow_elite_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Aanzetten",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_pow_elite"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_pow_elite_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitzetten",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_pow_elite"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_pow_elite_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_pow_elite"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_smate2_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Aanzetten",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_smate2"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_smate2_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitzetten",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_smate2"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_smate2_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_smate2"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_1ch_turn_on",
+        "title": {
+          "en": "Turn on",
+          "fr": "Allumer",
+          "nl": "Aanzetten",
+          "de": "Einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_1ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_1ch_turn_off",
+        "title": {
+          "en": "Turn off",
+          "fr": "Éteindre",
+          "nl": "Uitzetten",
+          "de": "Ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_1ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_1ch_toggle",
+        "title": {
+          "en": "Toggle",
+          "fr": "Basculer",
+          "nl": "Wisselen",
+          "de": "Umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_1ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_2ch_turn_on_gang1",
+        "title": {
+          "en": "Turn on gang 1",
+          "fr": "Allumer gang 1",
+          "nl": "Gang 1 aanzetten",
+          "de": "Gang 1 einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_2ch_turn_off_gang1",
+        "title": {
+          "en": "Turn off gang 1",
+          "fr": "Éteindre gang 1",
+          "nl": "Gang 1 uitzetten",
+          "de": "Gang 1 ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_2ch_turn_on_gang2",
+        "title": {
+          "en": "Turn on gang 2",
+          "fr": "Allumer gang 2",
+          "nl": "Gang 2 aanzetten",
+          "de": "Gang 2 einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_2ch_turn_off_gang2",
+        "title": {
+          "en": "Turn off gang 2",
+          "fr": "Éteindre gang 2",
+          "nl": "Gang 2 uitzetten",
+          "de": "Gang 2 ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_2ch_toggle_gang1",
+        "title": {
+          "en": "Toggle gang 1",
+          "fr": "Basculer gang 1",
+          "nl": "Gang 1 wisselen",
+          "de": "Gang 1 umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_2ch_toggle_gang2",
+        "title": {
+          "en": "Toggle gang 2",
+          "fr": "Basculer gang 2",
+          "nl": "Gang 2 wisselen",
+          "de": "Gang 2 umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_2ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_turn_on_gang1",
+        "title": {
+          "en": "Turn on gang 1",
+          "fr": "Allumer gang 1",
+          "nl": "Gang 1 aanzetten",
+          "de": "Gang 1 einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_turn_off_gang1",
+        "title": {
+          "en": "Turn off gang 1",
+          "fr": "Éteindre gang 1",
+          "nl": "Gang 1 uitzetten",
+          "de": "Gang 1 ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_turn_on_gang2",
+        "title": {
+          "en": "Turn on gang 2",
+          "fr": "Allumer gang 2",
+          "nl": "Gang 2 aanzetten",
+          "de": "Gang 2 einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_turn_off_gang2",
+        "title": {
+          "en": "Turn off gang 2",
+          "fr": "Éteindre gang 2",
+          "nl": "Gang 2 uitzetten",
+          "de": "Gang 2 ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_turn_on_gang3",
+        "title": {
+          "en": "Turn on gang 3",
+          "fr": "Allumer gang 3",
+          "nl": "Gang 3 aanzetten",
+          "de": "Gang 3 einschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_turn_off_gang3",
+        "title": {
+          "en": "Turn off gang 3",
+          "fr": "Éteindre gang 3",
+          "nl": "Gang 3 uitzetten",
+          "de": "Gang 3 ausschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_toggle_gang1",
+        "title": {
+          "en": "Toggle gang 1",
+          "fr": "Basculer gang 1",
+          "nl": "Gang 1 wisselen",
+          "de": "Gang 1 umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_toggle_gang2",
+        "title": {
+          "en": "Toggle gang 2",
+          "fr": "Basculer gang 2",
+          "nl": "Gang 2 wisselen",
+          "de": "Gang 2 umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
+          }
+        ]
+      },
+      {
+        "id": "wifi_sonoff_tx_3ch_toggle_gang3",
+        "title": {
+          "en": "Toggle gang 3",
+          "fr": "Basculer gang 3",
+          "nl": "Gang 3 wisselen",
+          "de": "Gang 3 umschalten"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_sonoff_tx_3ch"
           }
         ]
       },
@@ -79262,6 +84961,98 @@
           "hint": {
             "en": "Delay before presence is reported (0-10s)",
             "fr": "Délai avant signalement de présence (0-10s)"
+          }
+        },
+        {
+          "id": "sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Radar Sensitivity",
+            "fr": "Sensibilité Radar",
+            "nl": "Radargevoeligheid",
+            "de": "Radarempfindlichkeit"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 9,
+          "step": 1,
+          "hint": {
+            "en": "ZY-M100: Overall radar detection sensitivity (0=lowest, 9=highest)",
+            "fr": "ZY-M100: Sensibilité globale du radar (0=min, 9=max)"
+          }
+        },
+        {
+          "id": "near_distance",
+          "type": "number",
+          "label": {
+            "en": "Near Detection Distance",
+            "fr": "Distance Proche",
+            "nl": "Nabije Detectieafstand",
+            "de": "Nahe Erkennungsdistanz"
+          },
+          "value": 3,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "units": "m",
+          "hint": {
+            "en": "ZY-M100: Near detection zone boundary (0-10m)",
+            "fr": "ZY-M100: Limite de la zone de détection proche (0-10m)"
+          }
+        },
+        {
+          "id": "far_distance",
+          "type": "number",
+          "label": {
+            "en": "Far Detection Distance",
+            "fr": "Distance Lointaine",
+            "nl": "Verre Detectieafstand",
+            "de": "Ferne Erkennungsdistanz"
+          },
+          "value": 6,
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "units": "m",
+          "hint": {
+            "en": "ZY-M100: Far detection zone boundary (0-10m)",
+            "fr": "ZY-M100: Limite de la zone de détection lointaine (0-10m)"
+          }
+        },
+        {
+          "id": "static_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Static Sensitivity",
+            "fr": "Sensibilité Statique",
+            "nl": "Statische Gevoeligheid",
+            "de": "Statische Empfindlichkeit"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZY-M100: Sensitivity for detecting stationary persons (0=lowest, 10=highest)",
+            "fr": "ZY-M100: Sensibilité pour détecter les personnes immobiles (0=min, 10=max)"
+          }
+        },
+        {
+          "id": "motion_sensitivity",
+          "type": "number",
+          "label": {
+            "en": "Motion Sensitivity",
+            "fr": "Sensibilité Mouvement",
+            "nl": "Bewegingsgevoeligheid",
+            "de": "Bewegungsempfindlichkeit"
+          },
+          "value": 5,
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "hint": {
+            "en": "ZY-M100: Sensitivity for detecting moving persons (0=lowest, 10=highest)",
+            "fr": "ZY-M100: Sensibilité pour détecter les personnes en mouvement (0=min, 10=max)"
           }
         },
         {

@@ -104,10 +104,10 @@ jobs:
         run: node scripts/_validate_all.js
         
       - name: 🚀 Publish to Homey Store (Optional)
-        if: env.HOMEY_TOKEN != ''
-        run: npx homey app publish
+        if: env.HOMEY_PAT != ''
+        uses: athombv/github-action-homey-app-publish@v1
         env:
-          HOMEY_TOKEN: ${{ secrets.HOMEY_TOKEN }}
+          HOMEY_PAT: ${{ secrets.HOMEY_PAT }}
         
       - name: 🔄 Commit Changes
         uses: stefanzweifel/git-auto-commit-action@b863ae1933cb653a53c021fe36dbb774e1fb9403 # v5

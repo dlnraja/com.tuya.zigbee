@@ -1,0 +1,136 @@
+{
+  "triggers": [
+    {
+      "id": "floor_heating_thermostat_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "floor_heating_thermostat_target_temperature_changed",
+      "title": {
+        "en": "Target temperature changed",
+        "fr": "Température cible changée"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          },
+          "example": 21
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "floor_heating_thermostat_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Ingeschakeld",
+        "de": "Eingeschaltet"
+      },
+      "args": []
+    },
+    {
+      "id": "floor_heating_thermostat_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgeschakeld",
+        "de": "Ausgeschaltet"
+      },
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "floor_heating_thermostat_is_on",
+      "title": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "floor_heating_thermostat_set_target_temperature",
+      "title": {
+        "en": "Set temperature to...",
+        "fr": "Régler la température à..."
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "min": 5,
+          "max": 35,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "Température"
+          }
+        }
+      ]
+    },
+    {
+      "id": "floor_heating_thermostat_set_temperature",
+      "title": {
+        "en": "Set temperature",
+        "fr": "Régler température",
+        "nl": "Temperatuur instellen",
+        "de": "Temperatur einstellen"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "range",
+          "min": 5,
+          "max": 35,
+          "step": 0.5,
+          "label": "°C",
+          "labelDecimals": 1
+        }
+      ]
+    },
+    {
+      "id": "floor_heating_thermostat_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Inschakelen",
+        "de": "Einschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "floor_heating_thermostat_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitschakelen",
+        "de": "Ausschalten"
+      },
+      "args": []
+    }
+  ]
+}

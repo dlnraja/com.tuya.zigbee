@@ -860,6 +860,98 @@
       }
     },
     {
+      "id": "sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Radar Sensitivity",
+        "fr": "Sensibilité Radar",
+        "nl": "Radargevoeligheid",
+        "de": "Radarempfindlichkeit"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 9,
+      "step": 1,
+      "hint": {
+        "en": "ZY-M100: Overall radar detection sensitivity (0=lowest, 9=highest)",
+        "fr": "ZY-M100: Sensibilité globale du radar (0=min, 9=max)"
+      }
+    },
+    {
+      "id": "near_distance",
+      "type": "number",
+      "label": {
+        "en": "Near Detection Distance",
+        "fr": "Distance Proche",
+        "nl": "Nabije Detectieafstand",
+        "de": "Nahe Erkennungsdistanz"
+      },
+      "value": 3,
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "units": "m",
+      "hint": {
+        "en": "ZY-M100: Near detection zone boundary (0-10m)",
+        "fr": "ZY-M100: Limite de la zone de détection proche (0-10m)"
+      }
+    },
+    {
+      "id": "far_distance",
+      "type": "number",
+      "label": {
+        "en": "Far Detection Distance",
+        "fr": "Distance Lointaine",
+        "nl": "Verre Detectieafstand",
+        "de": "Ferne Erkennungsdistanz"
+      },
+      "value": 6,
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "units": "m",
+      "hint": {
+        "en": "ZY-M100: Far detection zone boundary (0-10m)",
+        "fr": "ZY-M100: Limite de la zone de détection lointaine (0-10m)"
+      }
+    },
+    {
+      "id": "static_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Static Sensitivity",
+        "fr": "Sensibilité Statique",
+        "nl": "Statische Gevoeligheid",
+        "de": "Statische Empfindlichkeit"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "ZY-M100: Sensitivity for detecting stationary persons (0=lowest, 10=highest)",
+        "fr": "ZY-M100: Sensibilité pour détecter les personnes immobiles (0=min, 10=max)"
+      }
+    },
+    {
+      "id": "motion_sensitivity",
+      "type": "number",
+      "label": {
+        "en": "Motion Sensitivity",
+        "fr": "Sensibilité Mouvement",
+        "nl": "Bewegingsgevoeligheid",
+        "de": "Bewegungsempfindlichkeit"
+      },
+      "value": 5,
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "hint": {
+        "en": "ZY-M100: Sensitivity for detecting moving persons (0=lowest, 10=highest)",
+        "fr": "ZY-M100: Sensibilité pour détecter les personnes en mouvement (0=min, 10=max)"
+      }
+    },
+    {
       "id": "indicator",
       "type": "checkbox",
       "label": {

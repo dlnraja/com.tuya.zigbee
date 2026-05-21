@@ -1,0 +1,65 @@
+{
+  "triggers": [
+    {
+      "id": "wall_remote_2_gang_button_1_pressed",
+      "highlight": true,
+      "title": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 pressé",
+        "nl": "Knop 1 ingedrukt",
+        "de": "Taste 1 gedrückt"
+      },
+      "args": []
+    },
+    {
+      "id": "wall_remote_2_gang_button_2_pressed",
+      "title": {
+        "en": "Button 2 pressed",
+        "fr": "Bouton 2 pressé",
+        "nl": "Knop 2 ingedrukt",
+        "de": "Taste 2 gedrückt"
+      },
+      "args": []
+    },
+    {
+      "id": "wall_remote_2_gang_button_1_held",
+      "title": {
+        "en": "Button 1 held",
+        "fr": "Bouton 1 maintenu",
+        "nl": "Knop 1 ingedrukt houden",
+        "de": "Taste 1 gehalten"
+      },
+      "args": []
+    },
+    {
+      "id": "wall_remote_2_gang_button_2_held",
+      "title": {
+        "en": "Button 2 held",
+        "fr": "Bouton 2 maintenu",
+        "nl": "Knop 2 ingedrukt houden",
+        "de": "Taste 2 gehalten"
+      },
+      "args": []
+    },
+    {
+      "id": "wall_remote_2_gang_both_pressed",
+      "title": {
+        "en": "Both pressed",
+        "fr": "Les deux pressés",
+        "nl": "Beide ingedrukt",
+        "de": "Beide gedrückt"
+      },
+      "args": []
+    },
+    {
+      "id": "wall_remote_2_gang_motion_detected",
+      "title": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      },
+      "args": []
+    }
+  ]
+}

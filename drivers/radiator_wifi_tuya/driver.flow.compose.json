@@ -1,0 +1,86 @@
+{
+  "triggers": [
+    {
+      "id": "radiator_wifi_tuya_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)",
+            "nl": "Temperatuur (°C)",
+            "de": "Temperatur (°C)"
+          },
+          "example": 21
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "radiator_wifi_tuya_target_temperature_changed",
+      "title": {
+        "en": "Target temperature changed",
+        "fr": "Température cible changée",
+        "nl": "Doeltemperatuur gewijzigd",
+        "de": "Zieltemperatur geändert"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Target temperature (°C)",
+            "fr": "Température cible (°C)",
+            "nl": "Doeltemperatuur (°C)",
+            "de": "Zieltemperatur (°C)"
+          },
+          "example": 22
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "radiator_wifi_tuya_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "radiator_wifi_tuya_set_target_temperature",
+      "title": {
+        "en": "Set target temperature to...",
+        "fr": "Régler la température cible à...",
+        "nl": "Doeltemperatuur instellen op...",
+        "de": "Zieltemperatur einstellen auf..."
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "min": 5,
+          "max": 35,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)",
+            "nl": "Temperatuur (°C)",
+            "de": "Temperatur (°C)"
+          }
+        }
+      ]
+    }
+  ]
+}

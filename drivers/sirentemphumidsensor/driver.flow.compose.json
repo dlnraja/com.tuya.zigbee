@@ -1,0 +1,85 @@
+{
+  "triggers": [
+    {
+      "id": "sirentemphumidsensor_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (°C)",
+            "fr": "Température (°C)",
+            "nl": "Temperatuur (°C)",
+            "de": "Temperatur (°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "sirentemphumidsensor_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
+      },
+      "tokens": [
+        {
+          "name": "humidity",
+          "type": "number",
+          "title": {
+            "en": "Humidity (%)",
+            "fr": "Humidité (%)",
+            "nl": "Luchtvochtigheid (%)",
+            "de": "Luftfeuchtigkeit (%)"
+          },
+          "example": 55
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "sirentemphumidsensor_alarm_triggered",
+      "title": {
+        "en": "Alarm triggered",
+        "fr": "Alarme déclenchée",
+        "nl": "Alarm geactiveerd",
+        "de": "Alarm ausgelöst"
+      },
+      "tokens": [
+        {
+          "name": "type",
+          "type": "string",
+          "title": {
+            "en": "Type",
+            "fr": "Type",
+            "nl": "Type",
+            "de": "Typ"
+          },
+          "example": "contact"
+        }
+      ],
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "sirentemphumidsensor_alarm_active",
+      "title": {
+        "en": "Alarm !{{is|is not}} active",
+        "fr": "Alarme !{{est|n'est pas}} active",
+        "nl": "Alarm !{{is|is niet}} actief",
+        "de": "Alarm !{{ist|ist nicht}} aktiv"
+      },
+      "args": []
+    }
+  ]
+}

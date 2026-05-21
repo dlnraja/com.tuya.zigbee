@@ -1,0 +1,129 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_sonoff_pow_elite_turned_on",
+      "highlight": true,
+      "title": {
+        "en": "Turned on",
+        "fr": "Allumé",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "hint": {
+        "en": "Triggers when the socket is turned on"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_sonoff_pow_elite_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Éteint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "hint": {
+        "en": "Triggers when the socket is turned off"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_sonoff_pow_elite_measure_power_changed",
+      "title": {
+        "en": "Power changed",
+        "fr": "Puissance changée"
+      },
+      "tokens": [
+        {
+          "name": "power",
+          "type": "number",
+          "title": {
+            "en": "Power (W)"
+          },
+          "example": 100
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "wifi_sonoff_pow_elite_measure_voltage_changed",
+      "title": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      },
+      "tokens": [
+        {
+          "name": "voltage",
+          "type": "number",
+          "title": {
+            "en": "Voltage (V)"
+          },
+          "example": 230
+        }
+      ],
+      "args": []
+    },
+    {
+      "id": "wifi_sonoff_pow_elite_measure_current_changed",
+      "title": {
+        "en": "Current changed",
+        "fr": "Courant changé"
+      },
+      "tokens": [
+        {
+          "name": "current",
+          "type": "number",
+          "title": {
+            "en": "Current (A)"
+          },
+          "example": 0.5
+        }
+      ],
+      "args": []
+    }
+  ],
+  "conditions": [
+    {
+      "id": "wifi_sonoff_pow_elite_is_on",
+      "title": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumé|éteint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      },
+      "args": []
+    }
+  ],
+  "actions": [
+    {
+      "id": "wifi_sonoff_pow_elite_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_sonoff_pow_elite_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Éteindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      },
+      "args": []
+    },
+    {
+      "id": "wifi_sonoff_pow_elite_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": []
+    }
+  ]
+}

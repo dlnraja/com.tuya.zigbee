@@ -34,13 +34,13 @@ const SENSOR_CONFIGS = {
     noHumidity: true,
     dpMap: {
       1: { cap: 'alarm_motion', type: 'presence_enum' },
-      2: { cap: null, internal: 'sensitivity' },
-      3: { cap: null, internal: 'near_distance' },
-      4: { cap: null, internal: 'far_distance' },
-      9: { cap: 'measure_luminance.distance', divisor: 100 },
-      12: { cap: 'measure_luminance', type: 'lux_direct' },
-      101: { cap: null, internal: 'static_sensitivity' },
-      102: { cap: null, internal: 'motion_sensitivity' },
+       2: { cap: null, setting: 'sensitivity', min: 0, max: 9 },
+       3: { cap: null, setting: 'near_distance', min: 0, max: 10 },
+       4: { cap: null, setting: 'far_distance', min: 0, max: 10 },
+       9: { cap: 'measure_luminance.distance', divisor: 100 },
+       12: { cap: 'measure_luminance', type: 'lux_direct' },
+       101: { cap: null, setting: 'static_sensitivity', min: 0, max: 10 },
+       102: { cap: null, setting: 'motion_sensitivity', min: 0, max: 10 },
     }
   },
 

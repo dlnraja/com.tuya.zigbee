@@ -1,0 +1,42 @@
+{
+  "triggers": [
+    {
+      "id": "wifi_ewelink_fan_turned_on",
+      "title": {
+        "en": "Turned on"
+      }
+    },
+    {
+      "id": "wifi_ewelink_fan_turned_off",
+      "title": {
+        "en": "Turned off"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "wifi_ewelink_fan_is_on",
+      "title": {
+        "en": "Is on"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "wifi_ewelink_fan_set_dim",
+      "title": {
+        "en": "Set fan speed"
+      },
+      "args": [
+        {
+          "name": "dim",
+          "type": "range",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "label": "%"
+        }
+      ]
+    }
+  ]
+}
