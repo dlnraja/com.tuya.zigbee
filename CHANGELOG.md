@@ -4,7 +4,26 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.0] - 2026-05-21
+## [8.1.1] - 2026-05-21
+
+### Bug Fixes
+- Fixed duplicate button initialization in scene switch drivers (scene_switch_1, _2, _3, _6, _wall)
+- Fixed undefined variables and import errors in multiple drivers
+- Fixed physical button detection to prevent false triggers - added PhysicalButtonMixin for proper button press classification
+- Fixed switch_usb_dongle and sensor_contact_motion device configurations
+
+### Improvements
+- Updated scene_switch drivers with proper button handling and state management
+- Added PhysicalButtonMixin to prevent app commands from being misclassified as physical button presses
+- Updated driver fingerprints and compose files for illuminance_sensor and doorbell
+
+### Device Changes
+- switch_2gang: removed unused capability
+- climate_sensor_device: minor configuration update
+- sensor_contact_motion: device configuration update
+---
+
+ [8.1.0] - 2026-05-21
 
 ### Bug Fixes
 - Fixed color control on RGB bulbs for multiple fingerprints
