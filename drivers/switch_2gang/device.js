@@ -59,7 +59,6 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
     // v5.13.1: CRITICAL FIX — Call super.onNodeInit() to register capability listeners
     await super.onNodeInit({ zclNode });
-    this.initPhysicalButtonDetection();
 
     // v5.5.26: Setup power measurement for ZCL devices
     await this._setupPowerMeasurement(zclNode);

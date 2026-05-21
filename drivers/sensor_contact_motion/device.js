@@ -1350,9 +1350,8 @@ class MotionSensorDevice extends UnifiedSensorBase {
       return null;
     }
 
+    const readId = `${cluster.name || cluster.constructor.name}_${attributes.join('_')}`;
     try {
-      const readId = `${cluster.name || cluster.constructor.name}_${attributes.join('_')}`;
-
       if (this._pendingZclReads.has(readId)) {
         this.log(`[SLEEPY] ⏯️ ZCL read already pending: ${readId}`);
         return null;
@@ -1706,6 +1705,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
    * Enhanced lux handling - also feeds smart reporting system
    */
   _enhancedLuxUpdate(luxValue, source = 'unknown') {
+    this.log(`[LUX] Enhanced lux update: ${luxValue} (source: ${source})`);
     // Update smart reporting cache
     if (this._luxSmartReporting) {
       this._processSmartLuxUpdate(luxValue);

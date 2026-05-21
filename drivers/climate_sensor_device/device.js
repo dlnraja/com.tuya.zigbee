@@ -1,5 +1,5 @@
 'use strict';
-const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { safeDivide, safeMultiply } = require('../../lib/utils/tuyaUtils.js');
 
 const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
