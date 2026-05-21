@@ -4,7 +4,24 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [7.5.52] - 2026-05-20
+## [8.1.0] - 2026-05-21
+
+### Bug Fixes
+- Fixed color control on RGB bulbs for multiple fingerprints
+- Fixed air quality CO2 reporting on air_quality_co2 driver
+- Fixed air purifier state reporting
+
+### New Features
+- Added soil sensor driver (_TZE284_0ints6wl / TS0601)
+- New fingerprints for bulb_rgb, bulb_rgbw, bulb_rgb_led, bulb_dimmable, bulb_dimmable_dimmer, bulb_tunable_white, bulb_white
+- New fingerprints for air_purifier, air_quality_co2, air_quality_comprehensive
+- Added measure capabilities to air quality drivers
+
+### Improvements
+- Enhanced bulb driver fingerprint matching across multiple variants
+---
+
+ [7.5.52] - 2026-05-20
 
 ### Bug Fixes
 - Fixed button_wireless_3 and button_wireless_4 driver issues (diagnostic Log 99ead539)

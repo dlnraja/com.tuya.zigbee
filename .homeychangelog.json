@@ -1,4 +1,10 @@
 {
+  "8.1.0": {
+    "en": "New fingerprints for RGB bulbs, RGBW bulbs, air purifiers, and air quality sensors. Soil sensor driver added. Bug fixes for bulb color control and air quality reporting."
+  },
+  "7.5.53": {
+    "en": "v7.5.52: Fixed button_wireless_3 and button_wireless_4 driver issues (diagnostic Log 99ead539), Fixed ir_blaster device capability handling, Fixed soil_sensor measure_soil_moisture capability, Fixed plug_smart driver compose, Fixed switch driver issues"
+  },
   "7.5.52": {
     "en": "Bug fixes for button_wireless_3/4, ir_blaster, soil_sensor, plug_smart and switch drivers. Fixed diagnostic issues Log 99ead539."
   },
@@ -53,13 +59,7 @@
   "7.5.34": {
     "en": "v7.5.34: Fixed condition card registration in air_quality_comprehensive and din_rail_meter drivers. Standardized button flow cards. Synced upstream fixes from ."
   },
-  "7.5.33": {
-    "en": "Fixed condition cards in air quality & DIN rail meter drivers. Added standardized button flow triggers (press, double press, long press, release, knob rotation). Synced upstream driver improvements and updated app assets."
-  },
-  "7.5.32": {
-    "en": "v7.5.32: . Harmonized driver icons, updated app store assets, and restored draft-to-test  fixes."
-  },
-  "7.5.53": {
-    "en": "v7.5.52: Fixed button_wireless_3 and button_wireless_4 driver issues (diagnostic Log 99ead539), Fixed ir_blaster device capability handling, Fixed soil_sensor measure_soil_moisture capability, Fixed plug_smart driver compose, Fixed switch driver issues"
+  "8.1.1": {
+    "en": "v8.1.0: Fixed color control on RGB bulbs for multiple fingerprints, Fixed air quality CO2 reporting on air_quality_co2 driver, Fixed air purifier state reporting, Added soil sensor driver (_TZE284_0ints6wl / TS0601), New fingerprints for bulb_rgb, bulb_rgbw, bulb_rgb_led, bulb_dimmable, bulb_dimmable_dimmer, bulb_tunable_white, bulb_white"
   }
 }
