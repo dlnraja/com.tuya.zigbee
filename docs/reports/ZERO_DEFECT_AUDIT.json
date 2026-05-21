@@ -1,22 +1,7 @@
 {
-  "timestamp": "2026-05-21T07:03:17.321Z",
+  "timestamp": "2026-05-21T07:45:16.652Z",
   "driversChecked": 230,
-  "collisions": [
-    {
-      "id": "_TZ3210_EMQMWTYM|TS0601",
-      "drivers": [
-        "device_din_rail",
-        "doorbell"
-      ]
-    },
-    {
-      "id": "_TZE200_HL0SS9OA|TS0225",
-      "drivers": [
-        "illuminance_sensor",
-        "presence_sensor_radar"
-      ]
-    }
-  ],
+  "collisions": [],
   "buttonLogicFailures": [],
   "sdkDeprecations": [
     "data\\temp_desktop_cleanup\\tuya_backup\\lib\\utils\\migration-queue.js:267: const device = await homey.drivers.getDevice({ id: deviceId });",
@@ -75,7 +60,7 @@
     ".homeybuild\\lib\\HybridDriverSystem.js:363: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\interpreters\\UniversalRawInterpreter.js:75: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\managers\\IntelligentDataManager.js:228: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
-    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:622: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
+    ".homeybuild\\lib\\mixins\\PhysicalButtonMixin.js:695: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\mixins\\TuyaDeviceMixin.js:115: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\pairing\\TuyaTimeSyncEngine.js:26: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     ".homeybuild\\lib\\pairing\\UniversalPairingManager.js:100: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
@@ -359,7 +344,7 @@
     "lib\\HybridDriverSystem.js:363: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\interpreters\\UniversalRawInterpreter.js:75: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\managers\\IntelligentDataManager.js:228: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
-    "lib\\mixins\\PhysicalButtonMixin.js:622: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
+    "lib\\mixins\\PhysicalButtonMixin.js:695: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\mixins\\TuyaDeviceMixin.js:115: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\pairing\\TuyaTimeSyncEngine.js:26: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",
     "lib\\pairing\\UniversalPairingManager.js:100: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00",

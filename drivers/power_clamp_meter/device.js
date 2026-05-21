@@ -177,7 +177,8 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     const pj1203aIds = [
       '_TZE284_81yrt3lo', '_TZE204_81yrt3lo',  // Original PJ-1203A
       '_TZE200_81yrt3lo',                       // Older variant (Z2M #18432)
-      '_TZE204_cjbofhxw', '_TZE284_cjbofhxw'   // Matsee Plus variant (Z2M #15359)
+      '_TZE204_cjbofhxw', '_TZE284_cjbofhxw',   // Matsee Plus variant (Z2M #15359)
+      '_TZE28C1000000_81yrt3lo'                  // New variant (Issue #329, Z2M #26403)
     ];
     return pj1203aIds.some(id => mfr.toLowerCase().includes(id.toLowerCase())) ? 'pj1203a' : '3phase';
   }

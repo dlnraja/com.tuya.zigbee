@@ -5,7 +5,7 @@
     "nl": "Irrigatieklep",
     "de": "Bewässerungsventil"
   },
-  "class": "thermostat",
+  "class": "socket",
   "capabilities": [
     "dim.valve_1",
     "dim.valve_2",
@@ -13,6 +13,7 @@
     "dim.valve_4",
     "measure_battery",
     "onoff",
+    "onoff.gang2",
     "alarm_battery"
   ],
   "zigbee": {
@@ -149,6 +150,22 @@
     "batteries": [
       "AA"
     ]
+  },
+  "capabilitiesOptions": {
+    "onoff": {
+      "title": {
+        "en": "Valve 1",
+        "fr": "Vanne 1",
+        "nl": "Klep 1"
+      }
+    },
+    "onoff.gang2": {
+      "title": {
+        "en": "Valve 2",
+        "fr": "Vanne 2",
+        "nl": "Klep 2"
+      }
+    }
   },
   "maintenanceActions": [
     {

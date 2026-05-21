@@ -1,38 +1,438 @@
 {
-  "timestamp": "2026-05-13T11:08:38.444Z",
+  "timestamp": "2026-05-21T16:13:13.192Z",
   "devices": [],
   "unmatchedFPs": [],
   "errors": [
     {
-      "err": "IAS Zone enrollment incomplete. Remove and re-add device if sensor not respondin",
+      "err": "access 'smokeDetectedCondition' before initialization",
       "source": "gmail"
     },
     {
-      "err": "this.homey.flow.getDeviceConditionCard is not a function",
+      "err": "access 'batteryAboveCondition' before initialization",
       "source": "gmail"
     },
     {
-      "err": "Initializing Driver air_quality_comprehensive: TypeError: this.homey.flow.getDev",
+      "err": "access 'testAlarmAction' before initialization",
       "source": "gmail"
     },
     {
-      "err": "Initializing Driver din_rail_meter: TypeError: this.homey.flow.getDeviceConditio",
+      "err": "access 'sirenCondition' before initialization",
       "source": "gmail"
     },
     {
-      "err": "message for rain sensor:",
+      "err": "access 'turnOnAction' before initialization",
       "source": "gmail"
     },
     {
-      "err": "on contact sensor for me !",
+      "err": "access 'turnOffAction' before initialization",
       "source": "gmail"
     },
     {
-      "err": "could not get device by ID.",
+      "err": "access 'setVolumeAction' before initialization",
+      "source": "gmail"
+    },
+    {
+      "err": "access 'setDurationAction' before initialization",
+      "source": "gmail"
+    },
+    {
+      "err": "access 'setMelodyAction' before initialization",
+      "source": "gmail"
+    },
+    {
+      "err": "curtain_motor_tilt_turn_on",
+      "source": "gmail"
+    },
+    {
+      "err": "curtain_motor_tilt_turn_off",
+      "source": "gmail"
+    },
+    {
+      "err": "curtain_motor_tilt_toggle",
+      "source": "gmail"
+    },
+    {
+      "err": ", please notify the sender and delete this message and its attachments.",
+      "source": "gmail"
+    },
+    {
+      "err": ", please notify the sender and delete this message and its attachments.",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')'",
+      "source": "gmail"
+    },
+    {
+      "err": "Cannot access `this.homey.app` because the app instance has been destroyed.",
+      "source": "gmail"
+    },
+    {
+      "err": "access `this.homey.app` because the app instance has been de",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')'",
+      "source": "gmail"
+    },
+    {
+      "err": "Cannot access `this.homey.app` because the app instance has been destroyed.",
+      "source": "gmail"
+    },
+    {
+      "err": "access `this.homey.app` because the app instance has been de",
+      "source": "gmail"
+    },
+    {
+      "err": "=redirect,quality=80/uploads/asset/file/ba4bff58-4f[REDACTED_PHONE]b-f57f882458b",
+      "source": "gmail"
+    },
+    {
+      "err": "=redirect,quality=80/uploads/asset/file/65c36b80-276c-453c-9eb0-8c7035b98c21/Cou",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')'",
+      "source": "gmail"
+    },
+    {
+      "err": "(`Cannot send \"${e}\" because the app instance has been destroyed.\\n`+\"This may i",
+      "source": "gmail"
+    },
+    {
+      "err": "(`Cannot access \\`this.homey.${t}\\` because the app instance has been destroyed.",
+      "source": "gmail"
+    },
+    {
+      "err": "(\"Cannot access `this.homey.app` because the app instance has been destroyed.\\nT",
+      "source": "gmail"
+    },
+    {
+      "err": ");for(const e of Object.values(s.getDrivers())){Promise.resolve().then(()=>e.onU",
+      "source": "gmail"
+    },
+    {
+      "err": ");for(const t of e.getDevices())Promise.resolve().then(()=>t.onUninit()).catch(t",
+      "source": "gmail"
+    },
+    {
+      "err": ")}}}module.exports=Homey;",
+      "source": "gmail"
+    },
+    {
+      "err": "Cannot access `this.homey.app` because the app instance has been destroyed.",
+      "source": "gmail"
+    },
+    {
+      "err": "send \"${e}\" because the app instance has been destroyed.\\n`+",
+      "source": "gmail"
+    },
+    {
+      "err": "access \\`this.homey.${t}\\` because the app instance has been",
+      "source": "gmail"
+    },
+    {
+      "err": "access `this.homey.app` because the app instance has been de",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')'",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')'",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')'",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')'",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')'",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')'",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ':'",
+      "source": "gmail"
+    },
+    {
+      "err": "Cannot access `this.homey.app` because the app instance has been destroyed.",
+      "source": "gmail"
+    },
+    {
+      "err": "access `this.homey.app` because the app instance has been de",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ':'",
+      "source": "gmail"
+    },
+    {
+      "err": "Cannot access `this.homey.app` because the app instance has been destroyed.",
+      "source": "gmail"
+    },
+    {
+      "err": "access `this.homey.app` because the app instance has been de",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ':' /app/lib/utils/tuyaUtils.js:118",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ':'",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ':'",
+      "source": "gmail"
+    },
+    {
+      "err": "(`Cannot send \"${e}\" because the app instance has been destroyed.\\n`+\"This may i",
+      "source": "gmail"
+    },
+    {
+      "err": "(`Cannot access \\`this.homey.${t}\\` because the app instance has been destroyed.",
+      "source": "gmail"
+    },
+    {
+      "err": "(\"Cannot access `this.homey.app` because the app instance has been destroyed.\\nT",
+      "source": "gmail"
+    },
+    {
+      "err": ");for(const e of Object.values(s.getDrivers())){Promise.resolve().then(()=>e.onU",
+      "source": "gmail"
+    },
+    {
+      "err": ");for(const t of e.getDevices())Promise.resolve().then(()=>t.onUninit()).catch(t",
+      "source": "gmail"
+    },
+    {
+      "err": ")}}}module.exports=Homey;",
+      "source": "gmail"
+    },
+    {
+      "err": "Cannot access `this.homey.app` because the app instance has been destroyed.",
+      "source": "gmail"
+    },
+    {
+      "err": "send \"${e}\" because the app instance has been destroyed.\\n`+",
+      "source": "gmail"
+    },
+    {
+      "err": "access \\`this.homey.${t}\\` because the app instance has been",
+      "source": "gmail"
+    },
+    {
+      "err": "access `this.homey.app` because the app instance has been de",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')'",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')'",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ':' /app/lib/utils/tuyaUtils.js:118",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ':'",
+      "source": "gmail"
+    },
+    {
+      "err": "=redirect,quality=80/uploads/asset/file/acbe8916-c007-4b8c-97eb-3e802a040ad3/hea",
+      "source": "gmail"
+    },
+    {
+      "err": "formats, pagination models, and validation rules also change. As a result, the d",
+      "source": "gmail"
+    },
+    {
+      "err": "=redirect,quality=80/uploads/asset/file/72cf3342-24b9-455d-b91f-8c5576e4c1ff/Scr",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ':' /app/lib/utils/tuyaUtils.js:118",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ':'",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ':' /app/lib/utils/tuyaUtils.js:118",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ':'",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')'",
+      "source": "gmail"
+    },
+    {
+      "err": "Cannot access `this.homey.app` because the app instance has been destroyed.",
+      "source": "gmail"
+    },
+    {
+      "err": "access `this.homey.app` because the app instance has been de",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ':' /app/lib/utils/tuyaUtils.js:118",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ':'",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')'",
+      "source": "gmail"
+    },
+    {
+      "err": "Cannot access `this.homey.app` because the app instance has been destroyed.",
+      "source": "gmail"
+    },
+    {
+      "err": "access `this.homey.app` because the app instance has been de",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')' /app/lib/analytics/AdvancedAnalytics.js:215",
+      "source": "gmail"
+    },
+    {
+      "err": "Unexpected token ')'",
+      "source": "gmail"
+    },
+    {
+      "err": "treat hantavirus. The outbreak of the disease has killed thr",
+      "source": "gmail"
+    },
+    {
+      "err": "=redirect,quality=80/uploads/asset/file/ba4bff58-4f[REDACTED_PHONE]b-f57f882458b",
+      "source": "gmail"
+    },
+    {
+      "err": "message is shown.",
+      "source": "gmail"
+    },
+    {
+      "err": "be completed because of this white screen issue.",
+      "source": "gmail"
+    },
+    {
+      "err": "when i try re-pair. Where is the problem - Device or software or other?",
+      "source": "gmail"
+    },
+    {
+      "err": "Initializing Driver remote_button_wireless: TypeError: Class extends value # is",
+      "source": "gmail"
+    },
+    {
+      "err": "Class extends value # is not a constructor or null",
+      "source": "gmail"
+    },
+    {
+      "err": "plug_smart_switch_hybrid_switch_1gang_set_backlight_color",
+      "source": "gmail"
+    },
+    {
+      "err": "plug_smart_switch_hybrid_switch_1gang_set_backlight_brightne",
+      "source": "gmail"
+    },
+    {
+      "err": "plug_smart_switch_hybrid_switch_1gang_set_countdown",
+      "source": "gmail"
+    },
+    {
+      "err": "plug_smart_switch_hybrid_switch_1gang_set_child_lock",
+      "source": "gmail"
+    },
+    {
+      "err": "plug_smart_switch_hybrid_switch_1gang_set_scene_mode",
+      "source": "gmail"
+    },
+    {
+      "err": "remote_button_wireless_fingerbot_hybrid_button_wireless_fing",
+      "source": "gmail"
+    },
+    {
+      "err": "HybridSensorBase is not defined",
+      "source": "gmail"
+    },
+    {
+      "err": "operate on foreign-hosted infrastructure due to jurisdiction",
+      "source": "gmail"
+    },
+    {
+      "err": "Cannot find module '../..[path]",
+      "source": "gmail"
+    },
+    {
+      "err": "Cannot access `this.homey.app` because the app instance has been destroyed.",
+      "source": "gmail"
+    },
+    {
+      "err": "find module '../..[path]",
+      "source": "gmail"
+    },
+    {
+      "err": "access `this.homey.app` because the app instance has been de",
+      "source": "gmail"
+    },
+    {
+      "err": "this._dataRecoveryManager.triggerRecovery is not a function",
       "source": "gmail"
     }
   ],
   "sources": {
-    "gmail": 56
+    "gmail": 149
   }
 }

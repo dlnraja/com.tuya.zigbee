@@ -4,6 +4,9 @@ const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
  * Rain Sensor Device
+ * v9.7.4: FIX for Issue #326 - _TZE200_u6x1zyv2 pairs but reports no values
+ *         Added DP 2 → measure_humidity (rain level %) and DP 106 mappings
+ *         Fixed TS0601 rain sensors using Tuya EF00 DP protocol
  * v5.5.889: Added IAS Zone support for TS0207 devices (Dominique_C forum report)
  * v5.3.64: SIMPLIFIED base implementation
  */
@@ -12,16 +15,20 @@ class RainSensorDevice extends UnifiedSensorBase {
   get mainsPowered() { return false; }
 
   get sensorCapabilities() {
-    return ['alarm_water', 'measure_battery'];
+    return ['alarm_water', 'measure_humidity', 'measure_battery'];
   }
 
   get dpMappings() {
     return {
-      1: { capability: 'alarm_water', transform: (v) => v === 1 || v === true }, // Rain detected
-      4: { capability: 'measure_battery', divisor: 1 },
+      // TS0601 DP layout (_TZE200_u6x1zyv2, _TZE200_jsaqgakf, etc.)
+      1: { capability: 'alarm_water', transform: (v) => v === 1 || v === true }, // Rain alarm boolean
+      2: { capability: 'measure_humidity', divisor: 1 }, // Rain level 0-100% (mapped as humidity)
+      4: { capability: 'measure_battery', divisor: 1 },  // Battery %
+      // TS0207 and some TS0601 variants
       15: { capability: 'measure_battery', divisor: 1 },
-      101: { capability: 'measure_luminance', divisor: 1 },
-      105: { capability: 'measure_voltage.rain', divisor: 1000 }
+      101: { capability: 'measure_luminance', divisor: 1 }, // Illuminance (lux)
+      105: { capability: 'measure_voltage.rain', divisor: 1000 }, // Raw sensor voltage
+      106: { capability: 'measure_humidity', divisor: 1 }  // Rain level on some variants
     };
   }
 
