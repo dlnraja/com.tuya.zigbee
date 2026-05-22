@@ -144,7 +144,7 @@
     ]
   },
   "_TZE284_znlqjmih": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -381,7 +381,7 @@
     ]
   },
   "_TZE200_myd45weu": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -389,7 +389,7 @@
     ]
   },
   "_TZE284_myd45weu": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -471,7 +471,7 @@
     ]
   },
   "_TZE200_ztc6ggyl": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -511,7 +511,7 @@
     ]
   },
   "_TZE204_qasjif9e": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -527,7 +527,7 @@
     ]
   },
   "_TZE200_sgpeacqp": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -535,7 +535,7 @@
     ]
   },
   "_TZE204_xsm7l9xa": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -543,7 +543,7 @@
     ]
   },
   "_TZE200_wukb7rhc": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -551,7 +551,7 @@
     ]
   },
   "_TZE200_xpq2rzhq": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -559,7 +559,7 @@
     ]
   },
   "_TZE200_holel4dk": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -567,7 +567,7 @@
     ]
   },
   "_TZE200_jva8ink8": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -575,7 +575,7 @@
     ]
   },
   "_TZE200_lyetpprm": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -583,7 +583,7 @@
     ]
   },
   "_TZE204_ztqnh5cg": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -615,7 +615,7 @@
     ]
   },
   "_TZE200_ikvncluo": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -711,7 +711,7 @@
     "notes": "Moes Smart Knob - supports single/double/long press via scenes cluster"
   },
   "_TZ3000_0dumfk2z": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -719,7 +719,7 @@
     ]
   },
   "_TZ3000_4fsgukof": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -727,7 +727,7 @@
     ]
   },
   "_TZ3000_wr2ucaj9": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -735,7 +735,7 @@
     ]
   },
   "_TZ3000_zsh6uat3": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -743,7 +743,7 @@
     ]
   },
   "_TZ3000_pkfazisv": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -751,7 +751,7 @@
     ]
   },
   "_TZ3000_2izubafb": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -775,7 +775,7 @@
     ]
   },
   "_TZ3000_h1ipgkwn": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -783,7 +783,7 @@
     ]
   },
   "_TZ3000_01gpyda5": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -791,7 +791,7 @@
     ]
   },
   "_TZ3000_bvrlqyj7": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -829,7 +829,7 @@
     ]
   },
   "_TZ3000_gjnozsaz": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -885,7 +885,7 @@
     ]
   },
   "_TZ3000_typdpbpg": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -926,7 +926,7 @@
     "notes": "GitHub Issue #44 - 20A smart plug with energy monitoring"
   },
   "_TZ3000_cfnprab5": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -975,7 +975,7 @@
     }
   },
   "_TZ3000_8nyaanzb": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -983,7 +983,7 @@
     ]
   },
   "_TZ3000_bep7ccew": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -1133,7 +1133,7 @@
     ]
   },
   "_TZ3000_qtyyuaq6": {
-    "driverId": "smoke_detector",
+    "driverId": "smoke_detector_advanced",
     "type": "smoke",
     "powerSource": "battery",
     "batteryType": "CR123A",
@@ -1192,7 +1192,7 @@
     ]
   },
   "_TZE200_ckud7u2l": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -1200,7 +1200,7 @@
     ]
   },
   "_TZE200_hvaxb2tc": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -1208,7 +1208,7 @@
     ]
   },
   "_TZE200_6rdj8dzm": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -1301,7 +1301,7 @@
     "notes": "GitHub Issue #79 - Patrickske1"
   },
   "_TZ3210_ngqk6jia": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -1309,7 +1309,7 @@
     ]
   },
   "_TZE200_la2c2uo9": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -1341,7 +1341,7 @@
     "notes": "Each button is an endpoint (1-4). Uses genOnOff commands. Battery via genPowerCfg."
   },
   "_TZ3000_abrsvsou": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -1365,7 +1365,7 @@
     ]
   },
   "_TZ3000_iy2c3n6p": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -2353,7 +2353,7 @@
     ]
   },
   "_TZ3000_bs93npae": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2361,7 +2361,7 @@
     ]
   },
   "_TZ3000_8h7wgocw": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2369,7 +2369,7 @@
     ]
   },
   "_TZ3000_e3vhyirx": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2377,7 +2377,7 @@
     ]
   },
   "_TZ3000_femsaaua": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2385,7 +2385,7 @@
     ]
   },
   "_TZ3000_5iixzdo7": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2393,7 +2393,7 @@
     ]
   },
   "_TZ3000_yruungrl": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2401,7 +2401,7 @@
     ]
   },
   "_TZ3000_jwv3cwak": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2409,7 +2409,7 @@
     ]
   },
   "_TZ3000_74hsp7qy": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2417,7 +2417,7 @@
     ]
   },
   "_TZ3210_dwytrmda": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2425,7 +2425,7 @@
     ]
   },
   "_TZ3000_vw8pawxa": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2433,7 +2433,7 @@
     ]
   },
   "_TZ3210_xbpt8ewc": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2441,7 +2441,7 @@
     ]
   },
   "_TZ3000_cet6ch1r": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2449,7 +2449,7 @@
     ]
   },
   "_TZ3000_1dd0d5yi": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2457,7 +2457,7 @@
     ]
   },
   "_TZE200_oisqyl4o": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2465,7 +2465,7 @@
     ]
   },
   "_TZ3000_uim07oem": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2473,7 +2473,7 @@
     ]
   },
   "_TZE200_js3mgbjb": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2481,7 +2481,7 @@
     ]
   },
   "_TZE200_7deq70b8": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2489,7 +2489,7 @@
     ]
   },
   "_TZE204_ptaqh9tk": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2497,7 +2497,7 @@
     ]
   },
   "_TZE200_9caxna4s": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2505,7 +2505,7 @@
     ]
   },
   "_TZE200_aqnazj70": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2513,7 +2513,7 @@
     ]
   },
   "_TZE200_di3tfv5b": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2521,7 +2521,7 @@
     ]
   },
   "_TZE200_mexisfik": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2529,7 +2529,7 @@
     ]
   },
   "_TZE204_mexisfik": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2537,7 +2537,7 @@
     ]
   },
   "_TZE204_6wi2mope": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2545,7 +2545,7 @@
     ]
   },
   "_TZE200_6wi2mope": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2553,7 +2553,7 @@
     ]
   },
   "_TZE204_iik0pquw": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2561,7 +2561,7 @@
     ]
   },
   "_TZE204_aagrxlbd": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2569,7 +2569,7 @@
     ]
   },
   "_TZE204_f5efvtbv": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2577,7 +2577,7 @@
     ]
   },
   "_TZE284_f5efvtbv": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2585,7 +2585,7 @@
     ]
   },
   "_TZE204_lbhh5o6z": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2593,7 +2593,7 @@
     ]
   },
   "_TZE284_lbhh5o6z": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2601,7 +2601,7 @@
     ]
   },
   "_TZ3000_oborybow": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2609,7 +2609,7 @@
     ]
   },
   "_TZ3000_el5kt5im": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2617,7 +2617,7 @@
     ]
   },
   "_TZ3000_49qchf10": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2625,7 +2625,7 @@
     ]
   },
   "_TZ3000_rylaozuc": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2633,7 +2633,7 @@
     ]
   },
   "_TZ3000_5fkufhn1": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2641,7 +2641,7 @@
     ]
   },
   "_TZ3000_8uaoilu9": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2649,7 +2649,7 @@
     ]
   },
   "_TZB210_lmqquxus": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2657,7 +2657,7 @@
     ]
   },
   "_TZ3000_zw7wr5uo": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2665,7 +2665,7 @@
     ]
   },
   "_TZ3000_sosdczdl": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2673,7 +2673,7 @@
     ]
   },
   "_TZ3000_odygigth": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2681,7 +2681,7 @@
     ]
   },
   "_TZ3000_kdpxju99": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2689,7 +2689,7 @@
     ]
   },
   "_TZ3000_dbou1ap4": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2697,7 +2697,7 @@
     ]
   },
   "_TZ3000_9cpuaca6": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2705,7 +2705,7 @@
     ]
   },
   "_TZ3000_gek6snaj": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2713,7 +2713,7 @@
     ]
   },
   "_TZ3000_evag0pvn": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2721,7 +2721,7 @@
     ]
   },
   "_TZ3000_riwp3k79": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2729,7 +2729,7 @@
     ]
   },
   "_TZE200_eegnwoyw": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2737,7 +2737,7 @@
     ]
   },
   "_TZE600_ogyg1y6b": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2745,7 +2745,7 @@
     ]
   },
   "_TZE200_cpbo62rn": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2753,7 +2753,7 @@
     ]
   },
   "_TZE200_libht6ua": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2761,7 +2761,7 @@
     ]
   },
   "_TZE284_libht6ua": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2769,7 +2769,7 @@
     ]
   },
   "_TZE200_zvo63cmo": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2777,7 +2777,7 @@
     ]
   },
   "_TZE204_r0jdjrvi": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2785,7 +2785,7 @@
     ]
   },
   "_TZE200_g5xqosu7": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2793,7 +2793,7 @@
     ]
   },
   "_TZE204_g5xqosu7": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2801,7 +2801,7 @@
     ]
   },
   "_TZE284_fzo2pocs": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2809,7 +2809,7 @@
     ]
   },
   "_TZE200_9vpe3fl1": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2817,7 +2817,7 @@
     ]
   },
   "_TZE200_a8z0g46u": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2825,7 +2825,7 @@
     ]
   },
   "_TZE204_a8z0g46u": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2833,7 +2833,7 @@
     ]
   },
   "_TZE284_debczeci": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2841,7 +2841,7 @@
     ]
   },
   "_TZE284_1lvln0x6": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2867,7 +2867,7 @@
     }
   },
   "_TZE200_ax8a8ahx": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2875,7 +2875,7 @@
     ]
   },
   "_TZE204_2rvvqjoa": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2883,7 +2883,7 @@
     ]
   },
   "_TZE284_2gi1hy8s": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2891,7 +2891,7 @@
     ]
   },
   "_TZE200_ywdxldoj": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2899,7 +2899,7 @@
     ]
   },
   "_TZE200_do5qy8zo": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2907,7 +2907,7 @@
     ]
   },
   "_TZE200_cwnjrr72": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2915,7 +2915,7 @@
     ]
   },
   "_TZE200_pvvbommb": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2923,7 +2923,7 @@
     ]
   },
   "_TZE200_9sfg7gm0": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2931,7 +2931,7 @@
     ]
   },
   "_TZE200_2atgpdho": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2939,7 +2939,7 @@
     ]
   },
   "_TZE200_znlqjmih": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2947,7 +2947,7 @@
     ]
   },
   "_TZE200_8thwkzxl": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2955,7 +2955,7 @@
     ]
   },
   "_TZE200_4eeyebrt": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2963,7 +2963,7 @@
     ]
   },
   "_TZE200_8whxpsiw": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2971,7 +2971,7 @@
     ]
   },
   "_TZE200_7fqkphoq": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2979,7 +2979,7 @@
     ]
   },
   "_TZE200_lpwgshtl": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2987,7 +2987,7 @@
     ]
   },
   "_TZE200_qjp4ynvi": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -2995,7 +2995,7 @@
     ]
   },
   "_TZE200_xby0s3ta": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3003,7 +3003,7 @@
     ]
   },
   "_TZE200_zah67ekd": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3011,7 +3011,7 @@
     ]
   },
   "_TZE200_icka1clh": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3019,7 +3019,7 @@
     ]
   },
   "_TZE200_sur6q7ko": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3027,7 +3027,7 @@
     ]
   },
   "_TZE200_hue3yfsn": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3035,7 +3035,7 @@
     ]
   },
   "_TZE200_husqqvux": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3043,7 +3043,7 @@
     ]
   },
   "_TZE200_lnbfnyxd": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3051,7 +3051,7 @@
     ]
   },
   "_TZE200_fsow0qsk": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3059,7 +3059,7 @@
     ]
   },
   "_TZE200_lllliz3p": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3067,7 +3067,7 @@
     ]
   },
   "_TZE200_mudxchsu": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3075,7 +3075,7 @@
     ]
   },
   "_TZE200_kds0pmmv": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3083,7 +3083,7 @@
     ]
   },
   "_TZ3002_1s0vfmtv": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3091,7 +3091,7 @@
     ]
   },
   "_TZ3002_gdwja9a7": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3099,7 +3099,7 @@
     ]
   },
   "_TZE284_eaet5qt5": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3107,7 +3107,7 @@
     ]
   },
   "_TZE284_fhvpaltk": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3115,7 +3115,7 @@
     ]
   },
   "_TZE200_p6vz3wzt": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3123,7 +3123,7 @@
     ]
   },
   "_TZE284_uqfph8ah": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3131,7 +3131,7 @@
     ]
   },
   "_TZB000_42ha4rsc": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3139,7 +3139,7 @@
     ]
   },
   "_TZE200_jhkttplm": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3147,7 +3147,7 @@
     ]
   },
   "_TZE200_5nldle7w": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3155,7 +3155,7 @@
     ]
   },
   "_TZE200_bcusnqt8": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3163,7 +3163,7 @@
     ]
   },
   "_TZE204_zqq3cipq": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3171,7 +3171,7 @@
     ]
   },
   "_TZE284_zqq3cipq": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3179,7 +3179,7 @@
     ]
   },
   "_TZE200_npj9bug3": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3187,7 +3187,7 @@
     ]
   },
   "_TZE200_wrmhp6b3": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3195,7 +3195,7 @@
     ]
   },
   "_TZ3000_qiutut5y": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3203,7 +3203,7 @@
     ]
   },
   "_TZE284_k7p2q5d9": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3211,7 +3211,7 @@
     ]
   },
   "_TZE284_65gzcss7": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3227,7 +3227,7 @@
     ]
   },
   "_TZE284_yzr43ayq": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3235,7 +3235,7 @@
     ]
   },
   "_TZE204_mvtclclq": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3243,7 +3243,7 @@
     ]
   },
   "_TZE284_iwyqtclw": {
-    "driverId": "cover_motor",
+    "driverId": "curtain_motor",
     "type": "cover",
     "powerSource": "mains",
     "modelIds": [
@@ -3251,7 +3251,7 @@
     ]
   },
   "_TZB210_rkgngb5o": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3259,7 +3259,7 @@
     ]
   },
   "_TZB210_g01ie5wu": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3267,7 +3267,7 @@
     ]
   },
   "_TZE200_4mh6tyyo": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3275,7 +3275,7 @@
     ]
   },
   "_TZE204_hlx9tnzb": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3283,7 +3283,7 @@
     ]
   },
   "_TZE200_9cxuhakf": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3291,7 +3291,7 @@
     ]
   },
   "_TZE200_a0syesf5": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3299,7 +3299,7 @@
     ]
   },
   "_TZE204_68utemio": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3307,7 +3307,7 @@
     ]
   },
   "_TZE200_0nauxa0p": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3315,7 +3315,7 @@
     ]
   },
   "_TZE200_ykgar0ow": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3323,7 +3323,7 @@
     ]
   },
   "_TZE200_0hb4rdnp": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3331,7 +3331,7 @@
     ]
   },
   "_TZE200_gne0e6mk": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3339,7 +3339,7 @@
     ]
   },
   "_TZE200_whpb9yts": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3347,7 +3347,7 @@
     ]
   },
   "_TZE200_qzaing2g": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3355,7 +3355,7 @@
     ]
   },
   "_TZE200_fjjbhx9d": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3363,7 +3363,7 @@
     ]
   },
   "_TZE200_e3oitdyu": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3371,7 +3371,7 @@
     ]
   },
   "_TZE200_gwkapsoq": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3379,7 +3379,7 @@
     ]
   },
   "_TZE204_zenj4lxv": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3387,7 +3387,7 @@
     ]
   },
   "_TZE200_vm1gyrso": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3395,7 +3395,7 @@
     ]
   },
   "_TZE204_1v1dxkck": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3403,7 +3403,7 @@
     ]
   },
   "_TZE204_znvwzxkq": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3411,7 +3411,7 @@
     ]
   },
   "_TZE284_znvwzxkq": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3419,7 +3419,7 @@
     ]
   },
   "_TZE200_vizxbhco": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3427,7 +3427,7 @@
     ]
   },
   "_TZE204_bxoo2swd": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3435,7 +3435,7 @@
     ]
   },
   "_TZE200_tsxpl0d0": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3443,7 +3443,7 @@
     ]
   },
   "_TZE204_dcnsggvz": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3451,7 +3451,7 @@
     ]
   },
   "_TZE200_p0gzbqct": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3459,7 +3459,7 @@
     ]
   },
   "_TZ3000_oiymh3qu": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3467,7 +3467,7 @@
     ]
   },
   "_TZ3000_ktuoyvt5": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3475,7 +3475,7 @@
     ]
   },
   "_TZ3000_hexqj6ls": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3483,7 +3483,7 @@
     ]
   },
   "_TYST11_pisltm67": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3491,7 +3491,7 @@
     ]
   },
   "_TZE200_pisltm67": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3499,7 +3499,7 @@
     ]
   },
   "_TZ3000_7ysdnebc": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3507,7 +3507,7 @@
     ]
   },
   "_TZ3000_mgusv51k": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3515,7 +3515,7 @@
     ]
   },
   "_TZ3000_zjtxnoft": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3523,7 +3523,7 @@
     ]
   },
   "_TZ3000_kvwrdf47": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3531,7 +3531,7 @@
     ]
   },
   "_TZE204_xpq2rzhq": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3539,7 +3539,7 @@
     ]
   },
   "_TZ3210_weaqkhab": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3547,7 +3547,7 @@
     ]
   },
   "_TZ3210_k1msuvg6": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3555,7 +3555,7 @@
     ]
   },
   "_TZ3210_ysfo0wla": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3563,7 +3563,7 @@
     ]
   },
   "_TZ3210_wdexaypg": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3571,7 +3571,7 @@
     ]
   },
   "_TZ3210_pagajpog": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3579,7 +3579,7 @@
     ]
   },
   "_TZ3210_4ubylghk": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3587,7 +3587,7 @@
     ]
   },
   "_TZ3210_vfwhhldz": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3595,7 +3595,7 @@
     ]
   },
   "_TZ3210_3mpwqzuu": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3603,7 +3603,7 @@
     ]
   },
   "_TZ3210_mt5xjoy6": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3611,7 +3611,7 @@
     ]
   },
   "_TZE200_nslr42tt": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3619,7 +3619,7 @@
     ]
   },
   "_TZE204_kobbcyum": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3627,7 +3627,7 @@
     ]
   },
   "_TZE284_kobbcyum": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3635,7 +3635,7 @@
     ]
   },
   "_TZE284_hecsejsb": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3643,7 +3643,7 @@
     ]
   },
   "_TZE284_432zhuwe": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3651,7 +3651,7 @@
     ]
   },
   "_TZE204_432zhuwe": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3659,7 +3659,7 @@
     ]
   },
   "_TZE284_s5vuaadg": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3667,7 +3667,7 @@
     ]
   },
   "_TZE284_tuhfx7tf": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3675,7 +3675,7 @@
     ]
   },
   "_TZE200_edl8pz1k": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3683,7 +3683,7 @@
     ]
   },
   "_TZE204_edl8pz1k": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3691,7 +3691,7 @@
     ]
   },
   "_TZE204_6a4vxfnv": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3699,7 +3699,7 @@
     ]
   },
   "_TZE200_khah2lkr": {
-    "driverId": "dimmer_1gang",
+    "driverId": "dimmer_wall_1gang",
     "type": "dimmer",
     "powerSource": "mains",
     "modelIds": [
@@ -3707,7 +3707,7 @@
     ]
   },
   "_TZE284_zpvusbtv": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3715,7 +3715,7 @@
     ]
   },
   "_TZE200_bkkmqmyo": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3723,7 +3723,7 @@
     ]
   },
   "_TZE200_eaac7dkw": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3731,7 +3731,7 @@
     ]
   },
   "_TZE204_bkkmqmyo": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3739,7 +3739,7 @@
     ]
   },
   "_TZE204_m64smti7": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3747,7 +3747,7 @@
     ]
   },
   "_TZE204_wbhaespm": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3755,7 +3755,7 @@
     ]
   },
   "_TZE200_wbhaespm": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3763,7 +3763,7 @@
     ]
   },
   "_TZE284_wbhaespm": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3771,7 +3771,7 @@
     ]
   },
   "_TZE200_lsanae15": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3779,7 +3779,7 @@
     ]
   },
   "_TZE204_lsanae15": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3787,7 +3787,7 @@
     ]
   },
   "_TZE200_rhblgy0z": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3795,7 +3795,7 @@
     ]
   },
   "_TZE204_rhblgy0z": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3803,7 +3803,7 @@
     ]
   },
   "_TZE200_byzdayie": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3811,7 +3811,7 @@
     ]
   },
   "_TZE200_fsb6zw01": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3819,7 +3819,7 @@
     ]
   },
   "_TZE200_ewxhg6o9": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3827,7 +3827,7 @@
     ]
   },
   "_TZ3000_xfs39dbf": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3835,7 +3835,7 @@
     ]
   },
   "_TZ3000_4fjiwweb": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3843,7 +3843,7 @@
     ]
   },
   "_TZ3000_uri7ongn": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3851,7 +3851,7 @@
     ]
   },
   "_TZ3000_ixla93vd": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3859,7 +3859,7 @@
     ]
   },
   "_TZ3000_qja6nq5z": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3867,7 +3867,7 @@
     ]
   },
   "_TZ3000_402vrq2i": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3875,7 +3875,7 @@
     ]
   },
   "_TZ3000_gwkzibhs": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3883,7 +3883,7 @@
     ]
   },
   "_TZ3000_ugi8ky6u": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3891,7 +3891,7 @@
     ]
   },
   "_TZE200_x8fp01wi": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3899,7 +3899,7 @@
     ]
   },
   "_TZE204_x8fp01wi": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3907,7 +3907,7 @@
     ]
   },
   "_TZE204_ves1ycwx": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3915,7 +3915,7 @@
     ]
   },
   "_TZE284_ves1ycwx": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3923,7 +3923,7 @@
     ]
   },
   "_TZE200_ves1ycwx": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3931,7 +3931,7 @@
     ]
   },
   "_TZE200_qhlxve78": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3939,7 +3939,7 @@
     ]
   },
   "_TZE284_qhlxve78": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3947,7 +3947,7 @@
     ]
   },
   "_TZE204_qhlxve78": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3955,7 +3955,7 @@
     ]
   },
   "_TZE204_v9hkz2yn": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3963,7 +3963,7 @@
     ]
   },
   "_TZE284_v9hkz2yn": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3971,7 +3971,7 @@
     ]
   },
   "_TZE200_v9hkz2yn": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3979,7 +3979,7 @@
     ]
   },
   "_TZE204_dhotiauw": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3987,7 +3987,7 @@
     ]
   },
   "_TZE200_iwn0gpzz": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -3995,7 +3995,7 @@
     ]
   },
   "_TZE204_iwn0gpzz": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4003,7 +4003,7 @@
     ]
   },
   "_TZE284_iwn0gpzz": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4011,7 +4011,7 @@
     ]
   },
   "_TZE204_ny94onlb": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4019,7 +4019,7 @@
     ]
   },
   "_TZE200_ny94onlb": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4027,7 +4027,7 @@
     ]
   },
   "_TZE284_ny94onlb": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4035,7 +4035,7 @@
     ]
   },
   "_TZE200_dikb3dp6": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4043,7 +4043,7 @@
     ]
   },
   "_TZE204_dikb3dp6": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4051,7 +4051,7 @@
     ]
   },
   "_TZE284_dikb3dp6": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4059,7 +4059,7 @@
     ]
   },
   "_TZE204_ugekduaj": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4067,7 +4067,7 @@
     ]
   },
   "_TZE200_ugekduaj": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4075,7 +4075,7 @@
     ]
   },
   "_TZE204_loejka0i": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4083,7 +4083,7 @@
     ]
   },
   "_TZE284_loejka0i": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4091,7 +4091,7 @@
     ]
   },
   "_TZE204_gomuk3dc": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4099,7 +4099,7 @@
     ]
   },
   "_TZE284_gomuk3dc": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4107,7 +4107,7 @@
     ]
   },
   "_TZE200_gomuk3dc": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4115,7 +4115,7 @@
     ]
   },
   "_TZE204_78ioiaml": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4123,7 +4123,7 @@
     ]
   },
   "_TZE284_78ioiaml": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4131,7 +4131,7 @@
     ]
   },
   "_TZE200_78ioiaml": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4139,7 +4139,7 @@
     ]
   },
   "_TZE204_ac0fhfiq": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4147,7 +4147,7 @@
     ]
   },
   "_TZE284_ac0fhfiq": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4155,7 +4155,7 @@
     ]
   },
   "_TZE200_vmcgja59": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4163,7 +4163,7 @@
     ]
   },
   "_TZE204_dvosyycn": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4171,7 +4171,7 @@
     ]
   },
   "_TZE284_dvosyycn": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4179,7 +4179,7 @@
     ]
   },
   "_TZE200_wktrysab": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4187,7 +4187,7 @@
     ]
   },
   "_TZE204_wktrysab": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4195,7 +4195,7 @@
     ]
   },
   "_TZE204_tdhnhhiy": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4203,7 +4203,7 @@
     ]
   },
   "_TZE200_rks0sgb7": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4211,7 +4211,7 @@
     ]
   },
   "_TZE204_mpbki2zm": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4219,7 +4219,7 @@
     ]
   },
   "_TZE200_mgxy2d9f": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4227,7 +4227,7 @@
     ]
   },
   "_TZE204_l6llgoxq": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4235,7 +4235,7 @@
     ]
   },
   "_TZ3000_kkerjand": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4243,7 +4243,7 @@
     ]
   },
   "_TZE204_q9xty0ad": {
-    "driverId": "energy_meter",
+    "driverId": "power_meter",
     "type": "energy_meter",
     "powerSource": "mains",
     "modelIds": [
@@ -4419,7 +4419,7 @@
     ]
   },
   "_TZE204_rkbxtclc": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4427,7 +4427,7 @@
     ]
   },
   "_TZE204_7ytnacie": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4435,7 +4435,7 @@
     ]
   },
   "_TZE200_dhke3p9w": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4443,7 +4443,7 @@
     ]
   },
   "_TZE284_dhke3p9w": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4451,7 +4451,7 @@
     ]
   },
   "_TZ3000_j0gtlepx": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4459,7 +4459,7 @@
     ]
   },
   "_TZ3000_iivsrikg": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4467,7 +4467,7 @@
     ]
   },
   "_TZ3000_v1srfw9x": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4475,7 +4475,7 @@
     ]
   },
   "_TZ3000_gb5gaeca": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4483,7 +4483,7 @@
     ]
   },
   "_TZ3210_r0xgkft5": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4491,7 +4491,7 @@
     ]
   },
   "_TZ3210_umi6vbsz": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4499,7 +4499,7 @@
     ]
   },
   "_TZ3210_p9ao60da": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4507,7 +4507,7 @@
     ]
   },
   "_TZ3210_z1vlyufu": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4515,7 +4515,7 @@
     ]
   },
   "_TZ3210_hxtfthp5": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4523,7 +4523,7 @@
     ]
   },
   "_TZ3000_quqaeew6": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4531,7 +4531,7 @@
     ]
   },
   "_TZ3000_th6zqqy6": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4539,7 +4539,7 @@
     ]
   },
   "_TZ3000_wr6g6olr": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4547,7 +4547,7 @@
     ]
   },
   "_TZ3000_q50zhdsc": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4555,7 +4555,7 @@
     ]
   },
   "_TZ3000_qd7hej8u": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4563,7 +4563,7 @@
     ]
   },
   "_TZ3000_bwlvyjwk": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4571,7 +4571,7 @@
     ]
   },
   "_TZ3000_taspddvq": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4579,7 +4579,7 @@
     ]
   },
   "_TZ3210_sln7ah6r": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4587,7 +4587,7 @@
     ]
   },
   "_TZ3210_dn5higyl": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4595,7 +4595,7 @@
     ]
   },
   "_TZ3210_hicxa0rh": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4603,7 +4603,7 @@
     ]
   },
   "_TZ3210_zbabx9wh": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4611,7 +4611,7 @@
     ]
   },
   "_TZ3210_c0s1xloa": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4619,7 +4619,7 @@
     ]
   },
   "_TZ3210_x13bu7za": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4627,7 +4627,7 @@
     ]
   },
   "_TZ3210_cieijuw1": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4635,7 +4635,7 @@
     ]
   },
   "_TZ3000_7hcgjxpc": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4643,7 +4643,7 @@
     ]
   },
   "_TZ3210_rcggc0ys": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4651,7 +4651,7 @@
     ]
   },
   "_TZ3210_ljoasixl": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4659,7 +4659,7 @@
     ]
   },
   "_TZ3210_wxa85bwk": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4667,7 +4667,7 @@
     ]
   },
   "_TZ3210_s9lumfhn": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4675,7 +4675,7 @@
     ]
   },
   "_TZ3210_jjqdqxfq": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4683,7 +4683,7 @@
     ]
   },
   "_TZ3210_dwzfzfjc": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4691,7 +4691,7 @@
     ]
   },
   "_TZ3210_ifga63rg": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4699,7 +4699,7 @@
     ]
   },
   "_TZB210_wy1pyu1q": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4707,7 +4707,7 @@
     ]
   },
   "_TZB210_yatkpuha": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4715,7 +4715,7 @@
     ]
   },
   "_TZB210_w9hcix2r": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4723,7 +4723,7 @@
     ]
   },
   "_TZB210_417ikxay": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4731,7 +4731,7 @@
     ]
   },
   "_TZB210_wxazcmsh": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4739,7 +4739,7 @@
     ]
   },
   "_TZ3210_jicmoite": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4747,7 +4747,7 @@
     ]
   },
   "_TZB210_rs0ufzwg": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4755,7 +4755,7 @@
     ]
   },
   "_TZ3210_zrvxvydd": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4763,7 +4763,7 @@
     ]
   },
   "_TZB210_endmggws": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4771,7 +4771,7 @@
     ]
   },
   "_TZB210_6eed09b9": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4779,7 +4779,7 @@
     ]
   },
   "_TZB210_rwy5hexp": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4787,7 +4787,7 @@
     ]
   },
   "_TZB210_lnnkh3f9": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4795,7 +4795,7 @@
     ]
   },
   "_TZ3210_jd3z4yig": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4803,7 +4803,7 @@
     ]
   },
   "_TZ3210_r5afgmkl": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4811,7 +4811,7 @@
     ]
   },
   "_TZ3210_mja6r5ix": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4819,7 +4819,7 @@
     ]
   },
   "_TZB210_zmppwawa": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4827,7 +4827,7 @@
     ]
   },
   "_TZ3210_iw0zkcu8": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4835,7 +4835,7 @@
     ]
   },
   "_TZ3210_iystcadi": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4843,7 +4843,7 @@
     ]
   },
   "_TZ3210_it1u8ahz": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4851,7 +4851,7 @@
     ]
   },
   "_TZB210_3zfp8mki": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4859,7 +4859,7 @@
     ]
   },
   "_TZB210_gj0ccsar": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4867,7 +4867,7 @@
     ]
   },
   "_TZ3210_bfwvfyx1": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4875,7 +4875,7 @@
     ]
   },
   "_TZ3210_778drfdt": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4883,7 +4883,7 @@
     ]
   },
   "_TZ3000_j2w1dw29": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4891,7 +4891,7 @@
     ]
   },
   "_TZ3000_nosnx7im": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4899,7 +4899,7 @@
     ]
   },
   "_TZ3000_7dcddnye": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4907,7 +4907,7 @@
     ]
   },
   "_TZ3000_nbnmw9nc": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4915,7 +4915,7 @@
     ]
   },
   "_TZ3210_dxroobu3": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4923,7 +4923,7 @@
     ]
   },
   "_TZ3210_dbilpfqk": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4931,7 +4931,7 @@
     ]
   },
   "_TZ3000_juq7i1fr": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4939,7 +4939,7 @@
     ]
   },
   "_TYZB01_vwqnz1sn": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4947,7 +4947,7 @@
     ]
   },
   "_TZ3000_tj4pwzzm": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4955,7 +4955,7 @@
     ]
   },
   "_TZ3000_ssp0maqm": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4963,7 +4963,7 @@
     ]
   },
   "_TZ3000_p3fph1go": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4971,7 +4971,7 @@
     ]
   },
   "_TZ3000_9r5jaajv": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4979,7 +4979,7 @@
     ]
   },
   "_TZ3000_g1glzzfk": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4987,7 +4987,7 @@
     ]
   },
   "_TZ3210_frm6149r": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -4995,7 +4995,7 @@
     ]
   },
   "_TZ3210_jtifm80b": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5003,7 +5003,7 @@
     ]
   },
   "_TZ3210_xwqng7ol": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5011,7 +5011,7 @@
     ]
   },
   "_TZB210_ue01a0s2": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5019,7 +5019,7 @@
     ]
   },
   "_TZB210_ayx58ft5": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5027,7 +5027,7 @@
     ]
   },
   "_TZB210_eiwanbeb": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5035,7 +5035,7 @@
     ]
   },
   "_TZB210_0bkzabht": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5043,7 +5043,7 @@
     ]
   },
   "_TZ3210_c2iwpxf1": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5051,7 +5051,7 @@
     ]
   },
   "_TZ3210_09hzmirw": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5059,7 +5059,7 @@
     ]
   },
   "_TZ3000_7ed9cqgi": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5067,7 +5067,7 @@
     ]
   },
   "_TZ3000_zmy4lslw": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5075,7 +5075,7 @@
     ]
   },
   "_TZ3000_ruxexjfz": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5083,7 +5083,7 @@
     ]
   },
   "_TZ3000_4xfqlgqo": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5091,7 +5091,7 @@
     ]
   },
   "_TZ3000_hojntt34": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5099,7 +5099,7 @@
     ]
   },
   "_TZ3000_eei0ubpy": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5107,7 +5107,7 @@
     ]
   },
   "_TZ3000_qaa59zqd": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5115,7 +5115,7 @@
     ]
   },
   "_TZ3000_lmlsduws": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5123,7 +5123,7 @@
     ]
   },
   "_TZ3000_lugaswf8": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5131,7 +5131,7 @@
     ]
   },
   "_TZ3000_nuenzetq": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5139,7 +5139,7 @@
     ]
   },
   "_TZ3000_ruldv5dt": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5147,7 +5147,7 @@
     ]
   },
   "_TZ3000_fbjdkph9": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5155,7 +5155,7 @@
     ]
   },
   "_TZ3000_zbfya6h0": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5163,7 +5163,7 @@
     ]
   },
   "_TZ3000_ywubfuvt": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5171,7 +5171,7 @@
     ]
   },
   "_TZ3000_wnzoyohq": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5179,7 +5179,7 @@
     ]
   },
   "_TZ3000_5ksufhqi": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5187,7 +5187,7 @@
     ]
   },
   "_TZ3000_zxrfobzw": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5195,7 +5195,7 @@
     ]
   },
   "_TZ3000_tas0zemd": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5203,7 +5203,7 @@
     ]
   },
   "_TZ3000_rhkfbfcv": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5211,7 +5211,7 @@
     ]
   },
   "_TZ3000_empogkya": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5219,7 +5219,7 @@
     ]
   },
   "_TZ3000_lubfc1t5": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5227,7 +5227,7 @@
     ]
   },
   "_TZ3000_lsunm46z": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5235,7 +5235,7 @@
     ]
   },
   "_TZ3000_uilitwsy": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5243,7 +5243,7 @@
     ]
   },
   "_TZ3000_66fekqhh": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5251,7 +5251,7 @@
     ]
   },
   "_TZ3000_aknpkt02": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5259,7 +5259,7 @@
     ]
   },
   "_TZ3000_fawk5xjv": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5267,7 +5267,7 @@
     ]
   },
   "_TZ3000_bvij6kod": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5275,7 +5275,7 @@
     ]
   },
   "_TZ3000_aracgljk": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5283,7 +5283,7 @@
     ]
   },
   "_TZ3000_18ejxno0": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5291,7 +5291,7 @@
     ]
   },
   "_TZ3000_jl7qyupf": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5299,7 +5299,7 @@
     ]
   },
   "_TZ3000_n": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5307,7 +5307,7 @@
     ]
   },
   "_TZ3000_kpatq5pq": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5315,7 +5315,7 @@
     ]
   },
   "_TZ3000_ljhbw1c9": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5323,7 +5323,7 @@
     ]
   },
   "_TZ3000_4zf0crgo": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5331,7 +5331,7 @@
     ]
   },
   "_TZ3000_ypgri8yz": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5339,7 +5339,7 @@
     ]
   },
   "_TZ3000_sznawwyw": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5347,7 +5347,7 @@
     ]
   },
   "_TZ3000_mdj7kra9": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5355,7 +5355,7 @@
     ]
   },
   "_TZ3000_u3oupgdy": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5363,7 +5363,7 @@
     ]
   },
   "_TZ3000_imaccztn": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5371,7 +5371,7 @@
     ]
   },
   "_TZ3000_nivavasg": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5379,7 +5379,7 @@
     ]
   },
   "_TZ3000_gexniqbq": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5387,7 +5387,7 @@
     ]
   },
   "_TZ3000_iymfxdis": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5395,7 +5395,7 @@
     ]
   },
   "_TZ3000_ncb6mkx8": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5403,7 +5403,7 @@
     ]
   },
   "_TZ3000_m3pafcnk": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5411,7 +5411,7 @@
     ]
   },
   "_TZ3002_m3pafcnk": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5419,7 +5419,7 @@
     ]
   },
   "_TZ3002_aewsvjcu": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5427,7 +5427,7 @@
     ]
   },
   "_TZ3002_phu8ygaw": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5435,7 +5435,7 @@
     ]
   },
   "_TZ3000_qhyadm57": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5443,7 +5443,7 @@
     ]
   },
   "_TZ3002_iedhxgyi": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5451,7 +5451,7 @@
     ]
   },
   "_TZ3000_t9qqxn70": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5459,7 +5459,7 @@
     ]
   },
   "_TZ3000_j6adk9id": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5467,7 +5467,7 @@
     ]
   },
   "_TZE200_lawxy9e2": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5475,7 +5475,7 @@
     ]
   },
   "_TZE204_lawxy9e2": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5483,7 +5483,7 @@
     ]
   },
   "_TZ3000_fa9mlvja": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5491,7 +5491,7 @@
     ]
   },
   "_TZ3218_hdc8bbha": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5499,7 +5499,7 @@
     ]
   },
   "_TZ3000_bmqxalil": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5507,7 +5507,7 @@
     ]
   },
   "_TZ3000_w1tcofu8": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5515,7 +5515,7 @@
     ]
   },
   "_TZ3000_ma3mhpx2": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5523,7 +5523,7 @@
     ]
   },
   "_TZ3000_wijoqjk1": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5531,7 +5531,7 @@
     ]
   },
   "_TZ3000_65ajyxua": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5539,7 +5539,7 @@
     ]
   },
   "_TZ3000_qq9ahj6z": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5547,7 +5547,7 @@
     ]
   },
   "_TZ3000_pv4puuxi": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5555,7 +5555,7 @@
     ]
   },
   "_TZ3000_avky2mvc": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5563,7 +5563,7 @@
     ]
   },
   "_TZ3000_785olaiq": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5571,7 +5571,7 @@
     ]
   },
   "_TZ3000_qxcnwv26": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5579,7 +5579,7 @@
     ]
   },
   "_TZE200_hewlydpz": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5587,7 +5587,7 @@
     ]
   },
   "_TZE200_wunufsil": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5595,7 +5595,7 @@
     ]
   },
   "_TZE200_vhy3iakz": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5603,7 +5603,7 @@
     ]
   },
   "_TZE200_k6jhsr0q": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5611,7 +5611,7 @@
     ]
   },
   "_TZE204_unsxl4ir": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5619,7 +5619,7 @@
     ]
   },
   "_TZE200_nvodulvi": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5627,7 +5627,7 @@
     ]
   },
   "_TZE204_drs6j6m5": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5635,7 +5635,7 @@
     ]
   },
   "_TZE204_k7mfgaen": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5643,7 +5643,7 @@
     ]
   },
   "_TZE204_fncxk3ob": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5651,7 +5651,7 @@
     ]
   },
   "_TZE284_fncxk3ob": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5659,7 +5659,7 @@
     ]
   },
   "_TZ3218_ya5d6wth": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5667,7 +5667,7 @@
     ]
   },
   "_TZE204_atdqo4nj": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5675,7 +5675,7 @@
     ]
   },
   "_TZ3000_qvmiyxuk": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5683,7 +5683,7 @@
     ]
   },
   "_TZ3000_5kxl9esg": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5691,7 +5691,7 @@
     ]
   },
   "_TZ3002_jn2x20tg": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5699,7 +5699,7 @@
     ]
   },
   "_TZ3000_ezqbvrqz": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5707,7 +5707,7 @@
     ]
   },
   "_TZ3002_ymv5vytn": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5715,7 +5715,7 @@
     ]
   },
   "_TZ3002_6ahhkwyh": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5723,7 +5723,7 @@
     ]
   },
   "_TZ3002_zjuvw9zf": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5731,7 +5731,7 @@
     ]
   },
   "_TZ3000_noru9tix": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5739,7 +5739,7 @@
     ]
   },
   "_TZ3002_rbnycsav": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5747,7 +5747,7 @@
     ]
   },
   "_TZ3002_kq3kqwjt": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5755,7 +5755,7 @@
     ]
   },
   "_TZ3000_rsylfthg": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5763,7 +5763,7 @@
     ]
   },
   "_TZ3002_umdkr64x": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5771,7 +5771,7 @@
     ]
   },
   "_TZE200_oc7xqqbs": {
-    "driverId": "light_dimmable",
+    "driverId": "bulb_dimmable",
     "type": "light",
     "powerSource": "mains",
     "modelIds": [
@@ -5779,7 +5779,7 @@
     ]
   },
   "_TZE200_dwcarsat": {
-    "driverId": "light_sensor",
+    "driverId": "illuminance_sensor",
     "type": "light_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -5787,7 +5787,7 @@
     ]
   },
   "_TZE204_dwcarsat": {
-    "driverId": "light_sensor",
+    "driverId": "illuminance_sensor",
     "type": "light_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -5795,7 +5795,7 @@
     ]
   },
   "_TZE200_blfcpsxz": {
-    "driverId": "light_sensor",
+    "driverId": "illuminance_sensor",
     "type": "light_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -5803,7 +5803,7 @@
     ]
   },
   "_TYZB01_4mdqxxnn": {
-    "driverId": "light_sensor",
+    "driverId": "illuminance_sensor",
     "type": "light_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -5811,7 +5811,7 @@
     ]
   },
   "_TYZB01_m6ec2pgj": {
-    "driverId": "light_sensor",
+    "driverId": "illuminance_sensor",
     "type": "light_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -5819,7 +5819,7 @@
     ]
   },
   "_TZ3000_do6txrcw": {
-    "driverId": "light_sensor",
+    "driverId": "illuminance_sensor",
     "type": "light_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -5827,7 +5827,7 @@
     ]
   },
   "_TZ3000_7kscdesh": {
-    "driverId": "light_sensor",
+    "driverId": "illuminance_sensor",
     "type": "light_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -5835,7 +5835,7 @@
     ]
   },
   "_TZ3000_hy6ncvmw": {
-    "driverId": "light_sensor",
+    "driverId": "illuminance_sensor",
     "type": "light_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -5843,7 +5843,7 @@
     ]
   },
   "_TZE200_kltffuzl": {
-    "driverId": "light_sensor",
+    "driverId": "illuminance_sensor",
     "type": "light_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -5851,7 +5851,7 @@
     ]
   },
   "_TZE200_fwoorn8y": {
-    "driverId": "light_sensor",
+    "driverId": "illuminance_sensor",
     "type": "light_sensor",
     "powerSource": "battery",
     "modelIds": [
@@ -6260,7 +6260,7 @@
     ]
   },
   "_TZ3210_ncw88jfq": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6268,7 +6268,7 @@
     ]
   },
   "_TZ3000_ywagc4rj": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6276,7 +6276,7 @@
     ]
   },
   "_TZ3210_3ulg9kpo": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6284,7 +6284,7 @@
     ]
   },
   "_TZE200_ogkdpgy2": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6292,7 +6292,7 @@
     ]
   },
   "_TZE200_3ejwxpmu": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6300,7 +6300,7 @@
     ]
   },
   "_TZE204_3ejwxpmu": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6308,7 +6308,7 @@
     ]
   },
   "_TZE200_ggev5fsl": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6316,7 +6316,7 @@
     ]
   },
   "_TZE200_u319yc66": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6324,7 +6324,7 @@
     ]
   },
   "_TZE200_kvpwq8z7": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6332,7 +6332,7 @@
     ]
   },
   "_TZE204_kvpwq8z7": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6340,7 +6340,7 @@
     ]
   },
   "_TYZB01_ijihzffk": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6348,7 +6348,7 @@
     ]
   },
   "_TZ3210_tfxwxklq": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6356,7 +6356,7 @@
     ]
   },
   "_TZE204_2imwyigp": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6364,7 +6364,7 @@
     ]
   },
   "_TZE200_2imwyigp": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6372,7 +6372,7 @@
     ]
   },
   "_TZE204_xu4a5rhj": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6380,7 +6380,7 @@
     ]
   },
   "_TZ3000_qeuvnohg": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6388,7 +6388,7 @@
     ]
   },
   "_TZ3000_6l1pjfqe": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6396,7 +6396,7 @@
     ]
   },
   "_TZ3000_2iiimqs9": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6404,7 +6404,7 @@
     ]
   },
   "_TZ3000_7issjl2q": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6412,7 +6412,7 @@
     ]
   },
   "_TZ3000_gzvniqjb": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6420,7 +6420,7 @@
     ]
   },
   "_TZE200_nklqjk62": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6428,7 +6428,7 @@
     ]
   },
   "_TZE200_kzm5w4iz": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6436,7 +6436,7 @@
     ]
   },
   "_TZE204_iadro9bf": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6444,7 +6444,7 @@
     ]
   },
   "_TZE284_iadro9bf": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6452,7 +6452,7 @@
     ]
   },
   "_TZE204_laokfqwu": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6460,7 +6460,7 @@
     ]
   },
   "_TZ3290_7v1k4vufotpowp9z": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6588,7 +6588,7 @@
     ]
   },
   "_TZE200_8eazvzo6": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6596,7 +6596,7 @@
     ]
   },
   "_TZE200_iuk8kupi": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6604,7 +6604,7 @@
     ]
   },
   "_TZE204_iuk8kupi": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6612,7 +6612,7 @@
     ]
   },
   "_TZE284_6ocnqlhn": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6620,7 +6620,7 @@
     ]
   },
   "_TZE204_nbkshs6k": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6628,7 +6628,7 @@
     ]
   },
   "_TZE200_pbo8cj0z": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6636,7 +6636,7 @@
     ]
   },
   "_TZE200_eo6xhfbo": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6644,7 +6644,7 @@
     ]
   },
   "_TZE200_lvkk0hdg": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6652,7 +6652,7 @@
     ]
   },
   "_TZE204_q12rv9gj": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6660,7 +6660,7 @@
     ]
   },
   "_TZE204_eaulras5": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6668,7 +6668,7 @@
     ]
   },
   "_TZE204_eekpf0ft": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6676,7 +6676,7 @@
     ]
   },
   "_TZE284_eekpf0ft": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6684,7 +6684,7 @@
     ]
   },
   "_TZE204_mul9abs3": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6692,7 +6692,7 @@
     ]
   },
   "_TZE284_a14rjslz": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6700,7 +6700,7 @@
     ]
   },
   "_TZE204_no6qtgtl": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6708,7 +6708,7 @@
     ]
   },
   "_TZE284_gyzlwu5q": {
-    "driverId": "zigbee_universal",
+    "driverId": "generic_tuya",
     "type": "other",
     "powerSource": "unknown",
     "modelIds": [
@@ -6716,7 +6716,7 @@
     ]
   },
   "_TYZB01_hlla45kx": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6724,7 +6724,7 @@
     ]
   },
   "_TZ3000_rgpqqmbj": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6732,7 +6732,7 @@
     ]
   },
   "_TZ3000_sgb0xhwn": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6740,7 +6740,7 @@
     ]
   },
   "_TZ3000_rk2yzt0u": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6748,7 +6748,7 @@
     ]
   },
   "_TZ3000_o4cjetlm": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6756,7 +6756,7 @@
     ]
   },
   "_TZ3000_iedbgyxt": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6764,7 +6764,7 @@
     ]
   },
   "_TZ3000_h3noz0a5": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6772,7 +6772,7 @@
     ]
   },
   "_TYZB01_4tlksk8a": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6780,7 +6780,7 @@
     ]
   },
   "_TZ3000_5ucujjts": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6788,7 +6788,7 @@
     ]
   },
   "_TZ3000_h8ngtlxy": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6796,7 +6796,7 @@
     ]
   },
   "_TZ3000_w0ypwa1f": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6804,7 +6804,7 @@
     ]
   },
   "_TZ3000_wpueorev": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6812,7 +6812,7 @@
     ]
   },
   "_TZ3000_cmcjbqup": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6820,7 +6820,7 @@
     ]
   },
   "_TYZB01_rifa0wlb": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6828,7 +6828,7 @@
     ]
   },
   "_TZ3210_2dfy6tol": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6836,7 +6836,7 @@
     ]
   },
   "_TYZB01_7yidyqxd": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6844,7 +6844,7 @@
     ]
   },
   "_TZE200_ga1maeof": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6852,7 +6852,7 @@
     ]
   },
   "_TZE200_2se8efxh": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6860,7 +6860,7 @@
     ]
   },
   "_TZE284_2se8efxh": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6868,7 +6868,7 @@
     ]
   },
   "_TZE200_9cqcpkgb": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6876,7 +6876,7 @@
     ]
   },
   "_TZ3000_wxtp7c5y": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6884,7 +6884,7 @@
     ]
   },
   "_TYZB01_mtunwanm": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6892,7 +6892,7 @@
     ]
   },
   "_TZ3210_fhx7lk3d": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6900,7 +6900,7 @@
     ]
   },
   "_TZ3000_gazjngjl": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6908,7 +6908,7 @@
     ]
   },
   "_TYZB01_ymcdbl3u": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6916,7 +6916,7 @@
     ]
   },
   "_TZ3000_4ux0ondb": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6924,7 +6924,7 @@
     ]
   },
   "_TZ3000_b28wrpvx": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6932,7 +6932,7 @@
     ]
   },
   "_TZ3210_5ct6e7ye": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6940,7 +6940,7 @@
     ]
   },
   "_TZ3000_2putqrmw": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6948,7 +6948,7 @@
     ]
   },
   "_TZ3000_ksw8qtmt": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6956,7 +6956,7 @@
     ]
   },
   "_TZ3000_yujkchbz": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6964,7 +6964,7 @@
     ]
   },
   "_TZ3000_ss98ec5d": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6972,7 +6972,7 @@
     ]
   },
   "_TZ3000_okaz9tjs": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6980,7 +6980,7 @@
     ]
   },
   "_TZ3000_y4ona9me": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6988,7 +6988,7 @@
     ]
   },
   "_TZ3000_266azbg3": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -6996,7 +6996,7 @@
     ]
   },
   "_TZ3000_3ias4w4o": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7004,7 +7004,7 @@
     ]
   },
   "_TZ3210_ddigca5n": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7012,7 +7012,7 @@
     ]
   },
   "_TZ3000_ww6drja5": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7020,7 +7020,7 @@
     ]
   },
   "_TZ3210_rwmitwj4": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7028,7 +7028,7 @@
     ]
   },
   "_TZ3000_cicwjqth": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7036,7 +7036,7 @@
     ]
   },
   "_TZ3210_jlf1nepw": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7044,7 +7044,7 @@
     ]
   },
   "_TZ3000_0zfrhq4i": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7052,7 +7052,7 @@
     ]
   },
   "_TZ3000_hyfvrar3": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7060,7 +7060,7 @@
     ]
   },
   "_TZ3000_v1pdxuqq": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7068,7 +7068,7 @@
     ]
   },
   "_TZ3000_8a833yls": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7076,7 +7076,7 @@
     ]
   },
   "_TZ3000_bfn1w0mm": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7084,7 +7084,7 @@
     ]
   },
   "_TZ3000_nzkqcvvs": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7092,7 +7092,7 @@
     ]
   },
   "_TZ3000_rtcrrvia": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7100,7 +7100,7 @@
     ]
   },
   "_TZ3000_ysiog9xi": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7108,7 +7108,7 @@
     ]
   },
   "_TZ3000_o1jzcxou": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7116,7 +7116,7 @@
     ]
   },
   "_TZ3000_in5s3wn1": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7124,7 +7124,7 @@
     ]
   },
   "_TZ3000_wbloefbf": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7132,7 +7132,7 @@
     ]
   },
   "_TZ3000_dlug3kbc": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7140,7 +7140,7 @@
     ]
   },
   "_TZE204_ntcy3xu1": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7148,7 +7148,7 @@
     ]
   },
   "_TZ3000_rqbjepe8": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7156,7 +7156,7 @@
     ]
   },
   "_TZ3000_uwkja6z1": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7164,7 +7164,7 @@
     ]
   },
   "_TZ3000_o005nuxx": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7172,7 +7172,7 @@
     ]
   },
   "_TZ3000_gdyjfvgm": {
-    "driverId": "plug_1socket",
+    "driverId": "plug_smart",
     "type": "plug",
     "powerSource": "mains",
     "modelIds": [
@@ -7956,7 +7956,7 @@
     ]
   },
   "_TYZB01_sbpc1zrb": {
-    "driverId": "siren_alarm",
+    "driverId": "siren",
     "type": "siren",
     "powerSource": "mains",
     "modelIds": [
@@ -7964,7 +7964,7 @@
     ]
   },
   "_TZE200_znzs7yaw": {
-    "driverId": "siren_alarm",
+    "driverId": "siren",
     "type": "siren",
     "powerSource": "mains",
     "modelIds": [
@@ -7972,7 +7972,7 @@
     ]
   },
   "_TZE204_vmcgja59": {
-    "driverId": "siren_alarm",
+    "driverId": "siren",
     "type": "siren",
     "powerSource": "mains",
     "modelIds": [
@@ -7980,7 +7980,7 @@
     ]
   },
   "_TZE284_vmcgja59": {
-    "driverId": "siren_alarm",
+    "driverId": "siren",
     "type": "siren",
     "powerSource": "mains",
     "modelIds": [
@@ -7988,7 +7988,7 @@
     ]
   },
   "_TZE204_ex3rcdha": {
-    "driverId": "siren_alarm",
+    "driverId": "siren",
     "type": "siren",
     "powerSource": "mains",
     "modelIds": [
@@ -10197,7 +10197,7 @@
     ]
   },
   "_TZE204_myd45weu": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10205,7 +10205,7 @@
     ]
   },
   "_TZE200_dzuqwsyg": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10213,7 +10213,7 @@
     ]
   },
   "_TZE200_qq9mpfhw": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10221,7 +10221,7 @@
     ]
   },
   "_TZE200_rufdtfyv": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10229,7 +10229,7 @@
     ]
   },
   "_TZE200_rk1wojce": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10237,7 +10237,7 @@
     ]
   },
   "_TZE200_rndg81sf": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10245,7 +10245,7 @@
     ]
   },
   "_TZE204_g2ki0ejr": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10253,7 +10253,7 @@
     ]
   },
   "_TZE204_tbgecldg": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10261,7 +10261,7 @@
     ]
   },
   "_TZE284_tbgecldg": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10269,7 +10269,7 @@
     ]
   },
   "_TZE200_tbgecldg": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10277,7 +10277,7 @@
     ]
   },
   "_TZE200_68nvbio9": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10285,7 +10285,7 @@
     ]
   },
   "_TZE200_pw7mji0l": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10293,7 +10293,7 @@
     ]
   },
   "_TZE200_cf1sl3tj": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10301,7 +10301,7 @@
     ]
   },
   "_TZE200_nw1r9hp6": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10309,7 +10309,7 @@
     ]
   },
   "_TZE200_9p5xmj5r": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10317,7 +10317,7 @@
     ]
   },
   "_TZE200_eevqq1uv": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10325,7 +10325,7 @@
     ]
   },
   "_TZE204_ejh6owwz": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10333,7 +10333,7 @@
     ]
   },
   "_TZE200_ba69l9ol": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10341,7 +10341,7 @@
     ]
   },
   "_TZE200_68nvbi09": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10349,7 +10349,7 @@
     ]
   },
   "_TZE200_e9ba97vf": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10357,7 +10357,7 @@
     ]
   },
   "_TZE200_7yoranx2": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10365,7 +10365,7 @@
     ]
   },
   "_TZE200_py4cm3he": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10373,7 +10373,7 @@
     ]
   },
   "_TZE200_wsbfwodu": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10381,7 +10381,7 @@
     ]
   },
   "_TZE200_x9axofse": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10389,7 +10389,7 @@
     ]
   },
   "_TZE200_lhzapfg9": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10397,7 +10397,7 @@
     ]
   },
   "_TZE200_0hg58wyk": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10405,7 +10405,7 @@
     ]
   },
   "_TZE200_cpmgn2cf": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10413,7 +10413,7 @@
     ]
   },
   "_TZE200_bvu2wnxz": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10421,7 +10421,7 @@
     ]
   },
   "_TZE200_9xfjixap": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10429,7 +10429,7 @@
     ]
   },
   "_TZE200_jkfbph7l": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10437,7 +10437,7 @@
     ]
   },
   "_TZE200_rxntag7i": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10445,7 +10445,7 @@
     ]
   },
   "_TZE200_4utwozi2": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10453,7 +10453,7 @@
     ]
   },
   "_TZE200_yqgbrdyo": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10461,7 +10461,7 @@
     ]
   },
   "_TZE284_p3dbf6qs": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10469,7 +10469,7 @@
     ]
   },
   "_TZE200_rxq4iti9": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10477,7 +10477,7 @@
     ]
   },
   "_TZE204_ogx8u5z6": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10485,7 +10485,7 @@
     ]
   },
   "_TZE200_4utwoz2": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10493,7 +10493,7 @@
     ]
   },
   "_TZE284_ogx8u5z6": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10501,7 +10501,7 @@
     ]
   },
   "_TZE284_o3x45p96": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10509,7 +10509,7 @@
     ]
   },
   "_TZE284_c6wv4xyo": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10517,7 +10517,7 @@
     ]
   },
   "_TZE204_o3x45p96": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10525,7 +10525,7 @@
     ]
   },
   "_TZE200_ow09xlxm": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10533,7 +10533,7 @@
     ]
   },
   "_TZE284_rv6iuyxb": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10541,7 +10541,7 @@
     ]
   },
   "_TZE200_rv6iuyxb": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10549,7 +10549,7 @@
     ]
   },
   "_TZE200_suxywabt": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10557,7 +10557,7 @@
     ]
   },
   "_TZE200_d3z1ukqw": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10565,7 +10565,7 @@
     ]
   },
   "_TZE204_pcdmj88b": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10573,7 +10573,7 @@
     ]
   },
   "_TZE284_pcdmj88b": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10581,7 +10581,7 @@
     ]
   },
   "_TZE200_p3dbf6qs": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10589,7 +10589,7 @@
     ]
   },
   "_TYST11_wv90ladg": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10597,7 +10597,7 @@
     ]
   },
   "_TZE200_wv90ladg": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10605,7 +10605,7 @@
     ]
   },
   "_TYST11_2dpplnsn": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10613,7 +10613,7 @@
     ]
   },
   "_TZE200_2dpplnsn": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10621,7 +10621,7 @@
     ]
   },
   "_TZE200_a4bpgplm": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10629,7 +10629,7 @@
     ]
   },
   "_TZE200_dv8abrrz": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10637,7 +10637,7 @@
     ]
   },
   "_TZE200_z1tyspqw": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10645,7 +10645,7 @@
     ]
   },
   "_TZE200_bvrlmajk": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10653,7 +10653,7 @@
     ]
   },
   "_TZE204_rtrmfadk": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10661,7 +10661,7 @@
     ]
   },
   "_TZE204_cvcu2p6e": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10669,7 +10669,7 @@
     ]
   },
   "_TZE204_9mjy74mp": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10677,7 +10677,7 @@
     ]
   },
   "_TZE200_rtrmfadk": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10685,7 +10685,7 @@
     ]
   },
   "_TZE200_9mjy74mp": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10693,7 +10693,7 @@
     ]
   },
   "_TZE204_qyr2m29i": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10701,7 +10701,7 @@
     ]
   },
   "_TZE204_ltwbm23f": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10709,7 +10709,7 @@
     ]
   },
   "_TZE284_ltwbm23f": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10717,7 +10717,7 @@
     ]
   },
   "_TZE204_xalsoe3m": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10725,7 +10725,7 @@
     ]
   },
   "_TZE284_ymldrmzx": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10733,7 +10733,7 @@
     ]
   },
   "_TZE200_g9a3awaj": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10741,7 +10741,7 @@
     ]
   },
   "_TZE284_6kijc7nd": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10749,7 +10749,7 @@
     ]
   },
   "_TZE204_6kijc7nd": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10757,7 +10757,7 @@
     ]
   },
   "_TZE200_2ekuz3dz": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10765,7 +10765,7 @@
     ]
   },
   "_TZE284_agcxaw3f": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10773,7 +10773,7 @@
     ]
   },
   "_TZE200_viy9ihs7": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10781,7 +10781,7 @@
     ]
   },
   "_TZE204_lzriup1j": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10789,7 +10789,7 @@
     ]
   },
   "_TZE204_xnbkhhdr": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10797,7 +10797,7 @@
     ]
   },
   "_TZE284_xnbkhhdr": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10805,7 +10805,7 @@
     ]
   },
   "_TZE204_oh8y8pv8": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10813,7 +10813,7 @@
     ]
   },
   "_TZE204_gops3slb": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10821,7 +10821,7 @@
     ]
   },
   "_TZE284_gops3slb": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10829,7 +10829,7 @@
     ]
   },
   "_TZE284_zjhoqbrd": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10837,7 +10837,7 @@
     ]
   },
   "_TZE204_zjhoqbrd": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10845,7 +10845,7 @@
     ]
   },
   "_TZE284_aaeaifez": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10853,7 +10853,7 @@
     ]
   },
   "_TZE204_mwomyz5n": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10861,7 +10861,7 @@
     ]
   },
   "_TZE204_cvub6xbb": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10869,7 +10869,7 @@
     ]
   },
   "_TZE284_cvub6xbb": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10877,7 +10877,7 @@
     ]
   },
   "_TZ3000_kky16aay": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10885,7 +10885,7 @@
     ]
   },
   "_TZ3000_ceplrhnu": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10893,7 +10893,7 @@
     ]
   },
   "_TZE204_mhxn2jso": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10901,7 +10901,7 @@
     ]
   },
   "_TZE284_khah2lkr": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10909,7 +10909,7 @@
     ]
   },
   "_TZE204_tagezcph": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10917,7 +10917,7 @@
     ]
   },
   "_TZE204_dsagrkvg": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10925,7 +10925,7 @@
     ]
   },
   "_TZE284_zm8zpwas": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10933,7 +10933,7 @@
     ]
   },
   "_TZE284_madl8ejv": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10941,7 +10941,7 @@
     ]
   },
   "_TZE284_kyyu8rbj": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10949,7 +10949,7 @@
     ]
   },
   "_TZE284_8zizsafo": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10957,7 +10957,7 @@
     ]
   },
   "_TZE284_iilebqoo": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10965,7 +10965,7 @@
     ]
   },
   "_TZE200_wem3gxyx": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10973,7 +10973,7 @@
     ]
   },
   "_TZ3000_g9chy2ib": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10981,7 +10981,7 @@
     ]
   },
   "_TZE200_vuqzj1ej": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10989,7 +10989,7 @@
     ]
   },
   "_TZE200_hdih4foa": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -10997,7 +10997,7 @@
     ]
   },
   "_TZE204_0hcjew5p": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -11005,7 +11005,7 @@
     ]
   },
   "_TZE204_ilzkxrav": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -11013,7 +11013,7 @@
     ]
   },
   "_TZE284_r3szw0xr": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -11021,7 +11021,7 @@
     ]
   },
   "_TZE200_snfdqllf": {
-    "driverId": "thermostat_ts0601",
+    "driverId": "device_radiator_valve",
     "type": "thermostat",
     "powerSource": "battery",
     "modelIds": [
@@ -11421,7 +11421,7 @@
     ]
   },
   "_TZE200_rjxqso4a": {
-    "driverId": "co_detector",
+    "driverId": "co_sensor",
     "type": "co",
     "powerSource": "battery",
     "modelIds": [
