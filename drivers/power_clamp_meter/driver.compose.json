@@ -15,7 +15,10 @@
     "measure_power",
     "meter_power",
     "measure_current",
+    "measure_current.phase2",
     "measure_voltage",
+    "measure_frequency",
+    "measure_power_factor",
     "measure_power.phase1",
     "measure_power.phase2",
     "measure_power.phase3"
@@ -55,6 +58,26 @@
         "fr": "Énergie"
       },
       "units": "kWh"
+    },
+    "measure_frequency": {
+      "title": {
+        "en": "AC Frequency",
+        "fr": "Fréquence"
+      },
+      "units": "Hz"
+    },
+    "measure_power_factor": {
+      "title": {
+        "en": "Power Factor",
+        "fr": "Facteur de Puissance"
+      }
+    },
+    "measure_current.phase2": {
+      "title": {
+        "en": "Current B",
+        "fr": "Courant B"
+      },
+      "units": "A"
     }
   },
   "settings": [

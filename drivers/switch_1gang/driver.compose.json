@@ -2,14 +2,12 @@
   "class": "socket",
   "capabilities": [
     "onoff",
-    "measure_battery",
     "measure_power",
     "meter_power",
     "measure_voltage",
     "measure_current",
     "button.toggle",
-    "button.identify",
-    "alarm_battery"
+    "button.identify"
   ],
   "zigbee": {
     "productId": [

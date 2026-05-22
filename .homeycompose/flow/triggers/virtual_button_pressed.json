@@ -1,0 +1,35 @@
+{
+  "id": "virtual_button_pressed",
+  "title": {
+    "en": "Virtual button pressed in app",
+    "fr": "Bouton virtuel appuyé dans l'app",
+    "nl": "Virtuele knop ingedrukt in app",
+    "de": "Virtuelle Taste in App gedrückt"
+  },
+  "tokens": [
+    {
+      "name": "gang",
+      "type": "number",
+      "title": {
+        "en": "Gang / Button",
+        "fr": "Bouton / Canal"
+      },
+      "example": 1
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "title": {
+        "en": "Action Type",
+        "fr": "Type d'action"
+      },
+      "example": "toggle"
+    }
+  ],
+  "args": [
+    {
+      "type": "device",
+      "name": "device"
+    }
+  ]
+}
