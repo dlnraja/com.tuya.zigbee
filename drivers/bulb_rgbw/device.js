@@ -39,6 +39,9 @@ class RGBWBulbDevice extends VirtualButtonMixin(PhysicalButtonMixin(LightBase)) 
   }
 
   async onNodeInit({ zclNode }) {
+    // Auto-fix: Remove battery capabilities for mains-powered devices
+    await this.removeCapability('measure_battery').catch(() => {});
+    await this.removeCapability('alarm_battery').catch(() => {});
     await this._safeInvoke(async () => {
       await super.onNodeInit({ zclNode });
       await this.initVirtualButtons();

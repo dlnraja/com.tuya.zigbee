@@ -1,6 +1,7 @@
 'use strict';
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
 const IntelligentDPAutoDiscovery = require('../../lib/sensors/IntelligentDPAutoDiscovery');
 
@@ -65,7 +66,7 @@ class CeilingPresenceSensorDevice extends UnifiedSensorBase {
         return;
 
       case 9: // Target Distance
-        const distance = value / 100;
+        const distance = smartParse(value, null, { capability: 'measure_temperature' });
         this._inference.updateDistance(distance);
         return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => { });
 

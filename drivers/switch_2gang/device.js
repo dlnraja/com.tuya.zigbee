@@ -1,5 +1,6 @@
 'use strict';
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -130,7 +131,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         });
 
         elecCluster.on('attr.rmsCurrent', (value) => {
-          const amps = value / 1000;
+          const amps = smartParse(value, null, { capability: 'measure_current' }) || 0;
           this.log(`[ZCL-DATA] switch.current raw=${value} → ${amps}A`);
           if (this.hasCapability('measure_current')) {
             this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => {});
@@ -153,7 +154,7 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
       if (typeof meteringCluster.on === 'function') {
         meteringCluster.on('attr.current summation delivered', (value) => {
-          const kwh = value / 1000;
+          const kwh = smartParse(value, null, { capability: 'meter_power' }) || 0;
           this.log(`[ZCL-DATA] switch.energy raw=${value} → ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
             this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => {});

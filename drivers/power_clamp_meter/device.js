@@ -1,5 +1,6 @@
 'use strict';
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
 
@@ -260,14 +261,14 @@ class PowerClampMeterDevice extends ZigBeeDevice {
 
       case 110: // Power factor A (÷100)
         if (this.hasCapability('measure_power_factor')) {
-          this.setCapabilityValue('measure_power_factor', value / 100).catch(this.error);
+          this.setCapabilityValue('measure_power_factor', smartParse(value, null, { capability: 'measure_temperature' })).catch(this.error);
         }
         this.log(`[PJ1203A]  Power Factor A: ${value/100}`);
         break;
 
       case 111: // AC frequency (Hz ÷100)
         if (this.hasCapability('measure_frequency')) {
-          this.setCapabilityValue('measure_frequency', value / 100).catch(this.error);
+          this.setCapabilityValue('measure_frequency', smartParse(value, null, { capability: 'measure_temperature' })).catch(this.error);
         }
         this.log(`[PJ1203A]  AC Frequency: ${value/100} Hz`);
         break;
@@ -297,7 +298,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
 
       case 121: // Power factor B (÷100)
         if (this.hasCapability('measure_power_factor')) {
-          this.setCapabilityValue('measure_power_factor', value / 100).catch(this.error);
+          this.setCapabilityValue('measure_power_factor', smartParse(value, null, { capability: 'measure_temperature' })).catch(this.error);
         }
         this.log(`[PJ1203A]  Power Factor B: ${value/100}`);
         break;

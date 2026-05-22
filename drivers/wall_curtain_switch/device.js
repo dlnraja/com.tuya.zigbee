@@ -13,6 +13,9 @@ class WallCurtainSwitchDevice extends PhysicalButtonMixin(VirtualButtonMixin(Tuy
   get gangCount() { return 1; }
 
   async onNodeInit({ zclNode }) {
+    // Auto-fix: Remove battery capabilities for mains-powered devices
+    await this.removeCapability('measure_battery').catch(() => {});
+    await this.removeCapability('alarm_battery').catch(() => {});
     this.log('[WallCurtain] 🚀 Initializing hardened driver...');
     await super.onNodeInit({ zclNode });
     await this.initVirtualButtons();

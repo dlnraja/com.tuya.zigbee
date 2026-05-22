@@ -1,6 +1,7 @@
 'use strict';
 
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
+const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
 
 /**
@@ -45,7 +46,7 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
 
       case 9: // Distance (cm to m)
       case 102:
-        const distance = value / 100;
+        const distance = smartParse(value, null, { capability: 'measure_temperature' });
         this._inference.updateDistance(distance);
         return this.setCapabilityValue('measure_luminance.distance', distance).catch(() => {});
 

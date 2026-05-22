@@ -89,6 +89,9 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
+    // Auto-fix: Remove battery capabilities for mains-powered devices
+    await this.removeCapability('measure_battery').catch(() => {});
+    await this.removeCapability('alarm_battery').catch(() => {});
     await super.onNodeInit({ zclNode });
 
     const mfr = this.getSetting('zb_manufacturer_name') || this.getData().manufacturerName || 'UNKNOWN';

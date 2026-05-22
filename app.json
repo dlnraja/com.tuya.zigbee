@@ -6923,6 +6923,32 @@
         ]
       },
       {
+        "id": "dimmer_wall_1gang_physical_gang1_on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_wall_1gang"
+          }
+        ],
+        "title": {
+          "en": "Turned on - physical (Gang 1)"
+        }
+      },
+      {
+        "id": "dimmer_wall_1gang_physical_gang1_off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=dimmer_wall_1gang"
+          }
+        ],
+        "title": {
+          "en": "Turned off - physical (Gang 1)"
+        }
+      },
+      {
         "id": "din_rail_meter_power_changed",
         "title": {
           "en": "Power changed",
@@ -20725,6 +20751,32 @@
         ]
       },
       {
+        "id": "switch_1gang_physical_gang1_on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          }
+        ],
+        "title": {
+          "en": "Turned on - physical (Gang 1)"
+        }
+      },
+      {
+        "id": "switch_1gang_physical_gang1_off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_1gang"
+          }
+        ],
+        "title": {
+          "en": "Turned off - physical (Gang 1)"
+        }
+      },
+      {
         "id": "switch_2gang_gang1_turned_on",
         "title": {
           "en": "Gang 1 turned on",
@@ -21589,6 +21641,32 @@
             "filter": "driver_id=switch_dimmer_1gang"
           }
         ]
+      },
+      {
+        "id": "switch_dimmer_1gang_physical_gang1_on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_dimmer_1gang"
+          }
+        ],
+        "title": {
+          "en": "Turned on - physical (Gang 1)"
+        }
+      },
+      {
+        "id": "switch_dimmer_1gang_physical_gang1_off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=switch_dimmer_1gang"
+          }
+        ],
+        "title": {
+          "en": "Turned off - physical (Gang 1)"
+        }
       },
       {
         "id": "switch_plug_1_turned_on",
@@ -26753,6 +26831,32 @@
         ]
       },
       {
+        "id": "wall_dimmer_1gang_1way_physical_gang1_on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_dimmer_1gang_1way"
+          }
+        ],
+        "title": {
+          "en": "Turned on - physical (Gang 1)"
+        }
+      },
+      {
+        "id": "wall_dimmer_1gang_1way_physical_gang1_off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_dimmer_1gang_1way"
+          }
+        ],
+        "title": {
+          "en": "Turned off - physical (Gang 1)"
+        }
+      },
+      {
         "id": "wall_remote_1_gang_button_1gang_button_1_pressed",
         "title": {
           "fr": "Bouton appuyé",
@@ -28318,6 +28422,32 @@
             "type": "number"
           }
         ]
+      },
+      {
+        "id": "wall_switch_1gang_1way_physical_gang1_on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_1gang_1way"
+          }
+        ],
+        "title": {
+          "en": "Turned on - physical (Gang 1)"
+        }
+      },
+      {
+        "id": "wall_switch_1gang_1way_physical_gang1_off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wall_switch_1gang_1way"
+          }
+        ],
+        "title": {
+          "en": "Turned off - physical (Gang 1)"
+        }
       },
       {
         "id": "wall_switch_2gang_1way_turned_on",
@@ -31295,6 +31425,240 @@
             "filter": "driver_id=wifi_switch_2gang"
           }
         ]
+      },
+      {
+        "id": "wifi_switch_2gang_physical_gang1_on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_2gang"
+          }
+        ],
+        "title": {
+          "en": "Turned on - physical (Gang 1)"
+        }
+      },
+      {
+        "id": "wifi_switch_2gang_physical_gang1_off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_2gang"
+          }
+        ],
+        "title": {
+          "en": "Turned off - physical (Gang 1)"
+        }
+      },
+      {
+        "id": "wifi_switch_2gang_physical_gang2_on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_2gang"
+          }
+        ],
+        "title": {
+          "en": "Turned on - physical (Gang 2)"
+        }
+      },
+      {
+        "id": "wifi_switch_2gang_physical_gang2_off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_2gang"
+          }
+        ],
+        "title": {
+          "en": "Turned off - physical (Gang 2)"
+        }
+      },
+      {
+        "id": "wifi_switch_3gang_physical_gang1_on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ],
+        "title": {
+          "en": "Turned on - physical (Gang 1)"
+        }
+      },
+      {
+        "id": "wifi_switch_3gang_physical_gang1_off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ],
+        "title": {
+          "en": "Turned off - physical (Gang 1)"
+        }
+      },
+      {
+        "id": "wifi_switch_3gang_physical_gang2_on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ],
+        "title": {
+          "en": "Turned on - physical (Gang 2)"
+        }
+      },
+      {
+        "id": "wifi_switch_3gang_physical_gang2_off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ],
+        "title": {
+          "en": "Turned off - physical (Gang 2)"
+        }
+      },
+      {
+        "id": "wifi_switch_3gang_physical_gang3_on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ],
+        "title": {
+          "en": "Turned on - physical (Gang 3)"
+        }
+      },
+      {
+        "id": "wifi_switch_3gang_physical_gang3_off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_3gang"
+          }
+        ],
+        "title": {
+          "en": "Turned off - physical (Gang 3)"
+        }
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang1_on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ],
+        "title": {
+          "en": "Turned on - physical (Gang 1)"
+        }
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang1_off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ],
+        "title": {
+          "en": "Turned off - physical (Gang 1)"
+        }
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang2_on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ],
+        "title": {
+          "en": "Turned on - physical (Gang 2)"
+        }
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang2_off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ],
+        "title": {
+          "en": "Turned off - physical (Gang 2)"
+        }
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang3_on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ],
+        "title": {
+          "en": "Turned on - physical (Gang 3)"
+        }
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang3_off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ],
+        "title": {
+          "en": "Turned off - physical (Gang 3)"
+        }
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang4_on",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ],
+        "title": {
+          "en": "Turned on - physical (Gang 4)"
+        }
+      },
+      {
+        "id": "wifi_switch_4gang_physical_gang4_off",
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=wifi_switch_4gang"
+          }
+        ],
+        "title": {
+          "en": "Turned off - physical (Gang 4)"
+        }
       },
       {
         "id": "wifi_thermostat_temp_changed",
@@ -62839,15 +63203,9 @@
           "_tze200_2odrmqwq",
           "_TZE200_2odrmqwq",
           "_TZE200_2ODRMQWQ",
-          "_tze200_2vfxweng",
-          "_TZE200_2vfxweng",
-          "_TZE200_2VFXWENG",
           "_tze200_3ejwxpmu",
           "_TZE200_3ejwxpmu",
           "_TZE200_3EJWXPMU",
-          "_tze200_3xfjp0ag",
-          "_TZE200_3xfjp0ag",
-          "_TZE200_3XFJP0AG",
           "_tze200_3ylew7b4",
           "_TZE200_3ylew7b4",
           "_TZE200_3YLEW7B4",
@@ -62884,9 +63242,6 @@
           "_tze200_7shyddj3",
           "_TZE200_7shyddj3",
           "_TZE200_7SHYDDJ3",
-          "_tze200_86nbew0j",
-          "_TZE200_86nbew0j",
-          "_TZE200_86NBEW0J",
           "_tze200_8daqwrsj",
           "_TZE200_8daqwrsj",
           "_TZE200_8DAQWRSJ",
@@ -62956,9 +63311,6 @@
           "_tze200_cirvgep4",
           "_TZE200_cirvgep4",
           "_TZE200_CIRVGEP4",
-          "_tze200_clm4gdw4",
-          "_TZE200_clm4gdw4",
-          "_TZE200_CLM4GDW4",
           "_tze200_cxu0jkjk",
           "_TZE200_cxu0jkjk",
           "_TZE200_CXU0JKJK",
@@ -62968,9 +63320,6 @@
           "_tze200_d7lpruvi",
           "_TZE200_d7lpruvi",
           "_TZE200_D7LPRUVI",
-          "_tze200_d9mzkhoq",
-          "_TZE200_d9mzkhoq",
-          "_TZE200_D9MZKHOQ",
           "_tze200_dcnsggv",
           "_TZE200_dcnsggv",
           "_TZE200_DCNSGGV",
@@ -62998,9 +63347,6 @@
           "_tze200_do5qy8zo",
           "_TZE200_do5qy8zo",
           "_TZE200_DO5QY8ZO",
-          "_tze200_drs6j6m5",
-          "_TZE200_drs6j6m5",
-          "_TZE200_DRS6J6M5",
           "_tze200_dv8abrrz",
           "_TZE200_dv8abrrz",
           "_TZE200_DV8ABRRZ",
@@ -63055,9 +63401,6 @@
           "_tze200_g5xqosu7",
           "_TZE200_g5xqosu7",
           "_TZE200_G5XQOSU7",
-          "_tze200_gnw1rril",
-          "_TZE200_gnw1rril",
-          "_TZE200_GNW1RRIL",
           "_tze200_grgol3xp",
           "_TZE200_grgol3xp",
           "_TZE200_GRGOL3XP",
@@ -63070,9 +63413,6 @@
           "_tze200_h4cgnbzg",
           "_TZE200_h4cgnbzg",
           "_TZE200_H4CGNBZG",
-          "_tze200_ha0vwoew",
-          "_TZE200_ha0vwoew",
-          "_TZE200_HA0VWOEW",
           "_tze200_hdih4foa",
           "_TZE200_hdih4foa",
           "_TZE200_HDIH4FOA",
@@ -63097,9 +63437,6 @@
           "_tze200_ijey4q29",
           "_TZE200_ijey4q29",
           "_TZE200_IJEY4Q29",
-          "_tze200_io0zdqh1",
-          "_TZE200_io0zdqh1",
-          "_TZE200_IO0ZDQH1",
           "_tze200_iq4ygaai",
           "_TZE200_iq4ygaai",
           "_TZE200_IQ4YGAAI",
@@ -63118,9 +63455,6 @@
           "_tze200_jeaxp72v",
           "_TZE200_jeaxp72v",
           "_TZE200_JEAXP72V",
-          "_tze200_jkbljri7",
-          "_TZE200_jkbljri7",
-          "_TZE200_JKBLJRI7",
           "_tze200_js3mgbjb",
           "_TZE200_js3mgbjb",
           "_TZE200_JS3MGBJB",
@@ -63151,9 +63485,6 @@
           "_tze200_leaqthqq",
           "_TZE200_leaqthqq",
           "_TZE200_LEAQTHQQ",
-          "_tze200_lhqtjwax",
-          "_TZE200_lhqtjwax",
-          "_TZE200_LHQTJWAX",
           "_tze200_llm0epxg",
           "_TZE200_llm0epxg",
           "_TZE200_LLM0EPXG",
@@ -63280,9 +63611,6 @@
           "_tze200_qyflbnbj",
           "_TZE200_qyflbnbj",
           "_TZE200_QYFLBNBJ",
-          "_tze200_qyss8gjy",
-          "_TZE200_qyss8gjy",
-          "_TZE200_QYSS8GJY",
           "_tze200_r5ksy7qo",
           "_TZE200_r5ksy7qo",
           "_TZE200_R5KSY7QO",
@@ -63310,9 +63638,6 @@
           "_tze200_s1xgth2u",
           "_TZE200_s1xgth2u",
           "_TZE200_S1XGTH2U",
-          "_tze200_sbyx0lm6",
-          "_TZE200_sbyx0lm6",
-          "_TZE200_SBYX0LM6",
           "_tze200_sfqyhvpv",
           "_TZE200_sfqyhvpv",
           "_TZE200_SFQYHVPV",
@@ -63376,12 +63701,6 @@
           "_tze200_ux5v4tgb",
           "_TZE200_ux5v4tgb",
           "_TZE200_UX5V4TGB",
-          "_tze200_v1jqz5cy",
-          "_TZE200_v1jqz5cy",
-          "_TZE200_V1JQZ5CY",
-          "_tze200_vdiuwbkq",
-          "_TZE200_vdiuwbkq",
-          "_TZE200_VDIUWBKQ",
           "_tze200_vhy3iakz",
           "_TZE200_vhy3iakz",
           "_TZE200_VHY3IAKZ",
@@ -63397,9 +63716,6 @@
           "_tze200_vrcfo4i0",
           "_TZE200_vrcfo4i0",
           "_TZE200_VRCFO4I0",
-          "_tze200_vrfecyku",
-          "_TZE200_vrfecyku",
-          "_TZE200_VRFECYKU",
           "_tze200_vs0skpuc",
           "_TZE200_vs0skpuc",
           "_TZE200_VS0SKPUC",
@@ -63421,9 +63737,6 @@
           "_tze200_wem3gxyx",
           "_TZE200_wem3gxyx",
           "_TZE200_WEM3GXYX",
-          "_tze200_whkgqxse",
-          "_TZE200_whkgqxse",
-          "_TZE200_WHKGQXSE",
           "_tze200_wktrysab",
           "_TZE200_wktrysab",
           "_TZE200_WKTRYSAB",
@@ -63466,9 +63779,6 @@
           "_tze200_yenbr4om",
           "_TZE200_yenbr4om",
           "_TZE200_YENBR4OM",
-          "_tze200_yflzeeqj",
-          "_TZE200_yflzeeqj",
-          "_TZE200_YFLZEEQJ",
           "_tze200_yi4jtqq1",
           "_TZE200_yi4jtqq1",
           "_TZE200_YI4JTQQ1",
@@ -63478,9 +63788,6 @@
           "_tze200_ykglasuj",
           "_TZE200_ykglasuj",
           "_TZE200_YKGLASUJ",
-          "_tze200_ypprdwsl",
-          "_TZE200_ypprdwsl",
-          "_TZE200_YPPRDWSL",
           "_tze200_yrugsphv",
           "_TZE200_yrugsphv",
           "_TZE200_YRUGSPHV",
@@ -63496,9 +63803,6 @@
           "_tze200_yvjc5cjn",
           "_TZE200_yvjc5cjn",
           "_TZE200_YVJC5CJN",
-          "_tze200_ywe90lt0",
-          "_TZE200_ywe90lt0",
-          "_TZE200_YWE90LT0",
           "_tze200_z3u99qxt",
           "_TZE200_z3u99qxt",
           "_TZE200_Z3U99QXT",
@@ -63616,9 +63920,6 @@
           "_tze204_aagrxlbd",
           "_TZE204_aagrxlbd",
           "_TZE204_AAGRXLBD",
-          "_tze204_aai5grix",
-          "_TZE204_aai5grix",
-          "_TZE204_AAI5GRIX",
           "_tze204_adlblwab",
           "_TZE204_adlblwab",
           "_TZE204_ADLBLWAB",
@@ -63640,15 +63941,9 @@
           "_tze204_cirvgep4",
           "_TZE204_cirvgep4",
           "_TZE204_CIRVGEP4",
-          "_tze204_d6i25bwg",
-          "_TZE204_d6i25bwg",
-          "_TZE204_D6I25BWG",
           "_tze204_d7lpruvi",
           "_TZE204_d7lpruvi",
           "_TZE204_D7LPRUVI",
-          "_tze204_dapwryy7",
-          "_TZE204_dapwryy7",
-          "_TZE204_DAPWRYY7",
           "_tze204_dhotiauw",
           "_TZE204_dhotiauw",
           "_TZE204_DHOTIAUW",
@@ -63679,9 +63974,6 @@
           "_tze204_dwcarsat",
           "_TZE204_dwcarsat",
           "_TZE204_DWCARSAT",
-          "_tze204_e9ajs4ft",
-          "_TZE204_e9ajs4ft",
-          "_TZE204_E9AJS4FT",
           "_tze204_eaulras5",
           "_TZE204_eaulras5",
           "_TZE204_EAULRAS5",
@@ -63757,9 +64049,6 @@
           "_tze204_l6llgoxq",
           "_TZE204_l6llgoxq",
           "_TZE204_L6LLGOXQ",
-          "_tze204_l8xiyymq",
-          "_TZE204_l8xiyymq",
-          "_TZE204_L8XIYYMQ",
           "_tze204_lpedvtvr",
           "_TZE204_lpedvtvr",
           "_TZE204_LPEDVTVR",
@@ -63784,9 +64073,6 @@
           "_tze204_mpg22jc1",
           "_TZE204_mpg22jc1",
           "_TZE204_MPG22JC1",
-          "_tze204_mrffaamu",
-          "_TZE204_mrffaamu",
-          "_TZE204_MRFFAAMU",
           "_tze204_mul9abs3",
           "_TZE204_mul9abs3",
           "_TZE204_MUL9ABS3",
@@ -63799,9 +64085,6 @@
           "_tze204_myd45weu",
           "_TZE204_myd45weu",
           "_TZE204_MYD45WEU",
-          "_tze204_ncti2pro",
-          "_TZE204_ncti2pro",
-          "_TZE204_NCTI2PRO",
           "_tze204_nh9m9emk",
           "_TZE204_nh9m9emk",
           "_TZE204_NH9M9EMK",
@@ -63835,9 +64118,6 @@
           "_tze204_q12rv9gj",
           "_TZE204_q12rv9gj",
           "_TZE204_Q12RV9GJ",
-          "_tze204_q22avxbv",
-          "_TZE204_q22avxbv",
-          "_TZE204_Q22AVXBV",
           "_tze204_qhlxve78",
           "_TZE204_qhlxve78",
           "_TZE204_QHLXVE78",
@@ -63892,9 +64172,6 @@
           "_tze204_tuhfx7tf",
           "_TZE204_tuhfx7tf",
           "_TZE204_TUHFX7TF",
-          "_tze204_tzreobvu",
-          "_TZE204_tzreobvu",
-          "_TZE204_TZREOBVU",
           "_tze204_u9bfwha0",
           "_TZE204_u9bfwha0",
           "_TZE204_U9BFWHA0",
@@ -64072,9 +64349,6 @@
           "_tze284_9m4kmbfu",
           "_TZE284_9m4kmbfu",
           "_TZE284_9M4KMBFU",
-          "_tze284_9xstqowh",
-          "_TZE284_9xstqowh",
-          "_TZE284_9XSTQOWH",
           "_tze284_9yapgbuv",
           "_TZE284_9yapgbuv",
           "_TZE284_9YAPGBUV",
@@ -64093,9 +64367,6 @@
           "_tze284_aagrxlbd",
           "_TZE284_aagrxlbd",
           "_TZE284_AAGRXLBD",
-          "_tze284_aai5grix",
-          "_TZE284_aai5grix",
-          "_TZE284_AAI5GRIX",
           "_tze284_ac0fhfiq",
           "_TZE284_ac0fhfiq",
           "_TZE284_AC0FHFIQ",
@@ -64114,9 +64385,6 @@
           "_tze284_ap9owrsa",
           "_TZE284_ap9owrsa",
           "_TZE284_AP9OWRSA",
-          "_tze284_atuj3i0w",
-          "_TZE284_atuj3i0w",
-          "_TZE284_ATUJ3I0W",
           "_tze284_awepdiwi",
           "_TZE284_awepdiwi",
           "_TZE284_AWEPDIWI",
@@ -64204,9 +64472,6 @@
           "_tze284_kyyu8rbj",
           "_TZE284_kyyu8rbj",
           "_TZE284_KYYU8RBJ",
-          "_tze284_l8xiyymq",
-          "_TZE284_l8xiyymq",
-          "_TZE284_L8XIYYMQ",
           "_tze284_locansqn",
           "_TZE284_locansqn",
           "_TZE284_LOCANSQN",
@@ -64219,9 +64484,6 @@
           "_tze284_mpzuabwk",
           "_TZE284_mpzuabwk",
           "_TZE284_MPZUABWK",
-          "_tze284_mrffaamu",
-          "_TZE284_mrffaamu",
-          "_TZE284_MRFFAAMU",
           "_tze284_ne4pikwm",
           "_TZE284_ne4pikwm",
           "_TZE284_NE4PIKWM",
@@ -64288,9 +64550,6 @@
           "_tze284_tuhfx7tf",
           "_TZE284_tuhfx7tf",
           "_TZE284_TUHFX7TF",
-          "_tze284_tzreobvu",
-          "_TZE284_tzreobvu",
-          "_TZE284_TZREOBVU",
           "_tze284_uab532m0",
           "_TZE284_uab532m0",
           "_TZE284_UAB532M0",
@@ -64360,15 +64619,9 @@
           "_tze284_yzr43ayq",
           "_TZE284_yzr43ayq",
           "_TZE284_YZR43AYQ",
-          "_tze284_z5jz7wpo",
-          "_TZE284_z5jz7wpo",
-          "_TZE284_Z5JZ7WPO",
           "_tze284_z7a2jmyy",
           "_TZE284_z7a2jmyy",
           "_TZE284_Z7A2JMYY",
-          "_tze284_zeldawjv",
-          "_TZE284_zeldawjv",
-          "_TZE284_ZELDAWJV",
           "_tze284_zjhoqbrd",
           "_TZE284_zjhoqbrd",
           "_TZE284_ZJHOQBRD",
@@ -64492,7 +64745,8 @@
           "ZG-303Z",
           "TY0201",
           "TS1201",
-          "RH3052"
+          "RH3052",
+          "Excellux"
         ],
         "endpoints": {
           "1": {
@@ -73202,7 +73456,10 @@
           "_TZE608_XKR8GEP3",
           "_tze608_lapuuoke",
           "_TZE608_lapuuoke",
-          "_TZE608_LAPUUOKE"
+          "_TZE608_LAPUUOKE",
+          "_tze200_deqnbaux",
+          "_TZE200_deqnbaux",
+          "_TZE200_DEQNBAUX"
         ],
         "productId": [
           "TS0601",
@@ -84577,7 +84834,10 @@
         ],
         "productId": [
           "TS0601",
-          "TS0601_meter"
+          "TS0601_meter",
+          "PJ-1203A",
+          "pj-1203a",
+          "Pj-1203A"
         ],
         "endpoints": {
           "1": {
@@ -100278,7 +100538,8 @@
           "_TZE284_tgeqdjgk",
           "_TZE204_3regm3h6",
           "_TZE204_vjpaih9f",
-          "_TZE284_vjpaih9f"
+          "_TZE284_vjpaih9f",
+          "_TZ3000_ee8nrt2l"
         ],
         "endpoints": {
           "1": {
