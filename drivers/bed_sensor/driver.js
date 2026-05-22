@@ -1,8 +1,8 @@
 'use strict';
 
-const { ZigBeeDriver } = require('homey-zigbeedriver');
+const BaseZigBeeDriver = require('../../lib/drivers/BaseZigBeeDriver');
 
-class BedSensorDriver extends ZigBeeDriver {
+class BedSensorDriver extends BaseZigBeeDriver {
 async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) {return;}

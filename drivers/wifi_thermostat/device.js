@@ -1,6 +1,5 @@
 'use strict';
-// A8: NaN Safety - use safeDivide/safeMultiply
-  require('../../lib/tuya-local/TuyaLocalDevice');
+const TuyaLocalDevice = require('../../lib/tuya-local/TuyaLocalDevice');
 
 const MODE_MAP = { 0: 'off', 1: 'heat', 2: 'auto', 3: 'eco' };
 const MODE_REV = { off: 0, heat: 1, auto: 2, eco: 3 };
