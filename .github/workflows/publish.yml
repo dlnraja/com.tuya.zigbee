@@ -54,7 +54,7 @@ jobs:
         run: npm run validate:conflicts
 
       - name: 🔍 Verify Fingerprints Integrity
-        continue-on-error: true
+        continue-on-error: false
         run: npm run validate:fingerprints
 
       - name: Validate (npx)
