@@ -1,6 +1,28 @@
 {
-  "timestamp": "2026-05-18T03:51:32.432Z",
+  "timestamp": "2026-05-20T06:27:29.811Z",
   "pidConflicts": [
+    {
+      "pid": "TS011F",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug",
+        "fingerbot",
+        "plug_energy_monitor",
+        "plug_smart",
+        "remote_button_wireless",
+        "remote_button_wireless_plug",
+        "switch",
+        "switch_1gang",
+        "switch_2gang"
+      ],
+      "classes": [
+        "sensor",
+        "socket",
+        "button"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
     {
       "pid": "TS004F",
       "drivers": [
@@ -13,47 +35,6 @@
         "smart_remote_1_button_2",
         "wall_dimmer_1gang_1way",
         "wall_remote_4_gang_2"
-      ],
-      "classes": [
-        "sensor",
-        "remote",
-        "socket"
-      ],
-      "crossClass": true,
-      "severity": "high"
-    },
-    {
-      "pid": "TS011F",
-      "drivers": [
-        "button_wireless_plug",
-        "fingerbot",
-        "plug_energy_monitor",
-        "plug_smart",
-        "remote_button_wireless",
-        "remote_button_wireless_plug",
-        "switch",
-        "switch_1gang",
-        "switch_2gang"
-      ],
-      "classes": [
-        "socket",
-        "button",
-        "sensor"
-      ],
-      "crossClass": true,
-      "severity": "high"
-    },
-    {
-      "pid": "TS0043",
-      "drivers": [
-        "button_wireless_2",
-        "button_wireless_3",
-        "remote_button_wireless",
-        "remote_button_wireless_wall",
-        "scene_switch_3",
-        "scene_switch_wall",
-        "wall_remote_3_gang",
-        "wall_switch_3gang_1way"
       ],
       "classes": [
         "sensor",
@@ -97,6 +78,25 @@
       ],
       "classes": [
         "sensor",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0043",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_3",
+        "remote_button_wireless",
+        "remote_button_wireless_wall",
+        "scene_switch_wall",
+        "wall_remote_3_gang",
+        "wall_switch_3gang_1way"
+      ],
+      "classes": [
+        "sensor",
+        "remote",
         "socket"
       ],
       "crossClass": true,
@@ -151,6 +151,25 @@
         "sensor",
         "remote",
         "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
+      "pid": "TS0001",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug",
+        "fingerbot",
+        "switch_1gang",
+        "valve_single",
+        "wall_switch_1gang_1way"
+      ],
+      "classes": [
+        "sensor",
+        "socket",
+        "button",
+        "thermostat"
       ],
       "crossClass": true,
       "severity": "high"
@@ -237,18 +256,18 @@
       "severity": "high"
     },
     {
-      "pid": "TS0001",
+      "pid": "TS0011",
       "drivers": [
+        "button_wireless_2",
         "button_wireless_plug",
         "fingerbot",
         "switch_1gang",
-        "valve_single",
         "wall_switch_1gang_1way"
       ],
       "classes": [
+        "sensor",
         "socket",
-        "button",
-        "thermostat"
+        "button"
       ],
       "crossClass": true,
       "severity": "high"
@@ -283,6 +302,22 @@
       "severity": "high"
     },
     {
+      "pid": "TS000F",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug",
+        "fingerbot",
+        "switch_1gang"
+      ],
+      "classes": [
+        "sensor",
+        "socket",
+        "button"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
       "pid": "TS0121",
       "drivers": [
         "button_wireless_plug",
@@ -308,21 +343,6 @@
       "classes": [
         "socket",
         "sensor"
-      ],
-      "crossClass": true,
-      "severity": "high"
-    },
-    {
-      "pid": "TS0011",
-      "drivers": [
-        "button_wireless_plug",
-        "fingerbot",
-        "switch_1gang",
-        "wall_switch_1gang_1way"
-      ],
-      "classes": [
-        "socket",
-        "button"
       ],
       "crossClass": true,
       "severity": "high"
@@ -437,6 +457,20 @@
       "severity": "high"
     },
     {
+      "pid": "TS0111",
+      "drivers": [
+        "button_wireless_2",
+        "button_wireless_plug",
+        "plug_smart"
+      ],
+      "classes": [
+        "sensor",
+        "socket"
+      ],
+      "crossClass": true,
+      "severity": "high"
+    },
+    {
       "pid": "TS0046",
       "drivers": [
         "button_wireless_6",
@@ -446,20 +480,6 @@
       "classes": [
         "sensor",
         "remote"
-      ],
-      "crossClass": true,
-      "severity": "high"
-    },
-    {
-      "pid": "TS000F",
-      "drivers": [
-        "button_wireless_plug",
-        "fingerbot",
-        "switch_1gang"
-      ],
-      "classes": [
-        "socket",
-        "button"
       ],
       "crossClass": true,
       "severity": "high"
@@ -620,18 +640,6 @@
       ],
       "crossClass": true,
       "severity": "high"
-    },
-    {
-      "pid": "TS0111",
-      "drivers": [
-        "button_wireless_plug",
-        "plug_smart"
-      ],
-      "classes": [
-        "socket"
-      ],
-      "crossClass": false,
-      "severity": "low"
     },
     {
       "pid": "CK-TLSR8656-SS5-01(7014)",
@@ -964,547 +972,7 @@
       "severity": "high"
     }
   ],
-  "mfrConflicts": [
-    {
-      "mfr": "_tz3000_tzvbimpq",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2gang"
-      ],
-      "sharedPids": [
-        "TS0002",
-        "TS0012",
-        "TS0003",
-        "TS0013"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZ3000_tzvbimpq",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2gang"
-      ],
-      "sharedPids": [
-        "TS0002",
-        "TS0012",
-        "TS0003",
-        "TS0013"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZ3000_TZVBIMPQ",
-      "drivers": [
-        "button_wireless_2",
-        "switch_2gang"
-      ],
-      "sharedPids": [
-        "TS0002",
-        "TS0012",
-        "TS0003",
-        "TS0013"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_tz3000_famkxci2",
-      "drivers": [
-        "button_wireless_3",
-        "scene_switch_3"
-      ],
-      "sharedPids": [
-        "TS0043"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZ3000_famkxci2",
-      "drivers": [
-        "button_wireless_3",
-        "scene_switch_3"
-      ],
-      "sharedPids": [
-        "TS0043"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TZ3000_FAMKXCI2",
-      "drivers": [
-        "button_wireless_3",
-        "scene_switch_3"
-      ],
-      "sharedPids": [
-        "TS0043"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_tyzb01_ftdkanlj",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "TS0601",
-        "TY0201"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TYZB01_FTDKANLJ",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "TS0601",
-        "TY0201"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_tyzb01_kvwjujy9",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "TS0601",
-        "TY0201"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TYZB01_KVWJUJY9",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "TS0601",
-        "TY0201"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_tyzb01_a476raq2",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "TS0601",
-        "TY0201"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TYZB01_A476RAQ2",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "TS0601",
-        "TY0201"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_tyzb01_hjsgdkfl",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "TS0601",
-        "TY0201"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "_TYZB01_HJSGDKFL",
-      "drivers": [
-        "climate_sensor",
-        "lcdtemphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "TS0601",
-        "TY0201"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "tuyatec-yg5dcbfu",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "TUYATEC-YG5DCBFU",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "tuyatec-prhs1rsd",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "TUYATEC-PRHS1RSD",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "tuyatec-gqhxixyk",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "TUYATEC-GQHXIXYK",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "tuyatec-vmgh3fxd",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "TUYATEC-VMGH3FXD",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "tuyatec-ojmxeikg",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "TUYATEC-OJMXEIKG",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "tuyatec-ojmxeikq",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "TUYATEC-OJMXEIKQ",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "tuyatec-1g3tawnp",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "TUYATEC-1G3TAWNP",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "tuyatec-v3uxbuxy",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "TUYATEC-V3UXBUXY",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "tuyatec-riuj5xzs",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "TUYATEC-RIUJ5XZS",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "tuyatec-1uxx9cci",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "TUYATEC-1UXX9CCI",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "tuyatec-haoiuwzy",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "TUYATEC-HAOIUWZY",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "tuyatec-qun7vq14",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    },
-    {
-      "mfr": "TUYATEC-QUN7VQ14",
-      "drivers": [
-        "climate_sensor",
-        "temphumidsensor"
-      ],
-      "sharedPids": [
-        "TS0201",
-        "ZG-227Z",
-        "CK-TLSR8656-SS5-01(7014)",
-        "TY0201",
-        "RH3052"
-      ],
-      "risk": "high"
-    }
-  ],
+  "mfrConflicts": [],
   "orphans": [
     {
       "driver": "climate_sensor_device",
@@ -1611,6 +1079,17 @@
       "pids": [
         "TS0225",
         "TS0601"
+      ]
+    },
+    {
+      "driver": "sensor_presence_radar",
+      "reason": "no_manufacturer_names",
+      "pids": [
+        "TS0203",
+        "TS0601",
+        "ZG-204ZL",
+        "ZG-204ZM",
+        "ZG-204ZV"
       ]
     },
     {
@@ -1886,6 +1365,28 @@
   ],
   "splitSuggestions": [
     {
+      "pid": "TS011F",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2",
+          "remote_button_wireless"
+        ],
+        "socket": [
+          "button_wireless_plug",
+          "plug_energy_monitor",
+          "plug_smart",
+          "remote_button_wireless_plug",
+          "switch",
+          "switch_1gang",
+          "switch_2gang"
+        ],
+        "button": [
+          "fingerbot"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
       "pid": "TS004F",
       "splitBy": {
         "sensor": [
@@ -1902,47 +1403,6 @@
         ],
         "socket": [
           "wall_dimmer_1gang_1way"
-        ]
-      },
-      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
-    },
-    {
-      "pid": "TS011F",
-      "splitBy": {
-        "socket": [
-          "button_wireless_plug",
-          "plug_energy_monitor",
-          "plug_smart",
-          "remote_button_wireless_plug",
-          "switch",
-          "switch_1gang",
-          "switch_2gang"
-        ],
-        "button": [
-          "fingerbot"
-        ],
-        "sensor": [
-          "remote_button_wireless"
-        ]
-      },
-      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
-    },
-    {
-      "pid": "TS0043",
-      "splitBy": {
-        "sensor": [
-          "button_wireless_2",
-          "button_wireless_3",
-          "remote_button_wireless",
-          "remote_button_wireless_wall",
-          "scene_switch_3",
-          "scene_switch_wall"
-        ],
-        "remote": [
-          "wall_remote_3_gang"
-        ],
-        "socket": [
-          "wall_switch_3gang_1way"
         ]
       },
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
@@ -1981,6 +1441,25 @@
           "switch_4gang",
           "switch_wall_6gang",
           "wall_switch_4gang_1way"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS0043",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2",
+          "button_wireless_3",
+          "remote_button_wireless",
+          "remote_button_wireless_wall",
+          "scene_switch_wall"
+        ],
+        "remote": [
+          "wall_remote_3_gang"
+        ],
+        "socket": [
+          "wall_switch_3gang_1way"
         ]
       },
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
@@ -2037,6 +1516,26 @@
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
     },
     {
+      "pid": "TS0001",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2"
+        ],
+        "socket": [
+          "button_wireless_plug",
+          "switch_1gang",
+          "wall_switch_1gang_1way"
+        ],
+        "button": [
+          "fingerbot"
+        ],
+        "thermostat": [
+          "valve_single"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
       "pid": "TS0207",
       "splitBy": {
         "sensor": [
@@ -2085,8 +1584,11 @@
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
     },
     {
-      "pid": "TS0001",
+      "pid": "TS0011",
       "splitBy": {
+        "sensor": [
+          "button_wireless_2"
+        ],
         "socket": [
           "button_wireless_plug",
           "switch_1gang",
@@ -2094,9 +1596,6 @@
         ],
         "button": [
           "fingerbot"
-        ],
-        "thermostat": [
-          "valve_single"
         ]
       },
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
@@ -2111,6 +1610,22 @@
           "button_wireless_plug",
           "switch_2gang",
           "wall_switch_2gang_1way"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
+      "pid": "TS000F",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2"
+        ],
+        "socket": [
+          "button_wireless_plug",
+          "switch_1gang"
+        ],
+        "button": [
+          "fingerbot"
         ]
       },
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
@@ -2139,20 +1654,6 @@
         ],
         "sensor": [
           "remote_button_wireless"
-        ]
-      },
-      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
-    },
-    {
-      "pid": "TS0011",
-      "splitBy": {
-        "socket": [
-          "button_wireless_plug",
-          "switch_1gang",
-          "wall_switch_1gang_1way"
-        ],
-        "button": [
-          "fingerbot"
         ]
       },
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
@@ -2211,6 +1712,19 @@
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
     },
     {
+      "pid": "TS0111",
+      "splitBy": {
+        "sensor": [
+          "button_wireless_2"
+        ],
+        "socket": [
+          "button_wireless_plug",
+          "plug_smart"
+        ]
+      },
+      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
+    },
+    {
       "pid": "TS0046",
       "splitBy": {
         "sensor": [
@@ -2219,19 +1733,6 @@
         ],
         "remote": [
           "wall_remote_6_gang"
-        ]
-      },
-      "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
-    },
-    {
-      "pid": "TS000F",
-      "splitBy": {
-        "socket": [
-          "button_wireless_plug",
-          "switch_1gang"
-        ],
-        "button": [
-          "fingerbot"
         ]
       },
       "recommendation": "Ensure manufacturerName lists are distinct per driver so matching is unambiguous"
@@ -2361,9 +1862,9 @@
   "summary": {
     "totalDrivers": 228,
     "pidConflicts": 69,
-    "highSeverity": 32,
-    "mfrConflicts": 38,
-    "orphans": 75,
-    "splitSuggestions": 32
+    "highSeverity": 33,
+    "mfrConflicts": 0,
+    "orphans": 76,
+    "splitSuggestions": 33
   }
 }
