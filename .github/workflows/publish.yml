@@ -50,6 +50,13 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: npm
       - run: npm ci --prefer-offline --no-audit || npm install
+      - name: 🛡️ Check Git Conflicts
+        run: npm run validate:conflicts
+
+      - name: 🔍 Verify Fingerprints Integrity
+        continue-on-error: true
+        run: npm run validate:fingerprints
+
       - name: Validate (npx)
         run: npx homey app validate --level publish
 
