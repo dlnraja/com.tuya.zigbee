@@ -8900,11 +8900,12 @@
     ]
   },
   "_TZ3000_ee8nrt2l": {
-    "driverId": "switch_1gang",
-    "type": "switch",
-    "powerSource": "mains",
+    "driverId": "button_wireless_4",
+    "type": "button",
+    "powerSource": "battery",
+    "batteryType": "CR2032",
     "modelIds": [
-      "TS0601"
+      "TS0044"
     ]
   },
   "_TZ3000_nuombroo": {
@@ -12236,6 +12237,40 @@
     "powerSource": "battery",
     "modelIds": [
       "TS0215A"
+    ]
+  },
+  "_TZ3000_famkxci2": {
+    "driverId": "button_wireless_3",
+    "type": "button",
+    "powerSource": "battery",
+    "batteryType": "CR2032",
+    "modelIds": [
+      "TS0043"
+    ]
+  },
+  "_TZ3000_tzvbimpq": {
+    "driverId": "switch_2gang",
+    "type": "switch",
+    "powerSource": "mains",
+    "modelIds": [
+      "TS0003"
+    ]
+  },
+  "_TZE284_8se38w3c": {
+    "driverId": "climate_sensor",
+    "type": "climate_sensor",
+    "powerSource": "battery",
+    "modelIds": [
+      "TS0601"
+    ]
+  },
+  "_TZ3000_tsgqxdb4": {
+    "driverId": "climate_sensor",
+    "type": "climate",
+    "powerSource": "battery",
+    "batteryType": "AAA",
+    "modelIds": [
+      "TS0201"
     ]
   }
 }
