@@ -2,20 +2,20 @@
 
 <!-- AUTO-UPDATED: Do not edit badges manually - updated by GitHub Actions -->
 [![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdlnraja%2Fcom.tuya.zigbee%2Fmaster%2Fapp.json&query=%24.version&label=version&color=blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Fingerprints](https://img.shields.io/badge/fingerprints-11,059+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Fingerprints](https://img.shields.io/badge/fingerprints-11,295+-green)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![Drivers](https://img.shields.io/badge/drivers-231-brightgreen)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
-[![Flow Cards](https://img.shields.io/badge/flow%20cards-2,765-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
+[![Flow Cards](https://img.shields.io/badge/flow%20cards-2,795-blue)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![SDK](https://img.shields.io/badge/SDK-3-orange)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 [![License](https://img.shields.io/badge/license-GPL--3.0-red)](https://github.com/dlnraja/com.tuya.zigbee/blob/master/LICENSE)
 [![Homey](https://img.shields.io/badge/Homey-Pro-blueviolet)](https://homey.app/a/com.dlnraja.tuya.zigbee/)
 
-A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **231 drivers** and **11,059+ device fingerprints**.
+A community-driven Homey app that brings local control to Tuya Zigbee devices — no cloud, no internet needed. Covers switches, sensors, lights, thermostats, covers, locks, and more across **231 drivers** and **11,295+ device fingerprints**.
 
 **Key features:**
 - **Local-only** — everything runs on your Homey, nothing goes to the cloud
 - **Hybrid mode** — auto-detects whether a device speaks Tuya DP or standard ZCL
 - **Smart battery** — voltage-based fallback when devices don't report percentage
-- **2,765+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
+- **2,795+ flow cards** — triggers, conditions & actions in EN, FR, NL, DE
 - **SDK3** — built on the latest Homey platform
 
 ---
@@ -56,13 +56,13 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.1.4 |
-| **Device Fingerprints** | 11,059+ |
-| **Unique Product IDs** | 561 |
+| **App Version** | v8.1.5 |
+| **Device Fingerprints** | 11,295+ |
+| **Unique Product IDs** | 565 |
 | **Drivers** | 231 (181 Zigbee + 50 WiFi) |
-| **Flow Cards** | 2,765 |
-| **Unique Capabilities** | 139 |
-| **SVG Icons** | 390 |
+| **Flow Cards** | 2,795 |
+| **Unique Capabilities** | 142 |
+| **SVG Icons** | 438 |
 | **Languages** | EN, FR, NL, DE |
 | **SDK Version** | 3 |
 | **Homey Compatibility** | >=12.2.0 |
@@ -72,26 +72,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | # | Driver | Fingerprints |
 |---|--------|-------------|
-| 1 | `climate_sensor` | 2,022 |
-| 2 | `switch_1gang` | 1,005 |
-| 3 | `radiator_valve` | 524 |
-| 4 | `plug_energy_monitor` | 447 |
-| 5 | `dimmer_wall_1gang` | 372 |
-| 6 | `curtain_motor` | 355 |
-| 7 | `generic_tuya` | 352 |
-| 8 | `presence_sensor_radar` | 300 |
-| 9 | `contact_sensor` | 267 |
-| 10 | `bulb_rgbw` | 259 |
-| 11 | `switch_2gang` | 252 |
-| 12 | `motion_sensor` | 251 |
-| 13 | `switch_4gang` | 236 |
-| 14 | `generic_diy` | 225 |
-| 15 | `diy_custom_zigbee` | 206 |
-| 16 | `thermostat_tuya_dp` | 201 |
-| 17 | `switch_3gang` | 184 |
-| 18 | `bulb_tunable_white` | 138 |
-| 19 | `water_leak_sensor` | 136 |
-| 20 | `bulb_dimmable` | 120 |
+| 1 | `climate_sensor` | 1,943 |
+| 2 | `switch_1gang` | 1,151 |
+| 3 | `radiator_valve` | 535 |
+| 4 | `plug_energy_monitor` | 370 |
+| 5 | `presence_sensor_radar` | 366 |
+| 6 | `dimmer_wall_1gang` | 365 |
+| 7 | `generic_tuya` | 364 |
+| 8 | `curtain_motor` | 338 |
+| 9 | `bulb_dimmable` | 291 |
+| 10 | `motion_sensor` | 268 |
+| 11 | `contact_sensor` | 267 |
+| 12 | `bulb_rgbw` | 259 |
+| 13 | `switch_2gang` | 232 |
+| 14 | `switch_4gang` | 224 |
+| 15 | `generic_diy` | 216 |
+| 16 | `diy_custom_zigbee` | 206 |
+| 17 | `thermostat_tuya_dp` | 197 |
+| 18 | `switch_3gang` | 164 |
+| 19 | `plug_smart` | 147 |
+| 20 | `water_leak_sensor` | 142 |
 
 ### Drivers by Device Class
 
@@ -123,7 +123,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 | Version | Changes |
 |---------|---------|
-| **v8.1.4** | v8.1.3: ZY-M100 settings exposure fixed (Issue #324), 41 new flow cards added across drivers, WiFi flow cards now com... |
+| **v8.1.5** | v8.1.4: Added capabilities: measure_frequency, measure_power_factor, alarm_gas, alarm_siren, alarm_vibration, alarm_w... |
+| **v8.1.4** | . New capabilities: measure_frequency, measure_power_factor, alarm_gas, alarm_siren, alarm_vibration, alarm_water_hig... |
 | **v8.1.3** | Bug fix: ZY-M100 settings now expose correctly. 41 new flow cards across drivers. WiFi flow cards complete. Updated f... |
 | **v8.1.2** | bed_sensor driver added. Fixed 3 fingerprint collisions (device_din_rail/EMQMWTYM→doorbell, switch_1gang/TVUARKSA→plu... |
 | **v8.1.1** | v8.1.1: Fixed Issue #331 — Settings tab crash on 6 drivers (Hybrid*Base renamed to Unified*Base). Fixed curtain_motor... |
@@ -137,7 +138,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 | **v7.5.47** | v7.5.46: No changes. |
 | **v7.5.46** | v7.5.46 - Maintenance release. No new devices or fixes. |
 | **v7.5.45** | Bug fixes across 7 drivers including humidifier, motion_sensor_2, dimmer_dual_channel, smart_button_switch, and pet_f... |
-| **v7.5.44** | Bug fixes for wireless buttons, remote buttons, and scene switches. Critical runtime errors resolved in button devices. |
 
 <!-- CHANGELOG_END -->
 
@@ -203,7 +203,7 @@ Homey Pro
        │    └─ Per-fingerprint: DP mappings, quirks, timing
        ├─ BatteryManager (8 chemistries, voltage fallback)
        ├─ PhysicalButtonMixin (2000ms detection)
-       └─ 231 Drivers ─ 11,059+ fingerprints
+       └─ 231 Drivers ─ 11,295+ fingerprints
 ```
 
 ---

@@ -4,7 +4,24 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.3] - 2026-05-21
+## [8.1.4] - 2026-05-22
+
+### New Features
+- Added capabilities: measure_frequency, measure_power_factor, alarm_gas, alarm_siren, alarm_vibration, alarm_water_high, boost_mode
+- Added flow triggers: remote_button_pressed, virtual_button_pressed
+- Synced 82 Johan SDK3 fingerprints (Tuya Unified Zigbee drivers)
+- Auto-healed 1208 missing fingerprints across drivers
+
+### Bug Fixes
+- Fixed 5 issues from community reports and PR triage
+- Resolved device matching conflicts for overlapping manufacturer/product IDs
+- Fixed capability registration for newly added alarm and measurement types
+
+### Improvements
+- Updated app.json with new capability definitions and driver count (231 drivers, 7871 fingerprints)
+---
+
+ [8.1.3] - 2026-05-21
 
 ### Bug Fixes
 - ZY-M100 settings exposure fixed (Issue #324)
