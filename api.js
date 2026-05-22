@@ -1,23 +1,29 @@
-const { HomeyAPI } = require('homey-api');
-
 module.exports = {
   /**
    * Fetch all devices configured in this Homey Pro.
    * Returns a lightweight array for use in settings dropdown menus.
+   * Uses native Homey SDK3 APIs — no dependency on homey-api.
    */
   async getDevices({ homey }) {
     try {
-      const api = await HomeyAPI.createAppAPI({ homey });
-      const devices = await api.devices.getDevices();
-      return Object.values(devices)
-        .map(d => ({
-          id: d.id,
-          name: d.name,
-          zoneName: d.zoneName || '',
-          driverId: d.driverId || '',
-          driverUri: d.driverUri || ''
-        }))
-        .sort((a, b) => a.name.localeCompare(b.name));
+      const driverList = homey.drivers.getDrivers();
+      const allDevices = [];
+
+      for (const driverId of Object.keys(driverList)) {
+        const driver = driverList[driverId];
+        const devices = driver.getDevices();
+        for (const device of Object.values(devices)) {
+          allDevices.push({
+            id: device.getId(),
+            name: device.getName(),
+            zoneName: device.getZone()?.getName() || '',
+            driverId: device.getDriver().getId() || '',
+            driverUri: device.getDriver().getUri() || ''
+          });
+        }
+      }
+
+      return allDevices.sort((a, b) => a.name.localeCompare(b.name));
     } catch (err) {
       homey.error('[FlowRepair API] Failed to fetch devices:', err);
       throw new Error(`Failed to retrieve devices: ${err.message}`);
@@ -27,6 +33,7 @@ module.exports = {
   /**
    * Search and replace old device references with new ones
    * inside triggers, conditions, and actions of all Flows and Advanced Flows.
+   * Uses native Homey SDK3 ManagerFlow APIs.
    */
   async replaceDevice({ homey, body }) {
     const { oldId, newId } = body;
@@ -35,13 +42,12 @@ module.exports = {
     }
 
     try {
-      const api = await HomeyAPI.createAppAPI({ homey });
-      
+      const flowManager = homey.flow;
       let flowsUpdated = 0;
       let advancedFlowsUpdated = 0;
 
       // 1. Process Standard Flows
-      const flows = await api.flow.getFlows();
+      const flows = await flowManager.getFlows();
       for (const flow of Object.values(flows)) {
         let updated = false;
 
@@ -83,7 +89,7 @@ module.exports = {
         }
 
         if (updated) {
-          await api.flow.updateFlow({
+          await flowManager.updateFlow({
             id: flow.id,
             flow: {
               trigger: flow.trigger,
@@ -96,7 +102,14 @@ module.exports = {
       }
 
       // 2. Process Advanced Flows
-      const advancedFlows = await api.flow.getAdvancedFlows();
+      let advancedFlows;
+      try {
+        advancedFlows = await flowManager.getAdvancedFlows();
+      } catch (e) {
+        // getAdvancedFlows might not be available on older SDK versions
+        advancedFlows = {};
+      }
+
       for (const af of Object.values(advancedFlows)) {
         let updated = false;
         const cards = af.cards;
@@ -113,7 +126,7 @@ module.exports = {
         }
 
         if (updated) {
-          await api.flow.updateAdvancedFlow({
+          await flowManager.updateAdvancedFlow({
             id: af.id,
             advancedflow: { cards }
           });

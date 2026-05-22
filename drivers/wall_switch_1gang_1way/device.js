@@ -16,6 +16,9 @@ class WallSwitch1Gang1WayDevice extends PhysicalButtonMixin(VirtualButtonMixin(U
   get gangCount() { return 1; }
 
   async onNodeInit({ zclNode }) {
+    // Auto-fix: Remove battery capabilities for mains-powered devices
+    await this.removeCapability('measure_battery').catch(() => {});
+    await this.removeCapability('alarm_battery').catch(() => {});
     await this._safeInvoke(async () => { await super.onNodeInit({ zclNode  });
     await this.initVirtualButtons();
       // v9.7.3: Initialization is now orchestrated by UnifiedSwitchBase and Mixins.

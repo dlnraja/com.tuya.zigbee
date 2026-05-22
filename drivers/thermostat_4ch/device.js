@@ -5,6 +5,9 @@ const UnifiedThermostatBase = require('../../lib/devices/UnifiedThermostatBase')
 class Thermostat4ChDevice extends UnifiedThermostatBase {
   get mainsPowered() { return true; }
   async onNodeInit({ zclNode }) {
+    // Auto-fix: Remove battery capabilities for mains-powered devices
+    await this.removeCapability('measure_battery').catch(() => {});
+    await this.removeCapability('alarm_battery').catch(() => {});
     // --- Homey Time Sync for TRV/LCD/Thermostat devices ---
     // Syncs the device clock with the Homey box time every 6 hours.
     // Uses ZCL Time Cluster (0x000A) or Tuya EF00 DP 0x24 as fallback.

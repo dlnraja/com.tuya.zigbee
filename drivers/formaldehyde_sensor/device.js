@@ -25,6 +25,9 @@ class FormaldehydeSensorDevice extends UnifiedSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
+    // Auto-fix: Remove battery capabilities for mains-powered devices
+    await this.removeCapability('measure_battery').catch(() => {});
+    await this.removeCapability('alarm_battery').catch(() => {});
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([

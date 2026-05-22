@@ -1,6 +1,7 @@
 'use strict';
 
 const { ZigBeeDevice } = require('homey-zigbeedriver');
+const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 const { CLUSTER } = require('zigbee-clusters');
 
 /**
@@ -136,10 +137,10 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
   _handleCluster57346Attr(attr, value) {
     // Attribute 0 = temperature, Attribute 1 = humidity
     if (attr === 0 || attr === 'measuredValue' || attr === 'temperature') {
-      const temp = typeof value === 'number' ? value / 100 : value;
+      const temp = typeof value === 'number' ? smartParse(value, null, { capability: 'measure_temperature' }) : value;
       this._setTemperature(temp);
     } else if (attr === 1 || attr === 'humidity') {
-      const hum = typeof value === 'number' ? value / 100 : value;
+      const hum = typeof value === 'number' ? smartParse(value, null, { capability: 'measure_temperature' }) : value;
       this._setHumidity(hum);
     }
   }
@@ -180,7 +181,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
         this.log('✅ Found ZCL Temperature cluster');
         tempCluster.on('attr', (attr, value) => {
           if (attr === 'measuredValue') {
-            this._setTemperature(value / 100);
+            this._setTemperature(smartParse(value, null, { capability: 'measure_temperature' }));
           }
         });
       }
@@ -194,7 +195,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
         this.log('✅ Found ZCL Humidity cluster');
         humCluster.on('attr', (attr, value) => {
           if (attr === 'measuredValue') {
-            this._setHumidity(value / 100);
+            this._setHumidity(smartParse(value, null, { capability: 'measure_temperature' }));
           }
         });
       }
@@ -235,7 +236,7 @@ class SwitchTempSensorDevice extends ZigBeeDevice {
     switch (dp) {
     case DP_TEMPERATURE:
       // Temperature is usually in 0.1°C units
-      const temp = typeof value === 'number' ? value / 10 : value;
+      const temp = typeof value === 'number' ? smartParse(value, null, { capability: 'measure_temperature' }) : value;
       this._setTemperature(temp);
       break;
 

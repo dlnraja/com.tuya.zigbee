@@ -65,6 +65,9 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
   get gangCount() { return 1; }
 
   async onNodeInit({ zclNode }) {
+    // Auto-fix: Remove battery capabilities for mains-powered devices
+    await this.removeCapability('measure_battery').catch(() => {});
+    await this.removeCapability('alarm_battery').catch(() => {});
     // v5.6.0: Track state for physical button detection
     this._lastCoverState = null;
     this._appCommandPending = false;

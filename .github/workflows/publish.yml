@@ -57,6 +57,10 @@ jobs:
         continue-on-error: false
         run: npm run validate:fingerprints
 
+      - name: 🔍 Verify Flows Integrity
+        continue-on-error: false
+        run: npm run validate:flows
+
       - name: Validate (npx)
         run: npx homey app validate --level publish
 

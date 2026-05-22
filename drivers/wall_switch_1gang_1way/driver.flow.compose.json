@@ -109,6 +109,20 @@
           "type": "number"
         }
       ]
+    },
+    {
+      "id": "wall_switch_1gang_1way_physical_gang1_on",
+      "args": [],
+      "title": {
+        "en": "Turned on - physical (Gang 1)"
+      }
+    },
+    {
+      "id": "wall_switch_1gang_1way_physical_gang1_off",
+      "args": [],
+      "title": {
+        "en": "Turned off - physical (Gang 1)"
+      }
     }
   ],
   "actions": [

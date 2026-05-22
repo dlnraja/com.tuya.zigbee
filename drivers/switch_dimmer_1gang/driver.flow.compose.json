@@ -73,6 +73,20 @@
         }
       ],
       "args": []
+    },
+    {
+      "id": "switch_dimmer_1gang_physical_gang1_on",
+      "args": [],
+      "title": {
+        "en": "Turned on - physical (Gang 1)"
+      }
+    },
+    {
+      "id": "switch_dimmer_1gang_physical_gang1_off",
+      "args": [],
+      "title": {
+        "en": "Turned off - physical (Gang 1)"
+      }
     }
   ],
   "conditions": [
