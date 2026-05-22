@@ -111,6 +111,21 @@ function runValidation() {
           driverIssues.push({ level: 'error', rule: 'invalid-device-extension', message: 'Extends TuyaZigbeeDevice but uses DP commands. Must extend BaseUnifiedDevice or TuyaSpecificClusterDevice.' });
           driverHasError = true;
         }
+
+        // Phoenix Sovereign (v8.2) Agentic Guards
+        if (code.includes('(voltage - 2.5) / 0.5') || code.includes('(voltage - 2.5)/0.5') || code.includes('voltage - 2.5')) {
+          driverIssues.push({ level: 'error', rule: 'linear-battery-curve', message: 'Linear battery formulas are BANNED. Use SmartBatteryManager nonlinear profiles (e.g. 3V_2100, 1.5V_AA).' });
+          driverHasError = true;
+        }
+        if (code.includes('this.setCapabilityValue(\'button\',') || code.includes('this.setCapabilityValue("button",') || code.includes('this.setCapabilityValue(`button`,')) {
+          if (!code.includes('markAppCommand') && !code.includes('_safeSetCapability')) {
+            driverIssues.push({ level: 'error', rule: 'unsafe-button-trigger', message: 'Virtual button state set natively without markAppCommand() or _safeSetCapability(), causing infinite flow loops.' });
+            driverHasError = true;
+          }
+        }
+        if (code.includes('safeDivide(value, 100)') && code.includes('measure_temperature') && !code.includes('smartDivisorDetect')) {
+          driverIssues.push({ level: 'warning', rule: 'legacy-temperature-divisor', message: 'Hardcoded divisor 100 used for temperature. Consider migrating to smartDivisorDetect() to support dynamic firmwares.' });
+        }
       }
     }
 

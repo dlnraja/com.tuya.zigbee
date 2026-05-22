@@ -4,6 +4,7 @@ const UnifiedSensorBase = require('../../lib/devices/UnifiedSensorBase');
 const { getSensorConfig, transformPresence } = require('./configs');
 const IntelligentPresenceInference = require('../../lib/sensors/IntelligentPresenceInference');
 const IntelligentDPAutoDiscovery = require('../../lib/sensors/IntelligentDPAutoDiscovery');
+const MfrHelper = require('../../lib/helpers/ManufacturerNameHelper');
 
 /**
  * PresenceSensorRadarDevice - v8.0.0 ULTIMATE
@@ -36,7 +37,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
    * Main Tuya DP processing entry point
    */
   onTuyaDP(dpId, value, dpType) {
-    const config = getSensorConfig(this.getManufacturerName(), this.getStoreValue('modelId'));
+    const config = getSensorConfig(MfrHelper.getManufacturerName(this), this.getStoreValue('modelId'));
     const mapping = config.dpMap?.[dpId];
 
     // 1. Process via static config if matched
@@ -161,7 +162,7 @@ class PresenceSensorRadarDevice extends UnifiedSensorBase {
   async onSettings({ oldSettings, newSettings, changedKeys }) {
     if (super.onSettings) {await super.onSettings({ oldSettings, newSettings, changedKeys });}
     
-    const config = getSensorConfig(this.getManufacturerName(), this.getStoreValue('modelId'));
+    const config = getSensorConfig(MfrHelper.getManufacturerName(this), this.getStoreValue('modelId'));
     if (!config.dpMap) {return;}
 
     for (const key of changedKeys) {

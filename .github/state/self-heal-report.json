@@ -1,61 +1,8 @@
 {
-  "timestamp": "2026-05-22T01:16:20.732Z",
+  "timestamp": "2026-05-22T01:30:51.787Z",
   "totalFiles": 0,
-  "totalFixes": 137,
+  "totalFixes": 125,
   "rules": {
-    "fingerprint-case": {
-      "count": 12,
-      "files": [
-        {
-          "file": "drivers\\air_purifier\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
-        },
-        {
-          "file": "drivers\\bulb_dimmable\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -2)"
-        },
-        {
-          "file": "drivers\\bulb_rgb\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
-        },
-        {
-          "file": "drivers\\button_emergency_sos\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
-        },
-        {
-          "file": "drivers\\button_wireless_1\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
-        },
-        {
-          "file": "drivers\\button_wireless_2\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -22)"
-        },
-        {
-          "file": "drivers\\button_wireless_plug\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 3)"
-        },
-        {
-          "file": "drivers\\climate_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -20)"
-        },
-        {
-          "file": "drivers\\contact_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -15)"
-        },
-        {
-          "file": "drivers\\motion_sensor\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -13)"
-        },
-        {
-          "file": "drivers\\smoke_detector_advanced\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -2)"
-        },
-        {
-          "file": "drivers\\usb_outlet_advanced\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added -1)"
-        }
-      ]
-    },
     "flow-card-try-catch": {
       "count": 49,
       "files": [

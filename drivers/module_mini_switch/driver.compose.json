@@ -7,14 +7,12 @@
   },
   "class": "socket",
   "capabilities": [
-    "measure_battery",
     "alarm_generic",
     "measure_power",
     "measure_voltage",
     "measure_current",
     "onoff",
-    "meter_power",
-    "alarm_battery"
+    "meter_power"
   ],
   "energy": {
     "batteries": [

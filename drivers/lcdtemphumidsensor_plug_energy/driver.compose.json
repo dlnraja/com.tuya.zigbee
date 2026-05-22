@@ -12,11 +12,7 @@
     "meter_power",
     "measure_voltage",
     "measure_current",
-    "onoff",
-    "measure_battery",
-    "measure_temperature",
-    "measure_humidity",
-    "alarm_battery"
+    "onoff"
   ],
   "energy": {
     "batteries": [

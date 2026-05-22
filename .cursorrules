@@ -38,8 +38,39 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
 - **SanityFilter**: Automatically active. Filters EMA (noise) and ROC (spikes).
 - **Anti-Flood**: Throttling is managed at the base class level.
 - **Case-Insensitivity**: Match `manufacturerName` using `.toLowerCase().includes()`.
+- **Smart Divisors (v8.2+)**: Use `smartDivisorDetect()` for measure_temperature and measure_humidity parsing. Do NOT hardcode `value / 100` or `value / 10`.
+
+## Phoenix Sovereign Architecture (v8.2.0+) Rules
+1. **Virtual Buttons**: NEVER use `this.setCapabilityValue('button', ...)` natively. You MUST use `this._safeSetCapability()` or wrap with `markAppCommand()` to avoid infinite flow loops when physical buttons trigger Generic Flow Cards.
+2. **Batteries**: Linear formulas like `(voltage - 2.5) / 0.5` are STRICTLY BANNED. You must use `SmartBatteryManager` and non-linear profiles like `3V_2100` or `1.5V_AA`.
+3. **Mains-Powered Devices**: Must define `get mainsPowered() { return true; }` and strip `measure_battery` in `onNodeInit` to prevent phantom capabilities.
+
+## Smart Divisor Manager (v8.2.0+)
+- Located in `lib/managers/SmartDivisorManager.js`
+- Auto-détection du diviseur pour temperature, humidity, co2, power, current, voltage, energy, battery, distance, luminance
+- Résout le "Double-Division Bug": AdaptiveDataParser → /100 THEN dpMappings → /100 again
+- `smartDivisorDetect(rawValue, dpId, options)` — détection intelligente
+- `smartParse(rawValue, dpId, options)` — parse wrapper complet
+- Database KNOWN_DIVISORS + VALID_RANGES pour auto-détection
+- Cache automatique par (manufacturerName + dpId + capability)
+- Chaîne de fallback: Known DB → Auto-detect range → defaultDivisor param → 1
+
+## UnifiedBatteryHandler v8.2.0 (Phoenix Sovereign Fusion)
+- FUSION COMPLÈTE: v8 runtime-adaptive + v5 BatteryManagerV4/V5 courbes non-linéaires
+- `BATTERY_SPECS` statique: 15+ types (CR2032, CR2450, CR2477, CR123A, CR1632, AAA, AA, C, D, 9V, 2xAAA, 2xAA, 4xAAA, Li-ion, Li-polymer, 18650)
+- `calculateFromVoltage(voltage, batteryType, temperature)` — interpolation linéaire multipoints + compensation température
+- `lookupBatteryProfile(manufacturerName, productId)` — lookup par fabricant + productId (20+ profils)
+- `DEVICE_BATTERY_MAP` — 30+ device types → battery type mapping
+- `INTERVALS` — polling intervals par type d'appareil (1h à 12h)
+- EMA smoothing + health monitoring (drain rate, estimated days)
+- `calculateFromTuyaDP()` + `normalizeZigbeeValue()` — parsing multi-format
+- Anti-flood 5min/2% deduplication
+- Store persistence entre les sessions
+- ⚠️ RULE: Linear formulas like `(voltage - 2.5) / 0.5` are STRICTLY BANNED
+- ⚠️ RULE: Use non-linear profiles like `'3V_2100'` or `'1.5V_AA'`
 
 ## Anti-Patterns & Bug Fallbacks
+
 - **ZCL Cluster Double-Parsing**: When mixing custom inference handlers in `setupUniversalZCLListeners` for hybrid sensors, wrap base class setups (`_setupZCLCluster`) in checks for `!this.clusterHandlers?.temperatureMeasurement` to prevent bouncing parallel streams.
 - **Phantom Capabilities**: Do NOT fallback to feature-bloated configs like `HOBEIAN_10G_MULTI` for missing-model IDs on onboarding. It assigns fake temperature and humidity capabilities causing UI spam, and breaks IAS Zone protocols. Cascade safely into robust profiles like `HOBEIAN_ZG204ZM_FALLBACK`.
 

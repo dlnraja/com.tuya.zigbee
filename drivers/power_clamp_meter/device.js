@@ -65,8 +65,9 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     // v5.7.9: Cache manufacturer from zclNode for profile detection
     this._cachedMfr = zclNode?.manufacturerName ||
                       this.getSetting('zb_manufacturer_name') ||
-                      this.getStoreValue('manufacturerName') || '';await this._setupTuyaDP(zclNode);
-    await this._setupElectricalMeasurement(zclNode );
+                      this.getStoreValue('manufacturerName') || '';
+    await this._setupTuyaDP(zclNode);
+    await this._setupElectricalMeasurement(zclNode);
 
     const profile = this.meterProfile;
     this.log(`[METER] v5.7.9  Ready (profile: ${profile}, mfr: ${this._cachedMfr || 'unknown'})`);
@@ -258,10 +259,16 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 110: // Power factor A (÷100)
+        if (this.hasCapability('measure_power_factor')) {
+          this.setCapabilityValue('measure_power_factor', value / 100).catch(this.error);
+        }
         this.log(`[PJ1203A]  Power Factor A: ${value/100}`);
         break;
 
       case 111: // AC frequency (Hz ÷100)
+        if (this.hasCapability('measure_frequency')) {
+          this.setCapabilityValue('measure_frequency', value / 100).catch(this.error);
+        }
         this.log(`[PJ1203A]  AC Frequency: ${value/100} Hz`);
         break;
 
@@ -276,6 +283,9 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 114: // Current B (A ÷1000)
+        if (this.hasCapability('measure_current.phase2')) {
+          this.setCapabilityValue('measure_current.phase2', safeMultiply(safeDivide(value, 1000), this._ctRatio)).catch(this.error);
+        }
         this.log(`[PJ1203A]  Current B: ${value/1000} A`);
         break;
 
@@ -286,6 +296,9 @@ class PowerClampMeterDevice extends ZigBeeDevice {
         break;
 
       case 121: // Power factor B (÷100)
+        if (this.hasCapability('measure_power_factor')) {
+          this.setCapabilityValue('measure_power_factor', value / 100).catch(this.error);
+        }
         this.log(`[PJ1203A]  Power Factor B: ${value/100}`);
         break;
 

@@ -12,9 +12,7 @@
     "measure_power",
     "meter_power",
     "measure_voltage",
-    "measure_current",
-    "measure_battery",
-    "alarm_battery"
+    "measure_current"
   ],
   "capabilitiesOptions": {
     "onoff": {
@@ -48,18 +46,24 @@
     ]
   },
   "zigbee": {
+    "productId": [
+      "TS0207",
+      "TS0601_repeater",
+      "TS0002"
+    ],
     "manufacturerName": [
       "_tz3000_5f43h46b",
       "_TZ3000_5f43h46b",
       "_TZ3000_5F43H46B",
       "_tz3000_cfv2uyxe",
       "_TZ3000_cfv2uyxe",
-      "_TZ3000_CFV2UYXE"
-    ],
-    "productId": [
-      "TS0207",
-      "TS0601_repeater",
-      "TS0002"
+      "_TZ3000_CFV2UYXE",
+      "_tz3000_h1ipgkwn",
+      "_TZ3000_h1ipgkwn",
+      "_TZ3000_H1IPGKWN",
+      "_tz3000_iwtv2jwo",
+      "_TZ3000_iwtv2jwo",
+      "_TZ3000_IWTV2JWO"
     ],
     "endpoints": {
       "1": {

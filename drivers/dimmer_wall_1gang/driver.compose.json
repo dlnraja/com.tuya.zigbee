@@ -9,9 +9,7 @@
   "capabilities": [
     "dim",
     "onoff",
-    "measure_power",
-    "measure_battery",
-    "alarm_battery"
+    "measure_power"
   ],
   "energy": {
     "batteries": [
