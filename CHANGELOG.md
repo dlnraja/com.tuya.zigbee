@@ -4,7 +4,23 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.2] - 2026-05-21
+## [8.1.3] - 2026-05-21
+
+### Bug Fixes
+- ZY-M100 settings exposure fixed (Issue #324)
+
+### New Features
+- 41 new flow cards added across drivers
+- WiFi flow cards now complete
+- New flow cards for: climate_sensor, climate_sensor_energy, device_din_rail, device_din_rail_meter, device_floor_heating, garage_door_opener, hvac_controller, light_sensor_outdoor, motion_sensor_2, pet_feeder_zigbee, pir_mmwave_sensor, presence_sensor_radar, radiator_valve_zigbee, radiator_wifi_tuya
+
+### Improvements
+- Flow card support expanded for radiator_valve_zigbee (377 cards)
+- Flow card support expanded for hvac_controller (258 cards)
+- Flow card support expanded for device_floor_heating (186 cards)
+---
+
+ [8.1.2] - 2026-05-21
 
 ### Bug Fixes
 - Fixed fingerprint collision: device_din_rail/EMQMWTYM now maps to doorbell driver

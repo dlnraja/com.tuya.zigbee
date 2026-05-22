@@ -1,6 +1,6 @@
 {
   "8.1.3": {
-    "en": "v8.1.3: 41 new driver.flow.compose.json files created for all previously missing drivers (10 eWeLink, 11 Sonoff, 20 non-WiFi). Flow cards with triggers, conditions, and actions for thermostats, sensors, sockets, switches, garage doors, hvac, mmWave, pet feeders, sirens, and wall remotes. Partie WiFi complétée avec flow cards pour tous les drivers eWeLink et Sonoff. Bug fix: wifi_ewelink_th/device.js fixed constrequire typo."
+    "en": "Bug fix: ZY-M100 settings now expose correctly. 41 new flow cards across drivers. WiFi flow cards complete. Updated flow support for climate_sensor, din_rail, garage_door, radiator_valve, and more."
   },
   "8.1.2": {
     "en": "bed_sensor driver added. Fixed 3 fingerprint collisions (device_din_rail/EMQMWTYM→doorbell, switch_1gang/TVUARKSA→plug_energy_monitor, button_wireless_smart/MRPEVH8P→button_wireless_1). Fixed curtain_motor_tilt flow cards, valve_irrigation class, bed_sensor settings."
@@ -59,10 +59,7 @@
   "7.5.38": {
     "en": "No user-facing changes in this release."
   },
-  "7.5.37": {
-    "en": "Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 compliance"
-  },
-  "8.1.3": {
-    "en": "v8.1.2: Fixed fingerprint collision: device_din_rail/EMQMWTYM now maps to doorbell driver, Fixed fingerprint collision: switch_1gang/TVUARKSA now maps to plug_energy_monitor driver, Fixed fingerprint collision: button_wireless_smart/MRPEVH8P now maps to button_wireless_1 driver, Fixed curtain_motor_tilt flow cards, Fixed valve_irrigation class"
+  "8.1.4": {
+    "en": "v8.1.3: ZY-M100 settings exposure fixed (Issue #324), 41 new flow cards added across drivers, WiFi flow cards now complete, New flow cards for: climate_sensor, climate_sensor_energy, device_din_rail, device_din_rail_meter, device_floor_heating, garage_door_opener, hvac_controller, light_sensor_outdoor, motion_sensor_2, pet_feeder_zigbee, pir_mmwave_sensor, presence_sensor_radar, radiator_valve_zig"
   }
 }
