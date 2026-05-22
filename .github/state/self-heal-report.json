@@ -1,8 +1,61 @@
 {
-  "timestamp": "2026-05-21T16:08:12.988Z",
+  "timestamp": "2026-05-22T01:16:20.732Z",
   "totalFiles": 0,
-  "totalFixes": 105,
+  "totalFixes": 137,
   "rules": {
+    "fingerprint-case": {
+      "count": 12,
+      "files": [
+        {
+          "file": "drivers\\air_purifier\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+        },
+        {
+          "file": "drivers\\bulb_dimmable\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added -2)"
+        },
+        {
+          "file": "drivers\\bulb_rgb\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+        },
+        {
+          "file": "drivers\\button_emergency_sos\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+        },
+        {
+          "file": "drivers\\button_wireless_1\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+        },
+        {
+          "file": "drivers\\button_wireless_2\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added -22)"
+        },
+        {
+          "file": "drivers\\button_wireless_plug\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added 3)"
+        },
+        {
+          "file": "drivers\\climate_sensor\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added -20)"
+        },
+        {
+          "file": "drivers\\contact_sensor\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added -15)"
+        },
+        {
+          "file": "drivers\\motion_sensor\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added -13)"
+        },
+        {
+          "file": "drivers\\smoke_detector_advanced\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added -2)"
+        },
+        {
+          "file": "drivers\\usb_outlet_advanced\\driver.compose.json",
+          "detail": "Expanded fingerprints with robust casing variants (added -1)"
+        }
+      ]
+    },
     "flow-card-try-catch": {
       "count": 49,
       "files": [
@@ -283,7 +336,7 @@
         },
         {
           "file": "drivers\\power_clamp_meter\\device.js",
-          "detail": "Line 182: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+          "detail": "Line 183: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "drivers\\radiator_valve\\device.js",
@@ -412,35 +465,115 @@
       ]
     },
     "duplicate-fingerprints": {
-      "count": 7,
+      "count": 27,
       "files": [
         {
           "file": "drivers",
-          "detail": "_tz3210_emqmwtym|ts0601 found in: device_din_rail, doorbell"
+          "detail": "_tyzb01_phjeraqq|ts0002 found in: button_wireless_2, button_wireless_plug"
         },
         {
           "file": "drivers",
-          "detail": "_tze200_hl0ss9oa|ts0225 found in: illuminance_sensor, presence_sensor_radar"
+          "detail": "_tyzb01_phjeraqq|ts0012 found in: button_wireless_2, button_wireless_plug"
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_tvuarksa|ts011f found in: plug_energy_monitor, switch_1gang"
+          "detail": "_tyzb01_phjeraqq|ts0003 found in: button_wireless_2, button_wireless_plug"
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_tvuarksa|s31zb found in: plug_energy_monitor, switch_1gang"
+          "detail": "_tyzb01_phjeraqq|ts0013 found in: button_wireless_2, button_wireless_plug"
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_tvuarksa|s26r2zb found in: plug_energy_monitor, switch_1gang"
+          "detail": "_tyzb01_phjeraqq|ts011f found in: button_wireless_2, button_wireless_plug"
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_tvuarksa|zbminil2 found in: plug_energy_monitor, switch_1gang"
+          "detail": "_tyzb01_phjeraqq|ts0011 found in: button_wireless_2, button_wireless_plug"
         },
         {
           "file": "drivers",
-          "detail": "_tz3000_tvuarksa|ts0601 found in: plug_energy_monitor, switch_1gang"
+          "detail": "_tyzb01_phjeraqq|ts000f found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_phjeraqq|ts0001 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_phjeraqq|ts0111 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_hlla45kx|ts0002 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_hlla45kx|ts0012 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_hlla45kx|ts0003 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_hlla45kx|ts0013 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_hlla45kx|ts011f found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_hlla45kx|ts0011 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_hlla45kx|ts000f found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_hlla45kx|ts0001 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_hlla45kx|ts0111 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_iuepbmpv|ts0002 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_iuepbmpv|ts0012 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_iuepbmpv|ts0003 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_iuepbmpv|ts0013 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_iuepbmpv|ts011f found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_iuepbmpv|ts0011 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_iuepbmpv|ts000f found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_iuepbmpv|ts0001 found in: button_wireless_2, button_wireless_plug"
+        },
+        {
+          "file": "drivers",
+          "detail": "_tyzb01_iuepbmpv|ts0111 found in: button_wireless_2, button_wireless_plug"
         }
       ]
     },
