@@ -50,6 +50,9 @@
     "validate:recursive": "node scripts/validation/comprehensive-recursive-validator.js",
     "fix:auto": "node scripts/validation/auto-fix-common-issues.js",
     "validate:fix": "npm run validate:recursive && npm run fix:auto && npm run validate:recursive",
+    "validate:conflicts": "node scripts/validation/check_git_conflicts.js",
+    "validate:fingerprints": "node scripts/validation/verify_fingerprints_integrity.js",
+    "tool:inject-fp": "node scripts/tools/inject_fingerprint.js",
     "generate-driver": "node .github/scripts/generate-driver.js"
   },
   "keywords": [
