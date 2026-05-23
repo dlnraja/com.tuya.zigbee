@@ -39,6 +39,8 @@ Before making ANY changes to this repository, you **MUST** execute the mandatory
 22. [Crash Resolutions History](#22-crash-resolutions-history)
 23. [AI Navigation & Cartography Map](#23-ai-navigation--cartography-map)
 24. [Advanced Agentic Skills Integration](#24-advanced-agentic-skills-integration)
+25. [Deep Diagnostic & Cross-Referencing Mandate](#25-deep-diagnostic--cross-referencing-mandate-ai-agents)
+26. [Autonomous Agent Reflection & Logic Mode](#26-autonomous-agent-reflection--logic-mode)
 
 ---
 
@@ -910,3 +912,15 @@ When a user reports "it doesn't work well" or an "unknown device" issue, **DO NO
 6. **Agentic Skills & Local Code**: Leverage the local AI tools! Be fully aware of the `Antigravity skills` (located in `.agents/skills/`) and the local `Claude Code` implementations within the project. These serve as major sources of inspiration and diagnostic power.
 7. **Dotfile Reading Mandate**: Always read configuration files starting with a dot (e.g., `.windsurfrules`, `.clinerules`, `.github/workflows/*`) to understand the strict project boundaries before applying any cross-referenced fix.
 8. **MANDATORY Investigation Plan**: Before any bug investigation or deep diagnostic, you MUST read [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — the complete 22-section methodology for cross-referencing manufacturers, DP mappings, forums, emails, Z2M/ZHA, GitHub PRs/Issues, and Antigravity skills integration.
+
+## 26. AUTONOMOUS AGENT REFLECTION & LOGIC MODE
+
+Inspired by advanced agentic loops (like those in Claude Code and Antigravity frameworks), all AI interactions within this project must strictly adhere to the following reflection protocols:
+
+- **Thinking Blocks**: Before taking action, use a structured thinking process to reflect on the codebase state, the dual-app architecture, and potential side-effects.
+- **Incremental Verification**: Do not attempt to fix 10 things at once. Plan, execute one logical block, test/verify (e.g., via `npm run test` or validator scripts), and reflect on the outcome before proceeding.
+- **Tool-Driven Loop**: Leverage tools intelligently (read files to confirm context, search codebase for dependencies, run validation scripts) before making blind code edits.
+- **Context Mastery**: Assimilate the dual-app context and project architecture fully into your reasoning model before proposing solutions.
+
+By embedding this logic into IDE rules, workflows, and algorithms, the project ensures zero-regression and highly autonomous, reliable self-healing capabilities.
+

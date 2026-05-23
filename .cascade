@@ -50,3 +50,9 @@ this._appCommandPending = false;
 
 ## PLAYBOOKS & SKILLS
 - Always consult `.agents/skills/` playbooks and draw inspiration from `https://github.com/sickn33/antigravity-awesome-skills` for high-fidelity audits and systematic troubleshooting.
+
+## AUTONOMOUS AGENT REFLECTION & LOGIC MODE
+- **Thinking Blocks**: Before taking action, use a structured thinking process to reflect on the codebase state and potential side-effects.
+- **Incremental Verification**: Do not attempt to fix 10 things at once. Plan, execute one logical block, test/verify, and reflect on the outcome before proceeding.
+- **Tool-Driven Loop**: Leverage tools intelligently (read files to confirm context, search codebase for dependencies, run validation scripts) before making blind code edits.
+- **Context Mastery**: Assimilate the dual-app context and project architecture fully into your reasoning model before proposing solutions.

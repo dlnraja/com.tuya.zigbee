@@ -122,11 +122,17 @@ Il est **strictement obligatoire** de distinguer les deux environnements d'exéc
   3. **Commits et skips** : Toutes les écritures automatisées poussées sur GitHub doivent utiliser le tag `[skip ci]` dans le message de commit pour éviter les boucles infinies de builds.
   4. **Scraping autonome** : Utilisez toujours nos scripts Node locaux pour interroger Z2M ou les forums afin d'éviter la lourdeur des navigateurs headless (MCP Browsers) qui consomment trop de RAM et de tokens.
 
+### C. Mode de Réflexion et Logique Autonome
+> [!TIP]
+> Inspirez-vous des boucles d'agents autonomes (comme Claude Code) pour structurer vos interventions :
+> - **Réflexion Systématique** : Prenez toujours le temps de réfléchir au contexte global avant de proposer une modification.
+> - **Validation Incrémentale** : Testez chaque bloc logique un par un, plutôt que de tout modifier en bloc.
+> - **Utilisation des Outils** : Servez-vous intelligemment de vos outils pour lire, lister et valider (ex: `npm run test`) avant d'écrire du code.
+
 ---
 
 ## 4. 🛠️ INTÉGRATION DES OUTILS "ANTIGRAVITY SKILLS" & CLAUDE CODE
 
-Ce projet intègre l'arsenal d'IA **Antigravity Skills** (`.agents/skills/` tel que `bug-hunter`, `codebase-audit`) et s'inspire directement du framework **Claude Code Local**.
 
 ### A. Le Validateur Récursif Souverain (Zero-Defect Control)
 > [!WARNING]

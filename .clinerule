@@ -59,3 +59,11 @@
 - **Zigbee/Tuya Specifics**: [ZIGBEE_TUYA_RULES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/ZIGBEE_TUYA_RULES.md)
 - **Critical Mistakes to Avoid**: [CRITICAL_MISTAKES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/CRITICAL_MISTAKES.md)
 - **Global Investigation Plan (22 sections)**: [GLOBAL_INVESTIGATION_PLAN.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/GLOBAL_INVESTIGATION_PLAN.md) — Mandatory deep diagnostic methodology for cross-referencing manufacturers, DP mappings, forums, emails, Z2M/ZHA, GitHub PRs/Issues, and Antigravity skills integration.
+
+// ============================================================================
+// AUTONOMOUS AGENT REFLECTION & LOGIC MODE
+// ============================================================================
+- **Thinking Blocks**: Before taking action, use a structured thinking process to reflect on the codebase state and potential side-effects.
+- **Incremental Verification**: Do not attempt to fix 10 things at once. Plan, execute one logical block, test/verify, and reflect on the outcome before proceeding.
+- **Tool-Driven Loop**: Leverage tools intelligently (read files to confirm context, search codebase for dependencies, run validation scripts) before making blind code edits.
+- **Context Mastery**: Assimilate the dual-app context and project architecture fully into your reasoning model before proposing solutions.
