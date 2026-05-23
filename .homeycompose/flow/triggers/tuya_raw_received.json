@@ -41,5 +41,9 @@
       "min": 0,
       "max": 255
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Tuya raw DP received [[device]] [[dp]]",
+    "fr": "DP Tuya brut reçu [[device]] [[dp]]"
+  }
 }

@@ -13,11 +13,9 @@
     "measure_temperature",
     "measure_humidity",
     "alarm_human",
-    "measure_battery",
     "measure_luminance.distance",
     "alarm_contact",
-    "alarm_tamper",
-    "alarm_battery"
+    "alarm_tamper"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {
@@ -578,14 +576,6 @@
     "zigbee"
   ],
   "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A",
-      "INTERNAL"
-    ],
     "approximation": {
       "usageConstant": 0.5
     }

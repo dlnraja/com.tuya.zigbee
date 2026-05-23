@@ -49,11 +49,7 @@
   "connectivity": [
     "zigbee"
   ],
-  "energy": {
-    "batteries": [
-      "OTHER"
-    ]
-  },
+  "energy": {},
   "maintenanceActions": [
     {
       "id": "ota_check",

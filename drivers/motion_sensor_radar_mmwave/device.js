@@ -24,8 +24,30 @@ class MotionSensorRadarDevice extends UnifiedSensorBase {
       const appVersion = this.getStoreValue('appVersion') || this.zclNode.endpoints[1]?.clusters?.basic?.appVersion;
       if (appVersion) {this._inference.setFirmwareInfo(appVersion);}
 
+      // Configure continuous illuminance reporting
+      await this._configureIlluminanceReporting();
+
       this.log('[MMWAVE] ✅ Ready');
     }, 'onNodeInit');
+  }
+
+  // Configure illuminance reporting independently from motion
+  async _configureIlluminanceReporting() {
+    try {
+      if (this.zclNode && this.zclNode.endpoints[1] && this.zclNode.endpoints[1].clusters.illuminanceMeasurement) {
+        const illuminanceCluster = this.zclNode.endpoints[1].clusters.illuminanceMeasurement;
+        await illuminanceCluster.configureReporting({
+          measuredValue: {
+            minInterval: 30,      // 30 seconds minimum
+            maxInterval: 300,     // 5 minutes maximum
+            minChange: 50         // 50 lux minimum change
+          }
+        });
+        this.log('[MMWAVE] ✅ Illuminance reporting configured for continuous updates');
+      }
+    } catch (error) {
+      this.log('[MMWAVE] ❌ Failed to configure illuminance reporting:', error.message);
+    }
   }
 
   get sensorCapabilities() {

@@ -1,6 +1,7 @@
 'use strict';
 const CI = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeDivide, safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 
 
 const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
@@ -495,7 +496,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       temperatureMeasurement: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined && data.measuredValue !== -32768) {
-            let temp = data.measuredValue / 100;
+            let temp = smartParse(data.measuredValue, null, { capability: 'measure_temperature' });
             // v5.5.793: Use validation constants
             if (temp >= VALIDATION.TEMP_MIN && temp <= VALIDATION.TEMP_MAX) {
               // v5.5.793: Apply calibration offset if available
@@ -518,7 +519,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
       relativeHumidity: {
         attributeReport: (data) => {
           if (data.measuredValue !== undefined && data.measuredValue !== 65535) {
-            let hum = data.measuredValue / 100;
+            let hum = smartParse(data.measuredValue, null, { capability: 'measure_humidity' });
             // v5.5.793: Auto-detect divisor for devices reporting 0-1000 scale
             if (hum > VALIDATION.HUMIDITY_AUTO_DIVISOR_THRESHOLD) {
               hum = Math.round(hum / 10);
@@ -1272,7 +1273,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         this.log('[MOTION-AWAKE]  Smart temperature read while device is awake...' );
         const data = await this._smartZclRead(tempCluster, ['measuredValue'], 3000);
         if (data?.measuredValue !== undefined && data.measuredValue !== -32768 && data.measuredValue !== 0x8000) {
-          const temp = data.measuredValue / 100;
+          const temp = smartParse(data.measuredValue, null, { capability: 'measure_temperature' });
           this.log(`[MOTION-AWAKE]  Temperature: ${temp}Â°C (raw: ${data.measuredValue})`);
           // Auto-add capability if needed
           if (!this.hasCapability('measure_temperature')) {
@@ -1304,7 +1305,7 @@ class MotionSensorDevice extends UnifiedSensorBase {
         this.log('[MOTION-AWAKE]  Smart humidity read while device is awake...' );
         const data = await this._smartZclRead(humCluster, ['measuredValue'], 3000);
         if (data?.measuredValue !== undefined && data.measuredValue !== 65535 && data.measuredValue !== 0xFFFF) {
-          const hum = data.measuredValue / 100;
+          const hum = smartParse(data.measuredValue, null, { capability: 'measure_humidity' });
           this.log(`[MOTION-AWAKE]  Humidity: ${hum}% (raw: ${data.measuredValue})`);
           // Auto-add capability if needed
           if (!this.hasCapability('measure_humidity')) {

@@ -32,5 +32,11 @@
       "name": "device",
       "filter": "capabilities=button.1,capabilities=button"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Button pressed [[device]]",
+    "fr": "Bouton appuyé [[device]]",
+    "nl": "Knop ingedrukt [[device]]",
+    "de": "Taste gedrückt [[device]]"
+  }
 }

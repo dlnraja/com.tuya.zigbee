@@ -21,7 +21,13 @@
           "example": 22.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "Température changée",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geändert"
+      }
     },
     {
       "id": "sirentemphumidsensor_humidity_changed",
@@ -44,7 +50,13 @@
           "example": 55
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "Humidité changée",
+        "nl": "Luchtvochtigheid gewijzigd",
+        "de": "Luftfeuchtigkeit geändert"
+      }
     },
     {
       "id": "sirentemphumidsensor_alarm_triggered",
@@ -67,7 +79,13 @@
           "example": "contact"
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Alarm triggered",
+        "fr": "Alarme déclenchée",
+        "nl": "Alarm geactiveerd",
+        "de": "Alarm ausgelöst"
+      }
     }
   ],
   "conditions": [
@@ -79,7 +97,13 @@
         "nl": "Alarm !{{is|is niet}} actief",
         "de": "Alarm !{{ist|ist nicht}} aktiv"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Alarm !{{is|is not}} active",
+        "fr": "Alarme !{{est|n'est pas}} active",
+        "nl": "Alarm !{{is|is niet}} actief",
+        "de": "Alarm !{{ist|ist nicht}} aktiv"
+      }
     }
   ]
 }
