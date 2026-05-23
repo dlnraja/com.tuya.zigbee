@@ -37,7 +37,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Feature |
 |---------|---------|
-| **v8.1.4** | v8.1.3: ZY-M100 settings exposure fixed (Issue #324), 41 new flow cards added... |
+| **v8.1.5** | v8.1.4: Added capabilities: measure_frequency, measure_power_factor, alarm_ga... |
+| **v8.1.4** | . New capabilities: measure_frequency, measure_power_factor, alarm_gas, alarm... |
 | **v8.1.3** | Bug fix: ZY-M100 settings now expose correctly. 41 new flow cards across driv... |
 | **v8.1.2** | bed_sensor driver added. Fixed 3 fingerprint collisions (device_din_rail/EMQM... |
 | **v8.1.1** | v8.1.1: Fixed Issue #331 â€” Settings tab crash on 6 drivers (Hybrid*Base renam... |
@@ -46,8 +47,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.52** | Bug fixes for button_wireless_3/4, ir_blaster, soil_sensor, plug_smart and sw... |
 | **v7.5.51** | Bug fix: resolved fingerprint collision for _TZ3000_h1ipgkwn. Improved USB do... |
 | **v7.5.50** | 166 new fingerprints added across 8 drivers. Fixed fingerprint collisions and... |
-| **v7.5.49** | New driver: presence sensor microwave (pir_mmwave_sensor). New fingerprints v... |
 <!-- CHANGELOG_END -->
+
 
 
 
