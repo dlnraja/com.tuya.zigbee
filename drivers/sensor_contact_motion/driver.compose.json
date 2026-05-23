@@ -9,20 +9,13 @@
   "class": "sensor",
   "capabilities": [
     "alarm_motion",
-    "measure_battery",
     "measure_luminance",
     "measure_temperature",
     "measure_humidity",
     "alarm_tamper",
-    "alarm_contact",
-    "alarm_battery"
+    "alarm_contact"
   ],
   "energy": {
-    "batteries": [
-      "CR2450",
-      "CR123A",
-      "AAA"
-    ],
     "approximation": {
       "usageConstant": 0.5
     }

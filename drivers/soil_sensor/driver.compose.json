@@ -11,11 +11,9 @@
     "measure_temperature",
     "measure_humidity",
     "measure_luminance",
-    "measure_battery",
     "alarm_water",
     "measure_ec",
-    "measure_conductivity",
-    "alarm_battery"
+    "measure_conductivity"
   ],
   "capabilitiesOptions": {
     "measure_humidity.soil": {
@@ -59,13 +57,7 @@
       }
     }
   },
-  "energy": {
-    "batteries": [
-      "AAA",
-      "CR2032",
-      "CR2450"
-    ]
-  },
+  "energy": {},
   "subDevices": [],
   "zigbee": {
     "manufacturerName": [

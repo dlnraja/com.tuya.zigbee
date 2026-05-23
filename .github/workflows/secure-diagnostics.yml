@@ -32,7 +32,8 @@ jobs:
 
       - name: 📦 Install Dependencies
         run: |
-          npm install imapflow mailparser
+          npm ci --prefer-offline --no-audit || npm install
+          npm install mailparser --no-save
 
       - name: 🔍 Run Secure Extraction
         env:

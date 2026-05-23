@@ -13,11 +13,7 @@
     "measure_current",
     "onoff"
   ],
-  "energy": {
-    "batteries": [
-      "OTHER"
-    ]
-  },
+  "energy": {},
   "zigbee": {
     "manufacturerName": [
       "ck-bl702-swp-01(7020)",

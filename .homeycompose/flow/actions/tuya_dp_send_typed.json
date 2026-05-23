@@ -75,5 +75,9 @@
         "en": "Value"
       }
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Send typed Tuya DP [[device]] [[dp]] [[dp_type]] [[value]]",
+    "fr": "Envoyer DP Tuya typé [[device]] [[dp]] [[dp_type]] [[value]]"
+  }
 }

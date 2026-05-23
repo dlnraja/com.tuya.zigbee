@@ -41,5 +41,9 @@
       "min": 0,
       "max": 255
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Tuya bitmap DP changed [[device]] [[dp]]",
+    "fr": "Bitmap Tuya changé [[device]] [[dp]]"
+  }
 }

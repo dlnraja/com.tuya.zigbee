@@ -292,7 +292,7 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     if (type === 'percentage') {
       percent = value > 100 ? Math.round(value / 2) : value;
     } else {
-      const voltage = value / 10;
+      const voltage = smartParse(value, null, { capability: 'measure_voltage' });
       percent = Math.min(100, Math.max(0, Math.round((voltage - 2.0) * 100)));
     }
 

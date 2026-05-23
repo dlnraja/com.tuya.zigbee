@@ -46,5 +46,11 @@
       "min": 0,
       "max": 255
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Tuya Data Point received [[device]] [[dp]]",
+    "fr": "Data Point Tuya reçu [[device]] [[dp]]",
+    "nl": "Tuya Data Point ontvangen [[device]] [[dp]]",
+    "de": "Tuya Datenpunkt empfangen [[device]] [[dp]]"
+  }
 }

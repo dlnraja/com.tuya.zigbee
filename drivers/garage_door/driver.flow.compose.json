@@ -8,7 +8,13 @@
         "nl": "Contact gewijzigd",
         "de": "Kontakt geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact changed",
+        "fr": "Contact changé",
+        "nl": "Contact gewijzigd",
+        "de": "Kontakt geändert"
+      }
     }
   ],
   "conditions": [
@@ -20,7 +26,13 @@
         "nl": "Contact !{{is|is niet}} open",
         "de": "Kontakt !{{ist|ist nicht}} offen"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Contact !{{is|is not}} open",
+        "fr": "Contact !{{est|n'est pas}} ouvert",
+        "nl": "Contact !{{is|is niet}} open",
+        "de": "Kontakt !{{ist|ist nicht}} offen"
+      }
     }
   ],
   "actions": []

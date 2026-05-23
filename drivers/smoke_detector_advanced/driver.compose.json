@@ -8,17 +8,11 @@
   "class": "sensor",
   "capabilities": [
     "alarm_smoke",
-    "measure_battery",
     "measure_temperature",
     "measure_humidity",
-    "alarm_tamper",
-    "alarm_battery"
+    "alarm_tamper"
   ],
   "energy": {
-    "batteries": [
-      "CR2",
-      "CR123A"
-    ],
     "approximation": {
       "usageConstant": 0.5
     }

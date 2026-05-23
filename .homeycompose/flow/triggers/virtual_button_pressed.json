@@ -31,5 +31,11 @@
       "type": "device",
       "name": "device"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Virtual button pressed in app [[device]]",
+    "fr": "Bouton virtuel appuyé dans l'app [[device]]",
+    "nl": "Virtuele knop ingedrukt in app [[device]]",
+    "de": "Virtuelle Taste in App gedrückt [[device]]"
+  }
 }

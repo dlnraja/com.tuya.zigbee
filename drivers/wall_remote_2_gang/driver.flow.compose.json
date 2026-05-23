@@ -9,7 +9,13 @@
         "nl": "Knop 1 ingedrukt",
         "de": "Taste 1 gedrückt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 pressed",
+        "fr": "Bouton 1 pressé",
+        "nl": "Knop 1 ingedrukt",
+        "de": "Taste 1 gedrückt"
+      }
     },
     {
       "id": "wall_remote_2_gang_button_2_pressed",
@@ -19,7 +25,13 @@
         "nl": "Knop 2 ingedrukt",
         "de": "Taste 2 gedrückt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 pressed",
+        "fr": "Bouton 2 pressé",
+        "nl": "Knop 2 ingedrukt",
+        "de": "Taste 2 gedrückt"
+      }
     },
     {
       "id": "wall_remote_2_gang_button_1_held",
@@ -29,7 +41,13 @@
         "nl": "Knop 1 ingedrukt houden",
         "de": "Taste 1 gehalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 1 held",
+        "fr": "Bouton 1 maintenu",
+        "nl": "Knop 1 ingedrukt houden",
+        "de": "Taste 1 gehalten"
+      }
     },
     {
       "id": "wall_remote_2_gang_button_2_held",
@@ -39,7 +57,13 @@
         "nl": "Knop 2 ingedrukt houden",
         "de": "Taste 2 gehalten"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Button 2 held",
+        "fr": "Bouton 2 maintenu",
+        "nl": "Knop 2 ingedrukt houden",
+        "de": "Taste 2 gehalten"
+      }
     },
     {
       "id": "wall_remote_2_gang_both_pressed",
@@ -49,7 +73,13 @@
         "nl": "Beide ingedrukt",
         "de": "Beide gedrückt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Both pressed",
+        "fr": "Les deux pressés",
+        "nl": "Beide ingedrukt",
+        "de": "Beide gedrückt"
+      }
     },
     {
       "id": "wall_remote_2_gang_motion_detected",
@@ -59,7 +89,13 @@
         "nl": "Beweging gedetecteerd",
         "de": "Bewegung erkannt"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Motion detected",
+        "fr": "Mouvement détecté",
+        "nl": "Beweging gedetecteerd",
+        "de": "Bewegung erkannt"
+      }
     }
   ]
 }

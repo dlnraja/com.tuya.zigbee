@@ -88,14 +88,7 @@
   "energy": {
     "approximation": {
       "usageConstant": 0.5
-    },
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ]
+    }
   },
   "platforms": [
     "local"

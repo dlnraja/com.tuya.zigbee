@@ -11,20 +11,12 @@
     "measure_temperature",
     "measure_temperature.probe",
     "measure_humidity",
-    "measure_battery",
     "alarm_contact",
     "alarm_tamper",
     "measure_luminance",
-    "alarm_water",
-    "alarm_battery"
+    "alarm_water"
   ],
-  "energy": {
-    "batteries": [
-      "AAA",
-      "CR2032",
-      "CR2450"
-    ]
-  },
+  "energy": {},
   "subDevices": [],
   "capabilityOptions": {
     "measure_temperature.probe": {

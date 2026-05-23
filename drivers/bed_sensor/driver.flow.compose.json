@@ -15,7 +15,13 @@
         "nl": "Wordt geactiveerd wanneer iemand in bed gaat liggen",
         "de": "Wird ausgelöst, wenn jemand ins Bett geht"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Bed occupied",
+        "fr": "Lit occupé",
+        "nl": "Bed bezet",
+        "de": "Bett besetzt"
+      }
     },
     {
       "id": "bed_sensor_vacant",
@@ -31,7 +37,13 @@
         "nl": "Wordt geactiveerd wanneer iemand uit bed gaat",
         "de": "Wird ausgelöst, wenn jemand aufsteht"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Bed vacant",
+        "fr": "Lit libre",
+        "nl": "Bed vrij",
+        "de": "Bett frei"
+      }
     }
   ],
   "conditions": [
@@ -55,7 +67,13 @@
           "type": "device",
           "filter": "driver_id=bed_sensor"
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Bed is occupied [[device]]",
+        "fr": "Le lit est occupé [[device]]",
+        "nl": "Bed is bezet [[device]]",
+        "de": "Bett ist besetzt [[device]]"
+      }
     }
   ]
 }

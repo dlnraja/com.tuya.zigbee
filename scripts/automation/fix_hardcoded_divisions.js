@@ -5,7 +5,7 @@ const ROOT_DIR = path.join(__dirname, '..', '..');
 const DRIVERS_DIR = path.join(ROOT_DIR, 'drivers');
 
 function main() {
-    console.log('--- Starting SmartDivisorManager Auto-Fix ---');
+    console.log('--- Starting Intelligent SmartDivisorManager Auto-Fix ---');
 
     const driverDirs = fs.readdirSync(DRIVERS_DIR);
     let fixedDrivers = 0;
@@ -17,34 +17,56 @@ function main() {
             let content = fs.readFileSync(devicePath, 'utf8');
             let modified = false;
 
-            // Simple replacement for dpMappings hardcoded divisors
-            // If they have divisor: 10 or divisor: 100 inside dpMappings, we can remove it or set it to 1,
-            // but AdaptiveDataParser already handles it. The rule says "Use smartDivisorDetect() for measure_temperature and measure_humidity in device classes. Do NOT hardcode `value / 100` or `value / 10` manually."
-            
-            // Let's replace some known hardcoded divisions in custom datapoint handlers
-            // For example in switch_temp_sensor/device.js
-            if (content.includes('value / 10') || content.includes('value / 100')) {
-                // If it doesn't import SmartDivisorManager, add it
+            const injectSmartParse = () => {
                 if (!content.includes('smartParse') && !content.includes('SmartDivisorManager')) {
                     if (content.includes('require(')) {
                         content = content.replace(/(const {[^}]+}\s*=\s*require\('[^']+'\);)/, `$1\nconst { smartParse } = require('../../lib/managers/SmartDivisorManager');`);
+                    } else {
+                        content = `const { smartParse } = require('../../lib/managers/SmartDivisorManager');\n` + content;
                     }
                 }
-                
-                // We'll replace specific patterns
-                // const temp = typeof value === 'number' ? value / 100 : value;
-                content = content.replace(/typeof value === 'number'\s*\?\s*value\s*\/\s*100\s*:\s*value/g, "typeof value === 'number' ? smartParse(value, null, { capability: 'measure_temperature' }) : value");
-                content = content.replace(/typeof value === 'number'\s*\?\s*value\s*\/\s*10\s*:\s*value/g, "typeof value === 'number' ? smartParse(value, null, { capability: 'measure_temperature' }) : value");
-                
-                // value / 100
-                content = content.replace(/value \/ 100/g, "smartParse(value, null, { capability: 'measure_temperature' })");
+            };
 
-                fs.writeFileSync(devicePath, content, 'utf8');
+            // Fix temp = data.measuredValue / 100;
+            if (content.match(/(temp|temperature)\s*=\s*(?:Math\.round\()?\(?(data\.measuredValue\s*\/\s*100)/i)) {
+                injectSmartParse();
+                content = content.replace(/(temp|temperature)\s*=\s*Math\.round\(\(data\.measuredValue\s*\/\s*100\)\s*\*\s*10\)\s*\/\s*10/g, "$1 = smartParse(data.measuredValue, null, { capability: 'measure_temperature' })");
+                content = content.replace(/(temp|temperature)\s*=\s*data\.measuredValue\s*\/\s*100/g, "$1 = smartParse(data.measuredValue, null, { capability: 'measure_temperature' })");
+                modified = true;
+            }
+
+            // Fix hum = data.measuredValue / 100;
+            if (content.match(/(hum|humidity)\s*=\s*(?:Math\.round\()?\(?(data\.measuredValue\s*\/\s*100)/i)) {
+                injectSmartParse();
+                content = content.replace(/(hum|humidity)\s*=\s*Math\.round\(data\.measuredValue\s*\/\s*100\)/g, "$1 = smartParse(data.measuredValue, null, { capability: 'measure_humidity' })");
+                content = content.replace(/(hum|humidity)\s*=\s*data\.measuredValue\s*\/\s*100/g, "$1 = smartParse(data.measuredValue, null, { capability: 'measure_humidity' })");
+                modified = true;
+            }
+
+            // Fix watts = value / 10;
+            if (content.match(/watts\s*=\s*value\s*\/\s*10/)) {
+                injectSmartParse();
+                content = content.replace(/watts\s*=\s*value\s*\/\s*10/g, "watts = smartParse(value, null, { capability: 'measure_power' })");
+                modified = true;
+            }
+
+            // Fix volts = value / 10;
+            if (content.match(/volts\s*=\s*value\s*\/\s*10/)) {
+                injectSmartParse();
+                content = content.replace(/volts\s*=\s*value\s*\/\s*10/g, "volts = smartParse(value, null, { capability: 'measure_voltage' })");
+                modified = true;
+            }
+
+            // Fix voltage = value / 10;
+            if (content.match(/voltage\s*=\s*value\s*\/\s*10/)) {
+                injectSmartParse();
+                content = content.replace(/voltage\s*=\s*value\s*\/\s*10/g, "voltage = smartParse(value, null, { capability: 'measure_voltage' })");
                 modified = true;
             }
 
             if (modified) {
-                console.log(`[FIXED] Replaced hardcoded math in ${d}`);
+                fs.writeFileSync(devicePath, content, 'utf8');
+                console.log(`[FIXED] Replaced hardcoded math intelligently in ${d}`);
                 fixedDrivers++;
             }
         }

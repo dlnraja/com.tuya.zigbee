@@ -54,11 +54,7 @@
   "connectivity": [
     "zigbee"
   ],
-  "energy": {
-    "batteries": [
-      "OTHER"
-    ]
-  },
+  "energy": {},
   "capabilitiesOptions": {
     "onoff": {
       "title": {

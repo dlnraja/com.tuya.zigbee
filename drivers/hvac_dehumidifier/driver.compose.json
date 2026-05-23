@@ -45,15 +45,7 @@
       "preventInsights": false
     }
   },
-  "energy": {
-    "batteries": [
-      "CR2032",
-      "CR2450",
-      "AAA",
-      "AA",
-      "CR123A"
-    ]
-  },
+  "energy": {},
   "platforms": [
     "local"
   ],

@@ -31,5 +31,11 @@
       "type": "device",
       "name": "device"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Remote button pressed [[device]]",
+    "fr": "Bouton de télécommande appuyé [[device]]",
+    "nl": "Afstandsbediening knop ingedrukt [[device]]",
+    "de": "Fernbedienungstaste gedrückt [[device]]"
+  }
 }

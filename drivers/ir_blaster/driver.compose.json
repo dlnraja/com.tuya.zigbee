@@ -228,10 +228,6 @@
     "xlarge": "drivers/ir_blaster/assets/images/xlarge.png"
   },
   "energy": {
-    "batteries": [
-      "CR2450",
-      "CR2032"
-    ],
     "approximation": {
       "usageConstant": 0.3
     }

@@ -23,5 +23,11 @@
       "name": "device",
       "filter": "capabilities=button.1,capabilities=button"
     }
-  ]
+  ],
+  "titleFormatted": {
+    "en": "Button long-pressed [[device]]",
+    "fr": "Bouton pressé longtemps [[device]]",
+    "nl": "Knop lang ingedrukt [[device]]",
+    "de": "Taste lange gedrückt [[device]]"
+  }
 }

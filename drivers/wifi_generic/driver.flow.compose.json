@@ -20,7 +20,10 @@
             "en": "Value"
           }
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "A DP value changed"
+      }
     }
   ],
   "actions": [
@@ -71,7 +74,10 @@
             }
           ]
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Set a DP value [[dp]] [[value]] [[type]]"
+      }
     }
   ]
 }

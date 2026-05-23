@@ -9,8 +9,16 @@
       },
       "tokens": [],
       "args": [
-        { "name": "device", "type": "device", "filter": "driver_id=switch_usb_dongle" }
-      ]
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_usb_dongle"
+        }
+      ],
+      "titleFormatted": {
+        "en": "USB Port 1 is turned on [[device]]",
+        "fr": "Le port USB 1 est allumé [[device]]"
+      }
     },
     {
       "id": "switch_usb_dongle_port1_turned_off",
@@ -20,8 +28,16 @@
       },
       "tokens": [],
       "args": [
-        { "name": "device", "type": "device", "filter": "driver_id=switch_usb_dongle" }
-      ]
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_usb_dongle"
+        }
+      ],
+      "titleFormatted": {
+        "en": "USB Port 1 is turned off [[device]]",
+        "fr": "Le port USB 1 est éteint [[device]]"
+      }
     },
     {
       "id": "switch_usb_dongle_port2_turned_on",
@@ -31,8 +47,16 @@
       },
       "tokens": [],
       "args": [
-        { "name": "device", "type": "device", "filter": "driver_id=switch_usb_dongle" }
-      ]
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_usb_dongle"
+        }
+      ],
+      "titleFormatted": {
+        "en": "USB Port 2 is turned on [[device]]",
+        "fr": "Le port USB 2 est allumé [[device]]"
+      }
     },
     {
       "id": "switch_usb_dongle_port2_turned_off",
@@ -42,8 +66,16 @@
       },
       "tokens": [],
       "args": [
-        { "name": "device", "type": "device", "filter": "driver_id=switch_usb_dongle" }
-      ]
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_usb_dongle"
+        }
+      ],
+      "titleFormatted": {
+        "en": "USB Port 2 is turned off [[device]]",
+        "fr": "Le port USB 2 est éteint [[device]]"
+      }
     }
   ],
   "conditions": [
@@ -54,8 +86,16 @@
         "fr": "Le port USB 1 est allumé"
       },
       "args": [
-        { "name": "device", "type": "device", "filter": "driver_id=switch_usb_dongle" }
-      ]
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_usb_dongle"
+        }
+      ],
+      "titleFormatted": {
+        "en": "USB Port 1 is on [[device]]",
+        "fr": "Le port USB 1 est allumé [[device]]"
+      }
     },
     {
       "id": "switch_usb_dongle_port2_is_on",
@@ -64,8 +104,16 @@
         "fr": "Le port USB 2 est allumé"
       },
       "args": [
-        { "name": "device", "type": "device", "filter": "driver_id=switch_usb_dongle" }
-      ]
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_usb_dongle"
+        }
+      ],
+      "titleFormatted": {
+        "en": "USB Port 2 is on [[device]]",
+        "fr": "Le port USB 2 est allumé [[device]]"
+      }
     }
   ],
   "actions": [
@@ -76,8 +124,16 @@
         "fr": "Allumer le port USB 1"
       },
       "args": [
-        { "name": "device", "type": "device", "filter": "driver_id=switch_usb_dongle" }
-      ]
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_usb_dongle"
+        }
+      ],
+      "titleFormatted": {
+        "en": "Turn USB Port 1 on [[device]]",
+        "fr": "Allumer le port USB 1 [[device]]"
+      }
     },
     {
       "id": "switch_usb_dongle_turn_off_port1",
@@ -86,8 +142,16 @@
         "fr": "Éteindre le port USB 1"
       },
       "args": [
-        { "name": "device", "type": "device", "filter": "driver_id=switch_usb_dongle" }
-      ]
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_usb_dongle"
+        }
+      ],
+      "titleFormatted": {
+        "en": "Turn USB Port 1 off [[device]]",
+        "fr": "Éteindre le port USB 1 [[device]]"
+      }
     },
     {
       "id": "switch_usb_dongle_toggle_port1",
@@ -96,8 +160,16 @@
         "fr": "Inverser le port USB 1"
       },
       "args": [
-        { "name": "device", "type": "device", "filter": "driver_id=switch_usb_dongle" }
-      ]
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_usb_dongle"
+        }
+      ],
+      "titleFormatted": {
+        "en": "Toggle USB Port 1 [[device]]",
+        "fr": "Inverser le port USB 1 [[device]]"
+      }
     },
     {
       "id": "switch_usb_dongle_turn_on_port2",
@@ -106,8 +178,16 @@
         "fr": "Allumer le port USB 2"
       },
       "args": [
-        { "name": "device", "type": "device", "filter": "driver_id=switch_usb_dongle" }
-      ]
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_usb_dongle"
+        }
+      ],
+      "titleFormatted": {
+        "en": "Turn USB Port 2 on [[device]]",
+        "fr": "Allumer le port USB 2 [[device]]"
+      }
     },
     {
       "id": "switch_usb_dongle_turn_off_port2",
@@ -116,8 +196,16 @@
         "fr": "Éteindre le port USB 2"
       },
       "args": [
-        { "name": "device", "type": "device", "filter": "driver_id=switch_usb_dongle" }
-      ]
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_usb_dongle"
+        }
+      ],
+      "titleFormatted": {
+        "en": "Turn USB Port 2 off [[device]]",
+        "fr": "Éteindre le port USB 2 [[device]]"
+      }
     },
     {
       "id": "switch_usb_dongle_toggle_port2",
@@ -126,8 +214,16 @@
         "fr": "Inverser le port USB 2"
       },
       "args": [
-        { "name": "device", "type": "device", "filter": "driver_id=switch_usb_dongle" }
-      ]
+        {
+          "name": "device",
+          "type": "device",
+          "filter": "driver_id=switch_usb_dongle"
+        }
+      ],
+      "titleFormatted": {
+        "en": "Toggle USB Port 2 [[device]]",
+        "fr": "Inverser le port USB 2 [[device]]"
+      }
     }
   ]
 }

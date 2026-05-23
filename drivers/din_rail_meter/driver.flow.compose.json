@@ -8,7 +8,13 @@
         "nl": "Vermogen gewijzigd",
         "de": "Leistung geändert"
       },
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Power changed",
+        "fr": "Puissance changée",
+        "nl": "Vermogen gewijzigd",
+        "de": "Leistung geändert"
+      }
     },
     {
       "id": "din_rail_meter_voltage_changed",
@@ -26,7 +32,11 @@
           "example": 230
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Voltage changed",
+        "fr": "Tension changée"
+      }
     },
     {
       "id": "din_rail_meter_current_changed",
@@ -44,7 +54,11 @@
           "example": 0.5
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Current changed",
+        "fr": "Courant changé"
+      }
     },
     {
       "id": "din_rail_meter_energy_changed",
@@ -62,7 +76,11 @@
           "example": 10
         }
       ],
-      "args": []
+      "args": [],
+      "titleFormatted": {
+        "en": "Energy consumption changed",
+        "fr": "Consommation changée"
+      }
     }
   ],
   "conditions": [
@@ -79,13 +97,19 @@
           "max": 10000,
           "step": 10
         }
-      ]
+      ],
+      "titleFormatted": {
+        "en": "Power !{{is|is not}} above [[power]]"
+      }
     }
   ],
   "actions": [
     {
       "id": "din_rail_meter_reset_meter",
       "title": {
+        "en": "Reset energy meter"
+      },
+      "titleFormatted": {
         "en": "Reset energy meter"
       }
     }

@@ -4,11 +4,17 @@
       "id": "wifi_plug_turned_on",
       "title": {
         "en": "Turned on"
+      },
+      "titleFormatted": {
+        "en": "Turned on"
       }
     },
     {
       "id": "wifi_plug_turned_off",
       "title": {
+        "en": "Turned off"
+      },
+      "titleFormatted": {
         "en": "Turned off"
       }
     }
@@ -17,6 +23,9 @@
     {
       "id": "wifi_plug_is_on",
       "title": {
+        "en": "Is on"
+      },
+      "titleFormatted": {
         "en": "Is on"
       }
     }
