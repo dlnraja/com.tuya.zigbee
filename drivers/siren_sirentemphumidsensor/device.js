@@ -275,7 +275,7 @@ class sensortemphumidsensor extends TuyaSpecificClusterDevice {
 
   async onEndDeviceAnnounce() {
     if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
-    if (this._dataRecoveryManager) this._dataRecoveryManager.triggerRecovery();
+    if (this._dataRecoveryManager) this._dataRecoveryManager?.forceRecovery?.();
   }
 }
 

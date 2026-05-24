@@ -406,7 +406,7 @@ class SmartKnobRotaryDevice extends ZigBeeDevice {
     this.log('[REJOIN] Device announced itself, refreshing state...');
     if (typeof this._updateLastSeen === 'function') this._updateLastSeen();
     if (this._dataRecoveryManager) {
-       this._dataRecoveryManager.triggerRecovery();
+       this._dataRecoveryManager?.forceRecovery?.();
     }
   }
 }
