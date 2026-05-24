@@ -50,7 +50,7 @@ class WiFiDoorLockDevice extends TuyaLocalDevice {
     if (typeof this._updateLastSeen === 'function') {this._updateLastSeen();}
     // Proactive data recovery if supported
     if (this._dataRecoveryManager) {
-       this._dataRecoveryManager.triggerRecovery();
+       this._dataRecoveryManager?.forceRecovery?.();
     }
   }
 }
