@@ -16,6 +16,17 @@ class RainSensorDevice extends UnifiedSensorBase {
   }
 
   get dpMappings() {
+    const mfr = typeof this.getSetting === 'function' ? (this.getSetting('zb_manufacturer_name') || '') : '';
+    const mfrLower = mfr.toLowerCase();
+    
+    if (mfrLower.includes('u6x1zyv2') || mfrLower.includes('jsaqgakf') || mfrLower.includes('2pddnnrk')) {
+      return {
+        1: { capability: 'alarm_water', transform: (v) => v === 1 || v === '1' || v === true || v === 'true' },
+        102: { capability: 'measure_luminance', divisor: 1 },
+        104: { capability: 'measure_battery', divisor: 1 }
+      };
+    }
+
     return {
       1: { capability: 'alarm_water', transform: (v) => v === 1 || v === true }, // Rain detected
       4: { capability: 'measure_battery', divisor: 1 },
