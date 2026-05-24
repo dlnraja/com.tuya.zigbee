@@ -120,11 +120,6 @@
       },
       "args": [
         {
-          "type": "device",
-          "name": "device",
-          "filter": "driver_id=wall_dimmer_1gang_1way"
-        },
-        {
           "name": "mode",
           "type": "dropdown",
           "values": [
@@ -153,8 +148,8 @@
         }
       ],
       "titleFormatted": {
-        "en": "Set LED indicator mode [[device]] [[mode]]",
-        "nl": "Stel LED-indicator modus in [[device]] [[mode]]"
+        "en": "Set LED indicator mode [[mode]]",
+        "nl": "Stel LED-indicator modus in [[mode]]"
       }
     },
     {

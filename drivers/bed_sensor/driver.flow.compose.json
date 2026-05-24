@@ -61,18 +61,12 @@
         "nl": "Waar wanneer iemand in bed ligt",
         "de": "Wahr, wenn jemand im Bett ist"
       },
-      "args": [
-        {
-          "name": "device",
-          "type": "device",
-          "filter": "driver_id=bed_sensor"
-        }
-      ],
+      "args": [],
       "titleFormatted": {
-        "en": "Bed is occupied [[device]]",
-        "fr": "Le lit est occupé [[device]]",
-        "nl": "Bed is bezet [[device]]",
-        "de": "Bett ist besetzt [[device]]"
+        "en": "Bed is occupied",
+        "fr": "Le lit est occupé",
+        "nl": "Bed is bezet",
+        "de": "Bett ist besetzt"
       }
     }
   ]
