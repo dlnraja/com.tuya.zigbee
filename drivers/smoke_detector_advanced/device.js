@@ -141,7 +141,7 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
   async onEndDeviceAnnounce() {
     this.log('[REJOIN] Device announced itself, refreshing state...');
     if (this._dataRecoveryManager) {
-       this._dataRecoveryManager.triggerRecovery();
+       this._dataRecoveryManager?.forceRecovery?.();
     }
   }
 }

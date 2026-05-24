@@ -1,230 +1,165 @@
 'use strict';
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
+const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { smartParse, smartDivisorDetect } = require('../../lib/managers/SmartDivisorManager');
 
-const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
-const {CLUSTER} = require('zigbee-clusters');
-
-// v5.5.755: PR #112 (packetninja) - Debug mode for detailed logging
-// v5.5.799: Enhanced with settings support and robustness improvements
-const DEBUG_MODE = false;
+// v5.11.16: Clamp pour éviter les dépassements de flow
+function clampDim(val) {
+  const n = Number(val);
+  if (isNaN(n)) return 0;
+  return Math.min(1, Math.max(0, n));
+}
 
 const dataPoints = {
   state: 1,
   brightness: 2,
-  minBrightness: 3,
-  countdown: 9,
-  powerOnBehavior: 14,
   backlightMode: 15,        // Original - doesn't work for this device
   lightType: 16,
   backlightSwitch: 36,      // Alternative: Backlight on/off
   backlightLightMode: 37,   // Alternative: Light mode (none/relay/pos)
 };
 
-// v5.5.799: Light type enum values
-const LIGHT_TYPES = {
-  LED: 0,
-  INCANDESCENT: 1,
-  HALOGEN: 2
-};
+const DEBUG_MODE = false;
 
-// v5.5.799: Power-on behavior enum values
-const POWER_ON_BEHAVIOR = {
-  OFF: 0,
-  ON: 1,
-  LAST_STATE: 2
-};
+class WallDimmer1Gang1Way extends TuyaZigbeeDevice {
 
-class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
+  get gangCount() { return 1; }
 
-  async onNodeInit({zclNode}) {
-    await super.onNodeInit({ zclNode });
+  async onNodeInit({ zclNode, ...other }) {
+    await super.onNodeInit({ zclNode, ...other });
 
-    this.log('════════════════════════════════════════');
-    this.log('WallDimmer1Gang1Way onNodeInit STARTING');
-    this.log('════════════════════════════════════════');
-    
-    this.printNode();
+    // v5.11.16: Add missing dim capability
+    if (!this.hasCapability('dim')) {
+      await this.addCapability('dim').catch(() => {});
+    }
 
-    // v5.5.755: PR #112 (packetninja) - Track state for detecting physical button presses
-    this._lastOnoffState = null;
+    // State tracking for physical button detection
     this._lastBrightnessValue = null;
-    this._appCommandPending = false;  // Track if app sent command recently
-    this._appCommandTimeout = null;
-    
-    // v5.5.799: Track settings to avoid unnecessary writes
-    this._settingsApplied = false;
+    this._lastOnoffState = null;
 
-    // Register Tuya datapoint mappings
-    this.log('Registering Tuya datapoint mappings...');
-    
-    this.registerTuyaDatapoint(dataPoints.state, 'onoff', {
-      type: 'bool',
-    });
-    
-    this.registerTuyaDatapoint(dataPoints.brightness, 'dim', {
-      type: 'value',
-      scale: 990,
-      offset: -0.0101,
-    });
+    // v5.5.854: App command tracking for physical button detection
+    if (typeof this._registerCapabilityListeners === 'function') {
+      try { this._registerCapabilityListeners(); } catch (e) { this.log('registerCapabilityListeners error:', e.message); }
+    }
 
-    // Register capability listeners
-    this.log('Registering capability listeners...');
-    
-    this.registerCapabilityListener('onoff', async (value) => {
-      this.log('onoff capability changed to:', value, '(APP)');
-      this._markAppCommand();  // v5.5.755: PR #112 - Mark as app command
-      await this.sendTuyaCommand(dataPoints.state, value, 'bool');
-    });
-    
-    this.registerCapabilityListener('dim', async (value) => {
-      this.log('Dim capability changed to:', value, '(APP)');
-      this._markAppCommand();  // v5.5.755: PR #112 - Mark as app command
-      const brightness = Math.round(10 + (value * 990));
-      this.log('Converted to Tuya brightness:', brightness);
-      await this.sendTuyaCommand(dataPoints.brightness, brightness, 'value');
-    });
+    // v5.5.854: Setup physical button detection if available
+    if (typeof this.initPhysicalButtonDetection === 'function') {
+      await this.initPhysicalButtonDetection?.(zclNode);
+    }
 
-    // v5.5.854: Parent class TuyaSpecificClusterDevice sets up Tuya listeners
-    // We override handleTuyaResponse() and handleTuyaDataReport() for physical button detection
-    
-    // v5.5.799: Apply saved settings after init (with delay for device stability)
-    setTimeout(() => this._applyInitialSettings(), 3000);
+    // v5.5.854: Virtual buttons if available
+    if (typeof this.initVirtualButtons === 'function') {
+      await this.initVirtualButtons?.();
+    }
 
-    this.log('════════════════════════════════════════');
-    this.log('SwitchDimmer1Gang onNodeInit COMPLETE');
-    this.log('════════════════════════════════════════');
+    // Apply initial settings (backlight, light type)
+    if (typeof this._applyInitialSettings === 'function') {
+      await this._applyInitialSettings().catch(() => {});
+    }
+
+    // Override capability listeners to add physical detection
+    this._overrideCapabilityListeners();
+
+    this.log('Switch Touch Dimmer (1 Gang) initialized - v5.11.16');
   }
-  
-  /**
-   * v5.5.799: Handle settings changes from Homey UI
-   * Implements min_brightness, power_on_behavior, light_type settings
-   */
+
+  _overrideCapabilityListeners() {
+    this.registerCapabilityListener('onoff', async (value, opts) => {
+      // v5.11.16: Mark app command so DP report won't trigger flow cards
+      this._markAppCommand();
+
+      await this.sendTuyaCommand(dataPoints.state, value, 'bool');
+
+      // Also trigger dim state if needed
+      if (value && this.getCapabilityValue('dim') === 0) {
+        this.setCapabilityValue('dim', 0.5).catch(() => {});
+      }
+    });
+
+    this.registerCapabilityListener('dim', async (value, opts) => {
+      this._markAppCommand();
+
+      const dimVal = clampDim(value);
+      const tuyaBrightness = dimVal === 1 ? 1000 : Math.round(10 + dimVal * 990);
+      this.log(`Setting brightness to ${tuyaBrightness} (${dimVal.toFixed(2)})`);
+      await this.sendTuyaCommand(dataPoints.brightness, tuyaBrightness, 'value');
+
+      // Sync onoff state based on dim level
+      if (dimVal === 0) {
+        this.setCapabilityValue('onoff', false).catch(() => {});
+      } else {
+        this.setCapabilityValue('onoff', true).catch(() => {});
+      }
+    });
+  }
+
   async onSettings({ oldSettings, newSettings, changedKeys }) {
-    this.log('⚙️ Settings changed:', changedKeys);
-    
     for (const key of changedKeys) {
-      try {
-        switch (key) {
-        case 'min_brightness':
-          // Convert percentage (1-100) to Tuya range (10-1000)
-          const minBrightness = Math.round(10 + ((newSettings.min_brightness / 100) * 990));
-          this.log(`Setting min_brightness: ${newSettings.min_brightness}% → ${minBrightness}`);
-          await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value');
-          break;
-            
-        case 'power_on_behavior':
-          const powerMap = { '0': 0, '1': 1, '2': 2, 'off': 0, 'on': 1, 'memory': 2 };
-          let powerOnValue = powerMap[String(newSettings.power_on_behavior).toLowerCase()];
-          if (powerOnValue === undefined) { powerOnValue = 2; } // Fallback to memory
-          this.log(`Setting power_on_behavior: ${newSettings.power_on_behavior} → ${powerOnValue}`);
-          await this.sendTuyaCommand(dataPoints.powerOnBehavior, powerOnValue, 'enum');
-          break;
-            
-        case 'light_type':
-          const lightMap = { '0': 0, '1': 1, '2': 2, 'led': 0, 'incandescent': 1, 'halogen': 2 };
-          let lightTypeValue = lightMap[String(newSettings.light_type).toLowerCase()];
-          if (lightTypeValue === undefined) { lightTypeValue = 0; } // Fallback to LED
-          this.log(`Setting light_type: ${newSettings.light_type} → ${lightTypeValue}`);
-          await this.sendTuyaCommand(dataPoints.lightType, lightTypeValue, 'enum');
-          break;
-
+      switch (key) {
         case 'backlight_mode':
-          const backlightMode = newSettings.backlight_mode; // L11: string-based ("off", "normal", "inverted")
-          this.log(`Setting backlight_mode: ${backlightMode}`);
-
-          // Try alternative datapoints DP36+DP37 (from issue #26578)
-          if (backlightMode === 'off') {
-            // Always off: Set DP36=0 (backlight disabled)
-            this.log('Trying DP36=0 (backlight off)');
-            await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(err =>
-              this.log('DP36 not supported:', err.message));
-          } else {
-            // Normal or inverted: Enable backlight (DP36=1) and set mode (DP37)
-            this.log('Trying DP36=1 (backlight on)');
-            await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(err =>
-              this.log('DP36 not supported:', err.message));
-
-            // DP37: 1=normal(relay), 2=inverted(pos)
-            // L11: Use ternary to map string states to DP integers
-            const lightMode = backlightMode === 'normal' ? 1 : 2;
-            this.log(`Trying DP37=${lightMode} (light mode)`);
-            await this.sendTuyaCommand(dataPoints.backlightLightMode, lightMode, 'enum').catch(err =>
-              this.log('DP37 not supported:', err.message));
-          }
-
-          // Also try original DP15 as fallback
-          // L11: Map string to int for DP15 enum
-          const dp15Mode = backlightMode === 'off' ? 0 : (backlightMode === 'normal' ? 1 : 2);
-          await this.sendTuyaCommand(dataPoints.backlightMode, dp15Mode, 'enum').catch(err =>
-            this.log('DP15 failed (expected):', err.message));
+          await this._onBacklightModeChange(newSettings.backlight_mode);
           break;
-
+        case 'light_type':
+          await this._onLightTypeChange(newSettings.light_type);
+          break;
         default:
-          this.log(`Unknown setting: ${key}`);
-        }
-      } catch (err) {
-        this.error(`Failed to apply setting ${key}:`, err);
-        throw new Error(`Failed to apply ${key}: ${err.message}`);
+          break;
       }
     }
   }
-  
+
   /**
-   * v5.5.799: Apply initial settings after device init
+   * L11: Set backlight mode — 0-based canonical mapping
+   * DP15 primary (0=off, 1=normal, 2=inverted)
+   * DP36+DP37 fallback for alternate firmware (issue #26578)
    */
+  async _onBacklightModeChange(backlightMode) {
+    this.log(`[BACKLIGHT] Setting backlight_mode: ${backlightMode}`);
+
+    // Canonical mapping (UnifiedSwitchBase compatible)
+    const modeMap = { off: 0, normal: 1, inverted: 2 };
+    const dp15Mode = modeMap[backlightMode] ?? 1;
+
+    // 1) Primary: DP15 enum (0/1/2)
+    await this.sendTuyaCommand(dataPoints.backlightMode, dp15Mode, 'enum').catch(err =>
+      this.log('[BACKLIGHT] DP15 failed or unsupported:', err.message));
+
+    // 2) Fallback: DP36 (on/off) + DP37 (normal/inverted)
+    if (backlightMode === 'off') {
+      await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(() => {});
+    } else {
+      await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(() => {});
+      // L11: ternary maps string → DP integer
+      const lightMode = backlightMode === 'inverted' ? 2 : 1;
+      await this.sendTuyaCommand(dataPoints.backlightLightMode, lightMode, 'enum').catch(() => {});
+    }
+  }
+
+  async _onLightTypeChange(lightType) {
+    const lightMap = { '0': 0, '1': 1, '2': 2, 'led': 0, 'incandescent': 1, 'halogen': 2 };
+    const lightTypeValue = lightMap[String(lightType).toLowerCase()];
+    if (lightTypeValue !== undefined) {
+      this.log(`Applying light_type: ${lightTypeValue}`);
+      await this.sendTuyaCommand(dataPoints.lightType, lightTypeValue, 'enum').catch(e =>
+        this.log('light_type not supported by this device'));
+    }
+  }
+
   async _applyInitialSettings() {
-    if (this._settingsApplied) {return;}
-    this._settingsApplied = true;
-    
     try {
       const settings = this.getSettings();
-      this.log('📋 Applying initial settings:', settings);
-      
-      // Apply min_brightness if set
-      if (settings.min_brightness && settings.min_brightness > 1) {
-        const minBrightness = Math.round(10 + ((settings.min_brightness / 100) * 990));
-        this.log(`Applying min_brightness: ${settings.min_brightness}% → ${minBrightness}`);
-        await this.sendTuyaCommand(dataPoints.minBrightness, minBrightness, 'value').catch(e => 
-          this.log('min_brightness not supported by this device'));
-      }
-      
-      // Apply power_on_behavior if not default
-      if (settings.power_on_behavior && settings.power_on_behavior !== '2') {
-        const powerMap = { '0': 0, '1': 1, '2': 2, 'off': 0, 'on': 1, 'memory': 2 };
-        const powerOnValue = powerMap[String(settings.power_on_behavior).toLowerCase()];
-        if (powerOnValue !== undefined) {
-          this.log(`Applying power_on_behavior: ${powerOnValue}`);
-          await this.sendTuyaCommand(dataPoints.powerOnBehavior, powerOnValue, 'enum').catch(e =>
-            this.log('power_on_behavior not supported by this device'));
-        }
-      }
-      
+      if (!settings) return;
+
       // Apply light_type if not default
       if (settings.light_type && settings.light_type !== '0') {
-        const lightMap = { '0': 0, '1': 1, '2': 2, 'led': 0, 'incandescent': 1, 'halogen': 2 };
-        const lightTypeValue = lightMap[String(settings.light_type).toLowerCase()];
-        if (lightTypeValue !== undefined) {
-          this.log(`Applying light_type: ${lightTypeValue}`);
-          await this.sendTuyaCommand(dataPoints.lightType, lightTypeValue, 'enum').catch(e =>
-            this.log('light_type not supported by this device'));
-        }
+        await this._onLightTypeChange(settings.light_type);
       }
 
-      // Apply backlight_mode if not default (L11: string-based "off", "normal", "inverted")
+      // Apply backlight_mode if not default
       if (settings.backlight_mode && settings.backlight_mode !== 'normal') {
-        const backlightMode = settings.backlight_mode;
-        this.log(`Applying initial backlight_mode: ${backlightMode}`);
-
-        // Try alternative datapoints DP36+DP37
-        if (backlightMode === 'off') {
-          await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(() => {});
-        } else {
-          await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(() => {});
-          // L11: ternary maps string → DP integer
-          const lightMode = backlightMode === 'inverted' ? 2 : 1;
-          await this.sendTuyaCommand(dataPoints.backlightLightMode, lightMode, 'enum').catch(() => {});
-        }
+        await this._onBacklightModeChange(settings.backlight_mode);
       }
-
     } catch (err) {
       this.error('Failed to apply initial settings:', err);
     }
@@ -246,13 +181,11 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
    * This is called by parent for 'dataReport' events
    */
   handleTuyaDataReport(data, isReportingEvent = false) {
-    // Route to our physical-button-aware handler
     this._processTuyaData(data, isReportingEvent);
   }
 
   /**
-   * v5.5.854: Renamed from handleTuyaDataReport to avoid confusion with parent class
-   * Handles both dataReport and response events with physical button detection
+   * v5.5.854: Handles both dataReport and response events with physical button detection
    */
   _processTuyaData(data, isReportingEvent = false) {
     if (DEBUG_MODE) {
@@ -278,14 +211,11 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         state = Boolean(data.data);
       }
       
-      // Only process if state actually changed (heartbeat filter)
       if (this._lastOnoffState !== state) {
         this.log(`State changed: ${this._lastOnoffState} → ${state} (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
-        
         this._lastOnoffState = state;
         this.setCapabilityValue('onoff', state).catch(this.error);
         
-        // Trigger flow cards ONLY if this is a physical button press
         if (isPhysicalPress) {
           const flowCardId = state ? 'wall_dimmer_1gang_1way_turned_on' : 'wall_dimmer_1gang_1way_turned_off';
           this.log(`Triggering: ${flowCardId}`);
@@ -309,7 +239,6 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       
       const brightness = Math.max(0, Math.min(1, (brightnessRaw - 10) / 990));
       
-      // Only process if brightness changed significantly (~1%)
       const changeThreshold = 10;
       if (this._lastBrightnessValue === null || Math.abs(brightnessRaw - this._lastBrightnessValue) >= changeThreshold) {
         this.log(`Brightness changed: ${this._lastBrightnessValue} → ${brightnessRaw} (${brightness.toFixed(2)}) (${isPhysicalPress ? 'PHYSICAL' : 'APP'})`);
@@ -320,7 +249,6 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
         this._lastBrightnessValue = brightnessRaw;
         this.setCapabilityValue('dim', brightness).catch(this.error);
         
-        // Trigger flow cards ONLY if this is a physical button press
         if (isPhysicalPress) {
           if (brightnessIncreased) {
             this.log('Triggering: wall_dimmer_1gang_1way_brightness_increased (PHYSICAL)');
@@ -409,16 +337,11 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
     }
   }
 
-  /**
-   * v5.5.755: PR #112 (packetninja) - Mark that an app command was sent
-   * Used to distinguish physical button presses from app commands
-   */
   _markAppCommand() {
     this._appCommandPending = true;
     if (this._appCommandTimeout) {
       clearTimeout(this._appCommandTimeout);
     }
-    // Clear after 2 seconds - device should respond within this time
     this._appCommandTimeout = setTimeout(() => {
       this._appCommandPending = false;
     }, 2000);
@@ -431,7 +354,3 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 }
 
 module.exports = WallDimmer1Gang1Way;
-
-
-
-
