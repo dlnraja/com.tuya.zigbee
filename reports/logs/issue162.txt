@@ -1,0 +1,74 @@
+author:	dlnraja
+association:	owner
+edited:	false
+status:	none
+--
+Please tell me witch devices and send me an diag log and do an interview ZigBee please. 
+--
+author:	github-actions
+association:	none
+edited:	false
+status:	none
+--
+<!-- tuya-triage-bot -->
+Already in the [Universal Tuya Zigbee fork](https://github.com/dlnraja/com.tuya.zigbee) v5.11.138: `dlnraja` → **generic_diy**.
+
+Grab it here: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
+
+Remove and re-pair after installing. If something's off, drop a diagnostic report ID on the [forum thread](https://community.homey.app/t/app-pro-universal-tuya-zigbee-device-app-test/140352).
+--
+author:	dlnraja
+association:	owner
+edited:	false
+status:	none
+--
+### ✅ Fixed in v6.0.0
+
+The 'Missing Capability Listener' error on initialization was a timing issue where the device was sending state reports before the driver had fully registered its listeners in the code.
+
+This has been globally fixed in **v6.0.0** for the fingerbot and 24 other device types. The initialization sequence has been reordered so listeners are always ready before the device connects.
+
+Battery status should also be resolved, as v6.0.0 introduces a new \PowerSourceIntelligence\ engine that handles battery reporting dynamically.
+
+**Next Steps:**
+1. Update to the latest test version: https://homey.app/a/com.dlnraja.tuya.zigbee/test/
+2. Remove and re-pair your Fingerbot to apply the new sequence.
+--
+author:	dlnraja
+association:	owner
+edited:	false
+status:	none
+--
+Fixed in master. button.push capability was added to fingerbot compose configuration.
+--
+author:	dalobalo
+association:	none
+edited:	false
+status:	none
+--
+Hi @dlnraja,
+
+I can confirm that it’s possible to activate the Fingerbot (click motion only).
+
+Unfortunately, battery status and flows are not available since the device is added as a generic Zigbee unit with “no supported app” (as Homey reports).
+
+It would be great to also support additional actions such as:
+	•	Push (two states)
+	•	Click (including multiple clicks, e.g. X times)
+	•	Push and hold (for X seconds)
+
+At the moment, it’s limited to operating a single button press. It would also be nice if the icon could be changed to the same used in Johans app
+--
+author:	github-actions
+association:	none
+edited:	false
+status:	none
+--
+<!-- tuya-reopen-bot -->
+This issue has been **automatically reopened** because @dalobalo posted a new comment.
+It will be reviewed in the next automation cycle.
+
+> If your device is still not working, please share:
+> 1. **Device Interview** from [Developer Tools](https://tools.developer.homey.app)
+> 2. **Diagnostic Report ID** from device settings
+--

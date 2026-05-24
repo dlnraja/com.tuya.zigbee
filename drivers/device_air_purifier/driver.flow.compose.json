@@ -1,0 +1,602 @@
+{
+  "triggers": [
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_target_temperature_changed",
+      "title": {
+        "en": "Target temperature changed",
+        "fr": "TempÃ©rature cible changÃ©e"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (Â°C)",
+            "fr": "TempÃ©rature (Â°C)"
+          },
+          "example": 21
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Target temperature changed",
+        "fr": "TempÃ©rature cible changÃ©e"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_temperature_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e"
+      },
+      "tokens": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "title": {
+            "en": "Temperature (Â°C)",
+            "fr": "TempÃ©rature (Â°C)"
+          },
+          "example": 22.5
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_mode_changed",
+      "title": {
+        "en": "Mode changed",
+        "fr": "Mode changÃ©"
+      },
+      "tokens": [
+        {
+          "name": "mode",
+          "type": "string",
+          "title": {
+            "en": "Mode",
+            "fr": "Mode"
+          },
+          "example": "heat"
+        }
+      ],
+      "args": [],
+      "titleFormatted": {
+        "en": "Mode changed",
+        "fr": "Mode changÃ©"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_heating_started",
+      "title": {
+        "en": "Heating started",
+        "fr": "Chauffage dÃ©marrÃ©"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Heating started",
+        "fr": "Chauffage dÃ©marrÃ©"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_heating_stopped",
+      "title": {
+        "en": "Heating stopped",
+        "fr": "Chauffage arrÃªtÃ©"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Heating stopped",
+        "fr": "Chauffage arrÃªtÃ©"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_turned_on",
+      "title": {
+        "en": "Turned on",
+        "fr": "AllumÃ©",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned on",
+        "fr": "AllumÃ©",
+        "nl": "Aangezet",
+        "de": "Eingeschaltet"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_turned_off",
+      "title": {
+        "en": "Turned off",
+        "fr": "Ã‰teint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turned off",
+        "fr": "Ã‰teint",
+        "nl": "Uitgezet",
+        "de": "Ausgeschaltet"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geÃ¤ndert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geÃ¤ndert"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_battery_low",
+      "title": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery low",
+        "fr": "Batterie faible",
+        "nl": "Batterij laag",
+        "de": "Batterie schwach"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "HumiditÃ© changÃ©e",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geÃ¤ndert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "HumiditÃ© changÃ©e",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geÃ¤ndert"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_is_heating",
+      "title": {
+        "en": "Thermostat is !{{heating|not heating}}",
+        "fr": "Thermostat !{{chauffe|ne chauffe pas}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Thermostat is !{{heating|not heating}}",
+        "fr": "Thermostat !{{chauffe|ne chauffe pas}}"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_temperature_above_target",
+      "title": {
+        "en": "Temperature is above target",
+        "fr": "TempÃ©rature supÃ©rieure Ã la cible"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature is above target",
+        "fr": "TempÃ©rature supÃ©rieure Ã la cible"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_temperature_below_target",
+      "title": {
+        "en": "Temperature is below target",
+        "fr": "TempÃ©rature infÃ©rieure Ã la cible"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature is below target",
+        "fr": "TempÃ©rature infÃ©rieure Ã la cible"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_mode_is",
+      "title": {
+        "en": "Mode is",
+        "fr": "Mode est"
+      },
+      "titleFormatted": {
+        "en": "Mode is [[mode]]",
+        "fr": "Mode est [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "ArrÃªt"
+              }
+            },
+            {
+              "id": "heat",
+              "label": {
+                "en": "Heat",
+                "fr": "Chauffage"
+              }
+            },
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto",
+                "fr": "Auto"
+              }
+            },
+            {
+              "id": "cool",
+              "label": {
+                "en": "Cool",
+                "fr": "Refroidissement"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_child_lock_is",
+      "title": {
+        "en": "Child lock is !{{enabled|disabled}}",
+        "fr": "Verrouillage enfant !{{activÃ©|dÃ©sactivÃ©}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Child lock is !{{enabled|disabled}}",
+        "fr": "Verrouillage enfant !{{activÃ©|dÃ©sactivÃ©}}"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_is_on",
+      "title": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Is !{{on|off}}",
+        "fr": "Est !{{allumÃ©|Ã©teint}}",
+        "nl": "Is !{{aan|uit}}",
+        "de": "Ist !{{ein|aus}}"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_set_target_temperature",
+      "title": {
+        "en": "Set target temperature",
+        "fr": "DÃ©finir tempÃ©rature cible"
+      },
+      "titleFormatted": {
+        "en": "Set target temperature to [[temperature]]Â°C",
+        "fr": "DÃ©finir tempÃ©rature cible Ã [[temperature]]Â°C"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "number",
+          "min": 5,
+          "max": 35,
+          "step": 0.5,
+          "title": {
+            "en": "Temperature",
+            "fr": "TempÃ©rature"
+          }
+        }
+      ]
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_set_mode",
+      "title": {
+        "en": "Set mode",
+        "fr": "DÃ©finir mode"
+      },
+      "titleFormatted": {
+        "en": "Set mode to [[mode]]",
+        "fr": "DÃ©finir mode Ã [[mode]]"
+      },
+      "args": [
+        {
+          "name": "mode",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "off",
+              "label": {
+                "en": "Off",
+                "fr": "ArrÃªt"
+              }
+            },
+            {
+              "id": "heat",
+              "label": {
+                "en": "Heat",
+                "fr": "Chauffage"
+              }
+            },
+            {
+              "id": "auto",
+              "label": {
+                "en": "Auto",
+                "fr": "Auto"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_increase_temperature",
+      "title": {
+        "en": "Increase temperature",
+        "fr": "Augmenter tempÃ©rature"
+      },
+      "titleFormatted": {
+        "en": "Increase temperature by [[degrees]]Â°C",
+        "fr": "Augmenter tempÃ©rature de [[degrees]]Â°C"
+      },
+      "args": [
+        {
+          "name": "degrees",
+          "type": "number",
+          "min": 0.5,
+          "max": 5,
+          "step": 0.5,
+          "title": {
+            "en": "Degrees",
+            "fr": "DegrÃ©s"
+          }
+        }
+      ]
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_decrease_temperature",
+      "title": {
+        "en": "Decrease temperature",
+        "fr": "Diminuer tempÃ©rature"
+      },
+      "titleFormatted": {
+        "en": "Decrease temperature by [[degrees]]Â°C",
+        "fr": "Diminuer tempÃ©rature de [[degrees]]Â°C"
+      },
+      "args": [
+        {
+          "name": "degrees",
+          "type": "number",
+          "min": 0.5,
+          "max": 5,
+          "step": 0.5,
+          "title": {
+            "en": "Degrees",
+            "fr": "DegrÃ©s"
+          }
+        }
+      ]
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_set_child_lock",
+      "title": {
+        "en": "Set child lock",
+        "fr": "DÃ©finir verrouillage enfant"
+      },
+      "titleFormatted": {
+        "en": "Set child lock to [[enabled]]",
+        "fr": "DÃ©finir verrouillage enfant Ã [[enabled]]"
+      },
+      "args": [
+        {
+          "name": "enabled",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "true",
+              "label": {
+                "en": "Enabled",
+                "fr": "ActivÃ©"
+              }
+            },
+            {
+              "id": "false",
+              "label": {
+                "en": "Disabled",
+                "fr": "DÃ©sactivÃ©"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_set_comfort_preset",
+      "highlight": true,
+      "title": {
+        "en": "Set comfort preset",
+        "fr": "DÃ©finir prÃ©rÃ©glage confort",
+        "nl": "Comfort preset instellen",
+        "de": "Komfort-Voreinstellung"
+      },
+      "titleFormatted": {
+        "en": "Set to [[preset]] preset",
+        "fr": "DÃ©finir prÃ©rÃ©glage [[preset]]",
+        "nl": "Instellen op [[preset]] preset",
+        "de": "Auf [[preset]] Voreinstellung setzen"
+      },
+      "args": [
+        {
+          "name": "preset",
+          "type": "dropdown",
+          "values": [
+            {
+              "id": "comfort",
+              "label": {
+                "en": "Comfort (21Â°C)",
+                "fr": "Confort (21Â°C)"
+              }
+            },
+            {
+              "id": "eco",
+              "label": {
+                "en": "Eco (18Â°C)",
+                "fr": "Ã‰co (18Â°C)"
+              }
+            },
+            {
+              "id": "away",
+              "label": {
+                "en": "Away (15Â°C)",
+                "fr": "Absent (15Â°C)"
+              }
+            },
+            {
+              "id": "sleep",
+              "label": {
+                "en": "Sleep (19Â°C)",
+                "fr": "Nuit (19Â°C)"
+              }
+            },
+            {
+              "id": "boost",
+              "label": {
+                "en": "Boost (25Â°C)",
+                "fr": "Boost (25Â°C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_schedule_on",
+      "title": {
+        "en": "Enable schedule",
+        "fr": "Activer programmation",
+        "nl": "Schema inschakelen",
+        "de": "Zeitplan aktivieren"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Enable schedule",
+        "fr": "Activer programmation",
+        "nl": "Schema inschakelen",
+        "de": "Zeitplan aktivieren"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_schedule_off",
+      "title": {
+        "en": "Disable schedule",
+        "fr": "DÃ©sactiver programmation",
+        "nl": "Schema uitschakelen",
+        "de": "Zeitplan deaktivieren"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Disable schedule",
+        "fr": "DÃ©sactiver programmation",
+        "nl": "Schema uitschakelen",
+        "de": "Zeitplan deaktivieren"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_turn_on",
+      "title": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn on",
+        "fr": "Allumer",
+        "nl": "Aanzetten",
+        "de": "Einschalten"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_turn_off",
+      "title": {
+        "en": "Turn off",
+        "fr": "Ã‰teindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Turn off",
+        "fr": "Ã‰teindre",
+        "nl": "Uitzetten",
+        "de": "Ausschalten"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_toggle",
+      "title": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Toggle",
+        "fr": "Basculer",
+        "nl": "Wisselen",
+        "de": "Umschalten"
+      }
+    },
+    {
+      "id": "device_air_purifier_device_air_purifier_thermostat_thermostat_tuya_dp_set_temperature",
+      "title": {
+        "en": "Set temperature",
+        "fr": "RÃ©gler tempÃ©rature",
+        "nl": "Temperatuur instellen",
+        "de": "Temperatur einstellen"
+      },
+      "titleFormatted": {
+        "en": "Set temperature to [[temperature]]Â°C",
+        "fr": "RÃ©gler Ã [[temperature]]Â°C",
+        "nl": "Instellen op [[temperature]]Â°C",
+        "de": "Auf [[temperature]]Â°C einstellen"
+      },
+      "args": [
+        {
+          "name": "temperature",
+          "type": "range",
+          "min": 5,
+          "max": 35,
+          "step": 0.5,
+          "label": "Â°C",
+          "labelDecimals": 1
+        }
+      ]
+    }
+  ]
+}

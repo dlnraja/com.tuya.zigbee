@@ -262,7 +262,7 @@ class Switch3GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         if (this._zclState.timeout[epNum]) {clearTimeout(this._zclState.timeout[epNum]);}
       }
     }
-    super.onDeleted?.();
+    if (super.onDeleted) super.onDeleted();
   }
 }
 module.exports = Switch3GangDevice;

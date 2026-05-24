@@ -1,0 +1,52 @@
+name: 🌙 Monthly Tuya Intelligence & URL Audit
+
+on:
+  schedule:
+    - cron: '0 0 1 * *' # Once a month on the 1st
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  audit-and-enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛰️ Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: 📦 Install Dependencies
+        run: npm install axios cheerio
+
+      - name: 🔴 Step 1: Challenge All URLs
+        run: node .github/scripts/challenge-all-urls.js
+
+      - name: 🟠 Step 2: Run Intelligent Enrichment Engine
+        run: node .github/scripts/ai-enrichment-engine.js
+        env:
+          XIAOMI_MIMO_API_KEY: ${{ secrets.XIAOMI_MIMO_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: 🟡 Step 3: Run Ultimate Validation
+        run: node scripts/ULTIMATE_CHECK.js
+
+      - name: 📝 Step 4: Generate Monthly Intelligence Summary
+        run: |
+          echo "# 🌙 Monthly Intelligence Summary - $(date +'%Y-%m')" > reports/MONTHLY_SUMMARY.md
+          echo "## 📊 Stats" >> reports/MONTHLY_SUMMARY.md
+          grep -E "total|alive|dead" reports/url_audit_report.json >> reports/MONTHLY_SUMMARY.md
+          echo "## ✨ New Enrichment Data" >> reports/MONTHLY_SUMMARY.md
+          jq -r '.data[] | "* [" + .title + "](" + .url + ") - " + .description' data/enriched_intelligence.json >> reports/MONTHLY_SUMMARY.md
+
+      - name: 🟢 Step 5: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data/enriched_intelligence.json reports/URL_AUDIT.md reports/url_audit_report.json reports/MONTHLY_SUMMARY.md
+          git commit -m "chore(intelligence): monthly automated url audit and enrichment [skip ci]" || echo "No changes to commit"
+          git push

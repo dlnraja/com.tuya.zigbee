@@ -1,0 +1,280 @@
+{
+  "triggers": [
+    {
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_alarm_smoke_true",
+      "highlight": true,
+      "title": {
+        "en": "Smoke detected",
+        "nl": "Rook gedetecteerd",
+        "fr": "FumÃ©e dÃ©tectÃ©e",
+        "de": "Rauch erkannt"
+      },
+      "titleFormatted": {
+        "en": "Smoke alarm triggered!",
+        "nl": "Rookalarm geactiveerd!",
+        "fr": "Alarme fumÃ©e dÃ©clenchÃ©e !",
+        "de": "Rauchalarm ausgelÃ¶st!"
+      },
+      "hint": {
+        "en": "Triggers when smoke is detected - CRITICAL SAFETY ALERT",
+        "nl": "Triggert wanneer rook wordt gedetecteerd - KRITIEKE VEILIGHEIDSMELDING",
+        "fr": "Se dÃ©clenche quand de la fumÃ©e est dÃ©tectÃ©e - ALERTE DE SÃ‰CURITÃ‰ CRITIQUE",
+        "de": "Wird ausgelÃ¶st, wenn Rauch erkannt wird - KRITISCHE SICHERHEITSWARNUNG"
+      },
+      "args": []
+    },
+    {
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_alarm_smoke_false",
+      "title": {
+        "en": "Smoke cleared",
+        "nl": "Rook opgeheven",
+        "fr": "FumÃ©e dissipÃ©e",
+        "de": "Rauch verschwunden"
+      },
+      "hint": {
+        "en": "Triggers when smoke is no longer detected",
+        "nl": "Triggert wanneer er geen rook meer wordt gedetecteerd",
+        "fr": "Se dÃ©clenche quand la fumÃ©e n'est plus dÃ©tectÃ©e",
+        "de": "Wird ausgelÃ¶st, wenn kein Rauch mehr erkannt wird"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Smoke cleared",
+        "nl": "Rook opgeheven",
+        "fr": "FumÃ©e dissipÃ©e",
+        "de": "Rauch verschwunden"
+      }
+    },
+    {
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_alarm_tamper_true",
+      "title": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      },
+      "hint": {
+        "en": "Triggers when the detector has been tampered with",
+        "nl": "Triggert wanneer er met de detector is geknoeid",
+        "fr": "Se dÃ©clenche quand le dÃ©tecteur a Ã©tÃ© sabotÃ©",
+        "de": "Wird ausgelÃ¶st, wenn der Melder manipuliert wurde"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alert",
+        "nl": "Sabotage alarm",
+        "fr": "Alerte sabotage",
+        "de": "Manipulationsalarm"
+      }
+    },
+    {
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_battery_low",
+      "title": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      },
+      "hint": {
+        "en": "Triggers when battery drops below threshold - Replace battery soon!",
+        "nl": "Triggert wanneer de batterij onder de drempel zakt - Vervang binnenkort de batterij!",
+        "fr": "Se dÃ©clenche quand la batterie passe sous le seuil - Remplacez la batterie bientÃ´t !",
+        "de": "Wird ausgelÃ¶st, wenn die Batterie unter den Schwellenwert fÃ¤llt - Batterie bald ersetzen!"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Battery is low",
+        "nl": "Batterij is bijna leeg",
+        "fr": "Batterie faible",
+        "de": "Batterie ist schwach"
+      }
+    },
+    {
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_test_triggered",
+      "title": {
+        "en": "Test button pressed",
+        "nl": "Testknop ingedrukt",
+        "fr": "Bouton test pressÃ©",
+        "de": "Testtaste gedrÃ¼ckt"
+      },
+      "hint": {
+        "en": "Triggers when the test button is pressed on the detector",
+        "nl": "Triggert wanneer de testknop op de detector wordt ingedrukt",
+        "fr": "Se dÃ©clenche quand le bouton test est pressÃ© sur le dÃ©tecteur",
+        "de": "Wird ausgelÃ¶st, wenn die Testtaste am Melder gedrÃ¼ckt wird"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Test button pressed",
+        "nl": "Testknop ingedrukt",
+        "fr": "Bouton test pressÃ©",
+        "de": "Testtaste gedrÃ¼ckt"
+      }
+    },
+    {
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_smoke_alarm",
+      "title": {
+        "en": "Smoke detected",
+        "fr": "FumÃ©e dÃ©tectÃ©e",
+        "nl": "Rook gedetecteerd",
+        "de": "Rauch erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Smoke detected",
+        "fr": "FumÃ©e dÃ©tectÃ©e",
+        "nl": "Rook gedetecteerd",
+        "de": "Rauch erkannt"
+      }
+    },
+    {
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_temp_changed",
+      "title": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geÃ¤ndert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Temperature changed",
+        "fr": "TempÃ©rature changÃ©e",
+        "nl": "Temperatuur gewijzigd",
+        "de": "Temperatur geÃ¤ndert"
+      }
+    },
+    {
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_humidity_changed",
+      "title": {
+        "en": "Humidity changed",
+        "fr": "HumiditÃ© changÃ©e",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geÃ¤ndert"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Humidity changed",
+        "fr": "HumiditÃ© changÃ©e",
+        "nl": "Vochtigheid gewijzigd",
+        "de": "Feuchtigkeit geÃ¤ndert"
+      }
+    },
+    {
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_tamper_alarm",
+      "title": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper alarm",
+        "fr": "Alarme sabotage",
+        "nl": "Sabotagealarm",
+        "de": "Manipulationsalarm"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_smoke_detected",
+      "title": {
+        "en": "Smoke !{{is|is not}} detected",
+        "nl": "Rook !{{is|is niet}} gedetecteerd",
+        "fr": "FumÃ©e !{{est|n'est pas}} dÃ©tectÃ©e",
+        "de": "Rauch !{{ist|ist nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Smoke !{{is|is not}} detected",
+        "nl": "Rook !{{is|is niet}} gedetecteerd",
+        "fr": "FumÃ©e !{{est|n'est pas}} dÃ©tectÃ©e",
+        "de": "Rauch !{{ist|ist nicht}} erkannt"
+      }
+    },
+    {
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_battery_above",
+      "title": {
+        "en": "Battery !{{is|is not}} above",
+        "nl": "Batterij !{{is|is niet}} boven",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de",
+        "de": "Batterie !{{ist|ist nicht}} Ã¼ber"
+      },
+      "titleFormatted": {
+        "en": "Battery !{{is|is not}} above [[threshold]]%",
+        "nl": "Batterij !{{is|is niet}} boven [[threshold]]%",
+        "fr": "Batterie !{{est|n'est pas}} au-dessus de [[threshold]]%",
+        "de": "Batterie !{{ist|ist nicht}} Ã¼ber [[threshold]]%"
+      },
+      "args": [
+        {
+          "name": "threshold",
+          "type": "number",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "placeholder": {
+            "en": "20"
+          }
+        }
+      ]
+    },
+    {
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_smoke_active",
+      "title": {
+        "en": "Smoke !{{is|is not}} detected",
+        "fr": "FumÃ©e !{{est|n'est pas}} dÃ©tectÃ©e",
+        "nl": "Rook !{{is|is niet}} gedetecteerd",
+        "de": "Rauch !{{ist|ist nicht}} erkannt"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Smoke !{{is|is not}} detected",
+        "fr": "FumÃ©e !{{est|n'est pas}} dÃ©tectÃ©e",
+        "nl": "Rook !{{is|is niet}} gedetecteerd",
+        "de": "Rauch !{{ist|ist nicht}} erkannt"
+      }
+    },
+    {
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_tamper_active",
+      "title": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      },
+      "args": [],
+      "titleFormatted": {
+        "en": "Tamper !{{is|is not}} active",
+        "fr": "Sabotage !{{est|n'est pas}} actif",
+        "nl": "Sabotage !{{is|is niet}} actief",
+        "de": "Manipulation !{{ist|ist nicht}} aktiv"
+      }
+    }
+  ],
+  "actions": [
+    {
+      "id": "device_air_purifier_smoke_smoke_detector_advanced_test_alarm",
+      "title": {
+        "en": "Test the alarm",
+        "nl": "Test het alarm",
+        "fr": "Tester l'alarme",
+        "de": "Alarm testen"
+      },
+      "titleFormatted": {
+        "en": "Test the smoke alarm",
+        "nl": "Test het rookalarm",
+        "fr": "Tester l'alarme fumÃ©e",
+        "de": "Rauchalarm testen"
+      },
+      "hint": {
+        "en": "Triggers a test on the smoke detector (if supported by device)",
+        "nl": "Start een test op de rookmelder (indien ondersteund door apparaat)",
+        "fr": "DÃ©clenche un test sur le dÃ©tecteur de fumÃ©e (si supportÃ© par l'appareil)",
+        "de": "LÃ¶st einen Test am Rauchmelder aus (falls vom GerÃ¤t unterstÃ¼tzt)"
+      },
+      "args": []
+    }
+  ]
+}

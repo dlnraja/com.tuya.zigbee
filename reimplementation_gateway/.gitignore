@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# User data (sessions, settings)
+src/enabled-providers.json
+
+# Python SDK cache
+sdk/__pycache__/
+*.pyc
+
+# Session & cookie data
+*.session
+cookies-backup/
+
+# Temporary files
+*.tmp
+*.temp

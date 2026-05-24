@@ -1,0 +1,23 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Valve 3",
+    "fr": "Vanne 3",
+    "nl": "Klep 3",
+    "de": "Ventil 3"
+  },
+  "desc": {
+    "en": "Control valve 3 opening percentage",
+    "fr": "Contrôle du pourcentage d'ouverture de la vanne 3"
+  },
+  "units": {
+    "en": "%"
+  },
+  "min": 0,
+  "max": 100,
+  "step": 1,
+  "getable": true,
+  "setable": true,
+  "uiComponent": "slider",
+  "insights": true
+}

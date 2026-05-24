@@ -1,0 +1,23 @@
+{
+  "type": "number",
+  "title": {
+    "en": "Valve 4",
+    "fr": "Vanne 4",
+    "nl": "Klep 4",
+    "de": "Ventil 4"
+  },
+  "desc": {
+    "en": "Control valve 4 opening percentage",
+    "fr": "Contrôle du pourcentage d'ouverture de la vanne 4"
+  },
+  "units": {
+    "en": "%"
+  },
+  "min": 0,
+  "max": 100,
+  "step": 1,
+  "getable": true,
+  "setable": true,
+  "uiComponent": "slider",
+  "insights": true
+}
