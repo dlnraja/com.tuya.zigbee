@@ -1,10 +1,10 @@
 {
-  "timestamp": "2026-05-13T04:34:45.762Z",
+  "timestamp": "2026-05-24T08:19:55.723Z",
   "suggestions": [
     {
       "pattern": "False Battery Alert / Missing Battery",
       "id": "battery",
-      "count": 37,
+      "count": 35,
       "priority": "high",
       "topFPs": [
         [
@@ -28,15 +28,11 @@
           5
         ],
         [
-          "TS0202",
-          5
-        ],
-        [
-          "tuya",
-          4
-        ],
-        [
           "example",
+          3
+        ],
+        [
+          "TS0202",
           3
         ],
         [
@@ -45,6 +41,10 @@
         ],
         [
           "_TZ3000_b4awzgct",
+          3
+        ],
+        [
+          "TS0041",
           3
         ]
       ],
@@ -108,7 +108,7 @@
     {
       "pattern": "Device Not Responding",
       "id": "no_response",
-      "count": 9,
+      "count": 8,
       "priority": "high",
       "topFPs": [
         [
@@ -451,12 +451,12 @@
   ],
   "detections": {
     "inversion": 1,
-    "battery": 37,
+    "battery": 35,
     "double_div": 2,
     "pairing": 18,
     "unknown": 7,
     "flow_dup": 0,
-    "no_response": 9,
+    "no_response": 8,
     "voltage_wrong": 1,
     "no_temperature": 2,
     "ring_value": 5,
