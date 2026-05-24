@@ -124,11 +124,11 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
           break;
 
         case 'backlight_mode':
-          const backlightValue = parseInt(newSettings.backlight_mode, 10);
-          this.log(`Setting backlight_mode: ${backlightValue} (0=off, 1=normal, 2=inverted)`);
+          const backlightMode = newSettings.backlight_mode; // L11: string-based ("off", "normal", "inverted")
+          this.log(`Setting backlight_mode: ${backlightMode}`);
 
           // Try alternative datapoints DP36+DP37 (from issue #26578)
-          if (backlightValue === 0) {
+          if (backlightMode === 'off') {
             // Always off: Set DP36=0 (backlight disabled)
             this.log('Trying DP36=0 (backlight off)');
             await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(err =>
@@ -139,15 +139,18 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
             await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(err =>
               this.log('DP36 not supported:', err.message));
 
-            // DP37: 0=none, 1=relay/normal, 2=pos/inverted
-            const lightMode = backlightValue; // 1=normal(relay), 2=inverted(pos)
+            // DP37: 1=normal(relay), 2=inverted(pos)
+            // L11: Use ternary to map string states to DP integers
+            const lightMode = backlightMode === 'normal' ? 1 : 2;
             this.log(`Trying DP37=${lightMode} (light mode)`);
             await this.sendTuyaCommand(dataPoints.backlightLightMode, lightMode, 'enum').catch(err =>
               this.log('DP37 not supported:', err.message));
           }
 
           // Also try original DP15 as fallback
-          await this.sendTuyaCommand(dataPoints.backlightMode, backlightValue, 'enum').catch(err =>
+          // L11: Map string to int for DP15 enum
+          const dp15Mode = backlightMode === 'off' ? 0 : (backlightMode === 'normal' ? 1 : 2);
+          await this.sendTuyaCommand(dataPoints.backlightMode, dp15Mode, 'enum').catch(err =>
             this.log('DP15 failed (expected):', err.message));
           break;
 
@@ -196,17 +199,19 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
           this.log('light_type not supported by this device'));
       }
 
-      // Apply backlight_mode if not default
-      if (settings.backlight_mode && settings.backlight_mode !== '1') {
-        const backlightValue = parseInt(settings.backlight_mode, 10);
-        this.log(`Applying initial backlight_mode: ${backlightValue}`);
+      // Apply backlight_mode if not default (L11: string-based "off", "normal", "inverted")
+      if (settings.backlight_mode && settings.backlight_mode !== 'normal') {
+        const backlightMode = settings.backlight_mode;
+        this.log(`Applying initial backlight_mode: ${backlightMode}`);
 
         // Try alternative datapoints DP36+DP37
-        if (backlightValue === 0) {
+        if (backlightMode === 'off') {
           await this.sendTuyaCommand(dataPoints.backlightSwitch, false, 'bool').catch(() => {});
         } else {
           await this.sendTuyaCommand(dataPoints.backlightSwitch, true, 'bool').catch(() => {});
-          await this.sendTuyaCommand(dataPoints.backlightLightMode, backlightValue, 'enum').catch(() => {});
+          // L11: ternary maps string → DP integer
+          const lightMode = backlightMode === 'inverted' ? 2 : 1;
+          await this.sendTuyaCommand(dataPoints.backlightLightMode, lightMode, 'enum').catch(() => {});
         }
       }
 

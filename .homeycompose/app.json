@@ -7,62 +7,54 @@
     "local"
   ],
   "name": {
-    "en": "Tuya Unified",
-    "nl": "Tuya Unified",
-    "de": "Tuya Unified",
-    "fr": "Tuya Unified"
+    "en": "Unified Smart Home Engine",
+    "nl": "Unified Smart Home Engine",
+    "de": "Unified Smart Home Engine",
+    "fr": "Unified Smart Home Engine"
   },
   "description": {
-    "en": "Tuya Unified Engine: High-performance local-first control, self-healing fleet stability & adaptive lighting",
-    "nl": "Tuya Unified Engine: Hoogwaardige lokale bediening, zelfherstellende vlootstabiliteit & adaptieve verlichting",
-    "de": "Tuya Unified Engine: Leistungsstarke lokale Steuerung, selbstheilende Flottenstabilität & adaptive Beleuchtung",
-    "fr": "Moteur Tuya Unified : Contrôle local haute performance, auto-réparation de la flotte & éclairage adaptatif"
+    "en": "Unified Smart Home Engine: High-performance local-first control for Tuya, eWeLink, SmartThings & more",
+    "nl": "Unified Smart Home Engine: Hoogwaardige lokale bediening voor Tuya, eWeLink, SmartThings & meer",
+    "de": "Unified Smart Home Engine: Leistungsstarke lokale Steuerung für Tuya, eWeLink, SmartThings & mehr",
+    "fr": "Unified Smart Home Engine : Contrôle local multi-protocoles pour Tuya, eWeLink, SmartThings & plus"
   },
   "tags": {
     "en": [
-      "tuya",
+      "unified",
+      "smartthings",
+      "ewelink",
+      "sonoff",
       "smart home",
       "switch",
       "sensor",
-      "thermostat",
-      "light",
-      "cover",
-      "plug",
-      "lock",
-      "dimmer"
+      "local-first"
     ],
     "nl": [
-      "tuya",
+      "unified",
+      "smartthings",
+      "ewelink",
+      "sonoff",
       "schakelaar",
       "sensor",
-      "thermostaat",
-      "lamp",
-      "rolluik",
-      "stekker",
-      "slot",
-      "dimmer"
+      "local-first"
     ],
     "de": [
-      "tuya",
+      "unified",
+      "smartthings",
+      "ewelink",
+      "sonoff",
       "schalter",
       "sensor",
-      "thermostat",
-      "licht",
-      "rollladen",
-      "steckdose",
-      "schloss",
-      "dimmer"
+      "local-first"
     ],
     "fr": [
-      "tuya",
+      "unified",
+      "smartthings",
+      "ewelink",
+      "sonoff",
       "interrupteur",
       "capteur",
-      "thermostat",
-      "lumière",
-      "volet",
-      "prise",
-      "serrure",
-      "variateur"
+      "local-first"
     ]
   },
   "category": "appliances",

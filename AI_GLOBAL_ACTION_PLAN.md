@@ -48,6 +48,12 @@ Lorsqu'un utilisateur déclare un dysfonctionnement ou demande l'ajout d'un nouv
 > * **La clé unique est le COMBINÉ** : `manufacturerName` + `productId` (ex: `_TZ3000_abc123` + `TS0001` pour 1 gang et `_TZ3000_abc123` + `TS0002` pour 2 gangs).
 > * Ne retirez JAMAIS un `manufacturerName` d'un pilote existant sous prétexte qu'il apparaît ailleurs, sauf si la combinaison exacte `manufacturerName` + `productId` est associée à un pilote erroné (collision).
 
+### A2. Intelligence & Déduction Heuristique (Nouveauté v5.12.0)
+> [!TIP]
+> * **Ne codez plus en dur des capacités génériques** : Si un appareil Tuya utilise des DP standards, l'`UniversalVariantManager` s'occupera d'injecter `onoff.2`, `alarm_motion` ou `measure_temperature` dynamiquement à l'exécution.
+> * **Phantom Pruning** : Le `DynamicCapabilityManager` scannera automatiquement les clusters ZCL et retirera de l'interface Homey toutes les capacités matérielles absentes.
+> * **Anomalies Tuya** : `TuyaDPParser` corrige déjà les températures négatives mal encodées et les batteries à 1000%. N'écrivez pas de correctifs redondants dans le driver.
+
 ### B. Recherche croisée multi-sources (Cross-Referencing)
 Pour toute anomalie ou intégration, vous devez croiser les informations à l'aide des scripts Node.js locaux prévus à cet effet pour **économiser vos tokens d'IA**, **éviter les plantages des navigateurs MCP** et obtenir des diagnostics 100 % exacts :
 
@@ -178,6 +184,7 @@ Il est **strictement obligatoire** de distinguer les deux environnements d'exéc
    ```
 5. **Étape 5 : Implémentation Profonde**  
    Implémentez la variante ou la correction dans le pilote adéquat en utilisant les classes de base SDK3 durcies (V8.0 `BaseUnifiedDevice` ou `UnifiedSwitchBase`).
+   * **⚠️ STRICT MANDATE**: All capability updates MUST go through `setCapabilityValue` which is now intercepted by `CapabilityFallbackManager`. Do NOT try to bypass it or write raw data directly to Homey without sanitization.
 6. **Étape 6 : Contrôle de Qualité**  
    Validez la syntaxe et la conformité avec :
    ```bash

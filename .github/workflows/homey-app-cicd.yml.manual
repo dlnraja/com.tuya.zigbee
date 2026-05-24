@@ -1,5 +1,9 @@
 name: Homey App CI/CD
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
     branches:
@@ -110,6 +114,7 @@ jobs:
       
       - name: Publication Summary
         run: |
+          APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "?")
           echo "## 🎉 Publication Successful" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Version:** v${{ steps.version.outputs.version }}" >> $GITHUB_STEP_SUMMARY
@@ -121,5 +126,5 @@ jobs:
           echo "3. **Promote to Test** or submit for certification" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### 🔗 Links" >> $GITHUB_STEP_SUMMARY
-          echo "- [Dashboard](https://tools.developer.homey.app/apps/app/com.dlnraja.tuya.zigbee)" >> $GITHUB_STEP_SUMMARY
-          echo "- [Test URL](https://homey.app/a/com.dlnraja.tuya.zigbee/test/)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Dashboard](https://tools.developer.homey.app/apps/app/$APP_ID)" >> $GITHUB_STEP_SUMMARY
+          echo "- [Test URL](https://homey.app/a/$APP_ID/test/)" >> $GITHUB_STEP_SUMMARY

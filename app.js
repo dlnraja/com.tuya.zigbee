@@ -20,6 +20,8 @@ const { EventEmitter } = require('events');
 EventEmitter.defaultMaxListeners = 50;
 
 const Homey = require('homey');
+const { OAuth2App } = require('homey-oauth2app');
+const SmartThingsOAuth2Client = require('./lib/smartthings/SmartThingsOAuth2Client');
 const { registerCustomClusters } = require('./lib/zigbee/registerClusters');
 const FlowCardManager = require('./lib/flow/FlowCardManager');
 const UniversalFlowCardLoader = require('./lib/flow/UniversalFlowCardLoader');
@@ -54,7 +56,9 @@ const SessionManager = require('./lib/session/SessionManager');
 const HealthMonitor = require('./lib/health/HealthMonitor');
 const SanityFilter = require('./lib/filter/SanityFilter');
 
-class TuyaUnifiedZigbeeApp extends Homey.App {
+class TuyaUnifiedZigbeeApp extends OAuth2App {
+  static OAUTH2_CLIENT = SmartThingsOAuth2Client;
+
   _flowCardsRegistered = false;
   flowCardManager = null;
   capabilityManager = null;
@@ -84,6 +88,7 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
    * onInit is called when the app is initialized.
    */
   async onInit() {
+    await super.onInit();
     // AUDIT V2: Initialize Developer Settings FIRST
     this.initializeSettings();
 
@@ -230,8 +235,33 @@ class TuyaUnifiedZigbeeApp extends Homey.App {
     // 📡 Initialize Tuya WiFi UDP Discovery
     try {
       this._tuyaUDPDiscovery = new TuyaUDPDiscovery({ log: this.log.bind(this) });
+      
+      // 🚀 GLOBAL IP TRACKING (Smart Self-Healing)
+      const updateDeviceIP = async (info) => {
+        try {
+          const drivers = Object.values(this.homey.drivers.getDrivers());
+          for (const driver of drivers) {
+            const devices = driver.getDevices() || [];
+            for (const device of devices) {
+              const settings = device.getSettings();
+              if (settings && settings.device_id === info.deviceId) {
+                if (settings.ip_address !== info.ip) {
+                  this.log(`🔄 [SMART-HEAL] IP change detected for ${device.getName() || info.deviceId}: ${settings.ip_address} -> ${info.ip}`);
+                  await device.setSettings({ ip_address: info.ip }).catch(e => this.error('[SMART-HEAL] Settings update failed', e));
+                }
+              }
+            }
+          }
+        } catch (err) {
+          this.error('[SMART-HEAL] Error updating IP:', err.message);
+        }
+      };
+
+      this._tuyaUDPDiscovery.on('device-updated', updateDeviceIP);
+      this._tuyaUDPDiscovery.on('device-found', updateDeviceIP);
+
       await this._tuyaUDPDiscovery.start();
-      this.log('✅ Tuya WiFi UDP Discovery started (ports 6666/6667)');
+      this.log('✅ Tuya WiFi UDP Discovery started (ports 6666/6667/6668)');
     } catch (err) {
       this.log('⚠️ Tuya UDP Discovery failed (non-critical):', err.message);
     }

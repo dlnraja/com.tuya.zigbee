@@ -5,10 +5,10 @@ const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
 
 /**
  * ╔══════════════════════════════════════════════════════════════════════════════╗
- * ║      SWITCH USB DONGLE - v7.5.50 (ZCL-Only 2-Port USB Relay/Repeater)       ║
+ * ║      SWITCH USB DONGLE - v8.1.0 (ZCL-Only 1-Port USB Relay/Repeater)        ║
  * ╠══════════════════════════════════════════════════════════════════════════════╣
- * ║  Supports _TZ3000_h1ipgkwn / TS0002 USB 2-Port Relay & Zigbee Repeater      ║
- * ║  - 2 x USB On/Off (endpoint 1=l1, endpoint 2=l2)                            ║
+ * ║  Supports _TZ3000_h1ipgkwn / TS0001 USB 1-Port Relay & Zigbee Repeater      ║
+ * ║  - 1 x USB On/Off (endpoint 1=l1)                                           ║
  * ║  - Power-on behavior (moesStartUpOnOff via cluster 0xE001)                   ║
  * ║  - Mains-powered (USB bus) - NO battery                                     ║
  * ║  - ZCL-only (clusters: OnOff, manuSpecificTuya3, manuSpecificTuya4)          ║
@@ -19,11 +19,11 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
 
   get mainsPowered() { return true; }
 
-  get gangCount() { return 2; }
+  get gangCount() { return 1; }
 
   async onNodeInit({ zclNode }) {
     await this._safeInvoke(async () => {
-      // v7.5.50: ZCL-only initialization for USB 2-port relay
+      // v8.1.0: ZCL-only initialization for USB 1-port relay
       await super.onNodeInit({ zclNode });
 
       // Remove battery capabilities (USB bus powered)
@@ -34,7 +34,12 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
         await this.removeCapability('alarm_battery').catch(() => {});
       }
 
-      // Setup end-to-end capability listeners for both USB ports
+      // Remove L2 capability if it accidentally remains from migration
+      if (this.hasCapability('onoff.l2')) {
+        await this.removeCapability('onoff.l2').catch(() => {});
+      }
+
+      // Setup end-to-end capability listeners for the USB port
       this._registerOnOffListeners();
 
       // Setup power-on behavior if moesStartUpOnOff is available
@@ -43,28 +48,20 @@ class SwitchUsbDongleDevice extends PhysicalButtonMixin(ZigBeeDevice) {
       // Setup power measurement (optional, not all USB dongles have metering)
       await this._setupPowerMeasurement(zclNode);
 
-      this.log('[USB-DONGLE] ✅ 2-port USB relay initialized');
+      this.log('[USB-DONGLE] ✅ 1-port USB relay initialized');
     }, 'onNodeInit');
   }
 
   /**
-   * Register OnOff listeners for both USB endpoints
-   * Endpoint 1 → onoff (l1), Endpoint 2 → onoff.l2 (l2)
+   * Register OnOff listener for the USB endpoint
+   * Endpoint 1 → onoff
    */
   _registerOnOffListeners() {
-    // Endpoint 1 = l1 (primary USB port)
     this.registerCapabilityListener('onoff', async (value) => {
       await this._sendZCLCommand(1, value);
     });
 
-    // Endpoint 2 = l2 (secondary USB port)
-    if (this.hasCapability('onoff.l2')) {
-      this.registerCapabilityListener('onoff.l2', async (value) => {
-        await this._sendZCLCommand(2, value);
-      });
-    }
-
-    this.log('[USB-DONGLE] ✅ ZCL OnOff listeners registered');
+    this.log('[USB-DONGLE] ✅ ZCL OnOff listener registered');
   }
 
   /**

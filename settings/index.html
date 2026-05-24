@@ -340,6 +340,29 @@
   </div>
 
   <div class="card">
+    <h3>Samsung SmartThings OAuth2</h3>
+    <p style="font-size:11px;color:#666">To use SmartThings, provide your OAuth2 Client ID and Secret from the Samsung SmartThings Workspace.</p>
+    
+    <div class="row font-group">
+      <div class="fg">
+        <label for="st-cid">Client ID</label>
+        <input id="st-cid" placeholder="OAuth2 Client ID"/>
+      </div>
+      <div class="fg">
+        <label for="st-sec">Client Secret</label>
+        <input id="st-sec" type="password" placeholder="OAuth2 Client Secret"/>
+        <div class="ss" id="st-sec-status">No secret saved</div>
+      </div>
+    </div>
+
+    <button class="btn" id="btn-save-st" disabled onclick="saveSTCreds()">Save SmartThings Credentials</button>
+    <button class="btn btn-c" id="btn-clear-st" disabled onclick="clearSTCreds()">Clear</button>
+    
+    <div class="msg ok" id="ok-msg-st"></div>
+    <div class="msg err" id="err-msg-st"></div>
+  </div>
+
+  <div class="card">
     <h3>Developer Settings</h3>
     <div class="tr">
       <div>
@@ -371,6 +394,51 @@
     var Homey = null;
 
     function show(id, t) {
+      var e = document.getElementById(id);
+      if(!e) return;
+      e.textContent = t;
+      e.style.display = 'block';
+      setTimeout(function() {
+        e.style.display = 'none';
+      }, 4000);
+    }
+
+    function saveSTCreds() {
+      if (!Homey) { show('err-msg-st', 'App not ready yet'); return; }
+      var cid = document.getElementById('st-cid').value.trim(),
+          sec = document.getElementById('st-sec').value.trim();
+      if (!cid || !sec) { show('err-msg-st', 'Client ID and Secret required'); return; }
+      
+      Homey.set('smartthings_client_id', cid, function(e) {
+        if (e) { show('err-msg-st', 'Save failed: ' + e.message); return; }
+        Homey.set('smartthings_client_secret', sec, function(e2) {
+          if (e2) { show('err-msg-st', 'Save failed: ' + e2.message); return; }
+          show('ok-msg-st', 'SmartThings Credentials saved!');
+          updateSTSecretStatus(true);
+        });
+      });
+    }
+
+    function clearSTCreds() {
+      if (!Homey) { show('err-msg-st', 'App not ready yet'); return; }
+      Homey.unset('smartthings_client_id');
+      Homey.unset('smartthings_client_secret');
+      document.getElementById('st-cid').value = '';
+      document.getElementById('st-sec').value = '';
+      updateSTSecretStatus(false);
+      show('ok-msg-st', 'SmartThings Credentials cleared');
+    }
+
+    function updateSTSecretStatus(has) {
+      var el = document.getElementById('st-sec-status');
+      if (has) {
+        el.textContent = 'Secret is configured';
+        el.className = 'ss on';
+      } else {
+        el.textContent = 'No secret saved';
+        el.className = 'ss';
+      }
+    }
       var e = document.getElementById(id);
       e.textContent = t;
       e.style.display = 'block';
@@ -531,10 +599,15 @@
       
       document.getElementById('btn-save').disabled = false;
       document.getElementById('btn-clear').disabled = false;
+      document.getElementById('btn-save-st').disabled = false;
+      document.getElementById('btn-clear-st').disabled = false;
       
       Homey.get('tuya_cloud_access_id', function(e, v) { if (v) document.getElementById('aid').value = v; });
       Homey.get('tuya_cloud_access_secret', function(e, v) { updateSecretStatus(!!v); });
       Homey.get('tuya_cloud_region', function(e, v) { if (v) document.getElementById('reg').value = v; });
+      
+      Homey.get('smartthings_client_id', function(e, v) { if (v) document.getElementById('st-cid').value = v; });
+      Homey.get('smartthings_client_secret', function(e, v) { updateSTSecretStatus(!!v); });
       Homey.get('developer_debug_mode', function(e, v) { document.getElementById('dbg').checked = !!v; });
       Homey.get('experimental_smart_adapt', function(e, v) { document.getElementById('sa').checked = !!v; });
       

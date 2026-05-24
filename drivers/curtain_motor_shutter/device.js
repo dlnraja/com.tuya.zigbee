@@ -70,8 +70,6 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     await this.removeCapability('alarm_battery').catch(() => {});
     // v5.6.0: Track state for physical button detection
     this._lastCoverState = null;
-    this._appCommandPending = false;
-    this._appCommandTimeout = null;
 
     // Parent handles ALL: cover listeners, Tuya DP, ZCL
     await super.onNodeInit({ zclNode });
@@ -162,13 +160,7 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     await super.onDeleted?.();
   }
 
-  _markAppCommand() {
-    this._appCommandPending = true;
-    clearTimeout(this._appCommandTimeout);
-    this._appCommandTimeout = setTimeout(() => {
-      this._appCommandPending = false;
-    }, 2000);
-  }
+
 
   /**
    * v5.5.322: Setup Tuya DP listener for lux and button
@@ -230,10 +222,10 @@ class CurtainMotorDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedC
     this.log(`[CURTAIN] 🔘 Button pressed: ${value}`);
     try {
       // Set button capability to trigger flows
-      await this.setCapabilityValue('button', true).catch(() => { });
+      await this._safeSetCapability('button', true);
       // Reset after short delay
       setTimeout(() => {
-        this.setCapabilityValue('button', false).catch(() => { });
+        this._safeSetCapability('button', false);
       }, 500);
 
       // Trigger flow card if available

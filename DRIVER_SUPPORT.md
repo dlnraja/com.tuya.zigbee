@@ -1,7 +1,7 @@
-# DRIVER SUPPORT: HOBEIAN Radar Fleet & Hardening Protocols
-## Version: 8.0.0 (Ultimate Modernization)
+# DRIVER SUPPORT: Universal Brand Normalization & Hardening Protocols
+## Version: 8.3.0 (Comprehensive Case-Insensitive Normalization & Quality Gate Hardening)
 
-This document details the validated support for the **HOBEIAN Radar** fleet and the underlying **v8 Hardening Architecture** designed to ensure telemetry stability and autonomous device discovery.
+This document details the validated support for the **HOBEIAN Radar** fleet, and the system-wide **v8.3.0 Hardening Architecture** designed to ensure case-insensitive brand normalization and telemetry stability for all core brands in the repository.
 
 ---
 
@@ -40,7 +40,19 @@ For unknown manufacturer variants (e.g., new HOBEIAN sub-brands), the `Intellige
 
 ---
 
-## 3. Configuration & Tuning
+## 3. Case-Insensitive Matching and Load-time Normalization (v8.3.0 Hardening)
+To solve mismatch issues from casing variations in Zigbee telemetry across all brands (e.g. Lumi, Aqara, Xiaomi, BSEED, Sonoff, eWeLink, Moes, Heiman, IKEA, Philips, Innr, Gledopto, Legrand, Schneider Electric, and Tuya), the following dual-layer normalization pipeline has been implemented:
+
+### A. Dual-Layer Case Insensitivity
+- **Static Matching during Pairing**: The `driver.compose.json` files contain all common case variants (e.g. `lumi`, `LUMI`, `hobeian`, `HOBEIAN`, etc.) to guarantee successful pairing under the Homey Zigbee matchmaker.
+- **Dynamic Load-Time Normalization (`onLoad` / `onInit`)**: Inside the `ensureManufacturerSettings(device)` routine (lib/utils/ManufacturerNameHelper.js), any custom casing or brand mismatch is intercepted during device startup. It dynamically rewrites the settings `zb_manufacturer_name` and `zb_model_id` into canonical form (e.g. `lumi` / `lumi.` → `LUMI`, `sonoff` → `SONOFF`, `ewelink` → `eWeLink`, `moes` → `Moes`, `bseed` → `BSEED`, `hobeian` → `HOBEIAN`, `tuya` → `Tuya`).
+
+### B. Architectural Guardrails
+- **Pre-Push Quality Gate**: Added static check rules in `scripts/PRE_COMMIT_CHECKS.js` to block any legacy raw comparison patterns like `.toUpperCase() === 'SONOFF'` or `.toLowerCase() === 'lumi'`. All comparisons must go through the centralized case-insensitive `CaseInsensitiveMatcher` (`CI` helper).
+
+---
+
+## 4. Configuration & Tuning
 All modern HOBEIAN devices support advanced tuning via Homey Settings:
 - **Sensitivity (0-10)**: Adjusts the mmWave energy threshold.
 - **Detection Range (0.0 - 10.0m)**: Sets the active tracking bubble.
@@ -48,11 +60,11 @@ All modern HOBEIAN devices support advanced tuning via Homey Settings:
 
 ---
 
-## 4. Maintenance & Diagnostics
+## 5. Maintenance & Diagnostics
 If a device reports inconsistent data:
 1. Check logs for `[DP-DISCOVERY] 🚀` (Indicates auto-mapping).
 2. Check logs for `[INFERENCE] 🧠` (Indicates state machine correction).
 3. Ensure the device is running the latest HOBEIAN firmware (App Version >= 74 recommended).
 
 ---
-*Created by Antigravity AI for Universal Tuya Zigbee v8.0.0*
+*Created by Antigravity AI for Universal Tuya Zigbee v8.2.0*
