@@ -6,6 +6,18 @@
     "driver": null
   },
   {
+    "mfr": "_TZE204_hewlydpz",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE284_gnpflcoq",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZE284_uo8qcagc",
     "productId": null,
     "source": "Z2M",
@@ -60,6 +72,12 @@
     "driver": null
   },
   {
+    "mfr": "_TZE200_itp8dt7f",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZ3000_dojqjapa",
     "productId": null,
     "source": "Z2M",
@@ -84,6 +102,24 @@
     "driver": null
   },
   {
+    "mfr": "_TZ3000_filhl5b7",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_cllghx1k",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_1kmurvlx",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZ3000_zojh9vz7",
     "productId": null,
     "source": "Z2M",
@@ -96,6 +132,12 @@
     "driver": null
   },
   {
+    "mfr": "_TZ3000_dershnvx",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZ3000_iwtv2jwo",
     "productId": null,
     "source": "Z2M",
@@ -103,6 +145,12 @@
   },
   {
     "mfr": "_TZ3210_ok0ggpk7",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3210_9hbau615",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -156,7 +204,37 @@
     "driver": null
   },
   {
+    "mfr": "_TZE284_o9ofysmo",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZE284_xc3vwx5a",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZ3000_t7ugva7q",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3210_qjvi92wz",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3210_w3hl6rao",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3210_z4hgsevd",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -204,6 +282,12 @@
     "driver": null
   },
   {
+    "mfr": "_TZ3000_1fqpj6qz",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZ3000_sfibawtr",
     "productId": null,
     "source": "Z2M",
@@ -229,6 +313,12 @@
   },
   {
     "mfr": "_TZ3210_cyuyd5az",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_5rpu3r0d",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -270,6 +360,12 @@
     "driver": null
   },
   {
+    "mfr": "_TZE284_nvodulvi",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
     "mfr": "_TZE284_mul9abs3",
     "productId": null,
     "source": "Z2M",
@@ -277,6 +373,12 @@
   },
   {
     "mfr": "_TZ3002_vsom92pp",
+    "productId": null,
+    "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_r2fgo9ks",
     "productId": null,
     "source": "Z2M",
     "driver": null
@@ -363,6 +465,59 @@
     "mfr": "_TZ3218_sgbsg6mr",
     "productId": null,
     "source": "Z2M",
+    "driver": null
+  },
+  {
+    "mfr": "eWeLink",
+    "productId": "CK-TLSR8656-SS5-01",
+    "endpoints": [],
+    "raw": {
+      "ids": {
+        "modelId": "CK-TLSR8656-SS5-01",
+        "manufacturerName": "eWeLink"
+      },
+      "endpoints": {
+        "1": {
+          "clusters": {
+            "input": [
+              "genBasic",
+              "genPowerCfg",
+              "msTemperatureMeasurement",
+              "msRelativeHumidity",
+              "genIdentify"
+            ],
+            "output": [
+              "genIdentify"
+            ]
+          },
+          "bindings": []
+        }
+      },
+      "bindings": [],
+      "meta": {
+        "battery": {
+          "voltage": true,
+          "percentage": true
+        }
+      }
+    },
+    "source": "JohanBendz/com.tuya.zigbee",
+    "issue": 1378,
+    "title": "Add support for eWeLink Temperature & Humidity Sensor – CK‑TLSR8656‑SS5‑01 (7014)",
+    "description": "Add support for eWeLink Temperature & Humidity Sensor – CK‑TLSR8656‑SS5‑01 (7014)",
+    "driver": null
+  },
+  {
+    "mfr": "_TZ3000_ztc6ggyl",
+    "productId": "TS0121",
+    "endpoints": [
+      1
+    ],
+    "fallback": true,
+    "source": "dlnraja/com.tuya.zigbee",
+    "issue": 315,
+    "title": "[Auto] 200 new fingerprints from community (2026-05)",
+    "description": "[Auto] 200 new fingerprints from community (2026-05)",
     "driver": null
   }
 ]

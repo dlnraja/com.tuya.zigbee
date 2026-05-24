@@ -92,10 +92,20 @@ async function main() {
     }
   } catch(e) { r.src.z2m = { error: e.message }; }
 
-  // GitHub issues (async)
+  // GitHub deep intelligence (async)
   try {
-    console.log('🔄 GitHub issues sync...');
-    r.src.gh = await require('./parse-issues')();
+    console.log('🔄 GitHub deep intelligence sync...');
+    const ghIntel = await require('./deep-github-extract')();
+    r.src.gh = ghIntel;
+    
+    if (ghIntel.fingerprints) {
+      ghIntel.fingerprints.forEach(fp => {
+        const driver = inferDeviceType(fp.productId, fp.description);
+        const enriched = { ...fp, driver };
+        r.enrichedFps.push(enriched);
+        if (!current.has(fp.mfr)) r.newFps.push(enriched);
+      });
+    }
   } catch(e) { r.src.gh = { error: e.message }; }
 
   // Dedupe new fingerprints using mfr+productId (different PIDs = different devices!)
@@ -122,6 +132,9 @@ async function main() {
   fs.writeFileSync(path.join(OUT, 'report.json'), JSON.stringify(r, null, 2));
   fs.writeFileSync(path.join(OUT, 'new-fingerprints.json'), JSON.stringify(r.newFps, null, 2));
   fs.writeFileSync(path.join(OUT, 'all-enriched.json'), JSON.stringify(r.enrichedFps, null, 2));
+  if (r.src.gh) {
+    fs.writeFileSync(path.join(OUT, 'github_raw.json'), JSON.stringify(r.src.gh, null, 2));
+  }
   console.log('✅ Sync complete - reports saved to data/community-sync/');
 }
 

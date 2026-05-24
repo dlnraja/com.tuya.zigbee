@@ -1,46 +1,53 @@
 {
-  "ts": "2026-05-13T06:37:37.459Z",
+  "ts": "2026-05-24T15:35:24.560Z",
   "stats": {
-    "totalEnriched": 1541,
-    "withDriverAssigned": 17,
-    "withNullDriver": 1520,
-    "successfullyMapped": 14,
-    "driverNotFound": 3,
+    "totalEnriched": 1583,
+    "withDriverAssigned": 31,
+    "withNullDriver": 1543,
+    "successfullyMapped": 26,
+    "driverNotFound": 5,
     "unmappedDriverNames": [
       "plug",
-      "water_valve_smart"
+      "water_valve_smart",
+      "water_leak_sensor"
     ]
   },
   "appliedByDriver": {
     "climate_sensor": {
-      "count": 2,
+      "count": 3,
       "sampleMfrs": [
         "_TZ3000_zl1kmjqx",
-        "_TZE284_8se38w3c"
+        "_TZE284_8se38w3c",
+        "_TZ3000_fllyghyj"
       ]
     },
     "switch_3gang": {
-      "count": 1,
+      "count": 3,
       "sampleMfrs": [
-        "_TZ3000_mw1pqqqt"
+        "_TZ3000_mw1pqqqt",
+        "_TZ3210_n0wbkysi",
+        "_TZ3000_qkixdnon"
       ]
     },
     "button_wireless_4": {
-      "count": 1,
+      "count": 2,
       "sampleMfrs": [
-        "_TZ3000_abrsvsou"
+        "_TZ3000_abrsvsou",
+        "_TZ3000_qja6nq5z"
       ]
     },
     "illuminance_sensor": {
-      "count": 1,
+      "count": 2,
       "sampleMfrs": [
-        "_TZE200_hl0ss9oa"
+        "_TZE200_hl0ss9oa",
+        "_TZE284_aaeasoll"
       ]
     },
     "energy_meter_3phase": {
-      "count": 1,
+      "count": 2,
       "sampleMfrs": [
-        "_TZE284_6ocnqlhn"
+        "_TZE284_6ocnqlhn",
+        "_TZE204_81yrt3lo"
       ]
     },
     "doorbell": {
@@ -57,13 +64,14 @@
       ]
     },
     "motion_sensor": {
-      "count": 1,
+      "count": 2,
       "sampleMfrs": [
-        "_TZE200_4pm4pekt"
+        "_TZE200_4pm4pekt",
+        "_TZ3040_o4mkahkc"
       ]
     },
     "switch_1gang": {
-      "count": 7,
+      "count": 9,
       "sampleMfrs": [
         "_TZE204_gm8h14wy",
         "_TZE204_ccgyhbvd",
@@ -76,6 +84,39 @@
       "count": 1,
       "sampleMfrs": [
         "_TZE204_trwaxi57"
+      ]
+    },
+    "contact_sensor": {
+      "count": 2,
+      "sampleMfrs": [
+        "_TZE200_seq9cm6u",
+        "_TZ3000_996rpfy6"
+      ]
+    },
+    "dimmer_wall_1gang": {
+      "count": 1,
+      "sampleMfrs": [
+        "_TZ3000_aetquff4"
+      ]
+    },
+    "button_wireless_1": {
+      "count": 3,
+      "sampleMfrs": [
+        "_TZ3000_yj6k7vfo",
+        "_TZ3000_b4awzgct",
+        "_TZ3000_b4awzgct"
+      ]
+    },
+    "button_wireless_3": {
+      "count": 1,
+      "sampleMfrs": [
+        "_TZ3000_famkxci2"
+      ]
+    },
+    "fingerprint_lock": {
+      "count": 1,
+      "sampleMfrs": [
+        "_TZ3000_vd43bbfq"
       ]
     }
   }

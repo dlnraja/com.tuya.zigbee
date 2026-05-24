@@ -27,7 +27,7 @@ class RadiatorValveDriver extends ZigBeeDriver {
     actions.forEach(act => {
       try {
         const id = `${P}_${act}`;
-        const card = this._getFlowCard(id, 'action');
+        const card = this.homey.flow.getActionCard(id);
         if (card) {
           card.registerRunListener(async (args) => {
             if (!args.device) return false;

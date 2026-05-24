@@ -1,0 +1,3269 @@
+{
+  "fingerprints": [
+    {
+      "mfr": "_TZE200_seq9cm6u",
+      "productId": "TS0601",
+      "endpoints": [
+        1
+      ],
+      "raw": {
+        "ids": {
+          "modelId": "TS0601",
+          "manufacturerName": "_TZE200_seq9cm6u"
+        },
+        "endpoints": {
+          "ieeeAddress": "a4:c1:38:d1:ee:0b:be:07",
+          "networkAddress": 61652,
+          "modelId": "TS0601",
+          "manufacturerName": "_TZE200_seq9cm6u",
+          "endpointDescriptors": [
+            {
+              "status": "SUCCESS",
+              "nwkAddrOfInterest": 61652,
+              "_reserved": 16,
+              "endpointId": 1,
+              "applicationProfileId": 260,
+              "applicationDeviceId": 12,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 1,
+              "inputClusters": [
+                0,
+                61184
+              ],
+              "outputClusters": [
+                10,
+                25
+              ]
+            }
+          ],
+          "deviceType": "enddevice",
+          "receiveWhenIdle": false,
+          "capabilities": {
+            "alternatePANCoordinator": false,
+            "deviceType": false,
+            "powerSourceMains": false,
+            "receiveWhenIdle": false,
+            "security": false,
+            "allocateAddress": true
+          },
+          "extendedEndpointDescriptors": {
+            "1": {
+              "clusters": {
+                "basic": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 32,
+                      "name": "zclVersion",
+                      "value": 3
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 1,
+                      "dataTypeId": 32,
+                      "name": "appVersion",
+                      "value": 105
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 2,
+                      "dataTypeId": 32,
+                      "name": "stackVersion",
+                      "value": 1
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 3,
+                      "dataTypeId": 32,
+                      "name": "hwVersion",
+                      "value": 1
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 4,
+                      "dataTypeId": 66,
+                      "name": "manufacturerName",
+                      "value": "_TZE200_seq9cm6u"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 5,
+                      "dataTypeId": 66,
+                      "name": "modelId",
+                      "value": "TS0601"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 6,
+                      "dataTypeId": 66,
+                      "name": "dateCode",
+                      "value": ""
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 7,
+                      "dataTypeId": 48,
+                      "name": "powerSource",
+                      "value": "battery"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65472,
+                      "dataTypeId": 66
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65487,
+                      "dataTypeId": 33
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 65502,
+                      "dataTypeId": 32
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65534,
+                      "dataTypeId": 48,
+                      "name": "attributeReportingStatus",
+                      "value": "PENDING"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65504,
+                      "dataTypeId": 72
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65505,
+                      "dataTypeId": 72
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65506,
+                      "dataTypeId": 32
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65507,
+                      "dataTypeId": 66
+                    }
+                  ],
+                  "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+                  "commandsReceived": "UNSUP_GENERAL_COMMAND"
+                }
+              },
+              "bindings": {
+                "time": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 1
+                    }
+                  ],
+                  "commandsGenerated": "UNSUP_GENERAL_COMMAND",
+                  "commandsReceived": "UNSUP_GENERAL_COMMAND"
+                },
+                "ota": {}
+              }
+            }
+          }
+        }
+      },
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1403,
+      "title": "Device Request - Tuya Zigbee Pressure/Contact Sensor - _TZE200_seq9cm6u / TS0601",
+      "description": "Device Request - Tuya Zigbee Pressure/Contact Sensor - _TZE200_seq9cm6u / TS0601"
+    },
+    {
+      "mfr": "_TZ3210_n0wbkysi",
+      "productId": "TS0003",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1402,
+      "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
+      "description": "Device Request - [Device name] - [manufacturerName] / [modelId]"
+    },
+    {
+      "mfr": "_TZ3002_pzao9ls1",
+      "productId": "TS0726",
+      "endpoints": [
+        1,
+        2,
+        3,
+        4,
+        242
+      ],
+      "raw": {
+        "ids": {
+          "modelId": "TS0726",
+          "manufacturerName": "_TZ3002_pzao9ls1"
+        },
+        "endpoints": {
+          "ieeeAddress": "a4:c1:38:e1:df:8f:9a:32",
+          "networkAddress": 2084,
+          "modelId": "TS0726",
+          "manufacturerName": "_TZ3002_pzao9ls1",
+          "endpointDescriptors": [
+            {
+              "endpointId": 1,
+              "applicationProfileId": 260,
+              "applicationDeviceId": 4,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 1,
+              "inputClusters": [
+                3,
+                4,
+                5,
+                6,
+                57344,
+                57345,
+                0
+              ],
+              "outputClusters": [
+                25,
+                10
+              ],
+              "nwkAddrOfInterest": 2084,
+              "_reserved": 0,
+              "status": "ZSuccess"
+            },
+            {
+              "endpointId": 2,
+              "applicationProfileId": 260,
+              "applicationDeviceId": 4,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 1,
+              "inputClusters": [
+                4,
+                5,
+                6,
+                57345
+              ],
+              "outputClusters": [],
+              "nwkAddrOfInterest": 2084,
+              "_reserved": 0,
+              "status": "ZSuccess"
+            },
+            {
+              "endpointId": 3,
+              "applicationProfileId": 260,
+              "applicationDeviceId": 4,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 1,
+              "inputClusters": [
+                4,
+                5,
+                6,
+                57345
+              ],
+              "outputClusters": [],
+              "nwkAddrOfInterest": 2084,
+              "_reserved": 0,
+              "status": "ZSuccess"
+            },
+            {
+              "endpointId": 4,
+              "applicationProfileId": 260,
+              "applicationDeviceId": 4,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 1,
+              "inputClusters": [
+                4,
+                5,
+                6,
+                57345
+              ],
+              "outputClusters": [],
+              "nwkAddrOfInterest": 2084,
+              "_reserved": 0,
+              "status": "ZSuccess"
+            },
+            {
+              "endpointId": 242,
+              "applicationProfileId": 41440,
+              "applicationDeviceId": 97,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 0,
+              "inputClusters": [],
+              "outputClusters": [
+                33
+              ],
+              "nwkAddrOfInterest": 2084,
+              "_reserved": 0,
+              "status": "ZSuccess"
+            }
+          ],
+          "deviceType": "router",
+          "receiveWhenIdle": true,
+          "capabilities": {
+            "alternatePANCoordinator": false,
+            "deviceType": true,
+            "powerSourceMains": true,
+            "receiveWhenIdle": true,
+            "security": false,
+            "allocateAddress": true
+          },
+          "extendedEndpointDescriptors": {
+            "1": {
+              "clusters": {
+                "identify": {
+                  "attributes": []
+                },
+                "groups": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 24,
+                      "name": "nameSupport",
+                      "value": {
+                        "type": "Buffer",
+                        "data": [
+                          0
+                        ]
+                      },
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                },
+                "scenes": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 32,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 1,
+                      "dataTypeId": 32,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 2,
+                      "dataTypeId": 33,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 3,
+                      "dataTypeId": 16,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 4,
+                      "dataTypeId": 24,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                },
+                "onOff": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 16,
+                      "name": "onOff",
+                      "value": false,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 16385,
+                      "dataTypeId": 33,
+                      "name": "onTime",
+                      "value": 0,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 16386,
+                      "dataTypeId": 33,
+                      "name": "offWaitTime",
+                      "value": 0,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 32769,
+                      "dataTypeId": 48,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 32770,
+                      "dataTypeId": 48,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 20480,
+                      "dataTypeId": 48,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                },
+                "basic": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 32,
+                      "name": "zclVersion",
+                      "value": 3
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 1,
+                      "dataTypeId": 32,
+                      "name": "appVersion",
+                      "value": 85
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 2,
+                      "dataTypeId": 32,
+                      "name": "stackVersion",
+                      "value": 0
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 3,
+                      "dataTypeId": 32,
+                      "name": "hwVersion",
+                      "value": 1
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 4,
+                      "dataTypeId": 66,
+                      "name": "manufacturerName",
+                      "value": "_TZ3002_pzao9ls1"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 5,
+                      "dataTypeId": 66,
+                      "name": "modelId",
+                      "value": "TS0726"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 6,
+                      "dataTypeId": 66,
+                      "name": "dateCode",
+                      "value": ""
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 7,
+                      "dataTypeId": 48,
+                      "name": "powerSource",
+                      "value": "mains"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 65502,
+                      "dataTypeId": 32
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65534,
+                      "dataTypeId": 48,
+                      "name": "attributeReportingStatus",
+                      "value": "PENDING"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65506,
+                      "dataTypeId": 32
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65507,
+                      "dataTypeId": 72
+                    }
+                  ]
+                }
+              },
+              "bindings": {
+                "ota": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 240,
+                      "name": "upgradeServerID",
+                      "value": "ff:ff:ff:ff:ff:ff:ff:ff"
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 1,
+                      "dataTypeId": 35,
+                      "name": "fileOffset",
+                      "value": 4294967295
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 2,
+                      "dataTypeId": 35,
+                      "name": "currentFileVersion",
+                      "value": 85
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 3,
+                      "dataTypeId": 33,
+                      "name": "currentZigBeeStackVersion",
+                      "value": 2
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 4,
+                      "dataTypeId": 35,
+                      "name": "downloadedFileVersion",
+                      "value": 4294967295
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 5,
+                      "dataTypeId": 33,
+                      "name": "downloadedZigBeeStackVersion",
+                      "value": 65535
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 6,
+                      "dataTypeId": 48,
+                      "name": "imageUpgradeStatus",
+                      "value": "normal"
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 7,
+                      "dataTypeId": 33,
+                      "name": "manufacturerID",
+                      "value": 4417
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 8,
+                      "dataTypeId": 33,
+                      "name": "imageTypeID",
+                      "value": 65535
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 9,
+                      "dataTypeId": 33,
+                      "name": "minimumBlockPeriod",
+                      "value": 0
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 3
+                    }
+                  ]
+                },
+                "time": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            },
+            "2": {
+              "clusters": {
+                "groups": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 24,
+                      "name": "nameSupport",
+                      "value": {
+                        "type": "Buffer",
+                        "data": [
+                          0
+                        ]
+                      },
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                },
+                "scenes": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 32,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 1,
+                      "dataTypeId": 32,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 2,
+                      "dataTypeId": 33,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 3,
+                      "dataTypeId": 16,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 4,
+                      "dataTypeId": 24,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                },
+                "onOff": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 16,
+                      "name": "onOff",
+                      "value": false,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 16385,
+                      "dataTypeId": 33,
+                      "name": "onTime",
+                      "value": 0,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 16386,
+                      "dataTypeId": 33,
+                      "name": "offWaitTime",
+                      "value": 0,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                }
+              },
+              "bindings": {}
+            },
+            "3": {
+              "clusters": {
+                "groups": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 24,
+                      "name": "nameSupport",
+                      "value": {
+                        "type": "Buffer",
+                        "data": [
+                          0
+                        ]
+                      },
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                },
+                "scenes": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 32,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 1,
+                      "dataTypeId": 32,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 2,
+                      "dataTypeId": 33,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 3,
+                      "dataTypeId": 16,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 4,
+                      "dataTypeId": 24,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                },
+                "onOff": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 16,
+                      "name": "onOff",
+                      "value": false,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 16385,
+                      "dataTypeId": 33,
+                      "name": "onTime",
+                      "value": 0,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 16386,
+                      "dataTypeId": 33,
+                      "name": "offWaitTime",
+                      "value": 0,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                }
+              },
+              "bindings": {}
+            },
+            "4": {
+              "clusters": {
+                "groups": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 24,
+                      "name": "nameSupport",
+                      "value": {
+                        "type": "Buffer",
+                        "data": [
+                          0
+                        ]
+                      },
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                },
+                "scenes": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 32,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 1,
+                      "dataTypeId": 32,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 2,
+                      "dataTypeId": 33,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 3,
+                      "dataTypeId": 16,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 4,
+                      "dataTypeId": 24,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                },
+                "onOff": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 16,
+                      "name": "onOff",
+                      "value": false,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 16385,
+                      "dataTypeId": 33,
+                      "name": "onTime",
+                      "value": 0,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 16386,
+                      "dataTypeId": 33,
+                      "name": "offWaitTime",
+                      "value": 0,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                }
+              },
+              "bindings": {}
+            },
+            "242": {
+              "clusters": {},
+              "bindings": {}
+            }
+          }
+        }
+      },
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1401,
+      "title": "Device Request - BSEED 4 Gang light switch - [_TZ3002_pzao9ls1] / [TS0726]",
+      "description": "Device Request - BSEED 4 Gang light switch - [_TZ3002_pzao9ls1] / [TS0726]"
+    },
+    {
+      "mfr": "_TZ3000_hyarhbyx",
+      "productId": "TS0001",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1395,
+      "title": "Device Request - [1-Gang Zigbee Switch] - [TZ3000_hyarhbyx] / [TS0001]",
+      "description": "Device Request - [1-Gang Zigbee Switch] - [TZ3000_hyarhbyx] / [TS0001]"
+    },
+    {
+      "mfr": "_TZE204_81yrt3lo",
+      "productId": "TS0601",
+      "endpoints": [
+        1,
+        242
+      ],
+      "raw": {
+        "ids": {
+          "modelId": "TS0601",
+          "manufacturerName": "_TZE204_81yrt3lo"
+        },
+        "endpoints": {
+          "ieeeAddress": "a4:c1:38:8b:9f:c0:4b:87",
+          "networkAddress": 19354,
+          "modelId": "TS0601",
+          "manufacturerName": "_TZE204_81yrt3lo",
+          "endpointDescriptors": [
+            {
+              "status": "SUCCESS",
+              "nwkAddrOfInterest": 19354,
+              "_reserved": 20,
+              "endpointId": 1,
+              "applicationProfileId": 260,
+              "applicationDeviceId": 81,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 1,
+              "inputClusters": [
+                4,
+                5,
+                61184,
+                0
+              ],
+              "outputClusters": [
+                25,
+                10
+              ]
+            },
+            {
+              "status": "SUCCESS",
+              "nwkAddrOfInterest": 19354,
+              "_reserved": 10,
+              "endpointId": 242,
+              "applicationProfileId": 41440,
+              "applicationDeviceId": 97,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 0,
+              "inputClusters": [],
+              "outputClusters": [
+                33
+              ]
+            }
+          ],
+          "deviceType": "router",
+          "receiveWhenIdle": true,
+          "capabilities": {
+            "alternatePANCoordinator": false,
+            "deviceType": true,
+            "powerSourceMains": true,
+            "receiveWhenIdle": true,
+            "security": false,
+            "allocateAddress": true
+          },
+          "extendedEndpointDescriptors": {
+            "1": {
+              "clusters": {
+                "groups": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 24,
+                      "name": "nameSupport",
+                      "value": {
+                        "type": "Buffer",
+                        "data": [
+                          0
+                        ]
+                      },
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                },
+                "scenes": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 32,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 1,
+                      "dataTypeId": 32,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 2,
+                      "dataTypeId": 33,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 3,
+                      "dataTypeId": 16,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 4,
+                      "dataTypeId": 24,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                },
+                "basic": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 32,
+                      "name": "zclVersion",
+                      "value": 3
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 1,
+                      "dataTypeId": 32,
+                      "name": "appVersion",
+                      "value": 74
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 2,
+                      "dataTypeId": 32,
+                      "name": "stackVersion",
+                      "value": 0
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 3,
+                      "dataTypeId": 32,
+                      "name": "hwVersion",
+                      "value": 1
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 4,
+                      "dataTypeId": 66,
+                      "name": "manufacturerName",
+                      "value": "_TZE204_81yrt3lo"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 5,
+                      "dataTypeId": 66,
+                      "name": "modelId",
+                      "value": "TS0601"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 6,
+                      "dataTypeId": 66,
+                      "name": "dateCode",
+                      "value": ""
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 7,
+                      "dataTypeId": 48,
+                      "name": "powerSource",
+                      "value": "mains"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 65502,
+                      "dataTypeId": 32
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65534,
+                      "dataTypeId": 48,
+                      "name": "attributeReportingStatus",
+                      "value": "PENDING"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65506,
+                      "dataTypeId": 32
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65507,
+                      "dataTypeId": 72
+                    }
+                  ]
+                }
+              },
+              "bindings": {
+                "ota": {},
+                "time": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            },
+            "242": {
+              "clusters": {},
+              "bindings": {}
+            }
+          }
+        }
+      },
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1393,
+      "title": "Device Request - Tuya - PJ-1203A Bidirectional Energy Meter - _TZE204_81yrt3lo / TS0601",
+      "description": "Device Request - Tuya - PJ-1203A Bidirectional Energy Meter - _TZE204_81yrt3lo / TS0601"
+    },
+    {
+      "mfr": "_TZ3040_o4mkahkc",
+      "productId": "TS0202",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1392,
+      "title": "Device Request - PIR Motion Detector Zigbee - _TZ3040_o4mkahkc / TS0202",
+      "description": "Device Request - PIR Motion Detector Zigbee - _TZ3040_o4mkahkc / TS0202"
+    },
+    {
+      "mfr": "_TZ3000_996rpfy6",
+      "productId": "TS0203",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1391,
+      "title": "Device Request - Door Sensor Zigbee - _TZ3000_996rpfy6 / TS0203",
+      "description": "Device Request - Door Sensor Zigbee - _TZ3000_996rpfy6 / TS0203"
+    },
+    {
+      "mfr": "_TZ3000_qja6nq5z",
+      "productId": "TS004F",
+      "endpoints": [],
+      "raw": {
+        "ids": {
+          "modelId": "TS004F",
+          "manufacturerName": "_TZ3000_qja6nq5z"
+        },
+        "endpoints": {
+          "ieeeAddress": "6c:e4:a4:ff:fe:57:6f:26",
+          "networkAddress": 40439,
+          "modelId": "TS004F",
+          "manufacturerName": "_TZ3000_qja6nq5z",
+          "endpointDescriptors": [
+            {
+              "status": "SUCCESS",
+              "endpointId": 1,
+              "applicationProfileId": 260,
+              "applicationDeviceId": 260,
+              "inputClusters": [
+                0,
+                1,
+                3,
+                4,
+                6,
+                4096
+              ],
+              "outputClusters": [
+                25,
+                10,
+                3,
+                4,
+                5,
+                6,
+                8,
+                4096
+              ]
+            }
+          ],
+          "deviceType": "enddevice",
+          "receiveWhenIdle": false
+        }
+      },
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1389,
+      "title": "Device Request – Tuya Smart Knob Switch – _TZ3000_qja6nq5z / TS004F",
+      "description": "Device Request – Tuya Smart Knob Switch – _TZ3000_qja6nq5z / TS004F"
+    },
+    {
+      "mfr": "_TZ3210_5ct6e7ye",
+      "productId": "TS011F",
+      "endpoints": [],
+      "raw": {
+        "ids": {
+          "modelId": "TS011F",
+          "manufacturerName": "_TZ3210_5ct6e7ye"
+        },
+        "endpoints": {
+          "ieeeAddress": "a4:c1:38:26:5e:e9:3f:58",
+          "networkAddress": 40534,
+          "modelId": "TS011F",
+          "manufacturerName": "_TZ3210_5ct6e7ye",
+          "endpointDescriptors": [
+            {
+              "status": "SUCCESS",
+              "nwkAddrOfInterest": 40534,
+              "_reserved": 30,
+              "endpointId": 1,
+              "applicationProfileId": 260,
+              "applicationDeviceId": 266,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 1,
+              "inputClusters": [
+                3,
+                4,
+                5,
+                6,
+                1794,
+                2820,
+                57344,
+                57345,
+                0
+              ],
+              "outputClusters": [
+                25,
+                10
+              ]
+            },
+            {
+              "status": "SUCCESS",
+              "nwkAddrOfInterest": 40534,
+              "_reserved": 10,
+              "endpointId": 242,
+              "applicationProfileId": 41440,
+              "applicationDeviceId": 97,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 0,
+              "inputClusters": [],
+              "outputClusters": [
+                33
+              ]
+            }
+          ],
+          "deviceType": "router",
+          "receiveWhenIdle": true
+        }
+      },
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1388,
+      "title": "Device Request – Tuya Smart Socket with Energy Monitoring – _TZ3210_5ct6e7ye / TS011F",
+      "description": "Device Request – Tuya Smart Socket with Energy Monitoring – _TZ3210_5ct6e7ye / TS011F"
+    },
+    {
+      "mfr": "_TZ3290_yyax9ajf",
+      "productId": "TS1201",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1383,
+      "title": "Device Request - Zigbee Smart IR Remote - _TZ3290_yyax9ajf / TS1201",
+      "description": "Device Request - Zigbee Smart IR Remote - _TZ3290_yyax9ajf / TS1201"
+    },
+    {
+      "mfr": "_TZ3000_baeiitad",
+      "productId": "TS0207",
+      "endpoints": [],
+      "raw": {
+        "ids": {
+          "modelId": "TS0207",
+          "manufacturerName": "_TZ3000_baeiitad"
+        },
+        "endpoints": {
+          "endpointDescriptors": [
+            {
+              "endpointId": 1,
+              "applicationProfileId": 260,
+              "applicationDeviceId": 1026,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 1,
+              "inputClusters": [
+                1,
+                3,
+                1280,
+                0
+              ],
+              "outputClusters": [
+                25,
+                10
+              ]
+            }
+          ],
+          "endpoints": {
+            "1": {
+              "clusters": {
+                "powerConfiguration": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 32,
+                      "name": "batteryVoltage",
+                      "value": 30,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 33,
+                      "name": "batteryPercentageRemaining",
+                      "value": 200,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "name": "clusterRevision",
+                      "value": 1,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                },
+                "identify": {
+                  "attributes": []
+                },
+                "iasZone": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "name": "zoneState",
+                      "value": "enrolled",
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 1,
+                      "name": "zoneType",
+                      "value": "waterSensor",
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 2,
+                      "name": "zoneStatus",
+                      "value": {
+                        "type": "Buffer",
+                        "data": [
+                          1,
+                          0
+                        ]
+                      },
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 16,
+                      "name": "iasCIEAddress",
+                      "value": "00:12:4b:00:04:f8:a6:40",
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 17,
+                      "name": "zoneId",
+                      "value": 0,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "name": "clusterRevision",
+                      "value": 1,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                },
+                "basic": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "name": "zclVersion",
+                      "value": 3
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 1,
+                      "name": "appVersion",
+                      "value": 68
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 2,
+                      "name": "stackVersion",
+                      "value": 0
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 3,
+                      "name": "hwVersion",
+                      "value": 1
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 4,
+                      "name": "manufacturerName",
+                      "value": "_TZ3000_baeiitad"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 5,
+                      "name": "modelId",
+                      "value": "TS0207"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 6,
+                      "name": "dateCode",
+                      "value": ""
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 7,
+                      "name": "powerSource",
+                      "value": "battery"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "writable",
+                        "reportable"
+                      ],
+                      "id": 65502
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "name": "clusterRevision",
+                      "value": 2
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65534,
+                      "name": "attributeReportingStatus",
+                      "value": "PENDING"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65506
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65507
+                    }
+                  ]
+                }
+              },
+              "bindings": {
+                "ota": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 0
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 1
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 2
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 3
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 4
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 5
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 6
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 7
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 8
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 9
+                    },
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 65533,
+                      "name": "clusterRevision",
+                      "value": 3
+                    }
+                  ]
+                },
+                "time": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 65533,
+                      "name": "clusterRevision",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1380,
+      "title": "Device Request - Water Leakage Sensor - Shenzen Xriver Technology / _TZ3000_baeiitad / TS0207",
+      "description": "Device Request - Water Leakage Sensor - Shenzen Xriver Technology / _TZ3000_baeiitad / TS0207"
+    },
+    {
+      "mfr": "_TZE284_aaeasoll",
+      "productId": "TS0601",
+      "endpoints": [
+        1
+      ],
+      "raw": {
+        "ids": {
+          "modelId": "TS0601",
+          "manufacturerName": "_TZE284_aaeasoll"
+        },
+        "endpoints": {
+          "ieeeAddress": "aa:bb:cc:dd:ee:ff:00:01",
+          "networkAddress": 15168,
+          "modelId": "TS0601",
+          "manufacturerName": "_TZE284_aaeasoll",
+          "endpointDescriptors": [
+            {
+              "status": "SUCCESS",
+              "nwkAddrOfInterest": 15168,
+              "_reserved": 22,
+              "endpointId": 1,
+              "applicationProfileId": 260,
+              "applicationDeviceId": 81,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 1,
+              "inputClusters": [
+                4,
+                5,
+                61184,
+                0,
+                60672
+              ],
+              "outputClusters": [
+                25,
+                10
+              ]
+            }
+          ],
+          "deviceType": "enddevice",
+          "receiveWhenIdle": false,
+          "capabilities": {
+            "alternatePANCoordinator": false,
+            "deviceType": false,
+            "powerSourceMains": false,
+            "receiveWhenIdle": false,
+            "security": false,
+            "allocateAddress": true
+          },
+          "extendedEndpointDescriptors": {
+            "1": {
+              "clusters": {
+                "groups": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 24,
+                      "name": "nameSupport",
+                      "value": {
+                        "type": "Buffer",
+                        "data": [
+                          0
+                        ]
+                      },
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2,
+                      "reportingConfiguration": {
+                        "status": "NOT_FOUND",
+                        "direction": "reported"
+                      }
+                    }
+                  ]
+                },
+                "basic": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 0,
+                      "dataTypeId": 32,
+                      "name": "zclVersion",
+                      "value": 3
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 1,
+                      "dataTypeId": 32,
+                      "name": "appVersion",
+                      "value": 80
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 2,
+                      "dataTypeId": 32,
+                      "name": "stackVersion",
+                      "value": 0
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 3,
+                      "dataTypeId": 32,
+                      "name": "hwVersion",
+                      "value": 1
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 4,
+                      "dataTypeId": 66,
+                      "name": "manufacturerName",
+                      "value": "_TZE284_aaeasoll"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 5,
+                      "dataTypeId": 66,
+                      "name": "modelId",
+                      "value": "TS0601"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 6,
+                      "dataTypeId": 66,
+                      "name": "dateCode",
+                      "value": ""
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 7,
+                      "dataTypeId": 48,
+                      "name": "powerSource",
+                      "value": "battery"
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2
+                    },
+                    {
+                      "acl": [
+                        "readable",
+                        "reportable"
+                      ],
+                      "id": 65534,
+                      "dataTypeId": 48,
+                      "name": "attributeReportingStatus",
+                      "value": "PENDING"
+                    }
+                  ]
+                }
+              },
+              "bindings": {
+                "ota": {},
+                "time": {
+                  "attributes": [
+                    {
+                      "acl": [
+                        "readable"
+                      ],
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1379,
+      "title": "Device Request - [SmarterCurry Solar Lux Sensor] - [SmarterCurry] / [TZE284_aaeasoll / TS0601]",
+      "description": "Device Request - [SmarterCurry Solar Lux Sensor] - [SmarterCurry] / [TZE284_aaeasoll / TS0601]"
+    },
+    {
+      "mfr": "eWeLink",
+      "productId": "CK-TLSR8656-SS5-01",
+      "endpoints": [],
+      "raw": {
+        "ids": {
+          "modelId": "CK-TLSR8656-SS5-01",
+          "manufacturerName": "eWeLink"
+        },
+        "endpoints": {
+          "1": {
+            "clusters": {
+              "input": [
+                "genBasic",
+                "genPowerCfg",
+                "msTemperatureMeasurement",
+                "msRelativeHumidity",
+                "genIdentify"
+              ],
+              "output": [
+                "genIdentify"
+              ]
+            },
+            "bindings": []
+          }
+        },
+        "bindings": [],
+        "meta": {
+          "battery": {
+            "voltage": true,
+            "percentage": true
+          }
+        }
+      },
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1378,
+      "title": "Add support for eWeLink Temperature & Humidity Sensor – CK‑TLSR8656‑SS5‑01 (7014)",
+      "description": "Add support for eWeLink Temperature & Humidity Sensor – CK‑TLSR8656‑SS5‑01 (7014)"
+    },
+    {
+      "mfr": "_TZ3000_gjrubzje",
+      "productId": "TS0001",
+      "endpoints": [
+        1,
+        242
+      ],
+      "raw": {
+        "ids": {
+          "modelId": "TS0001",
+          "manufacturerName": "_TZ3000_gjrubzje"
+        },
+        "endpoints": {
+          "ieeeAddress": "a4:c1:38:4c:3d:c2:df:c0",
+          "networkAddress": 57713,
+          "modelId": "TS0001",
+          "manufacturerName": "_TZ3000_gjrubzje",
+          "endpointDescriptors": [
+            {
+              "status": "SUCCESS",
+              "nwkAddrOfInterest": 57713,
+              "_reserved": 30,
+              "endpointId": 1,
+              "applicationProfileId": 260,
+              "applicationDeviceId": 256,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 1,
+              "inputClusters": [
+                3,
+                4,
+                5,
+                6,
+                1794,
+                2820,
+                57344,
+                57345,
+                0
+              ],
+              "outputClusters": [
+                25,
+                10
+              ]
+            },
+            {
+              "status": "SUCCESS",
+              "nwkAddrOfInterest": 57713,
+              "_reserved": 10,
+              "endpointId": 242,
+              "applicationProfileId": 41440,
+              "applicationDeviceId": 97,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 0,
+              "inputClusters": [],
+              "outputClusters": [
+                33
+              ]
+            }
+          ],
+          "deviceType": "router",
+          "receiveWhenIdle": true,
+          "capabilities": {
+            "alternatePANCoordinator": false,
+            "deviceType": true,
+            "powerSourceMains": true,
+            "receiveWhenIdle": true,
+            "security": false,
+            "allocateAddress": true
+          },
+          "extendedEndpointDescriptors": {
+            "1": {
+              "clusters": {
+                "identify": {
+                  "attributes": []
+                },
+                "groups": {
+                  "attributes": []
+                },
+                "scenes": {
+                  "attributes": []
+                },
+                "onOff": {
+                  "attributes": []
+                },
+                "metering": {
+                  "attributes": []
+                },
+                "electricalMeasurement": {
+                  "attributes": []
+                },
+                "basic": {
+                  "attributes": []
+                }
+              },
+              "bindings": {}
+            },
+            "242": {
+              "clusters": {},
+              "bindings": {}
+            }
+          }
+        }
+      },
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1377,
+      "title": "[Device Support Request] Tuya TS0001 – _TZ3000_gjrubzje (Single Relay + Metering)",
+      "description": "[Device Support Request] Tuya TS0001 – _TZ3000_gjrubzje (Single Relay + Metering)"
+    },
+    {
+      "mfr": "_TZ3000_aetquff4",
+      "productId": "TS0011",
+      "endpoints": [
+        1
+      ],
+      "raw": {
+        "ids": {
+          "modelId": "TS0011",
+          "manufacturerName": "_TZ3000_aetquff4"
+        },
+        "endpoints": {
+          "ieeeAddress": "a4:c1:38:0e:a1:69:78:0e",
+          "networkAddress": 60214,
+          "modelId": "TS0011",
+          "manufacturerName": "_TZ3000_aetquff4",
+          "endpointDescriptors": [
+            {
+              "status": "SUCCESS",
+              "nwkAddrOfInterest": 60214,
+              "_reserved": 22,
+              "endpointId": 1,
+              "applicationProfileId": 260,
+              "applicationDeviceId": 256,
+              "applicationDeviceVersion": 0,
+              "_reserved1": 1,
+              "inputClusters": [
+                3,
+                4,
+                5,
+                6,
+                0
+              ],
+              "outputClusters": [
+                25,
+                10
+              ]
+            }
+          ],
+          "deviceType": "enddevice",
+          "receiveWhenIdle": false,
+          "capabilities": {
+            "alternatePANCoordinator": false,
+            "deviceType": false,
+            "powerSourceMains": false,
+            "receiveWhenIdle": false,
+            "security": false,
+            "allocateAddress": true
+          },
+          "extendedEndpointDescriptors": {
+            "1": {
+              "clusters": {
+                "identify": {},
+                "groups": {},
+                "scenes": {
+                  "attributes": [
+                    {
+                      "id": 0,
+                      "dataTypeId": 32
+                    },
+                    {
+                      "id": 1,
+                      "dataTypeId": 32
+                    },
+                    {
+                      "id": 2,
+                      "dataTypeId": 33
+                    },
+                    {
+                      "id": 3,
+                      "dataTypeId": 16
+                    },
+                    {
+                      "id": 4,
+                      "dataTypeId": 24
+                    },
+                    {
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2
+                    }
+                  ]
+                },
+                "onOff": {
+                  "attributes": [
+                    {
+                      "id": 0,
+                      "dataTypeId": 16,
+                      "name": "onOff",
+                      "value": false,
+                      "reportingConfiguration": {
+                        "direction": "reported",
+                        "attributeDataType": 16,
+                        "minInterval": 0,
+                        "maxInterval": 900,
+                        "status": "SUCCESS"
+                      }
+                    },
+                    {
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2
+                    },
+                    {
+                      "id": 16385,
+                      "dataTypeId": 33,
+                      "name": "onTime",
+                      "value": 0
+                    },
+                    {
+                      "id": 16386,
+                      "dataTypeId": 33,
+                      "name": "offWaitTime",
+                      "value": 0
+                    },
+                    {
+                      "id": 32769,
+                      "dataTypeId": 48
+                    },
+                    {
+                      "id": 32770,
+                      "dataTypeId": 48
+                    }
+                  ]
+                },
+                "basic": {
+                  "attributes": [
+                    {
+                      "id": 0,
+                      "dataTypeId": 32,
+                      "name": "zclVersion",
+                      "value": 3
+                    },
+                    {
+                      "id": 1,
+                      "dataTypeId": 32,
+                      "name": "appVersion",
+                      "value": 80
+                    },
+                    {
+                      "id": 2,
+                      "dataTypeId": 32,
+                      "name": "stackVersion",
+                      "value": 0
+                    },
+                    {
+                      "id": 3,
+                      "dataTypeId": 32,
+                      "name": "hwVersion",
+                      "value": 1
+                    },
+                    {
+                      "id": 4,
+                      "dataTypeId": 66,
+                      "name": "manufacturerName",
+                      "value": "_TZ3000_aetquff4"
+                    },
+                    {
+                      "id": 5,
+                      "dataTypeId": 66,
+                      "name": "modelId",
+                      "value": "TS0011"
+                    },
+                    {
+                      "id": 6,
+                      "dataTypeId": 66,
+                      "name": "dateCode",
+                      "value": ""
+                    },
+                    {
+                      "id": 7,
+                      "dataTypeId": 48,
+                      "name": "powerSource",
+                      "value": "battery"
+                    },
+                    {
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 2
+                    },
+                    {
+                      "id": 65534,
+                      "dataTypeId": 48,
+                      "name": "attributeReportingStatus",
+                      "value": "PENDING"
+                    }
+                  ]
+                }
+              },
+              "bindings": {
+                "ota": {},
+                "time": {
+                  "attributes": [
+                    {
+                      "id": 65533,
+                      "dataTypeId": 33,
+                      "name": "clusterRevision",
+                      "value": 1
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1376,
+      "title": "[Device Support Request] Tuya TS0011 – _TZ3000_aetquff4 (1-Gang Wall Switch)",
+      "description": "[Device Support Request] Tuya TS0011 – _TZ3000_aetquff4 (1-Gang Wall Switch)"
+    },
+    {
+      "mfr": "_TZ3000_qkixdnon",
+      "productId": "TS0003",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "JohanBendz/com.tuya.zigbee",
+      "issue": 1375,
+      "title": "[Device Support Request] Tuya TS0003 – _TZ3000_qkixdnon (Triple Relay Switch)",
+      "description": "[Device Support Request] Tuya TS0003 – _TZ3000_qkixdnon (Triple Relay Switch)"
+    },
+    {
+      "mfr": "_TZ3000_yj6k7vfo",
+      "productId": "TS0041",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "dlnraja/com.tuya.zigbee",
+      "issue": 334,
+      "title": "_TZ3000_yj6k7vfo  [button_wireless_smart] Bug:",
+      "description": "_TZ3000_yj6k7vfo  [button_wireless_smart] Bug:"
+    },
+    {
+      "mfr": "_TZ3000_b4awzgct",
+      "productId": "TS0041",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "dlnraja/com.tuya.zigbee",
+      "issue": 333,
+      "title": "Smart Button (round). Added but not working",
+      "description": "Smart Button (round). Added but not working"
+    },
+    {
+      "mfr": "_TZ3000_famkxci2",
+      "productId": "TS0043",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "dlnraja/com.tuya.zigbee",
+      "issue": 322,
+      "title": "DEVICE REQUEST LORATAP TS0043",
+      "description": "DEVICE REQUEST LORATAP TS0043"
+    },
+    {
+      "mfr": "_TZ3000_402vrq2i",
+      "productId": "TS0601",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "dlnraja/com.tuya.zigbee",
+      "issue": 319,
+      "title": "Add support for device Tuya ZG-101Z_D_1",
+      "description": "Add support for device Tuya ZG-101Z_D_1"
+    },
+    {
+      "mfr": "_TZ3000_fllyghyj",
+      "productId": "TS0201",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "dlnraja/com.tuya.zigbee",
+      "issue": 316,
+      "title": "Climate sensor, wrong device recognized",
+      "description": "Climate sensor, wrong device recognized"
+    },
+    {
+      "mfr": "_TZ3000_ztc6ggyl",
+      "productId": "TS0121",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "dlnraja/com.tuya.zigbee",
+      "issue": 315,
+      "title": "[Auto] 200 new fingerprints from community (2026-05)",
+      "description": "[Auto] 200 new fingerprints from community (2026-05)"
+    },
+    {
+      "mfr": "_TZ3000_b4awzgct",
+      "productId": "TS0041",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "dlnraja/com.tuya.zigbee",
+      "issue": 314,
+      "title": "Smart Wireless Button (1), unknown device",
+      "description": "Smart Wireless Button (1), unknown device"
+    },
+    {
+      "mfr": "_TZ3000_ztc6ggyl",
+      "productId": "TS0121",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "dlnraja/com.tuya.zigbee",
+      "issue": 313,
+      "title": "[Auto] 200 new fingerprints from community (2026-05)",
+      "description": "[Auto] 200 new fingerprints from community (2026-05)"
+    },
+    {
+      "mfr": "_TZ3000_ztc6ggyl",
+      "productId": "TS0121",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "dlnraja/com.tuya.zigbee",
+      "issue": 311,
+      "title": "[Auto] 200 new fingerprints from community (2026-05)",
+      "description": "[Auto] 200 new fingerprints from community (2026-05)"
+    },
+    {
+      "mfr": "_TZ3000_vd43bbfq",
+      "productId": "TS0601",
+      "endpoints": [
+        1
+      ],
+      "fallback": true,
+      "source": "dlnraja/com.tuya.zigbee",
+      "issue": 307,
+      "title": "[Auto] 644 new fingerprints from community (2026-05)",
+      "description": "[Auto] 644 new fingerprints from community (2026-05)"
+    }
+  ],
+  "prs": [
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 330,
+      "title": "Johan SDK3 Sync — 82 FPs added, 0 DP gaps",
+      "body": "## Automated Johan SDK3 Sync\n\n### Fingerprints\n- **Added**: 82 new FPs auto-matched to existing drivers\n- **DP gaps**: 0 drivers with missing Tuya DP mappings\n- **New Johan drivers**: 89 (not in our codebase)\n\n### Auto-Scaffold\n- **Scaffolded**: 0 new drivers created\n- **FPs added**: 0 uncovered FPs added to existing drivers\n- **Conflicts**: 33 cross-class PID conflicts\n\n### Conflict Audit\n- **High severity**: 33 cross-class PID conflicts\n- **MFR conflicts**: 0 real risk duplicates\n- **Split suggestions**: 33\n\n### Report\nSee `.github/state/johan-sdk3-sync.json`, `driver-scaffold-report.json`, `driver-conflict-audit.json`\n\n### Review checklist\n- [ ] Verify new FPs are in the correct drivers\n- [ ] Review scaffolded drivers (need device.js DP mappings)\n- [ ] Check DP gaps — may need manual device.js edits\n- [ ] Review conflict audit — split drivers if needed\n- [ ] Validate with `npx homey app validate`",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/330",
+      "state": "closed"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 327,
+      "title": "🔄 Synchronisation Automatique Johan Benz",
+      "body": "## 🔄 Auto-Sync report\nThis PR automatically cherry-picks changes and new device variants from Johan Benz's repository.\n\n**Stats:**\n- Added FPs: 82\n- DP Gaps detected: 0\n- New Johan drivers: 89\n\n**Checks performed:**\n- [x] New device IDs detected using heuristics script\n- [x] Endpoint routing validated for multi-gang devices\n- [x] Tuya raw frame handlers adapted\n- [x] `homey app validate` passed\n\n**Protocol followed:** [SYNC_PROTOCOL.md](.github/skills/SYNC_PROTOCOL.md)\n**Investigation framework:** [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — 22-section deep diagnostic methodology for cross-referencing forums/emails/GitHub/Z2M/ZHA\n\n*Please review carefully before merging. This PR is AI-ready for auto-merge if risk is low.*",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/327",
+      "state": "closed"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 321,
+      "title": "🔄 Synchronisation Automatique Johan Benz",
+      "body": "## 🔄 Auto-Sync report\nThis PR automatically cherry-picks changes and new device variants from Johan Benz's repository.\n\n**Stats:**\n- Added FPs: 83\n- DP Gaps detected: 0\n- New Johan drivers: 89\n\n**Checks performed:**\n- [x] New device IDs detected using heuristics script\n- [x] Endpoint routing validated for multi-gang devices\n- [x] Tuya raw frame handlers adapted\n- [x] `homey app validate` passed\n\n**Protocol followed:** [SYNC_PROTOCOL.md](.github/skills/SYNC_PROTOCOL.md)\n**Investigation framework:** [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — 22-section deep diagnostic methodology for cross-referencing forums/emails/GitHub/Z2M/ZHA\n\n*Please review carefully before merging. This PR is AI-ready for auto-merge if risk is low.*",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/321",
+      "state": "closed"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 320,
+      "title": "Johan SDK3 Sync — 19 FPs added, 0 DP gaps",
+      "body": "## Automated Johan SDK3 Sync\n\n### Fingerprints\n- **Added**: 19 new FPs auto-matched to existing drivers\n- **DP gaps**: 0 drivers with missing Tuya DP mappings\n- **New Johan drivers**: 89 (not in our codebase)\n\n### Auto-Scaffold\n- **Scaffolded**: 0 new drivers created\n- **FPs added**: 0 uncovered FPs added to existing drivers\n- **Conflicts**: 33 cross-class PID conflicts\n\n### Conflict Audit\n- **High severity**: 33 cross-class PID conflicts\n- **MFR conflicts**: 0 real risk duplicates\n- **Split suggestions**: 33\n\n### Report\nSee `.github/state/johan-sdk3-sync.json`, `driver-scaffold-report.json`, `driver-conflict-audit.json`\n\n### Review checklist\n- [ ] Verify new FPs are in the correct drivers\n- [ ] Review scaffolded drivers (need device.js DP mappings)\n- [ ] Check DP gaps — may need manual device.js edits\n- [ ] Review conflict audit — split drivers if needed\n- [ ] Validate with `npx homey app validate`",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/320",
+      "state": "closed"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 310,
+      "title": "fix: settings page",
+      "body": "# Pull Request\r\n\r\n## What Changed\r\nRewrote `settings/index.html` script to use the correct SDK3 `onHomeyReady` handshake and converted all JS to ES5-compatible syntax.\r\n\r\n## Why\r\nSettings page was stuck on the loading spinner — on web app due to `var Homey = null` overwriting the SDK global, and on iOS due to arrow functions/const failing in the WebView before init could run.\r\n\r\n## Related Issue\r\nFixes #308\r\n\r\n## Type of Change\r\n- [x] Bug fix (non-breaking change which fixes an issue)\r\n\r\n## How Has This Been Tested?\r\n- [x] Tested locally with `homey app run`\r\n\r\n## Checklist\r\n- [x] Code follows project style\r\n- [x] Commit messages are clear\r\n\r\n## Additional Notes\r\nSettings page now loads correctly on both web app and iOS. No logic changes — only init flow and syntax fixes.\r\n\r\n<img width=\"635\" height=\"841\" alt=\"image\" src=\"https://github.com/user-attachments/assets/5eb7ec1f-8256-4b9e-9dce-5b7f58d0f724\" />\r\n",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/310",
+      "state": "closed"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "number": 306,
+      "title": "🔄 Universal Maintenance: Device Variants Synchronisation",
+      "body": "## 🔄 Maintenance Report\nThis PR automatically synchronizes new device variants and improves compatibility.\n\n**Checks performed:**\n- [x] New device IDs detected using heuristics script\n- [x] Endpoint routing validated for multi-gang devices\n- [x] Tuya raw frame handlers adapted\n\n*Please review carefully before merging.*",
+      "url": "https://github.com/dlnraja/com.tuya.zigbee/pull/306",
+      "state": "closed"
+    }
+  ],
+  "commits": [
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "328d24ed315131528f2358b66bb0b8259615a49e",
+      "message": "v.0.2.76",
+      "author": "Johan Bendz",
+      "date": "2026-03-29T18:32:14Z"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "5149d42267ad5f080760a2c4fbb1a5ec5120bca9",
+      "message": "v.0.2.75",
+      "author": "Johan Bendz",
+      "date": "2026-03-27T21:48:14Z"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "97594d66e57bfbb833f917e0be578e12612e4f3f",
+      "message": "v.0.2.74",
+      "author": "Johan Bendz",
+      "date": "2026-03-26T10:28:52Z"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "2b38c9e25f7e4dca22a62aeb31e63f58fb509268",
+      "message": "v.0.2.73",
+      "author": "Johan Bendz",
+      "date": "2024-10-12T14:58:50Z"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "7cb525a163ba68345726a6bcc569af7efd633e07",
+      "message": "v.0.2.72",
+      "author": "Johan Bendz",
+      "date": "2024-10-12T14:09:09Z"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "43efdf13dfc470a49417c41a79f4dfb5a1355283",
+      "message": ".",
+      "author": "Johan Bendz",
+      "date": "2024-10-12T10:56:41Z"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "940ad78e5aaa3547b0375c1cc194ae6c7a593797",
+      "message": "v.0.2.71",
+      "author": "Johan Bendz",
+      "date": "2024-10-12T10:51:13Z"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "be46b51e9ead6da73e008664c9070746085548c4",
+      "message": "v.0.2.70",
+      "author": "Johan Bendz",
+      "date": "2024-10-12T10:21:18Z"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "cc13d758d140ad02eeb233e13899cb217156ca74",
+      "message": "Added Rain sensor _TZ3210_tgvtvdoc / TS0207 (#983)",
+      "author": "roelofoomen",
+      "date": "2024-10-12T10:05:34Z"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "d8be59cffac6332da22f7d81c38453b18cd65ee5",
+      "message": "v.0.2.69",
+      "author": "Johan Bendz",
+      "date": "2024-10-12T09:54:51Z"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "b5ede4a722f7ba70ab84abfb5d81b9cb63a05fc0",
+      "message": "v.0.2.68",
+      "author": "Johan Bendz",
+      "date": "2024-10-11T21:08:38Z"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "afcb47a9c0a58a7b150c31497093f2366c51f3ca",
+      "message": "v.0.2.67",
+      "author": "Johan Bendz",
+      "date": "2024-10-07T18:46:30Z"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "20cb8d044431870f518371e0fd0806c0a11d7cd2",
+      "message": ".",
+      "author": "Johan Bendz",
+      "date": "2024-10-05T21:41:53Z"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "1fe735eccfd868d9d8899acbe491d5c50b947efa",
+      "message": "v.0.2.66",
+      "author": "Johan Bendz",
+      "date": "2024-10-05T21:41:21Z"
+    },
+    {
+      "repo": "JohanBendz/com.tuya.zigbee",
+      "sha": "658fc8a160978af69de1257ebfaebf5cd92ecfcf",
+      "message": "v.0.2.65",
+      "author": "Johan Bendz",
+      "date": "2024-10-05T19:59:57Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "9ca6d98a1b313330d29fb52565cb9d5fb3e27e7d",
+      "message": "Changelog sync v8.1.5: updated README with latest release notes [skip ci]",
+      "author": "github-actions[bot]",
+      "date": "2026-05-24T12:51:54Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "3670764f49f679527385223a8df6c83d9465f7e3",
+      "message": "New device variants + driver updates [skip ci]",
+      "author": "github-actions[bot]",
+      "date": "2026-05-24T09:05:46Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "ae742e379770a68476cee01c94054409165b6348",
+      "message": "Resolved issues + patterns update [skip ci]",
+      "author": "github-actions[bot]",
+      "date": "2026-05-24T08:20:47Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "709bfb143a85fd25748d4651c5b22a57420f6c29",
+      "message": "Changelog sync v8.1.5: updated README with latest release notes [skip ci]",
+      "author": "github-actions[bot]",
+      "date": "2026-05-23T12:51:58Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "ee187508705d1b5bc5367a46eaac000e39d1d80d",
+      "message": "v8.1.5: 231 drivers, 3267 FPs [skip ci]",
+      "author": "github-actions[bot]",
+      "date": "2026-05-22T23:17:11Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "bcb37ae967722375268a0bf88abb558978ce13b9",
+      "message": "Changelog sync v8.1.4: updated README with latest release notes [skip ci]",
+      "author": "github-actions[bot]",
+      "date": "2026-05-22T23:09:15Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "fc49e86d4f36b317e05b07333d8ed2759238cd3e",
+      "message": "Phoenix Sovereign v8.1.0 Phase 2: Bug Fixes & PR Triage (5 issues closed)",
+      "author": "dlnraja",
+      "date": "2026-05-22T23:06:50Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "fba07cb28b7f7362ccedc5e725d4fcdcae7a346f",
+      "message": "chore(fingerprints): auto-heal 1208 missing fingerprints & enforce CI gates",
+      "author": "dlnraja",
+      "date": "2026-05-22T18:51:36Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "0cc98dcdc474ef2518d4561b8bd01ed8d89fb950",
+      "message": "ci: integrate new validation tools into GitHub Actions workflows",
+      "author": "dlnraja",
+      "date": "2026-05-22T16:52:42Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "ad32ccfade45651042307b21ade19b0c5483f839",
+      "message": "feat: add robust validation and fingerprint tools based on discoveries",
+      "author": "dlnraja",
+      "date": "2026-05-22T16:51:29Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "30faba80796cf2784be60b497c44a4c9962dc7e0",
+      "message": "fix conflicts",
+      "author": "dlnraja",
+      "date": "2026-05-22T16:46:22Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "b9dcc4ced68eb84441e03ab1729768f3f4fa0967",
+      "message": "fix conflict",
+      "author": "dlnraja",
+      "date": "2026-05-22T16:46:07Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "59e360279e6e98350dc3f25ae20967480f9d0b01",
+      "message": "auto: sync Johan SDK3 FPs (82 added) [skip ci] + bugfixes",
+      "author": "dlnraja",
+      "date": "2026-05-22T16:45:52Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "85bb04b97c10c2986ce09ef7e997a327e9817aa4",
+      "message": "Changelog sync v8.1.4: updated README with latest release notes [skip ci]",
+      "author": "github-actions[bot]",
+      "date": "2026-05-22T13:22:09Z"
+    },
+    {
+      "repo": "dlnraja/com.tuya.zigbee",
+      "sha": "d5f5461e293d6349945e2f27b4f616120591e442",
+      "message": "v8.1.4: 231 drivers, 3263 FPs [skip ci]",
+      "author": "github-actions[bot]",
+      "date": "2026-05-22T00:04:09Z"
+    }
+  ]
+}
