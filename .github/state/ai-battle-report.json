@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-13T04:45:25.362Z",
+  "timestamp": "2026-05-24T09:05:41.756Z",
   "dryRun": false,
   "sources": {
     "external": 1607,
@@ -25,5 +25,5 @@
     "skipped": 0
   },
   "ghApiCalls": 100,
-  "aiSummary": "The report scanned 1,607 external sources and 8 GitHub repositories, finding no confirmed variants or new fingerprints. The top issue identified is \"False Battery Alert / Missing Battery\" (37 occurrences), with a recommended fix to set `get mainsPowered() { return true; }` and remove `measure_battery` in `onNodeInit`. The second most common pattern is \"Pairing Failure\" (18 occurrences), though no fix details are provided."
+  "aiSummary": "```json\n{\n  \"summary\": {\n    \"total_sources_scanned\": 1615,\n    \"confirmed_variants\": 0,\n    \"top_patterns\": [\n      {\n        \"pattern\": \"False Battery Alert / Missing Battery\",\n        \"count\": 37,\n        \"priority\": \"high\"\n      },\n      {\n        \"pattern\": \"Pairing Failure\",\n        \"count\": 18,\n        \"priority\": \"high\"\n      }\n    ]\n  }\n}\n```"
 }
