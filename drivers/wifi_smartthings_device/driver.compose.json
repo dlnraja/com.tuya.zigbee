@@ -9,10 +9,6 @@
     "measure_temperature",
     "measure_humidity"
   ],
-  "images": {
-    "large": "/assets/images/large.png",
-    "small": "/assets/images/small.png"
-  },
   "connectivity": [
     "cloud"
   ],
