@@ -1,17 +1,8 @@
 {
-  "timestamp": "2026-05-24T12:53:29.134Z",
+  "timestamp": "2026-05-24T15:20:47.866Z",
   "totalFiles": 0,
   "totalFixes": 178,
   "rules": {
-    "fingerprint-case": {
-      "count": 1,
-      "files": [
-        {
-          "file": "drivers\\wall_remote_2_gang\\driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
-        }
-      ]
-    },
     "flow-card-try-catch": {
       "count": 31,
       "files": [
@@ -191,7 +182,7 @@
       ]
     },
     "case-insensitive-matching": {
-      "count": 36,
+      "count": 37,
       "files": [
         {
           "file": "drivers\\climate_sensor_device\\device.js",
@@ -220,6 +211,10 @@
         {
           "file": "drivers\\radiator_valve\\device.js",
           "detail": "Line 43: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "drivers\\rain_sensor\\device.js",
+          "detail": "Line 20: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "drivers\\sensor_contact_presence\\device.js",
