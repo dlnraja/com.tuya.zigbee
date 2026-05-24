@@ -1,0 +1,45 @@
+name: Tuya Auto-Repair CI
+
+on:
+  push:
+    branches:
+      - master
+      - stable-v5
+  pull_request:
+    branches:
+      - master
+      - stable-v5
+  schedule:
+    - cron: '0 0 * * 0' # Weekly scan
+
+jobs:
+  self-heal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci || npm install
+
+      - name: Run Master Self-Heal Engine
+        run: node scripts/maintenance/master-self-heal.js --ci
+
+      - name: Validate App.json
+        run: npm run validate || npx homey app validate
+
+      - name: Commit Auto-Repairs
+        if: github.event_name != 'pull_request'
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "chore(auto-heal): Apply Tuya self-heal repairs [skip ci]"
+          branch: ${{ github.head_ref || github.ref_name }}
+          commit_user_name: "TuyaBot"
+          commit_user_email: "bot@tuya-zigbee.local"
+          file_pattern: "drivers/*/driver.compose.json app.json .github/state/*.json"
