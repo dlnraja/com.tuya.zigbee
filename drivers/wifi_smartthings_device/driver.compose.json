@@ -10,9 +10,9 @@
     "measure_humidity"
   ],
   "images": {
-    "large": "assets/images/large.png",
-    "small": "assets/images/small.png",
-    "xlarge": "assets/images/xlarge.png"
+    "large": "drivers/wifi_smartthings_device/assets/images/large.png",
+    "small": "drivers/wifi_smartthings_device/assets/images/small.png",
+    "xlarge": "drivers/wifi_smartthings_device/assets/images/xlarge.png"
   },
   "connectivity": [
     "cloud"
