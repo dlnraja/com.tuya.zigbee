@@ -61,5 +61,8 @@
   },
   "7.5.39": {
     "en": "v7.5.38: None, None, None"
+  },
+  "5.11.216": {
+    "en": "Fix diagnostic UI bugs, parse Tuya alarm payloads, auto-sync 80 community fingerprints, correct ZCL dividers"
   }
 }

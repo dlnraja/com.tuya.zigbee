@@ -23,7 +23,7 @@ child.stdout.on('data', (data) => {
   
   // State-machine auto-answer interactive prompts (exactly once each)
   if (text.includes("What's new in Tuya Unified") && !answered.changelog) {
-    child.stdin.write('Fix all runtime syntax errors, resolve unclosed braces, add support for wall_remote_2_gang assets and validate SDK3 compliance\n');
+    child.stdin.write('Fix diagnostic UI bugs, parse Tuya alarm payloads, auto-sync 80 community fingerprints, correct ZCL dividers\n');
     answered.changelog = true;
   }
   if (text.includes('Are you sure you want to continue') && !answered.continue) {
