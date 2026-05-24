@@ -8,62 +8,54 @@
     "local"
   ],
   "name": {
-    "en": "Tuya Unified",
-    "nl": "Tuya Unified",
-    "de": "Tuya Unified",
-    "fr": "Tuya Unified"
+    "en": "Unified Smart Home Engine",
+    "nl": "Unified Smart Home Engine",
+    "de": "Unified Smart Home Engine",
+    "fr": "Unified Smart Home Engine"
   },
   "description": {
-    "en": "Tuya Unified Engine: High-performance local-first control, self-healing fleet stability & adaptive lighting",
-    "nl": "Tuya Unified Engine: Hoogwaardige lokale bediening, zelfherstellende vlootstabiliteit & adaptieve verlichting",
-    "de": "Tuya Unified Engine: Leistungsstarke lokale Steuerung, selbstheilende Flottenstabilität & adaptive Beleuchtung",
-    "fr": "Moteur Tuya Unified : Contrôle local haute performance, auto-réparation de la flotte & éclairage adaptatif"
+    "en": "Unified Smart Home Engine: High-performance local-first control for Tuya, eWeLink, SmartThings & more",
+    "nl": "Unified Smart Home Engine: Hoogwaardige lokale bediening voor Tuya, eWeLink, SmartThings & meer",
+    "de": "Unified Smart Home Engine: Leistungsstarke lokale Steuerung für Tuya, eWeLink, SmartThings & mehr",
+    "fr": "Unified Smart Home Engine : Contrôle local multi-protocoles pour Tuya, eWeLink, SmartThings & plus"
   },
   "tags": {
     "en": [
-      "tuya",
+      "unified",
+      "smartthings",
+      "ewelink",
+      "sonoff",
       "smart home",
       "switch",
       "sensor",
-      "thermostat",
-      "light",
-      "cover",
-      "plug",
-      "lock",
-      "dimmer"
+      "local-first"
     ],
     "nl": [
-      "tuya",
+      "unified",
+      "smartthings",
+      "ewelink",
+      "sonoff",
       "schakelaar",
       "sensor",
-      "thermostaat",
-      "lamp",
-      "rolluik",
-      "stekker",
-      "slot",
-      "dimmer"
+      "local-first"
     ],
     "de": [
-      "tuya",
+      "unified",
+      "smartthings",
+      "ewelink",
+      "sonoff",
       "schalter",
       "sensor",
-      "thermostat",
-      "licht",
-      "rollladen",
-      "steckdose",
-      "schloss",
-      "dimmer"
+      "local-first"
     ],
     "fr": [
-      "tuya",
+      "unified",
+      "smartthings",
+      "ewelink",
+      "sonoff",
       "interrupteur",
       "capteur",
-      "thermostat",
-      "lumière",
-      "volet",
-      "prise",
-      "serrure",
-      "variateur"
+      "local-first"
     ]
   },
   "category": "appliances",
@@ -68924,7 +68916,8 @@
           "_TZ3000_12SXJAP4",
           "_tz3000_hlijwsai",
           "_TZ3000_hlijwsai",
-          "_TZ3000_HLIJWSAI"
+          "_TZ3000_HLIJWSAI",
+          "_TZ3210_zdrhqmo0"
         ],
         "endpoints": {
           "1": {
@@ -73859,7 +73852,13 @@
               57344
             ]
           }
-        }
+        },
+        "fingerprints": [
+          {
+            "manufacturerName": "_TZ3000_abrsvsou",
+            "productId": "TS004F"
+          }
+        ]
       },
       "images": {
         "small": "drivers/button_wireless_4/assets/images/small.png",
@@ -78384,38 +78383,96 @@
           "_tze284_qf5mzewi",
           "_TZE284_qf5mzewi",
           "_TZE284_QF5MZEWI",
+          "_tze200_vvmbj46n",
           "_TZE200_vvmbj46n",
+          "_TZE200_VVMBJ46N",
+          "_tz3000_bgsigers",
           "_TZ3000_bgsigers",
+          "_TZ3000_BGSIGERS",
+          "_tz3000_bguser20",
           "_TZ3000_bguser20",
+          "_TZ3000_BGUSER20",
+          "_tze200_8ygsuhe1",
           "_TZE200_8ygsuhe1",
+          "_TZE200_8YGSUHE1",
+          "_tze200_yvx5lh6k",
           "_TZE200_yvx5lh6k",
+          "_TZE200_YVX5LH6K",
+          "_tze200_ryfmq5rl",
           "_TZE200_ryfmq5rl",
+          "_TZE200_RYFMQ5RL",
+          "_tze200_c2fmom5z",
           "_TZE200_c2fmom5z",
+          "_TZE200_C2FMOM5Z",
+          "_tze200_mja3fuja",
           "_TZE200_mja3fuja",
+          "_TZE200_MJA3FUJA",
+          "_tz3000_f2bw0b6k",
           "_TZ3000_f2bw0b6k",
+          "_TZ3000_F2BW0B6K",
+          "_tz3000_fie1dpkm",
           "_TZ3000_fie1dpkm",
+          "_TZ3000_FIE1DPKM",
+          "_tz3000_yd2e749y",
           "_TZ3000_yd2e749y",
+          "_TZ3000_YD2E749Y",
+          "_tz3000_bjawzodf",
           "_TZ3000_bjawzodf",
+          "_TZ3000_BJAWZODF",
+          "_tz3000_8ybe88nf",
           "_TZ3000_8ybe88nf",
-          "_TYZB01_cbiezpds",
-          "_TYZB01_zqvwka4k",
+          "_TZ3000_8YBE88NF",
+          "_tz3000_3zofvcaa",
           "_TZ3000_3zofvcaa",
+          "_TZ3000_3ZOFVCAA",
+          "_tz3000_pvlvoxvt",
           "_TZ3000_pvlvoxvt",
+          "_TZ3000_PVLVOXVT",
+          "_tz3000_lqb7lcq9",
           "_TZ3000_lqb7lcq9",
+          "_TZ3000_LQB7LCQ9",
+          "_tz3210_urjf5u18",
           "_TZ3210_urjf5u18",
+          "_TZ3210_URJF5U18",
+          "_tz3210_8n4dn1ne",
           "_TZ3210_8n4dn1ne",
+          "_TZ3210_8N4DN1NE",
+          "_tz3000_l8fsgo6p",
           "_TZ3000_l8fsgo6p",
+          "_TZ3000_L8FSGO6P",
+          "_tz3000_8uxxzz4b",
           "_TZ3000_8uxxzz4b",
+          "_TZ3000_8UXXZZ4B",
+          "_tze200_auin8mzr",
           "_TZE200_auin8mzr",
+          "_TZE200_AUIN8MZR",
+          "_tze200_v6ossqfy",
           "_TZE200_v6ossqfy",
+          "_TZE200_V6OSSQFY",
+          "_tze200_a8sdabtg",
           "_TZE200_a8sdabtg",
+          "_TZE200_A8SDABTG",
+          "_tze200_n8dljorx",
           "_TZE200_n8dljorx",
+          "_TZE200_N8DLJORX",
+          "_tze200_xpvamyfz",
           "_TZE200_xpvamyfz",
+          "_TZE200_XPVAMYFZ",
+          "_tze284_xpvamyfz",
           "_TZE284_xpvamyfz",
+          "_TZE284_XPVAMYFZ",
+          "_tze204_uxllnywp",
           "_TZE204_uxllnywp",
+          "_TZE204_UXLLNYWP",
+          "dht0001",
           "DHT0001",
+          "dhta001",
           "DHTA001",
-          "NTCHT01"
+          "ntcht01",
+          "NTCHT01",
+          "_TZE200_bjzrowv2",
+          "_TZE200_4vobcgd3",
+          "_TZ3210_ncw88jfq"
         ],
         "productId": [
           "TS0201",
@@ -78455,7 +78512,17 @@
               61184
             ]
           }
-        }
+        },
+        "fingerprints": [
+          {
+            "manufacturerName": "_TZ3000_zl1kmjqx",
+            "productId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE284_8se38w3c",
+            "productId": "TS0601"
+          }
+        ]
       },
       "settings": [
         {
@@ -80436,7 +80503,13 @@
           "instruction": {
             "en": "Follow the pairing instructions for your Smart Curtain Motor."
           }
-        }
+        },
+        "fingerprints": [
+          {
+            "manufacturerName": "_TZE204_trwaxi57",
+            "productId": "TS0601"
+          }
+        ]
       },
       "settings": [
         {
@@ -83192,7 +83265,17 @@
               6
             ]
           }
-        }
+        },
+        "fingerprints": [
+          {
+            "manufacturerName": "_TZE200_khah2lkr",
+            "productId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_spyvfeti",
+            "productId": "TS0601"
+          }
+        ]
       },
       "settings": [
         {
@@ -85750,7 +85833,13 @@
               61184
             ]
           }
-        }
+        },
+        "fingerprints": [
+          {
+            "manufacturerName": "_TZ3210_emqmwtym",
+            "productId": "TS0601"
+          }
+        ]
       },
       "settings": [
         {
@@ -86106,7 +86195,13 @@
               61184
             ]
           }
-        }
+        },
+        "fingerprints": [
+          {
+            "manufacturerName": "_TZE284_6ocnqlhn",
+            "productId": "TS0601"
+          }
+        ]
       },
       "images": {
         "small": "drivers/energy_meter_3phase/assets/images/small.png",
@@ -89931,7 +90026,13 @@
           "instruction": {
             "en": "Hold button 5s until LED flashes."
           }
-        }
+        },
+        "fingerprints": [
+          {
+            "manufacturerName": "_TZE200_hl0ss9oa",
+            "productId": "TS0225"
+          }
+        ]
       },
       "icon": "/drivers/illuminance_sensor/assets/icon.svg",
       "images": {
@@ -94223,7 +94324,13 @@
               0
             ]
           }
-        }
+        },
+        "fingerprints": [
+          {
+            "manufacturerName": "_TZE200_4pm4pekt",
+            "productId": "TS0601"
+          }
+        ]
       },
       "settings": [
         {
@@ -98514,71 +98621,202 @@
           "_tze204_gkfb",
           "_TZE204_gkfb",
           "_TZE204_GKFB",
+          "_tze200_ar0slwnd",
           "_TZE200_ar0slwnd",
+          "_TZE200_AR0SLWND",
+          "_tze200_sfiy5tfs",
           "_TZE200_sfiy5tfs",
+          "_TZE200_SFIY5TFS",
+          "_tze200_mrf6vtua",
           "_TZE200_mrf6vtua",
+          "_TZE200_MRF6VTUA",
+          "_tze201_ztc6ggyl",
           "_TZE201_ztc6ggyl",
+          "_TZE201_ZTC6GGYL",
+          "_tze202_ztc6ggyl",
           "_TZE202_ztc6ggyl",
+          "_TZE202_ZTC6GGYL",
+          "_tze203_ztc6ggyl",
           "_TZE203_ztc6ggyl",
+          "_TZE203_ZTC6GGYL",
+          "_tze204_qasjmygc",
           "_TZE204_qasjmygc",
+          "_TZE204_QASJMYGC",
+          "_tze200_5b5noeto",
           "_TZE200_5b5noeto",
+          "_TZE200_5B5NOETO",
+          "_tze204_81yrt3lo",
           "_TZE204_81yrt3lo",
+          "_TZE204_81YRT3LO",
+          "_tze200_clm4gdw4",
           "_TZE200_clm4gdw4",
+          "_TZE200_CLM4GDW4",
+          "_tze200_2vfxweng",
           "_TZE200_2vfxweng",
+          "_TZE200_2VFXWENG",
+          "_tze200_gnw1rril",
           "_TZE200_gnw1rril",
+          "_TZE200_GNW1RRIL",
+          "_tze204_ycke4deo",
           "_TZE204_ycke4deo",
+          "_TZE204_YCKE4DEO",
+          "_tze284_koxaopnk",
           "_TZE284_koxaopnk",
+          "_TZE284_KOXAOPNK",
+          "_tze200_lu01t0zl",
           "_TZE200_lu01t0zl",
+          "_TZE200_LU01T0ZL",
+          "_tze200_vrfecyku",
           "_TZE200_vrfecyku",
+          "_TZE200_VRFECYKU",
+          "_tze200_ypprdwsl",
           "_TZE200_ypprdwsl",
+          "_TZE200_YPPRDWSL",
+          "_tze200_jkbljri7",
           "_TZE200_jkbljri7",
+          "_TZE200_JKBLJRI7",
+          "_tze204_fwondbzy",
           "_TZE204_fwondbzy",
+          "_TZE204_FWONDBZY",
+          "_tze284_atuj3i0w",
           "_TZE284_atuj3i0w",
+          "_TZE284_ATUJ3I0W",
+          "_tze200_whkgqxse",
           "_TZE200_whkgqxse",
+          "_TZE200_WHKGQXSE",
+          "_tze200_qoy0ekbd",
           "_TZE200_qoy0ekbd",
+          "_TZE200_QOY0EKBD",
+          "_tze200_znbl8dj5",
           "_TZE200_znbl8dj5",
+          "_TZE200_ZNBL8DJ5",
+          "_tze200_3xfjp0ag",
           "_TZE200_3xfjp0ag",
+          "_TZE200_3XFJP0AG",
+          "_tze200_lhqtjwax",
           "_TZE200_lhqtjwax",
+          "_TZE200_LHQTJWAX",
+          "_tze200_kb5noeto",
           "_TZE200_kb5noeto",
+          "_TZE200_KB5NOETO",
+          "_tze200_yflzeeqj",
           "_TZE200_yflzeeqj",
+          "_TZE200_YFLZEEQJ",
+          "_tz3210_zxbtub8r",
           "_TZ3210_zxbtub8r",
+          "_TZ3210_ZXBTUB8R",
+          "_tze200_86nbew0j",
           "_TZE200_86nbew0j",
+          "_TZE200_86NBEW0J",
+          "_tze200_io0zdqh1",
           "_TZE200_io0zdqh1",
+          "_TZE200_IO0ZDQH1",
+          "_tze200_drs6j6m5",
           "_TZE200_drs6j6m5",
+          "_TZE200_DRS6J6M5",
+          "_tze200_ywe90lt0",
           "_TZE200_ywe90lt0",
+          "_TZE200_YWE90LT0",
+          "_tze200_qyss8gjy",
           "_TZE200_qyss8gjy",
+          "_TZE200_QYSS8GJY",
+          "_tze204_e9ajs4ft",
           "_TZE204_e9ajs4ft",
+          "_TZE204_E9AJS4FT",
+          "_tze204_sbyx0lm6",
           "_TZE204_sbyx0lm6",
+          "_TZE204_SBYX0LM6",
+          "_tze204_clrdrnya",
           "_TZE204_clrdrnya",
+          "_TZE204_CLRDRNYA",
+          "_tze204_dtzziy1e",
           "_TZE204_dtzziy1e",
+          "_TZE204_DTZZIY1E",
+          "_tze200_mp902om5",
           "_TZE200_mp902om5",
+          "_TZE200_MP902OM5",
+          "_tze204_pfayrzcw",
           "_TZE204_pfayrzcw",
+          "_TZE204_PFAYRZCW",
+          "_tze200_clrdrnya",
           "_TZE200_clrdrnya",
+          "_TZE200_CLRDRNYA",
+          "_tze200_sbyx0lm6",
           "_TZE200_sbyx0lm6",
+          "_TZE200_SBYX0LM6",
+          "_tze284_aai5grix",
           "_TZE284_aai5grix",
+          "_TZE284_AAI5GRIX",
+          "_tze204_aai5grix",
           "_TZE204_aai5grix",
+          "_TZE204_AAI5GRIX",
+          "_tze284_81yrt3lo",
           "_TZE284_81yrt3lo",
+          "_TZE284_81YRT3LO",
+          "_tze200_v1jqz5cy",
           "_TZE200_v1jqz5cy",
+          "_TZE200_V1JQZ5CY",
+          "_tze200_d9mzkhoq",
           "_TZE200_d9mzkhoq",
+          "_TZE200_D9MZKHOQ",
+          "_tz3000_5ajpkyq6",
           "_TZ3000_5ajpkyq6",
+          "_TZ3000_5AJPKYQ6",
+          "_tz3000_knoj8lpk",
           "_TZ3000_knoj8lpk",
+          "_TZ3000_KNOJ8LPK",
+          "_tze204_q22avxbv",
           "_TZE204_q22avxbv",
+          "_TZE204_Q22AVXBV",
+          "_tze204_mrffaamu",
           "_TZE204_mrffaamu",
+          "_TZE204_MRFFAAMU",
+          "_tze204_tzreobvu",
           "_TZE204_tzreobvu",
+          "_TZE204_TZREOBVU",
+          "_tze284_mrffaamu",
           "_TZE284_mrffaamu",
+          "_TZE284_MRFFAAMU",
+          "_tze284_tzreobvu",
           "_TZE284_tzreobvu",
+          "_TZE284_TZREOBVU",
+          "_tze284_9xstqowh",
           "_TZE284_9xstqowh",
+          "_TZE284_9XSTQOWH",
+          "_tze204_dapwryy7",
           "_TZE204_dapwryy7",
+          "_TZE204_DAPWRYY7",
+          "_tze204_ncti2pro",
           "_TZE204_ncti2pro",
+          "_TZE204_NCTI2PRO",
+          "_tze204_l8xiyymq",
           "_TZE204_l8xiyymq",
+          "_TZE204_L8XIYYMQ",
+          "_tze284_l8xiyymq",
           "_TZE284_l8xiyymq",
+          "_TZE284_L8XIYYMQ",
+          "_tze284_zeldawjv",
           "_TZE284_zeldawjv",
+          "_TZE284_ZELDAWJV",
+          "_tze204_lbbg34rj",
           "_TZE204_lbbg34rj",
+          "_TZE204_LBBG34RJ",
+          "_tze200_ha0vwoew",
           "_TZE200_ha0vwoew",
+          "_TZE200_HA0VWOEW",
+          "_tze204_d6i25bwg",
           "_TZE204_d6i25bwg",
+          "_TZE204_D6I25BWG",
+          "_tze200_gubdgai2",
           "_TZE200_gubdgai2",
+          "_TZE200_GUBDGAI2",
+          "_tze200_vdiuwbkq",
           "_TZE200_vdiuwbkq",
+          "_TZE200_VDIUWBKQ",
+          "_tze284_z5jz7wpo",
           "_TZE284_z5jz7wpo",
+          "_TZE284_Z5JZ7WPO",
+          "b3876m9",
           "B3876M9"
         ],
         "productId": [
@@ -100374,19 +100612,7 @@
           "_TZE284_O3X45P96",
           "_tze284_rv6iuyxb",
           "_TZE284_rv6iuyxb",
-          "_TZE284_RV6IUYXB",
-          "_TYST11_jeaxp72v",
-          "_TYST11_kfvq6avy",
-          "_TYST11_zivfvd7h",
-          "_TYST11_hhrtiq0x",
-          "_TYST11_ps5v5jor",
-          "_TYST11_owwdxjbx",
-          "_TYST11_8daqwrsj",
-          "_TYST11_czk78ptr",
-          "_TYST11_ckud7u2l",
-          "_TYST11_ywdxldoj",
-          "_TYST11_cwnjrr72",
-          "_TYST11_2atgpdho"
+          "_TZE284_RV6IUYXB"
         ],
         "productId": [
           "TV01-ZB",
@@ -112898,7 +113124,6 @@
           "_TZ3000_sjpl9eg3",
           "_TZ3000_SJPL9EG3",
           "_tz3000_skueekg3",
-          "_TZ3000_skueekg3",
           "_TZ3000_SKUEEKG3",
           "_tz3000_skueezt3",
           "_TZ3000_skueezt3",
@@ -113421,7 +113646,37 @@
               6
             ]
           }
-        }
+        },
+        "fingerprints": [
+          {
+            "manufacturerName": "_TZE204_gm8h14wy",
+            "productId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_ccgyhbvd",
+            "productId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_y8ficeai",
+            "productId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE284_7e6v8u9f",
+            "productId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_apiu8k13",
+            "productId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_he9apaui",
+            "productId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_fhv95pf1",
+            "productId": "TS0601"
+          }
+        ]
       },
       "images": {
         "small": "drivers/switch_1gang/assets/images/small.png",
@@ -115204,6 +115459,12 @@
           "_TZ3000_AVOTANJ3",
           "_tz3000_mw1pqqqt",
           "_TZ3000_MW1PQQQT"
+        ],
+        "fingerprints": [
+          {
+            "manufacturerName": "_TZ3000_mw1pqqqt",
+            "productId": "TS0003"
+          }
         ]
       },
       "images": {
@@ -116708,8 +116969,12 @@
           "_tze204_dcnsggvz",
           "_TZE204_dcnsggvz",
           "_TZE204_DCNSGGVZ",
+          "_tze204_n9ctkb6j",
           "_TZE204_n9ctkb6j",
-          "_TZE200_3p5ydos3"
+          "_TZE204_N9CTKB6J",
+          "_tze200_3p5ydos3",
+          "_TZE200_3p5ydos3",
+          "_TZE200_3P5YDOS3"
         ],
         "productId": [
           "TS0601"
@@ -118343,7 +118608,8 @@
           "_TZE284_TZ32MTZA",
           "_tz3000_cvis4qmw",
           "_TZ3000_CVIS4QMW",
-          "TZE204_7sjncirf"
+          "tze204_7sjncirf",
+          "TZE204_7SJNCIRF"
         ],
         "productId": [
           "TS0016",
@@ -119766,31 +120032,81 @@
           "_tz3000_ixla93vd",
           "_TZ3000_ixla93vd",
           "_TZ3000_IXLA93VD",
+          "_tze200_bjawzodf",
           "_TZE200_bjawzodf",
+          "_TZE200_BJAWZODF",
+          "_tze200_zl1kmjqx",
           "_TZE200_zl1kmjqx",
+          "_TZE200_ZL1KMJQX",
+          "_tz3000_ug1vtuzn",
           "_TZ3000_ug1vtuzn",
+          "_TZ3000_UG1VTUZN",
+          "_tze200_bq5c8xfe",
           "_TZE200_bq5c8xfe",
+          "_TZE200_BQ5C8XFE",
+          "_tze200_44af8vyi",
           "_TZE200_44af8vyi",
+          "_TZE200_44AF8VYI",
+          "_tze204_jygvp6fk",
           "_TZE204_jygvp6fk",
+          "_TZE204_JYGVP6FK",
+          "_tze200_d7lpruvi",
           "_TZE200_d7lpruvi",
+          "_TZE200_D7LPRUVI",
+          "_tze204_ksz749x8",
           "_TZE204_ksz749x8",
+          "_TZE204_KSZ749X8",
+          "_tze204_1wnh8bqp",
           "_TZE204_1wnh8bqp",
+          "_TZE204_1WNH8BQP",
+          "_tze284_1wnh8bqp",
           "_TZE284_1wnh8bqp",
+          "_TZE284_1WNH8BQP",
+          "_tz3000_p6ju8myv",
           "_TZ3000_p6ju8myv",
+          "_TZ3000_P6JU8MYV",
+          "_tz3000_0zrccfgx",
           "_TZ3000_0zrccfgx",
+          "_TZ3000_0ZRCCFGX",
+          "_tz3000_fsiepnrh",
           "_TZ3000_fsiepnrh",
+          "_TZ3000_FSIEPNRH",
+          "_tz3000_eo3dttwe",
           "_TZ3000_eo3dttwe",
+          "_TZ3000_EO3DTTWE",
+          "_tz3000_jwcixnrz",
           "_TZ3000_jwcixnrz",
+          "_TZ3000_JWCIXNRZ",
+          "_tz3000_obacbukl",
           "_TZ3000_obacbukl",
+          "_TZ3000_OBACBUKL",
+          "_tze200_hkdl5fmv",
           "_TZE200_hkdl5fmv",
+          "_TZE200_HKDL5FMV",
+          "_tz3290_rlkmy85q4pzoxobl",
           "_TZ3290_rlkmy85q4pzoxobl",
+          "_TZ3290_RLKMY85Q4PZOXOBL",
+          "_tz3290_uc8lwbi2",
           "_TZ3290_uc8lwbi2",
+          "_TZ3290_UC8LWBI2",
+          "_tz3290_8xzb2ghn",
           "_TZ3290_8xzb2ghn",
+          "_TZ3290_8XZB2GHN",
+          "_tz3290_yac64inudpovoaba",
           "_TZ3290_yac64inudpovoaba",
+          "_TZ3290_YAC64INUDPOVOABA",
+          "_tz3000_itnrsufe",
           "_TZ3000_itnrsufe",
+          "_TZ3000_ITNRSUFE",
+          "_tze204_muvkrjr5",
           "_TZE204_muvkrjr5",
+          "_TZE204_MUVKRJR5",
+          "_tz3000_rul9yxcc",
           "_TZ3000_rul9yxcc",
-          "_TZE284_d4h8j2n6"
+          "_TZ3000_RUL9YXCC",
+          "_tze284_d4h8j2n6",
+          "_TZE284_d4h8j2n6",
+          "_TZE284_D4H8J2N6"
         ],
         "productId": [
           "TS0601_wirelesssw"
@@ -121114,9 +121430,6 @@
           "_tz3000_cfv2uyxe",
           "_TZ3000_cfv2uyxe",
           "_TZ3000_CFV2UYXE",
-          "_tz3000_h1ipgkwn",
-          "_TZ3000_h1ipgkwn",
-          "_TZ3000_H1IPGKWN",
           "_tz3000_iwtv2jwo",
           "_TZ3000_iwtv2jwo",
           "_TZ3000_IWTV2JWO"
@@ -122748,24 +123061,24 @@
                 "en": "Control when the LED indicator on the switch is lit",
                 "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt"
               },
-              "value": "1",
+              "value": "normal",
               "values": [
                 {
-                  "id": "0",
+                  "id": "off",
                   "label": {
                     "en": "Always Off",
                     "nl": "Altijd Uit"
                   }
                 },
                 {
-                  "id": "1",
+                  "id": "normal",
                   "label": {
                     "en": "On when Light ON (Normal)",
                     "nl": "Aan wanneer Licht AAN (Normaal)"
                   }
                 },
                 {
-                  "id": "2",
+                  "id": "inverted",
                   "label": {
                     "en": "On when Light OFF (Inverted)",
                     "nl": "Aan wanneer Licht UIT (Omgekeerd)"
@@ -123906,7 +124219,8 @@
           "_TZ3000_OVYAISIP",
           "_tz3000_pk8tgtdb",
           "_TZ3000_pk8tgtdb",
-          "_TZ3000_PK8TGTDB"
+          "_TZ3000_PK8TGTDB",
+          "_TZ3000_skueekg3"
         ],
         "productId": [
           "TS0001",
@@ -130565,6 +130879,47 @@
         }
       ],
       "id": "wifi_siren"
+    },
+    {
+      "name": {
+        "en": "SmartThings Device (Generic)"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "dim",
+        "measure_temperature",
+        "measure_humidity"
+      ],
+      "images": {
+        "large": "drivers/wifi_smartthings_device/assets/images/large.png",
+        "small": "drivers/wifi_smartthings_device/assets/images/small.png",
+        "xlarge": "drivers/wifi_smartthings_device/assets/images/xlarge.png"
+      },
+      "connectivity": [
+        "cloud"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "wifi_smartthings_device"
     },
     {
       "pair": [

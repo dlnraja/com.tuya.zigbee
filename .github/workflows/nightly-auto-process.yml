@@ -62,6 +62,12 @@ jobs:
           node scripts/automation/deep-crossref-scraper.js || true
         continue-on-error: true
 
+      - name: 🧬 Enrich Fingerprints (V8 Sovereign Sync)
+        run: |
+          node scripts/community-sync/sync-all.js || true
+          node scripts/apply_enriched_fps_v3.js || true
+        continue-on-error: true
+
       - name: ✉️ Fetch User Diagnostic Emails & Logs
         run: node .github/scripts/gmail-imap-reader.js || true
         continue-on-error: true
@@ -114,4 +120,4 @@ jobs:
         with:
           commit_message: "chore(auto): nightly architectural hardening and stabilization [skip ci]"
           branch: master
-          file_pattern: 'drivers/**/*.js lib/**/*.js app.json .cursorrules AI_INSTRUCTIONS.md docs/**/*.md'
+          file_pattern: 'drivers/**/*.js drivers/**/*.json lib/**/*.js app.json .cursorrules AI_INSTRUCTIONS.md docs/**/*.md'

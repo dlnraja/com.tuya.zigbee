@@ -1203,7 +1203,37 @@
           6
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZE204_gm8h14wy",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_ccgyhbvd",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_y8ficeai",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE284_7e6v8u9f",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_apiu8k13",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_he9apaui",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_fhv95pf1",
+        "productId": "TS0601"
+      }
+    ]
   },
   "images": {
     "small": "drivers/switch_1gang/assets/images/small.png",

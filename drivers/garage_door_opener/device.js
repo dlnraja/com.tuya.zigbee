@@ -11,6 +11,17 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
     this.log('[GarageOpener] 🚀 Initializing hardened driver...');
     await super.onNodeInit({ zclNode });
 
+    // TS0603 ZCL Fallback
+    if (this.zclNode && this.zclNode.endpoints && this.zclNode.endpoints[1] && this.zclNode.endpoints[1].clusters && this.zclNode.endpoints[1].clusters.genOnOff) {
+      this.log('[GarageOpener] ⚠️ Detected standard ZCL OnOff cluster for TS0603. Using standard Zigbee implementation.');
+      this.registerCapability('garagedoor_closed', 'genOnOff', {
+        get: 'onOff',
+        reportParser: value => !value,
+        set: value => !value,
+      });
+      return;
+    }
+
     // 1. DP Mappings
     if (this._tuyaEF00Manager) {
       this._tuyaEF00Manager.dpMappings = {
