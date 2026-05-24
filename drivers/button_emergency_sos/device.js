@@ -118,8 +118,8 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     iasZone.onZoneEnrollRequest = async () => {
       this.log('[SOS] Zone Enroll Request received');
       try {
-        await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 10 });
-        this.log('[SOS] ✅ Enroll Response sent');
+        await iasZone.zoneEnrollResponse({ enrollResponseCode: 0, zoneId: 0 });
+        this.log('[SOS] ✅ Enroll Response sent (zoneId: 0)');
       } catch (e) {
         this.error('[SOS] Enroll response failed:', e.message);
       }
@@ -129,7 +129,13 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
     try {
       const ieeeAddress = await this._getCoordinatorIeee();
       if (ieeeAddress) {
-        await iasZone.writeAttributes({ iasCIEAddress: ieeeAddress }).catch(() => { });
+        const attrs = await iasZone.readAttributes(['zoneState']).catch(() => null);
+        if (!attrs || attrs.zoneState === 0 || attrs.zoneState === 'notEnrolled') {
+          await iasZone.writeAttributes({ iasCIEAddress: ieeeAddress }).catch(() => { });
+          this.log('[SOS] ✅ Wrote iasCIEAddress to trigger enrollment');
+        } else {
+          this.log(`[SOS] ℹ️ Already enrolled (zoneState: ${attrs.zoneState})`);
+        }
       }
     } catch (e) {
       this.error('[SOS] CIE Address setup failed:', e.message);
@@ -180,9 +186,9 @@ class SosEmergencyButtonDevice extends TuyaZigbeeDevice {
 
     // SOS DPs (DP1, DP14, DP101 boolean)
     if (dp === 1 || dp === 14 || (dp === 101 && typeof value !== 'number')) {
-      if (value === true || value === 1 || value === 'true') {
-        this._handleAlarm({ source: 'tuya-dp', dp, value });
-      }
+      // Tuya DP might send 1, true, 'true', or even 0/false depending on button release/press
+      // For SOS buttons, any payload on these DPs usually means a press event
+      this._handleAlarm({ source: 'tuya-dp', dp, value });
     }
 
     // Button Actions (DP13)

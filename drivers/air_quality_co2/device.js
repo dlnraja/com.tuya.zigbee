@@ -15,7 +15,14 @@ const { AirQualityInference, BatteryInference } = require('../../lib/Intelligent
  */
 class AirQualityCO2Device extends SensorBase {
 
-  get mainsPowered() { return false; }
+  get mainsPowered() {
+    // v5.13.3: Correctly identify mains-powered devices
+    const mfr = this.getManufacturerName();
+    if (mfr === '_TZE200_8ygsuhe1' || mfr === '_TZE200_y6rqas8p') {
+      return true;
+    }
+    return false;
+  }
 
   get sensorCapabilities() {
     return ['measure_co2', 'measure_temperature', 'measure_humidity', 'measure_pm25', 'measure_voc', 'measure_formaldehyde', 'measure_battery'];
