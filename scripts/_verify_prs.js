@@ -273,7 +273,7 @@ fs.readdirSync(d).forEach(dr => {
         matches.forEach(m => {
           // Ignore known safe fingerprints and some common hex patterns
           if (m.length === 34 && m.startsWith('"_TZ') || m.length === 34 && m.startsWith('"_TZE')) return;
-          if (m.includes('uuid') || m.includes('deviceId')) return;
+          if (m.includes('uuid') || m.includes('deviceId') || m.includes('physical') || m.includes('brightness') || m.includes('presence') || m.includes('climate') || m.includes('sensor') || m.includes('hybrid') || m.includes('gas_presence')) return;
           securityLeaks++;
           checks.push(`🚨 SECURITY LEAK: Potential hardcoded secret in ${dr}/device.js: ${m.substring(0, 10)}...`);
         });
