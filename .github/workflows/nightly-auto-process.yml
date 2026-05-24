@@ -66,6 +66,7 @@ jobs:
         run: |
           node scripts/community-sync/sync-all.js || true
           node scripts/apply_enriched_fps_v3.js || true
+          node scripts/fix_titleformatted_v3.js || true
         continue-on-error: true
 
       - name: ✉️ Fetch User Diagnostic Emails & Logs
