@@ -1,8 +1,0 @@
-{
-  "lastScan": "2026-04-03T18:26:38.440Z",
-  "localIntegrationPlan": [
-    {
-      "info": "Extract local key via Cloud API (email/password pairing), connect TCP 6668 (v3.1) or TCP 6669 (v3.3/v3.4) sending AES-128-ECB payloads."
-    }
-  ]
-}

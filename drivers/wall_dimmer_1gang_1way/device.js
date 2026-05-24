@@ -112,14 +112,18 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
           break;
             
         case 'power_on_behavior':
-          const powerOnValue = parseInt(newSettings.power_on_behavior, 10);
-          this.log(`Setting power_on_behavior: ${powerOnValue}`);
+          const powerMap = { '0': 0, '1': 1, '2': 2, 'off': 0, 'on': 1, 'memory': 2 };
+          let powerOnValue = powerMap[String(newSettings.power_on_behavior).toLowerCase()];
+          if (powerOnValue === undefined) { powerOnValue = 2; } // Fallback to memory
+          this.log(`Setting power_on_behavior: ${newSettings.power_on_behavior} → ${powerOnValue}`);
           await this.sendTuyaCommand(dataPoints.powerOnBehavior, powerOnValue, 'enum');
           break;
             
         case 'light_type':
-          const lightTypeValue = parseInt(newSettings.light_type, 10);
-          this.log(`Setting light_type: ${lightTypeValue}`);
+          const lightMap = { '0': 0, '1': 1, '2': 2, 'led': 0, 'incandescent': 1, 'halogen': 2 };
+          let lightTypeValue = lightMap[String(newSettings.light_type).toLowerCase()];
+          if (lightTypeValue === undefined) { lightTypeValue = 0; } // Fallback to LED
+          this.log(`Setting light_type: ${newSettings.light_type} → ${lightTypeValue}`);
           await this.sendTuyaCommand(dataPoints.lightType, lightTypeValue, 'enum');
           break;
 
@@ -185,18 +189,24 @@ class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
       
       // Apply power_on_behavior if not default
       if (settings.power_on_behavior && settings.power_on_behavior !== '2') {
-        const powerOnValue = parseInt(settings.power_on_behavior, 10);
-        this.log(`Applying power_on_behavior: ${powerOnValue}`);
-        await this.sendTuyaCommand(dataPoints.powerOnBehavior, powerOnValue, 'enum').catch(e =>
-          this.log('power_on_behavior not supported by this device'));
+        const powerMap = { '0': 0, '1': 1, '2': 2, 'off': 0, 'on': 1, 'memory': 2 };
+        const powerOnValue = powerMap[String(settings.power_on_behavior).toLowerCase()];
+        if (powerOnValue !== undefined) {
+          this.log(`Applying power_on_behavior: ${powerOnValue}`);
+          await this.sendTuyaCommand(dataPoints.powerOnBehavior, powerOnValue, 'enum').catch(e =>
+            this.log('power_on_behavior not supported by this device'));
+        }
       }
       
       // Apply light_type if not default
       if (settings.light_type && settings.light_type !== '0') {
-        const lightTypeValue = parseInt(settings.light_type, 10);
-        this.log(`Applying light_type: ${lightTypeValue}`);
-        await this.sendTuyaCommand(dataPoints.lightType, lightTypeValue, 'enum').catch(e =>
-          this.log('light_type not supported by this device'));
+        const lightMap = { '0': 0, '1': 1, '2': 2, 'led': 0, 'incandescent': 1, 'halogen': 2 };
+        const lightTypeValue = lightMap[String(settings.light_type).toLowerCase()];
+        if (lightTypeValue !== undefined) {
+          this.log(`Applying light_type: ${lightTypeValue}`);
+          await this.sendTuyaCommand(dataPoints.lightType, lightTypeValue, 'enum').catch(e =>
+            this.log('light_type not supported by this device'));
+        }
       }
 
       // Apply backlight_mode if not default (L11: string-based "off", "normal", "inverted")
