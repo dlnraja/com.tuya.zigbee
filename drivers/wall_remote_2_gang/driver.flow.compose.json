@@ -1,101 +1,55 @@
 {
   "triggers": [
     {
-      "id": "wall_remote_2_gang_button_1_pressed",
-      "highlight": true,
-      "title": {
-        "en": "Button 1 pressed",
-        "fr": "Bouton 1 pressé",
-        "nl": "Knop 1 ingedrukt",
-        "de": "Taste 1 gedrückt"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 1 pressed",
-        "fr": "Bouton 1 pressé",
-        "nl": "Knop 1 ingedrukt",
-        "de": "Taste 1 gedrückt"
-      }
-    },
-    {
-      "id": "wall_remote_2_gang_button_2_pressed",
-      "title": {
-        "en": "Button 2 pressed",
-        "fr": "Bouton 2 pressé",
-        "nl": "Knop 2 ingedrukt",
-        "de": "Taste 2 gedrückt"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 2 pressed",
-        "fr": "Bouton 2 pressé",
-        "nl": "Knop 2 ingedrukt",
-        "de": "Taste 2 gedrückt"
-      }
-    },
-    {
-      "id": "wall_remote_2_gang_button_1_held",
-      "title": {
-        "en": "Button 1 held",
-        "fr": "Bouton 1 maintenu",
-        "nl": "Knop 1 ingedrukt houden",
-        "de": "Taste 1 gehalten"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 1 held",
-        "fr": "Bouton 1 maintenu",
-        "nl": "Knop 1 ingedrukt houden",
-        "de": "Taste 1 gehalten"
-      }
-    },
-    {
-      "id": "wall_remote_2_gang_button_2_held",
-      "title": {
-        "en": "Button 2 held",
-        "fr": "Bouton 2 maintenu",
-        "nl": "Knop 2 ingedrukt houden",
-        "de": "Taste 2 gehalten"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Button 2 held",
-        "fr": "Bouton 2 maintenu",
-        "nl": "Knop 2 ingedrukt houden",
-        "de": "Taste 2 gehalten"
-      }
-    },
-    {
-      "id": "wall_remote_2_gang_both_pressed",
-      "title": {
-        "en": "Both pressed",
-        "fr": "Les deux pressés",
-        "nl": "Beide ingedrukt",
-        "de": "Beide gedrückt"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Both pressed",
-        "fr": "Les deux pressés",
-        "nl": "Beide ingedrukt",
-        "de": "Beide gedrückt"
-      }
-    },
-    {
-      "id": "wall_remote_2_gang_motion_detected",
-      "title": {
-        "en": "Motion detected",
-        "fr": "Mouvement détecté",
-        "nl": "Beweging gedetecteerd",
-        "de": "Bewegung erkannt"
-      },
-      "args": [],
-      "titleFormatted": {
-        "en": "Motion detected",
-        "fr": "Mouvement détecté",
-        "nl": "Beweging gedetecteerd",
-        "de": "Bewegung erkannt"
-      }
+      "id": "wall_remote_2_gang_buttons",
+      "title": {"en": "Button Action"},
+      "titleFormatted": {"en": "The [[action]]"},
+      "args": [
+        {
+          "name": "action",
+          "type": "dropdown",
+          "title": {"en": "Button Action"},
+          "titleFormatted": {"en": "The [[action]]"},
+          "values": [
+            {
+              "id": "left-oneClick",
+              "label": {
+                "en": "left button was pressed 1 time"
+              }
+            },
+            {
+              "id": "left-twoClicks",
+              "label": {
+                "en": "left button was pressed 2 times"
+              }
+            },
+            {
+              "id": "left-longPress",
+              "label": {
+                "en": "left button was held down"
+              }
+            },
+            {
+              "id": "right-oneClick",
+              "label": {
+                "en": "right button was pressed 1 time"
+              }
+            },
+            {
+              "id": "right-twoClicks",
+              "label": {
+                "en": "right button was pressed 2 times"
+              }
+            },
+            {
+              "id": "right-longPress",
+              "label": {
+                "en": "right button was held down"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 }

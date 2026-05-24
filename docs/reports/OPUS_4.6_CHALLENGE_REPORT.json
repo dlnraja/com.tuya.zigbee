@@ -1,0 +1,178 @@
+{
+  "timestamp": "2026-04-09T08:22:20.539Z",
+  "drivers": {},
+  "gaps": [],
+  "violations": [
+    {
+      "driver": "switch_wall_5gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 2 missing physical toggle flow trigger: switch_wall_5gang_physical_gang2_on"
+    },
+    {
+      "driver": "switch_wall_5gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 3 missing physical toggle flow trigger: switch_wall_5gang_physical_gang3_on"
+    },
+    {
+      "driver": "switch_wall_5gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 4 missing physical toggle flow trigger: switch_wall_5gang_physical_gang4_on"
+    },
+    {
+      "driver": "switch_wall_5gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 5 missing physical toggle flow trigger: switch_wall_5gang_physical_gang5_on"
+    },
+    {
+      "driver": "switch_wall_6gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 2 missing physical toggle flow trigger: switch_wall_6gang_physical_gang2_on"
+    },
+    {
+      "driver": "switch_wall_6gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 3 missing physical toggle flow trigger: switch_wall_6gang_physical_gang3_on"
+    },
+    {
+      "driver": "switch_wall_6gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 4 missing physical toggle flow trigger: switch_wall_6gang_physical_gang4_on"
+    },
+    {
+      "driver": "switch_wall_6gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 5 missing physical toggle flow trigger: switch_wall_6gang_physical_gang5_on"
+    },
+    {
+      "driver": "switch_wall_6gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 6 missing physical toggle flow trigger: switch_wall_6gang_physical_gang6_on"
+    },
+    {
+      "driver": "switch_wall_7gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 2 missing physical toggle flow trigger: switch_wall_7gang_physical_gang2_on"
+    },
+    {
+      "driver": "switch_wall_7gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 3 missing physical toggle flow trigger: switch_wall_7gang_physical_gang3_on"
+    },
+    {
+      "driver": "switch_wall_7gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 4 missing physical toggle flow trigger: switch_wall_7gang_physical_gang4_on"
+    },
+    {
+      "driver": "switch_wall_7gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 5 missing physical toggle flow trigger: switch_wall_7gang_physical_gang5_on"
+    },
+    {
+      "driver": "switch_wall_7gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 6 missing physical toggle flow trigger: switch_wall_7gang_physical_gang6_on"
+    },
+    {
+      "driver": "switch_wall_7gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 7 missing physical toggle flow trigger: switch_wall_7gang_physical_gang7_on"
+    },
+    {
+      "driver": "switch_wall_8gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 2 missing physical toggle flow trigger: switch_wall_8gang_physical_gang2_on"
+    },
+    {
+      "driver": "switch_wall_8gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 3 missing physical toggle flow trigger: switch_wall_8gang_physical_gang3_on"
+    },
+    {
+      "driver": "switch_wall_8gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 4 missing physical toggle flow trigger: switch_wall_8gang_physical_gang4_on"
+    },
+    {
+      "driver": "switch_wall_8gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 5 missing physical toggle flow trigger: switch_wall_8gang_physical_gang5_on"
+    },
+    {
+      "driver": "switch_wall_8gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 6 missing physical toggle flow trigger: switch_wall_8gang_physical_gang6_on"
+    },
+    {
+      "driver": "switch_wall_8gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 7 missing physical toggle flow trigger: switch_wall_8gang_physical_gang7_on"
+    },
+    {
+      "driver": "switch_wall_8gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 8 missing physical toggle flow trigger: switch_wall_8gang_physical_gang8_on"
+    },
+    {
+      "driver": "wall_switch_2gang_1way",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 2 missing physical toggle flow trigger: wall_switch_2gang_1way_physical_gang2_on"
+    },
+    {
+      "driver": "wall_switch_3gang_1way",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 2 missing physical toggle flow trigger: wall_switch_3gang_1way_physical_gang2_on"
+    },
+    {
+      "driver": "wall_switch_3gang_1way",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 3 missing physical toggle flow trigger: wall_switch_3gang_1way_physical_gang3_on"
+    },
+    {
+      "driver": "wall_switch_4gang_1way",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 2 missing physical toggle flow trigger: wall_switch_4gang_1way_physical_gang2_on"
+    },
+    {
+      "driver": "wall_switch_4gang_1way",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 3 missing physical toggle flow trigger: wall_switch_4gang_1way_physical_gang3_on"
+    },
+    {
+      "driver": "wall_switch_4gang_1way",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 4 missing physical toggle flow trigger: wall_switch_4gang_1way_physical_gang4_on"
+    },
+    {
+      "driver": "wifi_switch_2gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 2 missing physical toggle flow trigger: wifi_switch_2gang_physical_gang2_on"
+    },
+    {
+      "driver": "wifi_switch_3gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 2 missing physical toggle flow trigger: wifi_switch_3gang_physical_gang2_on"
+    },
+    {
+      "driver": "wifi_switch_3gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 3 missing physical toggle flow trigger: wifi_switch_3gang_physical_gang3_on"
+    },
+    {
+      "driver": "wifi_switch_4gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 2 missing physical toggle flow trigger: wifi_switch_4gang_physical_gang2_on"
+    },
+    {
+      "driver": "wifi_switch_4gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 3 missing physical toggle flow trigger: wifi_switch_4gang_physical_gang3_on"
+    },
+    {
+      "driver": "wifi_switch_4gang",
+      "violation": "UNLINKED_GANG_FLOW",
+      "details": "Gang 4 missing physical toggle flow trigger: wifi_switch_4gang_physical_gang4_on"
+    }
+  ],
+  "innovationOpportunities": []
+}
