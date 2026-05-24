@@ -126,12 +126,33 @@ function validateJSFile(filePath) {
                             filePath.includes('ManufacturerNameHelper') || 
                             filePath.includes('PRE_COMMIT_CHECKS') || 
                             filePath.includes('zero-defect-architect-audit') || 
+                            filePath.includes('TuyaDPDeviceHelper') || 
+                            filePath.includes('TuyaDeviceHelper') || 
                             codeOnly.includes('CI.');
         if (!isException) {
           report.warnings.push({
             file: filePath,
             type: 'MANUAL_IDENTITY_COMPARE',
             message: `Line ${i + 1}: Manual identity comparison for manufacturerName/modelId/productId found. Use central "CI" CaseInsensitiveMatcher helper.`,
+          });
+        }
+      }
+
+      // v8.3.0: Forbidden raw brand checks to enforce 100% case-insensitivity
+      const forbiddenBrands = ['HOBEIAN', 'SONOFF', 'BSEED', 'LUMI', 'EWELINK', 'MOES', 'AQARA', 'HEIMAN', 'IKEA', 'PHILIPS'];
+      for (const brand of forbiddenBrands) {
+        if (codeOnly.includes('toUpperCase()') && codeOnly.includes(brand)) {
+          report.errors.push({
+            file: filePath,
+            type: `RAW_${brand}_CHECK_FORBIDDEN`,
+            message: `Line ${i + 1}: Legacy raw check 'toUpperCase() === "${brand}"' detected. Use CaseInsensitiveMatcher 'containsCI' or 'equalsCI' instead.`,
+          });
+        }
+        if (codeOnly.includes('toLowerCase()') && codeOnly.includes(brand.toLowerCase())) {
+          report.errors.push({
+            file: filePath,
+            type: `RAW_${brand}_CHECK_FORBIDDEN`,
+            message: `Line ${i + 1}: Legacy raw check 'toLowerCase() === "${brand.toLowerCase()}"' detected. Use CaseInsensitiveMatcher 'containsCI' or 'equalsCI' instead.`,
           });
         }
       }
@@ -179,6 +200,85 @@ function validateJSFile(filePath) {
     }
   } catch (err) {
     // optional fail
+  }
+
+  // 1e. Phoenix Sovereign v8.1.0 Architecture Rules
+  try {
+    const relativePath = path.relative(ROOT, filePath).replace(/\\/g, '/');
+    const content = fs.readFileSync(filePath, 'utf8');
+    const lines = content.split('\n');
+
+    // 1e-i. Circular Import / Temporal Dead Zone (TDZ) Checker for main bases
+    if (relativePath === 'lib/tuya/TuyaZigbeeDevice.js' || relativePath === 'lib/devices/BaseUnifiedDevice.js') {
+      const forbiddenTopRequires = [
+        'SmartDriverAdaptation',
+        'DriverMigrationManager',
+        'SmartBatteryManager',
+        'SmartEnergyManager',
+        'UnknownClusterHandler',
+        'TuyaUniversalBridge'
+      ];
+      
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        if (line.includes('require(')) {
+          for (const forbidden of forbiddenTopRequires) {
+            if (line.includes(forbidden) && !line.trim().startsWith('//')) {
+              // If it is in the first 40 lines, it's a top-level require!
+              if (i < 40) {
+                report.errors.push({
+                  file: filePath,
+                  type: 'CIRCULAR_TDZ_RISK',
+                  message: `Line ${i + 1}: Top-level require for Circular-prone class "${forbidden}" detected. To prevent Temporal Dead Zone (TDZ) loading exceptions, load this class dynamically inline inside the method that uses it!`,
+                });
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // 1e-ii. Flow Cards / Buttons safety check for drivers
+    if (relativePath.startsWith('drivers/') && relativePath.endsWith('/device.js')) {
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        const trimmed = line.trim();
+        if (trimmed.includes('_markAppCommand') && !trimmed.startsWith('//') && !trimmed.startsWith('/*') && !trimmed.startsWith('*')) {
+          if (!trimmed.includes('_markAppCommand() {') && !trimmed.includes('this._markAppCommand')) {
+            report.errors.push({
+              file: filePath,
+              type: 'DOUBLE_WRAPPING_MARK_APP_COMMAND',
+              message: `Line ${i + 1}: Local '_markAppCommand' override detected in driver device.js. Delete this local override and let VirtualButtonMixin / PhysicalButtonMixin handle the command wrapping safely!`,
+            });
+          }
+        }
+        if ((trimmed.includes("setCapabilityValue('button'") || trimmed.includes("setCapabilityValue(\"button\"")) && !trimmed.startsWith('//') && !trimmed.startsWith('/*') && !trimmed.startsWith('*')) {
+          report.warnings.push({
+            file: filePath,
+            type: 'NATIVE_BUTTON_SET_BYPASS',
+            message: `Line ${i + 1}: Native 'setCapabilityValue("button", ...)' bypass detected. Use the safety-wrapped 'this._safeSetCapability("button", ...)' instead to prevent flow loop locks!`,
+          });
+        }
+      }
+    }
+
+    // 1e-iii. Smart Divisor Scale checker
+    if (relativePath.startsWith('drivers/') && relativePath.endsWith('/device.js')) {
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        if (line.includes('divisor: 10') || line.includes('divisor: 100')) {
+          if (line.includes('measure_temperature') || line.includes('target_temperature') || line.includes('measure_humidity') || line.includes('measure_formaldehyde')) {
+            report.warnings.push({
+              file: filePath,
+              type: 'HARDCODED_DIVISOR',
+              message: `Line ${i + 1}: Hardcoded divisor detected. Consider migrating to dynamic "smartDivisor: true" and the SmartDivisorManager.`,
+            });
+          }
+        }
+      }
+    }
+  } catch (err) {
+    // ignore
   }
 
   return true;

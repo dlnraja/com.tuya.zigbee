@@ -1,4 +1,9 @@
 name: "🚀 Publish Stable to Test"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
     branches:
@@ -14,7 +19,6 @@ defaults:
 
 env:
   NODE_VERSION: "22"
-  APP_ID: "com.dlnraja.tuya.zigbee.stable"
 
 jobs:
   pre-validation:
@@ -94,5 +98,6 @@ jobs:
         if: always()
         run: |
           VER=$(node -p "require('./app.json').version" 2>/dev/null || echo "?")
+          APP_ID=$(node -p "require('./app.json').id" 2>/dev/null || echo "?")
           echo "## Stable Publish" >> $GITHUB_STEP_SUMMARY
-          echo "v$VER | APP_ID: ${{ env.APP_ID }}" >> $GITHUB_STEP_SUMMARY
+          echo "v$VER | APP_ID: $APP_ID" >> $GITHUB_STEP_SUMMARY

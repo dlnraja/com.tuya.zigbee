@@ -160,6 +160,7 @@ jobs:
             ### Review checklist
             - [ ] Review scaffolded drivers — add DP mappings to device.js
             - [ ] Review high-severity conflicts — consider splitting drivers
+            - [ ] 🤖 **Dynamic Heuristic Check**: Do not hardcode `onoff.2` or standard alarm capabilities in `app.json` if `UniversalVariantManager` handles them dynamically.
             - [ ] Validate with `npx homey app validate`
           branch: auto/driver-maintenance
           labels: drivers,automated,maintenance

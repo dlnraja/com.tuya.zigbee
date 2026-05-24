@@ -172,7 +172,7 @@ jobs:
       - name: 🛡️ Sensor Fallback Safety Check
         run: |
           echo "### Fallbacks Strategy Check" >> $GITHUB_STEP_SUMMARY
-          if grep -r "HOBEIAN_10G_MULTI_FALLBACK" drivers/ 2>/dev/null | grep -v '^[[:space:]]*//' | grep -v '^[[:space:]]*\*' | grep -q .; then
+          if grep -ri "HOBEIAN_10G_MULTI_FALLBACK" drivers/ 2>/dev/null | grep -v '^[[:space:]]*//' | grep -v '^[[:space:]]*\*' | grep -q .; then
             echo "❌ Dangerous HOBEIAN_10G_MULTI_FALLBACK fallback detected. Use ZG204ZM instead." >> $GITHUB_STEP_SUMMARY
             exit 1
           else

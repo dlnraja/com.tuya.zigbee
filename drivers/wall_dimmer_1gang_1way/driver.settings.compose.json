@@ -114,24 +114,24 @@
           "en": "Control when the LED indicator on the switch is lit",
           "nl": "Bepaal wanneer de LED-indicator op de schakelaar brandt"
         },
-        "value": "1",
+        "value": "normal",
         "values": [
           {
-            "id": "0",
+            "id": "off",
             "label": {
               "en": "Always Off",
               "nl": "Altijd Uit"
             }
           },
           {
-            "id": "1",
+            "id": "normal",
             "label": {
               "en": "On when Light ON (Normal)",
               "nl": "Aan wanneer Licht AAN (Normaal)"
             }
           },
           {
-            "id": "2",
+            "id": "inverted",
             "label": {
               "en": "On when Light OFF (Inverted)",
               "nl": "Aan wanneer Licht UIT (Omgekeerd)"

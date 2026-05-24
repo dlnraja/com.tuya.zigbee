@@ -1,0 +1,39 @@
+{
+  "name": {
+    "en": "SmartThings Device (Generic)"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "dim",
+    "measure_temperature",
+    "measure_humidity"
+  ],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "connectivity": [
+    "cloud"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "pair": [
+    {
+      "id": "login_oauth2",
+      "template": "login_oauth2"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

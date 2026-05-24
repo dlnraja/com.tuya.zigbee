@@ -1,4 +1,4 @@
-# PROJECT_INDEX.md - Tuya Unified Zigbee AI Reference Guide
+# PROJECT_INDEX.md - Unified Smart Home Engine (Local-First) Reference Guide
 
 > **Version**: 9.0.0+ | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
 > **227 drivers** | **Zigbee + WiFi** | **4500+ devices** | **SDK v3** | **SDK Deprecations: 0**
@@ -41,6 +41,7 @@ Before making ANY changes to this repository, you **MUST** execute the mandatory
 24. [Advanced Agentic Skills Integration](#24-advanced-agentic-skills-integration)
 25. [Deep Diagnostic & Cross-Referencing Mandate](#25-deep-diagnostic--cross-referencing-mandate-ai-agents)
 26. [Autonomous Agent Reflection & Logic Mode](#26-autonomous-agent-reflection--logic-mode)
+27. [Dynamic Heuristics & Adaptive Capabilities](#27-dynamic-heuristics--adaptive-capabilities)
 
 ---
 
@@ -132,7 +133,7 @@ Before making ANY changes to this repository, you **MUST** execute the mandatory
 │  ├── mixins/ (PhysicalButton, VirtualButton, TuyaDevice)        │
 │  ├── tuya/ (TuyaEF00Manager, TuyaUnifiedParser, fingerprints) │
 │  ├── battery/ (UnifiedBatteryHandler, BatteryCalculator)     │
-│  └── managers/ (SmartDriverAdaptation, IASZoneManager)          │
+│  └── managers/ (SmartDriverAdaptation, CapabilityFallback)      │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -246,6 +247,7 @@ Homey.Device (SDK3)
 | BaseUnifiedDevice.js | 182KB | Master base device |
 | TuyaEF00Manager.js | 93KB | DP protocol handler |
 | ButtonDevice.js | 80KB | Button/scene device |
+| CapabilityFallbackManager.js | 3KB | **CRITICAL:** Intercepts and sanitizes all capabilities |
 
 ### Import Paths (CRITICAL)
 ```javascript
@@ -414,6 +416,7 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSwitchBase))
 | lib/devices/ |SwitchBase,SensorBase, etc. | Device base classes |
 | lib/mixins/ | PhysicalButton, VirtualButton, TuyaDevice | Mixins |
 | lib/tuya/ | TuyaEF00Manager, TuyaUnifiedParser, etc. | Tuya protocol |
+| lib/utils/ | ManufacturerNameHelper, CaseInsensitiveMatcher | Brand normalization & utilities |
 | lib/battery/ | UnifiedBatteryHandler, BatteryCalculator | Battery management |
 | lib/managers/ | SmartDriverAdaptation, IASZoneManager | Managers |
 
@@ -635,6 +638,7 @@ APIFREELLM_KEY  → ApiFreeLLM (free, unlimited)
 ### Key Versions
 | Version | Date | Key Changes |
 |---------|------|-------------|
+| v8.3.0 | 2026-05-23 | Case-Insensitive Brand & Taxonomy Hardening for all core brands |
 | v5.11.212 | 2026-05-08 | 3784 duplicate fingerprints removed, 4 drivers |
 | v5.11.211 | 2026-05 | DeviceIdentificationDatabase crash fix |
 | v5.11.210 | 2026-05 | Stability release, 213 drivers |
@@ -806,7 +810,7 @@ The project behavior is governed by multiple rule files and dotfiles. If you nee
 ### 1.5. Global Investigation Plan (MANDATORY READ)
 
 > **🌐 COMPLETE INVESTIGATION METHODOLOGY** — For deep diagnostic and cross-referencing when investigating bugs, missing fingerprints, or device issues, you MUST consult:
-> - **[GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md)** — The authoritative AI investigation framework
+> - **[GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md)` — The authoritative AI investigation framework
 >   - Phase-by-phase investigation flow (Context → Cross-Reference → Variant → Implementation → Documentation → Quality Gate)
 >   - Source matrix (forums, GitHub, emails, Z2M/ZHA, Blakadder)
 >   - Investigation scripts catalog (internet-research-tool.js, github-scanner.js, fetch-gmail-diagnostics.js)
@@ -877,29 +881,6 @@ To trigger operations without running local scripts, you can use the `gh` CLI to
 
 ---
 
-## 25. v8.1.0 MODERNIZATION STATUS (PHOENIX SOVEREIGN)
-
-Status of the fleet transition to v8.1.0 architectural standards.
-
-| Driver | Status | Highlights |
-|--------|--------|------------|
-| **usb_dongle_dual_repeater** | ✅ Verified v8.1.0 | Bidirectional sync, packetninja tracking, SDK3 compliant |
-| **switch_1gang**            | ✅ Verified v8.1.0 | Modernized lifecycle, SmartBattery integration, hardened L14 |
-| **switch_2gang**            | ✅ Verified v8.1.0 | Modernized lifecycle, SmartBattery integration, hardened L14 |
-| **switch_3gang**            | ✅ Verified v8.1.0 | Modernized lifecycle, SmartBattery integration, hardened L14 |
-| **switch_4gang**            | ✅ Verified v8.1.0 | Modernized lifecycle, SmartBattery integration, hardened L14 |
-| **button_wireless_1**       | ✅ Verified v8.1.0 | Capability conflict resolved, normalized fingerprints |
-| **button_wireless_smart**   | ✅ Verified v8.1.0 | Capability conflict resolved, normalized fingerprints |
-
----
-
-*This project index is a living document, auto-maintained by the Antigravity Skills fleet.*
-
----
-
-**END OF PROJECT_INDEX.md**
----
-
 ## 25. DEEP DIAGNOSTIC & CROSS-REFERENCING MANDATE (AI AGENTS)
 
 When a user reports "it doesn't work well" or an "unknown device" issue, **DO NOT** immediately assume it's just a missing fingerprint. You must perform a **Deep Diagnostic Investigation** using cross-referencing:
@@ -913,6 +894,8 @@ When a user reports "it doesn't work well" or an "unknown device" issue, **DO NO
 7. **Dotfile Reading Mandate**: Always read configuration files starting with a dot (e.g., `.windsurfrules`, `.clinerules`, `.github/workflows/*`) to understand the strict project boundaries before applying any cross-referenced fix.
 8. **MANDATORY Investigation Plan**: Before any bug investigation or deep diagnostic, you MUST read [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — the complete 22-section methodology for cross-referencing manufacturers, DP mappings, forums, emails, Z2M/ZHA, GitHub PRs/Issues, and Antigravity skills integration.
 
+---
+
 ## 26. AUTONOMOUS AGENT REFLECTION & LOGIC MODE
 
 Inspired by advanced agentic loops (like those in Claude Code and Antigravity frameworks), all AI interactions within this project must strictly adhere to the following reflection protocols:
@@ -924,3 +907,36 @@ Inspired by advanced agentic loops (like those in Claude Code and Antigravity fr
 
 By embedding this logic into IDE rules, workflows, and algorithms, the project ensures zero-regression and highly autonomous, reliable self-healing capabilities.
 
+---
+
+## 27. DYNAMIC HEURISTICS & ADAPTIVE CAPABILITIES
+
+As part of the v5.12.0 core update, the app introduces **Dynamic Heuristics** directly inspired by advanced Z2M converters, Athom B.V. official SDK3 guidelines, and Johan Bendz's foundational Tuya implementations.
+
+### 1. CapabilityFallbackManager (Sanitization Engine)
+- intercepts ZCL calls before they reach the `Homey SDK`.
+- Hardcodes a rigid 0-100% boundary for `measure_battery` and drops `9999` temperature anomalies to prevent mobile app crashes.
+
+### 2. UniversalVariantManager (Smart DP Injection)
+- Identifies devices contextually (Switch vs Sensor vs Plug).
+- Automatically translates DP `101`, `102` into multi-gang sub-endpoints (`onoff.2`, `onoff.3`).
+- Injects standard alarm capabilities dynamically based on driver context (e.g. `alarm_motion` vs `alarm_contact` for DP 1).
+
+### 3. DynamicCapabilityManager (Phantom Pruning)
+- Automatically audits capabilities `5 minutes` after device initialization.
+- If a capability exists on the driver but the physical ZCL cluster is missing (e.g., `measure_power` without `0b04`), the capability is autonomously stripped away from the UI.
+- Skips pruning for `Pure Tuya DP` virtual endpoints.
+
+### 4. Smart DP Adaptation (TuyaDPParser)
+- Intercepts Tuya hardware quirks at the lowest data-layer.
+- Auto-corrects `1000` battery levels to `100%`.
+- Re-aligns unsigned negative temperature wrapping (`> 65536`) back to proper negative Integers.
+- Prevents cascade failures across higher managers.
+
+### 5. UnifiedBatteryHandler (Non-Linear Profiling)
+- Avoids linear `(voltage - min) / span` formulas.
+- Employs 15+ non-linear discharge curves (`CR2032`, `CR2450`, `AAA`, `Li-Ion`).
+- Adapts runtime polling actively instead of waiting passively for Tuya battery payloads.
+
+---
+**END OF PROJECT_INDEX.md**
