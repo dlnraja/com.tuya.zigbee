@@ -18,7 +18,21 @@ class RainSensorDevice extends UnifiedSensorBase {
     return ['alarm_water', 'measure_humidity', 'measure_battery'];
   }
 
-  get dpMappings() {
+    get dpMappings() {
+    const mfr = typeof this.getSetting === 'function' ? (this.getSetting('zb_manufacturer_name') || '') : '';
+    const mfrLower = mfr.toLowerCase();
+    
+    if (mfrLower.includes('u6x1zyv2') || mfrLower.includes('jsaqgakf') || mfrLower.includes('2pddnnrk')) {
+      return {
+        1: { capability: 'alarm_water', transform: (v) => v !== 0 && v !== '0' && v !== false && v !== 'false' && v !== 'normal' },
+        2: { capability: 'measure_humidity', divisor: 1 },
+        102: { capability: 'measure_luminance', divisor: 1 },
+        4: { capability: 'measure_battery', divisor: 1 },
+        104: { capability: 'measure_battery', divisor: 1 },
+        106: { capability: 'measure_humidity', divisor: 1 }
+      };
+    }
+
     return {
       // TS0601 DP layout (_TZE200_u6x1zyv2, _TZE200_jsaqgakf, etc.)
       1: { capability: 'alarm_water', transform: (v) => v === 1 || v === true }, // Rain alarm boolean

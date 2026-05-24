@@ -1,6 +1,6 @@
 {
-  "ts": "2026-05-21T07:42:04.135Z",
-  "currentCount": 10393,
+  "ts": "2026-05-24T17:16:45.701Z",
+  "currentCount": 10429,
   "src": {
     "johan": {
       "error": "Command failed: rm -rf /tmp/johan && git clone --depth 1 https://github.com/JohanBendz/com.tuya.zigbee.git /tmp/johan\n'rm' n'est pas reconnu en tant que commande interne\r\nou externe, un programme ex�cutable ou un fichier de commandes.\r\n"
@@ -8218,9 +8218,29 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 58,
-      "prCount": 3,
+      "issueCount": 55,
+      "prCount": 1,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 334,
+          "title": "_TZ3000_yj6k7vfo  [button_wireless_smart] Bug:",
+          "mfrs": [
+            "_TZ3000_yj6k7vfo",
+            "_TZ3000_yj6k7vfo",
+            "_TZ3000_yj6k7vfo"
+          ]
+        },
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 333,
+          "title": "Smart Button (round). Added but not working",
+          "mfrs": [
+            "_TZ3000_b4awzgct",
+            "_TZ3000_b4awzgct",
+            "_TZ3000_b4awzgct"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 328,
@@ -8234,35 +8254,11 @@
         },
         {
           "repo": "dlnraja/com.tuya.zigbee",
-          "num": 325,
-          "title": "[climate_sensor] Bug: Ist detected as an Climate Sensor but is a presence Sensor",
-          "mfrs": [
-            "_TZE200_ka8l86iu",
-            "_TZE200_ka8l86iu",
-            "_TZE200_ka8l86iu",
-            "_TZE200_ka8l86iu",
-            "_TZE200_ka8l86iu",
-            "_TZE200_ka8l86iu"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
           "num": 324,
           "title": "2.4 ghz MMwave _TZE200_hl0ss9oa",
           "mfrs": [
             "_TZE200_hl0ss9oa",
             "_TZE200_hl0ss9oa"
-          ]
-        },
-        {
-          "repo": "dlnraja/com.tuya.zigbee",
-          "num": 323,
-          "title": "Tuya PJ-1203A Incorrect measurement values",
-          "mfrs": [
-            "_TZE204_81yrt3lo",
-            "_TZE204_81yrt3lo",
-            "_TZE204_81yrt3lo",
-            "_TZE204_81yrt3lo"
           ]
         },
         {
@@ -8273,6 +8269,26 @@
             "_TZ3000_famkxci2",
             "_TZ3000_famkxci2",
             "_TZ3000_famkxci2"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1404,
+          "title": "Device Request - [Device name] - [manufacturerName] / [modelId]",
+          "mfrs": [
+            "_TZE200_bxoo2swd",
+            "_TZE200_bxoo2swd",
+            "_TZE200_bxoo2swd"
+          ]
+        },
+        {
+          "repo": "JohanBendz/com.tuya.zigbee",
+          "num": 1403,
+          "title": "Device Request - Tuya Zigbee Pressure/Contact Sensor - _TZE200_seq9cm6u / TS0601",
+          "mfrs": [
+            "_TZE200_seq9cm6u",
+            "_TZE200_seq9cm6u",
+            "_TZE200_seq9cm6u"
           ]
         },
         {
@@ -8405,27 +8421,6 @@
             "_TZ3210_5ct6e7ye",
             "_TZ3210_5ct6e7ye",
             "_TZ3210_5ct6e7ye"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1387,
-          "title": "Device Request - Smart Solar Soil Sensor",
-          "mfrs": [
-            "_TZE284_rqcuwlsa",
-            "_TZE284_rqcuwlsa",
-            "_TZE284_rqcuwlsa",
-            "_TZE284_rqcuwlsa"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1385,
-          "title": "Device Request - Zigbee Gate Opener Module - _TZE608_c75zqghm / TS0603",
-          "mfrs": [
-            "_TZE608_c75zqghm",
-            "_TZE608_c75zqghm",
-            "_TZE608_c75zqghm"
           ]
         }
       ]

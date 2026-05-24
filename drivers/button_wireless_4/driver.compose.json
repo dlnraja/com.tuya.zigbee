@@ -228,7 +228,13 @@
           57344
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZ3000_abrsvsou",
+        "productId": "TS004F"
+      }
+    ]
   },
   "images": {
     "small": "drivers/button_wireless_4/assets/images/small.png",
