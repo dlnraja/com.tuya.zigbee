@@ -1,4 +1,7 @@
 {
+  "8.1.10": {
+    "en": "Bug fixes: contact_sensor_curtain, contact_sensor_dimmer, wall_dimmer_1gang_1way validation errors resolved. Duplicate flow card warnings eliminated globally."
+  },
   "8.1.9": {
     "en": "v8.1.9 — No driver changes."
   },
@@ -56,10 +59,7 @@
   "7.5.45": {
     "en": "Bug fixes across 7 drivers including humidifier, motion_sensor_2, dimmer_dual_channel, smart_button_switch, and pet_feeder. Updated 8 device interviews. 6755 fingerprints."
   },
-  "7.5.44": {
-    "en": "Bug fixes for wireless buttons, remote buttons, and scene switches. Critical runtime errors resolved in button devices."
-  },
-  "8.1.10": {
-    "en": "v8.1.9:"
+  "8.1.11": {
+    "en": "v8.1.10: Fixed critical validation errors in contact_sensor_curtain, contact_sensor_dimmer, and wall_dimmer_1gang_1way device classes, Eliminated duplicate flow card warnings across all drivers, Resolved flow card registration conflicts in BaseZigBeeDriver, Enhanced flow card validation in FlowCardManager to prevent duplicate card warnings"
   }
 }

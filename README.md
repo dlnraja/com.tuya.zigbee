@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.1.10 |
+| **App Version** | v8.1.11 |
 | **Device Fingerprints** | 11,319+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 413 (362 Zigbee + 51 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v8.1.10** | v8.1.9: |
+| **v8.1.11** | v8.1.10: Fixed critical validation errors in contact_sensor_curtain, contact_sensor_dimmer, and wall_dimmer_1gang_1wa... |
+| **v8.1.10** | Bug fixes: contact_sensor_curtain, contact_sensor_dimmer, wall_dimmer_1gang_1way validation errors resolved. Duplicat... |
 | **v8.1.9** | v8.1.9 â€” No driver changes. |
 | **v8.1.8** | 298 new device fingerprints added. Smart plug driver fixes, rain sensor, water leak sensor, and open/close sensor upd... |
 | **v8.1.7** | 298 new device fingerprints added. Smart plug and water leak sensor fixes. Flow card and fingerprint collision correc... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.53** | v7.5.52: Fixed button_wireless_3 and button_wireless_4 driver issues (diagnostic Log 99ead539), Fixed ir_blaster devi... |
 | **v7.5.52** | Bug fixes for button_wireless_3/4, ir_blaster, soil_sensor, plug_smart and switch drivers. Fixed diagnostic issues Lo... |
 | **v7.5.51** | Bug fix: resolved fingerprint collision for _TZ3000_h1ipgkwn. Improved USB dongle switch driver with flow cards and m... |
-| **v7.5.50** | 166 new fingerprints added across 8 drivers. Fixed fingerprint collisions and removed incorrect matches. Generic DIY,... |
 
 <!-- CHANGELOG_END -->
 
