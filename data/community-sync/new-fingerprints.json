@@ -1,5 +1,300 @@
 [
   {
+    "mfr": "_TYZB01_a476raq2",
+    "productId": [
+      "TS0201",
+      "TY0201"
+    ],
+    "driver": "lcdtemphumidsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_battery",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TYZB01_hjsgdkfl",
+    "productId": [
+      "TS0201",
+      "TY0201"
+    ],
+    "driver": "lcdtemphumidsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_battery",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-bd5faf9p",
+    "productId": [
+      "RH3040"
+    ],
+    "driver": "motion_sensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "alarm_motion",
+      "measure_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "alarm_motion, measure_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-zw6hxafz",
+    "productId": [
+      "RH3040"
+    ],
+    "driver": "motion_sensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "alarm_motion",
+      "measure_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "alarm_motion, measure_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "_TYZB01_geepvxsy",
+    "productId": [
+      "TS0202"
+    ],
+    "driver": "pir_sensor_2",
+    "deviceType": "sensor",
+    "capabilities": [
+      "alarm_motion",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "alarm_motion, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-yg5dcbfu",
+    "productId": [
+      "RH3052",
+      "TS0201"
+    ],
+    "driver": "temphumidsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_battery",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-prhs1rsd",
+    "productId": [
+      "RH3052",
+      "TS0201"
+    ],
+    "driver": "temphumidsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_battery",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-gqhxixyk",
+    "productId": [
+      "RH3052",
+      "TS0201"
+    ],
+    "driver": "temphumidsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_battery",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-vmgh3fxd",
+    "productId": [
+      "RH3052",
+      "TS0201"
+    ],
+    "driver": "temphumidsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_battery",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-ojmxeikg",
+    "productId": [
+      "RH3052",
+      "TS0201"
+    ],
+    "driver": "temphumidsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_battery",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-ojmxeikq",
+    "productId": [
+      "RH3052",
+      "TS0201"
+    ],
+    "driver": "temphumidsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_battery",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-1g3tawnp",
+    "productId": [
+      "RH3052",
+      "TS0201"
+    ],
+    "driver": "temphumidsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_battery",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-v3uxbuxy",
+    "productId": [
+      "RH3052",
+      "TS0201"
+    ],
+    "driver": "temphumidsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_battery",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-riuj5xzs",
+    "productId": [
+      "RH3052",
+      "TS0201"
+    ],
+    "driver": "temphumidsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_battery",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-1uxx9cci",
+    "productId": [
+      "RH3052",
+      "TS0201"
+    ],
+    "driver": "temphumidsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_battery",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+    "source": "Johan"
+  },
+  {
+    "mfr": "TUYATEC-HaoiuWzy",
+    "productId": [
+      "RH3052",
+      "TS0201"
+    ],
+    "driver": "temphumidsensor",
+    "deviceType": "sensor",
+    "capabilities": [
+      "measure_temperature",
+      "measure_humidity",
+      "measure_battery",
+      "alarm_battery"
+    ],
+    "hasBattery": true,
+    "vendor": null,
+    "description": "measure_temperature, measure_humidity, measure_battery, alarm_battery",
+    "source": "Johan"
+  },
+  {
     "mfr": "_TZE204_hewlydpz",
     "productId": null,
     "source": "Z2M",
