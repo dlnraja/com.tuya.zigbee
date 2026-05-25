@@ -1,109 +1,12 @@
 {
-  "timestamp": "2026-05-13T03:16:48.894Z",
-  "topicsScanned": 259,
-  "totalPosts": 4,
-  "categories": {
-    "wifi_request": 3
-  },
-  "missingFPs": [
-    "Aqara"
-  ],
-  "wifiRequests": [
-    {
-      "user": "Roger_Gorissen",
-      "date": "2026-05-08",
-      "topicId": 140352,
-      "postNum": 2027,
-      "postId": 738132,
-      "missing": [],
-      "found": [],
-      "issues": [
-        "wifi_request"
-      ],
-      "text": " \n \n  \n  xerot: \n \n Are you sure about this? In the forums page of the Tuya App they literally say the app doesn’t offer local control… \n \n \n My mistake, you’re absolutely correct. \n I had in mind that the Tuya app is way much faster with the Tuya wifi devices than the Tuya Cloud app from Jurgen Hei"
-    },
-    {
-      "user": "xerot",
-      "date": "2026-05-08",
-      "topicId": 140352,
-      "postNum": 2025,
-      "postId": 738054,
-      "missing": [],
-      "found": [],
-      "issues": [
-        "wifi_request"
-      ],
-      "text": " \n \n  \n  Roger_Gorissen: \n \n the Tuya app from Denso V.O.F does handle the cloud devices on a local manner. \n \n \n Are you sure about this? In the forums page of the Tuya App they literally say the app doesn’t offer local control… \n \n   \n      \n     \n     \n       [APP] Tuya - Smart Life. Smart Living"
-    },
-    {
-      "user": "Roger_Gorissen",
-      "date": "2026-05-06",
-      "topicId": 140352,
-      "postNum": 2021,
-      "postId": 737699,
-      "missing": [],
-      "found": [],
-      "issues": [
-        "wifi_request"
-      ],
-      "text": " I downloaded the code from Github, version 7.5.8 and installed it using CLI. Opposite to previous versions, only a small number of devices is showing a red exclamation mark. \n The settings page does show a page to enter logon figures for the iot.tuya.con website, used for Tuya cloud devices. Should"
-    }
-  ],
+  "timestamp": "2026-05-24T21:46:30.566Z",
+  "topicsScanned": 15,
+  "totalPosts": 0,
+  "categories": {},
+  "missingFPs": [],
+  "wifiRequests": [],
   "pairingIssues": [],
   "unknownDevices": [],
   "wrongValues": [],
-  "allIssues": [
-    {
-      "user": "Roger_Gorissen",
-      "date": "2026-05-08",
-      "topicId": 140352,
-      "postNum": 2027,
-      "postId": 738132,
-      "missing": [],
-      "found": [],
-      "issues": [
-        "wifi_request"
-      ],
-      "text": " \n \n  \n  xerot: \n \n Are you sure about this? In the forums page of the Tuya App they literally say the app doesn’t offer local control… \n \n \n My mistake, you’re absolutely correct. \n I had in mind that the Tuya app is way much faster with the Tuya wifi devices than the Tuya Cloud app from Jurgen Hei"
-    },
-    {
-      "user": "xerot",
-      "date": "2026-05-08",
-      "topicId": 140352,
-      "postNum": 2025,
-      "postId": 738054,
-      "missing": [],
-      "found": [],
-      "issues": [
-        "wifi_request"
-      ],
-      "text": " \n \n  \n  Roger_Gorissen: \n \n the Tuya app from Denso V.O.F does handle the cloud devices on a local manner. \n \n \n Are you sure about this? In the forums page of the Tuya App they literally say the app doesn’t offer local control… \n \n   \n      \n     \n     \n       [APP] Tuya - Smart Life. Smart Living"
-    },
-    {
-      "user": "Roger_Gorissen",
-      "date": "2026-05-06",
-      "topicId": 140352,
-      "postNum": 2021,
-      "postId": 737699,
-      "missing": [],
-      "found": [],
-      "issues": [
-        "wifi_request"
-      ],
-      "text": " I downloaded the code from Github, version 7.5.8 and installed it using CLI. Opposite to previous versions, only a small number of devices is showing a red exclamation mark. \n The settings page does show a page to enter logon figures for the iot.tuya.con website, used for Tuya cloud devices. Should"
-    },
-    {
-      "user": "Wim_van_Bezouw",
-      "date": "2026-05-10",
-      "topicId": 156,
-      "postNum": 7133,
-      "postId": 738806,
-      "missing": [
-        "Aqara"
-      ],
-      "found": [],
-      "issues": [],
-      "text": " Hi there, I have 4 Aqara Curtain motor E1 modules. I can set percentages in flows and so on but is there a way to make the motor stop, with the press of a button? (any button; aqara or philips or anything) I miss the flowcard STOP "
-    }
-  ]
+  "allIssues": []
 }

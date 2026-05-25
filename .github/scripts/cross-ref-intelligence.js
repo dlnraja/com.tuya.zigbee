@@ -56,15 +56,20 @@ const DD=p.join(__dirname,'..','..','drivers');
 report.flowAudit=[];report.mainsBatteryIssues=[];
 try{for(const dir of fs.readdirSync(DD)){
   const ff=p.join(DD,dir,'driver.flow.compose.json'),df=p.join(DD,dir,'driver.js');
+  const devf=p.join(DD,dir,'device.js');
   if(fs.existsSync(ff)){try{
     const flow=JSON.parse(fs.readFileSync(ff,'utf8')),drv=fs.readFileSync(df,'utf8');
+    const devContent=fs.existsSync(devf)?fs.readFileSync(devf,'utf8'):'';
     const acts=(flow.actions||[]).length;
-    if(acts>0&&!drv.includes('registerRunListener')&&!drv.includes('_registerFlowCards'))
+    const isRegistered = drv.includes('registerRunListener') || drv.includes('_registerFlowCards') ||
+                         devContent.includes('registerRunListener') || devContent.includes('getActionCard');
+    if(acts>0&&!isRegistered)
       report.flowAudit.push({driver:dir,actions:acts});
   }catch{}}
-  const devf=p.join(DD,dir,'device.js');
   if(fs.existsSync(devf)){const c=fs.readFileSync(devf,'utf8');
-    if(c.includes('mainsPowered')&&c.includes('return true')){
+    const getterMatch = c.match(/get\s+mainsPowered\s*\(\)\s*\{([\s\S]*?)\}/);
+    const isMains = getterMatch && (getterMatch[1].includes('return true') || !getterMatch[1].includes('return false'));
+    if(isMains){
       const dc=p.join(DD,dir,'driver.compose.json');
       if(fs.existsSync(dc)){const j=JSON.parse(fs.readFileSync(dc,'utf8'));
         if((j.capabilities||[]).includes('measure_battery')&&!c.includes('removeCapability'))

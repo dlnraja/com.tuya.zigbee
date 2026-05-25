@@ -59,6 +59,11 @@ class AirQualityCO2Device extends SensorBase {
     await this._safeInvoke(async () => {
       await super.onNodeInit({ zclNode });
 
+      if (this.mainsPowered && this.hasCapability('measure_battery')) {
+        this.log('[CO2] Mains powered variant detected. Dynamically pruning battery capability...');
+        await this.removeCapability('measure_battery').catch(() => {});
+      }
+
       // --- Attribute Reporting Configuration ---
       try {
         await this.configureAttributeReporting([

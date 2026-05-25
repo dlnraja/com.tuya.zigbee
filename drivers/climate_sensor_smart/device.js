@@ -6,6 +6,11 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
+    if (this.mainsPowered && this.hasCapability('measure_battery')) {
+      this.log('[SCENE-PANEL] Mains powered device detected. Dynamically pruning battery capability...');
+      await this.removeCapability('measure_battery').catch(() => {});
+    }
     this.log('[SCENE-PANEL] v5.13.5 init');for (let g = 1; g <= 4; g++) {
       const cap = `onoff.gang${g}`;
       const dp = 23 + g;
@@ -15,6 +20,23 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
       });
       }
     }
+    // Register custom flow action listeners
+    for (let g = 1; g <= 4; g++) {
+      const actionId = `climate_sensor_smart_smart_scene_panel_set_switch_${g}`;
+      const actionCard = (() => { try { return this.homey.flow.getActionCard(actionId); } catch (e) { return null; } })();
+      if (actionCard) {
+        actionCard.registerRunListener(async (args) => {
+          this.log(`[SCENE-PANEL] Flow action set switch ${g} to ${args.state}`);
+          const cap = `onoff.gang${g}`;
+          if (this.hasCapability(cap)) {
+            await this.setCapabilityValue(cap, !!args.state).catch(() => {});
+          }
+          const dp = 23 + g;
+          await this.sendDP(dp, 1, args.state ? 1 : 0);
+        });
+      }
+    }
+
     this._setupDPReporting();
   }
 
@@ -31,10 +53,10 @@ class SmartScenePanelDevice extends TuyaZigbeeDevice {
       if (this.hasCapability(cap)) {
         this.setCapabilityValue(cap, !!value).catch(this.error);
       }
-      const flowCardId = `climate_sensor_smart_hybrid_smart_scene_panel_switch_${g}_changed`;
+      const flowCardId = `climate_sensor_smart_smart_scene_panel_switch_${g}_changed`;
       this.homey.flow.getTriggerCard(flowCardId).trigger(this, { state: !!value }, {}).catch(() => {})
     } else if (dp >= 5 && dp <= 8) {
-      this.homey.flow.getTriggerCard('climate_sensor_smart_hybrid_smart_scene_panel_scene_activated').trigger(this, { scene: String(dp) }, { scene: String(dp) }).catch(() => {})
+      this.homey.flow.getTriggerCard('climate_sensor_smart_smart_scene_panel_scene_activated').trigger(this, { scene: String(dp) }, { scene: String(dp) }).catch(() => {})
     } else if (dp === 38) {
       this.log(`[SCENE-PANEL] relay_status=${value}`);
     } else if (dp === 106) {

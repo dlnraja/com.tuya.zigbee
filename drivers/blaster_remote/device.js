@@ -23,6 +23,13 @@ class IRRemoteDevice extends ZigBeeDevice {
   get mainsPowered() { return true; }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }).catch(() => {});
+
+    if (this.mainsPowered && this.hasCapability('measure_battery')) {
+      this.log('[IR] Mains powered device detected. Dynamically pruning battery capability...');
+      await this.removeCapability('measure_battery').catch(() => {});
+    }
+
     // --- Attribute Reporting Configuration (auto-generated) ---
     try {
       await this.configureAttributeReporting([

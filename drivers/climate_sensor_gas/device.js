@@ -109,6 +109,10 @@ class GasDetectorDevice extends UnifiedSensorBase {
     }
 
     await super.onNodeInit({ zclNode });
+    if (this.mainsPowered && this.hasCapability('measure_battery')) {
+      this.log('[GAS] Mains powered device detected. Dynamically pruning battery capability...');
+      await this.removeCapability('measure_battery').catch(() => {});
+    }
     this._registerCapabilityListeners(); // rule-12a injectedthis.log('[GAS-DETECTOR] v5.5.932  Ready');
     this.log('[GAS-DETECTOR] Manufacturer:', this.getSetting('zb_manufacturer_name') || 'unknown');
   }
