@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.1.12 |
+| **App Version** | v8.1.13 |
 | **Device Fingerprints** | 11,319+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 413 (362 Zigbee + 51 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v8.1.12** | v8.1.11: Fixed crash on air purifier smoke and siren flow cards caused by TDZ before initialization., Added 298 new f... |
+| **v8.1.13** | v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app instability during device lookup., Added 29... |
+| **v8.1.12** | v8.1.12 â€” 298 new fingerprints added, DeviceIdentificationDatabase crash fix, 413 drivers, 3296 FPs validated. |
 | **v8.1.11** | Bug fix: air purifier smoke and siren flow cards no longer crash on init. 298 new fingerprints added across drivers. |
 | **v8.1.10** | Bug fixes: contact_sensor_curtain, contact_sensor_dimmer, wall_dimmer_1gang_1way validation errors resolved. Duplicat... |
 | **v8.1.9** | v8.1.9 â€” No driver changes. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v8.1.1** | v8.1.1: Fixed Issue #331 â€” Settings tab crash on 6 drivers (Hybrid*Base renamed to Unified*Base). Fixed curtain_motor... |
 | **v8.1.0** | New fingerprints for RGB bulbs, RGBW bulbs, air purifiers, and air quality sensors. Soil sensor driver added. Bug fix... |
 | **v7.5.53** | v7.5.52: Fixed button_wireless_3 and button_wireless_4 driver issues (diagnostic Log 99ead539), Fixed ir_blaster devi... |
-| **v7.5.52** | Bug fixes for button_wireless_3/4, ir_blaster, soil_sensor, plug_smart and switch drivers. Fixed diagnostic issues Lo... |
 
 <!-- CHANGELOG_END -->
 
