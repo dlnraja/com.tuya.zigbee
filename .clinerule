@@ -60,6 +60,14 @@
 - **Critical Mistakes to Avoid**: [CRITICAL_MISTAKES.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/rules/CRITICAL_MISTAKES.md)
 - **Global Investigation Plan (22 sections)**: [GLOBAL_INVESTIGATION_PLAN.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/GLOBAL_INVESTIGATION_PLAN.md) — Mandatory deep diagnostic methodology for cross-referencing manufacturers, DP mappings, forums, emails, Z2M/ZHA, GitHub PRs/Issues, and Antigravity skills integration.
 
+
+## Fleetwood Gateway & Syntax Purity Mandates (v8.4.0+)
+- **ZCL Method Override Purity**: Any driver class override of ZCL/SDK methods (e.g., `getDeviceById(id)`) MUST have correct closing braces to prevent breaking following method declarations like `onInit()` or `onNodeInit()`.
+- **Standard ZCL Measurement Scoping**: Inside ZCL Measurement cluster listeners (`attr.rmsCurrent`, etc.), never re-declare block-scoped variables (`const scaled`) in the same scope block; use unique variables (`scaledCurrent` and `scaledPower`) to prevent standard JS scope crash exceptions.
+- **Mains/Battery Approximation Conflicts**: If a compose manifest (`driver.compose.json`) defines `measure_power` or `meter_power`, it MUST NOT define `energy.approximation` under `energy` to prevent severe Homey Pro Energy v3 schema validation errors.
+- **Mandatory GitHub Actions Shell Default Configuration**: Every CI workflow `.yml` file that runs commands MUST include top-level `defaults: run: shell: bash` to prevent PowerShell syntax failures on Windows runners.
+- **GHA Cloud Purity Validation Gate**: Every primary workflow CI check (`unified-ci.yml`, `syntax-validation.yml`, `syntax-purity-gate.yml`, `syntax-check.yml`, `validate.yml`) has been hardened to execute the strict `PRE_COMMIT_CHECKS.js` gateway. This ensures 100% JS syntax parsing, workflow default checking, and manifest schema validation before commit integration.
+
 // ============================================================================
 // AUTONOMOUS AGENT REFLECTION & LOGIC MODE
 // ============================================================================
