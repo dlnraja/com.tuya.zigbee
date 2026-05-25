@@ -1,4 +1,7 @@
 {
+  "8.1.11": {
+    "en": "Bug fix: air purifier smoke and siren flow cards no longer crash on init. 298 new fingerprints added across drivers."
+  },
   "8.1.10": {
     "en": "Bug fixes: contact_sensor_curtain, contact_sensor_dimmer, wall_dimmer_1gang_1way validation errors resolved. Duplicate flow card warnings eliminated globally."
   },
@@ -56,10 +59,7 @@
   "7.5.46": {
     "en": "v7.5.46 - Maintenance release. No new devices or fixes."
   },
-  "7.5.45": {
-    "en": "Bug fixes across 7 drivers including humidifier, motion_sensor_2, dimmer_dual_channel, smart_button_switch, and pet_feeder. Updated 8 device interviews. 6755 fingerprints."
-  },
-  "8.1.11": {
-    "en": "v8.1.10: Fixed critical validation errors in contact_sensor_curtain, contact_sensor_dimmer, and wall_dimmer_1gang_1way device classes, Eliminated duplicate flow card warnings across all drivers, Resolved flow card registration conflicts in BaseZigBeeDriver, Enhanced flow card validation in FlowCardManager to prevent duplicate card warnings"
+  "8.1.12": {
+    "en": "v8.1.11: Fixed crash on air purifier smoke and siren flow cards caused by TDZ before initialization., Added 298 new fingerprints from Z2M, ZHA, community reports, and JohanBendz contributions., Total: 413 drivers, 3,296 fingerprints validated."
   }
 }
