@@ -13,6 +13,10 @@ concurrency:
   group: daily-maintenance
   cancel-in-progress: true
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   heal:
     name: Self-Heal & Validate

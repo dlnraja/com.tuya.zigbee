@@ -18,10 +18,6 @@
     "measure_humidity"
   ],
   "energy": {
-    "approximation": {
-      "usageOn": 100,
-      "usageOff": 0.7
-    },
     "batteries": [
       "CR2450"
     ],

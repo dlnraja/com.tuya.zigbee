@@ -14,6 +14,8 @@ class AirPurifierDriver extends ZigBeeDriver {
       this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
       return null;
     }
+  }
+
   async onInit() {
     await super.onInit();
     if (this._flowCardsRegistered) return;

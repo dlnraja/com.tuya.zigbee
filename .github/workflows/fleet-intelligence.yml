@@ -20,6 +20,10 @@ env:
   OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
   NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   triage_and_discovery:
     name: "🧠 Triage & Discovery"

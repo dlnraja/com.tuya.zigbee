@@ -16,12 +16,6 @@
     "dim",
     "measure_pm25"
   ],
-  "energy": {
-    "approximation": {
-      "usageOff": 0.7,
-      "usageOn": 100
-    }
-  },
   "zigbee": {
     "manufacturerName": [],
     "productId": [],

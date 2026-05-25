@@ -11,6 +11,10 @@ permissions:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
+
 jobs:
   discover-devices:
     runs-on: ubuntu-latest

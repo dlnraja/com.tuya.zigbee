@@ -36,6 +36,10 @@ env:
   SHADOW_MODE: "false"
   DEBUG: "false"
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   validate:
     name: 🛡️ Validate

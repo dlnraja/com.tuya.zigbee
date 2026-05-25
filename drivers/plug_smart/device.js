@@ -32,40 +32,6 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
       19: { capability: 'measure_voltage', divisor: 10 },
       20: { capability: 'meter_power', divisor: 100 },
       21: { internal: true, type: 'frequency', divisor: 100 },
-'use strict';
-const { safeMultiply, safeParse } = require('../../lib/utils/tuyaUtils.js');
-
-
-const UnifiedPlugBase = require('../../lib/devices/UnifiedPlugBase');
-const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
-const PhysicalButtonMixin = require('../../lib/mixins/PhysicalButtonMixin');
-
-/**
- * 
- *       SMART PLUG - v5.6.0 + Virtual/Physical Buttons (packetninja pattern)   
- * 
- *   UnifiedPlugBase handles: onoff listener, Tuya DP, ZCL On/Off                
- *   This class ONLY: dpMappings + ZCL energy monitoring listeners              
- *   DPs: 1,7,9,17-21,101,102 | ZCL: 6,2820,1794,EF00                          
- *   v5.6.0: Added bidirectional physical/virtual button support                
- * 
- */
-class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlugBase)) {
-
-  get plugCapabilities() {
-    return ['onoff', 'measure_power', 'meter_power', 'measure_voltage', 'measure_current'];
-  }
-
-  get dpMappings() {
-    return {
-      1: { capability: 'onoff', transform: (v) => v === 1 || v === true },
-      7: { internal: true, type: 'child_lock', writable: true },
-      9: { internal: true, type: 'countdown', writable: true },
-      17: { capability: 'measure_current', divisor: 1000 },
-      18: { capability: 'measure_power', divisor: 10 },
-      19: { capability: 'measure_voltage', divisor: 10 },
-      20: { capability: 'meter_power', divisor: 100 },
-      21: { internal: true, type: 'frequency', divisor: 100 },
       101: { internal: true, type: 'power_factor', divisor: 10 },
       102: { internal: true, type: 'max_power_alert', writable: true }
     };
@@ -75,10 +41,6 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
   _applyScale(value, capability) {
     const powerScale = parseFloat(this.getSetting('power_scale')) || 1;
     const energyScale = parseFloat(this.getSetting('meter_power_scale')) || parseFloat(this.getSetting('energy_scale')) || 1;
-    // For voltage, '0.1' is the dropdown default. We don't want to double-divide if we already pass v/10.
-    // Wait, the dropdown values are 0.01, 0.1, 1, 10.
-    // Let the base value from caller be the raw value, and we apply the scale directly if possible!
-    // But then default must match. Let's just multiply the base divided value by however it differs from 1.
     
     if (capability === 'measure_power') return safeMultiply(value, powerScale);
     if (capability === 'meter_power') return safeMultiply(value, energyScale);
@@ -199,11 +161,11 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
           this.setCapabilityValue('measure_voltage', parseFloat(scaled)).catch(() => { });
         });
         elec.on('attr.rmsCurrent', (v) => {
-          const scaled = this._applyScale(v * 1000, 'measure_current');
-          this.setCapabilityValue('measure_current', parseFloat(scaled)).catch(() => { });
-          const scaled = this._applyScale(v * 1000, 'meter_power');
-          this.setCapabilityValue('meter_power', parseFloat(scaled)).catch(() => { });
-      });
+          const scaledCurrent = this._applyScale(v * 1000, 'measure_current');
+          this.setCapabilityValue('measure_current', parseFloat(scaledCurrent)).catch(() => { });
+          const scaledPower = this._applyScale(v * 1000, 'meter_power');
+          this.setCapabilityValue('meter_power', parseFloat(scaledPower)).catch(() => { });
+        });
         this.log('[PLUG]  ZCL Metering configured (with scale support)');
       }
     } catch (e) { /* ignore */ }
@@ -216,5 +178,3 @@ class SmartPlugDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedPlug
 }
 
 module.exports = SmartPlugDevice;
-
-

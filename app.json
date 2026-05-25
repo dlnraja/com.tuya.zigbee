@@ -103115,9 +103115,6 @@
         "measure_pm25"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "CR2450"
         ],
@@ -103694,12 +103691,6 @@
       "connectivity": [
         "zigbee"
       ],
-      "energy": {
-        "approximation": {
-          "usageOn": 0,
-          "usageOff": 0
-        }
-      },
       "maintenanceActions": [
         {
           "id": "ota_check",
@@ -105121,10 +105112,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageOn": 1,
-          "usageOff": 0.5
-        },
         "batteries": [
           "CR2450"
         ],
@@ -107614,10 +107601,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageOff": 0.2,
-          "usageOn": 100
-        },
         "batteries": [
           "CR2450"
         ],
@@ -111881,9 +111864,6 @@
         "zigbee"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 9
-        },
         "mains": true,
         "batteries": [
           "CR2450"
@@ -117808,9 +117788,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "CR2450"
         ],
@@ -120117,10 +120094,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageOff": 0.2,
-          "usageOn": 100
-        },
         "batteries": [
           "CR2450"
         ],
@@ -120219,9 +120192,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageConstant": 5
-        },
         "batteries": [
           "CR2450"
         ],
@@ -124926,9 +124896,6 @@
         "measure_humidity"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "CR2450"
         ],
@@ -126057,10 +126024,6 @@
         "measure_humidity"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 100,
-          "usageOff": 0.7
-        },
         "batteries": [
           "CR2450"
         ],
@@ -127729,9 +127692,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "pair": [
@@ -128918,10 +128878,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageOff": 0.2,
-          "usageOn": 100
-        },
         "batteries": [
           "CR2450"
         ],
@@ -130256,9 +130212,6 @@
         "batteries": [
           "CR2450"
         ],
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "mains": true
       },
       "subDevices": [],
@@ -130785,10 +130738,6 @@
         "measure_luminance"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 100,
-          "usageOff": 0.7
-        },
         "batteries": [
           "CR2450"
         ],
@@ -132507,10 +132456,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageOff": 0.2,
-          "usageOn": 100
-        },
         "batteries": [
           "CR2450"
         ],
@@ -136884,12 +136829,6 @@
         "dim",
         "measure_pm25"
       ],
-      "energy": {
-        "approximation": {
-          "usageOff": 0.7,
-          "usageOn": 100
-        }
-      },
       "zigbee": {
         "manufacturerName": [],
         "productId": [],
@@ -142821,10 +142760,6 @@
         "measure_battery"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 100,
-          "usageOff": 0.7
-        },
         "batteries": [
           "CR2450"
         ],
@@ -143703,10 +143638,6 @@
         "measure_battery"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 100,
-          "usageOff": 0.7
-        },
         "batteries": [
           "CR2450"
         ],
@@ -144585,10 +144516,6 @@
         "measure_battery"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 100,
-          "usageOff": 0.7
-        },
         "batteries": [
           "CR2450"
         ],
@@ -145467,10 +145394,6 @@
         "measure_battery"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 100,
-          "usageOff": 0.7
-        },
         "batteries": [
           "CR2450"
         ],
@@ -147895,9 +147818,6 @@
         "measure_pm25"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "CR2450"
         ],
@@ -148430,9 +148350,6 @@
         "measure_power"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 9
-        },
         "mains": true,
         "batteries": [
           "CR2450"
@@ -150015,10 +149932,6 @@
         "measure_battery"
       ],
       "energy": {
-        "approximation": {
-          "usageOff": 0.7,
-          "usageOn": 100
-        },
         "batteries": [
           "AAA",
           "AAA"
@@ -151204,10 +151117,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageOff": 0.2,
-          "usageOn": 100
-        },
         "batteries": [
           "CR2450"
         ],
@@ -151267,9 +151176,6 @@
         "alarm_tamper"
       ],
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "CR2450"
         ],
@@ -155656,10 +155562,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageOff": 0.2,
-          "usageOn": 100
-        },
         "batteries": [
           "CR2450"
         ],
@@ -157773,10 +157675,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageOff": 0.2,
-          "usageOn": 100
-        },
         "batteries": [
           "CR2450"
         ],
@@ -169407,10 +169305,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageOff": 0.2,
-          "usageOn": 100
-        },
         "batteries": [
           "CR2450"
         ],
@@ -172799,10 +172693,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageOff": 0.2,
-          "usageOn": 100
-        },
         "batteries": [
           "CR2450"
         ],
@@ -178766,9 +178656,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageConstant": 0.5
-        },
         "batteries": [
           "CR2450"
         ],
@@ -180957,9 +180844,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageConstant": 5
-        },
         "batteries": [
           "CR2450"
         ],
@@ -188664,10 +188548,6 @@
         "measure_luminance"
       ],
       "energy": {
-        "approximation": {
-          "usageOn": 100,
-          "usageOff": 0.7
-        },
         "batteries": [
           "CR2450"
         ],
@@ -208742,10 +208622,6 @@
         }
       },
       "energy": {
-        "approximation": {
-          "usageOff": 0.2,
-          "usageOn": 100
-        },
         "batteries": [
           "CR2450"
         ],
