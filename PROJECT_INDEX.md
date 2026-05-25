@@ -778,6 +778,11 @@ Local Tuya WiFi connectivity is designed with an **Enterprise-grade Connection a
 | v7.5.21 | MODULE_NOT_FOUND fingerprints.json | data/fingerprints.json absent du bundle lors de cette release | Corrigé v7.5.26: paths require corrigés, .homeyignore vérifié |
 | v7.5.26 | getTriggerCard deprecated warnings | 45 drivers utilisaient l'API dépréciée Homey SDK3 | Migré getDeviceTriggerCard sur master + stable-v5 |
 | v7.5.36 | ReferenceError: setCapabilityValue is not defined | Missing 'this.' context in BaseUnifiedDevice.js & Hybrid syntax errors | Fixed 'this.' binding and made callbacks async in _setupUniversalHybridMode |
+| v8.4.0 | triggerRecovery TypeError | Cached prototype mismatch in DataRecoveryManager | Bound forceRecovery directly to instance in constructor |
+| v8.4.0 | Flow card ReferenceError | Missing RHS assignment inside air purifier drivers | Restored exact flow card card getter lookups |
+| v8.4.0 | Syntax Unexpected identifier | Missing closing braces in air purifier driver getDeviceById | Restored closing braces to prevent breaking onInit |
+| v8.4.0 | Manifest Energy conflicts | BOTH energy.approximation & measure_power declared | Removed approximation from 33 compose manifests |
+| v8.4.0 | Workflow shell default errors | Missing defaults.run.shell: bash in GHA workflows | Injected bash default config across 16 workflows |
 
 ### Issues Résolues Récemment
 | # | Titre | Status |
@@ -793,6 +798,14 @@ Local Tuya WiFi connectivity is designed with an **Enterprise-grade Connection a
 | #305 | Gate Opener DP3 contact | ✅ Fixed v7.5.25 |
 
 ---
+
+
+## Fleetwood Gateway & Syntax Purity Mandates (v8.4.0+)
+- **ZCL Method Override Purity**: Any driver class override of ZCL/SDK methods (e.g., `getDeviceById(id)`) MUST have correct closing braces to prevent breaking following method declarations like `onInit()` or `onNodeInit()`.
+- **Standard ZCL Measurement Scoping**: Inside ZCL Measurement cluster listeners (`attr.rmsCurrent`, etc.), never re-declare block-scoped variables (`const scaled`) in the same scope block; use unique variables (`scaledCurrent` and `scaledPower`) to prevent standard JS scope crash exceptions.
+- **Mains/Battery Approximation Conflicts**: If a compose manifest (`driver.compose.json`) defines `measure_power` or `meter_power`, it MUST NOT define `energy.approximation` under `energy` to prevent severe Homey Pro Energy v3 schema validation errors.
+- **Mandatory GitHub Actions Shell Default Configuration**: Every CI workflow `.yml` file that runs commands MUST include top-level `defaults: run: shell: bash` to prevent PowerShell syntax failures on Windows runners.
+- **GHA Cloud Purity Validation Gate**: Every primary workflow CI check (`unified-ci.yml`, `syntax-validation.yml`, `syntax-purity-gate.yml`, `syntax-check.yml`, `validate.yml`) has been hardened to execute the strict `PRE_COMMIT_CHECKS.js` gateway. This ensures 100% JS syntax parsing, workflow default checking, and manifest schema validation before commit integration.
 
 ## 23. AI NAVIGATION & CARTOGRAPHY MAP
 
