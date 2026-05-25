@@ -24,6 +24,7 @@ jobs:
     name: 🔍 Universal Validation (SDK 3 Strict)
     if: github.actor != 'github-actions[bot]' && github.actor != 'dependabot[bot]'
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
       - name: Setup Node.js
@@ -71,6 +72,7 @@ jobs:
     name: 🏗️ Production Build & Optimize
     needs: validate
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
       - name: Setup Node.js
@@ -104,6 +106,7 @@ jobs:
     name: 🛡️ Unified Security Shield
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
       - name: 🕵️ Contextual Secret Masking
