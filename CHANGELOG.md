@@ -4,7 +4,22 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.7] - 2026-05-25
+## [8.1.8] - 2026-05-25
+
+### New Device Support
+- 298 new fingerprints from Z2M, ZHA, community, and JohanBendz
+- _TZ3000_TS011F smart plug: syntax fix
+- _TZ3000_TS0207 rain sensor: updated DP mappings
+- _TZ3000_TS0207 water leak sensor: updated DP mappings
+- snzb-04 open/close sensor: updated DP mappings
+
+### Bug Fixes
+- Resolved smart plug driver syntax errors
+- Stripped conflicting energy approximation manifest properties
+- Fixed fingerprint collisions and cross-driver conflicts
+---
+
+ [8.1.7] - 2026-05-25
 
 ### Bug Fixes
 - Fixed smart plug driver syntax errors affecting device communication

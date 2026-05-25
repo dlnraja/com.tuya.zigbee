@@ -1,4 +1,7 @@
 {
+  "8.1.8": {
+    "en": "298 new device fingerprints added. Smart plug driver fixes, rain sensor, water leak sensor, and open/close sensor updates."
+  },
   "8.1.7": {
     "en": "298 new device fingerprints added. Smart plug and water leak sensor fixes. Flow card and fingerprint collision corrections."
   },
@@ -56,10 +59,7 @@
   "7.5.43": {
     "en": "Bug fixes: wall flow cards on multi-gang switches, wireless button reliability, climate sensor battery/pressure, partial battery sensor fix. Driver updates for soil sensor, button wireless plug, curtain motors, floor heating."
   },
-  "7.5.42": {
-    "en": "v7.5.41: Fixed battery endpoint scan handling for better battery device detection, Fixed Fingerbot capability registration timing (Issue #162), Added 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT sources, Improved kinetic detection for soil sensors, Added fingerprint support to soil_sensor, bulb_rgbw, climate_sensor, switch_1gang, wall_remote_2_gang, and wall_switch_1gang_1way drivers"
-  },
-  "8.1.8": {
-    "en": "v8.1.7: Fixed smart plug driver syntax errors affecting device communication, Resolved fingerprint collisions preventing proper device pairing, Corrected flow card registrations for affected drivers, Fixed energy monitoring approximation on supported devices, Added 298 new fingerprints from Z2M, ZHA, and community sources"
+  "8.1.9": {
+    "en": "v8.1.8: 298 new fingerprints from Z2M, ZHA, community, and JohanBendz, _TZ3000_TS011F smart plug: syntax fix, _TZ3000_TS0207 rain sensor: updated DP mappings, _TZ3000_TS0207 water leak sensor: updated DP mappings, snzb-04 open/close sensor: updated DP mappings"
   }
 }
