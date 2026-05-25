@@ -1,4 +1,7 @@
 {
+  "8.1.6": {
+    "en": "Fixes for curtain motor, dimmer, and air quality drivers. New fingerprints for christmas_lights, curtain_module_2_gang, and dimmer drivers. Removed outdated configurations."
+  },
   "8.1.5": {
     "en": "v8.1.5 — 238 new fingerprints, Smart Solar Soil Sensor, Insoma irrigation valve, battery init fix, SOS/BSEED/Avatto WT198 fixes, SmartDivisor math, mainsPowered optimization, 53 FPs validated."
   },
@@ -56,10 +59,7 @@
   "7.5.41": {
     "en": "v7.5.41 - 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT. Battery endpoint scan fix, Fingerbot capability timing fix, and kinetic detection improvement for soil sensors."
   },
-  "7.5.40": {
-    "en": "Bug fix: Empty battery reports on sleepy devices resolved with adaptive battery listeners and ZCL/IAS fallbacks."
-  },
-  "8.1.6": {
-    "en": "v8.1.5: Added Smart Solar Soil Sensor (_TZE284_rqcuwlsa) to soil_sensor driver, Added Insoma 2-way irrigation valve (_TZE284_fhvpaltk) to valve_irrigation driver, Added 238 fingerprints from forum research, Added 53 fingerprints validated from Z2M/ZHA/JohanBendz community sync, Fixed Tuya DP battery initialization crash"
+  "8.1.7": {
+    "en": "v8.1.6: Fixed curtain_module_2_gang driver configuration (39 fingerprint updates)., Fixed dimmer_1_gang driver compose (114 changes, DP mapping corrections)., Fixed dimmer_2_gang driver compose (155 changes, added missing productIds)., Fixed curtain_module driver (16 changes)., Fixed air_purifier driver (4 changes)."
   }
 }
