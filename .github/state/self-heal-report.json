@@ -1,7 +1,7 @@
 {
-  "timestamp": "2026-05-25T04:31:16.464Z",
+  "timestamp": "2026-05-25T13:43:30.855Z",
   "totalFiles": 0,
-  "totalFixes": 196,
+  "totalFixes": 198,
   "rules": {
     "flow-card-try-catch": {
       "count": 31,
@@ -182,7 +182,7 @@
       ]
     },
     "case-insensitive-matching": {
-      "count": 38,
+      "count": 40,
       "files": [
         {
           "file": "drivers/climate_sensor_device/device.js",
@@ -237,8 +237,16 @@
           "detail": "Line 75: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
+          "file": "lib/HeimanIasDevice.js",
+          "detail": "Line 534: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
           "file": "lib/NewDevices2025.js",
           "detail": "Line 247: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
+        },
+        {
+          "file": "lib/SonoffZclDevice.js",
+          "detail": "Line 734: manual .toLowerCase() on pairing fields — use CaseInsensitiveMatcher instead"
         },
         {
           "file": "lib/TuyaRtcDetector.js",
