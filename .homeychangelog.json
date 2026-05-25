@@ -1,4 +1,7 @@
 {
+  "8.1.7": {
+    "en": "298 new device fingerprints added. Smart plug and water leak sensor fixes. Flow card and fingerprint collision corrections."
+  },
   "8.1.6": {
     "en": "Fixes for curtain motor, dimmer, and air quality drivers. New fingerprints for christmas_lights, curtain_module_2_gang, and dimmer drivers. Removed outdated configurations."
   },
@@ -56,10 +59,7 @@
   "7.5.42": {
     "en": "v7.5.41: Fixed battery endpoint scan handling for better battery device detection, Fixed Fingerbot capability registration timing (Issue #162), Added 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT sources, Improved kinetic detection for soil sensors, Added fingerprint support to soil_sensor, bulb_rgbw, climate_sensor, switch_1gang, wall_remote_2_gang, and wall_switch_1gang_1way drivers"
   },
-  "7.5.41": {
-    "en": "v7.5.41 - 3,202 new fingerprints from ZHA, Z2M, Z-Link and ZCT. Battery endpoint scan fix, Fingerbot capability timing fix, and kinetic detection improvement for soil sensors."
-  },
-  "8.1.7": {
-    "en": "v8.1.6: Fixed curtain_module_2_gang driver configuration (39 fingerprint updates)., Fixed dimmer_1_gang driver compose (114 changes, DP mapping corrections)., Fixed dimmer_2_gang driver compose (155 changes, added missing productIds)., Fixed curtain_module driver (16 changes)., Fixed air_purifier driver (4 changes)."
+  "8.1.8": {
+    "en": "v8.1.7: Fixed smart plug driver syntax errors affecting device communication, Resolved fingerprint collisions preventing proper device pairing, Corrected flow card registrations for affected drivers, Fixed energy monitoring approximation on supported devices, Added 298 new fingerprints from Z2M, ZHA, and community sources"
   }
 }
