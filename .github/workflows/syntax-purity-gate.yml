@@ -30,6 +30,8 @@ jobs:
           node scripts/maintenance/STRICT_SYNTAX_GUARD.js
           echo "=== STARTING ARITHMETIC INTEGRITY SCAN ==="
           node scripts/maintenance/ARITHMETIC_INTEGRITY_CHECK.js
+          echo "=== STARTING FLEETWOOD INTEGRITY GATEWAY ==="
+          node scripts/PRE_COMMIT_CHECKS.js
           echo "=== VALIDATION PASSED ==="
 
   lint:

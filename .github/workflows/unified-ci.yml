@@ -38,6 +38,9 @@ jobs:
       - name: 🏠 Homey Validate
         run: npx homey app validate --level publish
       
+      - name: 🛡️ Fleetwood Integrity & Manifest Gateway
+        run: node scripts/PRE_COMMIT_CHECKS.js
+      
       - name: 🛡️ SDK 3 Strict Linter
         run: node scripts/maintenance/rule-21-linter.js
       
