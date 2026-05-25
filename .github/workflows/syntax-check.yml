@@ -39,6 +39,9 @@ jobs:
           find drivers -name "*.js" -exec node -c {} \;
           echo "✅ All driver files pass syntax check"
 
+      - name: 🛡️ Fleetwood Integrity & Manifest Gateway
+        run: node scripts/PRE_COMMIT_CHECKS.js
+
       - name: Check forbidden patterns
         run: |
           # PF-01: if/ternary hybrid
