@@ -37,7 +37,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // CONDITION: Siren is/is not sounding
     // 
     try {
-      const sirenCondition = this.homey.flow.getConditionCard('siren_is_sounding');
+      const sirenCondition = this.homey.flow.getConditionCard('device_air_purifier_siren_siren_is_sounding');
 
       sirenCondition.registerRunListener(async (args) => {
         const device = args.device;
@@ -58,7 +58,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Turn on siren
     // 
     try {
-      const turnOnAction = this.homey.flow.getActionCard('siren_turn_on');
+      const turnOnAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_turn_on');
 
       turnOnAction.registerRunListener(async (args) => {
         const device = args.device;
@@ -89,7 +89,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Turn off siren
     // 
     try {
-      const turnOffAction = this.homey.flow.getActionCard('siren_turn_off');
+      const turnOffAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_turn_off');
 
       turnOffAction.registerRunListener(async (args) => {
         const device = args.device;
@@ -120,7 +120,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set volume
     // 
     try {
-      const setVolumeAction = this.homey.flow.getActionCard('siren_set_volume');
+      const setVolumeAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_set_volume');
 
       setVolumeAction.registerRunListener(async (args) => {
         const device = args.device;
@@ -153,7 +153,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set duration
     // 
     try {
-      const setDurationAction = this.homey.flow.getActionCard('siren_set_duration');
+      const setDurationAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_set_duration');
 
       setDurationAction.registerRunListener(async (args) => {
         const device = args.device;
@@ -184,7 +184,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set melody
     // 
     try {
-      const setMelodyAction = this.homey.flow.getActionCard('siren_set_melody');
+      const setMelodyAction = this.homey.flow.getActionCard('device_air_purifier_siren_siren_set_melody');
 
       setMelodyAction.registerRunListener(async (args) => {
         const device = args.device;
