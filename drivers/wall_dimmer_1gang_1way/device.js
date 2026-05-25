@@ -1,5 +1,5 @@
 'use strict';
-const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
+const TuyaSpecificClusterDevice = require('../../lib/tuya/TuyaSpecificClusterDevice');
 const { includesCI } = require('../../lib/utils/CaseInsensitiveMatcher');
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
 const { smartParse, smartDivisorDetect } = require('../../lib/managers/SmartDivisorManager');
@@ -22,7 +22,7 @@ const dataPoints = {
 
 const DEBUG_MODE = false;
 
-class WallDimmer1Gang1Way extends TuyaZigbeeDevice {
+class WallDimmer1Gang1Way extends TuyaSpecificClusterDevice {
 
   get gangCount() { return 1; }
 

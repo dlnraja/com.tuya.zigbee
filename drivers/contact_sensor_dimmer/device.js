@@ -24,12 +24,21 @@ class ContactSensorDimmerDevice extends ZigBeeDevice {
     }
   }
 
+  async _safeSetCapability(capability, value) {
+    try {
+      return await this.setCapabilityValue(capability, value);
+    } catch (err) {
+      this.error(`[SAFE-SET] ${capability}=${value} failed:`, err.message);
+      return null;
+    }
+  }
+
   async _handleButtonPress(value) {
     this.log(`[CONTACT] Button pressed: ${value}`);
     try {
-      await this.setCapabilityValue('button', true).catch(() => { });
+      await this._safeSetCapability('button', true).catch(() => { });
       setTimeout(() => {
-        this.setCapabilityValue('button', false).catch(() => { });
+        this._safeSetCapability('button', false).catch(() => { });
       }, 500);
 
       const triggerCard = (() => {
