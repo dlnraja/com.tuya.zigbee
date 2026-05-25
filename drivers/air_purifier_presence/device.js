@@ -82,10 +82,7 @@ class AirPurifierPresenceHybridDevice extends UnifiedSensorBase {
       if (dpConfig.cap === 'alarm_motion' || dpConfig.cap === 'alarm_human') {
         mappings[dp] = {
           capability: 'alarm_motion',
-          transform: (v) => transformPresence(v, dpConfig.type, invertPresence),
-          alsoSets: {
-            'alarm_human': (v) => transformPresence(v, dpConfig.type, invertPresence)
-          }
+          transform: (v) => transformPresence(v, dpConfig.type, invertPresence)
         };
       } else if (dpConfig.cap) {
         mappings[dp] = {

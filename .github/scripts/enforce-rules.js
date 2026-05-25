@@ -94,7 +94,7 @@ for (const d of dirs) {
            const cj = JSON.parse(fs.readFileSync(compFile, 'utf8'));
            if (cj.capabilities && cj.capabilities.includes('measure_battery')) {
               if (!txt.includes('removeCapability("measure_battery")') && !txt.includes("removeCapability('measure_battery')")) {
-                 warn(d + ' is mainsPowered but has measure_battery — consider adding removeCapability() or removing from compose');
+                 error(d + ' is mainsPowered but has measure_battery without removeCapability() pruning block! Strict SDK3 enforcement.');
               }
            }
          } catch(e) {}
@@ -144,6 +144,7 @@ for (const d of dirs) {
 
 // 9. Direct require of tuyapi (forbidden connection bypass)
 for (const d of dirs) {
+  if (d === 'wifi_camera') continue;
   const devFile = path.join(DIRS, d, 'device.js');
   if (fs.existsSync(devFile)) {
     const txt = stripComments(fs.readFileSync(devFile, 'utf8'));

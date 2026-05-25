@@ -1142,3 +1142,22 @@ Specific handling for the `_TZE284_hdml1aav` fertilizer sensor:
 - **Exhaustive DP Mapping**: DP3 (Moisture), DP4 (EC/Fertility), DP5 (Temp), DP15 (Battery), DP101 (Air Humidity), DP102 (Luminance), DP112 (Soil Fertility).
 - **Sub-Capability Pattern**: Uses `measure_humidity.soil` for moisture to distinguish from air `measure_humidity`.
 - **Adaptive Conversion**: Temperature logic automatically detects scale variant (÷10 or ÷100) via `SoilSensorDevice.js` override.
+
+## 31. Dynamic Mains-Battery Capability Pruning
+
+To support hybrid and variants of drivers (like `air_quality_co2` or scene panels) under Homey Pro's strict SDK3 pairing rules, the system dynamically manages mains vs battery capabilities:
+- **Rule**: Mains-powered devices must never present battery capabilities to the Homey interface.
+- **Implementation**: True mains-powered drivers that declare `measure_battery` inside their compose configurations dynamically detect `this.mainsPowered` on initialization inside `onNodeInit()` and execute `this.removeCapability('measure_battery').catch(() => {})`.
+- **Drivers Updated**: `air_quality_co2`, `blaster_remote`, `climate_sensor_gas`, `climate_sensor_smart`, `device_air_purifier_quality`, and `sensor_climate_smart`.
+
+## 32. Quality Gate Layer 10 (Mains-Battery Enforcer Check)
+
+To prevent regression during future automated synchronization or community fingerprint additions:
+- **Automated Check**: Layer 10 of the multi-layer quality gateway (`.github/scripts/enforce-rules.js`) verifies that if a driver's `device.js` returns `true` from the `mainsPowered` getter, it must contain a strict `removeCapability('measure_battery')` pruning block.
+- **Outcome**: Bypasses or violations are treated as blocking errors that prevent local or GitHub push validation from succeeding.
+
+## 33. Scene Panel Flow Card Action & Trigger Auto-Alignment
+
+To resolve silent flow listener failures and mismatches:
+- **Mismatches Solved**: Aligned Javascript trigger IDs in `_handleDP` (like `sensor_climate_smart_climate_sensor_smart_smart_scene_panel_switch_${g}_changed`) with the exact `driver.flow.compose.json` schema declarations.
+- **Actions Registered**: Automatically maps and registers action card listeners (e.g., `set_switch_1` to `set_switch_4`) to control relay and button states via `onoff.gang{N}` and send DP commands directly to the hardware.
