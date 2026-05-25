@@ -4,7 +4,34 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.4] - 2026-05-22
+## [8.1.5] - 2026-05-25
+
+### New Devices
+- Added Smart Solar Soil Sensor (_TZE284_rqcuwlsa) to soil_sensor driver
+- Added Insoma 2-way irrigation valve (_TZE284_fhvpaltk) to valve_irrigation driver
+- Added 238 fingerprints from forum research
+- Added 53 fingerprints validated from Z2M/ZHA/JohanBendz community sync
+
+### Bug Fixes
+- Fixed Tuya DP battery initialization crash
+- Fixed Button TriggerCard crashes
+- Fixed SOS button, BSEED switch, and Avatto WT198 device handling
+- Fixed triggerRecovery and proxy crashes globally
+- Fixed syntax errors from incorrect require paths
+- Fixed spaces in require paths causing SyntaxError
+- Mapped 45 previously unsupported fingerprints from forum logs
+
+### Improvements
+- SmartDivisor math injection for accurate temperature/humidity/power conversions
+- Mains-powered device optimization (removed measure_battery where inappropriate)
+- SDK v3 flow card formatting compliance
+- Zero-Defect compliance across 413 drivers
+- Paroxysm auto-healing for wifi and zigbee
+- Motion sensor TS0202 battery update handling improved
+- curtain_module capabilities extended, _TZ3210_dwytrmda supported
+---
+
+ [8.1.4] - 2026-05-22
 
 ### New Features
 - Added capabilities: measure_frequency, measure_power_factor, alarm_gas, alarm_siren, alarm_vibration, alarm_water_high, boost_mode

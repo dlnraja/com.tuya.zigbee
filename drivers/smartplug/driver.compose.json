@@ -4,8 +4,12 @@
     "en": "Smart Plug with metering"
   },
   "class": "socket",
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "capabilities": [
     "onoff",
     "measure_power",
@@ -25,7 +29,6 @@
   "zigbee": {
     "manufacturerName": [
       "_TZ3000_3ooaz3ng",
-      "_TYZB01_iuepbmpv",
       "_TZ3000_g5xawfcq",
       "_TZ3000_vtscrpmw",
       "_TZ3000_rdtixbnu",
@@ -76,8 +79,19 @@
     ],
     "endpoints": {
       "1": {
-        "clusters": [0, 4, 5, 6, 1794, 2820],
-        "bindings": [6, 1794, 2820]
+        "clusters": [
+          0,
+          4,
+          5,
+          6,
+          1794,
+          2820
+        ],
+        "bindings": [
+          6,
+          1794,
+          2820
+        ]
       }
     },
     "learnmode": {

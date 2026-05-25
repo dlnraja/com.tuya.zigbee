@@ -4,8 +4,12 @@
     "en": "LCD Temperature & Humidity Sensor"
   },
   "class": "sensor",
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
@@ -14,7 +18,8 @@
   ],
   "energy": {
     "batteries": [
-      "AAA", "AAA"
+      "AAA",
+      "AAA"
     ]
   },
   "images": {
@@ -22,15 +27,7 @@
     "small": "{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZE200_bjawzodf",
-      "_TZE200_zl1kmjqx",
-      "_TZE200_locansqn",
-      "_TZE200_bq5c8xfe",
-      "_TZE200_qyflbnbj",
-      "_TZE200_vs0skpuc",
-      "_TZE200_44af8vyi"
-    ],
+    "manufacturerName": [],
     "productId": [
       "TS0601"
     ],

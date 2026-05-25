@@ -5,8 +5,12 @@
     "it": "Programmatore per irrigazione smart"
   },
   "class": "other",
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "capabilities": [
     "onoff",
     "alarm_battery",
@@ -20,7 +24,12 @@
     }
   },
   "energy": {
-    "batteries": ["AA", "AA", "AA", "AA"]
+    "batteries": [
+      "AA",
+      "AA",
+      "AA",
+      "AA"
+    ]
   },
   "images": {
     "small": "{{driverAssetsPath}}/images/small.png",
@@ -29,8 +38,6 @@
   "zigbee": {
     "manufacturerName": [
       "_TZ3210_eymunffl",
-      "_TZ3000_cjfmu5he",
-      "_TZ3000_kz1anoi8",
       "_TZ3000_mq4wujmp"
     ],
     "productId": [
@@ -39,8 +46,19 @@
     ],
     "endpoints": {
       "1": {
-        "clusters": [0, 1, 4, 5, 6, 10, 61184],
-        "bindings": [1, 6]
+        "clusters": [
+          0,
+          1,
+          4,
+          5,
+          6,
+          10,
+          61184
+        ],
+        "bindings": [
+          1,
+          6
+        ]
       }
     },
     "learnmode": {

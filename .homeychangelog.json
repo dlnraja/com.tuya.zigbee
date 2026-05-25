@@ -1,4 +1,7 @@
 {
+  "8.1.5": {
+    "en": "v8.1.5 — 238 new fingerprints, Smart Solar Soil Sensor, Insoma irrigation valve, battery init fix, SOS/BSEED/Avatto WT198 fixes, SmartDivisor math, mainsPowered optimization, 53 FPs validated."
+  },
   "8.1.4": {
     "en": ". New capabilities: measure_frequency, measure_power_factor, alarm_gas, alarm_siren, alarm_vibration, alarm_water_high, boost_mode. 82 Johan SDK3 fingerprints added. 5 bug fixes. 1208 fingerprints auto-healed."
   },
@@ -56,10 +59,7 @@
   "7.5.40": {
     "en": "Bug fix: Empty battery reports on sleepy devices resolved with adaptive battery listeners and ZCL/IAS fallbacks."
   },
-  "7.5.39": {
-    "en": "Updated 3202 fingerprints across 228 drivers. Added new device support and minor fixes."
-  },
-  "8.1.5": {
-    "en": "v8.1.4: Added capabilities: measure_frequency, measure_power_factor, alarm_gas, alarm_siren, alarm_vibration, alarm_water_high, boost_mode, Added flow triggers: remote_button_pressed, virtual_button_pressed, Synced 82 Johan SDK3 fingerprints (Tuya Unified Zigbee drivers), Auto-healed 1208 missing fingerprints across drivers, Fixed 5 issues from community reports and PR triage"
+  "8.1.6": {
+    "en": "v8.1.5: Added Smart Solar Soil Sensor (_TZE284_rqcuwlsa) to soil_sensor driver, Added Insoma 2-way irrigation valve (_TZE284_fhvpaltk) to valve_irrigation driver, Added 238 fingerprints from forum research, Added 53 fingerprints validated from Z2M/ZHA/JohanBendz community sync, Fixed Tuya DP battery initialization crash"
   }
 }
