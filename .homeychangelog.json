@@ -1,4 +1,7 @@
 {
+  "8.1.12": {
+    "en": "v8.1.12 — 298 new fingerprints added, DeviceIdentificationDatabase crash fix, 413 drivers, 3296 FPs validated."
+  },
   "8.1.11": {
     "en": "Bug fix: air purifier smoke and siren flow cards no longer crash on init. 298 new fingerprints added across drivers."
   },
@@ -56,10 +59,7 @@
   "7.5.47": {
     "en": "v7.5.46: No changes."
   },
-  "7.5.46": {
-    "en": "v7.5.46 - Maintenance release. No new devices or fixes."
-  },
-  "8.1.12": {
-    "en": "v8.1.11: Fixed crash on air purifier smoke and siren flow cards caused by TDZ before initialization., Added 298 new fingerprints from Z2M, ZHA, community reports, and JohanBendz contributions., Total: 413 drivers, 3,296 fingerprints validated."
+  "8.1.13": {
+    "en": "v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app instability during device lookup., Added 298 new fingerprints from Z2M, ZHA, community reports, and JohanBendz contributions., Total: 413 drivers, 3296 fingerprints validated., rain_sensor: capability handling update."
   }
 }
