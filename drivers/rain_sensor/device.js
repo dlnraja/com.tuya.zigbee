@@ -61,7 +61,8 @@ class RainSensorDevice extends UnifiedSensorBase {
     }
 
     await super.onNodeInit({ zclNode });
-    this._registerCapabilityListeners(); // rule-12a injected
+    // v8.4.1: _registerCapabilityListeners removed — UnifiedSensorBase uses
+    // capability listeners via dpMappings + UnifiedSensorBase native handlers
     
     // v5.5.889: IAS Zone support for TS0207 rain sensors
     await this._setupIASZone(zclNode);
