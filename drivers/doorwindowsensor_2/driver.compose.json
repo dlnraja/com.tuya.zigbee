@@ -4,8 +4,12 @@
     "en": "Door & Window Sensor"
   },
   "class": "sensor",
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "capabilities": [
     "alarm_contact",
     "alarm_tamper",
@@ -23,12 +27,10 @@
   "zigbee": {
     "manufacturerName": [
       "TUYATEC-0l6xaqmi",
-      "_TZ3000_7tbsruql",
       "_TZ3000_osu834un",
       "Immax",
       "Visonic",
       "_TZ3000_hkcpblrs",
-      "_TZ3000_8yhypbo7",
       "_TZ3000_cqlnswn0"
     ],
     "productId": [

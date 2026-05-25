@@ -4,8 +4,12 @@
     "en": "PIR Sensor"
   },
   "class": "sensor",
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "capabilities": [
     "alarm_motion",
     "alarm_battery"
@@ -23,10 +27,6 @@
     "manufacturerName": [
       "TUYATEC-lha8pbwd",
       "TUYATEC-zn9wyqtr",
-      "TUYATEC-53o41joc",
-      "TUYATEC-deetibst",
-      "TUYATEC-dgtxmihe",
-      "TUYATEC-b5g40alm",
       "TUYATEC-dxnohkpd"
     ],
     "productId": [
