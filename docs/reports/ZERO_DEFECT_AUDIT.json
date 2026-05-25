@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-25T02:52:39.949Z",
+  "timestamp": "2026-05-25T03:57:52.722Z",
   "driversChecked": 413,
   "collisions": [
     {
@@ -12629,6 +12629,8 @@
     ".github\\state\\interviews\\JohanBendz-com.tuya.zigbee_1327.json:21: Forbidden invisible character (char code 8203) detected.",
     ".github\\state\\interviews\\JohanBendz-com.tuya.zigbee_1327.json:35: Forbidden invisible character (char code 8203) detected.",
     ".github\\state\\interviews\\JohanBendz-com.tuya.zigbee_1360.json:13: Forbidden invisible character (char code 160) detected.",
+    ".github\\state\\pr-issue-scan.json:3175: Forbidden invisible character (char code 8203) detected.",
+    ".github\\state\\pr-issue-scan.json:34500: Forbidden invisible character (char code 160) detected.",
     ".homeybuild\\create_flows.js:1: Forbidden invisible character (char code 65279) detected.",
     ".homeybuild\\drivers\\lcdtemphumidsensor_plug_energy\\device.js:169: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     ".homeybuild\\drivers\\presence_sensor_radar\\configs.js:254: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
