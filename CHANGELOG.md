@@ -4,7 +4,14 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.8] - 2026-05-25
+## [8.1.9] - 2026-05-25
+
+### v8.1.9
+
+No driver changes or bug fixes in this release.
+---
+
+ [8.1.8] - 2026-05-25
 
 ### New Device Support
 - 298 new fingerprints from Z2M, ZHA, community, and JohanBendz

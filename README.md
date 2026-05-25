@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.1.9 |
+| **App Version** | v8.1.10 |
 | **Device Fingerprints** | 11,319+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 413 (362 Zigbee + 51 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v8.1.9** | v8.1.8: 298 new fingerprints from Z2M, ZHA, community, and JohanBendz, _TZ3000_TS011F smart plug: syntax fix, _TZ3000... |
+| **v8.1.10** | v8.1.9: |
+| **v8.1.9** | v8.1.9 â€” No driver changes. |
 | **v8.1.8** | 298 new device fingerprints added. Smart plug driver fixes, rain sensor, water leak sensor, and open/close sensor upd... |
 | **v8.1.7** | 298 new device fingerprints added. Smart plug and water leak sensor fixes. Flow card and fingerprint collision correc... |
 | **v8.1.6** | Fixes for curtain motor, dimmer, and air quality drivers. New fingerprints for christmas_lights, curtain_module_2_gan... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v7.5.52** | Bug fixes for button_wireless_3/4, ir_blaster, soil_sensor, plug_smart and switch drivers. Fixed diagnostic issues Lo... |
 | **v7.5.51** | Bug fix: resolved fingerprint collision for _TZ3000_h1ipgkwn. Improved USB dongle switch driver with flow cards and m... |
 | **v7.5.50** | 166 new fingerprints added across 8 drivers. Fixed fingerprint collisions and removed incorrect matches. Generic DIY,... |
-| **v7.5.49** | New driver: presence sensor microwave (pir_mmwave_sensor). New fingerprints via Phoenix Sovereign v8.1.0. SONOFF case... |
 
 <!-- CHANGELOG_END -->
 

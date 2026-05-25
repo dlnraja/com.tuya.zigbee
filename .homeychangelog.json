@@ -1,4 +1,7 @@
 {
+  "8.1.9": {
+    "en": "v8.1.9 — No driver changes."
+  },
   "8.1.8": {
     "en": "298 new device fingerprints added. Smart plug driver fixes, rain sensor, water leak sensor, and open/close sensor updates."
   },
@@ -56,10 +59,7 @@
   "7.5.44": {
     "en": "Bug fixes for wireless buttons, remote buttons, and scene switches. Critical runtime errors resolved in button devices."
   },
-  "7.5.43": {
-    "en": "Bug fixes: wall flow cards on multi-gang switches, wireless button reliability, climate sensor battery/pressure, partial battery sensor fix. Driver updates for soil sensor, button wireless plug, curtain motors, floor heating."
-  },
-  "8.1.9": {
-    "en": "v8.1.8: 298 new fingerprints from Z2M, ZHA, community, and JohanBendz, _TZ3000_TS011F smart plug: syntax fix, _TZ3000_TS0207 rain sensor: updated DP mappings, _TZ3000_TS0207 water leak sensor: updated DP mappings, snzb-04 open/close sensor: updated DP mappings"
+  "8.1.10": {
+    "en": "v8.1.9:"
   }
 }
