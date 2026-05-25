@@ -4,7 +4,18 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.9] - 2026-05-25
+## [8.1.10] - 2026-05-25
+
+### Bug Fixes
+- Fixed critical validation errors in contact_sensor_curtain, contact_sensor_dimmer, and wall_dimmer_1gang_1way device classes
+- Eliminated duplicate flow card warnings across all drivers
+- Resolved flow card registration conflicts in BaseZigBeeDriver
+
+### Improvements
+- Enhanced flow card validation in FlowCardManager to prevent duplicate card warnings
+---
+
+ [8.1.9] - 2026-05-25
 
 ### v8.1.9
 
