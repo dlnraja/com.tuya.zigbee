@@ -19,11 +19,31 @@
 ### 🧠 THE HOLISTIC CONTINUOUS IMPROVEMENT PROTOCOL (THINKING MAX)
 
 > [!CAUTION]
-> **Mandatory AI Execution Protocol for Both Branches (`master` & `stable-v5`)**:
-> - **Cross-Referencing Data**: Systematically invoke JS intelligence scripts (e.g., `gather-intelligence.js`, `scan-forum.js`, `scan-prs-issues.js`) to cross-reference logs, diagnostics, GitHub issues, PRs, and community forum messages.
-> - **Deep Thinking & Investigation**: Analyze correlations between new fingerprints, reported bugs, and architecture. Do not just fix symptoms; investigate root causes dynamically across all 227+ drivers.
-> - **Holistic Coverage**: Every execution MUST aim to improve and cover the maximum number of new devices, drivers, and variants, dynamically adapting scripts and YAMLs.
-> - **Exhaustive Context Ingestion**: Read ALL related architecture files, cartography maps, rule definitions, and specifications BEFORE making changes. Use every available `.js` script to your advantage.
+> **Mandatory AI & IDE Agent Execution Protocol for Both Branches (`master` & `stable-v5`)**:
+> 
+> 1. **EXHAUSTIVE CONTEXT & ARCHITECTURE INGESTION**:
+>    - **EVERY SINGLE TIME** an AI agent, subagent, or IDE workspace session begins or is initialized, it is **MANDATORY** to recursively load and read the entire set of mapping files, rules configs, and spec documents:
+>      - Read `AI_CONTEXT_MANDATE.md` (architecture, pipeline rules, branch constraints).
+>      - Read `PROJECT_INDEX.md` (repository cartography, active driver mapping, quality gates).
+>      - Read `docs/rules/CRITICAL_MISTAKES.md` (common pitfalls, ZCL-only rules, multi-gang guidelines).
+>      - Read `docs/GLOBAL_INVESTIGATION_PLAN.md` (cross-diagnostic authority framework).
+>      - Read `.windsurfrules`, `.cursorrules`, and `.clinerules` to maintain 100% compatibility.
+> 
+> 2. **INTELLIGENCE SCRAPING & MULTI-SOURCE GATHERING**:
+>    - Systematically run and rely on the full arsenal of JavaScript intelligence tools at your disposal:
+>      - Run `node .github/scripts/gather-intelligence.js` to build a unified system context.
+>      - Run `node .github/scripts/fetch-gmail-diagnostics.js` to ingest and parse recent Homey diagnostic emails sent by users.
+>      - Run `node .github/scripts/scan-forum.js` to scour the Homey community forum for device requests, pairing failures, and offline telemetry issues.
+>      - Run `node .github/scripts/scan-prs-issues.js` to capture upstream PRs and GitHub issue metrics.
+>    - **NEVER** guess or modify code blindly. Cross-reference actual crash logs, stack traces, and community threads to trace problems from their physical symptoms back to their root causes.
+> 
+> 3. **HOLISTIC DEVICE & PROTOCOL EVOLUTION**:
+>    - Maintain a zero-defect mindset. Every update applied to a driver must cover all related sub-variants and compatible models.
+>    - Support dynamic, runtime-adaptive behaviors for all battery, mains-powered, or sleepy devices.
+>    - Ensure perfect syntax compatibility for Node.js 12 (stable branch) by avoiding modern language features like optional chaining (`?.`) in shared core libraries (`lib/utils/tuyaUtils.js`, `lib/analytics/AdvancedAnalytics.js`).
+> 
+> 4. **CONTINUOUS SYNCHRONIZATION**:
+>    - After committing modifications on `master`, immediately synchronize the code with the secondary branch using `scratch/sync_apps.ps1` to ensure aligned capabilities and zero-defect parity.
 
 ---
 
