@@ -49,12 +49,12 @@ import {
     exposeEndpoints,
     flatten,
     getEndpointName,
+    getEndpointsWithCluster,
     getFromLookup,
     getFromLookupByValue,
     getOptions,
     hasAlreadyProcessedMessage,
     isEndpoint,
-    isNumber,
     isObject,
     isString,
     noOccupancySince,
@@ -63,20 +63,6 @@ import {
     splitArrayIntoChunks,
     toNumber,
 } from "./utils";
-
-function getEndpointsWithCluster(device: Zh.Device, cluster: string | number, type: "input" | "output") {
-    if (!device.endpoints) {
-        throw new Error(`${device.ieeeAddr} ${device.endpoints}`);
-    }
-    const endpoints =
-        type === "input"
-            ? device.endpoints.filter((ep) => ep.getInputClusters().find((c) => (isNumber(cluster) ? c.ID === cluster : c.name === cluster)))
-            : device.endpoints.filter((ep) => ep.getOutputClusters().find((c) => (isNumber(cluster) ? c.ID === cluster : c.name === cluster)));
-    if (endpoints.length === 0) {
-        throw new Error(`Device ${device.ieeeAddr} has no ${type} cluster ${cluster}`);
-    }
-    return endpoints;
-}
 
 const NS = "zhc:modernextend";
 
@@ -2425,7 +2411,7 @@ export function gasMeter(args: GasMeterArgs = {}): ModernExtend {
 // #region Other extends
 
 /**
- * Version of the GP spec: 1.1.1
+ * Version of the GP spec: 1.1.2
  */
 export const GPDF_COMMANDS: Record<number, string> = {
     /*0x00*/ 0: "identify",
@@ -2519,12 +2505,9 @@ export function genericGreenPower(): ModernExtend {
                 if (hasAlreadyProcessedMessage(msg, model, msg.data.frameCounter, `${msg.device.ieeeAddr}_${commandID}`)) return;
                 if (commandID >= 0xe0) return; // Skip op commands
 
-                const gpdfCommandStr = GPDF_COMMANDS[commandID];
-                const payloadBuf = "raw" in msg.data.commandFrame ? msg.data.commandFrame.raw : undefined;
-
                 return {
-                    action: gpdfCommandStr ?? `unknown_${commandID}`,
-                    payload: payloadBuf?.length > 0 ? Array.from(payloadBuf) : [],
+                    action: GPDF_COMMANDS[commandID] ?? `unknown_${commandID}`,
+                    payload: "raw" in msg.data.commandFrame ? Array.from(msg.data.commandFrame.raw) : [],
                 };
             },
         } satisfies Fz.Converter<"greenPower", undefined, ["commandNotification", "commandCommissioningNotification"]>,
@@ -3207,7 +3190,7 @@ export interface ThermostatArgs {
     runningState?: Omit<ValuesWithModernExtendConfiguration<constants.ThermostatRunningState[]>, "fromZigbee">;
     runningMode?: Omit<ValuesWithModernExtendConfiguration<constants.ThermostatRunningMode[]>, "fromZigbee">;
     fanMode?: constants.ThermostatFanMode[];
-    piHeatingDemand?: Omit<ValuesWithModernExtendConfiguration<true | Access>, "fromZigbee">;
+    piHeatingDemand?: Omit<ValuesWithModernExtendConfiguration<true | Access>, "fromZigbee"> & {dontMapPIHeatingDemand?: boolean};
     temperatureSetpointHold?: true | Omit<ValuesWithModernExtendConfiguration<true>, "values" | "fromZigbee" | "toZigbee">;
     temperatureSetpointHoldDuration?: true;
     endpoint?: string;
@@ -3247,6 +3230,8 @@ export function thermostat(args: ThermostatArgs): ModernExtend {
     const toZigbee = [];
     const onEvent: OnEvent.Handler[] = [];
     const configure: Configure[] = <Configure[]>[];
+
+    const meta: DefinitionMeta = {thermostat: {}};
 
     const expose = e.climate().withLocalTemperature(undefined, localTemperature?.values?.description ?? undefined);
     exposes.push(expose);
@@ -3384,6 +3369,10 @@ export function thermostat(args: ThermostatArgs): ModernExtend {
     if (piHeatingDemand) {
         expose.withPiHeatingDemand(piHeatingDemand.values !== true ? piHeatingDemand.values : undefined);
 
+        if (piHeatingDemand.dontMapPIHeatingDemand === true) {
+            meta.thermostat = {...(meta.thermostat ?? {}), dontMapPIHeatingDemand: true};
+        }
+
         if (!piHeatingDemand.toZigbee?.skip) {
             toZigbee.push(tz.thermostat_pi_heating_demand);
         }
@@ -3503,7 +3492,7 @@ export function thermostat(args: ThermostatArgs): ModernExtend {
         }
     }
 
-    return {exposes, fromZigbee, toZigbee, configure, onEvent, isModernExtend: true};
+    return {exposes, fromZigbee, toZigbee, configure, onEvent, meta, isModernExtend: true};
 }
 
 // #endregion

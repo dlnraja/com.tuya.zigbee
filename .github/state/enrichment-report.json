@@ -1,10 +1,458 @@
 {
-  "timestamp": "2026-05-25T04:31:55.008Z",
-  "totalNew": 0,
-  "withDPs": 0,
-  "withPid": 0,
-  "multiSource": 0,
-  "sourceBreakdown": {},
-  "newFingerprints": [],
-  "aiPlan": null
+  "timestamp": "2026-05-25T04:41:15.389Z",
+  "dryRun": true,
+  "stats": {
+    "z2m": 1,
+    "zha": 64,
+    "deconz": 11,
+    "hubitat": 0,
+    "total": 24
+  },
+  "crossRef": {
+    "total": 24,
+    "supported": 12,
+    "unsupported": 12
+  },
+  "enrichments": {
+    "proposed": 12,
+    "applied": 12,
+    "skipped": 0
+  },
+  "topUnsupported": [
+    {
+      "fp": "_TYST11_jeaxp72v",
+      "pids": [
+        "_TYST11_jeaxp72v"
+      ],
+      "type": "other",
+      "caps": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "sources": [
+        "zha"
+      ],
+      "confidence": 38
+    },
+    {
+      "fp": "_TYST11_kfvq6avy",
+      "pids": [
+        "_TYST11_jeaxp72v"
+      ],
+      "type": "other",
+      "caps": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "sources": [
+        "zha"
+      ],
+      "confidence": 38
+    },
+    {
+      "fp": "_TYST11_zivfvd7h",
+      "pids": [
+        "_TYST11_jeaxp72v"
+      ],
+      "type": "other",
+      "caps": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "sources": [
+        "zha"
+      ],
+      "confidence": 38
+    },
+    {
+      "fp": "_TYST11_hhrtiq0x",
+      "pids": [
+        "_TYST11_jeaxp72v"
+      ],
+      "type": "other",
+      "caps": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "sources": [
+        "zha"
+      ],
+      "confidence": 38
+    },
+    {
+      "fp": "_TYST11_ps5v5jor",
+      "pids": [
+        "_TYST11_jeaxp72v"
+      ],
+      "type": "other",
+      "caps": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "sources": [
+        "zha"
+      ],
+      "confidence": 38
+    },
+    {
+      "fp": "_TYST11_owwdxjbx",
+      "pids": [
+        "_TYST11_jeaxp72v"
+      ],
+      "type": "other",
+      "caps": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "sources": [
+        "zha"
+      ],
+      "confidence": 38
+    },
+    {
+      "fp": "_TYST11_8daqwrsj",
+      "pids": [
+        "_TYST11_jeaxp72v"
+      ],
+      "type": "other",
+      "caps": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "sources": [
+        "zha"
+      ],
+      "confidence": 38
+    },
+    {
+      "fp": "_TYST11_czk78ptr",
+      "pids": [
+        "_TYST11_jeaxp72v"
+      ],
+      "type": "other",
+      "caps": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "sources": [
+        "zha"
+      ],
+      "confidence": 38
+    },
+    {
+      "fp": "_TYST11_ckud7u2l",
+      "pids": [
+        "_TYST11_ckud7u2l"
+      ],
+      "type": "other",
+      "caps": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "sources": [
+        "zha"
+      ],
+      "confidence": 38
+    },
+    {
+      "fp": "_TYST11_ywdxldoj",
+      "pids": [
+        "_TYST11_ckud7u2l"
+      ],
+      "type": "other",
+      "caps": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "sources": [
+        "zha"
+      ],
+      "confidence": 38
+    },
+    {
+      "fp": "_TYST11_cwnjrr72",
+      "pids": [
+        "_TYST11_ckud7u2l"
+      ],
+      "type": "other",
+      "caps": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "sources": [
+        "zha"
+      ],
+      "confidence": 38
+    },
+    {
+      "fp": "_TYST11_2atgpdho",
+      "pids": [
+        "_TYST11_ckud7u2l"
+      ],
+      "type": "other",
+      "caps": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "sources": [
+        "zha"
+      ],
+      "confidence": 38
+    }
+  ],
+  "appliedDetails": [
+    {
+      "action": "add_fingerprint",
+      "driver": "button_emergency_sos",
+      "manufacturerName": "_TYST11_jeaxp72v",
+      "productIds": [
+        "_TYST11_jeaxp72v"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "deviceType": "other",
+      "confidence": 38,
+      "sources": [
+        "zha"
+      ],
+      "reason": "Matched by other type with 1 sources (confidence: 38%)",
+      "dryRun": true
+    },
+    {
+      "action": "add_fingerprint",
+      "driver": "button_emergency_sos",
+      "manufacturerName": "_TYST11_kfvq6avy",
+      "productIds": [
+        "_TYST11_jeaxp72v"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "deviceType": "other",
+      "confidence": 38,
+      "sources": [
+        "zha"
+      ],
+      "reason": "Matched by other type with 1 sources (confidence: 38%)",
+      "dryRun": true
+    },
+    {
+      "action": "add_fingerprint",
+      "driver": "button_emergency_sos",
+      "manufacturerName": "_TYST11_zivfvd7h",
+      "productIds": [
+        "_TYST11_jeaxp72v"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "deviceType": "other",
+      "confidence": 38,
+      "sources": [
+        "zha"
+      ],
+      "reason": "Matched by other type with 1 sources (confidence: 38%)",
+      "dryRun": true
+    },
+    {
+      "action": "add_fingerprint",
+      "driver": "button_emergency_sos",
+      "manufacturerName": "_TYST11_hhrtiq0x",
+      "productIds": [
+        "_TYST11_jeaxp72v"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "deviceType": "other",
+      "confidence": 38,
+      "sources": [
+        "zha"
+      ],
+      "reason": "Matched by other type with 1 sources (confidence: 38%)",
+      "dryRun": true
+    },
+    {
+      "action": "add_fingerprint",
+      "driver": "button_emergency_sos",
+      "manufacturerName": "_TYST11_ps5v5jor",
+      "productIds": [
+        "_TYST11_jeaxp72v"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "deviceType": "other",
+      "confidence": 38,
+      "sources": [
+        "zha"
+      ],
+      "reason": "Matched by other type with 1 sources (confidence: 38%)",
+      "dryRun": true
+    },
+    {
+      "action": "add_fingerprint",
+      "driver": "button_emergency_sos",
+      "manufacturerName": "_TYST11_owwdxjbx",
+      "productIds": [
+        "_TYST11_jeaxp72v"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "deviceType": "other",
+      "confidence": 38,
+      "sources": [
+        "zha"
+      ],
+      "reason": "Matched by other type with 1 sources (confidence: 38%)",
+      "dryRun": true
+    },
+    {
+      "action": "add_fingerprint",
+      "driver": "button_emergency_sos",
+      "manufacturerName": "_TYST11_8daqwrsj",
+      "productIds": [
+        "_TYST11_jeaxp72v"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "deviceType": "other",
+      "confidence": 38,
+      "sources": [
+        "zha"
+      ],
+      "reason": "Matched by other type with 1 sources (confidence: 38%)",
+      "dryRun": true
+    },
+    {
+      "action": "add_fingerprint",
+      "driver": "button_emergency_sos",
+      "manufacturerName": "_TYST11_czk78ptr",
+      "productIds": [
+        "_TYST11_jeaxp72v"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "deviceType": "other",
+      "confidence": 38,
+      "sources": [
+        "zha"
+      ],
+      "reason": "Matched by other type with 1 sources (confidence: 38%)",
+      "dryRun": true
+    },
+    {
+      "action": "add_fingerprint",
+      "driver": "button_emergency_sos",
+      "manufacturerName": "_TYST11_ckud7u2l",
+      "productIds": [
+        "_TYST11_ckud7u2l"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "deviceType": "other",
+      "confidence": 38,
+      "sources": [
+        "zha"
+      ],
+      "reason": "Matched by other type with 1 sources (confidence: 38%)",
+      "dryRun": true
+    },
+    {
+      "action": "add_fingerprint",
+      "driver": "button_emergency_sos",
+      "manufacturerName": "_TYST11_ywdxldoj",
+      "productIds": [
+        "_TYST11_ckud7u2l"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "deviceType": "other",
+      "confidence": 38,
+      "sources": [
+        "zha"
+      ],
+      "reason": "Matched by other type with 1 sources (confidence: 38%)",
+      "dryRun": true
+    },
+    {
+      "action": "add_fingerprint",
+      "driver": "button_emergency_sos",
+      "manufacturerName": "_TYST11_cwnjrr72",
+      "productIds": [
+        "_TYST11_ckud7u2l"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "deviceType": "other",
+      "confidence": 38,
+      "sources": [
+        "zha"
+      ],
+      "reason": "Matched by other type with 1 sources (confidence: 38%)",
+      "dryRun": true
+    },
+    {
+      "action": "add_fingerprint",
+      "driver": "button_emergency_sos",
+      "manufacturerName": "_TYST11_2atgpdho",
+      "productIds": [
+        "_TYST11_ckud7u2l"
+      ],
+      "capabilities": [
+        "measure_battery",
+        "alarm_battery"
+      ],
+      "dps": [],
+      "deviceType": "other",
+      "confidence": 38,
+      "sources": [
+        "zha"
+      ],
+      "reason": "Matched by other type with 1 sources (confidence: 38%)",
+      "dryRun": true
+    }
+  ],
+  "skippedDetails": []
 }
