@@ -78,7 +78,7 @@ The development of the Tuya Zigbee app (v5.x) has been discontinued. The reposit
 Key points:
 - The last stable release is **v5.11.206**.
 - Versions beyond that (e.g., v5.11.212) have not been pushed to GitHub and remain experimental.
-- All open PRs and issues have been merged into `master` where possible, and the repository has been cleaned up.
+- All open PRs and issues have been merged into \`master\` where possible, and the repository has been cleaned up.
 - Please fork the repo if you wish to maintain your own version.
 
 Thank you for your understanding.

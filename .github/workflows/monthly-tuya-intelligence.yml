@@ -5,6 +5,10 @@ on:
     - cron: '0 0 1 * *' # Once a month on the 1st
   workflow_dispatch: # Allow manual trigger
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   audit-and-enrich:
     runs-on: ubuntu-latest

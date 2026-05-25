@@ -23,6 +23,10 @@ permissions:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
+
 jobs:
   enrich:
     runs-on: ubuntu-latest

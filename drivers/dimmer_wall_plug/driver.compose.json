@@ -17,10 +17,6 @@
     "measure_battery"
   ],
   "energy": {
-    "approximation": {
-      "usageOff": 0.7,
-      "usageOn": 100
-    },
     "batteries": [
       "AAA",
       "AAA"

@@ -10,6 +10,10 @@ on:
         description: "Diagnostic Report ID from Homey"
         required: false
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   diagnose:
     runs-on: ubuntu-latest
