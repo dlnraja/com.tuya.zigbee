@@ -25,19 +25,35 @@
     }
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_j1xl73iw",
-      "_TZ3000_l6iqph4f"
+    "manufacturerName": [],
+    "productId": [
+      "TS130F"
     ],
-    "productId": ["TS130F"],
     "endpoints": {
       "1": {
-        "clusters": [0, 4, 5, 6, 258, 57345],
-        "bindings": [258]
+        "clusters": [
+          0,
+          4,
+          5,
+          6,
+          258,
+          57345
+        ],
+        "bindings": [
+          258
+        ]
       },
       "2": {
-        "clusters": [4, 5, 6, 258, 57345],
-        "bindings": [258]
+        "clusters": [
+          4,
+          5,
+          6,
+          258,
+          57345
+        ],
+        "bindings": [
+          258
+        ]
       }
     },
     "devices": {
@@ -46,7 +62,10 @@
         "name": {
           "en": "2 Gang Curtain Module (2)"
         },
-        "capabilities": ["windowcoverings_set", "windowcoverings_state"],
+        "capabilities": [
+          "windowcoverings_set",
+          "windowcoverings_state"
+        ],
         "energy": {
           "approximation": {
             "usageOn": 0,

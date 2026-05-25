@@ -4,8 +4,12 @@
     "en": "Outdoor Smart Socket"
   },
   "class": "socket",
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "capabilities": [
     "onoff",
     "meter_power",
@@ -18,20 +22,35 @@
     "small": "{{driverAssetsPath}}/images/small.png"
   },
   "zigbee": {
-    "manufacturerName": [
-      "_TZ3000_uwkja6z1"
-    ],
+    "manufacturerName": [],
     "productId": [
       "TS011F"
     ],
     "endpoints": {
       "1": {
-        "clusters": [0, 3, 4, 5, 6, 1794, 2820, 57344, 57345],
-        "bindings": [10, 25]
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          1794,
+          2820,
+          57344,
+          57345
+        ],
+        "bindings": [
+          10,
+          25
+        ]
       },
       "2": {
-        "clusters": [6],
-        "bindings": [6]
+        "clusters": [
+          6
+        ],
+        "bindings": [
+          6
+        ]
       }
     },
     "devices": {
@@ -43,7 +62,7 @@
         "capabilities": [
           "onoff"
         ],
-        "settings": [] 
+        "settings": []
       }
     },
     "learnmode": {

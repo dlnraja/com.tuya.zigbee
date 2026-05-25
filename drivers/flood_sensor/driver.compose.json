@@ -4,8 +4,12 @@
     "en": "Flood sensor"
   },
   "class": "sensor",
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "capabilities": [
     "alarm_water",
     "alarm_battery"
@@ -21,11 +25,7 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TUYATEC-3tipnsrx",
-      "_TZ3000_4uvovz4r",
-      "_TZ3000_3dfewsk1",
-      "_TZ3000_ww9i3e0y",
-      "_TZ3000_wuep9zng"
+      "TUYATEC-3tipnsrx"
     ],
     "productId": [
       "RH3001",

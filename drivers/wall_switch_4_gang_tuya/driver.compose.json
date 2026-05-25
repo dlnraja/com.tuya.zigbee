@@ -4,9 +4,15 @@
     "en": "4 Gang Wall Switch"
   },
   "class": "socket",
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
-  "capabilities": ["onoff"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
+  "capabilities": [
+    "onoff"
+  ],
   "images": {
     "large": "{{driverAssetsPath}}/images/large.png",
     "small": "{{driverAssetsPath}}/images/small.png"
@@ -20,26 +26,31 @@
   "zigbee": {
     "manufacturerName": [
       "_TZE200_shkxsgis",
-      "_TZE204_aagrxlbd",
-      "_TZE200_aqnazj70",
-      "_TZE200_di3tfv5b",
-      "_TZE200_mexisfik",
-      "_TZE204_6wi2mope",
-      "_TZE204_iik0pquw"
+      "_TZE200_aqnazj70"
     ],
     "productId": [
       "TS0601"
     ],
     "endpoints": {
       "1": {
-        "clusters": [0, 4, 5, 61184],
-        "bindings": [25, 10]
+        "clusters": [
+          0,
+          4,
+          5,
+          61184
+        ],
+        "bindings": [
+          25,
+          10
+        ]
       }
     },
     "devices": {
       "secondGang": {
         "class": "socket",
-        "capabilities": ["onoff"],
+        "capabilities": [
+          "onoff"
+        ],
         "name": {
           "en": "4 Gang Wall Switch - Second Gang"
         },
@@ -52,7 +63,9 @@
       },
       "thirdGang": {
         "class": "socket",
-        "capabilities": ["onoff"],
+        "capabilities": [
+          "onoff"
+        ],
         "name": {
           "en": "4 Gang Wall Switch - Third Gang"
         },
@@ -65,7 +78,9 @@
       },
       "fourthGang": {
         "class": "socket",
-        "capabilities": ["onoff"],
+        "capabilities": [
+          "onoff"
+        ],
         "name": {
           "en": "4 Gang Wall Switch - Fourth Gang"
         },

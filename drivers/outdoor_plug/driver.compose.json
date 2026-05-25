@@ -4,8 +4,12 @@
     "en": "Outdoor Plug without metering"
   },
   "class": "socket",
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "capabilities": [
     "onoff"
   ],
@@ -20,7 +24,6 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_pnzfdr9y",
       "_TZ3000_br3laukf"
     ],
     "productId": [
