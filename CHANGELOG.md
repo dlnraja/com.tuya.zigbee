@@ -4,7 +4,29 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.5] - 2026-05-25
+## [8.1.6] - 2026-05-25
+
+### Bug Fixes
+- Fixed curtain_module_2_gang driver configuration (39 fingerprint updates).
+- Fixed dimmer_1_gang driver compose (114 changes, DP mapping corrections).
+- Fixed dimmer_2_gang driver compose (155 changes, added missing productIds).
+- Fixed curtain_module driver (16 changes).
+- Fixed air_purifier driver (4 changes).
+- Removed outdated contact_sensor compose (39 removed entries).
+- Removed outdated dimmer_wall_1gang compose (12 removed).
+- Removed outdated air_quality_co2, air_quality_comprehensive, bulb_rgb, bulb_rgb_led, bulb_rgbw, bulb_tunable_white, curtain_motor_tilt entries.
+
+### New Features
+- Added new fingerprints for christmas_lights driver (90 changes).
+- Added curtain_module_2_gang driver with full fingerprint set.
+- Added productIds to dimmer_1_gang_tuya and dimmer_2_gang_tuya drivers.
+
+### Improvements
+- Updated din_rail_meter driver compose.
+- Cleaned up stale configurations across multiple drivers.
+---
+
+ [8.1.5] - 2026-05-25
 
 ### New Devices
 - Added Smart Solar Soil Sensor (_TZE284_rqcuwlsa) to soil_sensor driver
