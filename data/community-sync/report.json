@@ -1,5 +1,5 @@
 {
-  "ts": "2026-05-25T09:25:35.183Z",
+  "ts": "2026-05-25T10:56:45.090Z",
   "currentCount": 10340,
   "src": {
     "johan": {
@@ -19245,9 +19245,19 @@
       "enriched": true
     },
     "gh": {
-      "issueCount": 59,
+      "issueCount": 60,
       "prCount": 1,
       "deviceRequests": [
+        {
+          "repo": "dlnraja/com.tuya.zigbee",
+          "num": 339,
+          "title": "[radiator_valve] Bug: _TZE200_9xfjixap",
+          "mfrs": [
+            "_TZE200_9xfjixap",
+            "_TZE200_9xfjixap",
+            "_TZE200_9xfjixap"
+          ]
+        },
         {
           "repo": "dlnraja/com.tuya.zigbee",
           "num": 337,
@@ -19531,17 +19541,6 @@
             "_TZE204_81yrt3lo",
             "_TZE204_81yrt3lo",
             "_TZE204_81yrt3lo"
-          ]
-        },
-        {
-          "repo": "JohanBendz/com.tuya.zigbee",
-          "num": 1392,
-          "title": "Device Request - PIR Motion Detector Zigbee - _TZ3040_o4mkahkc / TS0202",
-          "mfrs": [
-            "_TZ3040_o4mkahkc",
-            "_TZ3040_o4mkahkc",
-            "_TZ3040_o4mkahkc",
-            "_TZ3040_o4mkahkc"
           ]
         }
       ]
