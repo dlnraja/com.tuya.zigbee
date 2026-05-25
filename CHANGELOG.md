@@ -4,7 +4,17 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [8.1.10] - 2026-05-25
+## [8.1.11] - 2026-05-25
+
+### Bug Fixes
+- Fixed crash on air purifier smoke and siren flow cards caused by TDZ before initialization.
+
+### New Fingerprints
+- Added 298 new fingerprints from Z2M, ZHA, community reports, and JohanBendz contributions.
+- Total: 413 drivers, 3,296 fingerprints validated.
+---
+
+ [8.1.10] - 2026-05-25
 
 ### Bug Fixes
 - Fixed critical validation errors in contact_sensor_curtain, contact_sensor_dimmer, and wall_dimmer_1gang_1way device classes
