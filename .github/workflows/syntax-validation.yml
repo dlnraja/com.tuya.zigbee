@@ -1,0 +1,43 @@
+name: Syntax Validation Gate
+
+on:
+  push:
+    branches: [master, stable-v5]
+  pull_request:
+    branches: [master]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  syntax-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+      - name: 🛡️ Strict Pre-Commit Integrity & Gateway Scan
+        run: node scripts/PRE_COMMIT_CHECKS.js
+      - name: Check for forbidden patterns
+        run: |
+          if grep -r "getDeviceConditionCard" drivers/ lib/ --include="*.js" -l; then
+            echo "❌ Found forbidden getDeviceConditionCard usage"
+            exit 1
+          fi
+          echo "✅ No forbidden patterns found"
+      - name: Validate Homey app
+        run: npx homey app validate --level=publish
+      - name: Check app.json size
+        run: |
+          SIZE=$(stat -c%s app.json 2>/dev/null || wc -c < app.json)
+          echo "app.json size: $SIZE bytes"
+          if [ $SIZE -gt 10485760 ]; then
+            echo "⚠️ app.json exceeds 10MB"
+          fi

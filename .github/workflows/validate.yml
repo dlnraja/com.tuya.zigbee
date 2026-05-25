@@ -192,8 +192,18 @@ jobs:
       - name: 🧪 Run Tuya Unified Multi-Layer Quality Gate
         run: node scripts/_verify_prs.js
 
+      - name: 🛡️ Check Git Conflicts
+        run: npm run validate:conflicts
+
+      - name: 🔍 Verify Fingerprints Integrity
+        continue-on-error: false
+        run: npm run validate:fingerprints
+
       - name: 🔍 Validate (npx primary)
         run: npx homey app validate --level ${{ inputs.level || 'publish' }}
+
+      - name: 🛡️ Fleetwood Integrity & Manifest Gateway
+        run: node scripts/PRE_COMMIT_CHECKS.js
 
       - name: 🔍 Validate (Athom Docker)
         continue-on-error: true
