@@ -1,45 +1,8 @@
 {
-  "timestamp": "2026-05-25T04:05:14.328Z",
+  "timestamp": "2026-05-25T04:31:16.464Z",
   "totalFiles": 0,
-  "totalFixes": 204,
+  "totalFixes": 196,
   "rules": {
-    "fingerprint-case": {
-      "count": 8,
-      "files": [
-        {
-          "file": "drivers/button_wireless_1/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
-        },
-        {
-          "file": "drivers/contact_sensor/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
-        },
-        {
-          "file": "drivers/dimmer_wall_1gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
-        },
-        {
-          "file": "drivers/energy_meter_3phase/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
-        },
-        {
-          "file": "drivers/fingerprint_lock/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 0)"
-        },
-        {
-          "file": "drivers/illuminance_sensor/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 3)"
-        },
-        {
-          "file": "drivers/switch_1gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 1)"
-        },
-        {
-          "file": "drivers/switch_3gang/driver.compose.json",
-          "detail": "Expanded fingerprints with robust casing variants (added 2)"
-        }
-      ]
-    },
     "flow-card-try-catch": {
       "count": 31,
       "files": [
