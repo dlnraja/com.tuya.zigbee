@@ -34,6 +34,42 @@ class TuyaSirenDriver extends ZigBeeDriver {
   
   
   
+'use strict';
+
+const { ZigBeeDriver } = require('homey-zigbeedriver');
+
+/**
+ * v5.5.569: CRITICAL FIX - Flow card run listeners were missing
+ * Same issue as smoke_detector_advanced - cards defined but not registered
+ */
+class TuyaSirenDriver extends ZigBeeDriver {
+  /**
+   * v7.0.12: Defensive getDeviceById override to prevent crashes during deserialization.
+   * If a device cannot be found (e.g. removed while flow is triggering), return null instead of throwing.
+   */
+  getDeviceById(id) {
+    try {
+      return super.getDeviceById(id);
+    } catch (err) {
+      this.error(`[CRASH-PREVENTION] Could not get device by id: ${id} - ${err.message}`);
+      return null;
+    }
+  }
+
+
+  async onInit() {
+    await super.onInit();
+    if (this._flowCardsRegistered) return;
+    this._flowCardsRegistered = true;
+
+    this.log('TuyaSirenDriver v5.11.28 initialized');
+    this._registerFlowCards();
+  
+  
+  
+  
+  
+  
   
   }
 
@@ -45,7 +81,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // CONDITION: Siren is/is not sounding
     // 
     try {
-      const sirenCondition =
+      const sirenCondition = this.homey.flow.getConditionCard('siren_is_sounding');
 
       sirenCondition.registerRunListener(async (args) => {
         const device = args.device;
@@ -66,7 +102,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Turn on siren
     // 
     try {
-      const turnOnAction =
+      const turnOnAction = this.homey.flow.getActionCard('siren_turn_on');
 
       turnOnAction.registerRunListener(async (args) => {
         const device = args.device;
@@ -97,7 +133,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Turn off siren
     // 
     try {
-      const turnOffAction =
+      const turnOffAction = this.homey.flow.getActionCard('siren_turn_off');
 
       turnOffAction.registerRunListener(async (args) => {
         const device = args.device;
@@ -128,7 +164,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set volume
     // 
     try {
-      const setVolumeAction =
+      const setVolumeAction = this.homey.flow.getActionCard('siren_set_volume');
 
       setVolumeAction.registerRunListener(async (args) => {
         const device = args.device;
@@ -161,7 +197,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set duration
     // 
     try {
-      const setDurationAction =
+      const setDurationAction = this.homey.flow.getActionCard('siren_set_duration');
 
       setDurationAction.registerRunListener(async (args) => {
         const device = args.device;
@@ -192,7 +228,7 @@ class TuyaSirenDriver extends ZigBeeDriver {
     // ACTION: Set melody
     // 
     try {
-      const setMelodyAction =
+      const setMelodyAction = this.homey.flow.getActionCard('siren_set_melody');
 
       setMelodyAction.registerRunListener(async (args) => {
         const device = args.device;
@@ -221,4 +257,3 @@ class TuyaSirenDriver extends ZigBeeDriver {
 }
 
 module.exports = TuyaSirenDriver;
-
