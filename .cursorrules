@@ -37,7 +37,7 @@ class Device extends PhysicalButtonMixin(VirtualButtonMixin(HybridSwitchBase))
 - **Inheritance**: Drivers must inherit from `TuyaZigbeeDevice` (or `UnifiedBase`) to benefit from L14.
 - **SanityFilter**: Automatically active. Filters EMA (noise) and ROC (spikes).
 - **Anti-Flood**: Throttling is managed at the base class level.
-- **Case-Insensitivity**: Match `manufacturerName` using `.toLowerCase().includes()`.
+- **Case-Insensitivity**: Use `CaseInsensitiveMatcher.js` (`lib/utils/CaseInsensitiveMatcher.js`) for all manufacturerName matching. Manual `.toLowerCase()` is forbidden.
 - **Smart Divisors (v8.2+)**: Use `smartDivisorDetect()` for measure_temperature and measure_humidity parsing. Do NOT hardcode `value / 100` or `value / 10`.
 
 ## Phoenix Sovereign Architecture (v8.2.0+) Rules
