@@ -50,6 +50,7 @@ vite.config.js
 .env.*
 config.local.js
 secrets.json
+credentials.json
 
 # === Root junk files (catch-all) ===
 _*.js
