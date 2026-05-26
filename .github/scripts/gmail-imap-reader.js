@@ -268,7 +268,7 @@ async function readViaIMAP(opts = {}) {
       const seqSet = new Set();
       for (const kw of kws) { try { (await c.search({ since: new Date(since), subject: kw })).forEach(s => seqSet.add(s)) } catch {} }
       for (const fr of senders) { try { (await c.search({ since: new Date(since), from: fr })).forEach(s => seqSet.add(s)) } catch {} }
-      for (const bk of ['_TZE200', '_TZE204', '_TZE284', '_TZ3000', 'TS0601', 'diagnostic report', 'Homey', 'crash log', 'device error', 'report id', 'diagnostic log', 'report', 'issue']) {
+      for (const bk of ['_TZE200', '_TZE204', '_TZE284', '_TZ3000', 'TS0601']) {
         try { (await c.search({ since: new Date(since), body: bk })).forEach(s => seqSet.add(s)) } catch {}
       }
       const seqs = [...seqSet].sort((a, b) => b - a).slice(0, opts.maxResults || 2000);
