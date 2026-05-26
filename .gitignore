@@ -169,6 +169,7 @@ scripts/sync/data/
 
 # Claude Code session files
 .claude/
+CLAUDE.md
 nul
 
 # External source cache (re-downloaded by sync workflow)
