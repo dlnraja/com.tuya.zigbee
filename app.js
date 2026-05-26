@@ -58,6 +58,7 @@ const SanityFilter = require('./lib/filter/SanityFilter');
 
 class TuyaUnifiedZigbeeApp extends OAuth2App {
   static OAUTH2_CLIENT = SmartThingsOAuth2Client;
+  static OAUTH2_DRIVERS = []; // Zigbee drivers don't use OAuth2 — prevents loading all 413 manifests at startup
 
   _flowCardsRegistered = false;
   flowCardManager = null;
