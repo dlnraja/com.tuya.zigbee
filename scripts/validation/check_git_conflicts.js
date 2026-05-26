@@ -22,19 +22,14 @@ function walk(dir) {
             if (['.js', '.json', '.md', '.yml', '.yaml'].includes(ext)) {
                 try {
                     const content = fs.readFileSync(p, 'utf8');
-                    let found = false;
-                    for (const marker of markers) {
-                        if (content.includes(marker)) {
-                            found = true;
-                            break;
-                        }
-                    }
+                    const conflictRegex = /^(?:<{7}(?:\s|\b)|={7}(?:\r?\n|$)|>{7}(?:\s|\b)|\|{7}(?:\s|\b))/m;
+                    const found = conflictRegex.test(content);
 
                     if (found) {
                         console.error(`\x1b[31m[ERROR] Unresolved git conflict found in: ${p}\x1b[0m`);
-                        const lines = content.split('\n');
+                        const lines = content.split(/\r?\n/);
                         lines.forEach((line, idx) => {
-                            if (/^<{7} |^={7}|^>{7} |^\|{7} /.test(line)) {
+                            if (/^(?:<{7}(?:\s|\b)|={7}$|>{7}(?:\s|\b)|\|{7}(?:\s|\b))/.test(line.trim())) {
                                 console.error(`  Line ${idx + 1}: ${line.trim()}`);
                             }
                         });
