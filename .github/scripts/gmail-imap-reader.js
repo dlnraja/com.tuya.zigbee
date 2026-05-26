@@ -268,7 +268,7 @@ async function readViaIMAP(opts = {}) {
       const seqSet = new Set();
       for (const kw of kws) { try { (await c.search({ since: new Date(since), subject: kw })).forEach(s => seqSet.add(s)) } catch {} }
       for (const fr of senders) { try { (await c.search({ since: new Date(since), from: fr })).forEach(s => seqSet.add(s)) } catch {} }
-      for (const bk of ['_TZE200', '_TZE204', '_TZE284', '_TZ3000', 'TS0601', 'TS0041', 'TS0042', 'TS0043', 'TS0044', 'TS0001', 'TS0002', 'TS0003', 'TS0004', 'TS011F', 'TS0201', 'TS0203', 'TS0501', 'TS0601', 'PJ-1203', 'PJ-1203A']) {
+      for (const bk of ['_TZE200', '_TZE204', '_TZE284', '_TZ3000', 'TS0601', 'TS0041', 'TS0042', 'TS0043', 'TS0044', 'TS0001', 'TS0002', 'TS0003', 'TS0004', 'TS011F', 'TS0201', 'TS0203', 'TS0501', 'TS0601', 'PJ-1203', 'PJ-1203A', '_TYZB01', '_TYST11', 'TS0011', 'TS0012', 'TS0013', 'TS0014', 'TS0015', 'TS0502', 'TS0503', 'TS0504', 'TS0505', 'TS0051', 'TS0052', 'TS0053', 'TS0054', 'TS110E', 'TS110F', 'TS0202', 'TS0204', 'TS0205', 'TS0207', 'TS0211', 'TS0212', 'TS0215', 'TS0216', 'TS0218', 'TS0222', 'TS0301', 'TS0302', 'TS0726', 'TS0801', 'TS1001', 'TS1101', 'TS1201', 'TS1301']) {
         try { (await c.search({ since: new Date(since), body: bk })).forEach(s => seqSet.add(s)) } catch {}
       }
       const seqs = [...seqSet].sort((a, b) => b - a).slice(0, opts.maxResults || 100);
@@ -317,8 +317,8 @@ async function readViaIMAP(opts = {}) {
               }
             }
 
-            // Limit body to 48KB to keep full crash logs
-            body = body.substring(0, 48000);
+            // Limit body to 256KB to keep massive crash logs in their entirety without truncating
+            body = body.substring(0, 256000);
 
             // Extract pseudo/username
             const pseudo = extractPseudo(fromName + ' <' + fromAddr + '>', null, body);
