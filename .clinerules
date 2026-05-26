@@ -94,6 +94,13 @@
 
 \n
 
+## Dynamic RAM Optimization & Dual-Layer Pairing (v9.0.0+)
+- **Buffer-Based Direct JSON Loading (Double Heap memory fix)**: For all large JSON/file database loading (like `fingerprints.json` or `driver-mapping-database.json`), you **MUST** read the file directly as a raw Buffer (`fs.readFileSync(fpath)`) instead of converted UTF-16 string (`utf8`). Node.js allows passing a Buffer directly to `JSON.parse(buffer)`. This avoids allocating a giant intermediate JS String on the V8 heap and prevents fatal OOM crashes under Homey Pro's strict 64MB memory limit.
+- **Defensive V8 Garbage Collection**: The loader forces `global.gc()` sweeps (if available) before and after database parses to cleanly eject transient chunks.
+- **Static vs Dynamic Dual-Layer Matching**:
+  - **Static Manifests**: The manufacturer name, ZCL clusters, and `modelId` must remain statically registered in `driver.compose.json` / `app.json` to allow the Homey Pro box to match the hardware and complete the pairing flow locally.
+  - **Dynamic JSON Databases**: Kept in the app bundle (fully unignored in `.homeyignore`) to refine capabilities and custom DP parser operations dynamically at runtime, ensuring offline capability mapping continues to work perfectly.
+
 ## Fleetwood Gateway & Syntax Purity Mandates (v8.4.0+)
 - **ZCL Method Override Purity**: Any driver class override of ZCL/SDK methods (e.g., `getDeviceById(id)`) MUST have correct closing braces to prevent breaking following method declarations like `onInit()` or `onNodeInit()`.
 - **Standard ZCL Measurement Scoping**: Inside ZCL Measurement cluster listeners (`attr.rmsCurrent`, etc.), never re-declare block-scoped variables (`const scaled`) in the same scope block; use unique variables (`scaledCurrent` and `scaledPower`) to prevent standard JS scope crash exceptions.

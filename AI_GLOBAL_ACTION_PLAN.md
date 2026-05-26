@@ -86,6 +86,15 @@ Pour toute anomalie ou intégration, vous devez croiser les informations à l'ai
 | **GitHub** | Historique des correctifs, discussions (même closes) | `github-scanner.js` |
 | **Domotique** | Définitions de DPs, coefficients, clusters Zigbee | `deep-crossref-scraper.js` |
 
+### C. Gestion RAM V8 — Optimisation Bufferisée & Appairage Hors-Ligne (v9.0.0+)
+Pour éliminer définitivement les crashs de dépassement de tas V8 (`FATAL ERROR: Reached heap limit Allocation failed`) lors du traitement de gros fichiers JSON sur la box Homey Pro (limite stricte de 64 Mo de tas) :
+1. **Lecture sous forme de Buffer brut** : Évitez strictement `fs.readFileSync(fpath, 'utf8')` qui alloue une chaîne UTF-16 géante en JS (environ 24 Mo d'overhead). Utilisez à la place `fs.readFileSync(fpath)` pour lire le fichier sous forme de **Buffer Node.js brut** stocké dans la mémoire C++ externe.
+2. **Direct Buffer parsing** : Passez directement le Buffer à `JSON.parse(buffer)`. Node.js gère cela en natif, réduisant l'empreinte mémoire transitoire de **50 %**.
+3. **Garbage Collection défensive** : Appelez activement `global.gc()` (si disponible) avant et après le parsing pour forcer la libération des résidus de mémoire.
+4. **Stratégie d'Appairage Double Couche (Dual-Layer)** :
+   - **Couche Statique (Pairing)** : Les signatures constructeurs (MFR) et les `modelId`/`deviceId` de pairing doivent rester inscrits en dur dans les fichiers manifestes (`driver.compose.json` / `app.json`) pour permettre l'association locale sur la box Homey.
+   - **Couche Dynamique (Runtime)** : Les bases JSON dynamiques (`data/fingerprints.json` et `driver-mapping-database.json`) sont conservées dans le bundle (un-ignored dans `.homeyignore`) pour alimenter le raffinement dynamique des Data Points (DP) et des diviseurs en temps réel après le pairing.
+
 ---
 
 ## 3. 🛡️ DUAL-CONTEXT ENVIRONMENT GUARD (MANDATORY SEPARATION)
