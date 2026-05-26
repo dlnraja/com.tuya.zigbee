@@ -2,7 +2,7 @@
 > **Branch**: `master` (Experimental/Beta) + `stable-v5` (Production/Stable)  
 > **App ID**: `com.dlnraja.tuya.zigbee` (Stable app: `com.dlnraja.tuya.zigbee.stable`)  
 > **Status**: ACTIVE & SECURED | **Zero-Defect Publish Quality Gate**: 100% Passed  
-> **Metrics (2026-05-26)**: 413 drivers | 12760 fingerprints | 4038 flows | 13 open issues | 16 new Z2M devices  
+> **Metrics (2026-05-26)**: 413 drivers | 12766 fingerprints | 4038 flows | 13 open issues | 16 new Z2M devices  
 
 ---
 

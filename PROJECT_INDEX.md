@@ -1,7 +1,7 @@
 # PROJECT_INDEX.md - Unified Smart Home Engine (Local-First) Reference Guide
 
 > **Version**: 9.0.0+ | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
-> **413 drivers** | **12760 fingerprints** | **4038 flows** | **Zigbee + WiFi** | **SDK v3** | **SDK Deprecations: 0**
+> **413 drivers** | **12766 fingerprints** | **4038 flows** | **Zigbee + WiFi** | **SDK v3** | **SDK Deprecations: 0**
 
 ⚠️ **ATTENTION AI AGENTS, LOCAL CLAUDE CODE, & ANTIGRAVITY SKILLS** ⚠️
 Before making ANY changes to this repository, you **MUST** execute the mandatory entry procedure:
