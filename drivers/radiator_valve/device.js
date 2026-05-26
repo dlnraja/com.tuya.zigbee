@@ -35,7 +35,8 @@ class RadiatorValveDevice extends PhysicalButtonMixin(VirtualButtonMixin(Unified
       '_TZE284_c6wv4xyo', '_tze284_c6wv4xyo',
       '_TZE284_hvaxb2tc', '_tze284_hvaxb2tc',
       '_TZE204_o3x45p96', '_tze204_o3x45p96',
-      '_tze200_ne4pikwm', '_TZE284_ne4pikwm'
+      '_tze200_ne4pikwm', '_TZE284_ne4pikwm',
+      '_TZE200_9xfjixap', '_tze200_9xfjixap'
     ];
     if (me167Ids.some(id => mfr.toLowerCase().includes(id.toLowerCase()))) {return 'me167';}
     
