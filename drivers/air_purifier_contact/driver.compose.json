@@ -12,7 +12,8 @@
     "measure_luminance",
     "dim",
     "measure_pm25",
-    "onoff"
+    "onoff",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [

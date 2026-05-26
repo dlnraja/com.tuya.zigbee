@@ -11,7 +11,8 @@
     "button.identify",
     "alarm_contact",
     "alarm_tamper",
-    "measure_luminance"
+    "measure_luminance",
+    "alarm_battery"
   ],
   "zigbee": {
     "productId": [],

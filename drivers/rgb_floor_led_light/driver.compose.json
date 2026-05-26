@@ -3,7 +3,9 @@
   "name": {
     "en": "Livarno Lux Atmosphere Floor LED Light"
   },
-  "$extends": ["light_color_ambiance"],
+  "$extends": [
+    "light_color_ambiance"
+  ],
   "energy": {
     "approximation": {
       "usageOn": 12.5,
@@ -12,15 +14,29 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_8uaoilu9"
+      "_tz3000_8uaoilu9",
+      "_TZ3000_8uaoilu9",
+      "_TZ3000_8UAOILU9"
     ],
     "productId": [
       "TS0502A"
     ],
     "endpoints": {
       "1": {
-        "clusters": [0, 3, 4, 5, 6, 8, 768],
-        "bindings": [6, 8, 768]
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "bindings": [
+          6,
+          8,
+          768
+        ]
       }
     },
     "learnmode": {
@@ -30,5 +46,4 @@
       }
     }
   }
-
 }

@@ -3,7 +3,9 @@
   "name": {
     "en": "RGB Led Light Bar"
   },
-  "$extends": ["light_color_ambiance"],
+  "$extends": [
+    "light_color_ambiance"
+  ],
   "energy": {
     "approximation": {
       "usageOn": 8,
@@ -12,8 +14,12 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_tz3000_gek6snaj",
       "_TZ3000_gek6snaj",
-      "_TZ3210_iystcadi"
+      "_TZ3000_GEK6SNAJ",
+      "_tz3210_iystcadi",
+      "_TZ3210_iystcadi",
+      "_TZ3210_IYSTCADI"
     ],
     "productId": [
       "TS0505A",
@@ -21,8 +27,20 @@
     ],
     "endpoints": {
       "1": {
-        "clusters": [0, 3, 4, 5, 6, 8, 768],
-        "bindings": [6, 8, 768]
+        "clusters": [
+          0,
+          3,
+          4,
+          5,
+          6,
+          8,
+          768
+        ],
+        "bindings": [
+          6,
+          8,
+          768
+        ]
       }
     },
     "learnmode": {
@@ -32,5 +50,4 @@
       }
     }
   }
-
 }

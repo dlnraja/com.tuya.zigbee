@@ -4,8 +4,12 @@
     "en": "Door & Window Sensor"
   },
   "class": "sensor",
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "capabilities": [
     "alarm_contact",
     "alarm_battery",
@@ -24,7 +28,10 @@
   "zigbee": {
     "manufacturerName": [
       "zbeacon",
-      "_TZ3000_c8zfad4a"
+      "ZBEACON",
+      "_tz3000_c8zfad4a",
+      "_TZ3000_c8zfad4a",
+      "_TZ3000_C8ZFAD4A"
     ],
     "productId": [
       "DS01",
@@ -39,8 +46,7 @@
           32,
           1280
         ],
-        "bindings": [
-        ]
+        "bindings": []
       }
     },
     "learnmode": {

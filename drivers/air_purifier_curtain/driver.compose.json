@@ -15,7 +15,8 @@
     "measure_battery",
     "onoff",
     "dim",
-    "measure_pm25"
+    "measure_pm25",
+    "alarm_battery"
   ],
   "zigbee": {
     "manufacturerName": [],

@@ -12,7 +12,8 @@
     "light_saturation",
     "light_temperature",
     "measure_battery",
-    "onoff"
+    "onoff",
+    "alarm_battery"
   ],
   "energy": {
     "approximation": {

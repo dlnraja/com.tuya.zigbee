@@ -17,7 +17,8 @@
     "measure_luminance.distance",
     "onoff",
     "dim",
-    "measure_pm25"
+    "measure_pm25",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "measure_luminance.distance": {

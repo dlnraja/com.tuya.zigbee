@@ -13,7 +13,8 @@
   "capabilities": [
     "alarm_contact",
     "alarm_tamper",
-    "alarm_battery"
+    "alarm_battery",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -26,12 +27,21 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TUYATEC-0l6xaqmi",
+      "tuyatec-0l6xaqmi",
+      "TUYATEC-0L6XAQMI",
+      "_tz3000_osu834un",
       "_TZ3000_osu834un",
-      "Immax",
-      "Visonic",
+      "_TZ3000_OSU834UN",
+      "immax",
+      "IMMAX",
+      "visonic",
+      "VISONIC",
+      "_tz3000_hkcpblrs",
       "_TZ3000_hkcpblrs",
-      "_TZ3000_cqlnswn0"
+      "_TZ3000_HKCPBLRS",
+      "_tz3000_cqlnswn0",
+      "_TZ3000_cqlnswn0",
+      "_TZ3000_CQLNSWN0"
     ],
     "productId": [
       "RH3001",

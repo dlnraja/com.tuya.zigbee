@@ -15,7 +15,8 @@
     "onoff",
     "measure_humidity",
     "dim",
-    "measure_pm25"
+    "measure_pm25",
+    "alarm_battery"
   ],
   "platforms": [
     "local"

@@ -12,7 +12,8 @@
   ],
   "capabilities": [
     "alarm_water",
-    "alarm_battery"
+    "alarm_battery",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -25,7 +26,8 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TUYATEC-3tipnsrx"
+      "tuyatec-3tipnsrx",
+      "TUYATEC-3TIPNSRX"
     ],
     "productId": [
       "RH3001",

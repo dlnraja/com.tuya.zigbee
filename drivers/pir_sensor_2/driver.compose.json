@@ -12,7 +12,8 @@
   ],
   "capabilities": [
     "alarm_motion",
-    "alarm_battery"
+    "alarm_battery",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -25,9 +26,15 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_tz3000_kmh5qpmb",
       "_TZ3000_kmh5qpmb",
+      "_TZ3000_KMH5QPMB",
+      "_tz3040_6ygjfyll",
       "_TZ3040_6ygjfyll",
-      "_TZ3040_bb6xaihh"
+      "_TZ3040_6YGJFYLL",
+      "_tz3040_bb6xaihh",
+      "_TZ3040_bb6xaihh",
+      "_TZ3040_BB6XAIHH"
     ],
     "productId": [
       "TS0202"

@@ -12,7 +12,8 @@
   ],
   "capabilities": [
     "alarm_motion",
-    "alarm_battery"
+    "alarm_battery",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -25,9 +26,12 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "TUYATEC-lha8pbwd",
-      "TUYATEC-zn9wyqtr",
-      "TUYATEC-dxnohkpd"
+      "tuyatec-lha8pbwd",
+      "TUYATEC-LHA8PBWD",
+      "tuyatec-zn9wyqtr",
+      "TUYATEC-ZN9WYQTR",
+      "tuyatec-dxnohkpd",
+      "TUYATEC-DXNOHKPD"
     ],
     "productId": [
       "RH3040"

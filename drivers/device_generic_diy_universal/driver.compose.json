@@ -31,7 +31,8 @@
     "tuya_dp_value",
     "tuya_dp_string",
     "tuya_dp_raw",
-    "tuya_cluster_event"
+    "tuya_cluster_event",
+    "alarm_battery"
   ],
   "capabilitiesOptions": {
     "tuya_dp_value": {
