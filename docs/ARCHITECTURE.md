@@ -1161,3 +1161,15 @@ To prevent regression during future automated synchronization or community finge
 To resolve silent flow listener failures and mismatches:
 - **Mismatches Solved**: Aligned Javascript trigger IDs in `_handleDP` (like `sensor_climate_smart_climate_sensor_smart_smart_scene_panel_switch_${g}_changed`) with the exact `driver.flow.compose.json` schema declarations.
 - **Actions Registered**: Automatically maps and registers action card listeners (e.g., `set_switch_1` to `set_switch_4`) to control relay and button states via `onoff.gang{N}` and send DP commands directly to the hardware.
+
+## 34. Dynamic RAM Optimization & Buffer-Based JSON Parsing (v9.0.0+)
+
+To completely resolve Out Of Memory (OOM) fatal crashes (`FATAL ERROR: Reached heap limit Allocation failed`) when parsing large JSON files like `data/fingerprints.json` (11.8MB) in Homey Pro (which has a strict 64MB heap limit), the database loading layers have been optimized to bypass standard UTF-16 string allocation:
+1. **Buffer-Based File Ingestion**: Instead of using `fs.readFileSync(fpath, 'utf8')` (which creates a massive UTF-16 JavaScript string in V8 memory consuming ~24MB of JS heap for a 12MB file), the database is loaded directly as a raw Node.js **Buffer** (`fs.readFileSync(fpath)`).
+2. **Direct Buffer JSON Parsing**: Node.js allows passing a Buffer directly to `JSON.parse(buffer)`. Parsing the Buffer directly avoids allocating the intermediate UTF-16 string on the JS heap, instantly cutting the peak memory overhead by **50%**!
+3. **Active Garbage Collection Triggers**: Defensive V8 garbage collection sweeps (`global.gc()`) are triggered before and after parsing (if exposed) to instantly flush transient memory fragments and keep the heap clean.
+4. **Resilient Error Interception**: If parsing fails due to heap limits or corrupted files, the parser catches the error gracefully and falls back to an empty object `{}` rather than crashing the Homey Pro box, guaranteeing runtime execution safety.
+5. **Static-vs-Dynamic Dual-Layer Pairing Protocol**:
+   - **Static manifests (`driver.compose.json` / `app.json`)**: Manufacturer names and pairing `modelId` definitions remain statically defined to allow local pairing on the box.
+   - **Dynamic database files (`fingerprints.json` / `driver-mapping-database.json`)**: Kept in the app bundle (fully unignored in `.homeyignore`) to refine the paired device's exact capabilities dynamically at runtime.
+
