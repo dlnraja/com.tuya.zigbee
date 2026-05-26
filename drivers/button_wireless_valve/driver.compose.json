@@ -14,9 +14,7 @@
     "onoff",
     "dim.valve"
   ],
-  "capabilitiesOptions": {
-    "maintenanceAction": true,
-    "button.1": {
+  "capabilitiesOptions": {    "button.1": {
       "title": {
         "en": "Button 1",
         "fr": "Bouton 1"
