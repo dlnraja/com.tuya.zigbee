@@ -13,7 +13,8 @@
   "capabilities": [
     "alarm_contact",
     "alarm_water",
-    "alarm_battery"
+    "alarm_battery",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -26,9 +27,14 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TYST11_qq9mpfhw",
+      "_tyst11_qq9mpfhw",
+      "_TYST11_QQ9MPFHW",
+      "_tz3000_85czd6fy",
       "_TZ3000_85czd6fy",
-      "_TZ3000_6oabgtzv"
+      "_TZ3000_85CZD6FY",
+      "_tz3000_6oabgtzv",
+      "_TZ3000_6oabgtzv",
+      "_TZ3000_6OABGTZV"
     ],
     "productId": [
       "TS0207",

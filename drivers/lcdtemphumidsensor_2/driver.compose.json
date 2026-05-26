@@ -4,8 +4,12 @@
     "en": "LCD Temperature & Humidity Sensor"
   },
   "class": "sensor",
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "capabilities": [
     "measure_temperature",
     "measure_humidity",
@@ -23,7 +27,8 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TYZB01_cbiezpds"
+      "_tyzb01_cbiezpds",
+      "_TYZB01_CBIEZPDS"
     ],
     "productId": [
       "SM0201"

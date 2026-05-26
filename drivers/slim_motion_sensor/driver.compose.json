@@ -4,11 +4,16 @@
     "en": "Slim motion sensor"
   },
   "class": "sensor",
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "capabilities": [
     "alarm_motion",
-    "alarm_battery"
+    "alarm_battery",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -22,7 +27,9 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_TZ3000_lf56vpxj"
+      "_tz3000_lf56vpxj",
+      "_TZ3000_lf56vpxj",
+      "_TZ3000_LF56VPXJ"
     ],
     "productId": [
       "TS0202"

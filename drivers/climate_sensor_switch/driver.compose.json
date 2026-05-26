@@ -10,7 +10,8 @@
     "button.toggle",
     "button.identify",
     "measure_temperature",
-    "measure_humidity"
+    "measure_humidity",
+    "alarm_battery"
   ],
   "zigbee": {
     "productId": [],

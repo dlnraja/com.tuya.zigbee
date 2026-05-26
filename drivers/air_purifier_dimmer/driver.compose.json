@@ -12,7 +12,8 @@
     "onoff",
     "measure_power",
     "measure_battery",
-    "measure_pm25"
+    "measure_pm25",
+    "alarm_battery"
   ],
   "energy": {
     "batteries": [

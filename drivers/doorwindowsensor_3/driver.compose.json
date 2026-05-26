@@ -4,11 +4,16 @@
     "en": "Door & Window Sensor"
   },
   "class": "sensor",
-  "platforms": ["local"],
-  "connectivity": ["zigbee"],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "zigbee"
+  ],
   "capabilities": [
     "alarm_contact",
-    "alarm_battery"
+    "alarm_battery",
+    "measure_battery"
   ],
   "energy": {
     "batteries": [
@@ -22,9 +27,15 @@
   },
   "zigbee": {
     "manufacturerName": [
+      "_tz3000_zgrffiwg",
       "_TZ3000_zgrffiwg",
+      "_TZ3000_ZGRFFIWG",
+      "_tz3000_bpkijo14",
       "_TZ3000_bpkijo14",
-      "_TZ3000_uvti8nkd"
+      "_TZ3000_BPKIJO14",
+      "_tz3000_uvti8nkd",
+      "_TZ3000_uvti8nkd",
+      "_TZ3000_UVTI8NKD"
     ],
     "productId": [
       "TS0203"
