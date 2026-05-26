@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-26T14:47:49.765Z",
+  "timestamp": "2026-05-26T15:10:04.433Z",
   "driversChecked": 413,
   "collisions": [
     {
@@ -10996,6 +10996,9 @@
     "lib\\zigbee\\ZigbeeHealthMonitor.js:120: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\zigbee\\ZigpyIntegration.js:131: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
     "lib\\zigbee\\ZigpyIntegration.js:132: Manual identity comparison found. Use \"CI\" CaseInsensitiveMatcher helper.",
+    "tmp\\github_issues_dump.json:1: Forbidden invisible character (char code 65279) detected.",
+    "tmp\\github_issues_full.json:1: Forbidden invisible character (char code 65279) detected.",
+    "tmp\\github_prs_full.json:1: Forbidden invisible character (char code 65279) detected.",
     "tmp_diag.json:1: Forbidden invisible character (char code 0) detected.",
     "tmp_diag.json:2: Forbidden invisible character (char code 0) detected.",
     "tmp_diag.json:3: Forbidden invisible character (char code 0) detected.",
