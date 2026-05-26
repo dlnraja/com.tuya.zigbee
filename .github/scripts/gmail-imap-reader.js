@@ -263,15 +263,15 @@ async function readViaIMAP(opts = {}) {
     if (!lock) { await c.logout(); return null }
     const out = [];
     try {
-      const kws = ['tuya', 'zigbee', 'homey', '_TZE', '_TZ3', 'TS0', 'diagnostic', 'fingerprint', 'device report', 'crash', 'error log'];
-      const senders = ['noreply@community.homey.app', 'noreply@athom.com', 'notifications@github.com', 'noreply@homey.app'];
+      const kws = ['_TZE', '_TZ3', 'TS0', 'diagnostic', 'fingerprint', 'device report', 'crash', 'error log'];
+      const senders = ['noreply@community.homey.app', 'noreply@athom.com', 'noreply@homey.app'];
       const seqSet = new Set();
       for (const kw of kws) { try { (await c.search({ since: new Date(since), subject: kw })).forEach(s => seqSet.add(s)) } catch {} }
       for (const fr of senders) { try { (await c.search({ since: new Date(since), from: fr })).forEach(s => seqSet.add(s)) } catch {} }
       for (const bk of ['_TZE200', '_TZE204', '_TZE284', '_TZ3000', 'TS0601']) {
         try { (await c.search({ since: new Date(since), body: bk })).forEach(s => seqSet.add(s)) } catch {}
       }
-      const seqs = [...seqSet].sort((a, b) => b - a).slice(0, opts.maxResults || 2000);
+      const seqs = [...seqSet].sort((a, b) => b - a).slice(0, opts.maxResults || 100);
       console.log('[IMAP]', seqSet.size, 'relevant msgs, fetching', seqs.length);
       if (seqs.length > 0) {
         const range = seqs.join(',');
