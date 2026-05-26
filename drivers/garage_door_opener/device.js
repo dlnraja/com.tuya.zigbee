@@ -9,6 +9,10 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
 
   async onNodeInit({ zclNode }) {
     this.log('[GarageOpener] 🚀 Initializing hardened driver...');
+    if (this.hasCapability('measure_luminance')) {
+      await this.removeCapability('measure_luminance').catch(() => {});
+      this.log('[GarageOpener] Removed stale measure_luminance capability');
+    }
     await super.onNodeInit({ zclNode });
 
     // TS0603 ZCL Fallback
@@ -32,6 +36,7 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
 
     // 2. Capability Listeners
     this.registerCapabilityListener('garagedoor_closed', async (value) => {
+      if (typeof this.markAppCommand === 'function') { this.markAppCommand(1, value); }
       this.log(`[GarageOpener] Setting state to: ${value ? 'CLOSED' : 'OPEN'}`);
       return this.sendTuyaCommand(1, !value ? 1 : 0, 'bool');
     });

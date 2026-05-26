@@ -13,6 +13,13 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 - Added missing `homey-oauth2app` dependency required by `app.js`.
 - Fixed `TypeError: this.setOAuth2Config is not a function` crash in `wifi_smartthings_device` driver — method does not exist on `OAuth2Driver`; client is already configured at app level via `static OAUTH2_CLIENT`.
 - Fixed `ReferenceError: letDataQuery is not defined` crash in `BaseUnifiedDevice.js` — typo `letDataQuery` (missing space) prevented module from loading.
+- Fixed `garage_door_opener`: flow action card IDs mismatched compose JSON (`garage_door_open` → `garage_door_opener_open`), causing Open/Close flow actions to be dead.
+- Fixed `BaseUnifiedDevice.setTuyaDpValue`: `addCapability` / `setCapabilityValue` called without `this.` context, causing `ReferenceError` on every DP report.
+- Fixed `BaseUnifiedDevice._initHybridDataQuery`: used undeclared `HybridDataQuery` instead of `DataQuery`, and `newDataQuery` instead of `new DataQuery(this)`.
+- Fixed `BaseUnifiedDevice.detectPowerSource`: power source string `"mains"` not recognized — `powerSourceStr` was derived from object instead of `powerSource.powerSource`.
+- Fixed `BaseUnifiedDevice.setTuyaDpValue`: `addCapability` failure (invalid capability e.g. `tuya_dp_1`) no longer propagates as `[err]` — early return prevents subsequent `setCapabilityValue` call.
+- Fixed `DriverMappingLoader`: database with `drivers` key (not `devices`) caused `Cannot convert undefined or null to object` on load — normalized both keys after parse.
+- Fixed `garage_door_opener` icon: replaced placeholder SVG (target symbol) with garage door outline matching existing PNG assets.
 
 ---
 
