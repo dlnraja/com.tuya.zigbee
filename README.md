@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (May 2026)
+
+| Version | Feature |
+|---------|---------|
+| **v8.1.13** | v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app ins... |
+| **v8.1.12** | v8.1.12 — 298 new fingerprints added, DeviceIdentificationDatabase crash fix,... |
+| **v8.1.11** | Bug fix: air purifier smoke and siren flow cards no longer crash on init. 298... |
+| **v8.1.10** | Bug fixes: contact_sensor_curtain, contact_sensor_dimmer, wall_dimmer_1gang_1... |
+| **v8.1.9** | v8.1.9 — No driver changes. |
+| **v8.1.8** | 298 new device fingerprints added. Smart plug driver fixes, rain sensor, wate... |
+| **v8.1.7** | 298 new device fingerprints added. Smart plug and water leak sensor fixes. Fl... |
+| **v8.1.6** | Fixes for curtain motor, dimmer, and air quality drivers. New fingerprints fo... |
+| **v8.1.5** | v8.1.5 — 238 new fingerprints, Smart Solar Soil Sensor, Insoma irrigation val... |
+| **v8.1.4** | . New capabilities: measure_frequency, measure_power_factor, alarm_gas, alarm... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
