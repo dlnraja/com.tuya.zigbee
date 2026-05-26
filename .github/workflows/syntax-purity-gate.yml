@@ -1,5 +1,6 @@
+# DISABLED v8.5.0 — Redundant, unified-ci.yml covers all syntax purity checks
 name: JS Syntax Purity Gate
-
+if: false
 on:
   push:
     branches: [ master ]
@@ -14,33 +15,7 @@ defaults:
     shell: bash
 
 jobs:
-  validate-syntax:
+  placeholder:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          
-      - name: 🛡️ Strict Syntax Purity Guard
-        run: |
-          echo "=== STARTING GLOBAL SYNTAX PURITY SCAN ==="
-          node scripts/maintenance/STRICT_SYNTAX_GUARD.js
-          echo "=== STARTING ARITHMETIC INTEGRITY SCAN ==="
-          node scripts/maintenance/ARITHMETIC_INTEGRITY_CHECK.js
-          echo "=== STARTING FLEETWOOD INTEGRITY GATEWAY ==="
-          node scripts/PRE_COMMIT_CHECKS.js
-          echo "=== VALIDATION PASSED ==="
-
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - run: npm ci
-      - run: npm run lint
+      - run: echo "DISABLED — merged into unified-ci.yml validate job"

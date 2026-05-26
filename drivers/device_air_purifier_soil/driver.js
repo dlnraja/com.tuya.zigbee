@@ -40,19 +40,10 @@ class SoilSensorDriver extends ZigBeeDriver {
     this._registeredIeeeAddresses = new Set();
 
     // v5.5.556: Safe flow card registration helper (no stderr on missing cards)
-    // A8: NaN Safety - use safeDivide/safeMultiply
-  (id) => {
+    const safeGetTrigger = (id) => {
       try {
-        return
-
-      
-  
-  
-  
-  
-  
-  
-  } catch (e) {
+        return this.homey.flow.getTriggerCard(id);
+      } catch (e) {
         this.log(`[FLOW] Trigger '${id}' not defined - skipping`);
         return null;
       }
@@ -60,8 +51,7 @@ class SoilSensorDriver extends ZigBeeDriver {
 
     const safeGetCondition = (id) => {
       try {
-        return
-
+        return this.homey.flow.getConditionCard(id);
       } catch (e) {
         this.log(`[FLOW] Condition '${id}' not defined - skipping`);
         return null;
@@ -197,5 +187,3 @@ class SoilSensorDriver extends ZigBeeDriver {
 }
 
 module.exports = SoilSensorDriver;
-
-

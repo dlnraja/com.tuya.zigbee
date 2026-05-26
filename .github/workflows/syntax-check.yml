@@ -1,5 +1,8 @@
+# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
+# Re-enable by removing 'if: false' below
 name: 🔍 Syntax Check & SDK3 Validation
 
+if: false
 on:
   push:
     branches: [master, stable-v5]

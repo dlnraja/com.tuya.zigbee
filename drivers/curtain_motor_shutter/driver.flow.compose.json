@@ -33,7 +33,7 @@
       }
     },
     {
-      "id": "curtain_motor_windowcoverings_set_changed_dup_3bk9n",
+      "id": "curtain_motor_windowcoverings_set_changed",
       "title": {
         "en": "Position changed",
         "fr": "Position changée"
@@ -56,7 +56,7 @@
       }
     },
     {
-      "id": "curtain_motor_dim_changed_dup_vgt37",
+      "id": "curtain_motor_dim_changed",
       "title": {
         "en": "Brightness changed",
         "fr": "Luminosité changée"
@@ -79,7 +79,7 @@
       }
     },
     {
-      "id": "curtain_motor_battery_low_dup_c7ngr",
+      "id": "curtain_motor_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "curtain_motor_physical_on_dup_wr9y2",
+      "id": "curtain_motor_physical_on",
       "title": {
         "en": "Physically opened",
         "fr": "Ouvert physiquement"
@@ -117,7 +117,7 @@
       }
     },
     {
-      "id": "curtain_motor_physical_off_dup_zpqu2",
+      "id": "curtain_motor_physical_off",
       "title": {
         "en": "Physically closed",
         "fr": "Fermé physiquement"
@@ -139,7 +139,7 @@
       }
     },
     {
-      "id": "curtain_motor_physical_single_dup_je5l8",
+      "id": "curtain_motor_physical_single",
       "title": {
         "en": "Physically pressed",
         "fr": "Pressé physiquement"
@@ -161,7 +161,7 @@
       }
     },
     {
-      "id": "curtain_motor_lux_changed_dup_g7nsv",
+      "id": "curtain_motor_lux_changed",
       "title": {
         "en": "Luminance changed",
         "fr": "Luminance changée",
@@ -179,7 +179,7 @@
   ],
   "actions": [
     {
-      "id": "curtain_motor_set_windowcoverings_set_dup_ja05a",
+      "id": "curtain_motor_set_windowcoverings_set",
       "title": {
         "en": "Set position to...",
         "fr": "Régler la position à..."
@@ -205,7 +205,7 @@
       }
     },
     {
-      "id": "curtain_motor_windowcoverings_open_dup_cakc1",
+      "id": "curtain_motor_windowcoverings_open",
       "title": {
         "en": "Open",
         "fr": "Ouvrir"
@@ -217,7 +217,7 @@
       }
     },
     {
-      "id": "curtain_motor_windowcoverings_close_dup_l6aqq",
+      "id": "curtain_motor_windowcoverings_close",
       "title": {
         "en": "Close",
         "fr": "Fermer"
@@ -229,7 +229,7 @@
       }
     },
     {
-      "id": "curtain_motor_set_dim_dup_l3o2p",
+      "id": "curtain_motor_set_dim",
       "title": {
         "en": "Set brightness to...",
         "fr": "Régler la luminosité à..."
@@ -255,7 +255,7 @@
       }
     },
     {
-      "id": "curtain_motor_stop_dup_q2bsi",
+      "id": "curtain_motor_stop",
       "title": {
         "en": "Stop",
         "fr": "Arrêter",
@@ -271,7 +271,7 @@
       }
     },
     {
-      "id": "curtain_motor_set_favorite_dup_ekit5",
+      "id": "curtain_motor_set_favorite",
       "title": {
         "en": "Go to favorite position",
         "fr": "Aller position favorite",
@@ -291,7 +291,7 @@
       }
     },
     {
-      "id": "curtain_motor_set_brightness_dup_9a2kn",
+      "id": "curtain_motor_set_brightness",
       "title": {
         "en": "Set brightness",
         "fr": "Régler luminosité",
@@ -317,7 +317,7 @@
       }
     },
     {
-      "id": "curtain_motor_set_position_dup_igcdt",
+      "id": "curtain_motor_set_position",
       "title": {
         "en": "Set position",
         "fr": "Régler position",
@@ -343,7 +343,7 @@
       }
     },
     {
-      "id": "curtain_motor_open_dup_5r00r",
+      "id": "curtain_motor_open",
       "title": {
         "en": "Open",
         "fr": "Ouvrir",
@@ -359,7 +359,7 @@
       }
     },
     {
-      "id": "curtain_motor_close_dup_usinn",
+      "id": "curtain_motor_close",
       "title": {
         "en": "Close",
         "fr": "Fermer",

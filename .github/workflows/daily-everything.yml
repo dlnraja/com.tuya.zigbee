@@ -1,5 +1,8 @@
+# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
+# Re-enable by removing 'if: false' below
 name: "🌌 UNIFIED ENGINE — Daily Galaxy Orchestrator"
 
+if: false
 on:
   schedule:
     - cron: '0 2 * * 0'    # Full overnight scan at 02:00 UTC every Sunday

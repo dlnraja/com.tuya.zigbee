@@ -4,6 +4,7 @@
 
 name: "Driver Maintenance"
 
+if: false
 on:
   schedule:
     - cron: '0 4 * * 5'

@@ -1,4 +1,7 @@
+# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
+# Re-enable by removing 'if: false' below
 name: Monthly API Discovery
+if: false
 on:
   schedule:
     - cron: '0 4 15 * *'

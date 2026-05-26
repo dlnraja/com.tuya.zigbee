@@ -1,4 +1,7 @@
+# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
+# Re-enable by removing 'if: false' below
 name: Collect Diagnostics
+if: false
 on:
   schedule:
     - cron: '15 10 * * 1'

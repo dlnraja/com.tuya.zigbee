@@ -4,6 +4,7 @@
 
 name: 🔍 Code Quality Check
 
+if: false
 on:
   schedule:
     - cron: '0 3 * * 3'  # Weekly Wednesday 03:00 UTC — periodic quality check

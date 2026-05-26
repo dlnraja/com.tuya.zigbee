@@ -4062,7 +4062,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turned_on_dup_payo6",
+        "id": "bulb_rgb_led_smart_bulb_rgb_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -4080,7 +4080,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turned_off_dup_qrmu8",
+        "id": "bulb_rgb_led_smart_bulb_rgb_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -4098,7 +4098,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_dim_changed_dup_foyuw",
+        "id": "bulb_rgb_led_smart_bulb_rgb_dim_changed",
         "title": {
           "en": "Brightness changed",
           "fr": "Luminosité changée"
@@ -4127,7 +4127,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turned_on_dup_k1ywl",
+        "id": "bulb_rgb_led_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé",
@@ -4149,7 +4149,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turned_off_dup_mhyn8",
+        "id": "bulb_rgb_led_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint",
@@ -4171,7 +4171,7 @@
         }
       },
       {
-        "id": "bulb_rgb_battery_low_dup_d0z4z",
+        "id": "bulb_rgb_led_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -8483,7 +8483,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_pressed_dup_wack0",
+        "id": "button_wireless_1_button_1gang_button_pressed",
         "title": {
           "en": "Button pressed",
           "fr": "Bouton appuyé"
@@ -8512,7 +8512,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_double_press_dup_aursz",
+        "id": "button_wireless_1_button_1gang_button_double_press",
         "title": {
           "en": "Button double-pressed",
           "fr": "Bouton double-cliqué"
@@ -8541,7 +8541,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_long_press_dup_lx1bs",
+        "id": "button_wireless_1_button_1gang_button_long_press",
         "title": {
           "en": "Button long-pressed",
           "fr": "Bouton pressé longtemps"
@@ -8570,7 +8570,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_multi_press_dup_zzjnd",
+        "id": "button_wireless_1_button_1gang_button_multi_press",
         "title": {
           "en": "Button multi-pressed",
           "fr": "Bouton multi-cliqué"
@@ -8608,7 +8608,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_pressed_dup_uqtp8",
+        "id": "button_wireless_1_button_1gang_button_1_pressed",
         "title": {
           "en": "Button 1 pressed",
           "fr": "Bouton 1 appuyé"
@@ -8626,7 +8626,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_double_dup_mk2ax",
+        "id": "button_wireless_1_button_1gang_button_1_double",
         "title": {
           "en": "Button 1 double-pressed",
           "fr": "Bouton 1 double-cliqué"
@@ -8644,7 +8644,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_long_dup_k5n4v",
+        "id": "button_wireless_1_button_1gang_button_1_long",
         "title": {
           "en": "Button 1 long-pressed",
           "fr": "Bouton 1 pressé longtemps"
@@ -8662,7 +8662,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_triple_dup_mbm87",
+        "id": "button_wireless_1_button_1gang_button_1_triple",
         "title": {
           "en": "Button 1 triple-pressed",
           "fr": "Bouton 1 triple-cliqué"
@@ -8680,7 +8680,7 @@
         }
       },
       {
-        "id": "button_wireless_1_button_1gang_button_1_release_dup_zzkbq",
+        "id": "button_wireless_1_button_1gang_button_1_release",
         "title": {
           "en": "Button 1 released - after hold",
           "fr": "Bouton 1 relâché - après maintien"
@@ -8698,7 +8698,7 @@
         }
       },
       {
-        "id": "button_wireless_1_battery_low_dup_9u6py",
+        "id": "button_wireless_1_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -13299,7 +13299,7 @@
         }
       },
       {
-        "id": "curtain_motor_windowcoverings_set_changed_dup_3bk9n",
+        "id": "curtain_motor_windowcoverings_set_changed",
         "title": {
           "en": "Position changed",
           "fr": "Position changée"
@@ -13328,7 +13328,7 @@
         }
       },
       {
-        "id": "curtain_motor_dim_changed_dup_vgt37",
+        "id": "curtain_motor_dim_changed",
         "title": {
           "en": "Brightness changed",
           "fr": "Luminosité changée"
@@ -13357,7 +13357,7 @@
         }
       },
       {
-        "id": "curtain_motor_battery_low_dup_c7ngr",
+        "id": "curtain_motor_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -13379,7 +13379,7 @@
         }
       },
       {
-        "id": "curtain_motor_physical_on_dup_wr9y2",
+        "id": "curtain_motor_physical_on",
         "title": {
           "en": "Physically opened",
           "fr": "Ouvert physiquement"
@@ -13407,7 +13407,7 @@
         }
       },
       {
-        "id": "curtain_motor_physical_off_dup_zpqu2",
+        "id": "curtain_motor_physical_off",
         "title": {
           "en": "Physically closed",
           "fr": "Fermé physiquement"
@@ -13435,7 +13435,7 @@
         }
       },
       {
-        "id": "curtain_motor_physical_single_dup_je5l8",
+        "id": "curtain_motor_physical_single",
         "title": {
           "en": "Physically pressed",
           "fr": "Pressé physiquement"
@@ -13463,7 +13463,7 @@
         }
       },
       {
-        "id": "curtain_motor_lux_changed_dup_g7nsv",
+        "id": "curtain_motor_lux_changed",
         "title": {
           "en": "Luminance changed",
           "fr": "Luminance changée",
@@ -13545,7 +13545,7 @@
         }
       },
       {
-        "id": "curtain_motor_windowcoverings_set_changed_dup_lpwyt",
+        "id": "curtain_motor_windowcoverings_set_changed",
         "title": {
           "en": "Position changed",
           "fr": "Position changée"
@@ -13574,7 +13574,7 @@
         }
       },
       {
-        "id": "curtain_motor_dim_changed_dup_ve8pz",
+        "id": "curtain_motor_dim_changed",
         "title": {
           "en": "Brightness changed",
           "fr": "Luminosité changée"
@@ -13603,7 +13603,7 @@
         }
       },
       {
-        "id": "curtain_motor_battery_low_dup_38x5k",
+        "id": "curtain_motor_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -13625,7 +13625,7 @@
         }
       },
       {
-        "id": "curtain_motor_physical_on_dup_h2lei",
+        "id": "curtain_motor_physical_on",
         "title": {
           "en": "Physically opened",
           "fr": "Ouvert physiquement"
@@ -13653,7 +13653,7 @@
         }
       },
       {
-        "id": "curtain_motor_physical_off_dup_9yck8",
+        "id": "curtain_motor_physical_off",
         "title": {
           "en": "Physically closed",
           "fr": "Fermé physiquement"
@@ -13681,7 +13681,7 @@
         }
       },
       {
-        "id": "curtain_motor_physical_single_dup_9v11u",
+        "id": "curtain_motor_physical_single",
         "title": {
           "en": "Physically pressed",
           "fr": "Pressé physiquement"
@@ -13709,7 +13709,7 @@
         }
       },
       {
-        "id": "curtain_motor_lux_changed_dup_l0jv6",
+        "id": "curtain_motor_lux_changed",
         "title": {
           "en": "Luminance changed",
           "fr": "Luminance changée",
@@ -16496,7 +16496,7 @@
         }
       },
       {
-        "id": "generic_tuya_measure_temperature_changed_dup_0i1og",
+        "id": "generic_tuya_measure_temperature_changed",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée"
@@ -16525,7 +16525,7 @@
         }
       },
       {
-        "id": "generic_tuya_measure_humidity_changed_dup_wjpsf",
+        "id": "generic_tuya_measure_humidity_changed",
         "title": {
           "en": "Humidity changed",
           "fr": "Humidité changée"
@@ -16554,7 +16554,7 @@
         }
       },
       {
-        "id": "generic_tuya_dp_received_dup_u7cyg",
+        "id": "generic_tuya_dp_received",
         "title": {
           "en": "Data Point received",
           "fr": "Point de données reçu"
@@ -16592,7 +16592,7 @@
         }
       },
       {
-        "id": "generic_tuya_battery_low_dup_036qp",
+        "id": "generic_tuya_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -16614,7 +16614,7 @@
         }
       },
       {
-        "id": "generic_tuya_temp_changed_dup_yl5ub",
+        "id": "generic_tuya_temp_changed",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée",
@@ -16636,7 +16636,7 @@
         }
       },
       {
-        "id": "generic_tuya_humidity_changed_dup_q7vcq",
+        "id": "generic_tuya_humidity_changed",
         "title": {
           "en": "Humidity changed",
           "fr": "Humidité changée",
@@ -26093,7 +26093,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turned_on_dup_xkkg0",
+        "id": "bulb_rgb_smart_bulb_rgb_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé"
@@ -26111,7 +26111,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turned_off_dup_0kbzf",
+        "id": "bulb_rgb_smart_bulb_rgb_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint"
@@ -26129,7 +26129,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_dim_changed_dup_uc572",
+        "id": "bulb_rgb_smart_bulb_rgb_dim_changed",
         "title": {
           "en": "Brightness changed",
           "fr": "Luminosité changée"
@@ -26158,7 +26158,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turned_on_dup_9bngj",
+        "id": "bulb_rgb_turned_on",
         "title": {
           "en": "Turned on",
           "fr": "Allumé",
@@ -26180,7 +26180,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turned_off_dup_uj9kh",
+        "id": "bulb_rgb_turned_off",
         "title": {
           "en": "Turned off",
           "fr": "Éteint",
@@ -26202,7 +26202,7 @@
         }
       },
       {
-        "id": "bulb_rgb_battery_low_dup_pvn7f",
+        "id": "bulb_rgb_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -35675,7 +35675,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_pressed_dup_g1nwx",
+        "id": "scene_switch_wall_button_pressed",
         "title": {
           "en": "Button pressed",
           "fr": "Bouton appuyé",
@@ -35734,7 +35734,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_double_press_dup_fcxz9",
+        "id": "scene_switch_wall_button_double_press",
         "title": {
           "en": "Button double-pressed",
           "fr": "Bouton double-cliqué",
@@ -35793,7 +35793,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_long_press_dup_8i0bq",
+        "id": "scene_switch_wall_button_long_press",
         "title": {
           "en": "Button long-pressed",
           "fr": "Bouton appui long",
@@ -35852,7 +35852,7 @@
         }
       },
       {
-        "id": "scene_switch_2_battery_low_dup_xt5d9",
+        "id": "scene_switch_wall_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible",
@@ -35874,187 +35874,7 @@
         }
       },
       {
-        "id": "scene_switch_2_button_2gang_button_1_pressed_dup_zyv5k",
-        "title": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuye"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=scene_switch_wall"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Button 1 pressed",
-          "fr": "Bouton 1 appuye"
-        }
-      },
-      {
-        "id": "scene_switch_2_button_2gang_button_1_double_dup_zm9jp",
-        "title": {
-          "en": "Button 1 double-pressed",
-          "fr": "Bouton 1 double-appui"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=scene_switch_wall"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Button 1 double-pressed",
-          "fr": "Bouton 1 double-appui"
-        }
-      },
-      {
-        "id": "scene_switch_2_button_2gang_button_1_long_dup_9pdv5",
-        "title": {
-          "en": "Button 1 long-pressed",
-          "fr": "Bouton 1 appui long"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=scene_switch_wall"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Button 1 long-pressed",
-          "fr": "Bouton 1 appui long"
-        }
-      },
-      {
-        "id": "scene_switch_2_button_2gang_button_1_triple_dup_o5u5v",
-        "title": {
-          "en": "Button 1 triple-pressed",
-          "fr": "Bouton 1 triple-appui"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=scene_switch_wall"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Button 1 triple-pressed",
-          "fr": "Bouton 1 triple-appui"
-        }
-      },
-      {
-        "id": "scene_switch_2_button_2gang_button_1_release_dup_wkt1j",
-        "title": {
-          "en": "Button 1 released",
-          "fr": "Bouton 1 relache"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=scene_switch_wall"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Button 1 released",
-          "fr": "Bouton 1 relache"
-        }
-      },
-      {
-        "id": "scene_switch_2_button_2gang_button_2_pressed_dup_5xruy",
-        "title": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuye"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=scene_switch_wall"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Button 2 pressed",
-          "fr": "Bouton 2 appuye"
-        }
-      },
-      {
-        "id": "scene_switch_2_button_2gang_button_2_double_dup_bppdx",
-        "title": {
-          "en": "Button 2 double-pressed",
-          "fr": "Bouton 2 double-appui"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=scene_switch_wall"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Button 2 double-pressed",
-          "fr": "Bouton 2 double-appui"
-        }
-      },
-      {
-        "id": "scene_switch_2_button_2gang_button_2_long_dup_4f7t7",
-        "title": {
-          "en": "Button 2 long-pressed",
-          "fr": "Bouton 2 appui long"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=scene_switch_wall"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Button 2 long-pressed",
-          "fr": "Bouton 2 appui long"
-        }
-      },
-      {
-        "id": "scene_switch_2_button_2gang_button_2_triple_dup_m71qj",
-        "title": {
-          "en": "Button 2 triple-pressed",
-          "fr": "Bouton 2 triple-appui"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=scene_switch_wall"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Button 2 triple-pressed",
-          "fr": "Bouton 2 triple-appui"
-        }
-      },
-      {
-        "id": "scene_switch_2_button_2gang_button_2_release_dup_8uyhd",
-        "title": {
-          "en": "Button 2 released",
-          "fr": "Bouton 2 relache"
-        },
-        "args": [
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=scene_switch_wall"
-          }
-        ],
-        "titleFormatted": {
-          "en": "Button 2 released",
-          "fr": "Bouton 2 relache"
-        }
-      },
-      {
-        "id": "climate_sensor_temperature_changed_dup_lzeml",
+        "id": "climate_sensor_temperature_changed",
         "highlight": true,
         "title": {
           "en": "Temperature changed",
@@ -36084,7 +35904,7 @@
         }
       },
       {
-        "id": "climate_sensor_humidity_changed_dup_rxpkf",
+        "id": "climate_sensor_humidity_changed",
         "title": {
           "en": "Humidity changed",
           "fr": "Humidité changée"
@@ -36113,7 +35933,7 @@
         }
       },
       {
-        "id": "climate_sensor_battery_low_dup_poadf",
+        "id": "climate_sensor_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible"
@@ -36131,7 +35951,7 @@
         }
       },
       {
-        "id": "climate_sensor_temperature_alarm_high_dup_2kq1t",
+        "id": "climate_sensor_temperature_alarm_high",
         "title": {
           "en": "Temperature too high",
           "fr": "Température trop haute"
@@ -36149,7 +35969,7 @@
         }
       },
       {
-        "id": "climate_sensor_temperature_alarm_low_dup_c49r3",
+        "id": "climate_sensor_temperature_alarm_low",
         "title": {
           "en": "Temperature too low",
           "fr": "Température trop basse"
@@ -36167,7 +35987,7 @@
         }
       },
       {
-        "id": "climate_sensor_humidity_alarm_high_dup_ahio1",
+        "id": "climate_sensor_humidity_alarm_high",
         "title": {
           "en": "Humidity too high",
           "fr": "Humidité trop haute"
@@ -36185,7 +36005,7 @@
         }
       },
       {
-        "id": "climate_sensor_humidity_alarm_low_dup_j2zsi",
+        "id": "climate_sensor_humidity_alarm_low",
         "title": {
           "en": "Humidity too low",
           "fr": "Humidité trop basse"
@@ -36203,7 +36023,7 @@
         }
       },
       {
-        "id": "climate_sensor_temp_changed_dup_4wgzx",
+        "id": "climate_sensor_temp_changed",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée",
@@ -37249,7 +37069,7 @@
         }
       },
       {
-        "id": "motion_sensor_motion_detected_dup_wpnm1",
+        "id": "motion_sensor_motion_detected",
         "highlight": true,
         "title": {
           "en": "Motion detected",
@@ -37268,7 +37088,7 @@
         }
       },
       {
-        "id": "motion_sensor_motion_cleared_dup_7ei1s",
+        "id": "motion_sensor_motion_cleared",
         "title": {
           "en": "Motion cleared",
           "fr": "Mouvement terminé"
@@ -37286,7 +37106,7 @@
         }
       },
       {
-        "id": "motion_sensor_battery_low_dup_be7y5",
+        "id": "motion_sensor_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible"
@@ -37304,7 +37124,7 @@
         }
       },
       {
-        "id": "motion_sensor_battery_changed_dup_ojjz9",
+        "id": "motion_sensor_battery_changed",
         "title": {
           "en": "Battery level changed",
           "fr": "Niveau batterie changé"
@@ -37333,7 +37153,7 @@
         }
       },
       {
-        "id": "motion_sensor_tamper_true_dup_kse41",
+        "id": "motion_sensor_tamper_true",
         "title": {
           "en": "Tamper alarm triggered",
           "fr": "Alarme anti-sabotage déclenchée",
@@ -37355,7 +37175,7 @@
         }
       },
       {
-        "id": "motion_sensor_tamper_false_dup_ome7k",
+        "id": "motion_sensor_tamper_false",
         "title": {
           "en": "Tamper alarm cleared",
           "fr": "Alarme anti-sabotage terminée",
@@ -37377,7 +37197,7 @@
         }
       },
       {
-        "id": "motion_sensor_lux_changed_dup_hjuo1",
+        "id": "motion_sensor_lux_changed",
         "title": {
           "en": "Luminance changed",
           "fr": "Luminance changée",
@@ -37429,7 +37249,7 @@
         }
       },
       {
-        "id": "motion_sensor_tamper_alarm_dup_6e3ic",
+        "id": "motion_sensor_tamper_alarm",
         "title": {
           "en": "Tamper alarm",
           "fr": "Alarme sabotage",
@@ -39524,7 +39344,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_presence_detected_dup_e00vx",
+        "id": "motion_sensor_radar_mmwave_presence_detected",
         "title": {
           "en": "Presence detected",
           "fr": "Présence détectée"
@@ -39542,7 +39362,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_presence_cleared_dup_cqjhy",
+        "id": "motion_sensor_radar_mmwave_presence_cleared",
         "title": {
           "en": "Presence cleared",
           "fr": "Présence disparue"
@@ -39560,7 +39380,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_motion_detected_dup_io3d5",
+        "id": "motion_sensor_radar_mmwave_motion_detected",
         "title": {
           "en": "Motion detected",
           "fr": "Mouvement détecté"
@@ -39578,7 +39398,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_no_motion_dup_wnox6",
+        "id": "motion_sensor_radar_mmwave_no_motion",
         "title": {
           "en": "No motion",
           "fr": "Aucun mouvement"
@@ -39596,7 +39416,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_illuminance_changed_dup_6zwia",
+        "id": "motion_sensor_radar_mmwave_illuminance_changed",
         "title": {
           "en": "Illuminance changed",
           "fr": "Luminosité changée"
@@ -39625,7 +39445,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_temperature_changed_dup_qla6y",
+        "id": "motion_sensor_radar_mmwave_temperature_changed",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée"
@@ -39654,7 +39474,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_humidity_changed_dup_4fdih",
+        "id": "motion_sensor_radar_mmwave_humidity_changed",
         "title": {
           "en": "Humidity changed",
           "fr": "Humidité changée"
@@ -39683,7 +39503,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_target_distance_changed_dup_nf4wn",
+        "id": "motion_sensor_radar_mmwave_target_distance_changed",
         "title": {
           "en": "Target distance changed",
           "fr": "Distance cible changée"
@@ -39712,7 +39532,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_battery_low_dup_eq4s2",
+        "id": "motion_sensor_radar_mmwave_battery_low",
         "title": {
           "en": "Battery low",
           "fr": "Batterie faible"
@@ -39730,7 +39550,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_battery_changed_dup_1tqng",
+        "id": "motion_sensor_radar_mmwave_battery_changed",
         "title": {
           "en": "Battery level changed",
           "fr": "Niveau batterie changé"
@@ -39759,7 +39579,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_distance_changed_dup_hjsk4",
+        "id": "motion_sensor_radar_mmwave_distance_changed",
         "title": {
           "en": "Distance changed",
           "fr": "Distance changée",
@@ -39781,7 +39601,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_temp_changed_dup_6w3n3",
+        "id": "motion_sensor_radar_mmwave_temp_changed",
         "title": {
           "en": "Temperature changed",
           "fr": "Température changée",
@@ -39803,7 +39623,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_lux_changed_dup_l4xe1",
+        "id": "motion_sensor_radar_mmwave_lux_changed",
         "title": {
           "en": "Luminance changed",
           "fr": "Luminance changée",
@@ -58323,7 +58143,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_is_on_dup_t4rvf",
+        "id": "bulb_rgb_led_smart_bulb_rgb_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
@@ -58341,7 +58161,7 @@
         }
       },
       {
-        "id": "bulb_rgb_is_on_dup_f65xq",
+        "id": "bulb_rgb_led_is_on",
         "title": {
           "en": "Is !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}",
@@ -60808,7 +60628,7 @@
         }
       },
       {
-        "id": "generic_tuya_battery_above_dup_w7eyh",
+        "id": "generic_tuya_battery_above",
         "title": {
           "en": "Battery is above...",
           "fr": "Batterie au-dessus de..."
@@ -63424,7 +63244,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_is_on_dup_mgtko",
+        "id": "bulb_rgb_smart_bulb_rgb_is_on",
         "title": {
           "en": "Is turned !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}"
@@ -63442,7 +63262,7 @@
         }
       },
       {
-        "id": "bulb_rgb_is_on_dup_81ok2",
+        "id": "bulb_rgb_is_on",
         "title": {
           "en": "Is !{{on|off}}",
           "fr": "Est !{{allumé|éteint}}",
@@ -64581,7 +64401,7 @@
         }
       },
       {
-        "id": "climate_sensor_temperature_above_dup_hzgys",
+        "id": "climate_sensor_temperature_above",
         "title": {
           "en": "Temperature is above",
           "fr": "Température supérieure à"
@@ -64610,7 +64430,7 @@
         }
       },
       {
-        "id": "climate_sensor_temperature_below_dup_j90ir",
+        "id": "climate_sensor_temperature_below",
         "title": {
           "en": "Temperature is below",
           "fr": "Température inférieure à"
@@ -64639,7 +64459,7 @@
         }
       },
       {
-        "id": "climate_sensor_humidity_above_dup_efp2y",
+        "id": "climate_sensor_humidity_above",
         "title": {
           "en": "Humidity is above",
           "fr": "Humidité supérieure à"
@@ -64668,7 +64488,7 @@
         }
       },
       {
-        "id": "climate_sensor_humidity_below_dup_d3ynt",
+        "id": "climate_sensor_humidity_below",
         "title": {
           "en": "Humidity is below",
           "fr": "Humidité inférieure à"
@@ -65193,7 +65013,7 @@
         ]
       },
       {
-        "id": "motion_sensor_motion_active_dup_h8b3y",
+        "id": "motion_sensor_motion_active",
         "title": {
           "en": "Motion !{{is|is not}} detected",
           "fr": "Mouvement !{{est|n'est pas}} détecté"
@@ -65211,7 +65031,7 @@
         }
       },
       {
-        "id": "motion_sensor_tamper_active_dup_xixm5",
+        "id": "motion_sensor_tamper_active",
         "title": {
           "en": "Tamper !{{is|is not}} active",
           "fr": "Sabotage !{{est|n'est pas}} actif",
@@ -66199,7 +66019,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_is_presence_detected_dup_e5u47",
+        "id": "motion_sensor_radar_mmwave_is_presence_detected",
         "title": {
           "en": "Presence is !{{detected|not detected}}",
           "fr": "Présence !{{détectée|non détectée}}"
@@ -66217,7 +66037,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_illuminance_above_dup_fhhem",
+        "id": "motion_sensor_radar_mmwave_illuminance_above",
         "title": {
           "en": "Illuminance is above",
           "fr": "Luminosité supérieure à"
@@ -66246,7 +66066,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_illuminance_below_dup_06hs3",
+        "id": "motion_sensor_radar_mmwave_illuminance_below",
         "title": {
           "en": "Illuminance is below",
           "fr": "Luminosité inférieure à"
@@ -66275,7 +66095,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_temperature_above_dup_f4110",
+        "id": "motion_sensor_radar_mmwave_temperature_above",
         "title": {
           "en": "Temperature is above",
           "fr": "Température supérieure à"
@@ -66304,7 +66124,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_target_distance_less_than_dup_89l79",
+        "id": "motion_sensor_radar_mmwave_target_distance_less_than",
         "title": {
           "en": "Target distance is less than",
           "fr": "Distance cible inférieure à"
@@ -66333,7 +66153,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_motion_active_dup_v1cak",
+        "id": "motion_sensor_radar_mmwave_motion_active",
         "title": {
           "en": "Motion !{{is|is not}} detected",
           "fr": "Mouvement !{{est|n'est pas}} détecté",
@@ -72525,7 +72345,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turn_on_dup_k8w5o",
+        "id": "bulb_rgb_led_smart_bulb_rgb_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer"
@@ -72543,7 +72363,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turn_off_dup_0wbi0",
+        "id": "bulb_rgb_led_smart_bulb_rgb_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre"
@@ -72561,7 +72381,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_toggle_dup_7gj82",
+        "id": "bulb_rgb_led_smart_bulb_rgb_toggle",
         "title": {
           "en": "Toggle on or off",
           "fr": "Basculer"
@@ -72579,7 +72399,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_set_dim_dup_7p03i",
+        "id": "bulb_rgb_led_smart_bulb_rgb_set_dim",
         "title": {
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
@@ -72610,7 +72430,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turn_on_dup_rsqdj",
+        "id": "bulb_rgb_led_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer",
@@ -72632,7 +72452,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turn_off_dup_ndqug",
+        "id": "bulb_rgb_led_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre",
@@ -72654,7 +72474,7 @@
         }
       },
       {
-        "id": "bulb_rgb_toggle_dup_p33lg",
+        "id": "bulb_rgb_led_toggle",
         "title": {
           "en": "Toggle",
           "fr": "Basculer",
@@ -72676,7 +72496,7 @@
         }
       },
       {
-        "id": "bulb_rgb_set_brightness_dup_hywwp",
+        "id": "bulb_rgb_led_set_brightness",
         "title": {
           "en": "Set brightness",
           "fr": "Régler luminosité",
@@ -76788,7 +76608,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_windowcoverings_set_dup_ja05a",
+        "id": "curtain_motor_set_windowcoverings_set",
         "title": {
           "en": "Set position to...",
           "fr": "Régler la position à..."
@@ -76819,7 +76639,7 @@
         }
       },
       {
-        "id": "curtain_motor_windowcoverings_open_dup_cakc1",
+        "id": "curtain_motor_windowcoverings_open",
         "title": {
           "en": "Open",
           "fr": "Ouvrir"
@@ -76837,7 +76657,7 @@
         }
       },
       {
-        "id": "curtain_motor_windowcoverings_close_dup_l6aqq",
+        "id": "curtain_motor_windowcoverings_close",
         "title": {
           "en": "Close",
           "fr": "Fermer"
@@ -76855,7 +76675,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_dim_dup_l3o2p",
+        "id": "curtain_motor_set_dim",
         "title": {
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
@@ -76886,7 +76706,7 @@
         }
       },
       {
-        "id": "curtain_motor_stop_dup_q2bsi",
+        "id": "curtain_motor_stop",
         "title": {
           "en": "Stop",
           "fr": "Arrêter",
@@ -76908,7 +76728,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_favorite_dup_ekit5",
+        "id": "curtain_motor_set_favorite",
         "title": {
           "en": "Go to favorite position",
           "fr": "Aller position favorite",
@@ -76934,7 +76754,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_brightness_dup_9a2kn",
+        "id": "curtain_motor_set_brightness",
         "title": {
           "en": "Set brightness",
           "fr": "Régler luminosité",
@@ -76965,7 +76785,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_position_dup_igcdt",
+        "id": "curtain_motor_set_position",
         "title": {
           "en": "Set position",
           "fr": "Régler position",
@@ -76996,7 +76816,7 @@
         }
       },
       {
-        "id": "curtain_motor_open_dup_5r00r",
+        "id": "curtain_motor_open",
         "title": {
           "en": "Open",
           "fr": "Ouvrir",
@@ -77018,7 +76838,7 @@
         }
       },
       {
-        "id": "curtain_motor_close_dup_usinn",
+        "id": "curtain_motor_close",
         "title": {
           "en": "Close",
           "fr": "Fermer",
@@ -77203,7 +77023,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_windowcoverings_set_dup_gdler",
+        "id": "curtain_motor_set_windowcoverings_set",
         "title": {
           "en": "Set position to...",
           "fr": "Régler la position à..."
@@ -77234,7 +77054,7 @@
         }
       },
       {
-        "id": "curtain_motor_windowcoverings_open_dup_ibodj",
+        "id": "curtain_motor_windowcoverings_open",
         "title": {
           "en": "Open",
           "fr": "Ouvrir"
@@ -77252,7 +77072,7 @@
         }
       },
       {
-        "id": "curtain_motor_windowcoverings_close_dup_g969g",
+        "id": "curtain_motor_windowcoverings_close",
         "title": {
           "en": "Close",
           "fr": "Fermer"
@@ -77270,7 +77090,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_dim_dup_anfqm",
+        "id": "curtain_motor_set_dim",
         "title": {
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
@@ -77301,7 +77121,7 @@
         }
       },
       {
-        "id": "curtain_motor_stop_dup_6m8w2",
+        "id": "curtain_motor_stop",
         "title": {
           "en": "Stop",
           "fr": "Arrêter",
@@ -77323,7 +77143,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_favorite_dup_irsyf",
+        "id": "curtain_motor_set_favorite",
         "title": {
           "en": "Go to favorite position",
           "fr": "Aller position favorite",
@@ -77349,7 +77169,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_brightness_dup_1pq5y",
+        "id": "curtain_motor_set_brightness",
         "title": {
           "en": "Set brightness",
           "fr": "Régler luminosité",
@@ -77380,7 +77200,7 @@
         }
       },
       {
-        "id": "curtain_motor_set_position_dup_07kqd",
+        "id": "curtain_motor_set_position",
         "title": {
           "en": "Set position",
           "fr": "Régler position",
@@ -77411,7 +77231,7 @@
         }
       },
       {
-        "id": "curtain_motor_open_dup_tbh0l",
+        "id": "curtain_motor_open",
         "title": {
           "en": "Open",
           "fr": "Ouvrir",
@@ -77433,7 +77253,7 @@
         }
       },
       {
-        "id": "curtain_motor_close_dup_m0jyy",
+        "id": "curtain_motor_close",
         "title": {
           "en": "Close",
           "fr": "Fermer",
@@ -79435,7 +79255,7 @@
         ]
       },
       {
-        "id": "generic_tuya_request_dp_dup_09qf3",
+        "id": "generic_tuya_request_dp",
         "title": {
           "en": "Request Data Point",
           "fr": "Demander Point de Données"
@@ -87659,7 +87479,7 @@
         ]
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turn_on_dup_ytyzf",
+        "id": "bulb_rgb_smart_bulb_rgb_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer"
@@ -87677,7 +87497,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_turn_off_dup_ezcri",
+        "id": "bulb_rgb_smart_bulb_rgb_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre"
@@ -87695,7 +87515,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_toggle_dup_jdf8u",
+        "id": "bulb_rgb_smart_bulb_rgb_toggle",
         "title": {
           "en": "Toggle on or off",
           "fr": "Basculer"
@@ -87713,7 +87533,7 @@
         }
       },
       {
-        "id": "bulb_rgb_smart_bulb_rgb_set_dim_dup_dyblc",
+        "id": "bulb_rgb_smart_bulb_rgb_set_dim",
         "title": {
           "en": "Set brightness to...",
           "fr": "Régler la luminosité à..."
@@ -87744,7 +87564,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turn_on_dup_yusve",
+        "id": "bulb_rgb_turn_on",
         "title": {
           "en": "Turn on",
           "fr": "Allumer",
@@ -87766,7 +87586,7 @@
         }
       },
       {
-        "id": "bulb_rgb_turn_off_dup_2vkqa",
+        "id": "bulb_rgb_turn_off",
         "title": {
           "en": "Turn off",
           "fr": "Éteindre",
@@ -87788,7 +87608,7 @@
         }
       },
       {
-        "id": "bulb_rgb_toggle_dup_3z7px",
+        "id": "bulb_rgb_toggle",
         "title": {
           "en": "Toggle",
           "fr": "Basculer",
@@ -87810,7 +87630,7 @@
         }
       },
       {
-        "id": "bulb_rgb_set_brightness_dup_trzt4",
+        "id": "bulb_rgb_set_brightness",
         "title": {
           "en": "Set brightness",
           "fr": "Régler luminosité",
@@ -90992,7 +90812,7 @@
         ]
       },
       {
-        "id": "motion_sensor_radar_mmwave_set_radar_sensitivity_dup_95fva",
+        "id": "motion_sensor_radar_mmwave_set_radar_sensitivity",
         "title": {
           "en": "Set radar sensitivity",
           "fr": "Définir sensibilité radar"
@@ -91021,7 +90841,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_set_detection_range_dup_g73sq",
+        "id": "motion_sensor_radar_mmwave_set_detection_range",
         "title": {
           "en": "Set detection range",
           "fr": "Définir plage de détection"
@@ -91061,7 +90881,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_set_fading_time_dup_5w6kd",
+        "id": "motion_sensor_radar_mmwave_set_fading_time",
         "title": {
           "en": "Set fading time",
           "fr": "Définir délai d'absence"
@@ -91090,7 +90910,7 @@
         }
       },
       {
-        "id": "motion_sensor_radar_mmwave_set_detection_delay_dup_x4fyy",
+        "id": "motion_sensor_radar_mmwave_set_detection_delay",
         "title": {
           "en": "Set detection delay",
           "fr": "Définir délai de détection"

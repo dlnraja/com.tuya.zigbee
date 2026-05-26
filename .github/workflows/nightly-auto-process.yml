@@ -5,6 +5,7 @@
 
 name: "🌙 Nightly Auto Process"
 
+if: false
 on:
   schedule:
     - cron: '30 2 * * *'  # Staggered by 30min to avoid git conflicts

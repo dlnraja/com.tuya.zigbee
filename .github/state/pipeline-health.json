@@ -1,13 +1,6 @@
 {
   "runs": [
     {
-      "ts": "2026-03-26T16:06:00.550Z",
-      "wf": "Daily Everything Pipeline",
-      "stale": 0,
-      "missing": 0,
-      "alerts": 0
-    },
-    {
       "ts": "2026-03-27T04:34:32.367Z",
       "wf": "Daily Everything Pipeline",
       "stale": 0,
@@ -209,19 +202,36 @@
       "stale": 0,
       "missing": 0,
       "alerts": 0
+    },
+    {
+      "ts": "2026-05-25T20:26:10.410Z",
+      "wf": "manual",
+      "stale": 3,
+      "missing": 0,
+      "alerts": 1
     }
   ],
-  "alerts": [],
-  "lastRun": "2026-05-24T08:20:45.058Z",
+  "alerts": [
+    {
+      "type": "stale",
+      "files": [
+        "nightly-state.json",
+        "diagnostics-state.json",
+        "issue-manager-state.json"
+      ],
+      "msg": "3 state file(s) older than 48h"
+    }
+  ],
+  "lastRun": "2026-05-25T20:26:10.410Z",
   "fileHealth": {
     "nightly-state.json": {
       "ok": true,
-      "ageH": 0,
+      "ageH": 290,
       "size": 5855
     },
     "diagnostics-state.json": {
       "ok": true,
-      "ageH": 0,
+      "ageH": 195,
       "size": 9566
     },
     "pattern-data.json": {
@@ -236,7 +246,7 @@
     },
     "issue-manager-state.json": {
       "ok": true,
-      "ageH": 0,
+      "ageH": 290,
       "size": 19865
     },
     "github-state.json": {

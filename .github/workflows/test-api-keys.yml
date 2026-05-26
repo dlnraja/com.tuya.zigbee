@@ -1,4 +1,7 @@
+# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
+# Re-enable by removing 'if: false' below
 name: "Test AI API Keys Health"
+if: false
 on:
   workflow_dispatch:
   schedule:

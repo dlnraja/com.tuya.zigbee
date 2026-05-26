@@ -5,6 +5,7 @@
 
 name: "Johan SDK3 Auto-Sync"
 
+if: false
 on:
   schedule:
     - cron: '0 5 * * 3'
