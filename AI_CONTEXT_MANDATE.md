@@ -5,7 +5,7 @@
 > 
 > **MANDATORY SECOND STEP**: After reading this mandate, you **MUST** read [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — the complete 22-section investigation methodology for deep diagnostic, cross-referencing forums/emails/GitHub/Z2M/ZHA, bug hunting, and prevention scripting. It is the operational companion to this architectural mandate.
 > 
-> **MANDATORY V8.5.2 UPDATE**: This mandate includes all v8.5.0–v8.5.2 consolidations (workflows unifiés, sécurité durcie, `_destroyed` guard, `safesetCapability()`, UnifiedBatteryHandler, Smart Divisor Manager, global enrichment re-dump 2026-05) validés au 26/05/2026. Voir section 7 pour le changelog complet.
+> **MANDATORY V8.5.5 UPDATE**: This mandate includes all v8.5.0–v8.5.5 consolidations (Gmail IMAP optimizations, workflow speedups, `_destroyed` guard, `safesetCapability()`, UnifiedBatteryHandler, Smart Divisor Manager, new mmWave presence and soil sensor integrations) validated as of 26/05/2026. See section 9 for the complete changelog.
 
 ---
 
@@ -299,8 +299,17 @@ All CI workflows include a `security` job that validates:
 
 ---
 
-## 📝 9. v8.5.2 Consolidation Changelog (26/05/2026)
+## 📝 9. v8.5.5 Consolidation Changelog (26/05/2026)
 
+### 🔵 Gmail IMAP Query & Speed Optimization (v8.5.5)
+- [x] Optimized `gmail-imap-reader.js` by removing generic search keywords (`tuya`, `zigbee`, `homey`) and high-traffic senders (`notifications@github.com`).
+- [x] Restricted maximum parsed results default from `2000` to `100` to avoid IMAP throttling and resolve the 25-minute workflow timeout hang.
+- [x] Integrated `_TZE284_0ints6w` soil sensor variant into `drivers/soil_sensor/driver.compose.json`.
+- [x] Integrated `_TZE284_ft7qqpx3` mmWave presence sensor into `drivers/presence_sensor_radar/driver.compose.json`.
+- [x] Verified compose JSON syntax and ran zero-defect check-ups across all **413 drivers**.
+- [x] Triggered and tracked the draft-to-test promotion GHA run `26459576507`.
+
+## 📝 9b. v8.5.2 Consolidation Changelog (26/05/2026)
 ### 🔵 Intelligence Re-dump (v8.5.2)
 - [x] GitHub issues re-dump : 13 issues ouvertes identifiées, 14 récemment résolues
 - [x] Intelligence engine : 16 nouveaux appareils Z2M, 6 FPs forum non supportés
