@@ -1,10 +1,37 @@
 {
-  "timestamp": "2026-05-26T14:41:31.770Z",
-  "totalNew": 0,
+  "timestamp": "2026-05-26T14:57:47.546Z",
+  "totalNew": 2,
   "withDPs": 0,
   "withPid": 0,
   "multiSource": 0,
-  "sourceBreakdown": {},
-  "newFingerprints": [],
-  "aiPlan": null
+  "sourceBreakdown": {
+    "zha-issue": 2
+  },
+  "newFingerprints": [
+    {
+      "fp": "_TZE284_ft7qqpx3",
+      "source": "zha-issue",
+      "issue": 5016,
+      "title": "Add quirk for Tuya/Zemismart  TS0601_TZE284_ft7qqpx3 mmWave presence sensor",
+      "url": "https://github.com/zigpy/zha-device-handlers/pull/5016",
+      "sources": [
+        "zha-issue"
+      ],
+      "allPids": [],
+      "reporters": []
+    },
+    {
+      "fp": "_TZE284_0ints6w",
+      "source": "zha-issue",
+      "issue": 4987,
+      "title": "Add Tuya soil sensor _TZE284_0ints6w variant",
+      "url": "https://github.com/zigpy/zha-device-handlers/pull/4987",
+      "sources": [
+        "zha-issue"
+      ],
+      "allPids": [],
+      "reporters": []
+    }
+  ],
+  "aiPlan": "AI_OFFLINE_OR_LIMIT_REACHED"
 }

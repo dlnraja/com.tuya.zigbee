@@ -5,7 +5,7 @@
 > 
 > **MANDATORY SECOND STEP**: After reading this mandate, you **MUST** read [GLOBAL_INVESTIGATION_PLAN.md](docs/GLOBAL_INVESTIGATION_PLAN.md) — the complete 22-section investigation methodology for deep diagnostic, cross-referencing forums/emails/GitHub/Z2M/ZHA, bug hunting, and prevention scripting. It is the operational companion to this architectural mandate.
 > 
-> **MANDATORY V8.5.0 UPDATE**: This mandate includes all v8.5.0 consolidations (workflows unifiés, sécurité durcie, `_destroyed` guard, `safesetCapability()`, UnifiedBatteryHandler, Smart Divisor Manager) validés au 26/05/2026. Voir section 7 pour le changelog complet.
+> **MANDATORY V8.5.2 UPDATE**: This mandate includes all v8.5.0–v8.5.2 consolidations (workflows unifiés, sécurité durcie, `_destroyed` guard, `safesetCapability()`, UnifiedBatteryHandler, Smart Divisor Manager, global enrichment re-dump 2026-05) validés au 26/05/2026. Voir section 7 pour le changelog complet.
 
 ---
 
@@ -169,6 +169,25 @@ Ensure you do not regress any of these community-reported and systematically res
 - **Symptom:** Device `_TZ3000_ee9s2k4d` (TS0041) was not recognized.
 - **Fix:** Added to `drivers/button_wireless_1/driver.compose.json` zigbee.manufacturerName array.
 
+### 🔴 Issue #338 (NEW): App Crash on startup (OPEN — v8.5.2)
+- **Symptom:** App crashes on startup — different from PR #302 crash (already fixed).
+- **Priority:** Critique — requires investigation of new crash stack trace.
+- **Next:** Cross-reference with Gmail diagnostics via CI nightly workflow.
+
+### 🔴 Issue #340: [soil_sensor] ZG-303Z (OPEN)
+- **Device:** Soil moisture sensor ZG-303Z
+- **Action:** Cross-ref Z2M/ZHA for correct DP mappings, add fingerprint.
+
+### 🔴 Issue #339 (NEW): [radiator_valve] _TZE200_9xfjixap (OPEN)
+- **Device:** Radiator valve thermostat
+- **Action:** Map TRV DPs (set_point, current_temp, mode) via Z2M converter check.
+
+### 🔴 Issue #334: _TZ3000_yj6k7vfo button_wireless_smart (OPEN)
+- **Action:** Add fingerprint to `button_wireless_smart` driver.
+
+### 🔴 Issue #337 (NEW): [motion_sensor_2] _TZE200_3towulqd (OPEN)
+- **Action:** Add fingerprint to motion_sensor_2, verify ZCL mode.
+
 ### 💬 Forum Topic Resolutions
 - **Lasse_K / Cam / Hartmut_Dunker Switches:** Ensured multi-gang switches (2-gang, 3-gang, 4-gang) correctly map to sub-endpoints. If a physical switch has multiple buttons, their states are separated using sub-capabilities (`onoff.1`, `onoff.2`, etc.) to prevent toggling wrong channels.
 
@@ -280,7 +299,24 @@ All CI workflows include a `security` job that validates:
 
 ---
 
-## 📝 9. v8.5.0 Consolidation Changelog (26/05/2026)
+## 📝 9. v8.5.2 Consolidation Changelog (26/05/2026)
+
+### 🔵 Intelligence Re-dump (v8.5.2)
+- [x] GitHub issues re-dump : 13 issues ouvertes identifiées, 14 récemment résolues
+- [x] Intelligence engine : 16 nouveaux appareils Z2M, 6 FPs forum non supportés
+- [x] Patterns récurrents : 35× false battery alert, 18× pairing failure
+- [x] `docs/GITHUB_ISSUES_PR_ANALYSIS.md` mis à jour avec données fraîches
+- [x] `GLOBAL_IMPROVEMENT_PLAN.md` métriques mises à jour (413 drivers, 3296 FPs)
+- [x] `PROJECT_INDEX.md` synchronisé
+
+### 🔴 Sécurité (v8.5.2)
+- [x] Token `gho_***` [REVOKED] complètement nettoyé des docs
+- [x] Historique git réécrit (rebase autosquash)
+- [x] Push GitHub réussi : `3b3a16404..4fb506b68 master`
+- [x] Windows Credential Manager configuré (git credential helper = manager)
+- [x] MCP GitHub configuré pour Cline + Roo-Cline
+
+## 📝 9b. v8.5.0 Consolidation Changelog (26/05/2026)
 
 ### 🔴 Critical Security Fixes
 - [x] Cleaned GitHub token from `.git/config` remote URL
