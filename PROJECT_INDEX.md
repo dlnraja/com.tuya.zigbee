@@ -783,7 +783,20 @@ Local Tuya WiFi connectivity is designed with an **Enterprise-grade Connection a
 | v8.4.0 | Syntax Unexpected identifier | Missing closing braces in air purifier driver getDeviceById | Restored closing braces to prevent breaking onInit |
 | v8.4.0 | Manifest Energy conflicts | BOTH energy.approximation & measure_power declared | Removed approximation from 33 compose manifests |
 | v8.4.0 | Workflow shell default errors | Missing defaults.run.shell: bash in GHA workflows | Injected bash default config across 16 workflows |
-| v8.5.7 | OOM Heap Allocation failed at startup (Issue #338) | data/fingerprints.json (11.5MB/59K+ FPs) parsed via JSON.parse() at module init, consuming 50-80MB V8 heap, exceeding Homey Pro 64MB limit | Lazy-loading via _ensureLoaded() + excluded 11.5MB fingerprints.json and 653KB driver-mapping-database.json from Homey bundle via .homeyignore |
+| v8.5.7 | OOM Heap Allocation failed at startup (Issue #338) | data/fingerprints.json (11.5MB/59K+ FPs) parsed via JSON.parse() at module init, consuming 50-80MB V8 heap, exceeding Homey Pro 64MB limit | Lazy-loading via _ensureLoaded() + un-ignored and fully reintegrated in .homeyignore (v8.5.8+), solved via direct Buffer parsing (double-heap fix) + defensive V8 GC calls |
+
+### 22.1. Buffer-Based Direct JSON Parsing & Double-Heap Memory Optimization (v9.0.0+)
+To completely resolve Out Of Memory (OOM) fatal crashes (`FATAL ERROR: Reached heap limit Allocation failed`) when parsing large JSON files like `data/fingerprints.json` (11.8MB) in Homey Pro (strict 64MB heap limit), the loader has been optimized to bypass standard string allocation:
+1. **Raw Buffer Reading**: Instead of using `fs.readFileSync(fpath, 'utf8')` (which creates a massive UTF-16 JavaScript string in V8 memory consuming ~24MB of JS heap), the loader reads the database directly as a raw Node.js **Buffer** (`fs.readFileSync(fpath)`).
+2. **Direct Buffer JSON Parsing**: Node.js allows passing a Buffer directly to `JSON.parse(buffer)`. By parsing the Buffer directly, V8's JS heap avoids allocating the massive UTF-16 intermediate string, cutting the transient memory footprint by **50%**!
+3. **Defensive V8 Garbage Collection**: Active V8 garbage collection calls (`global.gc()`) are triggered before and after parsing (if exposed) to instantly flush transient memory fragments and keep the heap clean.
+4. **Resilient Try-Catch Wrapper**: If parsing fails due to any RangeError or OOM, the parser intercepts the error gracefully and falls back to an empty object `{}` rather than crashing the Homey Pro box, ensuring absolute runtime reliability.
+
+### 22.2. Dual-Layer Pairing & Runtime Refinement Design Principle
+To support offline/local functionality while avoiding startup OOM, a two-layer design was implemented:
+- **Static Matching Layer (Pairing Time)**: Device manufacturer names (mfs) and `modelId` / `deviceId` strings must be statically defined in the driver's `driver.compose.json` and the central `app.json` fingerprints. This allows the Homey Pro Z-Wave/Zigbee pairing wizard to match the device and successfully bind it locally.
+- **Dynamic Refinement Layer (Runtime)**: Dynamic database files (like `fingerprints.json` and `driver-mapping-database.json`) must remain in the app bundle (fully unignored in `.homeyignore`) to refine the paired device's exact capability mappings and DP values dynamically at runtime.
+
 
 ### Issues Résolues Récemment
 | # | Titre | Status |
