@@ -16,7 +16,7 @@ class GarageDoorOpenerDriver extends BaseZigBeeDriver {
 
   async onInit() {
     await super.onInit();
-    if (this._flowCardsRegistered) return;
+    if (this._flowCardsRegistered) { return; }
     this._flowCardsRegistered = true;
 
     this.log('[GarageDriver] ✅ Driver initialized (BaseZigBeeDriver crash protection active)');
@@ -32,14 +32,14 @@ class GarageDoorOpenerDriver extends BaseZigBeeDriver {
     };
 
     // Open garage door action
-    reg('garage_door_open', async ({ device }) => {
+    reg('garage_door_opener_open', async ({ device }) => {
       this.log('[GarageDriver][Flow] Open garage door');
       await device.triggerCapabilityListener('garagedoor_closed', false);
       return true;
     });
 
     // Close garage door action
-    reg('garage_door_close', async ({ device }) => {
+    reg('garage_door_opener_close', async ({ device }) => {
       this.log('[GarageDriver][Flow] Close garage door');
       await device.triggerCapabilityListener('garagedoor_closed', true);
       return true;
