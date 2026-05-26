@@ -76,6 +76,7 @@
   },
   "dependencies": {
     "color-space": "1.15.0",
+    "homey-oauth2app": "^3.7.2",
     "homey-zigbeedriver": "^2.2.2",
     "punycode": "^2.3.1",
     "qrcode": "^1.5.4",
