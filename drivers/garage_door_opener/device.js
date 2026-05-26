@@ -36,7 +36,7 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
 
     // 2. Capability Listeners
     this.registerCapabilityListener('garagedoor_closed', async (value) => {
-      if (typeof this.markAppCommand === 'function') { this.markAppCommand(1, value); }
+      if (typeof this._markAppCommand === 'function') { this._markAppCommand(1, value); }
       this.log(`[GarageOpener] Setting state to: ${value ? 'CLOSED' : 'OPEN'}`);
       return this.sendTuyaCommand(1, !value ? 1 : 0, 'bool');
     });
