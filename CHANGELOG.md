@@ -20,6 +20,7 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 - Fixed `BaseUnifiedDevice.setTuyaDpValue`: `addCapability` failure (invalid capability e.g. `tuya_dp_1`) no longer propagates as `[err]` — early return prevents subsequent `setCapabilityValue` call.
 - Fixed `DriverMappingLoader`: database with `drivers` key (not `devices`) caused `Cannot convert undefined or null to object` on load — normalized both keys after parse.
 - Fixed `garage_door_opener` icon: replaced placeholder SVG (target symbol) with garage door outline matching existing PNG assets.
+- Fixed duplicate flow card IDs causing Homey publish validation failure — renamed 99 IDs across 7 drivers (`sensor_motion_radar`, `sensor_contact_motion`, `sensor_climate_contact`, `light_bulb_rgb_rgbw`, `device_generic_tuya_universal`, `curtain_motor_wall`, `curtain_motor_shutter`) to use driver-scoped prefixes.
 
 ---
 

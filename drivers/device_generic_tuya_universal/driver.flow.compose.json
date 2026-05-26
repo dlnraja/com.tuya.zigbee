@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "generic_tuya_measure_temperature_changed",
+      "id": "device_generic_tuya_universal_measure_temperature_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée"
@@ -24,7 +24,7 @@
       }
     },
     {
-      "id": "generic_tuya_measure_humidity_changed",
+      "id": "device_generic_tuya_universal_measure_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée"
@@ -47,7 +47,7 @@
       }
     },
     {
-      "id": "generic_tuya_dp_received",
+      "id": "device_generic_tuya_universal_dp_received",
       "title": {
         "en": "Data Point received",
         "fr": "Point de données reçu"
@@ -79,7 +79,7 @@
       }
     },
     {
-      "id": "generic_tuya_battery_low",
+      "id": "device_generic_tuya_universal_battery_low",
       "title": {
         "en": "Battery low",
         "fr": "Batterie faible",
@@ -95,7 +95,7 @@
       }
     },
     {
-      "id": "generic_tuya_temp_changed",
+      "id": "device_generic_tuya_universal_temp_changed",
       "title": {
         "en": "Temperature changed",
         "fr": "Température changée",
@@ -111,7 +111,7 @@
       }
     },
     {
-      "id": "generic_tuya_humidity_changed",
+      "id": "device_generic_tuya_universal_humidity_changed",
       "title": {
         "en": "Humidity changed",
         "fr": "Humidité changée",
@@ -129,7 +129,7 @@
   ],
   "conditions": [
     {
-      "id": "generic_tuya_battery_above",
+      "id": "device_generic_tuya_universal_battery_above",
       "title": {
         "en": "Battery is above...",
         "fr": "Batterie au-dessus de..."
@@ -155,7 +155,7 @@
   ],
   "actions": [
     {
-      "id": "generic_tuya_request_dp",
+      "id": "device_generic_tuya_universal_request_dp",
       "title": {
         "en": "Request Data Point",
         "fr": "Demander Point de Données"
