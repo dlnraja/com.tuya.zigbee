@@ -1,7 +1,7 @@
 {
   "triggers": [
     {
-      "id": "switch_state_changed",
+      "id": "sr_zs_switch_switch_state_changed",
       "title": {
         "en": "Switch state changed",
         "pl": "Stan przełącznika zmienił się"
@@ -17,7 +17,7 @@
           "values": [
             {
               "id": "1",
-              "title": { 
+              "title": {
                 "en": "Switch 1",
                 "pl": "Przełącznik 1"
               }
@@ -61,7 +61,7 @@
       ]
     },
     {
-      "id": "scene_triggered_configurable",
+      "id": "sr_zs_switch_scene_triggered_configurable",
       "title": {
         "en": "Scene triggered",
         "pl": "Uruchomiono scenę"
@@ -124,7 +124,7 @@
   ],
   "actions": [
     {
-      "id": "set_switch_state",
+      "id": "sr_zs_switch_set_switch_state",
       "title": {
         "en": "Set switch state",
         "pl": "Ustaw stan przełącznika"
@@ -186,7 +186,7 @@
   ],
   "conditions": [
     {
-      "id": "switch_is",
+      "id": "sr_zs_switch_switch_is",
       "title": {
         "en": "Switch # is !{{on|off}}",
         "pl": "Przełącznik # jest !{{włączony|wyłączony}}"
