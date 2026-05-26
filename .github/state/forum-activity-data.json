@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-05-24T21:26:50.845Z",
+  "timestamp": "2026-05-26T19:34:16.630Z",
   "username": "dlnraja",
   "summary": {
     "postCount": 694,
     "topicCount": 1,
     "likes": 73,
-    "likesReceived": 234,
+    "likesReceived": 235,
     "topTopics": [
       {
         "id": 140352,
         "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-        "posts": 1969
+        "posts": 1971
       },
       {
         "id": 26439,
         "title": "[APP][Pro] Tuya Zigbee App",
-        "posts": 1162
+        "posts": 1170
       }
     ],
     "topReplies": [
@@ -49,9 +49,9 @@
     {
       "id": 140352,
       "title": "[APP][Pro] Universal TUYA Zigbee Device App - test",
-      "posts": 1970,
-      "views": 19297,
-      "lastPosted": "2026-05-24T21:20:46.881Z",
+      "posts": 1971,
+      "views": 19408,
+      "lastPosted": "2026-05-25T20:16:52.256Z",
       "slug": "app-pro-universal-tuya-zigbee-device-app-test"
     }
   ],
@@ -17613,6 +17613,13 @@
           "text": "Same problem here, code is:\n\nf96853b6-0330-484b-9091-65736a50dbd1",
           "date": "2026-05-24T21:20:46.881Z",
           "replyTo": 2046
+        },
+        {
+          "num": 2048,
+          "user": "macmonty",
+          "text": "Dylan, thank you so much for your effort and dedication. Your reasons are completely understandable. There are many people who, even though this is unpaid work, still feel entitled to make demands, while you’ve always made it clear that you do this primarily for your own personal use and still choose to share it generously with the whole community — and that says a lot about you.\n\nThank you again for everything. Without you, these devices would never have had support on this platform. I truly hope you find a job that you are passionate about and that brings you the best opportunities.\n\nThank you for everything!!",
+          "date": "2026-05-25T20:16:52.256Z",
+          "replyTo": 2040
         }
       ],
       "category": 7
@@ -25817,6 +25824,62 @@
           "text": "Hi Johan,\n\nI would like to request support for the Tuya Zigbee Pressure/Contact Sensor. Homey pairs it as a generic Zigbee device without functions.\n\nHere are the device details:\n\n\nManufacturer ID / Product ID: TS0601 _TZE200_seq9cm6u / _TZE204_seq9cm6u\n\n\n“ids”: {\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE200_seq9cm6u”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “a4:c1:38:d1:ee:0b:be:07”,\n\n“networkAddress”: 61652,\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE200_seq9cm6u”,\n\n“endpointDescriptors”: [\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 61652,\n\n“_reserved”: 16,\n\n“endpointId”: 1,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 12,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n0,\n\n61184\n\n],\n\n“outputClusters”: [\n\n10,\n\n25\n\n]\n\n}\n\n],\n\n“deviceType”: “enddevice”,\n\n“receiveWhenIdle”: false,\n\n“capabilities”: {\n\n“alternatePANCoordinator”: false,\n\n“deviceType”: false,\n\n“powerSourceMains”: false,\n\n“receiveWhenIdle”: false,\n\n“security”: false,\n\n“allocateAddress”: true\n\n},\n\n“extendedEndpointDescriptors”: {\n\n“1”: {\n\n“clusters”: {\n\n“basic”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“dataTypeId”: 32,\n\n“name”: “zclVersion”,\n\n“value”: 3\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“dataTypeId”: 32,\n\n“name”: “appVersion”,\n\n“value”: 105\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 2,\n\n“dataTypeId”: 32,\n\n“name”: “stackVersion”,\n\n“value”: 1\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 3,\n\n“dataTypeId”: 32,\n\n“name”: “hwVersion”,\n\n“value”: 1\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 4,\n\n“dataTypeId”: 66,\n\n“name”: “manufacturerName”,\n\n“value”: “_TZE200_seq9cm6u”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 5,\n\n“dataTypeId”: 66,\n\n“name”: “modelId”,\n\n“value”: “TS0601”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 6,\n\n“dataTypeId”: 66,\n\n“name”: “dateCode”,\n\n“value”: “”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 7,\n\n“dataTypeId”: 48,\n\n“name”: “powerSource”,\n\n“value”: “battery”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65472,\n\n“dataTypeId”: 66\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65487,\n\n“dataTypeId”: 33\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”,\n\n“reportable”\n\n],\n\n“id”: 65502,\n\n“dataTypeId”: 32\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“dataTypeId”: 33,\n\n“name”: “clusterRevision”,\n\n“value”: 2\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65534,\n\n“dataTypeId”: 48,\n\n“name”: “attributeReportingStatus”,\n\n“value”: “PENDING”\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65504,\n\n“dataTypeId”: 72\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65505,\n\n“dataTypeId”: 72\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65506,\n\n“dataTypeId”: 32\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65507,\n\n“dataTypeId”: 66\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n}\n\n},\n\n“bindings”: {\n\n“time”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“dataTypeId”: 33,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n],\n\n“commandsGenerated”: “UNSUP_GENERAL_COMMAND”,\n\n“commandsReceived”: “UNSUP_GENERAL_COMMAND”\n\n},\n\n“ota”: {}\n\n}\n\n}\n\n}\n\n}\n\n\nThe device is already integrated into Zigbee2MQTT as “TS0601_bed_presence_sensor”. I found a GitHub Issue containing the exact custom External Converter script where all Tuya Data Points (DPs) are fully mapped and explained:\n\n\n  \n      \n\n      zigbee2mqtt.io\n  \n\n  \n    \n\nTuya TS0601_bed_presence_sensor control via MQTT | Zigbee2MQTT\n\n  Integrate your Tuya TS0601_bed_presence_sensor via Zigbee2MQTT with whatever smart home infrastructure you are using without the vendor's bridge or gateway.\n\n\n\n  \n\n  \n    \n    \n  \n\n  \n\n\n\n  \n\n      github.com/Koenkk/zigbee2mqtt\n  \n\n  \n    \n  \n\t  \n  \n\n  \n    \n      [External Converter]: Zigbee Pressure Pad/Bed Occupancy Sensor\n    \n\n    \n      \n        offen 10:45AM - 16 Feb 26 UTC\n      \n\n        \n          geschlossen 07:35PM - 24 Feb 26 UTC\n        \n\n      \n        \n          \n          shopsD\n        \n      \n    \n\n    \n        \n          external converter\n        \n    \n  \n\n\n  \n    ### Link\n\nhttps://www.aliexpress.com/item/1005010633396757.html\n\n### Database en…try\n\n{\"id\":147,\"type\":\"EndDevice\",\"ieeeAddr\":\"0xa4c1380cce82ad5e\",\"nwkAddr\":57656,\"manufId\":4417,\"manufName\":\"_TZE200_seq9cm6u\",\"powerSource\":\"Battery\",\"model>\n\n### Zigbee2MQTT version\n\n2.7.2 commit: unknown\n\n### External converter\n\n```JavaScript\nimport * as exposes from 'zigbee-herdsman-converters/lib/exposes';\nimport * as tuya from 'zigbee-herdsman-converters/lib/tuya';\n\nconst e = exposes.presets;\nconst ea = exposes.access;\n\n// Writable inputs (Tuya schema: DP9, DP101, DP102, DP103 are rw)\nconst tzLocal = {\n    pir_sensitivity: {\n        key: ['pir_sensitivity'],\n        convertSet: async (entity, key, value, meta) => {\n            const map = {low: 0, middle: 1, high: 2};\n            if (typeof value !== 'string' || !(value in map)) {\n                throw new Error(`pir_sensitivity must be one of: low|middle|high`);\n            }\n            await tuya.sendDataPointEnum(entity, 9, map[value]);\n            return {state: {pir_sensitivity: value}};\n        },\n        // rely on reporting instead of polling\n        convertGet: async () => ({}),\n    },\n\n    interval_time: {\n        key: ['interval_time'],\n        convertSet: async (entity, key, value, meta) => {\n            const v = Number(value);\n            if (!Number.isFinite(v)) throw new Error(`interval_time must be a number (minutes)`);\n            await tuya.sendDataPointValue(entity, 101, v);\n            return {state: {interval_time: v}};\n        },\n        convertGet: async () => ({}),\n    },\n\n    pir_delay: {\n        key: ['pir_delay'],\n        convertSet: async (entity, key, value, meta) => {\n            const v = Number(value);\n            if (!Number.isFinite(v)) throw new Error(`pir_delay must be a number (seconds)`);\n            await tuya.sendDataPointValue(entity, 102, v);\n            return {state: {pir_delay: v}};\n        },\n        convertGet: async () => ({}),\n    },\n\n    presence_time: {\n        key: ['presence_time'],\n        convertSet: async (entity, key, value, meta) => {\n            const v = Number(value);\n            if (!Number.isFinite(v)) throw new Error(`presence_time must be a number (seconds)`);\n            await tuya.sendDataPointValue(entity, 103, v);\n            return {state: {presence_time: v}};\n        },\n        convertGet: async () => ({}),\n    },\n};\n\nexport default {\n    fingerprint: [\n        {modelID: 'TS0601', manufacturerName: '_TZE200_seq9cm6u'},\n    ],\n    model: 'TS0601_bed_presence_sensor',\n    vendor: 'Tuya',\n    description: 'Bed presence / pressure sensor (Tuya PIR template)',\n\n    fromZigbee: [tuya.fz.datapoints],\n    toZigbee: [\n        tzLocal.pir_sensitivity,\n        tzLocal.interval_time,\n        tzLocal.pir_delay,\n        tzLocal.presence_time,\n    ],\n\n    exposes: [\n        // DP1 (Tuya code: pir_state). This device uses it as bed occupancy.\n        e.occupancy(),\n\n        // DP4 battery_percentage\n        e.battery(),\n\n        // DP12 Tuya uses lux (illuminance) but it is actually the pressure.\n        exposes.numeric('illuminance', ea.STATE)\n            .withUnit('lux')\n            .withDescription('Pressure'),\n\n        // DP9 pir_sensitivity (rw). Expose as enum strings; Setting is supported.\n        exposes.enum('pir_sensitivity', ea.ALL, ['low', 'middle', 'high'])\n            .withDescription('Sensitivity (rw)'),\n\n        // DP101 interval_time (rw, minutes)\n        exposes.numeric('interval_time', ea.ALL).withUnit('min')\n            .withDescription('Sampling interval (rw)'),\n\n        // DP102 pir_delay (rw, seconds)\n        exposes.numeric('pir_delay', ea.ALL).withUnit('s')\n            .withDescription('Delay to report no presence (rw)'),\n\n        // DP103 presence_time (rw, seconds)\n        exposes.numeric('presence_time', ea.ALL).withUnit('s')\n            .withDescription('Delay to report presence (rw)'),\n\n        // DP104 work_state (ro). Expose numeric with meaning in description to avoid enum conversion issues.\n        exposes.numeric('work_state', ea.STATE)\n            .withDescription('0=pir,1=none,2=pir_5min,3=pir_30min,4=none_5min,5=none_30min (ro)'),\n    ],\n\n    meta: {\n        tuyaDatapoints: [\n            // DP1: 0/1 observed inverted; trueFalse0 means 0=>true, 1=>false\n            [1, 'occupancy', tuya.valueConverter.trueFalse0],\n\n            // DP4: battery %\n            [4, 'battery', tuya.valueConverter.raw],\n\n            // DP9: sensitivity as numeric 0/1/2 from device reports\n           // The meaning is similar to above as exposed high, med, low\n            [9, 'pir_sensitivity', tuya.valueConverter.raw],\n\n            // DP12: “illuminance_value” (reported as lux) but used as pressure\n            [12, 'illuminance', tuya.valueConverter.raw],\n\n            // DP101/102/103 numeric values\n            [101, 'interval_time', tuya.valueConverter.raw],\n            [102, 'pir_delay', tuya.valueConverter.raw],\n            [103, 'presence_time', tuya.valueConverter.raw],\n\n            // DP104: work_state numeric 0..5\n            [104, 'work_state', tuya.valueConverter.raw],\n        ],\n    },\n};\n\n```\n\n### What does/doesn't work with the external definition?\n\nThis custom external definition appears to work fully but note the differences between reported type vs actual type (lux vs pressure)\n\n### Notes\nThe device auto calibrates its \"base\" value on power up. So you can put it under the mattress then put the batteries in and internally gets that as a threshold\n<img width=\"1024\" height=\"1024\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/69eff14e-fa21-453c-b554-0c792b5c4e95\" />\n\nImage that can be used for the product icon\n\n  \n\n  \n\n  \n    \n    \n  \n\n  \n\n\nThere is also a Hubitat driver available here:\n\nhttps://raw.githubusercontent.com/kkossev/Hubitat/development/Drivers/Tuya%20Contact%20Sensor/Tuya%20Contact%20Sensor.groovy\n\nIt would be awesome if you could add this to the test/beta version of the Tuya Zigbee app.\n\nThank you so much for your support!",
           "date": "2026-05-20T18:54:17.417Z",
           "replyTo": null
+        },
+        {
+          "num": 5473,
+          "user": "Rudi_Hendrix",
+          "text": "Today I wanted to add my Tuya 2 Gang Switch Module with metering. It has been connected before, but lost connection.\n\nWhile trying to connect, I wasn’t able to doe so. So, what I did: set it to pairing mode, started adding the device in Homey in the Tuya Zigbee app. It had the spinning wheel kind of thing indicating it found the device and was tyring to add it. Then I received an error.\n\nQuestion: does it have to be in direct contact with the Homey Pro? Or can you also add a device through other Zigbee network devices (if powered)?",
+          "date": "2026-05-25T20:05:33.038Z",
+          "replyTo": null
+        },
+        {
+          "num": 5474,
+          "user": "smarthomesven",
+          "text": "AFAIK you can pair through router devices as well, I’ve never had issues with pairing Zigbee devices on the other side of the house at least.",
+          "date": "2026-05-26T01:18:42.535Z",
+          "replyTo": 5473
+        },
+        {
+          "num": 5475,
+          "user": "Rudi_Hendrix",
+          "text": "Thanks! In that case something different is happening. It’s not a big issue as I have a Z-Wave switch module in place that does the actual switching. This one is just for power metering",
+          "date": "2026-05-26T05:00:17.879Z",
+          "replyTo": 5474
+        },
+        {
+          "num": 5476,
+          "user": "SunBeech",
+          "text": "Rudi_Hendrix:\n\nIt had the spinning wheel kind of thing indicating it found the device and was tyring to add it. Then I received an error.\n\n\n\nYou could try toggling the switch on/off every few seconds during the pairing procedure. Like keeping a battery powered device active.\n\nMy experience is that this sometimes also helps for pairing mains powered devices, that take a long time to pair.",
+          "date": "2026-05-26T05:43:28.253Z",
+          "replyTo": 5473
+        },
+        {
+          "num": 5477,
+          "user": "Rudi_Hendrix",
+          "text": "So, while it is blinking? Will try!",
+          "date": "2026-05-26T06:30:32.025Z",
+          "replyTo": 5476
+        },
+        {
+          "num": 5478,
+          "user": "SunBeech",
+          "text": "Rudi_Hendrix:\n\nwhile it is blinking?\n\n\n\nYes, indeed .",
+          "date": "2026-05-26T07:11:50.494Z",
+          "replyTo": 5477
+        },
+        {
+          "num": 5479,
+          "user": "Remco_Ter_haar",
+          "text": "hey johan\n\ncan you also add this soil sensor\n\n“ids”: {\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE284_myd45weu”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “a4:c1:38:c9:a1:3f:38:97”,\n\n“networkAddress”: 36789,\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE284_myd45weu”,\n\n“endpointDescriptors”: [\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 36789,\n\n“_reserved”: 22,\n\n“endpointId”: 1,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 81,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n4,\n\n5,\n\n61184,\n\n0,\n\n60672\n\n],\n\n“outputClusters”: [\n\n25,\n\n10\n\n]\n\n}\n\n],\n\n“deviceType”: “enddevice”,\n\n“receiveWhenIdle”: false,\n\n“capabilities”: {\n\n“alternatePANCoordinator”: false,\n\n“deviceType”: false,\n\n“powerSourceMains”: false,\n\n“receiveWhenIdle”: false,\n\n“security”: false,\n\n“allocateAddress”: true\n\n},\n\n“extendedEndpointDescriptors”: {\n\n“1”: {\n\n“clusters”: {\n\n“groups”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“dataTypeId”: 24,\n\n“name”: “nameSupport”,\n\n“value”: {\n\n“type”: “Buffer”,\n\n“data”: [\n\n0\n\n]\n\n},\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“dataTypeId”: 33,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n]\n\n},\n\n“scenes”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“dataTypeId”: 32,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“dataTypeId”: 32,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 2,\n\n“dataTypeId”: 33,\n\n“rapportageconfiguratie”: {\n\n“status”: “NIET GEVONDEN”,\n\n“richting”: “gerapporteerd”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 3,\n\n“dataTypeId”: 16,\n\n“rapportageconfiguratie”: {\n\n“status”: “NIET GEVONDEN”,\n\n“richting”: “gerapporteerd”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 4,\n\n“dataTypeId”: 24,\n\n“rapportageconfiguratie”: {\n\n“status”: “NIET GEVONDEN”,\n\n“richting”: “gerapporteerd”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 65533,\n\n“dataTypeId”: 33,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n]\n\n},\n\n“basic”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“dataTypeId”: 32,\n\n“name”: “zclVersion”,\n\n“value”: 3\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“dataTypeId”: 32,\n\n“name”: “appVersion”,\n\n“value”: 80\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 2,\n\n“dataTypeId”: 32,\n\n“name”: “stackVersion”,\n\n“value”: 0\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 3,\n\n“dataTypeId”: 32,\n\n“naam”: “hwVersion”,\n\n“waarde”: 1\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 4,\n\n“dataTypeId”: 66,\n\n“naam”: “fabrikantnaam”,\n\n“waarde”: “_TZE284_myd45weu”\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 5,\n\n“dataTypeId”: 66,\n\n“naam”: “modelId”,\n\n“waarde”: “TS0601”\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 6,\n\n“dataTypeId”: 66,\n\n“naam”: “datumcode”,\n\n“waarde”: “”\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 7,\n\n“dataTypeId”: 48,\n\n“naam”: “powerSource”,\n\n“waarde”: “batterij”\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“schrijfbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 65502,\n\n“dataTypeId”: 32\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 65533,\n\n“dataTypeId”: 33,\n\n“naam”: “clusterRevision”,\n\n“waarde”: 2\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 65534,\n\n“dataTypeId”: 48,\n\n“naam”: “attributeReportingStatus”,\n\n“waarde”: “IN AFWACHTING”\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“reportable”\n\n],\n\n“id”: 65506,\n\n“dataTypeId”: 32\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65507,\n\n“dataTypeId”: 72\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”,\n\n“reportable”\n\n],\n\n“id”: 65487,\n\n“dataTypeId”: 33\n\n}\n\n]\n\n}\n\n},\n\n“bindings”: {\n\n“ota”: {},\n\n“time”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“dataTypeId”: 33,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n]\n\n}\n\n}\n\n}\n\n}\n\n}\n\nHoi Johan\n\nkun je deze bodemsensor toevoegen\n\n“ids”: {\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE284_myd45weu”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “a4:c1:38:c9:a1:3f:38:97”,\n\n“networkAddress”: 36789,\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE284_myd45weu”,\n\n“endpointDescriptors”: [\n\n{\n\n“status”: “SUCCESS”,\n\n“nwkAddrOfInterest”: 36789,\n\n“_reserved”: 22,\n\n“endpointId”: 1,\n\n“applicationProfileId”: 260,\n\n“applicationDeviceId”: 81,\n\n“applicationDeviceVersion”: 0,\n\n“_reserved1”: 1,\n\n“inputClusters”: [\n\n4,\n\n5,\n\n61184,\n\n0,\n\n60672\n\n],\n\n“outputClusters”: [\n\n25,\n\n10\n\n]\n\n}\n\n],\n\n“deviceType”: “enddevice”,\n\n“receiveWhenIdle”: false,\n\n“capabilities”: {\n\n“alternatePANCoordinator”: false,\n\n“deviceType”: false,\n\n“powerSourceMains”: false,\n\n“receiveWhenIdle”: false,\n\n“security”: false,\n\n“allocateAddress”: true\n\n},\n\n“extendedEndpointDescriptors”: {\n\n“1”: {\n\n“clusters”: {\n\n“groups”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“dataTypeId”: 24,\n\n“name”: “nameSupport”,\n\n“value”: {\n\n“type”: “Buffer”,\n\n“data”: [\n\n0\n\n]\n\n},\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65533,\n\n“dataTypeId”: 33,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n]\n\n},\n\n“scenes”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“dataTypeId”: 32,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“dataTypeId”: 32,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 2,\n\n“dataTypeId”: 33,\n\n“rapportageconfiguratie”: {\n\n“status”: “NIET GEVONDEN”,\n\n“richting”: “gerapporteerd”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 3,\n\n“dataTypeId”: 16,\n\n“rapportageconfiguratie”: {\n\n“status”: “NIET GEVONDEN”,\n\n“richting”: “gerapporteerd”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 4,\n\n“dataTypeId”: 24,\n\n“rapportageconfiguratie”: {\n\n“status”: “NIET GEVONDEN”,\n\n“richting”: “gerapporteerd”\n\n}\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 65533,\n\n“dataTypeId”: 33,\n\n“name”: “clusterRevision”,\n\n“value”: 2,\n\n“reportingConfiguration”: {\n\n“status”: “NOT_FOUND”,\n\n“direction”: “reported”\n\n}\n\n}\n\n]\n\n},\n\n“basic”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 0,\n\n“dataTypeId”: 32,\n\n“name”: “zclVersion”,\n\n“value”: 3\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 1,\n\n“dataTypeId”: 32,\n\n“name”: “appVersion”,\n\n“value”: 80\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 2,\n\n“dataTypeId”: 32,\n\n“name”: “stackVersion”,\n\n“value”: 0\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 3,\n\n“dataTypeId”: 32,\n\n“naam”: “hwVersion”,\n\n“waarde”: 1\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 4,\n\n“dataTypeId”: 66,\n\n“naam”: “fabrikantnaam”,\n\n“waarde”: “_TZE284_myd45weu”\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 5,\n\n“dataTypeId”: 66,\n\n“naam”: “modelId”,\n\n“waarde”: “TS0601”\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 6,\n\n“dataTypeId”: 66,\n\n“naam”: “datumcode”,\n\n“waarde”: “”\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 7,\n\n“dataTypeId”: 48,\n\n“naam”: “powerSource”,\n\n“waarde”: “batterij”\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“schrijfbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 65502,\n\n“dataTypeId”: 32\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 65533,\n\n“dataTypeId”: 33,\n\n“naam”: “clusterRevision”,\n\n“waarde”: 2\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“rapporteerbaar”\n\n],\n\n“id”: 65534,\n\n“dataTypeId”: 48,\n\n“naam”: “attributeReportingStatus”,\n\n“waarde”: “IN AFWACHTING”\n\n},\n\n{\n\n“acl”: [\n\n“leesbaar”,\n\n“reportable”\n\n],\n\n“id”: 65506,\n\n“dataTypeId”: 32\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“reportable”\n\n],\n\n“id”: 65507,\n\n“dataTypeId”: 72\n\n},\n\n{\n\n“acl”: [\n\n“readable”,\n\n“writable”,\n\n“reportable”\n\n],\n\n“id”: 65487,\n\n“dataTypeId”: 33\n\n}\n\n]\n\n}\n\n},\n\n“bindings”: {\n\n“ota”: {},\n\n“time”: {\n\n“attributes”: [\n\n{\n\n“acl”: [\n\n“readable”\n\n],\n\n“id”: 65533,\n\n“dataTypeId”: 33,\n\n“name”: “clusterRevision”,\n\n“value”: 1\n\n}\n\n]\n\n}\n\n}\n\n}\n\n}\n\n}",
+          "date": "2026-05-26T11:31:58.178Z",
+          "replyTo": null
+        },
+        {
+          "num": 5480,
+          "user": "SunBeech",
+          "text": "FYI\n\n\n  \n    \n    \n    \n      [APP][Pro] Universal TUYA Zigbee Device App - test Apps\n    \n  \n  \n    To all those posting interview results in this topic, please consider using the following to increase readability of your post: \n\nPreformatted text option to keep the output in the original format and presented in a scrollable window. This reduces the length of your post.\nHide details option, to collapse/hide the entire interview output. Clicking the collapsed item will show the interview output again.\n\n [IMG_2409]",
+          "date": "2026-05-26T12:38:26.602Z",
+          "replyTo": 5479
         }
       ],
       "category": 7
@@ -62119,6 +62182,55 @@
           "text": "Ein nicht ganz ernst gemeintes Hot oder Schrott. Was taugt heute ein Thermostat, was vor 12 Jahren auf den Markt gekommen ist ?\n\nshopping519×511 13.7 KB\n\nDanfoss LC13\n\nVor ein paar Tagen hatte ich Besuch vom Heizungsonkel. Es wurden überall neue Ventile installiert, da sie immer öfters geklemmt haben. Besonders auf dem Gästeklo war das betagte Devolo Thermostat mit dem alten Ventil praktisch kaltverschweißt. Der großen Wasserpumpenzange und der Kraft des Heizungsbauers, hatte das Devolo Connect 014G080, allerdings nichts entgegen zu setzen. Der Metallring ist einfach so geplatzt und Herr Heizungsexperte hätte sich mit der plötzlich spannungslosen Wasserpumpenzange fast kastriert. Das sehr unangenehme Geräusch und die hilfesuchenden Augen, rechtfertigen die Zwangspause, bis seine Atemfrequenz sich wieder normalisiert hatte.\n\nJetzt waren wir beide angepisst. Er wegen seiner Familienplanung und ich wegen des Devolo Totalschadens.\n\nFür das Gästeklo wollte ich jetzt nicht wirklich ein aktuelles Shelly opfern. Vielmehr habe ich in die Tauschbörse eine Anfrage gestellt, ob noch jemand ein älteres Thermostat übrig hat.\n\n@Michael_Ridzewski hat mich sofort angeschrieben und mir kostenlos ein Living Connetc Z von Danfoss (LC13) zur Verfügung gestellt. Die Firma Heizungsbau Schmidt und ich danken ihm nochmal ausdrücklich für das Sponsoring. Ich dachte mir, dass es vielleicht interessant werden wird, über dieses, 2014 erschienene Thermostat ein Hot oder Schrott zu machen.\n\nDas die Entwicklung des Z-Wave angetriebenen LC13 schon 12 Jahre zurück liegt, macht doch einen Vergleich mit aktuellen Thermostaten interessant. Ich kenne einige Leute, die das LC 13 seit 10 Jahren im Einsatz haben. Man kann also durchaus von Qualität sprechen. So lange kein grobmotorischer Heizungsbauer mit brachialer Gewalt und ohne Kenntnis von WD40, dem Thermostat das Genick bricht, kann das Danfoss oder das baugleiche Devolo, sehr alt werden.\n\nDas Teil wird mir zwei AA Batterien betrieben, die ca 12 Monate halten. Es ist natürlich immer abhängig davon, wie oft das LC 13 die Temperatur ändert. Wer beim Danfoss Luxus erwartet ist falsch. Das Thermostat kann auch keine Temperatur von externen Temperatursensoren verarbeiten. Sind wir aber mal ehrlich, das kann so manches moderne Thermostat auch nicht, oder der Hersteller lässt sich seinen hauseigenen, kompatiblen Sensor, mit einem lächerlich hohen Preis bezahlen. Es steht halt jeden Tag ein Idiot auf, sonst würden sie so eine Zwangskombination nicht machen.\n\nDer alte Herr Danfoss hat noch Kraft. Er schafft es selbst meine nagelneuen Ventile mit unverbrauchten Federn, recht schnell zu öffnen und auch wieder zu schließen.\n\nÜber das Display lässt sich streiten. Es ist relativ klein und befindet sich an der Vorderseite. Ich persönlich brauche ja gar keins. Im Gästeklo wäre das bei mir eine richtige Herausforderung. Die nach vorne gerichtete Anzeige zeigt bei mir nach hinten und wäre nur mit einem akuten  Bandscheibenvorfall ablesbar. Die Gäste können aber auch ohne Voltaren bequem im Sitzen fühlen, ob Heizung an oder aus. Bei manchen Sitzungen könnten sich Temperaturen über 22 Grad, ehr negativ auf das Geruchserlebnis auswirken und eine spontane Hyperventilation auslösen.\n\n202605201019501920×2560 702 KB\n\nSomit sind die Flows relativ einfach:\n\nWenn Präsenz im Örtchen, und es ist Winter, dann Heizung 21 Grad. Wenn keine Präsenz mehr oder Fenster auf, dann Heizung aus.\n\nDas sollte doch genügen, um das Schlimmste zu verhindern und die Sitzung, zeitlich auf das absolut notwendige Maß zu reduzieren.\n\nMuß ich noch beschreiben, wie man das Danfoss anmeldet ? Ich glaube nicht. Viel mehr zu sagen gibt es nicht. Das LC13 tut genau das was es soll. Es ist auch nicht träge und braucht maximal 5 Sekunden,  um auf eine Eingabe zu reagieren. Was natürlich interessant ist, dass Leute bei Ebay für gebrauchte Exemplare € 50.- und mehr haben möchten. Ich hab es oben ja schon angedeutet, dass manche Verkäufer entweder krank sind, oder einfach nur die falschen Medikamente nehmen.\n\nDas LC13 hat trotz seines Alters immer noch eine Daseinsberechtigung. Wer sie in Benutzung hat ist sicherlich nicht schlecht bedient. Es gibt aktuelle Produkte die wesentlich schlechter sind und dringend meinen Heizungsonkel kennen lernen sollten. Der besorgt es ihnen richtig, quasi die Wasserpumpenzange des Teufels mit garantierter Genitalprellung. Hoch lebe WD40 und nochmals danke an Michael !\n\nFür ihr Alter: HOT",
           "date": "2026-05-20T08:25:28.585Z",
           "replyTo": 931
+        },
+        {
+          "num": 933,
+          "user": "ManuelKugler",
+          "text": "Hi Undertaker,\n\nkannst du nach fast einem Jahr die Singer immer noch empfehlen? Bin gerade auf der suche nach wasserdichten Bodenfeuchtigkeitsmessinstrumenten. Hast du vielleicht noch Tipps dazu?\n\nIm übrigen, besten Dank für diese Tests! Das hilft vielen hier, auch stille Mitleser.",
+          "date": "2026-05-25T10:11:20.809Z",
+          "replyTo": 810
+        },
+        {
+          "num": 934,
+          "user": "Undertaker",
+          "text": "Ja, ich kann sie immer noch empfehlen. Die Batterien halten fast 1 Jahr. Ich hab da aber keine Akkus mehr drin, sondern die Billg-AA’s vom Aldi.\n\nAnsonsten sind die Dinger absolut wasserdicht und seit 1 Jahr in den Blumenkästen auf dem Balkon. Die Sensoren zeigen Halt nur Temperatur und Feuchtigkeit an.\n\nScreenshot20260525-122502Homey1579×1566 80.5 KB",
+          "date": "2026-05-25T10:26:25.398Z",
+          "replyTo": 933
+        },
+        {
+          "num": 935,
+          "user": "Peter_Steinkuhler",
+          "text": "Ich hab mal gegoogelt aber nicht gefunden. Wo kann man die bestellen?",
+          "date": "2026-05-25T10:43:34.880Z",
+          "replyTo": null
+        },
+        {
+          "num": 936,
+          "user": "ManuelKugler",
+          "text": "amazon.de\n  \n\n  \n    \n\nTHIRDREALITY Smart Soil Moisture Sensor Gen2, Zigbee Hub Needed, Enhanced Signal...\n\n\n\nTHIRDREALITY Smart Soil Moisture Sensor Gen2, Zigbee Hub Needed, Enhanced Signal Stability, Capacitive Moisture Monitoring, Garden Planting, Compatible with Hubitat, SmartThings, Home Assistant, Alexa : Amazon.de: Pet Supplies",
+          "date": "2026-05-25T11:43:45.564Z",
+          "replyTo": 935
+        },
+        {
+          "num": 937,
+          "user": "Undertaker",
+          "text": "https://www.ebay.de/itm/267637613005?mkevt=1&mkcid=1&mkrid=707-53477-19255-0&campid=5338900900&toolid=20006&_ul=DE&customid=56357.821c3b22a3377f847942439801f286b6b56d0a5a&gclid=CjwKCAjw5s_QBhAdEiwADD_gBj0MWJH3sKHrzRcY-MPG3vq9YG74vslThHJGJUP_ju8xC2hNzA7V3hoCAcAQAvD_BwE&gbraid=0AAAAAqbaHavLhkboMOgpdjHy1O3M1H5BS&adtype=pla&loc_physical_ms=9041956",
+          "date": "2026-05-25T12:36:30.587Z",
+          "replyTo": 936
+        },
+        {
+          "num": 938,
+          "user": "Undertaker",
+          "text": "Amazon ist im Moment nicht lieferbar.",
+          "date": "2026-05-25T12:37:17.760Z",
+          "replyTo": 936
+        },
+        {
+          "num": 939,
+          "user": "ManuelKugler",
+          "text": "Heute Morgen stand noch: 9 Stück verfügbar… Mist",
+          "date": "2026-05-25T12:41:05.213Z",
+          "replyTo": 938
         }
       ],
       "category": 28
@@ -71452,8 +71564,6 @@
     ],
     "supported": [
       "_TZE284_8se38w3c",
-      "_TYZB01_ftdkanlj",
-      "_TYZB01_kvwjujy9",
       "_TZ2000_a476raq2",
       "_TZ2000_avdnvykf",
       "_TZ2000_hjsgdkfl",
@@ -71461,7 +71571,6 @@
       "_TZ3000_0s1izerx",
       "_TZ3000_akqdg6g7",
       "_TZE284_9ern5sfh",
-      "_TYST11_d0yu2xgi",
       "_TZ3000_6uzkisv2",
       "_TZ3000_fllyghyj",
       "_TZ3000_utwgoauk",
@@ -71645,8 +71754,6 @@
       "_TZ3000_f2bw0b6k",
       "_TZE200_yjjdcqsq",
       "_TZE200_utkemkbs",
-      "_TYZB01_iuepbmpv",
-      "_TYZB01_cbiezpds",
       "_TZE200_zl1kmjqx",
       "_TZE200_locansqn",
       "_TZE204_upagmta9",
@@ -71654,8 +71761,6 @@
       "_TZE200_bq5c8xfe",
       "_TZE200_qyflbnbj",
       "_TZE200_vs0skpuc",
-      "_TYZB01_jytabjkb",
-      "_TYZB01_dl7cejts",
       "_TZ3000_msl6wxk9",
       "_TZ3000_mcxw5ehu",
       "_TZ3000_otvn3lne",
@@ -71664,12 +71769,10 @@
       "_TZ3000_nss8amz9",
       "_TZ3000_lf56vpxj",
       "_TZ3000_bsvqrxru",
-      "_TYZB01_dr6sduka",
       "_TZ1800_fcdjzz3s",
       "_TZE200_1ibpyhdc",
       "_TZE200_ttcovulf",
       "_TZ3000_ebar6ljy",
-      "_TYZB01_xph99wvr",
       "_TZ3000_402jjyro",
       "_TZ3000_6jeesvrt",
       "_TZ3000_26fmupbb",
@@ -71704,8 +71807,6 @@
       "_TZ3000_cqlnswn0",
       "_TZ3000_qrldbmfn",
       "_TZ3000_gntwytxo",
-      "_TYZB01_sqmd19i1",
-      "_TYST11_qq9mpfhw",
       "_TZ3000_fxvjhdyl",
       "_TZ3000_eit7p838",
       "_TZ3000_t6jriawg",
@@ -71725,12 +71826,10 @@
       "_TZ3000_3dfewsk1",
       "_TZ3000_ww9i3e0y",
       "_TZ3000_wuep9zng",
-      "_TYZB01_dsjszp0x",
       "_TZE200_ntcy3xu1",
       "_TZE200_m9skfctm",
       "_TZE200_rccxox8p",
       "_TZE200_vzekyi4c",
-      "_TYZB01_wqcac7lo",
       "_TZE204_ntcy3xu1",
       "_TZE200_t5p1vj8r",
       "_TZE200_uebojraa",
@@ -71810,7 +71909,6 @@
       "_TZ3000_4uf3d0ax",
       "_TZ3000_wzauvbcs",
       "_TZ3000_vmpbygs5",
-      "_TYZB01_vkwryfdr",
       "_TZ3000_o005nuxx",
       "_TZ3000_jak16dll",
       "_TZ3210_7jnk7l3k",
@@ -71821,8 +71919,6 @@
       "_TZ3000_lepzuhto",
       "_TZ3000_qystbcjg",
       "_TZ3000_6l1pjfqe",
-      "_TYZB01_ncutbjdi",
-      "_TYZB01_aneiicmq",
       "_TZ3000_zmy1waw6",
       "_TZ3000_pmvbt5hh",
       "_TZ3000_sjpl9eg3",
@@ -71837,10 +71933,8 @@
       "_TZ3000_majwnphg",
       "_TZ3000_6axxqqi2",
       "_TZ3000_prits6g4",
-      "_TYZB01_zsl6z0pw",
       "_TZ3000_4js9lo5d",
       "_TZ3000_pmz6mjyu",
-      "_TYZB01_digziiav",
       "_TZ3000_fisb3ajo",
       "_TZ3000_bvrlqyj7",
       "_TZ3000_jl7qyupf",
@@ -71854,7 +71948,6 @@
       "_TZ3000_zmy4lslw",
       "_TZ3000_odzoiovu",
       "_TZ3000_lvhy15ix",
-      "_TYZB01_qezuin6k",
       "_TZ3210_ngqk6jia",
       "_TZ3000_ktuoyvt5",
       "_TZ3210_zxbtub8r",
@@ -71868,7 +71961,6 @@
       "_TZE204_9qhuzgo0",
       "_TZE204_dcnsggvz",
       "_TZE204_5cuocqty",
-      "_TYZB01_v8gtiaed",
       "_TZ3000_92chsky7",
       "_TZE200_e3oitdyu",
       "_TZ3210_wdexaypg",
@@ -71879,11 +71971,8 @@
       "_TZ3210_4ubylghk",
       "_TZE200_gwkapsoq",
       "_TZE200_fjjbhx9d",
-      "_TYZB01_xfpdrwvc",
       "_TZ3000_f8tmviy0",
       "_TZ3000_gidy6sjs",
-      "_TYZB01_qeqvmvti",
-      "_TYZB01_seqwasot",
       "_TZ3000_hktqahrq",
       "_TZ3000_yl3zuyaw",
       "_TZ3000_3wkqni6o",
@@ -71894,29 +71983,22 @@
       "_TZE200_gbagoilo",
       "_TZ3000_7jx5ypra",
       "_TZ3000_3u4hripk",
-      "_TYZB01_mtlhqn48",
-      "_TYZB01_6sadkhcy",
       "_TZ3000_fvh3pjaz",
       "_TZ3000_owgcnkrh",
       "_TZ3000_svoqrno4",
-      "_TYZB01_vzrytttn",
       "_TZ3000_nta0gb8h",
       "_TZ3000_lupfd8zu",
       "_TZ3000_yhagrqmd",
       "_TZ3000_5vujyute",
-      "_TYZB01_2athzhfr",
       "_TZ3000_56bdyj21",
       "_TZ3000_e98krvvk",
       "_TZ3000_atp7xmd9",
       "_TZ3000_mrqea2uu",
       "_TZ3000_mklgayek",
       "_TZ3000_p8alo7qa",
-      "_TYZB01_6g8b7at8",
       "_TZ3000_qn8qvk9y",
       "_TZ3000_s8r1qoyq",
-      "_TYZB01_xiuox57i",
       "_TZ3000_a7ouggvs",
-      "_TYZB01_b8cr31hp",
       "_TZ3000_wyhuocal",
       "_TZ3000_cdamjqm9",
       "_TZ3000_hlwm8e96",
@@ -71932,7 +72014,6 @@
       "_TZ3000_r0pmi2p3",
       "_TZ3000_dku2cfsc",
       "_TZ3000_fjt5218m",
-      "_TYZB01_bagt1e4o",
       "_TZE200_shkxsgis",
       "_TZE204_aagrxlbd",
       "_TZE200_di3tfv5b",
@@ -71975,7 +72056,6 @@
       "_TZ3000_kdpxju99",
       "_TZ3000_utagpnzs",
       "_TZ3000_5bsf8vaj",
-      "_TYZB02_keyjqthh",
       "_TZ3000_tk3s5tyg",
       "_TZ3000_fkp5zyho",
       "_TZ3000_axpdxqgu",
@@ -71986,13 +72066,11 @@
       "_TZ3000_8rppvwda",
       "_TZ3000_4upl1fcj",
       "_TZ3000_q68478x7",
-      "_TYZB02_keyjhapk",
       "_TZ3000_oikiyf3b",
       "_TZ3000_h1c2eamp",
       "_TZ3400_keyjhapk",
       "_TZ3000_5e235jpa",
       "_TZ3000_fkvaniuu",
-      "_TYZB02_key8kk7r",
       "_TZ3000_rrjr1q0u",
       "_TZ3000_gbm10jnj",
       "_TZ3000_yw5tvzsk",
@@ -72013,7 +72091,6 @@
       "_TZ3000_rco1yzb1",
       "_TZ3000_yirp2pgd",
       "_TZ3000_fsiepnrh",
-      "_TYZB01_qm6djpta",
       "_TZ3000_p6ju8myv",
       "_TZ3000_eo3dttwe",
       "_TZ3000_qja6nq5z",
@@ -72082,9 +72159,7 @@
       "_TZE200_aoclfnxz",
       "_TZE204_aoclfnxz",
       "_TZE200_2ekuz3dz",
-      "_TYZB01_ymcdbl3u",
       "_TZ3000_o4cjetlm",
-      "_TYZB01_4tlksk8a",
       "_TZ3000_tvuarksa",
       "_TZ3000_j9568h44",
       "_TZ3000_w0ypwa1f",
@@ -72109,14 +72184,12 @@
       "_TZ3000_u3oupgdy",
       "_TZ3000_wkr3jqmr",
       "_TZ3000_imaccztn",
-      "_TYZB01_phjeraqq",
       "_TZE204_t1blo2bj",
       "_TZE200_d0yu2xgi",
       "_TZ3210_j4pdtz9v",
       "_TZ3210_dse8ogfy",
       "_TZ3210_232nryqh",
       "_TZ3210_okbss9dy",
-      "_TYZB01_mqel1whf",
       "_TZ3000_12sxjap4",
       "_TZ3000_49qchf10",
       "_TZ3000_amdymr71",
@@ -72228,13 +72301,52 @@
     ],
     "unsupported": [
       "_TYZB01_a476raq2",
+      "_TYZB01_ftdkanlj",
       "_TYZB01_hjsgdkfl",
+      "_TYZB01_kvwjujy9",
       "_TZ3000_bjawzod",
+      "_TYST11_d0yu2xgi",
       "_TZ3000_sqcn0y",
       "_TZ3000_zgyzgd",
+      "_TYZB01_iuepbmpv",
+      "_TYZB01_cbiezpds",
+      "_TYZB01_jytabjkb",
+      "_TYZB01_dl7cejts",
+      "_TYZB01_dr6sduka",
+      "_TYZB01_xph99wvr",
+      "_TYZB01_sqmd19i1",
+      "_TYST11_qq9mpfhw",
+      "_TYZB01_dsjszp0x",
+      "_TYZB01_wqcac7lo",
       "_TZ3000_cehuw1l2",
+      "_TYZB01_vkwryfdr",
+      "_TYZB01_ncutbjdi",
+      "_TYZB01_aneiicmq",
+      "_TYZB01_zsl6z0pw",
+      "_TYZB01_digziiav",
+      "_TYZB01_qezuin6k",
+      "_TYZB01_v8gtiaed",
+      "_TYZB01_xfpdrwvc",
+      "_TYZB01_qeqvmvti",
+      "_TYZB01_seqwasot",
+      "_TYZB01_mtlhqn48",
+      "_TYZB01_6sadkhcy",
+      "_TYZB01_vzrytttn",
+      "_TYZB01_2athzhfr",
+      "_TYZB01_6g8b7at8",
+      "_TYZB01_xiuox57i",
+      "_TYZB01_b8cr31hp",
+      "_TYZB01_bagt1e4o",
       "_TZ3000_h1jnz6l",
       "_TZ3000_oboryb",
+      "_TYZB02_keyjqthh",
+      "_TYZB02_keyjhapk",
+      "_TYZB02_key8kk7r",
+      "_TYZB01_qm6djpta",
+      "_TYZB01_ymcdbl3u",
+      "_TYZB01_4tlksk8a",
+      "_TYZB01_phjeraqq",
+      "_TYZB01_mqel1whf",
       "_TZ3000_dfgbtub",
       "_TZ3000_dfgbub0",
       "_TYZB01_bngwdjsr",
@@ -74962,9 +75074,10 @@
         "fps": [
           "_TZE284_myd45weu"
         ],
-        "posts": 1,
+        "posts": 2,
         "ctx": [
-          "hoi johan\n\nkun je deze bodemsensor toevoegen\n\n“ids”: {\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE284_myd45weu”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “a4:c1:38:c9:a1:3f:38:97”,\n\n“networkAddress”: 3"
+          "hoi johan\n\nkun je deze bodemsensor toevoegen\n\n“ids”: {\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE284_myd45weu”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “a4:c1:38:c9:a1:3f:38:97”,\n\n“networkAddress”: 3",
+          "hey johan\n\ncan you also add this soil sensor\n\n“ids”: {\n\n“modelId”: “TS0601”,\n\n“manufacturerName”: “_TZE284_myd45weu”\n\n},\n\n“endpoints”: {\n\n“ieeeAddress”: “a4:c1:38:c9:a1:3f:38:97”,\n\n“networkAddress”: 3"
         ]
       },
       "DaPicard": {

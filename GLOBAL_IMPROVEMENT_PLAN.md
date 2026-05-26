@@ -161,7 +161,7 @@ npx homey app validate --level publish
 | Métrique | Valeur |
 |----------|--------|
 | **Drivers actifs** | 413 |
-| **Fingerprints validés** | 3296 |
+| **Fingerprints validés** | 12766 |
 | **Issues ouvertes** | 13 |
 | **Issues résolues (cumul)** | 330+ |
 | **FPs forum non supportés** | 6 (`_TYZB01_a476raq2`, `_TZ3000_bjawzod`, etc.) |
