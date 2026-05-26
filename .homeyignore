@@ -16,10 +16,12 @@ backup/
 project-data/
 data/community-sync/
 data/temp_desktop_cleanup/
+data/fingerprints.json
 data/COMMUNITY_ENRICHMENT_REPORT.json
 data/PHASE2_ENRICHMENT_REPORT.json
 data/bug-patterns.json
 data/reference-urls.json
+driver-mapping-database.json
 diagnostics/
 reports/
 logs/
