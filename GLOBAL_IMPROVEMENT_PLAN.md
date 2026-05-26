@@ -2,6 +2,7 @@
 > **Branch**: `master` (Experimental/Beta) + `stable-v5` (Production/Stable)  
 > **App ID**: `com.dlnraja.tuya.zigbee` (Stable app: `com.dlnraja.tuya.zigbee.stable`)  
 > **Status**: ACTIVE & SECURED | **Zero-Defect Publish Quality Gate**: 100% Passed  
+> **Metrics (2026-05-26)**: 413 drivers | 3296 fingerprints | 13 open issues | 16 new Z2M devices  
 
 ---
 
@@ -49,7 +50,7 @@
 
 ## 🌌 HOLISTIC & DYNAMIC RUNTIME ADAPTATION ENGINE
 
-To eliminate pairing mismatches and phantom capabilities, the engine employs a completely dynamic, runtime-adaptive architecture across all 227+ drivers:
+To eliminate pairing mismatches and phantom capabilities, the engine employs a completely dynamic, runtime-adaptive architecture across all **413 drivers** (v8.5.2 — 26/05/2026):
 
 ```mermaid
 graph TD
@@ -152,6 +153,22 @@ npx homey app validate --level publish
 - **Mains/Battery Approximation Conflicts**: If a compose manifest (`driver.compose.json`) defines `measure_power` or `meter_power`, it MUST NOT define `energy.approximation` under `energy` to prevent severe Homey Pro Energy v3 schema validation errors.
 - **Mandatory GitHub Actions Shell Default Configuration**: Every CI workflow `.yml` file that runs commands MUST include top-level `defaults: run: shell: bash` to prevent PowerShell syntax failures on Windows runners.
 - **GHA Cloud Purity Validation Gate**: Every primary workflow CI check (`unified-ci.yml`, `syntax-validation.yml`, `syntax-purity-gate.yml`, `syntax-check.yml`, `validate.yml`) has been hardened to execute the strict `PRE_COMMIT_CHECKS.js` gateway. This ensures 100% JS syntax parsing, workflow default checking, and manifest schema validation before commit integration.
+
+---
+
+## 📊 Métriques Actuelles (2026-05-26)
+
+| Métrique | Valeur |
+|----------|--------|
+| **Drivers actifs** | 413 |
+| **Fingerprints validés** | 3296 |
+| **Issues ouvertes** | 13 |
+| **Issues résolues (cumul)** | 330+ |
+| **FPs forum non supportés** | 6 (`_TYZB01_a476raq2`, `_TZ3000_bjawzod`, etc.) |
+| **Nouveaux Z2M (à intégrer)** | 16 |
+| **Patterns récurrents critiques** | 5 (battery: 35×, pairing: 18×, unresponsive: 8×) |
+| **Workflows GitHub** | 62 actifs |
+| **Scripts .github/scripts** | ~150 |
 
 ---
 **phoenix sovereign unified engine** — engineered for flawless local-first execution.
