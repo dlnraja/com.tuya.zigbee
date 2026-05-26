@@ -5,6 +5,7 @@
 
 name: "Weekly Fork Verification"
 
+if: false
 on:
   schedule:
     - cron: '0 7 * * 3'

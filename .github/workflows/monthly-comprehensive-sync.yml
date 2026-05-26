@@ -1,5 +1,8 @@
+# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
+# Re-enable by removing 'if: false' below
 name: Monthly Comprehensive Sync
 
+if: false
 on:
   schedule:
     - cron: '0 1 1 * *'  # 1AM UTC, before nightly (2AM)

@@ -5,6 +5,7 @@
 
 name: Monthly Enrichment Pipeline
 
+if: false
 on:
   schedule:
     - cron: '0 3 31 2 *'  # Feb 31 = never runs (consolidated into daily-everything)

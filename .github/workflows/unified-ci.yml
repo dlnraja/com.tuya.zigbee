@@ -23,6 +23,7 @@ jobs:
   validate:
     name: 🔍 Universal Validation (SDK 3 Strict)
     if: github.actor != 'github-actions[bot]' && github.actor != 'dependabot[bot]'
+    timeout-minutes: 15
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -66,7 +67,6 @@ jobs:
             echo "✓ All drivers have complete case variant coverage"
           fi
 
-
   build:
     name: 🏗️ Production Build & Optimize
     needs: validate
@@ -101,15 +101,65 @@ jobs:
           path: .homeybuild/
 
   security:
-    name: 🛡️ Unified Security Shield
+    name: 🛡️ Unified Security Shield (v8.5.0 Hardened)
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v5
-      - name: 🕵️ Contextual Secret Masking
+      - name: 🕵️ Deep Credential & Token Leak Detection
         run: |
-          echo "Scanning for leak patterns in production-ready files..."
-          # Scan for PATs, API Keys, and raw developer emails
-          grep -rriE "HOMEY_PAT|GOOGLE_API_KEY|OPENAI_API_KEY" . --exclude-dir=.git --exclude-dir=node_modules && exit 1 || echo "✅ No critical secrets detected"
-          grep -rriE "HOMEY_PAT|NVIDIA_API_KEY|OPENAI_API_KEY" . --exclude-dir=.git --exclude-dir=node_modules && exit 1 || echo "✅ No critical secrets detected"
+          echo "🔐 [1/5] Checking for .env and forbidden files..."
+          FOUND_ENV=$(find . -maxdepth 3 -name '.env' -not -path './node_modules/*' -not -path './.git/*' 2>/dev/null | head -5)
+          if [ -n "$FOUND_ENV" ]; then
+            echo "::error::⚠️ .env files detected in repo! Remove immediately: $FOUND_ENV"
+            exit 1
+          fi
+          echo "✅ No .env files in tracked directories"
 
+          echo "🔐 [2/5] Checking git remote URLs for embedded tokens..."
+          if git remote -v 2>/dev/null | grep -qiE 'gh[opsu]_[A-Za-z0-9]{30,}'; then
+            echo "::error::⚠️ GIT REMOTE CONTAINS A TOKEN! Run: git remote set-url origin <clean-url>"
+            echo "::error::Also revoke the token at: https://github.com/settings/tokens"
+            exit 1
+          fi
+          echo "✅ Git remote URLs are clean"
+
+          echo "🔐 [3/5] Running JavaScript Security Scanner..."
+          node scripts/ci/security-scanner.js && echo "✅ Security scanner passed" || {
+            echo "::error::⚠️ Security scanner found issues (exit code $?)"
+            exit 1
+          }
+
+          echo "🔐 [4/5] Checking .gitignore for env/credential protection..."
+          REQUIRED_ENTRIES=(".env" "credentials.json" "secrets.json" "token.json" "*.key" "*.pem")
+          for entry in "${REQUIRED_ENTRIES[@]}"; do
+            if ! grep -qF "$entry" .gitignore 2>/dev/null; then
+              echo "::warning::⚠️ .gitignore missing: $entry"
+              echo "$entry" >> .gitignore
+            fi
+          done
+          echo "✅ .gitignore properly configured"
+
+          echo "🔐 [5/5] Checking for leaked emails in source..."
+          EMAIL_RESULT=$(grep -rniE "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" . \
+            --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=.homeybuild \
+            --include='*.js' --include='*.json' --include='*.yml' --include='*.yaml' 2>/dev/null || true)
+          FILTERED=$(echo "$EMAIL_RESULT" | grep -viE "example\.com|test\.com|@homey\.app|@users\.noreply|@github\.com" || true)
+          if [ -n "$FILTERED" ]; then
+            echo "$FILTERED"
+            echo "::warning::⚠️ Found potential email leaks in code"
+          else
+            echo "✅ No email leaks detected"
+          fi
+
+  notify:
+    name: 📬 Notification & Diagnostics
+    needs: [validate, security]
+    if: always() && (needs.validate.result == 'failure' || needs.security.result == 'failure')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: ⚠️ Notify on Failure
+        run: |
+          echo "::warning::Unified CI detected failures. Review logs above."

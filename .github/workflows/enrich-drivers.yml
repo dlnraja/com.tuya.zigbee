@@ -1,5 +1,8 @@
+# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
+# Re-enable by removing 'if: false' below
 name: 🌐 Enrich Drivers (Blakadder + Z2M + ZHA)
 
+if: false
 on:
   schedule:
     - cron: "0 3 * * 1"   # Every Monday 3h UTC (weekly to save GitHub Actions minutes)

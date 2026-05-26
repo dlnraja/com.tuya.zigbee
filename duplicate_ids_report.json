@@ -1,0 +1,3179 @@
+{
+  "totalScanned": 324,
+  "totalDuplicates": 87,
+  "duplicates": [
+    {
+      "id": "bulb_rgb_smart_bulb_rgb_turned_on",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "trig",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turned on",
+            "fr": "Allumé"
+          },
+          "tf": {
+            "en": "Turned on",
+            "fr": "Allumé"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "trig",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turned on",
+            "fr": "Allumé"
+          },
+          "tf": {
+            "en": "Turned on",
+            "fr": "Allumé"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_smart_bulb_rgb_turned_off",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "trig",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turned off",
+            "fr": "Éteint"
+          },
+          "tf": {
+            "en": "Turned off",
+            "fr": "Éteint"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "trig",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turned off",
+            "fr": "Éteint"
+          },
+          "tf": {
+            "en": "Turned off",
+            "fr": "Éteint"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_smart_bulb_rgb_dim_changed",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "trig",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Brightness changed",
+            "fr": "Luminosité changée"
+          },
+          "tf": {
+            "en": "Brightness changed",
+            "fr": "Luminosité changée"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "trig",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Brightness changed",
+            "fr": "Luminosité changée"
+          },
+          "tf": {
+            "en": "Brightness changed",
+            "fr": "Luminosité changée"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_turned_on",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "trig",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turned on",
+            "fr": "Allumé",
+            "nl": "Aangezet",
+            "de": "Eingeschaltet"
+          },
+          "tf": {
+            "en": "Turned on",
+            "fr": "Allumé",
+            "nl": "Aangezet",
+            "de": "Eingeschaltet"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "trig",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turned on",
+            "fr": "Allumé",
+            "nl": "Aangezet",
+            "de": "Eingeschaltet"
+          },
+          "tf": {
+            "en": "Turned on",
+            "fr": "Allumé",
+            "nl": "Aangezet",
+            "de": "Eingeschaltet"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_turned_off",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "trig",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turned off",
+            "fr": "Éteint",
+            "nl": "Uitgezet",
+            "de": "Ausgeschaltet"
+          },
+          "tf": {
+            "en": "Turned off",
+            "fr": "Éteint",
+            "nl": "Uitgezet",
+            "de": "Ausgeschaltet"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "trig",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turned off",
+            "fr": "Éteint",
+            "nl": "Uitgezet",
+            "de": "Ausgeschaltet"
+          },
+          "tf": {
+            "en": "Turned off",
+            "fr": "Éteint",
+            "nl": "Uitgezet",
+            "de": "Ausgeschaltet"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_battery_low",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "trig",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "trig",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_smart_bulb_rgb_is_on",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "cond",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Is turned !{{on|off}}",
+            "fr": "Est !{{allumé|éteint}}"
+          },
+          "tf": {
+            "en": "Is turned !{{on|off}}",
+            "fr": "Est !{{allumé|éteint}}"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "cond",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Is turned !{{on|off}}",
+            "fr": "Est !{{allumé|éteint}}"
+          },
+          "tf": {
+            "en": "Is turned !{{on|off}}",
+            "fr": "Est !{{allumé|éteint}}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_is_on",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "cond",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Is !{{on|off}}",
+            "fr": "Est !{{allumé|éteint}}",
+            "nl": "Is !{{aan|uit}}",
+            "de": "Ist !{{ein|aus}}"
+          },
+          "tf": {
+            "en": "Is !{{on|off}}",
+            "fr": "Est !{{allumé|éteint}}",
+            "nl": "Is !{{aan|uit}}",
+            "de": "Ist !{{ein|aus}}"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "cond",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Is !{{on|off}}",
+            "fr": "Est !{{allumé|éteint}}",
+            "nl": "Is !{{aan|uit}}",
+            "de": "Ist !{{ein|aus}}"
+          },
+          "tf": {
+            "en": "Is !{{on|off}}",
+            "fr": "Est !{{allumé|éteint}}",
+            "nl": "Is !{{aan|uit}}",
+            "de": "Ist !{{ein|aus}}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_smart_bulb_rgb_turn_on",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "act",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turn on",
+            "fr": "Allumer"
+          },
+          "tf": {
+            "en": "Turn on",
+            "fr": "Allumer"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "act",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turn on",
+            "fr": "Allumer"
+          },
+          "tf": {
+            "en": "Turn on",
+            "fr": "Allumer"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_smart_bulb_rgb_turn_off",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "act",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turn off",
+            "fr": "Éteindre"
+          },
+          "tf": {
+            "en": "Turn off",
+            "fr": "Éteindre"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "act",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turn off",
+            "fr": "Éteindre"
+          },
+          "tf": {
+            "en": "Turn off",
+            "fr": "Éteindre"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_smart_bulb_rgb_toggle",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "act",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Toggle on or off",
+            "fr": "Basculer"
+          },
+          "tf": {
+            "en": "Toggle on or off",
+            "fr": "Basculer"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "act",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Toggle on or off",
+            "fr": "Basculer"
+          },
+          "tf": {
+            "en": "Toggle on or off",
+            "fr": "Basculer"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_smart_bulb_rgb_set_dim",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "act",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set brightness to...",
+            "fr": "Régler la luminosité à..."
+          },
+          "tf": {
+            "en": "Set brightness to... [[brightness]]",
+            "fr": "Régler la luminosité à... [[brightness]]"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "act",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set brightness to...",
+            "fr": "Régler la luminosité à..."
+          },
+          "tf": {
+            "en": "Set brightness to... [[brightness]]",
+            "fr": "Régler la luminosité à... [[brightness]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_turn_on",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "act",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turn on",
+            "fr": "Allumer",
+            "nl": "Aanzetten",
+            "de": "Einschalten"
+          },
+          "tf": {
+            "en": "Turn on",
+            "fr": "Allumer",
+            "nl": "Aanzetten",
+            "de": "Einschalten"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "act",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turn on",
+            "fr": "Allumer",
+            "nl": "Aanzetten",
+            "de": "Einschalten"
+          },
+          "tf": {
+            "en": "Turn on",
+            "fr": "Allumer",
+            "nl": "Aanzetten",
+            "de": "Einschalten"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_turn_off",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "act",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turn off",
+            "fr": "Éteindre",
+            "nl": "Uitzetten",
+            "de": "Ausschalten"
+          },
+          "tf": {
+            "en": "Turn off",
+            "fr": "Éteindre",
+            "nl": "Uitzetten",
+            "de": "Ausschalten"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "act",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Turn off",
+            "fr": "Éteindre",
+            "nl": "Uitzetten",
+            "de": "Ausschalten"
+          },
+          "tf": {
+            "en": "Turn off",
+            "fr": "Éteindre",
+            "nl": "Uitzetten",
+            "de": "Ausschalten"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_toggle",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "act",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Toggle",
+            "fr": "Basculer",
+            "nl": "Wisselen",
+            "de": "Umschalten"
+          },
+          "tf": {
+            "en": "Toggle",
+            "fr": "Basculer",
+            "nl": "Wisselen",
+            "de": "Umschalten"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "act",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Toggle",
+            "fr": "Basculer",
+            "nl": "Wisselen",
+            "de": "Umschalten"
+          },
+          "tf": {
+            "en": "Toggle",
+            "fr": "Basculer",
+            "nl": "Wisselen",
+            "de": "Umschalten"
+          }
+        }
+      ]
+    },
+    {
+      "id": "bulb_rgb_set_brightness",
+      "occurrences": [
+        {
+          "d": "bulb_rgb",
+          "ty": "act",
+          "f": "drivers\\bulb_rgb\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set brightness",
+            "fr": "Régler luminosité",
+            "nl": "Helderheid instellen",
+            "de": "Helligkeit einstellen"
+          },
+          "tf": {
+            "en": "Set brightness [[brightness]]",
+            "fr": "Régler luminosité [[brightness]]",
+            "nl": "Helderheid instellen [[brightness]]",
+            "de": "Helligkeit einstellen [[brightness]]"
+          }
+        },
+        {
+          "d": "light_bulb_rgb_rgbw",
+          "ty": "act",
+          "f": "drivers\\light_bulb_rgb_rgbw\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set brightness",
+            "fr": "Régler luminosité",
+            "nl": "Helderheid instellen",
+            "de": "Helligkeit einstellen"
+          },
+          "tf": {
+            "en": "Set brightness [[brightness]]",
+            "fr": "Régler luminosité [[brightness]]",
+            "nl": "Helderheid instellen [[brightness]]",
+            "de": "Helligkeit einstellen [[brightness]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "button_wireless_1_battery_low",
+      "occurrences": [
+        {
+          "d": "button_wireless_1",
+          "ty": "trig",
+          "f": "drivers\\button_wireless_1\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          }
+        },
+        {
+          "d": "button_wireless_smart",
+          "ty": "trig",
+          "f": "drivers\\button_wireless_smart\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          }
+        }
+      ]
+    },
+    {
+      "id": "climate_sensor_temperature_changed",
+      "occurrences": [
+        {
+          "d": "climate_sensor",
+          "ty": "trig",
+          "f": "drivers\\climate_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature changed",
+            "fr": "Température changée"
+          },
+          "tf": {
+            "en": "Temperature changed",
+            "fr": "Température changée"
+          }
+        },
+        {
+          "d": "sensor_climate_contact",
+          "ty": "trig",
+          "f": "drivers\\sensor_climate_contact\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature changed",
+            "fr": "Température changée"
+          },
+          "tf": {
+            "en": "Temperature changed",
+            "fr": "Température changée"
+          }
+        }
+      ]
+    },
+    {
+      "id": "climate_sensor_humidity_changed",
+      "occurrences": [
+        {
+          "d": "climate_sensor",
+          "ty": "trig",
+          "f": "drivers\\climate_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée"
+          },
+          "tf": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée"
+          }
+        },
+        {
+          "d": "sensor_climate_contact",
+          "ty": "trig",
+          "f": "drivers\\sensor_climate_contact\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée"
+          },
+          "tf": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée"
+          }
+        }
+      ]
+    },
+    {
+      "id": "climate_sensor_battery_low",
+      "occurrences": [
+        {
+          "d": "climate_sensor",
+          "ty": "trig",
+          "f": "drivers\\climate_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible"
+          }
+        },
+        {
+          "d": "sensor_climate_contact",
+          "ty": "trig",
+          "f": "drivers\\sensor_climate_contact\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible"
+          }
+        }
+      ]
+    },
+    {
+      "id": "climate_sensor_temperature_alarm_high",
+      "occurrences": [
+        {
+          "d": "climate_sensor",
+          "ty": "trig",
+          "f": "drivers\\climate_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature too high",
+            "fr": "Température trop haute"
+          },
+          "tf": {
+            "en": "Temperature too high",
+            "fr": "Température trop haute"
+          }
+        },
+        {
+          "d": "sensor_climate_contact",
+          "ty": "trig",
+          "f": "drivers\\sensor_climate_contact\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature too high",
+            "fr": "Température trop haute"
+          },
+          "tf": {
+            "en": "Temperature too high",
+            "fr": "Température trop haute"
+          }
+        }
+      ]
+    },
+    {
+      "id": "climate_sensor_temperature_alarm_low",
+      "occurrences": [
+        {
+          "d": "climate_sensor",
+          "ty": "trig",
+          "f": "drivers\\climate_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature too low",
+            "fr": "Température trop basse"
+          },
+          "tf": {
+            "en": "Temperature too low",
+            "fr": "Température trop basse"
+          }
+        },
+        {
+          "d": "sensor_climate_contact",
+          "ty": "trig",
+          "f": "drivers\\sensor_climate_contact\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature too low",
+            "fr": "Température trop basse"
+          },
+          "tf": {
+            "en": "Temperature too low",
+            "fr": "Température trop basse"
+          }
+        }
+      ]
+    },
+    {
+      "id": "climate_sensor_humidity_alarm_high",
+      "occurrences": [
+        {
+          "d": "climate_sensor",
+          "ty": "trig",
+          "f": "drivers\\climate_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity too high",
+            "fr": "Humidité trop haute"
+          },
+          "tf": {
+            "en": "Humidity too high",
+            "fr": "Humidité trop haute"
+          }
+        },
+        {
+          "d": "sensor_climate_contact",
+          "ty": "trig",
+          "f": "drivers\\sensor_climate_contact\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity too high",
+            "fr": "Humidité trop haute"
+          },
+          "tf": {
+            "en": "Humidity too high",
+            "fr": "Humidité trop haute"
+          }
+        }
+      ]
+    },
+    {
+      "id": "climate_sensor_humidity_alarm_low",
+      "occurrences": [
+        {
+          "d": "climate_sensor",
+          "ty": "trig",
+          "f": "drivers\\climate_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity too low",
+            "fr": "Humidité trop basse"
+          },
+          "tf": {
+            "en": "Humidity too low",
+            "fr": "Humidité trop basse"
+          }
+        },
+        {
+          "d": "sensor_climate_contact",
+          "ty": "trig",
+          "f": "drivers\\sensor_climate_contact\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity too low",
+            "fr": "Humidité trop basse"
+          },
+          "tf": {
+            "en": "Humidity too low",
+            "fr": "Humidité trop basse"
+          }
+        }
+      ]
+    },
+    {
+      "id": "climate_sensor_temp_changed",
+      "occurrences": [
+        {
+          "d": "climate_sensor",
+          "ty": "trig",
+          "f": "drivers\\climate_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature changed",
+            "fr": "Température changée",
+            "nl": "Temperatuur gewijzigd",
+            "de": "Temperatur geändert"
+          },
+          "tf": {
+            "en": "Temperature changed",
+            "fr": "Température changée",
+            "nl": "Temperatuur gewijzigd",
+            "de": "Temperatur geändert"
+          }
+        },
+        {
+          "d": "sensor_climate_contact",
+          "ty": "trig",
+          "f": "drivers\\sensor_climate_contact\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature changed",
+            "fr": "Température changée",
+            "nl": "Temperatuur gewijzigd",
+            "de": "Temperatur geändert"
+          },
+          "tf": {
+            "en": "Temperature changed",
+            "fr": "Température changée",
+            "nl": "Temperatuur gewijzigd",
+            "de": "Temperatur geändert"
+          }
+        }
+      ]
+    },
+    {
+      "id": "climate_sensor_temperature_above",
+      "occurrences": [
+        {
+          "d": "climate_sensor",
+          "ty": "cond",
+          "f": "drivers\\climate_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature is above",
+            "fr": "Température supérieure à"
+          },
+          "tf": {
+            "en": "Temperature is above [[temp]]",
+            "fr": "Température supérieure à [[temp]]"
+          }
+        },
+        {
+          "d": "sensor_climate_contact",
+          "ty": "cond",
+          "f": "drivers\\sensor_climate_contact\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature is above",
+            "fr": "Température supérieure à"
+          },
+          "tf": {
+            "en": "Temperature is above [[temp]]",
+            "fr": "Température supérieure à [[temp]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "climate_sensor_temperature_below",
+      "occurrences": [
+        {
+          "d": "climate_sensor",
+          "ty": "cond",
+          "f": "drivers\\climate_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature is below",
+            "fr": "Température inférieure à"
+          },
+          "tf": {
+            "en": "Temperature is below [[temp]]",
+            "fr": "Température inférieure à [[temp]]"
+          }
+        },
+        {
+          "d": "sensor_climate_contact",
+          "ty": "cond",
+          "f": "drivers\\sensor_climate_contact\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature is below",
+            "fr": "Température inférieure à"
+          },
+          "tf": {
+            "en": "Temperature is below [[temp]]",
+            "fr": "Température inférieure à [[temp]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "climate_sensor_humidity_above",
+      "occurrences": [
+        {
+          "d": "climate_sensor",
+          "ty": "cond",
+          "f": "drivers\\climate_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity is above",
+            "fr": "Humidité supérieure à"
+          },
+          "tf": {
+            "en": "Humidity is above [[humidity]]",
+            "fr": "Humidité supérieure à [[humidity]]"
+          }
+        },
+        {
+          "d": "sensor_climate_contact",
+          "ty": "cond",
+          "f": "drivers\\sensor_climate_contact\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity is above",
+            "fr": "Humidité supérieure à"
+          },
+          "tf": {
+            "en": "Humidity is above [[humidity]]",
+            "fr": "Humidité supérieure à [[humidity]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "climate_sensor_humidity_below",
+      "occurrences": [
+        {
+          "d": "climate_sensor",
+          "ty": "cond",
+          "f": "drivers\\climate_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity is below",
+            "fr": "Humidité inférieure à"
+          },
+          "tf": {
+            "en": "Humidity is below [[humidity]]",
+            "fr": "Humidité inférieure à [[humidity]]"
+          }
+        },
+        {
+          "d": "sensor_climate_contact",
+          "ty": "cond",
+          "f": "drivers\\sensor_climate_contact\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity is below",
+            "fr": "Humidité inférieure à"
+          },
+          "tf": {
+            "en": "Humidity is below [[humidity]]",
+            "fr": "Humidité inférieure à [[humidity]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_windowcoverings_set_changed",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Position changed",
+            "fr": "Position changée"
+          },
+          "tf": {
+            "en": "Position changed",
+            "fr": "Position changée"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Position changed",
+            "fr": "Position changée"
+          },
+          "tf": {
+            "en": "Position changed",
+            "fr": "Position changée"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Position changed",
+            "fr": "Position changée"
+          },
+          "tf": {
+            "en": "Position changed",
+            "fr": "Position changée"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_dim_changed",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Brightness changed",
+            "fr": "Luminosité changée"
+          },
+          "tf": {
+            "en": "Brightness changed",
+            "fr": "Luminosité changée"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Brightness changed",
+            "fr": "Luminosité changée"
+          },
+          "tf": {
+            "en": "Brightness changed",
+            "fr": "Luminosité changée"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Brightness changed",
+            "fr": "Luminosité changée"
+          },
+          "tf": {
+            "en": "Brightness changed",
+            "fr": "Luminosité changée"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_battery_low",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_physical_on",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Physically opened",
+            "fr": "Ouvert physiquement"
+          },
+          "tf": {
+            "en": "Physically opened",
+            "fr": "Ouvert physiquement"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Physically opened",
+            "fr": "Ouvert physiquement"
+          },
+          "tf": {
+            "en": "Physically opened",
+            "fr": "Ouvert physiquement"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Physically opened",
+            "fr": "Ouvert physiquement"
+          },
+          "tf": {
+            "en": "Physically opened",
+            "fr": "Ouvert physiquement"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_physical_off",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Physically closed",
+            "fr": "Fermé physiquement"
+          },
+          "tf": {
+            "en": "Physically closed",
+            "fr": "Fermé physiquement"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Physically closed",
+            "fr": "Fermé physiquement"
+          },
+          "tf": {
+            "en": "Physically closed",
+            "fr": "Fermé physiquement"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Physically closed",
+            "fr": "Fermé physiquement"
+          },
+          "tf": {
+            "en": "Physically closed",
+            "fr": "Fermé physiquement"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_physical_single",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Physically pressed",
+            "fr": "Pressé physiquement"
+          },
+          "tf": {
+            "en": "Physically pressed",
+            "fr": "Pressé physiquement"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Physically pressed",
+            "fr": "Pressé physiquement"
+          },
+          "tf": {
+            "en": "Physically pressed",
+            "fr": "Pressé physiquement"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Physically pressed",
+            "fr": "Pressé physiquement"
+          },
+          "tf": {
+            "en": "Physically pressed",
+            "fr": "Pressé physiquement"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_lux_changed",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Luminance changed",
+            "fr": "Luminance changée",
+            "nl": "Lichtsterkte gewijzigd",
+            "de": "Helligkeit geändert"
+          },
+          "tf": {
+            "en": "Luminance changed",
+            "fr": "Luminance changée",
+            "nl": "Lichtsterkte gewijzigd",
+            "de": "Helligkeit geändert"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Luminance changed",
+            "fr": "Luminance changée",
+            "nl": "Lichtsterkte gewijzigd",
+            "de": "Helligkeit geändert"
+          },
+          "tf": {
+            "en": "Luminance changed",
+            "fr": "Luminance changée",
+            "nl": "Lichtsterkte gewijzigd",
+            "de": "Helligkeit geändert"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "trig",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Luminance changed",
+            "fr": "Luminance changée",
+            "nl": "Lichtsterkte gewijzigd",
+            "de": "Helligkeit geändert"
+          },
+          "tf": {
+            "en": "Luminance changed",
+            "fr": "Luminance changée",
+            "nl": "Lichtsterkte gewijzigd",
+            "de": "Helligkeit geändert"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_set_windowcoverings_set",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "act",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set position to...",
+            "fr": "Régler la position à..."
+          },
+          "tf": {
+            "en": "Set position to... [[position]]",
+            "fr": "Régler la position à... [[position]]"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set position to...",
+            "fr": "Régler la position à..."
+          },
+          "tf": {
+            "en": "Set position to... [[position]]",
+            "fr": "Régler la position à... [[position]]"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set position to...",
+            "fr": "Régler la position à..."
+          },
+          "tf": {
+            "en": "Set position to... [[position]]",
+            "fr": "Régler la position à... [[position]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_windowcoverings_open",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "act",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Open",
+            "fr": "Ouvrir"
+          },
+          "tf": {
+            "en": "Open",
+            "fr": "Ouvrir"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Open",
+            "fr": "Ouvrir"
+          },
+          "tf": {
+            "en": "Open",
+            "fr": "Ouvrir"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Open",
+            "fr": "Ouvrir"
+          },
+          "tf": {
+            "en": "Open",
+            "fr": "Ouvrir"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_windowcoverings_close",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "act",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Close",
+            "fr": "Fermer"
+          },
+          "tf": {
+            "en": "Close",
+            "fr": "Fermer"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Close",
+            "fr": "Fermer"
+          },
+          "tf": {
+            "en": "Close",
+            "fr": "Fermer"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Close",
+            "fr": "Fermer"
+          },
+          "tf": {
+            "en": "Close",
+            "fr": "Fermer"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_set_dim",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "act",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set brightness to...",
+            "fr": "Régler la luminosité à..."
+          },
+          "tf": {
+            "en": "Set brightness to... [[brightness]]",
+            "fr": "Régler la luminosité à... [[brightness]]"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set brightness to...",
+            "fr": "Régler la luminosité à..."
+          },
+          "tf": {
+            "en": "Set brightness to... [[brightness]]",
+            "fr": "Régler la luminosité à... [[brightness]]"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set brightness to...",
+            "fr": "Régler la luminosité à..."
+          },
+          "tf": {
+            "en": "Set brightness to... [[brightness]]",
+            "fr": "Régler la luminosité à... [[brightness]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_set_favorite",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "act",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Go to favorite position",
+            "fr": "Aller position favorite",
+            "nl": "Ga naar favoriete positie",
+            "de": "Zur Lieblingsposition"
+          },
+          "tf": {
+            "en": "Go to favorite position",
+            "fr": "Aller position favorite",
+            "nl": "Ga naar favoriete positie",
+            "de": "Zur Lieblingsposition"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Go to favorite position",
+            "fr": "Aller position favorite",
+            "nl": "Ga naar favoriete positie",
+            "de": "Zur Lieblingsposition"
+          },
+          "tf": {
+            "en": "Go to favorite position",
+            "fr": "Aller position favorite",
+            "nl": "Ga naar favoriete positie",
+            "de": "Zur Lieblingsposition"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Go to favorite position",
+            "fr": "Aller position favorite",
+            "nl": "Ga naar favoriete positie",
+            "de": "Zur Lieblingsposition"
+          },
+          "tf": {
+            "en": "Go to favorite position",
+            "fr": "Aller position favorite",
+            "nl": "Ga naar favoriete positie",
+            "de": "Zur Lieblingsposition"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_set_brightness",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "act",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set brightness",
+            "fr": "Régler luminosité",
+            "nl": "Helderheid instellen",
+            "de": "Helligkeit einstellen"
+          },
+          "tf": {
+            "en": "Set brightness [[brightness]]",
+            "fr": "Régler luminosité [[brightness]]",
+            "nl": "Helderheid instellen [[brightness]]",
+            "de": "Helligkeit einstellen [[brightness]]"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set brightness",
+            "fr": "Régler luminosité",
+            "nl": "Helderheid instellen",
+            "de": "Helligkeit einstellen"
+          },
+          "tf": {
+            "en": "Set brightness [[brightness]]",
+            "fr": "Régler luminosité [[brightness]]",
+            "nl": "Helderheid instellen [[brightness]]",
+            "de": "Helligkeit einstellen [[brightness]]"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set brightness",
+            "fr": "Régler luminosité",
+            "nl": "Helderheid instellen",
+            "de": "Helligkeit einstellen"
+          },
+          "tf": {
+            "en": "Set brightness [[brightness]]",
+            "fr": "Régler luminosité [[brightness]]",
+            "nl": "Helderheid instellen [[brightness]]",
+            "de": "Helligkeit einstellen [[brightness]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_set_position",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "act",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set position",
+            "fr": "Régler position",
+            "nl": "Positie instellen",
+            "de": "Position einstellen"
+          },
+          "tf": {
+            "en": "Set position [[position]]",
+            "fr": "Régler position [[position]]",
+            "nl": "Positie instellen [[position]]",
+            "de": "Position einstellen [[position]]"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set position",
+            "fr": "Régler position",
+            "nl": "Positie instellen",
+            "de": "Position einstellen"
+          },
+          "tf": {
+            "en": "Set position [[position]]",
+            "fr": "Régler position [[position]]",
+            "nl": "Positie instellen [[position]]",
+            "de": "Position einstellen [[position]]"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set position",
+            "fr": "Régler position",
+            "nl": "Positie instellen",
+            "de": "Position einstellen"
+          },
+          "tf": {
+            "en": "Set position [[position]]",
+            "fr": "Régler position [[position]]",
+            "nl": "Positie instellen [[position]]",
+            "de": "Position einstellen [[position]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_open",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "act",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Open",
+            "fr": "Ouvrir",
+            "nl": "Openen",
+            "de": "Öffnen"
+          },
+          "tf": {
+            "en": "Open",
+            "fr": "Ouvrir",
+            "nl": "Openen",
+            "de": "Öffnen"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Open",
+            "fr": "Ouvrir",
+            "nl": "Openen",
+            "de": "Öffnen"
+          },
+          "tf": {
+            "en": "Open",
+            "fr": "Ouvrir",
+            "nl": "Openen",
+            "de": "Öffnen"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Open",
+            "fr": "Ouvrir",
+            "nl": "Openen",
+            "de": "Öffnen"
+          },
+          "tf": {
+            "en": "Open",
+            "fr": "Ouvrir",
+            "nl": "Openen",
+            "de": "Öffnen"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_close",
+      "occurrences": [
+        {
+          "d": "curtain_motor",
+          "ty": "act",
+          "f": "drivers\\curtain_motor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Close",
+            "fr": "Fermer",
+            "nl": "Sluiten",
+            "de": "Schließen"
+          },
+          "tf": {
+            "en": "Close",
+            "fr": "Fermer",
+            "nl": "Sluiten",
+            "de": "Schließen"
+          }
+        },
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Close",
+            "fr": "Fermer",
+            "nl": "Sluiten",
+            "de": "Schließen"
+          },
+          "tf": {
+            "en": "Close",
+            "fr": "Fermer",
+            "nl": "Sluiten",
+            "de": "Schließen"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Close",
+            "fr": "Fermer",
+            "nl": "Sluiten",
+            "de": "Schließen"
+          },
+          "tf": {
+            "en": "Close",
+            "fr": "Fermer",
+            "nl": "Sluiten",
+            "de": "Schließen"
+          }
+        }
+      ]
+    },
+    {
+      "id": "curtain_motor_stop",
+      "occurrences": [
+        {
+          "d": "curtain_motor_shutter",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_shutter\\driver.flow.compose.json",
+          "ti": {
+            "en": "Stop",
+            "fr": "Arrêter",
+            "nl": "Stoppen",
+            "de": "Stoppen"
+          },
+          "tf": {
+            "en": "Stop",
+            "fr": "Arrêter",
+            "nl": "Stoppen",
+            "de": "Stoppen"
+          }
+        },
+        {
+          "d": "curtain_motor_wall",
+          "ty": "act",
+          "f": "drivers\\curtain_motor_wall\\driver.flow.compose.json",
+          "ti": {
+            "en": "Stop",
+            "fr": "Arrêter",
+            "nl": "Stoppen",
+            "de": "Stoppen"
+          },
+          "tf": {
+            "en": "Stop",
+            "fr": "Arrêter",
+            "nl": "Stoppen",
+            "de": "Stoppen"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generic_tuya_measure_temperature_changed",
+      "occurrences": [
+        {
+          "d": "device_generic_tuya_universal",
+          "ty": "trig",
+          "f": "drivers\\device_generic_tuya_universal\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature changed",
+            "fr": "Température changée"
+          },
+          "tf": {
+            "en": "Temperature changed",
+            "fr": "Température changée"
+          }
+        },
+        {
+          "d": "generic_tuya",
+          "ty": "trig",
+          "f": "drivers\\generic_tuya\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature changed",
+            "fr": "Température changée"
+          },
+          "tf": {
+            "en": "Temperature changed",
+            "fr": "Température changée"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generic_tuya_measure_humidity_changed",
+      "occurrences": [
+        {
+          "d": "device_generic_tuya_universal",
+          "ty": "trig",
+          "f": "drivers\\device_generic_tuya_universal\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée"
+          },
+          "tf": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée"
+          }
+        },
+        {
+          "d": "generic_tuya",
+          "ty": "trig",
+          "f": "drivers\\generic_tuya\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée"
+          },
+          "tf": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generic_tuya_dp_received",
+      "occurrences": [
+        {
+          "d": "device_generic_tuya_universal",
+          "ty": "trig",
+          "f": "drivers\\device_generic_tuya_universal\\driver.flow.compose.json",
+          "ti": {
+            "en": "Data Point received",
+            "fr": "Point de données reçu"
+          },
+          "tf": {
+            "en": "Data Point received",
+            "fr": "Point de données reçu"
+          }
+        },
+        {
+          "d": "generic_tuya",
+          "ty": "trig",
+          "f": "drivers\\generic_tuya\\driver.flow.compose.json",
+          "ti": {
+            "en": "Data Point received",
+            "fr": "Point de données reçu"
+          },
+          "tf": {
+            "en": "Data Point received",
+            "fr": "Point de données reçu"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generic_tuya_battery_low",
+      "occurrences": [
+        {
+          "d": "device_generic_tuya_universal",
+          "ty": "trig",
+          "f": "drivers\\device_generic_tuya_universal\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          }
+        },
+        {
+          "d": "generic_tuya",
+          "ty": "trig",
+          "f": "drivers\\generic_tuya\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible",
+            "nl": "Batterij laag",
+            "de": "Batterie schwach"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generic_tuya_temp_changed",
+      "occurrences": [
+        {
+          "d": "device_generic_tuya_universal",
+          "ty": "trig",
+          "f": "drivers\\device_generic_tuya_universal\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature changed",
+            "fr": "Température changée",
+            "nl": "Temperatuur gewijzigd",
+            "de": "Temperatur geändert"
+          },
+          "tf": {
+            "en": "Temperature changed",
+            "fr": "Température changée",
+            "nl": "Temperatuur gewijzigd",
+            "de": "Temperatur geändert"
+          }
+        },
+        {
+          "d": "generic_tuya",
+          "ty": "trig",
+          "f": "drivers\\generic_tuya\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature changed",
+            "fr": "Température changée",
+            "nl": "Temperatuur gewijzigd",
+            "de": "Temperatur geändert"
+          },
+          "tf": {
+            "en": "Temperature changed",
+            "fr": "Température changée",
+            "nl": "Temperatuur gewijzigd",
+            "de": "Temperatur geändert"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generic_tuya_humidity_changed",
+      "occurrences": [
+        {
+          "d": "device_generic_tuya_universal",
+          "ty": "trig",
+          "f": "drivers\\device_generic_tuya_universal\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée",
+            "nl": "Vochtigheid gewijzigd",
+            "de": "Feuchtigkeit geändert"
+          },
+          "tf": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée",
+            "nl": "Vochtigheid gewijzigd",
+            "de": "Feuchtigkeit geändert"
+          }
+        },
+        {
+          "d": "generic_tuya",
+          "ty": "trig",
+          "f": "drivers\\generic_tuya\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée",
+            "nl": "Vochtigheid gewijzigd",
+            "de": "Feuchtigkeit geändert"
+          },
+          "tf": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée",
+            "nl": "Vochtigheid gewijzigd",
+            "de": "Feuchtigkeit geändert"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generic_tuya_battery_above",
+      "occurrences": [
+        {
+          "d": "device_generic_tuya_universal",
+          "ty": "cond",
+          "f": "drivers\\device_generic_tuya_universal\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery is above...",
+            "fr": "Batterie au-dessus de..."
+          },
+          "tf": {
+            "en": "Battery is above... [[level]]",
+            "fr": "Batterie au-dessus de... [[level]]"
+          }
+        },
+        {
+          "d": "generic_tuya",
+          "ty": "cond",
+          "f": "drivers\\generic_tuya\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery is above...",
+            "fr": "Batterie au-dessus de..."
+          },
+          "tf": {
+            "en": "Battery is above... [[level]]",
+            "fr": "Batterie au-dessus de... [[level]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "generic_tuya_request_dp",
+      "occurrences": [
+        {
+          "d": "device_generic_tuya_universal",
+          "ty": "act",
+          "f": "drivers\\device_generic_tuya_universal\\driver.flow.compose.json",
+          "ti": {
+            "en": "Request Data Point",
+            "fr": "Demander Point de Données"
+          },
+          "tf": {
+            "en": "Request Data Point [[dp]]",
+            "fr": "Demander Point de Données [[dp]]"
+          }
+        },
+        {
+          "d": "generic_tuya",
+          "ty": "act",
+          "f": "drivers\\generic_tuya\\driver.flow.compose.json",
+          "ti": {
+            "en": "Request Data Point",
+            "fr": "Demander Point de Données"
+          },
+          "tf": {
+            "en": "Request Data Point [[dp]]",
+            "fr": "Demander Point de Données [[dp]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_motion_detected",
+      "occurrences": [
+        {
+          "d": "motion_sensor",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Motion detected",
+            "fr": "Mouvement détecté"
+          },
+          "tf": {
+            "en": "Motion detected",
+            "fr": "Mouvement détecté"
+          }
+        },
+        {
+          "d": "sensor_contact_motion",
+          "ty": "trig",
+          "f": "drivers\\sensor_contact_motion\\driver.flow.compose.json",
+          "ti": {
+            "en": "Motion detected",
+            "fr": "Mouvement détecté"
+          },
+          "tf": {
+            "en": "Motion detected",
+            "fr": "Mouvement détecté"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_motion_cleared",
+      "occurrences": [
+        {
+          "d": "motion_sensor",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Motion cleared",
+            "fr": "Mouvement terminé"
+          },
+          "tf": {
+            "en": "Motion cleared",
+            "fr": "Mouvement terminé"
+          }
+        },
+        {
+          "d": "sensor_contact_motion",
+          "ty": "trig",
+          "f": "drivers\\sensor_contact_motion\\driver.flow.compose.json",
+          "ti": {
+            "en": "Motion cleared",
+            "fr": "Mouvement terminé"
+          },
+          "tf": {
+            "en": "Motion cleared",
+            "fr": "Mouvement terminé"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_battery_low",
+      "occurrences": [
+        {
+          "d": "motion_sensor",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible"
+          }
+        },
+        {
+          "d": "sensor_contact_motion",
+          "ty": "trig",
+          "f": "drivers\\sensor_contact_motion\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_battery_changed",
+      "occurrences": [
+        {
+          "d": "motion_sensor",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery level changed",
+            "fr": "Niveau batterie changé"
+          },
+          "tf": {
+            "en": "Battery level changed",
+            "fr": "Niveau batterie changé"
+          }
+        },
+        {
+          "d": "sensor_contact_motion",
+          "ty": "trig",
+          "f": "drivers\\sensor_contact_motion\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery level changed",
+            "fr": "Niveau batterie changé"
+          },
+          "tf": {
+            "en": "Battery level changed",
+            "fr": "Niveau batterie changé"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_tamper_true",
+      "occurrences": [
+        {
+          "d": "motion_sensor",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Tamper alarm triggered",
+            "fr": "Alarme anti-sabotage déclenchée",
+            "nl": "Sabotage alarm geactiveerd",
+            "de": "Manipulationsalarm ausgelöst"
+          },
+          "tf": {
+            "en": "Tamper alarm triggered",
+            "fr": "Alarme anti-sabotage déclenchée",
+            "nl": "Sabotage alarm geactiveerd",
+            "de": "Manipulationsalarm ausgelöst"
+          }
+        },
+        {
+          "d": "sensor_contact_motion",
+          "ty": "trig",
+          "f": "drivers\\sensor_contact_motion\\driver.flow.compose.json",
+          "ti": {
+            "en": "Tamper alarm triggered",
+            "fr": "Alarme anti-sabotage déclenchée",
+            "nl": "Sabotage alarm geactiveerd",
+            "de": "Manipulationsalarm ausgelöst"
+          },
+          "tf": {
+            "en": "Tamper alarm triggered",
+            "fr": "Alarme anti-sabotage déclenchée",
+            "nl": "Sabotage alarm geactiveerd",
+            "de": "Manipulationsalarm ausgelöst"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_tamper_false",
+      "occurrences": [
+        {
+          "d": "motion_sensor",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Tamper alarm cleared",
+            "fr": "Alarme anti-sabotage terminée",
+            "nl": "Sabotage alarm opgeheven",
+            "de": "Manipulationsalarm beendet"
+          },
+          "tf": {
+            "en": "Tamper alarm cleared",
+            "fr": "Alarme anti-sabotage terminée",
+            "nl": "Sabotage alarm opgeheven",
+            "de": "Manipulationsalarm beendet"
+          }
+        },
+        {
+          "d": "sensor_contact_motion",
+          "ty": "trig",
+          "f": "drivers\\sensor_contact_motion\\driver.flow.compose.json",
+          "ti": {
+            "en": "Tamper alarm cleared",
+            "fr": "Alarme anti-sabotage terminée",
+            "nl": "Sabotage alarm opgeheven",
+            "de": "Manipulationsalarm beendet"
+          },
+          "tf": {
+            "en": "Tamper alarm cleared",
+            "fr": "Alarme anti-sabotage terminée",
+            "nl": "Sabotage alarm opgeheven",
+            "de": "Manipulationsalarm beendet"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_lux_changed",
+      "occurrences": [
+        {
+          "d": "motion_sensor",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Luminance changed",
+            "fr": "Luminance changée",
+            "nl": "Lichtsterkte veranderd",
+            "de": "Helligkeit geändert"
+          },
+          "tf": {
+            "en": "Luminance changed",
+            "fr": "Luminance changée",
+            "nl": "Lichtsterkte veranderd",
+            "de": "Helligkeit geändert"
+          }
+        },
+        {
+          "d": "sensor_contact_motion",
+          "ty": "trig",
+          "f": "drivers\\sensor_contact_motion\\driver.flow.compose.json",
+          "ti": {
+            "en": "Luminance changed",
+            "fr": "Luminance changée",
+            "nl": "Lichtsterkte veranderd",
+            "de": "Helligkeit geändert"
+          },
+          "tf": {
+            "en": "Luminance changed",
+            "fr": "Luminance changée",
+            "nl": "Lichtsterkte veranderd",
+            "de": "Helligkeit geändert"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_tamper_alarm",
+      "occurrences": [
+        {
+          "d": "motion_sensor",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Tamper alarm",
+            "fr": "Alarme sabotage",
+            "nl": "Sabotagealarm",
+            "de": "Manipulationsalarm"
+          },
+          "tf": {
+            "en": "Tamper alarm",
+            "fr": "Alarme sabotage",
+            "nl": "Sabotagealarm",
+            "de": "Manipulationsalarm"
+          }
+        },
+        {
+          "d": "sensor_contact_motion",
+          "ty": "trig",
+          "f": "drivers\\sensor_contact_motion\\driver.flow.compose.json",
+          "ti": {
+            "en": "Tamper alarm",
+            "fr": "Alarme sabotage",
+            "nl": "Sabotagealarm",
+            "de": "Manipulationsalarm"
+          },
+          "tf": {
+            "en": "Tamper alarm",
+            "fr": "Alarme sabotage",
+            "nl": "Sabotagealarm",
+            "de": "Manipulationsalarm"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_motion_active",
+      "occurrences": [
+        {
+          "d": "motion_sensor",
+          "ty": "cond",
+          "f": "drivers\\motion_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Motion !{{is|is not}} detected",
+            "fr": "Mouvement !{{est|n'est pas}} détecté"
+          },
+          "tf": {
+            "en": "Motion !{{is|is not}} detected",
+            "fr": "Mouvement !{{est|n'est pas}} détecté"
+          }
+        },
+        {
+          "d": "sensor_contact_motion",
+          "ty": "cond",
+          "f": "drivers\\sensor_contact_motion\\driver.flow.compose.json",
+          "ti": {
+            "en": "Motion !{{is|is not}} detected",
+            "fr": "Mouvement !{{est|n'est pas}} détecté"
+          },
+          "tf": {
+            "en": "Motion !{{is|is not}} detected",
+            "fr": "Mouvement !{{est|n'est pas}} détecté"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_tamper_active",
+      "occurrences": [
+        {
+          "d": "motion_sensor",
+          "ty": "cond",
+          "f": "drivers\\motion_sensor\\driver.flow.compose.json",
+          "ti": {
+            "en": "Tamper !{{is|is not}} active",
+            "fr": "Sabotage !{{est|n'est pas}} actif",
+            "nl": "Sabotage !{{is|is niet}} actief",
+            "de": "Manipulation !{{ist|ist nicht}} aktiv"
+          },
+          "tf": {
+            "en": "Tamper !{{is|is not}} active",
+            "fr": "Sabotage !{{est|n'est pas}} actif",
+            "nl": "Sabotage !{{is|is niet}} actief",
+            "de": "Manipulation !{{ist|ist nicht}} aktiv"
+          }
+        },
+        {
+          "d": "sensor_contact_motion",
+          "ty": "cond",
+          "f": "drivers\\sensor_contact_motion\\driver.flow.compose.json",
+          "ti": {
+            "en": "Tamper !{{is|is not}} active",
+            "fr": "Sabotage !{{est|n'est pas}} actif",
+            "nl": "Sabotage !{{is|is niet}} actief",
+            "de": "Manipulation !{{ist|ist nicht}} aktiv"
+          },
+          "tf": {
+            "en": "Tamper !{{is|is not}} active",
+            "fr": "Sabotage !{{est|n'est pas}} actif",
+            "nl": "Sabotage !{{is|is niet}} actief",
+            "de": "Manipulation !{{ist|ist nicht}} aktiv"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_presence_detected",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Presence detected",
+            "fr": "Présence détectée"
+          },
+          "tf": {
+            "en": "Presence detected",
+            "fr": "Présence détectée"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "trig",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Presence detected",
+            "fr": "Présence détectée"
+          },
+          "tf": {
+            "en": "Presence detected",
+            "fr": "Présence détectée"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_presence_cleared",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Presence cleared",
+            "fr": "Présence disparue"
+          },
+          "tf": {
+            "en": "Presence cleared",
+            "fr": "Présence disparue"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "trig",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Presence cleared",
+            "fr": "Présence disparue"
+          },
+          "tf": {
+            "en": "Presence cleared",
+            "fr": "Présence disparue"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_motion_detected",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Motion detected",
+            "fr": "Mouvement détecté"
+          },
+          "tf": {
+            "en": "Motion detected",
+            "fr": "Mouvement détecté"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "trig",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Motion detected",
+            "fr": "Mouvement détecté"
+          },
+          "tf": {
+            "en": "Motion detected",
+            "fr": "Mouvement détecté"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_no_motion",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "No motion",
+            "fr": "Aucun mouvement"
+          },
+          "tf": {
+            "en": "No motion",
+            "fr": "Aucun mouvement"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "trig",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "No motion",
+            "fr": "Aucun mouvement"
+          },
+          "tf": {
+            "en": "No motion",
+            "fr": "Aucun mouvement"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_illuminance_changed",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Illuminance changed",
+            "fr": "Luminosité changée"
+          },
+          "tf": {
+            "en": "Illuminance changed",
+            "fr": "Luminosité changée"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "trig",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Illuminance changed",
+            "fr": "Luminosité changée"
+          },
+          "tf": {
+            "en": "Illuminance changed",
+            "fr": "Luminosité changée"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_temperature_changed",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature changed",
+            "fr": "Température changée"
+          },
+          "tf": {
+            "en": "Temperature changed",
+            "fr": "Température changée"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "trig",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature changed",
+            "fr": "Température changée"
+          },
+          "tf": {
+            "en": "Temperature changed",
+            "fr": "Température changée"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_humidity_changed",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée"
+          },
+          "tf": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "trig",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée"
+          },
+          "tf": {
+            "en": "Humidity changed",
+            "fr": "Humidité changée"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_target_distance_changed",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Target distance changed",
+            "fr": "Distance cible changée"
+          },
+          "tf": {
+            "en": "Target distance changed",
+            "fr": "Distance cible changée"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "trig",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Target distance changed",
+            "fr": "Distance cible changée"
+          },
+          "tf": {
+            "en": "Target distance changed",
+            "fr": "Distance cible changée"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_battery_low",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "trig",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery low",
+            "fr": "Batterie faible"
+          },
+          "tf": {
+            "en": "Battery low",
+            "fr": "Batterie faible"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_battery_changed",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery level changed",
+            "fr": "Niveau batterie changé"
+          },
+          "tf": {
+            "en": "Battery level changed",
+            "fr": "Niveau batterie changé"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "trig",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Battery level changed",
+            "fr": "Niveau batterie changé"
+          },
+          "tf": {
+            "en": "Battery level changed",
+            "fr": "Niveau batterie changé"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_distance_changed",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Distance changed",
+            "fr": "Distance changée",
+            "nl": "Afstand gewijzigd",
+            "de": "Entfernung geändert"
+          },
+          "tf": {
+            "en": "Distance changed",
+            "fr": "Distance changée",
+            "nl": "Afstand gewijzigd",
+            "de": "Entfernung geändert"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "trig",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Distance changed",
+            "fr": "Distance changée",
+            "nl": "Afstand gewijzigd",
+            "de": "Entfernung geändert"
+          },
+          "tf": {
+            "en": "Distance changed",
+            "fr": "Distance changée",
+            "nl": "Afstand gewijzigd",
+            "de": "Entfernung geändert"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_temp_changed",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature changed",
+            "fr": "Température changée",
+            "nl": "Temperatuur gewijzigd",
+            "de": "Temperatur geändert"
+          },
+          "tf": {
+            "en": "Temperature changed",
+            "fr": "Température changée",
+            "nl": "Temperatuur gewijzigd",
+            "de": "Temperatur geändert"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "trig",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature changed",
+            "fr": "Température changée",
+            "nl": "Temperatuur gewijzigd",
+            "de": "Temperatur geändert"
+          },
+          "tf": {
+            "en": "Temperature changed",
+            "fr": "Température changée",
+            "nl": "Temperatuur gewijzigd",
+            "de": "Temperatur geändert"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_lux_changed",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "trig",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Luminance changed",
+            "fr": "Luminance changée",
+            "nl": "Lichtsterkte gewijzigd",
+            "de": "Helligkeit geändert"
+          },
+          "tf": {
+            "en": "Luminance changed",
+            "fr": "Luminance changée",
+            "nl": "Lichtsterkte gewijzigd",
+            "de": "Helligkeit geändert"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "trig",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Luminance changed",
+            "fr": "Luminance changée",
+            "nl": "Lichtsterkte gewijzigd",
+            "de": "Helligkeit geändert"
+          },
+          "tf": {
+            "en": "Luminance changed",
+            "fr": "Luminance changée",
+            "nl": "Lichtsterkte gewijzigd",
+            "de": "Helligkeit geändert"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_is_presence_detected",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "cond",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Presence is !{{detected|not detected}}",
+            "fr": "Présence !{{détectée|non détectée}}"
+          },
+          "tf": {
+            "en": "Presence is !{{detected|not detected}}",
+            "fr": "Présence !{{détectée|non détectée}}"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "cond",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Presence is !{{detected|not detected}}",
+            "fr": "Présence !{{détectée|non détectée}}"
+          },
+          "tf": {
+            "en": "Presence is !{{detected|not detected}}",
+            "fr": "Présence !{{détectée|non détectée}}"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_illuminance_above",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "cond",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Illuminance is above",
+            "fr": "Luminosité supérieure à"
+          },
+          "tf": {
+            "en": "Illuminance is above [[lux]]",
+            "fr": "Luminosité supérieure à [[lux]]"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "cond",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Illuminance is above",
+            "fr": "Luminosité supérieure à"
+          },
+          "tf": {
+            "en": "Illuminance is above [[lux]]",
+            "fr": "Luminosité supérieure à [[lux]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_illuminance_below",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "cond",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Illuminance is below",
+            "fr": "Luminosité inférieure à"
+          },
+          "tf": {
+            "en": "Illuminance is below [[lux]]",
+            "fr": "Luminosité inférieure à [[lux]]"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "cond",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Illuminance is below",
+            "fr": "Luminosité inférieure à"
+          },
+          "tf": {
+            "en": "Illuminance is below [[lux]]",
+            "fr": "Luminosité inférieure à [[lux]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_temperature_above",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "cond",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature is above",
+            "fr": "Température supérieure à"
+          },
+          "tf": {
+            "en": "Temperature is above [[temp]]",
+            "fr": "Température supérieure à [[temp]]"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "cond",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Temperature is above",
+            "fr": "Température supérieure à"
+          },
+          "tf": {
+            "en": "Temperature is above [[temp]]",
+            "fr": "Température supérieure à [[temp]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_target_distance_less_than",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "cond",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Target distance is less than",
+            "fr": "Distance cible inférieure à"
+          },
+          "tf": {
+            "en": "Target distance is less than [[distance]]",
+            "fr": "Distance cible inférieure à [[distance]]"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "cond",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Target distance is less than",
+            "fr": "Distance cible inférieure à"
+          },
+          "tf": {
+            "en": "Target distance is less than [[distance]]",
+            "fr": "Distance cible inférieure à [[distance]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_motion_active",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "cond",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Motion !{{is|is not}} detected",
+            "fr": "Mouvement !{{est|n'est pas}} détecté",
+            "nl": "Beweging !{{is|is niet}} gedetecteerd",
+            "de": "Bewegung !{{ist|ist nicht}} erkannt"
+          },
+          "tf": {
+            "en": "Motion !{{is|is not}} detected",
+            "fr": "Mouvement !{{est|n'est pas}} détecté",
+            "nl": "Beweging !{{is|is niet}} gedetecteerd",
+            "de": "Bewegung !{{ist|ist nicht}} erkannt"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "cond",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Motion !{{is|is not}} detected",
+            "fr": "Mouvement !{{est|n'est pas}} détecté",
+            "nl": "Beweging !{{is|is niet}} gedetecteerd",
+            "de": "Bewegung !{{ist|ist nicht}} erkannt"
+          },
+          "tf": {
+            "en": "Motion !{{is|is not}} detected",
+            "fr": "Mouvement !{{est|n'est pas}} détecté",
+            "nl": "Beweging !{{is|is niet}} gedetecteerd",
+            "de": "Bewegung !{{ist|ist nicht}} erkannt"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_set_radar_sensitivity",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "act",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set radar sensitivity",
+            "fr": "Définir sensibilité radar"
+          },
+          "tf": {
+            "en": "Set radar sensitivity [[sensitivity]]",
+            "fr": "Définir sensibilité radar [[sensitivity]]"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "act",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set radar sensitivity",
+            "fr": "Définir sensibilité radar"
+          },
+          "tf": {
+            "en": "Set radar sensitivity [[sensitivity]]",
+            "fr": "Définir sensibilité radar [[sensitivity]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_set_detection_range",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "act",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set detection range",
+            "fr": "Définir plage de détection"
+          },
+          "tf": {
+            "en": "Set detection range [[min]] [[max]]",
+            "fr": "Définir plage de détection [[min]] [[max]]"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "act",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set detection range",
+            "fr": "Définir plage de détection"
+          },
+          "tf": {
+            "en": "Set detection range [[min]] [[max]]",
+            "fr": "Définir plage de détection [[min]] [[max]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_set_fading_time",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "act",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set fading time",
+            "fr": "Définir délai d'absence"
+          },
+          "tf": {
+            "en": "Set fading time [[seconds]]",
+            "fr": "Définir délai d'absence [[seconds]]"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "act",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set fading time",
+            "fr": "Définir délai d'absence"
+          },
+          "tf": {
+            "en": "Set fading time [[seconds]]",
+            "fr": "Définir délai d'absence [[seconds]]"
+          }
+        }
+      ]
+    },
+    {
+      "id": "motion_sensor_radar_mmwave_set_detection_delay",
+      "occurrences": [
+        {
+          "d": "motion_sensor_radar_mmwave",
+          "ty": "act",
+          "f": "drivers\\motion_sensor_radar_mmwave\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set detection delay",
+            "fr": "Définir délai de détection"
+          },
+          "tf": {
+            "en": "Set detection delay [[seconds]]",
+            "fr": "Définir délai de détection [[seconds]]"
+          }
+        },
+        {
+          "d": "sensor_motion_radar",
+          "ty": "act",
+          "f": "drivers\\sensor_motion_radar\\driver.flow.compose.json",
+          "ti": {
+            "en": "Set detection delay",
+            "fr": "Définir délai de détection"
+          },
+          "tf": {
+            "en": "Set detection delay [[seconds]]",
+            "fr": "Définir délai de détection [[seconds]]"
+          }
+        }
+      ]
+    }
+  ]
+}

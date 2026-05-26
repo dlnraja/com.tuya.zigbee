@@ -4,6 +4,7 @@
 
 name: "Sunday Master Automation"
 
+if: false
 on:
   schedule:
     - cron: '0 7 * * 0'

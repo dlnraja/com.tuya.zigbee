@@ -1,6 +1,6 @@
 'use strict';
 
-const { CLUSTERS } = require('../../lib/constants/ZigbeeConstants.js');
+// v8.4.2: REMOVED unused CLUSTERS import to prevent lint warnings
 const { UnifiedSensorBase } = require('../../lib/devices/UnifiedSensorBase');
 
 /**
@@ -89,10 +89,11 @@ class SmokeDetectorAdvancedDevice extends UnifiedSensorBase {
   }
 
   async onNodeInit({ zclNode }) {
+    await super.onNodeInit({ zclNode }); // v8.4.2: MUST call super BEFORE any capability operations
+
     // Auto-fix: Remove battery capabilities for mains-powered devices
     await this.removeCapability('measure_battery').catch(() => {});
     await this.removeCapability('alarm_battery').catch(() => {});
-    await super.onNodeInit({ zclNode });
 
     const mfr = this.getSetting('zb_manufacturer_name') || this.getData().manufacturerName || 'UNKNOWN';
     this.log(`[SMOKE-ADV] Smart Smoke Detector Advanced Ready. Mfr: ${mfr}`);
