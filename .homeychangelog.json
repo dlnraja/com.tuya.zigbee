@@ -1,4 +1,7 @@
 {
+  "8.5.21": {
+    "en": "v8.5.21: . New soil sensor support (_TZE284_0ints6wl). Fixed 39 broken YAML ."
+  },
   "8.5.20": {
     "en": "v8.5.20: . New soil sensor support. Removed stale fingerprints. General stability improvements."
   },
@@ -56,10 +59,7 @@
   "7.5.51": {
     "en": "Bug fix: resolved fingerprint collision for _TZ3000_h1ipgkwn. Improved USB dongle switch driver with flow cards and multi-endpoint support. Added new fingerprints."
   },
-  "7.5.50": {
-    "en": "166 new fingerprints added across 8 drivers. Fixed fingerprint collisions and removed incorrect matches. Generic DIY, PIR mmwave, SR_ZS_SWITCH, and valve_irrigation enriched."
-  },
-  "8.5.21": {
-    "en": "v8.5.20: New Device Support, Driver Count, Cleanup, Air Purifier, Dimmer Dual Channel"
+  "8.5.22": {
+    "en": "v8.5.21: Added support for soil sensor `_TZE284_0ints6wl` / TS0601 (requested by user), Expanded driver fleet to 413 drivers with 7448 total fingerprints, Fixed 39 broken YAML"
   }
 }
