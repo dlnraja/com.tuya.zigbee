@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.5.24 |
+| **App Version** | v8.5.26 |
 | **Device Fingerprints** | 12,027+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 413 (362 Zigbee + 51 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v8.5.24** | v8.5.22: Added support for soil sensor `_TZE284_0ints6wl` / TS0601 (requested by community), 122 new device fingerpri... |
+| **v8.5.26** | v8.5.24: Fixed app crash on startup by correcting the base class from .App., Added 122 new device fingerprints from c... |
+| **v8.5.24** | v8.5.24: 122 new fingerprints from community sync, crash fix for app initialization, and general stability improvements. |
 | **v8.5.22** | v8.5.22: 122 new fingerprints from community sync. New devices: soil sensor (_TZE284_0ints6wl). Bug fixes: auto-off t... |
 | **v8.5.21** | v8.5.21: . New soil sensor support (_TZE284_0ints6wl). Fixed 39 broken YAML . |
 | **v8.5.20** | v8.5.20: . New soil sensor support. Removed stale fingerprints. General stability improvements. |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v8.1.7** | 298 new device fingerprints added. Smart plug and water leak sensor fixes. Flow card and fingerprint collision correc... |
 | **v8.1.6** | Fixes for curtain motor, dimmer, and air quality drivers. New fingerprints for christmas_lights, curtain_module_2_gan... |
 | **v8.1.5** | v8.1.5 â€” 238 new fingerprints, Smart Solar Soil Sensor, Insoma irrigation valve, battery init fix, SOS/BSEED/Avatto W... |
-| **v8.1.4** | . New capabilities: measure_frequency, measure_power_factor, alarm_gas, alarm_siren, alarm_vibration, alarm_water_hig... |
 
 <!-- CHANGELOG_END -->
 
