@@ -99,19 +99,37 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   }
 
   async _initZclOnlyMode(zclNode) {
-    this._zclState = { lastState: { 1: null, 2: null }, pending: { 1: false, 2: false }, timeout: { 1: null, 2: null } };
+    this._zclState = { 
+      lastState: { 1: null, 2: null }, 
+      pending: { 1: false, 2: false }, 
+      timeout: { 1: null, 2: null },
+      lastReport: { 1: 0, 2: 0 }
+    };
     this._zclNode = zclNode;
     this._isZclOnlyMode = true;
+
+    // Remove group memberships for isolation
+    await this._removeGroupMemberships(zclNode);
+
+    this._lastCommandedGang = null;
+    this._lastCommandTime = 0;
+
+    const getOnOffCluster = (epNum) => {
+      const ep = this._zclNode?.endpoints?.[epNum];
+      return ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+    };
 
     for (const epNum of [1, 2]) {
       const capName = epNum === 1 ? 'onoff' : 'onoff.gang2';
       this.registerCapabilityListener(capName, async (value) => {
+        this.log(`[BSEED-2G] EP${epNum} app cmd: ${value}`);
+        this._lastCommandedGang = epNum;
+        this._lastCommandTime = Date.now();
         this._zclState.pending[epNum] = true;
         clearTimeout(this._zclState.timeout[epNum]);
         this._zclState.timeout[epNum] = setTimeout(() => { this._zclState.pending[epNum] = false; }, 2000);
         
-        const ep = this._zclNode?.endpoints?.[epNum];
-        const onOff = ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+        const onOff = getOnOffCluster(epNum);
         if (onOff) {
           try {
             await onOff.writeAttributes({ onOff: !!value });
@@ -124,17 +142,68 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
     }
 
     for (const epNum of [1, 2]) {
-      const ep = this._zclNode?.endpoints?.[epNum];
-      const onOff = ep?.clusters?.onOff || ep?.clusters?.genOnOff || ep?.clusters?.[6];
+      const onOff = getOnOffCluster(epNum);
       if (onOff && typeof onOff.on === 'function') {
         const capName = epNum === 1 ? 'onoff' : 'onoff.gang2';
-        onOff.on('attr.onOff', (value) => {
-          if (!this._zclState.pending[epNum] && this._zclState.lastState[epNum] !== value) {
+        onOff.on('attr.onOff', async (value) => {
+          const now = Date.now();
+          if (now - (this._zclState.lastReport[epNum] || 0) < 1000) return;
+          this._zclState.lastReport[epNum] = now;
+
+          const isPhysical = !this._zclState.pending[epNum];
+          const isBroadcast = !isPhysical && this._lastCommandedGang
+            && epNum !== this._lastCommandedGang
+            && (now - this._lastCommandTime) < 2000;
+          if (isBroadcast) {
+            this.log(`[BSEED-2G] EP${epNum} attr: ${value} FILTERED (broadcast from G${this._lastCommandedGang})`);
+            return;
+          }
+          this.log(`[BSEED-2G] EP${epNum} attr: ${value} (${isPhysical ? 'PHYSICAL' : 'APP'})`);
+
+          if (this._zclState.lastState[epNum] !== value) {
             this._zclState.lastState[epNum] = value;
             this.setCapabilityValue(capName, !!value).catch(() => {});
+
+            const mode = this.sceneMode;
+            if (mode === 'magic') {
+              this.setCapabilityValue(capName, !value).catch(() => {});
+            }
+            if (isPhysical && (mode === 'auto' || mode === 'both')) {
+              const flowId = `button_wireless_switch_switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
+              try {
+                const card = this.homey.flow.getDeviceTriggerCard(flowId);
+                if (card) {
+                  await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+                  this.log(`[BSEED-2G] ✅ Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+                }
+              } catch (e) { }
+            }
+            if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
+              const sceneId = `button_wireless_switch_switch_2gang_gang${epNum}_scene`;
+              try {
+                const card = this.homey.flow.getDeviceTriggerCard(sceneId);
+                if (card) {
+                  await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+                  this.log(`[BSEED-2G] ✅ Scene G${epNum} ${value ? 'on' : 'off'}`);
+                }
+              } catch (e) { }
+            }
           }
         });
       }
+    }
+  }
+
+  async _removeGroupMemberships(zclNode) {
+    for (const epNum of [1, 2]) {
+      try {
+        const ep = zclNode?.endpoints?.[epNum];
+        const g = ep?.clusters?.groups || ep?.clusters?.genGroups;
+        if (typeof g?.removeAll === 'function') {
+          await g.removeAll().catch(() => {});
+          this.log(`[BSEED-2G] EP${epNum} Group memberships removed`);
+        }
+      } catch (err) { }
     }
   }
 
