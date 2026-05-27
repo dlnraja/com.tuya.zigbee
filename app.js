@@ -1308,6 +1308,69 @@ class TuyaUnifiedZigbeeApp extends OAuth2App {
     }
   }
 
+  /**
+   * v8.5.17: onUninit — Proper lifecycle cleanup to prevent 'app instance destroyed' crashes
+   * Called by Homey before the app is shut down / restarted
+   * CRITICAL: Must nullify all references so pending callbacks don't crash
+   */
+  async onUninit() {
+    this._destroyed = true;
+    this.log('⚠️  App uninitializing — stopping all services...');
+
+    // Stop Tuya UDP Discovery (prevents ECONNRESET on port 6666/6667/6668)
+    try {
+      if (this._tuyaUDPDiscovery) {
+        await this._tuyaUDPDiscovery.stop();
+        this._tuyaUDPDiscovery = null;
+      }
+    } catch (e) { /* non-critical */ }
+
+    // Stop AdvancedAnalytics
+    try {
+      if (this.analytics && typeof this.analytics.destroy === 'function') {
+        this.analytics.destroy();
+        this.analytics = null;
+      }
+    } catch (e) { /* non-critical */ }
+
+    // Stop Health Monitor
+    try {
+      if (this.healthMonitor && typeof this.healthMonitor.destroy === 'function') {
+        this.healthMonitor.destroy();
+        this.healthMonitor = null;
+      }
+    } catch (e) { /* non-critical */ }
+
+    // Stop Discovery
+    try {
+      if (this.discovery && typeof this.discovery.stop === 'function') {
+        await this.discovery.stop();
+        this.discovery = null;
+      }
+    } catch (e) { /* non-critical */ }
+
+    // Null out all managers to prevent stale callbacks crashing on 'homey.app'
+    this.flowCardManager = null;
+    this.capabilityManager = null;
+    this.optimizer = null;
+    this.unknownHandler = null;
+    this.systemLogsCollector = null;
+    this.identificationDatabase = null;
+    this.diagnosticAPI = null;
+    this.logBuffer = null;
+    this.suggestionEngine = null;
+    this.otaManager = null;
+    this.quirksDatabase = null;
+    this.sessionManager = null;
+    this.sanityFilter = null;
+
+    this.log('✅ App uninit complete');
+
+    try {
+      await super.onUninit();
+    } catch (e) { /* non-critical */ }
+  }
+
 }
 
 module.exports = TuyaUnifiedZigbeeApp;
