@@ -4,7 +4,17 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 
 ---
 
-## [Unreleased]
+## [8.5.17] - 2026-05-27
+
+### New Features
+- Added support for soil sensor `_TZE284_0ints6wl` / `TS0601` (requested by user)
+
+### Improvements
+- Updated app metadata and build configuration
+- General stability improvements
+---
+
+ [Unreleased]
 
 ### Bug Fixes
 - Removed invalid `maintenanceAction: true` from `capabilitiesOptions` in 14 button/scene switch drivers (`button_wireless_1/2/3/6/8/smart`, `remote_button_wireless/wall`, `scene_switch_1/2/3/4/6/wall`) — caused Homey validation failure.
