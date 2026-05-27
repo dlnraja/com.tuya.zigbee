@@ -119,6 +119,9 @@ assets/branding/
 assets/templates/
 assets/README.md
 
+# === Oversized driver images (xlarge not needed, Homey uses small/large) ===
+drivers/*/assets/images/xlarge.png
+
 # === Root junk files (catch-all) ===
 _*.js
 _*.py
