@@ -1,5 +1,6 @@
 'use strict';
 const { safeParse } = require('../../lib/utils/tuyaUtils.js');
+const { smartParse } = require('../../lib/managers/SmartDivisorManager');
 
 const UnifiedSwitchBase = require('../../lib/devices/UnifiedSwitchBase');
 const VirtualButtonMixin = require('../../lib/mixins/VirtualButtonMixin');
@@ -124,8 +125,8 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       if (typeof elecCluster.on === 'function') {
         // Active Power (W)
         elecCluster.on('attr.activePower', (value) => {
-          const watts = safeMultiply(value, 10); // Typically in 0.1W units
-          this.log(`[ZCL-DATA] switch.power raw=${value}  ${watts}W`);
+          const watts = smartParse(value, null, { capability: 'measure_power' });
+          this.log(`[ZCL-DATA] switch.power raw=${value} → ${watts}W`);
           if (this.hasCapability('measure_power')) {
             this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
           }
@@ -133,8 +134,8 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
         // RMS Voltage (V)
         elecCluster.on('attr.rmsVoltage', (value) => {
-          const volts = safeMultiply(value, 10); // Typically in 0.1V units
-          this.log(`[ZCL-DATA] switch.voltage raw=${value}  ${volts}V`);
+          const volts = smartParse(value, null, { capability: 'measure_voltage' });
+          this.log(`[ZCL-DATA] switch.voltage raw=${value} → ${volts}V`);
           if (this.hasCapability('measure_voltage')) {
             this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
           }
@@ -142,8 +143,8 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
 
         // RMS Current (A)
         elecCluster.on('attr.rmsCurrent', (value) => {
-          const amps = value * 1000; // Typically in mA
-          this.log(`[ZCL-DATA] switch.current raw=${value}  ${amps}A` );
+          const amps = smartParse(value, null, { capability: 'measure_current' }) || 0;
+          this.log(`[ZCL-DATA] switch.current raw=${value} → ${amps}A`);
           if (this.hasCapability('measure_current')) {
             this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
           }
@@ -171,8 +172,8 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       if (typeof meteringCluster.on === 'function') {
         // Current summation delivered (kWh)
         meteringCluster.on('attr.currentSummationDelivered', (value) => {
-          const kwh = value * 1000; // Typically in Wh
-          this.log(`[ZCL-DATA] switch.energy raw=${value}  ${kwh}kWh`);
+          const kwh = smartParse(value, null, { capability: 'meter_power' }) || 0;
+          this.log(`[ZCL-DATA] switch.energy raw=${value} → ${kwh}kWh`);
           if (this.hasCapability('meter_power')) {
             this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
           }
@@ -267,13 +268,16 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]).catch(() => ({}));
 
       if (attrs.activePower != null && this.hasCapability('measure_power')) {
-        this.setCapabilityValue('measure_power', safeParse(attrs.activePower, 10)).catch(() => { });
+        const watts = smartParse(attrs.activePower, null, { capability: 'measure_power' });
+        this.setCapabilityValue('measure_power', parseFloat(watts)).catch(() => { });
       }
       if (attrs.rmsVoltage != null && this.hasCapability('measure_voltage')) {
-        this.setCapabilityValue('measure_voltage', safeParse(attrs.rmsVoltage, 10)).catch(() => { });
+        const volts = smartParse(attrs.rmsVoltage, null, { capability: 'measure_voltage' });
+        this.setCapabilityValue('measure_voltage', parseFloat(volts)).catch(() => { });
       }
       if (attrs.rmsCurrent != null && this.hasCapability('measure_current')) {
-        this.setCapabilityValue('measure_current', safeParse(attrs.rmsCurrent, 1000)).catch(() => { });
+        const amps = smartParse(attrs.rmsCurrent, null, { capability: 'measure_current' });
+        this.setCapabilityValue('measure_current', parseFloat(amps)).catch(() => { });
       }
       this.log('[SWITCH-2G] Initial electrical values read');
     } catch (e) {
@@ -291,7 +295,8 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
       ]).catch(() => ({}));
 
       if (attrs.currentSummationDelivered != null && this.hasCapability('meter_power')) {
-        this.setCapabilityValue('meter_power', attrs.currentSummationDelivered * 1000).catch(() => { });
+        const kwh = smartParse(attrs.currentSummationDelivered, null, { capability: 'meter_power' });
+        this.setCapabilityValue('meter_power', parseFloat(kwh)).catch(() => { });
       }
       this.log('[SWITCH-2G] Initial metering values read');
     } catch (e) {
@@ -364,17 +369,21 @@ class Switch2GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_2gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
             try {
-              const card = this.homey.flow.getTriggerCard(flowId);
-              if (card) {await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});}
-              this.log(`[BSEED-2G]  Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+              const card = this.homey.flow.getDeviceTriggerCard(flowId);
+              if (card) {
+                await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+                this.log(`[BSEED-2G]  Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+              }
             } catch (e) { }
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
             const sceneId = `switch_2gang_gang${epNum}_scene`;
             try {
-              const card = this.homey.flow.getTriggerCard(sceneId);
-              if (card) {await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});}
-              this.log(`[BSEED-2G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
+              const card = this.homey.flow.getDeviceTriggerCard(sceneId);
+              if (card) {
+                await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+                this.log(`[BSEED-2G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
+              }
             } catch (e) { }
           }
         }

@@ -23,25 +23,22 @@ class Switch6GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
   }
 
   get isZclOnlyDevice() {
-    const mfr = this.getSetting?.('zb_manufacturer_name' ) ||
-                this.getStoreValue?.('manufacturerName' ) || '';
+    const mfr = this.getSetting?.('zb_manufacturer_name') ||
+                this.getStoreValue?.('manufacturerName') || '';
     return includesCI(ZCL_ONLY_MANUFACTURERS_6G, mfr);
   }
 
   async onNodeInit({ zclNode }) {
-    await super.onNodeInit({ zclNode });
-    this.initPhysicalButtonDetection(); // rule-19 injected
-    
-    this._registerCapabilityListeners(); // rule-12a injected
     if (this.isZclOnlyDevice) {
-      this.log('[SWITCH-6G]  ZCL-ONLY MODE');
+      this.log('[SWITCH-6G] ZCL-ONLY MODE');
       this.zclNode = zclNode; // v5.13.2: CRITICAL - set for base class use
       await this._initZclOnlyMode(zclNode);
       return;
     }
-    await this.initPhysicalButtonDetection?.(zclNode );
+    await super.onNodeInit({ zclNode });
+    await this.initPhysicalButtonDetection?.(zclNode);
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-6G] v5.5.922  Ready' );
+    this.log('[SWITCH-6G] Ready');
   }
 
   /**
@@ -87,6 +84,7 @@ class Switch6GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
         if (this._zclState.lastState[epNum] !== value) {
           this._zclState.lastState[epNum] = value;
           this.setCapabilityValue(capName, value).catch(() => {});
+          
           // v5.12.5: Scene mode support
           const mode = this.sceneMode;
           if (mode === 'magic') {
@@ -95,37 +93,37 @@ class Switch6GangDevice extends PhysicalButtonMixin(VirtualButtonMixin(UnifiedSw
           if (isPhysical && (mode === 'auto' || mode === 'both')) {
             const flowId = `switch_wall_6gang_physical_gang${epNum}_${value ? 'on' : 'off'}`;
             try {
-              const card =
-      this.homey.flow.getTriggerCard(flowId)?.trigger(this, {}, {}).catch(this.error || console.error)
-              if (card ) {await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});}
-              this.log(`[SWITCH-6G]  Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+              const card = this.homey.flow.getDeviceTriggerCard(flowId);
+              if (card) {
+                await card.trigger(this, { gang: epNum, state: value }, {}).catch(() => {});
+                this.log(`[SWITCH-6G] Physical G${epNum} ${value ? 'ON' : 'OFF'}`);
+              }
             } catch (e) { }
           }
           if (isPhysical && (mode === 'auto' || mode === 'magic' || mode === 'both')) {
             const sceneId = `switch_wall_6gang_gang${epNum}_scene`;
             try {
-              const card =
-      this.homey.flow.getTriggerCard(sceneId)?.trigger(this, {}, {}).catch(this.error || console.error)
-              if (card ) {await card.trigger(this , { action: value ? 'on' : 'off' }, {}).catch(() => {});}
-              this.log(`[SWITCH-6G]  Scene G${epNum} ${value ? 'on' : 'off'}`);
+              const card = this.homey.flow.getDeviceTriggerCard(sceneId);
+              if (card) {
+                await card.trigger(this, { action: value ? 'on' : 'off' }, {}).catch(() => {});
+                this.log(`[SWITCH-6G] Scene G${epNum} ${value ? 'on' : 'off'}`);
+              }
             } catch (e) { }
           }
         }
       });
     }
     await this.initVirtualButtons?.();
-    this.log('[SWITCH-6G]  ZCL-only mode ready (packetninja v990)');
+    this.log('[SWITCH-6G] ZCL-only mode ready');
   }
 
   onDeleted() {
     if (this._zclState?.timeout) {
       for (let i = 1; i <= 6; i++) {
-        if (this._zclState.timeout[i]) {clearTimeout(this._zclState.timeout[i] );}
+        if (this._zclState.timeout[i]) {clearTimeout(this._zclState.timeout[i]);}
       }
     }
     super.onDeleted?.();
   }
 }
 module.exports = Switch6GangDevice;
-
-
