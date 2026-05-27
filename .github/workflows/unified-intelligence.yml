@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: 🧠 Unified Intelligence Orchestrator
 
-if: false
 on:
   issues:
     types: [ opened, edited, labeled ]

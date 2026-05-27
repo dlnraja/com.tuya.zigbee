@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: 🛡️ Fleet-Wide Comprehensive Validation
 
-if: false
 on:
   push:
     branches:

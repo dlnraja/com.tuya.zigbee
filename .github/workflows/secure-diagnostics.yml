@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: 🛡️ Secure Fleet Diagnostics (Gmail)
 
-if: false
 on:
   schedule:
     - cron: '0 */6 * * *' # Every 6 hours

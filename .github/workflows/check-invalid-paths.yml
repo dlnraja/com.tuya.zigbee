@@ -1,6 +1,5 @@
 # DISABLED v8.5.0 — Redundant with unified-ci.yml
 name: Check Invalid Paths
-if: false
 on:
   push:
     branches: [master, stable-v5]

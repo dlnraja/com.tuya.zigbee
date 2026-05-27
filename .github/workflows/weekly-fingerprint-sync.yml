@@ -6,7 +6,6 @@
 
 name: "🌌 UNIFIED ENGINE — Weekly Fingerprint Sync"
 
-if: false
 on:
   schedule:
     - cron: '0 6 * * 1'

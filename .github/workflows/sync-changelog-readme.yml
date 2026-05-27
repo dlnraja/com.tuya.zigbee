@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: Sync Changelog to README
 
-if: false
 on:
   schedule:
     - cron: '30 12 * * *'  # Daily 12:30 UTC — sync changelog to README

@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: 📅 Monthly Device Enrichment
 
-if: false
 on:
   schedule:
     # Run on 1st of every month at 5 AM UTC (staggered from monthly-enrichment at 3AM)

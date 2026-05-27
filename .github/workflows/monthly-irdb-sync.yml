@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: "Monthly IR Database Sync"
 
-if: false
 on:
   schedule:
     - cron: '0 6 15 * *'  # 15th of month at 06:00 UTC

@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: Auto Discovery from Z2M & Community (Enhanced)
 
-if: false
 on:
   workflow_dispatch:
 

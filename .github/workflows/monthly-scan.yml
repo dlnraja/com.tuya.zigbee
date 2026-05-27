@@ -4,7 +4,6 @@
 
 name: 📡 Monthly Device Scan
 
-if: false
 on:
   schedule:
     - cron: '0 0 1 * *'  # 1st of month at midnight UTC
