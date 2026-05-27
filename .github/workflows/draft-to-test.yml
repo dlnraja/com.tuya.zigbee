@@ -15,6 +15,9 @@ concurrency:
   group: promote-to-test
   cancel-in-progress: true
 
+env:
+  NODE_OPTIONS: "--dns-result-order=ipv4first"
+
 defaults:
   run:
     shell: bash

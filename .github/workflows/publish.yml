@@ -20,6 +20,7 @@ concurrency:
 
 env:
   NODE_VERSION: "22"
+  NODE_OPTIONS: "--dns-result-order=ipv4first"
 
 defaults:
   run:

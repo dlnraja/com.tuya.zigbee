@@ -1,15 +1,12 @@
-# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌0‌ — DISABLED (redundant)
-# Re-enable by removing 'if: false' below
+# 🇺‌🇳‌🇮‌🇫‌🇮‌🇪‌🇩‌ ‌🇨‌🇴‌🇳‌🇸‌🇴‌🇱‌🇮‌🇩‌🇦‌🇹‌🇮‌🇴‌🇳‌ ‌🇻‌8‌.‌5‌.‌1‌7‌ — ENABLED
 name: 🔍 Verify, Diagnostics & Publish Test
-
-if: false
 on:
   workflow_dispatch:
     inputs:
       target_version:
-        description: 'Version à publier (ex: 7.4.9)'
+        description: 'Version à publier (ex: 8.5.17)'
         required: true
-        default: '7.4.9'
+        default: '8.5.17'
       run_diagnostics:
         description: "Lancer l'analyse des logs de crash"
         type: boolean
@@ -18,6 +15,10 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+
+env:
+  NODE_OPTIONS: "--dns-result-order=ipv4first"
+
 defaults:
   run:
     shell: bash
