@@ -84,12 +84,37 @@ class TuyaUnifiedZigbeeApp extends OAuth2App {
   healthMonitor = null;  // L13: Device Vitality
   sanityFilter = null;   // L14: Data Coherence
 
+  /**
+   * Override setOAuth2Config to prevent startup crashes when CLIENT_ID/CLIENT_SECRET are not defined
+   */
+  setOAuth2Config(args) {
+    const client = args?.client || this.constructor.OAUTH2_CLIENT;
+    const clientId = args?.clientId || client?.CLIENT_ID;
+    const clientSecret = args?.clientSecret || client?.CLIENT_SECRET;
+    if (typeof clientId !== 'string' || typeof clientSecret !== 'string') {
+      this.log('⚠️ Skipping OAuth2 configuration: CLIENT_ID or CLIENT_SECRET environment variables are not set.');
+      return;
+    }
+    try {
+      super.setOAuth2Config(args);
+    } catch (err) {
+      this.error('⚠️ Failed to configure OAuth2 App:', err.message);
+    }
+  }
 
   /**
    * onInit is called when the app is initialized.
    */
   async onInit() {
-    await super.onInit();
+    try {
+      await super.onInit();
+    } catch (err) {
+      if (err.message && err.message.includes('Invalid Client ID')) {
+        this.log('⚠️ OAuth2 skipped: CLIENT_ID/SECRET not configured. App running in local-only mode.');
+      } else {
+        this.error('⚠️ App init error (non-fatal):', err.message);
+      }
+    }
     // AUDIT V2: Initialize Developer Settings FIRST
     this.initializeSettings();
 
