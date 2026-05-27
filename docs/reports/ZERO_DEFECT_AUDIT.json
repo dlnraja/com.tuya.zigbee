@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-27T07:00:33.643Z",
+  "timestamp": "2026-05-27T15:07:01.515Z",
   "driversChecked": 413,
   "collisions": [
     {
@@ -441,6 +441,13 @@
       "drivers": [
         "button_wireless_2",
         "button_wireless_plug"
+      ]
+    },
+    {
+      "id": "_TZ3000_FAMKXCI2|TS0043",
+      "drivers": [
+        "button_wireless_3",
+        "switch_3gang"
       ]
     },
     {
@@ -1060,6 +1067,13 @@
       ]
     },
     {
+      "id": "_TZ3000_FVH3PJAZ|TS0601",
+      "drivers": [
+        "dimmer_wall_1gang",
+        "switch_3gang"
+      ]
+    },
+    {
       "id": "_TZ3000_KDI2O9M6|TS0601",
       "drivers": [
         "dimmer_wall_1gang",
@@ -1144,6 +1158,13 @@
       ]
     },
     {
+      "id": "_TZE204_BYZDAYIE|TS0601",
+      "drivers": [
+        "din_rail_meter",
+        "power_meter"
+      ]
+    },
+    {
       "id": "_TZE204_LSANAE15|TS0601",
       "drivers": [
         "din_rail_meter",
@@ -1218,6 +1239,13 @@
       "drivers": [
         "floor_heating_thermostat",
         "wall_thermostat"
+      ]
+    },
+    {
+      "id": "_TZE200_NKLQJK62|TS0601",
+      "drivers": [
+        "garage_door",
+        "radar_sensor"
       ]
     },
     {
@@ -3391,6 +3419,41 @@
       ]
     },
     {
+      "id": "_TZE200_HL0SS9OA|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "radar_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_PPUJ1VEM|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "radar_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_ZTQNH5CG|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "radar_sensor"
+      ]
+    },
+    {
+      "id": "_TZE204_ZTQNH5CG|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "radar_sensor"
+      ]
+    },
+    {
+      "id": "_TZE200_MRF6VTUA|TS0601",
+      "drivers": [
+        "presence_sensor_radar",
+        "radar_sensor"
+      ]
+    },
+    {
       "id": "_TZE200_9MAHTQTG|TS0601",
       "drivers": [
         "radiator_valve",
@@ -4701,7 +4764,7 @@
     "lib\\ZigbeeClusterManager.js:466: Cluster 0xEF00 used as literal instead of CLUSTERS.TUYA_EF00"
   ],
   "naNSafetyCheck": [
-    ".homeybuild\\app.js:181: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\app.js:206: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\bulb_rgbw\\device.js:78: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\bulb_rgbw\\device.js:123: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\drivers\\bulb_rgb_led\\device.js:48: Potential unchecked division/multiplication (NaN risk)",
@@ -4780,8 +4843,8 @@
     ".homeybuild\\lib\\adapters\\SecurityManager.js:346: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\adapters\\SecurityManager.js:347: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\adapters\\SecurityManager.js:348: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\lib\\analytics\\AdvancedAnalytics.js:210: Potential unchecked division/multiplication (NaN risk)",
-    ".homeybuild\\lib\\analytics\\AdvancedAnalytics.js:229: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\lib\\analytics\\AdvancedAnalytics.js:215: Potential unchecked division/multiplication (NaN risk)",
+    ".homeybuild\\lib\\analytics\\AdvancedAnalytics.js:234: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\analytics\\AnalyticsSystem.js:45: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\analytics\\AnalyticsSystem.js:94: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\analytics\\AnalyticsSystem.js:107: Potential unchecked division/multiplication (NaN risk)",
@@ -5154,7 +5217,7 @@
     ".homeybuild\\lib\\zigbee\\ZigbeeHelper.js:107: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\zigbee\\ZigbeeHelper.js:114: Potential unchecked division/multiplication (NaN risk)",
     ".homeybuild\\lib\\ZigbeeTimeSync.js:106: Potential unchecked division/multiplication (NaN risk)",
-    "app.js:181: Potential unchecked division/multiplication (NaN risk)",
+    "app.js:206: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\bulb_rgbw\\device.js:78: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\bulb_rgbw\\device.js:123: Potential unchecked division/multiplication (NaN risk)",
     "drivers\\bulb_rgb_led\\device.js:48: Potential unchecked division/multiplication (NaN risk)",
@@ -5233,8 +5296,8 @@
     "lib\\adapters\\SecurityManager.js:346: Potential unchecked division/multiplication (NaN risk)",
     "lib\\adapters\\SecurityManager.js:347: Potential unchecked division/multiplication (NaN risk)",
     "lib\\adapters\\SecurityManager.js:348: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\analytics\\AdvancedAnalytics.js:210: Potential unchecked division/multiplication (NaN risk)",
-    "lib\\analytics\\AdvancedAnalytics.js:229: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\analytics\\AdvancedAnalytics.js:215: Potential unchecked division/multiplication (NaN risk)",
+    "lib\\analytics\\AdvancedAnalytics.js:234: Potential unchecked division/multiplication (NaN risk)",
     "lib\\analytics\\AnalyticsSystem.js:45: Potential unchecked division/multiplication (NaN risk)",
     "lib\\analytics\\AnalyticsSystem.js:94: Potential unchecked division/multiplication (NaN risk)",
     "lib\\analytics\\AnalyticsSystem.js:107: Potential unchecked division/multiplication (NaN risk)",
