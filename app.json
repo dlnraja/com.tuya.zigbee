@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.dlnraja.tuya.zigbee",
-  "version": "8.1.13",
+  "version": "8.5.17",
   "compatibility": ">=12.2.0",
   "sdk": 3,
   "platforms": [
@@ -173879,7 +173879,10 @@
           "_TZE200_RKS0SGB7",
           "_tze204_q9xty0ad",
           "_TZE204_q9xty0ad",
-          "_TZE204_Q9XTY0AD"
+          "_TZE204_Q9XTY0AD",
+          "_TZE204_byzdayie",
+          "_TZE200_lsanae78",
+          "_TZE204_lsanae78"
         ],
         "productId": [
           "TS0601",
@@ -173895,7 +173898,17 @@
               6
             ]
           }
-        }
+        },
+        "fingerprints": [
+          {
+            "manufacturerName": "_TZE200_byzdayie",
+            "productId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE204_byzdayie",
+            "productId": "TS0601"
+          }
+        ]
       },
       "images": {
         "small": "drivers/power_meter/assets/images/small.png",
@@ -175471,7 +175484,15 @@
           "_TZE200_WUKB7RHC",
           "_tze200_xpq2rzhq",
           "_TZE200_xpq2rzhq",
-          "_TZE200_XPQ2RZHQ"
+          "_TZE200_XPQ2RZHQ",
+          "_TZE200_hl0ss9oa",
+          "_TZE200_mrf6vtua",
+          "_TZE200_ppuj1vem",
+          "_TZE204_ztqnh5cg",
+          "_TZE200_ztqnh5cg",
+          "_TZE200_f1lvlia0",
+          "_TZE200_nklqjk62",
+          "_TZE200_ikvvplwq"
         ],
         "productId": [
           "TS0601"
@@ -175497,7 +175518,25 @@
             "en": "Press and hold the reset button for 6 seconds. When the indicator light flashes it is in pairing mode.",
             "nl": "Druk 6 seconden op de reset knop. Wacht tot de led gaat knipperen."
           }
-        }
+        },
+        "fingerprints": [
+          {
+            "manufacturerName": "_TZE200_hl0ss9oa",
+            "productId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_f1lvlia0",
+            "productId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_nklqjk62",
+            "productId": "TS0601"
+          },
+          {
+            "manufacturerName": "_TZE200_ikvvplwq",
+            "productId": "TS0601"
+          }
+        ]
       },
       "settings": [
         {
@@ -177547,7 +177586,13 @@
               61184
             ]
           }
-        }
+        },
+        "fingerprints": [
+          {
+            "manufacturerName": "_TZE200_u6x1zyv2",
+            "productId": "TS0601"
+          }
+        ]
       },
       "settings": [
         {
@@ -205922,7 +205967,9 @@
           "TS0003_power",
           "TS0003_switch_module",
           "TS0601",
-          "ZG-302Z3"
+          "ZG-302Z3",
+          "TS0043",
+          "TS0040"
         ],
         "endpoints": {
           "1": {
@@ -206132,12 +206179,25 @@
           "_TZ3000_AVOTANJ3",
           "_tz3000_mw1pqqqt",
           "_TZ3000_mw1pqqqt",
-          "_TZ3000_MW1PQQQT"
+          "_TZ3000_MW1PQQQT",
+          "_TZ3000_famkxci2",
+          "_TZ3000_yf8iela1",
+          "_TZ3000_3rsf55vb",
+          "_TZ3000_fvh3pjaz",
+          "_TZ3000_amdymr85"
         ],
         "fingerprints": [
           {
             "manufacturerName": "_TZ3000_mw1pqqqt",
             "productId": "TS0003"
+          },
+          {
+            "manufacturerName": "_TZ3000_famkxci2",
+            "productId": "TS0043"
+          },
+          {
+            "manufacturerName": "_TZ3000_yf8iela1",
+            "productId": "TS0043"
           }
         ]
       },
