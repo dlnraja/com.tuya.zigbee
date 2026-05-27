@@ -1,6 +1,6 @@
 # PROJECT_INDEX.md - Unified Smart Home Engine (Local-First) Reference Guide
 
-> **Version**: 9.0.0+ | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
+> **Version**: 9.5.0+ | **App ID**: `com.dlnraja.tuya.zigbee` (stable: `com.dlnraja.tuya.zigbee.stable`)
 > **413 drivers** | **12766 fingerprints** | **4038 flows** | **Zigbee + WiFi** | **SDK v3** | **SDK Deprecations: 0**
 
 ⚠️ **ATTENTION AI AGENTS, LOCAL CLAUDE CODE, & ANTIGRAVITY SKILLS** ⚠️
@@ -796,6 +796,17 @@ To completely resolve Out Of Memory (OOM) fatal crashes (`FATAL ERROR: Reached h
 To support offline/local functionality while avoiding startup OOM, a two-layer design was implemented:
 - **Static Matching Layer (Pairing Time)**: Device manufacturer names (mfs) and `modelId` / `deviceId` strings must be statically defined in the driver's `driver.compose.json` and the central `app.json` fingerprints. This allows the Homey Pro Z-Wave/Zigbee pairing wizard to match the device and successfully bind it locally.
 - **Dynamic Refinement Layer (Runtime)**: Dynamic database files (like `fingerprints.json` and `driver-mapping-database.json`) must remain in the app bundle (fully unignored in `.homeyignore`) to refine the paired device's exact capability mappings and DP values dynamically at runtime.
+
+### 22.3. Promise-Chaining Trigger Card Crash Prevention (v9.5.0+)
+To prevent runtime type errors and crashes (e.g. `TypeError: card.trigger is not a function`) when triggering device-specific cards in multi-gang BSEED or standard switch drivers, the trigger handling pattern is strictly isolated:
+- **Card Retrieval separation**: Card fetching via `getDeviceTriggerCard` is isolated from the trigger call.
+- **Async Containment**: The trigger is invoked asynchronously with explicit `.catch()` containment to intercept any transient rejects.
+- **AST / String checking**: Automated gates block legacy double-wrapped `.trigger().trigger()` patterns before commit integration.
+
+### 22.4. ZCL-Only Duplicate Listener Blocker & Broadcast Filtering (v9.5.0+)
+Multi-gang switches and scened panels under BSEED/Zemismart require strict listener isolation:
+- **Early onNodeInit Returns**: The `device.js` must return immediately after `_initZclOnlyMode()` if `isZclOnlyDevice` is matched, preventing standard capability listeners and mixin events from duplicate binding.
+- **Sliding command window**: A 2000ms window filters internal hardware broadcasts and echoes by matching commanded endpoints against `this._lastCommandedGang`.
 
 
 ### Issues Résolues Récemment

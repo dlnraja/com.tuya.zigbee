@@ -24,6 +24,8 @@ async function main() {
     driversChecked: 0,
     collisions: [],
     buttonLogicFailures: [],
+    promiseTriggerChainCrashes: [],
+    zclOnlyDuplicateListeners: [],
     sdkDeprecations: [],
     radarLogicCheck: [],
     numericConstantViolations: [],
@@ -64,16 +66,42 @@ async function main() {
         }
       }
 
-      // 2. BUTTON LOGIC AUDIT
-      if (d.includes('button') || d.includes('remote') || d.includes('switch_wireless')) {
-        const devicePath = path.join(DRIVERS_DIR, d, 'device.js');
-        if (fs.existsSync(devicePath)) {
-          const content = fs.readFileSync(devicePath, 'utf8');
-          // Check if it inherits from ButtonDevice or uses the recovery logic
+      // 2. BUTTON LOGIC & STABILITY AUDIT
+      const devicePath = path.join(DRIVERS_DIR, d, 'device.js');
+      if (fs.existsSync(devicePath)) {
+        const content = fs.readFileSync(devicePath, 'utf8');
+        const lines = content.split('\n');
+
+        // Button Device override checks
+        if (d.includes('button') || d.includes('remote') || d.includes('switch_wireless')) {
           if (content.includes('ButtonDevice') && !content.includes('onEndDeviceAnnounce')) {
              if (content.match(/async onNodeInit\s*\(/) && !content.includes('super.onNodeInit')) {
                 auditResults.buttonLogicFailures.push(`${d}: overrides onNodeInit without calling super.onNodeInit`);
              }
+          }
+        }
+
+        // Promise Chaining check
+        if (content.includes('.trigger(')) {
+          const triggerPattern = /(\w+)\s*=\s*.*\.trigger\(.*\)/;
+          lines.forEach((line, idx) => {
+            const match = line.match(triggerPattern);
+            if (match) {
+              const varName = match[1];
+              for (let j = idx + 1; j < Math.min(lines.length, idx + 6); j++) {
+                if (lines[j].includes(`${varName}.trigger`)) {
+                  auditResults.promiseTriggerChainCrashes.push(`${d}:${idx + 1}: Variable "${varName}" is assigned a Promise, then calls '.trigger()' on it again.`);
+                }
+              }
+            }
+          });
+        }
+
+        // ZCL-Only early return check
+        if (content.includes('_initZclOnlyMode') && content.includes('onNodeInit')) {
+          const initZclBlock = content.match(/await\s+this\._initZclOnlyMode\([^)]*\);?([^}]+)/);
+          if (initZclBlock && !initZclBlock[1].includes('return')) {
+            auditResults.zclOnlyDuplicateListeners.push(`${d}: calls '_initZclOnlyMode' in 'onNodeInit' without followed by an early 'return'`);
           }
         }
       }
@@ -195,6 +223,8 @@ async function main() {
   console.log(`- Drivers Checked: ${auditResults.driversChecked}`);
   console.log(`- ID Collisions: ${auditResults.collisions.length}`);
   console.log(`- Button Logic Issues: ${auditResults.buttonLogicFailures.length}`);
+  console.log(`- Promise Trigger Chain Crashes: ${auditResults.promiseTriggerChainCrashes.length}`);
+  console.log(`- ZCL-Only Duplicate Listeners: ${auditResults.zclOnlyDuplicateListeners.length}`);
   console.log(`- SDK Deprecations: ${auditResults.sdkDeprecations.length}`);
   console.log(`- Radar Logic Issues: ${auditResults.radarLogicCheck.length}`);
   console.log(`- Numeric Constant Violations: ${auditResults.numericConstantViolations.length}`);
