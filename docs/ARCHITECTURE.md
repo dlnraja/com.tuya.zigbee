@@ -600,7 +600,7 @@ To resolve silent flow listener failures and mismatches:
 
 ## 34. Dynamic RAM Optimization & Buffer-Based JSON Parsing (v9.0.0+)
 
-To completely resolve Out Of Memory (OOM) fatal crashes (`FATAL ERROR: Reached heap limit Allocation failed`) when parsing large JSON files like `data/fingerprints.json` (11.8MB) in Homey Pro (which has a strict 64MB heap limit), the database loading layers have been optimized to bypass standard UTF-16 string allocation:
+To completely resolve Out Of Memory (OOM) fatal crashes (`FATAL ERROR: Reached heap limit Allocation failed`) when parsing large JSON files like `data/fingerprints.json` (11.8MB) in Homey Pro (which has a strict 64MB heap limit), the database database loading layers have been optimized to bypass standard UTF-16 string allocation:
 1. **Buffer-Based File Ingestion**: Instead of using `fs.readFileSync(fpath, 'utf8')` (which creates a massive UTF-16 JavaScript string in V8 memory consuming ~24MB of JS heap for a 12MB file), the database is loaded directly as a raw Node.js **Buffer** (`fs.readFileSync(fpath)`).
 2. **Direct Buffer JSON Parsing**: Node.js allows passing a Buffer directly to `JSON.parse(buffer)`. Parsing the Buffer directly avoids allocating the intermediate UTF-16 string on the JS heap, instantly cutting the peak memory overhead by **50%**!
 3. **Active Garbage Collection Triggers**: Defensive V8 garbage collection sweeps (`global.gc()`) are triggered before and after parsing (if exposed) to instantly flush transient memory fragments and keep the heap clean.
@@ -608,4 +608,27 @@ To completely resolve Out Of Memory (OOM) fatal crashes (`FATAL ERROR: Reached h
 5. **Static-vs-Dynamic Dual-Layer Pairing Protocol**:
    - **Static manifests (`driver.compose.json` / `app.json`)**: Manufacturer names and pairing `modelId` definitions remain statically defined to allow local pairing on the box.
    - **Dynamic database files (`fingerprints.json` / `driver-mapping-database.json`)**: Kept in the app bundle (fully unignored in `.homeyignore`) to refine the paired device's exact capabilities dynamically at runtime.
+
+## 35. Bidirectional Switch & Scene Panel Optimizations (v9.5.0+)
+
+To solve critical multi-gang switch synchronization and physical flow triggers on SDK3, the switch layer integrates the following technical refinements:
+1. **Promise Chaining Trigger Card Crash Prevention**: We resolved a fatal `TypeError: card.trigger is not a function` crash. When triggering flow cards in ZCL-only mode (BSEED), the method `.trigger()` returns a Promise. The code now separates card fetching from trigger invocation with explicit asynchrony and error containment, ensuring tokens are transmitted safely without V8 crashes:
+   ```javascript
+   const card = this.homey.flow.getDeviceTriggerCard(flowId);
+   if (card) {
+     await card.trigger(this, { gang: epNum, state: value }, {}).catch(err => this.error(err));
+   }
+   ```
+2. **Device-Scoped SDK3 Compliance**: Standardized on `this.homey.flow.getDeviceTriggerCard(flowId)` instead of the deprecated global `getTriggerCard(flowId)` for driver-specific button and scene events, conforming with Athom SDK3 runtime standards.
+3. **ZCL-Only Duplicate Listener Blocker**: Introduced early returns immediately after `_initZclOnlyMode()` in `onNodeInit()` under conditional blocks. This ensures standard capability listeners and mixin hooks are not registered concurrently, resolving double-triggering events and toggle feedback cascades.
+4. **ZCL Command Broadcast Filtering (Zemismart/BSEED TS0726 Bug)**: Multi-gang switches often broadcast `onOff` state changes on Endpoint 1-4 across all channels. We track the target commanded gang (`this._lastCommandedGang`) and command timestamp (`this._lastCommandTime`) in a 2000ms sliding filter window to ignore duplicate/fake internal hardware echoes.
+
+## 36. Enhanced Pre-Commit Checks & Zero-Defect Gateway (v9.5.0+)
+
+To secure all future developments against regression:
+1. **Automated Blocker Checks**: The Fleetwood Quality Gateway (`scripts/PRE_COMMIT_CHECKS.js`) and Zero Defect Audit (`scripts/maintenance/zero-defect-architect-audit.js`) have been enriched with strict AST/string checking to immediately block commits containing:
+   - **Promise Chaining Trigger Crashes**: Scans for variables assigned to `.trigger()` and called with `.trigger()` again.
+   - **ZCL-Only Early Return Violations**: Scans for drivers calling ZCL-Only initialization that omit the early `return` in `onNodeInit()`.
+2. **Continuous Compliance**: These gates prevent sub-standard code from bypassing pre-commit or pre-push controls, maintaining a zero-defect baseline across all 413 drivers.
+
 
