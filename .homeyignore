@@ -3,6 +3,8 @@
 
 # === CI/CD & Dev Infrastructure ===
 .github/
+reimplementation_gateway/
+scratch/
 .githooks/
 .git/
 .windsurf/
