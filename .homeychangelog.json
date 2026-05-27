@@ -61,5 +61,17 @@
   },
   "8.1.13": {
     "en": "v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app instability during device lookup., Added 298 new fingerprints from Z2M, ZHA, community reports, and JohanBendz contributions., Total: 413 drivers, 3296 fingerprints validated., rain_sensor: capability handling update."
-  }
+  },
+  "8.5.17": [
+    "CRITICAL FIX: OAuth2 CreateClientError crash at startup",
+    "FIX: 102 duplicate flow card IDs resolved",
+    "FIX: Node.js engine >=22 to >=18",
+    "FIX: radiator_valve AVATTO ME167 profile",
+    "FIX: OOM crash at startup (lazy-load)",
+    "FIX: ARCHITECTURE.md cleanup",
+    "FIX: Dotfile contradictions",
+    "NEW: auto-validation-gate.js CI",
+    "NEW: draft-to-test re-enabled",
+    "SECURITY: credentials.json excluded"
+  ]
 }
