@@ -1,4 +1,4 @@
-# HOMEYIGNORE - Clean App Package
+# HOMEYIGNORE - Clean App Package (CRITICAL: Homey enforces 7MB limit)
 # Only runtime files go to Homey. Everything else excluded.
 
 # === CI/CD & Dev Infrastructure ===
@@ -18,16 +18,17 @@ backup/
 project-data/
 data/community-sync/
 data/temp_desktop_cleanup/
-# data/fingerprints.json # REQUIRED AT RUNTIME: DO NOT EXCLUDE (OOM solved via lazy-loading in DeviceFingerprintDB)
-data/COMMUNITY_ENRICHMENT_REPORT.json
-data/PHASE2_ENRICHMENT_REPORT.json
-data/bug-patterns.json
-data/reference-urls.json
-# driver-mapping-database.json # REQUIRED AT RUNTIME: DO NOT EXCLUDE (Centralized mapping database loaded by DriverMappingLoader)
+data/intel-harvest/
+data/archive/
 diagnostics/
 reports/
 logs/
 .archive/
+settings/
+skills/
+tests/
+test/
+spec/
 
 # === Dev config files ===
 .cascade
@@ -54,11 +55,19 @@ config.local.js
 secrets.json
 credentials.json
 
-# === Root junk files (catch-all) ===
-_*.js
-_*.py
+# === Root dev files (large reports, docs, patches) ===
+*.md
+!drivers/**/*.md
+*.json
+!app.json
+!package.json
+!package-lock.json
+!.homeychangelog.json
+!driver-mapping-database.json
+*.patch
+*.py
 *.txt
-!drivers/**/*.txt
+*.pdf
 
 # === Build/cache/deps ===
 node_modules/
@@ -73,7 +82,23 @@ temp/
 tmp/
 package-lock.json
 
-# === Large lib/data files (dev-only, not imported at runtime) ===
+# === Large dev data files ===
+data/bug-fixes-report.json
+data/bug-patterns.json
+data/COMMUNITY_ENRICHMENT_REPORT.json
+data/PHASE2_ENRICHMENT_REPORT.json
+data/full-rules-fix-report.json
+data/reference-urls.json
+data/community-intel.json
+data/universal_tuya_urls.json
+data/rapport_data.json
+data/analysis_output.txt
+data/assigned_output.txt
+data/key_analysis.txt
+data/rapport_analyse.txt
+data/rapport_suite.txt
+
+# === Large lib/data files (dev-only) ===
 lib/data/categorized_devices.json
 lib/data/enrichment_data.json
 lib/data/fingerprints_raw.json
@@ -85,23 +110,18 @@ lib/data/new_fingerprints.json
 lib/data/smart_fingerprints.js
 lib/data/z2m_devices.json
 lib/data/z2m_devices_full.json
-# NOTE: lib/data/SourceCredits.js IS runtime - do NOT exclude
 
-# === Dev-only engine (not imported by any runtime code) ===
+# === Dev-only engine ===
 lib/tuya-dp-engine/
 
-# === Documentation (not needed at runtime) ===
-# === Documentation (mostly excluded, but keeping driver docs for CI) ===
-# **/*.md (Un-ignored per Rule R25)
-# *.md (Un-ignored per Rule R25)
-# drivers/**/*.md (Un-ignored per Rule R25)
-CHANGELOG.md
-CONTRIBUTING.md
-LICENSE
-README.txt
-drivers/**/README.txt
+# === Assets NOT needed for runtime ===
+assets/branding/
+assets/templates/
+assets/README.md
 
-# === File types not needed ===
+# === Root junk files (catch-all) ===
+_*.js
+_*.py
 *.ps1
 *.cmd
 *.bat
@@ -128,24 +148,20 @@ backup-*
 Thumbs.db
 desktop.ini
 
-# === Test files ===
-test/
-tests/
-spec/
-*.test.js
-*.spec.js
-
-# === Audit files ===
+# === Audit/analysis files ===
 MANUFACTURER_IDS_AUDIT.json
 **/MANUFACTURER_IDS_AUDIT.json
 *.analysis.json
 
-# === Learnmode SVGs (optional, reduces payload) ===
+# === Learnmode SVGs ===
 **/learnmode.svg
 
-# === KEEP these (required for App Store): ===
+# === KEEP these (required for App Store & Runtime): ===
 # .homeychangelog.json - required
-# drivers/*/assets/images/small.png (75x75) - required
-# drivers/*/assets/images/large.png (500x500) - required
-# drivers/*/assets/images/xlarge.png (1000x1000) - recommended
+# drivers/*/assets/images/small.png - required
+# drivers/*/assets/images/large.png - required  
+# drivers/*/assets/images/xlarge.png - recommended
 # drivers/*/assets/icon.svg - required
+# data/fingerprints.json - REQUIRED AT RUNTIME (DeviceFingerprintDB.js lazy-loads it)
+# driver-mapping-database.json - REQUIRED AT RUNTIME (DriverMappingLoader.js)
+# lib/tuya/fingerprints.json - REQUIRED AT RUNTIME (tuya-engine)
