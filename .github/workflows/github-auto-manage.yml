@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: "GitHub Auto-Manage Issues & PRs"
 
-if: false
 on:
   schedule:
     - cron: '30 9 * * 1'  # 1x daily backup, main coverage by daily-everything

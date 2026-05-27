@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: Synchronisation Johan Repo (Enhanced)
 
-if: false
 on:
   schedule:
     - cron: '30 2 * * *' # Every day at 02:30 AM

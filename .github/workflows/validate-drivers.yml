@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: Validate Drivers (Enhanced)
 
-if: false
 on:
   push:
     paths:
