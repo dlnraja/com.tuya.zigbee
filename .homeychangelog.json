@@ -1,4 +1,7 @@
 {
+  "8.5.20": {
+    "en": "v8.5.20: . New soil sensor support. Removed stale fingerprints. General stability improvements."
+  },
   "8.5.17": {
     "en": "v8.5.17: Added support for new soil sensor (_TZE284_0ints6wl / TS0601). Minor improvements and stability enhancements."
   },
@@ -56,10 +59,7 @@
   "7.5.50": {
     "en": "166 new fingerprints added across 8 drivers. Fixed fingerprint collisions and removed incorrect matches. Generic DIY, PIR mmwave, SR_ZS_SWITCH, and valve_irrigation enriched."
   },
-  "7.5.49": {
-    "en": "New driver: presence sensor microwave (pir_mmwave_sensor). New fingerprints via Phoenix Sovereign v8.1.0. SONOFF case variations in button_wireless. Power clamp meter watt tracking improved. Flow card cleanup per PR#120."
-  },
-  "8.5.20": {
-    "en": "v8.5.17: Added support for soil sensor `_TZE284_0ints6wl` / `TS0601` (requested by user), Updated app metadata and build configuration, General stability improvements"
+  "8.5.21": {
+    "en": "v8.5.20: New Device Support, Driver Count, Cleanup, Air Purifier, Dimmer Dual Channel"
   }
 }
