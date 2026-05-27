@@ -1,37 +1,10 @@
 {
-  "timestamp": "2026-05-26T15:54:38.551Z",
-  "totalNew": 2,
+  "timestamp": "2026-05-27T20:22:52.632Z",
+  "totalNew": 0,
   "withDPs": 0,
   "withPid": 0,
   "multiSource": 0,
-  "sourceBreakdown": {
-    "zha-issue": 2
-  },
-  "newFingerprints": [
-    {
-      "fp": "_TZE284_ft7qqpx3",
-      "source": "zha-issue",
-      "issue": 5016,
-      "title": "Add quirk for Tuya/Zemismart  TS0601_TZE284_ft7qqpx3 mmWave presence sensor",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/5016",
-      "sources": [
-        "zha-issue"
-      ],
-      "allPids": [],
-      "reporters": []
-    },
-    {
-      "fp": "_TZE284_0ints6w",
-      "source": "zha-issue",
-      "issue": 4987,
-      "title": "Add Tuya soil sensor _TZE284_0ints6w variant",
-      "url": "https://github.com/zigpy/zha-device-handlers/pull/4987",
-      "sources": [
-        "zha-issue"
-      ],
-      "allPids": [],
-      "reporters": []
-    }
-  ],
-  "aiPlan": "Based on the provided fingerprints, it appears that there are two devices with no available data points (DPs) or capabilities. This makes it challenging to classify them or suggest existing Homey drivers, as there is no information on their functionality or type.\n\nHere's the markdown table summarizing the findings:\n\n| FP                | Type   | Driver | DPs→Capabilities | Quirks |\n|-------------------|--------|--------|-------------------|--------|\n| _TZE284_ft7qqpx3  | Unknown| N/A    | N/A               | N/A    |\n| _TZE284_0ints6w   | Unknown| N/A    | N/A               | N/A    |\n\n### Notes:\n- **Type**: Unable to classify due to lack of DPs.\n- **Driver**: No existing driver can be suggested without further information.\n- **DPs→Capabilities**: No DPs available to map.\n- **Quirks**: No quirks noted due to lack of information.\n\nIf more details about the devices become available, such as their capabilities or intended functions, further classification and mapping can be performed."
+  "sourceBreakdown": {},
+  "newFingerprints": [],
+  "aiPlan": null
 }
