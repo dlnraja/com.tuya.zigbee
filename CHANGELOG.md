@@ -7,6 +7,7 @@ All notable changes to the **Tuya Unified Zigbee** app for Homey Pro.
 ## [Unreleased]
 
 ### Bug Fixes
+- Fixed `garage_door_opener` (TS0601/TS0603, _TZE608_c75zqghm): DP3 contact sensor state no longer silently dropped — `TuyaZigbeeDevice.setCapabilityValue` (v5.13.5) caused a circular dispatch through `BaseUnifiedDevice.safeSetCapabilityValue` that was broken by the ThrottleManager before the actual Homey SDK write. Driver now calls `TuyaZigbeeDevice.safeSetCapabilityValue` directly, preserving sanity/calibration/throttle while bypassing the loop.
 - Removed invalid `maintenanceAction: true` from `capabilitiesOptions` in 14 button/scene switch drivers (`button_wireless_1/2/3/6/8/smart`, `remote_button_wireless/wall`, `scene_switch_1/2/3/4/6/wall`) — caused Homey validation failure.
 - Fixed app crash at startup: `EmergencyDeviceFix` was loading 126K device fingerprints (46MB) eagerly — switched to lazy-load, reducing startup heap usage from ~63MB to ~17MB.
 - Fixed app crash at startup: `OAuth2App` was treating all 413 Zigbee drivers as OAuth2 drivers — overriding `OAUTH2_DRIVERS = []` prevents unnecessary manifest loading.
