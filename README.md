@@ -34,7 +34,7 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Metric | Value |
 |--------|-------|
-| **App Version** | v8.5.21 |
+| **App Version** | v8.5.22 |
 | **Device Fingerprints** | 12,027+ |
 | **Unique Product IDs** | 566 |
 | **Drivers** | 413 (362 Zigbee + 51 WiFi) |
@@ -101,7 +101,8 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 
 | Version | Changes |
 |---------|---------|
-| **v8.5.21** | v8.5.20: New Device Support, Driver Count, Cleanup, Air Purifier, Dimmer Dual Channel |
+| **v8.5.22** | v8.5.21: Added support for soil sensor `_TZE284_0ints6wl` / TS0601 (requested by user), Expanded driver fleet to 413 ... |
+| **v8.5.21** | v8.5.21: . New soil sensor support (_TZE284_0ints6wl). Fixed 39 broken YAML . |
 | **v8.5.20** | v8.5.20: . New soil sensor support. Removed stale fingerprints. General stability improvements. |
 | **v8.5.17** | v8.5.17: Added support for new soil sensor (_TZE284_0ints6wl / TS0601). Minor improvements and stability enhancements. |
 | **v8.1.13** | v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app instability during device lookup., Added 29... |
@@ -115,7 +116,6 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices â€
 | **v8.1.5** | v8.1.5 â€” 238 new fingerprints, Smart Solar Soil Sensor, Insoma irrigation valve, battery init fix, SOS/BSEED/Avatto W... |
 | **v8.1.4** | . New capabilities: measure_frequency, measure_power_factor, alarm_gas, alarm_siren, alarm_vibration, alarm_water_hig... |
 | **v8.1.3** | Bug fix: ZY-M100 settings now expose correctly. 41 new flow cards across drivers. WiFi flow cards complete. Updated f... |
-| **v8.1.2** | bed_sensor driver added. Fixed 3 fingerprint collisions (device_din_rail/EMQMWTYMâ†’doorbell, switch_1gang/TVUARKSAâ†’plu... |
 
 <!-- CHANGELOG_END -->
 
