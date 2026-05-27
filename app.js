@@ -84,12 +84,37 @@ class TuyaUnifiedZigbeeApp extends OAuth2App {
   healthMonitor = null;  // L13: Device Vitality
   sanityFilter = null;   // L14: Data Coherence
 
+  /**
+   * Override setOAuth2Config to prevent startup crashes when CLIENT_ID/CLIENT_SECRET are not defined
+   */
+  setOAuth2Config(args) {
+    const client = args?.client || this.constructor.OAUTH2_CLIENT;
+    const clientId = args?.clientId || client?.CLIENT_ID;
+    const clientSecret = args?.clientSecret || client?.CLIENT_SECRET;
+    if (typeof clientId !== 'string' || typeof clientSecret !== 'string') {
+      this.log('⚠️ Skipping OAuth2 configuration: CLIENT_ID or CLIENT_SECRET environment variables are not set.');
+      return;
+    }
+    try {
+      super.setOAuth2Config(args);
+    } catch (err) {
+      this.error('⚠️ Failed to configure OAuth2 App:', err.message);
+    }
+  }
 
   /**
    * onInit is called when the app is initialized.
    */
   async onInit() {
-    await super.onInit();
+    try {
+      await super.onInit();
+    } catch (err) {
+      if (err.message && err.message.includes('Invalid Client ID')) {
+        this.log('⚠️ OAuth2 skipped: CLIENT_ID/SECRET not configured. App running in local-only mode.');
+      } else {
+        this.error('⚠️ App init error (non-fatal):', err.message);
+      }
+    }
     // AUDIT V2: Initialize Developer Settings FIRST
     this.initializeSettings();
 
@@ -1281,6 +1306,69 @@ class TuyaUnifiedZigbeeApp extends OAuth2App {
     if (this.developerDebugMode) {
       this.log('[DEBUG]', ...args);
     }
+  }
+
+  /**
+   * v8.5.17: onUninit — Proper lifecycle cleanup to prevent 'app instance destroyed' crashes
+   * Called by Homey before the app is shut down / restarted
+   * CRITICAL: Must nullify all references so pending callbacks don't crash
+   */
+  async onUninit() {
+    this._destroyed = true;
+    this.log('⚠️  App uninitializing — stopping all services...');
+
+    // Stop Tuya UDP Discovery (prevents ECONNRESET on port 6666/6667/6668)
+    try {
+      if (this._tuyaUDPDiscovery) {
+        await this._tuyaUDPDiscovery.stop();
+        this._tuyaUDPDiscovery = null;
+      }
+    } catch (e) { /* non-critical */ }
+
+    // Stop AdvancedAnalytics
+    try {
+      if (this.analytics && typeof this.analytics.destroy === 'function') {
+        this.analytics.destroy();
+        this.analytics = null;
+      }
+    } catch (e) { /* non-critical */ }
+
+    // Stop Health Monitor
+    try {
+      if (this.healthMonitor && typeof this.healthMonitor.destroy === 'function') {
+        this.healthMonitor.destroy();
+        this.healthMonitor = null;
+      }
+    } catch (e) { /* non-critical */ }
+
+    // Stop Discovery
+    try {
+      if (this.discovery && typeof this.discovery.stop === 'function') {
+        await this.discovery.stop();
+        this.discovery = null;
+      }
+    } catch (e) { /* non-critical */ }
+
+    // Null out all managers to prevent stale callbacks crashing on 'homey.app'
+    this.flowCardManager = null;
+    this.capabilityManager = null;
+    this.optimizer = null;
+    this.unknownHandler = null;
+    this.systemLogsCollector = null;
+    this.identificationDatabase = null;
+    this.diagnosticAPI = null;
+    this.logBuffer = null;
+    this.suggestionEngine = null;
+    this.otaManager = null;
+    this.quirksDatabase = null;
+    this.sessionManager = null;
+    this.sanityFilter = null;
+
+    this.log('✅ App uninit complete');
+
+    try {
+      await super.onUninit();
+    } catch (e) { /* non-critical */ }
   }
 
 }

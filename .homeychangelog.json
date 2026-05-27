@@ -1,4 +1,13 @@
 {
+  "8.5.20": {
+    "en": "v8.5.20: . New soil sensor support. Removed stale fingerprints. General stability improvements."
+  },
+  "8.5.17": {
+    "en": "v8.5.17: Added support for new soil sensor (_TZE284_0ints6wl / TS0601). Minor improvements and stability enhancements."
+  },
+  "8.1.13": {
+    "en": "v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app instability during device lookup., Added 298 new fingerprints from Z2M, ZHA, community reports, and JohanBendz contributions., Total: 413 drivers, 3296 fingerprints validated., rain_sensor: capability handling update."
+  },
   "8.1.12": {
     "en": "v8.1.12 — 298 new fingerprints added, DeviceIdentificationDatabase crash fix, 413 drivers, 3296 FPs validated."
   },
@@ -50,16 +59,7 @@
   "7.5.50": {
     "en": "166 new fingerprints added across 8 drivers. Fixed fingerprint collisions and removed incorrect matches. Generic DIY, PIR mmwave, SR_ZS_SWITCH, and valve_irrigation enriched."
   },
-  "7.5.49": {
-    "en": "New driver: presence sensor microwave (pir_mmwave_sensor). New fingerprints via Phoenix Sovereign v8.1.0. SONOFF case variations in button_wireless. Power clamp meter watt tracking improved. Flow card cleanup per PR#120."
-  },
-  "7.5.48": {
-    "en": "Bug fix: clamp meter watt/voltage scaling corrected. New fingerprints added across multiple drivers. Flow repair tool integrated for device/flow replacement."
-  },
-  "7.5.47": {
-    "en": "v7.5.46: No changes."
-  },
-  "8.1.13": {
-    "en": "v8.1.12: Fixed crash in DeviceIdentificationDatabase that could cause app instability during device lookup., Added 298 new fingerprints from Z2M, ZHA, community reports, and JohanBendz contributions., Total: 413 drivers, 3296 fingerprints validated., rain_sensor: capability handling update."
+  "8.5.21": {
+    "en": "v8.5.20: New Device Support, Driver Count, Cleanup, Air Purifier, Dimmer Dual Channel"
   }
 }

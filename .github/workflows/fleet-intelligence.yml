@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: "🤖 FLEET INTELLIGENCE — Autonomous Governance"
 
-if: false
 on:
   schedule:
     - cron: '0 4 * * 1'  # Weekly Monday 04:00 UTC (consolidated into maintenance cycle)

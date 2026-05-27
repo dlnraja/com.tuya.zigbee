@@ -17,7 +17,7 @@
 1. **Fingerprints Rule**: `manufacturerName` + `productId` (combined) must BOTH match.
    - It is normal for the same `manufacturerName` to exist in multiple drivers with different `productId`s.
    - **NO WILDCARDS** in `manufacturerName` (e.g., `_TZE284_*` is strictly forbidden).
-   - All comparisons must be case-insensitive using the custom utility [CaseInsensitiveMatcher.js](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/lib/CaseInsensitiveMatcher.js). Manual `.toLowerCase()` is forbidden.
+   - All comparisons must be case-insensitive using the custom utility [CaseInsensitiveMatcher.js](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/lib/utils/CaseInsensitiveMatcher.js). Manual `.toLowerCase()` is forbidden.
    - Setting keys must be `zb_model_id` (not `zb_modelId`) and `zb_manufacturer_name` (not `zb_manufacturerName`).
    - **Layer 11: Backlight Value Representation Check**: Backlight settings must use string representation (`"off"`, `"normal"`, `"inverted"`) instead of numeric comparisons. Direct comparisons against numbers (e.g., `=== 0`, `=== 1`, `=== 2` or as strings `'0'`, `'1'`, `'2'`) are strictly forbidden. Use ternary operators to map string states to DP integers when sending commands.
    - **BSEED 3-Gang ZCL Routing (Issue #170)**: Ensure `_TZ3000_v4l4b0lp` is registered inside the `ZCL_ONLY_MANUFACTURERS_3G` array in `drivers/switch_3gang/device.js` to force routing over standard ZCL Clusters (OnOff) instead of Tuya custom DP (0xEF00) mode, ensuring sub-capability flow cards are bound correctly.
@@ -93,6 +93,13 @@
 - **AI Architecture (3 layers)**: [ARCHITECTURE_AI.md](file:///c:/Users/HP/Desktop/homey%20app/tuya_repair/docs/ARCHITECTURE_AI.md) — Distinguishes IDE Locale AI, GitHub Actions AI, and Homey Runtime AI.
 
 \n
+
+## Dynamic RAM Optimization & Dual-Layer Pairing (v9.0.0+)
+- **Buffer-Based Direct JSON Loading (Double Heap memory fix)**: For all large JSON/file database loading (like `fingerprints.json` or `driver-mapping-database.json`), you **MUST** read the file directly as a raw Buffer (`fs.readFileSync(fpath)`) instead of converted UTF-16 string (`utf8`). Node.js allows passing a Buffer directly to `JSON.parse(buffer)`. This avoids allocating a giant intermediate JS String on the V8 heap and prevents fatal OOM crashes under Homey Pro's strict 64MB memory limit.
+- **Defensive V8 Garbage Collection**: The loader forces `global.gc()` sweeps (if available) before and after database parses to cleanly eject transient chunks.
+- **Static vs Dynamic Dual-Layer Matching**:
+  - **Static Manifests**: The manufacturer name, ZCL clusters, and `modelId` must remain statically registered in `driver.compose.json` / `app.json` to allow the Homey Pro box to match the hardware and complete the pairing flow locally.
+  - **Dynamic JSON Databases**: Kept in the app bundle (fully unignored in `.homeyignore`) to refine capabilities and custom DP parser operations dynamically at runtime, ensuring offline capability mapping continues to work perfectly.
 
 ## Fleetwood Gateway & Syntax Purity Mandates (v8.4.0+)
 - **ZCL Method Override Purity**: Any driver class override of ZCL/SDK methods (e.g., `getDeviceById(id)`) MUST have correct closing braces to prevent breaking following method declarations like `onInit()` or `onNodeInit()`.

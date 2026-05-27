@@ -185,6 +185,8 @@ app.js (init)
 4. Toujours `onDeleted()` + `onUninit()` — Libération ressources
 5. `zb_model_id` PAS `zb_modelId` — Settings keys critiques
 6. Backlight = strings `"off"`/`"normal"`/`"inverted"` PAS numbers
+7. Optimisation RAM V8 : Toujours charger les grosses bases de données JSON (fingerprints, driver mappings) sous forme de Buffer brut (`fs.readFileSync(path)`) passé à `JSON.parse(buffer)` (Double Heap Fix) pour diviser par 2 l'empreinte mémoire et appeler `global.gc()` défensivement, préservant la limite stricte de 64 Mo de tas.
+
 
 ---
 

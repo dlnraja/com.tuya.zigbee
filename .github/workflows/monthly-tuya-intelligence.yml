@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: 🌙 Monthly Tuya Intelligence & URL Audit
 
-if: false
 on:
   schedule:
     - cron: '0 0 1 * *' # Once a month on the 1st

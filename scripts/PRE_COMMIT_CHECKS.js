@@ -277,6 +277,42 @@ function validateJSFile(filePath) {
         }
       }
     }
+
+    // 1e-iv. Promise Chaining Trigger Card Crash check (OOM/Crash prevention)
+    if (content.includes('.trigger(')) {
+      const triggerPattern = /(\w+)\s*=\s*.*\.trigger\(.*\)/;
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        const match = line.match(triggerPattern);
+        if (match) {
+          const varName = match[1];
+          // Look in the following 5 lines for varName.trigger(...)
+          for (let j = i + 1; j < Math.min(lines.length, i + 6); j++) {
+            if (lines[j].includes(`${varName}.trigger`)) {
+              report.errors.push({
+                file: filePath,
+                type: 'PROMISE_TRIGGER_CHAIN_CRASH',
+                message: `Line ${i + 1} and ${j + 1}: Variable "${varName}" is assigned the Promise result of a '.trigger()' call, and then has '.trigger()' called on it again. This causes a fatal runtime TypeError crash!`,
+              });
+            }
+          }
+        }
+      }
+    }
+
+    // 1e-v. ZCL-Only Duplicate Listener check
+    if (relativePath.startsWith('drivers/') && relativePath.endsWith('/device.js')) {
+      if (content.includes('_initZclOnlyMode') && content.includes('onNodeInit')) {
+        const initZclBlock = content.match(/await\s+this\._initZclOnlyMode\([^)]*\);?([^}]+)/);
+        if (initZclBlock && !initZclBlock[1].includes('return')) {
+          report.warnings.push({
+            file: filePath,
+            type: 'ZCL_ONLY_DUPLICATE_LISTENERS',
+            message: `ZCL-Only initialization '_initZclOnlyMode' is called but is not followed by an early 'return' in the conditional block. This will allow duplicate capability listeners to bind concurrently!`,
+          });
+        }
+      }
+    }
   } catch (err) {
     // ignore
   }

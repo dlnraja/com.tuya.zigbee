@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: 🔩 Unified Maintenance Orchestrator
 
-if: false
 on:
   schedule:
     - cron: '0 0 * * 1' # Weekly at Midnight UTC (Monday)

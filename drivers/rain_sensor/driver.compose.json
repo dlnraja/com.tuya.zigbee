@@ -35,21 +35,9 @@
   },
   "zigbee": {
     "manufacturerName": [
-      "_tz3000_abaplimj",
-      "_TZ3000_abaplimj",
-      "_TZ3000_ABAPLIMJ",
-      "_tz3000_awvmkayh",
-      "_TZ3000_awvmkayh",
-      "_TZ3000_AWVMKAYH",
       "_tz3000_k1msavlx",
       "_TZ3000_k1msavlx",
       "_TZ3000_K1MSAVLX",
-      "_tz3210_p68kms0l",
-      "_TZ3210_p68kms0l",
-      "_TZ3210_P68KMS0L",
-      "_tz3210_tgvtvdoc",
-      "_TZ3210_tgvtvdoc",
-      "_TZ3210_TGVTVDOC",
       "_tze200_u6x1zyv2",
       "_TZE200_u6x1zyv2",
       "_TZE200_U6X1ZYV2",
@@ -83,7 +71,13 @@
           61184
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZE200_u6x1zyv2",
+        "productId": "TS0601"
+      }
+    ]
   },
   "settings": [
     {

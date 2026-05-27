@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: "🌌 UNIFIED AWAKENING — Master CI/CD"
 
-if: false
 on:
   push:
     branches:

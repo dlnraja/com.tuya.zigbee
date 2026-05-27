@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: "Weekly External Sources Sync"
 
-if: false
 on:
   schedule:
     - cron: '0 3 * * 1'  # Every Monday 3am UTC

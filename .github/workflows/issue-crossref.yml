@@ -2,7 +2,6 @@
 # Re-enable by removing 'if: false' below
 name: "Issue Fingerprint Cross-Reference"
 
-if: false
 on:
   issues:
     types: [opened, edited]

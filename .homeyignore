@@ -3,6 +3,8 @@
 
 # === CI/CD & Dev Infrastructure ===
 .github/
+reimplementation_gateway/
+scratch/
 .githooks/
 .git/
 .windsurf/
@@ -16,12 +18,12 @@ backup/
 project-data/
 data/community-sync/
 data/temp_desktop_cleanup/
-data/fingerprints.json
+# data/fingerprints.json # REQUIRED AT RUNTIME: DO NOT EXCLUDE (OOM solved via lazy-loading in DeviceFingerprintDB)
 data/COMMUNITY_ENRICHMENT_REPORT.json
 data/PHASE2_ENRICHMENT_REPORT.json
 data/bug-patterns.json
 data/reference-urls.json
-driver-mapping-database.json
+# driver-mapping-database.json # REQUIRED AT RUNTIME: DO NOT EXCLUDE (Centralized mapping database loaded by DriverMappingLoader)
 diagnostics/
 reports/
 logs/
@@ -50,6 +52,7 @@ vite.config.js
 .env.*
 config.local.js
 secrets.json
+credentials.json
 
 # === Root junk files (catch-all) ===
 _*.js
