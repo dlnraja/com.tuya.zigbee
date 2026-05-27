@@ -18,7 +18,9 @@
       "TS0003_power",
       "TS0003_switch_module",
       "TS0601",
-      "ZG-302Z3"
+      "ZG-302Z3",
+      "TS0043",
+      "TS0040"
     ],
     "endpoints": {
       "1": {
@@ -228,12 +230,25 @@
       "_TZ3000_AVOTANJ3",
       "_tz3000_mw1pqqqt",
       "_TZ3000_mw1pqqqt",
-      "_TZ3000_MW1PQQQT"
+      "_TZ3000_MW1PQQQT",
+      "_TZ3000_famkxci2",
+      "_TZ3000_yf8iela1",
+      "_TZ3000_3rsf55vb",
+      "_TZ3000_fvh3pjaz",
+      "_TZ3000_amdymr85"
     ],
     "fingerprints": [
       {
         "manufacturerName": "_TZ3000_mw1pqqqt",
         "productId": "TS0003"
+      },
+      {
+        "manufacturerName": "_TZ3000_famkxci2",
+        "productId": "TS0043"
+      },
+      {
+        "manufacturerName": "_TZ3000_yf8iela1",
+        "productId": "TS0043"
       }
     ]
   },

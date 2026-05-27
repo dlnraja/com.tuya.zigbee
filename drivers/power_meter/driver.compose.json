@@ -268,7 +268,10 @@
       "_TZE200_RKS0SGB7",
       "_tze204_q9xty0ad",
       "_TZE204_q9xty0ad",
-      "_TZE204_Q9XTY0AD"
+      "_TZE204_Q9XTY0AD",
+      "_TZE204_byzdayie",
+      "_TZE200_lsanae78",
+      "_TZE204_lsanae78"
     ],
     "productId": [
       "TS0601",
@@ -284,7 +287,17 @@
           6
         ]
       }
-    }
+    },
+    "fingerprints": [
+      {
+        "manufacturerName": "_TZE200_byzdayie",
+        "productId": "TS0601"
+      },
+      {
+        "manufacturerName": "_TZE204_byzdayie",
+        "productId": "TS0601"
+      }
+    ]
   },
   "images": {
     "small": "drivers/power_meter/assets/images/small.png",

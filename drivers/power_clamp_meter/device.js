@@ -71,6 +71,12 @@ class PowerClampMeterDevice extends ZigBeeDevice {
     await this._setupElectricalMeasurement(zclNode);
 
     const profile = this.meterProfile;
+    if (profile === 'pj1203a') {
+      if (this.hasCapability('measure_power.phase3')) {
+        this.log('[METER] 2-channel bidirectional profile detected. Removing Phase 3 capability.');
+        await this.removeCapability('measure_power.phase3').catch(this.error);
+      }
+    }
     this.log(`[METER] v5.7.9  Ready (profile: ${profile}, mfr: ${this._cachedMfr || 'unknown'})`);
   }
 
@@ -261,14 +267,14 @@ class PowerClampMeterDevice extends ZigBeeDevice {
 
       case 110: // Power factor A (÷100)
         if (this.hasCapability('measure_power_factor')) {
-          this.setCapabilityValue('measure_power_factor', smartParse(value, null, { capability: 'measure_temperature' })).catch(this.error);
+          this.setCapabilityValue('measure_power_factor', safeDivide(value, 100)).catch(this.error);
         }
         this.log(`[PJ1203A]  Power Factor A: ${value/100}`);
         break;
 
       case 111: // AC frequency (Hz ÷100)
         if (this.hasCapability('measure_frequency')) {
-          this.setCapabilityValue('measure_frequency', smartParse(value, null, { capability: 'measure_temperature' })).catch(this.error);
+          this.setCapabilityValue('measure_frequency', safeDivide(value, 100)).catch(this.error);
         }
         this.log(`[PJ1203A]  AC Frequency: ${value/100} Hz`);
         break;
@@ -298,7 +304,7 @@ class PowerClampMeterDevice extends ZigBeeDevice {
 
       case 121: // Power factor B (÷100)
         if (this.hasCapability('measure_power_factor')) {
-          this.setCapabilityValue('measure_power_factor', smartParse(value, null, { capability: 'measure_temperature' })).catch(this.error);
+          this.setCapabilityValue('measure_power_factor', safeDivide(value, 100)).catch(this.error);
         }
         this.log(`[PJ1203A]  Power Factor B: ${value/100}`);
         break;
