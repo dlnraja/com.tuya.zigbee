@@ -1,6 +1,7 @@
 'use strict';
 
 const BaseUnifiedDevice = require('../../lib/devices/BaseUnifiedDevice');
+const TuyaZigbeeDevice = require('../../lib/tuya/TuyaZigbeeDevice');
 
 const DRIVER_CAPABILITIES = new Set(['garagedoor_closed', 'alarm_contact']);
 
@@ -85,8 +86,7 @@ class GarageDoorOpenerDevice extends BaseUnifiedDevice {
   // TZD.safeSetCapabilityValue uses super.setCapabilityValue (lexically bound above TZD),
   // so calling it directly bypasses the loop while preserving sanity/calibration/throttle.
   async setCapabilityValue(capabilityId, value) {
-    const tzdProto = Object.getPrototypeOf(BaseUnifiedDevice.prototype);
-    return tzdProto.safeSetCapabilityValue.call(this, capabilityId, value);
+    return TuyaZigbeeDevice.prototype.safeSetCapabilityValue.call(this, capabilityId, value);
   }
 
   // Prevent IntelligentDeviceAdapter / DCM from adding non-driver capabilities.
