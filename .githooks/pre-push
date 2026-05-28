@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# .githooks/pre-push
+# ═══════════════════════════════════════════════════════════════════════════
+# Homey App Pre-Push Gate — blocks push if mandatory checks fail
+# More thorough than pre-commit (runs dual-layer gate + full validation)
+# ═══════════════════════════════════════════════════════════════════════════
+
+set -e
+
+RED='\033[0;31m'; GREEN='\033[0;32m'; YELLOW='\033[1;33m'; CYAN='\033[0;36m'; RESET='\033[0m'
+
+echo ""
+echo -e "${CYAN}╔══════════════════════════════════════════════════════════════╗${RESET}"
+echo -e "${CYAN}║     HOMEY APP PRE-PUSH GATE (Full Validation)               ║${RESET}"
+echo -e "${CYAN}╚══════════════════════════════════════════════════════════════╝${RESET}"
+
+ROOT="$(git rev-parse --show-toplevel)"
+
+# Full mandatory check (blocking)
+echo -e "${CYAN}[1/2] Mandatory files check...${RESET}"
+if ! node "$ROOT/scripts/validate/homey-mandatory-check.js"; then
+  echo -e "${RED}❌ PUSH BLOCKED — Fix mandatory check errors first${RESET}"
+  exit 1
+fi
+
+# Athom server requirements check (O17-O21)
+echo -e "${CYAN}[2/2] Athom server requirements check...${RESET}"
+if ! node "$ROOT/scripts/validate/validate-app-json.js"; then
+  echo -e "${RED}❌ PUSH BLOCKED — Fix Athom server requirement errors first${RESET}"
+  exit 1
+fi
+
+echo ""
+echo -e "${GREEN}╔══════════════════════════════════════════════════════════════╗${RESET}"
+echo -e "${GREEN}║  ✅ PRE-PUSH GATE PASSED — Push allowed                     ║${RESET}"
+echo -e "${GREEN}╚══════════════════════════════════════════════════════════════╝${RESET}"
+exit 0

@@ -65,7 +65,15 @@
     "master:fix": "node scripts/master-automation.js --fix",
     "master:full": "node scripts/master-automation.js --fix --commit --push --verbose",
     "master:dry": "node scripts/master-automation.js --fix --dry-run --verbose",
-    "check": "node scripts/master-automation.js --verbose"
+    "check": "node scripts/validate/homey-mandatory-check.js",
+    "check:fix": "node scripts/validate/homey-mandatory-check.js --fix",
+    "check:json": "node scripts/validate/homey-mandatory-check.js --json",
+    "check:athom": "node scripts/validate/validate-app-json.js",
+    "check:all": "npm run check && npm run check:athom",
+    "hooks:install": "git config core.hooksPath .githooks && echo Hooks installed: pre-commit + pre-push",
+    "hooks:uninstall": "git config --unset core.hooksPath && echo Hooks disabled",
+    "prepublish:validate": "npm run check:all",
+    "prepare": "git config core.hooksPath .githooks 2>/dev/null || true"
   },
   "keywords": [
     "homey",
