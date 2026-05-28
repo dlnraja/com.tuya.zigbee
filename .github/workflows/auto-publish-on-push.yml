@@ -185,8 +185,12 @@ jobs:
             if (!d.zigbee) return;
             const conn = d.connectivity || [];
             const isLan = conn.some(c => ['lan', 'cloud'].includes(c));
-            if (!isLan && !(d.zigbee.manufacturerName && d.zigbee.manufacturerName.length > 0)) {
-              errors.push(d.id);
+            if (!isLan) {
+              const hasMf = d.zigbee.manufacturerName && d.zigbee.manufacturerName.length > 0;
+              const hasFp = d.zigbee.fingerprints && d.zigbee.fingerprints.length > 0;
+              if (hasFp && !hasMf) {
+                errors.push(d.id);
+              }
             }
           });
           if (errors.length) {
