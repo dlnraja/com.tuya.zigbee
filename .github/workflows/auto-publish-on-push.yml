@@ -116,7 +116,49 @@ jobs:
       - name: 🔍 Resolve Fingerprint Collisions Automatically
         run: node scripts/ci/resolve-collisions.js
 
-      - name: Validate (npx)
+      - name: 🛡️ DUAL-LAYER GATE — Anti-AggregateError (BLOQUANT)
+        run: |
+          node - << 'DUAL_LAYER_GATE'
+          // ═══════════════════════════════════════════════════════════════
+          // DUAL-LAYER STATIC/DYNAMIC VALIDATION
+          // Layer 1 (Static) : app.json + driver.compose.json
+          //   - Zigbee drivers MUST have manufacturerName[] non-vide
+          //   - WiFi/LAN drivers (connectivity:lan) = EXEMPT (pairing IP)
+          //   - Virtual drivers (no connectivity) = EXEMPT
+          // Layer 2 (Dynamic): fingerprints.json (runtime, Buffer-loaded)
+          //   - Enrichit les capabilities mais ne remplace pas Layer 1
+          // ═══════════════════════════════════════════════════════════════
+          const fs = require('fs');
+          const WIFI = id => {
+            const s = (id||'').toLowerCase();
+            return s.startsWith('wifi_') || s.includes('ewelink') ||
+                   s.includes('sonoff')  || s.includes('radiator_wifi');
+          };
+          const app = JSON.parse(fs.readFileSync('app.json'));
+          const errors = [], stats = { z:0, w:0, h:0, v:0, fp:0 };
+
+          (app.drivers||[]).forEach(d => {
+            const conn = d.connectivity||[];
+            const hasZ = !!d.zigbee;
+            const isLan = conn.some(c => ['lan','cloud'].includes(c));
+            const type = hasZ&&isLan ? 'hybrid' : hasZ ? 'zigbee' : WIFI(d.id) ? 'wifi' : 'virtual';
+            stats[type[0]]++;
+            if (d.zigbee?.manufacturerName) stats.fp += d.zigbee.manufacturerName.length;
+            if ((type==='zigbee'||type==='hybrid') && !(d.zigbee?.manufacturerName?.length))
+              errors.push('['+type+'] '+d.id);
+          });
+
+          console.log('Dual-Layer Report: Zigbee='+stats.z+' WiFi='+stats.w+' Hybrid='+stats.h+' Virtual='+stats.v+' FPs='+stats.fp);
+          if (errors.length) {
+            console.error('❌ AGGREGATE ERROR — '+errors.length+' drivers Zigbee sans MF statique:');
+            errors.forEach(e => console.error('  ❌', e));
+            console.error('Fix: node scripts/master-automation.js --fix --commit');
+            process.exit(1);
+          }
+          console.log('✅ DUAL-LAYER PASS — Zéro AggregateError sur '+stats.z+' drivers Zigbee');
+          DUAL_LAYER_GATE
+
+      - name: Validate (npx homey app validate --level publish)
         run: npx homey app validate --level publish
 
       - name: Minify app.json (reduce 6MB → 3.3MB to pass Homey size limit)
