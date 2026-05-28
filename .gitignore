@@ -129,6 +129,10 @@ desktop.ini
 !README.txt
 !readme.txt
 !README.TXT
+# Multilingual App Store descriptions (SDK App.js:1439 reads README.*.txt)
+!README.nl.txt
+!README.de.txt
+!README.fr.txt
 # Keep all README files
 !README.md
 !*/README.md
