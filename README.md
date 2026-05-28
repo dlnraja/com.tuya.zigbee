@@ -30,6 +30,26 @@ A community-driven Homey app that brings local control to Tuya Zigbee devices �
 
 ---
 
+## 🚀 Latest Updates
+
+<!-- CHANGELOG_START - Auto-updated from .homeychangelog.json -->
+### ✨ Recent Changes (May 2026)
+
+| Version | Feature |
+|---------|---------|
+| **vv8_5_30** |  |
+| **v8.5.54** | v8.5.53: |
+| **v8.5.53** | v8.5.52: |
+| **v8.5.52** | v8.5.51: |
+| **v8.5.51** | v8.5.50: |
+| **v8.5.50** | v8.5.49: |
+| **v8.5.49** | v8.5.48: |
+| **v8.5.48** | v8.5.47: |
+| **v8.5.47** | v8.5.46: Fixed 88 empty manufacturerName arrays in driver.compose.json files ... |
+| **v8.5.46** | v8.5.46: . Cleaned 88 empty manufacturer arrays from driver configs. New fing... |
+<!-- CHANGELOG_END -->
+
+
 ## Statistics
 
 | Metric | Value |
